@@ -174,6 +174,7 @@ def run_genetic_algorithm(source_file, generations, initial_population_size, out
     Runs the genetic algorithm with virtual environment execution and autologging.
     """
     output_dir = os.path.join(BASE_DIR, output_dir)  # Ensure output_dir is within BASE_DIR
+    os.makedirs(os.path.join(BASE_DIR, "CodeBot", "genetic_population"), exist_ok=True)
     log_to_os("codebot", "info", "Starting genetic algorithm...")
     population_size = initial_population_size
     population = generate_population(source_file, population_size, output_dir)
