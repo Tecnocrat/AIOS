@@ -10,6 +10,7 @@ from rich.table import Table
 from rich.panel import Panel
 from rich.layout import Layout
 from rich.prompt import Prompt
+from self_improvement import run_genetic_algorithm
 
 # Base directory for all operations
 BASE_DIR = "c:\\dev"

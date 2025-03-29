@@ -170,45 +170,48 @@ def execute_in_virtual_environment(script_path, env_dir):
 
 # Run the genetic algorithm
 def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):
-    """
-    Runs the genetic algorithm with virtual environment execution and autologging.
-    """
-    output_dir = os.path.join(BASE_DIR, output_dir)  # Ensure output_dir is within BASE_DIR
-    os.makedirs(os.path.join(BASE_DIR, "CodeBot", "genetic_population"), exist_ok=True)
-    log_to_os("codebot", "info", "Starting genetic algorithm...")
-    population_size = initial_population_size
-    population = generate_population(source_file, population_size, output_dir)
+    start_time = time.time()
+    try:
+        output_dir = os.path.join(BASE_DIR, output_dir)  # Ensure output_dir is within BASE_DIR
+        os.makedirs(os.path.join(BASE_DIR, "CodeBot", "genetic_population"), exist_ok=True)
+        log_to_os("codebot", "info", "Starting genetic algorithm...")
+        population_size = initial_population_size
+        population = generate_population(source_file, population_size, output_dir)
 
-    for generation in range(generations):
-        log_to_os("codebot", "info", f"Generation {generation + 1} started.")
-        parents = select_parents(population)
-        new_population = []
+        for generation in range(generations):
+            log_to_os("codebot", "info", f"Generation {generation + 1} started.")
+            parents = select_parents(population)
+            new_population = []
 
-        # Exponential growth: Each individual produces two children
-        for i in range(len(population)):
-            child_path = os.path.join(output_dir, f"child_{generation}_{i}.py")
-            crossover(parents[0], parents[1], child_path)
-            mutate(child_path)
-            new_population.append(child_path)
+            # Exponential growth: Each individual produces two children
+            for i in range(len(population)):
+                child_path = os.path.join(output_dir, f"child_{generation}_{i}.py")
+                crossover(parents[0], parents[1], child_path)
+                mutate(child_path)
+                new_population.append(child_path)
 
-            # Create a virtual environment for the child and execute it
-            env_dir = os.path.join(output_dir, f"env_{generation}_{i}")
-            create_virtual_environment(env_dir)
-            execute_in_virtual_environment(child_path, env_dir)
+                # Create a virtual environment for the child and execute it
+                env_dir = os.path.join(output_dir, f"env_{generation}_{i}")
+                create_virtual_environment(env_dir)
+                execute_in_virtual_environment(child_path, env_dir)
 
-        # Add new population to the existing one
-        population.extend(new_population)
+            # Add new population to the existing one
+            population.extend(new_population)
 
-        # Deduplicate population
-        deduplicate_population(output_dir)
-        log_to_os("codebot", "info", f"Generation {generation + 1} completed.")
+            # Deduplicate population
+            deduplicate_population(output_dir)
+            log_to_os("codebot", "info", f"Generation {generation + 1} completed.")
 
-        population_size *= 2  # Double the population size for the next generation
+            population_size *= 2  # Double the population size for the next generation
 
-    # Return the best individual
-    best_individual = population[0]
-    log_to_os("codebot", "info", f"Best individual: {best_individual} with fitness {fitness_function(best_individual)}")
-    return best_individual
+        # Return the best individual
+        best_individual = population[0]
+        log_to_os("codebot", "info", f"Best individual: {best_individual} with fitness {fitness_function(best_individual)}")
+        log_to_os("codebot", "info", f"Genetic algorithm completed in {time.time() - start_time:.2f} seconds.")
+        return best_individual
+    except Exception as e:
+        log_to_os("codebot", "error", f"Error during genetic algorithm: {e}")
+        raise
 
 # Example usage
 if __name__ == "__main__":

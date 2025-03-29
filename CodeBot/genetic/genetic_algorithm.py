@@ -1,4 +1,4 @@
-from CodeBot.self_improvement import run_genetic_algorithm
+from core.self_improvement import run_genetic_algorithm
 
 if __name__ == "__main__":
     source_file = "c:\\dev\\CodeBot\\example.py"

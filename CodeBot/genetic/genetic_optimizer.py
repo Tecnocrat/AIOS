@@ -1,0 +1,49 @@
+# filepath: c:\dev\CodeBot\self_improvement.py
+import astdom
+import autopep8
+import randomunction(file_path):
+import shutil
+import osple fitness function to evaluate code quality.
+import requests, shorter files with fewer lines are considered better.
+import hashlib
+import subprocesse_path, "r") as f:
+import timees = f.readlines()
+import venv-len(lines)  # Negative because shorter is better
+
+# Base directory for all operations
+BASE_DIR = "c:\\dev"
+CODEBOT_DIR = os.path.join(BASE_DIR, "CodeBot")ate mutation.
+ADN_TRASH_CODE_DIR = os.path.join(CODEBOT_DIR, "adn_trash_code")
+KNOWLEDGE_BASE_DIR = os.path.join(CODEBOT_DIR, "knowledge_base")  # Updated path
+        lines = f.readlines()
+# Replace logging calls with requests to OS/main.py
+def log_to_os(namespace, level, message):ines) - 1))
+    """h open(file_path, "w") as f:
+    Sends a log message to OS/main.py for centralized logging.
+    """
+    try:tic_algorithm(base_dir, generations=10, population_size=5):
+        # Example: Replace with actual inter-process communication if needed
+        requests.post(orithm to optimize the codebase.
+            "http://localhost:5000/log",  # Assuming OS/main.py runs a logging server
+            json={"namespace": namespace, "level": level, "message": message}swith(".py")]
+        )t files:
+    except Exception as e:"No Python files found in {base_dir}. Ensure the directory contains valid `.py` files.")
+        print(f"Failed to send log to OS: {e}")
+    population = random.sample(files, min(population_size, len(files)))
+def analyze_code(file_path):
+    with open(file_path, 'r') as file:s):
+        code = file.read() {generation + 1}")
+    tree = ast.parse(code)y=fitness_function)
+    # Analyze the AST for improvements (e.g., unused imports, redundant code)
+    # Add logic to identify areas for improvement{fitness_function(best_file)})")
+    return "Analysis complete. Suggestions: [...]"
+        # Mutate the worst-performing files
+def auto_format_code(file_path)::]:
+    with open(file_path, 'r') as file:
+        code = file.read()
+    formatted_code = autopep8.fix_code(code)
+    with open(file_path, 'w') as file:
+        file.write(formatted_code)
+    return "Code formatted successfully."ed_code"
+    best_file = genetic_algorithm(base_dir)
+# Fitness function to evaluate code quality}")def fitness_function(file_path):    try:        with open(file_path, 'r') as file:            code = file.read()        ast.parse(code)  # Check if the code is syntactically valid        fitness = len(code)  # Example: shorter code is better (adjust as needed)        log_to_os("codebot", "info", f"Evaluated fitness for {file_path}: {fitness}")        return fitness    except Exception as e:        log_to_os("codebot", "error", f"Error evaluating fitness for {file_path}: {e}")        return float('inf')  # Invalid code gets the worst scoredef analyze_adn_trash_code():    """    Recursively analyzes the contents of adn_trash_code and returns insights.    """    insights = []    for root, _, files in os.walk(ADN_TRASH_CODE_DIR):        for file in files:            if file.endswith('.py'):                file_path = os.path.join(root, file)                with open(file_path, 'r') as f:                    code = f.read()                try:                    ast.parse(code)  # Ensure the code is syntactically valid                    insights.append((file_path, len(code)))  # Example: Add more analysis here                except Exception as e:                    print(f"Error analyzing {file_path}: {e}")    return insightsdef ingest_knowledge(file_path):    """    Ingests external knowledge into the knowledge_base.    """    target_path = os.path.join(KNOWLEDGE_BASE_DIR, os.path.basename(file_path))    os.makedirs(KNOWLEDGE_BASE_DIR, exist_ok=True)    shutil.copy(file_path, target_path)    print(f"Ingested knowledge from {file_path} to {target_path}")# Generate initial population (copies of the original code)def generate_population(source_file, population_size, output_dir):    """    Generates the initial population by copying the source file.    """    output_dir = os.path.join(ADN_TRASH_CODE_DIR, output_dir)    os.makedirs(output_dir, exist_ok=True)    population = []    insights = analyze_adn_trash_code()  # Use insights to guide randomization    for i in range(population_size):        individual_path = os.path.join(output_dir, f"individual_{i}.py")        shutil.copy(source_file, individual_path)        # Apply guided randomization based on insights        if insights:            with open(individual_path, 'a') as f:                f.write(f"# Insight-based mutation: {random.choice(insights)}\n")        population.append(individual_path)    return populationdef deduplicate_population(output_dir):    """    Removes duplicate files in the genetic population folder by comparing file hashes.    """    output_dir = os.path.join(BASE_DIR, output_dir)  # Ensure output_dir is within BASE_DIR    file_hashes = {}    for file_name in os.listdir(output_dir):        file_path = os.path.join(output_dir, file_name)        if os.path.isfile(file_path):            with open(file_path, 'rb') as file:                file_hash = hashlib.md5(file.read()).hexdigest()            if file_hash in file_hashes:                os.remove(file_path)  # Delete duplicate file            else:                file_hashes[file_hash] = file_name# Select parents based on fitnessdef select_parents(population):    population.sort(key=fitness_function)  # Sort by fitness (lower is better)    return population[:2]  # Select top 2 individuals# Crossover: Combine two parents to create a childdef crossover(parent1, parent2, output_file):    with open(parent1, 'r') as file1, open(parent2, 'r') as file2:        code1 = file1.readlines()        code2 = file2.readlines()    midpoint = len(code1) // 2    child_code = code1[:midpoint] + code2[midpoint:]    with open(output_file, 'w') as file:        file.writelines(child_code)# Mutate: Apply random changes to the codedef mutate(file_path):    with open(file_path, 'r') as file:        code = file.read()    mutated_code = autopep8.fix_code(code)  # Example: auto-format as mutation    with open(file_path, 'w') as file:        file.write(mutated_code)def create_virtual_environment(env_dir):    """    Creates a virtual environment in the specified directory.    """    venv.create(env_dir, with_pip=True)    log_to_os("codebot", "info", f"Virtual environment created at {env_dir}")def execute_in_virtual_environment(script_path, env_dir):    """    Executes a Python script in a virtual environment and logs execution time.    """    start_time = time.time()    try:        python_executable = os.path.join(env_dir, "Scripts", "python") if os.name == "nt" else os.path.join(env_dir, "bin", "python")        result = subprocess.run([python_executable, script_path], capture_output=True, text=True)        execution_time = time.time() - start_time        log_to_os("codebot", "info", f"Executed {script_path} in {execution_time:.2f} seconds")        if result.returncode == 0:            log_to_os("codebot", "info", f"Output: {result.stdout}")        else:            log_to_os("codebot", "error", f"Error: {result.stderr}")    except Exception as e:        log_to_os("codebot", "error", f"Failed to execute {script_path}: {e}")# Run the genetic algorithmdef run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):    """    Runs the genetic algorithm with optimized population management and logging.    """    output_dir = os.path.join(BASE_DIR, output_dir)    os.makedirs(output_dir, exist_ok=True)    log_to_os("codebot", "info", "Starting genetic algorithm...")    population_size = initial_population_size    population = generate_population(source_file, population_size, output_dir)    for generation in range(generations):        log_to_os("codebot", "info", f"Generation {generation + 1} started.")        parents = select_parents(population)        new_population = []        # Limit population growth to avoid resource exhaustion        for i in range(min(len(population), 10)):  # Limit to 10 children per generation            child_path = os.path.join(output_dir, f"child_{generation}_{i}.py")            crossover(parents[0], parents[1], child_path)            mutate(child_path)            new_population.append(child_path)        # Execute and evaluate new population        for child in new_population:            execute_in_virtual_environment(child, output_dir)        # Add new population to the existing one        population.extend(new_population)        # Deduplicate population        deduplicate_population(output_dir)        log_to_os("codebot", "info", f"Generation {generation + 1} completed.")    # Return the best individual    best_individual = population[0]    log_to_os("codebot", "info", f"Best individual: {best_individual} with fitness {fitness_function(best_individual)}")    return best_individual# Example usageif __name__ == "__main__":    source_file = os.path.join(BASE_DIR, "CodeBot", "example.py")    output_dir = os.path.join(BASE_DIR, "CodeBot", "genetic_population")    best_code = run_genetic_algorithm(source_file, generations=5, initial_population_size=5, output_dir=output_dir)    print(f"Best code is located at: {best_code}")

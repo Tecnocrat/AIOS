@@ -1,0 +1,45 @@
+# Ignore everything
+#*
+
+# Allow the OS and CodeBot folders
+!CodeBot/
+
+# Allow specific files inside CodeBot
+!CodeBot/**/*.py
+
+# Ignore unnecessary subfolders
+CodeBot/__pycache__/
+OS/__pycache__/
+
+# Ignore cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Ignore logs and storage
+OS/logs/
+OS/storage/
+
+# Allow specific files
+!OS/**/*.py
+!CodeBot/**/*.py
+
+# Ignore unnecessary folders
+__pycache__/
+logs/
+storage/
+test/
+genetic_population/
+knowledge_base/
+modules/
+backup/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+
+# Ignore VSCode settings
+.vscode/
+
+../OS/

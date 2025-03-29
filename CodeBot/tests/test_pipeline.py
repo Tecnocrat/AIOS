@@ -1,18 +1,19 @@
-from analyze_structure import save_structure_to_json
-from optimize_structure import flatten_directory
-from genetic_optimizer import genetic_algorithm
+import os
+from utils.pipeline import save_structure_to_json, flatten_directory, genetic_algorithm
 
-if __name__ == "__main__":
+def test_pipeline():
     base_dir = "c:\\dev\\CodeBot\\adn_trash_code\\replicated_CodeBot"
     output_file = "c:\\dev\\CodeBot\\folder_structure.json"
     optimized_dir = "c:\\dev\\CodeBot\\optimized_code"
 
     # Step 1: Analyze folder structure
     save_structure_to_json(base_dir, output_file)
+    assert os.path.exists(output_file)
 
     # Step 2: Flatten directory
     flatten_directory(base_dir, optimized_dir)
+    assert os.path.exists(optimized_dir)
 
-    # Step 3: Optimize codebase
+    # Step 3: Run genetic algorithm
     best_file = genetic_algorithm(optimized_dir)
-    print(f"Best optimized file: {best_file}")
+    assert os.path.exists(best_file)
