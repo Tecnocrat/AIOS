@@ -1,6 +1,11 @@
 import re
+import logging
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 def analyze_logs(log_file):
+    logger.info(f"Analyzing logs: {log_file}")
     with open(log_file, 'r') as file:
         logs = file.readlines()
     
@@ -13,11 +18,14 @@ def analyze_logs(log_file):
     if fitness_scores:
         best_fitness = min(fitness_scores)
         avg_fitness = sum(fitness_scores) / len(fitness_scores)
+        logger.info(f"Best Fitness: {best_fitness}, Average Fitness: {avg_fitness}")
         print(f"Best Fitness: {best_fitness}")
         print(f"Average Fitness: {avg_fitness}")
     else:
+        logger.warning("No fitness scores found in logs.")
         print("No fitness scores found in logs.")
 
 # Example usage
 if __name__ == "__main__":
-    analyze_logs('c:\\dev\\logs\\codebot_genetic.log')
+    logger.info("Log Analysis started.")
+    analyze_logs('c:\\dev\\CodeBot\\logs\\codebot_genetic.log')

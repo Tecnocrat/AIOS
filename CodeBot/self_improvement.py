@@ -6,6 +6,15 @@ import shutil
 import os
 import requests
 import hashlib
+import subprocess
+import time
+import venv
+
+# Base directory for all operations
+BASE_DIR = "c:\\dev"
+CODEBOT_DIR = os.path.join(BASE_DIR, "CodeBot")
+ADN_TRASH_CODE_DIR = os.path.join(CODEBOT_DIR, "adn_trash_code")
+KNOWLEDGE_BASE_DIR = os.path.join(CODEBOT_DIR, "knowledge_base")  # Updated path
 
 # Replace logging calls with requests to OS/main.py
 def log_to_os(namespace, level, message):
@@ -50,13 +59,49 @@ def fitness_function(file_path):
         log_to_os("codebot", "error", f"Error evaluating fitness for {file_path}: {e}")
         return float('inf')  # Invalid code gets the worst score
 
+def analyze_adn_trash_code():
+    """
+    Recursively analyzes the contents of adn_trash_code and returns insights.
+    """
+    insights = []
+    for root, _, files in os.walk(ADN_TRASH_CODE_DIR):
+        for file in files:
+            if file.endswith('.py'):
+                file_path = os.path.join(root, file)
+                with open(file_path, 'r') as f:
+                    code = f.read()
+                try:
+                    ast.parse(code)  # Ensure the code is syntactically valid
+                    insights.append((file_path, len(code)))  # Example: Add more analysis here
+                except Exception as e:
+                    print(f"Error analyzing {file_path}: {e}")
+    return insights
+
+def ingest_knowledge(file_path):
+    """
+    Ingests external knowledge into the knowledge_base.
+    """
+    target_path = os.path.join(KNOWLEDGE_BASE_DIR, os.path.basename(file_path))
+    os.makedirs(KNOWLEDGE_BASE_DIR, exist_ok=True)
+    shutil.copy(file_path, target_path)
+    print(f"Ingested knowledge from {file_path} to {target_path}")
+
 # Generate initial population (copies of the original code)
 def generate_population(source_file, population_size, output_dir):
+    """
+    Generates the initial population by copying the source file.
+    """
+    output_dir = os.path.join(ADN_TRASH_CODE_DIR, output_dir)
     os.makedirs(output_dir, exist_ok=True)
     population = []
+    insights = analyze_adn_trash_code()  # Use insights to guide randomization
     for i in range(population_size):
         individual_path = os.path.join(output_dir, f"individual_{i}.py")
         shutil.copy(source_file, individual_path)
+        # Apply guided randomization based on insights
+        if insights:
+            with open(individual_path, 'a') as f:
+                f.write(f"# Insight-based mutation: {random.choice(insights)}\n")
         population.append(individual_path)
     return population
 
@@ -64,7 +109,7 @@ def deduplicate_population(output_dir):
     """
     Removes duplicate files in the genetic population folder by comparing file hashes.
     """
-    print("Deduplicating population...")
+    output_dir = os.path.join(BASE_DIR, output_dir)  # Ensure output_dir is within BASE_DIR
     file_hashes = {}
     for file_name in os.listdir(output_dir):
         file_path = os.path.join(output_dir, file_name)
@@ -73,7 +118,6 @@ def deduplicate_population(output_dir):
                 file_hash = hashlib.md5(file.read()).hexdigest()
             if file_hash in file_hashes:
                 os.remove(file_path)  # Delete duplicate file
-                print(f"Deleted duplicate: {file_name}")
             else:
                 file_hashes[file_hash] = file_name
 
@@ -100,11 +144,36 @@ def mutate(file_path):
     with open(file_path, 'w') as file:
         file.write(mutated_code)
 
+def create_virtual_environment(env_dir):
+    """
+    Creates a virtual environment in the specified directory.
+    """
+    venv.create(env_dir, with_pip=True)
+    log_to_os("codebot", "info", f"Virtual environment created at {env_dir}")
+
+def execute_in_virtual_environment(script_path, env_dir):
+    """
+    Executes a Python script in a virtual environment and logs execution time.
+    """
+    start_time = time.time()
+    try:
+        python_executable = os.path.join(env_dir, "Scripts", "python") if os.name == "nt" else os.path.join(env_dir, "bin", "python")
+        result = subprocess.run([python_executable, script_path], capture_output=True, text=True)
+        execution_time = time.time() - start_time
+        log_to_os("codebot", "info", f"Executed {script_path} in {execution_time:.2f} seconds")
+        if result.returncode == 0:
+            log_to_os("codebot", "info", f"Output: {result.stdout}")
+        else:
+            log_to_os("codebot", "error", f"Error: {result.stderr}")
+    except Exception as e:
+        log_to_os("codebot", "error", f"Failed to execute {script_path}: {e}")
+
 # Run the genetic algorithm
 def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):
     """
-    Runs the genetic algorithm with exponential growth and deduplication.
+    Runs the genetic algorithm with virtual environment execution and autologging.
     """
+    output_dir = os.path.join(BASE_DIR, output_dir)  # Ensure output_dir is within BASE_DIR
     log_to_os("codebot", "info", "Starting genetic algorithm...")
     population_size = initial_population_size
     population = generate_population(source_file, population_size, output_dir)
@@ -121,13 +190,18 @@ def run_genetic_algorithm(source_file, generations, initial_population_size, out
             mutate(child_path)
             new_population.append(child_path)
 
+            # Create a virtual environment for the child and execute it
+            env_dir = os.path.join(output_dir, f"env_{generation}_{i}")
+            create_virtual_environment(env_dir)
+            execute_in_virtual_environment(child_path, env_dir)
+
         # Add new population to the existing one
         population.extend(new_population)
 
         # Deduplicate population
         deduplicate_population(output_dir)
-
         log_to_os("codebot", "info", f"Generation {generation + 1} completed.")
+
         population_size *= 2  # Double the population size for the next generation
 
     # Return the best individual
@@ -137,7 +211,7 @@ def run_genetic_algorithm(source_file, generations, initial_population_size, out
 
 # Example usage
 if __name__ == "__main__":
-    source_file = 'c:\\dev\\CodeBot\\example.py'
-    output_dir = 'c:\\dev\\CodeBot\\genetic_population'
+    source_file = os.path.join(BASE_DIR, "CodeBot", "example.py")
+    output_dir = os.path.join(BASE_DIR, "CodeBot", "genetic_population")
     best_code = run_genetic_algorithm(source_file, generations=5, initial_population_size=5, output_dir=output_dir)
     print(f"Best code is located at: {best_code}")

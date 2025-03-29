@@ -11,43 +11,40 @@ from rich.panel import Panel
 from rich.layout import Layout
 from rich.prompt import Prompt
 
-# Add CodeBot folder to Python search path
-CODEBOT_DIR = os.path.dirname(os.path.abspath(__file__))
-ADB_DIR = os.path.join(os.path.dirname(CODEBOT_DIR), "adn_trash_code")
-os.makedirs(ADB_DIR, exist_ok=True)
-
+# Base directory for all operations
+BASE_DIR = "c:\\dev"
+CODEBOT_DIR = os.path.join(BASE_DIR, "CodeBot")
+ADN_TRASH_CODE_DIR = os.path.join(CODEBOT_DIR, "adn_trash_code")
+KNOWLEDGE_BASE_DIR = os.path.join(CODEBOT_DIR, "knowledge_base")
 MODULES_DIR = os.path.join(CODEBOT_DIR, "modules")
+
+# Ensure critical directories exist
+os.makedirs(ADN_TRASH_CODE_DIR, exist_ok=True)
+os.makedirs(KNOWLEDGE_BASE_DIR, exist_ok=True)
 if MODULES_DIR not in sys.path:
     sys.path.append(MODULES_DIR)
 
-# Import modules
-from self_improvement import run_genetic_algorithm
-from log_analysis import analyze_logs
-from iteration_manager import manage_iterations
-from modules.file_manager import setup_project_structure, scan_test_folder, inject_text
-from modules.compression import compress_libraries, decompress_library
-from modules.knowledge_base import create_knowledge_archive, save_knowledge, retrieve_python_concept
-from modules.ui_interface import launch_ui
-from modules.dictionaries import save_wordlists
-from modules.learning import load_language_libraries, analyze_library, copy_core_for_testing
-from modules.ai_engine import explain_python_code
-from modules.text_injector import inject_text as custom_inject_text
-from modules.utils import sanitize_input, get_valid_file_path, handle_exception
-
 # Configure logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+LOG_FILE = os.path.join(CODEBOT_DIR, "runtime_exec.log")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler(LOG_FILE),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
 logger = logging.getLogger(__name__)
 
 # Initialize Rich Console
 console = Console()
-console.print("Rich library is working!")
 
 # ------------------
 # CHATBOT CLASS
 # ------------------
 class Chatbot:
     def __init__(self):
-        self.running = True
+        logger.info("Chatbot initialized.")
 
     def start(self):
         logger.info("Chatbot started.")
@@ -70,9 +67,7 @@ class Chatbot:
 # UI FUNCTIONS
 # ------------------
 def display_menu():
-    """
-    Displays the main menu with options for all functions.
-    """
+    logger.info("Displaying main menu.")
     table = Table(title="CodeBot Command Panel")
     table.add_column("Option", justify="center", style="cyan", no_wrap=True)
     table.add_column("Description", justify="left", style="magenta")
@@ -87,9 +82,7 @@ def display_menu():
     console.print(table)
 
 def handle_menu_choice(choice):
-    """
-    Handles the user's menu choice.
-    """
+    logger.info(f"Handling menu choice: {choice}")
     if choice == "1":
         chatbot = Chatbot()
         chatbot.start()
@@ -114,10 +107,7 @@ def handle_menu_choice(choice):
 # CORE FUNCTIONS
 # ------------------
 def monitor_resources(interval=5):
-    """
-    Monitors system resources (CPU, memory, and disk usage) and logs the data periodically.
-    """
-    logger.info("Starting resource monitoring...")
+    logger.info("Started monitoring system resources.")
     try:
         while True:
             cpu_usage = psutil.cpu_percent(interval=1)
@@ -130,9 +120,7 @@ def monitor_resources(interval=5):
 
 
 def clear_folder(folder_path):
-    """
-    Deletes all contents of the specified folder and recreates it.
-    """
+    logger.info(f"Clearing folder: {folder_path}")
     try:
         if os.path.exists(folder_path):
             shutil.rmtree(folder_path)
@@ -143,20 +131,10 @@ def clear_folder(folder_path):
 
 
 def handle_command(command):
-    """
-    Handles user commands and executes corresponding actions.
-
-    Args:
-        command (str): The user input command.
-
-    Returns:
-        str: The response to the command.
-    """
-    logger.debug(f"Received command: {command}")
+    logger.info(f"Handling command: {command}")
     command = sanitize_input(command)
 
     if command.startswith("explain python"):
-        # Extract the Python code snippet from the input
         code_snippet = command.replace("explain python", "").strip()
         if not code_snippet:
             return "Error: Please provide a Python code snippet to explain."
@@ -165,9 +143,6 @@ def handle_command(command):
 
 
 def handle_inject_command():
-    """
-    Handles the 'inject' command to inject text into a file.
-    """
     try:
         file_path = get_valid_file_path("Enter file path: ")
         text = input("Enter text to inject: ").strip()
@@ -188,6 +163,8 @@ def handle_inject_command():
 # MAIN EXECUTION
 # ------------------
 if __name__ == "__main__":
+    logger.info("CodeBot Core started.")
+    console.print("[bold green]CodeBot Core is running![/bold green]")
     while True:
         display_menu()
         choice = Prompt.ask("Enter your choice")

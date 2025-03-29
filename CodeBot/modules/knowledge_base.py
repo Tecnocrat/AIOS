@@ -1,7 +1,13 @@
 import os
 import zipfile
+import shutil
 from datetime import datetime
 from modules.file_manager import inject_text
+
+# Base directory for all operations
+BASE_DIR = "c:\\dev"
+CODEBOT_DIR = os.path.join(BASE_DIR, "CodeBot")
+KNOWLEDGE_BASE_DIR = os.path.join(CODEBOT_DIR, "knowledge_base")  # Updated path
 
 def create_knowledge_archive(output_folder="../adn_trash_code"):
     """
@@ -28,35 +34,16 @@ def create_knowledge_archive(output_folder="../adn_trash_code"):
         print(f"Knowledge archive created/updated at: {archive_path}")
 
 
-def retrieve_python_concept(concept, knowledge_dir="C:\\dev\\adn_trash_code\\knowledge_base\\python"):
+def retrieve_python_concept(concept_name):
     """
-    Searches for a Python concept across multiple files in the knowledge directory.
-
-    Args:
-        concept (str): The Python concept to search for.
-        knowledge_dir (str): The directory containing knowledge files.
-
-    Returns:
-        str: The explanation of the concept or a message if not found.
+    Retrieves a Python concept from the knowledge_base.
     """
-    explanations = {}
-    if not os.path.exists(knowledge_dir):
-        return f"Knowledge directory '{knowledge_dir}' not found."
-
-    for file in os.listdir(knowledge_dir):
-        if file.endswith(".txt"):
-            file_path = os.path.join(knowledge_dir, file)
-            with open(file_path, "r", encoding="utf-8") as f:
-                lines = f.readlines()
-                current_key = None
-                for line in lines:
-                    if line.startswith("#"):  # Concept header
-                        current_key = line[1:].strip()
-                        explanations[current_key] = ""
-                    elif current_key:
-                        explanations[current_key] += line
-
-    return explanations.get(concept.capitalize(), "Concept not found.")
+    concept_file = os.path.join(KNOWLEDGE_BASE_DIR, f"{concept_name}.txt")
+    if os.path.exists(concept_file):
+        with open(concept_file, 'r') as file:
+            return file.read()
+    else:
+        return f"Concept '{concept_name}' not found in knowledge_base."
 
 
 def retrieve_conversation_log(keyword, log_path="C:\\dev\\adn_trash_code\\knowledge_base\\CodeBot_conversation_log.txt"):
@@ -120,16 +107,14 @@ def export_conversation_log(conversation_text, log_path="C:\\dev\\adn_trash_code
         print(f"Failed to export conversation: {e}")
 
 
-def save_knowledge(file_path, knowledge):
+def save_knowledge(file_path):
     """
-    Saves knowledge to a file by injecting text.
-
-    Args:
-        file_path (str): The path to the file where knowledge will be saved.
-        knowledge (str): The knowledge to save.
+    Saves a file to the knowledge_base directory.
     """
-    result = inject_text(file_path, knowledge, position="append")
-    print(result)
+    os.makedirs(KNOWLEDGE_BASE_DIR, exist_ok=True)
+    target_path = os.path.join(KNOWLEDGE_BASE_DIR, os.path.basename(file_path))
+    shutil.copy(file_path, target_path)
+    print(f"Saved knowledge to {target_path}")
 
 
 # Example usage
@@ -137,4 +122,4 @@ if __name__ == "__main__":
     print("\nExample: Save Knowledge")
     file_to_save = input("Enter file path to save knowledge: ")
     knowledge_to_save = input("Enter knowledge to save: ")
-    save_knowledge(file_to_save, knowledge_to_save)
+    save_knowledge(file_to_save)
