@@ -1,10 +1,5 @@
 import os
 import random
-import logging
-
-# Configure logging
-logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
 
 def fitness_function(file_path):
     """
@@ -15,7 +10,7 @@ def fitness_function(file_path):
         lines = f.readlines()
     return -len(lines)  # Negative because shorter is better
 
-def mutate_file(file_path):    
+def mutate_file(file_path):
     """
     Randomly removes lines from a file to simulate mutation.
     """
@@ -41,25 +36,14 @@ def genetic_algorithm(base_dir, generations=10, population_size=5):
         population.sort(key=fitness_function)
         best_file = population[0]
         print(f"Best file: {best_file} (Fitness: {fitness_function(best_file)})")
+
         # Mutate the worst-performing files
         for file in population[1:]:
             mutate_file(file)
-    return best_file
 
-def analyze_logs(log_file):
-    if not os.path.exists(log_file):
-        logger.error(f"Log file not found: {log_file}")
-        return
-    
-    logger.info(f"Analyzing logs: {log_file}")
-    with open(log_file, "r") as file:
-        for line in file:
-            print(line.strip())
+    return best_file
 
 if __name__ == "__main__":
     base_dir = "c:\\dev\\CodeBot\\optimized_code"
     best_file = genetic_algorithm(base_dir)
     print(f"Best optimized file: {best_file}")
-
-    log_file = "c:\\dev\\CodeBot\\logs\\codebot_genetic.log"
-    analyze_logs(log_file)

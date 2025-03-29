@@ -27,10 +27,10 @@ if MODULES_DIR not in sys.path:
 # Configure logging
 LOG_FILE = os.path.join(CODEBOT_DIR, "runtime_exec.log")
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,  # Change to DEBUG for detailed logs
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler(LOG_FILE),
+        logging.FileHandler(LOG_FILE, mode="w"),  # Overwrite log file on each run
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -155,7 +155,7 @@ def handle_inject_command():
                 return "Invalid line number."
         result = inject_text(file_path, text, position, line_number)
         return result
-    except Exception as e:
+    except Exception as e:  
         return handle_exception(logger, "Error handling inject command", e)
 
 
