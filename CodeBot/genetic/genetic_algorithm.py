@@ -5,6 +5,7 @@ import logging
 import numpy as np
 import shutil
 from genetic.genetic_population import request_population
+from core.ai_engine import parse_codebase
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -143,6 +144,37 @@ def fractal_genetic_algorithm_with_population(source_file, generations, populati
         # ...
 
     logging.info("Fractal genetic algorithm completed.")
+
+def fractal_genetic_algorithm_with_parsing(base_dir, dimensions, generations, population_size, bounds, fractal_depth=3):
+    """
+    A fractal-based genetic algorithm that integrates codebase parsing.
+
+    Args:
+        base_dir (str): Root directory of the CodeBot project.
+        dimensions (int): Number of dimensions in the hyperspatial space.
+        generations (int): Number of generations to run the algorithm.
+        population_size (int): Size of the population.
+        bounds (tuple[float, float]): Bounds for each dimension.
+        fractal_depth (int): Depth of fractal complexity for the fitness function.
+
+    Returns:
+        list[float]: The best individual found by the algorithm.
+    """
+    logging.info("Parsing codebase...")
+    parsed_structure = parse_codebase(base_dir)
+    logging.info(f"Parsed structure: {parsed_structure}")
+
+    # Use parsed structure for population evaluation
+    population = initialize_population(population_size, dimensions, bounds)
+    for generation in range(generations):
+        fitness_scores = [fractal_fitness_function(ind, fractal_depth) for ind in population]
+        population = sorted(population, key=lambda ind: fractal_fitness_function(ind, fractal_depth), reverse=True)[:population_size // 2]
+        offspring = [mutate(crossover(*random.sample(population, 2)), 0.2, bounds) for _ in range(population_size // 2)]
+        population += offspring
+
+    best_individual = max(population, key=lambda ind: fractal_fitness_function(ind, fractal_depth))
+    logging.info(f"Best individual: {best_individual}")
+    return best_individual
 
 if __name__ == "__main__":
     base_dir = "c:\\dev\\CodeBot\\adn_trash_code\\replicated_CodeBot"

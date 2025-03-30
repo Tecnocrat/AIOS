@@ -3,11 +3,12 @@ import sys
 import logging
 import shutil
 import openai
+import json
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
 from core.self_improvement import run_genetic_algorithm, analyze_logs
-from core.ai_engine import explain_python_code, analyze_code
+from core.ai_engine import explain_python_code, analyze_code, parse_codebase
 from genetic.genetic_iteration import manage_iterations
 from genetic.genetic_optimizer import handle_exception, sanitize_input, get_valid_file_path  # Updated import
 from genetic.genetic_population import request_population
@@ -108,6 +109,14 @@ def exchange_layer(command):
 
         except Exception as e:
             print(f"Error: {e}")
+
+    elif command.startswith("parse codebase"):
+        base_dir = BASE_DIR
+        parsed_structure = parse_codebase(base_dir)
+        output_file = os.path.join(BASE_DIR, "codebot_parsed_structure.json")
+        with open(output_file, "w") as f:
+            json.dump(parsed_structure, f, indent=4)
+        return f"Codebase parsed successfully. Output saved to {output_file}"
 
     else:
         return "Unknown command. Type 'help' for a list of commands."
