@@ -2,6 +2,8 @@
 import os
 import shutil
 import logging
+import sys
+sys.path.append(os.path.abspath("C:\\dev\\CodeBot\\modules"))
 
 # Base directory for all operations
 BASE_DIR = "c:\\dev"
@@ -10,6 +12,7 @@ ADN_TRASH_CODE_DIR = os.path.join(CODEBOT_DIR, "adn_trash_code")
 
 # Configure logging
 logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def replicate_and_learn(source_dir, target_dir):
     """
@@ -32,7 +35,37 @@ def replicate_and_learn(source_dir, target_dir):
                 logger.debug(f"Improved file: {file_path}")  # Detailed logs saved to file
     logger.info("Self-improvement process completed.")
 
+def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):
+    """
+    Runs the genetic algorithm on the given source file.
+    """
+    logging.info("Starting genetic algorithm...")
+    population = generate_population(source_file, initial_population_size, output_dir)
+    for generation in range(generations):
+        logging.info(f"Generation {generation + 1}: Population size = {len(population)}")
+        # Existing logic...
+    logging.info("Genetic algorithm completed.")
+
+def manage_iterations():
+    """
+    Manages the iteration process by replicating the project and running the genetic algorithm.
+    """
+    logger.info("Starting iteration management process...")
+
+    # Step 1: Replicate and learn
+    replicate_and_learn(CODEBOT_DIR, "replicated_CodeBot")
+
+    # Step 2: Run the genetic algorithm
+    source_file = os.path.join(CODEBOT_DIR, "core", "codebot_core.py")
+    output_dir = os.path.join(ADN_TRASH_CODE_DIR, "genetic_output")
+    generations = 10
+    initial_population_size = 20
+
+    run_genetic_algorithm(source_file, generations, initial_population_size, output_dir)
+
+    logger.info("Iteration management process completed.")
+
 # Example usage
 if __name__ == "__main__":
     logger.info("Iteration Manager started.")
-    replicate_and_learn(CODEBOT_DIR, "replicated_CodeBot")
+    manage_iterations()

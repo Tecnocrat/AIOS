@@ -17,22 +17,12 @@ __pycache__/
 *.pyo
 .pytest_cache/
 
-# Ignore logs and storage
-OS/logs/
-OS/storage/
-
 # Allow specific files
 !OS/**/*.py
 !CodeBot/**/*.py
 
 # Ignore unnecessary folders
 __pycache__/
-logs/
-storage/
-test/
-genetic_population/
-knowledge_base/
-modules/
 backup/
 
 # Ignore compiled Python files
@@ -43,3 +33,5 @@ backup/
 .vscode/
 
 ../OS/
+
+backup/

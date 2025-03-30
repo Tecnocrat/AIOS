@@ -1,7 +1,118 @@
-from core.self_improvement import run_genetic_algorithm
+import os
+import random
+import math
+import logging
+import numpy as np
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+def flatten_directory(base_dir, target_dir):
+    """
+    Moves all files from nested directories into a single target directory.
+    """
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir)
+
+    for root, dirs, files in os.walk(base_dir):
+        for file in files:
+            src_path = os.path.join(root, file)
+            dest_path = os.path.join(target_dir, file)
+            if not os.path.exists(dest_path):
+                shutil.move(src_path, dest_path)
+            else:
+                print(f"Duplicate file skipped: {dest_path}")
+
+def fractal_fitness_function(position):
+    """
+    A fractal-inspired fitness function that evaluates a position in a hyperspatial multidimensional space.
+    The function uses fractal geometry concepts to create a complex fitness landscape.
+    """
+    # Example: A fractal-like function using sine waves and multidimensional interactions
+    fitness = 0
+    for i, coord in enumerate(position):
+        fitness += math.sin(coord * math.pi) * math.cos(coord * (i + 1))
+    return fitness + np.linalg.norm(position) * math.sin(np.sum(position))
+
+def initialize_population(size, dimensions, bounds):
+    """
+    Initializes a population of individuals in a multidimensional space.
+    Each individual is represented as a position vector.
+    """
+    population = []
+    for _ in range(size):
+        individual = [random.uniform(bounds[0], bounds[1]) for _ in range(dimensions)]
+        population.append(individual)
+    return population
+
+def mutate(individual, mutation_rate, bounds):
+    """
+    Applies mutation to an individual by slightly altering its position in the multidimensional space.
+    """
+    mutated = []
+    for coord in individual:
+        if random.random() < mutation_rate:
+            coord += random.uniform(-0.1, 0.1)  # Small random change
+            coord = max(min(coord, bounds[1]), bounds[0])  # Ensure within bounds
+        mutated.append(coord)
+    return mutated
+
+def crossover(parent1, parent2):
+    """
+    Performs crossover between two parents to produce an offspring.
+    """
+    crossover_point = random.randint(1, len(parent1) - 1)
+    return parent1[:crossover_point] + parent2[crossover_point:]
+
+def fractal_genetic_algorithm(dimensions, generations, population_size, bounds):
+    """
+    A fractal-based genetic algorithm that optimizes a hyperspatial multidimensional space.
+    """
+    logging.info("Starting fractal genetic algorithm...")
+
+    # Initialize population
+    population = initialize_population(population_size, dimensions, bounds)
+    logging.info(f"Initial population: {population}")
+
+    for generation in range(generations):
+        logging.info(f"Generation {generation + 1}")
+
+        # Evaluate fitness
+        fitness_scores = [fractal_fitness_function(individual) for individual in population]
+        logging.info(f"Fitness scores: {fitness_scores}")
+
+        # Select the top individuals (elitism)
+        sorted_population = [x for _, x in sorted(zip(fitness_scores, population), reverse=True)]
+        population = sorted_population[:population_size // 2]
+
+        # Generate offspring through crossover
+        offspring = []
+        while len(offspring) < population_size // 2:
+            parent1, parent2 = random.sample(population, 2)
+            child = crossover(parent1, parent2)
+            offspring.append(child)
+
+        # Mutate offspring
+        offspring = [mutate(child, mutation_rate=0.2, bounds=bounds) for child in offspring]
+
+        # Combine parents and offspring to form the new population
+        population += offspring
+
+    # Return the best individual
+    best_individual = max(population, key=fractal_fitness_function)
+    logging.info(f"Best individual: {best_individual}")
+    return best_individual
 
 if __name__ == "__main__":
-    source_file = "c:\\dev\\CodeBot\\example.py"
-    output_dir = "genetic_population"
-    best_code = run_genetic_algorithm(source_file, generations=5, initial_population_size=5, output_dir=output_dir)
-    print(f"Best code is located at: {best_code}")
+    base_dir = "c:\\dev\\CodeBot\\adn_trash_code\\replicated_CodeBot"
+    target_dir = "c:\\dev\\CodeBot\\optimized_code"
+    flatten_directory(base_dir, target_dir)
+    print(f"Files moved to {target_dir}")
+
+    # Example usage
+    dimensions = 5  # Number of dimensions in the hyperspatial space
+    generations = 50  # Number of generations
+    population_size = 20  # Size of the population
+    bounds = (-10, 10)  # Bounds for each dimension
+
+    best_solution = fractal_genetic_algorithm(dimensions, generations, population_size, bounds)
+    print(f"Best solution found: {best_solution}")

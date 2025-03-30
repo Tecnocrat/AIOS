@@ -3,15 +3,6 @@ from modules.file_manager import inject_text
 def inject_custom_text(file_path, custom_text, position="append", target_line=None):
     """
     Injects custom text into a file.
-
-    Args:
-        file_path (str): The path to the file where custom text will be injected.
-        custom_text (str): The custom text to inject.
-        position (str): Injection mode - "append", "overwrite", or "insert".
-        target_line (int): Line number for "insert" mode. Ignored otherwise.
-
-    Returns:
-        str: A message indicating the result of the operation.
     """
     return inject_text(file_path, custom_text, position, target_line)
 

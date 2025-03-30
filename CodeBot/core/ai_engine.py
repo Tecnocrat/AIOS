@@ -1,4 +1,5 @@
 from transformers import pipeline
+from typing import Generator
 
 # Global variable for the text-generation model
 generator = None
@@ -31,27 +32,20 @@ def explain_python_code(code_snippet):
     """
     global generator
     if generator is None:
-        return "Error: AI model is not loaded. Please ensure the model is initialized."
+        return "AI model is not loaded. Please preload the model."
 
     try:
-        print("DEBUG: Generating explanation for the provided code snippet...")
-        # Generate an explanation for the Python code snippet
-        response = generator(
-            f"Explain the following Python code:\n{code_snippet}",
-            max_length=100,
-            truncation=True
-        )
-        explanation = response[0]["generated_text"]
-        print("DEBUG: Explanation generated successfully.")
-        return explanation
+        response = generator(f"Explain this Python code: {code_snippet}", max_length=100, num_return_sequences=1)
+        if response and isinstance(response, list) and 'generated_text' in response[0]:
+            return response[0]['generated_text']
+        return "Unexpected response format from the AI model."
     except Exception as e:
-        print(f"DEBUG: Error with AI engine: {e}")
-        return f"Error with AI engine: {e}"
+        return f"Error generating explanation: {e}"
     
 # Debugging
-    if __name__ == "__main__":
-        print("DEBUG: Testing explain_python_code")
-        sample_code = "def greet(name): return f'Hello, {name}!'"
-        explanation = explain_python_code(sample_code)
-        print(f"Input Code:\n{sample_code}\n")
-        print(f"Generated Explanation:\n{explanation}")
+if __name__ == "__main__":
+    print("DEBUG: Testing explain_python_code")
+    sample_code = "def greet(name): return f'Hello, {name}!'"
+    explanation = explain_python_code(sample_code)
+    print(f"Input Code:\n{sample_code}\n")
+    print(f"Generated Explanation:\n{explanation}")

@@ -1,4 +1,4 @@
-from utils.analyze_structure import save_structure_to_json
+from core.analyze_structure import save_structure_to_json
 from optimize_structure import flatten_directory
 from genetic.genetic_optimizer import genetic_algorithm
 

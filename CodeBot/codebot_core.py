@@ -5,33 +5,30 @@ import time
 import psutil
 import logging
 import shutil
+import openai
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
-from rich.layout import Layout
 from rich.prompt import Prompt
-from self_improvement import run_genetic_algorithm
 
-# Base directory for all operations
-BASE_DIR = "c:\\dev"
-CODEBOT_DIR = os.path.join(BASE_DIR, "CodeBot")
-ADN_TRASH_CODE_DIR = os.path.join(CODEBOT_DIR, "adn_trash_code")
-KNOWLEDGE_BASE_DIR = os.path.join(CODEBOT_DIR, "knowledge_base")
-MODULES_DIR = os.path.join(CODEBOT_DIR, "modules")
+# Add the `CodeBot` directory to the Python path
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(BASE_DIR)
 
-# Ensure critical directories exist
-os.makedirs(ADN_TRASH_CODE_DIR, exist_ok=True)
-os.makedirs(KNOWLEDGE_BASE_DIR, exist_ok=True)
-if MODULES_DIR not in sys.path:
-    sys.path.append(MODULES_DIR)
+# Import modules from the new structure
+from core.self_improvement import run_genetic_algorithm, analyze_logs
+from core.ai_engine import explain_python_code
+from genetic.genetic_iteration import manage_iterations
+from genetic.genetic_optimizer import handle_exception  # Updated import
+from modules.file_manager import setup_project_structure
 
 # Configure logging
-LOG_FILE = os.path.join(CODEBOT_DIR, "runtime_exec.log")
+LOG_FILE = os.path.join(BASE_DIR, "runtime_exec.log")
 logging.basicConfig(
-    level=logging.DEBUG,  # Change to DEBUG for detailed logs
+    level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler(LOG_FILE, mode="w"),  # Overwrite log file on each run
+        logging.FileHandler(LOG_FILE, mode="w"),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -59,6 +56,10 @@ class Chatbot:
                     code_snippet = command.replace("explain python", "").strip()
                     response = explain_python_code(code_snippet)
                     console.print(Panel(response, title="CodeBot"))
+                elif command.startswith("run genetic algorithm"):
+                    source_file = os.path.join(BASE_DIR, "example.py")
+                    output_dir = os.path.join(BASE_DIR, "genetic_population")
+                    run_genetic_algorithm(source_file, generations=5, initial_population_size=5, output_dir=output_dir)
                 else:
                     console.print(Panel("Unknown command. Type 'help' for a list of commands.", title="Error"))
             except Exception as e:
@@ -88,16 +89,18 @@ def handle_menu_choice(choice):
         chatbot = Chatbot()
         chatbot.start()
     elif choice == "2":
-        source_file = os.path.join(CODEBOT_DIR, "example.py")
-        output_dir = os.path.join(CODEBOT_DIR, "genetic_population")
+        source_file = os.path.join(BASE_DIR, "example.py")
+        output_dir = os.path.join(BASE_DIR, "genetic_population")
         run_genetic_algorithm(source_file, generations=5, initial_population_size=5, output_dir=output_dir)
     elif choice == "3":
-        log_file = os.path.join(CODEBOT_DIR, "logs", "codebot_genetic.log")
-        analyze_logs(log_file)
+        log_file = os.path.join(BASE_DIR, "logs", "codebot_genetic.log")
+        summary = analyze_logs(log_file)
+        print(summary)  # Display the summary to the user
     elif choice == "4":
         manage_iterations()
     elif choice == "5":
-        setup_project_structure(CODEBOT_DIR)
+        setup_project_structure(BASE_DIR)
+        console.print(Panel("Project structure setup completed successfully.", title="Success"))
     elif choice == "6":
         console.print(Panel("Exiting CodeBot. Goodbye!", title="Exit"))
         sys.exit(0)
@@ -159,6 +162,13 @@ def handle_inject_command():
     except Exception as e:  
         return handle_exception(logger, "Error handling inject command", e)
 
+def ai_suggested_improvement(code):
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=f"Suggest improvements for the following Python code:\n{code}",
+        max_tokens=150
+    )
+    return response["choices"][0]["text"]
 
 # ------------------
 # MAIN EXECUTION
@@ -166,6 +176,7 @@ def handle_inject_command():
 if __name__ == "__main__":
     logger.info("CodeBot Core started.")
     console.print("[bold green]CodeBot Core is running![/bold green]")
+    
     while True:
         display_menu()
         choice = Prompt.ask("Enter your choice")

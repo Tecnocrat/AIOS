@@ -5,33 +5,15 @@ from tkinter import scrolledtext
 from modules.dictionaries import word_recognition, suggest_word
 from modules.file_manager import scan_test_folder
 from modules.knowledge_base import retrieve_python_concept, save_conversation_to_log, inject_text
-from modules.ai_engine import explain_python_code
+from core.ai_engine import explain_python_code
 from modules.chatbot import process_chat_command
-
-# Debugging
-print("DEBUG: ui_interface.py imports loaded successfully")
 
 # Add CodeBot folder to Python search path
 sys.path.append("C:\\dev\\CodeBot")
 
-# Optional import for resource monitoring
-try:
-    from modules.resources import monitor_resources
-except ImportError:
-    monitor_resources = None  # Skip monitoring if the module is unavailable
-
 # Global Variables
 CONVERSATION_LOG_PATH = "C:\\dev\\adn_trash_code\\knowledge_base\\CodeBot_conversation_log.txt"
 quit_flag = False  # Global flag to exit the app
-
-# Logging
-def collect_feedback(query, response):
-    """
-    Logs user feedback for AI responses.
-    """
-    feedback = input(f"Rate the response to \"{query}\" (1-5): ")
-    with open("feedback_log.txt", "a") as log:
-        log.write(f"Query: {query}\nResponse: {response}\nFeedback: {feedback}\n\n")
 
 # UI Setup
 def launch_ui():
@@ -75,31 +57,6 @@ def handle_input(event=None):
 
     # Save conversation to log
     save_conversation_to_log(f"You: {user_text}\n{response}", log_path=CONVERSATION_LOG_PATH)
-
-def handle_inject_knowledge(user_text):
-    """
-    Handles the 'inject knowledge' command to inject text into a file.
-    """
-    parts = user_text.replace("inject knowledge", "").strip().split(";")
-    file_path = parts[0].strip() if len(parts) > 0 else None
-    text = parts[1].strip() if len(parts) > 1 else None
-    if file_path and text:
-        inject_text(file_path, text, "append")
-        return f"CodeBot: Injected knowledge into {file_path}."
-    return "CodeBot: Invalid injection command."
-
-def handle_word_recognition(user_text):
-    """
-    Handles word recognition and provides suggestions for recognized words.
-    """
-    recognized = word_recognition(user_text)
-    if recognized:
-        response = f"CodeBot: I recognized these words: {', '.join(recognized)}"
-        suggestions = suggest_word(list(recognized)[0])
-        if suggestions:
-            response += f"\nCodeBot: Here are some word suggestions: {', '.join(suggestions)}"
-        return response
-    return "CodeBot: I didn't recognize any valid words. Try again!"
 
 # Create the main UI window
 root = tk.Tk()

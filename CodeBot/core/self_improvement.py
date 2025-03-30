@@ -1,14 +1,18 @@
 # filepath: c:\dev\CodeBot\self_improvement.py
+import os
 import ast
 import autopep8
 import random
 import shutil
-import os
-import requests
 import hashlib
 import subprocess
 import time
 import venv
+import requests
+from core.ai_engine import explain_python_code  # Example of cross-module import
+import sys
+import os
+sys.path.append(os.path.abspath("C:\\dev\\CodeBot\\modules"))
 
 # Base directory for all operations
 BASE_DIR = "c:\\dev"
@@ -167,6 +171,40 @@ def execute_in_virtual_environment(script_path, env_dir):
             log_to_os("codebot", "error", f"Error: {result.stderr}")
     except Exception as e:
         log_to_os("codebot", "error", f"Failed to execute {script_path}: {e}")
+
+def analyze_logs(log_file_path):
+    """
+    Analyzes the given log file and returns a summary.
+
+    Args:
+        log_file_path (str): The path to the log file.
+
+    Returns:
+        str: A summary of the log analysis.
+    """
+    try:
+        if not os.path.exists(log_file_path):
+            return f"Log file not found: {log_file_path}"
+
+        with open(log_file_path, 'r') as log_file:
+            logs = log_file.readlines()
+
+        # Example analysis: Count the number of errors, warnings, and info messages
+        error_count = sum(1 for line in logs if "ERROR" in line)
+        warning_count = sum(1 for line in logs if "WARNING" in line)
+        info_count = sum(1 for line in logs if "INFO" in line)
+
+        # Return a summary of the analysis
+        summary = (
+            f"Log Analysis Summary:\n"
+            f"Total lines: {len(logs)}\n"
+            f"Errors: {error_count}\n"
+            f"Warnings: {warning_count}\n"
+            f"Info messages: {info_count}\n"
+        )
+        return summary
+    except Exception as e:
+        return f"An error occurred during log analysis: {e}"
 
 # Run the genetic algorithm
 def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):

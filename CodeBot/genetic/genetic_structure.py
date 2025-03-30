@@ -1,5 +1,10 @@
+import sys
 import os
+sys.path.append(os.path.abspath("C:\\dev\\CodeBot\\modules"))
 import shutil
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def flatten_directory(base_dir, target_dir):
     """
@@ -16,6 +21,14 @@ def flatten_directory(base_dir, target_dir):
                 shutil.move(src_path, dest_path)
             else:
                 print(f"Duplicate file skipped: {dest_path}")
+
+def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):
+    logging.info("Starting genetic algorithm...")
+    population = generate_population(source_file, initial_population_size, output_dir)
+    for generation in range(generations):
+        logging.info(f"Generation {generation + 1}: Population size = {len(population)}")
+        # Existing logic...
+    logging.info("Genetic algorithm completed.")
 
 if __name__ == "__main__":
     base_dir = "c:\\dev\\CodeBot\\adn_trash_code\\replicated_CodeBot"
