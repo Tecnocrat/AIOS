@@ -1,27 +1,62 @@
 # filepath: c:\dev\CodeBot\self_improvement.py
 import os
-import ast
-import autopep8
 import random
 import shutil
+import logging
 import hashlib
-import subprocess
-import time
-import venv
+import autopep8
+import ast
 import requests
-from core.ai_engine import explain_python_code  # Example of cross-module import
-import sys
-import os
-sys.path.append(os.path.abspath("C:\\dev\\CodeBot\\modules"))
-from genetic.genetic_optimizer import get_valid_file_path  # Updated import
+import json
+from core.analyze_structure import analyze_folder_structure, save_structure_to_json
 
-# Base directory for all operations
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+# Base directories
 BASE_DIR = "c:\\dev"
 CODEBOT_DIR = os.path.join(BASE_DIR, "CodeBot")
 ADN_TRASH_CODE_DIR = os.path.join(CODEBOT_DIR, "adn_trash_code")
-KNOWLEDGE_BASE_DIR = os.path.join(CODEBOT_DIR, "knowledge_base")  # Updated path
+STORAGE_DIR = os.path.join(CODEBOT_DIR, "storage")
 
-# Replace logging calls with requests to OS/main.py
+def request_population(source_file, population_size, dimensions, bounds, output_dir):
+    """
+    Generates a complex population based on the source file and various parameters.
+
+    Args:
+        source_file (str): Path to the source file to replicate and mutate.
+        population_size (int): Number of individuals in the population.
+        dimensions (int): Number of dimensions for each individual.
+        bounds (tuple): Bounds for each dimension (min, max).
+        output_dir (str): Directory to store the generated population.
+
+    Returns:
+        list: A list of paths to the generated individuals.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    population = []
+
+    for i in range(population_size):
+        individual_path = os.path.join(output_dir, f"individual_{i}.py")
+        shutil.copy(source_file, individual_path)
+
+        # Apply mutations based on dimensions and bounds
+        with open(individual_path, 'a') as f:
+            for dim in range(dimensions):
+                mutation = random.uniform(bounds[0], bounds[1])
+                f.write(f"# Mutation {dim}: {mutation}\n")
+
+        # Auto-format the individual for consistency
+        with open(individual_path, 'r') as f:
+            code = f.read()
+        formatted_code = autopep8.fix_code(code)
+        with open(individual_path, 'w') as f:
+            f.write(formatted_code)
+
+        population.append(individual_path)
+
+    logging.info(f"Generated population of size {population_size} in {output_dir}")
+    return population
+
 def log_to_os(namespace, level, message):
     """
     Sends a log message to OS/main.py for centralized logging.
@@ -51,7 +86,6 @@ def auto_format_code(file_path):
         file.write(formatted_code)
     return "Code formatted successfully."
 
-# Fitness function to evaluate code quality
 def fitness_function(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -91,7 +125,6 @@ def ingest_knowledge(file_path):
     shutil.copy(file_path, target_path)
     print(f"Ingested knowledge from {file_path} to {target_path}")
 
-# Generate initial population (copies of the original code)
 def generate_population(source_file, population_size, output_dir):
     """
     Generates the initial population by copying the source file.
@@ -126,12 +159,10 @@ def deduplicate_population(output_dir):
             else:
                 file_hashes[file_hash] = file_name
 
-# Select parents based on fitness
 def select_parents(population):
     population.sort(key=fitness_function)  # Sort by fitness (lower is better)
     return population[:2]  # Select top 2 individuals
 
-# Crossover: Combine two parents to create a child
 def crossover(parent1, parent2, output_file):
     with open(parent1, 'r') as file1, open(parent2, 'r') as file2:
         code1 = file1.readlines()
@@ -141,7 +172,6 @@ def crossover(parent1, parent2, output_file):
     with open(output_file, 'w') as file:
         file.writelines(child_code)
 
-# Mutate: Apply random changes to the code
 def mutate(file_path):
     with open(file_path, 'r') as file:
         code = file.read()
@@ -173,92 +203,117 @@ def execute_in_virtual_environment(script_path, env_dir):
     except Exception as e:
         log_to_os("codebot", "error", f"Failed to execute {script_path}: {e}")
 
-def analyze_logs(log_file_path):
+def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):
     """
-    Analyzes the given log file and returns a summary.
+    Runs the genetic algorithm with optimized population management and logging.
+    """
+    logging.info("Starting genetic algorithm...")
+    output_dir = os.path.join(BASE_DIR, output_dir)
+    os.makedirs(output_dir, exist_ok=True)
+    population = generate_population(source_file, initial_population_size, output_dir)
+    for generation in range(generations):
+        logging.info(f"Generation {generation + 1}: Population size = {len(population)}")
+        parents = select_parents(population)
+        new_population = []
+        # Limit population growth to avoid resource exhaustion
+        for i in range(min(len(population), 10)):  # Limit to 10 children per generation
+            child_path = os.path.join(output_dir, f"child_{generation}_{i}.py")
+            crossover(parents[0], parents[1], child_path)
+            mutate(child_path)
+            new_population.append(child_path)
+        # Execute and evaluate new population
+        for child in new_population:
+            execute_in_virtual_environment(child, output_dir)
+        # Add new population to the existing one
+        population.extend(new_population)
+        # Deduplicate population
+        deduplicate_population(output_dir)
+        logging.info(f"Generation {generation + 1} completed.")
+    # Return the best individual
+    best_individual = population[0]
+    logging.info(f"Best individual: {best_individual} with fitness {fitness_function(best_individual)}")
+    return best_individual
+
+def fetch_population_data(api_url):
+    """
+    Fetches population data from a given API URL.
 
     Args:
-        log_file_path (str): The path to the log file.
+        api_url (str): The URL of the API to fetch data from.
 
     Returns:
-        str: A summary of the log analysis.
+        dict: The JSON response from the API.
     """
     try:
-        if not os.path.exists(log_file_path):
-            return f"Log file not found: {log_file_path}"
+        response = requests.get(api_url)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        return response.json()  # Parse and return the JSON response
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data: {e}")
+        return None
 
-        with open(log_file_path, 'r') as log_file:
-            logs = log_file.readlines()
+def manage_adn_trash_code():
+    """
+    High-level function to manage adn_trash_code folders, prevent unnecessary nesting,
+    and integrate functionality from analyze_structure.py to generate and read JSON files.
 
-        # Example analysis: Count the number of errors, warnings, and info messages
-        error_count = sum(1 for line in logs if "ERROR" in line)
-        warning_count = sum(1 for line in logs if "WARNING" in line)
-        info_count = sum(1 for line in logs if "INFO" in line)
+    This function:
+    1. Scans the adn_trash_code directory for nested folders.
+    2. Flattens the directory structure to avoid recursive nesting.
+    3. Generates JSON files for folder structures using analyze_structure.py.
+    4. Reads and processes JSON files from the storage directory.
+    """
+    # Step 1: Flatten the adn_trash_code directory
+    print("Flattening adn_trash_code directory...")
+    flatten_directory(ADN_TRASH_CODE_DIR)
+    print("Flattening completed.")
 
-        # Return a summary of the analysis
-        summary = (
-            f"Log Analysis Summary:\n"
-            f"Total lines: {len(logs)}\n"
-            f"Errors: {error_count}\n"
-            f"Warnings: {warning_count}\n"
-            f"Info messages: {info_count}\n"
-        )
-        return summary
-    except Exception as e:
-        return f"An error occurred during log analysis: {e}"
+    # Step 2: Generate JSON files for folder structures
+    print("Generating JSON files for folder structures...")
+    save_structure_to_json(ADN_TRASH_CODE_DIR, STORAGE_DIR)
+    save_structure_to_json(CODEBOT_DIR, STORAGE_DIR)
+    print("JSON generation completed.")
 
-# Run the genetic algorithm
-def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):
-    start_time = time.time()
-    try:
-        output_dir = os.path.join(BASE_DIR, output_dir)  # Ensure output_dir is within BASE_DIR
-        os.makedirs(os.path.join(BASE_DIR, "CodeBot", "genetic_population"), exist_ok=True)
-        log_to_os("codebot", "info", "Starting genetic algorithm...")
-        population_size = initial_population_size
-        population = generate_population(source_file, population_size, output_dir)
+    # Step 3: Read and process JSON files
+    print("Reading and processing JSON files...")
+    folder_dev_structure_path = os.path.join(STORAGE_DIR, "folder_dev_structure.json")
+    folder_codebot_structure_path = os.path.join(STORAGE_DIR, "folder_codebot_structure.json")
 
-        for generation in range(generations):
-            log_to_os("codebot", "info", f"Generation {generation + 1} started.")
-            parents = select_parents(population)
-            new_population = []
+    if os.path.exists(folder_dev_structure_path):
+        with open(folder_dev_structure_path, "r") as f:
+            folder_dev_structure = json.load(f)
+            print("Folder Dev Structure:", folder_dev_structure)
 
-            # Exponential growth: Each individual produces two children
-            for i in range(len(population)):
-                child_path = os.path.join(output_dir, f"child_{generation}_{i}.py")
-                crossover(parents[0], parents[1], child_path)
-                mutate(child_path)
-                new_population.append(child_path)
+    if os.path.exists(folder_codebot_structure_path):
+        with open(folder_codebot_structure_path, "r") as f:
+            folder_codebot_structure = json.load(f)
+            print("Folder CodeBot Structure:", folder_codebot_structure)
 
-                # Create a virtual environment for the child and execute it
-                env_dir = os.path.join(output_dir, f"env_{generation}_{i}")
-                create_virtual_environment(env_dir)
-                execute_in_virtual_environment(child_path, env_dir)
+    print("adn_trash_code management completed.")
 
-            # Add new population to the existing one
-            population.extend(new_population)
+def flatten_directory(base_dir):
+    """
+    Flattens the directory structure by moving all files from nested directories
+    into the base directory and removing empty folders.
 
-            # Deduplicate population
-            deduplicate_population(output_dir)
-            log_to_os("codebot", "info", f"Generation {generation + 1} completed.")
-
-            population_size *= 2  # Double the population size for the next generation
-
-        # Return the best individual
-        best_individual = population[0]
-        log_to_os("codebot", "info", f"Best individual: {best_individual} with fitness {fitness_function(best_individual)}")
-        log_to_os("codebot", "info", f"Genetic algorithm completed in {time.time() - start_time:.2f} seconds.")
-        return best_individual
-    except Exception as e:
-        log_to_os("codebot", "error", f"Error during genetic algorithm: {e}")
-        raise
+    Args:
+        base_dir (str): The base directory to flatten.
+    """
+    for root, dirs, files in os.walk(base_dir, topdown=False):
+        for file in files:
+            src_path = os.path.join(root, file)
+            dest_path = os.path.join(base_dir, file)
+            if not os.path.exists(dest_path):
+                os.rename(src_path, dest_path)
+        for dir in dirs:
+            dir_path = os.path.join(root, dir)
+            if not os.listdir(dir_path):  # Remove empty directories
+                os.rmdir(dir_path)
 
 # Example usage
-def analyze_code_with_path():
-    file_path = get_valid_file_path("Enter the path of the code file to analyze: ")
-    return analyze_code(file_path)
-
 if __name__ == "__main__":
     source_file = os.path.join(BASE_DIR, "CodeBot", "example.py")
     output_dir = os.path.join(BASE_DIR, "CodeBot", "genetic_population")
     best_code = run_genetic_algorithm(source_file, generations=5, initial_population_size=5, output_dir=output_dir)
     print(f"Best code is located at: {best_code}")
+    manage_adn_trash_code()

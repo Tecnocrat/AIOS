@@ -1,37 +1,14 @@
-# Ignore everything
-#*
+# Ignore everything by default
+*
 
-# Allow the OS and CodeBot folders
+# Allow tracking of the entire Dev folder
+!/
+
+# Specifically include the CodeBot folder
 !CodeBot/
+!CodeBot/**
 
-# Allow specific files inside CodeBot
-!CodeBot/**/*.py
-
-# Ignore unnecessary subfolders
-CodeBot/__pycache__/
-OS/__pycache__/
-
-# Ignore cache and compiled files
-__pycache__/
+# Exclude unnecessary files or folders (examples)
+*.log
 *.pyc
-*.pyo
-.pytest_cache/
-
-# Allow specific files
-!OS/**/*.py
-!CodeBot/**/*.py
-
-# Ignore unnecessary folders
 __pycache__/
-backup/
-
-# Ignore compiled Python files
-*.pyc
-*.pyo
-
-# Ignore VSCode settings
-.vscode/
-
-../OS/
-
-backup/

@@ -173,36 +173,21 @@ def execute_in_virtual_environment(script_path, env_dir):
     except Exception as e:
         log_to_os("codebot", "error", f"Failed to execute {script_path}: {e}")
 
-def run_genetic_algorithm(source_file, generations, initial_population_size, output_dir):
+from genetic.genetic_population import request_population
+
+def run_genetic_algorithm(source_file, generations, population_size, dimensions, bounds, output_dir):
     """
-    Runs the genetic algorithm with optimized population management and logging.
+    Runs the genetic algorithm with a requested population.
     """
     logging.info("Starting genetic algorithm...")
-    output_dir = os.path.join(BASE_DIR, output_dir)
-    os.makedirs(output_dir, exist_ok=True)
-    population = generate_population(source_file, initial_population_size, output_dir)
+    population = request_population(source_file, population_size, dimensions, bounds, output_dir)
+
     for generation in range(generations):
         logging.info(f"Generation {generation + 1}: Population size = {len(population)}")
-        parents = select_parents(population)
-        new_population = []
-        # Limit population growth to avoid resource exhaustion
-        for i in range(min(len(population), 10)):  # Limit to 10 children per generation
-            child_path = os.path.join(output_dir, f"child_{generation}_{i}.py")
-            crossover(parents[0], parents[1], child_path)
-            mutate(child_path)
-            new_population.append(child_path)
-        # Execute and evaluate new population
-        for child in new_population:
-            execute_in_virtual_environment(child, output_dir)
-        # Add new population to the existing one
-        population.extend(new_population)
-        # Deduplicate population
-        deduplicate_population(output_dir)
-        logging.info(f"Generation {generation + 1} completed.")
-    # Return the best individual
-    best_individual = population[0]
-    logging.info(f"Best individual: {best_individual} with fitness {fitness_function(best_individual)}")
-    return best_individual
+        # Add logic for crossover, mutation, and selection
+        # ...
+
+    logging.info("Genetic algorithm completed.")
 
 def handle_exception(logger, error_message, exception):
     """
@@ -218,6 +203,69 @@ def handle_exception(logger, error_message, exception):
     """
     logger.error(f"{error_message}: {exception}")
     return error_message
+
+def sanitize_input(user_input, context="general"):
+    """
+    Sanitizes user input to prevent security vulnerabilities and adapts to specific contexts.
+
+    Args:
+        user_input (str): The raw input provided by the user.
+        context (str): The context in which the input is being sanitized. 
+                       Options: "general", "code", "file_path", "html", "json".
+
+    Returns:
+        str: The sanitized input.
+    """
+    import html
+    import json
+    import re
+
+    # Base sanitization: strip whitespace and escape HTML characters
+    sanitized = user_input.strip()
+
+    if context == "general":
+        # Escape HTML characters to prevent injection attacks
+        sanitized = html.escape(sanitized)
+
+    elif context == "code":
+        # Remove dangerous Python keywords or characters
+        dangerous_keywords = ["exec", "eval", "__import__", "os.system", "subprocess"]
+        for keyword in dangerous_keywords:
+            sanitized = sanitized.replace(keyword, "[REDACTED]")
+        # Remove any backticks or shell execution symbols
+        sanitized = re.sub(r"[`$]", "", sanitized)
+
+    elif context == "file_path":
+        # Normalize file paths and remove dangerous characters
+        sanitized = os.path.normpath(sanitized)
+        sanitized = re.sub(r"[<>:\"|?*]", "", sanitized)  # Remove invalid file path characters
+
+    elif context == "html":
+        # Escape HTML characters and remove potentially dangerous tags
+        sanitized = html.escape(sanitized)
+        sanitized = re.sub(r"<(script|iframe|object|embed).*?>.*?</\1>", "", sanitized, flags=re.IGNORECASE)
+
+    elif context == "json":
+        # Ensure the input is valid JSON
+        try:
+            json.loads(sanitized)
+        except json.JSONDecodeError:
+            raise ValueError("Invalid JSON input.")
+
+    else:
+        raise ValueError(f"Unknown context: {context}")
+
+    return sanitized
+
+def get_valid_file_path(prompt="Enter file path: "):
+    """
+    Prompts the user for a file path and validates its existence.
+    """
+    while True:
+        file_path = input(prompt).strip()
+        if os.path.exists(file_path):
+            return file_path
+        print("Invalid file path. Please try again.")
 
 # Example usage
 if __name__ == "__main__":

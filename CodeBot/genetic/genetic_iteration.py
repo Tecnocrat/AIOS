@@ -3,6 +3,7 @@ import os
 import shutil
 import logging
 import sys
+from genetic_optimizer import generate_population  # Import generate_population
 sys.path.append(os.path.abspath("C:\\dev\\CodeBot\\modules"))
 
 # Base directory for all operations
@@ -30,8 +31,6 @@ def replicate_and_learn(source_dir, target_dir):
         for file in files:
             if file.endswith('.py'):
                 file_path = os.path.join(root, file)
-                # Perform improvement (e.g., auto-formatting)
-                # Example: auto_format_code(file_path)
                 logger.debug(f"Improved file: {file_path}")  # Detailed logs saved to file
     logger.info("Self-improvement process completed.")
 

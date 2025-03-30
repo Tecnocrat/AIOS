@@ -264,6 +264,7 @@
                 "56bfbbb1d7e9438dc01b5e9e23ee3447f07868": "file",
                 "67bc70a327f13de1a2502f8e096428c57ede91": "file",
                 "69f5e2f4617c753fa89efd1897151e63b70fd5": "file",
+                "6b73e347af1d77556b40fac6b7a07361d17f7b": "file",
                 "6d1b8bbdbc5dca76405ddf4efc25a0906419b7": "file",
                 "792a45773913b026a95be73824b15fd9a9facf": "file",
                 "bb5eb91b7c5fa5935f2980b05f09fcd1ff8b80": "file",
@@ -332,6 +333,7 @@
             "28": {
                 "8a63d0978a0cf02786f641bf8f05ccc38efa64": "file",
                 "8b3c4c99ccee245a1ffb747c399cc98798f7b9": "file",
+                "9fae0c95c563f747fd018f4c97af7f291a013a": "file",
                 "e04e9fc829b33fcc4af63b03212f36481d2ba9": "file"
             },
             "29": {
@@ -383,7 +385,8 @@
                 "fc2f0b31a8677ef13b3ca0db0d385c555dcced": "file"
             },
             "2f": {
-                "162dd675035eb1f7adfe094786b8248ecd3cc1": "file"
+                "162dd675035eb1f7adfe094786b8248ecd3cc1": "file",
+                "87dcf40a52030cf50730abdf8b1e335604a01c": "file"
             },
             "30": {
                 "0a115b62224cf599267ecd5195bed3ebb2c0d0": "file",
@@ -448,6 +451,7 @@
                 "098927d52f0a8b5669015febe8027b34ba1bc0": "file",
                 "0e602910c9a1c43743da56083f659250a6bc67": "file",
                 "0f3aace4977b55197f155e437143f1525a41f8": "file",
+                "2415e288939b42b70f0821b50e3dcdef780b7d": "file",
                 "4085e9b486125d92f39cb443f32b6501b83644": "file",
                 "6d431e4a226b86809323eda47916255187874d": "file",
                 "7a5b09d903782694b8a202fccc64bcb82bc54b": "file",
@@ -598,6 +602,7 @@
                 "c424bbdfa003e1524229fab5e69a45e52547c6": "file"
             },
             "50": {
+                "213aef131362ba6f9568722cf415cc6cf47419": "file",
                 "3e79ca08819d4e0158c49e94f710a81ab8ece3": "file",
                 "d131924cad1a5a4dc21e7f38b7909cefd2e5bd": "file",
                 "e894ce3183d8200ab664419b69ab1134e711dc": "file"
@@ -780,6 +785,7 @@
             },
             "69": {
                 "23a747fe2967bf21a47cf2a71ff8da279071c7": "file",
+                "50f55ec7dbde62623646fcb2d3cb3414057ef0": "file",
                 "8e89a7f07bac6c460e375a7ca1c10c4ad3d591": "file",
                 "ffa476c5fffd785d205e3c06132594ddd033f1": "file"
             },
@@ -792,6 +798,7 @@
                 "cc5860af4370b8418db37fa28b8755f88fee1d": "file"
             },
             "6b": {
+                "2aec311d897b061a8354b132a5c65a504c41f5": "file",
                 "84d277b1d8705eb0734b903b086479ce3ea459": "file",
                 "a09526020bd9377532c80ffa001894147b5e82": "file",
                 "b6d328baae8e45d9ff39a1a8635e50f9a834f4": "file",
@@ -1143,6 +1150,7 @@
                 "170d85bd06e7aea77da92c27ce23bef79cef81": "file",
                 "3197ca0259e83334c73f966f1ecfc4f53154e6": "file",
                 "6e7feafaf307eceff7cbcbeb5077567dc589a9": "file",
+                "8298957f89fa617023456ee0170ea2ba66b250": "file",
                 "9b8f1f8a6dc4ed0e3d4fc51c8981492b9f12b0": "file",
                 "a8778e85872782c5ca39535f635a37a9a599eb": "file",
                 "bb359da90453836f768fffc3aeb9c77fd3141d": "file"
@@ -1156,6 +1164,7 @@
                 "f7543e59e845fce717097c6008d7e1fb012de4": "file"
             },
             "9e": {
+                "11d34e03a74153d6f361d5562d2ccb917f24cb": "file",
                 "6054abf18411b475840129ea5874cea8237351": "file",
                 "90495358484a9c7102352d7bf8cf1eafacd36a": "file",
                 "ed9413f97dfa970bce7df0cf959d76d0c629a1": "file"
@@ -1210,7 +1219,8 @@
                 "2efc8d84961dc1cd1e80a08cd386637d3af47c": "file",
                 "4a744b8cdcac50d16214bf5c16a15c8809b711": "file",
                 "59ccaefd046d3a70cfddf3c57122455671d9c0": "file",
-                "7838e134551905e0f49e0a7c0aa6a5e78ff392": "file"
+                "7838e134551905e0f49e0a7c0aa6a5e78ff392": "file",
+                "fe79d76b4985d47632f1db770e5590c2e407da": "file"
             },
             "a8": {
                 "5cf1333c5cbbb134610cf232d790fbb6fa7324": "file",
@@ -1544,6 +1554,7 @@
                 "7d33323f31451f9ac2288b0b185ef23618cbc9": "file"
             },
             "d7": {
+                "4b6ea357d8e9e4c7f77d66db7d710d20bff449": "file",
                 "527ff9c34f0a6cee16c5262e54005e75a325ca": "file",
                 "c51a2f38b23c68d3ca9210d302b1e70e3a308e": "file"
             },
@@ -1718,6 +1729,7 @@
                 "7929957ccb3e2e6c98e8774668daaef381b2c4": "file",
                 "7b975f72fc1cb3ad2d9bbc18e5ce9d295364a4": "file",
                 "8c936b4bcde9b274f4c358334ab48a2cf3639f": "file",
+                "9dcc4b57b783b93090d02ce967128f0eeb9599": "file",
                 "abedec78377cbb6f7468e8aa1a6a3829c60d64": "file",
                 "c1c4da21fb3a1c9e13bf359a5b9aa7bf8fcd08": "file"
             },
@@ -1731,7 +1743,8 @@
                 "3fe494bd3503ee28c8d09ea026c0909222884b": "file",
                 "71c8b7375c961538e4866e67fb67348be63ab4": "file",
                 "a3726c04be382be6a96b8b69df04f16e26850e": "file",
-                "ae355ae78e25faa2fe780435a068cd59c73407": "file"
+                "ae355ae78e25faa2fe780435a068cd59c73407": "file",
+                "da2f5a1e9946a68af84f61d3b0461c69016078": "file"
             },
             "f3": {
                 "32bbfcafcdbf256fa4e1f08bb2fb64a64a0473": "file",
@@ -1767,6 +1780,7 @@
                 "e4d6e8176c3c841497e0caed83d7a9202674fe": "file"
             },
             "f9": {
+                "0408db92bfb36b8f18fa45e08901f887922ce4": "file",
                 "872d9caa5b0f3b439f0f9f113c1c3241e669a4": "file",
                 "9464062b69149d20b4ab8b95b6d07f7df314ef": "file",
                 "fa750e1aa5f9c0a50789c4727f2c9dca5d6055": "file"
@@ -1852,7 +1866,27 @@
     },
     "adn_trash_code": {},
     "CodeBot": {
-        "adn_trash_code": {},
+        "adn_trash_code": {
+            "replicated_CodeBot": {
+                "adn_trash_code": {
+                    "replicated_CodeBot": {
+                        "adn_trash_code": {
+                            "replicated_CodeBot": {
+                                "adn_trash_code": {
+                                    "replicated_CodeBot": {
+                                        "adn_trash_code": {
+                                            "replicated_CodeBot": {
+                                                "error": "Max depth exceeded"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "backup": {
             "adn_trash_code": {
                 "replicated_CodeBot": {
@@ -1891,7 +1925,7 @@
             "genetic_algorithm.py": "file",
             "genetic_iteration.py": "file",
             "genetic_optimizer.py": "file",
-            "genetic_pulation.py": "file",
+            "genetic_population.py": "file",
             "genetic_structure.py": "file",
             "__init__.py": "file",
             "__pycache__": {
@@ -1924,9 +1958,9 @@
             "knowledge_base.json": "file",
             "__init__.py": "file"
         },
+        "knowledge_base.json": "file",
         "logs": {
             "codebot_genetic.log": "file",
-            "README.md": "file",
             "requirements.txt": "file",
             "runtime_exec.log": "file",
             "__init__.py": "file"
@@ -1951,11 +1985,14 @@
                 "__init__.cpython-313.pyc": "file"
             }
         },
+        "optimized_code": {},
         "pyrightconfig.json": "file",
+        "README.md": "file",
         "runtime_exec.log": "file",
         "storage": {
             "folder_codebot_structure.json": "file",
             "folder_dev_structure.json": "file",
+            "folder__structure.json": "file",
             "__init__.py": "file",
             "__pycache__": {
                 "file_manager.cpython-313.pyc": "file",
@@ -1963,6 +2000,7 @@
             }
         },
         "tests": {
+            "example_usage.py": "file",
             "test_ai_engine.py": "file",
             "test_codebot_core.py": "file",
             "test_pipeline.py": "file",

@@ -3,6 +3,8 @@ import random
 import math
 import logging
 import numpy as np
+import shutil
+from genetic.genetic_population import request_population
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -22,16 +24,32 @@ def flatten_directory(base_dir, target_dir):
             else:
                 print(f"Duplicate file skipped: {dest_path}")
 
-def fractal_fitness_function(position):
+def fractal_fitness_function(position, depth=3):
     """
     A fractal-inspired fitness function that evaluates a position in a hyperspatial multidimensional space.
     The function uses fractal geometry concepts to create a complex fitness landscape.
+
+    Args:
+        position (list[float]): A position vector in the multidimensional space.
+        depth (int): The depth of fractal complexity.
+
+    Returns:
+        float: The fitness value of the position.
     """
-    # Example: A fractal-like function using sine waves and multidimensional interactions
     fitness = 0
     for i, coord in enumerate(position):
+        # Base fractal interactions
         fitness += math.sin(coord * math.pi) * math.cos(coord * (i + 1))
-    return fitness + np.linalg.norm(position) * math.sin(np.sum(position))
+        fitness += np.linalg.norm(position) * math.sin(np.sum(position))
+
+        # Add fractal depth complexity
+        for d in range(1, depth + 1):
+            fitness += (math.sin(coord * d) ** 2) / (1 + math.exp(-coord * d))
+            fitness += math.log(abs(coord) + 1) * math.cos(d * coord)
+
+    # Normalize fitness to avoid extreme values
+    fitness /= (len(position) * depth)
+    return float(fitness)
 
 def initialize_population(size, dimensions, bounds):
     """
@@ -63,9 +81,19 @@ def crossover(parent1, parent2):
     crossover_point = random.randint(1, len(parent1) - 1)
     return parent1[:crossover_point] + parent2[crossover_point:]
 
-def fractal_genetic_algorithm(dimensions, generations, population_size, bounds):
+def fractal_genetic_algorithm(dimensions, generations, population_size, bounds, fractal_depth=3):
     """
     A fractal-based genetic algorithm that optimizes a hyperspatial multidimensional space.
+
+    Args:
+        dimensions (int): Number of dimensions in the hyperspatial space.
+        generations (int): Number of generations to run the algorithm.
+        population_size (int): Size of the population.
+        bounds (tuple[float, float]): Bounds for each dimension.
+        fractal_depth (int): Depth of fractal complexity for the fitness function.
+
+    Returns:
+        list[float]: The best individual found by the algorithm.
     """
     logging.info("Starting fractal genetic algorithm...")
 
@@ -77,7 +105,7 @@ def fractal_genetic_algorithm(dimensions, generations, population_size, bounds):
         logging.info(f"Generation {generation + 1}")
 
         # Evaluate fitness
-        fitness_scores = [fractal_fitness_function(individual) for individual in population]
+        fitness_scores = [fractal_fitness_function(individual, depth=fractal_depth) for individual in population]
         logging.info(f"Fitness scores: {fitness_scores}")
 
         # Select the top individuals (elitism)
@@ -98,9 +126,23 @@ def fractal_genetic_algorithm(dimensions, generations, population_size, bounds):
         population += offspring
 
     # Return the best individual
-    best_individual = max(population, key=fractal_fitness_function)
+    best_individual = max(population, key=lambda ind: fractal_fitness_function(ind, depth=fractal_depth))
     logging.info(f"Best individual: {best_individual}")
     return best_individual
+
+def fractal_genetic_algorithm_with_population(source_file, generations, population_size, dimensions, bounds, fractal_depth, output_dir):
+    """
+    Runs a fractal-based genetic algorithm using a requested population.
+    """
+    logging.info("Requesting initial population...")
+    population = request_population(source_file, population_size, dimensions, bounds, output_dir)
+
+    for generation in range(generations):
+        logging.info(f"Generation {generation + 1}: Population size = {len(population)}")
+        # Add fractal-based logic
+        # ...
+
+    logging.info("Fractal genetic algorithm completed.")
 
 if __name__ == "__main__":
     base_dir = "c:\\dev\\CodeBot\\adn_trash_code\\replicated_CodeBot"
@@ -113,6 +155,7 @@ if __name__ == "__main__":
     generations = 50  # Number of generations
     population_size = 20  # Size of the population
     bounds = (-10, 10)  # Bounds for each dimension
+    fractal_depth = 4  # Depth of fractal complexity
 
-    best_solution = fractal_genetic_algorithm(dimensions, generations, population_size, bounds)
+    best_solution = fractal_genetic_algorithm(dimensions, generations, population_size, bounds, fractal_depth)
     print(f"Best solution found: {best_solution}")
