@@ -1,0 +1,4 @@
+C:/dev/AIOS/orchestrator/build/CMakeFiles/hello_aios.dir
+C:/dev/AIOS/orchestrator/build/CMakeFiles/test_main.dir
+C:/dev/AIOS/orchestrator/build/CMakeFiles/ALL_BUILD.dir
+C:/dev/AIOS/orchestrator/build/CMakeFiles/ZERO_CHECK.dir

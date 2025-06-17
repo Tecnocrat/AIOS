@@ -1,0 +1,5 @@
+2025-06-17 23:00:38,372 - INFO - Available services: ['Service1', 'Service2', 'Service3']
+2025-06-17 23:00:49,332 - INFO - Invoking service: Service1
+2025-06-17 23:00:49,332 - INFO - Action: start
+2025-06-17 23:00:49,332 - INFO - Parameters: {'key1': 'value1', 'key2': 'value2'}
+2025-06-17 23:00:49,332 - INFO - Result: Service Service1 executed action start with params {'key1': 'value1', 'key2': 'value2'}
