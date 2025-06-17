@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/dev/AIOS/orchestrator/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
