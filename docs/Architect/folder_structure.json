@@ -1,0 +1,37 @@
+{
+    "": {
+        "folders": [
+            ".git",
+            ".vscode",
+            "build",
+            "include",
+            "src"
+        ],
+        "files": [
+            "Architect.code-workspace",
+            "build.bat"
+        ]
+    },
+    ".vscode": {
+        "folders": [],
+        "files": [
+            "launch.json"
+        ]
+    },
+    "build": {
+        "folders": [],
+        "files": [
+            "os_ai_app.exe"
+        ]
+    },
+    "include": {
+        "folders": [],
+        "files": []
+    },
+    "src": {
+        "folders": [],
+        "files": [
+            "main.c"
+        ]
+    }
+}
