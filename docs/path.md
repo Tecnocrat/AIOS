@@ -1,3 +1,5 @@
+# Project Roadmap
+
 ### **Steps to Implement the Roadmap**
 
 1. **Paste the Roadmap into** `vscopilot.md`: COMPLETE
@@ -56,44 +58,43 @@
 
 7. **Full Project Ingestion & Module Mapping**
 
-   * **7.1** Upload and extract `HSE_project.zip` → IN PROGRESS
-   * Top‑level folders discovered:
-     * `AIOS/` (≈2 067 files)
-     * `Architect/` (≈54 files)
-     * `chatgpt/` (≈182 files)
-   * **7.2** Scan and index all source languages:
-     * Count C++, C#, Python, MD, config files.
-     * Generate `docs/module_index.json` mapping `<module> → <path> → <language>`.
-   * **7.3** Auto‑generate natural‑language summaries:
-     * For each module, run an AI prompt to describe its purpose in ≤2 sentences.
-     * Write results into `docs/module_summaries.md`.
+   - **7.1** Upload and extract `HSE_project.zip` → IN PROGRESS
+   - Top‑level folders discovered:
+     - `AIOS/` (≈2 067 files)
+     - `Architect/` (≈54 files)
+     - `chatgpt/` (≈182 files)
+   - **7.2** Scan and index all source languages:
+     - Count C++, C#, Python, MD, config files.
+     - Generate `docs/module_index.json` mapping `<module> → <path> → <language>`.
+   - **7.3** Auto‑generate natural‑language summaries:
+     - For each module, run an AI prompt to describe its purpose in ≤2 sentences.
+     - Write results into `docs/module_summaries.md`.
 
 8. **Dependency Graph & Service Registry**:
 
    * **8.1** Parse C++ headers (`IService`, `IChannel`) → `docs/ipc_interfaces.md`.
    * **8.2** Build a directed GraphViz dependency graph → `docs/dependency_graph.svg`.
-   * **8.3** Create `scripts/register_services.py` → `services_registry.json`.
-
+   * **8.3** Implement service registry script (`scripts/register_services.py`) to automate service discovery and registration.
 9. **AI OS Orchestrator Blueprint Generation**:
 
-   * **9.1** Use AI to draft `orchestrator.yaml` spec:
-     * Defines core services:
-       * `ipc-manager`
-       * `health-monitor`
-       * `plugin-loader`.
-     * Include CLI command mappings.
-   * **9.2** Generate C++ skeletons:
-     * `OrchestratorBootstrap`, `ServiceFactory`, `AIOSEnvironment`.
-   * **9.3** Inject Copilot prompts in headers for implementation TODOs:
-     ```cpp
-     // TODO (Copilot): implement OrchestratorBootstrap::initialize()
-     void initialize();
-     ```
+   1. **9.1** Use AI to draft `orchestrator.yaml` spec:
+      - Defines core services:
+        - `ipc-manager`
+        - `health-monitor`
+        - `plugin-loader`.
+      - Include CLI command mappings.
+   2. **9.2** Generate C++ skeletons:
+      - `OrchestratorBootstrap`, `ServiceFactory`, `AIOSEnvironment`.
+   3. **9.3** Inject Copilot prompts in headers for implementation TODOs:
+      ```cpp
+      // TODO (Copilot): implement OrchestratorBootstrap::initialize()
+      void initialize();
+      ```
 
-10. **More Abstract Code‑Dev Path Ideas from HSE Philosophy**
 
-* **Module: Hypersphere Geometry**: Implement an n‑sphere C++ utility modeling hyperdimensional containment shells, parameterized by dimension *n* and tolerance *ε* (surface roughness).
-* **Service: Boundary Information Flow**: Develop a SEM plugin `sphereMonitor` to observe and log informational flux across hyperspherical boundaries.
+10. **Advanced Development Path Ideas (from HSE Philosophy)**
+
+* **Module: Hypersphere Geometry**: Implement an n‑sphere C++ utility modeling hyperdimensional containment shells, parameterized by dimension `n` and tolerance `ε` (surface roughness).
 * **Module: Tachyonic Subspace Mapper**: Create a library that models near‑horizon tachyonic event subspaces as dynamic topological graphs for hyperdimensional data routing.
 * **Service: Quantum Cache Proxy**: Design a C# microservice abstraction layer for future quantum‑enabled cache hardware, managing read/write latency and coherence semantics to support context persistence.
 * **Module: Event Horizon Scheduler**: Build a C++ scheduler that adapts task execution to simulated ‘time dilation’ factors, reflecting near‑singularity temporal effects.
@@ -101,22 +102,6 @@
 * **Feature: Recursive Reflexive Logging**: Integrate a logging adapter that tags entries with metaphysical context (e.g., “hyperdimensional shell #2”, “tachyonic flux event”).
 
 > 🔄 **Next:** Upload the full `HSE_project.zip` and updated `path.md`, then begin Task **7.1**: full codebase scan and index.
-
-11. Advanced Development Path
-  Module: Hypersphere Geometry:
-    Implement an n‑sphere C++ utility modeling hyperdimensional containment shells, parameterized by dimension n and tolerance ε (surface roughness).
-  Service: Boundary Information Flow:
-    Develop a SEM plugin sphereMonitor to observe and log informational flux across hyperspherical boundaries.
-  Module: Tachyonic Subspace Mapper:
-    Create a library that models near‑horizon tachyonic event subspaces as dynamic topological graphs for hyperdimensional data routing.
-  Service: Quantum Cache Proxy:
-    Design a C# microservice abstraction layer for future quantum‑enabled cache hardware, managing read/write latency and coherence semantics to support context persistence.
-  Module: Event Horizon Scheduler:
-    Build a C++ scheduler that adapts task execution to simulated ‘time dilation’ factors, reflecting near‑singularity temporal effects.
-  Service: Singularity State Monitor:
-    Implement a Python diagnostic plugin querying the C++ core for singularity load metrics, feeding analytics into the Director UI.
-  Feature: Recursive Reflexive Logging:
-    Integrate a logging adapter that tags entries with metaphysical context (e.g., “hyperdimensional shell #2”, “tachyonic flux event”).
 
 ---
 
