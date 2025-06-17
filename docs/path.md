@@ -136,7 +136,7 @@
 ---
 
 ### **Next Steps**
-1. Review the optimized [path.md](http://_vscodecontentref_/2) file.
+1. Review the optimized [path.md](./path.md) file.
 2. Let me know if further refinements are needed.
 3. Proceed with Task **7.1**: full codebase scan and index.
 
