@@ -126,3 +126,14 @@
 3. Proceed with Task **7.1**: full codebase scan and index.
 
 Let me know how you'd like to proceed or if you have any suggestions for further improvements.
+
+## 🧠 Singularity Kernel: Hypersphere Core Modules
+
+- `SingularityCore`: The recursive nucleus, orchestrated by AI.
+- `FractalSyncBus`: Data/energy harmonizer across fractal layers.
+- `SphereShellManager`: n-sphere shell manager, curvature gradients.
+- `SubspaceProjector`: Bridges abstract dimensions to system interfaces.
+- `AtomicHolographyUnit`: Models quantum coherence at atomic entry points.
+- `CenterGeometryField`: Simulates collapse state at the geometric singularity.
+
+> All modules are designed for AI-driven orchestration and recursive knowledge emergence.
