@@ -52,11 +52,15 @@
             "chatgpt.csv",
             "chatgpt_20250615_180024.csv",
             "chatgpt_20250615_215200.csv",
+            "chatgpt_20250619_142914.csv",
             "copilot.csv",
+            "copilot_20250619_142914.csv",
             "gemini.csv",
             "gemini_20250615_215200.csv",
+            "gemini_20250619_142914.csv",
             "VSCopilot.csv",
-            "vscopilot_20250615_215200.csv"
+            "vscopilot_20250615_215200.csv",
+            "vscopilot_20250619_142914.csv"
         ]
     },
     "ingestion\\archive\\json": {
@@ -65,11 +69,15 @@
             "chatgpt.json",
             "chatgpt_20250615_180024.json",
             "chatgpt_20250615_215200.json",
+            "chatgpt_20250619_142914.json",
             "copilot.json",
+            "copilot_20250619_142914.json",
             "gemini.json",
             "gemini_20250615_215200.json",
+            "gemini_20250619_142914.json",
             "VSCopilot.json",
-            "vscopilot_20250615_215200.json"
+            "vscopilot_20250615_215200.json",
+            "vscopilot_20250619_142914.json"
         ]
     },
     "ingestion\\archive\\txt": {
@@ -78,11 +86,15 @@
             "chatgpt.txt",
             "chatgpt_20250615_180024.txt",
             "chatgpt_20250615_215200.txt",
+            "chatgpt_20250619_142914.txt",
             "copilot.txt",
+            "copilot_20250619_142914.txt",
             "gemini.txt",
             "gemini_20250615_215200.txt",
+            "gemini_20250619_142914.txt",
             "VSCopilot.txt",
-            "vscopilot_20250615_215200.txt"
+            "vscopilot_20250615_215200.txt",
+            "vscopilot_20250619_142914.txt"
         ]
     },
     "ingestion\\archive\\xml": {
@@ -91,11 +103,15 @@
             "chatgpt.xml",
             "chatgpt_20250615_180024.xml",
             "chatgpt_20250615_215200.xml",
+            "chatgpt_20250619_142914.xml",
             "copilot.xml",
+            "copilot_20250619_142914.xml",
             "gemini.xml",
             "gemini_20250615_215200.xml",
+            "gemini_20250619_142914.xml",
             "VSCopilot.xml",
-            "vscopilot_20250615_215200.xml"
+            "vscopilot_20250615_215200.xml",
+            "vscopilot_20250619_142914.xml"
         ]
     },
     "md": {
@@ -114,7 +130,8 @@
         "files": [
             "chatgpt_ark.md",
             "copilot_ark.md",
-            "gemini_ark.md"
+            "gemini_ark.md",
+            "vscopilot_ark.md"
         ]
     }
 }
