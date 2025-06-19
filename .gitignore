@@ -17,5 +17,5 @@ venv/
 Thumbs.db
 
 # Ignore logs and archives
-*.log
-/archive/
+# *.log # Uncomment if you want to ignore log files
+# /archive/ # Uncomment if you want to ignore archive files

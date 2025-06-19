@@ -36,8 +36,9 @@ def cli_ui():
     print("3. Analyze AIOS folder structure")
     print("4. Tachyonic backup of path.md")
     print("5. Create/Update module summaries (from input file or interactively)")
-    print("6. Exit")
-    choice = input("Enter your choice (1/2/3/4/5/6): ").strip()
+    print("6. Execute ALL (full metadata update)")
+    print("7. Exit")
+    choice = input("Enter your choice (1/2/3/4/5/6/7): ").strip()
     return choice
 
 def tachyonic_backup(
@@ -93,6 +94,33 @@ def write_summaries(summaries, path):
         f.write("\n".join(summaries))
     print(f"Module summaries written to {path}")
 
+def execute_all():
+    print("=== EXECUTE ALL: Full Metadata Update ===")
+    # 1. Tachyonic backup
+    tachyonic_backup()
+    # 2. Analyze all folder structures
+    base_paths = {
+        "Architect": r"C:\dev\Architect",
+        "chatgpt": r"C:\dev\chatgpt",
+        "AIOS": r"C:\dev\AIOS"
+    }
+    for folder_name, root_directory in base_paths.items():
+        output_folder = os.path.join(r"C:\dev\AIOS\docs", folder_name)
+        output_file = "folder_structure.json"
+        print(f"Analyzing folder: {root_directory}")
+        structure = get_folder_structure(root_directory, exclude_git=True)
+        save_to_json(structure, output_folder, output_file)
+        print(f"Folder structure saved to {os.path.join(output_folder, output_file)}")
+    # 3. Update module summaries
+    if not os.path.exists(MODULE_INDEX_PATH):
+        print(f"ERROR: {MODULE_INDEX_PATH} not found. Skipping module summaries.")
+        return
+    module_index = load_module_index(MODULE_INDEX_PATH)
+    manual_summaries = load_manual_summaries(MANUAL_SUMMARY_PATH)
+    summaries = collect_summaries(module_index, manual_summaries)
+    write_summaries(summaries, SUMMARY_MD_PATH)
+    print("=== EXECUTE ALL: Complete ===")
+
 if __name__ == "__main__":
     base_paths = {
         "1": r"C:\dev\Architect",
@@ -124,6 +152,8 @@ if __name__ == "__main__":
             summaries = collect_summaries(module_index, manual_summaries)
             write_summaries(summaries, SUMMARY_MD_PATH)
         elif choice == "6":
+            execute_all()
+        elif choice == "7":
             print("Exiting...")
             break
         else:
