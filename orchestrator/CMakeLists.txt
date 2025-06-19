@@ -8,32 +8,23 @@ project(AIOS_Orchestrator VERSION 0.1)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Add source files for the main program
-add_executable(hello_aios src/main.cpp)
+# Gather all kernel source files (excluding test files)
+file(GLOB KERNEL_SOURCES "src/*.cpp")
 
-# Include debugging flags based on the compiler
-if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(hello_aios PRIVATE /Zi /Od)
-    target_link_options(hello_aios PRIVATE /DEBUG)
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_compile_options(hello_aios PRIVATE -g)
-endif()
+# Optionally exclude test files if they still exist
+list(REMOVE_ITEM KERNEL_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/test_orchestrator.cpp")
+list(REMOVE_ITEM KERNEL_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/test_main.cpp")
 
-# Add source files for the test executable
-add_executable(test_main ../tests/test_main.cpp)
-
-# Include debugging flags for the test executable
-if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(test_main PRIVATE /Zi /Od)
-    target_link_options(test_main PRIVATE /DEBUG)
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_compile_options(test_main PRIVATE -g)
-endif()
-
-# Add orchestrator executable
-file(GLOB SOURCES "src/*.cpp")
+# Include the headers directory
 include_directories(include)
-add_executable(orchestrator ${SOURCES})
 
-# Add test orchestrator executable
-add_executable(test_orchestrator ${SOURCES})
+# Define the main orchestrator executable
+add_executable(orchestrator ${KERNEL_SOURCES})
+
+# Debugging flags (optional, for MSVC and GNU)
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    target_compile_options(orchestrator PRIVATE /Zi /Od)
+    target_link_options(orchestrator PRIVATE /DEBUG)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(orchestrator PRIVATE -g)
+endif()
