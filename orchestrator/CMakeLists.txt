@@ -1,3 +1,4 @@
+# filepath: c:\dev\AIOS\orchestrator\CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
 
 # Project name and version
@@ -28,3 +29,11 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_compile_options(test_main PRIVATE -g)
 endif()
+
+# Add orchestrator executable
+file(GLOB SOURCES "src/*.cpp")
+include_directories(include)
+add_executable(orchestrator ${SOURCES})
+
+# Add test orchestrator executable
+add_executable(test_orchestrator ${SOURCES})
