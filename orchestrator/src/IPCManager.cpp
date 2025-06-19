@@ -1,5 +1,9 @@
 #include "IIPCManager.h"
 #include <iostream>
+#include <mutex>
+#include <condition_variable>
+#include <queue>
+#include <unordered_map>
 
 /*
  * IPCManager: Concrete implementation of IIPCManager.
@@ -15,12 +19,23 @@ public:
     }
 
     void sendMessage(const std::string& channel, const std::string& message) override {
+        std::lock_guard<std::mutex> lock(mtx_);
+        channels_[channel].push(message);
+        cv_.notify_all();
         std::cout << "[IPCManager] Sending on " << channel << ": " << message << std::endl;
     }
 
     std::string receiveMessage(const std::string& channel) override {
-        std::cout << "[IPCManager] Receiving from " << channel << std::endl;
-        // TODO: Implement actual message retrieval
-        return "dummy_message";
+        std::unique_lock<std::mutex> lock(mtx_);
+        cv_.wait(lock, [&]{ return !channels_[channel].empty(); });
+        std::string msg = channels_[channel].front();
+        channels_[channel].pop();
+        std::cout << "[IPCManager] Receiving from " << channel << ": " << msg << std::endl;
+        return msg;
     }
+
+private:
+    std::mutex mtx_;
+    std::condition_variable cv_;
+    std::unordered_map<std::string, std::queue<std::string>> channels_;
 };

@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include <vector>
+#include "IService.h"
+
 /*
  * IPluginLoader: Interface for dynamic plugin management.
  * The Plugin Loader is the “event horizon” of the hypersphere,
@@ -10,8 +13,7 @@
  */
 class IPluginLoader {
 public:
-    virtual ~IPluginLoader() = default;
-    virtual void initialize() = 0;
-    virtual bool loadPlugin(const std::string& path) = 0;
-    virtual void unloadPlugin(const std::string& name) = 0;
+    virtual ~IPluginLoader() noexcept = default;
+    virtual void loadPlugins(const std::string& directory) = 0;
+    virtual std::vector<IService*> getLoadedServices() const = 0;
 };

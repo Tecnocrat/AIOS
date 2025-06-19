@@ -5,8 +5,7 @@
             "director",
             "docs",
             "orchestrator",
-            "scripts",
-            "tests"
+            "scripts"
         ],
         "files": [
             ".gitignore",
@@ -176,6 +175,7 @@
     },
     "orchestrator": {
         "folders": [
+            "archive",
             "build",
             "include",
             "src"
@@ -184,14 +184,19 @@
             "CMakeLists.txt"
         ]
     },
+    "orchestrator\\archive": {
+        "folders": [],
+        "files": [
+            "diagnostics.json",
+            "kernel.log"
+        ]
+    },
     "orchestrator\\build": {
         "folders": [
+            "archive",
             "CMakeFiles",
             "Debug",
-            "hello_aios.dir",
             "orchestrator.dir",
-            "test_main.dir",
-            "test_orchestrator.dir",
             "x64"
         ],
         "files": [
@@ -200,22 +205,30 @@
             "ALL_BUILD.vcxproj.filters",
             "CMakeCache.txt",
             "cmake_install.cmake",
-            "hello_aios.vcxproj",
-            "hello_aios.vcxproj.filters",
             "orchestrator.vcxproj",
             "orchestrator.vcxproj.filters",
-            "test_main.vcxproj",
-            "test_main.vcxproj.filters",
-            "test_orchestrator.vcxproj",
-            "test_orchestrator.vcxproj.filters",
             "ZERO_CHECK.vcxproj",
             "ZERO_CHECK.vcxproj.filters"
+        ]
+    },
+    "orchestrator\\build\\archive": {
+        "folders": [],
+        "files": [
+            "diagnostics_0.json",
+            "diagnostics_1.json",
+            "kernel.log_0.log",
+            "kernel.log_1.log",
+            "kernel.log_2.log",
+            "kernel.log_3.log",
+            "kernel_0.log",
+            "kernel_1.log"
         ]
     },
     "orchestrator\\build\\CMakeFiles": {
         "folders": [
             "4.0.3",
             "9d631c8438d83d2adb44a9dc4786cd8a",
+            "CMakeScratch",
             "pkgRedirects"
         ],
         "files": [
@@ -364,46 +377,19 @@
             "generate.stamp.rule"
         ]
     },
+    "orchestrator\\build\\CMakeFiles\\CMakeScratch": {
+        "folders": [],
+        "files": []
+    },
     "orchestrator\\build\\CMakeFiles\\pkgRedirects": {
         "folders": [],
         "files": []
     },
     "orchestrator\\build\\Debug": {
         "folders": [],
-        "files": []
-    },
-    "orchestrator\\build\\hello_aios.dir": {
-        "folders": [
-            "Debug"
-        ],
-        "files": []
-    },
-    "orchestrator\\build\\hello_aios.dir\\Debug": {
-        "folders": [
-            "hello_aios.tlog"
-        ],
         "files": [
-            "hello_aios.exe.recipe",
-            "hello_aios.ilk",
-            "main.obj",
-            "vc143.pdb"
-        ]
-    },
-    "orchestrator\\build\\hello_aios.dir\\Debug\\hello_aios.tlog": {
-        "folders": [],
-        "files": [
-            "CL.command.1.tlog",
-            "Cl.items.tlog",
-            "CL.read.1.tlog",
-            "CL.write.1.tlog",
-            "CustomBuild.command.1.tlog",
-            "CustomBuild.read.1.tlog",
-            "CustomBuild.write.1.tlog",
-            "hello_aios.lastbuildstate",
-            "link.command.1.tlog",
-            "link.read.1.tlog",
-            "link.secondary.1.tlog",
-            "link.write.1.tlog"
+            "orchestrator.exe",
+            "orchestrator.pdb"
         ]
     },
     "orchestrator\\build\\orchestrator.dir": {
@@ -429,7 +415,6 @@
             "SingularityCore.obj",
             "SphereShellManager.obj",
             "SubspaceProjector.obj",
-            "test_orchestrator.obj",
             "vc143.pdb"
         ]
     },
@@ -448,84 +433,6 @@
             "link.secondary.1.tlog",
             "link.write.1.tlog",
             "orchestrator.lastbuildstate"
-        ]
-    },
-    "orchestrator\\build\\test_main.dir": {
-        "folders": [
-            "Debug"
-        ],
-        "files": []
-    },
-    "orchestrator\\build\\test_main.dir\\Debug": {
-        "folders": [
-            "test_main.tlog"
-        ],
-        "files": [
-            "test_main.exe.recipe",
-            "test_main.ilk",
-            "test_main.obj",
-            "vc143.pdb"
-        ]
-    },
-    "orchestrator\\build\\test_main.dir\\Debug\\test_main.tlog": {
-        "folders": [],
-        "files": [
-            "CL.command.1.tlog",
-            "Cl.items.tlog",
-            "CL.read.1.tlog",
-            "CL.write.1.tlog",
-            "CustomBuild.command.1.tlog",
-            "CustomBuild.read.1.tlog",
-            "CustomBuild.write.1.tlog",
-            "link.command.1.tlog",
-            "link.read.1.tlog",
-            "link.secondary.1.tlog",
-            "link.write.1.tlog",
-            "test_main.lastbuildstate"
-        ]
-    },
-    "orchestrator\\build\\test_orchestrator.dir": {
-        "folders": [
-            "Debug"
-        ],
-        "files": []
-    },
-    "orchestrator\\build\\test_orchestrator.dir\\Debug": {
-        "folders": [
-            "test_orc.098D1CDB.tlog"
-        ],
-        "files": [
-            "AtomicHolographyUnit.obj",
-            "CenterGeometryField.obj",
-            "FractalSyncBus.obj",
-            "HealthMonitor.obj",
-            "IPCManager.obj",
-            "main.obj",
-            "PluginLoader.obj",
-            "SingularityCore.obj",
-            "SphereShellManager.obj",
-            "SubspaceProjector.obj",
-            "test_orchestrator.exe.recipe",
-            "test_orchestrator.ilk",
-            "test_orchestrator.obj",
-            "vc143.pdb"
-        ]
-    },
-    "orchestrator\\build\\test_orchestrator.dir\\Debug\\test_orc.098D1CDB.tlog": {
-        "folders": [],
-        "files": [
-            "CL.command.1.tlog",
-            "Cl.items.tlog",
-            "CL.read.1.tlog",
-            "CL.write.1.tlog",
-            "CustomBuild.command.1.tlog",
-            "CustomBuild.read.1.tlog",
-            "CustomBuild.write.1.tlog",
-            "link.command.1.tlog",
-            "link.read.1.tlog",
-            "link.secondary.1.tlog",
-            "link.write.1.tlog",
-            "test_orchestrator.lastbuildstate"
         ]
     },
     "orchestrator\\build\\x64": {
@@ -576,7 +483,9 @@
         ]
     },
     "orchestrator\\include": {
-        "folders": [],
+        "folders": [
+            "nlohmann"
+        ],
         "files": [
             "AtomicHolographyUnit.hpp",
             "CenterGeometryField.hpp",
@@ -594,6 +503,12 @@
             "SubspaceProjector.hpp"
         ]
     },
+    "orchestrator\\include\\nlohmann": {
+        "folders": [],
+        "files": [
+            "json.hpp"
+        ]
+    },
     "orchestrator\\src": {
         "folders": [],
         "files": [
@@ -602,6 +517,7 @@
             "FractalSyncBus.cpp",
             "HealthMonitor.cpp",
             "IPCManager.cpp",
+            "Logger.hpp",
             "main.cpp",
             "PluginLoader.cpp",
             "SingularityCore.cpp",
@@ -3991,12 +3907,6 @@
             "python.exe",
             "pythonw.exe",
             "wheel.exe"
-        ]
-    },
-    "tests": {
-        "folders": [],
-        "files": [
-            "test_main.cpp"
         ]
     }
 }

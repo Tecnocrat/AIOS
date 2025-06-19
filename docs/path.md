@@ -41,7 +41,7 @@
 
 4. **Implement Core Components**:
 
-   * **Kernel Core (C++)**: Define modules like IPC Manager, Health Monitor, and Plugin Loader.
+   * **Kernel Core (C++)**: Define modules like IPC Manager, Health Monitor, and Plugin Loader. IN PROGRESS
    * **Service Execution Manager (Python → C++)**: Create a Python CLI (`sem.py`) to interact with C++ plugins.
    * **Director Layer (C#)**: Build a REST API and Web UI for orchestration.
 
@@ -137,3 +137,18 @@ Let me know how you'd like to proceed or if you have any suggestions for further
 - `CenterGeometryField`: Simulates collapse state at the geometric singularity.
 
 > All modules are designed for AI-driven orchestration and recursive knowledge emergence.
+
+# Long-Term Optimization Path
+   ## A. Modularization
+      - Group related modules (e.g., core, plugins, diagnostics) into subfolders and CMake targets/libraries.
+      - Use add_library() for reusable components, then link them to your main executable.
+   ## B. Automated Source Inclusion
+      - Use file(GLOB_RECURSE ...) to automatically include new .cpp files as you add modules.
+   ## C. Dependency Management
+      - As your project grows, consider using CMake’s target-based include and link management.
+   ## D. Documentation and Static Analysis
+      - Integrate Doxygen for code documentation.
+      - Add Cppcheck or Clang-Tidy as CMake custom targets for static analysis.
+   ## E. Testing
+      - Add a tests/ folder and use GoogleTest or Catch2 for C++ unit tests.
+      - Add a CMake target for running tests.
