@@ -111,6 +111,7 @@
             "13",
             "15",
             "16",
+            "17",
             "18",
             "1a",
             "1b",
@@ -121,6 +122,7 @@
             "23",
             "26",
             "27",
+            "28",
             "29",
             "2a",
             "2b",
@@ -152,6 +154,7 @@
             "4c",
             "4e",
             "4f",
+            "50",
             "51",
             "52",
             "54",
@@ -172,7 +175,9 @@
             "65",
             "66",
             "68",
+            "6a",
             "6b",
+            "6c",
             "6d",
             "6e",
             "6f",
@@ -187,7 +192,9 @@
             "7f",
             "81",
             "82",
+            "83",
             "84",
+            "85",
             "86",
             "87",
             "8c",
@@ -212,6 +219,7 @@
             "a2",
             "a3",
             "a4",
+            "a5",
             "a7",
             "a8",
             "aa",
@@ -221,6 +229,7 @@
             "b0",
             "b2",
             "b4",
+            "b5",
             "bb",
             "bc",
             "bd",
@@ -232,7 +241,9 @@
             "c4",
             "c5",
             "c6",
+            "c7",
             "c8",
+            "cb",
             "cc",
             "cd",
             "ce",
@@ -241,12 +252,14 @@
             "d2",
             "d3",
             "d4",
+            "d8",
             "d9",
             "db",
             "dc",
             "de",
             "e1",
             "e2",
+            "e3",
             "e4",
             "e5",
             "e6",
@@ -258,6 +271,7 @@
             "ef",
             "f1",
             "f2",
+            "f3",
             "f4",
             "f5",
             "f6",
@@ -284,6 +298,7 @@
         "folders": [],
         "files": [
             "1fbb9706f5676aa5a46cce8e0a93d130fd9d50",
+            "6e489735cb0602bb8ebc6d8055908a3bb55199",
             "77c8a8b63387c6c4e83fe9c06c7957aa38ec89"
         ]
     },
@@ -319,7 +334,8 @@
     ".git\\objects\\08": {
         "folders": [],
         "files": [
-            "58192b1908f87c2607fe3264c5217acb8df659"
+            "58192b1908f87c2607fe3264c5217acb8df659",
+            "d8240023ead8688c75c86aebcce9cd4bd53acf"
         ]
     },
     ".git\\objects\\09": {
@@ -393,6 +409,12 @@
             "aef1ede1283a0b0c18eb1a037aa16e360ceb9f"
         ]
     },
+    ".git\\objects\\17": {
+        "folders": [],
+        "files": [
+            "a184ba4ae8e8617539ce38f3f399d78972ea2d"
+        ]
+    },
     ".git\\objects\\18": {
         "folders": [],
         "files": [
@@ -410,7 +432,8 @@
     ".git\\objects\\1b": {
         "folders": [],
         "files": [
-            "af678423440d994fef3dbb3f6aecf18ecc7d8f"
+            "af678423440d994fef3dbb3f6aecf18ecc7d8f",
+            "d6cab3ef5904b598efc88338c781497a999c36"
         ]
     },
     ".git\\objects\\1c": {
@@ -461,6 +484,12 @@
             "da0fb9c03cd433d4ed435f6ef06b59c3675b44"
         ]
     },
+    ".git\\objects\\28": {
+        "folders": [],
+        "files": [
+            "ee59baf9881ccbb2e87285813f65baafa4f6f7"
+        ]
+    },
     ".git\\objects\\29": {
         "folders": [],
         "files": [
@@ -490,7 +519,9 @@
         "folders": [],
         "files": [
             "23f49c162230f96d0ac0b18bf2a13e6f3bfc31",
-            "3998c9ded2a5192cec540f66f71e0751cb53b1"
+            "3998c9ded2a5192cec540f66f71e0751cb53b1",
+            "7c5267439885c68e7bda4090c594f02dbb8682",
+            "f41d9a3bdef7754982f70215106343e76951a8"
         ]
     },
     ".git\\objects\\2e": {
@@ -520,7 +551,9 @@
     ".git\\objects\\33": {
         "folders": [],
         "files": [
-            "106e914bc7d285066d570f92cbd66044cf2ba2"
+            "106e914bc7d285066d570f92cbd66044cf2ba2",
+            "573ec7497fc2ea77f3627cb6e27209db68a494",
+            "b5be29a032ac45558f9a6de6a8635b3fe69582"
         ]
     },
     ".git\\objects\\34": {
@@ -586,6 +619,7 @@
     ".git\\objects\\40": {
         "folders": [],
         "files": [
+            "7b6da998136d11205e5ffb746b82a8f57d5ff5",
             "ba8fee949687012bdf93ae719d84910cef43d8",
             "ec74286d1ac3ac2559f9da6fb8e16c30d085fc"
         ]
@@ -620,6 +654,7 @@
     ".git\\objects\\48": {
         "folders": [],
         "files": [
+            "a7092698ba280b880efb138cdc8bdfd4fc6969",
             "aeb2a9495d413f3cf8171ae4b30ad58967dbec"
         ]
     },
@@ -627,6 +662,7 @@
         "folders": [],
         "files": [
             "19181dfd76cd3097ace3803faca8937217d9c1",
+            "ba6540043b2a303b3a0ec85702c96a376794c1",
             "ea54f714c78556a353bbabc5a90fb5339551db"
         ]
     },
@@ -660,6 +696,12 @@
         "folders": [],
         "files": [
             "ecdc60e55e6e76c944cb3623d8c3fd1a820ccc"
+        ]
+    },
+    ".git\\objects\\50": {
+        "folders": [],
+        "files": [
+            "703b6976f1d74017b0b583568924f64b16d108"
         ]
     },
     ".git\\objects\\51": {
@@ -784,13 +826,27 @@
     ".git\\objects\\68": {
         "folders": [],
         "files": [
+            "7aede30da3fd528de1e9d827b5e30185b59e26",
             "ef4c3c67045ea89a500a8d451640c65c7ff736"
+        ]
+    },
+    ".git\\objects\\6a": {
+        "folders": [],
+        "files": [
+            "40139425b10c4f024c5d21da5b0b43846c6368",
+            "fbc02095020cab21878b319de68241ba894af9"
         ]
     },
     ".git\\objects\\6b": {
         "folders": [],
         "files": [
             "218880ebbfe67fcbfa9ce63b7efa09b9e9c215"
+        ]
+    },
+    ".git\\objects\\6c": {
+        "folders": [],
+        "files": [
+            "15c541a06ca385c3f5913d8a1846abe57b3f15"
         ]
     },
     ".git\\objects\\6d": {
@@ -809,6 +865,7 @@
     ".git\\objects\\6f": {
         "folders": [],
         "files": [
+            "0488ee34673db3bf40e2c9e5a7d7b2e29102a5",
             "7585674801b510c9cf0c252efd7f2945dfea4f",
             "83dde14180ad876fa0f91d2de970d97816e78f",
             "f1d61a1652a7145522d8a985266cfbed8f7730"
@@ -843,7 +900,8 @@
     ".git\\objects\\76": {
         "folders": [],
         "files": [
-            "236a2943fc67d99815eaf587234017dceb1d87"
+            "236a2943fc67d99815eaf587234017dceb1d87",
+            "53a710b6801a29329ab07f2d7e06c8a47b107a"
         ]
     },
     ".git\\objects\\78": {
@@ -856,7 +914,8 @@
     ".git\\objects\\79": {
         "folders": [],
         "files": [
-            "24512f0509a8dd4eac3a026420188377121401"
+            "24512f0509a8dd4eac3a026420188377121401",
+            "e7857d6ef7a7de1f842b118c1e5842a51171c9"
         ]
     },
     ".git\\objects\\7b": {
@@ -882,7 +941,14 @@
         "files": [
             "08724b7744b731c9d9d2f3f58c056def275b6f",
             "2730b102cc75f44411ae8188e2a98fcea7c323",
+            "8b134487dbf467d205be5d77139f7e23ec5d69",
             "afc6e6530bdbbf64c39fc141eeee86bb92e226"
+        ]
+    },
+    ".git\\objects\\83": {
+        "folders": [],
+        "files": [
+            "2199e9e13ef174dc4395c8a8235e8330234471"
         ]
     },
     ".git\\objects\\84": {
@@ -893,9 +959,16 @@
             "c0323ee2a4b8cc0fa25d3ca34b64ed01fdf39d"
         ]
     },
+    ".git\\objects\\85": {
+        "folders": [],
+        "files": [
+            "8563d1696c65d071c3ec683ac2405366d19c12"
+        ]
+    },
     ".git\\objects\\86": {
         "folders": [],
         "files": [
+            "a1709da7754f1c4afc5caea51fa3257e71a809",
             "ab27ec29cd1eca4923137ca9df987a1ce06238"
         ]
     },
@@ -981,7 +1054,8 @@
         "folders": [],
         "files": [
             "44b97ed8b9c5e0f889c52d9eb98abef3b6c8eb",
-            "90812dfdc80df4ee33f36a85814eea5a473f75"
+            "90812dfdc80df4ee33f36a85814eea5a473f75",
+            "ecb87b1200b3a2f65dae3b56e6c4007089f97c"
         ]
     },
     ".git\\objects\\9b": {
@@ -1001,6 +1075,7 @@
         "folders": [],
         "files": [
             "354ae0ec1b8832c649d964beed94d88ee761a2",
+            "65b6976da5b6df9edf7488d7496922974e1884",
             "dd5df7419489a94921bf84c33f2050631c59fd"
         ]
     },
@@ -1049,6 +1124,12 @@
             "bf04443daf08543a4d06e0568189615463bb36"
         ]
     },
+    ".git\\objects\\a5": {
+        "folders": [],
+        "files": [
+            "eba6c46ed0350029c112e23391921fc1b13176"
+        ]
+    },
     ".git\\objects\\a7": {
         "folders": [],
         "files": [
@@ -1073,12 +1154,14 @@
         "folders": [],
         "files": [
             "31a9dbb77d529fe23ca2d74c30264695166a26",
+            "aa1bd065407d5450e0d53dd4e4fd4db80d142e",
             "ffe4fbedb8981db29bea650fb091e286a5ba7c"
         ]
     },
     ".git\\objects\\ae": {
         "folders": [],
         "files": [
+            "178ae9d2261033b6ad3de80b687a696a2f8dff",
             "d8601237e73d538c02690f99050d53350d8608",
             "e00eef5fdb8d4692f64a85a73fc47648dfb65c"
         ]
@@ -1098,6 +1181,7 @@
     ".git\\objects\\b2": {
         "folders": [],
         "files": [
+            "6e5825361e2ff8934039eaf71d7bf964104476",
             "ee225b02836135bdb2bb19e5a4156f15ff5426"
         ]
     },
@@ -1105,6 +1189,13 @@
         "folders": [],
         "files": [
             "a34562a2ae50ed69762e2c6e7ea001597789d4"
+        ]
+    },
+    ".git\\objects\\b5": {
+        "folders": [],
+        "files": [
+            "08887c632c58a3c8b4b768188b3482d6833bab",
+            "6896af65d555018398044bc7e85e1c50213991"
         ]
     },
     ".git\\objects\\bb": {
@@ -1132,7 +1223,8 @@
     ".git\\objects\\be": {
         "folders": [],
         "files": [
-            "022ec59e5e89845141b45672e1bd03b1b85a43"
+            "022ec59e5e89845141b45672e1bd03b1b85a43",
+            "33fc1189aadaf5104024a1ce28378ee44ba94d"
         ]
     },
     ".git\\objects\\c0": {
@@ -1145,7 +1237,8 @@
         "folders": [],
         "files": [
             "165be16567d2307acf7a45587a11202dcd6955",
-            "257bd54bc95e9a54d181ce725346534bc470d5"
+            "257bd54bc95e9a54d181ce725346534bc470d5",
+            "3a658639f98dbff7f4f954f9f98a14f04ee63b"
         ]
     },
     ".git\\objects\\c2": {
@@ -1165,6 +1258,7 @@
     ".git\\objects\\c4": {
         "folders": [],
         "files": [
+            "558f60be8a2c7a0054b2d9eddc08780e72d115",
             "c2f4455079f5588668f4b507dae2a6bb66d5ec"
         ]
     },
@@ -1177,7 +1271,14 @@
     ".git\\objects\\c6": {
         "folders": [],
         "files": [
-            "8cb0f79914d3e57f2e3488fe721ccca135c512"
+            "8cb0f79914d3e57f2e3488fe721ccca135c512",
+            "e1521b74d585f56aee73d57480387494ded79a"
+        ]
+    },
+    ".git\\objects\\c7": {
+        "folders": [],
+        "files": [
+            "30607051559fad3d0e5ed68ae8d6a02b31f38e"
         ]
     },
     ".git\\objects\\c8": {
@@ -1185,6 +1286,12 @@
         "files": [
             "42f9038dbbbdf673d981fbafbead1e4b601e56",
             "7f72a8c31df7841e5db906bfcb27bbd62daa75"
+        ]
+    },
+    ".git\\objects\\cb": {
+        "folders": [],
+        "files": [
+            "98a34a19b578f0bc0122be3e8f0858f6fcabd2"
         ]
     },
     ".git\\objects\\cc": {
@@ -1196,6 +1303,7 @@
     ".git\\objects\\cd": {
         "folders": [],
         "files": [
+            "4b4d234d59aa8a0d2e3da45df81ca166ae17aa",
             "a445b23e2b03745d86efd0a512c260a4660ce2"
         ]
     },
@@ -1237,6 +1345,12 @@
             "935439c431c72b58d9c79b5b409f818bee8265"
         ]
     },
+    ".git\\objects\\d8": {
+        "folders": [],
+        "files": [
+            "56e1f59a407d795e741e1b02b478dd7725640d"
+        ]
+    },
     ".git\\objects\\d9": {
         "folders": [],
         "files": [
@@ -1254,6 +1368,7 @@
     ".git\\objects\\dc": {
         "folders": [],
         "files": [
+            "2ecf1c8e069a4da55ae24af39cd730a7f1590b",
             "35e57f90f0f4bcc659adaead39cc6a5ab2a1c0",
             "60fa9bd4aaf165578265ebee933a3c7a89cc43"
         ]
@@ -1267,7 +1382,8 @@
     ".git\\objects\\e1": {
         "folders": [],
         "files": [
-            "47e4735ab8b349d1d3c80ba0706a0208ba5f42"
+            "47e4735ab8b349d1d3c80ba0706a0208ba5f42",
+            "d2b1716b02dbe3bab4d8ee386ceda16cf59c00"
         ]
     },
     ".git\\objects\\e2": {
@@ -1276,6 +1392,12 @@
             "39bd635bfaa2753cafba6022730cae5ae05d25",
             "914f5a3840d30c801b2b5fc6454e35a3a930c1",
             "c008a45a184f7b6998879f980c4ef1d11363fc"
+        ]
+    },
+    ".git\\objects\\e3": {
+        "folders": [],
+        "files": [
+            "ed9611c647ad1fa6fdd80782a4294c21a112f1"
         ]
     },
     ".git\\objects\\e4": {
@@ -1337,7 +1459,8 @@
     ".git\\objects\\f1": {
         "folders": [],
         "files": [
-            "8045400a2d38c1e407e7b770aa6a01db9b79e7"
+            "8045400a2d38c1e407e7b770aa6a01db9b79e7",
+            "f2d07b4e64c0b996ad7ce3ff0bdbf00d4b114d"
         ]
     },
     ".git\\objects\\f2": {
@@ -1346,10 +1469,18 @@
             "cfa292f77c9efb8355aa266a1254dc0a0fe6c2"
         ]
     },
+    ".git\\objects\\f3": {
+        "folders": [],
+        "files": [
+            "3d84d552796dfab5c575d0da098fec3928ab7f",
+            "730317f7fb76cef946a272c441d8c3324179b3"
+        ]
+    },
     ".git\\objects\\f4": {
         "folders": [],
         "files": [
-            "87d60c258de3a889a7415066123c8f72f9aaa5"
+            "87d60c258de3a889a7415066123c8f72f9aaa5",
+            "a8ff5028317073b9dffa4484f61ad17cfc2ca9"
         ]
     },
     ".git\\objects\\f5": {
@@ -1628,7 +1759,9 @@
             "CMakeFiles",
             "Debug",
             "hello_aios.dir",
+            "orchestrator.dir",
             "test_main.dir",
+            "test_orchestrator.dir",
             "x64"
         ],
         "files": [
@@ -1639,8 +1772,12 @@
             "cmake_install.cmake",
             "hello_aios.vcxproj",
             "hello_aios.vcxproj.filters",
+            "orchestrator.vcxproj",
+            "orchestrator.vcxproj.filters",
             "test_main.vcxproj",
             "test_main.vcxproj.filters",
+            "test_orchestrator.vcxproj",
+            "test_orchestrator.vcxproj.filters",
             "ZERO_CHECK.vcxproj",
             "ZERO_CHECK.vcxproj.filters"
         ]
@@ -1807,7 +1944,8 @@
             "hello_aios.exe",
             "hello_aios.pdb",
             "test_main.exe",
-            "test_main.pdb"
+            "test_main.pdb",
+            "test_orchestrator.pdb"
         ]
     },
     "orchestrator\\build\\hello_aios.dir": {
@@ -1823,7 +1961,6 @@
         "files": [
             "hello_aios.exe.recipe",
             "hello_aios.ilk",
-            "main.obj",
             "vc143.pdb"
         ]
     },
@@ -1832,8 +1969,6 @@
         "files": [
             "CL.command.1.tlog",
             "Cl.items.tlog",
-            "CL.read.1.tlog",
-            "CL.write.1.tlog",
             "CustomBuild.command.1.tlog",
             "CustomBuild.read.1.tlog",
             "CustomBuild.write.1.tlog",
@@ -1841,7 +1976,45 @@
             "link.command.1.tlog",
             "link.read.1.tlog",
             "link.secondary.1.tlog",
-            "link.write.1.tlog"
+            "link.write.1.tlog",
+            "unsuccessfulbuild"
+        ]
+    },
+    "orchestrator\\build\\orchestrator.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "orchestrator\\build\\orchestrator.dir\\Debug": {
+        "folders": [
+            "orchestrator.tlog"
+        ],
+        "files": [
+            "AtomicHolographyUnit.obj",
+            "CenterGeometryField.obj",
+            "FractalSyncBus.obj",
+            "HealthMonitor.obj",
+            "IPCManager.obj",
+            "PluginLoader.obj",
+            "SingularityCore.obj",
+            "SphereShellManager.obj",
+            "SubspaceProjector.obj",
+            "test_orchestrator.obj",
+            "vc143.pdb"
+        ]
+    },
+    "orchestrator\\build\\orchestrator.dir\\Debug\\orchestrator.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "orchestrator.lastbuildstate",
+            "unsuccessfulbuild"
         ]
     },
     "orchestrator\\build\\test_main.dir": {
@@ -1876,6 +2049,42 @@
             "link.secondary.1.tlog",
             "link.write.1.tlog",
             "test_main.lastbuildstate"
+        ]
+    },
+    "orchestrator\\build\\test_orchestrator.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "orchestrator\\build\\test_orchestrator.dir\\Debug": {
+        "folders": [
+            "test_orc.098D1CDB.tlog"
+        ],
+        "files": [
+            "test_orchestrator.obj",
+            "vc143.pdb"
+        ]
+    },
+    "orchestrator\\build\\test_orchestrator.dir\\Debug\\test_orc.098D1CDB.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link-cvtres.read.1.tlog",
+            "link-cvtres.write.1.tlog",
+            "link-rc.read.1.tlog",
+            "link-rc.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.read.2.tlog",
+            "link.write.1.tlog",
+            "test_orchestrator.lastbuildstate",
+            "unsuccessfulbuild"
         ]
     },
     "orchestrator\\build\\x64": {
@@ -1928,21 +2137,34 @@
     "orchestrator\\include": {
         "folders": [],
         "files": [
+            "AtomicHolographyUnit.hpp",
+            "CenterGeometryField.hpp",
+            "FractalSyncBus.hpp",
             "HealthMonitor.h",
             "IHealthMonitor.h",
             "IIPCManager.h",
             "IPCManager.h",
             "IPluginLoader.h",
-            "PluginLoader.h"
+            "PluginLoader.h",
+            "SingularityCore.hpp",
+            "SphereShellManager.hpp",
+            "SubspaceProjector.hpp"
         ]
     },
     "orchestrator\\src": {
         "folders": [],
         "files": [
+            "AtomicHolographyUnit.cpp",
+            "CenterGeometryField.cpp",
+            "FractalSyncBus.cpp",
             "HealthMonitor.cpp",
             "IPCManager.cpp",
             "main.cpp",
-            "PluginLoader.cpp"
+            "PluginLoader.cpp",
+            "SingularityCore.cpp",
+            "SphereShellManager.cpp",
+            "SubspaceProjector.cpp",
+            "test_orchestrator.cpp"
         ]
     },
     "scripts": {
