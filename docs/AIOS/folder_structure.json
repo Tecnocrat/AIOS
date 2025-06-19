@@ -147,11 +147,11 @@
         "folders": [
             "AIOS",
             "Architect",
-            "chatgpt"
+            "chatgpt",
+            "tachyonic"
         ],
         "files": [
             "cmake-buildsystem.md",
-            "folder_structure.json",
             "path.md",
             "requirements.md"
         ]
@@ -172,6 +172,12 @@
         "folders": [],
         "files": [
             "folder_structure.json"
+        ]
+    },
+    "docs\\tachyonic": {
+        "folders": [],
+        "files": [
+            "path_20250619_221329.md"
         ]
     },
     "orchestrator": {
