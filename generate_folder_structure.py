@@ -1,5 +1,7 @@
 import os
 import json
+import shutil
+from datetime import datetime
 
 def get_folder_structure(root_dir, exclude_git=False):
     folder_structure = {}
@@ -35,6 +37,12 @@ def cli_ui():
     
     choice = input("Enter your choice (1/2/3/4): ").strip()
     return choice
+
+def tachyonic_backup(path_md="docs/path.md", archive_dir="docs/tachyonic/"):
+    now = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_path = f"{archive_dir}path_{now}.md"
+    shutil.copy2(path_md, backup_path)
+    print(f"Tachyonic backup created: {backup_path}")
 
 if __name__ == "__main__":
     # Base paths for folders
