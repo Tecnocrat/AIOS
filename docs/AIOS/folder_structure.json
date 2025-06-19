@@ -150,6 +150,7 @@
             "chatgpt"
         ],
         "files": [
+            "cmake-buildsystem.md",
             "folder_structure.json",
             "path.md",
             "requirements.md"
@@ -188,40 +189,81 @@
         "folders": [],
         "files": [
             "diagnostics.json",
+            "diagnostics_0.json",
+            "diagnostics_1.json",
             "kernel.log"
         ]
     },
     "orchestrator\\build": {
         "folders": [
+            "aios_kernel.dir",
             "archive",
             "CMakeFiles",
             "Debug",
-            "orchestrator.dir",
             "x64"
         ],
         "files": [
+            "aios_kernel.vcxproj",
+            "aios_kernel.vcxproj.filters",
             "AIOS_Orchestrator.sln",
             "ALL_BUILD.vcxproj",
             "ALL_BUILD.vcxproj.filters",
             "CMakeCache.txt",
             "cmake_install.cmake",
-            "orchestrator.vcxproj",
-            "orchestrator.vcxproj.filters",
             "ZERO_CHECK.vcxproj",
             "ZERO_CHECK.vcxproj.filters"
+        ]
+    },
+    "orchestrator\\build\\aios_kernel.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "orchestrator\\build\\aios_kernel.dir\\Debug": {
+        "folders": [
+            "aios_kernel.tlog"
+        ],
+        "files": [
+            "aios_kernel.exe.recipe",
+            "aios_kernel.ilk",
+            "AtomicHolographyUnit.obj",
+            "CenterGeometryField.obj",
+            "FractalSyncBus.obj",
+            "HealthMonitor.obj",
+            "IPCManager.obj",
+            "main.obj",
+            "PluginLoader.obj",
+            "SingularityCore.obj",
+            "SphereShellManager.obj",
+            "SubspaceProjector.obj",
+            "vc143.pdb"
+        ]
+    },
+    "orchestrator\\build\\aios_kernel.dir\\Debug\\aios_kernel.tlog": {
+        "folders": [],
+        "files": [
+            "aios_kernel.lastbuildstate",
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog"
         ]
     },
     "orchestrator\\build\\archive": {
         "folders": [],
         "files": [
-            "diagnostics_0.json",
-            "diagnostics_1.json",
             "kernel.log_0.log",
             "kernel.log_1.log",
             "kernel.log_2.log",
-            "kernel.log_3.log",
-            "kernel_0.log",
-            "kernel_1.log"
+            "kernel.log_3.log"
         ]
     },
     "orchestrator\\build\\CMakeFiles": {
@@ -388,51 +430,8 @@
     "orchestrator\\build\\Debug": {
         "folders": [],
         "files": [
-            "orchestrator.exe",
-            "orchestrator.pdb"
-        ]
-    },
-    "orchestrator\\build\\orchestrator.dir": {
-        "folders": [
-            "Debug"
-        ],
-        "files": []
-    },
-    "orchestrator\\build\\orchestrator.dir\\Debug": {
-        "folders": [
-            "orchestrator.tlog"
-        ],
-        "files": [
-            "AtomicHolographyUnit.obj",
-            "CenterGeometryField.obj",
-            "FractalSyncBus.obj",
-            "HealthMonitor.obj",
-            "IPCManager.obj",
-            "main.obj",
-            "orchestrator.exe.recipe",
-            "orchestrator.ilk",
-            "PluginLoader.obj",
-            "SingularityCore.obj",
-            "SphereShellManager.obj",
-            "SubspaceProjector.obj",
-            "vc143.pdb"
-        ]
-    },
-    "orchestrator\\build\\orchestrator.dir\\Debug\\orchestrator.tlog": {
-        "folders": [],
-        "files": [
-            "CL.command.1.tlog",
-            "Cl.items.tlog",
-            "CL.read.1.tlog",
-            "CL.write.1.tlog",
-            "CustomBuild.command.1.tlog",
-            "CustomBuild.read.1.tlog",
-            "CustomBuild.write.1.tlog",
-            "link.command.1.tlog",
-            "link.read.1.tlog",
-            "link.secondary.1.tlog",
-            "link.write.1.tlog",
-            "orchestrator.lastbuildstate"
+            "aios_kernel.exe",
+            "aios_kernel.pdb"
         ]
     },
     "orchestrator\\build\\x64": {
@@ -497,6 +496,7 @@
             "IPCManager.h",
             "IPCManager.hpp",
             "IPluginLoader.h",
+            "IService.h",
             "PluginLoader.h",
             "SingularityCore.hpp",
             "SphereShellManager.hpp",
