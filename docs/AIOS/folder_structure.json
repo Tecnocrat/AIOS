@@ -2,6 +2,7 @@
     "": {
         "folders": [
             ".git",
+            ".vscode",
             "director",
             "docs",
             "orchestrator",
@@ -9,8 +10,14 @@
         ],
         "files": [
             ".gitignore",
-            "generate_folder_structure.py",
+            "aios_admin.py",
             "README.md"
+        ]
+    },
+    ".vscode": {
+        "folders": [],
+        "files": [
+            "settings.json"
         ]
     },
     "director": {
@@ -148,10 +155,12 @@
             "AIOS",
             "Architect",
             "chatgpt",
+            "summary",
             "tachyonic"
         ],
         "files": [
             "cmake-buildsystem.md",
+            "module_index.json",
             "path.md",
             "requirements.md"
         ]
@@ -174,10 +183,18 @@
             "folder_structure.json"
         ]
     },
+    "docs\\summary": {
+        "folders": [],
+        "files": [
+            "module_summaries.md",
+            "module_summaries_input.txt"
+        ]
+    },
     "docs\\tachyonic": {
         "folders": [],
         "files": [
-            "path_20250619_221329.md"
+            "path_20250619_221329.md",
+            "path_20250619_235019.md"
         ]
     },
     "orchestrator": {
