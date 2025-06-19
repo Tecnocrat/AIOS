@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+
 /*
  * IIPCManager: Interface for Inter-Process Communication management.
  * The IPC Manager is the hypersphere’s membrane—projecting and receiving signals

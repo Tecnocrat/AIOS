@@ -1,7 +1,11 @@
 #include "Logger.hpp"
 #include "SingularityCore.hpp"
+#include "IPCManager.h"
+#include "HealthMonitor.h"
+#include "PluginLoader.h"
 #include <fstream>
 #include <nlohmann/json.hpp>
+#include <iostream>
 
 int main() {
     Logger logger; // Will auto-create kernel_N.log in ../archive/
@@ -26,5 +30,32 @@ int main() {
     meta_out.close();
 
     logger.info("Orchestrator finished");
+
+    std::cout << "[Kernel] Starting AIOS Kernel Core..." << std::endl;
+
+    // Initialize IPC Manager
+    IPCManager ipcManager;
+    ipcManager.initialize();
+
+    // Initialize Health Monitor
+    HealthMonitor healthMonitor;
+    healthMonitor.initialize();
+    healthMonitor.run();
+    std::cout << "[Kernel] Health Status: " << healthMonitor.getStatus() << std::endl;
+
+    // Initialize Plugin Loader
+    PluginLoader pluginLoader;
+    pluginLoader.loadPlugins("./plugins"); // TODO: Make path configurable
+
+    // TODO: Add static analysis hooks here (e.g., memory checks, thread sanitizer)
+    // TODO: Integrate Logger for diagnostics and event tracing
+
+    // Example IPC usage
+    ipcManager.sendMessage("core", "Kernel boot complete");
+    std::string msg = ipcManager.receiveMessage("core");
+    std::cout << "[Kernel] IPC Received: " << msg << std::endl;
+
+    // TODO: Main event loop and graceful shutdown logic
+
     return 0;
 }

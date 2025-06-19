@@ -1,4 +1,5 @@
-#include "IPluginLoader.h"
+#include <vector>
+#include "PluginLoader.h"
 #include <iostream>
 
 /*
@@ -8,20 +9,11 @@
  * // TODO (Copilot): Implement dynamic library loading and plugin registry.
  */
 
-class PluginLoader : public IPluginLoader {
-public:
-    void initialize() override {
-        std::cout << "[PluginLoader] Initialized." << std::endl;
-    }
+void PluginLoader::loadPlugins(const std::string& directory) {
+    std::cout << "[PluginLoader] Loading plugins from: " << directory << std::endl;
+    // TODO: Implement dynamic plugin loading
+}
 
-    bool loadPlugin(const std::string& path) override {
-        std::cout << "[PluginLoader] Loading plugin from: " << path << std::endl;
-        // TODO: Implement actual plugin loading
-        return true;
-    }
-
-    void unloadPlugin(const std::string& name) override {
-        std::cout << "[PluginLoader] Unloading plugin: " << name << std::endl;
-        // TODO: Implement actual plugin unloading
-    }
-};
+std::vector<IService*> PluginLoader::getLoadedServices() const {
+    return services_;
+}
