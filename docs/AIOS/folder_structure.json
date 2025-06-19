@@ -191,13 +191,13 @@
             "diagnostics.json",
             "diagnostics_0.json",
             "diagnostics_1.json",
+            "diagnostics_2.json",
             "kernel.log"
         ]
     },
     "orchestrator\\build": {
         "folders": [
             "aios_kernel.dir",
-            "archive",
             "CMakeFiles",
             "Debug",
             "x64"
@@ -255,15 +255,6 @@
             "link.read.1.tlog",
             "link.secondary.1.tlog",
             "link.write.1.tlog"
-        ]
-    },
-    "orchestrator\\build\\archive": {
-        "folders": [],
-        "files": [
-            "kernel.log_0.log",
-            "kernel.log_1.log",
-            "kernel.log_2.log",
-            "kernel.log_3.log"
         ]
     },
     "orchestrator\\build\\CMakeFiles": {
@@ -431,7 +422,8 @@
         "folders": [],
         "files": [
             "aios_kernel.exe",
-            "aios_kernel.pdb"
+            "aios_kernel.pdb",
+            "kernel.log"
         ]
     },
     "orchestrator\\build\\x64": {

@@ -2,14 +2,10 @@
     "": {
         "folders": [
             ".git",
-            ".vscode",
-            "build",
-            "include",
-            "src"
+            ".vscode"
         ],
         "files": [
-            "Architect.code-workspace",
-            "build.bat"
+            "Architect.code-workspace"
         ]
     },
     ".vscode": {
@@ -18,20 +14,6 @@
             "c_cpp_properties.json",
             "launch.json",
             "settings.json"
-        ]
-    },
-    "build": {
-        "folders": [],
-        "files": []
-    },
-    "include": {
-        "folders": [],
-        "files": []
-    },
-    "src": {
-        "folders": [],
-        "files": [
-            "main.c"
         ]
     }
 }
