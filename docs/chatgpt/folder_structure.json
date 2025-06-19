@@ -9,6 +9,885 @@
             "chatgpt.py"
         ]
     },
+    ".git": {
+        "folders": [
+            "hooks",
+            "info",
+            "logs",
+            "objects",
+            "refs"
+        ],
+        "files": [
+            "COMMIT_EDITMSG",
+            "config",
+            "description",
+            "FETCH_HEAD",
+            "HEAD",
+            "index",
+            "ORIG_HEAD"
+        ]
+    },
+    ".git\\hooks": {
+        "folders": [],
+        "files": [
+            "applypatch-msg.sample",
+            "commit-msg.sample",
+            "fsmonitor-watchman.sample",
+            "post-update.sample",
+            "pre-applypatch.sample",
+            "pre-commit.sample",
+            "pre-merge-commit.sample",
+            "pre-push.sample",
+            "pre-rebase.sample",
+            "pre-receive.sample",
+            "prepare-commit-msg.sample",
+            "push-to-checkout.sample",
+            "sendemail-validate.sample",
+            "update.sample"
+        ]
+    },
+    ".git\\info": {
+        "folders": [],
+        "files": [
+            "exclude"
+        ]
+    },
+    ".git\\logs": {
+        "folders": [
+            "refs"
+        ],
+        "files": [
+            "HEAD"
+        ]
+    },
+    ".git\\logs\\refs": {
+        "folders": [
+            "heads",
+            "remotes"
+        ],
+        "files": []
+    },
+    ".git\\logs\\refs\\heads": {
+        "folders": [],
+        "files": [
+            "ark",
+            "master"
+        ]
+    },
+    ".git\\logs\\refs\\remotes": {
+        "folders": [
+            "origin"
+        ],
+        "files": []
+    },
+    ".git\\logs\\refs\\remotes\\origin": {
+        "folders": [],
+        "files": [
+            "ark",
+            "HEAD",
+            "master"
+        ]
+    },
+    ".git\\objects": {
+        "folders": [
+            "01",
+            "02",
+            "03",
+            "06",
+            "12",
+            "16",
+            "1a",
+            "1b",
+            "1e",
+            "1f",
+            "21",
+            "23",
+            "26",
+            "27",
+            "29",
+            "2b",
+            "30",
+            "31",
+            "38",
+            "39",
+            "3f",
+            "42",
+            "43",
+            "44",
+            "48",
+            "4a",
+            "4b",
+            "4f",
+            "55",
+            "56",
+            "5b",
+            "5c",
+            "61",
+            "62",
+            "63",
+            "67",
+            "68",
+            "6b",
+            "6c",
+            "6e",
+            "73",
+            "75",
+            "77",
+            "78",
+            "79",
+            "7a",
+            "7c",
+            "7f",
+            "82",
+            "83",
+            "85",
+            "8b",
+            "8c",
+            "8d",
+            "8f",
+            "92",
+            "98",
+            "99",
+            "9a",
+            "9b",
+            "9c",
+            "9e",
+            "a6",
+            "a7",
+            "a8",
+            "ad",
+            "b2",
+            "b5",
+            "b7",
+            "b9",
+            "bc",
+            "bd",
+            "bf",
+            "c0",
+            "c3",
+            "c5",
+            "ca",
+            "cb",
+            "d0",
+            "d3",
+            "d4",
+            "d5",
+            "d6",
+            "d9",
+            "db",
+            "dc",
+            "e0",
+            "e3",
+            "e4",
+            "e5",
+            "e6",
+            "e8",
+            "e9",
+            "eb",
+            "ec",
+            "ee",
+            "f1",
+            "f2",
+            "f3",
+            "f4",
+            "f5",
+            "f7",
+            "fa",
+            "fb",
+            "info",
+            "pack"
+        ],
+        "files": []
+    },
+    ".git\\objects\\01": {
+        "folders": [],
+        "files": [
+            "2fc5cd617561857067b281f2a856da764e6878"
+        ]
+    },
+    ".git\\objects\\02": {
+        "folders": [],
+        "files": [
+            "37e109fc0c2b970faf52bb863f668c7ec96d7b",
+            "7ac4e0d5ec2d7afcbea452a558f1a03f3d1c62",
+            "c902213c8218c858b216af612a685dceba2adc"
+        ]
+    },
+    ".git\\objects\\03": {
+        "folders": [],
+        "files": [
+            "0885375617cb866d98c7ce19488af06b604c4b"
+        ]
+    },
+    ".git\\objects\\06": {
+        "folders": [],
+        "files": [
+            "3ec0c2af581435d7cdf0cd51944b2e5971980f"
+        ]
+    },
+    ".git\\objects\\12": {
+        "folders": [],
+        "files": [
+            "7d2d00a6a2444251acf810e7b3ce1a9d47f7f7"
+        ]
+    },
+    ".git\\objects\\16": {
+        "folders": [],
+        "files": [
+            "2abb9367c737e0297338f786c7167369dff869"
+        ]
+    },
+    ".git\\objects\\1a": {
+        "folders": [],
+        "files": [
+            "39a73b5feace7f9576c426d703d4203520b049",
+            "98c2bc91b065eea95f43bf8fa0170fae2026c7"
+        ]
+    },
+    ".git\\objects\\1b": {
+        "folders": [],
+        "files": [
+            "09e0e3351c8662d12443051bdbbd8678ae3e1b",
+            "fec5a6cc30679b35d505baa3edd42812691242"
+        ]
+    },
+    ".git\\objects\\1e": {
+        "folders": [],
+        "files": [
+            "1a85e2c134c6eae39d2dd5402d1360cd3a03b0"
+        ]
+    },
+    ".git\\objects\\1f": {
+        "folders": [],
+        "files": [
+            "a84c4bf30e94402470b764cf262f2e24fddc1e"
+        ]
+    },
+    ".git\\objects\\21": {
+        "folders": [],
+        "files": [
+            "c29216bd6eefb2f22bfe68d90c34ddae766aa9"
+        ]
+    },
+    ".git\\objects\\23": {
+        "folders": [],
+        "files": [
+            "3ff6b34d8a86ba136e8d9d031cd78db7ba9fbf",
+            "78d79283cfba6bbb4114fe8f5acc83ffb6d30a",
+            "d9eeab01a5038896d9b2d256fd22f68995ad1c"
+        ]
+    },
+    ".git\\objects\\26": {
+        "folders": [],
+        "files": [
+            "063d950dacdee6ea4ddd191155c7c287b852eb",
+            "e334830fde544dab322ff8ab7159a8da6d3e55"
+        ]
+    },
+    ".git\\objects\\27": {
+        "folders": [],
+        "files": [
+            "19c9d0f277e7596a2723bc9cc3e0cc1e561252"
+        ]
+    },
+    ".git\\objects\\29": {
+        "folders": [],
+        "files": [
+            "3e219611372906dbb89e7e6e123504c07cb317"
+        ]
+    },
+    ".git\\objects\\2b": {
+        "folders": [],
+        "files": [
+            "18f7b8780e4e6c79f1139b3ac15a1db27a0884",
+            "4a84ebb0d811d838d518e16ea7f0d94af69148"
+        ]
+    },
+    ".git\\objects\\30": {
+        "folders": [],
+        "files": [
+            "5de502b6a3cc738cbb52f7a89b4c5e6ad69dd5"
+        ]
+    },
+    ".git\\objects\\31": {
+        "folders": [],
+        "files": [
+            "8128256d57cbf94c25939cf6194e715dd9d9da"
+        ]
+    },
+    ".git\\objects\\38": {
+        "folders": [],
+        "files": [
+            "86c1cc0ee1d59d5f94b08c3a8c094f9a267397"
+        ]
+    },
+    ".git\\objects\\39": {
+        "folders": [],
+        "files": [
+            "8c7b19cff401860c1bded608ccdd7a56c345d0"
+        ]
+    },
+    ".git\\objects\\3f": {
+        "folders": [],
+        "files": [
+            "19ab2c3a542fd1d639783019ed462704f4eab1",
+            "58924f5f64553791a4d19fd3ca492eae13d05c"
+        ]
+    },
+    ".git\\objects\\42": {
+        "folders": [],
+        "files": [
+            "408c080f11e80791fe7169f9c6cf8bd683b9c9"
+        ]
+    },
+    ".git\\objects\\43": {
+        "folders": [],
+        "files": [
+            "1c79216c035b8fa57ef5a9cc6b09bcb7792da0"
+        ]
+    },
+    ".git\\objects\\44": {
+        "folders": [],
+        "files": [
+            "1e336ac0511742e07baca2d4cd09f296c1267a",
+            "f7932aaed5f866b360cf4f5efe31259b85f32d"
+        ]
+    },
+    ".git\\objects\\48": {
+        "folders": [],
+        "files": [
+            "81a055b68581201e04736be18f37a339da1095"
+        ]
+    },
+    ".git\\objects\\4a": {
+        "folders": [],
+        "files": [
+            "a15063aa6bb64eab07709118f9ed1a4431f786"
+        ]
+    },
+    ".git\\objects\\4b": {
+        "folders": [],
+        "files": [
+            "2ee47ccc8712e1415b246df4437ca21b8055e5"
+        ]
+    },
+    ".git\\objects\\4f": {
+        "folders": [],
+        "files": [
+            "e2dc60da0591cf4c18cad1a611bf8b6fbc60a8"
+        ]
+    },
+    ".git\\objects\\55": {
+        "folders": [],
+        "files": [
+            "cddf9f078d0bf68e3a5c37fa238a6088036833"
+        ]
+    },
+    ".git\\objects\\56": {
+        "folders": [],
+        "files": [
+            "d4be90cc1163e39de1fa58febdfbb736434280"
+        ]
+    },
+    ".git\\objects\\5b": {
+        "folders": [],
+        "files": [
+            "ebeb11730ce46630d2b1e700297388ab56c904"
+        ]
+    },
+    ".git\\objects\\5c": {
+        "folders": [],
+        "files": [
+            "1ac369e79496853e236619867fbfa4c1389e2f"
+        ]
+    },
+    ".git\\objects\\61": {
+        "folders": [],
+        "files": [
+            "82d74655b2847a773a9dcac45e4c2ccda3c559"
+        ]
+    },
+    ".git\\objects\\62": {
+        "folders": [],
+        "files": [
+            "6f4c4e6b178f4e17b7d71c3ce9684cb9909794"
+        ]
+    },
+    ".git\\objects\\63": {
+        "folders": [],
+        "files": [
+            "5472aa4fa9111d65b17c8450787518c150a68f"
+        ]
+    },
+    ".git\\objects\\67": {
+        "folders": [],
+        "files": [
+            "98b5b21ca499f9aa75f3a3d2f70a5dc0703f16"
+        ]
+    },
+    ".git\\objects\\68": {
+        "folders": [],
+        "files": [
+            "54ac4417165d9c93a61ee8144002fe7a38e490",
+            "bb5ec1abb3a34b6166c6fb7944a3753949d6f0"
+        ]
+    },
+    ".git\\objects\\6b": {
+        "folders": [],
+        "files": [
+            "8ed026d380e5d77a6f220fcb71b98e4ed53141"
+        ]
+    },
+    ".git\\objects\\6c": {
+        "folders": [],
+        "files": [
+            "cf863020c6861f546b88bfd233240c78d54221"
+        ]
+    },
+    ".git\\objects\\6e": {
+        "folders": [],
+        "files": [
+            "7ad7201b4318e87f8253c54d6b92a5ce1053bb"
+        ]
+    },
+    ".git\\objects\\73": {
+        "folders": [],
+        "files": [
+            "088d0f077736b3121ba631e553eb28fdd9a3bf",
+            "ed6b5ec0de7306523d95beae7f788f7e45ec60"
+        ]
+    },
+    ".git\\objects\\75": {
+        "folders": [],
+        "files": [
+            "6a79cc865c6d318aa169b4f1611f00d8ca3f46"
+        ]
+    },
+    ".git\\objects\\77": {
+        "folders": [],
+        "files": [
+            "47cb3192f571bce430f3befb19bad7f748acfc"
+        ]
+    },
+    ".git\\objects\\78": {
+        "folders": [],
+        "files": [
+            "5ee767df7274c37748a6c5d4f07e0c3b06374e"
+        ]
+    },
+    ".git\\objects\\79": {
+        "folders": [],
+        "files": [
+            "47fc73ce9485fe86fd7f2b703b9ff93d93065b"
+        ]
+    },
+    ".git\\objects\\7a": {
+        "folders": [],
+        "files": [
+            "7e22272aec68fd36435e535eea76a251191536"
+        ]
+    },
+    ".git\\objects\\7c": {
+        "folders": [],
+        "files": [
+            "4b662d02183605d3f3a4bc5bbef95941a5338a"
+        ]
+    },
+    ".git\\objects\\7f": {
+        "folders": [],
+        "files": [
+            "e569b7d182a733f665a04e0da591d4f81dbc41"
+        ]
+    },
+    ".git\\objects\\82": {
+        "folders": [],
+        "files": [
+            "d21bfb679e23409da2567aadb991e9193216f6"
+        ]
+    },
+    ".git\\objects\\83": {
+        "folders": [],
+        "files": [
+            "c070b0430738cc077a9a3d22763888bb7f07d5"
+        ]
+    },
+    ".git\\objects\\85": {
+        "folders": [],
+        "files": [
+            "33531a2f26a47e9d776e0eb03550ceb75bd65a"
+        ]
+    },
+    ".git\\objects\\8b": {
+        "folders": [],
+        "files": [
+            "a6e68053fe1ab89836727749fde1713d17c870"
+        ]
+    },
+    ".git\\objects\\8c": {
+        "folders": [],
+        "files": [
+            "059759436cb022b6ebb333be2d1fddfce26167"
+        ]
+    },
+    ".git\\objects\\8d": {
+        "folders": [],
+        "files": [
+            "6a2ae25aa9b1b34dcde3d6512fae60f69c9408",
+            "84721eab8e00acdba7a9d25a413bb039087942",
+            "dc4e87c8a0fb8bd1a5fd3b8801a91c57f5a903"
+        ]
+    },
+    ".git\\objects\\8f": {
+        "folders": [],
+        "files": [
+            "149175740a3f882610e2a6fe9681969740f8f6",
+            "7434a884cc6be4ef760b3dbce3eb9570c98df0"
+        ]
+    },
+    ".git\\objects\\92": {
+        "folders": [],
+        "files": [
+            "09125554f2bf9e03058832692a64dd8f623584"
+        ]
+    },
+    ".git\\objects\\98": {
+        "folders": [],
+        "files": [
+            "5b97094cb5139289c4eff50b6e776c91b9fc31"
+        ]
+    },
+    ".git\\objects\\99": {
+        "folders": [],
+        "files": [
+            "017f24e6eb8de42aeb4251543c1271551f940a"
+        ]
+    },
+    ".git\\objects\\9a": {
+        "folders": [],
+        "files": [
+            "bdc0248675327ef9bf2274ff7ea8de1a2f6471"
+        ]
+    },
+    ".git\\objects\\9b": {
+        "folders": [],
+        "files": [
+            "c67c82e2b383f0a00226b398db1fcafee274d1"
+        ]
+    },
+    ".git\\objects\\9c": {
+        "folders": [],
+        "files": [
+            "1b43e6ab1525c15020dae092dfc04bcf76abf5",
+            "68dc488ee0ca141b32f5f0018504ee1ebfae4a"
+        ]
+    },
+    ".git\\objects\\9e": {
+        "folders": [],
+        "files": [
+            "e90b8cdd69576d3d8dc6a4e272547716152302"
+        ]
+    },
+    ".git\\objects\\a6": {
+        "folders": [],
+        "files": [
+            "bd472e39f92eb85324f8589265d59404600b85",
+            "da0fd50066e1a4797bd20050ac24522ca6ff7c"
+        ]
+    },
+    ".git\\objects\\a7": {
+        "folders": [],
+        "files": [
+            "0106acb2a696b1efafe4fcaeda64d79905ad2c"
+        ]
+    },
+    ".git\\objects\\a8": {
+        "folders": [],
+        "files": [
+            "1b9ce137268d4fd07c9e1d74bc5fe0c33b9a36"
+        ]
+    },
+    ".git\\objects\\ad": {
+        "folders": [],
+        "files": [
+            "29d9cf709bbc57255147b17787da9b1f1aed24",
+            "313ba11cd744995085db5acf661f9891263c56"
+        ]
+    },
+    ".git\\objects\\b2": {
+        "folders": [],
+        "files": [
+            "5f82f91b2cd249a68f23ba72b0920eab08fd95"
+        ]
+    },
+    ".git\\objects\\b5": {
+        "folders": [],
+        "files": [
+            "9e36c5ff2acb0fce5e105dfc65c743ef579948"
+        ]
+    },
+    ".git\\objects\\b7": {
+        "folders": [],
+        "files": [
+            "103a560ea2f21409455c9af3a641cdc7396bea"
+        ]
+    },
+    ".git\\objects\\b9": {
+        "folders": [],
+        "files": [
+            "e1d588df67ec6c0b9ea4fc39ecf2b5c7d26d4d"
+        ]
+    },
+    ".git\\objects\\bc": {
+        "folders": [],
+        "files": [
+            "e778d3dd4ffb8ff8f04ed3b022fd98c0a5dfd7",
+            "f99a77ecc993ccdb82ae5c467afdeda88dda5f"
+        ]
+    },
+    ".git\\objects\\bd": {
+        "folders": [],
+        "files": [
+            "b0ca456623ab30f08c32c5b751da5666cbbd4e"
+        ]
+    },
+    ".git\\objects\\bf": {
+        "folders": [],
+        "files": [
+            "efe1a065a7214b858ba568ab87b3c3830f59ee"
+        ]
+    },
+    ".git\\objects\\c0": {
+        "folders": [],
+        "files": [
+            "0b131a4b24447d76493a8993596fee59bf8f4b"
+        ]
+    },
+    ".git\\objects\\c3": {
+        "folders": [],
+        "files": [
+            "4bb455d724596ebcb4083cec5d94a376a53313"
+        ]
+    },
+    ".git\\objects\\c5": {
+        "folders": [],
+        "files": [
+            "56cbf1409632e9960462c6eababcc029381b07"
+        ]
+    },
+    ".git\\objects\\ca": {
+        "folders": [],
+        "files": [
+            "d4ca59288f0d4e3598c8e2c27db0f802d2beab",
+            "d9c20e6c1a4ed572fd56502f15fc755682a46f",
+            "fe5bb96aa2cf0ef4f4d7a290c129fdf4ee94c8"
+        ]
+    },
+    ".git\\objects\\cb": {
+        "folders": [],
+        "files": [
+            "b2dfaca8ccefcb3b7021c6d83789911adc96b9"
+        ]
+    },
+    ".git\\objects\\d0": {
+        "folders": [],
+        "files": [
+            "2a0b135df525c839e8f757ceaffda3fc9b3d12"
+        ]
+    },
+    ".git\\objects\\d3": {
+        "folders": [],
+        "files": [
+            "c22fc9465b3dbcce50e89015c3627dbe43d050"
+        ]
+    },
+    ".git\\objects\\d4": {
+        "folders": [],
+        "files": [
+            "fa67239d6cbe6f792ff24abb6cb12cc5ed2eb9"
+        ]
+    },
+    ".git\\objects\\d5": {
+        "folders": [],
+        "files": [
+            "0d0a34c55545ac5afbd9d1cf6fc0c88d298e02"
+        ]
+    },
+    ".git\\objects\\d6": {
+        "folders": [],
+        "files": [
+            "67ed66f170a66b9398174aff5eb02fa32ffbf0",
+            "f2e2049b537cb25e4bc0bc84658edf52d5028a"
+        ]
+    },
+    ".git\\objects\\d9": {
+        "folders": [],
+        "files": [
+            "a8fd7fe3e54bed6f4cc7b0162dd2e6ef74e241"
+        ]
+    },
+    ".git\\objects\\db": {
+        "folders": [],
+        "files": [
+            "d88029efb3fde371d8607d02e32daa20711eb1"
+        ]
+    },
+    ".git\\objects\\dc": {
+        "folders": [],
+        "files": [
+            "33960a4618ce2087ab92468285199e8d6d35e1"
+        ]
+    },
+    ".git\\objects\\e0": {
+        "folders": [],
+        "files": [
+            "811e374c5c4aa1363cfa77e638b1c6568a5051"
+        ]
+    },
+    ".git\\objects\\e3": {
+        "folders": [],
+        "files": [
+            "4d9b73eb028051a2821cd3969671dcc83bd19a"
+        ]
+    },
+    ".git\\objects\\e4": {
+        "folders": [],
+        "files": [
+            "270ed1e2c76436a3ba77ddb7e73a9293e0b362"
+        ]
+    },
+    ".git\\objects\\e5": {
+        "folders": [],
+        "files": [
+            "952e7f2156b841c2b5c135f1bd05b03a852c3f"
+        ]
+    },
+    ".git\\objects\\e6": {
+        "folders": [],
+        "files": [
+            "7ad429a443fe6da6864def5b4d23c89f8a7c58",
+            "7ed2366229166c62544c4c7783ed5719f8cb1f",
+            "9de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        ]
+    },
+    ".git\\objects\\e8": {
+        "folders": [],
+        "files": [
+            "185d06fe001e8bf5b5f6bdff57eb26f3cd28d0"
+        ]
+    },
+    ".git\\objects\\e9": {
+        "folders": [],
+        "files": [
+            "be4c9d73600d210a2b6cc6af04b6990a20d81e"
+        ]
+    },
+    ".git\\objects\\eb": {
+        "folders": [],
+        "files": [
+            "d62edc9612acd4812010a788bff50205132ca4"
+        ]
+    },
+    ".git\\objects\\ec": {
+        "folders": [],
+        "files": [
+            "9f1ce58d4a9259fb8dee0690c922f9846a3507"
+        ]
+    },
+    ".git\\objects\\ee": {
+        "folders": [],
+        "files": [
+            "4d4f41f2af490d21cca0a4bad92c2b808bdd21"
+        ]
+    },
+    ".git\\objects\\f1": {
+        "folders": [],
+        "files": [
+            "5fa31b3b749588395f4431e384d1b3f2ae45ee"
+        ]
+    },
+    ".git\\objects\\f2": {
+        "folders": [],
+        "files": [
+            "5f8c7b7ca7180d597ac47ae5bc9faed4f7e82e"
+        ]
+    },
+    ".git\\objects\\f3": {
+        "folders": [],
+        "files": [
+            "3e6d36b9be3a6d2ce78d1ce5ed416d2cdc0204"
+        ]
+    },
+    ".git\\objects\\f4": {
+        "folders": [],
+        "files": [
+            "9189a7b12fb8b9d42f9a388329ecdef12d0bd2"
+        ]
+    },
+    ".git\\objects\\f5": {
+        "folders": [],
+        "files": [
+            "693400368f8c87638574c1b448f3fb8c128e97"
+        ]
+    },
+    ".git\\objects\\f7": {
+        "folders": [],
+        "files": [
+            "008051cd50bbf2afdcc5a13d87fa64a37ce194"
+        ]
+    },
+    ".git\\objects\\fa": {
+        "folders": [],
+        "files": [
+            "82652108fe7b70f501a9673b8632621187154d"
+        ]
+    },
+    ".git\\objects\\fb": {
+        "folders": [],
+        "files": [
+            "7b7bc70cefedae4c4630167564660cdb549f2a"
+        ]
+    },
+    ".git\\objects\\info": {
+        "folders": [],
+        "files": []
+    },
+    ".git\\objects\\pack": {
+        "folders": [],
+        "files": []
+    },
+    ".git\\refs": {
+        "folders": [
+            "heads",
+            "remotes",
+            "tags"
+        ],
+        "files": []
+    },
+    ".git\\refs\\heads": {
+        "folders": [],
+        "files": [
+            "ark",
+            "master"
+        ]
+    },
+    ".git\\refs\\remotes": {
+        "folders": [
+            "origin"
+        ],
+        "files": []
+    },
+    ".git\\refs\\remotes\\origin": {
+        "folders": [],
+        "files": [
+            "ark",
+            "HEAD",
+            "master"
+        ]
+    },
+    ".git\\refs\\tags": {
+        "folders": [],
+        "files": []
+    },
     "ingestion": {
         "folders": [
             "archive"

@@ -35,6 +35,8 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 - **Meta-Data Management:**  
   - The `Logger` class (see [`src/Logger.hpp`](orchestrator/src/Logger.hpp)) ensures all logs are timestamped, sequential, and AI-ingestion ready.
   - Diagnostics files are written at both the start and end of each run, capturing the system's state transitions.
+- **Module Indexing:**  
+  - The project now includes an auto-generated [`docs/module_index.json`](docs/module_index.json) that maps all modules by path and language for both human and AI reference.
 
 ---
 
@@ -138,6 +140,8 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 - **Archive Directory:**
   - All logs and diagnostics are stored in `orchestrator/archive/`.
   - No files are overwritten; every run is preserved for future analysis and AI-driven refactoring.
+- **Module Index:**
+  - [`docs/module_index.json`](docs/module_index.json) provides a machine- and human-readable mapping of all modules, their paths, and languages, supporting future automation and AI-driven documentation.
 
 ---
 
@@ -158,11 +162,13 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 3. **Interactive CLI UI allows runtime inspection of diagnostics, log paths, and health status.**
 4. **All code, logs, and diagnostics are designed for both human and AI readability and ingestion.**
 5. **All major changes, conversations, and iterations are archived in Markdown for recursive context.**
+6. **Module index is auto-generated for future automation and AI-driven documentation.**
 
 ---
 
 ## Next Steps & Future Vision
 
+- **Proceed with auto-generating natural-language summaries for each module (`docs/module_summaries.md`).**
 - **Integrate AIEngineInterface** for direct LLM orchestration and log annotation.
 - **Expand PluginLoader** for dynamic, AI-driven module loading and service orchestration.
 - **Develop LogVisualizer** for fractal, interactive log exploration in the Director UI.
