@@ -4,11 +4,17 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
+#include <filesystem>
 
 class Logger {
 public:
-    Logger(const std::string& filename = "kernel.log")
-        : log_file(filename, std::ios::app) {}
+    Logger(const std::string& base = "kernel", const std::string& ext = ".log", const std::string& dir = "../archive/") {
+        std::filesystem::create_directories(dir);
+        int idx = get_next_index(base, ext, dir);
+        std::ostringstream fname;
+        fname << dir << base << "_" << idx << ext;
+        log_file.open(fname.str(), std::ios::app);
+    }
 
     ~Logger() { if (log_file.is_open()) log_file.close(); }
 
@@ -17,6 +23,15 @@ public:
     void error(const std::string& msg)   { write("ERROR", msg); }
     void meta(const std::string& key, const std::string& value) {
         write("META", key + ": " + value);
+    }
+
+    // Utility for diagnostics file naming
+    static std::string next_diag_filename(const std::string& base = "diagnostics", const std::string& ext = ".json", const std::string& dir = "../archive/") {
+        std::filesystem::create_directories(dir);
+        int idx = get_next_index(base, ext, dir);
+        std::ostringstream fname;
+        fname << dir << base << "_" << idx << ext;
+        return fname.str();
     }
 
 private:
@@ -36,6 +51,21 @@ private:
             log_file << "[" << buf << "][" << level << "] " << msg << std::endl;
         }
     }
-};
 
-Logger logger("C:/dev/AIOS/orchestrator/archive/kernel.log");
+    static int get_next_index(const std::string& base, const std::string& ext, const std::string& dir) {
+        namespace fs = std::filesystem;
+        int max_idx = -1;
+        for (const auto& entry : fs::directory_iterator(dir)) {
+            std::string fname = entry.path().filename().string();
+            if (fname.find(base) == 0 && fname.find(ext) != std::string::npos) {
+                size_t start = base.size() + 1;
+                size_t end = fname.find(ext);
+                try {
+                    int idx = std::stoi(fname.substr(start, end - start));
+                    if (idx > max_idx) max_idx = idx;
+                } catch (...) {}
+            }
+        }
+        return max_idx + 1;
+    }
+};
