@@ -1,0 +1,21 @@
+# Ignore all build artifacts
+/orchestrator/build/
+/director/DirectorAPI/bin/
+/director/DirectorAPI/obj/
+/director/build/
+/chatgpt/build/
+
+# Ignore VSCode settings (optional, if you don't want to sync them)
+.vscode/
+
+# Ignore Python virtual environments
+venv/
+.env/
+
+# Ignore OS and editor junk files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and archives
+*.log
+/archive/
