@@ -8,7 +8,8 @@
 #include <iostream>
 
 int main() {
-    Logger logger; // Will auto-create kernel_N.log in ../archive/
+    // Always use the next available log file
+    Logger logger(Logger::next_diag_filename("kernel", ".log", "../archive/"));
 
     logger.info("Orchestrator started");
 
@@ -25,7 +26,8 @@ int main() {
     meta["entropy"] = core.getEntropy();
     meta["curvature_at_center"] = core.getCurvatureAtCenter();
 
-    std::ofstream meta_out(Logger::next_diag_filename());
+    // Always use the next available diagnostics file
+    std::ofstream meta_out(Logger::next_diag_filename("diagnostics", ".json", "../archive/"));
     meta_out << meta.dump(4);
     meta_out.close();
 
