@@ -29,14 +29,16 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 - **Roadmap & Progress Tracking:**  
   - [`docs/path.md`](docs/path.md): The canonical roadmap, with stepwise progress and task tracking.
   - Conversational archives: [`md/vscopilot.md`](md/vscopilot.md), [`md/ark/*.md`](md/ark/) — all VSCode Copilot, ChatGPT, and Gemini conversations are archived for recursive context.
-- **Automated Archival:**  
+- **Automated Archival & Meta-Extraction:**  
   - Every kernel run generates a new, uniquely numbered log (`kernel_N.log`) and diagnostics file (`diagnostics_N.json`) in `orchestrator/archive/`.
   - No files are overwritten; all iterations are preserved for future AI ingestion and meta-analysis.
+  - The `aios_admin.py` tool automates folder structure extraction, tachyonic meta-backups, and module summary generation.
 - **Meta-Data Management:**  
   - The `Logger` class (see [`src/Logger.hpp`](orchestrator/src/Logger.hpp)) ensures all logs are timestamped, sequential, and AI-ingestion ready.
   - Diagnostics files are written at both the start and end of each run, capturing the system's state transitions.
-- **Module Indexing:**  
-  - The project now includes an auto-generated [`docs/module_index.json`](docs/module_index.json) that maps all modules by path and language for both human and AI reference.
+- **Module Indexing & Summaries:**  
+  - The project includes an auto-generated [`docs/module_index.json`](docs/module_index.json) mapping all modules by path and language.
+  - Human/AI-readable module summaries are maintained in [`docs/summary/module_summaries.md`](docs/summary/module_summaries.md) and sourced from [`docs/summary/module_summaries_input.txt`](docs/summary/module_summaries_input.txt).
 
 ---
 
@@ -75,56 +77,12 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 
 - **main.py:**  
   Python glue logic for AI-driven ingestion and orchestration.
+- **aios_admin.py:**  
+  Meta-admin tool for recursive metadata extraction, summaries, and tachyonic logging.
 - **venv/**:  
   Python virtual environment for dependency isolation.
 - **chatgpt.py:**  
   CLI-driven ingestion and archival tool, handling markdown-to-multiformat conversion and iterative archival for all engine logs.
-
----
-
-## Class & Function Documentation
-
-### C++ Kernel Classes
-
-- **SingularityCore**
-  - `void initialize()`: Initialize all core modules.
-  - `void tick()`: Advance kernel clock and synchronize modules.
-  - `double getEntropy()`: Return current entropy state.
-  - `double getCurvatureAtCenter()`: Return curvature at system center.
-
-- **FractalSyncBus**
-  - `void initialize()`: Prepare synchronization bus.
-  - `void synchronize()`: Harmonize all registered fractal layers.
-
-- **SphereShellManager**
-  - `void bootstrap()`: Initialize shell structures.
-  - `void rotateShells()`: Update shell orientation and curvature.
-
-- **SubspaceProjector**
-  - `void configure()`: Prepare projection logic.
-  - `void project()`: Project subspace data into system space.
-
-- **AtomicHolographyUnit**
-  - `void initialize()`: Prepare quantum coherence simulation.
-  - `void update()`: Update quantum state.
-
-- **CenterGeometryField**
-  - `void initialize()`: Prepare singularity field simulation.
-  - `void simulate()`: Run field dynamics at r=0.
-
-- **IPCManager**
-  - `void initialize()`: Set up IPC channels.
-  - `void sendMessage(const std::string&, const std::string&)`: Send message to channel.
-  - `std::string receiveMessage(const std::string&)`: Receive message from channel.
-
-- **HealthMonitor**
-  - `void initialize()`: Set up health monitoring.
-  - `void run()`: Perform health checks.
-  - `std::string getStatus() const`: Get current health status.
-
-- **PluginLoader**
-  - `void loadPlugins(const std::string&)`: Load plugins from directory.
-  - `std::vector<IService*> getLoadedServices() const`: Get loaded plugin services.
 
 ---
 
@@ -140,8 +98,9 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 - **Archive Directory:**
   - All logs and diagnostics are stored in `orchestrator/archive/`.
   - No files are overwritten; every run is preserved for future analysis and AI-driven refactoring.
-- **Module Index:**
-  - [`docs/module_index.json`](docs/module_index.json) provides a machine- and human-readable mapping of all modules, their paths, and languages, supporting future automation and AI-driven documentation.
+- **Module Index & Summaries:**
+  - [`docs/module_index.json`](docs/module_index.json) provides a machine- and human-readable mapping of all modules, their paths, and languages.
+  - [`docs/summary/module_summaries.md`](docs/summary/module_summaries.md) contains concise, human/AI-readable summaries for each module.
 
 ---
 
@@ -150,7 +109,7 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 - **All conversational context, code changes, and design decisions are archived in Markdown and multi-format logs.**
 - **The system is designed for recursive ingestion:**  
   - Each iteration can be re-ingested by future AI engines, enabling resonance-cascade-aware refactoring and knowledge harmonization.
-- **Meta-data files (logs, diagnostics) are the foundation for future AI-driven orchestration, debugging, and self-improvement.**
+- **Meta-data files (logs, diagnostics, module index, summaries) are the foundation for future AI-driven orchestration, debugging, and self-improvement.**
 - **Natural-language attractor comments and TODOs in code act as prompts for LLMs and Copilot to generate, refactor, and extend the system.**
 
 ---
@@ -162,18 +121,19 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 3. **Interactive CLI UI allows runtime inspection of diagnostics, log paths, and health status.**
 4. **All code, logs, and diagnostics are designed for both human and AI readability and ingestion.**
 5. **All major changes, conversations, and iterations are archived in Markdown for recursive context.**
-6. **Module index is auto-generated for future automation and AI-driven documentation.**
+6. **Module index and summaries are auto-generated for future automation and AI-driven documentation.**
+7. **Tachyonic backups of meta files are created for every major update.**
 
 ---
 
 ## Next Steps & Future Vision
 
-- **Proceed with auto-generating natural-language summaries for each module (`docs/module_summaries.md`).**
-- **Integrate AIEngineInterface** for direct LLM orchestration and log annotation.
-- **Expand PluginLoader** for dynamic, AI-driven module loading and service orchestration.
-- **Develop LogVisualizer** for fractal, interactive log exploration in the Director UI.
-- **Automate full codebase and conversational ingestion** for continuous context harmonization.
-- **Implement advanced semantic indexing and meta-data management** for AI-driven refactoring and knowledge evolution.
+- **Continue recursive ingestion and meta-data harmonization using `aios_admin.py`.**
+- **Proceed with dependency graph and service registry automation.**
+- **Integrate Doxygen and static analysis for C++ codebase.**
+- **Expand Director Layer for orchestration and UI.**
+- **Automate full codebase and conversational ingestion for continuous context harmonization.**
+- **Implement advanced semantic indexing and meta-data management for AI-driven refactoring and knowledge evolution.**
 
 ---
 
@@ -186,4 +146,4 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 
 ---
 
-*Let this README serve as the foundation for all future iterations, AI ingestions, and meta-evolution of the AIOS
+*Let this README serve as the foundation for all future iterations, AI ingestions, and meta-evolution of the AIOS Orchestrator.*
