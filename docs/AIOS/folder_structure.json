@@ -66,6 +66,7 @@
             "DirectorAPI.exe",
             "DirectorAPI.pdb",
             "DirectorAPI.runtimeconfig.json",
+            "DirectorAPI.staticwebassets.endpoints.json",
             "Microsoft.AspNetCore.OpenApi.dll",
             "Microsoft.OpenApi.dll",
             "Swashbuckle.AspNetCore.Swagger.dll",
@@ -121,7 +122,12 @@
             "DirectorAPI.MvcApplicationPartsAssemblyInfo.cs",
             "DirectorAPI.pdb",
             "DirectorAPI.sourcelink.json",
-            "staticwebassets.build.json"
+            "rjsmcshtml.dswa.cache.json",
+            "rjsmrazor.dswa.cache.json",
+            "rpswa.dswa.cache.json",
+            "staticwebassets.build.endpoints.json",
+            "staticwebassets.build.json",
+            "staticwebassets.build.json.cache"
         ]
     },
     "director\\DirectorAPI\\obj\\Debug\\net8.0\\ref": {
@@ -138,11 +144,7 @@
     },
     "director\\DirectorAPI\\obj\\Debug\\net8.0\\staticwebassets": {
         "folders": [],
-        "files": [
-            "msbuild.build.DirectorAPI.props",
-            "msbuild.buildMultiTargeting.DirectorAPI.props",
-            "msbuild.buildTransitive.DirectorAPI.props"
-        ]
+        "files": []
     },
     "director\\DirectorAPI\\Properties": {
         "folders": [],
@@ -195,7 +197,8 @@
         "files": [
             "path_20250619_221329.md",
             "path_20250619_235019.md",
-            "path_20250619_235144.md"
+            "path_20250619_235144.md",
+            "path_20250627_232702.md"
         ]
     },
     "orchestrator": {
@@ -223,7 +226,7 @@
         "folders": [
             "aios_kernel.dir",
             "CMakeFiles",
-            "Debug",
+            "Release",
             "x64"
         ],
         "files": [
@@ -240,17 +243,16 @@
     },
     "orchestrator\\build\\aios_kernel.dir": {
         "folders": [
-            "Debug"
+            "Release"
         ],
         "files": []
     },
-    "orchestrator\\build\\aios_kernel.dir\\Debug": {
+    "orchestrator\\build\\aios_kernel.dir\\Release": {
         "folders": [
             "aios_kernel.tlog"
         ],
         "files": [
             "aios_kernel.exe.recipe",
-            "aios_kernel.ilk",
             "AtomicHolographyUnit.obj",
             "CenterGeometryField.obj",
             "FractalSyncBus.obj",
@@ -260,11 +262,10 @@
             "PluginLoader.obj",
             "SingularityCore.obj",
             "SphereShellManager.obj",
-            "SubspaceProjector.obj",
-            "vc143.pdb"
+            "SubspaceProjector.obj"
         ]
     },
-    "orchestrator\\build\\aios_kernel.dir\\Debug\\aios_kernel.tlog": {
+    "orchestrator\\build\\aios_kernel.dir\\Release\\aios_kernel.tlog": {
         "folders": [],
         "files": [
             "aios_kernel.lastbuildstate",
@@ -442,28 +443,26 @@
         "folders": [],
         "files": []
     },
-    "orchestrator\\build\\Debug": {
+    "orchestrator\\build\\Release": {
         "folders": [],
         "files": [
-            "aios_kernel.exe",
-            "aios_kernel.pdb",
-            "kernel.log"
+            "aios_kernel.exe"
         ]
     },
     "orchestrator\\build\\x64": {
         "folders": [
-            "Debug"
+            "Release"
         ],
         "files": []
     },
-    "orchestrator\\build\\x64\\Debug": {
+    "orchestrator\\build\\x64\\Release": {
         "folders": [
             "ALL_BUILD",
             "ZERO_CHECK"
         ],
         "files": []
     },
-    "orchestrator\\build\\x64\\Debug\\ALL_BUILD": {
+    "orchestrator\\build\\x64\\Release\\ALL_BUILD": {
         "folders": [
             "ALL_BUILD.tlog"
         ],
@@ -471,7 +470,7 @@
             "ALL_BUILD.recipe"
         ]
     },
-    "orchestrator\\build\\x64\\Debug\\ALL_BUILD\\ALL_BUILD.tlog": {
+    "orchestrator\\build\\x64\\Release\\ALL_BUILD\\ALL_BUILD.tlog": {
         "folders": [],
         "files": [
             "ALL_BUILD.lastbuildstate",
@@ -480,7 +479,7 @@
             "CustomBuild.write.1.tlog"
         ]
     },
-    "orchestrator\\build\\x64\\Debug\\ZERO_CHECK": {
+    "orchestrator\\build\\x64\\Release\\ZERO_CHECK": {
         "folders": [
             "ZERO_CHECK.tlog"
         ],
@@ -488,7 +487,7 @@
             "ZERO_CHECK.recipe"
         ]
     },
-    "orchestrator\\build\\x64\\Debug\\ZERO_CHECK\\ZERO_CHECK.tlog": {
+    "orchestrator\\build\\x64\\Release\\ZERO_CHECK\\ZERO_CHECK.tlog": {
         "folders": [],
         "files": [
             "CustomBuild.command.1.tlog",
@@ -546,6 +545,7 @@
             "venv"
         ],
         "files": [
+            "aios_indexer.py",
             "main.log",
             "main.py",
             "requirements.txt",
