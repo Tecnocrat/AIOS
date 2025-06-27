@@ -83,6 +83,8 @@ Every aspect of the codebase, documentation, and process flow is structured for 
   Python virtual environment for dependency isolation.
 - **chatgpt.py:**  
   CLI-driven ingestion and archival tool, handling markdown-to-multiformat conversion and iterative archival for all engine logs.
+- **SEM CLI logic:**  
+  Integration with the Service Execution Manager for command handling and orchestration.
 
 ---
 
@@ -167,6 +169,19 @@ Every aspect of the codebase, documentation, and process flow is structured for 
     - Archive outputs and meta files
     - Re-ingest into AI for harmonized feedback and further evolution
 
+---
+
+### Service Execution Manager (SEM) Integration
+
+- The Python SEM (`scripts/sem.py`) invokes the main kernel executable with a JSON command as an argument.
+- The kernel parses the command and executes the requested action, returning a JSON result.
+- No new plugin files are created; all orchestration is handled by the existing kernel and modules.
+
+| Layer         | Integration Point                | File(s) to Update                   |
+|---------------|----------------------------------|-------------------------------------|
+| Python        | SEM CLI logic                    | `scripts/sem.py`                    |
+| C++           | JSON command handler             | `orchestrator/src/PluginLoader.cpp` |
+| Documentation | Usage and protocol               | `README.md`, `docs/path.md`         |
 ---
 
 *You may now describe new modules, features, or abstractions in natural language. The system will recursively expand, document, and archive itself, ensuring perpetual harmonization and growth.*

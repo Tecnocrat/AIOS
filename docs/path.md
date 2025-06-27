@@ -172,3 +172,9 @@
 ---
 
 > **This roadmap is fractal and recursive: each iteration seeds the next, and every abstraction is preserved for future harmonization. Continue to expand, refine, and archive as the project evolves.**
+
+| Layer         | Integration Point                | File(s) to Update                   |
+|---------------|----------------------------------|-------------------------------------|
+| Python        | SEM CLI logic                    | `scripts/sem.py`                    |
+| C++           | JSON command handler             | `orchestrator/src/PluginLoader.cpp` |
+| Documentation | Usage and protocol               | `README.md`, `docs/path.md`         |
