@@ -146,4 +146,27 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 
 ---
 
-*Let this README serve as the foundation for all future iterations, AI ingestions, and meta-evolution of the AIOS Orchestrator.*
+## Recursive Orchestration & Meta-Archive Protocol
+
+- **Meta Archive Protocol:**  
+  - All meta files (`path.md`, `README.md`, `module_index.json`, `dependency_graph.dot`, `dependency_graph.svg`, `services_registry.json`, logs) are archived under `/archive/meta/YYYY-MM-DD-HHMMSS/` before each major operation.
+  - Ensures no context or meta-data is ever lost; every iteration is available for future AI/human ingestion.
+
+- **Automated Dependency Graph & Service Registry:**  
+  - `/scripts/aios_indexer.py` scans all source files for service patterns and dependencies.
+  - Outputs `docs/dependency_graph.dot`, `.svg`, and `docs/services_registry.json`.
+  - Enables recursive orchestration, self-reflection, and dynamic service mutation.
+
+- **Natural Language Expansion:**  
+  - New modules and features can be requested in natural language.
+  - The system proposes names, summaries, and stubs, auto-injects them into the registry and dependency graph, and archives all changes.
+
+- **Recursive Dev Cycle:**  
+  - After each commit or major update:
+    - Run `aios_indexer.py`
+    - Archive outputs and meta files
+    - Re-ingest into AI for harmonized feedback and further evolution
+
+---
+
+*You may now describe new modules, features, or abstractions in natural language. The system will recursively expand, document, and archive itself, ensuring perpetual harmonization and growth.*

@@ -2,7 +2,8 @@
     "": {
         "folders": [
             ".git",
-            ".vscode"
+            ".vscode",
+            "build"
         ],
         "files": [
             "Architect.code-workspace"
@@ -15,5 +16,240 @@
             "launch.json",
             "settings.json"
         ]
+    },
+    "build": {
+        "folders": [
+            ".cmake",
+            "CMakeFiles"
+        ],
+        "files": [
+            "aios_kernel.vcxproj",
+            "aios_kernel.vcxproj.filters",
+            "AIOS_Orchestrator.sln",
+            "ALL_BUILD.vcxproj",
+            "ALL_BUILD.vcxproj.filters",
+            "CMakeCache.txt",
+            "cmake_install.cmake",
+            "ZERO_CHECK.vcxproj",
+            "ZERO_CHECK.vcxproj.filters"
+        ]
+    },
+    "build\\.cmake": {
+        "folders": [
+            "api"
+        ],
+        "files": []
+    },
+    "build\\.cmake\\api": {
+        "folders": [
+            "v1"
+        ],
+        "files": []
+    },
+    "build\\.cmake\\api\\v1": {
+        "folders": [
+            "query",
+            "reply"
+        ],
+        "files": []
+    },
+    "build\\.cmake\\api\\v1\\query": {
+        "folders": [
+            "client-vscode"
+        ],
+        "files": []
+    },
+    "build\\.cmake\\api\\v1\\query\\client-vscode": {
+        "folders": [],
+        "files": [
+            "query.json"
+        ]
+    },
+    "build\\.cmake\\api\\v1\\reply": {
+        "folders": [],
+        "files": [
+            "cache-v2-e4f2a6aa19e595703571.json",
+            "cmakeFiles-v1-1660419a0b0ba16cce71.json",
+            "codemodel-v2-dae8aaea6ebe430919b1.json",
+            "directory-.-Debug-d0094a50bb2071803777.json",
+            "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+            "directory-.-Release-d0094a50bb2071803777.json",
+            "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+            "index-2025-06-27T21-19-24-0530.json",
+            "target-aios_kernel-Debug-4bf8f05e5740fed163ff.json",
+            "target-aios_kernel-MinSizeRel-9a43e319c082777ad9c4.json",
+            "target-aios_kernel-Release-5198202d9ff3c75afdd5.json",
+            "target-aios_kernel-RelWithDebInfo-11a6c25b524441a9ccd6.json",
+            "target-ALL_BUILD-Debug-5195b3a476656a0741c6.json",
+            "target-ALL_BUILD-MinSizeRel-5195b3a476656a0741c6.json",
+            "target-ALL_BUILD-Release-5195b3a476656a0741c6.json",
+            "target-ALL_BUILD-RelWithDebInfo-5195b3a476656a0741c6.json",
+            "target-ZERO_CHECK-Debug-4a4ee6c808a04a047651.json",
+            "target-ZERO_CHECK-MinSizeRel-4a4ee6c808a04a047651.json",
+            "target-ZERO_CHECK-Release-4a4ee6c808a04a047651.json",
+            "target-ZERO_CHECK-RelWithDebInfo-4a4ee6c808a04a047651.json",
+            "toolchains-v1-137355069a3c8b03244e.json"
+        ]
+    },
+    "build\\CMakeFiles": {
+        "folders": [
+            "4.0.3",
+            "6629d41674ea32309f9d3bbf97db3867",
+            "CMakeScratch",
+            "pkgRedirects"
+        ],
+        "files": [
+            "cmake.check_cache",
+            "CMakeConfigureLog.yaml",
+            "generate.stamp",
+            "generate.stamp.depend",
+            "generate.stamp.list",
+            "InstallScripts.json",
+            "TargetDirectories.txt"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3": {
+        "folders": [
+            "CompilerIdC",
+            "CompilerIdCXX",
+            "VCTargetsPath",
+            "x64"
+        ],
+        "files": [
+            "CMakeCCompiler.cmake",
+            "CMakeCXXCompiler.cmake",
+            "CMakeDetermineCompilerABI_C.bin",
+            "CMakeDetermineCompilerABI_CXX.bin",
+            "CMakeRCCompiler.cmake",
+            "CMakeSystem.cmake",
+            "VCTargetsPath.txt",
+            "VCTargetsPath.vcxproj"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdC": {
+        "folders": [
+            "Debug",
+            "tmp"
+        ],
+        "files": [
+            "CMakeCCompilerId.c",
+            "CompilerIdC.exe",
+            "CompilerIdC.vcxproj"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdC\\Debug": {
+        "folders": [
+            "CompilerIdC.tlog"
+        ],
+        "files": [
+            "CMakeCCompilerId.obj",
+            "CompilerIdC.exe.recipe"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdC\\Debug\\CompilerIdC.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CompilerIdC.lastbuildstate",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdC\\tmp": {
+        "folders": [],
+        "files": []
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdCXX": {
+        "folders": [
+            "Debug",
+            "tmp"
+        ],
+        "files": [
+            "CMakeCXXCompilerId.cpp",
+            "CompilerIdCXX.exe",
+            "CompilerIdCXX.vcxproj"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdCXX\\Debug": {
+        "folders": [
+            "CompilerIdCXX.tlog"
+        ],
+        "files": [
+            "CMakeCXXCompilerId.obj",
+            "CompilerIdCXX.exe.recipe"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdCXX\\Debug\\CompilerIdCXX.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CompilerIdCXX.lastbuildstate",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\CompilerIdCXX\\tmp": {
+        "folders": [],
+        "files": []
+    },
+    "build\\CMakeFiles\\4.0.3\\VCTargetsPath": {
+        "folders": [
+            "x64"
+        ],
+        "files": []
+    },
+    "build\\CMakeFiles\\4.0.3\\VCTargetsPath\\x64": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "build\\CMakeFiles\\4.0.3\\VCTargetsPath\\x64\\Debug": {
+        "folders": [
+            "VCTargetsPath.tlog"
+        ],
+        "files": [
+            "VCTargetsPath.recipe"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\VCTargetsPath\\x64\\Debug\\VCTargetsPath.tlog": {
+        "folders": [],
+        "files": [
+            "VCTargetsPath.lastbuildstate"
+        ]
+    },
+    "build\\CMakeFiles\\4.0.3\\x64": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "build\\CMakeFiles\\4.0.3\\x64\\Debug": {
+        "folders": [],
+        "files": []
+    },
+    "build\\CMakeFiles\\6629d41674ea32309f9d3bbf97db3867": {
+        "folders": [],
+        "files": [
+            "generate.stamp.rule"
+        ]
+    },
+    "build\\CMakeFiles\\CMakeScratch": {
+        "folders": [],
+        "files": []
+    },
+    "build\\CMakeFiles\\pkgRedirects": {
+        "folders": [],
+        "files": []
     }
 }
