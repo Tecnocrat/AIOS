@@ -20,11 +20,6 @@ C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\DirectorAPI.MvcApplicationPart
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\DirectorAPI.sourcelink.json
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets.development.json
-C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets\msbuild.DirectorAPI.Microsoft.AspNetCore.StaticWebAssets.props
-C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets\msbuild.build.DirectorAPI.props
-C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.DirectorAPI.props
-C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.DirectorAPI.props
-C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets.pack.json
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\scopedcss\bundle\DirectorAPI.styles.css
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\Director.17D3F5B7.Up2Date
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\DirectorAPI.dll
@@ -32,3 +27,10 @@ C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\refint\DirectorAPI.dll
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\DirectorAPI.pdb
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\DirectorAPI.genruntimeconfig.cache
 C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\ref\DirectorAPI.dll
+C:\dev\AIOS\director\DirectorAPI\bin\Debug\net8.0\DirectorAPI.staticwebassets.endpoints.json
+C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\dev\AIOS\director\DirectorAPI\obj\Debug\net8.0\staticwebassets.build.endpoints.json
