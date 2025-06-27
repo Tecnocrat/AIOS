@@ -14,3 +14,6 @@ add_executable(aios_kernel ${KERNEL_SOURCES})
 # Optionally, add a library for core modules
 # add_library(aio_core src/SingularityCore.cpp src/FractalSyncBus.cpp ...)
 # target_link_libraries(aios_kernel aio_core)
+
+add_executable(PluginLoader src/PluginLoader.cpp)
+target_link_libraries(PluginLoader PRIVATE nlohmann_json::nlohmann_json)
