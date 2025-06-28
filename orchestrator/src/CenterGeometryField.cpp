@@ -10,9 +10,9 @@
 
 // Physical constants
 const double PLANCK_LENGTH = 1.616e-35;      // meters
-const double SPEED_OF_LIGHT = 299792458.0;   // m/s
+const double SPEED_OF_LIGHT = AIOS_SPEED_OF_LIGHT;   // m/s
 const double GRAVITATIONAL_CONSTANT = 6.674e-11; // m³/kg⋅s²
-const double BOLTZMANN_CONSTANT = 1.381e-23; // J/K
+const double BOLTZMANN_CONSTANT = AIOS_BOLTZMANN_CONSTANT; // J/K
 
 CenterGeometryField::CenterGeometryField() 
     : base_field_intensity_(1.0)
@@ -624,7 +624,7 @@ void CenterGeometryField::validatePredictionAccuracy() {
     if (!predicted_states_.empty()) {
         const auto& prediction = predicted_states_[0];
         
-        double intensity_error = std::abs(prediction.field_intensity - recent_state.field_intensity) //
+        double intensity_error = std::abs(prediction.field_intensity - recent_state.field_intensity) /
                                 recent_state.field_intensity;
         
         // Update prediction accuracy

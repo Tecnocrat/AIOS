@@ -1,0 +1,100 @@
+2025-06-29 00:29:26,078 - INFO - Master Test: PHASE A: Build and Component Validation - Building AIOS kernel and validating all consciousness emergence components
+2025-06-29 00:29:26,079 - INFO - Starting build environment cleanup and configuration
+2025-06-29 00:29:26,081 - INFO - Removed: c:\dev\AIOS\orchestrator\build\CMakeCache.txt
+2025-06-29 00:29:35,894 - ERROR - CMake configuration failed: CMake Error at CMakeLists.txt:49 (target_link_libraries):
+  Target "aios_kernel" links to:
+
+    std::filesystem
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+
+2025-06-29 00:29:35,896 - INFO - Master Test: PHASE C: Metadata Abstraction Validation - Validate intelligent metadata abstraction, garbage collection, and reingestion preparation
+2025-06-29 00:29:35,896 - WARNING - Metadata abstraction directory not found
+2025-06-29 00:29:35,897 - WARNING - Reingestion dataset file not found
+2025-06-29 00:29:35,897 - INFO - Master Test: PHASE D: Integrated Testing Cycle - Execute both PowerShell and Python test orchestrators for comprehensive validation
+2025-06-29 00:29:35,898 - INFO - Executing PowerShell test orchestrator for phase: all
+2025-06-29 00:29:35,898 - INFO - Running PowerShell command: powershell.exe -ExecutionPolicy Bypass -File c:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1 -Phase all -OutputDir c:\dev\AIOS\test_results\ps_results_20250629_002926 -Verbose
+2025-06-29 00:29:40,734 - ERROR - PowerShell test orchestrator failed: En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 311 Car cter: 1
++ }
++ ~
+Token '}' inesperado en la expresi¢n o la instrucci¢n.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 726 Car cter: 20
++     Write-TestLog "Starting comprehensive AIOS test orchestration"
++                    ~~~~~~~~
+Token 'Starting' inesperado en la expresi¢n o la instrucci¢n.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 785 Car cter: 51
++     .\comprehensive_test_orchestrator.ps1 [-Phase <phase>] [-Verbose] ...
++                                                   ~
+El operador '<' est  reservado para uso futuro.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 785 Car cter: 97
++ ... tor.ps1 [-Phase <phase>] [-Verbose] [-CleanStart] [-OutputDir <path>]
++                                                                   ~
+El operador '<' est  reservado para uso futuro.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 788 Car cter: 12
++     -Phase <phase>      Run specific phase (1-4) or "all" (default)
++            ~
+El operador '<' est  reservado para uso futuro.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 791 Car cter: 16
++     -OutputDir <path>   Output directory for test results
++                ~
+El operador '<' est  reservado para uso futuro.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 794 Car cter: 8
++     1. Build System Validation
++        ~~~~~
+Token 'Build' inesperado en la expresi¢n o la instrucci¢n.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 795 Car cter: 8
++     2. Runtime Execution Testing
++        ~~~~~~~
+Token 'Runtime' inesperado en la expresi¢n o la instrucci¢n.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 796 Car cter: 8
++     3. Logging & Metadata Validation
++        ~~~~~~~
+Token 'Logging' inesperado en la expresi¢n o la instrucci¢n.
+En C:\dev\AIOS\scripts\comprehensive_test_orchestrator.ps1: 796 Car cter: 16
++     3. Logging & Metadata Validation
++                ~
+No se permite usar el car cter de Y comercial (&). El operador & est  reservado para un 
+uso futuro; encierre un s¡mbolo de Y comercial entre comillas dobles ("&") para pasarlo 
+como parte de una cadena.
+No se notificaron todos los errores de an lisis. Corrija los errores notificados e 
+int‚ntelo de nuevo.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
+
+2025-06-29 00:29:40,736 - INFO - Executing Python test orchestrator
+2025-06-29 00:29:40,736 - INFO - Running Python command: C:\Python313\python.exe c:\dev\AIOS\scripts\comprehensive_test_orchestrator.py
+2025-06-29 00:29:40,895 - ERROR - Python test orchestrator failed: Traceback (most recent call last):
+  File "c:\dev\AIOS\scripts\comprehensive_test_orchestrator.py", line 680, in <module>
+    main()
+    ~~~~^^
+  File "c:\dev\AIOS\scripts\comprehensive_test_orchestrator.py", line 677, in main
+    orchestrator.run_comprehensive_test()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\dev\AIOS\scripts\comprehensive_test_orchestrator.py", line 607, in run_comprehensive_test
+            print("""
+            ~~~~~^^^^
+    \U0001f9ea AIOS Comprehensive Test Orchestrator
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    =======================================
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Testing consciousness emergence, build validation, and system integration.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    """)
+    ^^^^
+  File "C:\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f9ea' in position 2: character maps to <undefined>
+
+2025-06-29 00:29:40,897 - INFO - Master Test: MASTER TEST REPORT - Comprehensive analysis of all test phases and system validation
+2025-06-29 00:29:40,899 - INFO - Master test report generated: c:\dev\AIOS\test_results\master_test_report_20250629_002926.json
+2025-06-29 00:29:40,899 - INFO - Master test execution completed in 14.82 seconds
