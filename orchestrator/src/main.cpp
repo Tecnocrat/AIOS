@@ -30,10 +30,17 @@ int main() {
     healthMonitor.run();
     pluginLoader.loadPlugins("./plugins"); // TODO: Make path configurable
 
-    // Kernel logic
+    // Kernel logic - Enhanced quantum-aware orchestration
+    std::cout << "\n=== AIOS Quantum Kernel Loop ===" << std::endl;
+    
+    // Primary tick with quantum coherence monitoring
     core.tick();
+    
+    // Enhanced metrics logging
     logger.meta("entropy", std::to_string(core.getEntropy()));
     logger.meta("curvature_at_center", std::to_string(core.getCurvatureAtCenter()));
+    logger.meta("coherence_level", std::to_string(core.getCoherenceLevel()));
+    logger.meta("quantum_stable", core.isQuantumStable() ? "true" : "false");
 
     // Diagnostics JSON with tachyonic sync
     nlohmann::json meta;
