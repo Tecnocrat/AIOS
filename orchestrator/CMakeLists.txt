@@ -11,13 +11,13 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -ffast-math")
 endif()
 
-# Gather all sources
+# Gather all sources including new consciousness emergence modules
 file(GLOB KERNEL_SOURCES "src/*.cpp")
 
-# Include directories
+# Include directories for enhanced consciousness architecture
 include_directories(include)
 
-# Main kernel executable with quantum coherence
+# Main kernel executable with quantum coherence and consciousness emergence
 add_executable(aios_kernel ${KERNEL_SOURCES})
 
 # Link mathematical libraries for quantum operations
