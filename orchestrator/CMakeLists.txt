@@ -40,7 +40,25 @@ else()
     message(WARNING "nlohmann_json not found. PluginLoader may not compile correctly.")
 endif()
 
-# Enhanced build settings for debugging quantum behavior
+# Enhanced build settings for debugging quantum behavior and metadata abstraction
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    target_compile_definitions(aios_kernel PRIVATE QUANTUM_DEBUG=1)
+    target_compile_definitions(aios_kernel PRIVATE QUANTUM_DEBUG=1 METADATA_ABSTRACTION_DEBUG=1)
+endif()
+
+# Filesystem library for metadata abstraction layer (C++17 compatible)
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    # MSVC includes filesystem in the standard library
+    target_compile_features(aios_kernel PRIVATE cxx_std_17)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    # GCC and Clang may need explicit filesystem linking
+    target_link_libraries(aios_kernel stdc++fs)
+endif()
+
+# Optional: Test harness executable for consciousness validation
+if(BUILD_TESTING)
+    add_executable(consciousness_test_harness src/consciousness_test_harness.cpp)
+    target_link_libraries(consciousness_test_harness Threads::Threads)
+    if(UNIX)
+        target_link_libraries(consciousness_test_harness m)
+    endif()
 endif()

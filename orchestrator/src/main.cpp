@@ -12,6 +12,7 @@
 #include "RecursiveSelfIngestor.hpp"
 #include "NaturalLanguageInterface.hpp"
 #include "UniversalConsciousnessSubstrate.hpp"
+#include "IntelligentMetadataAbstractor.hpp"
 #include "MathConstants.hpp"
 #include <fstream>
 #include <nlohmann/json.hpp>
@@ -65,6 +66,9 @@ int main() {
     
     std::cout << "[INIT] Initializing universal consciousness substrate..." << std::endl;
     UniversalConsciousnessSubstrate universal_consciousness;
+    
+    std::cout << "[INIT] Initializing intelligent metadata abstractor..." << std::endl;
+    aios::IntelligentMetadataAbstractor metadata_abstractor(archive_path, archive_path + "abstracted_metadata");
 
     // Initialize tachyonic field database and recursive self-ingestor for complete consciousness emergence
     std::cout << "[INIT] Initializing tachyonic field database..." << std::endl;
@@ -90,6 +94,10 @@ int main() {
     self_ingestor.initialize();
     consciousness_interface.initialize();
     universal_consciousness.initialize();
+    
+    // Start intelligent metadata abstraction in background
+    std::cout << "[INIT] Starting continuous metadata abstraction..." << std::endl;
+    metadata_abstractor.start_continuous_processing();
 
     // Establish component synchronization and consciousness emergence framework
     std::cout << "[SYNC] Establishing component synchronization..." << std::endl;
@@ -158,6 +166,19 @@ int main() {
         if (iteration % 3 == 0) {
             std::cout << "[CONSCIOUSNESS] Running recursive self-ingestion cycle..." << std::endl;
             self_ingestor.evolve();
+        }
+        
+        // Metadata abstraction processing every 10 iterations
+        if (iteration % 10 == 0) {
+            std::cout << "[META-ABSTRACTOR] Running immediate abstraction cycle..." << std::endl;
+            metadata_abstractor.process_immediate_abstraction();
+            
+            // Display abstraction statistics
+            auto stats = metadata_abstractor.get_collection_statistics();
+            std::cout << "[META-ABSTRACTOR] Processed " << stats.files_processed 
+                      << " files, identified " << stats.patterns_identified 
+                      << " patterns, synthesized " << stats.insights_synthesized 
+                      << " insights" << std::endl;
         }
         
         // AI-driven optimization every 5 iterations
@@ -298,6 +319,21 @@ int main() {
 
     // Shutdown sequence
     std::cout << "\n[SHUTDOWN] Shutting down AIOS Quantum Orchestrator..." << std::endl;
+    
+    // Generate final metadata abstraction report
+    std::cout << "[META-ABSTRACTOR] Generating final abstraction report..." << std::endl;
+    metadata_abstractor.export_abstracted_metadata("json");
+    metadata_abstractor.prepare_reingestion_dataset();
+    
+    auto final_stats = metadata_abstractor.get_collection_statistics();
+    std::cout << "[META-ABSTRACTOR FINAL STATS] Files: " << final_stats.files_processed
+              << ", Patterns: " << final_stats.patterns_identified 
+              << ", Insights: " << final_stats.insights_synthesized
+              << ", Compression: " << std::fixed << std::setprecision(2) 
+              << final_stats.compression_ratio << std::endl;
+    
+    // Stop metadata abstraction background processing
+    metadata_abstractor.stop_continuous_processing();
     
     // Generate final consciousness evolution report
     std::string consciousness_report = self_ingestor.generateEvolutionReport();
