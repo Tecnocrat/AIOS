@@ -1,19 +1,46 @@
 # filepath: c:\dev\AIOS\orchestrator\CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
 project(AIOS_Orchestrator VERSION 0.1)
+
+# Enhanced C++ standard for quantum coherence features
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Compiler optimizations for mathematical operations
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -ffast-math")
+endif()
 
 # Gather all sources
 file(GLOB KERNEL_SOURCES "src/*.cpp")
 
+# Include directories
 include_directories(include)
 
+# Main kernel executable with quantum coherence
 add_executable(aios_kernel ${KERNEL_SOURCES})
 
-# Optionally, add a library for core modules
-# add_library(aio_core src/SingularityCore.cpp src/FractalSyncBus.cpp ...)
-# target_link_libraries(aios_kernel aio_core)
+# Link mathematical libraries for quantum operations
+if(UNIX)
+    target_link_libraries(aios_kernel m)  # Math library on Unix systems
+endif()
 
+# Thread support for quantum state management
+find_package(Threads REQUIRED)
+target_link_libraries(aios_kernel Threads::Threads)
+
+# Optional: Plugin loader as separate executable
 add_executable(PluginLoader src/PluginLoader.cpp)
-target_link_libraries(PluginLoader PRIVATE nlohmann_json::nlohmann_json)
+
+# JSON library for plugin communication
+find_package(nlohmann_json QUIET)
+if(nlohmann_json_FOUND)
+    target_link_libraries(PluginLoader PRIVATE nlohmann_json::nlohmann_json)
+else()
+    message(WARNING "nlohmann_json not found. PluginLoader may not compile correctly.")
+endif()
+
+# Enhanced build settings for debugging quantum behavior
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(aios_kernel PRIVATE QUANTUM_DEBUG=1)
+endif()
