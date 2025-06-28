@@ -7,7 +7,7 @@
 #include <random>
 #include <algorithm>
 #include <sstream>
-#include <openssl/sha.h>
+#include <functional> // For std::hash
 
 CodeEvolutionEngine::CodeEvolutionEngine() 
     : population_size_(50), mutation_rate_(0.15), fitness_threshold_(0.8),
