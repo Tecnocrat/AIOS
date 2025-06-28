@@ -48,6 +48,12 @@ public:
     const AtomicHolographyUnit& getQuantumUnit() const { return holographyUnit; }
     AtomicHolographyUnit& getQuantumUnit() { return holographyUnit; }
     
+    // Component registration
+    void registerQuantumUnit(AtomicHolographyUnit* quantum_unit);
+    void registerGeometryField(CenterGeometryField* geometry_field);
+    void registerShellManager(SphereShellManager* shell_manager);
+    void registerEvolutionEngine(CodeEvolutionEngine* evolution_engine);
+    
 private:
     FractalSyncBus bus;
     SphereShellManager shellManager;

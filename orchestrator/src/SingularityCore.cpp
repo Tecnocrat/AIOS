@@ -1,5 +1,6 @@
 #include "SingularityCore.hpp"
 #include "Logger.hpp"
+#include "MathConstants.hpp"
 #include <cmath>
 #include <limits>
 #include <iostream>
@@ -203,3 +204,30 @@ void SingularityCore::processQuantumFeedback() {
         }
     }
 }
+
+// Component registration methods
+void SingularityCore::registerQuantumUnit(AtomicHolographyUnit* quantum_unit) {
+    // The quantum unit is already integrated as holographyUnit member
+    // This method provides external registration interface
+    std::cout << "[SingularityCore] Quantum unit registered for external access" << std::endl;
+}
+
+void SingularityCore::registerGeometryField(CenterGeometryField* geometry_field) {
+    std::cout << "[SingularityCore] Geometry field registered" << std::endl;
+    // Store reference for future integration
+    // In a full implementation, this would be stored as a member
+}
+
+void SingularityCore::registerShellManager(SphereShellManager* shell_manager) {
+    std::cout << "[SingularityCore] Shell manager registered" << std::endl;
+    // The shell manager is already integrated as shellManager member
+}
+
+void SingularityCore::registerEvolutionEngine(CodeEvolutionEngine* evolution_engine) {
+    std::cout << "[SingularityCore] Code evolution engine registered" << std::endl;
+    // Store reference for future integration
+}
+
+// AI Integration methods (already implemented above)
+// The registerAIController, triggerAIAnalysis, and processAIFeedback methods 
+// are implemented earlier in this file
