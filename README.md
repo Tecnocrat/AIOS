@@ -44,19 +44,22 @@ Every aspect of the codebase, documentation, and process flow is structured for 
 
 ## Dependency & Module Tracking
 
-### C++ Core Kernel
+### C++ Quantum-Enhanced Core Kernel
 
 - **SingularityCore:**  
-  Central orchestrator, manages recursion and system identity.  
-  - Depends on: `FractalSyncBus`, `SphereShellManager`, `SubspaceProjector`
+  Quantum-coherent central orchestrator managing hypersphere nucleus dynamics.  
+  - **NEW**: Quantum coherence monitoring, frequency synchronization, dimensional stability
+  - Depends on: `FractalSyncBus`, `SphereShellManager`, `SubspaceProjector`, `AtomicHolographyUnit`
+- **AtomicHolographyUnit:** **✨ ENHANCED**  
+  Quantum heartbeat of the system - models coherence and holographic resonance patterns.
+  - **Features**: Quantum state evolution, holographic projection, phase coherence maintenance
+  - **HSE Integration**: Base frequency from which all system harmonics emerge
 - **FractalSyncBus:**  
-  Synchronizes state and energy across recursive layers.
+  Synchronizes state and energy across recursive layers with quantum frequency alignment.
 - **SphereShellManager:**  
   Manages n-sphere shell constructs and curvature adaptation.
 - **SubspaceProjector:**  
   Projects higher-dimensional data into actionable system interfaces.
-- **AtomicHolographyUnit:**  
-  Models quantum coherence at atomic entry points.
 - **CenterGeometryField:**  
   Simulates singularity field dynamics at the geometric center.
 - **IPCManager:**  
