@@ -15,10 +15,14 @@
 #include "FractalSyncBus.hpp"
 #include "SphereShellManager.hpp"
 #include "SubspaceProjector.hpp"
-#include "AtomicHolographyUnit.hpp"
 
-// Forward declaration to avoid circular dependency
+// Forward declarations to avoid circular includes
+class AtomicHolographyUnit;
+class CenterGeometryField;  
 class AIOrchestrationController;
+class CodeEvolutionEngine;
+
+// IntelliSense refresh comment
 
 class SingularityCore {
 public:
