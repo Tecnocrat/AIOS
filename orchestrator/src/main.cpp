@@ -185,7 +185,7 @@ int main() {
         if (iteration % 5 == 0) {
             std::cout << "[AI] Running optimization cycle..." << std::endl;
             shell_manager.optimizeShellConfiguration();
-            evolution_engine.evolveGeneration();
+            evolution_engine.startEvolutionCycle({});
             ai_controller.synchronizeWithQuantumCoherence();
         }
         

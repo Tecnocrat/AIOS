@@ -45,19 +45,14 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_definitions(aios_kernel PRIVATE QUANTUM_DEBUG=1 METADATA_ABSTRACTION_DEBUG=1)
 endif()
 
-# Filesystem library for metadata abstraction layer (C++17 compatible)
-if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    # MSVC includes filesystem in the standard library
-    target_compile_features(aios_kernel PRIVATE cxx_std_17)
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    # GCC and Clang may need explicit filesystem linking
-    target_link_libraries(aios_kernel stdc++fs)
-endif()
+# C++17 filesystem support
+target_compile_features(aios_kernel PRIVATE cxx_std_17)
 
 # Optional: Test harness executable for consciousness validation
 if(BUILD_TESTING)
     add_executable(consciousness_test_harness src/consciousness_test_harness.cpp)
     target_link_libraries(consciousness_test_harness Threads::Threads)
+    target_compile_features(consciousness_test_harness PRIVATE cxx_std_17)
     if(UNIX)
         target_link_libraries(consciousness_test_harness m)
     endif()

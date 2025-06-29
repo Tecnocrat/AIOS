@@ -1,0 +1,12 @@
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface.csproj.AssemblyReference.cache
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\MainVisualizationWindow.baml
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\App.baml
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\MainVisualizationWindow.g.cs
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\App.g.cs
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface_MarkupCompile.cache
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface.g.resources
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface.AssemblyInfoInputs.cache
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface.AssemblyInfo.cs
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface.csproj.CoreCompileInputs.cache
+C:\dev\AIOS\visual_interface\obj\Debug\net8.0-windows\AIOS.VisualInterface.sourcelink.json

@@ -1,6 +1,7 @@
 #include "SingularityCore.hpp"
 #include "Logger.hpp"
 #include "MathConstants.hpp"
+#include "CodeEvolutionEngine.hpp"
 #include <cmath>
 #include <limits>
 #include <iostream>
