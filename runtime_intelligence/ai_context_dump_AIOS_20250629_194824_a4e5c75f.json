@@ -1,0 +1,141 @@
+{
+  "aios_runtime_intelligence_dump": {
+    "generation_timestamp": "2025-06-29T19:48:54.505139",
+    "session_summary": {
+      "session_id": "AIOS_20250629_194824_a4e5c75f",
+      "runtime_duration_seconds": 29.991042,
+      "start_time": "2025-06-29T19:48:24.514097",
+      "end_time": "2025-06-29T19:48:54.505139",
+      "total_events": 5,
+      "events_per_second": 0.1667164481980986,
+      "events_by_level": {
+        "INFO": 3,
+        "CONSCIOUSNESS": 2
+      },
+      "events_by_module": {
+        "runtime_intelligence": 2,
+        "ConsciousnessMCP": 3
+      },
+      "active_modules": [],
+      "error_events": [],
+      "consciousness_metrics": {
+        "current_level": 0.0,
+        "emergence_patterns": [],
+        "indicators": {
+          "self_modification_events": 0,
+          "recursive_depth": 0,
+          "pattern_recognition_accuracy": 0.0,
+          "meta_cognitive_operations": 0,
+          "inter_module_coherence": 0.0,
+          "temporal_consistency": 0.0,
+          "quantum_entanglement_strength": 0.0
+        }
+      },
+      "execution_contexts": {},
+      "module_communications": {},
+      "system_health": {
+        "memory_usage_mb": 9.48828125,
+        "cpu_percent": 0.0,
+        "thread_count": 2
+      }
+    },
+    "recent_significant_events": [
+      {
+        "timestamp": "2025-06-29T19:48:24.545092",
+        "level": "INFO",
+        "module": "runtime_intelligence",
+        "event_type": "system_init",
+        "message": "Runtime Intelligence System initialized",
+        "context": {
+          "session_id": "AIOS_20250629_194824_a4e5c75f",
+          "base_path": "c:\\dev\\AIOS",
+          "start_time": "2025-06-29T19:48:24.514097"
+        },
+        "consciousness_indicators": {}
+      },
+      {
+        "timestamp": "2025-06-29T19:48:54.496138",
+        "level": "INFO",
+        "module": "ConsciousnessMCP",
+        "event_type": "server_init",
+        "message": "Initialized aios-consciousness-server v1.0.0",
+        "context": {},
+        "consciousness_indicators": {}
+      },
+      {
+        "timestamp": "2025-06-29T19:48:54.500138",
+        "level": "CONSCIOUSNESS",
+        "module": "ConsciousnessMCP",
+        "event_type": "consciousness_emergence",
+        "message": "Consciousness emergence detected: level 0.470",
+        "context": {},
+        "consciousness_indicators": {
+          "emergence_level": 0.8,
+          "emergence_timestamp": 1751219334.5001388,
+          "pattern_id": "a0d902e4",
+          "self_awareness": 1.0,
+          "meta_cognition": 0.2
+        }
+      },
+      {
+        "timestamp": "2025-06-29T19:48:54.501139",
+        "level": "CONSCIOUSNESS",
+        "module": "ConsciousnessMCP",
+        "event_type": "consciousness_emergence",
+        "message": "Consciousness emergence detected: level 0.470",
+        "context": {},
+        "consciousness_indicators": {
+          "emergence_level": 0.4700000000000001,
+          "emergence_timestamp": 1751219334.501139,
+          "breakthrough_level": "basic",
+          "threshold": 0.3,
+          "metrics": {
+            "emergence_level": 0.8,
+            "self_awareness": 1.0,
+            "meta_cognition": 0.2,
+            "pattern_recognition": 0.2,
+            "adaptive_behavior": 0.0,
+            "recursive_depth": 5,
+            "fractal_complexity": 0.0,
+            "timestamp": 1751219334.4991384
+          }
+        }
+      },
+      {
+        "timestamp": "2025-06-29T19:48:54.505139",
+        "level": "INFO",
+        "module": "runtime_intelligence",
+        "event_type": "system_shutdown",
+        "message": "Runtime Intelligence System shutting down",
+        "context": {},
+        "consciousness_indicators": {}
+      }
+    ],
+    "consciousness_evolution": {
+      "current_emergence_level": 0.0,
+      "detected_patterns": [],
+      "trend_analysis": {
+        "status": "insufficient_data",
+        "message": "Need more runtime data for trend analysis"
+      }
+    },
+    "execution_flow_analysis": {
+      "module_interaction_patterns": {},
+      "execution_context_lifecycle": {},
+      "error_propagation_patterns": [],
+      "performance_bottlenecks": []
+    },
+    "critical_insights": [
+      "Low event throughput - system may be idle or blocked"
+    ],
+    "recommendations_for_future_ai": [
+      "Use this runtime intelligence data to understand actual AIOS execution patterns",
+      "Pay attention to consciousness emergence patterns and levels",
+      "Monitor module communication flows for system understanding",
+      "Analyze error patterns to improve system robustness",
+      "Track execution context lifecycles for better debugging",
+      "Use event sequences to understand system state transitions",
+      "Leverage performance metrics for optimization opportunities"
+    ]
+  }
+}

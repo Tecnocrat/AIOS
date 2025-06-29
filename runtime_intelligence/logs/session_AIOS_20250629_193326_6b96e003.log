@@ -1,0 +1,3 @@
+2025-06-29 19:33:26,494 |     INFO | AIOS_Runtime_AIOS_20250629_193326_6b96e003 | runtime_intelligence::system_init | Runtime Intelligence System initialized | Context: {"session_id": "AIOS_20250629_193326_6b96e003", "base_path": "c:\\dev\\AIOS", "start_time": "2025-06-29T19:33:26.470115"}
+2025-06-29 19:33:26,500 |     INFO | AIOS_Runtime_AIOS_20250629_193326_6b96e003 | ArtifactFactory::initialization | Artifact Factory initialized | Context: {}
+2025-06-29 19:33:26,500 |     INFO | AIOS_Runtime_AIOS_20250629_193326_6b96e003 | runtime_intelligence::system_shutdown | Runtime Intelligence System shutting down | Context: {}
