@@ -42,6 +42,15 @@ except ImportError:
     def log_info(*args, **kwargs): pass
     def log_error(*args, **kwargs): pass
 
+# Critical safety imports
+try:
+    from safety_governor import get_safety_governor, require_safety_authorization, SafetyLevel
+    SAFETY_ENABLED = True
+except ImportError:
+    SAFETY_ENABLED = False
+    def require_safety_authorization(*args, **kwargs): return True
+    def get_safety_governor(): return None
+
 class MutationType(Enum):
     """Types of genetic mutations for code evolution"""
     VARIABLE_RENAME = "variable_rename"
@@ -176,8 +185,12 @@ class EvolutionaryCodeMutator:
         
         return organism
     
-    def mutate_organism(self, organism: CodeOrganism, mutation_types: List[MutationType] = None) -> CodeOrganism:
+    def mutate_organism(self, organism: CodeOrganism, mutation_types: Optional[List[MutationType]] = None) -> CodeOrganism:
         """Apply genetic mutations to create new organism"""
+        # 🛡️ CRITICAL SAFETY CHECK
+        if SAFETY_ENABLED and not require_safety_authorization("code_mutation"):
+            raise RuntimeError("❌ SAFETY VIOLATION: Code mutation not authorized")
+        
         if mutation_types is None:
             mutation_types = list(MutationType)
         
