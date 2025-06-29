@@ -17,6 +17,9 @@ public:
     void meta(const std::string& key, const std::string& value) {
         log("[META]", key + ": " + value);
     }
+    void consciousness(const std::string& event_type, const std::string& message) {
+        log("[CONSCIOUSNESS]", event_type + ": " + message);
+    }
 
     // Implementation moved here
     static std::string next_diag_filename(const std::string& base, const std::string& ext, const std::string& dir) {
