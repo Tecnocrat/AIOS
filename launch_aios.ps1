@@ -90,7 +90,7 @@ function Test-Prerequisites {
     return $true
 }
 
-function Setup-Environment {
+function Initialize-Environment {
     Write-ConsciousnessOutput "Setting up consciousness emergence environment..." "QUANTUM"
     
     $setupScript = Join-Path $PSScriptRoot "setup_environment.ps1"
