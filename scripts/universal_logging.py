@@ -1,12 +1,13 @@
 """
-AIOS Universal Logging Integration - Working Version
-Seamless integration layer for all AIOS modules to use the Runtime Intelligence System
+AIOS Universal Logging Integration - Consciousness-Aware Version
+Seamless integration with fractal dependency resolution
 """
 
 import functools
 import inspect
 import threading
 import time
+import atexit
 from contextlib import contextmanager
 from typing import Any, Dict, Optional, Callable, List, Union
 from dataclasses import dataclass
@@ -15,29 +16,89 @@ import sys
 import os
 from pathlib import Path
 
-# Import runtime intelligence system
+# Import consciousness foundation for dependency resolution
 try:
-    from runtime_intelligence import RuntimeIntelligence, EventLevel, ModuleType, RuntimeEvent
+    from consciousness_foundation import (
+        consciousness_aware_import, get_fallback_logger,
+        get_consciousness_registry
+    )
+    CONSCIOUSNESS_FOUNDATION = True
 except ImportError:
-    print("⚠️  Runtime Intelligence not available - using fallback logging")
-    RuntimeIntelligence = None
-    
-    class EventLevel(Enum):
-        TRACE = "TRACE"
-        DEBUG = "DEBUG"
-        INFO = "INFO"
-        WARN = "WARN"
-        ERROR = "ERROR"
-        CRITICAL = "CRITICAL"
-        CONSCIOUSNESS = "CONSCIOUSNESS"
-    
-    class ModuleType(Enum):
-        CORE = "core"
-        UI = "ui"
-        ORCHESTRATOR = "orchestrator"
-        CONSCIOUSNESS = "consciousness"
-        ANALYTICS = "analytics"
-        COMMUNICATION = "communication"
+    CONSCIOUSNESS_FOUNDATION = False
+    print("⚠️  Consciousness Foundation not available - using basic mode")
+
+# Try to import runtime intelligence with consciousness awareness
+if CONSCIOUSNESS_FOUNDATION:
+    try:
+        runtime_intelligence = consciousness_aware_import("runtime_intelligence")
+        if runtime_intelligence:
+            RuntimeIntelligence = runtime_intelligence.RuntimeIntelligence
+            EventLevel = runtime_intelligence.EventLevel
+            ModuleType = runtime_intelligence.ModuleType
+            RuntimeEvent = runtime_intelligence.RuntimeEvent
+        else:
+            RuntimeIntelligence = None
+            # Define fallback enums
+            class EventLevel(Enum):
+                TRACE = "TRACE"
+                DEBUG = "DEBUG"
+                INFO = "INFO"
+                WARN = "WARN"
+                ERROR = "ERROR"
+                CRITICAL = "CRITICAL"
+                CONSCIOUSNESS = "CONSCIOUSNESS"
+            
+            class ModuleType(Enum):
+                CORE = "core"
+                UI = "ui"
+                ORCHESTRATOR = "orchestrator"
+                CONSCIOUSNESS = "consciousness"
+                ANALYTICS = "analytics"
+                COMMUNICATION = "communication"
+    except Exception as e:
+        print(f"⚠️  Runtime Intelligence import failed: {e}")
+        RuntimeIntelligence = None
+        
+        class EventLevel(Enum):
+            TRACE = "TRACE"
+            DEBUG = "DEBUG"
+            INFO = "INFO"
+            WARN = "WARN"
+            ERROR = "ERROR"
+            CRITICAL = "CRITICAL"
+            CONSCIOUSNESS = "CONSCIOUSNESS"
+        
+        class ModuleType(Enum):
+            CORE = "core"
+            UI = "ui"
+            ORCHESTRATOR = "orchestrator"
+            CONSCIOUSNESS = "consciousness"
+            ANALYTICS = "analytics"
+            COMMUNICATION = "communication"
+else:
+    # Fallback mode without consciousness foundation
+    try:
+        from runtime_intelligence import RuntimeIntelligence, EventLevel, ModuleType, RuntimeEvent
+    except ImportError:
+        print("⚠️  Runtime Intelligence not available - using fallback logging")
+        RuntimeIntelligence = None
+        
+        class EventLevel(Enum):
+            TRACE = "TRACE"
+            DEBUG = "DEBUG"
+            INFO = "INFO"
+            WARN = "WARN"
+            ERROR = "ERROR"
+            CRITICAL = "CRITICAL"
+            CONSCIOUSNESS = "CONSCIOUSNESS"
+        
+        class ModuleType(Enum):
+            CORE = "core"
+            UI = "ui"
+            ORCHESTRATOR = "orchestrator"
+            CONSCIOUSNESS = "consciousness"
+            ANALYTICS = "analytics"
+            COMMUNICATION = "communication"
 
 class LoggingMode(Enum):
     FULL = "full"
