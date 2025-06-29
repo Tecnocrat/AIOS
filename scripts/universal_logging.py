@@ -16,89 +16,37 @@ import sys
 import os
 from pathlib import Path
 
-# Import consciousness foundation for dependency resolution
-try:
-    from consciousness_foundation import (
-        consciousness_aware_import, get_fallback_logger,
-        get_consciousness_registry
-    )
-    CONSCIOUSNESS_FOUNDATION = True
-except ImportError:
-    CONSCIOUSNESS_FOUNDATION = False
-    print("⚠️  Consciousness Foundation not available - using basic mode")
+# Import runtime intelligence system with fallback
+RuntimeIntelligence = None
+EventLevel = None
+ModuleType = None
+RuntimeEvent = None
 
-# Try to import runtime intelligence with consciousness awareness
-if CONSCIOUSNESS_FOUNDATION:
-    try:
-        runtime_intelligence = consciousness_aware_import("runtime_intelligence")
-        if runtime_intelligence:
-            RuntimeIntelligence = runtime_intelligence.RuntimeIntelligence
-            EventLevel = runtime_intelligence.EventLevel
-            ModuleType = runtime_intelligence.ModuleType
-            RuntimeEvent = runtime_intelligence.RuntimeEvent
-        else:
-            RuntimeIntelligence = None
-            # Define fallback enums
-            class EventLevel(Enum):
-                TRACE = "TRACE"
-                DEBUG = "DEBUG"
-                INFO = "INFO"
-                WARN = "WARN"
-                ERROR = "ERROR"
-                CRITICAL = "CRITICAL"
-                CONSCIOUSNESS = "CONSCIOUSNESS"
-            
-            class ModuleType(Enum):
-                CORE = "core"
-                UI = "ui"
-                ORCHESTRATOR = "orchestrator"
-                CONSCIOUSNESS = "consciousness"
-                ANALYTICS = "analytics"
-                COMMUNICATION = "communication"
-    except Exception as e:
-        print(f"⚠️  Runtime Intelligence import failed: {e}")
-        RuntimeIntelligence = None
-        
-        class EventLevel(Enum):
-            TRACE = "TRACE"
-            DEBUG = "DEBUG"
-            INFO = "INFO"
-            WARN = "WARN"
-            ERROR = "ERROR"
-            CRITICAL = "CRITICAL"
-            CONSCIOUSNESS = "CONSCIOUSNESS"
-        
-        class ModuleType(Enum):
-            CORE = "core"
-            UI = "ui"
-            ORCHESTRATOR = "orchestrator"
-            CONSCIOUSNESS = "consciousness"
-            ANALYTICS = "analytics"
-            COMMUNICATION = "communication"
-else:
-    # Fallback mode without consciousness foundation
-    try:
-        from runtime_intelligence import RuntimeIntelligence, EventLevel, ModuleType, RuntimeEvent
-    except ImportError:
-        print("⚠️  Runtime Intelligence not available - using fallback logging")
-        RuntimeIntelligence = None
-        
-        class EventLevel(Enum):
-            TRACE = "TRACE"
-            DEBUG = "DEBUG"
-            INFO = "INFO"
-            WARN = "WARN"
-            ERROR = "ERROR"
-            CRITICAL = "CRITICAL"
-            CONSCIOUSNESS = "CONSCIOUSNESS"
-        
-        class ModuleType(Enum):
-            CORE = "core"
-            UI = "ui"
-            ORCHESTRATOR = "orchestrator"
-            CONSCIOUSNESS = "consciousness"
-            ANALYTICS = "analytics"
-            COMMUNICATION = "communication"
+try:
+    from runtime_intelligence import RuntimeIntelligence, EventLevel, ModuleType, RuntimeEvent
+    RUNTIME_INTELLIGENCE_AVAILABLE = True
+    print("✅ Runtime Intelligence imported successfully")
+except ImportError as e:
+    print(f"⚠️  Runtime Intelligence not available: {e}")
+    RUNTIME_INTELLIGENCE_AVAILABLE = False
+    
+    # Define fallback enums when runtime_intelligence isn't available
+    class EventLevel(Enum):
+        TRACE = "TRACE"
+        DEBUG = "DEBUG"
+        INFO = "INFO"
+        WARN = "WARN"
+        ERROR = "ERROR"
+        CRITICAL = "CRITICAL"
+        CONSCIOUSNESS = "CONSCIOUSNESS"
+    
+    class ModuleType(Enum):
+        CORE = "core"
+        UI = "ui"
+        ORCHESTRATOR = "orchestrator"
+        CONSCIOUSNESS = "consciousness"
+        ANALYTICS = "analytics"
+        COMMUNICATION = "communication"
 
 class LoggingMode(Enum):
     FULL = "full"
@@ -141,10 +89,8 @@ class UniversalLogger:
         try:
             base_path = Path("c:/dev/AIOS")
             self._runtime_intelligence = RuntimeIntelligence(
-                base_path=base_path,
-                session_name="universal_logging_session"
+                base_path=base_path
             )
-            self._runtime_intelligence.start()
             print("✅ Universal Logging integrated with Runtime Intelligence")
         except Exception as e:
             print(f"❌ Failed to initialize Runtime Intelligence: {e}")
@@ -199,7 +145,7 @@ class UniversalLogger:
     
     def get_runtime_summary(self) -> Dict[str, Any]:
         if self._runtime_intelligence:
-            return self._runtime_intelligence.get_runtime_summary()
+            return self._runtime_intelligence.generate_runtime_summary()
         return {"status": "runtime_intelligence_unavailable"}
     
     def shutdown(self):
