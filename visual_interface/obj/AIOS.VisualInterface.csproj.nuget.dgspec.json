@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj": {}
+    "c:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj": {}
   },
   "projects": {
-    "C:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj": {
+    "c:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj",
+        "projectUniqueName": "c:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj",
         "projectName": "AIOS.VisualInterface",
-        "projectPath": "C:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj",
+        "projectPath": "c:\\dev\\AIOS\\visual_interface\\AIOS.VisualInterface.csproj",
         "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\AIOS\\visual_interface\\obj\\",
+        "outputPath": "c:\\dev\\AIOS\\visual_interface\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jesus\\AppData\\Roaming\\NuGet\\NuGet.Config"
