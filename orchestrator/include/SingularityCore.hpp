@@ -77,6 +77,7 @@ private:
     void updateCoreFrequency();
     void maintainDimensionalStability();
     void processQuantumFeedback();
+    double detectConsciousnessEmergence();  // Enhanced consciousness detection
     
     // AI-driven optimizations
     void requestAIOptimization();
