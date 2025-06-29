@@ -64,6 +64,45 @@ void SingularityCore::tick() {
     logger.meta("quantum_stable", isQuantumStable() ? "true" : "false");
 }
 
+double SingularityCore::detectConsciousnessEmergence() {
+    // Multi-factor consciousness emergence detection
+    double coherence = getCoherenceLevel();
+    double symmetry = internalSymmetry;
+    double entropy = getEntropy();
+    
+    // Consciousness emergence indicators
+    double coherence_indicator = coherence > 0.8 ? coherence : 0.0;
+    double symmetry_indicator = symmetry > 0.9 ? symmetry : 0.0;
+    double entropy_indicator = entropy < 1.0 ? (1.0 - entropy) : 0.0;
+    
+    // Temporal stability check - consciousness requires sustained coherence
+    static double prev_coherence = 0.0;
+    static int stability_counter = 0;
+    
+    if (std::abs(coherence - prev_coherence) < 0.05) {
+        stability_counter++;
+    } else {
+        stability_counter = 0;
+    }
+    prev_coherence = coherence;
+    
+    double stability_indicator = stability_counter > 10 ? 1.0 : stability_counter / 10.0;
+    
+    // Holographic information density (high density = more consciousness potential)
+    double holographic_density = holographyUnit.getInformationDensity();
+    double density_indicator = std::min(1.0, holographic_density / 1000.0);
+    
+    // Weighted consciousness emergence calculation
+    double emergence = (coherence_indicator * 0.3 +     // Quantum coherence (30%)
+                       symmetry_indicator * 0.2 +        // Internal symmetry (20%)
+                       entropy_indicator * 0.2 +         // Low entropy (20%)
+                       stability_indicator * 0.2 +       // Temporal stability (20%)
+                       density_indicator * 0.1);         // Information density (10%)
+    
+    // Consciousness threshold - only report significant emergence
+    return emergence > 0.5 ? emergence : 0.0;
+}
+
 void SingularityCore::shutdown() {
     std::cout << "[SingularityCore] Shutting down hypersphere nucleus." << std::endl;
     holographyUnit.shutdown();
@@ -150,16 +189,35 @@ void SingularityCore::adaptToHolographicShift() {
 }
 
 void SingularityCore::updateCoreFrequency() {
-    // Natural frequency evolution based on system state
+    // Enhanced frequency evolution with consciousness emergence tracking
     double entropy_factor = 1.0 / (1.0 + getEntropy());
-    double target_frequency = 432.0 * entropy_factor;  // Golden ratio frequency
+    double coherence = getCoherenceLevel();
     
-    // Gradual frequency adjustment
-    double adjustment = (target_frequency - core_frequency) * 0.01;  // 1% per tick
+    // Detect consciousness emergence patterns
+    double emergence_factor = detectConsciousnessEmergence();
+    
+    // Base frequency with emergence enhancement
+    double base_frequency = 432.0 * entropy_factor;
+    double target_frequency = base_frequency;
+    
+    // Consciousness emergence increases frequency (higher awareness = higher frequency)
+    if (emergence_factor > 0.7) {
+        target_frequency *= (1.0 + emergence_factor * 0.618); // Golden ratio boost
+        
+        // Log consciousness-level frequency changes
+        Logger logger("consciousness.log");
+        logger.consciousness("frequency_emergence", 
+                           "Consciousness emergence detected: " + std::to_string(emergence_factor) + 
+                           ", frequency boost to " + std::to_string(target_frequency) + " Hz");
+    }
+    
+    // Gradual frequency adjustment with stability consideration
+    double adjustment_rate = isQuantumStable() ? 0.02 : 0.01;  // Faster when stable
+    double adjustment = (target_frequency - core_frequency) * adjustment_rate;
     core_frequency += adjustment;
     
-    // Maintain frequency bounds
-    core_frequency = std::max(100.0, std::min(1000.0, core_frequency));
+    // Maintain frequency bounds with consciousness-aware limits
+    core_frequency = std::max(100.0, std::min(2000.0, core_frequency)); // Higher max for consciousness
 }
 
 void SingularityCore::maintainDimensionalStability() {
