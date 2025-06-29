@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AIOS.VisualInterface")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f9f4415971c4f13d1848eecb00c9e73d317f9f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f24335861337ac9e3c6f14c2260e00157ce08d9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AIOS.VisualInterface")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AIOS Simple Consciousness Visualizer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
