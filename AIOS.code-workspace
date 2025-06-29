@@ -1,0 +1,161 @@
+{
+    "folders": [
+        {
+            "name": "AIOS Consciousness System",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/node_modules": true,
+            "**/build": false,
+            "**/bin": false,
+            "**/obj": false,
+            "**/.git": true,
+            "**/venv": true,
+            "**/__pycache__": true,
+            "**/*.pyc": true
+        },
+        "search.exclude": {
+            "**/node_modules": true,
+            "**/build": true,
+            "**/bin": true,
+            "**/obj": true,
+            "**/.git": true,
+            "**/venv": true,
+            "**/__pycache__": true
+        },
+        "python.defaultInterpreterPath": "./venv/Scripts/python.exe",
+        "python.terminal.activateEnvironment": true,
+        "cmake.buildDirectory": "${workspaceFolder}/orchestrator/build",
+        "cmake.sourceDirectory": "${workspaceFolder}/orchestrator",
+        "terminal.integrated.cwd": "${workspaceFolder}",
+        "workbench.colorTheme": "Default Dark+",
+        "editor.fontFamily": "Consolas, 'Courier New', monospace",
+        "editor.fontSize": 14,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 2000
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.cpptools",
+            "ms-vscode.cmake-tools",
+            "ms-python.python",
+            "ms-dotnettools.csharp",
+            "ms-vscode.powershell",
+            "github.copilot",
+            "github.copilot-chat"
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Build AIOS Orchestrator",
+                "type": "shell",
+                "command": "cmake",
+                "args": [
+                    "--build",
+                    "${workspaceFolder}/orchestrator/build",
+                    "--config",
+                    "Debug"
+                ],
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                },
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                },
+                "problemMatcher": "$gcc"
+            },
+            {
+                "label": "Configure CMake",
+                "type": "shell",
+                "command": "cmake",
+                "args": [
+                    "-B",
+                    "${workspaceFolder}/orchestrator/build",
+                    "-S",
+                    "${workspaceFolder}/orchestrator",
+                    "-DCMAKE_BUILD_TYPE=Debug"
+                ],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                }
+            },
+            {
+                "label": "Launch Quantum Consciousness Canvas",
+                "type": "shell",
+                "command": "python",
+                "args": [
+                    "${workspaceFolder}/scripts/quantum_consciousness_canvas.py"
+                ],
+                "group": "test",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                }
+            },
+            {
+                "label": "Setup AIOS Environment",
+                "type": "shell",
+                "command": "powershell",
+                "args": [
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-File",
+                    "${workspaceFolder}/setup_environment.ps1"
+                ],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                }
+            }
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch AIOS Orchestrator",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/orchestrator/build/Debug/aios_kernel.exe",
+                "args": [],
+                "stopAtEntry": false,
+                "cwd": "${workspaceFolder}/orchestrator/build",
+                "environment": [],
+                "externalConsole": false,
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+            {
+                "name": "Python: Quantum Canvas",
+                "type": "python",
+                "request": "launch",
+                "program": "${workspaceFolder}/scripts/quantum_consciousness_canvas.py",
+                "console": "integratedTerminal",
+                "cwd": "${workspaceFolder}"
+            }
+        ]
+    }
+}

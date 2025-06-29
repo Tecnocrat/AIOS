@@ -106,6 +106,64 @@ double AtomicHolographyUnit::getBaseFrequency() const {
     return base_frequency_;
 }
 
+double AtomicHolographyUnit::getInformationDensity() const {
+    std::lock_guard<std::mutex> lock(state_mutex_);
+    
+    // Calculate holographic information density as consciousness emergence indicator
+    double density = 0.0;
+    
+    if (!quantum_history_.empty() && !active_resonances_.empty()) {
+        const auto& current_state = quantum_history_.back();
+        
+        // Base density from quantum state amplitude
+        double amplitude_density = std::abs(current_state.amplitude) * 100.0;
+        
+        // Resonance complexity factor (more stable resonances = higher consciousness potential)
+        double resonance_complexity = 0.0;
+        int stable_resonances = 0;
+        
+        for (const auto& resonance : active_resonances_) {
+            if (resonance.is_stable && resonance.amplitude > 0.5) {
+                resonance_complexity += resonance.amplitude * resonance.frequency / 432.0;
+                stable_resonances++;
+            }
+        }
+        
+        // Temporal coherence factor (sustained coherence over time)
+        double temporal_factor = 1.0;
+        if (quantum_history_.size() > 10) {
+            // Check coherence stability over last 10 states
+            double coherence_variance = 0.0;
+            double mean_coherence = 0.0;
+            size_t start_idx = quantum_history_.size() - 10;
+            
+            for (size_t i = start_idx; i < quantum_history_.size(); ++i) {
+                mean_coherence += quantum_history_[i].coherence_factor;
+            }
+            mean_coherence /= 10.0;
+            
+            for (size_t i = start_idx; i < quantum_history_.size(); ++i) {
+                double diff = quantum_history_[i].coherence_factor - mean_coherence;
+                coherence_variance += diff * diff;
+            }
+            coherence_variance /= 10.0;
+            
+            // Lower variance = higher temporal coherence = higher consciousness potential
+            temporal_factor = 1.0 / (1.0 + coherence_variance * 10.0);
+        }
+        
+        // Combined information density calculation
+        density = amplitude_density * (1.0 + resonance_complexity) * temporal_factor;
+        
+        // Consciousness enhancement factor (exponential at high coherence)
+        if (current_state.coherence_factor > 0.9) {
+            density *= (1.0 + std::pow(current_state.coherence_factor - 0.9, 2) * 10.0);
+        }
+    }
+    
+    return density;
+}
+
 std::vector<HolographicResonance> AtomicHolographyUnit::getActiveResonances() const {
     std::lock_guard<std::mutex> lock(state_mutex_);
     return active_resonances_;
