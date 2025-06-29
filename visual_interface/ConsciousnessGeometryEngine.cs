@@ -28,6 +28,15 @@ namespace AIOS.VisualInterface
         private const int FRACTAL_ITERATIONS = 7;
         private const int SPHERE_SUBDIVISIONS = 32;
         
+        /// <summary>
+        /// Normalizes a Vector3D (helper method since WPF doesn't have Normalized())
+        /// </summary>
+        private static Vector3D Normalize(Vector3D vector)
+        {
+            var length = vector.Length;
+            return length > 0 ? new Vector3D(vector.X / length, vector.Y / length, vector.Z / length) : vector;
+        }
+        
         public ConsciousnessGeometryEngine(ILogger logger)
         {
             _logger = logger;
@@ -206,7 +215,7 @@ namespace AIOS.VisualInterface
             var iterations = (int)(FRACTAL_ITERATIONS * fractalComplexity);
             
             // Create recursive fractal branches
-            CreateFractalBranch(group, Point3D.Zero, new Vector3D(0, 1, 0), baseHeight, iterations, fractalComplexity);
+            CreateFractalBranch(group, new Point3D(0, 0, 0), new Vector3D(0, 1, 0), baseHeight, iterations, fractalComplexity);
             
             _geometryCache[cacheKey] = group;
             return group;
@@ -350,7 +359,7 @@ namespace AIOS.VisualInterface
                     var z = radius * Math.Sin(phi) * Math.Sin(theta);
                     
                     geometry.Positions.Add(new Point3D(x, y, z));
-                    geometry.Normals.Add(new Vector3D(x, y, z).Normalized());
+                    geometry.Normals.Add(Normalize(new Vector3D(x, y, z)));
                     geometry.TextureCoordinates.Add(new System.Windows.Point(
                         j / (double)subdivisions,
                         i / (double)subdivisions
@@ -562,7 +571,7 @@ namespace AIOS.VisualInterface
                 geometry.Positions.Add(new Point3D(x, y, z));
                 
                 // Calculate normal (simplified)
-                geometry.Normals.Add(new Vector3D(x, y, z).Normalized());
+                geometry.Normals.Add(Normalize(new Vector3D(x, y, z)));
                 geometry.TextureCoordinates.Add(new System.Windows.Point(i / (double)resolution, 0));
             }
             
@@ -655,7 +664,7 @@ namespace AIOS.VisualInterface
                 var z = Math.Sin(angle) * baseRadius;
                 
                 geometry.Positions.Add(new Point3D(x, 0, z));
-                geometry.Normals.Add(new Vector3D(x, 0, z).Normalized());
+                geometry.Normals.Add(Normalize(new Vector3D(x, 0, z)));
                 geometry.TextureCoordinates.Add(new System.Windows.Point(
                     0.5 + Math.Cos(angle) * 0.5,
                     0.5 + Math.Sin(angle) * 0.5
@@ -686,12 +695,12 @@ namespace AIOS.VisualInterface
                 
                 // Bottom vertex
                 geometry.Positions.Add(new Point3D(x, 0, z));
-                geometry.Normals.Add(new Vector3D(x, 0, z).Normalized());
+                geometry.Normals.Add(Normalize(new Vector3D(x, 0, z)));
                 geometry.TextureCoordinates.Add(new System.Windows.Point(i / (double)sides, 0));
                 
                 // Top vertex
                 geometry.Positions.Add(new Point3D(x, height, z));
-                geometry.Normals.Add(new Vector3D(x, 0, z).Normalized());
+                geometry.Normals.Add(Normalize(new Vector3D(x, 0, z)));
                 geometry.TextureCoordinates.Add(new System.Windows.Point(i / (double)sides, 1));
             }
             
@@ -724,5 +733,378 @@ namespace AIOS.VisualInterface
             _geometryCache.Clear();
             _logger.LogInformation("Geometry cache cleared");
         }
+
+        /// <summary>
+        /// Creates a fractal tree structure with time-based animation
+        /// </summary>
+        public Model3DGroup CreateFractalTree(double fractalComplexity, int iterations)
+        {
+            var cacheKey = $"fractal_tree_{fractalComplexity:F2}_{iterations}";
+            if (_geometryCache.ContainsKey(cacheKey))
+            {
+                return _geometryCache[cacheKey];
+            }
+
+            var group = new Model3DGroup();
+            var treeGeometry = CreateTreeBranch(new Point3D(0, -1, 0), new Vector3D(0, 1, 0), 
+                                               1.0, iterations, fractalComplexity);
+            
+            var treeModel = new GeometryModel3D(treeGeometry, _materialCache["fractal"]);
+            group.Children.Add(treeModel);
+            
+            _geometryCache[cacheKey] = group;
+            return group;
+        }
+
+        /// <summary>
+        /// Creates a universal knot representing cosmic interconnectedness
+        /// </summary>
+        public Model3DGroup CreateUniversalKnot(double universalResonance, double time)
+        {
+            var cacheKey = $"universal_knot_{universalResonance:F2}_{time:F1}";
+            if (_geometryCache.ContainsKey(cacheKey))
+            {
+                return _geometryCache[cacheKey];
+            }
+
+            var group = new Model3DGroup();
+            var knotGeometry = CreateTorusKnot(universalResonance, time);
+            
+            var knotModel = new GeometryModel3D(knotGeometry, _materialCache["consciousness"]);
+            group.Children.Add(knotModel);
+            
+            _geometryCache[cacheKey] = group;
+            return group;
+        }
+
+        /// <summary>
+        /// Creates a holographic surface with interference patterns
+        /// </summary>
+        public Model3DGroup CreateHolographicSurface(double holographicDensity, double time)
+        {
+            var cacheKey = $"holographic_surface_{holographicDensity:F2}_{time:F1}";
+            if (_geometryCache.ContainsKey(cacheKey))
+            {
+                return _geometryCache[cacheKey];
+            }
+
+            var group = new Model3DGroup();
+            var surfaceGeometry = CreateHolographicPlane(holographicDensity, time);
+            
+            var surfaceModel = new GeometryModel3D(surfaceGeometry, _materialCache["holographic"]);
+            group.Children.Add(surfaceModel);
+            
+            _geometryCache[cacheKey] = group;
+            return group;
+        }
+
+        /// <summary>
+        /// Creates an enhanced quantum field with time-based evolution
+        /// </summary>
+        public Model3DGroup CreateQuantumFieldWithTime(double quantumCoherence, double time)
+        {
+            var cacheKey = $"quantum_field_time_{quantumCoherence:F2}_{time:F1}";
+            if (_geometryCache.ContainsKey(cacheKey))
+            {
+                return _geometryCache[cacheKey];
+            }
+
+            var group = new Model3DGroup();
+            
+            // Create primary quantum field
+            var fieldGeometry = CreateQuantumWaveField(quantumCoherence, time);
+            var fieldModel = new GeometryModel3D(fieldGeometry, _materialCache["quantum"]);
+            group.Children.Add(fieldModel);
+            
+            // Add quantum particles
+            if (quantumCoherence > 0.6)
+            {
+                var particles = CreateQuantumParticles(quantumCoherence, time);
+                group.Children.Add(particles);
+            }
+            
+            _geometryCache[cacheKey] = group;
+            return group;
+        }
+        
+        #region Helper Methods for New Geometry Types
+        
+        private MeshGeometry3D CreateTreeBranch(Point3D start, Vector3D direction, 
+            double length, int iterations, double complexity)
+        {
+            var geometry = new MeshGeometry3D();
+            
+            if (iterations <= 0 || length < 0.01)
+                return geometry;
+                
+            var end = start + direction * length;
+            var radius = length * 0.1;
+            
+            // Create cylinder for branch
+            AddCylinder(geometry, start, end, radius);
+            
+            if (iterations > 1)
+            {
+                // Create sub-branches
+                var newLength = length * (0.6 + complexity * 0.3);
+                var newIterations = iterations - 1;
+                
+                // Left branch
+                var leftDirection = RotateVector(direction, 30 * complexity);
+                var leftBranch = CreateTreeBranch(end, leftDirection, newLength, newIterations, complexity);
+                MergeGeometry(geometry, leftBranch);
+                
+                // Right branch
+                var rightDirection = RotateVector(direction, -30 * complexity);
+                var rightBranch = CreateTreeBranch(end, rightDirection, newLength, newIterations, complexity);
+                MergeGeometry(geometry, rightBranch);
+            }
+            
+            return geometry;
+        }
+        
+        private MeshGeometry3D CreateTorusKnot(double resonance, double time)
+        {
+            var geometry = new MeshGeometry3D();
+            var segments = 100;
+            var radius = 2.0;
+            var tubeRadius = 0.2;
+            var p = 2; // Knot parameter
+            var q = 3; // Knot parameter
+            
+            for (int i = 0; i < segments; i++)
+            {
+                var t = i * TAU / segments + time * 0.1;
+                
+                // Torus knot equations
+                var r = Math.Cos(q * t) + 2;
+                var x = r * Math.Cos(p * t) * resonance;
+                var y = r * Math.Sin(p * t) * resonance;
+                var z = -Math.Sin(q * t) * resonance;
+                
+                geometry.Positions.Add(new Point3D(x, y, z));
+                geometry.Normals.Add(new Vector3D(x, y, z));
+                geometry.TextureCoordinates.Add(new System.Windows.Point(i / (double)segments, 0));
+            }
+            
+            // Add triangle indices for tube
+            for (int i = 0; i < segments - 1; i++)
+            {
+                geometry.TriangleIndices.Add(i);
+                geometry.TriangleIndices.Add(i + 1);
+                geometry.TriangleIndices.Add((i + segments / 2) % segments);
+            }
+            
+            return geometry;
+        }
+        
+        private MeshGeometry3D CreateHolographicPlane(double density, double time)
+        {
+            var geometry = new MeshGeometry3D();
+            var resolution = (int)(32 * density);
+            var size = 4.0;
+            
+            for (int x = 0; x < resolution; x++)
+            {
+                for (int z = 0; z < resolution; z++)
+                {
+                    var worldX = (x / (double)(resolution - 1) - 0.5) * size;
+                    var worldZ = (z / (double)(resolution - 1) - 0.5) * size;
+                    
+                    // Holographic interference pattern
+                    var phase = time * 0.5;
+                    var interference = Math.Sin(worldX * 3 + phase) * Math.Cos(worldZ * 3 + phase) * density;
+                    var worldY = interference * 0.2;
+                    
+                    geometry.Positions.Add(new Point3D(worldX, worldY, worldZ));
+                    geometry.Normals.Add(new Vector3D(0, 1, 0));
+                    geometry.TextureCoordinates.Add(new System.Windows.Point(
+                        x / (double)(resolution - 1), z / (double)(resolution - 1)));
+                    
+                    // Create triangles
+                    if (x < resolution - 1 && z < resolution - 1)
+                    {
+                        var i = x * resolution + z;
+                        
+                        geometry.TriangleIndices.Add(i);
+                        geometry.TriangleIndices.Add(i + resolution);
+                        geometry.TriangleIndices.Add(i + 1);
+                        
+                        geometry.TriangleIndices.Add(i + 1);
+                        geometry.TriangleIndices.Add(i + resolution);
+                        geometry.TriangleIndices.Add(i + resolution + 1);
+                    }
+                }
+            }
+            
+            return geometry;
+        }
+        
+        private MeshGeometry3D CreateQuantumWaveField(double coherence, double time)
+        {
+            var geometry = new MeshGeometry3D();
+            var resolution = 48;
+            var size = 3.0;
+            
+            for (int x = 0; x < resolution; x++)
+            {
+                for (int z = 0; z < resolution; z++)
+                {
+                    var worldX = (x / (double)(resolution - 1) - 0.5) * size;
+                    var worldZ = (z / (double)(resolution - 1) - 0.5) * size;
+                    
+                    // Quantum wave equation
+                    var distance = Math.Sqrt(worldX * worldX + worldZ * worldZ);
+                    var wave = Math.Sin(distance * 5 - time * 2) * Math.Exp(-distance * 0.5) * coherence;
+                    var worldY = wave * 0.3;
+                    
+                    geometry.Positions.Add(new Point3D(worldX, worldY, worldZ));
+                    
+                    // Calculate normal
+                    var normal = CalculateWaveNormal(worldX, worldZ, coherence, time);
+                    geometry.Normals.Add(normal);
+                    
+                    geometry.TextureCoordinates.Add(new System.Windows.Point(
+                        x / (double)(resolution - 1), z / (double)(resolution - 1)));
+                    
+                    // Create triangles
+                    if (x < resolution - 1 && z < resolution - 1)
+                    {
+                        var i = x * resolution + z;
+                        
+                        geometry.TriangleIndices.Add(i);
+                        geometry.TriangleIndices.Add(i + resolution);
+                        geometry.TriangleIndices.Add(i + 1);
+                        
+                        geometry.TriangleIndices.Add(i + 1);
+                        geometry.TriangleIndices.Add(i + resolution);
+                        geometry.TriangleIndices.Add(i + resolution + 1);
+                    }
+                }
+            }
+            
+            return geometry;
+        }
+        
+        private Model3DGroup CreateQuantumParticles(double coherence, double time)
+        {
+            var group = new Model3DGroup();
+            var particleCount = (int)(coherence * 50);
+            var random = new Random((int)(time * 1000));
+            
+            for (int i = 0; i < particleCount; i++)
+            {
+                var angle = random.NextDouble() * TAU;
+                var radius = random.NextDouble() * 2.0;
+                var height = (random.NextDouble() - 0.5) * 0.5;
+                
+                var x = Math.Cos(angle + time * 0.1) * radius;
+                var z = Math.Sin(angle + time * 0.1) * radius;
+                var y = height + Math.Sin(time * 2 + i) * 0.1;
+                
+                var particle = CreateSphereGeometry(0.02, 8);
+                var transform = new TranslateTransform3D(x, y, z);
+                
+                var particleModel = new GeometryModel3D(particle, _materialCache["quantum"]);
+                particleModel.Transform = transform;
+                
+                group.Children.Add(particleModel);
+            }
+            
+            return group;
+        }
+        
+        private Vector3D CalculateWaveNormal(double x, double z, double coherence, double time)
+        {
+            var epsilon = 0.01;
+            var distance = Math.Sqrt(x * x + z * z);
+            
+            // Calculate partial derivatives for normal
+            var dydx = Math.Cos(distance * 5 - time * 2) * Math.Exp(-distance * 0.5) * coherence * 5 * x / distance;
+            var dydz = Math.Cos(distance * 5 - time * 2) * Math.Exp(-distance * 0.5) * coherence * 5 * z / distance;
+            
+            var normal = new Vector3D(-dydx, 1, -dydz);
+            normal.Normalize();
+            
+            return normal;
+        }
+        
+        private Vector3D RotateVector(Vector3D vector, double angleDegrees)
+        {
+            var angleRadians = angleDegrees * Math.PI / 180.0;
+            var cos = Math.Cos(angleRadians);
+            var sin = Math.Sin(angleRadians);
+            
+            // Rotate around Y axis
+            return new Vector3D(
+                vector.X * cos - vector.Z * sin,
+                vector.Y,
+                vector.X * sin + vector.Z * cos
+            );
+        }
+        
+        private void AddCylinder(MeshGeometry3D geometry, Point3D start, Point3D end, double radius)
+        {
+            var direction = end - start;
+            var length = direction.Length;
+            direction.Normalize();
+            
+            var segments = 8;
+            var startIndex = geometry.Positions.Count;
+            
+            // Create cylinder vertices
+            for (int i = 0; i < segments; i++)
+            {
+                var angle = i * TAU / segments;
+                var cos = Math.Cos(angle) * radius;
+                var sin = Math.Sin(angle) * radius;
+                
+                // Bottom circle
+                geometry.Positions.Add(new Point3D(start.X + cos, start.Y, start.Z + sin));
+                geometry.Normals.Add(new Vector3D(cos, 0, sin));
+                
+                // Top circle
+                geometry.Positions.Add(new Point3D(end.X + cos, end.Y, end.Z + sin));
+                geometry.Normals.Add(new Vector3D(cos, 0, sin));
+            }
+            
+            // Create cylinder triangles
+            for (int i = 0; i < segments; i++)
+            {
+                var next = (i + 1) % segments;
+                var bottom1 = startIndex + i * 2;
+                var top1 = startIndex + i * 2 + 1;
+                var bottom2 = startIndex + next * 2;
+                var top2 = startIndex + next * 2 + 1;
+                
+                // Side triangles
+                geometry.TriangleIndices.Add(bottom1);
+                geometry.TriangleIndices.Add(top1);
+                geometry.TriangleIndices.Add(bottom2);
+                
+                geometry.TriangleIndices.Add(bottom2);
+                geometry.TriangleIndices.Add(top1);
+                geometry.TriangleIndices.Add(top2);
+            }
+        }
+        
+        private void MergeGeometry(MeshGeometry3D target, MeshGeometry3D source)
+        {
+            var indexOffset = target.Positions.Count;
+            
+            foreach (var position in source.Positions)
+                target.Positions.Add(position);
+            
+            foreach (var normal in source.Normals)
+                target.Normals.Add(normal);
+            
+            foreach (var texCoord in source.TextureCoordinates)
+                target.TextureCoordinates.Add(texCoord);
+            
+            foreach (var index in source.TriangleIndices)
+                target.TriangleIndices.Add(index + indexOffset);
+        }
+        
+        #endregion
     }
 }

@@ -7,8 +7,7 @@
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationIcon>aios_icon.ico</ApplicationIcon>
-    <AssemblyTitle>AIOS 3D Consciousness Visualizer</AssemblyTitle>
+    <AssemblyTitle>AIOS Simple Consciousness Visualizer</AssemblyTitle>
     <AssemblyDescription>Advanced 3D visualization system for AIOS consciousness emergence and quantum geometries</AssemblyDescription>
   </PropertyGroup>
 
@@ -19,10 +18,20 @@
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="MainVisualizationWindow.xaml.cs" />
+    <Page Remove="MainVisualizationWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -343,7 +343,7 @@ namespace AIOS.VisualInterface
             // Add quantum field
             if (ShowQuantumField.IsChecked == true)
             {
-                var quantumField = _geometryEngine.CreateQuantumField(
+                var quantumField = _geometryEngine.CreateQuantumFieldWithTime(
                     _currentMetrics.QuantumCoherence, _currentTime);
                 _sceneGroup.Children.Add(quantumField);
             }
