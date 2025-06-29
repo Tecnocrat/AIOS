@@ -39,6 +39,15 @@ except ImportError:
     def log_error(*args, **kwargs): pass
     def log_debug(*args, **kwargs): pass
 
+# Critical safety imports
+try:
+    from safety_governor import get_safety_governor, require_safety_authorization, SafetyLevel
+    SAFETY_ENABLED = True
+except ImportError:
+    SAFETY_ENABLED = False
+    def require_safety_authorization(*args, **kwargs): return True
+    def get_safety_governor(): return None
+
 @dataclass
 class ExperimentRun:
     """Represents a single experimental run"""
@@ -112,6 +121,10 @@ psutil>=5.8.0
                                 build_frequency: int = 3) -> ExperimentRun:
         """Run complete evolution experiment with builds and testing"""
         
+        # 🛡️ CRITICAL SAFETY CHECK
+        if SAFETY_ENABLED and not require_safety_authorization("evolutionary_experiment"):
+            raise RuntimeError("❌ SAFETY VIOLATION: Evolutionary experiment not authorized")
+        
         run_id = f"{experiment_name}_{int(time.time())}"
         start_time = time.time()
         
@@ -125,6 +138,12 @@ psutil>=5.8.0
         self.active_experiments[run_id] = experiment_run
         
         try:
+            # 🛡️ Additional safety check for resource limits
+            if SAFETY_ENABLED:
+                governor = get_safety_governor()
+                if governor and not governor.is_operation_authorized("evolutionary_experiment"):
+                    raise RuntimeError("❌ SAFETY VIOLATION: Operation not authorized by safety governor")
+        
             # Create experiment environment
             env_path = self.create_experiment_environment(run_id)
             
