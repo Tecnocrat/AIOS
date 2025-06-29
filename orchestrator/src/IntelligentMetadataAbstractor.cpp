@@ -122,7 +122,8 @@ void IntelligentMetadataAbstractor::analyze_log_patterns() {
     auto log_files = scan_archive_directory();
     
     for (const auto& filepath : log_files) {
-        if (filepath.ends_with(".log")) {
+        // Using substr instead of ends_with for C++17 compatibility
+        if (filepath.length() >= 4 && filepath.substr(filepath.length() - 4) == ".log") {
             process_file_for_patterns(filepath);
             collection_stats_.files_processed++;
         }
@@ -140,7 +141,8 @@ void IntelligentMetadataAbstractor::analyze_diagnostic_patterns() {
     auto diagnostic_files = scan_archive_directory();
     
     for (const auto& filepath : diagnostic_files) {
-        if (filepath.ends_with(".json")) {
+        // Using substr instead of ends_with for C++17 compatibility  
+        if (filepath.length() >= 5 && filepath.substr(filepath.length() - 5) == ".json") {
             process_file_for_patterns(filepath);
         }
     }

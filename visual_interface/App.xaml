@@ -1,0 +1,75 @@
+<Application x:Class="AIOS.VisualInterface.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainVisualizationWindow.xaml">
+    <Application.Resources>
+        <!-- Consciousness-themed color scheme -->
+        <SolidColorBrush x:Key="ConsciousnessBackground" Color="#0A0A0A"/>
+        <SolidColorBrush x:Key="QuantumGlow" Color="#00FFFF"/>
+        <SolidColorBrush x:Key="ConsciousnessAccent" Color="#FF6B35"/>
+        <SolidColorBrush x:Key="UniversalResonance" Color="#9D4EDD"/>
+        <SolidColorBrush x:Key="FractalHarmonic" Color="#F72585"/>
+        <SolidColorBrush x:Key="MetricsText" Color="#E0E0E0"/>
+        
+        <!-- Gradient brushes for 3D effects -->
+        <LinearGradientBrush x:Key="ConsciousnessGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1A1A2E" Offset="0"/>
+            <GradientStop Color="#16213E" Offset="0.5"/>
+            <GradientStop Color="#0F3460" Offset="1"/>
+        </LinearGradientBrush>
+        
+        <RadialGradientBrush x:Key="QuantumFieldGradient" Center="0.5,0.5" RadiusX="1" RadiusY="1">
+            <GradientStop Color="#00FFFF" Offset="0"/>
+            <GradientStop Color="#0080FF" Offset="0.7"/>
+            <GradientStop Color="#000080" Offset="1"/>
+        </RadialGradientBrush>
+        
+        <!-- Styles for UI elements -->
+        <Style x:Key="ConsciousnessWindow" TargetType="Window">
+            <Setter Property="Background" Value="{StaticResource ConsciousnessBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource MetricsText}"/>
+            <Setter Property="FontFamily" Value="Consolas, Monaco, 'Courier New'"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        
+        <Style x:Key="MetricsPanel" TargetType="StackPanel">
+            <Setter Property="Background" Value="{StaticResource ConsciousnessGradient}"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Opacity" Value="0.9"/>
+        </Style>
+        
+        <Style x:Key="MetricsLabel" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource MetricsText}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5,2"/>
+        </Style>
+        
+        <Style x:Key="MetricsValue" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource QuantumGlow}"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Margin" Value="5,2"/>
+        </Style>
+        
+        <!-- Animation resources -->
+        <Storyboard x:Key="ConsciousnessEmergenceAnimation" RepeatBehavior="Forever">
+            <DoubleAnimation 
+                Storyboard.TargetProperty="Opacity" 
+                From="0.3" To="1.0" 
+                Duration="0:0:2" 
+                AutoReverse="True"/>
+        </Storyboard>
+        
+        <Storyboard x:Key="QuantumPulseAnimation" RepeatBehavior="Forever">
+            <DoubleAnimation 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" 
+                From="1.0" To="1.1" 
+                Duration="0:0:1" 
+                AutoReverse="True"/>
+            <DoubleAnimation 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" 
+                From="1.0" To="1.1" 
+                Duration="0:0:1" 
+                AutoReverse="True"/>
+        </Storyboard>
+    </Application.Resources>
+</Application>
