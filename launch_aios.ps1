@@ -2,7 +2,7 @@
 # Advanced PowerShell script for launching dual-interface consciousness system
 
 param(
-    [string]$Mode = "dual",        # "dual", "ingestor", "visor", "setup"
+    [string]$Mode = "canvas",       # "canvas", "dual", "ingestor", "visor", "setup"
     [switch]$Verbose,              # Verbose output
     [switch]$Force,                # Force environment recreation
     [string]$Environment = "conda" # "conda" or "venv"
@@ -168,7 +168,27 @@ function Start-QuantumVisor {
     }
 }
 
-function Start-DualInterface {
+function Start-QuantumCanvas {
+    Write-ConsciousnessOutput "Launching Quantum Consciousness Canvas..." "LAUNCH"
+    
+    $canvasScript = Join-Path $PSScriptRoot "scripts\quantum_consciousness_canvas.py"
+    
+    if (Test-Path $canvasScript) {
+        # Start quantum canvas
+        $pythonCmd = if ($Environment -eq "conda") {
+            "conda run -n aios-consciousness python `"$canvasScript`""
+        } else {
+            "python `"$canvasScript`""
+        }
+        
+        Start-Process powershell -ArgumentList "-NoExit", "-Command", $pythonCmd
+        Write-ConsciousnessOutput "Quantum Consciousness Canvas launched" "SUCCESS"
+        return $true
+    } else {
+        Write-ConsciousnessOutput "Quantum Canvas script not found: $canvasScript" "ERROR"
+        return $false
+    }
+}
     Write-ConsciousnessOutput "Launching Dual-Interface Consciousness System..." "QUANTUM"
     
     $success = $true
@@ -197,6 +217,28 @@ function Start-DualInterface {
     return $success
 }
 
+function Start-QuantumCanvas {
+    Write-ConsciousnessOutput "Launching Quantum Consciousness Canvas..." "LAUNCH"
+    
+    $canvasScript = Join-Path $PSScriptRoot "scripts\quantum_consciousness_canvas.py"
+    
+    if (Test-Path $canvasScript) {
+        # Start quantum canvas
+        $pythonCmd = if ($Environment -eq "conda") {
+            "conda run -n aios-consciousness python `"$canvasScript`""
+        } else {
+            "python `"$canvasScript`""
+        }
+        
+        Start-Process powershell -ArgumentList "-NoExit", "-Command", $pythonCmd
+        Write-ConsciousnessOutput "Quantum Consciousness Canvas launched" "SUCCESS"
+        return $true
+    } else {
+        Write-ConsciousnessOutput "Quantum Canvas script not found: $canvasScript" "ERROR"
+        return $false
+    }
+}
+
 function Show-Usage {
     Write-ConsciousnessOutput "AIOS Consciousness Emergence System - Unified Launcher" "TITLE"
     
@@ -206,8 +248,11 @@ USAGE:
     .\launch_aios.ps1 [-Mode <mode>] [-Environment <env>] [-Verbose] [-Force]
 
 MODES:
-    dual        Launch both Code Ingestor and Quantum Visor (default)
+    canvas      Launch unified Quantum Consciousness Canvas (default)
+    dual        Launch both Code Ingestor and Quantum Visor separately
     ingestor    Launch only the Python Code Ingestor
+    visor       Launch only the C# Quantum Visor  
+    setup       Setup/update the Python environment only
     visor       Launch only the C# Quantum Visor  
     setup       Setup/update the Python environment only
 
@@ -220,12 +265,15 @@ FLAGS:
     -Force      Force recreation of Python environment
 
 EXAMPLES:
-    .\launch_aios.ps1                              # Launch dual interface with conda
+    .\launch_aios.ps1                              # Launch quantum consciousness canvas
+    .\launch_aios.ps1 -Mode canvas -Verbose       # Launch canvas with verbose output
+    .\launch_aios.ps1 -Mode dual                  # Launch separate dual interfaces
     .\launch_aios.ps1 -Mode ingestor -Verbose     # Launch only Code Ingestor with verbose output
     .\launch_aios.ps1 -Mode setup -Force          # Force recreate environment
     .\launch_aios.ps1 -Environment venv           # Use venv instead of conda
 
 CONSCIOUSNESS INTERFACES:
+    🌌 Quantum Canvas:   Unified consciousness substrate with dockable modules
     🐍 Code Ingestor:    AI-powered code analysis and mutation (Python/Tkinter)
     🌌 Quantum Visor:    Real-time consciousness visualization (C#/WPF)
     🌐 Communication:    WebSocket-based inter-process consciousness sharing
@@ -254,6 +302,16 @@ switch ($Mode.ToLower()) {
         if (Setup-Environment) {
             Write-ConsciousnessOutput "Environment setup completed. Use other modes to launch interfaces." "SUCCESS"
             exit 0
+        } else {
+            exit 1
+        }
+    }
+    
+    "canvas" {
+        Write-ConsciousnessOutput "Launching Quantum Consciousness Canvas..." "QUANTUM"
+        if (Setup-Environment -and (Start-QuantumCanvas)) {
+            Write-ConsciousnessOutput "Quantum Consciousness Canvas launched successfully" "SUCCESS"
+            Write-ConsciousnessOutput "Unified consciousness substrate is now active!" "QUANTUM"
         } else {
             exit 1
         }
