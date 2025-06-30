@@ -1,122 +1,44 @@
-# AIOS Git Ignore - Clean Repository Management
-# =================================================
-
-# 🧹 Python Environment & Cache Files
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# 🐍 Virtual Environments
-aios_clean_env/
+# Python environments
+aios_env/
 venv/
 env/
 ENV/
-env.bak/
-venv.bak/
-.venv/
-.env/
 
-# 🔧 VS Code & IDE Files  
-.vscode/
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build directories
+**/build/
+**/bin/
+**/obj/
+
+# VS Code
 .vscode/settings.json
 .vscode/launch.json
-.vscode/extensions.json
-.idea/
-*.swp
-*.swo
-*~
+.vscode/tasks.json
+**/.vscode/
 
-# 🏗️ Build Artifacts (C++/C#)
-/orchestrator/build/
-/director/DirectorAPI/bin/
-/director/DirectorAPI/obj/
-/director/build/
-/chatgpt/build/
-visual_interface/bin/
-visual_interface/obj/
-*.exe
-*.dll
-*.pdb
-*.cache
-*.deps.json
-*.runtimeconfig.json
-
-# 📊 Temporary & Log Files
-*.log
-*.tmp
-*.temp
-logs/
-temp/
-tmp/
-
-# 🔒 Sensitive Data
-.env
-secrets.json
-api_keys.json
-config/local_*
-*.key
-*.pem
-
-# 📈 Runtime Intelligence (Large Data)
-runtime_intelligence/*.db
+# Runtime intelligence dumps and logs
 runtime_intelligence/*.json
-runtime_intelligence/logs/
-runtime_intelligence/sessions/
-ai_context_dump_*.json
+runtime_intelligence/*.db
+runtime_intelligence/session_*.db
+runtime_intelligence/ai_context_dump_*.json
 
-# 🧬 Evolution Lab Results  
-evolution_lab/artifacts/*.json
-evolution_lab/artifacts/*.py
-evolution_lab/enhanced_results/
-evolution_lab/population_test_*.json
+# Archive and session data
+**/archive/session_*/
+**/session_*/
 
-# 📋 Test Results & Reports
-test_results/
-reports/
-coverage/
-.coverage
-.pytest_cache/
-.tox/
-.nox/
-
-# 💾 OS Files
-.DS_Store
-Thumbs.db
-desktop.ini
-$RECYCLE.BIN/
-
-# 📦 Node.js (if applicable)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# 🗄️ Database Files
-*.sqlite
-*.sqlite3
-*.db3
-
-# Keep Essential Files (Override ignores)
-!requirements_essential.txt
-!test_python_env.py
-!PYTHON_ENVIRONMENT_SETUP.md
+# Log files
+*.log
+sem.log
