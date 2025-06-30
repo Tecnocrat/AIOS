@@ -80,14 +80,15 @@
         "dotnet.defaultSolution": "${workspaceFolder}/visual_interface/AIOS.VisualInterface.csproj",
         "omnisharp.defaultLaunchSolution": "${workspaceFolder}/visual_interface/AIOS.VisualInterface.csproj",
         "omnisharp.enableAsyncCompletion": true,
-        "omnisharp.enableImportCompletion": true,
         "omnisharp.enableRoslynAnalyzers": true,
         "terminal.integrated.cwd": "${workspaceFolder}",
         "workbench.colorTheme": "Default Dark+",
         "editor.fontFamily": "Consolas, 'Courier New', monospace",
         "editor.fontSize": 14,
         "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 2000
+        "files.autoSaveDelay": 2000,
+        "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+        "powershell.cwd": "🧠 AIOS Consciousness System"
     },        "extensions": {
         "recommendations": [
             "ms-vscode.cpptools",
