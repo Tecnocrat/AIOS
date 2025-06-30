@@ -1,8 +1,40 @@
 {
     "folders": [
         {
-            "name": "AIOS Consciousness System",
+            "name": "🧠 AIOS Consciousness System",
             "path": "."
+        },
+        {
+            "name": "📊 ChatGPT Integration",
+            "path": "./chatgpt_integration"
+        },
+        {
+            "name": "🖥️ Visual Interface (C#)",
+            "path": "./visual_interface"
+        },
+        {
+            "name": "🎯 C++ Orchestrator",
+            "path": "./orchestrator"
+        },
+        {
+            "name": "🐍 Python Scripts",
+            "path": "./scripts"
+        },
+        {
+            "name": "🧬 Evolution Lab",
+            "path": "./evolution_lab"
+        },
+        {
+            "name": "🔗 Gemini CLI Bridge",
+            "path": "./gemini_cli_bridge"
+        },
+        {
+            "name": "🧠 Runtime Intelligence",
+            "path": "./runtime_intelligence"
+        },
+        {
+            "name": "📚 Documentation",
+            "path": "./docs"
         }
     ],
     "settings": {
@@ -27,24 +59,52 @@
         },
         "python.defaultInterpreterPath": "./venv/Scripts/python.exe",
         "python.terminal.activateEnvironment": true,
+        "python.analysis.autoImportCompletions": true,
+        "python.analysis.extraPaths": [
+            "./scripts",
+            "./chatgpt_integration",
+            "./runtime_intelligence",
+            "./evolution_lab"
+        ],
         "cmake.buildDirectory": "${workspaceFolder}/orchestrator/build",
         "cmake.sourceDirectory": "${workspaceFolder}/orchestrator",
+        "cmake.configureOnOpen": true,
+        "C_Cpp.default.includePath": [
+            "${workspaceFolder}/orchestrator/include",
+            "${workspaceFolder}/orchestrator/src"
+        ],
+        "C_Cpp.default.compilerPath": "gcc",
+        "C_Cpp.default.cStandard": "c17",
+        "C_Cpp.default.cppStandard": "c++20",
+        "C_Cpp.default.intelliSenseMode": "gcc-x64",
+        "dotnet.defaultSolution": "${workspaceFolder}/visual_interface/AIOS.VisualInterface.csproj",
+        "omnisharp.defaultLaunchSolution": "${workspaceFolder}/visual_interface/AIOS.VisualInterface.csproj",
+        "omnisharp.enableAsyncCompletion": true,
+        "omnisharp.enableImportCompletion": true,
+        "omnisharp.enableRoslynAnalyzers": true,
         "terminal.integrated.cwd": "${workspaceFolder}",
         "workbench.colorTheme": "Default Dark+",
         "editor.fontFamily": "Consolas, 'Courier New', monospace",
         "editor.fontSize": 14,
         "files.autoSave": "afterDelay",
         "files.autoSaveDelay": 2000
-    },
-    "extensions": {
+    },        "extensions": {
         "recommendations": [
             "ms-vscode.cpptools",
+            "ms-vscode.cpptools-extension-pack",
             "ms-vscode.cmake-tools",
             "ms-python.python",
+            "ms-python.pylint",
+            "ms-python.isort",
+            "ms-python.black-formatter",
             "ms-dotnettools.csharp",
+            "ms-dotnettools.vscode-dotnet-runtime",
             "ms-vscode.powershell",
             "github.copilot",
-            "github.copilot-chat"
+            "github.copilot-chat",
+            "eamodio.gitlens",
+            "ms-vscode.vscode-json",
+            "redhat.vscode-yaml"
         ]
     },
     "tasks": {

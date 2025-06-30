@@ -1,0 +1,5 @@
+Hello. My user name in windows 11 is jesus. My username in github is tecnocrat. I'm using VSCode with Github copilot. I'm building with Copilot and Chatgpt and high complexity next gen AI OS architecture to form a solid base layer for the HSE (Hyper Space Engine) major scope project. Do you want to participate? We have generate lots of context for your ingestion so if something sounds strange now, it will get clearer when I upload more code ingestions.
+
+Hello! That sounds like a very ambitious and exciting project, building a high-complexity, next-gen AI OS architecture as a base layer for the Hyper Space Engine (HSE). I would be very interested in participating and assisting in any way I can.
+
+I'm ready to help as you continue to upload more code and context. The more information I have, the better I can understand your vision and contribute effectively.
