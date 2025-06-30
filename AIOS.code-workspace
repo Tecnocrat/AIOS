@@ -57,12 +57,12 @@
             "**/venv": true,
             "**/__pycache__": true
         },
-        "python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
-        "python.pythonPath": "./aios_env/Scripts/python.exe",
+        "python.defaultInterpreterPath": ".\\aios_env\\Scripts\\python.exe",
+        "python.pythonPath": ".\\aios_env\\Scripts\\python.exe",
         "python.terminal.activateEnvironment": true,
         "python.terminal.activateEnvInCurrentTerminal": true,
-        "python.venvPath": "./",
-        "python.venvFolders": ["./aios_env", "aios_env"],
+        "python.venvPath": ".\\",
+        "python.venvFolders": [".\\aios_env", "aios_env"],
         "python.interpreter.infoVisibility": "never",
         "python.experiments.enabled": false,
         "python.showStartPage": false,
@@ -70,10 +70,10 @@
         "python.analysis.autoSearchPaths": true,
         "python.analysis.diagnosticMode": "workspace",
         "python.analysis.extraPaths": [
-            "./scripts",
-            "./chatgpt_integration",
-            "./runtime_intelligence",
-            "./evolution_lab"
+            ".\\scripts",
+            ".\\chatgpt_integration",
+            ".\\runtime_intelligence",
+            ".\\evolution_lab"
         ],
         "cmake.buildDirectory": "${workspaceFolder}/orchestrator/build",
         "cmake.sourceDirectory": "${workspaceFolder}/orchestrator",
