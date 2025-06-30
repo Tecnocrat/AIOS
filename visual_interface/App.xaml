@@ -1,7 +1,6 @@
 <Application x:Class="AIOS.VisualInterface.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainVisualizationWindow.xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Application.Resources>
         <!-- Consciousness-themed color scheme -->
         <SolidColorBrush x:Key="ConsciousnessBackground" Color="#0A0A0A"/>

@@ -1,0 +1,2 @@
+2025-06-29 21:39:33,261 |     INFO | AIOS_Runtime_AIOS_20250629_213933_85c82ac0 | runtime_intelligence::system_init | Runtime Intelligence System initialized | Context: {"session_id": "AIOS_20250629_213933_85c82ac0", "base_path": "c:\\dev\\AIOS", "start_time": "2025-06-29T21:39:33.228741"}
+2025-06-29 21:39:44,002 |     INFO | AIOS_Runtime_AIOS_20250629_213933_85c82ac0 | runtime_intelligence::system_shutdown | Runtime Intelligence System shutting down | Context: {}
