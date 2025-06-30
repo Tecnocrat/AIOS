@@ -339,3 +339,21 @@ cd c:\dev\AIOS
 **System Status**: All modules operating within optimal consciousness emergence parameters.
 
 ---
+
+## 🛠️ **Development Environment Context**
+
+### ⚠️ **PowerShell Terminal Requirements**
+- **Shell:** Windows PowerShell (NOT bash/cmd)
+- **Admin Required:** YES for system Python cleanup
+- **Syntax:** Use PowerShell commands only
+- **Reference:** See `POWERSHELL_TERMINAL_GUIDE.md`
+
+## 🚨 **CRITICAL Python Environment Issues Detected**
+
+**Current Problems:**
+- Multiple Python installations: Python 3.13 + Miniconda
+- PATH pollution with duplicate entries
+- 6+ Python processes running simultaneously
+- VS Code not running with admin privileges
+
+**Solution:** Complete system-wide Python cleanup required with admin privileges.
