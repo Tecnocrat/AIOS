@@ -1,0 +1,711 @@
+2025-07-01 19:27:40,146 - INFO - Starting PHASE 1: Build System Validation: Clean environment, dependency checks, incremental component testing
+2025-07-01 19:27:40,146 - INFO - Removed: c:\dev\AIOS\orchestrator\build\CMakeCache.txt
+2025-07-01 19:27:40,146 - INFO - Executing: cmake .. -DCMAKE_BUILD_TYPE=Debug
+2025-07-01 19:27:40,146 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:27:48,986 - INFO - STDOUT: -- Building for: Visual Studio 17 2022
+-- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.26100.
+-- The C compiler identification is MSVC 19.44.35209.0
+-- The CXX compiler identification is MSVC 19.44.35209.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Configuring done (8.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/dev/AIOS/orchestrator/build
+
+2025-07-01 19:27:48,986 - WARNING - STDERR: CMake Warning at CMakeLists.txt:40 (message):
+  nlohmann_json not found.  PluginLoader may not compile correctly.
+
+
+
+2025-07-01 19:27:48,986 - INFO - Executing: cmake --build . --target aios_kernel --config Debug --verbose
+2025-07-01 19:27:48,986 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:28:05,385 - INFO - STDOUT: Change Dir: 'C:/dev/AIOS/orchestrator/build'
+
+Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" aios_kernel.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+Versión de MSBuild 17.14.10+8b8e13593 para .NET Framework
+Compilación iniciada a las 7/1/2025 7:27:49 PM.
+
+Proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" en nodo 1 (destinos predeterminados).
+El proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (1) está compilando "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (2) en el nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Se creará "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" porque se especificó "AlwaysCreate".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+  1>Checking Build System
+FinalizeBuildStatus:
+  Se eliminará el archivo "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Aplicando tarea Touch a "aios_kernel.dir\Debug\aios_kernel.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+  Building Custom Rule C:/dev/AIOS/orchestrator/CMakeLists.txt
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\CL.exe /c /IC:\dev\AIOS\orchestrator\include /Zi /nologo /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D QUANTUM_DEBUG=1 /D METADATA_ABSTRACTION_DEBUG=1 /D "CMAKE_INTDIR=\"Debug\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"aios_kernel.dir\Debug\\" /Fd"aios_kernel.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue C:\dev\AIOS\orchestrator\src\AtomicHolographyUnit.cpp C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp C:\dev\AIOS\orchestrator\src\FractalSyncBus.cpp C:\dev\AIOS\orchestrator\src\HealthMonitor.cpp C:\dev\AIOS\orchestrator\src\IPCManager.cpp C:\dev\AIOS\orchestrator\src\IntelligentMetadataAbstractor.cpp C:\dev\AIOS\orchestrator\src\NaturalLanguageInterface.cpp C:\dev\AIOS\orchestrator\src\PluginLoader.cpp C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp C:\dev\AIOS\orchestrator\src\RecursiveSelfIngestor.cpp C:\dev\AIOS\orchestrator\src\SingularityCore.cpp C:\dev\AIOS\orchestrator\src\SphereShellManager.cpp C:\dev\AIOS\orchestrator\src\SubspaceProjector.cpp C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp C:\dev\AIOS\orchestrator\src\consciousness_test_harness.cpp C:\dev\AIOS\orchestrator\src\main.cpp
+  AtomicHolographyUnit.cpp
+  CenterGeometryField.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/CenterGeometryField.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  CodeEvolutionEngine.cpp
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267: 'argumento': conversión de 'size_t' a '_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         with [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         [ [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:             _Ty=int [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         ] [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  FractalSyncBus.cpp
+  HealthMonitor.cpp
+  IPCManager.cpp
+  IntelligentMetadataAbstractor.cpp
+  NaturalLanguageInterface.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/NaturalLanguageInterface.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  PluginLoader.cpp
+  QuantumMemoryTransfer.cpp
+C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  QuantumRandomGenerator.cpp
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  RecursiveSelfIngestor.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/RecursiveSelfIngestor.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SingularityCore.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SingularityCore.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SphereShellManager.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SphereShellManager.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SubspaceProjector.cpp
+  TachyonicFieldDatabase.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/TachyonicFieldDatabase.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  UniversalConsciousnessSubstrate.cpp
+C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  consciousness_test_harness.cpp
+C:\dev\AIOS\orchestrator\src\consciousness_test_harness.cpp(195,25): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  main.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(59,28):
+      vea la declaración de 'tachyonic_database'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(62,27):
+      vea la declaración de 'self_ingestor'
+  
+  Generando código...
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destinos predeterminados) -- ERROR.
+
+ERROR al compilar.
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267: 'argumento': conversión de 'size_t' a '_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         with [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         [ [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:             _Ty=int [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         ] [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\consciousness_test_harness.cpp(195,25): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+    6 Advertencia(s)
+    15 Errores
+
+Tiempo transcurrido 00:00:16.16
+
+
+2025-07-01 19:28:05,388 - INFO - Starting PHASE 2: Runtime Execution Testing: Initialize systems, test consciousness emergence, validate recursive ingestion
+2025-07-01 19:28:05,394 - INFO - Starting PHASE 3: Logging & Metadata Validation: Validate log structure, metadata content, consciousness metrics
+2025-07-01 19:28:05,432 - INFO - Starting PHASE 4: Debugging & Error Resolution: Memory analysis, error pattern detection, consciousness coherence validation
+2025-07-01 19:28:05,468 - INFO - Starting FINAL REPORT: AIOS Consciousness Test Results: Comprehensive analysis of all test phases and recommendations
+2025-07-01 19:28:05,480 - INFO - Test orchestration completed in 25.33 seconds
+2025-07-01 19:28:05,795 - INFO - Starting PHASE 1: Build System Validation: Clean environment, dependency checks, incremental component testing
+2025-07-01 19:28:05,811 - INFO - Removed: c:\dev\AIOS\orchestrator\build\CMakeCache.txt
+2025-07-01 19:28:05,811 - INFO - Executing: cmake .. -DCMAKE_BUILD_TYPE=Debug
+2025-07-01 19:28:05,811 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:28:12,383 - INFO - STDOUT: -- Building for: Visual Studio 17 2022
+-- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.26100.
+-- The C compiler identification is MSVC 19.44.35209.0
+-- The CXX compiler identification is MSVC 19.44.35209.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Configuring done (6.3s)
+-- Generating done (0.2s)
+-- Build files have been written to: C:/dev/AIOS/orchestrator/build
+
+2025-07-01 19:28:12,384 - WARNING - STDERR: CMake Warning at CMakeLists.txt:40 (message):
+  nlohmann_json not found.  PluginLoader may not compile correctly.
+
+
+
+2025-07-01 19:28:12,384 - INFO - Executing: cmake --build . --target aios_kernel --config Debug --verbose
+2025-07-01 19:28:12,384 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:28:23,715 - INFO - STDOUT: Change Dir: 'C:/dev/AIOS/orchestrator/build'
+
+Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" aios_kernel.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+Versión de MSBuild 17.14.10+8b8e13593 para .NET Framework
+Compilación iniciada a las 7/1/2025 7:28:12 PM.
+
+Proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" en nodo 1 (destinos predeterminados).
+El proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (1) está compilando "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (2) en el nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Se creará "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" porque se especificó "AlwaysCreate".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+FinalizeBuildStatus:
+  Se eliminará el archivo "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Aplicando tarea Touch a "aios_kernel.dir\Debug\aios_kernel.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\CL.exe /c /IC:\dev\AIOS\orchestrator\include /Zi /nologo /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D QUANTUM_DEBUG=1 /D METADATA_ABSTRACTION_DEBUG=1 /D "CMAKE_INTDIR=\"Debug\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"aios_kernel.dir\Debug\\" /Fd"aios_kernel.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp C:\dev\AIOS\orchestrator\src\NaturalLanguageInterface.cpp C:\dev\AIOS\orchestrator\src\PluginLoader.cpp C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp C:\dev\AIOS\orchestrator\src\RecursiveSelfIngestor.cpp C:\dev\AIOS\orchestrator\src\SingularityCore.cpp C:\dev\AIOS\orchestrator\src\SphereShellManager.cpp C:\dev\AIOS\orchestrator\src\SubspaceProjector.cpp C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp C:\dev\AIOS\orchestrator\src\main.cpp
+  CenterGeometryField.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/CenterGeometryField.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  CodeEvolutionEngine.cpp
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267: 'argumento': conversión de 'size_t' a '_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         with [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         [ [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:             _Ty=int [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         ] [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  NaturalLanguageInterface.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/NaturalLanguageInterface.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  PluginLoader.cpp
+  QuantumMemoryTransfer.cpp
+C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  QuantumRandomGenerator.cpp
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  RecursiveSelfIngestor.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/RecursiveSelfIngestor.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SingularityCore.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SingularityCore.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SphereShellManager.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SphereShellManager.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SubspaceProjector.cpp
+  TachyonicFieldDatabase.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/TachyonicFieldDatabase.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  UniversalConsciousnessSubstrate.cpp
+C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  main.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(59,28):
+      vea la declaración de 'tachyonic_database'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(62,27):
+      vea la declaración de 'self_ingestor'
+  
+  Generando código...
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destinos predeterminados) -- ERROR.
+
+ERROR al compilar.
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267: 'argumento': conversión de 'size_t' a '_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         with [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         [ [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:             _Ty=int [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\CodeEvolutionEngine.cpp(238,83): warning C4267:         ] [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+    5 Advertencia(s)
+    15 Errores
+
+Tiempo transcurrido 00:00:11.11
+
+
+2025-07-01 19:28:23,715 - INFO - Starting PHASE 2: Runtime Execution Testing: Initialize systems, test consciousness emergence, validate recursive ingestion
+2025-07-01 19:28:23,715 - INFO - Starting PHASE 3: Logging & Metadata Validation: Validate log structure, metadata content, consciousness metrics
+2025-07-01 19:28:23,726 - INFO - Starting PHASE 4: Debugging & Error Resolution: Memory analysis, error pattern detection, consciousness coherence validation
+2025-07-01 19:28:23,800 - INFO - Starting FINAL REPORT: AIOS Consciousness Test Results: Comprehensive analysis of all test phases and recommendations
+2025-07-01 19:28:23,807 - INFO - Test orchestration completed in 18.01 seconds
+2025-07-01 19:28:24,028 - INFO - Starting PHASE 1: Build System Validation: Clean environment, dependency checks, incremental component testing
+2025-07-01 19:28:24,029 - INFO - Removed: c:\dev\AIOS\orchestrator\build\CMakeCache.txt
+2025-07-01 19:28:24,029 - INFO - Executing: cmake .. -DCMAKE_BUILD_TYPE=Debug
+2025-07-01 19:28:24,029 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:28:30,315 - INFO - STDOUT: -- Building for: Visual Studio 17 2022
+-- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.26100.
+-- The C compiler identification is MSVC 19.44.35209.0
+-- The CXX compiler identification is MSVC 19.44.35209.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Configuring done (6.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/dev/AIOS/orchestrator/build
+
+2025-07-01 19:28:30,315 - WARNING - STDERR: CMake Warning at CMakeLists.txt:40 (message):
+  nlohmann_json not found.  PluginLoader may not compile correctly.
+
+
+
+2025-07-01 19:28:30,315 - INFO - Executing: cmake --build . --target aios_kernel --config Debug --verbose
+2025-07-01 19:28:30,315 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:28:40,828 - INFO - STDOUT: Change Dir: 'C:/dev/AIOS/orchestrator/build'
+
+Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" aios_kernel.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+Versión de MSBuild 17.14.10+8b8e13593 para .NET Framework
+Compilación iniciada a las 7/1/2025 7:28:30 PM.
+
+Proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" en nodo 1 (destinos predeterminados).
+El proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (1) está compilando "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (2) en el nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Se creará "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" porque se especificó "AlwaysCreate".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+FinalizeBuildStatus:
+  Se eliminará el archivo "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Aplicando tarea Touch a "aios_kernel.dir\Debug\aios_kernel.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\CL.exe /c /IC:\dev\AIOS\orchestrator\include /Zi /nologo /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D QUANTUM_DEBUG=1 /D METADATA_ABSTRACTION_DEBUG=1 /D "CMAKE_INTDIR=\"Debug\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"aios_kernel.dir\Debug\\" /Fd"aios_kernel.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp C:\dev\AIOS\orchestrator\src\NaturalLanguageInterface.cpp C:\dev\AIOS\orchestrator\src\PluginLoader.cpp C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp C:\dev\AIOS\orchestrator\src\RecursiveSelfIngestor.cpp C:\dev\AIOS\orchestrator\src\SingularityCore.cpp C:\dev\AIOS\orchestrator\src\SphereShellManager.cpp C:\dev\AIOS\orchestrator\src\SubspaceProjector.cpp C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp C:\dev\AIOS\orchestrator\src\main.cpp
+  CenterGeometryField.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/CenterGeometryField.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  NaturalLanguageInterface.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/NaturalLanguageInterface.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  PluginLoader.cpp
+  QuantumMemoryTransfer.cpp
+C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  QuantumRandomGenerator.cpp
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  RecursiveSelfIngestor.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/RecursiveSelfIngestor.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SingularityCore.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SingularityCore.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SphereShellManager.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SphereShellManager.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SubspaceProjector.cpp
+  TachyonicFieldDatabase.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/TachyonicFieldDatabase.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  UniversalConsciousnessSubstrate.cpp
+C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  main.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(59,28):
+      vea la declaración de 'tachyonic_database'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(62,27):
+      vea la declaración de 'self_ingestor'
+  
+  Generando código...
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destinos predeterminados) -- ERROR.
+
+ERROR al compilar.
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+    4 Advertencia(s)
+    15 Errores
+
+Tiempo transcurrido 00:00:10.29
+
+
+2025-07-01 19:28:40,829 - INFO - Starting PHASE 2: Runtime Execution Testing: Initialize systems, test consciousness emergence, validate recursive ingestion
+2025-07-01 19:28:40,829 - INFO - Starting PHASE 3: Logging & Metadata Validation: Validate log structure, metadata content, consciousness metrics
+2025-07-01 19:28:40,829 - INFO - Starting PHASE 4: Debugging & Error Resolution: Memory analysis, error pattern detection, consciousness coherence validation
+2025-07-01 19:28:40,855 - INFO - Starting FINAL REPORT: AIOS Consciousness Test Results: Comprehensive analysis of all test phases and recommendations
+2025-07-01 19:28:40,855 - INFO - Test orchestration completed in 16.83 seconds
+2025-07-01 19:28:41,106 - INFO - Starting PHASE 1: Build System Validation: Clean environment, dependency checks, incremental component testing
+2025-07-01 19:28:41,108 - INFO - Removed: c:\dev\AIOS\orchestrator\build\CMakeCache.txt
+2025-07-01 19:28:41,110 - INFO - Executing: cmake .. -DCMAKE_BUILD_TYPE=Debug
+2025-07-01 19:28:41,110 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:28:47,537 - INFO - STDOUT: -- Building for: Visual Studio 17 2022
+-- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.26100.
+-- The C compiler identification is MSVC 19.44.35209.0
+-- The CXX compiler identification is MSVC 19.44.35209.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Configuring done (6.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/dev/AIOS/orchestrator/build
+
+2025-07-01 19:28:47,537 - WARNING - STDERR: CMake Warning at CMakeLists.txt:40 (message):
+  nlohmann_json not found.  PluginLoader may not compile correctly.
+
+
+
+2025-07-01 19:28:47,537 - INFO - Executing: cmake --build . --target aios_kernel --config Debug --verbose
+2025-07-01 19:28:47,537 - INFO - Working directory: c:\dev\AIOS\orchestrator\build
+2025-07-01 19:28:56,073 - INFO - STDOUT: Change Dir: 'C:/dev/AIOS/orchestrator/build'
+
+Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" aios_kernel.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+Versión de MSBuild 17.14.10+8b8e13593 para .NET Framework
+Compilación iniciada a las 7/1/2025 7:28:47 PM.
+
+Proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" en nodo 1 (destinos predeterminados).
+El proyecto "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (1) está compilando "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (2) en el nodo 1 (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Se creará "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" porque se especificó "AlwaysCreate".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+FinalizeBuildStatus:
+  Se eliminará el archivo "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  Aplicando tarea Touch a "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\ZERO_CHECK.vcxproj" (destinos predeterminados).
+PrepareForBuild:
+  La salida estructurada está habilitada. El formato del diagnóstico del compilador reflejará la jerarquía de errores. Consulte https://aka.ms/cpp/structured-output para obtener más detalles.
+InitializeBuildStatus:
+  Aplicando tarea Touch a "aios_kernel.dir\Debug\aios_kernel.tlog\unsuccessfulbuild".
+CustomBuild:
+  Todas las salidas están actualizadas.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\CL.exe /c /IC:\dev\AIOS\orchestrator\include /Zi /nologo /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D QUANTUM_DEBUG=1 /D METADATA_ABSTRACTION_DEBUG=1 /D "CMAKE_INTDIR=\"Debug\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"aios_kernel.dir\Debug\\" /Fd"aios_kernel.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp C:\dev\AIOS\orchestrator\src\NaturalLanguageInterface.cpp C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp C:\dev\AIOS\orchestrator\src\RecursiveSelfIngestor.cpp C:\dev\AIOS\orchestrator\src\SingularityCore.cpp C:\dev\AIOS\orchestrator\src\SphereShellManager.cpp C:\dev\AIOS\orchestrator\src\SubspaceProjector.cpp C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp C:\dev\AIOS\orchestrator\src\main.cpp
+  CenterGeometryField.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/CenterGeometryField.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  NaturalLanguageInterface.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/NaturalLanguageInterface.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  QuantumMemoryTransfer.cpp
+C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  QuantumRandomGenerator.cpp
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  RecursiveSelfIngestor.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/RecursiveSelfIngestor.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SingularityCore.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SingularityCore.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SphereShellManager.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/SphereShellManager.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+  SubspaceProjector.cpp
+  TachyonicFieldDatabase.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/TachyonicFieldDatabase.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  UniversalConsciousnessSubstrate.cpp
+C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  main.cpp
+C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+      C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(82,12):
+      vea la declaración de 'SingularityCore::detectConsciousnessEmergence'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(59,28):
+      vea la declaración de 'tachyonic_database'
+  
+C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+      C:\dev\AIOS\orchestrator\src\main.cpp(62,27):
+      vea la declaración de 'self_ingestor'
+  
+  Generando código...
+Compilación del proyecto terminada "C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destinos predeterminados) -- ERROR.
+
+ERROR al compilar.
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\src\CenterGeometryField.cpp(434,39): warning C4244: 'argumento': conversión de 'size_t' a 'const std::complex<double>::_Ty'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(127,71): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(189,20): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\UniversalConsciousnessSubstrate.cpp(478,44): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+
+"C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj" (destino predeterminado) (1) ->
+(ClCompile destino) -> 
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumMemoryTransfer.cpp(8,10): error C1083: No se puede abrir el archivo incluir: 'openssl/sha.h': No such file or directory [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\QuantumRandomGenerator.cpp(143,53): error C2065: 'M_PI': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,45): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(15,14): error C2737: 'TACHYONIC_VELOCITY_THRESHOLD': se debe inicializar el objeto const [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(324,87): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\TachyonicFieldDatabase.cpp(469,68): error C2065: 'SPEED_OF_LIGHT': identificador no declarado [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\include\SingularityCore.hpp(83,12): error C2535: 'double SingularityCore::detectConsciousnessEmergence(void)': función miembro ya definida o declarada [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(75,28): error C2086: 'TachyonicFieldDatabase tachyonic_database': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+  C:\dev\AIOS\orchestrator\src\main.cpp(78,27): error C2086: 'RecursiveSelfIngestor self_ingestor': nueva definición [C:\dev\AIOS\orchestrator\build\aios_kernel.vcxproj]
+
+    4 Advertencia(s)
+    15 Errores
+
+Tiempo transcurrido 00:00:08.30
+
+
+2025-07-01 19:28:56,076 - INFO - Starting PHASE 2: Runtime Execution Testing: Initialize systems, test consciousness emergence, validate recursive ingestion
+2025-07-01 19:28:56,077 - INFO - Starting PHASE 3: Logging & Metadata Validation: Validate log structure, metadata content, consciousness metrics
+2025-07-01 19:28:56,079 - INFO - Starting PHASE 4: Debugging & Error Resolution: Memory analysis, error pattern detection, consciousness coherence validation
+2025-07-01 19:28:56,098 - INFO - Starting FINAL REPORT: AIOS Consciousness Test Results: Comprehensive analysis of all test phases and recommendations
+2025-07-01 19:28:56,098 - INFO - Test orchestration completed in 14.99 seconds

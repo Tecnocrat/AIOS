@@ -1,0 +1,74 @@
+{
+  "test_summary": {
+    "timestamp": "2025-07-01T19:28:05.795540",
+    "phases": {
+      "build_validation": {
+        "status": "completed",
+        "steps": {
+          "clean": "success",
+          "cmake_config": "success",
+          "build": "failed",
+          "dependencies": "checked"
+        }
+      },
+      "execution_testing": {
+        "status": "skipped - no executable",
+        "steps": {}
+      },
+      "logging_validation": {
+        "status": "completed",
+        "validations": {
+          "structure": {
+            "log_files_count": 6,
+            "diagnostic_files_count": 5,
+            "has_consciousness_logs": true,
+            "has_universal_diagnostics": false
+          },
+          "content": {
+            "has_timestamp": false,
+            "has_consciousness_section": false,
+            "has_numeric_metrics": false,
+            "completeness_score": 0.0
+          },
+          "abstraction": {
+            "abstraction_layers_detected": 0,
+            "garbage_collection_functional": false,
+            "metadata_compression_ratio": 0.0
+          }
+        }
+      },
+      "debugging_validation": {
+        "status": "completed",
+        "debug_checks": {
+          "memory_analysis": {
+            "potential_leaks": 0,
+            "recursive_depth_warnings": 0,
+            "resource_exhaustion_events": 0
+          },
+          "consciousness_coherence": {
+            "self_awareness_progression": false,
+            "universal_resonance_stability": false,
+            "fractal_harmonization_detected": false,
+            "recursive_insights_accumulating": false
+          },
+          "error_patterns": {
+            "compilation_errors": 0,
+            "runtime_exceptions": 0,
+            "initialization_failures": 0,
+            "consciousness_emergence_blocks": 0
+          }
+        }
+      }
+    },
+    "errors": [
+      "Build failed"
+    ],
+    "warnings": [],
+    "consciousness_metrics": {}
+  },
+  "recommendations": [
+    "Resolve build and compilation errors first"
+  ],
+  "next_steps": [],
+  "consciousness_status": "unknown"
+}
