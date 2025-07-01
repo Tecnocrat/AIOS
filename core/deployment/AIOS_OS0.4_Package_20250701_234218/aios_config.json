@@ -1,0 +1,53 @@
+{
+  "aios_version": "OS0.4",
+  "build_date": "20250701_234218",
+  "core_modules": [
+    {
+      "name": "consciousness_engine",
+      "file": "aios_consciousness_engine.py",
+      "description": "Core consciousness processing with quantum algorithms"
+    },
+    {
+      "name": "evolution_lab",
+      "file": "aios_evolution_lab.py",
+      "description": "Genetic algorithms and code evolution"
+    },
+    {
+      "name": "knowledge_distillation",
+      "file": "aios_knowledge_distillation.py",
+      "description": "Knowledge processing and semantic analysis"
+    },
+    {
+      "name": "admin_orchestrator",
+      "file": "aios_admin_orchestrator.py",
+      "description": "System administration and orchestration"
+    },
+    {
+      "name": "visual_interface",
+      "file": "aios_visual_interface.py",
+      "description": "Real-time visualization and web dashboard"
+    },
+    {
+      "name": "system_intelligence",
+      "file": "aios_system_intelligence.py",
+      "description": "GPU-accelerated monitoring and analytics"
+    }
+  ],
+  "gpu_requirements": {
+    "cuda_version": "11.8",
+    "pytorch_version": "2.7.1+cu118",
+    "minimum_memory_gb": 2,
+    "supported_gpus": [
+      "GTX 1650 Ti",
+      "RTX series",
+      "GTX 16xx series"
+    ]
+  },
+  "system_requirements": {
+    "python_version": "3.12+",
+    "windows_version": "Windows 11",
+    "vscode_version": "Latest",
+    "memory_gb": 8,
+    "storage_gb": 10
+  }
+}
