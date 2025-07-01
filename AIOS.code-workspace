@@ -80,7 +80,11 @@
         "files.autoSave": "afterDelay",
         "files.autoSaveDelay": 2000,
         "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
-        "powershell.cwd": "🧠 AIOS Consciousness System"
+        "powershell.cwd": "🧠 AIOS Consciousness System",
+        "python.defaultInterpreterPath": "c:\\dev\\AIOS\\aios_env\\Scripts\\python.exe",
+        "python.interpreter.infoVisibility": "never",
+        "python.experiments.enabled": false,
+        "python.terminal.activateEnvironment": true
     },        "extensions": {
         "recommendations": [
             "ms-vscode.cpptools",

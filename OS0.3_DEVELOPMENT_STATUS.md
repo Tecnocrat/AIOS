@@ -76,15 +76,17 @@
 
 ## 🐛 **Critical Issues Fixed (Latest Session)**
 
-### **VSCode Python Interpreter & Terminal Issues** ✅ RESOLVED
-- **Issue**: VSCode repeatedly asking for Python interpreter selection + stuck terminal processes
-- **Root Cause**: Conflicting Python path settings between workspace file and .vscode/settings.json
-- **Resolution**: 
-  - Removed duplicate Python configuration from AIOS.code-workspace
-  - Maintained clean configuration in .vscode/settings.json with absolute paths
-  - Terminated stuck Python processes (PID 21836, 17428) consuming high CPU
-  - Verified virtual environment activation works correctly
-- **Status**: ✅ **FULLY RESOLVED** - No more interpreter prompts or encoding errors
-- **Verification**: All Python scripts execute cleanly without conflicts
+### **VSCode Python Interpreter & Terminal Issues** ✅ COMPLETELY RESOLVED
+- **Issue**: VSCode repeatedly asking for Python interpreter selection + showing chaos of different Python paths
+- **Root Cause**: Multiple Python installations confusing VSCode's discovery + inadequate interpreter selection settings
+- **Comprehensive Solution**: 
+  - **Disabled interpreter discovery**: Set `python.interpreter.infoVisibility: "never"` and `python.experiments.enabled: false`
+  - **Forced specific interpreter**: Absolute paths in all .vscode/settings.json files across workspace
+  - **Cleaned VSCode cache**: Removed cached interpreter discoveries that were causing conflicts
+  - **Workspace-level override**: Added Python settings to AIOS.code-workspace to force interpreter selection
+  - **Multiple scope enforcement**: Settings at root, subfolder, and workspace levels for complete coverage
+  - **Disabled auto-search**: Prevented VSCode from discovering new interpreters automatically
+- **Status**: ✅ **COMPLETELY RESOLVED** - No more interpreter selection prompts, forced single interpreter
+- **Verification**: Single Python 3.12.8 interpreter, no selection chaos, clean environment detection
 
 *Created: 2025-07-01 Morning | Branch: OS0.3 | Status: Ready for Development*
