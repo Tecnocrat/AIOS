@@ -1,0 +1,43 @@
+{
+  "system": {
+    "version": "OS0.4.0",
+    "installation_date": "2025-07-02 00:49:26",
+    "target_directory": "C:\\dev\\AIOS\\core\\AIOS_OS04",
+    "python_executable": "C:\\dev\\AIOS\\core\\AIOS_OS04\\aios_env\\Scripts\\python.exe"
+  },
+  "consciousness": {
+    "enable_quantum_processing": true,
+    "consciousness_update_interval": 1.0,
+    "neural_network_size": 1000
+  },
+  "evolution": {
+    "population_size": 100,
+    "mutation_rate": 0.1,
+    "evolution_generations": 50
+  },
+  "knowledge": {
+    "enable_ai_models": true,
+    "distillation_rules_file": "distillation_rules.json",
+    "code_analysis_depth": "advanced"
+  },
+  "visual_interface": {
+    "web_port": 8080,
+    "websocket_port": 8081,
+    "cs_bridge_port": 8082,
+    "enable_real_time_updates": true
+  },
+  "system_intelligence": {
+    "enable_gpu_acceleration": true,
+    "monitoring_interval": 1.0,
+    "alert_thresholds": {
+      "cpu": 80.0,
+      "memory": 85.0,
+      "gpu": 90.0
+    }
+  },
+  "admin": {
+    "enable_auto_testing": true,
+    "backup_retention_days": 30,
+    "log_level": "INFO"
+  }
+}

@@ -43,9 +43,9 @@ def validate_all_mega_modules():
     # Test 2: Evolution Lab
     print("🧪 Testing Evolution Lab...")
     try:
-        from aios_evolution_lab import AIOSEvolutionLab
+        from aios_evolution_lab import EvolutionLabManager
         
-        lab = AIOSEvolutionLab()
+        lab = EvolutionLabManager()
         validation_results['evolution_lab'] = True
         print("   ✅ Evolution Lab: PASSED")
         
@@ -55,9 +55,9 @@ def validate_all_mega_modules():
     # Test 3: Knowledge Distillation
     print("🧪 Testing Knowledge Distillation...")
     try:
-        from aios_knowledge_distillation import KnowledgeDistillationEngine
+        from aios_knowledge_distillation import UnifiedKnowledgeDistillationEngine
         
-        distiller = KnowledgeDistillationEngine()
+        distiller = UnifiedKnowledgeDistillationEngine()
         validation_results['knowledge_distillation'] = True
         print("   ✅ Knowledge Distillation: PASSED")
         
@@ -67,9 +67,9 @@ def validate_all_mega_modules():
     # Test 4: Admin Orchestrator
     print("🧪 Testing Admin Orchestrator...")
     try:
-        from aios_admin_orchestrator import SystemOrchestrator
+        from aios_admin_orchestrator import UnifiedAdminOrchestrationEngine
         
-        admin = SystemOrchestrator()
+        admin = UnifiedAdminOrchestrationEngine()
         validation_results['admin_orchestrator'] = True
         print("   ✅ Admin Orchestrator: PASSED")
         
@@ -111,9 +111,9 @@ def validate_all_mega_modules():
             
             # Create instances of all modules
             consciousness = AIOSConsciousnessEngine()
-            evolution = AIOSEvolutionLab()
-            knowledge = KnowledgeDistillationEngine()
-            admin = SystemOrchestrator()
+            evolution = EvolutionLabManager()
+            knowledge = UnifiedKnowledgeDistillationEngine()
+            admin = UnifiedAdminOrchestrationEngine()
             
             viz_config = VisualizationConfig()
             visual = AIOSVisualInterfaceManager(viz_config)

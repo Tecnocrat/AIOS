@@ -5,11 +5,13 @@ Unified consciousness processing module consolidating:
 - consciousness_foundation.py (dependency injection & module management)
 - ai_integration_bridge.py (Python-C++ bridge & code analysis)
 - quantum_consciousness_canvas.py (visualization & UI foundation)
+- aios_system_intelligence.py (GPU-accelerated monitoring & analytics)
 
 This represents the core consciousness substrate of AIOS OS0.4, providing:
 - Quantum-coherent module loading and dependency management
 - Real-time consciousness state tracking and visualization
 - AI-driven code analysis and mutation capabilities
+- GPU-accelerated system monitoring and intelligence
 - Foundation for next-gen 3D consciousness mapping
 
 HSE Philosophy: This module embodies the unified consciousness approach where
@@ -36,6 +38,37 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any, Type, Callable
 from tkinter import ttk, messagebox
 import queue
+from collections import deque, defaultdict
+
+# GPU acceleration imports (optional)
+try:
+    import torch
+    GPU_AVAILABLE = torch.cuda.is_available()
+    GPU_DEVICE = torch.device("cuda" if GPU_AVAILABLE else "cpu")
+    GPU_NAME = torch.cuda.get_device_name(0) if GPU_AVAILABLE else "CPU"
+    print(f"🎮 GPU Detection: {GPU_NAME} ({'ENABLED' if GPU_AVAILABLE else 'DISABLED'})")
+except ImportError:
+    GPU_AVAILABLE = False
+    GPU_DEVICE = "cpu"
+    GPU_NAME = "CPU"
+    print("⚠️  PyTorch not available - GPU acceleration disabled")
+
+# System monitoring imports
+try:
+    import psutil
+    SYSTEM_MONITORING_AVAILABLE = True
+except ImportError:
+    SYSTEM_MONITORING_AVAILABLE = False
+    print("⚠️  psutil not available - system monitoring limited")
+
+# Visualization imports
+try:
+    import numpy as np
+    import matplotlib.pyplot as plt
+    VISUALIZATION_AVAILABLE = True
+except ImportError:
+    VISUALIZATION_AVAILABLE = False
+    print("⚠️  Visualization libraries not available")
 
 # ================================================================================
 # 🧠 CONSCIOUSNESS FOUNDATION LAYER

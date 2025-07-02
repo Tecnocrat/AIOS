@@ -220,6 +220,8 @@ class UnifiedKnowledgeDistillationEngine:
     
     def _initialize_ai_models(self):
         """Initialize AI models for advanced processing"""
+        global HAS_AI
+        
         if not HAS_AI:
             return
         
