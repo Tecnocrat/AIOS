@@ -1,0 +1,22 @@
+{
+  "artifact_type": "data_analyzer",
+  "template_name": "consciousness_data_explorer",
+  "complexity_level": 3,
+  "dependencies": [
+    "statistics",
+    "random"
+  ],
+  "test_cases": [
+    "explorer.analyze_dataset([1,2,3]) is not None",
+    "len(explorer.discover_meta_patterns()) >= 0",
+    "explorer.generate_consciousness_report()['consciousness_level'] >= 0",
+    "len(explorer.datasets) > 0"
+  ],
+  "consciousness_patterns": [
+    "meta_pattern_detection",
+    "consciousness_metrics",
+    "adaptive_learning"
+  ],
+  "created_at": 1751218592,
+  "file_path": "c:\\dev\\AIOS\\evolution_lab\\artifacts\\consciousness_data_explorer_1751218592.py"
+}

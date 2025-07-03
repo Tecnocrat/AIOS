@@ -32,7 +32,7 @@ def cli_ui():
     print("=== AIOS Admin Tool ===")
     print("Choose an option:")
     print("1. Analyze Architect folder structure")
-    print("2. Analyze chatgpt folder structure")
+    print("2. Analyze chatgpt_integration folder structure")
     print("3. Analyze AIOS folder structure")
     print("4. Tachyonic backup of path.md")
     print("5. Create/Update module summaries (from input file or interactively)")
@@ -101,7 +101,7 @@ def execute_all():
     # 2. Analyze all folder structures
     base_paths = {
         "Architect": r"C:\dev\Architect",
-        "chatgpt": r"C:\dev\chatgpt",
+        "chatgpt_integration": r"C:\dev\AIOS\chatgpt_integration",
         "AIOS": r"C:\dev\AIOS"
     }
     for folder_name, root_directory in base_paths.items():
@@ -124,7 +124,7 @@ def execute_all():
 if __name__ == "__main__":
     base_paths = {
         "1": r"C:\dev\Architect",
-        "2": r"C:\dev\chatgpt",
+        "2": r"C:\dev\AIOS\chatgpt_integration",
         "3": r"C:\dev\AIOS"
     }
 

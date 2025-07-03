@@ -169,7 +169,7 @@ class ConsciousnessMetrics:
 class RuntimeIntelligence:
     """Main runtime intelligence and logging system"""
     
-    def __init__(self, base_path: Path = None):
+    def __init__(self, base_path: Optional[Path] = None):
         self.base_path = base_path or Path("c:/dev/AIOS")
         self.session_id = self._generate_session_id()
         self.start_time = datetime.now()
@@ -310,10 +310,10 @@ class RuntimeIntelligence:
         self.logger.addHandler(console_handler)
     
     def log_event(self, level: EventLevel, module: str, module_type: ModuleType, 
-                  event_type: str, message: str, context: Dict[str, Any] = None,
-                  metrics: Dict[str, float] = None, duration_ms: float = None,
-                  consciousness_indicators: Dict[str, Any] = None,
-                  related_events: List[str] = None):
+                  event_type: str, message: str, context: Optional[Dict[str, Any]] = None,
+                  metrics: Optional[Dict[str, float]] = None, duration_ms: Optional[float] = None,
+                  consciousness_indicators: Optional[Dict[str, Any]] = None,
+                  related_events: Optional[List[str]] = None):
         """Log a runtime event with full context"""
         
         event = RuntimeEvent(
@@ -439,7 +439,7 @@ class RuntimeIntelligence:
             pass
     
     def create_execution_context(self, context_name: str, module: str, 
-                                context_data: Dict[str, Any] = None) -> str:
+                                context_data: Optional[Dict[str, Any]] = None) -> str:
         """Create tracked execution context"""
         context_id = f"{module}_{context_name}_{int(time.time() * 1000)}"
         
@@ -501,7 +501,7 @@ class RuntimeIntelligence:
             )
     
     def register_module(self, module_name: str, module_type: ModuleType, 
-                       metadata: Dict[str, Any] = None):
+                       metadata: Optional[Dict[str, Any]] = None):
         """Register an active module"""
         self.active_modules[module_name] = {
             'type': module_type,
@@ -807,7 +807,7 @@ def log_runtime_event(level: EventLevel, module: str, module_type: ModuleType,
     ri = get_runtime_intelligence()
     ri.log_event(level, module, module_type, event_type, message, **kwargs)
 
-def create_runtime_context(context_name: str, module: str, context_data: Dict[str, Any] = None) -> str:
+def create_runtime_context(context_name: str, module: str, context_data: Optional[Dict[str, Any]] = None) -> str:
     """Convenience function for creating execution contexts"""
     ri = get_runtime_intelligence()
     return ri.create_execution_context(context_name, module, context_data)
@@ -821,7 +821,7 @@ def close_runtime_context(context_id: str, result: Any = None):
 class RuntimeContext:
     """Context manager for automatic execution context tracking"""
     
-    def __init__(self, context_name: str, module: str, context_data: Dict[str, Any] = None):
+    def __init__(self, context_name: str, module: str, context_data: Optional[Dict[str, Any]] = None):
         self.context_name = context_name
         self.module = module
         self.context_data = context_data
@@ -832,8 +832,9 @@ class RuntimeContext:
         return self.context_id
     
     def __exit__(self, exc_type, exc_val, exc_tb):
-        result = None if exc_type is None else f"Exception: {exc_type.__name__}: {exc_val}"
-        close_runtime_context(self.context_id, result)
+        if self.context_id:  # Only close if we have a valid context_id
+            result = None if exc_type is None else f"Exception: {exc_type.__name__}: {exc_val}"
+            close_runtime_context(self.context_id, result)
         
         if exc_type is not None:
             log_runtime_event(
