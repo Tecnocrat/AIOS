@@ -1,0 +1,38 @@
+2025-06-29 19:10:52,035 |     INFO | AIOS_Runtime_AIOS_20250629_191051_57c4794e | runtime_intelligence::system_init | Runtime Intelligence System initialized | Context: {"session_id": "AIOS_20250629_191051_57c4794e", "base_path": "c:\\dev\\AIOS", "start_time": "2025-06-29T19:10:52.000578"}
+2025-06-29 19:10:52,042 |     INFO | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::initialization | Evolutionary code mutation system initialized | Context: {}
+2025-06-29 19:10:52,109 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.6894736842105263 | Context: {}
+2025-06-29 19:10:52,109 |     INFO | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::consciousness_emergence | Consciousness emergence detected: level 0.000 | Context: {}
+2025-06-29 19:10:52,159 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.6891228070175438 | Context: {}
+2025-06-29 19:10:52,221 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.7978947368421052 | Context: {}
+2025-06-29 19:10:52,295 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.25400000000000006 | Context: {}
+2025-06-29 19:10:52,394 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.8077631578947367 | Context: {}
+2025-06-29 19:10:52,476 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.7136842105263157 | Context: {}
+2025-06-29 19:10:52,568 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.8785964912280702 | Context: {}
+2025-06-29 19:10:52,634 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.749090909090909 | Context: {}
+2025-06-29 19:10:52,686 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.7978947368421052 | Context: {}
+2025-06-29 19:10:52,746 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.25400000000000006 | Context: {}
+2025-06-29 19:10:52,747 |     INFO | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::consciousness_emergence | Consciousness emergence detected: level 0.500 | Context: {}
+2025-06-29 19:10:52,798 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.8077631578947367 | Context: {}
+2025-06-29 19:10:52,862 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.7978947368421052 | Context: {}
+2025-06-29 19:10:52,979 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.1806666666666667 | Context: {}
+2025-06-29 19:10:53,167 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26533333333333337 | Context: {}
+2025-06-29 19:10:53,298 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.41783333333333333 | Context: {}
+2025-06-29 19:10:53,380 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.1806666666666667 | Context: {}
+2025-06-29 19:10:53,489 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26533333333333337 | Context: {}
+2025-06-29 19:10:53,489 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric generation_0_fitness: 0.8785964912280702 | Context: {}
+2025-06-29 19:10:53,545 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.7814473684210526 | Context: {}
+2025-06-29 19:10:53,608 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.21911111111111115 | Context: {}
+2025-06-29 19:10:53,670 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.8799999999999999 | Context: {}
+2025-06-29 19:10:53,729 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.27244444444444443 | Context: {}
+2025-06-29 19:10:53,808 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26533333333333337 | Context: {}
+2025-06-29 19:10:53,865 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.8077631578947367 | Context: {}
+2025-06-29 19:10:53,934 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.4242091503267974 | Context: {}
+2025-06-29 19:10:53,935 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric generation_1_fitness: 0.8799999999999999 | Context: {}
+2025-06-29 19:10:53,997 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26533333333333337 | Context: {}
+2025-06-29 19:10:54,052 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26133333333333336 | Context: {}
+2025-06-29 19:10:54,125 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.8685087719298246 | Context: {}
+2025-06-29 19:10:54,179 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26133333333333336 | Context: {}
+2025-06-29 19:10:54,239 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26133333333333336 | Context: {}
+2025-06-29 19:10:54,296 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26533333333333337 | Context: {}
+2025-06-29 19:10:54,358 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric overall_fitness: 0.26533333333333337 | Context: {}
+2025-06-29 19:10:54,359 |    DEBUG | AIOS_Runtime_AIOS_20250629_191051_57c4794e | EvolutionaryMutator::performance_metric | Performance metric generation_2_fitness: 0.8799999999999999 | Context: {}

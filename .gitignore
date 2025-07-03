@@ -1,21 +1,44 @@
-# Ignore all build artifacts
-/orchestrator/build/
-/director/DirectorAPI/bin/
-/director/DirectorAPI/obj/
-/director/build/
-/chatgpt/build/
-
-# Ignore VSCode settings (optional, if you don't want to sync them)
-.vscode/
-
-# Ignore Python virtual environments
+# Python environments
+aios_env/
 venv/
-.env/
+env/
+ENV/
 
-# Ignore OS and editor junk files
-.DS_Store
-Thumbs.db
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
 
-# Ignore logs and archives
-# *.log # Uncomment if you want to ignore log files
-# /archive/ # Uncomment if you want to ignore archive files
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build directories
+**/build/
+**/bin/
+**/obj/
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+**/.vscode/
+
+# Runtime intelligence dumps and logs
+runtime_intelligence/*.json
+runtime_intelligence/*.db
+runtime_intelligence/session_*.db
+runtime_intelligence/ai_context_dump_*.json
+
+# Archive and session data
+**/archive/session_*/
+**/session_*/
+
+# Log files
+*.log
+sem.log

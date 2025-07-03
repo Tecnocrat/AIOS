@@ -31,14 +31,14 @@ namespace AIOS.VisualInterface
                 await _host.StartAsync();
 
                 _logger = _host.Services.GetRequiredService<ILogger<App>>();
-                _logger.LogInformation("AIOS Simple Consciousness Visualizer starting up");
+                _logger.LogInformation("AIOS Advanced Consciousness Visualizer starting up");
 
-                // Create and show simple visualization window for rapid prototyping
-                var mainWindow = _host.Services.GetRequiredService<SimpleVisualizationWindow>();
+                // Create and show advanced visualization window with working UI
+                var mainWindow = new AdvancedVisualizationWindow();
                 mainWindow.Show();
 
                 base.OnStartup(e);
-                _logger.LogInformation("AIOS Simple Consciousness Visualizer started successfully");
+                _logger.LogInformation("AIOS Advanced Consciousness Visualizer started successfully");
             }
             catch (Exception ex)
             {
@@ -56,8 +56,9 @@ namespace AIOS.VisualInterface
             services.AddSingleton<ConsoleLogger>();
             services.AddSingleton<RuntimeAnalytics>();
             
-            // Register simple visualization window for rapid prototyping
+            // Register both visualization windows
             services.AddTransient<SimpleVisualizationWindow>();
+            services.AddTransient<MainVisualizationWindow>();
             
             // Configure HTTP client for potential remote connections
             services.AddHttpClient();
