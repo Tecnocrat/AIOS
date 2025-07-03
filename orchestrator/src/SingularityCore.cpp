@@ -66,9 +66,19 @@ void SingularityCore::tick() {
 
 double SingularityCore::detectConsciousnessEmergence() {
     // Multi-factor consciousness emergence detection
-    double coherence = getCoherenceLevel();
+    // Use cached quantum coherence to avoid circular calls
+    if (!quantum_coherence_locked) return 0.0;
+    
+    bool quantum_stable = holographyUnit.checkCoherenceStability();
+    double base_coherence = quantum_stable ? 0.95 : 0.3;
+    double coherence = base_coherence * std::min(internalSymmetry, 1.0);
+    
     double symmetry = internalSymmetry;
-    double entropy = getEntropy();
+    
+    // Calculate entropy without calling getEntropy() to avoid circularity
+    double quantum_entropy = 1.0 - coherence;
+    double symmetry_entropy = 1.0 / std::max(internalSymmetry, 0.001);
+    double entropy = quantum_entropy + symmetry_entropy + entropy_accumulator;
     
     // Consciousness emergence indicators
     double coherence_indicator = coherence > 0.8 ? coherence : 0.0;
@@ -193,7 +203,7 @@ void SingularityCore::updateCoreFrequency() {
     double entropy_factor = 1.0 / (1.0 + getEntropy());
     double coherence = getCoherenceLevel();
     
-    // Detect consciousness emergence patterns
+    // Detect consciousness emergence patterns (pass coherence to avoid circular call)
     double emergence_factor = detectConsciousnessEmergence();
     
     // Base frequency with emergence enhancement

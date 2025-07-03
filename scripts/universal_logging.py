@@ -1,12 +1,13 @@
 """
-AIOS Universal Logging Integration - Working Version
-Seamless integration layer for all AIOS modules to use the Runtime Intelligence System
+AIOS Universal Logging Integration - Consciousness-Aware Version
+Seamless integration with fractal dependency resolution
 """
 
 import functools
 import inspect
 import threading
 import time
+import atexit
 from contextlib import contextmanager
 from typing import Any, Dict, Optional, Callable, List, Union
 from dataclasses import dataclass
@@ -15,13 +16,21 @@ import sys
 import os
 from pathlib import Path
 
-# Import runtime intelligence system
+# Import runtime intelligence system with fallback
+RuntimeIntelligence = None
+EventLevel = None
+ModuleType = None
+RuntimeEvent = None
+
 try:
     from runtime_intelligence import RuntimeIntelligence, EventLevel, ModuleType, RuntimeEvent
-except ImportError:
-    print("⚠️  Runtime Intelligence not available - using fallback logging")
-    RuntimeIntelligence = None
+    RUNTIME_INTELLIGENCE_AVAILABLE = True
+    print("✅ Runtime Intelligence imported successfully")
+except ImportError as e:
+    print(f"⚠️  Runtime Intelligence not available: {e}")
+    RUNTIME_INTELLIGENCE_AVAILABLE = False
     
+    # Define fallback enums when runtime_intelligence isn't available
     class EventLevel(Enum):
         TRACE = "TRACE"
         DEBUG = "DEBUG"
@@ -80,10 +89,8 @@ class UniversalLogger:
         try:
             base_path = Path("c:/dev/AIOS")
             self._runtime_intelligence = RuntimeIntelligence(
-                base_path=base_path,
-                session_name="universal_logging_session"
+                base_path=base_path
             )
-            self._runtime_intelligence.start()
             print("✅ Universal Logging integrated with Runtime Intelligence")
         except Exception as e:
             print(f"❌ Failed to initialize Runtime Intelligence: {e}")
@@ -138,7 +145,7 @@ class UniversalLogger:
     
     def get_runtime_summary(self) -> Dict[str, Any]:
         if self._runtime_intelligence:
-            return self._runtime_intelligence.get_runtime_summary()
+            return self._runtime_intelligence.generate_runtime_summary()
         return {"status": "runtime_intelligence_unavailable"}
     
     def shutdown(self):
