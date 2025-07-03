@@ -30,8 +30,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="MainVisualizationWindow.xaml.cs" />
-    <Page Remove="MainVisualizationWindow.xaml" />
+    <None Remove="state\**\*" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="state\" />
   </ItemGroup>
 
   <ItemGroup>

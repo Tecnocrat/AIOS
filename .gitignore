@@ -1,44 +1,14 @@
-# Python environments
-aios_env/
-venv/
-env/
-ENV/
+# Ignore everything by default
+*
 
-# Python cache and compiled files
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-.pytest_cache/
+# Allow tracking of the entire Dev folder
+!/
 
-# Environment files
-.env
-.env.local
-.env.*.local
+# Specifically include the CodeBot folder
+!CodeBot/
+!CodeBot/**
 
-# Build directories
-**/build/
-**/bin/
-**/obj/
-
-# VS Code
-.vscode/settings.json
-.vscode/launch.json
-.vscode/tasks.json
-**/.vscode/
-
-# Runtime intelligence dumps and logs
-runtime_intelligence/*.json
-runtime_intelligence/*.db
-runtime_intelligence/session_*.db
-runtime_intelligence/ai_context_dump_*.json
-
-# Archive and session data
-**/archive/session_*/
-**/session_*/
-
-# Log files
+# Exclude unnecessary files or folders (examples)
 *.log
-sem.log
+*.pyc
+__pycache__/
