@@ -1,0 +1,88 @@
+{
+  "models": {
+    "nlp": {
+      "primary": {
+        "name": "microsoft/DialoGPT-medium",
+        "type": "conversational",
+        "path": "./ai/models/dialogpt-medium",
+        "config": {
+          "maxLength": 1000,
+          "temperature": 0.7,
+          "topK": 50,
+          "topP": 0.9,
+          "repetitionPenalty": 1.2
+        }
+      },
+      "fallback": {
+        "name": "distilbert-base-uncased",
+        "type": "classification",
+        "path": "./ai/models/distilbert-base",
+        "config": {
+          "maxLength": 512,
+          "batchSize": 16
+        }
+      }
+    },
+    "vision": {
+      "primary": {
+        "name": "microsoft/resnet-50",
+        "type": "image_classification",
+        "path": "./ai/models/resnet-50",
+        "config": {
+          "inputSize": [224, 224],
+          "normalize": true,
+          "preprocessor": "standard"
+        }
+      }
+    },
+    "prediction": {
+      "resourceUsage": {
+        "name": "custom-lstm-predictor",
+        "type": "time_series",
+        "path": "./ai/models/resource-predictor",
+        "config": {
+          "sequenceLength": 100,
+          "features": ["cpu", "memory", "disk", "network"],
+          "predictionHorizon": 60
+        }
+      }
+    },
+    "automation": {
+      "taskClassifier": {
+        "name": "custom-task-classifier",
+        "type": "classification",
+        "path": "./ai/models/task-classifier",
+        "config": {
+          "classes": ["file_operation", "system_command", "ui_action", "data_processing"],
+          "threshold": 0.8
+        }
+      }
+    }
+  },
+  "training": {
+    "enableContinuousLearning": true,
+    "learningRate": 0.001,
+    "batchSize": 32,
+    "epochs": 10,
+    "validationSplit": 0.2,
+    "earlyStoppingPatience": 5,
+    "saveCheckpoints": true,
+    "checkpointInterval": 1000
+  },
+  "inference": {
+    "enableBatching": true,
+    "maxBatchSize": 16,
+    "batchTimeout": 100,
+    "enableCaching": true,
+    "cacheSize": 1000,
+    "enableQuantization": false,
+    "device": "auto"
+  },
+  "monitoring": {
+    "enableMetrics": true,
+    "metricsInterval": 30,
+    "enableProfiling": false,
+    "trackModelPerformance": true,
+    "logPredictions": false
+  }
+}
