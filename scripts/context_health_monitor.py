@@ -12,6 +12,27 @@ import time
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 
+def supports_unicode():
+    """Check if the current environment supports Unicode emojis"""
+    try:
+        # Try to encode a simple emoji
+        '\u2705'.encode(sys.stdout.encoding or 'utf-8')
+        return True
+    except (UnicodeEncodeError, AttributeError):
+        return False
+
+# Set display characters based on environment capability
+UNICODE_SUPPORT = supports_unicode()
+STATUS_EXCELLENT = '\U0001F7E2 EXCELLENT' if UNICODE_SUPPORT else '>> EXCELLENT'
+STATUS_HEALTHY = '\U0001F7E2 HEALTHY' if UNICODE_SUPPORT else '>> HEALTHY'
+STATUS_GOOD = '\U0001F7E1 GOOD' if UNICODE_SUPPORT else '>> GOOD'
+STATUS_DEGRADED = '\U0001F7E1 DEGRADED' if UNICODE_SUPPORT else '>> DEGRADED'
+STATUS_CRITICAL = '\U0001F534 CRITICAL' if UNICODE_SUPPORT else '>> CRITICAL'
+STATUS_FAILURE = '\U0001F534 SYSTEM FAILURE' if UNICODE_SUPPORT else '>> SYSTEM FAILURE'
+ICON_ISSUES = '\U0001F6A8' if UNICODE_SUPPORT else '[!]'
+ICON_WARNINGS = '\u26A0\uFE0F' if UNICODE_SUPPORT else '[W]'
+ICON_RECOMMENDATIONS = '\U0001F4A1' if UNICODE_SUPPORT else '[R]'
+
 class AIContextHealthMonitor:
     def __init__(self):
         self.project_root = Path("c:/dev/AIOS")
@@ -22,7 +43,7 @@ class AIContextHealthMonitor:
         
     def calculate_context_health(self) -> float:
         """Calculate overall context health score (0.0 to 1.0)"""
-        print("🔍 Calculating Context Health Score...")
+        print("Calculating Context Health Score...")
         
         # Check documentation consistency
         doc_health = self._check_documentation_health()
@@ -55,7 +76,7 @@ class AIContextHealthMonitor:
     
     def _check_documentation_health(self) -> float:
         """Check documentation consistency and completeness"""
-        print("📚 Checking Documentation Health...")
+        print(f"{'📚' if UNICODE_SUPPORT else '[DOC]'} Checking Documentation Health...")
         
         required_docs = [
             "docs/ai-context/AI_context_reallocator.md",
@@ -105,7 +126,7 @@ class AIContextHealthMonitor:
     
     def _check_build_health(self) -> float:
         """Check build system health"""
-        print("🔧 Checking Build System Health...")
+        print(f"{'🔧' if UNICODE_SUPPORT else '[BUILD]'} Checking Build System Health...")
         
         score = 1.0
         
@@ -131,7 +152,7 @@ class AIContextHealthMonitor:
     
     def _check_code_health(self) -> float:
         """Check code integrity and completeness"""
-        print("💻 Checking Code Health...")
+        print(f"{'💻' if UNICODE_SUPPORT else '[CODE]'} Checking Code Health...")
         
         score = 1.0
         
@@ -165,7 +186,7 @@ class AIContextHealthMonitor:
     
     def _check_integration_health(self) -> float:
         """Check system integration health"""
-        print("🔗 Checking Integration Health...")
+        print(f"{'🔗' if UNICODE_SUPPORT else '[INTEGRATION]'} Checking Integration Health...")
         
         score = 1.0
         
@@ -228,30 +249,30 @@ class AIContextHealthMonitor:
     def _get_health_status(self, score: float) -> str:
         """Get human-readable health status"""
         if score >= 0.9:
-            return "🟢 EXCELLENT"
+            return STATUS_EXCELLENT
         elif score >= 0.8:
-            return "🟢 HEALTHY"
+            return STATUS_HEALTHY
         elif score >= 0.7:
-            return "🟡 GOOD"
+            return STATUS_GOOD
         elif score >= 0.5:
-            return "🟡 DEGRADED"
+            return STATUS_DEGRADED
         elif score >= 0.3:
-            return "🔴 CRITICAL"
+            return STATUS_CRITICAL
         else:
-            return "🔴 SYSTEM FAILURE"
+            return STATUS_FAILURE
     
     def _generate_recommendations(self) -> List[str]:
         """Generate actionable recommendations"""
         recommendations = []
         
         if self.issues:
-            recommendations.append("🚨 IMMEDIATE ACTION REQUIRED: Fix critical issues")
+            recommendations.append("IMMEDIATE ACTION REQUIRED: Fix critical issues")
         
         if len(self.warnings) > 5:
-            recommendations.append("⚠️ Address accumulated warnings")
+            recommendations.append("Address accumulated warnings")
         
         if not (self.project_root / "test_integration.py").exists():
-            recommendations.append("🔧 Create integration test for system validation")
+            recommendations.append("Create integration test for system validation")
         
         return recommendations
     
@@ -260,28 +281,28 @@ class AIContextHealthMonitor:
         report = self.generate_health_report()
         
         print("\n" + "="*60)
-        print("🏥 AIOS CONTEXT HEALTH REPORT")
+        print("AIOS CONTEXT HEALTH REPORT")
         print("="*60)
-        print(f"⏰ Timestamp: {report['timestamp']}")
-        print(f"📊 Health Score: {report['health_score']:.2f} / 1.00")
-        print(f"🎯 Status: {report['health_status']}")
+        print(f"Timestamp: {report['timestamp']}")
+        print(f"Health Score: {report['health_score']:.2f} / 1.00")
+        print(f"Status: {report['health_status']}")
         
         if report['issues']:
-            print(f"\n🚨 CRITICAL ISSUES ({len(report['issues'])}):")
+            print(f"\n{ICON_ISSUES} CRITICAL ISSUES ({len(report['issues'])}):")
             for issue in report['issues']:
                 print(f"   • {issue}")
         
         if report['warnings']:
-            print(f"\n⚠️ WARNINGS ({len(report['warnings'])}):")
+            print(f"\n{ICON_WARNINGS} WARNINGS ({len(report['warnings'])}):")
             for warning in report['warnings']:
                 print(f"   • {warning}")
         
         if report['recommendations']:
-            print(f"\n💡 RECOMMENDATIONS:")
+            print(f"\n{ICON_RECOMMENDATIONS} RECOMMENDATIONS:")
             for rec in report['recommendations']:
                 print(f"   • {rec}")
         
-        print(f"\n🔄 Trigger Reingestion: {'YES' if report['trigger_reingestion'] else 'NO'}")
+        print(f"\nTrigger Reingestion: {'YES' if report['trigger_reingestion'] else 'NO'}")
         print("="*60)
 
 def main():
