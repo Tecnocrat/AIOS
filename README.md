@@ -93,9 +93,55 @@ AIOS/
 | **C++ Core** | ✅ Complete | Fully functional with vcpkg dependencies |
 | **Python AI** | ✅ Complete | 5 modules: NLP, Prediction, Automation, Learning, Integration |
 | **Integration** | ✅ Complete | Cross-language communication working |
+| **VSCode Extension** | ✅ Complete | Context persistence, chat integration, iteration reset solved |
 | **C# UI** | 🔄 In Progress | Scaffolded, implementation in progress |
 | **Documentation** | 🔄 In Progress | Architecture complete, API docs in progress |
 | **Testing** | ✅ Complete | Integration tests passing |
+
+## 🔒 **VSCode Extension - Private Use Only**
+
+### **Problem Solved: Chat Iteration Reset**
+The AIOS VSCode extension solves the critical issue where chat iterations reset on extension restart, breaking development continuity.
+
+### **🛡️ Private Use Configuration**
+```powershell
+# Automated Private Setup (Recommended)
+cd "c:\dev\AIOS\vscode-extension"
+.\setup-private.ps1 -All
+
+# Manual Private Setup
+# 1. VSCode → F1 → "Developer: Install Extension from Location..."
+# 2. Select: c:\dev\AIOS\vscode-extension\aios-vscode-0.4.0.vsix
+# 3. Configure private settings (see PRIVATE_USE_IMPLEMENTATION_COMPLETE.md)
+```
+
+### **🔐 Private Use Features**
+- **🔒 Local Only**: No external connections or data sharing
+- **🔄 Persistent Context**: No more iteration resets across VSCode restarts
+- **🧠 AI Integration**: Direct connection to AIOS C++/Python/C# AI modules
+- **⚡ Native Chat**: VSCode chat participant with `@aios` command
+- **💾 Smart Context**: Automatic context saving and encryption
+- **🛠️ Developer Tools**: Rich command palette and status monitoring
+
+### **Usage**
+```typescript
+// In any VSCode chat window:
+@aios Help me understand this code
+@aios /status           // Show AIOS system status
+@aios /reset            // Reset conversation context
+@aios /save             // Save current context
+@aios /help             // Show all commands
+```
+
+### **Privacy & Security**
+- ✅ **No External Connections**: All processing happens locally
+- ✅ **No Telemetry**: All analytics and tracking disabled
+- ✅ **Encrypted Context**: Local context storage with encryption
+- ✅ **Session-Only Logs**: Minimal logging with automatic cleanup
+- ✅ **Private Installation**: VSIX-only installation (no marketplace)
+
+**📋 Complete Guide**: [VSCode Extension Private Use](vscode-extension/docs/AIOS_VSCODE_PRIVATE_COMPLETE.md)
+**🔧 Technical Details**: [Implementation Complete](vscode-extension/docs/PRIVATE_USE_IMPLEMENTATION_COMPLETE.md)
 
 ## 🧪 **Testing**
 

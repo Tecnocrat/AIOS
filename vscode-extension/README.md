@@ -132,6 +132,15 @@ This extension serves as the bridge between VSCode and the AIOS ecosystem:
 - **Service Integration**: Direct connection to AIOS services
 - **Context Synchronization**: Bidirectional context sharing
 
+## Documentation
+
+### Complete Guides
+- **[Private Use Setup](docs/AIOS_VSCODE_PRIVATE_COMPLETE.md)** - Complete installation and usage guide
+- **[Installation Guide](docs/VSCODE_EXTENSION_INSTALL.md)** - Quick installation instructions
+- **[Integration Details](docs/VSCODE_INTEGRATION_COMPLETE.md)** - Technical implementation details
+- **[Private Use Configuration](docs/PRIVATE_USE_CONFIG.md)** - Security and privacy setup
+- **[Implementation Complete](docs/PRIVATE_USE_IMPLEMENTATION_COMPLETE.md)** - Full implementation summary
+
 ## Troubleshooting
 
 ### Common Issues
