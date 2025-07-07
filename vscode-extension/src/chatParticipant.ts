@@ -109,8 +109,7 @@ export class AIOSChatParticipant {
 
             return {
                 errorDetails: {
-                    message: String(error),
-                    fullError: error
+                    message: String(error)
                 }
             };
         }
