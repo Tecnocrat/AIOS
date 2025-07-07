@@ -1,8 +1,754 @@
 {
 	"folders": [
 		{
+			"name": "AIOS Core",
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		// 🔒 Git Safety & Branch Protection
+		"git.confirmSync": true,
+		"git.autofetch": false,
+		"git.autoStash": false,
+		"git.confirmForcePush": true,
+		"git.branchProtection": [
+			"main",
+			"OS",
+			"OS0.1",
+			"OS0.2",
+			"OS0.3"
+		],
+		"git.defaultCloneDirectory": "c:\\dev\\AIOS",
+		"git.pullBeforeCheckout": true,
+		"git.showPushSuccessNotification": true,
+		"git.allowForcePush": false,
+		"git.fetchOnPull": true,
+		"git.pruneOnFetch": true,
+		"git.repositorySettings": {
+			"autoFetch": false,
+			"confirmSync": true
+		},
+		// 🧠 AI & Language Server Configuration
+		"github.copilot.enable": {
+			"*": true,
+			"yaml": true,
+			"plaintext": true,
+			"markdown": true,
+			"json": true,
+			"jsonc": true,
+			"cpp": true,
+			"c": true,
+			"python": true,
+			"csharp": true,
+			"powershell": true,
+			"cmake": true
+		},
+		"github.copilot.editor.enableAutoCompletions": true,
+		"github.copilot.editor.enableCodeActions": true,
+		"github.copilot.chat.enable": true,
+		"github.copilot.chat.welcomeMessage": "never",
+		// 🎨 Editor & UI Configuration
+		"editor.fontSize": 14,
+		"editor.fontFamily": "'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+		"editor.fontLigatures": true,
+		"editor.minimap.enabled": true,
+		"editor.minimap.size": "proportional",
+		"editor.wordWrap": "on",
+		"editor.rulers": [
+			80,
+			120
+		],
+		"editor.bracketPairColorization.enabled": true,
+		"editor.guides.bracketPairs": "active",
+		"editor.inlineSuggest.enabled": true,
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": true,
+			"strings": true
+		},
+		"editor.suggestOnTriggerCharacters": true,
+		"editor.acceptSuggestionOnEnter": "on",
+		"editor.tabCompletion": "on",
+		// 🔍 Search & Navigation
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/.git": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			"**/build": true,
+			"**/bin": true,
+			"**/obj": true,
+			"**/.vs": true,
+			"**/__pycache__": true,
+			"**/*.pyc": true,
+			"**/venv": true,
+			"**/env": true,
+			"**/.pytest_cache": true,
+			"**/.coverage": true,
+			"**/coverage": true,
+			"**/test_results": true,
+			"**/*.egg-info": true,
+			"**/dist": true,
+			"**/.mypy_cache": true,
+			"vcpkg_installed": true,
+			"vcpkg": true
+		},
+		"files.watcherExclude": {
+			"**/build/**": true,
+			"**/bin/**": true,
+			"**/obj/**": true,
+			"**/.git/**": true,
+			"**/node_modules/**": true,
+			"**/venv/**": true,
+			"**/env/**": true,
+			"**/__pycache__/**": true,
+			"**/*.pyc": true,
+			"vcpkg_installed/**": true
+		},
+		// 🐍 Python Configuration
+		"python.defaultInterpreterPath": "./ai/venv/Scripts/python.exe",
+		"python.terminal.activateEnvironment": true,
+		"python.terminal.activateEnvInCurrentTerminal": true,
+		"python.analysis.autoImportCompletions": true,
+		"python.analysis.autoSearchPaths": true,
+		"python.analysis.extraPaths": [
+			"./ai/src",
+			"./ai/src/core",
+			"./ai/tests"
+		],
+		"python.analysis.include": [
+			"./ai/src/**",
+			"./ai/tests/**",
+			"./scripts/**"
+		],
+		"python.analysis.exclude": [
+			"./ai/venv/**",
+			"./ai/env/**",
+			"**/__pycache__/**",
+			"**/*.pyc"
+		],
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": false,
+		"python.linting.flake8Enabled": true,
+		"python.linting.mypyEnabled": true,
+		"python.formatting.provider": "black",
+		"python.formatting.blackPath": "./ai/venv/Scripts/black.exe",
+		"python.testing.pytestEnabled": true,
+		"python.testing.pytestPath": "./ai/venv/Scripts/pytest.exe",
+		"python.testing.pytestArgs": [
+			"./ai/tests"
+		],
+		"python.testing.autoTestDiscoverOnSaveEnabled": true,
+		// 🔧 C++ Configuration
+		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+		"C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+		"C_Cpp.default.compilerPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+		"C_Cpp.default.cStandard": "c17",
+		"C_Cpp.default.cppStandard": "c++20",
+		"C_Cpp.default.includePath": [
+			"${workspaceFolder}/core/include",
+			"${workspaceFolder}/core/src",
+			"C:/dev/vcpkg/installed/x64-windows/include"
+		],
+		"C_Cpp.default.defines": [
+			"_DEBUG",
+			"UNICODE",
+			"_UNICODE",
+			"WIN32",
+			"_WIN64",
+			"AIOS_BUILD"
+		],
+		"C_Cpp.default.browse.path": [
+			"${workspaceFolder}/core",
+			"C:/dev/vcpkg/installed/x64-windows/include"
+		],
+		"C_Cpp.intelliSenseEngine": "default",
+		"C_Cpp.errorSquiggles": "enabled",
+		"C_Cpp.autocompleteAddParentheses": true,
+		"C_Cpp.formatting": "vcFormat",
+		"C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true,
+		"C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType": true,
+		// 🏗️ CMake Configuration
+		"cmake.buildDirectory": "${workspaceFolder}/core/build",
+		"cmake.sourceDirectory": "${workspaceFolder}/core",
+		"cmake.generator": "Visual Studio 17 2022",
+		"cmake.platform": "x64",
+		"cmake.configureSettings": {
+			"CMAKE_TOOLCHAIN_FILE": "C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"VCPKG_TARGET_TRIPLET": "x64-windows"
+		},
+		"cmake.buildArgs": [
+			"--config",
+			"Debug",
+			"--parallel",
+			"4"
+		],
+		"cmake.parallelJobs": 4,
+		"cmake.configureOnOpen": true,
+		"cmake.buildOnSave": false,
+		"cmake.clearOutputBeforeBuild": true,
+		// 🔷 C# Configuration
+		"dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+		"dotnet.inlayHints.enableInlayHintsForParameters": true,
+		"dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+		"dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
+		"dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+		"dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+		"dotnet.inlayHints.enableInlayHintsForTypeParameters": true,
+		"dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix": true,
+		"dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent": true,
+		"dotnet.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName": true,
+		"csharp.format.enable": true,
+		"csharp.semanticHighlighting.enabled": true,
+		"csharp.showOmnisharpLogOnError": true,
+		"omnisharp.enableEditorConfigSupport": true,
+		"omnisharp.enableRoslynAnalyzers": true,
+		// 📝 File Association & Language Support
+		"files.associations": {
+			"*.h": "cpp",
+			"*.hpp": "cpp",
+			"*.cpp": "cpp",
+			"*.c": "c",
+			"*.py": "python",
+			"*.cs": "csharp",
+			"*.xaml": "xml",
+			"*.json": "jsonc",
+			"*.md": "markdown",
+			"CMakeLists.txt": "cmake",
+			"*.cmake": "cmake",
+			"*.ps1": "powershell",
+			"*.psm1": "powershell",
+			"requirements.txt": "pip-requirements",
+			"environment.yml": "yaml",
+			"*.yml": "yaml",
+			"*.yaml": "yaml"
+		},
+		"files.encoding": "utf8",
+		"files.eol": "\r\n",
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true,
+		// 🧹 Auto-formatting & Code Style
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.formatOnPaste": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit",
+			"source.fixAll": "explicit"
+		},
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.python",
+			"editor.formatOnSave": true,
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": "explicit"
+			}
+		},
+		"[cpp]": {
+			"editor.formatOnSave": true
+		},
+		"[c]": {
+			"editor.formatOnSave": true
+		},
+		"[csharp]": {
+			"editor.formatOnSave": true
+		},
+		"[json]": {
+			"editor.defaultFormatter": "vscode.json-language-features",
+			"editor.formatOnSave": true
+		},
+		"[jsonc]": {
+			"editor.defaultFormatter": "vscode.json-language-features",
+			"editor.formatOnSave": true
+		},
+		"[markdown]": {
+			"editor.defaultFormatter": "yzhang.markdown-all-in-one",
+			"editor.formatOnSave": true
+		},
+		"[yaml]": {
+			"editor.formatOnSave": true
+		},
+		"[powershell]": {
+			"editor.defaultFormatter": "ms-vscode.powershell",
+			"editor.formatOnSave": true
+		},
+		// 🔗 IntelliSense & Code Intelligence
+		"editor.parameterHints.enabled": true,
+		"editor.suggest.insertMode": "replace",
+		"editor.suggest.showKeywords": true,
+		"editor.suggest.showSnippets": true,
+		"editor.suggest.showClasses": true,
+		"editor.suggest.showConstructors": true,
+		"editor.suggest.showDeprecated": true,
+		"editor.suggest.showEnums": true,
+		"editor.suggest.showEvents": true,
+		"editor.suggest.showFields": true,
+		"editor.suggest.showFiles": true,
+		"editor.suggest.showFolders": true,
+		"editor.suggest.showFunctions": true,
+		"editor.suggest.showInterfaces": true,
+		"editor.suggest.showIssues": true,
+		"editor.suggest.showMethods": true,
+		"editor.suggest.showModules": true,
+		"editor.suggest.showOperators": true,
+		"editor.suggest.showProperties": true,
+		"editor.suggest.showReferences": true,
+		"editor.suggest.showStructs": true,
+		"editor.suggest.showTypeParameters": true,
+		"editor.suggest.showUnits": true,
+		"editor.suggest.showUsers": true,
+		"editor.suggest.showValues": true,
+		"editor.suggest.showVariables": true,
+		"editor.suggest.showWords": true,
+		// 🎯 Task Runner & Build System
+		"terminal.integrated.defaultProfile.windows": "PowerShell",
+		"terminal.integrated.profiles.windows": {
+			"PowerShell": {
+				"source": "PowerShell",
+				"icon": "terminal-powershell",
+				"args": [
+					"-NoLogo"
+				]
+			},
+			"Command Prompt": {
+				"path": [
+					"${env:windir}\\Sysnative\\cmd.exe",
+					"${env:windir}\\System32\\cmd.exe"
+				],
+				"icon": "terminal-cmd"
+			},
+			"Git Bash": {
+				"source": "Git Bash",
+				"icon": "terminal-bash"
+			}
+		},
+		"terminal.integrated.cwd": "${workspaceFolder}",
+		"terminal.integrated.fontSize": 14,
+		"terminal.integrated.fontFamily": "'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+		// 🔧 Debugging Configuration
+		"debug.onTaskErrors": "showErrors",
+		"debug.showBreakpointsInOverviewRuler": true,
+		"debug.showInlineBreakpointCandidates": true,
+		"debug.openDebug": "openOnDebugBreak",
+		// 📊 Performance & Memory
+		"typescript.suggest.autoImports": true,
+		"typescript.updateImportsOnFileMove.enabled": "always",
+		"emmet.includeLanguages": {
+			"javascript": "javascriptreact",
+			"typescript": "typescriptreact",
+			"vue-html": "html",
+			"razor": "html"
+		},
+		"workbench.editor.enablePreview": false,
+		"workbench.editor.enablePreviewFromQuickOpen": false,
+		"workbench.settings.enableNaturalLanguageSearch": true,
+		"workbench.commandPalette.history": 50,
+		"workbench.quickOpen.closeOnFocusLost": false,
+		// 🔐 Security & Privacy
+		"telemetry.telemetryLevel": "off",
+		"redhat.telemetry.enabled": false,
+		"C_Cpp.telemetry.enableTelemetry": false,
+		"dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "openFiles",
+		"dotnet.backgroundAnalysis.compilerDiagnosticsScope": "openFiles",
+		// 🎨 Theme & Appearance
+		"workbench.colorTheme": "Default Dark Modern",
+		"workbench.iconTheme": "vs-seti",
+		"workbench.tree.indent": 20,
+		"workbench.tree.renderIndentGuides": "always",
+		"workbench.statusBar.visible": true,
+		"workbench.sideBar.location": "left",
+		"workbench.panel.defaultLocation": "bottom",
+		// 🔄 Auto-save & Session Management
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 5000,
+		"workbench.editor.restoreViewState": true,
+		"workbench.editor.wrapTabs": true,
+		"workbench.editor.scrollToSwitchTabs": true,
+		"workbench.editor.highlightModifiedTabs": true,
+		// 🎭 Extension-specific Settings
+		"markdown.preview.breaks": true,
+		"markdown.preview.linkify": true,
+		"markdown.preview.typographer": true,
+		"json.schemas": [],
+		"yaml.schemas": {},
+		"powershell.codeFormatting.preset": "OTBS",
+		"powershell.integratedConsole.showOnStartup": false,
+		"powershell.developer.editorServicesLogLevel": "Warning"
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "🔧 Build C++ Core (Debug)",
+				"type": "shell",
+				"command": "cmake",
+				"args": [
+					"--build",
+					"./core/build",
+					"--config",
+					"Debug",
+					"--parallel",
+					"4"
+				],
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				},
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"problemMatcher": "$msCompile",
+				"dependsOn": "🏗️ Configure CMake"
+			},
+			{
+				"label": "🏗️ Configure CMake",
+				"type": "shell",
+				"command": "cmake",
+				"args": [
+					"-S",
+					"./core",
+					"-B",
+					"./core/build",
+					"-DCMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake",
+					"-DVCPKG_TARGET_TRIPLET=x64-windows",
+					"-G",
+					"Visual Studio 17 2022",
+					"-A",
+					"x64"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"problemMatcher": "$msCompile",
+				"options": {
+					"cwd": "${workspaceFolder}"
+				}
+			},
+			{
+				"label": "🔧 Build C++ Core (Release)",
+				"type": "shell",
+				"command": "cmake",
+				"args": [
+					"--build",
+					"./core/build",
+					"--config",
+					"Release",
+					"--parallel",
+					"4"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"problemMatcher": "$msCompile",
+				"dependsOn": "🏗️ Configure CMake"
+			},
+			{
+				"label": "🧪 Run C++ Tests",
+				"type": "shell",
+				"command": "./core/build/tests/Debug/test_core.exe",
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOn": "🔧 Build C++ Core (Debug)"
+			},
+			{
+				"label": "🚀 Run C++ Main",
+				"type": "shell",
+				"command": "./core/build/bin/Debug/aios_main.exe",
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOn": "🔧 Build C++ Core (Debug)"
+			},
+			{
+				"label": "🐍 Setup Python Environment",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"-m",
+					"venv",
+					"ai/venv"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"options": {
+					"cwd": "${workspaceFolder}"
+				}
+			},
+			{
+				"label": "📦 Install Python Dependencies",
+				"type": "shell",
+				"command": "./ai/venv/Scripts/python.exe",
+				"args": [
+					"-m",
+					"pip",
+					"install",
+					"-r",
+					"ai/requirements.txt"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOn": "🐍 Setup Python Environment"
+			},
+			{
+				"label": "🧪 Run Python Tests",
+				"type": "shell",
+				"command": "./ai/venv/Scripts/python.exe",
+				"args": [
+					"-m",
+					"pytest",
+					"ai/tests/",
+					"-v"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOn": "📦 Install Python Dependencies"
+			},
+			{
+				"label": "🔷 Build C# Projects",
+				"type": "shell",
+				"command": "dotnet",
+				"args": [
+					"build",
+					"interface/AIOS.sln",
+					"--configuration",
+					"Debug"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"problemMatcher": "$msCompile"
+			},
+			{
+				"label": "🧪 Run Integration Tests",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"scripts/test_integration.py"
+				],
+				"group": {
+					"kind": "test",
+					"isDefault": true
+				},
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOn": [
+					"🔧 Build C++ Core (Debug)",
+					"📦 Install Python Dependencies"
+				]
+			},
+			{
+				"label": "📊 System Health Check",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"scripts/context_health_monitor.py"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
+			},
+			{
+				"label": "🧹 Clean Build Directory",
+				"type": "shell",
+				"command": "cmake",
+				"args": [
+					"--build",
+					"./core/build",
+					"--target",
+					"clean"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
+			},
+			{
+				"label": "🔄 Full System Rebuild",
+				"type": "shell",
+				"command": "echo",
+				"args": [
+					"Starting full system rebuild..."
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOrder": "sequence",
+				"dependsOn": [
+					"🧹 Clean Build Directory",
+					"🏗️ Configure CMake",
+					"🔧 Build C++ Core (Debug)",
+					"📦 Install Python Dependencies",
+					"🔷 Build C# Projects",
+					"🧪 Run Integration Tests"
+				]
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "🔧 Debug C++ Core",
+				"type": "node",
+				"request": "launch",
+				"program": "${workspaceFolder}/core/build/bin/Debug/aios_main.exe",
+				"args": [],
+				"cwd": "${workspaceFolder}",
+				"preLaunchTask": "🔧 Build C++ Core (Debug)"
+			},
+			{
+				"name": "🧪 Debug C++ Tests",
+				"type": "node",
+				"request": "launch",
+				"program": "${workspaceFolder}/core/build/tests/Debug/test_core.exe",
+				"args": [],
+				"cwd": "${workspaceFolder}",
+				"preLaunchTask": "🔧 Build C++ Core (Debug)"
+			},
+			{
+				"name": "🐍 Debug Python AI",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/ai/src/core/nlp/__init__.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/ai/src:${workspaceFolder}/ai/src/core"
+				}
+			},
+			{
+				"name": "🧪 Debug Integration Tests",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/scripts/test_integration.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe"
+			},
+			{
+				"name": "📊 Debug Health Monitor",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/scripts/context_health_monitor.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe"
+			}
+		]
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-vscode.cpptools-extension-pack",
+			"ms-vscode.cmake-tools",
+			"ms-python.python",
+			"ms-python.flake8",
+			"ms-python.black-formatter",
+			"ms-python.isort",
+			"ms-python.pylint",
+			"ms-dotnettools.csharp",
+			"ms-dotnettools.vscode-dotnet-runtime",
+			"ms-vscode.powershell",
+			"github.copilot",
+			"github.copilot-chat",
+			"github.vscode-github-actions",
+			"eamodio.gitlens",
+			"ms-vscode.vscode-json",
+			"yzhang.markdown-all-in-one",
+			"redhat.vscode-yaml",
+			"ms-vscode.hexeditor",
+			"ms-vsliveshare.vsliveshare",
+			"ms-vscode.test-adapter-converter",
+			"hbenl.vscode-test-explorer",
+			"formulahendry.code-runner",
+			"streetsidesoftware.code-spell-checker",
+			"ms-vscode.vscode-typescript-next",
+			"ms-vscode.vscode-eslint",
+			"ms-vscode.vscode-npm-script",
+			"ms-vscode.references-view",
+			"ms-vscode.remote-repositories",
+			"ms-vscode.remote-explorer"
+		]
+	}
 }

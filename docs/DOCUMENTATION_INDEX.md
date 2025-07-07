@@ -50,11 +50,13 @@ c:\dev\AIOS\
 ### **For Developers**
 | File | Purpose | When to Read |
 |------|---------|--------------|
-| `README.md` | Project overview | First time setup |
-| `docs/INSTALLATION.md` | Setup instructions | Environment setup |
-| `docs/DEVELOPMENT.md` | Development workflow | Daily development |
-| `docs/ARCHITECTURE.md` | System design | Architecture work |
-| `docs/API_REFERENCE.md` | Code interfaces | API development |
+| `README.md` | Project overview and quick start | Getting started |
+| `ARCHITECTURE.md` | System design and components | Understanding structure |
+| `DEVELOPMENT.md` | Development workflow | Contributing code |
+| `API_REFERENCE.md` | Code interfaces and contracts | Writing code |
+| `INSTALLATION.md` | Setup and configuration | Environment setup |
+| `WORKSPACE_CONFIGURATION.md` | **VSCode workspace optimization** | **Setting up development environment** |
+| `CHANGELOG.md` | Version history and changes | Understanding evolution |
 
 ### **For Hybrid UI Development**
 | File | Purpose | When to Read |
