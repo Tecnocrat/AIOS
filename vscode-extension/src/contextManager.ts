@@ -210,9 +210,13 @@ export class AIOSContextManager {
 
         // Clear saved state
         if (this.persistAcrossRestarts) {
-            this.context.globalState.update('aios.conversationState', undefined).catch(err => {
-                this.logger.error('Failed to clear saved context:', err);
-            });
+            Promise.resolve(this.context.globalState.update('aios.conversationState', undefined))
+                .then(() => {
+                    this.logger.debug('Saved context cleared successfully');
+                })
+                .catch((err: any) => {
+                    this.logger.error('Failed to clear saved context:', err);
+                });
         }
     }
 
