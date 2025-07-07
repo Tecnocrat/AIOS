@@ -373,7 +373,8 @@
 		"yaml.schemas": {},
 		"powershell.codeFormatting.preset": "OTBS",
 		"powershell.integratedConsole.showOnStartup": false,
-		"powershell.developer.editorServicesLogLevel": "Warning"
+		"powershell.developer.editorServicesLogLevel": "Warning",
+		"markdown.validate.enabled": true
 	},
 	"tasks": {
 		"version": "2.0.0",

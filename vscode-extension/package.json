@@ -1,0 +1,148 @@
+{
+  "name": "aios-vscode",
+  "displayName": "AIOS - Artificial Intelligence Operating System",
+  "description": "Deep AI integration for VSCode with persistent context and multi-language AI coordination",
+  "version": "0.4.0",
+  "publisher": "tecnocrat",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Programming Languages",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "ai",
+    "artificial intelligence",
+    "chat",
+    "copilot",
+    "context",
+    "persistent",
+    "multi-language",
+    "automation"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "aios",
+        "name": "AIOS",
+        "description": "Artificial Intelligence Operating System - Multi-language AI with persistent context",
+        "isSticky": true
+      }
+    ],
+    "commands": [
+      {
+        "command": "aios.resetContext",
+        "title": "AIOS: Reset Context",
+        "category": "AIOS"
+      },
+      {
+        "command": "aios.saveContext",
+        "title": "AIOS: Save Context",
+        "category": "AIOS"
+      },
+      {
+        "command": "aios.loadContext",
+        "title": "AIOS: Load Context",
+        "category": "AIOS"
+      },
+      {
+        "command": "aios.showStatus",
+        "title": "AIOS: Show System Status",
+        "category": "AIOS"
+      }
+    ],
+    "configuration": {
+      "title": "AIOS Configuration",
+      "properties": {
+        "aios.core.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AIOS core integration"
+        },
+        "aios.context.persistAcrossRestarts": {
+          "type": "boolean",
+          "default": true,
+          "description": "Preserve conversation context across VSCode restarts"
+        },
+        "aios.context.maxHistorySize": {
+          "type": "number",
+          "default": 1000,
+          "description": "Maximum number of messages to keep in context history"
+        },
+        "aios.ai.pythonPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to AIOS Python AI modules (auto-detected if empty)"
+        },
+        "aios.ai.corePath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to AIOS C++ core (auto-detected if empty)"
+        },
+        "aios.debug.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable debug logging for AIOS extension"
+        }
+      }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "aios.resetContext",
+          "when": "true"
+        },
+        {
+          "command": "aios.saveContext",
+          "when": "true"
+        },
+        {
+          "command": "aios.loadContext",
+          "when": "true"
+        },
+        {
+          "command": "aios.showStatus",
+          "when": "true"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "ws": "^8.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tecnocrat/AIOS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tecnocrat/AIOS/issues"
+  },
+  "homepage": "https://github.com/Tecnocrat/AIOS#readme",
+  "license": "MIT"
+}
