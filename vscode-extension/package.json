@@ -90,6 +90,62 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Enable debug logging for AIOS extension"
+                },
+                "aios.privacy.mode": {
+                    "type": "string",
+                    "enum": [
+                        "standard",
+                        "strict"
+                    ],
+                    "default": "strict",
+                    "description": "Privacy mode for AIOS extension (strict = no external connections)"
+                },
+                "aios.network.enabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable network connections (disabled for private use)"
+                },
+                "aios.telemetry.enabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable telemetry collection (disabled for private use)"
+                },
+                "aios.autoUpdate.enabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable automatic updates (disabled for private use)"
+                },
+                "aios.marketplace.checkUpdates": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Check marketplace for updates (disabled for private use)"
+                },
+                "aios.logs.retention": {
+                    "type": "string",
+                    "enum": [
+                        "session-only",
+                        "daily",
+                        "weekly",
+                        "persistent"
+                    ],
+                    "default": "session-only",
+                    "description": "Log retention policy for privacy"
+                },
+                "aios.context.encryption": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Encrypt stored context data"
+                },
+                "aios.debug.traceLevel": {
+                    "type": "string",
+                    "enum": [
+                        "verbose",
+                        "info",
+                        "warning",
+                        "error-only"
+                    ],
+                    "default": "error-only",
+                    "description": "Debug trace level for minimal logging"
                 }
             }
         },
