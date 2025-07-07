@@ -11,6 +11,22 @@ import subprocess
 import asyncio
 from pathlib import Path
 
+def supports_unicode():
+    """Check if the current environment supports Unicode emojis"""
+    try:
+        # Try to encode a simple emoji
+        '\u2705'.encode(sys.stdout.encoding or 'utf-8')
+        return True
+    except (UnicodeEncodeError, AttributeError):
+        return False
+
+# Set display characters based on environment capability
+UNICODE_SUPPORT = supports_unicode()
+CHECK_MARK = '\u2705' if UNICODE_SUPPORT else '[PASS]'
+CROSS_MARK = '\u274c' if UNICODE_SUPPORT else '[FAIL]'
+CELEBRATION = '\U0001F389' if UNICODE_SUPPORT else '[SUCCESS]'
+WARNING = '\u26A0\uFE0F' if UNICODE_SUPPORT else '[WARNING]'
+
 # Add AI module path
 sys.path.append(str(Path(__file__).parent.parent / "ai" / "src"))
 
@@ -163,14 +179,14 @@ async def main():
     print("\n" + "=" * 50)
     print("INTEGRATION TEST RESULTS")
     print("=" * 50)
-    print(f"C++ Core: {'✅ PASS' if cpp_success else '❌ FAIL'}")
-    print(f"Python AI: {'✅ PASS' if ai_success else '❌ FAIL'}")
+    print(f"C++ Core: {CHECK_MARK if cpp_success else CROSS_MARK}")
+    print(f"Python AI: {CHECK_MARK if ai_success else CROSS_MARK}")
     
     if cpp_success and ai_success:
-        print("\n🎉 ALL TESTS PASSED! AIOS system is ready!")
+        print(f"\n{CELEBRATION} ALL TESTS PASSED! AIOS system is ready!")
         return 0
     else:
-        print("\n❌ Some tests failed. Check the logs above.")
+        print(f"\n{WARNING} Some tests failed. Check the logs above.")
         return 1
 
 
