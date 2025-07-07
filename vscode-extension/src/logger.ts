@@ -7,9 +7,9 @@ export class AIOSLogger {
     constructor(context: vscode.ExtensionContext) {
         this.outputChannel = vscode.window.createOutputChannel('AIOS');
         this.isDebugEnabled = vscode.workspace.getConfiguration('aios').get('debug.enabled', false);
-        
+
         context.subscriptions.push(this.outputChannel);
-        
+
         // Listen for configuration changes
         vscode.workspace.onDidChangeConfiguration(e => {
             if (e.affectsConfiguration('aios.debug.enabled')) {
@@ -20,17 +20,17 @@ export class AIOSLogger {
 
     private formatMessage(level: string, message: string, ...args: any[]): string {
         const timestamp = new Date().toISOString();
-        const formattedArgs = args.length > 0 ? ' ' + args.map(arg => 
+        const formattedArgs = args.length > 0 ? ' ' + args.map(arg =>
             typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
         ).join(' ') : '';
-        
+
         return `[${timestamp}] [${level}] ${message}${formattedArgs}`;
     }
 
     private log(level: string, message: string, ...args: any[]): void {
         const formattedMessage = this.formatMessage(level, message, ...args);
         this.outputChannel.appendLine(formattedMessage);
-        
+
         // Also log to console in debug mode
         if (this.isDebugEnabled) {
             console.log(formattedMessage);
@@ -47,7 +47,7 @@ export class AIOSLogger {
 
     error(message: string, ...args: any[]): void {
         this.log('ERROR', message, ...args);
-        
+
         // Show error in UI if debug is enabled
         if (this.isDebugEnabled) {
             vscode.window.showErrorMessage(`AIOS Error: ${message}`);
