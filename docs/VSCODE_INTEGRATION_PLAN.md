@@ -1,9 +1,9 @@
 # VSCode Integration Plan - AIOS Project
 ## Addressing Chat Iteration Reset and Deep VSCode Integration
 
-**Date**: July 7, 2025  
-**Status**: Planning Phase  
-**Target**: AIOS OS0.4 Branch Integration  
+**Date**: July 7, 2025
+**Status**: Planning Phase
+**Target**: AIOS OS0.4 Branch Integration
 
 ---
 
@@ -170,7 +170,7 @@ public class PersistentChatSession {
     public WorkspaceContext Context { get; set; }
     public DateTime LastActivity { get; set; }
     public int IterationCount { get; set; }
-    
+
     // Persist to SQLite/JSON
     public void SaveState();
     public static PersistentChatSession LoadState(string sessionId);
@@ -187,7 +187,7 @@ import { AIOSLanguageModelBridge } from './languageModelBridge';
 export function activate(context: vscode.ExtensionContext) {
     const contextManager = new AIOSContextManager(context);
     const languageModelBridge = new AIOSLanguageModelBridge(contextManager);
-    
+
     // Register chat provider
     const chatProvider = vscode.chat.createChatParticipant(
         'aios',
@@ -195,7 +195,7 @@ export function activate(context: vscode.ExtensionContext) {
             return languageModelBridge.handleChatRequest(request, context, stream, token);
         }
     );
-    
+
     context.subscriptions.push(chatProvider);
 }
 ```
@@ -207,17 +207,17 @@ public class AIOSBridge {
     private readonly NLPManager _nlpManager;
     private readonly PredictionManager _predictionManager;
     private readonly AutomationManager _automationManager;
-    
+
     public async Task<AIOSResponse> ProcessChatMessage(ChatMessage message) {
         // 1. Use AIOS NLP for intent recognition
         var intent = await _nlpManager.ProcessAsync(message.Text);
-        
+
         // 2. Use AIOS prediction for response generation
         var prediction = await _predictionManager.PredictAsync(intent);
-        
+
         // 3. Use AIOS automation for actions
         var actions = await _automationManager.ExecuteAsync(prediction);
-        
+
         return new AIOSResponse {
             Text = prediction.Text,
             Actions = actions,
@@ -267,7 +267,7 @@ describe('Context Persistence', () => {
         // Simulate extension restart
         // Verify context restoration
     });
-    
+
     it('should maintain AIOS AI state across iterations', async () => {
         // Test AI learning persistence
         // Test automation state
@@ -282,7 +282,7 @@ describe('AIOS Integration', () => {
     it('should communicate with C++ core', async () => {
         // Test C++ ↔ C# ↔ VSCode communication
     });
-    
+
     it('should use Python AI modules', async () => {
         // Test Python module integration
     });

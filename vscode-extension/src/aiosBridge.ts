@@ -1,6 +1,5 @@
-import * as vscode from 'vscode';
+import { AIOSResponse } from './contextManager';
 import { AIOSLogger } from './logger';
-import { ContextMessage, AIOSResponse } from './contextManager';
 
 export interface SystemStatus {
     status: 'active' | 'inactive' | 'error';
@@ -30,16 +29,16 @@ export class AIOSBridge {
             // TODO: Initialize connection to AIOS C++ core
             // TODO: Initialize connection to AIOS Python AI modules
             // TODO: Test communication with AIOS services
-            
+
             // For now, simulate successful initialization
             await this.simulateInitialization();
-            
+
             this.isInitialized = true;
             this.systemStatus.status = 'active';
             this.systemStatus.aiModulesActive = true;
-            
+
             this.logger.info('AIOS Bridge initialized successfully');
-            
+
         } catch (error) {
             this.logger.error('Failed to initialize AIOS Bridge:', error);
             this.systemStatus.status = 'error';
@@ -57,9 +56,9 @@ export class AIOSBridge {
             throw new Error('AIOS Bridge not initialized');
         }
 
-        this.logger.debug('Processing message through AIOS Bridge', { 
+        this.logger.debug('Processing message through AIOS Bridge', {
             messageLength: message.length,
-            hasContext: !!context 
+            hasContext: !!context
         });
 
         try {
@@ -70,11 +69,11 @@ export class AIOSBridge {
             // 4. Return comprehensive response
 
             const response = await this.simulateAIOSProcessing(message, context);
-            
+
             this.systemStatus.lastResponse = Date.now();
-            this.logger.debug('Message processed successfully', { 
+            this.logger.debug('Message processed successfully', {
                 responseLength: response.text.length,
-                confidence: response.confidence 
+                confidence: response.confidence
             });
 
             return response;
@@ -135,16 +134,16 @@ export class AIOSBridge {
     public async testConnection(): Promise<boolean> {
         try {
             this.logger.debug('Testing AIOS connection...');
-            
+
             // TODO: Implement actual connection test
             // For now, simulate test
             await new Promise(resolve => setTimeout(resolve, 200));
-            
+
             const isConnected = this.isInitialized && this.systemStatus.status === 'active';
             this.logger.debug('Connection test result:', isConnected);
-            
+
             return isConnected;
-            
+
         } catch (error) {
             this.logger.error('Connection test failed:', error);
             return false;
@@ -154,15 +153,15 @@ export class AIOSBridge {
     public async healthCheck(): Promise<{ healthy: boolean; details: any }> {
         try {
             const connectionOk = await this.testConnection();
-            
+
             // TODO: Add more health checks
             // - C++ core responsiveness
             // - Python AI module status
             // - Memory usage
             // - Context size
-            
+
             const healthy = connectionOk && this.systemStatus.status === 'active';
-            
+
             return {
                 healthy,
                 details: {
@@ -172,7 +171,7 @@ export class AIOSBridge {
                     timestamp: Date.now()
                 }
             };
-            
+
         } catch (error) {
             this.logger.error('Health check failed:', error);
             return {

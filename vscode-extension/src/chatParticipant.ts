@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { AIOSContextManager, ContextMessage } from './contextManager';
 import { AIOSBridge } from './aiosBridge';
+import { AIOSContextManager } from './contextManager';
 import { AIOSLogger } from './logger';
 
 export class AIOSChatParticipant {
@@ -20,10 +20,10 @@ export class AIOSChatParticipant {
         stream: vscode.ChatResponseStream,
         token: vscode.CancellationToken
     ): Promise<vscode.ChatResult> {
-        
-        this.logger.info('Processing chat request', { 
+
+        this.logger.info('Processing chat request', {
             prompt: request.prompt.substring(0, 100) + (request.prompt.length > 100 ? '...' : ''),
-            command: request.command 
+            command: request.command
         });
 
         try {
@@ -40,7 +40,7 @@ export class AIOSChatParticipant {
 
             // Process through AIOS Bridge
             const aiosResponse = await this.aiosBridge.processMessage(
-                request.prompt, 
+                request.prompt,
                 {
                     chatContext: context,
                     conversationHistory: this.contextManager.getMessages(),
@@ -99,7 +99,7 @@ export class AIOSChatParticipant {
             this.logger.error('Failed to process chat request:', error);
 
             const errorMessage = `**AIOS Error**: ${error instanceof Error ? error.message : String(error)}
-            
+
 *If this issue persists, try:*
 - Use \`@aios /reset\` to reset the conversation context
 - Check AIOS system status with \`@aios /status\`

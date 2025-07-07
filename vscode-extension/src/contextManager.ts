@@ -49,19 +49,19 @@ export class AIOSContextManager {
     constructor(context: vscode.ExtensionContext, logger: AIOSLogger) {
         this.context = context;
         this.logger = logger;
-        
+
         // Load configuration
         const config = vscode.workspace.getConfiguration('aios.context');
         this.maxHistorySize = config.get('maxHistorySize', 1000);
         this.persistAcrossRestarts = config.get('persistAcrossRestarts', true);
-        
+
         // Listen for configuration changes
         vscode.workspace.onDidChangeConfiguration((e: vscode.ConfigurationChangeEvent) => {
             if (e.affectsConfiguration('aios.context')) {
                 this.updateConfiguration();
             }
         });
-        
+
         // Initialize conversation
         this.initializeConversation();
     }
@@ -70,7 +70,7 @@ export class AIOSContextManager {
         const config = vscode.workspace.getConfiguration('aios.context');
         this.maxHistorySize = config.get('maxHistorySize', 1000);
         this.persistAcrossRestarts = config.get('persistAcrossRestarts', true);
-        
+
         this.logger.debug('Context configuration updated', {
             maxHistorySize: this.maxHistorySize,
             persistAcrossRestarts: this.persistAcrossRestarts
@@ -99,7 +99,7 @@ export class AIOSContextManager {
         const workspaceFolders = vscode.workspace.workspaceFolders?.map(folder => folder.uri.fsPath) || [];
         const activeFile = vscode.window.activeTextEditor?.document.uri.fsPath;
         const openFiles = vscode.workspace.textDocuments.map(doc => doc.uri.fsPath);
-        
+
         return {
             workspaceFolders,
             activeFile,
@@ -136,10 +136,10 @@ export class AIOSContextManager {
             this.logger.debug(`Trimmed ${removeCount} old messages from context`);
         }
 
-        this.logger.debug('Added message to context', { 
-            role, 
+        this.logger.debug('Added message to context', {
+            role,
             messageId: message.id,
-            totalMessages: this.currentConversation!.messages.length 
+            totalMessages: this.currentConversation!.messages.length
         });
     }
 
@@ -160,7 +160,7 @@ export class AIOSContextManager {
         try {
             const stateKey = 'aios.conversationState';
             await this.context.globalState.update(stateKey, this.currentConversation);
-            
+
             this.logger.info('Context saved successfully', {
                 messageCount: this.currentConversation.messages.length,
                 conversationId: this.currentConversation.id
@@ -207,7 +207,7 @@ export class AIOSContextManager {
     public resetContext(): void {
         this.logger.info('Resetting conversation context');
         this.initializeConversation();
-        
+
         // Clear saved state
         if (this.persistAcrossRestarts) {
             this.context.globalState.update('aios.conversationState', undefined).catch(err => {
