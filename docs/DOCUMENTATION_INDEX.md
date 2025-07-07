@@ -56,6 +56,24 @@ c:\dev\AIOS\
 | `docs/ARCHITECTURE.md` | System design | Architecture work |
 | `docs/API_REFERENCE.md` | Code interfaces | API development |
 
+### **For Hybrid UI Development**
+| File | Purpose | When to Read |
+|------|---------|--------------|
+| `docs/HYBRID_UI_SETUP_GUIDE.md` | Hybrid UI setup procedures | Setting up hybrid interfaces |
+| `docs/HYBRID_UI_INTEGRATION_GUIDE.md` | WebView2 + WPF integration | Implementing hybrid UI |
+| `docs/COMPLETE_INTEGRATION_GUIDE.md` | Complete system integration | Full system assembly |
+
+### **For Natural Language Programming**
+| File | Purpose | When to Read |
+|------|---------|--------------|
+| `docs/AINLP_SPECIFICATION.md` | AINLP language specification | Implementing natural language programming |
+
+### **For Project Management**
+| File | Purpose | When to Read |
+|------|---------|--------------|
+| `docs/INTEGRATION_STATUS_JULY_2025.md` | Current integration status | Project planning |
+| `docs/PROJECT_ROADMAP_2025_2026.md` | Future development roadmap | Strategic planning |
+
 ### **For Users**
 | File | Purpose | When to Read |
 |------|---------|--------------|
@@ -97,6 +115,16 @@ c:\dev\AIOS\
 | `scripts/setup.ps1` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
 | `scripts/test_integration.py` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
 | `scripts/context_health_monitor.py` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
+
+### **NEW: Integration & Advanced Features**
+| File | Status | Last Updated | Content Quality |
+|------|--------|--------------|----------------|
+| `docs/HYBRID_UI_SETUP_GUIDE.md` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
+| `docs/HYBRID_UI_INTEGRATION_GUIDE.md` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
+| `docs/COMPLETE_INTEGRATION_GUIDE.md` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
+| `docs/AINLP_SPECIFICATION.md` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
+| `docs/INTEGRATION_STATUS_JULY_2025.md` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
+| `docs/PROJECT_ROADMAP_2025_2026.md` | ✅ Complete | July 2025 | ⭐⭐⭐⭐⭐ |
 
 ## 🔧 **Quick Commands**
 
