@@ -1,8 +1,8 @@
 # AIOS - Artificial Intelligence Operating System
 
-[![Version](https://img.shields.io/badge/version-0.4-blue.svg)](https://github.com/user/AIOS/tree/OS0.4)
+[![Version](https://img.shields.io/badge/version-0.4-blue.svg)](https://github.com/Tecnocrat/AIOS/tree/OS0.4)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-TBD-yellow.svg)](docs/LICENSE_DECISION.md)
 
 > **A revolutionary intelligent operating system designed to make current software paradigms obsolete**
 
@@ -12,10 +12,10 @@ AIOS integrates multiple programming languages and AI technologies to create a u
 
 ### **One-Command Setup**
 ```bash
-# Clone and setup (when repository is ready)
-git clone https://github.com/user/AIOS.git -b OS0.4
+# Clone and setup
+git clone https://github.com/Tecnocrat/AIOS.git -b OS0.4
 cd AIOS
-./scripts/setup.ps1  # Windows
+.\scripts\setup.ps1  # Windows
 ```
 
 ### **Manual Setup**
@@ -83,14 +83,14 @@ AIOS/
 
 ## 📊 **Current Status**
 
-| Component | Status | Details |
-|-----------|--------|---------|
-| **C++ Core** | ✅ Complete | Fully functional with vcpkg dependencies |
-| **Python AI** | ✅ Complete | 5 modules: NLP, Prediction, Automation, Learning, Integration |
-| **Integration** | ✅ Complete | Cross-language communication working |
-| **C# UI** | 🔄 In Progress | Scaffolded, implementation in progress |
-| **Documentation** | 🔄 In Progress | Architecture complete, API docs in progress |
-| **Testing** | ✅ Complete | Integration tests passing |
+| Component         | Status        | Details                                                       |
+| ----------------- | ------------- | ------------------------------------------------------------- |
+| **C++ Core**      | ✅ Complete    | Fully functional with vcpkg dependencies                      |
+| **Python AI**     | ✅ Complete    | 5 modules: NLP, Prediction, Automation, Learning, Integration |
+| **Integration**   | ✅ Complete    | Cross-language communication working                          |
+| **C# UI**         | 🔄 In Progress | Scaffolded, implementation in progress                        |
+| **Documentation** | 🔄 In Progress | Architecture complete, API docs in progress                   |
+| **Testing**       | ✅ Complete    | Integration tests passing                                     |
 
 ## 🧪 **Testing**
 
