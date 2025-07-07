@@ -1,4 +1,7 @@
 # AI Context Reallocator - AIOS Project
+This file is designed to preserve context and guide AI systems working on the AIOS project. It includes mandatory instructions, bootstrap protocols, and adaptive iteration rules to ensure smooth development and context retention.
+
+---
 
 ## 🤖 **INSTRUCTIONS FOR NEW AI ITERATIONS**
 
@@ -52,7 +55,7 @@ if (contextHealth < 0.7) {
 
 ## 📋 **MANDATORY ACTIONS FOR NEW AI CHAT ITERATION**
 
-### **Step 1: Full Codebase Reconnaissance** 
+### **Step 1: Full Codebase Reconnaissance**
 ```
 🔄 EXECUTE THIS EVERY 3 ITERATIONS OR WHEN USER MENTIONS CONTEXT LOSS
 ```
@@ -97,7 +100,7 @@ list_dir("c:\dev\AIOS\resources")
 ```bash
 # Check repository state
 run_in_terminal("git status")
-run_in_terminal("git branch -a")  
+run_in_terminal("git branch -a")
 run_in_terminal("git log --oneline -10")
 
 # Check for uncommitted changes
@@ -109,7 +112,7 @@ get_changed_files()
 # C++ Core Build Check
 run_in_terminal("cd core/build && cmake --build . --config Debug")
 
-# Python Environment Check  
+# Python Environment Check
 run_in_terminal("cd ai && python -c \"import sys; sys.path.append('src'); from core.nlp import NLPManager; print('✅ Python AI modules OK')\"")
 
 # Integration Test (MANDATORY)
@@ -308,7 +311,7 @@ semantic_search("user requirements")
 ### **For AI Systems: Pre-Work Checklist**
 ```markdown
 □ Read AI_context_reallocator.md (this file)
-□ Read AIOS_PROJECT_CONTEXT.md 
+□ Read AIOS_PROJECT_CONTEXT.md
 □ Read README.md
 □ Check git status
 □ Run integration test
@@ -452,8 +455,8 @@ CRITICAL FILES TO UNDERSTAND:
 
 ---
 
-**Last Updated**: July 7, 2025  
-**System Status**: C++ Core ✅, Python AI ✅, Integration ✅  
+**Last Updated**: July 7, 2025
+**System Status**: C++ Core ✅, Python AI ✅, Integration ✅
 **Next Priority**: Complete documentation suite and C# UI implementation
 
 *This file is the memory anchor for AIOS development. Keep it current and comprehensive.*
