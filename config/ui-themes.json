@@ -1,0 +1,144 @@
+{
+  "themes": {
+    "dark": {
+      "name": "AIOS Dark",
+      "description": "Modern dark theme for AIOS interface",
+      "colors": {
+        "primary": "#2D3748",
+        "secondary": "#4A5568",
+        "accent": "#0078D4",
+        "background": "#1A202C",
+        "surface": "#2D3748",
+        "text": "#F7FAFC",
+        "textSecondary": "#CBD5E0",
+        "border": "#4A5568",
+        "success": "#38A169",
+        "warning": "#D69E2E",
+        "error": "#E53E3E",
+        "info": "#3182CE"
+      },
+      "fonts": {
+        "primary": "Segoe UI",
+        "mono": "Cascadia Code",
+        "sizes": {
+          "small": 12,
+          "medium": 14,
+          "large": 16,
+          "xlarge": 20
+        }
+      },
+      "spacing": {
+        "xs": 4,
+        "sm": 8,
+        "md": 16,
+        "lg": 24,
+        "xl": 32
+      },
+      "borderRadius": {
+        "small": 4,
+        "medium": 8,
+        "large": 12
+      }
+    },
+    "light": {
+      "name": "AIOS Light",
+      "description": "Clean light theme for AIOS interface",
+      "colors": {
+        "primary": "#FFFFFF",
+        "secondary": "#F7FAFC",
+        "accent": "#0078D4",
+        "background": "#FFFFFF",
+        "surface": "#F7FAFC",
+        "text": "#1A202C",
+        "textSecondary": "#4A5568",
+        "border": "#E2E8F0",
+        "success": "#38A169",
+        "warning": "#D69E2E",
+        "error": "#E53E3E",
+        "info": "#3182CE"
+      },
+      "fonts": {
+        "primary": "Segoe UI",
+        "mono": "Cascadia Code",
+        "sizes": {
+          "small": 12,
+          "medium": 14,
+          "large": 16,
+          "xlarge": 20
+        }
+      },
+      "spacing": {
+        "xs": 4,
+        "sm": 8,
+        "md": 16,
+        "lg": 24,
+        "xl": 32
+      },
+      "borderRadius": {
+        "small": 4,
+        "medium": 8,
+        "large": 12
+      }
+    }
+  },
+  "layout": {
+    "default": {
+      "headerHeight": 60,
+      "sidebarWidth": 280,
+      "footerHeight": 40,
+      "contentPadding": 24
+    },
+    "compact": {
+      "headerHeight": 48,
+      "sidebarWidth": 220,
+      "footerHeight": 32,
+      "contentPadding": 16
+    }
+  },
+  "animations": {
+    "enabled": true,
+    "duration": {
+      "fast": 150,
+      "medium": 300,
+      "slow": 500
+    },
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  "components": {
+    "button": {
+      "defaultVariant": "primary",
+      "variants": {
+        "primary": {
+          "background": "accent",
+          "text": "white",
+          "border": "accent"
+        },
+        "secondary": {
+          "background": "transparent",
+          "text": "accent",
+          "border": "accent"
+        },
+        "ghost": {
+          "background": "transparent",
+          "text": "text",
+          "border": "transparent"
+        }
+      }
+    },
+    "input": {
+      "defaultVariant": "outlined",
+      "variants": {
+        "outlined": {
+          "background": "surface",
+          "border": "border",
+          "focusBorder": "accent"
+        },
+        "filled": {
+          "background": "secondary",
+          "border": "transparent",
+          "focusBorder": "accent"
+        }
+      }
+    }
+  }
+}
