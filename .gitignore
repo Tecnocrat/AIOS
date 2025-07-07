@@ -19,6 +19,7 @@ x86/
 
 # Python virtual environment
 ai/venv/
+ai/venv-win/
 ai/__pycache__/
 *.pyc
 *.pyo
@@ -26,6 +27,7 @@ ai/__pycache__/
 .Python
 env/
 venv/
+venv-win/
 ENV/
 env.bak/
 venv.bak/
