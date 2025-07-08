@@ -1,5 +1,8 @@
 # Git ignore file for AIOS project
 
+# Tachyonic Archival System (Local only - not for version control)
+archive/
+
 # Build directories
 build/
 bin/
