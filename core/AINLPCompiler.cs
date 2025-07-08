@@ -31,6 +31,11 @@ namespace AIOS.Core
         private readonly ContextRecoveryEngine _recoveryEngine;
         private readonly Dictionary<string, DebugContextSnapshot> _debugSnapshots;
 
+        // Context Harmonization Integration
+        private readonly AIOSContextHarmonizer _contextHarmonizer;
+        private readonly Dictionary<string, double> _fileMonitoringPriorities;
+        private readonly Queue<string> _reingestionQueue;
+
         public AINLPCompiler(ILogger logger = null)
         {
             _logger = logger;
@@ -47,6 +52,11 @@ namespace AIOS.Core
             _debugTracker = new DebugSessionTracker();
             _recoveryEngine = new ContextRecoveryEngine();
             _debugSnapshots = new Dictionary<string, DebugContextSnapshot>();
+
+            // Initialize context harmonization
+            _fileMonitoringPriorities = new Dictionary<string, double>();
+            _reingestionQueue = new Queue<string>();
+            InitializeContextHarmonization();
 
             InitializeCompiler();
             InitializeFractalHolographicCapabilities();
@@ -90,6 +100,65 @@ namespace AIOS.Core
             _recoveryEngine.Initialize(_fractalContext, _holographicMemory, _systemContext);
 
             _logger?.LogInformation("Debug integration initialized");
+        }
+
+        private void InitializeContextHarmonization()
+        {
+            try
+            {
+                // Initialize context harmonizer for intelligent file management
+                // Note: This would interface with Python context harmonizer
+                _logger?.LogInformation("Initializing AINLP context harmonization...");
+
+                // Load current file monitoring priorities
+                LoadFileMonitoringPriorities();
+
+                // Load reingestion queue
+                LoadReingestionQueue();
+
+                _logger?.LogInformation("AINLP context harmonization initialized");
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogWarning($"Context harmonization initialization failed: {ex.Message}");
+            }
+        }
+
+        private void LoadFileMonitoringPriorities()
+        {
+            // Load file monitoring priorities from context harmonizer
+            // High priority files that should be closely monitored
+            var highPriorityFiles = new Dictionary<string, double>
+            {
+                ["aios_quantum_bootstrap.py"] = 1.0,
+                ["core/AINLPCompiler.cs"] = 0.95,
+                ["interface/AIOS.UI/MainWindow.xaml.cs"] = 0.9,
+                ["ai/src/core/integration/aios_context_harmonizer.py"] = 0.95,
+                ["README.md"] = 0.7,
+                ["AIOS_PROJECT_CONTEXT.md"] = 0.8
+            };
+
+            foreach (var kvp in highPriorityFiles)
+            {
+                _fileMonitoringPriorities[kvp.Key] = kvp.Value;
+            }
+        }
+
+        private void LoadReingestionQueue()
+        {
+            // Load files queued for AI reingestion based on context analysis
+            var reingestionCandidates = new[]
+            {
+                "docs/AINLP_SPECIFICATION.md",
+                "core/AINLPCompiler.cs",
+                "ai/src/core/integration/aios_context_harmonizer.py",
+                "aios_quantum_bootstrap.py"
+            };
+
+            foreach (var file in reingestionCandidates)
+            {
+                _reingestionQueue.Enqueue(file);
+            }
         }
 
         /// <summary>
@@ -1089,6 +1158,7 @@ namespace AIOS.Debug {{
         public SemanticAnalysis SemanticAnalysis { get; set; }
         public DateTime ParsedAt { get; set; }
         public double Confidence { get; set; }
+        public Dictionary<string, object> ContextualEnhancements { get; set; } = new Dictionary<string, object>();
     }
 
     public class SemanticAnalysis
@@ -1110,6 +1180,7 @@ namespace AIOS.Debug {{
         public string GeneratedCode { get; set; }
         public string[] Pros { get; set; }
         public string[] Cons { get; set; }
+        public List<string> ContextIntegrationNotes { get; set; } = new List<string>();
     }
 
     public class OptimizedImplementation
@@ -1118,6 +1189,7 @@ namespace AIOS.Debug {{
         public double OptimizationScore { get; set; }
         public string PerformanceEstimate { get; set; }
         public string Reasoning { get; set; }
+        public List<string> HarmonizationOptimizations { get; set; } = new List<string>();
     }
 
     public class ExecutableCode
@@ -1127,6 +1199,7 @@ namespace AIOS.Debug {{
         public List<string> Dependencies { get; set; }
         public string BuildInstructions { get; set; }
         public string DeploymentInstructions { get; set; }
+        public List<string> ContextIntegrationComments { get; set; } = new List<string>();
     }
 
     public class PerformanceMetrics
@@ -1278,5 +1351,56 @@ namespace AIOS.Debug {{
         public double RestoredCoherence { get; set; }
         public DateTime Timestamp { get; set; }
         public string SnapshotId { get; set; }
+    }
+
+    // Context Harmonization Data Structures
+    public class ContextualCompilationResult
+    {
+        public bool Success { get; set; }
+        public ExecutableCode GeneratedCode { get; set; }
+        public ProjectContextAnalysis ContextAnalysis { get; set; }
+        public List<string> IntegrationRecommendations { get; set; }
+        public Dictionary<string, double> MonitoringPriorities { get; set; }
+        public double Confidence { get; set; }
+        public string Error { get; set; }
+    }
+
+    public class ProjectContextAnalysis
+    {
+        public List<string> ActiveFiles { get; set; } = new List<string>();
+        public List<string> ReferenceFiles { get; set; } = new List<string>();
+        public List<string> ArchivalFiles { get; set; } = new List<string>();
+        public List<string> HighPriorityMonitoring { get; set; } = new List<string>();
+        public List<string> ReingestionCandidates { get; set; } = new List<string>();
+        public double ContextCoherence { get; set; }
+        public double OrganizationHealth { get; set; }
+    }
+
+    public class ProjectContextState
+    {
+        public Dictionary<string, object> CurrentState { get; set; } = new Dictionary<string, object>();
+        public DateTime LastUpdated { get; set; }
+        public List<string> RecentChanges { get; set; } = new List<string>();
+    }
+
+    // Enhanced data structures with context awareness
+    public partial class ParsedIntent
+    {
+        public Dictionary<string, object> ContextualEnhancements { get; set; } = new Dictionary<string, object>();
+    }
+
+    public partial class ImplementationOption
+    {
+        public List<string> ContextIntegrationNotes { get; set; } = new List<string>();
+    }
+
+    public partial class OptimizedImplementation
+    {
+        public List<string> HarmonizationOptimizations { get; set; } = new List<string>();
+    }
+
+    public partial class ExecutableCode
+    {
+        public List<string> ContextIntegrationComments { get; set; } = new List<string>();
     }
 }

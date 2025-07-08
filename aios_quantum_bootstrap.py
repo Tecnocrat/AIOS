@@ -42,10 +42,12 @@ sys.path.extend([
 
 # Import AIOS modules
 try:
-    from ai.src.core.integration.aios_python_environment_integration import (
-        initialize_aios_python_environment)
-    from ai.src.core.integration.robust_python_environment_manager import (
-        initialize_python_environment_for_aios)
+    from ai.src.core.integration.aios_context_harmonizer import (
+        AIOSContextHarmonizer, get_harmonized_context_for_bootstrap)
+    from ai.src.core.integration.aios_python_environment_integration import \
+        initialize_aios_python_environment
+    from ai.src.core.integration.robust_python_environment_manager import \
+        initialize_python_environment_for_aios
 except ImportError as e:
     print(f"AIOS module import error: {e}")
     print("Continuing with limited functionality...")
@@ -624,6 +626,25 @@ class AIOSHyperlayerManager:
         self.component_status = {}
         self.logger = logging.getLogger("AIOS.HyperlayerManager")
 
+        # Initialize context harmonization
+        self.context_harmonizer = None
+        self.harmonized_context = None
+        self.monitoring_targets = []
+
+    async def initialize_context_harmonization(self) -> bool:
+        """Initialize intelligent context harmonization system."""
+        self.logger.info("🧠 Initializing Context Harmonization...")
+        try:
+            # Get harmonized context for bootstrap
+            self.harmonized_context = get_harmonized_context_for_bootstrap()
+            self.monitoring_targets = self.harmonized_context.get("monitoring_targets", [])
+
+            self.logger.info(f"✅ Context Harmonization initialized - monitoring {len(self.monitoring_targets)} files")
+            return True
+        except Exception as e:
+            self.logger.error(f"❌ Context Harmonization failed: {e}")
+            return False
+
     async def activate_core_layer(self) -> bool:
         """Activate C++ core layer."""
         self.logger.info("Activating C++ Core Layer...")
@@ -667,11 +688,15 @@ class AIOSHyperlayerManager:
         """Activate all AIOS hyperlayers concurrently."""
         self.logger.info("🚀 Initiating AIOS Hyperlayer Activation Sequence...")
 
-        # For now, just activate the Python AI layer
-        result = await self.activate_python_ai_layer()
+        # Step 1: Initialize context harmonization first
+        context_result = await self.initialize_context_harmonization()
+
+        # Step 2: Activate Python AI layer with context awareness
+        ai_result = await self.activate_python_ai_layer()
 
         activation_results = {
-            "python_ai": result,
+            "context_harmonization": context_result,
+            "python_ai": ai_result,
             "cpp_core": False,
             "csharp_ui": False,
             "vscode_extension": False,
@@ -681,9 +706,57 @@ class AIOSHyperlayerManager:
         active_count = sum(activation_results.values())
         total_count = len(activation_results)
 
-        self.logger.info(f"🎯 Hyperlayer Activation Complete: {active_count}/{total_count} layers active")
+        self.logger.info(
+            f"🎯 Hyperlayer Activation Complete: "
+            f"{active_count}/{total_count} layers active"
+        )
+
+        # Display context harmonization results
+        if context_result and self.harmonized_context:
+            self._display_context_harmonization_results()
 
         return activation_results
+
+    def _display_context_harmonization_results(self):
+        """Display context harmonization results."""
+        if not self.harmonized_context:
+            return
+
+        org_status = self.harmonized_context.get("organization_status", {})
+        recommendations = self.harmonized_context.get("recommendations", {})
+
+        self.logger.info("📊 Context Harmonization Results:")
+        self.logger.info(
+            f"   Active: {org_status.get('active_files', 0)}, "
+            f"Reference: {org_status.get('reference_files', 0)}, "
+            f"Archival: {org_status.get('archival_files', 0)}"
+        )
+
+        high_priority = recommendations.get("high_priority_monitoring", [])
+        if high_priority:
+            self.logger.info(
+                f"🔥 High Priority Files: {len(high_priority)} files identified"
+            )
+
+        reingestion = recommendations.get("ai_reingestion_candidates", [])
+        if reingestion:
+            self.logger.info(
+                f"🧠 AI Reingestion Candidates: {len(reingestion)} files queued"
+            )
+
+    def get_context_status(self) -> Dict[str, Any]:
+        """Get current context harmonization status."""
+        if not self.harmonized_context:
+            return {"status": "not_initialized"}
+
+        return {
+            "status": "active",
+            "monitoring_targets": self.monitoring_targets,
+            "organization_status": self.harmonized_context.get(
+                "organization_status", {}
+            ),
+            "recommendations": self.harmonized_context.get("recommendations", {})
+        }
 
 
 class QuantumFractalUI:
