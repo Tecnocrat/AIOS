@@ -10,7 +10,7 @@ class AIOSClient {
         this.isInitialized = false;
         this.systemHealth = null;
         this.aiModules = [];
-        
+
         // Initialize when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.initialize());
@@ -23,19 +23,19 @@ class AIOSClient {
         try {
             // Wait for WebView2 bridge to be ready
             await this.waitForWebViewBridge();
-            
+
             // Set up real-time event handlers
             this.setupEventHandlers();
-            
+
             // Initialize system monitoring
             await this.initializeSystemMonitoring();
-            
+
             // Load AI modules
             await this.loadAIModules();
-            
+
             this.isInitialized = true;
             this.emit('initialized', { timestamp: new Date().toISOString() });
-            
+
             console.log('AIOS Client initialized successfully');
         } catch (error) {
             console.error('Failed to initialize AIOS Client:', error);
@@ -47,7 +47,7 @@ class AIOSClient {
         return new Promise((resolve, reject) => {
             const maxAttempts = 50;
             let attempts = 0;
-            
+
             const checkBridge = () => {
                 if (window.chrome && window.chrome.webview && window.chrome.webview.hostObjects) {
                     resolve();
@@ -58,7 +58,7 @@ class AIOSClient {
                     reject(new Error('WebView2 bridge not available'));
                 }
             };
-            
+
             checkBridge();
         });
     }
@@ -81,10 +81,10 @@ class AIOSClient {
         try {
             // Get initial system health
             this.systemHealth = await this.getSystemHealth();
-            
+
             // Start real-time monitoring
             this.startHealthMonitoring();
-            
+
             // Update UI with current status
             this.updateHealthDisplay();
         } catch (error) {
@@ -97,7 +97,7 @@ class AIOSClient {
             // Load available AI modules from backend
             const modules = await this.callHostMethod('aiService', 'GetAvailableModules');
             this.aiModules = modules || [];
-            
+
             // Update UI with available modules
             this.updateModulesDisplay();
         } catch (error) {
@@ -185,7 +185,7 @@ class AIOSClient {
 
     startHealthMonitoring() {
         // Request health updates every 5 seconds
-        setInterval(async () => {
+        this.healthMonitorInterval = setInterval(async () => {
             try {
                 const health = await this.getSystemHealth();
                 if (health) {
@@ -213,21 +213,21 @@ class AIOSClient {
                 context: context,
                 timestamp: new Date().toISOString()
             };
-            
+
             window.chrome.webview.postMessage(JSON.stringify(message));
-            
+
             // Return promise that resolves when result is received
             return new Promise((resolve, reject) => {
                 const timeout = setTimeout(() => {
                     reject(new Error('AINLP processing timeout'));
                 }, 30000); // 30 second timeout
-                
+
                 const handler = (result) => {
                     clearTimeout(timeout);
                     this.off('ainlpResult', handler);
                     resolve(result);
                 };
-                
+
                 this.on('ainlpResult', handler);
             });
         } catch (error) {
@@ -238,7 +238,7 @@ class AIOSClient {
 
     handleAINLPResult(result) {
         this.emit('ainlpResult', result);
-        
+
         // If the result contains executable code, handle it
         if (result.compiled && result.code) {
             this.executeAINLPCode(result.code);
@@ -259,25 +259,25 @@ class AIOSClient {
     // UI Update Methods
     updateHealthDisplay() {
         if (!this.systemHealth) return;
-        
+
         const statusElement = document.getElementById('system-status');
         const cpuElement = document.getElementById('cpu-usage');
         const memoryElement = document.getElementById('memory-usage');
         const aiStatusElement = document.getElementById('ai-status');
-        
+
         if (statusElement) {
             statusElement.textContent = this.systemHealth.status || 'Unknown';
             statusElement.className = `status-indicator ${this.systemHealth.status?.toLowerCase() || 'unknown'}`;
         }
-        
+
         if (cpuElement) {
             cpuElement.textContent = `${this.systemHealth.cpuUsage || 0}%`;
         }
-        
+
         if (memoryElement) {
             memoryElement.textContent = `${this.systemHealth.memoryUsage || 0}%`;
         }
-        
+
         if (aiStatusElement) {
             aiStatusElement.textContent = this.systemHealth.aiModulesActive || 0;
         }
@@ -286,9 +286,9 @@ class AIOSClient {
     updateModulesDisplay() {
         const modulesContainer = document.getElementById('ai-modules');
         if (!modulesContainer) return;
-        
+
         modulesContainer.innerHTML = '';
-        
+
         this.aiModules.forEach(module => {
             const moduleElement = document.createElement('div');
             moduleElement.className = 'module-item';
@@ -309,14 +309,14 @@ class AIOSClient {
     async toggleModule(moduleId) {
         try {
             const result = await this.callHostMethod('aiService', 'ToggleModule', moduleId);
-            
+
             // Update local module state
             const module = this.aiModules.find(m => m.id === moduleId);
             if (module) {
                 module.status = result.status;
                 this.updateModulesDisplay();
             }
-            
+
             this.emit('moduleToggled', { moduleId, result });
         } catch (error) {
             console.error('Module toggle failed:', error);
@@ -337,6 +337,10 @@ class AIOSClient {
             const index = handlers.indexOf(handler);
             if (index > -1) {
                 handlers.splice(index, 1);
+                // Clean up empty handler arrays to prevent memory leaks
+                if (handlers.length === 0) {
+                    this.eventHandlers.delete(event);
+                }
             }
         }
     }
@@ -358,25 +362,44 @@ class AIOSClient {
         if (!window.chrome?.webview?.hostObjects?.[hostObject]) {
             throw new Error(`Host object ${hostObject} not available`);
         }
-        
+
         return await window.chrome.webview.hostObjects[hostObject][method](...args);
     }
 
     handleFallback() {
         // Handle fallback when WebView2 is not available
         console.warn('WebView2 not available, using fallback mode');
-        
+
         // Show fallback UI
         const fallbackElement = document.getElementById('fallback-ui');
         if (fallbackElement) {
             fallbackElement.style.display = 'block';
         }
-        
+
         // Hide WebView2-dependent elements
         const webElements = document.querySelectorAll('.webview-only');
         webElements.forEach(element => {
             element.style.display = 'none';
         });
+    }
+
+    // Cleanup method to prevent memory leaks
+    cleanup() {
+        // Clear all event handlers
+        this.eventHandlers.clear();
+
+        // Reset state
+        this.isInitialized = false;
+        this.systemHealth = null;
+        this.aiModules = [];
+
+        // Remove DOM event listeners
+        if (this.healthMonitorInterval) {
+            clearInterval(this.healthMonitorInterval);
+            this.healthMonitorInterval = null;
+        }
+
+        console.log('AIOS Client cleanup completed');
     }
 }
 
@@ -387,11 +410,11 @@ const aiosClient = new AIOSClient();
 window.aiosClient = aiosClient;
 
 // Demonstration functions for the UI
-window.demonstrateAI = async function() {
+window.demonstrateAI = async function () {
     try {
         const result = await aiosClient.processNLP("Show me the current system status and any issues");
         console.log('AI Response:', result);
-        
+
         // Update UI with AI response
         const responseElement = document.getElementById('ai-response');
         if (responseElement) {
@@ -402,11 +425,11 @@ window.demonstrateAI = async function() {
     }
 };
 
-window.demonstrateDatabase = async function() {
+window.demonstrateDatabase = async function () {
     try {
         const result = await aiosClient.executeIntelligentQuery("Find all recent errors in the system logs");
         console.log('Database Result:', result);
-        
+
         // Update UI with database result
         const dbResultElement = document.getElementById('db-result');
         if (dbResultElement) {
@@ -417,12 +440,12 @@ window.demonstrateDatabase = async function() {
     }
 };
 
-window.demonstrateAINLP = async function() {
+window.demonstrateAINLP = async function () {
     try {
         const command = "Create a real-time dashboard showing CPU usage, memory usage, and AI module status";
         const result = await aiosClient.processAINLPCommand(command);
         console.log('AINLP Result:', result);
-        
+
         // Show AINLP result in UI
         const ainlpElement = document.getElementById('ainlp-result');
         if (ainlpElement) {
@@ -437,5 +460,3 @@ window.demonstrateAINLP = async function() {
         console.error('AINLP demonstration failed:', error);
     }
 };
-
-console.log('AIOS JavaScript API loaded successfully');
