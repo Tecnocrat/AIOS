@@ -1,5 +1,5 @@
 {
-  "last_scan": "2025-07-08T22:34:17.749908",
+  "last_scan": "2025-07-08T22:55:23.017639",
   "profiles": {
     ".gitignore": {
       "file_type": "static_configs",
@@ -661,7 +661,7 @@
     },
     "docs\\DOCUMENTATION_INDEX.md": {
       "file_type": "documentation",
-      "last_modified": "2025-07-07T23:41:11.704084",
+      "last_modified": "2025-07-08T22:55:17.921734",
       "last_accessed": "2025-07-08T20:57:24.659806",
       "access_frequency": 1.0,
       "modification_frequency": 1.0,
@@ -670,6 +670,7 @@
       "file_classification": "reference",
       "ai_context_tags": [
         "ainlp",
+        "tachyonic",
         "ai",
         "natural language",
         "bootstrap",
@@ -678,7 +679,7 @@
         "integration",
         "context"
       ],
-      "content_hash": "0b31d63ee8b78b404c06b46411960da6",
+      "content_hash": "d34af65de270eb9bf21a565fff882383",
       "size_bytes": 8718
     },
     "docs\\FRACTAL_HOLOGRAPHIC_DEVELOPMENT.md": {
@@ -2910,6 +2911,259 @@
       ],
       "content_hash": "85a4b6111d32fdacc8bf8d2b30b3278b",
       "size_bytes": 2294
+    },
+    ".aios_context.json": {
+      "file_type": "configs",
+      "last_modified": "2025-07-08T22:34:17.756636",
+      "last_accessed": "2025-07-08T22:55:20.018723",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.0,
+      "reingestion_potential": 0.4,
+      "file_classification": "active",
+      "ai_context_tags": [],
+      "content_hash": "7c288faeda69313f1ba79e804d65221c",
+      "size_bytes": 96832
+    },
+    "docs\\AINLP_OPTIMIZED_SPECIFICATION_AND_IMPLEMENTATION.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T22:50:24.679857",
+      "last_accessed": "2025-07-08T22:51:25.073555",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.59,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ainlp",
+        "quantum",
+        "tachyonic",
+        "ai",
+        "machine learning",
+        "neural",
+        "natural language",
+        "compiler",
+        "interface",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "4ac8f25f0ffa025ac082009bbecf039e",
+      "size_bytes": 20748
+    },
+    "docs\\AINLP_TACHYONIC_OPTIMIZATION_COMPLETE_JULY8_2025.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T22:55:17.925732",
+      "last_accessed": "2025-07-08T22:55:18.336070",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.05,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ainlp",
+        "quantum",
+        "tachyonic",
+        "ai",
+        "natural language",
+        "compiler",
+        "bootstrap",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "2c76cc3246a1bbadf3982e4ded8ad8f0",
+      "size_bytes": 8915
+    },
+    "docs\\CONTEXT_HARMONIZATION_COMPLETE_JULY8_2025.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T22:37:55.040985",
+      "last_accessed": "2025-07-08T22:43:18.592830",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.22,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ainlp",
+        "quantum",
+        "tachyonic",
+        "ai",
+        "natural language",
+        "compiler",
+        "bootstrap",
+        "integration",
+        "context"
+      ],
+      "content_hash": "7b141b90a11c39e0fd433e6f8ddba899",
+      "size_bytes": 6766
+    },
+    "ai\\src\\core\\integration\\ainlp_simple_ingestor.py": {
+      "file_type": "core_logic",
+      "last_modified": "2025-07-08T22:50:22.651496",
+      "last_accessed": "2025-07-08T22:50:24.618146",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.07,
+      "reingestion_potential": 0.7,
+      "file_classification": "active",
+      "ai_context_tags": [
+        "ainlp",
+        "tachyonic",
+        "ai"
+      ],
+      "content_hash": "84b9e2bb2cc60d5f6e9893efd113e5f1",
+      "size_bytes": 3182
+    },
+    "ai\\src\\core\\integration\\ainlp_tachyonic_ingestor.py": {
+      "file_type": "core_logic",
+      "last_modified": "2025-07-08T22:50:22.627061",
+      "last_accessed": "2025-07-08T22:50:22.719976",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.65,
+      "reingestion_potential": 0.7,
+      "file_classification": "active",
+      "ai_context_tags": [
+        "ainlp",
+        "tachyonic",
+        "ai",
+        "interface",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "4f48448f4a4be4da1f135c3a94de1e62",
+      "size_bytes": 24018
+    },
+    "docs\\tachyonic_backups\\ADVANCED_OPTIMIZATION_IMPLEMENTATION_backup_2025-07-08_22-44-03.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T20:27:04.536380",
+      "last_accessed": "2025-07-08T22:45:12.129071",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.31,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ai",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "aadad39cd303419f71eb6f0af6083679",
+      "size_bytes": 7165
+    },
+    "docs\\tachyonic_backups\\ADVANCED_OPTIMIZATION_IMPLEMENTATION_backup_2025-07-08_22-50-24.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T22:50:24.674987",
+      "last_accessed": "2025-07-08T22:51:25.073555",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.31,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ai",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "aadad39cd303419f71eb6f0af6083679",
+      "size_bytes": 7165
+    },
+    "docs\\tachyonic_backups\\ADVANCED_OPTIMIZATION_IMPLEMENTATION_tachyonic_backup_2025-07-08_22-49-08.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T22:49:08.931384",
+      "last_accessed": "2025-07-08T22:50:09.209513",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.31,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ai",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "aadad39cd303419f71eb6f0af6083679",
+      "size_bytes": 7165
+    },
+    "docs\\tachyonic_backups\\AINLP_SPECIFICATION_backup_2025-07-08_22-44-03.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-07T23:09:13.105751",
+      "last_accessed": "2025-07-08T22:45:23.909661",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.27,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ainlp",
+        "quantum",
+        "ai",
+        "machine learning",
+        "neural",
+        "natural language",
+        "compiler",
+        "interface",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "fbdfc3c6bd3f07a551ddf834c6521782",
+      "size_bytes": 13066
+    },
+    "docs\\tachyonic_backups\\AINLP_SPECIFICATION_backup_2025-07-08_22-50-24.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T22:50:24.674987",
+      "last_accessed": "2025-07-08T22:51:25.107257",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.27,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ainlp",
+        "quantum",
+        "ai",
+        "machine learning",
+        "neural",
+        "natural language",
+        "compiler",
+        "interface",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "fbdfc3c6bd3f07a551ddf834c6521782",
+      "size_bytes": 13066
+    },
+    "docs\\tachyonic_backups\\AINLP_SPECIFICATION_tachyonic_backup_2025-07-08_22-49-08.md": {
+      "file_type": "documentation",
+      "last_modified": "2025-07-08T22:49:08.933404",
+      "last_accessed": "2025-07-08T22:50:09.257586",
+      "access_frequency": 1.0,
+      "modification_frequency": 1.0,
+      "context_importance": 0.27,
+      "reingestion_potential": 0.3,
+      "file_classification": "reference",
+      "ai_context_tags": [
+        "ainlp",
+        "quantum",
+        "ai",
+        "machine learning",
+        "neural",
+        "natural language",
+        "compiler",
+        "interface",
+        "core",
+        "integration",
+        "context"
+      ],
+      "content_hash": "fbdfc3c6bd3f07a551ddf834c6521782",
+      "size_bytes": 13066
     }
   }
 }
