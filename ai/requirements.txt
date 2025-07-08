@@ -20,6 +20,7 @@ httpx>=0.24.0
 # Async programming
 asyncio
 aiofiles>=23.0.0
+websockets>=11.0.0
 
 # Configuration and logging
 pyyaml>=6.0
