@@ -1,37 +1,57 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using AIOS.Services;
+using System.Text.Json;
 
 namespace AIOS.UI;
 
 /// <summary>
-/// Interaction logic for MainWindow.xaml
+/// Fractal Holographic Main Window with system-wide awareness
+/// Thread B: C# UI + VSCode Extension Synchronization
 /// </summary>
 public partial class MainWindow : Window
 {
     private readonly DispatcherTimer _healthTimer;
     private readonly DispatcherTimer _activityTimer;
     private readonly AIServiceManager _aiService;
+    private readonly FractalContextManager _contextManager;
+    private readonly HolographicUIOrchestrator _orchestrator;
+    private readonly VSCodeExtensionBridge _vscodeBridge;
     private string _currentModule = "nlp";
     private int _messageCount = 0;
+
+    // Fractal holographic components
+    private HolographicSystemState _systemState;
+    private Dictionary<string, ComponentReflection> _componentReflections;
 
     public MainWindow()
     {
         InitializeComponent();
         _aiService = new AIServiceManager();
+        _contextManager = new FractalContextManager();
+        _orchestrator = new HolographicUIOrchestrator(_contextManager);
+        _vscodeBridge = new VSCodeExtensionBridge();
+        _systemState = new HolographicSystemState();
+        _componentReflections = new Dictionary<string, ComponentReflection>();
+
         InitializeUI();
+        InitializeFractalComponents();
         InitializeTimers();
         LoadSystemStatus();
+        StartHolographicSynchronization();
     }
 
     private void InitializeUI()
     {
         // Set initial focus and placeholder behavior
-        ChatInput.GotFocus += (s, e) => {
+        ChatInput.GotFocus += (s, e) =>
+        {
             if (ChatInput.Text == "Type your message here...")
             {
                 ChatInput.Text = "";
@@ -39,7 +59,8 @@ public partial class MainWindow : Window
             }
         };
 
-        ChatInput.LostFocus += (s, e) => {
+        ChatInput.LostFocus += (s, e) =>
+        {
             if (string.IsNullOrWhiteSpace(ChatInput.Text))
             {
                 ChatInput.Text = "Type your message here...";
@@ -49,6 +70,44 @@ public partial class MainWindow : Window
 
         // Add welcome message
         AddChatMessage("AIOS", "Welcome to AIOS! I'm your AI assistant. Click on any module to switch modes, or just start chatting!", true);
+    }
+
+    private void InitializeFractalComponents()
+    {
+        // Initialize fractal holographic components
+        _contextManager.Initialize();
+        _orchestrator.Initialize();
+
+        // Load and apply component reflections
+        LoadComponentReflections();
+
+        // Update system state
+        UpdateSystemState();
+    }
+
+    private void LoadComponentReflections()
+    {
+        // Load component reflections from configuration or service
+        var reflectionsJson = _aiService.GetComponentReflections();
+        if (reflectionsJson != null)
+        {
+            _componentReflections = JsonSerializer.Deserialize<Dictionary<string, ComponentReflection>>(reflectionsJson);
+        }
+    }
+
+    private void UpdateSystemState()
+    {
+        // Update the holographic system state based on current context and reflections
+        _systemState.Update(_contextManager.CurrentContext, _componentReflections);
+
+        // Reflect state in the UI
+        ReflectStateInUI();
+    }
+
+    private void ReflectStateInUI()
+    {
+        // Update UI elements based on the current system state
+        // For example, update visibility or enable/disable controls
     }
 
     private void InitializeTimers()
@@ -90,20 +149,20 @@ public partial class MainWindow : Window
         try
         {
             var healthResponse = await _aiService.GetSystemHealthAsync();
-            
+
             if (healthResponse.Success)
             {
                 var healthScore = healthResponse.HealthScore * 100;
-                
+
                 HealthProgressBar.Value = healthScore;
                 HealthScoreText.Text = $"{healthScore:F0}%";
-                
+
                 // Clean up status text (remove emojis for UI display)
                 var cleanStatus = healthResponse.HealthStatus
                     .Replace("🟢 ", "").Replace("🟡 ", "").Replace("🔴 ", "")
                     .Replace(">> ", "");
                 StatusIndicator.Text = cleanStatus;
-                
+
                 // Update status indicator color based on health score
                 StatusIndicator.Background = healthScore switch
                 {
@@ -111,7 +170,7 @@ public partial class MainWindow : Window
                     >= 70 => new SolidColorBrush(Color.FromRgb(255, 193, 7)),
                     _ => new SolidColorBrush(Color.FromRgb(220, 53, 69))
                 };
-                
+
                 // Update active modules count (simulate based on health)
                 var activeModules = healthScore >= 80 ? "5 / 5" : healthScore >= 60 ? "4 / 5" : "3 / 5";
                 ActiveModulesText.Text = activeModules;
@@ -141,7 +200,7 @@ public partial class MainWindow : Window
             Text = sender,
             FontWeight = FontWeights.Bold,
             FontSize = 12,
-            Foreground = isSystem ? new SolidColorBrush(Color.FromRgb(0, 212, 255)) : 
+            Foreground = isSystem ? new SolidColorBrush(Color.FromRgb(0, 212, 255)) :
                         sender == "You" ? new SolidColorBrush(Color.FromRgb(100, 255, 100)) :
                         new SolidColorBrush(Color.FromRgb(255, 193, 7)),
             Margin = new Thickness(0, 0, 0, 2)
@@ -160,10 +219,10 @@ public partial class MainWindow : Window
         messagePanel.Children.Add(messageBlock);
 
         ChatMessages.Children.Add(messagePanel);
-        
+
         // Auto-scroll to bottom
         ChatScrollViewer.ScrollToEnd();
-        
+
         _messageCount++;
     }
 
@@ -197,7 +256,7 @@ public partial class MainWindow : Window
         var baseLoad = _messageCount * 2; // Base load increases with activity
         var variance = random.NextDouble() * 20 - 10; // ±10% variance
         var currentLoad = Math.Max(15, Math.Min(85, baseLoad + variance));
-        
+
         LoadProgressBar.Value = currentLoad;
         LoadText.Text = $"{currentLoad:F0}%";
     }
@@ -243,10 +302,10 @@ public partial class MainWindow : Window
         {
             // Call AI service
             var response = await _aiService.ProcessAsync(_currentModule, input);
-            
+
             // Remove typing indicator
             ChatMessages.Children.Remove(typingMessage);
-            
+
             if (response.Success)
             {
                 // Add AI response
@@ -263,7 +322,7 @@ public partial class MainWindow : Window
         {
             // Remove typing indicator
             ChatMessages.Children.Remove(typingMessage);
-            
+
             AddChatMessage("AIOS", $"Sorry, I encountered an unexpected error: {ex.Message}", true);
             AddActivityLog($"Unexpected error: {ex.Message}");
         }
@@ -314,9 +373,9 @@ public partial class MainWindow : Window
     {
         AddChatMessage("AIOS", "🏥 Running comprehensive system health check...", true);
         AddActivityLog("Manual health check requested");
-        
+
         await UpdateSystemHealth();
-        
+
         AddChatMessage("AIOS", $"Health check complete. Current status: {StatusIndicator.Text} ({HealthScoreText.Text})", true);
     }
 
