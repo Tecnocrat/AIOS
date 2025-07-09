@@ -13,7 +13,7 @@ This is the central hub for all AIOS documentation. All files are organized by p
 4. **`docs/ai-context/PROJECT_STATUS.md`** - Current implementation status
 5. **`docs/ai-context/AI_QUICK_REFERENCE.md`** - Quick commands and procedures
 
-### **Documentation Structure**
+### **Documentation Structure** (Optimized with Tachyonic Archiver)
 ```
 c:\dev\AIOS\
 ├── 📋 CORE FILES (ROOT LEVEL)
@@ -24,15 +24,18 @@ c:\dev\AIOS\
 │   │   ├── AI_context_reallocator.md    # AI bootstrap protocol
 │   │   ├── AI_QUICK_REFERENCE.md        # Quick commands
 │   │   └── PROJECT_STATUS.md            # Current status
-│   ├── ARCHITECTURE.md              # 🏛️ System design
-│   ├── DEVELOPMENT.md               # ⚙️ Development workflow
-│   ├── API_REFERENCE.md             # 📋 Code interfaces
-│   ├── INSTALLATION.md              # 💿 Setup instructions
-│   ├── CHANGELOG.md                 # 📝 Version history
-│   ├── LICENSE_DECISION.md          # ⚖️ License analysis
-│   └── AUTO_WAYPOINT_SUMMARY.md     # 🎯 System summary
+│   ├── AIOS_MASTER_SPECIFICATION.md # ⭐ UNIFIED SPECIFICATION (9,432 lines)
+│   ├── AIOS_VSCODE_SAVE_*.md        # 📱 VSCode extension docs
+│   ├── DEVELOPMENT_INFRASTRUCTURE_COMPLETE.md  # 🔧 Dev infrastructure
+│   ├── INFRASTRUCTURE_STATUS_COMPLETE.md       # � Infrastructure status
+│   ├── INTEGRATION_STATUS_JULY_2025.md         # � Integration status
+│   ├── JULY_2025_ARCHITECTURE_COMPLETE.md      # 🏛️ Architecture complete
+│   ├── OPTIMIZATION_DEBUG_PATH.md              # 🐛 Debug optimization
+│   ├── tachyonic_archive.db         # ⚡ QUANTUM ARCHIVE (405KB)
+│   └── unified_backups/             # 🗂️ Backup system
 └── 🔧 SCRIPTS (scripts/)
     ├── setup.ps1                   # Environment setup
+    ├── docs_tachyonic_cleanup.py   # 🌀 Tachyonic optimizer
     ├── test_integration.py         # System testing
     └── context_health_monitor.py   # Health monitoring
 ```
@@ -47,16 +50,18 @@ c:\dev\AIOS\
 | `PROJECT_STATUS.md` | Current implementation status | Every session |
 | `AIOS_PROJECT_CONTEXT.md` | Master architecture | When working on architecture |
 
-### **For Developers**
+### **For Developers** (Updated Post-Optimization)
 | File | Purpose | When to Read |
 |------|---------|--------------|
 | `README.md` | Project overview and quick start | Getting started |
-| `ARCHITECTURE.md` | System design and components | Understanding structure |
-| `DEVELOPMENT.md` | Development workflow | Contributing code |
-| `API_REFERENCE.md` | Code interfaces and contracts | Writing code |
-| `INSTALLATION.md` | Setup and configuration | Environment setup |
-| `WORKSPACE_CONFIGURATION.md` | **VSCode workspace optimization** | **Setting up development environment** |
-| `CHANGELOG.md` | Version history and changes | Understanding evolution |
+| `AIOS_MASTER_SPECIFICATION.md` | **🎯 UNIFIED SPECIFICATION** | **Complete architecture, API, dev guide** |
+| `DEVELOPMENT_INFRASTRUCTURE_COMPLETE.md` | Development infrastructure | Contributing code |
+| `INFRASTRUCTURE_STATUS_COMPLETE.md` | Infrastructure status | Environment setup |
+| `AIOS_VSCODE_SAVE_COMMAND.md` | **AIOS VSCode Extension `/save` command** | **Understanding extension features** |
+| `AIOS_VSCODE_SAVE_USAGE.md` | **AIOS VSCode Extension practical usage** | **Using VSCode extension effectively** |
+| `AIOS_VSCODE_SAVE_ANALYSIS.md` | **AIOS VSCode Extension analysis & effectiveness** | **Understanding implementation quality** |
+| `OPTIMIZATION_DEBUG_PATH.md` | Debug and optimization path | Troubleshooting |
+| `tachyonic_archive.db` | **⚡ ARCHIVED LEGACY DOCS** | **Search with TachyonicArchiver** |
 
 ### **For Hybrid UI Development**
 | File | Purpose | When to Read |
@@ -82,6 +87,38 @@ c:\dev\AIOS\
 | `README.md` | Project overview | Getting started |
 | `docs/user-guide.md` | User instructions | Using AIOS |
 | `docs/INSTALLATION.md` | Setup guide | Installation |
+
+## 🌀 **Tachyonic Archive System**
+
+### **Archive Access**
+Archived documents are stored in the quantum-inspired tachyonic database for perfect recall:
+
+```python
+# Access archived content
+from maintenance.tachyonic_archiver import TachyonicArchiver
+archiver = TachyonicArchiver('.')
+
+# Search archived documents
+results = archiver.search_archive("search_term")
+
+# Retrieve full content by hash
+content = archiver.retrieve_content("content_hash")
+
+# Get archive statistics
+stats = archiver.get_archive_statistics()
+```
+
+### **Archived Categories**
+- **Core:** Architecture, development, API documentation
+- **Guides:** Specification, reference, setup guides
+- **Status:** Integration status, project roadmap
+- **Consolidated:** Previously fragmented content unified
+
+### **Archive Benefits**
+- ⚡ **Perfect Recall:** All content searchable and retrievable
+- 🗜️ **Space Efficient:** 405KB database vs scattered files
+- 🔍 **Semantic Search:** Advanced content discovery
+- 📊 **Metadata Preservation:** Keywords, categories, timestamps
 
 ## 🎯 **Documentation Maintenance**
 

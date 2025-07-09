@@ -32,10 +32,12 @@ class DocumentationOptimizer:
 
     def analyze_documentation_structure(self) -> Dict:
         """
-        Analyze current documentation structure and identify optimization opportunities.
+        Analyze current documentation structure and identify optimization
+        opportunities.
 
         Returns:
-            Dict containing analysis results, fragmentation metrics, and recommendations
+            Dict containing analysis results, fragmentation metrics,
+            and recommendations
         """
         if not self.docs_path.exists():
             return {"error": "Documentation directory not found"}
@@ -78,7 +80,9 @@ class DocumentationOptimizer:
                 print(f"Error analyzing {file_path}: {e}")
 
         # Calculate fragmentation score
-        analysis["fragmentation_score"] = self._calculate_fragmentation(analysis)
+        analysis["fragmentation_score"] = self._calculate_fragmentation(
+            analysis
+        )
 
         # Generate recommendations
         analysis["recommendations"] = self._generate_recommendations(analysis)

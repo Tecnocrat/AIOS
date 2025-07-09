@@ -138,6 +138,7 @@ namespace AIOS.Models
         public string Message { get; set; } = "";
         public Dictionary<string, object> Results { get; set; } = new();
         public DateTime Timestamp { get; set; }
+        public List<string> Actions { get; set; } = new();
     }
 
     public class MaintenanceStatus
