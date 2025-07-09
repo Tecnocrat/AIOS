@@ -111,7 +111,7 @@ namespace AIOS.Models
                     Entities = ExtractEntities(input),
                     Sentiment = AnalyzeSentiment(input),
                     Confidence = Math.Round(_random.NextDouble() * 0.3 + 0.7, 2), // 70-100%
-                    ProcessingTime = _random.Next(200, 800),
+                    ProcessingTime = TimeSpan.FromMilliseconds(_random.Next(200, 800)),
                     Response = GenerateResponse(input),
                     Timestamp = DateTime.UtcNow
                 };
@@ -309,19 +309,19 @@ namespace AIOS.Models
             return "general_query";
         }
 
-        private List<string> ExtractEntities(string input)
+        private Dictionary<string, object> ExtractEntities(string input)
         {
-            var entities = new List<string>();
+            var entities = new Dictionary<string, object>();
 
             // Simple entity extraction (in real implementation, use NER models)
             if (input.ToLower().Contains("system"))
-                entities.Add("SYSTEM");
+                entities["type"] = "SYSTEM";
             if (input.ToLower().Contains("database"))
-                entities.Add("DATABASE");
+                entities["resource"] = "DATABASE";
             if (input.ToLower().Contains("error"))
-                entities.Add("ERROR");
+                entities["severity"] = "ERROR";
             if (input.ToLower().Contains("performance"))
-                entities.Add("PERFORMANCE");
+                entities["metric"] = "PERFORMANCE";
 
             return entities;
         }
@@ -579,19 +579,6 @@ namespace AIOS.Models
         public DateTime LastUpdated { get; set; }
     }
 
-    public class NLPResponse
-    {
-        public string Input { get; set; }
-        public string Context { get; set; }
-        public string Intent { get; set; }
-        public List<string> Entities { get; set; }
-        public string Sentiment { get; set; }
-        public double Confidence { get; set; }
-        public int ProcessingTime { get; set; }
-        public string Response { get; set; }
-        public DateTime Timestamp { get; set; }
-    }
-
     public class PredictionResponse
     {
         public string ModelType { get; set; }
@@ -660,5 +647,11 @@ namespace AIOS.Models
     {
         public AIServiceException(string message) : base(message) { }
         public AIServiceException(string message, Exception innerException) : base(message, innerException) { }
+    }
+
+    // Alias for backward compatibility
+    public class AdvancedAIServiceManager : AIServiceManager
+    {
+        public AdvancedAIServiceManager(ILogger<AIServiceManager>? logger = null) : base(logger) { }
     }
 }

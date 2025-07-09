@@ -15,16 +15,16 @@ namespace AIOS.Models
     {
         private readonly RuntimeLoggingService _loggingService;
         private readonly DatabaseService _databaseService;
-        private readonly AIServiceManager _aiService;
+        private readonly IAIService _aiService;
         private readonly List<string> _activePanels;
         private readonly Dictionary<string, SystemMetrics> _metricsHistory;
         private readonly CancellationTokenSource _cancellationTokenSource;
-        private readonly Timer _metricsTimer;
+        private Timer _metricsTimer;
 
         public event EventHandler<RuntimeStatusEventArgs>? StatusChanged;
         public event EventHandler<PerformanceMetricsEventArgs>? MetricsUpdated;
 
-        public AIOSRuntimeMonitor(AIServiceManager aiService, DatabaseService databaseService)
+        public AIOSRuntimeMonitor(IAIService aiService, DatabaseService databaseService)
         {
             _aiService = aiService;
             _databaseService = databaseService;
@@ -209,42 +209,4 @@ namespace AIOS.Models
             _cancellationTokenSource?.Dispose();
         }
     }
-
-    #region Event Args and Data Models
-
-    public class RuntimeStatusEventArgs : EventArgs
-    {
-        public string Status { get; set; } = "";
-        public string Details { get; set; } = "";
-    }
-
-    public class PerformanceMetricsEventArgs : EventArgs
-    {
-        public Dictionary<string, double> Metrics { get; set; } = new();
-    }
-
-    public class SystemHealthSnapshot
-    {
-        public double HealthScore { get; set; }
-        public string Status { get; set; } = "";
-        public int ErrorCount { get; set; }
-        public int WarningCount { get; set; }
-        public int TotalLogEntries { get; set; }
-        public int AINLPOperations { get; set; }
-        public int DatabaseOperations { get; set; }
-        public int EvolutionOperations { get; set; }
-        public DateTime Timestamp { get; set; }
-    }
-
-    public class SystemMetrics
-    {
-        public string Category { get; set; } = "";
-        public DateTime Hour { get; set; }
-        public int TotalOperations { get; set; }
-        public double AverageExecutionTime { get; set; }
-        public int ErrorCount { get; set; }
-        public int WarningCount { get; set; }
-    }
-
-    #endregion
 }

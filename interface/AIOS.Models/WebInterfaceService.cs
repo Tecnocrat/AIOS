@@ -13,10 +13,10 @@ namespace AIOS.Models
     public class WebInterfaceService
     {
         private WebView2 _webView;
-        private readonly AIServiceManager _aiService;
-        private readonly DatabaseService _dbService;
+        private readonly IAIService _aiService;
+        private readonly IDatabaseService _dbService;
 
-        public WebInterfaceService(AIServiceManager aiService, DatabaseService dbService)
+        public WebInterfaceService(IAIService aiService, IDatabaseService dbService)
         {
             _aiService = aiService;
             _dbService = dbService;
@@ -25,15 +25,15 @@ namespace AIOS.Models
         public async Task InitializeAsync(WebView2 webView)
         {
             _webView = webView;
-            
+
             // Enable developer tools in debug mode
-            #if DEBUG
+#if DEBUG
             _webView.CoreWebView2.Settings.AreDevToolsEnabled = true;
-            #endif
+#endif
 
             // Register C# methods that can be called from JavaScript
             await RegisterJavaScriptBindings();
-            
+
             // Load the main HTML interface
             await LoadMainInterface();
         }
@@ -42,7 +42,7 @@ namespace AIOS.Models
         {
             // AI Module Interactions
             _webView.CoreWebView2.AddWebResourceRequestedFilter("*", CoreWebView2WebResourceContext.All);
-            
+
             // Register AIOS API endpoints
             await _webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync(@"
                 window.AIOS = {
@@ -50,29 +50,29 @@ namespace AIOS.Models
                     async processNLP(input) {
                         return await window.chrome.webview.hostObjects.aiService.ProcessNLP(input);
                     },
-                    
+
                     async makePrediction(data) {
                         return await window.chrome.webview.hostObjects.aiService.MakePrediction(data);
                     },
-                    
+
                     async runAutomation(task) {
                         return await window.chrome.webview.hostObjects.aiService.RunAutomation(task);
                     },
-                    
+
                     // Database Operations
                     async queryDatabase(query) {
                         return await window.chrome.webview.hostObjects.dbService.ExecuteQuery(query);
                     },
-                    
+
                     async saveData(collection, data) {
                         return await window.chrome.webview.hostObjects.dbService.SaveData(collection, data);
                     },
-                    
+
                     // System Health
                     async getSystemHealth() {
                         return await window.chrome.webview.hostObjects.aiService.GetSystemHealth();
                     },
-                    
+
                     // Real-time Events
                     onDataUpdate: null,
                     onSystemAlert: null,
