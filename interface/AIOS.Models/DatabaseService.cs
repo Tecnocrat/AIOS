@@ -3,24 +3,87 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using System.Linq;
+using System.Reflection;
 
 namespace AIOS.Models
 {
     /// <summary>
-    /// Intelligent database service with AI-driven optimization
-    /// Handles server-side operations with intelligent caching and predictions
+    /// Quantum-Enhanced Database Service with Evolutionary Code Intelligence
+    /// Implements the AINLP paradigm for self-evolving code ecosystems
+    /// Reads, scores, mutates, and iterates code populations
     /// </summary>
     public class DatabaseService
     {
         private readonly AIServiceManager _aiService;
         private readonly Dictionary<string, object> _intelligentCache;
         private readonly QueryOptimizer _queryOptimizer;
+        private readonly CodeEvolutionEngine _evolutionEngine;
+        private readonly AINLPKernel _ainlpKernel;
+        private readonly PopulationManager _populationManager;
+        private readonly MetaphoricalLanguageProcessor _metaphorProcessor;
 
         public DatabaseService(AIServiceManager aiService)
         {
             _aiService = aiService;
             _intelligentCache = new Dictionary<string, object>();
             _queryOptimizer = new QueryOptimizer(aiService);
+            _evolutionEngine = new CodeEvolutionEngine(aiService);
+            _ainlpKernel = new AINLPKernel(this);
+            _populationManager = new PopulationManager();
+            _metaphorProcessor = new MetaphoricalLanguageProcessor(_ainlpKernel);
+
+            InitializeQuantumLayer();
+        }
+
+        private void InitializeQuantumLayer()
+        {
+            // Initialize the quantum-enhanced evolutionary system
+            _evolutionEngine.Initialize();
+            _ainlpKernel.Initialize();
+            _populationManager.Initialize();
+        }
+
+        /// <summary>
+        /// Process natural language commands through AINLP kernel for code evolution
+        /// </summary>
+        public async Task<string> ProcessAINLPCommand(string naturalLanguageCommand)
+        {
+            try
+            {
+                // Step 1: Parse metaphorical language into executable intents
+                var intent = await _metaphorProcessor.ParseMetaphoricalCommand(naturalLanguageCommand);
+
+                // Step 2: Generate code populations based on intent
+                var codePopulations = await _evolutionEngine.GenerateCodePopulations(intent);
+
+                // Step 3: Score populations against standard libraries and patterns
+                var scoredPopulations = await _populationManager.ScorePopulations(codePopulations);
+
+                // Step 4: Select best performers for mutation
+                var selectedPopulation = await _populationManager.SelectElitePopulation(scoredPopulations);
+
+                // Step 5: Mutate and iterate
+                var evolvedCode = await _evolutionEngine.MutateAndIterate(selectedPopulation);
+
+                // Step 6: Encode result into AINLP kernel for future iterations
+                await _ainlpKernel.EncodeEvolutionResult(naturalLanguageCommand, evolvedCode);
+
+                return JsonSerializer.Serialize(new
+                {
+                    success = true,
+                    evolvedCode = evolvedCode,
+                    generations = _evolutionEngine.GenerationCount,
+                    fitnessScore = evolvedCode.FitnessScore,
+                    ainlpEncoding = evolvedCode.AINLPEncoding
+                });
+            }
+            catch (Exception ex)
+            {
+                await LogActivity($"AINLP command failed: {ex.Message}");
+                return JsonSerializer.Serialize(new { success = false, error = ex.Message });
+            }
         }
 
         /// <summary>
@@ -33,7 +96,7 @@ namespace AIOS.Models
             {
                 // AI-powered query optimization
                 var optimizedQuery = await _queryOptimizer.OptimizeQuery(query);
-                
+
                 // Check intelligent cache first
                 var cacheKey = GenerateCacheKey(optimizedQuery);
                 if (_intelligentCache.ContainsKey(cacheKey))
@@ -44,11 +107,11 @@ namespace AIOS.Models
 
                 // Execute query with connection pooling
                 var result = await ExecuteWithIntelligence(optimizedQuery);
-                
+
                 // Store in intelligent cache with AI-predicted TTL
                 var cacheTTL = await _aiService.PredictCacheTTL(query, result);
                 _intelligentCache[cacheKey] = result;
-                
+
                 await LogActivity($"Query executed: {query} (optimized: {optimizedQuery})");
                 return JsonSerializer.Serialize(result);
             }
@@ -68,7 +131,7 @@ namespace AIOS.Models
             try
             {
                 var data = JsonSerializer.Deserialize<Dictionary<string, object>>(jsonData);
-                
+
                 // AI-powered data validation
                 var validationResult = await _aiService.ValidateData(collection, data);
                 if (!validationResult.IsValid)
@@ -78,7 +141,7 @@ namespace AIOS.Models
 
                 // Intelligent data transformation
                 var transformedData = await _aiService.TransformDataForStorage(collection, data);
-                
+
                 // Save with transaction management
                 using var transaction = await BeginTransactionAsync();
                 var result = await SaveWithIntelligence(collection, transformedData);
@@ -86,7 +149,7 @@ namespace AIOS.Models
 
                 // Invalidate related cache entries
                 await InvalidateIntelligentCache(collection, transformedData);
-                
+
                 // Trigger AI learning from the new data
                 _ = Task.Run(() => _aiService.LearnFromData(collection, transformedData));
 
@@ -105,7 +168,7 @@ namespace AIOS.Models
             // This would integrate with your actual database
             // For now, we'll simulate intelligent database operations
             await Task.Delay(50); // Simulate network latency
-            
+
             return new
             {
                 query = query,
@@ -122,7 +185,7 @@ namespace AIOS.Models
         {
             // Simulate intelligent save operation
             await Task.Delay(30);
-            
+
             return new { Id = Guid.NewGuid().ToString(), Timestamp = DateTime.UtcNow };
         }
 
@@ -167,8 +230,8 @@ namespace AIOS.Models
         {
             // AI-powered query optimization
             var optimization = await _aiService.ProcessNLP($"optimize_query: {query}");
-            return optimization.ContainsKey("optimized_query") 
-                ? optimization["optimized_query"].ToString() 
+            return optimization.ContainsKey("optimized_query")
+                ? optimization["optimized_query"].ToString()
                 : query;
         }
     }

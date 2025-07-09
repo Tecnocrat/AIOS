@@ -23,14 +23,14 @@ namespace AIOS.Models
         private readonly Random _random;
         private bool _isInitialized;
 
-        public AIServiceManager(ILogger<AIServiceManager> logger = null)
+        public AIServiceManager(ILogger<AIServiceManager>? logger = null)
         {
-            _logger = logger;
+            _logger = logger ?? Microsoft.Extensions.Logging.Abstractions.NullLogger<AIServiceManager>.Instance;
             _aiModules = new Dictionary<string, AIModule>();
             _recentEvents = new List<SystemEvent>();
             _random = new Random();
             _isInitialized = false;
-            
+
             InitializeAIModules();
         }
 
@@ -94,7 +94,7 @@ namespace AIOS.Models
         /// Process natural language input and return structured response
         /// </summary>
         [ComVisible(true)]
-        public async Task<NLPResponse> ProcessNLP(string input, string context = null)
+        public async Task<NLPResponse> ProcessNLP(string input, string? context = null)
         {
             try
             {
@@ -140,7 +140,7 @@ namespace AIOS.Models
                 await Task.Delay(_random.Next(800, 2000));
 
                 var inputData = JsonSerializer.Deserialize<Dictionary<string, object>>(dataJson);
-                
+
                 var prediction = new PredictionResponse
                 {
                     ModelType = modelType,
@@ -173,7 +173,7 @@ namespace AIOS.Models
                 _logger?.LogInformation($"Running automation task");
 
                 var task = JsonSerializer.Deserialize<AutomationTask>(taskJson);
-                
+
                 // Simulate automation execution
                 await Task.Delay(_random.Next(1000, 3000));
 
@@ -257,7 +257,7 @@ namespace AIOS.Models
                 }
 
                 var module = _aiModules[moduleId];
-                
+
                 // Simulate module toggle processing
                 await Task.Delay(_random.Next(500, 1000));
 
@@ -296,7 +296,7 @@ namespace AIOS.Models
         private string ClassifyIntent(string input)
         {
             var lowerInput = input.ToLower();
-            
+
             if (lowerInput.Contains("status") || lowerInput.Contains("health"))
                 return "system_query";
             if (lowerInput.Contains("create") || lowerInput.Contains("generate"))
@@ -305,14 +305,14 @@ namespace AIOS.Models
                 return "analysis_request";
             if (lowerInput.Contains("help") || lowerInput.Contains("how"))
                 return "help_request";
-            
+
             return "general_query";
         }
 
         private List<string> ExtractEntities(string input)
         {
             var entities = new List<string>();
-            
+
             // Simple entity extraction (in real implementation, use NER models)
             if (input.ToLower().Contains("system"))
                 entities.Add("SYSTEM");
@@ -322,7 +322,7 @@ namespace AIOS.Models
                 entities.Add("ERROR");
             if (input.ToLower().Contains("performance"))
                 entities.Add("PERFORMANCE");
-            
+
             return entities;
         }
 
@@ -330,16 +330,16 @@ namespace AIOS.Models
         {
             var positiveWords = new[] { "good", "great", "excellent", "amazing", "perfect", "love", "like" };
             var negativeWords = new[] { "bad", "terrible", "awful", "hate", "dislike", "problem", "error", "fail" };
-            
+
             var lowerInput = input.ToLower();
             var positiveCount = positiveWords.Count(word => lowerInput.Contains(word));
             var negativeCount = negativeWords.Count(word => lowerInput.Contains(word));
-            
+
             if (positiveCount > negativeCount)
                 return "Positive";
             if (negativeCount > positiveCount)
                 return "Negative";
-            
+
             return "Neutral";
         }
 
@@ -353,7 +353,7 @@ namespace AIOS.Models
                 "Your request has been processed successfully.",
                 "I'm ready to assist you with this task."
             };
-            
+
             return responses[_random.Next(responses.Length)];
         }
 
@@ -399,7 +399,7 @@ namespace AIOS.Models
         private List<string> ExecuteAutomationSteps(List<string> actions)
         {
             var results = new List<string>();
-            
+
             foreach (var action in actions)
             {
                 var result = action switch
@@ -411,10 +411,10 @@ namespace AIOS.Models
                     "scan_security" => $"Security scan complete, {_random.Next(0, 3)} issues found",
                     _ => $"Executed {action} successfully"
                 };
-                
+
                 results.Add(result);
             }
-            
+
             return results;
         }
 
@@ -427,7 +427,7 @@ namespace AIOS.Models
         private List<string> GenerateHealthAlerts()
         {
             var alerts = new List<string>();
-            
+
             if (_random.NextDouble() < 0.3) // 30% chance of alerts
             {
                 var possibleAlerts = new[]
@@ -438,10 +438,10 @@ namespace AIOS.Models
                     "AI module needs update",
                     "Database optimization recommended"
                 };
-                
+
                 alerts.Add(possibleAlerts[_random.Next(possibleAlerts.Length)]);
             }
-            
+
             return alerts;
         }
 
@@ -466,15 +466,15 @@ namespace AIOS.Models
                 Timestamp = DateTime.UtcNow,
                 Source = "AIServiceManager"
             };
-            
+
             _recentEvents.Add(systemEvent);
-            
+
             // Keep only last 100 events
             if (_recentEvents.Count > 100)
             {
                 _recentEvents.RemoveAt(0);
             }
-            
+
             _logger?.LogInformation($"[{eventType}] {message}");
         }
     }
