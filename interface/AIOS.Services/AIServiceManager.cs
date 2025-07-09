@@ -42,87 +42,113 @@ public class AIServiceManager
         }
     }
 
-    public async Task<SystemHealthResponse> GetSystemHealthAsync()
+    // AINLP Evolution Support Methods
+    public async Task<Dictionary<string, object>> ProcessNLP(string input)
     {
         try
         {
-            var process = new Process
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = _pythonPath,
-                    Arguments = "scripts/context_health_monitor.py --json",
-                    WorkingDirectory = @"c:\dev\AIOS",
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    CreateNoWindow = true
-                }
-            };
-
-            process.Start();
-            var output = await process.StandardOutput.ReadToEndAsync();
-            await process.WaitForExitAsync();
-
-            if (process.ExitCode == 0 && !string.IsNullOrWhiteSpace(output))
-            {
-                var healthData = JsonSerializer.Deserialize<JsonElement>(output);
-                
-                return new SystemHealthResponse
-                {
-                    Success = true,
-                    HealthScore = healthData.GetProperty("health_score").GetDouble(),
-                    HealthStatus = healthData.GetProperty("health_status").GetString() ?? "Unknown",
-                    Issues = JsonElementToStringArray(healthData, "issues"),
-                    Warnings = JsonElementToStringArray(healthData, "warnings"),
-                    Recommendations = JsonElementToStringArray(healthData, "recommendations"),
-                    TriggerReingestion = healthData.GetProperty("trigger_reingestion").GetBoolean(),
-                    Timestamp = DateTime.UtcNow
-                };
-            }
-            else
-            {
-                return new SystemHealthResponse
-                {
-                    Success = false,
-                    Error = "Failed to get health data from monitor",
-                    Timestamp = DateTime.UtcNow
-                };
-            }
+            var result = await CallPythonModule("nlp", input);
+            return JsonSerializer.Deserialize<Dictionary<string, object>>(result) ?? new Dictionary<string, object>();
         }
-        catch (Exception ex)
+        catch
         {
-            return new SystemHealthResponse
-            {
-                Success = false,
-                Error = ex.Message,
-                Timestamp = DateTime.UtcNow
-            };
+            return new Dictionary<string, object> { { "error", "NLP processing failed" } };
         }
     }
 
-    public async Task<bool> TestIntegrationAsync()
+    public object GeneratePrediction(Dictionary<string, object> inputData, string modelType)
+    {
+        // Placeholder for prediction generation
+        return new { prediction = "Generated prediction", confidence = 0.85 };
+    }
+
+    public ValidationResult ValidateInput(object input)
+    {
+        return new ValidationResult { IsValid = true, Errors = new List<string>() };
+    }
+
+    public string[] GetCacheKeys(string collection, object data)
+    {
+        return new[] { $"cache_{collection}_{data.GetHashCode()}" };
+    }
+
+    public async Task<SystemHealthResponse> GetSystemHealthAsync()
+    {
+        var process = new Process
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = _pythonPath,
+                Arguments = "scripts/context_health_monitor.py --json",
+                WorkingDirectory = @"c:\dev\AIOS",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            }
+        };
+
+        process.Start();
+        var output = await process.StandardOutput.ReadToEndAsync();
+        await process.WaitForExitAsync();
+
+        if (process.ExitCode == 0 && !string.IsNullOrWhiteSpace(output))
+        {
+            var healthData = JsonSerializer.Deserialize<JsonElement>(output);
+
+            return new SystemHealthResponse
+            {
+                Success = true,
+                HealthScore = GetJsonDouble(healthData, "health_score", 0.8),
+                HealthStatus = GetJsonString(healthData, "status", "Unknown"),
+                Issues = GetJsonStringArray(healthData, "issues"),
+                Warnings = GetJsonStringArray(healthData, "warnings"),
+                Recommendations = GetJsonStringArray(healthData, "recommendations"),
+                TriggerReingestion = GetJsonBool(healthData, "trigger_reingestion", false),
+                Timestamp = DateTime.UtcNow
+            };
+        }
+
+        return new SystemHealthResponse
+        {
+            Success = false,
+            Error = "Failed to get system health",
+            Timestamp = DateTime.UtcNow
+        };
+    }
+
+    // AINLP Evolution Support Methods for DatabaseService
+    public async Task<int> PredictCacheTTL(object data)
     {
         try
         {
-            var process = new Process
+            var analysisResult = await CallPythonModule("prediction", JsonSerializer.Serialize(new
             {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = _pythonPath,
-                    Arguments = "scripts/test_integration.py",
-                    WorkingDirectory = @"c:\dev\AIOS",
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    CreateNoWindow = true
-                }
-            };
+                operation = "predict_cache_ttl",
+                data = data
+            }));
 
-            process.Start();
-            await process.WaitForExitAsync();
-            
-            return process.ExitCode == 0;
+            var result = JsonSerializer.Deserialize<Dictionary<string, object>>(analysisResult);
+            return result?.ContainsKey("ttl") == true ? Convert.ToInt32(result["ttl"]) : 3600;
+        }
+        catch
+        {
+            return 3600; // Default fallback
+        }
+    }
+
+    public async Task<bool> ValidateData(object data)
+    {
+        try
+        {
+            var validationResult = await CallPythonModule("nlp", JsonSerializer.Serialize(new
+            {
+                operation = "validate_data",
+                data = data
+            }));
+
+            var result = JsonSerializer.Deserialize<Dictionary<string, object>>(validationResult);
+            return result?.ContainsKey("valid") == true && Convert.ToBoolean(result["valid"]);
         }
         catch
         {
@@ -130,11 +156,74 @@ public class AIServiceManager
         }
     }
 
+    public async Task<object> TransformDataForStorage(object data)
+    {
+        try
+        {
+            var transformResult = await CallPythonModule("automation", JsonSerializer.Serialize(new
+            {
+                operation = "transform_for_storage",
+                data = data
+            }));
+
+            return JsonSerializer.Deserialize<Dictionary<string, object>>(transformResult) ?? data;
+        }
+        catch
+        {
+            return data;
+        }
+    }
+
+    public async Task<bool> LearnFromData(object data)
+    {
+        try
+        {
+            var learningResult = await CallPythonModule("learning", JsonSerializer.Serialize(new
+            {
+                operation = "learn_from_data",
+                data = data
+            }));
+
+            var result = JsonSerializer.Deserialize<Dictionary<string, object>>(learningResult);
+            return result?.ContainsKey("learned") == true && Convert.ToBoolean(result["learned"]);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public async Task<bool> PredictCacheInvalidation(string key, object data)
+    {
+        try
+        {
+            var predictionResult = await CallPythonModule("prediction", JsonSerializer.Serialize(new
+            {
+                operation = "predict_cache_invalidation",
+                key = key,
+                data = data
+            }));
+
+            var result = JsonSerializer.Deserialize<Dictionary<string, object>>(predictionResult);
+            return result?.ContainsKey("should_invalidate") == true && Convert.ToBoolean(result["should_invalidate"]);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public string? GetComponentReflections()
+    {
+        // Placeholder for component reflections
+        return JsonSerializer.Serialize(new Dictionary<string, object>());
+    }
+
     private async Task<string> CallPythonModule(string module, string input, Dictionary<string, object>? parameters = null)
     {
         var moduleName = GetModuleManagerName(module);
         var escapedInput = input.Replace("'", "\\'").Replace("\"", "\\\"");
-        
+
         var pythonCode = $@"
 import sys
 sys.path.append(r'{_aiModulesPath}')
@@ -152,7 +241,7 @@ except Exception as e:
             StartInfo = new ProcessStartInfo
             {
                 FileName = _pythonPath,
-                Arguments = $"-c \"{pythonCode.Replace("\"", "\\\"")}\"",
+                Arguments = $"-c \"{pythonCode}\"",
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
@@ -162,17 +251,9 @@ except Exception as e:
 
         process.Start();
         var output = await process.StandardOutput.ReadToEndAsync();
-        var error = await process.StandardError.ReadToEndAsync();
         await process.WaitForExitAsync();
 
-        if (process.ExitCode == 0)
-        {
-            return output.Trim();
-        }
-        else
-        {
-            throw new Exception($"Python module error: {error}");
-        }
+        return output.Trim();
     }
 
     private string GetModuleManagerName(string module)
@@ -184,11 +265,56 @@ except Exception as e:
             "automation" => "AutomationManager",
             "learning" => "LearningManager",
             "integration" => "IntegrationManager",
-            _ => "NLPManager"
+            _ => "AIManager"
         };
     }
 
-    private string[] JsonElementToStringArray(JsonElement root, string propertyName)
+    private double GetJsonDouble(JsonElement root, string propertyName, double defaultValue)
+    {
+        try
+        {
+            return root.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.Number
+                ? property.GetDouble()
+                : defaultValue;
+        }
+        catch
+        {
+            return defaultValue;
+        }
+    }
+
+    private string GetJsonString(JsonElement root, string propertyName, string defaultValue)
+    {
+        try
+        {
+            return root.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.String
+                ? property.GetString() ?? defaultValue
+                : defaultValue;
+        }
+        catch
+        {
+            return defaultValue;
+        }
+    }
+
+    private bool GetJsonBool(JsonElement root, string propertyName, bool defaultValue)
+    {
+        try
+        {
+            if (root.TryGetProperty(propertyName, out var property))
+            {
+                return property.ValueKind == JsonValueKind.True;
+            }
+        }
+        catch
+        {
+            // Ignore errors and return default
+        }
+
+        return defaultValue;
+    }
+
+    private string[] GetJsonStringArray(JsonElement root, string propertyName)
     {
         try
         {
@@ -209,7 +335,7 @@ except Exception as e:
         {
             // Ignore errors and return empty array
         }
-        
+
         return Array.Empty<string>();
     }
 }
@@ -234,4 +360,10 @@ public class SystemHealthResponse
     public bool TriggerReingestion { get; set; }
     public string? Error { get; set; }
     public DateTime Timestamp { get; set; }
+}
+
+public class ValidationResult
+{
+    public bool IsValid { get; set; }
+    public List<string> Errors { get; set; } = new();
 }

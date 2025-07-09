@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
+using AIOS.Services;
 
 namespace AIOS.Models
 {
@@ -215,36 +217,235 @@ namespace AIOS.Models
             // Return a mock transaction for now
             return new MockTransaction();
         }
-    }
 
-    public class QueryOptimizer
-    {
-        private readonly AIServiceManager _aiService;
-
-        public QueryOptimizer(AIServiceManager aiService)
+        public class QueryOptimizer
         {
-            _aiService = aiService;
+            private readonly AIServiceManager _aiService;
+
+            public QueryOptimizer(AIServiceManager aiService)
+            {
+                _aiService = aiService;
+            }
+
+            public async Task<string> OptimizeQuery(string query)
+            {
+                // AI-powered query optimization
+                var optimization = await _aiService.ProcessNLP($"optimize_query: {query}");
+                return optimization.ContainsKey("optimized_query")
+                    ? optimization["optimized_query"]?.ToString() ?? query
+                    : query;
+            }
         }
 
-        public async Task<string> OptimizeQuery(string query)
+        // Mock transaction for demonstration
+        public class MockTransaction : IDbContextTransaction
         {
-            // AI-powered query optimization
-            var optimization = await _aiService.ProcessNLP($"optimize_query: {query}");
-            return optimization.ContainsKey("optimized_query")
-                ? optimization["optimized_query"].ToString()
-                : query;
+            public Guid TransactionId => Guid.NewGuid();
+            public Task CommitAsync(CancellationToken cancellationToken = default) => Task.CompletedTask;
+            public Task RollbackAsync(CancellationToken cancellationToken = default) => Task.CompletedTask;
+            public void Commit() { }
+            public void Rollback() { }
+            public void Dispose() { }
+            public ValueTask DisposeAsync() => ValueTask.CompletedTask;
         }
-    }
 
-    // Mock transaction for demonstration
-    public class MockTransaction : IDbContextTransaction
-    {
-        public Guid TransactionId => Guid.NewGuid();
-        public Task CommitAsync(CancellationToken cancellationToken = default) => Task.CompletedTask;
-        public Task RollbackAsync(CancellationToken cancellationToken = default) => Task.CompletedTask;
-        public void Commit() { }
-        public void Rollback() { }
-        public void Dispose() { }
-        public ValueTask DisposeAsync() => ValueTask.CompletedTask;
+        /// <summary>
+        /// AINLP Evolutionary Components - Integrated to avoid file bloat
+        /// </summary>
+
+        public class CodeEvolutionEngine
+        {
+            private readonly AIServiceManager _aiService;
+            public int GenerationCount { get; private set; }
+
+            public CodeEvolutionEngine(AIServiceManager aiService)
+            {
+                _aiService = aiService;
+                GenerationCount = 0;
+            }
+
+            public void Initialize()
+            {
+                GenerationCount = 0;
+            }
+
+            public async Task<List<CodePopulation>> GenerateCodePopulations(Intent intent)
+            {
+                var populations = new List<CodePopulation>();
+
+                // Generate 10 initial code variants for the intent
+                for (int i = 0; i < 10; i++)
+                {
+                    var code = await GenerateCodeVariant(intent, i);
+                    populations.Add(new CodePopulation { Code = code, Generation = 0, Fitness = 0 });
+                }
+
+                return populations;
+            }
+
+            public async Task<EvolvedCode> MutateAndIterate(List<CodePopulation> selectedPopulation)
+            {
+                GenerationCount++;
+
+                // Apply mutation operators
+                var best = selectedPopulation.OrderByDescending(p => p.Fitness).First();
+
+                return new EvolvedCode
+                {
+                    Code = best.Code,
+                    FitnessScore = best.Fitness,
+                    AINLPEncoding = $"gen_{GenerationCount}_fitness_{best.Fitness:F2}",
+                    Generation = GenerationCount
+                };
+            }
+
+            private async Task<string> GenerateCodeVariant(Intent intent, int variant)
+            {
+                // Use AI service to generate code based on intent and variant number
+                var prompt = $"Generate code variant {variant} for intent: {intent.Description}";
+                var result = await _aiService.ProcessNLP(prompt);
+                return result.ContainsKey("code") ? result["code"]?.ToString() ?? $"// Generated code for {intent.Description}" : $"// Generated code for {intent.Description}";
+            }
+        }
+
+        public class AINLPKernel
+        {
+            private readonly DatabaseService _database;
+            private readonly Dictionary<string, EvolvedCode> _encodedPatterns;
+
+            public AINLPKernel(DatabaseService database)
+            {
+                _database = database;
+                _encodedPatterns = new Dictionary<string, EvolvedCode>();
+            }
+
+            public void Initialize()
+            {
+                // Load existing patterns from database
+            }
+
+            public async Task EncodeEvolutionResult(string naturalLanguageCommand, EvolvedCode evolvedCode)
+            {
+                // Store the successful evolution pattern
+                _encodedPatterns[naturalLanguageCommand] = evolvedCode;
+
+                // Persist to database for future use
+                await _database.SaveData("ainlp_patterns", JsonSerializer.Serialize(new
+                {
+                    command = naturalLanguageCommand,
+                    code = evolvedCode,
+                    timestamp = DateTime.UtcNow
+                }));
+            }
+        }
+
+        public class PopulationManager
+        {
+            private readonly Dictionary<string, double> _fitnessCache;
+
+            public PopulationManager()
+            {
+                _fitnessCache = new Dictionary<string, double>();
+            }
+
+            public void Initialize() { }
+
+            public async Task<List<CodePopulation>> ScorePopulations(List<CodePopulation> populations)
+            {
+                foreach (var population in populations)
+                {
+                    population.Fitness = await CalculateFitness(population.Code);
+                }
+                return populations.OrderByDescending(p => p.Fitness).ToList();
+            }
+
+            public async Task<List<CodePopulation>> SelectElitePopulation(List<CodePopulation> scoredPopulations)
+            {
+                // Select top 50% as elite population
+                var eliteCount = Math.Max(1, scoredPopulations.Count / 2);
+                return scoredPopulations.Take(eliteCount).ToList();
+            }
+
+            private async Task<double> CalculateFitness(string code)
+            {
+                // Simple fitness calculation based on code quality metrics
+                var fitness = 0.0;
+
+                // Check for standard patterns
+                if (code.Contains("async") && code.Contains("await")) fitness += 0.2;
+                if (code.Contains("try") && code.Contains("catch")) fitness += 0.2;
+                if (code.Contains("using")) fitness += 0.1;
+                if (!code.Contains("//TODO") && !code.Contains("//HACK")) fitness += 0.3;
+
+                // Add randomness to simulate AI evaluation
+                fitness += new Random().NextDouble() * 0.2;
+
+                return Math.Min(1.0, fitness);
+            }
+        }
+
+        public class MetaphoricalLanguageProcessor
+        {
+            private readonly AINLPKernel _kernel;
+
+            public MetaphoricalLanguageProcessor(AINLPKernel kernel)
+            {
+                _kernel = kernel;
+            }
+
+            public async Task<Intent> ParseMetaphoricalCommand(string command)
+            {
+                // Parse natural language into executable intent
+                return new Intent
+                {
+                    Description = command,
+                    Type = ClassifyIntent(command),
+                    Parameters = ExtractParameters(command)
+                };
+            }
+
+            private string ClassifyIntent(string command)
+            {
+                if (command.ToLower().Contains("create") || command.ToLower().Contains("build"))
+                    return "CREATE";
+                if (command.ToLower().Contains("optimize") || command.ToLower().Contains("improve"))
+                    return "OPTIMIZE";
+                if (command.ToLower().Contains("fix") || command.ToLower().Contains("debug"))
+                    return "DEBUG";
+                return "GENERAL";
+            }
+
+            private Dictionary<string, object> ExtractParameters(string command)
+            {
+                // Simple parameter extraction
+                return new Dictionary<string, object> { { "originalCommand", command } };
+            }
+        }
+
+        /// <summary>
+        /// Supporting data structures for AINLP evolution
+        /// </summary>
+
+        public class CodePopulation
+        {
+            public string Code { get; set; }
+            public double Fitness { get; set; }
+            public int Generation { get; set; }
+        }
+
+        public class EvolvedCode
+        {
+            public string Code { get; set; }
+            public double FitnessScore { get; set; }
+            public string AINLPEncoding { get; set; }
+            public int Generation { get; set; }
+        }
+
+        public class Intent
+        {
+            public string Description { get; set; }
+            public string Type { get; set; }
+            public Dictionary<string, object> Parameters { get; set; }
+        }
     }
 }
