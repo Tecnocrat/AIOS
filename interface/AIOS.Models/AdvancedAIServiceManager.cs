@@ -477,6 +477,95 @@ namespace AIOS.Models
 
             _logger?.LogInformation($"[{eventType}] {message}");
         }
+
+        // AINLP Evolution Support Methods for DatabaseService compatibility
+        public async Task<Dictionary<string, object>> ProcessNLPAsDictionary(string input)
+        {
+            var nlpResponse = await ProcessNLP(input, context: null);
+            return new Dictionary<string, object>
+            {
+                ["intent"] = nlpResponse.Intent,
+                ["entities"] = nlpResponse.Entities,
+                ["sentiment"] = nlpResponse.Sentiment,
+                ["confidence"] = nlpResponse.Confidence,
+                ["response"] = nlpResponse.Response,
+                ["optimized_query"] = nlpResponse.Response // For query optimization compatibility
+            };
+        }
+
+        public async Task<int> PredictCacheTTL(object data)
+        {
+            try
+            {
+                // Simple prediction based on data complexity
+                await Task.Delay(10); // Simulate processing
+                return data?.ToString()?.Length > 1000 ? 1800 : 3600; // 30 min for large data, 1 hour for small
+            }
+            catch
+            {
+                return 3600; // Default fallback
+            }
+        }
+
+        public async Task<bool> ValidateData(object data)
+        {
+            try
+            {
+                await Task.Delay(5); // Simulate validation
+                return data != null; // Simple validation
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<object> TransformDataForStorage(object data)
+        {
+            try
+            {
+                await Task.Delay(10); // Simulate transformation
+                return data; // Return data as-is for now
+            }
+            catch
+            {
+                return data;
+            }
+        }
+
+        public async Task<bool> LearnFromData(object data)
+        {
+            try
+            {
+                await Task.Delay(15); // Simulate learning
+                LogEvent("Learning", $"Learning from data of type {data?.GetType().Name}");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<string[]> PredictCacheInvalidation(string collection, object data)
+        {
+            try
+            {
+                await Task.Delay(8); // Simulate prediction
+                // Simple heuristic: return some cache keys that might need invalidation
+                var keys = new List<string>();
+                if (_random.NextDouble() < 0.3) // 30% chance to invalidate something
+                {
+                    keys.Add($"query_{collection}_{data?.GetHashCode():X}");
+                    keys.Add($"cache_{collection}_*");
+                }
+                return keys.ToArray();
+            }
+            catch
+            {
+                return Array.Empty<string>();
+            }
+        }
     }
 
     // Data Models

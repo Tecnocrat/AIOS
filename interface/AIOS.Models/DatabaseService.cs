@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using AIOS.Services;
+using System.Diagnostics;
 
 namespace AIOS.Models
 {
@@ -19,6 +19,7 @@ namespace AIOS.Models
     public class DatabaseService
     {
         private readonly AIServiceManager _aiService;
+        private readonly RuntimeLoggingService _loggingService;
         private readonly Dictionary<string, object> _intelligentCache;
         private readonly QueryOptimizer _queryOptimizer;
         private readonly CodeEvolutionEngine _evolutionEngine;
@@ -26,9 +27,10 @@ namespace AIOS.Models
         private readonly PopulationManager _populationManager;
         private readonly MetaphoricalLanguageProcessor _metaphorProcessor;
 
-        public DatabaseService(AIServiceManager aiService)
+        public DatabaseService(AIServiceManager aiService, RuntimeLoggingService? loggingService = null)
         {
             _aiService = aiService;
+            _loggingService = loggingService ?? new RuntimeLoggingService(aiService);
             _intelligentCache = new Dictionary<string, object>();
             _queryOptimizer = new QueryOptimizer(aiService);
             _evolutionEngine = new CodeEvolutionEngine(aiService);
@@ -52,8 +54,11 @@ namespace AIOS.Models
         /// </summary>
         public async Task<string> ProcessAINLPCommand(string naturalLanguageCommand)
         {
+            var stopwatch = Stopwatch.StartNew();
             try
             {
+                _loggingService.LogAINLPExecution(naturalLanguageCommand, "Started", TimeSpan.Zero, "ProcessAINLPCommand");
+
                 // Step 1: Parse metaphorical language into executable intents
                 var intent = await _metaphorProcessor.ParseMetaphoricalCommand(naturalLanguageCommand);
 
@@ -72,7 +77,8 @@ namespace AIOS.Models
                 // Step 6: Encode result into AINLP kernel for future iterations
                 await _ainlpKernel.EncodeEvolutionResult(naturalLanguageCommand, evolvedCode);
 
-                return JsonSerializer.Serialize(new
+                stopwatch.Stop();
+                var result = JsonSerializer.Serialize(new
                 {
                     success = true,
                     evolvedCode = evolvedCode,
@@ -80,10 +86,17 @@ namespace AIOS.Models
                     fitnessScore = evolvedCode.FitnessScore,
                     ainlpEncoding = evolvedCode.AINLPEncoding
                 });
+
+                _loggingService.LogAINLPExecution(naturalLanguageCommand, $"Success: Fitness {evolvedCode.FitnessScore:F3}", stopwatch.Elapsed, "ProcessAINLPCommand");
+                _loggingService.LogCodeEvolution(_evolutionEngine.GenerationCount.ToString(), evolvedCode.FitnessScore, $"AINLP Command: {naturalLanguageCommand}", "ProcessAINLPCommand");
+
+                return result;
             }
             catch (Exception ex)
             {
-                await LogActivity($"AINLP command failed: {ex.Message}");
+                stopwatch.Stop();
+                _loggingService.LogSystemError(ex, "ProcessAINLPCommand", naturalLanguageCommand);
+                _loggingService.LogAINLPExecution(naturalLanguageCommand, $"Error: {ex.Message}", stopwatch.Elapsed, "ProcessAINLPCommand");
                 return JsonSerializer.Serialize(new { success = false, error = ex.Message });
             }
         }
@@ -94,6 +107,7 @@ namespace AIOS.Models
         [System.Runtime.InteropServices.ComVisible(true)]
         public async Task<string> ExecuteQuery(string query)
         {
+            var stopwatch = Stopwatch.StartNew();
             try
             {
                 // AI-powered query optimization
@@ -103,7 +117,8 @@ namespace AIOS.Models
                 var cacheKey = GenerateCacheKey(optimizedQuery);
                 if (_intelligentCache.ContainsKey(cacheKey))
                 {
-                    await LogActivity($"Cache hit for query: {query}");
+                    stopwatch.Stop();
+                    _loggingService.LogDatabaseOperation("Cache Hit", query, "Cached result", stopwatch.Elapsed, "ExecuteQuery");
                     return JsonSerializer.Serialize(_intelligentCache[cacheKey]);
                 }
 
@@ -111,15 +126,27 @@ namespace AIOS.Models
                 var result = await ExecuteWithIntelligence(optimizedQuery);
 
                 // Store in intelligent cache with AI-predicted TTL
-                var cacheTTL = await _aiService.PredictCacheTTL(query, result);
+                var cacheTTL = await _aiService.PredictCacheTTL(result);
                 _intelligentCache[cacheKey] = result;
 
-                await LogActivity($"Query executed: {query} (optimized: {optimizedQuery})");
+                stopwatch.Stop();
+                _loggingService.LogDatabaseOperation("Query Execute", query, result, stopwatch.Elapsed, "ExecuteQuery");
+                _loggingService.LogPerformanceMetrics("Query", new Dictionary<string, object>
+                {
+                    ["originalQuery"] = query,
+                    ["optimizedQuery"] = optimizedQuery,
+                    ["cacheKey"] = cacheKey,
+                    ["cacheTTL"] = cacheTTL,
+                    ["resultSize"] = JsonSerializer.Serialize(result).Length
+                }, "ExecuteQuery");
+
                 return JsonSerializer.Serialize(result);
             }
             catch (Exception ex)
             {
-                await LogActivity($"Query failed: {ex.Message}");
+                stopwatch.Stop();
+                _loggingService.LogSystemError(ex, "ExecuteQuery", query);
+                _loggingService.LogDatabaseOperation("Query Error", query, ex.Message, stopwatch.Elapsed, "ExecuteQuery");
                 throw;
             }
         }
@@ -135,25 +162,26 @@ namespace AIOS.Models
                 var data = JsonSerializer.Deserialize<Dictionary<string, object>>(jsonData);
 
                 // AI-powered data validation
-                var validationResult = await _aiService.ValidateData(collection, data);
-                if (!validationResult.IsValid)
+                var validationResult = await _aiService.ValidateData(data);
+                if (!validationResult)
                 {
-                    return JsonSerializer.Serialize(new { success = false, errors = validationResult.Errors });
+                    return JsonSerializer.Serialize(new { success = false, error = "Data validation failed" });
                 }
 
                 // Intelligent data transformation
-                var transformedData = await _aiService.TransformDataForStorage(collection, data);
+                var transformedData = await _aiService.TransformDataForStorage(data);
 
                 // Save with transaction management
                 using var transaction = await BeginTransactionAsync();
-                var result = await SaveWithIntelligence(collection, transformedData);
+                var dataDict = transformedData as Dictionary<string, object> ?? new Dictionary<string, object> { ["data"] = transformedData };
+                var result = await SaveWithIntelligence(collection, dataDict);
                 await transaction.CommitAsync();
 
                 // Invalidate related cache entries
-                await InvalidateIntelligentCache(collection, transformedData);
+                await InvalidateIntelligentCache(collection, dataDict);
 
                 // Trigger AI learning from the new data
-                _ = Task.Run(() => _aiService.LearnFromData(collection, transformedData));
+                _ = Task.Run(() => _aiService.LearnFromData(transformedData));
 
                 await LogActivity($"Data saved to {collection}: {jsonData.Substring(0, Math.Min(100, jsonData.Length))}...");
                 return JsonSerializer.Serialize(new { success = true, id = result.Id });
@@ -230,7 +258,7 @@ namespace AIOS.Models
             public async Task<string> OptimizeQuery(string query)
             {
                 // AI-powered query optimization
-                var optimization = await _aiService.ProcessNLP($"optimize_query: {query}");
+                var optimization = await _aiService.ProcessNLPAsDictionary($"optimize_query: {query}");
                 return optimization.ContainsKey("optimized_query")
                     ? optimization["optimized_query"]?.ToString() ?? query
                     : query;
@@ -303,7 +331,7 @@ namespace AIOS.Models
             {
                 // Use AI service to generate code based on intent and variant number
                 var prompt = $"Generate code variant {variant} for intent: {intent.Description}";
-                var result = await _aiService.ProcessNLP(prompt);
+                var result = await _aiService.ProcessNLPAsDictionary(prompt);
                 return result.ContainsKey("code") ? result["code"]?.ToString() ?? $"// Generated code for {intent.Description}" : $"// Generated code for {intent.Description}";
             }
         }
