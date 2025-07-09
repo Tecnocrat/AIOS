@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using AIOS.Services;
+using AIOS.Models;
 using System.Text.Json;
 
 namespace AIOS.UI;
