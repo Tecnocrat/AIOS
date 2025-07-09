@@ -7,6 +7,7 @@ using Microsoft.Web.WebView2.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AIOS.Models;
+using AIOS.Services;
 
 namespace AIOS.UI
 {
@@ -40,7 +41,7 @@ namespace AIOS.UI
             services.AddSingleton<WebInterfaceService>();
 
             var serviceProvider = services.BuildServiceProvider();
-            
+
             _logger = serviceProvider.GetRequiredService<ILogger<CompleteHybridWindow>>();
             _aiService = serviceProvider.GetRequiredService<AdvancedAIServiceManager>();
             _dbService = serviceProvider.GetRequiredService<DatabaseService>();
@@ -112,7 +113,7 @@ namespace AIOS.UI
         private void ConfigureWebViewSettings()
         {
             var settings = _webView.CoreWebView2.Settings;
-            
+
             // Enable/disable features based on requirements
             settings.IsWebMessageEnabled = true;
             settings.AreDevToolsEnabled = true; // Enable for development
@@ -156,7 +157,7 @@ namespace AIOS.UI
             {
                 // Load the advanced demo HTML file
                 var htmlPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "web", "advanced-demo.html");
-                
+
                 if (File.Exists(htmlPath))
                 {
                     var uri = new Uri(htmlPath);
@@ -255,11 +256,11 @@ namespace AIOS.UI
         private async void OnNavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
             _logger.LogInformation($"Navigation completed: Success={e.IsSuccess}");
-            
+
             if (e.IsSuccess)
             {
                 StatusText.Text = "✅ Interface loaded successfully";
-                
+
                 // Send initialization data to web interface
                 await SendInitializationData();
             }
@@ -273,15 +274,15 @@ namespace AIOS.UI
         private async void OnDOMContentLoaded(object sender, CoreWebView2DOMContentLoadedEventArgs e)
         {
             _logger.LogInformation("DOM content loaded");
-            
+
             try
             {
                 // Execute initialization scripts
                 await ExecuteInitializationScripts();
-                
+
                 // Start real-time updates
                 await StartRealTimeUpdates();
-                
+
                 StatusText.Text = "✅ AIOS Hybrid Interface Ready";
             }
             catch (Exception ex)
@@ -297,7 +298,7 @@ namespace AIOS.UI
             {
                 var message = e.TryGetWebMessageAsString();
                 _logger.LogInformation($"Web message received: {message}");
-                
+
                 // Handle different message types
                 await HandleWebMessage(message);
             }
@@ -307,16 +308,16 @@ namespace AIOS.UI
             }
         }
 
-        private void OnScriptException(object sender, CoreWebView2ScriptExceptionEventArgs e)
+        private void OnScriptException(object sender, EventArgs e)
         {
-            _logger.LogError($"JavaScript error: {e.Exception}");
-            StatusText.Text = $"⚠️ Script error: {e.Exception.Message}";
+            _logger.LogError($"JavaScript error occurred");
+            StatusText.Text = $"⚠️ Script error occurred";
         }
 
         private void OnPermissionRequested(object sender, CoreWebView2PermissionRequestedEventArgs e)
         {
             _logger.LogInformation($"Permission requested: {e.PermissionKind}");
-            
+
             // Grant necessary permissions
             if (e.PermissionKind == CoreWebView2PermissionKind.WebNotifications ||
                 e.PermissionKind == CoreWebView2PermissionKind.Geolocation)
@@ -329,7 +330,7 @@ namespace AIOS.UI
         {
             _logger.LogError($"WebView2 process failed: {e.Reason}");
             StatusText.Text = $"❌ WebView2 process failed: {e.Reason}";
-            
+
             // Attempt to recover
             Task.Run(async () =>
             {
@@ -345,7 +346,7 @@ namespace AIOS.UI
             {
                 var healthData = await _aiService.GetSystemHealth();
                 var modules = _aiService.GetAvailableModules();
-                
+
                 var initData = new
                 {
                     timestamp = DateTime.UtcNow.ToString("O"),
@@ -370,7 +371,7 @@ namespace AIOS.UI
                 // Inject additional JavaScript functionality
                 await _webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync(@"
                     console.log('AIOS Hybrid Interface - JavaScript bridge initialized');
-                    
+
                     // Enhanced error handling
                     window.addEventListener('error', function(e) {
                         console.error('JavaScript error:', e.error);
@@ -380,7 +381,7 @@ namespace AIOS.UI
                             stack: e.error.stack
                         }));
                     });
-                    
+
                     // Performance monitoring
                     window.addEventListener('load', function() {
                         const perfData = {
@@ -433,10 +434,10 @@ namespace AIOS.UI
             try
             {
                 var messageData = System.Text.Json.JsonSerializer.Deserialize<dynamic>(message);
-                
+
                 // Handle different message types
                 // Implementation would depend on your specific needs
-                
+
                 _logger.LogInformation($"Handled web message: {message}");
             }
             catch (Exception ex)
@@ -459,7 +460,7 @@ namespace AIOS.UI
             {
                 _logger.LogInformation("Attempting WebView2 recovery");
                 StatusText.Text = "🔄 Attempting recovery...";
-                
+
                 // Restart the hybrid interface
                 Task.Run(async () =>
                 {
@@ -485,7 +486,7 @@ namespace AIOS.UI
             {
                 _logger.LogError(ex, "Error during window close");
             }
-            
+
             base.OnClosed(e);
         }
     }

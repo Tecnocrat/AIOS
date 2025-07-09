@@ -21,7 +21,7 @@ namespace AIOS.Models
         private readonly Dictionary<string, LogContext> _logContexts;
         private readonly CancellationTokenSource _cancellationTokenSource;
         private readonly Task _logProcessingTask;
-        private readonly AIServiceManager _aiService;
+        private readonly IAIService _aiService;
         private readonly string _logDirectory;
         private readonly bool _enableTerminalOutput;
         private readonly bool _enableFileOutput;
@@ -31,7 +31,7 @@ namespace AIOS.Models
         public event EventHandler<TerminalOutputEventArgs>? TerminalOutputReceived;
         public event EventHandler<AIAnalysisEventArgs>? AIAnalysisReceived;
 
-        public RuntimeLoggingService(AIServiceManager aiService, bool enableTerminalOutput = true, bool enableFileOutput = true, bool enableAIAnalysis = true)
+        public RuntimeLoggingService(IAIService aiService, bool enableTerminalOutput = true, bool enableFileOutput = true, bool enableAIAnalysis = true)
         {
             _logQueue = new ConcurrentQueue<LogEntry>();
             _logContexts = new Dictionary<string, LogContext>();
@@ -185,7 +185,7 @@ namespace AIOS.Models
                 var logs = GetRecentLogs(timespan, category);
                 var analysisPrompt = $"Analyze these system logs for patterns, issues, and optimization opportunities: {JsonSerializer.Serialize(logs)}";
 
-                var analysisResult = await _aiService.ProcessNLPAsDictionary(analysisPrompt);
+                var analysisResult = await _aiService.ProcessNLPAsync(analysisPrompt);
 
                 var result = new AIAnalysisResult
                 {
@@ -373,53 +373,4 @@ namespace AIOS.Models
             _cancellationTokenSource?.Dispose();
         }
     }
-
-    #region Data Models
-
-    public class LogEntry
-    {
-        public string Id { get; set; } = "";
-        public DateTime Timestamp { get; set; }
-        public LogLevel Level { get; set; }
-        public string Category { get; set; } = "";
-        public string Message { get; set; } = "";
-        public string Context { get; set; } = "";
-        public TimeSpan ExecutionTime { get; set; }
-        public Dictionary<string, object>? Data { get; set; }
-    }
-
-    public class LogContext
-    {
-        public string Name { get; set; } = "";
-        public List<LogEntry> Logs { get; set; } = new();
-    }
-
-    public class AIAnalysisResult
-    {
-        public bool Success { get; set; }
-        public string Message { get; set; } = "";
-        public string Insights { get; set; } = "";
-        public string Recommendations { get; set; } = "";
-        public string Patterns { get; set; } = "";
-        public DateTime Timestamp { get; set; }
-    }
-
-    public class LogEventArgs : EventArgs
-    {
-        public LogEntry LogEntry { get; set; } = new();
-    }
-
-    public class TerminalOutputEventArgs : EventArgs
-    {
-        public string Message { get; set; } = "";
-        public ConsoleColor Color { get; set; }
-        public DateTime Timestamp { get; set; }
-    }
-
-    public class AIAnalysisEventArgs : EventArgs
-    {
-        public AIAnalysisResult Analysis { get; set; } = new();
-    }
-
-    #endregion
 }

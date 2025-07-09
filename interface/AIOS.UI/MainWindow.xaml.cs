@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using AIOS.Models;
+using AIOS.Services;
 using System.Text.Json;
 
 namespace AIOS.UI;
@@ -19,11 +20,11 @@ public partial class MainWindow : Window
 {
     private readonly DispatcherTimer _healthTimer;
     private readonly DispatcherTimer _activityTimer;
-    private readonly AIServiceManager _aiService;
+    private readonly AIOS.Models.AIServiceManager _aiService;
     private readonly FractalContextManager _contextManager;
     private readonly HolographicUIOrchestrator _orchestrator;
     private readonly VSCodeExtensionBridge _vscodeBridge;
-    private readonly MaintenanceService _maintenanceService;
+    private readonly AIOS.Services.MaintenanceService _maintenanceService;
     private string _currentModule = "nlp";
     private int _messageCount = 0;
 
@@ -34,11 +35,11 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        _aiService = new AIServiceManager();
+        _aiService = new AIOS.Models.AIServiceManager();
         _contextManager = new FractalContextManager();
         _orchestrator = new HolographicUIOrchestrator(_contextManager);
         _vscodeBridge = new VSCodeExtensionBridge();
-        _maintenanceService = new MaintenanceService();
+        _maintenanceService = new AIOS.Services.MaintenanceService();
         _systemState = new HolographicSystemState();
         _componentReflections = new Dictionary<string, ComponentReflection>();
 

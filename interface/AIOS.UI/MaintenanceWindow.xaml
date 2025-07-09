@@ -47,7 +47,7 @@
                 </StackPanel>
 
                 <!-- WebView2 Control -->
-                <wv2:WebView2 Name="MaintenanceWebView" Visibility="Collapsed" NavigationCompleted="MaintenanceWebView_NavigationCompleted" DOMContentLoaded="MaintenanceWebView_DOMContentLoaded"/>
+                <wv2:WebView2 Name="MaintenanceWebView" Visibility="Collapsed" NavigationCompleted="MaintenanceWebView_NavigationCompleted"/>
             </Grid>
         </Border>
 

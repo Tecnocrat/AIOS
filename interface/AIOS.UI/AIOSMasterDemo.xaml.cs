@@ -7,7 +7,7 @@ using System.Windows.Media;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AIOS.Models;
-using AIOS.Core;
+using AIOS.Services;
 
 namespace AIOS.UI
 {
@@ -47,7 +47,7 @@ namespace AIOS.UI
             services.AddSingleton<WebInterfaceService>();
 
             var serviceProvider = services.BuildServiceProvider();
-            
+
             _logger = serviceProvider.GetRequiredService<ILogger<AIOSMasterDemo>>();
             _aiService = serviceProvider.GetRequiredService<AdvancedAIServiceManager>();
             _dbService = serviceProvider.GetRequiredService<DatabaseService>();
@@ -62,19 +62,19 @@ namespace AIOS.UI
             try
             {
                 UpdateStatus("🚀 Initializing AIOS Master Demo...");
-                
+
                 // Initialize all services
                 await InitializeAllServices();
-                
+
                 // Set up demonstration scenarios
                 await SetupDemoScenarios();
-                
+
                 UpdateStatus("✅ AIOS Master Demo Ready - All systems operational");
                 _isInitialized = true;
-                
+
                 // Show initial system state
                 await DisplaySystemOverview();
-                
+
             }
             catch (Exception ex)
             {
@@ -87,13 +87,13 @@ namespace AIOS.UI
         {
             UpdateStatus("🔧 Initializing AI Services...");
             await Task.Delay(500); // Simulate initialization
-            
+
             UpdateStatus("🗄️ Initializing Database Services...");
             await Task.Delay(300);
-            
+
             UpdateStatus("🧠 Initializing AINLP Compiler...");
             await Task.Delay(200);
-            
+
             UpdateStatus("🌐 Initializing Web Interface Services...");
             await Task.Delay(100);
         }
@@ -162,7 +162,7 @@ namespace AIOS.UI
                 Margin = new Thickness(5),
                 Tag = scenario
             };
-            
+
             button.Click += async (sender, e) =>
             {
                 if (_isInitialized)
@@ -170,7 +170,7 @@ namespace AIOS.UI
                     await ExecuteDemoScenario(scenario);
                 }
             };
-            
+
             DemoScenariosPanel.Children.Add(button);
         }
 
@@ -180,9 +180,9 @@ namespace AIOS.UI
             {
                 UpdateStatus($"🎯 Executing: {scenario.Name}");
                 AddLogEntry($"Starting demonstration: {scenario.Name}");
-                
+
                 await scenario.Action();
-                
+
                 UpdateStatus($"✅ Completed: {scenario.Name}");
                 AddLogEntry($"Successfully completed: {scenario.Name}");
             }
@@ -206,18 +206,18 @@ namespace AIOS.UI
             };
 
             var results = new List<string>();
-            
+
             foreach (var query in queries)
             {
                 AddLogEntry($"🧠 Processing NLP Query: {query}");
-                
+
                 var response = await _aiService.ProcessNLP(query);
                 results.Add($"Query: {query}\nResponse: {response.Response}\nConfidence: {response.Confidence:P1}");
-                
+
                 AddLogEntry($"✅ NLP Response: {response.Response} (Confidence: {response.Confidence:P1})");
                 await Task.Delay(1000); // Simulate processing time
             }
-            
+
             ShowResults("NLP Processing Results", string.Join("\n\n", results));
         }
 
@@ -231,20 +231,20 @@ namespace AIOS.UI
             };
 
             var results = new List<string>();
-            
+
             foreach (var scenario in predictionScenarios)
             {
                 AddLogEntry($"🔮 Making Prediction: {scenario.Name}");
-                
+
                 var dataJson = System.Text.Json.JsonSerializer.Serialize(scenario.Data);
                 var prediction = await _aiService.MakePrediction(dataJson, "performance");
-                
+
                 results.Add($"Scenario: {scenario.Name}\nPrediction: {System.Text.Json.JsonSerializer.Serialize(prediction.Prediction, new System.Text.Json.JsonSerializerOptions { WriteIndented = true })}\nConfidence: {prediction.Confidence:P1}");
-                
+
                 AddLogEntry($"✅ Prediction Complete: {scenario.Name} (Confidence: {prediction.Confidence:P1})");
                 await Task.Delay(800);
             }
-            
+
             ShowResults("AI Prediction Results", string.Join("\n\n", results));
         }
 
@@ -259,18 +259,18 @@ namespace AIOS.UI
             };
 
             var results = new List<string>();
-            
+
             foreach (var query in queries)
             {
                 AddLogEntry($"🗄️ Executing Intelligent Query: {query}");
-                
+
                 var result = await _dbService.ExecuteIntelligentQuery(query);
                 results.Add($"Query: {query}\nResult: {System.Text.Json.JsonSerializer.Serialize(result, new System.Text.Json.JsonSerializerOptions { WriteIndented = true })}");
-                
+
                 AddLogEntry($"✅ Database Query Complete: {query}");
                 await Task.Delay(600);
             }
-            
+
             ShowResults("Intelligent Database Results", string.Join("\n\n", results));
         }
 
@@ -308,19 +308,19 @@ namespace AIOS.UI
             };
 
             var results = new List<string>();
-            
+
             foreach (var spec in specifications)
             {
                 AddLogEntry($"🚀 Compiling AINLP Specification...");
-                
+
                 var compilationResult = await _ainlpCompiler.CompileNaturalLanguage(spec);
-                
+
                 if (compilationResult.Success)
                 {
                     results.Add($"Specification: {spec.Substring(0, Math.Min(spec.Length, 100))}...\n" +
                               $"Generated Code: {compilationResult.GeneratedCode.Code.Substring(0, Math.Min(compilationResult.GeneratedCode.Code.Length, 500))}...\n" +
                               $"Confidence: {compilationResult.Confidence:P1}");
-                    
+
                     AddLogEntry($"✅ AINLP Compilation Success (Confidence: {compilationResult.Confidence:P1})");
                 }
                 else
@@ -328,34 +328,34 @@ namespace AIOS.UI
                     results.Add($"Specification: {spec.Substring(0, Math.Min(spec.Length, 100))}...\nError: {compilationResult.Error}");
                     AddLogEntry($"❌ AINLP Compilation Failed: {compilationResult.Error}");
                 }
-                
+
                 await Task.Delay(1500);
             }
-            
+
             ShowResults("AINLP Compilation Results", string.Join("\n\n", results));
         }
 
         private async Task DemonstrateHybridUI()
         {
             AddLogEntry("🌐 Launching Hybrid HTML5 + C# Interface...");
-            
+
             if (_hybridWindow == null)
             {
                 _hybridWindow = new CompleteHybridWindow();
                 _hybridWindow.Closed += (s, e) => _hybridWindow = null;
             }
-            
+
             if (!_hybridWindow.IsVisible)
             {
                 _hybridWindow.Show();
             }
-            
+
             _hybridWindow.Focus();
-            
+
             await Task.Delay(1000);
-            
+
             AddLogEntry("✅ Hybrid Interface Launched Successfully");
-            ShowResults("Hybrid UI Integration", 
+            ShowResults("Hybrid UI Integration",
                 "The hybrid interface demonstrates:\n" +
                 "• WebView2 integration with WPF\n" +
                 "• Bidirectional JavaScript ↔ C# communication\n" +
@@ -367,7 +367,7 @@ namespace AIOS.UI
         private async Task DemonstrateRealTime()
         {
             AddLogEntry("⚡ Starting Real-time System Monitoring...");
-            
+
             var monitoringTasks = new[]
             {
                 MonitorSystemHealth(),
@@ -375,13 +375,13 @@ namespace AIOS.UI
                 MonitorDatabasePerformance(),
                 MonitorUserActivity()
             };
-            
+
             // Run monitoring tasks concurrently
             var results = await Task.WhenAll(monitoringTasks);
-            
+
             var combinedResults = string.Join("\n\n", results);
             ShowResults("Real-time System Monitoring", combinedResults);
-            
+
             AddLogEntry("✅ Real-time Monitoring Complete");
         }
 
@@ -399,7 +399,7 @@ namespace AIOS.UI
         {
             var modules = _aiService.GetAvailableModules();
             var activeModules = modules.Where(m => m.Status == "Active").Count();
-            
+
             return $"AI Services:\n" +
                    $"• Total Modules: {modules.Length}\n" +
                    $"• Active Modules: {activeModules}\n" +
@@ -409,7 +409,7 @@ namespace AIOS.UI
         private async Task<string> MonitorDatabasePerformance()
         {
             await Task.Delay(200); // Simulate monitoring
-            
+
             return $"Database Performance:\n" +
                    $"• Query Response Time: {Random.Shared.Next(50, 200)}ms\n" +
                    $"• Active Connections: {Random.Shared.Next(10, 50)}\n" +
@@ -419,7 +419,7 @@ namespace AIOS.UI
         private async Task<string> MonitorUserActivity()
         {
             await Task.Delay(150); // Simulate monitoring
-            
+
             return $"User Activity:\n" +
                    $"• Active Sessions: {Random.Shared.Next(100, 500)}\n" +
                    $"• Requests/Minute: {Random.Shared.Next(1000, 5000)}\n" +
@@ -430,14 +430,14 @@ namespace AIOS.UI
         {
             var health = await _aiService.GetSystemHealth();
             var modules = _aiService.GetAvailableModules();
-            
+
             var overview = $"AIOS System Overview:\n" +
                           $"• System Status: {health.Status}\n" +
                           $"• AI Modules: {modules.Length} total, {modules.Count(m => m.Status == "Active")} active\n" +
                           $"• Performance: {health.CpuUsage:F1}% CPU, {health.MemoryUsage:F1}% Memory\n" +
                           $"• Uptime: {health.Uptime.TotalHours:F1} hours\n" +
                           $"• Services: AI, Database, AINLP Compiler, Hybrid UI - All Operational";
-            
+
             ShowResults("System Overview", overview);
         }
 
@@ -457,11 +457,11 @@ namespace AIOS.UI
             {
                 var timestamp = DateTime.Now.ToString("HH:mm:ss");
                 var logEntry = $"[{timestamp}] {message}";
-                
+
                 var paragraph = new Paragraph();
                 paragraph.Inlines.Add(new Run($"[{timestamp}] ") { Foreground = Brushes.Gray });
                 paragraph.Inlines.Add(new Run(message) { Foreground = Brushes.White });
-                
+
                 LogDocument.Blocks.Add(paragraph);
                 LogScrollViewer.ScrollToEnd();
             });

@@ -18,7 +18,7 @@ namespace AIOS.Models
     /// </summary>
     public class DatabaseService
     {
-        private readonly AIServiceManager _aiService;
+        private readonly IAIService _aiService;
         private readonly RuntimeLoggingService _loggingService;
         private readonly Dictionary<string, object> _intelligentCache;
         private readonly QueryOptimizer _queryOptimizer;
@@ -27,7 +27,7 @@ namespace AIOS.Models
         private readonly PopulationManager _populationManager;
         private readonly MetaphoricalLanguageProcessor _metaphorProcessor;
 
-        public DatabaseService(AIServiceManager aiService, RuntimeLoggingService? loggingService = null)
+        public DatabaseService(IAIService aiService, RuntimeLoggingService? loggingService = null)
         {
             _aiService = aiService;
             _loggingService = loggingService ?? new RuntimeLoggingService(aiService);
@@ -248,9 +248,9 @@ namespace AIOS.Models
 
         public class QueryOptimizer
         {
-            private readonly AIServiceManager _aiService;
+            private readonly IAIService _aiService;
 
-            public QueryOptimizer(AIServiceManager aiService)
+            public QueryOptimizer(IAIService aiService)
             {
                 _aiService = aiService;
             }
@@ -258,7 +258,7 @@ namespace AIOS.Models
             public async Task<string> OptimizeQuery(string query)
             {
                 // AI-powered query optimization
-                var optimization = await _aiService.ProcessNLPAsDictionary($"optimize_query: {query}");
+                var optimization = await _aiService.ProcessNLPAsync($"optimize_query: {query}");
                 return optimization.ContainsKey("optimized_query")
                     ? optimization["optimized_query"]?.ToString() ?? query
                     : query;
@@ -283,10 +283,10 @@ namespace AIOS.Models
 
         public class CodeEvolutionEngine
         {
-            private readonly AIServiceManager _aiService;
+            private readonly IAIService _aiService;
             public int GenerationCount { get; private set; }
 
-            public CodeEvolutionEngine(AIServiceManager aiService)
+            public CodeEvolutionEngine(IAIService aiService)
             {
                 _aiService = aiService;
                 GenerationCount = 0;
@@ -331,7 +331,7 @@ namespace AIOS.Models
             {
                 // Use AI service to generate code based on intent and variant number
                 var prompt = $"Generate code variant {variant} for intent: {intent.Description}";
-                var result = await _aiService.ProcessNLPAsDictionary(prompt);
+                var result = await _aiService.ProcessNLPAsync(prompt);
                 return result.ContainsKey("code") ? result["code"]?.ToString() ?? $"// Generated code for {intent.Description}" : $"// Generated code for {intent.Description}";
             }
         }
