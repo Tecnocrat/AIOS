@@ -23,6 +23,7 @@ public partial class MainWindow : Window
     private readonly FractalContextManager _contextManager;
     private readonly HolographicUIOrchestrator _orchestrator;
     private readonly VSCodeExtensionBridge _vscodeBridge;
+    private readonly MaintenanceService _maintenanceService;
     private string _currentModule = "nlp";
     private int _messageCount = 0;
 
@@ -37,6 +38,7 @@ public partial class MainWindow : Window
         _contextManager = new FractalContextManager();
         _orchestrator = new HolographicUIOrchestrator(_contextManager);
         _vscodeBridge = new VSCodeExtensionBridge();
+        _maintenanceService = new MaintenanceService();
         _systemState = new HolographicSystemState();
         _componentReflections = new Dictionary<string, ComponentReflection>();
 
@@ -367,6 +369,27 @@ public partial class MainWindow : Window
         ChatHeader.Text = "Integration Hub - Active";
         AddChatMessage("AIOS", "🔗 Switched to Integration mode. I can coordinate between different AI modules and external systems.", true);
         AddActivityLog("Switched to Integration module");
+    }
+
+    private async void MaintenanceButton_Click(object sender, RoutedEventArgs e)
+    {
+        AddChatMessage("AIOS", "🔧 Opening Maintenance Center...", true);
+        AddActivityLog("Opening Maintenance Center");
+
+        try
+        {
+            // Open maintenance center window
+            var maintenanceWindow = new MaintenanceWindow(_maintenanceService);
+            maintenanceWindow.Owner = this;
+            maintenanceWindow.Show();
+
+            AddChatMessage("AIOS", "✅ Maintenance Center opened. You can now access all maintenance operations through the dedicated interface.", true);
+        }
+        catch (Exception ex)
+        {
+            AddChatMessage("AIOS", $"❌ Error opening Maintenance Center: {ex.Message}", true);
+            AddActivityLog($"Maintenance Center error: {ex.Message}");
+        }
     }
 
     private async void HealthCheckButton_Click(object sender, RoutedEventArgs e)
