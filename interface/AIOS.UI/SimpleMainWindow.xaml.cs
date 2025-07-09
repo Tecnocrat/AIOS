@@ -80,7 +80,7 @@ namespace AIOS.UI
                 StatusText.Text = "Processing...";
 
                 // Process with AI service
-                var response = await _aiService.ProcessAsync(input);
+                var response = await _aiService.ProcessAsync("general", input);
 
                 // Add AI response to chat
                 ChatOutput.Text += $"\n\nAI: {response.Response}";
@@ -136,7 +136,7 @@ namespace AIOS.UI
                 MaintenanceOutput.Text = "Starting maintenance operations...\n";
 
                 // Create a simple maintenance result for demo
-                var result = new MaintenanceResult
+                var result = new AIOS.Models.MaintenanceResult
                 {
                     Success = true,
                     Message = "Maintenance completed successfully",
