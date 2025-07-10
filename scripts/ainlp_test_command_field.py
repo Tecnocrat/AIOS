@@ -40,6 +40,7 @@ class AIOSIngestProcessor:
         print("=" * 60)
         print(f"📁 Processing file: {file_path}")
         print(f"🔧 AIOS=COPILOT variant: {'Active' if self.copilot_variant else 'Inactive'}")
+        print(f"⏰ Execution timestamp: {datetime.now().strftime('%H:%M:%S')}")
         print()
 
         # Initialize result structure
