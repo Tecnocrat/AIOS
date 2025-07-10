@@ -1,3 +1,6 @@
+// AINLP.workspace [aios_development_environment] (comment.AINLP.class)
+// Optimized VSCode workspace for AIOS multi-language development with fractal paradigm integration
+// Auto-synchronizes with current AIOS evolution: four-domain docs, tachyonic optimization, AINLP kernel
 {
 	"folders": [
 		{
@@ -262,7 +265,7 @@
 			"editor.formatOnSave": true
 		},
 		"[markdown]": {
-			"editor.defaultFormatter": "yzhang.markdown-all-in-one",
+			"editor.defaultFormatter": "vscode.markdown-language-features",
 			"editor.formatOnSave": true
 		},
 		"[yaml]": {
@@ -374,7 +377,30 @@
 		"powershell.codeFormatting.preset": "OTBS",
 		"powershell.integratedConsole.showOnStartup": false,
 		"powershell.developer.editorServicesLogLevel": "Warning",
-		"markdown.validate.enabled": false
+		"markdown.validate.enabled": false,
+		// 🤖 AIOS Extension Configuration
+		"aios.core.enabled": true,
+		"aios.context.persistAcrossRestarts": true,
+		"aios.context.maxHistorySize": 1000,
+		"aios.ai.pythonPath": "./ai/src",
+		"aios.ai.corePath": "./core",
+		"aios.debug.enabled": false,
+		"aios.debug.traceLevel": "error-only",
+		"aios.refresh.contextEnabled": true,
+		"aios.refresh.fractalSampling": true,
+		"aios.refresh.timelineSampling": true,
+		// 🧠 AINLP Integration
+		"ainlp.documentationDomains": [
+			"./docs/AINLP",
+			"./docs/AIOS",
+			"./docs/ai-context",
+			"./docs/INFRASTRUCTURE"
+		],
+		"ainlp.tachyonicArchive": "./docs/tachyonic_archive.db",
+		"ainlp.commentClassProcessing": true,
+		"ainlp.refreshContext.enabled": true,
+		"ainlp.fractalParadigms.enabled": true,
+		"ainlp.memoryClass.processing": true
 	},
 	"tasks": {
 		"version": "2.0.0",
@@ -618,6 +644,42 @@
 				}
 			},
 			{
+				"label": "🌀 Tachyonic Documentation Optimizer",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"scripts/docs_tachyonic_cleanup.py"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
+			},
+			{
+				"label": "📋 Documentation Health Analysis",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"scripts/docs_tachyonic_cleanup.py",
+					"--dry-run",
+					"--verbose"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
+			},
+			{
 				"label": "🧹 Clean Build Directory",
 				"type": "shell",
 				"command": "cmake",
@@ -662,6 +724,45 @@
 					"🔷 Build C# Projects",
 					"🧪 Run Integration Tests"
 				]
+			},
+			{
+				"label": "🧠 AINLP Refresh Context",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"scripts/context_health_monitor.py",
+					"--refresh-context",
+					"--fractal-sampling",
+					"--timeline-harmonization"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
+			},
+			{
+				"label": "🌀 AINLP Memory Class Processing",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"ai/src/core/integration/aios_context_harmonizer.py",
+					"--memory-class-processing",
+					"--ainlp-paradigm"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
 			}
 		]
 	},
@@ -670,20 +771,42 @@
 		"configurations": [
 			{
 				"name": "🔧 Debug C++ Core",
-				"type": "node",
+				"type": "cppdbg",
 				"request": "launch",
 				"program": "${workspaceFolder}/core/build/bin/Debug/aios_main.exe",
 				"args": [],
+				"stopAtEntry": false,
 				"cwd": "${workspaceFolder}",
+				"environment": [],
+				"externalConsole": false,
+				"MIMode": "gdb",
+				"setupCommands": [
+					{
+						"description": "Enable pretty-printing for gdb",
+						"text": "-enable-pretty-printing",
+						"ignoreFailures": true
+					}
+				],
 				"preLaunchTask": "🔧 Build C++ Core (Debug)"
 			},
 			{
 				"name": "🧪 Debug C++ Tests",
-				"type": "node",
+				"type": "cppdbg",
 				"request": "launch",
 				"program": "${workspaceFolder}/core/build/tests/Debug/test_core.exe",
 				"args": [],
+				"stopAtEntry": false,
 				"cwd": "${workspaceFolder}",
+				"environment": [],
+				"externalConsole": false,
+				"MIMode": "gdb",
+				"setupCommands": [
+					{
+						"description": "Enable pretty-printing for gdb",
+						"text": "-enable-pretty-printing",
+						"ignoreFailures": true
+					}
+				],
 				"preLaunchTask": "🔧 Build C++ Core (Debug)"
 			},
 			{
@@ -712,6 +835,29 @@
 				"type": "debugpy",
 				"request": "launch",
 				"program": "${workspaceFolder}/scripts/context_health_monitor.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe"
+			},
+			{
+				"name": "🔷 Debug C# UI",
+				"type": "coreclr",
+				"request": "launch",
+				"program": "${workspaceFolder}/interface/AIOS.UI/bin/Debug/net9.0-windows/AIOS.UI.dll",
+				"args": [],
+				"cwd": "${workspaceFolder}",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"preLaunchTask": "🔷 Build C# Projects"
+			},
+			{
+				"name": "🌀 Debug Tachyonic Optimizer",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/scripts/docs_tachyonic_cleanup.py",
+				"args": [
+					"--verbose"
+				],
 				"console": "integratedTerminal",
 				"cwd": "${workspaceFolder}",
 				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe"
@@ -750,6 +896,9 @@
 			"ms-vscode.references-view",
 			"ms-vscode.remote-repositories",
 			"ms-vscode.remote-explorer"
+		],
+		"unwantedRecommendations": [
+			"ms-vscode.live-server"
 		]
 	}
 }
