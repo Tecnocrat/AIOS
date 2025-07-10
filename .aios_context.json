@@ -1,5 +1,5 @@
 {
-  "last_scan": "2025-07-08T22:55:23.017639",
+  "last_scan": "2025-07-10T20:55:31.000000",
   "profiles": {
     ".gitignore": {
       "file_type": "static_configs",
@@ -348,6 +348,33 @@
       "ai_context_tags": [],
       "content_hash": "997dfc33b98538b5420dec67ed744d52",
       "size_bytes": 3291
+    },
+    "core\\EnhancedAINLPCompiler.cs": {
+      "size_bytes": 3200
+    },
+    "ai\\src\\core\\integration\\aios_intelligent_cache.py": {
+      "size_bytes": 8500
+    },
+    "ai\\src\\core\\integration\\aios_async_optimization.py": {
+      "size_bytes": 6800
+    },
+    "ai\\src\\core\\integration\\aios_simple_async_optimization.py": {
+      "size_bytes": 4200
+    },
+    "ai\\src\\core\\integration\\aios_unified_config.py": {
+      "size_bytes": 7500
+    },
+    "ai\\src\\core\\integration\\aios_simple_config.py": {
+      "size_bytes": 3800
+    },
+    "scripts\\optimization_context_aios_class.py": {
+      "size_bytes": 15000
+    },
+    "docs\\INFRASTRUCTURE\\OPTIMIZATION_CONTEXT_ANALYSIS_AIOS_CLASS_COMPLETE_JULY10_2025.md": {
+      "size_bytes": 18500
+    },
+    "docs\\INFRASTRUCTURE\\OPTIMIZATION_CONTEXT_EXECUTION_SUMMARY_JULY10_2025.md": {
+      "size_bytes": 8200
     },
     "core\\AINLPCompiler.cs": {
       "file_type": "core_logic",

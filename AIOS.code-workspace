@@ -118,7 +118,9 @@
 		"python.analysis.extraPaths": [
 			"./ai/src",
 			"./ai/src/core",
-			"./ai/tests"
+			"./ai/src/core/integration",
+			"./ai/tests",
+			"./scripts"
 		],
 		"python.analysis.include": [
 			"./ai/src/**",
@@ -400,7 +402,9 @@
 		"ainlp.commentClassProcessing": true,
 		"ainlp.refreshContext.enabled": true,
 		"ainlp.fractalParadigms.enabled": true,
-		"ainlp.memoryClass.processing": true
+		"ainlp.memoryClass.processing": true,
+		"ainlp.optimizationContext.enabled": true,
+		"ainlp.opIterMethodology.enabled": true
 	},
 	"tasks": {
 		"version": "2.0.0",

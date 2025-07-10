@@ -5,7 +5,7 @@ READ THIS FIRST:
     git: https://github.com/Tecnocrat
     current_branch: https://github.com/Tecnocrat/AIOS/tree/OS0.4
 
-[![Version](https://img.shields.io/badge/version-0.4-blue.svg)](https://github.com/user/AIOS/tree/OS0.4)
+[![Version](https://img.shields.io/badge/version-0.4-blue.svg)](https://github.com/Tecnocrat/AIOS/tree/OS0.4)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
@@ -18,7 +18,7 @@ AIOS integrates multiple programming languages and AI technologies to create a u
 ### **One-Command Setup**
 ```bash
 # Clone and setup (when repository is ready)
-git clone https://github.com/user/AIOS.git -b OS0.4
+git clone https://github.com/Tecnocrat/AIOS.git -b OS0.4
 cd AIOS
 ./scripts/setup.ps1  # Windows
 ```
@@ -105,6 +105,7 @@ AIOS/
 | **Documentation** | ✅ Complete | Four-domain architecture, AINLP paradigms implemented |
 | **Build System** | ✅ Complete | CMake + vcpkg, dotnet builds successful |
 | **Testing** | ✅ Complete | Integration tests passing |
+| **Optimization Systems** | ✅ Complete | OP ITER analysis, caching, async operations, unified config |
 
 ## 🔒 **VSCode Extension - Private Use Only**
 
