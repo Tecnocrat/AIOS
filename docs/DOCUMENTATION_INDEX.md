@@ -53,16 +53,20 @@ c:\dev\AIOS\
 │   │   ├── AINLP_DOCUMENTATION_MANAGEMENT_STRATEGY.md   # 📋 MANAGEMENT STRATEGY
 │   │   └── AINLP_KERNEL_TOOLING_LOCATION_ANALYSIS.md  # Kernel tooling
 │   ├── 🏛️ AIOS DOMAIN (AIOS/)
-│   │   ├── AIOS_MASTER_SPECIFICATION.md # ⭐ UNIFIED SPECIFICATION (9,432 lines)
-│   │   ├── AIOS_VSCODE_SAVE_ANALYSIS.md # VSCode extension analysis
-│   │   ├── AIOS_VSCODE_SAVE_COMMAND.md  # VSCode extension commands
-│   │   └── AIOS_VSCODE_SAVE_USAGE.md    # VSCode extension usage
-│   ├── 📊 STATUS & INFRASTRUCTURE
-│   │   ├── DEVELOPMENT_INFRASTRUCTURE_COMPLETE.md  # 🔧 Dev infrastructure
-│   │   ├── INFRASTRUCTURE_STATUS_COMPLETE.md       # 🔧 Infrastructure status
-│   │   ├── INTEGRATION_STATUS_JULY_2025.md         # 🔗 Integration status
-│   │   ├── JULY_2025_ARCHITECTURE_COMPLETE.md      # 🏛️ Architecture complete
-│   │   └── OPTIMIZATION_DEBUG_PATH.md              # 🐛 Debug optimization
+│   │   ├── AIOS_MASTER_SPECIFICATION.md     # Complete system architecture
+│   │   ├── AIOS_VSCODE_SAVE_COMMAND.md      # VSCode extension /save command
+│   │   ├── AIOS_VSCODE_SAVE_ANALYSIS.md     # Save command technical analysis
+│   │   ├── AIOS_VSCODE_SAVE_USAGE.md        # Save command usage guide
+│   │   └── AIOS_VSCODE_AINLP_COMMANDS.md    # 🆕 AINLP command integration
+│   ├── 🔧 INFRASTRUCTURE (INFRASTRUCTURE/)
+│   │   ├── DEVELOPMENT_INFRASTRUCTURE_COMPLETE.md      # Development environment
+│   │   ├── INFRASTRUCTURE_STATUS_COMPLETE.md           # Infrastructure status
+│   │   ├── INTEGRATION_STATUS_JULY_2025.md             # Integration status
+│   │   ├── JULY_2025_ARCHITECTURE_COMPLETE.md          # Architecture complete
+│   │   ├── OPTIMIZATION_DEBUG_PATH.md                  # Debug optimization
+│   │   ├── TACHYONIC_OPTIMIZATION_SUMMARY_JULY9_2025.md # Tachyonic summary
+│   │   ├── VSCODE_WORKSPACE_OPTIMIZATION_COMPLETE_JULY10_2025.md # VSCode optimization
+│   │   └── AINLP_REFRESH_CONTEXT_COMPLETE_JULY10_2025.md # 🆕 Context refresh complete
 │   ├── tachyonic_archive.db         # ⚡ QUANTUM ARCHIVE (405KB)
 │   └── unified_backups/             # 🗂️ Backup system
 └── 🔧 SCRIPTS (scripts/)
