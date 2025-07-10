@@ -121,3 +121,12 @@ config/production.json
 scripts/logs/
 scripts/*.tmp
 scripts/*.log
+
+# Optimization context files (generated)
+docs/INFRASTRUCTURE/OPTIMIZATION_CONTEXT_*.md
+scripts/optimization_context_*.py
+
+# AINLP generated files
+ai/src/core/integration/aios_*_cache.py
+ai/src/core/integration/aios_*_optimization.py
+ai/src/core/integration/aios_*_config.py
