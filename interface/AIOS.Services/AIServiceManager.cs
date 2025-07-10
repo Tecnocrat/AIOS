@@ -13,6 +13,7 @@ namespace AIOS.Services
     /// <summary>
     /// AI Service Manager - Core AI functionality implementation
     /// Implements IAIService interface for dependency injection
+    /// Enhanced with Universal Compression Service
     /// </summary>
     [ComVisible(true)]
     public class AIServiceManager : IAIService
@@ -24,7 +25,10 @@ namespace AIOS.Services
         private readonly string _pythonPath;
         private readonly string _aiModulesPath;
 
-        public AIServiceManager(ILogger<AIServiceManager>? logger = null)
+        // Universal Compression Service Integration
+        private readonly ICompressionService _compressionService;
+
+        public AIServiceManager(ILogger<AIServiceManager>? logger = null, ICompressionService compressionService = null)
         {
             _logger = logger ?? Microsoft.Extensions.Logging.Abstractions.NullLogger<AIServiceManager>.Instance;
             _aiModules = new Dictionary<string, AIModule>();
@@ -32,7 +36,12 @@ namespace AIOS.Services
             _random = new Random();
             _pythonPath = "python";
             _aiModulesPath = @"c:\dev\AIOS\ai\src";
+
+            // Initialize compression service
+            _compressionService = compressionService ?? new AIOSCompressionService(_logger as ILogger<AIOSCompressionService>);
+
             InitializeAIModules();
+            RegisterCompressionTool();
         }
 
         private void InitializeAIModules()
@@ -66,7 +75,75 @@ namespace AIOS.Services
                 Version = "1.5.0",
                 LastUpdated = DateTime.UtcNow
             };
+
+            // Add compression module to AI modules
+            _aiModules["compression"] = new AIModule
+            {
+                Id = "compression",
+                Name = "Universal Compression Engine",
+                Status = "Active",
+                Description = "Advanced file compression and merging capabilities",
+                Version = "1.0.0",
+                LastUpdated = DateTime.UtcNow
+            };
         }
+
+        /// <summary>
+        /// Register compression tool with AIOS system
+        /// </summary>
+        private void RegisterCompressionTool()
+        {
+            try
+            {
+                _compressionService?.RegisterCompressionTool();
+                _logger.LogInformation("Universal Compression Service integrated with AI Service Manager");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to register compression tool with AI Service Manager");
+            }
+        }
+
+        /// <summary>
+        /// Compress files using the integrated compression service
+        /// </summary>
+        public async Task<CompressionResult> CompressAsync(string sourcePath, CompressionType type = CompressionType.SmartMerge)
+        {
+            try
+            {
+                _logger.LogInformation($"AI Service Manager initiating compression: {sourcePath}");
+                var result = await _compressionService.CompressFilesAsync(sourcePath, type);
+
+                // Log compression event
+                LogSystemEvent($"Compression completed: {sourcePath}", result.Success ? "SUCCESS" : "FAILED");
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"AI Service Manager compression failed: {sourcePath}");
+                LogSystemEvent($"Compression failed: {sourcePath}", "ERROR");
+
+                return new CompressionResult
+                {
+                    Success = false,
+                    ErrorMessage = ex.Message
+                };
+            }
+        }
+
+        /// <summary>
+        /// Get compression status through AI Service Manager
+        /// </summary>
+        public async Task<CompressionStatus> GetCompressionStatusAsync(string compressionId = null)
+        {
+            return await _compressionService.GetCompressionStatusAsync(compressionId);
+        }
+
+        /// <summary>
+        /// Access to compression service for other components
+        /// </summary>
+        public ICompressionService CompressionService => _compressionService;
 
         public async Task<Dictionary<string, object>> ProcessNLPAsync(string input)
         {
