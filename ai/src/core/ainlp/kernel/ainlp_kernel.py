@@ -13,7 +13,7 @@ AINLP Comment Class Integration:
 """
 
 import logging
-import sys
+
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -21,18 +21,18 @@ from typing import Any, Dict, Optional
 from .tooling.recursive_tooling import get_kernel_processor
 
 # AINLP.lazy_import [future_modules] (comment.AINLP.class)
-# import json AINLP.call [import module when needed] (comment.AINLP.class)
-# This file does not use JSON but it could use it in the future,
-# so we inform the AI agent that it can enable JSON import if needed.
+# This file does not use all imports but it could use them in the future,
+# so we inform the AI agent that it can enable these imports if needed.
+# import json AINLP [uncomment if needed] (comment.AINLP.class)
+# import sys AINLP [uncomment if needed] (comment.AINLP.class)
 
 # AINLP.lazy_import [async_support] (comment.AINLP.class)
-# import asyncio AINLP.call [import for async operations] (comment.AINLP.class)
+# import asyncio AINLP [async operations] (comment.AINLP.class)
 # Future async operation support for C# bridge communication
 
 # AINLP.lazy_import [data_serialization] (comment.AINLP.class)
-# import pickle AINLP.call [import for context serialization] (comment.AINLP.class)
+# import pickle AINLP [context serialization] (comment.AINLP.class)
 # Context serialization for holographic memory integration
-
 
 
 class AINLPKernel:

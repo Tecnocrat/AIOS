@@ -57,6 +57,9 @@
 
                     <Button Name="IntegrationButton" Content="🔗 Integration Hub" Style="{StaticResource ModuleButtonStyle}" Click="IntegrationButton_Click" Margin="0,0,0,10"/>
 
+                    <!-- AINLP Code Formatter -->
+                    <Button Name="FormatterButton" Content="📐 Code Formatter" Style="{StaticResource ModuleButtonStyle}" Click="FormatterButton_Click" Margin="0,0,0,10"/>
+
                     <Separator Background="#FF404040" Margin="0,20"/>
 
                     <Button Name="MaintenanceButton" Content="🔧 Maintenance Center" Style="{StaticResource ModuleButtonStyle}" Click="MaintenanceButton_Click" Margin="0,10,0,10"/>

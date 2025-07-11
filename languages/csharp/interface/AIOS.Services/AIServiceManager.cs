@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using AIOS.Models;
+using AIOS.Services;
 
 namespace AIOS.Services
 {
@@ -28,6 +29,9 @@ namespace AIOS.Services
         // Universal Compression Service Integration
         private readonly ICompressionService _compressionService;
 
+        // AINLP Code Formatter Service
+        private readonly IFormatterService _formatterService;
+
         public AIServiceManager(ILogger<AIServiceManager>? logger = null, ICompressionService compressionService = null)
         {
             _logger = logger ?? Microsoft.Extensions.Logging.Abstractions.NullLogger<AIServiceManager>.Instance;
@@ -40,8 +44,12 @@ namespace AIOS.Services
             // Initialize compression service
             _compressionService = compressionService ?? new AIOSCompressionService(_logger as ILogger<AIOSCompressionService>);
 
+            // Initialize formatter service
+            _formatterService = new FormatterService(_logger as ILogger<FormatterService>);
+
             InitializeAIModules();
             RegisterCompressionTool();
+            RegisterFormatterTool();
         }
 
         private void InitializeAIModules()
@@ -83,6 +91,17 @@ namespace AIOS.Services
                 Name = "Universal Compression Engine",
                 Status = "Active",
                 Description = "Advanced file compression and merging capabilities",
+                Version = "1.0.0",
+                LastUpdated = DateTime.UtcNow
+            };
+
+            // Add code formatter module to AI modules
+            _aiModules["formatter"] = new AIModule
+            {
+                Id = "formatter",
+                Name = "AINLP Code Formatter",
+                Status = "Active",
+                Description = "Multi-language code formatting and quality improvements",
                 Version = "1.0.0",
                 LastUpdated = DateTime.UtcNow
             };
@@ -463,6 +482,82 @@ except Exception as e:
             }
 
             return Array.Empty<string>();
+        }
+
+        /// <summary>
+        /// Register formatter tool with AIOS system
+        /// </summary>
+        private void RegisterFormatterTool()
+        {
+            try
+            {
+                _formatterService?.RegisterFormatterTool();
+                _logger.LogInformation("AINLP Code Formatter Service integrated with AI Service Manager");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to register formatter tool with AI Service Manager");
+            }
+        }
+
+        /// <summary>
+        /// Fix E501 line length violations in Python files
+        /// </summary>
+        public async Task<E501FixResult> FixE501ViolationsAsync(string filePath)
+        {
+            try
+            {
+                _logger.LogInformation($"Fixing E501 violations in: {filePath}");
+
+                var result = await _formatterService.FixFileAsync(filePath);
+
+                // Log the event
+                _recentEvents.Add(new SystemEvent
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Type = "E501Fix",
+                    Message = $"Fixed E501 violations in {filePath}",
+                    Timestamp = DateTime.UtcNow,
+                    Severity = "Info"
+                });
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error fixing E501 violations in file: {filePath}");
+                return new E501FixResult { Success = false, ErrorMessage = ex.Message };
+            }
+        }
+
+        /// <summary>
+        /// Check for E501 line length violations in Python files
+        /// </summary>
+        public async Task<E501CheckResult> CheckE501ViolationsAsync(string filePath)
+        {
+            try
+            {
+                _logger.LogInformation($"Checking E501 violations in: {filePath}");
+
+                var result = await _formatterService.CheckFileAsync(filePath);
+
+                // Log the event
+                _recentEvents.Add(new SystemEvent
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Type = "E501Check",
+                    Message = $"Checked E501 violations in {filePath}: {result.ViolationCount} found",
+                    Timestamp = DateTime.UtcNow,
+                    Severity = result.HasViolations ? "Warning" : "Info"
+                });
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error checking E501 violations in file: {filePath}");
+                return new E501CheckResult { HasViolations = false, Summary = $"Error: {ex.Message}" };
+            }
         }
     }
 

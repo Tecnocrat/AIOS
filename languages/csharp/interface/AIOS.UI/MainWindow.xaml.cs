@@ -372,6 +372,59 @@ public partial class MainWindow : Window
         AddActivityLog("Switched to Integration module");
     }
 
+    private async void FormatterButton_Click(object sender, RoutedEventArgs e)
+    {
+        _currentModule = "formatter";
+        ChatHeader.Text = "AINLP Code Formatter - Active";
+        AddChatMessage("AIOS", "📐 Switched to Code Formatter mode. I can fix code formatting issues and improve code quality.", true);
+        AddActivityLog("Switched to Code Formatter module");
+
+        // Show file dialog for selecting Python file to format
+        var dialog = new Microsoft.Win32.OpenFileDialog
+        {
+            Title = "Select Python file to format",
+            Filter = "Python files (*.py)|*.py|All files (*.*)|*.*",
+            DefaultExt = "py"
+        };
+
+        if (dialog.ShowDialog() == true)
+        {
+            try
+            {
+                AddChatMessage("AIOS", $"🔄 Analyzing file: {dialog.FileName}", true);
+
+                // Check for E501 violations first
+                var checkResult = await _aiService.CheckE501ViolationsAsync(dialog.FileName);
+
+                if (checkResult.HasViolations)
+                {
+                    AddChatMessage("AIOS", $"📊 Found {checkResult.ViolationCount} E501 violations. Fixing now...", true);
+
+                    // Fix the violations
+                    var fixResult = await _aiService.FixE501ViolationsAsync(dialog.FileName);
+
+                    if (fixResult.Success)
+                    {
+                        AddChatMessage("AIOS", $"✅ Successfully fixed {fixResult.LinesFixed}/{fixResult.TotalViolations} violations in {fixResult.ProcessingTimeMs}ms", true);
+                        AddChatMessage("AIOS", $"📋 {fixResult.Summary}", true);
+                    }
+                    else
+                    {
+                        AddChatMessage("AIOS", $"❌ Error fixing E501 violations: {fixResult.ErrorMessage}", true);
+                    }
+                }
+                else
+                {
+                    AddChatMessage("AIOS", "✅ No E501 violations found. Code is already compliant!", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                AddChatMessage("AIOS", $"❌ Error processing file: {ex.Message}", true);
+            }
+        }
+    }
+
     private async void MaintenanceButton_Click(object sender, RoutedEventArgs e)
     {
         AddChatMessage("AIOS", "🔧 Opening Maintenance Center...", true);
