@@ -1,4 +1,4 @@
-#include "aios_core.hpp"
+#include "aios_core_minimal.hpp"
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
@@ -48,92 +48,36 @@ int main(int argc, char* argv[]) {
                 continue;
             }
 
-            // AINLP Command Processing with Universal Quantum Holographic Integration
-            if (input.find("@AIOS /refresh.context") == 0) {
-                std::cout << "🧠 Processing AINLP /refresh.context with Universal Quantum Holographic paradigms..." << std::endl;
-
-                // Extract refinement parameters if present
-                std::string refinement = "";
-                size_t refPos = input.find("(refinement");
-                if (refPos != std::string::npos) {
-                    size_t startQuote = input.find("\"", refPos);
-                    size_t endQuote = input.find("\"", startQuote + 1);
-                    if (startQuote != std::string::npos && endQuote != std::string::npos) {
-                        refinement = input.substr(startQuote + 1, endQuote - startQuote - 1);
-                    }
-                }
-
-                // Process with Universal → Quantum → Holographic integration
-                auto result = core.processAINLPUniversalIntegration(input, refinement);
-
-                std::cout << "✅ Universal Layer: " << result.universalResponse << std::endl;
-                std::cout << "🌀 Quantum State: " << (result.quantumState.tachyonicActive ? "Active" : "Standby") << std::endl;
-                std::cout << "🔮 Holographic Coherence: " << result.fractalCoherence << std::endl;
-                std::cout << "🎯 Integration Status: " << (result.integrationSuccessful ? "SUCCESS" : "PENDING") << std::endl;
-
-                continue;
-            }
-
-            // Standard holographic processing for other commands
             if (input == "help") {
                 std::cout << "Available commands:" << std::endl;
-                std::cout << "  @AIOS /refresh.context - AINLP context refresh with fractal paradigms" << std::endl;
-                std::cout << "  quantum - Show quantum processing state" << std::endl;
-                std::cout << "  holographic - Show holographic system state" << std::endl;
-                std::cout << "  universal - Show universal system configuration" << std::endl;
-                std::cout << "  status - Show overall system status" << std::endl;
+                std::cout << "  status - Show system status" << std::endl;
+                std::cout << "  config - Show system configuration" << std::endl;
                 std::cout << "  help - Show this help message" << std::endl;
                 std::cout << "  exit/quit - Exit the system" << std::endl;
                 continue;
             }
 
-            // Universal Quantum Holographic status commands
-            if (input == "quantum") {
-                auto state = core.getUniversalQuantumHolographicState();
-                std::cout << "🌀 Quantum Processing State:" << std::endl;
-                std::cout << "  Tachyonic Fields: " << (state.quantumState.tachyonicActive ? "Active" : "Standby") << std::endl;
-                std::cout << "  Hyperdimensional Coupling: " << state.quantumState.hyperdimensionalFields.size() << " dimensions" << std::endl;
-                std::cout << "  Synthetic Physical Laws: " << state.quantumState.syntheticPhysicalLaws.size() << " constants" << std::endl;
-                continue;
-            }
-
-            if (input == "holographic") {
-                auto state = core.getUniversalQuantumHolographicState();
-                std::cout << "🔮 Holographic System State:" << std::endl;
-                std::cout << "  Fractal Coherence: " << state.fractalCoherence << std::endl;
-                std::cout << "  Component States: " << state.holographicContext.ComponentStates.size() << " active" << std::endl;
-                std::cout << "  Distributed Intelligence: " << (state.integrationSuccessful ? "Synchronized" : "Synchronizing") << std::endl;
-                continue;
-            }
-
-            if (input == "universal") {
-                std::cout << "🌌 Universal System Configuration:" << std::endl;
-                std::cout << "  Operating Paradigm: AI-Driven Intelligence OS" << std::endl;
-                std::cout << "  Cross-Component Integration: C++/Python/C# Bridge Active" << std::endl;
-                std::cout << "  System Scope: Complete OS Replacement Architecture" << std::endl;
-                continue;
-            }
-
             if (input == "status") {
-                auto state = core.getUniversalQuantumHolographicState();
-                std::cout << "🎯 AIOS Universal Quantum Holographic Status:" << std::endl;
-                std::cout << "  Universal Layer: ✅ Operational" << std::endl;
-                std::cout << "  Quantum Layer: " << (state.quantumState.tachyonicActive ? "✅" : "⏸️") << " " <<
-                    (state.quantumState.tachyonicActive ? "Active" : "Standby") << std::endl;
-                std::cout << "  Holographic Layer: " << (state.integrationSuccessful ? "✅" : "🔄") << " " <<
-                    (state.integrationSuccessful ? "Synchronized" : "Synchronizing") << std::endl;
-                std::cout << "  Fractal Coherence: " << (state.fractalCoherence > 0.8 ? "✅" : "⚠️") << " " << state.fractalCoherence << std::endl;
-                std::cout << "  Overall Integration: " << (state.integrationSuccessful ? "🟢 OPTIMAL" : "🟡 ACTIVE") << std::endl;
+                std::cout << "AIOS System Status:" << std::endl;
+                std::cout << "  Running: " << (core.isRunning() ? "Yes" : "No") << std::endl;
+                std::cout << "  Version: " << core.getConfig().version << std::endl;
                 continue;
             }
 
-            try {
-                auto response = core.processCommand(input);
-                std::cout << response.dump(2) << std::endl;
+            if (input == "config") {
+                const auto& config = core.getConfig();
+                std::cout << "AIOS Configuration:" << std::endl;
+                std::cout << "  Name: " << config.name << std::endl;
+                std::cout << "  Version: " << config.version << std::endl;
+                std::cout << "  Description: " << config.description << std::endl;
+                std::cout << "  Max Threads: " << config.maxThreads << std::endl;
+                std::cout << "  Memory Limit: " << config.memoryLimit << " bytes" << std::endl;
+                std::cout << "  Log Level: " << config.logLevel << std::endl;
+                continue;
             }
-            catch (const std::exception& e) {
-                std::cerr << "Error processing command: " << e.what() << std::endl;
-            }
+
+            std::cout << "Unknown command: " << input << std::endl;
+            std::cout << "Type 'help' for available commands." << std::endl;
         }
 
         std::cout << "Shutting down AIOS system..." << std::endl;
