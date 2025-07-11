@@ -28,8 +28,16 @@ endif()
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(nlohmann_json REQUIRED)
 
+# Find Python for TensorFlow integration (optional for now)
+find_package(Python3 QUIET COMPONENTS Development NumPy)
+
 # Optional: TensorFlow C++ (if available)
 # find_package(TensorFlow QUIET)
+# For now, we'll use TensorFlow C++ through pkg-config
+find_package(PkgConfig QUIET)
+if(PkgConfig_FOUND)
+    pkg_check_modules(TENSORFLOW tensorflow)
+endif()
 
 # Use built-in JSON handling for now
 set(JSON_FOUND TRUE)
@@ -42,6 +50,10 @@ include_directories(${Boost_INCLUDE_DIRS})
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.cxx")
 file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 
+# Exclude the original problematic core files for now, use minimal version
+list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/aios_core.cpp")
+list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/universal_quantum_holographic.cpp")
+
 # Create the main library
 add_library(aios_core ${SOURCES} ${HEADERS})
 
@@ -51,9 +63,25 @@ target_link_libraries(aios_core
     nlohmann_json::nlohmann_json
 )
 
+# Optional Python linking
+if(Python3_FOUND)
+    target_link_libraries(aios_core Python3::Python)
+    if(Python3_NumPy_FOUND)
+        target_link_libraries(aios_core Python3::NumPy)
+    endif()
+    target_compile_definitions(aios_core PRIVATE AIOS_PYTHON_ENABLED)
+endif()
+
 # Optional TensorFlow linking
 if(TensorFlow_FOUND)
     target_link_libraries(aios_core ${TensorFlow_LIBRARIES})
+    target_compile_definitions(aios_core PRIVATE AIOS_TENSORFLOW_ENABLED)
+endif()
+
+# If TensorFlow found via pkg-config
+if(TENSORFLOW_FOUND)
+    target_include_directories(aios_core PRIVATE ${TENSORFLOW_INCLUDE_DIRS})
+    target_link_libraries(aios_core ${TENSORFLOW_LIBRARIES})
     target_compile_definitions(aios_core PRIVATE AIOS_TENSORFLOW_ENABLED)
 endif()
 
