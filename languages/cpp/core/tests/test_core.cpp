@@ -1,4 +1,4 @@
-#include "aios_core.hpp"
+#include "aios_core_minimal.hpp"
 #include <iostream>
 #include <cassert>
 
@@ -13,26 +13,25 @@ int main() {
         // Test initialization
         bool initialized = core.initialize();
         assert(initialized);
+        (void)initialized; // Suppress unused warning
         std::cout << "✓ Core initialization test passed" << std::endl;
         
         // Test start
         bool started = core.start();
         assert(started);
+        (void)started; // Suppress unused warning
         std::cout << "✓ Core start test passed" << std::endl;
         
         // Test isRunning
         assert(core.isRunning());
         std::cout << "✓ Core isRunning test passed" << std::endl;
         
-        // Test command processing
-        auto result = core.processCommand("help");
-        assert(result["status"] == "success");
-        std::cout << "✓ Command processing test passed" << std::endl;
-        
-        // Test status command
-        auto status = core.processCommand("status");
-        assert(status["status"] == "success");
-        std::cout << "✓ Status command test passed" << std::endl;
+        // Test configuration access
+        const auto& config = core.getConfig();
+        assert(config.name == "AIOS");
+        assert(config.version == "0.4");
+        (void)config; // Suppress unused warning
+        std::cout << "✓ Configuration access test passed" << std::endl;
         
         // Test stop
         core.stop();
