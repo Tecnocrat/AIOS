@@ -1,6 +1,7 @@
-// AINLP.workspace [aios_development_environment] (comment.AINLP.class)
-// Optimized VSCode workspace for AIOS multi-language development with fractal paradigm integration
-// Auto-synchronizes with current AIOS evolution: four-domain docs, tachyonic optimization, AINLP kernel
+// AINLP.workspace [aios_cellular_ecosystem_environment] (comment.AINLP.class)
+// Optimized VSCode workspace for AIOS TensorFlow Cellular Ecosystem development
+// Revolutionary cellular architecture: Python AI cells + C++ performance cells + intercellular bridges
+// Auto-synchronizes with OS0.4 branch: TensorFlow integration complete, cellular communication active
 {
 	"folders": [
 		{
@@ -120,12 +121,18 @@
 			"./ai/src/core",
 			"./ai/src/core/integration",
 			"./ai/tests",
-			"./scripts"
+			"./scripts",
+			"./python/ai_cells",
+			"./intercellular",
+			"./examples"
 		],
 		"python.analysis.include": [
 			"./ai/src/**",
 			"./ai/tests/**",
-			"./scripts/**"
+			"./scripts/**",
+			"./python/ai_cells/**",
+			"./intercellular/**",
+			"./examples/**"
 		],
 		"python.analysis.exclude": [
 			"./ai/venv/**",
@@ -154,6 +161,7 @@
 		"C_Cpp.default.includePath": [
 			"${workspaceFolder}/core/include",
 			"${workspaceFolder}/core/src",
+			"${workspaceFolder}/intercellular",
 			"C:/dev/vcpkg/installed/x64-windows/include"
 		],
 		"C_Cpp.default.defines": [
@@ -162,10 +170,14 @@
 			"_UNICODE",
 			"WIN32",
 			"_WIN64",
-			"AIOS_BUILD"
+			"AIOS_BUILD",
+			"TENSORFLOW_CELLULAR_INTEGRATION",
+			"AIOS_CELLULAR_ECOSYSTEM"
 		],
 		"C_Cpp.default.browse.path": [
 			"${workspaceFolder}/core",
+			"${workspaceFolder}/intercellular",
+			"${workspaceFolder}/python/ai_cells",
 			"C:/dev/vcpkg/installed/x64-windows/include"
 		],
 		"C_Cpp.intelliSenseEngine": "default",
@@ -227,7 +239,10 @@
 			"requirements.txt": "pip-requirements",
 			"environment.yml": "yaml",
 			"*.yml": "yaml",
-			"*.yaml": "yaml"
+			"*.yaml": "yaml",
+			"tensorflow_*.py": "python",
+			"*_cell.py": "python",
+			"*_bridge.*": "cpp"
 		},
 		"files.encoding": "utf8",
 		"files.eol": "\r\n",
@@ -391,6 +406,16 @@
 		"aios.refresh.contextEnabled": true,
 		"aios.refresh.fractalSampling": true,
 		"aios.refresh.timelineSampling": true,
+		// 🧬 TensorFlow Cellular Integration
+		"aios.tensorflow.cellularEnabled": true,
+		"aios.tensorflow.pythonCellsPath": "./python/ai_cells",
+		"aios.tensorflow.cppCellsPath": "./core",
+		"aios.tensorflow.intercellularPath": "./intercellular",
+		"aios.tensorflow.examplesPath": "./examples",
+		"aios.tensorflow.performanceMonitoring": true,
+		"aios.tensorflow.subMillisecondInference": true,
+		"aios.cellular.communicationEnabled": true,
+		"aios.cellular.bridgeOptimization": true,
 		// 🧠 AINLP Integration
 		"ainlp.documentationDomains": [
 			"./docs/AINLP",
@@ -404,7 +429,11 @@
 		"ainlp.fractalParadigms.enabled": true,
 		"ainlp.memoryClass.processing": true,
 		"ainlp.optimizationContext.enabled": true,
-		"ainlp.opIterMethodology.enabled": true
+		"ainlp.opIterMethodology.enabled": true,
+		// 📚 TensorFlow Documentation Integration
+		"ainlp.tensorflow.documentationEnabled": true,
+		"ainlp.tensorflow.cellularGuides": "./docs/TENSORFLOW_*.md",
+		"ainlp.tensorflow.implementationStatus": "complete"
 	},
 	"tasks": {
 		"version": "2.0.0",
@@ -607,6 +636,106 @@
 				"problemMatcher": "$msCompile"
 			},
 			{
+				"label": "🧬 Build TensorFlow Cellular Integration",
+				"type": "shell",
+				"command": "powershell",
+				"args": [
+					"-ExecutionPolicy",
+					"Bypass",
+					"-File",
+					"./scripts/build_tensorflow_integration.ps1"
+				],
+				"group": {
+					"kind": "build",
+					"isDefault": false
+				},
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"problemMatcher": [
+					"$msCompile",
+					"$gcc"
+				]
+			},
+			{
+				"label": "🐍 Test TensorFlow Python AI Cells",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"python/ai_cells/tensorflow_training_cell.py"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
+			},
+			{
+				"label": "⚡ Test TensorFlow Performance Cells",
+				"type": "shell",
+				"command": "./core/build/bin/Debug/aios_main.exe",
+				"args": [
+					"--tensorflow-performance-test"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOn": "🔧 Build C++ Core (Debug)"
+			},
+			{
+				"label": "🌉 Test Intercellular Communication",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"ai/test_tensorflow_cellular_integration.py"
+				],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				}
+			},
+			{
+				"label": "🚀 Run TensorFlow Cellular Workflow",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"examples/tensorflow_cellular_workflow.py"
+				],
+				"group": {
+					"kind": "test",
+					"isDefault": false
+				},
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": true,
+					"clear": true
+				},
+				"dependsOn": "🧬 Build TensorFlow Cellular Integration"
+			},
+			{
 				"label": "🧪 Run Integration Tests",
 				"type": "shell",
 				"command": "python",
@@ -726,7 +855,9 @@
 					"🔧 Build C++ Core (Debug)",
 					"📦 Install Python Dependencies",
 					"🔷 Build C# Projects",
-					"🧪 Run Integration Tests"
+					"� Build TensorFlow Cellular Integration",
+					"�🧪 Run Integration Tests",
+					"🚀 Run TensorFlow Cellular Workflow"
 				]
 			},
 			{
@@ -826,6 +957,64 @@
 				}
 			},
 			{
+				"name": "🧬 Debug TensorFlow Python AI Cells",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/python/ai_cells/tensorflow_training_cell.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/python/ai_cells:${workspaceFolder}/intercellular"
+				}
+			},
+			{
+				"name": "⚡ Debug TensorFlow Performance Cells",
+				"type": "cppdbg",
+				"request": "launch",
+				"program": "${workspaceFolder}/core/build/bin/Debug/aios_main.exe",
+				"args": [
+					"--tensorflow-performance-test"
+				],
+				"stopAtEntry": false,
+				"cwd": "${workspaceFolder}",
+				"environment": [],
+				"externalConsole": false,
+				"MIMode": "gdb",
+				"setupCommands": [
+					{
+						"description": "Enable pretty-printing for gdb",
+						"text": "-enable-pretty-printing",
+						"ignoreFailures": true
+					}
+				],
+				"preLaunchTask": "🔧 Build C++ Core (Debug)"
+			},
+			{
+				"name": "🌉 Debug Intercellular Communication",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/ai/test_tensorflow_cellular_integration.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/python/ai_cells:${workspaceFolder}/intercellular:${workspaceFolder}/ai/src"
+				}
+			},
+			{
+				"name": "🚀 Debug TensorFlow Cellular Workflow",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/examples/tensorflow_cellular_workflow.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"python": "${workspaceFolder}/ai/venv/Scripts/python.exe",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/python/ai_cells:${workspaceFolder}/intercellular:${workspaceFolder}/examples"
+				}
+			},
+			{
 				"name": "🧪 Debug Integration Tests",
 				"type": "debugpy",
 				"request": "launch",
@@ -878,6 +1067,9 @@
 			"ms-python.black-formatter",
 			"ms-python.isort",
 			"ms-python.pylint",
+			"ms-toolsai.jupyter",
+			"ms-toolsai.jupyter-keymap",
+			"ms-toolsai.jupyter-renderers",
 			"ms-dotnettools.csharp",
 			"ms-dotnettools.vscode-dotnet-runtime",
 			"ms-vscode.powershell",
@@ -899,7 +1091,10 @@
 			"ms-vscode.vscode-npm-script",
 			"ms-vscode.references-view",
 			"ms-vscode.remote-repositories",
-			"ms-vscode.remote-explorer"
+			"ms-vscode.remote-explorer",
+			"ms-python.vscode-pylance",
+			"donjayamanne.python-environment-manager",
+			"kevinrose.vsc-python-indent"
 		],
 		"unwantedRecommendations": [
 			"ms-vscode.live-server"
