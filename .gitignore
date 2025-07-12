@@ -1,7 +1,37 @@
-# Git ignore file for AIOS project
+# Git ignore file for AIOS TensorFlow Cellular Ecosystem
+
+# 🧬 TensorFlow Cellular Integration
+# Python AI cells compiled extensions
+python/ai_cells/__pycache__/
+python/ai_cells/*.pyc
+python/ai_cells/*.so
+python/ai_cells/*.pyd
+python/ai_cells/build/
+python/ai_cells/dist/
+
+# Intercellular bridge build artifacts
+intercellular/build/
+intercellular/dist/
+intercellular/*.so
+intercellular/*.pyd
+intercellular/__pycache__/
+
+# TensorFlow cellular model files
+python/ai_cells/models/
+examples/models/
+*.pb
+*.tflite
+*.ckpt*
+saved_model/
+
+# Cellular performance logs
+examples/performance_logs/
+examples/cellular_metrics/
+cellular_benchmarks/
 
 # Tachyonic Archival System (Local only - not for version control)
 archive/
+docs/tachyonic_archive.db
 
 # Build directories
 build/
@@ -20,7 +50,7 @@ x86/
 *.vcxproj.filters
 *.vcxproj.user
 
-# Python virtual environment
+# Python virtual environment & TensorFlow dependencies
 ai/venv/
 ai/venv-win/
 ai/__pycache__/
@@ -35,14 +65,32 @@ ENV/
 env.bak/
 venv.bak/
 
-# Python specific
+# TensorFlow Python packages cache
+ai/.tensorflow/
+ai/tensorboard_logs/
+ai/training_checkpoints/
+
+# Python specific & TensorFlow artifacts
 *.egg-info/
 dist/
 .pytest_cache/
 .coverage
 .tox/
+*.whl
+__pycache__/
+.ipynb_checkpoints/
 
-# C++ specific
+# TensorFlow specific files
+*.pb
+*.tflite
+checkpoint
+*.ckpt.*
+*.meta
+*.index
+*.data-*
+events.out.tfevents.*
+
+# C++ specific & TensorFlow C++ builds
 *.obj
 *.exe
 *.dll
@@ -65,24 +113,42 @@ dist/
 *.VC.db
 *.VC.VC.opendb
 
-# CMake
+# TensorFlow C++ artifacts
+core/tensorflow_cc/
+core/build/tensorflow/
+*.so
+*.dylib
+
+# CMake & TensorFlow build system
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
 Makefile
 *.cmake
 !CMakeLists.txt
+!scripts/*.cmake
+
+# TensorFlow CMake specific
+core/build/tensorflow_cc/
+intercellular/cmake_build/
 
 # NuGet
 packages/
 *.nupkg
 *.snupkg
 
-# IDE files
+# IDE files & TensorFlow development
 .vscode/settings.json
 .vscode/launch.json
 .vscode/tasks.json
 .idea/
+*.swp
+*.swo
+
+# TensorFlow development files
+.tensorflow/
+.tensorboard/
+jupyter_notebooks/.ipynb_checkpoints/
 
 # OS generated files
 .DS_Store
@@ -105,28 +171,121 @@ logs/
 *.swo
 *~
 
-# AI model files (too large for git)
+# AI model files & TensorFlow models (too large for git)
 ai/models/*.bin
 ai/models/*.pt
 ai/models/*.pth
 ai/models/*.onnx
 ai/models/*.h5
+ai/models/*.pkl
+ai/models/*.joblib
 
-# Configuration overrides
+# TensorFlow cellular model files
+python/ai_cells/trained_models/
+python/ai_cells/saved_models/
+python/ai_cells/checkpoints/
+examples/trained_models/
+intercellular/model_cache/
+
+# Large TensorFlow datasets
+datasets/
+data/raw/
+data/processed/
+*.tfrecord
+*.tfrecords
+
+# Configuration overrides & TensorFlow config
 config/local.json
 config/development.json
 config/production.json
+config/tensorflow_config.json
+config/cellular_config.json
 
-# Script outputs and temporary files
+# Environment-specific configurations
+.env
+.env.local
+.env.development
+.env.production
+
+# Script outputs and temporary files & TensorFlow logs
 scripts/logs/
 scripts/*.tmp
 scripts/*.log
+scripts/tensorflow_build_logs/
+scripts/cellular_test_results/
 
-# Optimization context files (generated)
+# Performance monitoring outputs
+performance_logs/
+benchmarks/
+profiling_results/
+
+# Optimization context files (generated) & TensorFlow optimization
 docs/INFRASTRUCTURE/OPTIMIZATION_CONTEXT_*.md
 scripts/optimization_context_*.py
 
-# AINLP generated files
+# TensorFlow optimization artifacts
+optimization_profiles/
+cellular_optimization_logs/
+performance_analysis/
+
+# AINLP generated files & TensorFlow cellular integration
 ai/src/core/integration/aios_*_cache.py
 ai/src/core/integration/aios_*_optimization.py
 ai/src/core/integration/aios_*_config.py
+
+# TensorFlow cellular generated files
+python/ai_cells/generated/
+intercellular/generated/
+examples/generated/
+
+# Cellular ecosystem test artifacts
+cellular_test_outputs/
+intercellular_test_logs/
+ai_cell_benchmarks/
+
+# TensorFlow workspace files
+*.tfworkspace
+.tensorflow_workspace/
+cellular_workspace/
+
+# Security and sensitive files
+*.key
+*.pem
+*.p12
+api_keys.json
+secrets.json
+.secrets/
+
+# System and runtime files
+.python-version
+.node-version
+.nvmrc
+runtime.txt
+
+# Package manager files
+poetry.lock
+Pipfile.lock
+yarn.lock
+package-lock.json
+
+# Testing artifacts
+test_results/
+test_coverage/
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Documentation build artifacts
+docs/build/
+docs/_build/
+docs/site/
+*.epub
+*.pdf
+
+# Backup files
+*.bak
+*.backup
+*.old
+*~
+.#*

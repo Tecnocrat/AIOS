@@ -1,7 +1,7 @@
 {
     "name": "aios-vscode",
-    "displayName": "AIOS - Artificial Intelligence Operating System",
-    "description": "Deep AI integration for VSCode with persistent context and multi-language AI coordination",
+    "displayName": "AIOS - TensorFlow Cellular Ecosystem Extension",
+    "description": "Revolutionary VSCode integration for TensorFlow cellular ecosystem with sub-millisecond AI performance monitoring",
     "version": "0.4.0",
     "publisher": "tecnocrat",
     "engines": {
@@ -14,6 +14,12 @@
         "Machine Learning"
     ],
     "keywords": [
+        "tensorflow",
+        "cellular-ecosystem",
+        "ai-training-cells",
+        "cpp-performance-cells",
+        "intercellular-communication",
+        "sub-millisecond-inference",
         "ai",
         "artificial intelligence",
         "chat",
@@ -21,7 +27,8 @@
         "context",
         "persistent",
         "multi-language",
-        "automation"
+        "automation",
+        "cellular-architecture"
     ],
     "activationEvents": [
         "onStartupFinished"
@@ -31,36 +38,101 @@
         "chatParticipants": [
             {
                 "id": "aios",
-                "name": "AIOS",
-                "description": "Artificial Intelligence Operating System - Multi-language AI with persistent context",
+                "name": "AIOS-Cellular",
+                "description": "TensorFlow Cellular Ecosystem - Python AI cells, C++ performance cells, intercellular communication",
                 "isSticky": true
             }
         ],
         "commands": [
             {
+                "command": "aios.cellular.ecosystemStatus",
+                "title": "AIOS: Cellular Ecosystem Status",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.cellular.pythonAiCells",
+                "title": "AIOS: Python AI Cell Status",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.cellular.cppPerformanceCells",
+                "title": "AIOS: C++ Performance Cell Metrics",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.cellular.intercellularBridges",
+                "title": "AIOS: Intercellular Bridge Status",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.cellular.workflowMonitor",
+                "title": "AIOS: Cellular Workflow Monitor",
+                "category": "AIOS"
+            },
+            {
                 "command": "aios.resetContext",
-                "title": "AIOS: Reset Context",
+                "title": "AIOS: Reset Cellular Context",
                 "category": "AIOS"
             },
             {
                 "command": "aios.saveContext",
-                "title": "AIOS: Save Context",
+                "title": "AIOS: Save Cellular Context",
                 "category": "AIOS"
             },
             {
                 "command": "aios.loadContext",
-                "title": "AIOS: Load Context",
+                "title": "AIOS: Load Cellular Context",
                 "category": "AIOS"
             },
             {
                 "command": "aios.showStatus",
-                "title": "AIOS: Show System Status",
+                "title": "AIOS: Show Cellular System Status",
                 "category": "AIOS"
             }
         ],
         "configuration": {
-            "title": "AIOS Configuration",
+            "title": "AIOS TensorFlow Cellular Ecosystem Configuration",
             "properties": {
+                "aios.cellular.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable TensorFlow cellular ecosystem integration"
+                },
+                "aios.cellular.tensorflow.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable TensorFlow cellular integration"
+                },
+                "aios.cellular.pythonAiCells": {
+                    "type": "string",
+                    "default": "./python/ai_cells/",
+                    "description": "Path to Python AI training cells"
+                },
+                "aios.cellular.cppPerformanceCells": {
+                    "type": "string",
+                    "default": "./core/",
+                    "description": "Path to C++ performance cells"
+                },
+                "aios.cellular.intercellularBridges": {
+                    "type": "string",
+                    "default": "./intercellular/",
+                    "description": "Path to intercellular communication bridges"
+                },
+                "aios.cellular.workflowMonitoring": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable cellular workflow monitoring"
+                },
+                "aios.cellular.performanceTracking": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable cellular performance tracking"
+                },
+                "aios.cellular.subMillisecondAlerts": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable sub-millisecond performance alerts"
+                },
                 "aios.core.enabled": {
                     "type": "boolean",
                     "default": true,
@@ -69,12 +141,12 @@
                 "aios.context.persistAcrossRestarts": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Preserve conversation context across VSCode restarts"
+                    "description": "Preserve cellular conversation context across VSCode restarts"
                 },
                 "aios.context.maxHistorySize": {
                     "type": "number",
-                    "default": 1000,
-                    "description": "Maximum number of messages to keep in context history"
+                    "default": 2000,
+                    "description": "Maximum number of cellular messages to keep in context history"
                 },
                 "aios.ai.pythonPath": {
                     "type": "string",

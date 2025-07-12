@@ -100,6 +100,18 @@ c:\dev\AIOS\
 | `OPTIMIZATION_DEBUG_PATH.md` | Debug and optimization path | Troubleshooting |
 | `tachyonic_archive.db` | **⚡ ARCHIVED LEGACY DOCS** | **Search with TachyonicArchiver** |
 
+### **For TensorFlow Cellular Integration** (AI Development Domain)
+| File | Purpose | When to Read |
+|------|---------|--------------|
+| `docs/TENSORFLOW_CELLULAR_INTEGRATION_COMPLETE.md` | **🧬 COMPLETE IMPLEMENTATION SUMMARY** | **Understanding TensorFlow cellular ecosystem** |
+| `docs/TENSORFLOW_AGENT_IMPLEMENTATION_PLAN.md` | **📋 Original implementation plan** | **Understanding agent development approach** |
+| `docs/TENSORFLOW_MERGE_GUIDE.md` | **🔀 Merge and deployment guide** | **Integrating TensorFlow work into branches** |
+| `python/ai_cells/tensorflow_training_cell.py` | **🐍 Python AI training cells** | **Implementing AI training workflows** |
+| `languages/cpp/core/include/tensorflow_performance_cell.hpp` | **⚡ C++ performance inference cells** | **Sub-millisecond inference implementation** |
+| `intercellular/tensorflow_cellular_bridge.py` | **🌉 Intercellular communication bridge** | **Python ↔ C++ cellular communication** |
+| `examples/tensorflow_cellular_workflow.py` | **🚀 Complete workflow demonstration** | **End-to-end cellular ecosystem usage** |
+| `scripts/build_tensorflow_integration.ps1` | **🛠️ Automated build script** | **Building and deploying TensorFlow integration** |
+
 ### **For AINLP Development** (Specialized Domain)
 | File | Purpose | When to Read |
 |------|---------|--------------|
