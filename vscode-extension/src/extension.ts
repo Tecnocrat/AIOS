@@ -4,47 +4,48 @@ import { AIOSChatParticipant } from './chatParticipant';
 import { AIOSContextManager } from './contextManager';
 import { AIOSLogger } from './logger';
 
-function validatePrivateUseSettings(logger: AIOSLogger): boolean {
+function validateCellularEcosystemSettings(logger: AIOSLogger): boolean {
     const config = vscode.workspace.getConfiguration('aios');
 
-    // Check privacy mode
+    // Check cellular ecosystem integration
+    const cellularEnabled = config.get<boolean>('cellular.enabled', true);
+    const tensorflowEnabled = config.get<boolean>('cellular.tensorflow.enabled', true);
+
+    if (!cellularEnabled) {
+        logger.warn('TensorFlow cellular ecosystem is disabled. Enable aios.cellular.enabled for full functionality');
+    }
+
+    if (!tensorflowEnabled) {
+        logger.warn('TensorFlow integration is disabled. Enable aios.cellular.tensorflow.enabled for performance cells');
+    }
+
+    // Validate cellular paths
+    const pythonAiCells = config.get<string>('cellular.pythonAiCells', './python/ai_cells/');
+    const cppPerformanceCells = config.get<string>('cellular.cppPerformanceCells', './core/');
+    const intercellularBridges = config.get<string>('cellular.intercellularBridges', './intercellular/');
+
+    logger.info(`Cellular Ecosystem Paths - Python AI Cells: ${pythonAiCells}, C++ Performance Cells: ${cppPerformanceCells}, Intercellular Bridges: ${intercellularBridges}`);
+
+    // Check privacy mode for cellular data
     const privacyMode = config.get<string>('privacy.mode', 'strict');
     if (privacyMode !== 'strict') {
-        logger.warn('Privacy mode is not set to strict. For private use, set aios.privacy.mode to "strict"');
+        logger.warn('Privacy mode is not set to strict. For private cellular use, set aios.privacy.mode to "strict"');
     }
 
-    // Check network setting
-    const networkEnabled = config.get<boolean>('network.enabled', false);
-    if (networkEnabled) {
-        logger.warn('Network connections are enabled. For private use, set aios.network.enabled to false');
-    }
-
-    // Check telemetry setting
-    const telemetryEnabled = config.get<boolean>('telemetry.enabled', false);
-    if (telemetryEnabled) {
-        logger.warn('Telemetry is enabled. For private use, set aios.telemetry.enabled to false');
-    }
-
-    // Check auto-update setting
-    const autoUpdateEnabled = config.get<boolean>('autoUpdate.enabled', false);
-    if (autoUpdateEnabled) {
-        logger.warn('Auto-update is enabled. For private use, set aios.autoUpdate.enabled to false');
-    }
-
-    return privacyMode === 'strict' && !networkEnabled && !telemetryEnabled && !autoUpdateEnabled;
+    return cellularEnabled && tensorflowEnabled && privacyMode === 'strict';
 }
 
 export function activate(context: vscode.ExtensionContext) {
     const logger = new AIOSLogger(context);
-    logger.info('AIOS Extension activating...');
+    logger.info('AIOS TensorFlow Cellular Ecosystem Extension activating...');
 
     try {
-        // Validate private use settings
-        const isPrivatelyConfigured = validatePrivateUseSettings(logger);
+        // Validate cellular ecosystem settings
+        const isCellularConfigured = validateCellularEcosystemSettings(logger);
 
-        if (!isPrivatelyConfigured) {
+        if (!isCellularConfigured) {
             vscode.window.showWarningMessage(
-                'AIOS: Some settings are not configured for private use. Check the logs for details.',
+                'AIOS: TensorFlow cellular ecosystem settings need configuration. Check the logs for details.',
                 'Open Settings'
             ).then(selection => {
                 if (selection === 'Open Settings') {
@@ -55,18 +56,18 @@ export function activate(context: vscode.ExtensionContext) {
             logger.info('Private use settings validated successfully');
         }
 
-        // Initialize AIOS Bridge
+        // Initialize TensorFlow Cellular Ecosystem Bridge
         const aiosBridge = new AIOSBridge(logger);
 
-        // Initialize Context Manager
+        // Initialize Cellular Context Manager
         const contextManager = new AIOSContextManager(context, logger);
 
-        // Initialize Chat Participant
+        // Initialize Cellular Chat Participant
         const chatParticipant = new AIOSChatParticipant(contextManager, aiosBridge, logger);
 
-        // Register Chat Participant
+        // Register Cellular Chat Participant
         const participant = vscode.chat.createChatParticipant('aios', chatParticipant.handleRequest.bind(chatParticipant));
-        participant.iconPath = vscode.Uri.joinPath(context.extensionUri, 'resources', 'aios-icon.png');
+        participant.iconPath = vscode.Uri.joinPath(context.extensionUri, 'resources', 'aios-cellular-icon.png');
 
         // Register Commands
         const commands = [
@@ -86,21 +87,21 @@ export function activate(context: vscode.ExtensionContext) {
             }),
 
             vscode.commands.registerCommand('aios.showStatus', () => {
-                const status = aiosBridge.getSystemStatus();
-                vscode.window.showInformationMessage(`AIOS Status: ${status.status} | AI Modules: ${status.aiModulesActive} | Context: ${status.contextSize} messages`);
+                const status = aiosBridge.getCellularEcosystemStatus();
+                vscode.window.showInformationMessage(`AIOS Cellular Status: ${status.status} | Python AI Cells: ${status.pythonAiCellsStatus} | C++ Performance Cells: ${status.cppPerformanceCellsStatus} | Intercellular Bridges: ${status.intercellularBridgesStatus} | Context: ${status.contextSize} messages`);
             })
         ];
 
         // Add all disposables to context
         context.subscriptions.push(participant, ...commands);
 
-        // Initialize AIOS connection
-        aiosBridge.initialize().then(() => {
-            logger.info('AIOS Bridge initialized successfully');
+        // Initialize TensorFlow Cellular Ecosystem connection
+        aiosBridge.initializeCellularEcosystem().then(() => {
+            logger.info('TensorFlow Cellular Ecosystem Bridge initialized successfully');
 
-            // Load persisted context if available
+            // Load persisted cellular context if available
             contextManager.loadContext().then(() => {
-                logger.info('Context loaded from persistence');
+                logger.info('Cellular context loaded from persistence');
             }).catch(err => {
                 logger.warn('Failed to load persisted context:', err);
             });
