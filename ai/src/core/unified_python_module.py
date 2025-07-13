@@ -6,7 +6,9 @@ Generated: 2025-07-10 23:12:14
 
 This module consolidates functionality from:
 # Consolidated imports
-from aios_universal_compressor import (AIOSUniversalCompressor,
+from ai.ainlp_migration.python.compression.aios_universal_compressor import (
+    AIOSUniversalCompressor,
+)
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
