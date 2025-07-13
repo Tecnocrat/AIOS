@@ -227,7 +227,9 @@ class QuantumIntegrationLayer:
         # AINLP.layer [quantum_integration] (comment.AINLP.class)
         try:
             # Quantum Layer: AINLP Engine Integration
-            from core.ainlp_unified_engine import AINLPUnifiedEngine
+            from ai.ainlp_migration.python.core.ainlp_unified_engine import (
+                AINLPUnifiedEngine,
+            )
 
             ainlp = AINLPUnifiedEngine()
             self.universal_context["ainlp_engine"] = {
@@ -251,7 +253,9 @@ class QuantumIntegrationLayer:
         # AINLP.layer [holographic_integration] (comment.AINLP.class)
         try:
             # Holographic Layer: Universal Compression Service
-            from compression.aios_universal_compressor import AIOSUniversalCompressor
+            from ai.ainlp_migration.python.compression.aios_universal_compressor import (
+                AIOSUniversalCompressor,
+            )
 
             compressor = AIOSUniversalCompressor()
             self.universal_context["compression_service"] = {

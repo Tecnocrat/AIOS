@@ -10,28 +10,36 @@ Import this single module to access all compressed features.
 
 # Import all unified modules
 try:
-    from compression.aios_universal_compressor import AIOSUniversalCompressor
+    from ai.ainlp_migration.python.compression.aios_universal_compressor import (
+        AIOSUniversalCompressor,
+    )
+
     print("✅ AIOS Universal Compressor loaded")
 except ImportError:
     print("⚠️  AIOS Universal Compressor not available")
     AIOSUniversalCompressor = None
 
 try:
-    from core.ainlp_unified_engine import AINLPUnifiedEngine
+    from ai.ainlp_migration.python.core.ainlp_unified_engine import AINLPUnifiedEngine
+
     print("✅ AINLP Unified Engine loaded")
 except ImportError:
     print("⚠️  AINLP Unified Engine not available")
     AINLPUnifiedEngine = None
 
 try:
-    from optimization.aios_optimization_suite import AIOSOptimizationSuite
+    from ai.ainlp_migration.python.optimization.aios_optimization_suite import (
+        AIOSOptimizationSuite,
+    )
+
     print("✅ AIOS Optimization Suite loaded")
 except ImportError:
     print("⚠️  AIOS Optimization Suite not available")
     AIOSOptimizationSuite = None
 
 try:
-    from system.aios_system_manager import AIOSSystemManager
+    from ai.ainlp_migration.python.system.aios_system_manager import AIOSSystemManager
+
     print("✅ AIOS System Manager loaded")
 except ImportError:
     print("⚠️  AIOS System Manager not available")
@@ -42,9 +50,13 @@ class AIOSMaster:
     """Master controller for all AIOS functionality"""
 
     def __init__(self):
-        self.compression_service = AIOSUniversalCompressor() if AIOSUniversalCompressor else None
+        self.compression_service = (
+            AIOSUniversalCompressor() if AIOSUniversalCompressor else None
+        )
         self.ainlp_engine = AINLPUnifiedEngine() if AINLPUnifiedEngine else None
-        self.optimization_suite = AIOSOptimizationSuite() if AIOSOptimizationSuite else None
+        self.optimization_suite = (
+            AIOSOptimizationSuite() if AIOSOptimizationSuite else None
+        )
         self.system_manager = AIOSSystemManager() if AIOSSystemManager else None
 
         print("🚀 AIOS Master initialized - Unified access to all modules")
@@ -57,16 +69,20 @@ class AIOSMaster:
 
         # Execute compression service first for optimization
         if self.compression_service:
-            results['compression_status'] = self.compression_service.get_compression_status()
+            results["compression_status"] = (
+                self.compression_service.get_compression_status()
+            )
 
         if self.ainlp_engine:
-            results['ainlp'] = self.ainlp_engine.execute_unified_paradigm()
+            results["ainlp"] = self.ainlp_engine.execute_unified_paradigm()
 
         if self.optimization_suite:
-            results['optimization'] = self.optimization_suite.execute_optimization_suite()
+            results["optimization"] = (
+                self.optimization_suite.execute_optimization_suite()
+            )
 
         if self.system_manager:
-            results['system'] = self.system_manager.execute_system_management()
+            results["system"] = self.system_manager.execute_system_management()
 
         return results
 
@@ -75,12 +91,12 @@ class AIOSMaster:
         if not self.compression_service:
             return {"error": "Compression service not available"}
 
-        from compression.aios_universal_compressor import CompressionRequest
+        from ai.ainlp_migration.python.compression.aios_universal_compressor import (
+            CompressionRequest,
+        )
 
         request = CompressionRequest(
-            source_path=source_path,
-            compression_type=compression_type,
-            **kwargs
+            source_path=source_path, compression_type=compression_type, **kwargs
         )
 
         return self.compression_service.compress(request)
@@ -95,7 +111,7 @@ class AIOSMaster:
             "service": "AIOSUniversalCompressor",
             "types": ["SMART_MERGE", "LOGIC_COMPRESS", "PATTERN_MERGE"],
             "levels": ["MINIMAL", "STANDARD", "AGGRESSIVE", "MAXIMUM"],
-            "strategies": ["UNIFIED_MODULE", "HIERARCHICAL", "FUNCTIONAL"]
+            "strategies": ["UNIFIED_MODULE", "HIERARCHICAL", "FUNCTIONAL"],
         }
 
 
