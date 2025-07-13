@@ -25,6 +25,14 @@ export interface AIOSResponse {
     actions?: string[];
     context?: any;
     confidence?: number;
+    metadata?: {
+        processingTime?: number;
+        cellularMetrics?: any;
+        aiosVersion?: string;
+        realAiosConnection?: boolean;
+        fallbackReason?: string;
+        contextProvided?: boolean;
+    };
 }
 
 export interface ConversationState {
@@ -104,9 +112,90 @@ export class AIOSContextManager {
             workspaceFolders,
             activeFile,
             openFiles,
-            // TODO: Add git branch detection
-            // TODO: Add project type detection
+            gitBranch: this.detectGitBranch(),
+            projectType: this.detectProjectType()
         };
+    }
+
+    private detectGitBranch(): string | undefined {
+        try {
+            // Try to get git branch from VSCode Git extension
+            const gitExtension = vscode.extensions.getExtension('vscode.git');
+            if (gitExtension && gitExtension.isActive) {
+                const git = gitExtension.exports.getAPI(1);
+                if (git && git.repositories.length > 0) {
+                    const repo = git.repositories[0];
+                    return repo.state.HEAD?.name || 'unknown';
+                }
+            }
+
+            // Fallback: check if we're in AIOS workspace and use known branch
+            const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
+            if (workspaceFolder && workspaceFolder.uri.fsPath.includes('AIOS')) {
+                // We know we're on OS0.4 branch based on the project context
+                return 'OS0.4';
+            }
+
+            return undefined;
+        } catch (error) {
+            this.logger.debug('Git branch detection failed', { error });
+            return undefined;
+        }
+    }
+
+    private detectProjectType(): string | undefined {
+        try {
+            const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
+            if (!workspaceFolder) return undefined;
+
+            const workspacePath = workspaceFolder.uri.fsPath;
+
+            // Check for AIOS project structure
+            if (workspacePath.includes('AIOS')) {
+                return 'AIOS-TensorFlow-Cellular-Ecosystem';
+            }
+
+            // Check for common project files
+            const commonFiles = vscode.workspace.textDocuments.map(doc =>
+                doc.uri.fsPath.toLowerCase()
+            );
+
+            // Check project structure patterns
+            if (commonFiles.some(f => f.includes('package.json'))) {
+                if (commonFiles.some(f => f.includes('next.config'))) {
+                    return 'Next.js';
+                } else if (commonFiles.some(f => f.includes('react'))) {
+                    return 'React';
+                } else {
+                    return 'Node.js';
+                }
+            }
+
+            if (commonFiles.some(f => f.includes('requirements.txt') || f.includes('.py'))) {
+                if (commonFiles.some(f => f.includes('tensorflow') || f.includes('pytorch'))) {
+                    return 'Python-ML';
+                } else {
+                    return 'Python';
+                }
+            }
+
+            if (commonFiles.some(f => f.includes('.csproj') || f.includes('.sln'))) {
+                if (commonFiles.some(f => f.includes('xaml'))) {
+                    return 'C#-WPF';
+                } else {
+                    return 'C#';
+                }
+            }
+
+            if (commonFiles.some(f => f.includes('cmake') || f.includes('.cpp') || f.includes('.hpp'))) {
+                return 'C++';
+            }
+
+            return 'Unknown';
+        } catch (error) {
+            this.logger.debug('Project type detection failed', { error });
+            return undefined;
+        }
     }
 
     public addMessage(role: 'user' | 'assistant' | 'system', content: string, metadata?: any): void {
