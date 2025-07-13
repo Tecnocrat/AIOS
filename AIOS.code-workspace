@@ -620,7 +620,7 @@
 				"command": "dotnet",
 				"args": [
 					"build",
-					"interface/AIOS.sln",
+					"AIOS.sln",
 					"--configuration",
 					"Debug"
 				],
@@ -634,6 +634,16 @@
 					"clear": true
 				},
 				"problemMatcher": "$msCompile"
+			},
+			{
+				"label": "🔄 Build All (C++/Python/C#)",
+				"dependsOrder": "sequence",
+				"dependsOn": [
+					"🔧 Build C++ Core (Debug)",
+					"📦 Install Python Dependencies",
+					"🔷 Build C# Projects"
+				],
+				"group": "build"
 			},
 			{
 				"label": "🧬 Build TensorFlow Cellular Integration",
@@ -1066,7 +1076,6 @@
 			"ms-python.flake8",
 			"ms-python.black-formatter",
 			"ms-python.isort",
-			"ms-python.pylint",
 			"ms-toolsai.jupyter",
 			"ms-toolsai.jupyter-keymap",
 			"ms-toolsai.jupyter-renderers",
