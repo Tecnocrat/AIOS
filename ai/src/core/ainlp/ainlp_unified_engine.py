@@ -19,6 +19,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
+from ai.src.core.ainlp.utils import get_logger
+
+logger = get_logger(__name__)
+
 
 class AINLPUnifiedEngine:
     """Unified AINLP Engine with all consolidated functionality"""
@@ -31,11 +35,11 @@ class AINLPUnifiedEngine:
         # Initialize compression service integration
         self.compression_tools = self._initialize_compression_tools()
 
-        print("🚀 AINLP Unified Engine Initialized")
-        print(f"   Workspace: c:\dev\AIOS")
-        print(f"   Mode: UNIFIED_PARADIGM_EXECUTION")
+        logger.info("🚀 AINLP Unified Engine Initialized")
+        logger.info("   Workspace: c:\dev\AIOS")
+        logger.info("   Mode: UNIFIED_PARADIGM_EXECUTION")
         if self.compression_tools:
-            print("   ✅ Compression tools integrated")
+            logger.info("   ✅ Compression tools integrated")
 
     def _initialize_compression_tools(self):
         """Initialize compression tools integration"""
@@ -51,7 +55,7 @@ class AINLPUnifiedEngine:
                 "request_class": CompressionRequest,
             }
         except ImportError:
-            print("   ⚠️  Compression tools not available")
+            logger.warning("   ⚠️  Compression tools not available")
             return None
 
     def execute_unified_paradigm(self) -> Dict[str, Any]:
@@ -64,7 +68,7 @@ class AINLPUnifiedEngine:
             "compression_tools": self._get_compression_tools_status(),
         }
 
-        print("✅ Unified AINLP paradigm execution complete")
+        logger.info("✅ Unified AINLP paradigm execution complete")
         return results
 
     def compress_workspace_files(
@@ -393,27 +397,23 @@ def get_system_status():
 
 def main():
     """Main execution function for unified AINLP engine"""
-    print("AINLP Unified Engine - Consolidated Execution")
-    print("=" * 60)
+    logger.info("AINLP Unified Engine - Consolidated Execution")
+    logger.info("=" * 60)
 
     try:
         engine = AINLPUnifiedEngine()
         results = engine.execute_unified_paradigm()
 
-        print(f"\nUNIFIED EXECUTION COMPLETE")
-        print(f"Paradigm Status: {results['paradigm_execution']['status']}")
-        print(
-            f"Compression Score: {results['compression_analysis']['compression_score']}"
+        logger.info("\nUNIFIED EXECUTION COMPLETE")
+        logger.info(f"Paradigm Status: {results['paradigm_execution']['status']}")
+        logger.info(
+            f"AI Coordination: {results['ai_coordination']['excitation_level']}"
         )
-        print(
-            f"Pattern Efficiency: {results['pattern_processing']['processing_efficiency']}"
-        )
-        print(f"AI Coordination: {results['ai_coordination']['excitation_level']}")
 
         return 0
 
     except Exception as e:
-        print(f"\nUNIFIED EXECUTION FAILED: {e}")
+        logger.error(f"\nUNIFIED EXECUTION FAILED: {e}")
         return 1
 
 

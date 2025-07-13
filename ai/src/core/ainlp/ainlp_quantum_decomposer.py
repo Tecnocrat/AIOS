@@ -7,12 +7,16 @@ AINLP.quantum [line_decomposition] (comment.AINLP.class)
 
 import re
 
+from ai.src.core.ainlp.utils import get_logger
+
+logger = get_logger(__name__)
+
 
 def apply_quantum_line_decomposition(filename):
     """Apply AINLP quantum decomposition to fix E501 violations"""
-    print("🧠 AINLP Quantum Line Decomposition Engine")
-    print("🔧 Applying fractal code patterns for E501 compliance")
-    print("=" * 60)
+    logger.info("🧠 AINLP Quantum Line Decomposition Engine")
+    logger.info("🔧 Applying fractal code patterns for E501 compliance")
+    logger.info("=" * 60)
 
     with open(filename, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -25,7 +29,7 @@ def apply_quantum_line_decomposition(filename):
         original_line = line.rstrip()
 
         if len(original_line) > 79:
-            print(f"📏 Line {i+1}: {len(original_line)} chars -> Decomposing")
+            logger.debug(f"📏 Line {i+1}: {len(original_line)} chars -> Decomposing")
             changes_made += 1
 
             # Apply AINLP quantum decomposition
@@ -38,7 +42,7 @@ def apply_quantum_line_decomposition(filename):
     with open(filename, "w", encoding="utf-8") as f:
         f.writelines(fixed_lines)
 
-    print(f"✅ AINLP Decomposition Complete: {changes_made} lines fixed")
+    logger.info(f"✅ AINLP Decomposition Complete: {changes_made} lines fixed")
     return changes_made
 
 
