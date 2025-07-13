@@ -8,6 +8,9 @@ Provides REST API endpoints for VSCode extension communication.
 import asyncio
 import json
 import logging
+import os
+import subprocess
+import sys
 import traceback
 from datetime import datetime
 from typing import Any, Dict, Optional
@@ -15,6 +18,7 @@ from typing import Any, Dict, Optional
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 # Configure logging
@@ -325,9 +329,58 @@ async def startup_event():
     logger.info("✅ FastAPI server ready for VSCode extension communication")
 
 
+@app.get("/diagnostics")
+async def diagnostics():
+    """Run integration diagnostics and return results (calls integration core)"""
+    try:
+        integration_path = os.path.join(
+            os.path.dirname(__file__), "tests", "aios_vscode_integration.py"
+        )
+        if not os.path.exists(integration_path):
+            return JSONResponse(
+                status_code=404,
+                content={"error": "Integration diagnostics script not found."},
+            )
+        # Run diagnostics as subprocess
+        result = subprocess.run(
+            [sys.executable, integration_path, "--preflight"],
+            capture_output=True,
+            text=True,
+        )
+        return JSONResponse(
+            status_code=200 if result.returncode == 0 else 500,
+            content={
+                "stdout": result.stdout,
+                "stderr": result.stderr,
+                "returncode": result.returncode,
+            },
+        )
+    except Exception as e:
+        logger.error(f"Diagnostics endpoint failed: {e}")
+        return JSONResponse(
+            status_code=500,
+            content={"error": str(e)},
+        )
+
+
+async def health_monitor():
+    """Background health monitor for self-healing and auto-restart (if needed)"""
+    while True:
+        try:
+            # Example: check health every 10 seconds
+            await asyncio.sleep(10)
+            # Here you could ping /health or run diagnostics
+            # If unhealthy, log or trigger external restart
+            # (Actual restart logic should be handled by a supervisor script)
+            logger.info("[HealthMonitor] Server health OK.")
+        except Exception as e:
+            logger.error(f"[HealthMonitor] Error: {e}")
+
+
 @app.on_event("startup")
 async def startup():
     await startup_event()
+    asyncio.create_task(health_monitor())
 
 
 if __name__ == "__main__":

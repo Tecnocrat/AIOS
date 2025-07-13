@@ -41,16 +41,14 @@ class AINLPUnifiedEngine:
         """Initialize compression tools integration"""
         try:
             # Import compression service locally to avoid circular imports
-            import sys
-            compression_path = self.workspace_root / "scripts" / "compression"
-            if str(compression_path) not in sys.path:
-                sys.path.append(str(compression_path))
+            from ai.ainlp_migration.python.compression.aios_universal_compressor import (
+                AIOSUniversalCompressor,
+                CompressionRequest,
+            )
 
-            from aios_universal_compressor import (AIOSUniversalCompressor,
-                                                   CompressionRequest)
             return {
-                'service': AIOSUniversalCompressor(str(self.workspace_root)),
-                'request_class': CompressionRequest
+                "service": AIOSUniversalCompressor(str(self.workspace_root)),
+                "request_class": CompressionRequest,
             }
         except ImportError:
             print("   ⚠️  Compression tools not available")
@@ -59,30 +57,32 @@ class AINLPUnifiedEngine:
     def execute_unified_paradigm(self) -> Dict[str, Any]:
         """Execute unified AINLP paradigm with all capabilities"""
         results = {
-            'paradigm_execution': self._execute_paradigm_engine(),
-            'compression_analysis': self._execute_compression_engine(),
-            'pattern_processing': self._execute_pattern_processing(),
-            'ai_coordination': self._execute_ai_coordination(),
-            'compression_tools': self._get_compression_tools_status()
+            "paradigm_execution": self._execute_paradigm_engine(),
+            "compression_analysis": self._execute_compression_engine(),
+            "pattern_processing": self._execute_pattern_processing(),
+            "ai_coordination": self._execute_ai_coordination(),
+            "compression_tools": self._get_compression_tools_status(),
         }
 
         print("✅ Unified AINLP paradigm execution complete")
         return results
 
-    def compress_workspace_files(self, target_patterns=None, compression_type="SMART_MERGE"):
+    def compress_workspace_files(
+        self, target_patterns=None, compression_type="SMART_MERGE"
+    ):
         """Compress workspace files using integrated compression tools"""
         if not self.compression_tools:
             return {"error": "Compression tools not available"}
 
         try:
-            request = self.compression_tools['request_class'](
+            request = self.compression_tools["request_class"](
                 source_path=str(self.scripts_path),
                 compression_type=compression_type,
-                file_patterns=target_patterns or ['*.py'],
-                create_backup=True
+                file_patterns=target_patterns or ["*.py"],
+                create_backup=True,
             )
 
-            result = self.compression_tools['service'].compress(request)
+            result = self.compression_tools["service"].compress(request)
             return {
                 "success": result.success,
                 "compression_ratio": result.compression_ratio,
@@ -91,7 +91,7 @@ class AINLPUnifiedEngine:
                 "lines_saved": result.lines_saved,
                 "unified_modules": result.unified_modules,
                 "execution_time": result.execution_time,
-                "error": result.error_message if not result.success else None
+                "error": result.error_message if not result.success else None,
             }
         except Exception as e:
             return {"error": f"Compression failed: {str(e)}"}
@@ -102,11 +102,11 @@ class AINLPUnifiedEngine:
             return {"available": False, "message": "Compression tools not integrated"}
 
         try:
-            status = self.compression_tools['service'].get_compression_status()
+            status = self.compression_tools["service"].get_compression_status()
             return {
                 "available": True,
-                "active_compressions": status.get('active_compressions', []),
-                "stats": status.get('stats', {})
+                "active_compressions": status.get("active_compressions", []),
+                "stats": status.get("stats", {}),
             }
         except Exception as e:
             return {"available": False, "error": str(e)}
@@ -114,227 +114,282 @@ class AINLPUnifiedEngine:
     def _execute_paradigm_engine(self) -> Dict[str, Any]:
         """Execute paradigm engine functionality"""
         return {
-            'status': 'EXECUTED',
-            'ai_excitation_patterns': ['coordination', 'optimization', 'evolution'],
-            'architecture_abstractions': ['CoordinationEngine', 'PatternEncoder', 'TaskOrchestrator']
+            "status": "EXECUTED",
+            "ai_excitation_patterns": ["coordination", "optimization", "evolution"],
+            "architecture_abstractions": [
+                "CoordinationEngine",
+                "PatternEncoder",
+                "TaskOrchestrator",
+            ],
         }
 
     def _execute_compression_engine(self) -> Dict[str, Any]:
         """Execute compression engine functionality"""
         return {
-            'status': 'EXECUTED',
-            'compression_score': 0.85,
-            'merge_opportunities': 'UNIFIED_ARCHITECTURE',
-            'optimization_level': 'MAXIMUM'
+            "status": "EXECUTED",
+            "compression_score": 0.85,
+            "merge_opportunities": "UNIFIED_ARCHITECTURE",
+            "optimization_level": "MAXIMUM",
         }
 
     def _execute_pattern_processing(self) -> Dict[str, Any]:
         """Execute pattern processing functionality"""
         return {
-            'status': 'EXECUTED',
-            'patterns_detected': ['AINLP_COORDINATION', 'AI_EXCITATION', 'PARADIGM_EVOLUTION'],
-            'processing_efficiency': 0.92
+            "status": "EXECUTED",
+            "patterns_detected": [
+                "AINLP_COORDINATION",
+                "AI_EXCITATION",
+                "PARADIGM_EVOLUTION",
+            ],
+            "processing_efficiency": 0.92,
         }
 
     def _execute_ai_coordination(self) -> Dict[str, Any]:
         """Execute AI coordination functionality"""
         return {
-            'status': 'EXECUTED',
-            'coordination_engines': ['PRIMARY', 'SECONDARY', 'EVOLUTION'],
-            'excitation_level': 0.95
+            "status": "EXECUTED",
+            "coordination_engines": ["PRIMARY", "SECONDARY", "EVOLUTION"],
+            "excitation_level": 0.95,
         }
+
 
 # === Merged from ainlp_compressor_engine.py ===
 
+
 class AINLPCompressorEngine:
     """Unified"""
+
     def __init__(self):
         pass
 
     def execute_compressor_command(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'execute_compressor_command'}
+        return {"status": "EXECUTED", "method": "execute_compressor_command"}
+
 
 def main():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'main'}
+    return {"status": "EXECUTED", "function": "main"}
+
 
 def execute_compressor_command():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'execute_compressor_command'}
+    return {"status": "EXECUTED", "function": "execute_compressor_command"}
+
 
 # === Merged from ainlp_enhanced_compressor.py ===
 
+
 class AINLPEnhancedCompressor:
     """Unified"""
+
     def __init__(self):
         pass
 
     def execute_enhanced_compressor(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'execute_enhanced_compressor'}
+        return {"status": "EXECUTED", "method": "execute_enhanced_compressor"}
+
 
 def main():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'main'}
+    return {"status": "EXECUTED", "function": "main"}
+
 
 def execute_enhanced_compressor():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'execute_enhanced_compressor'}
+    return {"status": "EXECUTED", "function": "execute_enhanced_compressor"}
+
 
 # === Merged from ainlp_paradigm_engine.py ===
 
+
 class AINLPParadigmEngine:
     """Unified"""
+
     def __init__(self):
         pass
 
     def execute_ainlp_paradigm(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'execute_ainlp_paradigm'}
+        return {"status": "EXECUTED", "method": "execute_ainlp_paradigm"}
+
 
 def main():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'main'}
+    return {"status": "EXECUTED", "function": "main"}
+
 
 def execute_ainlp_paradigm():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'execute_ainlp_paradigm'}
+    return {"status": "EXECUTED", "function": "execute_ainlp_paradigm"}
+
 
 # === Merged from ainlp_paradigm_executable_20250710_223651.py ===
 
+
 class AINLPParadigmExecutor:
     """Unified"""
+
     def __init__(self):
         pass
 
     def execute_coordination_paradigm(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'execute_coordination_paradigm'}
+        return {"status": "EXECUTED", "method": "execute_coordination_paradigm"}
 
     def initialize_ai_coordination(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'initialize_ai_coordination'}
+        return {"status": "EXECUTED", "method": "initialize_ai_coordination"}
 
     def execute_coordinated_operations(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'execute_coordinated_operations'}
+        return {"status": "EXECUTED", "method": "execute_coordinated_operations"}
 
     def optimize_paradigm_execution(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'optimize_paradigm_execution'}
+        return {"status": "EXECUTED", "method": "optimize_paradigm_execution"}
+
 
 def coordinate_ai_engines():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'coordinate_ai_engines'}
+    return {"status": "EXECUTED", "function": "coordinate_ai_engines"}
+
 
 def optimize_ai_excitation():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'optimize_ai_excitation'}
+    return {"status": "EXECUTED", "function": "optimize_ai_excitation"}
+
 
 def evolve_coordination_paradigm():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'evolve_coordination_paradigm'}
+    return {"status": "EXECUTED", "function": "evolve_coordination_paradigm"}
+
 
 def execute_coordination_paradigm():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'execute_coordination_paradigm'}
+    return {"status": "EXECUTED", "function": "execute_coordination_paradigm"}
+
 
 def initialize_ai_coordination():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'initialize_ai_coordination'}
+    return {"status": "EXECUTED", "function": "initialize_ai_coordination"}
+
 
 def execute_coordinated_operations():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'execute_coordinated_operations'}
+    return {"status": "EXECUTED", "function": "execute_coordinated_operations"}
+
 
 def optimize_paradigm_execution():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'optimize_paradigm_execution'}
+    return {"status": "EXECUTED", "function": "optimize_paradigm_execution"}
+
 
 # === Merged from ainlp_simple_compressor.py ===
 
+
 class AINLPEnhancedCompressor:
     """Unified"""
+
     def __init__(self):
         pass
 
     def execute_enhanced_compressor(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'execute_enhanced_compressor'}
+        return {"status": "EXECUTED", "method": "execute_enhanced_compressor"}
+
 
 def main():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'main'}
+    return {"status": "EXECUTED", "function": "main"}
+
 
 def execute_enhanced_compressor():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'execute_enhanced_compressor'}
+    return {"status": "EXECUTED", "function": "execute_enhanced_compressor"}
+
 
 # === Merged from ainlp_test_command_field.py ===
 
+
 class AIOSIngestProcessor:
     """Unified"""
+
     def __init__(self):
         pass
 
     def ingest_new_file(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'ingest_new_file'}
+        return {"status": "EXECUTED", "method": "ingest_new_file"}
+
 
 def main():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'main'}
+    return {"status": "EXECUTED", "function": "main"}
+
 
 def ingest_new_file():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'ingest_new_file'}
+    return {"status": "EXECUTED", "function": "ingest_new_file"}
+
 
 # === Merged from ainlp_ultimate_compressor.py ===
 
+
 class AINLPUltimateCompressor:
     """Unified"""
+
     def __init__(self):
         pass
 
     def execute_ultimate_compression(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'execute_ultimate_compression'}
+        return {"status": "EXECUTED", "method": "execute_ultimate_compression"}
+
 
 def main():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'main'}
+    return {"status": "EXECUTED", "function": "main"}
+
 
 def execute_ultimate_compression():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'execute_ultimate_compression'}
+    return {"status": "EXECUTED", "function": "execute_ultimate_compression"}
+
 
 # === Merged from test_ainlp_refresh_context.py ===
 
+
 class UniversalQuantumHolographicSimulator:
     """Unified"""
+
     def __init__(self):
         pass
 
     def process_ainlp_refresh_context(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'process_ainlp_refresh_context'}
+        return {"status": "EXECUTED", "method": "process_ainlp_refresh_context"}
 
     def get_system_status(self):
         """Extracted method"""
-        return {'status': 'EXECUTED', 'method': 'get_system_status'}
+        return {"status": "EXECUTED", "method": "get_system_status"}
+
 
 def main():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'main'}
+    return {"status": "EXECUTED", "function": "main"}
+
 
 def process_ainlp_refresh_context():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'process_ainlp_refresh_context'}
+    return {"status": "EXECUTED", "function": "process_ainlp_refresh_context"}
+
 
 def get_system_status():
     """Unified function"""
-    return {'status': 'EXECUTED', 'function': 'get_system_status'}
+    return {"status": "EXECUTED", "function": "get_system_status"}
+
 
 def main():
     """Main execution function for unified AINLP engine"""
@@ -347,8 +402,12 @@ def main():
 
         print(f"\nUNIFIED EXECUTION COMPLETE")
         print(f"Paradigm Status: {results['paradigm_execution']['status']}")
-        print(f"Compression Score: {results['compression_analysis']['compression_score']}")
-        print(f"Pattern Efficiency: {results['pattern_processing']['processing_efficiency']}")
+        print(
+            f"Compression Score: {results['compression_analysis']['compression_score']}"
+        )
+        print(
+            f"Pattern Efficiency: {results['pattern_processing']['processing_efficiency']}"
+        )
         print(f"AI Coordination: {results['ai_coordination']['excitation_level']}")
 
         return 0
@@ -356,6 +415,7 @@ def main():
     except Exception as e:
         print(f"\nUNIFIED EXECUTION FAILED: {e}")
         return 1
+
 
 if __name__ == "__main__":
     sys.exit(main())
