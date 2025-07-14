@@ -246,7 +246,8 @@ async def process_message(request: AIOSRequest):
     except Exception as e:
         logger.error("Message processing failed: %s", e)
         logger.error("Traceback: %s", traceback.format_exc())
-        raise HTTPException(status_code=500, detail=f"AIOS processing failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"AIOS processing failed:\
+{str(e)}")
 
 
 async def generate_aios_response(message: str, context: Dict[str, Any]) -> str:
@@ -284,7 +285,8 @@ apply these patterns to your project. What architectural aspect interests you?"
 
     # Context/Memory responses
     if any(
-        word in message_lower for word in ["context", "memory", "history", "remember"]
+        word in message_lower for word in ["context", "memory", "history",\
+"remember"]
     ):
         return f"AIOS Context Manager maintains conversation continuity across\
 VSCode sessions. Your workspace context is preserved, including project\
@@ -304,7 +306,8 @@ implement cellular patterns for maximum efficiency. What performance aspect\
 should we optimize?"
 
     # Help/General responses
-    if any(word in message_lower for word in ["help", "assist", "support", "guide"]):
+    if any(word in message_lower for word in ["help", "assist", "support",\
+"guide"]):
         return f"I'm AIOS - your AI Operating System assistant. I integrate\
 C++, Python, and C# capabilities with context-aware intelligence. I can help\
 with code analysis, generation, architecture design, performance optimization,\
@@ -325,20 +328,25 @@ def generate_suggested_actions(message: str) -> list:
     actions = []
 
     if any(word in message_lower for word in ["analyze", "code", "review"]):
-        actions.extend(["analyze-code", "suggest-improvements", "review-architecture"])
+        actions.extend(["analyze-code", "suggest-improvements",\
+"review-architecture"])
 
-    if any(word in message_lower for word in ["optimize", "performance", "speed"]):
+    if any(word in message_lower for word in ["optimize", "performance",\
+"speed"]):
         actions.extend(
             ["performance-analysis", "optimize-code", "cellular-enhancement"]
         )
 
     if any(word in message_lower for word in ["help", "guide", "tutorial"]):
-        actions.extend(["show-documentation", "provide-examples", "guided-tutorial"])
+        actions.extend(["show-documentation", "provide-examples",\
+"guided-tutorial"])
 
     if any(word in message_lower for word in ["error", "debug", "problem"]):
-        actions.extend(["debug-analysis", "error-resolution", "diagnostic-tools"])
+        actions.extend(["debug-analysis", "error-resolution",\
+"diagnostic-tools"])
 
-    if any(word in message_lower for word in ["aios", "architecture", "cellular"]):
+    if any(word in message_lower for word in ["aios", "architecture",\
+"cellular"]):
         actions.extend(
             ["explain-architecture", "cellular-workflow", "integration-guide"]
         )
@@ -418,4 +426,5 @@ async def startup():
 if __name__ == "__main__":
     # Run the server
     logger.info("Starting AIOS VSCode Integration Server...")
-    uvicorn.run(app, host="localhost", port=8080, log_level="info", reload=False)
+    uvicorn.run(app, host="localhost", port=8080, log_level="info",\
+reload=False)
