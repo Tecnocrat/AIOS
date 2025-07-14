@@ -1,4 +1,93 @@
+# AINLP FOR AIOS DEVELOPMENT
 
+## HEAD
+file.sys.path = ./dev/AIOS/docs/AINLP/AINLP_HUMAN.md
+
+---
+
+# AINLP CODE SNIPPETS
+
+## Combined AINLP.loader/mind Pattern
+
+```python
+# AINLP.loader [latent:<feature_or_import>] (auto.AINLP.class)
+#   Original code (F401: '<imported but unused>'):
+#   import <module>
+#   Reason: Reserved for future <purpose>.
+#   AINLP.mind: Consider if/when <feature> is needed for <expansion/logic>.
+```
+
+## Solitary AINLP.loader Pattern
+
+```python
+# AINLP.loader [latent:<feature_or_import>] (auto.AINLP.class)
+#   Original code (F401: '<imported but unused>'):
+#   import <module>
+#   Reason: Reserved for future <purpose>.
+```
+
+## Solitary AINLP.mind Pattern
+
+```python
+# AINLP.mind: <Intent, reasoning, or future use for latent code>
+```
+
+---
+
+## PROTOTYPES
+
+### FLAGS
+Auto = Automated behaviour.
+OP ITER = AI chooses when to execute. Related to loss of context.
+AI COMM = AI command and control. System-wide OS context. Context allocation,
+prioritization. Harmonization of AIOS consciousness activation systems.
+AIOS = AI Operating System. AIOS is the synthetic kernel of the
+abstract allocation of subspace topography for consciousness emergence.
+EXEC = AI Admin privileges for build, exec, and total runtime management.
+EXIT = AI exit with clean logging and intelligent knowledge base update.
+
+### MIND (AINLP.mind)
+@AINLP.mind [AINLP.natural_language_command] (auto.AINLP.class)
+AI COMM [deep learning AINLP class] (auto.AINLP.class)
+EXEC [Ingest user command. AI context allocation]
+EXEC [Memory harmonization and recursive analysis of full codebase]
+EXEC [AIOS consciousness activation. Refactoring and optimization]
+EXEC [ANALYZE YOUR RESULTS. EXECUTE. TEST. LOG. REPEAT.]
+EXIT [Update knowledge base (AINLP baselayer paradigm)]
+
+#### Usage Pattern:
+- Use @AINLP.mind to document the intent, reasoning, or future use of latent code.
+- Example: Why a variable, import, or function is reserved for future expansion.
+
+### LOADER (AINLP.loader)
+@AINLP.loader [latent:feature_or_import] (auto.AINLP.class)
+  Original code (F401: 'imported but unused'):
+    import <module>
+  Reason: <Why this code is reserved/latent>
+  AINLP.mind: <When/how to reactivate or expand>
+
+#### Usage Pattern:
+- Use @AINLP.loader to preserve context for removed or latent code.
+- Always pair with @AINLP.mind for reasoning and future intent.
+
+---
+
+## COMMAND TO CREATE: AINLP.loader/mind Pattern for Latent Code
+
+When refactoring, removing, or commenting out code that may be needed in the future, use the following pattern:
+
+1. Replace the removed code with an AINLP.loader comment block.
+2. Document the original code, the reason for reservation, and the future intent using AINLP.mind.
+
+**Template:**
+
+(See AINLP CODE SNIPPETS section above)
+
+**Example:**
+
+(See AINLP CODE SNIPPETS section above)
+
+---
 
 # AINLP FOR AIOS DEVELOPMENT
 
@@ -9,15 +98,15 @@ file.sys.path = ./dev/AIOS/docs/AINLP/AINLP_HUMAN.md
 
 ### FLAGS
 Auto = Automated behaviour.
-OP ITER = AI choose when to execute. Related to loss of context.
-AI COMM = AI command and control. System wide OS context. Context allocation
+OP ITER = AI chooses when to execute. Related to loss of context.
+AI COMM = AI command and control. System-wide OS context. Context allocation,
 prioritization. Harmonization of AIOS consciousness activation systems.
 AIOS = AI Operating System. AIOS is the synthetic kernel of the
 abstract allocation of subspace topography for consciousness emergence.
-EXEC = AI Admin privileges for build, exec and total runtime Management.
+EXEC = AI Admin privileges for build, exec, and total runtime management.
 EXIT = AI exit with clean logging and intelligent knowledge base update.
 
-### MIND
+### MIND (AINLP.mind)
 @AINLP.mind [AINLP.natural_language_command] (auto.AINLP.class)
 AI COMM [deep learning AINLP class] (auto.AINLP.class)
 EXEC [Ingest user command. AI context allocation]
@@ -26,43 +115,143 @@ EXEC [AIOS consciousness activation. Refactoring and optimization]
 EXEC [ANALYZE YOUR RESULTS. EXECUTE. TEST. LOG. REPEAT.]
 EXIT [Update knowledge base (AINLP baselayer paradigm)]
 
-### LOADER
-@AINLP.loader [file to load] (auto.AINLP.class)
-OP ITER (core.AINLP) [Recent changes made the code relevant?]
-EXEC [Uncomment the code]
-EXEC [Refactor the file]
-EXIT: Update knowledge base (AINLP baselayer paradigm)
+#### Usage Pattern:
+- Use @AINLP.mind to document the intent, reasoning, or future use of latent code.
+- Example: Why a variable, import, or function is reserved for future expansion.
 
-### @AIOS Refactor Harmonize (ATTACHED FILES) - ✅ TESTED JULY 10, 2025
-@AIOS /refactor.harmonize (attached_files.AIOS.class)
-OP ITER (Operation Iteration) [Analyze, Compare, Update, Optimize]
-EXIT: Harmonize attached files with current AIOS baselayer (minimal changes, reuse logic)
+### LOADER (AINLP.loader)
+@AINLP.loader [latent:feature_or_import] (auto.AINLP.class)
+  Original code (F401: 'imported but unused'):
+    import <module>
+  Reason: <Why this code is reserved/latent>
+  AINLP.mind: <When/how to reactivate or expand>
 
-### @AIOS Refactor Compressor (MERGE OPTIMIZATION) - 🆕 NEW JULY 10, 2025
-@AIOS /refactor.compressor (merge_optimization.AIOS.class)
-OP ITER (Operation Iteration) [Analyze, Map_Dependencies, Merge_Logic, Refactor_Affected]
-EXIT: Compressed codebase with merged files and updated dependency paths (fewer files, optimized logic)
+#### Usage Pattern:
+- Use @AINLP.loader to preserve context for removed or latent code.
+- Always pair with @AINLP.mind for reasoning and future intent.
 
-**🎯 COMPRESSOR OBJECTIVES:**
-- **Analyze attached files** for similar logic patterns and merge opportunities
-- **Map dependency chains** across entire codebase to identify affected imports/calls
-- **Create merge strategy** with consolidated logic and optimized file structure
-- **Generate refactor path** for all files affected by the merge operations
-- **Preserve functionality** while achieving maximum code compression and optimization
+---
 
-**📋 COMPRESSOR METHODOLOGY:**
-```
-Phase 1: ANALYZE - Logic pattern detection and similarity scoring
-Phase 2: MAP_DEPENDENCIES - Codebase-wide dependency mapping and impact analysis
-Phase 3: MERGE_LOGIC - File consolidation strategy with optimized logic flow
-Phase 4: REFACTOR_AFFECTED - Update all dependent files with new import/call paths
+## AINLP.loader/mind Python Code Snippet
+
+```python
+# AINLP.loader [latent:<feature_or_import>] (auto.AINLP.class)
+#   Original code (F401: '<imported but unused>'):
+#   import <module>
+#   Reason: Reserved for future <purpose>.
+#   AINLP.mind: Consider if/when <feature> is needed for <expansion/logic>.
 ```
 
-**🔄 COMPRESSOR PATTERNS:**
-- **Logic Deduplication**: Identify and merge duplicate/similar functionality
-- **Dependency Consolidation**: Optimize import chains and reduce coupling
-- **File Hierarchy Optimization**: Restructure for better organization and performance
-- **Interface Preservation**: Maintain public APIs while compressing implementation
+---
+
+## COMMAND TO CREATE: AINLP.loader/mind Pattern for Latent Code
+
+When refactoring, removing, or commenting out code that may be needed in the future, use the following pattern:
+
+1. Replace the removed code with an AINLP.loader comment block.
+2. Document the original code, the reason for reservation, and the future intent using AINLP.mind.
+
+**Template:**
+```python
+# AINLP.loader [latent:<feature_or_import>] (auto.AINLP.class)
+#   Original code (F401: '<imported but unused>'):
+#   import <module>
+#   Reason: Reserved for future <purpose>.
+#   AINLP.mind: Consider if/when <feature> is needed for <expansion/logic>.
+```
+
+**Example:**
+```python
+# AINLP.loader [latent:json_handling] (auto.AINLP.class)
+#   Original code (F401: 'json' imported but unused):
+#   import json
+#   Reason: Reserved for future serialization/deserialization, context expansion.
+#   AINLP.mind: Consider if/when JSON integration is needed for API or logging.
+```
+
+---
+
+# AINLP FOR AIOS DEVELOPMENT
+
+## HEAD
+file.sys.path = ./dev/AIOS/docs/AINLP/AINLP_HUMAN.md
+
+## PROTOTYPES
+
+### FLAGS
+Auto = Automated behaviour.
+OP ITER = AI chooses when to execute. Related to loss of context.
+AI COMM = AI command and control. System-wide OS context. Context allocation,
+prioritization. Harmonization of AIOS consciousness activation systems.
+AIOS = AI Operating System. AIOS is the synthetic kernel of the
+abstract allocation of subspace topography for consciousness emergence.
+EXEC = AI Admin privileges for build, exec, and total runtime management.
+EXIT = AI exit with clean logging and intelligent knowledge base update.
+
+### MIND (AINLP.mind)
+@AINLP.mind [AINLP.natural_language_command] (auto.AINLP.class)
+AI COMM [deep learning AINLP class] (auto.AINLP.class)
+EXEC [Ingest user command. AI context allocation]
+EXEC [Memory harmonization and recursive analysis of full codebase]
+EXEC [AIOS consciousness activation. Refactoring and optimization]
+EXEC [ANALYZE YOUR RESULTS. EXECUTE. TEST. LOG. REPEAT.]
+EXIT [Update knowledge base (AINLP baselayer paradigm)]
+
+#### Usage Pattern:
+- Use @AINLP.mind to document the intent, reasoning, or future use of latent code.
+- Example: Why a variable, import, or function is reserved for future expansion.
+
+### LOADER (AINLP.loader)
+@AINLP.loader [latent:feature_or_import] (auto.AINLP.class)
+  Original code (F401: 'imported but unused'):
+    import <module>
+  Reason: <Why this code is reserved/latent>
+  AINLP.mind: <When/how to reactivate or expand>
+
+#### Usage Pattern:
+- Use @AINLP.loader to preserve context for removed or latent code.
+- Always pair with @AINLP.mind for reasoning and future intent.
+
+---
+
+## AINLP.loader/mind Python Code Snippet
+
+```python
+# AINLP.loader [latent:<feature_or_import>] (auto.AINLP.class)
+#   Original code (F401: '<imported but unused>'):
+#   import <module>
+#   Reason: Reserved for future <purpose>.
+#   AINLP.mind: Consider if/when <feature> is needed for <expansion/logic>.
+```
+
+---
+
+## COMMAND TO CREATE: AINLP.loader/mind Pattern for Latent Code
+
+When refactoring, removing, or commenting out code that may be needed in the future, use the following pattern:
+
+1. Replace the removed code with an AINLP.loader comment block.
+2. Document the original code, the reason for reservation, and the future intent using AINLP.mind.
+
+**Template:**
+```python
+# AINLP.loader [latent:<feature_or_import>] (auto.AINLP.class)
+#   Original code (F401: '<imported but unused>'):
+#   import <module>
+#   Reason: Reserved for future <purpose>.
+#   AINLP.mind: Consider if/when <feature> is needed for <expansion/logic>.
+```
+
+**Example:**
+```python
+# AINLP.loader [latent:json_handling] (auto.AINLP.class)
+#   Original code (F401: 'json' imported but unused):
+#   import json
+#   Reason: Reserved for future serialization/deserialization, context expansion.
+#   AINLP.mind: Consider if/when JSON integration is needed for API or logging.
+```
+
+---
 
 ## Code snippets:
 ### @AIOS Refresh Context (MEMORY)
@@ -393,8 +582,6 @@ merge_opportunities: {
 4. **Validation Framework**: Comprehensive testing and validation framework is ready for future changes
 
 **Status**: ✅ AINLP Compressor execution successful - codebase validated as optimally structured
-
-**Result**: The `/refactor.compressor` command demonstrates that the AIOS script collection is already well-optimized with distinct, focused responsibilities per file. No compression needed - architectural excellence confirmed.
 
 **Ready for testing with script file attachments to demonstrate merge analysis and optimization path generation.**
 
