@@ -146,7 +146,11 @@ async def bridge_test(request: BridgeTestRequest):
         }
     except Exception as e:
         logger.error(f"Bridge test failed: {e}")
-        raise HTTPException(status_code=500, detail=f"Bridge test failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Bridge test failed:\
+{str(e)}",
+        )
 
 
 @app.post("/test/performance")
@@ -189,7 +193,8 @@ async def process_message(request: AIOSRequest):
     try:
         start_time = datetime.now()
         logger.info(
-            f"Processing message from VSCode extension: {request.message[:100]}..."
+            f"Processing message from VSCode extension:\
+{request.message[:100]}..."
         )
 
         # Extract context
@@ -219,7 +224,10 @@ async def process_message(request: AIOSRequest):
             "intercellular_bridges": "operational",
         }
 
-        logger.info(f"✅ Message processed successfully in {processing_time:.2f}ms")
+        logger.info(
+            f"✅ Message processed successfully in\
+{processing_time:.2f}ms"
+        )
 
         return AIOSResponse(
             response_text=response_text,
@@ -236,8 +244,8 @@ async def process_message(request: AIOSRequest):
         )
 
     except Exception as e:
-        logger.error(f"Message processing failed: {e}")
-        logger.error(f"Traceback: {traceback.format_exc()}")
+        logger.error("Message processing failed: %s", e)
+        logger.error("Traceback: %s", traceback.format_exc())
         raise HTTPException(status_code=500, detail=f"AIOS processing failed: {str(e)}")
 
 
@@ -249,41 +257,65 @@ async def generate_aios_response(message: str, context: Dict[str, Any]) -> str:
 
     # AIOS-specific responses
     if "aios" in message_lower:
-        return f"AIOS TensorFlow Cellular Ecosystem is fully operational. I can assist you with multi-language development, cellular architecture optimization, and intelligent code generation. What specific aspect of AIOS would you like to explore?"
+        return f"AIOS TensorFlow Cellular Ecosystem is fully operational. I\
+can assist you with multi-language development, cellular architecture\
+optimization, and intelligent code generation. What specific aspect of AIOS\
+would you like to explore?"
 
     # VSCode/Development responses
     if any(
         word in message_lower
         for word in ["code", "development", "programming", "function"]
     ):
-        return f"I'm analyzing your {workspace} workspace with AIOS's multi-language AI coordination. I can provide insights from C++, Python, and C# perspectives, suggest optimizations, and help with code generation. What specific development task can I assist with?"
+        return f"I'm analyzing your {workspace} workspace with AIOS's\
+multi-language AI coordination. I can provide insights from C++, Python, and\
+C# perspectives, suggest optimizations, and help with code generation. What\
+specific development task can I assist with?"
 
     # Architecture/System responses
     if any(
         word in message_lower
         for word in ["architecture", "system", "design", "pattern"]
     ):
-        return f"AIOS uses a revolutionary cellular architecture with Python AI training cells, C++ performance cells, and intercellular communication bridges. I can help you understand this architecture, suggest improvements, or apply these patterns to your project. What architectural aspect interests you?"
+        return f"AIOS uses a revolutionary cellular architecture with Python\
+AI training cells, C++ performance cells, and intercellular communication\
+bridges. I can help you understand this architecture, suggest improvements, or\
+apply these patterns to your project. What architectural aspect interests you?"
 
     # Context/Memory responses
     if any(
         word in message_lower for word in ["context", "memory", "history", "remember"]
     ):
-        return f"AIOS Context Manager maintains conversation continuity across VSCode sessions. Your workspace context is preserved, including project structure, git status, and development patterns. I remember our previous interactions and can build upon them. What would you like me to recall or explain?"
+        return f"AIOS Context Manager maintains conversation continuity across\
+VSCode sessions. Your workspace context is preserved, including project\
+structure, git status, and development patterns. I remember our previous\
+interactions and can build upon them. What would you like me to recall or\
+explain?"
 
     # Performance responses
     if any(
         word in message_lower
         for word in ["performance", "optimization", "speed", "fast"]
     ):
-        return f"AIOS achieves sub-millisecond inference through its cellular architecture, with C++ performance cells delivering >1000 inferences/sec. I can analyze your code for performance bottlenecks, suggest optimizations, and implement cellular patterns for maximum efficiency. What performance aspect should we optimize?"
+        return f"AIOS achieves sub-millisecond inference through its cellular\
+architecture, with C++ performance cells delivering >1000 inferences/sec. I\
+can analyze your code for performance bottlenecks, suggest optimizations, and\
+implement cellular patterns for maximum efficiency. What performance aspect\
+should we optimize?"
 
     # Help/General responses
     if any(word in message_lower for word in ["help", "assist", "support", "guide"]):
-        return f"I'm AIOS - your AI Operating System assistant. I integrate C++, Python, and C# capabilities with context-aware intelligence. I can help with code analysis, generation, architecture design, performance optimization, and maintaining development continuity. What would you like to accomplish?"
+        return f"I'm AIOS - your AI Operating System assistant. I integrate\
+C++, Python, and C# capabilities with context-aware intelligence. I can help\
+with code analysis, generation, architecture design, performance optimization,\
+and maintaining development continuity. What would you like to accomplish?"
 
     # Default intelligent response
-    return f"I understand you're asking about: '{message}'. As AIOS, I can provide multi-language analysis, intelligent code suggestions, and context-aware assistance. Based on your {workspace} workspace, I can help with development tasks, architectural decisions, and optimization strategies. Could you provide more specific details about what you'd like to achieve?"
+    return f"I understand you're asking about: '{message}'. As AIOS, I can\
+provide multi-language analysis, intelligent code suggestions, and\
+context-aware assistance. Based on your {workspace} workspace, I can help with\
+development tasks, architectural decisions, and optimization strategies. Could\
+you provide more specific details about what you'd like to achieve?"
 
 
 def generate_suggested_actions(message: str) -> list:
