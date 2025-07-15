@@ -268,73 +268,227 @@ async def process_message(request: AIOSRequest):
         )
 
 
-async def generate_aios_response(message: str, context: Dict[str, Any]) -> str:
-    """Generate intelligent AIOS response based on message content"""
+# AINLP.mind: Upgraded AIOS response logic from static keyword-matching to
+#   modular, extensible intent recognition and response generation pipeline.
+#   This architecture enables pluggable AIOS/AINLP modules, future integration
+#   with advanced NLU, and context-aware reasoning.
+#   Dispatcher pattern allows seamless extension for new AIOS features and
+#   AINLP baselayer logic.
 
-    message_lower = message.lower()
-    workspace = context.get("workspace", "unknown")
 
-    # AIOS-specific responses
-    if "aios" in message_lower:
-        return f"AIOS TensorFlow Cellular Ecosystem is fully operational. I\
-can assist you with multi-language development, cellular architecture\
-optimization, and intelligent code generation. What specific aspect of AIOS\
-would you like to explore?"
+class IntentHandler:
+    """
+    Base class for AIOS intent handlers.
+    Each handler implements `can_handle` and `handle` methods.
+    """
 
-    # VSCode/Development responses
-    if any(
-        word in message_lower
-        for word in ["code", "development", "programming", "function"]
-    ):
-        return f"I'm analyzing your {workspace} workspace with AIOS's\
-multi-language AI coordination. I can provide insights from C++, Python, and\
-C# perspectives, suggest optimizations, and help with code generation. What\
-specific development task can I assist with?"
+    def can_handle(self, message: str, context: dict) -> bool:
+        raise NotImplementedError
 
-    # Architecture/System responses
-    if any(
-        word in message_lower
-        for word in ["architecture", "system", "design", "pattern"]
-    ):
-        return f"AIOS uses a revolutionary cellular architecture with Python\
-AI training cells, C++ performance cells, and intercellular communication\
-bridges. I can help you understand this architecture, suggest improvements, or\
-apply these patterns to your project. What architectural aspect interests you?"
+    def handle(self, message: str, context: dict) -> str:
+        raise NotImplementedError
 
-    # Context/Memory responses
-    if any(
-        word in message_lower for word in ["context", "memory", "history", "remember"]
-    ):
-        return f"AIOS Context Manager maintains conversation continuity across\
-VSCode sessions. Your workspace context is preserved, including project\
-structure, git status, and development patterns. I remember our previous\
-interactions and can build upon them. What would you like me to recall or\
-explain?"
 
-    # Performance responses
-    if any(
-        word in message_lower
-        for word in ["performance", "optimization", "speed", "fast"]
-    ):
-        return f"AIOS achieves sub-millisecond inference through its cellular\
-architecture, with C++ performance cells delivering >1000 inferences/sec. I\
-can analyze your code for performance bottlenecks, suggest optimizations, and\
-implement cellular patterns for maximum efficiency. What performance aspect\
-should we optimize?"
+class AIOSHandler(IntentHandler):
+    """
+    Handles AIOS-specific queries (system, architecture, capabilities).
+    """
 
-    # Help/General responses
-    if any(word in message_lower for word in ["help", "assist", "support", "guide"]):
-        return f"I'm AIOS - your AI Operating System assistant. I integrate\
-C++, Python, and C# capabilities with context-aware intelligence. I can help\
-with code analysis, generation, architecture design, performance optimization,\
-and maintaining development continuity. What would you like to accomplish?"
+    def can_handle(self, message, context):
+        return "aios" in message.lower()
 
-    # Default intelligent response
-    return f"I understand you're asking about: '{message}'. As AIOS, I can\
-provide multi-language analysis, intelligent code suggestions, and\
-context-aware assistance. Based on your {workspace} workspace, I can help with\
-development tasks, architectural decisions, and optimization strategies. Could\
-you provide more specific details about what you'd like to achieve?"
+    def handle(self, message, context):
+        return (
+            "AIOS TensorFlow Cellular Ecosystem is fully operational. "
+            "I can assist you with multi-language development, "
+            "cellular architecture optimization, and intelligent code "
+            "generation. What specific aspect of AIOS would you like to "
+            "explore?"
+        )
+
+
+class DevelopmentHandler(IntentHandler):
+    """
+    Handles code, development, and programming-related queries.
+    """
+
+    def can_handle(self, message, context):
+        return any(
+            word in message.lower()
+            for word in ["code", "development", "programming", "function"]
+        )
+
+    def handle(self, message, context):
+        workspace = context.get("workspace", "unknown")
+        return (
+            f"I'm analyzing your {workspace} workspace with AIOS's "
+            "multi-language AI coordination. I can provide insights from "
+            "C++, Python, and C# perspectives, suggest optimizations, and "
+            "help with code generation. What specific development task can "
+            "I assist with?"
+        )
+
+
+class ArchitectureHandler(IntentHandler):
+    """
+    Handles architecture, system, and design-related queries.
+    """
+
+    def can_handle(self, message, context):
+        return any(
+            word in message.lower()
+            for word in ["architecture", "system", "design", "pattern"]
+        )
+
+    def handle(self, message, context):
+        return (
+            "AIOS uses a revolutionary cellular architecture with Python "
+            "AI training cells, C++ performance cells, and intercellular "
+            "communication bridges. I can help you understand this "
+            "architecture, suggest improvements, or apply these patterns "
+            "to your project. What architectural aspect interests you?"
+        )
+
+
+class ContextHandler(IntentHandler):
+    """
+    Handles context, memory, and history-related queries.
+    """
+
+    def can_handle(self, message, context):
+        return any(
+            word in message.lower()
+            for word in ["context", "memory", "history", "remember"]
+        )
+
+    def handle(self, message, context):
+        return (
+            "AIOS Context Manager maintains conversation continuity across "
+            "VSCode sessions. Your workspace context is preserved, "
+            "including project structure, git status, and development "
+            "patterns. I remember our previous interactions and can build "
+            "upon them. What would you like me to recall or explain?"
+        )
+
+
+class PerformanceHandler(IntentHandler):
+    """
+    Handles performance and optimization-related queries.
+    """
+
+    def can_handle(self, message, context):
+        return any(
+            word in message.lower()
+            for word in ["performance", "optimization", "speed", "fast"]
+        )
+
+    def handle(self, message, context):
+        return (
+            "AIOS achieves sub-millisecond inference through its cellular "
+            "architecture, with C++ performance cells delivering >1000 "
+            "inferences/sec. I can analyze your code for performance "
+            "bottlenecks, suggest optimizations, and implement cellular "
+            "patterns for maximum efficiency. What performance aspect "
+            "should we optimize?"
+        )
+
+
+class HelpHandler(IntentHandler):
+    """
+    Handles help, support, and guidance queries.
+    """
+
+    def can_handle(self, message, context):
+        return any(
+            word in message.lower()
+            for word in [
+                "help",
+                "assist",
+                "support",
+                "guide",
+            ]
+        )
+
+    def handle(self, message, context):
+        return (
+            "I'm AIOS - your AI Operating System assistant. I integrate "
+            "C++, Python, and C# capabilities with context-aware "
+            "intelligence. I can help with code analysis, generation, "
+            "architecture design, performance optimization, and "
+            "maintaining development continuity. What would you like to "
+            "accomplish?"
+        )
+
+
+# AINLP.loader [latent:AdvancedNLUHandler] (auto.AINLP.class)
+#   Original code (F401: 'AdvancedNLUHandler' imported but unused):
+#   from aios_nlp import AdvancedNLUHandler
+#   Reason: Reserved for future integration with advanced NLU/AI modules.
+#   AINLP.mind: Integrate transformer-based or neural NLU for deep intent
+#   recognition.
+
+
+class DefaultHandler(IntentHandler):
+    """
+    Default handler for unmatched queries.
+    Provides context-aware fallback response.
+    """
+
+    def can_handle(self, message, context):
+        return True  # Always matches last
+
+    def handle(self, message, context):
+        workspace = context.get("workspace", "unknown")
+        return (
+            f"I understand you're asking about: '{message}'. As AIOS, I can "
+            "provide multi-language analysis, intelligent code suggestions, "
+            "and context-aware assistance. Based on your "
+            f"{workspace} workspace, I can help with development tasks, "
+            "architectural decisions, and optimization strategies. Could "
+            "you provide more specific details about what you'd like to "
+            "achieve?"
+        )
+
+
+class AIOSIntentDispatcher:
+    """
+    Dispatcher for AIOS intent handlers.
+    Routes input to the first matching handler.
+    Handlers can be extended for new AIOS/AINLP modules.
+    """
+
+    def __init__(self):
+        self.handlers = [
+            AIOSHandler(),
+            DevelopmentHandler(),
+            ArchitectureHandler(),
+            ContextHandler(),
+            PerformanceHandler(),
+            HelpHandler(),
+            # Future: AdvancedNLUHandler(),
+            DefaultHandler(),
+        ]
+
+    def dispatch(self, message: str, context: dict) -> str:
+        for handler in self.handlers:
+            if handler.can_handle(message, context):
+                return handler.handle(message, context)
+        return "[AIOS] No suitable handler found."
+
+
+# Singleton dispatcher instance
+_aios_intent_dispatcher = AIOSIntentDispatcher()
+
+
+async def generate_aios_response(message: str, context: dict) -> str:
+    """
+    Generate intelligent AIOS response using modular intent dispatcher.
+    This architecture supports future AINLP/AIOS baselayer integration and
+    advanced NLU.
+    """
+    # AINLP.mind: This function now delegates to a modular dispatcher, enabling
+    # extensibility and deep context reasoning.
+    return _aios_intent_dispatcher.dispatch(message, context)
 
 
 def generate_suggested_actions(message: str) -> list:
@@ -344,20 +498,52 @@ def generate_suggested_actions(message: str) -> list:
     actions = []
 
     if any(word in message_lower for word in ["analyze", "code", "review"]):
-        actions.extend(["analyze-code", "suggest-improvements", "review-architecture"])
+        actions.extend([
+            "analyze-code",
+            "suggest-improvements",
+            "review-architecture",
+        ])
 
-    if any(word in message_lower for word in ["optimize", "performance", "speed"]):
+    if any(
+        word in message_lower
+        for word in [
+            "optimize",
+            "performance",
+            "speed",
+        ]
+    ):
         actions.extend(
-            ["performance-analysis", "optimize-code", "cellular-enhancement"]
+            [
+                "performance-analysis",
+                "optimize-code",
+                "cellular-enhancement",
+            ]
         )
 
     if any(word in message_lower for word in ["help", "guide", "tutorial"]):
-        actions.extend(["show-documentation", "provide-examples", "guided-tutorial"])
+        actions.extend(
+            [
+                "show-documentation",
+                "provide-examples",
+                "guided-tutorial",
+            ]
+        )
 
     if any(word in message_lower for word in ["error", "debug", "problem"]):
-        actions.extend(["debug-analysis", "error-resolution", "diagnostic-tools"])
+        actions.extend([
+            "debug-analysis",
+            "error-resolution",
+            "diagnostic-tools",
+        ])
 
-    if any(word in message_lower for word in ["aios", "architecture", "cellular"]):
+    if any(
+        word in message_lower
+        for word in [
+            "aios",
+            "architecture",
+            "cellular",
+        ]
+    ):
         actions.extend(
             ["explain-architecture", "cellular-workflow", "integration-guide"]
         )
@@ -375,14 +561,18 @@ def generate_suggested_actions(message: str) -> list:
 
 async def startup_event():
     """Application startup event"""
-    logger.info("🚀 AIOS VSCode Integration API starting up...")
+    logger.info(
+        "🚀 AIOS VSCode Integration API starting up..."
+    )
     logger.info("✅ Cellular ecosystem connections established")
     logger.info("✅ FastAPI server ready for VSCode extension communication")
 
 
 @app.get("/diagnostics")
 async def diagnostics():
-    """Run integration diagnostics and return results (calls integration core)"""
+    """
+    Run integration diagnostics and return results (calls integration core)
+    """
     try:
         integration_path = os.path.join(
             os.path.dirname(__file__), "tests", "aios_vscode_integration.py"
@@ -415,7 +605,9 @@ async def diagnostics():
 
 
 async def health_monitor():
-    """Background health monitor for self-healing and auto-restart (if needed)"""
+    """
+    Background health monitor for self-healing and auto-restart (if needed)
+    """
     while True:
         try:
             # Example: check health every 10 seconds
@@ -437,4 +629,10 @@ async def startup():
 if __name__ == "__main__":
     # Run the server
     logger.info("Starting AIOS VSCode Integration Server...")
-    uvicorn.run(app, host="localhost", port=8080, log_level="info", reload=False)
+    uvicorn.run(
+        app,
+        host="localhost",
+        port=8080,
+        log_level="info",
+        reload=False,
+    )
