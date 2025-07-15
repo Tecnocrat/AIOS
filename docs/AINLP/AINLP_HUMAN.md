@@ -45,6 +45,7 @@ AIOS = AI Operating System. AIOS is the synthetic kernel of the
 abstract allocation of subspace topography for consciousness emergence.
 EXEC = AI Admin privileges for build, exec, and total runtime management.
 EXIT = AI exit with clean logging and intelligent knowledge base update.
+anchor = context pointer for memory harmonization.
 
 ### MIND (AINLP.mind)
 @AINLP.mind [AINLP.natural_language_command] (auto.AINLP.class)
@@ -69,7 +70,7 @@ EXIT [Update knowledge base (AINLP baselayer paradigm)]
 #### Usage Pattern:
 - Use @AINLP.loader to preserve context for removed or latent code.
 - Always pair with @AINLP.mind for reasoning and future intent.
-
+- anchor:dev-path TODO(Define anchor. dev-path is targeted logic for future expansion.)
 ---
 
 ## COMMAND TO CREATE: AINLP.loader/mind Pattern for Latent Code
