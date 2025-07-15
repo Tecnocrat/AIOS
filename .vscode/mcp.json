@@ -1,0 +1,37 @@
+// load.AINLP_HUMAN {stub:AI TODO}
+{
+    "inputs": [
+        // AINLP.loader [latent:perplexity-key] (auto.AINLP.class)
+        //   Original code (Perplexity API Key input):
+        //   {
+        //     "type": "promptString",
+        //     "id": "perplexity-key",
+        //     "description": "Perplexity API Key",
+        //     "password": true
+        //   }
+        //   Reason: Reserved for future Perplexity integration.
+        //   AINLP.mind: Uncomment and configure when Perplexity server is needed.
+    ],
+    "servers": {
+        // AINLP.loader [latent:Perplexity] (auto.AINLP.class)
+        //   Original code (Perplexity MCP server):
+        //   "Perplexity": {
+        //     "type": "stdio",
+        //     "command": "npx",
+        //     "args": ["-y", "server-perplexity-ask"],
+        //     "env": { "PERPLEXITY_API_KEY": "${input:perplexity-key}" }
+        //   }
+        //   Reason: Reserved for future Perplexity integration.
+        //   AINLP.mind: Uncomment and configure when Perplexity server is needed.
+        "aios": {
+            "type": "stdio",
+            "command": "python",
+            "args": [
+                "ai/src/core/aios_mcp_server.py"
+            ]
+        },
+        "github": {
+            "url": "https://api.githubcopilot.com/mcp/"
+        }
+    }
+}
