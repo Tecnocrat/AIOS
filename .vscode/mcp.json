@@ -22,14 +22,27 @@
         //     "env": { "PERPLEXITY_API_KEY": "${input:perplexity-key}" }
         //   }
         //   Reason: Reserved for future Perplexity integration.
+        //-------------------------------------------------------------------
         //   AINLP.mind: Uncomment and configure when Perplexity server is needed.
-        "aios": {
-            "type": "stdio",
-            "command": "python",
-            "args": [
-                "ai/src/core/aios_mcp_server.py"
-            ]
-        },
+        // AINLP.loader [latent:aios-mcp-server] (auto.AINLP.class)
+        //   Original code:
+        //   "aios": {
+        //     "type": "stdio",
+        //     "command": "python",
+        //     "args": [
+        //         "ai/src/core/aios_mcp_server.py"
+        //     ]
+        //   }
+        //   Reason: Disabled for now; GitHub MCP server is sufficient for current dev phase.
+        //-------------------------------------------------------------------
+        //   AINLP.mind: Reactivate when custom AIOS MCP integration is mature and needed.
+        // "aios": {
+        //     "type": "stdio",
+        //     "command": "python",
+        //     "args": [
+        //         "ai/src/core/aios_mcp_server.py"
+        //     ]
+        // },
         "github": {
             "url": "https://api.githubcopilot.com/mcp/"
         }
