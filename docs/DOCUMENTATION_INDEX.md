@@ -1,35 +1,34 @@
-# AIOS Documentation Index
-
-## 📚 **Master Documentation Guide**
-
-This is the central hub for all AIOS documentation. All files are organized by purpose and importance.
-
----
-
-## 🟢 **Unified Root Documentation**
-- **ARCHITECTURE_TRANSFORMATION_SUMMARY.md**: 🏗️ Unified architecture, dev path, and context anchors (start here)
+# AIOS Documentation Master Index (2025-07-16)
+# AINLP.loader [anchor:doc-index] (auto.AINLP.class)
+#   Dev Path: Unified, compressed, and harmonized documentation index for AIOS.
+#   All navigation, onboarding, and context anchoring start here.
 
 ---
 
-## 🎯 **Domain Documentation Structure**
-- **docs/AINLP/**: 🧠 Language specification, kernel tooling, comment systems
-- **docs/AIOS/**: 🏛️ System architecture, VSCode extension, UI
-- **docs/ai-context/**: 🤖 Iteration management, bootstrap, context protocols
+## 🟢 Unified Root Documentation
+- [ARCHITECTURE_TRANSFORMATION_SUMMARY.md](ARCHITECTURE_TRANSFORMATION_SUMMARY.md): Unified architecture, dev path, and context anchors (start here)
 
 ---
 
-## 🗂️ **Navigation for New AI Iterations**
-1. **ARCHITECTURE_TRANSFORMATION_SUMMARY.md** – Unified vision, dev path, context anchors
-2. **docs/ai-context/AI_context_reallocator.md** – Context preservation protocol
-3. **README.md** – Project overview and quick start
-4. **docs/ai-context/PROJECT_STATUS.md** – Current implementation status
-5. **docs/ai-context/AI_QUICK_REFERENCE.md** – Quick commands and procedures
+## 🎯 Domain Documentation Structure
+- [AINLP/](AINLP/): Language specification, kernel tooling, comment systems
+- [AIOS/](AIOS/): System architecture, VSCode extension, UI
+- [ai-context/](ai-context/): Iteration management, bootstrap, context protocols
 
 ---
 
-## 🗃️ **Deprecated Root Docs**
-All previous root-level docs (except this file and ARCHITECTURE_TRANSFORMATION_SUMMARY.md) are now deprecated, merged, and archived in `docs/archive/deprecated_root_docs/`. See those files for historical reference only.
+## 🗂️ Navigation for New AI Iterations
+1. [ARCHITECTURE_TRANSFORMATION_SUMMARY.md](ARCHITECTURE_TRANSFORMATION_SUMMARY.md) – Unified vision, dev path, context anchors
+2. [ai-context/AI_context_reallocator.md](ai-context/AI_context_reallocator.md) – Context preservation protocol
+3. [README.md](../README.md) – Project overview and quick start
+4. [ai-context/PROJECT_STATUS.md](ai-context/PROJECT_STATUS.md) – Current implementation status
+5. [ai-context/AI_QUICK_REFERENCE.md](ai-context/AI_QUICK_REFERENCE.md) – Quick commands and procedures
 
 ---
 
-# Status: 🟢 OPTIMIZATION COMPLETE AND OPERATIONAL (2025-07-15)
+## 🗃️ Deprecated & Archived Docs
+All previous root-level docs (except this file and ARCHITECTURE_TRANSFORMATION_SUMMARY.md) are now deprecated, merged, and archived in [archive/deprecated_root_docs/](archive/deprecated_root_docs/). See those files for historical reference only.
+
+---
+
+# Status: 🟢 OPTIMIZATION COMPLETE AND OPERATIONAL (2025-07-16)
