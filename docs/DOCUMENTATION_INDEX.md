@@ -7,6 +7,7 @@
 
 ## 🟢 Unified Root Documentation
 - [ARCHITECTURE_TRANSFORMATION_SUMMARY.md](ARCHITECTURE_TRANSFORMATION_SUMMARY.md): Unified architecture, dev path, and context anchors (start here)
+- [DEV_PATH_MAIN_INTEGRATION_GUIDE.md](AIOS/DEV_PATH_MAIN_INTEGRATION_GUIDE.md): Unified DEV PATH MAIN, AINLP, and VSCode integration guide
 
 ---
 
