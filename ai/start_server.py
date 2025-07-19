@@ -102,23 +102,6 @@ def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
 def main():
     print("🚀 Starting AIOS VSCode Integration Server...")
 
-    # Ensure venv is activated or activate if possible
-    venv_path = os.path.join(os.path.dirname(__file__), "venv")
-    if not os.environ.get("VIRTUAL_ENV"):
-        # Not in venv, try to activate or run setup
-        if not os.path.exists(venv_path):
-            print(
-                "[AIOS] No venv found. " "Running setup_env.py to create environment..."
-            )
-            subprocess.check_call([sys.executable, "setup_env.py"])
-        # Relaunch script in venv
-        if os.name == "nt":
-            python_bin = os.path.join(venv_path, "Scripts", "python.exe")
-        else:
-            python_bin = os.path.join(venv_path, "bin", "python")
-        print(f"[AIOS] Relaunching under venv: {python_bin}")
-        os.execv(python_bin, [python_bin] + sys.argv)
-
     # Find the server file
     server_file = find_server_file()
     if not server_file:
