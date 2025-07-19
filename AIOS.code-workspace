@@ -111,9 +111,9 @@
 			"vcpkg_installed/**": true
 		},
 		// 🐍 Python Configuration
-		"python.defaultInterpreterPath": "./ai/venv/Scripts/python.exe",
-		"python.terminal.activateEnvironment": true,
-		"python.terminal.activateEnvInCurrentTerminal": true,
+		"python.defaultInterpreterPath": "C:/Program Files/Python312/python.exe",
+		"python.terminal.activateEnvironment": false,
+		"python.terminal.activateEnvInCurrentTerminal": false,
 		"python.analysis.autoImportCompletions": true,
 		"python.analysis.autoSearchPaths": true,
 		"python.analysis.extraPaths": [
@@ -145,9 +145,9 @@
 		"python.linting.flake8Enabled": true,
 		"python.linting.mypyEnabled": true,
 		"python.formatting.provider": "black",
-		"python.formatting.blackPath": "./ai/venv/Scripts/black.exe",
+		"python.formatting.blackPath": "C:/Program Files/Python312/Scripts/black.exe",
 		"python.testing.pytestEnabled": true,
-		"python.testing.pytestPath": "./ai/venv/Scripts/pytest.exe",
+		"python.testing.pytestPath": "C:/Program Files/Python312/Scripts/pytest.exe",
 		"python.testing.pytestArgs": [
 			"./ai/tests"
 		],
