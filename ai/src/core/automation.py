@@ -9,6 +9,8 @@ import asyncio
 import logging
 from typing import Any, Dict, List, Optional
 
+from .automation import AutomationManager
+
 logger = logging.getLogger(__name__)
 
 
