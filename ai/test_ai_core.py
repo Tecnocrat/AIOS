@@ -11,7 +11,14 @@ from pathlib import Path
 # Add the ai module to Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from ai.src.aios_core import AICore
+print("sys.path:", sys.path)
+try:
+    from src.aios_core import AICore
+except ModuleNotFoundError:
+    print(
+        "Could not import AICore from src.aios_core. Please check your module path and structure."
+    )
+    sys.exit(1)
 
 
 async def test_ai_core():
