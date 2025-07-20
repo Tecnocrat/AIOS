@@ -1,5 +1,64 @@
 # AIOS - Artificial Intelligence Operating System
 
+## Executive Summary (2025-07-20)
+AIOS is a next-generation, AI-native cellular operating system that unifies Python AI training cells, C++ performance cells, and C# UI logic into a seamless, intent-driven platform. Recent architectural refactorization has harmonized subsystem imports, centralized canonical code, and enabled advanced context preservation using AINLP paradigms and fractal logic.
+
+### Key Project Objectives
+- **Unified Cellular Architecture:** All core logic is now centralized in canonical locations (`core/`, `ai/src/core/`, `interface/`).
+- **AINLP Paradigm:** Comment-driven code management, dynamic import logic, and micro-fractal context preservation.
+- **VSCode Integration:** Auto-start MCP server, enhanced workspace recommendations, and seamless developer experience.
+- **Context Health & Preservation:** Adaptive context system with health monitoring and session continuity.
+- **Clean-Up & Refactorization:** All duplicate language logic removed; only stubs remain in `languages/`.
+- **Strategic Dev Path:** Three convergent paths—VSCode extension production, AINLP visual programming, and advanced context intelligence.
+
+---
+
+## Quick Start (Updated)
+
+### 1. Clone & Setup
+```pwsh
+# Clone latest AIOS
+$ git clone https://github.com/Tecnocrat/AIOS.git -b OS0.5.gpt
+$ cd AIOS
+# Setup Python AI modules
+$ cd ai; python -m venv venv; venv\Scripts\activate; pip install -r requirements.txt
+# Build C++ core
+$ cd ../core; mkdir build; cd build; cmake ..; cmake --build . --config Debug
+# Build C# UI
+$ cd ../../interface/AIOS.UI; dotnet build
+```
+
+### 2. Run Integration Tests
+```pwsh
+$ cd ai; python test_ai_core.py --verbose
+$ cd ../core/build; .\aios_main.exe
+```
+
+### 3. VSCode Extension & MCP Server
+- Open workspace in VSCode
+- MCP server auto-starts; use `/save`, `/refresh.context`, `/status` commands
+
+---
+
+## Recent Changes & Paradigm Upgrades
+- **Subsystem Harmonization:** All Python core managers (NLP, Prediction, Automation, Learning, Integration) are importable from `ai/src/core/`.
+- **Canonical C# & C++ Logic:** All code merged into `interface/` and `core/` respectively; stubs in `languages/` for future growth.
+- **AINLP Loader:** All documentation and code now use AINLP comment classes for dynamic, environment-aware logic.
+- **Fractal Architecture:** Micro-fractal logic and context preservation implemented across all modules.
+- **Documentation Refactor:** Deprecated docs archived; new index and guides for optimal dev path progression.
+
+---
+
+## Developer Path Optimization
+- Follow [DEV_PATH_MAIN_INTEGRATION_GUIDE.md](docs/AIOS/DEV_PATH_MAIN_INTEGRATION_GUIDE.md) for unified workflow.
+- Use [STRATEGIC_DEVELOPMENT_PATH_2025_2026.md](docs/AIOS/STRATEGIC_DEVELOPMENT_PATH_2025_2026.md) for roadmap and milestones.
+- Reference [AINLP_SPECIFICATION.md](docs/AINLP/AINLP_SPECIFICATION.md) for comment-driven code management.
+- Always use `/save` and `/refresh.context` in VSCode for context health.
+
+---
+
+# AIOS - Artificial Intelligence Operating System
+
 READ THIS FIRST:
     user: tecnocrat
     git: https://github.com/Tecnocrat

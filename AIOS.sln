@@ -8,15 +8,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{683FD5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "interface", "interface", "{10F08E53-903C-4E03-C7ED-57153FD4FCB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.Models", "languages\csharp\interface\AIOS.Models\AIOS.Models.csproj", "{907F2E86-98AE-DCE0-418D-8728CE745373}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.Models", "interface\AIOS.Models\AIOS.Models.csproj", "{907F2E86-98AE-DCE0-418D-8728CE745373}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.Services", "languages\csharp\interface\AIOS.Services\AIOS.Services.csproj", "{715C89BB-449A-442C-878F-41D293B8BDE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.Services", "interface\AIOS.Services\AIOS.Services.csproj", "{715C89BB-449A-442C-878F-41D293B8BDE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.UI.Clean", "languages\csharp\interface\AIOS.UI\AIOS.UI.Clean.csproj", "{593B8B1F-CFAC-AA37-7398-94CE0BF7B37F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.UI.Clean", "interface\AIOS.UI\AIOS.UI.Clean.csproj", "{593B8B1F-CFAC-AA37-7398-94CE0BF7B37F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.UI", "languages\csharp\interface\AIOS.UI\AIOS.UI.csproj", "{11CC613B-0D13-194E-AF00-9AEB7A682B7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.UI", "interface\AIOS.UI\AIOS.UI.csproj", "{11CC613B-0D13-194E-AF00-9AEB7A682B7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.UI.Minimal", "languages\csharp\interface\AIOS.UI\AIOS.UI.Minimal.csproj", "{F090F530-A96D-EE66-F957-917173A5A182}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.UI.Minimal", "interface\AIOS.UI\AIOS.UI.Minimal.csproj", "{F090F530-A96D-EE66-F957-917173A5A182}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
