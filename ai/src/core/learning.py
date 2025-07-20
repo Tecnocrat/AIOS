@@ -1,7 +1,8 @@
 """
-Learning Core for AIOS
-
-Handles machine learning, model management, and training workflows for AIOS.
+AINLP.loader [latent:learning_manager] (auto.AINLP.class)
+Original code: class LearningManager (stub)
+Reason: Baselayer stub for future learning logic integration.
+AINLP.mind: Implement feedback, adaptation, and learning algorithms for AIOS.
 """
 
 import asyncio
@@ -38,24 +39,20 @@ class LearningManager:
 
     async def stop(self):
         if not self.is_running:
-            return
+            logger.warning("LearningManager not running")
+            return False
         logger.info("Stopping learning subsystem...")
         self.is_running = False
+        return True
 
-    async def update(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        logger.info("Updating learning subsystem with new data...")
-        # Placeholder for learning update logic
-        return {"status": "not_implemented"}
-
-    def get_status(self) -> dict:
-        """Return the status of the Learning subsystem."""
+    def get_status(self):
         return {
-            "initialized": self.is_initialized,
-            "running": self.is_running,
-            "config": self.config,
+            "status": (
+                "running"
+                if self.is_running
+                else "initialized" if self.is_initialized else "stopped"
+            )
         }
 
-    async def health_check(self) -> dict:
-        """Perform a health check on the Learning subsystem."""
-        # Placeholder: always healthy
-        return {"healthy": True}
+    async def health_check(self):
+        return {"healthy": self.is_initialized and self.is_running}
