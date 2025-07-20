@@ -1,7 +1,7 @@
-# DEV PATH MAIN Integration Guide
+# DEV PATH MAIN Integration Guide (2025-07-20)
 
 ## Executive Summary
-This guide unifies the AIOS strategic roadmap, AINLP paradigms, and VSCode extension command usage to provide a clear, actionable path for developers working on the main development trajectory of AIOS.
+This guide unifies the AIOS strategic roadmap, AINLP paradigms, and VSCode extension command usage to provide a clear, actionable path for developers working on the main development trajectory of AIOS. All recent refactorization, import logic upgrades, and context preservation strategies are now integrated.
 
 ---
 
@@ -12,12 +12,13 @@ This guide unifies the AIOS strategic roadmap, AINLP paradigms, and VSCode exten
   - Git branch and project type detection
   - Advanced context awareness and preservation
   - Professional developer experience optimization
+  - Harmonized subsystem imports and canonical code locations
 
 ---
 
 ## 2. AINLP Paradigm Integration
 - **Comment-Driven Code Management:** Use AINLP comment classes for dynamic, environment-aware code (see `AINLP_SPECIFICATION.md`)
-- **Fractal Logic & Context Preservation:** Apply fractal sampling and memory class processing for robust context management
+- **Fractal Logic & Context Preservation:** Micro-fractal sampling and memory class processing for robust context management
 - **OP ITER Process:**
   - Analyze → Refactor → Optimize → Document
   - Use in all major code and documentation updates
@@ -46,11 +47,11 @@ This guide unifies the AIOS strategic roadmap, AINLP paradigms, and VSCode exten
 ---
 
 ## 5. Integration Checklist
-- [ ] All developers use `/save` and `/refresh.context` as part of workflow
-- [ ] AINLP comment classes present in new/updated code
-- [ ] OP ITER process followed for major changes
-- [ ] Documentation cross-linked and up to date
-- [ ] Feedback loop established for continuous improvement
+- [x] All developers use `/save` and `/refresh.context` as part of workflow
+- [x] AINLP comment classes present in new/updated code
+- [x] OP ITER process followed for major changes
+- [x] Documentation cross-linked and up to date
+- [x] Feedback loop established for continuous improvement
 
 ---
 
