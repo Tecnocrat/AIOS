@@ -70,3 +70,10 @@ csharp_interface_cells/
 - **Intercellular service integration**: Seamless coordination between all cellular components
 - **Cellular performance monitoring**: Real-time dashboards for cellular ecosystem health
 - **Cross-platform cellular deployment**: Professional .NET applications with cellular integration
+
+# C# Integration Stub
+
+This folder is reserved for future integration of external C# modules or tools. All core C# logic is now located in the `interface/` folder (AIOS.Models, AIOS.Services, AIOS.UI).
+
+AINLP.loader [anchor:future-csharp] (auto.AINLP.class)
+AINLP.mind: Use this folder for experimental or third-party C# integrations only.
