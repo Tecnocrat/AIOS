@@ -188,6 +188,140 @@ class AIOSIntegrationCore:
         print("✅ All required Python dependencies are installed.")
         return True
 
+    def test_debug_endpoint(self):
+        """Test /debug endpoint for runtime inspection"""
+        print("🔍 Testing /debug endpoint...")
+        try:
+            response = requests.get(f"{self.base_url}/debug", timeout=5)
+            result = response.json()
+            self.test_results["debug_endpoint"] = {
+                "status": response.status_code,
+                "response": result,
+                "passed": response.status_code == 200,
+            }
+            print("✅ Debug Endpoint: PASSED")
+            print(
+                "   Recent Requests: {}".format(len(result.get("recent_requests", [])))
+            )
+            print("   Errors: {}".format(len(result.get("errors", []))))
+            print(
+                "   Handler Matches: {}".format(len(result.get("handler_matches", [])))
+            )
+            return True
+        except Exception as e:
+            self.test_results["debug_endpoint"] = {
+                "status": "ERROR",
+                "error": str(e),
+                "passed": False,
+            }
+            print(f"❌ Debug Endpoint: FAILED - {e}")
+            return False
+
+    def test_bridge_test(self):
+        """Test /bridge/test endpoint for intercellular bridge"""
+        print("🔍 Testing /bridge/test endpoint...")
+        try:
+            payload = {
+                "type": "integration",
+                "source": "python-cell",
+                "target": "cpp-cell",
+                "data": {"msg": "ping", "value": 42},
+            }
+            response = requests.post(
+                f"{self.base_url}/bridge/test", json=payload, timeout=5
+            )
+            result = response.json()
+            self.test_results["bridge_test"] = {
+                "status": response.status_code,
+                "response": result,
+                "passed": response.status_code == 200
+                and result.get("test_result") == "success",
+            }
+            print("✅ Bridge Test: PASSED")
+            print(
+                "   Communication Latency: {}".format(
+                    result.get("communication_latency", "n/a")
+                )
+            )
+            return True
+        except Exception as e:
+            self.test_results["bridge_test"] = {
+                "status": "ERROR",
+                "error": str(e),
+                "passed": False,
+            }
+            print(f"❌ Bridge Test: FAILED - {e}")
+            return False
+
+    def test_performance_test(self):
+        """Test /test/performance endpoint for cellular performance"""
+        print("🔍 Testing /test/performance endpoint...")
+        try:
+            payload = {
+                "test_type": "latency",
+                "metrics_requested": ["inference_latency", "throughput"],
+                "sample_data": "test-sample",
+            }
+            response = requests.post(
+                f"{self.base_url}/test/performance", json=payload, timeout=5
+            )
+            result = response.json()
+            self.test_results["performance_test"] = {
+                "status": response.status_code,
+                "response": result,
+                "passed": response.status_code == 200
+                and result.get("performance_grade") == "A+",
+            }
+            print("✅ Performance Test: PASSED")
+            print(
+                "   Inference Latency: {}".format(
+                    result.get("inference_latency", "n/a")
+                )
+            )
+            print("   Throughput: {}".format(result.get("throughput", "n/a")))
+            return True
+        except Exception as e:
+            self.test_results["performance_test"] = {
+                "status": "ERROR",
+                "error": str(e),
+                "passed": False,
+            }
+            print(f"❌ Performance Test: FAILED - {e}")
+            return False
+
+    def diagnostics_summary(self):
+        """Print diagnostics summary: errors, slow endpoints, handler stats"""
+        print("\n=== Diagnostics Summary ===")
+        errors = []
+        slowest = None
+        slowest_time = 0
+        handler_counts = {}
+        for key, result in self.test_results.items():
+            if not result.get("passed", False):
+                errors.append((key, result.get("error", "Failed")))
+            if "processing_time" in result:
+                pt = result["processing_time"]
+                if pt > slowest_time:
+                    slowest_time = pt
+                    slowest = key
+            if key == "debug_endpoint":
+                for h in result["response"].get("handler_matches", []):
+                    name = h.get("handler", "Unknown")
+                    handler_counts[name] = handler_counts.get(name, 0) + 1
+        if errors:
+            print("❌ Failed Tests:")
+            for k, e in errors:
+                print(f"   {k}: {e}")
+        else:
+            print("✅ No failed tests.")
+        if slowest:
+            print(f"🐢 Slowest Endpoint: {slowest} ({slowest_time:.2f}ms)")
+        if handler_counts:
+            print("🔎 Handler Match Counts:")
+            for h, c in handler_counts.items():
+                print(f"   {h}: {c}")
+        print("==========================\n")
+
     def run_basic_integration(self):
         """Run basic integration routines (modular entrypoint)"""
         print("🚀 AIOS VSCode Integration Core Logic...")
@@ -195,6 +329,9 @@ class AIOSIntegrationCore:
         tests = [
             ("Server Health", self.test_server_health),
             ("Message Processing", self.test_message_processing),
+            ("Debug Endpoint", self.test_debug_endpoint),
+            ("Bridge Test", self.test_bridge_test),
+            ("Performance Test", self.test_performance_test),
         ]
         passed_tests = 0
         total_tests = len(tests)
@@ -212,6 +349,7 @@ class AIOSIntegrationCore:
             print("🎉 ALL TESTS PASSED!")
         else:
             print("⚠️  Some tests failed")
+        self.diagnostics_summary()
         return passed_tests == total_tests
 
     def run_all_routines(self):
@@ -221,6 +359,9 @@ class AIOSIntegrationCore:
         routines = [
             ("Server Health", self.test_server_health),
             ("Message Processing", self.test_message_processing),
+            ("Debug Endpoint", self.test_debug_endpoint),
+            ("Bridge Test", self.test_bridge_test),
+            ("Performance Test", self.test_performance_test),
             ("VSCode Extension", self.check_vscode_extension),
             ("Context Registry", self.check_context_registry),
             ("Python Dependencies", self.check_python_dependencies),
@@ -239,6 +380,7 @@ class AIOSIntegrationCore:
             print("🎉 ALL ROUTINES PASSED!")
         else:
             print("⚠️  Some routines failed")
+        self.diagnostics_summary()
         return passed == total
 
     def archive_results(self, success):

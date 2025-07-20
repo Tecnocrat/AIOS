@@ -161,10 +161,10 @@ async def bridge_test(request: BridgeTestRequest):
         }
     except Exception as e:
         logger.error(f"Bridge test failed: {e}")
+        _debug_manager.log_error(e)
         raise HTTPException(
             status_code=500,
-            detail=f"Bridge test failed:\
-{str(e)}",
+            detail=f"Bridge test failed:\n{str(e)}",
         )
 
 
@@ -197,6 +197,7 @@ async def performance_test(request: PerformanceTestRequest):
         }
     except Exception as e:
         logger.error(f"Performance test failed: {e}")
+        _debug_manager.log_error(e)
         raise HTTPException(
             status_code=500, detail=f"Performance test failed: {str(e)}"
         )
@@ -261,10 +262,10 @@ async def process_message(request: AIOSRequest):
     except Exception as e:
         logger.error("Message processing failed: %s", e)
         logger.error("Traceback: %s", traceback.format_exc())
+        _debug_manager.log_error(e)
         raise HTTPException(
             status_code=500,
-            detail=f"AIOS processing failed:\
-{str(e)}",
+            detail=f"AIOS processing failed:\n{str(e)}",
         )
 
 
@@ -472,6 +473,7 @@ class AIOSIntentDispatcher:
     def dispatch(self, message: str, context: dict) -> str:
         for handler in self.handlers:
             if handler.can_handle(message, context):
+                _debug_manager.log_handler(handler.__class__.__name__, message)
                 return handler.handle(message, context)
         return "[AIOS] No suitable handler found."
 
@@ -498,11 +500,13 @@ def generate_suggested_actions(message: str) -> list:
     actions = []
 
     if any(word in message_lower for word in ["analyze", "code", "review"]):
-        actions.extend([
-            "analyze-code",
-            "suggest-improvements",
-            "review-architecture",
-        ])
+        actions.extend(
+            [
+                "analyze-code",
+                "suggest-improvements",
+                "review-architecture",
+            ]
+        )
 
     if any(
         word in message_lower
@@ -530,11 +534,13 @@ def generate_suggested_actions(message: str) -> list:
         )
 
     if any(word in message_lower for word in ["error", "debug", "problem"]):
-        actions.extend([
-            "debug-analysis",
-            "error-resolution",
-            "diagnostic-tools",
-        ])
+        actions.extend(
+            [
+                "debug-analysis",
+                "error-resolution",
+                "diagnostic-tools",
+            ]
+        )
 
     if any(
         word in message_lower
@@ -561,9 +567,7 @@ def generate_suggested_actions(message: str) -> list:
 
 async def startup_event():
     """Application startup event"""
-    logger.info(
-        "🚀 AIOS VSCode Integration API starting up..."
-    )
+    logger.info("🚀 AIOS VSCode Integration API starting up...")
     logger.info("✅ Cellular ecosystem connections established")
     logger.info("✅ FastAPI server ready for VSCode extension communication")
 
@@ -598,6 +602,7 @@ async def diagnostics():
         )
     except Exception as e:
         logger.error(f"Diagnostics endpoint failed: {e}")
+        _debug_manager.log_error(e)
         return JSONResponse(
             status_code=500,
             content={"error": str(e)},
@@ -624,6 +629,72 @@ async def health_monitor():
 async def startup():
     await startup_event()
     asyncio.create_task(health_monitor())
+
+
+# DebugManager for runtime inspection
+class DebugManager:
+    def __init__(self):
+        self.recent_requests = []
+        self.errors = []
+        self.handler_matches = []
+
+    def log_request(self, endpoint, data):
+        self.recent_requests.append(
+            {
+                "timestamp": datetime.now().isoformat(),
+                "endpoint": endpoint,
+                "data": data,
+            }
+        )
+        if len(self.recent_requests) > 20:
+            self.recent_requests.pop(0)
+
+    def log_error(self, error):
+        self.errors.append(
+            {
+                "timestamp": datetime.now().isoformat(),
+                "error": str(error),
+            }
+        )
+        if len(self.errors) > 20:
+            self.errors.pop(0)
+
+    def log_handler(self, handler_name, message):
+        self.handler_matches.append(
+            {
+                "timestamp": datetime.now().isoformat(),
+                "handler": handler_name,
+                "message": message,
+            }
+        )
+        if len(self.handler_matches) > 20:
+            self.handler_matches.pop(0)
+
+    def get_debug_info(self):
+        return {
+            "recent_requests": self.recent_requests,
+            "errors": self.errors,
+            "handler_matches": self.handler_matches,
+        }
+
+
+# Singleton debug manager
+_debug_manager = DebugManager()
+
+
+# Request/Response logging middleware
+@app.middleware("http")
+async def log_requests(request, call_next):
+    body = await request.body()
+    _debug_manager.log_request(request.url.path, body.decode("utf-8"))
+    response = await call_next(request)
+    return response
+
+
+@app.get("/debug")
+async def debug():
+    """Return runtime debug info (recent requests, errors, handler matches)"""
+    return _debug_manager.get_debug_info()
 
 
 if __name__ == "__main__":
