@@ -146,7 +146,11 @@ async def cpp_status():
 async def bridge_test(request: BridgeTestRequest):
     """Test intercellular bridge communication"""
     try:
-        logger.info(f"Bridge test from {request.source} to {request.target}")
+        logger.info(
+            "Bridge test from %s to %s",
+            request.source,
+            request.target,
+        )
 
         # Simulate bridge communication
         await asyncio.sleep(0.1)
@@ -159,20 +163,34 @@ async def bridge_test(request: BridgeTestRequest):
             "echo_data": request.data,
             "timestamp": datetime.now().isoformat(),
         }
-    except Exception as e:
-        logger.error(f"Bridge test failed: {e}")
+    except asyncio.CancelledError as e:
+        logger.error("Bridge test cancelled: %s", e)
+        _debug_manager.log_error(e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Bridge test cancelled:\n{str(e)}",
+        ) from e
+    except ValueError as e:
+        logger.error("Bridge test value error: %s", e)
+        _debug_manager.log_error(e)
+        raise HTTPException(
+            status_code=400,
+            detail=f"Bridge test value error:\n{str(e)}",
+        ) from e
+    except Exception as e:  # Catch-all for unexpected errors
+        logger.error("Bridge test failed: %s", e)
         _debug_manager.log_error(e)
         raise HTTPException(
             status_code=500,
             detail=f"Bridge test failed:\n{str(e)}",
-        )
+        ) from e
 
 
 @app.post("/test/performance")
 async def performance_test(request: PerformanceTestRequest):
     """Cellular ecosystem performance testing"""
     try:
-        logger.info(f"Performance test: {request.test_type}")
+        logger.info("Performance test: %s", request.test_type)
         start_time = datetime.now()
 
         # Simulate cellular performance test
@@ -195,12 +213,26 @@ async def performance_test(request: PerformanceTestRequest):
             "performance_grade": "A+",
             "timestamp": datetime.now().isoformat(),
         }
-    except Exception as e:
-        logger.error(f"Performance test failed: {e}")
+    except asyncio.CancelledError as e:
+        logger.error("Performance test cancelled: %s", e)
+        _debug_manager.log_error(e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Performance test cancelled:\n{str(e)}",
+        ) from e
+    except ValueError as e:
+        logger.error("Performance test value error: %s", e)
+        _debug_manager.log_error(e)
+        raise HTTPException(
+            status_code=400,
+            detail=f"Performance test value error:\n{str(e)}",
+        ) from e
+    except Exception as e:  # Catch-all for unexpected errors
+        logger.error("Performance test failed: %s", e)
         _debug_manager.log_error(e)
         raise HTTPException(
             status_code=500, detail=f"Performance test failed: {str(e)}"
-        )
+        ) from e
 
 
 @app.post("/process", response_model=AIOSResponse)
@@ -209,8 +241,8 @@ async def process_message(request: AIOSRequest):
     try:
         start_time = datetime.now()
         logger.info(
-            f"Processing message from VSCode extension:\
-{request.message[:100]}..."
+            "Processing message from VSCode extension: %s...",
+            request.message[:100],
         )
 
         # Extract context
@@ -241,8 +273,8 @@ async def process_message(request: AIOSRequest):
         }
 
         logger.info(
-            f"✅ Message processed successfully in\
-{processing_time:.2f}ms"
+            "✅ Message processed successfully in %.2fms",
+            processing_time,
         )
 
         return AIOSResponse(
@@ -258,15 +290,30 @@ async def process_message(request: AIOSRequest):
                 "timestamp": datetime.now().isoformat(),
             },
         )
-
-    except Exception as e:
+    except asyncio.CancelledError as e:
+        logger.error("Message processing cancelled: %s", e)
+        logger.error("Traceback: %s", traceback.format_exc())
+        _debug_manager.log_error(e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"AIOS processing cancelled:\n{str(e)}",
+        ) from e
+    except ValueError as e:
+        logger.error("Message processing value error: %s", e)
+        logger.error("Traceback: %s", traceback.format_exc())
+        _debug_manager.log_error(e)
+        raise HTTPException(
+            status_code=400,
+            detail=f"AIOS processing value error:\n{str(e)}",
+        ) from e
+    except Exception as e:  # Catch-all for unexpected errors
         logger.error("Message processing failed: %s", e)
         logger.error("Traceback: %s", traceback.format_exc())
         _debug_manager.log_error(e)
         raise HTTPException(
             status_code=500,
             detail=f"AIOS processing failed:\n{str(e)}",
-        )
+        ) from e
 
 
 # AINLP.mind: Upgraded AIOS response logic from static keyword-matching to
@@ -582,6 +629,16 @@ async def diagnostics():
             os.path.dirname(__file__), "tests", "aios_vscode_integration.py"
         )
         if not os.path.exists(integration_path):
+            logger.error(
+                (
+                    f"Integration diagnostics script not found at "
+                    f"{integration_path}"
+                ),
+            )
+            _debug_manager.log_error(
+                "Diagnostics script missing: %s"
+                % integration_path
+            )
             return JSONResponse(
                 status_code=404,
                 content={"error": "Integration diagnostics script not found."},
@@ -591,6 +648,7 @@ async def diagnostics():
             [sys.executable, integration_path, "--preflight"],
             capture_output=True,
             text=True,
+            check=False,
         )
         return JSONResponse(
             status_code=200 if result.returncode == 0 else 500,
@@ -600,8 +658,29 @@ async def diagnostics():
                 "returncode": result.returncode,
             },
         )
+    except FileNotFoundError as e:
+        logger.error("Diagnostics script not found: %s", e)
+        _debug_manager.log_error(e)
+        return JSONResponse(
+            status_code=404,
+            content={"error": str(e)},
+        )
+    except subprocess.SubprocessError as e:
+        logger.error("Diagnostics subprocess error: %s", e)
+        _debug_manager.log_error(e)
+        return JSONResponse(
+            status_code=500,
+            content={"error": str(e)},
+        )
+    except OSError as e:
+        logger.error("Diagnostics OS error: %s", e)
+        _debug_manager.log_error(e)
+        return JSONResponse(
+            status_code=500,
+            content={"error": str(e)},
+        )
     except Exception as e:
-        logger.error(f"Diagnostics endpoint failed: {e}")
+        logger.error("Unexpected diagnostics error: %s", e)
         _debug_manager.log_error(e)
         return JSONResponse(
             status_code=500,
@@ -621,14 +700,30 @@ async def health_monitor():
             # If unhealthy, log or trigger external restart
             # (Actual restart logic should be handled by a supervisor script)
             logger.info("[HealthMonitor] Server health OK.")
+        except asyncio.CancelledError as e:
+            logger.error("HealthMonitor cancelled: %s", e)
+            _debug_manager.log_error(e)
+            break
+        except OSError as e:
+            logger.error("HealthMonitor OS error: %s", e)
+            _debug_manager.log_error(e)
         except Exception as e:
-            logger.error(f"[HealthMonitor] Error: {e}")
+            logger.error("[HealthMonitor] Unexpected error: %s", e)
+            _debug_manager.log_error(e)
 
 
 @app.on_event("startup")
 async def startup():
-    await startup_event()
-    asyncio.create_task(health_monitor())
+    try:
+        await startup_event()
+        asyncio.create_task(health_monitor())
+    except RuntimeError as e:
+        logger.error("Startup event runtime error: %s", e)
+        _debug_manager.log_error(e)
+    except Exception as e:
+        logger.error("Startup event unexpected error: %s", e)
+        _debug_manager.log_error(e)
+        logger.error("Traceback: %s", traceback.format_exc())
 
 
 # DebugManager for runtime inspection
