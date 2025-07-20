@@ -33,6 +33,9 @@ def test_essential_imports():
         import pytest
         print(f"✅ Pytest {pytest.__version__} - Testing framework")
         
+        import cv2
+        print(f"✅ OpenCV {cv2.__version__} - Computer vision")
+        
         print("\n🎉 AIOS Python Environment Test: SUCCESS!")
         print("✅ All essential packages are working correctly.")
         return True
