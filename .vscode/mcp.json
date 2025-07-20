@@ -2,49 +2,17 @@
 {
     "inputs": [
         // AINLP.loader [latent:perplexity-key] (auto.AINLP.class)
-        //   Original code (Perplexity API Key input):
-        //   {
-        //     "type": "promptString",
-        //     "id": "perplexity-key",
-        //     "description": "Perplexity API Key",
-        //     "password": true
-        //   }
-        //   Reason: Reserved for future Perplexity integration.
-        //   AINLP.mind: Uncomment and configure when Perplexity server is needed.
+        // Reserved for future Perplexity integration.
     ],
     "servers": {
-        // AINLP.loader [latent:Perplexity] (auto.AINLP.class)
-        //   Original code (Perplexity MCP server):
-        //   "Perplexity": {
-        //     "type": "stdio",
-        //     "command": "npx",
-        //     "args": ["-y", "server-perplexity-ask"],
-        //     "env": { "PERPLEXITY_API_KEY": "${input:perplexity-key}" }
-        //   }
-        //   Reason: Reserved for future Perplexity integration.
-        //-------------------------------------------------------------------
-        //   AINLP.mind: Uncomment and configure when Perplexity server is needed.
-        // AINLP.loader [latent:aios-mcp-server] (auto.AINLP.class)
-        //   Original code:
-        //   "aios": {
-        //     "type": "stdio",
-        //     "command": "python",
-        //     "args": [
-        //         "ai/src/core/aios_mcp_server.py"
-        //     ]
-        //   }
-        //   Reason: Disabled for now; GitHub MCP server is sufficient for current dev phase.
-        //-------------------------------------------------------------------
-        //   AINLP.mind: Reactivate when custom AIOS MCP integration is mature and needed.
+        "github": {
+            "url": "https://api.githubcopilot.com/mcp/"
+        },
         // "aios": {
         //     "type": "stdio",
         //     "command": "python",
-        //     "args": [
-        //         "ai/src/core/aios_mcp_server.py"
-        //     ]
-        // },
-        "github": {
-            "url": "https://api.githubcopilot.com/mcp/"
-        }
+        //     "args": ["ai/src/core/aios_mcp_server.py"]
+        // }
+        // Uncomment for custom AIOS MCP integration when ready.
     }
 }
