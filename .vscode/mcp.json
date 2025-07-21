@@ -1,18 +1,4 @@
-// load.AINLP_HUMAN {stub:AI TODO}
 {
-    "inputs": [
-        // AINLP.loader [latent:perplexity-key] (auto.AINLP.class)
-        // Reserved for future Perplexity integration.
-    ],
-    "servers": {
-        "github": {
-            "url": "https://api.githubcopilot.com/mcp/"
-        },
-        // "aios": {
-        //     "type": "stdio",
-        //     "command": "python",
-        //     "args": ["ai/src/core/aios_mcp_server.py"]
-        // }
-        // Uncomment for custom AIOS MCP integration when ready.
-    }
+	"inputs": [],
+	"servers": {}
 }
