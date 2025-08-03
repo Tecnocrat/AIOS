@@ -13,6 +13,12 @@ router = APIRouter()
 
 @router.post("/automation/run")
 async def automation_run(request: AutomationRequest):
+    """
+    Executes an automation task based on the provided AutomationRequest.
+    Supported tasks: 'optimize', 'manage-deps', or custom task names.
+    Returns a result summary, actions taken, confidence score, context,
+    and timestamp.
+    """
     if request.task == "optimize":
         result = "Code optimized for performance and readability."
         actions = [
