@@ -206,6 +206,15 @@ User Input → Chat Participant → Context Manager → AIOS Bridge → AI Modul
 
 ---
 
+## 2025 AINLP Dendritic Paradigm Upgrade
+
+- Backend endpoints, handlers, and bridge modules are now implemented as dendritic stubs for extensibility.
+- All injected dendrites are registered in app.state or as FastAPI routers, supporting future neuron logic.
+- `/intent` endpoint and dispatcher logic are modular and documented for future AI ingestion.
+- See `docs/AINLP_DENDRITIC_UPGRADE_2025.md` for canonical registry and logic path JSON.
+
+---
+
 ## 🎉 **Conclusion**
 
 The AIOS VSCode Extension successfully solves the critical chat iteration reset problem while providing a foundation for deep VSCode-AIOS integration. This implementation:
