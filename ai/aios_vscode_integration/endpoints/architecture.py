@@ -13,6 +13,11 @@ router = APIRouter()
 
 @router.post("/architecture/analyze")
 async def architecture_analyze(request: ArchitectureAnalyzeRequest):
+    """
+    Analyzes the project architecture and provides recommendations
+    for improvement.
+    Returns analysis, recommendations, confidence score, and timestamp.
+    """
     analysis = (
         "Project structure is modular. "
         "Consider separating concerns and improving documentation."
@@ -31,6 +36,10 @@ async def architecture_analyze(request: ArchitectureAnalyzeRequest):
 
 @router.post("/integration/visualize")
 async def integration_visualize(request: VisualizeRequest):
+    """
+    Visualizes the integration and data flow between project components.
+    Returns visualization, files, context, timestamp, and a note.
+    """
     visualization = (
         "Data flow: Python <-> C++ <-> TypeScript. " "Architecture is modular."
     )
