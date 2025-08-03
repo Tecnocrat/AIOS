@@ -1,0 +1,31 @@
+{
+    "name": "AIOS Private Use Configuration",
+    "description": "VSCode settings for AIOS extension private use",
+    "settings": {
+        "aios.core.enabled": true,
+        "aios.context.persistAcrossRestarts": true,
+        "aios.context.maxHistorySize": 1000,
+        "aios.ai.pythonPath": "c:/dev/AIOS/ai/src",
+        "aios.ai.corePath": "c:/dev/AIOS/core",
+        "aios.debug.enabled": false,
+        "aios.privacy.mode": "strict",
+        "aios.network.enabled": false,
+        "aios.telemetry.enabled": false,
+        "aios.autoUpdate.enabled": false,
+        "aios.marketplace.checkUpdates": false,
+        "aios.logs.retention": "session-only",
+        "aios.context.encryption": true,
+        "aios.debug.traceLevel": "error-only"
+    },
+    "workspaceSettings": {
+        "aios.core.enabled": true,
+        "aios.context.persistAcrossRestarts": true,
+        "aios.ai.pythonPath": "./ai/src",
+        "aios.ai.corePath": "./core",
+        "aios.debug.enabled": true
+    },
+    "globalVSCodeSettings": {
+        "telemetry.telemetryLevel": "off",
+        "workbench.settings.enableNaturalLanguageSearch": false
+    }
+}
