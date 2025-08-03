@@ -13,6 +13,10 @@ router = APIRouter()
 
 @router.post("/nlu/intent")
 async def nlu_intent(request: NLUIntentRequest):
+    """
+    Analyzes the input message to determine the user's intent.
+    Returns recognized intent, confidence score, context, and timestamp.
+    """
     message = request.message.lower()
     if "refactor" in message:
         intent = "refactor-request"
