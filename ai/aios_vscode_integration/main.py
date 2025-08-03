@@ -1,12 +1,30 @@
 """
 Entrypoint for AIOS VSCode Integration Server
+
+AINLP Dendritic Paradigm Integration:
+- All endpoints, handlers, and bridge modules are documented as dendritic
+  stubs.
+- These stubs are designed for extensibility, allowing future AI neurons
+(logic modules, models, or protocols) to connect and evolve the system.
+- Documentation in markdown and JSON ensures traceability and future ingestion
+for AINLP-driven refactorization.
+
+Logic Preservation Protocols:
+- All injected dendrites (intent_handlers, bridge, debug_manager, models) are
+registered in app.state or as FastAPI routers.
+- Each dendrite is documented with its logic path and integration point for
+future neuron connection.
+- All changes are referenced in UPGRADE_PATH.md and
+VSCODE_INTEGRATION_COMPLETE.md for architecture traceability.
 """
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from . import debug_manager, middleware, models
-from ai import intent_handlers
+from ai.debug_manager import _debug_manager
+from ai import intent_handlers  # Dendritic stub for future neuron connection
+from ai.intent_handlers import AIOSIntentDispatcher, generate_aios_response
 from .endpoints import (
     architecture,
     automation,
@@ -24,7 +42,45 @@ app = FastAPI(
     version="0.4.0",
 )
 
+
+@app.on_event("startup")
+def on_startup():
+    _debug_manager.log_request("startup", {"message": "API server started"})
+    # Register intent dispatcher dendrite for AINLP
+    app.state.aios_intent_dispatcher = AIOSIntentDispatcher()
+    # Register other dendritic stubs for future neuron connection
+    app.state.debug_manager = debug_manager
+    app.state.models = models
+    app.state.intent_handlers_stub = intent_handlers
+
+
+@app.on_event("shutdown")
+def on_shutdown():
+    _debug_manager.log_request("shutdown", {"message": "API server stopped"})
+
+
+@app.get("/debug")
+def get_debug():
+    """
+    Returns recent debug info for AINLP diagnostics and inspection.
+    """
+    return _debug_manager.get_debug_info()
+
+
+@app.post("/intent")
+def recognize_intent(request: dict):
+    """
+    Recognize intent from incoming message and context using AINLP dispatcher
+    dendrite.
+    """
+    message = request.get("message", "")
+    context = request.get("context", {})
+    response = generate_aios_response(message, context)
+    return {"response": response}
+
 # Enable CORS for VSCode extension
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -34,15 +90,22 @@ app.add_middleware(
 )
 
 # Register middleware
-app.middleware("http")(middleware.log_requests)
+
+
+def log_requests_middleware(request):
+    """
+    Dendritic stub for request logging middleware. Extend for neuron logic.
+    """
+    return middleware.log_requests(request)
+
+
+app.middleware("http")(log_requests_middleware)
 
 # Include routers from endpoint modules
 app.include_router(core.router)
 app.include_router(code.router)
 app.include_router(architecture.router)
-app.include_router(
-    nlu.router
-)
+app.include_router(nlu.router)
 app.include_router(bridge.router)
 app.include_router(automation.router)
 app.include_router(context.router)

@@ -44,4 +44,5 @@ class DebugManager:
             "errors": self.errors,
         }
 
+
 _debug_manager = DebugManager()

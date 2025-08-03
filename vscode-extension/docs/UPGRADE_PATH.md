@@ -25,3 +25,10 @@ To evolve the AIOS VSCode extension into a true AI-powered development assistant
 ### 6. **User Experience Enhancements**
 - [x] Improve chat UX with rich formatting, code snippets, and interactive suggestions.
 - [x] Add onboarding, help, and troubleshooting wizards.
+
+### 2025 AINLP Dendritic Paradigm Upgrade
+
+- All endpoints, handlers, and bridge modules in the backend are now implemented as dendritic stubs, ready for future neuron (logic) connections.
+- Logic preservation protocols ensure all injected dendrites (intent_handlers, bridge, debug_manager, models) are registered in app.state or as FastAPI routers.
+- `/intent` endpoint and dispatcher logic are modular and documented for future AI-driven refactorization.
+- See `docs/AINLP_DENDRITIC_UPGRADE_2025.md` for canonical registry and logic path JSON.
