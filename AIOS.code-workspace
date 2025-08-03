@@ -1,231 +1,83 @@
+// AIOS VSCode Workspace Configuration
 {
-    "folders": [
-        {
-            "name": "🧠 AIOS Consciousness System",
-            "path": "."
-        },
-        {
-            "name": "📊 ChatGPT Integration",
-            "path": "./chatgpt_integration"
-        },
-        {
-            "name": "🖥️ Visual Interface (C#)",
-            "path": "./visual_interface"
-        },
-        {
-            "name": "🎯 C++ Orchestrator",
-            "path": "./orchestrator"
-        },
-        {
-            "name": "🐍 Python Scripts",
-            "path": "./scripts"
-        },
-        {
-            "name": "🧬 Evolution Lab",
-            "path": "./evolution_lab"
-        },
-        {
-            "name": "🔗 Gemini CLI Bridge",
-            "path": "./gemini_cli_bridge"
-        },
-        {
-            "name": "🧠 Runtime Intelligence",
-            "path": "./runtime_intelligence"
-        },
-        {
-            "name": "📚 Documentation",
-            "path": "./docs"
-        }
-    ],
-    "settings": {
-        "files.exclude": {
-            "**/node_modules": true,
-            "**/build": false,
-            "**/bin": false,
-            "**/obj": false,
-            "**/.git": true,
-            "**/venv": true,
-            "**/__pycache__": true,
-            "**/*.pyc": true
-        },
-        "search.exclude": {
-            "**/node_modules": true,
-            "**/build": true,
-            "**/bin": true,
-            "**/obj": true,
-            "**/.git": true,
-            "**/venv": true,
-            "**/__pycache__": true
-        },
-        "python.defaultInterpreterPath": ".\\aios_env\\Scripts\\python.exe",
-        "python.pythonPath": ".\\aios_env\\Scripts\\python.exe",
-        "python.terminal.activateEnvironment": true,
-        "python.terminal.activateEnvInCurrentTerminal": true,
-        "python.venvPath": ".\\",
-        "python.venvFolders": [".\\aios_env", "aios_env"],
-        "python.interpreter.infoVisibility": "never",
-        "python.experiments.enabled": false,
-        "python.showStartPage": false,
-        "python.analysis.autoImportCompletions": true,
-        "python.analysis.autoSearchPaths": true,
-        "python.analysis.diagnosticMode": "workspace",
-        "python.analysis.extraPaths": [
-            ".\\scripts",
-            ".\\chatgpt_integration",
-            ".\\runtime_intelligence",
-            ".\\evolution_lab"
-        ],
-        "cmake.buildDirectory": "${workspaceFolder}/orchestrator/build",
-        "cmake.sourceDirectory": "${workspaceFolder}/orchestrator",
-        "cmake.configureOnOpen": true,
-        "C_Cpp.default.includePath": [
-            "${workspaceFolder}/orchestrator/include",
-            "${workspaceFolder}/orchestrator/src"
-        ],
-        "C_Cpp.default.compilerPath": "gcc",
-        "C_Cpp.default.cStandard": "c17",
-        "C_Cpp.default.cppStandard": "c++20",
-        "C_Cpp.default.intelliSenseMode": "gcc-x64",
-        "dotnet.defaultSolution": "${workspaceFolder}/visual_interface/AIOS.VisualInterface.csproj",
-        "omnisharp.defaultLaunchSolution": "${workspaceFolder}/visual_interface/AIOS.VisualInterface.csproj",
-        "omnisharp.enableAsyncCompletion": true,
-        "omnisharp.enableRoslynAnalyzers": true,
-        "terminal.integrated.cwd": "${workspaceFolder}",
-        "workbench.colorTheme": "Default Dark+",
-        "editor.fontFamily": "Consolas, 'Courier New', monospace",
-        "editor.fontSize": 14,
-        "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 2000,
-        "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
-        "powershell.cwd": "🧠 AIOS Consciousness System"
-    },        "extensions": {
-        "recommendations": [
-            "ms-vscode.cpptools",
-            "ms-vscode.cpptools-extension-pack",
-            "ms-vscode.cmake-tools",
-            "ms-python.python",
-            "ms-python.pylint",
-            "ms-python.isort",
-            "ms-python.black-formatter",
-            "ms-dotnettools.csharp",
-            "ms-dotnettools.vscode-dotnet-runtime",
-            "ms-vscode.powershell",
-            "github.copilot",
-            "github.copilot-chat",
-            "eamodio.gitlens",
-            "ms-vscode.vscode-json",
-            "redhat.vscode-yaml"
-        ]
-    },
-    "tasks": {
-        "version": "2.0.0",
-        "tasks": [
-            {
-                "label": "Build AIOS Orchestrator",
-                "type": "shell",
-                "command": "cmake",
-                "args": [
-                    "--build",
-                    "${workspaceFolder}/orchestrator/build",
-                    "--config",
-                    "Debug"
-                ],
-                "group": {
-                    "kind": "build",
-                    "isDefault": true
-                },
-                "presentation": {
-                    "echo": true,
-                    "reveal": "always",
-                    "focus": false,
-                    "panel": "shared"
-                },
-                "problemMatcher": "$gcc"
-            },
-            {
-                "label": "Configure CMake",
-                "type": "shell",
-                "command": "cmake",
-                "args": [
-                    "-B",
-                    "${workspaceFolder}/orchestrator/build",
-                    "-S",
-                    "${workspaceFolder}/orchestrator",
-                    "-DCMAKE_BUILD_TYPE=Debug"
-                ],
-                "group": "build",
-                "presentation": {
-                    "echo": true,
-                    "reveal": "always",
-                    "focus": false,
-                    "panel": "shared"
-                }
-            },
-            {
-                "label": "Launch Quantum Consciousness Canvas",
-                "type": "shell",
-                "command": "python",
-                "args": [
-                    "${workspaceFolder}/scripts/quantum_consciousness_canvas.py"
-                ],
-                "group": "test",
-                "presentation": {
-                    "echo": true,
-                    "reveal": "always",
-                    "focus": false,
-                    "panel": "shared"
-                }
-            },
-            {
-                "label": "Setup AIOS Environment",
-                "type": "shell",
-                "command": "powershell",
-                "args": [
-                    "-ExecutionPolicy",
-                    "Bypass",
-                    "-File",
-                    "${workspaceFolder}/setup_environment.ps1"
-                ],
-                "group": "build",
-                "presentation": {
-                    "echo": true,
-                    "reveal": "always",
-                    "focus": false,
-                    "panel": "shared"
-                }
-            }
-        ]
-    },
-    "launch": {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "name": "Launch AIOS Orchestrator",
-                "type": "cppdbg",
-                "request": "launch",
-                "program": "${workspaceFolder}/orchestrator/build/Debug/aios_kernel.exe",
-                "args": [],
-                "stopAtEntry": false,
-                "cwd": "${workspaceFolder}/orchestrator/build",
-                "environment": [],
-                "externalConsole": false,
-                "MIMode": "gdb",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "text": "-enable-pretty-printing",
-                        "ignoreFailures": true
-                    }
-                ]
-            },
-            {
-                "name": "Python: Quantum Canvas",
-                "type": "debugpy",
-                "request": "launch",
-                "program": "${workspaceFolder}/scripts/quantum_consciousness_canvas.py",
-                "console": "integratedTerminal",
-                "cwd": "${workspaceFolder}"
-            }
-        ]
-    }
+	"folders": [
+		{
+			"name": "🧠 AIOS Core",
+			"path": "."
+		},
+		{
+			"name": "Interface",
+			"path": "./interface"
+		},
+		{
+			"name": "Docs",
+			"path": "./docs"
+		},
+		{
+			"name": "Scripts",
+			"path": "./scripts"
+		},
+		{
+			"name": "Runtime Intelligence",
+			"path": "./runtime_intelligence"
+		}
+		// Add other critical folders as needed
+	],
+	"settings": {
+		// Context retention and harmonization
+		"aios.context.persistAcrossRestarts": true,
+		"aios.context.maxHistorySize": 1000,
+		"workbench.editor.restoreViewState": true,
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 5000,
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit"
+		},
+		// Python, C++, C# integration
+		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
+		"C_Cpp.default.intelliSenseMode": "gcc-x64",
+		"dotnet.defaultSolution": "${workspaceFolder}/interface/AIOS.UI/AIOS.UI.csproj",
+		// Telemetry and privacy
+		"telemetry.telemetryLevel": "off",
+		"redhat.telemetry.enabled": false,
+		// Theme and appearance
+		"workbench.colorTheme": "Default Dark Modern",
+		"workbench.iconTheme": "vs-seti"
+		// Add other essential settings
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-python.python",
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp",
+			"github.copilot",
+			"github.copilot-chat"
+			// Only add extensions critical for project function
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			// Only keep tasks that are actively used and tested
+			// Example:
+			{
+				"label": "Build All",
+				"dependsOrder": "sequence",
+				"dependsOn": [
+					"Build C++ Core",
+					"Install Python Dependencies",
+					"Build C# Projects"
+				],
+				"group": "build"
+			}
+			// Add other essential tasks
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			// Only keep launch configs for critical debug scenarios
+		]
+	}
 }
