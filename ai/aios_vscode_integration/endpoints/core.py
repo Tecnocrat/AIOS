@@ -7,6 +7,7 @@ import logging
 import os
 import subprocess
 import sys
+import time
 import traceback
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
@@ -255,6 +256,44 @@ async def diagnostics():
         error_trace = traceback.format_exc()
         logger.error(
             "Diagnostics error: %s\nTraceback:\n%s",
+            e,
+            error_trace
+        )
+        _debug_manager.log_error({"error": str(e), "traceback": error_trace})
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error": str(e),
+                "traceback": error_trace
+            }
+        ) from e
+
+
+@router.post("/process")
+async def process_message(request_data: dict):
+    """
+    Process messages using AIOS intent dispatcher.
+    Accepts message and context, returns processed response.
+    """
+    try:
+        message = request_data.get("message", "")
+        context = request_data.get("context", {})
+        
+        # Import here to avoid circular imports
+        from ..intent_handlers import generate_aios_response
+        
+        response_text = generate_aios_response(message, context)
+        
+        return {
+            "response_text": response_text,
+            "status": "processed",
+            "context": context,
+            "timestamp": time.time()
+        }
+    except Exception as e:
+        error_trace = traceback.format_exc()
+        logger.error(
+            "Message processing error: %s\nTraceback:\n%s",
             e,
             error_trace
         )

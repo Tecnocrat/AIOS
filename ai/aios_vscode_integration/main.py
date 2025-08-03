@@ -22,9 +22,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from . import debug_manager, middleware, models
-from ai.debug_manager import _debug_manager
-from ai import intent_handlers  # Dendritic stub for future neuron connection
-from ai.intent_handlers import AIOSIntentDispatcher, generate_aios_response
+from .debug_manager import _debug_manager
+from .intent_handlers import AIOSIntentDispatcher, generate_aios_response
 from .endpoints import (
     architecture,
     automation,
@@ -51,7 +50,6 @@ def on_startup():
     # Register other dendritic stubs for future neuron connection
     app.state.debug_manager = debug_manager
     app.state.models = models
-    app.state.intent_handlers_stub = intent_handlers
 
 
 @app.on_event("shutdown")
@@ -90,16 +88,7 @@ app.add_middleware(
 )
 
 # Register middleware
-
-
-def log_requests_middleware(request):
-    """
-    Dendritic stub for request logging middleware. Extend for neuron logic.
-    """
-    return middleware.log_requests(request)
-
-
-app.middleware("http")(log_requests_middleware)
+app.middleware("http")(middleware.log_requests)
 
 # Include routers from endpoint modules
 app.include_router(core.router)
