@@ -43,7 +43,8 @@
 		"redhat.telemetry.enabled": false,
 		// Theme and appearance
 		"workbench.colorTheme": "Default Dark Modern",
-		"workbench.iconTheme": "vs-seti"
+		"workbench.iconTheme": "vs-seti",
+		"powershell.cwd": "🧠 AIOS Core"
 		// Add other essential settings
 	},
 	"extensions": {
