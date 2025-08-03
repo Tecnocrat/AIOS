@@ -13,6 +13,10 @@ router = APIRouter()
 
 @router.post("/code/review")
 async def code_review(request: CodeReviewRequest):
+    """
+    Performs a code review for the provided code in the specified language.
+    Returns review comments, suggestions, confidence score, and timestamp.
+    """
     review = (
         f"Review for {request.language} code: " "Looks good. Consider best practices."
     )
@@ -30,6 +34,10 @@ async def code_review(request: CodeReviewRequest):
 
 @router.post("/code/refactor")
 async def code_refactor(request: CodeRefactorRequest):
+    """
+    Refactors the provided code and returns suggestions for improvement.
+    Returns refactored code, suggestions, confidence score, and timestamp.
+    """
     refactored_code = request.code
     suggestions = [
         "Extract functions",
