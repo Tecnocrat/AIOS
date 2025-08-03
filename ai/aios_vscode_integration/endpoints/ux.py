@@ -12,6 +12,10 @@ router = APIRouter()
 
 @router.get("/ux/onboarding")
 async def ux_onboarding():
+    """
+    Provides onboarding steps for new AIOS VSCode extension users.
+    Returns a list of steps, timestamp, and a note about onboarding logic.
+    """
     steps = [
         "Install AIOS VSCode extension",
         "Configure private settings",
@@ -28,6 +32,10 @@ async def ux_onboarding():
 
 @router.get("/ux/help")
 async def ux_help():
+    """
+    Returns help topics and troubleshooting guidance for AIOS users.
+    Includes a list of topics, timestamp, and a note about help logic.
+    """
     help_topics = [
         "Extension not loading",
         "Context not persisting",
@@ -44,6 +52,11 @@ async def ux_help():
 
 @router.post("/ux/chat-format")
 async def ux_chat_format(request: Dict[str, Any]):
+    """
+    Formats chat messages for the AIOS UX interface.
+    Returns formatted message, suggestions, timestamp, and a note about
+    formatting logic.
+    """
     message = request.get("message", "")
     formatted = f"**AIOS:** {message}"
     suggestions = [
