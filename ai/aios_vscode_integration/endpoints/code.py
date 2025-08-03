@@ -18,7 +18,8 @@ async def code_review(request: CodeReviewRequest):
     Returns review comments, suggestions, confidence score, and timestamp.
     """
     review = (
-        f"Review for {request.language} code: " "Looks good. Consider best practices."
+        f"Review for {request.language} code: "
+        "Looks good. Consider best practices."
     )
     return {
         "review": review,
