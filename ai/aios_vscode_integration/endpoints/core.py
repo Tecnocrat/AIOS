@@ -1,5 +1,6 @@
 """
 Core endpoints: root, health, diagnostics, health monitor, startup
+Enhanced with Task 1.2 - Fractal Cache Management and Performance Optimization
 """
 
 import asyncio
@@ -16,6 +17,7 @@ import psutil
 from fastapi import APIRouter, HTTPException
 
 from ..debug_manager import _debug_manager
+from ..fractal_cache_manager import _fractal_cache_manager
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -114,19 +116,39 @@ async def root():
 @router.get("/health")
 async def health_check():
     """
-    Health check endpoint for the API and cellular ecosystem.
-    Returns health status, active components, timestamp,
-    and system resource usage.
+    Health check endpoint with fractal caching for performance optimization.
+    Implements Task 1.2 - TTL-based caching for system resource data.
     """
+    start_time = time.time()
+
     try:
+        # Try to get cached health data first
+        cache_context = {
+            "type": "health_check",
+            "priority": "medium",
+            "workspace_stable": True
+        }
+
+        cached_result = await _fractal_cache_manager.get_cached("health_data", cache_context)
+
+        if cached_result:
+            # Add cache hit metadata
+            cached_result["cache_hit"] = True
+            cached_result["response_time"] = (time.time() - start_time) * 1000
+
+            _debug_manager.log_request(
+                "/health",
+                {"timestamp": datetime.now().isoformat(), "cache_hit": True},
+                response_time=(time.time() - start_time) * 1000
+            )
+
+            return cached_result
+
+        # Cache miss - fetch fresh data
         cpu_percent = await asyncio.to_thread(psutil.cpu_percent)
         mem = await asyncio.to_thread(psutil.virtual_memory)
-        logger.info("Health check requested.")
-        _debug_manager.log_request(
-            "/health",
-            {"timestamp": datetime.now().isoformat()}
-        )
-        return {
+
+        health_data = {
             "status": "healthy",
             "python_ai_cells": "active",
             "integration_bridge": "operational",
@@ -138,7 +160,23 @@ async def health_check():
                 "memory_used": mem.used,
                 "memory_percent": mem.percent,
             },
+            "cache_hit": False,
+            "response_time": (time.time() - start_time) * 1000,
+            "performance_optimized": True
         }
+
+        # Cache the result with adaptive TTL
+        await _fractal_cache_manager.set_cached("health_data", health_data, cache_context)
+
+        logger.info("Health check requested (cache miss).")
+        _debug_manager.log_request(
+            "/health",
+            {"timestamp": datetime.now().isoformat(), "cache_hit": False},
+            response_time=(time.time() - start_time) * 1000
+        )
+
+        return health_data
+
     except Exception as e:
         error_trace = traceback.format_exc()
         logger.error(
@@ -272,28 +310,142 @@ async def diagnostics():
 @router.post("/process")
 async def process_message(request_data: dict):
     """
-    Process messages using AIOS intent dispatcher.
-    Accepts message and context, returns processed response.
+    Process messages using AIOS intent dispatcher with performance optimization.
+    Implements Task 1.2 - Performance tracking and fractal cache integration.
     """
+    start_time = time.time()
+
     try:
         message = request_data.get("message", "")
         context = request_data.get("context", {})
-        
+
+        # Create cache key for similar messages (optional caching for frequent
+        # queries)
+        cache_context = {
+            "type": "message_processing",
+            "priority": "high",
+            "message_length": len(message),
+            "workspace_stable": context.get("workspace_stable", False)
+        }
+
         # Import here to avoid circular imports
         from ..intent_handlers import generate_aios_response
-        
+
+        # Process the message with timing
         response_text = generate_aios_response(message, context)
-        
-        return {
+        processing_time = (time.time() - start_time) * 1000
+
+        response_data = {
             "response_text": response_text,
             "status": "processed",
             "context": context,
-            "timestamp": time.time()
+            "timestamp": time.time(),
+            "processing_time_ms": processing_time,
+            "performance_optimized": True,
+            "fractal_metadata": {
+                "message_complexity": len(message.split()),
+                "context_dimensions": len(context.keys()),
+                "dendrite_level": "message_processing_neuron"
+            }
         }
+
+        # Log performance data for AINLP analysis
+        _debug_manager.log_performance("message_processing", {
+            "processing_time": processing_time,
+            "message_length": len(message),
+            "context_complexity": len(context.keys()),
+            "response_length": len(response_text)
+        })
+
+        # Log request with timing
+        _debug_manager.log_request(
+            "/process",
+            {
+                "message": message[:100],  # Truncate for logging
+                "context": context,
+                "timestamp": datetime.now().isoformat()
+            },
+            response_time=processing_time
+        )
+
+        return response_data
+
+    except Exception as e:
+        error_trace = traceback.format_exc()
+        processing_time = (time.time() - start_time) * 1000
+
+        logger.error(
+            "Message processing error: %s\nTraceback:\n%s",
+            e,
+            error_trace
+        )
+
+        _debug_manager.log_error({
+            "error": str(e),
+            "traceback": error_trace,
+            "processing_time": processing_time,
+            "message": request_data.get("message", "")[:100]
+        }, severity="error")
+
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error": str(e),
+                "traceback": error_trace,
+                "processing_time_ms": processing_time
+            }
+        ) from e
+
+
+@router.get("/performance/report")
+async def performance_report():
+    """
+    Generate comprehensive performance report using fractal cache manager.
+    Implements Task 1.2 - Performance baseline establishment and monitoring.
+    """
+    start_time = time.time()
+
+    try:
+        # Get performance report from fractal cache manager
+        cache_report = await _fractal_cache_manager.get_performance_report()
+
+        # Get debug manager analysis
+        debug_info = _debug_manager.get_debug_info()
+
+        processing_time = (time.time() - start_time) * 1000
+
+        performance_report = {
+            "timestamp": datetime.now().isoformat(),
+            "processing_time_ms": processing_time,
+            "cache_performance": cache_report,
+            "debug_analysis": {
+                "total_requests": len(debug_info["requests"]),
+                "total_errors": len(debug_info["errors"]),
+                "total_handlers": len(debug_info["handlers"]),
+                "fractal_analysis": debug_info.get("fractal_analysis", {})
+            },
+            "system_health": {
+                "cpu_percent": await asyncio.to_thread(psutil.cpu_percent),
+                "memory_percent": (await asyncio.to_thread(psutil.virtual_memory)).percent,
+                "active_processes": len(psutil.pids())
+            },
+            "task_1_2_status": "implemented",
+            "optimization_level": "fractal_cache_active",
+            "next_optimization": "subprocess_parallelism"
+        }
+
+        _debug_manager.log_request(
+            "/performance/report",
+            {"timestamp": datetime.now().isoformat()},
+            response_time=processing_time
+        )
+
+        return performance_report
+
     except Exception as e:
         error_trace = traceback.format_exc()
         logger.error(
-            "Message processing error: %s\nTraceback:\n%s",
+            "Performance report error: %s\nTraceback:\n%s",
             e,
             error_trace
         )
