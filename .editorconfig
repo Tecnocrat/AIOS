@@ -1,0 +1,39 @@
+# AIOS Editor Configuration
+# Enforces consistent formatting without auto-formatters
+# This prevents formatters from overriding manual code fixes
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 79
+# Critical: Disable automatic formatting
+ij_formatter_enabled = false
+ij_smart_tabs = false
+
+[*.{js,ts,jsx,tsx}]
+indent_style = space
+indent_size = 2
+max_line_length = 79
+
+[*.{cs,cpp,h,hpp}]
+indent_style = space
+indent_size = 4
+max_line_length = 79
+
+[*.{md,yml,yaml}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+
+[*.json]
+indent_style = space
+indent_size = 2
+max_line_length = 79

@@ -30,9 +30,21 @@
 		"workbench.editor.restoreViewState": true,
 		"files.autoSave": "afterDelay",
 		"files.autoSaveDelay": 5000,
-		"editor.formatOnSave": true,
+		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
-			"source.fixAll": "explicit"
+			"source.fixAll": "never",
+			"source.organizeImports": "never"
+		},
+		// CRITICAL: Disable ALL Python formatters permanently
+		"python.formatting.provider": "none",
+		"python.linting.enabled": false,
+		"black-formatter.enabled": false,
+		"isort.enabled": false,
+		"autopep8.enabled": false,
+		"[python]": {
+			"editor.formatOnSave": false,
+			"editor.codeActionsOnSave": {},
+			"editor.defaultFormatter": null
 		},
 		// Python, C++, C# integration
 		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
