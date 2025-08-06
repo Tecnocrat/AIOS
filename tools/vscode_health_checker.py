@@ -178,17 +178,16 @@ class VSCodeHealthValidator:
         if not extensions_file.exists():
             return {"status": "no_config", "score": 0.9}
         
-        # This is a simplified check - in practice, you'd want to check
-        # the actual installed extensions via VSCode API
-        dangerous_extensions = [
-            "ms-python.black-formatter",  
-            "ms-python.autopep8",
-            "esbenp.prettier-vscode"
+        # For Copilot-driven development, formatters are beneficial tools
+        # when configured for manual control rather than auto-formatting
+        recommended_formatters = [
+            "ms-python.black-formatter",  # Good for Copilot code cleanup
+            "ms-python.isort"  # Useful for import organization
         ]
         
-        print("⚠️  Check that formatters are configured for manual use only")
+        print("✅ Formatters beneficial with manual control in Copilot")
         self.recommendations.append(
-            "💡 If formatters installed: Ensure formatOnSave=false for control"
+            "💡 Keep formatters for Copilot cleanup, ensure formatOnSave=false"
         )
         
         return {"status": "manual_check_needed", "score": 0.8}
