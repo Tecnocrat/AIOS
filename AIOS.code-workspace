@@ -6,36 +6,47 @@
 			"path": "."
 		},
 		{
-			"name": "Interface",
+			"name": "🤖 AI Intelligence",
+			"path": "./ai"
+		},
+		{
+			"name": "⚡ Core Engine",
+			"path": "./core"
+		},
+		{
+			"name": "🖥️ Interface",
 			"path": "./interface"
 		},
 		{
-			"name": "Docs",
+			"name": "📚 Documentation",
 			"path": "./docs"
 		},
 		{
-			"name": "Scripts",
+			"name": "🔧 Scripts & Tools",
 			"path": "./scripts"
 		},
 		{
-			"name": "Runtime Intelligence",
+			"name": "🧮 Runtime Intelligence",
 			"path": "./runtime_intelligence"
 		}
-		// Add other critical folders as needed
+		// Harmonized with current AIOS architecture
 	],
 	"settings": {
-		// Context retention and harmonization
+		// AIOS Context retention and harmonization
 		"aios.context.persistAcrossRestarts": true,
 		"aios.context.maxHistorySize": 1000,
 		"workbench.editor.restoreViewState": true,
 		"files.autoSave": "afterDelay",
 		"files.autoSaveDelay": 5000,
+		
+		// CRITICAL: Prevent formatting conflicts (learned from VSCode health issues)
 		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
 			"source.fixAll": "never",
 			"source.organizeImports": "never"
 		},
-		// CRITICAL: Disable ALL Python formatters permanently
+		
+		// CRITICAL: Disable ALL Python formatters permanently (VSCode health protection)
 		"python.formatting.provider": "none",
 		"python.linting.enabled": false,
 		"black-formatter.enabled": false,
@@ -46,18 +57,40 @@
 			"editor.codeActionsOnSave": {},
 			"editor.defaultFormatter": null
 		},
-		// Python, C++, C# integration
+		
+		// AIOS Multi-language integration paths
 		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
 		"C_Cpp.default.intelliSenseMode": "gcc-x64",
-		"dotnet.defaultSolution": "${workspaceFolder}/interface/AIOS.UI/AIOS.UI.csproj",
+		"dotnet.defaultSolution": "${workspaceFolder}/interface/AIOS.sln",
+		
+		// AIOS Consciousness and polymorphic development support
+		"files.associations": {
+			"*.ainlp": "markdown",
+			"*.consciousness": "json"
+		},
+		
+		// AIOS-specific file exclusions for cleaner workspace
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/*.pyc": true,
+			"**/build": true,
+			"**/bin": true,
+			"**/obj": true,
+			"**/.pytest_cache": true
+		},
+		
 		// Telemetry and privacy
 		"telemetry.telemetryLevel": "off",
 		"redhat.telemetry.enabled": false,
-		// Theme and appearance
+		
+		// AIOS Theme and appearance
 		"workbench.colorTheme": "Default Dark Modern",
 		"workbench.iconTheme": "vs-seti",
-		"powershell.cwd": "🧠 AIOS Core"
-		// Add other essential settings
+		"powershell.cwd": "🧠 AIOS Core",
+		
+		// AIOS workspace behavior
+		"explorer.confirmDragAndDrop": false,
+		"explorer.confirmDelete": false
 	},
 	"extensions": {
 		"recommendations": [
