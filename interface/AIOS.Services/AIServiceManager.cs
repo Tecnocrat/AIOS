@@ -151,6 +151,44 @@ namespace AIOS.Services
             }
         }
 
+        // Lightweight internal event logger to unify event tracking and surface to UI if needed
+        private void LogSystemEvent(string message, string severity = "Info", string type = "General")
+        {
+            try
+            {
+                var evt = new SystemEvent
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Type = type,
+                    Message = message,
+                    Timestamp = DateTime.UtcNow,
+                    Source = nameof(AIServiceManager),
+                    Severity = severity
+                };
+                _recentEvents.Add(evt);
+
+                // Mirror to ILogger using mapped levels
+                switch (severity?.ToLowerInvariant())
+                {
+                    case "error":
+                        _logger.LogError("{Message}", message);
+                        break;
+                    case "warning":
+                        _logger.LogWarning("{Message}", message);
+                        break;
+                    case "success":
+                    case "info":
+                    default:
+                        _logger.LogInformation("{Message}", message);
+                        break;
+                }
+            }
+            catch
+            {
+                // Do not throw from logging path
+            }
+        }
+
         /// <summary>
         /// Get compression status through AI Service Manager
         /// </summary>
@@ -579,5 +617,6 @@ except Exception as e:
         public string Message { get; set; } = "";
         public DateTime Timestamp { get; set; }
         public string Source { get; set; } = "";
+    public string Severity { get; set; } = "";
     }
 }
