@@ -17,11 +17,11 @@ namespace AIOS.UI
     /// </summary>
     public partial class CompleteHybridWindow : Window
     {
-        private WebView2 _webView;
-        private WebInterfaceService _webInterface;
-        private AdvancedAIServiceManager _aiService;
-        private DatabaseService _dbService;
-        private ILogger<CompleteHybridWindow> _logger;
+        private WebView2 _webView = null!;
+        private WebInterfaceService _webInterface = null!;
+        private AdvancedAIServiceManager _aiService = null!;
+        private DatabaseService _dbService = null!;
+        private ILogger<CompleteHybridWindow> _logger = null!;
         private bool _isWebViewInitialized = false;
 
         public CompleteHybridWindow()
@@ -174,7 +174,7 @@ namespace AIOS.UI
             }
         }
 
-        private async Task LoadFallbackHtml()
+    private Task LoadFallbackHtml()
         {
             var fallbackHtml = @"
 <!DOCTYPE html>
@@ -241,16 +241,17 @@ namespace AIOS.UI
 
             _webView.NavigateToString(fallbackHtml);
             _logger.LogInformation("Loaded fallback HTML interface");
+            return Task.CompletedTask;
         }
 
         // Event Handlers
-        private void OnNavigationStarting(object sender, CoreWebView2NavigationStartingEventArgs e)
+    private void OnNavigationStarting(object? sender, CoreWebView2NavigationStartingEventArgs e)
         {
             _logger.LogInformation($"Navigation starting: {e.Uri}");
             StatusText.Text = "🔄 Loading interface...";
         }
 
-        private async void OnNavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+    private async void OnNavigationCompleted(object? sender, CoreWebView2NavigationCompletedEventArgs e)
         {
             _logger.LogInformation($"Navigation completed: Success={e.IsSuccess}");
 
@@ -268,7 +269,7 @@ namespace AIOS.UI
             }
         }
 
-        private async void OnDOMContentLoaded(object sender, CoreWebView2DOMContentLoadedEventArgs e)
+    private async void OnDOMContentLoaded(object? sender, CoreWebView2DOMContentLoadedEventArgs e)
         {
             _logger.LogInformation("DOM content loaded");
 
@@ -289,7 +290,7 @@ namespace AIOS.UI
             }
         }
 
-        private async void OnWebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
+    private async void OnWebMessageReceived(object? sender, CoreWebView2WebMessageReceivedEventArgs e)
         {
             try
             {
@@ -307,7 +308,7 @@ namespace AIOS.UI
 
     // Note: CoreWebView2.ScriptDialogOpening can be used to monitor dialogs; no ScriptException or IsPrivateBrowsingEnabled in stable API
 
-        private void OnPermissionRequested(object sender, CoreWebView2PermissionRequestedEventArgs e)
+    private void OnPermissionRequested(object? sender, CoreWebView2PermissionRequestedEventArgs e)
         {
             _logger.LogInformation($"Permission requested: {e.PermissionKind}");
 
@@ -320,7 +321,7 @@ namespace AIOS.UI
         }
 
         // XAML button handlers declared in CompleteHybridWindow.xaml
-        private async void RetryButton_Click(object sender, RoutedEventArgs e)
+    private async void RetryButton_Click(object? sender, RoutedEventArgs e)
         {
             try
             {
@@ -339,17 +340,17 @@ namespace AIOS.UI
             }
         }
 
-        private void FallbackButton_Click(object sender, RoutedEventArgs e)
+    private void FallbackButton_Click(object? sender, RoutedEventArgs e)
         {
             ShowFallbackInterface();
         }
 
-        private void CloseCommand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+    private void CloseCommand_Executed(object? sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void OnProcessFailed(object sender, CoreWebView2ProcessFailedEventArgs e)
+    private void OnProcessFailed(object? sender, CoreWebView2ProcessFailedEventArgs e)
         {
             _logger.LogError($"WebView2 process failed: {e.Reason}");
             StatusText.Text = $"❌ WebView2 process failed: {e.Reason}";
@@ -424,7 +425,7 @@ namespace AIOS.UI
             }
         }
 
-        private async Task StartRealTimeUpdates()
+    private Task StartRealTimeUpdates()
         {
             try
             {
@@ -450,9 +451,10 @@ namespace AIOS.UI
             {
                 _logger.LogError(ex, "Failed to start real-time updates");
             }
+            return Task.CompletedTask;
         }
 
-        private async Task HandleWebMessage(string message)
+    private Task HandleWebMessage(string message)
         {
             try
             {
@@ -467,6 +469,7 @@ namespace AIOS.UI
             {
                 _logger.LogError(ex, "Error handling web message");
             }
+            return Task.CompletedTask;
         }
 
         private void ShowFallbackInterface()

@@ -473,8 +473,8 @@ namespace AIOS.UI
         private readonly Dictionary<string, AIConversation> _activeConversations;
         private bool _isProcessingRequests;
 
-        public event EventHandler<AIResponseEventArgs> AIResponseReceived;
-        public event EventHandler<ContextHealthEventArgs> ContextHealthChanged;
+    public event EventHandler<AIResponseEventArgs>? AIResponseReceived;
+    public event EventHandler<ContextHealthEventArgs>? ContextHealthChanged;
 
         public AdvancedAIIntegrationUI(FractalContextManager contextManager)
         {
@@ -495,7 +495,7 @@ namespace AIOS.UI
         /// Process natural language input with full AI integration
         /// </summary>
         public async Task<AIResponse> ProcessNaturalLanguageAsync(string userInput,
-            string conversationId = null)
+            string? conversationId = null)
         {
             try
             {
@@ -543,7 +543,7 @@ namespace AIOS.UI
         /// Real-time AI streaming for continuous interaction
         /// </summary>
         public async IAsyncEnumerable<AIStreamChunk> ProcessStreamingAsync(string userInput,
-            string conversationId = null)
+            string? conversationId = null)
         {
             var conversation = GetOrCreateConversation(conversationId);
             var chunks = new List<AIStreamChunk>();
@@ -847,18 +847,20 @@ namespace AIOS.UI
                 ["fractal_dim"] = 1.73
             });
 
-        private AIConversation GetOrCreateConversation(string conversationId)
+        private AIConversation GetOrCreateConversation(string? conversationId)
         {
-            if (!_activeConversations.ContainsKey(conversationId))
+            var id = conversationId ?? Guid.NewGuid().ToString();
+
+            if (!_activeConversations.ContainsKey(id))
             {
-                _activeConversations[conversationId] = new AIConversation
+                _activeConversations[id] = new AIConversation
                 {
-                    Id = conversationId,
+                    Id = id,
                     StartTime = DateTime.Now,
                     Exchanges = new List<AIExchange>()
                 };
             }
-            return _activeConversations[conversationId];
+            return _activeConversations[id];
         }
 
         private async Task<AIResponse> WaitForResponseAsync(string requestId, TimeSpan timeout)
@@ -886,7 +888,7 @@ namespace AIOS.UI
             throw new TimeoutException("AI response timeout");
         }
 
-        private void MonitorContextHealth(object state)
+    private void MonitorContextHealth(object? state)
         {
             Task.Run(async () =>
             {
@@ -934,10 +936,10 @@ namespace AIOS.UI
         private readonly Dictionary<string, DebugContextSnapshot> _debugSnapshots;
         private readonly Timer _debugMonitorTimer;
 
-        public event EventHandler<DebugSessionEventArgs> DebugSessionStarted;
-        public event EventHandler<DebugSessionEventArgs> DebugSessionCompleted;
-        public event EventHandler<ContextSnapshotEventArgs> DebugSnapshotCreated;
-        public event EventHandler<ContextRecoveryEventArgs> ContextRecovered;
+    public event EventHandler<DebugSessionEventArgs>? DebugSessionStarted;
+    public event EventHandler<DebugSessionEventArgs>? DebugSessionCompleted;
+    public event EventHandler<ContextSnapshotEventArgs>? DebugSnapshotCreated;
+    public event EventHandler<ContextRecoveryEventArgs>? ContextRecovered;
 
         public DebugIntegrationUI(FractalContextManager contextManager)
         {
@@ -955,7 +957,7 @@ namespace AIOS.UI
         /// Start a debug session with context preservation
         /// </summary>
         public async Task<DebugSession> StartDebugSessionAsync(string debugTarget,
-            string description = null, DebugSessionType sessionType = DebugSessionType.Standard)
+            string? description = null, DebugSessionType sessionType = DebugSessionType.Standard)
         {
             try
             {
@@ -1065,7 +1067,7 @@ namespace AIOS.UI
         /// Create a debug context snapshot
         /// </summary>
         public async Task<DebugContextSnapshot> CreateDebugContextSnapshotAsync(string debugTarget,
-            string description = null)
+            string? description = null)
         {
             var snapshot = new DebugContextSnapshot
             {
@@ -1097,7 +1099,7 @@ namespace AIOS.UI
         /// Restore context from debug snapshot
         /// </summary>
         public async Task<ContextRecoveryResult> RestoreDebugContextAsync(string snapshotId,
-            List<string> debugInsights = null)
+            List<string>? debugInsights = null)
         {
             if (!_debugSnapshots.ContainsKey(snapshotId))
             {
@@ -1168,7 +1170,7 @@ namespace AIOS.UI
         /// <summary>
         /// Monitor active debug sessions
         /// </summary>
-        private void MonitorDebugSessions(object state)
+    private void MonitorDebugSessions(object? state)
         {
             Task.Run(async () =>
             {
@@ -1218,7 +1220,7 @@ namespace AIOS.UI
             return contextHealth.Score;
         }
 
-        private async Task<Dictionary<string, object>> GetAllComponentStatesAsync()
+        private Task<Dictionary<string, object>> GetAllComponentStatesAsync()
         {
             var states = new Dictionary<string, object>();
             var holographicContext = _contextManager.GetHolographicContext();
@@ -1233,7 +1235,7 @@ namespace AIOS.UI
                 };
             }
 
-            return states;
+            return Task.FromResult(states);
         }
 
         private List<string> GetActiveTasks()
@@ -1246,7 +1248,7 @@ namespace AIOS.UI
             return new List<string>();
         }
 
-        private async Task RestorePreDebugState(DebugContextSnapshot snapshot)
+        private Task RestorePreDebugState(DebugContextSnapshot snapshot)
         {
             // Restore holographic context
             foreach (var contextItem in snapshot.PreDebugContext.GlobalContext)
@@ -1256,9 +1258,11 @@ namespace AIOS.UI
 
             // Restore development phase
             _contextManager.UpdateContext("development_phase", snapshot.DevelopmentPhase);
+
+            return Task.CompletedTask;
         }
 
-        private async Task IntegrateDebugInsights(List<string> insights, DebugContextSnapshot snapshot)
+    private Task IntegrateDebugInsights(List<string> insights, DebugContextSnapshot snapshot)
         {
             // Add debug insights to context
             _contextManager.UpdateContext("debug_insights", insights);
@@ -1275,15 +1279,17 @@ namespace AIOS.UI
             {
                 _contextManager.UpdateContext(item.Key, item.Value);
             }
+
+            return Task.CompletedTask;
         }
 
-        private async Task RestoreComponentSynchronization(DebugContextSnapshot snapshot)
+    private async Task RestoreComponentSynchronization(DebugContextSnapshot snapshot)
         {
             // Trigger component synchronization
             await _contextRecovery.ExecuteContextRecoveryAsync();
         }
 
-        private async Task<bool> VerifyContextIntegrity(DebugContextSnapshot snapshot)
+    private Task<bool> VerifyContextIntegrity(DebugContextSnapshot snapshot)
         {
             try
             {
@@ -1293,19 +1299,21 @@ namespace AIOS.UI
 
                 // Verify coherence is within acceptable range
                 var coherenceDiff = Math.Abs(currentCoherence - snapshotCoherence);
-                return coherenceDiff < 0.2; // Allow 20% coherence variation
+        return Task.FromResult(coherenceDiff < 0.2); // Allow 20% coherence variation
             }
             catch
             {
-                return false;
+        return Task.FromResult(false);
             }
         }
 
-        private async Task ResumeDevelopmentFlow(string developmentPhase)
+    private Task ResumeDevelopmentFlow(string developmentPhase)
         {
             _contextManager.UpdateContext("development_phase", developmentPhase);
             _contextManager.UpdateContext("context_restored", true);
             _contextManager.UpdateContext("restoration_timestamp", DateTime.Now);
+
+        return Task.CompletedTask;
         }
 
         public void Dispose()

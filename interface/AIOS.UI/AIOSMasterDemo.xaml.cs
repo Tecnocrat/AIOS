@@ -24,12 +24,12 @@ namespace AIOS.UI
     /// </summary>
     public partial class AIOSMasterDemo : Window
     {
-    private ILogger<AIOSMasterDemo> _logger;
-    private AdvancedAIServiceManager _aiService;
-    private DatabaseService _dbService;
-    private AINLPCompiler _ainlpCompiler;
-    private WebInterfaceService _webInterface;
-    private CompleteHybridWindow _hybridWindow;
+    private ILogger<AIOSMasterDemo> _logger = null!;
+    private AdvancedAIServiceManager _aiService = null!;
+    private DatabaseService _dbService = null!;
+    private AINLPCompiler _ainlpCompiler = null!;
+    private WebInterfaceService _webInterface = null!;
+    private CompleteHybridWindow? _hybridWindow;
         private bool _isInitialized = false;
 
         public AIOSMasterDemo()
@@ -100,7 +100,7 @@ namespace AIOS.UI
             await Task.Delay(100);
         }
 
-        private async Task SetupDemoScenarios()
+    private Task SetupDemoScenarios()
         {
             // Create demonstration scenarios
             var scenarios = new[]
@@ -153,6 +153,7 @@ namespace AIOS.UI
             {
                 AddDemoScenario(scenario);
             }
+            return Task.CompletedTask;
         }
 
         private void AddDemoScenario(DemoScenario scenario)
@@ -398,15 +399,16 @@ namespace AIOS.UI
                    $"• Active AI Modules: {healthData.AIModulesActive}/{healthData.TotalModules}";
         }
 
-        private async Task<string> MonitorAIServices()
+        private Task<string> MonitorAIServices()
         {
             var modules = _aiService.GetAvailableModules();
             var activeModules = modules.Where(m => m.Status == "Active").Count();
 
-            return $"AI Services:\n" +
-                   $"• Total Modules: {modules.Length}\n" +
-                   $"• Active Modules: {activeModules}\n" +
-                   $"• Last Updated: {DateTime.Now:HH:mm:ss}";
+            var msg = $"AI Services:\n" +
+                      $"• Total Modules: {modules.Length}\n" +
+                      $"• Active Modules: {activeModules}\n" +
+                      $"• Last Updated: {DateTime.Now:HH:mm:ss}";
+            return Task.FromResult(msg);
         }
 
         private async Task<string> MonitorDatabasePerformance()
@@ -481,7 +483,7 @@ namespace AIOS.UI
         }
 
         // Event Handlers
-        private async void ClearLogButton_Click(object sender, RoutedEventArgs e)
+    private void ClearLogButton_Click(object? sender, RoutedEventArgs e)
         {
             LogDocument.Blocks.Clear();
             AddLogEntry("Log cleared");
@@ -501,9 +503,9 @@ namespace AIOS.UI
     // Supporting Classes
     public class DemoScenario
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
-        public Func<Task> Action { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
+        public Func<Task> Action { get; set; } = default!;
     }
 }
