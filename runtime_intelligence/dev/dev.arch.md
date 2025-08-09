@@ -289,3 +289,13 @@ The AIOS architecture has successfully evolved through **massive refactorization
 **The architecture is now ready for Phase 3 optimization and beyond!** 🧬✨
 
 *Last Updated: August 4, 2025 - Post-Massive Refactorization*
+
+---
+
+## 2025-08-08 Architecture Note — Tachyonic Context & Anchors
+
+- Context activator: .aios_context.json at repo root remains the single source of runtime intent.
+- Tachyonic snapshots: on registry updates, write historical copies to runtime_intelligence/logs/aios_context/ as .aios_context[n].json, keeping .aios_context.json as the live head.
+- Anchoring: dev.run.md serves as the operational anchor; dev.arch.md captures why the system is shaped as such (no new components without doc‑first justification).
+- VS Code policy: AIOS.code-workspace is authoritative; suppress formatter conflicts; prefer in‑file evolution and minimal diffs.
+- Emergent logic (polymorphic intelligence, mutation watchers) is documented in existing architecture docs; code implementation is deferred until stability guarantees are met.

@@ -1,10 +1,12 @@
 """
 aios_context_registry_validator.py
 
-This script validates the .aios_context.json registry against the actual file system.
+This script validates the .aios_context.json registry against the actual
+file system.
 - Flags missing, orphaned, or untagged files.
 - Suggests context tag updates for new or changed files.
-- Can be extended to auto-update the registry or trigger harmonization routines.
+- Can be extended to auto-update the registry or trigger harmonization
+    routines.
 """
 
 import argparse
@@ -22,39 +24,48 @@ TACHYONIC_BASE_PATH = Path("runtime_intelligence/logs/aios_context")
 REGISTRY_PATH = Path(".aios_context.json")
 PROJECT_ROOT = Path(".")
 
+
+def _write_json_atomic(path: Path, data: Any) -> None:
+    """Write JSON atomically to avoid partial writes."""
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp_path, path)
+
+
 class TachyonicContextIntelligence:
     """
     Tachyonic Context Intelligence System
-    
+
     Maintains temporal copies of context states and performs deep analysis
     of the entire AIOS namespace including nested logic analysis.
     """
-    
+
     def __init__(self):
         self.tachyonic_path = TACHYONIC_BASE_PATH
         self.registry_path = REGISTRY_PATH
         self.ensure_tachyonic_structure()
-    
+
     def ensure_tachyonic_structure(self):
         """Ensure tachyonic directory structure exists"""
         self.tachyonic_path.mkdir(parents=True, exist_ok=True)
-    
-    def create_tachyonic_backup(self) -> str:
+
+    def create_tachyonic_backup(self) -> Optional[str]:
         """
         Create tachyonic backup before modification
         Returns: backup filename
         """
         if not self.registry_path.exists():
             return None
-            
+
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_name = f".aios_context_{timestamp}.json"
         backup_path = self.tachyonic_path / backup_name
-        
+
         shutil.copy2(self.registry_path, backup_path)
         print(f"🕐 Tachyonic backup created: {backup_name}")
         return backup_name
-    
+
     def analyze_file_nested_logic(self, file_path: Path) -> Dict[str, Any]:
         """
         Perform deep analysis of file's nested logic
@@ -68,7 +79,7 @@ class TachyonicContextIntelligence:
             "complexity_metrics": {},
             "evolution_potential": 0.0
         }
-        
+
         try:
             if file_path.suffix == '.py':
                 analysis.update(self._analyze_python_logic(file_path))
@@ -78,12 +89,12 @@ class TachyonicContextIntelligence:
                 analysis.update(self._analyze_cpp_logic(file_path))
             elif file_path.suffix == '.md':
                 analysis.update(self._analyze_documentation_logic(file_path))
-                
+
         except Exception as e:
             analysis['analysis_error'] = str(e)
-            
+
         return analysis
-    
+
     def _analyze_python_logic(self, file_path: Path) -> Dict[str, Any]:
         """Deep Python logic analysis for consciousness emergence detection"""
         logic_analysis = {
@@ -94,37 +105,58 @@ class TachyonicContextIntelligence:
             "import_dependencies": [],
             "ainlp_indicators": []
         }
-        
+
         try:
             content = file_path.read_text(encoding='utf-8')
-            
+
             # Consciousness emergence pattern detection
             consciousness_keywords = [
-                "consciousness", "emergence", "self_aware", "recursive", 
-                "meta_cognitive", "polymorphic", "adaptive", "evolution"
+                "consciousness",
+                "emergence",
+                "self_aware",
+                "recursive",
+                "meta_cognitive",
+                "polymorphic",
+                "adaptive",
+                "evolution",
             ]
-            
+
             for keyword in consciousness_keywords:
                 if keyword.lower() in content.lower():
                     logic_analysis["consciousness_patterns"].append(keyword)
-            
+
             # Polymorphic potential assessment
             polymorphic_indicators = [
-                "class", "inheritance", "morph", "adapt", "evolve", 
-                "transform", "mutation", "population"
+                "class",
+                "inheritance",
+                "morph",
+                "adapt",
+                "evolve",
+                "transform",
+                "mutation",
+                "population",
             ]
-            
-            polymorphic_score = sum(
-                content.lower().count(indicator) 
-                for indicator in polymorphic_indicators
-            ) / max(len(content), 1) * 100
-            
-            logic_analysis["polymorphic_potential"] = min(polymorphic_score, 1.0)
-            
+
+            polymorphic_score = (
+                sum(
+                    content.lower().count(indicator)
+                    for indicator in polymorphic_indicators
+                )
+                / max(len(content), 1)
+                * 100
+            )
+
+            logic_analysis["polymorphic_potential"] = min(
+                polymorphic_score, 1.0
+            )
+
             # AINLP compatibility detection
             ainlp_indicators = [
-                "AINLP", "natural language", "comment driven", 
-                "context aware", "paradigm"
+                "AINLP",
+                "natural language",
+                "comment driven",
+                "context aware",
+                "paradigm",
             ]
             
             for indicator in ainlp_indicators:
@@ -167,8 +199,10 @@ class TachyonicContextIntelligence:
             
             # Detect consciousness documentation
             consciousness_docs = [
-                "universal consciousness", "polymorphic intelligence", 
-                "consciousness emergence", "fractal patterns"
+                "universal consciousness",
+                "polymorphic intelligence",
+                "consciousness emergence",
+                "fractal patterns",
             ]
             
             for concept in consciousness_docs:
@@ -176,7 +210,10 @@ class TachyonicContextIntelligence:
                     logic_analysis["consciousness_concepts"].append(concept)
             
             # Detect AINLP documentation
-            if "ainlp" in content.lower() or "natural language programming" in content.lower():
+            if (
+                "ainlp" in content.lower()
+                or "natural language programming" in content.lower()
+            ):
                 logic_analysis["ainlp_documentation"] = True
                 
         except Exception as e:
@@ -198,11 +235,12 @@ class TachyonicContextIntelligence:
         try:
             updated_registry = self._perform_full_namespace_analysis()
             
-            # Save updated registry
-            with open(self.registry_path, 'w', encoding='utf-8') as f:
-                json.dump(updated_registry, f, indent=2, ensure_ascii=False)
+            # Save updated registry (atomic write)
+            _write_json_atomic(self.registry_path, updated_registry)
             
-            print(f"✅ Context registry updated with consciousness intelligence")
+            print(
+                "✅ Context registry updated with consciousness intelligence"
+            )
             print(f"📁 Tachyonic backup: {backup_name}")
             return True
             
@@ -234,10 +272,16 @@ class TachyonicContextIntelligence:
                 "last_accessed": datetime.datetime.now().isoformat(),
                 "access_frequency": 1.0,
                 "modification_frequency": 1.0,
-                "context_importance": self._calculate_context_importance(nested_analysis),
-                "reingestion_potential": self._calculate_reingestion_potential(nested_analysis),
+                "context_importance": self._calculate_context_importance(
+                    nested_analysis
+                ),
+                "reingestion_potential": self._calculate_reingestion_potential(
+                    nested_analysis
+                ),
                 "file_classification": "active",
-                "ai_context_tags": self._generate_ai_context_tags(file_path, nested_analysis),
+                "ai_context_tags": self._generate_ai_context_tags(
+                    file_path, nested_analysis
+                ),
                 "content_hash": self._calculate_file_hash(file_path),
                 "size_bytes": file_path.stat().st_size,
                 "cellular_relationships": [],
@@ -254,7 +298,9 @@ class TachyonicContextIntelligence:
         importance = 0.5  # Base importance
         
         # Boost for consciousness patterns
-        consciousness_boost = len(analysis.get("consciousness_patterns", [])) * 0.1
+        consciousness_boost = (
+            len(analysis.get("consciousness_patterns", [])) * 0.1
+        )
         
         # Boost for polymorphic potential
         polymorphic_boost = analysis.get("polymorphic_potential", 0.0) * 0.3
@@ -262,10 +308,15 @@ class TachyonicContextIntelligence:
         # Boost for AINLP compatibility
         ainlp_boost = analysis.get("ainlp_compatibility", 0.0) * 0.2
         
-        total_importance = min(importance + consciousness_boost + polymorphic_boost + ainlp_boost, 1.0)
+        total_importance = min(
+            importance + consciousness_boost + polymorphic_boost + ainlp_boost,
+            1.0,
+        )
         return round(total_importance, 3)
     
-    def _calculate_reingestion_potential(self, analysis: Dict[str, Any]) -> float:
+    def _calculate_reingestion_potential(
+        self, analysis: Dict[str, Any]
+    ) -> float:
         """Calculate reingestion potential based on evolution capacity"""
         base_potential = 0.5
         
@@ -279,7 +330,9 @@ class TachyonicContextIntelligence:
             
         return min(base_potential, 1.0)
     
-    def _generate_ai_context_tags(self, file_path: Path, analysis: Dict[str, Any]) -> List[str]:
+    def _generate_ai_context_tags(
+        self, file_path: Path, analysis: Dict[str, Any]
+    ) -> List[str]:
         """Generate enhanced AI context tags"""
         tags = [file_path.suffix[1:]] if file_path.suffix else []
         
@@ -306,14 +359,18 @@ class TachyonicContextIntelligence:
         try:
             content = file_path.read_bytes()
             return hashlib.md5(content).hexdigest()
-        except:
+        except Exception:
             return "hash_error"
 
 
 # Load registry
 
 
-def load_registry():
+def load_registry() -> Dict[str, Any]:
+    """Load registry if present; otherwise return empty dict (dry-run mode)."""
+    if not REGISTRY_PATH.exists():
+        print("[WARN] .aios_context.json missing; using empty registry.")
+        return {}
     with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -446,11 +503,11 @@ def autofix_registry(registry, missing_files, orphaned_files, yes=False):
             print(f"[AUTO-REMOVE] {f}")
             updated = True
     if updated and (
-        yes
-        or input("Write changes to .aios_context.json? [y/N] ").lower().startswith("y")
+            yes or input(
+                "Write changes to .aios_context.json? [y/N] "
+            ).lower().startswith("y")
     ):
-        with open(REGISTRY_PATH, "w", encoding="utf-8") as f:
-            json.dump(registry, f, indent=2)
+        _write_json_atomic(REGISTRY_PATH, registry)
         print("Registry updated.")
     elif updated:
         print("No changes written.")
@@ -463,7 +520,9 @@ def main():
         description="AIOS Context Registry Validator & Autocoder"
     )
     parser.add_argument(
-        "--autofix", action="store_true", help="Auto-harmonize registry (add/remove)"
+        "--autofix",
+        action="store_true",
+        help="Auto-harmonize registry (add/remove)",
     )
     parser.add_argument(
         "--yes", action="store_true", help="Write changes without prompt"

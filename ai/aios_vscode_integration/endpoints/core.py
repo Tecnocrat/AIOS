@@ -129,7 +129,9 @@ async def health_check():
             "workspace_stable": True
         }
 
-        cached_result = await _fractal_cache_manager.get_cached("health_data", cache_context)
+        cached_result = await _fractal_cache_manager.get_cached(
+            "health_data", cache_context
+        )
 
         if cached_result:
             # Add cache hit metadata
@@ -166,7 +168,9 @@ async def health_check():
         }
 
         # Cache the result with adaptive TTL
-        await _fractal_cache_manager.set_cached("health_data", health_data, cache_context)
+        await _fractal_cache_manager.set_cached(
+            "health_data", health_data, cache_context
+        )
 
         logger.info("Health check requested (cache miss).")
         _debug_manager.log_request(
@@ -310,7 +314,8 @@ async def diagnostics():
 @router.post("/process")
 async def process_message(request_data: dict):
     """
-    Process messages using AIOS intent dispatcher with performance optimization.
+    Process messages using AIOS intent dispatcher with performance
+    optimization.
     Implements Task 1.2 - Performance tracking and fractal cache integration.
     """
     start_time = time.time()
@@ -321,12 +326,6 @@ async def process_message(request_data: dict):
 
         # Create cache key for similar messages (optional caching for frequent
         # queries)
-        cache_context = {
-            "type": "message_processing",
-            "priority": "high",
-            "message_length": len(message),
-            "workspace_stable": context.get("workspace_stable", False)
-        }
 
         # Import here to avoid circular imports
         from ..intent_handlers import generate_aios_response
@@ -426,7 +425,9 @@ async def performance_report():
             },
             "system_health": {
                 "cpu_percent": await asyncio.to_thread(psutil.cpu_percent),
-                "memory_percent": (await asyncio.to_thread(psutil.virtual_memory)).percent,
+                "memory_percent": (
+                    await asyncio.to_thread(psutil.virtual_memory)
+                ).percent,
                 "active_processes": len(psutil.pids())
             },
             "task_1_2_status": "implemented",
