@@ -279,3 +279,59 @@ Post-Refactorization Achievement:
 **This massive transformation validates the Runtime Intelligence paradigm!** 🧬✨
 
 ### **✅ MILESTONE: Self-Similarity Pattern Discovery (August 4, 2025)**
+
+---
+
+## 2025-08-08 Update — Stability, Anchor/Reset, Tachyonic Context
+
+Purpose
+- Lock environment stability, define anchor/reset, and align runtime workflow with current AIOS architecture.
+
+Working protocol (hybrid, human‑guided)
+- You point to exact file/folder/lines; I propose a minimal diff and rationale; we checkpoint, apply, test, and document.
+- Small, reversible steps only; no new files unless explicitly requested; prefer injecting logic into existing files.
+
+Anchor/Reset mechanics
+- Anchor: this file (dev.run.md) records each approved step with what/why/where.
+- Reset: .aios_context.json snapshots stored under runtime_intelligence/logs/aios_context/ using sequence naming:
+  - .aios_context.json (current)
+  - .aios_context[1..n].json (tachyonic history)
+
+Stability protocol (VS Code & env)
+- Pin Python interpreter to aios_env and suppress formatter prompts; keep project formatters disabled (workspace-only).
+- Prevent auto-restore churn by stopping background watchers that recreate deleted files unless whitelisted.
+- Keep AIOS.code-workspace as source of truth for folder mapping and settings; avoid per‑user overrides that fight it.
+
+Immediate actions (tracked here)
+- Consolidate tests under ai/tests/ only; no test files at ai/ root.
+- Avoid circular imports (fixed: ai/src/core/automation.py self‑import).
+- Context registry maintained via enhanced validator (no new tool file): adds tachyonic backups into logs/aios_context.
+
+Success criteria
+- No unsolicited file restores or interpreter prompts during a full edit‑test cycle.
+- .aios_context*.json snapshots appear only in runtime_intelligence/logs/aios_context/ on registry updates.
+- All changes documented here with a one‑line, commit‑style entry.
+
+---
+
+## 2025-08-09 Checkpoint — Validator Hardening & Anchor Sync
+
+Summary
+- Hardened `ai/tools/aios_context_registry_validator.py`:
+  - Atomic writes for registry updates (prevents partial files).
+  - Safe load when `.aios_context.json` is missing (dry-run starts with {}).
+  - Wrapped long lines, removed trailing whitespace, avoided bare `except`, fixed indentation.
+- Behavior remains conservative:
+  - Default path is validate-only; `--autofix` still prompts (use `--yes` to write).
+  - Tachyonic write path unchanged; we’ll gate writes behind a `--tachyonic-update` flag tomorrow.
+
+Anchor/Reset
+- Anchor: this file captures today’s operations; no model changes.
+- Reset: tachyonic backups stay in `runtime_intelligence/logs/aios_context/` as `.aios_context_{timestamp}.json`.
+
+Next session (2025-08-10)
+- Add `--tachyonic-update` flag (write with backup) while keeping dry-run as default.
+- Ensure snapshots are only created on head writes; document atomicity and naming.
+
+Done log
+- [2025-08-09] Validator safety/lint improvements; anchor updated here.
