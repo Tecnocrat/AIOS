@@ -216,6 +216,25 @@ namespace AIOS.Services
             }
         }
 
+        // Provides component reflections as JSON string for UI consumption
+        public string GetComponentReflections()
+        {
+            try
+            {
+                var reflections = new Dictionary<string, ComponentReflection>
+                {
+                    ["csharp_ui"] = new ComponentReflection { Name = "C# UI", Type = "ui", Properties = new Dictionary<string, object>{{"theme","neon"}} },
+                    ["cpp_core"] = new ComponentReflection { Name = "C++ Core", Type = "core", Properties = new Dictionary<string, object>{{"version","1.0"}} },
+                    ["python_ai"] = new ComponentReflection { Name = "Python AI", Type = "ai", Properties = new Dictionary<string, object>{{"models","nlp,prediction"}} }
+                };
+                return JsonSerializer.Serialize(reflections);
+            }
+            catch
+            {
+                return "{}";
+            }
+        }
+
         public async Task<AIResponse> ProcessAsync(string module, string input, Dictionary<string, object>? parameters = null)
         {
             try
