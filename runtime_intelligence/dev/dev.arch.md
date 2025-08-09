@@ -299,3 +299,23 @@ The AIOS architecture has successfully evolved through **massive refactorization
 - Anchoring: dev.run.md serves as the operational anchor; dev.arch.md captures why the system is shaped as such (no new components without doc‑first justification).
 - VS Code policy: AIOS.code-workspace is authoritative; suppress formatter conflicts; prefer in‑file evolution and minimal diffs.
 - Emergent logic (polymorphic intelligence, mutation watchers) is documented in existing architecture docs; code implementation is deferred until stability guarantees are met.
+
+---
+
+## 2025-08-09 DevX Note — Copilot Chat UI policy
+
+Rationale
+- Reduce cognitive noise in Copilot Chat by removing the auto-rendered “Files changed” panel which crowded the conversation and had no reliable UI toggle.
+
+Workspace policy (AIOS only)
+- "chat.checkpoints.showFileChanges": false
+- "github.copilot.chat.edits.temporalContext.enabled": false
+- "github.copilot.nextEditSuggestions.enabled": false
+
+Operational guidance
+- Changes affect new chat responses only; existing messages won’t re-render.
+- After updating settings: Developer: Reload Window, then start a new chat thread.
+
+Architectural alignment
+- Keeps conversations intent-centric per AINLP: fewer UI artifacts, more signal.
+- Settings are enforced at workspace scope to avoid user-profile drift.
