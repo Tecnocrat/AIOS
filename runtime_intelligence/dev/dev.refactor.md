@@ -215,3 +215,11 @@ This autopep8 refactorization represents a **paradigmatic transformation** that:
 **The AIOS codebase is now ready for accelerated development** with clean, type-safe, consistently formatted code that supports our fractal intelligence paradigm! 🎉
 
 **Next**: Proceed with Task 1.3 using this proven refactorization methodology and consolidated Runtime Intelligence documentation approach.
+
+---
+
+## 2025-08-08 Refactorization Addendum — Minimal Diff, Snapshot Etiquette
+
+- Refactors must be confined, reversible, and documented in dev.run.md.
+- Before changing intent/registry, produce a tachyonic snapshot: runtime_intelligence/logs/aios_context/.aios_context[k].json.
+- Avoid cross‑module churn: prefer local fixes (typing, line length, unused imports) over broad rewrites.

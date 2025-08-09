@@ -333,3 +333,11 @@ The AIOS optimization suite has achieved **paradigmatic performance excellence**
 
 *Optimization Status: All systems green, performance validated, patterns proven*  
 *Last Updated: August 4, 2025 - Post-Massive Refactorization*
+
+---
+
+## 2025-08-08 Optimization Note — Incremental, Snapshot‑aware
+
+- Optimize for small, verifiable diffs; prefer cache‑friendly, incremental builds and tests.
+- Treat .aios_context.json updates as optimization boundaries: create snapshot before mutation; measure afterwards.
+- Keep automation lightweight to avoid editor churn; no background watchers that rewrite files unexpectedly.
