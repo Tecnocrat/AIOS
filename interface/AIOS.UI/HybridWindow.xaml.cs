@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Web.WebView2.Wpf;
-using AIOS.Models;
+using AIOS.Services;
 
 namespace AIOS.UI
 {
@@ -12,10 +12,10 @@ namespace AIOS.UI
     /// </summary>
     public partial class HybridWindow : Window
     {
-        private WebView2 _webView;
-        private WebInterfaceService _webInterface;
-        private AIServiceManager _aiService;
-        private DatabaseService _dbService;
+    private WebView2 _webView;
+    private AIOS.Models.WebInterfaceService _webInterface;
+    private AIOS.Services.AIServiceManager _aiService;
+    private AIOS.Models.DatabaseService _dbService;
 
         public HybridWindow()
         {
@@ -26,9 +26,11 @@ namespace AIOS.UI
 
         private void InitializeServices()
         {
-            _aiService = new AIServiceManager();
-            _dbService = new DatabaseService(_aiService);
-            _webInterface = new WebInterfaceService(_aiService, _dbService);
+            // Use Services.AIServiceManager (implements IAIService) for DB service compatibility
+            _aiService = new AIOS.Services.AIServiceManager();
+            _dbService = new AIOS.Models.DatabaseService(_aiService);
+            // Web interface can work with interface-based constructor
+            _webInterface = new AIOS.Models.WebInterfaceService(_aiService, _dbService);
         }
 
         private async void SetupHybridInterface()
@@ -67,8 +69,8 @@ namespace AIOS.UI
         private async void OnWebContentLoaded(object sender, Microsoft.Web.WebView2.Core.CoreWebView2DOMContentLoadedEventArgs e)
         {
             // Send initial system status to web interface
-            var healthData = await _aiService.GetSystemHealth();
-            await _webInterface.SendEventToWeb("SystemInitialized", healthData);
+            var healthResponse = await _aiService.GetSystemHealthAsync();
+            await _webInterface.SendEventToWeb("SystemInitialized", healthResponse);
         }
 
         private async void OnWebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
@@ -81,7 +83,7 @@ namespace AIOS.UI
                 
                 if (message.Contains("health_check"))
                 {
-                    var health = await _aiService.GetSystemHealth();
+                    var health = await _aiService.GetSystemHealthAsync();
                     await _webInterface.SendEventToWeb("HealthUpdate", health);
                 }
                 else if (message.Contains("database_query"))
@@ -122,7 +124,7 @@ namespace AIOS.UI
                 */
 
                 // This would be processed by the AINLP compiler
-                var intent = await _aiService.ProcessNLP($"AINLP_COMPILE: {naturalLanguageCommand}");
+                var intent = await _aiService.ProcessNLPAsync($"AINLP_COMPILE: {naturalLanguageCommand}");
                 
                 // The compiled result would be executable code
                 // For now, we'll simulate the concept

@@ -27,6 +27,14 @@ namespace AIOS.UI
             _lastUpdate = DateTime.Now;
         }
 
+        // Shim methods/properties for compatibility with UI usage
+        public void Initialize()
+        {
+            // no-op initialization hook
+        }
+
+        public HolographicContext CurrentContext => GetHolographicContext();
+
         public HolographicContext GetHolographicContext()
         {
             lock (_contextLock)
@@ -86,6 +94,12 @@ namespace AIOS.UI
         public HolographicUIOrchestrator(FractalContextManager contextManager)
         {
             _contextManager = contextManager;
+        }
+
+        // Shim method for compatibility with UI usage
+        public void Initialize()
+        {
+            // no-op initialization hook
         }
 
         public async Task<AIResponse> ProcessWithSystemAwareness(string userInput, HolographicContext context)

@@ -16,7 +16,7 @@ namespace AIOS.Models
     /// Implements the AINLP paradigm for self-evolving code ecosystems
     /// Reads, scores, mutates, and iterates code populations
     /// </summary>
-    public class DatabaseService
+    public class DatabaseService : IDatabaseService
     {
         private readonly IAIService _aiService;
         private readonly RuntimeLoggingService _loggingService;
@@ -105,7 +105,7 @@ namespace AIOS.Models
         /// Execute optimized database query with AI assistance
         /// </summary>
         [System.Runtime.InteropServices.ComVisible(true)]
-        public async Task<string> ExecuteQuery(string query)
+    public async Task<string> ExecuteQuery(string query)
         {
             var stopwatch = Stopwatch.StartNew();
             try
@@ -149,6 +149,14 @@ namespace AIOS.Models
                 _loggingService.LogDatabaseOperation("Query Error", query, ex.Message, stopwatch.Elapsed, "ExecuteQuery");
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Backward-compatible method used by UI demos
+        /// </summary>
+        public Task<string> ExecuteIntelligentQuery(string query)
+        {
+            return ExecuteQuery(query);
         }
 
         /// <summary>
