@@ -18,13 +18,13 @@ namespace AIOS.UI;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private readonly DispatcherTimer _healthTimer;
-    private readonly DispatcherTimer _activityTimer;
-    private readonly AIOS.Models.AIServiceManager _aiService;
-    private readonly FractalContextManager _contextManager;
-    private readonly HolographicUIOrchestrator _orchestrator;
-    private readonly VSCodeExtensionBridge _vscodeBridge;
-    private readonly AIOS.Services.MaintenanceService _maintenanceService;
+    private DispatcherTimer _healthTimer;
+    private DispatcherTimer _activityTimer;
+    private AIOS.Services.AIServiceManager _aiService;
+    private AIOS.Models.FractalContextManager _contextManager;
+    private AIOS.Models.HolographicUIOrchestrator _orchestrator;
+    private VSCodeExtensionBridge _vscodeBridge;
+    private AIOS.Services.MaintenanceService _maintenanceService;
     private string _currentModule = "nlp";
     private int _messageCount = 0;
 
@@ -35,9 +35,9 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        _aiService = new AIOS.Models.AIServiceManager();
-        _contextManager = new FractalContextManager();
-        _orchestrator = new HolographicUIOrchestrator(_contextManager);
+    _aiService = new AIOS.Services.AIServiceManager();
+    _contextManager = new AIOS.Models.FractalContextManager();
+    _orchestrator = new AIOS.Models.HolographicUIOrchestrator(_contextManager);
         _vscodeBridge = new VSCodeExtensionBridge();
         _maintenanceService = new AIOS.Services.MaintenanceService();
         _systemState = new HolographicSystemState();
@@ -46,8 +46,8 @@ public partial class MainWindow : Window
         InitializeUI();
         InitializeFractalComponents();
         InitializeTimers();
-        LoadSystemStatus();
-        StartHolographicSynchronization();
+    LoadSystemStatus();
+    StartHolographicSynchronization();
     }
 
     private void InitializeUI()
@@ -78,8 +78,8 @@ public partial class MainWindow : Window
     private void InitializeFractalComponents()
     {
         // Initialize fractal holographic components
-        _contextManager.Initialize();
-        _orchestrator.Initialize();
+    _contextManager.Initialize();
+    _orchestrator.Initialize();
 
         // Load and apply component reflections
         LoadComponentReflections();
@@ -101,7 +101,7 @@ public partial class MainWindow : Window
     private void UpdateSystemState()
     {
         // Update the holographic system state based on current context and reflections
-        _systemState.Update(_contextManager.CurrentContext, _componentReflections);
+    _systemState.Update(_contextManager.CurrentContext, _componentReflections);
 
         // Reflect state in the UI
         ReflectStateInUI();
@@ -116,7 +116,7 @@ public partial class MainWindow : Window
     private void InitializeTimers()
     {
         // Health check timer - every 30 seconds
-        _healthTimer = new DispatcherTimer
+    _healthTimer = new DispatcherTimer
         {
             Interval = TimeSpan.FromSeconds(30)
         };
@@ -130,6 +130,13 @@ public partial class MainWindow : Window
         };
         _activityTimer.Tick += UpdateSystemMetrics;
         _activityTimer.Start();
+    }
+
+    // Simple periodic sync stub used by UI
+    private void StartHolographicSynchronization()
+    {
+        // For now just log a message via activity log; could hook VSCode bridge here
+        AddActivityLog("Holographic synchronization active");
     }
 
     private async void LoadSystemStatus()

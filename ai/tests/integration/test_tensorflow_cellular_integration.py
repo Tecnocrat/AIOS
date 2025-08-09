@@ -16,7 +16,37 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'python',
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'intercellular'))
 
 from tensorflow_training_cell import TensorFlowTrainingCell, TrainingConfig
-from tensorflow_cellular_bridge import TensorFlowCellularBridge, check_bridge_availability
+from tensorflow_cellular_bridge import (
+    TensorFlowCellularBridge,
+    check_bridge_availability,
+)
+
+# Local fixtures (fallback if global conftest isn't picked up)
+try:
+    import pytest  # type: ignore
+    import numpy as _np
+
+    @pytest.fixture(scope="session")
+    def export_info():
+        cfg = TrainingConfig(model_name="int_fixture_model", epochs=1)
+        cell = TensorFlowTrainingCell(cfg)
+        assert cell.create_model(input_shape=(5,), num_classes=3)
+        x = _np.random.random((20, 5)).astype(_np.float32)
+        y = _np.random.randint(0, 3, 20)
+        assert cell.train(x, y)
+        tmpdir = Path(tempfile.gettempdir()) / "aios_tf_int_fixture"
+        tmpdir.mkdir(parents=True, exist_ok=True)
+        info = cell.export_for_cpp_inference(str(tmpdir / "export"))
+        assert info is not None
+        return info
+
+    @pytest.fixture(scope="session")
+    def test_data():
+        x = _np.random.random((10, 5)).astype(_np.float32)
+        y = _np.random.randint(0, 3, 10)
+        return (x, y)
+except Exception:
+    pass
 
 
 def test_python_training_cell():

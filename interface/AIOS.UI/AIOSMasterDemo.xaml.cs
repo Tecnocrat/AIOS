@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,12 +24,12 @@ namespace AIOS.UI
     /// </summary>
     public partial class AIOSMasterDemo : Window
     {
-        private readonly ILogger<AIOSMasterDemo> _logger;
-        private readonly AdvancedAIServiceManager _aiService;
-        private readonly DatabaseService _dbService;
-        private readonly AINLPCompiler _ainlpCompiler;
-        private readonly WebInterfaceService _webInterface;
-        private CompleteHybridWindow _hybridWindow;
+    private ILogger<AIOSMasterDemo> _logger;
+    private AdvancedAIServiceManager _aiService;
+    private DatabaseService _dbService;
+    private AINLPCompiler _ainlpCompiler;
+    private WebInterfaceService _webInterface;
+    private CompleteHybridWindow _hybridWindow;
         private bool _isInitialized = false;
 
         public AIOSMasterDemo()
@@ -223,11 +225,12 @@ namespace AIOS.UI
 
         private async Task DemonstratePrediction()
         {
-            var predictionScenarios = new[]
+            // Use a concrete type for consistent anonymous-like data shape
+            var predictionScenarios = new List<(string Name, object Data)>
             {
-                new { Name = "System Performance", Data = new { cpu_usage = 45.2, memory_usage = 67.8, load_avg = 1.2 } },
-                new { Name = "User Behavior", Data = new { session_time = 1800, page_views = 15, clicks = 42 } },
-                new { Name = "Resource Usage", Data = new { disk_io = 234, network_io = 1024, active_connections = 150 } }
+                ("System Performance", new { cpu_usage = 45.2, memory_usage = 67.8, load_avg = 1.2 }),
+                ("User Behavior", new { session_time = 1800, page_views = 15, clicks = 42 }),
+                ("Resource Usage", new { disk_io = 234, network_io = 1024, active_connections = 150 })
             };
 
             var results = new List<string>();

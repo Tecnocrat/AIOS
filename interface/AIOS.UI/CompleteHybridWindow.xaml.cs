@@ -120,9 +120,7 @@ namespace AIOS.UI
             settings.IsGeneralAutofillEnabled = false;
             settings.IsScriptEnabled = true;
             settings.AreDefaultScriptDialogsEnabled = true;
-            settings.IsPrivateBrowsingEnabled = false;
             settings.IsPasswordAutosaveEnabled = false;
-            settings.IsPrivateBrowsingEnabled = false;
 
             // Security settings
             settings.AreHostObjectsAllowed = true; // Required for C# integration
@@ -140,7 +138,6 @@ namespace AIOS.UI
 
             // Communication events
             _webView.CoreWebView2.WebMessageReceived += OnWebMessageReceived;
-            _webView.CoreWebView2.ScriptException += OnScriptException;
 
             // Permission events
             _webView.CoreWebView2.PermissionRequested += OnPermissionRequested;
@@ -208,9 +205,9 @@ namespace AIOS.UI
         </div>
     </div>
     <script>
-        async function testAI() {
+    async function testAI() {
             try {
-                const result = await window.chrome.webview.hostObjects.aiService.ProcessNLP('Hello AIOS');
+        const result = await window.chrome.webview.hostObjects.aiService.ProcessNLP('Hello AIOS');
                 document.getElementById('results').innerHTML = '<h3>AI Response:</h3><pre>' + JSON.stringify(result, null, 2) + '</pre>';
             } catch (error) {
                 document.getElementById('results').innerHTML = '<h3>Error:</h3><pre>' + error.message + '</pre>';
@@ -226,9 +223,9 @@ namespace AIOS.UI
             }
         }
 
-        async function getHealth() {
+    async function getHealth() {
             try {
-                const result = await window.chrome.webview.hostObjects.aiService.GetSystemHealth();
+        const result = await window.chrome.webview.hostObjects.aiService.GetSystemHealth();
                 document.getElementById('results').innerHTML = '<h3>System Health:</h3><pre>' + JSON.stringify(result, null, 2) + '</pre>';
             } catch (error) {
                 document.getElementById('results').innerHTML = '<h3>Error:</h3><pre>' + error.message + '</pre>';
@@ -308,22 +305,48 @@ namespace AIOS.UI
             }
         }
 
-        private void OnScriptException(object sender, EventArgs e)
-        {
-            _logger.LogError($"JavaScript error occurred");
-            StatusText.Text = $"⚠️ Script error occurred";
-        }
+    // Note: CoreWebView2.ScriptDialogOpening can be used to monitor dialogs; no ScriptException or IsPrivateBrowsingEnabled in stable API
 
         private void OnPermissionRequested(object sender, CoreWebView2PermissionRequestedEventArgs e)
         {
             _logger.LogInformation($"Permission requested: {e.PermissionKind}");
 
             // Grant necessary permissions
-            if (e.PermissionKind == CoreWebView2PermissionKind.WebNotifications ||
+            if (e.PermissionKind == CoreWebView2PermissionKind.Notifications ||
                 e.PermissionKind == CoreWebView2PermissionKind.Geolocation)
             {
                 e.State = CoreWebView2PermissionState.Allow;
             }
+        }
+
+        // XAML button handlers declared in CompleteHybridWindow.xaml
+        private async void RetryButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ErrorFallback.Visibility = Visibility.Collapsed;
+                LoadingOverlay.Visibility = Visibility.Visible;
+                await InitializeWebView();
+                await LoadHtmlInterface();
+                LoadingOverlay.Visibility = Visibility.Collapsed;
+                StatusText.Text = "✅ AIOS Hybrid Interface Ready";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Retry failed");
+                ErrorFallback.Visibility = Visibility.Visible;
+                StatusText.Text = $"❌ Retry failed: {ex.Message}";
+            }
+        }
+
+        private void FallbackButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowFallbackInterface();
+        }
+
+        private void CloseCommand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void OnProcessFailed(object sender, CoreWebView2ProcessFailedEventArgs e)

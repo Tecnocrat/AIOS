@@ -13,10 +13,19 @@ namespace AIOS.Models
     public class WebInterfaceService
     {
         private WebView2 _webView;
-        private readonly IAIService _aiService;
-        private readonly IDatabaseService _dbService;
+        // Accept either interfaces or concrete implementations
+        private readonly object _aiService;
+        private readonly object _dbService;
 
+        // Default constructor for DI containers
         public WebInterfaceService(IAIService aiService, IDatabaseService dbService)
+        {
+            _aiService = aiService;
+            _dbService = dbService;
+        }
+
+        // Overload accepting concrete service instances used by UI demos
+        public WebInterfaceService(AIOS.Models.AIServiceManager aiService, AIOS.Models.DatabaseService dbService)
         {
             _aiService = aiService;
             _dbService = dbService;

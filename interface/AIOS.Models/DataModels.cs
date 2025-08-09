@@ -18,6 +18,18 @@ namespace AIOS.Models
         public string? Error { get; set; }
         public string Module { get; set; } = "";
         public DateTime Timestamp { get; set; }
+    // Extended fields used by UI layer
+    public string Id { get; set; } = string.Empty;
+    public string Content { get; set; } = string.Empty;
+    public double Confidence { get; set; }
+    public string ProcessedBy { get; set; } = string.Empty;
+    public string HolographicSignature { get; set; } = string.Empty;
+    public SystemAwareness? SystemAwareness { get; set; }
+    public HolographicEnhancement? HolographicEnhancement { get; set; }
+    public string ConversationId { get; set; } = string.Empty;
+    public TimeSpan ProcessingTime { get; set; }
+    public bool MultiModal { get; set; }
+    public double FractalDimension { get; set; }
     }
 
     public class SystemHealthResponse
@@ -218,6 +230,9 @@ namespace AIOS.Models
         public string Status { get; set; } = "";
         public object? Value { get; set; }
         public DateTime LastUpdate { get; set; }
+        // Extended fields for UI compatibility
+        public DateTime LastSync { get; set; }
+        public Dictionary<string, object> Metadata { get; set; } = new();
     }
 
     public class HolographicSystemState
@@ -225,6 +240,28 @@ namespace AIOS.Models
         public bool IsActive { get; set; }
         public string Status { get; set; } = "";
         public Dictionary<string, ComponentState> Components { get; set; } = new();
+        // Helper to update state from context and reflections
+        public void Update(HolographicContext context, Dictionary<string, ComponentReflection> reflections)
+        {
+            IsActive = true;
+            Status = "operational";
+            Components = context.ComponentStates;
+            // Optionally merge reflections metadata
+            foreach (var kvp in reflections)
+            {
+                if (!Components.ContainsKey(kvp.Key))
+                {
+                    Components[kvp.Key] = new ComponentState { Name = kvp.Value.Name, Status = "reflected", LastUpdate = DateTime.Now, LastSync = DateTime.Now, Metadata = kvp.Value.Properties };
+                }
+                else
+                {
+                    foreach (var prop in kvp.Value.Properties)
+                    {
+                        Components[kvp.Key].Metadata[prop.Key] = prop.Value;
+                    }
+                }
+            }
+        }
     }
 
     public class ComponentReflection
@@ -237,27 +274,47 @@ namespace AIOS.Models
     public class ExtensionStatus
     {
         public string Name { get; set; } = "";
-        public bool IsEnabled { get; set; }
+    public bool IsEnabled { get; set; }
         public string Version { get; set; } = "";
-        public string Status { get; set; } = "";
+    public string Status { get; set; } = "";
+    // Extended fields for UI bridge compatibility
+    public bool IsActive { get; set; }
+    public string Message { get; set; } = string.Empty;
     }
 
     public class AIResponseEventArgs : EventArgs
     {
-        public AIResponse Response { get; set; } = new();
+    public AIResponse Response { get; set; } = new();
+    // Extended event context for UI consumers
+    public AIRequest? Request { get; set; }
+    public AIConversation? Conversation { get; set; }
+    public Exception? Error { get; set; }
     }
 
     public class ContextHealthEventArgs : EventArgs
     {
-        public ContextHealthResult Result { get; set; } = new();
+    public ContextHealthResult Result { get; set; } = new();
+    public string TriggerInput { get; set; } = string.Empty;
+    public bool RecoveryExecuted { get; set; }
+    public List<string> RecoverySteps { get; set; } = new();
+    public DateTime Timestamp { get; set; }
+    public bool MonitoringCheck { get; set; }
+    // Back-compat alias expected by some UI code
+    public ContextHealthResult ContextHealth { get => Result; set => Result = value; }
     }
 
     public class ContextHealthResult
     {
-        public bool IsHealthy { get; set; }
-        public string Status { get; set; } = "";
-        public List<string> Issues { get; set; } = new();
-        public DateTime Timestamp { get; set; }
+    public bool IsHealthy { get; set; }
+    public string Status { get; set; } = "";
+    public List<string> Issues { get; set; } = new();
+    public DateTime Timestamp { get; set; }
+    // Extended fields used by UI
+    public double Score { get; set; }
+    public List<string> Indicators { get; set; } = new();
+    public DateTime LastCheck { get; set; }
+    public List<string> RecoveryActions { get; set; } = new();
+    public bool NeedsImmediateRecovery { get; set; }
     }
 
     public class RecoveryResult
@@ -265,13 +322,22 @@ namespace AIOS.Models
         public bool Success { get; set; }
         public string Message { get; set; } = "";
         public List<string> Actions { get; set; } = new();
+    // Extended fields expected by UI
+    public DateTime Timestamp { get; set; }
+    public List<string> StepsExecuted { get; set; } = new();
+    public List<string> FilesRead { get; set; } = new();
     }
 
     public class AIStreamChunk
     {
-        public string Content { get; set; } = "";
-        public bool IsComplete { get; set; }
-        public int ChunkIndex { get; set; }
+    public string Content { get; set; } = "";
+    public bool IsComplete { get; set; }
+    public int ChunkIndex { get; set; }
+    // Extended streaming metadata
+    public string Id { get; set; } = string.Empty;
+    public string ConversationId { get; set; } = string.Empty;
+    public DateTime Timestamp { get; set; }
+    public double FractalCoherence { get; set; }
     }
 
     public class AIAnalysis
@@ -280,6 +346,13 @@ namespace AIOS.Models
         public AnalysisType Type { get; set; }
         public double Confidence { get; set; }
         public Dictionary<string, object> Metadata { get; set; } = new();
+        // Extended fields for UI analysis flows
+        public string Id { get; set; } = string.Empty;
+        public string InputText { get; set; } = string.Empty;
+        public AnalysisType AnalysisType { get; set; }
+        public DateTime Timestamp { get; set; }
+        public HolographicContext? HolographicContext { get; set; }
+        public Dictionary<string, object> Results { get; set; } = new();
     }
 
     public enum AnalysisType
@@ -289,7 +362,9 @@ namespace AIOS.Models
         Entity,
         Classification,
         Summarization,
-        Comprehensive
+        Comprehensive,
+        Context,
+        Fractal
     }
 
     public class InputAnalysis
@@ -298,6 +373,11 @@ namespace AIOS.Models
         public string Intent { get; set; } = "";
         public Dictionary<string, object> Entities { get; set; } = new();
         public double Confidence { get; set; }
+    // Extended fields for UI flows
+    public double Complexity { get; set; }
+    public List<string> RequiredComponents { get; set; } = new();
+    public string FractalPattern { get; set; } = string.Empty;
+    public double ContextRelevance { get; set; }
     }
 
     public class SystemAwareness
@@ -305,6 +385,10 @@ namespace AIOS.Models
         public Dictionary<string, object> SystemState { get; set; } = new();
         public List<string> ActiveModules { get; set; } = new();
         public DateTime LastUpdate { get; set; }
+        // Extended fields
+        public int ActiveComponents { get; set; }
+        public string SystemHealth { get; set; } = string.Empty;
+        public double FractalCoherence { get; set; }
     }
 
     public class MultiModalInput
@@ -313,6 +397,9 @@ namespace AIOS.Models
         public byte[]? Audio { get; set; }
         public byte[]? Image { get; set; }
         public string Type { get; set; } = "";
+        // Alternate property names used by UI
+        public byte[]? AudioData { get; set; }
+        public byte[]? ImageData { get; set; }
     }
 
     public class AIRequest
@@ -321,6 +408,14 @@ namespace AIOS.Models
         public AIRequestType Type { get; set; }
         public Dictionary<string, object> Parameters { get; set; } = new();
         public string Context { get; set; } = "";
+        // Extended fields used in UI request pipeline
+        public string Id { get; set; } = string.Empty;
+        public string ConversationId { get; set; } = string.Empty;
+        public string UserInput { get; set; } = string.Empty;
+        public DateTime Timestamp { get; set; }
+        public HolographicContext? HolographicContext { get; set; }
+        public AIRequestType RequestType { get; set; }
+        public int Priority { get; set; }
     }
 
     public enum AIRequestType
@@ -329,14 +424,16 @@ namespace AIOS.Models
         Analysis,
         Generation,
         Translation,
-        Summarization
+        Summarization,
+        General
     }
 
     public class VSCodeMessage
     {
         public string Type { get; set; } = "";
         public string Content { get; set; } = "";
-        public Dictionary<string, object> Data { get; set; } = new();
+    public object Data { get; set; } = new();
+        public DateTime Timestamp { get; set; }
     }
 
     public class AIConversation
@@ -345,6 +442,28 @@ namespace AIOS.Models
         public List<AIMessage> Messages { get; set; } = new();
         public DateTime StartTime { get; set; }
         public DateTime LastUpdate { get; set; }
+        // Extended conversation tracking used by UI
+        public List<AIExchange> Exchanges { get; set; } = new();
+        public void AddExchange(AIRequest request, AIResponse response)
+        {
+            var ex = new AIExchange
+            {
+                Request = request,
+                Response = response,
+                Timestamp = DateTime.Now
+            };
+            Exchanges.Add(ex);
+            Messages.Add(new AIMessage { Role = "user", Content = request.UserInput, Timestamp = request.Timestamp });
+            Messages.Add(new AIMessage { Role = "assistant", Content = response.Content ?? response.Response ?? string.Empty, Timestamp = response.Timestamp });
+            LastUpdate = DateTime.Now;
+        }
+    }
+
+    public class AIExchange
+    {
+        public AIRequest Request { get; set; } = new();
+        public AIResponse Response { get; set; } = new();
+        public DateTime Timestamp { get; set; }
     }
 
     public class AIMessage
@@ -372,6 +491,32 @@ namespace AIOS.Models
                 Timestamp = DateTime.Now
             });
         }
+
+        // Minimal stub to satisfy UI calls; real implementation lives in core
+        public Task<CompilationResult> CompileNaturalLanguage(string specification)
+        {
+            return Task.FromResult(new CompilationResult
+            {
+                Success = true,
+                GeneratedCode = new ExecutableCode { Code = "// generated code", Language = "C#" },
+                Confidence = 0.9
+            });
+        }
+    }
+
+    // Minimal types referenced by UI demo when interacting with AINLP
+    public class ExecutableCode
+    {
+        public string Code { get; set; } = string.Empty;
+        public string Language { get; set; } = string.Empty;
+    }
+
+    public class CompilationResult
+    {
+        public bool Success { get; set; }
+        public ExecutableCode GeneratedCode { get; set; } = new ExecutableCode();
+        public double Confidence { get; set; }
+        public string Error { get; set; } = string.Empty;
     }
 
     public class FractalContextManager
@@ -385,6 +530,10 @@ namespace AIOS.Models
             _holographicContext = new Dictionary<string, object>();
             _lastUpdate = DateTime.Now;
         }
+
+    // Shim for UI usage
+    public HolographicContext CurrentContext => GetHolographicContext();
+    public void Initialize() { /* no-op for now */ }
 
         public HolographicContext GetHolographicContext()
         {
@@ -440,6 +589,9 @@ namespace AIOS.Models
         {
             return Task.CompletedTask;
         }
+
+    // Shim for UI usage
+    public void Initialize() { /* no-op for now */ }
     }
 
     public class VSCodeExtensionBridge
@@ -474,6 +626,10 @@ namespace AIOS.Models
     {
         public string Type { get; set; } = "";
         public Dictionary<string, object> Properties { get; set; } = new();
+        // Extended fields expected by UI
+        public string ContextIntegration { get; set; } = string.Empty;
+        public double FractalResonance { get; set; }
+        public double SystemCoherence { get; set; }
     }
 
     #endregion
