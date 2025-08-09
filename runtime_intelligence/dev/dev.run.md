@@ -335,3 +335,23 @@ Next session (2025-08-10)
 
 Done log
 - [2025-08-09] Validator safety/lint improvements; anchor updated here.
+
+---
+
+## 2025-08-09 UI Note — Hide Copilot Chat “Files changed” block
+
+Context
+- The Copilot Chat “Files changed” panel grew too large and had no visible toggle.
+
+Workspace settings applied (this repo only)
+- "chat.checkpoints.showFileChanges": false
+- "github.copilot.chat.edits.temporalContext.enabled": false
+- "github.copilot.nextEditSuggestions.enabled": false
+
+How to apply
+- Developer: Reload Window
+- Start a new Copilot Chat thread (existing messages won’t re-render)
+
+Verify
+- New chat responses no longer include the “Files changed” block.
+- If it still appears, check User/Profile settings for overrides.

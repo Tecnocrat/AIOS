@@ -108,7 +108,11 @@ install(DIRECTORY include/ DESTINATION include)
 
 # Testing
 enable_testing()
-add_subdirectory(tests)
+if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt")
+    add_subdirectory(tests)
+else()
+    message(STATUS "Skipping tests: ${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt not found")
+endif()
 
 # Documentation
 find_package(Doxygen)
