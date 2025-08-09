@@ -257,3 +257,16 @@ Immediate fixes proposed:
 The AIOS project is now a unified, comprehensive AI consciousness evolution platform with integrated AI conversation analysis, safety governance, and multi-language architecture. All components are building successfully and operating under unified safety protocols.
 
 **Ready for next phase of development!** 🚀
+
+---
+
+## Appendix: AIOS Beast Mode (AINLP-aligned) Integration
+
+To standardize autonomous agent workflows while preserving AIOS safety and AINLP paradigms, an AIOS-aligned variant of Beast Mode has been added:
+
+- Mode file: `.vscode/aios.beastmode.chatmode.md` — Use this chat mode in VS Code to get an AIOS-aware autonomous agent that prefers existing tasks, operates offline-first, and respects mock-mode continuity.
+- Instructions overlay: `.github/instructions/aios-beastmode-integration.md` — Guardrails and behavior alignment for the mode.
+- Memory: `.github/instructions/memory.instruction.md` — Lightweight preferences (no secrets).
+- Integration guide: `docs/AIOS_BEASTMODE_INTEGRATION.md` — Rationale, mapping, and next steps.
+
+Upstream Beast Mode sources remain at `C:\dev\projects\beastmode` for reference. The AIOS mode is designed to ingest upstream improvements selectively without disrupting AIOS orchestration or safety.
