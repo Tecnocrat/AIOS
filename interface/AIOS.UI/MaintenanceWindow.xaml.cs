@@ -172,7 +172,7 @@ namespace AIOS.UI
             MaintenanceWebView.NavigateToString(fallbackHtml);
         }
 
-        private async void OnWebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
+    private async void OnWebMessageReceived(object? sender, CoreWebView2WebMessageReceivedEventArgs e)
         {
             try
             {
@@ -347,7 +347,7 @@ namespace AIOS.UI
             await RunQuickOptimize();
         }
 
-        private void MaintenanceWebView_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+    private void MaintenanceWebView_NavigationCompleted(object? sender, CoreWebView2NavigationCompletedEventArgs e)
         {
             if (e.IsSuccess)
             {
@@ -356,7 +356,7 @@ namespace AIOS.UI
             }
         }
 
-        private void MaintenanceWebView_DOMContentLoaded(object sender, CoreWebView2DOMContentLoadedEventArgs e)
+    private void MaintenanceWebView_DOMContentLoaded(object? sender, CoreWebView2DOMContentLoadedEventArgs e)
         {
             LoadingPanel.Visibility = Visibility.Collapsed;
             MaintenanceWebView.Visibility = Visibility.Visible;

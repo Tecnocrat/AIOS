@@ -12,10 +12,10 @@ namespace AIOS.UI
     /// </summary>
     public partial class HybridWindow : Window
     {
-    private WebView2 _webView;
-    private AIOS.Models.WebInterfaceService _webInterface;
-    private AIOS.Services.AIServiceManager _aiService;
-    private AIOS.Models.DatabaseService _dbService;
+    private WebView2 _webView = null!;
+    private AIOS.Models.WebInterfaceService _webInterface = null!;
+    private AIOS.Services.AIServiceManager _aiService = null!;
+    private AIOS.Models.DatabaseService _dbService = null!;
 
         public HybridWindow()
         {
@@ -66,14 +66,14 @@ namespace AIOS.UI
             }
         }
 
-        private async void OnWebContentLoaded(object sender, Microsoft.Web.WebView2.Core.CoreWebView2DOMContentLoadedEventArgs e)
+    private async void OnWebContentLoaded(object? sender, Microsoft.Web.WebView2.Core.CoreWebView2DOMContentLoadedEventArgs e)
         {
             // Send initial system status to web interface
             var healthResponse = await _aiService.GetSystemHealthAsync();
             await _webInterface.SendEventToWeb("SystemInitialized", healthResponse);
         }
 
-        private async void OnWebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
+    private async void OnWebMessageReceived(object? sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
         {
             try
             {
