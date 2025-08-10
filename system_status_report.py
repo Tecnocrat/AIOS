@@ -1,71 +1,27 @@
 """
-AIOS System Status Report (Unified)
-Thin wrapper around the canonical system health monitor.
+DEPRECATED: system_status_report.py at repository root
 
-Canonical tool: runtime_intelligence/tools/system_health_check.py
+This entrypoint has moved to the canonical location:
+  runtime_intelligence/tools/system_status_report.py
 
-Location advisory:
-- Current path: AIOS repo root (legacy convenience).
-- Optimal path: runtime_intelligence/tools/ (tools live with runtime
-    diagnostics). Kept here as an alias for backwards compatibility; new
-    automation should invoke the canonical tool directly or a VS Code
-    task.
+Use the VS Code task "python-system-status" or run the canonical
+script. This stub exits intentionally to prevent drift and ensure a
+single source of truth.
 """
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
+MSG = (
+    "system_status_report.py has moved to runtime_intelligence/tools/.\n"
+    "Run: python runtime_intelligence/tools/system_status_report.py\n"
+    "Or use the VS Code task: python-system-status"
+)
 
 
-def show_system_status() -> int:
-    """Run the canonical health monitor and print a concise summary."""
-    root = Path(__file__).parent
-    health_path = (
-        root
-        / "runtime_intelligence"
-        / "tools"
-        / "system_health_check.py"
-    )
-    if not health_path.exists():
-        print("Health checker not found:", health_path)
-        return 2
-
-    # Import without altering sys.path globally
-    import importlib.util
-
-    spec = importlib.util.spec_from_file_location(
-        "system_health_check", str(health_path)
-    )
-    if spec is None or spec.loader is None:
-        print("Unable to load health checker module")
-        return 2
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)  # type: ignore[arg-type]
-
-    monitor = mod.AIOSSystemHealthMonitor()
-    passed, total, status = monitor.run_comprehensive_health_check()
-
-    print("\n" + "=" * 80)
-    print("AIOS SYSTEM STATUS SUMMARY")
-    print("=" * 80)
-    print(f"Checks Passed: {passed}/{total}")
-    print(f"Overall Status: {status}")
-    archive = (
-        Path("docs")
-        / "tachyonic_archive"
-        / "system_health_report.json"
-    )
-    if archive.exists():
-        try:
-            data = json.loads(archive.read_text(encoding="utf-8"))
-            print("Report:", archive)
-            print("Timestamp:", data.get("timestamp"))
-        except Exception:
-            print("Report:", archive)
-    print("=" * 80)
-    return 0 if status in ("EXCELLENT", "GOOD") else 1
+def main() -> int:
+    print(MSG)
+    return 3
 
 
 if __name__ == "__main__":
-    raise SystemExit(show_system_status())
+    raise SystemExit(main())

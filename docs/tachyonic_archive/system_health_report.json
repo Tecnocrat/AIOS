@@ -1,5 +1,5 @@
 {
-  "timestamp": 1754845326.9502535,
+  "timestamp": 1754853154.6692853,
   "total_checks": 6,
   "passed_checks": 6,
   "health_status": "EXCELLENT",
@@ -9,7 +9,7 @@
       "python_executable": "C:\\Program Files\\Python312\\python.exe",
       "path": [
         "C:\\dev\\AIOS\\runtime_intelligence\\tools",
-        "C:\\dev\\AIOS\\ai\\src",
+        "C:\\dev\\AIOS\\dev",
         "C:\\Program Files\\Python312\\python312.zip"
       ],
       "packages": {
