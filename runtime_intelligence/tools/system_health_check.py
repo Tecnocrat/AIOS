@@ -390,12 +390,51 @@ class AIOSSystemHealthMonitor:
             "health_status": health_status,
             "detailed_results": self.health_results,
         }
-        # --- Tachyonic Database Archival ---
+        # --- Tachyonic Archival (append-only, time-indexed) ---
         tachyonic_dir = os.path.join("docs", "tachyonic_archive")
         os.makedirs(tachyonic_dir, exist_ok=True)
-        report_file = os.path.join(tachyonic_dir, "system_health_report.json")
+
+        # Use UTC timestamp in filename for immutability
+        ts_utc = time.strftime("%Y%m%d_%H%M%S", time.gmtime())
+        report_name = f"system_health_report_{ts_utc}.json"
+        report_file = os.path.join(tachyonic_dir, report_name)
+
+        # 1) Write immutable, timestamped snapshot
         with open(report_file, "w", encoding="utf-8") as f:
             json.dump(health_report, f, indent=2)
+
+        # 2) Update the moving pointer to the latest snapshot
+        latest_file = os.path.join(
+            tachyonic_dir, "system_health_report.latest.json"
+        )
+        try:
+            with open(latest_file, "w", encoding="utf-8") as f:
+                json.dump(health_report, f, indent=2)
+        except OSError as e:
+            logger.warning("Could not update latest pointer: %s", e)
+
+        # 3) Append entry to index for historical navigation
+        index_file = os.path.join(tachyonic_dir, "system_health_index.json")
+        index = []
+        try:
+            if os.path.exists(index_file):
+                with open(index_file, "r", encoding="utf-8") as f:
+                    index = json.load(f) or []
+        except (OSError, json.JSONDecodeError):
+            index = []
+        index.append({
+            "filename": report_name,
+            "timestamp": health_report["timestamp"],
+            "health_status": health_status,
+            "passed_checks": passed_checks,
+            "total_checks": total_checks,
+        })
+        try:
+            with open(index_file, "w", encoding="utf-8") as f:
+                json.dump(index, f, indent=2)
+        except OSError as e:
+            logger.warning("Could not update tachyonic index: %s", e)
+
         logger.info("Detailed health report saved to: %s", report_file)
         return passed_checks, total_checks, health_status
 
