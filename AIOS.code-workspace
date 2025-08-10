@@ -159,6 +159,36 @@
 				},
 				"problemMatcher": []
 			}
+			,
+			{
+				"label": "Run AINLP Iteration (dry-run)",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"${workspaceFolder}/runtime_intelligence/iterations/ainlp_iteration.py",
+					"--mode",
+					"dry-run"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"problemMatcher": []
+			}
+			,
+			{
+				"label": "Run AINLP Iteration (commit)",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"${workspaceFolder}/runtime_intelligence/iterations/ainlp_iteration.py",
+					"--mode",
+					"commit"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"problemMatcher": []
+			}
 		]
 	},
 	"launch": {
