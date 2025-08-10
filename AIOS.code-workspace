@@ -189,6 +189,36 @@
 				},
 				"problemMatcher": []
 			}
+			,
+			{
+				"label": "AINLP Agent: CONTINUE",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"${workspaceFolder}/runtime_intelligence/tools/ainlp_agent.py",
+					"continue",
+					"--cache-ttl",
+					"300"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"problemMatcher": []
+			}
+			,
+			{
+				"label": "AINLP Agent: STATUS",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"${workspaceFolder}/runtime_intelligence/tools/ainlp_agent.py",
+					"status"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"problemMatcher": []
+			}
 		]
 	},
 	"launch": {
