@@ -34,6 +34,9 @@
 		"workbench.editor.restoreViewState": true,
 		"files.autoSave": "afterDelay",
 		"files.autoSaveDelay": 5000,
+		// Terminal bells (set at workspace scope to avoid folder-scope warnings)
+		"terminal.integrated.enableVisualBell": false,
+		"accessibility.signals.terminalBell": { "sound": "off" },
 		
 		// CRITICAL: Prevent formatting conflicts (learned from VSCode health issues)
 		"editor.formatOnSave": false,
@@ -72,7 +75,11 @@
 			"**/build": true,
 			"**/bin": true,
 			"**/obj": true,
-			"**/.pytest_cache": true
+			"**/.pytest_cache": true,
+			"**/visual_interface/*.sln": true,
+			"AIOS.sln": true,
+			"**/*.vcxproj.user": true,
+			"**/.vs": true
 		},
 		
 		// Telemetry and privacy
@@ -82,7 +89,18 @@
 		// AIOS Theme and appearance
 		"workbench.colorTheme": "Default Dark Modern",
 		"workbench.iconTheme": "vs-seti",
-		"powershell.cwd": "🧠 AIOS Core",
+		"powershell.cwd": "${workspaceFolder}",
+
+		// CMake Tools: preselect generator/platform to avoid prompts
+		"cmake.generator": "Visual Studio 17 2022",
+		"cmake.platform": "x64",
+		"cmake.preferredGenerators": [
+			"Visual Studio 17 2022"
+		],
+		"cmake.configureOnOpen": true,
+
+		// Prefer a single solution to avoid prompts
+		"omnisharp.defaultLaunchSolution": "interface/AIOS.sln",
 		
 		// AIOS workspace behavior
 		"explorer.confirmDragAndDrop": false,
@@ -114,6 +132,23 @@
 				"group": "build"
 			}
 			// Add other essential tasks
+			,
+			{
+				"label": "Run Perl GA Demo",
+				"type": "shell",
+				"command": "perl",
+				"args": [
+					"${workspaceFolder}/ai/tools/ga_perl/ga.pl"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}",
+					"shell": {
+						"executable": "pwsh.exe",
+						"args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command"]
+					}
+				},
+				"problemMatcher": []
+			}
 		]
 	},
 	"launch": {
