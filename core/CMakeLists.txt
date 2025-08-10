@@ -20,10 +20,7 @@ endif()
 if(MSVC)
     # Enable MASM assembly on MSVC toolchain
     enable_language(ASM_MASM)
-    add_compile_options(/W4 /WX)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
-else()
-    add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 endif()
 
 # Find required packages
@@ -70,6 +67,13 @@ target_link_libraries(aios_core
     ${Boost_LIBRARIES}
     nlohmann_json::nlohmann_json
 )
+
+# Apply compile options only to C++ sources (avoid leaking to MASM)
+if(MSVC)
+    target_compile_options(aios_core PRIVATE $<$<COMPILE_LANGUAGE:CXX>:/W4 /WX>)
+else()
+    target_compile_options(aios_core PRIVATE $<$<COMPILE_LANGUAGE:CXX>:-Wall -Wextra -Wpedantic -Werror>)
+endif()
 
 # Optional Python linking
 if(Python3_FOUND)
