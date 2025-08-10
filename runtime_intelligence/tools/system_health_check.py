@@ -1,6 +1,22 @@
 """
 AIOS System Health Monitor
 Comprehensive system-wide health checking and module harmonization
+
+AINLP provenance:
+- Origin: migrated from ai/tests/system_health_check.py
+    (diagnostic helper) on 2025-08-10
+- Intent: keep side-effectful diagnostics out of pytest;
+    expose as tooling for ops/dev
+- Memory breadcrumb: docs/tachyonic_archive/system_health_report.json
+    is the output cache for reingestion
+
+AINLP micro-allocation:
+- Classification: Tooling/Diagnostics
+    (not part of runtime execution path)
+- Interfaces: callable main() returns exit code;
+    importable AIOSSystemHealthMonitor for programmatic use
+- Reingestion note: keep signatures stable so higher layers
+    can orchestrate structured health runs
 """
 
 import importlib
@@ -77,7 +93,10 @@ class AIOSSystemHealthMonitor:
                 results["packages"][package] = f"MISSING: {e}"
                 logger.warning(f"{package}: MISSING")
         self.health_results["python_environment"] = results
-        return all("MISSING" not in str(v) for v in results["packages"].values())
+        return all(
+            "MISSING" not in str(v)
+            for v in results["packages"].values()
+        )
 
     def check_aios_structure(self) -> bool:
         logger.info("Checking AIOS Project Structure...")
@@ -145,9 +164,12 @@ class AIOSSystemHealthMonitor:
             try:
                 with open(package_json_path, "r") as f:
                     package_data = json.load(f)
-                    results["dependencies"] = package_data.get("dependencies", {})
+                    results["dependencies"] = package_data.get(
+                        "dependencies", {}
+                    )
+                    dep_count = len(results["dependencies"])
                     logger.info(
-                        f"Dependencies: {len(results['dependencies'])} packages"
+                        f"Dependencies: {dep_count} packages"
                     )
             except Exception as e:
                 logger.warning(f"Error reading package.json: {e}")
@@ -171,17 +193,17 @@ class AIOSSystemHealthMonitor:
             and os.path.basename(os.path.dirname(cwd)) == "ai"
         ):
             ai_dir = os.path.join("..", "..", "ai")
-            ai_src_dir = os.path.join("..", "..", "ai", "src", "core")
+            core_dir = os.path.join("..", "..", "ai", "src", "core")
         elif os.path.basename(cwd) == "tests":
             ai_dir = os.path.join("..", "ai")
-            ai_src_dir = os.path.join("..", "ai", "src", "core")
+            core_dir = os.path.join("..", "ai", "src", "core")
         else:
             ai_dir = os.path.join(".", "ai")
-            ai_src_dir = os.path.join(".", "ai", "src", "core")
+            core_dir = os.path.join(".", "ai", "src", "core")
         if ai_dir not in sys.path:
             sys.path.insert(0, ai_dir)
-        if ai_src_dir not in sys.path:
-            sys.path.insert(0, ai_src_dir)
+        if core_dir not in sys.path:
+            sys.path.insert(0, core_dir)
         modules = [
             "nlp",
             "prediction",
@@ -192,10 +214,18 @@ class AIOSSystemHealthMonitor:
         results = {}
         for module_name in modules:
             try:
-                module_path = os.path.join(ai_src_dir, module_name, "__init__.py")
-                if file_exists(module_path):
+                pkg_init = os.path.join(core_dir, module_name, "__init__.py")
+                mod_file = os.path.join(core_dir, f"{module_name}.py")
+
+                target_path = None
+                if file_exists(pkg_init):
+                    target_path = pkg_init
+                elif file_exists(mod_file):
+                    target_path = mod_file
+
+                if target_path:
                     spec = importlib.util.spec_from_file_location(
-                        module_name, module_path
+                        module_name, target_path
                     )
                     if spec is not None and spec.loader is not None:
                         module = importlib.util.module_from_spec(spec)

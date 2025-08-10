@@ -66,3 +66,17 @@ class IntegrationBridge:
             }
         )
 
+    # Added for AI Core status integration
+    def get_status(self) -> Dict[str, Any]:
+        return {
+            "initialized": self.is_initialized,
+            "running": self.is_running,
+            "apiPort": self.api_port,
+        }
+
+    async def health_check(self) -> Dict[str, Any]:
+        return {
+            "healthy": self.is_initialized,
+            "running": self.is_running,
+        }
+

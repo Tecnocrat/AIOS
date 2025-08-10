@@ -80,7 +80,12 @@ function Setup-CondaEnvironment {
     # Install additional pip packages that might not be in conda
     Write-AIOSLog "Installing additional packages via pip..." "INFO"
     & pip install --upgrade pip
-    & pip install -r "$ProjectRoot\requirements.txt" --upgrade
+    $aiReq = Join-Path $ProjectRoot "ai\requirements.txt"
+    if (Test-Path $aiReq) {
+        & pip install -r $aiReq --upgrade
+    } else {
+        Write-AIOSLog "ai/requirements.txt not found; skipping pip install" "WARN"
+    }
     
     Write-AIOSLog "Conda environment setup complete!" "INFO"
 }
@@ -116,7 +121,12 @@ function Setup-VenvEnvironment {
     # Install packages
     Write-AIOSLog "Installing packages from requirements.txt..." "INFO"
     & pip install --upgrade pip
-    & pip install -r "$ProjectRoot\requirements.txt"
+    $aiReq = Join-Path $ProjectRoot "ai\requirements.txt"
+    if (Test-Path $aiReq) {
+        & pip install -r $aiReq
+    } else {
+        Write-AIOSLog "ai/requirements.txt not found; skipping pip install" "WARN"
+    }
     
     Write-AIOSLog "Virtual environment setup complete!" "INFO"
 }

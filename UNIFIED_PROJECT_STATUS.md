@@ -34,6 +34,8 @@ Build/test tasks available (VS Code):
 - C++: setup-cpp-build, build-cpp-core
 - Python: python-install-deps, python-test-ai
 
+Note: Agent operating rules are defined in .github/instructions/ask-mode.instructions.md. When adding repo-wide conventions, update this file and link back here.
+
 ---
 
 ## 🔎 Gaps blocking productization
