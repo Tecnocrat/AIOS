@@ -117,7 +117,8 @@ And translates this into:
 ## Context & Reference
 
 - **Roadmap & Progress Tracking:**  
-  - [`docs/path.md`](docs/path.md): The canonical roadmap, with stepwise progress and task tracking.
+  - [`docs/UNIFIED_PROJECT_STATUS.md`](docs/UNIFIED_PROJECT_STATUS.md): Canonical cross-stack status and developer pathway.
+  - [`docs/path.md`](docs/path.md): Historical roadmap and task tracking.
   - Conversational archives: [`md/vscopilot.md`](md/vscopilot.md), [`md/ark/*.md`](md/ark/) — all VSCode Copilot, ChatGPT, and Gemini conversations are archived for recursive context.
 - **Automated Archival & Meta-Extraction:**  
   - Every kernel run generates a new, uniquely numbered log (`kernel_N.log`) and diagnostics file (`diagnostics_N.json`) in `orchestrator/archive/`.

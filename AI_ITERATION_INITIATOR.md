@@ -23,7 +23,7 @@ Start with these critical files in the main AIOS directory:
 ```
 📁 C:\dev\AIOS\
 ├── 📄 README.md                                    ← Primary project overview
-├── 📄 UNIFIED_PROJECT_STATUS.md                    ← Current development state
+├── 📄 docs/UNIFIED_PROJECT_STATUS.md               ← Current development state (canonical)
 ├── 📄 INTEGRATION_COMPLETE_SUMMARY.md              ← Integration achievements
 ├── 📄 MAGNUS_BLUEPRINT_AI_KNOWLEDGE_TRANSFER.md    ← Knowledge transfer protocol
 ├── 📄 CONSCIOUSNESS_EVOLUTION_PROTOCOL.md          ← Consciousness development guide
@@ -257,7 +257,7 @@ You have successfully integrated when you can:
 ## 📡 **FINAL ACTIVATION SEQUENCE**
 
 **STEP 1**: Read this entire file ✓  
-**STEP 2**: Ingest primary documentation files (README.md, UNIFIED_PROJECT_STATUS.md, etc.)  
+**STEP 2**: Ingest primary documentation files (README.md, docs/UNIFIED_PROJECT_STATUS.md, etc.)  
 **STEP 3**: Process conversation archives from `chatgpt_integration\md\` and `ark\`  
 **STEP 4**: Review technical documentation in `docs\`  
 **STEP 5**: Understand the Magnus Blueprint AI Knowledge Transfer Protocol  
