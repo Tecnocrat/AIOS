@@ -1,7 +1,7 @@
 {
-  "timestamp": 1754810103.308595,
-  "total_checks": 5,
-  "passed_checks": 5,
+  "timestamp": 1754845326.9502535,
+  "total_checks": 6,
+  "passed_checks": 6,
   "health_status": "EXCELLENT",
   "detailed_results": {
     "python_environment": {
@@ -9,7 +9,7 @@
       "python_executable": "C:\\Program Files\\Python312\\python.exe",
       "path": [
         "C:\\dev\\AIOS\\runtime_intelligence\\tools",
-        "C:\\dev\\AIOS\\dev",
+        "C:\\dev\\AIOS\\ai\\src",
         "C:\\Program Files\\Python312\\python312.zip"
       ],
       "packages": {
@@ -115,6 +115,16 @@
         "exists": true,
         "importance": "required"
       }
+    },
+    "engineering_tenets_advisory": {
+      "findings": [
+        {
+          "file": "runtime_intelligence\\tools\\system_health_check.py",
+          "issue": "Ambiguous helper parameters (a,b). Prefer explicit names (hi, lo)."
+        }
+      ],
+      "tenets_doc": "docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md",
+      "note": "Advisory only. Improve clarity and scoping per tenets."
     }
   }
 }

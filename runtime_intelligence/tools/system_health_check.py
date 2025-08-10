@@ -59,6 +59,10 @@ class AIOSSystemHealthMonitor:
             ("VSCode Extension", self.check_vscode_extension),
             ("AIOS AI Modules", self.check_aios_modules),
             ("Configuration Files", self.check_configuration_files),
+            (
+                "Engineering Tenets Advisory",
+                self.check_engineering_tenets_advisory,
+            ),
         ]
 
     def check_python_environment(self) -> bool:
@@ -82,16 +86,16 @@ class AIOSSystemHealthMonitor:
         for package in critical_packages:
             try:
                 if package in ["json", "time", "os", "sys"]:
-                    exec(f"import {package}")
+                    __import__(package)
                     results["packages"][package] = "built-in"
                 else:
                     module = importlib.import_module(package)
                     version = getattr(module, "__version__", "unknown")
                     results["packages"][package] = version
-                logger.info(f"{package}: {results['packages'][package]}")
+                logger.info("%s: %s", package, results['packages'][package])
             except ImportError as e:
                 results["packages"][package] = f"MISSING: {e}"
-                logger.warning(f"{package}: MISSING")
+                logger.warning("%s: MISSING", package)
         self.health_results["python_environment"] = results
         return all(
             "MISSING" not in str(v)
@@ -133,18 +137,18 @@ class AIOSSystemHealthMonitor:
             dir_path = os.path.join(".", directory)
             results[directory] = {"exists": dir_exists(dir_path), "files": {}}
             if results[directory]["exists"]:
-                logger.info(f"{directory}: EXISTS")
+                logger.info("%s: EXISTS", directory)
                 for file in files:
                     file_path = os.path.join(dir_path, file)
-                    file_exists = path_exists(file_path)
-                    results[directory]["files"][file] = file_exists
-                    if file_exists:
-                        logger.info(f"   {file}: EXISTS")
+                    file_present = path_exists(file_path)
+                    results[directory]["files"][file] = file_present
+                    if file_present:
+                        logger.info("   %s: EXISTS", file)
                     else:
-                        logger.warning(f"   {file}: MISSING")
+                        logger.warning("   %s: MISSING", file)
                         all_good = False
             else:
-                logger.warning(f"{directory}: MISSING")
+                logger.warning("%s: MISSING", directory)
                 all_good = False
         self.health_results["project_structure"] = results
         return all_good
@@ -162,17 +166,15 @@ class AIOSSystemHealthMonitor:
             results["package_json"] = True
             logger.info("package.json: EXISTS")
             try:
-                with open(package_json_path, "r") as f:
+                with open(package_json_path, "r", encoding="utf-8") as f:
                     package_data = json.load(f)
                     results["dependencies"] = package_data.get(
                         "dependencies", {}
                     )
                     dep_count = len(results["dependencies"])
-                    logger.info(
-                        f"Dependencies: {dep_count} packages"
-                    )
-            except Exception as e:
-                logger.warning(f"Error reading package.json: {e}")
+                    logger.info("Dependencies: %d packages", dep_count)
+            except (OSError, json.JSONDecodeError) as e:
+                logger.warning("Error reading package.json: %s", e)
         else:
             logger.warning("package.json: MISSING")
         dist_dir = os.path.join(extension_dir, "dist")
@@ -231,16 +233,16 @@ class AIOSSystemHealthMonitor:
                         module = importlib.util.module_from_spec(spec)
                         spec.loader.exec_module(module)
                         results[module_name] = "importable"
-                        logger.info(f"{module_name}: IMPORTABLE")
+                        logger.info("%s: IMPORTABLE", module_name)
                     else:
                         results[module_name] = "spec_error"
-                        logger.warning(f"{module_name}: SPEC/LOADER ERROR")
+                        logger.warning("%s: SPEC/LOADER ERROR", module_name)
                 else:
                     results[module_name] = "file_missing"
-                    logger.warning(f"{module_name}: FILE MISSING")
-            except Exception as e:
+                    logger.warning("%s: FILE MISSING", module_name)
+            except (OSError, ImportError) as e:
                 results[module_name] = f"error: {str(e)[:50]}"
-                logger.warning(f"{module_name}: ERROR - {str(e)[:50]}")
+                logger.warning("%s: ERROR - %s", module_name, str(e)[:50])
         self.health_results["aios_modules"] = results
         return all("importable" in str(v) for v in results.values())
 
@@ -259,15 +261,93 @@ class AIOSSystemHealthMonitor:
             exists = file_exists(file_path)
             results[file_path] = {"exists": exists, "importance": importance}
             if exists:
-                logger.info(f"{file_path}: EXISTS")
+                logger.info("%s: EXISTS", file_path)
             else:
                 if importance == "required":
-                    logger.warning(f"{file_path}: MISSING (REQUIRED)")
+                    logger.warning("%s: MISSING (REQUIRED)", file_path)
                     required_missing += 1
                 else:
-                    logger.warning(f"{file_path}: MISSING (optional)")
+                    logger.warning("%s: MISSING (optional)", file_path)
         self.health_results["configuration_files"] = results
         return required_missing == 0
+
+    # --- Advisory scan aligned with engineering tenets ---
+    def check_engineering_tenets_advisory(self) -> bool:
+        """
+        Non-fatal advisory check: quickly scan selected Python sources for
+        patterns that often violate kernel-grade tenets (ambiguous parameters
+        like 'a,b' in asymmetric helpers; over-generic helpers that manipulate
+        bit halves). Returns True always (advisory), but records findings for
+        the report.
+        """
+        logger.info("Running Engineering Tenets advisory scan...")
+        findings: list[dict] = []
+        roots = [
+            os.path.join("ai", "src"),
+            os.path.join("runtime_intelligence"),
+        ]
+        try:
+            for root in roots:
+                if not dir_exists(root):
+                    continue
+                for dirpath, _dirnames, filenames in os.walk(root):
+                    for fname in filenames:
+                        if not fname.endswith(".py"):
+                            continue
+                        fpath = os.path.join(dirpath, fname)
+                        try:
+                            with open(
+                                fpath,
+                                "r",
+                                encoding="utf-8",
+                                errors="ignore",
+                            ) as fh:
+                                text = fh.read()
+                            # Heuristic 1: helpers with two unnamed params
+                            if "def make_" in text and "(a, b)" in text:
+                                findings.append({
+                                    "file": fpath,
+                                    "issue": (
+                                        "Ambiguous helper parameters (a,b). "
+                                        "Prefer explicit names (hi, lo)."
+                                    ),
+                                })
+                            # Heuristic 2: bit reassembly without role names
+                            if (
+                                "<< 16" in text
+                                and "def " in text
+                                and "hi" not in text
+                                and "lo" not in text
+                            ):
+                                findings.append({
+                                    "file": fpath,
+                                    "issue": (
+                                        "Bit reassembly without role naming. "
+                                        "Encode roles and endianness."
+                                    ),
+                                })
+                        except (OSError, UnicodeError) as e:
+                            findings.append({
+                                "file": fpath,
+                                "issue": f"scan_error: {str(e)[:60]}",
+                            })
+        except OSError as e:
+            findings.append({
+                "file": "<scan>",
+                "issue": f"walk_error: {str(e)[:60]}",
+            })
+
+        self.health_results["engineering_tenets_advisory"] = {
+            "findings": findings,
+            "tenets_doc": "docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md",
+            "note": "Advisory only. Improve clarity and scoping per tenets.",
+        }
+        # Non-fatal: always return True
+        logger.info(
+            "Advisory findings: %d potential items",
+            len(findings),
+        )
+        return True
 
     def run_comprehensive_health_check(self) -> tuple[int, int, str]:
         logger.info("AIOS System Health Check - Comprehensive Analysis")
@@ -275,22 +355,22 @@ class AIOSSystemHealthMonitor:
         passed_checks = 0
         total_checks = len(self.checks)
         for check_name, check_func in self.checks:
-            logger.info(f"\n{check_name}")
+            logger.info("\n%s", check_name)
             logger.info("-" * 30)
             try:
                 if check_func():
                     passed_checks += 1
-                    logger.info(f"{check_name}: PASSED")
+                    logger.info("%s: PASSED", check_name)
                 else:
-                    logger.warning(f"{check_name}: ISSUES FOUND")
-            except Exception as e:
-                logger.error(f"{check_name}: ERROR - {e}")
+                    logger.warning("%s: ISSUES FOUND", check_name)
+            except Exception as e:  # pylint: disable=broad-except
+                logger.error("%s: ERROR - %s", check_name, e)
         total_time = time.time() - self.start_time
-        logger.info("\n" + "=" * 60)
+        logger.info("\n%s", "=" * 60)
         logger.info("SYSTEM HEALTH SUMMARY")
         logger.info("=" * 60)
-        logger.info(f"Checks Passed: {passed_checks}/{total_checks}")
-        logger.info(f"Total Time: {total_time:.2f} seconds")
+        logger.info("Checks Passed: %d/%d", passed_checks, total_checks)
+        logger.info("Total Time: %.2f seconds", total_time)
         if passed_checks == total_checks:
             logger.info("SYSTEM HEALTH: EXCELLENT - All systems operational!")
             health_status = "EXCELLENT"
@@ -314,15 +394,15 @@ class AIOSSystemHealthMonitor:
         tachyonic_dir = os.path.join("docs", "tachyonic_archive")
         os.makedirs(tachyonic_dir, exist_ok=True)
         report_file = os.path.join(tachyonic_dir, "system_health_report.json")
-        with open(report_file, "w") as f:
+        with open(report_file, "w", encoding="utf-8") as f:
             json.dump(health_report, f, indent=2)
-        logger.info(f"Detailed health report saved to: {report_file}")
+        logger.info("Detailed health report saved to: %s", report_file)
         return passed_checks, total_checks, health_status
 
 
 def main() -> int:
     monitor = AIOSSystemHealthMonitor()
-    passed, total, status = monitor.run_comprehensive_health_check()
+    _passed, _total, status = monitor.run_comprehensive_health_check()
     if status in ["EXCELLENT", "GOOD"]:
         return 0
     elif status == "FAIR":
