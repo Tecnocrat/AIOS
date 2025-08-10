@@ -3,7 +3,7 @@
 
 **MASTER context file for AIOS. All agents must execute the AINLP context loading protocol for complete project understanding.**
 
-Operational note: See also .github/instructions/ask-mode.instructions.md for the concrete agent operating contract used in this repository.
+Operational note: See also .github/instructions/ask-mode.instructions.md for the concrete agent operating contract used in this repository. For current cross-stack status and developer pathway, consult docs/UNIFIED_PROJECT_STATUS.md (canonical).
 
 ---
 

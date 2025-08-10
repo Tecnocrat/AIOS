@@ -1,6 +1,6 @@
 # 🎯 AIOS Unified Project Status & Development Path (Consolidated)
 
-Date: Aug 9, 2025
+Date: Aug 10, 2025
 
 This single source of truth replaces prior status/optimization docs. It aligns to the current workspace, clarifies the human developer path, and defines concrete next steps to surface a working UI and a real logging/distillation database.
 
@@ -32,7 +32,7 @@ c:\dev\AIOS/
 Build/test tasks available (VS Code):
 - .NET: build (solution), build-ui, build-services, build-models, watch
 - C++: setup-cpp-build, build-cpp-core
-- Python: python-install-deps, python-test-ai
+- Python: python-install-deps, python-test-ai, python-system-health
 
 Note: Agent operating rules are defined in .github/instructions/ask-mode.instructions.md. When adding repo-wide conventions, update this file and link back here.
 
@@ -187,8 +187,8 @@ Phase 3 — Advanced experimentation (optional)
 What’s been validated recently via tasks:
 - .NET UI build: PASS (task “build-ui”).
 - .NET solution build: PASS with reduced warnings (task “build”).
-- Python tests: PASS previously (15 passed; warnings noted). Not re-run in this edit.
-- C++: Configured/built in prior runs; optional components noted. Not re-run in this edit.
+- Python tests: PASS (17 passed; warnings noted).
+- C++: Configured/built in prior runs; optional components noted. Not re-run this session.
 
 Actionable follow-up
 - Finish .NET UI warning cleanup in remaining hotspots.
@@ -262,4 +262,3 @@ These remain valid exploratory threads. They’re parked behind the UI+DB MVP an
 - Emergent pattern detection and multi-reality learning propagation
 
 Status: These are retained conceptually; concrete work will follow once UI+DB MVP is shipped and stable.
-
