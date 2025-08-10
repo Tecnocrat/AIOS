@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><title>AIOS UI Sample</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>body{font-family:system-ui,Segoe UI,Arial,Helvetica,sans-serif;padding:16px}section{margin:12px 0}label{display:block;margin:6px 0 2px}button{margin-top:8px}</style>
+</head>
+<body>
+<h1>AIOS UI Sample</h1>
+<section role="region" aria-label="Main">
+  <h2>Main</h2>
+  <p id="intro" >Welcome to AIOS UI Protocol sample.</p>
+  <label for="name">Your Name</label>
+  <input id="name" aria-label="Your Name" ariaLabel="Name input" />
+  <label for="flavor">Favorite Flavor</label>
+  <select id="flavor" aria-label="Favorite Flavor" >
+    <option value="vanilla">Vanilla</option>
+    <option value="chocolate">Chocolate</option>
+  </select>
+  <button id="submit" data-intent="submit_form" aria-label="Submit" >Submit</button>
+</section>
+<script>document.body.addEventListener('click', e => {const t = e.target; if (t.dataset.intent) { console.log('intent', t.dataset.intent); }})</script>
+</body></html>
