@@ -136,16 +136,26 @@
 			{
 				"label": "Run Perl GA Demo",
 				"type": "shell",
-				"command": "perl",
+				"command": "pwsh",
 				"args": [
-					"${workspaceFolder}/ai/tools/ga_perl/ga.pl"
+					"-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass",
+					"-File", "${workspaceFolder}/ai/tools/ga_perl/run_ga.ps1"
 				],
 				"options": {
-					"cwd": "${workspaceFolder}",
-					"shell": {
-						"executable": "pwsh.exe",
-						"args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command"]
-					}
+					"cwd": "${workspaceFolder}"
+				},
+				"problemMatcher": []
+			}
+			,
+			{
+				"label": "Generate Tools Index",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"${workspaceFolder}/runtime_intelligence/tools/index_tools.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
 				},
 				"problemMatcher": []
 			}
