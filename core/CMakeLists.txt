@@ -18,6 +18,8 @@ endif()
 
 # Compiler-specific options
 if(MSVC)
+    # Enable MASM assembly on MSVC toolchain
+    enable_language(ASM_MASM)
     add_compile_options(/W4 /WX)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 else()
@@ -54,8 +56,14 @@ file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/aios_core.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/universal_quantum_holographic.cpp")
 
+# Optional assembly sources (Windows/MSVC only)
+set(ASM_SOURCES)
+if(MSVC)
+    list(APPEND ASM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/kernel_ops.asm)
+endif()
+
 # Create the main library
-add_library(aios_core ${SOURCES} ${HEADERS})
+add_library(aios_core ${SOURCES} ${HEADERS} ${ASM_SOURCES})
 
 # Link libraries
 target_link_libraries(aios_core
