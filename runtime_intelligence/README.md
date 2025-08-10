@@ -175,3 +175,15 @@ The AIOS Runtime Intelligence Hub represents a **paradigmatic transformation** f
 
 *Runtime Intelligence Status: Phase 2 organizational evolution complete*  
 *Last Updated: August 5, 2025 - Nested Structure Implementation*
+
+## AINLP Commands
+
+@workspace CONTINUE: Autonomous AINLP dev-path refactorization and agentic-behavior upgrade. Self-select entry points, iterate, refactor, and summarize next actions.
+
+#github-pull-request_copilot-coding-agent CONTINUE: Autonomous AINLP dev-path refactorization and agentic-behavior upgrade. Self-select entry points, implement changes, add docs/tests, and open a PR with a concise description.
+
+---
+
+## Command mapping (local CLI):
+- CONTINUE → `python runtime_intelligence/tools/ainlp_agent.py continue --cache-ttl 300`
+- STATUS   → `python runtime_intelligence/tools/ainlp_agent.py status`

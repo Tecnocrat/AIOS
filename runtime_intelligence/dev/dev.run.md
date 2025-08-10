@@ -355,3 +355,8 @@ How to apply
 Verify
 - New chat responses no longer include the “Files changed” block.
 - If it still appears, check User/Profile settings for overrides.
+
+## 2025-08-10 Checkpoint — Agentic Runner Online
+- Deployed agentic runner with parallel diagnostics (git branch/status, python/pip version)
+- Implemented AsyncSubprocessManager with TTL cache, layered memory→disk logging
+- Next: extend parallel checks (FastAPI health, VSCode bridge), wire into CI task
