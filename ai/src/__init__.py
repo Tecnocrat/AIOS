@@ -1,7 +1,6 @@
-"""
-AIOS AI Core Module
+"""AIOS AI module source package.
 
-This module provides the main AI functionality for the AIOS system,
+Provides the main AI functionality for the AIOS system,
 including natural language processing, predictive analytics, and
 intelligent automation capabilities.
 """

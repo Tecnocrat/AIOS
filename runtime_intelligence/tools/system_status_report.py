@@ -1,15 +1,10 @@
 """
-AIOS System Status Report (Unified)
-Thin wrapper around the canonical system health monitor.
+AIOS System Status Report
+Canonical location for status summary invoking the health monitor.
 
-Canonical tool: runtime_intelligence/tools/system_health_check.py
-
-Location advisory:
-- Current path: AIOS repo root (legacy convenience).
-- Optimal path: runtime_intelligence/tools/ (tools live with runtime
-    diagnostics). Kept here as an alias for backwards compatibility; new
-    automation should invoke the canonical tool directly or a VS Code
-    task.
+Usage:
+- Prefer the VS Code task "python-system-health" for full diagnostics.
+- This script prints a concise summary and points to the archived report.
 """
 
 from __future__ import annotations
@@ -21,12 +16,7 @@ from pathlib import Path
 def show_system_status() -> int:
     """Run the canonical health monitor and print a concise summary."""
     root = Path(__file__).parent
-    health_path = (
-        root
-        / "runtime_intelligence"
-        / "tools"
-        / "system_health_check.py"
-    )
+    health_path = root / "system_health_check.py"
     if not health_path.exists():
         print("Health checker not found:", health_path)
         return 2
@@ -35,7 +25,8 @@ def show_system_status() -> int:
     import importlib.util
 
     spec = importlib.util.spec_from_file_location(
-        "system_health_check", str(health_path)
+        "system_health_check",
+        str(health_path),
     )
     if spec is None or spec.loader is None:
         print("Unable to load health checker module")
@@ -52,10 +43,9 @@ def show_system_status() -> int:
     print(f"Checks Passed: {passed}/{total}")
     print(f"Overall Status: {status}")
     archive = (
-        Path("docs")
-        / "tachyonic_archive"
-        / "system_health_report.json"
-    )
+        Path(__file__).resolve().parent.parent
+        / ".." / "docs" / "tachyonic_archive" / "system_health_report.json"
+    ).resolve()
     if archive.exists():
         try:
             data = json.loads(archive.read_text(encoding="utf-8"))

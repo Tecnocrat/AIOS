@@ -11,6 +11,7 @@
 - [DEV_PATH_MAIN_INTEGRATION_GUIDE.md](AIOS/DEV_PATH_MAIN_INTEGRATION_GUIDE.md): Unified DEV PATH MAIN, AINLP, and VSCode integration guide
 - [STRATEGIC_DEVELOPMENT_PATH_2025_2026.md](AIOS/STRATEGIC_DEVELOPMENT_PATH_2025_2026.md): Strategic roadmap and milestones
 - [AINLP_SPECIFICATION.md](AINLP/AINLP_SPECIFICATION.md): Comment-driven code management and paradigms
+- [ENGINEERING_TENETS_KERNEL_GRADE.md](AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md): Kernel-grade engineering practices and PR checklist
 
 ---
 
