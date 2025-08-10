@@ -1,0 +1,229 @@
+from __future__ import annotations
+
+import json
+import os
+import shutil
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple, Union, cast
+
+# Resolve repository root
+# (this file is expected under <root>/runtime_intelligence/tools)
+ROOT = Path(__file__).resolve().parents[2]
+
+MODULE_INDEX_PATH = ROOT / "docs" / "module_index.json"
+SUMMARY_DIR = ROOT / "docs" / "summary"
+SUMMARY_MD_PATH = SUMMARY_DIR / "module_summaries.md"
+MANUAL_SUMMARY_PATH = SUMMARY_DIR / "module_summaries_input.txt"
+TACHYONIC_DIR = ROOT / "docs" / "tachyonic_archive"
+
+# Recursive type for module index structure: { segment: (lang | subtree) }
+ModuleNode = Union[str, "ModuleIndex"]
+ModuleIndex = Dict[str, ModuleNode]
+
+
+def get_folder_structure(
+    root_dir: str | os.PathLike[str],
+    exclude_git: bool = False,
+) -> Dict[str, Dict[str, List[str]]]:
+    root_dir = str(root_dir)
+    folder_structure: Dict[str, Dict[str, List[str]]] = {}
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        if exclude_git and ".git" in dirpath:
+            continue
+        relative_path = os.path.relpath(dirpath, root_dir)
+        if relative_path == ".":
+            relative_path = ""
+        folder_structure[relative_path] = {
+            "folders": dirnames,
+            "files": filenames,
+        }
+    return folder_structure
+
+
+def save_to_json(
+    data: object,
+    output_folder: Path | str,
+    output_file: str,
+) -> None:
+    out_dir = Path(output_folder)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    with (out_dir / output_file).open("w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4)
+
+
+def cli_ui() -> str:
+    print("=== AIOS Admin Tool ===")
+    print("Choose an option:")
+    print("1. Analyze Architect folder structure")
+    print("2. Analyze chatgpt_integration folder structure")
+    print("3. Analyze AIOS folder structure")
+    print("4. Tachyonic backup of path.md")
+    print(
+        "5. Create/Update module summaries (from input file or "
+        "interactively)"
+    )
+    print("6. Execute ALL (full metadata update)")
+    print("7. Exit")
+    choice = input("Enter your choice (1/2/3/4/5/6/7): ").strip()
+    return choice
+
+
+def tachyonic_backup(
+    path_md: Path | str | None = None,
+    archive_dir: Path | str = TACHYONIC_DIR,
+) -> None:
+    if path_md is None:
+        path_md = ROOT / "docs" / "path.md"
+    archive_dir = Path(archive_dir)
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    now = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_path = archive_dir / f"path_{now}.md"
+    shutil.copy2(Path(path_md), backup_path)
+    print(f"Tachyonic backup created: {backup_path}")
+
+
+def load_module_index(path: Path | str) -> ModuleIndex:
+    with Path(path).open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    return cast(ModuleIndex, data)
+
+
+def load_manual_summaries(
+    input_path: Path | str,
+) -> Dict[Tuple[str, str], str]:
+    summaries: Dict[Tuple[str, str], str] = {}
+    p = Path(input_path)
+    if not p.exists():
+        return summaries
+    with p.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("|", 2)
+            if len(parts) == 3:
+                module_path, lang, summary = parts
+                summaries[(module_path.strip(), lang.strip())] = (
+                    summary.strip()
+                )
+    return summaries
+
+
+def collect_summaries(
+    module_index: ModuleIndex,
+    manual_summaries: Dict[Tuple[str, str], str],
+    path_stack: Optional[List[str]] = None,
+    summaries: Optional[List[str]] = None,
+) -> List[str]:
+    if summaries is None:
+        summaries = []
+    if path_stack is None:
+        path_stack = []
+    for key, value in module_index.items():
+        if isinstance(value, dict):
+            child_index = value
+            collect_summaries(
+                child_index,
+                manual_summaries,
+                path_stack + [key],
+                summaries,
+            )
+        else:
+            module_path = "/".join(path_stack + [key])
+            lang = value
+            summary = manual_summaries.get((module_path, lang), "")
+            if not summary:
+                print(f"Module: {module_path} ({lang})")
+                summary = input(f"Enter summary for {module_path}: ")
+            summaries.append(f"### {module_path} ({lang})\n{summary}\n")
+    return summaries
+
+
+def write_summaries(summaries: List[str], path: Path | str) -> None:
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text("\n".join(summaries), encoding="utf-8")
+    print(f"Module summaries written to {p}")
+
+
+def execute_all() -> None:
+    print("=== EXECUTE ALL: Full Metadata Update ===")
+    # 1. Tachyonic backup
+    tachyonic_backup()
+    # 2. Analyze folder structures
+    base_paths: Dict[str, Path] = {
+        "Architect": Path(r"C:\dev\Architect"),  # external, if present
+        "chatgpt_integration": ROOT / "chatgpt_integration",
+        "AIOS": ROOT,
+    }
+    for folder_name, root_directory in base_paths.items():
+        if not root_directory.exists():
+            print(f"Skipping missing folder: {root_directory}")
+            continue
+        output_folder = ROOT / "docs" / folder_name
+        output_file = "folder_structure.json"
+        print(f"Analyzing folder: {root_directory}")
+        structure = get_folder_structure(root_directory, exclude_git=True)
+        save_to_json(structure, output_folder, output_file)
+        print(f"Folder structure saved to {output_folder / output_file}")
+    # 3. Update module summaries
+    if not MODULE_INDEX_PATH.exists():
+        print(
+            f"ERROR: {MODULE_INDEX_PATH} not found. "
+            "Skipping module summaries."
+        )
+        return
+    module_index = load_module_index(MODULE_INDEX_PATH)
+    manual_summaries = load_manual_summaries(MANUAL_SUMMARY_PATH)
+    summaries = collect_summaries(module_index, manual_summaries)
+    write_summaries(summaries, SUMMARY_MD_PATH)
+    print("=== EXECUTE ALL: Complete ===")
+
+
+if __name__ == "__main__":
+    scan_paths = {
+        "1": Path(r"C:\\dev\\Architect"),
+        "2": ROOT / "chatgpt_integration",
+        "3": ROOT,
+    }
+
+    while True:
+        menu_choice = cli_ui()
+        if menu_choice in scan_paths:
+            scan_root = scan_paths[menu_choice]
+            if not scan_root.exists():
+                print(f"ERROR: {scan_root} not found.")
+                continue
+            scan_name = scan_root.name if scan_root != ROOT else "AIOS"
+            out_folder = ROOT / "docs" / scan_name
+            out_file = "folder_structure.json"
+
+            print(f"Analyzing folder: {scan_root}")
+            exclude_git_choice = (
+                input("Exclude .git folder? (y/n): ").strip().lower() == "y"
+            )
+            folder_struct = get_folder_structure(
+                scan_root, exclude_git=exclude_git_choice
+            )
+            save_to_json(folder_struct, out_folder, out_file)
+            print(f"Folder structure saved to {out_folder / out_file}")
+        elif menu_choice == "4":
+            tachyonic_backup()
+        elif menu_choice == "5":
+            if not MODULE_INDEX_PATH.exists():
+                print(f"ERROR: {MODULE_INDEX_PATH} not found.")
+                continue
+            module_index_data = load_module_index(MODULE_INDEX_PATH)
+            manual_summary_map = load_manual_summaries(MANUAL_SUMMARY_PATH)
+            summary_lines = collect_summaries(
+                module_index_data, manual_summary_map
+            )
+            write_summaries(summary_lines, SUMMARY_MD_PATH)
+        elif menu_choice == "6":
+            execute_all()
+        elif menu_choice == "7":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
