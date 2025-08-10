@@ -56,3 +56,13 @@ class LearningManager:
 
     async def health_check(self):
         return {"healthy": self.is_initialized and self.is_running}
+
+    async def update(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Stub update method to satisfy AICore;
+        extend with real learning logic.
+        """
+        if not self.is_running:
+            raise RuntimeError("LearningManager is not running")
+        # Simulate a lightweight learning update
+        await asyncio.sleep(0)
+        return {"status": "updated", "received": bool(data)}

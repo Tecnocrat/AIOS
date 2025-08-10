@@ -13,6 +13,9 @@ from .core.integration import IntegrationBridge
 from .core.learning import LearningManager
 from .core.nlp import NLPManager
 from .core.prediction import PredictionManager
+from .maintenance.system_health import (
+    run_system_health_check_async,
+)
 
 # AINLP.loader [latent:List] (auto.AINLP.class)
 #   from typing import List
@@ -42,15 +45,21 @@ class AICore:
         self.config = self._load_config()
         self.is_initialized = False
         self.is_running = False
-        self.nlp_manager = NLPManager(self.config.get("models", {}).get("nlp", {}))
+        self.nlp_manager = NLPManager(
+            self.config.get("models", {}).get("nlp", {})
+        )
         self.prediction_manager = PredictionManager(
             self.config.get("models", {}).get("prediction", {})
         )
         self.automation_manager = AutomationManager(
             self.config.get("models", {}).get("automation", {})
         )
-        self.learning_manager = LearningManager(self.config.get("training", {}))
-        self.integration_bridge = IntegrationBridge(self.config.get("integration", {}))
+        self.learning_manager = LearningManager(
+            self.config.get("training", {})
+        )
+        self.integration_bridge = IntegrationBridge(
+            self.config.get("integration", {})
+        )
         logger.info("AI Core initialized with config: %s", config_path)
 
     def _load_config(self) -> Dict[str, Any]:
@@ -76,9 +85,19 @@ class AICore:
             await self.integration_bridge.initialize()
             self.is_initialized = True
             logger.info("AI Core initialization completed successfully")
+            # Fire-and-forget a background system health scan after init
+            try:
+                asyncio.create_task(run_system_health_check_async())
+            except Exception as _exc:
+                logger.debug("Health check scheduling failed: %s", _exc)
             return True
         except Exception as e:
             logger.error("Failed to initialize AI Core: %s", e)
+            # Attempt a health scan to capture diagnostics on failure
+            try:
+                asyncio.create_task(run_system_health_check_async())
+            except Exception:
+                pass
             return False
 
     async def start(self) -> bool:
@@ -94,9 +113,19 @@ class AICore:
             await self.integration_bridge.start()
             self.is_running = True
             logger.info("AI Core services started successfully")
+            # Opportunistic background system health scan after start
+            try:
+                asyncio.create_task(run_system_health_check_async())
+            except Exception as _exc:
+                logger.debug("Health check scheduling failed: %s", _exc)
             return True
         except Exception as e:
             logger.error("Failed to start AI Core services: %s", e)
+            # Attempt a health scan to capture diagnostics on failure
+            try:
+                asyncio.create_task(run_system_health_check_async())
+            except Exception:
+                pass
             return False
 
     async def stop(self):
@@ -130,7 +159,9 @@ class AICore:
                     "automation_result": automation_result,
                 }
             if intent == "prediction":
-                prediction_result = await self.prediction_manager.predict(nlp_result)
+                prediction_result = await self.prediction_manager.predict(
+                    nlp_result
+                )
                 return {
                     "status": "success",
                     "intent": intent,
@@ -190,15 +221,26 @@ class AICore:
         health_results = {}
         try:
             health_results["nlp"] = await self.nlp_manager.health_check()
-            health_results["prediction"] = await self.prediction_manager.health_check()
-            health_results["automation"] = await self.automation_manager.health_check()
-            health_results["learning"] = await self.learning_manager.health_check()
-            health_results["integration"] = await self.integration_bridge.health_check()
+            health_results["prediction"] = (
+                await self.prediction_manager.health_check()
+            )
+            health_results["automation"] = (
+                await self.automation_manager.health_check()
+            )
+            health_results["learning"] = (
+                await self.learning_manager.health_check()
+            )
+            health_results["integration"] = (
+                await self.integration_bridge.health_check()
+            )
             all_healthy = all(
-                result.get("healthy", False) for result in health_results.values()
+                result.get("healthy", False)
+                for result in health_results.values()
             )
             return {
-                "overall_health": "healthy" if all_healthy else "unhealthy",
+                "overall_health": (
+                    "healthy" if all_healthy else "unhealthy"
+                ),
                 "subsystems": health_results,
                 "timestamp": asyncio.get_event_loop().time(),
             }
@@ -223,7 +265,9 @@ def get_ai_core() -> AICore:
     return _ai_core_instance
 
 
-async def initialize_ai_core(config_path: str = "config/ai-models.json") -> bool:
+async def initialize_ai_core(
+    config_path: str = "config/ai-models.json",
+) -> bool:
     """Initialize the global AI Core instance."""
     global _ai_core_instance
     _ai_core_instance = AICore(config_path)
