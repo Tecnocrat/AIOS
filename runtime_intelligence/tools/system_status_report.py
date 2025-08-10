@@ -42,17 +42,26 @@ def show_system_status() -> int:
     print("=" * 80)
     print(f"Checks Passed: {passed}/{total}")
     print(f"Overall Status: {status}")
-    archive = (
-        Path(__file__).resolve().parent.parent
-        / ".." / "docs" / "tachyonic_archive" / "system_health_report.json"
+    # Locate tachyonic archive directory
+    tach_dir = (
+        Path(__file__).parents[2] / "docs" / "tachyonic_archive"
     ).resolve()
-    if archive.exists():
+    latest = tach_dir / "system_health_report.latest.json"
+    if latest.exists():
         try:
-            data = json.loads(archive.read_text(encoding="utf-8"))
-            print("Report:", archive)
+            data = json.loads(latest.read_text(encoding="utf-8"))
+            print("Latest pointer:", latest)
             print("Timestamp:", data.get("timestamp"))
-        except Exception:
-            print("Report:", archive)
+        except (OSError, json.JSONDecodeError):
+            print("Latest pointer:", latest)
+
+    # Show most recent immutable snapshot if present
+    try:
+        snapshots = sorted(tach_dir.glob("system_health_report_*.json"))
+        if snapshots:
+            print("Newest snapshot:", snapshots[-1])
+    except OSError:
+        pass
     print("=" * 80)
     return 0 if status in ("EXCELLENT", "GOOD") else 1
 
