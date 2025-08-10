@@ -19,10 +19,12 @@ import argparse
 import datetime as dt
 from pathlib import Path
 import json
+from typing import Optional, Tuple, Dict, Any
 
 ROOT = Path(__file__).resolve().parents[2]
 DOCS = ROOT / "docs"
 LOGS = ROOT / "runtime_intelligence" / "logs"
+AGENT_LOG_DIR = LOGS / "agent"
 
 MODULE_INDEX = DOCS / "module_index.json"
 TOOLS_INDEX = DOCS / "tools_index.md"
@@ -30,7 +32,7 @@ SUMMARY_DIR = DOCS / "summary"
 
 
 def now_stamp() -> str:
-    return dt.datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    return dt.datetime.now(dt.timezone.utc).strftime("%Y%m%d_%H%M%S")
 
 
 def load_json(path: Path):
@@ -49,6 +51,32 @@ def read_text_if_exists(path: Path):
         except Exception as e:
             return f"<error reading {path}: {e}>"
     return None
+
+
+def latest_agent_summary() -> Tuple[Optional[Path], Optional[Dict[str, Any]]]:
+    """Locate and parse the latest agent CONTINUE summary JSON."""
+    if not AGENT_LOG_DIR.exists():
+        return None, None
+    files = sorted(
+        [
+            p
+            for p in AGENT_LOG_DIR.iterdir()
+            if (
+                p.is_file()
+                and p.name.startswith("continue_")
+                and p.suffix == ".json"
+            )
+        ],
+        reverse=True,
+    )
+    if not files:
+        return None, None
+    latest = files[0]
+    try:
+        data = json.loads(latest.read_text(encoding="utf-8"))
+        return latest, data
+    except Exception:
+        return latest, None
 
 
 def write_log(lines: list[str]) -> Path:
@@ -86,12 +114,13 @@ def main():
     module_index = load_json(MODULE_INDEX)
     # tools_index currently unused; kept for future enrichment
     _ = read_text_if_exists(TOOLS_INDEX)
+    agent_path, agent_summary = latest_agent_summary()
 
     lines = [
         "AINLP Iteration Receipt",
         f"id: {iter_id}",
         f"mode: {args.mode}",
-        f"time_utc: {dt.datetime.utcnow().isoformat()}",
+        f"time_utc: {dt.datetime.now(dt.timezone.utc).isoformat()}",
         f"module_index_present: {MODULE_INDEX.exists()}",
         f"tools_index_present: {TOOLS_INDEX.exists()}",
         (
@@ -106,6 +135,15 @@ def main():
 
     if isinstance(module_index, dict) and "modules" in module_index:
         lines.append(f"modules_listed: {len(module_index['modules'])}")
+
+    if agent_summary and isinstance(agent_summary, dict):
+        ok = agent_summary.get("summary", {}).get("ok")
+        checks = agent_summary.get("summary", {}).get("checks", [])
+        lines.append(
+            f"agent_summary_present: True (ok={ok}, checks={len(checks)})"
+        )
+    else:
+        lines.append("agent_summary_present: False")
 
     log_path = write_log(lines)
 
@@ -125,10 +163,43 @@ def main():
                 "- tools_index: "
                 + ("present" if TOOLS_INDEX.exists() else "missing")
             ),
+            (
+                "- agent_summary: "
+                + (
+                    f"present ({agent_path.relative_to(ROOT).as_posix()})"
+                    if agent_path
+                    else "missing"
+                )
+            ),
             "",
             "## notes",
             "- Extend this document with concrete steps, deltas, decisions.",
             "",
+            "## agent checks (latest)",
+            "",
+            (
+                "- overall: "
+                + (
+                    "ok" if (agent_summary or {}).get("summary", {}).get("ok")
+                    else "not-ok or missing"
+                )
+            ),
+            "- checks:",
+        ]
+
+        # Render up to first 5 checks briefly
+        if agent_summary and isinstance(agent_summary, dict):
+            checks = agent_summary.get("summary", {}).get("checks", [])
+            for chk in checks[:5]:
+                cmd = " ".join(chk.get("cmd", [])[:4])
+                ok_s = "ok" if chk.get("ok") else "fail"
+                dur = chk.get("duration_ms")
+                sample = (chk.get("sample") or "").replace("\n", " ")[:120]
+                summary.append(f"  - {ok_s} [{dur} ms] {cmd} :: {sample}")
+        else:
+            summary.append("  - none")
+
+        summary += [
             "## provenance",
             f"- log: {log_path.relative_to(ROOT).as_posix()}",
         ]
