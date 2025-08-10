@@ -28,8 +28,16 @@
 		{
 			"name": "🧮 Runtime Intelligence",
 			"path": "./runtime_intelligence"
+		},
+		{
+			"name": "🔧 Scripts",
+			"path": "./scripts"
+		},
+		{
+			"name": "🔧 Tools",
+			"path": "./runtime_intelligence/tools"
 		}
-		// Harmonized with current AIOS architecture
+		// AIOS Context retention and harmonization
 	],
 	"settings": {
 		// AIOS Context retention and harmonization
