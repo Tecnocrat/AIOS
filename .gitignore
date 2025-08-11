@@ -296,3 +296,4 @@ docs/site/
 !runtime_intelligence/logs/
 !runtime_intelligence/logs/**/*.json
 !runtime_intelligence/logs/**/*.db
+!runtime_intelligence/logs/**/*.log
