@@ -1,5 +1,12 @@
 # AIOS AINLP Analysis Sandbox - Fractal Intelligence Workspace
 
+## ⚓ Tachyonic anchor/reset & coherence gates (distilled)
+- Anchor: record experiment approvals in `dev.run.md` (what/why/where).
+- Reset: `.aios_context*.json` snapshots only under `runtime_intelligence/logs/aios_context/`.
+- Stability: keep environment/pinning consistent; no auto-generated root files; inject changes into existing modules/docs.
+- Guardrails: experiments that alter paths/APIs must update tests/docs and add a tachyonic changelog entry.
+- Coherence gates: quick LFC/GPC score → if <0.4, do minimal discovery (symbol perimeter, module README/spec, tests) before edits. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
+
 ## 🧠 **Abstract AINLP Analysis Context - Fractal Pattern Integration Complete**
 **Date:** August 4, 2025  
 **Phase:** Task 1.2 Implementation Complete → Task 1.3 Fractal Pattern Application  

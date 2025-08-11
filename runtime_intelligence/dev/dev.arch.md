@@ -1,5 +1,14 @@
 # AIOS Architecture Evolution - Runtime Intelligence Paradigm
 
+## ⚓ Tachyonic anchor/reset & coherence gates (distilled)
+- Anchor: `dev.run.md` records approved steps (what/why/where).
+- Reset: `.aios_context.json` snapshots live under `runtime_intelligence/logs/aios_context/` using sequence naming: `.aios_context.json`, `.aios_context[1..n].json`.
+- Stability: pin Python to aios_env; suppress formatter prompts; avoid background auto-restore; treat `AIOS.code-workspace` as the source of truth.
+- Guardrails: tests under `ai/tests/` only; avoid circular imports; registry writes are atomic with tachyonic backups only on head writes.
+- Success: no unsolicited restores/prompts; snapshots appear only in logs/aios_context; full edit–test cycle runs clean.
+
+Coherence gates (AINLP Harmonizer): quick LFC/GPC score → if <0.4, do minimal discovery (symbol perimeter, module README/spec, tests under `ai/tests/`, tachyonic changelog) before edits. Before API/path changes: scan usages, update tests/docs, prefer non-root placement, and log in changelog. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
+
 ## 🧬 **Consolidated Architecture Documentation**
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization  
