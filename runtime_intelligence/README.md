@@ -20,6 +20,9 @@ The AIOS Runtime Intelligence Hub serves as the **central nervous system** for a
 
 ## 📁 **Directory Structure**
 
+Quick links:
+- AIOS Harmonizer AINL (agentic checklist): [docs/tachyonic/AIOS.Harmonizer.AINL.md](../docs/tachyonic/AIOS.Harmonizer.AINL.md)
+
 ### **dev/ - Active Development Documentation**
 ```yaml
 Purpose: Core development documentation following self-similar patterns
