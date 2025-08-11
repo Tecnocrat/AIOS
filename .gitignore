@@ -289,3 +289,10 @@ docs/site/
 *.old
 *~
 .#*
+
+# --- Runtime Intelligence tachyonic logs (allow discovery) ---
+# Include the runtime_intelligence/logs directory and JSON/DB artifacts
+# while keeping generic *.log files ignored.
+!runtime_intelligence/logs/
+!runtime_intelligence/logs/**/*.json
+!runtime_intelligence/logs/**/*.db
