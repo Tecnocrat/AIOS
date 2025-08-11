@@ -1,0 +1,14 @@
+{
+  "_expiry": 1754862367.3489475,
+  "data": {
+    "cmd": [
+      "pip",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "pip 25.1.1 from C:\\Program Files\\Python312\\Lib\\site-packages\\pip (python 3.12)\r\r\n",
+    "stderr": "",
+    "duration_ms": 973,
+    "timestamp": 1754862337
+  }
+}
