@@ -77,6 +77,7 @@
 			"**/obj": true,
 			"**/.pytest_cache": true,
 			"**/visual_interface/*.sln": true,
+			"interface/interface.sln": true,
 			"AIOS.sln": true,
 			"**/*.vcxproj.user": true,
 			"**/.vs": true
@@ -98,6 +99,11 @@
 			"Visual Studio 17 2022"
 		],
 		"cmake.configureOnOpen": true,
+		// Route CMake Tools to the Core Engine folder explicitly in multi-root
+		"cmake.sourceDirectory": "${workspaceFolder:⚡ Core Engine}",
+		"cmake.buildDirectory": "${workspaceFolder:⚡ Core Engine}/build",
+		// Avoid noise in non-CMake folders
+		"cmake.ignoreCMakeListsMissing": true,
 
 		// Prefer a single solution to avoid prompts
 		"omnisharp.defaultLaunchSolution": "interface/AIOS.sln",

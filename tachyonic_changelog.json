@@ -1,0 +1,11 @@
+[
+  {
+    "kind": "deprecation",
+    "file": "test_opencv_aios_integration.py",
+    "old_path": "/",
+    "new_path": "/scripts/legacy/",
+    "date": "2025-08-11",
+    "reason": "Deprecated as a standalone OpenCV test runner. All tests now run via `pytest scripts/`. No CI or scripts depend on this file. Docs updated to reference new location or direct pytest usage.",
+    "harmonization": "This change harmonizes the AIOS tachyonic field by ensuring all legacy entry points are tracked and discoverable."
+  }
+]
