@@ -7,5 +7,23 @@
     "date": "2025-08-11",
     "reason": "Deprecated as a standalone OpenCV test runner. All tests now run via `pytest scripts/`. No CI or scripts depend on this file. Docs updated to reference new location or direct pytest usage.",
     "harmonization": "This change harmonizes the AIOS tachyonic field by ensuring all legacy entry points are tracked and discoverable."
+  },
+  {
+    "kind": "move",
+    "file": "test_chatgpt_integration.py",
+    "old_path": "/",
+    "new_path": "/ai/tests/test_chatgpt_integration_path.py",
+    "date": "2025-08-11",
+    "reason": "Harmonize tests under ai/tests for pytest compatibility and avoid root-level files.",
+    "harmonization": "Aligns with AIOS Agentic File Creation Policy; improves discoverability and CI wiring."
+  },
+  {
+    "kind": "path_update",
+    "file": "runtime_intelligence outputs",
+    "old_path": "/runtime_intelligence/ai_context_dump_*.json and /runtime_intelligence/session_*.db",
+    "new_path": "/runtime_intelligence/logs/aios_context/ai_context_dump_*.json and /runtime_intelligence/logs/sessions/session_*.db",
+    "date": "2025-08-11",
+    "reason": "Consolidate runtime artifacts under tachyonic logging infrastructure for observability and governance.",
+    "harmonization": "Enables Git discovery for runtime logs; unifies paths per docs/runtime_intelligence guidance."
   }
 ]
