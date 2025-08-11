@@ -1,5 +1,12 @@
 # AIOS Testing Strategy - Runtime Intelligence Validation
 
+## ⚓ Tachyonic anchor/reset & coherence gates (distilled)
+- Anchor: record testing milestones and approvals in `dev.run.md`.
+- Reset: context snapshots (`.aios_context*.json`) are written only to `runtime_intelligence/logs/aios_context/`.
+- Stability: consistent interpreter/env; suppress formatter prompts; avoid root-level file creation; keep tests under `ai/tests/`.
+- Guardrails: when tests reflect path/API changes, update tachyonic changelog and docs; use atomic writes for registry.
+- Coherence gates: apply AINL LFC/GPC quick score; if <0.4, run discovery (perimeter search, module README/spec, tests) before edits. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
+
 ## 🧪 **Testing Excellence through Fractal Intelligence**
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization Validation  

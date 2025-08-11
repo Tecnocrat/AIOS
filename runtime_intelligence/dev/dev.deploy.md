@@ -1,5 +1,12 @@
 # AIOS Deployment Strategy - Runtime Intelligence Operations
 
+## ⚓ Tachyonic anchor/reset & coherence gates (distilled)
+- Anchor: `dev.run.md` is the deployment anchor of record for step-by-step approvals.
+- Reset: `.aios_context.json` snapshots live in `runtime_intelligence/logs/aios_context/` with sequence naming.
+- Stability: pin Python to aios_env; avoid noisy auto-restore; keep `AIOS.code-workspace` authoritative.
+- Guardrails: no root-level new files; prefer module-appropriate folders; always add a tachyonic changelog entry for path/behavior changes.
+- Coherence gates: run LFC/GPC quick score; for API/path changes, scan usages + update tests/docs before rolling deploy. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
+
 ## 🚀 **Deployment Excellence through Fractal Intelligence**
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization Operational Readiness  

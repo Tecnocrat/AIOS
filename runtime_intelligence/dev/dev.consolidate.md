@@ -1,5 +1,12 @@
 # AIOS Documentation Consolidation Strategy - Runtime Intelligence Paradigm
 
+## ⚓ Tachyonic anchor/reset & coherence gates (distilled)
+- Anchor: `dev.run.md` tracks each approved consolidation step with what/why/where.
+- Reset: `.aios_context*.json` snapshots live only in `runtime_intelligence/logs/aios_context/`.
+- Stability: keep workspace settings canonical; suppress formatter prompts; no root-level new files; prefer injection into existing docs.
+- Guardrails: move/rename docs with changelog entries; keep tests under `ai/tests/`; use atomic writes for registry.
+- Coherence gates: use the AINL rubric (LFC/GPC quick score). If <0.4, perform symbol perimeter + module README/spec + tests scan before edits; update docs/changelog when paths/APIs shift. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
+
 ## 🎯 **Paradigmatic Reorganization Plan**
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization  
