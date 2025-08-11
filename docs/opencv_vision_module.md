@@ -221,6 +221,7 @@ The module includes comprehensive error handling:
 - Comprehensive analysis: ~2x image size for feature buffers
 - Consciousness analysis: ~3x image size for additional processing
 
+
 ## Testing
 
 ### Integration Tests
@@ -228,7 +229,28 @@ The module includes comprehensive error handling:
 Run the comprehensive test suite:
 
 ```bash
-python test_opencv_aios_integration.py
+pytest scripts/
+```
+
+#### Legacy Test Runner Deprecation and Harmonization
+
+The legacy file `test_opencv_aios_integration.py` (formerly at repo root) was deprecated and moved to `scripts/legacy/` on 2025-08-11. All CI and documentation now use `pytest scripts/` directly.
+
+- The move and deprecation are recorded in both `tachyonic_changelog.yaml` and `tachyonic_changelog.json` at the repo root, as part of the AIOS "tachyonic field" harmonization process.
+- This ensures all legacy entry points are discoverable and tracked for future audits, migrations, or automated tooling.
+- Example changelog entry:
+
+```yaml
+- kind: deprecation
+    file: test_opencv_aios_integration.py
+    old_path: /
+    new_path: /scripts/legacy/
+    date: 2025-08-11
+    reason: >
+        Deprecated as a standalone OpenCV test runner. All tests now run via `pytest scripts/`.
+        No CI or scripts depend on this file. Docs updated to reference new location or direct pytest usage.
+    harmonization: >
+        This change harmonizes the AIOS tachyonic field by ensuring all legacy entry points are tracked and discoverable.
 ```
 
 ### Manual Testing
