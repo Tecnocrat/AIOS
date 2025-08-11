@@ -179,9 +179,15 @@ class RuntimeIntelligence:
         self.events_cache = deque(maxlen=5000)  # Keep recent events in memory
         self.consciousness_metrics = ConsciousnessMetrics()
         
-        # Initialize database
-        self.db_path = self.base_path / "runtime_intelligence" / f"session_{self.session_id}.db"
-        self.db_path.parent.mkdir(exist_ok=True)
+        # Initialize database (store under tachyonic logging infrastructure)
+        self.db_path = (
+            self.base_path
+            / "runtime_intelligence"
+            / "logs"
+            / "sessions"
+            / f"session_{self.session_id}.db"
+        )
+        self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_database()
         
         # Initialize logging
@@ -651,8 +657,12 @@ class RuntimeIntelligence:
             }
         }
         
-        # Save to file
-        dump_file = self.base_path / "runtime_intelligence" / f"ai_context_dump_{self.session_id}.json"
+        # Save to file under tachyonic logging infrastructure
+        dump_dir = (
+            self.base_path / "runtime_intelligence" / "logs" / "aios_context"
+        )
+        dump_dir.mkdir(parents=True, exist_ok=True)
+        dump_file = dump_dir / f"ai_context_dump_{self.session_id}.json"
         with open(dump_file, 'w') as f:
             json.dump(ai_context, f, indent=2, default=str)
         
@@ -787,7 +797,9 @@ class RuntimeIntelligence:
             self.db_conn.close()
         
         print(f"🧠 Runtime Intelligence shutdown complete. Context dump available at:")
-        print(f"   {self.base_path}/runtime_intelligence/ai_context_dump_{self.session_id}.json")
+        print(
+            f"   {self.base_path}/runtime_intelligence/logs/aios_context/ai_context_dump_{self.session_id}.json"
+        )
         
         return final_dump
 
