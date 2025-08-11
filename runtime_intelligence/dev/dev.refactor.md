@@ -1,5 +1,12 @@
 # AIOS Massive Refactorization Documentation - VSCode Error Resolution
 
+## ⚓ Tachyonic anchor/reset & coherence gates (distilled)
+- Anchor: all refactorization steps summarized in `dev.run.md` with what/why/where.
+- Reset: `.aios_context*.json` snapshots live only in `runtime_intelligence/logs/aios_context/`.
+- Stability: pin Python env; suppress formatter prompts; avoid root-level file creation; atomic writes for registry.
+- Guardrails: public API/path changes require usage scans, tests/docs updates, and a tachyonic changelog entry.
+- Coherence gates: use AINL LFC/GPC quick score and run minimal discovery if <0.4. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
+
 ## 🚀 **Autopep8 Paradigmatic Transformation - August 4, 2025**
 
 ### **Refactorization Context**

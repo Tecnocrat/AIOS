@@ -1,5 +1,12 @@
 # AIOS Optimization Suite - Runtime Intelligence Patterns
 
+## ⚓ Tachyonic anchor/reset & coherence gates (distilled)
+- Anchor: optimization waypoints are anchored in `dev.run.md` with one-line commit-style entries.
+- Reset: `.aios_context.json` snapshots are stored in `runtime_intelligence/logs/aios_context/` only.
+- Stability: consistent environment pinning; avoid background auto-restore; use atomic writes for context registry.
+- Guardrails: changes that affect paths/APIs require test/docs updates and a tachyonic changelog entry.
+- Coherence gates: apply AINL LFC/GPC quick score; if <0.4, perform discovery before edits. Reference `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
+
 ## ⚡ **Performance Optimization Hub**
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization Success  
