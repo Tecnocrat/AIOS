@@ -23,4 +23,65 @@
 5. **Documentation and Traceability**
 	- When deprecating, moving, or harmonizing files, always document the change in an existing, relevant documentation or changelog file—never by creating a new root-level file.
 
+
+
+---
+
+## AINLP Harmonizer — Context-Coherence Protocol (Precision Upgrade)
+
+Purpose: Maintain precision when focus shifts cause context drift. Before impactful edits, self-assess perceived context coherence for the focus file and rebalance with targeted discovery.
+
+### Coherence Types
+- Local File Coherence (LFC): How well the agent understands the current file (recent work, symbols, patterns).
+- Global Project Coherence (GPC): How well the change aligns with adjacent modules, contracts, docs, tests, and conventions.
+
+### Fast Signals (lightweight heuristics)
+- LFC high, GPC low indicators:
+	- Many edits to one file without checking usages/definitions elsewhere.
+	- Few or no searches for symbol usages across the workspace.
+	- Divergence from known paths/conventions (e.g., tests not under `ai/tests/`).
+- LFC low indicators:
+	- First edit on a file in this session; unknown conventions; missing owner/tests context.
+	- Symbols unclear; imports/headers not recognized; no recent reads around definitions.
+
+### Coherence Score (quick rubric)
+- Start at 0.5. Add +0.2 if you’ve read definitions/usages of key symbols; +0.2 if you opened module README/spec/tests; +0.1 if you checked changelog/AIOS.Harmonizer AINL.
+- Subtract -0.3 if you’ve only touched one file for >3 edits without a workspace search; -0.2 if public API change without usage scan; -0.1 if path conventions may be violated.
+- Thresholds: <0.4 → do discovery before editing. 0.4–0.7 → cautious edit with checks. >0.7 → proceed.
+
+### Discovery Steps (choose minimal set based on signals)
+1) Symbols perimeter
+	 - Search usages/definitions for changed symbols (functions/classes/constants) across the workspace.
+	 - Check interfaces and public contracts (headers, interfaces/, include/, AIOS.Models, etc.).
+2) Module context
+	 - Open nearby README/spec in the module; read top section and any contracts.
+	 - Open relevant tests (prefer `ai/tests/`) and see expected behavior.
+3) Governance context
+	 - Check `docs/tachyonic/tachyonic_changelog.*` for moves/path updates.
+	 - Review `docs/tachyonic/AIOS.Harmonizer.AINL.md` checklist to confirm placement/observability.
+4) Pathing and observability
+	 - Verify outputs under `runtime_intelligence/logs/*` when generating artifacts.
+	 - Ensure `.gitignore` allows discovery for `.json`, `.db`, `.log` under RI logs.
+
+### Edit Gates (apply before commit-worthy edits)
+- If changing public APIs or paths:
+	- Run workspace usage scan; list at least 1–3 impacted call sites.
+	- Update or add minimal tests/docs when behavior changes.
+- If moving/creating files:
+	- Reuse/inject if possible. Else place under module-appropriate folders; never root.
+	- Append a changelog entry (`docs/tachyonic/tachyonic_changelog.(yaml|json)`).
+
+### Tooling Guidance (fast + precise)
+- Use a small number of targeted operations:
+	- Workspace grep/semantic search for symbols and paths.
+	- Read larger chunks around definitions (150–300 lines) instead of many tiny reads.
+	- Open tests under `ai/tests/` and module READMEs/specs.
+	- Run a fast test or harness to validate changed surfaces.
+
+### When to Re-center
+- After 3–5 edits in one file without a usage scan, pause for a perimeter search.
+- When touching files not seen this session, run the minimal discovery (README/spec + tests + symbol scan).
+
+Reference: See AIOS.Harmonizer AINL checklist at `docs/tachyonic/AIOS.Harmonizer.AINL.md` for the end-to-end harmonized flow.
+
 **This policy must be read and applied by the agent before any file creation or output.**
