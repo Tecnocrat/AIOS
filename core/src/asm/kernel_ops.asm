@@ -35,14 +35,14 @@ KernelCpuidLeaf PROC
     mov     eax, ecx        ; leaf
     mov     ecx, edx        ; subleaf
     cpuid
-    ; R8 -> eax*, R9 -> ebx*, [rsp+40] -> ecx*, [rsp+48] -> edx*
+    ; R8 -> eax*, R9 -> ebx*, after push: [rsp+48] -> ecx*, [rsp+56] -> edx*
     mov     r10, r8
     mov     [r10], eax
     mov     r10, r9
     mov     [r10], ebx
-    mov     r10, [rsp+40]
-    mov     [r10], ecx
     mov     r10, [rsp+48]
+    mov     [r10], ecx
+    mov     r10, [rsp+56]
     mov     [r10], edx
     pop     rbx
     ret
@@ -93,7 +93,7 @@ simd_loop:
     movups  [r12 + r13*4], xmm0
     add     r13d, 4
     cmp     r13d, eax
-    jbe     simd_loop
+    jl      simd_loop
 simd_tail:
     cmp     r13d, eax
     jge     simd_done
