@@ -78,6 +78,20 @@ Purpose: Maintain precision when focus shifts cause context drift. Before impact
 	- Open tests under `ai/tests/` and module READMEs/specs.
 	- Run a fast test or harness to validate changed surfaces.
 
+	#### PowerShell Advanced (Agent Assist)
+	Use PowerShell one-liners instead of creating transient helper scripts when:
+		- Enumerating root clutter candidates:
+			`Get-ChildItem -LiteralPath . -File -Filter 'test_*.py' | Select Name,Length`
+		- Verifying absence after cleanup:
+			`(Test-Path .\test_chatgpt_integration.py) -eq $false`
+		- Counting lattice JSON export size (for observability budgets):
+			`Get-Item runtime_intelligence\logs\aios_context\*.json | Measure-Object Length -Sum`
+		- Grep-like symbol perimeter using Select-String:
+			`Select-String -Path 'core\\**\\*.hpp','core\\**\\*.cpp' -Pattern 'BMSSPResult'`
+		- Safety dry-run delete (preview):
+			`Get-ChildItem -Filter 'test_chatgpt_integration.py' | ForEach-Object { 'DELETE -> ' + $_.FullName }`
+	Only perform actual deletions after changelog entry & test confirmation, and favor `Remove-Item -WhatIf` first.
+
 ### When to Re-center
 - After 3–5 edits in one file without a usage scan, pause for a perimeter search.
 - When touching files not seen this session, run the minimal discovery (README/spec + tests + symbol scan).

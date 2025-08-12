@@ -28,3 +28,12 @@
     Consolidate runtime artifacts under tachyonic logging infrastructure for observability and governance.
   harmonization: >
     Enables Git discovery for runtime logs; unifies paths per docs/runtime_intelligence guidance.
+
+- kind: removal
+  file: test_chatgpt_integration.py
+  old_path: /
+  date: 2025-08-12
+  reason: >
+    Physical cleanup of legacy root-level test after successful relocation and harmonization under ai/tests/.
+  harmonization: >
+    Enforces single source of truth for ChatGPT integration path test; reduces root clutter and reinforces dev.run.md anchor semantics.
