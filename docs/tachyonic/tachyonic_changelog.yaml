@@ -37,3 +37,13 @@
     Physical cleanup of legacy root-level test after successful relocation and harmonization under ai/tests/.
   harmonization: >
     Enforces single source of truth for ChatGPT integration path test; reduces root clutter and reinforces dev.run.md anchor semantics.
+
+- kind: move
+  file: setup_environment.ps1
+  old_path: /
+  new_path: /scripts/setup_env.ps1
+  date: 2025-08-12
+  reason: >
+    Relocate and enhance environment bootstrap script under scripts/ with drift detection, report-only mode, and governance-aligned naming.
+  harmonization: >
+    Eliminates root-level script clutter and centralizes operational automation; adds reproducibility via requirements hash and exit code semantics.
