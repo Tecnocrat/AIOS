@@ -90,7 +90,7 @@
 		// AIOS Theme and appearance
 		"workbench.colorTheme": "Default Dark Modern",
 		"workbench.iconTheme": "vs-seti",
-		"powershell.cwd": "${workspaceFolder}",
+		"powershell.cwd": "🧠 AIOS Core",
 
 		// CMake Tools: preselect generator/platform to avoid prompts
 		"cmake.generator": "Visual Studio 17 2022",
