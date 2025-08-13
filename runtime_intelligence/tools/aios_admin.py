@@ -17,6 +17,13 @@ SUMMARY_MD_PATH = SUMMARY_DIR / "module_summaries.md"
 MANUAL_SUMMARY_PATH = SUMMARY_DIR / "module_summaries_input.txt"
 TACHYONIC_DIR = ROOT / "docs" / "tachyonic_archive"
 
+# Deprecated root-level filenames that must not appear in generated inventories
+DEPRECATED_ROOT_FILES: List[str] = [
+    "test_opencv_aios_integration.py",
+    "test_chatgpt_integration.py",
+    "setup_environment.ps1",
+]
+
 # Recursive type for module index structure: { segment: (lang | subtree) }
 ModuleNode = Union[str, "ModuleIndex"]
 ModuleIndex = Dict[str, ModuleNode]
@@ -165,6 +172,18 @@ def execute_all() -> None:
         output_file = "folder_structure.json"
         print(f"Analyzing folder: {root_directory}")
         structure = get_folder_structure(root_directory, exclude_git=True)
+        # Purge deprecated root files if scanning repository root
+        if folder_name == "AIOS" and "" in structure:
+            before = set(structure[""]["files"])
+            structure[""]["files"] = [
+                f for f in structure[""]["files"] if f not in DEPRECATED_ROOT_FILES
+            ]
+            removed = before - set(structure[""]["files"])
+            if removed:
+                print(
+                    "Purged deprecated root files from inventory:",
+                    ", ".join(sorted(removed)),
+                )
         save_to_json(structure, output_folder, output_file)
         print(f"Folder structure saved to {output_folder / output_file}")
     # 3. Update module summaries
@@ -206,6 +225,10 @@ if __name__ == "__main__":
             folder_struct = get_folder_structure(
                 scan_root, exclude_git=exclude_git_choice
             )
+            if scan_root == ROOT and "" in folder_struct:
+                folder_struct[""]["files"] = [
+                    f for f in folder_struct[""]["files"] if f not in DEPRECATED_ROOT_FILES
+                ]
             save_to_json(folder_struct, out_folder, out_file)
             print(f"Folder structure saved to {out_folder / out_file}")
         elif menu_choice == "4":
