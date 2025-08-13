@@ -92,6 +92,11 @@ function Get-CoherenceMetrics {
   }
   $govTotal = 4
   $govPass = @($guardOk,$ciOk,$hookOk,$inventoryOk) | Where-Object { $_ } | Measure-Object | Select-Object -ExpandProperty Count
+  $governanceFailures = @()
+  if (-not $guardOk) { $governanceFailures += 'guard_script_missing' }
+  if (-not $ciOk) { $governanceFailures += 'ci_workflow_missing' }
+  if (-not $hookOk) { $governanceFailures += 'pre_commit_hook_missing' }
+  if (-not $inventoryOk) { $governanceFailures += 'inventory_filter_failure' }
   $gpc = if($govTotal -eq 0){1}else{ $govPass / $govTotal }
 
   # Local File Coherence (LFC) blends deprecated absence + workspace presence
@@ -102,7 +107,7 @@ function Get-CoherenceMetrics {
   if ($lfcRaw -lt 0) { $lfcRaw = 0 }
   $lfc = [math]::Round($lfcRaw,4)
   $gpc = [math]::Round($gpc,4)
-  return [pscustomobject]@{ LFC=$lfc; GPC=$gpc; DeprecatedPresent=$present; GovernancePass=$govPass; GovernanceTotal=$govTotal; ResurrectionPenalty=$resurrectionPenalty; MutationDistance=$mutationDistance }
+  return [pscustomobject]@{ LFC=$lfc; GPC=$gpc; DeprecatedPresent=$present; GovernancePass=$govPass; GovernanceTotal=$govTotal; GovernanceFailures=$governanceFailures; ResurrectionPenalty=$resurrectionPenalty; MutationDistance=$mutationDistance }
 }
 
 function Invoke-CoherenceReport {
