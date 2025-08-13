@@ -1,8 +1,6 @@
-## Delegated Tachyonic Changelog
-# This root-level file is intentionally minimal to prevent divergence.
-# Authoritative entries live at: docs/tachyonic/tachyonic_changelog.yaml
-# Add or modify entries only in the canonical file. This stub exists to aid
-# quick discovery (e.g., developers expecting a root changelog).
-
-# Last sync reference date: 2025-08-12
+## Tachyonic Changelog Redirect (Minimal Pointer)
+# Canonical file: docs/tachyonic/tachyonic_changelog.yaml
+# Purpose: discovery only; keep root minimal. Update canonical file only.
+canonical: docs/tachyonic/tachyonic_changelog.yaml
+last_sync: 2025-08-13
 

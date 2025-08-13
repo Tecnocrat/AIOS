@@ -3,7 +3,7 @@
 
 **MASTER context file for AIOS. All agents must execute the AINLP context loading protocol for complete project understanding.**
 
-Engineering note: Adhere to [ENGINEERING_TENETS_KERNEL_GRADE.md](docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md) for kernel‑grade review rules and PR checklist.
+Engineering note: Adhere to [ENGINEERING_TENETS_KERNEL_GRADE.md](docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md) for kernel‑grade review rules and PR checklist. Root artifact boundaries: see [ROOT_HYGIENE_POLICY.md](ROOT_HYGIENE_POLICY.md).
 
 Operational note: See also .github/instructions/ask-mode.instructions.md for the concrete agent operating contract used in this repository. For current cross-stack status and developer pathway, consult docs/UNIFIED_PROJECT_STATUS.md (canonical).
 
