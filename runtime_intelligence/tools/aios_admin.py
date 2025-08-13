@@ -17,12 +17,35 @@ SUMMARY_MD_PATH = SUMMARY_DIR / "module_summaries.md"
 MANUAL_SUMMARY_PATH = SUMMARY_DIR / "module_summaries_input.txt"
 TACHYONIC_DIR = ROOT / "docs" / "tachyonic_archive"
 
-# Deprecated root-level filenames that must not appear in generated inventories
-DEPRECATED_ROOT_FILES: List[str] = [
-    "test_opencv_aios_integration.py",
-    "test_chatgpt_integration.py",
-    "setup_environment.ps1",
-]
+# Deprecated root-level filenames centralized in
+# governance/deprecated_files.ps1 (mirrored for Python tools)
+
+
+def load_deprecated_root_files() -> List[str]:
+    gov_dir = ROOT / 'governance'
+    marker = gov_dir / 'deprecated_files.ps1'
+    if marker.exists():
+        # Parse simple PowerShell array assignment (no execution for safety)
+        lines = marker.read_text(encoding='utf-8').splitlines()
+        collected: List[str] = []
+        for ln in lines:
+            ln = ln.strip()
+            if not ln or ln.startswith('#'):
+                continue
+            if ln.startswith("'") and ln.endswith("'"):
+                collected.append(ln.strip("'"))
+        if collected:
+            return collected
+    # Fallback (keep in sync with PowerShell if parsing fails)
+    return [
+        "test_opencv_aios_integration.py",
+        "test_chatgpt_integration.py",
+        "setup_environment.ps1",
+        "terminal.ps1",
+    ]
+
+DEPRECATED_ROOT_FILES: List[str] = load_deprecated_root_files()
+
 
 # Recursive type for module index structure: { segment: (lang | subtree) }
 ModuleNode = Union[str, "ModuleIndex"]
@@ -176,7 +199,9 @@ def execute_all() -> None:
         if folder_name == "AIOS" and "" in structure:
             before = set(structure[""]["files"])
             structure[""]["files"] = [
-                f for f in structure[""]["files"] if f not in DEPRECATED_ROOT_FILES
+                f
+                for f in structure[""]["files"]
+                if f not in DEPRECATED_ROOT_FILES
             ]
             removed = before - set(structure[""]["files"])
             if removed:
@@ -227,7 +252,9 @@ if __name__ == "__main__":
             )
             if scan_root == ROOT and "" in folder_struct:
                 folder_struct[""]["files"] = [
-                    f for f in folder_struct[""]["files"] if f not in DEPRECATED_ROOT_FILES
+                    f
+                    for f in folder_struct[""]["files"]
+                    if f not in DEPRECATED_ROOT_FILES
                 ]
             save_to_json(folder_struct, out_folder, out_file)
             print(f"Folder structure saved to {out_folder / out_file}")

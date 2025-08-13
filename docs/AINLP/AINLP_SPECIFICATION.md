@@ -17,6 +17,7 @@
 6. [Integration with AIOS Architecture](#integration-with-aios-architecture)
 7. [Implementation Examples](#implementation-examples)
 8. [Best Practices](#best-practices)
+9. [Context Relationship Coefficients](#context-relationship-coefficients)
 
 ---
 
@@ -292,6 +293,66 @@ def process_ainlp_request(self, request: Dict[str, Any]) -> Dict[str, Any]:
 ---
 
 ## Best Practices
+## Context Relationship Coefficients
+
+### Purpose
+As AIOS scales, every file participates in a semantic lattice. A **Relationship Coefficient (RC)** quantifies how strongly one file functionally relates to another (0.0 = unrelated, 1.0 = tight functional coupling). RCs guide:
+- Impact radius estimation during refactors
+- Prioritized context loading for AINLP reasoning
+- Hygiene scope targeting (root vs. deep module focus)
+- Tachyonic harmonization sequencing
+
+### Dimensions
+Each RC is a weighted composite:
+| Dimension | Signal | Example Extraction |
+|-----------|--------|--------------------|
+Imports / References | Static dependency graph | AST + import resolution |
+Co‑Change Frequency | Git commit co-occurrence | Sliding window mining |
+Semantic Topology | Embedding similarity of docstrings / headers | Model inference |
+Governance Affinity | Shared policy / guard coverage | Policy tag intersection |
+Runtime Interaction | Observed call / message edges | Trace spans or logs |
+
+Formula (initial draft):
+RC(a,b) = 0.30*Dep + 0.20*CoChange + 0.20*Semantic + 0.15*Runtime + 0.15*Governance
+
+Where each component is normalized to [0,1]. Missing signals default to neutral 0.5 until data collected (preventing sparse penalty).
+
+### Storage & Surfacing
+- Canonical store: `runtime_intelligence/relationship_map/rc_index.json`
+- Incremental updates: async miner updates deltas per commit
+- AINLP context loader: loads top-N RC neighbors (>0.65) for any target file to extend reasoning horizon.
+
+### Integration with AINLP Processing
+1. Developer opens file F
+2. AINLP kernel requests RC neighbors (threshold T configurable)
+3. Neighbor headers + summary embeddings injected into reasoning buffer
+4. Mutation distance + hygiene overlays adjust priority scheduling
+
+### Governance & Hygiene Synergy
+- Root cleanup decisions can down‑prioritize low RC orphans for archival
+- Deprecated file reappearance triggers RC recalculation to detect stale links
+- Coherence metrics (LFC/GPC) can gain a structural stability term: high average RC stability across iterations reduces noise penalties
+
+### Roadmap
+- Phase 1: Static graph + co-change mining
+- Phase 2: Embedding similarity on doc/README segments
+- Phase 3: Runtime trace enrichment
+- Phase 4: Adaptive weighting (Bayesian optimization vs. manual constants)
+- Phase 5: Expose `ainlp query rc <file>` developer command
+
+### Example JSON Fragment
+```json
+{
+  "scripts/dev_terminal.ps1": {
+    "interface/AIOS.Services/MaintenanceService.cs": 0.42,
+    "scripts/root_clutter_guard.ps1": 0.78,
+    "governance/deprecated_files.ps1": 0.81
+  }
+}
+```
+
+---
+This section will evolve as mining infrastructure lands; initial placeholder enables upstream tooling design now.
 
 ### 1. Comment Class Conventions
 
