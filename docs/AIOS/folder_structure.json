@@ -14,6 +14,7 @@
             "docs",
             "evolution_lab",
             "gemini_cli_bridge",
+            "governance",
             "interface",
             "languages",
             "orchestrator",
@@ -64,8 +65,7 @@
             "SAFETY_PROTOCOL.md",
             "SESSION_SUMMARY.md",
             "tachyonic_changelog.json",
-            "tachyonic_changelog.yaml",
-            "terminal.ps1"
+            "tachyonic_changelog.yaml"
         ]
     },
     ".pytest_cache": {
@@ -1685,6 +1685,7 @@
             "AIOS_KNOWLEDGE_BASE.md",
             "ai_integration_summary.md",
             "ARCHITECTURE_TRANSFORMATION_SUMMARY.md",
+            "CELLULAR_COHERENCE_METRICS.md",
             "cmake-buildsystem.md",
             "complete_test_guided_path.md",
             "consciousness_achievement_summary.md",
@@ -2100,6 +2101,7 @@
             "path_20250810_214730.md",
             "path_20250810_214736.md",
             "path_20250813_155232.md",
+            "path_20250813_221618.md",
             "system_health_index.json",
             "system_health_report.json",
             "system_health_report.latest.json",
@@ -2179,6 +2181,12 @@
         "files": [
             "artifact_mcp_server.py",
             "ingestor_mcp_server.py"
+        ]
+    },
+    "governance": {
+        "folders": [],
+        "files": [
+            "deprecated_files.ps1"
         ]
     },
     "interface": {
@@ -3575,6 +3583,7 @@
             "consciousness_foundation.py",
             "consciousness_mcp_server.py",
             "context_crystallization_engine.py",
+            "dev_terminal.ps1",
             "enhanced_artifact_ingestor.py",
             "evolutionary_code_mutator.py",
             "evolution_lab_manager.py",

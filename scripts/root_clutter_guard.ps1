@@ -4,11 +4,18 @@
  Currently guards: test_opencv_aios_integration.py (moved to scripts/legacy/)
  Extend list as needed.
 #>
-$DeprecatedRootFiles = @(
-    'test_opencv_aios_integration.py',
-    'test_chatgpt_integration.py',
-    'setup_environment.ps1'
-)
+$GovernanceDir = Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent) 'governance'
+if (Test-Path (Join-Path $GovernanceDir 'deprecated_files.ps1')) {
+    . (Join-Path $GovernanceDir 'deprecated_files.ps1')
+    $DeprecatedRootFiles = $Global:AIOS_DeprecatedRootFiles
+} else {
+    $DeprecatedRootFiles = @(
+        'test_opencv_aios_integration.py',
+        'test_chatgpt_integration.py',
+        'setup_environment.ps1',
+        'terminal.ps1'
+    )
+}
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 $Removed = @()
 foreach ($f in $DeprecatedRootFiles){

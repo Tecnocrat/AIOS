@@ -66,7 +66,7 @@ Located in `scripts/code_ingestor.py`
 **Optimized Python environment setup with version compatibility**
 - **environment.yml**: Conda environment with AI, quantum, and consciousness libraries
 - **requirements.txt**: Comprehensive pip requirements with version ranges for compatibility
-- **setup_environment.ps1**: Advanced PowerShell script for seamless conda/venv setup
+- **scripts/setup_env.ps1**: Enhanced environment bootstrap (report-only, drift detection, exit codes)
 - **Consciousness scaffolding**: Provides framework for consciousness emergence patterns
 - **Hypergate operations**: Channels information through hyperdimensional barriers
 - **Bosonic field projections**: Creates holographic reality projections from metaphysical substrate
@@ -118,6 +118,68 @@ And translates this into:
 
 - **Roadmap & Progress Tracking:**  
   - [`docs/UNIFIED_PROJECT_STATUS.md`](docs/UNIFIED_PROJECT_STATUS.md): Canonical cross-stack status and developer pathway.
+
+---
+
+## 🧹 Root Hygiene & Enforcement Hooks
+
+To prevent legacy root-level clutter and accidental file resurrection, AIOS implements layered hygiene controls:
+
+**Deprecated root filenames (governed):**
+```
+test_opencv_aios_integration.py
+test_chatgpt_integration.py
+setup_environment.ps1 (relocated → scripts/setup_env.ps1)
+```
+
+### Guard Layers
+1. Runtime Guard: `scripts/root_clutter_guard.ps1` — removes any deprecated root files it finds and exits with code 1 if it deletes anything.
+2. Inventory Filter: `runtime_intelligence/tools/aios_admin.py` — excludes deprecated names when generating `docs/AIOS/folder_structure.json`.
+3. CI Enforcement: `.github/workflows/root-clutter-guard.yml` — runs the guard on every push / PR; build fails if clutter appears.
+4. Local Pre-Commit Hook: `.githooks/pre-commit` — blocks commits that attempt to add deprecated filenames.
+
+### Activating Local Git Hook
+Run once:
+```
+git config core.hooksPath .githooks
+chmod +x .githooks/pre-commit  # On Windows Git Bash; PowerShell users usually auto-execute
+```
+
+### Manual Hygiene Check
+```
+pwsh -File scripts/root_clutter_guard.ps1
+```
+Exit codes:
+- 0: No deprecated files found
+- 1: One or more deprecated files were removed (investigate cause)
+
+### Regenerating Clean Folder Inventory
+```
+python runtime_intelligence/tools/aios_admin.py   # choose option 6 (Execute ALL)
+```
+The script reports any purged deprecated entries to the console.
+
+### Adding New Deprecated Filenames
+Update both:
+- `scripts/root_clutter_guard.ps1`
+- `DEPRECATED_ROOT_FILES` in `runtime_intelligence/tools/aios_admin.py`
+Commit with a tachyonic changelog entry (kind: governance_update).
+
+This multi-layer approach ensures accidental recreation is caught early (hook), automatically removed (guard), prevented from propagating via inventories (filter), and blocked in CI (workflow).
+
+### 🧪 Cellular Coherence Metrics (LFC / GPC)
+Real-time structural (LFC) and governance (GPC) coherence scores are computed by `scripts/dev_terminal.ps1` (`Get-CoherenceMetrics`).
+
+Quick JSON report example:
+```
+pwsh -File scripts/dev_terminal.ps1 -Action orchestrator -ReportCoherence -CoherenceFormat json
+```
+Exit codes map to evolutionary metabolic states:
+- 0 = Stable mitosis (no deprecated artifacts, governance intact)
+- 2 = Adaptive warning (repair recommended — deprecated artifact or env warning)
+- 3 = Critical failure (execution error)
+
+Detailed rationale and formulas: `docs/CELLULAR_COHERENCE_METRICS.md`.
   - [`docs/path.md`](docs/path.md): Historical roadmap and task tracking.
   - Conversational archives: [`md/vscopilot.md`](md/vscopilot.md), [`md/ark/*.md`](md/ark/) — all VSCode Copilot, ChatGPT, and Gemini conversations are archived for recursive context.
 - **Automated Archival & Meta-Extraction:**  
