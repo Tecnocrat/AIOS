@@ -5,4 +5,6 @@ $Global:AIOS_DeprecatedRootFiles = @(
     'test_chatgpt_integration.py'
     'setup_environment.ps1'
     'terminal.ps1'
+    'tachyonic_changelog.yaml'
+    'tachyonic_changelog.json'
 )
