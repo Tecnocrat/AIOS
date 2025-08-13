@@ -7,4 +7,5 @@ $Global:AIOS_DeprecatedRootFiles = @(
     'terminal.ps1'
     'tachyonic_changelog.yaml'
     'tachyonic_changelog.json'
+    'SESSION_SUMMARY.md'
 )

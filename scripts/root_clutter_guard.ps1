@@ -29,6 +29,21 @@ foreach ($f in $DeprecatedRootFiles){
 if ($Removed.Count -gt 0){
     $log = Join-Path $Root 'root_clutter_guard.log'
     $Removed | ConvertTo-Json -Depth 3 | Out-File -Append -FilePath $log -Encoding UTF8
+    # Governance event logging (tachyonic archival)
+    $eventsDir = Join-Path $Root 'docs/unified_backups/tachyonic_operations/governance_events'
+    if (-not (Test-Path $eventsDir)) { New-Item -ItemType Directory -Path $eventsDir -Force | Out-Null }
+    $eventFile = Join-Path $eventsDir 'events.jsonl'
+    foreach($r in $Removed){
+        $event = [pscustomobject]@{
+            type = 'root_deprecated_purge'
+            file = $r.file
+            length = $r.length
+            ts = (Get-Date).ToString('o')
+            actor = 'root_clutter_guard'
+            policy = 'ROOT_HYGIENE_POLICY'
+        }
+        $event | ConvertTo-Json -Depth 4 | Out-File -Append -FilePath $eventFile -Encoding UTF8
+    }
     Write-Host "Removed deprecated root files:" ($Removed.file -join ', ')
     exit 1  # Non-zero exit to signal hygiene enforcement failure in CI
 } else {

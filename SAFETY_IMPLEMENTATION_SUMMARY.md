@@ -157,6 +157,15 @@ The `safety_demonstration.py` script shows:
 4. Emergency shutdown procedures
 5. Human check-in requirements
 
+## Historical Session Reference
+
+The foundational safety hardening session (2025-06-29) has been archived at `docs/summary/session_20250629_safety_upgrade.md` (formerly `SESSION_SUMMARY.md` at repository root). That archive provides:
+- Initial resource cap decisions (CPU 25%, Memory 2GB, Disk 1GB)
+- First-pass authorization cadence (30m window / 10m check-ins)
+- Philosophical framing (agency, containment, reversibility, transparency)
+
+This implementation summary supersedes tactical narrative details while preserving lineage for governance traceability.
+
 ## 📋 Pre-Operation Safety Checklist
 
 Before any evolutionary experiment:

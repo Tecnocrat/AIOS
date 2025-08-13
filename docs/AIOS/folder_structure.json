@@ -62,10 +62,7 @@
             "requirements_essential.txt",
             "safety_demonstration.py",
             "SAFETY_IMPLEMENTATION_SUMMARY.md",
-            "SAFETY_PROTOCOL.md",
-            "SESSION_SUMMARY.md",
-            "tachyonic_changelog.json",
-            "tachyonic_changelog.yaml"
+            "SAFETY_PROTOCOL.md"
         ]
     },
     ".pytest_cache": {
