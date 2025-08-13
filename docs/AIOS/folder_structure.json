@@ -2,6 +2,7 @@
     "": {
         "folders": [
             ".git",
+            ".githooks",
             ".github",
             ".pytest_cache",
             ".vscode",
@@ -32,7 +33,6 @@
             ".pylintrc",
             "AIOS.code-workspace",
             "AIOS.sln",
-            "aios_admin.py",
             "AIOS_PROJECT_CONTEXT.md",
             "AI_ITERATION_INITIATOR.md",
             "cleanup_python_system.ps1",
@@ -63,11 +63,9 @@
             "SAFETY_IMPLEMENTATION_SUMMARY.md",
             "SAFETY_PROTOCOL.md",
             "SESSION_SUMMARY.md",
-            "setup_environment.ps1",
-            "terminal.ps1",
-            "test_chatgpt_integration.py",
-            "test_consciousness_emergence.py",
-            "test_opencv_aios_integration.py"
+            "tachyonic_changelog.json",
+            "tachyonic_changelog.yaml",
+            "terminal.ps1"
         ]
     },
     ".pytest_cache": {
@@ -636,7 +634,9 @@
             "test_ainlp_refresh_context.py",
             "test_aios_integration.py",
             "test_ai_core.py",
+            "test_chatgpt_integration_path.py",
             "test_compression_integration.py",
+            "test_consciousness_emergence.py",
             "test_python_env.py",
             "test_results.json",
             "test_tensorflow_training_cell.py",
@@ -693,19 +693,32 @@
             "test_ainlp_refresh_context.cpython-312-pytest-8.4.1.pyc",
             "test_aios_integration.cpython-312-pytest-8.4.1.pyc",
             "test_ai_core.cpython-312-pytest-8.4.1.pyc",
+            "test_chatgpt_integration_path.cpython-312-pytest-8.4.1.pyc",
             "test_compression_integration.cpython-312-pytest-8.4.1.pyc",
+            "test_consciousness_emergence.cpython-312-pytest-8.4.1.pyc",
             "test_python_env.cpython-312-pytest-8.4.1.pyc",
             "test_tensorflow_training_cell.cpython-312-pytest-8.4.1.pyc",
             "__init__.cpython-312.pyc"
         ]
     },
     "ai\\tools": {
-        "folders": [],
+        "folders": [
+            "ga_perl"
+        ],
         "files": [
             "aios_context_registry_validator.py",
             "comprehensive_e501_fix.py",
             "fix_e501_.py",
+            "README.md",
             "__init__.py"
+        ]
+    },
+    "ai\\tools\\ga_perl": {
+        "folders": [],
+        "files": [
+            "ga.pl",
+            "README.md",
+            "run_ga.ps1"
         ]
     },
     "ai\\__pycache__": {
@@ -937,11 +950,13 @@
     },
     "core\\build": {
         "folders": [
+            ".cmake",
             "aios_core.dir",
             "aios_main.dir",
             "bin",
             "CMakeFiles",
             "lib",
+            "Testing",
             "tests",
             "x64"
         ],
@@ -964,6 +979,86 @@
             "ZERO_CHECK.vcxproj.filters"
         ]
     },
+    "core\\build\\.cmake": {
+        "folders": [
+            "api"
+        ],
+        "files": []
+    },
+    "core\\build\\.cmake\\api": {
+        "folders": [
+            "v1"
+        ],
+        "files": []
+    },
+    "core\\build\\.cmake\\api\\v1": {
+        "folders": [
+            "query",
+            "reply"
+        ],
+        "files": []
+    },
+    "core\\build\\.cmake\\api\\v1\\query": {
+        "folders": [
+            "client-vscode"
+        ],
+        "files": []
+    },
+    "core\\build\\.cmake\\api\\v1\\query\\client-vscode": {
+        "folders": [],
+        "files": [
+            "query.json"
+        ]
+    },
+    "core\\build\\.cmake\\api\\v1\\reply": {
+        "folders": [],
+        "files": [
+            "cmakeFiles-v1-f8c6bf56444d7842e9f7.json",
+            "codemodel-v2-9a8e987f5d500e7419bb.json",
+            "directory-.-Debug-f2e618cfe34fda2a49dc.json",
+            "directory-.-MinSizeRel-b58b5b1f4e62f63838bd.json",
+            "directory-.-Release-b6f9342d11620043a205.json",
+            "directory-.-RelWithDebInfo-7b73eef74be3e75a13fc.json",
+            "directory-tests-Debug-70e4927a02b591d5c1f8.json",
+            "directory-tests-MinSizeRel-70e4927a02b591d5c1f8.json",
+            "directory-tests-Release-70e4927a02b591d5c1f8.json",
+            "directory-tests-RelWithDebInfo-70e4927a02b591d5c1f8.json",
+            "index-2025-08-13T12-50-57-0598.json",
+            "target-aios_core-Debug-62cf856d1fc1358aa16f.json",
+            "target-aios_core-MinSizeRel-eac1e4b02b2b93117d03.json",
+            "target-aios_core-Release-f3c3b9f1a3871284ddc5.json",
+            "target-aios_core-RelWithDebInfo-59fb2b9ff195c57aed30.json",
+            "target-aios_main-Debug-e2c2fc38690b054772a2.json",
+            "target-aios_main-MinSizeRel-6df16ae257b414ef244d.json",
+            "target-aios_main-Release-df5f136e869a42bd316a.json",
+            "target-test_bmssp-Debug-145cbc4b262ef9d4b7d8.json",
+            "target-test_bmssp-MinSizeRel-f0a3a0cdc83b313b7690.json",
+            "target-test_bmssp-Release-bcf924afacef768f7213.json",
+            "target-test_core-Debug-b8bf8bbeb069a06fa49a.json",
+            "target-test_core-MinSizeRel-7ddee8a20872a036cdfb.json",
+            "target-test_core-Release-86d162269b89cc5cf7b0.json",
+            "target-test_kernel_ops-Debug-f83f400984c199b867c6.json",
+            "target-test_kernel_ops-MinSizeRel-99afb806f4455a0efbd2.json",
+            "target-test_kernel_ops-Release-197131e1df8765157f37.json",
+            "target-test_kernel_ops-RelWithDebInfo-69d63ba553fc9db5329b.json",
+            "target-test_lattice_bmssp-Debug-19948708b66d7b5c8b08.json",
+            "target-test_lattice_bmssp-MinSizeRel-e43fc8b3ebbbdaf14470.json",
+            "target-test_lattice_bmssp-Release-b323bb63cbee031bf4a9.json",
+            "target-test_lattice_bmssp-RelWithDebInfo-c3fdfeb1292b36573d4a.json",
+            "target-test_tensorflow_cell-Debug-30f2afb8a136c6ec18ce.json",
+            "target-test_tensorflow_cell-MinSizeRel-cb2cd3eedc9089d8dcbe.json",
+            "target-test_tensorflow_cell-Release-f93d4c4b35de94e7f1f9.json",
+            "target-test_tensorflow_cell-RelWithDebInfo-d52407c431b49ec44de3.json",
+            "target-test_universal_quantum_holographic-Debug-f3a6cb2db43850bb6efb.json",
+            "target-test_universal_quantum_holographic-MinSizeRel-1137389b8a62881c4d45.json",
+            "target-test_universal_quantum_holographic-Release-1b9b7eecf152b5b9a096.json",
+            "target-test_universal_quantum_holographic-RelWithDebInfo-9b17bc368291dadbba15.json",
+            "target-ZERO_CHECK-Debug-f027cefc9db831190b03.json",
+            "target-ZERO_CHECK-MinSizeRel-f027cefc9db831190b03.json",
+            "target-ZERO_CHECK-RelWithDebInfo-f027cefc9db831190b03.json",
+            "toolchains-v1-ef05e6652ac6dcdaf776.json"
+        ]
+    },
     "core\\build\\aios_core.dir": {
         "folders": [
             "Debug"
@@ -977,6 +1072,10 @@
         "files": [
             "aios_core.lib.recipe",
             "aios_core_minimal.obj",
+            "bmssp.obj",
+            "kernel_ops.obj",
+            "kernel_ops_wrapper.obj",
+            "lattice_space.obj",
             "main.obj",
             "tensorflow_performance_cell.obj"
         ]
@@ -994,7 +1093,9 @@
             "CustomBuild.write.1.tlog",
             "Lib-link.read.1.tlog",
             "Lib-link.write.1.tlog",
-            "Lib.command.1.tlog"
+            "Lib.command.1.tlog",
+            "Masm.read.1u.tlog",
+            "Masm.write.1u.tlog"
         ]
     },
     "core\\build\\aios_main.dir": {
@@ -1048,6 +1149,7 @@
         "folders": [
             "072190f7a056e2318e3089c0a3b06c88",
             "4.0.3",
+            "73f230399036c4aff1ed7e1209f05842",
             "pkgRedirects"
         ],
         "files": [
@@ -1070,11 +1172,13 @@
     },
     "core\\build\\CMakeFiles\\4.0.3": {
         "folders": [
+            "CompilerIdASM_MASM",
             "CompilerIdCXX",
             "VCTargetsPath",
             "x64"
         ],
         "files": [
+            "CMakeASM_MASMCompiler.cmake",
             "CMakeCXXCompiler.cmake",
             "CMakeDetermineCompilerABI_CXX.bin",
             "CMakeRCCompiler.cmake",
@@ -1082,6 +1186,10 @@
             "VCTargetsPath.txt",
             "VCTargetsPath.vcxproj"
         ]
+    },
+    "core\\build\\CMakeFiles\\4.0.3\\CompilerIdASM_MASM": {
+        "folders": [],
+        "files": []
     },
     "core\\build\\CMakeFiles\\4.0.3\\CompilerIdCXX": {
         "folders": [
@@ -1158,6 +1266,13 @@
         "folders": [],
         "files": []
     },
+    "core\\build\\CMakeFiles\\73f230399036c4aff1ed7e1209f05842": {
+        "folders": [],
+        "files": [
+            "INSTALL_force.rule",
+            "RUN_TESTS_force.rule"
+        ]
+    },
     "core\\build\\CMakeFiles\\pkgRedirects": {
         "folders": [],
         "files": []
@@ -1175,9 +1290,37 @@
             "aios_core.pdb"
         ]
     },
+    "core\\build\\Testing": {
+        "folders": [
+            "20250812-1249",
+            "Temporary"
+        ],
+        "files": [
+            "TAG"
+        ]
+    },
+    "core\\build\\Testing\\20250812-1249": {
+        "folders": [],
+        "files": [
+            "Test.xml"
+        ]
+    },
+    "core\\build\\Testing\\Temporary": {
+        "folders": [],
+        "files": [
+            "LastTest_20250812-1249.log"
+        ]
+    },
     "core\\build\\tests": {
         "folders": [
-            "CMakeFiles"
+            "CMakeFiles",
+            "Debug",
+            "test_bmssp.dir",
+            "test_core.dir",
+            "test_kernel_ops.dir",
+            "test_lattice_bmssp.dir",
+            "test_tensorflow_cell.dir",
+            "test_universal_quantum_holographic.dir"
         ],
         "files": [
             "cmake_install.cmake",
@@ -1186,8 +1329,18 @@
             "INSTALL.vcxproj.filters",
             "RUN_TESTS.vcxproj",
             "RUN_TESTS.vcxproj.filters",
+            "test_bmssp.vcxproj",
+            "test_bmssp.vcxproj.filters",
             "test_core.vcxproj",
-            "test_core.vcxproj.filters"
+            "test_core.vcxproj.filters",
+            "test_kernel_ops.vcxproj",
+            "test_kernel_ops.vcxproj.filters",
+            "test_lattice_bmssp.vcxproj",
+            "test_lattice_bmssp.vcxproj.filters",
+            "test_tensorflow_cell.vcxproj",
+            "test_tensorflow_cell.vcxproj.filters",
+            "test_universal_quantum_holographic.vcxproj",
+            "test_universal_quantum_holographic.vcxproj.filters"
         ]
     },
     "core\\build\\tests\\CMakeFiles": {
@@ -1195,6 +1348,227 @@
         "files": [
             "generate.stamp",
             "generate.stamp.depend"
+        ]
+    },
+    "core\\build\\tests\\Debug": {
+        "folders": [],
+        "files": [
+            "test_bmssp.exe",
+            "test_bmssp.pdb",
+            "test_core.exe",
+            "test_core.pdb",
+            "test_kernel_ops.exe",
+            "test_kernel_ops.pdb",
+            "test_lattice_bmssp.exe",
+            "test_lattice_bmssp.pdb",
+            "test_tensorflow_cell.exe",
+            "test_tensorflow_cell.pdb",
+            "test_universal_quantum_holographic.exe",
+            "test_universal_quantum_holographic.pdb"
+        ]
+    },
+    "core\\build\\tests\\test_bmssp.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\test_bmssp.dir\\Debug": {
+        "folders": [
+            "test_bmssp.tlog"
+        ],
+        "files": [
+            "test_bmssp.exe.recipe",
+            "test_bmssp.ilk",
+            "test_bmssp.obj",
+            "vc143.pdb"
+        ]
+    },
+    "core\\build\\tests\\test_bmssp.dir\\Debug\\test_bmssp.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog",
+            "test_bmssp.lastbuildstate"
+        ]
+    },
+    "core\\build\\tests\\test_core.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\test_core.dir\\Debug": {
+        "folders": [
+            "test_core.tlog"
+        ],
+        "files": [
+            "test_core.exe.recipe",
+            "test_core.ilk",
+            "test_core.obj",
+            "vc143.pdb"
+        ]
+    },
+    "core\\build\\tests\\test_core.dir\\Debug\\test_core.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog",
+            "test_core.lastbuildstate"
+        ]
+    },
+    "core\\build\\tests\\test_kernel_ops.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\test_kernel_ops.dir\\Debug": {
+        "folders": [
+            "test_kernel_ops.tlog"
+        ],
+        "files": [
+            "test_kernel_ops.exe.recipe",
+            "test_kernel_ops.ilk",
+            "test_kernel_ops.obj",
+            "vc143.pdb"
+        ]
+    },
+    "core\\build\\tests\\test_kernel_ops.dir\\Debug\\test_kernel_ops.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog",
+            "test_kernel_ops.lastbuildstate"
+        ]
+    },
+    "core\\build\\tests\\test_lattice_bmssp.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\test_lattice_bmssp.dir\\Debug": {
+        "folders": [
+            "test_lat.F58F21A4.tlog"
+        ],
+        "files": [
+            "test_lattice_bmssp.exe.recipe",
+            "test_lattice_bmssp.ilk",
+            "test_lattice_bmssp.obj",
+            "vc143.pdb"
+        ]
+    },
+    "core\\build\\tests\\test_lattice_bmssp.dir\\Debug\\test_lat.F58F21A4.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog",
+            "test_lattice_bmssp.lastbuildstate"
+        ]
+    },
+    "core\\build\\tests\\test_tensorflow_cell.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\test_tensorflow_cell.dir\\Debug": {
+        "folders": [
+            "test_ten.A8318886.tlog"
+        ],
+        "files": [
+            "test_tensorflow_cell.exe.recipe",
+            "test_tensorflow_cell.ilk",
+            "test_tensorflow_cell.obj",
+            "vc143.pdb"
+        ]
+    },
+    "core\\build\\tests\\test_tensorflow_cell.dir\\Debug\\test_ten.A8318886.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog",
+            "test_tensorflow_cell.lastbuildstate"
+        ]
+    },
+    "core\\build\\tests\\test_universal_quantum_holographic.dir": {
+        "folders": [
+            "Debug"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\test_universal_quantum_holographic.dir\\Debug": {
+        "folders": [
+            "test_uni.82F89887.tlog"
+        ],
+        "files": [
+            "test_universal_quantum_holographic.exe.recipe",
+            "test_universal_quantum_holographic.ilk",
+            "test_universal_quantum_holographic.obj",
+            "vc143.pdb"
+        ]
+    },
+    "core\\build\\tests\\test_universal_quantum_holographic.dir\\Debug\\test_uni.82F89887.tlog": {
+        "folders": [],
+        "files": [
+            "CL.command.1.tlog",
+            "Cl.items.tlog",
+            "CL.read.1.tlog",
+            "CL.write.1.tlog",
+            "CustomBuild.command.1.tlog",
+            "CustomBuild.read.1.tlog",
+            "CustomBuild.write.1.tlog",
+            "link.command.1.tlog",
+            "link.read.1.tlog",
+            "link.secondary.1.tlog",
+            "link.write.1.tlog",
+            "test_universal_quantum_holographic.lastbuildstate"
         ]
     },
     "core\\build\\x64": {
@@ -1250,23 +1624,41 @@
             "aios_compression.hpp",
             "aios_core.hpp",
             "aios_core_minimal.hpp",
+            "bmssp.hpp",
+            "kernel_ops.hpp",
+            "lattice_space.hpp",
             "tensorflow_performance_cell.hpp"
         ]
     },
     "core\\src": {
-        "folders": [],
+        "folders": [
+            "asm"
+        ],
         "files": [
             "aios_core.cpp",
             "aios_core_minimal.cpp",
+            "bmssp.cpp",
+            "kernel_ops_wrapper.cpp",
+            "lattice_space.cpp",
             "main.cpp",
             "tensorflow_performance_cell.cpp",
             "universal_quantum_holographic.cpp"
         ]
     },
+    "core\\src\\asm": {
+        "folders": [],
+        "files": [
+            "kernel_ops.asm"
+        ]
+    },
     "core\\tests": {
         "folders": [],
         "files": [
+            "CMakeLists.txt",
+            "test_bmssp.cpp",
             "test_core.cpp",
+            "test_kernel_ops.cpp",
+            "test_lattice_bmssp.cpp",
             "test_tensorflow_cell.cpp",
             "test_universal_quantum_holographic.cpp"
         ]
@@ -1307,6 +1699,7 @@
             "quantum_architecture.md",
             "requirements.md",
             "tachyonic_archive.db",
+            "tools_index.md",
             "UNIFIED_PROJECT_STATUS.md",
             "universal_consciousness_architecture.md"
         ]
@@ -1680,6 +2073,10 @@
     "docs\\summary": {
         "folders": [],
         "files": [
+            "iteration_CONTINUE_merge.md",
+            "iteration_CONTINUE_merge_v2.md",
+            "iteration_CONTINUE_merge_v3.md",
+            "iteration_CONTINUE_merge_v4.md",
             "module_summaries.md",
             "module_summaries_input.txt"
         ]
@@ -1687,11 +2084,14 @@
     "docs\\tachyonic": {
         "folders": [],
         "files": [
+            "AIOS.Harmonizer.AINL.md",
             "path_20250619_221329.md",
             "path_20250619_235019.md",
             "path_20250619_235144.md",
             "path_20250627_232702.md",
-            "path_20250629_200739.md"
+            "path_20250629_200739.md",
+            "tachyonic_changelog.json",
+            "tachyonic_changelog.yaml"
         ]
     },
     "docs\\tachyonic_archive": {
@@ -1699,11 +2099,13 @@
         "files": [
             "path_20250810_214730.md",
             "path_20250810_214736.md",
+            "path_20250813_155232.md",
             "system_health_index.json",
             "system_health_report.json",
             "system_health_report.latest.json",
             "system_health_report_20250810_192104.json",
-            "system_health_report_20250810_192506.json"
+            "system_health_report_20250810_192506.json",
+            "system_health_report_20250811_202450.json"
         ]
     },
     "docs\\ui": {
@@ -1786,7 +2188,8 @@
             "AIOS.UI"
         ],
         "files": [
-            "AIOS.sln"
+            "AIOS.sln",
+            "interface.sln"
         ]
     },
     "interface\\AIOS.Models": {
@@ -2509,6 +2912,7 @@
     },
     "interface\\AIOS.UI\\obj\\Debug\\net9.0-windows": {
         "folders": [
+            "generated",
             "ref",
             "refint"
         ],
@@ -2673,6 +3077,12 @@
             "AIOS.UI_z2p1s4s0_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
             "AIOS.UI_z2p1s4s0_wpftmp.GlobalUsings.g.cs",
             "AIOS.UI_z2p1s4s0_wpftmp.sourcelink.json",
+            "AIOS.UI_zau3holl_wpftmp.AssemblyInfo.cs",
+            "AIOS.UI_zau3holl_wpftmp.AssemblyInfoInputs.cache",
+            "AIOS.UI_zau3holl_wpftmp.assets.cache",
+            "AIOS.UI_zau3holl_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
+            "AIOS.UI_zau3holl_wpftmp.GlobalUsings.g.cs",
+            "AIOS.UI_zau3holl_wpftmp.sourcelink.json",
             "AIOS.UI_zvoy443a_wpftmp.AssemblyInfo.cs",
             "AIOS.UI_zvoy443a_wpftmp.AssemblyInfoInputs.cache",
             "AIOS.UI_zvoy443a_wpftmp.assets.cache",
@@ -2699,6 +3109,19 @@
             "MainWindow.g.cs",
             "SimpleMainWindow.baml",
             "SimpleMainWindow.g.cs"
+        ]
+    },
+    "interface\\AIOS.UI\\obj\\Debug\\net9.0-windows\\generated": {
+        "folders": [
+            "wpf"
+        ],
+        "files": []
+    },
+    "interface\\AIOS.UI\\obj\\Debug\\net9.0-windows\\generated\\wpf": {
+        "folders": [],
+        "files": [
+            "View.baml",
+            "View.g.cs"
         ]
     },
     "interface\\AIOS.UI\\obj\\Debug\\net9.0-windows\\ref": {
@@ -2973,12 +3396,15 @@
         "folders": [
             "analysis",
             "dev",
+            "iterations",
             "logs",
-            "tools"
+            "tools",
+            "__pycache__"
         ],
         "files": [
             ".monitor_file_creation.txt",
-            "README.md"
+            "README.md",
+            "__init__.py"
         ]
     },
     "runtime_intelligence\\analysis": {
@@ -3001,11 +3427,26 @@
             "dev.test.md"
         ]
     },
+    "runtime_intelligence\\iterations": {
+        "folders": [],
+        "files": [
+            "ainlp_iteration.py",
+            "README.md"
+        ]
+    },
     "runtime_intelligence\\logs": {
         "folders": [
-            "aios_context"
+            "agent",
+            "aios_context",
+            "cache",
+            "sessions",
+            "subprocess"
         ],
         "files": [
+            "iteration_20250810_230049.log",
+            "iteration_20250810_230126.log",
+            "iteration_20250810_230210.log",
+            "iteration_20250810_230321.log",
             "session_AIOS_20250629_180230_50025c77.log",
             "session_AIOS_20250629_183936_a3858d84.log",
             "session_AIOS_20250629_184049_81e7fc9b.log",
@@ -3022,29 +3463,92 @@
             "session_AIOS_20250629_200652_2aed5aab.log",
             "session_AIOS_20250629_200900_c796af25.log",
             "session_AIOS_20250629_211142_0d847d6e.log",
-            "session_AIOS_20250629_213933_85c82ac0.log"
+            "session_AIOS_20250629_213933_85c82ac0.log",
+            "session_AIOS_20250811_214931_a7d76ed1.log",
+            "session_AIOS_20250811_220407_3e2543c7.log",
+            "session_AIOS_20250811_220422_48da9d15.log"
+        ]
+    },
+    "runtime_intelligence\\logs\\agent": {
+        "folders": [],
+        "files": [
+            "continue_20250810_234537.json",
+            "continue_20250811_005956.json",
+            "continue_20250811_010202.json",
+            "continue_20250811_010315.json"
         ]
     },
     "runtime_intelligence\\logs\\aios_context": {
         "folders": [],
-        "files": []
+        "files": [
+            "ai_context_dump_AIOS_20250811_220407_3e2543c7.json",
+            "ai_context_dump_AIOS_20250811_220422_48da9d15.json"
+        ]
+    },
+    "runtime_intelligence\\logs\\cache": {
+        "folders": [],
+        "files": [
+            "0525fac5d54a936f3e8289fe6405827b44793729.json",
+            "0d7daff5c8b93624bd144fe4f9a552bbe69adf9f.json",
+            "18b3a290baa24cea9ae957797fbc637498df1272.json",
+            "dec6c9710dd501decd72d4eea4bb66653f47a3e5.json"
+        ]
+    },
+    "runtime_intelligence\\logs\\sessions": {
+        "folders": [],
+        "files": [
+            "session_AIOS_20250811_220407_3e2543c7.db",
+            "session_AIOS_20250811_220422_48da9d15.db"
+        ]
+    },
+    "runtime_intelligence\\logs\\subprocess": {
+        "folders": [],
+        "files": [
+            "20250810_234536_1c45c264.json",
+            "20250810_234536_377d8e4b.json",
+            "20250810_234536_fbb7ac6f.json",
+            "20250810_234537_84621283.json",
+            "20250811_005956_1c45c264.json",
+            "20250811_005956_377d8e4b.json",
+            "20250811_005956_84621283.json",
+            "20250811_005956_fbb7ac6f.json",
+            "20250811_010201_1c45c264.json",
+            "20250811_010201_377d8e4b.json",
+            "20250811_010201_fbb7ac6f.json",
+            "20250811_010202_84621283.json",
+            "20250811_010314_1c45c264.json",
+            "20250811_010314_377d8e4b.json",
+            "20250811_010314_fbb7ac6f.json",
+            "20250811_010315_84621283.json"
+        ]
     },
     "runtime_intelligence\\tools": {
         "folders": [
             "__pycache__"
         ],
         "files": [
+            "ainlp_agent.py",
             "aios_admin.py",
+            "index_tools.py",
             "README.md",
             "self_similarity_analyzer.py",
+            "subprocess_manager.py",
             "system_health_check.py",
-            "system_status_report.py"
+            "system_status_report.py",
+            "__init__.py"
         ]
     },
     "runtime_intelligence\\tools\\__pycache__": {
         "folders": [],
         "files": [
+            "subprocess_manager.cpython-312.pyc",
             "system_health_check.cpython-312.pyc"
+        ]
+    },
+    "runtime_intelligence\\__pycache__": {
+        "folders": [],
+        "files": [
+            "__init__.cpython-312.pyc"
         ]
     },
     "safety_logs": {
@@ -3054,7 +3558,10 @@
         ]
     },
     "scripts": {
-        "folders": [],
+        "folders": [
+            "legacy",
+            "__pycache__"
+        ],
         "files": [
             "advanced_aios_automation.ps1",
             "aios_indexer.py",
@@ -3082,9 +3589,11 @@
             "quantum_code_ingestor.py",
             "quantum_consciousness_canvas.py",
             "requirements.txt",
+            "root_clutter_guard.ps1",
             "runtime_intelligence.py",
             "safety_governor.py",
             "sem.py",
+            "setup_env.ps1",
             "simple_test_orchestrator.ps1",
             "test_env.py",
             "test_magnus_blueprint.py",
@@ -3092,6 +3601,19 @@
             "test_orchestrator.log",
             "universal_logging.py",
             "universal_logging_v2.py"
+        ]
+    },
+    "scripts\\legacy": {
+        "folders": [],
+        "files": [
+            "test_opencv_aios_integration.py"
+        ]
+    },
+    "scripts\\__pycache__": {
+        "folders": [],
+        "files": [
+            "runtime_intelligence.cpython-312.pyc",
+            "universal_logging.cpython-312.pyc"
         ]
     },
     "test_results": {
@@ -3125,7 +3647,6 @@
             "archive"
         ],
         "files": [
-            "aios_admin.py",
             "audit_init_py.py",
             "init_audit_report.txt",
             "vscode_health_checker.py",
