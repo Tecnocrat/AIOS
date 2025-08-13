@@ -47,3 +47,51 @@
     Relocate and enhance environment bootstrap script under scripts/ with drift detection, report-only mode, and governance-aligned naming.
   harmonization: >
     Eliminates root-level script clutter and centralizes operational automation; adds reproducibility via requirements hash and exit code semantics.
+
+- kind: mitigation
+  file: test_opencv_aios_integration.py (recurrence)
+  old_path: /
+  date: 2025-08-13
+  reason: >
+    Zero-byte recreation detected after prior deprecation; removed and guard script introduced.
+  harmonization: >
+    Added scripts/root_clutter_guard.ps1 to enforce absence of deprecated root artifacts and log future removals.
+
+- kind: addition
+  file: root_clutter_guard.ps1
+  old_path: n/a
+  new_path: /scripts/root_clutter_guard.ps1
+  date: 2025-08-13
+  reason: >
+    Introduce automated guard to remove deprecated root files (initial list: test_opencv_aios_integration.py) and append removal events to log.
+  harmonization: >
+    Strengthens path hygiene controls and prevents silent drift from governance policies.
+
+- kind: governance_update
+  file: aios_admin.py filtering
+  old_path: /runtime_intelligence/tools/aios_admin.py
+  date: 2025-08-13
+  reason: >
+    Exclude deprecated root-level filenames from generated folder_structure.json inventories.
+  harmonization: >
+    Prevents legacy filenames from seeding accidental recreation events and ensures inventories reflect governed state.
+
+- kind: addition
+  file: root_clutter_guard CI workflow
+  old_path: n/a
+  new_path: /.github/workflows/root-clutter-guard.yml
+  date: 2025-08-13
+  reason: >
+    Continuous enforcement of root file hygiene; fails PRs if deprecated root files reappear.
+  harmonization: >
+    Automates governance, reducing manual oversight for path hygiene.
+
+- kind: addition
+  file: pre-commit hook (deprecated root files)
+  old_path: n/a
+  new_path: /.githooks/pre-commit
+  date: 2025-08-13
+  reason: >
+    Blocks commits introducing deprecated root-level filenames.
+  harmonization: >
+    Shifts hygiene enforcement left into the developer workflow.
