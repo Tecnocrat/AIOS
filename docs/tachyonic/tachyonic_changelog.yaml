@@ -95,3 +95,16 @@
     Blocks commits introducing deprecated root-level filenames.
   harmonization: >
     Shifts hygiene enforcement left into the developer workflow.
+
+- kind: enhancement
+  file: folder_structure.json archival
+  old_path: /docs/AIOS/folder_structure.json
+  date: 2025-08-15
+  reason: >
+    Introduce automatic tachyonic archival of prior folder_structure.json snapshots before regeneration
+    (PowerShell script scripts/generate_folder_structure.ps1 and Python tool runtime_intelligence/tools/aios_admin.py)
+    enabling temporal diffing and rollback without polluting project root.
+  harmonization: >
+    Aligns with Agentic File Creation Policy by storing snapshots under docs/tachyonic_archive/folder_structure with
+    timestamped filenames; supports forensic change tracking. Added pruning capability (dev terminal action) to retain
+    bounded history (default 10) mitigating doc bloat.
