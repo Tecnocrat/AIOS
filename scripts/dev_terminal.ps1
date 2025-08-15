@@ -68,7 +68,32 @@ function Invoke-Orchestrator {
   cmake --build (Join-Path $CorePath 'build') --config Debug
 }
 function Invoke-All { Invoke-Canvas; Invoke-Orchestrator; Invoke-Visor }
-function Invoke-Workspace { if (Test-Path $WorkspaceFile) { code $WorkspaceFile } else { Write-Log 'Workspace file not found' 'ERROR' } }
+function Invoke-Workspace {
+  if (-not (Test-Path $WorkspaceFile)) { Write-Log 'Workspace file not found' 'ERROR'; return }
+  # CI environments (GitHub Actions) typically lack the VS Code CLI (code). Treat absence as non-fatal.
+  $isCI = ($env:GITHUB_ACTIONS -eq 'true') -or ($env:CI -eq 'true')
+  $codeCmd = Get-Command code -ErrorAction SilentlyContinue
+  if (-not $codeCmd) {
+    if ($isCI) {
+      Write-Log 'VS Code CLI (code) not present in CI – skipping workspace launch (non-fatal).' 'INFO'
+      return
+    } else {
+      Write-Log 'VS Code CLI (code) not found on PATH; install VS Code or add CLI to skip this message.' 'WARN'
+      return
+    }
+  }
+  try {
+    & $codeCmd.Source $WorkspaceFile | Out-Null
+    Write-Log 'Workspace opened in VS Code.' 'INFO'
+  }
+  catch {
+    if ($isCI) {
+      Write-Log "VS Code launch failed in CI (non-fatal): $($_.Exception.Message)" 'WARN'
+    } else {
+      Write-Log "Failed to launch VS Code: $($_.Exception.Message)" 'WARN'
+    }
+  }
+}
 function Invoke-EnvSetup { if (Test-Path $EnvScript) { pwsh -File $EnvScript } else { Write-Log 'Environment script missing' 'ERROR' } }
 function Invoke-UpdateHashes {
   # Compute hashes and replace placeholders in safety docs

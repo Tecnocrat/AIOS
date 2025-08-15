@@ -722,4 +722,18 @@ Status: Quick context prompts ingested & deprecated; root helper removed.
 
 ---
 
+## Dependency Strategy Transition Note (Added 2025-08-15)
+The `pyproject.toml` now includes:
+1. Transitional comment block explaining empty core `[project.dependencies]` while minimal essentials live in `requirements.txt` pending lock freshness CI.
+2. Added metadata (keywords, classifiers, URLs) for future distribution readiness.
+3. New `docs` extra (subset of `dev`) isolating documentation toolchain.
+4. Clarified reproducibility pathway: minimal `requirements.txt` -> aggregated `requirements.in` -> pip-tools lock under `locks/` -> CI freshness check (future) -> migration of essentials into `[project.dependencies]`.
+5. Intentional duplication inside `full` extra documented; retained until macro expansion or composition helper adopted.
+
+Extension Protocol: After CI lock freshness is implemented, append a dated revision here, migrate the governed minimal dependency set into `[project.dependencies]`, and adjust extras while preserving historical context (append-only).
+
+Governance Guardrail: Do NOT move dependencies prematurely; rely on this note + tachyonic changelog enhancement entry for traceability.
+
+---
+
 
