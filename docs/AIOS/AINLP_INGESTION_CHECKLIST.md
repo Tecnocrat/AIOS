@@ -31,3 +31,4 @@ Review prompts (use in PRs and code reviews):
 
 Ingestion notes:
 - Reorganization status now embedded in `AIOS_PROJECT_CONTEXT.md` (Historical Reorganization Capsule). Do not recreate `REORGANIZATION_STATUS.md` at root.
+ - Windows registry cleanup guidance embedded (Environment Recovery Capsule). Do not recreate `REGISTRY_CLEANUP_GUIDE.md`; append updates to capsule instead.
