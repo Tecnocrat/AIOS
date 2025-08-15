@@ -191,3 +191,21 @@
     Consolidate ad-hoc quick context onboarding prompt file into master context (Quick Context Prompts Capsule) to avoid multiple root bootstrap artifacts and keep session initialization guidance governed.
   harmonization: >
     Strengthens single-source AINLP onboarding, reduces root clutter, updates references (setup script relocation, ingested status guides), and channels future prompt evolution into an append-only capsule.
+
+- kind: ingestion
+  file: PYTHON_SYSTEM_CLEANUP_GUIDE.md
+  old_path: /PYTHON_SYSTEM_CLEANUP_GUIDE.md
+  date: 2025-08-15
+  reason: >
+    Integrate full destructive Python environment reset instructions into existing Environment Recovery Capsule to prevent proliferation of root maintenance guides.
+  harmonization: >
+    Centralizes remediation knowledge, enforces append-only capsule model, encourages future shift toward non-destructive diagnostic tooling before manual teardown.
+
+- kind: addition
+  file: env_diagnostics.ps1 (report-only) & refresh_locks.ps1
+  old_path: n/a
+  date: 2025-08-15
+  reason: >
+    Introduce non-destructive environment diagnostics (integrated as dev terminal action env-diagnostics) and pip-tools lock refresh scaffold (lock-refresh action) to advance reproducible environments without expanding root clutter.
+  harmonization: >
+    Strengthens governance by enabling drift visibility (PATH/python multiplicity, lock hashes) and establishes deterministic dependency pathway via requirements.in + hashed lock artifacts under locks/.

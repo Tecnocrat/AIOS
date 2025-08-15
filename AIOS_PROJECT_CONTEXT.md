@@ -582,6 +582,44 @@ Status: Guide ingested; original file deprecated. Do not recreate `REGISTRY_CLEA
 
 ---
 
+### Revision (Full Python System Cleanup Procedure Ingested 2025-08-15)
+Source `PYTHON_SYSTEM_CLEANUP_GUIDE.md` condensed and integrated here to consolidate all Python environment recovery & rebuild guidance.
+
+#### Scope
+Comprehensive Windows Python stack reset (remove conflicting installs, clean PATH & registry remnants, reinstall stable 3.12.x, create isolated project venv, reconfigure VS Code).
+
+#### High-Level Phases
+1. Session Teardown: Terminate editors (`Code.exe`) & stray `python.exe` processes.
+2. Uninstall Layer: Remove all Python, launcher, (Mini/Anaconda) entries via Apps & Features.
+3. Filesystem Purge: Delete `C:\Python*`, user Local/Programs Python dirs, Anaconda/Miniconda roots, pip caches, roaming Python user site, residual `.conda` & environment folders.
+4. PATH & Env Vars Sanitation: Strip Python/Conda segments from Machine PATH; clear `PYTHONPATH`, `PYTHONHOME` (Machine + optionally User) – ALWAYS back up PATH first.
+5. Fresh Install: Install official Python 3.12.x (Add to PATH, all users, include pip; optionally skip universal launcher to reduce ambiguity) to `C:\Python312\`.
+6. Verification: `python --version`, `pip --version`, `where python` should only surface the new install path hierarchy.
+7. Project Virtual Env: `python -m venv aios_env` at repo root; activate & upgrade `pip setuptools wheel`.
+8. Minimal Dependency Reinstate: Install only governed minimal stack (align with root `requirements.txt` / pyproject core) before optional extras.
+9. VS Code Interpreter Reset: Reinstall Python extension if necessary, select `./aios_env/Scripts/python.exe`.
+10. Sanity Test: Lightweight import test (numpy/pandas/pytest presence) & run existing AIOS quick script (non-GPU) to validate path coherence.
+
+#### Governance & Safety Notes
+- Destructive operations (registry/path mutation, directory purge) must NOT be scripted in default automation; treat as manual last resort preceded by environment diagnostic (future script: report-only).
+- Keep this procedure append-only; DO NOT introduce a new standalone cleanup guide—extend this revision section with dated deltas.
+- Prefer reinstalling a known-good minor version (3.12.x) over bleeding edge (3.13 early) until lockfile pipeline operational.
+- After reinstall, generate and archive a folder structure snapshot for provenance.
+
+#### Condensed Verification Checklist
+| Check | Desired State |
+|-------|---------------|
+| `where python` | Single path under `C:\Python312\` + active venv shim when activated |
+| PATH entries | No stale Python/Conda segments outside intended install |
+| Registry hives | No orphaned Python version subkeys (HKLM/HKCU) besides current |
+| Virtual env | `aios_env` present & activated prompt prefix shows `(aios_env)` |
+| Imports | Core libs import without fallback to user site dirs |
+| VS Code | Python extension resolves interpreter & IntelliSense works |
+
+Status: Full system cleanup guide ingested; original root file deprecated. Future environment remediation content must extend this revision block.
+
+---
+
 ## Historical Orchestrator Readme Capsule (INGESTED 2025-08-15)
 Source `README_backup.md` ingested to retire redundant parallel high‑level overview while preserving historical narrative and terminology (e.g., HSE paradigms, hyperspherical substrate phrasing) for future semantic/contextual mining.
 
