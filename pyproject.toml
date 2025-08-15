@@ -10,7 +10,33 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Proprietary"}
 authors = [ { name = "AIOS Team" } ]
-dependencies = []  # Root runtime resolved via requirements.txt (pip install -r)
+dependencies = []  # Transitional: runtime still via requirements.txt until lock + CI freshness enforcement.
+
+# DEPENDENCY STRATEGY TRANSITION (2025-08-15)
+# 1. Minimal essential runtime: governed in root requirements.txt (downsized).
+# 2. Optional / heavy capability stacks: defined below as extras (selective install path).
+# 3. Reproducibility: pip-tools (requirements.in -> locks/requirements.lock.txt) via dev terminal action: lock-refresh.
+# 4. Migration Plan: After CI adds lock freshness verification, essential runtime deps relocate here.
+# 5. Duplication: "full" extra explicitly enumerates all packages (TOML lacks macro expansion) — intentional & periodically validated.
+# 6. Guardrail: Do NOT move core list prematurely; retain this block until migration completes.
+
+keywords = ["AI", "Consciousness", "Cellular Architecture", "AINLP"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.urls]
+Homepage = "https://github.com/Tecnocrat/AIOS"
+Documentation = "https://github.com/Tecnocrat/AIOS/tree/OS/docs"
+Source = "https://github.com/Tecnocrat/AIOS"
+Issues = "https://github.com/Tecnocrat/AIOS/issues"
 
 [project.optional-dependencies]
 extras = [ "chromadb>=0.4.0,<0.5", "faiss-cpu>=1.7.0,<1.8", "sentence-transformers>=2.2.0,<3.0",
@@ -21,6 +47,7 @@ quantum = [ "qiskit>=0.43.0,<1.0", "cirq>=1.1.0,<2.0", "pennylane>=0.31.0,<0.35"
 dev = [ "pylint>=2.17.0,<3.0", "isort>=5.12.0,<6.0", "pytest-asyncio>=0.21.0,<0.25", "sphinx>=7.1.0,<8.0",
         "sphinx-rtd-theme>=1.2.0,<2.0", "mkdocs>=1.5.0,<2.0", "mkdocs-material>=9.1.0,<10.0",
         "pytest-cov>=4.1.0,<5.0", "hypothesis>=6.82.0,<7.0" ]
+docs = [ "sphinx>=7.1.0,<8.0", "sphinx-rtd-theme>=1.2.0,<2.0", "mkdocs>=1.5.0,<2.0", "mkdocs-material>=9.1.0,<10.0" ]
 graph = [ "networkx>=3.1,<4.0", "igraph>=0.10.0,<0.12", "python-louvain>=0.16,<0.17" ]
 perf = [ "orjson>=3.9.0,<4.0", "msgspec>=0.18.0,<0.20", "cloudpickle>=2.2.0,<3.0", "dill>=0.3.0,<0.4",
          "multiprocessing-logging>=0.3.0,<1.0" ]
@@ -49,4 +76,4 @@ strict = false
 [tool.isort]
 profile = "black"
 
-# Note: Primary installation still via requirements.txt for deterministic CI layering.
+# Note: Primary installation still via requirements.txt for deterministic CI layering (pending migration step).
