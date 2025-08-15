@@ -182,3 +182,12 @@
     Retire redundant orchestrator overview README variant by embedding historical narrative into AIOS_PROJECT_CONTEXT.md (Historical Orchestrator Readme Capsule) to enforce a single canonical top-level README.
   harmonization: >
     Eliminates parallel high-level docs reducing drift risk while preserving rich semantic legacy content for AI embedding within governed capsule architecture.
+
+- kind: ingestion
+  file: QUICK_CONTEXT_PROMPTS.md
+  old_path: /QUICK_CONTEXT_PROMPTS.md
+  date: 2025-08-15
+  reason: >
+    Consolidate ad-hoc quick context onboarding prompt file into master context (Quick Context Prompts Capsule) to avoid multiple root bootstrap artifacts and keep session initialization guidance governed.
+  harmonization: >
+    Strengthens single-source AINLP onboarding, reduces root clutter, updates references (setup script relocation, ingested status guides), and channels future prompt evolution into an append-only capsule.
