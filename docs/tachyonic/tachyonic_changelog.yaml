@@ -218,3 +218,21 @@
     Capture environment remediation success snapshot inside Environment Recovery Capsule revision to avoid persistent celebratory status files at root.
   harmonization: >
     Consolidates environment lifecycle narrative (problem -> cleanup -> success) within single governed capsule enabling future automated verification linkage.
+
+- kind: enhancement
+  file: pyproject.toml metadata & strategy
+  old_path: /pyproject.toml
+  date: 2025-08-15
+  reason: >
+    Add classifiers, keywords, project URLs, docs extra group, and explicit dependency transition strategy comments preparing for future migration of minimal core deps from requirements.txt post lock freshness CI.
+  harmonization: >
+    Improves package metadata discoverability, documents governed transitional state, and reduces future ambiguity during reproducibility enforcement.
+
+- kind: mitigation
+  file: dev_terminal.ps1 workspace action
+  old_path: /scripts/dev_terminal.ps1
+  date: 2025-08-15
+  reason: >
+    Prevent GitHub Actions coherence job failures caused by absent VS Code CLI ('code' command) by making workspace launch optional and non-fatal in CI environments.
+  harmonization: >
+    Strengthens CI robustness, aligns with headless execution expectations, and preserves local developer ergonomics without introducing root artifacts.
