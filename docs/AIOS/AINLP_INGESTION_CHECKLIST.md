@@ -35,3 +35,4 @@ Ingestion notes:
  - Legacy orchestrator overview embedded (Historical Orchestrator Readme Capsule). Do not recreate `README_backup.md`; extend capsule if semantic narrative evolves.
  - Quick context onboarding prompts embedded (Quick Context Prompts Capsule). Do not recreate `QUICK_CONTEXT_PROMPTS.md`; extend capsule for new standardized prompt patterns.
  - Full Python system cleanup procedures embedded (Environment Recovery Capsule revision). Do not recreate `PYTHON_SYSTEM_CLEANUP_GUIDE.md`; append new remediation steps under the revision block.
+ - Python environment success snapshot embedded (Environment Recovery Capsule revision). Do not recreate `PYTHON_ENVIRONMENT_SUCCESS.md`; append success deltas to existing revision.
