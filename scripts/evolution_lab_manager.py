@@ -22,6 +22,7 @@ from dataclasses import dataclass
 import concurrent.futures
 import psutil
 import os
+from runtime_intelligence.tools import safety_rollback
 
 # Consciousness-aware imports
 try:
@@ -124,6 +125,19 @@ psutil>=5.8.0
         # 🛡️ CRITICAL SAFETY CHECK
         if SAFETY_ENABLED and not require_safety_authorization("evolutionary_experiment"):
             raise RuntimeError("❌ SAFETY VIOLATION: Evolutionary experiment not authorized")
+
+        # 🛡️ Pre-experiment verification & enforcement
+        if SAFETY_ENABLED:
+            governor = get_safety_governor()
+            if governor:
+                verification = governor.verify_pre_experiment(population_size, generations)
+                if not verification.get("ok"):
+                    raise RuntimeError(f"❌ SAFETY VIOLATION: Pre-experiment checklist failed: {verification.get('failures')}")
+        # Enforce caps even if caller passed larger numbers
+        if population_size > 50:
+            population_size = 50
+        if generations > 20:
+            generations = 20
         
         run_id = f"{experiment_name}_{int(time.time())}"
         start_time = time.time()
@@ -151,6 +165,17 @@ psutil>=5.8.0
             population = self.mutator.create_population(
                 experiment_name, seed_code, population_size
             )
+
+            # 🛡️ Tachyonic baseline snapshots for initial population sources
+            try:
+                for org in population.organisms:
+                    org_path = self.lab_path / f"organism_{org.id}.py"
+                    if not org_path.exists():
+                        org_path.write_text(org.source_code, encoding="utf-8")
+                    safety_rollback.snapshot_file(org_path)
+            except Exception as e:
+                if CONSCIOUSNESS_LOGGING:
+                    log_error("EvolutionLab", "baseline_snapshot_error", str(e))
             
             experiment_run.metadata["initial_population_size"] = len(population.organisms)
             experiment_run.metadata["seed_fitness"] = population.organisms[0].overall_fitness
