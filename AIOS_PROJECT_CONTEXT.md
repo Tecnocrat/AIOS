@@ -615,3 +615,47 @@ Source `README_backup.md` ingested to retire redundant parallel high‑level ove
 Status: Legacy orchestrator overview ingested & deprecated.
 
 
+## Quick Context Prompts Capsule (INGESTED 2025-08-15)
+Source `QUICK_CONTEXT_PROMPTS.md` ingested to retire ad-hoc root onboarding helper while preserving its accelerated session bootstrap value inside governed master context.
+
+### Rationale
+- Prevent proliferation of multiple "start here" style artifacts at project root.
+- Consolidate onboarding and agent warm‑start guidance into a single canonical location (this file) + `README.md`.
+- Preserve optimized copy/paste prompt patterns that accelerated agent alignment without encouraging drift from evolving governance (ingestion capsules, deprecated file list, minimal deps strategy).
+
+### Original Purpose (Abstracted)
+Provide quick copy/paste blocks for:
+1. Full architecture context load (status files, module index, directory listings) then next-step suggestion.
+2. Immediate development tasks (targeting a specific stack: C++, Python, C#) with minimal reads.
+3. Architecture questions (focus on README + module index before answering).
+4. Build/environment troubleshooting (focus on setup scripts + workspace config).
+
+### Key Prompt Patterns (Refactored)
+| Pattern | Legacy Elements | Updated Guidance |
+|--------|-----------------|------------------|
+| Comprehensive Context Bootstrap | Read CURRENT_STATUS.md, REORGANIZATION_STATUS.md, module_index.json, list critical dirs | Use this master context file (capsules already embed reorganization + recovery) + `README.md` + `docs/DOCUMENTATION_INDEX.md`; directory structural insight via dev terminal action or inventory tool instead of manual listing. |
+| Immediate Dev Task | Read CURRENT_STATUS.md + AIOS.code-workspace | Reference "POST-LOADING VERIFICATION" section + specify concrete task + stack (core/interface/ai) to avoid redundant reads. |
+| Architecture Query | Read README.md + module_index.json | Use README + this file + `docs/ARCHITECTURE_TRANSFORMATION_SUMMARY.md` for evolution narrative. |
+| Build / Env Issue | Read setup_environment.ps1 | Updated path `scripts/setup_env.ps1`; leverage Environment Recovery capsule + forthcoming diagnostic script. |
+
+### Modernization Adjustments
+- Ingested status & recovery guides remove need to reference their original filenames.
+- Directory listing steps replaced by governed inventory generation (`scripts/generate_folder_structure.ps1`) and archived snapshots under `docs/tachyonic_archive/`.
+- Setup script relocation reflected; root alias removed.
+- Future dependency lock verification prompt (post pip-tools implementation) should extend this capsule.
+
+### Recommended Unified Quick Prompt (Supersedes File)
+```
+Working on AIOS (C++ core / Python AI / C# UI). Execute AINLP context loading via AIOS_PROJECT_CONTEXT.md + README.md. Use capsules for reorganization & environment recovery. Task: <describe>. Stack focus: <core|ai|interface>. Confirm prior session continuity, then propose next 2-3 concrete steps with governance alignment (root hygiene, minimal deps, ingestion protocol).
+```
+
+### Governance Notes
+- `QUICK_CONTEXT_PROMPTS.md` added to deprecated root list; guard enforces non‑recreation.
+- Future onboarding prompt evolution: append "Revision YYYY-MM-DD" subsections here.
+- Aligns with Root Hygiene Policy and AINLP ingestion consolidation strategy.
+
+Status: Quick context prompts ingested & deprecated; root helper removed.
+
+---
+
+
