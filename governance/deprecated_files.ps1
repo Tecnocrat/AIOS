@@ -14,4 +14,5 @@ $Global:AIOS_DeprecatedRootFiles = @(
     'REORGANIZATION_STATUS.md'
     'REGISTRY_CLEANUP_GUIDE.md'
     'README_backup.md'
+    'QUICK_CONTEXT_PROMPTS.md'
 )
