@@ -539,3 +539,45 @@ The standalone `REORGANIZATION_STATUS.md` has been harmonized here to reduce roo
 
 Status: Reorganization COMPLETE; source file ingested & deprecated (guard‑protected against resurrection).
 
+---
+
+## Environment Recovery Capsule — Windows Python Registry Cleanup (INGESTED 2025-08-15)
+Source `REGISTRY_CLEANUP_GUIDE.md` embedded to prevent persistent root troubleshooting artifacts.
+
+### Problem
+Failed / partial uninstall of Python 3.13.2 left orphaned registry entries (phantom installations) blocking clean reinstall.
+
+### Resolution Summary
+Manual PowerShell (admin) cleanup of:
+- Uninstall keys (HKLM / HKCU) filtering DisplayName containing Python / Miniconda.
+- Global & user Python registry hives (HKLM:\SOFTWARE\Python, HKCU:\SOFTWARE\Python).
+- User PATH entries containing python / conda / debugpy substrings.
+
+### Key Command Patterns (Excerpt)
+Remove uninstall entries:
+```powershell
+$pythonEntries = Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" | Where-Object { $_.DisplayName -like "*Python*" -or $_.DisplayName -like "*Miniconda*" }
+foreach ($entry in $pythonEntries) {
+  Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$($entry.PSChildName)" -Force -ErrorAction SilentlyContinue
+}
+```
+Clean PATH (user scope):
+```powershell
+$currentPath = [Environment]::GetEnvironmentVariable('PATH','User')
+$cleanPath = ($currentPath -split ';' | Where-Object { $_ -notlike '*python*' -and $_ -notlike '*conda*' -and $_ -notlike '*debugpy*' }) -join ';'
+[Environment]::SetEnvironmentVariable('PATH',$cleanPath,'User')
+```
+
+### Verification Steps
+1. Re-list uninstall keys searching for Python/Miniconda (expect none).
+2. Inspect PATH for stray python / conda segments (expect none).
+3. Attempt fresh targeted Python install (e.g., 3.12.x) — no installer blockage.
+
+### Safety / Governance Notes
+- Always export registry hives (backup) before mass deletion.
+- Restrict automated scripts to CI environment diagnostics; manual registry mutation is a last resort.
+- Future: Provide idempotent diagnostic script that ONLY reports drift (no destructive defaults).
+
+Status: Guide ingested; original file deprecated. Do not recreate `REGISTRY_CLEANUP_GUIDE.md` at root—extend this capsule if further environment recovery procedures are required.
+
+

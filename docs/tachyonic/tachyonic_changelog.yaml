@@ -164,3 +164,12 @@
     Reduce root artifacts by embedding completed reorganization status directly into AIOS_PROJECT_CONTEXT.md (Historical Reorganization Capsule) to unify canonical context entry points.
   harmonization: >
     Eliminates a now-static status file, strengthens single-source context loading, and enforces root hygiene without losing historical traceability.
+
+- kind: ingestion
+  file: REGISTRY_CLEANUP_GUIDE.md
+  old_path: /REGISTRY_CLEANUP_GUIDE.md
+  date: 2025-08-15
+  reason: >
+    Consolidate transient environment troubleshooting (Windows Python registry cleanup) into master context to avoid long-lived root maintenance guides.
+  harmonization: >
+    Preserves critical recovery knowledge while preventing root clutter and enabling iterative extension via a single environment recovery capsule.
