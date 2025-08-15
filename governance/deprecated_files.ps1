@@ -16,4 +16,5 @@ $Global:AIOS_DeprecatedRootFiles = @(
     'README_backup.md'
     'QUICK_CONTEXT_PROMPTS.md'
     'PYTHON_SYSTEM_CLEANUP_GUIDE.md'
+    'PYTHON_ENVIRONMENT_SUCCESS.md'
 )

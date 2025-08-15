@@ -620,6 +620,32 @@ Status: Full system cleanup guide ingested; original root file deprecated. Futur
 
 ---
 
+### Revision (Python Environment Success Verification Ingested 2025-08-15)
+Source `PYTHON_ENVIRONMENT_SUCCESS.md` ingested to capture post‑remediation success state and prevent accumulation of transient victory/status markdowns at root.
+
+#### Verification Snapshot
+- Python: 3.12.8
+- Virtual Env: `aios_env` (`c:\dev\AIOS\aios_env`)
+- VS Code Interpreter: Correctly bound to venv (settings updated)
+- Essential Packages Installed (subset): openai 1.93.0, anthropic 0.55.0, numpy 1.26.4, pandas 2.3.0, scipy 1.14.1, requests 2.32.4, aiohttp 3.12.13, pytest 8.4.1, black 24.10.0, rich 14.0.0, pydantic 2.11.7, psutil 6.1.1.
+
+#### Issues Resolved (Mapped to Environment Recovery Capsule Phases)
+| Issue | Cleanup Phase Reference | Resolution Note |
+|-------|-------------------------|-----------------|
+| Phantom venv reference (`aios_clean_env`) | PATH & VS Code config sanitation | Removed stale interpreter entries; settings.json updated |
+| VS Code interpreter mismatch | Verification / IDE rebind | Explicit interpreter path set to venv executable |
+| Missing essential deps | Minimal dependency reinstatement | Installed governed essential set (alignment check pending lock adoption) |
+| PATH contamination risk | PATH Sanitation | Isolation confirmed; only venv + system install present |
+
+#### Governance Notes
+- Success state is append-only metadata; future environment success deltas should version this revision (add dated bullet list) rather than new root success files.
+- Encourages shift to machine-verifiable diagnostics (env-diagnostics action + lock freshness) instead of narrative success docs.
+- When lock workflow matures, add checksum comparison summary here referencing latest `locks/requirements.lock.txt` hash.
+
+Status: Environment success snapshot ingested & deprecated; do not recreate `PYTHON_ENVIRONMENT_SUCCESS.md`.
+
+---
+
 ## Historical Orchestrator Readme Capsule (INGESTED 2025-08-15)
 Source `README_backup.md` ingested to retire redundant parallel high‑level overview while preserving historical narrative and terminology (e.g., HSE paradigms, hyperspherical substrate phrasing) for future semantic/contextual mining.
 
