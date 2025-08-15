@@ -580,4 +580,38 @@ $cleanPath = ($currentPath -split ';' | Where-Object { $_ -notlike '*python*' -a
 
 Status: Guide ingested; original file deprecated. Do not recreate `REGISTRY_CLEANUP_GUIDE.md` at root—extend this capsule if further environment recovery procedures are required.
 
+---
+
+## Historical Orchestrator Readme Capsule (INGESTED 2025-08-15)
+Source `README_backup.md` ingested to retire redundant parallel high‑level overview while preserving historical narrative and terminology (e.g., HSE paradigms, hyperspherical substrate phrasing) for future semantic/contextual mining.
+
+### Rationale
+- Prevents drift between multiple high-level README-style documents.
+- Consolidates canonical entry point to root `README.md` + this master context file.
+- Retains legacy descriptive constructs beneficial for AI semantic embeddings without encouraging duplication.
+
+### Preserved Key Sections (Abstracted)
+1. Dual-Interface Consciousness Architecture (Quantum Visor / Code Ingestor loop diagram)
+2. Enhanced Consciousness Components (module role taxonomy)
+3. Harmonized Environment Management (now superseded by minimal + optional stacks strategy)
+4. NaturalLanguageInterface gateway description
+5. Quantum-Coherent Integration Layer entities (AtomicHolographyUnit, SphereShellManager, etc.)
+6. Consciousness Emergence Metrics definitions
+7. Development Workflow & Meta-Archive Protocol (now merged conceptually with governance tooling & archival snapshots)
+
+### Delta vs Current Canonical README
+| Aspect | Legacy (Backup) | Current Canonical |
+|--------|-----------------|-------------------|
+| Environment | Monolithic requirements + environment.yml | Minimal core + segmented optional stacks + planned lockfiles |
+| Root Hygiene | Not fully governed | Explicit guard + ingestion protocol + deprecated list |
+| Documentation Redundancy | Separate orchestrator narrative | Unified in master README + context capsules |
+| Governance Logs | Implicit | JSONL structured + changelog harmonization |
+| Ingestion Strategy | Not articulated | Formal capsules (this file) + changelog entries |
+
+### Governance Notes
+- `README_backup.md` added to deprecated root filenames list; guard will remove if reintroduced.
+- Any future historical narrative additions should extend this capsule rather than re‑adding separate README variants.
+
+Status: Legacy orchestrator overview ingested & deprecated.
+
 

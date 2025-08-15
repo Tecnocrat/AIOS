@@ -13,4 +13,5 @@ $Global:AIOS_DeprecatedRootFiles = @(
     'safety_demonstration.py'
     'REORGANIZATION_STATUS.md'
     'REGISTRY_CLEANUP_GUIDE.md'
+    'README_backup.md'
 )
