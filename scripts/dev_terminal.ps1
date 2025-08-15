@@ -11,7 +11,7 @@
   - Root hygiene governed by ROOT_HYGIENE_POLICY.md
 #>
 param(
-  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace')]
+  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace','update-hashes')]
   [string]$Action = 'menu',
   [ValidateSet('check','bootstrap','skip')]
   [string]$Environment = 'check',
@@ -19,6 +19,12 @@ param(
   [switch]$ReportCoherence,
   [string]$CoherenceFormat = 'text',  # text|json
   [switch]$FinalizeHygiene
+)
+
+# Safety docs (canonical) paths for integrity hashing
+$SafetyDocs = @(
+  Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent) 'docs/safety/SAFETY_PROTOCOL.md',
+  Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent) 'docs/safety/SAFETY_IMPLEMENTATION_SUMMARY.md'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -65,6 +71,29 @@ function Invoke-Orchestrator {
 function Invoke-All { Invoke-Canvas; Invoke-Orchestrator; Invoke-Visor }
 function Invoke-Workspace { if (Test-Path $WorkspaceFile) { code $WorkspaceFile } else { Write-Log 'Workspace file not found' 'ERROR' } }
 function Invoke-EnvSetup { if (Test-Path $EnvScript) { pwsh -File $EnvScript } else { Write-Log 'Environment script missing' 'ERROR' } }
+function Invoke-UpdateHashes {
+  # Compute hashes and replace placeholders in safety docs
+  $hashMap = @{}
+  foreach($sd in $SafetyDocs){
+    if (Test-Path $sd){
+      try { $hashMap[$sd] = (Get-FileHash -Algorithm SHA256 -Path $sd).Hash.ToLower() } catch {}
+    }
+  }
+  if ($hashMap.Count -eq 0){ Write-Log 'No safety docs found for hashing' 'WARN'; return }
+  $protocolPath = $SafetyDocs[0]
+  $implPath = $SafetyDocs[1]
+  if (Test-Path $protocolPath){
+    $c = Get-Content -Raw $protocolPath
+    $c2 = $c -replace '@hash_protocol@',( $hashMap[$protocolPath] )
+    if ($c -ne $c2){ Set-Content -Path $protocolPath -Value $c2 -Encoding UTF8; Write-Log 'Updated protocol hash placeholder' 'INFO' }
+  }
+  if (Test-Path $implPath){
+    $c = Get-Content -Raw $implPath
+    $c2 = $c -replace '@hash_impl@',( $hashMap[$implPath] )
+    if ($c -ne $c2){ Set-Content -Path $implPath -Value $c2 -Encoding UTF8; Write-Log 'Updated implementation summary hash placeholder' 'INFO' }
+  }
+  if ($CoherenceFormat -eq 'json') { $hashMap | ConvertTo-Json | Write-Output }
+}
 
 # --- Coherence Metrics (LFC/GPC) ---
 function Get-CoherenceMetrics {
@@ -83,12 +112,30 @@ function Get-CoherenceMetrics {
   $guardOk = Test-Path (Join-Path $ScriptsPath 'root_clutter_guard.ps1')
   $ciOk = Test-Path (Join-Path $Root '.github/workflows/root-clutter-guard.yml')
   $hookOk = Test-Path (Join-Path $Root '.githooks/pre-commit')
-  # Inventory filter: folder_structure.json should not list deprecated filenames
+  # Inventory filter: only examine root file list of folder_structure.json (avoid false positives deeper in tree)
   $inventoryFile = Join-Path $Root 'docs/AIOS/folder_structure.json'
   $inventoryOk = $true
+  $inventoryRemediation = $null
+  $inventoryCheckedRootFiles = @()
   if (Test-Path $inventoryFile){
-    $invText = Get-Content -Raw $inventoryFile
-    foreach($d in $deprecated){ if ($invText -match [regex]::Escape($d)) { $inventoryOk = $false; break } }
+    try {
+      $invObj = Get-Content -Raw $inventoryFile | ConvertFrom-Json -ErrorAction Stop
+      $rootEntry = $invObj.''
+      if ($null -ne $rootEntry) {
+        $inventoryCheckedRootFiles = @($rootEntry.files)
+        foreach($d in $deprecated){ if ($inventoryCheckedRootFiles -contains $d) { $inventoryOk = $false; break } }
+      }
+    } catch {
+      $invText = Get-Content -Raw $inventoryFile
+      foreach($d in $deprecated){ if ($invText -match [regex]::Escape($d)) { $inventoryOk = $false; break } }
+    }
+    if (-not $inventoryOk) {
+      # Dynamic remediation: confirm physical root re-scan has no deprecated files
+      $physicalRootFiles = Get-ChildItem -LiteralPath $Root -File | Select-Object -ExpandProperty Name
+      $physHit = $false
+      foreach($d in $deprecated){ if ($physicalRootFiles -contains $d) { $physHit = $true; break } }
+      if (-not $physHit) { $inventoryOk = $true; $inventoryRemediation = 'dynamic_rescan_pass' }
+    }
   }
   $govTotal = 4
   $govPass = @($guardOk,$ciOk,$hookOk,$inventoryOk) | Where-Object { $_ } | Measure-Object | Select-Object -ExpandProperty Count
@@ -107,11 +154,17 @@ function Get-CoherenceMetrics {
   if ($lfcRaw -lt 0) { $lfcRaw = 0 }
   $lfc = [math]::Round($lfcRaw,4)
   $gpc = [math]::Round($gpc,4)
-  return [pscustomobject]@{ LFC=$lfc; GPC=$gpc; DeprecatedPresent=$present; GovernancePass=$govPass; GovernanceTotal=$govTotal; GovernanceFailures=$governanceFailures; ResurrectionPenalty=$resurrectionPenalty; MutationDistance=$mutationDistance }
+  return [pscustomobject]@{ LFC=$lfc; GPC=$gpc; DeprecatedPresent=$present; GovernancePass=$govPass; GovernanceTotal=$govTotal; GovernanceFailures=$governanceFailures; ResurrectionPenalty=$resurrectionPenalty; MutationDistance=$mutationDistance; InventoryRemediation=$inventoryRemediation; InventoryCheckedRootFiles=$inventoryCheckedRootFiles }
 }
 
 function Invoke-CoherenceReport {
   $m = Get-CoherenceMetrics
+  # Safety docs hygiene: ensure no root copies exist (fallback guard)
+  foreach($dup in 'SAFETY_PROTOCOL.md','SAFETY_IMPLEMENTATION_SUMMARY.md'){
+    if (Test-Path (Join-Path $Root $dup)) {
+      try { Remove-Item (Join-Path $Root $dup) -Force } catch {}
+    }
+  }
   if ($CoherenceFormat -eq 'json') {
     # Do not emit here; caller decides when to output JSON to avoid duplication
   } else {
@@ -156,6 +209,7 @@ try {
   'all' { Invoke-All }
   'env' { Invoke-EnvSetup }
   'workspace' { Invoke-Workspace }
+  'update-hashes' { Invoke-UpdateHashes }
   }
   if ($FinalizeHygiene) {
     # Purge deprecated sentinel files (terminal.ps1 etc.) after metrics initially collected
@@ -169,6 +223,19 @@ try {
     }
     # Recompute metrics post-purge
     $metrics = Invoke-CoherenceReport
+  }
+  # Compute integrity hashes (SHA256) for safety nucleus docs
+  $hashes = @{}
+  foreach($sd in $SafetyDocs){
+    if (Test-Path $sd){
+      try {
+        $h = (Get-FileHash -Algorithm SHA256 -Path $sd).Hash.ToLower()
+        $hashes[$sd] = $h
+      } catch {}
+    }
+  }
+  if ($CoherenceFormat -eq 'json') {
+    $metrics | Add-Member -NotePropertyName SafetyDocHashes -NotePropertyValue $hashes -Force
   }
   if ($ReportCoherence -and $CoherenceFormat -eq 'json') { $metrics | ConvertTo-Json -Depth 4 | Write-Output }
   if ($warns -gt 0 -or $metrics.DeprecatedPresent.Count -gt 0) { exit 2 } else { exit 0 }

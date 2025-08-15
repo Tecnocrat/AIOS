@@ -27,6 +27,7 @@ import uuid
 import json
 import statistics
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+from runtime_intelligence.tools import safety_rollback
 
 # Consciousness-aware imports
 try:
@@ -216,6 +217,19 @@ class EvolutionaryCodeMutator:
         
         # Evaluate fitness of mutated organism
         self.evaluate_organism_fitness(mutated)
+
+        # 🛡️ Snapshot & diff capture (tachyonic rollback layer) - store mutated source file representation
+        try:
+            # Persist organism source to evolution_lab for diff tracking
+            org_file = self.mutation_lab_path / f"organism_{mutated.id}.py"
+            previous_exists = org_file.exists()
+            previous_text = org_file.read_text(encoding="utf-8") if previous_exists else ""
+            safety_rollback.guarded_write(org_file, mutated.source_code, allow_outside=False)
+            if previous_exists and previous_text == mutated.source_code:
+                pass  # no diff change
+        except Exception as e:
+            if CONSCIOUSNESS_LOGGING:
+                log_error("EvolutionaryMutator", "rollback_capture_error", str(e))
         
         return mutated
     
@@ -467,6 +481,9 @@ def fractal_evolution(depth=0, max_depth=3):
     
     def create_population(self, name: str, seed_code: str, population_size: int = 50) -> EvolutionPopulation:
         """Create new evolution population from seed code"""
+        # 🛡️ Enforce population cap from safety protocol (50)
+        if population_size > 50:
+            population_size = 50
         population = EvolutionPopulation(
             name=name,
             population_size=population_size
@@ -498,6 +515,9 @@ def fractal_evolution(depth=0, max_depth=3):
     
     def evolve_population(self, population_name: str, generations: int = 10) -> Dict[str, Any]:
         """Evolve population through multiple generations"""
+        # 🛡️ Enforce generation cap from safety protocol (20)
+        if generations > 20:
+            generations = 20
         if population_name not in self.populations:
             raise ValueError(f"Population {population_name} not found")
         
