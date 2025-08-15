@@ -11,7 +11,7 @@
   - Root hygiene governed by ROOT_HYGIENE_POLICY.md
 #>
 param(
-  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace','update-hashes','safety-validate','prune-archives')]
+  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace','update-hashes','safety-validate','prune-archives','guard-report','normalize-guard-log','truncate-guard-log')]
   [string]$Action = 'menu',
   [ValidateSet('check','bootstrap','skip')]
   [string]$Environment = 'check',
@@ -120,6 +120,93 @@ function Invoke-PruneArchives {
     try { Remove-Item -LiteralPath $f.FullName -Force; Write-Log "Pruned archive: $($f.Name)" 'INFO' } catch { Write-Log "Failed to remove archive $($f.Name): $($_.Exception.Message)" 'WARN' }
   }
   Write-Log "Archive pruning complete (kept $Keep of $count)" 'INFO'
+}
+
+function Invoke-GuardReport {
+  # Summarize root_clutter_guard log events and governance events JSONL
+  $logPath = Join-Path $Root 'root_clutter_guard.log'
+  $eventsDir = Join-Path $Root 'docs/unified_backups/tachyonic_operations/governance_events'
+  $eventsFile = Join-Path $eventsDir 'events.jsonl'
+  $events = @()
+  if (Test-Path $logPath) {
+    $raw = Get-Content -Raw -Path $logPath
+    # Attempt JSON lines parse: split on newlines and parse each
+    $lines = ($raw -split "`n") | Where-Object { $_.Trim() }
+    foreach($ln in $lines){
+      try { $obj = $ln | ConvertFrom-Json -ErrorAction Stop; if ($obj) { $events += [pscustomobject]@{ source='root_guard_log'; file=$obj.file; length=$obj.length; removed=$obj.removed } } } catch { }
+    }
+    # Fallback: whole-file JSON (array or single object) if events empty
+    if ($events.Count -eq 0) {
+      try {
+        $maybe = $raw | ConvertFrom-Json -ErrorAction Stop
+        if ($maybe -is [System.Collections.IEnumerable]) {
+          foreach($m in $maybe){ if ($m.file){ $events += [pscustomobject]@{ source='root_guard_blob'; file=$m.file; length=$m.length; removed=$m.removed } } }
+        }
+        else {
+          if ($maybe.file){ $events += [pscustomobject]@{ source='root_guard_blob'; file=$maybe.file; length=$maybe.length; removed=$maybe.removed } }
+        }
+      } catch { }
+    }
+  }
+  if (Test-Path $eventsFile) {
+    foreach($ln in Get-Content -Path $eventsFile){
+      if (-not $ln.Trim()) { continue }
+      try { $e = $ln | ConvertFrom-Json -ErrorAction Stop; if ($e.type -eq 'root_deprecated_purge'){ $events += [pscustomobject]@{ source='events_jsonl'; file=$e.file; length=$e.length; removed=$e.ts } } } catch { }
+    }
+  }
+  if ($events.Count -eq 0){ Write-Log 'No root guard events recorded' 'INFO'; return }
+  $grouped = $events | Group-Object -Property file | ForEach-Object { [pscustomobject]@{ file=$_.Name; count=$_.Count; last=($_.Group | Sort-Object removed | Select-Object -Last 1 -ExpandProperty removed) } }
+  $summaryItems = @()
+  foreach($g in $grouped){ $summaryItems += ("{0}={1}@{2}" -f $g.file,$g.count,$g.last) }
+  $summaryLine = "Root Guard Event Summary (file,count,last): " + ($summaryItems -join '; ')
+  Write-Log $summaryLine 'INFO'
+  if ($CoherenceFormat -eq 'json') { $grouped | ConvertTo-Json -Depth 4 | Write-Output }
+}
+
+function Invoke-NormalizeGuardLog {
+  $logPath = Join-Path $Root 'root_clutter_guard.log'
+  if (-not (Test-Path $logPath)) { Write-Log 'Guard log not found (nothing to normalize)' 'WARN'; return }
+  $raw = Get-Content -Raw -Path $logPath
+  $trimmed = ($raw.Trim())
+  $normalized = @()
+  # Detect JSONL: multiple lines each independently parseable
+  $rawLines = $raw -split "`n"
+  $parseableLineCount = 0
+  foreach($ln in $rawLines){
+    $t = $ln.Trim()
+    if (-not $t) { continue }
+    try { $null = $t | ConvertFrom-Json -ErrorAction Stop; $parseableLineCount++ } catch { $parseableLineCount = -1; break }
+  }
+  if ($parseableLineCount -gt 1 -and $parseableLineCount -eq (@($rawLines | Where-Object { $_.Trim() }).Count)) {
+    # Already JSONL
+    return
+  }
+  # Treat entire file as single JSON blob (object or array)
+  try {
+    $blob = $trimmed | ConvertFrom-Json -ErrorAction Stop
+    if ($blob -is [System.Collections.IEnumerable] -and -not ($blob -is [string])) {
+      foreach($b in $blob){ $normalized += ($b | ConvertTo-Json -Depth 5 -Compress) }
+    } else {
+      $normalized += ($blob | ConvertTo-Json -Depth 5 -Compress)
+    }
+  } catch {
+    Write-Log 'Failed to parse guard log as single JSON blob; leaving unchanged' 'WARN'; return
+  }
+  if ($normalized.Count -gt 0) {
+    Set-Content -Path $logPath -Value ($normalized -join [Environment]::NewLine) -Encoding UTF8
+    Write-Log "Normalized guard log to JSONL lines=$($normalized.Count)" 'INFO'
+  }
+}
+
+function Invoke-TruncateGuardLog {
+  param([int]$Keep=200)
+  $logPath = Join-Path $Root 'root_clutter_guard.log'
+  if (-not (Test-Path $logPath)) { Write-Log 'Guard log not found (nothing to truncate)' 'WARN'; return }
+  $lines = Get-Content -Path $logPath
+  if ($lines.Count -le $Keep) { Write-Log "Guard log within retention (count=$($lines.Count), keep=$Keep)" 'INFO'; return }
+  $new = $lines[-$Keep..-1]
+  Set-Content -Path $logPath -Value ($new -join [Environment]::NewLine) -Encoding UTF8
+  Write-Log "Truncated guard log to last $Keep lines (was $($lines.Count))" 'INFO'
 }
 
 # --- Coherence Metrics (LFC/GPC) ---
@@ -239,6 +326,9 @@ try {
   'update-hashes' { Invoke-UpdateHashes }
   'safety-validate' { $sv = Invoke-SafetyValidate; if ($sv -ne 0) { exit $sv } }
   'prune-archives' { Invoke-PruneArchives }
+  'guard-report' { Invoke-GuardReport }
+  'normalize-guard-log' { Invoke-NormalizeGuardLog }
+  'truncate-guard-log' { Invoke-TruncateGuardLog }
   }
   if ($FinalizeHygiene) {
     # Purge deprecated sentinel files (terminal.ps1 etc.) after metrics initially collected

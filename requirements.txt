@@ -1,164 +1,68 @@
-# AIOS Consciousness Emergence System - Python Requirements
-# Quantum-Coherent AI Operating System Dependencies
-# Optimized for conda/venv compatibility with version ranges
+###############################################
+# AIOS Canonical Requirements (Essential Tier)
+# Harmonized 2025-08-15
+#
+# This file intentionally contains ONLY the minimal, broadly used
+# runtime + core development dependencies. Optional stacks have
+# been moved to ai/deps/*. See references below.
+###############################################
 
-# ===== CORE AI & CONSCIOUSNESS FRAMEWORK =====
-# Deep Learning & Transformers for Consciousness Modeling
+# Core ML / NLP (actively used or baseline)
 torch>=2.0.0,<2.2
 torchvision>=0.15.0,<0.17
-torchaudio>=2.0.0,<2.2
 transformers>=4.30.0,<4.40
 tokenizers>=0.13.0,<0.15
-
-# OpenAI & Advanced Language Models  
 openai>=0.27.0,<1.0
-anthropic>=0.3.0,<0.5
-langchain>=0.0.200,<0.1.0
 
-# Vector Databases & Knowledge Management
-chromadb>=0.4.0,<0.5
-faiss-cpu>=1.7.0,<1.8
-sentence-transformers>=2.2.0,<3.0
-
-# ===== QUANTUM & HYPERDIMENSIONAL COMPUTING =====
-# Quantum Computing Frameworks
-qiskit>=0.43.0,<1.0
-cirq>=1.1.0,<2.0  
-pennylane>=0.31.0,<0.35
-
-# Scientific Computing for Hypersphere Geometry
+# Data / Scientific
 numpy>=1.24.0,<2.0
-scipy>=1.10.0,<1.12
-scikit-learn>=1.3.0,<1.4
-sympy>=1.12,<2.0
-mpmath>=1.3.0,<2.0
-
-# ===== DATA PROCESSING & VISUALIZATION =====
-# Data Manipulation & Analysis
+scipy>=1.10.0,<1.15
 pandas>=2.0.0,<2.1
-polars>=0.18.0,<0.20
+sympy>=1.12,<2.0
 
-# Visualization for Consciousness Topology
-matplotlib>=3.7.0,<3.9
-seaborn>=0.12.0,<0.14
-plotly>=5.15.0,<6.0
-bokeh>=3.2.0,<3.4
-graphviz>=0.20.0,<0.25
-
-# ===== WEB & NETWORKING LAYER =====
-# API Framework for Director Layer Integration
-flask>=2.3.0,<3.0
+# API / Web Layer
 fastapi>=0.100.0,<0.110
 uvicorn>=0.22.0,<0.30
-starlette>=0.27.0,<0.30
-
-# HTTP & WebSocket Communication
-requests>=2.31.0,<3.0
-websockets>=11.0.0,<12.0
-aiohttp>=3.8.0,<4.0
 httpx>=0.24.0,<0.26
-
-# ===== ASYNCHRONOUS & REAL-TIME PROCESSING =====
-# Async Framework for Consciousness Emergence
 aiofiles>=23.1.0,<24.0
-trio>=0.22.0,<0.25
-anyio>=3.7.0,<4.0
+websockets>=11.0.0,<12.0
+requests>=2.31.0,<3.0
 
-# Message Queuing & IPC
-pyzmq>=25.0.0,<26.0
-msgpack>=1.0.0,<2.0
-redis>=4.6.0,<5.0
-
-# ===== CODE ANALYSIS & MUTATION ENGINE =====
-# AST Manipulation for Code Evolution
-ast-unparse>=1.6.0,<2.0
-astroid>=2.15.0,<3.0
-rope>=1.8.0,<2.0
-libcst>=1.0.0,<2.0
-
-# Code Intelligence & Refactoring
-jedi>=0.18.0,<0.20
-parso>=0.8.0,<0.9
-autopep8>=2.0.0,<3.0
-
-# ===== DEVELOPMENT & TESTING FRAMEWORK =====
-# Code Quality & Linting
-pylint>=2.17.0,<3.0
-black>=23.3.0,<24.0
-isort>=5.12.0,<6.0
-mypy>=1.4.0,<1.8
-flake8>=6.0.0,<7.0
-
-# Testing & Quality Assurance
-pytest>=7.4.0,<8.0
-pytest-asyncio>=0.21.0,<0.25
-pytest-cov>=4.1.0,<5.0
-hypothesis>=6.82.0,<7.0
-
-# ===== DOCUMENTATION & ARCHIVAL =====
-# Documentation Generation
-sphinx>=7.1.0,<8.0
-sphinx-rtd-theme>=1.2.0,<2.0
-mkdocs>=1.5.0,<2.0
-mkdocs-material>=9.1.0,<10.0
-
-# ===== SYSTEM INTEGRATION & MONITORING =====
-# System Resource Monitoring
-psutil>=5.9.0,<6.0
-watchdog>=3.0.0,<4.0
-rich>=13.4.0,<14.0
-
-# Configuration Management  
-pydantic>=2.0.0,<3.0
-click>=8.1.0,<9.0
-typer>=0.9.0,<1.0
-
-# Serialization & Data Exchange
-protobuf>=4.23.0,<5.0
-msgspec>=0.18.0,<0.20
-orjson>=3.9.0,<4.0
-
-# ===== TYPE SYSTEM & COMPATIBILITY =====
-# Enhanced Type Annotations
-typing-extensions>=4.7.0,<5.0
-attrs>=23.1.0,<24.0
-
-# ===== SPECIALIZED CONSCIOUSNESS LIBRARIES =====
-# Natural Language Processing for Consciousness Communication
+# NLP utilities
 spacy>=3.6.0,<4.0
 nltk>=3.8.0,<4.0
 textblob>=0.17.0,<0.18
 
-# Graph Processing for Consciousness Networks
-networkx>=3.1,<4.0
-igraph>=0.10.0,<0.12
-python-louvain>=0.16,<0.17
-
-# Time Series Analysis for Consciousness Evolution
-statsmodels>=0.14.0,<0.15
-prophet>=1.1.0,<1.2
-
-# Image Processing for Visual Consciousness Interface
-pillow>=10.0.0,<11.0
+# Vision
 opencv-python>=4.8.0,<5.0
-scikit-image>=0.21.0,<0.23
+pillow>=10.0.0,<11.0
 
-# ===== FRACTAL & RECURSIVE PATTERN ANALYSIS =====
-# Mathematical Libraries for Fractal Geometry
-cython>=0.29.0,<3.1
+# System & Monitoring
+psutil>=5.9.0,<6.0
+watchdog>=3.0.0,<4.0
+rich>=13.4.0,<14.0
 
-# Pattern Recognition & Analysis
-patsy>=0.5.0,<0.6
+# Configuration / Types / Serialization (core)
+pydantic>=2.0.0,<3.0
+click>=8.1.0,<9.0
+typing-extensions>=4.7.0,<5.0
+attrs>=23.1.0,<24.0
 
-# ===== GUI & INTERFACE LIBRARIES =====
-# For Python Code Ingestor Window (cross-platform compatibility)
-# Note: tkinter is built-in to Python, but we include alternatives
-PyQt6>=6.5.0,<7.0; platform_system != "Linux"
-PySide6>=6.5.0,<7.0; platform_system == "Linux"
-customtkinter>=5.2.0,<6.0
+# Dev / Quality (light baseline; heavier tooling moved to dev extras)
+pytest>=7.4.0,<8.0
+black>=23.3.0,<24.0
+flake8>=6.0.0,<7.0
+mypy>=1.4.0,<1.8
 
-# ===== ADVANCED CONSCIOUSNESS MODULES =====
-# Additional libraries for consciousness emergence
-multiprocessing-logging>=0.3.0,<1.0
-dill>=0.3.0,<0.4  # Enhanced pickling for complex objects
-cloudpickle>=2.2.0,<3.0  # Improved serialization
+# Graph / Visualization (actively referenced)
+graphviz>=0.20.0,<0.25
+
+# NOTE: Optional stacks relocated:
+#  - ai/deps/requirements_extras.txt        (vector DB, embeddings, plotting, stats, sk-learn, scikit-image)
+#  - ai/deps/requirements_quantum.txt       (qiskit, cirq, pennylane)
+#  - ai/deps/requirements_dev.txt           (full dev/test/doc suite, lint variants, hypothesis, docs toolchain)
+#  - ai/deps/requirements_future_graph.txt  (networkx, igraph, python-louvain)
+#  - ai/deps/requirements_perf_serial.txt   (orjson, msgspec, cloudpickle, dill, multiprocessing-logging)
+# Synthetic logic shadows placed under ai/deps/shadows/ to retain AINLP structural references.
+
+# End of essential set

@@ -43,3 +43,58 @@ Purpose: A compact, repeatable checklist the agent follows for complex file move
 ## Notes
 - This AINL file complements the policy in .github/instructions/agent-mode.instructions.md
 - Keep the checklist evolutionary but stable; prefer additive updates.
+
+---
+
+## Embedded Root Hygiene Capsule (INGESTED)
+The standalone `ROOT_HYGIENE_POLICY.md` has been harmonized here so its core guidance is preserved when the file is retired.
+
+### Objectives
+- Keep repository root cognitively light (only orchestration + governance anchors).
+- Block resurrection of deprecated / migrated scripts & stray test probes.
+- Provide deterministic, automatable checks feeding coherence metrics (LFC/GPC).
+
+### Allowed Root Artifact Categories (Whitelisted)
+1. Orchestration: `AIOS.sln`, `AIOS.code-workspace`.
+2. Governance & status meta: `AIOS_PROJECT_CONTEXT.md`, `CURRENT_STATUS.md`, strategic *_SUMMARY.md.
+3. Core coordination dirs: `core/`, `interface/`, `ai/`, `runtime_intelligence/`, `scripts/`, `docs/`.
+4. Baseline configs: `.editorconfig`, `.gitignore`, linters, canonical env manifests.
+5. Transitional upgrade manifests (must be referenced in `CURRENT_STATUS.md`).
+
+### Explicitly Disallowed (Guarded)
+- Any filename declared in `governance/deprecated_files.ps1`.
+- Orphan setup / launcher scripts superseded by `scripts/`.
+- Legacy ad‑hoc test probes superseded by structured suites.
+- One‑off notebooks / raw dumps (must live under `docs/analysis/` or archival hierarchy).
+
+### Automation Layers (Defense in Depth)
+| Layer | Mechanism | Purpose |
+|-------|----------|---------|
+| 1 | `governance/deprecated_files.ps1` | Canonical deprecated list |
+| 2 | `scripts/root_clutter_guard.ps1` | Local + CI purge/log |
+| 3 | `scripts/dev_terminal.ps1 -FinalizeHygiene` | On-demand cleanup + recompute metrics |
+| 4 | CI coherence workflow | Enforce LFC/GPC & zero deprecated presence |
+| 5 | Pre-commit hook | Prevent addition of forbidden files |
+
+### Metrics Interaction
+- LFC penalizes any deprecated root file (resurrection penalty ≤ 0.3).
+- GPC counts passing hygiene layers (guard script, CI workflow, hook, inventory filter).
+
+### Change Workflow (Root Artifacts)
+1. Propose & justify new root artifact (ensure category fit).
+2. Update policy (this capsule) if category is novel.
+3. When deprecating, append filename to `governance/deprecated_files.ps1`.
+4. Run: `pwsh -File scripts/dev_terminal.ps1 -ReportCoherence -FinalizeHygiene`.
+
+### Enforcement & Observability
+- Purge events: `root_clutter_guard.log`.
+- Inventory filter: generation of `docs/AIOS/folder_structure.json` excludes deprecated root files.
+- Archival: folder structure snapshots stored under `docs/tachyonic_archive/folder_structure` with pruning (dev terminal `prune-archives`).
+
+### Roadmap Signals
+- Structural mutation distance metric for drift.
+- Signed hygiene pass attestation for supply-chain integrity.
+- Automated weekly root inventory deltas.
+
+---
+Status: Root hygiene policy ingested into AINL (2025-08-15). Original file may be safely removed once consumers update references.

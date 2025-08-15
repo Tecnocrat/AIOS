@@ -22,4 +22,7 @@ jobs:
           if ($obj.LFC -lt 0.85) { Write-Error "LFC below threshold: $($obj.LFC)"; exit 1 }
           if ($obj.GPC -lt 0.75) { Write-Error "GPC below threshold: $($obj.GPC)"; exit 1 }
           if ($obj.DeprecatedPresent.Count -gt 0) { Write-Error 'Deprecated files present'; exit 1 }
+          Write-Host 'Root guard event summary:'
+          pwsh -File scripts/dev_terminal.ps1 -Action guard-report -CoherenceFormat json -Quiet | Out-File guard_report.json -Encoding utf8
+          if (Test-Path guard_report.json) { Write-Host (Get-Content guard_report.json -Raw) }
           Write-Host 'Coherence smoke passed.'
