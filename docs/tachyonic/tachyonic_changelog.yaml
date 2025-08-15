@@ -108,3 +108,59 @@
     Aligns with Agentic File Creation Policy by storing snapshots under docs/tachyonic_archive/folder_structure with
     timestamped filenames; supports forensic change tracking. Added pruning capability (dev terminal action) to retain
     bounded history (default 10) mitigating doc bloat.
+
+- kind: enhancement
+  file: root_clutter_guard logging normalization
+  old_path: /root_clutter_guard.log
+  date: 2025-08-15
+  reason: >
+    Normalize clutter guard log to JSONL (one event per line) for deterministic ingestion and add dev terminal guard-report
+    action to summarize purge events across root_clutter_guard.log and governance events stream.
+  harmonization: >
+    Improves governance observability and supports AINLP harmonization by enabling structured ingestion of root hygiene
+    events without introducing new root artifacts or manual parsing steps.
+
+- kind: enhancement
+  file: root_clutter_guard log lifecycle
+  old_path: /root_clutter_guard.log
+  date: 2025-08-15
+  reason: >
+    Add normalization (single-object -> JSONL) and truncation (retain last N lines) actions to dev terminal plus CI guard-report
+    surfacing for proactive hygiene observability.
+  harmonization: >
+    Bounded log growth prevents noise while preserving recent governance events; integrates seamlessly with coherence smoke.
+
+- kind: harmonization
+  file: requirements.txt canonical downsizing
+  old_path: /requirements.txt
+  date: 2025-08-15
+  reason: >
+    Reduce root dependency surface to essential runtime/dev set; relocate optional heavy stacks (quantum, vector DB,
+    extended plotting, graph analytics, serialization perf) into ai/deps segmented requirement files with synthetic
+    AINLP shadow module preserving architectural intent.
+  harmonization: >
+    Enforces root minimalism per hygiene policy, enables selective installation, and documents dormant capability paths
+    without incurring install bloat.
+
+- kind: addition
+  file: ai/deps/README.md & install_ai_stacks.ps1
+  old_path: n/a
+  date: 2025-08-15
+  reason: >
+    Provide documented tiered dependency installation and composite installer script for optional AI stacks.
+  harmonization: >
+    Improves developer onboarding and keeps root lean while preserving discoverability of advanced capability tiers.
+
+- date: 2025-08-15
+  tag: deps
+  change: Introduced pyproject.toml with optional dependency groups (extras, quantum, dev, graph, perf, full) aligned to segmented ai/deps stacks; groundwork for future pip-tools lock generation.
+  impact: Enables standardized extras installation path and prepares deterministic dependency locking while preserving minimal root requirements.
+
+- kind: ingestion
+  file: REORGANIZATION_STATUS.md
+  old_path: /REORGANIZATION_STATUS.md
+  date: 2025-08-15
+  reason: >
+    Reduce root artifacts by embedding completed reorganization status directly into AIOS_PROJECT_CONTEXT.md (Historical Reorganization Capsule) to unify canonical context entry points.
+  harmonization: >
+    Eliminates a now-static status file, strengthens single-source context loading, and enforces root hygiene without losing historical traceability.

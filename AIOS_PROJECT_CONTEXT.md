@@ -508,3 +508,34 @@ When working with AIOS, **ALWAYS EXECUTE THE AINLP CONTEXT LOADING PROTOCOL FIRS
 ---
 
 *This document serves as the master AINLP context entry point for AIOS development. Updated July 2025 with consciousness iteration management and intelligent documentation ingestion capabilities.*
+
+---
+
+## Historical Reorganization Capsule (INGESTED 2025-08-15)
+The standalone `REORGANIZATION_STATUS.md` has been harmonized here to reduce root artifact count. This capsule preserves the key outcomes of the completed project reorganization initiative.
+
+### Completion Summary
+- Director (legacy ASP.NET Core API) retired; artifacts safely archived.
+- Dedicated workspace file `AIOS.code-workspace` established.
+- Architecture clarified into focused strata (Core Engine, Interface/UI, AI orchestration & runtime intelligence, Scripts/Tooling, Documentation).
+- Root dependency & environment manifests retained (`requirements.txt`, `environment.yml`).
+- Obsolete or ambiguous module references cleaned from indices & docs.
+
+### Benefits Realized
+1. Clearer project focus & cognitive load reduction.
+2. Simplified onboarding (deterministic workspace + curated essential deps).
+3. Sharper boundaries among C++ core, .NET UI, Python orchestration.
+4. Foundation for incremental AINLP ingestion & harmonized governance tooling.
+
+### Post‑Reorganization Active Pillars
+- C++ Core (consciousness / performance kernels) under `core/`.
+- .NET Interface (`interface/AIOS.UI`, services & models) under `interface/`.
+- Python AI & orchestration (`ai/`, `runtime_intelligence/`, `scripts/`).
+- Governance & Tachyonic Docs (`docs/`, `docs/tachyonic/`).
+
+### Stability Guarantees
+- Future structural adjustments must append a changelog entry (tachyonic) and update this capsule rather than introducing new root status files.
+- Any new root status artifact requires explicit justification per Embedded Root Hygiene Capsule.
+
+Status: Reorganization COMPLETE; source file ingested & deprecated (guard‑protected against resurrection).
+
