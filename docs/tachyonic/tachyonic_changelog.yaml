@@ -173,3 +173,12 @@
     Consolidate transient environment troubleshooting (Windows Python registry cleanup) into master context to avoid long-lived root maintenance guides.
   harmonization: >
     Preserves critical recovery knowledge while preventing root clutter and enabling iterative extension via a single environment recovery capsule.
+
+- kind: ingestion
+  file: README_backup.md
+  old_path: /README_backup.md
+  date: 2025-08-15
+  reason: >
+    Retire redundant orchestrator overview README variant by embedding historical narrative into AIOS_PROJECT_CONTEXT.md (Historical Orchestrator Readme Capsule) to enforce a single canonical top-level README.
+  harmonization: >
+    Eliminates parallel high-level docs reducing drift risk while preserving rich semantic legacy content for AI embedding within governed capsule architecture.
