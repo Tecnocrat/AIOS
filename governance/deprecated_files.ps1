@@ -10,4 +10,5 @@ $Global:AIOS_DeprecatedRootFiles = @(
     'SESSION_SUMMARY.md'
     'SAFETY_PROTOCOL.md'
     'SAFETY_IMPLEMENTATION_SUMMARY.md'
+    'safety_demonstration.py'
 )

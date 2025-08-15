@@ -62,7 +62,11 @@
       "requirements_essential.txt",
       "requirements.txt",
       "root_clutter_guard.log",
-      "ROOT_HYGIENE_POLICY.md"
+      "ROOT_HYGIENE_POLICY.md",
+      "safety_demonstration.py",
+      "SAFETY_IMPLEMENTATION_SUMMARY.md",
+      "SAFETY_PROTOCOL.md",
+      "setup.log"
     ]
   },
   ".git": {
@@ -610,7 +614,6 @@
   ".git\\objects\\0e": {
     "folders": [],
     "files": [
-      "2f66ddb60cc4ae7971fe6bfc7edc5ef97d678a",
       "6138f447271bd8c98d841136f9ee895c023b7e",
       "6bd32cdbc3a8f78577bfb25deab299f29c9554",
       "addde1ad4972bf28f9c6aec5232d3aeefa4fe5",
@@ -635,7 +638,6 @@
     "folders": [],
     "files": [
       "1e560dd27950e6cd35394fb8b84890da575b16",
-      "2981dbd25dae41184172fd90e0418b6596c394",
       "48f432e35d19903e7e3318a53ef3eeb99b037a",
       "92fe35038a2a844b018d4ef79de734354ac787",
       "a3aa64fe0e184173583a925f5c2d4beef20af0",
@@ -731,7 +733,6 @@
       "601360333ebd09ed2b32ab9b39b1ae9c578330",
       "a46f79673204716a4f6c336cb7e40f3451d307",
       "a5214c9884a5a575a99d6ab8bc34c53d52948e",
-      "a9ff6c9f99a2990a9a0060dd1095d06158305f",
       "c93bb22fda4359a8118e56c84e39d6c057660e"
     ]
   },
@@ -928,8 +929,7 @@
       "7a45d477b7bcdef4affd0b6fe2457ce261e38c",
       "ae2a064a0c1c44d7c53402b491aecc101f04cb",
       "d4b63ef4547dd0b64bb1360a28cb5ab43749b5",
-      "d57b59ada592a4b5cd6f7d22daec50f9458628",
-      "ea6e36f76d66262737fb75dd70f28bfea99517"
+      "d57b59ada592a4b5cd6f7d22daec50f9458628"
     ]
   },
   ".git\\objects\\2a": {
@@ -974,7 +974,6 @@
     "files": [
       "3f02a17d3ca9f863e5238d4d171edf3a53db00",
       "4513cfa7f7a48639a0b123892ef33ed3c9c731",
-      "6ef9f5d69950e697015bd0a9f810a4b4e1d97f",
       "a7e72d5b55015b30f9d71d4f51d2e012e76c0e",
       "aba1c2d713c8bd8d5306ac49a48a47a15f26b9",
       "b8b12d8aaa38a163f9b6c86ce70af25491909e",
@@ -987,7 +986,6 @@
     "files": [
       "14550ae26e5969ec4ec869d7d5f2579833e1d1",
       "2a5ce392278f823832b805c3e8a32c75b8a8a7",
-      "8009bdecb672df53b6c7cd8b526a816e37b2c8",
       "92f7f6c8279bb4932a928706a8dccc642f4c0a",
       "bcf56aae8303a6ef8c8b979e856613d39fbfba",
       "e22f3c9f4922c4e778935e5dcce7733ca7ec63",
@@ -1080,7 +1078,6 @@
       "1affce3f0f2af1c997d04f13b9c063bb3e721d",
       "31e2204dbdc238b89a8c7e9275a8e5de51980e",
       "3886babe7adc371de8be38699a1f51a63c4ad3",
-      "396c610eadcb103f9e038fbd53e0a3431c66be",
       "7fb34e0230936e9028ea3eba03d6b1513e8bfe",
       "a32e346905d4bd1d9dd2c6f57c6b9f17a94883",
       "a916d455566b43930879a6ccca491e322a3845"
@@ -1130,14 +1127,12 @@
       "22f3e9a80ee5b3441e52439df4635ac234b805",
       "4cef553a0eccd9e256317d084fb1db9f08a721",
       "8cfdcd63015dbffef62abb87915d899f613a54",
-      "caf8d057ce6bccaa14f632c3b8c52a9fcb46eb",
-      "de8bb964b5d315de58757fd5a25a40e3dc8f70"
+      "caf8d057ce6bccaa14f632c3b8c52a9fcb46eb"
     ]
   },
   ".git\\objects\\3a": {
     "folders": [],
     "files": [
-      "4c01bdbc9e32d309fcfa62c57fa5fe309e3361",
       "5a91b8b0df476f6d79c75c5a4c05d67f775ef3",
       "5eeb56a32cca5f19fd845ff8c6fc861d205c65",
       "766756404fa55a52d40d6597cfb4b0cd549a2a",
@@ -1700,8 +1695,7 @@
       "33aaa219345fcf50ecccccc1249524dfd7b676",
       "555e5797dd79b3f8ee4db9a1e6501042d81dd6",
       "8f3deb54ba2086c434eb4cc6d47af1089be24b",
-      "9fcbd5a6be8662c026cbcb82acc1dfb3d2f3f0",
-      "f9eb673e6b535c77636c10967cc64921dce3a9"
+      "9fcbd5a6be8662c026cbcb82acc1dfb3d2f3f0"
     ]
   },
   ".git\\objects\\6a": {
@@ -1722,7 +1716,6 @@
   ".git\\objects\\6c": {
     "folders": [],
     "files": [
-      "596708c4475e925a2eb850f51b6db842ad3d80",
       "869aa6d8a4d171c85882bf0177f7444a2a31eb",
       "8894b7db3b090370440608e80a2b3190cc8c82",
       "8ba441d1fd4bf43e28c0f06c1e88c0542b1ea6",
@@ -1759,8 +1752,7 @@
       "2e734808ad4ea10acf84bd97a7c53063dde9f4",
       "61b614d56870ffebf30839bb26a1f335c5b350",
       "7554c66f0a2b31e0d65d189d995a24753273cb",
-      "cb9ce883fb6df1d1de21b17103750ddecc58b3",
-      "fceb94ee76e2017b3dd753e857386f7ef9793b"
+      "cb9ce883fb6df1d1de21b17103750ddecc58b3"
     ]
   },
   ".git\\objects\\70": {
@@ -1997,7 +1989,6 @@
       "087fc50b14d4bf8ebe70c3abdb81fca89ae7ab",
       "43779bc7f4d3cc1a0bfabe7221a74c2aa16a49",
       "8739ab501f30582423aeff2efadabbd57f670e",
-      "bfb05f1978909c3fe82012e66f611c108b2713",
       "bffa91541507eb8faab33d2595722ff7a8759e",
       "f771aa4beb7d8567ea6ee32c15eab6716c91a1"
     ]
@@ -2010,7 +2001,6 @@
       "5ee5b55a7f4aed72fc5c78ed3234cde8c4a0ca",
       "806835918556b5753eceeea37577f491500829",
       "84867c81666b4d6a1bed41e93a7f14252cdc42",
-      "92703383c763f8f5525992b0b8a9b04ff1d0cf",
       "c5a5ee064d4b3ca2b1eae1cce3a3662f000f8f",
       "e015fd193642096726ab36a0215a8b2885d885",
       "f06b918305cba1b8e12cce7351681b25612a27",
@@ -2286,7 +2276,6 @@
       "018b5c2a14856baf8ebf3efdbf268e4c073045",
       "35edd236b52c0e47a0094b5037d6dce3a9ff2a",
       "4ebc752fb8515b1fc0050d3ec96c2db7ce42fd",
-      "8bf6105079c061e6fa97b09875e4ec077a9d3e",
       "9f20a2780ce27c30b8ed8d37b34f4367cfc75b",
       "c577eb2670dfaa14e1f8010ff259159b26f250"
     ]
@@ -2494,8 +2483,7 @@
       "398a113649dd5895baba9b6e57c42e1097b46e",
       "398e666dedb9d90ab1be1693945039bba26736",
       "403554f903d212b0b4e2bf28fa0b5270830ae3",
-      "5b4a8b57bd4b7cb74031e9f7fd47897e8afd9e",
-      "bbad778934894bc305c9b448ad15e0a386c6d0"
+      "5b4a8b57bd4b7cb74031e9f7fd47897e8afd9e"
     ]
   },
   ".git\\objects\\ae": {
@@ -2553,7 +2541,6 @@
     "folders": [],
     "files": [
       "0000a7dfbe07bf9bac9da23a60b593cf745f46",
-      "7a72213752097a7a84fbbaf70b36ce92d08d3d",
       "8728d07c0be5ac05bcd1d7df091a95fb4cd23d",
       "a40093943151acaa78bcb0238c9850afe7f6d7",
       "b98dca8ac15617de585d1b53c601a777f77531",
@@ -2575,7 +2562,6 @@
   ".git\\objects\\b5": {
     "folders": [],
     "files": [
-      "42926da688b2878a1bc83606c6c1bbc29ee3b6",
       "9d05dfeef4d183edec195e59a93c583d51d2ae",
       "c7268fcb4945bfa7742b01eea3a5bd86822ddf",
       "d378ade2da29ec1fd2590383df82de7c187d5a",
@@ -2591,7 +2577,6 @@
       "27dba66d9e568ebecebd04674e9a759bbd4c1d",
       "3a9fb338dd8a063391d8a6a5652739dbd64092",
       "61f675c96583ed1130e028acf6dab36d5423ea",
-      "72f195f012d8167f13eb95003a96c7335b3707",
       "8804a620d5cbceb7857153054ad446d8d29def",
       "9d91f2080a7e40c3483895e39eb31518615a9a",
       "d1b709c7100e71e4b9bc0323d53d64cee15f35",
@@ -2605,7 +2590,6 @@
       "19c888d038f3ca5acc4d7ac2a18243a2f1b31b",
       "40007081de7113db35b7cc6aa02bbb38ba6d17",
       "63e8c9721c72ce9e7d7b6f3fef5511542604ba",
-      "7228a2fe889afc8c49262d5ac7fc69952ed773",
       "9b55a4bfda95b3d38bcf57668056ce67275c2c",
       "a76e89f4259778a6cc1943950ee3e7f2893467",
       "bfd1ef11b3a3fde446a776496850981f21dcbe"
@@ -2711,7 +2695,6 @@
       "c29aafc51967e81b66f8820d928954f0d51c5f",
       "cb049c36e629edf67093fbafd858fa6f49cbbf",
       "e5349732cc5d23bceba2a815097e546ce85392",
-      "e6eab88c0a9b9ba993de8389be7a0e041a2b1e",
       "e7b9d798c62c90ad693c00f9ff30b8970c3181",
       "fc9def37fbd46405b5364115fa72b054572331"
     ]
@@ -2768,7 +2751,6 @@
   ".git\\objects\\c5": {
     "folders": [],
     "files": [
-      "0401c4f3dc1f238e304decb8943d2c40768f36",
       "177c15c09c96d904402a0f509c10db1a12a369",
       "400683fbd9244fd264c1668a77fd20688329bc",
       "4c76cdee1f4dea5fc2d1d6208af176193683aa",
@@ -2829,7 +2811,6 @@
   ".git\\objects\\ca": {
     "folders": [],
     "files": [
-      "0274879601b0c18c03bb042057e669dcf7b2d2",
       "11589149e8f7724a6676cc41d242d2126eaeab",
       "53e545e37992bea28a77cb1bbe9c0457e19337",
       "6e55e7c676b6e1c5d239d3effed805c4cdc0b8",
@@ -2894,7 +2875,6 @@
       "65362c21af56fab65d87423fd63d12ced5a451",
       "7b5061de56baac266d9e856ac5f4757fdffdcb",
       "a6f322f082f51a4af0842ec5de2e5a0e3a71bd",
-      "b841a393272793822ae1d07bdd7323c45b2496",
       "e86fb3241f82ba05ea548ed74c93c5ff9772f1"
     ]
   },
@@ -2976,7 +2956,6 @@
     "files": [
       "0086219c266fb08f443700652a15f669632594",
       "08655f0db0740fc19baa5ebe0fae62fea50aea",
-      "44e67af9ef88d39acc24946da41b80f6e55a54",
       "49a2dd37aa1b0e95017ae78430927bb887b3a1",
       "5a37f959239419d9d58f3d810adc62f4366c7d",
       "858f7e223ac3bd4eafc7b7672aa06c34e88ba6",
@@ -3006,7 +2985,6 @@
       "62105ce78373e013e100490a7eb9e5ab0f7a14",
       "6a61b976a0ce9dcc9201885413e89c4de4fe0d",
       "774b8034406a00d37537c9d229d056ba0ac1c4",
-      "a73715a1d3a7ac15cb09790eb6e153a2d290ed",
       "b28b953695521c38952efe87ae41cdc1c0b572",
       "d7aec261d7d9a169e74094e03b395d7d0834e9"
     ]
@@ -3059,7 +3037,6 @@
   ".git\\objects\\de": {
     "folders": [],
     "files": [
-      "202f91f484f91840f5e85b8b21de2bfcda2022",
       "2103cd6ab6fb9d71b4b8635bf48a892f45f5a2",
       "2ba8ce79e0db844568a145888f06a86177f359",
       "732216a3250168a3acdbad34328656ad55fdbf",
@@ -3244,7 +3221,6 @@
       "8448b62c11e514b25acbff57a26b46cd0cf49d",
       "89b40e1e152fe0333a0d965c63c6fd570ef0e7",
       "8e37068868639824570c48bc9b20378fb54ab7",
-      "aaed1e5b0080c2ab8234e1f3a1922b028cc6e9",
       "ce13bb3666f713bb435e327c051f16845c4d0a",
       "e500fc7d43d0ff863685e81cc834d152e6b5be",
       "eae1118eedd841cf1cee8e1e9ff0a241769357",
@@ -4128,7 +4104,6 @@
       "test_consciousness_emergence.py",
       "test_python_env.py",
       "test_results.json",
-      "test_safety_validate.py",
       "test_tensorflow_training_cell.py"
     ]
   },
@@ -5156,7 +5131,6 @@
       "archive",
       "chatgpt",
       "chatgpt_integration",
-      "safety",
       "summary",
       "tachyonic",
       "tachyonic_archive",
@@ -5229,7 +5203,6 @@
       "folder_structure.json",
       "PATH_1_BREAKTHROUGH_SUMMARY.md",
       "PATH_1_TESTING_GUIDE.md",
-      "SAFETY_PROTOCOL_MAPPING.md",
       "STRATEGIC_DEVELOPMENT_PATH_2025_2026.md"
     ]
   },
@@ -5557,13 +5530,6 @@
       "folder_structure.json"
     ]
   },
-  "docs\\safety": {
-    "folders": [],
-    "files": [
-      "SAFETY_IMPLEMENTATION_SUMMARY.md",
-      "SAFETY_PROTOCOL.md"
-    ]
-  },
   "docs\\summary": {
     "folders": [],
     "files": [
@@ -5577,9 +5543,7 @@
     ]
   },
   "docs\\tachyonic": {
-    "folders": [
-      "rollback_snapshots"
-    ],
+    "folders": [],
     "files": [
       "AIOS.Harmonizer.AINL.md",
       "path_20250619_221329.md",
@@ -5604,27 +5568,6 @@
       "system_health_report_20250811_202450.json",
       "system_health_report.json",
       "system_health_report.latest.json"
-    ]
-  },
-  "docs\\tachyonic\\rollback_snapshots": {
-    "folders": [
-      "58",
-      "f9"
-    ],
-    "files": [
-      "snapshots.jsonl"
-    ]
-  },
-  "docs\\tachyonic\\rollback_snapshots\\58": {
-    "folders": [],
-    "files": [
-      "58ca4f9c6a1ff399234695a3cb73cebcb0b323b5ef2a72d160e36766916be577.snap"
-    ]
-  },
-  "docs\\tachyonic\\rollback_snapshots\\f9": {
-    "folders": [],
-    "files": [
-      "f9236f4d26e9873a60e8cfd83709419af8a96c30f11f2450ebc9f460dff777b5.snap"
     ]
   },
   "docs\\ui": {
@@ -5657,7 +5600,6 @@
       "environment_report_20250814_001402.json",
       "environment_report_20250814_001545.json",
       "environment_report_20250814_002008.json",
-      "environment_report_20250814_004222.json",
       "environment_report_latest.json"
     ]
   },
@@ -5678,9 +5620,6 @@
       "sandbox"
     ],
     "files": [
-      "organism_5c3507b1.py",
-      "organism_adf629de.py",
-      "organism_fce77c9d.py",
       "population_test_evolution_1751217054.json"
     ]
   },
@@ -7034,8 +6973,6 @@
       "aios_admin.py",
       "index_tools.py",
       "README.md",
-      "safety_demo.py",
-      "safety_rollback.py",
       "self_similarity_analyzer.py",
       "subprocess_manager.py",
       "system_health_check.py",
@@ -7045,9 +6982,6 @@
   "runtime_intelligence\\tools\\__pycache__": {
     "folders": [],
     "files": [
-      "__init__.cpython-312.pyc",
-      "safety_demo.cpython-312.pyc",
-      "safety_rollback.cpython-312.pyc",
       "subprocess_manager.cpython-312.pyc",
       "system_health_check.cpython-312.pyc"
     ]
@@ -7118,9 +7052,7 @@
   "safety_logs": {
     "folders": [],
     "files": [
-      "safety_20250629_200325.log",
-      "safety_20250815_082654.log",
-      "safety_20250815_100947.log"
+      "safety_20250629_200325.log"
     ]
   },
   "scripts": {
@@ -7159,9 +7091,7 @@
       "requirements.txt",
       "root_clutter_guard.ps1",
       "runtime_intelligence.py",
-      "safety_gateway.py",
       "safety_governor.py",
-      "safety_validate.py",
       "sem.py",
       "setup_env.ps1",
       "simple_test_orchestrator.ps1",
@@ -7170,18 +7100,13 @@
       "test_opencv_integration.py",
       "test_orchestrator.log",
       "universal_logging_v2.py",
-      "universal_logging.py",
-      "verify_and_purge_safety_docs.ps1",
-      "verify_and_purge_safety_protocol.ps1"
+      "universal_logging.py"
     ]
   },
   "scripts\\__pycache__": {
     "folders": [],
     "files": [
-      "evolution_lab_manager.cpython-312.pyc",
-      "evolutionary_code_mutator.cpython-312.pyc",
       "runtime_intelligence.cpython-312.pyc",
-      "safety_governor.cpython-312.pyc",
       "universal_logging.cpython-312.pyc"
     ]
   },

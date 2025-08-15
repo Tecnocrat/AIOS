@@ -16,6 +16,7 @@ SUMMARY_DIR = ROOT / "docs" / "summary"
 SUMMARY_MD_PATH = SUMMARY_DIR / "module_summaries.md"
 MANUAL_SUMMARY_PATH = SUMMARY_DIR / "module_summaries_input.txt"
 TACHYONIC_DIR = ROOT / "docs" / "tachyonic_archive"
+FOLDER_STRUCTURE_ARCHIVE_DIR = TACHYONIC_DIR / "folder_structure"
 
 # Deprecated root-level filenames centralized in
 # governance/deprecated_files.ps1 (mirrored for Python tools)
@@ -80,6 +81,33 @@ def save_to_json(
     out_dir.mkdir(parents=True, exist_ok=True)
     with (out_dir / output_file).open("w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
+
+
+def archive_existing_folder_structure(
+    output_folder: Path | str,
+    output_file: str,
+    scan_label: str,
+) -> None:
+    """If the target folder_structure.json exists, archive it with a timestamp.
+
+    Archives are stored under docs/tachyonic_archive/folder_structure.
+    Filename pattern: <scan_label>_folder_structure_<timestamp>.json
+    """
+    try:
+        output_folder = Path(output_folder)
+        existing = output_folder / output_file
+        if not existing.exists():
+            return
+        FOLDER_STRUCTURE_ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # Sanitize scan label (no path separators)
+        safe_label = scan_label.replace(os.sep, "_")
+        archive_name = f"{safe_label}_folder_structure_{ts}.json"
+        archive_path = FOLDER_STRUCTURE_ARCHIVE_DIR / archive_name
+        shutil.copy2(existing, archive_path)
+        print(f"Archived previous folder structure -> {archive_path}")
+    except Exception as e:
+        print(f"WARNING: Failed to archive existing folder structure: {e}")
 
 
 def cli_ui() -> str:
@@ -209,6 +237,8 @@ def execute_all() -> None:
                     "Purged deprecated root files from inventory:",
                     ", ".join(sorted(removed)),
                 )
+        # Archive existing snapshot before overwriting
+        archive_existing_folder_structure(output_folder, output_file, folder_name)
         save_to_json(structure, output_folder, output_file)
         print(f"Folder structure saved to {output_folder / output_file}")
     # 3. Update module summaries
@@ -256,6 +286,8 @@ if __name__ == "__main__":
                     for f in folder_struct[""]["files"]
                     if f not in DEPRECATED_ROOT_FILES
                 ]
+            # Archive existing before overwrite
+            archive_existing_folder_structure(out_folder, out_file, scan_name)
             save_to_json(folder_struct, out_folder, out_file)
             print(f"Folder structure saved to {out_folder / out_file}")
         elif menu_choice == "4":

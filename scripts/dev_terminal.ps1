@@ -11,7 +11,7 @@
   - Root hygiene governed by ROOT_HYGIENE_POLICY.md
 #>
 param(
-  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace','update-hashes')]
+  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace','update-hashes','safety-validate','prune-archives')]
   [string]$Action = 'menu',
   [ValidateSet('check','bootstrap','skip')]
   [string]$Environment = 'check',
@@ -21,16 +21,15 @@ param(
   [switch]$FinalizeHygiene
 )
 
-# Safety docs (canonical) paths for integrity hashing
-$SafetyDocs = @(
-  Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent) 'docs/safety/SAFETY_PROTOCOL.md',
-  Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent) 'docs/safety/SAFETY_IMPLEMENTATION_SUMMARY.md'
-)
-
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
+# Safety docs after $Root is known
+$SafetyDocs = @(
+  (Join-Path $Root 'docs/safety/SAFETY_PROTOCOL.md'),
+  (Join-Path $Root 'docs/safety/SAFETY_IMPLEMENTATION_SUMMARY.md')
+)
 $CorePath = Join-Path $Root 'core'
 $ScriptsPath = Join-Path $Root 'scripts'
 $WorkspaceFile = Join-Path $Root 'AIOS.code-workspace'
@@ -93,6 +92,34 @@ function Invoke-UpdateHashes {
     if ($c -ne $c2){ Set-Content -Path $implPath -Value $c2 -Encoding UTF8; Write-Log 'Updated implementation summary hash placeholder' 'INFO' }
   }
   if ($CoherenceFormat -eq 'json') { $hashMap | ConvertTo-Json | Write-Output }
+}
+
+function Invoke-SafetyValidate {
+  Write-Log 'Running safety validation (session+emergency)' 'INFO'
+  $py = Get-Command python -ErrorAction SilentlyContinue
+  if (-not $py) { Write-Log 'Python not found for safety validation' 'ERROR'; return 3 }
+  $scriptPath = Join-Path $ScriptsPath 'safety_validate.py'
+  if (-not (Test-Path $scriptPath)) { Write-Log 'safety_validate.py missing' 'ERROR'; return 3 }
+  $env:AIOS_SAFETY_AUTO_APPROVE = '1'
+  $proc = & $py.Path $scriptPath --mode both --json 2>&1
+  $exit = $LASTEXITCODE
+  if ($CoherenceFormat -eq 'json') { $proc | Write-Output } else { Write-Log "Safety validation exit code: $exit" 'INFO' }
+  if ($exit -ne 0) { Write-Log 'Safety validation reported issues' 'WARN' }
+  return $exit
+}
+
+function Invoke-PruneArchives {
+  param([int]$Keep=10)
+  $archiveDir = Join-Path $Root 'docs/tachyonic_archive/folder_structure'
+  if (-not (Test-Path $archiveDir)) { Write-Log "Archive directory not found: $archiveDir" 'WARN'; return }
+  $files = @(Get-ChildItem -LiteralPath $archiveDir -Filter '*_folder_structure_*.json' | Sort-Object LastWriteTime -Descending)
+  $count = $files.Length
+  if ($count -le $Keep) { Write-Log "Archive pruning not needed (count=$count, keep=$Keep)" 'INFO'; return }
+  $toRemove = $files[$Keep..($count-1)]
+  foreach($f in $toRemove){
+    try { Remove-Item -LiteralPath $f.FullName -Force; Write-Log "Pruned archive: $($f.Name)" 'INFO' } catch { Write-Log "Failed to remove archive $($f.Name): $($_.Exception.Message)" 'WARN' }
+  }
+  Write-Log "Archive pruning complete (kept $Keep of $count)" 'INFO'
 }
 
 # --- Coherence Metrics (LFC/GPC) ---
@@ -210,6 +237,8 @@ try {
   'env' { Invoke-EnvSetup }
   'workspace' { Invoke-Workspace }
   'update-hashes' { Invoke-UpdateHashes }
+  'safety-validate' { $sv = Invoke-SafetyValidate; if ($sv -ne 0) { exit $sv } }
+  'prune-archives' { Invoke-PruneArchives }
   }
   if ($FinalizeHygiene) {
     # Purge deprecated sentinel files (terminal.ps1 etc.) after metrics initially collected
