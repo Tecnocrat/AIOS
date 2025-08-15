@@ -97,5 +97,13 @@ Status legend: ✅ Implemented | ⚠️ Partial | ❌ Missing | 🧪 Planned/Pro
 - Guarded write confinement to `evolution_lab` baseline (future: explicit deny-list)
 - Mapping pending update for network policy stub (not yet implemented)
 
+## Ingestion Update (safety_demonstration.py Retired)
+- Legacy interactive demo ingested into:
+  - runtime_intelligence/tools/safety_demo.py (structured functions)
+  - scripts/safety_validate.py (JSON CLI)
+  - ai/tests/test_safety_validate.py (automated assertions)
+- Root safety_demonstration.py removed (added to deprecated guard) – deletion re-verified 2025-08-15.
+  - Deprecated guard entry retained intentionally as a sentinel (prevents re‑introduction).
+
 ---
 Generated automatically to harmonize `SAFETY_PROTOCOL.md` with live code state.

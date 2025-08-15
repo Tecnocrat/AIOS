@@ -10,7 +10,9 @@
    pwsh -File scripts/generate_folder_structure.ps1 -Output docs/AIOS/folder_structure.json
 #>
 param(
-  [string]$Output = 'docs/AIOS/folder_structure.json'
+  [string]$Output = 'docs/AIOS/folder_structure.json',
+  [string]$ArchiveDir = 'docs/tachyonic_archive/folder_structure',
+  [string]$Label = 'AIOS'
 )
 
 Set-StrictMode -Version Latest
@@ -67,10 +69,23 @@ foreach($k in $map.Keys){
 # Root key required
 Ensure-Entry ''
 
-# Ensure output directory
+# Ensure output & archive directories
 $outPath = Join-Path $Root $Output
 $outDir  = Split-Path $outPath -Parent
 if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir -Force | Out-Null }
+
+$archiveRoot = Join-Path $Root $ArchiveDir
+if (-not (Test-Path $archiveRoot)) { New-Item -ItemType Directory -Path $archiveRoot -Force | Out-Null }
+
+# Archive existing snapshot (if present)
+if (Test-Path $outPath) {
+  $ts = Get-Date -Format 'yyyyMMdd_HHmmss'
+  $safeLabel = ($Label -replace '[\\/:*?"<>|]', '_')
+  $archiveName = "$safeLabel`_folder_structure_$ts.json"
+  $archivePath = Join-Path $archiveRoot $archiveName
+  Copy-Item -LiteralPath $outPath -Destination $archivePath -Force
+  Write-Host "Archived previous folder structure -> $archivePath"
+}
 
 # Ordered PSCustomObject for stable JSON (root first)
 $ordered = New-Object System.Collections.Specialized.OrderedDictionary

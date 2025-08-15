@@ -115,4 +115,13 @@ Tip: Prefer running via Tasks palette for consistent environments and logs.
 - For Task 1.3: add a lightweight benchmark and profiling hooks to subprocess manager; document results in dev.opt.md
 - Keep validator changes conservative; gate any write path behind an explicit flag and log snapshot creation
 
+## Recent Safety Ingestion (2025-08-15)
+- Legacy root `safety_demonstration.py` fully ingested and deleted (see SAFETY_PROTOCOL_MAPPING.md ingestion update).
+- Structured replacement assets:
+  - `runtime_intelligence/tools/safety_demo.py`
+  - `scripts/safety_validate.py`
+  - `ai/tests/test_safety_validate.py`
+- Validation path: dev terminal action `safety-validate` (sets auto-approve env) → ensures unauthorized mutation blocked pre-session & emergency flow reachable.
+- Follow-up hygiene: remove stale references in any `folder_structure.json` snapshots on next doc consolidation pass (no new file created).
+
 — End of Knowledge Base —
