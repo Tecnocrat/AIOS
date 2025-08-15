@@ -209,3 +209,12 @@
     Introduce non-destructive environment diagnostics (integrated as dev terminal action env-diagnostics) and pip-tools lock refresh scaffold (lock-refresh action) to advance reproducible environments without expanding root clutter.
   harmonization: >
     Strengthens governance by enabling drift visibility (PATH/python multiplicity, lock hashes) and establishes deterministic dependency pathway via requirements.in + hashed lock artifacts under locks/.
+
+- kind: ingestion
+  file: PYTHON_ENVIRONMENT_SUCCESS.md
+  old_path: /PYTHON_ENVIRONMENT_SUCCESS.md
+  date: 2025-08-15
+  reason: >
+    Capture environment remediation success snapshot inside Environment Recovery Capsule revision to avoid persistent celebratory status files at root.
+  harmonization: >
+    Consolidates environment lifecycle narrative (problem -> cleanup -> success) within single governed capsule enabling future automated verification linkage.
