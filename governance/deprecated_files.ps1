@@ -8,4 +8,6 @@ $Global:AIOS_DeprecatedRootFiles = @(
     'tachyonic_changelog.yaml'
     'tachyonic_changelog.json'
     'SESSION_SUMMARY.md'
+    'SAFETY_PROTOCOL.md'
+    'SAFETY_IMPLEMENTATION_SUMMARY.md'
 )
