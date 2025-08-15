@@ -28,3 +28,6 @@ Review prompts (use in PRs and code reviews):
 - If this is a wrapper, does its docstring point to the canonical tool and explain why it exists?
 - Are VS Code tasks provided for common operations to reduce ad-hoc terminal commands?
 - Are archived outputs and logs written under docs/tachyonic_archive/ where applicable?
+
+Ingestion notes:
+- Reorganization status now embedded in `AIOS_PROJECT_CONTEXT.md` (Historical Reorganization Capsule). Do not recreate `REORGANIZATION_STATUS.md` at root.
