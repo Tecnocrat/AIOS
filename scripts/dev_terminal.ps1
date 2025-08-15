@@ -11,7 +11,7 @@
   - Root hygiene governed by ROOT_HYGIENE_POLICY.md
 #>
 param(
-  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace','update-hashes','safety-validate','prune-archives','guard-report','normalize-guard-log','truncate-guard-log')]
+  [ValidateSet('menu','canvas','visor','orchestrator','all','env','workspace','update-hashes','safety-validate','prune-archives','guard-report','normalize-guard-log','truncate-guard-log','env-diagnostics','lock-refresh')]
   [string]$Action = 'menu',
   [ValidateSet('check','bootstrap','skip')]
   [string]$Environment = 'check',
@@ -209,6 +209,52 @@ function Invoke-TruncateGuardLog {
   Write-Log "Truncated guard log to last $Keep lines (was $($lines.Count))" 'INFO'
 }
 
+function Invoke-EnvDiagnostics {
+  Write-Log 'Running environment diagnostics (report-only)' 'INFO'
+  $py = Get-Command python -ErrorAction SilentlyContinue
+  if (-not $py) { Write-Log 'Python not found' 'WARN' }
+  $report = @{}
+  $report.python = if ($py){ @{
+      path=$py.Path;
+      version=(& $py.Path --version 2>$null);
+      where=(where.exe python 2>$null | Out-String).Trim().Split([Environment]::NewLine) | Where-Object { $_ }
+    } } else { $null }
+  $report.pip = try { (& pip --version) } catch { $null }
+  $venvActive = [bool]$env:VIRTUAL_ENV
+  $report.venv = @{ active=$venvActive; path=$env:VIRTUAL_ENV }
+  $coreReqPath = Join-Path $Root 'requirements.txt'
+  if (Test-Path $coreReqPath){ $report.requirements_hash = (Get-FileHash -Algorithm SHA256 -Path $coreReqPath).Hash }
+  $pyproject = Join-Path $Root 'pyproject.toml'
+  if (Test-Path $pyproject){ $report.pyproject_present = $true }
+  $locks = Get-ChildItem -LiteralPath (Join-Path $Root 'locks') -Filter '*.txt' -ErrorAction SilentlyContinue
+  $report.locks = @()
+  foreach($l in $locks){ $report.locks += [pscustomobject]@{ name=$l.Name; hash=(Get-FileHash -Algorithm SHA256 -Path $l.FullName).Hash } }
+  # PATH scan for stray python segments
+  $machinePath = [Environment]::GetEnvironmentVariable('PATH','Machine')
+  $userPath = [Environment]::GetEnvironmentVariable('PATH','User')
+  $regex = '(?i)python|conda|anaconda|miniconda'
+  $pathFindings = @{
+    machine = ($machinePath -split ';' | Where-Object { $_ -match $regex })
+    user    = ($userPath -split ';' | Where-Object { $_ -match $regex })
+  }
+  $report.path_findings = $pathFindings
+  $json = $report | ConvertTo-Json -Depth 6
+  $outDir = Join-Path $Root 'runtime_intelligence/logs/env'
+  if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir -Force | Out-Null }
+  $ts = Get-Date -Format 'yyyyMMdd_HHmmss'
+  $outFile = Join-Path $outDir "env_diagnostics_$ts.json"
+  Set-Content -Path $outFile -Value $json -Encoding UTF8
+  Write-Log "Environment diagnostics written: $outFile" 'INFO'
+  if ($CoherenceFormat -eq 'json') { $json | Write-Output }
+}
+
+function Invoke-LockRefresh {
+  Write-Log 'Refreshing pip-tools lock(s)' 'INFO'
+  $compileScript = Join-Path $ScriptsPath 'refresh_locks.ps1'
+  if (-not (Test-Path $compileScript)) { Write-Log 'Lock refresh script missing (refresh_locks.ps1)' 'ERROR'; return 3 }
+  pwsh -File $compileScript -Quiet:$Quiet
+}
+
 # --- Coherence Metrics (LFC/GPC) ---
 function Get-CoherenceMetrics {
   # Deprecated root files (must not exist)
@@ -329,6 +375,8 @@ try {
   'guard-report' { Invoke-GuardReport }
   'normalize-guard-log' { Invoke-NormalizeGuardLog }
   'truncate-guard-log' { Invoke-TruncateGuardLog }
+  'env-diagnostics' { Invoke-EnvDiagnostics }
+  'lock-refresh' { Invoke-LockRefresh }
   }
   if ($FinalizeHygiene) {
     # Purge deprecated sentinel files (terminal.ps1 etc.) after metrics initially collected

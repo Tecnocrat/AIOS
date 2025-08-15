@@ -1,0 +1,2 @@
+-r requirements.txt
+# Aggregated minimal core; additional extras defined in pyproject optional-dependencies.
