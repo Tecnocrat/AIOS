@@ -142,5 +142,14 @@
     "date": "2025-08-16",
     "reason": "Implement UP1 governance automation to auto-emit current-status-* capsules post validation run on material changes.",
     "harmonization": "Automates status lineage creation; removes manual root edits; prepares groundwork for trend batching (UP10)."
+  },
+  {
+    "kind": "kpi_threshold_update",
+    "file": "kpi_thresholds.json",
+    "old_path": "version 2 initial vision timing (5.0/0.5)",
+    "new_path": "version 2 tightened vision timings (3.0/0.12) with intrinsic module warm-up metrics",
+    "date": "2025-08-16",
+    "reason": "UP3 vision warm-up integration: shift timing KPIs to intrinsic frame processing durations and tighten targets.",
+    "harmonization": "Aligns KPI semantics with actual module performance; prepares for parallel scaling instrumentation (UP12)."
   }
 ]

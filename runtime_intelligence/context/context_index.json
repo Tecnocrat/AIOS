@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-08-16T21:21:03Z",
+  "generated_at": "2025-08-16T22:01:23Z",
   "source_file": "AIOS_PROJECT_CONTEXT.md",
   "capsules": [
     {
@@ -726,8 +726,8 @@
       "type": "capsule",
       "ingested_date": "2025-08-16",
       "start_line": 1359,
-      "end_line": 1397,
-      "content_hash": "610c786bcbef704c6ee712a00cccbedf1184dc7dbeebca0d674ee45aea6d549a",
+      "end_line": 1396,
+      "content_hash": "6e5d4c953379e1c96f3fda78214efb931e010ae1ebc78ae70b4a86c1b555c7d1",
       "semantic_tags": [
         "consciousness",
         "dependency",
@@ -743,12 +743,32 @@
       "token_estimate": 331,
       "jaccard_overlap_prev": 0.0769,
       "similarity_alert": true
+    },
+    {
+      "id": "capsule-6",
+      "title": "Capsule:",
+      "type": "capsule",
+      "ingested_date": "2025-08-16",
+      "start_line": 1397,
+      "end_line": 1427,
+      "content_hash": "e6ba8f877c953ba1c973efe9acb19cb4aab5b23ab76e04e328a69cb5ddfb011a",
+      "semantic_tags": [
+        "environment"
+      ],
+      "revision_chain": [],
+      "dates_all": [
+        "2025-06-29",
+        "2025-08-16"
+      ],
+      "token_estimate": 154,
+      "jaccard_overlap_prev": 0.1453,
+      "similarity_alert": false
     }
   ],
   "stats": {
-    "capsule_count": 36,
-    "total_lines_indexed": 1396,
-    "aggregate_token_estimate": 10647
+    "capsule_count": 37,
+    "total_lines_indexed": 1426,
+    "aggregate_token_estimate": 10801
   },
   "errors": []
 }
