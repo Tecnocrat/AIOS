@@ -1,9 +1,11 @@
 using System;
+using System.Diagnostics; // For Stopwatch
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Linq; // For Take on collections
 
 namespace AIOS.VisualInterface
 {
@@ -38,12 +40,34 @@ namespace AIOS.VisualInterface
         
         private Button _startMonitoringButton;
         private TextBlock _statusText;
+    private readonly CellularRuntimeBridge _bridge;
+    private DispatcherTimer _bridgeTimer;
+    private readonly UIMetricsEmitter _uiMetrics;
+    private readonly Stopwatch _frameSw = new();
         
         public AdvancedVisualizationWindow()
         {
             InitializeComponent();
             SetupAdvancedInterface();
+            var sp = ((App)Application.Current).ServiceProvider;
+            _bridge = sp.GetService(typeof(CellularRuntimeBridge)) as CellularRuntimeBridge ?? new CellularRuntimeBridge();
+            _uiMetrics = sp.GetService(typeof(UIMetricsEmitter)) as UIMetricsEmitter ?? new UIMetricsEmitter();
             StartMonitoring();
+            InitBridgeTimer();
+        }
+
+        private void InitBridgeTimer()
+        {
+            _bridgeTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+            _bridgeTimer.Tick += (_, __) =>
+            {
+                var m = _bridge.GetLatest();
+                if (m.Live)
+                {
+                    _statusText.Text = $"Live Bridge • Events {m.EventsPerSecond:F2}/s • Total {m.TotalEvents} • Modules {string.Join(',', m.ActiveModules.Take(4))}";
+                }
+            };
+            _bridgeTimer.Start();
         }
         
         private void InitializeComponent()
@@ -249,26 +273,27 @@ namespace AIOS.VisualInterface
         
         private void UpdateMetrics(object sender, EventArgs e)
         {
+            _frameSw.Restart();
             var time = DateTime.Now.TimeOfDay.TotalSeconds;
             
             // Simulate consciousness evolution with realistic patterns
             _consciousnessLevel = Math.Max(0, Math.Sin(time * 0.1) * 0.3 + 0.3 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (Random.Shared.NextDouble() - 0.5) * 0.1);
             
             _quantumCoherence = Math.Max(0, Math.Sin(time * 0.15 + 1) * 0.4 + 0.4 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (Random.Shared.NextDouble() - 0.5) * 0.1);
             
             _emergenceLevel = Math.Max(0, Math.Sin(time * 0.12 + 2) * 0.35 + 0.35 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (Random.Shared.NextDouble() - 0.5) * 0.1);
             
             _manifoldCurvature = Math.Max(0, Math.Sin(time * 0.08 + 3) * 0.3 + 0.3 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (Random.Shared.NextDouble() - 0.5) * 0.1);
             
             _nonLocalityCoherence = Math.Max(0, Math.Sin(time * 0.18 + 4) * 0.4 + 0.4 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (Random.Shared.NextDouble() - 0.5) * 0.1);
             
             _tachyonicFieldDensity = Math.Max(0, Math.Sin(time * 0.13 + 5) * 0.35 + 0.35 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (Random.Shared.NextDouble() - 0.5) * 0.1);
             
             // Update UI
             UpdateProgressBar(_consciousnessProgressBar, _consciousnessValueText, _consciousnessLevel);
@@ -277,6 +302,8 @@ namespace AIOS.VisualInterface
             UpdateProgressBar(_manifoldProgressBar, _manifoldValueText, _manifoldCurvature);
             UpdateProgressBar(_nonLocalityProgressBar, _nonLocalityValueText, _nonLocalityCoherence);
             UpdateProgressBar(_tachyonicProgressBar, _tachyonicValueText, _tachyonicFieldDensity);
+            _frameSw.Stop();
+            _uiMetrics.RegisterFrame(_frameSw.Elapsed.TotalMilliseconds);
         }
         
         private void UpdateProgressBar(ProgressBar progressBar, TextBlock valueText, double value)
@@ -288,6 +315,8 @@ namespace AIOS.VisualInterface
         protected override void OnClosed(EventArgs e)
         {
             StopMonitoring();
+            _bridgeTimer?.Stop();
+            _uiMetrics?.Dispose();
             base.OnClosed(e);
         }
     }

@@ -12,13 +12,19 @@ End-to-end validation across stacks:
 Light-weight; reuses existing scripts.
 """
 from __future__ import annotations
+
 import subprocess
 import json
 import sqlite3
 import sys
 import time
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
+from typing import Any, Dict, List, Optional, Tuple
+try:  # optional KPI crystal helper
+    from context_crystallization_engine import create_metric_crystal  # type: ignore
+except Exception:  # pragma: no cover
+    create_metric_crystal = None  # type: ignore
 
 ROOT = Path(__file__).resolve().parent.parent
 CORE_BUILD = ROOT / "core" / "build"
@@ -27,17 +33,23 @@ RI_LOGS = ROOT / "runtime_intelligence" / "logs" / "tachyonic"
 SUMMARY_FILE = RI_CONTEXT / "full_system_validation.json"
 CRYSTAL_DB = RI_CONTEXT / "knowledge_crystals.db"
 IS_WIN = sys.platform.startswith("win")
-VIEWER_NAME = "aios_tachyonic_viewer.exe" if IS_WIN else "aios_tachyonic_viewer"
+VIEWER_NAME = (
+    "aios_tachyonic_viewer.exe" if IS_WIN else "aios_tachyonic_viewer"
+)
 # Primary expected (single-config) path
 VIEWER_EXE = CORE_BUILD / "bin" / VIEWER_NAME
+AI_CONTEXT_DUMPS = ROOT / "runtime_intelligence" / "logs" / "aios_context"
+KPI_THRESHOLDS_FILE = (
+    ROOT / "runtime_intelligence" / "context" / "kpi_thresholds.json"
+)
 
-def _resolve_viewer_path() -> Path | None:
+def _resolve_viewer_path() -> Optional[Path]:
     """Locate viewer executable handling multi-config generators.
 
     Search order:
       1. core/build/bin/<viewer>
       2. core/build/bin/Debug/<viewer>
-      3. First match via glob core/build/**/aios_tachyonic_viewer*.exe (Windows)
+    3. First match via glob core/build/**/aios_tachyonic_viewer*.exe (Windows)
     """
     if VIEWER_EXE.exists():
         return VIEWER_EXE
@@ -45,7 +57,9 @@ def _resolve_viewer_path() -> Path | None:
     if debug_path.exists():
         return debug_path
     # Broad search (limited depth)
-    pattern = "aios_tachyonic_viewer.exe" if IS_WIN else "aios_tachyonic_viewer"
+    pattern = (
+        "aios_tachyonic_viewer.exe" if IS_WIN else "aios_tachyonic_viewer"
+    )
     for p in (CORE_BUILD / "bin").rglob(pattern):  # type: ignore[arg-type]
         return p
     return None
@@ -54,10 +68,10 @@ CRYSTAL_SCRIPT = ROOT / "scripts" / "context_crystallization_engine.py"
 
 
 def run(
-    cmd: list[str] | str,
-    cwd: Path | None = None,
+    cmd: List[str] | str,
+    cwd: Optional[Path] = None,
     timeout: int = 180,
-) -> tuple[int, str, str]:
+) -> Tuple[int, str, str]:
     if isinstance(cmd, str):
         shell = True
         final_cmd = cmd
@@ -78,7 +92,7 @@ def run(
         return 124, "", "TIMEOUT"
 
 
-def ensure_core_build():
+def ensure_core_build() -> List[Dict[str, Any]]:
     steps = []
     if not CORE_BUILD.exists():
         CORE_BUILD.mkdir(parents=True)
@@ -110,7 +124,7 @@ def ensure_core_build():
     return steps
 
 
-def run_viewer():
+def run_viewer() -> Dict[str, Any]:
     viewer_path = _resolve_viewer_path()
     if not viewer_path:
         return {"ran": False, "reason": "viewer_missing"}
@@ -118,7 +132,9 @@ def run_viewer():
     if RI_LOGS.exists():
         before = set(RI_LOGS.rglob("tachyonic_surface.*"))
     RI_LOGS.mkdir(parents=True, exist_ok=True)
-    code, out, err = run([str(viewer_path)], cwd=viewer_path.parent, timeout=120)
+    code, out, err = run(
+        [str(viewer_path)], cwd=viewer_path.parent, timeout=120
+    )
     after = set(RI_LOGS.rglob("tachyonic_surface.*"))
     new = [str(p) for p in after - before]
     bmp = [p for p in new if p.endswith(".bmp")]
@@ -133,7 +149,7 @@ def run_viewer():
     }
 
 
-def reindex():
+def reindex() -> Dict[str, Any]:
     code, out, err = run(
         [sys.executable, str(REINDEX_SCRIPT), "--emit-adjacency"], cwd=ROOT
     )
@@ -153,7 +169,7 @@ def reindex():
     }
 
 
-def crystallize():
+def crystallize() -> Dict[str, Any]:
     before_count = crystal_count()
     code, out, err = run(
         [
@@ -173,7 +189,7 @@ def crystallize():
     }
 
 
-def crystal_count():
+def crystal_count() -> int:
     if not CRYSTAL_DB.exists():
         return 0
     try:
@@ -187,21 +203,153 @@ def crystal_count():
         return -1
 
 
-def main():
+def _load_ui_metrics() -> Dict[str, Any]:
+    """Attempt to load UI/performance metrics emitted by a future UI instrumentation.
+
+    Expected path: runtime_intelligence/logs/ui/ui_metrics.json
+    Schema (proposed): {
+        "render_fps": float,
+        "cpp_python_latency_ms": float,
+        "ui_uptime_pct": float,
+        "state_restore_sec": float,
+        "metadata_rate_ctx_per_min": int
+    }
+    """
+    ui_dir = ROOT / "runtime_intelligence" / "logs" / "ui"
+    ui_file = ui_dir / "ui_metrics.json"
+    if not ui_file.exists():
+        return {}
+    try:
+        return json.loads(ui_file.read_text())
+    except Exception as ex:  # pragma: no cover
+        return {"error": str(ex)}
+
+
+def main() -> None:
     start = time.time()
     RI_CONTEXT.mkdir(parents=True, exist_ok=True)
-    result = {"generated_at": datetime.utcnow().isoformat() + "Z", "steps": {}}
+    result: Dict[str, Any] = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "steps": {},
+    }
     result["steps"]["build"] = ensure_core_build()
     result["steps"]["viewer"] = run_viewer()
     result["steps"]["reindex"] = reindex()
     result["steps"]["crystallization"] = crystallize()
+    # Runtime KPI ingestion (best-effort)
+    runtime_metrics: Dict[str, Any] = {}
+    try:
+        if AI_CONTEXT_DUMPS.exists():
+            dumps = sorted(
+                AI_CONTEXT_DUMPS.glob("ai_context_dump_*.json"),
+                key=lambda p: p.stat().st_mtime,
+                reverse=True,
+            )
+            if dumps:
+                latest = dumps[0]
+                with latest.open() as f:
+                    data = json.load(f)
+                summary = data.get(
+                    "aios_runtime_intelligence_dump", {}
+                ).get("session_summary", {})
+                cons = summary.get("consciousness_metrics", {})
+                runtime_metrics = {
+                    "source_file": str(latest),
+                    "events_per_second": summary.get("events_per_second"),
+                    "total_events": summary.get("total_events"),
+                    "active_modules": summary.get("active_modules"),
+                    "module_event_counts": summary.get("module_event_counts"),
+                    "current_consciousness_level": cons.get("current_level"),
+                    "emergence_patterns_detected": cons.get(
+                        "emergence_patterns"
+                    ),
+                }
+    except Exception as ex:
+        runtime_metrics = {"error": str(ex)}
+    result["runtime"] = runtime_metrics
+
+    # KPI threshold evaluation
+    kpi_eval: Dict[str, Dict[str, Any]] = {}
+    try:
+        if KPI_THRESHOLDS_FILE.exists():
+            thresholds = json.loads(KPI_THRESHOLDS_FILE.read_text())
+            kpis = thresholds.get("kpis", {})
+            # Evaluate only runtime surrogate KPIs we have metrics for
+            sur = kpis.get("runtime_surrogates", {})
+            # Merge in optional UI metrics (placeholders if absent)
+            ui_metrics = _load_ui_metrics()
+            merged_metrics = {**runtime_metrics, **ui_metrics}
+            # Evaluate runtime surrogate KPIs
+            for name, rule in sur.items():
+                cur = merged_metrics.get(name)
+                status = "unmeasured"
+                if cur is not None:
+                    if "min" in rule:
+                        status = "pass" if cur >= rule["min"] else "fail"
+                    if "max" in rule:
+                        status = (
+                            "pass"
+                            if status != "fail" and cur <= rule["max"]
+                            else "fail"
+                        )
+                kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+            # Evaluate Objective 1 & 2 & 3 KPIs if metrics present (still likely unmeasured)
+            for obj_key in ("objective1", "objective2", "objective3"):
+                obj_rules = kpis.get(obj_key, {})
+                for name, rule in obj_rules.items():
+                    cur = merged_metrics.get(name)
+                    status = "unmeasured"
+                    if cur is not None:
+                        if "min" in rule and cur >= rule["min"]:
+                            status = "pass"
+                        elif "min" in rule:
+                            status = "fail"
+                        if "max" in rule and cur is not None:
+                            if cur > rule["max"]:
+                                status = "fail"
+                            elif status != "fail":
+                                status = "pass"
+                    kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+            result["kpi_evaluation"] = kpi_eval
+            result["kpi_capsule"] = thresholds.get("capsule")
+            if kpi_eval and create_metric_crystal:
+                try:
+                    snapshot = {k: {"value": v.get("value"), "status": v.get("status")} for k, v in kpi_eval.items()}
+                    capsule_ids = [thresholds.get("capsule", "chatgpt-integration-2025-06-29"), "development-environment-status-2025-08-16"]
+                    create_metric_crystal(
+                        metric_snapshot=snapshot,
+                        capsule_ids=capsule_ids,
+                        kpi_dimensions=list(kpi_eval.keys()),
+                        source_tag="full_system_validation_kpis"
+                    )
+                    result["kpi_crystal"] = {"capsules": capsule_ids, "dimensions": list(kpi_eval.keys())}
+                except Exception as ex:  # pragma: no cover
+                    result["kpi_crystal_error"] = str(ex)
+    except Exception as ex:
+        result["kpi_evaluation_error"] = str(ex)
     result["duration_seconds"] = round(time.time() - start, 2)
     # basic success heuristic
-    result["success"] = (
+    success_core = (
         result["steps"]["viewer"].get("bmp_count", 0) >= 1
         and result["steps"]["reindex"].get("edges", 0) > 0
         and result["steps"]["crystallization"].get("new_crystals", 0) >= 1
     )
+    # Augment with runtime KPI sanity if available
+    if runtime_metrics:
+        kpi_ok = True
+        eps = runtime_metrics.get("events_per_second")
+        total = runtime_metrics.get("total_events")
+        if eps is not None and eps <= 0:
+            kpi_ok = False
+        if total is not None and total < 10:  # minimal activity threshold
+            kpi_ok = False
+        # If we have explicit KPI evaluation entries, incorporate failures
+        if kpi_eval:
+            if any(v.get("status") == "fail" for v in kpi_eval.values()):
+                kpi_ok = False
+        result["success"] = success_core and kpi_ok
+    else:
+        result["success"] = success_core
     SUMMARY_FILE.write_text(json.dumps(result, indent=2))
     print(f"[full-system] Summary -> {SUMMARY_FILE}")
     print(json.dumps(result, indent=2))

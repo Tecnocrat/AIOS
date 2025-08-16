@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-16T14:15:16.663850Z",
+  "generated_at": "2025-08-16T17:09:55.600112+00:00",
   "steps": {
     "build": [],
     "viewer": {
@@ -12,17 +12,127 @@
     },
     "reindex": {
       "code": 0,
-      "edges": 23,
+      "edges": 33,
       "stderr_trunc": "",
       "indexed": true
     },
     "crystallization": {
-      "code": 0,
-      "new_crystals": 1,
+      "code": 1,
+      "new_crystals": 0,
       "total": 5,
-      "stderr_trunc": ""
+      "stderr_trunc": "  File \"C:\\dev\\AIOS\\scripts\\context_crystallization_engine.py\", line 343\n    if row:\nIndentationError: unexpected indent\n"
     }
   },
-  "duration_seconds": 8.43,
+  "runtime": {
+    "source_file": "C:\\dev\\AIOS\\runtime_intelligence\\logs\\aios_context\\ai_context_dump_AIOS_20250816_174844_47b01432.json",
+    "events_per_second": 0.5897928059775158,
+    "total_events": 62,
+    "active_modules": [],
+    "module_event_counts": null,
+    "current_consciousness_level": 0.0,
+    "emergence_patterns_detected": []
+  },
+  "kpi_evaluation": {
+    "events_per_second": {
+      "value": 0.5897928059775158,
+      "rule": {
+        "min": 0.1
+      },
+      "status": "pass"
+    },
+    "total_events": {
+      "value": 62,
+      "rule": {
+        "min": 10
+      },
+      "status": "pass"
+    },
+    "ui_uptime_pct": {
+      "value": null,
+      "rule": {
+        "min": 99.5
+      },
+      "status": "unmeasured"
+    },
+    "state_restore_sec": {
+      "value": null,
+      "rule": {
+        "max": 2.0
+      },
+      "status": "unmeasured"
+    },
+    "metadata_rate_ctx_per_min": {
+      "value": null,
+      "rule": {
+        "min": 1000
+      },
+      "status": "unmeasured"
+    },
+    "render_fps": {
+      "value": null,
+      "rule": {
+        "min": 60
+      },
+      "status": "unmeasured"
+    },
+    "entropy_quality_nist_score": {
+      "value": null,
+      "rule": {
+        "min": 0.9
+      },
+      "status": "unmeasured"
+    },
+    "mutation_effectiveness_pct": {
+      "value": null,
+      "rule": {
+        "min": 80
+      },
+      "status": "unmeasured"
+    },
+    "fractal_emergence_levels": {
+      "value": null,
+      "rule": {
+        "min": 3
+      },
+      "status": "unmeasured"
+    },
+    "cpp_python_latency_ms": {
+      "value": null,
+      "rule": {
+        "max": 50
+      },
+      "status": "unmeasured"
+    },
+    "parallel_instances": {
+      "value": null,
+      "rule": {
+        "min": 10
+      },
+      "status": "unmeasured"
+    },
+    "fluctuation_rate_per_min_per_instance": {
+      "value": null,
+      "rule": {
+        "min": 1
+      },
+      "status": "unmeasured"
+    },
+    "pattern_propagation_beneficial_pct": {
+      "value": null,
+      "rule": {
+        "min": 90
+      },
+      "status": "unmeasured"
+    },
+    "autonomous_improvements_per_day": {
+      "value": null,
+      "rule": {
+        "min": 5
+      },
+      "status": "unmeasured"
+    }
+  },
+  "kpi_capsule": "chatgpt-integration-2025-06-29",
+  "duration_seconds": 7.43,
   "success": false
 }
