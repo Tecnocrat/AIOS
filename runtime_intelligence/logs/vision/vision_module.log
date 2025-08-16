@@ -1,0 +1,10 @@
+2025-08-16 23:21:04,504 - [VISION] - INFO - OpenCV Vision Module created
+2025-08-16 23:21:04,505 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-08-16 23:21:04,505 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-08-16 23:21:04,508 - [VISION] - INFO - Feature detectors initialized
+2025-08-16 23:21:04,508 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-08-16 23:21:04,508 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-08-16 23:21:06,611 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\simple_consciousness.png, Time: 2.103s, Features: 453, Coherence: 0.794
+2025-08-16 23:21:06,629 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.017s, Features: 1005, Coherence: 0.769
+2025-08-16 23:21:06,662 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.031s, Features: 99, Coherence: 0.698
+2025-08-16 23:21:06,662 - [VISION] - INFO - OpenCV Vision Module shutting down

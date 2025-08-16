@@ -11,7 +11,7 @@
 ```
 AI Prompt: "I'm working on the AIOS consciousness emergence system. Please read these key files to understand the project architecture:
 1. Read: c:\dev\AIOS\README.md (project overview)
-2. Read: c:\dev\AIOS\CURRENT_STATUS.md (current state)
+2. Read: status capsule inside `AIOS_PROJECT_CONTEXT.md` (current-status-* section)
 3. Read: c:\dev\AIOS\docs\module_index.json (architecture map)
 4. List: c:\dev\AIOS\orchestrator\src (C++ core components)
 5. List: c:\dev\AIOS\scripts (Python orchestration)
@@ -166,7 +166,7 @@ python scripts/quantum_consciousness_canvas.py
 
 ### **If AI Seems Lost**
 ```
-"Please read c:\dev\AIOS\CURRENT_STATUS.md for immediate project status, then c:\dev\AIOS\docs\module_index.json for architecture understanding."
+"Please read the latest current-status-* capsule in AIOS_PROJECT_CONTEXT.md for immediate project status, then c:\dev\AIOS\docs\module_index.json for architecture understanding."
 ```
 
 ### **For Development Tasks**
@@ -199,3 +199,47 @@ python scripts/quantum_consciousness_canvas.py
 ---
 
 **🎯 GOAL**: Get new AI instance to full productivity in under 60 seconds using this guide!
+
+---
+
+## ⚡ Short-Term Upgrade Path Reference (Encoded 14-Step Roadmap)
+Use these lightweight codes in prompts (e.g., "Apply UP3 & UP5 deltas") to recall the full upgrade plan without restating details. Each entry: CODE – Focus | Core Actions | Success Signal.
+
+1. **UP1 – Governance Automation** | Auto status capsules; add generate_status_capsule script | >90% structural changes captured, no manual root edits.
+2. **UP2 – KPI Instrumentation** | Implement unmeasured KPIs (fps, uptime, latency, restore) | ≥80% KPIs measured/run.
+3. **UP3 – Vision Warm-Up & Metrics** | Pre-warm frame, entropy upgrade, parallel scaling | cold_start<3s, steady<0.12s.
+4. **UP4 – Core Plugin Telemetry** | C++ quantum operator plugin API + metrics export | Core metrics JSON every N sec.
+5. **UP5 – Orchestration Evolution Scheduler** | Mutation/evolution loop + fitness lineage in crystals | Weekly improvement crystal.
+6. **UP6 – UI KPI Dashboard** | Real-time KPI panel + capsule trigger button | Dashboard <500ms latency.
+7. **UP7 – Validation Harness Expansion** | Rebuild detect, fast/full modes, schema versioning | Full<5m, Fast<90s.
+8. **UP8 – Test Coverage Boost** | Pytest KPI logic, C++ plugin tests, UI smoke | ≥85% Python KPI coverage.
+9. **UP9 – Performance Tuning Vision** | Detector reuse, lazy load, kernel caching | First simple frame <1.5s.
+10. **UP10 – Crystal Domain Batching** | Domain crystals + composite + trend deltas | Expected crystal count per run.
+11. **UP11 – Risk & Rollback** | Threshold backup, DB migrate dry-run, soft-fail KPIs | Zero hard aborts on single metric failure.
+12. **UP12 – Parallel Metrics & Scaling** | Multi-instance vision + scaling KPIs | parallel_instances KPI populated.
+13. **UP13 – Trend & Audit Tools** | Integrity audit + KPI trend diffs | Audit passes; drift alerts only on real change.
+14. **UP14 – Documentation Sync Automation** | Auto-update upgrade capsule & roadmap when thresholds or KPIs change | Doc drift incidents = 0.
+
+### Prompt Snippets
+Quick recall: "Status vs plan? Summarize UP1, UP2 progress." / "Implement UP3 pre-warm + add entropy metric; create crystal with trend deltas (UP10)."
+
+### Progress Tracking Template (Embed in future capsules)
+| Code | Status | Notes | ETA |
+|------|--------|-------|-----|
+| UP1 | pending |  |  |
+| UP2 | pending |  |  |
+| UP3 | pending |  |  |
+| UP4 | pending |  |  |
+| UP5 | pending |  |  |
+| UP6 | pending |  |  |
+| UP7 | pending |  |  |
+| UP8 | pending |  |  |
+| UP9 | pending |  |  |
+| UP10 | pending |  |  |
+| UP11 | pending |  |  |
+| UP12 | pending |  |  |
+| UP13 | pending |  |  |
+| UP14 | pending |  |  |
+
+> Update this table inside a new status capsule (not this guide) to reflect ongoing execution.
+

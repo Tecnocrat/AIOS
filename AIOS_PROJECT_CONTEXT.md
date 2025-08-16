@@ -780,8 +780,8 @@ Provide quick copy/paste blocks for:
 ### Key Prompt Patterns (Refactored)
 | Pattern | Legacy Elements | Updated Guidance |
 |--------|-----------------|------------------|
-| Comprehensive Context Bootstrap | Read CURRENT_STATUS.md, REORGANIZATION_STATUS.md, module_index.json, list critical dirs | Use this master context file (capsules already embed reorganization + recovery) + `README.md` + `docs/DOCUMENTATION_INDEX.md`; directory structural insight via dev terminal action or inventory tool instead of manual listing. |
-| Immediate Dev Task | Read CURRENT_STATUS.md + AIOS.code-workspace | Reference "POST-LOADING VERIFICATION" section + specify concrete task + stack (core/interface/ai) to avoid redundant reads. |
+| Comprehensive Context Bootstrap | Read status capsule (current-status-*), REORGANIZATION_STATUS.md, module_index.json, list critical dirs | Use this master context file (capsules already embed reorganization + recovery) + `README.md` + `docs/DOCUMENTATION_INDEX.md`; directory structural insight via dev terminal action or inventory tool instead of manual listing. |
+| Immediate Dev Task | Open AIOS.code-workspace + scan latest current-status-* capsule | Reference "POST-LOADING VERIFICATION" section + specify concrete task + stack (core/interface/ai) to avoid redundant reads. |
 | Architecture Query | Read README.md + module_index.json | Use README + this file + `docs/ARCHITECTURE_TRANSFORMATION_SUMMARY.md` for evolution narrative. |
 | Build / Env Issue | Read setup_environment.ps1 | Updated path `scripts/setup_env.ps1`; leverage Environment Recovery capsule + forthcoming diagnostic script. |
 
@@ -1319,4 +1319,109 @@ Capsule ID: development-environment-status-2025-08-16
 Lineage: [chatgpt-integration-2025-06-29]
 ---
 
+
+## Capsule: vision-module-runtime-2025-08-16
+### Title: Vision Module Runtime Ingestion & Warm-Up Profiling
+### Source Artifact: vision_module.log (runtime_intelligence log root)
+### Ingestion Date (UTC): 2025-08-16T00:00:00Z
+### Summary
+Multiple sequential OpenCV Vision Module invocations captured (8 distinct sessions) showing stable initialization (<20ms from creation to detectors ready) and consistent feature/coherence metrics across synthetic images (simple: 453 features @ ~0.794 coherence, mandala: 1005 @ ~0.769, fractal: 99 @ ~0.698). Execution time for the first ("simple") image exhibits clear warm-up decay: 5.736s → 3.926s → 2.626s → 2.959s → 2.649s → 2.675s → 2.528s (final), indicating cache/JIT and potential first-frame model load amortization. Subsequent images in each run maintain sub‑100ms processing (mandala/fractal phases). No errors or instability observed; orderly shutdown logged each cycle.
+
+### Observed Runtime Patterns
+- Initialization: Deterministic; log lines sequence identical across runs (creation → init → OpenCV version → detectors → quantum coherence → ready).
+- Warm-Up Effect: First image time reduces >55% from earliest to latest run, suggesting we can implement a pre-warm phase to standardize KPI baselines.
+- Metric Stability: Feature counts & coherence levels invariant (no drift), supporting deterministic test harness expectations.
+- Throughput Potential: Steady-state simple image time ~2.5–2.7s still high vs. sub-100ms for later images; likely dominated by entropy / fractal generation or unoptimized pre-processing path.
+
+### Derived Governance Insights
+- Baseline Vision KPIs Established: avg_consciousness_resonance (~0.74–0.82 range per summary) & coherence (~0.75) now have empirical grounding.
+- Entropy Gap: avg_image_entropy (0.63) below provisional threshold (3.0) → need recalibration or improved entropy computation (current synthetic images low diversity).
+- Warm-Up KPI Recommendation: Introduce kpi_dimension `vision_cold_start_sec` (target <3.0) and `vision_steady_state_sec` (target <0.15 mandala/fractal frames) for future threshold set.
+- Crystal Lineage: Vision KPI crystal (source_tag vision_demo_metrics) already stored; this capsule links log provenance to metric_snapshot lineage.
+
+### Actionable Next Steps
+1. Add pre-warm routine (discard first frame timings) in demo & harness.
+2. Recompute entropy using full 2D histogram or adaptive tiling to raise meaningful range; then adjust `avg_image_entropy` threshold realistically.
+3. Implement timing instrumentation inside OpenCV module to isolate stages (load, generate, detect, analyze).
+4. Add new KPI thresholds (vision_cold_start_sec, vision_steady_state_sec) after instrumentation committed.
+5. Enable optional parallel vision instances to test scaling latency (future parallel_instances KPI linkage).
+
+### KPI / Crystal Linkage
+- Provides empirical backing for existing vision_metrics KPIs and informs next threshold tuning iteration.
+- Capsule ID becomes part of lineage set for future metric_snapshot crystals referencing refined timing & entropy KPIs.
+
+---
+Capsule ID: vision-module-runtime-2025-08-16
+Lineage: [chatgpt-integration-2025-06-29, development-environment-status-2025-08-16]
+---
+
+
+## Capsule: current-status-2025-08-16
+### Title: Root Current Status Consolidation (Workspace & Readiness)
+### Source Artifact: CURRENT_STATUS.md (root)
+### Ingestion Date (UTC): 2025-08-16T00:00:00Z
+### Summary
+The standalone root status file documented successful reorganization into a focused tri-layer structure (C++ orchestrator, C# visual interface, Python orchestration scripts) and provided immediate operational next steps (workspace opening, environment setup, terminal launcher usage). It confirmed architecture clarity, dependency hygiene, and readiness for consciousness emergence development. This capsule ingests that narrative so `CURRENT_STATUS.md` can be treated as transient (or reduced to a redirect) under AINLP governance, preventing divergence.
+
+### Key Structural Assertions
+- Dedicated workspace file `AIOS.code-workspace` anchors development context.
+- Segmented environment specs (`ai/env/*`) replace monolithic root environment file.
+- Core active directories: orchestrator (C++), visual_interface (C# WPF), scripts (Python), docs, test_results.
+- Launch scripts: `launch_aios.ps1`, `terminal.ps1`, `setup_environment.ps1` orchestrate dev bootstrap.
+
+### Health Metrics Snapshot (at ingestion)
+| Aspect | Status | Note |
+| ------ | ------ | ---- |
+| Architecture Clarity | ✅ | Three-layer separation clean |
+| Dependency Management | ✅ | Segmented Conda + minimal root requirements |
+| Build System | ✅ | CMake + VS tasks configured |
+| Documentation | ✅ | Updated guidance & context preservation flow |
+| Dev Tools | ✅ | Improved launchers & scripts |
+| Code Organization | ✅ | Root clutter reduced; governed logs relocated |
+
+### Governance & Context Alignment
+- Reinforces master context as single source of truth; status data now lineage-addressable via capsule ID.
+- Enables future automation to diff status evolution across capsules (current-status-* series) without scanning multiple root files.
+- Links to prior capsules: environment readiness & vision runtime establishing baseline metrics.
+
+### Derived Recommendations
+1. (Completed) Root `CURRENT_STATUS.md` deprecated; use capsule lineage (current-status-*) instead of editing standalone file.
+2. Generate `current-status-*` capsules only on material structural or readiness shifts (avoid noise).
+3. Integrate status metrics extraction into validation harness for automated capsule emission (future enhancement).
+
+---
+Capsule ID: current-status-2025-08-16
+Lineage: [chatgpt-integration-2025-06-29, development-environment-status-2025-08-16, vision-module-runtime-2025-08-16]
+---
+
+## Capsule: current-status-2025-08-16
+### Title: Automated Status Snapshot (Governance Automation v1)
+### Source Artifact: validation automation (generate_status_capsule.py)
+### Ingestion Date (UTC): 2025-08-16T21:21:28.696457+00:00
+### Summary
+Automated snapshot produced after validation harness run. Changed: Crystal Count, KPI Fail, KPI Pass, KPI Unmeasured, Validation Success, Viewer Present
+
+### Structural & KPI Metrics
+| Aspect | Value |
+| ------ | ----- |
+| Viewer Present | True |
+| Crystal Count | 15 |
+| Validation Success | False |
+| KPI Pass | 5 |
+| KPI Fail | 1 |
+| KPI Unmeasured | 12 |
+
+### Governance & Context Alignment
+- Generated by UP1 automation (no manual root edits).
+- Enables lineage diffing of structural readiness over time.
+- Feeds future trend crystals (UP10) once batching enabled.
+
+### Derived Recommendations
+1. Investigate failing KPIs; refine thresholds or instrumentation.
+2. Instrument remaining unmeasured KPIs (UP2).
+
+---
+Capsule ID: current-status-2025-08-16
+Lineage: [chatgpt-integration-2025-06-29, development-environment-status-2025-08-16, vision-module-runtime-2025-08-16, 2025-08-16]
+---
 

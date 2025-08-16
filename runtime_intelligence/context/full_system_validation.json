@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-16T20:05:06.802725+00:00",
+  "generated_at": "2025-08-16T21:20:54.838215+00:00",
   "steps": {
     "build": [],
     "viewer": {
@@ -12,14 +12,14 @@
     },
     "reindex": {
       "code": 0,
-      "edges": 33,
+      "edges": 35,
       "stderr_trunc": "",
       "indexed": true
     },
     "crystallization": {
       "code": 0,
       "new_crystals": 1,
-      "total": 10,
+      "total": 13,
       "stderr_trunc": ""
     }
   },
@@ -197,6 +197,6 @@
       "max_emergence_probability"
     ]
   },
-  "duration_seconds": 12.75,
+  "duration_seconds": 11.96,
   "success": false
 }
