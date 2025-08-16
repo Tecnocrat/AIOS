@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-16T21:21:03Z",
+  "generated_at": "2025-08-16T22:01:23Z",
   "edges": [
     {
       "from": "ainlp",
@@ -319,6 +319,15 @@
         "environment"
       ],
       "note": "low-overlap"
+    },
+    {
+      "from": "capsule-5",
+      "to": "capsule-6",
+      "jaccard_prev": 0.1453,
+      "shared_tags": [
+        "environment"
+      ],
+      "note": "ok"
     }
   ]
 }

@@ -78,6 +78,7 @@ endif()
 
 # Create the main library
 add_library(aios_core ${SOURCES} ${HEADERS} ${ASM_SOURCES})
+target_include_directories(aios_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # Link libraries
 target_link_libraries(aios_core
