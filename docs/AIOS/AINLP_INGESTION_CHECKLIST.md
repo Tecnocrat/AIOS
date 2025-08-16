@@ -36,3 +36,7 @@ Ingestion notes:
  - Quick context onboarding prompts embedded (Quick Context Prompts Capsule). Do not recreate `QUICK_CONTEXT_PROMPTS.md`; extend capsule for new standardized prompt patterns.
  - Full Python system cleanup procedures embedded (Environment Recovery Capsule revision). Do not recreate `PYTHON_SYSTEM_CLEANUP_GUIDE.md`; append new remediation steps under the revision block.
  - Python environment success snapshot embedded (Environment Recovery Capsule revision). Do not recreate `PYTHON_ENVIRONMENT_SUCCESS.md`; append success deltas to existing revision.
+ - Reorganization plan embedded (Historical Reorganization Capsule Appendix). Do not recreate `PROJECT_REORGANIZATION_PLAN.md`; extend appendix under the existing capsule.
+ - PowerShell terminal configuration guide embedded (Environment Recovery Capsule revision). Do not recreate `POWERSHELL_TERMINAL_GUIDE.md`; extend the revision instead.
+ - Phase 1A breakthrough summary embedded (Consciousness Evolution Phases Capsule). Do not recreate `PHASE_1A_BREAKTHROUGH_SUMMARY.md`; append future phase summaries within the capsule.
+ - Optimization & dual-interface implementation report embedded (Optimization Capsule). Do not recreate `OPTIMIZATION_REPORT.md`; append optimization epoch deltas under the capsule.
