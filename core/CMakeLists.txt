@@ -18,7 +18,7 @@ endif()
 
 # Compiler-specific options
 if(MSVC)
-    # Enable MASM assembly on MSVC toolchain
+    # Need MASM for kernel ops regardless of tachyonic surface toggle
     enable_language(ASM_MASM)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 endif()
@@ -52,11 +52,27 @@ file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 # Exclude the original problematic core files for now, use minimal version
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/aios_core.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/universal_quantum_holographic.cpp")
+list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
 
-# Optional assembly sources (Windows/MSVC only)
+option(AIOS_TACHYONIC_ASM "Enable MASM optimized tachyonic renderer" OFF)
+
+# Optional assembly sources (Windows/MSVC only, opt-in)
 set(ASM_SOURCES)
 if(MSVC)
-    list(APPEND ASM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/kernel_ops.asm)
+    # Always include stable kernel ops assembly
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/asm/kernel_ops.asm")
+        list(APPEND ASM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/kernel_ops.asm)
+    endif()
+    if(AIOS_TACHYONIC_ASM AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/asm/tachyonic_surface.asm")
+        message(STATUS "Tachyonic ASM renderer ENABLED")
+        list(APPEND ASM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/tachyonic_surface.asm)
+        add_compile_definitions(AIOS_TACHYONIC_ASM)
+    else()
+        message(STATUS "Tachyonic ASM renderer DISABLED (using C++ fallback)")
+        if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/asm/tachyonic_surface.asm")
+            set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/src/asm/tachyonic_surface.asm PROPERTIES HEADER_FILE_ONLY TRUE EXCLUDE_FROM_ALL TRUE)
+        endif()
+    endif()
 endif()
 
 # Create the main library
@@ -97,19 +113,26 @@ if(TENSORFLOW_FOUND)
     target_compile_definitions(aios_core PRIVATE AIOS_TENSORFLOW_ENABLED)
 endif()
 
-# Create executable
+# Create executable(s)
 add_executable(aios_main src/main.cpp)
 target_link_libraries(aios_main aios_core)
 
+# Tachyonic surface viewer (experimental)
+add_executable(aios_tachyonic_viewer src/tachyonic_surface_viewer_main.cpp)
+target_link_libraries(aios_tachyonic_viewer aios_core nlohmann_json::nlohmann_json)
+if(MSVC AND AIOS_TACHYONIC_ASM)
+    target_compile_definitions(aios_tachyonic_viewer PRIVATE AIOS_TACHYONIC_ASM)
+endif()
+
 # Set output directories
-set_target_properties(aios_core aios_main PROPERTIES
+set_target_properties(aios_core aios_main aios_tachyonic_viewer PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
     LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
     ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 )
 
 # Install targets
-install(TARGETS aios_core aios_main
+install(TARGETS aios_core aios_main aios_tachyonic_viewer
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
