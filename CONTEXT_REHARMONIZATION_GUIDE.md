@@ -31,7 +31,7 @@ This will explain why the director folder was removed and the workspace was rest
 AI Prompt: "Check the development environment setup:
 1. Read: c:\dev\AIOS\AIOS.code-workspace (current workspace config)
 2. Read: c:\dev\AIOS\requirements.txt (Python dependencies)
-3. Read: c:\dev\AIOS\environment.yml (Conda environment)
+3. Inspect segmented env specs under: c:\dev\AIOS\ai\env\ (choose profile: base/ai/dev/quantum)
 4. Read: c:\dev\AIOS\setup_environment.ps1 (environment setup script)"
 ```
 

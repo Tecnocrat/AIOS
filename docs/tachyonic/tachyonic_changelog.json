@@ -71,4 +71,13 @@
     "reason": "Eliminate duplicate standalone environment status file after successful capsule ingestion.",
     "harmonization": "Reinforces single source of truth. Removal executed via PowerShell Remove-Item for auditable governance (see PS history)."
   }
+ ,{
+    "kind": "move",
+    "file": "environment.yml",
+    "old_path": "/environment.yml",
+    "new_path": "/ai/env/(environment.base.yml, environment.ai.yml, environment.dev.yml, environment.quantum.yml)",
+    "date": "2025-08-16",
+    "reason": "Segment monolithic environment into layered profiles (base/ai/dev/quantum) under ai/env per Agentic File Creation Policy.",
+    "harmonization": "Reduces root clutter; enables minimal bootstrap + optional heavy stacks; improves reproducibility and dependency resolution speed."
+  }
 ]

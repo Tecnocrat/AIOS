@@ -13,8 +13,8 @@ c:\dev\AIOS\                        # 🎯 Dedicated workspace root
 ├── scripts/                       # 🐍 Python AI orchestration
 ├── docs/                          # 📚 Documentation & architecture
 ├── test_results/                  # 📊 Runtime analytics & backups
-├── requirements.txt               # 📦 Python dependencies
-├── environment.yml               # 🐍 Conda environment
+├── requirements.txt               # 📦 Python dependencies (core minimal)
+├── ai/ env/                      # 🐍 Segmented Conda env specs (base/ai/dev/quantum)
 ├── launch_aios.ps1               # 🚀 Main development launcher
 ├── setup_environment.ps1         # ⚙️ Environment setup
 └── terminal.ps1                  # 🖥️ Development terminal launcher
