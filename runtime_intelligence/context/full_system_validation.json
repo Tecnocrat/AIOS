@@ -1,0 +1,28 @@
+{
+  "generated_at": "2025-08-16T14:15:16.663850Z",
+  "steps": {
+    "build": [],
+    "viewer": {
+      "ran": true,
+      "code": 0,
+      "bmp_count": 0,
+      "ppm_count": 0,
+      "new_artifacts": [],
+      "stderr_trunc": ""
+    },
+    "reindex": {
+      "code": 0,
+      "edges": 23,
+      "stderr_trunc": "",
+      "indexed": true
+    },
+    "crystallization": {
+      "code": 0,
+      "new_crystals": 1,
+      "total": 5,
+      "stderr_trunc": ""
+    }
+  },
+  "duration_seconds": 8.43,
+  "success": false
+}

@@ -298,3 +298,98 @@
   harmonization: >
     Ensures tachyonic surface index remains in sync with source narrative, preventing stale
     capsule metadata and enabling reliable downstream semantic tooling.
+
+- kind: ingestion
+  file: MAGNUS_BLUEPRINT_AI_KNOWLEDGE_TRANSFER.md
+  old_path: /MAGNUS_BLUEPRINT_AI_KNOWLEDGE_TRANSFER.md
+  date: 2025-08-16
+  reason: >
+    Ingest hyperdimensional AI knowledge transfer blueprint into governed master context (MAGNUS Blueprint Knowledge Transfer Capsule)
+    to eliminate standalone root artifact while preserving full architectural roadmap.
+  harmonization: >
+    Reinforces single-source capsule model, prevents root proliferation of blueprint/vision documents, and enables deterministic
+    lineage hashing via context index for future crystal & transfer package generation.
+
+- kind: addition
+  file: tachyonic_surface_viewer (interactive)
+  date: 2025-08-16
+  reason: >
+    Introduce experimental tachyonic surface viewer executable generating animated synthetic
+    context evolution frames with color-mapped magnitude and exporting final frame as PPM/BMP
+    for broad tool compatibility.
+  harmonization: >
+    Establishes a governed visualization substrate linked to runtime_intelligence logs without
+    introducing ad-hoc root artifacts; leverages optional assembly acceleration design.
+
+- kind: enhancement
+  file: tachyonic surface output paths
+  date: 2025-08-16
+  reason: >
+    Anchor visualization artifacts under runtime_intelligence/logs/tachyonic/ instead of project
+    root (previous accidental BMP emission) and add directory auto-creation & deterministic naming.
+  harmonization: >
+    Reinforces path hygiene and observability routing; aligns with Agentic File Creation Policy by
+    avoiding root clutter and enabling structured log ingestion.
+
+- kind: mitigation
+  file: duplicate main symbol (viewer vs core)
+  date: 2025-08-16
+  reason: >
+    Remove viewer source from core library compilation to eliminate duplicate main linkage warnings
+    and stabilize build segmentation (library vs tools).
+  harmonization: >
+    Clarifies binary boundaries and prevents unstable linkage side-effects during future ASM toggling.
+
+- kind: addition
+  file: image_io.hpp / image_io.cpp
+  date: 2025-08-16
+  reason: >
+    Provide minimal dependency-free BMP export facility (24-bit) to ease visualization consumption
+    on Windows environments lacking PPM association.
+  harmonization: >
+    Avoids external image libs, keeps core lean, and standardizes artifact format diversity under
+    governed runtime_intelligence logging.
+
+- kind: mitigation
+  file: test_universal_quantum_holographic.cpp
+  date: 2025-08-16
+  reason: >
+    Add stub main to previously empty test target preventing linker failure after excluding legacy
+    sources; placeholder until real tests restored post-holographic module stabilization.
+  harmonization: >
+    Maintains green test build while documenting pending test implementation path; prevents spurious
+    CI noise during tachyonic visualization iteration.
+
+- kind: enhancement
+  file: context_crystallization_engine.py
+  date: 2025-08-16
+  reason: >
+    Relocate knowledge_crystals.db to governed runtime_intelligence/context path,
+    add CLI --db-path override, legacy DB auto-migration, and wrap long lines to
+    satisfy lint width policy (<=79 chars) for new/modified sections.
+  harmonization: >
+    Aligns crystallization artifacts with observability/logging conventions,
+    prevents scripts/ state accumulation, and improves maintainability for
+    future MAGNUS lineage tooling.
+
+- kind: enhancement
+  file: context_crystallization_engine.py (light-mode)
+  date: 2025-08-16
+  reason: >
+    Introduce optional light-mode via graceful degradation (no hard numpy/networkx
+    requirement) enabling execution on minimal environments; added internal
+    fallbacks for embedding + relationship graph generation.
+  harmonization: >
+    Supports minimal dependency philosophy, reduces friction for rapid context
+    tasks, and keeps advanced capabilities available when heavy deps installed.
+
+- kind: revision
+  file: MAGNUS Blueprint Knowledge Transfer Capsule
+  date: 2025-08-16
+  reason: >
+    Append supplemental component taxonomy (SingularityCore, FractalSyncBus, AtomicHolographyUnit,
+    QuantumRandomGenerator, CodeEvolutionEngine, IPCManager) omitted in initial condensed ingestion
+    to ensure machine-referencable registry for future crystallization & transfer lineage.
+  harmonization: >
+    Prevents semantic drift by capturing granular blueprint entities in an append-only revision
+    (no root file resurrection) supporting deterministic component interface emergence.

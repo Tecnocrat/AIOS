@@ -1,0 +1,91 @@
+#!/usr/bin/env python3
+"""MAGNUS Component Registry (Stub)
+
+Purpose:
+  Provide a machine-readable snapshot of MAGNUS taxonomy components
+  (Revision 2025-08-16) with current realization status across stacks.
+
+Behavior:
+  - Hard-coded list synced with AIOS_PROJECT_CONTEXT.md revision 2025-08-16
+  - Emits runtime_intelligence/context/magnus_components.json
+  - Future: auto-parse from context file; dynamic status via reflection
+"""
+from __future__ import annotations
+import json
+import time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT_DIR = ROOT / "runtime_intelligence" / "context"
+OUT_FILE = OUT_DIR / "magnus_components.json"
+
+COMPONENTS = [
+  {
+    "name": "SingularityCore",
+    "role": "central_orchestrator",
+    "status": "conceptual",
+    "language": "multi",
+    "dependencies": ["FractalSyncBus", "AtomicHolographyUnit"],
+    "revision": "2025-08-16",
+  },
+  {
+    "name": "FractalSyncBus",
+    "role": "state_synchronization",
+    "status": "conceptual",
+    "language": "multi",
+    "dependencies": [],
+    "revision": "2025-08-16",
+  },
+  {
+    "name": "AtomicHolographyUnit",
+    "role": "coherence_substrate",
+    "status": "referenced",
+    "language": "multi",
+    "dependencies": ["FractalSyncBus"],
+    "revision": "2025-08-16",
+  },
+  {
+    "name": "QuantumRandomGenerator",
+    "role": "entropy_source",
+    "status": "conceptual",
+    "language": "c++|python",
+    "dependencies": [],
+    "revision": "2025-08-16",
+  },
+  {
+    "name": "CodeEvolutionEngine",
+    "role": "evolution_driver",
+    "status": "prototype",
+    "language": "c#",
+    "dependencies": [],
+    "revision": "2025-08-16",
+  },
+  {
+    "name": "IPCManager",
+    "role": "cross_runtime_coordination",
+    "status": "conceptual",
+    "language": "multi",
+    "dependencies": [],
+    "revision": "2025-08-16",
+  },
+]
+
+
+def emit():
+  OUT_DIR.mkdir(parents=True, exist_ok=True)
+  payload = {
+    "generated_at": time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+    "revision_source": (
+      "AIOS_PROJECT_CONTEXT.md: MAGNUS Component Taxonomy Supplement "
+      "(2025-08-16)"
+    ),
+    "components": COMPONENTS,
+  }
+  tmp = OUT_FILE.with_suffix('.json.tmp')
+  tmp.write_text(json.dumps(payload, indent=2), encoding='utf-8')
+  tmp.replace(OUT_FILE)
+  print(f"[magnus-components] Wrote {OUT_FILE}")
+
+
+if __name__ == "__main__":
+    emit()

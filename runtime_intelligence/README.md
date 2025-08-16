@@ -120,6 +120,49 @@ Phase 2: Nested Structure (10+ files) ✅ ACTIVE
 
 ---
 
+## 🌐 Tachyonic Surface Visualization (Experimental)
+
+The `aios_tachyonic_viewer` executable produces an animated synthetic elevation/color map representing
+context change magnitudes over a time-like axis (X) and a core-distance heuristic (Y).
+
+Artifacts:
+- Final colored frame: `runtime_intelligence/logs/tachyonic/tachyonic_surface.bmp` (24-bit BMP)
+- Final raw frame: `runtime_intelligence/logs/tachyonic/tachyonic_surface.ppm` (P6 RGB)
+
+Controls (runtime):
+- `q` or `Esc`: abort animation early (last rendered frame still exported)
+- (Planned) `p`: pause/resume
+- (Planned) `s`: single-step frame advance
+
+Invocation (from repo root):
+```powershell
+core\build\bin\Debug\aios_tachyonic_viewer.exe
+```
+
+Optional custom output base (omit extension; .ppm/.bmp auto-added):
+```powershell
+core\build\bin\Debug\aios_tachyonic_viewer.exe C:\temp\my_surface
+```
+
+Color mapping:
+- Magnitude z ∈ [-1,1] mapped blue → cyan → green → yellow → red.
+- Future: intensity-based shading & optional height-based alpha.
+
+Assembly Acceleration:
+- Toggle (future) via CMake option `AIOS_TACHYONIC_ASM=ON` once the optimized renderer stabilizes.
+
+Governance Alignment:
+- Output paths auto-anchored under `runtime_intelligence/logs/tachyonic/` to avoid root clutter.
+- Changelog entries trace introduction, path corrections, and utility modules (BMP writer).
+
+Planned Enhancements:
+- Shading using z gradient derivative for pseudo-lighting.
+- Adjustable frame count & time scaling via CLI args.
+- Live integration with context_index change metrics (replacing synthetic sine noise).
+---
+
+---
+
 ## 📊 **Success Metrics & Validation**
 
 ### **Quantified Achievements:**
