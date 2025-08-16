@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """AIOS Full System Validation Harness
+                    }
 
-End-to-end validation across stacks:
+
+if __name__ == "__main__":
  1. Build C++ core (viewer target)
  2. Run tachyonic surface viewer -> PPM/BMP
  3. Reindex context (+ adjacency)
@@ -42,6 +44,8 @@ AI_CONTEXT_DUMPS = ROOT / "runtime_intelligence" / "logs" / "aios_context"
 KPI_THRESHOLDS_FILE = (
     ROOT / "runtime_intelligence" / "context" / "kpi_thresholds.json"
 )
+VISION_DEMO_SCRIPT = ROOT / "ai" / "demos" / "opencv_integration_demo.py"
+VISION_DEMO_OUTPUT = ROOT / "runtime_intelligence" / "logs" / "vision_demo"
 
 def _resolve_viewer_path() -> Optional[Path]:
     """Locate viewer executable handling multi-config generators.
@@ -268,7 +272,54 @@ def main() -> None:
         runtime_metrics = {"error": str(ex)}
     result["runtime"] = runtime_metrics
 
-    # KPI threshold evaluation
+    # Vision demo (OpenCV) summary ingestion (best-effort)
+    vision_summary: Dict[str, Any] = {}
+    try:
+        if VISION_DEMO_SCRIPT.exists():
+            VISION_DEMO_OUTPUT.mkdir(parents=True, exist_ok=True)
+            # Run only direct phase for speed
+            code, out, err = run([
+                sys.executable,
+                str(VISION_DEMO_SCRIPT),
+                "--phases","direct",
+                "--output-dir", str(VISION_DEMO_OUTPUT)
+            ], cwd=ROOT, timeout=120)
+            summary_path = VISION_DEMO_OUTPUT / "opencv_demo_summary.json"
+            if summary_path.exists():
+                raw = json.loads(summary_path.read_text())
+                # Aggregate basic metrics
+                vals = [r for r in raw.get("results", []) if not r.get("error") and r.get("kind") in {"simple","mandala","fractal"}]
+                def _avg(field: str) -> Optional[float]:
+                    num = [r.get(field) for r in vals if isinstance(r.get(field),(int,float))]
+                    return round(sum(num)/len(num),4) if num else None
+                vision_summary = {
+                    "invocation_code": code,
+                    "result_count": raw.get("count"),
+                    "avg_consciousness_resonance": _avg("consciousness_resonance"),
+                    "avg_coherence_level": _avg("coherence_level"),
+                    "avg_image_entropy": _avg("image_entropy"),
+                    "max_emergence_probability": max([r.get("emergence_probability",0.0) for r in vals], default=None),
+                    "summary_file": str(summary_path),
+                }
+                # Optional crystal for vision metrics
+                if create_metric_crystal and vision_summary:
+                    try:
+                        create_metric_crystal(
+                            metric_snapshot=vision_summary,
+                            capsule_ids=["chatgpt-integration-2025-06-29"],
+                            kpi_dimensions=[k for k in vision_summary.keys() if k.startswith("avg_") or k.endswith("probability")],
+                            source_tag="vision_demo_metrics"
+                        )
+                        vision_summary["vision_crystal"] = True
+                    except Exception as ex:  # pragma: no cover
+                        vision_summary["vision_crystal_error"] = str(ex)
+            else:
+                vision_summary = {"error": "summary_missing", "code": code, "stderr_trunc": err[-200:]}
+    except Exception as ex:  # pragma: no cover
+        vision_summary = {"error": str(ex)}
+    result["vision_demo"] = vision_summary
+
+    # KPI threshold evaluation (now includes vision metrics if produced)
     kpi_eval: Dict[str, Dict[str, Any]] = {}
     try:
         if KPI_THRESHOLDS_FILE.exists():
@@ -310,19 +361,49 @@ def main() -> None:
                             elif status != "fail":
                                 status = "pass"
                     kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+            # Vision metrics (aggregated demo summary)
+            vis_rules = kpis.get("vision_metrics", {})
+            for name, rule in vis_rules.items():
+                cur = (
+                    merged_metrics.get(name)
+                    or result.get("vision_demo", {}).get(name)
+                )
+                status = "unmeasured"
+                if cur is not None:
+                    if "min" in rule and cur >= rule["min"]:
+                        status = "pass"
+                    elif "min" in rule:
+                        status = "fail"
+                    if "max" in rule and cur is not None:
+                        if cur > rule["max"]:
+                            status = "fail"
+                        elif status != "fail":
+                            status = "pass"
+                kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
             result["kpi_evaluation"] = kpi_eval
             result["kpi_capsule"] = thresholds.get("capsule")
             if kpi_eval and create_metric_crystal:
                 try:
-                    snapshot = {k: {"value": v.get("value"), "status": v.get("status")} for k, v in kpi_eval.items()}
-                    capsule_ids = [thresholds.get("capsule", "chatgpt-integration-2025-06-29"), "development-environment-status-2025-08-16"]
+                    snapshot = {
+                        k: {"value": v.get("value"), "status": v.get("status")}
+                        for k, v in kpi_eval.items()
+                    }
+                    capsule_ids = [
+                        thresholds.get(
+                            "capsule", "chatgpt-integration-2025-06-29"
+                        ),
+                        "development-environment-status-2025-08-16",
+                    ]
                     create_metric_crystal(
                         metric_snapshot=snapshot,
                         capsule_ids=capsule_ids,
                         kpi_dimensions=list(kpi_eval.keys()),
                         source_tag="full_system_validation_kpis"
                     )
-                    result["kpi_crystal"] = {"capsules": capsule_ids, "dimensions": list(kpi_eval.keys())}
+                    result["kpi_crystal"] = {
+                        "capsules": capsule_ids,
+                        "dimensions": list(kpi_eval.keys()),
+                    }
                 except Exception as ex:  # pragma: no cover
                     result["kpi_crystal_error"] = str(ex)
     except Exception as ex:
