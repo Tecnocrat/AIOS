@@ -39,6 +39,7 @@ class JsonFileTelemetrySink : public ITelemetrySink {
 public:
     explicit JsonFileTelemetrySink(const std::string& root_dir, size_t flush_every=1);
     void on_sample(const CoreMetricSample& sample) override;
+    ~JsonFileTelemetrySink();
 private:
     std::string dir_;
     size_t flush_every_{1};
