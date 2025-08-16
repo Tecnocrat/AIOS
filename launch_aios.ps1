@@ -189,6 +189,8 @@ function Start-QuantumCanvas {
         return $false
     }
 }
+
+function Start-DualInterface {
     Write-ConsciousnessOutput "Launching Dual-Interface Consciousness System..." "QUANTUM"
     
     $success = $true

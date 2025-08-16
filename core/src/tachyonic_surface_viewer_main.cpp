@@ -17,6 +17,27 @@ using namespace aios::tachyonic;
 
 // Simple demo: generate synthetic magnitude data (sine wave + noise) and distance profile.
 int main(int argc, char** argv) {
+    // Establish observability output paths early
+    std::filesystem::path exeDir;
+    try {
+        exeDir = std::filesystem::absolute(std::filesystem::path(argv[0])).parent_path();
+    } catch(...) { exeDir = std::filesystem::current_path(); }
+    std::filesystem::path baseOut;
+    if(argc > 1) {
+        baseOut = argv[1];
+    } else {
+        // Anchor relative to project root by walking up from executable until we find runtime_intelligence or .git
+        std::filesystem::path probe = exeDir;
+        for(int i=0;i<6 && !std::filesystem::exists(probe/"runtime_intelligence");++i) probe = probe.parent_path();
+        if(std::filesystem::exists(probe/"runtime_intelligence")) {
+            baseOut = probe / "runtime_intelligence" / "logs" / "tachyonic" / "tachyonic_surface";
+        } else {
+            baseOut = exeDir / "tachyonic_surface"; // fallback local
+        }
+    }
+    std::filesystem::path ppmPath = baseOut; ppmPath += ".ppm";
+    std::filesystem::path bmpPath = baseOut; bmpPath += ".bmp";
+    try { std::filesystem::create_directories(bmpPath.parent_path()); } catch(...) {}
     const uint32_t cols = 256;
     const uint32_t rows = 8; // layer duplication for now
     std::vector<float> magnitudes(cols);
@@ -87,29 +108,15 @@ int main(int argc, char** argv) {
         float phase = f * 0.15f;
         renderFrame(phase);
         // Write a BMP for the last frame only (avoid flooding disk)
-        if(f==maxFrames-1){
-            aios::io::write_bmp_rgba("tachyonic_surface.bmp", buffer.data(), outW, outH);
-        }
+    if(f==maxFrames-1){ aios::io::write_bmp_rgba(bmpPath.string().c_str(), buffer.data(), outW, outH); }
 #ifdef _WIN32
         if(_kbhit()) { int c=_getch(); if(c=='q' || c==27) break; }
 #endif
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
 
-    // Determine output path (arg0 optional). Default under runtime_intelligence logs for observability.
-    std::filesystem::path outPath;
-    if(argc > 1) {
-        outPath = argv[1];
-    } else {
-        outPath = std::filesystem::path("..") / ".." / ".." / "runtime_intelligence" / "logs" / "tachyonic_surface.ppm"; // relative from build/bin/Debug
-    }
-    try {
-        std::filesystem::create_directories(outPath.parent_path());
-    } catch(...) {
-        std::cerr << "Warning: could not ensure directory for output: " << outPath.parent_path() << std::endl;
-    }
-    // Emit also a final PPM for compatibility
-    std::ofstream ppm(outPath, std::ios::binary);
+    // Emit final PPM
+    std::ofstream ppm(ppmPath, std::ios::binary);
     if(ppm){
         ppm << "P6\n" << outW << " " << outH << "\n255\n";
         for (uint32_t i = 0; i < outW * outH; ++i) {
@@ -119,6 +126,6 @@ int main(int argc, char** argv) {
             ppm.put(r).put(g).put(b);
         }
     }
-    std::cout << "Final frame written: " << std::filesystem::absolute(outPath).string() << " and tachyonic_surface.bmp (gradient). Press q earlier to abort." << std::endl;
+    std::cout << "Final frame written: " << std::filesystem::absolute(ppmPath).string() << " and " << std::filesystem::absolute(bmpPath).string() << " (gradient). Press q earlier to abort." << std::endl;
     return 0;
 }

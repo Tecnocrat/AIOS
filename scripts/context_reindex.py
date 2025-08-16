@@ -17,6 +17,7 @@ import re
 import json
 import hashlib
 import time
+import argparse
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import List, Optional, Tuple, Set, Dict, Any
@@ -254,13 +255,58 @@ def generate_index():
     return data
 
 
+def emit_adjacency(index_data: Dict[str, Any]):
+    """Generate a lightweight adjacency structure (optional) capturing
+    sequential capsule relationships and semantic tag intersections.
+
+    Output file: runtime_intelligence/context/context_adjacency.json
+    Schema:
+      {
+        "generated_at": iso8601,
+        "edges": [
+            {"from": <capsule_id>, "to": <capsule_id>, "jaccard_prev": <float|None>,
+             "shared_tags": [...], "note": <string>} ...
+        ]
+      }
+    """
+    capsules = index_data.get("capsules", [])
+    edges = []
+    for i in range(len(capsules) - 1):
+        a = capsules[i]
+        b = capsules[i + 1]
+        shared = sorted(set(a.get("semantic_tags", [])) & set(b.get("semantic_tags", [])))
+        edges.append({
+            "from": a["id"],
+            "to": b["id"],
+            "jaccard_prev": b.get("jaccard_overlap_prev"),
+            "shared_tags": shared,
+            "note": "low-overlap" if (b.get("similarity_alert") and (b.get("jaccard_overlap_prev") or 0) < 0.08) else "ok"
+        })
+    adj = {
+        "generated_at": time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+        "edges": edges,
+    }
+    out = OUTPUT_DIR / "context_adjacency.json"
+    tmp = out.with_suffix('.json.tmp')
+    tmp.write_text(json.dumps(adj, indent=2), encoding='utf-8')
+    tmp.replace(out)
+    print(f"[context-reindex] Adjacency emitted -> {out}")
+
+
+def _parse_args():
+    p = argparse.ArgumentParser(description="AIOS context reindexer")
+    p.add_argument("--emit-adjacency", action="store_true", help="Emit context_adjacency.json with sequential capsule edges")
+    return p.parse_args()
+
+
 if __name__ == "__main__":
+    args = _parse_args()
     try:
         result = generate_index()
         count = result['stats']['capsule_count']
-        print(
-            f"[context-reindex] Indexed {count} capsules -> {OUTPUT}"
-        )
+        print(f"[context-reindex] Indexed {count} capsules -> {OUTPUT}")
+        if args.emit_adjacency:
+            emit_adjacency(result)
     except Exception as e:
         print(f"[context-reindex][ERROR] {e}")
         raise

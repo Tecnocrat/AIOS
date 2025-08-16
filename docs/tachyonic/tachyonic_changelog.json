@@ -26,4 +26,13 @@
     "reason": "Consolidate runtime artifacts under tachyonic logging infrastructure for observability and governance.",
     "harmonization": "Enables Git discovery for runtime logs; unifies paths per docs/runtime_intelligence guidance."
   }
+ ,{
+    "kind": "ingestion",
+    "file": "INTEGRATION_COMPLETE_SUMMARY.md",
+    "old_path": "/INTEGRATION_COMPLETE_SUMMARY.md",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Revision 2025-08-16 – ChatGPT Integration Completion & Optimization Framework Ingestion)",
+    "date": "2025-08-16",
+    "reason": "Append-only harmonization of standalone integration summary into master governed context per AINLP protocol.",
+    "harmonization": "Prevents drift by consolidating ChatGPT migration & KPI framework into indexed capsule set; future references cite capsule ID chatgpt-integration-2025-06-29."
+  }
 ]
