@@ -518,7 +518,7 @@ The standalone `REORGANIZATION_STATUS.md` has been harmonized here to reduce roo
 - Director (legacy ASP.NET Core API) retired; artifacts safely archived.
 - Dedicated workspace file `AIOS.code-workspace` established.
 - Architecture clarified into focused strata (Core Engine, Interface/UI, AI orchestration & runtime intelligence, Scripts/Tooling, Documentation).
-- Root dependency & environment manifests retained (`requirements.txt`, `environment.yml`).
+- Root dependency manifest retained (`requirements.txt`); environment specs segmented (`ai/env/environment.*.yml`).
 - Obsolete or ambiguous module references cleaned from indices & docs.
 
 ### Benefits Realized
@@ -538,6 +538,17 @@ The standalone `REORGANIZATION_STATUS.md` has been harmonized here to reduce roo
 - Any new root status artifact requires explicit justification per Embedded Root Hygiene Capsule.
 
 Status: Reorganization COMPLETE; source file ingested & deprecated (guard‑protected against resurrection).
+
+### Environment Segmentation Upgrade (2025-08-16)
+The former monolithic root `environment.yml` has been decomposed into layered specs under `ai/env/`:
+- `environment.base.yml` – minimal runtime + scientific core.
+- `environment.ai.yml` – heavyweight LLM / embedding / vector components.
+- `environment.dev.yml` – linting, formatting, hypothesis, coverage.
+- `environment.quantum.yml` – quantum & symbolic experimentation stack.
+
+Rationale: Faster solves, reduced cold start size, optional heavy dependencies, clearer provenance for drift detection & future lockfile generation.
+
+Governance: Move recorded in tachyonic changelog; any future environment profile additions must reside within `ai/env/` and append a changelog entry rather than creating new root manifests.
 
 ---
 

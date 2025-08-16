@@ -16,6 +16,7 @@
 #>
 param(
     [ValidateSet('conda','venv')][string]$Environment = 'conda',
+    [ValidateSet('base','ai','dev','quantum')][string]$Profile = 'base',
     [switch]$Force,
     [switch]$Verbose,
     [switch]$ReportOnly,
@@ -29,7 +30,13 @@ Write-Host "================================" -ForegroundColor Cyan
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $ProjectRoot = Split-Path -Parent $ScriptDir
-$EnvName = 'aios-consciousness'
+    $EnvName = switch ($Profile) {
+        'base' { 'aios-base' }
+        'ai' { 'aios-ai' }
+        'dev' { 'aios-dev' }
+        'quantum' { 'aios-quantum' }
+        default { 'aios-base' }
+    }
 $PythonVersion = '3.12'
 $LogFile = Join-Path $ProjectRoot 'setup.log'
 
@@ -54,9 +61,16 @@ function Initialize-CondaEnvironment {
     if ($Force) { Write-AIOSLog '[Conda] Force removal of existing env (if any)' 'WARN'; & conda env remove -n $EnvName -y 2>$null }
     $exists = & conda env list | Select-String -SimpleMatch " $EnvName "
     if (-not $exists) {
-        Write-AIOSLog '[Conda] Creating environment (environment.yml or fallback)' 'INFO'
-        $envYml = Join-Path $ProjectRoot 'environment.yml'
-        if (Test-Path $envYml) { & conda env create -f $envYml } else { & conda create -n $EnvName python=$PythonVersion -y }
+        Write-AIOSLog "[Conda] Creating environment profile=$Profile" 'INFO'
+        $envDir = Join-Path $ProjectRoot 'ai/env'
+        $profileMap = @{
+            'base'    = 'environment.base.yml'
+            'ai'      = 'environment.ai.yml'
+            'dev'     = 'environment.dev.yml'
+            'quantum' = 'environment.quantum.yml'
+        }
+        $envYml = Join-Path $envDir $profileMap[$Profile]
+        if (Test-Path $envYml) { & conda env create -f $envYml } else { Write-AIOSLog "[Conda] Profile spec not found ($envYml); falling back to minimal create" 'WARN'; & conda create -n $EnvName python=$PythonVersion -y }
         if ($LASTEXITCODE -ne 0) { throw 'Conda environment creation failed' }
     } else { Write-AIOSLog '[Conda] Environment already exists (reuse)' 'INFO' }
     & conda activate $EnvName
@@ -85,7 +99,8 @@ function Get-EnvironmentReport {  # Verb Get is approved; still performs generat
     try { $pipPackages = & pip list --format=json | ConvertFrom-Json } catch { Write-AIOSLog 'pip list retrieval failed (continuing with empty list)' 'WARN' }
     $report = [ordered]@{
         timestamp         = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
-        environment_type  = $Environment
+    environment_type  = $Environment
+    environment_profile = $Profile
         project_root      = $ProjectRoot
         env_name          = $EnvName
         requirements_hash = $reqHash
@@ -151,7 +166,7 @@ print('Core AI dependencies loaded successfully')
 try {
     Write-AIOSLog "Mode: $(if($ReportOnly){'REPORT-ONLY'}else{'APPLY'})" 'INFO'
     if (-not $ReportOnly) {
-        if ($Environment -eq 'conda') { if (Test-CondaInstall) { Initialize-CondaEnvironment } else { Write-AIOSLog 'Conda not found; falling back to venv' 'WARN'; $Environment = 'venv'; Initialize-VenvEnvironment } } else { Initialize-VenvEnvironment }
+        if ($Environment -eq 'conda') { if (Test-CondaInstall) { Initialize-CondaEnvironment } else { Write-AIOSLog 'Conda not found; falling back to venv (profile ignored)' 'WARN'; $Environment = 'venv'; Initialize-VenvEnvironment } } else { Initialize-VenvEnvironment }
         Install-PipRequirements
     } else { Write-AIOSLog 'Report-only mode: no environment changes will be made' 'INFO' }
     Get-EnvironmentReport
