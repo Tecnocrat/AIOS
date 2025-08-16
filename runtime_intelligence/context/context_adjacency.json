@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-16T14:45:07Z",
+  "generated_at": "2025-08-16T17:10:02Z",
   "edges": [
     {
       "from": "ainlp",
@@ -202,7 +202,7 @@
     {
       "from": "tachyonic",
       "to": "magnus",
-      "jaccard_prev": 0.1227,
+      "jaccard_prev": 0.1204,
       "shared_tags": [
         "consciousness",
         "dependency",
@@ -215,8 +215,18 @@
     },
     {
       "from": "magnus",
+      "to": "capsule-2",
+      "jaccard_prev": 0.0979,
+      "shared_tags": [
+        "consciousness",
+        "optimization"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "capsule-2",
       "to": "-4",
-      "jaccard_prev": 0.0056,
+      "jaccard_prev": 0.0139,
       "shared_tags": [],
       "note": "low-overlap"
     },
@@ -283,6 +293,13 @@
         "optimization"
       ],
       "note": "ok"
+    },
+    {
+      "from": "-11",
+      "to": "capsule-3",
+      "jaccard_prev": 0.0184,
+      "shared_tags": [],
+      "note": "low-overlap"
     }
   ]
 }

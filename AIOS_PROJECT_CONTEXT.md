@@ -1069,7 +1069,7 @@ Status: Supplemental component taxonomy appended; no behavior change – enables
 
 
 
-### Revision 2025-08-16 – ChatGPT Integration Completion & Optimization Framework Ingestion
+## Capsule chatgpt-integration-2025-06-29 (Revision 2025-08-16) – ChatGPT Integration Completion & Optimization Framework Ingestion
 Source: `INTEGRATION_COMPLETE_SUMMARY.md` (original date stamp 2025-06-29; harmonized into master context 2025-08-16 under AINLP root consolidation protocol). Purpose: Bring post‑ChatGPT migration & three‑objective optimization framework into governed, append‑only master file to prevent contextual drift and enable future crystallization lineage referencing integration KPIs.
 
 #### Governance Notes
@@ -1257,6 +1257,44 @@ The unified AIOS system now represents the perfect synthesis of:
 
 Status: ChatGPT integration & optimization framework ingested; KPIs and objectives harmonized.
 
+---
+
+
+
+## Capsule: development-environment-status-2025-08-16
+### Title: Development Environment Fully Operational (Ingested)
+### Source Artifact: DEVELOPMENT_ENVIRONMENT_STATUS.md (root)
+### Ingestion Date (UTC): 2025-08-16T00:00:00Z
+### Summary
+Environment setup confirmed fully operational across Python 3.12.8 virtual env, C++ (MSVC + MinGW), CMake 4.0.3, MSBuild 17.14.10, PowerShell 7.x. All toolchains validated. Remaining build failures isolated to orchestrator source code (not environment).
+
+### Key Verified Components
+- Python venv `aios_env` active and dependency-resolved.
+- C++ toolchains (MSVC, MinGW) detected and building sample targets.
+- CMake configure & generation successful.
+- MSBuild invocation succeeds; failures limited to known source defects.
+- PATH hygiene finalized; no conflicting interpreters.
+- Git workspace clean.
+
+### Outstanding Source Issues (Non-Environment)
+1. Duplicate function declaration in `core/include/SingularityCore.hpp` (remove redundant signature).
+2. Missing OpenSSL headers (add via vcpkg: `openssl`), plus nlohmann-json recommended for JSON.
+3. Missing math constants (define `_USE_MATH_DEFINES` and add `SPEED_OF_LIGHT`).
+4. Duplicate variable declarations in `core/src/main.cpp` (consolidate definitions).
+
+### KPI / Governance Linkage
+- Confirms readiness gate passed for environment operational KPI.
+- Enables progression to instrumentation KPIs (render_fps, uptime, latency) without environment blockers.
+- Tagged to capsule lineage for future crystal metric_snapshot references.
+
+### Next Actions Unlocked
+- Implement orchestrator code fixes enumerated above.
+- Integrate OpenSSL & JSON libs through vcpkg manifest or documented install script.
+- Proceed with advanced KPI instrumentation (state_restore_sec, metadata_rate, cpp_python_latency_ms).
+
+---
+Capsule ID: development-environment-status-2025-08-16
+Lineage: [chatgpt-integration-2025-06-29]
 ---
 
 

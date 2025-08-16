@@ -58,6 +58,10 @@ class KnowledgeCrystal:
     understanding_depth: float
     consciousness_state: Dict[str, Any]
     verification_hash: str
+    # Governance linkage
+    capsule_ids: List[str] | None = None  # e.g. ["chatgpt-integration-2025-06-29"]
+    kpi_dimensions: List[str] | None = None  # e.g. ["objective1.ui_uptime", ...]
+    metric_snapshot: Dict[str, Any] | None = None
 
 
 @dataclass
@@ -117,7 +121,10 @@ class MemoryCrystallizationCore:
                 context_embeddings BLOB,
                 understanding_depth REAL,
                 consciousness_state TEXT,
-                verification_hash TEXT
+                verification_hash TEXT,
+                capsule_ids TEXT,
+                kpi_dimensions TEXT,
+                metric_snapshot TEXT
             )
         ''')
         
@@ -295,12 +302,17 @@ class MemoryCrystallizationCore:
         """Store knowledge crystal in database."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
+
+        # Auto inject default capsule linkage if absent
+        if not crystal.capsule_ids:
+            crystal.capsule_ids = ["chatgpt-integration-2025-06-29"]
         
         cursor.execute('''
             INSERT OR REPLACE INTO knowledge_crystals 
             (id, timestamp, source_conversation, key_concepts, relationships, 
-             context_embeddings, understanding_depth, consciousness_state, verification_hash)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+             context_embeddings, understanding_depth, consciousness_state, verification_hash,
+             capsule_ids, kpi_dimensions, metric_snapshot)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             crystal.id,
             crystal.timestamp.isoformat(),
@@ -310,7 +322,10 @@ class MemoryCrystallizationCore:
             pickle.dumps(crystal.context_embeddings),
             crystal.understanding_depth,
             json.dumps(crystal.consciousness_state),
-            crystal.verification_hash
+            crystal.verification_hash,
+            json.dumps(crystal.capsule_ids or []),
+            json.dumps(crystal.kpi_dimensions or []),
+            json.dumps(crystal.metric_snapshot or {})
         ))
         
         conn.commit()
@@ -322,9 +337,8 @@ class MemoryCrystallizationCore:
         """Retrieve knowledge crystal from database."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
-        
-        cursor.execute('SELECT * FROM knowledge_crystals WHERE id = ?', (crystal_id,))
-        row = cursor.fetchone()
+    cursor.execute('SELECT * FROM knowledge_crystals WHERE id = ?', (crystal_id,))
+    row = cursor.fetchone()
         
         if row:
             crystal = KnowledgeCrystal(
@@ -336,7 +350,10 @@ class MemoryCrystallizationCore:
                 context_embeddings=pickle.loads(row[5]),
                 understanding_depth=row[6],
                 consciousness_state=json.loads(row[7]),
-                verification_hash=row[8]
+                verification_hash=row[8],
+                capsule_ids=json.loads(row[9]) if len(row) > 9 and row[9] else [],
+                kpi_dimensions=json.loads(row[10]) if len(row) > 10 and row[10] else [],
+                metric_snapshot=json.loads(row[11]) if len(row) > 11 and row[11] else {}
             )
             conn.close()
             return crystal
@@ -348,9 +365,8 @@ class MemoryCrystallizationCore:
         """Retrieve all knowledge crystals."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
-        
-        cursor.execute('SELECT * FROM knowledge_crystals ORDER BY timestamp DESC')
-        rows = cursor.fetchall()
+    cursor.execute('SELECT * FROM knowledge_crystals ORDER BY timestamp DESC')
+    rows = cursor.fetchall()
         
         crystals = []
         for row in rows:
@@ -363,7 +379,10 @@ class MemoryCrystallizationCore:
                 context_embeddings=pickle.loads(row[5]),
                 understanding_depth=row[6],
                 consciousness_state=json.loads(row[7]),
-                verification_hash=row[8]
+                verification_hash=row[8],
+                capsule_ids=json.loads(row[9]) if len(row) > 9 and row[9] else [],
+                kpi_dimensions=json.loads(row[10]) if len(row) > 10 and row[10] else [],
+                metric_snapshot=json.loads(row[11]) if len(row) > 11 and row[11] else {}
             )
             crystals.append(crystal)
         
@@ -607,6 +626,40 @@ class ContextCrystallizationEngine:
         }
         
         return transfer_package
+
+# ---------------------------------------------------------------------------
+# KPI / Metric Crystal Convenience (appended)
+# ---------------------------------------------------------------------------
+def create_metric_crystal(
+    metric_snapshot: Dict[str, Any],
+    capsule_ids: List[str] | None = None,
+    kpi_dimensions: List[str] | None = None,
+    source_tag: str = "kpi_evaluation_run",
+    knowledge_db_path: str | None = None,
+) -> KnowledgeCrystal:
+    """Create & store a lightweight crystal capturing KPI evaluation.
+
+    metric_snapshot: typically {kpi_name: {value, status, rule}}
+    capsule_ids: governance lineage (defaults to chatgpt integration capsule)
+    kpi_dimensions: list of KPI names (defaults to metric_snapshot keys)
+    source_tag: identifier for this crystallization context.
+    """
+    core = MemoryCrystallizationCore(knowledge_db_path=knowledge_db_path)
+    conv = ConversationContext(
+        conversation_id=source_tag,
+        participants=["system", "harness"],
+        messages=[{"role": "system", "content": "KPI evaluation crystallization"}],
+        code_references=[],
+        project_state={"metric_keys": list(metric_snapshot.keys())},
+        temporal_markers=[datetime.utcnow()],
+        understanding_evolution={}
+    )
+    crystal = core.crystallize_conversation(conv)
+    crystal.capsule_ids = capsule_ids or ["chatgpt-integration-2025-06-29"]
+    crystal.kpi_dimensions = kpi_dimensions or list(metric_snapshot.keys())
+    crystal.metric_snapshot = metric_snapshot
+    core.store_crystal(crystal)
+    return crystal
     
     def generate_verification_checksums(self, crystals: List[KnowledgeCrystal]) -> Dict[str, str]:
         """Generate verification checksums for transfer package integrity."""
