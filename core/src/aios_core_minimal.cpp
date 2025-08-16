@@ -2,6 +2,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include "aios_plugin_telemetry.hpp"
 
 namespace aios {
 
@@ -9,8 +10,9 @@ namespace aios {
     class Core::Impl {
     public:
         SystemConfig config;
-        std::atomic<bool> running{ false };
-        std::atomic<bool> initialized{ false };
+    std::atomic<bool> running{ false };
+    std::atomic<bool> initialized{ false };
+    std::unique_ptr<aios::TelemetrySampler> telemetry;
 
         Impl() = default;
 
@@ -27,6 +29,9 @@ namespace aios {
                 config.logLevel = "INFO";
                 config.enableProfiling = false;
 
+                // Initialize telemetry sampler (UP4)
+                telemetry = std::make_unique<aios::TelemetrySampler>();
+                telemetry->start(1.0); // 1s interval export
                 initialized = true;
                 std::cout << "AIOS Core initialized successfully!" << std::endl;
                 return true;
@@ -56,6 +61,7 @@ namespace aios {
 
         void stop() {
             running = false;
+            if(telemetry){ telemetry->stop(); }
             std::cout << "AIOS Core stopped." << std::endl;
         }
     };

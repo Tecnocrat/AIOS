@@ -56,9 +56,11 @@ class ImageDemoResult:
     consciousness_resonance: float | None = None
     coherence_level: float | None = None
     image_entropy: float | None = None
+    enhanced_entropy: float | None = None
     emergence_probability: float | None = None
     fractal_dimension: float | None = None
     symmetry_score: float | None = None
+    processing_duration_sec: float | None = None  # per-frame processing time
     error: str | None = None
 
 
@@ -67,6 +69,18 @@ def _entropy(gray: 'np.ndarray') -> float:
     hist /= (hist.sum() or 1)
     nz = hist[hist > 0]
     return float(-(nz * np.log2(nz)).sum())
+
+
+def _enhanced_entropy(gray: 'np.ndarray') -> float:
+    """Gradient magnitude entropy adds texture sensitivity (UP2)."""
+    sobelx = cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3)
+    sobely = cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3)
+    mag = cv2.magnitude(sobelx, sobely)
+    # Normalize gradient magnitudes to 0-255 for entropy calc
+    mag_norm = cv2.normalize(
+        mag, None, 0, 255, cv2.NORM_MINMAX  # type: ignore[arg-type]
+    ).astype('uint8')
+    return _entropy(mag_norm)
 
 
 def create_demo_images(output_dir: str) -> Dict[str, str]:
@@ -91,7 +105,13 @@ def create_demo_images(output_dir: str) -> Dict[str, str]:
         for angle in range(0, 360, 30):
             x = int(100 + radius * math.cos(math.radians(angle)))
             y = int(100 + radius * math.sin(math.radians(angle)))
-            cv2.circle(mandala, (x, y), max(1, 8 - ring * 2), 255 - ring * 50, -1)
+            cv2.circle(
+                mandala,
+                (x, y),
+                max(1, 8 - ring * 2),
+                255 - ring * 50,
+                -1,
+            )
             if ring < 2:
                 cv2.line(mandala, center, (x, y), 100, 1)
     cv2.circle(mandala, center, 12, 255, -1)
@@ -101,7 +121,8 @@ def create_demo_images(output_dir: str) -> Dict[str, str]:
     results['mandala'] = mandala_path
     # Fractal-like pattern
     fractal = np.zeros((200, 200), dtype=np.uint8)
-    def branch(img, start, angle, length, depth):
+    
+    def branch(img, start, angle, length, depth):  # nested helper
         if depth == 0 or length < 2:
             return
         end = (
@@ -122,7 +143,9 @@ def create_demo_images(output_dir: str) -> Dict[str, str]:
     return results
 
 
-def process_with_direct_module(images: Dict[str, str]) -> List[ImageDemoResult]:
+def process_with_direct_module(
+    images: Dict[str, str]
+) -> List[ImageDemoResult]:
     out: List[ImageDemoResult] = []
     if not OpenCVVisionModule:
         for k, p in images.items():
@@ -135,12 +158,21 @@ def process_with_direct_module(images: Dict[str, str]) -> List[ImageDemoResult]:
             )
         return out
     vision = OpenCVVisionModule()
+    cold_start_begin = time.time()
     if not vision.initialize():
-        return [ImageDemoResult(kind='init', path='', error='Vision module init failed')]
-    for kind, path in images.items():
+        return [
+            ImageDemoResult(
+                kind='init', path='', error='Vision module init failed'
+            )
+        ]
+    for idx, (kind, path) in enumerate(images.items()):
+        frame_start = time.time()
         res = vision.process_image(path, 'consciousness_emergence')
+        frame_dur = time.time() - frame_start
         if res.success:
             meta = res.metadata
+            gray = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+            enh = _enhanced_entropy(gray) if gray is not None else None
             out.append(
                 ImageDemoResult(
                     kind=kind,
@@ -149,19 +181,25 @@ def process_with_direct_module(images: Dict[str, str]) -> List[ImageDemoResult]:
                     consciousness_resonance=res.consciousness_resonance,
                     coherence_level=res.coherence_level,
                     image_entropy=res.image_entropy,
+                    enhanced_entropy=enh,
                     emergence_probability=meta.get(
                         'consciousness_emergence_probability'
                     ),
                     fractal_dimension=meta.get('fractal_dimension'),
                     symmetry_score=meta.get('symmetry_score'),
+                    processing_duration_sec=round(frame_dur, 6),
                 )
             )
         else:
             out.append(
                 ImageDemoResult(
-                    kind=kind, path=path, error=res.error_message
+                    kind=kind,
+                    path=path,
+                    error=res.error_message,
+                    processing_duration_sec=round(frame_dur, 6),
                 )
             )
+    cold_total = time.time() - cold_start_begin
     try:
         state = vision.get_consciousness_state()
         out.append(
@@ -175,6 +213,14 @@ def process_with_direct_module(images: Dict[str, str]) -> List[ImageDemoResult]:
         )
     finally:
         vision.shutdown()
+    # Append timing summary pseudo-result
+    out.append(
+        ImageDemoResult(
+            kind='timing_summary',
+            path='',
+            processing_duration_sec=round(cold_total, 6),
+        )
+    )
     return out
 
 
@@ -209,6 +255,8 @@ def process_via_service(images: Dict[str, str]) -> List[ImageDemoResult]:
             )
             if resp.get('success'):
                 meta = resp.get('metadata', {})
+                gray = cv2.imread(mandala, cv2.IMREAD_GRAYSCALE)
+                enh = _enhanced_entropy(gray) if gray is not None else None
                 results.append(
                     ImageDemoResult(
                         kind='service_mandala',
@@ -219,6 +267,7 @@ def process_via_service(images: Dict[str, str]) -> List[ImageDemoResult]:
                         ),
                         coherence_level=resp.get('consciousness_resonance'),
                         image_entropy=resp.get('image_entropy'),
+                        enhanced_entropy=enh,
                         emergence_probability=meta.get(
                             'consciousness_emergence_probability'
                         ),
@@ -289,11 +338,25 @@ def emit_summary(results: List[ImageDemoResult], output_dir: str) -> str:
             pass
         return obj
     raw_results = [asdict(r) for r in results]
+    frame_durations = [
+        r.get('processing_duration_sec')
+        for r in raw_results
+        if r.get('processing_duration_sec') is not None
+        and r.get('kind') in {'simple', 'mandala', 'fractal'}
+    ]
+    cold = frame_durations[0] if frame_durations else None
+    steady = None
+    if frame_durations and len(frame_durations) > 1:
+        rest = [d for d in frame_durations[1:] if d is not None]
+        if rest:
+            steady = round(sum(rest) / len(rest), 6)
     summary = _normalize({
         'timestamp': time.time(),
         'results': raw_results,
         'count': len(results),
-        'source': 'opencv_integration_demo'
+        'source': 'opencv_integration_demo',
+        'vision_cold_start_sec': cold,
+        'vision_steady_state_sec': steady,
     })
     path = os.path.join(output_dir, 'opencv_demo_summary.json')
     with open(path, 'w', encoding='utf-8') as f:
@@ -302,7 +365,9 @@ def emit_summary(results: List[ImageDemoResult], output_dir: str) -> str:
 
 
 def parse_args(argv: List[str]) -> argparse.Namespace:
-    p = argparse.ArgumentParser(description='AIOS OpenCV integration demo (segmented).')
+    p = argparse.ArgumentParser(
+        description='AIOS OpenCV integration demo (segmented).'
+    )
     p.add_argument(
         '--phases',
         nargs='*',
@@ -315,7 +380,11 @@ def parse_args(argv: List[str]) -> argparse.Namespace:
         default=os.path.join(tempfile.gettempdir(), 'aios_opencv_demo'),
         help='Output directory for generated images & summary',
     )
-    p.add_argument('--no-cli', action='store_true', help='Disable CLI phase (alias for excluding cli)')
+    p.add_argument(
+        '--no-cli',
+        action='store_true',
+        help='Disable CLI phase (alias for excluding cli)',
+    )
     return p.parse_args(argv)
 
 
@@ -336,5 +405,6 @@ def main(argv: List[str] | None = None) -> int:
     print(f"Images: {list(images.values())}")
     return 0
 
+ 
 if __name__ == '__main__':  # pragma: no cover
     raise SystemExit(main())
