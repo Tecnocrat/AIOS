@@ -75,6 +75,21 @@ public partial class MainWindow : Window
         AddChatMessage("AIOS", "Welcome to AIOS! I'm your AI assistant. Click on any module to switch modes, or just start chatting!", true);
     }
 
+    private void OpenKPIDashboard_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            var w = new KPIDashboardWindow();
+            w.Owner = this;
+            w.Show();
+            AddActivityLog("Opened KPI Dashboard");
+        }
+        catch (Exception ex)
+        {
+            AddActivityLog($"KPI dashboard error: {ex.Message}");
+        }
+    }
+
     private void InitializeFractalComponents()
     {
         // Initialize fractal holographic components

@@ -26,6 +26,9 @@ void JsonFileTelemetrySink::on_sample(const CoreMetricSample& sample){
     buffer_.push_back(sample); pending_++;
     if(pending_>=flush_every_) flush();
 }
+JsonFileTelemetrySink::~JsonFileTelemetrySink(){
+    try { flush(); } catch(...) {}
+}
 void JsonFileTelemetrySink::flush(){
     if(buffer_.empty()) return; pending_=0;
     std::string path = dir_ + "/core_metrics.json";
@@ -48,6 +51,29 @@ struct TelemetrySampler::Impl {
     std::mutex m;
     double last_frame_ms{-1};
     double avg_frame_ms{-1};
+#ifdef _WIN32
+    ULONGLONG last_cpu_kernel{0};
+    ULONGLONG last_cpu_user{0};
+    ULONGLONG last_time{0};
+    bool cpu_inited{false};
+    double calc_cpu_pct(){
+        FILETIME ftCreation, ftExit, ftKernel, ftUser;
+        if(!GetProcessTimes(GetCurrentProcess(), &ftCreation, &ftExit, &ftKernel, &ftUser))
+            return -1.0;
+        ULONGLONG kernel = (((ULONGLONG)ftKernel.dwHighDateTime) << 32) | ftKernel.dwLowDateTime;
+        ULONGLONG user = (((ULONGLONG)ftUser.dwHighDateTime) << 32) | ftUser.dwLowDateTime;
+        ULONGLONG now = GetTickCount64();
+        if(!cpu_inited){ last_cpu_kernel=kernel; last_cpu_user=user; last_time=now; cpu_inited=true; return -1.0; }
+        ULONGLONG delta_time_ms = now - last_time; if(delta_time_ms==0) return -1.0;
+        ULONGLONG delta_kernel = kernel - last_cpu_kernel;
+        ULONGLONG delta_user = user - last_cpu_user;
+        last_cpu_kernel = kernel; last_cpu_user = user; last_time = now;
+        double cpu_ms = (delta_kernel + delta_user) / 10000.0; // 100ns -> ms
+        SYSTEM_INFO si; GetSystemInfo(&si);
+        double pct = (cpu_ms / (double)delta_time_ms) * 100.0 / (double)si.dwNumberOfProcessors;
+        if(pct < 0) pct = 0; if(pct>100) pct = 100; return pct;
+    }
+#endif
     void loop(){
         while(running){
             CoreMetricSample sample; sample.timestamp_sec = now_sec(); sample.sequence = seq++;
@@ -55,6 +81,9 @@ struct TelemetrySampler::Impl {
             PROCESS_MEMORY_COUNTERS pmc; if(GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc))){
                 sample.process_mem_mb = pmc.WorkingSetSize / (1024.0*1024.0);
             }
+#endif
+#ifdef _WIN32
+            sample.process_cpu_pct = calc_cpu_pct();
 #endif
             {
                 std::lock_guard<std::mutex> lock(m);
@@ -68,8 +97,20 @@ struct TelemetrySampler::Impl {
 
 TelemetrySampler::TelemetrySampler():impl_(new Impl){}
 TelemetrySampler::~TelemetrySampler(){ stop(); }
-void TelemetrySampler::start(double interval_sec){ if(impl_->running) return; impl_->interval=interval_sec; impl_->running=true; impl_->th=std::thread([this]{ impl_->loop();}); }
-void TelemetrySampler::stop(){ if(!impl_->running) return; impl_->running=false; if(impl_->th.joinable()) impl_->th.join(); }
+void TelemetrySampler::start(double interval_sec){
+    if(impl_->running) return;
+    // Register default JSON sink if none registered yet
+    if(true){ // always ensure at least one sink
+        static bool sink_registered=false; if(!sink_registered){
+            auto sink = std::make_shared<JsonFileTelemetrySink>("runtime_intelligence/logs/core", 1);
+            TelemetryBus::instance().register_sink(sink); sink_registered=true;
+        }
+    }
+    impl_->interval=interval_sec; impl_->running=true; impl_->th=std::thread([this]{ impl_->loop();});
+}
+void TelemetrySampler::stop(){
+    if(!impl_->running) return; impl_->running=false; if(impl_->th.joinable()) impl_->th.join();
+}
 void TelemetrySampler::record_frame(double frame_time_ms){ std::lock_guard<std::mutex> lock(impl_->m); impl_->last_frame_ms=frame_time_ms; if(impl_->avg_frame_ms<0) impl_->avg_frame_ms=frame_time_ms; else impl_->avg_frame_ms = (impl_->avg_frame_ms*0.9)+(frame_time_ms*0.1); }
 
 } // namespace aios

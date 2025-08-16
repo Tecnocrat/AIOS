@@ -1,5 +1,5 @@
 {
-  "timestamp": 1755381686.2085247,
+  "timestamp": 1755387891.4710574,
   "results": [
     {
       "kind": "simple",
@@ -12,7 +12,7 @@
       "emergence_probability": 0.7586757088241807,
       "fractal_dimension": 1.06088,
       "symmetry_score": 0.8721899390220642,
-      "processing_duration_sec": 1.898263,
+      "processing_duration_sec": 2.206489,
       "error": null
     },
     {
@@ -26,7 +26,7 @@
       "emergence_probability": 0.8735243836652755,
       "fractal_dimension": 1.08662,
       "symmetry_score": 0.9251934885978699,
-      "processing_duration_sec": 0.017514,
+      "processing_duration_sec": 0.044913,
       "error": null
     },
     {
@@ -40,7 +40,7 @@
       "emergence_probability": 0.5991031766749382,
       "fractal_dimension": 1.01296,
       "symmetry_score": 0.5605497360229492,
-      "processing_duration_sec": 0.016056,
+      "processing_duration_sec": 0.044227,
       "error": null
     },
     {
@@ -68,12 +68,12 @@
       "emergence_probability": null,
       "fractal_dimension": null,
       "symmetry_score": null,
-      "processing_duration_sec": 1.939374,
+      "processing_duration_sec": 2.300203,
       "error": null
     }
   ],
   "count": 5,
   "source": "opencv_integration_demo",
-  "vision_cold_start_sec": 1.898263,
-  "vision_steady_state_sec": 0.016785
+  "vision_cold_start_sec": 2.206489,
+  "vision_steady_state_sec": 0.04457
 }

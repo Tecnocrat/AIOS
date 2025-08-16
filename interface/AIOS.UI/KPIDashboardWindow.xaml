@@ -1,0 +1,63 @@
+<Window x:Class="AIOS.UI.KPIDashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AIOS KPI Dashboard" Height="480" Width="820" Background="#FF1E1E1E" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Real-Time KPI Dashboard" FontSize="20" FontWeight="Bold" Foreground="#FF00D4FF"/>
+            <Button Content="Refresh" Margin="20,0,0,0" Padding="12,4" Click="Refresh_Click"/>
+            <Button Content="Emit Status Capsule" Margin="10,0,0,0" Padding="12,4" Click="EmitCapsule_Click"/>
+            <TextBlock Text="Latency:" Margin="20,0,0,0" Foreground="#FFCCCCCC" VerticalAlignment="Center"/>
+            <TextBlock x:Name="LatencyText" Text="-- ms" Foreground="#FFFFFF" Margin="4,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock Text=" | KPI Pass:" Margin="15,0,0,0" Foreground="#FFCCCCCC" VerticalAlignment="Center"/>
+            <TextBlock x:Name="KpiPassCount" Text="0" Foreground="#FF66FF99" Margin="4,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock Text="Fail:" Margin="8,0,0,0" Foreground="#FFCCCCCC" VerticalAlignment="Center"/>
+            <TextBlock x:Name="KpiFailCount" Text="0" Foreground="#FFFF6666" Margin="4,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock Text="Threshold v" Margin="15,0,0,0" Foreground="#FFAAAAAA" VerticalAlignment="Center"/>
+            <TextBlock x:Name="ThresholdVersion" Text="--" Foreground="#FFCCCCCC" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="#FF2D2D30" CornerRadius="6" Padding="10" Margin="0,0,10,0">
+                <StackPanel>
+                    <TextBlock Text="KPI Status" FontSize="16" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="0,0,0,8"/>
+                    <ListView x:Name="KPIList" Background="#FF1E1E1E" BorderThickness="0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="KPI" Width="170" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Value" Width="80" DisplayMemberBinding="{Binding Value}"/>
+                                <GridViewColumn Header="Status" Width="80" DisplayMemberBinding="{Binding Status}"/>
+                                <GridViewColumn Header="Rule" Width="150" DisplayMemberBinding="{Binding Rule}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" Background="#FF2D2D30" CornerRadius="6" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Metrics Snapshot" FontSize="16" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="0,0,0,8"/>
+                    <TextBlock Text="Sources: validation summary + streaming (core + evolution)" FontSize="11" Foreground="#FFAAAAAA"/>
+                    <ScrollViewer Height="300" Margin="0,6,0,0">
+                        <StackPanel x:Name="MetricsStack"/>
+                    </ScrollViewer>
+                    <Border Background="#33222222" CornerRadius="4" Padding="6" Margin="0,8,0,0">
+                        <TextBlock x:Name="StreamingStatus" Text="Streaming: initializing..." FontSize="11" Foreground="#FFAAAAAA"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <StatusBar Grid.Row="2" Background="#FF2D2D30">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusBarText" Text="Ready" Foreground="#FFCCCCCC"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
