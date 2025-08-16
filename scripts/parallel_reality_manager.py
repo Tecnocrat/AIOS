@@ -245,7 +245,7 @@ class ParallelRealityManager:
             "orchestrator/",
             "visual_interface/",
             "requirements.txt",
-            "environment.yml"
+            "ai/env/"  # segmented environment specs replacing root environment.yml
         ]
         
         for file_pattern in core_files:

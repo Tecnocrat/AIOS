@@ -11,7 +11,7 @@
 **Environment & Infrastructure Optimization**: ✅ COMPLETE
 - **Harmonized Python Environment**: Moved from `scripts/` to root-level for optimal conda/venv integration
 - **Advanced setup_environment.ps1**: PowerShell automation for seamless environment configuration
-- **Version Compatibility Matrix**: Optimized `environment.yml` and `requirements.txt` with flexible version ranges
+- **Version Compatibility Matrix**: Segmented env specs (`ai/env/environment.*.yml`) and `requirements.txt` with flexible version ranges
 - **Conda Integration Optimization**: Resolved PowerShell conda initialization conflicts
 - **Dependencies Consolidation**: Eliminated redundant requirements between `scripts/requirements.txt` and root `requirements.txt`
 
