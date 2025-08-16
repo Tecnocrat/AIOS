@@ -272,3 +272,29 @@
     Consolidate historical environment optimization & dual-interface implementation report into master context to avoid lingering broad status reports at root.
   harmonization: >
     Aligns with capsule ingestion model, reduces root clutter, and preserves lineage of environment + interface evolution for future reproducibility audits.
+
+- kind: addition
+  file: context_reindex.py & context_index schema
+  old_path: n/a
+  new_path: /scripts/context_reindex.py
+  date: 2025-08-16
+  reason: >
+    Introduce tachyonic context surface schema (capsule index v1) and reindex script generating
+    runtime_intelligence/context/context_index.json for deterministic capsule hashing, lineage,
+    and future semantic/drift analytics.
+  harmonization: >
+    Formalizes "single evolving context surface" into machine-queryable structure enabling
+    reproducible context loading, drift detection, and append-only governance without parsing
+    full markdown on every invocation; foundation for embeddings & mutation guidance layer.
+
+- kind: addition
+  file: context-index-freshness CI workflow
+  old_path: n/a
+  new_path: /.github/workflows/context-index-freshness.yml
+  date: 2025-08-16
+  reason: >
+    Add CI guard to verify context_index.json is regenerated whenever AIOS_PROJECT_CONTEXT.md or
+    the reindex script changes, failing PRs with uncommitted drift.
+  harmonization: >
+    Ensures tachyonic surface index remains in sync with source narrative, preventing stale
+    capsule metadata and enabling reliable downstream semantic tooling.

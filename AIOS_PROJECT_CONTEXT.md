@@ -881,4 +881,94 @@ Governance Guardrail: Do NOT move dependencies prematurely; rely on this note + 
 
 ---
 
+## Tachyonic Context Surface Schema & Index (Added 2025-08-16)
+This section formalizes the "single evolving context surface" — the synthetic tachyonic layer translating multi-dimensional (bosonic metaphor) architectural resonance into governed, machine-addressable capsules.
+
+### Intent
+Provide deterministic, hashable, queryable structural primitives so future AI engines can rapidly reconstruct architectural lineage, perform semantic drift analysis, and guide mutation/evolution cycles. The surface is append-only; mutations occur through additive capsules or revisions (never destructive edits of historical narrative blocks).
+
+### Capsule Structural Schema (v1)
+Each capsule (or transition note) is represented in a generated index (`runtime_intelligence/context/context_index.json`) with the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | string | Stable slug (kebab-case) derived from heading title (collision-safe with numeric suffix) |
+| title | string | Exact heading text from master context file |
+| type | enum | `capsule`, `note`, or `revision` (top-level capsules use `capsule`; dependency or strategy notes use `note`; subordinate revision blocks optionally enumerated) |
+| ingested_date | date (YYYY-MM-DD) | Date extracted from heading parentheses (INGESTED / Added) or nearest dated marker within first 15 lines |
+| start_line | integer | 1-based line number where capsule heading begins in `AIOS_PROJECT_CONTEXT.md` |
+| end_line | integer | 1-based line number where capsule content ends (line before next top-level `##` heading or EOF) |
+| content_hash | string | SHA256 of canonicalized capsule text (UTF-8, normalized line endings, trimmed trailing whitespace) |
+| semantic_tags | string[] | Keyword tags (derived heuristically: e.g., reorganization, environment, orchestrator, quick-context, optimization, consciousness, dependency) |
+| revision_chain | object[] | Ordered list of internal revision markers (each: `{heading, line, date?, hash}`) |
+| dates_all | string[] | All YYYY-MM-DD discovered within the capsule (for coarse-grained temporal analytics) |
+| token_estimate | integer | Approximate whitespace-delimited token count (fast heuristic) |
+| jaccard_overlap_prev | float|null | (Optional) Jaccard overlap of keyphrase set vs immediate previous capsule (null for first) |
+| similarity_alert | bool | True if overlap below low-threshold or above high-threshold (potential fragmentation or redundancy) |
+
+### Index File Structure (schema_version: 1)
+```
+{
+  "schema_version": 1,
+  "generated_at": "2025-08-16T12:34:56Z",
+  "source_file": "AIOS_PROJECT_CONTEXT.md",
+  "capsules": [ { Capsule Structural Schema objects ... } ],
+  "stats": {
+    "capsule_count": <int>,
+    "total_lines_indexed": <int>,
+    "aggregate_token_estimate": <int>
+  }
+}
+```
+
+### Canonicalization & Hashing Rules
+1. Extract raw text slice (inclusive) from `start_line`..`end_line`.
+2. Normalize Windows / Unix newlines to `\n`.
+3. Trim trailing whitespace on each line (preserve internal spacing).
+4. Preserve blank lines (structural significance in narrative spacing).
+5. Compute SHA256 hex digest over UTF-8 bytes of the normalized slice.
+
+### Heuristic Tag Extraction
+Lower-cased slice scanned for anchor keywords:
+```
+reorganization, environment, orchestrator, quick, optimization, dual-interface, consciousness, phase, dependency, strategy, recovery
+```
+Presence adds corresponding normalized tag (e.g., `dual-interface`). Additional future semantic layers (embedding-driven topic clustering) may append tags — never delete prior tags (append-only semantics).
+
+### Similarity & Drift Metrics (Foundational Placeholders)
+- `jaccard_overlap_prev`: Computed on unique lower-cased keyphrases (naive extraction: words length >= 5, excluding stoplist). Future upgrade may replace with MinHash + embedding cosine pair.
+- `similarity_alert`: True if overlap < 0.08 (potential fragmentation) or > 0.90 with different hash (potential redundancy / copy inflation).
+
+### Governance Rules
+1. No standalone root capsule files — ingestion occurs only through append to this master file.
+2. Index regeneration required after any capsule or revision addition (invoke reindex script).
+3. Hash collisions (identical `content_hash` across different `id`) trigger a warning (benign if intentional duplication, else investigate).
+4. Schema evolution: bump `schema_version`; maintain backward compatibility translator in reindex script (append new fields, never remove existing without migration mapping).
+5. Downstream automation (semantic search, drift dashboards, mutation guidance) must consume the index rather than parsing raw markdown repeatedly.
+
+### Reindex Script
+Implemented at `scripts/context_reindex.py` (standard library only). Responsibilities:
+- Parse `AIOS_PROJECT_CONTEXT.md` for top-level `##` headings containing `Capsule` or `Transition Note` keywords (and dependency strategy notes).
+- Extract subordinate `### Revision` headings within each capsule as revision_chain entries.
+- Compute hashes, metrics, tags, similarity stats.
+- Write updated `runtime_intelligence/context/context_index.json` (atomic write via temp file then replace).
+- Exit code 0 on success; non-zero on parse or IO errors.
+
+### Developer Workflow
+After adding or modifying a capsule section:
+1. Edit this master file (append-only).
+2. Run `python scripts/context_reindex.py`.
+3. Commit updated `AIOS_PROJECT_CONTEXT.md` + regenerated `context_index.json` + any changelog entry.
+4. (Future) CI job validates index freshness (hash of slices vs stored `content_hash`).
+
+### Future Extension Roadmap (Non-binding)
+- Embedding cache: `runtime_intelligence/context/embeddings/*.json` (deferred until dependency lock pipeline ready).
+- Graph lineage export: adjacency list derived from inferred thematic continuity (optimization -> dependency strategy -> phase evolution).
+- Drift dashboard: visualize similarity trajectory & redundancy hotspots.
+- Mutation guidance API: select prior capsule subset as semantic substrate for code evolution tasks.
+
+Status: Schema v1 established; index generation scaffolding operational. Amend (append-only) when extending schema or adding analytics dimensions.
+
+---
+
 

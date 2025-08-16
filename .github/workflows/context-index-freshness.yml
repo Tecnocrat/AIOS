@@ -1,0 +1,29 @@
+name: context-index-freshness
+on:
+  push:
+    paths:
+      - 'AIOS_PROJECT_CONTEXT.md'
+      - 'scripts/context_reindex.py'
+  pull_request:
+    paths:
+      - 'AIOS_PROJECT_CONTEXT.md'
+      - 'scripts/context_reindex.py'
+jobs:
+  reindex-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run reindex
+        run: |
+          python scripts/context_reindex.py
+      - name: Detect drift
+        run: |
+          git diff --name-only || true
+          if git diff --name-only | grep -q 'runtime_intelligence/context/context_index.json'; then
+            echo 'Index drift detected; please commit regenerated context_index.json.'
+            exit 1
+          fi
