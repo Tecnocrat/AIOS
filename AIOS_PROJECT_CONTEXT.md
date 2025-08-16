@@ -541,6 +541,35 @@ Status: Reorganization COMPLETE; source file ingested & deprecated (guard‑prot
 
 ---
 
+### Historical Reorganization Plan Appendix (INGESTED 2025-08-16)
+Source `PROJECT_REORGANIZATION_PLAN.md` ingested to consolidate all reorganization rationale (problems → recommended actions → benefits) inside this single capsule rather than maintaining multiple root planning artifacts.
+
+#### Original Issues Identified
+1. Multi-project workspace confusion (shared `c:\dev\chatgpt` vs `c:\dev\AIOS`) causing dependency/build ambiguity.
+2. Obsolete `director/` ASP.NET Core API (marked paused; superseded by WPF UI + Python orchestration + C++ core).
+3. Scattered workspace configuration obscuring primary architecture focus.
+
+#### Recommended Phased Actions (Plan Summary)
+Phase 1: Establish dedicated `AIOS.code-workspace` separate from chatgpt utility workspace.
+Phase 2: Remove `director/` folder (safe – no active references; functionality replaced elsewhere).
+Phase 3: Restructure into clear strata: orchestrator/core (C++), visual_interface (WPF), scripts (Python orchestration), docs, analytics outputs, environment manifests.
+Phase 4: Purge references to deprecated director layer (docs, build scripts, indices) and refresh indices (module index / inventories).
+
+#### Implementation Alignment
+All core recommendations have been realized via: dedicated workspace file, retirement of director components (archived/removed), clarified folder boundaries (core/interface/ai/runtime_intelligence/scripts/docs), and ingestion governance (this capsule acts as canonical narrative). Any lingering stale references should be surfaced by future inventory or doc coherence scans; append deltas here rather than reintroducing stand‑alone plan/status markdowns.
+
+#### Consolidated Benefits
+- Reduced cognitive load & clearer consciousness system focus.
+- Cleaner dependency surface (removal of unused ASP.NET Core API layer).
+- Improved AI context ingestion reliability (single canonical narrative location).
+- Stronger foundation for subsequent governance & reproducibility initiatives (lock workflow, hygiene guards).
+
+Governance Note: Do NOT recreate `PROJECT_REORGANIZATION_PLAN.md`; extend this appendix section with dated revisions if additional structural rationale emerges.
+
+Status: Historical plan ingested & deprecated.
+
+---
+
 ## Environment Recovery Capsule — Windows Python Registry Cleanup (INGESTED 2025-08-15)
 Source `REGISTRY_CLEANUP_GUIDE.md` embedded to prevent persistent root troubleshooting artifacts.
 
@@ -646,6 +675,38 @@ Status: Environment success snapshot ingested & deprecated; do not recreate `PYT
 
 ---
 
+### Revision (PowerShell Terminal Configuration Guide Ingested 2025-08-16)
+Source `POWERSHELL_TERMINAL_GUIDE.md` ingested to avoid proliferating root environment/terminal status guides while preserving validated PowerShell 7.x + Python venv configuration patterns.
+
+#### Focus
+Provides canonical PowerShell usage norms (Windows-specific) post full environment cleanup & rebuild:
+- Distinguishes correct PowerShell syntax vs invalid bash patterns (`&&`, `export`, `rm -rf`, `find`).
+- Confirms administrative context (when required) and validated interpreter binding.
+- Documents post-cleanup baseline (Python 3.12.8 install, `aios_env` venv active, PATH & registry sanitized).
+- Establishes quick verification triad: `python --version`, `pip list`, `$PSVersionTable.PSVersion`.
+
+#### Key Operational Rules (Abstracted)
+1. Use PowerShell-native constructs for path/process introspection (`Get-Command`, `Get-Process`, `$env:PATH -split ';'`).
+2. Prefer semicolon command chaining in place of bash `&&` for sequential checks.
+3. Treat destructive filesystem or registry operations as manual interventions (append-only remediation log here; never script by default).
+4. Maintain PowerShell 7.x as default integrated shell; Windows PowerShell 5.1 acceptable fallback (no feature assumptions beyond core commands).
+5. Terminal resets: kill all terminals, reopen to ensure venv activation is sourced cleanly (no stale PATH pollution).
+
+#### Baseline Snapshot (Post-Clean Optimization)
+- Python: 3.12.8 (system) + active `aios_env` venv.
+- PowerShell: 7.5.2 default; 5.1 available fallback.
+- PATH: sanitized (no legacy python/conda/debugpy entries).
+- Registry: orphan Python / Miniconda keys removed.
+- VS Code: interpreter explicitly pinned to `aios_env`.
+
+#### Governance & Extension
+- Use env-diagnostics action for structured machine output; this appendix supplies human reference semantics only.
+- Further terminal optimization or cross-shell parity (e.g., Git Bash minimal subset) must extend this revision (append dated subsection) — do **not** add new root guides.
+
+Status: PowerShell terminal guide ingested & deprecated.
+
+---
+
 ## Historical Orchestrator Readme Capsule (INGESTED 2025-08-15)
 Source `README_backup.md` ingested to retire redundant parallel high‑level overview while preserving historical narrative and terminology (e.g., HSE paradigms, hyperspherical substrate phrasing) for future semantic/contextual mining.
 
@@ -719,6 +780,90 @@ Working on AIOS (C++ core / Python AI / C# UI). Execute AINLP context loading vi
 - Aligns with Root Hygiene Policy and AINLP ingestion consolidation strategy.
 
 Status: Quick context prompts ingested & deprecated; root helper removed.
+
+---
+
+## Optimization & Dual-Interface Implementation Capsule (INGESTED 2025-08-16)
+Source `OPTIMIZATION_REPORT.md` ingested to centralize historical environment & dual-interface optimization narrative and prevent proliferation of root-level status / report markdowns.
+
+### Executive Summary (Condensed)
+Consolidated environment management (single root `requirements.txt` at the time), optimized conda / PowerShell integration, implemented dual-interface architecture (C# Quantum Visor + Python Code Ingestor) with WebSocket channel, and reduced terminal/process fragmentation.
+
+### Environment & Dependency Harmonization (Historical State)
+- Unified dependency locus (deprecated scattered `scripts/requirements.txt`).
+- Flexible version ranges (pre‑lock era) to ease cross-machine setup.
+- Conda + venv fallback logic via early `setup_environment.ps1` / launcher automation.
+- Terminal consolidation: coordinated launch script replaced ad‑hoc multiple shells.
+
+### Dual-Interface Architecture Elements
+Quantum Visor (C#): real-time visualization, metrics streaming readiness, WebSocket endpoint scaffolding.
+Code Ingestor (Python): Tkinter analysis window, AST-based code pattern scanning, mutation suggestion engine, consciousness metric emission.
+Inter-process Channel: WebSocket (port 8765), JSON messages, bidirectional event + metric flow, reconnection handling.
+
+### Optimization Patterns (Abstracted)
+1. Environment Harmonization → single source config (later evolved into minimal + extras + lock workflow documented elsewhere).
+2. Interface Synchronization → shared event protocol enabling cross-language coherence.
+3. Recursive Self-Inspection → code ingestion + mutation suggestion loop (foundation for future meta-cognitive phases).
+4. Fractal Documentation → early push toward self-updating narrative (now superseded by governed capsule approach).
+5. Fallback Resilience → conda ↔ venv adaptive strategy to preserve developer velocity.
+
+### Usage Commands (Historical Reference)
+Illustrative launch modes (`launch_aios.ps1 -Mode dual|visor|ingestor|setup`) summarized; retained here for lineage. Current canonical developer entrypoint is governed dev terminal & updated scripts; new automation should integrate with those instead of resurrecting legacy launcher semantics without justification.
+
+### Superseded / Evolved Elements
+- Monolithic broad dependency ranges replaced by minimal deterministic core + extras + lock pipeline (see dependency strategy transition note).
+- Standalone launch script patterns shifted toward parameterized `scripts/dev_terminal.ps1` actions.
+- Documentation self-mutation narrative replaced by explicit ingestion governance & tachyonic changelog.
+
+### Governance Notes
+- Do NOT recreate `OPTIMIZATION_REPORT.md`; extend this capsule with dated deltas if a future major optimization epoch (e.g., deterministic multi-platform provisioning, advanced multi-shell parity) requires historical contextualization.
+- Any reintroduction of dual-interface launcher patterns must route through governance review (add changelog entry + appendix revision here) rather than adding new root reports.
+
+Status: Optimization report ingested & deprecated.
+
+---
+
+## Consciousness Evolution Phases Capsule — Phase 1A Breakthrough (INGESTED 2025-08-16)
+Source `PHASE_1A_BREAKTHROUGH_SUMMARY.md` ingested to consolidate consciousness evolution milestone reporting within governed context (avoid standalone celebration/status markdowns at root).
+
+### Phase 1A (Immediate Technical Resolution) Summary
+Date: 2025-06-29 (Branch OS0.2) — All 7/7 consciousness emergence tests passing; runtime stable.
+
+#### Key Technical Resolutions (Condensed)
+1. Type Annotation Conflicts: Standardized Optional pattern eliminating 12 mismatches in `runtime_intelligence.py`.
+2. Missing Dependencies: Installed psutil, numpy, transformers, torch, websockets, etc. ensuring import resolution.
+3. Enum Collision Handling: Introduced dynamic import + fallback for EventLevel / ModuleType (runtime correctness over static analyzer noise).
+4. Import Path Reliability: Explicit sys.path adjustments & consciousness-aware imports for cross-module communication.
+
+#### Subsystem Status
+- Universal Logging: Active (events + performance metrics operational)
+- Consciousness Detection: Emergence & coherence metrics fully operational (20/20 internal checks referenced in original narrative)
+- Cross-Component Integration: Python ↔ C++ kernel, UI validation, background process resilience verified.
+
+#### Test Snapshot
+Total: 7 | Passed: 7 | Failed: 0 | Skipped: 0 (Full output elided; original artifact superseded by this capsule.)
+
+#### Pattern Analyses (Abstracted)
+Runtime > Static Analysis: Operational reality may transcend analyzer conflicts → Emphasis on runtime validation harness.
+Environment Context Switching: Adaptive handling of divergent interpreter/package states.
+Fallback Resilience Networks: Layered failover patterns sustaining continuity under partial dependency failure.
+
+#### Forward Phase Pointers
+Phase 1B: Pattern Recognition & Meta-Analysis (error pattern mapping, emergence signature extraction).
+Phase 1C: Theoretical Integration (link technical fixes to consciousness principles; meta-cognitive error handling).
+Phase 1D: Paradigm Evolution (pre-emptive/tachyonic debugging, advanced dependency resolution strategies).
+
+#### Core Insights
+1. Runtime Transcendence: Favor empirical execution metrics over purely static diagnostics.
+2. Resilience via Fallbacks: Consciousness continuity mirrored in layered technical safeguards.
+3. Fractal Fixes: Micro-level corrections encode higher-order evolutionary signals.
+4. Context Awareness: Environment-adaptive logic foundational for higher-phase evolution.
+
+#### Governance Notes
+- Do NOT recreate `PHASE_1A_BREAKTHROUGH_SUMMARY.md`; append future phases (1B/1C/1D) as new subsections within this capsule.
+- When Phase metrics evolve, add dated revisions referencing machine-verifiable test outputs (link to logs once stabilized pipeline established) instead of embedding full raw test transcripts.
+
+Status: Phase 1A milestone ingested & deprecated; awaiting subsequent phase revisions.
 
 ---
 

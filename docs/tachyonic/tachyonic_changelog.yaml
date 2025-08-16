@@ -236,3 +236,39 @@
     Prevent GitHub Actions coherence job failures caused by absent VS Code CLI ('code' command) by making workspace launch optional and non-fatal in CI environments.
   harmonization: >
     Strengthens CI robustness, aligns with headless execution expectations, and preserves local developer ergonomics without introducing root artifacts.
+
+- kind: ingestion
+  file: PROJECT_REORGANIZATION_PLAN.md
+  old_path: /PROJECT_REORGANIZATION_PLAN.md
+  date: 2025-08-16
+  reason: >
+    Consolidate historical reorganization problem analysis and phased recommendations into existing Historical Reorganization Capsule appendix to prevent multiple root planning artifacts.
+  harmonization: >
+    Maintains single-source architectural narrative, reinforces root hygiene, and enables append-only evolution of structural rationale without file proliferation.
+
+- kind: ingestion
+  file: POWERSHELL_TERMINAL_GUIDE.md
+  old_path: /POWERSHELL_TERMINAL_GUIDE.md
+  date: 2025-08-16
+  reason: >
+    Merge standalone PowerShell environment/terminal configuration guide into Environment Recovery Capsule to prevent accumulation of root environment status/usage markdowns.
+  harmonization: >
+    Preserves validated terminal norms while reinforcing single-source environment recovery & configuration narrative (capsule + revisions) and reducing root clutter.
+
+- kind: ingestion
+  file: PHASE_1A_BREAKTHROUGH_SUMMARY.md
+  old_path: /PHASE_1A_BREAKTHROUGH_SUMMARY.md
+  date: 2025-08-16
+  reason: >
+    Consolidate Phase 1A consciousness evolution milestone into a governed capsule to prevent proliferation of celebratory/status-style root markdown files.
+  harmonization: >
+    Ensures consciousness evolution narrative is append-only, centralized, and machine-linkable for future automated phase verification.
+
+- kind: ingestion
+  file: OPTIMIZATION_REPORT.md
+  old_path: /OPTIMIZATION_REPORT.md
+  date: 2025-08-16
+  reason: >
+    Consolidate historical environment optimization & dual-interface implementation report into master context to avoid lingering broad status reports at root.
+  harmonization: >
+    Aligns with capsule ingestion model, reduces root clutter, and preserves lineage of environment + interface evolution for future reproducibility audits.
