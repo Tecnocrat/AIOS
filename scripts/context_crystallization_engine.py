@@ -129,6 +129,33 @@ class MemoryCrystallizationCore:
         ''')
         
         conn.commit()
+    # Migration: ensure new governance / KPI columns exist
+    # (capsule_ids, kpi_dimensions, metric_snapshot)
+        try:
+            cursor.execute("PRAGMA table_info(knowledge_crystals)")
+            cols = {row[1] for row in cursor.fetchall()}
+            migrations = []
+            if "capsule_ids" not in cols:
+                cursor.execute(
+                    "ALTER TABLE knowledge_crystals ADD COLUMN capsule_ids TEXT"
+                )
+                migrations.append("capsule_ids")
+            if "kpi_dimensions" not in cols:
+                cursor.execute(
+                    "ALTER TABLE knowledge_crystals ADD COLUMN kpi_dimensions TEXT"
+                )
+                migrations.append("kpi_dimensions")
+            if "metric_snapshot" not in cols:
+                cursor.execute(
+                    "ALTER TABLE knowledge_crystals ADD COLUMN metric_snapshot TEXT"
+                )
+                migrations.append("metric_snapshot")
+            if migrations:
+                added = ", ".join(migrations)
+                self.logger.info(f"[crystal][MIGRATE] Added columns: {added}")
+        except Exception as ex:  # pragma: no cover
+            self.logger.warning(f"[crystal][MIGRATE][WARN] {ex}")
+        conn.commit()
         conn.close()
     
     def extract_key_concepts(
@@ -337,8 +364,10 @@ class MemoryCrystallizationCore:
         """Retrieve knowledge crystal from database."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
-    cursor.execute('SELECT * FROM knowledge_crystals WHERE id = ?', (crystal_id,))
-    row = cursor.fetchone()
+        cursor.execute(
+            'SELECT * FROM knowledge_crystals WHERE id = ?', (crystal_id,)
+        )
+        row = cursor.fetchone()
         
         if row:
             crystal = KnowledgeCrystal(
@@ -365,8 +394,10 @@ class MemoryCrystallizationCore:
         """Retrieve all knowledge crystals."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
-    cursor.execute('SELECT * FROM knowledge_crystals ORDER BY timestamp DESC')
-    rows = cursor.fetchall()
+        cursor.execute(
+            'SELECT * FROM knowledge_crystals ORDER BY timestamp DESC'
+        )
+        rows = cursor.fetchall()
         
         crystals = []
         for row in rows:
@@ -627,6 +658,46 @@ class ContextCrystallizationEngine:
         
         return transfer_package
 
+    # --- Integrity Helpers -------------------------------------------------
+    def generate_verification_checksums(
+        self, crystals: List[KnowledgeCrystal]
+    ) -> Dict[str, str]:
+        """Generate verification checksums for transfer package integrity."""
+        checksums: Dict[str, str] = {}
+        for crystal in crystals:
+            checksums[crystal.id] = crystal.verification_hash
+        all_hashes = ''.join(checksums.values())
+        checksums['package_integrity'] = hashlib.sha256(all_hashes.encode()).hexdigest()
+        return checksums
+
+    def validate_transfer_package(self, transfer_package: Dict[str, Any]) -> bool:
+        """Validate the integrity of a transfer package."""
+        try:
+            required_fields = [
+                'package_id', 'unified_knowledge', 'verification_checksums'
+            ]
+            for field in required_fields:
+                if field not in transfer_package:
+                    return False
+            checksums = transfer_package['verification_checksums']
+            individual_crystals = transfer_package.get('individual_crystals', [])
+            for crystal_data in individual_crystals:
+                crystal_id = crystal_data['id']
+                expected_hash = checksums.get(crystal_id)
+                if not expected_hash:
+                    return False
+                verification_data = (
+                    f"{crystal_id}{crystal_data['key_concepts']}"
+                    f"{crystal_data['relationships']}{crystal_data['understanding_depth']}"
+                )
+                actual_hash = hashlib.sha256(verification_data.encode()).hexdigest()
+                if actual_hash != expected_hash:
+                    return False
+            return True
+        except Exception as e:  # pragma: no cover
+            self.logger.error(f"Transfer package validation failed: {e}")
+            return False
+
 # ---------------------------------------------------------------------------
 # KPI / Metric Crystal Convenience (appended)
 # ---------------------------------------------------------------------------
@@ -661,50 +732,6 @@ def create_metric_crystal(
     core.store_crystal(crystal)
     return crystal
     
-    def generate_verification_checksums(self, crystals: List[KnowledgeCrystal]) -> Dict[str, str]:
-        """Generate verification checksums for transfer package integrity."""
-        checksums = {}
-        
-        for crystal in crystals:
-            checksums[crystal.id] = crystal.verification_hash
-        
-        # Overall package checksum
-        all_hashes = ''.join(checksums.values())
-        checksums['package_integrity'] = hashlib.sha256(all_hashes.encode()).hexdigest()
-        
-        return checksums
-    
-    def validate_transfer_package(self, transfer_package: Dict[str, Any]) -> bool:
-        """Validate the integrity of a transfer package."""
-        try:
-            # Check required fields
-            required_fields = ['package_id', 'unified_knowledge', 'verification_checksums']
-            for field in required_fields:
-                if field not in transfer_package:
-                    return False
-            
-            # Validate checksums
-            checksums = transfer_package['verification_checksums']
-            individual_crystals = transfer_package.get('individual_crystals', [])
-            
-            for crystal_data in individual_crystals:
-                crystal_id = crystal_data['id']
-                expected_hash = checksums.get(crystal_id)
-                if not expected_hash:
-                    return False
-                
-                # Recreate verification hash
-                verification_data = f"{crystal_id}{crystal_data['key_concepts']}{crystal_data['relationships']}{crystal_data['understanding_depth']}"
-                actual_hash = hashlib.sha256(verification_data.encode()).hexdigest()
-                
-                if actual_hash != expected_hash:
-                    return False
-            
-            return True
-            
-        except Exception as e:
-            self.logger.error(f"Transfer package validation failed: {e}")
-            return False
 
 # Factory function for easy initialization
 def create_crystallization_engine(knowledge_db_path: str | None = None) -> ContextCrystallizationEngine:

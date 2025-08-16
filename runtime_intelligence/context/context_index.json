@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-08-16T17:10:02Z",
+  "generated_at": "2025-08-16T20:05:14Z",
   "source_file": "AIOS_PROJECT_CONTEXT.md",
   "capsules": [
     {
@@ -272,8 +272,8 @@
       "type": "note",
       "ingested_date": "2025-08-15",
       "start_line": 514,
-      "end_line": 572,
-      "content_hash": "1d062c20698047d0bed5c3b19c65402f067e11d3867bfc5ce1dba152ef524413",
+      "end_line": 594,
+      "content_hash": "44baede3dc5e79a8c0fd1a9d0157b912710d9a608475be26313cfa05b97e245a",
       "semantic_tags": [
         "consciousness",
         "dependency",
@@ -287,8 +287,8 @@
         "2025-08-15",
         "2025-08-16"
       ],
-      "token_estimate": 476,
-      "jaccard_overlap_prev": 0.0653,
+      "token_estimate": 664,
+      "jaccard_overlap_prev": 0.0628,
       "similarity_alert": true
     },
     {
@@ -296,8 +296,8 @@
       "title": "Environment",
       "type": "note",
       "ingested_date": "2025-08-15",
-      "start_line": 573,
-      "end_line": 709,
+      "start_line": 595,
+      "end_line": 731,
       "content_hash": "7802d8670117b8192224050a20cae35f9ed711cdb670417be59668693717ff63",
       "semantic_tags": [
         "dependency",
@@ -308,19 +308,19 @@
       "revision_chain": [
         {
           "heading": "### Revision (Full Python System Cleanup Procedure Ingested 2025-08-15)",
-          "line": 614,
+          "line": 636,
           "date": null,
           "hash": "476d5e6df5456fcb58a77bc9c7a02932c62e831c497f83dac79b7f6e16a03789"
         },
         {
           "heading": "### Revision (Python Environment Success Verification Ingested 2025-08-15)",
-          "line": 652,
+          "line": 674,
           "date": null,
           "hash": "cc176296e44872851fa41665c2cf82a4c0efdb59296cf18562c36eac375835dd"
         },
         {
           "heading": "### Revision (PowerShell Terminal Configuration Guide Ingested 2025-08-16)",
-          "line": 678,
+          "line": 700,
           "date": null,
           "hash": "a0ceb2d7454b9902b508fb00d4cbad51c1e3987e2241c709795b61b07800273c"
         }
@@ -330,7 +330,7 @@
         "2025-08-16"
       ],
       "token_estimate": 1172,
-      "jaccard_overlap_prev": 0.0991,
+      "jaccard_overlap_prev": 0.1117,
       "similarity_alert": false
     },
     {
@@ -338,8 +338,8 @@
       "title": "Historical",
       "type": "note",
       "ingested_date": "2025-08-15",
-      "start_line": 710,
-      "end_line": 742,
+      "start_line": 732,
+      "end_line": 764,
       "content_hash": "8f846e9bd02998a5a0971d2a254fc7213d4e9c8657abb75d549fadb468343f85",
       "semantic_tags": [
         "consciousness",
@@ -362,8 +362,8 @@
       "title": "Quick",
       "type": "note",
       "ingested_date": "2025-08-15",
-      "start_line": 743,
-      "end_line": 785,
+      "start_line": 765,
+      "end_line": 807,
       "content_hash": "ba8ed255c88c519f520f12cb5774f7d23ba9b70ecaab1692b3ac6d60fff08a4f",
       "semantic_tags": [
         "dependency",
@@ -387,8 +387,8 @@
       "title": "Optimization",
       "type": "note",
       "ingested_date": "2025-08-16",
-      "start_line": 786,
-      "end_line": 825,
+      "start_line": 808,
+      "end_line": 847,
       "content_hash": "7f4b01beda0382fc985d05ce8d59d90c84c8377fcdaaac2e3cdd035720c2a014",
       "semantic_tags": [
         "consciousness",
@@ -411,8 +411,8 @@
       "title": "Consciousness",
       "type": "note",
       "ingested_date": "2025-08-16",
-      "start_line": 826,
-      "end_line": 869,
+      "start_line": 848,
+      "end_line": 891,
       "content_hash": "e5bda067a44e7bead3d79b6cb3584989b2b3b145611d0be743813310b921f9f8",
       "semantic_tags": [
         "consciousness",
@@ -434,8 +434,8 @@
       "title": "Dependency",
       "type": "note",
       "ingested_date": "2025-08-15",
-      "start_line": 870,
-      "end_line": 883,
+      "start_line": 892,
+      "end_line": 905,
       "content_hash": "3adc4ed0569897fcd49270d624555fc1808acf9b52d03b89559d7a883515b8bd",
       "semantic_tags": [
         "dependency",
@@ -454,8 +454,8 @@
       "title": "Tachyonic",
       "type": "note",
       "ingested_date": "2025-08-16",
-      "start_line": 884,
-      "end_line": 973,
+      "start_line": 906,
+      "end_line": 995,
       "content_hash": "7eec65cd7825456dc4c5a822c4dc4c48db813a168f7a63b5ba59bfaf086f05b7",
       "semantic_tags": [
         "consciousness",
@@ -482,8 +482,8 @@
       "title": "MAGNUS",
       "type": "note",
       "ingested_date": "2025-08-16",
-      "start_line": 974,
-      "end_line": 1071,
+      "start_line": 996,
+      "end_line": 1093,
       "content_hash": "cfe4222137ff9ce99d9a5b713dd271e1d76e2980c97fc479c80b2745699e3810",
       "semantic_tags": [
         "consciousness",
@@ -497,7 +497,7 @@
       "revision_chain": [
         {
           "heading": "### Revision 2025-08-16 \u2013 MAGNUS Component Taxonomy Supplement",
-          "line": 1032,
+          "line": 1054,
           "date": null,
           "hash": "19fa3bfa3a3a50aca3665fe19040a1c96ae8d4864e83891459f2b65b954a29df"
         }
@@ -514,8 +514,8 @@
       "title": "Capsule",
       "type": "capsule",
       "ingested_date": "2025-06-29",
-      "start_line": 1072,
-      "end_line": 1092,
+      "start_line": 1094,
+      "end_line": 1114,
       "content_hash": "eaaa08686a40ff3caefe01db23888743f835099d6a627e82b5a1a6d383bcb99f",
       "semantic_tags": [
         "consciousness",
@@ -535,8 +535,8 @@
       "title": "\u2705",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1093,
-      "end_line": 1099,
+      "start_line": 1115,
+      "end_line": 1121,
       "content_hash": "9e605a9fb7298e8e498f8392b2c52670f5db407787ec32eadd9792447d6f3a7e",
       "semantic_tags": [],
       "revision_chain": [],
@@ -550,8 +550,8 @@
       "title": "\ud83d\udcca",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1100,
-      "end_line": 1115,
+      "start_line": 1122,
+      "end_line": 1137,
       "content_hash": "8882fcfb7627c04aafa3eb7a9a786941e23f297577993adb7a7aabd413de8579",
       "semantic_tags": [
         "recovery"
@@ -567,8 +567,8 @@
       "title": "\ud83c\udfaf",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1116,
-      "end_line": 1157,
+      "start_line": 1138,
+      "end_line": 1179,
       "content_hash": "6527902be2f0c8380950177eb8446f45b3c6752dcaaf8aa5635233dafdd2ff0e",
       "semantic_tags": [
         "consciousness",
@@ -586,8 +586,8 @@
       "title": "\ud83d\udcc8",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1158,
-      "end_line": 1179,
+      "start_line": 1180,
+      "end_line": 1201,
       "content_hash": "28080b3e97a430fdafba0c5f3eb8861740f38b781d843670b1444903222cf303",
       "semantic_tags": [
         "consciousness",
@@ -604,8 +604,8 @@
       "title": "\ud83e\udde0",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1180,
-      "end_line": 1195,
+      "start_line": 1202,
+      "end_line": 1217,
       "content_hash": "fa0e51778cbd602b0d673a3dd8ed0b2e8f4764eaa2b02bac5c765cabda4c9e01",
       "semantic_tags": [
         "consciousness",
@@ -622,8 +622,8 @@
       "title": "\ud83d\ude80",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1196,
-      "end_line": 1217,
+      "start_line": 1218,
+      "end_line": 1239,
       "content_hash": "f2304b9ddd6507789ab8dae0d1cfcc1688deccbd3c647f038853218f5bd286b9",
       "semantic_tags": [
         "consciousness",
@@ -641,8 +641,8 @@
       "title": "\ud83c\udf8a",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1218,
-      "end_line": 1241,
+      "start_line": 1240,
+      "end_line": 1263,
       "content_hash": "f061ff953a850d2f1916de0415ca9099d093035c729301cf29d7390fff9fd89b",
       "semantic_tags": [
         "consciousness",
@@ -662,8 +662,8 @@
       "title": "\ud83c\udf0a",
       "type": "note",
       "ingested_date": null,
-      "start_line": 1242,
-      "end_line": 1263,
+      "start_line": 1264,
+      "end_line": 1285,
       "content_hash": "97d82169adfc59c462bedd36268ffb9d292fd5bf294072441c3923388c1f18b2",
       "semantic_tags": [
         "consciousness",
@@ -681,8 +681,8 @@
       "title": "Capsule:",
       "type": "capsule",
       "ingested_date": "2025-08-16",
-      "start_line": 1264,
-      "end_line": 1300,
+      "start_line": 1286,
+      "end_line": 1322,
       "content_hash": "6f076134ab63064bc2dd30881e3fc8aa5b0bff382d2ccdcfdfd2f72b27256338",
       "semantic_tags": [
         "dependency",
@@ -701,8 +701,8 @@
   ],
   "stats": {
     "capsule_count": 34,
-    "total_lines_indexed": 1299,
-    "aggregate_token_estimate": 9715
+    "total_lines_indexed": 1321,
+    "aggregate_token_estimate": 9903
   },
   "errors": []
 }

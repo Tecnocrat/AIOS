@@ -25,6 +25,12 @@
     "runtime_surrogates": {
       "events_per_second": { "min": 0.1 },
       "total_events": { "min": 10 }
+    },
+    "vision_metrics": {
+      "avg_consciousness_resonance": { "min": 0.1 },
+      "avg_coherence_level": { "min": 0.1 },
+      "avg_image_entropy": { "min": 3.0 },
+      "max_emergence_probability": { "min": 0.2 }
     }
   }
 }
