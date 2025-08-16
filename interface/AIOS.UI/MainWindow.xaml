@@ -29,6 +29,7 @@
                     <Border Background="#FF007ACC" CornerRadius="12" Padding="8,4" Margin="5,0">
                         <TextBlock Name="StatusIndicator" Text="HEALTHY" Foreground="White" FontWeight="Bold" FontSize="12"/>
                     </Border>
+                    <Button Name="OpenKPIDashboardButton" Content="📊 KPIs" Background="#FF3E3E42" Foreground="#FFCCCCCC" BorderThickness="0" FontSize="14" Padding="12,4" Margin="10,0,0,0" Click="OpenKPIDashboard_Click"/>
                     <Button Name="SettingsButton" Content="⚙" Background="Transparent" Foreground="#FFCCCCCC" BorderThickness="0" FontSize="18" Width="35" Height="35" Margin="10,0,0,0" Click="SettingsButton_Click"/>
                 </StackPanel>
             </Grid>

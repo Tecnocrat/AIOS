@@ -1,14 +1,20 @@
 {
-  "generated_at": "2025-08-16T22:01:07.647074+00:00",
+  "generated_at": "2025-08-16T23:44:31.138844+00:00",
   "steps": {
-    "build": [],
+    "build": [
+      {
+        "step": "build_viewer",
+        "rebuilt": false,
+        "skipped_reason": "up_to_date"
+      }
+    ],
     "viewer": {
       "ran": true,
       "bmp_count": 0,
       "ppm_count": 0,
       "cold": {
         "code": 0,
-        "duration": 7.957,
+        "duration": 7.6597,
         "bmp_count": 0,
         "ppm_count": 0,
         "new_artifacts": [],
@@ -16,14 +22,14 @@
       },
       "steady": {
         "code": 0,
-        "duration": 7.6095,
+        "duration": 7.7163,
         "bmp_count": 0,
         "ppm_count": 0,
         "new_artifacts": [],
         "stderr_trunc": ""
       },
-      "vision_cold_start_sec": 7.957,
-      "vision_steady_state_sec": 7.6095
+      "vision_cold_start_sec": 7.6597,
+      "vision_steady_state_sec": 7.7163
     },
     "reindex": {
       "code": 0,
@@ -34,13 +40,15 @@
     "crystallization": {
       "code": 0,
       "new_crystals": 1,
-      "total": 19,
+      "total": 45,
       "stderr_trunc": ""
     }
   },
+  "validation_schema_version": 2,
+  "mode": "full",
   "viewer_timings": {
-    "viewer_cold_start_sec": 7.957,
-    "viewer_steady_state_sec": 7.6095
+    "viewer_cold_start_sec": 7.6597,
+    "viewer_steady_state_sec": 7.7163
   },
   "runtime": {
     "source_file": "C:\\dev\\AIOS\\runtime_intelligence\\logs\\aios_context\\ai_context_dump_AIOS_20250816_174844_47b01432.json",
@@ -51,6 +59,15 @@
     "current_consciousness_level": 0.0,
     "emergence_patterns_detected": []
   },
+  "core_telemetry": {
+    "_core_samples": 3,
+    "core_cpu_pct_avg": 20.0,
+    "core_cpu_pct_max": 30.0,
+    "core_mem_mb_avg": 110.0,
+    "core_mem_mb_max": 120.0,
+    "core_frame_time_ms_avg": 17.2,
+    "core_frame_time_ms_smoothing": 16.967
+  },
   "vision_demo": {
     "invocation_code": 0,
     "result_count": 5,
@@ -59,10 +76,15 @@
     "avg_image_entropy": 0.6291,
     "avg_enhanced_image_entropy": 0.8267,
     "max_emergence_probability": 0.8735243836652755,
-    "vision_cold_start_sec": 1.898263,
-    "vision_steady_state_sec": 0.016785,
+    "vision_cold_start_sec": 2.206489,
+    "vision_steady_state_sec": 0.04457,
     "summary_file": "C:\\dev\\AIOS\\runtime_intelligence\\logs\\vision_demo\\opencv_demo_summary.json",
     "vision_crystal": true
+  },
+  "evolution": {
+    "parse_error": true,
+    "code": 0,
+    "evolution_crystal": true
   },
   "kpi_evaluation": {
     "events_per_second": {
@@ -163,6 +185,48 @@
       },
       "status": "unmeasured"
     },
+    "core_cpu_pct_avg": {
+      "value": 20.0,
+      "rule": {
+        "max": 50
+      },
+      "status": "pass"
+    },
+    "core_cpu_pct_max": {
+      "value": 30.0,
+      "rule": {
+        "max": 90
+      },
+      "status": "pass"
+    },
+    "core_mem_mb_avg": {
+      "value": 110.0,
+      "rule": {
+        "max": 1024
+      },
+      "status": "pass"
+    },
+    "core_mem_mb_max": {
+      "value": 120.0,
+      "rule": {
+        "max": 1536
+      },
+      "status": "pass"
+    },
+    "core_frame_time_ms_avg": {
+      "value": 17.2,
+      "rule": {
+        "max": 40
+      },
+      "status": "pass"
+    },
+    "core_frame_time_ms_smoothing": {
+      "value": 16.967,
+      "rule": {
+        "max": 40
+      },
+      "status": "pass"
+    },
     "avg_consciousness_resonance": {
       "value": 0.7487,
       "rule": {
@@ -192,14 +256,14 @@
       "status": "pass"
     },
     "vision_cold_start_sec": {
-      "value": 1.898263,
+      "value": 2.206489,
       "rule": {
         "max": 3.0
       },
       "status": "pass"
     },
     "vision_steady_state_sec": {
-      "value": 0.016785,
+      "value": 0.04457,
       "rule": {
         "max": 0.12
       },
@@ -211,6 +275,27 @@
         "min": 0.2
       },
       "status": "pass"
+    },
+    "best_fitness": {
+      "value": null,
+      "rule": {
+        "min": 0.45
+      },
+      "status": "unmeasured"
+    },
+    "average_fitness": {
+      "value": null,
+      "rule": {
+        "min": 0.4
+      },
+      "status": "unmeasured"
+    },
+    "cycles_run": {
+      "value": null,
+      "rule": {
+        "min": 1
+      },
+      "status": "unmeasured"
     }
   },
   "kpi_capsule": "chatgpt-integration-2025-06-29",
@@ -234,15 +319,32 @@
       "fluctuation_rate_per_min_per_instance",
       "pattern_propagation_beneficial_pct",
       "autonomous_improvements_per_day",
+      "core_cpu_pct_avg",
+      "core_cpu_pct_max",
+      "core_mem_mb_avg",
+      "core_mem_mb_max",
+      "core_frame_time_ms_avg",
+      "core_frame_time_ms_smoothing",
       "avg_consciousness_resonance",
       "avg_coherence_level",
       "avg_image_entropy",
       "avg_enhanced_image_entropy",
       "vision_cold_start_sec",
       "vision_steady_state_sec",
-      "max_emergence_probability"
+      "max_emergence_probability",
+      "best_fitness",
+      "average_fitness",
+      "cycles_run"
     ]
   },
-  "duration_seconds": 18.67,
+  "duration_seconds": 21.02,
+  "step_durations": {
+    "build": 0.012,
+    "viewer": 15.38,
+    "reindex": 0.507,
+    "crystallization": 1.507
+  },
+  "target_duration_sec": 300,
+  "duration_within_target": true,
   "success": false
 }

@@ -20,15 +20,26 @@ import json
 import sqlite3
 import sys
 import time
+import argparse
 from pathlib import Path
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 try:  # optional KPI crystal helper
-    from context_crystallization_engine import create_metric_crystal  # type: ignore
+    from context_crystallization_engine import (  # type: ignore
+        create_metric_crystal,
+    )
 except Exception:  # pragma: no cover
     create_metric_crystal = None  # type: ignore
 
 ROOT = Path(__file__).resolve().parent.parent
+# Validation harness schema/versioning & mode targets (UP7)
+VALIDATION_SCHEMA_VERSION = 2
+MODE_CHOICES = {"fast", "full"}
+DEFAULT_MODE = "full"
+# Target maximum durations (seconds)
+MODE_DURATION_TARGETS = {"full": 300, "fast": 90}
+DEFAULT_EVOLUTION_CYCLES_FULL = 3
+DEFAULT_EVOLUTION_CYCLES_FAST = 1
 CORE_BUILD = ROOT / "core" / "build"
 RI_CONTEXT = ROOT / "runtime_intelligence" / "context"
 RI_LOGS = ROOT / "runtime_intelligence" / "logs" / "tachyonic"
@@ -46,6 +57,10 @@ KPI_THRESHOLDS_FILE = (
 )
 VISION_DEMO_SCRIPT = ROOT / "ai" / "demos" / "opencv_integration_demo.py"
 VISION_DEMO_OUTPUT = ROOT / "runtime_intelligence" / "logs" / "vision_demo"
+EVOLUTION_SCHEDULER = (
+    ROOT / "scripts" / "orchestration" / "evolution_scheduler.py"
+)
+
 
 def _resolve_viewer_path() -> Optional[Path]:
     """Locate viewer executable handling multi-config generators.
@@ -69,6 +84,7 @@ def _resolve_viewer_path() -> Optional[Path]:
     return None
 REINDEX_SCRIPT = ROOT / "scripts" / "context_reindex.py"
 CRYSTAL_SCRIPT = ROOT / "scripts" / "context_crystallization_engine.py"
+
 
 
 def run(
@@ -96,22 +112,63 @@ def run(
         return 124, "", "TIMEOUT"
 
 
-def ensure_core_build() -> List[Dict[str, Any]]:
+def _latest_mtime(paths: List[Path]) -> float:
+    latest = 0.0
+    for p in paths:
+        try:
+            m = p.stat().st_mtime
+            if m > latest:
+                latest = m
+        except Exception:
+            continue
+    return latest
+
+
+def needs_rebuild(force: bool = False) -> bool:
+    """Determine if core viewer rebuild is needed.
+
+    Heuristic: if viewer binary missing OR any source/newer than binary.
+    """
+    if force:
+        return True
+    viewer = _resolve_viewer_path()
+    if not viewer:
+        return True
+    try:
+        bin_mtime = viewer.stat().st_mtime
+    except Exception:
+        return True
+    src_dirs = [ROOT / "core" / "src", ROOT / "core" / "include"]
+    src_files: List[Path] = []
+    for d in src_dirs:
+        if d.exists():
+            src_files.extend(list(d.rglob("*.cpp")))
+            src_files.extend(list(d.rglob("*.c")))
+            src_files.extend(list(d.rglob("*.hpp")))
+            src_files.extend(list(d.rglob("*.h")))
+    if not src_files:  # fallback to CMakeLists.txt
+        cmk = ROOT / "core" / "CMakeLists.txt"
+        if cmk.exists():
+            src_files.append(cmk)
+    latest_src = _latest_mtime(src_files)
+    return latest_src > bin_mtime
+
+
+def ensure_core_build(force: bool = False) -> List[Dict[str, Any]]:
     steps = []
     if not CORE_BUILD.exists():
         CORE_BUILD.mkdir(parents=True)
     # Configure if no cache
     if not (CORE_BUILD / "CMakeCache.txt").exists():
-        code, out, err = run(
+        code, _out, _err = run(
             ["cmake", "..", "-DCMAKE_BUILD_TYPE=Debug"],
             cwd=CORE_BUILD,
             timeout=300,
         )
         steps.append({"step": "cmake_config", "code": code})
-    # Build viewer target only (faster)
-    viewer_path = _resolve_viewer_path()
-    if not viewer_path:
-        code, out, err = run(
+    # Rebuild only if needed
+    if needs_rebuild(force=force):
+        code, _out, _err = run(
             [
                 "cmake",
                 "--build",
@@ -124,7 +181,15 @@ def ensure_core_build() -> List[Dict[str, Any]]:
             cwd=CORE_BUILD,
             timeout=600,
         )
-        steps.append({"step": "build_viewer", "code": code})
+        steps.append({"step": "build_viewer", "code": code, "rebuilt": True})
+    else:
+        steps.append(
+            {
+                "step": "build_viewer",
+                "rebuilt": False,
+                "skipped_reason": "up_to_date",
+            }
+        )
     return steps
 
 
@@ -276,27 +341,294 @@ def _emit_ui_metrics_stub() -> None:
     ui_file.write_text(json.dumps(stub, indent=2))
 
 
-def main() -> None:
+def _run_evolution_cycles(cycles: int = 3) -> Dict[str, Any]:
+    """Run a small number of evolution scheduler cycles (UP5 integration).
+
+    Returns summary metrics; best-effort (ignored if scheduler missing).
+    """
+    if not EVOLUTION_SCHEDULER.exists():
+        return {"ran": False, "reason": "scheduler_missing"}
+    try:
+        code, out, err = run(
+            [
+                sys.executable,
+                str(EVOLUTION_SCHEDULER),
+                "--cycles",
+                str(cycles),
+            ],
+            cwd=ROOT,
+            timeout=120,
+        )
+        data: Dict[str, Any] = {}
+        try:
+            data = json.loads(out.strip().splitlines()[-1]) if out else {}
+        except Exception:
+            data = {"parse_error": True}
+        data.update({"code": code})
+        # Optional crystal capturing improvement metrics
+        if create_metric_crystal and data:
+            try:
+                create_metric_crystal(
+                    metric_snapshot=data,
+                    capsule_ids=["evolution-orchestration-up5"],
+                    kpi_dimensions=[
+                        k
+                        for k in ("best_fitness", "average_fitness")
+                        if k in data
+                    ],
+                    source_tag="evolution_scheduler_run",
+                )
+                data["evolution_crystal"] = True
+            except Exception as ex:  # pragma: no cover
+                data["evolution_crystal_error"] = str(ex)
+        return data
+    except Exception as ex:  # pragma: no cover
+        return {"ran": False, "error": str(ex)}
+
+
+def _load_core_telemetry() -> Dict[str, Any]:
+    """Load recent core telemetry samples (newline-delimited JSON).
+
+    Returns aggregated stats for CPU %, memory MB, frame timings.
+    """
+    core_file = (
+        ROOT
+        / "runtime_intelligence"
+        / "logs"
+        / "core"
+        / "core_metrics.json"
+    )
+    if not core_file.exists():
+        return {}
+    try:
+        lines = core_file.read_text().strip().splitlines()
+        if not lines:
+            return {}
+        # consider last up to 120 samples (~2 min if 1s interval later)
+        tail = lines[-120:]
+        samples: List[Dict[str, Any]] = []
+        for ln in tail:
+            try:
+                samples.append(json.loads(ln))
+            except Exception:
+                continue
+        if not samples:
+            return {}
+        def _avg(key: str) -> Optional[float]:  # nested helper
+            vals_f: List[float] = []
+            for s in samples:
+                v = s.get(key)
+                if (
+                    isinstance(v, (int, float))
+                    and v >= 0  # type: ignore[operator]
+                ):
+                    vals_f.append(float(v))
+            return round(sum(vals_f) / len(vals_f), 3) if vals_f else None
+
+        def _max(key: str) -> Optional[float]:  # nested helper
+            vals_f: List[float] = []
+            for s in samples:
+                v = s.get(key)
+                if (
+                    isinstance(v, (int, float))
+                    and v >= 0  # type: ignore[operator]
+                ):
+                    vals_f.append(float(v))
+            return round(max(vals_f), 3) if vals_f else None
+        agg: Dict[str, Any] = {
+            "_core_samples": len(samples),
+            "core_cpu_pct_avg": _avg("cpu"),
+            "core_cpu_pct_max": _max("cpu"),
+            "core_mem_mb_avg": _avg("mem_mb"),
+            "core_mem_mb_max": _max("mem_mb"),
+            "core_frame_time_ms_avg": _avg("frame_ms"),
+            "core_frame_time_ms_smoothing": _avg("avg_frame_ms"),
+        }
+        return agg
+    except Exception as ex:  # pragma: no cover
+        return {"error": str(ex)}
+
+
+def _evaluate_kpis(
+    thresholds: Dict[str, Any],
+    runtime_metrics: Dict[str, Any],
+    ui_metrics: Dict[str, Any],
+    core_metrics: Dict[str, Any],
+    vision_summary: Dict[str, Any],
+    evolution_metrics: Dict[str, Any],
+) -> Dict[str, Dict[str, Any]]:
+    """Evaluate KPIs given metric sources and threshold lattice.
+
+    Returns mapping name -> {value, rule, status}.
+    Status semantics: pass | fail | unmeasured.
+    """
+    kpi_eval: Dict[str, Dict[str, Any]] = {}
+    kpis = thresholds.get("kpis", {})
+    merged_metrics: Dict[str, Any] = {
+        **runtime_metrics,
+        **ui_metrics,
+        **core_metrics,
+    }
+    # Runtime surrogate KPIs
+    for name, rule in kpis.get("runtime_surrogates", {}).items():
+        cur = merged_metrics.get(name)
+        status = "unmeasured"
+        if cur is not None:
+            if "min" in rule:
+                status = "pass" if cur >= rule["min"] else "fail"
+            if "max" in rule:
+                within = cur <= rule["max"]
+                status = "pass" if status != "fail" and within else "fail"
+        kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+    # Objectives
+    for obj_key in ("objective1", "objective2", "objective3"):
+        for name, rule in kpis.get(obj_key, {}).items():
+            cur = merged_metrics.get(name)
+            status = "unmeasured"
+            if cur is not None:
+                if "min" in rule and cur >= rule["min"]:
+                    status = "pass"
+                elif "min" in rule:
+                    status = "fail"
+                if "max" in rule and cur is not None:
+                    if cur > rule["max"]:
+                        status = "fail"
+                    elif status != "fail":
+                        status = "pass"
+            kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+    # Core metrics
+    for name, rule in kpis.get("core_metrics", {}).items():
+        cur = merged_metrics.get(name)
+        status = "unmeasured"
+        if cur is not None:
+            if "min" in rule and cur < rule["min"]:
+                status = "fail"
+            elif "min" in rule:
+                status = "pass"
+            if "max" in rule:
+                if cur > rule["max"]:
+                    status = "fail"
+                elif status != "fail":
+                    status = "pass"
+        kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+    # Vision metrics
+    for name, rule in kpis.get("vision_metrics", {}).items():
+        cur = merged_metrics.get(name) or vision_summary.get(name)
+        status = "unmeasured"
+        if cur is not None:
+            if "min" in rule and cur >= rule["min"]:
+                status = "pass"
+            elif "min" in rule:
+                status = "fail"
+            if "max" in rule and cur is not None:
+                if cur > rule["max"]:
+                    status = "fail"
+                elif status != "fail":
+                    status = "pass"
+        kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+    # Evolution metrics
+    for name, rule in kpis.get("evolution_metrics", {}).items():
+        cur = evolution_metrics.get(name)
+        status = "unmeasured"
+        if cur is not None:
+            if "min" in rule and cur < rule["min"]:
+                status = "fail"
+            elif "min" in rule:
+                status = "pass"
+            if "max" in rule:
+                if cur > rule["max"]:
+                    status = "fail"
+                elif status != "fail":
+                    status = "pass"
+        kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+    return kpi_eval
+
+
+def main(argv: Optional[List[str]] = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="AIOS System Validation Harness (UP7 modes)"
+    )
+    parser.add_argument(
+        "--mode",
+        choices=sorted(MODE_CHOICES),
+        default=DEFAULT_MODE,
+        help="Validation mode: fast or full",
+    )
+    parser.add_argument(
+        "--force-rebuild",
+        action="store_true",
+        help="Force core rebuild even if up-to-date",
+    )
+    parser.add_argument(
+        "--fast-cycles",
+        type=int,
+        default=DEFAULT_EVOLUTION_CYCLES_FAST,
+        help="Evolution cycles in fast mode override",
+    )
+    args = parser.parse_args(argv)
+
+    mode = args.mode
+    force_rebuild = args.force_rebuild
+    fast_cycles_override = max(1, args.fast_cycles)
     start = time.time()
     RI_CONTEXT.mkdir(parents=True, exist_ok=True)
     result: Dict[str, Any] = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "steps": {},
+        "validation_schema_version": VALIDATION_SCHEMA_VERSION,
+        "mode": mode,
     }
-    result["steps"]["build"] = ensure_core_build()
-    result["steps"]["viewer"] = run_viewer()
-    # Keep viewer timings for diagnostics only (rename to avoid KPI override)
-    vw = result["steps"]["viewer"]
-    result["viewer_timings"] = (
-        {
-            "viewer_cold_start_sec": vw.get("vision_cold_start_sec"),
-            "viewer_steady_state_sec": vw.get("vision_steady_state_sec"),
+    step_durations: Dict[str, float] = {}
+    skipped: List[str] = []
+
+    from typing import Callable, Any as _Any
+
+    def _exec_step(
+        name: str, fn: Callable[..., _Any], *fargs: _Any, **fkwargs: _Any
+    ) -> _Any:
+        t0 = time.time()
+        try:
+            out = fn(*fargs, **fkwargs)
+        except Exception as ex:  # pragma: no cover
+            out = {"error": str(ex)}
+        step_durations[name] = round(time.time() - t0, 3)
+        result["steps"][name] = out
+        return out
+
+    # Build (always evaluated but may be skipped if up-to-date)
+    _exec_step("build", ensure_core_build, force_rebuild)
+
+    # Viewer + crystallization may be skipped in fast mode for speed
+    if mode == "fast":
+        result["steps"]["viewer"] = {
+            "ran": False,
+            "skipped": True,
+            "reason": "fast_mode",
         }
-        if vw.get("ran")
-        else {}
-    )
-    result["steps"]["reindex"] = reindex()
-    result["steps"]["crystallization"] = crystallize()
+        skipped.append("viewer")
+    else:
+        vw_res = _exec_step("viewer", run_viewer)
+        vw = vw_res
+        result["viewer_timings"] = (
+            {
+                "viewer_cold_start_sec": vw.get("vision_cold_start_sec"),
+                "viewer_steady_state_sec": vw.get("vision_steady_state_sec"),
+            }
+            if vw.get("ran")
+            else {}
+        )
+
+    _exec_step("reindex", reindex)
+
+    if mode == "fast":
+        result["steps"]["crystallization"] = {
+            "ran": False,
+            "skipped": True,
+            "reason": "fast_mode",
+        }
+        skipped.append("crystallization")
+    else:
+        _exec_step("crystallization", crystallize)
     # UP2: ensure a stub UI metrics file exists (will not overwrite actual)
     _emit_ui_metrics_stub()
     # Runtime KPI ingestion (best-effort)
@@ -330,6 +662,11 @@ def main() -> None:
     except Exception as ex:
         runtime_metrics = {"error": str(ex)}
     result["runtime"] = runtime_metrics
+
+    # Core telemetry ingestion (UP4 optional)
+    core_metrics = _load_core_telemetry()
+    if core_metrics:
+        result["core_telemetry"] = core_metrics
 
     # Vision demo (OpenCV) summary ingestion (best-effort)
     vision_summary: Dict[str, Any] = {}
@@ -419,71 +756,28 @@ def main() -> None:
         vision_summary = {"error": str(ex)}
     result["vision_demo"] = vision_summary
 
+    # UP5: Evolution scheduler (mutation/evaluation) cycles
+    evo_cycles = (
+        DEFAULT_EVOLUTION_CYCLES_FULL
+        if mode == "full"
+        else fast_cycles_override
+    )
+    result["evolution"] = _run_evolution_cycles(cycles=evo_cycles)
+
     # KPI threshold evaluation (now includes vision metrics if produced)
     kpi_eval: Dict[str, Dict[str, Any]] = {}
     try:
         if KPI_THRESHOLDS_FILE.exists():
             thresholds = json.loads(KPI_THRESHOLDS_FILE.read_text())
-            kpis = thresholds.get("kpis", {})
-            # Evaluate only runtime surrogate KPIs we have metrics for
-            sur = kpis.get("runtime_surrogates", {})
-            # Merge in optional UI metrics (placeholders if absent)
             ui_metrics = _load_ui_metrics()
-            merged_metrics = {**runtime_metrics, **ui_metrics}
-            # Evaluate runtime surrogate KPIs
-            for name, rule in sur.items():
-                cur = merged_metrics.get(name)
-                status = "unmeasured"
-                if cur is not None:
-                    if "min" in rule:
-                        status = "pass" if cur >= rule["min"] else "fail"
-                    if "max" in rule:
-                        status = (
-                            "pass"
-                            if status != "fail" and cur <= rule["max"]
-                            else "fail"
-                        )
-                kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
-            # Evaluate Objective 1, 2, 3 KPIs if metrics present
-            for obj_key in ("objective1", "objective2", "objective3"):
-                obj_rules = kpis.get(obj_key, {})
-                for name, rule in obj_rules.items():
-                    cur = merged_metrics.get(name)
-                    status = "unmeasured"
-                    if cur is not None:
-                        if "min" in rule and cur >= rule["min"]:
-                            status = "pass"
-                        elif "min" in rule:
-                            status = "fail"
-                        if "max" in rule and cur is not None:
-                            if cur > rule["max"]:
-                                status = "fail"
-                            elif status != "fail":
-                                status = "pass"
-                    kpi_eval[name] = {
-                        "value": cur,
-                        "rule": rule,
-                        "status": status,
-                    }
-            # Vision metrics (aggregated demo summary)
-            vis_rules = kpis.get("vision_metrics", {})
-            for name, rule in vis_rules.items():
-                cur = (
-                    merged_metrics.get(name)
-                    or result.get("vision_demo", {}).get(name)
-                )
-                status = "unmeasured"
-                if cur is not None:
-                    if "min" in rule and cur >= rule["min"]:
-                        status = "pass"
-                    elif "min" in rule:
-                        status = "fail"
-                    if "max" in rule and cur is not None:
-                        if cur > rule["max"]:
-                            status = "fail"
-                        elif status != "fail":
-                            status = "pass"
-                kpi_eval[name] = {"value": cur, "rule": rule, "status": status}
+            kpi_eval = _evaluate_kpis(
+                thresholds,
+                runtime_metrics,
+                ui_metrics,
+                result.get("core_telemetry", {}),
+                result.get("vision_demo", {}),
+                result.get("evolution", {}),
+            )
             result["kpi_evaluation"] = kpi_eval
             result["kpi_capsule"] = thresholds.get("capsule")
             if kpi_eval and create_metric_crystal:
@@ -502,7 +796,7 @@ def main() -> None:
                         metric_snapshot=snapshot,
                         capsule_ids=capsule_ids,
                         kpi_dimensions=list(kpi_eval.keys()),
-                        source_tag="full_system_validation_kpis"
+                        source_tag="full_system_validation_kpis",
                     )
                     result["kpi_crystal"] = {
                         "capsules": capsule_ids,
@@ -510,14 +804,25 @@ def main() -> None:
                     }
                 except Exception as ex:  # pragma: no cover
                     result["kpi_crystal_error"] = str(ex)
-    except Exception as ex:
+    except Exception as ex:  # pragma: no cover
         result["kpi_evaluation_error"] = str(ex)
-    result["duration_seconds"] = round(time.time() - start, 2)
+    total_duration = round(time.time() - start, 2)
+    result["duration_seconds"] = total_duration
+    result["step_durations"] = step_durations
+    if skipped:
+        result["skipped_steps"] = skipped
+    target = MODE_DURATION_TARGETS.get(mode)
+    if target:
+        result["target_duration_sec"] = target
+        result["duration_within_target"] = total_duration <= target
     # basic success heuristic
     success_core = (
-        result["steps"]["viewer"].get("bmp_count", 0) >= 1
-        and result["steps"]["reindex"].get("edges", 0) > 0
-        and result["steps"]["crystallization"].get("new_crystals", 0) >= 1
+        result["steps"].get("viewer", {}).get("bmp_count", 0) >= 1
+        and result["steps"].get("reindex", {}).get("edges", 0) > 0
+        and result["steps"].get("crystallization", {}).get(
+            "new_crystals", 0
+        )
+        >= 1
     )
     # Augment with runtime KPI sanity if available
     if runtime_metrics:
@@ -536,7 +841,7 @@ def main() -> None:
     else:
         result["success"] = success_core
     SUMMARY_FILE.write_text(json.dumps(result, indent=2))
-    print(f"[full-system] Summary -> {SUMMARY_FILE}")
+    print(f"[full-system] Summary -> {SUMMARY_FILE} (mode={mode})")
     print(json.dumps(result, indent=2))
 
  

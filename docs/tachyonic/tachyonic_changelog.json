@@ -152,4 +152,58 @@
     "reason": "UP3 vision warm-up integration: shift timing KPIs to intrinsic frame processing durations and tighten targets.",
     "harmonization": "Aligns KPI semantics with actual module performance; prepares for parallel scaling instrumentation (UP12)."
   }
+ ,{
+    "kind": "telemetry_addition",
+    "file": "aios_plugin_telemetry.(hpp,cpp)",
+    "old_path": null,
+    "new_path": "/core/include/aios_plugin_telemetry.hpp & /core/src/aios_plugin_telemetry.cpp",
+    "date": "2025-08-17",
+    "reason": "UP4 core plugin telemetry: add sampler thread, JSON sink, CPU/memory sampling, newline-delimited core_metrics.json emission.",
+    "harmonization": "Introduces governed core observability under runtime_intelligence/logs/core enabling future KPI ingestion & trend batching (UP10)."
+  }
+ ,{
+    "kind": "kpi_threshold_update",
+    "file": "kpi_thresholds.json",
+    "old_path": "version 3 adds core_metrics group baselining CPU/memory/frame timing",
+    "new_path": "version 3 with core_metrics (cpu/mem/frame) + existing vision & objectives",
+    "date": "2025-08-17",
+    "reason": "Add foundational core resource KPIs from new telemetry sink to begin tracking utilization envelope.",
+    "harmonization": "Extends governed KPI lattice to core operational health; primes anomaly detection & capacity planning." 
+  }
+ ,{
+    "kind": "orchestration_addition",
+    "file": "evolution_scheduler.py",
+    "old_path": null,
+    "new_path": "/scripts/orchestration/evolution_scheduler.py",
+    "date": "2025-08-17",
+    "reason": "UP5 evolution scheduler scaffold: mutation/evaluation loop + lineage + weekly improvement crystal emission.",
+    "harmonization": "Establishes governed evolutionary improvement cadence; integrates with crystal lineage for fitness trajectory tracking." 
+  }
+ ,{
+    "kind": "kpi_threshold_update",
+    "file": "kpi_thresholds.json",
+    "old_path": "version 3 core + vision + objectives",
+    "new_path": "version 4 adds evolution_metrics (best_fitness, average_fitness, cycles_run)",
+    "date": "2025-08-17",
+    "reason": "Link evolution scheduler outputs into governed KPI lattice for early fitness trajectory visibility.",
+    "harmonization": "Extends KPI surface to adaptive improvement loop; enables future trend gating & anomaly detection." 
+  }
+ ,{
+    "kind": "ui_addition",
+    "file": "KPIDashboardWindow.(xaml,cs)",
+    "old_path": null,
+    "new_path": "/interface/AIOS.UI/KPIDashboardWindow.xaml & .cs",
+    "date": "2025-08-17",
+    "reason": "UP6 UI KPI Dashboard: real-time KPI panel with capsule trigger, sub-500ms refresh targeting, streaming core telemetry & evolution lineage integration.",
+    "harmonization": "Surfaces governed KPI lattice & adaptive evolution signals in visual layer; closes loop between telemetry, evolution scheduler, and governance automation (status capsules). Enables rapid operator assessment & prepares ground for parallel instance scaling metrics (UP12)."
+  }
+ ,{
+    "kind": "validation_upgrade",
+    "file": "run_full_system_validation.py",
+    "old_path": "single-mode harness (no schema versioning, always full)",
+    "new_path": "schema v2 with fast/full modes, rebuild detection, step timings, target duration gating",
+    "date": "2025-08-17",
+    "reason": "UP7 Validation Harness Expansion: introduce fast mode (<90s) & full mode (<300s), conditional build, skip semantics, evolution cycles scaling, and explicit schema version for downstream consumers.",
+    "harmonization": "Improves iteration velocity & governance traceability; structured timings enable trend analysis and future SLA enforcement (UP10)."
+  }
 ]
