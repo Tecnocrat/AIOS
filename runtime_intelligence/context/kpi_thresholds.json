@@ -1,0 +1,30 @@
+{
+  "capsule": "chatgpt-integration-2025-06-29",
+  "version": 1,
+  "generated_at": "2025-08-16T00:00:00Z",
+  "notes": "Baseline KPI thresholds derived from ingested integration capsule. Some KPIs currently unmeasured; harness will mark them as 'unmeasured' until instrumentation added.",
+  "kpis": {
+    "objective1": {
+      "ui_uptime_pct": { "min": 99.5 },
+      "state_restore_sec": { "max": 2.0 },
+      "metadata_rate_ctx_per_min": { "min": 1000 },
+      "render_fps": { "min": 60 }
+    },
+    "objective2": {
+      "entropy_quality_nist_score": { "min": 0.9 },
+      "mutation_effectiveness_pct": { "min": 80 },
+      "fractal_emergence_levels": { "min": 3 },
+      "cpp_python_latency_ms": { "max": 50 }
+    },
+    "objective3": {
+      "parallel_instances": { "min": 10 },
+      "fluctuation_rate_per_min_per_instance": { "min": 1 },
+      "pattern_propagation_beneficial_pct": { "min": 90 },
+      "autonomous_improvements_per_day": { "min": 5 }
+    },
+    "runtime_surrogates": {
+      "events_per_second": { "min": 0.1 },
+      "total_events": { "min": 10 }
+    }
+  }
+}

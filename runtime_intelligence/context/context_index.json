@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-08-16T14:45:07Z",
+  "generated_at": "2025-08-16T17:10:02Z",
   "source_file": "AIOS_PROJECT_CONTEXT.md",
   "capsules": [
     {
@@ -483,8 +483,8 @@
       "type": "note",
       "ingested_date": "2025-08-16",
       "start_line": 974,
-      "end_line": 1092,
-      "content_hash": "bd9e21057ac0f444ea066eb84cc2a69d0fdfecf5cee21c14fff6c8a6bed59fb5",
+      "end_line": 1071,
+      "content_hash": "cfe4222137ff9ce99d9a5b713dd271e1d76e2980c97fc479c80b2745699e3810",
       "semantic_tags": [
         "consciousness",
         "dependency",
@@ -500,20 +500,34 @@
           "line": 1032,
           "date": null,
           "hash": "19fa3bfa3a3a50aca3665fe19040a1c96ae8d4864e83891459f2b65b954a29df"
-        },
-        {
-          "heading": "### Revision 2025-08-16 \u2013 ChatGPT Integration Completion & Optimization Framework Ingestion",
-          "line": 1072,
-          "date": null,
-          "hash": "74c5646027f48aa6f481d81e3131539bbd889e1543ecf8aab157b07a8623f016"
         }
       ],
+      "dates_all": [
+        "2025-08-16"
+      ],
+      "token_estimate": 1098,
+      "jaccard_overlap_prev": 0.1204,
+      "similarity_alert": false
+    },
+    {
+      "id": "capsule-2",
+      "title": "Capsule",
+      "type": "capsule",
+      "ingested_date": "2025-06-29",
+      "start_line": 1072,
+      "end_line": 1092,
+      "content_hash": "eaaa08686a40ff3caefe01db23888743f835099d6a627e82b5a1a6d383bcb99f",
+      "semantic_tags": [
+        "consciousness",
+        "optimization"
+      ],
+      "revision_chain": [],
       "dates_all": [
         "2025-06-29",
         "2025-08-16"
       ],
-      "token_estimate": 1375,
-      "jaccard_overlap_prev": 0.1227,
+      "token_estimate": 279,
+      "jaccard_overlap_prev": 0.0979,
       "similarity_alert": false
     },
     {
@@ -528,7 +542,7 @@
       "revision_chain": [],
       "dates_all": [],
       "token_estimate": 17,
-      "jaccard_overlap_prev": 0.0056,
+      "jaccard_overlap_prev": 0.0139,
       "similarity_alert": true
     },
     {
@@ -649,8 +663,8 @@
       "type": "note",
       "ingested_date": null,
       "start_line": 1242,
-      "end_line": 1262,
-      "content_hash": "64da857c7a29bf141703a39e41e3dade8ec9ba9b663932f35181ea8caeff73db",
+      "end_line": 1263,
+      "content_hash": "97d82169adfc59c462bedd36268ffb9d292fd5bf294072441c3923388c1f18b2",
       "semantic_tags": [
         "consciousness",
         "optimization",
@@ -661,12 +675,34 @@
       "token_estimate": 109,
       "jaccard_overlap_prev": 0.2095,
       "similarity_alert": false
+    },
+    {
+      "id": "capsule-3",
+      "title": "Capsule:",
+      "type": "capsule",
+      "ingested_date": "2025-08-16",
+      "start_line": 1264,
+      "end_line": 1300,
+      "content_hash": "6f076134ab63064bc2dd30881e3fc8aa5b0bff382d2ccdcfdfd2f72b27256338",
+      "semantic_tags": [
+        "dependency",
+        "environment",
+        "orchestrator"
+      ],
+      "revision_chain": [],
+      "dates_all": [
+        "2025-06-29",
+        "2025-08-16"
+      ],
+      "token_estimate": 223,
+      "jaccard_overlap_prev": 0.0184,
+      "similarity_alert": true
     }
   ],
   "stats": {
-    "capsule_count": 32,
-    "total_lines_indexed": 1261,
-    "aggregate_token_estimate": 9490
+    "capsule_count": 34,
+    "total_lines_indexed": 1299,
+    "aggregate_token_estimate": 9715
   },
   "errors": []
 }

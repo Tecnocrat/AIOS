@@ -35,4 +35,40 @@
     "reason": "Append-only harmonization of standalone integration summary into master governed context per AINLP protocol.",
     "harmonization": "Prevents drift by consolidating ChatGPT migration & KPI framework into indexed capsule set; future references cite capsule ID chatgpt-integration-2025-06-29."
   }
+ ,{
+    "kind": "promotion",
+    "file": "chatgpt-integration-2025-06-29 capsule",
+    "old_path": "/AIOS_PROJECT_CONTEXT.md (unnamed revision section)",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule chatgpt-integration-2025-06-29 heading)",
+    "date": "2025-08-16",
+    "reason": "Promote revision block to explicit capsule heading for stable indexing and lineage references.",
+    "harmonization": "Stabilizes capsule ID; enables deterministic referencing in future KPI & crystallization processes."
+  }
+ ,{
+    "kind": "removal",
+    "file": "INTEGRATION_COMPLETE_SUMMARY.md",
+    "old_path": "/INTEGRRATION_COMPLETE_SUMMARY.md",
+    "new_path": "(removed; content canonicalized in AIOS_PROJECT_CONTEXT.md capsule chatgpt-integration-2025-06-29)",
+    "date": "2025-08-16",
+    "reason": "Eliminate duplicate standalone file post-capsule promotion to avoid divergence.",
+    "harmonization": "Reduces redundancy, enforces single source of truth per tachyonic governance policy."
+  }
+ ,{
+    "kind": "ingestion",
+    "file": "DEVELOPMENT_ENVIRONMENT_STATUS.md",
+    "old_path": "/DEVELOPMENT_ENVIRONMENT_STATUS.md",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule development-environment-status-2025-08-16)",
+    "date": "2025-08-16",
+    "reason": "Ingest environment readiness confirmation into governed master context; establish capsule for lineage.",
+    "harmonization": "Prevents drift of environment readiness facts; enables KPI gating referencing stable capsule ID."
+  }
+ ,{
+    "kind": "removal",
+    "file": "DEVELOPMENT_ENVIRONMENT_STATUS.md",
+    "old_path": "/DEVELOPMENT_ENVIRONMENT_STATUS.md",
+    "new_path": "(removed; content canonicalized in AIOS_PROJECT_CONTEXT.md capsule development-environment-status-2025-08-16)",
+    "date": "2025-08-16",
+    "reason": "Eliminate duplicate standalone environment status file after successful capsule ingestion.",
+    "harmonization": "Reinforces single source of truth. Removal executed via PowerShell Remove-Item for auditable governance (see PS history)."
+  }
 ]

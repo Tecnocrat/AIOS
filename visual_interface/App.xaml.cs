@@ -55,10 +55,12 @@ namespace AIOS.VisualInterface
             services.AddSingleton<ConsciousnessGeometryEngine>();
             services.AddSingleton<ConsoleLogger>();
             services.AddSingleton<RuntimeAnalytics>();
+        services.AddSingleton<CellularRuntimeBridge>(); // runtime_intelligence bridge
+            services.AddSingleton<UIMetricsEmitter>(); // KPI emitter
             
             // Register both visualization windows
             services.AddTransient<SimpleVisualizationWindow>();
-            services.AddTransient<MainVisualizationWindow>();
+            // MainVisualizationWindow removed from build; AdvancedVisualizationWindow instantiated directly.
             
             // Configure HTTP client for potential remote connections
             services.AddHttpClient();

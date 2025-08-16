@@ -1,5 +1,7 @@
 # AIOS Consciousness Emergence System - Unified Launcher
 # Advanced PowerShell script for launching dual-interface consciousness system
+# NOTE: CellularRuntimeBridge (C#) polls runtime_intelligence context dumps.
+# Ensure visualization launched after runtime modules to surface live metrics.
 
 param(
     [string]$Mode = "canvas",       # "canvas", "dual", "ingestor", "visor", "setup"
