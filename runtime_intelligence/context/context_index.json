@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-08-16T20:05:14Z",
+  "generated_at": "2025-08-16T21:21:03Z",
   "source_file": "AIOS_PROJECT_CONTEXT.md",
   "capsules": [
     {
@@ -364,7 +364,7 @@
       "ingested_date": "2025-08-15",
       "start_line": 765,
       "end_line": 807,
-      "content_hash": "ba8ed255c88c519f520f12cb5774f7d23ba9b70ecaab1692b3ac6d60fff08a4f",
+      "content_hash": "b0ec8e6afe1e7c2be3c42bc086b13a02ed9fb200a827c7cf367c1723b8458e78",
       "semantic_tags": [
         "dependency",
         "environment",
@@ -378,8 +378,8 @@
       "dates_all": [
         "2025-08-15"
       ],
-      "token_estimate": 420,
-      "jaccard_overlap_prev": 0.1483,
+      "token_estimate": 425,
+      "jaccard_overlap_prev": 0.1477,
       "similarity_alert": false
     },
     {
@@ -403,7 +403,7 @@
         "2025-08-16"
       ],
       "token_estimate": 379,
-      "jaccard_overlap_prev": 0.1438,
+      "jaccard_overlap_prev": 0.1433,
       "similarity_alert": false
     },
     {
@@ -697,12 +697,58 @@
       "token_estimate": 223,
       "jaccard_overlap_prev": 0.0184,
       "similarity_alert": true
+    },
+    {
+      "id": "capsule-4",
+      "title": "Capsule:",
+      "type": "capsule",
+      "ingested_date": "2025-08-16",
+      "start_line": 1323,
+      "end_line": 1358,
+      "content_hash": "b9097fed6278c6eb7b9ffbde761c56fee220cb6886f71c6aa12887fdc75c0efe",
+      "semantic_tags": [
+        "consciousness",
+        "environment",
+        "optimization"
+      ],
+      "revision_chain": [],
+      "dates_all": [
+        "2025-06-29",
+        "2025-08-16"
+      ],
+      "token_estimate": 408,
+      "jaccard_overlap_prev": 0.0625,
+      "similarity_alert": true
+    },
+    {
+      "id": "capsule-5",
+      "title": "Capsule:",
+      "type": "capsule",
+      "ingested_date": "2025-08-16",
+      "start_line": 1359,
+      "end_line": 1397,
+      "content_hash": "610c786bcbef704c6ee712a00cccbedf1184dc7dbeebca0d674ee45aea6d549a",
+      "semantic_tags": [
+        "consciousness",
+        "dependency",
+        "environment",
+        "orchestrator",
+        "reorganization"
+      ],
+      "revision_chain": [],
+      "dates_all": [
+        "2025-06-29",
+        "2025-08-16"
+      ],
+      "token_estimate": 331,
+      "jaccard_overlap_prev": 0.0769,
+      "similarity_alert": true
     }
   ],
   "stats": {
-    "capsule_count": 34,
-    "total_lines_indexed": 1321,
-    "aggregate_token_estimate": 9903
+    "capsule_count": 36,
+    "total_lines_indexed": 1396,
+    "aggregate_token_estimate": 10647
   },
   "errors": []
 }

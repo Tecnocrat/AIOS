@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-16T20:05:14Z",
+  "generated_at": "2025-08-16T21:21:03Z",
   "edges": [
     {
       "from": "ainlp",
@@ -149,7 +149,7 @@
     {
       "from": "historical-2",
       "to": "quick",
-      "jaccard_prev": 0.1483,
+      "jaccard_prev": 0.1477,
       "shared_tags": [
         "dependency",
         "environment",
@@ -160,7 +160,7 @@
     {
       "from": "quick",
       "to": "optimization",
-      "jaccard_prev": 0.1438,
+      "jaccard_prev": 0.1433,
       "shared_tags": [
         "dependency",
         "environment",
@@ -299,6 +299,25 @@
       "to": "capsule-3",
       "jaccard_prev": 0.0184,
       "shared_tags": [],
+      "note": "low-overlap"
+    },
+    {
+      "from": "capsule-3",
+      "to": "capsule-4",
+      "jaccard_prev": 0.0625,
+      "shared_tags": [
+        "environment"
+      ],
+      "note": "low-overlap"
+    },
+    {
+      "from": "capsule-4",
+      "to": "capsule-5",
+      "jaccard_prev": 0.0769,
+      "shared_tags": [
+        "consciousness",
+        "environment"
+      ],
       "note": "low-overlap"
     }
   ]

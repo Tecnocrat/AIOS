@@ -56,10 +56,10 @@ The standalone `ROOT_HYGIENE_POLICY.md` has been harmonized here so its core gui
 
 ### Allowed Root Artifact Categories (Whitelisted)
 1. Orchestration: `AIOS.sln`, `AIOS.code-workspace`.
-2. Governance & status meta: `AIOS_PROJECT_CONTEXT.md`, `CURRENT_STATUS.md`, strategic *_SUMMARY.md.
+2. Governance & status meta: `AIOS_PROJECT_CONTEXT.md` (includes current-status-* capsules), strategic *_SUMMARY.md.
 3. Core coordination dirs: `core/`, `interface/`, `ai/`, `runtime_intelligence/`, `scripts/`, `docs/`.
 4. Baseline configs: `.editorconfig`, `.gitignore`, linters, canonical env manifests.
-5. Transitional upgrade manifests (must be referenced in `CURRENT_STATUS.md`).
+5. Transitional upgrade manifests (referenced via current-status-* capsule series; root file removed).
 
 ### Explicitly Disallowed (Guarded)
 - Any filename declared in `governance/deprecated_files.ps1`.
