@@ -550,6 +550,17 @@ Rationale: Faster solves, reduced cold start size, optional heavy dependencies, 
 
 Governance: Move recorded in tachyonic changelog; any future environment profile additions must reside within `ai/env/` and append a changelog entry rather than creating new root manifests.
 
+### OpenCV Integration Demo Relocation (2025-08-16)
+The root `demo_opencv_integration.py` (OpenCV consciousness pattern / service integration showcase) has been relocated to `ai/demos/opencv_integration_demo.py` and enhanced with:
+- CLI phase selection (direct/service/cli).
+- JSON summary emission (`opencv_demo_summary.json`).
+- Output directory parameter (defaults to system temp path segment).
+- Structured dataclass result objects enabling future KPI / crystal ingestion.
+
+Rationale: Root hygiene (remove standalone demo), align with segmented AI orchestration assets inside `ai/`, and prepare for metric crystallization of visual emergence patterns.
+
+Future: Integrate summary ingestion into validation harness → generate KPI-aligned visual emergence crystals.
+
 ---
 
 ### Historical Reorganization Plan Appendix (INGESTED 2025-08-16)

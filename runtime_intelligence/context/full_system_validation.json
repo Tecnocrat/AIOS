@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-16T17:09:55.600112+00:00",
+  "generated_at": "2025-08-16T20:05:06.802725+00:00",
   "steps": {
     "build": [],
     "viewer": {
@@ -17,10 +17,10 @@
       "indexed": true
     },
     "crystallization": {
-      "code": 1,
-      "new_crystals": 0,
-      "total": 5,
-      "stderr_trunc": "  File \"C:\\dev\\AIOS\\scripts\\context_crystallization_engine.py\", line 343\n    if row:\nIndentationError: unexpected indent\n"
+      "code": 0,
+      "new_crystals": 1,
+      "total": 10,
+      "stderr_trunc": ""
     }
   },
   "runtime": {
@@ -31,6 +31,16 @@
     "module_event_counts": null,
     "current_consciousness_level": 0.0,
     "emergence_patterns_detected": []
+  },
+  "vision_demo": {
+    "invocation_code": 0,
+    "result_count": 4,
+    "avg_consciousness_resonance": 0.7487,
+    "avg_coherence_level": 0.7537,
+    "avg_image_entropy": 0.6291,
+    "max_emergence_probability": 0.8735243836652755,
+    "summary_file": "C:\\dev\\AIOS\\runtime_intelligence\\logs\\vision_demo\\opencv_demo_summary.json",
+    "vision_crystal": true
   },
   "kpi_evaluation": {
     "events_per_second": {
@@ -130,9 +140,63 @@
         "min": 5
       },
       "status": "unmeasured"
+    },
+    "avg_consciousness_resonance": {
+      "value": 0.7487,
+      "rule": {
+        "min": 0.1
+      },
+      "status": "pass"
+    },
+    "avg_coherence_level": {
+      "value": 0.7537,
+      "rule": {
+        "min": 0.1
+      },
+      "status": "pass"
+    },
+    "avg_image_entropy": {
+      "value": 0.6291,
+      "rule": {
+        "min": 3.0
+      },
+      "status": "fail"
+    },
+    "max_emergence_probability": {
+      "value": 0.8735243836652755,
+      "rule": {
+        "min": 0.2
+      },
+      "status": "pass"
     }
   },
   "kpi_capsule": "chatgpt-integration-2025-06-29",
-  "duration_seconds": 7.43,
+  "kpi_crystal": {
+    "capsules": [
+      "chatgpt-integration-2025-06-29",
+      "development-environment-status-2025-08-16"
+    ],
+    "dimensions": [
+      "events_per_second",
+      "total_events",
+      "ui_uptime_pct",
+      "state_restore_sec",
+      "metadata_rate_ctx_per_min",
+      "render_fps",
+      "entropy_quality_nist_score",
+      "mutation_effectiveness_pct",
+      "fractal_emergence_levels",
+      "cpp_python_latency_ms",
+      "parallel_instances",
+      "fluctuation_rate_per_min_per_instance",
+      "pattern_propagation_beneficial_pct",
+      "autonomous_improvements_per_day",
+      "avg_consciousness_resonance",
+      "avg_coherence_level",
+      "avg_image_entropy",
+      "max_emergence_probability"
+    ]
+  },
+  "duration_seconds": 12.75,
   "success": false
 }

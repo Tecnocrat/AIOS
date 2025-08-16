@@ -10,6 +10,15 @@
   },
   {
     "kind": "move",
+    "file": "demo_opencv_integration.py",
+    "old_path": "/demo_opencv_integration.py",
+    "new_path": "/ai/demos/opencv_integration_demo.py",
+    "date": "2025-08-16",
+    "reason": "Root harmonization: relocate OpenCV demo under ai/demos with enhanced CLI + summary emission.",
+    "harmonization": "Eliminates root demo clutter; enables governable metric extraction and future crystal linkage."
+  },
+  {
+    "kind": "move",
     "file": "test_chatgpt_integration.py",
     "old_path": "/",
     "new_path": "/ai/tests/test_chatgpt_integration_path.py",
