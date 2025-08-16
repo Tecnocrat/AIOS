@@ -52,6 +52,7 @@ file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 # Exclude the original problematic core files for now, use minimal version
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/aios_core.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/universal_quantum_holographic.cpp")
+list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/tachyonic_surface_viewer_main.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
 
 option(AIOS_TACHYONIC_ASM "Enable MASM optimized tachyonic renderer" OFF)
