@@ -229,6 +229,29 @@ def _load_ui_metrics() -> Dict[str, Any]:
         return {"error": str(ex)}
 
 
+def _emit_ui_metrics_stub() -> None:
+    """UP2 (initial): Emit stub UI metrics if none exist to reduce 'unmeasured'.
+
+    This is a placeholder until real UI instrumentation (render loop, latency
+    probes) lands. Values are conservative synthetic samples and clearly
+    marked so they can be filtered out later if needed.
+    """
+    ui_dir = ROOT / "runtime_intelligence" / "logs" / "ui"
+    ui_dir.mkdir(parents=True, exist_ok=True)
+    ui_file = ui_dir / "ui_metrics.json"
+    if ui_file.exists():  # don't overwrite real metrics
+        return
+    stub = {
+        "render_fps": 0.0,  # real instrumentation pending
+        "cpp_python_latency_ms": None,
+        "ui_uptime_pct": None,
+        "state_restore_sec": None,
+        "metadata_rate_ctx_per_min": None,
+        "_stub": True,
+    }
+    ui_file.write_text(json.dumps(stub, indent=2))
+
+
 def main() -> None:
     start = time.time()
     RI_CONTEXT.mkdir(parents=True, exist_ok=True)
@@ -240,6 +263,8 @@ def main() -> None:
     result["steps"]["viewer"] = run_viewer()
     result["steps"]["reindex"] = reindex()
     result["steps"]["crystallization"] = crystallize()
+    # UP2: ensure a stub UI metrics file exists (will not overwrite actual)
+    _emit_ui_metrics_stub()
     # Runtime KPI ingestion (best-effort)
     runtime_metrics: Dict[str, Any] = {}
     try:
@@ -278,27 +303,52 @@ def main() -> None:
         if VISION_DEMO_SCRIPT.exists():
             VISION_DEMO_OUTPUT.mkdir(parents=True, exist_ok=True)
             # Run only direct phase for speed
-            code, out, err = run([
-                sys.executable,
-                str(VISION_DEMO_SCRIPT),
-                "--phases","direct",
-                "--output-dir", str(VISION_DEMO_OUTPUT)
-            ], cwd=ROOT, timeout=120)
+            code, out, err = run(
+                [
+                    sys.executable,
+                    str(VISION_DEMO_SCRIPT),
+                    "--phases",
+                    "direct",
+                    "--output-dir",
+                    str(VISION_DEMO_OUTPUT),
+                ],
+                cwd=ROOT,
+                timeout=120,
+            )
             summary_path = VISION_DEMO_OUTPUT / "opencv_demo_summary.json"
             if summary_path.exists():
                 raw = json.loads(summary_path.read_text())
                 # Aggregate basic metrics
-                vals = [r for r in raw.get("results", []) if not r.get("error") and r.get("kind") in {"simple","mandala","fractal"}]
+                vals = [
+                    r
+                    for r in raw.get("results", [])
+                    if not r.get("error")
+                    and r.get("kind") in {"simple", "mandala", "fractal"}
+                ]
+
                 def _avg(field: str) -> Optional[float]:
-                    num = [r.get(field) for r in vals if isinstance(r.get(field),(int,float))]
-                    return round(sum(num)/len(num),4) if num else None
+                    nums = [
+                        r.get(field)
+                        for r in vals
+                        if isinstance(r.get(field), (int, float))
+                    ]
+                    return round(sum(nums) / len(nums), 4) if nums else None
+
                 vision_summary = {
                     "invocation_code": code,
                     "result_count": raw.get("count"),
-                    "avg_consciousness_resonance": _avg("consciousness_resonance"),
+                    "avg_consciousness_resonance": _avg(
+                        "consciousness_resonance"
+                    ),
                     "avg_coherence_level": _avg("coherence_level"),
                     "avg_image_entropy": _avg("image_entropy"),
-                    "max_emergence_probability": max([r.get("emergence_probability",0.0) for r in vals], default=None),
+                    "max_emergence_probability": max(
+                        [
+                            r.get("emergence_probability", 0.0)
+                            for r in vals
+                        ],
+                        default=None,
+                    ),
                     "summary_file": str(summary_path),
                 }
                 # Optional crystal for vision metrics
@@ -306,15 +356,26 @@ def main() -> None:
                     try:
                         create_metric_crystal(
                             metric_snapshot=vision_summary,
-                            capsule_ids=["chatgpt-integration-2025-06-29"],
-                            kpi_dimensions=[k for k in vision_summary.keys() if k.startswith("avg_") or k.endswith("probability")],
-                            source_tag="vision_demo_metrics"
+                            capsule_ids=[
+                                "chatgpt-integration-2025-06-29"
+                            ],
+                            kpi_dimensions=[
+                                k
+                                for k in vision_summary.keys()
+                                if k.startswith("avg_")
+                                or k.endswith("probability")
+                            ],
+                            source_tag="vision_demo_metrics",
                         )
                         vision_summary["vision_crystal"] = True
                     except Exception as ex:  # pragma: no cover
                         vision_summary["vision_crystal_error"] = str(ex)
             else:
-                vision_summary = {"error": "summary_missing", "code": code, "stderr_trunc": err[-200:]}
+                vision_summary = {
+                    "error": "summary_missing",
+                    "code": code,
+                    "stderr_trunc": err[-200:],
+                }
     except Exception as ex:  # pragma: no cover
         vision_summary = {"error": str(ex)}
     result["vision_demo"] = vision_summary

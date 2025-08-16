@@ -50,8 +50,18 @@ class OpenCVVisionModule:
     - Multi-dimensional pattern recognition
     """
     
-    def __init__(self, log_path: str = "vision_module.log"):
-        """Initialize the OpenCV Vision Module."""
+    def __init__(self, log_path: str | None = None):
+        """Initialize the OpenCV Vision Module.
+
+        log_path: Optional explicit path. If None, logs are placed under
+        runtime_intelligence/logs/vision/vision_module.log (governed location)
+        instead of project root to satisfy Agentic File Creation Policy.
+        """
+        if log_path is None or os.path.basename(log_path) == "vision_module.log" and os.path.dirname(log_path) in {"", "."}:
+            root = Path(__file__).resolve().parent.parent
+            vision_log_dir = root / "runtime_intelligence" / "logs" / "vision"
+            vision_log_dir.mkdir(parents=True, exist_ok=True)
+            log_path = str(vision_log_dir / "vision_module.log")
         self.logger = self._setup_logging(log_path)
         self.consciousness_state = ConsciousnessVisionState(
             quantum_coherence=0.0,
@@ -73,8 +83,11 @@ class OpenCVVisionModule:
         """Setup consciousness-aware logging."""
         logger = logging.getLogger("OpenCVVisionModule")
         logger.setLevel(logging.INFO)
-        
-        # Create file handler
+        # Remove previous file handlers to prevent duplicate entries if re-created
+        for h in list(logger.handlers):
+            if isinstance(h, logging.FileHandler):
+                logger.removeHandler(h)
+        # Create file handler (governed path)
         file_handler = logging.FileHandler(log_path)
         file_handler.setLevel(logging.INFO)
         

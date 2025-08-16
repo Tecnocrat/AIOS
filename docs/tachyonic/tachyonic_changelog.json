@@ -89,4 +89,58 @@
     "reason": "Segment monolithic environment into layered profiles (base/ai/dev/quantum) under ai/env per Agentic File Creation Policy.",
     "harmonization": "Reduces root clutter; enables minimal bootstrap + optional heavy stacks; improves reproducibility and dependency resolution speed."
   }
+  ,{
+    "kind": "ingestion",
+    "file": "vision_module.log",
+    "old_path": "/vision_module.log",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule vision-module-runtime-2025-08-16)",
+    "date": "2025-08-16",
+    "reason": "Ingest runtime vision module performance & stability log into governed master context for KPI baseline and crystal lineage.",
+    "harmonization": "Establishes canonical baseline for vision warm-up, feature determinism, and coherence metrics; enables threshold calibration & avoids drift of isolated log artifact."
+  }
+  ,{
+    "kind": "move",
+    "file": "vision_module.log",
+    "old_path": "/vision_module.log",
+    "new_path": "/runtime_intelligence/logs/vision/vision_module.log",
+    "date": "2025-08-16",
+    "reason": "Relocate root log to governed runtime_intelligence logging hierarchy per Agentic File Creation Policy.",
+    "harmonization": "Eliminates root clutter; centralizes vision observability assets for retention & analysis." 
+  }
+  ,{
+    "kind": "move",
+    "file": "main.log",
+    "old_path": "/main.log",
+    "new_path": "/runtime_intelligence/logs/system/main.log",
+    "date": "2025-08-16",
+    "reason": "Relocate generic system main entry log to governed logging directory.",
+    "harmonization": "Improves root hygiene; groups system-level logs for ingestion tooling & retention policies." 
+  }
+  ,{
+    "kind": "ingestion",
+    "file": "CURRENT_STATUS.md",
+    "old_path": "/CURRENT_STATUS.md",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule current-status-2025-08-16)",
+    "date": "2025-08-16",
+    "reason": "Consolidate root project readiness & workflow status into governed master context to prevent drift.",
+    "harmonization": "Turns transient status snapshot into lineage-tracked capsule enabling historical comparison & eliminating duplicate truth sources." 
+  }
+  ,{
+    "kind": "removal",
+    "file": "CURRENT_STATUS.md",
+    "old_path": "/CURRENT_STATUS.md",
+    "new_path": "(removed; content canonicalized in AIOS_PROJECT_CONTEXT.md capsule current-status-2025-08-16)",
+    "date": "2025-08-16",
+    "reason": "Eliminate duplicate root status file after capsule ingestion to enforce single source of truth.",
+    "harmonization": "Reduces root surface; status now versioned via capsule lineage (current-status-*)." 
+  }
+  ,{
+    "kind": "automation_addition",
+    "file": "generate_status_capsule.py",
+    "old_path": null,
+    "new_path": "/scripts/generate_status_capsule.py",
+    "date": "2025-08-16",
+    "reason": "Implement UP1 governance automation to auto-emit current-status-* capsules post validation run on material changes.",
+    "harmonization": "Automates status lineage creation; removes manual root edits; prepares groundwork for trend batching (UP10)."
+  }
 ]
