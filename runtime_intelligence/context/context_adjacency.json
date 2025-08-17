@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-17T03:28:49Z",
+  "generated_at": "2025-08-17T04:24:04Z",
   "edges": [
     {
       "from": "ainlp",
@@ -326,6 +326,155 @@
       "jaccard_prev": 0.1453,
       "shared_tags": [
         "environment"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "capsule-6",
+      "to": "reharmonization",
+      "jaccard_prev": 0.1345,
+      "shared_tags": [
+        "environment"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "reharmonization",
+      "to": "consciousness-2",
+      "jaccard_prev": 0.0974,
+      "shared_tags": [
+        "dependency",
+        "optimization"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "consciousness-2",
+      "to": "-12",
+      "jaccard_prev": 0.1848,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-12",
+      "to": "-13",
+      "jaccard_prev": 0.1471,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-13",
+      "to": "-14",
+      "jaccard_prev": 0.1034,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-14",
+      "to": "-15",
+      "jaccard_prev": 0.0521,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "low-overlap"
+    },
+    {
+      "from": "-15",
+      "to": "-16",
+      "jaccard_prev": 0.0822,
+      "shared_tags": [
+        "consciousness",
+        "dependency"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-16",
+      "to": "-17",
+      "jaccard_prev": 0.0962,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-17",
+      "to": "consciousness-3",
+      "jaccard_prev": 0.0701,
+      "shared_tags": [
+        "consciousness",
+        "optimization",
+        "phase"
+      ],
+      "note": "low-overlap"
+    },
+    {
+      "from": "consciousness-3",
+      "to": "from",
+      "jaccard_prev": 0.0296,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "low-overlap"
+    },
+    {
+      "from": "from",
+      "to": "-18",
+      "jaccard_prev": 0.0588,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "low-overlap"
+    },
+    {
+      "from": "-18",
+      "to": "-19",
+      "jaccard_prev": 0.0331,
+      "shared_tags": [
+        "consciousness",
+        "phase"
+      ],
+      "note": "low-overlap"
+    },
+    {
+      "from": "-19",
+      "to": "-20",
+      "jaccard_prev": 0.1141,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-20",
+      "to": "-21",
+      "jaccard_prev": 0.1399,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-21",
+      "to": "-22",
+      "jaccard_prev": 0.1529,
+      "shared_tags": [
+        "consciousness"
+      ],
+      "note": "ok"
+    },
+    {
+      "from": "-22",
+      "to": "-23",
+      "jaccard_prev": 0.0984,
+      "shared_tags": [
+        "consciousness"
       ],
       "note": "ok"
     }
