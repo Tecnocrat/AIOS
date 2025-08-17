@@ -143,6 +143,9 @@ def create_demo_images(output_dir: str) -> Dict[str, str]:
     return results
 
 
+_CACHED_VISION_MODULE = None  # detector reuse (UP9)
+
+
 def process_with_direct_module(
     images: Dict[str, str]
 ) -> List[ImageDemoResult]:
@@ -157,18 +160,26 @@ def process_with_direct_module(
                 )
             )
         return out
-    vision = OpenCVVisionModule()
+    global _CACHED_VISION_MODULE
+    new_init = False
+    if _CACHED_VISION_MODULE is None:
+        _CACHED_VISION_MODULE = OpenCVVisionModule()
+        new_init = True
+    vision = _CACHED_VISION_MODULE
     cold_start_begin = time.time()
-    if not vision.initialize():
+    if new_init and not vision.initialize():
         return [
             ImageDemoResult(
                 kind='init', path='', error='Vision module init failed'
             )
         ]
+    first_frame_time = None
     for idx, (kind, path) in enumerate(images.items()):
         frame_start = time.time()
         res = vision.process_image(path, 'consciousness_emergence')
         frame_dur = time.time() - frame_start
+        if idx == 0:
+            first_frame_time = frame_dur
         if res.success:
             meta = res.metadata
             gray = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
@@ -221,6 +232,15 @@ def process_with_direct_module(
             processing_duration_sec=round(cold_total, 6),
         )
     )
+    # Embed first simple frame metric (UP9)
+    if first_frame_time is not None:
+        out.append(
+            ImageDemoResult(
+                kind='first_frame',
+                path='',
+                processing_duration_sec=round(first_frame_time, 6),
+            )
+        )
     return out
 
 
@@ -350,6 +370,12 @@ def emit_summary(results: List[ImageDemoResult], output_dir: str) -> str:
         rest = [d for d in frame_durations[1:] if d is not None]
         if rest:
             steady = round(sum(rest) / len(rest), 6)
+    # First frame metric (UP9)
+    first_frame = None
+    for r in raw_results:
+        if r['kind'] == 'first_frame':
+            first_frame = r.get('processing_duration_sec')
+            break
     summary = _normalize({
         'timestamp': time.time(),
         'results': raw_results,
@@ -357,6 +383,7 @@ def emit_summary(results: List[ImageDemoResult], output_dir: str) -> str:
         'source': 'opencv_integration_demo',
         'vision_cold_start_sec': cold,
         'vision_steady_state_sec': steady,
+        'vision_first_frame_sec': first_frame,
     })
     path = os.path.join(output_dir, 'opencv_demo_summary.json')
     with open(path, 'w', encoding='utf-8') as f:

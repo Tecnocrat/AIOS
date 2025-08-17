@@ -1,6 +1,6 @@
 {
   "capsule": "chatgpt-integration-2025-06-29",
-  "version": 4,
+  "version": 5,
   "generated_at": "2025-08-17T12:00:00Z",
   "notes": "Baseline KPI thresholds derived from ingested integration capsule. Some KPIs currently unmeasured; harness will mark them as 'unmeasured' until instrumentation added.",
   "kpis": {
@@ -33,6 +33,7 @@
       "avg_enhanced_image_entropy": { "min": 0.5 },
   "vision_cold_start_sec": { "max": 3.0 },
   "vision_steady_state_sec": { "max": 0.12 },
+      "vision_first_frame_sec": { "max": 1.5 },
       "max_emergence_probability": { "min": 0.2 }
     },
     "core_metrics": {

@@ -725,6 +725,10 @@ def main(argv: Optional[List[str]] = None) -> None:
                     "vision_steady_state_sec": raw.get(
                         "vision_steady_state_sec"
                     ),
+                    # UP9: first simple frame processing duration
+                    "vision_first_frame_sec": raw.get(
+                        "vision_first_frame_sec"
+                    ),
                     "summary_file": str(summary_path),
                 }
                 # Optional crystal for vision metrics
