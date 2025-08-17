@@ -9,6 +9,11 @@
 
 Coherence gates (AINLP Harmonizer): quick LFC/GPC score → if <0.4, do minimal discovery (symbol perimeter, module README/spec, tests under `ai/tests/`, tachyonic changelog) before edits. Before API/path changes: scan usages, update tests/docs, prefer non-root placement, and log in changelog. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
 
+### 2025-08-17 Harmonization Delta
+- Root launcher moved to `scripts/launch_aios.ps1`; root `launch_aios.ps1` now stub.
+- Line length policy unified to 100 columns (editor + lint) to reduce friction.
+- AIOS master project context file minimized to bootstrap stub; active narrative lives here.
+
 ## 🧬 **Consolidated Architecture Documentation**
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization  
