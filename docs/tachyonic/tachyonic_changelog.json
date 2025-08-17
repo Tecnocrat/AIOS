@@ -18,6 +18,15 @@
     "harmonization": "Ensures single-source context bootstrap; enables deterministic indexing and prevents divergence across multiple onboarding markdowns."
   },
   {
+    "kind": "removal",
+    "file": "CONTEXT_REHARMONIZATION_GUIDE.md",
+    "old_path": "/CONTEXT_REHARMONIZATION_GUIDE.md (deprecated after ingestion)",
+    "new_path": "(removed; content canonicalized in AIOS_PROJECT_CONTEXT.md capsule reharmonization-protocol-2025-08-17)",
+    "date": "2025-08-17",
+    "reason": "Eliminate deprecated standalone reharmonization guide after successful capsule ingestion to enforce single-source onboarding surface.",
+    "harmonization": "Reduces root clutter; future updates flow through governed capsule revision model and context index lineage." 
+  },
+  {
     "kind": "move",
     "file": "demo_opencv_integration.py",
     "old_path": "/demo_opencv_integration.py",
