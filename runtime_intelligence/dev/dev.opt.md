@@ -348,3 +348,29 @@ The AIOS optimization suite has achieved **paradigmatic performance excellence**
 - Optimize for small, verifiable diffs; prefer cache‑friendly, incremental builds and tests.
 - Treat .aios_context.json updates as optimization boundaries: create snapshot before mutation; measure afterwards.
 - Keep automation lightweight to avoid editor churn; no background watchers that rewrite files unexpectedly.
+
+---
+
+## Archived Utilities (Ingested via AINLP Root Harmonization)
+
+### cleanup_python_system.ps1 (Ingested 2025-08-17)
+
+Purpose: Previously used for full system Python environment reset (force removal of all Python installations, registries, PATH entries) during early environment instability phases.
+
+Rationale for Deprecation:
+- Destructive scope (full removal of all Python distributions) no longer aligned with stabilized multi-env strategy.
+- Risks accidental loss of developer local tooling outside AIOS scope.
+- Replaced by targeted virtual environment recreation guidance (see ai/README.md environment section).
+
+Retained Logic (for historical reference only; do NOT re-run blindly):
+```
+# Stop python processes, remove installation dirs (CPython / Conda), clean registry keys,
+# scrub PATH of Python-related entries, unset PYTHONPATH/PYTHONHOME, prompt for restart.
+```
+
+Successor Guidance:
+- Use `python -m venv aios_env` (or `uv` / `pip-tools` flows) for isolated env resets.
+- For contamination: remove only the project venv (`Remove-Item -Recurse -Force .\aios_env`).
+- For PATH hygiene: audit with `[Environment]::GetEnvironmentVariable('PATH','User').Split(';')` and surgically edit.
+
+This ingestion enables removal of the root script file to reduce surface clutter while preserving institutional knowledge.
