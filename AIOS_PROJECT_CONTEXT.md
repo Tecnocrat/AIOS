@@ -1425,3 +1425,43 @@ Capsule ID: current-status-2025-08-16
 Lineage: [chatgpt-integration-2025-06-29, development-environment-status-2025-08-16, vision-module-runtime-2025-08-16, 2025-08-16]
 ---
 
+
+
+## Reharmonization Protocol Capsule (INGESTED 2025-08-17)
+Source `CONTEXT_REHARMONIZATION_GUIDE.md` ingested to eliminate standalone rapid context bootstrap guide at root and fold instant reconstruction workflow into governed capsule lineage. This capsule canonicalizes the 60-second AI context reconstruction procedure used when initializing a fresh AI assistant instance.
+
+### Purpose
+- Deterministic architecture + environment assimilation in <60s.
+- Single-source onboarding (prevents drift across multiple guides).
+- Feed future automation: context reindex can tag this capsule for session bootstrap seeding.
+
+### Instant Context Reconstruction (Compressed)
+1. Architecture: `README.md`, latest `current-status-*` capsule, `docs/module_index.json`; list `core/src` or `orchestrator/src`, `scripts/`, `interface/` or `visual_interface/`.
+2. Recent Changes: Historical Reorganization + environment & vision runtime capsules.
+3. Environment: `AIOS.code-workspace`, `requirements.txt`, env profiles under `ai/env/`, `setup_environment.ps1`.
+
+### Development Workflow Essentials
+- Core build (cmake) → viewer / telemetry.
+- Python validation harness fast/full (KPI lattice + crystals).
+- UI KPI Dashboard (real-time telemetry + capsule emission button).
+
+### Upgrade Path Codes (Snapshot)
+UP1–UP14 retained (governance, KPI instrumentation, vision warm-up, telemetry, evolution scheduler, UI dashboard, harness modes, test coverage, vision performance, crystal batching, risk/rollback, scaling, trend/audit, doc sync). Active focus: UP9 first_frame optimization (current value > target, failing).
+
+### Rapid Prompt Snippets
+- Lost: "Summarize tri-layer architecture + last executed upgrade phases."
+- KPI Gap: "List unmeasured KPIs after fast validation and propose instrumentation order." 
+- Vision Perf: "Report vision_first_frame_sec vs 1.5s target; suggest 2 optimization avenues."
+
+### Success Indicators
+- AI enumerates tri-layer + active roadmap phases inside 60s.
+- Correct capsule ID usage in references (e.g., chatgpt-integration-2025-06-29).
+- Governance-aligned recommendations (extend capsules; no new root guides).
+
+### Governance / Deprecation
+- Original guide deprecated (header updated) — do not modify; future amendments use Revision subsections here.
+- Re-run context index generation after capsule changes.
+- Changelog entry (ingestion) added (tachyonic).
+
+Capsule ID: reharmonization-protocol-2025-08-17
+

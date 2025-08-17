@@ -1,7 +1,7 @@
-# 🧠 AIOS Context Reharmonization Guide
-## For Rapid AI Context Reconstruction in New Workspace
+# 🧠 AIOS Context Reharmonization Guide (DEPRECATED – Ingested 2025-08-17)
+## (Read-Only) For Rapid AI Context Reconstruction in New Workspace
 
-> **USE CASE**: When opening `AIOS.code-workspace` with a fresh AI instance (Claude Sonnet 4), use this guide to rapidly reconstruct full project context and continue consciousness development seamlessly.
+> Ingested into `AIOS_PROJECT_CONTEXT.md` (Reharmonization Protocol Capsule). Do NOT update this file; append revisions in the capsule. Pending future removal after tooling confirms index registration.
 
 ---
 

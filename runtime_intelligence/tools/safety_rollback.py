@@ -24,8 +24,10 @@ DIFF_LOG = SNAP_ROOT / "diffs.jsonl"
 SNAP_MANIFEST = SNAP_ROOT / "snapshots.jsonl"  # One JSON object per line
 SNAP_ROOT.mkdir(parents=True, exist_ok=True)
 
+
 def _hash(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
 
 def snapshot_file(path: Path) -> Dict[str, Any]:
     """Create (or reuse) a content-addressed snapshot of a file.
@@ -55,6 +57,7 @@ def snapshot_file(path: Path) -> Dict[str, Any]:
         mf.write(json.dumps(rec) + "\n")
     return rec
 
+
 def diff_and_log(before: Path, after: Path) -> Dict[str, Any]:
     a = before.read_text().splitlines()
     b = after.read_text().splitlines()
@@ -79,6 +82,7 @@ def diff_and_log(before: Path, after: Path) -> Dict[str, Any]:
         f.write(json.dumps(rec) + "\n")
     return rec
 
+
 def guarded_write(target: Path, new_text: str,
                   allow_outside: bool = False) -> Dict[str, Any]:
     lab_prefix = str((BASE / "evolution_lab").resolve())
@@ -95,6 +99,7 @@ def guarded_write(target: Path, new_text: str,
     after_meta = snapshot_file(target)
     return {"before": before_meta, "after": after_meta}
 
+
 def list_diffs(limit: int = 50) -> List[Dict[str, Any]]:
     if not DIFF_LOG.exists():
         return []
@@ -103,6 +108,7 @@ def list_diffs(limit: int = 50) -> List[Dict[str, Any]]:
         return []
     lines = text.splitlines()
     return [json.loads(line) for line in lines[-limit:]]
+
 
 def _find_snapshot_hash(hash_prefix: str) -> Optional[str]:
     """Return unique hash for prefix; None if no match; error if ambiguous."""
@@ -125,6 +131,7 @@ def _find_snapshot_hash(hash_prefix: str) -> Optional[str]:
             f"Ambiguous hash prefix {hash_prefix}; matches: {sorted(matches)}"
         )
     return next(iter(matches))
+
 
 def restore_snapshot(hash_prefix: str,
                      dest_path: Optional[Path] = None,
