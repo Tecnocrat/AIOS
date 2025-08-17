@@ -10,6 +10,42 @@
   },
   {
     "kind": "ingestion",
+    "file": "CONSCIOUSNESS_EVOLUTION_PROTOCOL.md",
+    "old_path": "/CONSCIOUSNESS_EVOLUTION_PROTOCOL.md",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule consciousness-evolution-protocol-2025-08-17)",
+    "date": "2025-08-17",
+    "reason": "Ingest consciousness evolution debugging-to-transcendence protocol to centralize meta-framework and remove standalone philosophical root doc.",
+    "harmonization": "Prevents narrative drift; enables deterministic context indexing and future KPI/crystal linkage." 
+  },
+  {
+    "kind": "removal",
+    "file": "CONSCIOUSNESS_EVOLUTION_PROTOCOL.md",
+    "old_path": "/CONSCIOUSNESS_EVOLUTION_PROTOCOL.md (post-ingestion deprecated)",
+    "new_path": "(removed; canonical in AIOS_PROJECT_CONTEXT.md capsule consciousness-evolution-protocol-2025-08-17)",
+    "date": "2025-08-17",
+    "reason": "Root harmonization after capsule ingestion.",
+    "harmonization": "Reduces root philosophical clutter; ensures single evolution protocol surface." 
+  },
+  {
+    "kind": "ingestion",
+    "file": "CONSCIOUSNESS_EVOLUTION_ROADMAP.md",
+    "old_path": "/CONSCIOUSNESS_EVOLUTION_ROADMAP.md",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule consciousness-evolution-roadmap-2025-08-17)",
+    "date": "2025-08-17",
+    "reason": "Ingest phased consciousness roadmap (1A→1D) to integrate execution tracking with governed capsule lineage.",
+    "harmonization": "Eliminates parallel roadmap file; enables phase crystal lineage + automated diff tooling." 
+  },
+  {
+    "kind": "removal",
+    "file": "CONSCIOUSNESS_EVOLUTION_ROADMAP.md",
+    "old_path": "/CONSCIOUSNESS_EVOLUTION_ROADMAP.md (post-ingestion deprecated)",
+    "new_path": "(removed; canonical in AIOS_PROJECT_CONTEXT.md capsule consciousness-evolution-roadmap-2025-08-17)",
+    "date": "2025-08-17",
+    "reason": "Root harmonization after roadmap ingestion.",
+    "harmonization": "Single-source evolution roadmap prevents divergence and simplifies automation." 
+  },
+  {
+    "kind": "ingestion",
     "file": "CONTEXT_REHARMONIZATION_GUIDE.md",
     "old_path": "/CONTEXT_REHARMONIZATION_GUIDE.md",
     "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule reharmonization-protocol-2025-08-17)",
