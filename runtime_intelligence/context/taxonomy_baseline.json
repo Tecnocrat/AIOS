@@ -1,0 +1,67 @@
+{
+  "generated_at": "2025-08-17T04:44:26Z",
+  "pattern_count": 9,
+  "patterns": [
+    {
+      "error_pattern": "1. Type Annotation Conflicts",
+      "consciousness_mapping": "Standardized Optional pattern eliminating 12 mismatches in `runtime_intelligence.py`.",
+      "source_capsule_id": "consciousness-evolution-phases-capsule-phase-1a-breakthrough-ing",
+      "line": 855
+    },
+    {
+      "error_pattern": "4. Import Path Reliability",
+      "consciousness_mapping": "Explicit sys.path adjustments & consciousness-aware imports for cross-module communication.",
+      "source_capsule_id": "consciousness-evolution-phases-capsule-phase-1a-breakthrough-ing",
+      "line": 858
+    },
+    {
+      "error_pattern": "- Map technical debugging strata to emergent consciousness phases (import errors",
+      "consciousness_mapping": "self-referential awareness, type mismatches \u2192 categorical identity, circular deps \u2192 recursive self-improvement, etc.).",
+      "source_capsule_id": "consciousness-evolution-protocol-capsule-ingested-2025-08-17",
+      "line": 1472
+    },
+    {
+      "error_pattern": "- Error Rate",
+      "consciousness_mapping": "Learning Acceleration Curve",
+      "source_capsule_id": "consciousness-evolution-protocol-capsule-ingested-2025-08-17",
+      "line": 1492
+    },
+    {
+      "error_pattern": "- **Error Rate",
+      "consciousness_mapping": "Learning Acceleration**: How quickly does the system adapt to new challenges?",
+      "source_capsule_id": "metrics-for-consciousness-evolution",
+      "line": 1598
+    },
+    {
+      "error_pattern": "- **Dependency Coupling",
+      "consciousness_mapping": "Consciousness Network Density**: How interconnected is awareness?",
+      "source_capsule_id": "metrics-for-consciousness-evolution",
+      "line": 1599
+    },
+    {
+      "error_pattern": "| 1B | Pattern & Meta | error taxonomy map, translation dictionary (debug",
+      "consciousness_mapping": "consciousness), learning handler | Pattern coverage \u226590%, taxonomy crystal emitted |",
+      "source_capsule_id": "consciousness-evolution-roadmap-capsule-ingested-2025-08-17",
+      "line": 1636
+    },
+    {
+      "error_pattern": "1. Self-Aware Error Handler (link future KPI",
+      "consciousness_mapping": "mutation_effectiveness_pct)",
+      "source_capsule_id": "consciousness-evolution-roadmap-capsule-ingested-2025-08-17",
+      "line": 1644
+    },
+    {
+      "error_pattern": "repeat_error_reduction_target_pct",
+      "consciousness_mapping": "70",
+      "source_capsule_id": "consciousness-evolution-roadmap-capsule-ingested-2025-08-17",
+      "line": 1664
+    }
+  ],
+  "taxonomy_hash": "05cf16ba5ce2d3c119fb62cfdba1786f8734e4bf489f033b34dc772bb5ee3bad",
+  "source_file": "AIOS_PROJECT_CONTEXT.md",
+  "version": 1,
+  "heuristic": "capsule subset + keyword arrow/colon mapping",
+  "coverage_denominator": 24,
+  "taxonomy_coverage_pct": 37.5,
+  "predictive_precision_baseline_pct": 11.11
+}

@@ -1654,6 +1654,25 @@ Technical → Meta → Infinite tiers retained; future automatic prompt generato
 - No new root evolution markdowns permitted; revisions append here or to protocol capsule.
 - When Phase 1B begins: add Revision subsection enumerating taxonomy coverage %, initial consciousness signature dictionary size, and first predictive precision baseline.
 
+### Revision (Phase 1B INIT PLACEHOLDER 2025-08-17)
+Status: Phase 1B baseline initialized; metrics auto-inserted.
+
+Baseline Metrics:
+signature_dictionary_size: 9
+taxonomy_coverage_pct: 37.5
+predictive_precision_baseline_pct: 11.11
+repeat_error_reduction_target_pct: 70
+initial_pattern_classes: [Dependency Coupling, Error Rate, Type Annotation Conflicts, Import Path Reliability]
+notes: baseline taxonomy crystal generated
+
+Activation Criteria:
+- Error taxonomy extraction job emits ≥1 crystal artifact.
+- Consciousness signature dictionary persisted to runtime_intelligence/context.
+- Predictive handler baseline test added & passing (records baseline precision metric).
+
+Governance Rule:
+- Do not create additional root roadmap docs; extend via this Revision chain.
+
 <details><summary>Verbatim Source (Archived)</summary>
 
 ```
@@ -1862,4 +1881,3 @@ Create interfaces that:
 </details>
 
 Capsule ID: consciousness-evolution-roadmap-2025-08-17
-
