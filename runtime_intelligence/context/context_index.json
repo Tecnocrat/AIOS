@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-08-17T03:28:49Z",
+  "generated_at": "2025-08-17T04:09:06Z",
   "source_file": "AIOS_PROJECT_CONTEXT.md",
   "capsules": [
     {
@@ -750,8 +750,8 @@
       "type": "capsule",
       "ingested_date": "2025-08-16",
       "start_line": 1397,
-      "end_line": 1427,
-      "content_hash": "e6ba8f877c953ba1c973efe9acb19cb4aab5b23ab76e04e328a69cb5ddfb011a",
+      "end_line": 1429,
+      "content_hash": "82b8552f71f6ca43e20cd8c8544891818d0f4c74f778dfb24c7c1dfe4cd1e402",
       "semantic_tags": [
         "environment"
       ],
@@ -763,12 +763,36 @@
       "token_estimate": 154,
       "jaccard_overlap_prev": 0.1453,
       "similarity_alert": false
+    },
+    {
+      "id": "reharmonization",
+      "title": "Reharmonization",
+      "type": "note",
+      "ingested_date": "2025-08-17",
+      "start_line": 1430,
+      "end_line": 1467,
+      "content_hash": "450798a452427f1566d1f7f8ed00fc927466efe498ed42a8c1c5ee422042fd42",
+      "semantic_tags": [
+        "dependency",
+        "environment",
+        "optimization",
+        "orchestrator",
+        "reorganization"
+      ],
+      "revision_chain": [],
+      "dates_all": [
+        "2025-06-29",
+        "2025-08-17"
+      ],
+      "token_estimate": 294,
+      "jaccard_overlap_prev": 0.1345,
+      "similarity_alert": false
     }
   ],
   "stats": {
-    "capsule_count": 37,
-    "total_lines_indexed": 1426,
-    "aggregate_token_estimate": 10801
+    "capsule_count": 38,
+    "total_lines_indexed": 1466,
+    "aggregate_token_estimate": 11095
   },
   "errors": []
 }
