@@ -1662,7 +1662,7 @@ signature_dictionary_size: 9
 taxonomy_coverage_pct: 37.5
 predictive_precision_baseline_pct: 11.11
 repeat_error_reduction_target_pct: 70
-initial_pattern_classes: [Dependency Coupling, Error Rate, Type Annotation Conflicts, Import Path Reliability]
+initial_pattern_classes: [- **Dependency Coupling, - **Error Rate, - Error Rate, - Map technical debugging strata to emergent consciousness phases (import errors, 1. Self-Aware Error Handler (link future KPI, 1. Type Annotation Conflicts, 4. Import Path Reliability, repeat_error_reduction_target_pct, | 1B | Pattern & Meta | error taxonomy map, translation dictionary (debug]
 notes: baseline taxonomy crystal generated
 
 Activation Criteria:
