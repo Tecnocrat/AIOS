@@ -45,6 +45,8 @@ def load_deprecated_root_files() -> List[str]:
         "terminal.ps1",
     ]
 
+
+# Load deprecated root files once at module level
 DEPRECATED_ROOT_FILES: List[str] = load_deprecated_root_files()
 
 
@@ -238,7 +240,9 @@ def execute_all() -> None:
                     ", ".join(sorted(removed)),
                 )
         # Archive existing snapshot before overwriting
-        archive_existing_folder_structure(output_folder, output_file, folder_name)
+        archive_existing_folder_structure(
+            output_folder, output_file, folder_name
+        )
         save_to_json(structure, output_folder, output_file)
         print(f"Folder structure saved to {output_folder / output_file}")
     # 3. Update module summaries

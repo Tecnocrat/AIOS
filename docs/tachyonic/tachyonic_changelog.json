@@ -9,6 +9,15 @@
     "harmonization": "This change harmonizes the AIOS tachyonic field by ensuring all legacy entry points are tracked and discoverable."
   },
   {
+    "kind": "ingestion",
+    "file": "CONTEXT_REHARMONIZATION_GUIDE.md",
+    "old_path": "/CONTEXT_REHARMONIZATION_GUIDE.md",
+    "new_path": "/AIOS_PROJECT_CONTEXT.md (Capsule reharmonization-protocol-2025-08-17)",
+    "date": "2025-08-17",
+    "reason": "Ingest rapid 60-second context reconstruction guide to reduce root clutter and centralize onboarding within governed capsule lineage.",
+    "harmonization": "Ensures single-source context bootstrap; enables deterministic indexing and prevents divergence across multiple onboarding markdowns."
+  },
+  {
     "kind": "move",
     "file": "demo_opencv_integration.py",
     "old_path": "/demo_opencv_integration.py",
