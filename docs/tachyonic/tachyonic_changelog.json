@@ -205,5 +205,14 @@
     "date": "2025-08-17",
     "reason": "UP7 Validation Harness Expansion: introduce fast mode (<90s) & full mode (<300s), conditional build, skip semantics, evolution cycles scaling, and explicit schema version for downstream consumers.",
     "harmonization": "Improves iteration velocity & governance traceability; structured timings enable trend analysis and future SLA enforcement (UP10)."
+  },
+  {
+    "kind": "kpi_threshold_update",
+    "file": "kpi_thresholds.json",
+    "old_path": "version 4 adds evolution_metrics (best_fitness, average_fitness, cycles_run)",
+    "new_path": "version 5 adds vision_first_frame_sec (first frame warm-up) and detector reuse optimization groundwork",
+    "date": "2025-08-17",
+    "reason": "UP9 partial: introduce first-frame performance KPI and baseline measurement to drive warm-up optimization (<1.5s target).",
+    "harmonization": "Extends vision KPI lattice to capture cold first-frame latency; supports optimization loop and prevents regression once improved."
   }
 ]

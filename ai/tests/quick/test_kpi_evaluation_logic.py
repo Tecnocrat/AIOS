@@ -33,7 +33,8 @@ def build_thresholds():
             },
             "vision_metrics": {
                 "vision_cold_start_sec": {"max": 3.0},
-                "vision_steady_state_sec": {"max": 0.12}
+                "vision_steady_state_sec": {"max": 0.12},
+                "vision_first_frame_sec": {"max": 1.5}
             },
             "evolution_metrics": {
                 "best_fitness": {"min": 0.45},
@@ -51,6 +52,7 @@ def test_kpi_pass_fail_and_unmeasured():
     vision_summary = {
         "vision_cold_start_sec": 2.0,
         "vision_steady_state_sec": 0.2,  # fails (0.2 > 0.12)
+    "vision_first_frame_sec": 1.0,  # pass (1.0 < 1.5)
     }
     evolution = {"best_fitness": 0.5}  # average_fitness unmeasured
 
@@ -70,6 +72,7 @@ def test_kpi_pass_fail_and_unmeasured():
     assert kpi_eval["vision_cold_start_sec"]["status"] == "pass"
     # 0.2 > 0.12 => fail
     assert kpi_eval["vision_steady_state_sec"]["status"] == "fail"
+    assert kpi_eval["vision_first_frame_sec"]["status"] == "pass"
     assert kpi_eval["best_fitness"]["status"] == "pass"
     assert kpi_eval["average_fitness"]["status"] == "unmeasured"
 
