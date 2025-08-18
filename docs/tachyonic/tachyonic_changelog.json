@@ -269,4 +269,22 @@
     "reason": "UP9 partial: introduce first-frame performance KPI and baseline measurement to drive warm-up optimization (<1.5s target).",
     "harmonization": "Extends vision KPI lattice to capture cold first-frame latency; supports optimization loop and prevents regression once improved."
   }
+ ,{
+    "kind": "security_upgrade",
+    "file": "System.Text.Json package",
+    "old_path": "visual_interface/AIOS.VisualInterface.csproj (Version 8.0.4 vulnerable GHSA-8g4q-xg66-9fp4)",
+    "new_path": "visual_interface/AIOS.VisualInterface.csproj (Version 9.0.0)",
+    "date": "2025-08-18",
+    "reason": "Remediate NU1903 high severity advisory and align JSON stack across solution.",
+    "harmonization": "Reduces security risk surface; standardizes serialization library versions for deterministic behavior." 
+  }
+ ,{
+    "kind": "governance_update",
+    "file": ".aios_context snapshot logic",
+    "old_path": "Manual / ad-hoc snapshot creation (index style .aios_context[1..n].json)",
+    "new_path": "Automated pre-write timestamp snapshots (.aios_context_snapshot_<UTCISO>.json)",
+    "date": "2025-08-18",
+    "reason": "Introduce deterministic, collision-resistant snapshot lineage with relocation-aware validator.",
+    "harmonization": "Enforces governed context history under runtime_intelligence/logs/aios_context; improves traceability & rollback safety." 
+  }
 ]
