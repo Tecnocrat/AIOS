@@ -147,6 +147,14 @@ Append filename to `governance/deprecated_files.ps1`, extend relevant capsule in
 pwsh -File scripts/dev_terminal.ps1 -Action orchestrator -ReportCoherence -CoherenceFormat json
 ```
 Exit codes: 0 (stable), 2 (adaptive warning), 3 (critical failure). See `docs/CELLULAR_COHERENCE_METRICS.md`.
+### Recent Harmonization (2025-08-17)
+- Launcher relocated: invoke `scripts/launch_aios.ps1` (root stub retained for backward compatibility).
+- Master context reduced to stub: active architecture now in `runtime_intelligence/dev/dev.arch.md` and execution path in `dev.run.md`.
+- Baseline taxonomy + revision metrics artifacts available under `runtime_intelligence/context/`.
+- Unified max line length = 100 across `.editorconfig` & `.pylintrc` (was 79/120 mismatch).
+ - Unified .NET solution: deprecated `interface/AIOS.sln`; canonical root `AIOS.sln` now referenced by tasks & workspace.
+ - Formatting tools alignment: `pyproject.toml` Black & Flake8 line length raised 88 → 100 (full policy convergence).
+
   - [`docs/path.md`](docs/path.md): Historical roadmap and task tracking.
   - Conversational archives: [`md/vscopilot.md`](md/vscopilot.md), [`md/ark/*.md`](md/ark/) — all VSCode Copilot, ChatGPT, and Gemini conversations are archived for recursive context.
 - **Automated Archival & Meta-Extraction:**  

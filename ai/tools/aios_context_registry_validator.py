@@ -21,7 +21,10 @@ from typing import Dict, List, Any, Optional
 
 # Tachyonic versioning paths
 TACHYONIC_BASE_PATH = Path("runtime_intelligence/logs/aios_context")
-REGISTRY_PATH = Path(".aios_context.json")
+# Root now holds a lightweight stub .aios_context.json pointing to relocated live registry (2025-08-17)
+REGISTRY_STUB_PATH = Path(".aios_context.json")
+RELOCATED_REGISTRY_PATH = TACHYONIC_BASE_PATH / ".aios_context.json"
+REGISTRY_PATH = RELOCATED_REGISTRY_PATH if RELOCATED_REGISTRY_PATH.exists() else REGISTRY_STUB_PATH
 PROJECT_ROOT = Path(".")
 
 
@@ -367,12 +370,27 @@ class TachyonicContextIntelligence:
 
 
 def load_registry() -> Dict[str, Any]:
-    """Load registry if present; otherwise return empty dict (dry-run mode)."""
-    if not REGISTRY_PATH.exists():
-        print("[WARN] .aios_context.json missing; using empty registry.")
+    """Load registry, resolving relocated live file or stub pointer.
+
+    Stub format example (root): {"relocated": "runtime_intelligence/logs/aios_context/.aios_context.json"}
+    """
+    path = REGISTRY_PATH
+    if not path.exists():
+        print("[WARN] context registry not found; starting with empty {}")
         return {}
-    with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        # If this is the stub (contains only relocation pointer), follow it
+        if path == REGISTRY_STUB_PATH and isinstance(data, dict) and "relocated" in data:
+            relocated = Path(data["relocated"])
+            if relocated.exists():
+                with open(relocated, "r", encoding="utf-8") as rf:
+                    return json.load(rf)
+        return data if isinstance(data, dict) else {}
+    except Exception as e:
+        print(f"[WARN] failed to load context registry: {e}; using empty {}")
+        return {}
 
 
 # Scan files in the project directory
