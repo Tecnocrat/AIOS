@@ -313,6 +313,16 @@ The AIOS architecture has successfully evolved through **massive refactorization
 - Documentation references updated (`README.md`, `AIOS_KNOWLEDGE_BASE.md`).
 - Future follow-up: remove any lingering doc references to deprecated solutions during next doc sweep.
 
+### 2025-08-18 Harmonization Delta — Context Snapshot Automation & Security Upgrade
+
+- Registry Relocation Follow-up: Automated timestamped snapshots now created prior to each write via `ai/tools/aios_context_registry_validator.py` (`.aios_context_snapshot_<UTCISO>.json`).
+- Root `.aios_context.json` remains a lightweight pointer stub; live head + snapshots reside exclusively under `runtime_intelligence/logs/aios_context/` enforcing root minimalism.
+- Updated Snapshot Scheme: Replaces earlier bracket index notation (`.aios_context[1..n].json`) with monotonic timestamped naming for collision avoidance & chronological ordering.
+- UI Build Stability: Resolved transient WPF access denial (`KPIDashboardWindow.g.cs`) by clean + serialized build; no persistent project structure issue found (root cause: parallel generation lock).
+- Vulnerability Remediation: Upgraded `System.Text.Json` in `visual_interface/AIOS.VisualInterface.csproj` from 8.0.4 → 9.0.0 (GHSA-8g4q-xg66-9fp4) aligning with other projects.
+- Governance: Future doc/tooling should reference the timestamp snapshot pattern (search token: `aios_context_snapshot_`) and retire bracket index references.
+- Pending: Evaluate HelixToolkit.Wpf compatibility (NU1701) — options: multi-target or library update; triage nullability noise (high volume CS8618) with phased constructor initialization campaign.
+
 ---
 
 ## 2025-08-08 Architecture Note — Tachyonic Context & Anchors

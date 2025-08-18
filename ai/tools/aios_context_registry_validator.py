@@ -36,6 +36,19 @@ def _write_json_atomic(path: Path, data: Any) -> None:
     os.replace(tmp_path, path)
 
 
+def _create_snapshot_if_needed(live_path: Path):
+    """Create a timestamped snapshot of current registry if it exists."""
+    try:
+        if live_path.exists():
+            TACHYONIC_BASE_PATH.mkdir(parents=True, exist_ok=True)
+            ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            snap_name = f".aios_context_snapshot_{ts}.json"
+            shutil.copy2(live_path, TACHYONIC_BASE_PATH / snap_name)
+            print(f"🕒 Snapshot created: {snap_name}")
+    except Exception as e:
+        print(f"[WARN] snapshot creation failed: {e}")
+
+
 class TachyonicContextIntelligence:
     """
     Tachyonic Context Intelligence System
@@ -239,6 +252,8 @@ class TachyonicContextIntelligence:
             updated_registry = self._perform_full_namespace_analysis()
             
             # Save updated registry (atomic write)
+            # Automatic snapshot prior to write (harmonized 2025-08-18)
+            _create_snapshot_if_needed(self.registry_path)
             _write_json_atomic(self.registry_path, updated_registry)
             
             print(
