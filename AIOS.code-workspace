@@ -60,7 +60,8 @@
 		// AIOS Multi-language integration paths
 		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
 		"C_Cpp.default.intelliSenseMode": "gcc-x64",
-		"dotnet.defaultSolution": "${workspaceFolder}/interface/AIOS.sln",
+		// Unified root solution (2025-08-17): deprecated interface/AIOS.sln
+		"dotnet.defaultSolution": "${workspaceFolder}/AIOS.sln",
 		
 		// AIOS Consciousness and polymorphic development support
 		"files.associations": {
@@ -78,7 +79,6 @@
 			"**/.pytest_cache": true,
 			"**/visual_interface/*.sln": true,
 			"interface/interface.sln": true,
-			"AIOS.sln": true,
 			"**/*.vcxproj.user": true,
 			"**/.vs": true
 		},
@@ -106,7 +106,7 @@
 		"cmake.ignoreCMakeListsMissing": true,
 
 		// Prefer a single solution to avoid prompts
-		"omnisharp.defaultLaunchSolution": "interface/AIOS.sln",
+		"omnisharp.defaultLaunchSolution": "AIOS.sln",
 		
 		// AIOS workspace behavior
 		"explorer.confirmDragAndDrop": false,

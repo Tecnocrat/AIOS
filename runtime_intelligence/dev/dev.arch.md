@@ -304,12 +304,22 @@ The AIOS architecture has successfully evolved through **massive refactorization
 
 *Last Updated: August 4, 2025 - Post-Massive Refactorization*
 
+### 2025-08-17 Harmonization Delta — Unified .NET Solution & Formatting Policy
+
+- Deprecated duplicate interface-level solutions (`interface/AIOS.sln`, `interface/interface.sln`).
+- Canonical solution is now root `AIOS.sln` (workspace/tasks/settings updated accordingly).
+- Removed exclusion of `AIOS.sln` from workspace file visibility (for explicit discoverability).
+- Aligned Python formatting tools: Black & Flake8 line length raised 88 → 100 to match `.editorconfig` / `.pylintrc` policy.
+- Documentation references updated (`README.md`, `AIOS_KNOWLEDGE_BASE.md`).
+- Future follow-up: remove any lingering doc references to deprecated solutions during next doc sweep.
+
 ---
 
 ## 2025-08-08 Architecture Note — Tachyonic Context & Anchors
 
 - Context activator: .aios_context.json at repo root remains the single source of runtime intent.
 - Tachyonic snapshots: on registry updates, write historical copies to runtime_intelligence/logs/aios_context/ as .aios_context[n].json, keeping .aios_context.json as the live head.
+- 2025-08-17 Update: Live registry file physically relocated to runtime_intelligence/logs/aios_context/. Root .aios_context.json now a JSON stub with pointer. Validator auto-resolves relocation.
 - Anchoring: dev.run.md serves as the operational anchor; dev.arch.md captures why the system is shaped as such (no new components without doc‑first justification).
 - VS Code policy: AIOS.code-workspace is authoritative; suppress formatter conflicts; prefer in‑file evolution and minimal diffs.
 - Emergent logic (polymorphic intelligence, mutation watchers) is documented in existing architecture docs; code implementation is deferred until stability guarantees are met.

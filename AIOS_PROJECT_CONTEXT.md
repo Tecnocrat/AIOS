@@ -1,15 +1,34 @@
-# AIOS Project Context & Setup Guide
-## AINLP INTELLIGENT CONTEXT LOADER - ENTRY POINT
+# AIOS Project Context (Stub)
+## Root Bootstrap Redirect
 
-**MASTER context file for AIOS. All agents must execute the AINLP context loading protocol for complete project understanding.**
+This lightweight stub replaces the previously large master context file.
 
-Engineering note: Adhere to [ENGINEERING_TENETS_KERNEL_GRADE.md](docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md) for kernel‑grade review rules and PR checklist. Root artifact boundaries: see [ROOT_HYGIENE_POLICY.md](ROOT_HYGIENE_POLICY.md).
+Canonical, continuously updated architecture & onboarding now live under:
+- `runtime_intelligence/dev/dev.arch.md`
+- `runtime_intelligence/dev/dev.opt.md`
+- `runtime_intelligence/dev/dev.run.md`
 
-Operational note: See also .github/instructions/ask-mode.instructions.md for the concrete agent operating contract used in this repository. For current cross-stack status and developer pathway, consult docs/UNIFIED_PROJECT_STATUS.md (canonical).
+Additional active metrics & evolution details:
+- Taxonomy baseline artifacts: `runtime_intelligence/context/`
+- Phase revision metrics: see revision block in dev.arch.md
+
+Historical content has been ingested (2025-08-17) into `dev.arch.md` under archived sections (AINLP protocol, initiation, evolution timelines).
+
+If you are an automated agent:
+1. Load dev.arch.md (top → Archived Initiation Protocol section if first run).
+2. Load dev.run.md for active waypoints.
+3. Use taxonomy baseline JSON for pattern awareness.
+
+If you are a human contributor:
+Consult README.md for high-level orientation, then pivot to runtime_intelligence/dev/ docs.
 
 ---
 
-## Updated AINLP Context Loading Protocol (2025-07-20)
+Legacy header retained below for search continuity; remaining legacy body removed intentionally.
+
+**(Content relocated; do not re-expand here.)**
+
+<!-- INGESTION_MARKER: legacy context body removed -->
 
 ### 1. Consolidated Intelligence & Harmonized Imports
 - All subsystem managers (NLP, Prediction, Automation, Learning, Integration) are importable from `ai/src/core/`.

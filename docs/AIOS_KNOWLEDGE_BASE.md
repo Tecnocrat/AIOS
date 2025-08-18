@@ -31,7 +31,7 @@ This file restores context coherence for the AIOS project and serves as a quick-
 ## Build, Run, Test (VS Code tasks)
 
 - .NET
-  - build (solution): builds interface/AIOS.sln
+  - build (solution): builds root AIOS.sln (interface/AIOS.sln deprecated 2025-08-17)
   - build-services, build-models, build-ui: project‑level builds
   - publish: publish artifacts for solution
   - watch: run AIOS.UI with dotnet watch (background)
@@ -102,9 +102,9 @@ Tip: Prefer running via Tasks palette for consistent environments and logs.
 
 ## Quick Pointers (files/paths)
 
-- Root solution files: AIOS.sln (root and interface/)
-- C++: core/CMakeLists.txt; core/build/ for generated projects
-- C#: interface/AIOS.sln; AIOS.Models|Services|UI/*.csproj
+- Root solution file: AIOS.sln (canonical at repo root; legacy interface/AIOS.sln removed)
+// C++: core/CMakeLists.txt; core/build/ for generated projects
+- C#: AIOS.Models|Services|UI/*.csproj (referenced by root AIOS.sln)
 - Python server/intelligence: ai/*, ai/src/core/*, runtime_intelligence/*
 - Dev guides: runtime_intelligence/dev/*.md (start with dev.run.md)
 - Context: .aios_context.json (live) and runtime_intelligence/logs/aios_context/*.json (history)

@@ -10,7 +10,8 @@ output-format=colorized
 reports=no
 
 [FORMAT]
-max-line-length=120
+# Harmonized with .editorconfig (100). Reduced from 120 to tighten style while allowing >79.
+max-line-length=100
 indent-string='    '
 
 [TYPECHECK]
