@@ -13,20 +13,20 @@ trim_trailing_whitespace = true
 [*.py]
 indent_style = space
 indent_size = 4
-max_line_length = 79
-# Critical: Disable automatic formatting
+max_line_length = 100
+# Harmonized with pylint (was 79 vs 120). Decide 100 as balanced readability/permissiveness.
 ij_formatter_enabled = false
 ij_smart_tabs = false
 
 [*.{js,ts,jsx,tsx}]
 indent_style = space
 indent_size = 2
-max_line_length = 79
+max_line_length = 100
 
 [*.{cs,cpp,h,hpp}]
 indent_style = space
 indent_size = 4
-max_line_length = 79
+max_line_length = 100
 
 [*.{md,yml,yaml}]
 indent_style = space
@@ -36,4 +36,4 @@ trim_trailing_whitespace = false
 [*.json]
 indent_style = space
 indent_size = 2
-max_line_length = 79
+max_line_length = 100
