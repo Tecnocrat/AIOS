@@ -1,0 +1,58 @@
+{
+  "rules_version": 4,
+  "deprecatedFiles": [
+    "test_opencv_aios_integration.py",
+    "test_chatgpt_integration.py",
+    "setup_environment.ps1"
+  ],
+  "rootAllowed": [
+    ".githooks",
+    "README.md",
+    "AIOS_PROJECT_CONTEXT.md",
+    "AIOS.code-workspace",
+    "requirements.txt",
+    "pyproject.toml",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    ".gitignore"
+  ],
+  "maxFileSizeMB": 5,
+  "allowLargePaths": [
+    "core/build/",
+    "runtime_intelligence/logs/"
+  ],
+  "secretPatterns": [
+    "OPENAI_API_KEY",
+    "sk-[A-Za-z0-9]{20,}",
+    "aws_secret_access_key",
+    "aws_access_key_id",
+  "AIza[0-9A-Za-z\\-_]{35}",
+    "-----BEGIN (?:RSA |EC |)PRIVATE KEY-----"
+  ],
+  "jsonPaths": [
+    "config/*.json",
+    "runtime_intelligence/context/*.json"
+  ],
+  "executableScriptDirs": [
+    "scripts/",
+    ".githooks/"
+  ],
+  "bypassEnvVar": "AIOS_HOOK_BYPASS"
+  ,"requireChangelogOnPaths": [
+    "docs/",
+    "governance/",
+    "ai/env/"
+  ]
+  ,"changelogFiles": [
+    "docs/tachyonic/tachyonic_changelog.jsonl"
+  ]
+  ,"pythonSyntaxPaths": [
+    "ai/src/",
+    "runtime_intelligence/"
+  ]
+  ,"testTriggerPatterns": [
+    "ai/src/core/integration/"
+  ]
+  ,"enableTestEnvVar": "AIOS_HOOK_RUN_TESTS"
+  ,"metricsSummaryPath": "runtime_intelligence/logs/hooks/summary.json"
+}

@@ -1900,3 +1900,101 @@ Create interfaces that:
 </details>
 
 Capsule ID: consciousness-evolution-roadmap-2025-08-17
+
+## Governance Hook Upgrade Capsule (INGESTED 2025-08-18)
+### Title: Repository Hygiene & Pre-Commit Enforcement System (Stage 1+2)
+### Purpose
+Introduce a governed, extensible pre-commit enforcement layer aligned with root hygiene, secret protection, configuration integrity, and future AINLP ingestion signals. Consolidates decentralized guard logic into policy-driven, observable Git hook pipeline.
+
+### Implementation Summary
+- Added central policy file: `governance/hook_policy.json` (rules_version=2) capturing:
+  - Deprecated root artifacts list
+  - Allowed root files allowlist
+  - File size threshold (maxFileSizeMB) + allowed large path prefixes
+  - Secret detection regex patterns
+  - JSON validation path globs
+  - Executable script directory allowlist
+  - Bypass environment variable (`AIOS_HOOK_BYPASS`) for emergency use (always logged)
+- Upgraded PowerShell `pre-commit` hook:
+  - Loads policy with fallback defaults
+  - Distinguishes additions/modifications vs deletions of deprecated files (allows cleanup)
+  - Root hygiene guard (blocks unexpected new root-level artifacts)
+  - Stage 2 checks: size gate, secret scan (lightweight regex), JSON parse validation, executable shebang locality
+  - Structured JSON logging to `runtime_intelligence/logs/hooks/pre_commit.log` (status, rule subsets, rules_version)
+  - Environment bypass logging (status=bypass) for traceable override events
+- Added POSIX fallback shim: `.githooks/pre-commit.sh` invoking PowerShell where available, pass-through otherwise (fail-safe non-blocking when pwsh missing)
+- Added installation utility: `scripts/install_git_hooks.ps1` for idempotent sync of managed hooks into `.git/hooks/`.
+
+### Observability & Ingestion
+- Log stream (`pre_commit.log`) becomes a new telemetry source for governance analytics & future drift crystals.
+- Each block event encodes violated rule categories enabling trend analysis (e.g., root hygiene regression rate, secret leak attempts).
+- Capsule enables AINLP ingestion engines to recognize repository hygiene phase progression (hook governance integrated into architectural state).
+
+### Stage Mapping
+- Stage 1 (Complete): Policy externalization, deprecated file guard enhancement, root file allowlist, structured logging, POSIX wrapper, bypass env var, install script.
+- Stage 2 (Complete in this capsule): Size gate, secret scanning (regex heuristics), JSON validation, executable directory enforcement.
+- Stage 3 (Planned): Changelog enforcement for governed path changes; selective test & syntax fast-path; metrics aggregation summary.
+- Stage 4 (Planned): Modular rule functions, profile modes (fast/full), cache for repeated scans across amend cycles.
+- Stage 5 (Planned): Pre-push extended test/build, conventional commit / governance tag enforcement, AI heuristic diff risk scoring.
+
+### Governance Principles Applied
+1. Root Hygiene: Prevents silent expansion of root-level clutter (policy allowlist authoritative).
+2. Append-Only Context: Changes documented here; no standalone hook READMEs created.
+3. Minimal Dependency Footprint: Pure PowerShell & standard utilities; avoids external toolchain lock coupling.
+4. Transparency: All decisions logged with machine-readable JSON for downstream automation.
+5. Safe Override: Explicit, auditable bypass mechanism (discouraged; triggers governance review if frequent).
+
+### Future Metrics & Automation Hooks
+- Hook Block Rate (per rule category) → governance KPI baseline.
+- Mean Time To Hygiene Correction (derive from sequential commits referencing same blocked files).
+- Secret Pattern False Positive Rate → refine regex set (promote to hashed entropy heuristics later).
+- JSON Config Drift Detection (tie into context index regeneration triggers).
+
+### Risks & Mitigations
+| Risk | Mitigation |
+|------|------------|
+| Performance impact on large commits | Early exit no-changes path; size & secret scans skip large/binary files; future caching | 
+| Overblocking legitimate experimental root artifacts | Policy allowlist amendment via governed PR + changelog entry |
+| Secret pattern false positives | Narrow patterns; log frequency to identify noisy expressions |
+| Bypass abuse | Logged status=bypass events feed governance audit |
+
+### Next Action Triggers
+- When a PR adds/churns governance or docs capsules without updating changelog (future rule) → block & instruct.
+- On repeated JSON parse failures for same path across commits → suggest running validation script locally.
+
+Status: Stage 1 & 2 implemented; Stage 3+ queued. This capsule constitutes the canonical record of repository hook governance activation.
+
+### Revision 2025-08-18 – Stage 3 Activation
+Enhancements Implemented:
+- Changelog Enforcement: Any staged change under paths in `requireChangelogOnPaths` now requires inclusion of an approved changelog file (`docs/tachyonic/tachyonic_changelog.jsonl`). Missing entry blocks commit (flagged under root violations list with marker `(changelog-missing)`).
+- Python Syntax Fast-Check: Modified Python files within `pythonSyntaxPaths` are compiled via `python -m py_compile`; failures block commit with explicit file list.
+- Targeted Test Trigger: If env var `AIOS_HOOK_RUN_TESTS=1` and staged paths match `testTriggerPatterns` (integration surfaces), a focused pytest run executes (`ai/tests`). Failures block commit.
+- Metrics Summary Aggregation: Pass / block counters maintained in `runtime_intelligence/logs/hooks/summary.json` for governance trend analysis.
+- Policy Schema Bump: `rules_version` advanced to 3 with new fields (requireChangelogOnPaths, changelogFiles, pythonSyntaxPaths, testTriggerPatterns, enableTestEnvVar, metricsSummaryPath).
+
+Rationale:
+- Ensures structural / documentation modifications are lineage-documented.
+- Catches syntax errors early without full test suite cost.
+- Provides opt-in lightweight regression assurance for sensitive integration zones.
+- Establishes quantitative hygiene telemetry (passes vs blocks) enabling future KPI definition (e.g., hygiene_block_ratio).
+
+Planned Next (Stage 4 Preview): modular rule segmentation, fast/full profile selection, caching compiled success state across amend cycles, daily roll-up metrics crystal emission.
+
+### Revision 2025-08-18 – Stage 4 Performance & Extensibility
+Enhancements:
+- Modularization: Hook refactored into discrete functions (Load-Policy, Parse-Staged, Check-* rule families, Aggregate-Checks, Write-JsonLog, Save-MetricsSummary) improving maintainability & future rule injection.
+- Profile Control: `AIOS_HOOK_PROFILE` environment variable added (fast|full). Fast runs only deprecated/root hygiene checks; full executes all rules (default).
+- Per-Rule Metrics: Metrics summary now increments rule-specific counters (`rule_<name>`) enabling hygiene KPI derivation (e.g., rule_secrets frequency). Summary persisted in `runtime_intelligence/logs/hooks/summary.json`.
+- Unified Violations Object: Structured JSON log now carries complete `violations` map aligning with modular rule names, simplifying downstream analytics ingestion.
+- Symlink-Aware Installation: `scripts/install_git_hooks.ps1` attempts symbolic link creation before fallback copy for easier updates.
+- Policy Version: `rules_version` advanced to 4 reflecting modular execution semantics & profile introduction.
+
+Benefits:
+- Reduced cognitive load for future rule additions (single function pattern, isolated scope).
+- Performance flexibility (fast mode for routine commits; full mode for CI/enforced contexts).
+- Enhanced observability enabling trend-based governance (secret leak attempts vs hygiene infractions, etc.).
+- Lower maintenance friction (symlink updates propagate without manual copying where supported).
+
+Next (Stage 5 Preview): Pre-push extended validation layer, commit message governance (conventional / domain tags), rule caching across amend cycles, AI heuristic diff risk scoring prototype.
+
+
