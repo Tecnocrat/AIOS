@@ -1,5 +1,5 @@
 {
-  "rules_version": 4,
+  "rules_version": 5,
   "deprecatedFiles": [
     "test_opencv_aios_integration.py",
     "test_chatgpt_integration.py",
@@ -37,22 +37,41 @@
     "scripts/",
     ".githooks/"
   ],
-  "bypassEnvVar": "AIOS_HOOK_BYPASS"
-  ,"requireChangelogOnPaths": [
+  "bypassEnvVar": "AIOS_HOOK_BYPASS",
+  "requireChangelogOnPaths": [
     "docs/",
     "governance/",
     "ai/env/"
-  ]
-  ,"changelogFiles": [
+  ],
+  "changelogFiles": [
     "docs/tachyonic/tachyonic_changelog.jsonl"
-  ]
-  ,"pythonSyntaxPaths": [
+  ],
+  "pythonSyntaxPaths": [
     "ai/src/",
     "runtime_intelligence/"
-  ]
-  ,"testTriggerPatterns": [
+  ],
+  "testTriggerPatterns": [
     "ai/src/core/integration/"
-  ]
-  ,"enableTestEnvVar": "AIOS_HOOK_RUN_TESTS"
-  ,"metricsSummaryPath": "runtime_intelligence/logs/hooks/summary.json"
+  ],
+  "enableTestEnvVar": "AIOS_HOOK_RUN_TESTS",
+  "metricsSummaryPath": "runtime_intelligence/logs/hooks/summary.json",
+  "commitMessagePrefixes": [
+    "feat:", "fix:", "docs:", "chore:", "refactor:", "test:", "build:", "ci:", "perf:", "revert:",
+    "governance:", "cellular:", "ai:", "core:", "interface:", "runtime:", "security:"
+  ],
+  "prePush": {
+    "enable": true,
+    "buildCommands": [
+      "dotnet build AIOS.sln -c Debug --nologo",
+      "cmake --build core\\build --config Debug"
+    ],
+    "testCommands": [
+      "pytest -q ai/tests"
+    ],
+    "skipEnvVar": "AIOS_PREPUSH_SKIP"
+  },
+  "largeDeletionThresholdPct": 60,
+  "largeDeletionBypassEnvVar": "AIOS_HOOK_ALLOW_LARGE_DELETE",
+  "cacheDir": "runtime_intelligence/logs/hooks/cache",
+  "enableExternalSecretScanner": true
 }

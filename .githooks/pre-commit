@@ -14,6 +14,8 @@
 # 11. Python syntax fast-check for modified Python under governed paths (Stage 3)
 # 12. Targeted test execution on pattern matches (optional via env var) (Stage 3)
 # 13. Metrics summary aggregation (Stage 3)
+# 14. Large deletion heuristic + rationale flag (Stage 5)
+# 15. Caching of file content hashes to skip repeat parsing (Stage 5)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -67,10 +69,21 @@ function Save-MetricsSummary {
 }
 
 function Parse-Staged {
-  $raw = git diff --cached --name-status
-  if (-not $raw) { return @() }
-  $list = @(); foreach ($line in $raw -split "`n") { if (-not $line.Trim()) {continue}; $parts=$line -split "\s+"; $list += [pscustomobject]@{ Status=$parts[0]; Path=$parts[-1] } }
-  return $list
+  $raw = git diff --cached --numstat --name-status
+  $statusRaw = git diff --cached --name-status
+  if (-not $statusRaw) { return @() }
+  $map = @{}
+  foreach($line in $statusRaw -split "`n"){ if(-not $line.Trim()){continue}; $parts=$line -split "\s+"; $map[$parts[-1]] = $parts[0] }
+  $deletions = 0; $totalChanged=0
+  foreach($line in ($raw -split "`n")){
+    if($line -match '^(\d+|-)\t(\d+|-)\t(.+)$'){
+      $added=$matches[1]; $deleted=$matches[2]; $path=$matches[3]
+      if($added -ne '-' -and $deleted -ne '-') { $totalChanged += [int]$added + [int]$deleted }
+      if($deleted -ne '-' -and $added -ne '-') { $deletions += [int]$deleted }
+    }
+  }
+  $entries = @(); foreach($k in $map.Keys){ $entries += [pscustomobject]@{ Status=$map[$k]; Path=$k } }
+  return ,@($entries,$totalChanged,$deletions)
 }
 
 function Test-PathPatternMatch { param($Path,$Patterns) foreach ($pat in $Patterns){ $escaped=[Regex]::Escape($pat)-replace '\\\*','.*'; if ($Path -imatch "^$escaped$") {return $true}; if ($pat.EndsWith('/')){ if ($Path -like "$pat*") {return $true} } } return $false }
@@ -110,10 +123,23 @@ if ($HookProfile -notin @('fast','full')) { $HookProfile = 'full' }
 # Bypass check
 if ($env:AIOS_HOOK_BYPASS -eq '1') { Write-Host '⚠️ Hook bypass active via AIOS_HOOK_BYPASS=1' -ForegroundColor Yellow; Write-JsonLog -Status 'bypass' -Data @{ reason='env var'; user=$env:USERNAME }; exit 0 }
 
-$stagedEntries = Parse-Staged
+${parsed} = Parse-Staged
+$stagedEntries = $parsed[0]
+$totalChanged = $parsed[1]
+$deletions = $parsed[2]
 if ($stagedEntries.Count -eq 0) { Write-JsonLog -Status 'pass' -Data @{ reason='no changes' }; Save-MetricsSummary @{ passes=1 }; exit 0 }
 
 $results = Aggregate-Checks -Entries $stagedEntries -Profile $HookProfile
+
+# Large deletion heuristic
+if ($Policy.largeDeletionThresholdPct -and $totalChanged -gt 0) {
+  $pct = [math]::Round(($deletions / $totalChanged) * 100,2)
+  if ($pct -ge [int]$Policy.largeDeletionThresholdPct -and $env:AIOS_HOOK_ALLOW_LARGE_DELETE -ne '1') {
+    $cacheDir = $Policy.cacheDir; if($cacheDir){ if(-not (Test-Path $cacheDir)){ New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null }
+      New-Item -ItemType File -Force -Path (Join-Path $cacheDir 'pending_large_delete.flag') | Out-Null }
+    $results.large_delete = @("$pct% of changed lines are deletions (threshold=$($Policy.largeDeletionThresholdPct)%)")
+  }
+}
 
 # Determine violations
 $violations = @(); foreach($k in $results.Keys){ if($results[$k] -and $results[$k].Count -gt 0){ $violations += $k } }

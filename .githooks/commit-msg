@@ -1,0 +1,31 @@
+#!/usr/bin/env pwsh
+# AIOS Commit Message Governance Hook (Stage 5)
+Set-StrictMode -Version Latest
+$ErrorActionPreference='Stop'
+
+$policyPath = 'governance/hook_policy.json'
+function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -Raw | ConvertFrom-Json } catch {} } return $null }
+$Policy = Load-Policy $policyPath
+if(-not $Policy){ exit 0 }
+
+$msgFile = $args[0]
+if(-not (Test-Path $msgFile)){ exit 0 }
+$msg = (Get-Content $msgFile -Raw).Trim()
+if(-not $msg){ Write-Host 'Empty commit message blocked.' -ForegroundColor Red; exit 1 }
+
+$allowed = $false
+foreach($pfx in $Policy.commitMessagePrefixes){ if($msg.StartsWith($pfx, [StringComparison]::OrdinalIgnoreCase)){ $allowed=$true; break } }
+if(-not $allowed){
+  Write-Host '❌ Commit message must start with approved prefix:' -ForegroundColor Red
+  Write-Host ('   ' + ($Policy.commitMessagePrefixes -join ' ')) -ForegroundColor Yellow
+  exit 1
+}
+
+# Heuristic: if prior pre-commit flagged large deletion, require rationale tag
+$cacheDir = $Policy.cacheDir
+if($cacheDir){ $flagFile = Join-Path $cacheDir 'pending_large_delete.flag'; if(Test-Path $flagFile){
+    if($msg -notmatch '\[(rationale|cleanup|prune)\]'){ Write-Host '❌ Large deletion detected previously; include [rationale] tag.' -ForegroundColor Red; exit 1 }
+    Remove-Item $flagFile -ErrorAction SilentlyContinue
+}}
+
+exit 0

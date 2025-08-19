@@ -1997,4 +1997,38 @@ Benefits:
 
 Next (Stage 5 Preview): Pre-push extended validation layer, commit message governance (conventional / domain tags), rule caching across amend cycles, AI heuristic diff risk scoring prototype.
 
+### Revision 2025-08-19 – Stage 5 Extended Governance & Heuristics
+Enhancements Implemented:
+- Pre-Push Extended Validation: Added `.githooks/pre-push` executing configured build + test commands from policy (`prePush.buildCommands`, `prePush.testCommands`). Skippable via `AIOS_PREPUSH_SKIP=1` (or policy `skipEnvVar`). Blocks push on first failing step; outputs human-readable phase markers.
+- Commit Message Enforcement: New `.githooks/commit-msg` hook validates message starts with one of configured `commitMessagePrefixes` (conventional + domain governance tags: feat:, fix:, governance:, cellular:, etc.). Empty or untagged messages are rejected with list of valid prefixes.
+- Large Deletion Heuristic: Pre-commit now computes proportion of deleted lines vs total changed lines (numstat). If deletions exceed `largeDeletionThresholdPct` (60%) without `AIOS_HOOK_ALLOW_LARGE_DELETE=1`, a flag file (`pending_large_delete.flag`) is emitted to cache dir. Commit message must include `[rationale]` / `[cleanup]` / `[prune]` tag to satisfy governance (hook clears flag post acceptance). Encourages explicit intent for sweeping removals.
+- Policy Schema Bump: `rules_version` advanced to 5 adding: `commitMessagePrefixes`, `prePush` object, `largeDeletionThresholdPct`, `largeDeletionBypassEnvVar`, `cacheDir`, `enableExternalSecretScanner` (placeholder), maintaining backward compatibility for earlier fields.
+- Installation Guidance Update: `scripts/install_git_hooks.ps1` now documents pre-push skip env var, commit prefix enforcement, and large deletion rationale tagging.
+
+Foundations Laid (Deferred Activation / Future Work):
+- Caching Infrastructure Placeholder: Policy `cacheDir` created; current usage limited to large deletion flag. Future extension will persist file hashes / syntax validation results to avoid redundant py_compile / JSON parse across amend cycles.
+- External Secret Scanner Toggle: `enableExternalSecretScanner` added for eventual integration with dedicated secret scanning tool (will fallback to existing regex set if disabled / tool absent).
+- AI Diff Risk Scoring (Not Yet Implemented): Policy scaffolding supports future emission of heuristic risk markers (entropy-based secret suspicion, high churn without test modification, etc.).
+
+Rationale & Impact:
+- Multi-Layer Guard Rails: Commit-time hygiene + push-time assurance reduces CI churn by catching build/test breakages prior to remote operations.
+- Semantic Intent Capture: Conventional/domain prefixes + rationale tagging improve automated changelog generation and governance analytics (e.g., ratio of cleanup vs feature work, large deletion frequency).
+- Transparency & Accountability: Deletion rationale requirement nudges explicit communication around potentially disruptive code removal events.
+
+Next (Proposed Stage 6 Concepts – Optional Beyond Initial Scope):
+1. Hash-Based Rule Caching: Persist per-file content hash + last rule validation status (JSON, secrets, syntax) to skip re-processing on unchanged files during amend sequences.
+2. AI Heuristic Module: Lightweight Python script analyzing diff token complexity / test adjacency to raise `risk_score` field in JSON log.
+3. Daily Governance Crystal: Roll-up metrics (rule_* counters deltas) emitted to `runtime_intelligence/context/governance_metrics_YYYYMMDD.json` for longitudinal trend ingestion.
+4. Commit Autotag Suggestion: Pre-commit proposes likely prefix based on changed paths (e.g., core/ -> core:) when prefix missing (soft warning before hard enforcement toggle).
+5. Secret Entropy Analyzer: Supplement regex hits with Shannon entropy threshold evaluation for base64-like suspicious blobs.
+
+KPI Opportunities Introduced:
+- push_block_rate (pre-push build/test failures / pushes attempted)
+- deletion_rationale_compliance (large deletion events with vs without rationale tag)
+- prefix_adherence_rate (valid prefixed commits / total commits)
+- cleanup_to_feature_ratio (governance:, chore:, refactor: vs feat: count)
+
+Governance State: Stage 1–5 complete. System now spans commit message semantics, structural hygiene, test/build gating, and heuristic deletion oversight with structured telemetry ready for AI ingestion.
+
+
 

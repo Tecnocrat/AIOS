@@ -1,0 +1,31 @@
+#!/usr/bin/env pwsh
+# AIOS Pre-push Hook (Stage 5) - extended validation (build + tests)
+Set-StrictMode -Version Latest
+$ErrorActionPreference='Stop'
+
+function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -Raw | ConvertFrom-Json } catch {} } }
+$Policy = Load-Policy 'governance/hook_policy.json'
+if(-not $Policy -or -not $Policy.prePush.enable){ exit 0 }
+
+if($env:AIOS_PREPUSH_SKIP -eq '1' -or $env:$($Policy.prePush.skipEnvVar) -eq '1') { Write-Host '⚠️ Pre-push skipped via env var.' -ForegroundColor Yellow; exit 0 }
+
+Write-Host '🔍 Pre-push validation starting...' -ForegroundColor Cyan
+$fail=$false
+
+foreach($cmd in $Policy.prePush.buildCommands){
+  Write-Host "🏗️ Build: $cmd" -ForegroundColor DarkCyan
+  try { Invoke-Expression $cmd } catch { $fail=$true; Write-Host "Build command failed: $cmd" -ForegroundColor Red; break }
+  if($LASTEXITCODE -ne 0){ $fail=$true; Write-Host "Build exit code $LASTEXITCODE" -ForegroundColor Red; break }
+}
+
+if(-not $fail){
+  foreach($t in $Policy.prePush.testCommands){
+    Write-Host "🧪 Test: $t" -ForegroundColor DarkCyan
+    try { Invoke-Expression $t } catch { $fail=$true; Write-Host "Test command failed: $t" -ForegroundColor Red; break }
+    if($LASTEXITCODE -ne 0){ $fail=$true; Write-Host "Test exit code $LASTEXITCODE" -ForegroundColor Red; break }
+  }
+}
+
+if($fail){ Write-Host '❌ Pre-push blocked.' -ForegroundColor Red; exit 1 }
+Write-Host '✅ Pre-push validation passed.' -ForegroundColor Green
+exit 0
