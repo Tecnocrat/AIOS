@@ -41,3 +41,6 @@ Get-ChildItem $src -File | ForEach-Object {
 Write-Host 'Git hooks installed.' -ForegroundColor Cyan
 Write-Host 'Profiles: set AIOS_HOOK_PROFILE=fast or full (default full). Bypass (emergency only): AIOS_HOOK_BYPASS=1.' -ForegroundColor DarkCyan
 Write-Host 'Targeted tests: set AIOS_HOOK_RUN_TESTS=1 to enable integration pattern triggers.' -ForegroundColor DarkCyan
+Write-Host 'Pre-push extended validation: unset to enable; set AIOS_PREPUSH_SKIP=1 to bypass.' -ForegroundColor DarkCyan
+Write-Host 'Commit messages must start with an approved prefix (feat:, fix:, docs:, governance:, cellular:, etc.).' -ForegroundColor DarkCyan
+Write-Host 'Large deletions require a [rationale] tag in commit message unless AIOS_HOOK_ALLOW_LARGE_DELETE=1.' -ForegroundColor DarkCyan
