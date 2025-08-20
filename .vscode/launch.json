@@ -1,0 +1,136 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch AIOS UI (C#)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/interface/AIOS.UI/bin/Debug/net9.0-windows/AIOS.UI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/interface/AIOS.UI",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "AIOS_LOG_LEVEL": "Debug",
+                "AIOS_CONFIG_PATH": "${workspaceFolder}/config"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/interface/AIOS.UI"
+            }
+        },
+        {
+            "name": "Attach to AIOS Process",
+            "type": "coreclr",
+            "request": "attach",
+            "processName": "AIOS.UI"
+        },
+        {
+            "name": "Launch AIOS Core (C++)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/core/build/bin/Debug/aios_main.exe",
+            "args": [
+                "--config",
+                "${workspaceFolder}/config/system.json"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/core",
+            "environment": [
+                {
+                    "name": "AIOS_HOME",
+                    "value": "${workspaceFolder}"
+                },
+                {
+                    "name": "AIOS_LOG_LEVEL",
+                    "value": "DEBUG"
+                }
+            ],
+            "externalConsole": false
+        },
+        {
+            "name": "Python AI Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai/test_ai_core.py",
+            "args": [
+                "--debug",
+                "--config",
+                "${workspaceFolder}/config/ai-models.json"
+            ],
+            "cwd": "${workspaceFolder}/ai",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/ai/src",
+                "AIOS_HOME": "${workspaceFolder}",
+                "AIOS_LOG_LEVEL": "DEBUG"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "subProcess": true
+        },
+        {
+            "name": "AIOS Services Only",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-services",
+            "program": "${workspaceFolder}/interface/AIOS.Services/bin/Debug/net8.0/AIOS.Services.dll",
+            "args": [
+                "--headless",
+                "--port",
+                "8080"
+            ],
+            "cwd": "${workspaceFolder}/interface/AIOS.Services",
+            "env": {
+                "AIOS_HEADLESS": "true",
+                "AIOS_LOG_LEVEL": "Debug"
+            }
+        },
+        {
+            "name": "Context Reindex (AINLP)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/context_reindex.py",
+            "args": [
+                "--emit-adjacency"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/ai/src",
+                "AIOS_HOME": "${workspaceFolder}",
+                "AIOS_LOG_LEVEL": "INFO"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "purpose": ["debug-in-terminal"]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full AIOS Stack",
+            "configurations": [
+                "Launch AIOS Core (C++)",
+                "Python AI Debug",
+                "Launch AIOS UI (C#)"
+            ],
+            "presentation": {
+                "hidden": false,
+                "group": "AIOS Development",
+                "order": 1
+            }
+        },
+        {
+            "name": "Backend Services",
+            "configurations": [
+                "Launch AIOS Core (C++)",
+                "Python AI Debug",
+                "AIOS Services Only"
+            ],
+            "presentation": {
+                "hidden": false,
+                "group": "AIOS Development",
+                "order": 2
+            }
+        }
+    ]
+}

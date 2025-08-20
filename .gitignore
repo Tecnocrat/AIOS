@@ -137,10 +137,12 @@ packages/
 *.nupkg
 *.snupkg
 
-# IDE files & TensorFlow development
-.vscode/settings.json
-.vscode/launch.json
-.vscode/tasks.json
+# IDE files
+# Previously ignored .vscode/{settings,launch,tasks}.json; harmonization (AINLP governance + shared multi-language tasks)
+# requires these to be versioned so all contributors inherit governance tasks, context indexing and launch compounds.
+# If a developer needs local-only overrides, they can create .vscode/settings.local.json (kept ignored below if desired).
+# (Do not re-introduce ignores for the canonical trio without updating governance capsule.)
+# .vscode/settings.local.json  # <— optional pattern to add later if we decide to support local overrides
 .idea/
 *.swp
 *.swo
