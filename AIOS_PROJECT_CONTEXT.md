@@ -2031,4 +2031,43 @@ KPI Opportunities Introduced:
 Governance State: Stage 1–5 complete. System now spans commit message semantics, structural hygiene, test/build gating, and heuristic deletion oversight with structured telemetry ready for AI ingestion.
 
 
+### Revision 2025-08-20 – .github Governance & Telemetry Integration (Stages A–C + Final Loop)
+Scope:
+- Standardized meta-governance layer in `.github` aligning local hooks (Stages 1–5) with CI parity, reviewer affordances, and agentic AINLP substrates.
+
+Key Artifacts Added/Enhanced:
+1. Canonical Prompt Substrate: `.github/prompts/AIOS.prompt.md` (AINLP Core Prompt) encoding intent vector, substrate volatility layers, governance hook contract, commit semantics matrix, verification loop, risk heuristics, termination criteria.
+2. PR Template Governance Extensions: `pull_request_template.md` augmented with commit prefix compliance, large deletion rationale requirement, changelog gating, policy version acknowledgment, and rationale tags table (`[rationale]`, `[cleanup]`, `[prune]`).
+3. Telemetry Workflows:
+  - `governance-telemetry.yml`: Lightweight size/secret scan for changed files, hook summary ingestion, large deletion % heuristic, policy vs context capsule sync notice, artifact upload (scan, risks, hook summary, diffs), and PR auto-comment with consolidated governance table.
+  - `coherence-smoke.yml` (extended): Artifact emission (`coherence_metrics.json`, `guard_report.json`) plus near-threshold notices (LFC & GPC early-warning) to pre-empt coherence debt.
+  - `context-index-freshness.yml` (expanded triggers): Now reacts to `governance/hook_policy.json`, `.githooks/**`, and workflow changes; detects `rules_version` bumps lacking regenerated `context_index.json` and fails with actionable guidance.
+4. Governance Parity Heuristics: Large deletion rationale and policy/capsule sync checks surfaced in both hooks (local) and telemetry (CI), ensuring reviewer visibility of semantic guardrails.
+
+Architecture Alignment:
+- Forms a closed governance loop: Local enforcement → Structured logs → CI re-validation → PR semantic telemetry annotation → Capsule revision traceability.
+- Converts metaphysical intent (controlled fractal mutation, semantic clarity) into measurable signals (coherence thresholds, deletion %, rationale presence, prefix adherence).
+- Ensures downstream AI ingestion can rely on consistent metadata surfaces (prompt substrate + hook metrics + telemetry artifacts).
+
+Metrics & Future Levers:
+- Immediate: Oversized file count, secret pattern hits, deletionPct, pass/block counts, coherence LFC/GPC.
+- Promotion Candidates: rationale_tag_compliance trend, policy_change_to_capsule_latency, near_threshold_coherence_event rate.
+- Deferred (Stage 6 concepts alignment): risk_score augmentation, hash-based rule cache status, daily governance crystal emission.
+
+Rationale:
+- Eliminates divergence risk between developer local environment and CI evaluation.
+- Elevates reviewer cognition: surfaces hygiene & semantic intent inline without requiring manual artifact hunting.
+- Provides durable AINLP ingestion substrate for adaptive governance evolution (future AI heuristic enrichment).
+
+Governance Invariants Affirmed:
+- No root file proliferation (all additions scoped under `.github`).
+- Append-only documentation; prior capsule history preserved.
+- Telemetry additions minimize external dependencies (pure PowerShell / GitHub Script / jq on Ubuntu).
+
+Next Suggested Target (Post .github Integration):
+- Evaluate `runtime_intelligence/analysis` & `context/` pipeline for daily governance crystal emission integration (tie into future Stage 6 risk scoring) or proceed to `scripts/` consolidation to unify developer tooling UX.
+
+Status: .github integration complete; governance telemetry loop active and documented.
+
+
 

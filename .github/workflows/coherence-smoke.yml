@@ -25,4 +25,21 @@ jobs:
           Write-Host 'Root guard event summary:'
           pwsh -File scripts/dev_terminal.ps1 -Action guard-report -CoherenceFormat json -Quiet | Out-File guard_report.json -Encoding utf8
           if (Test-Path guard_report.json) { Write-Host (Get-Content guard_report.json -Raw) }
+          $json | Out-File coherence_metrics.json -Encoding utf8
           Write-Host 'Coherence smoke passed.'
+          # Near-threshold annotations
+          if ($obj.LFC -ge 0.85 -and $obj.LFC -lt 0.87) { Write-Host '::notice ::LFC near lower bound; consider refactoring for clarity.' }
+          if ($obj.GPC -ge 0.75 -and $obj.GPC -lt 0.77) { Write-Host '::notice ::GPC near lower bound; review cross-module cohesion.' }
+      - name: Upload coherence artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coherence-metrics
+          path: |
+            coherence_metrics.json
+            guard_report.json
+          if-no-files-found: ignore
+      - name: Job summary
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path coherence_metrics.json) { $m = Get-Content coherence_metrics.json -Raw | ConvertFrom-Json; "### Coherence Report`nLFC: $($m.LFC)  GPC: $($m.GPC)" | Out-File $env:GITHUB_STEP_SUMMARY -Append }

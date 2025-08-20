@@ -4,10 +4,16 @@ on:
     paths:
       - 'AIOS_PROJECT_CONTEXT.md'
       - 'scripts/context_reindex.py'
+      - 'governance/hook_policy.json'
+      - '.githooks/**'
+      - '.github/workflows/**'
   pull_request:
     paths:
       - 'AIOS_PROJECT_CONTEXT.md'
       - 'scripts/context_reindex.py'
+      - 'governance/hook_policy.json'
+      - '.githooks/**'
+      - '.github/workflows/**'
 jobs:
   reindex-validate:
     runs-on: ubuntu-latest
@@ -26,4 +32,23 @@ jobs:
           if git diff --name-only | grep -q 'runtime_intelligence/context/context_index.json'; then
             echo 'Index drift detected; please commit regenerated context_index.json.'
             exit 1
+          fi
+      - name: Policy version bump requires index awareness
+        shell: bash
+        run: |
+          if [ -f governance/hook_policy.json ]; then
+            NEW_VER=$(jq -r '.rules_version' governance/hook_policy.json 2>/dev/null || echo '')
+            # Attempt to get previous version (only works on non-initial commits)
+            if git rev-parse HEAD^ >/dev/null 2>&1; then
+              git show HEAD^:governance/hook_policy.json 2>/dev/null > /tmp/old_policy.json || true
+              if [ -s /tmp/old_policy.json ]; then
+                OLD_VER=$(jq -r '.rules_version' /tmp/old_policy.json 2>/dev/null || echo '')
+                if [ -n "$OLD_VER" ] && [ -n "$NEW_VER" ] && [ "$OLD_VER" != "$NEW_VER" ]; then
+                  if ! git diff --name-only | grep -q 'runtime_intelligence/context/context_index.json'; then
+                    echo "Hook policy rules_version changed ($OLD_VER -> $NEW_VER) but context index not regenerated. Run scripts/context_reindex.py and commit updated context_index.json." >&2
+                    exit 1
+                  fi
+                fi
+              fi
+            fi
           fi

@@ -1,0 +1,128 @@
+name: governance-telemetry
+on:
+  push:
+    branches: [ OS ]
+  pull_request:
+
+jobs:
+  telemetry:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Determine changed files
+        id: diff
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_EVENT_NAME -eq 'pull_request') {
+            $event = Get-Content $env:GITHUB_EVENT_PATH -Raw | ConvertFrom-Json
+            $base = $event.pull_request.base.sha
+            $head = $event.pull_request.head.sha
+            git fetch --no-tags origin $base --depth=1 | Out-Null
+            $range = "$base..$head"
+          } else {
+            $head = (git rev-parse HEAD).Trim()
+            $prev = (git rev-parse HEAD^) 2>$null
+            if (-not $prev) { $prev = $head }
+            $range = "$prev..$head"
+          }
+          Write-Host "Using range: $range"
+          $files = git diff --name-status $range | ForEach-Object {
+            $p = $_.Trim(); if (-not $p) { return }
+            $parts = $p -split "\s+"; [pscustomobject]@{ Status=$parts[0]; Path=$parts[-1] }
+          }
+          $files | ConvertTo-Json -Depth 4 | Set-Content changed_files.json -Encoding utf8
+          # compute numstat for deletion heuristic
+          $num = git diff --numstat $range | Out-String
+          Set-Content numstat.txt $num -Encoding utf8
+      - name: Lightweight governance scan
+        shell: pwsh
+        run: |
+          function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -Raw | ConvertFrom-Json } catch {} } }
+          $policy = Load-Policy 'governance/hook_policy.json'
+          $changed = if (Test-Path changed_files.json) { Get-Content changed_files.json -Raw | ConvertFrom-Json } else { @() }
+          $result = [ordered]@{ scanned=(Get-Date).ToString('o'); findings=@{ oversized=@(); secrets=@() }; counts=@{ analyzed=0; skipped=0 } }
+          if($policy){ $result.maxFileSizeMB=$policy.maxFileSizeMB }
+          if($policy -and $changed){
+            $secretPatterns = $policy.secretPatterns
+            $maxBytes = [int]($policy.maxFileSizeMB * 1MB)
+            foreach($f in $changed){ if($f.Status -eq 'D'){ continue }; if(-not (Test-Path $f.Path)){ $result.counts.skipped++; continue }
+              $item=Get-Item $f.Path -ErrorAction SilentlyContinue; if(-not $item){ $result.counts.skipped++; continue }
+              $allow=$false; foreach($p in $policy.allowLargePaths){ if($f.Path -like "$p*"){ $allow=$true; break } }
+              if(-not $allow -and $item.Length -gt $maxBytes){ $result.findings.oversized += "$($f.Path) ($($item.Length))" }
+              if($item.Length -le 512KB){ $ext=[IO.Path]::GetExtension($f.Path).ToLower(); if($ext -notin @('.png','.jpg','.jpeg','.gif','.exe','.dll','.so','.zip','.bin')){ $c = Get-Content $f.Path -Raw; foreach($pat in $secretPatterns){ if($c -match $pat){ $result.findings.secrets += "$($f.Path):$pat"; break } } } }
+              $result.counts.analyzed++ }
+          }
+          $result | ConvertTo-Json -Depth 6 | Set-Content governance_scan.json -Encoding utf8
+          if($result.findings.secrets.Count -gt 0){ Write-Host '::error ::Secret pattern(s) detected' }
+          if($result.findings.oversized.Count -gt 0){ Write-Host '::warning ::Oversized file(s) detected' }
+      - name: Large deletion heuristic & capsule check
+        shell: pwsh
+        run: |
+          $policy = if(Test-Path governance/hook_policy.json){ Get-Content governance/hook_policy.json -Raw | ConvertFrom-Json } else { $null }
+          $threshold = if($policy){ $policy.largeDeletionThresholdPct } else { 60 }
+          $totalAdd=0; $totalDel=0
+          if(Test-Path numstat.txt){
+            Get-Content numstat.txt | ForEach-Object {
+              if($_ -match '^(\d+)\t(\d+)\t(.+)$'){ $totalAdd += [int]$matches[1]; $totalDel += [int]$matches[2] }
+            }
+          }
+          $pct = 0
+          if(($totalAdd + $totalDel) -gt 0){ $pct = [math]::Round(($totalDel/($totalAdd+$totalDel))*100,2) }
+          $headMsg = (git log -1 --pretty=%B) -join "`n"
+          $needsTag = $false; $hasTag = $false
+          if($pct -ge $threshold){ $needsTag = $true; if($headMsg -match '\[(rationale|cleanup|prune)\]'){ $hasTag=$true } }
+          if($needsTag -and -not $hasTag){ Write-Host "::warning ::Large deletion ${pct}% without rationale tag" }
+          # governance capsule check
+          $changed = if(Test-Path changed_files.json){ Get-Content changed_files.json -Raw | ConvertFrom-Json } else { @() }
+          $policyChanged = $false; $capsuleChanged=$false
+          foreach($c in $changed){ if($c.Path -eq 'governance/hook_policy.json'){ $policyChanged=$true }
+            if($c.Path -eq 'AIOS_PROJECT_CONTEXT.md'){ $capsuleChanged=$true } }
+          if($policyChanged -and -not $capsuleChanged){ Write-Host '::notice ::Policy changed without context capsule update (AIOS_PROJECT_CONTEXT.md)' }
+          $risk = [ordered]@{ deletionPct=$pct; threshold=$threshold; needsRationale=$needsTag; hasRationaleTag=$hasTag; policyChanged=$policyChanged; capsuleUpdated=$capsuleChanged }
+          $risk | ConvertTo-Json -Depth 4 | Set-Content governance_risks.json -Encoding utf8
+      - name: Hook summary (if present)
+        shell: pwsh
+        run: |
+          if(Test-Path runtime_intelligence/logs/hooks/summary.json){ Copy-Item runtime_intelligence/logs/hooks/summary.json hook_summary.json }
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: governance-telemetry
+          path: |
+            governance_scan.json
+            hook_summary.json
+            changed_files.json
+            governance_risks.json
+            numstat.txt
+          if-no-files-found: ignore
+      - name: Job summary
+        shell: pwsh
+        run: |
+          Write-Host '### Governance Telemetry Summary' >> $env:GITHUB_STEP_SUMMARY
+          if(Test-Path governance_scan.json){ $scan = Get-Content governance_scan.json -Raw | ConvertFrom-Json; "Analyzed: $($scan.counts.analyzed) Oversized: $($scan.findings.oversized.Count) Secrets: $($scan.findings.secrets.Count)" >> $env:GITHUB_STEP_SUMMARY }
+          if(Test-Path hook_summary.json){ $hs = Get-Content hook_summary.json -Raw | ConvertFrom-Json; "Hook passes: $($hs.passes) blocks: $($hs.blocks)" >> $env:GITHUB_STEP_SUMMARY }
+          if(Test-Path governance_risks.json){ $rk = Get-Content governance_risks.json -Raw | ConvertFrom-Json; "DeletionPct: $($rk.deletionPct)% (needsTag=$($rk.needsRationale) hasTag=$($rk.hasRationaleTag)) PolicyChanged=$($rk.policyChanged) CapsuleUpdated=$($rk.capsuleUpdated)" >> $env:GITHUB_STEP_SUMMARY }
+      - name: PR Governance Telemetry Comment
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            function readJson(p){ return fs.existsSync(p)? JSON.parse(fs.readFileSync(p,'utf8')):null }
+            const scan = readJson('governance_scan.json') || {counts:{}, findings:{}};
+            scan.counts = scan.counts || {}; scan.findings = scan.findings || {};
+            const risks = readJson('governance_risks.json') || {};
+            const hook = readJson('hook_summary.json') || {};
+            const table = `### 🔐 Governance Telemetry\n| Metric | Value |\n|-------|-------|\n| Files Analyzed | ${scan.counts.analyzed || 0} |\n| Oversized | ${(scan.findings.oversized||[]).length} |\n| Secrets | ${(scan.findings.secrets||[]).length} |\n| Deletion % | ${risks.deletionPct ?? 0}% |\n| Needs Rationale | ${risks.needsRationale ?? false} |\n| Has Rationale Tag | ${risks.hasRationaleTag ?? false} |\n| Policy Changed | ${risks.policyChanged ?? false} |\n| Capsule Updated | ${risks.capsuleUpdated ?? false} |\n| Hook Passes | ${hook.passes || 0} |\n| Hook Blocks | ${hook.blocks || 0} |`;
+            const advisory = `\n\n_Thresholds:_ LFC>=0.85, GPC>=0.75 (checked in separate workflow). Large deletion rationale enforced locally via commit-msg hook.`;
+            const body = table + advisory;
+            const {owner, repo} = context.repo;
+            const issue_number = context.issue.number;
+            const marker = '### 🔐 Governance Telemetry';
+            const comments = await github.rest.issues.listComments({owner, repo, issue_number, per_page: 100});
+            const existing = comments.data.find(c => c.body && c.body.startsWith(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({owner, repo, comment_id: existing.id, body});
+            } else {
+              await github.rest.issues.createComment({owner, repo, issue_number, body});
+            }

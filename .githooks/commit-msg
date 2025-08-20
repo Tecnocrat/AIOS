@@ -4,8 +4,16 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
 
 $policyPath = 'governance/hook_policy.json'
-function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -Raw | ConvertFrom-Json } catch {} } return $null }
-$Policy = Load-Policy $policyPath
+# Renamed from Load-Policy -> Get-HookPolicy to satisfy PSScriptAnalyzer PSUseApprovedVerbs ("Load" not in approved verb list)
+
+function Get-HookPolicy {
+  param($Path)
+  if(Test-Path $Path){
+    try { return Get-Content $Path -Raw | ConvertFrom-Json } catch { }
+  }
+  return $null
+}
+$Policy = Get-HookPolicy $policyPath
 if(-not $Policy){ exit 0 }
 
 $msgFile = $args[0]
