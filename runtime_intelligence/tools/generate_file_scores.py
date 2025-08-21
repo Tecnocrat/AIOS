@@ -21,6 +21,7 @@ INDEX_PATH = REPO_ROOT / 'governance' / 'file_criticality_index.jsonl'
 TELEMETRY_OUT = (
     REPO_ROOT / 'runtime_intelligence' / 'logs' / 'file_scores' / 'latest.json'
 )
+OWNERSHIP_MAP_PATH = REPO_ROOT / 'governance' / 'file_ownership_map.json'
 
 # Weights (must mirror file_criticality.weights.v1)
 WEIGHTS = dict(
@@ -220,11 +221,35 @@ def load_previous_index() -> Dict[str, Dict[str, float]]:
     return prev
 
 
+def load_ownership_map() -> Dict[str, str]:
+    """Load ownership prefix map; keys are path prefixes (posix style)."""
+    if not OWNERSHIP_MAP_PATH.exists():
+        return {}
+    try:
+        data = json.loads(OWNERSHIP_MAP_PATH.read_text(encoding='utf-8'))
+        return {k: v for k, v in data.items() if not k.startswith('_')}
+    except Exception:
+        return {}
+
+
+def resolve_owner(path: str, ownership_map: Dict[str, str]) -> Optional[str]:
+    if not ownership_map:
+        return None
+    best_prefix = ''
+    best_owner = None
+    for prefix, owner in ownership_map.items():
+        if path.startswith(prefix) and len(prefix) > len(best_prefix):
+            best_prefix = prefix
+            best_owner = owner
+    return best_owner
+
+
 def main() -> None:
     files = discover_files()
     metrics: Dict[str, FileMetrics] = {}
     coverage_map = load_coverage_map()
     prev_index = load_previous_index()
+    ownership_map = load_ownership_map()
     for path in files:
         fm = FileMetrics(path=path.relative_to(REPO_ROOT).as_posix())
         fm.fan_out = naive_fan_out(path)
@@ -232,6 +257,7 @@ def main() -> None:
         if path.suffix == '.py':
             fm.coverage_pct = coverage_map.get(fm.path, 0.0)
         fm.runtime_touch_freq = heuristic_runtime_touch(path)
+        fm.ownership = resolve_owner(fm.path, ownership_map)
         metrics[fm.path] = fm
     for path in files:
         rel = path.relative_to(REPO_ROOT).as_posix()
