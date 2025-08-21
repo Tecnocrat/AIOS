@@ -131,6 +131,44 @@ if ($stagedEntries.Count -eq 0) { Write-JsonLog -Status 'pass' -Data @{ reason='
 
 $results = Aggregate-Checks -Entries $stagedEntries -Profile $HookProfile
 
+# Criticality integration (warnings + deletion blocks)
+if ($Policy.PSObject.Properties.Name -contains 'criticality') {
+  $crit = $Policy.criticality
+  $indexPath = $crit.indexPath
+  $critBlocks = @()
+  $critWarns = @()
+  if (-not (Test-Path $indexPath) -and $crit.scoreRegenScript) {
+    try { python $crit.scoreRegenScript 2>$null } catch { }
+  }
+  if (Test-Path $indexPath) {
+    $tierMap = @{}
+    try {
+      Get-Content $indexPath -Raw | ForEach-Object { $_ -split "`n" } | ForEach-Object {
+        if (-not $_.Trim()) { return }
+        try { $obj = $_ | ConvertFrom-Json } catch { $obj = $null }
+        if ($obj -and $obj.path -and $obj.tier) { $tierMap[$obj.path] = $obj }
+      }
+    } catch {}
+    foreach ($e in $stagedEntries) {
+      $p = $e.Path
+      if ($tierMap.ContainsKey($p)) {
+        $tier = $tierMap[$p].tier
+        # Deletion blocks for configured tiers
+        if ($e.Status -eq 'D' -and $crit.blockDeletionTiers -contains $tier) {
+          $critBlocks += "$p($tier)"
+        }
+        # Core modification warnings
+        elseif ($crit.warnOnCoreModify -and $tier -eq 'core' -and $e.Status -ne 'D') {
+          $critWarns += "$p($tier)"
+        }
+      }
+    }
+  }
+  if ($critBlocks.Count -gt 0) { $results.criticality_delete = $critBlocks }
+  # Warnings (non-blocking) captured separately
+  if ($critWarns.Count -gt 0) { $results.criticality_warn = $critWarns }
+}
+
 # Large deletion heuristic
 if ($Policy.largeDeletionThresholdPct -and $totalChanged -gt 0) {
   $pct = [math]::Round(($deletions / $totalChanged) * 100,2)
@@ -142,9 +180,12 @@ if ($Policy.largeDeletionThresholdPct -and $totalChanged -gt 0) {
 }
 
 # Determine violations
-$violations = @(); foreach($k in $results.Keys){ if($results[$k] -and $results[$k].Count -gt 0){ $violations += $k } }
+$violations = @(); foreach($k in $results.Keys){ if($k -eq 'criticality_warn'){ continue }; if($results[$k] -and $results[$k].Count -gt 0){ $violations += $k } }
 if ($violations.Count -eq 0) {
-  Write-JsonLog -Status 'pass' -Data @{ changed=$stagedEntries.Count; profile=$HookProfile }
+  if ($results.criticality_warn) {
+    Write-Host "⚠️ Core file modifications (review advised): $($results.criticality_warn -join ', ')" -ForegroundColor Yellow
+  }
+  Write-JsonLog -Status 'pass' -Data @{ changed=$stagedEntries.Count; profile=$HookProfile; criticality_warn=$results.criticality_warn }
   $metricsDelta = @{ passes=1 }
   Save-MetricsSummary $metricsDelta
   exit 0
@@ -162,11 +203,12 @@ if ($results.exec){ Write-Host " * Move script to approved directory or remove s
 if ($results.changelog){ Write-Host " * Add changelog entry file (tachyonic) for governed path changes." -ForegroundColor Yellow }
 if ($results.py){ Write-Host " * Fix Python syntax errors (py_compile)." -ForegroundColor Yellow }
 if ($results.tests){ Write-Host " * Investigate failing targeted tests." -ForegroundColor Yellow }
+if ($results.criticality_warn){ Write-Host " * Core file modifications detected (non-blocking) -> ensure ledger ID & dual review if escalated." -ForegroundColor Yellow }
+
+if ($results.criticality_delete){ Write-Host " * Deletion of core/high tier file requires staged deprecation process." -ForegroundColor Yellow }
 
 Write-JsonLog -Status 'block' -Data @{ violations=$results; profile=$HookProfile }
 $metricsDelta = @{ blocks=1 }
 foreach($k in $violations){ $metricsDelta["rule_$k"] = 1 }
 Save-MetricsSummary $metricsDelta
 exit 1
-
-}

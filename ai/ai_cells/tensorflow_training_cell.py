@@ -8,6 +8,7 @@ seamlessly with C++ performance inference cells through intercellular bridges.
 import json
 import os
 import time
+import hashlib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -343,12 +344,21 @@ class TensorFlowTrainingCell:
                     "fractal_depth": getattr(self.model, "fractal_depth", None),
                     "holographic": getattr(self.model, "holographic", False),
                 }
-                # Compute model hash (simple hash of metadata file for demo)
-                model_hash = str(
-                    hash(
-                        str(input_signature) + str(output_signature) + str(export_time)
-                    )
-                )
+                # Deterministic model hash (CEL-HASH-02): sha256 over arch + weights marker + signatures
+                sha = hashlib.sha256()
+                arch_blob = json.dumps(arch_info, sort_keys=True).encode()
+                sha.update(arch_blob)
+                sig_blob = json.dumps({
+                    "input": input_signature,
+                    "output": output_signature
+                }, sort_keys=True).encode()
+                sha.update(sig_blob)
+                # If weights file exists, include its size + mtime for stability (not raw weights to keep light)
+                if h5_path.exists():
+                    stat = h5_path.stat()
+                    sha.update(str(stat.st_size).encode())
+                    sha.update(str(int(stat.st_mtime)).encode())
+                model_hash = sha.hexdigest()
             else:
                 # Mock export for testing
                 mock_model_path = export_dir / "mock_model.json"
@@ -363,11 +373,12 @@ class TensorFlowTrainingCell:
                     "fractal_depth": None,
                     "holographic": False,
                 }
-                model_hash = str(
-                    hash(
-                        str(input_signature) + str(output_signature) + str(export_time)
-                    )
-                )
+                # Deterministic mock hash
+                sha = hashlib.sha256()
+                sha.update(json.dumps(input_signature, sort_keys=True).encode())
+                sha.update(json.dumps(output_signature, sort_keys=True).encode())
+                sha.update(str(int(export_time)).encode())
+                model_hash = sha.hexdigest()
             # Create export information
             self.export_info = ModelExport(
                 export_path=str(export_dir),

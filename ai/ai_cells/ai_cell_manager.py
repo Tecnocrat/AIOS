@@ -15,8 +15,8 @@ from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
 
 # Import AIOS cellular components
-from .tensorflow_training_cell import (ModelExport, TensorFlowTrainingCell,
-                                       TrainingConfig)
+from .tensorflow_training_cell import TrainingConfig
+from . import create_training_cell, TrainingCellProtocol
 
 
 @dataclass
@@ -73,19 +73,21 @@ class AICellManager:
         self.workspace_path.mkdir(parents=True, exist_ok=True)
 
         # Cellular ecosystem state
-        self.active_workflows: Dict[str, CellularWorkflow] = {}
-        self.workflow_status: Dict[str, WorkflowStatus] = {}
-        self.training_cells: Dict[str, TensorFlowTrainingCell] = {}
-        self.intercellular_messages: List[IntercellularMessage] = []
+        self.active_workflows = {}  # type: Dict[str, CellularWorkflow]
+        self.workflow_status = {}  # type: Dict[str, WorkflowStatus]
+        self.training_cells = {}  # type: Dict[str, TrainingCellProtocol]
+        self.intercellular_messages = []  # type: List[IntercellularMessage]
 
         # Execution management
         self.executor = ThreadPoolExecutor(max_workers=4)
-        self.active_futures: Dict[str, Future] = {}
+        self.active_futures = {}  # type: Dict[str, Future]
 
         # Setup logging
         self._setup_logging()
 
-        self.logger.info("AI Cell Manager initialized for AIOS Cellular Ecosystem")
+        self.logger.info(
+            "AI Cell Manager initialized for AIOS Cellular Ecosystem"
+        )
         self.logger.info(f"Workspace: {self.workspace_path}")
 
     def _setup_logging(self):
@@ -99,7 +101,9 @@ class AICellManager:
         # File handler
         file_handler = logging.FileHandler(log_path / "cell_manager.log")
         file_handler.setFormatter(
-            logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            logging.Formatter(
+                '%(asctime)s %(name)s %(levelname)s %(message)s'
+            )
         )
 
         # Console handler
@@ -193,7 +197,10 @@ class AICellManager:
             self.logger.info(f"Executing cellular workflow: {workflow.name}")
 
             # Create and initialize training cell
-            training_cell = TensorFlowTrainingCell(workflow.training_config)
+            try:
+                training_cell = create_training_cell("tensorflow", workflow.training_config)
+            except KeyError as e:
+                raise RuntimeError(f"Requested framework not available: {e}")
             self.training_cells[workflow_id] = training_cell
 
             # Extract training data
@@ -317,7 +324,7 @@ class AICellManager:
         """Get list of active workflow IDs"""
         return list(self.active_workflows.keys())
 
-    def get_training_cell(self, workflow_id: str) -> Optional[TensorFlowTrainingCell]:
+    def get_training_cell(self, workflow_id: str) -> Optional[TrainingCellProtocol]:
         """Get the training cell for a workflow"""
         return self.training_cells.get(workflow_id)
 
