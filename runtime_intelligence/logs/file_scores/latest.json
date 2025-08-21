@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-20T17:38:28Z",
+  "generated_at": "2025-08-21T15:48:17Z",
   "file_count": 335,
   "top10": [
     {
@@ -17,7 +17,7 @@
       "tier": "core",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_core_engine",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -37,7 +37,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_core_misc",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -57,7 +57,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_interface_ui",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -77,7 +77,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_interface_services",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -97,7 +97,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_interface_models",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -117,7 +117,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_interface_models",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -137,7 +137,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_interface_services",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -157,7 +157,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_ai_core",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -166,7 +166,7 @@
       "path": "ai/ai_cells/tensorflow_training_cell.py",
       "fan_in": 4.0,
       "fan_out": 8.0,
-      "churn_90d": 3.0,
+      "churn_90d": 4.0,
       "blast_radius": 4.0,
       "coverage_pct": 0.0,
       "security_flag": 0,
@@ -177,7 +177,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_ai_cells",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
@@ -197,7 +197,7 @@
       "tier": "high",
       "last_reviewed": null,
       "deprecation_stage": null,
-      "ownership": null,
+      "ownership": "team_interface_models",
       "coupling_degree": null,
       "coverage_band": "low",
       "synthetic_precision": "hundredths"
