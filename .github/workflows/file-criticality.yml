@@ -1,0 +1,70 @@
+name: file-criticality
+on:
+  pull_request: {}
+  push:
+    branches: [OS]
+
+jobs:
+  criticality:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install minimal deps
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+      - name: Generate file scores
+        shell: pwsh
+        run: |
+          python runtime_intelligence/tools/generate_file_scores.py
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: file-criticality
+          path: |
+            governance/file_criticality_index.jsonl
+            runtime_intelligence/logs/file_scores/latest.json
+          if-no-files-found: error
+      - name: PR File Criticality Comment
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            function topChanged(changed, indexMap){
+              const paths = changed.filter(c=>c.Status!=='D').map(c=>c.Path);
+              const scored = indexMap.filter(r=>paths.includes(r.path));
+              return scored.sort((a,b)=>b.criticality_score-a.criticality_score).slice(0,10);
+            }
+            function loadIndex(){
+              if(!fs.existsSync('governance/file_criticality_index.jsonl')) return [];
+              return fs.readFileSync('governance/file_criticality_index.jsonl','utf8')
+                .split(/\r?\n/).filter(Boolean).map(l=>{ try { return JSON.parse(l) } catch { return null } }).filter(Boolean);
+            }
+            function loadChanged(){
+              const evt = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,'utf8'));
+              const base = evt.pull_request.base.sha; const head = evt.pull_request.head.sha;
+              const cp = require('child_process');
+              const diff = cp.execSync(`git diff --name-status ${base}..${head}`, {encoding:'utf8'});
+              return diff.split(/\r?\n/).filter(Boolean).map(line=>{ const parts=line.split(/\s+/); return {Status:parts[0], Path:parts.slice(1).join(' ')} });
+            }
+            const indexMap = loadIndex();
+            const changed = loadChanged();
+            const top = topChanged(changed, indexMap);
+            const tableRows = top.map(r=>`| ${r.path} | ${r.criticality_score} | ${r.tier} |`).join('\n');
+            const header = '| Path | Score | Tier |';
+            const sep = '|------|-------|------|';
+            const body = `### 📊 File Criticality Impact\nChanged high-impact files (top up to 10):\n${header}\n${sep}\n${tableRows || '(none)'}\n\n_Total files scored: ${indexMap.length}. Core/High deletions require staged deprecation._`;
+            const {owner, repo} = context.repo; const issue_number = context.issue.number;
+            const marker = '### 📊 File Criticality Impact';
+            const comments = await github.rest.issues.listComments({owner, repo, issue_number, per_page: 100});
+            const existing = comments.data.find(c => c.body && c.body.startsWith(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({owner, repo, comment_id: existing.id, body});
+            } else {
+              await github.rest.issues.createComment({owner, repo, issue_number, body});
+            }
