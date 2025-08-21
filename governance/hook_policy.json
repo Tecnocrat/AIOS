@@ -1,5 +1,5 @@
 {
-  "rules_version": 5,
+  "rules_version": 6,
   "deprecatedFiles": [
     "test_opencv_aios_integration.py",
     "test_chatgpt_integration.py",
@@ -74,4 +74,11 @@
   "largeDeletionBypassEnvVar": "AIOS_HOOK_ALLOW_LARGE_DELETE",
   "cacheDir": "runtime_intelligence/logs/hooks/cache",
   "enableExternalSecretScanner": true
+  ,"criticality": {
+    "indexPath": "governance/file_criticality_index.jsonl",
+    "warnOnCoreModify": true,
+    "requireDualReviewTiers": ["core"],
+    "blockDeletionTiers": ["core","high"],
+    "scoreRegenScript": "runtime_intelligence/tools/generate_file_scores.py"
+  }
 }
