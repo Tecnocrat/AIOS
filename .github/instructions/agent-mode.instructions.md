@@ -4,17 +4,25 @@ Purpose: Machine-ingestible governance + coherence + ledger rules. Audience: AI 
 
 ```
 meta:
+
 	version: 2
 	format: yaml-block
 	updated: 2025-08-20T00:00:00Z
 	source_of_truth: true
 	do_not_expand: true
 
-policy.file_creation:
-	root_new_files: forbid
-	placement_order: [reuse_inject, module_subfolder, docs_or_scripts, NEVER_root]
-	self_interrogation: [can_inject?, optimal_non_root_location?]
-	traceability: changes_must_be_logged_existing_doc: true
+	policy.file_creation:
+		root_new_files: forbid
+		placement_order: [reuse_inject, module_subfolder, docs_or_scripts, NEVER_root]
+		self_interrogation: [can_inject?, optimal_non_root_location?]
+		traceability: changes_must_be_logged_existing_doc: true
+
+# --- AIOS Agent Behavioral Protocols: Key Lessons Integration ---
+agent_behavior:
+  - If repeated patch failures, indentation errors, or context mismatches are detected, the agent MUST pause and request explicit human input before proceeding further.
+  - The agent MUST NOT delete existing imports (especially latent or used imports) unless explicitly instructed by the user, in accordance with AIOS fractal/quantum design principles.
+  - When decoherence is detected (e.g., patching system cannot maintain context or repeated errors occur), the agent MUST stop, summarize the issue, and await user guidance before any further automated action.
+  - The agent should always prefer logic expansion or latent logic preservation over deletion, unless the user requests otherwise.
 
 coherence.score:
 	base: 0.5
@@ -191,6 +199,14 @@ file_criticality.index:
 	authoritative: true
 	update_path: runtime_intelligence/tools/generate_file_scores.py
 	telemetry_emit: runtime_intelligence/logs/file_scores/latest.json
+
+file_criticality.ownership_mapping:
+	path: governance/file_ownership_map.json
+	strategy: longest_prefix
+	unknown_owner_label: team_unassigned
+	enforcement:
+		core_or_high_without_owner: warn
+		unowned_threshold_pct: 0.15
 
 file_criticality.lifecycle_gates:
 	core: [proposal_doc, dual_review, impact_simulation, staged_deprecation]

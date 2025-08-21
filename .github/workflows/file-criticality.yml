@@ -52,13 +52,65 @@ jobs:
               const diff = cp.execSync(`git diff --name-status ${base}..${head}`, {encoding:'utf8'});
               return diff.split(/\r?\n/).filter(Boolean).map(line=>{ const parts=line.split(/\s+/); return {Status:parts[0], Path:parts.slice(1).join(' ')} });
             }
+            function regenerateIndexForCommit(commit){
+              const cp = require('child_process');
+              // Stash current working tree state inside temp dir (checkout is detached in action)
+              cp.execSync(`git checkout --quiet ${commit}`);
+              try { cp.execSync('python runtime_intelligence/tools/generate_file_scores.py',{stdio:'ignore'}); } catch {}
+              const idx = loadIndex();
+              // Return to PR head
+              return idx;
+            }
+            function buildMap(list){
+              const m = new Map();
+              list.forEach(o=>m.set(o.path,o));
+              return m;
+            }
             const indexMap = loadIndex();
             const changed = loadChanged();
+            // Base index regeneration for delta (best effort)
+            const evt = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,'utf8'));
+            const baseSha = evt.pull_request.base.sha;
+            const headSha = evt.pull_request.head.sha;
+            const cp = require('child_process');
+            let baseIndex = [];
+            try {
+              baseIndex = regenerateIndexForCommit(baseSha);
+            } catch (e) {
+              // ignore
+            } finally {
+              // Restore head
+              try { cp.execSync(`git checkout --quiet ${headSha}`); } catch {}
+              try { cp.execSync('python runtime_intelligence/tools/generate_file_scores.py',{stdio:'ignore'}); } catch {}
+            }
+            const baseMap = buildMap(baseIndex);
             const top = topChanged(changed, indexMap);
             const tableRows = top.map(r=>`| ${r.path} | ${r.criticality_score} | ${r.tier} |`).join('\n');
             const header = '| Path | Score | Tier |';
             const sep = '|------|-------|------|';
-            const body = `### 📊 File Criticality Impact\nChanged high-impact files (top up to 10):\n${header}\n${sep}\n${tableRows || '(none)'}\n\n_Total files scored: ${indexMap.length}. Core/High deletions require staged deprecation._`;
+            // Delta metrics
+            const changedScores = [];
+            changed.forEach(c=>{
+              if(c.Status==='D') return; // Already prevented by hook for core/high
+              const cur = indexMap.find(x=>x.path===c.Path);
+              if(!cur) return;
+              const prev = baseMap.get(c.Path);
+              if(prev){
+                const delta = cur.criticality_score - prev.criticality_score;
+                changedScores.push({path:c.Path, prev:prev.criticality_score, cur:cur.criticality_score, delta});
+              } else {
+                changedScores.push({path:c.Path, prev:null, cur:cur.criticality_score, delta:null});
+              }
+            });
+            const deltas = changedScores.filter(d=>d.delta!==null);
+            const avgDelta = deltas.length ? (deltas.reduce((a,b)=>a+b.delta,0)/deltas.length).toFixed(2) : '0.00';
+            const pos = deltas.filter(d=>d.delta>0).length;
+            const neg = deltas.filter(d=>d.delta<0).length;
+            const unchanged = deltas.filter(d=>d.delta===0).length;
+            const deltaTableRows = changedScores.slice(0,15).map(d=>`| ${d.path} | ${d.prev??'-'} | ${d.cur} | ${d.delta===null?'(new)':d.delta.toFixed(2)} |`).join('\n');
+            const deltaHeader = '| Path | Prev | Cur | Δ |';
+            const deltaSep = '|------|------|-----|----|';
+            const body = `### 📊 File Criticality Impact\nChanged high-impact files (top up to 10):\n${header}\n${sep}\n${tableRows || '(none)'}\n\n**Δ Score Summary** (vs base): avg=${avgDelta} (pos=${pos} neg=${neg} zero=${unchanged})\n${deltaHeader}\n${deltaSep}\n${deltaTableRows || '(no scored changes)'}\n\n_Total files scored: ${indexMap.length}. Core/High deletions require staged deprecation._`;
             const {owner, repo} = context.repo; const issue_number = context.issue.number;
             const marker = '### 📊 File Criticality Impact';
             const comments = await github.rest.issues.listComments({owner, repo, issue_number, per_page: 100});
