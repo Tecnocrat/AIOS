@@ -37,3 +37,14 @@ All previous root-level docs (except this file and ARCHITECTURE_TRANSFORMATION_S
 ---
 
 # Status: OPTIMIZATION COMPLETE AND OPERATIONAL (2025-07-20)
+
+---
+
+## Python String Formatting Guideline (AIOS Codebase)
+
+When writing print statements or log messages in Python:
+
+- Do not use an f-string (e.g., `f"..."`) unless you actually need variable interpolation with `{}` placeholders.
+- If you want to include variables in the message in the future, reintroduce the `f` prefix and use `{}` placeholders as needed.
+
+This avoids unnecessary f-strings and prevents Flake8 F541 errors (`f-string is missing placeholders`).

@@ -27,7 +27,7 @@ class CellularWorkflow:
     description: str
     training_config: TrainingConfig
     data_pipeline: Optional[Callable] = None
-    post_training_hooks: List[Callable] = None
+    post_training_hooks: Optional[List[Callable]] = None
     target_deployment: str = "cpp_inference_cell"
 
 
@@ -60,15 +60,42 @@ class AICellManager:
 
     Orchestrates training workflows and coordinates communication between
     Python AI Training Cells and C++ Performance Inference Cells.
+
+    Async API:
+        - submit_workflow_async(workflow_id, training_data) -> Future
+            Submit a workflow for async execution and get its Future.
+        - get_workflow_future(workflow_id) -> Optional[Future]
+            Retrieve the Future for a running workflow.
+        - get_future_status(workflow_id) -> Optional[str]
+            Query the status of a workflow's Future
+            ('pending', 'running', 'done', 'cancelled').
+        - cancel_workflow(workflow_id) -> bool
+            Attempt to cancel a running workflow.
+        - get_future_result(workflow_id, timeout=None) -> Any
+            Get the result of a workflow's Future (blocking or with timeout).
+
+    These methods enable external orchestration, monitoring, and cancellation
+    of cellular workflows in a fully concurrent, agentic, and
+    fractal-compliant manner.
     """
 
-    def __init__(self, workspace_path: str = "/tmp/aios_cellular_workspace"):
+    def __init__(self, workspace_path: str = None):
         """
         Initialize the AI Cell Manager
 
         Args:
             workspace_path: Path for cellular workspace and model exports
         """
+
+        # Default to project-local runtime_intelligence/
+        # aios_cellular_workspace if not specified
+        if workspace_path is None:
+            project_root = Path(__file__).resolve().parents[3]
+            workspace_path = (
+                project_root
+                / "runtime_intelligence"
+                / "aios_cellular_workspace"
+            )
         self.workspace_path = Path(workspace_path)
         self.workspace_path.mkdir(parents=True, exist_ok=True)
 
@@ -127,7 +154,9 @@ class AICellManager:
         """
         try:
             if workflow.workflow_id in self.active_workflows:
-                self.logger.warning(f"Workflow {workflow.workflow_id} already registered")
+                self.logger.warning(
+                    f"Workflow {workflow.workflow_id} already registered"
+                )
                 return False
 
             self.active_workflows[workflow.workflow_id] = workflow
@@ -140,14 +169,23 @@ class AICellManager:
                 estimated_completion_time=0.0
             )
 
-            self.logger.info(f"Registered workflow: {workflow.name} ({workflow.workflow_id})")
+            self.logger.info(
+                (
+                    f"Registered workflow: {workflow.name} "
+                    f"({workflow.workflow_id})"
+                )
+            )
             return True
 
         except Exception as e:
             self.logger.error(f"Error registering workflow: {e}")
             return False
 
-    def execute_workflow(self, workflow_id: str, training_data: Dict[str, Any]) -> bool:
+    def execute_workflow(
+        self,
+        workflow_id: str,
+        training_data: Dict[str, Any]
+    ) -> bool:
         """
         Execute a cellular workflow asynchronously
 
@@ -171,7 +209,11 @@ class AICellManager:
             self.workflow_status[workflow_id].status = "training"
 
             # Submit workflow execution to thread pool
-            future = self.executor.submit(self._execute_workflow_impl, workflow, training_data)
+            future = self.executor.submit(
+                self._execute_workflow_impl,
+                workflow,
+                training_data
+            )
             self.active_futures[workflow_id] = future
 
             self.logger.info(f"Started execution of workflow: {workflow.name}")
@@ -183,7 +225,121 @@ class AICellManager:
             self.workflow_status[workflow_id].error_message = str(e)
             return False
 
-    def _execute_workflow_impl(self, workflow: CellularWorkflow, training_data: Dict[str, Any]):
+    def submit_workflow_async(
+        self,
+        workflow_id: str,
+        training_data: Dict[str, Any]
+    ) -> Optional[Future]:
+        """
+        Submit a workflow for asynchronous execution and return its Future.
+
+        Args:
+            workflow_id: ID of the workflow to execute
+            training_data: Training data dict
+
+        Returns:
+            The Future object if submission is successful, else None.
+        """
+        if workflow_id not in self.active_workflows:
+            self.logger.error(f"Workflow {workflow_id} not found")
+            return None
+
+        if workflow_id in self.active_futures:
+            self.logger.warning(f"Workflow {workflow_id} already executing")
+            return self.active_futures[workflow_id]
+
+        try:
+            workflow = self.active_workflows[workflow_id]
+            self.workflow_status[workflow_id].status = "training"
+            future = self.executor.submit(
+                self._execute_workflow_impl,
+                workflow,
+                training_data
+            )
+            self.active_futures[workflow_id] = future
+            self.logger.info(
+                f"Submitted async execution of workflow: {workflow.name}"
+            )
+
+            # Attach done callback for logging completion/failure
+            def _future_callback(fut):
+                try:
+                    fut.result()
+                    self.logger.info(
+                        f"Workflow {workflow_id} completed via Future."
+                    )
+                except Exception as exc:
+                    self.logger.error(
+                        f"Workflow {workflow_id} failed via Future: {exc}"
+                    )
+            future.add_done_callback(_future_callback)
+            return future
+        except Exception as e:
+            self.logger.error(
+                f"Error submitting async workflow execution: {e}"
+            )
+            self.workflow_status[workflow_id].status = "failed"
+            self.workflow_status[workflow_id].error_message = str(e)
+            return None
+
+    def get_workflow_future(self, workflow_id: str) -> Optional[Future]:
+        """
+        Retrieve the Future object associated with a running workflow.
+
+        Args:
+            workflow_id: The workflow ID to query.
+
+        Returns:
+            The Future object if the workflow is running, else None.
+        """
+        return self.active_futures.get(workflow_id)
+
+    def get_future_status(self, workflow_id: str) -> Optional[str]:
+        """
+        Get the status of the Future for a given workflow.
+        Returns:
+            'pending', 'running', 'done', 'cancelled', or None if not found.
+        """
+        future = self.active_futures.get(workflow_id)
+        if not future:
+            return None
+        if future.cancelled():
+            return 'cancelled'
+        if future.running():
+            return 'running'
+        if future.done():
+            return 'done'
+        return 'pending'
+
+    def cancel_workflow(self, workflow_id: str) -> bool:
+        """
+        Attempt to cancel the Future for a workflow.
+        Returns True if cancelled, False otherwise.
+        """
+        future = self.active_futures.get(workflow_id)
+        if not future:
+            return False
+        return future.cancel()
+
+    def get_future_result(
+        self,
+        workflow_id: str,
+        timeout: Optional[float] = None
+    ) -> Any:
+        """
+        Get the result of the Future for a workflow, blocking until done or
+        timeout. Raises exception if the workflow failed.
+        """
+        future = self.active_futures.get(workflow_id)
+        if not future:
+            raise ValueError(f"No active Future for workflow {workflow_id}")
+        return future.result(timeout=timeout)
+
+    def _execute_workflow_impl(
+        self,
+        workflow: CellularWorkflow,
+        training_data: Dict[str, Any]
+    ):
         """
         Internal implementation of workflow execution
 
@@ -198,7 +354,9 @@ class AICellManager:
 
             # Create and initialize training cell
             try:
-                training_cell = create_training_cell("tensorflow", workflow.training_config)
+                training_cell = create_training_cell(
+                    "tensorflow", workflow.training_config
+                )
             except KeyError as e:
                 raise RuntimeError(f"Requested framework not available: {e}")
             self.training_cells[workflow_id] = training_cell
@@ -215,11 +373,26 @@ class AICellManager:
             # Apply data pipeline if provided
             if workflow.data_pipeline:
                 self.logger.info("Applying data pipeline transformations...")
-                x_train, y_train, x_val, y_val = workflow.data_pipeline(x_train, y_train, x_val, y_val)
+                (
+                    x_train,
+                    y_train,
+                    x_val,
+                    y_val
+                ) = workflow.data_pipeline(
+                    x_train, y_train, x_val, y_val
+                )
 
             # Determine input shape and number of classes
-            input_shape = x_train.shape[1:] if len(x_train.shape) > 1 else (x_train.shape[0],)
-            num_classes = len(set(y_train)) if hasattr(y_train, '__iter__') else 10
+            input_shape = (
+                x_train.shape[1:]
+                if len(x_train.shape) > 1
+                else (x_train.shape[0],)
+            )
+            num_classes = (
+                len(set(y_train))
+                if hasattr(y_train, '__iter__')
+                else 10
+            )
 
             # Create model
             self.logger.info("Creating model...")
@@ -264,7 +437,9 @@ class AICellManager:
             self.workflow_status[workflow_id].status = "exporting"
 
             export_path = self.workspace_path / "exports" / workflow_id
-            export_info = training_cell.export_for_cpp_inference(str(export_path))
+            export_info = training_cell.export_for_cpp_inference(
+                str(export_path)
+            )
 
             if not export_info:
                 raise RuntimeError("Model export failed")
@@ -278,7 +453,8 @@ class AICellManager:
                     "workflow_id": workflow_id,
                     "export_path": export_info.export_path,
                     "model_format": export_info.model_format,
-                    "estimated_inference_time_ms": export_info.estimated_inference_time,
+                    "estimated_inference_time_ms":
+                        export_info.estimated_inference_time,
                     "input_signature": export_info.input_signature,
                     "output_signature": export_info.output_signature
                 },
@@ -289,10 +465,15 @@ class AICellManager:
             self.workflow_status[workflow_id].status = "completed"
             self.workflow_status[workflow_id].progress = 1.0
 
-            self.logger.info(f"Workflow {workflow.name} completed successfully!")
+            self.logger.info(
+                f"Workflow {workflow.name} completed successfully!"
+            )
             self.logger.info(f"Training time: {training_time:.2f}s")
             self.logger.info(f"Model exported to: {export_info.export_path}")
-            self.logger.info(f"Estimated C++ inference time: {export_info.estimated_inference_time:.3f}ms")
+            self.logger.info(
+                "Estimated C++ inference time: "
+                f"{export_info.estimated_inference_time:.3f}ms"
+            )
 
         except Exception as e:
             self.logger.error(f"Workflow {workflow_id} failed: {e}")
@@ -316,7 +497,9 @@ class AICellManager:
             if workflow_id in self.active_futures:
                 del self.active_futures[workflow_id]
 
-    def get_workflow_status(self, workflow_id: str) -> Optional[WorkflowStatus]:
+    def get_workflow_status(
+        self, workflow_id: str
+    ) -> Optional[WorkflowStatus]:
         """Get the status of a workflow"""
         return self.workflow_status.get(workflow_id)
 
@@ -324,13 +507,20 @@ class AICellManager:
         """Get list of active workflow IDs"""
         return list(self.active_workflows.keys())
 
-    def get_training_cell(self, workflow_id: str) -> Optional[TrainingCellProtocol]:
+    def get_training_cell(
+        self, workflow_id: str
+    ) -> Optional[TrainingCellProtocol]:
         """Get the training cell for a workflow"""
         return self.training_cells.get(workflow_id)
 
-    def _send_intercellular_message(self, source_cell: str, target_cell: str,
-                                   message_type: str, payload: Dict[str, Any],
-                                   priority: int = 0):
+    def _send_intercellular_message(
+        self,
+        source_cell: str,
+        target_cell: str,
+        message_type: str,
+        payload: Dict[str, Any],
+        priority: int = 0
+    ):
         """Send an intercellular message"""
         message = IntercellularMessage(
             source_cell=source_cell,
@@ -342,12 +532,20 @@ class AICellManager:
         )
 
         self.intercellular_messages.append(message)
-        self.logger.debug(f"Sent message: {source_cell} -> {target_cell} ({message_type})")
+        self.logger.debug(
+            f"Sent message: {source_cell} -> {target_cell} ({message_type})"
+        )
 
-    def get_intercellular_messages(self, target_cell: Optional[str] = None) -> List[IntercellularMessage]:
+    def get_intercellular_messages(
+        self,
+        target_cell: Optional[str] = None
+    ) -> List[IntercellularMessage]:
         """Get intercellular messages, optionally filtered by target cell"""
         if target_cell:
-            return [msg for msg in self.intercellular_messages if msg.target_cell == target_cell]
+            return [
+                msg for msg in self.intercellular_messages
+                if msg.target_cell == target_cell
+            ]
         return self.intercellular_messages
 
     def clear_intercellular_messages(self):
@@ -358,12 +556,21 @@ class AICellManager:
         """Get overall system status"""
         return {
             "active_workflows": len(self.active_workflows),
-            "running_workflows": len([s for s in self.workflow_status.values()
-                                    if s.status in ["training", "exporting"]]),
-            "completed_workflows": len([s for s in self.workflow_status.values()
-                                      if s.status == "completed"]),
-            "failed_workflows": len([s for s in self.workflow_status.values()
-                                   if s.status == "failed"]),
+            "running_workflows": len([
+                s for s in self.workflow_status.values()
+                if s.status in ["training", "exporting"]
+            ]),
+            "completed_workflows": len(
+                [
+                    s
+                    for s in self.workflow_status.values()
+                    if s.status == "completed"
+                ]
+            ),
+            "failed_workflows": len([
+                s for s in self.workflow_status.values()
+                if s.status == "failed"
+            ]),
             "pending_messages": len(self.intercellular_messages),
             "workspace_path": str(self.workspace_path),
             "executor_active": not self.executor._shutdown
@@ -375,11 +582,15 @@ class AICellManager:
 
         # Wait for active workflows to complete
         for workflow_id, future in self.active_futures.items():
-            self.logger.info(f"Waiting for workflow {workflow_id} to complete...")
+            self.logger.info(
+                f"Waiting for workflow {workflow_id} to complete..."
+            )
             try:
                 future.result(timeout=30)  # 30 second timeout
             except Exception as e:
-                self.logger.warning(f"Workflow {workflow_id} terminated with error: {e}")
+                self.logger.warning(
+                    f"Workflow {workflow_id} terminated with error: {e}"
+                )
 
         # Shutdown executor
         self.executor.shutdown(wait=True)
@@ -400,7 +611,9 @@ def create_sample_workflow() -> CellularWorkflow:
     return CellularWorkflow(
         workflow_id="sample_workflow_001",
         name="Sample Classification Workflow",
-        description="Sample workflow demonstrating Python training → C++ inference",
+        description=(
+            "Sample workflow demonstrating Python training → C++ inference"
+        ),
         training_config=config,
         target_deployment="cpp_inference_cell"
     )
@@ -436,13 +649,15 @@ if __name__ == "__main__":
 
     # Execute workflow
     if manager.execute_workflow(workflow.workflow_id, training_data):
-        print(f"✓ Started workflow execution")
+        print("✓ Started workflow execution")
 
         # Monitor progress
         while True:
             status = manager.get_workflow_status(workflow.workflow_id)
             if status:
-                print(f"Status: {status.status}, Progress: {status.progress:.2f}")
+                print(
+                    f"Status: {status.status}, Progress: {status.progress:.2f}"
+                )
 
                 if status.status in ["completed", "failed"]:
                     break
