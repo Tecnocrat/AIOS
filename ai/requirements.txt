@@ -1,3 +1,5 @@
+# Pin blis to a version with a pre-built Windows wheel to avoid build errors
+blis==0.7.9
 # AIOS Python AI Module Dependencies
 
 # Core AI and ML libraries
