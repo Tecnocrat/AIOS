@@ -79,24 +79,24 @@ class AICellManager:
     fractal-compliant manner.
     """
 
-    def __init__(self, workspace_path: str = None):
+    def __init__(self, workspace_path: Optional[str] = None):
         """
         Initialize the AI Cell Manager
 
         Args:
             workspace_path: Path for cellular workspace and model exports
+                (str or None)
         """
-
-        # Default to project-local runtime_intelligence/
-        # aios_cellular_workspace if not specified
-        if workspace_path is None:
+        # AIOS/ainlp context allocation: always use Path internally
+        if workspace_path is not None:
+            ws_path = Path(workspace_path)
+        else:
             project_root = Path(__file__).resolve().parents[3]
-            workspace_path = (
-                project_root
-                / "runtime_intelligence"
-                / "aios_cellular_workspace"
+            ws_path = (
+                project_root / "runtime_intelligence" /
+                "aios_cellular_workspace"
             )
-        self.workspace_path = Path(workspace_path)
+        self.workspace_path = ws_path
         self.workspace_path.mkdir(parents=True, exist_ok=True)
 
         # Cellular ecosystem state
