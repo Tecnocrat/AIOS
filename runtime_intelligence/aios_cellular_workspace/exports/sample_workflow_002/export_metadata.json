@@ -17,10 +17,10 @@
   },
   "optimization_level": "standard",
   "estimated_inference_time_ms": 0.4,
-  "export_timestamp": 1756200554.6071498,
+  "export_timestamp": 1756200917.1750224,
   "training_epochs": 3,
-  "final_accuracy": 0.23999999463558197,
-  "model_hash": "ad005199afe4d4dc20e81eb00ad56b6426e7ec9fd630fad1e38539ee8d06ddd3",
+  "final_accuracy": 0.28999999165534973,
+  "model_hash": "a89731d3871966e8052445153964d7714e0270a5a7bcfc739bd231d89a8382be",
   "geometry_metadata": {
     "input_shape": [
       null,
