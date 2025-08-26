@@ -15,14 +15,19 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 
-# Optional TensorFlow import with graceful fallback
-# and direct submodule imports
+# Fractal bootloader: AIOS Keras integration seam
+# This import enables non-local logic expansion and resolves Pylance warnings.
 try:
-    import tensorflow as tf
-    from tensorflow import keras
-    from tensorflow.keras import callbacks, layers, mixed_precision, optimizers
-
-    TENSORFLOW_AVAILABLE = True
+    from .aios_keras_bootstrap import (
+        tf,
+        keras,
+        layers,
+        mixed_precision,
+        callbacks,
+        optimizers,
+        TENSORFLOW_KERAS_AVAILABLE,
+    )
+    TENSORFLOW_AVAILABLE = TENSORFLOW_KERAS_AVAILABLE
 except ImportError:
     TENSORFLOW_AVAILABLE = False
     keras = None
@@ -30,7 +35,10 @@ except ImportError:
     mixed_precision = None
     callbacks = None
     optimizers = None
-    print("Warning: TensorFlow/Keras not available. Using mock implementation.")
+    print(
+        "Warning: TensorFlow/Keras not available. "
+        "Using mock implementation."
+    )
 
 
 @dataclass
@@ -78,7 +86,9 @@ class ModelExport:
     geometry_metadata: Dict[str, Any] = field(
         default_factory=dict
     )  # Fractal/holographic/exotic geometry
-    extra: Dict[str, Any] = field(default_factory=dict)  # For future extensibility
+    extra: Dict[str, Any] = field(
+        default_factory=dict
+    )  # For future extensibility
 
 
 class TensorFlowTrainingCell:
@@ -146,12 +156,16 @@ class TensorFlowTrainingCell:
 
                 # Compile with optimizer suitable for inference optimization
                 self.model.compile(
-                    optimizer=optimizers.Adam(learning_rate=self.config.learning_rate),
+                    optimizer=optimizers.Adam(
+                        learning_rate=self.config.learning_rate
+                    ),
                     loss="sparse_categorical_crossentropy",
                     metrics=["accuracy"],
                 )
 
-                print(f"Model created successfully for " f"{self.config.model_name}")
+                print(
+                    f"Model created successfully for {self.config.model_name}"
+                )
                 print("Model summary:")
                 self.model.summary()
 
@@ -204,7 +218,11 @@ class TensorFlowTrainingCell:
                         patience=self.config.early_stopping_patience,
                         restore_best_weights=True,
                     ),
-                    callbacks.ReduceLROnPlateau(factor=0.5, patience=3, min_lr=1e-7),
+                    callbacks.ReduceLROnPlateau(
+                        factor=0.5,
+                        patience=3,
+                        min_lr=1e-7,
+                    ),
                 ]
 
                 # Train the model
@@ -219,7 +237,9 @@ class TensorFlowTrainingCell:
                     batch_size=self.config.batch_size,
                     epochs=self.config.epochs,
                     validation_split=(
-                        self.config.validation_split if validation_data is None else 0.0
+                        self.config.validation_split
+                        if validation_data is None
+                        else 0.0
                     ),
                     validation_data=validation_data,
                     callbacks=cb,
@@ -282,9 +302,12 @@ class TensorFlowTrainingCell:
             print(f"Error during training: {e}")
             return False
 
-    def export_for_cpp_inference(self, export_path: str) -> Optional[ModelExport]:
+    def export_for_cpp_inference(
+        self, export_path: str
+    ) -> Optional[ModelExport]:
         """
-        Export model for C++ Performance Cell inference, including advanced geometry/fractality/iteration metadata.
+        Export model for C++ Performance Cell inference, including advanced
+        geometry/fractality/iteration metadata.
 
         Args:
             export_path: Path to save the exported model
@@ -295,7 +318,8 @@ class TensorFlowTrainingCell:
         # Environment-aware export base directory
         export_base = os.environ.get("AIOS_TF_EXPORT_DIR", None)
         if export_base:
-            export_path = os.path.join(export_base, os.path.basename(export_path))
+            base_name = os.path.basename(export_path)
+            export_path = os.path.join(export_base, base_name)
         export_dir = Path(export_path)
         # Directory existence and permissions check
         if not os.path.exists(export_path):
@@ -314,13 +338,19 @@ class TensorFlowTrainingCell:
 
         try:
             export_time = time.time()
-            if TENSORFLOW_AVAILABLE and self.model is not None:
-                # Use a robust export path that avoids TF/Keras SavedModel issues on some environments
+            if (
+                TENSORFLOW_AVAILABLE
+                and self.model is not None
+            ):
+                # Use a robust export path that avoids TF/Keras SavedModel
+                # issues on some environments
                 try:
                     h5_path = export_dir / "model.weights.h5"
                     self.model.save_weights(str(h5_path))
                     arch_info = {
-                        "class_name": getattr(self.model, "__class__", type(self.model)).__name__,
+                        "class_name": getattr(
+                            self.model, "__class__", type(self.model)
+                        ).__name__,
                         "layers": [getattr(layer, "name", "layer") for layer in getattr(self.model, "layers", [])],
                     }
                     with open(export_dir / "model.arch.summary.json", "w") as jf:
@@ -509,7 +539,4 @@ def create_sample_model_workflow() -> bool:
         return False
 
 
-if __name__ == "__main__":
-    # Run sample workflow when executed directly
-    success = create_sample_model_workflow()
-    exit(0 if success else 1)
+# Demo code removed from production path.
