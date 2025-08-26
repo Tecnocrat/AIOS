@@ -88,14 +88,24 @@ class AICellManager:
                 (str or None)
         """
         # AIOS/ainlp context allocation: always use Path internally
+        # Always resolve workspace path relative to AIOS repo root
+        import os
         if workspace_path is not None:
             ws_path = Path(workspace_path)
         else:
-            project_root = Path(__file__).resolve().parents[3]
-            ws_path = (
-                project_root / "runtime_intelligence" /
-                "aios_cellular_workspace"
-            )
+            # Find AIOS repo root by looking for a marker file (AIOS.sln)
+            here = Path(__file__).resolve()
+            repo_root = None
+            for parent in here.parents:
+                if (parent / "AIOS.sln").exists():
+                    repo_root = parent
+                    break
+            if repo_root is None:
+                # Fallback: use cwd, but log error
+                import logging
+                logging.error("AIOS.sln not found in parent directories. Using cwd as repo root.")
+                repo_root = Path.cwd()
+            ws_path = repo_root / "runtime_intelligence" / "aios_cellular_workspace"
         self.workspace_path = ws_path
         self.workspace_path.mkdir(parents=True, exist_ok=True)
 
@@ -436,9 +446,43 @@ class AICellManager:
             self.logger.info("Exporting model for C++ inference cell...")
             self.workflow_status[workflow_id].status = "exporting"
 
-            export_path = self.workspace_path / "exports" / workflow_id
+            # --- Export directory collision avoidance logic ---
+            base_export_dir = self.workspace_path / "exports"
+            base_export_dir.mkdir(exist_ok=True)
+            export_dir = base_export_dir / workflow_id
+            if export_dir.exists():
+                # Find next available workflow_id
+                import re
+                base_name = re.sub(r'_\d+$', '', workflow_id)
+                existing = [
+                    d.name for d in base_export_dir.iterdir()
+                    if d.is_dir() and d.name.startswith(base_name)
+                ]
+                nums = [
+                    int(re.search(r'_(\d+)$', n).group(1))
+                    for n in existing
+                    if re.search(r'_(\d+)$', n)
+                ]
+                next_num = max(nums) + 1 if nums else 2
+                new_id = f"{base_name}_{next_num:03d}"
+                export_dir = base_export_dir / new_id
+                workflow.workflow_id = new_id
+                workflow_id = new_id
+                self.active_workflows[workflow_id] = workflow
+                self.workflow_status[workflow_id] = self.workflow_status.pop(
+                    workflow_id, WorkflowStatus(
+                        workflow_id=workflow_id,
+                        status="pending",
+                        progress=0.0,
+                        current_epoch=0,
+                        total_epochs=workflow.training_config.epochs,
+                        estimated_completion_time=0.0,
+                    )
+                )
+            export_dir.mkdir(exist_ok=True)
+
             export_info = training_cell.export_for_cpp_inference(
-                str(export_path)
+                str(export_dir)
             )
 
             if not export_info:
