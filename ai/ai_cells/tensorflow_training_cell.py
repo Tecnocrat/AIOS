@@ -4,37 +4,27 @@ TensorFlow Training Cell for AIOS Cellular Ecosystem
 This module provides Python-based AI training capabilities that integrate
 seamlessly with C++ performance inference cells through intercellular bridges.
 """
-
-import json
 import os
-import time
+import json
 import hashlib
+import time
+import numpy as np
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-import numpy as np
-
-# Fractal bootloader: AIOS Keras integration seam
-# This import enables non-local logic expansion and resolves Pylance warnings.
+# Direct TensorFlow/Keras import logic (no bootstrap seam)
 try:
-    from .aios_keras_bootstrap import (
-        tf,
-        keras,
-        layers,
-        mixed_precision,
-        callbacks,
-        optimizers,
-        TENSORFLOW_KERAS_AVAILABLE,
-    )
-    TENSORFLOW_AVAILABLE = TENSORFLOW_KERAS_AVAILABLE
+    import tensorflow as tf
+    from tensorflow.keras import callbacks, layers, mixed_precision, optimizers
+    TENSORFLOW_AVAILABLE = True
 except ImportError:
-    TENSORFLOW_AVAILABLE = False
-    keras = None
+    tf = None
     layers = None
     mixed_precision = None
     callbacks = None
     optimizers = None
+    TENSORFLOW_AVAILABLE = False
     print(
         "Warning: TensorFlow/Keras not available. "
         "Using mock implementation."
@@ -117,19 +107,27 @@ class TensorFlowTrainingCell:
         # Initialize TensorFlow settings if available
         if TENSORFLOW_AVAILABLE:
             # Configure for optimal training
-            keras.backend.clear_session()
-            # Enable mixed precision for performance
-            policy = mixed_precision.Policy("mixed_float16")
-            mixed_precision.set_global_policy(policy)
+            if tf is not None and hasattr(tf.keras, "backend"):
+                tf.keras.backend.clear_session()
+            if mixed_precision is not None:
+                policy = mixed_precision.Policy("mixed_float16")
+                mixed_precision.set_global_policy(policy)
+            gpu_count = 0
+            if tf is not None and hasattr(tf, "config"):
+                gpu_count = len(tf.config.list_physical_devices('GPU'))
             print(
                 "TensorFlow Training Cell initialized with GPU support: "
-                f"{len(tf.config.list_physical_devices('GPU')) > 0}"
+                f"{gpu_count > 0}"
             )
         else:
             print("TensorFlow Training Cell initialized in mock mode")
         print(f"Running on OS: {os.name}")
 
-    def create_model(self, input_shape: Tuple[int, ...], num_classes: int) -> bool:
+    def create_model(
+        self,
+        input_shape: Tuple[int, ...],
+        num_classes: int
+    ) -> bool:
         """
         Create a TensorFlow model optimized for C++ inference
 
@@ -141,19 +139,21 @@ class TensorFlowTrainingCell:
             True if model created successfully
         """
         try:
-            if TENSORFLOW_AVAILABLE:
+            if (
+                TENSORFLOW_AVAILABLE
+                and tf is not None
+                and layers is not None
+                and optimizers is not None
+            ):
                 # Create a simple but effective model
-                self.model = keras.Sequential(
-                    [
-                        layers.InputLayer(input_shape=input_shape),
-                        layers.Dense(128, activation="relu"),
-                        layers.Dropout(0.2),
-                        layers.Dense(64, activation="relu"),
-                        layers.Dropout(0.2),
-                        layers.Dense(num_classes, activation="softmax"),
-                    ]
-                )
-
+                self.model = tf.keras.Sequential([
+                    layers.InputLayer(input_shape=input_shape),
+                    layers.Dense(128, activation="relu"),
+                    layers.Dropout(0.2),
+                    layers.Dense(64, activation="relu"),
+                    layers.Dropout(0.2),
+                    layers.Dense(num_classes, activation="softmax"),
+                ])
                 # Compile with optimizer suitable for inference optimization
                 self.model.compile(
                     optimizer=optimizers.Adam(
@@ -162,25 +162,47 @@ class TensorFlowTrainingCell:
                     loss="sparse_categorical_crossentropy",
                     metrics=["accuracy"],
                 )
-
                 print(
-                    f"Model created successfully for {self.config.model_name}"
+                    f"Model created successfully for "
+                    f"{self.config.model_name}"
                 )
                 print("Model summary:")
                 self.model.summary()
-
             else:
-                # Mock model for testing without TensorFlow
+                # Self-similar fallback: microarchitecture for mock mode
                 self.model = {
                     "type": "mock_model",
                     "input_shape": input_shape,
                     "num_classes": num_classes,
                     "parameters": 10000,  # Mock parameter count
+                    "dendrites": [
+                        {
+                            "layer": "dense",
+                            "units": 128,
+                            "activation": "relu"
+                        },
+                        {
+                            "layer": "dropout",
+                            "rate": 0.2
+                        },
+                        {
+                            "layer": "dense",
+                            "units": 64,
+                            "activation": "relu"
+                        },
+                        {
+                            "layer": "dropout",
+                            "rate": 0.2
+                        },
+                        {
+                            "layer": "dense",
+                            "units": num_classes,
+                            "activation": "softmax"
+                        }
+                    ]
                 }
                 print(f"Mock model created for {self.config.model_name}")
-
             return True
-
         except Exception as e:
             print(f"Error creating model: {e}")
             return False
@@ -211,7 +233,7 @@ class TensorFlowTrainingCell:
         try:
             start_time = time.time()
 
-            if TENSORFLOW_AVAILABLE:
+            if TENSORFLOW_AVAILABLE and callbacks is not None:
                 # Prepare callbacks for optimal training
                 cb = [
                     callbacks.EarlyStopping(
@@ -224,13 +246,11 @@ class TensorFlowTrainingCell:
                         min_lr=1e-7,
                     ),
                 ]
-
                 # Train the model
                 if x_val is not None and y_val is not None:
                     validation_data = (x_val, y_val)
                 else:
                     validation_data = None
-
                 history = self.model.fit(
                     x_train,
                     y_train,
@@ -245,7 +265,6 @@ class TensorFlowTrainingCell:
                     callbacks=cb,
                     verbose=1,
                 )
-
                 # Record training metrics
                 for epoch in range(len(history.history["loss"])):
                     metrics = TrainingMetrics(
@@ -269,14 +288,12 @@ class TensorFlowTrainingCell:
                         training_time=time.time() - start_time,
                     )
                     self.training_history.append(metrics)
-
             else:
-                # Mock training for testing without TensorFlow
+                # Self-similar fallback: microarchitecture for mock mode
                 for epoch in range(self.config.epochs):
                     # Simulate improving metrics
                     loss = 1.0 - (epoch * 0.1)
                     accuracy = epoch * 0.1 + 0.1
-
                     metrics = TrainingMetrics(
                         epoch=epoch + 1,
                         loss=max(0.1, loss),
@@ -286,7 +303,6 @@ class TensorFlowTrainingCell:
                         training_time=time.time() - start_time,
                     )
                     self.training_history.append(metrics)
-
                     time.sleep(0.1)  # Simulate training time
                     print(
                         f"Epoch {epoch + 1}/{self.config.epochs} - "
@@ -338,12 +354,11 @@ class TensorFlowTrainingCell:
 
         try:
             export_time = time.time()
-            if (
-                TENSORFLOW_AVAILABLE
-                and self.model is not None
-            ):
+            arch_info = None
+            h5_path = None
+            if TENSORFLOW_AVAILABLE and self.model is not None:
                 # Use a robust export path that avoids TF/Keras SavedModel
-                # issues on some environments
+                # issues
                 try:
                     h5_path = export_dir / "model.weights.h5"
                     self.model.save_weights(str(h5_path))
@@ -351,9 +366,14 @@ class TensorFlowTrainingCell:
                         "class_name": getattr(
                             self.model, "__class__", type(self.model)
                         ).__name__,
-                        "layers": [getattr(layer, "name", "layer") for layer in getattr(self.model, "layers", [])],
+                        "layers": [
+                            getattr(layer, "name", "layer")
+                            for layer in getattr(self.model, "layers", [])
+                        ],
                     }
-                    with open(export_dir / "model.arch.summary.json", "w") as jf:
+                    with open(
+                        export_dir / "model.arch.summary.json", "w"
+                    ) as jf:
                         json.dump(arch_info, jf, indent=2)
                 except Exception as save_err:
                     print(f"Weights/export summary failed: {save_err}")
@@ -363,28 +383,36 @@ class TensorFlowTrainingCell:
                     "dtype": "float32",
                 }
                 output_signature = {
-                    "shape": list(getattr(self.model, "output_shape", [1, -1])),
+                    "shape": list(
+                        getattr(self.model, "output_shape", [1, -1])
+                    ),
                     "dtype": "float32",
                 }
                 estimated_time = self.config.target_inference_time * 0.8
-                # Geometry/fractality/iteration metadata
                 geometry_metadata = {
                     "input_shape": input_signature["shape"],
                     "output_shape": output_signature["shape"],
-                    "fractal_depth": getattr(self.model, "fractal_depth", None),
-                    "holographic": getattr(self.model, "holographic", False),
+                    "fractal_depth": getattr(
+                        self.model, "fractal_depth", None
+                    ),
+                    "holographic": getattr(
+                        self.model, "holographic", False
+                    ),
                 }
-                # Deterministic model hash (CEL-HASH-02): sha256 over arch + weights marker + signatures
+                # Deterministic model hash (CEL-HASH-02): sha256 over arch +
+                # weights marker + signatures
                 sha = hashlib.sha256()
-                arch_blob = json.dumps(arch_info, sort_keys=True).encode()
-                sha.update(arch_blob)
+                if arch_info is not None:
+                    arch_blob = json.dumps(arch_info, sort_keys=True).encode()
+                    sha.update(arch_blob)
                 sig_blob = json.dumps({
                     "input": input_signature,
                     "output": output_signature
                 }, sort_keys=True).encode()
                 sha.update(sig_blob)
-                # If weights file exists, include its size + mtime for stability (not raw weights to keep light)
-                if h5_path.exists():
+                # If weights file exists, include its size + mtime for
+                # stability (not raw weights to keep light)
+                if h5_path and h5_path.exists():
                     stat = h5_path.stat()
                     sha.update(str(stat.st_size).encode())
                     sha.update(str(int(stat.st_mtime)).encode())
@@ -405,8 +433,12 @@ class TensorFlowTrainingCell:
                 }
                 # Deterministic mock hash
                 sha = hashlib.sha256()
-                sha.update(json.dumps(input_signature, sort_keys=True).encode())
-                sha.update(json.dumps(output_signature, sort_keys=True).encode())
+                sha.update(
+                    json.dumps(input_signature, sort_keys=True).encode()
+                )
+                sha.update(
+                    json.dumps(output_signature, sort_keys=True).encode()
+                )
                 sha.update(str(int(export_time)).encode())
                 model_hash = sha.hexdigest()
             # Create export information
@@ -421,7 +453,10 @@ class TensorFlowTrainingCell:
                 model_hash=model_hash,
                 geometry_metadata=geometry_metadata,
                 extra={
-                    "notes": "Exported for AIOS C++ cell, supports fractal/holographic/iteration metadata"
+                    "notes": (
+                        "Exported for AIOS C++ cell, supports fractal/"
+                        "holographic/iteration metadata"
+                    )
                 },
             )
             # Save export metadata (always write, even on fallback)
@@ -433,8 +468,11 @@ class TensorFlowTrainingCell:
                         "export_format": self.export_info.model_format,
                         "input_signature": self.export_info.input_signature,
                         "output_signature": self.export_info.output_signature,
-                        "optimization_level": self.export_info.optimization_level,
-                        "estimated_inference_time_ms": self.export_info.estimated_inference_time,
+                        "optimization_level":
+                            self.export_info.optimization_level,
+                        "estimated_inference_time_ms": (
+                            self.export_info.estimated_inference_time
+                        ),
                         "export_timestamp": self.export_info.export_time,
                         "training_epochs": len(self.training_history),
                         "final_accuracy": (
@@ -443,14 +481,19 @@ class TensorFlowTrainingCell:
                             else 0.0
                         ),
                         "model_hash": self.export_info.model_hash,
-                        "geometry_metadata": self.export_info.geometry_metadata,
+                        "geometry_metadata":
+                            self.export_info.geometry_metadata,
                         "extra": self.export_info.extra,
                     },
                     f,
                     indent=2,
                 )
             print(f"Model exported successfully to {export_path}")
-            print("Estimated C++ inference time: " f"{estimated_time:.3f}ms")
+            print(
+                "Estimated C++ inference time: {:.3f}ms".format(estimated_time)
+            )
+        # Dendritic expansion: add hooks for future logic density
+        # Example: self.dendrites = []
             return self.export_info
         except Exception as e:
             print(f"Error exporting model: {e}")
@@ -461,32 +504,27 @@ class TensorFlowTrainingCell:
         return self.training_history
 
     def get_model_info(self) -> Dict[str, Any]:
-        """Get model information"""
+        """Get model and training summary information"""
         info = {
             "model_name": self.config.model_name,
-            "is_trained": self.is_trained,
-            "training_epochs": len(self.training_history),
-            "tensorflow_available": TENSORFLOW_AVAILABLE,
+            "framework": self.framework,
+            "trained": self.is_trained,
+            "epochs": len(self.training_history),
         }
-
         if self.training_history:
             final_metrics = self.training_history[-1]
-            info.update(
-                {
-                    "final_accuracy": final_metrics.accuracy,
-                    "final_loss": final_metrics.loss,
-                    "total_training_time": final_metrics.training_time,
-                }
-            )
-
+            info.update({
+                "final_loss": final_metrics.loss,
+                "final_accuracy": final_metrics.accuracy,
+                "total_training_time": final_metrics.training_time,
+            })
         if self.export_info:
-            info.update(
-                {
-                    "export_path": self.export_info.export_path,
-                    "estimated_inference_time_ms": self.export_info.estimated_inference_time,
-                }
-            )
-
+            info.update({
+                "export_path": self.export_info.export_path,
+                "estimated_inference_time_ms": (
+                    self.export_info.estimated_inference_time
+                ),
+            })
         return info
 
 
@@ -514,7 +552,9 @@ def create_sample_model_workflow() -> bool:
     x_val = np.random.random((200, 10)).astype(np.float32)
     y_val = np.random.randint(0, 5, 200)
     # Environment-aware export base directory
-    export_base = os.environ.get("AIOS_TF_EXPORT_DIR", "/tmp/aios_tensorflow_exports")
+    export_base = os.environ.get(
+        "AIOS_TF_EXPORT_DIR", "/tmp/aios_tensorflow_exports"
+    )
     export_path = os.path.join(export_base, "sample_model")
     # Create model
     if not cell.create_model(input_shape=(10,), num_classes=5):
@@ -538,5 +578,4 @@ def create_sample_model_workflow() -> bool:
     else:
         return False
 
-
-# Demo code removed from production path.
+    # ...existing code...
