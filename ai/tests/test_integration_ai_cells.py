@@ -8,7 +8,11 @@ This script tests the harmonized integration of ai_cells core components:
 
 This is not a unit test, but a protocol/integration smoke test.
 """
+import sys
+import os
 import numpy as np
+# Ensure the ai_cells module is importable when running from the tests folder
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from ai_cells.ai_cell_manager import AICellManager, create_sample_workflow
 
 def test_ai_cells_integration():
