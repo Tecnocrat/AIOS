@@ -64,6 +64,11 @@ Proven Benefits:
 
 ## 🚀 **Consolidation Strategy: Fractal Organization**
 
+### August 2025: Documentation Migration & Logic Concentration
+- All new and updated documentation is now injected into runtime_intelligence/dev, following the self-similar dev.*.md pattern.
+- Key protocol, registry, and export logic changes, as well as test migrations, are now documented in dev.arch.md, dev.refactor.md, and dev.test.md.
+- This reduces file proliferation, improves maintainability, and aligns with the runtime intelligence paradigm.
+
 ### **Phase 1: Extend Runtime Intelligence Pattern**
 ```yaml
 runtime_intelligence/ [NEW PARADIGMATIC HUB]

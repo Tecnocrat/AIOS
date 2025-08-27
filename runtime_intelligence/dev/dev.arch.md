@@ -15,6 +15,13 @@ Coherence gates (AINLP Harmonizer): quick LFC/GPC score → if <0.4, do minimal 
 - AIOS master project context file minimized to bootstrap stub; active narrative lives here.
 
 ## 🧬 **Consolidated Architecture Documentation**
+
+### August 2025: AIOS Cellular Harmonization & Protocol Upgrade
+- All ai_cells protocol, registry, and export logic harmonized for AINLP self-similarity and runtime intelligence.
+- TensorFlow/Keras integration refactored: direct, robust, production-only (no fallback/mocks).
+- Static analysis (Pylance) warnings for tensorflow.keras documented and suppressed with best-practice comments.
+- Integration/protocol tests migrated to ai/tests, import logic refactored for robust execution.
+- Documentation and code now follow a fractal, predictable pattern, reducing cognitive load and improving maintainability.
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization  
 **Paradigm:** Runtime Intelligence Fractal Logic with AINLP Integration  
