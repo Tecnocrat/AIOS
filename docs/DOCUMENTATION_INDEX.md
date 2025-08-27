@@ -9,6 +9,8 @@
 - [README.md](../README.md): Project overview, quick start, and objectives
 - [ARCHITECTURE_TRANSFORMATION_SUMMARY.md](ARCHITECTURE_TRANSFORMATION_SUMMARY.md): Unified architecture, dev path, and context anchors
 - [DEV_PATH_MAIN_INTEGRATION_GUIDE.md](AIOS/DEV_PATH_MAIN_INTEGRATION_GUIDE.md): Unified DEV PATH MAIN, AINLP, and VSCode integration guide
+- [AIOS_VSCODE_INTEGRATION_ARCHITECTURE.md](AIOS/AIOS_VSCODE_INTEGRATION_ARCHITECTURE.md): Complete consolidated architecture documentation
+- [AIOS_VSCODE_INTEGRATION_CONSOLIDATION_REPORT.md](AIOS/AIOS_VSCODE_INTEGRATION_CONSOLIDATION_REPORT.md): Complete consolidation and testing report
 - [STRATEGIC_DEVELOPMENT_PATH_2025_2026.md](AIOS/STRATEGIC_DEVELOPMENT_PATH_2025_2026.md): Strategic roadmap and milestones
 - [AINLP_SPECIFICATION.md](AINLP/AINLP_SPECIFICATION.md): Comment-driven code management and paradigms
 - [ENGINEERING_TENETS_KERNEL_GRADE.md](AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md): Kernel-grade engineering practices and PR checklist
