@@ -22,6 +22,7 @@ from ..fractal_cache_manager import _fractal_cache_manager
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
+
 cellular_ecosystem_status = {
     "python_ai_cells": True,
     "cpp_performance_cells": True,
@@ -29,6 +30,24 @@ cellular_ecosystem_status = {
     "tensorflow_integration": True,
     "sub_millisecond_achieved": True,
 }
+
+ 
+# Dendritic stub: Bridge endpoint for future neuron logic
+@router.get("/bridge/stub")
+async def bridge_stub():
+    """
+    Dendritic stub for bridge endpoint. Extend with neuron logic as needed.
+    This endpoint is a placeholder for future intercellular bridge logic,
+    such as protocol adapters, cross-language communication, or AIOS/VSCode
+    integration bridges. All logic produced here should be catalogued and
+    archived for future AINLP reingestion.
+    """
+    return {
+        "status": "bridge endpoint stub active",
+        "note": (
+            "Extend with neuron logic for intercellular bridges."
+        ),
+    }
 
 
 # Unified subprocess manager
