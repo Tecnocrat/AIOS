@@ -13,17 +13,31 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-# Direct TensorFlow/Keras import logic (no bootstrap seam)
+# ---
+# NOTE: The following import may trigger a Pylance static analysis warning:
+#   "Import 'tensorflow.keras' could not be resolved"
+# This is a known issue with Pylance and TensorFlow's namespace packaging.
+# If TensorFlow is installed in your environment (see requirements.txt),
+# this code will work at runtime. If you see this error, ensure that
+# 'tensorflow' is installed and your Python environment is activated.
+#
+# The explicit 'import tensorflow' below helps Pylance resolve the namespace.
 try:
-    import tensorflow as tf
-    from tensorflow.keras import callbacks, layers, mixed_precision, optimizers
+    import tensorflow  # noqa: F401  # Helps Pylance resolve 'tensorflow.keras'
+    from tensorflow.keras import (  # type: ignore[import]
+        callbacks,
+        layers,
+        mixed_precision,
+        optimizers,
+        Sequential,
+    )
     TENSORFLOW_AVAILABLE = True
 except ImportError:
-    tf = None
     layers = None
     mixed_precision = None
     callbacks = None
     optimizers = None
+    Sequential = None
     TENSORFLOW_AVAILABLE = False
     print(
         "Warning: TensorFlow/Keras not available. "
@@ -107,18 +121,11 @@ class TensorFlowTrainingCell:
         # Initialize TensorFlow settings if available
         if TENSORFLOW_AVAILABLE:
             # Configure for optimal training
-            if tf is not None and hasattr(tf.keras, "backend"):
-                tf.keras.backend.clear_session()
+            # No tf reference, use only imported Keras objects
             if mixed_precision is not None:
                 policy = mixed_precision.Policy("mixed_float16")
                 mixed_precision.set_global_policy(policy)
-            gpu_count = 0
-            if tf is not None and hasattr(tf, "config"):
-                gpu_count = len(tf.config.list_physical_devices('GPU'))
-            print(
-                "TensorFlow Training Cell initialized with GPU support: "
-                f"{gpu_count > 0}"
-            )
+            print("TensorFlow Training Cell initialized with Keras support.")
         else:
             print("TensorFlow Training Cell initialized in mock mode")
         print(f"Running on OS: {os.name}")
@@ -141,12 +148,12 @@ class TensorFlowTrainingCell:
         try:
             if (
                 TENSORFLOW_AVAILABLE
-                and tf is not None
                 and layers is not None
                 and optimizers is not None
+                and Sequential is not None
             ):
                 # Create a simple but effective model
-                self.model = tf.keras.Sequential([
+                self.model = Sequential([
                     layers.InputLayer(input_shape=input_shape),
                     layers.Dense(128, activation="relu"),
                     layers.Dropout(0.2),
@@ -154,20 +161,25 @@ class TensorFlowTrainingCell:
                     layers.Dropout(0.2),
                     layers.Dense(num_classes, activation="softmax"),
                 ])
-                # Compile with optimizer suitable for inference optimization
-                self.model.compile(
-                    optimizer=optimizers.Adam(
-                        learning_rate=self.config.learning_rate
-                    ),
-                    loss="sparse_categorical_crossentropy",
-                    metrics=["accuracy"],
-                )
-                print(
-                    f"Model created successfully for "
-                    f"{self.config.model_name}"
-                )
-                print("Model summary:")
-                self.model.summary()
+                if self.model is not None:
+                    # Compile with optimizer suitable for inference
+                    # optimization
+                    self.model.compile(
+                        optimizer=optimizers.Adam(
+                            learning_rate=self.config.learning_rate
+                        ),
+                        loss="sparse_categorical_crossentropy",
+                        metrics=["accuracy"],
+                    )
+                    print(
+                        f"Model created successfully for "
+                        f"{self.config.model_name}"
+                    )
+                    print("Model summary:")
+                    self.model.summary()
+                else:
+                    print("Error: Sequential model could not be created.")
+                    return False
             else:
                 # Self-similar fallback: microarchitecture for mock mode
                 self.model = {
@@ -568,7 +580,7 @@ def create_sample_model_workflow() -> bool:
     export_info = cell.export_for_cpp_inference(export_path)
 
     if export_info:
-        print(f"\n✅ Sample workflow completed successfully!")
+        print("\n✅ Sample workflow completed successfully!")
         print(f"Model exported to: {export_info.export_path}")
         print(
             "Estimated C++ inference time: "
