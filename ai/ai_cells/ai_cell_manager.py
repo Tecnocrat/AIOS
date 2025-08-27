@@ -6,7 +6,8 @@ Python AI Training Cells and C++ Performance Inference Cells.
 """
 
 import logging
-# import os AINLP.loader [latent:os] (auto.AINLP.class)
+import os
+import sys
 # import json AINLP.loader [latent:json] (auto.AINLP.class)
 import time
 from concurrent.futures import Future, ThreadPoolExecutor
@@ -89,7 +90,6 @@ class AICellManager:
         """
         # AIOS/ainlp context allocation: always use Path internally
         # Always resolve workspace path relative to AIOS repo root
-        import os
         if workspace_path is not None:
             ws_path = Path(workspace_path)
         else:
@@ -103,9 +103,14 @@ class AICellManager:
             if repo_root is None:
                 # Fallback: use cwd, but log error
                 import logging
-                logging.error("AIOS.sln not found in parent directories. Using cwd as repo root.")
+                logging.error(
+                    "AIOS.sln not found in parent directories. "
+                    "Using cwd as repo root."
+                )
                 repo_root = Path.cwd()
-            ws_path = repo_root / "runtime_intelligence" / "aios_cellular_workspace"
+            ws_path = (
+                repo_root / "runtime_intelligence" / "aios_cellular_workspace"
+            )
         self.workspace_path = ws_path
         self.workspace_path.mkdir(parents=True, exist_ok=True)
 
@@ -451,17 +456,18 @@ class AICellManager:
             base_export_dir.mkdir(exist_ok=True)
             export_dir = base_export_dir / workflow_id
             if export_dir.exists():
-                # Find next available workflow_id
+                # Find next available workflow_id (safe extraction,
+                # Python 3.12+)
                 import re
-                base_name = re.sub(r'_\d+$', '', workflow_id)
+                base_name = re.sub(r'_(\d+)$', '', workflow_id)
                 existing = [
                     d.name for d in base_export_dir.iterdir()
                     if d.is_dir() and d.name.startswith(base_name)
                 ]
                 nums = [
-                    int(re.search(r'_(\d+)$', n).group(1))
+                    int(m.group(1))
                     for n in existing
-                    if re.search(r'_(\d+)$', n)
+                    if (m := re.search(r'_(\d+)$', n))
                 ]
                 next_num = max(nums) + 1 if nums else 2
                 new_id = f"{base_name}_{next_num:03d}"
@@ -640,6 +646,20 @@ class AICellManager:
         self.executor.shutdown(wait=True)
 
         self.logger.info("AI Cell Manager shutdown complete")
+
+    def get_os_info(self) -> dict:
+        """Return OS/environment info for micro-architecture diagnostics."""
+        env_vars = {
+            k: v
+            for k, v in os.environ.items()
+            if k.startswith('AIOS_') or k.startswith('PYTHON')
+        }
+        return {
+            "os_name": os.name,
+            "platform": sys.platform,
+            "cwd": os.getcwd(),
+            "env": env_vars,
+        }
 
 
 def create_sample_workflow() -> CellularWorkflow:
