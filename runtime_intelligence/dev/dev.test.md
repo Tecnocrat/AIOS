@@ -8,6 +8,11 @@
 - Coherence gates: apply AINL LFC/GPC quick score; if <0.4, run discovery (perimeter search, module README/spec, tests) before edits. See `docs/tachyonic/AIOS.Harmonizer.AINL.md`.
 
 ## 🧪 **Testing Excellence through Fractal Intelligence**
+
+### August 2025: Test Migration & Protocol Validation
+- Integration test for ai_cells now validates both ai_cell_manager and tensorflow_training_cell in a single protocol test, ensuring end-to-end harmonization.
+- All tests are now concentrated in ai/tests/, reducing file proliferation and aligning with the AINLP paradigm.
+- Test runner and import logic updated for cross-folder execution and robust protocol validation.
 **Date:** August 4, 2025  
 **Context:** Post-Autopep8 Massive Refactorization Validation  
 **Paradigm:** Runtime Intelligence Testing with Fractal Pattern Validation  
