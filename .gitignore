@@ -299,3 +299,9 @@ docs/site/
 !runtime_intelligence/logs/**/*.json
 !runtime_intelligence/logs/**/*.db
 !runtime_intelligence/logs/**/*.log
+
+# --- AIOS VSCode Integration Runtime Logs ---
+# Include runtime logs for debugging and system monitoring
+!ai/aios_vscode_integration/runtime/logs/
+!ai/aios_vscode_integration/runtime/logs/**/*.json
+!ai/aios_vscode_integration/runtime/logs/**/*.log
