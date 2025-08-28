@@ -10,21 +10,15 @@ from datetime import datetime
 
 from fastapi import APIRouter
 
-from ..services.debug_manager import _debug_manager
-from ..services.fractal_cache_manager import _fractal_cache_manager
-from ..models import (
-    AutomationRequest,
-    ArchitectureAnalyzeRequest,
-    CodeRefactorRequest,
-    CodeReviewRequest,
-    VisualizeRequest,
-)
+from services.debug_manager import _debug_manager
+from services.fractal_cache_manager import _fractal_cache_manager
+import models
 
 router = APIRouter()
 
 
 @router.post("/code/review")
-async def code_review(request: CodeReviewRequest):
+async def code_review(request: models.CodeReviewRequest):
     """
     Performs a code review for the provided code in the specified language.
     Enhanced dendritic implementation with fractal cache integration
@@ -92,7 +86,7 @@ async def code_review(request: CodeReviewRequest):
 
 
 @router.post("/code/refactor")
-async def code_refactor(request: CodeRefactorRequest):
+async def code_refactor(request: models.CodeRefactorRequest):
     """
     Refactors the provided code and returns suggestions for improvement.
     Enhanced dendritic implementation with intelligent refactoring patterns
@@ -157,7 +151,7 @@ async def code_refactor(request: CodeRefactorRequest):
 
 
 @router.post("/architecture/analyze")
-async def architecture_analyze(request: ArchitectureAnalyzeRequest):
+async def architecture_analyze(request: models.ArchitectureAnalyzeRequest):
     """
     Analyzes the project architecture and provides recommendations
     Enhanced dendritic implementation with deep architectural analysis
@@ -225,7 +219,7 @@ async def architecture_analyze(request: ArchitectureAnalyzeRequest):
 
 
 @router.post("/integration/visualize")
-async def integration_visualize(request: VisualizeRequest):
+async def integration_visualize(request: models.VisualizeRequest):
     """
     Visualizes the integration and data flow between project components.
     Enhanced dendritic implementation with interactive visualization
@@ -286,7 +280,7 @@ async def integration_visualize(request: VisualizeRequest):
 
 
 @router.post("/automation/run")
-async def automation_run(request: AutomationRequest):
+async def automation_run(request: models.AutomationRequest):
     """
     Executes an automation task based on the provided AutomationRequest.
     Enhanced dendritic implementation with intelligent task execution

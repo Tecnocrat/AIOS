@@ -8,8 +8,8 @@ from datetime import datetime
 
 from fastapi import APIRouter
 
-from ..services.debug_manager import _debug_manager
-from ..services.fractal_cache_manager import _fractal_cache_manager
+from services.debug_manager import _debug_manager
+from services.fractal_cache_manager import _fractal_cache_manager
 
 router = APIRouter()
 
