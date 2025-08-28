@@ -272,25 +272,28 @@ def generate_aios_response(message: str, context: dict) -> str:
 
 
 @router.post("/nlu/intent")
-async def nlu_intent(request: models.NLUIntentRequest):
+async def nlu_intent(request: dict):  # type: ignore
     """
     Analyzes the input message to determine the user's intent.
     Enhanced dendritic implementation with ML model integration
     Returns recognized intent, confidence score, context, and timestamp.
     """
     try:
+        # Cast to expected type for proper attribute access
+        req = models.NLUIntentRequest(**request)  # type: ignore
+
         # Check cache for similar intent analysis
-        cache_key = f"nlu_intent_{hash(request.message)}"
+        cache_key = f"nlu_intent_{hash(req.message)}"
         cached_intent = await _fractal_cache_manager.get_cached(cache_key)
 
         if cached_intent:
             return cached_intent
 
         # Enhanced intent recognition with AINLP processing
-        message = request.message.lower()
+        message = req.message.lower()
 
         # Use intent dispatcher for sophisticated analysis
-        intent_result = generate_aios_response(message, request.context or {})
+        intent_result = generate_aios_response(message, req.context or {})
 
         # Enhanced pattern matching with confidence scoring
         if "refactor" in message or "refactor" in intent_result.lower():
@@ -322,9 +325,9 @@ async def nlu_intent(request: models.NLUIntentRequest):
         result = {
             "recognized_intent": intent,
             "confidence": confidence,
-            "context": request.context,
+            "context": req.context,
             "timestamp": datetime.now().isoformat(),
-            "message_length": len(request.message),
+            "message_length": len(req.message),
             "ainlp_response": intent_result,
             "note": "Enhanced NLU with AINLP integration - ready for ML model",
         }
@@ -339,7 +342,7 @@ async def nlu_intent(request: models.NLUIntentRequest):
         return {
             "recognized_intent": "error-processing",
             "confidence": 0.0,
-            "context": request.context,
+            "context": request.get("context"),
             "timestamp": datetime.now().isoformat(),
             "error": str(e),
             "note": "Intent processing failed - manual analysis recommended",
