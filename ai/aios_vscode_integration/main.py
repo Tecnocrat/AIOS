@@ -21,18 +21,17 @@ VSCODE_INTEGRATION_COMPLETE.md for architecture traceability.
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import models
-from .services import debug_manager
-from .endpoints.ai_endpoints import (
+import models
+import services.debug_manager
+from endpoints.ai_endpoints import (
     AIOSIntentDispatcher,
     generate_aios_response,
 )
-from .endpoints import (
-    ai_endpoints,
-    development_endpoints,
-    system_endpoints,
-    ux_endpoints,
-)
+import endpoints.ai_endpoints
+import endpoints.development_endpoints
+import endpoints.system_endpoints
+import endpoints.ux_endpoints
+
 
 app = FastAPI(
     title="AIOS VSCode Integration API",
@@ -49,7 +48,7 @@ async def log_requests(request: Request, call_next):
     the response.
     """
     body = await request.body()
-    debug_manager._debug_manager.log_request(
+    services.debug_manager._debug_manager.log_request(
         request.url.path, body.decode("utf-8")
     )
     response = await call_next(request)
@@ -58,19 +57,19 @@ async def log_requests(request: Request, call_next):
 
 @app.on_event("startup")
 def on_startup():
-    debug_manager._debug_manager.log_request(
+    services.debug_manager._debug_manager.log_request(
         "startup", {"message": "API server started"}
     )
     # Register intent dispatcher dendrite for AINLP
     app.state.aios_intent_dispatcher = AIOSIntentDispatcher()
     # Register other dendritic stubs for future neuron connection
-    app.state.debug_manager = debug_manager
+    app.state.debug_manager = services.debug_manager
     app.state.models = models
 
 
 @app.on_event("shutdown")
 def on_shutdown():
-    debug_manager._debug_manager.log_request(
+    services.debug_manager._debug_manager.log_request(
         "shutdown", {"message": "API server stopped"}
     )
 
@@ -80,7 +79,7 @@ def get_debug():
     """
     Returns recent debug info for AINLP diagnostics and inspection.
     """
-    return debug_manager._debug_manager.get_debug_info()
+    return services.debug_manager._debug_manager.get_debug_info()
 
 
 @app.post("/intent")
@@ -109,12 +108,12 @@ app.add_middleware(
 app.middleware("http")(log_requests)
 
 # Include routers from consolidated endpoint modules
-app.include_router(system_endpoints.router, prefix="/system",
+app.include_router(endpoints.system_endpoints.router, prefix="/system",
                    tags=["system"])
-app.include_router(development_endpoints.router, prefix="/dev",
+app.include_router(endpoints.development_endpoints.router, prefix="/dev",
                    tags=["development"])
-app.include_router(ai_endpoints.router, prefix="/ai", tags=["ai"])
-app.include_router(ux_endpoints.router, prefix="/ux", tags=["ux"])
+app.include_router(endpoints.ai_endpoints.router, prefix="/ai", tags=["ai"])
+app.include_router(endpoints.ux_endpoints.router, prefix="/ux", tags=["ux"])
 
 if __name__ == "__main__":
     import uvicorn

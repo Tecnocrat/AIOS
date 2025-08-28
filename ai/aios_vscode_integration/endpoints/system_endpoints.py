@@ -14,8 +14,8 @@ from datetime import datetime
 import psutil
 from fastapi import APIRouter, HTTPException
 
-from ..services.debug_manager import _debug_manager
-from ..services.fractal_cache_manager import _fractal_cache_manager
+from services.debug_manager import _debug_manager
+from services.fractal_cache_manager import _fractal_cache_manager
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -38,9 +38,7 @@ async def health_check():
     """
     try:
         # Get cached performance metrics
-        cache_metrics = await _fractal_cache_manager.get_cached(
-            "system_health"
-        )
+        cache_metrics = await _fractal_cache_manager.get_cached("system_health")
 
         # System resource monitoring
         cpu_percent = psutil.cpu_percent(interval=1)

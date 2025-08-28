@@ -8,9 +8,9 @@ from datetime import datetime
 
 from fastapi import APIRouter
 
-from ..services.debug_manager import _debug_manager
-from ..services.fractal_cache_manager import _fractal_cache_manager
-from ..models import NLUIntentRequest
+from services.debug_manager import _debug_manager
+from services.fractal_cache_manager import _fractal_cache_manager
+import models
 
 router = APIRouter()
 
@@ -272,7 +272,7 @@ def generate_aios_response(message: str, context: dict) -> str:
 
 
 @router.post("/nlu/intent")
-async def nlu_intent(request: NLUIntentRequest):
+async def nlu_intent(request: models.NLUIntentRequest):
     """
     Analyzes the input message to determine the user's intent.
     Enhanced dendritic implementation with ML model integration
