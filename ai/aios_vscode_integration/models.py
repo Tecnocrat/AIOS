@@ -137,8 +137,11 @@ class BosonicTopology(BaseModel):
     coherence_level: float = 0.0
     resonance_strength: float = 0.0
 
-    def encode_microarchitecture(self, logic_pattern: Dict[str, Any],
-                                coordinates: str) -> Dict[str, Any]:
+    def encode_microarchitecture(
+        self,
+        logic_pattern: Dict[str, Any],
+        coordinates: str
+    ) -> Dict[str, Any]:
         """Encode logic pattern into surface topology."""
         # Generate 3D coordinates
         coord_3d = self._generate_3d_coords(coordinates)
@@ -161,7 +164,9 @@ class BosonicTopology(BaseModel):
 
         return encoded
 
-    def project_multidimensionality(self, surface_point: str) -> Dict[str, Any]:
+    def project_multidimensionality(
+        self, surface_point: str
+    ) -> Dict[str, Any]:
         """Project abstract dimensionality from 3D surface."""
         if surface_point not in self.microarchitectures:
             return {"error": "Surface point not found"}
@@ -181,7 +186,9 @@ class BosonicTopology(BaseModel):
         self._update_coherence_metrics(projections)
         return projections
 
-    def find_connection_path(self, start_point: str, end_point: str) -> Dict[str, Any]:
+    def find_connection_path(
+        self, start_point: str, end_point: str
+    ) -> Dict[str, Any]:
         """Find optimal connection path through topology."""
         if start_point not in self.surface_coordinates or \
            end_point not in self.surface_coordinates:
@@ -191,7 +198,9 @@ class BosonicTopology(BaseModel):
             "start_point": start_point,
             "end_point": end_point,
             "geodesic_path": self._calc_geodesic_path(start_point, end_point),
-            "resonance_eff": self._calc_path_efficiency(start_point, end_point),
+            "resonance_eff": self._calc_path_efficiency(
+                start_point, end_point
+            ),
             "dimensional_stability":
                 self._assess_dim_stability(start_point, end_point),
             "path_ts": self._get_timestamp()
@@ -199,8 +208,10 @@ class BosonicTopology(BaseModel):
 
         return connection_path
 
-    def register_temporal_change(self, change_data: Dict[str, Any],
-                                temporal_coords: str) -> Dict[str, Any]:
+    def register_temporal_change(
+        self, change_data: Dict[str, Any],
+        temporal_coords: str
+    ) -> Dict[str, Any]:
         """Register temporal changes for tachyonic integration."""
         temporal_entry = {
             "change_data": change_data,
@@ -235,7 +246,9 @@ class BosonicTopology(BaseModel):
             "phi": phi
         }
 
-    def _calc_surface_topo(self, logic_pattern: Dict[str, Any]) -> Dict[str, Any]:
+    def _calc_surface_topo(
+        self, logic_pattern: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Calculate surface topology characteristics."""
         pattern_complexity = len(str(logic_pattern))
         pattern_depth = self._calc_pattern_depth(logic_pattern)
@@ -256,7 +269,7 @@ class BosonicTopology(BaseModel):
         return base_freq + complexity_factor + depth_factor
 
     def _update_fractal_resonance(self, logic_pattern: Dict[str, Any],
-                                 coordinates: str):
+                                  coordinates: str):
         """Update fractal resonance patterns."""
         resonance_key = f"resonance_{coordinates}"
         current_resonance = self.fractal_resonance.get(resonance_key, 0.0)
@@ -282,12 +295,19 @@ class BosonicTopology(BaseModel):
         coord_3d = microarch.get("coordinates_3d", {})
 
         coherence = (resonance_freq * 0.6) + \
-                   (coord_3d.get("radius", 1.0) * 0.4)
+            (coord_3d.get("radius", 1.0) * 0.4)
         return min(coherence, 1.0)
 
-    def _calc_consciousness_resonance(self, microarch: Dict[str, Any]) -> float:
-        """Calculate consciousness resonance level."""
-        complexity = microarch.get("surface_topology", {}).get("complexity_score", 0)
+    def _calc_consciousness_resonance(
+        self,
+        microarch: Dict[str, Any]
+    ) -> float:
+        """
+        Calculate consciousness resonance level.
+        """
+        complexity = microarch.get(
+            "surface_topology", {}
+        ).get("complexity_score", 0)
         coherence = self._measure_quantum_coherence(microarch)
 
         return (complexity / 1000) * coherence
@@ -311,9 +331,13 @@ class BosonicTopology(BaseModel):
         new_resonance = projections.get("consciousness_resonance", 0.0)
 
         self.coherence_level = (self.coherence_level + new_coherence) / 2
-        self.resonance_strength = (self.resonance_strength + new_resonance) / 2
+        self.resonance_strength = (
+            self.resonance_strength + new_resonance
+        ) / 2
 
-    def _calc_pattern_depth(self, pattern: Dict[str, Any], depth: int = 0) -> int:
+    def _calc_pattern_depth(
+        self, pattern: Dict[str, Any], depth: int = 0
+    ) -> int:
         """Calculate nested pattern depth."""
         if not isinstance(pattern, dict) or depth > 10:
             return depth
@@ -321,16 +345,20 @@ class BosonicTopology(BaseModel):
         max_depth = depth
         for value in pattern.values():
             if isinstance(value, dict):
-                max_depth = max(max_depth,
-                               self._calc_pattern_depth(value, depth + 1))
+                max_depth = max(
+                    max_depth,
+                    self._calc_pattern_depth(value, depth + 1)
+                )
 
         return max_depth
 
     def _calc_topo_density(self, pattern: Dict[str, Any]) -> float:
         """Calculate topological density of pattern."""
         total_elements = len(pattern)
-        nested_elements = sum(1 for v in pattern.values()
-                             if isinstance(v, (dict, list)))
+        nested_elements = sum(
+            1 for v in pattern.values()
+            if isinstance(v, (dict, list))
+        )
 
         return nested_elements / (total_elements + 1)
 
@@ -369,9 +397,14 @@ class BosonicTopology(BaseModel):
     def _assess_temp_stability(self, change_data: Dict[str, Any]) -> float:
         """Assess temporal stability of changes."""
         complexity = len(str(change_data))
-        return min(complexity / 1000, 1.0)
+        return min(
+            complexity / 1000,
+            1.0
+        )
 
-    def _calc_subspatial_impact(self, change_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _calc_subspatial_impact(
+        self, change_data: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Calculate subspatial impact of changes."""
         return {
             "impact_radius": len(str(change_data)) / 100,
