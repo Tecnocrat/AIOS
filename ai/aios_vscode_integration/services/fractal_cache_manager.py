@@ -12,7 +12,8 @@ import hashlib
 
 class FractalCacheManager:
     """
-    Fractal caching system with TTL-based verification results and adaptive timeout management.
+    Fractal caching system with TTL-based verification results and
+    adaptive timeout management.
     Implements dendritic → neuron evolution with deep metadata storage.
     """
 
@@ -41,8 +42,11 @@ class FractalCacheManager:
         expiry_time = datetime.fromisoformat(cache_entry.get("expires_at", ""))
         return datetime.now() > expiry_time
 
-    async def get_cached(self, key: str,
-                         context: Optional[Dict[str, Any]] = None) -> Optional[Any]:
+    async def get_cached(
+        self,
+        key: str,
+        context: Optional[Dict[str, Any]] = None
+    ) -> Optional[Any]:
         """
         Retrieve cached value with fractal metadata logging.
         Implements adaptive timeout management based on context.
@@ -171,8 +175,10 @@ class FractalCacheManager:
 
         return max(30, min(3600, int(base_ttl)))  # Clamp between 30s and 1h
 
-    def _calculate_dendrite_level(self,
-                                  context: Optional[Dict[str, Any]] = None) -> int:
+    def _calculate_dendrite_level(
+        self,
+        context: Optional[Dict[str, Any]] = None
+    ) -> int:
         """Calculate dendritic complexity level for fractal metadata"""
         if not context:
             return 1
@@ -186,7 +192,8 @@ class FractalCacheManager:
 
     async def _cleanup_memory_cache(self, max_entries: int = 1000) -> None:
         """
-        Cleanup memory cache using LRU-style eviction with fractal prioritization.
+        Cleanup memory cache using LRU-style eviction with fractal
+        prioritization.
         """
         if len(self.memory_cache) <= max_entries:
             return
@@ -232,8 +239,12 @@ class FractalCacheManager:
             "metadata": metadata,
             "system_state": {
                 "memory_cache_size": len(self.memory_cache),
-                "total_cache_hits": len(self.performance_metrics["cache_hits"]),
-                "total_cache_misses": len(self.performance_metrics["cache_misses"]),
+                "total_cache_hits": len(
+                    self.performance_metrics["cache_hits"]
+                ),
+                "total_cache_misses": len(
+                    self.performance_metrics["cache_misses"]
+                ),
                 "cache_efficiency": self._calculate_cache_efficiency()
             },
             "fractal_context": {
