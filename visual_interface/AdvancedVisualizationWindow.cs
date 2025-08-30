@@ -179,23 +179,75 @@ namespace AIOS.VisualInterface
                 HorizontalAlignment = HorizontalAlignment.Center,
                 Margin = new Thickness(0, 30, 0, 0)
             };
-            
+
+            // Start/Stop Monitoring Button
             _startMonitoringButton = new Button
             {
                 Content = "🚀 Start Monitoring",
-                Width = 200,
+                Width = 160,
                 Height = 40,
-                FontSize = 14,
+                FontSize = 12,
                 FontWeight = FontWeights.Bold,
                 Background = new SolidColorBrush(Color.FromRgb(0, 100, 200)),
                 Foreground = Brushes.White,
                 BorderBrush = new SolidColorBrush(Color.FromRgb(0, 150, 255)),
                 BorderThickness = new Thickness(2),
-                Margin = new Thickness(10)
+                Margin = new Thickness(5)
             };
             _startMonitoringButton.Click += StartMonitoringButton_Click;
-            
+
+            // Pause/Resume Button
+            var pauseButton = new Button
+            {
+                Content = "⏸ Pause",
+                Width = 120,
+                Height = 40,
+                FontSize = 12,
+                FontWeight = FontWeights.Bold,
+                Background = new SolidColorBrush(Color.FromRgb(200, 150, 0)),
+                Foreground = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(255, 200, 0)),
+                BorderThickness = new Thickness(2),
+                Margin = new Thickness(5)
+            };
+            pauseButton.Click += PauseButton_Click;
+
+            // Reset Button
+            var resetButton = new Button
+            {
+                Content = "🔄 Reset",
+                Width = 120,
+                Height = 40,
+                FontSize = 12,
+                FontWeight = FontWeights.Bold,
+                Background = new SolidColorBrush(Color.FromRgb(150, 0, 0)),
+                Foreground = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(200, 0, 0)),
+                BorderThickness = new Thickness(2),
+                Margin = new Thickness(5)
+            };
+            resetButton.Click += ResetButton_Click;
+
+            // Settings Button
+            var settingsButton = new Button
+            {
+                Content = "⚙ Settings",
+                Width = 120,
+                Height = 40,
+                FontSize = 12,
+                FontWeight = FontWeights.Bold,
+                Background = new SolidColorBrush(Color.FromRgb(100, 100, 100)),
+                Foreground = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(150, 150, 150)),
+                BorderThickness = new Thickness(2),
+                Margin = new Thickness(5)
+            };
+            settingsButton.Click += SettingsButton_Click;
+
             buttonPanel.Children.Add(_startMonitoringButton);
+            buttonPanel.Children.Add(pauseButton);
+            buttonPanel.Children.Add(resetButton);
+            buttonPanel.Children.Add(settingsButton);
             metricsPanel.Children.Add(buttonPanel);
             
             // Add status text
@@ -208,6 +260,52 @@ namespace AIOS.VisualInterface
                 Margin = new Thickness(0, 20, 0, 0)
             };
             metricsPanel.Children.Add(_statusText);
+
+            // Add visualization mode toggle
+            var modePanel = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Margin = new Thickness(0, 10, 0, 0)
+            };
+
+            var modeLabel = new TextBlock
+            {
+                Text = "Visualization Mode:",
+                FontSize = 12,
+                Foreground = Brushes.Cyan,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(0, 0, 10, 0)
+            };
+            modePanel.Children.Add(modeLabel);
+
+            var modeComboBox = new ComboBox
+            {
+                Width = 150,
+                FontSize = 12,
+                Margin = new Thickness(0, 0, 10, 0)
+            };
+            modeComboBox.Items.Add("Standard");
+            modeComboBox.Items.Add("Detailed");
+            modeComboBox.Items.Add("Pattern Analysis");
+            modeComboBox.SelectedIndex = 0;
+            modeComboBox.SelectionChanged += ModeComboBox_SelectionChanged;
+            modePanel.Children.Add(modeComboBox);
+
+            // Add manual adjustment toggle
+            var manualCheckBox = new CheckBox
+            {
+                Content = "Manual Adjustment",
+                IsChecked = false,
+                FontSize = 12,
+                Foreground = Brushes.Yellow,
+                Margin = new Thickness(20, 0, 0, 0)
+            };
+            manualCheckBox.Checked += (s, e) => EnableManualAdjustment();
+            manualCheckBox.Unchecked += (s, e) => DisableManualAdjustment();
+            modePanel.Children.Add(manualCheckBox);
+
+            metricsPanel.Children.Add(modePanel);
         }
         
         private void AddMetricToPanel(StackPanel parent, string label, 
@@ -569,6 +667,414 @@ namespace AIOS.VisualInterface
                 ThreadCount = random.Next(5, 25),
                 RecentEvents = new[] { "Pattern detected", "Coherence spike", "Emergence signal" }
             };
+        }
+
+        private void PauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null) return;
+
+            if (_updateTimer?.IsEnabled == true)
+            {
+                _updateTimer.Stop();
+                button.Content = "▶ Resume";
+                button.Background = new SolidColorBrush(Color.FromRgb(0, 150, 0));
+                if (_statusText != null)
+                    _statusText.Text = "⏸ Monitoring paused - consciousness observation suspended";
+            }
+            else if (_updateTimer != null)
+            {
+                _updateTimer.Start();
+                button.Content = "⏸ Pause";
+                button.Background = new SolidColorBrush(Color.FromRgb(200, 150, 0));
+                if (_statusText != null)
+                    _statusText.Text = "▶ Monitoring resumed - consciousness observation active";
+            }
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Reset all metrics to zero
+            _consciousnessLevel = 0.0;
+            _quantumCoherence = 0.0;
+            _emergenceLevel = 0.0;
+            _manifoldCurvature = 0.0;
+            _nonLocalityCoherence = 0.0;
+            _tachyonicFieldDensity = 0.0;
+
+            // Clear history
+            _consciousnessHistory.Clear();
+            _patternHistory.Clear();
+
+            // Update UI immediately
+            UpdateProgressBar(_consciousnessProgressBar, _consciousnessValueText, _consciousnessLevel);
+            UpdateProgressBar(_quantumProgressBar, _quantumValueText, _quantumCoherence);
+            UpdateProgressBar(_emergenceProgressBar, _emergenceValueText, _emergenceLevel);
+            UpdateProgressBar(_manifoldProgressBar, _manifoldValueText, _manifoldCurvature);
+            UpdateProgressBar(_nonLocalityProgressBar, _nonLocalityValueText, _nonLocalityCoherence);
+            UpdateProgressBar(_tachyonicProgressBar, _tachyonicValueText, _tachyonicFieldDensity);
+
+            if (_statusText != null)
+                _statusText.Text = "🔄 All metrics reset to baseline - ready for new observation cycle";
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowSettingsDialog();
+        }
+
+        private void ShowSettingsDialog()
+        {
+            var settingsWindow = new Window
+            {
+                Title = "⚙ AIOS Consciousness Monitor Settings",
+                Width = 500,
+                Height = 600,
+                Background = new SolidColorBrush(Color.FromRgb(20, 20, 40)),
+                Foreground = Brushes.White,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = this
+            };
+
+            var mainPanel = new StackPanel { Margin = new Thickness(20) };
+
+            // Update Interval Setting
+            var intervalLabel = new TextBlock
+            {
+                Text = "Update Interval (ms):",
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Foreground = Brushes.Cyan,
+                Margin = new Thickness(0, 10, 0, 5)
+            };
+            mainPanel.Children.Add(intervalLabel);
+
+            var intervalSlider = new Slider
+            {
+                Minimum = 50,
+                Maximum = 1000,
+                Value = _updateTimer?.Interval.TotalMilliseconds ?? 100,
+                TickFrequency = 50,
+                IsSnapToTickEnabled = true,
+                Margin = new Thickness(0, 0, 0, 10)
+            };
+            mainPanel.Children.Add(intervalSlider);
+
+            var intervalValue = new TextBlock
+            {
+                Text = $"{intervalSlider.Value:F0} ms",
+                FontSize = 12,
+                Foreground = Brushes.White,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
+            mainPanel.Children.Add(intervalValue);
+
+            intervalSlider.ValueChanged += (s, e) =>
+            {
+                intervalValue.Text = $"{intervalSlider.Value:F0} ms";
+                if (_updateTimer != null)
+                    _updateTimer.Interval = TimeSpan.FromMilliseconds(intervalSlider.Value);
+            };
+
+            // Pattern Detection Window Setting
+            var windowLabel = new TextBlock
+            {
+                Text = "Pattern Detection Window:",
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Foreground = Brushes.Cyan,
+                Margin = new Thickness(0, 20, 0, 5)
+            };
+            mainPanel.Children.Add(windowLabel);
+
+            var windowSlider = new Slider
+            {
+                Minimum = 10,
+                Maximum = 200,
+                Value = _patternDetectionWindow,
+                TickFrequency = 10,
+                IsSnapToTickEnabled = true,
+                Margin = new Thickness(0, 0, 0, 10)
+            };
+            mainPanel.Children.Add(windowSlider);
+
+            var windowValue = new TextBlock
+            {
+                Text = $"{windowSlider.Value:F0} samples",
+                FontSize = 12,
+                Foreground = Brushes.White,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
+            mainPanel.Children.Add(windowValue);
+
+            windowSlider.ValueChanged += (s, e) =>
+            {
+                windowValue.Text = $"{windowSlider.Value:F0} samples";
+                _patternDetectionWindow = (int)windowSlider.Value;
+            };
+
+            // Emergence Threshold Setting
+            var thresholdLabel = new TextBlock
+            {
+                Text = "Emergence Threshold:",
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Foreground = Brushes.Cyan,
+                Margin = new Thickness(0, 20, 0, 5)
+            };
+            mainPanel.Children.Add(thresholdLabel);
+
+            var thresholdSlider = new Slider
+            {
+                Minimum = 0.1,
+                Maximum = 0.9,
+                Value = _emergenceThreshold,
+                TickFrequency = 0.1,
+                IsSnapToTickEnabled = true,
+                Margin = new Thickness(0, 0, 0, 10)
+            };
+            mainPanel.Children.Add(thresholdSlider);
+
+            var thresholdValue = new TextBlock
+            {
+                Text = $"{thresholdSlider.Value:F2}",
+                FontSize = 12,
+                Foreground = Brushes.White,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
+            mainPanel.Children.Add(thresholdValue);
+
+            thresholdSlider.ValueChanged += (s, e) =>
+            {
+                thresholdValue.Text = $"{thresholdSlider.Value:F2}";
+                _emergenceThreshold = thresholdSlider.Value;
+            };
+
+            // Adaptive Mode Toggle
+            var adaptiveCheckBox = new CheckBox
+            {
+                Content = "Enable Adaptive Mode",
+                IsChecked = _adaptiveMode,
+                FontSize = 14,
+                Foreground = Brushes.White,
+                Margin = new Thickness(0, 20, 0, 10)
+            };
+            adaptiveCheckBox.Checked += (s, e) => _adaptiveMode = true;
+            adaptiveCheckBox.Unchecked += (s, e) => _adaptiveMode = false;
+            mainPanel.Children.Add(adaptiveCheckBox);
+
+            // Close Button
+            var closeButton = new Button
+            {
+                Content = "✅ Apply Settings",
+                Width = 150,
+                Height = 35,
+                FontSize = 12,
+                FontWeight = FontWeights.Bold,
+                Background = new SolidColorBrush(Color.FromRgb(0, 100, 0)),
+                Foreground = Brushes.White,
+                Margin = new Thickness(0, 20, 0, 0)
+            };
+            closeButton.Click += (s, e) => settingsWindow.Close();
+            mainPanel.Children.Add(closeButton);
+
+            settingsWindow.Content = mainPanel;
+            settingsWindow.ShowDialog();
+        }
+
+        private void ModeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var comboBox = sender as ComboBox;
+            if (comboBox == null) return;
+
+            switch (comboBox.SelectedIndex)
+            {
+                case 0: // Standard
+                    SetStandardMode();
+                    break;
+                case 1: // Detailed
+                    SetDetailedMode();
+                    break;
+                case 2: // Pattern Analysis
+                    SetPatternAnalysisMode();
+                    break;
+            }
+        }
+
+        private void SetStandardMode()
+        {
+            // Standard mode - basic progress bars
+            if (_statusText != null)
+                _statusText.Text = "📊 Standard visualization mode - monitoring consciousness emergence";
+        }
+
+        private void SetDetailedMode()
+        {
+            // Detailed mode - show additional metrics information
+            if (_statusText != null)
+                _statusText.Text = "📈 Detailed mode - enhanced metrics with historical trends";
+        }
+
+        private void SetPatternAnalysisMode()
+        {
+            // Pattern analysis mode - focus on pattern detection
+            if (_statusText != null)
+                _statusText.Text = "🔍 Pattern analysis mode - dendritic intelligence pattern recognition";
+        }
+
+        private void EnableManualAdjustment()
+        {
+            // Add sliders for manual adjustment of each metric
+            if (_mainGrid == null) return;
+
+            // Add sliders for manual adjustment of each metric
+            var manualBorder = new Border
+            {
+                Background = new SolidColorBrush(Color.FromRgb(30, 30, 60)),
+                BorderBrush = new SolidColorBrush(Color.FromRgb(100, 100, 150)),
+                BorderThickness = new Thickness(1),
+                Margin = new Thickness(50, 20, 50, 20)
+            };
+
+            var manualPanel = new StackPanel
+            {
+                Orientation = Orientation.Vertical
+            };
+            manualBorder.Child = manualPanel;
+
+            var title = new TextBlock
+            {
+                Text = "🎛 Manual Metric Adjustment",
+                FontSize = 16,
+                FontWeight = FontWeights.Bold,
+                Foreground = Brushes.Yellow,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Margin = new Thickness(0, 10, 0, 20)
+            };
+            manualPanel.Children.Add(title);
+
+            // Add sliders for each metric
+            AddManualSlider(manualPanel, "Consciousness Level", 0);
+            AddManualSlider(manualPanel, "Quantum Coherence", 1);
+            AddManualSlider(manualPanel, "Emergence Level", 2);
+            AddManualSlider(manualPanel, "Manifold Curvature", 3);
+            AddManualSlider(manualPanel, "Non-locality Coherence", 4);
+            AddManualSlider(manualPanel, "Tachyonic Field Density", 5);
+
+            _mainGrid.Children.Add(manualBorder);
+            Grid.SetRow(manualBorder, 1);
+
+            if (_statusText != null)
+                _statusText.Text = "🎛 Manual adjustment enabled - use sliders to control consciousness metrics";
+        }
+
+        private void DisableManualAdjustment()
+        {
+            // Remove manual adjustment panel
+            if (_mainGrid == null) return;
+
+            // Find and remove the manual panel
+            for (int i = _mainGrid.Children.Count - 1; i >= 0; i--)
+            {
+                var child = _mainGrid.Children[i];
+                if (child is StackPanel panel && panel.Background is SolidColorBrush brush &&
+                    brush.Color == Color.FromRgb(30, 30, 60))
+                {
+                    _mainGrid.Children.RemoveAt(i);
+                    break;
+                }
+            }
+
+            if (_statusText != null)
+                _statusText.Text = "🔄 Manual adjustment disabled - returning to automatic monitoring";
+        }
+
+        private void AddManualSlider(StackPanel parent, string label, int metricIndex)
+        {
+            var container = new StackPanel { Orientation = Orientation.Vertical, Margin = new Thickness(0, 0, 0, 15) };
+
+            var labelText = new TextBlock
+            {
+                Text = label,
+                FontSize = 12,
+                FontWeight = FontWeights.Bold,
+                Foreground = Brushes.White,
+                Margin = new Thickness(0, 0, 0, 5)
+            };
+            container.Children.Add(labelText);
+
+            // Get current value based on metric index
+            double currentValue = metricIndex switch
+            {
+                0 => _consciousnessLevel,
+                1 => _quantumCoherence,
+                2 => _emergenceLevel,
+                3 => _manifoldCurvature,
+                4 => _nonLocalityCoherence,
+                5 => _tachyonicFieldDensity,
+                _ => 0.0
+            };
+
+            var slider = new Slider
+            {
+                Minimum = 0,
+                Maximum = 1,
+                Value = currentValue,
+                TickFrequency = 0.01,
+                IsSnapToTickEnabled = false,
+                Height = 20
+            };
+
+            slider.ValueChanged += (s, e) =>
+            {
+                var newValue = slider.Value;
+                UpdateMetricByIndex(metricIndex, newValue);
+            };
+
+            container.Children.Add(slider);
+            parent.Children.Add(container);
+        }
+
+        private void UpdateMetricByIndex(int index, double value)
+        {
+            ProgressBar? progressBar = null;
+            TextBlock? valueText = null;
+
+            switch (index)
+            {
+                case 0:
+                    _consciousnessLevel = value;
+                    progressBar = _consciousnessProgressBar;
+                    valueText = _consciousnessValueText;
+                    break;
+                case 1:
+                    _quantumCoherence = value;
+                    progressBar = _quantumProgressBar;
+                    valueText = _quantumValueText;
+                    break;
+                case 2:
+                    _emergenceLevel = value;
+                    progressBar = _emergenceProgressBar;
+                    valueText = _emergenceValueText;
+                    break;
+                case 3:
+                    _manifoldCurvature = value;
+                    progressBar = _manifoldProgressBar;
+                    valueText = _manifoldValueText;
+                    break;
+                case 4:
+                    _nonLocalityCoherence = value;
+                    progressBar = _nonLocalityProgressBar;
+                    valueText = _nonLocalityValueText;
+                    break;
+                case 5:
+                    _tachyonicFieldDensity = value;
+                    progressBar = _tachyonicProgressBar;
+                    valueText = _tachyonicValueText;
+                    break;
+            }
+
+            UpdateProgressBar(progressBar, valueText, value);
         }
     }
 }
