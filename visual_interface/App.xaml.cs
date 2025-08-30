@@ -46,8 +46,8 @@ namespace AIOS.VisualInterface
                 // Initialize state management
                 await InitializeApplicationStateAsync();
 
-                // Create and show advanced visualization window with working UI
-                var mainWindow = _host.Services.GetRequiredService<AdvancedVisualizationWindow>();
+                // Create and show main visualization window with working 3D interface
+                var mainWindow = new MainVisualizationWindow();
                 mainWindow.Show();
 
                 base.OnStartup(e);
@@ -115,6 +115,7 @@ namespace AIOS.VisualInterface
             services.AddTransient<BosonicLayer3DWindow>();
             services.AddTransient<AdvancedVisualizationWindow>();
             services.AddTransient<SimpleVisualizationWindow>();
+            services.AddTransient<MainVisualizationWindow>();
 
             // Configure HTTP client for potential remote AIOS connections
             services.AddHttpClient("AIOSClient", client =>
