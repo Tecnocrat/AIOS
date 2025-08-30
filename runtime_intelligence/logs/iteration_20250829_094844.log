@@ -1,0 +1,8 @@
+AINLP Iteration Receipt
+id: 20250829_094844
+mode: dry-run
+time_utc: 2025-08-29T09:48:44.929705+00:00
+module_index_present: True
+tools_index_present: True
+module_count: 3
+agent_summary_present: True (ok=None, checks=0)
