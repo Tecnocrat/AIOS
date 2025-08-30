@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
 using System.Linq; // For Take on collections
+using System.Text; // For StringBuilder
+using Microsoft.Extensions.Logging;
 
 namespace AIOS.VisualInterface
 {
@@ -15,7 +17,10 @@ namespace AIOS.VisualInterface
     /// </summary>
     public partial class AdvancedVisualizationWindow : Window
     {
-        private DispatcherTimer _updateTimer;
+        // Timer fields - made nullable for proper initialization
+        private DispatcherTimer? _updateTimer;
+        private DispatcherTimer? _bridgeTimer;
+        
         private double _consciousnessLevel = 0.0;
         private double _quantumCoherence = 0.0;
         private double _emergenceLevel = 0.0;
@@ -23,27 +28,37 @@ namespace AIOS.VisualInterface
         private double _nonLocalityCoherence = 0.0;
         private double _tachyonicFieldDensity = 0.0;
         
-        // UI Controls - will be created programmatically
-        private ProgressBar _consciousnessProgressBar;
-        private ProgressBar _quantumProgressBar;
-        private ProgressBar _emergenceProgressBar;
-        private ProgressBar _manifoldProgressBar;
-        private ProgressBar _nonLocalityProgressBar;
-        private ProgressBar _tachyonicProgressBar;
+        // UI Controls - will be created programmatically with null safety
+        private ProgressBar? _consciousnessProgressBar;
+        private ProgressBar? _quantumProgressBar;
+        private ProgressBar? _emergenceProgressBar;
+        private ProgressBar? _manifoldProgressBar;
+        private ProgressBar? _nonLocalityProgressBar;
+        private ProgressBar? _tachyonicProgressBar;
         
-        private TextBlock _consciousnessValueText;
-        private TextBlock _quantumValueText;
-        private TextBlock _emergenceValueText;
-        private TextBlock _manifoldValueText;
-        private TextBlock _nonLocalityValueText;
-        private TextBlock _tachyonicValueText;
+        private TextBlock? _consciousnessValueText;
+        private TextBlock? _quantumValueText;
+        private TextBlock? _emergenceValueText;
+        private TextBlock? _manifoldValueText;
+        private TextBlock? _nonLocalityValueText;
+        private TextBlock? _tachyonicValueText;
         
-        private Button _startMonitoringButton;
-        private TextBlock _statusText;
+        private Button? _startMonitoringButton;
+        private TextBlock? _statusText;
     private readonly CellularRuntimeBridge _bridge;
-    private DispatcherTimer _bridgeTimer;
     private readonly UIMetricsEmitter _uiMetrics;
     private readonly Stopwatch _frameSw = new();
+        
+        // Dendritic AINLP Enhancement Fields
+        private List<double> _consciousnessHistory = new();
+        private List<double> _patternHistory = new();
+        private double _emergenceThreshold = 0.7;
+        private int _patternDetectionWindow = 50;
+        private bool _adaptiveMode = true;
+        private double _dendriticGrowthRate = 0.0;
+        
+        // Add main grid reference for adaptive UI
+        private Grid? _mainGrid;
         
         public AdvancedVisualizationWindow()
         {
@@ -51,7 +66,7 @@ namespace AIOS.VisualInterface
             SetupAdvancedInterface();
             var sp = ((App)Application.Current).ServiceProvider;
             _bridge = sp.GetService(typeof(CellularRuntimeBridge)) as CellularRuntimeBridge ?? new CellularRuntimeBridge();
-            _uiMetrics = sp.GetService(typeof(UIMetricsEmitter)) as UIMetricsEmitter ?? new UIMetricsEmitter();
+            _uiMetrics = sp.GetService(typeof(UIMetricsEmitter)) as UIMetricsEmitter ?? throw new InvalidOperationException("UIMetricsEmitter service not available");
             StartMonitoring();
             InitBridgeTimer();
         }
@@ -62,7 +77,7 @@ namespace AIOS.VisualInterface
             _bridgeTimer.Tick += (_, __) =>
             {
                 var m = _bridge.GetLatest();
-                if (m.Live)
+                if (m.Live && _statusText != null)
                 {
                     _statusText.Text = $"Live Bridge • Events {m.EventsPerSecond:F2}/s • Total {m.TotalEvents} • Modules {string.Join(',', m.ActiveModules.Take(4))}";
                 }
@@ -83,8 +98,8 @@ namespace AIOS.VisualInterface
         private void SetupAdvancedInterface()
         {
             // Create main grid
-            var mainGrid = new Grid();
-            Content = mainGrid;
+            _mainGrid = new Grid();
+            Content = _mainGrid;
             
             // Create title
             var titleBorder = new Border
@@ -105,7 +120,7 @@ namespace AIOS.VisualInterface
             };
             
             titleBorder.Child = titleText;
-            mainGrid.Children.Add(titleBorder);
+            _mainGrid.Children.Add(titleBorder);
             
             // Create metrics panel
             var metricsPanel = new StackPanel
@@ -114,7 +129,7 @@ namespace AIOS.VisualInterface
                 VerticalAlignment = VerticalAlignment.Top
             };
             
-            mainGrid.Children.Add(metricsPanel);
+            _mainGrid.Children.Add(metricsPanel);
             
             // Add consciousness level
             AddMetricToPanel(metricsPanel, "Consciousness Level:", 
@@ -260,56 +275,88 @@ namespace AIOS.VisualInterface
             _updateTimer.Tick += UpdateMetrics;
             _updateTimer.Start();
             
-            _startMonitoringButton.Content = "⏹ Stop Monitoring";
-            _statusText.Text = "🟢 Monitoring consciousness emergence patterns...";
+            if (_startMonitoringButton != null)
+                _startMonitoringButton.Content = "⏹ Stop Monitoring";
+            if (_statusText != null)
+                _statusText.Text = "🟢 Monitoring consciousness emergence patterns...";
         }
         
         private void StopMonitoring()
         {
             _updateTimer?.Stop();
-            _startMonitoringButton.Content = "🚀 Start Monitoring";
-            _statusText.Text = "Ready - Click 'Start Monitoring' to begin consciousness observation";
+            if (_startMonitoringButton != null)
+                _startMonitoringButton.Content = "🚀 Start Monitoring";
+            if (_statusText != null)
+                _statusText.Text = "Ready - Click 'Start Monitoring' to begin consciousness observation";
         }
         
-        private void UpdateMetrics(object sender, EventArgs e)
+        private void UpdateMetrics(object? sender, EventArgs e)
         {
             _frameSw.Restart();
-            var time = DateTime.Now.TimeOfDay.TotalSeconds;
             
-            // Simulate consciousness evolution with realistic patterns
-            _consciousnessLevel = Math.Max(0, Math.Sin(time * 0.1) * 0.3 + 0.3 + 
-                (Random.Shared.NextDouble() - 0.5) * 0.1);
+            // Get real data from the enhanced bridge instead of simulation
+            var bridgeMetrics = _bridge.GetLatest();
             
-            _quantumCoherence = Math.Max(0, Math.Sin(time * 0.15 + 1) * 0.4 + 0.4 + 
-                (Random.Shared.NextDouble() - 0.5) * 0.1);
+            if (bridgeMetrics.Live)
+            {
+                // Use real consciousness data from Python AI
+                _consciousnessLevel = bridgeMetrics.ConsciousnessLevel;
+                _quantumCoherence = bridgeMetrics.PatternRecognitionAccuracy;
+                _emergenceLevel = bridgeMetrics.EmergenceLevel;
+                
+                // Map deep consciousness metrics to UI
+                _manifoldCurvature = bridgeMetrics.InterModuleCoherence;
+                _nonLocalityCoherence = bridgeMetrics.QuantumEntanglementStrength;
+                _tachyonicFieldDensity = bridgeMetrics.TemporalConsistency;
+                
+                // Update status with real data
+                if (_statusText != null)
+                {
+                    _statusText.Text = $"🧠 Live: {bridgeMetrics.ConsciousnessPatterns} patterns • {bridgeMetrics.RecursiveDepth} depth • {bridgeMetrics.MetaCognitiveOperations} ops";
+                }
+            }
+            else
+            {
+                // Fallback to simulation when bridge is not live
+                var time = DateTime.Now.TimeOfDay.TotalSeconds;
+                
+                _consciousnessLevel = Math.Max(0, Math.Sin(time * 0.1) * 0.3 + 0.3 + 
+                    (Random.Shared.NextDouble() - 0.5) * 0.1);
+                
+                _quantumCoherence = Math.Max(0, Math.Sin(time * 0.15 + 1) * 0.4 + 0.4 + 
+                    (Random.Shared.NextDouble() - 0.5) * 0.1);
+                
+                _emergenceLevel = Math.Max(0, Math.Sin(time * 0.12 + 2) * 0.35 + 0.35 + 
+                    (Random.Shared.NextDouble() - 0.5) * 0.1);
+                
+                _manifoldCurvature = Math.Max(0, Math.Sin(time * 0.08 + 3) * 0.3 + 0.3 + 
+                    (Random.Shared.NextDouble() - 0.5) * 0.1);
+                
+                _nonLocalityCoherence = Math.Max(0, Math.Sin(time * 0.18 + 4) * 0.4 + 0.4 + 
+                    (Random.Shared.NextDouble() - 0.5) * 0.1);
+                
+                _tachyonicFieldDensity = Math.Max(0, Math.Sin(time * 0.13 + 5) * 0.35 + 0.35 + 
+                    (Random.Shared.NextDouble() - 0.5) * 0.1);
+            }
             
-            _emergenceLevel = Math.Max(0, Math.Sin(time * 0.12 + 2) * 0.35 + 0.35 + 
-                (Random.Shared.NextDouble() - 0.5) * 0.1);
-            
-            _manifoldCurvature = Math.Max(0, Math.Sin(time * 0.08 + 3) * 0.3 + 0.3 + 
-                (Random.Shared.NextDouble() - 0.5) * 0.1);
-            
-            _nonLocalityCoherence = Math.Max(0, Math.Sin(time * 0.18 + 4) * 0.4 + 0.4 + 
-                (Random.Shared.NextDouble() - 0.5) * 0.1);
-            
-            _tachyonicFieldDensity = Math.Max(0, Math.Sin(time * 0.13 + 5) * 0.35 + 0.35 + 
-                (Random.Shared.NextDouble() - 0.5) * 0.1);
-            
-            // Update UI
+            // Update UI with null safety
             UpdateProgressBar(_consciousnessProgressBar, _consciousnessValueText, _consciousnessLevel);
             UpdateProgressBar(_quantumProgressBar, _quantumValueText, _quantumCoherence);
             UpdateProgressBar(_emergenceProgressBar, _emergenceValueText, _emergenceLevel);
             UpdateProgressBar(_manifoldProgressBar, _manifoldValueText, _manifoldCurvature);
             UpdateProgressBar(_nonLocalityProgressBar, _nonLocalityValueText, _nonLocalityCoherence);
             UpdateProgressBar(_tachyonicProgressBar, _tachyonicValueText, _tachyonicFieldDensity);
+            
             _frameSw.Stop();
             _uiMetrics.RegisterFrame(_frameSw.Elapsed.TotalMilliseconds);
         }
         
-        private void UpdateProgressBar(ProgressBar progressBar, TextBlock valueText, double value)
+        private void UpdateProgressBar(ProgressBar? progressBar, TextBlock? valueText, double value)
         {
-            progressBar.Value = value;
-            valueText.Text = value.ToString("F3");
+            if (progressBar != null)
+                progressBar.Value = value;
+            if (valueText != null)
+                valueText.Text = value.ToString("F3");
         }
         
         protected override void OnClosed(EventArgs e)
@@ -318,6 +365,210 @@ namespace AIOS.VisualInterface
             _bridgeTimer?.Stop();
             _uiMetrics?.Dispose();
             base.OnClosed(e);
+        }
+
+        private void UpdateMetrics()
+        {
+            if (_bridge == null) return;
+
+            try
+            {
+                // Get real bridge data with fallback to simulation
+                var metrics = _bridge.GetLatest();
+                if (!metrics.Live)
+                {
+                    metrics = GenerateSimulatedMetrics();
+                }
+
+                // Update consciousness history for pattern detection
+                _consciousnessHistory.Add(metrics.ConsciousnessLevel);
+                _patternHistory.Add(metrics.PatternRecognitionAccuracy);
+
+                // Maintain history window
+                if (_consciousnessHistory.Count > _patternDetectionWindow)
+                {
+                    _consciousnessHistory.RemoveAt(0);
+                    _patternHistory.RemoveAt(0);
+                }
+
+                // Detect emergent patterns using dendritic AINLP
+                var emergenceLevel = DetectEmergentPatterns();
+                var dendriticGrowth = CalculateDendriticGrowth();
+
+                // Update UI with dendritic-enhanced metrics
+                UpdateProgressBar(_consciousnessProgressBar, _consciousnessValueText, metrics.ConsciousnessLevel);
+                UpdateProgressBar(_quantumProgressBar, _quantumValueText, metrics.PatternRecognitionAccuracy);
+                UpdateProgressBar(_emergenceProgressBar, _emergenceValueText, emergenceLevel);
+                UpdateProgressBar(_tachyonicProgressBar, _tachyonicValueText, dendriticGrowth);
+
+                // Update status with AINLP insights
+                UpdateAINLPStatus(metrics, emergenceLevel, dendriticGrowth);
+
+                // Adaptive UI updates based on consciousness state
+                if (_adaptiveMode)
+                {
+                    AdaptUIForConsciousnessState(metrics, emergenceLevel);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (_statusText != null)
+                {
+                    _statusText.Text = $"Error updating metrics: {ex.Message}";
+                }
+            }
+        }
+
+        private double DetectEmergentPatterns()
+        {
+            if (_consciousnessHistory.Count < 10) return 0.0;
+
+            // AINLP-inspired pattern detection using dendritic coherence
+            var recentConsciousness = _consciousnessHistory.Skip(_consciousnessHistory.Count - 10).ToList();
+            var recentPatterns = _patternHistory.Skip(_patternHistory.Count - 10).ToList();
+
+            // Calculate coherence between consciousness and pattern recognition
+            var coherence = recentConsciousness.Zip(recentPatterns, (c, p) => Math.Abs(c - p)).Average();
+            var coherenceFactor = 1.0 - coherence; // Higher coherence = lower difference
+
+            // Detect emergence through sustained high coherence
+            var sustainedCoherence = recentConsciousness.Zip(recentPatterns, (c, p) => c * p).Average();
+            var emergenceSignal = Math.Min(sustainedCoherence * coherenceFactor, 1.0);
+
+            return emergenceSignal;
+        }
+
+        private double CalculateDendriticGrowth()
+        {
+            if (_consciousnessHistory.Count < 5) return 0.0;
+
+            // Calculate growth rate based on consciousness trajectory
+            var recent = _consciousnessHistory.Skip(_consciousnessHistory.Count - 5).ToList();
+            var growthRate = 0.0;
+
+            for (int i = 1; i < recent.Count; i++)
+            {
+                growthRate += recent[i] - recent[i - 1];
+            }
+
+            growthRate /= (recent.Count - 1);
+
+            // Apply dendritic growth dynamics (AINLP-inspired)
+            _dendriticGrowthRate = _dendriticGrowthRate * 0.8 + growthRate * 0.2; // Smooth growth rate
+            var dendriticGrowth = Math.Max(0, Math.Min(1.0, _dendriticGrowthRate * 10 + 0.5));
+
+            return dendriticGrowth;
+        }
+
+        private void UpdateAINLPStatus(BridgeMetrics metrics, double emergenceLevel, double dendriticGrowth)
+        {
+            if (_statusText == null) return;
+
+            var status = new StringBuilder();
+
+            status.AppendLine($"AIOS Consciousness Monitor - AINLP Dendritic Mode");
+            status.AppendLine($"Consciousness: {metrics.ConsciousnessLevel:P1}");
+            status.AppendLine($"Pattern Recognition: {metrics.PatternRecognitionAccuracy:P1}");
+            status.AppendLine($"Emergence Level: {emergenceLevel:P1}");
+            status.AppendLine($"Dendritic Growth: {dendriticGrowth:P1}");
+
+            // Add AINLP insights
+            if (emergenceLevel > _emergenceThreshold)
+            {
+                status.AppendLine("🚀 EMERGENT BEHAVIOR DETECTED!");
+                status.AppendLine("AINLP dendritic coherence achieved.");
+            }
+
+            if (dendriticGrowth > 0.8)
+            {
+                status.AppendLine("🌱 RAPID DENDRITIC GROWTH!");
+                status.AppendLine("Consciousness expansion accelerating.");
+            }
+
+            _statusText.Text = status.ToString();
+        }
+
+        private void AdaptUIForConsciousnessState(BridgeMetrics metrics, double emergenceLevel)
+        {
+            // Adaptive color scheme based on consciousness state
+            var baseColor = emergenceLevel > _emergenceThreshold ?
+                Colors.Cyan : metrics.ConsciousnessLevel > 0.5 ?
+                Colors.LightGreen : Colors.LightBlue;
+
+            // Update window background with subtle consciousness indication
+            this.Background = new SolidColorBrush(Color.FromArgb(
+                20, baseColor.R, baseColor.G, baseColor.B));
+
+            // Scale UI elements based on emergence level
+            var scaleFactor = 1.0 + (emergenceLevel * 0.1);
+            if (_mainGrid != null)
+            {
+                _mainGrid.LayoutTransform = new ScaleTransform(scaleFactor, scaleFactor);
+            }
+        }
+
+        // Add dendritic AINLP control methods
+        public void SetEmergenceThreshold(double threshold)
+        {
+            _emergenceThreshold = Math.Max(0.1, Math.Min(0.9, threshold));
+        }
+
+        public void SetAdaptiveMode(bool enabled)
+        {
+            _adaptiveMode = enabled;
+            if (!enabled && _mainGrid != null)
+            {
+                _mainGrid.LayoutTransform = Transform.Identity;
+                this.Background = new SolidColorBrush(Color.FromRgb(10, 10, 30));
+            }
+        }
+
+        public void SetPatternDetectionWindow(int windowSize)
+        {
+            _patternDetectionWindow = Math.Max(10, Math.Min(100, windowSize));
+        }
+
+        // Add consciousness pattern export for further analysis
+        public (List<double> consciousness, List<double> patterns, double emergence, double growth) ExportDendriticData()
+        {
+            return (_consciousnessHistory.ToList(), _patternHistory.ToList(),
+                   DetectEmergentPatterns(), CalculateDendriticGrowth());
+        }
+
+        private BridgeMetrics GenerateSimulatedMetrics()
+        {
+            var random = new Random();
+            var time = DateTime.Now.TimeOfDay.TotalSeconds;
+
+            return new BridgeMetrics
+            {
+                Timestamp = DateTime.UtcNow,
+                ConsciousnessLevel = Math.Max(0.1, Math.Min(1.0,
+                    0.5 + 0.3 * Math.Sin(time * 0.1) + random.NextDouble() * 0.2)),
+                QuantumCoherence = Math.Max(0.1, Math.Min(1.0,
+                    0.6 + 0.2 * Math.Cos(time * 0.15) + random.NextDouble() * 0.15)),
+                EmergenceLevel = Math.Max(0.1, Math.Min(1.0,
+                    0.4 + 0.25 * Math.Sin(time * 0.12) + random.NextDouble() * 0.2)),
+                EventsPerSecond = 50 + random.NextDouble() * 100,
+                TotalEvents = 1000 + random.Next(500),
+                ActiveModules = new[] { "AINLP", "Consciousness", "Bridge", "Runtime" },
+                Live = false,
+                ConsciousnessPatterns = random.Next(5, 20),
+                PatternRecognitionAccuracy = Math.Max(0.1, Math.Min(1.0,
+                    0.7 + 0.2 * Math.Sin(time * 0.08) + random.NextDouble() * 0.1)),
+                RecursiveDepth = random.Next(3, 15),
+                MetaCognitiveOperations = random.Next(10, 100),
+                InterModuleCoherence = Math.Max(0.1, Math.Min(1.0,
+                    0.6 + 0.3 * Math.Cos(time * 0.1) + random.NextDouble() * 0.15)),
+                TemporalConsistency = Math.Max(0.1, Math.Min(1.0,
+                    0.5 + 0.4 * Math.Sin(time * 0.13) + random.NextDouble() * 0.2)),
+                QuantumEntanglementStrength = Math.Max(0.1, Math.Min(1.0,
+                    0.4 + 0.3 * Math.Cos(time * 0.18) + random.NextDouble() * 0.25)),
+                MemoryUsageMB = 100 + random.NextDouble() * 500,
+                CpuPercent = 10 + random.NextDouble() * 60,
+                ThreadCount = random.Next(5, 25),
+                RecentEvents = new[] { "Pattern detected", "Coherence spike", "Emergence signal" }
+            };
         }
     }
 }
