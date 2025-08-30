@@ -17,8 +17,6 @@
     <ProjectReference Include="..\AIOS.Models\AIOS.Models.csproj" />
   </ItemGroup>
 
-  <!-- HeadlessHost.cs picked up implicitly; explicit Compile removed to avoid duplicate include -->
-
   <ItemGroup>
     <None Include="web\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

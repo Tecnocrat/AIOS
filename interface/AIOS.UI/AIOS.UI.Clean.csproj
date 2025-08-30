@@ -28,6 +28,7 @@
         <Compile Include="App.xaml.cs" />
         <Compile Include="SimpleMainWindow.xaml.cs" />
         <Compile Include="AssemblyInfo.cs" />
+        <Compile Include="Infrastructure\HeadlessHost.cs" />
     </ItemGroup>
 
     <ItemGroup>
