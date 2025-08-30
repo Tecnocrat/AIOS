@@ -27,11 +27,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\core\src\core\AIOS.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\**\*" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="MainVisualizationWindow.xaml.cs" />
+    <Compile Remove="AINLPIntegration.cs" />
     <Page Remove="MainVisualizationWindow.xaml" />
   </ItemGroup>
 

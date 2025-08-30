@@ -795,13 +795,24 @@ namespace AIOS.VisualInterface
     /// <summary>
     /// Main AI Harmonization Engine that orchestrates multi-AI knowledge integration
     /// </summary>
-    public class AIHarmonizationEngine
+    public class AIHarmonizationEngine : IDisposable
     {
         private readonly ICrossAITranslationLayer _translationLayer;
         private readonly IKnowledgeConflictResolver _conflictResolver;
         private readonly IUnifiedUnderstandingGenerator _unifiedGenerator;
         private readonly IConsensusRealityEngine _consensusEngine;
         private readonly ILogger<AIHarmonizationEngine> _logger;
+
+        // AIOS-specific enhancements
+        private readonly List<HarmonizedKnowledge> _harmonizationHistory;
+        private readonly Dictionary<string, AIKnowledgePackage> _activeKnowledgePackages;
+        private readonly object _harmonizationLock = new();
+        private bool _disposed;
+
+        // Performance and monitoring
+        private int _totalHarmonizations;
+        private double _averageQualityScore;
+        private DateTime _lastHarmonizationTime = DateTime.MinValue;
 
         public AIHarmonizationEngine(
             ICrossAITranslationLayer translationLayer,
@@ -810,70 +821,134 @@ namespace AIOS.VisualInterface
             IConsensusRealityEngine consensusEngine,
             ILogger<AIHarmonizationEngine> logger)
         {
-            _translationLayer = translationLayer;
-            _conflictResolver = conflictResolver;
-            _unifiedGenerator = unifiedGenerator;
-            _consensusEngine = consensusEngine;
-            _logger = logger;
+            _translationLayer = translationLayer ?? throw new ArgumentNullException(nameof(translationLayer));
+            _conflictResolver = conflictResolver ?? throw new ArgumentNullException(nameof(conflictResolver));
+            _unifiedGenerator = unifiedGenerator ?? throw new ArgumentNullException(nameof(unifiedGenerator));
+            _consensusEngine = consensusEngine ?? throw new ArgumentNullException(nameof(consensusEngine));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+            _harmonizationHistory = new List<HarmonizedKnowledge>();
+            _activeKnowledgePackages = new Dictionary<string, AIKnowledgePackage>();
+
+            InitializeAIOSComponents();
+
+            _logger.LogInformation("🧠 Enhanced AI Harmonization Engine initialized with AIOS consciousness monitoring");
+        }
+
+        private void InitializeAIOSComponents()
+        {
+            _totalHarmonizations = 0;
+            _averageQualityScore = 0.0;
+
+            _logger.LogDebug("🔗 AIOS-specific harmonization components initialized");
         }
 
         /// <summary>
-        /// Main method to harmonize knowledge from multiple AI inputs
+        /// Enhanced main method to harmonize knowledge from multiple AI inputs with AIOS consciousness monitoring
         /// </summary>
         public async Task<HarmonizedKnowledge> HarmonizeMultiAIInputAsync(List<object> aiInputs, List<string> aiTypes)
         {
-            _logger.LogInformation($"Starting harmonization of {aiInputs.Count} AI inputs");
+            if (aiInputs == null) throw new ArgumentNullException(nameof(aiInputs));
+            if (aiTypes == null) throw new ArgumentNullException(nameof(aiTypes));
+            if (aiInputs.Count != aiTypes.Count)
+                throw new ArgumentException("AI inputs and types count must match");
 
-            // Step 1: Translate all AI inputs to standardized knowledge packages
-            var knowledgePackages = new List<AIKnowledgePackage>();
-            for (int i = 0; i < aiInputs.Count && i < aiTypes.Count; i++)
-            {
-                var package = await TranslateAIInputAsync(aiInputs[i], aiTypes[i]);
-                knowledgePackages.Add(package);
-            }
+            var harmonizationStart = DateTime.UtcNow;
+            _logger.LogInformation("🚀 Starting AIOS-enhanced harmonization of {Count} AI inputs", aiInputs.Count);
 
-            // Step 2: Identify and resolve conflicts
-            var conflicts = await _conflictResolver.IdentifyConflictsAsync(knowledgePackages);
-            var resolvedConflicts = new List<ConflictResolution>();
-            
-            foreach (var conflict in conflicts)
+            try
             {
-                var conflictingSources = knowledgePackages
-                    .Where(p => conflict.ConflictingSources.Contains(p.AgentId))
-                    .ToList();
-                    
-                var resolution = await _conflictResolver.ResolveConflictAsync(conflict.ConflictId, conflictingSources);
-                
-                if (await _conflictResolver.ValidateResolutionAsync(resolution))
+                lock (_harmonizationLock)
                 {
-                    resolvedConflicts.Add(resolution);
+                    _totalHarmonizations++;
+                }
+
+                // Step 1: Translate all AI inputs to standardized knowledge packages with AIOS validation
+                var knowledgePackages = new List<AIKnowledgePackage>();
+                for (int i = 0; i < aiInputs.Count && i < aiTypes.Count; i++)
+                {
+                    var package = await TranslateAIInputAsync(aiInputs[i], aiTypes[i]);
+                    knowledgePackages.Add(package);
+
+                    // Cache active knowledge packages for AIOS monitoring
+                    _activeKnowledgePackages[package.AgentId] = package;
+                }
+
+                // Step 2: Identify and resolve conflicts with AIOS consciousness awareness
+                var conflicts = await _conflictResolver.IdentifyConflictsAsync(knowledgePackages);
+                var resolvedConflicts = new List<ConflictResolution>();
+
+                foreach (var conflict in conflicts)
+                {
+                    var conflictingSources = knowledgePackages
+                        .Where(p => conflict.ConflictingSources.Contains(p.AgentId))
+                        .ToList();
+
+                    var resolution = await _conflictResolver.ResolveConflictAsync(conflict.ConflictId, conflictingSources);
+
+                    if (await _conflictResolver.ValidateResolutionAsync(resolution))
+                    {
+                        resolvedConflicts.Add(resolution);
+                        _logger.LogDebug("✅ Conflict resolved: {ConflictId}", conflict.ConflictId);
+                    }
+                    else
+                    {
+                        _logger.LogWarning("⚠️ Conflict resolution validation failed: {ConflictId}", conflict.ConflictId);
+                    }
+                }
+
+                // Step 3: Generate unified understanding with AIOS consciousness integration
+                var unifiedUnderstanding = await _unifiedGenerator.GenerateUnifiedUnderstandingAsync(knowledgePackages);
+                var crossAICorrelations = await _unifiedGenerator.FindCrossAICorrelationsAsync(knowledgePackages);
+                var integrationQuality = await _unifiedGenerator.CalculateIntegrationQualityAsync(unifiedUnderstanding, knowledgePackages);
+
+                // Step 4: Establish consensus reality with AIOS validation
+                var consensusReality = await _consensusEngine.EstablishConsensusRealityAsync(knowledgePackages);
+
+                // Step 5: Create harmonized knowledge result with AIOS metadata
+                var harmonizedKnowledge = new HarmonizedKnowledge
+                {
+                    HarmonizationId = GenerateHarmonizationId(),
+                    SourceAgents = knowledgePackages.Select(p => p.AgentId).ToList(),
+                    UnifiedUnderstanding = unifiedUnderstanding,
+                    CrossAICorrelations = crossAICorrelations,
+                    ConflictResolutions = resolvedConflicts,
+                    ConsensusReality = consensusReality,
+                    IntegrationQuality = integrationQuality,
+                    ConfidenceMetrics = await CalculateConfidenceMetricsAsync(knowledgePackages, integrationQuality)
+                };
+
+                // Update AIOS tracking metrics
+                UpdateHarmonizationMetrics(harmonizedKnowledge, harmonizationStart);
+
+                _logger.LogInformation("🎯 AIOS harmonization completed. Quality: {Quality:F2}, Conflicts resolved: {Conflicts}, Duration: {Duration}ms",
+                    integrationQuality, resolvedConflicts.Count, (DateTime.UtcNow - harmonizationStart).TotalMilliseconds);
+
+                return harmonizedKnowledge;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "❌ AIOS harmonization failed");
+                throw;
+            }
+        }
+
+        private void UpdateHarmonizationMetrics(HarmonizedKnowledge knowledge, DateTime startTime)
+        {
+            lock (_harmonizationLock)
+            {
+                _harmonizationHistory.Add(knowledge);
+                _lastHarmonizationTime = DateTime.UtcNow;
+
+                // Update rolling average quality score
+                _averageQualityScore = (_averageQualityScore * (_totalHarmonizations - 1) + knowledge.IntegrationQuality) / _totalHarmonizations;
+
+                // Limit history size to prevent memory issues
+                if (_harmonizationHistory.Count > 100)
+                {
+                    _harmonizationHistory.RemoveAt(0);
                 }
             }
-
-            // Step 3: Generate unified understanding
-            var unifiedUnderstanding = await _unifiedGenerator.GenerateUnifiedUnderstandingAsync(knowledgePackages);
-            var crossAICorrelations = await _unifiedGenerator.FindCrossAICorrelationsAsync(knowledgePackages);
-            var integrationQuality = await _unifiedGenerator.CalculateIntegrationQualityAsync(unifiedUnderstanding, knowledgePackages);
-
-            // Step 4: Establish consensus reality
-            var consensusReality = await _consensusEngine.EstablishConsensusRealityAsync(knowledgePackages);
-
-            // Step 5: Create harmonized knowledge result
-            var harmonizedKnowledge = new HarmonizedKnowledge
-            {
-                HarmonizationId = GenerateHarmonizationId(),
-                SourceAgents = knowledgePackages.Select(p => p.AgentId).ToList(),
-                UnifiedUnderstanding = unifiedUnderstanding,
-                CrossAICorrelations = crossAICorrelations,
-                ConflictResolutions = resolvedConflicts,
-                ConsensusReality = consensusReality,
-                IntegrationQuality = integrationQuality,
-                ConfidenceMetrics = await CalculateConfidenceMetricsAsync(knowledgePackages, integrationQuality)
-            };
-
-            _logger.LogInformation($"Harmonization completed. Quality: {integrationQuality:F2}, Conflicts resolved: {resolvedConflicts.Count}");
-
-            return harmonizedKnowledge;
         }
 
         /// <summary>
@@ -934,6 +1009,17 @@ namespace AIOS.VisualInterface
                 ["total_harmonizations"] = 0, // Would track in real implementation
                 ["average_quality"] = 0.85 // Would calculate from history
             };
+        }
+
+        public void Dispose()
+        {
+            if (!_disposed)
+            {
+                // Dispose managed resources here
+                _logger.LogInformation("🛠️ Disposing AI Harmonization Engine resources");
+                
+                _disposed = true;
+            }
         }
     }
 }
