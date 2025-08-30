@@ -35,15 +35,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="MainVisualizationWindow.xaml.cs" />
-    <Compile Remove="AINLPIntegration.cs" />
-    <Page Remove="MainVisualizationWindow.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Assets\Shaders\" />
     <Folder Include="Assets\Models\" />
     <Folder Include="Assets\Textures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AINLPIntegration.cs" />
   </ItemGroup>
 
 </Project>

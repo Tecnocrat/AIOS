@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
+using System.Windows.Media.Effects;
 using System.Windows.Threading;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,14 +29,14 @@ namespace AIOS.VisualInterface
         private readonly RuntimeAnalytics _runtimeAnalytics;
 
         // 3D Visualization components with enhanced features
-        private Viewport3D _viewport3D;
-        private ModelVisual3D _mainModelVisual;
-        private PerspectiveCamera _camera;
-        private Model3DGroup _sceneGroup;
+        private Viewport3D? _viewport3D;
+        private ModelVisual3D? _mainModelVisual;
+        private PerspectiveCamera? _camera;
+        private Model3DGroup? _sceneGroup;
 
         // Animation and update timers with performance monitoring
-        private DispatcherTimer _updateTimer;
-        private DispatcherTimer _animationTimer;
+        private DispatcherTimer? _updateTimer;
+        private DispatcherTimer? _animationTimer;
         private DateTime _lastFrameTime;
         private int _frameCount;
         private double _currentTime;
@@ -76,7 +77,6 @@ namespace AIOS.VisualInterface
         {
             // Create and configure 3D viewport
             _viewport3D = new Viewport3D();
-            _viewport3D.Background = new SolidColorBrush(Colors.Black);
 
             // Setup camera
             _camera = new PerspectiveCamera
@@ -105,8 +105,11 @@ namespace AIOS.VisualInterface
 
         private void AddLighting()
         {
+            if (_sceneGroup == null) return;
+
             // Ambient light for general illumination
-            var ambientLight = new AmbientLight(Colors.White, 0.3);
+            var ambientLight = new AmbientLight(Colors.White);
+            ambientLight.Color = Color.FromScRgb(0.3f, 1.0f, 1.0f, 1.0f); // Set intensity via color alpha
             _sceneGroup.Children.Add(ambientLight);
 
             // Directional light for consciousness visualization
@@ -169,7 +172,6 @@ namespace AIOS.VisualInterface
             try
             {
                 await _dataManager.InitializeAsync();
-                await _runtimeAnalytics.InitializeAsync();
 
                 // Restore previous visualization state
                 _currentState = await _stateManager.RestoreUIStateAsync();
@@ -693,112 +695,5 @@ namespace AIOS.VisualInterface
                     _currentMetrics.ConsciousnessLevel);
             }
         }
-    }
-
-    public class ConsciousnessDataManager : IDisposable
-    {
-        private readonly ILogger<ConsciousnessDataManager> _logger;
-        private readonly string _aiOSExecutablePath;
-        private readonly string _logDirectory;
-
-        // In-memory storage for consciousness metrics and events
-        private readonly List<ConsciousnessMetrics> _metricsHistory;
-        private readonly List<ConsciousnessEvent> _emergenceEvents;
-
-        // AINLP pattern recognition state
-        private readonly List<double> _consciousnessHistory;
-        private readonly List<double> _patternHistory;
-
-        public ConsciousnessDataManager(ILogger<ConsciousnessDataManager> logger)
-        {
-            _logger = logger;
-            _aiOSExecutablePath = "C:\\Program Files\\AIOS\\aios.exe"; // Default path, can be configured
-            _logDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs");
-
-            _metricsHistory = new List<ConsciousnessMetrics>();
-            _emergenceEvents = new List<ConsciousnessEvent>();
-
-            _consciousnessHistory = new List<double>();
-            _patternHistory = new List<double>();
-        }
-
-        public async Task InitializeAsync()
-        {
-            try
-            {
-                _logger.LogInformation("🚀 Initializing enhanced consciousness data manager");
-
-                // Check AIOS orchestrator availability with enhanced detection
-                var orchestratorExists = File.Exists(_aiOSExecutablePath);
-                if (orchestratorExists)
-                {
-                    _logger.LogInformation("✅ AIOS orchestrator found at {Path}", _aiOSExecutablePath);
-
-                    // Validate orchestrator version and capabilities
-                    var orchestratorInfo = await ValidateAIOSOrchestratorAsync();
-                    _logger.LogInformation("🎯 AIOS orchestrator validated: {Info}", orchestratorInfo);
-                }
-                else
-                {
-                    _logger.LogWarning("⚠️ AIOS orchestrator not found, using synthetic consciousness data with AINLP enhancements");
-                }
-
-                // Ensure log directory exists with enhanced structure
-                Directory.CreateDirectory(_logDirectory);
-                Directory.CreateDirectory(Path.Combine(_logDirectory, "metrics"));
-                Directory.CreateDirectory(Path.Combine(_logDirectory, "emergence_events"));
-
-                // Initialize AINLP pattern recognition
-                await InitializeAINLPPatternsAsync();
-
-                _logger.LogInformation("✅ Enhanced consciousness data manager initialization complete");
-
-                // Add small delay to ensure async behavior
-                await Task.Delay(1);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "❌ Error during enhanced consciousness data manager initialization");
-                throw;
-            }
-        }
-
-        private async Task<string> ValidateAIOSOrchestratorAsync()
-        {
-            try
-            {
-                // Basic validation - in real implementation would check version, capabilities, etc.
-                var fileInfo = new FileInfo(_aiOSExecutablePath);
-                return $"Version: {fileInfo.LastWriteTime}, Size: {fileInfo.Length} bytes";
-            }
-            catch
-            {
-                return "Validation failed";
-            }
-        }
-
-        private async Task InitializeAINLPPatternsAsync()
-        {
-            // Initialize AINLP pattern recognition baseline
-            _consciousnessHistory.Clear();
-            _patternHistory.Clear();
-
-            // Add baseline patterns for emergence detection
-            for (int i = 0; i < 10; i++)
-            {
-                _consciousnessHistory.Add(0.1 + i * 0.05);
-                _patternHistory.Add(0.0);
-            }
-
-            await Task.Delay(1); // Ensure async behavior
-            _logger.LogDebug("🧬 AINLP pattern recognition initialized");
-        }
-
-        public void Dispose()
-        {
-            // Dispose resources if needed
-        }
-
-        // Other methods for data management, streaming, and metrics calculation
     }
 }
