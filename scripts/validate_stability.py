@@ -7,8 +7,22 @@ Validates that the stability protocol is properly implemented
 import sys
 import json
 import subprocess
+import re
 from pathlib import Path
 from typing import List, Dict, Any
+
+
+def load_jsonc(file_path: Path) -> Dict[str, Any]:
+    """Load JSONC (JSON with comments) file"""
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Remove single-line comments (// ...)
+    content = re.sub(r'//.*$', '', content, flags=re.MULTILINE)
+    # Remove multi-line comments (/* ... */)
+    content = re.sub(r'/\*.*?\*/', '', content, flags=re.DOTALL)
+
+    return json.loads(content)
 
 
 def validate_stability_protocol() -> bool:
@@ -25,8 +39,7 @@ def validate_stability_protocol() -> bool:
     workspace_data: Dict[str, Any] = {}
 
     if workspace_file.exists():
-        with open(workspace_file, 'r', encoding='utf-8') as f:
-            workspace_data = json.load(f)
+        workspace_data = load_jsonc(workspace_file)
 
         python_path = workspace_data.get("settings", {}).get(
             "python.defaultInterpreterPath")

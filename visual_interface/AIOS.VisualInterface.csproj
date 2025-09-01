@@ -19,6 +19,7 @@
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
     <ProjectReference Include="..\interface\AIOS.Services\AIOS.Services.csproj" />
     <ProjectReference Include="..\interface\AIOS.Models\AIOS.Models.csproj" />
+    <Compile Remove="SimpleVisualizationWindow.cs" />
   </ItemGroup>
 
 </Project>

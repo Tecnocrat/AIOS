@@ -14,7 +14,7 @@ namespace AIOS.VisualInterface
     /// Implements dendritic intelligence, harmonization, upgrading, and testing capabilities
     /// for intelligent consciousness monitoring and adaptive UI responses
     /// </summary>
-    public partial class SimpleVisualizationWindow : Window
+    public class SimpleVisualizationWindow : Window
     {
         private readonly ILogger<SimpleVisualizationWindow> _logger;
         private readonly ConsciousnessDataManager _dataManager;
