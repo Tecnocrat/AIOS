@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Extensions.Logging;
-using AIOS.Core;
 
 namespace AIOS.VisualInterface
 {

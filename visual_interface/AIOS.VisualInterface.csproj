@@ -20,6 +20,7 @@
     <ProjectReference Include="..\interface\AIOS.Services\AIOS.Services.csproj" />
     <ProjectReference Include="..\interface\AIOS.Models\AIOS.Models.csproj" />
     <Compile Remove="SimpleVisualizationWindow.cs" />
+    <Compile Remove="AINLPIntegration.cs" />
   </ItemGroup>
 
 </Project>
