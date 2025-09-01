@@ -54,6 +54,7 @@ x86/
 ai/venv/
 ai/venv-win/
 ai/__pycache__/
+aios_env/
 *.pyc
 *.pyo
 *.pyd

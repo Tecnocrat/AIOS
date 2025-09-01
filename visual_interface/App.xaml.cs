@@ -47,7 +47,7 @@ namespace AIOS.VisualInterface
                 await InitializeApplicationStateAsync();
 
                 // Create and show main visualization window with working 3D interface
-                var mainWindow = new MainVisualizationWindow();
+                var mainWindow = new AdvancedVisualizationWindow();
                 mainWindow.Show();
 
                 base.OnStartup(e);
@@ -101,7 +101,7 @@ namespace AIOS.VisualInterface
         {
             // Register core AIOS services with enhanced configuration
             services.AddSingleton<ConsciousnessDataManager>();
-            services.AddSingleton<ConsciousnessGeometryEngine>();
+            // services.AddSingleton<ConsciousnessGeometryEngine>(); // Excluded from build
             services.AddSingleton<RuntimeAnalytics>();
             services.AddSingleton<CellularRuntimeBridge>(); // runtime_intelligence bridge
             services.AddSingleton<UIMetricsEmitter>(); // KPI emitter with enhanced metrics
@@ -114,8 +114,8 @@ namespace AIOS.VisualInterface
             // Register 3D visualization windows with enhanced features
             services.AddTransient<BosonicLayer3DWindow>();
             services.AddTransient<AdvancedVisualizationWindow>();
-            services.AddTransient<SimpleVisualizationWindow>();
-            services.AddTransient<MainVisualizationWindow>();
+            // services.AddTransient<SimpleVisualizationWindow>(); // Excluded from build
+            // services.AddTransient<MainVisualizationWindow>(); // Excluded from build
 
             // Configure HTTP client for potential remote AIOS connections
             services.AddHttpClient("AIOSClient", client =>
