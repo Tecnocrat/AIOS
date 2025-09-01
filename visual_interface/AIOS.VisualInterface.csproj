@@ -16,11 +16,15 @@
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
     <ProjectReference Include="..\interface\AIOS.Services\AIOS.Services.csproj" />
     <ProjectReference Include="..\interface\AIOS.Models\AIOS.Models.csproj" />
     <Compile Remove="SimpleVisualizationWindow.cs" />
     <Compile Remove="AINLPIntegration.cs" />
+    <Compile Remove="ConsciousnessGeometryEngine.cs" />
+    <Compile Remove="AINLPHarmonizer.cs" />
+    <Compile Remove="MainVisualizationWindow.xaml.cs" />
   </ItemGroup>
 
 </Project>
