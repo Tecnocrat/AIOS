@@ -1,6 +1,6 @@
 # filepath: c:\dev\AIOS\orchestrator\CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
-project(AIOS_Orchestrator VERSION 0.1)
+project(AIOS VERSION 0.2)
 
 # Enhanced C++ standard for quantum coherence features
 set(CMAKE_CXX_STANDARD 17)
