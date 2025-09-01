@@ -28,24 +28,21 @@
 		// AIOS Context retention and harmonization
 	],
 	"settings": {
-		// AIOS Context retention and harmonization
-		"aios.context.persistAcrossRestarts": true,
-		"aios.context.maxHistorySize": 1000,
-		"workbench.editor.restoreViewState": true,
-		"files.autoSave": "afterDelay",
-		"files.autoSaveDelay": 5000,
-		// Terminal bells (set at workspace scope to avoid folder-scope warnings)
-		"terminal.integrated.enableVisualBell": false,
-		"accessibility.signals.terminalBell": { "sound": "off" },
+		// 🛡️ AIOS STABILITY PROTOCOL - CRITICAL SETTINGS
+		// Pin Python to aios_env for consistent environment
+		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
+		"python.terminal.activateEnvironment": false,
 		
-		// CRITICAL: Prevent formatting conflicts (learned from VSCode health issues)
+		// Suppress ALL formatter prompts and auto-formatting
 		"editor.formatOnSave": false,
+		"editor.formatOnPaste": false,
+		"editor.formatOnType": false,
 		"editor.codeActionsOnSave": {
 			"source.fixAll": "never",
 			"source.organizeImports": "never"
 		},
 		
-		// CRITICAL: Disable ALL Python formatters permanently (VSCode health protection)
+		// CRITICAL: Disable ALL Python formatters permanently
 		"python.formatting.provider": "none",
 		"python.linting.enabled": false,
 		"black-formatter.enabled": false,
@@ -57,8 +54,29 @@
 			"editor.defaultFormatter": null
 		},
 		
+		// Avoid background auto-restore and unwanted prompts
+		"git.autofetch": false,
+		"git.confirmSync": false,
+		"git.enableSmartCommit": false,
+		"git.postCommitCommand": "none",
+		"files.hotExit": "off",
+		"window.restoreWindows": "none",
+		"workbench.editor.restoreViewState": false,
+		"files.restoreUndoStack": false,
+		
+		// AIOS Context retention and harmonization
+		"aios.context.persistAcrossRestarts": true,
+		"aios.context.maxHistorySize": 1000,
+		
+		// Files auto-save with minimal delay
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 5000,
+		
+		// Terminal bells (set at workspace scope to avoid folder-scope warnings)
+		"terminal.integrated.enableVisualBell": false,
+		"accessibility.signals.terminalBell": { "sound": "off" },
+		
 		// AIOS Multi-language integration paths
-		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
 		"C_Cpp.default.intelliSenseMode": "gcc-x64",
 		// Unified root solution (2025-08-17): deprecated interface/AIOS.sln
 		"dotnet.defaultSolution": "${workspaceFolder}/AIOS.sln",
@@ -110,7 +128,14 @@
 		
 		// AIOS workspace behavior
 		"explorer.confirmDragAndDrop": false,
-		"explorer.confirmDelete": false
+		"explorer.confirmDelete": false,
+		
+		// STABILITY ENFORCEMENT: Treat this workspace as source of truth
+		"workbench.settings.applyToAllProfiles": [],
+		"workbench.settings.editor": "json",
+		"workbench.startupEditor": "none",
+		"window.newWindowDimensions": "maximized",
+		"window.restoreFullscreen": true
 	},
 	"extensions": {
 		"recommendations": [

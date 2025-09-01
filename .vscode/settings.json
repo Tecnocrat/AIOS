@@ -1,21 +1,8 @@
 {
-    // AIOS Configuration
-    "aios.core.enabled": true,
-    "aios.context.persistAcrossRestarts": true,
-    "aios.context.maxHistorySize": 1000,
-    "aios.ai.pythonPath": "c:/dev/AIOS/ai/src",
-    "aios.ai.corePath": "c:/dev/AIOS/core",
-    "aios.debug.enabled": false,
-    "aios.privacy.mode": "strict",
-    "aios.network.enabled": false,
-    "aios.telemetry.enabled": false,
-    "aios.autoUpdate.enabled": false,
-    "aios.marketplace.checkUpdates": false,
-    "aios.logs.retention": "session-only",
-    "aios.context.encryption": true,
-    "aios.debug.traceLevel": "error-only",
-    "telemetry.telemetryLevel": "off",
-    // Python Configuration
+    // AIOS Configuration - Folder-specific settings only
+    // Workspace settings in AIOS.code-workspace take precedence
+
+    // Minimal Python settings (workspace controls environment)
     "python.analysis.extraPaths": [
         "./ai/src",
         "./ai/src/core",
@@ -25,40 +12,15 @@
     "python.analysis.autoSearchPaths": true,
     "python.analysis.diagnosticMode": "workspace",
     "python.analysis.typeCheckingMode": "strict",
-    "python.linting.enabled": false,
-    "python.linting.flake8Enabled": false,
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Args": [
-        "--max-line-length=79",
-        "--ignore=E203,W503"
-    ],
-    "python.formatting.provider": "none",
-    "python.testing.pytestEnabled": true,
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestArgs": [
-        "ai/tests",
-        "-v"
-    ],
-    "python.envFile": "${workspaceFolder}/.env",
-    "python.terminal.activateEnvironment": true,
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    // C# Configuration
+
+    // C# Configuration (folder-specific)
     "omnisharp.enableEditorConfigSupport": true,
     "omnisharp.enableRoslynAnalyzers": true,
     "omnisharp.enableImportCompletion": true,
     "omnisharp.organizeImportsOnFormat": false,
     "omnisharp.enableAsyncCompletion": true,
-    "csharp.semanticHighlighting.enabled": true,
-    "csharp.inlayHints.enableInlayHintsForParameters": true,
-    "csharp.inlayHints.enableInlayHintsForLiteralParameters": true,
-    "csharp.inlayHints.enableInlayHintsForIndexerParameters": true,
-    "csharp.inlayHints.enableInlayHintsForObjectCreationParameters": true,
-    "csharp.inlayHints.enableInlayHintsForOtherParameters": true,
-    "csharp.inlayHints.enableInlayHintsForTypes": true,
-    "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
-    "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
-    "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
-    // C++ Configuration
+
+    // C++ Configuration (folder-specific)
     "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
     "C_Cpp.default.compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.30.30705/bin/Hostx64/x64/cl.exe",
     "C_Cpp.default.cStandard": "c17",
@@ -79,7 +41,8 @@
     "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.autocomplete": "default",
     "C_Cpp.suggestSnippets": true,
-    // File Associations
+
+    // File Associations (folder-specific)
     "files.associations": {
         "*.ainlp": "plaintext",
         "*.aios": "json",
@@ -94,13 +57,9 @@
         "CMakeLists.txt": "cmake",
         "*.cmake": "cmake"
     },
-    // Editor Configuration
-    "editor.formatOnSave": false,
-    "editor.codeActionsOnSave": {},
-    "editor.rulers": [
-        80,
-        120
-    ],
+
+    // Editor Configuration (folder-specific)
+    "editor.rulers": [80, 120],
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
     "editor.tabSize": 4,
@@ -120,7 +79,8 @@
     "editor.semanticTokenColorCustomizations": {
         "enabled": true
     },
-    // Search Configuration
+
+    // Search Configuration (folder-specific)
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
@@ -143,7 +103,8 @@
         "**/*.tmp": true,
         "**/*.cache": true
     },
-    // File Exclusions
+
+    // File Exclusions (folder-specific)
     "files.exclude": {
         "**/.vscode/launch.json": false,
         "**/.vscode/tasks.json": false,
@@ -166,15 +127,8 @@
         "**/*.pdb": true,
         "**/*.cache": true
     },
-    // Logging Configuration
-    "workbench.colorTheme": "Default Dark Modern",
-    "workbench.iconTheme": "vs-seti",
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.startupEditor": "readme",
-    "workbench.tree.indent": 15,
-    "workbench.tree.renderIndentGuides": "always",
-    // Terminal Configuration
+
+    // Terminal Configuration (folder-specific)
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.enablePersistentSessions": false,
@@ -209,46 +163,8 @@
         "AIOS_LOG_LEVEL": "DEBUG",
         "PYTHONPATH": "${workspaceFolder}/ai/src"
     },
-    // Git Configuration
-    "git.confirmSync": false,
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-    "git.autofetchPeriod": 180,
-    "git.enableStatusBarSync": true,
-    "git.decorations.enabled": true,
-    "git.showPushSuccessNotification": true,
-    "git.openRepositoryInParentFolders": "always",
-    // AIOS Specific Settings
-    "aios.pythonEnvironment.autoDiscovery": true,
-    "aios.pythonEnvironment.healthCheckInterval": 300,
-    "aios.pythonEnvironment.autoRecovery": true,
-    "aios.fractalHolographic.enabled": true,
-    "aios.fractalHolographic.contextPersistence": true,
-    "aios.debugging.integration": true,
-    "aios.debugging.contextSnapshots": true,
-    "aios.logging.level": "DEBUG",
-    "aios.logging.enableConsole": true,
-    "aios.logging.enableFile": true,
-    "aios.logging.filePath": "${workspaceFolder}/logs/aios-debug.log",
-    "aios.build.autoRestore": true,
-    "aios.build.showWarnings": true,
-    "aios.build.parallelBuild": true,
-    "aios.integration.enableWebView2": true,
-    "aios.integration.enableCppPython": true,
-    "aios.integration.enableCsharpCpp": true,
-    "aios.ai.enableNLPDebug": true,
-    "aios.ai.enablePredictiveAnalysis": true,
-    "aios.ai.enableAutomation": true,
-    "aios.ui.enableHybridMode": true,
-    "aios.ui.enableHolographicUI": true,
-    "aios.ui.enableFractalComponents": true,
-    "aios.performance.enableProfiling": true,
-    "aios.performance.enableMemoryMonitoring": true,
-    "aios.performance.enablePerformanceCounters": true,
-    "aios.security.enableSandbox": true,
-    "aios.security.enableAuditLog": true,
-    "aios.security.enableSecurityScanning": true,
-    // Extension Settings
+
+    // CMake Configuration (folder-specific)
     "cmake.configureOnOpen": false,
     "cmake.configureOnEdit": false,
     "cmake.buildDirectory": "${workspaceFolder}/core/build",
@@ -262,30 +178,13 @@
         "type": "cppvsdbg",
         "request": "launch"
     },
+
+    // Extension Settings (folder-specific)
     "dotnetAcquisition.enableTelemetry": false,
     "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
-    "dotnet.inlayHints.enableInlayHintsForParameters": true,
-    "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
-    "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
-    "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
-    "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
-    "dotnet.inlayHints.enableInlayHintsForTypes": true,
-    "dotnet.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
-    "dotnet.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
-    "dotnet.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
     "dotnet.server.useOmnisharp": false,
-    // Unified root solution (2025-08-17 harmonization): point to canonical root AIOS.sln
-    "dotnet.defaultSolution": "${workspaceFolder}/AIOS.sln",
-    "github.copilot.chat.defaultSystemMessage": "Apply Debug-First Principle. Check existing docs before creating new files.",
-    "github.copilot.chat.includeFiles": [
-        "docs/ai-context/AI_QUICK_REFERENCE.md",
-        "AIOS_PROJECT_CONTEXT.md",
-        "governance/hook_policy.json"
-    ],
-    "github.copilot.chat.systemMessageMaxTokens": 4096,
-    "omnisharp.defaultLaunchSolution": "AIOS.sln",
-    "cmake.sourceDirectory": "C:/dev/AIOS/core",
-    // Copilot Chat UI controls (hide Files changed block and related edit context)
+
+    // Copilot Chat UI controls (folder-specific)
     "chat.checkpoints.showFileChanges": false,
     "github.copilot.chat.edits.temporalContext.enabled": false,
     "github.copilot.nextEditSuggestions.enabled": true,
