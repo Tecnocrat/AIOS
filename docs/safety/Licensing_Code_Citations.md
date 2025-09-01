@@ -61,3 +61,17 @@ Command Prompt": {
             "args": [],
             "icon": "terminal-cmd
 ```
+
+## License: MIT
+https://github.com/microsoft/WPF-Samples/blob/9ee15d5aceb12975759d994518eee2de58e68b27/Sample%20Applications/Win11ThemeGallery/Win11ThemeGallery.csproj
+
+```
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true
+```
