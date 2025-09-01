@@ -48,3 +48,16 @@ https://github.com/perkJ3112332220/fitness/blob/dddf7c1105b6f57f9343e5a40f61f222
 
             var slope = (n * sumXY - sumX * sumY) / (n * sumXX -
 ```
+
+## License: MIT
+https://github.com/ousttrue/dotfiles/blob/a9645f9eefa4a041fc236cc2f452435abecedc35/docs/wt.md
+
+```
+Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd
+```
