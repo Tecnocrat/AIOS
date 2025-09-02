@@ -1,5 +1,5 @@
 {
-  "timestamp": 1755401334.5990703,
+  "timestamp": 1756817165.3373747,
   "results": [
     {
       "kind": "simple",
@@ -12,7 +12,7 @@
       "emergence_probability": 0.7586757088241807,
       "fractal_dimension": 1.06088,
       "symmetry_score": 0.8721899390220642,
-      "processing_duration_sec": 2.806868,
+      "processing_duration_sec": 1.440546,
       "error": null
     },
     {
@@ -26,7 +26,7 @@
       "emergence_probability": 0.8735243836652755,
       "fractal_dimension": 1.08662,
       "symmetry_score": 0.9251934885978699,
-      "processing_duration_sec": 0.089948,
+      "processing_duration_sec": 0.03562,
       "error": null
     },
     {
@@ -40,7 +40,7 @@
       "emergence_probability": 0.5991031766749382,
       "fractal_dimension": 1.01296,
       "symmetry_score": 0.5605497360229492,
-      "processing_duration_sec": 0.060148,
+      "processing_duration_sec": 0.035474,
       "error": null
     },
     {
@@ -68,7 +68,7 @@
       "emergence_probability": null,
       "fractal_dimension": null,
       "symmetry_score": null,
-      "processing_duration_sec": 2.990029,
+      "processing_duration_sec": 1.512882,
       "error": null
     },
     {
@@ -82,13 +82,13 @@
       "emergence_probability": null,
       "fractal_dimension": null,
       "symmetry_score": null,
-      "processing_duration_sec": 2.806868,
+      "processing_duration_sec": 1.440546,
       "error": null
     }
   ],
   "count": 6,
   "source": "opencv_integration_demo",
-  "vision_cold_start_sec": 2.806868,
-  "vision_steady_state_sec": 0.075048,
-  "vision_first_frame_sec": 2.806868
+  "vision_cold_start_sec": 1.440546,
+  "vision_steady_state_sec": 0.035547,
+  "vision_first_frame_sec": 1.440546
 }

@@ -138,3 +138,139 @@
 2025-08-17 05:28:54,520 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.089s, Features: 1005, Coherence: 0.769
 2025-08-17 05:28:54,583 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.060s, Features: 99, Coherence: 0.698
 2025-08-17 05:28:54,599 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:44:39,955 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:44:39,955 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:44:39,955 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:44:39,964 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:44:39,964 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:44:39,964 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:44:45,008 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\simple_consciousness.png, Time: 5.044s, Features: 453, Coherence: 0.794
+2025-09-02 14:44:45,064 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.051s, Features: 1005, Coherence: 0.769
+2025-09-02 14:44:45,110 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.045s, Features: 99, Coherence: 0.698
+2025-09-02 14:44:45,113 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:06,563 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:06,564 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:06,564 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:06,568 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:06,569 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:06,569 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:09,694 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\simple_consciousness.png, Time: 3.125s, Features: 453, Coherence: 0.794
+2025-09-02 14:45:09,735 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.033s, Features: 1005, Coherence: 0.769
+2025-09-02 14:45:09,768 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.033s, Features: 99, Coherence: 0.698
+2025-09-02 14:45:09,768 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:10,629 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:10,629 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:10,629 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:10,629 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:10,629 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:10,629 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:12,205 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\simple_consciousness.png, Time: 1.576s, Features: 453, Coherence: 0.794
+2025-09-02 14:45:12,244 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.036s, Features: 1005, Coherence: 0.769
+2025-09-02 14:45:12,282 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.037s, Features: 99, Coherence: 0.698
+2025-09-02 14:45:12,283 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:30,886 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:30,886 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:30,886 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:30,886 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:30,886 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:30,886 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:30,889 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:30,894 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:30,896 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:30,896 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:30,896 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:30,896 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:30,896 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:30,898 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:30,904 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:30,906 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:30,906 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:30,906 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:30,906 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:30,908 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:30,933 - [VISION] - INFO - Image processed: C:\Users\jesus\AppData\Local\Temp\tmpzcz0s_r6\service_test.png, Time: 0.025s, Features: 23, Coherence: 0.772
+2025-09-02 14:45:30,933 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:30,939 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:30,941 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:30,941 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:30,943 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:30,943 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:30,945 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:30,945 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:30,953 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:30,955 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:30,955 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:30,957 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:30,957 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:30,957 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:30,959 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:30,965 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:30,967 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:31,358 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:31,358 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:31,358 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:31,358 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:31,361 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:31,361 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:31,948 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\simple_consciousness.png, Time: 0.587s, Features: 453, Coherence: 0.794
+2025-09-02 14:45:31,986 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.034s, Features: 1005, Coherence: 0.769
+2025-09-02 14:45:32,017 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.029s, Features: 99, Coherence: 0.698
+2025-09-02 14:45:32,017 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:45,442 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:45,443 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:45,443 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:45,444 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:45,445 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:45,445 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:46,735 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\simple_consciousness.png, Time: 1.291s, Features: 453, Coherence: 0.794
+2025-09-02 14:45:46,766 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.030s, Features: 1005, Coherence: 0.769
+2025-09-02 14:45:46,798 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.033s, Features: 99, Coherence: 0.698
+2025-09-02 14:45:46,798 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:47,095 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:47,095 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:47,095 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:47,095 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:47,095 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:47,103 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:47,103 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:47,109 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:47,111 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:47,111 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:47,111 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:47,111 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:47,114 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:47,114 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:47,119 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:47,119 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:47,119 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:47,119 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:47,119 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:47,125 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:47,135 - [VISION] - INFO - Image processed: C:\Users\jesus\AppData\Local\Temp\tmpmdsp4o4y\service_test.png, Time: 0.009s, Features: 23, Coherence: 0.772
+2025-09-02 14:45:47,136 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:47,145 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:47,145 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:47,145 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:47,149 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:47,149 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:47,149 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:47,151 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:47,158 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:47,159 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:45:47,159 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:45:47,161 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:45:47,162 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:45:47,162 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:45:47,162 - [VISION] - INFO - OpenCV Vision Module shutting down
+2025-09-02 14:45:47,162 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:45:47,169 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:46:03,824 - [VISION] - INFO - OpenCV Vision Module created
+2025-09-02 14:46:03,824 - [VISION] - INFO - Initializing OpenCV Vision Module...
+2025-09-02 14:46:03,824 - [VISION] - INFO - OpenCV version: 4.12.0
+2025-09-02 14:46:03,824 - [VISION] - INFO - Feature detectors initialized
+2025-09-02 14:46:03,824 - [VISION] - INFO - Quantum coherence established for vision processing
+2025-09-02 14:46:03,824 - [VISION] - INFO - OpenCV Vision Module initialized successfully
+2025-09-02 14:46:05,265 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\simple_consciousness.png, Time: 1.441s, Features: 453, Coherence: 0.794
+2025-09-02 14:46:05,299 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\mandala_consciousness.png, Time: 0.033s, Features: 1005, Coherence: 0.769
+2025-09-02 14:46:05,337 - [VISION] - INFO - Image processed: C:\dev\AIOS\runtime_intelligence\logs\vision_demo\fractal_consciousness.png, Time: 0.035s, Features: 99, Coherence: 0.698
+2025-09-02 14:46:05,337 - [VISION] - INFO - OpenCV Vision Module shutting down
