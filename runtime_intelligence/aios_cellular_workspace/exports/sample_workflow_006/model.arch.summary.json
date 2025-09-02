@@ -1,0 +1,10 @@
+{
+  "class_name": "Sequential",
+  "layers": [
+    "dense",
+    "dropout",
+    "dense_1",
+    "dropout_1",
+    "dense_2"
+  ]
+}

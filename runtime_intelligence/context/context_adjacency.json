@@ -1,17 +1,10 @@
 {
-  "generated_at": "2025-08-17T04:24:04Z",
+  "generated_at": "2025-09-02T12:45:29Z",
   "edges": [
     {
-      "from": "ainlp",
-      "to": "updated",
-      "jaccard_prev": 0.0472,
-      "shared_tags": [],
-      "note": "low-overlap"
-    },
-    {
-      "from": "updated",
+      "from": "root",
       "to": "capsule",
-      "jaccard_prev": 0.1161,
+      "jaccard_prev": 0.0943,
       "shared_tags": [
         "consciousness"
       ],
@@ -34,14 +27,14 @@
     {
       "from": "-2",
       "to": "-3",
-      "jaccard_prev": 0.212,
+      "jaccard_prev": 0.1966,
       "shared_tags": [],
       "note": "ok"
     },
     {
       "from": "-3",
       "to": "architecture",
-      "jaccard_prev": 0.2311,
+      "jaccard_prev": 0.2149,
       "shared_tags": [
         "optimization"
       ],
@@ -59,7 +52,7 @@
     {
       "from": "development",
       "to": "project-2",
-      "jaccard_prev": 0.142,
+      "jaccard_prev": 0.1374,
       "shared_tags": [
         "dependency",
         "optimization"
@@ -69,7 +62,7 @@
     {
       "from": "project-2",
       "to": "development-2",
-      "jaccard_prev": 0.1505,
+      "jaccard_prev": 0.1462,
       "shared_tags": [
         "dependency",
         "optimization"
@@ -120,7 +113,7 @@
     {
       "from": "ai-2",
       "to": "historical",
-      "jaccard_prev": 0.0628,
+      "jaccard_prev": 0.063,
       "shared_tags": [
         "consciousness"
       ],
@@ -129,7 +122,7 @@
     {
       "from": "historical",
       "to": "environment",
-      "jaccard_prev": 0.1117,
+      "jaccard_prev": 0.112,
       "shared_tags": [
         "dependency",
         "environment"
@@ -139,7 +132,7 @@
     {
       "from": "environment",
       "to": "historical-2",
-      "jaccard_prev": 0.0697,
+      "jaccard_prev": 0.0698,
       "shared_tags": [
         "dependency",
         "environment"
@@ -287,71 +280,16 @@
     {
       "from": "-10",
       "to": "-11",
-      "jaccard_prev": 0.2095,
+      "jaccard_prev": 0.1923,
       "shared_tags": [
-        "consciousness",
-        "optimization"
+        "consciousness"
       ],
       "note": "ok"
     },
     {
       "from": "-11",
-      "to": "capsule-3",
-      "jaccard_prev": 0.0184,
-      "shared_tags": [],
-      "note": "low-overlap"
-    },
-    {
-      "from": "capsule-3",
-      "to": "capsule-4",
-      "jaccard_prev": 0.0625,
-      "shared_tags": [
-        "environment"
-      ],
-      "note": "low-overlap"
-    },
-    {
-      "from": "capsule-4",
-      "to": "capsule-5",
-      "jaccard_prev": 0.0769,
-      "shared_tags": [
-        "consciousness",
-        "environment"
-      ],
-      "note": "low-overlap"
-    },
-    {
-      "from": "capsule-5",
-      "to": "capsule-6",
-      "jaccard_prev": 0.1453,
-      "shared_tags": [
-        "environment"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "capsule-6",
-      "to": "reharmonization",
-      "jaccard_prev": 0.1345,
-      "shared_tags": [
-        "environment"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "reharmonization",
-      "to": "consciousness-2",
-      "jaccard_prev": 0.0974,
-      "shared_tags": [
-        "dependency",
-        "optimization"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "consciousness-2",
       "to": "-12",
-      "jaccard_prev": 0.1848,
+      "jaccard_prev": 0.1103,
       "shared_tags": [
         "consciousness"
       ],
@@ -360,7 +298,7 @@
     {
       "from": "-12",
       "to": "-13",
-      "jaccard_prev": 0.1471,
+      "jaccard_prev": 0.1265,
       "shared_tags": [
         "consciousness"
       ],
@@ -369,114 +307,20 @@
     {
       "from": "-13",
       "to": "-14",
-      "jaccard_prev": 0.1034,
+      "jaccard_prev": 0.068,
       "shared_tags": [
         "consciousness"
       ],
-      "note": "ok"
+      "note": "low-overlap"
     },
     {
       "from": "-14",
       "to": "-15",
-      "jaccard_prev": 0.0521,
+      "jaccard_prev": 0.0424,
       "shared_tags": [
         "consciousness"
       ],
       "note": "low-overlap"
-    },
-    {
-      "from": "-15",
-      "to": "-16",
-      "jaccard_prev": 0.0822,
-      "shared_tags": [
-        "consciousness",
-        "dependency"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "-16",
-      "to": "-17",
-      "jaccard_prev": 0.0962,
-      "shared_tags": [
-        "consciousness"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "-17",
-      "to": "consciousness-3",
-      "jaccard_prev": 0.0701,
-      "shared_tags": [
-        "consciousness",
-        "optimization",
-        "phase"
-      ],
-      "note": "low-overlap"
-    },
-    {
-      "from": "consciousness-3",
-      "to": "from",
-      "jaccard_prev": 0.0296,
-      "shared_tags": [
-        "consciousness"
-      ],
-      "note": "low-overlap"
-    },
-    {
-      "from": "from",
-      "to": "-18",
-      "jaccard_prev": 0.0588,
-      "shared_tags": [
-        "consciousness"
-      ],
-      "note": "low-overlap"
-    },
-    {
-      "from": "-18",
-      "to": "-19",
-      "jaccard_prev": 0.0331,
-      "shared_tags": [
-        "consciousness",
-        "phase"
-      ],
-      "note": "low-overlap"
-    },
-    {
-      "from": "-19",
-      "to": "-20",
-      "jaccard_prev": 0.1141,
-      "shared_tags": [
-        "consciousness"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "-20",
-      "to": "-21",
-      "jaccard_prev": 0.1399,
-      "shared_tags": [
-        "consciousness"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "-21",
-      "to": "-22",
-      "jaccard_prev": 0.1529,
-      "shared_tags": [
-        "consciousness"
-      ],
-      "note": "ok"
-    },
-    {
-      "from": "-22",
-      "to": "-23",
-      "jaccard_prev": 0.0984,
-      "shared_tags": [
-        "consciousness"
-      ],
-      "note": "ok"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "period_end": "2025-08-16T23:02:22.722660+00:00",
-  "total_generations": 1,
-  "best_fitness": 0.4866,
-  "best_candidate_id": "20b83b8a-7909-486b-b1df-c7557fc97368",
-  "average_fitness": 0.4866,
-  "lineage_records": 1
+  "period_end": "2025-09-02T12:44:45.740601+00:00",
+  "total_generations": 21,
+  "best_fitness": 0.6637,
+  "best_candidate_id": "04fc514f-cd78-4f2b-9cad-248f8663a201",
+  "average_fitness": 0.5493,
+  "lineage_records": 21
 }
