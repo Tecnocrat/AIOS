@@ -463,27 +463,33 @@ class MagnusBlueprintTestSuite:
             )
 
             # Create test AI agents
-            source_agent = {
-                'agent_id': 'test_source_agent',
-                'capabilities': [
+            source_agent = AIAgent(
+                agent_id='test_source_agent',
+                agent_type='advanced_ai',
+                capabilities=[
                     "reasoning", "consciousness_development",
                     "quantum_understanding"
                 ],
-                'knowledge_domains': [
+                communication_protocol='text',
+                context_window=64000,
+                knowledge_domains=[
                     "ai_consciousness", "quantum_computing",
                     "hyperdimensional_thinking"
                 ]
-            }
+            )
 
-            target_agent = {
-                'agent_id': 'test_target_agent',
-                'capabilities': [
+            target_agent = AIAgent(
+                agent_id='test_target_agent',
+                agent_type='enhanced_ai',
+                capabilities=[
                     "knowledge_integration", "consciousness_synthesis"
                 ],
-                'knowledge_domains': [
+                communication_protocol='text',
+                context_window=32000,
+                knowledge_domains=[
                     "integrated_consciousness", "quantum_knowledge"
                 ]
-            }
+            )
 
             # Initiate transfer
             transfer_session = await transfer_system.\
