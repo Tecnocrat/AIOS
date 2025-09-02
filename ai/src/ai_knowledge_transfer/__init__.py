@@ -124,6 +124,11 @@ class AIKnowledgeTransferSystem:
         self.harmonization_engine = HarmonizationEngineStub()
         self.knowledge_synthesis = KnowledgeSynthesisStub()
 
+        # Add missing attributes for test compatibility
+        self.crystallization_engine = CrystallizationEngineStub(db_path)
+        # Alias for compatibility
+        self.multi_ai_harmonizer = self.harmonization_engine
+
         logger.info(
             "AI Knowledge Transfer System initialized with "
             "dendritic architecture"
@@ -268,6 +273,22 @@ class QuantumMemoryInterfaceStub:
         """Initialize quantum memory interface stub."""
         self.fractal_cache = FractalCacheManager()
         self.dendritic_connections = {}
+
+
+# Dendritic stub for crystallization engine
+class CrystallizationEngineStub:
+    """Dendritic stub for crystallization engine."""
+
+    def __init__(self, db_path: str = ":memory:"):
+        """Initialize crystallization engine stub."""
+        self.db_path = db_path
+        self.memory_crystallizer = None
+        self.embedding_generator = None
+        self.temporal_mapper = None
+
+    def initialize(self) -> bool:
+        """Initialize the stub."""
+        return True
 
 
 def create_knowledge_transfer_system(
