@@ -496,7 +496,8 @@ class TestAIOSIntegration(unittest.TestCase):
 def run_performance_benchmark():
     """Run performance benchmark for OpenCV operations."""
     if OpenCVVisionModule is None:
-        print("\n⚠️ Skipping performance benchmark - OpenCV vision module not available")
+        print("\n⚠️ Skipping performance benchmark -"
+              " OpenCV vision module not available")
         return
 
     print("\n⚡ Running performance benchmark...")

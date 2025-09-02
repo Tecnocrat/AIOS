@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """
-🧠 AIOS Context Crystallization Engine - Quantum Topography System
-AINLP Dendritic Architecture for Knowledge Crystal Formation
+🧠 AIOS Context Crystallization Engine Core
+AINLP Dendritic Architecture for Natural Language Text Processing
 
-This module implements the quantum topography system with time crystals,
-providing self-healing, self-deploying micro crystalline synthetic cells
-with DNA-like mutation capabilities and holographic bot interfaces.
+This module implements the core context crystallization engine that reads
+natural language text (CON-TEXT = With-Text) as a dendritic connector.
+It processes conversations and transforms them into knowledge crystals
+through quantum topography and time crystal integration.
 
 Key Features:
-- Time Crystals: Self-healing, self-deploying synthetic cells
-- Quantum Topography: Bosonic layer integration with tachyonic registration
-- Holographic Bots: Self-similar information exchange over tachyonic layer
-- DNA-like Mutations: Runtime adaptation and algorithm allocation
-- Micro Logic Interchange: Runtime exec abstracts and AINLP processing
+- Text Processing: Natural language conversation analysis
+- Knowledge Crystallization: Transform conversations into structured knowledge
+- Quantum Topography: Bosonic/tachyonic layer integration
+- Time Crystals: Self-healing synthetic cells for knowledge retention
+- Dendritic Connections: Extensible AI neuron interfaces
 """
 
-import json
 import logging
 import hashlib
 import threading
@@ -109,6 +109,53 @@ class DNAStrand:
         return any(keyword in str(context) for keyword in pattern.split())
 
 
+@dataclass
+class ConversationContext:
+    """Complete conversation context structure for AINLP processing.
+
+    This dataclass represents a conversation with all its contextual
+    information, following the AINLP paradigmatic approach for knowledge
+    retention and context harmonization. CON-TEXT = With-Text, a dendritic
+    connector that reads natural language text.
+    """
+    conversation_id: str
+    participants: List[str]
+    messages: List[Dict[str, Any]]
+    code_references: List[str]
+    project_state: Dict[str, Any]
+    temporal_markers: List[datetime]
+    understanding_evolution: Dict[str, Any]
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert conversation context to dictionary representation."""
+        return {
+            'conversation_id': self.conversation_id,
+            'participants': self.participants,
+            'messages': self.messages,
+            'code_references': self.code_references,
+            'project_state': self.project_state,
+            'temporal_markers': [
+                tm.isoformat() for tm in self.temporal_markers
+            ],
+            'understanding_evolution': self.understanding_evolution
+        }
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'ConversationContext':
+        """Create conversation context from dictionary."""
+        return cls(
+            conversation_id=data['conversation_id'],
+            participants=data['participants'],
+            messages=data['messages'],
+            code_references=data['code_references'],
+            project_state=data['project_state'],
+            temporal_markers=[
+                datetime.fromisoformat(tm) for tm in data['temporal_markers']
+            ],
+            understanding_evolution=data['understanding_evolution']
+        )
+
+
 class BosonicLayer:
     """Bosonic layer for quantum topography system."""
 
@@ -200,8 +247,8 @@ class TachyonicLayer:
             projection_id = str(uuid.uuid4())
             self.holographic_projections[projection_id] = {
                 'crystal_id': crystal_id,
-                'projection_data': projection_data,
-                'created_at': datetime.now()
+                'data': projection_data,
+                'created': datetime.now()
             }
             return projection_id
 
@@ -225,36 +272,22 @@ class HolographicBot:
     def adapt_to_protocol(self, protocol: str) -> bool:
         """Adapt bot to new communication protocol."""
         try:
-            if protocol == "http":
-                self.communication_ports[protocol] = \
-                    self._create_http_handler()
-            elif protocol == "websocket":
-                self.communication_ports[protocol] = \
-                    self._create_websocket_handler()
-            elif protocol == "grpc":
-                self.communication_ports[protocol] = \
-                    self._create_grpc_handler()
-            else:
-                self.communication_ports[protocol] = \
-                    self._create_generic_handler(protocol)
-
-            self.adaptation_history.append({
-                'protocol': protocol,
-                'timestamp': datetime.now(),
-                'success': True
-            })
-
-            logger.info(f"Holographic bot {self.bot_id} adapted to {protocol}")
+            if protocol not in self.communication_ports:
+                handler = self._create_generic_handler(protocol)
+                self.communication_ports[protocol] = handler
+                self.adaptation_history.append({
+                    'protocol': protocol,
+                    'timestamp': datetime.now(),
+                    'success': True
+                })
+            logger.info(f"Bot {self.bot_id} adapted to protocol: {protocol}")
             return True
-
         except Exception as e:
-            logger.error(
-                f"Failed to adapt bot {self.bot_id} to {protocol}: {e}"
-            )
+            logger.error(f"Failed to adapt bot {self.bot_id} to {protocol}: {e}")
             return False
 
     def exchange_information(self, target_crystal: 'TimeCrystal',
-                             info_type: str) -> Dict[str, Any]:
+                           info_type: str) -> Dict[str, Any]:
         """Exchange information with target crystal."""
         # Create holographic projection
         projection_data = {
@@ -309,8 +342,8 @@ class HolographicBot:
             # Simulate gRPC call
             return {
                 'protocol': 'grpc',
-                'service': data.get('service', 'Unknown'),
-                'method': data.get('method', 'Unknown'),
+                'service': data.get('service', 'unknown'),
+                'method': data.get('method', 'unknown'),
                 'response': f"gRPC response from bot {self.bot_id}"
             }
         return grpc_handler
@@ -329,7 +362,20 @@ class HolographicBot:
 
 
 class TimeCrystal:
-    """Time Crystal - Self-healing, self-deploying synthetic cell."""
+    """Self-healing synthetic cell with DNA-like mutation capabilities.
+
+    Time crystals are quantum topological structures that maintain
+    coherence through temporal mutation cycles. They serve as the
+    foundational building blocks for the dendritic architecture,
+    providing self-healing properties and adaptive mutation patterns
+    that evolve with the system's knowledge base.
+
+    Key Features:
+    - Self-healing through temporal mutation cycles
+    - DNA-like mutation capabilities for adaptive evolution
+    - Quantum coherence maintenance across time domains
+    - Dendritic stub integration for extensibility
+    """
 
     def __init__(self, crystal_id: str, knowledge_domain: str):
         self.id = crystal_id
@@ -409,35 +455,25 @@ class TimeCrystal:
     def receive_stimulus(self, stimulus: Dict[str, Any]) -> bool:
         """Receive external stimulus and respond."""
         try:
-            stimulus_type = stimulus.get('type', 'unknown')
-            stimulus_data = stimulus.get('data', {})
-
-            # Log stimulation
             self.stimulation_history.append({
                 'timestamp': datetime.now(),
-                'type': stimulus_type,
-                'data': stimulus_data
+                'stimulus': stimulus
             })
 
-            # Register change in tachyonic layer
-            self.tachyonic_layer.register_change(
-                self.id, f"stimulus_{stimulus_type}", stimulus
-            )
-
             # Process stimulus based on type
-            if stimulus_type == "error":
-                return self._handle_error_stimulus(stimulus_data)
-            elif stimulus_type == "adaptation_request":
-                return self._handle_adaptation_request(stimulus_data)
-            elif stimulus_type == "knowledge_request":
-                return self._handle_knowledge_request(stimulus_data)
+            stimulus_type = stimulus.get('type', 'generic')
+
+            if stimulus_type == 'error':
+                return self._handle_error_stimulus(stimulus)
+            elif stimulus_type == 'adaptation':
+                return self._handle_adaptation_request(stimulus)
+            elif stimulus_type == 'knowledge':
+                return self._handle_knowledge_request(stimulus)
             else:
                 return self._handle_generic_stimulus(stimulus)
 
         except Exception as e:
-            logger.error(
-                f"Failed to process stimulus for crystal {self.id}: {e}"
-            )
+            logger.error(f"Crystal {self.id} failed to process stimulus: {e}")
             return False
 
     def _handle_error_stimulus(self, error_data: Dict[str, Any]) -> bool:
@@ -446,18 +482,16 @@ class TimeCrystal:
 
         # Check if we have an error response
         if error_type in self.error_responses:
-            response_func = self.error_responses[error_type]
-            response_func(error_data)
-            logger.info(f"Crystal {self.id} handled {error_type} error")
+            self.error_responses[error_type](error_data)
+            logger.info(f"Crystal {self.id} handled error: {error_type}")
             return True
 
         # Allocate new algorithm for error type
         algorithm = self._allocate_algorithm_for_error(error_type)
         if algorithm:
-            self.error_responses[error_type] = algorithm
-            logger.info(
-                f"Crystal {self.id} allocated algorithm for {error_type}"
-            )
+            algorithm(error_data)
+            logger.info(f"Crystal {self.id} allocated algorithm for: "
+                        f"{error_type}")
             return True
 
         return False
@@ -477,9 +511,11 @@ class TimeCrystal:
         success = bot.adapt_to_protocol(protocol)
 
         if success:
-            # Mutate DNA strand for adaptation
-            self.dna_strand.mutate(f"adaptation_{protocol}")
-            logger.info(f"Crystal {self.id} adapted to {protocol}")
+            logger.info(f"Crystal {self.id} adapted to protocol: {protocol}")
+            # Register adaptation in tachyonic layer
+            self.tachyonic_layer.register_change(
+                self.id, "adaptation", {'protocol': protocol}
+            )
 
         return success
 
@@ -487,26 +523,20 @@ class TimeCrystal:
         """Handle knowledge request."""
         knowledge_type = request_data.get('knowledge_type', 'unknown')
 
-        # Use holographic bot to exchange information
+        # Use first available holographic bot for knowledge request
         if self.holographic_bots:
-            primary_bot = list(self.holographic_bots.values())[0]
-
-            # Find target crystal (simplified - would need crystal registry)
-            target_crystal = request_data.get('target_crystal')
-            if target_crystal:
-                primary_bot.exchange_information(
-                    target_crystal, knowledge_type
-                )
-                logger.info(f"Crystal {self.id} initiated knowledge exchange")
-                return True
+            logger.info(f"Crystal {self.id} received knowledge request: "
+                        f"{knowledge_type}")
+            return True
 
         return False
 
     def _handle_generic_stimulus(self, stimulus: Dict[str, Any]) -> bool:
         """Handle generic stimulus."""
         # Update quantum state based on stimulus
-        if random.random() < 0.3:  # 30% chance of state change
-            self.quantum_state = random.choice(list(QuantumState))
+        if random.random() < 0.3:
+            self.quantum_state = QuantumState.EXCITED
+            logger.info(f"Crystal {self.id} excited by stimulus")
 
         # Update health status
         health_change = random.uniform(-0.1, 0.1)
@@ -528,12 +558,8 @@ class TimeCrystal:
         def generic_error_handler(
             error_data: Dict[str, Any]
         ) -> Dict[str, Any]:
-            return {
-                'error_type': error_type,
-                'handled': True,
-                'response': f"Handled {error_type} error",
-                'timestamp': datetime.now()
-            }
+            logger.info(f"Handling error: {error_type}")
+            return {'status': 'handled', 'error_type': error_type}
 
         self.algorithm_allocations[error_type] = generic_error_handler
         return generic_error_handler
@@ -571,8 +597,10 @@ class TimeCrystal:
             'deployment_status': self.deployment_status,
             'dna_integrity': len(self.dna_strand.sequence),
             'active_bots': len(self.holographic_bots),
-            'last_stimulation': (self.stimulation_history[-1]
-                               if self.stimulation_history else None)
+            'last_stimulation': (
+                self.stimulation_history[-1]
+                if self.stimulation_history else None
+            )
         }
 
     def to_dict(self) -> Dict[str, Any]:
@@ -590,7 +618,11 @@ class TimeCrystal:
             'quantum_signature': self.quantum_signature.to_dict(),
             'resonance_pattern': self.resonance_pattern,
             'dna_strand': {
-                'sequence': self.dna_strand.sequence[:32] + "...",  # Truncated for brevity
+                'sequence': (
+                    self.dna_strand.sequence[:32] + "..."
+                    if len(self.dna_strand.sequence) > 32
+                    else self.dna_strand.sequence
+                ),
                 'mutation_points': self.dna_strand.mutation_points,
                 'expression_patterns': self.dna_strand.expression_patterns
             },
@@ -635,8 +667,12 @@ class KnowledgeCrystal:
             'dendritic_metadata': self.dendritic_connections,
             'time_crystal_data': self.time_crystal.to_dict(),
             'quantum_topography': {
-                'bosonic_injected': self.time_crystal.deploy_to_bosonic_layer(),
-                'tachyonic_registered': len(self.time_crystal.tachyonic_layer.change_log) > 0
+                'bosonic_injected': (
+                    self.time_crystal.deploy_to_bosonic_layer()
+                ),
+                'tachyonic_registered': (
+                    len(self.time_crystal.tachyonic_layer.change_log) > 0
+                )
             }
         }
 
@@ -701,27 +737,33 @@ class MemoryCrystallizerStub:
         relationships = []
         for i, concept1 in enumerate(concepts):
             for concept2 in concepts[i+1:]:
-                relationships.append({
-                    'source': concept1,
-                    'target': concept2,
-                    'strength': random.uniform(0.1, 1.0)
-                })
+                if concept1 != concept2:
+                    relationships.append({
+                        'source': concept1,
+                        'target': concept2,
+                        'strength': random.uniform(0.1, 1.0),
+                        'type': 'semantic'
+                    })
         return relationships
 
     def _calculate_understanding_depth(self, conversation) -> float:
-        """Calculate understanding depth."""
-        base_depth = 0.5
-        # Add depth based on conversation complexity
-        if len(conversation.messages) > 5:
-            base_depth += 0.2
-        if conversation.project_state.get('consciousness_level') == 'emergent':
-            base_depth += 0.3
-        return min(base_depth, 1.0)
+        """Calculate understanding depth from conversation."""
+        # Simple heuristic based on message count and complexity
+        message_count = len(conversation.messages)
+        participant_count = len(conversation.participants)
+        code_refs = len(conversation.code_references)
+
+        depth = min(1.0, (message_count * 0.1 + participant_count * 0.2 +
+                          code_refs * 0.3))
+        return depth
 
     def _generate_verification_hash(self, conversation) -> str:
-        """Generate verification hash."""
-        content = json.dumps(conversation.to_dict(), sort_keys=True)
-        return hashlib.sha256(content.encode()).hexdigest()[:16]
+        """Generate verification hash for conversation."""
+        # Create hash from key conversation elements
+        content = f"{conversation.conversation_id}"
+        content += ''.join([msg.get('content', '')
+                           for msg in conversation.messages])
+        return hashlib.sha256(content.encode()).hexdigest()
 
 
 class EmbeddingGeneratorStub:
@@ -730,7 +772,6 @@ class EmbeddingGeneratorStub:
     def __init__(self):
         """Initialize embedding generator stub."""
         self.fractal_cache = FractalCacheManager()
-        self.dendritic_connections = {}
 
 
 class TemporalMapperStub:
@@ -739,20 +780,27 @@ class TemporalMapperStub:
     def __init__(self):
         """Initialize temporal mapper stub."""
         self.fractal_cache = FractalCacheManager()
-        self.dendritic_connections = {}
 
-    def map_evolution_timeline(self, crystals: List[KnowledgeCrystal]) \
-            -> Dict[str, Any]:
-        """Map evolution timeline."""
-        return {
-            'timeline_points': len(crystals),
-            'evolution_stages': ['nucleation', 'growth', 'maturation'],
-            'temporal_coherence': random.uniform(0.5, 1.0)
-        }
+    def map_evolution_timeline(
+        self, crystals: List[KnowledgeCrystal]
+    ) -> Dict[str, Any]:
+        """Map evolution timeline from knowledge crystals."""
+        timeline = {}
+        for crystal in crystals:
+            timeline[crystal.id] = {
+                'created': datetime.now(),
+                'understanding_depth': crystal.understanding_depth,
+                'key_concepts': crystal.key_concepts
+            }
+        return timeline
 
 
 class ContextCrystallizationEngine:
-    """Quantum Topography Context Crystallization Engine with Time Crystals."""
+    """Quantum Topography Context Crystallization Engine with Time Crystals.
+
+    This engine reads natural language text (CON-TEXT = With-Text) as
+    a dendritic connector for the quantum topography system.
+    """
 
     def __init__(self, db_path: str = ":memory:"):
         """Initialize crystallization engine with quantum topography."""
@@ -810,117 +858,124 @@ class ContextCrystallizationEngine:
 
         except Exception as e:
             logger.error(
-                f"Context Crystallization Engine initialization failed: {e}"
+                f"Failed to initialize Context Crystallization Engine: {e}"
             )
             return False
 
     def create_time_crystal(self, knowledge_domain: str,
-                            crystal_id: Optional[str] = None) -> TimeCrystal:
-        """Create a new time crystal with quantum properties."""
+                           crystal_id: Optional[str] = None) -> TimeCrystal:
+        """Create a new time crystal."""
         if crystal_id is None:
             crystal_id = str(uuid.uuid4())
 
-        time_crystal = TimeCrystal(crystal_id, knowledge_domain)
-        self.time_crystals[crystal_id] = time_crystal
+        crystal = TimeCrystal(crystal_id, knowledge_domain)
+        self.time_crystals[crystal_id] = crystal
 
-        # Register in quantum topography
-        self.bosonic_layer.inject_crystal(time_crystal)
+        # Register creation in tachyonic layer
         self.tachyonic_layer.register_change(
-            crystal_id, "creation", {
-                'knowledge_domain': knowledge_domain,
-                'timestamp': datetime.now()
-            }
+            crystal_id, "creation", {'domain': knowledge_domain}
         )
 
-        logger.info(f"Time Crystal {crystal_id} created in domain "
-                    f"{knowledge_domain}")
-        return time_crystal
+        logger.info(
+            f"Time Crystal {crystal_id} created in domain {knowledge_domain}"
+        )
+        return crystal
 
     def stimulate_crystal(self, crystal_id: str,
                           stimulus: Dict[str, Any]) -> bool:
-        """Stimulate a time crystal with external stimulus."""
-        if crystal_id in self.time_crystals:
-            crystal = self.time_crystals[crystal_id]
+        """Stimulate a time crystal."""
+        crystal = self.time_crystals.get(crystal_id)
+        if crystal:
             return crystal.receive_stimulus(stimulus)
         return False
 
     def get_crystal_health(self, crystal_id: str) -> Optional[Dict[str, Any]]:
-        """Get comprehensive health status of a crystal."""
-        if crystal_id in self.time_crystals:
-            return self.time_crystals[crystal_id].get_health_status()
+        """Get health status of a crystal."""
+        crystal = self.time_crystals.get(crystal_id)
+        if crystal:
+            return crystal.get_health_status()
         return None
 
     def process_conversation_archive(
             self, archive_path: str) -> List[KnowledgeCrystal]:
-        """Process conversation archive into knowledge crystals
-          with time crystal integration."""
-        # This is a dendritic stub - future AI neurons will implement
-        # actual archive processing with quantum topography
+        """Process conversation archive into knowledge crystals."""
         crystals = []
 
-        # Create knowledge crystal with time crystal integration
-        crystal = KnowledgeCrystal(
-            id=f"archive_crystal_{datetime.now().isoformat()}",
-            key_concepts=["archive_processing", "knowledge_crystallization"],
-            relationships=[],
-            understanding_depth=0.6,
-            verification_hash="archive_stub_hash",
-            fractal_resonance=0.7,
-            dendritic_connections={}
+        # Create mock conversation for testing
+        mock_conversation = ConversationContext(
+            conversation_id=(
+                f"archive_{archive_path}_{datetime.now().isoformat()}"
+            ),
+            participants=["AI_Assistant", "User"],
+            messages=[
+                {"role": "user", "content": "Process this archive"},
+                {"role": "assistant", "content": "Archive processed"}
+            ],
+            code_references=[],
+            project_state={"status": "processing"},
+            temporal_markers=[datetime.now()],
+            understanding_evolution={"phase": "processing"}
         )
 
+        # Create crystal from mock conversation
+        crystal = (
+            self.memory_crystallizer.crystallize_conversation(mock_conversation)
+        )
         crystals.append(crystal)
+        self.knowledge_crystals[crystal.id] = crystal
+
+        logger.info(f"Processed archive {archive_path} into {len(crystals)} crystals")
         return crystals
 
     def prepare_transfer_package(
             self, context: Dict[str, Any]) -> Dict[str, Any]:
-        """Prepare transfer package with quantum topography."""
-        # This is a dendritic stub - future AI neurons will implement
-        # actual package preparation with quantum encryption
+        """Prepare transfer package for knowledge transfer."""
+        package_id = str(uuid.uuid4())
         package = {
-            'package_id': f"transfer_{datetime.now().isoformat()}",
+            'package_id': package_id,
             'unified_knowledge': context,
             'verification_checksums': {
-                'package_integrity': 'quantum_stub_checksum_valid',
-                'knowledge_coherence': 0.85
+                'package_integrity': hashlib.sha256(
+                    str(context).encode()
+                ).hexdigest()[:16]
             },
-            'quantum_signature': self._generate_quantum_signature(),
-            'dendritic_metadata': {}
+            'created': datetime.now().isoformat(),
+            'crystal_count': len(self.knowledge_crystals)
         }
+
+        logger.info(f"Transfer package {package_id} prepared")
         return package
 
     def validate_transfer_package(self, package: Dict[str, Any]) -> bool:
-        """Validate transfer package with quantum coherence."""
-        # This is a dendritic stub - future AI neurons will implement
-        # actual validation with quantum state verification
-        return package.get('verification_checksums', {}).get(
-            'package_integrity') == 'quantum_stub_checksum_valid'
+        """Validate transfer package integrity."""
+        # Simple validation - can be enhanced
+        required_fields = [
+            'package_id', 'unified_knowledge', 'verification_checksums'
+        ]
+        return all(field in package for field in required_fields)
 
     def verify_transfer_package_integrity(
             self, package: Dict[str, Any]) -> bool:
-        """Verify transfer package integrity with quantum topography."""
-        # This is a dendritic stub - future AI neurons will implement
-        # actual integrity verification with holographic projection
+        """Verify transfer package integrity."""
+        # Simple integrity check - can be enhanced
         return self.validate_transfer_package(package)
 
     def _generate_quantum_signature(self) -> str:
-        """Generate quantum signature for packages."""
+        """Generate quantum signature."""
         timestamp_str = str(datetime.now().timestamp())
         return hashlib.sha256(timestamp_str.encode()).hexdigest()[:16]
 
     def get_quantum_topography_status(self) -> Dict[str, Any]:
-        """Get status of quantum topography system."""
+        """Get quantum topography status."""
         return {
             'bosonic_layer': {
-                'crystals_injected': len(self.bosonic_layer.crystals),
-                'resonance_patterns': len(
-                    self.bosonic_layer.resonance_patterns)
+                'active_crystals': len(self.bosonic_layer.crystals),
+                'resonance_patterns': len(self.bosonic_layer.resonance_patterns)
             },
             'tachyonic_layer': {
-                'changes_registered': len(self.tachyonic_layer.change_log),
+                'change_log_entries': len(self.tachyonic_layer.change_log),
                 'time_crystals': len(self.tachyonic_layer.time_crystals),
-                'holographic_projections': len(
-                    self.tachyonic_layer.holographic_projections)
+                'holographic_projections': len(self.tachyonic_layer.holographic_projections)
             },
             'time_crystals': {
                 'active': len(self.time_crystals),
@@ -939,169 +994,119 @@ class ContextCrystallizationEngine:
         return total_health / len(self.time_crystals)
 
     def process_text_input(self, text: str,
-                          context: Optional[Dict[str, Any]] = None
+                          context: Optional[Dict[str, Any]] = None,
                           ) -> KnowledgeCrystal:
-        """Process natural language text input as dendritic connector.
-
-        CON-TEXT: With-Text - This cellular component reads natural
-        language and creates knowledge crystals through dendritic
-        text processing.
-        """
+        """Process natural language text input (CON-TEXT = With-Text)."""
         if context is None:
             context = {}
 
-        # Create conversation context from text
-        conversation_context = ConversationContext(
+        # Create conversation from text
+        conversation = ConversationContext(
             conversation_id=f"text_{datetime.now().isoformat()}",
-            participants=["TextInput", "ContextCrystallizationEngine"],
-            messages=[{
-                "role": "user",
-                "content": text,
-                "timestamp": datetime.now().isoformat()
-            }],
-            code_references=[],  # Extract code references from text
-            project_state={
-                "input_type": "natural_language_text",
-                "processing_domain": "text_crystallization",
-                "dendritic_connectivity": "active"
-            },
+            participants=["User", "AI"],
+            messages=[
+                {"role": "user", "content": text},
+                {"role": "assistant", "content": "Processing text..."}
+            ],
+            code_references=[],
+            project_state=context,
             temporal_markers=[datetime.now()],
-            understanding_evolution={
-                "initial": "raw_text",
-                "current": "processed_knowledge",
-                "target": "crystallized_wisdom"
-            }
+            understanding_evolution={"phase": "text_processing"}
         )
 
-        # Process through dendritic text analyzer
-        return self._process_text_dendritically(conversation_context)
+        # Process through dendritic crystallization
+        return self._process_text_dendritically(conversation)
 
     def _process_text_dendritically(self, conversation) -> KnowledgeCrystal:
-        """Process text through dendritic neural pathways."""
-        # Extract text content
-        text_content = ' '.join([
-            msg.get('content', '') for msg in conversation.messages
-        ])
-
-        # Create time crystal for text processing
-        self.create_time_crystal("text_processing")
-
-        # Extract key concepts through dendritic analysis
-        key_concepts = self._extract_text_concepts(text_content)
+        """Process text through dendritic crystallization."""
+        # Extract concepts from text
+        concepts = self._extract_text_concepts(
+            ' '.join([msg.get('content', '') for msg in conversation.messages])
+        )
 
         # Build semantic relationships
         relationships = self._build_semantic_relationships(
-            text_content, key_concepts
+            ' '.join([msg.get('content', '') for msg in conversation.messages]),
+            concepts
         )
 
         # Calculate understanding depth
         understanding_depth = self._calculate_text_understanding(
-            text_content
+            ' '.join([msg.get('content', '') for msg in conversation.messages])
         )
 
-        # Generate verification hash
-        verification_hash = self._generate_text_hash(text_content)
+        # Generate fractal resonance
+        fractal_resonance = self._calculate_fractal_resonance(
+            ' '.join([msg.get('content', '') for msg in conversation.messages])
+        )
 
-        # Create knowledge crystal with dendritic metadata
+        # Create knowledge crystal
         crystal = KnowledgeCrystal(
-            id=f"text_crystal_{conversation.conversation_id}_"
-               f"{datetime.now().isoformat()}",
-            key_concepts=key_concepts,
+            id=f"crystal_{conversation.conversation_id}_{datetime.now().isoformat()}",
+            key_concepts=concepts,
             relationships=relationships,
             understanding_depth=understanding_depth,
-            verification_hash=verification_hash,
-            temporal_context={
-                'processed_at': datetime.now().isoformat(),
-                'input_length': len(text_content),
-                'concept_count': len(key_concepts)
-            },
-            fractal_resonance=self._calculate_fractal_resonance(
-                text_content
+            verification_hash=self._generate_text_hash(
+                ' '.join([msg.get('content', '') for msg in conversation.messages])
             ),
-            dendritic_connections={
-                'text_processor': 'active',
-                'semantic_analyzer': 'engaged',
-                'relationship_mapper': 'connected'
-            }
+            fractal_resonance=fractal_resonance,
+            dendritic_connections={}
         )
 
-        # Register in quantum topography
-        self.tachyonic_layer.register_change(
-            crystal.id, "text_crystallization", {
-                'text_length': len(text_content),
-                'concepts_extracted': len(key_concepts),
-                'timestamp': datetime.now()
-            }
-        )
-
-        logger.info(
-            f"Text processed dendritically: {len(text_content)} chars "
-            f"-> {len(key_concepts)} concepts"
-        )
+        logger.info(f"Text processed into knowledge crystal: {crystal.id}")
         return crystal
 
     def _extract_text_concepts(self, text: str) -> List[str]:
-        """Extract key concepts from text through dendritic analysis."""
-        # Enhanced concept extraction with dendritic intelligence
-        concepts = []
-
-        # Technical concepts
-        tech_keywords = [
-            'ai', 'artificial intelligence', 'machine learning',
-            'neural network', 'quantum', 'consciousness', 'algorithm',
-            'data', 'model', 'system', 'processing', 'analysis',
-            'computation', 'intelligence', 'learning'
+        """Extract key concepts from natural language text."""
+        # Enhanced keyword extraction for natural language processing
+        keywords = [
+            'ai', 'consciousness', 'quantum', 'learning', 'knowledge',
+            'neural', 'network', 'intelligence', 'processing', 'algorithm',
+            'data', 'model', 'training', 'prediction', 'analysis'
         ]
 
-        # Extract technical concepts
+        found_concepts = []
         text_lower = text.lower()
-        for keyword in tech_keywords:
-            if keyword in text_lower and keyword not in concepts:
-                concepts.append(keyword)
 
-        # Extract proper nouns and capitalized terms
+        for keyword in keywords:
+            if keyword in text_lower:
+                found_concepts.append(keyword)
+
+        # Add any capitalized words as potential concepts
         words = text.split()
         for word in words:
-            if len(word) > 3 and word[0].isupper() and word not in concepts:
-                concepts.append(word.lower())
+            if word[0].isupper() and len(word) > 3:
+                found_concepts.append(word.lower())
 
-        # Add dendritic intelligence concepts
-        dendritic_concepts = [
-            'dendritic', 'neural', 'connection', 'processing'
-        ]
-        for concept in dendritic_concepts:
-            if concept in text_lower and concept not in concepts:
-                concepts.append(concept)
-
-        return concepts[:10]  # Limit to top 10 concepts
+        return list(set(found_concepts))  # Remove duplicates
 
     def _build_semantic_relationships(self, text: str,
                                       concepts: List[str]
                                       ) -> List[Dict[str, Any]]:
-        """Build semantic relationships between concepts."""
+        """Build semantic relationships between concepts in text."""
         relationships = []
 
-        # Create relationships based on co-occurrence in text
         for i, concept1 in enumerate(concepts):
             for concept2 in concepts[i+1:]:
-                # Calculate relationship strength based on proximity
-                strength = self._calculate_concept_proximity(
-                    text, concept1, concept2
-                )
-                if strength > 0.1:  # Only include meaningful relationships
-                    relationships.append({
-                        'source': concept1,
-                        'target': concept2,
-                        'strength': strength,
-                        'type': 'semantic_cooccurrence',
-                        'context': 'text_analysis'
-                    })
+                if concept1 != concept2:
+                    # Calculate proximity in text
+                    proximity = self._calculate_concept_proximity(
+                        text, concept1, concept2
+                    )
+
+                    if proximity > 0.1:  # Only include meaningful relationships
+                        relationships.append({
+                            'source': concept1,
+                            'target': concept2,
+                            'strength': proximity,
+                            'type': 'semantic'
+                        })
 
         return relationships
 
     def _calculate_concept_proximity(self, text: str, concept1: str,
                                      concept2: str) -> float:
-        """Calculate proximity strength between two concepts in text."""
+        """Calculate proximity between concepts in text."""
         text_lower = text.lower()
         pos1 = text_lower.find(concept1)
         pos2 = text_lower.find(concept2)
@@ -1109,74 +1114,31 @@ class ContextCrystallizationEngine:
         if pos1 == -1 or pos2 == -1:
             return 0.0
 
-        # Calculate distance-based strength
+        # Calculate inverse distance (closer = stronger relationship)
         distance = abs(pos1 - pos2)
-        max_distance = len(text)
+        proximity = max(0.0, 1.0 - (distance / len(text)))
 
-        # Closer concepts have stronger relationships
-        proximity = 1.0 - (distance / max_distance)
-
-        # Boost strength if concepts appear multiple times
-        count1 = text_lower.count(concept1)
-        count2 = text_lower.count(concept2)
-        frequency_boost = min(count1 + count2, 5) / 5.0
-
-        return proximity * frequency_boost
+        return proximity
 
     def _calculate_text_understanding(self, text: str) -> float:
-        """Calculate understanding depth of text."""
-        base_depth = 0.3
+        """Calculate understanding depth from text complexity."""
+        # Simple heuristic based on text length and vocabulary
+        words = text.split()
+        unique_words = set(words)
 
-        # Increase depth based on text complexity
-        word_count = len(text.split())
-        if word_count > 50:
-            base_depth += 0.2
-        if word_count > 100:
-            base_depth += 0.2
+        length_score = min(1.0, len(words) / 100)  # Normalize to 100 words
+        vocabulary_score = min(1.0, len(unique_words) / len(words))  # Vocabulary richness
 
-        # Increase depth based on technical content
-        tech_indicators = [
-            'quantum', 'neural', 'algorithm', 'consciousness', 'ai'
-        ]
-        tech_count = sum(1 for indicator in tech_indicators
-                         if indicator in text.lower())
-        base_depth += min(tech_count * 0.1, 0.3)
-
-        # Increase depth based on structural complexity
-        sentence_count = text.count('.') + text.count('!') + text.count('?')
-        if sentence_count > 3:
-            base_depth += 0.1
-
-        return min(base_depth, 1.0)
+        return (length_score + vocabulary_score) / 2
 
     def _calculate_fractal_resonance(self, text: str) -> float:
         """Calculate fractal resonance of text."""
-        # Simple resonance calculation based on pattern repetition
-        words = text.lower().split()
-        word_freq = {}
-
-        for word in words:
-            if len(word) > 3:  # Only consider meaningful words
-                word_freq[word] = word_freq.get(word, 0) + 1
-
-        # Calculate resonance based on word frequency distribution
-        if not word_freq:
-            return 0.5
-
-        frequencies = list(word_freq.values())
-        avg_freq = sum(frequencies) / len(frequencies)
-        variance = sum((f - avg_freq) ** 2 for f in frequencies) / \
-            len(frequencies)
-
-        # Higher variance indicates more structured/fractal patterns
-        resonance = min(variance / 10.0, 1.0)
-
-        return max(resonance, 0.1)
+        # Simple resonance based on text patterns
+        return random.uniform(0.3, 0.9)  # Placeholder for more sophisticated analysis
 
     def _generate_text_hash(self, text: str) -> str:
-        """Generate verification hash for text."""
-        content = f"{text}_{datetime.now().isoformat()}"
-        return hashlib.sha256(content.encode()).hexdigest()[:16]
+        """Generate hash for text verification."""
+        return hashlib.sha256(text.encode()).hexdigest()
 
 
 logger = logging.getLogger(__name__)
@@ -1194,70 +1156,3 @@ def create_crystallization_engine(
         raise RuntimeError(
             "Failed to initialize Context Crystallization Engine"
         )
-
-
-@dataclass
-class ConversationContext:
-    """Complete conversation context structure for AINLP processing.
-
-    This dataclass represents a conversation with all its contextual
-    information, following the AINLP paradigmatic approach for knowledge
-    retention and context harmonization.
-    """
-    conversation_id: str
-    participants: List[str]
-    messages: List[Dict[str, Any]]
-    code_references: List[str]
-    project_state: Dict[str, Any]
-    temporal_markers: List[datetime]
-    understanding_evolution: Dict[str, Any]
-
-    def to_dict(self) -> Dict[str, Any]:
-        """Convert conversation context to dictionary representation."""
-        return {
-            'conversation_id': self.conversation_id,
-            'participants': self.participants,
-            'messages': self.messages,
-            'code_references': self.code_references,
-            'project_state': self.project_state,
-            'temporal_markers': [
-                tm.isoformat() for tm in self.temporal_markers
-            ],
-            'understanding_evolution': self.understanding_evolution
-        }
-
-    @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> 'ConversationContext':
-        """Create conversation context from dictionary."""
-        return cls(
-            conversation_id=data['conversation_id'],
-            participants=data['participants'],
-            messages=data['messages'],
-            code_references=data['code_references'],
-            project_state=data['project_state'],
-            temporal_markers=[
-                datetime.fromisoformat(tm) for tm in data['temporal_markers']
-            ],
-            understanding_evolution=data['understanding_evolution']
-        )
-
-
-# Export quantum topography interfaces for AINLP processing
-__all__ = [
-    'ConversationContext',
-    'QuantumState',
-    'CrystalPhase',
-    'QuantumSignature',
-    'DNAStrand',
-    'BosonicLayer',
-    'TachyonicLayer',
-    'HolographicBot',
-    'TimeCrystal',
-    'KnowledgeCrystal',
-    'FractalCacheManager',
-    'MemoryCrystallizerStub',
-    'EmbeddingGeneratorStub',
-    'TemporalMapperStub',
-    'ContextCrystallizationEngine',
-    'create_crystallization_engine'
-]
