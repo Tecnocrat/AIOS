@@ -1,7 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Microsoft.Extensions.Logging;
+using AIOS.Core;
 
 namespace AIOS.VisualInterface
 {
@@ -12,6 +14,10 @@ namespace AIOS.VisualInterface
     public partial class SimpleVisualizationWindow : Window
     {
         private readonly AINLPHarmonizer _harmonizer;
+        private readonly ConsciousnessDataManager _dataManager;
+        private readonly ILogger<SimpleVisualizationWindow> _logger;
+        private readonly RuntimeAnalytics _analytics;
+        private System.Windows.Controls.TextBox? _eventsDisplay;
 
         public SimpleVisualizationWindow(ConsciousnessDataManager dataManager, ILogger<SimpleVisualizationWindow> logger, RuntimeAnalytics analytics)
         {
@@ -19,8 +25,10 @@ namespace AIOS.VisualInterface
             _logger = logger;
             _analytics = analytics;
 
-            // Initialize AINLP Harmonizer
-            _harmonizer = new AINLPHarmonizer(logger);
+            // Initialize AINLP Harmonizer with proper logger type
+            var harmonizerLoggerFactory = new Microsoft.Extensions.Logging.LoggerFactory();
+            var harmonizerLogger = harmonizerLoggerFactory.CreateLogger<AINLPHarmonizer>();
+            _harmonizer = new AINLPHarmonizer(harmonizerLogger);
 
             _analytics.LogExecutionEvent("UI_INIT_START", "Starting SimpleVisualizationWindow initialization with AINLP Harmonizer");
 
@@ -36,12 +44,8 @@ namespace AIOS.VisualInterface
         /// </summary>
         private void InitializeAINLPComponents()
         {
-            // Initialize AINLP Harmonizer
-            _harmonizer = new AINLPHarmonizer(_logger);
-
-            _analytics.LogExecutionEvent("UI_INIT_START", "Starting SimpleVisualizationWindow initialization with AINLP Harmonizer");
-
-            // ... existing initialization code ...
+            // AINLP Harmonizer already initialized in constructor
+            _analytics.LogExecutionEvent("UI_INIT_START", "AINLP Harmonizer components initialized");
 
             // Start AINLP harmonization monitoring
             Task.Run(() => StartAINLPHarmonizationAsync());
