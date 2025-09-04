@@ -1,0 +1,13 @@
+name: aios-quantum
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - sympy>=1.12,<2.0
+  - mpmath>=1.3.0,<2.0
+  - pip:
+    - qiskit>=0.43.0,<1.0
+    - cirq>=1.1.0,<2.0
+    - pennylane>=0.31.0,<0.35
