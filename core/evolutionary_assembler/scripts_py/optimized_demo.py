@@ -61,8 +61,26 @@ class OptimizedConsciousnessExecutor:
             'structural_intelligence': 0.0
         }
         
-        # Measure path relationships
-        scripts_to_asm = len(str(self.asm_source_dir.relative_to(self.scripts_dir)).split('/'))
+        # Measure path relationships (use absolute path calculation)
+        try:
+            scripts_to_asm = len(str(self.asm_source_dir.relative_to(self.scripts_dir)).split('/'))
+        except ValueError:
+            # Calculate distance using common parent
+            scripts_parts = self.scripts_dir.parts
+            asm_parts = self.asm_source_dir.parts
+            
+            # Find common parent and calculate relative distance
+            common_length = 0
+            for i, (s, a) in enumerate(zip(scripts_parts, asm_parts)):
+                if s == a:
+                    common_length = i + 1
+                else:
+                    break
+            
+            scripts_depth = len(scripts_parts) - common_length
+            asm_depth = len(asm_parts) - common_length
+            scripts_to_asm = scripts_depth + asm_depth
+        
         old_path_complexity = 6  # Estimated complexity of old structure
         new_path_complexity = scripts_to_asm
         

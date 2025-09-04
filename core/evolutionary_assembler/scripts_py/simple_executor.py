@@ -21,6 +21,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class SimpleAssemblyRunner:
     """
     🎯 Simplified Assembly Execution Without Complex Build Chains
