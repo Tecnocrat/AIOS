@@ -306,3 +306,33 @@ docs/site/
 !ai/aios_vscode_integration/runtime/logs/
 !ai/aios_vscode_integration/runtime/logs/**/*.json
 !ai/aios_vscode_integration/runtime/logs/**/*.log
+
+# --- DEFENSIVE EXCLUSIONS FOR AUTO-GENERATED FILES ---
+# Prevent empty stub files and auto-generated content
+**/*.stub
+**/*.generated.*
+**/obj/**/*.Up2Date
+**/.vscode-test/
+**/node_modules/.cache/
+**/*.intellisense.cache
+**/*.generated.cs
+**/*.generated.cpp
+**/*.generated.hpp
+**/*.generated.py
+**/*.tmp.*
+**/CMakeFiles/*/CMakeOutput.log
+**/CMakeFiles/*/CMakeError.log
+
+# Language Server Generated Files
+**/.omnisharp/
+**/.vs/slnx.sqlite
+**/.vs/**/browse.vc.db
+**/.vs/**/v16/.suo
+**/.vscode/ipch/
+**/ipch/
+
+# Build System Generated Stubs
+**/bin/Debug/**/*.deps.json
+**/bin/Release/**/*.deps.json
+**/obj/**/project.assets.json
+**/obj/**/project.nuget.cache

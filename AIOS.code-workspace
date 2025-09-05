@@ -32,6 +32,10 @@
 		// Pin Python to aios_env for consistent environment
 		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
 		"python.terminal.activateEnvironment": false,
+		"python.analysis.autoImportCompletions": false,
+		"python.analysis.autoSearchPaths": false,
+		"python.analysis.stubPath": "",
+		"python.analysis.packageIndexDepths": [],
 		
 		// Suppress ALL formatter prompts and auto-formatting
 		"editor.formatOnSave": false,
@@ -59,6 +63,9 @@
 		"git.confirmSync": false,
 		"git.enableSmartCommit": false,
 		"git.postCommitCommand": "none",
+		"git.autoRepositoryDetection": false,
+		"git.autoStash": false,
+		"git.autofetchPeriod": 0,
 		"files.hotExit": "off",
 		"window.restoreWindows": "none",
 		"workbench.editor.restoreViewState": false,
@@ -98,6 +105,28 @@
 			"**/visual_interface/*.sln": true,
 			"interface/interface.sln": true,
 			"**/*.vcxproj.user": true,
+			"**/*.stub": true,
+			"**/*.generated.*": true,
+			"**/*.Up2Date": true,
+			"**/.git/hooks": false
+		},
+
+		// Language Server Control - DEFENSIVE SETTINGS
+		"omnisharp.enableEditorConfigSupport": true,
+		"omnisharp.enableRoslynAnalyzers": false,
+		"omnisharp.enableImportCompletion": false,
+		"omnisharp.organizeImportsOnFormat": false,
+		"omnisharp.enableAsyncCompletion": false,
+		"omnisharp.autoStart": false,
+		"C_Cpp.autocomplete": "disabled",
+		"C_Cpp.suggestSnippets": false,
+		"C_Cpp.autoAddFileAssociations": false,
+
+		// CMake Configuration - MINIMAL AUTO-ACTIONS
+		"cmake.configureOnOpen": false,
+		"cmake.configureOnEdit": false,
+		"cmake.autoRestartBuild": false,
+		"cmake.buildBeforeRun": false,
 			"**/.vs": true
 		},
 		

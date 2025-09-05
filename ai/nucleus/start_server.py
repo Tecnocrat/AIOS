@@ -30,7 +30,9 @@ def run_preflight_diagnostics():
     )
     if os.path.exists(integration_path):
         print("🧪 Running preflight integration diagnostics...")
-        result = subprocess.run([sys.executable, integration_path, "--preflight"])
+        result = subprocess.run(
+            [sys.executable, integration_path, "--preflight"]
+        )
         if result.returncode != 0:
             print("⚠️  Preflight diagnostics reported issues.")
         else:
@@ -40,7 +42,8 @@ def run_preflight_diagnostics():
 
 
 def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
-    """Run the server with auto-restart and supervisor logic, with error detection."""
+    """Run the server with auto-restart and
+    supervisor logic, with error detection."""
     restarts = 0
     delay = restart_delay
     last_error = None
@@ -50,7 +53,9 @@ def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
             f"{max_restarts})..."
         )
         start_time = time.time()
-        proc = subprocess.Popen([sys.executable, server_file], stderr=subprocess.PIPE)
+        proc = subprocess.Popen(
+            [sys.executable, server_file], stderr=subprocess.PIPE
+        )
         try:
             _, stderr = proc.communicate()
             exit_code = proc.returncode
@@ -62,17 +67,23 @@ def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
                 # If server fails in <2s, treat as unrecoverable
                 if run_time < 2:
                     print(
-                        f"❌ Server failed immediately (exit {exit_code}). Not retrying."
+                        f"❌ Server failed immediately (exit {
+                            exit_code}). Not retrying."
                     )
                     if stderr:
                         print("--- Server error output ---")
                         print(stderr.decode(errors="ignore")[-500:])
                     print(
-                        "ℹ️  Run diagnostics with: python ai/tests/aios_vscode_integration.py --preflight"
+                        "ℹ️  Run diagnostics with: python"
+                        " ai/tests/aios_vscode_integration.py --preflight"
                     )
                     return exit_code
                 print(
-                    f"⚠️  Server exited with code {exit_code} after {run_time:.1f}s. "
+                    f"⚠️  Server exited with code {
+                        exit_code
+                        } after {
+                        run_time:.1f
+                        }s. "
                     f"Restarting in {delay}s..."
                 )
                 if stderr:
@@ -94,7 +105,8 @@ def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
         print("--- Last server error output ---")
         print(last_error[-500:])
     print(
-        "ℹ️  Run diagnostics with: python ai/tests/aios_vscode_integration.py --preflight"
+        "ℹ️  Run diagnostics with:"
+        " python ai/tests/aios_vscode_integration.py --preflight"
     )
     return 1
 
@@ -107,8 +119,8 @@ def main():
     if not server_file:
         print("❌ Server file not found: aios_vscode_integration_server.py")
         print(
-            "ℹ️  Run diagnostics with: "
-            "python ai/tests/aios_vscode_integration.py --preflight"
+            "ℹ️  Run diagnostics with:"
+            " python ai/tests/aios_vscode_integration.py --preflight"
         )
         return 1
 
