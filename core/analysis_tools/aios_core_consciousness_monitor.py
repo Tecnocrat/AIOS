@@ -1,6 +1,19 @@
+
+# Fix Windows console encoding issues
+try:
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🧠 AIOS Core Consciousness Monitor (Iter2)
+[BRAIN] AIOS Core Consciousness Monitor (Iter2)
 ═══════════════════════════════════════════════════════════════════════════════
 Monitors consciousness-driven development patterns in Core Engine components.
 
@@ -39,7 +52,7 @@ class AIOSCoreConsciousnessMonitor:
     def monitor_consciousness_status(self) -> Dict[str, Any]:
         """Monitor consciousness integration status."""
         
-        logger.info("🧠 MONITORING CONSCIOUSNESS INTEGRATION STATUS")
+        logger.info("[BRAIN] MONITORING CONSCIOUSNESS INTEGRATION STATUS")
         
         status = {
             "monitoring_timestamp": self.monitor_timestamp.isoformat(),
@@ -93,7 +106,7 @@ def main():
     monitor = AIOSCoreConsciousnessMonitor()
     status = monitor.monitor_consciousness_status()
     
-    print("🧠 CONSCIOUSNESS MONITORING RESULTS:")
+    print("[BRAIN] CONSCIOUSNESS MONITORING RESULTS:")
     print(f"Purpose clarity: {status['consciousness_metrics']['purpose_clarity']:.2f}")
     print(f"Health awareness: {status['consciousness_metrics']['health_awareness']:.2f}")
     print(f"Evolution consciousness: {status['evolution_consciousness']['evolution_awareness']:.2f}")

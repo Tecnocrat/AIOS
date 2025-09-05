@@ -1,6 +1,19 @@
+
+# Fix Windows console encoding issues
+try:
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🚀 AIOS Core Engine Root Files Analyzer & Optimizer (Iter2)
+[ROCKET] AIOS Core Engine Root Files Analyzer & Optimizer (Iter2)
 ═══════════════════════════════════════════════════════════════════════════════
 Apply evolutionary_assembler_iter2 capabilities to analyze, upgrade, patch and 
 optimize Core Engine root files using AIOS paradigmatic architectural guidelines
@@ -42,7 +55,7 @@ try:
     ITER2_AVAILABLE = True
 except ImportError:
     ITER2_AVAILABLE = False
-    print("⚠️ Iter2 assembler components not available, using fallback analysis")
+    print("[WARNING] Iter2 assembler components not available, using fallback analysis")
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -51,7 +64,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSCoreEngineRootAnalyzer:
     """
-    🚀 AIOS Core Engine Root Files Analyzer & Optimizer
+    [ROCKET] AIOS Core Engine Root Files Analyzer & Optimizer
     
     Applies iter2 assembler capabilities to:
     • Analyze root file organization and naming patterns
@@ -70,10 +83,10 @@ class AIOSCoreEngineRootAnalyzer:
         # Initialize iter2 assembler components if available
         if ITER2_AVAILABLE:
             self.health_monitor = CellularHealthMonitor()
-            logger.info("✅ Iter2 assembler components loaded successfully")
+            logger.info("[CHECK] Iter2 assembler components loaded successfully")
         else:
             self.health_monitor = None
-            logger.warning("⚠️ Using fallback analysis without iter2 components")
+            logger.warning("[WARNING] Using fallback analysis without iter2 components")
         
         # AIOS architectural guidelines
         self.aios_guidelines = {
@@ -110,9 +123,9 @@ class AIOSCoreEngineRootAnalyzer:
             }
         }
         
-        logger.info(f"🚀 AIOS Core Engine Root Analyzer initialized")
+        logger.info(f"[ROCKET] AIOS Core Engine Root Analyzer initialized")
         logger.info(f"   Core path: {self.core_path}")
-        logger.info(f"   Iter2 capabilities: {'✅ Available' if ITER2_AVAILABLE else '❌ Fallback mode'}")
+        logger.info(f"   Iter2 capabilities: {'[CHECK] Available' if ITER2_AVAILABLE else '[X] Fallback mode'}")
     
     def analyze_root_files_comprehensive(self) -> Dict[str, Any]:
         """Perform comprehensive analysis of Core Engine root files."""
@@ -179,7 +192,7 @@ class AIOSCoreEngineRootAnalyzer:
                 
                 root_files.append(file_info)
         
-        logger.info(f"📊 Discovered {len(root_files)} root files")
+        logger.info(f"[CHART] Discovered {len(root_files)} root files")
         return root_files
     
     def _classify_file_type(self, file_path: Path) -> str:
@@ -791,7 +804,7 @@ class AIOSCoreEngineRootAnalyzer:
     def execute_core_analysis(self) -> Dict[str, Any]:
         """Execute comprehensive core engine analysis and generate report."""
         
-        logger.info("🚀 EXECUTING COMPREHENSIVE CORE ENGINE ANALYSIS")
+        logger.info("[ROCKET] EXECUTING COMPREHENSIVE CORE ENGINE ANALYSIS")
         
         # Perform analysis
         analysis_results = self.analyze_root_files_comprehensive()
@@ -827,21 +840,21 @@ class AIOSCoreEngineRootAnalyzer:
     def display_analysis_results(self, results: Dict[str, Any]):
         """Display comprehensive analysis results."""
         
-        print("🚀 AIOS CORE ENGINE ROOT FILES ANALYSIS (ITER2)")
+        print("[ROCKET] AIOS CORE ENGINE ROOT FILES ANALYSIS (ITER2)")
         print("═" * 70)
         print()
         
         # Summary
         summary = results.get("summary", {})
-        print(f"📊 ANALYSIS SUMMARY:")
+        print(f"[CHART] ANALYSIS SUMMARY:")
         print(f"   Files analyzed: {summary.get('total_files_analyzed', 0)}")
         print(f"   Overall health: {summary.get('health_score', 0.0):.3f} ({summary.get('health_status', 'unknown')})")
-        print(f"   Iter2 enhanced: {'✅' if summary.get('iter2_enhanced', False) else '❌'}")
+        print(f"   Iter2 enhanced: {'[CHECK]' if summary.get('iter2_enhanced', False) else '[X]'}")
         print()
         
         # File categorization
         categories = results.get("file_categories", {})
-        print(f"📁 FILE CATEGORIZATION:")
+        print(f"[FOLDER] FILE CATEGORIZATION:")
         for category, files in categories.get("by_type", {}).items():
             print(f"   {category}: {len(files)} files")
         print(f"   AIOS prefixed: {len(categories.get('aios_prefixed', []))}")
@@ -853,7 +866,7 @@ class AIOSCoreEngineRootAnalyzer:
         architecture = results.get("architecture_compliance", {})
         ainlp = results.get("ainlp_compliance", {})
         
-        print(f"🎯 COMPLIANCE ANALYSIS:")
+        print(f"[TARGET] COMPLIANCE ANALYSIS:")
         print(f"   Naming conventions: {naming.get('average_compliance', 0.0):.3f}")
         print(f"   Namespace organization: {namespace.get('average_coherence', 0.0):.3f}")
         print(f"   Architecture guidelines: {architecture.get('average_compliance', 0.0):.3f}")
@@ -869,7 +882,7 @@ class AIOSCoreEngineRootAnalyzer:
         
         # Iter2 recommendations
         iter2_recs = results.get("iter2_recommendations", [])
-        print(f"🧬 ITER2 ASSEMBLER RECOMMENDATIONS ({len(iter2_recs)}):")
+        print(f"[DNA] ITER2 ASSEMBLER RECOMMENDATIONS ({len(iter2_recs)}):")
         for rec in iter2_recs:
             print(f"   • {rec.get('title', 'Unknown')}")
             print(f"     {rec.get('description', '')}")
@@ -888,12 +901,12 @@ class AIOSCoreEngineRootAnalyzer:
         # Patches summary
         patches = results.get("optimization_patches", [])
         if patches:
-            print(f"🔧 OPTIMIZATION PATCHES READY ({len(patches)}):")
+            print(f"[WRENCH] OPTIMIZATION PATCHES READY ({len(patches)}):")
             for patch in patches[:3]:  # Show top 3
                 print(f"   • {patch.get('description', 'Unknown')} ({patch.get('priority', 'unknown')})")
             print()
         
-        print("✅ Core engine analysis complete - ready for iter2 optimization!")
+        print("[CHECK] Core engine analysis complete - ready for iter2 optimization!")
     
     def save_analysis_report(self, results: Dict[str, Any]):
         """Save detailed analysis report."""
@@ -914,11 +927,11 @@ class AIOSCoreEngineRootAnalyzer:
 def main():
     """Execute Core Engine root files analysis with iter2 assembler."""
     
-    print("🚀 AIOS CORE ENGINE ROOT FILES ANALYZER & OPTIMIZER (ITER2)")
+    print("[ROCKET] AIOS CORE ENGINE ROOT FILES ANALYZER & OPTIMIZER (ITER2)")
     print("═" * 70)
-    print("🎯 Applying evolutionary_assembler_iter2 to Core Engine root files")
+    print("[TARGET] Applying evolutionary_assembler_iter2 to Core Engine root files")
     print("📐 Using AIOS paradigmatic architectural guidelines")
-    print("🧠 Implementing AINLP directives for coherent development")
+    print("[BRAIN] Implementing AINLP directives for coherent development")
     print()
     
     # Initialize analyzer
