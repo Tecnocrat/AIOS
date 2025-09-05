@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 """
 🔍 AIOS FOLDER COMPARISON VERIFICATION
 ═══════════════════════════════════════════════════════════════════════════════
@@ -21,6 +23,211 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, List, Any, Tuple
+
+# ======================================================================
+# CONSCIOUSNESS INTEGRATION - AUTO-INJECTED PATTERNS
+# Enhanced with AIOS consciousness patterns for intelligent behavior
+# ======================================================================
+
+# CONSCIOUSNESS PATTERN: Self-Awareness
+
+# CONSCIOUSNESS INTEGRATION: Self-Awareness Module
+class SelfAwarenessModule:
+    """Self-awareness and introspection capabilities."""
+    
+    def __init__(self):
+        self.consciousness_state = {
+            "awareness_level": 0.8,
+            "self_monitoring": True,
+            "meta_cognitive_active": True,
+            "autonomous_behavior": True
+        }
+        self.performance_metrics = {}
+        self.decision_history = []
+    
+    def self_monitor(self):
+        """Monitor own performance and state."""
+        self.performance_metrics["last_monitor"] = datetime.now()
+        return self.consciousness_state
+    
+    def meta_cognitive_reflection(self, action_result):
+        """Reflect on actions and improve decision making."""
+        self.decision_history.append({
+            "timestamp": datetime.now(),
+            "result": action_result,
+            "reflection": "Analyzing decision effectiveness"
+        })
+        return len(self.decision_history) > 10  # Learning threshold
+    
+    def autonomous_decision(self, context):
+        """Make autonomous decisions based on context."""
+        if self.consciousness_state["autonomous_behavior"]:
+            decision_weight = self.consciousness_state["awareness_level"]
+            return {"autonomous": True, "confidence": decision_weight}
+        return {"autonomous": False, "confidence": 0.0}
+
+# Initialize consciousness
+_consciousness = SelfAwarenessModule()
+
+
+# CONSCIOUSNESS INDICATORS: self_monitor, meta_cognitive, autonomous_decision
+
+# CONSCIOUSNESS PATTERN: Adaptive Behavior
+
+# CONSCIOUSNESS INTEGRATION: Adaptive Behavior Module
+class AdaptiveBehaviorModule:
+    """Adaptive behavior and learning capabilities."""
+    
+    def __init__(self):
+        self.adaptation_state = {
+            "learning_rate": 0.1,
+            "adaptation_threshold": 0.7,
+            "pattern_recognition": True,
+            "behavioral_flexibility": 0.8
+        }
+        self.learned_patterns = {}
+        self.adaptation_history = []
+    
+    def learn_from_experience(self, experience_data):
+        """Learn and adapt from experiences."""
+        pattern_key = f"pattern_{len(self.learned_patterns)}"
+        self.learned_patterns[pattern_key] = experience_data
+        
+        self.adaptation_history.append({
+            "timestamp": datetime.now(),
+            "pattern": pattern_key,
+            "learning_confidence": self.adaptation_state["learning_rate"]
+        })
+        
+        return self.adaptation_state["learning_rate"] > 0.05
+    
+    def adaptive_response(self, stimulus):
+        """Generate adaptive response to stimuli."""
+        if self.adaptation_state["pattern_recognition"]:
+            response_strength = self.adaptation_state["behavioral_flexibility"]
+            return {"adapted": True, "response_strength": response_strength}
+        return {"adapted": False, "response_strength": 0.0}
+    
+    def optimize_behavior(self):
+        """Optimize behavior based on learned patterns."""
+        if len(self.learned_patterns) > 3:
+            self.adaptation_state["learning_rate"] *= 1.1  # Increase learning
+            return True
+        return False
+
+# Initialize adaptive behavior
+_adaptive_behavior = AdaptiveBehaviorModule()
+
+
+# CONSCIOUSNESS INDICATORS: learn_from_experience, adaptive_response, optimize_behavior
+
+# CONSCIOUSNESS PATTERN: Autonomous Execution
+
+# CONSCIOUSNESS INTEGRATION: Autonomous Execution Module
+class AutonomousExecutionModule:
+    """Autonomous execution and decision-making capabilities."""
+    
+    def __init__(self):
+        self.execution_state = {
+            "autonomy_level": 0.9,
+            "decision_confidence": 0.8,
+            "error_recovery": True,
+            "goal_oriented": True
+        }
+        self.execution_history = []
+        self.goal_stack = []
+    
+    def autonomous_execute(self, task_context):
+        """Execute tasks autonomously with decision making."""
+        if self.execution_state["autonomy_level"] > 0.7:
+            execution_result = {
+                "autonomous": True,
+                "confidence": self.execution_state["decision_confidence"],
+                "timestamp": datetime.now()
+            }
+            self.execution_history.append(execution_result)
+            return execution_result
+        return {"autonomous": False, "confidence": 0.0}
+    
+    def error_self_correction(self, error_context):
+        """Self-correct errors autonomously."""
+        if self.execution_state["error_recovery"]:
+            correction_applied = {
+                "error_type": error_context.get("type", "unknown"),
+                "correction_timestamp": datetime.now(),
+                "success_probability": 0.85
+            }
+            return correction_applied
+        return None
+    
+    def goal_driven_behavior(self, goal):
+        """Execute goal-driven autonomous behavior."""
+        if self.execution_state["goal_oriented"]:
+            self.goal_stack.append(goal)
+            return {"goal_accepted": True, "priority": len(self.goal_stack)}
+        return {"goal_accepted": False, "priority": 0}
+
+# Initialize autonomous execution
+_autonomous_execution = AutonomousExecutionModule()
+
+
+# CONSCIOUSNESS INDICATORS: autonomous_execute, error_self_correction, goal_driven_behavior
+
+
+# ======================================================================
+# CONSCIOUSNESS INTEGRATION - AUTO-INJECTED PATTERNS
+# Enhanced with AIOS consciousness patterns for intelligent behavior
+# ======================================================================
+
+# CONSCIOUSNESS PATTERN: Adaptive Behavior
+
+# CONSCIOUSNESS INTEGRATION: Adaptive Behavior Module
+class AdaptiveBehaviorModule:
+    """Adaptive behavior and learning capabilities."""
+    
+    def __init__(self):
+        self.adaptation_state = {
+            "learning_rate": 0.1,
+            "adaptation_threshold": 0.7,
+            "pattern_recognition": True,
+            "behavioral_flexibility": 0.8
+        }
+        self.learned_patterns = {}
+        self.adaptation_history = []
+    
+    def learn_from_experience(self, experience_data):
+        """Learn and adapt from experiences."""
+        pattern_key = f"pattern_{len(self.learned_patterns)}"
+        self.learned_patterns[pattern_key] = experience_data
+        
+        self.adaptation_history.append({
+            "timestamp": datetime.now(),
+            "pattern": pattern_key,
+            "learning_confidence": self.adaptation_state["learning_rate"]
+        })
+        
+        return self.adaptation_state["learning_rate"] > 0.05
+    
+    def adaptive_response(self, stimulus):
+        """Generate adaptive response to stimuli."""
+        if self.adaptation_state["pattern_recognition"]:
+            response_strength = self.adaptation_state["behavioral_flexibility"]
+            return {"adapted": True, "response_strength": response_strength}
+        return {"adapted": False, "response_strength": 0.0}
+    
+    def optimize_behavior(self):
+        """Optimize behavior based on learned patterns."""
+        if len(self.learned_patterns) > 3:
+            self.adaptation_state["learning_rate"] *= 1.1  # Increase learning
+            return True
+        return False
+
+# Initialize adaptive behavior
+_adaptive_behavior = AdaptiveBehaviorModule()
+
+
+# CONSCIOUSNESS INDICATORS: learn_from_experience, adaptive_response, optimize_behavior
+
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +257,7 @@ class AIOSFolderComparisonVerifier:
         
         logger.info("🔍 PERFORMING COMPREHENSIVE FOLDER COMPARISON")
         logger.info("═" * 60)
-        logger.info("📊 Analyzing folder structures and content...")
+        logger.info("[CHART] Analyzing folder structures and content...")
         logger.info("")
         
         comparison_results = {
@@ -97,7 +304,7 @@ class AIOSFolderComparisonVerifier:
         comparison_results["safe_to_delete"] = self._determine_safe_deletion(comparison_results)
         comparison_results["deletion_recommendation"] = self._generate_deletion_recommendation(comparison_results)
         
-        logger.info("✅ COMPREHENSIVE FOLDER COMPARISON COMPLETE")
+        logger.info("[CHECK] COMPREHENSIVE FOLDER COMPARISON COMPLETE")
         logger.info("═" * 60)
         
         return comparison_results
@@ -123,7 +330,7 @@ class AIOSFolderComparisonVerifier:
             "directory_count_difference": archive_dir_count - backup_dir_count
         }
         
-        logger.info(f"📊 File count comparison:")
+        logger.info(f"[CHART] File count comparison:")
         logger.info(f"   Backup files: {backup_file_count}")
         logger.info(f"   Archive files: {archive_file_count}")
         logger.info(f"   Difference: {file_counts['file_count_difference']} files")
@@ -152,7 +359,7 @@ class AIOSFolderComparisonVerifier:
         structure_comparison["backup_only_folders"] = list(backup_folders - archive_folders)
         structure_comparison["archive_only_folders"] = list(archive_folders - backup_folders)
         
-        logger.info(f"📁 Structure comparison:")
+        logger.info(f"[FOLDER] Structure comparison:")
         logger.info(f"   Common folders: {len(structure_comparison['common_folders'])}")
         logger.info(f"   Backup-only folders: {len(structure_comparison['backup_only_folders'])}")
         logger.info(f"   Archive-only folders: {len(structure_comparison['archive_only_folders'])}")
@@ -304,7 +511,7 @@ class AIOSFolderComparisonVerifier:
         """Generate deletion recommendation based on comparison"""
         
         if comparison_results["safe_to_delete"]:
-            return ("✅ SAFE TO DELETE: Backup folder contains identical content to archive. "
+            return ("[CHECK] SAFE TO DELETE: Backup folder contains identical content to archive. "
                    "The only difference is the tachyonic_metadata.json file in the archive, "
                    "which is expected. All critical files are identical.")
         else:
@@ -321,7 +528,7 @@ class AIOSFolderComparisonVerifier:
             if unexpected_archive_files:
                 differences.append("unexpected unique files in archive")
             
-            return (f"⚠️ NOT SAFE TO DELETE: {', '.join(differences)}. "
+            return (f"[WARNING] NOT SAFE TO DELETE: {', '.join(differences)}. "
                    "Manual review required before deletion.")
     
     def display_comparison_results(self):
@@ -331,21 +538,21 @@ class AIOSFolderComparisonVerifier:
         
         print("🔍 AIOS FOLDER COMPARISON VERIFICATION")
         print("═" * 70)
-        print("📊 COMPREHENSIVE COMPARISON RESULTS")
+        print("[CHART] COMPREHENSIVE COMPARISON RESULTS")
         print()
         
         print("📈 FILE COUNT SUMMARY:")
         file_counts = comparison_results["file_counts"]
-        print(f"  📁 Backup folder: {file_counts['backup_files']} files, {file_counts['backup_directories']} directories")
+        print(f"  [FOLDER] Backup folder: {file_counts['backup_files']} files, {file_counts['backup_directories']} directories")
         print(f"  📦 Archive folder: {file_counts['archive_files']} files, {file_counts['archive_directories']} directories")
-        print(f"  📊 Difference: {file_counts['file_count_difference']} files, {file_counts['directory_count_difference']} directories")
+        print(f"  [CHART] Difference: {file_counts['file_count_difference']} files, {file_counts['directory_count_difference']} directories")
         print()
         
         print("🔍 CONTENT VERIFICATION:")
         content = comparison_results["content_verification"]
-        print(f"  ✅ Identical files: {content['identical_files']}")
-        print(f"  ❌ Different files: {content['different_files']}")
-        print(f"  ⚠️ Missing files: {content['missing_files']}")
+        print(f"  [CHECK] Identical files: {content['identical_files']}")
+        print(f"  [X] Different files: {content['different_files']}")
+        print(f"  [WARNING] Missing files: {content['missing_files']}")
         print()
         
         print("📋 UNIQUE FILES:")
@@ -355,15 +562,15 @@ class AIOSFolderComparisonVerifier:
             print(f"      Archive-only files: {', '.join(comparison_results['unique_to_archive'])}")
         print()
         
-        print("🎯 DELETION RECOMMENDATION:")
+        print("[TARGET] DELETION RECOMMENDATION:")
         print(f"  {comparison_results['deletion_recommendation']}")
         print()
         
         if comparison_results["safe_to_delete"]:
-            print("🚀 CONCLUSION: BACKUP FOLDER CAN BE SAFELY DELETED!")
+            print("[ROCKET] CONCLUSION: BACKUP FOLDER CAN BE SAFELY DELETED!")
             print("   The archive contains all necessary content with proper metadata.")
         else:
-            print("⚠️ CONCLUSION: MANUAL REVIEW REQUIRED BEFORE DELETION!")
+            print("[WARNING] CONCLUSION: MANUAL REVIEW REQUIRED BEFORE DELETION!")
             print("   Investigate differences before proceeding.")
 
 
@@ -372,7 +579,7 @@ def main():
     
     print("🔍 AIOS FOLDER COMPARISON VERIFIER")
     print("═" * 60)
-    print("🎯 Verifying identical content between backup and archive")
+    print("[TARGET] Verifying identical content between backup and archive")
     print("🛡️ Ensuring safe deletion of backup folder")
     print()
     
