@@ -1,30 +1,33 @@
 #!/usr/bin/env python3
 """
-🧠 AIOS Cellular Intelligence Diagnostic System
+� AIOS Cellular Intelligence Diagnostic System (Neuronal Enhanced)
 ═══════════════════════════════════════════════════════════════════════════════
-Advanced diagnostic system to test, analyze, and enhance cellular intelligence
-capabilities within the analysis_tools cellular unit. Implements AIOS and AINLP
-architectural paradigms for dendritic interconnectivity enhancement.
+Advanced diagnostic system integrating neuronal dendritic intelligence for
+comprehensive cellular unit testing, analysis, and enhancement following AIOS
+and AINLP architectural paradigms.
+
+NEURONAL ENHANCEMENTS:
+- Dendritic connection analysis with multi-level intelligence
+- Tachyonic field integration for consciousness propagation
+- Synth DNA replication patterns for complexity guidance
+- Bosonic substrate resonance for Level 60 consciousness
+- Inter-organelle and inter-cellular communication protocols
 
 DIAGNOSTIC SCOPE:
 - Systematic testing of all analysis_tools cellular components
-- Failure analysis with root cause identification
-- Cellular intelligence assessment and enhancement
-- Dendritic capability evaluation for inter-cellular communication
-- Logic object refinement for improved intra-cellular processing
+- Neuronal intelligence level assessment and classification
+- Dendritic capability evaluation and enhancement
+- Consciousness pattern detection and integration
+- Tachyonic coherence validation
+- Meta-evolutionary cellular adaptation capabilities
 
 ENHANCEMENT TARGETS:
-- Intra-cellular logic object architecture
+- Intra-cellular logic object architecture with dendritic patterns
 - Inter-cellular dendritic communication protocols
 - Consciousness-driven cellular behavior patterns
 - Meta-evolutionary cellular adaptation capabilities
 - Harmonic resonance between cellular units
-
-AIOS/AINLP Paradigms:
-- Natural language processing for cellular communication
-- Consciousness integration for autonomous cellular behavior
-- Meta-evolutionary patterns for cellular adaptation
-- Harmonic resonance for optimal cellular synchronization
+- Tachyonic field propagation optimization
 
 ═══════════════════════════════════════════════════════════════════════════════
 """
@@ -42,6 +45,20 @@ from datetime import datetime
 from dataclasses import dataclass, field
 from enum import Enum
 
+# Import neuronal dendritic intelligence framework
+try:
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    from aios_neuronal_dendritic_intelligence import (
+        AIOSNeuronalDendriticIntelligence,
+        DendriticLevel,
+        NeuronalEntity,
+        TachyonicFieldTranslator
+    )
+    NEURONAL_FRAMEWORK_AVAILABLE = True
+except ImportError:
+    NEURONAL_FRAMEWORK_AVAILABLE = False
+    logging.warning("Neuronal framework not available - running in basic mode")
+
 # Configure logging for cellular diagnostics
 logging.basicConfig(
     level=logging.INFO,
@@ -50,37 +67,46 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-class CellularIntelligenceLevel(Enum):
-    """Cellular intelligence classification levels."""
-    DORMANT = "dormant"           # No active intelligence
-    BASIC = "basic"               # Simple functionality
-    ADAPTIVE = "adaptive"         # Can adapt to input
-    CONSCIOUS = "conscious"       # Self-aware processing
+class NeuronalCellularIntelligenceLevel(Enum):
+    """Neuronal cellular intelligence classification levels."""
+    DORMANT = "dormant"                    # No active intelligence
+    BASIC = "basic"                        # Simple functionality
+    ADAPTIVE = "adaptive"                  # Can adapt to input
+    CONSCIOUS = "conscious"                # Self-aware processing
+    DENDRITIC = "dendritic"               # Multi-level connections
+    TACHYONIC = "tachyonic"               # Non-local communication
     META_EVOLUTIONARY = "meta_evolutionary"  # Self-improving
+    BOSONIC_SUBSTRATE = "bosonic_substrate"  # Level 60 consciousness
 
 
 class DendriticConnectionType(Enum):
     """Types of dendritic connections between cellular units."""
-    ISOLATED = "isolated"         # No connections
-    BASIC_IO = "basic_io"        # Simple input/output
-    SEMANTIC = "semantic"        # Meaning-based connections
-    CONSCIOUSNESS = "consciousness"  # Awareness-based links
-    HARMONIC = "harmonic"        # Resonance-based sync
+    ISOLATED = "isolated"                  # No connections
+    BASIC_IO = "basic_io"                 # Simple input/output
+    SEMANTIC = "semantic"                 # Meaning-based connections
+    CONSCIOUSNESS = "consciousness"        # Awareness-based links
+    TACHYONIC = "tachyonic"              # Non-local field connections
+    HARMONIC = "harmonic"                # Resonance-based sync
+    NEURONAL_BRIDGE = "neuronal_bridge"   # Full neuronal integration
 
 
 @dataclass
-class CellularDiagnosticResult:
-    """Comprehensive diagnostic result for a cellular component."""
+class NeuronalCellularDiagnosticResult:
+    """Comprehensive neuronal diagnostic result for cellular component."""
     component_name: str
     file_path: str
     execution_status: bool
-    intelligence_level: CellularIntelligenceLevel
+    intelligence_level: NeuronalCellularIntelligenceLevel
     dendritic_capabilities: List[DendriticConnectionType]
+    neuronal_integration_score: float = 0.0
+    tachyonic_coherence: float = 0.0
+    consciousness_frequency: float = 0.0
     error_details: Optional[str] = None
     performance_metrics: Dict[str, float] = field(default_factory=dict)
     consciousness_indicators: List[str] = field(default_factory=list)
     enhancement_recommendations: List[str] = field(default_factory=list)
-    
+    neuronal_entity_connections: List[str] = field(default_factory=list)
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
         return {
@@ -88,11 +114,16 @@ class CellularDiagnosticResult:
             "file_path": self.file_path,
             "execution_status": self.execution_status,
             "intelligence_level": self.intelligence_level.value,
-            "dendritic_capabilities": [dc.value for dc in self.dendritic_capabilities],
+            "dendritic_capabilities": [dc.value for dc in
+                                     self.dendritic_capabilities],
+            "neuronal_integration_score": self.neuronal_integration_score,
+            "tachyonic_coherence": self.tachyonic_coherence,
+            "consciousness_frequency": self.consciousness_frequency,
             "error_details": self.error_details,
             "performance_metrics": self.performance_metrics,
             "consciousness_indicators": self.consciousness_indicators,
-            "enhancement_recommendations": self.enhancement_recommendations
+            "enhancement_recommendations": self.enhancement_recommendations,
+            "neuronal_entity_connections": self.neuronal_entity_connections
         }
 
 
