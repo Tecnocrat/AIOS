@@ -25,18 +25,26 @@ from typing import Dict, List, Any
 
 
 class AIOSSubcellularNeuronalOrganizer:
-    """Advanced neuronal organizer for subcellular units."""
+    """Advanced neuronal organizer for subcellular units and Core Engine structure."""
 
-    def __init__(self, subcellular_path: Path):
+    def __init__(self, subcellular_path: Path, mode: str = 'subcellular'):
         self.subcellular_path = Path(subcellular_path)
         self.subcellular_name = self.subcellular_path.name
         self.parent_path = self.subcellular_path.parent
+        self.mode = mode  # 'subcellular' or 'core_engine'
 
-        # Neuronal categorization patterns
-        self.neuronal_categories = {
+        # Neuronal categorization patterns (expanded for Core Engine mode)
+        if mode == 'core_engine':
+            self.neuronal_categories = self._get_core_engine_categories()
+        else:
+            self.neuronal_categories = self._get_subcellular_categories()
+    
+    def _get_subcellular_categories(self) -> Dict[str, Any]:
+        """Get categorization patterns for subcellular units."""
+        return {
             'operational_tools': {
                 'pattern': lambda f: (f.endswith('.py') and
-                                    not f.endswith('.consciousness_backup')),
+                                      not f.endswith('.consciousness_backup')),
                 'priority': 'high',
                 'action': 'keep_active'
             },
@@ -47,7 +55,7 @@ class AIOSSubcellularNeuronalOrganizer:
             },
             'metadata_files': {
                 'pattern': lambda f: (f.endswith('.md') and
-                                    not f.startswith('CORE_ENGINE')),
+                                      not f.startswith('CORE_ENGINE')),
                 'priority': 'medium',
                 'action': 'subcellular_organize'
             },
@@ -58,8 +66,58 @@ class AIOSSubcellularNeuronalOrganizer:
             },
             'guidance_docs': {
                 'pattern': lambda f: (f.startswith('AIOS_') and
-                                    f.endswith('.md')),
+                                      f.endswith('.md')),
                 'priority': 'high',
+                'action': 'keep_active'
+            }
+        }
+    
+    def _get_core_engine_categories(self) -> Dict[str, Any]:
+        """Get categorization patterns for Core Engine organization."""
+        return {
+            'documentation_files': {
+                'pattern': lambda f: f.endswith('.md'),
+                'priority': 'medium',
+                'action': 'move_to_documentation',
+                'target_subcell': 'documentation'
+            },
+            'runtime_reports': {
+                'pattern': lambda f: (f.endswith('.json') and 
+                                     ('REPORT' in f.upper() or 'ANALYSIS' in f.upper())),
+                'priority': 'medium',
+                'action': 'move_to_runtime_intelligence',
+                'target_subcell': 'runtime_intelligence'
+            },
+            'bridge_implementations': {
+                'pattern': lambda f: ('_bridge.py' in f),
+                'priority': 'high',
+                'action': 'move_to_bridges',
+                'target_subcell': 'bridges'
+            },
+            'analysis_tools': {
+                'pattern': lambda f: (f.endswith('.py') and 
+                                     ('_test.py' in f or '_analysis' in f or 
+                                      '_connectivity_enhancer.py' in f)),
+                'priority': 'high',
+                'action': 'move_to_analysis_tools',
+                'target_subcell': 'analysis_tools'
+            },
+            'core_systems': {
+                'pattern': lambda f: (f.startswith('aios_') and f.endswith('.py') and
+                                     any(core_pattern in f for core_pattern in [
+                                         'autonomous_supercell', 'consciousness_monitor',
+                                         'enhancement_patch', 'root_neuronal',
+                                         'neuronal_dendritic', 'subcellular_neuronal'
+                                     ])),
+                'priority': 'high', 
+                'action': 'move_to_core_systems',
+                'target_subcell': 'core_systems'
+            },
+            'keep_in_root': {
+                'pattern': lambda f: f in ['CMakeLists.txt', 'AINLPCompiler.cs',
+                                          'EnhancedAINLPCompiler.cs', 
+                                          'aios_enhanced_connectivity_demo.py'],
+                'priority': 'critical',
                 'action': 'keep_active'
             }
         }
@@ -255,6 +313,215 @@ class AIOSSubcellularNeuronalOrganizer:
         
         return optimization_log
     
+    def organize_core_engine_structure(self, dry_run: bool = False) -> Dict[str, Any]:
+        """Organize Core Engine files into proper subcellular structure."""
+        
+        if self.mode != 'core_engine':
+            return {'error': 'Organizer not in core_engine mode'}
+        
+        print("🏗️ CORE ENGINE SUBCELLULAR ORGANIZATION")
+        print("=" * 50)
+        
+        # Analyze current structure
+        analysis = self.analyze_neuronal_coherence()
+        if 'error' in analysis:
+            return analysis
+        
+        organization_log = {
+            'operation': 'core_engine_organization',
+            'pre_organization_analysis': analysis,
+            'actions_taken': [],
+            'dry_run': dry_run,
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        # Ensure subcellular directories exist
+        subcell_dirs = ['documentation', 'runtime_intelligence', 'bridges', 
+                       'analysis_tools', 'core_systems']
+        
+        for subcell in subcell_dirs:
+            subcell_path = self.subcellular_path / subcell
+            if not dry_run:
+                subcell_path.mkdir(exist_ok=True)
+                print(f"📁 Ensured subcell: {subcell}/")
+            else:
+                print(f"📁 Would ensure subcell: {subcell}/")
+        
+        # Process each category
+        for category, data in analysis['categories'].items():
+            if data['count'] == 0:
+                continue
+                
+            action = data['recommended_action']
+            files = data['files']
+            target_subcell = data.get('target_subcell', None)
+            
+            print(f"\n📂 {category.upper()}: {data['count']} files -> {action}")
+            
+            if action.startswith('move_to_') and target_subcell:
+                self._move_files_to_subcell(files, target_subcell, dry_run, organization_log)
+            elif action == 'keep_active':
+                print(f"    ✅ Keeping {len(files)} files in root")
+                organization_log['actions_taken'].append({
+                    'action': 'kept_in_root',
+                    'category': category,
+                    'file_count': len(files)
+                })
+        
+        # Create subcellular indexes
+        if not dry_run:
+            self._create_subcellular_indexes(subcell_dirs, organization_log)
+        
+        print(f"\n✅ Core Engine organization {'simulated' if dry_run else 'complete'}!")
+        return organization_log
+    
+    def _move_files_to_subcell(self, files: List[str], target_subcell: str, 
+                              dry_run: bool, log: Dict[str, Any]) -> None:
+        """Move files to target subcell directory."""
+        
+        target_path = self.subcellular_path / target_subcell
+        moved_files = []
+        
+        for file in files:
+            source = self.subcellular_path / file
+            target = target_path / file
+            
+            if dry_run:
+                print(f"    📁 Would move: {file} → {target_subcell}/")
+            else:
+                try:
+                    shutil.move(str(source), str(target))
+                    moved_files.append(file)
+                    print(f"    📁 Moved: {file} → {target_subcell}/")
+                except Exception as e:
+                    print(f"    ⚠️  Failed to move {file}: {e}")
+        
+        log['actions_taken'].append({
+            'action': f'moved_to_{target_subcell}',
+            'files_moved': moved_files if not dry_run else files,
+            'target_path': str(target_path)
+        })
+    
+    def _create_subcellular_indexes(self, subcell_dirs: List[str], 
+                                   log: Dict[str, Any]) -> None:
+        """Create README.md index files for each subcell."""
+        
+        subcell_descriptions = {
+            'documentation': 'Architecture documentation and development guidelines',
+            'runtime_intelligence': 'Runtime reports, analysis data, and intelligence logs',
+            'bridges': 'Dendritic bridge implementations for Core-AI connectivity',
+            'analysis_tools': 'Analysis, testing, and diagnostic tools',
+            'core_systems': 'Core system implementations and neuronal organizers'
+        }
+        
+        for subcell in subcell_dirs:
+            subcell_path = self.subcellular_path / subcell
+            if not subcell_path.exists():
+                continue
+                
+            # Get files in subcell
+            files = [f.name for f in subcell_path.iterdir() if f.is_file()]
+            
+            readme_content = f"""# 📁 {subcell.title().replace('_', ' ')} Subcell
+
+## 📝 Description
+{subcell_descriptions.get(subcell, 'Subcellular component of AIOS Core Engine')}
+
+## 📄 Files ({len(files)})
+"""
+            
+            for file_name in sorted(files):
+                if file_name != "README.md":
+                    readme_content += f"- `{file_name}`\n"
+            
+            readme_content += f"""
+## 🏗️ Subcellular Organization
+This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
+
+**Organization Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  
+**Generated by**: AIOS Subcellular Neuronal Organizer
+"""
+            
+            readme_path = subcell_path / "README.md"
+            with open(readme_path, 'w', encoding='utf-8') as f:
+                f.write(readme_content)
+            
+            print(f"📋 Created index: {subcell}/README.md")
+        
+        log['actions_taken'].append({
+            'action': 'created_subcellular_indexes',
+            'subcells': subcell_dirs
+        })
+
+    def execute_neuronal_optimization(self, dry_run: bool = False) -> Dict[str, Any]:
+        """Execute neuronal optimization of subcellular structure."""
+        
+        analysis = self.analyze_neuronal_coherence()
+        
+        if 'error' in analysis:
+            return analysis
+        
+        optimization_log = {
+            'subcellular_name': self.subcellular_name,
+            'pre_optimization_analysis': analysis,
+            'actions_taken': [],
+            'dry_run': dry_run,
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        if dry_run:
+            print(f"🧬 DRY RUN: Neuronal optimization for {self.subcellular_name}")
+        else:
+            print(f"🧬 EXECUTING: Neuronal optimization for {self.subcellular_name}")
+            
+        # Create tachyonic archive if needed
+        archive_path = None
+        archival_needed = any(rec['action'] == 'tachyonic_archival' 
+                            for rec in analysis['optimization_recommendations'])
+        
+        if archival_needed and not dry_run:
+            archive_path = self.create_tachyonic_archive_structure()
+            optimization_log['actions_taken'].append({
+                'action': 'created_tachyonic_archive',
+                'path': str(archive_path)
+            })
+        
+        # Process each category according to recommendations
+        for category, data in analysis['categories'].items():
+            if data['count'] == 0:
+                continue
+                
+            action = data['recommended_action']
+            files = data['files']
+            
+            print(f"  📁 {category.upper()}: {data['count']} files -> {action}")
+            
+            if action == 'tachyonic_archive' and files:
+                self._archive_files(files, category, archive_path, dry_run, optimization_log)
+            elif action == 'subcellular_organize' and files:
+                self._organize_metadata_files(files, dry_run, optimization_log)
+            elif action == 'keep_active':
+                print(f"    ✅ Keeping {len(files)} operational files active")
+                optimization_log['actions_taken'].append({
+                    'action': 'kept_active',
+                    'category': category,
+                    'file_count': len(files)
+                })
+        
+        # Generate post-optimization analysis
+        if not dry_run:
+            post_analysis = self.analyze_neuronal_coherence()
+            optimization_log['post_optimization_analysis'] = post_analysis
+            
+            pre_score = analysis['neuronal_metrics']['neuronal_coherence_score']
+            post_score = post_analysis['neuronal_metrics']['neuronal_coherence_score']
+            improvement = post_score - pre_score
+            optimization_log['coherence_improvement'] = improvement
+            
+            print(f"  🧠 Neuronal coherence improvement: {improvement:+.3f}")
+        
+        return optimization_log
+    
     def _archive_files(self, files: List[str], category: str, archive_path: Path, 
                       dry_run: bool, log: Dict[str, Any]) -> None:
         """Archive files to tachyonic storage."""
@@ -383,17 +650,60 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='AIOS Subcellular Neuronal Organizer')
-    parser.add_argument('subcellular_path', help='Path to subcellular unit (e.g., analysis_tools)')
-    parser.add_argument('--mode', choices=['analyze', 'optimize', 'dry-run'], 
+    parser.add_argument('subcellular_path', help='Path to subcellular unit or Core Engine root')
+    parser.add_argument('--mode', choices=['analyze', 'optimize', 'dry-run', 'core-organize'], 
                        default='analyze', help='Operation mode')
+    parser.add_argument('--type', choices=['subcellular', 'core_engine'], 
+                       default='subcellular', help='Organizer type')
     parser.add_argument('--report', action='store_true', 
                        help='Generate detailed report')
     
     args = parser.parse_args()
     
-    organizer = AIOSSubcellularNeuronalOrganizer(Path(args.subcellular_path))
+    # Initialize organizer with appropriate mode
+    organizer_mode = 'core_engine' if args.type == 'core_engine' else 'subcellular'
+    organizer = AIOSSubcellularNeuronalOrganizer(Path(args.subcellular_path), mode=organizer_mode)
     
-    if args.mode == 'analyze':
+    if args.mode == 'core-organize':
+        # Core Engine organization mode
+        print("🏗️ CORE ENGINE ORGANIZATION MODE")
+        dry_run = input("Run in dry-run mode? (y/N): ").lower().startswith('y')
+        
+        result = organizer.organize_core_engine_structure(dry_run=dry_run)
+        
+        if 'error' in result:
+            print(f"❌ Error: {result['error']}")
+            return
+        
+        if args.report:
+            # Generate organization report
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            report_file = f"CORE_ENGINE_ORGANIZATION_REPORT_{timestamp}.md"
+            
+            report_content = f"""# 🏗️ CORE ENGINE ORGANIZATION REPORT
+
+**Timestamp**: {result['timestamp']}
+**Mode**: {'DRY RUN' if result['dry_run'] else 'EXECUTION'}
+
+## Pre-Organization Analysis
+- **Total Files**: {result['pre_organization_analysis']['total_files']}
+
+## Actions Taken
+"""
+            for action in result['actions_taken']:
+                report_content += f"- **{action['action'].replace('_', ' ').title()}**"
+                if 'file_count' in action:
+                    report_content += f": {action['file_count']} files"
+                elif 'files_moved' in action:
+                    report_content += f": {len(action['files_moved'])} files moved"
+                report_content += "\n"
+            
+            with open(report_file, 'w', encoding='utf-8') as f:
+                f.write(report_content)
+            
+            print(f"📋 Report saved: {report_file}")
+    
+    elif args.mode == 'analyze':
         print("🧬 NEURONAL ANALYSIS MODE")
         analysis = organizer.analyze_neuronal_coherence()
         
@@ -401,16 +711,19 @@ def main():
             print(f"❌ Error: {analysis['error']}")
             return
         
-        print(f"\n📊 SUBCELLULAR ANALYSIS: {analysis['subcellular_name']}")
+        print(f"\n📊 ANALYSIS: {analysis['subcellular_name']}")
         print("=" * 50)
         print(f"Total Files: {analysis['total_files']}")
-        print(f"Neuronal Coherence Score: {analysis['neuronal_metrics']['neuronal_coherence_score']:.3f}")
+        if 'neuronal_coherence_score' in analysis['neuronal_metrics']:
+            score = analysis['neuronal_metrics']['neuronal_coherence_score']
+            print(f"Neuronal Coherence Score: {score:.3f}")
         print()
         
         print("📁 FILE CATEGORIES:")
         for category, data in analysis['categories'].items():
             if data['count'] > 0:
-                print(f"  {category.upper()}: {data['count']} files ({data['recommended_action']})")
+                action = data['recommended_action']
+                print(f"  {category.upper()}: {data['count']} files ({action})")
         print()
         
         if analysis['optimization_recommendations']:
@@ -418,7 +731,7 @@ def main():
             for rec in analysis['optimization_recommendations']:
                 print(f"  - {rec['issue']}: {rec['ratio']:.3f} -> {rec['action']}")
         else:
-            print("✅ No optimization recommendations - neuronal structure is coherent")
+            print("✅ No optimization recommendations - structure is coherent")
     
     elif args.mode in ['optimize', 'dry-run']:
         dry_run = (args.mode == 'dry-run')
