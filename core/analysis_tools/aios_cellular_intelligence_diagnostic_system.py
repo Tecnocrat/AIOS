@@ -931,10 +931,14 @@ class AIOSCellularIntelligenceDiagnosticSystem:
         print("✅ Cellular intelligence diagnostic complete!")
     
     def save_diagnostic_report(self, diagnostic_session: Dict[str, Any]) -> str:
-        """Save comprehensive diagnostic report."""
+        """Save comprehensive diagnostic report to tachyonic storage."""
+        
+        # Use tachyonic storage instead of polluting Core Engine root
+        tachyonic_path = self.analysis_tools_path.parent / "tachyonic_archive" / "cellular_reports"
+        tachyonic_path.mkdir(parents=True, exist_ok=True)
         
         report_file = (
-            self.analysis_tools_path.parent / 
+            tachyonic_path / 
             f"CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         )
         
@@ -942,7 +946,7 @@ class AIOSCellularIntelligenceDiagnosticSystem:
             with open(report_file, 'w', encoding='utf-8') as f:
                 json.dump(diagnostic_session, f, indent=2, default=str)
             
-            logger.info(f"📄 Diagnostic report saved: {report_file}")
+            logger.info(f"📄 Diagnostic report saved to tachyonic storage: {report_file}")
             return str(report_file)
         except Exception as e:
             logger.error(f"Failed to save diagnostic report: {e}")
