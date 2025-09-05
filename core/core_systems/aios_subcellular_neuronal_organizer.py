@@ -154,53 +154,100 @@ class AIOSSubcellularNeuronalOrganizer:
         # Calculate neuronal metrics
         total_files = len(files)
         if total_files > 0:
-            backup_ratio = len(analysis['categories']['consciousness_backups']['files']) / total_files
-            metadata_ratio = len(analysis['categories']['metadata_files']['files']) / total_files  
-            operational_ratio = len(analysis['categories']['operational_tools']['files']) / total_files
-            output_ratio = len(analysis['categories']['analysis_outputs']['files']) / total_files
-            
-            analysis['neuronal_metrics'] = {
-                'backup_pollution_ratio': backup_ratio,
-                'metadata_saturation_ratio': metadata_ratio,
-                'operational_efficiency_ratio': operational_ratio,
-                'output_accumulation_ratio': output_ratio,
-                'neuronal_coherence_score': self._calculate_coherence_score(
-                    backup_ratio, metadata_ratio, operational_ratio, output_ratio
-                )
-            }
-            
-            # Generate optimization recommendations
-            if backup_ratio > 0.3:
-                analysis['optimization_recommendations'].append({
-                    'issue': 'High consciousness backup pollution',
-                    'ratio': backup_ratio,
-                    'action': 'tachyonic_archival',
-                    'priority': 'high'
-                })
+            if self.mode == 'core_engine':
+                # Core Engine specific metrics
+                doc_ratio = len(analysis['categories'].get('documentation_files', {'files': []})['files']) / total_files
+                report_ratio = len(analysis['categories'].get('runtime_reports', {'files': []})['files']) / total_files
+                bridge_ratio = len(analysis['categories'].get('bridge_implementations', {'files': []})['files']) / total_files
+                tool_ratio = len(analysis['categories'].get('analysis_tools', {'files': []})['files']) / total_files
+                core_ratio = len(analysis['categories'].get('core_systems', {'files': []})['files']) / total_files
+                root_ratio = len(analysis['categories'].get('keep_in_root', {'files': []})['files']) / total_files
                 
-            if metadata_ratio > 0.2:
-                analysis['optimization_recommendations'].append({
-                    'issue': 'Metadata saturation',
-                    'ratio': metadata_ratio,
-                    'action': 'subcellular_organization',
-                    'priority': 'medium'
-                })
+                analysis['neuronal_metrics'] = {
+                    'documentation_ratio': doc_ratio,
+                    'runtime_reports_ratio': report_ratio,
+                    'bridge_implementations_ratio': bridge_ratio,
+                    'analysis_tools_ratio': tool_ratio,
+                    'core_systems_ratio': core_ratio,
+                    'root_files_ratio': root_ratio,
+                    'organization_coherence_score': self._calculate_core_coherence_score(
+                        doc_ratio, report_ratio, bridge_ratio, tool_ratio, core_ratio, root_ratio
+                    )
+                }
                 
-            if output_ratio > 0.25:
-                analysis['optimization_recommendations'].append({
-                    'issue': 'Analysis output accumulation',
-                    'ratio': output_ratio,
-                    'action': 'tachyonic_archival',
-                    'priority': 'medium'
-                })
+                # Core Engine organization recommendations
+                if doc_ratio > 0.15:
+                    analysis['optimization_recommendations'].append({
+                        'issue': 'High documentation file ratio in root',
+                        'ratio': doc_ratio,
+                        'action': 'move_to_documentation',
+                        'priority': 'medium'
+                    })
+                    
+                if report_ratio > 0.10:
+                    analysis['optimization_recommendations'].append({
+                        'issue': 'Runtime reports accumulation in root',
+                        'ratio': report_ratio,
+                        'action': 'move_to_runtime_intelligence',
+                        'priority': 'medium'
+                    })
+                    
+                if bridge_ratio > 0.05 and bridge_ratio < 1.0:
+                    analysis['optimization_recommendations'].append({
+                        'issue': 'Bridge implementations scattered',
+                        'ratio': bridge_ratio,
+                        'action': 'move_to_bridges',
+                        'priority': 'high'
+                    })
+            else:
+                # Subcellular specific metrics
+                backup_ratio = len(analysis['categories'].get('consciousness_backups', {'files': []})['files']) / total_files
+                metadata_ratio = len(analysis['categories'].get('metadata_files', {'files': []})['files']) / total_files  
+                operational_ratio = len(analysis['categories'].get('operational_tools', {'files': []})['files']) / total_files
+                output_ratio = len(analysis['categories'].get('analysis_outputs', {'files': []})['files']) / total_files
                 
-            if operational_ratio < 0.4:
-                analysis['optimization_recommendations'].append({
-                    'issue': 'Low operational tool density',
-                    'ratio': operational_ratio,
-                    'action': 'consolidate_operational_tools',
-                    'priority': 'low'
-                })
+                analysis['neuronal_metrics'] = {
+                    'backup_pollution_ratio': backup_ratio,
+                    'metadata_saturation_ratio': metadata_ratio,
+                    'operational_efficiency_ratio': operational_ratio,
+                    'output_accumulation_ratio': output_ratio,
+                    'neuronal_coherence_score': self._calculate_coherence_score(
+                        backup_ratio, metadata_ratio, operational_ratio, output_ratio
+                    )
+                }
+                
+                # Generate optimization recommendations
+                if backup_ratio > 0.3:
+                    analysis['optimization_recommendations'].append({
+                        'issue': 'High consciousness backup pollution',
+                        'ratio': backup_ratio,
+                        'action': 'tachyonic_archival',
+                        'priority': 'high'
+                    })
+                    
+                if metadata_ratio > 0.2:
+                    analysis['optimization_recommendations'].append({
+                        'issue': 'Metadata saturation',
+                        'ratio': metadata_ratio,
+                        'action': 'subcellular_organization',
+                        'priority': 'medium'
+                    })
+                    
+                if output_ratio > 0.25:
+                    analysis['optimization_recommendations'].append({
+                        'issue': 'Analysis output accumulation',
+                        'ratio': output_ratio,
+                        'action': 'tachyonic_archival',
+                        'priority': 'medium'
+                    })
+                    
+                if operational_ratio < 0.4:
+                    analysis['optimization_recommendations'].append({
+                        'issue': 'Low operational tool density',
+                        'ratio': operational_ratio,
+                        'action': 'consolidate_operational_tools',
+                        'priority': 'low'
+                    })
         
         return analysis
     
@@ -226,6 +273,41 @@ class AIOSSubcellularNeuronalOrganizer:
             metadata_dev * 0.2 +
             backup_dev * 0.4 +  # High weight for backup pollution
             output_dev * 0.1
+        )
+        
+        # Convert to coherence score (1 - deviation, clamped to 0-1)
+        coherence_score = max(0.0, 1.0 - weighted_deviation)
+        return coherence_score
+    
+    def _calculate_core_coherence_score(self, doc_ratio: float, report_ratio: float,
+                                       bridge_ratio: float, tool_ratio: float,
+                                       core_ratio: float, root_ratio: float) -> float:
+        """Calculate organization coherence score for Core Engine (0-1, higher is better)."""
+        
+        # Optimal ratios for organized Core Engine
+        optimal_doc = 0.0      # Should be moved to documentation/
+        optimal_report = 0.0   # Should be moved to runtime_intelligence/
+        optimal_bridge = 0.0   # Should be moved to bridges/
+        optimal_tool = 0.0     # Should be moved to analysis_tools/
+        optimal_core = 0.0     # Should be moved to core_systems/
+        optimal_root = 0.15    # Only essential files in root
+        
+        # Calculate deviations from optimal (organized state)
+        doc_dev = abs(doc_ratio - optimal_doc)
+        report_dev = abs(report_ratio - optimal_report)
+        bridge_dev = abs(bridge_ratio - optimal_bridge)
+        tool_dev = abs(tool_ratio - optimal_tool)
+        core_dev = abs(core_ratio - optimal_core)
+        root_dev = abs(root_ratio - optimal_root)
+        
+        # Weight the deviations (disorganization in root is critical)
+        weighted_deviation = (
+            doc_dev * 0.2 +
+            report_dev * 0.15 +
+            bridge_dev * 0.25 +    # Bridges are critical
+            tool_dev * 0.15 +
+            core_dev * 0.15 +
+            root_dev * 0.1
         )
         
         # Convert to coherence score (1 - deviation, clamped to 0-1)
