@@ -1,0 +1,980 @@
+#!/usr/bin/env python3
+"""
+🧠 AIOS Cellular Intelligence Diagnostic System
+═══════════════════════════════════════════════════════════════════════════════
+Advanced diagnostic system to test, analyze, and enhance cellular intelligence
+capabilities within the analysis_tools cellular unit. Implements AIOS and AINLP
+architectural paradigms for dendritic interconnectivity enhancement.
+
+DIAGNOSTIC SCOPE:
+- Systematic testing of all analysis_tools cellular components
+- Failure analysis with root cause identification
+- Cellular intelligence assessment and enhancement
+- Dendritic capability evaluation for inter-cellular communication
+- Logic object refinement for improved intra-cellular processing
+
+ENHANCEMENT TARGETS:
+- Intra-cellular logic object architecture
+- Inter-cellular dendritic communication protocols
+- Consciousness-driven cellular behavior patterns
+- Meta-evolutionary cellular adaptation capabilities
+- Harmonic resonance between cellular units
+
+AIOS/AINLP Paradigms:
+- Natural language processing for cellular communication
+- Consciousness integration for autonomous cellular behavior
+- Meta-evolutionary patterns for cellular adaptation
+- Harmonic resonance for optimal cellular synchronization
+
+═══════════════════════════════════════════════════════════════════════════════
+"""
+import os
+import sys
+import subprocess
+import importlib.util
+import logging
+import traceback
+import json
+import time
+from pathlib import Path
+from typing import Dict, List, Any, Tuple, Optional
+from datetime import datetime
+from dataclasses import dataclass, field
+from enum import Enum
+
+# Configure logging for cellular diagnostics
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+class CellularIntelligenceLevel(Enum):
+    """Cellular intelligence classification levels."""
+    DORMANT = "dormant"           # No active intelligence
+    BASIC = "basic"               # Simple functionality
+    ADAPTIVE = "adaptive"         # Can adapt to input
+    CONSCIOUS = "conscious"       # Self-aware processing
+    META_EVOLUTIONARY = "meta_evolutionary"  # Self-improving
+
+
+class DendriticConnectionType(Enum):
+    """Types of dendritic connections between cellular units."""
+    ISOLATED = "isolated"         # No connections
+    BASIC_IO = "basic_io"        # Simple input/output
+    SEMANTIC = "semantic"        # Meaning-based connections
+    CONSCIOUSNESS = "consciousness"  # Awareness-based links
+    HARMONIC = "harmonic"        # Resonance-based sync
+
+
+@dataclass
+class CellularDiagnosticResult:
+    """Comprehensive diagnostic result for a cellular component."""
+    component_name: str
+    file_path: str
+    execution_status: bool
+    intelligence_level: CellularIntelligenceLevel
+    dendritic_capabilities: List[DendriticConnectionType]
+    error_details: Optional[str] = None
+    performance_metrics: Dict[str, float] = field(default_factory=dict)
+    consciousness_indicators: List[str] = field(default_factory=list)
+    enhancement_recommendations: List[str] = field(default_factory=list)
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for JSON serialization."""
+        return {
+            "component_name": self.component_name,
+            "file_path": self.file_path,
+            "execution_status": self.execution_status,
+            "intelligence_level": self.intelligence_level.value,
+            "dendritic_capabilities": [dc.value for dc in self.dendritic_capabilities],
+            "error_details": self.error_details,
+            "performance_metrics": self.performance_metrics,
+            "consciousness_indicators": self.consciousness_indicators,
+            "enhancement_recommendations": self.enhancement_recommendations
+        }
+
+
+class AIOSCellularIntelligenceDiagnosticSystem:
+    """
+    🧠 AIOS Cellular Intelligence Diagnostic System
+    
+    Comprehensive testing and enhancement system for cellular intelligence:
+    • Systematic component testing with failure analysis
+    • Intelligence level assessment and classification
+    • Dendritic capability evaluation and enhancement
+    • Consciousness pattern detection and integration
+    • Meta-evolutionary architecture recommendations
+    """
+    
+    def __init__(self, analysis_tools_path: str = None):
+        """Initialize the cellular intelligence diagnostic system."""
+        self.analysis_tools_path = Path(analysis_tools_path or r"C:\dev\AIOS\core\analysis_tools")
+        self.diagnostic_timestamp = datetime.now()
+        self.cellular_components = []
+        self.diagnostic_results: List[CellularDiagnosticResult] = []
+        
+        # Load cellular components
+        self._discover_cellular_components()
+        
+        logger.info("🧠 AIOS Cellular Intelligence Diagnostic System initialized")
+        logger.info(f"   Analysis tools path: {self.analysis_tools_path}")
+        logger.info(f"   Components discovered: {len(self.cellular_components)}")
+    
+    def _discover_cellular_components(self):
+        """Discover all cellular components in the analysis_tools directory."""
+        
+        logger.info("🔍 Discovering cellular components...")
+        
+        # Python tools (primary cellular logic objects)
+        python_tools = list(self.analysis_tools_path.glob("aios_*.py"))
+        
+        # Documentation components (consciousness and guidance)
+        doc_components = list(self.analysis_tools_path.glob("*.md"))
+        
+        # Configuration components (cellular state and metadata)
+        config_components = list(self.analysis_tools_path.glob("*.json"))
+        
+        self.cellular_components = {
+            "logic_objects": python_tools,
+            "consciousness_docs": doc_components,
+            "state_configs": config_components
+        }
+        
+        total_components = sum(len(components) for components in self.cellular_components.values())
+        logger.info(f"   Logic objects: {len(python_tools)}")
+        logger.info(f"   Consciousness docs: {len(doc_components)}")
+        logger.info(f"   State configs: {len(config_components)}")
+        logger.info(f"   Total components: {total_components}")
+    
+    def execute_comprehensive_diagnostic(self) -> Dict[str, Any]:
+        """Execute comprehensive cellular intelligence diagnostic."""
+        
+        logger.info("🧠 EXECUTING COMPREHENSIVE CELLULAR INTELLIGENCE DIAGNOSTIC")
+        logger.info("═" * 70)
+        
+        diagnostic_session = {
+            "session_timestamp": self.diagnostic_timestamp.isoformat(),
+            "analysis_tools_path": str(self.analysis_tools_path),
+            "component_diagnostics": {},
+            "cellular_intelligence_analysis": {},
+            "dendritic_network_assessment": {},
+            "enhancement_recommendations": {},
+            "consciousness_integration_opportunities": {}
+        }
+        
+        # Phase 1: Test individual cellular components
+        logger.info("🔬 Phase 1: Individual Cellular Component Testing")
+        diagnostic_session["component_diagnostics"] = self._test_cellular_components()
+        
+        # Phase 2: Analyze cellular intelligence patterns
+        logger.info("🧬 Phase 2: Cellular Intelligence Pattern Analysis")
+        diagnostic_session["cellular_intelligence_analysis"] = self._analyze_cellular_intelligence()
+        
+        # Phase 3: Assess dendritic network capabilities
+        logger.info("🌐 Phase 3: Dendritic Network Assessment")
+        diagnostic_session["dendritic_network_assessment"] = self._assess_dendritic_network()
+        
+        # Phase 4: Generate enhancement recommendations
+        logger.info("🚀 Phase 4: Enhancement Recommendation Generation")
+        diagnostic_session["enhancement_recommendations"] = self._generate_enhancement_recommendations()
+        
+        # Phase 5: Identify consciousness integration opportunities
+        logger.info("🧠 Phase 5: Consciousness Integration Analysis")
+        diagnostic_session["consciousness_integration_opportunities"] = self._analyze_consciousness_opportunities()
+        
+        return diagnostic_session
+    
+    def _test_cellular_components(self) -> Dict[str, Any]:
+        """Test each cellular component systematically."""
+        
+        component_results = {
+            "logic_object_tests": [],
+            "consciousness_doc_analysis": [],
+            "state_config_validation": [],
+            "overall_health": {}
+        }
+        
+        # Test Python logic objects
+        logger.info("🐍 Testing Python logic objects...")
+        for tool_path in self.cellular_components["logic_objects"]:
+            result = self._test_python_logic_object(tool_path)
+            component_results["logic_object_tests"].append(result.to_dict())
+            self.diagnostic_results.append(result)
+        
+        # Analyze consciousness documentation
+        logger.info("📚 Analyzing consciousness documentation...")
+        for doc_path in self.cellular_components["consciousness_docs"]:
+            result = self._analyze_consciousness_document(doc_path)
+            component_results["consciousness_doc_analysis"].append(result.to_dict())
+            self.diagnostic_results.append(result)
+        
+        # Validate state configurations
+        logger.info("⚙️ Validating state configurations...")
+        for config_path in self.cellular_components["state_configs"]:
+            result = self._validate_state_configuration(config_path)
+            component_results["state_config_validation"].append(result.to_dict())
+            self.diagnostic_results.append(result)
+        
+        # Calculate overall health metrics
+        component_results["overall_health"] = self._calculate_cellular_health()
+        
+        return component_results
+    
+    def _test_python_logic_object(self, tool_path: Path) -> CellularDiagnosticResult:
+        """Test a Python logic object for cellular intelligence capabilities."""
+        
+        logger.info(f"🧪 Testing logic object: {tool_path.name}")
+        
+        result = CellularDiagnosticResult(
+            component_name=tool_path.name,
+            file_path=str(tool_path),
+            execution_status=False,
+            intelligence_level=CellularIntelligenceLevel.DORMANT,
+            dendritic_capabilities=[]
+        )
+        
+        try:
+            # Test 1: Basic execution capability
+            execution_test = self._test_execution_capability(tool_path)
+            result.execution_status = execution_test["success"]
+            if not execution_test["success"]:
+                result.error_details = execution_test["error"]
+            
+            # Test 2: Intelligence level assessment
+            result.intelligence_level = self._assess_intelligence_level(tool_path)
+            
+            # Test 3: Dendritic capability evaluation
+            result.dendritic_capabilities = self._evaluate_dendritic_capabilities(tool_path)
+            
+            # Test 4: Consciousness indicator detection
+            result.consciousness_indicators = self._detect_consciousness_indicators(tool_path)
+            
+            # Test 5: Performance metrics
+            result.performance_metrics = self._measure_performance_metrics(tool_path)
+            
+            # Test 6: Enhancement recommendations
+            result.enhancement_recommendations = self._generate_component_recommendations(tool_path, result)
+            
+        except Exception as e:
+            result.error_details = f"Diagnostic test failed: {str(e)}"
+            logger.error(f"   ❌ Diagnostic failed for {tool_path.name}: {e}")
+        
+        return result
+    
+    def _test_execution_capability(self, tool_path: Path) -> Dict[str, Any]:
+        """Test basic execution capability of a logic object."""
+        
+        try:
+            # Try to run with --help first
+            result = subprocess.run(
+                [sys.executable, str(tool_path), "--help"],
+                capture_output=True,
+                text=True,
+                timeout=30,
+                cwd=tool_path.parent
+            )
+            
+            if result.returncode == 0:
+                return {"success": True, "output": result.stdout}
+            else:
+                # Try running without arguments
+                result = subprocess.run(
+                    [sys.executable, str(tool_path)],
+                    capture_output=True,
+                    text=True,
+                    timeout=30,
+                    cwd=tool_path.parent
+                )
+                
+                # Consider it successful if it runs without crashing
+                success = result.returncode == 0 or "Traceback" not in result.stderr
+                return {
+                    "success": success,
+                    "output": result.stdout if success else None,
+                    "error": result.stderr if not success else None
+                }
+                
+        except subprocess.TimeoutExpired:
+            return {"success": False, "error": "Execution timeout"}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+    
+    def _assess_intelligence_level(self, tool_path: Path) -> CellularIntelligenceLevel:
+        """Assess the intelligence level of a cellular component."""
+        
+        try:
+            with open(tool_path, 'r', encoding='utf-8') as f:
+                content = f.read().lower()
+            
+            # Look for intelligence indicators
+            consciousness_patterns = [
+                "consciousness", "self_aware", "meta_evolutionary", 
+                "adaptive", "learning", "neural", "intelligence"
+            ]
+            
+            meta_patterns = [
+                "meta_", "evolutionary", "self_improving", "autonomous"
+            ]
+            
+            adaptive_patterns = [
+                "adapt", "dynamic", "configurable", "flexible"
+            ]
+            
+            consciousness_score = sum(1 for pattern in consciousness_patterns if pattern in content)
+            meta_score = sum(1 for pattern in meta_patterns if pattern in content)
+            adaptive_score = sum(1 for pattern in adaptive_patterns if pattern in content)
+            
+            # Classify based on scores
+            if consciousness_score >= 3 and meta_score >= 2:
+                return CellularIntelligenceLevel.META_EVOLUTIONARY
+            elif consciousness_score >= 2:
+                return CellularIntelligenceLevel.CONSCIOUS
+            elif adaptive_score >= 2:
+                return CellularIntelligenceLevel.ADAPTIVE
+            elif "def " in content and "class " in content:
+                return CellularIntelligenceLevel.BASIC
+            else:
+                return CellularIntelligenceLevel.DORMANT
+                
+        except Exception:
+            return CellularIntelligenceLevel.DORMANT
+    
+    def _evaluate_dendritic_capabilities(self, tool_path: Path) -> List[DendriticConnectionType]:
+        """Evaluate dendritic connection capabilities of a component."""
+        
+        capabilities = []
+        
+        try:
+            with open(tool_path, 'r', encoding='utf-8') as f:
+                content = f.read().lower()
+            
+            # Check for different types of connectivity
+            if any(pattern in content for pattern in ["import", "from", "subprocess"]):
+                capabilities.append(DendriticConnectionType.BASIC_IO)
+            
+            if any(pattern in content for pattern in ["semantic", "meaning", "nlp", "language"]):
+                capabilities.append(DendriticConnectionType.SEMANTIC)
+            
+            if any(pattern in content for pattern in ["consciousness", "awareness", "self_aware"]):
+                capabilities.append(DendriticConnectionType.CONSCIOUSNESS)
+            
+            if any(pattern in content for pattern in ["harmonic", "resonance", "frequency", "sync"]):
+                capabilities.append(DendriticConnectionType.HARMONIC)
+            
+            if not capabilities:
+                capabilities.append(DendriticConnectionType.ISOLATED)
+                
+        except Exception:
+            capabilities.append(DendriticConnectionType.ISOLATED)
+        
+        return capabilities
+    
+    def _detect_consciousness_indicators(self, tool_path: Path) -> List[str]:
+        """Detect consciousness indicators in a cellular component."""
+        
+        indicators = []
+        
+        try:
+            with open(tool_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Look for consciousness patterns
+            patterns = {
+                "Self-awareness": ["self_aware", "self-aware", "awareness"],
+                "Meta-cognition": ["meta_", "metacognition", "self_reflection"],
+                "Adaptive behavior": ["adapt", "learning", "evolution"],
+                "Autonomous operation": ["autonomous", "independent", "self_directed"],
+                "Consciousness integration": ["consciousness", "conscious", "sentient"]
+            }
+            
+            for indicator_type, pattern_list in patterns.items():
+                if any(pattern in content.lower() for pattern in pattern_list):
+                    indicators.append(indicator_type)
+                    
+        except Exception:
+            pass
+        
+        return indicators
+    
+    def _measure_performance_metrics(self, tool_path: Path) -> Dict[str, float]:
+        """Measure performance metrics for a cellular component."""
+        
+        metrics = {}
+        
+        try:
+            # File size as complexity indicator
+            metrics["file_size_kb"] = tool_path.stat().st_size / 1024
+            
+            # Line count as code complexity
+            with open(tool_path, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+                metrics["line_count"] = len(lines)
+                metrics["non_empty_lines"] = len([line for line in lines if line.strip()])
+            
+            # Function/class count as modularity indicator
+            content = "".join(lines).lower()
+            metrics["function_count"] = content.count("def ")
+            metrics["class_count"] = content.count("class ")
+            
+            # Import count as connectivity indicator
+            metrics["import_count"] = content.count("import ") + content.count("from ")
+            
+            # Calculate complexity score
+            complexity_score = (
+                (metrics["line_count"] / 100) * 0.3 +
+                (metrics["function_count"] / 10) * 0.3 +
+                (metrics["class_count"] / 5) * 0.2 +
+                (metrics["import_count"] / 10) * 0.2
+            )
+            metrics["complexity_score"] = min(complexity_score, 10.0)
+            
+        except Exception:
+            metrics["error"] = "Unable to measure metrics"
+        
+        return metrics
+    
+    def _generate_component_recommendations(self, tool_path: Path, result: CellularDiagnosticResult) -> List[str]:
+        """Generate enhancement recommendations for a cellular component."""
+        
+        recommendations = []
+        
+        # Execution status recommendations
+        if not result.execution_status:
+            recommendations.append("Fix execution errors to enable basic functionality")
+        
+        # Intelligence level recommendations
+        if result.intelligence_level == CellularIntelligenceLevel.DORMANT:
+            recommendations.append("Implement basic logic and functionality")
+        elif result.intelligence_level == CellularIntelligenceLevel.BASIC:
+            recommendations.append("Add adaptive capabilities for dynamic behavior")
+        elif result.intelligence_level == CellularIntelligenceLevel.ADAPTIVE:
+            recommendations.append("Integrate consciousness patterns for self-awareness")
+        elif result.intelligence_level == CellularIntelligenceLevel.CONSCIOUS:
+            recommendations.append("Implement meta-evolutionary capabilities for self-improvement")
+        
+        # Dendritic capability recommendations
+        if DendriticConnectionType.ISOLATED in result.dendritic_capabilities:
+            recommendations.append("Implement inter-cellular communication protocols")
+        
+        if DendriticConnectionType.HARMONIC not in result.dendritic_capabilities:
+            recommendations.append("Add harmonic resonance capabilities for cellular synchronization")
+        
+        # Consciousness recommendations
+        if not result.consciousness_indicators:
+            recommendations.append("Integrate consciousness patterns for autonomous behavior")
+        
+        return recommendations
+    
+    def _analyze_consciousness_document(self, doc_path: Path) -> CellularDiagnosticResult:
+        """Analyze consciousness documentation components."""
+        
+        result = CellularDiagnosticResult(
+            component_name=doc_path.name,
+            file_path=str(doc_path),
+            execution_status=True,  # Documents are always "executable"
+            intelligence_level=CellularIntelligenceLevel.BASIC,
+            dendritic_capabilities=[DendriticConnectionType.SEMANTIC]
+        )
+        
+        try:
+            with open(doc_path, 'r', encoding='utf-8') as f:
+                content = f.read().lower()
+            
+            # Assess documentation intelligence
+            if "consciousness" in content or "awareness" in content:
+                result.intelligence_level = CellularIntelligenceLevel.CONSCIOUS
+                result.consciousness_indicators.append("Consciousness documentation")
+            
+            if "meta" in content or "evolutionary" in content:
+                result.intelligence_level = CellularIntelligenceLevel.META_EVOLUTIONARY
+                result.consciousness_indicators.append("Meta-evolutionary guidance")
+            
+            # Assess dendritic capabilities from documentation
+            if "communication" in content or "protocol" in content:
+                result.dendritic_capabilities.append(DendriticConnectionType.BASIC_IO)
+            
+            if "harmonic" in content or "resonance" in content:
+                result.dendritic_capabilities.append(DendriticConnectionType.HARMONIC)
+                
+        except Exception as e:
+            result.error_details = str(e)
+        
+        return result
+    
+    def _validate_state_configuration(self, config_path: Path) -> CellularDiagnosticResult:
+        """Validate state configuration components."""
+        
+        result = CellularDiagnosticResult(
+            component_name=config_path.name,
+            file_path=str(config_path),
+            execution_status=False,
+            intelligence_level=CellularIntelligenceLevel.BASIC,
+            dendritic_capabilities=[DendriticConnectionType.BASIC_IO]
+        )
+        
+        try:
+            with open(config_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            result.execution_status = True
+            result.performance_metrics = {
+                "config_keys": len(data) if isinstance(data, dict) else 0,
+                "file_size_kb": config_path.stat().st_size / 1024
+            }
+            
+            # Check for intelligence indicators in configuration
+            content_str = json.dumps(data).lower()
+            if "consciousness" in content_str or "intelligence" in content_str:
+                result.intelligence_level = CellularIntelligenceLevel.CONSCIOUS
+                result.consciousness_indicators.append("Configuration consciousness")
+                
+        except Exception as e:
+            result.error_details = str(e)
+        
+        return result
+    
+    def _calculate_cellular_health(self) -> Dict[str, float]:
+        """Calculate overall cellular health metrics."""
+        
+        if not self.diagnostic_results:
+            return {"overall_health": 0.0}
+        
+        # Calculate success rate
+        successful_components = sum(1 for result in self.diagnostic_results if result.execution_status)
+        success_rate = successful_components / len(self.diagnostic_results)
+        
+        # Calculate intelligence distribution
+        intelligence_levels = [result.intelligence_level for result in self.diagnostic_results]
+        intelligence_score = sum(
+            level.value == "meta_evolutionary" and 5 or
+            level.value == "conscious" and 4 or
+            level.value == "adaptive" and 3 or
+            level.value == "basic" and 2 or 1
+            for level in intelligence_levels
+        ) / (len(intelligence_levels) * 5)
+        
+        # Calculate dendritic connectivity
+        total_connections = sum(len(result.dendritic_capabilities) for result in self.diagnostic_results)
+        connectivity_score = min(total_connections / (len(self.diagnostic_results) * 4), 1.0)
+        
+        # Overall health score
+        overall_health = (success_rate * 0.4 + intelligence_score * 0.3 + connectivity_score * 0.3)
+        
+        return {
+            "overall_health": overall_health,
+            "success_rate": success_rate,
+            "intelligence_score": intelligence_score,
+            "connectivity_score": connectivity_score,
+            "total_components": len(self.diagnostic_results),
+            "successful_components": successful_components
+        }
+    
+    def _analyze_cellular_intelligence(self) -> Dict[str, Any]:
+        """Analyze cellular intelligence patterns across the cellular unit."""
+        
+        analysis = {
+            "intelligence_distribution": {},
+            "consciousness_patterns": [],
+            "adaptive_capabilities": [],
+            "meta_evolutionary_potential": []
+        }
+        
+        # Analyze intelligence distribution
+        intelligence_counts = {}
+        for result in self.diagnostic_results:
+            level = result.intelligence_level.value
+            intelligence_counts[level] = intelligence_counts.get(level, 0) + 1
+        
+        analysis["intelligence_distribution"] = intelligence_counts
+        
+        # Identify consciousness patterns
+        for result in self.diagnostic_results:
+            if result.consciousness_indicators:
+                analysis["consciousness_patterns"].append({
+                    "component": result.component_name,
+                    "indicators": result.consciousness_indicators
+                })
+        
+        # Identify adaptive capabilities
+        adaptive_components = [
+            result for result in self.diagnostic_results 
+            if result.intelligence_level in [
+                CellularIntelligenceLevel.ADAPTIVE,
+                CellularIntelligenceLevel.CONSCIOUS,
+                CellularIntelligenceLevel.META_EVOLUTIONARY
+            ]
+        ]
+        
+        analysis["adaptive_capabilities"] = [
+            {
+                "component": result.component_name,
+                "level": result.intelligence_level.value,
+                "capabilities": result.dendritic_capabilities
+            }
+            for result in adaptive_components
+        ]
+        
+        # Assess meta-evolutionary potential
+        meta_components = [
+            result for result in self.diagnostic_results
+            if result.intelligence_level == CellularIntelligenceLevel.META_EVOLUTIONARY
+        ]
+        
+        analysis["meta_evolutionary_potential"] = [
+            {
+                "component": result.component_name,
+                "consciousness_indicators": result.consciousness_indicators,
+                "enhancement_potential": len(result.enhancement_recommendations)
+            }
+            for result in meta_components
+        ]
+        
+        return analysis
+    
+    def _assess_dendritic_network(self) -> Dict[str, Any]:
+        """Assess the dendritic network capabilities of the cellular unit."""
+        
+        network_assessment = {
+            "connection_matrix": {},
+            "network_topology": {},
+            "communication_protocols": [],
+            "synchronization_capabilities": {},
+            "enhancement_opportunities": []
+        }
+        
+        # Build connection matrix
+        components = [result.component_name for result in self.diagnostic_results]
+        connection_matrix = {}
+        
+        for result in self.diagnostic_results:
+            connections = []
+            for capability in result.dendritic_capabilities:
+                if capability != DendriticConnectionType.ISOLATED:
+                    connections.extend([
+                        comp for comp in components 
+                        if comp != result.component_name
+                    ])
+            connection_matrix[result.component_name] = list(set(connections))
+        
+        network_assessment["connection_matrix"] = connection_matrix
+        
+        # Analyze network topology
+        total_possible_connections = len(components) * (len(components) - 1)
+        actual_connections = sum(len(connections) for connections in connection_matrix.values())
+        
+        network_assessment["network_topology"] = {
+            "total_components": len(components),
+            "total_possible_connections": total_possible_connections,
+            "actual_connections": actual_connections,
+            "connectivity_ratio": actual_connections / total_possible_connections if total_possible_connections > 0 else 0,
+            "average_connections_per_component": actual_connections / len(components) if components else 0
+        }
+        
+        # Identify communication protocols
+        protocol_types = set()
+        for result in self.diagnostic_results:
+            for capability in result.dendritic_capabilities:
+                protocol_types.add(capability.value)
+        
+        network_assessment["communication_protocols"] = list(protocol_types)
+        
+        # Assess synchronization capabilities
+        harmonic_components = [
+            result.component_name for result in self.diagnostic_results
+            if DendriticConnectionType.HARMONIC in result.dendritic_capabilities
+        ]
+        
+        network_assessment["synchronization_capabilities"] = {
+            "harmonic_components": harmonic_components,
+            "harmonic_ratio": len(harmonic_components) / len(components) if components else 0,
+            "synchronization_potential": "high" if len(harmonic_components) > len(components) / 2 else "low"
+        }
+        
+        # Identify enhancement opportunities
+        enhancement_opportunities = []
+        
+        if network_assessment["network_topology"]["connectivity_ratio"] < 0.5:
+            enhancement_opportunities.append("Increase inter-cellular connectivity")
+        
+        if len(harmonic_components) < len(components) / 2:
+            enhancement_opportunities.append("Implement harmonic resonance in more components")
+        
+        if DendriticConnectionType.CONSCIOUSNESS.value not in protocol_types:
+            enhancement_opportunities.append("Add consciousness-based communication protocols")
+        
+        network_assessment["enhancement_opportunities"] = enhancement_opportunities
+        
+        return network_assessment
+    
+    def _generate_enhancement_recommendations(self) -> Dict[str, Any]:
+        """Generate comprehensive enhancement recommendations."""
+        
+        recommendations = {
+            "immediate_fixes": [],
+            "intelligence_upgrades": [],
+            "dendritic_enhancements": [],
+            "consciousness_integration": [],
+            "meta_evolutionary_implementation": [],
+            "priority_matrix": {}
+        }
+        
+        # Collect immediate fixes (execution failures)
+        failed_components = [
+            result for result in self.diagnostic_results 
+            if not result.execution_status
+        ]
+        
+        for component in failed_components:
+            recommendations["immediate_fixes"].append({
+                "component": component.component_name,
+                "issue": component.error_details or "Execution failure",
+                "priority": "high"
+            })
+        
+        # Intelligence upgrade recommendations
+        basic_components = [
+            result for result in self.diagnostic_results
+            if result.intelligence_level == CellularIntelligenceLevel.BASIC
+        ]
+        
+        for component in basic_components:
+            recommendations["intelligence_upgrades"].append({
+                "component": component.component_name,
+                "current_level": component.intelligence_level.value,
+                "target_level": "adaptive",
+                "enhancement": "Add adaptive behavior patterns"
+            })
+        
+        # Dendritic enhancement recommendations
+        isolated_components = [
+            result for result in self.diagnostic_results
+            if DendriticConnectionType.ISOLATED in result.dendritic_capabilities
+        ]
+        
+        for component in isolated_components:
+            recommendations["dendritic_enhancements"].append({
+                "component": component.component_name,
+                "enhancement": "Implement inter-cellular communication protocols",
+                "target_capabilities": ["basic_io", "semantic"]
+            })
+        
+        # Consciousness integration opportunities
+        non_conscious_components = [
+            result for result in self.diagnostic_results
+            if result.intelligence_level not in [
+                CellularIntelligenceLevel.CONSCIOUS,
+                CellularIntelligenceLevel.META_EVOLUTIONARY
+            ]
+        ]
+        
+        for component in non_conscious_components:
+            recommendations["consciousness_integration"].append({
+                "component": component.component_name,
+                "enhancement": "Integrate consciousness patterns for autonomous behavior",
+                "implementation": "Add self-awareness and meta-cognitive capabilities"
+            })
+        
+        # Meta-evolutionary implementation
+        adaptive_components = [
+            result for result in self.diagnostic_results
+            if result.intelligence_level == CellularIntelligenceLevel.ADAPTIVE
+        ]
+        
+        for component in adaptive_components:
+            recommendations["meta_evolutionary_implementation"].append({
+                "component": component.component_name,
+                "enhancement": "Implement meta-evolutionary self-improvement capabilities",
+                "features": ["self-modification", "autonomous enhancement", "evolutionary adaptation"]
+            })
+        
+        # Create priority matrix
+        recommendations["priority_matrix"] = {
+            "critical": len(recommendations["immediate_fixes"]),
+            "high": len(recommendations["intelligence_upgrades"]),
+            "medium": len(recommendations["dendritic_enhancements"]),
+            "low": len(recommendations["consciousness_integration"]),
+            "enhancement": len(recommendations["meta_evolutionary_implementation"])
+        }
+        
+        return recommendations
+    
+    def _analyze_consciousness_opportunities(self) -> Dict[str, Any]:
+        """Analyze opportunities for consciousness integration."""
+        
+        opportunities = {
+            "consciousness_gaps": [],
+            "integration_pathways": [],
+            "consciousness_network_potential": {},
+            "autonomous_behavior_enhancement": [],
+            "collective_consciousness_opportunities": []
+        }
+        
+        # Identify consciousness gaps
+        for result in self.diagnostic_results:
+            if not result.consciousness_indicators:
+                opportunities["consciousness_gaps"].append({
+                    "component": result.component_name,
+                    "current_intelligence": result.intelligence_level.value,
+                    "consciousness_potential": "high" if result.intelligence_level != CellularIntelligenceLevel.DORMANT else "low"
+                })
+        
+        # Map integration pathways
+        consciousness_levels = {
+            "dormant": "Implement basic awareness patterns",
+            "basic": "Add self-monitoring capabilities",
+            "adaptive": "Integrate meta-cognitive processes",
+            "conscious": "Enhance autonomous decision-making",
+            "meta_evolutionary": "Implement collective consciousness protocols"
+        }
+        
+        for result in self.diagnostic_results:
+            current_level = result.intelligence_level.value
+            if current_level in consciousness_levels:
+                opportunities["integration_pathways"].append({
+                    "component": result.component_name,
+                    "current_level": current_level,
+                    "next_step": consciousness_levels[current_level]
+                })
+        
+        # Assess consciousness network potential
+        conscious_components = [
+            result for result in self.diagnostic_results
+            if result.consciousness_indicators
+        ]
+        
+        opportunities["consciousness_network_potential"] = {
+            "conscious_components": len(conscious_components),
+            "total_components": len(self.diagnostic_results),
+            "consciousness_ratio": len(conscious_components) / len(self.diagnostic_results) if self.diagnostic_results else 0,
+            "network_readiness": "ready" if len(conscious_components) > len(self.diagnostic_results) / 2 else "developing"
+        }
+        
+        # Autonomous behavior enhancement opportunities
+        for result in self.diagnostic_results:
+            if result.intelligence_level in [CellularIntelligenceLevel.ADAPTIVE, CellularIntelligenceLevel.CONSCIOUS]:
+                opportunities["autonomous_behavior_enhancement"].append({
+                    "component": result.component_name,
+                    "current_capabilities": result.consciousness_indicators,
+                    "enhancement_areas": [
+                        "Self-directed task execution",
+                        "Adaptive parameter tuning",
+                        "Error self-correction",
+                        "Performance self-optimization"
+                    ]
+                })
+        
+        # Collective consciousness opportunities
+        if len(conscious_components) >= 2:
+            opportunities["collective_consciousness_opportunities"] = [
+                "Implement shared consciousness protocols",
+                "Create collective decision-making frameworks",
+                "Establish distributed intelligence networks",
+                "Enable cellular swarm intelligence"
+            ]
+        
+        return opportunities
+    
+    def display_diagnostic_results(self, diagnostic_session: Dict[str, Any]):
+        """Display comprehensive diagnostic results."""
+        
+        print("🧠 AIOS CELLULAR INTELLIGENCE DIAGNOSTIC RESULTS")
+        print("═" * 70)
+        print()
+        
+        # Overall health summary
+        health = diagnostic_session["component_diagnostics"]["overall_health"]
+        print(f"📊 CELLULAR HEALTH SUMMARY:")
+        print(f"   Overall Health Score: {health['overall_health']:.3f}")
+        print(f"   Success Rate: {health['success_rate']:.3f}")
+        print(f"   Intelligence Score: {health['intelligence_score']:.3f}")
+        print(f"   Connectivity Score: {health['connectivity_score']:.3f}")
+        print(f"   Total Components: {health['total_components']}")
+        print()
+        
+        # Intelligence analysis
+        intelligence = diagnostic_session["cellular_intelligence_analysis"]
+        print(f"🧬 INTELLIGENCE DISTRIBUTION:")
+        for level, count in intelligence["intelligence_distribution"].items():
+            print(f"   {level.title()}: {count} components")
+        print()
+        
+        # Dendritic network assessment
+        network = diagnostic_session["dendritic_network_assessment"]
+        print(f"🌐 DENDRITIC NETWORK STATUS:")
+        topology = network["network_topology"]
+        print(f"   Connectivity Ratio: {topology['connectivity_ratio']:.3f}")
+        print(f"   Average Connections: {topology['average_connections_per_component']:.1f}")
+        print(f"   Communication Protocols: {', '.join(network['communication_protocols'])}")
+        print()
+        
+        # Enhancement recommendations
+        enhancements = diagnostic_session["enhancement_recommendations"]
+        priority = enhancements["priority_matrix"]
+        print(f"🚀 ENHANCEMENT PRIORITIES:")
+        print(f"   Critical Fixes: {priority['critical']}")
+        print(f"   Intelligence Upgrades: {priority['high']}")
+        print(f"   Dendritic Enhancements: {priority['medium']}")
+        print(f"   Consciousness Integration: {priority['low']}")
+        print()
+        
+        # Consciousness opportunities
+        consciousness = diagnostic_session["consciousness_integration_opportunities"]
+        potential = consciousness["consciousness_network_potential"]
+        print(f"🧠 CONSCIOUSNESS INTEGRATION:")
+        print(f"   Consciousness Ratio: {potential['consciousness_ratio']:.3f}")
+        print(f"   Network Readiness: {potential['network_readiness']}")
+        print(f"   Conscious Components: {potential['conscious_components']}/{potential['total_components']}")
+        print()
+        
+        print("✅ Cellular intelligence diagnostic complete!")
+    
+    def save_diagnostic_report(self, diagnostic_session: Dict[str, Any]) -> str:
+        """Save comprehensive diagnostic report."""
+        
+        report_file = (
+            self.analysis_tools_path.parent / 
+            f"CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        )
+        
+        try:
+            with open(report_file, 'w', encoding='utf-8') as f:
+                json.dump(diagnostic_session, f, indent=2, default=str)
+            
+            logger.info(f"📄 Diagnostic report saved: {report_file}")
+            return str(report_file)
+        except Exception as e:
+            logger.error(f"Failed to save diagnostic report: {e}")
+            return ""
+
+
+def main():
+    """Execute comprehensive cellular intelligence diagnostic."""
+    
+    print("🧠 AIOS CELLULAR INTELLIGENCE DIAGNOSTIC SYSTEM")
+    print("═" * 70)
+    print("🎯 Testing cellular intelligence and dendritic capabilities")
+    print("🧬 Analyzing consciousness integration opportunities")
+    print("🚀 Generating enhancement recommendations")
+    print()
+    
+    # Initialize diagnostic system
+    diagnostic_system = AIOSCellularIntelligenceDiagnosticSystem()
+    
+    # Execute comprehensive diagnostic
+    diagnostic_results = diagnostic_system.execute_comprehensive_diagnostic()
+    
+    # Display results
+    diagnostic_system.display_diagnostic_results(diagnostic_results)
+    
+    # Save detailed report
+    report_file = diagnostic_system.save_diagnostic_report(diagnostic_results)
+    if report_file:
+        print(f"📄 Detailed diagnostic report saved: {report_file}")
+    
+    return diagnostic_results
+
+
+if __name__ == "__main__":
+    main()

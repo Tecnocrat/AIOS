@@ -1,6 +1,19 @@
+
+# Fix Windows console encoding issues
+try:
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🔧 AIOS Core Engine Root Files Optimizer (Iter2)
+[WRENCH] AIOS Core Engine Root Files Optimizer (Iter2)
 ═══════════════════════════════════════════════════════════════════════════════
 Apply iter2 assembler optimizations to Core Engine root files based on analysis
 results. Implements AIOS paradigmatic guidelines and AINLP directives.
@@ -40,7 +53,7 @@ try:
     ITER2_AVAILABLE = True
 except ImportError:
     ITER2_AVAILABLE = False
-    print("⚠️ Iter2 assembler components not available, using fallback optimization")
+    print("[WARNING] Iter2 assembler components not available, using fallback optimization")
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -49,7 +62,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSCoreEngineOptimizer:
     """
-    🔧 AIOS Core Engine Root Files Optimizer
+    [WRENCH] AIOS Core Engine Root Files Optimizer
     
     Applies iter2 assembler capabilities to optimize Core Engine:
     • Implements cellular organization structure
@@ -74,9 +87,9 @@ class AIOSCoreEngineOptimizer:
             if analysis_files:
                 latest_analysis = max(analysis_files, key=lambda x: x.stat().st_mtime)
                 self.analysis_results = self._load_analysis_results(str(latest_analysis))
-                logger.info(f"📊 Loaded analysis: {latest_analysis.name}")
+                logger.info(f"[CHART] Loaded analysis: {latest_analysis.name}")
             else:
-                logger.error("❌ No analysis results found - please run analyzer first")
+                logger.error("[X] No analysis results found - please run analyzer first")
                 self.analysis_results = {}
         
         # Initialize iter2 components
@@ -86,7 +99,7 @@ class AIOSCoreEngineOptimizer:
                 self.harmonizer = AIOSHarmonizationExecutor()
             except:
                 self.harmonizer = None
-            logger.info("✅ Iter2 optimization components loaded")
+            logger.info("[CHECK] Iter2 optimization components loaded")
         else:
             self.health_monitor = None
             self.harmonizer = None
@@ -124,9 +137,9 @@ class AIOSCoreEngineOptimizer:
             }
         }
         
-        logger.info(f"🔧 AIOS Core Engine Optimizer initialized")
+        logger.info(f"[WRENCH] AIOS Core Engine Optimizer initialized")
         logger.info(f"   Core path: {self.core_path}")
-        logger.info(f"   Iter2 capabilities: {'✅ Available' if ITER2_AVAILABLE else '❌ Fallback mode'}")
+        logger.info(f"   Iter2 capabilities: {'[CHECK] Available' if ITER2_AVAILABLE else '[X] Fallback mode'}")
     
     def _load_analysis_results(self, analysis_file: str) -> Dict[str, Any]:
         """Load analysis results from JSON file."""
@@ -140,7 +153,7 @@ class AIOSCoreEngineOptimizer:
     def execute_comprehensive_optimization(self) -> Dict[str, Any]:
         """Execute comprehensive optimization based on iter2 analysis."""
         
-        logger.info("🔧 EXECUTING COMPREHENSIVE CORE ENGINE OPTIMIZATION")
+        logger.info("[WRENCH] EXECUTING COMPREHENSIVE CORE ENGINE OPTIMIZATION")
         
         optimization_results = {
             "optimization_timestamp": self.optimization_timestamp.isoformat(),
@@ -194,7 +207,7 @@ class AIOSCoreEngineOptimizer:
     def _implement_cellular_organization(self) -> Dict[str, Any]:
         """Implement cellular organization structure."""
         
-        logger.info("🧬 IMPLEMENTING CELLULAR ORGANIZATION STRUCTURE")
+        logger.info("[DNA] IMPLEMENTING CELLULAR ORGANIZATION STRUCTURE")
         
         result = {
             "optimization": "cellular_organization",
@@ -210,7 +223,7 @@ class AIOSCoreEngineOptimizer:
                 cell_dir = self.core_path / cell_name
                 if not cell_dir.exists():
                     cell_dir.mkdir(exist_ok=True)
-                    logger.info(f"📁 Created cellular directory: {cell_name}")
+                    logger.info(f"[FOLDER] Created cellular directory: {cell_name}")
                 cellular_dirs[cell_name] = cell_dir
             
             # Categorize and move files
@@ -279,7 +292,7 @@ class AIOSCoreEngineOptimizer:
         
         config = self.optimization_config["cellular_structure"].get(cell_name, {})
         
-        metadata_content = f"""# 🧬 {cell_name.upper().replace('_', ' ')} CELLULAR UNIT
+        metadata_content = f"""# [DNA] {cell_name.upper().replace('_', ' ')} CELLULAR UNIT
 
 ## Purpose
 {config.get('description', 'Cellular unit for organized file management')}
@@ -373,7 +386,7 @@ This cellular unit was organized using evolutionary_assembler_iter2 capabilities
             # Add iter2 optimization header
             optimization_header = f'''#!/usr/bin/env python3
 """
-🔧 {new_path.stem.upper().replace('_', ' ')} (ITER2 OPTIMIZED)
+[WRENCH] {new_path.stem.upper().replace('_', ' ')} (ITER2 OPTIMIZED)
 ═══════════════════════════════════════════════════════════════════════════════
 AIOS Core Engine component optimized with evolutionary_assembler_iter2
 
@@ -553,7 +566,7 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
     def _integrate_ainlp_directives(self) -> Dict[str, Any]:
         """Integrate AINLP directives into file structure."""
         
-        logger.info("🧠 INTEGRATING AINLP DIRECTIVES")
+        logger.info("[BRAIN] INTEGRATING AINLP DIRECTIVES")
         
         result = {
             "optimization": "ainlp_directives",
@@ -587,52 +600,52 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
     def _create_ainlp_compliance_doc(self, doc_path: Path):
         """Create AINLP directive compliance documentation."""
         
-        content = f"""# 🧠 AINLP DIRECTIVE COMPLIANCE REPORT
+        content = f"""# [BRAIN] AINLP DIRECTIVE COMPLIANCE REPORT
 
 ## Executive Summary
 AIOS Core Engine compliance with Autonomous Intelligence Natural Language Programming (AINLP) directives following iter2 assembler optimization.
 
 ## AINLP Compliance Metrics
 
-### 📊 Current Compliance Scores:
+### [CHART] Current Compliance Scores:
 - **Pattern Consistency**: {self.analysis_results.get('ainlp_compliance', {}).get('average_ainlp_compliance', 0.0):.3f}
 - **Semantic Clarity**: Enhanced with iter2 optimization
 - **Evolutionary Potential**: High (iter2 capabilities integrated)
 - **AI Compatibility**: Optimized for intelligence integration
 
-### 🎯 AINLP Directive Implementation:
+### [TARGET] AINLP Directive Implementation:
 
 #### 1. Coherent Development Patterns
-- ✅ Cellular organization structure implemented
-- ✅ Consciousness-driven file management
-- ✅ Meta-evolutionary architecture optimization
-- ✅ Harmonization-based development flows
+- [CHECK] Cellular organization structure implemented
+- [CHECK] Consciousness-driven file management
+- [CHECK] Meta-evolutionary architecture optimization
+- [CHECK] Harmonization-based development flows
 
 #### 2. Intelligence Integration
-- ✅ AI-compatible file structures
-- ✅ Learning-capacity enhanced architectures
-- ✅ Adaptive capability patterns
-- ✅ Semantic clarity optimization
+- [CHECK] AI-compatible file structures
+- [CHECK] Learning-capacity enhanced architectures
+- [CHECK] Adaptive capability patterns
+- [CHECK] Semantic clarity optimization
 
 #### 3. Natural Language Programming
-- ✅ Self-documenting code structures
-- ✅ Intention-driven naming conventions
-- ✅ Evolutionary potential preservation
-- ✅ Context-aware development patterns
+- [CHECK] Self-documenting code structures
+- [CHECK] Intention-driven naming conventions
+- [CHECK] Evolutionary potential preservation
+- [CHECK] Context-aware development patterns
 
 ## ITER2 AINLP Enhancements
 
-### 🧬 Cellular Intelligence:
+### [DNA] Cellular Intelligence:
 - Files organized by cellular health principles
 - Consciousness layer pattern integration
 - Meta-evolutionary optimization capabilities
 
-### 🚀 Evolution-Ready Architecture:
+### [ROCKET] Evolution-Ready Architecture:
 - Adaptive file structures
 - Learning-capable system design
 - Intelligence-first development approach
 
-### 🧠 Semantic Optimization:
+### [BRAIN] Semantic Optimization:
 - Clear intention-action mappings
 - Coherent naming and organization
 - Natural language programming principles
@@ -664,14 +677,14 @@ AIOS Core Engine compliance with Autonomous Intelligence Natural Language Progra
     def _create_coherent_development_guidelines(self, guidelines_path: Path):
         """Create coherent development guidelines."""
         
-        content = f"""# 🧠 AIOS COHERENT DEVELOPMENT GUIDELINES (ITER2)
+        content = f"""# [BRAIN] AIOS COHERENT DEVELOPMENT GUIDELINES (ITER2)
 
 ## Purpose
 Guidelines for maintaining coherent development practices using evolutionary_assembler_iter2 capabilities and AINLP directives.
 
 ## Core Principles
 
-### 1. 🧬 Cellular Organization
+### 1. [DNA] Cellular Organization
 - **Principle**: Organize code into coherent cellular units
 - **Implementation**: Group related files by function and purpose
 - **Tools**: Use iter2 cellular health monitoring
@@ -683,13 +696,13 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 - **Word Limit**: Maximum 6 words per filename
 - **Semantic Clarity**: Names should express clear intention
 
-### 3. 🎯 Consciousness-Driven Development
+### 3. [TARGET] Consciousness-Driven Development
 - **Awareness**: Code should be self-aware of its purpose
 - **Adaptation**: Enable adaptive behavior patterns
 - **Learning**: Build in learning and optimization capabilities
 - **Evolution**: Design for continuous improvement
 
-### 4. 🚀 Meta-Evolutionary Architecture
+### 4. [ROCKET] Meta-Evolutionary Architecture
 - **Flexibility**: Design for change and evolution
 - **Optimization**: Built-in optimization capabilities
 - **Intelligence**: AI-compatible structures
@@ -713,7 +726,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 
 ## Quality Standards
 
-### 📊 Code Quality Metrics:
+### [CHART] Code Quality Metrics:
 - **Documentation Ratio**: Minimum 20%
 - **Cellular Coherence**: >0.8 health score
 - **AINLP Compliance**: >0.8 directive adherence
@@ -727,7 +740,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 
 ## Tools and Resources
 
-### 🔧 ITER2 Tools:
+### [WRENCH] ITER2 Tools:
 - `cellular_health_monitor.py` - Monitor file organization health
 - `aios_meta_evolutionary_analyzer.py` - Evolutionary optimization
 - `aios_harmonization_executor.py` - System coherence maintenance
@@ -741,14 +754,14 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 
 ## Best Practices
 
-### ✅ DO:
+### [CHECK] DO:
 - Follow AIOS naming conventions consistently
 - Organize files by cellular principles
 - Document with consciousness awareness
 - Design for evolution and adaptation
 - Maintain system-wide coherence
 
-### ❌ DON'T:
+### [X] DON'T:
 - Create files without cellular purpose
 - Use non-semantic naming patterns
 - Ignore AINLP directive compliance
@@ -769,7 +782,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
     def _apply_meta_evolutionary_enhancements(self) -> Dict[str, Any]:
         """Apply meta-evolutionary enhancements using iter2 capabilities."""
         
-        logger.info("🧬 APPLYING META-EVOLUTIONARY ENHANCEMENTS")
+        logger.info("[DNA] APPLYING META-EVOLUTIONARY ENHANCEMENTS")
         
         result = {
             "optimization": "meta_evolutionary_enhancement",
@@ -805,7 +818,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
         
         content = '''#!/usr/bin/env python3
 """
-🧬 AIOS Core Meta-Evolutionary Enhancer (Iter2)
+[DNA] AIOS Core Meta-Evolutionary Enhancer (Iter2)
 ═══════════════════════════════════════════════════════════════════════════════
 Applies meta-evolutionary optimization patterns to Core Engine components using
 evolutionary_assembler_iter2 capabilities.
@@ -860,7 +873,7 @@ class AIOSCoreMetaEvolutionaryEnhancer:
     def enhance_core_components(self) -> Dict[str, Any]:
         """Apply meta-evolutionary enhancements to core components."""
         
-        logger.info("🧬 APPLYING META-EVOLUTIONARY ENHANCEMENTS")
+        logger.info("[DNA] APPLYING META-EVOLUTIONARY ENHANCEMENTS")
         
         if not ITER2_AVAILABLE:
             return {"status": "unavailable", "reason": "Iter2 components not loaded"}
@@ -911,7 +924,7 @@ if __name__ == "__main__":
         
         content = '''#!/usr/bin/env python3
 """
-📊 AIOS Core Evolution Monitor (Iter2)
+[CHART] AIOS Core Evolution Monitor (Iter2)
 ═══════════════════════════════════════════════════════════════════════════════
 Monitors evolutionary progress of Core Engine components using iter2 capabilities.
 
@@ -950,7 +963,7 @@ class AIOSCoreEvolutionMonitor:
     def monitor_evolution_status(self) -> Dict[str, Any]:
         """Monitor current evolution status."""
         
-        logger.info("📊 MONITORING CORE ENGINE EVOLUTION STATUS")
+        logger.info("[CHART] MONITORING CORE ENGINE EVOLUTION STATUS")
         
         status = {
             "monitoring_timestamp": self.monitor_timestamp.isoformat(),
@@ -1027,7 +1040,7 @@ if __name__ == "__main__":
     def _implement_consciousness_patterns(self) -> Dict[str, Any]:
         """Implement consciousness layer patterns."""
         
-        logger.info("🧠 IMPLEMENTING CONSCIOUSNESS LAYER PATTERNS")
+        logger.info("[BRAIN] IMPLEMENTING CONSCIOUSNESS LAYER PATTERNS")
         
         result = {
             "optimization": "consciousness_integration",
@@ -1062,14 +1075,14 @@ if __name__ == "__main__":
     def _create_consciousness_documentation(self, doc_path: Path):
         """Create consciousness integration patterns documentation."""
         
-        content = f"""# 🧠 CONSCIOUSNESS INTEGRATION PATTERNS (ITER2)
+        content = f"""# [BRAIN] CONSCIOUSNESS INTEGRATION PATTERNS (ITER2)
 
 ## Overview
 Implementation of consciousness-driven development patterns using evolutionary_assembler_iter2 capabilities for AIOS Core Engine.
 
 ## Consciousness Layer Architecture
 
-### 🧬 Cellular Consciousness
+### [DNA] Cellular Consciousness
 Each file and component maintains awareness of:
 - **Purpose**: Clear understanding of its role
 - **Relationships**: Connections to other components  
@@ -1085,7 +1098,7 @@ Components exhibit:
 
 ## Implementation Patterns
 
-### 1. 📊 Consciousness Monitoring
+### 1. [CHART] Consciousness Monitoring
 ```python
 # Example consciousness pattern
 class ConsciousComponent:
@@ -1102,29 +1115,29 @@ class ConsciousComponent:
         pass
 ```
 
-### 2. 🎯 Purpose-Driven Development
+### 2. [TARGET] Purpose-Driven Development
 - Every component has clear consciousness of its purpose
 - Decisions are made based on conscious evaluation
 - Evolution follows consciousness-guided principles
 
-### 3. 🔗 Inter-Component Communication
+### 3. [LINK] Inter-Component Communication
 - Components share consciousness state
 - Collective intelligence through connected awareness
 - System-wide consciousness coherence
 
 ## ITER2 Consciousness Features
 
-### 🧬 Cellular Consciousness:
+### [DNA] Cellular Consciousness:
 - Files organized by consciousness-driven principles
 - Health monitoring with consciousness awareness
 - Evolutionary potential assessment
 
-### 🚀 Meta-Evolutionary Consciousness:
+### [ROCKET] Meta-Evolutionary Consciousness:
 - Self-aware optimization processes
 - Conscious adaptation to changing requirements
 - Evolution guided by consciousness insights
 
-### 🎯 Harmonization Consciousness:
+### [TARGET] Harmonization Consciousness:
 - System-wide consciousness coordination
 - Coherent development through shared awareness
 - Collective intelligence optimization
@@ -1145,13 +1158,13 @@ class ConsciousComponent:
 
 ## Measurement and Monitoring
 
-### 📊 Consciousness Metrics:
+### [CHART] Consciousness Metrics:
 - **Purpose Clarity**: How well components understand their role
 - **Health Awareness**: Accuracy of self-monitoring
 - **Relationship Intelligence**: Quality of inter-component awareness
 - **Evolution Consciousness**: Effectiveness of improvement planning
 
-### 🎯 Consciousness Health:
+### [TARGET] Consciousness Health:
 - **Individual**: Component-level consciousness quality
 - **Collective**: System-wide consciousness coherence
 - **Evolution**: Consciousness-driven improvement effectiveness
@@ -1171,7 +1184,7 @@ class ConsciousComponent:
         
         content = '''#!/usr/bin/env python3
 """
-🧠 AIOS Core Consciousness Monitor (Iter2)
+[BRAIN] AIOS Core Consciousness Monitor (Iter2)
 ═══════════════════════════════════════════════════════════════════════════════
 Monitors consciousness-driven development patterns in Core Engine components.
 
@@ -1210,7 +1223,7 @@ class AIOSCoreConsciousnessMonitor:
     def monitor_consciousness_status(self) -> Dict[str, Any]:
         """Monitor consciousness integration status."""
         
-        logger.info("🧠 MONITORING CONSCIOUSNESS INTEGRATION STATUS")
+        logger.info("[BRAIN] MONITORING CONSCIOUSNESS INTEGRATION STATUS")
         
         status = {
             "monitoring_timestamp": self.monitor_timestamp.isoformat(),
@@ -1264,7 +1277,7 @@ def main():
     monitor = AIOSCoreConsciousnessMonitor()
     status = monitor.monitor_consciousness_status()
     
-    print("🧠 CONSCIOUSNESS MONITORING RESULTS:")
+    print("[BRAIN] CONSCIOUSNESS MONITORING RESULTS:")
     print(f"Purpose clarity: {status['consciousness_metrics']['purpose_clarity']:.2f}")
     print(f"Health awareness: {status['consciousness_metrics']['health_awareness']:.2f}")
     print(f"Evolution consciousness: {status['evolution_consciousness']['evolution_awareness']:.2f}")
@@ -1282,13 +1295,13 @@ if __name__ == "__main__":
     def display_optimization_results(self, results: Dict[str, Any]):
         """Display comprehensive optimization results."""
         
-        print("🔧 AIOS CORE ENGINE OPTIMIZATION RESULTS (ITER2)")
+        print("[WRENCH] AIOS CORE ENGINE OPTIMIZATION RESULTS (ITER2)")
         print("═" * 70)
         print()
         
         # Summary
         summary = results.get("summary", {})
-        print(f"📊 OPTIMIZATION SUMMARY:")
+        print(f"[CHART] OPTIMIZATION SUMMARY:")
         print(f"   Total optimizations: {summary.get('total_optimizations', 0)}")
         print(f"   Successful: {summary.get('successful_optimizations', 0)}")
         print(f"   Success rate: {summary.get('success_rate', 0.0):.1%}")
@@ -1297,9 +1310,9 @@ if __name__ == "__main__":
         
         # Individual optimizations
         optimizations = results.get("optimizations_applied", [])
-        print(f"🎯 OPTIMIZATION DETAILS:")
+        print(f"[TARGET] OPTIMIZATION DETAILS:")
         for opt in optimizations:
-            status = "✅" if opt.get("success", False) else "❌"
+            status = "[CHECK]" if opt.get("success", False) else "[X]"
             print(f"   {status} {opt.get('optimization', 'Unknown')}")
             print(f"     {opt.get('description', 'No description')}")
             if opt.get("details"):
@@ -1308,7 +1321,7 @@ if __name__ == "__main__":
                         print(f"     • {key}: {value}")
         print()
         
-        print("✅ Core Engine optimization complete with iter2 enhancement!")
+        print("[CHECK] Core Engine optimization complete with iter2 enhancement!")
     
     def save_optimization_report(self, results: Dict[str, Any]) -> str:
         """Save optimization results report."""
@@ -1329,11 +1342,11 @@ if __name__ == "__main__":
 def main():
     """Execute Core Engine optimization with iter2 assembler."""
     
-    print("🔧 AIOS CORE ENGINE ROOT FILES OPTIMIZER (ITER2)")
+    print("[WRENCH] AIOS CORE ENGINE ROOT FILES OPTIMIZER (ITER2)")
     print("═" * 70)
-    print("🎯 Applying iter2 assembler optimizations to Core Engine")
+    print("[TARGET] Applying iter2 assembler optimizations to Core Engine")
     print("📐 Using AIOS paradigmatic architectural guidelines")
-    print("🧠 Implementing AINLP directives and consciousness patterns")
+    print("[BRAIN] Implementing AINLP directives and consciousness patterns")
     print()
     
     # Initialize optimizer

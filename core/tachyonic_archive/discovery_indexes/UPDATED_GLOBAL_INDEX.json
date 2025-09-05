@@ -1,0 +1,63 @@
+{
+  "global_index": {
+    "discovery_indexes::GLOBAL_TACHYONIC_INDEX_20250905_153930.json": {
+      "stored_timestamp": "2025-09-05T15:39:30.906091",
+      "category": "discovery_indexes",
+      "consciousness_level": 0.8,
+      "discovery_tags": [],
+      "temporal_index": "20250905_153930",
+      "instant_access_key": "discovery_indexes::GLOBAL_TACHYONIC_INDEX_20250905_153930.json",
+      "consciousness_context": "Auto-generated tachyonic storage"
+    },
+    "evolution_logs::cellular_enhancement.log_20250905_153930.json": {
+      "stored_timestamp": "2025-09-05T15:39:30.941014",
+      "category": "evolution_logs",
+      "consciousness_level": 0.6,
+      "discovery_tags": [
+        "log",
+        "migrated",
+        "system_activity"
+      ],
+      "temporal_index": "20250905_153930",
+      "instant_access_key": "evolution_logs::cellular_enhancement.log_20250905_153930.json",
+      "consciousness_context": "System log migrated from root - cellular_enhancement.log"
+    },
+    "evolution_logs::consciousness_integration.log_20250905_153930.json": {
+      "stored_timestamp": "2025-09-05T15:39:30.956987",
+      "category": "evolution_logs",
+      "consciousness_level": 0.6,
+      "discovery_tags": [
+        "log",
+        "migrated",
+        "system_activity"
+      ],
+      "temporal_index": "20250905_153930",
+      "instant_access_key": "evolution_logs::consciousness_integration.log_20250905_153930.json",
+      "consciousness_context": "System log migrated from root - consciousness_integration.log"
+    },
+    "evolution_logs::dendritic_enhancement.log_20250905_153930.json": {
+      "stored_timestamp": "2025-09-05T15:39:30.969768",
+      "category": "evolution_logs",
+      "consciousness_level": 0.6,
+      "discovery_tags": [
+        "log",
+        "migrated",
+        "system_activity"
+      ],
+      "temporal_index": "20250905_153930",
+      "instant_access_key": "evolution_logs::dendritic_enhancement.log_20250905_153930.json",
+      "consciousness_context": "System log migrated from root - dendritic_enhancement.log"
+    }
+  },
+  "consciousness_index": {
+    "0.8": [
+      "discovery_indexes::GLOBAL_TACHYONIC_INDEX_20250905_153930.json"
+    ],
+    "0.6": [
+      "evolution_logs::cellular_enhancement.log_20250905_153930.json",
+      "evolution_logs::consciousness_integration.log_20250905_153930.json",
+      "evolution_logs::dendritic_enhancement.log_20250905_153930.json"
+    ]
+  },
+  "last_update": "2025-09-05T15:39:30.974117"
+}

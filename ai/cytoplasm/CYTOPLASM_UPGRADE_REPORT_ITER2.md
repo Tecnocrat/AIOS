@@ -1,4 +1,4 @@
-🧬 CYTOPLASM CELLULAR UPGRADE REPORT
+[DNA] CYTOPLASM CELLULAR UPGRADE REPORT
 ==================================================
 
 ## Health Analysis
@@ -13,12 +13,12 @@
   - Optimization Opportunities: 0
 
 ## Component Status
-  🟢 **config**: 0.950 📊 (+0.000)
-  🟢 **deps**: 0.950 📊 (+0.000)
-  🟢 **env**: 0.950 📊 (+0.000)
-  🟢 **runtime**: 0.950 📊 (+0.000)
-  🟢 **scripts**: 0.950 📊 (+0.000)
-  🟢 **tools**: 0.950 📊 (+0.000)
+  🟢 **config**: 0.950 [CHART] (+0.000)
+  🟢 **deps**: 0.950 [CHART] (+0.000)
+  🟢 **env**: 0.950 [CHART] (+0.000)
+  🟢 **runtime**: 0.950 [CHART] (+0.000)
+  🟢 **scripts**: 0.950 [CHART] (+0.000)
+  🟢 **tools**: 0.950 [CHART] (+0.000)
 
 ## Iter2 Assembler Optimizations Applied
 - Cellular health monitoring and optimization
@@ -32,4 +32,4 @@
 
 ---
 *Upgrade performed using AIOS Evolutionary Assembler iter2*
-*Analysis date: aios_cytoplasm_upgrader_iter2.py*
+*Analysis date: C:\dev\AIOS\core\analysis_tools\aios_cytoplasm_upgrader_iter2.py*

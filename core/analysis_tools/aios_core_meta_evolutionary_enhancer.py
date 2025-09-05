@@ -1,6 +1,19 @@
+
+# Fix Windows console encoding issues
+try:
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🧬 AIOS Core Meta-Evolutionary Enhancer (Iter2)
+[DNA] AIOS Core Meta-Evolutionary Enhancer (Iter2)
 ═══════════════════════════════════════════════════════════════════════════════
 Applies meta-evolutionary optimization patterns to Core Engine components using
 evolutionary_assembler_iter2 capabilities.
@@ -55,7 +68,7 @@ class AIOSCoreMetaEvolutionaryEnhancer:
     def enhance_core_components(self) -> Dict[str, Any]:
         """Apply meta-evolutionary enhancements to core components."""
         
-        logger.info("🧬 APPLYING META-EVOLUTIONARY ENHANCEMENTS")
+        logger.info("[DNA] APPLYING META-EVOLUTIONARY ENHANCEMENTS")
         
         if not ITER2_AVAILABLE:
             return {"status": "unavailable", "reason": "Iter2 components not loaded"}

@@ -1,3 +1,16 @@
+
+# Fix Windows console encoding issues
+try:
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
 🌳 AIOS Core Engine Tree Structure Demonstrator (Iter2)
@@ -377,7 +390,7 @@ class AIOSCoreEngineTreeDemonstrator:
         tree_structure = demonstration.get("tree_structure", {})
         org_metrics = tree_structure.get("total_organization", {})
         
-        print("📊 TREE STRUCTURE OVERVIEW:")
+        print("[CHART] TREE STRUCTURE OVERVIEW:")
         print(f"   Cellular units: {org_metrics.get('cellular_units', 0)}")
         print(f"   Files in cellular organization: {org_metrics.get('cellular_files', 0)}")
         print(f"   Root files remaining: {org_metrics.get('root_files', 0)}")
@@ -386,9 +399,9 @@ class AIOSCoreEngineTreeDemonstrator:
         
         # Cellular organization demo
         cellular_demo = demonstration.get("cellular_organization", {})
-        print("🧬 CELLULAR ORGANIZATION DEMONSTRATION:")
+        print("[DNA] CELLULAR ORGANIZATION DEMONSTRATION:")
         for unit_name, unit_info in cellular_demo.get("cellular_units", {}).items():
-            print(f"   📁 {unit_name.upper()}:")
+            print(f"   [FOLDER] {unit_name.upper()}:")
             print(f"     Purpose: {unit_info.get('purpose', 'Unknown')}")
             print(f"     Examples: {', '.join(unit_info.get('files_example', [])[:2])}")
         print()
@@ -406,7 +419,7 @@ class AIOSCoreEngineTreeDemonstrator:
         # Architecture patterns demo  
         architecture = demonstration.get("architectural_patterns", {})
         consciousness = architecture.get("consciousness_driven_patterns", {})
-        print("🧠 ARCHITECTURAL PATTERN DEMONSTRATION:")
+        print("[BRAIN] ARCHITECTURAL PATTERN DEMONSTRATION:")
         print(f"   Consciousness Integration: {consciousness.get('description', 'Unknown')}")
         print("   Implementations:")
         for impl in consciousness.get("implementations", [])[:3]:
@@ -423,12 +436,12 @@ class AIOSCoreEngineTreeDemonstrator:
         print()
         
         readiness = achievements.get("readiness_status", {})
-        print("🚀 READINESS STATUS:")
+        print("[ROCKET] READINESS STATUS:")
         for status, description in readiness.items():
-            print(f"   ✅ {status.replace('_', ' ').title()}: {description}")
+            print(f"   [CHECK] {status.replace('_', ' ').title()}: {description}")
         print()
         
-        print("✅ Core Engine tree structure demonstration complete!")
+        print("[CHECK] Core Engine tree structure demonstration complete!")
     
     def save_demonstration_report(self, demonstration: Dict[str, Any]) -> str:
         """Save tree structure demonstration report."""
@@ -451,9 +464,9 @@ def main():
     
     print("🌳 AIOS CORE ENGINE TREE STRUCTURE DEMONSTRATOR (ITER2)")
     print("═" * 70)
-    print("🎯 Demonstrating optimized Core Engine tree structure")
-    print("🧬 Showcasing cellular organization and naming conventions")
-    print("🚀 Highlighting iter2 assembler architectural improvements")
+    print("[TARGET] Demonstrating optimized Core Engine tree structure")
+    print("[DNA] Showcasing cellular organization and naming conventions")
+    print("[ROCKET] Highlighting iter2 assembler architectural improvements")
     print()
     
     # Initialize demonstrator
