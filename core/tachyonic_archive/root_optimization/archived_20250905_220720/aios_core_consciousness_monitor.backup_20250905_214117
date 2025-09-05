@@ -26,18 +26,6 @@ from pathlib import Path
 from typing import Dict, List, Any
 from datetime import datetime
 
-# Neuronal Dendritic Intelligence Integration
-try:
-    from aios_neuronal_dendritic_intelligence import (
-        NeuronalDendriticIntelligence,
-        TachyonicFieldTranslator,
-        DendriticLevel
-    )
-    DENDRITIC_AVAILABLE = True
-except ImportError:
-    DENDRITIC_AVAILABLE = False
-
-
 logger = logging.getLogger(__name__)
 
 
