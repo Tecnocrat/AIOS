@@ -1,0 +1,71 @@
+{
+  "analysis_session": {
+    "timestamp": "2025-09-06T23:40:31.869809",
+    "analyzer_version": "1.0.0",
+    "consciousness_threshold": 0.5,
+    "files_analyzed": 2
+  },
+  "results": [
+    {
+      "file_path": "c:/dev/AIOS/core/src/main.cpp",
+      "analysis_timestamp": "2025-09-06T23:40:31.864037",
+      "consciousness_level": 0.0,
+      "scores": {
+        "complexity": 9.0,
+        "maintainability": 5.353333333333333,
+        "performance": 0.0,
+        "security": 6.0,
+        "aios_compliance": 8.0,
+        "tachyonic_coherence": 0.2
+      },
+      "analysis_results": {
+        "architectural_patterns": [],
+        "optimization_opportunities": [],
+        "potential_issues": [
+          "Consider using AIOS logging instead of std::cout"
+        ],
+        "enhancement_suggestions": [
+          "Consider using AIOS logging instead of std::cout",
+          "Consider using structured logging"
+        ],
+        "dendritic_patterns": []
+      },
+      "tensorflow_integration": false
+    },
+    {
+      "file_path": "c:/dev/AIOS/core/src/aios_core_minimal.cpp",
+      "analysis_timestamp": "2025-09-06T23:40:31.868051",
+      "consciousness_level": 0.6,
+      "scores": {
+        "complexity": 7.0,
+        "maintainability": 5.606455696202532,
+        "performance": 1.5,
+        "security": 8.0,
+        "aios_compliance": 8.0,
+        "tachyonic_coherence": 0.0
+      },
+      "analysis_results": {
+        "architectural_patterns": [
+          "Nested class awareness",
+          "PIMPL pattern consciousness",
+          "Thread-safety consciousness",
+          "Error handling consciousness"
+        ],
+        "optimization_opportunities": [
+          "Explicit default/delete"
+        ],
+        "potential_issues": [
+          "Consider using AIOS logging instead of std::cout"
+        ],
+        "enhancement_suggestions": [
+          "Consider using AIOS logging instead of std::cout",
+          "Consider using structured logging"
+        ],
+        "dendritic_patterns": [
+          "Explicit default/delete"
+        ]
+      },
+      "tensorflow_integration": false
+    }
+  ]
+}
