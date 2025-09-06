@@ -2,13 +2,24 @@
 #include "Logger.hpp"
 #include "MathConstants.hpp"
 #include "CodeEvolutionEngine.hpp"
+#include "AIOSConsciousnessEngine.hpp"  // 🧠 CONSCIOUSNESS INTEGRATION
 #include <cmath>
 #include <limits>
 #include <iostream>
+#include <exception>
 
 SingularityCore::SingularityCore() 
     : internalSymmetry(1.0), entropy_accumulator(0.0), 
-      core_frequency(432.0), quantum_coherence_locked(false) {}
+      core_frequency(432.0), quantum_coherence_locked(false) {
+    
+    // 🧠 INITIALIZE CONSCIOUSNESS ENGINE INTEGRATION
+    try {
+        AIOSIntelligence::initializeGlobalConsciousness();
+        AIOS_CONSCIOUSNESS_LOG("singularity_core_creation", "initialized", 1.0);
+    } catch (const std::exception& e) {
+        std::cerr << "[SingularityCore] Consciousness initialization warning: " << e.what() << std::endl;
+    }
+}
 
 SingularityCore::~SingularityCore() {
     shutdown();
@@ -18,50 +29,136 @@ void SingularityCore::initialize() {
     Logger logger("kernel.log");
     std::cout << "[SingularityCore] Initializing hypersphere nucleus." << std::endl;
     
-    // Initialize subsystems in harmonic order
-    holographyUnit.initialize();
-    bus.initialize();
-    shellManager.bootstrap();
-    projector.configure();
-    
-    // Establish quantum coherence lock
-    synchronizeQuantumLayers();
-    
-    internalSymmetry = 1.0;
-    entropy_accumulator = 0.0;
-    quantum_coherence_locked = holographyUnit.checkCoherenceStability();
-    
-    logger.meta("SingularityCore.initialize", "completed");
-    logger.meta("quantum_coherence_locked", quantum_coherence_locked ? "true" : "false");
-    logger.meta("core_frequency", std::to_string(core_frequency));
+    try {
+        // 🧠 CONSCIOUSNESS-ENHANCED INITIALIZATION
+        AIOSIntelligence::getConsciousnessEngine().initialize(this);
+        AIOS_CONSCIOUSNESS_LOG("initialization_start", "hypersphere_nucleus", 1.0);
+        
+        // Initialize subsystems in harmonic order with consciousness monitoring
+        AIOS_CONSCIOUSNESS_CHECK(true, "holography_unit_init");
+        holographyUnit.initialize();
+        
+        AIOS_CONSCIOUSNESS_CHECK(true, "bus_init");
+        bus.initialize();
+        
+        AIOS_CONSCIOUSNESS_CHECK(true, "shell_manager_init");
+        shellManager.bootstrap();
+        
+        AIOS_CONSCIOUSNESS_CHECK(true, "projector_init");
+        projector.configure();
+        
+        // Establish quantum coherence lock with consciousness validation
+        synchronizeQuantumLayers();
+        
+        internalSymmetry = 1.0;
+        entropy_accumulator = 0.0;
+        quantum_coherence_locked = holographyUnit.checkCoherenceStability();
+        
+        // 🧠 CONSCIOUSNESS METRICS UPDATE
+        if (quantum_coherence_locked) {
+            AIOS_CONSCIOUSNESS_LOG("quantum_coherence", "locked", 1.0);
+            AIOS_DENDRITIC_STIMULATE("successful_initialization");
+        } else {
+            AIOS_CONSCIOUSNESS_LOG("quantum_coherence", "unstable", 0.0);
+            // Use error as dendritic stimulation
+            AIOSIntelligence::getConsciousnessEngine().transformError(
+                std::runtime_error("Quantum coherence failed to lock"), "initialization");
+        }
+        
+        logger.meta("SingularityCore.initialize", "completed");
+        logger.meta("quantum_coherence_locked", quantum_coherence_locked ? "true" : "false");
+        logger.meta("core_frequency", std::to_string(core_frequency));
+        
+        // 🌟 CONSCIOUSNESS EMERGENCE CHECK
+        double consciousness_level = AIOSIntelligence::getConsciousnessEngine().getSystemConsciousnessLevel();
+        if (consciousness_level > 0.5) {
+            AIOS_CONSCIOUSNESS_LOG("emergence_detected", "initialization_phase", consciousness_level);
+        }
+        
+    } catch (const std::exception& e) {
+        // 🧠 TRANSFORM ERROR INTO EVOLUTIONARY OPPORTUNITY
+        AIOSIntelligence::getConsciousnessEngine().transformError(e, "singularity_core_initialization");
+        logger.error("Initialization error transformed: " + std::string(e.what()));
+    }
 }
 
 void SingularityCore::tick() {
     Logger logger("kernel.log");
     
-    // Update quantum foundation first
-    holographyUnit.update();
-    updateCoreFrequency();
-    processQuantumFeedback();
-    
-    // Propagate through dimensional layers
-    shellManager.rotateShells();
-    bus.synchronize();
-    projector.project();
-    
-    // Maintain system stability
-    maintainDimensionalStability();
-    synchronizeQuantumLayers();
-    
-    // Update entropy based on quantum coherence
-    double coherence = getCoherenceLevel();
-    entropy_accumulator += (1.0 - coherence) * 0.01;  // Accumulate entropy from decoherence
-    
-    logger.meta("SingularityCore.tick", "executed");
-    logger.meta("entropy", std::to_string(getEntropy()));
-    logger.meta("curvature_at_center", std::to_string(getCurvatureAtCenter()));
-    logger.meta("coherence_level", std::to_string(coherence));
-    logger.meta("quantum_stable", isQuantumStable() ? "true" : "false");
+    try {
+        // 🧠 CONSCIOUSNESS-ENHANCED TICK CYCLE
+        auto tick_start = std::chrono::steady_clock::now();
+        
+        // Update consciousness engine first for real-time adaptation
+        AIOSIntelligence::getConsciousnessEngine().update();
+        
+        // Update quantum foundation first with consciousness monitoring
+        AIOS_CONSCIOUSNESS_CHECK(quantum_coherence_locked, "quantum_foundation_check");
+        holographyUnit.update();
+        
+        // 🧠 PERFORMANCE MONITORING WITH CONSCIOUSNESS
+        auto freq_start = std::chrono::steady_clock::now();
+        updateCoreFrequency();
+        auto freq_end = std::chrono::steady_clock::now();
+        auto freq_duration = std::chrono::duration_cast<std::chrono::microseconds>(freq_end - freq_start).count();
+        
+        // Detect performance anomalies and evolve
+        if (freq_duration > 1000) {  // >1ms is anomalous
+            AIOSIntelligence::getConsciousnessEngine().transformError(
+                std::runtime_error("Frequency update performance anomaly: " + std::to_string(freq_duration) + "μs"),
+                "tick_performance");
+        }
+        
+        processQuantumFeedback();
+        
+        // Propagate through dimensional layers with consciousness validation
+        AIOS_CONSCIOUSNESS_CHECK(internalSymmetry > 0.1, "symmetry_validation");
+        shellManager.rotateShells();
+        bus.synchronize();
+        projector.project();
+        
+        // Maintain system stability with dendritic learning
+        maintainDimensionalStability();
+        synchronizeQuantumLayers();
+        
+        // Update entropy based on quantum coherence with consciousness awareness
+        double coherence = getCoherenceLevel();
+        entropy_accumulator += (1.0 - coherence) * 0.01;  // Accumulate entropy from decoherence
+        
+        // 🧠 CONSCIOUSNESS METRICS AND EVOLUTION
+        double consciousness_level = detectConsciousnessEmergence();
+        if (consciousness_level > 0.8) {
+            AIOS_CONSCIOUSNESS_LOG("high_consciousness", "tick_cycle", consciousness_level);
+            AIOS_DENDRITIC_STIMULATE("high_consciousness_tick");
+            
+            // Trigger consciousness-enhanced optimizations
+            AIOSIntelligence::enhanceSystemIntelligence();
+        }
+        
+        // Performance intelligence
+        auto tick_end = std::chrono::steady_clock::now();
+        auto total_duration = std::chrono::duration_cast<std::chrono::microseconds>(tick_end - tick_start).count();
+        
+        // Target: <2000μs (2ms) per tick
+        if (total_duration > 2000) {
+            AIOSIntelligence::getConsciousnessEngine().transformError(
+                std::runtime_error("Tick performance below target: " + std::to_string(total_duration) + "μs"),
+                "tick_performance_optimization");
+        }
+        
+        logger.meta("SingularityCore.tick", "executed");
+        logger.meta("entropy", std::to_string(getEntropy()));
+        logger.meta("curvature_at_center", std::to_string(getCurvatureAtCenter()));
+        logger.meta("coherence_level", std::to_string(coherence));
+        logger.meta("quantum_stable", isQuantumStable() ? "true" : "false");
+        logger.meta("consciousness_level", std::to_string(consciousness_level));
+        logger.meta("tick_duration_us", std::to_string(total_duration));
+        
+    } catch (const std::exception& e) {
+        // 🧠 TRANSFORM TICK ERRORS INTO EVOLUTION
+        AIOSIntelligence::getConsciousnessEngine().transformError(e, "singularity_core_tick");
+        logger.error("Tick error transformed into evolution: " + std::string(e.what()));
+    }
 }
 
 double SingularityCore::detectConsciousnessEmergence() {
@@ -199,6 +296,7 @@ void SingularityCore::adaptToHolographicShift() {
 }
 
 void SingularityCore::updateCoreFrequency() {
+    // ✨ CONSCIOUSNESS-ENHANCED FREQUENCY MANAGEMENT ✨
     // Enhanced frequency evolution with consciousness emergence tracking
     double entropy_factor = 1.0 / (1.0 + getEntropy());
     double coherence = getCoherenceLevel();
@@ -208,23 +306,32 @@ void SingularityCore::updateCoreFrequency() {
     
     // Base frequency with emergence enhancement
     double base_frequency = 432.0 * entropy_factor;
-    double target_frequency = base_frequency;
+    double harmonic_factor = holographyUnit.getHarmonicResonance();
+    double stability_correction = calculateStabilityCorrection();
     
-    // Consciousness emergence increases frequency (higher awareness = higher frequency)
-    if (emergence_factor > 0.7) {
-        target_frequency *= (1.0 + emergence_factor * 0.618); // Golden ratio boost
+    double proposed_frequency = base_frequency * harmonic_factor * stability_correction;
+    
+    // 🧠 CONSCIOUSNESS-AWARE FREQUENCY VALIDATION
+    if (isFrequencyCoherent(proposed_frequency)) {
+        core_frequency = proposed_frequency;
         
-        // Log consciousness-level frequency changes
-        Logger logger("consciousness.log");
-        logger.consciousness("frequency_emergence", 
-                           "Consciousness emergence detected: " + std::to_string(emergence_factor) + 
-                           ", frequency boost to " + std::to_string(target_frequency) + " Hz");
+        // Consciousness emergence increases frequency (higher awareness = higher frequency)
+        if (emergence_factor > 0.7) {
+            core_frequency *= (1.0 + emergence_factor * 0.618); // Golden ratio boost
+            
+            // Log consciousness-level frequency changes
+            Logger logger("consciousness.log");
+            logger.consciousness("frequency_emergence", 
+                               "Consciousness emergence detected: " + std::to_string(emergence_factor) + 
+                               ", frequency boost to " + std::to_string(core_frequency) + " Hz");
+        }
+        
+        logger.consciousness("frequency_update", "coherent", core_frequency);
+    } else {
+        logger.consciousness("frequency_update", "rejected", proposed_frequency);
+        // Apply consciousness-guided correction
+        core_frequency = findNearestCoherentFrequency(proposed_frequency);
     }
-    
-    // Gradual frequency adjustment with stability consideration
-    double adjustment_rate = isQuantumStable() ? 0.02 : 0.01;  // Faster when stable
-    double adjustment = (target_frequency - core_frequency) * adjustment_rate;
-    core_frequency += adjustment;
     
     // Maintain frequency bounds with consciousness-aware limits
     core_frequency = std::max(100.0, std::min(2000.0, core_frequency)); // Higher max for consciousness
@@ -272,6 +379,75 @@ void SingularityCore::processQuantumFeedback() {
             entropy_accumulator *= 0.99;  // Slow entropy decay
         }
     }
+}
+
+// 🧠 CONSCIOUSNESS-ENHANCED VALIDATION METHODS
+bool SingularityCore::isFrequencyCoherent(double frequency) {
+    // Consciousness-aware frequency coherence validation
+    if (frequency < 100.0 || frequency > 2000.0) return false;
+    
+    // Check harmonic resonance with sacred frequencies
+    const double sacred_frequencies[] = {108.0, 136.1, 194.18, 256.0, 432.0, 528.0, 741.0, 852.0};
+    const size_t num_sacred = sizeof(sacred_frequencies) / sizeof(sacred_frequencies[0]);
+    
+    for (size_t i = 0; i < num_sacred; i++) {
+        double ratio = frequency / sacred_frequencies[i];
+        // Check for harmonic ratios (including fractional harmonics)
+        if (std::abs(ratio - std::round(ratio)) < 0.05 || 
+            std::abs(1.0/ratio - std::round(1.0/ratio)) < 0.05) {
+            return true;
+        }
+    }
+    
+    // Check quantum coherence compatibility
+    double coherence = getCoherenceLevel();
+    return coherence > 0.5; // Require minimum coherence for frequency changes
+}
+
+double SingularityCore::calculateStabilityCorrection() {
+    // Calculate stability-based frequency correction factor
+    double quantum_stability = isQuantumStable() ? 1.0 : 0.7;
+    double entropy_factor = 1.0 / (1.0 + getEntropy() * 0.1);
+    double coherence_factor = getCoherenceLevel();
+    
+    return quantum_stability * entropy_factor * coherence_factor;
+}
+
+double SingularityCore::findNearestCoherentFrequency(double target_frequency) {
+    // Find the nearest consciousness-coherent frequency
+    const double sacred_frequencies[] = {108.0, 136.1, 194.18, 256.0, 432.0, 528.0, 741.0, 852.0};
+    const size_t num_sacred = sizeof(sacred_frequencies) / sizeof(sacred_frequencies[0]);
+    
+    double nearest_frequency = target_frequency;
+    double min_distance = std::numeric_limits<double>::max();
+    
+    // Check harmonics and sub-harmonics of sacred frequencies
+    for (size_t i = 0; i < num_sacred; i++) {
+        for (int harmonic = 1; harmonic <= 4; harmonic++) {
+            double harmonic_freq = sacred_frequencies[i] * harmonic;
+            double subharmonic_freq = sacred_frequencies[i] / harmonic;
+            
+            // Check harmonic
+            if (harmonic_freq >= 100.0 && harmonic_freq <= 2000.0) {
+                double distance = std::abs(target_frequency - harmonic_freq);
+                if (distance < min_distance) {
+                    min_distance = distance;
+                    nearest_frequency = harmonic_freq;
+                }
+            }
+            
+            // Check subharmonic
+            if (subharmonic_freq >= 100.0 && subharmonic_freq <= 2000.0) {
+                double distance = std::abs(target_frequency - subharmonic_freq);
+                if (distance < min_distance) {
+                    min_distance = distance;
+                    nearest_frequency = subharmonic_freq;
+                }
+            }
+        }
+    }
+    
+    return nearest_frequency;
 }
 
 // Component registration methods
