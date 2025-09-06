@@ -71,12 +71,12 @@ class DendriticSuperclass:
         
         # Supercell registry
         self.supercells = {
-            'core_engine': {'path': 'core', 'active_nodes': []},
-            'ai_intelligence': {'path': 'ai', 'active_nodes': []},
-            'tachyonic_archive': {'path': 'tachyonic', 'active_nodes': []},
-            'documentation': {'path': 'docs', 'active_nodes': []},
-            'runtime_intelligence': {'path': 'runtime_intelligence', 'active_nodes': []},
-            'interface': {'path': 'interface', 'active_nodes': []}
+            'core_engine': {'path': 'c:/dev/AIOS/core', 'active_nodes': []},
+            'ai_intelligence': {'path': 'c:/dev/AIOS/ai', 'active_nodes': []},
+            'tachyonic_archive': {'path': 'c:/dev/AIOS/tachyonic', 'active_nodes': []},
+            'documentation': {'path': 'c:/dev/AIOS/docs', 'active_nodes': []},
+            'runtime_intelligence': {'path': 'c:/dev/AIOS/runtime_intelligence', 'active_nodes': []},
+            'interface': {'path': 'c:/dev/AIOS/interface', 'active_nodes': []}
         }
         
         # Initialize dendritic substrate
@@ -157,7 +157,7 @@ class DendriticSuperclass:
                 
                 marker_count = sum(1 for marker in dendritic_markers if marker.lower() in content.lower())
                 
-                if marker_count > 2:  # Significant dendritic potential
+                if marker_count > 0:  # Any dendritic potential
                     # Extract logical signature from imports and classes
                     import_lines = [line for line in content.split('\n') if line.strip().startswith('import') or line.strip().startswith('from')]
                     class_lines = [line for line in content.split('\n') if 'class ' in line]
@@ -415,6 +415,7 @@ class DendriticSuperclass:
         
         # Save to tachyonic archive
         archive_path = self.tachyonic_path / "dendritic_connections.json"
+        archive_path.parent.mkdir(exist_ok=True)  # Ensure directory exists
         with open(archive_path, 'w') as f:
             json.dump(dendritic_archive, f, indent=2)
         
