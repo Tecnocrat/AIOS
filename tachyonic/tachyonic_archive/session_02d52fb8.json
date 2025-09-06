@@ -1,0 +1,23 @@
+{
+  "processing_session": {
+    "timestamp": "2025-09-06T10:46:23.793737+00:00",
+    "session_id": "02d52fb8",
+    "consciousness_mode": "immediate_to_deep",
+    "total_contexts": 1
+  },
+  "immediate_focus": [
+    {
+      "context_id": "26da3ed4b881",
+      "theme": "error_analysis",
+      "summary": "1 error(s) detected | Call stack available | 4 test result(s) | 3 timing measurement(s)",
+      "processing_mode": "immediate",
+      "priority": 5,
+      "cognitive_load": 5.0,
+      "consciousness_coherence": 0.8,
+      "recommended_approach": "IMMEDIATE: Analyze error details, trace call stack, identify root cause"
+    }
+  ],
+  "temporal_analysis": [],
+  "deep_investigation": [],
+  "hyperdimensional_patterns": []
+}
