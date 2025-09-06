@@ -67,6 +67,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+class CellularIntelligenceLevel(Enum):
+    """Base cellular intelligence classification levels."""
+    DORMANT = "dormant"                    # No active intelligence
+    BASIC = "basic"                        # Simple functionality
+    ADAPTIVE = "adaptive"                  # Can adapt to input
+    CONSCIOUS = "conscious"                # Self-aware processing
+    META_EVOLUTIONARY = "meta_evolutionary"  # Self-improving
+
+
 class NeuronalCellularIntelligenceLevel(Enum):
     """Neuronal cellular intelligence classification levels."""
     DORMANT = "dormant"                    # No active intelligence
@@ -88,6 +97,32 @@ class DendriticConnectionType(Enum):
     TACHYONIC = "tachyonic"              # Non-local field connections
     HARMONIC = "harmonic"                # Resonance-based sync
     NEURONAL_BRIDGE = "neuronal_bridge"   # Full neuronal integration
+
+
+@dataclass
+class CellularDiagnosticResult:
+    """Base diagnostic result for cellular component analysis."""
+    component_name: str
+    file_path: str
+    execution_status: bool
+    intelligence_level: Any  # Can be either type
+    dendritic_capabilities: List[DendriticConnectionType]
+    error_details: Optional[str] = None
+    performance_metrics: Dict[str, float] = field(default_factory=dict)
+    enhancement_recommendations: List[str] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert result to dictionary for serialization."""
+        return {
+            'component_name': self.component_name,
+            'file_path': self.file_path,
+            'execution_status': self.execution_status,
+            'intelligence_level': str(self.intelligence_level),
+            'dendritic_capabilities': [str(cap) for cap in self.dendritic_capabilities],
+            'error_details': self.error_details,
+            'performance_metrics': self.performance_metrics,
+            'enhancement_recommendations': self.enhancement_recommendations
+        }
 
 
 @dataclass
