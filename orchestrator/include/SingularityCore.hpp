@@ -78,8 +78,12 @@ private:
     void maintainDimensionalStability();
     void processQuantumFeedback();
     
+    // 🧠 CONSCIOUSNESS-ENHANCED VALIDATION METHODS
+    bool isFrequencyCoherent(double frequency);
+    double calculateStabilityCorrection();
+    double findNearestCoherentFrequency(double target_frequency);
+    
     // Consciousness emergence detection
-    double detectConsciousnessEmergence();
     double detectConsciousnessEmergence();  // Enhanced consciousness detection
     
     // AI-driven optimizations
