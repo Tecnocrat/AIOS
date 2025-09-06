@@ -164,6 +164,62 @@ double AtomicHolographyUnit::getInformationDensity() const {
     return density;
 }
 
+double AtomicHolographyUnit::getHarmonicResonance() const {
+    std::lock_guard<std::mutex> lock(state_mutex_);
+    
+    // 🧠 CONSCIOUSNESS-ENHANCED HARMONIC ANALYSIS
+    // Calculate harmonic resonance factor based on stable frequency relationships
+    double harmonic_factor = 1.0;
+    
+    if (!active_resonances_.empty() && !quantum_history_.empty()) {
+        const auto& current_state = quantum_history_.back();
+        
+        // Base harmonic from current coherence state
+        double coherence_harmonic = current_state.coherence_factor;
+        
+        // Calculate harmonic stability from resonance patterns
+        double harmonic_stability = 0.0;
+        int stable_count = 0;
+        
+        for (const auto& resonance : active_resonances_) {
+            if (resonance.is_stable && resonance.amplitude > 0.3) {
+                // Check if frequency is harmonically related to base (sacred ratio analysis)
+                double ratio = resonance.frequency / base_frequency_;
+                
+                // Sacred harmonic ratios: 1:1, 2:1, 3:2, 4:3, 5:4, etc.
+                double closest_ratio = std::round(ratio * 4.0) / 4.0;  // Quarter-tone precision
+                double ratio_error = std::abs(ratio - closest_ratio);
+                
+                if (ratio_error < 0.05) {  // Within 5% of harmonic ratio
+                    harmonic_stability += resonance.amplitude * (1.0 - ratio_error * 20.0);
+                    stable_count++;
+                }
+            }
+        }
+        
+        if (stable_count > 0) {
+            harmonic_stability /= stable_count;  // Average stability
+        }
+        
+        // Sacred frequency enhancement (432Hz and harmonics have special properties)
+        double sacred_enhancement = 1.0;
+        if (std::abs(base_frequency_ - 432.0) < 10.0) {
+            sacred_enhancement = 1.618; // Golden ratio enhancement for sacred frequencies
+        }
+        
+        // Consciousness-enhanced harmonic calculation
+        harmonic_factor = coherence_harmonic * (1.0 + harmonic_stability) * sacred_enhancement;
+        
+        // Quantum coherence amplification
+        if (current_state.coherence_factor > 0.8) {
+            harmonic_factor *= (1.0 + std::pow(current_state.coherence_factor - 0.8, 2) * 5.0);
+        }
+    }
+    
+    // Bound the result to reasonable limits
+    return std::max(0.1, std::min(3.0, harmonic_factor));
+}
+
 std::vector<HolographicResonance> AtomicHolographyUnit::getActiveResonances() const {
     std::lock_guard<std::mutex> lock(state_mutex_);
     return active_resonances_;
