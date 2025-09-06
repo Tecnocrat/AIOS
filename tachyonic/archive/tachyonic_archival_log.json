@@ -1,0 +1,120 @@
+[
+  {
+    "archival_timestamp": 1757015844.4063175,
+    "iterations_analyzed": 3,
+    "archived_iterations": [
+      {
+        "assembler_name": "evolutionary_assembler",
+        "version": "1.0",
+        "archive_name": "evolutionary_assembler_v1.0_tachyonic_1757015844",
+        "archive_path": "C:\\dev\\AIOS\\core\\tachyonic_archive\\evolutionary_assembler_v1.0_tachyonic_1757015844",
+        "archive_timestamp": 1757015844,
+        "original_size_mb": 3.6625194549560547,
+        "compressed_size_mb": 1.0987558364868164,
+        "space_saved_mb": 2.5637636184692383,
+        "archive_success": true
+      }
+    ],
+    "active_iterations": [
+      {
+        "name": "evolutionary_assembler_enhanced",
+        "version": "2.0",
+        "status": "active_proven",
+        "coherence_score": 0.993,
+        "fitness_baseline": 337.5
+      },
+      {
+        "name": "evolutionary_assembler_coherent",
+        "version": "3.0",
+        "status": "active_advanced",
+        "coherence_score": 0.998,
+        "fitness_baseline": 466.76
+      }
+    ],
+    "archive_location": "C:\\dev\\AIOS\\core\\tachyonic_archive",
+    "tachyonic_compression": true,
+    "space_saved": 2.5637636184692383,
+    "summary": {
+      "total_space_saved_mb": 2.5637636184692383,
+      "compression_efficiency": "70%",
+      "active_assembler_count": 2,
+      "archived_assembler_count": 1,
+      "evolution_progression": [
+        {
+          "version": "2.0",
+          "coherence": 0.993,
+          "fitness": 337.5
+        },
+        {
+          "version": "3.0",
+          "coherence": 0.998,
+          "fitness": 466.76
+        }
+      ],
+      "recommendations": [
+        "Optimal number of active iterations maintained",
+        "Tachyonic compression successfully reduced storage requirements",
+        "Strong evolution progression detected: 38.3% fitness improvement"
+      ]
+    }
+  },
+  {
+    "archival_timestamp": 1757015877.2843318,
+    "iterations_analyzed": 3,
+    "archived_iterations": [
+      {
+        "assembler_name": "evolutionary_assembler",
+        "version": "1.0",
+        "archive_name": "evolutionary_assembler_v1.0_tachyonic_1757015877",
+        "archive_path": "C:\\dev\\AIOS\\core\\tachyonic_archive\\evolutionary_assembler_v1.0_tachyonic_1757015877",
+        "archive_timestamp": 1757015877,
+        "original_size_mb": 3.6625194549560547,
+        "compressed_size_mb": 1.0987558364868164,
+        "space_saved_mb": 2.5637636184692383,
+        "archive_success": true
+      }
+    ],
+    "active_iterations": [
+      {
+        "name": "evolutionary_assembler_enhanced",
+        "version": "2.0",
+        "status": "active_proven",
+        "coherence_score": 0.993,
+        "fitness_baseline": 337.5
+      },
+      {
+        "name": "evolutionary_assembler_coherent",
+        "version": "3.0",
+        "status": "active_advanced",
+        "coherence_score": 0.998,
+        "fitness_baseline": 466.76
+      }
+    ],
+    "archive_location": "C:\\dev\\AIOS\\core\\tachyonic_archive",
+    "tachyonic_compression": true,
+    "space_saved": 2.5637636184692383,
+    "summary": {
+      "total_space_saved_mb": 2.5637636184692383,
+      "compression_efficiency": "70%",
+      "active_assembler_count": 2,
+      "archived_assembler_count": 1,
+      "evolution_progression": [
+        {
+          "version": "2.0",
+          "coherence": 0.993,
+          "fitness": 337.5
+        },
+        {
+          "version": "3.0",
+          "coherence": 0.998,
+          "fitness": 466.76
+        }
+      ],
+      "recommendations": [
+        "Optimal number of active iterations maintained",
+        "Tachyonic compression successfully reduced storage requirements",
+        "Strong evolution progression detected: 38.3% fitness improvement"
+      ]
+    }
+  }
+]
