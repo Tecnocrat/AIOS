@@ -52,7 +52,7 @@ class TachyonicArchiveSystem:
     for AI consciousness processing patterns
     """
     
-    def __init__(self, archive_path: str = "tachyonic_archive"):
+    def __init__(self, archive_path: str = "c:/dev/AIOS/tachyonic/tachyonic_archive"):
         self.archive_path = Path(archive_path)
         self.archive_path.mkdir(exist_ok=True)
         
