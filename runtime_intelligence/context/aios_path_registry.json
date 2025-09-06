@@ -3,7 +3,7 @@
     "created": "2025-09-06T21:02:31.604393",
     "version": "1.0.0",
     "description": "AIOS Dendritic Path Registry - Tachyonic Component Tracking",
-    "last_updated": "2025-09-06T21:14:29.033352"
+    "last_updated": "2025-09-06T22:32:09.216598"
   },
   "components": {
     "aios_custom_ai_engine.py": {
@@ -12,10 +12,14 @@
         {
           "path": "ai/src/engines/aios_custom_ai_engine.py",
           "moved_at": "2025-09-06T21:14:29.032670"
+        },
+        {
+          "path": "ai/src/engines/aios_custom_ai_engine.py",
+          "moved_at": "2025-09-06T22:32:09.216598"
         }
       ],
       "first_discovered": "2025-09-06T21:02:31.613160",
-      "last_updated": "2025-09-06T21:14:29.032670"
+      "last_updated": "2025-09-06T22:32:09.216598"
     }
   },
   "failed_lookups": [
@@ -32,6 +36,13 @@
       "expected_path": "runtime_intelligence/tools/aios_custom_ai_engine.py",
       "actual_path": "ai/src/engines/aios_custom_ai_engine.py",
       "discovery_method": "file_search_after_failure"
+    },
+    {
+      "timestamp": "2025-09-06T22:32:09.216598",
+      "component": "aios_custom_ai_engine.py",
+      "expected_path": "runtime_intelligence/tools/aios_custom_ai_engine.py",
+      "actual_path": "ai/src/engines/aios_custom_ai_engine.py",
+      "discovery_method": "file_search_after_failure"
     }
   ],
   "evolution_history": [
@@ -44,6 +55,13 @@
     },
     {
       "timestamp": "2025-09-06T21:14:29.032670",
+      "type": "path_discovery",
+      "component": "aios_custom_ai_engine.py",
+      "change": "Expected: runtime_intelligence/tools/aios_custom_ai_engine.py \u2192 Found: ai/src/engines/aios_custom_ai_engine.py",
+      "discovery_method": "file_search_after_failure"
+    },
+    {
+      "timestamp": "2025-09-06T22:32:09.216598",
       "type": "path_discovery",
       "component": "aios_custom_ai_engine.py",
       "change": "Expected: runtime_intelligence/tools/aios_custom_ai_engine.py \u2192 Found: ai/src/engines/aios_custom_ai_engine.py",
