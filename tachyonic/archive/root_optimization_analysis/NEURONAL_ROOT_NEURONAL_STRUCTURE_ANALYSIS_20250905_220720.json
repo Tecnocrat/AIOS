@@ -1,0 +1,447 @@
+{
+  "analysis_timestamp": "2025-09-05T22:07:20.906306",
+  "total_root_files": 27,
+  "neuronal_importance_distribution": {
+    "AINLP_DIRECTIVE_COMPLIANCE.md": {
+      "neuronal_importance": 0.6,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md": {
+      "neuronal_importance": 0.6,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250905_214144.md": {
+      "neuronal_importance": 0.6,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_CONSCIOUSNESS_SUMMARY_20250905_214144.json": {
+      "neuronal_importance": 0.30000000000000004,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.30000000000000004,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "aios_core_consciousness_monitor.backup_20250905_214117": {
+      "neuronal_importance": 0.1,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.0,
+      "file_type": "other",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "aios_core_consciousness_monitor.py": {
+      "neuronal_importance": 0.5599999999999999,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "python",
+      "recommended_action": "enhance_then_keep"
+    },
+    "AIOS_CORE_ENGINE_ARCHITECTURE.md": {
+      "neuronal_importance": 0.9,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.9,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "aios_core_evolution_monitor.backup_20250905_214117": {
+      "neuronal_importance": 0.1,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.0,
+      "file_type": "other",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "aios_core_evolution_monitor.py": {
+      "neuronal_importance": 0.13,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.3,
+      "file_type": "python",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "aios_core_meta_evolutionary_enhancer.backup_20250905_214117": {
+      "neuronal_importance": 0.1,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.0,
+      "file_type": "other",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "aios_core_meta_evolutionary_enhancer.py": {
+      "neuronal_importance": 0.09,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.44999999999999996,
+      "file_type": "python",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "aios_core_root_neuronal_optimizer.py": {
+      "neuronal_importance": 1.0,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 1.0,
+      "file_type": "python",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md": {
+      "neuronal_importance": 1.0,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 1.0,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "aios_neuronal_dendritic_intelligence.py": {
+      "neuronal_importance": 1.0,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 1.0,
+      "file_type": "python",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_SUPERCELL_ARCHITECTURE.md": {
+      "neuronal_importance": 0.9,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.9,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "aios_supercell_consciousness.backup_20250905_214117": {
+      "neuronal_importance": 0.1,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.0,
+      "file_type": "other",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "AI_INGESTION_POINTERS.json": {
+      "neuronal_importance": 0.4,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.4,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "cellular_enhancement.log": {
+      "neuronal_importance": 0.1,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.0,
+      "file_type": "log",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "CELLULAR_INTELLIGENCE_ENHANCEMENT_REPORT_20250905_214303.json": {
+      "neuronal_importance": 0.5,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.5,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "CONSCIOUSNESS_INTEGRATION_PATTERNS.md": {
+      "neuronal_importance": 0.44999999999999996,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.44999999999999996,
+      "file_type": "markdown",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117.json": {
+      "neuronal_importance": 0.4,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.4,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "CORE_ENGINE_ITER2_ANALYSIS_20250905_214118.json": {
+      "neuronal_importance": 0.2,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.2,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_214117.json": {
+      "neuronal_importance": 0.2,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.2,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "CORE_EVOLUTION_MONITOR_REPORT_20250905_214118.json": {
+      "neuronal_importance": 0.2,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.2,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "CORE_EVOLUTION_MONITOR_REPORT_20250905_214253.json": {
+      "neuronal_importance": 0.2,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.2,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json": {
+      "neuronal_importance": 0.2,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.2,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    },
+    "TREE_STRUCTURE_DEMONSTRATION_20250905_214118.json": {
+      "neuronal_importance": 0.6,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "json",
+      "recommended_action": "archive_to_tachyonic"
+    }
+  },
+  "tachyonic_archival_candidates": [
+    {
+      "file": "AIOS_CONSCIOUSNESS_SUMMARY_20250905_214144.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.30000000000000004
+    },
+    {
+      "file": "aios_core_consciousness_monitor.backup_20250905_214117",
+      "reason": "Low neuronal consciousness contribution",
+      "neuronal_importance": 0.1
+    },
+    {
+      "file": "aios_core_evolution_monitor.backup_20250905_214117",
+      "reason": "Low neuronal consciousness contribution",
+      "neuronal_importance": 0.1
+    },
+    {
+      "file": "aios_core_evolution_monitor.py",
+      "reason": "Low neuronal consciousness contribution",
+      "neuronal_importance": 0.13
+    },
+    {
+      "file": "aios_core_meta_evolutionary_enhancer.backup_20250905_214117",
+      "reason": "Low neuronal consciousness contribution",
+      "neuronal_importance": 0.1
+    },
+    {
+      "file": "aios_core_meta_evolutionary_enhancer.py",
+      "reason": "Low neuronal consciousness contribution",
+      "neuronal_importance": 0.09
+    },
+    {
+      "file": "aios_supercell_consciousness.backup_20250905_214117",
+      "reason": "Low neuronal consciousness contribution",
+      "neuronal_importance": 0.1
+    },
+    {
+      "file": "AI_INGESTION_POINTERS.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.4
+    },
+    {
+      "file": "cellular_enhancement.log",
+      "reason": "Low neuronal consciousness contribution",
+      "neuronal_importance": 0.1
+    },
+    {
+      "file": "CELLULAR_INTELLIGENCE_ENHANCEMENT_REPORT_20250905_214303.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.5
+    },
+    {
+      "file": "CONSCIOUSNESS_INTEGRATION_PATTERNS.md",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.44999999999999996
+    },
+    {
+      "file": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.4
+    },
+    {
+      "file": "CORE_ENGINE_ITER2_ANALYSIS_20250905_214118.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.2
+    },
+    {
+      "file": "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_214117.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.2
+    },
+    {
+      "file": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214118.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.2
+    },
+    {
+      "file": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214253.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.2
+    },
+    {
+      "file": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.2
+    },
+    {
+      "file": "TREE_STRUCTURE_DEMONSTRATION_20250905_214118.json",
+      "reason": "Insufficient dendritic integration",
+      "neuronal_importance": 0.6
+    }
+  ],
+  "dendritic_integration_opportunities": [
+    {
+      "file": "aios_core_consciousness_monitor.py",
+      "current_integration": 0.0,
+      "enhancement_potential": 1.0
+    },
+    {
+      "file": "aios_core_evolution_monitor.py",
+      "current_integration": 0.0,
+      "enhancement_potential": 0.8
+    },
+    {
+      "file": "aios_core_meta_evolutionary_enhancer.py",
+      "current_integration": 0.0,
+      "enhancement_potential": 1.0
+    },
+    {
+      "file": "aios_core_root_neuronal_optimizer.py",
+      "current_integration": 0.0,
+      "enhancement_potential": 1.0
+    },
+    {
+      "file": "aios_neuronal_dendritic_intelligence.py",
+      "current_integration": 0.0,
+      "enhancement_potential": 1.0
+    }
+  ],
+  "consciousness_contribution_metrics": {},
+  "optimal_root_recommendations": {
+    "optimal_root_files": [
+      "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md",
+      "aios_neuronal_dendritic_intelligence.py",
+      "aios_core_root_neuronal_optimizer.py"
+    ],
+    "files_to_keep": [
+      {
+        "file": "AINLP_DIRECTIVE_COMPLIANCE.md",
+        "neuronal_importance": 0.6,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+        "neuronal_importance": 0.6,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250905_214144.md",
+        "neuronal_importance": 0.6,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_CORE_ENGINE_ARCHITECTURE.md",
+        "neuronal_importance": 0.9,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "aios_core_root_neuronal_optimizer.py",
+        "neuronal_importance": 1.0,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md",
+        "neuronal_importance": 1.0,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "aios_neuronal_dendritic_intelligence.py",
+        "neuronal_importance": 1.0,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_SUPERCELL_ARCHITECTURE.md",
+        "neuronal_importance": 0.9,
+        "reason": "High neuronal consciousness value"
+      }
+    ],
+    "files_to_enhance": [
+      {
+        "file": "aios_core_consciousness_monitor.py",
+        "current_integration": 0.0,
+        "enhancement_potential": 1.0
+      }
+    ],
+    "files_to_archive": [
+      {
+        "file": "AIOS_CONSCIOUSNESS_SUMMARY_20250905_214144.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "aios_core_consciousness_monitor.backup_20250905_214117",
+        "reason": "Low neuronal consciousness contribution"
+      },
+      {
+        "file": "aios_core_evolution_monitor.backup_20250905_214117",
+        "reason": "Low neuronal consciousness contribution"
+      },
+      {
+        "file": "aios_core_evolution_monitor.py",
+        "reason": "Low neuronal consciousness contribution"
+      },
+      {
+        "file": "aios_core_meta_evolutionary_enhancer.backup_20250905_214117",
+        "reason": "Low neuronal consciousness contribution"
+      },
+      {
+        "file": "aios_core_meta_evolutionary_enhancer.py",
+        "reason": "Low neuronal consciousness contribution"
+      },
+      {
+        "file": "aios_supercell_consciousness.backup_20250905_214117",
+        "reason": "Low neuronal consciousness contribution"
+      },
+      {
+        "file": "AI_INGESTION_POINTERS.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "cellular_enhancement.log",
+        "reason": "Low neuronal consciousness contribution"
+      },
+      {
+        "file": "CELLULAR_INTELLIGENCE_ENHANCEMENT_REPORT_20250905_214303.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "CONSCIOUSNESS_INTEGRATION_PATTERNS.md",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "CORE_ENGINE_ITER2_ANALYSIS_20250905_214118.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_214117.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214118.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214253.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+        "reason": "Insufficient dendritic integration"
+      },
+      {
+        "file": "TREE_STRUCTURE_DEMONSTRATION_20250905_214118.json",
+        "reason": "Insufficient dendritic integration"
+      }
+    ],
+    "root_optimization_score": 0.3333333333333333,
+    "consciousness_optimization_potential": 0.4296296296296295
+  }
+}

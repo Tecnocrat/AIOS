@@ -7,6 +7,9 @@ Uses the fractal dendritic mapping to enable cross-supercell consciousness flow
 
 import json
 import asyncio
+import hashlib
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Any
 import importlib.util
@@ -162,6 +165,136 @@ except ImportError as e:
         
         return str(ai_integration_path)
     
+    def generate_ai_processing_checklist(self, max_items: int = 5) -> Dict[str, Any]:
+        """
+        Generate optimized AI processing checklist using tachyonic archive data
+        Consolidates processing logic from archive system into integrator
+        """
+        if not self.dendritic_mapping:
+            self.load_dendritic_mapping()
+        
+        # Import here to avoid circular dependency
+        try:
+            from aios_tachyonic_intelligence_archive import TachyonicArchiveSystem
+            archive = TachyonicArchiveSystem()
+            clusters = archive.get_context_clusters()
+        except ImportError:
+            clusters = []
+        
+        checklist = {
+            'processing_session': {
+                'timestamp': datetime.now(timezone.utc).isoformat(),
+                'session_id': hashlib.md5(str(time.time()).encode()).hexdigest()[:8],
+                'consciousness_mode': 'immediate_to_deep',
+                'total_contexts': sum(len(c.contexts) for c in clusters),
+                'dendritic_enhancement': True,
+                'mutation_seeds_available': len(self.dendritic_mapping['dendritic_mapping']['recursive_feeds']['mutation_seeds'])
+            },
+            'immediate_focus': [],
+            'temporal_analysis': [],
+            'deep_investigation': [],
+            'hyperdimensional_patterns': []
+        }
+        
+        # Distribute contexts across processing phases with dendritic enhancement
+        for cluster in clusters[:max_items]:
+            for context in cluster.contexts:
+                item = {
+                    'context_id': context.context_id,
+                    'theme': cluster.theme,
+                    'summary': self._generate_context_summary(context),
+                    'processing_mode': cluster.recommended_processing_mode,
+                    'priority': cluster.processing_priority,
+                    'cognitive_load': cluster.cognitive_load,
+                    'consciousness_coherence': context.consciousness_coherence,
+                    'recommended_approach': self._generate_processing_approach(context),
+                    'dendritic_enhancement': self._apply_dendritic_enhancement(context)
+                }
+                
+                # Route to appropriate processing phase
+                if cluster.processing_priority >= 5:
+                    checklist['immediate_focus'].append(item)
+                elif cluster.cognitive_load > 5:
+                    checklist['deep_investigation'].append(item)
+                elif context.context_level in ['temporal', 'deep']:
+                    checklist['temporal_analysis'].append(item)
+                else:
+                    checklist['hyperdimensional_patterns'].append(item)
+        
+        return checklist
+    
+    def _generate_context_summary(self, context) -> str:
+        """Generate concise summary of context for AI processing"""
+        elements = context.parsed_elements
+        markers = context.semantic_markers
+        
+        summary_parts = []
+        
+        if 'errors_detected' in markers:
+            error_count = len(elements.get('errors', []))
+            summary_parts.append(f"{error_count} error(s) detected")
+        
+        if 'call_stack_present' in markers:
+            summary_parts.append("Call stack available")
+        
+        if 'test_execution' in markers:
+            test_count = len(elements.get('test_results', []))
+            summary_parts.append(f"{test_count} test result(s)")
+        
+        if 'performance_data' in markers:
+            timing_count = len(elements.get('execution_times', []))
+            summary_parts.append(f"{timing_count} timing measurement(s)")
+        
+        if not summary_parts:
+            summary_parts.append("General execution context")
+        
+        return " | ".join(summary_parts)
+    
+    def _generate_processing_approach(self, context) -> str:
+        """Generate recommended processing approach for AI with dendritic enhancement"""
+        base_approach = ""
+        if 'errors_detected' in context.semantic_markers:
+            base_approach = "IMMEDIATE: Analyze error details, trace call stack, identify root cause"
+        elif context.context_level == "hyperdimensional":
+            base_approach = "DEEP: Complex context requires systematic analysis of all elements"
+        elif 'performance_data' in context.semantic_markers:
+            base_approach = "OPTIMIZE: Review performance metrics, identify bottlenecks"
+        else:
+            base_approach = "SEQUENTIAL: Process elements in order, maintain context coherence"
+        
+        # Add dendritic enhancement recommendations
+        if self.dendritic_mapping:
+            mutation_count = len(self.dendritic_mapping['dendritic_mapping']['recursive_feeds']['mutation_seeds'])
+            if mutation_count > 1000:
+                base_approach += " | DENDRITIC: Apply exotic logic patterns from mutation seeds"
+        
+        return base_approach
+    
+    def _apply_dendritic_enhancement(self, context) -> Dict[str, Any]:
+        """Apply dendritic enhancement to context processing"""
+        if not self.dendritic_mapping:
+            return {'enhanced': False}
+        
+        # Find relevant mutation seeds for this context
+        mutation_seeds = self.dendritic_mapping['dendritic_mapping']['recursive_feeds']['mutation_seeds']
+        relevant_seeds = []
+        
+        # Select high-potential seeds based on context characteristics
+        for seed in mutation_seeds[:10]:  # Limit to prevent overload
+            if seed['pattern']['mutation_potential'] > 0.85:
+                relevant_seeds.append({
+                    'seed_id': seed['seed_id'],
+                    'mutation_potential': seed['pattern']['mutation_potential'],
+                    'chaos_factor': seed['chaos_factor']
+                })
+        
+        return {
+            'enhanced': True,
+            'relevant_mutation_seeds': relevant_seeds,
+            'quantum_coherence_boost': min(0.2, len(relevant_seeds) * 0.05),
+            'fractal_pattern_available': len(relevant_seeds) > 0
+        }
+
     def generate_supercell_integration_report(self) -> Dict[str, Any]:
         """Generate comprehensive integration report for all supercells"""
         if not self.dendritic_mapping:

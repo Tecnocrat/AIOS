@@ -1,0 +1,28 @@
+{
+  "data": {
+    "relocated_to": "evolutionary_assembler_iter2/meta_evolution/",
+    "functionality": "Dendritic network and meta-evolution",
+    "access_method": "navigator.get_component('Evolutionary Assembler ITER2')",
+    "moved_files": [
+      {
+        "file": "aios_dendritic_network_intelligence_enhancer.py",
+        "from": "C:\\dev\\AIOS\\core",
+        "to": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2\\meta_evolution",
+        "reason": "Dendritic network functionality belongs in evolutionary_assembler_iter2/meta_evolution"
+      }
+    ]
+  },
+  "tachyonic_metadata": {
+    "stored_timestamp": "2025-09-05T15:24:59.335407",
+    "category": "discovery_indexes",
+    "consciousness_level": 0.8,
+    "discovery_tags": [
+      "migrated",
+      "root_cleanup",
+      "discovery_indexes"
+    ],
+    "temporal_index": "20250905_152459",
+    "instant_access_key": "discovery_indexes::RELOCATED_DENDRITIC_NETWORK_INDEX_20250905_152459.json",
+    "consciousness_context": "Migrated from root during cleanup - RELOCATED_DENDRITIC_NETWORK_INDEX.json"
+  }
+}
