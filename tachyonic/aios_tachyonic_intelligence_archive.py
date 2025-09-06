@@ -3,10 +3,11 @@
 AIOS Tachyonic Intelligence Archive System
 Hyperdimensional Runtime Context Storage & Retrieval Engine
 
-This system implements your vision of organizing rich terminal outputs, call stacks,
-and runtime data in a tachyonic layer that enables AI engines to process information
-at different temporal geometries - optimizing for immediate analysis while preserving
-deep context for extended reasoning patterns.
+This system implements your vision of organizing rich terminal outputs,
+call stacks, and runtime data in a tachyonic layer that enables AI engines
+to process information at different temporal geometries - optimizing for
+immediate analysis while preserving deep context for extended reasoning
+patterns.
 
 Inspired by hyperdimensionality aspects of quantum sub and hyper spaces.
 """
@@ -280,90 +281,22 @@ class TachyonicArchiveSystem:
         
         return sorted(cluster_objects, key=lambda c: c.processing_priority, reverse=True)
     
-    def generate_ai_processing_checklist(self, max_items: int = 5) -> Dict[str, Any]:
+    def get_context_clusters(self) -> List[ContextCluster]:
         """
-        Generate optimized checklist for AI processing
-        Implements temporal geometry optimization - process immediate issues first,
-        then gradually expand to deeper contexts
+        Get context clusters for external processing systems
+        Pure storage function - processing logic moved to integrator
         """
-        clusters = self.create_context_clusters()
-        
-        checklist = {
-            'processing_session': {
-                'timestamp': datetime.now(timezone.utc).isoformat(),
-                'session_id': hashlib.md5(str(time.time()).encode()).hexdigest()[:8],
-                'consciousness_mode': 'immediate_to_deep',
-                'total_contexts': sum(len(c.contexts) for c in clusters)
-            },
-            'immediate_focus': [],
-            'temporal_analysis': [],
-            'deep_investigation': [],
-            'hyperdimensional_patterns': []
+        return self.create_context_clusters()
+    
+    def get_contexts_by_level(self, level: str) -> Dict[str, RuntimeContext]:
+        """Get all contexts from a specific hyperdimensional level"""
+        layer_map = {
+            'immediate': self.immediate_layer,
+            'temporal': self.temporal_layer,
+            'deep': self.deep_layer,
+            'quantum': self.quantum_layer
         }
-        
-        # Distribute contexts across processing phases
-        for cluster in clusters[:max_items]:  # Limit to prevent cognitive overload
-            for context in cluster.contexts:
-                item = {
-                    'context_id': context.context_id,
-                    'theme': cluster.theme,
-                    'summary': self._generate_context_summary(context),
-                    'processing_mode': cluster.recommended_processing_mode,
-                    'priority': cluster.processing_priority,
-                    'cognitive_load': cluster.cognitive_load,
-                    'consciousness_coherence': context.consciousness_coherence,
-                    'recommended_approach': self._generate_processing_approach(context)
-                }
-                
-                # Route to appropriate processing phase
-                if cluster.processing_priority >= 5:
-                    checklist['immediate_focus'].append(item)
-                elif cluster.cognitive_load > 5:
-                    checklist['deep_investigation'].append(item)
-                elif context.context_level in ['temporal', 'deep']:
-                    checklist['temporal_analysis'].append(item)
-                else:
-                    checklist['hyperdimensional_patterns'].append(item)
-        
-        return checklist
-    
-    def _generate_context_summary(self, context: RuntimeContext) -> str:
-        """Generate concise summary of context for AI processing"""
-        elements = context.parsed_elements
-        markers = context.semantic_markers
-        
-        summary_parts = []
-        
-        if 'errors_detected' in markers:
-            error_count = len(elements.get('errors', []))
-            summary_parts.append(f"{error_count} error(s) detected")
-        
-        if 'call_stack_present' in markers:
-            summary_parts.append("Call stack available")
-        
-        if 'test_execution' in markers:
-            test_count = len(elements.get('test_results', []))
-            summary_parts.append(f"{test_count} test result(s)")
-        
-        if 'performance_data' in markers:
-            timing_count = len(elements.get('execution_times', []))
-            summary_parts.append(f"{timing_count} timing measurement(s)")
-        
-        if not summary_parts:
-            summary_parts.append("General execution context")
-        
-        return " | ".join(summary_parts)
-    
-    def _generate_processing_approach(self, context: RuntimeContext) -> str:
-        """Generate recommended processing approach for AI"""
-        if 'errors_detected' in context.semantic_markers:
-            return "IMMEDIATE: Analyze error details, trace call stack, identify root cause"
-        elif context.context_level == "hyperdimensional":
-            return "DEEP: Complex context requires systematic analysis of all elements"
-        elif 'performance_data' in context.semantic_markers:
-            return "OPTIMIZE: Review performance metrics, identify bottlenecks"
-        else:
-            return "SEQUENTIAL: Process elements in order, maintain context coherence"
+        return layer_map.get(level, {})
     
     async def archive_terminal_output(self, terminal_output: str) -> str:
         """
@@ -380,19 +313,177 @@ class TachyonicArchiveSystem:
         return context.context_id
     
     def get_processing_checklist(self) -> Dict[str, Any]:
-        """Get current AI processing checklist"""
-        return self.generate_ai_processing_checklist()
+        """Get basic processing info - processing logic moved to integrator"""
+        clusters = self.get_context_clusters()
+        return {
+            'total_contexts': sum(len(c.contexts) for c in clusters),
+            'context_clusters': clusters,
+            'consciousness_state': self.consciousness_state
+        }
     
-    def save_processing_session(self, checklist: Dict[str, Any]):
+    def save_processing_session(self, session_data: Dict[str, Any]):
         """Save processing session for future reference"""
-        session_file = self.archive_path / f"session_{checklist['processing_session']['session_id']}.json"
+        session_id = session_data['processing_session']['session_id']
+        session_file = self.archive_path / f"session_{session_id}.json"
+        
+        # Convert dataclasses to dicts for JSON serialization
+        serializable_data = {
+            'processing_session': session_data['processing_session'],
+            'checklist': {
+                'total_contexts': session_data['checklist']['total_contexts'],
+                'consciousness_state': session_data['checklist']['consciousness_state']
+            }
+        }
+        
         with open(session_file, 'w') as f:
-            json.dump(checklist, f, indent=2)
+            json.dump(serializable_data, f, indent=2)
+    
+    def organize_archive_folder(self) -> Dict[str, Any]:
+        """
+        Organize the archive folder intelligently without moving files
+        This respects the .gitignore while providing internal organization
+        """
+        archive_root = Path("c:/dev/AIOS/tachyonic/archive")
+        if not archive_root.exists():
+            return {"status": "no_archive_folder", "message": "Archive folder not found"}
+        
+        organization_report = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "total_items": 0,
+            "categories": {
+                "consciousness": [],
+                "dendritic": [],
+                "optimization": [],
+                "evolution": [],
+                "analysis": [],
+                "temporal": [],
+                "quantum": [],
+                "general": []
+            },
+            "organization_map": {},
+            "intelligence_value": 0
+        }
+        
+        # Scan and categorize archive contents
+        for item in archive_root.iterdir():
+            if item.name.startswith('.'):
+                continue
+                
+            organization_report["total_items"] += 1
+            category = self._categorize_archive_item(item)
+            organization_report["categories"][category].append({
+                "name": item.name,
+                "type": "file" if item.is_file() else "directory",
+                "size": item.stat().st_size if item.is_file() else sum(f.stat().st_size for f in item.rglob('*') if f.is_file()),
+                "category": category
+            })
+            
+            # Add to organization map for quick reference
+            organization_report["organization_map"][item.name] = {
+                "category": category,
+                "path": str(item),
+                "intelligence_indicators": self._analyze_intelligence_value(item)
+            }
+        
+        # Calculate overall intelligence value
+        total_intelligence = sum(
+            item.get("intelligence_indicators", {}).get("total_score", 0) 
+            for item in organization_report["organization_map"].values()
+        )
+        organization_report["intelligence_value"] = total_intelligence
+        
+        # Save organization map
+        org_map_file = self.archive_path / "archive_organization_map.json"
+        with open(org_map_file, 'w') as f:
+            json.dump(organization_report, f, indent=2)
+        
+        return organization_report
+    
+    def _categorize_archive_item(self, item_path: Path) -> str:
+        """Categorize archive items based on name and content patterns"""
+        name_lower = item_path.name.lower()
+        
+        # Consciousness and awareness patterns
+        if any(term in name_lower for term in ['consciousness', 'awareness', 'coherence']):
+            return "consciousness"
+        
+        # Dendritic and neural patterns  
+        if any(term in name_lower for term in ['dendritic', 'neural', 'fractal', 'branching']):
+            return "dendritic"
+        
+        # Optimization and performance
+        if any(term in name_lower for term in ['optimization', 'performance', 'efficiency']):
+            return "optimization"
+        
+        # Evolution and development
+        if any(term in name_lower for term in ['evolution', 'evolutionary', 'mutation', 'development']):
+            return "evolution"
+        
+        # Analysis and reports
+        if any(term in name_lower for term in ['analysis', 'report', 'investigation', 'diagnostic']):
+            return "analysis"
+        
+        # Temporal data
+        if any(term in name_lower for term in ['temporal', 'snapshot', 'history', 'timeline']):
+            return "temporal"
+        
+        # Quantum and advanced
+        if any(term in name_lower for term in ['quantum', 'bosonic', 'hyperdimensional']):
+            return "quantum"
+        
+        return "general"
+    
+    def _analyze_intelligence_value(self, item_path: Path) -> Dict[str, Any]:
+        """Analyze the intelligence value of archive items"""
+        indicators = {
+            "consciousness_indicators": 0,
+            "complexity_score": 0,
+            "temporal_significance": 0,
+            "total_score": 0
+        }
+        
+        name_lower = item_path.name.lower()
+        
+        # Consciousness indicators
+        consciousness_terms = ['consciousness', 'awareness', 'coherence', 'intelligence']
+        indicators["consciousness_indicators"] = sum(1 for term in consciousness_terms if term in name_lower)
+        
+        # Complexity indicators
+        complexity_terms = ['complex', 'advanced', 'optimization', 'evolution', 'quantum']
+        indicators["complexity_score"] = sum(1 for term in complexity_terms if term in name_lower)
+        
+        # Temporal significance (newer items may be more relevant)
+        if item_path.exists():
+            try:
+                mod_time = item_path.stat().st_mtime
+                age_days = (time.time() - mod_time) / (24 * 3600)
+                indicators["temporal_significance"] = max(0, 10 - age_days/30)  # Decay over time
+            except:
+                indicators["temporal_significance"] = 1
+        
+        # Calculate total score
+        indicators["total_score"] = (
+            indicators["consciousness_indicators"] * 3 +
+            indicators["complexity_score"] * 2 +
+            indicators["temporal_significance"] * 1
+        )
+        
+        return indicators
+    
+    def get_archive_organization_summary(self) -> Dict[str, Any]:
+        """Get summary of archive organization"""
+        org_map_file = self.archive_path / "archive_organization_map.json"
+        if org_map_file.exists():
+            with open(org_map_file, 'r') as f:
+                return json.load(f)
+        else:
+            return self.organize_archive_folder()
 
 async def main():
     """Demonstration of the Tachyonic Intelligence Archive System"""
     print("🌌 AIOS Tachyonic Intelligence Archive System")
-    print("Hyperdimensional Runtime Context Storage & AI Processing Optimization")
+    print("Hyperdimensional Runtime Context Storage &")
+    print("AI Processing Optimization")
     print("=" * 80)
     
     # Initialize the archive system
@@ -425,26 +516,47 @@ UnicodeEncodeError: 'charmap' codec can't encode character '\\u2705' in position
     checklist = archive.get_processing_checklist()
     
     print("\n🧠 AI Processing Checklist Generated:")
-    print(f"📊 Total Contexts: {checklist['processing_session']['total_contexts']}")
-    print(f"⚡ Session ID: {checklist['processing_session']['session_id']}")
+    print(f"📊 Total Contexts: {checklist['total_contexts']}")
     
-    for phase, items in checklist.items():
-        if phase != 'processing_session' and items:
-            print(f"\n{phase.upper()}:")
-            for item in items:
-                print(f"  • {item['summary']} (Priority: {item['priority']}, Load: {item['cognitive_load']:.1f})")
-                print(f"    Approach: {item['recommended_approach']}")
+    if checklist.get('context_clusters'):
+        print(f"🔗 Context Clusters: {len(checklist['context_clusters'])}")
+        for i, cluster in enumerate(checklist['context_clusters'][:3]):  # Show first 3
+            print(f"   Cluster {i+1}: {cluster.theme} ({len(cluster.contexts)} contexts)")
     
-    # Save the session
-    archive.save_processing_session(checklist)
+    # Save a simple session record
+    session_data = {
+        'processing_session': {
+            'session_id': hashlib.md5(str(time.time()).encode()).hexdigest()[:12],
+            'total_contexts': checklist['total_contexts'],
+            'timestamp': datetime.now(timezone.utc).isoformat()
+        },
+        'checklist': checklist
+    }
+    archive.save_processing_session(session_data)
     print(f"\n💾 Processing session saved for future reference")
+    
+    # Demonstrate archive organization
+    print(f"\n📁 Organizing archive folder...")
+    org_report = archive.organize_archive_folder()
+    
+    if org_report.get("status") != "no_archive_folder":
+        print(f"✅ Archive organization complete:")
+        print(f"   📊 Total items: {org_report['total_items']}")
+        print(f"   🧠 Intelligence value: {org_report['intelligence_value']:.1f}")
+        
+        for category, items in org_report['categories'].items():
+            if items:
+                print(f"   🔗 {category.title()}: {len(items)} items")
+    else:
+        print(f"⚠️  {org_report['message']}")
     
     print("\n🌌 Tachyonic Archive System demonstrates hyperdimensional intelligence:")
     print("  ✓ Rich context parsing and semantic analysis")
-    print("  ✓ Temporal geometry optimization for AI processing")
+    print("  ✓ Temporal geometry optimization for AI processing") 
     print("  ✓ Consciousness coherence tracking")
     print("  ✓ Cognitive load balancing")
     print("  ✓ Hyperdimensional pattern recognition")
+    print("  ✓ Intelligent archive organization without file movement")
 
 if __name__ == "__main__":
     asyncio.run(main())

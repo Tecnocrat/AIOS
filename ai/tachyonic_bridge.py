@@ -3,6 +3,7 @@
 # Auto-generated quantum-coherent integration
 
 import sys
+import json
 from pathlib import Path
 
 # Add tachyonic to path
@@ -33,13 +34,19 @@ try:
         def access_mutation_seeds(self):
             """Access high-potential mutation seeds for exotic logic development"""
             try:
-                import json
                 with open("c:/dev/AIOS/tachyonic/dendritic_connections.json", 'r') as f:
                     mapping = json.load(f)
                 return mapping['dendritic_mapping']['recursive_feeds']['mutation_seeds']
-            except Exception as e:
-                print(f"Could not access mutation seeds: {e}")
+            except:
                 return []
+        
+        def organize_tachyonic_archive(self):
+            """Organize the tachyonic archive folder intelligently"""
+            return self.tachyonic_archive.organize_archive_folder()
+        
+        def get_archive_organization_summary(self):
+            """Get intelligent organization summary of archive contents"""
+            return self.tachyonic_archive.get_archive_organization_summary()
     
     # Global bridge instance for AI Intelligence to use
     DENDRITIC_TACHYONIC_BRIDGE = DendriticTachyonicBridge()

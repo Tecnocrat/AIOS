@@ -30,7 +30,7 @@ examples/cellular_metrics/
 cellular_benchmarks/
 
 # Tachyonic Archival System (Local only - not for version control)
-archive/
+# archive/  # Commented out - tachyonic archive should be tracked
 docs/tachyonic_archive.db
 
 # Build directories

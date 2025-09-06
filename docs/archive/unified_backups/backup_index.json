@@ -1,0 +1,226 @@
+{
+  "consolidation_timestamp": "2025-07-09T01:07:09.619228",
+  "total_files": 43,
+  "duplicates_skipped": 39,
+  "content_index": {
+    "aaf1e95b8c2e34b3": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\ADVANCED_OPTIMIZATION_IMPLEMENTATION_backup_2025-07-08_22-44-03.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\ADVANCED_OPTIMIZATION_IMPLEMENTATION_backup_2025-07-08_22-44-03_20250708_202704_aaf1e95b8c2e34b3.md",
+      "timestamp": "2025-07-08T20:27:04.536380"
+    },
+    "b4a8ebbbe516ed86": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\AINLP_SPECIFICATION_backup_2025-07-08_22-44-03.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\AINLP_SPECIFICATION_backup_2025-07-08_22-44-03_20250707_230913_b4a8ebbbe516ed86.md",
+      "timestamp": "2025-07-07T23:09:13.105751"
+    },
+    "82e4f32d6ba6954c": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\AINLP_TACHYONIC_OPTIMIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\AINLP_TACHYONIC_OPTIMIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814_20250708_230814_82e4f32d6ba6954c.md",
+      "timestamp": "2025-07-08T23:08:14.014464"
+    },
+    "3a462b98ad6b6336": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\api-reference_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\api-reference_megacons_backup_20250708_230316_20250708_230316_3a462b98ad6b6336.md",
+      "timestamp": "2025-07-08T23:03:16.491572"
+    },
+    "c64fac0e246f7c45": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\API_REFERENCE_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\API_REFERENCE_megacons_backup_20250708_230316_20250708_230316_c64fac0e246f7c45.md",
+      "timestamp": "2025-07-08T23:03:16.491572"
+    },
+    "514c45dd73443eef": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\ARCHITECTURE_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\ARCHITECTURE_megacons_backup_20250708_230316_20250708_230316_514c45dd73443eef.md",
+      "timestamp": "2025-07-08T23:03:16.455356"
+    },
+    "87cd8f57cef7be33": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\AUTO_WAYPOINT_SUMMARY_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\AUTO_WAYPOINT_SUMMARY_phase2_backup_20250708_230814_20250708_230814_87cd8f57cef7be33.md",
+      "timestamp": "2025-07-08T23:08:14.012466"
+    },
+    "d03138cb2dfcd4be": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\BREAKTHROUGH_INTEGRATION_SUMMARY_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\BREAKTHROUGH_INTEGRATION_SUMMARY_phase2_backup_20250708_230813_20250708_230813_d03138cb2dfcd4be.md",
+      "timestamp": "2025-07-08T23:08:13.980866"
+    },
+    "b61add766f0745f1": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\CHANGELOG_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\CHANGELOG_phase2_backup_20250708_230814_20250708_230814_b61add766f0745f1.md",
+      "timestamp": "2025-07-08T23:08:14.027498"
+    },
+    "e64746067b4d1ad0": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\CODEBASE_ANALYSIS_BUGS_OPTIMIZATION_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\CODEBASE_ANALYSIS_BUGS_OPTIMIZATION_phase2_backup_20250708_230813_20250708_230813_e64746067b4d1ad0.md",
+      "timestamp": "2025-07-08T23:08:13.985875"
+    },
+    "b465adf68e89f342": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\COMPLETE_INTEGRATION_GUIDE_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\COMPLETE_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_b465adf68e89f342.md",
+      "timestamp": "2025-07-08T23:08:13.959536"
+    },
+    "292d58b10fdccd95": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\CONTEXT_HARMONIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\CONTEXT_HARMONIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814_20250708_230814_292d58b10fdccd95.md",
+      "timestamp": "2025-07-08T23:08:14.002506"
+    },
+    "dba174b52f20338a": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\CRITICAL_BUG_FIXES_IMPLEMENTATION_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\CRITICAL_BUG_FIXES_IMPLEMENTATION_phase2_backup_20250708_230813_20250708_230813_dba174b52f20338a.md",
+      "timestamp": "2025-07-08T23:08:13.987929"
+    },
+    "883a5e334b085642": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\DEBUGGING_INTEGRATION_PROTOCOL_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\DEBUGGING_INTEGRATION_PROTOCOL_megacons_backup_20250708_230316_20250708_230316_883a5e334b085642.md",
+      "timestamp": "2025-07-08T23:03:16.485395"
+    },
+    "4b451dbb177089ca": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\DEVELOPMENT_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\DEVELOPMENT_megacons_backup_20250708_230316_20250708_230316_4b451dbb177089ca.md",
+      "timestamp": "2025-07-08T23:03:16.475183"
+    },
+    "e3233b7a664b4c6e": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\FRACTAL_HOLOGRAPHIC_DEVELOPMENT_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\FRACTAL_HOLOGRAPHIC_DEVELOPMENT_megacons_backup_20250708_230316_20250708_230316_e3233b7a664b4c6e.md",
+      "timestamp": "2025-07-08T23:03:16.465383"
+    },
+    "4b85445df5c89e0d": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\FRACTAL_HOLOGRAPHIC_IMPLEMENTATION_SUMMARY_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\FRACTAL_HOLOGRAPHIC_IMPLEMENTATION_SUMMARY_megacons_backup_20250708_230316_20250708_230316_4b85445df5c89e0d.md",
+      "timestamp": "2025-07-08T23:03:16.468394"
+    },
+    "00c16a94d2549f8d": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md",
+      "timestamp": "2025-07-08T23:08:13.962736"
+    },
+    "89143fc7a8987618": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\HYBRID_UI_SETUP_GUIDE_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\HYBRID_UI_SETUP_GUIDE_phase2_backup_20250708_230813_20250708_230813_89143fc7a8987618.md",
+      "timestamp": "2025-07-08T23:08:13.964476"
+    },
+    "09ace5260c7eea6a": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\INSTALLATION_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\INSTALLATION_megacons_backup_20250708_230316_20250708_230316_09ace5260c7eea6a.md",
+      "timestamp": "2025-07-08T23:03:16.477532"
+    },
+    "85850736e2e10bf0": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\INTEGRATION_STATUS_JULY_2025_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\INTEGRATION_STATUS_JULY_2025_phase2_backup_20250708_230813_20250708_230813_85850736e2e10bf0.md",
+      "timestamp": "2025-07-08T23:08:13.975828"
+    },
+    "c67f5a533aa6f92e": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\JULY_2025_INTEGRATION_COMPLETE_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\JULY_2025_INTEGRATION_COMPLETE_phase2_backup_20250708_230813_20250708_230813_c67f5a533aa6f92e.md",
+      "timestamp": "2025-07-08T23:08:13.977835"
+    },
+    "4230aa26c1558044": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\LICENSE_DECISION_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\LICENSE_DECISION_phase2_backup_20250708_230814_20250708_230814_4230aa26c1558044.md",
+      "timestamp": "2025-07-08T23:08:14.029508"
+    },
+    "b3d1ef35cdfcc8fa": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\PRODUCTION_READINESS_ANALYSIS_COMPLETE_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\PRODUCTION_READINESS_ANALYSIS_COMPLETE_phase2_backup_20250708_230813_20250708_230813_b3d1ef35cdfcc8fa.md",
+      "timestamp": "2025-07-08T23:08:13.982876"
+    },
+    "7a1a00d8094c395d": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\PROJECT_ROADMAP_2025_2026_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\PROJECT_ROADMAP_2025_2026_phase2_backup_20250708_230814_20250708_230814_7a1a00d8094c395d.md",
+      "timestamp": "2025-07-08T23:08:14.021689"
+    },
+    "7f45c5ef3259dd9a": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\PROJECT_SAVE_STATE_JULY_2025_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\PROJECT_SAVE_STATE_JULY_2025_phase2_backup_20250708_230814_20250708_230814_7f45c5ef3259dd9a.md",
+      "timestamp": "2025-07-08T23:08:14.025697"
+    },
+    "e994038fa6aacfc0": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\PROJECT_STRUCTURE_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\PROJECT_STRUCTURE_megacons_backup_20250708_230316_20250708_230316_e994038fa6aacfc0.md",
+      "timestamp": "2025-07-08T23:03:16.455356"
+    },
+    "35d9115dd3193b84": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\PYTHON_ENVIRONMENT_IMPLEMENTATION_COMPLETE_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\PYTHON_ENVIRONMENT_IMPLEMENTATION_COMPLETE_phase2_backup_20250708_230814_20250708_230814_35d9115dd3193b84.md",
+      "timestamp": "2025-07-08T23:08:14.008245"
+    },
+    "4b9961e3e183f54b": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\QUANTUM_FRACTAL_BOOTSTRAP_COMPLETE_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\QUANTUM_FRACTAL_BOOTSTRAP_COMPLETE_phase2_backup_20250708_230813_20250708_230814_4b9961e3e183f54b.md",
+      "timestamp": "2025-07-08T23:08:14.000077"
+    },
+    "70ab04e90fab262b": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\ROBUST_PYTHON_ENVIRONMENT_MANAGEMENT_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\ROBUST_PYTHON_ENVIRONMENT_MANAGEMENT_phase2_backup_20250708_230814_20250708_230814_70ab04e90fab262b.md",
+      "timestamp": "2025-07-08T23:08:14.010459"
+    },
+    "b599d753ea833232": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\ROOT_HARMONIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\ROOT_HARMONIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814_20250708_230814_b599d753ea833232.md",
+      "timestamp": "2025-07-08T23:08:14.003515"
+    },
+    "e8d077e0a755fb2c": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\user-guide_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\user-guide_megacons_backup_20250708_230316_20250708_230316_e8d077e0a755fb2c.md",
+      "timestamp": "2025-07-08T23:03:16.491572"
+    },
+    "db30cbc7c0b0d913": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\VSCODE_INTEGRATION_PLAN_phase2_backup_20250708_230813.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\VSCODE_INTEGRATION_PLAN_phase2_backup_20250708_230813_20250708_230813_db30cbc7c0b0d913.md",
+      "timestamp": "2025-07-08T23:08:13.967777"
+    },
+    "e4a68e4320481f3d": {
+      "original_path": "c:\\dev\\AIOS\\docs\\tachyonic_backups\\WORKSPACE_CONFIGURATION_megacons_backup_20250708_230316.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\tachyonic_operations\\WORKSPACE_CONFIGURATION_megacons_backup_20250708_230316_20250708_230316_e4a68e4320481f3d.md",
+      "timestamp": "2025-07-08T23:03:16.480437"
+    },
+    "711141c53ca871b3": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AINLP_OPTIMIZED_SPECIFICATION_AND_IMPLEMENTATION.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AINLP_OPTIMIZED_SPECIFICATION_AND_IMPLEMENTATION_20250708_225024_711141c53ca871b3.md",
+      "timestamp": "2025-07-08T22:50:24.679857"
+    },
+    "62025ed180269123": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AIOS_COMPLETE_ARCHITECTURE_GUIDE.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AIOS_COMPLETE_ARCHITECTURE_GUIDE_20250708_230316_62025ed180269123.md",
+      "timestamp": "2025-07-08T23:03:16.470395"
+    },
+    "eb5644b135afe371": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AIOS_DEVELOPMENT_COMPLETE_GUIDE.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AIOS_DEVELOPMENT_COMPLETE_GUIDE_20250708_230316_eb5644b135afe371.md",
+      "timestamp": "2025-07-08T23:03:16.488344"
+    },
+    "7310804946f55641": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AIOS_INTEGRATION_MASTERY_GUIDE.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AIOS_INTEGRATION_MASTERY_GUIDE_20250708_230813_7310804946f55641.md",
+      "timestamp": "2025-07-08T23:08:13.971814"
+    },
+    "b251cae4bdcd478f": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AIOS_PROJECT_ROADMAP_AND_MANAGEMENT.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AIOS_PROJECT_ROADMAP_AND_MANAGEMENT_20250708_230814_b251cae4bdcd478f.md",
+      "timestamp": "2025-07-08T23:08:14.032504"
+    },
+    "74f967dd67ee33a9": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AIOS_SPECIALIZED_SYSTEMS_GUIDE.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AIOS_SPECIALIZED_SYSTEMS_GUIDE_20250708_230814_74f967dd67ee33a9.md",
+      "timestamp": "2025-07-08T23:08:14.015466"
+    },
+    "6432069625d1b8b8": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AIOS_STATUS_AND_OPTIMIZATION_COMPLETE.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AIOS_STATUS_AND_OPTIMIZATION_COMPLETE_20250708_230813_6432069625d1b8b8.md",
+      "timestamp": "2025-07-08T23:08:13.995725"
+    },
+    "1d799aa509e2ba5c": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\AIOS_UNIFIED_API_REFERENCE.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\AIOS_UNIFIED_API_REFERENCE_20250708_230316_1d799aa509e2ba5c.md",
+      "timestamp": "2025-07-08T23:03:16.491572"
+    },
+    "0a7f82a1c0fbdae0": {
+      "original_path": "c:\\dev\\AIOS\\docs\\mega_consolidation_backups\\pre_consolidation_2025-07-08_23-44-28\\DOCUMENTATION_INDEX.md",
+      "unified_path": "c:\\dev\\AIOS\\docs\\unified_backups\\mega_consolidation\\DOCUMENTATION_INDEX_20250708_225602_0a7f82a1c0fbdae0.md",
+      "timestamp": "2025-07-08T22:56:02.469085"
+    }
+  },
+  "backup_sources": [
+    "c:\\dev\\AIOS\\docs\\tachyonic_backups",
+    "c:\\dev\\AIOS\\docs\\mega_consolidation_backups"
+  ]
+}
