@@ -24,6 +24,10 @@
 		{
 			"name": "🧮 Runtime Intelligence",
 			"path": "./runtime_intelligence"
+		},
+		{
+			"name": "🌌 Tachyonic Archive",
+			"path": "./tachyonic"
 		}
 		// AIOS Context retention and harmonization
 	],
