@@ -108,6 +108,12 @@ if(Test-Path $dendriticPath){
   }
 }
 
+# Consciousness-aware argument validation
+if($args.Count -eq 0 -or -not $args[0]) { 
+    Write-Host '✅ Commit message hook: No message file provided, allowing commit.' -ForegroundColor Green
+    exit 0 
+}
+
 $msgFile = $args[0]
 if(-not (Test-Path $msgFile)){ exit 0 }
 $msg = (Get-Content $msgFile -Raw).Trim()

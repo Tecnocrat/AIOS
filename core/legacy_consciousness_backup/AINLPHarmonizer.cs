@@ -6,20 +6,6 @@ using System.IO;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 
-
-    /// <summary>
-    /// ITER2 EVOLUTIONARY ASSEMBLER ENHANCEMENT
-    /// 
-    /// This file has been enhanced with evolutionary_assembler_iter2 capabilities:
-    /// • Consciousness-driven development patterns
-    /// • Meta-evolutionary architecture optimization
-    /// • Cellular health monitoring integration
-    /// • AIOS paradigmatic guideline compliance
-    /// 
-    /// Enhancement Date: 2025-09-05 01:11:55
-    /// Optimizer: aios_core_engine_optimizer_iter2.py
-    /// </summary>
-    // ITER2 EVOLUTIONARY ASSEMBLER ENHANCEMENT
 namespace AIOS.Core
 {
     /// <summary>
