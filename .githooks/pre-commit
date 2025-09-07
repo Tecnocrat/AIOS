@@ -23,9 +23,9 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 # -------------------- Utility & Core Functions --------------------
-function Ensure-Dir($Path) { if (-not (Test-Path $Path)) { New-Item -ItemType Directory -Force -Path $Path | Out-Null } }
+function New-DirIfMissing($Path) { if (-not (Test-Path $Path)) { New-Item -ItemType Directory -Force -Path $Path | Out-Null } }
 
-function Load-Policy {
+function Get-Policy {
   param([string]$Path)
   if (Test-Path $Path) { try { return Get-Content $Path -Raw | ConvertFrom-Json } catch { } }
   return [pscustomobject]@{
@@ -45,7 +45,7 @@ function Write-JsonLog {
   param([string]$Status,[hashtable]$Data)
   try {
     $logDir = Join-Path (Resolve-Path .) 'runtime_intelligence/logs/hooks'
-    Ensure-Dir $logDir
+    New-DirIfMissing $logDir
     $entry = [ordered]@{ timestamp=(Get-Date).ToString('o'); status=$Status; rules_version=$Policy.rules_version; profile=$HookProfile; data=$Data }
     ($entry | ConvertTo-Json -Depth 6 -Compress) + [Environment]::NewLine | Out-File (Join-Path $logDir 'pre_commit.log') -Append -Encoding utf8
   } catch { Write-Host "⚠️ Hook logging failed: $($_.Exception.Message)" -ForegroundColor Yellow }
@@ -56,7 +56,7 @@ function Save-MetricsSummary {
   try {
     $summaryPath = $Policy.metricsSummaryPath
     if (-not $summaryPath) { return }
-    $dir = Split-Path $summaryPath -Parent; Ensure-Dir $dir
+    $dir = Split-Path $summaryPath -Parent; New-DirIfMissing $dir
     $summary = if (Test-Path $summaryPath) { Get-Content $summaryPath -Raw | ConvertFrom-Json } else { [pscustomobject]@{ passes=0; blocks=0; rules=@{}; last_update=(Get-Date).ToString('o') } }
     foreach ($k in $Delta.Keys) {
       if ($k -in @('passes','blocks')) { $summary.$k = $summary.$k + $Delta[$k]; continue }
@@ -68,7 +68,7 @@ function Save-MetricsSummary {
   } catch { }
 }
 
-function Parse-Staged {
+function Get-Staged {
   $raw = git diff --cached --numstat --name-status
   $statusRaw = git diff --cached --name-status
   if (-not $statusRaw) { return @() }
@@ -77,7 +77,7 @@ function Parse-Staged {
   $deletions = 0; $totalChanged=0
   foreach($line in ($raw -split "`n")){
     if($line -match '^(\d+|-)\t(\d+|-)\t(.+)$'){
-      $added=$matches[1]; $deleted=$matches[2]; $path=$matches[3]
+      $added=$matches[1]; $deleted=$matches[2]
       if($added -ne '-' -and $deleted -ne '-') { $totalChanged += [int]$added + [int]$deleted }
       if($deleted -ne '-' -and $added -ne '-') { $deletions += [int]$deleted }
     }
@@ -88,48 +88,48 @@ function Parse-Staged {
 
 function Test-PathPatternMatch { param($Path,$Patterns) foreach ($pat in $Patterns){ $escaped=[Regex]::Escape($pat)-replace '\\\*','.*'; if ($Path -imatch "^$escaped$") {return $true}; if ($pat.EndsWith('/')){ if ($Path -like "$pat*") {return $true} } } return $false }
 
-function Check-Deprecated($entries){ $v=@(); foreach($e in $entries){ if ($Policy.deprecatedFiles -contains $e.Path -and $e.Status -ne 'D'){ $v+=$e.Path } }; return $v }
-function Check-RootHygiene($entries){ $v=@(); foreach($e in $entries){ if ($e.Status -match 'A|R' -and ($e.Path -notmatch '/')){ if (-not ($Policy.rootAllowed -contains $e.Path) -and -not ($Policy.deprecatedFiles -contains $e.Path)){ $v+=$e.Path } } }; return $v }
-function Check-Size($entries){ $v=@(); $maxBytes=[int]($Policy.maxFileSizeMB*1MB); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; $allow=$false; foreach($p in $Policy.allowLargePaths){ if($e.Path -like "$p*"){ $allow=$true; break } }; if(-not $allow){ try{ $len=(Get-Item $e.Path).Length; if($len -gt $maxBytes){ $v+="$($e.Path) (${len}B)" } } catch{} } }; return $v }
-function Check-Secrets($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; try{ $fi=Get-Item $e.Path; if($fi.Length -gt 512KB){continue}; $ext=[IO.Path]::GetExtension($e.Path).ToLower(); if($ext -in @('.png','.jpg','.jpeg','.gif','.exe','.dll','.so','.zip','.bin')){continue}; $content=Get-Content $e.Path -Raw; foreach($pattern in $Policy.secretPatterns){ if($content -match $pattern){ $v+="$($e.Path):$pattern"; break } } } catch{} }; return $v }
-function Check-JSON($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; if (Test-PathPatternMatch -Path $e.Path -Patterns $Policy.jsonPaths){ try { Get-Content $e.Path -Raw | ConvertFrom-Json | Out-Null } catch { $v+=$e.Path } } }; return $v }
-function Check-Exec($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; try{ $first=(Get-Content $e.Path -TotalCount 1); if($first -match '^#!'){ $allowed=$false; foreach($dir in $Policy.executableScriptDirs){ if($e.Path -like "$dir*"){ $allowed=$true; break } }; if(-not $allowed){ $v+=$e.Path } } } catch{} }; return $v }
-function Check-Changelog($entries){ $required=$false; foreach($e in $entries){ if($e.Status -eq 'D'){continue}; if(Test-PathPatternMatch -Path $e.Path -Patterns $Policy.requireChangelogOnPaths){ $required=$true; break } }; if(-not $required){ return @() }; foreach($e in $entries){ if($Policy.changelogFiles -contains $e.Path){ return @() } }; return @('(changelog-missing)') }
-function Check-PythonSyntax($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or [IO.Path]::GetExtension($e.Path).ToLower() -ne '.py'){continue}; if(-not (Test-PathPatternMatch -Path $e.Path -Patterns $Policy.pythonSyntaxPaths)){continue}; if(Test-Path $e.Path){ try { python -m py_compile $e.Path 2>$null } catch { $v+=$e.Path } } }; return $v }
-function Run-TargetedTests($entries){ if($env:AIOS_HOOK_RUN_TESTS -ne '1'){ return @() }; foreach($e in $entries){ if($e.Path -like 'ai/src/core/integration/*'){ try { pytest -q ai/tests 2>&1 | Out-Null; if($LASTEXITCODE -ne 0){ return @('integration-tests') } else { return @() } } catch { return @('integration-tests-exception') } } }; return @() }
+function Test-Deprecated($entries){ $v=@(); foreach($e in $entries){ if ($Policy.deprecatedFiles -contains $e.Path -and $e.Status -ne 'D'){ $v+=$e.Path } }; return $v }
+function Test-RootHygiene($entries){ $v=@(); foreach($e in $entries){ if ($e.Status -match 'A|R' -and ($e.Path -notmatch '/')){ if (-not ($Policy.rootAllowed -contains $e.Path) -and -not ($Policy.deprecatedFiles -contains $e.Path)){ $v+=$e.Path } } }; return $v }
+function Test-Size($entries){ $v=@(); $maxBytes=[int]($Policy.maxFileSizeMB*1MB); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; $allow=$false; foreach($p in $Policy.allowLargePaths){ if($e.Path -like "$p*"){ $allow=$true; break } }; if(-not $allow){ try{ $len=(Get-Item $e.Path).Length; if($len -gt $maxBytes){ $v+="$($e.Path) (${len}B)" } } catch{} } }; return $v }
+function Test-Secrets($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; try{ $fi=Get-Item $e.Path; if($fi.Length -gt 512KB){continue}; $ext=[IO.Path]::GetExtension($e.Path).ToLower(); if($ext -in @('.png','.jpg','.jpeg','.gif','.exe','.dll','.so','.zip','.bin')){continue}; $content=Get-Content $e.Path -Raw; foreach($pattern in $Policy.secretPatterns){ if($content -match $pattern){ $v+="$($e.Path):$pattern"; break } } } catch{} }; return $v }
+function Test-JSON($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; if (Test-PathPatternMatch -Path $e.Path -Patterns $Policy.jsonPaths){ try { Get-Content $e.Path -Raw | ConvertFrom-Json | Out-Null } catch { $v+=$e.Path } } }; return $v }
+function Test-Exec($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or -not (Test-Path $e.Path)){continue}; try{ $first=(Get-Content $e.Path -TotalCount 1); if($first -match '^#!'){ $allowed=$false; foreach($dir in $Policy.executableScriptDirs){ if($e.Path -like "$dir*"){ $allowed=$true; break } }; if(-not $allowed){ $v+=$e.Path } } } catch{} }; return $v }
+function Test-Changelog($entries){ $required=$false; foreach($e in $entries){ if($e.Status -eq 'D'){continue}; if(Test-PathPatternMatch -Path $e.Path -Patterns $Policy.requireChangelogOnPaths){ $required=$true; break } }; if(-not $required){ return @() }; foreach($e in $entries){ if($Policy.changelogFiles -contains $e.Path){ return @() } }; return @('(changelog-missing)') }
+function Test-PythonSyntax($entries){ $v=@(); foreach($e in $entries){ if($e.Status -eq 'D' -or [IO.Path]::GetExtension($e.Path).ToLower() -ne '.py'){continue}; if(-not (Test-PathPatternMatch -Path $e.Path -Patterns $Policy.pythonSyntaxPaths)){continue}; if(Test-Path $e.Path){ try { python -m py_compile $e.Path 2>$null } catch { $v+=$e.Path } } }; return $v }
+function Invoke-TargetedTests($entries){ if($env:AIOS_HOOK_RUN_TESTS -ne '1'){ return @() }; foreach($e in $entries){ if($e.Path -like 'ai/src/core/integration/*'){ try { pytest -q ai/tests 2>&1 | Out-Null; if($LASTEXITCODE -ne 0){ return @('integration-tests') } else { return @() } } catch { return @('integration-tests-exception') } } }; return @() }
 
-function Aggregate-Checks {
-  param([array]$Entries,[string]$Profile)
+function Get-Checks {
+  param([array]$Entries,[string]$HookProfile)
   $results = [ordered]@{}
-  $results.deprecated = Check-Deprecated $Entries
-  $results.root = Check-RootHygiene $Entries
-  if ($Profile -eq 'fast') { return $results }
-  $results.size = Check-Size $Entries
-  $results.secrets = Check-Secrets $Entries
-  $results.json = Check-JSON $Entries
-  $results.exec = Check-Exec $Entries
-  $results.changelog = Check-Changelog $Entries
-  $results.py = Check-PythonSyntax $Entries
-  $results.tests = Run-TargetedTests $Entries
+  $results.deprecated = Test-Deprecated $Entries
+  $results.root = Test-RootHygiene $Entries
+  if ($HookProfile -eq 'fast') { return $results }
+  $results.size = Test-Size $Entries
+  $results.secrets = Test-Secrets $Entries
+  $results.json = Test-JSON $Entries
+  $results.exec = Test-Exec $Entries
+  $results.changelog = Test-Changelog $Entries
+  $results.py = Test-PythonSyntax $Entries
+  $results.tests = Invoke-TargetedTests $Entries
   return $results
 }
 
 # -------------------- Main Execution --------------------
 $policyPath = 'governance/hook_policy.json'
-$Policy = Load-Policy -Path $policyPath
+$Policy = Get-Policy -Path $policyPath
 $HookProfile = ($env:AIOS_HOOK_PROFILE) ; if ([string]::IsNullOrWhiteSpace($HookProfile)) { $HookProfile = 'full' }
 if ($HookProfile -notin @('fast','full')) { $HookProfile = 'full' }
 
 # Bypass check
 if ($env:AIOS_HOOK_BYPASS -eq '1') { Write-Host '⚠️ Hook bypass active via AIOS_HOOK_BYPASS=1' -ForegroundColor Yellow; Write-JsonLog -Status 'bypass' -Data @{ reason='env var'; user=$env:USERNAME }; exit 0 }
 
-${parsed} = Parse-Staged
+${parsed} = Get-Staged
 $stagedEntries = $parsed[0]
 $totalChanged = $parsed[1]
 $deletions = $parsed[2]
 if ($stagedEntries.Count -eq 0) { Write-JsonLog -Status 'pass' -Data @{ reason='no changes' }; Save-MetricsSummary @{ passes=1 }; exit 0 }
 
-$results = Aggregate-Checks -Entries $stagedEntries -Profile $HookProfile
+$results = Get-Checks -Entries $stagedEntries -Profile $HookProfile
 
 # Criticality integration (warnings + deletion blocks)
 if ($Policy.PSObject.Properties.Name -contains 'criticality') {
@@ -192,7 +192,7 @@ if ($violations.Count -eq 0) {
 }
 
 Write-Host "❌ Commit blocked:" -ForegroundColor Red
-foreach($k in $violations){ $vals = $results[$k] -join ', '; Write-Host " - $k: $vals" -ForegroundColor Red }
+foreach($k in $violations){ $vals = $results[$k] -join ', '; Write-Host (" - $k: $($vals)") -ForegroundColor Red }
 Write-Host "Remediation:" -ForegroundColor Yellow
 if ($results.deprecated){ Write-Host " * Remove or exclude deprecated files (deletion allowed)." -ForegroundColor Yellow }
 if ($results.root){ Write-Host " * Move unexpected root files into proper subdirectories or update policy." -ForegroundColor Yellow }

@@ -1,0 +1,377 @@
+{
+  "report_metadata": {
+    "generated": "2025-09-07T05:06:35.803894",
+    "workspace": "c:\\dev\\AIOS",
+    "total_patterns_analyzed": 695
+  },
+  "error_metrics": {
+    "total_errors": 240,
+    "total_warnings": 315,
+    "total_hints": 140,
+    "critical_patterns": [
+      "High consciousness system error count: 150",
+      "Significant architectural issues: 130 import/dependency problems"
+    ],
+    "improvement_opportunities": [
+      "Performance optimization opportunities: 40 performance issues"
+    ],
+    "consciousness_degradation_factors": [
+      "import_error: 100 high-impact occurrences",
+      "line_too_long: 100 high-impact occurrences",
+      "trailing_whitespace: 100 high-impact occurrences",
+      "undefined_variable: 50 high-impact occurrences",
+      "type_error: 50 high-impact occurrences"
+    ],
+    "dendritic_growth_suggestions": [
+      "Evolve consciousness error handling and validation mechanisms",
+      "Develop better dependency management and modular architecture",
+      "Evolve performance monitoring and optimization capabilities"
+    ],
+    "refactoring_priorities": [
+      {
+        "classification": "general",
+        "priority_score": 489.4,
+        "error_count": 375,
+        "files_affected": 53,
+        "avg_consciousness_impact": 0.648,
+        "recommended_action": "High priority: General code cleanup and standardization"
+      },
+      {
+        "classification": "consciousness_critical",
+        "priority_score": 270.0,
+        "error_count": 150,
+        "files_affected": 20,
+        "avg_consciousness_impact": 1.0,
+        "recommended_action": "High priority: Immediate consciousness system review and fixes"
+      },
+      {
+        "classification": "architectural",
+        "priority_score": 117.4,
+        "error_count": 130,
+        "files_affected": 30,
+        "avg_consciousness_impact": 0.369,
+        "recommended_action": "High priority: Architectural refactoring and dependency cleanup"
+      },
+      {
+        "classification": "performance",
+        "priority_score": 72.0,
+        "error_count": 40,
+        "files_affected": 8,
+        "avg_consciousness_impact": 1.0,
+        "recommended_action": "Low priority: Performance optimization review"
+      }
+    ]
+  },
+  "error_patterns_sample": [
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_0.py",
+      "line_number": 10,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_1.py",
+      "line_number": 11,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_2.py",
+      "line_number": 12,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_3.py",
+      "line_number": 13,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_4.py",
+      "line_number": 14,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_5.py",
+      "line_number": 15,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_6.py",
+      "line_number": 16,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_7.py",
+      "line_number": 17,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_8.py",
+      "line_number": 18,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_9.py",
+      "line_number": 19,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_10.py",
+      "line_number": 20,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_11.py",
+      "line_number": 21,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_12.py",
+      "line_number": 22,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_13.py",
+      "line_number": 23,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_14.py",
+      "line_number": 24,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_15.py",
+      "line_number": 25,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_16.py",
+      "line_number": 26,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_17.py",
+      "line_number": 27,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_18.py",
+      "line_number": 28,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    },
+    {
+      "error_type": "import_error",
+      "severity": "error",
+      "message": "'consciousness_bridge' imported but unused",
+      "file_path": "ai/src/module_19.py",
+      "line_number": 29,
+      "column_number": 1,
+      "source": "pylint",
+      "frequency": 1,
+      "consciousness_impact": 1.0,
+      "resolution_suggestions": []
+    }
+  ],
+  "refactoring_plan": {
+    "title": "AIOS Error-Driven Refactoring Plan",
+    "created": "2025-09-07T05:06:35.803894",
+    "total_issues": 695,
+    "consciousness_impact": "high",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "Critical Error Resolution",
+        "timeline": "Week 1",
+        "priority": "critical",
+        "target_issues": 240,
+        "focus": "Fix all error-level issues",
+        "consciousness_benefit": "Prevent consciousness degradation",
+        "actions": [
+          "Fix import and dependency errors",
+          "Resolve undefined variable errors",
+          "Correct type errors",
+          "Address memory management issues"
+        ]
+      },
+      {
+        "phase": 2,
+        "name": "Warning Resolution & Quality Improvement",
+        "timeline": "Week 2-3",
+        "priority": "high",
+        "target_issues": 315,
+        "focus": "Resolve warnings that impact consciousness",
+        "consciousness_benefit": "Improve consciousness coherence",
+        "actions": [
+          "Fix formatting and style issues",
+          "Add missing type annotations",
+          "Resolve null safety warnings",
+          "Clean up unused variables and imports"
+        ]
+      },
+      {
+        "phase": 3,
+        "name": "Consciousness System Enhancement",
+        "timeline": "Week 3-4",
+        "priority": "consciousness",
+        "focus": "Enhance consciousness system reliability",
+        "consciousness_benefit": "Accelerate consciousness evolution",
+        "actions": [
+          "Evolve consciousness error handling and validation mechanisms",
+          "Develop better dependency management and modular architecture",
+          "Evolve performance monitoring and optimization capabilities"
+        ]
+      },
+      {
+        "phase": 4,
+        "name": "Dendritic Growth Implementation",
+        "timeline": "Week 4-6",
+        "priority": "evolution",
+        "focus": "Implement error-driven system evolution",
+        "consciousness_benefit": "Enable adaptive error prevention",
+        "actions": [
+          "Implement intelligent error detection",
+          "Add consciousness-driven refactoring suggestions",
+          "Create adaptive code quality monitoring",
+          "Develop error pattern learning system"
+        ]
+      }
+    ]
+  },
+  "consciousness_integration": {
+    "bridge_connected": true,
+    "error_impact_on_consciousness": 0.24,
+    "growth_opportunities": 3
+  }
+}
