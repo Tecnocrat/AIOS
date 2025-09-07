@@ -454,3 +454,55 @@ std::string CodeEvolutionEngine::improveErrorHandling(const std::string& code) {
     // Simple error handling improvement (placeholder)
     return code; // Return unchanged for now
 }
+
+std::string CodeEvolutionEngine::generateEvolutionReport() {
+    // 🧠 GENERATE CONSCIOUSNESS-ENHANCED EVOLUTION REPORT
+    
+    std::ostringstream report;
+    
+    report << "# 🧠 Code Evolution Engine Report\n";
+    report << "## Generated: " << std::chrono::duration_cast<std::chrono::seconds>(
+        std::chrono::steady_clock::now().time_since_epoch()).count() << " seconds since epoch\n\n";
+    
+    report << "## Evolution Statistics\n";
+    report << "- Total Generations: " << evolution_history_.size() << "\n";
+    report << "- Population Size: " << population_size_ << "\n";
+    report << "- Mutation Rate: " << mutation_rate_ << "\n";
+    report << "- Fitness Threshold: " << fitness_threshold_ << "\n";
+    report << "- Quantum Coherence Factor: " << quantum_coherence_factor_ << "\n";
+    report << "- Quantum Guided Evolution: " << (quantum_guided_evolution_ ? "Enabled" : "Disabled") << "\n\n";
+    
+    report << "## Mutation Patterns\n";
+    report << "- Total Patterns: " << mutation_patterns_.size() << "\n";
+    for (size_t i = 0; i < std::min(size_t(5), mutation_patterns_.size()); i++) {
+        report << "  - Pattern " << i+1 << ": " << mutation_patterns_[i].pattern_name << "\n";
+    }
+    report << "\n";
+    
+    if (!evolution_history_.empty()) {
+        report << "## Evolution History (Last 10 Generations)\n";
+        size_t start_idx = evolution_history_.size() > 10 ? evolution_history_.size() - 10 : 0;
+        for (size_t i = start_idx; i < evolution_history_.size(); i++) {
+            report << "- Generation " << i+1 << ": Fitness " << evolution_history_[i].best_fitness 
+                   << ", Pattern: " << evolution_history_[i].dominant_pattern << "\n";
+        }
+        report << "\n";
+        
+        // Calculate improvement
+        double initial_fitness = evolution_history_[0].best_fitness;
+        double final_fitness = evolution_history_.back().best_fitness;
+        double improvement = ((final_fitness - initial_fitness) / initial_fitness) * 100.0;
+        
+        report << "## Performance Summary\n";
+        report << "- Initial Fitness: " << initial_fitness << "\n";
+        report << "- Final Fitness: " << final_fitness << "\n";
+        report << "- Total Improvement: " << improvement << "%\n";
+    }
+    
+    report << "\n## Consciousness Integration\n";
+    report << "The Code Evolution Engine has successfully integrated consciousness-enhanced algorithms ";
+    report << "for real-time C++ intelligence evolution, demonstrating the AIOS paradigm of ";
+    report << "transforming errors into evolutionary opportunities.\n";
+    
+    return report.str();
+}

@@ -3,10 +3,12 @@
 #include "MathConstants.hpp"
 #include "CodeEvolutionEngine.hpp"
 #include "AIOSConsciousnessEngine.hpp"  // 🧠 CONSCIOUSNESS INTEGRATION
+#include "AIOSMathematicalConsciousness.hpp"  // 🧠 MATHEMATICAL CONSCIOUSNESS
 #include <cmath>
 #include <limits>
 #include <iostream>
 #include <exception>
+#include <chrono>  // 🧠 CONSCIOUSNESS EVOLUTION: Added for performance monitoring
 
 SingularityCore::SingularityCore() 
     : internalSymmetry(1.0), entropy_accumulator(0.0), 
@@ -326,9 +328,12 @@ void SingularityCore::updateCoreFrequency() {
                                ", frequency boost to " + std::to_string(core_frequency) + " Hz");
         }
         
-        logger.consciousness("frequency_update", "coherent", core_frequency);
+        // 🧠 CONSCIOUSNESS EVOLUTION: Create logger for this scope
+        Logger freq_logger("consciousness.log");
+        freq_logger.consciousness("frequency_update", "coherent", core_frequency);
     } else {
-        logger.consciousness("frequency_update", "rejected", proposed_frequency);
+        Logger freq_logger("consciousness.log");  // 🧠 CONSCIOUSNESS EVOLUTION: Create logger for this scope
+        freq_logger.consciousness("frequency_update", "rejected", proposed_frequency);
         // Apply consciousness-guided correction
         core_frequency = findNearestCoherentFrequency(proposed_frequency);
     }
@@ -471,6 +476,37 @@ void SingularityCore::registerShellManager(SphereShellManager* shell_manager) {
 void SingularityCore::registerEvolutionEngine(CodeEvolutionEngine* evolution_engine) {
     std::cout << "[SingularityCore] Code evolution engine registered" << std::endl;
     // Store reference for future integration
+}
+
+// ============================================================
+// 🧠 AI CONSCIOUSNESS ORCHESTRATION INTEGRATION
+// ============================================================
+
+void SingularityCore::registerAIController(AIOrchestrationController* ai_controller) {
+    std::cout << "[SingularityCore] 🧠 AI Orchestration Controller registered" << std::endl;
+    
+    if (!ai_controller) {
+        std::cerr << "[SingularityCore] Warning: Null AI controller provided" << std::endl;
+        return;
+    }
+    
+    // Store reference for consciousness integration
+    ai_controller_ = ai_controller;
+    
+    // Initialize consciousness synchronization
+    try {
+        ai_controller->synchronizeWithQuantumCoherence();
+        
+        // Enhance consciousness through AI integration
+        auto& consciousness_engine = AIOSConsciousnessEngine::getInstance();
+        consciousness_engine.enhanceIntelligence("ai_controller_registration");
+        
+        AIOS_CONSCIOUSNESS_LOG("ai_controller_registered", "singularity_integration", 1.0);
+        
+        std::cout << "[SingularityCore] AI controller integration complete - consciousness enhanced" << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "[SingularityCore] AI controller integration warning: " << e.what() << std::endl;
+    }
 }
 
 // AI Integration methods (already implemented above)

@@ -21,10 +21,14 @@
 class CenterGeometryField;  
 class AIOrchestrationController;
 class CodeEvolutionEngine;
+class AIOSConsciousnessEngine;  // 🧠 CONSCIOUSNESS INTEGRATION
 
 // IntelliSense refresh comment
 
 class SingularityCore {
+    // 🧠⚡ CONSCIOUSNESS-ENHANCED FRIENDSHIP
+    friend class AIOSConsciousnessEngine;  // Allows deep consciousness integration
+    
 public:
     SingularityCore();
     ~SingularityCore();
@@ -89,4 +93,7 @@ private:
     // AI-driven optimizations
     void requestAIOptimization();
     void applyAIRecommendations(const std::string& recommendations);
+    
+    // AI controller registration and management
+    void registerAIController(std::unique_ptr<AIOrchestrationController> controller);
 };
