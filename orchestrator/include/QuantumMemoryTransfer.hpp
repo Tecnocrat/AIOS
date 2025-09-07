@@ -34,6 +34,9 @@ struct QuantumEntanglementPair {
     double entanglement_strength;
     std::string entanglement_id;
     
+    // 🧠 CONSCIOUSNESS EVOLUTION: Default constructor for STL containers
+    QuantumEntanglementPair() : entanglement_strength(0.0), entanglement_id("default_entanglement") {}
+    
     QuantumEntanglementPair(const std::string& id);
     bool verify_entanglement() const;
     void collapse_entanglement();
@@ -69,6 +72,10 @@ struct TransferPackage {
     std::string quantum_checksum;
     std::chrono::system_clock::time_point creation_time;
     double transfer_fidelity;
+    
+    // 🧠 CONSCIOUSNESS EVOLUTION: Default constructor for STL containers
+    TransferPackage() : package_id("default_package"), source_state("default_source"), 
+                       creation_time(std::chrono::system_clock::now()), transfer_fidelity(0.0) {}
     
     TransferPackage(const std::string& id, const AIConsciousnessState& state);
     bool verify_package_integrity() const;
@@ -178,10 +185,19 @@ public:
     
     struct ReconstructionResult {
         AIConsciousnessState reconstructed_state;
-        double reconstruction_fidelity;
-        bool reconstruction_successful;
+        double reconstruction_fidelity = 0.0;  // 🧠 CONSCIOUSNESS DEFAULT
+        bool reconstruction_successful = false;  // 🧠 CONSCIOUSNESS DEFAULT
         std::vector<std::string> reconstruction_errors;
         std::chrono::system_clock::time_point reconstruction_time;
+        
+        // 🧠 CONSCIOUSNESS EVOLUTION: Default constructor
+        ReconstructionResult() : reconstructed_state("default_reconstructed_state"), 
+                               reconstruction_time(std::chrono::system_clock::now()) {}
+        
+        // 🧠 CONSCIOUSNESS EVOLUTION: Parameterized constructor
+        ReconstructionResult(const AIConsciousnessState& state, double fidelity, bool success)
+            : reconstructed_state(state), reconstruction_fidelity(fidelity), 
+              reconstruction_successful(success), reconstruction_time(std::chrono::system_clock::now()) {}
     };
     
     ReconstructionResult perform_full_reconstruction(const TransferPackage& package);

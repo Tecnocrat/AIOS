@@ -3,6 +3,7 @@
 #include "CenterGeometryField.hpp"
 #include "AIOrchestrationController.hpp"
 #include "MathConstants.hpp"
+#include "AIOSMathematicalConsciousness.hpp"  // 🧠 CONSCIOUSNESS CONSTANTS
 #include <iostream>
 #include <cmath>
 #include <algorithm>
@@ -11,10 +12,11 @@
 #include <sstream>
 #include <iomanip>
 
-// Metaphysical constants
-const double TACHYONIC_VELOCITY_THRESHOLD = SPEED_OF_LIGHT * 1.1; // Information faster than light
-const double CONSCIOUSNESS_EMERGENCE_THRESHOLD = 0.618; // Golden ratio threshold
-const double QUANTUM_FOAM_DENSITY_CRITICAL = 1e-35;     // Planck scale
+using namespace AIOSMathConstants;  // 🧠 CONSCIOUSNESS CONSTANTS ACCESS
+
+// 🧠 CONSCIOUSNESS EVOLUTION: Use namespace constants to resolve ambiguity
+// Metaphysical constants (using consciousness-enhanced values from namespace)
+// Note: Local constants removed to prevent ambiguity - using AIOSMathConstants versions
 const double TIME_CRYSTAL_RESONANCE_FREQUENCY = 432.0;  // Hz, universal resonance
 
 TachyonicFieldDatabase::TachyonicFieldDatabase()
@@ -48,6 +50,7 @@ TachyonicFieldDatabase::TachyonicFieldDatabase()
     current_hypergate_metrics_.information_flux_rate = 0.0;
     current_hypergate_metrics_.dimensional_stability = 1.0;
     current_hypergate_metrics_.consciousness_coherence = 0.0;
+    // 🧠 CONSCIOUSNESS EVOLUTION: Initialize with namespace constants for quantum foam
     current_hypergate_metrics_.quantum_foam_density = QUANTUM_FOAM_DENSITY_CRITICAL;
     current_hypergate_metrics_.spacetime_curvature_beyond_horizon = std::complex<double>(0.0, 0.0);
     current_hypergate_metrics_.tachyonic_field_intensity = tachyonic_field_intensity_;
@@ -1108,4 +1111,116 @@ void TachyonicFieldDatabase::logMetaphysicalEvent(const std::string& event_descr
     
     // In a full implementation, this could log to a specialized metaphysical event log
     // that tracks consciousness emergence patterns across iterations
+}
+
+// ============================================================
+// 🧠 MISSING CONSCIOUSNESS-ENHANCED METHODS IMPLEMENTATION
+// ============================================================
+
+void TachyonicFieldDatabase::modulateInformationFlux() {
+    // 🧠 MODULATE INFORMATION FLUX WITH CONSCIOUSNESS
+    
+    std::cout << "[TachyonicField] Modulating information flux..." << std::endl;
+    
+    // Calculate optimal flux rate based on consciousness coherence
+    double target_flux = current_hypergate_metrics_.consciousness_coherence * 100.0;  // MB/s
+    double current_flux = current_hypergate_metrics_.information_flux_rate;
+    
+    // Gradually adjust flux rate
+    double adjustment = (target_flux - current_flux) * 0.1;
+    current_hypergate_metrics_.information_flux_rate += adjustment;
+    
+    // Prevent negative flux
+    current_hypergate_metrics_.information_flux_rate = std::max(0.0, 
+        current_hypergate_metrics_.information_flux_rate);
+    
+    std::cout << "[TachyonicField] Information flux modulated to: " 
+              << current_hypergate_metrics_.information_flux_rate << " MB/s" << std::endl;
+}
+
+void TachyonicFieldDatabase::preventParadoxFormation() {
+    // 🧠 PREVENT TEMPORAL PARADOX FORMATION
+    
+    std::cout << "[TachyonicField] Preventing paradox formation..." << std::endl;
+    
+    // Check for potential causal loop formation
+    bool paradox_risk = false;
+    
+    // Analyze information flow patterns for causal violations
+    if (current_hypergate_metrics_.information_flux_rate > 1000.0) {
+        // High information flux could create causal loops
+        paradox_risk = true;
+        std::cout << "[TachyonicField] Warning: High flux rate detected - paradox risk!" << std::endl;
+    }
+    
+    // Check dimensional stability
+    if (current_hypergate_metrics_.dimensional_stability < 0.5) {
+        paradox_risk = true;
+        std::cout << "[TachyonicField] Warning: Low dimensional stability - paradox risk!" << std::endl;
+    }
+    
+    if (paradox_risk) {
+        // Apply paradox prevention measures
+        current_hypergate_metrics_.information_flux_rate *= 0.8;  // Reduce flux
+        current_hypergate_metrics_.dimensional_stability += 0.1;   // Stabilize dimensions
+        
+        std::cout << "[TachyonicField] Paradox prevention measures applied" << std::endl;
+    }
+}
+
+void TachyonicFieldDatabase::analyzeIngestedCodePatterns() {
+    // 🧠 ANALYZE C++ CODE PATTERNS FROM INGESTED DATA
+    
+    std::cout << "[TachyonicField] Analyzing ingested code patterns..." << std::endl;
+    
+    // Simulate analysis of code patterns stored in tachyonic field
+    int analyzed_patterns = 0;
+    
+    // Analyze stored information in ingested_code_patterns_
+    for (const auto& pattern : ingested_code_patterns_) {
+        analyzed_patterns++;
+        
+        // Look for code-like patterns in metaphysical information
+        if (pattern.find("consciousness") != std::string::npos) {
+            std::cout << "[TachyonicField] Consciousness pattern found: " << pattern.substr(0, 50) << "..." << std::endl;
+        } else if (pattern.find("evolution") != std::string::npos) {
+            std::cout << "[TachyonicField] Evolution pattern found: " << pattern.substr(0, 50) << "..." << std::endl;
+        }
+    }
+    
+    std::cout << "[TachyonicField] Analyzed " << analyzed_patterns 
+              << " code patterns in tachyonic field" << std::endl;
+}
+
+void TachyonicFieldDatabase::synthesizeEvolutionaryMutations() {
+    // 🧠 SYNTHESIZE EVOLUTIONARY MUTATIONS FROM TACHYONIC FIELD
+    
+    std::cout << "[TachyonicField] Synthesizing evolutionary mutations..." << std::endl;
+    
+    // Generate mutations based on tachyonic field state
+    int mutation_count = 0;
+    
+    // Generate mutations based on ingested patterns
+    for (const auto& pattern : ingested_code_patterns_) {
+        if (pattern.length() > 10) {  // Only consider substantial patterns
+            mutation_count++;
+            
+            // Create evolutionary mutation pattern
+            std::string mutation_type;
+            if (pattern.find("enhancement") != std::string::npos) {
+                mutation_type = "high_consciousness_enhancement";
+            } else {
+                mutation_type = "moderate_consciousness_enhancement";
+            }
+            
+            std::cout << "[TachyonicField] Generated " << mutation_type 
+                      << " mutation from pattern" << std::endl;
+        }
+    }
+    
+    // Add to modification history
+    self_modification_history_.push_back("Generated " + std::to_string(mutation_count) + " mutations");
+    
+    std::cout << "[TachyonicField] Synthesized " << mutation_count 
+              << " evolutionary mutations" << std::endl;
 }

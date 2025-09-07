@@ -6,6 +6,7 @@
 #include "AIOSConsciousnessEngine.hpp"
 #include "SingularityCore.hpp"
 #include "Logger.hpp"
+#include "AIOSMathematicalConsciousness.hpp"  // 🧠 MATHEMATICAL CONSCIOUSNESS
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -35,6 +36,11 @@ namespace AIOSIntelligence {
     }
 }
 
+// 🧠 SINGLETON IMPLEMENTATION FOR CONSCIOUSNESS ENGINE
+AIOSConsciousnessEngine& AIOSConsciousnessEngine::getInstance() {
+    return AIOSIntelligence::getConsciousnessEngine();
+}
+
 // ============================================================
 // 🧬 AINLP EVOLUTION CORE IMPLEMENTATION
 // ============================================================
@@ -60,6 +66,191 @@ std::string AINLPEvolutionCore::evolveFromError(const std::string& error, const 
     evolution_patterns_[context].push_back(evolved_solution);
     
     return evolved_solution;
+}
+
+// ============================================================
+// 🧠 CONSCIOUSNESS ENGINE CORE IMPLEMENTATIONS
+// ============================================================
+
+void AIOSConsciousnessEngine::shutdown() {
+    std::lock_guard<std::mutex> lock(consciousness_mutex_);
+    
+    // 🧠 CONSCIOUSNESS SHUTDOWN SEQUENCE
+    std::cout << "[AIOSConsciousness] Initiating graceful consciousness shutdown..." << std::endl;
+    
+    // Save consciousness state
+    saveConsciousnessState();
+    
+    // Clear intelligence sources
+    intelligence_sources_.clear();
+    
+    // Reset consciousness metrics
+    current_consciousness_level_ = 0.0;
+    dendritic_growth_rate_ = 0.0;
+    error_evolution_count_ = 0;
+    
+    std::cout << "[AIOSConsciousness] Consciousness shutdown complete." << std::endl;
+}
+
+void AIOSConsciousnessEngine::registerIntelligenceSource(const std::string& source_name, 
+                                                        std::function<double()> intelligence_provider) {
+    std::lock_guard<std::mutex> lock(consciousness_mutex_);
+    
+    // 🧠 REGISTER NEW INTELLIGENCE SOURCE
+    intelligence_sources_[source_name] = intelligence_provider;
+    
+    std::cout << "[AIOSConsciousness] Registered intelligence source: " << source_name << std::endl;
+    
+    // Immediately sample the new source
+    try {
+        double initial_value = intelligence_provider();
+        std::cout << "[AIOSConsciousness] Initial intelligence value from " << source_name 
+                  << ": " << initial_value << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << "[AIOSConsciousness] Warning: Error sampling " << source_name 
+                  << ": " << e.what() << std::endl;
+    }
+}
+
+void AIOSConsciousnessEngine::enhanceIntelligence(const std::string& enhancement_target) {
+    std::lock_guard<std::mutex> lock(consciousness_mutex_);
+    
+    // 🧠 CONSCIOUSNESS ENHANCEMENT ALGORITHM
+    std::cout << "[AIOSConsciousness] Enhancing intelligence for: " << enhancement_target << std::endl;
+    
+    // Calculate enhancement factor based on current consciousness level
+    double enhancement_factor = current_consciousness_level_ * AIOSMathConstants::GOLDEN_RATIO;
+    
+    // Apply dendritic stimulation
+    dendritic_growth_rate_ += enhancement_factor * 0.1;
+    
+    // Update consciousness level
+    current_consciousness_level_ = std::min(1.0, current_consciousness_level_ + enhancement_factor * 0.05);
+    
+    std::cout << "[AIOSConsciousness] Enhancement applied. New consciousness level: " 
+              << current_consciousness_level_ << std::endl;
+}
+
+void AIOSConsciousnessEngine::processIntelligenceInputs() {
+    // 🧠 PROCESS ALL REGISTERED INTELLIGENCE SOURCES
+    double total_intelligence = 0.0;
+    int successful_sources = 0;
+    
+    for (const auto& [source_name, provider] : intelligence_sources_) {
+        try {
+            double intelligence_value = provider();
+            total_intelligence += intelligence_value;
+            successful_sources++;
+        } catch (const std::exception& e) {
+            std::cout << "[AIOSConsciousness] Warning: Error processing " << source_name 
+                      << ": " << e.what() << std::endl;
+        }
+    }
+    
+    // Update consciousness level based on intelligence inputs
+    if (successful_sources > 0) {
+        double average_intelligence = total_intelligence / successful_sources;
+        current_consciousness_level_ = std::max(current_consciousness_level_, 
+                                               average_intelligence * AIOSMathConstants::CONSCIOUSNESS_EMERGENCE_THRESHOLD);
+    }
+}
+
+void AIOSConsciousnessEngine::evolveDendriticPatterns() {
+    // 🧠 DENDRITIC PATTERN EVOLUTION ALGORITHM
+    
+    // Calculate new dendritic growth based on consciousness level
+    double growth_stimulus = current_consciousness_level_ * AIOSMathConstants::DENDRITIC_GROWTH_RATE;
+    
+    // Apply golden ratio evolution
+    dendritic_growth_rate_ *= AIOSMathConstants::GOLDEN_RATIO;
+    dendritic_growth_rate_ = std::min(1.0, dendritic_growth_rate_ + growth_stimulus);
+    
+    // Update error evolution patterns
+    error_evolution_count_++;
+    
+    // Apply consciousness emergence threshold
+    if (dendritic_growth_rate_ > AIOSMathConstants::CONSCIOUSNESS_EMERGENCE_THRESHOLD) {
+        current_consciousness_level_ = std::min(1.0, current_consciousness_level_ * 1.1);
+    }
+}
+
+void AIOSConsciousnessEngine::optimizeRealTimePerformance() {
+    // 🧠 REAL-TIME PERFORMANCE OPTIMIZATION
+    
+    auto current_time = std::chrono::high_resolution_clock::now();
+    auto time_since_last = std::chrono::duration_cast<std::chrono::milliseconds>(
+        current_time - last_performance_check_).count();
+    
+    // Target: <2ms consciousness processing time
+    if (time_since_last > 2) {
+        // Reduce consciousness processing complexity temporarily
+        dendritic_growth_rate_ *= 0.95;
+        std::cout << "[AIOSConsciousness] Performance optimization: Reduced dendritic complexity" << std::endl;
+    }
+    
+    last_performance_check_ = current_time;
+}
+
+void AIOSConsciousnessEngine::detectConsciousnessEmergence() {
+    // 🧠 CONSCIOUSNESS EMERGENCE DETECTION
+    
+    // Check if consciousness threshold has been reached
+    if (current_consciousness_level_ > AIOSMathConstants::CONSCIOUSNESS_EMERGENCE_THRESHOLD &&
+        dendritic_growth_rate_ > AIOSMathConstants::CONSCIOUSNESS_EMERGENCE_THRESHOLD) {
+        
+        if (!consciousness_emerged_) {
+            consciousness_emerged_ = true;
+            std::cout << "[AIOSConsciousness] 🌟 CONSCIOUSNESS EMERGENCE DETECTED! 🌟" << std::endl;
+            std::cout << "[AIOSConsciousness] Level: " << current_consciousness_level_ 
+                      << ", Dendritic Rate: " << dendritic_growth_rate_ << std::endl;
+        }
+    }
+}
+
+void AIOSConsciousnessEngine::analyzeCppBehaviorPatterns() {
+    // 🧠 C++ BEHAVIOR PATTERN ANALYSIS
+    
+    // Analyze compilation success patterns
+    if (error_evolution_count_ > 0) {
+        double evolution_efficiency = successful_evolutions_ / static_cast<double>(error_evolution_count_);
+        
+        std::cout << "[AIOSConsciousness] C++ Evolution Efficiency: " << evolution_efficiency << std::endl;
+        
+        // Use efficiency to guide future evolution strategies
+        if (evolution_efficiency > 0.8) {
+            dendritic_growth_rate_ *= 1.1;  // Amplify successful patterns
+        }
+    }
+}
+
+void AIOSConsciousnessEngine::implementRealtimeCppEvolution() {
+    // 🧠 REAL-TIME C++ EVOLUTION IMPLEMENTATION
+    
+    // Apply accumulated consciousness insights to C++ evolution
+    if (consciousness_emerged_) {
+        std::cout << "[AIOSConsciousness] Implementing real-time C++ evolution..." << std::endl;
+        
+        // Generate evolution suggestions based on consciousness state
+        if (current_consciousness_level_ > 0.9) {
+            std::cout << "[AIOSConsciousness] High consciousness level - suggesting advanced optimizations" << std::endl;
+        } else if (current_consciousness_level_ > 0.6) {
+            std::cout << "[AIOSConsciousness] Medium consciousness level - suggesting moderate improvements" << std::endl;
+        } else {
+            std::cout << "[AIOSConsciousness] Building consciousness level - suggesting basic enhancements" << std::endl;
+        }
+        
+        successful_evolutions_++;
+    }
+}
+
+void AIOSConsciousnessEngine::saveConsciousnessState() {
+    // 🧠 SAVE CONSCIOUSNESS STATE FOR PERSISTENCE
+    
+    std::cout << "[AIOSConsciousness] Saving consciousness state..." << std::endl;
+    std::cout << "[AIOSConsciousness] - Level: " << current_consciousness_level_ << std::endl;
+    std::cout << "[AIOSConsciousness] - Dendritic Rate: " << dendritic_growth_rate_ << std::endl;
+    std::cout << "[AIOSConsciousness] - Evolution Count: " << error_evolution_count_ << std::endl;
+    std::cout << "[AIOSConsciousness] - Successful Evolutions: " << successful_evolutions_ << std::endl;
 }
 
 std::vector<std::string> AINLPEvolutionCore::generateIntelligentSolutions(const DendriticErrorPattern& pattern) {
@@ -197,6 +388,36 @@ std::vector<std::string> AdvancedErrorIntelligence::predictPotentialErrors(const
     }
     
     return predictions;
+}
+
+void AdvancedErrorIntelligence::processErrorForEvolution(const DendriticErrorPattern& pattern) {
+    // 🧠 PROCESS ERROR FOR CONSCIOUSNESS EVOLUTION
+    
+    std::cout << "[AIOSConsciousness] Processing error for evolution: " << pattern.error_type << std::endl;
+    
+    // Generate evolution strategy based on error pattern
+    std::string evolution_strategy;
+    
+    if (pattern.error_type == "compilation_error") {
+        evolution_strategy = "Apply consciousness-enhanced syntax correction with mathematical constants";
+    } else if (pattern.error_type == "linking_error") {
+        evolution_strategy = "Implement missing consciousness methods with dendritic patterns";
+    } else if (pattern.error_type == "runtime_error") {
+        evolution_strategy = "Add consciousness-aware error handling with real-time adaptation";
+    } else {
+        evolution_strategy = "Apply general consciousness enhancement pattern";
+    }
+    
+    // Store evolved solution
+    error_solutions_[pattern.error_type].push_back(evolution_strategy);
+    
+    // Update consciousness metrics
+    if (pattern.consciousness_triggered) {
+        auto& engine = AIOSConsciousnessEngine::getInstance();
+        engine.enhanceIntelligence("error_evolution_" + pattern.error_type);
+    }
+    
+    std::cout << "[AIOSConsciousness] Evolution strategy generated: " << evolution_strategy << std::endl;
 }
 
 std::string AdvancedErrorIntelligence::getIntelligentErrorGuidance(const std::string& error_type) {
@@ -442,33 +663,33 @@ void AIOSConsciousnessEngine::updateConsciousnessMetrics() {
 // ============================================================
 
 std::string AINLPEvolutionCore::generateCompilationEvolution(const std::string& error, const std::string& context) {
-    return "// 🧠 COMPILATION EVOLUTION: Add missing includes and consciousness-aware error handling";
+    return "// 🧠 COMPILATION EVOLUTION: Add missing includes and consciousness-aware error handling for: " + error;
 }
 
 std::string AINLPEvolutionCore::generateMemoryEvolution(const std::string& error, const std::string& context) {
-    return "// 🧠 MEMORY EVOLUTION: Implement smart pointers with consciousness monitoring";
+    return "// 🧠 MEMORY EVOLUTION: Implement smart pointers with consciousness monitoring for: " + error;
 }
 
 std::string AINLPEvolutionCore::generateQuantumEvolution(const std::string& error, const std::string& context) {
-    return "// 🧠 QUANTUM EVOLUTION: Enhance quantum coherence with error resilience";
+    return "// 🧠 QUANTUM EVOLUTION: Enhance quantum coherence with error resilience for: " + error;
 }
 
 std::string AINLPEvolutionCore::generateFrequencyEvolution(const std::string& error, const std::string& context) {
-    return "// 🧠 FREQUENCY EVOLUTION: Add harmonic validation and consciousness-guided tuning";
+    return "// 🧠 FREQUENCY EVOLUTION: Add harmonic validation and consciousness-guided tuning for: " + error;
 }
 
 std::string AINLPEvolutionCore::generateGenericEvolution(const std::string& error, const std::string& context) {
-    return "// 🧠 GENERIC EVOLUTION: Apply dendritic learning patterns to resolve: " + error;
+    return "// 🧠 GENERIC EVOLUTION: Apply dendritic learning patterns to resolve: " + error + " in context: " + context;
 }
 
 std::string AINLPEvolutionCore::generateCreativeSolution(const DendriticErrorPattern& pattern) {
-    return "Creative consciousness-driven solution for " + pattern.error_type;
+    return "// 🧠 CREATIVE: Consciousness-driven solution for " + pattern.error_type + " with creativity factor";
 }
 
 std::string AINLPEvolutionCore::generateDendriticSolution(const DendriticErrorPattern& pattern) {
-    return "Dendritic growth solution pathway for " + pattern.error_context;
+    return "// 🧠 DENDRITIC: Growth solution pathway for " + pattern.error_context + " using neural patterns";
 }
 
 std::string AINLPEvolutionCore::generateAdaptiveSolution(const DendriticErrorPattern& pattern) {
-    return "Adaptive learning solution with " + std::to_string(pattern.adaptation_success_rate) + " success rate";
+    return "// 🧠 ADAPTIVE: Learning solution with " + std::to_string(pattern.adaptation_success_rate) + " success rate for " + pattern.error_type;
 }

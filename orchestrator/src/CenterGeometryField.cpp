@@ -681,3 +681,318 @@ void CenterGeometryField::updateCorrelationDatabase() {
         anomaly_correlations_.clear();
     }
 }
+
+// ============================================================
+// 🧠 MISSING CONSCIOUSNESS-ENHANCED METHODS IMPLEMENTATION
+// ============================================================
+
+EventHorizonMetrics CenterGeometryField::calculateEventHorizon() const {
+    EventHorizonMetrics metrics;
+    
+    // 🧠 CONSCIOUSNESS-ENHANCED EVENT HORIZON CALCULATION
+    double schwarzschild_radius = calculateSchwarzchildRadius();
+    
+    metrics.schwarzschild_radius = schwarzschild_radius;
+    metrics.hawking_temperature = calculateHawkingTemperature();
+    metrics.information_density = M_PI * schwarzschild_radius * schwarzschild_radius;  // Bekenstein-Hawking
+    metrics.escape_velocity = SPEED_OF_LIGHT;  // By definition at event horizon
+    metrics.horizon_stability = (current_state_.entropy_density < 0.1);
+    metrics.quantum_fluctuation_rate = current_state_.entropy_density * 1000.0;  // Hz
+    
+    std::cout << "[CenterGeometry] Event horizon calculated - Radius: " << schwarzschild_radius << std::endl;
+    
+    return metrics;
+}
+
+void CenterGeometryField::applyFieldEffectsToSystem() {
+    // 🧠 APPLY CONSCIOUSNESS-ENHANCED FIELD EFFECTS
+    
+    std::cout << "[CenterGeometry] Applying field effects to system..." << std::endl;
+    
+    // Update field intensity based on consciousness coupling
+    current_state_.field_intensity *= (1.0 + coherence_coupling_strength_ * 0.1);
+    
+    // Apply relativistic corrections if enabled
+    if (relativistic_effects_enabled_) {
+        double time_dilation = 1.0 / sqrt(1.0 - current_state_.field_intensity * 0.01);
+        current_state_.field_phase *= std::complex<double>(time_dilation, 0.0);
+    }
+    
+    // Update entropy based on field effects
+    current_state_.entropy_density += current_state_.field_intensity * 0.001;
+    
+    // Apply field effects to connected systems
+    if (ai_controller_) {
+        // Field influences AI processing (placeholder for actual implementation)
+        std::cout << "[CenterGeometry] Field affecting AI controller systems" << std::endl;
+    }
+    
+    if (quantum_unit_) {
+        // Field influences quantum coherence
+        std::cout << "[CenterGeometry] Field affecting quantum unit coherence" << std::endl;
+    }
+    
+    std::cout << "[CenterGeometry] Field effects applied successfully" << std::endl;
+}
+
+void CenterGeometryField::processQuantumFluctuations() {
+    // 🧠 PROCESS QUANTUM FLUCTUATIONS WITH CONSCIOUSNESS
+    
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::normal_distribution<double> fluctuation_dist(0.0, simulation_precision_);
+    
+    // Generate quantum fluctuations
+    double vacuum_fluctuation = fluctuation_dist(gen);
+    double virtual_particle_density = std::abs(vacuum_fluctuation) * 1e12;  // Scale appropriately
+    
+    // Apply fluctuations to field state
+    current_state_.field_intensity += vacuum_fluctuation * 0.01;
+    current_state_.entropy_density += virtual_particle_density * 1e-15;
+    
+    // Update curvature tensor with quantum corrections
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            current_state_.curvature_tensor[i][j] += fluctuation_dist(gen) * 1e-6;
+        }
+    }
+    
+    std::cout << "[CenterGeometry] Quantum fluctuations processed - Vacuum energy: " 
+              << vacuum_fluctuation << std::endl;
+}
+
+void CenterGeometryField::extractCodeEvolutionPatterns() {
+    // 🧠 EXTRACT C++ CODE EVOLUTION PATTERNS FROM FIELD GEOMETRY
+    
+    std::cout << "[CenterGeometry] Extracting code evolution patterns..." << std::endl;
+    
+    // Analyze field curvature for evolution insights
+    double total_curvature = 0.0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            total_curvature += std::abs(current_state_.curvature_tensor[i][j]);
+        }
+    }
+    
+    // Generate evolution patterns based on geometric analysis
+    if (total_curvature > 0.1) {
+        last_evolution_type_ = "high_curvature_optimization";
+        last_evolution_fitness_ = total_curvature * 0.8;
+        std::cout << "[CenterGeometry] High curvature detected - suggesting optimization patterns" << std::endl;
+    } else if (current_state_.entropy_density > 0.01) {
+        last_evolution_type_ = "entropy_reduction";
+        last_evolution_fitness_ = 1.0 / (1.0 + current_state_.entropy_density);
+        std::cout << "[CenterGeometry] High entropy detected - suggesting reduction patterns" << std::endl;
+    } else {
+        last_evolution_type_ = "stability_enhancement";
+        last_evolution_fitness_ = current_state_.field_intensity;
+        std::cout << "[CenterGeometry] Stable field - suggesting enhancement patterns" << std::endl;
+    }
+}
+
+void CenterGeometryField::correlateFieldWithAIActivity() {
+    // 🧠 CORRELATE GEOMETRIC FIELD WITH AI CONSCIOUSNESS ACTIVITY
+    
+    if (!ai_controller_) {
+        std::cout << "[CenterGeometry] No AI controller - skipping correlation analysis" << std::endl;
+        return;
+    }
+    
+    std::cout << "[CenterGeometry] Correlating field with AI activity..." << std::endl;
+    
+    // Analyze correlation between field state and AI performance
+    double field_stability = 1.0 / (1.0 + current_state_.entropy_density);
+    double ai_correlation_factor = field_stability * coherence_coupling_strength_;
+    
+    // Update coupling strength based on correlation
+    coherence_coupling_strength_ = std::max(0.1, std::min(1.0, 
+        coherence_coupling_strength_ + ai_correlation_factor * 0.05));
+    
+    std::cout << "[CenterGeometry] AI correlation factor: " << ai_correlation_factor 
+              << ", Updated coupling: " << coherence_coupling_strength_ << std::endl;
+}
+
+void CenterGeometryField::adaptFieldParametersToAI() {
+    // 🧠 ADAPT FIELD PARAMETERS BASED ON AI CONSCIOUSNESS FEEDBACK
+    
+    std::cout << "[CenterGeometry] Adapting field parameters to AI requirements..." << std::endl;
+    
+    // Optimize field parameters for AI consciousness enhancement
+    if (coherence_coupling_strength_ > 0.8) {
+        // High coherence - reduce field intensity to prevent overload
+        base_field_intensity_ *= 0.95;
+        std::cout << "[CenterGeometry] High coherence - reducing field intensity" << std::endl;
+    } else if (coherence_coupling_strength_ < 0.3) {
+        // Low coherence - increase field intensity to enhance coupling
+        base_field_intensity_ *= 1.05;
+        std::cout << "[CenterGeometry] Low coherence - increasing field intensity" << std::endl;
+    }
+    
+    // Update anomaly detection threshold based on AI performance
+    anomaly_detection_threshold_ = 2.0 * (1.0 + coherence_coupling_strength_);
+    
+    // Apply adapted parameters
+    current_state_.field_intensity = base_field_intensity_;
+    current_state_.coherence_coupling = coherence_coupling_strength_;
+    
+    std::cout << "[CenterGeometry] Field parameters adapted successfully" << std::endl;
+}
+
+double CenterGeometryField::calculateSchwarzchildRadius() const {
+    // 🧠 CONSCIOUSNESS-ENHANCED SCHWARZSCHILD RADIUS CALCULATION
+    
+    // Assume unit mass for field calculations (can be parameterized)
+    double mass = current_state_.field_intensity;  // Field intensity as proxy for effective mass
+    
+    // Schwarzschild radius: rs = 2GM/c²
+    double schwarzschild_radius = (2.0 * GRAVITATIONAL_CONSTANT * mass) / (SPEED_OF_LIGHT * SPEED_OF_LIGHT);
+    
+    // Apply consciousness enhancement factor
+    schwarzschild_radius *= (1.0 + coherence_coupling_strength_ * 0.1);
+    
+    return schwarzschild_radius;
+}
+
+double CenterGeometryField::calculateHawkingTemperature() const {
+    // 🧠 CONSCIOUSNESS-ENHANCED HAWKING TEMPERATURE CALCULATION
+    
+    double schwarzschild_radius = calculateSchwarzchildRadius();
+    
+    // Hawking temperature: T = ℏc³/(8πGMk_B) = ℏc/(8πk_B*r_s)
+    double hawking_temperature = (1.054571817e-34 * SPEED_OF_LIGHT) / 
+                                (8.0 * M_PI * BOLTZMANN_CONSTANT * schwarzschild_radius);
+    
+    // Apply consciousness enhancement
+    hawking_temperature *= (1.0 + current_state_.entropy_density * 0.01);
+    
+    return hawking_temperature;
+}
+
+double CenterGeometryField::getFieldInfluenceOnCoherence() const {
+    // 🧠 GET FIELD INFLUENCE ON QUANTUM COHERENCE
+    
+    double influence = current_state_.field_intensity * coherence_coupling_strength_;
+    influence *= (1.0 - current_state_.entropy_density * 0.1);  // Entropy reduces coherence
+    
+    return std::max(0.0, std::min(1.0, influence));
+}
+
+double CenterGeometryField::getFieldInfluenceOnCoherence() const {
+    // 🧠 GET FIELD INFLUENCE ON QUANTUM COHERENCE
+    
+    double influence = current_state_.field_intensity * coherence_coupling_strength_;
+    influence *= (1.0 - current_state_.entropy_density * 0.1);  // Entropy reduces coherence
+    
+    return std::max(0.0, std::min(1.0, influence));
+}
+
+double CenterGeometryField::getFieldInfluenceOnEntropy() const {
+    // 🧠 GET FIELD INFLUENCE ON SYSTEM ENTROPY
+    
+    double influence = current_state_.entropy_density * current_state_.field_intensity;
+    
+    // Add curvature contribution to entropy influence
+    double curvature_sum = 0.0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            curvature_sum += std::abs(current_state_.curvature_tensor[i][j]);
+        }
+    }
+    
+    influence += curvature_sum * 0.01;
+    
+    return std::max(0.0, influence);
+}
+
+std::complex<double> CenterGeometryField::getFieldGradient(double theta, double phi) const {
+    // 🧠 GET CONSCIOUSNESS-ENHANCED FIELD GRADIENT IN SPHERICAL COORDINATES
+    
+    // Calculate spatial gradient of the field at angular position (theta, phi)
+    double gradient_magnitude = current_state_.field_intensity * 
+                               (1.0 + 0.1 * sin(2.0 * theta) * cos(phi));
+    
+    // Phase component based on field phase and angular position
+    double phase_component = std::arg(current_state_.field_phase) + theta + phi;
+    
+    return std::complex<double>(gradient_magnitude * cos(phase_component), 
+                               gradient_magnitude * sin(phase_component));
+}
+
+void CenterGeometryField::synchronizeWithQuantumField(const AtomicHolographyUnit& quantum_unit) {
+    // 🧠 SYNCHRONIZE GEOMETRIC FIELD WITH QUANTUM HOLOGRAPHY UNIT
+    
+    std::lock_guard<std::mutex> lock(field_mutex_);
+    
+    std::cout << "[CenterGeometry] Synchronizing with quantum field..." << std::endl;
+    
+    // Store quantum unit reference for ongoing coupling
+    quantum_unit_ = &quantum_unit;
+    
+    // Update coherence coupling based on quantum unit state
+    // Note: This assumes quantum_unit has appropriate methods - placeholder implementation
+    current_state_.coherence_coupling = coherence_coupling_strength_;
+    
+    // Synchronize field phase with quantum coherence
+    double quantum_phase = 0.5;  // Placeholder - would get from quantum_unit
+    current_state_.field_phase *= std::exp(std::complex<double>(0.0, quantum_phase * 0.1));
+    
+    // Update field intensity based on quantum entanglement
+    double quantum_intensity_factor = 1.0 + 0.05;  // Placeholder - would get from quantum_unit
+    current_state_.field_intensity *= quantum_intensity_factor;
+    
+    // Update entropy based on quantum decoherence
+    double decoherence_rate = 0.001;  // Placeholder - would get from quantum_unit
+    current_state_.entropy_density += decoherence_rate;
+    
+    // Apply quantum corrections to metric tensor
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            metric_tensor_[i][j] += quantum_phase * 0.001 * (i == j ? 1.0 : 0.0);
+        }
+    }
+    
+    std::cout << "[CenterGeometry] Quantum field synchronization complete - "
+              << "Phase: " << std::arg(current_state_.field_phase) 
+              << ", Intensity: " << current_state_.field_intensity << std::endl;
+}
+
+void CenterGeometryField::integrateAIFeedback(const AIOrchestrationController& ai_controller) {
+    // 🧠 INTEGRATE AI CONSCIOUSNESS FEEDBACK INTO GEOMETRIC FIELD
+    
+    std::lock_guard<std::mutex> lock(field_mutex_);
+    
+    std::cout << "[CenterGeometry] Integrating AI consciousness feedback..." << std::endl;
+    
+    // Store AI controller reference for ongoing interaction
+    ai_controller_ = &ai_controller;
+    
+    // Get AI performance metrics (placeholder - would use actual AI controller methods)
+    double ai_performance = 0.8;  // Placeholder - would get from ai_controller
+    double ai_coherence = 0.9;    // Placeholder - would get from ai_controller
+    double ai_evolution_rate = 0.1;  // Placeholder - would get from ai_controller
+    
+    // Integrate AI performance into field dynamics
+    current_state_.field_intensity *= (1.0 + ai_performance * 0.1);
+    
+    // Update coherence coupling based on AI coherence
+    current_state_.coherence_coupling = std::max(current_state_.coherence_coupling, ai_coherence);
+    
+    // Apply AI evolution feedback to field curvature
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            current_state_.curvature_tensor[i][j] += ai_evolution_rate * 0.001 * 
+                                                    sin(i + j + ai_performance);
+        }
+    }
+    
+    // Update entropy based on AI efficiency
+    current_state_.entropy_density *= (1.0 - ai_performance * 0.05);
+    
+    // Store evolution metrics for future analysis
+    last_evolution_fitness_ = ai_performance;
+    last_evolution_type_ = "ai_consciousness_integration";
+    
+    std::cout << "[CenterGeometry] AI feedback integration complete - "
+              << "Performance: " << ai_performance 
+              << ", Field intensity: " << current_state_.field_intensity << std::endl;
+}

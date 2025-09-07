@@ -70,13 +70,7 @@ int main() {
     std::cout << "[INIT] Initializing intelligent metadata abstractor..." << std::endl;
     aios::IntelligentMetadataAbstractor metadata_abstractor(archive_path, archive_path + "abstracted_metadata");
 
-    // Initialize tachyonic field database and recursive self-ingestor for complete consciousness emergence
-    std::cout << "[INIT] Initializing tachyonic field database..." << std::endl;
-    TachyonicFieldDatabase tachyonic_database;
-    
-    std::cout << "[INIT] Initializing recursive self-ingestor..." << std::endl;
-    RecursiveSelfIngestor self_ingestor;
-
+    // 🧠 CONSCIOUSNESS-ENHANCED INITIALIZATION (Duplicate declarations removed by error evolution)
     // Initialize traditional components
     core.initialize();
     ipcManager.initialize();
