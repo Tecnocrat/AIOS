@@ -30,3 +30,9 @@
 
 {"timestamp":"2025-09-07T14:42:22.6877546+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":18,"profile":"full","criticality_warn":null}}
 
+{"timestamp":"2025-09-07T15:41:20.3157088+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":["tachyonic/AIOS_root_cells/root_cell_githooks/aios_universal_hook_wrapper_canonical.sh","tachyonic/AIOS_root_cells/root_cell_githooks/aios_enhanced_pre_commit","tachyonic/AIOS_root_cells/root_cell_githooks/pre-commit.sh","tachyonic/AIOS_root_cells/root_cell_githooks/pre-commit.original","tachyonic/AIOS_root_cells/root_cell_githooks/aios_universal_hook_wrapper.sh"],"changelog":null,"py":null,"tests":null}}}
+
+{"timestamp":"2025-09-07T15:43:05.6675637+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":["tachyonic/AIOS_root_cells/root_cell_githooks/pre-commit.original","tachyonic/AIOS_root_cells/root_cell_githooks/aios_enhanced_pre_commit"],"changelog":null,"py":null,"tests":null}}}
+
+{"timestamp":"2025-09-07T15:43:48.0164463+02:00","status":"pass","rules_version":6,"profile":"full","data":{"profile":"full","criticality_warn":null,"changed":47}}
+
