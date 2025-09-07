@@ -16,6 +16,7 @@
 #include "SphereShellManager.hpp"
 #include "SubspaceProjector.hpp"
 #include "AtomicHolographyUnit.hpp"
+#include <memory>
 
 // Forward declarations to avoid circular includes
 class CenterGeometryField;  
@@ -69,7 +70,7 @@ private:
     AtomicHolographyUnit holographyUnit;
     
     // AI Integration
-    AIOrchestrationController* ai_controller_;
+    std::unique_ptr<AIOrchestrationController> ai_controller_;
     bool ai_integration_enabled_;
     
     double internalSymmetry;

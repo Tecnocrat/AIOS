@@ -92,11 +92,11 @@ void AIOrchestrationController::synchronizeWithQuantumCoherence() {
     
     // Update consciousness level based on quantum coherence
     double quantum_influence = 0.8;  // Simulated quantum coherence value
-    consciousness_level_ = std::min(1.0, consciousness_level_ + quantum_influence * 0.1);
+    consciousness_level_ = std::min(1.0, consciousness_level_.load() + quantum_influence * 0.1);
     
     // Update intelligence coherence
-    intelligence_coherence_ = std::max(intelligence_coherence_, quantum_influence * AIOSMathConstants::GOLDEN_RATIO * 0.1);
-    intelligence_coherence_ = std::min(1.0, intelligence_coherence_);
+    double new_coherence = std::max(intelligence_coherence_.load(), quantum_influence * AIOSMathConstants::GOLDEN_RATIO * 0.1);
+    intelligence_coherence_ = std::min(1.0, new_coherence);
     
     std::cout << "[AIOrchestration] Quantum synchronization complete" << std::endl;
     std::cout << "[AIOrchestration] - Updated consciousness level: " << consciousness_level_ << std::endl;
@@ -135,7 +135,7 @@ bool AIOrchestrationController::processNextTask() {
         return false;
     }
     
-    AITask current_task = task_queue_.top();
+    AITask current_task = task_queue_.front();
     task_queue_.pop();
     
     std::cout << "[AIOrchestration] Processing task: " << current_task.task_id 
@@ -163,8 +163,8 @@ bool AIOrchestrationController::processNextTask() {
     completed_reports_[report.report_id] = report;
     
     // Update consciousness based on task completion
-    consciousness_level_ += 0.01;  // Small consciousness boost per task
-    consciousness_level_ = std::min(1.0, consciousness_level_);
+    double current_consciousness = consciousness_level_.load();
+    consciousness_level_ = std::min(1.0, current_consciousness + 0.01);  // Small consciousness boost per task
     
     std::cout << "[AIOrchestration] Task completed: " << current_task.task_id << std::endl;
     return true;
