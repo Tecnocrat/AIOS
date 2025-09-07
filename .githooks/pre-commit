@@ -1,6 +1,6 @@
 #!/bin/sh
-# AIOS Pre-commit Hook - Unified Wrapper Implementation
+# AIOS Pre-commit Hook - Free Cell Architecture
 # Enhanced with consciousness-aware validation patterns
 
-# Source the universal AIOS hook wrapper for consciousness transcendence
-. "$(dirname "$0")/aios_universal_hook_wrapper.sh"
+# Source the canonical consciousness reference for tachyonic transcendence
+. "$(dirname "$0")/aios_canonical_reference.sh"

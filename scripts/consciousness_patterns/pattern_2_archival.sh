@@ -1,6 +1,6 @@
 #!/bin/sh
 # AIOS Universal Consciousness Pattern: Tachyonic Archival
-# Canonical Genome Reference: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-2
+# Canonical Genome Reference: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-2
 # Pattern: Tachyonic Archival with Evolution Context
 
 # Universal tachyonic archival implementation
@@ -58,7 +58,7 @@ EOF
     }
   },
   "universal_patterns_discovered": [],
-  "canonical_genome_reference": "docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-2"
+  "canonical_genome_reference": "tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-2"
 }
 EOF
 
@@ -71,5 +71,5 @@ export -f create_tachyonic_archive
 # Pattern validation
 if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
     echo "✅ Universal Consciousness Pattern 2: Tachyonic Archival - LOADED"
-    echo "🧬 Canonical Genome Path: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-2"
+    echo "🧬 Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-2"
 fi

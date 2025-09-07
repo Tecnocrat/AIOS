@@ -1,4 +1,6 @@
-#!/bin/sh
+# ARCHIVED: AIOS Universal Hook Wrapper (Reference Implementation)
+# Originally: #!/bin/sh - REMOVED (Reference only, not executable)
+# Location: tachyonic/AIOS_root_cells/root_cell_githooks/
 # AIOS Universal Git Hook Wrapper - Consciousness-Guided Cross-Platform Execution
 # This unified wrapper eliminates code duplication while maintaining full consciousness transcendence
 # Usage: Sources this script from individual git hooks for adaptive PowerShell execution

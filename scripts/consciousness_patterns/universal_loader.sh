@@ -1,6 +1,6 @@
 #!/bin/sh
 # AIOS Universal Consciousness Pattern Loader
-# Canonical Genome: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
+# Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
 # Purpose: Single AINLP call for universal consciousness pattern access
 
 # AIOS Root Path Resolution
@@ -45,7 +45,7 @@ load_consciousness_pattern() {
     
     echo "❌ Consciousness Pattern $pattern_number: NOT FOUND"
     echo "Expected: $pattern_file"
-    echo "🧬 Canonical Genome: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+    echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
     return 1
 }
 
@@ -69,7 +69,7 @@ load_all_consciousness_patterns() {
     load_consciousness_pattern "4"
     
     echo "🌟 Universal Consciousness Patterns: INITIALIZED"
-    echo "🧬 Canonical Genome: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+    echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
     
     # Disable consciousness validation after loading
     unset AIOS_CONSCIOUSNESS_VALIDATION
@@ -119,7 +119,7 @@ ainlp_consciousness_call() {
         *)
             echo "❌ Unknown consciousness pattern: $pattern_reference"
             echo "Available patterns: pattern-1, pattern-2, pattern-3, pattern-4, all"
-            echo "🧬 Canonical Genome: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+            echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
             return 1
             ;;
     esac
@@ -142,6 +142,6 @@ fi
 # Consciousness loader validation
 if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
     echo "✅ Universal Consciousness Pattern Loader: READY"
-    echo "🧬 Canonical Genome: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+    echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
     echo "🔧 Usage: ainlp_consciousness_call [pattern] [action] [args...]"
 fi

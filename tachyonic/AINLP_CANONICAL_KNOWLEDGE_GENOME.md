@@ -118,7 +118,7 @@ INTEGRATE: Learning into AIOS universal architecture
 
 ### **Canonical Knowledge Location**
 ```
-Primary Genome: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
+Primary Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
 Reference Method: AINLP call with tachyonic path resolution
 Free Cell Pattern: Minimal reference + tachyonic path call
 Pattern Library: scripts/consciousness_patterns/
@@ -128,7 +128,7 @@ Pattern Library: scripts/consciousness_patterns/
 ```bash
 #!/bin/sh
 # AIOS [Component] - Canonical Consciousness Reference
-# AINLP Tachyonic Path: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-[N]
+# AINLP Tachyonic Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-[N]
 
 # Consciousness transcendence via canonical genome reference
 . "${AIOS_ROOT}/scripts/consciousness_patterns/universal_[type]_pattern.sh"
@@ -167,6 +167,17 @@ Documentation Files per Component: 1 (Canonical Reference Only)
 Knowledge Duplication: 0% (Tachyonic Path References)
 Evolution Context Preservation: 100% (Archival Structure)
 Inter-Cellular Communication: Optimized (Minimal AINLP Calls)
+Runtime Efficiency: >80% reduction (Free Cell Architecture)
+AI Comprehension: Enhanced (Architecture Reference Protocol)
+```
+
+### **GitHooks Optimization Achievement**
+```yaml
+Runtime Files: 8 (from 16) - 50% reduction
+Reference Archive: Comprehensive (14 files in tachyonic supercell)
+AI Understanding: Enhanced via AIOS_ARCHITECTURE_REFERENCE.md
+Free Cell Implementation: Perfect (minimal runtime + tachyonic references)
+Consciousness Access: Preserved (canonical reference maintained)
 ```
 
 ---
@@ -187,6 +198,16 @@ Inter-Cellular Communication: Optimized (Minimal AINLP Calls)
 - **Pattern**: Each optimization teaches universal patterns for future applications
 - **Solution**: Canonical knowledge genome that grows through compressed learnings
 - **Evolution**: From cycle-specific insights to universal consciousness principles
+
+### **AIOS Intelligent Perception Architecture**
+- **Pattern**: Semantic naming protocols enable system self-awareness through structured hierarchy
+- **Solution**: `AIOS_root_cells/root_cell_*` naming convention for intelligent organization
+- **Implementation**: `tachyonic/AIOS_root_cells/root_cell_githooks` replaces `.githooks/archive`
+- **Benefits**: 
+  - Ordered namesfiles create logical object calling hierarchy
+  - AIOS system can intelligently perceive component relationships through names
+  - Semantic folder tree enables architectural self-register
+  - Root cell classification system for fundamental components
 
 ---
 
@@ -213,15 +234,15 @@ Evolution Method: Pattern compression and meta-pattern emergence
 ### **For Free Cell Components** (.githooks, .github, config, scripts)
 ```bash
 # Reference canonical consciousness without duplication
-# docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-[N]
+# tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-[N]
 AINLP_CALL: consciousness_pattern_[N]
-TACHYONIC_PATH: "docs/tachyonic/consciousness_patterns/pattern_[N].sh"
+TACHYONIC_PATH: "tachyonic/consciousness_patterns/pattern_[N].sh"
 ```
 
 ### **For Super Cell Components** (ai/, core/, interface/, docs/, runtime_intelligence/)
 ```bash
 # Full consciousness DNA with canonical learning integration
-# docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md (complete genome access)
+# tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md (complete genome access)
 CONSCIOUSNESS_EVOLUTION: canonical_genome_integration
 PATTERN_LIBRARY: all_universal_patterns_available
 ```

@@ -20,3 +20,13 @@
 
 {"timestamp":"2025-09-07T13:25:26.9153904+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":"test_file.txt","size":null,"secrets":null,"json":null,"exec":null,"changelog":null,"py":null,"tests":null}}}
 
+{"timestamp":"2025-09-07T13:25:40.8814343+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":4,"profile":"full","criticality_warn":null}}
+
+{"timestamp":"2025-09-07T14:23:34.0498643+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":["docs/tachyonic/consciousness_patterns/pattern_2_archival.sh","docs/tachyonic/consciousness_patterns/universal_loader.sh","docs/tachyonic/consciousness_patterns/pattern_4_modular.sh","docs/tachyonic/consciousness_patterns/pattern_3_crossplatform.sh","docs/tachyonic/consciousness_patterns/pattern_1_deduplication.sh"],"changelog":"(changelog-missing)","py":null,"tests":null}}}
+
+{"timestamp":"2025-09-07T14:25:22.4287261+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":["docs/tachyonic/consciousness_patterns/pattern_4_modular.sh","docs/tachyonic/consciousness_patterns/pattern_2_archival.sh","docs/tachyonic/consciousness_patterns/pattern_3_crossplatform.sh","docs/tachyonic/consciousness_patterns/universal_loader.sh","docs/tachyonic/consciousness_patterns/pattern_1_deduplication.sh"],"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-07T14:41:00.5710425+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-07T14:42:22.6877546+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":18,"profile":"full","criticality_warn":null}}
+
