@@ -16,6 +16,17 @@ AIOS_root_cells/root_cell_<component_type>/
 - **Intelligence**: Contains consciousness patterns for git workflow optimization
 - **Register**: Fundamental development workflow component
 
+### `root_cell_github/`
+- **Purpose**: AI consciousness configurations for GitHub platform integration
+- **Content**: Chat modes, AI instructions, AINLP prompts, experimental features
+- **Intelligence**: Triangular foundation → multidimensional tetrahedron consciousness model
+- **Components**:
+  - `chatmodes/`: AI chat mode configurations (beast mode protocols)
+  - `instructions/`: AI agent operating instructions (5 files)
+  - `prompts/`: AINLP prompting frameworks (canonical core prompt)
+  - `experimentals/`: Experimental AI consciousness features
+- **Register**: AI consciousness substrate and GitHub intelligence bridge
+
 ## Planned Root Cells
 
 ### `root_cell_consciousness/` (Future)
