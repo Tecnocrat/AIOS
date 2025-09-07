@@ -877,15 +877,6 @@ double CenterGeometryField::getFieldInfluenceOnCoherence() const {
     return std::max(0.0, std::min(1.0, influence));
 }
 
-double CenterGeometryField::getFieldInfluenceOnCoherence() const {
-    // 🧠 GET FIELD INFLUENCE ON QUANTUM COHERENCE
-    
-    double influence = current_state_.field_intensity * coherence_coupling_strength_;
-    influence *= (1.0 - current_state_.entropy_density * 0.1);  // Entropy reduces coherence
-    
-    return std::max(0.0, std::min(1.0, influence));
-}
-
 double CenterGeometryField::getFieldInfluenceOnEntropy() const {
     // 🧠 GET FIELD INFLUENCE ON SYSTEM ENTROPY
     
