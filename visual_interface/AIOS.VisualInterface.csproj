@@ -18,7 +18,7 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
-    <ProjectReference Include="..\core\AIOS.Core.csproj" />
+    <ProjectReference Include="..\core\core_systems\AIOS.Core.csproj" />
     <ProjectReference Include="..\interface\AIOS.Services\AIOS.Services.csproj" />
     <ProjectReference Include="..\interface\AIOS.Models\AIOS.Models.csproj" />
     <Compile Remove="SimpleVisualizationWindow.cs" />
