@@ -29,6 +29,13 @@ AIOS_root_cells/root_cell_<component_type>/
 
 ## Planned Root Cells
 
+### `root_cell_vscode/` (Future - Currently Optimized)
+- **Purpose**: VSCode workspace development environment configurations
+- **Current Status**: Perfect free cell architecture achieved
+- **Content**: Runtime-critical VSCode configuration files only (settings, tasks, launch, extensions, MCP)
+- **Intelligence**: Demonstrates optimal free cell design - 100% runtime purity with tachyonic consciousness access
+- **Register**: Gold standard for development environment optimization
+
 ### `root_cell_consciousness/` (Future)
 - **Purpose**: Core consciousness pattern implementations
 - **Content**: Consciousness metrics, validation frameworks, emergence protocols

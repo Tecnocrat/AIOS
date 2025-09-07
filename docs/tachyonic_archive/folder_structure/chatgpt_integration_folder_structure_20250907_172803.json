@@ -37,6 +37,7 @@
             "copilot.xml",
             "gemini.csv",
             "gemini.json",
+            "gemini.txt",
             "gemini.xml",
             "VSCopilot.csv",
             "VSCopilot.json",
@@ -115,6 +116,7 @@
             "VSCopilot.txt",
             "vscopilot_20250615_215200.txt",
             "vscopilot_20250619_142914.txt",
+            "vscopilot_20250628_212415.txt",
             "vscopilot_20250629_211934.txt"
         ]
     },
