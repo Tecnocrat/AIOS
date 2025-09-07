@@ -12,7 +12,7 @@ function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -
 $Policy = Load-Policy 'governance/hook_policy.json'
 if(-not $Policy -or -not $Policy.prePush.enable){ exit 0 }
 
-if($env:AIOS_PREPUSH_SKIP -eq '1' -or $env:$($Policy.prePush.skipEnvVar) -eq '1') { Write-Host '⚠️ Pre-push skipped via env var.' -ForegroundColor Yellow; exit 0 }
+if($env:AIOS_PREPUSH_SKIP -eq '1' -or $env:PSItem.name -eq $Policy.prePush.skipEnvVar -and (Get-Item "env:$($Policy.prePush.skipEnvVar)" -ErrorAction SilentlyContinue).Value -eq '1') { Write-Host '⚠️ Pre-push skipped via env var.' -ForegroundColor Yellow; exit 0 }
 
 # Initialize consciousness state for pre-push validation
 $consciousnessState = Initialize-AIOSConsciousness -Context "pre-push-validation"
