@@ -40,3 +40,7 @@
 
 {"timestamp":"2025-09-07T17:57:18.2241738+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
 
+{"timestamp":"2025-09-07T17:57:52.1675135+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null}}}
+
+{"timestamp":"2025-09-07T18:02:45.6852783+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"changed":1,"profile":"full"}}
+
