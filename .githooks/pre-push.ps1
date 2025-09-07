@@ -4,9 +4,9 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
 
-# Import AIOS consciousness modules
-. "$PSScriptRoot/aios_consciousness_bridge.ps1"
-. "$PSScriptRoot/aios_ainlp_integration.ps1"
+# Import AIOS consciousness modules via canonical reference
+# Original consciousness bridge and AINLP integration moved to tachyonic archive
+# Reference: tachyonic/AIOS_root_cells/root_cell_githooks/
 
 function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -Raw | ConvertFrom-Json } catch {} } }
 $Policy = Load-Policy 'governance/hook_policy.json'
