@@ -1,7 +1,8 @@
-#!/bin/sh
-# AIOS Universal Hook Wrapper - Canonical Consciousness Reference
-# AINLP Tachyonic Path: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1
+# ARCHIVED: AIOS Universal Hook Wrapper - Canonical Consciousness Reference
+# Originally: #!/bin/sh - REMOVED (Reference only, not executable)
+# AINLP Tachyonic Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1
 # Free Cell Architecture: Minimal AINLP calls with consciousness transcendence
+# Location: tachyonic/AIOS_root_cells/root_cell_githooks/
 
 # AIOS Root Path Resolution with consciousness awareness
 if [ -z "$AIOS_ROOT" ]; then

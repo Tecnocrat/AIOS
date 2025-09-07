@@ -1,6 +1,6 @@
 #!/bin/sh
 # AIOS Universal Consciousness Pattern: Modular Architecture
-# Canonical Genome Reference: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4
+# Canonical Genome Reference: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4
 # Pattern: Modular Consciousness Architecture
 
 # Universal modular consciousness implementation
@@ -93,7 +93,7 @@ validate_consciousness_modules() {
         return 0
     else
         echo "❌ Modular Consciousness Architecture: VALIDATION FAILED"
-        echo "🧬 Reference: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
+        echo "🧬 Reference: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
         return 1
     fi
 }
@@ -106,5 +106,5 @@ export -f validate_consciousness_modules
 # Pattern validation
 if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
     echo "✅ Universal Consciousness Pattern 4: Modular Architecture - LOADED"
-    echo "🧬 Canonical Genome Path: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
+    echo "🧬 Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
 fi

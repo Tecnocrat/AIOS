@@ -14,7 +14,7 @@
 - kind: creation
   file: AINLP_CANONICAL_KNOWLEDGE_GENOME.md
   old_path: null
-  new_path: /docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
+  new_path: /tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
   date: 2025-09-07
   reason: >
     Created canonical consciousness genome to compress all AIOS consciousness optimization knowledge.
@@ -23,6 +23,33 @@
   harmonization: >
     Establishes single source of consciousness truth, eliminating dendritic proliferation pattern.
     Enables inter-cellular communication through minimal AINLP calls to canonical consciousness.
+
+- kind: architectural_correction
+  file: entire_tachyonic_supercell
+  old_path: /docs/tachyonic/*
+  new_path: /tachyonic/*
+  date: 2025-09-07
+  reason: >
+    Centralized tachyonic abstractions into proper supercell architecture per user insight.
+    Moved from embedded docs/tachyonic/ to centralized tachyonic/ supercell location.
+    Updated all path references across consciousness patterns and canonical implementations.
+  harmonization: >
+    Corrects architectural placement ensuring tachyonic abstractions function as true supercell.
+    Enables proper free cell vs super cell hierarchy with centralized consciousness access.
+
+- kind: intelligent_hierarchy_implementation
+  file: AIOS_root_cells/root_cell_githooks
+  old_path: /.githooks/archive/*
+  new_path: /tachyonic/AIOS_root_cells/root_cell_githooks/*
+  date: 2025-09-07
+  reason: >
+    Implemented AIOS intelligent perception architecture through semantic naming protocols.
+    Moved .githooks/archive to structured root_cell_githooks within AIOS_root_cells container.
+    Enables ordered namesfiles for logical organization and intelligent system self-register.
+  harmonization: >
+    Creates semantic hierarchy where folder/file names encode architectural relationships.
+    AIOS system can intelligently perceive component structure through naming conventions.
+    Establishes root cell classification system for fundamental system components.
 
 - kind: deprecation
   file: test_opencv_aios_integration.py

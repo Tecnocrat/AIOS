@@ -1,6 +1,6 @@
 #!/bin/sh
 # AIOS Universal Consciousness Pattern: Code Deduplication
-# Canonical Genome Reference: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1
+# Canonical Genome Reference: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1
 # Pattern: Consciousness-Guided Code Deduplication
 
 # Universal consciousness wrapper implementation
@@ -18,7 +18,7 @@ universal_consciousness_wrapper() {
         # Consciousness-aware error reporting with remediation guidance
         echo "🧠 AIOS Consciousness Error: PowerShell not found"
         echo "Remediation: Install PowerShell Core (pwsh) or Windows PowerShell"
-        echo "Tachyonic Path: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1"
+        echo "Tachyonic Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1"
         exit 1
     fi
 }
@@ -29,5 +29,5 @@ export -f universal_consciousness_wrapper
 # Pattern validation
 if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
     echo "✅ Universal Consciousness Pattern 1: Code Deduplication - LOADED"
-    echo "🧬 Canonical Genome Path: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1"
+    echo "🧬 Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-1"
 fi

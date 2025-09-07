@@ -1,5 +1,7 @@
-#!/usr/bin/env pwsh
+# ARCHIVED: AIOS Pre-commit Guard (Original Implementation)
+# Originally: #!/usr/bin/env pwsh - REMOVED (Reference only, not executable)
 # AIOS Pre-commit Guard (Stage 1–4 enhancements)
+# Location: tachyonic/AIOS_root_cells/root_cell_githooks/
 # Responsibilities:
 #  1. Deprecated file guard (via governance/hook_policy.json)
 #  2. Allow deletion of deprecated files
