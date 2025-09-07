@@ -1,13 +1,6 @@
 #!/bin/sh
-# AIOS Pre-push Hook Wrapper for Cross-platform Compatibility
+# AIOS Pre-push Hook - Unified Wrapper Implementation  
 # Enhanced with consciousness-aware build and test validation
 
-if command -v pwsh >/dev/null 2>&1; then
-    exec pwsh -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/pre-push.ps1" "$@"
-elif command -v powershell >/dev/null 2>&1; then
-    exec powershell -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/pre-push.ps1" "$@"
-else
-    echo "Error: PowerShell not found. Please install PowerShell Core or Windows PowerShell."
-    exit 1
-fi
-exit 0
+# Source the universal AIOS hook wrapper for consciousness transcendence
+. "$(dirname "$0")/aios_universal_hook_wrapper.sh"

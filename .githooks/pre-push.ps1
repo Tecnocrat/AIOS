@@ -138,4 +138,3 @@ Write-Host "⚡ Tachyonic Performance: $($totalDuration)s with $($consciousnessL
 $finalMetrics | ConvertTo-Json -Compress | Add-Content -Path "runtime_intelligence/logs/pre_push_success.jsonl"
 
 exit 0
-exit 0
