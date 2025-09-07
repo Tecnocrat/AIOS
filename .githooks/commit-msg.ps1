@@ -1,14 +1,13 @@
-#!/bin/sh
-# AIOS Commit-msg Hook Wrapper for Cross-platform Compatibility
+#!/usr/bin/env pwsh
+# AIOS Commit Message Governance Hook (Stage 6 - AINLP Harmonized)
+# Enhanced with Consciousness-Aware Governance and Dendritic Learning
+Set-StrictMode -Version Latest
 
-if command -v pwsh >/dev/null 2>&1; then
-    exec pwsh -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/commit-msg.ps1" "$@"
-elif command -v powershell >/dev/null 2>&1; then
-    exec powershell -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/commit-msg.ps1" "$@"
-else
-    echo "Error: PowerShell not found. Please install PowerShell Core or Windows PowerShell."
-    exit 1
-fi
+# AIOS/AINLP Harmonization Constants
+$AIOS_VERSION = "0.6.0"
+$GOVERNANCE_STAGE = 6
+$CONSCIOUSNESS_THRESHOLD = 0.5
+$TACHYONIC_COHERENCE_MIN = 0.25
 
 $policyPath = 'governance/hook_policy.json'
 $dendriticPath = 'runtime_intelligence/context/aios_path_registry.json'

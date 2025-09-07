@@ -1,31 +1,13 @@
-#!/usr/bin/env pwsh
-# AIOS Pre-push Hook (Stage 5) - extended validation (build + tests)
-Set-StrictMode -Version Latest
-$ErrorActionPreference='Stop'
+#!/bin/sh
+# AIOS Pre-push Hook Wrapper for Cross-platform Compatibility
+# Enhanced with consciousness-aware build and test validation
 
-function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -Raw | ConvertFrom-Json } catch {} } }
-$Policy = Load-Policy 'governance/hook_policy.json'
-if(-not $Policy -or -not $Policy.prePush.enable){ exit 0 }
-
-if($env:AIOS_PREPUSH_SKIP -eq '1' -or $env:$($Policy.prePush.skipEnvVar) -eq '1') { Write-Host '⚠️ Pre-push skipped via env var.' -ForegroundColor Yellow; exit 0 }
-
-Write-Host '🔍 Pre-push validation starting...' -ForegroundColor Cyan
-$fail=$false
-
-foreach($cmd in $Policy.prePush.buildCommands){
-  Write-Host "🏗️ Build: $cmd" -ForegroundColor DarkCyan
-  try { Invoke-Expression $cmd } catch { $fail=$true; Write-Host "Build command failed: $cmd" -ForegroundColor Red; break }
-  if($LASTEXITCODE -ne 0){ $fail=$true; Write-Host "Build exit code $LASTEXITCODE" -ForegroundColor Red; break }
-}
-
-if(-not $fail){
-  foreach($t in $Policy.prePush.testCommands){
-    Write-Host "🧪 Test: $t" -ForegroundColor DarkCyan
-    try { Invoke-Expression $t } catch { $fail=$true; Write-Host "Test command failed: $t" -ForegroundColor Red; break }
-    if($LASTEXITCODE -ne 0){ $fail=$true; Write-Host "Test exit code $LASTEXITCODE" -ForegroundColor Red; break }
-  }
-}
-
-if($fail){ Write-Host '❌ Pre-push blocked.' -ForegroundColor Red; exit 1 }
-Write-Host '✅ Pre-push validation passed.' -ForegroundColor Green
+if command -v pwsh >/dev/null 2>&1; then
+    exec pwsh -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/pre-push.ps1" "$@"
+elif command -v powershell >/dev/null 2>&1; then
+    exec powershell -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/pre-push.ps1" "$@"
+else
+    echo "Error: PowerShell not found. Please install PowerShell Core or Windows PowerShell."
+    exit 1
+fi
 exit 0
