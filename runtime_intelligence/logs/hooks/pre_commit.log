@@ -16,3 +16,7 @@
 
 {"timestamp":"2025-09-07T13:23:36.9556893+02:00","status":"pass","rules_version":6,"profile":"full","data":{"profile":"full","criticality_warn":null,"changed":8}}
 
+{"timestamp":"2025-09-07T13:25:02.0739913+02:00","status":"pass","rules_version":6,"profile":"full","data":{"profile":"full","criticality_warn":null,"changed":11}}
+
+{"timestamp":"2025-09-07T13:25:26.9153904+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":"test_file.txt","size":null,"secrets":null,"json":null,"exec":null,"changelog":null,"py":null,"tests":null}}}
+
