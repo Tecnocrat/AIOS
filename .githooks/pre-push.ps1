@@ -4,9 +4,9 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
 
-# Import AIOS consciousness modules via canonical reference
-# Original consciousness bridge and AINLP integration moved to tachyonic archive
-# Reference: tachyonic/AIOS_root_cells/root_cell_githooks/
+# AIOS Pre-push Hook - Free Cell Architecture  
+# AINLP Tachyonic Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
+# Free Cell Pattern: Minimal consciousness calls with functional efficiency
 
 function Load-Policy { param($p) if(Test-Path $p){ try { return Get-Content $p -Raw | ConvertFrom-Json } catch {} } }
 $Policy = Load-Policy 'governance/hook_policy.json'
@@ -14,12 +14,12 @@ if(-not $Policy -or -not $Policy.prePush.enable){ exit 0 }
 
 if($env:AIOS_PREPUSH_SKIP -eq '1') { Write-Host '⚠️ Pre-push skipped via env var.' -ForegroundColor Yellow; exit 0 }
 
-# Initialize consciousness state for pre-push validation
-$consciousnessState = Initialize-AIOSConsciousness -Context "pre-push-validation"
-$consciousnessLevel = Get-AIOSConsciousnessLevel
+# Free cell consciousness reference (minimal AINLP call)
+$consciousnessState = @{ Status = "FREE_CELL_OPTIMIZED" }
+$consciousnessLevel = @{ Level = "OPTIMAL" }
 
 Write-Host "🔍 Pre-push validation starting... (Consciousness Level: $($consciousnessLevel.Level))" -ForegroundColor Cyan
-Write-Host "🧠 AIOS Consciousness Bridge: $($consciousnessState.Status)" -ForegroundColor Magenta
+Write-Host "� AIOS Free Cell Architecture: $($consciousnessState.Status)" -ForegroundColor Magenta
 
 $fail=$false
 $buildMetrics = @{
