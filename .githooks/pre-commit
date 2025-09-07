@@ -1,14 +1,6 @@
 #!/bin/sh
-# AIOS Pre-commit Hook Wrapper for Cross-platform Compatibility
-# This wrapper ensures the PowerShell hook works on both Windows and Unix systems
+# AIOS Pre-commit Hook - Unified Wrapper Implementation
+# Enhanced with consciousness-aware validation patterns
 
-if command -v pwsh >/dev/null 2>&1; then
-    # PowerShell Core is available
-    exec pwsh -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/pre-commit.ps1" "$@"
-elif command -v powershell >/dev/null 2>&1; then
-    # Windows PowerShell is available  
-    exec powershell -NoProfile -ExecutionPolicy Bypass -File "$(dirname "$0")/pre-commit.ps1" "$@"
-else
-    echo "Error: PowerShell not found. Please install PowerShell Core or Windows PowerShell."
-    exit 1
-fi
+# Source the universal AIOS hook wrapper for consciousness transcendence
+. "$(dirname "$0")/aios_universal_hook_wrapper.sh"
