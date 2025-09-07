@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-09-06T12:09:33.795198+00:00",
+  "timestamp": "2025-09-07T15:28:30.387858+00:00",
   "total_items": 36,
   "categories": {
     "consciousness": [
@@ -242,8 +242,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976827323860684,
-        "total_score": 9.976827323860684
+        "temporal_significance": 9.938888818121987,
+        "total_score": 9.938888818121987
       }
     },
     "backups": {
@@ -252,8 +252,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.96874889078994,
-        "total_score": 9.96874889078994
+        "temporal_significance": 9.930810381925493,
+        "total_score": 9.930810381925493
       }
     },
     "bosonic_substrate": {
@@ -262,8 +262,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.979725038310168,
-        "total_score": 9.979725038310168
+        "temporal_significance": 9.941786524192418,
+        "total_score": 9.941786524192418
       }
     },
     "cellular_reports": {
@@ -272,8 +272,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.977124068082023,
-        "total_score": 9.977124068082023
+        "temporal_significance": 9.939185554494829,
+        "total_score": 9.939185554494829
       }
     },
     "cleanup_reports": {
@@ -282,8 +282,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.97682731917712,
-        "total_score": 9.97682731917712
+        "temporal_significance": 9.938888799284344,
+        "total_score": 9.938888799284344
       }
     },
     "code_preservation": {
@@ -292,8 +292,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976827311183476,
-        "total_score": 9.976827311183476
+        "temporal_significance": 9.938888792063535,
+        "total_score": 9.938888792063535
       }
     },
     "configurations": {
@@ -302,8 +302,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.96833298032648,
-        "total_score": 9.96833298032648
+        "temporal_significance": 9.930394455160071,
+        "total_score": 9.930394455160071
       }
     },
     "consciousness": {
@@ -312,8 +312,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 1,
         "complexity_score": 0,
-        "temporal_significance": 9.977106435889906,
-        "total_score": 12.977106435889906
+        "temporal_significance": 9.93916791095649,
+        "total_score": 12.93916791095649
       }
     },
     "consciousness_evolution": {
@@ -322,8 +322,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 1,
         "complexity_score": 1,
-        "temporal_significance": 9.975819333282425,
-        "total_score": 14.975819333282425
+        "temporal_significance": 9.937880808349009,
+        "total_score": 14.937880808349009
       }
     },
     "deep": {
@@ -332,8 +332,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.9979490486526,
-        "total_score": 9.9979490486526
+        "temporal_significance": 9.960010517300372,
+        "total_score": 9.960010517300372
       }
     },
     "dendritic_evolution": {
@@ -342,8 +342,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.975570293807506,
-        "total_score": 11.975570293807506
+        "temporal_significance": 9.937631763705868,
+        "total_score": 11.937631763705868
       }
     },
     "dendritic_intelligence": {
@@ -352,8 +352,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 1,
         "complexity_score": 0,
-        "temporal_significance": 9.977743898223212,
-        "total_score": 12.977743898223212
+        "temporal_significance": 9.939805362108958,
+        "total_score": 12.939805362108958
       }
     },
     "dendritic_maps": {
@@ -362,8 +362,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976827329979082,
-        "total_score": 9.976827329979082
+        "temporal_significance": 9.938888794507694,
+        "total_score": 9.938888794507694
       }
     },
     "discovery_indexes": {
@@ -372,8 +372,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976723482875084,
-        "total_score": 9.976723482875084
+        "temporal_significance": 9.938784942527429,
+        "total_score": 9.938784942527429
       }
     },
     "documentation": {
@@ -382,8 +382,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976827308095071,
-        "total_score": 9.976827308095071
+        "temporal_significance": 9.938888762085066,
+        "total_score": 9.938888762085066
       }
     },
     "emergency_cleanup": {
@@ -392,8 +392,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976827330186872,
-        "total_score": 9.976827330186872
+        "temporal_significance": 9.938888784562824,
+        "total_score": 9.938888784562824
       }
     },
     "evolutionary_assembler_v1.0_tachyonic_1757015844": {
@@ -402,8 +402,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.944163119195329,
-        "total_score": 11.944163119195329
+        "temporal_significance": 9.906224561518542,
+        "total_score": 11.906224561518542
       }
     },
     "evolutionary_snapshots": {
@@ -412,8 +412,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.975819323647997,
-        "total_score": 11.975819323647997
+        "temporal_significance": 9.93788076597121,
+        "total_score": 11.93788076597121
       }
     },
     "evolution_logs": {
@@ -422,8 +422,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.976827322242528,
-        "total_score": 11.976827322242528
+        "temporal_significance": 9.938888761985725,
+        "total_score": 11.938888761985725
       }
     },
     "fractal_abstracts": {
@@ -432,8 +432,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.977451253667473,
-        "total_score": 9.977451253667473
+        "temporal_significance": 9.939512698670505,
+        "total_score": 9.939512698670505
       }
     },
     "immediate": {
@@ -442,8 +442,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.997949027803209,
-        "total_score": 9.997949027803209
+        "temporal_significance": 9.960010472806239,
+        "total_score": 9.960010472806239
       }
     },
     "ingestion_data": {
@@ -452,8 +452,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976827296136799,
-        "total_score": 9.976827296136799
+        "temporal_significance": 9.938888741914413,
+        "total_score": 9.938888741914413
       }
     },
     "metadata": {
@@ -462,8 +462,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.968412611335332,
-        "total_score": 9.968412611335332
+        "temporal_significance": 9.930474057112948,
+        "total_score": 9.930474057112948
       }
     },
     "optimization_history": {
@@ -472,8 +472,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.975025333489073,
-        "total_score": 11.975025333489073
+        "temporal_significance": 9.937086779266687,
+        "total_score": 11.937086779266687
       }
     },
     "optimization_reports": {
@@ -482,8 +482,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.97682730842768,
-        "total_score": 11.97682730842768
+        "temporal_significance": 9.938888754205296,
+        "total_score": 11.938888754205296
       }
     },
     "quantum": {
@@ -492,8 +492,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.997949031430538,
-        "total_score": 11.997949031430538
+        "temporal_significance": 9.960010477208153,
+        "total_score": 11.960010477208153
       }
     },
     "root_optimization": {
@@ -502,8 +502,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.97772648988848,
-        "total_score": 11.97772648988848
+        "temporal_significance": 9.93978792916827,
+        "total_score": 11.93978792916827
       }
     },
     "root_optimization_analysis": {
@@ -512,8 +512,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 1,
-        "temporal_significance": 9.977802967090666,
-        "total_score": 11.977802967090666
+        "temporal_significance": 9.939864406370454,
+        "total_score": 11.939864406370454
       }
     },
     "session_7aee8270.json": {
@@ -522,8 +522,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.997949036395108,
-        "total_score": 9.997949036395108
+        "temporal_significance": 9.960010475674897,
+        "total_score": 9.960010475674897
       }
     },
     "structure_analysis": {
@@ -532,8 +532,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.976827319099764,
-        "total_score": 9.976827319099764
+        "temporal_significance": 9.938888758379552,
+        "total_score": 9.938888758379552
       }
     },
     "subcellular_archives": {
@@ -542,8 +542,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.978000086140485,
-        "total_score": 9.978000086140485
+        "temporal_significance": 9.940061525852684,
+        "total_score": 9.940061525852684
       }
     },
     "synth_dna_replicators": {
@@ -552,8 +552,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.977451245292285,
-        "total_score": 9.977451245292285
+        "temporal_significance": 9.939512685778885,
+        "total_score": 9.939512685778885
       }
     },
     "tachyonic_archival_log.json": {
@@ -562,8 +562,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.944175763888307,
-        "total_score": 9.944175763888307
+        "temporal_significance": 9.906237204374907,
+        "total_score": 9.906237204374907
       }
     },
     "temporal": {
@@ -572,8 +572,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.99794902020518,
-        "total_score": 9.99794902020518
+        "temporal_significance": 9.96001046069178,
+        "total_score": 9.96001046069178
       }
     },
     "temporal_snapshots": {
@@ -582,8 +582,8 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.968332956824037,
-        "total_score": 9.968332956824037
+        "temporal_significance": 9.930394397310637,
+        "total_score": 9.930394397310637
       }
     },
     "version_analysis": {
@@ -592,10 +592,10 @@
       "intelligence_indicators": {
         "consciousness_indicators": 0,
         "complexity_score": 0,
-        "temporal_significance": 9.975940522936483,
-        "total_score": 9.975940522936483
+        "temporal_significance": 9.938001964197483,
+        "total_score": 9.938001964197483
       }
     }
   },
-  "intelligence_value": 388.1752144278584
+  "intelligence_value": 386.8094268498057
 }
