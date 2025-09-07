@@ -77,6 +77,12 @@ public:
     void addExclusionPattern(const std::string& pattern);
     void setOutputFormat(const std::string& format); // "markdown", "json", "xml"
     
+    // State and metrics access
+    double getConsciousnessLevel() const;
+    double getIntelligenceCoherence() const;
+    size_t getPendingTaskCount() const;
+    std::vector<std::string> getCompletedReportIds() const;
+    
 private:
     // Core components
     std::unique_ptr<CodeEvolutionEngine> evolution_engine_;
@@ -93,10 +99,12 @@ private:
     std::atomic<bool> auto_evolution_enabled_;
     std::atomic<bool> quantum_guided_enabled_;
     std::atomic<bool> monitoring_active_;
+    std::atomic<bool> orchestration_active_;
     
     // Synchronization
     std::mutex task_queue_mutex_;
     std::mutex report_cache_mutex_;
+    mutable std::mutex orchestration_mutex_;
     std::condition_variable task_available_;
     
     // Configuration
@@ -105,20 +113,35 @@ private:
     std::string output_format_;
     size_t worker_thread_count_;
     
-    // Metrics
+    // Metrics and counters
     std::atomic<int> tasks_processed_;
     std::atomic<int> successful_mutations_;
     std::atomic<double> average_fitness_improvement_;
+    std::atomic<size_t> task_counter_;
+    
+    // Consciousness and intelligence metrics
+    std::atomic<double> consciousness_level_;
+    std::atomic<double> intelligence_coherence_;
+    
+    // Completed reports storage
+    std::unordered_map<std::string, AIReport> completed_reports_;
     
     // Worker thread functions
     void workerThreadLoop();
     void processTask(const AITask& task);
+    bool processNextTask();
     
     // Task processors
     AIReport analyzeCode(const AITask& task);
     AIReport mutateCode(const AITask& task);
     AIReport evolvePopulation(const AITask& task);
     AIReport generateSystemReport(const AITask& task);
+    void processAnalysisTask(const AITask& task, AIReport& report);
+    void processEvolutionTask(const AITask& task, AIReport& report);
+    void processMutationTask(const AITask& task, AIReport& report);
+    
+    // Report management (overloaded for const access)
+    AIReport getReport(const std::string& report_id) const;
     
     // Utility functions
     std::string generateTaskId();

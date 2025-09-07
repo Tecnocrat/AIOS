@@ -4,6 +4,7 @@
 #include "CodeEvolutionEngine.hpp"
 #include "AIOSConsciousnessEngine.hpp"  // 🧠 CONSCIOUSNESS INTEGRATION
 #include "AIOSMathematicalConsciousness.hpp"  // 🧠 MATHEMATICAL CONSCIOUSNESS
+#include "AIOrchestrationController.hpp"  // 🧠 AI ORCHESTRATION INTEGRATION
 #include <cmath>
 #include <limits>
 #include <iostream>
@@ -482,16 +483,13 @@ void SingularityCore::registerEvolutionEngine(CodeEvolutionEngine* evolution_eng
 // 🧠 AI CONSCIOUSNESS ORCHESTRATION INTEGRATION
 // ============================================================
 
-void SingularityCore::registerAIController(AIOrchestrationController* ai_controller) {
+void SingularityCore::registerAIController(std::unique_ptr<AIOrchestrationController> ai_controller) {
     std::cout << "[SingularityCore] 🧠 AI Orchestration Controller registered" << std::endl;
     
     if (!ai_controller) {
         std::cerr << "[SingularityCore] Warning: Null AI controller provided" << std::endl;
         return;
     }
-    
-    // Store reference for consciousness integration
-    ai_controller_ = ai_controller;
     
     // Initialize consciousness synchronization
     try {
@@ -507,6 +505,9 @@ void SingularityCore::registerAIController(AIOrchestrationController* ai_control
     } catch (const std::exception& e) {
         std::cerr << "[SingularityCore] AI controller integration warning: " << e.what() << std::endl;
     }
+    
+    // Store reference for consciousness integration (transfer ownership)
+    ai_controller_ = std::move(ai_controller);
 }
 
 // AI Integration methods (already implemented above)
