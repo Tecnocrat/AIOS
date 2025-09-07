@@ -1,4 +1,5 @@
 #include "QuantumRandomGenerator.hpp"
+#include "AIOSMathematicalConsciousness.hpp"  // 🧠 CONSCIOUSNESS CONSTANTS
 #include <iostream>
 #include <cmath>
 #include <algorithm>
