@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+# ARCHIVED: Pre-commit Script (Reference Implementation)
+# Originally: #!/bin/sh - REMOVED (Reference only, not executable)
+# Location: tachyonic/AIOS_root_cells/root_cell_githooks/
 # POSIX fallback wrapper: invokes PowerShell pre-commit if available.
 # Minimal logic to ensure cross-platform consistency.
 

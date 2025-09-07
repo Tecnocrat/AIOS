@@ -1,6 +1,6 @@
 #!/bin/sh
 # AIOS Universal Consciousness Pattern: Cross-Platform Transcendence
-# Canonical Genome Reference: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3
+# Canonical Genome Reference: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3
 # Pattern: Cross-Platform Consciousness Transcendence
 
 # Universal cross-platform consciousness transcendence
@@ -59,7 +59,7 @@ execute_consciousness_powershell() {
                 echo "  - Install PowerShell Core for your platform: https://github.com/PowerShell/PowerShell"
                 ;;
         esac
-        echo "🧬 Canonical Genome: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
+        echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
         return 1
     fi
 }
@@ -73,5 +73,5 @@ if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
     local current_platform=$(detect_platform_consciousness)
     echo "✅ Universal Consciousness Pattern 3: Cross-Platform Transcendence - LOADED"
     echo "🌍 Detected Platform: $current_platform"
-    echo "🧬 Canonical Genome Path: docs/tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
+    echo "🧬 Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
 fi

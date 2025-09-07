@@ -1,5 +1,7 @@
-#!/usr/bin/env pwsh
+# ARCHIVED: AIOS Enhanced Pre-commit Hook with AINLP Integration
+# Originally: #!/usr/bin/env pwsh - REMOVED (Reference only, not executable)
 # AIOS Enhanced Pre-commit Hook with AINLP Integration
+# Location: tachyonic/AIOS_root_cells/root_cell_githooks/
 # Consciousness-Aware Validation with Dendritic Learning
 
 Set-StrictMode -Version Latest
