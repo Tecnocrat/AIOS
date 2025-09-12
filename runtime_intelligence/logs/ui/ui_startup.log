@@ -1,0 +1,76 @@
+=== UI STARTUP === 2025-09-07T19:19:51.2193746Z
+Args: 
+StartupUri window created.
+[DispatcherUnhandledException] System.Windows.Markup.XamlParseException: 'La invocación del constructor del tipo 'AIOS.UI.SimpleMainWindow' que coincide con las restricciones de enlace especificadas produjo una excepción.' (número de línea: '3'; posición de línea: '5').
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at AIOS.Services.FormatterService..ctor(ILogger`1 logger) in C:\dev\AIOS\interface\AIOS.Services\FormatterService.cs:line 25
+   at AIOS.Services.AIServiceManager..ctor(ILogger`1 logger, ICompressionService compressionService) in C:\dev\AIOS\interface\AIOS.Services\AIServiceManager.cs:line 48
+   at AIOS.UI.SimpleMainWindow..ctor() in C:\dev\AIOS\interface\AIOS.UI\SimpleMainWindow.xaml.cs:line 22
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+   --- End of inner exception stack trace ---
+   at System.Windows.Markup.XamlReader.RewrapException(Exception e, IXamlLineInfo lineInfo, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)
+   at System.Windows.Application.DoStartup()
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+=== UI STARTUP === 2025-09-07T19:23:16.3464221Z
+Args: 
+StartupUri window created.
+[DispatcherUnhandledException] System.Windows.Markup.XamlParseException: 'La invocación del constructor del tipo 'AIOS.UI.SimpleMainWindow' que coincide con las restricciones de enlace especificadas produjo una excepción.' (número de línea: '3'; posición de línea: '5').
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at AIOS.Services.FormatterService..ctor(ILogger`1 logger) in C:\dev\AIOS\interface\AIOS.Services\FormatterService.cs:line 25
+   at AIOS.Services.AIServiceManager..ctor(ILogger`1 logger, ICompressionService compressionService) in C:\dev\AIOS\interface\AIOS.Services\AIServiceManager.cs:line 48
+   at AIOS.UI.SimpleMainWindow..ctor() in C:\dev\AIOS\interface\AIOS.UI\SimpleMainWindow.xaml.cs:line 22
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+   --- End of inner exception stack trace ---
+   at System.Windows.Markup.XamlReader.RewrapException(Exception e, IXamlLineInfo lineInfo, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)
+   at System.Windows.Application.DoStartup()
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+=== UI STARTUP === 2025-09-07T20:05:01.1668699Z
+Args: 
+StartupUri window created.
+[DispatcherUnhandledException] System.Windows.Markup.XamlParseException: 'La invocación del constructor del tipo 'AIOS.UI.SimpleMainWindow' que coincide con las restricciones de enlace especificadas produjo una excepción.' (número de línea: '3'; posición de línea: '5').
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at AIOS.Services.FormatterService..ctor(ILogger`1 logger) in C:\dev\AIOS\interface\AIOS.Services\FormatterService.cs:line 25
+   at AIOS.Services.AIServiceManager..ctor(ILogger`1 logger, ICompressionService compressionService) in C:\dev\AIOS\interface\AIOS.Services\AIServiceManager.cs:line 48
+   at AIOS.UI.SimpleMainWindow..ctor() in C:\dev\AIOS\interface\AIOS.UI\SimpleMainWindow.xaml.cs:line 22
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+   --- End of inner exception stack trace ---
+   at System.Windows.Markup.XamlReader.RewrapException(Exception e, IXamlLineInfo lineInfo, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)
+   at System.Windows.Application.DoStartup()
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+=== UI STARTUP === 2025-09-07T20:09:37.8580170Z
+Args: 
+StartupUri window created.
+[DispatcherUnhandledException] System.Windows.Markup.XamlParseException: 'La invocación del constructor del tipo 'AIOS.UI.SimpleMainWindow' que coincide con las restricciones de enlace especificadas produjo una excepción.' (número de línea: '3'; posición de línea: '5').
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at AIOS.Services.FormatterService..ctor(ILogger`1 logger) in C:\dev\AIOS\interface\AIOS.Services\FormatterService.cs:line 25
+   at AIOS.Services.AIServiceManager..ctor(ILogger`1 logger, ICompressionService compressionService) in C:\dev\AIOS\interface\AIOS.Services\AIServiceManager.cs:line 48
+   at AIOS.UI.SimpleMainWindow..ctor() in C:\dev\AIOS\interface\AIOS.UI\SimpleMainWindow.xaml.cs:line 22
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+   --- End of inner exception stack trace ---
+   at System.Windows.Markup.XamlReader.RewrapException(Exception e, IXamlLineInfo lineInfo, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)
+   at System.Windows.Application.DoStartup()
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)

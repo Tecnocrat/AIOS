@@ -8,6 +8,7 @@ using System.Windows.Threading;
 using System.Linq; // For Take on collections
 using System.Text; // For StringBuilder
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AIOS.VisualInterface
 {
@@ -65,8 +66,13 @@ namespace AIOS.VisualInterface
             InitializeComponent();
             SetupAdvancedInterface();
             var sp = ((App)Application.Current).ServiceProvider;
-            _bridge = sp.GetService(typeof(CellularRuntimeBridge)) as CellularRuntimeBridge ?? new CellularRuntimeBridge();
-            _uiMetrics = sp.GetService(typeof(UIMetricsEmitter)) as UIMetricsEmitter ?? throw new InvalidOperationException("UIMetricsEmitter service not available");
+            _bridge = sp.GetService<CellularRuntimeBridge>() ?? new CellularRuntimeBridge();
+            _uiMetrics = sp.GetService<UIMetricsEmitter>() ?? throw new InvalidOperationException("UIMetricsEmitter service not available");
+            
+            // Register with process manager for centralized lifecycle management
+            var processManager = sp.GetService<AIOSProcessManager>();
+            processManager?.RegisterWindow(this);
+            
             StartMonitoring();
             InitBridgeTimer();
         }
@@ -244,10 +250,27 @@ namespace AIOS.VisualInterface
             };
             settingsButton.Click += SettingsButton_Click;
 
+            // Tachyonic Viewer Button
+            var tachyonicButton = new Button
+            {
+                Content = "🌌 Tachyonic Viewer",
+                Width = 150,
+                Height = 40,
+                FontSize = 12,
+                FontWeight = FontWeights.Bold,
+                Background = new SolidColorBrush(Color.FromRgb(0, 255, 136)),
+                Foreground = new SolidColorBrush(Color.FromRgb(10, 10, 10)),
+                BorderBrush = new SolidColorBrush(Color.FromRgb(0, 200, 100)),
+                BorderThickness = new Thickness(2),
+                Margin = new Thickness(5)
+            };
+            tachyonicButton.Click += TachyonicButton_Click;
+
             buttonPanel.Children.Add(_startMonitoringButton);
             buttonPanel.Children.Add(pauseButton);
             buttonPanel.Children.Add(resetButton);
             buttonPanel.Children.Add(settingsButton);
+            buttonPanel.Children.Add(tachyonicButton);
             metricsPanel.Children.Add(buttonPanel);
             
             // Add status text
@@ -462,6 +485,11 @@ namespace AIOS.VisualInterface
             StopMonitoring();
             _bridgeTimer?.Stop();
             _uiMetrics?.Dispose();
+            
+            // Trigger application shutdown when main window closes
+            // This will cause App.OnExit to be called, which handles centralized cleanup
+            Application.Current.Shutdown();
+            
             base.OnClosed(e);
         }
 
@@ -721,6 +749,28 @@ namespace AIOS.VisualInterface
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             ShowSettingsDialog();
+        }
+        
+        private void TachyonicButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Create and show the tachyonic viewer window
+                var tachyonicWindow = new TachyonicViewerWindow();
+                tachyonicWindow.Show();
+                
+                if (_statusText != null)
+                    _statusText.Text = "🌌 Tachyonic Surface Viewer launched - Hyperdimensional interface activated";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Failed to launch Tachyonic Viewer: {ex.Message}",
+                    "AIOS Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+            }
         }
 
         private void ShowSettingsDialog()
