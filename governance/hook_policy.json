@@ -41,10 +41,19 @@
   "requireChangelogOnPaths": [
     "docs/",
     "governance/",
-    "ai/env/"
+    "ai/env/",
+    "visual_interface/",
+    ".githooks/",
+    "config/",
+    "core/",
+    "interface/",
+    "ai/src/"
   ],
   "changelogFiles": [
-    "docs/tachyonic/tachyonic_changelog.jsonl"
+    "docs/tachyonic/tachyonic_changelog.jsonl",
+    "docs/tachyonic/tachyonic_changelog.yaml",
+    "CHANGELOG.md",
+    ".githooks/CHANGELOG.md"
   ],
   "pythonSyntaxPaths": [
     "ai/src/",

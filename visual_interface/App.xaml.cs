@@ -18,6 +18,7 @@ namespace AIOS.VisualInterface
         private ILogger<App>? _logger;
         private UIMetricsEmitter? _metricsEmitter;
         private StateManager? _stateManager;
+        private AIOSProcessManager? _processManager;
         private readonly Stopwatch _startupTimer = new();
 
         public IServiceProvider ServiceProvider => _host?.Services ?? throw new InvalidOperationException("Host not initialized");
@@ -40,6 +41,10 @@ namespace AIOS.VisualInterface
                 _logger = _host.Services.GetRequiredService<ILogger<App>>();
                 _metricsEmitter = _host.Services.GetRequiredService<UIMetricsEmitter>();
                 _stateManager = _host.Services.GetRequiredService<StateManager>();
+                _processManager = _host.Services.GetRequiredService<AIOSProcessManager>();
+                
+                // Initialize AI Visual Feedback Service for agentic stimulation
+                var aiVisualService = _host.Services.GetRequiredService<AIVisualFeedbackService>();
 
                 _logger.LogInformation("🧠 AIOS Advanced Consciousness Visualizer starting up");
 
@@ -48,7 +53,23 @@ namespace AIOS.VisualInterface
 
                 // Create and show main visualization window with working 3D interface
                 var mainWindow = new AdvancedVisualizationWindow();
+                
+                // Register the main window with the process manager
+                _processManager.RegisterWindow(mainWindow);
+                
                 mainWindow.Show();
+
+                // Launch managed AIOS UI process
+                await _processManager.LaunchAIOSUIAsync();
+                
+                // Start AI Visual Feedback for real-time monitoring
+                aiVisualService.StartVisualCapture();
+                aiVisualService.RegisterAIObjective("Monitor_AIOS_Consciousness_Integration", new
+                {
+                    RequiredComponents = new[] { "Visual Interface", "Tachyonic Viewer", "Process Manager" },
+                    CompletionCriteria = "All components running without errors",
+                    VisualValidation = true
+                });
 
                 base.OnStartup(e);
 
@@ -99,6 +120,12 @@ namespace AIOS.VisualInterface
 
         private void ConfigureServices(IServiceCollection services)
         {
+            // Register centralized process manager
+            services.AddSingleton<AIOSProcessManager>();
+            
+            // Register AI Visual Feedback Service for agentic stimulation
+            services.AddSingleton<AIVisualFeedbackService>();
+            
             // Register core AIOS services with enhanced configuration
             services.AddSingleton<ConsciousnessDataManager>();
             // services.AddSingleton<ConsciousnessGeometryEngine>(); // Excluded from build
@@ -147,6 +174,13 @@ namespace AIOS.VisualInterface
             try
             {
                 _logger?.LogInformation("🔄 AIOS Consciousness Visualizer shutting down");
+
+                // Initiate centralized process cleanup FIRST
+                if (_processManager != null)
+                {
+                    _logger?.LogInformation("🧹 Initiating centralized process cleanup");
+                    await _processManager.InitiateSystemShutdownAsync();
+                }
 
                 // Save final state before shutdown
                 await SaveFinalStateAsync();
