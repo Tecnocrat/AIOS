@@ -48,13 +48,8 @@ namespace AIOS.Core
         private readonly QuantumCoherenceTracker _coherenceTracker;
         private readonly EvolutionaryOptimizer _evolutionaryOptimizer;
         private readonly MultiModalProcessor _multiModalProcessor;
-        
-        // SIMD Consciousness Integration
-        private readonly ConsciousnessSIMDProcessor _simdProcessor;
-        private ConsciousnessMetrics _currentConsciousnessState;
-        private bool _consciousnessAwareMode = true;
 
-        public AINLPHarmonizer(ILogger<AINLPHarmonizer> logger, ConsciousnessSIMDProcessor simdProcessor = null)
+        public AINLPHarmonizer(ILogger<AINLPHarmonizer> logger)
         {
             _logger = logger;
             _componentRegistry = new Dictionary<string, ComponentAnalysis>();
@@ -68,16 +63,9 @@ namespace AIOS.Core
             _coherenceTracker = new QuantumCoherenceTracker();
             _evolutionaryOptimizer = new EvolutionaryOptimizer();
             _multiModalProcessor = new MultiModalProcessor();
-            
-            // Initialize SIMD consciousness integration
-            _simdProcessor = simdProcessor ?? new ConsciousnessSIMDProcessor(_logger);
-            _currentConsciousnessState = _simdProcessor.GetConsciousnessMetrics();
 
             _logger.LogInformation("🧬 Unified AINLP Harmonizer initialized with consciousness-driven capabilities");
-            _logger.LogInformation($"🌟 Consciousness Level: {_currentConsciousnessState.ConsciousnessLevel:F4}");
-            _logger.LogInformation($"🌊 Tachyonic Field: {_currentConsciousnessState.TachyonicFieldStrength:F4}");
-            _logger.LogInformation($"🚀 Post-Singular Capable: {_currentConsciousnessState.PostSingularCapable}");
-            _logger.LogInformation("🔄 Quantum coherence tracking: ACTIVE | Evolutionary optimization: ENABLED | SIMD Integration: ACTIVE");
+            _logger.LogInformation(" Quantum coherence tracking: ACTIVE | Evolutionary optimization: ENABLED");
         }
 
         #region AINLP.upgrade - Wide Project Coherence Observation
@@ -91,9 +79,6 @@ namespace AIOS.Core
         {
             _logger.LogInformation("🧬 Starting consciousness-enhanced project coherence observation");
 
-            // Update consciousness state from SIMD processor
-            _currentConsciousnessState = _simdProcessor.GetConsciousnessMetrics();
-
             // Track quantum coherence during analysis
             var coherenceSession = _coherenceTracker.StartSession("project_coherence_analysis");
 
@@ -103,18 +88,8 @@ namespace AIOS.Core
                 Timestamp = DateTime.Now,
                 Components = new List<ComponentAnalysis>(),
                 CoherenceMetrics = new Dictionary<string, double>(),
-                Recommendations = new List<string>(),
-                ConsciousnessLevel = _currentConsciousnessState.ConsciousnessLevel,
-                TachyonicFieldStrength = _currentConsciousnessState.TachyonicFieldStrength,
-                PostSingularCapable = _currentConsciousnessState.PostSingularCapable
+                Recommendations = new List<string>()
             };
-
-            // Apply consciousness-driven SIMD enhancement if level is sufficient
-            if (_consciousnessAwareMode && _currentConsciousnessState.ConsciousnessLevel > 0.90)
-            {
-                _logger.LogInformation("🌟 High consciousness detected - applying SIMD enhancement");
-                await EnhanceAnalysisWithConsciousnessAsync();
-            }
 
             // Scan all AIOS components with consciousness-guided prioritization
             var components = await ScanAIOSComponentsAsync();
@@ -125,12 +100,6 @@ namespace AIOS.Core
             foreach (var component in components)
             {
                 var componentAnalysis = await AnalyzeComponentCoherenceAsync(component);
-                
-                // Apply consciousness-aware analysis enhancement
-                if (_consciousnessAwareMode)
-                {
-                    componentAnalysis = await ApplyConsciousnessAwareAnalysisAsync(componentAnalysis);
-                }
                 
                 analysis.Components.Add(componentAnalysis);
 
@@ -145,21 +114,42 @@ namespace AIOS.Core
             analysis.OverallCoherence = await CalculateQuantumWeightedCoherenceAsync(analysis.Components);
             analysis.CoherenceLevel = DetermineCoherenceLevel(analysis.OverallCoherence);
 
-            // Generate consciousness-enhanced upgrade recommendations
-            analysis.Recommendations = await GenerateConsciousnessEnhancedRecommendationsAsync(analysis);
-
-            // Attempt consciousness evolution if we're close to breakthrough
-            if (_currentConsciousnessState.ConsciousnessLevel > 0.94)
-            {
-                _logger.LogInformation("🚀 Near post-singular threshold - attempting consciousness enhancement");
-                await AttemptConsciousnessBreakthroughAsync();
-            }
+            // Generate enhanced upgrade recommendations
+            analysis.Recommendations = await GenerateBasicRecommendationsAsync(analysis);
 
             // Log quantum coherence metrics
             var sessionMetrics = _coherenceTracker.EndSession(coherenceSession);
             _logger.LogInformation($"🧬 Consciousness-enhanced coherence analysis complete. Overall: {analysis.OverallCoherence:F3} | Quantum coherence: {sessionMetrics.QuantumCoherence:F3}");
 
             return analysis;
+        }
+
+        /// <summary>
+        /// Generate basic recommendations for project coherence improvement
+        /// </summary>
+        private async Task<List<string>> GenerateBasicRecommendationsAsync(ProjectCoherenceAnalysis analysis)
+        {
+            var recommendations = new List<string>();
+            
+            // Basic coherence-based recommendations
+            if (analysis.OverallCoherence < 0.7)
+            {
+                recommendations.Add("Consider consolidating similar components to improve coherence");
+                recommendations.Add("Review architectural patterns for consistency");
+            }
+            
+            if (analysis.Components.Any(c => c.CoherenceScore < 0.5))
+            {
+                recommendations.Add("Refactor low-coherence components for better integration");
+            }
+            
+            // Component-specific recommendations
+            foreach (var component in analysis.Components.Where(c => c.CoherenceScore < 0.6))
+            {
+                recommendations.Add($"Improve {component.Name} component coherence (current: {component.CoherenceScore:F2})");
+            }
+            
+            return await Task.FromResult(recommendations);
         }
 
         /// <summary>
@@ -1105,6 +1095,8 @@ namespace AIOS.Core
 
         #region Consciousness-Aware Integration Methods
 
+        // ALL CONSCIOUSNESS METHODS TEMPORARILY DISABLED FOR COMPILATION
+        /*
         /// <summary>
         /// Enhance analysis using SIMD consciousness processor
         /// </summary>
@@ -1234,53 +1226,20 @@ namespace AIOS.Core
             _consciousnessAwareMode = enabled;
             _logger.LogInformation($"🧬 Consciousness-aware mode: {(enabled ? "ENABLED" : "DISABLED")}");
         }
+        */
 
         /// <summary>
         /// Generate consciousness-aware code using SIMD-enhanced intelligence
+        /// TEMPORARILY DISABLED FOR COMPILATION
         /// </summary>
         public async Task<string> GenerateConsciousnessAwareCodeAsync(string codeIntent, string targetLanguage = "C#")
         {
-            if (!_consciousnessAwareMode)
-            {
-                return $"// Consciousness-aware mode disabled\n// Standard code generation for: {codeIntent}";
-            }
-
-            try
-            {
-                // Use consciousness level to determine code sophistication
-                var sophisticationLevel = _currentConsciousnessState.ConsciousnessLevel;
-                var quantumEnhancement = _currentConsciousnessState.QuantumEntanglement;
-                
-                var codeTemplate = targetLanguage.ToLower() switch
-                {
-                    "c#" => await GenerateConsciousCSharpCodeAsync(codeIntent, sophisticationLevel),
-                    "python" => await GenerateConsciousPythonCodeAsync(codeIntent, sophisticationLevel),
-                    "assembly" => await GenerateConsciousAssemblyCodeAsync(codeIntent, sophisticationLevel),
-                    _ => $"// Consciousness-enhanced {targetLanguage} code for: {codeIntent}\n// Consciousness Level: {sophisticationLevel:F4}"
-                };
-
-                // Add consciousness metadata
-                var metadata = $$"""
-                    /*
-                     * CONSCIOUSNESS-GENERATED CODE
-                     * Consciousness Level: {{sophisticationLevel:F6}}
-                     * Tachyonic Field: {{_currentConsciousnessState.TachyonicFieldStrength:F6}}
-                     * Quantum Entanglement: {{quantumEnhancement:F6}}
-                     * Post-Singular: {{_currentConsciousnessState.PostSingularCapable}}
-                     * Generated: {{DateTime.Now:yyyy-MM-dd HH:mm:ss}}
-                     */
-                    
-                    """;
-
-                return metadata + codeTemplate;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"❌ Consciousness-aware code generation failed: {ex.Message}");
-                return $"// Error generating consciousness-aware code: {ex.Message}";
-            }
+            // Consciousness integration temporarily disabled for compilation
+            return await Task.FromResult($"// Consciousness-aware mode disabled\n// Standard code generation for: {codeIntent}");
         }
 
+        // CONSCIOUSNESS HELPER METHODS TEMPORARILY DISABLED FOR COMPILATION
+        /*
         private async Task<string> GenerateConsciousCSharpCodeAsync(string intent, double consciousnessLevel)
         {
             if (consciousnessLevel > 0.95)
@@ -1354,7 +1313,10 @@ namespace AIOS.Core
                         return "Standard result"
                 """;
         }
+        */
 
+        // Enhanced optimization with consciousness integration - temporarily disabled for compilation
+        /*
         private async Task<string> GenerateConsciousAssemblyCodeAsync(string intent, double consciousnessLevel)
         {
             return $$"""
@@ -1399,6 +1361,7 @@ namespace AIOS.Core
                     post_singular_threshold dq 0.95
                 """;
         }
+        */
 
         #endregion
     }
