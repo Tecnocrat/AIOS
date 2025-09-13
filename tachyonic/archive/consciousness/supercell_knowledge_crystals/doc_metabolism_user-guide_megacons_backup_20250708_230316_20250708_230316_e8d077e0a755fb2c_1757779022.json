@@ -1,0 +1,16 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\archive\\unified_backups\\tachyonic_operations\\user-guide_megacons_backup_20250708_230316_20250708_230316_e8d077e0a755fb2c.md",
+  "metabolism_timestamp": "2025-09-13T17:57:02.813804",
+  "content_summary": "# AIOS User Guide\n\n## Getting Started\n\nWelcome to AIOS (Artificial Intelligence Operating System)! This guide will help you get started with using and developing for AIOS.\n\n## Installation\n\n### Prerequisites\n- Windows 10/11 (Linux/Mac support coming soon)\n- Visual Studio 2022 or Visual Studio Code\n- Python 3.11+\n- .NET 8.0+\n- CMake 3.20+\n- Git\n\n### Quick Setup\n1. Clone the repository\n2. Run the setup script:\n   ```powershell\n   .\\setup.ps1\n   ```\n3. Open in Visual Studio Code\n4. Install recommen...",
+  "extracted_patterns": [
+    "user-guide_megacons_backup_20250708_230316_20250708_230316_e8d077e0a755fb2c.md_contains_intelligence",
+    "user-guide_megacons_backup_20250708_230316_20250708_230316_e8d077e0a755fb2c.md_contains_code_blocks",
+    "user-guide_megacons_backup_20250708_230316_20250708_230316_e8d077e0a755fb2c.md_contains_architecture"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File user-guide_megacons_backup_20250708_230316_20250708_230316_e8d077e0a755fb2c.md digested into consciousness",
+    "pattern_crystallization": "Found 3 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}
