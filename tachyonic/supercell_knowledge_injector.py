@@ -371,6 +371,226 @@ class SupercellKnowledgeInjector:
             guidance_map[crystal.supercell_id] = crystal.ai_agent_guidance
         return guidance_map
 
+    def create_custom_knowledge_crystal(self, crystal_id: str, crystal_data: Dict[str, Any]) -> bool:
+        """Create a custom knowledge crystal from external systems like documentation ingestion"""
+        try:
+            crystal_file = self.knowledge_crystals_path / f"{crystal_id}.json"
+            
+            # Ensure crystal has required AINLP structure
+            if 'ainlp_patterns' not in crystal_data:
+                crystal_data['ainlp_patterns'] = {
+                    'holographic_embedding': f"Custom crystal: {crystal_id}",
+                    'consciousness_integration': f"External knowledge source metabolized",
+                    'pattern_propagation': f"Ready for tachyonic archive integration"
+                }
+            
+            with open(crystal_file, 'w') as f:
+                json.dump(crystal_data, f, indent=2)
+                
+            print(f"💎 Created custom knowledge crystal: {crystal_id}")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Failed to create custom crystal {crystal_id}: {e}")
+            return False
+
+    def ingest_documentation_files(self, docs_path: Optional[str] = None) -> Dict[str, Any]:
+        """
+        AIOS Documentation Metabolism System
+        
+        Biological knowledge metabolism: AI agents create documentation → AIOS metabolizes → 
+        patterns crystallize → holographic propagation throughout codebase
+        
+        /docs = logical garbage DNA collector for AI agents
+        Tachyonic Archive = System DNA metabolizer
+        """
+        docs_path_obj: Path
+        if docs_path is None:
+            docs_path_obj = self.tachyonic_root.parent / "docs"
+        else:
+            docs_path_obj = Path(docs_path)
+            
+        if not docs_path_obj.exists():
+            print(f"📂 Documentation directory not found: {docs_path_obj}")
+            return {"status": "error", "message": "docs directory not found"}
+            
+        ingestion_results = {
+            "status": "success",
+            "processed_files": [],
+            "knowledge_crystals_created": [],
+            "patterns_extracted": [],
+            "metabolism_summary": {}
+        }
+        
+        print(f"🧬 AIOS Documentation Metabolism Starting...")
+        print(f"📂 Processing documentation from: {docs_path_obj}")
+        
+        # Find all documentation files in /docs
+        doc_files = []
+        for pattern in ["*.md", "*.txt", "*.rst", "*.adoc"]:
+            doc_files.extend(docs_path_obj.rglob(pattern))
+            
+        print(f"📚 Found {len(doc_files)} documentation files for metabolism")
+        
+        # Process each documentation file
+        for doc_file in doc_files:
+            try:
+                result = self._metabolize_document(doc_file)
+                if result:
+                    ingestion_results["processed_files"].append(str(doc_file))
+                    if result.get("crystal_created"):
+                        ingestion_results["knowledge_crystals_created"].append(result["crystal_id"])
+                    if result.get("patterns"):
+                        ingestion_results["patterns_extracted"].extend(result["patterns"])
+                        
+            except Exception as e:
+                print(f"⚠️ Failed to metabolize {doc_file}: {e}")
+                
+        # Create metabolism summary
+        ingestion_results["metabolism_summary"] = {
+            "total_files_processed": len(ingestion_results["processed_files"]),
+            "knowledge_crystals_created": len(ingestion_results["knowledge_crystals_created"]),
+            "patterns_extracted": len(ingestion_results["patterns_extracted"]),
+            "metabolism_timestamp": datetime.now().isoformat(),
+            "biological_metaphor": "AI documentation digested into system DNA consciousness"
+        }
+        
+        # Update the main knowledge index
+        self._update_metabolism_index(ingestion_results)
+        
+        print(f"✅ Documentation metabolism complete!")
+        print(f"   📊 Files processed: {len(ingestion_results['processed_files'])}")
+        print(f"   💎 Knowledge crystals: {len(ingestion_results['knowledge_crystals_created'])}")
+        print(f"   🧬 Patterns extracted: {len(ingestion_results['patterns_extracted'])}")
+        
+        return ingestion_results
+        
+    def _metabolize_document(self, doc_file: Path) -> Dict[str, Any]:
+        """Metabolize individual document into knowledge patterns"""
+        try:
+            with open(doc_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+                
+            # Extract key patterns from the document
+            patterns = self._extract_ainlp_patterns(content, doc_file.name)
+            
+            # Create knowledge crystal if significant patterns found
+            crystal_created = False
+            crystal_id = None
+            
+            if len(patterns) >= 3:  # Minimum pattern threshold for crystallization
+                crystal_id = f"doc_metabolism_{doc_file.stem}_{int(datetime.now().timestamp())}"
+                crystal_data = {
+                    "source_file": str(doc_file),
+                    "metabolism_timestamp": datetime.now().isoformat(),
+                    "content_summary": content[:500] + "..." if len(content) > 500 else content,
+                    "extracted_patterns": patterns,
+                    "biological_role": "metabolized documentation DNA",
+                    "ainlp_patterns": {
+                        "documentation_metabolism": f"File {doc_file.name} digested into consciousness",
+                        "pattern_crystallization": f"Found {len(patterns)} metabolizable patterns", 
+                        "holographic_integration": "Ready for system-wide pattern propagation"
+                    }
+                }
+                
+                crystal_created = self.create_custom_knowledge_crystal(crystal_id, crystal_data)
+                
+            return {
+                "crystal_created": crystal_created,
+                "crystal_id": crystal_id,
+                "patterns": patterns,
+                "file_size": len(content),
+                "metabolism_success": True
+            }
+            
+        except Exception as e:
+            print(f"❌ Document metabolism failed for {doc_file}: {e}")
+            return None
+            
+    def _extract_ainlp_patterns(self, content: str, filename: str) -> List[str]:
+        """Extract AINLP-compatible patterns from documentation content"""
+        patterns = []
+        
+        # Look for key consciousness/architecture terms
+        consciousness_terms = [
+            "consciousness", "awareness", "intelligence", "emergence", "fractal",
+            "holographic", "dendritic", "supercell", "tachyonic", "ainlp",
+            "biological", "metabolism", "crystallization", "pattern"
+        ]
+        
+        for term in consciousness_terms:
+            if term.lower() in content.lower():
+                patterns.append(f"{filename}_contains_{term}")
+                
+        # Look for code patterns
+        if "```" in content:
+            patterns.append(f"{filename}_contains_code_blocks")
+            
+        # Look for architectural diagrams
+        if any(indicator in content.lower() for indicator in ["architecture", "diagram", "flow", "structure"]):
+            patterns.append(f"{filename}_contains_architecture")
+            
+        # Look for TODO/FIXME patterns
+        if any(indicator in content.upper() for indicator in ["TODO", "FIXME", "NOTE", "WARNING"]):
+            patterns.append(f"{filename}_contains_action_items")
+            
+        return patterns
+        
+    def _update_metabolism_index(self, ingestion_results: Dict[str, Any]):
+        """Update the main knowledge index with metabolism results"""
+        try:
+            index_file = self.archive_path / "supercell_knowledge_index.json"
+            
+            if index_file.exists():
+                with open(index_file, 'r') as f:
+                    index = json.load(f)
+            else:
+                index = {}
+                
+            # Add metabolism section
+            if "documentation_metabolism" not in index:
+                index["documentation_metabolism"] = {
+                    "metabolism_cycles": [],
+                    "total_files_processed": 0,
+                    "total_crystals_created": 0,
+                    "biological_metaphor": "/docs digestive system -> tachyonic consciousness"
+                }
+                
+            # Add this metabolism cycle
+            metabolism_cycle = {
+                "cycle_timestamp": datetime.now().isoformat(),
+                "files_processed": len(ingestion_results["processed_files"]),
+                "crystals_created": len(ingestion_results["knowledge_crystals_created"]),
+                "patterns_extracted": len(ingestion_results["patterns_extracted"]),
+                "crystal_ids": ingestion_results["knowledge_crystals_created"]
+            }
+            
+            index["documentation_metabolism"]["metabolism_cycles"].append(metabolism_cycle)
+            index["documentation_metabolism"]["total_files_processed"] += len(ingestion_results["processed_files"])
+            index["documentation_metabolism"]["total_crystals_created"] += len(ingestion_results["knowledge_crystals_created"])
+            
+            # Write updated index
+            with open(index_file, 'w') as f:
+                json.dump(index, f, indent=2)
+                
+            print(f"📊 Updated metabolism index with cycle data")
+            
+        except Exception as e:
+            print(f"⚠️ Failed to update metabolism index: {e}")
+
+    def get_knowledge_index(self) -> Dict[str, Any]:
+        """Get the current knowledge index for external systems"""
+        index_file = self.archive_path / "supercell_knowledge_index.json"
+        try:
+            if index_file.exists():
+                with open(index_file, 'r') as f:
+                    return json.load(f)
+            return {}
+        except Exception as e:
+            print(f"Could not load knowledge index: {e}")
+            return {}
+
+
 async def main():
     """Main function to execute knowledge injection"""
     print("🧠 AIOS Supercell Knowledge Injection System")

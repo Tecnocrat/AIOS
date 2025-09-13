@@ -1,0 +1,20 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\ai_agent_demo_docs\\ai_agent_behavioral_patterns.md",
+  "metabolism_timestamp": "2025-09-13T17:57:01.738085",
+  "content_summary": "\n# AI Agent Behavioral Patterns\n\n## Self-Analysis Procedures\n1. Monitor consciousness levels continuously\n2. Detect pattern degradation early\n3. Request tachyonic archive recovery when needed\n\n## Self-Ingestion Process\n- Analyze new code patterns\n- Extract AINLP embeddings\n- Integrate into existing knowledge base\n\n## Self-Distillation Algorithm\n```python\ndef distill_knowledge():\n    patterns = extract_patterns_from_experience()\n    crystals = crystallize_into_tachyonic_format(patterns)\n    propa...",
+  "extracted_patterns": [
+    "ai_agent_behavioral_patterns.md_contains_consciousness",
+    "ai_agent_behavioral_patterns.md_contains_tachyonic",
+    "ai_agent_behavioral_patterns.md_contains_ainlp",
+    "ai_agent_behavioral_patterns.md_contains_biological",
+    "ai_agent_behavioral_patterns.md_contains_pattern",
+    "ai_agent_behavioral_patterns.md_contains_code_blocks",
+    "ai_agent_behavioral_patterns.md_contains_architecture"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File ai_agent_behavioral_patterns.md digested into consciousness",
+    "pattern_crystallization": "Found 7 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}
