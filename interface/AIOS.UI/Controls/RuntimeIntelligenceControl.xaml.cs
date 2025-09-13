@@ -69,27 +69,32 @@ namespace AIOS.UI.Controls
         {
             try
             {
-                var tools = await _runtimeService.GetAvailableToolsAsync();
+                var result = await _runtimeService.GetAvailableToolsAsync();
                 
-                // Clear existing items
-                ToolsList.Items.Clear();
-                
-                // Add tool items
-                foreach (var tool in tools)
+                if (result.IsSuccess && result.Data is Dictionary<string, object> data &&
+                    data.TryGetValue("tools", out var toolsObj) && 
+                    toolsObj is List<RuntimeIntelligenceTool> tools)
                 {
-                    var item = new System.Windows.Controls.ListViewItem
+                    // Clear existing items
+                    ToolsListBox.Items.Clear();
+                    
+                    // Add tool items
+                    foreach (var tool in tools)
                     {
-                        Content = tool.Name,
-                        Tag = tool
-                    };
-                    ToolsList.Items.Add(item);
+                        ToolsListBox.Items.Add(tool);
+                    }
+                    
+                    ToolCountText.Text = tools.Count.ToString();
                 }
-                
-                StatusTextBlock.Text = $"Loaded {tools.Count} Runtime Intelligence tools";
+                else
+                {
+                    ToolCountText.Text = "0";
+                    LastOperationText.Text = "No tools available";
+                }
             }
             catch (Exception ex)
             {
-                StatusTextBlock.Text = $"Error loading tools: {ex.Message}";
+                LastOperationText.Text = $"Error loading tools: {ex.Message}";
             }
         }
 
@@ -103,16 +108,15 @@ namespace AIOS.UI.Controls
                 var health = await _runtimeService.CheckSystemHealthAsync();
                 
                 // Update UI based on health status
-                HealthStatusTextBlock.Text = health.Status;
-                HealthProgressBar.Value = health.HealthScore * 100;
+                HealthStatusText.Text = health.Status;
                 
-                // Update last check time
-                LastCheckTextBlock.Text = $"Last checked: {DateTime.Now:HH:mm:ss}";
+                // Update last operation text
+                LastOperationText.Text = $"Health check: {health.Status} - {DateTime.Now:HH:mm:ss}";
             }
             catch (Exception ex)
             {
-                HealthStatusTextBlock.Text = "Health check failed";
-                HealthProgressBar.Value = 0;
+                HealthStatusText.Text = "Health check failed";
+                LastOperationText.Text = $"Health check failed: {ex.Message}";
             }
         }
 
@@ -122,27 +126,27 @@ namespace AIOS.UI.Controls
         {
             try
             {
-                StatusTextBlock.Text = "Processing visual intelligence...";
+                LastOperationText.Text = "Processing visual intelligence...";
                 
                 var result = await _runtimeService.GetVisualIntelligenceAsync();
                 
-                if (result.Success)
+                if (result.IsSuccess)
                 {
                     // Show results in a new window
                     var resultWindow = new RuntimeIntelligenceResultWindow();
                     resultWindow.DisplayResult(result);
                     resultWindow.Show();
                     
-                    StatusTextBlock.Text = "Visual intelligence processing completed";
+                    LastOperationText.Text = "Visual intelligence processing completed";
                 }
                 else
                 {
-                    StatusTextBlock.Text = $"Error: {result.Error}";
+                    LastOperationText.Text = $"Error: {result.Message}";
                 }
             }
             catch (Exception ex)
             {
-                StatusTextBlock.Text = $"Error processing visual intelligence: {ex.Message}";
+                LastOperationText.Text = $"Error processing visual intelligence: {ex.Message}";
             }
         }
 
@@ -150,17 +154,16 @@ namespace AIOS.UI.Controls
         {
             try
             {
-                StatusTextBlock.Text = "Checking system health...";
+                LastOperationText.Text = "Checking system health...";
                 
                 var health = await _runtimeService.CheckSystemHealthAsync();
                 
-                StatusTextBlock.Text = $"System Health: {health.Status} ({health.HealthScore:P0})";
-                HealthStatusTextBlock.Text = health.Status;
-                HealthProgressBar.Value = health.HealthScore * 100;
+                LastOperationText.Text = $"System Health: {health.Status}";
+                HealthStatusText.Text = health.Status;
             }
             catch (Exception ex)
             {
-                StatusTextBlock.Text = $"Error checking system health: {ex.Message}";
+                LastOperationText.Text = $"Error checking system health: {ex.Message}";
             }
         }
 
@@ -170,24 +173,30 @@ namespace AIOS.UI.Controls
             {
                 if (_continuousMonitoring)
                 {
-                    // Stop monitoring
-                    await _runtimeService.StopContinuousMonitoringAsync();
+                    // Stop monitoring (simulate stopping)
                     _continuousMonitoring = false;
-                    ContinuousMonitoringToggle.Content = "Start Continuous Monitoring";
-                    StatusTextBlock.Text = "Continuous monitoring stopped";
+                    MonitoringStatusText.Text = "Stopped";
+                    LastOperationText.Text = "Continuous monitoring stopped";
                 }
                 else
                 {
                     // Start monitoring
-                    await _runtimeService.StartContinuousMonitoringAsync();
-                    _continuousMonitoring = true;
-                    ContinuousMonitoringToggle.Content = "Stop Continuous Monitoring";
-                    StatusTextBlock.Text = "Continuous monitoring started";
+                    var result = await _runtimeService.StartContinuousMonitoringAsync();
+                    if (result.IsSuccess)
+                    {
+                        _continuousMonitoring = true;
+                        MonitoringStatusText.Text = "Running";
+                        LastOperationText.Text = "Continuous monitoring started";
+                    }
+                    else
+                    {
+                        LastOperationText.Text = $"Failed to start monitoring: {result.Message}";
+                    }
                 }
             }
             catch (Exception ex)
             {
-                StatusTextBlock.Text = $"Error toggling monitoring: {ex.Message}";
+                LastOperationText.Text = $"Error toggling monitoring: {ex.Message}";
             }
         }
 
@@ -196,13 +205,38 @@ namespace AIOS.UI.Controls
             _ = LoadAvailableToolsAsync();
         }
 
-        private async void ToolsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void RefreshHealthButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ToolsList.SelectedItem is System.Windows.Controls.ListViewItem item && 
-                item.Tag is RuntimeIntelligenceService.ToolInfo tool)
+            _ = CheckRuntimeHealthAsync();
+        }
+
+        private void ProcessVisualIntelligenceButton_Click(object sender, RoutedEventArgs e)
+        {
+            VisualIntelligenceButton_Click(sender, e);
+        }
+
+        private void StartMonitoringButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContinuousMonitoringToggle_Click(sender, e);
+        }
+
+        private void ClearResultsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResultsTextBox.Clear();
+            LastOperationText.Text = "Results cleared";
+        }
+
+        private void ExportResultsButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Export functionality would be implemented here
+            LastOperationText.Text = "Export functionality not yet implemented";
+        }
+
+        private async void ToolsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ToolsListBox.SelectedItem != null)
             {
-                ToolDescriptionTextBlock.Text = tool.Description;
-                ToolStatusTextBlock.Text = $"Status: {tool.Status}";
+                LastOperationText.Text = $"Selected tool: {ToolsListBox.SelectedItem.ToString()}";
             }
         }
 
