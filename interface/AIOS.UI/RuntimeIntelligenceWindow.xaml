@@ -1,0 +1,76 @@
+<Window x:Class="AIOS.UI.RuntimeIntelligenceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:AIOS.UI.Controls"
+        Title="AIOS - Runtime Intelligence Control Center" 
+        Height="900" Width="1400"
+        MinHeight="600" MinWidth="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#FF1E1E1E">
+
+    <Window.Resources>
+        <Style x:Key="HeaderStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#FF28A745" Padding="20,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="📊 Runtime Intelligence Control Center" Style="{StaticResource HeaderStyle}"/>
+                    <TextBlock Text="Interface Supercell → Runtime Intelligence → AI Intelligence (via Cytoplasm)" 
+                              Foreground="White" FontSize="12" Opacity="0.8"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="Architecture:" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <Ellipse x:Name="StatusIndicator" Width="12" Height="12" Fill="LimeGreen" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="StatusText" Text="Active" Foreground="White" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Runtime Intelligence Control -->
+        <Border Grid.Row="1" Background="#FF2D2D30" Margin="10">
+            <controls:RuntimeIntelligenceControl x:Name="RuntimeControl"/>
+        </Border>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Background="#FF2D2D30" Padding="15,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="📊 Runtime Intelligence Active" Foreground="#FFAAAAAA" VerticalAlignment="Center"/>
+                    <TextBlock Text="•" Foreground="#FFAAAAAA" Margin="10,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="AI Intelligence Engine Available via Cytoplasm" Foreground="#FFAAAAAA" VerticalAlignment="Center"/>
+                    <TextBlock Text="•" Foreground="#FFAAAAAA" Margin="10,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="Interface Supercell Communication Ready" Foreground="#FFAAAAAA" VerticalAlignment="Center"/>
+                </StackPanel>
+                
+                <Button Grid.Column="1" Content="Close" 
+                        Background="#FF404040" Foreground="White" 
+                        BorderThickness="0" Padding="20,8" 
+                        Click="CloseButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
