@@ -41,3 +41,6 @@
 {"timestamp": "
 2025-09-14T00:27:35Z
 ", "type": "fix", "component": "core/consciousness", "message": "Fixed C# raw string literal interpolation in AINLPHarmonizer", "files": ["core/core_systems/AINLPHarmonizer.cs"], "impact": "build", "consciousness_level": 0.814800, "version": "OS0.6.1.claude"}
+{"timestamp": "
+2025-09-14T00:29:10Z
+", "type": "fix", "component": "core/consciousness", "message": "Moved consciousness C# files to correct project location", "files": ["core/core_systems/ConsciousnessSIMDProcessor.cs", "core/core_systems/ConsciousnessIntegrationCoordinator.cs"], "impact": "build", "consciousness_level": 0.814800, "version": "OS0.6.1.claude"}
