@@ -3,8 +3,13 @@
 Convenience re-exports for common tool helpers.
 """
 
-from . import safety_demo  # noqa: F401
+# Import only available modules
+try:
+    from . import safety_demo  # noqa: F401
+    _SAFETY_DEMO_AVAILABLE = True
+except ImportError:
+    _SAFETY_DEMO_AVAILABLE = False
 
-__all__ = [
-    'safety_demo',
-]
+__all__ = []
+if _SAFETY_DEMO_AVAILABLE:
+    __all__.append('safety_demo')

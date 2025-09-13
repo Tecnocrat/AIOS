@@ -1,0 +1,239 @@
+<UserControl x:Class="AIOS.UI.Controls.RuntimeIntelligenceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1200">
+    
+    <UserControl.Resources>
+        <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#FF28A745"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        
+        <Style x:Key="StatusTextStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="#FFF5F5F5">
+        <!-- Loading Panel -->
+        <Grid x:Name="LoadingPanel" Visibility="Visible">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ProgressBar IsIndeterminate="True" Width="200" Height="20" Margin="0,0,0,10"/>
+                <TextBlock Text="Initializing Runtime Intelligence..." FontSize="14" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Main Content -->
+        <ScrollViewer x:Name="MainContent" Visibility="Collapsed">
+            <StackPanel Margin="20">
+                <!-- Header -->
+                <Border Background="#FF28A745" CornerRadius="5" Padding="15" Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="📊 Runtime Intelligence Control Center" Foreground="White" FontSize="20" FontWeight="Bold"/>
+                        <TextBlock Text="Interface Supercell → Runtime Intelligence → AI Intelligence (via Cytoplasm)" 
+                                  Foreground="White" FontSize="12" Opacity="0.8"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Architecture Display -->
+                <GroupBox Header="System Architecture" Margin="0,0,0,20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                            <Border Background="#FF007ACC" CornerRadius="8" Padding="15,10" Margin="5">
+                                <TextBlock Text="🖥️ Interface Supercell" Foreground="White" FontWeight="Bold"/>
+                            </Border>
+                            <TextBlock Text="→" FontSize="20" VerticalAlignment="Center" Margin="10,0"/>
+                            <Border Background="#FF28A745" CornerRadius="8" Padding="15,10" Margin="5">
+                                <TextBlock Text="📊 Runtime Intelligence" Foreground="White" FontWeight="Bold"/>
+                            </Border>
+                            <TextBlock Text="→" FontSize="20" VerticalAlignment="Center" Margin="10,0"/>
+                            <Border Background="#FFFF6B35" CornerRadius="8" Padding="15,10" Margin="5">
+                                <TextBlock Text="🧬 AI Intelligence" Foreground="White" FontWeight="Bold"/>
+                            </Border>
+                        </StackPanel>
+                        
+                        <TextBlock Grid.Row="1" Text="Cytoplasm manages Runtime Intelligence ↔ AI Intelligence communication" 
+                                  HorizontalAlignment="Center" FontStyle="Italic" Foreground="Gray" Margin="0,10"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- System Status -->
+                <GroupBox Header="Runtime Intelligence Status" Margin="0,0,0,20">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Text="System Health:" Grid.Column="0" Margin="0,0,10,0"/>
+                        <TextBlock x:Name="HealthStatusText" Text="Checking..." Grid.Column="1" Style="{StaticResource StatusTextStyle}"/>
+                        <Button x:Name="RefreshHealthButton" Content="🔄 Refresh" Grid.Column="2" 
+                               Style="{StaticResource ActionButtonStyle}" Click="RefreshHealthButton_Click"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Available Tools -->
+                <GroupBox Header="Available Runtime Intelligence Tools" Margin="0,0,0,20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="150"/>
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                            <Button x:Name="RefreshToolsButton" Content="🔄 Refresh Tools" 
+                                   Style="{StaticResource ActionButtonStyle}" Click="RefreshToolsButton_Click"/>
+                            <TextBlock Text="Tools Available:" VerticalAlignment="Center" Margin="20,0,5,0"/>
+                            <TextBlock x:Name="ToolCountText" Text="0" Style="{StaticResource StatusTextStyle}"/>
+                        </StackPanel>
+                        
+                        <ListBox x:Name="ToolsListBox" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="5">
+                                        <TextBlock Text="{Binding Name}" FontWeight="Bold" Width="200"/>
+                                        <TextBlock Text="{Binding Type}" Foreground="Blue" Width="100"/>
+                                        <TextBlock Text="{Binding Available}" Foreground="Green" Width="80"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Runtime Intelligence Operations -->
+                <GroupBox Header="Visual Intelligence Operations" Margin="0,0,0,20">
+                    <StackPanel>
+                        <!-- Visual Intelligence Processing -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <Button x:Name="ProcessVisualIntelligenceButton" Content="🔍 Process Visual Intelligence" 
+                                       Style="{StaticResource ActionButtonStyle}" Click="ProcessVisualIntelligenceButton_Click"/>
+                                <ComboBox x:Name="AnalysisDepthComboBox" VerticalAlignment="Center" Margin="10,0" Width="120">
+                                    <ComboBoxItem Content="Standard" IsSelected="True"/>
+                                    <ComboBoxItem Content="Enhanced"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+
+                        <!-- Status Display -->
+                        <Border Background="#FF3E3E42" CornerRadius="5" Padding="10" Margin="0,0,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Text="Last Operation:" Grid.Column="0" Foreground="White" Margin="0,0,10,0"/>
+                                <TextBlock x:Name="LastOperationText" Text="None" Grid.Column="1" Foreground="White"/>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Continuous Monitoring -->
+                <GroupBox Header="Continuous Monitoring" Margin="0,0,0,20">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBlock Text="Interval (seconds):" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBox x:Name="MonitoringIntervalTextBox" Text="30" Grid.Column="1" VerticalAlignment="Center"/>
+                            <Button x:Name="StartMonitoringButton" Content="▶️ Start Monitoring" Grid.Column="2" 
+                                   Style="{StaticResource ActionButtonStyle}" Click="StartMonitoringButton_Click"/>
+                            
+                            <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <TextBlock Text="Status:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                                <TextBlock x:Name="MonitoringStatusText" Text="Stopped" Style="{StaticResource StatusTextStyle}" Foreground="Gray"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Results Display -->
+                <GroupBox Header="Latest Results" Margin="0,0,0,20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="200"/>
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                            <Button x:Name="ClearResultsButton" Content="🗑️ Clear Results" 
+                                   Style="{StaticResource ActionButtonStyle}" Click="ClearResultsButton_Click"/>
+                            <Button x:Name="ExportResultsButton" Content="💾 Export Results" 
+                                   Style="{StaticResource ActionButtonStyle}" Click="ExportResultsButton_Click"/>
+                        </StackPanel>
+                        
+                        <ScrollViewer Grid.Row="1">
+                            <TextBox x:Name="ResultsTextBox" 
+                                     IsReadOnly="True"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                     VerticalScrollBarVisibility="Auto"
+                                     FontFamily="Consolas"
+                                     FontSize="11"
+                                     Background="#FFF9F9F9"/>
+                        </ScrollViewer>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Communication Status -->
+                <GroupBox Header="Communication Status">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Interface ↔ Runtime Intelligence" FontWeight="Bold" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="InterfaceRuntimeStatusText" Text="Active" Foreground="Green"/>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Runtime Intelligence ↔ AI Intelligence" FontWeight="Bold" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="RuntimeAIStatusText" Text="Managed by Cytoplasm" Foreground="Blue"/>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="Cytoplasm Bridge" FontWeight="Bold" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="CytoplasmStatusText" Text="Monitoring" Foreground="Orange"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
