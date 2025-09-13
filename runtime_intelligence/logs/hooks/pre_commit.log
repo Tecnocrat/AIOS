@@ -36,3 +36,5 @@
 
 {"timestamp":"2025-09-13T16:38:34.0998912+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":14,"criticality_warn":null,"profile":"full"}}
 
+{"timestamp":"2025-09-13T20:27:47.1486419+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":"TACHYONIC_EVOLUTION_SUCCESS_REPORT.md","size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
