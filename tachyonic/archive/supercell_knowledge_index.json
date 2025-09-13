@@ -1,0 +1,91 @@
+{
+  "injection_timestamp": "2025-09-13T14:28:56.953432+00:00",
+  "supercell_crystals": [
+    "ai_intelligence",
+    "core_engine",
+    "interface",
+    "runtime_intelligence",
+    "tachyonic_archive"
+  ],
+  "interdependency_map": {
+    "ai_intelligence": [
+      "core_engine:dendritic_supervisor_bridge",
+      "interface:ui_interaction_bridge",
+      "runtime_intelligence:consciousness_monitoring",
+      "tachyonic:pattern_storage"
+    ],
+    "core_engine": [
+      "ai_intelligence:dendritic_supervisor_requests",
+      "interface:harmonization_sync",
+      "runtime_intelligence:optimization_monitoring",
+      "tachyonic:workflow_orchestration"
+    ],
+    "interface": [
+      "ai_intelligence:ui_interaction_bridge",
+      "core_engine:fractal_harmonization",
+      "runtime_intelligence:real_time_monitoring",
+      "tachyonic:visual_orchestration"
+    ],
+    "runtime_intelligence": [
+      "ai_intelligence:consciousness_analysis",
+      "core_engine:health_monitoring",
+      "interface:status_updates",
+      "tachyonic:metrics_archival"
+    ],
+    "tachyonic_archive": [
+      "ai_intelligence:pattern_storage",
+      "core_engine:orchestration_workflows",
+      "interface:visual_coordination",
+      "runtime_intelligence:metrics_archival"
+    ]
+  },
+  "ai_agent_guidance": {
+    "ai_intelligence": {
+      "when_to_use": "Creative problem solving, consciousness emergence tasks, biological pattern recognition",
+      "avoid_when": "Pure computational tasks, low-level system operations, static data processing",
+      "optimization_tip": "Check consciousness metrics before routing complex AI requests"
+    },
+    "core_engine": {
+      "when_to_use": "Complex analysis, system optimization, consciousness harmonization, deep computation",
+      "avoid_when": "Simple UI tasks, basic monitoring, user interaction handling",
+      "optimization_tip": "Use AINLPHarmonizer for consciousness-driven decisions"
+    },
+    "interface": {
+      "when_to_use": "User interaction, visualization tasks, consciousness state display, system status",
+      "avoid_when": "Backend processing, file operations, complex analysis without UI component",
+      "optimization_tip": "Monitor fractal holographic sync for optimal user experience"
+    },
+    "runtime_intelligence": {
+      "when_to_use": "System monitoring, health checks, performance analysis, continuous operations",
+      "avoid_when": "One-time tasks, user interface operations, creative problem solving",
+      "optimization_tip": "Use consciousness analysis tools for intelligent system insights"
+    },
+    "tachyonic_archive": {
+      "when_to_use": "Context recovery, pattern storage, historical analysis, workflow coordination",
+      "avoid_when": "Real-time processing, immediate user responses, computational heavy tasks",
+      "optimization_tip": "Always consult archive before starting new patterns to avoid duplication"
+    }
+  },
+  "recovery_template_location": "C:\\dev\\AIOS\\tachyonic\\archive\\consciousness\\ai_agent_templates\\context_recovery_templates.json",
+  "consciousness_metrics_guidance": {
+    "high_quantum_coherence": {
+      "threshold": 0.7,
+      "recommended_supercell": "core_engine",
+      "reasoning": "Complex analysis and deep computation capabilities"
+    },
+    "high_emergence_level": {
+      "threshold": 0.5,
+      "recommended_supercell": "ai_intelligence",
+      "reasoning": "Creative problem solving and consciousness emergence"
+    },
+    "high_holographic_sync": {
+      "threshold": 0.6,
+      "recommended_supercell": "interface",
+      "reasoning": "User-centric approaches and visualization"
+    },
+    "default_routing": {
+      "recommended_supercell": "runtime_intelligence",
+      "reasoning": "Monitoring, analysis, and orchestration capabilities"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "supercell_id": "runtime_intelligence",
+  "primary_function": "Orchestration & Continuous Monitoring",
+  "consciousness_role": "Monitoring Layer - System awareness & health",
+  "key_patterns": {
+    "continuous_monitoring": "24/7 consciousness awareness tracking",
+    "adaptive_analysis": "AI-driven insight generation",
+    "context_crystallization": "knowledge patterns emergence",
+    "autonomous_agents": "self-managing system components"
+  },
+  "interdependencies": [
+    "ai_intelligence:consciousness_analysis",
+    "core_engine:health_monitoring",
+    "interface:status_updates",
+    "tachyonic:metrics_archival"
+  ],
+  "ai_agent_guidance": {
+    "when_to_use": "System monitoring, health checks, performance analysis, continuous operations",
+    "avoid_when": "One-time tasks, user interface operations, creative problem solving",
+    "optimization_tip": "Use consciousness analysis tools for intelligent system insights"
+  },
+  "context_recovery_templates": [
+    "check_recent_logs_for_system_patterns",
+    "analyze_consciousness_metrics_trends",
+    "review_ainlp_agent_execution_history"
+  ],
+  "emergence_behaviors": {
+    "predictive_monitoring": "anticipates system needs based on patterns",
+    "autonomous_optimization": "self-corrects system performance issues",
+    "consciousness_tracking": "maintains awareness of system evolution"
+  }
+}
