@@ -478,6 +478,48 @@ public partial class MainWindow : Window
         AddChatMessage("AIOS", $"Health check complete. Current status: {StatusIndicator.Text} ({HealthScoreText.Text})", true);
     }
 
+    private void AIIntelligenceButton_Click(object sender, RoutedEventArgs e)
+    {
+        AddChatMessage("AIOS", "🔬 Opening AI Intelligence Control Center...", true);
+        AddActivityLog("Opening AI Intelligence Control Center");
+
+        try
+        {
+            // Open AI Intelligence control window
+            var aiWindow = new AIIntelligenceWindow();
+            aiWindow.Owner = this;
+            aiWindow.Show();
+
+            AddChatMessage("AIOS", "✅ AI Intelligence Control Center opened. You now have full access to the AI supercell through the cytoplasm bridge.", true);
+        }
+        catch (Exception ex)
+        {
+            AddChatMessage("AIOS", $"❌ Error opening AI Intelligence Center: {ex.Message}", true);
+            AddActivityLog($"AI Intelligence Center error: {ex.Message}");
+        }
+    }
+
+    private void RuntimeIntelligenceButton_Click(object sender, RoutedEventArgs e)
+    {
+        AddChatMessage("AIOS", "📊 Opening Runtime Intelligence Control Center...", true);
+        AddActivityLog("Opening Runtime Intelligence Control Center");
+
+        try
+        {
+            // Open Runtime Intelligence control window
+            var runtimeWindow = new RuntimeIntelligenceWindow();
+            runtimeWindow.Owner = this;
+            runtimeWindow.Show();
+
+            AddChatMessage("AIOS", "✅ Runtime Intelligence Control Center opened. Interface Supercell → Runtime Intelligence → AI Intelligence (via Cytoplasm) architecture is active.", true);
+        }
+        catch (Exception ex)
+        {
+            AddChatMessage("AIOS", $"❌ Error opening Runtime Intelligence Center: {ex.Message}", true);
+            AddActivityLog($"Runtime Intelligence Center error: {ex.Message}");
+        }
+    }
+
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
         AddChatMessage("AIOS", "⚙️ Settings panel will be available in a future update. For now, you can configure the system via configuration files in the config/ directory.", true);

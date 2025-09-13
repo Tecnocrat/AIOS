@@ -1,312 +1,328 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "python-system-health",
-            "command": "python",
-            "type": "shell",
-            "args": [
-                "runtime_intelligence/tools/system_health_check.py"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "python-admin-tool",
-            "command": "python",
-            "type": "shell",
-            "args": [
-                "runtime_intelligence/tools/aios_admin.py"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "python-system-status",
-            "command": "python",
-            "type": "shell",
-            "args": [
-                "runtime_intelligence/tools/system_status_report.py"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "ui-compile-sample",
-            "type": "shell",
-            "command": "python",
-            "args": [
-                "-m",
-                "src.tools.ui_proto.compiler",
-                "--in",
-                "${workspaceFolder}/docs/ui/ainlp_ui_sample.yaml",
-                "--out",
-                "${workspaceFolder}/interface/AIOS.UI/generated"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/ai",
-                "env": {
-                    "PYTHONPATH": "${workspaceFolder}/ai/src"
-                }
-            },
-            "group": "build",
-            "problemMatcher": []
-        },
-        {
-            "label": "build",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/AIOS.sln",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary;ForceNoAlign"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "build-services",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/interface/AIOS.Services/AIOS.Services.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary;ForceNoAlign"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": "build"
-        },
-        {
-            "label": "build-models",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/interface/AIOS.Models/AIOS.Models.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary;ForceNoAlign"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": "build"
-        },
-        {
-            "label": "build-ui",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/interface/AIOS.UI/AIOS.UI.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary;ForceNoAlign"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": "build"
-        },
-        {
-            "label": "build-cpp-core",
-            "command": "cmake",
-            "type": "shell",
-            "args": [
-                "--build",
-                "${workspaceFolder}/core/build",
-                "--config",
-                "Debug"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/core"
-            },
-            "problemMatcher": "$gcc",
-            "group": "build"
-        },
-        {
-            "label": "setup-cpp-build",
-            "command": "cmake",
-            "type": "shell",
-            "args": [
-                "-B",
-                "build",
-                "-S",
-                ".",
-                "-DCMAKE_BUILD_TYPE=Debug"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/core"
-            },
-            "problemMatcher": "$gcc",
-            "group": "build"
-        },
-        {
-            "label": "python-install-deps",
-            "command": "pip",
-            "type": "shell",
-            "args": [
-                "install",
-                "-r",
-                "requirements.txt"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/ai"
-            },
-            "problemMatcher": [],
-            "group": "build"
-        },
-        {
-            "label": "python-test-ai",
-            "command": "pytest",
-            "type": "shell",
-            "args": [
-                "-q",
-                "${workspaceFolder}/ai/tests"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/ai",
-                "env": {
-                    "PYTHONPATH": "${workspaceFolder}/ai/src"
-                }
-            },
-            "problemMatcher": [],
-            "group": "test"
-        },
-        {
-            "label": "publish",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "${workspaceFolder}/AIOS.sln",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary;ForceNoAlign"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "watch",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "watch",
-                "run",
-                "--project",
-                "${workspaceFolder}/interface/AIOS.UI/AIOS.UI.csproj"
-            ],
-            "problemMatcher": "$msCompile",
-            "isBackground": true
-        },
-        {
-            "label": "clean",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "clean",
-                "${workspaceFolder}/AIOS.sln"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "restore",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "restore",
-                "${workspaceFolder}/AIOS.sln"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build-integration",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "python-install-deps",
-                "build-models",
-                "build-services",
-                "build-ui"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "full-build",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "setup-cpp-build",
-                "build-cpp-core",
-                "python-install-deps",
-                "restore",
-                "build"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "run-tests",
-            "dependsOrder": "parallel",
-            "dependsOn": [
-                "python-test-ai"
-            ],
-            "group": "test"
-        },
-        {
-            "label": "start-mcp-server",
-            "type": "shell",
-            "command": "python -m src.core.mcp_server",
-            "isBackground": true,
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "never"
-            }
-        },
-        {
-            "label": "context-reindex",
-            "type": "shell",
-            "command": "python",
-            "args": [
-                "scripts/context_reindex.py",
-                "--emit-adjacency"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}",
-                "env": {
-                    "PYTHONPATH": "${workspaceFolder}/ai/src"
-                }
-            },
-            "problemMatcher": [],
-            "group": "build"
-        },
-        {
-            "label": "governance-local-scan",
-            "type": "shell",
-            "command": "pwsh",
-            "args": [
-                "-NoLogo",
-                "-NoProfile",
-                "-Command",
-                "${workspaceFolder}/.githooks/pre-commit; if($LASTEXITCODE -ne 0){ exit 1 }"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}" 
-            },
-            "problemMatcher": [],
-            "group": "test",
-            "detail": "Run pre-commit hook logic on-demand for iterative governance checks"
-        },
-        {
-            "label": "governance-cycle",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "context-reindex",
-                "governance-local-scan"
-            ],
-            "group": "build",
-            "detail": "AINLP governance loop: refresh context index then execute hook scan"
-        }
-    ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "python-system-health",
+			"command": "python",
+			"type": "shell",
+			"args": [
+				"runtime_intelligence/tools/system_health_check.py"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "python-admin-tool",
+			"command": "python",
+			"type": "shell",
+			"args": [
+				"runtime_intelligence/tools/aios_admin.py"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "python-system-status",
+			"command": "python",
+			"type": "shell",
+			"args": [
+				"runtime_intelligence/tools/system_status_report.py"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "ui-compile-sample",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-m",
+				"src.tools.ui_proto.compiler",
+				"--in",
+				"${workspaceFolder}/docs/ui/ainlp_ui_sample.yaml",
+				"--out",
+				"${workspaceFolder}/interface/AIOS.UI/generated"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/ai/src"
+				}
+			},
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "build",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/AIOS.sln",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "build-services",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/interface/AIOS.Services/AIOS.Services.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile",
+			"group": "build"
+		},
+		{
+			"label": "build-models",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/interface/AIOS.Models/AIOS.Models.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile",
+			"group": "build"
+		},
+		{
+			"label": "build-ui",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/interface/AIOS.UI/AIOS.UI.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile",
+			"group": "build"
+		},
+		{
+			"label": "build-cpp-core",
+			"command": "cmake",
+			"type": "shell",
+			"args": [
+				"--build",
+				"${workspaceFolder}/core/build",
+				"--config",
+				"Debug"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/core"
+			},
+			"problemMatcher": "$gcc",
+			"group": "build"
+		},
+		{
+			"label": "setup-cpp-build",
+			"command": "cmake",
+			"type": "shell",
+			"args": [
+				"-B",
+				"build",
+				"-S",
+				".",
+				"-DCMAKE_BUILD_TYPE=Debug"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/core"
+			},
+			"problemMatcher": "$gcc",
+			"group": "build"
+		},
+		{
+			"label": "python-install-deps",
+			"command": "pip",
+			"type": "shell",
+			"args": [
+				"install",
+				"-r",
+				"requirements.txt"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai"
+			},
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "python-test-ai",
+			"command": "pytest",
+			"type": "shell",
+			"args": [
+				"-q",
+				"${workspaceFolder}/ai/tests"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/ai/src"
+				}
+			},
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "publish",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"publish",
+				"${workspaceFolder}/AIOS.sln",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary;ForceNoAlign"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "watch",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"watch",
+				"run",
+				"--project",
+				"${workspaceFolder}/interface/AIOS.UI/AIOS.UI.csproj"
+			],
+			"problemMatcher": "$msCompile",
+			"isBackground": true
+		},
+		{
+			"label": "clean",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"clean",
+				"${workspaceFolder}/AIOS.sln"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "restore",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"restore",
+				"${workspaceFolder}/AIOS.sln"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "build-integration",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"python-install-deps",
+				"build-models",
+				"build-services",
+				"build-ui"
+			],
+			"group": "build"
+		},
+		{
+			"label": "full-build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"setup-cpp-build",
+				"build-cpp-core",
+				"python-install-deps",
+				"restore",
+				"build"
+			],
+			"group": "build"
+		},
+		{
+			"label": "run-tests",
+			"dependsOrder": "parallel",
+			"dependsOn": [
+				"python-test-ai"
+			],
+			"group": "test"
+		},
+		{
+			"label": "start-mcp-server",
+			"type": "shell",
+			"command": "python -m src.core.mcp_server",
+			"isBackground": true,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "never"
+			}
+		},
+		{
+			"label": "context-reindex",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"scripts/context_reindex.py",
+				"--emit-adjacency"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/ai/src"
+				}
+			},
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "governance-local-scan",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"${workspaceFolder}/.githooks/pre-commit; if($LASTEXITCODE -ne 0){ exit 1 }"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"group": "test",
+			"detail": "Run pre-commit hook logic on-demand for iterative governance checks"
+		},
+		{
+			"label": "governance-cycle",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"context-reindex",
+				"governance-local-scan"
+			],
+			"group": "build",
+			"detail": "AINLP governance loop: refresh context index then execute hook scan"
+		},
+		{
+			"label": "test-enhanced-visual-bridge",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"runtime_intelligence/tools/enhanced_visual_intelligence_bridge.py"
+			]
+		},
+		{
+			"label": "test-biological-monitor",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"runtime_intelligence/tools/biological_architecture_monitor.py"
+			]
+		}
+	]
 }

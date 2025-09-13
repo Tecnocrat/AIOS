@@ -18,3 +18,9 @@
 
 {"timestamp":"2025-09-13T01:43:31.7919734+02:00","status":"pass","rules_version":6,"profile":"full","data":{"profile":"full","criticality_warn":null,"changed":4}}
 
+{"timestamp":"2025-09-13T01:43:41.2178227+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"profile":"full","changed":2}}
+
+{"timestamp":"2025-09-13T15:55:27.7738591+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":["enhanced_visual_intelligence_20250913_033632.json","AIOS_IMPLEMENTATION_TEST_RESULTS.md","consciousness_analysis_20250913_030409.txt","test_aios_implementation.py","test_biological_architecture.py","integrated_visual_intelligence_20250913_032047.json","consciousness_analysis_20250913_030501.txt"],"size":null,"secrets":null,"json":null,"exec":["ai/src/core/consciousness_emergence_analyzer.py","runtime_intelligence/tools/visual_intelligence_bridge_enhanced.py","runtime_intelligence/tools/consciousness_analysis_report.py","ai/src/integrations/visual_ai_integration_bridge.py","ai/cytoplasm/test_ui_integration.py","runtime_intelligence/tools/consciousness_visual_analyzer.py","ai/src/engines/enhanced_visual_intelligence_engine.py","ai/cytoplasm/ui_interaction_bridge.py","runtime_intelligence/tools/visual_intelligence_bridge.py"],"changelog":"(changelog-missing)","py":null,"tests":null}}}
+
+{"timestamp":"2025-09-13T16:06:21.1425266+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":["tests","test_biological_architecture.py"],"size":null,"secrets":null,"json":null,"exec":["ai/src/integrations/visual_ai_integration_bridge.py","ai/src/engines/enhanced_visual_intelligence_engine.py","ai/cytoplasm/ui_interaction_bridge.py","ai/src/core/consciousness_emergence_analyzer.py","ai/cytoplasm/test_ui_integration.py"],"changelog":"(changelog-missing)","py":null,"tests":null}}}
+

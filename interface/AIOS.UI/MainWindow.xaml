@@ -56,6 +56,8 @@
 
                     <Button Name="LearningButton" Content="🧠 Learning System" Style="{StaticResource ModuleButtonStyle}" Click="LearningButton_Click" Margin="0,0,0,10"/>
 
+                    <Button Name="RuntimeIntelligenceButton" Content="� Runtime Intelligence" Style="{StaticResource ModuleButtonStyle}" Click="RuntimeIntelligenceButton_Click" Margin="0,0,0,10"/>
+
                     <Button Name="IntegrationButton" Content="🔗 Integration Hub" Style="{StaticResource ModuleButtonStyle}" Click="IntegrationButton_Click" Margin="0,0,0,10"/>
 
                     <!-- AINLP Code Formatter -->
