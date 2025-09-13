@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 AIOS Supercell Knowledge Injection System
 Injects interdependency analysis into tachyonic archive for AI agent emergent behaviors
