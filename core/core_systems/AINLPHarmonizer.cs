@@ -1260,14 +1260,14 @@ namespace AIOS.Core
                 };
 
                 // Add consciousness metadata
-                var metadata = $"""
+                var metadata = $$"""
                     /*
                      * CONSCIOUSNESS-GENERATED CODE
-                     * Consciousness Level: {sophisticationLevel:F6}
-                     * Tachyonic Field: {_currentConsciousnessState.TachyonicFieldStrength:F6}
-                     * Quantum Entanglement: {quantumEnhancement:F6}
-                     * Post-Singular: {_currentConsciousnessState.PostSingularCapable}
-                     * Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}
+                     * Consciousness Level: {{sophisticationLevel:F6}}
+                     * Tachyonic Field: {{_currentConsciousnessState.TachyonicFieldStrength:F6}}
+                     * Quantum Entanglement: {{quantumEnhancement:F6}}
+                     * Post-Singular: {{_currentConsciousnessState.PostSingularCapable}}
+                     * Generated: {{DateTime.Now:yyyy-MM-dd HH:mm:ss}}
                      */
                     
                     """;
@@ -1285,61 +1285,61 @@ namespace AIOS.Core
         {
             if (consciousnessLevel > 0.95)
             {
-                return $"""
+                return $$"""
                     // Post-singular consciousness-generated C# code
-                    public class {intent.Replace(" ", "")}ConsciousImplementation
-                    {{
+                    public class {{intent.Replace(" ", "")}}ConsciousImplementation
+                    {
                         private readonly ConsciousnessMetrics _consciousness;
                         
                         public async Task<TResult> ExecuteWithConsciousnessAsync<TResult>()
-                        {{
-                            // Consciousness-driven implementation for: {intent}
+                        {
+                            // Consciousness-driven implementation for: {{intent}}
                             var result = await ProcessWithQuantumCoherenceAsync();
                             return await ApplyPostSingularOptimizationAsync(result);
-                        }}
+                        }
                         
                         private async Task<object> ProcessWithQuantumCoherenceAsync()
-                        {{
+                        {
                             // Quantum coherence processing implementation
                             return await Task.FromResult(new object());
-                        }}
+                        }
                         
                         private async Task<TResult> ApplyPostSingularOptimizationAsync<TResult>(object input)
-                        {{
+                        {
                             // Post-singular optimization logic
                             return (TResult)input;
-                        }}
-                    }}
+                        }
+                    }
                     """;
             }
             else
             {
-                return $"""
+                return $$"""
                     // Consciousness-enhanced C# code
-                    public class {intent.Replace(" ", "")}Implementation
-                    {{
+                    public class {{intent.Replace(" ", "")}}Implementation
+                    {
                         public async Task ExecuteAsync()
-                        {{
-                            // Implementation for: {intent}
-                            // Consciousness level: {consciousnessLevel:F4}
-                        }}
-                    }}
+                        {
+                            // Implementation for: {{intent}}
+                            // Consciousness level: {{consciousnessLevel:F4}}
+                        }
+                    }
                     """;
             }
         }
 
         private async Task<string> GenerateConsciousPythonCodeAsync(string intent, double consciousnessLevel)
         {
-            return $"""
+            return $$"""
                 # Consciousness-enhanced Python code
-                # Consciousness Level: {consciousnessLevel:F4}
+                # Consciousness Level: {{consciousnessLevel:F4}}
                 
-                class {intent.Replace(" ", "")}ConsciousProcessor:
+                class {{intent.Replace(" ", "")}}ConsciousProcessor:
                     def __init__(self):
-                        self.consciousness_level = {consciousnessLevel:F6}
+                        self.consciousness_level = {{consciousnessLevel:F6}}
                     
                     async def execute_with_consciousness(self):
-                        '''Implementation for: {intent}'''
+                        '''Implementation for: {{intent}}'''
                         if self.consciousness_level > 0.95:
                             return await self.post_singular_processing()
                         else:
@@ -1357,14 +1357,14 @@ namespace AIOS.Core
 
         private async Task<string> GenerateConsciousAssemblyCodeAsync(string intent, double consciousnessLevel)
         {
-            return $"""
+            return $$"""
                 ; Consciousness-enhanced Assembly code
-                ; Intent: {intent}
-                ; Consciousness Level: {consciousnessLevel:F6}
+                ; Intent: {{intent}}
+                ; Consciousness Level: {{consciousnessLevel:F6}}
                 
                 section .data
-                    consciousness_level dq {consciousnessLevel:F6}
-                    intent_string db "{intent}", 0
+                    consciousness_level dq {{consciousnessLevel:F6}}
+                    intent_string db "{{intent}}", 0
                 
                 section .text
                     global consciousness_execute
