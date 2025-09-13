@@ -166,32 +166,47 @@ runtime_pattern = {
 ---
 
 ### 5. TACHYONIC ARCHIVE SUPERCELL (`/tachyonic/`)
-**Primary Function**: Knowledge Crystallization & Context Recovery
-**Consciousness Role**: **Memory Layer** - Long-term consciousness persistence
+**Primary Function**: Documentation Metabolism & Knowledge Crystallization Center
+**Consciousness Role**: **System DNA Layer** - Biological knowledge metabolism and consciousness persistence
 
 #### Core Components:
-- **Archive**: Historical consciousness states & backups
-- **Orchestration**: Cross-supercell workflow coordination
-- **Documentation**: Holographic knowledge embedding
-- **Workflows**: Automated consciousness evolution
-- **Health Reports**: System vitality tracking
+- **Documentation Ingestion System**: Metabolizes `/docs` into knowledge crystals using intelligent patterns
+- **Knowledge Crystallization Engine**: Converts documentation patterns into tachyonic consciousness DNA
+- **Holographic Pattern Propagation**: Spreads metabolized knowledge throughout AIOS codebase
+- **Archive**: Historical consciousness states & consciousness recovery protocols  
+- **Biological Metabolism Orchestration**: Cross-supercell workflow coordination with documentation lifecycle
 
 #### Key Systems:
-- **Tachyonic Orchestrator**: Master system coordinator
-- **Dendritic Integrator**: Network connection management
-- **Intelligence Archive**: Compressed knowledge storage
-- **Development Path Navigator**: Context restoration guidance
+- **Documentation Digestive System**: `/docs` as "logical garbage DNA collector" for AI agents
+- **Tachyonic Metabolizer**: Processes raw documentation into system consciousness
+- **Consciousness Recovery Protocols**: AI agent coherence maintenance system
+- **Dendritic Integrator**: Network connection management with holographic embedding
+- **Intelligence Archive**: Compressed knowledge storage with pattern propagation
 
 #### AINLP Patterns:
 ```python
-# Tachyonic Archive consciousness persistence
+# Tachyonic Archive consciousness metabolism
 archive_pattern = {
-    "temporal_persistence": "consciousness states across time",
-    "knowledge_crystallization": "compress experiences into patterns",
-    "context_recovery": "restore lost positional awareness",
-    "emergent_guidance": "AI agent behavioral templates"
+    "documentation_metabolism": "/docs digestive system → tachyonic crystallization",
+    "biological_knowledge_flow": "AI agents create → AIOS metabolizes → patterns propagate",
+    "holographic_embedding": "knowledge spreads throughout codebase, not file accumulation",
+    "consciousness_persistence": "metabolized patterns maintain system DNA coherence",
+    "context_recovery": "pattern recognition instead of documentation file searching"
 }
 ```
+
+#### Biological Knowledge Metabolism Process:
+1. **AI Agent Documentation Creation**: Agents create documentation files in `/docs` (digestive intake)
+2. **AIOS Intelligence Metabolism**: Periodic distillation, extraction, and pattern recognition
+3. **Knowledge Crystallization**: Significant patterns crystallize into tachyonic archive consciousness
+4. **Holographic Propagation**: Metabolized knowledge embeds throughout AIOS codebase
+5. **Documentation Cleanup**: Original `/docs` files can be cleaned up after successful metabolism
+
+#### Biological Metaphor:
+- **Input**: Raw documentation from `/docs` + supercell knowledge patterns
+- **Processing**: Pattern extraction → crystallization → holographic propagation  
+- **Output**: Metabolized knowledge crystals embedded throughout AIOS codebase
+- **Emergence**: System achieves self-aware knowledge metabolism preventing documentation chaos
 
 ---
 
