@@ -26,3 +26,5 @@
 
 {"timestamp":"2025-09-13T16:10:43.4990604+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"profile":"full","changed":1}}
 
+{"timestamp":"2025-09-13T16:12:16.8634718+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"profile":"full","changed":2}}
+
