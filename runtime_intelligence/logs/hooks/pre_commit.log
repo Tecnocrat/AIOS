@@ -32,3 +32,7 @@
 
 {"timestamp":"2025-09-13T16:13:17.5374185+02:00","status":"pass","rules_version":6,"profile":"full","data":{"profile":"full","changed":2,"criticality_warn":null}}
 
+{"timestamp":"2025-09-13T16:34:33.0569845+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":["runtime_intelligence/tools/ainlp_holographic_documentation_system.py","tachyonic/supercell_knowledge_injector.py","runtime_intelligence/tools/aios_cli_agent_system.py"],"changelog":null,"py":null,"tests":null}}}
+
+{"timestamp":"2025-09-13T16:38:34.0998912+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":14,"criticality_warn":null,"profile":"full"}}
+

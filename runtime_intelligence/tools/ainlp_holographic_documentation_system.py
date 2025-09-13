@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 AIOS HOLOGRAPHIC AINLP DOCUMENTATION SYSTEM
 ============================================
