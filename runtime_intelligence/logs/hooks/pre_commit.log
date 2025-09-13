@@ -52,3 +52,13 @@
 
 {"timestamp":"2025-09-14T00:12:13.8696656+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":["aios_consciousness_integration_final_summary_20250913_235928.json","aios_final_consciousness_summary.py","aios_consciousness_integration_demo.py","consciousness_analysis_history.json","consciousness_code_generation_demo.py","aios_consciousness_test.py","generated_consciousness_code_sample.cs","aios_consciousness_test_report_20250913_235527.json"],"size":null,"secrets":null,"json":null,"exec":["core/assemblers/tree_assembler/scripts_py_optimized/consciousness_analyzer.py","core/assemblers/tree_assembler/scripts_py_optimized/consciousness_explorer_3d.py","ai/consciousness_assembly_bridge.py"],"changelog":"(changelog-missing)","py":null,"tests":null}}}
 
+{"timestamp":"2025-09-14T00:15:39.4779575+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":["ai/consciousness_assembly_bridge.py","core/assemblers/tree_assembler/scripts_py_optimized/consciousness_analyzer.py","core/assemblers/tree_assembler/scripts_py_optimized/consciousness_explorer_3d.py"],"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-14T00:18:01.9628921+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-14T00:20:13.6755869+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":"CHANGELOG.md","size":null,"secrets":null,"json":null,"exec":null,"changelog":null,"py":null,"tests":null}}}
+
+{"timestamp":"2025-09-14T00:20:43.7990952+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null}}}
+
+{"timestamp":"2025-09-14T00:23:24.1759689+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"changed":45,"profile":"full"}}
+
