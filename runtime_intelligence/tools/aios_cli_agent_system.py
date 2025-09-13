@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 AIOS CLI AI Agent System - Open Source LLAMA Integration
 Self-Analyzing, Self-Ingesting, Self-Distilling AI Agent Architecture
