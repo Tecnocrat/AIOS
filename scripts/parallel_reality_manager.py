@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Parallel Reality Manager for Holographic Execution Framework
 Enables quantum fluctuation-driven evolution across parallel AIOS instances
