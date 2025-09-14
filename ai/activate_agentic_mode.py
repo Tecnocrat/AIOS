@@ -47,7 +47,7 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
         return activate_fallback_mode()
     
     workspace_root = Path(__file__).parent.parent
-    target_path = target_path or str(workspace_root)
+    target_path = Path(target_path) if target_path else workspace_root
     
     try:
         # Step 1: Quality Analysis via Emoji Detection
