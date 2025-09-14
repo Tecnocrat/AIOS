@@ -70,3 +70,5 @@
 
 {"timestamp":"2025-09-14T00:29:19.3974367+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"changed":3,"profile":"full"}}
 
+{"timestamp":"2025-09-14T05:40:05.5300810+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
