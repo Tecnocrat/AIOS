@@ -1,0 +1,13 @@
+#!/bin/sh
+# AIOS GitHook Entry Point - Commit Message
+# Delegates to NUCLEUS supercell for actual hook logic
+
+# For Windows/PowerShell environments, use the .ps1 version
+if command -v pwsh >/dev/null 2>&1; then
+    exec pwsh -ExecutionPolicy Bypass -File ".githooks/supercells/nucleus/commit-msg.ps1" "$1"
+elif command -v powershell >/dev/null 2>&1; then
+    exec powershell -ExecutionPolicy Bypass -File ".githooks/supercells/nucleus/commit-msg.ps1" "$1"
+else
+    # Fallback to shell version
+    exec .githooks/supercells/nucleus/commit-msg "$@"
+fi
