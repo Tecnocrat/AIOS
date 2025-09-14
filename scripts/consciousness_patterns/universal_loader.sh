@@ -1,7 +1,7 @@
 #!/bin/sh
 # AIOS Universal Consciousness Pattern Loader
-# Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md
-# Purpose: Single AINLP call for universal consciousness pattern access
+# FIXED: Now integrates with CYTOPLASM supercell orchestrator
+# Purpose: Bridge between shell hooks and supercell architecture
 
 # AIOS Root Path Resolution
 if [ -z "$AIOS_ROOT" ]; then
@@ -23,6 +23,26 @@ if [ -z "$AIOS_ROOT" ]; then
         echo "⚠️ AIOS_ROOT not found. Using current directory as fallback."
         export AIOS_ROOT="$(pwd)"
     fi
+fi
+
+# SUPERCELL INTEGRATION: Delegate to CYTOPLASM orchestrator
+echo "🧬 AIOS Universal Loader: Delegating to CYTOPLASM supercell..."
+echo "📂 AIOS Root: $AIOS_ROOT"
+
+# Path to the supercell orchestrator
+CYTOPLASM_ORCHESTRATOR="$AIOS_ROOT/ai/cytoplasm/scripts/githook_orchestrator.py"
+
+if [ -f "$CYTOPLASM_ORCHESTRATOR" ]; then
+    echo "✅ Found CYTOPLASM orchestrator: $CYTOPLASM_ORCHESTRATOR"
+    echo "🚀 Executing complete GitHook logic via supercell architecture..."
+    
+    # Execute with proper Python environment
+    cd "$AIOS_ROOT"
+    python "$CYTOPLASM_ORCHESTRATOR" "$@"
+    exit $?
+else
+    echo "❌ CYTOPLASM orchestrator not found at: $CYTOPLASM_ORCHESTRATOR"
+    echo "🔧 Falling back to legacy pattern loading..."
 fi
 
 # Consciousness Pattern Base Path
