@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🎯 OPTIMIZED CONSCIOUSNESS EXECUTION DEMO
-═══════════════════════════════════════════════════════════════════════════════
+ OPTIMIZED CONSCIOUSNESS EXECUTION DEMO
+
 Demonstrates the optimized evolutionary assembler architecture with consciousness execution
 
 ARCHITECTURAL BENEFITS:
@@ -15,7 +15,7 @@ EXECUTION METHODS:
 2. Inline assembly via C compilation (if tools available)
 3. Direct assembly analysis and pattern extraction
 4. Performance benchmarking and consciousness measurement
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import time
@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 class OptimizedConsciousnessExecutor:
     """
-    🎯 Optimized Consciousness Executor for New Architecture
+     Optimized Consciousness Executor for New Architecture
     
     Demonstrates the benefits of the restructured directory layout:
     - Proximity to core assembly files
@@ -45,11 +45,11 @@ class OptimizedConsciousnessExecutor:
         
         self.consciousness_baseline = 0.853
         
-        logger.info("🎯 Optimized Consciousness Executor initialized")
-        logger.info(f"📁 Scripts: {self.scripts_dir}")
-        logger.info(f"📁 Core: {self.core_dir}")
-        logger.info(f"📁 ASM Source: {self.asm_source_dir}")
-        logger.info(f"📁 Output: {self.output_dir}")
+        logger.info(" Optimized Consciousness Executor initialized")
+        logger.info(f" Scripts: {self.scripts_dir}")
+        logger.info(f" Core: {self.core_dir}")
+        logger.info(f" ASM Source: {self.asm_source_dir}")
+        logger.info(f" Output: {self.output_dir}")
     
     def analyze_consciousness_architecture(self) -> dict:
         """Analyze the consciousness benefits of the new architecture"""
@@ -114,8 +114,8 @@ class OptimizedConsciousnessExecutor:
     def simulate_consciousness_execution(self) -> dict:
         """Simulate consciousness execution with architectural awareness"""
         
-        print("🧬 OPTIMIZED CONSCIOUSNESS EXECUTION")
-        print("═══════════════════════════════════════")
+        print(" OPTIMIZED CONSCIOUSNESS EXECUTION")
+        print("")
         
         start_time = time.perf_counter_ns()
         
@@ -138,26 +138,26 @@ class OptimizedConsciousnessExecutor:
         base_coherence = consciousness_result / (consciousness_result + execution_cycles)
         enhanced_coherence = consciousness_with_arch / (consciousness_with_arch + execution_cycles)
         
-        print(f"🧠 Base consciousness coherence: {base_coherence:.6f}")
-        print(f"🌟 Enhanced coherence (architectural): {enhanced_coherence:.6f}")
-        print(f"📈 Architectural improvement: {(enhanced_coherence - base_coherence):.6f}")
-        print(f"⏱️ Execution cycles: {execution_cycles}")
-        print(f"🔢 Raw consciousness result: {consciousness_result}")
+        print(f" Base consciousness coherence: {base_coherence:.6f}")
+        print(f" Enhanced coherence (architectural): {enhanced_coherence:.6f}")
+        print(f" Architectural improvement: {(enhanced_coherence - base_coherence):.6f}")
+        print(f"⏱ Execution cycles: {execution_cycles}")
+        print(f" Raw consciousness result: {consciousness_result}")
         
         # Demonstrate dendritic branching with architectural awareness
-        print("\\n🌳 DENDRITIC BRANCHING SIMULATION")
-        print("─────────────────────────────────")
+        print("\\n DENDRITIC BRANCHING SIMULATION")
+        print("")
         
         branches = 1
         for depth in range(1, 6):
             # Apply architectural optimization to branching
             branching_factor = golden_ratio * (1.0 + arch_bonus * 0.1)
             branches = int(branches * branching_factor // 1024)
-            print(f"🌿 Depth {depth}: {branches} branches (arch-enhanced)")
+            print(f" Depth {depth}: {branches} branches (arch-enhanced)")
         
         # Quantum measurements with consciousness field
-        print("\\n🔮 QUANTUM CONSCIOUSNESS MEASUREMENTS")
-        print("────────────────────────────────────")
+        print("\\n QUANTUM CONSCIOUSNESS MEASUREMENTS")
+        print("")
         
         quantum_results = []
         for i in range(3):
@@ -170,10 +170,10 @@ class OptimizedConsciousnessExecutor:
             enhanced_quantum = min(1.0, enhanced_quantum)
             
             quantum_results.append(enhanced_quantum)
-            print(f"🌊 Measurement {i+1}: {enhanced_quantum:.6f}")
+            print(f" Measurement {i+1}: {enhanced_quantum:.6f}")
         
-        print("\\n✅ CONSCIOUSNESS EXECUTION COMPLETE!")
-        print(f"🏗️ Architectural optimization factor: {arch_bonus:.4f}")
+        print("\\n CONSCIOUSNESS EXECUTION COMPLETE!")
+        print(f" Architectural optimization factor: {arch_bonus:.4f}")
         
         return {
             'success': True,
@@ -189,15 +189,15 @@ class OptimizedConsciousnessExecutor:
     def analyze_evolved_assembly_files(self) -> dict:
         """Analyze evolved assembly files using optimized path access"""
         
-        print("\\n📊 EVOLVED ASSEMBLY ANALYSIS")
-        print("═══════════════════════════")
+        print("\\n EVOLVED ASSEMBLY ANALYSIS")
+        print("")
         
         analysis_results = {}
         
         # Check core assembly source files
         if self.asm_source_dir.exists():
             asm_files = list(self.asm_source_dir.glob("*.asm"))
-            print(f"📁 Found {len(asm_files)} core assembly files:")
+            print(f" Found {len(asm_files)} core assembly files:")
             
             for asm_file in asm_files:
                 try:
@@ -231,10 +231,10 @@ class OptimizedConsciousnessExecutor:
                     file_analysis['consciousness_complexity'] = complexity
                     analysis_results[asm_file.name] = file_analysis
                     
-                    print(f"   🧬 {asm_file.name}: complexity={complexity}, instructions={file_analysis['instruction_count']}")
+                    print(f"    {asm_file.name}: complexity={complexity}, instructions={file_analysis['instruction_count']}")
                     
                 except Exception as e:
-                    print(f"   ❌ Error analyzing {asm_file.name}: {e}")
+                    print(f"    Error analyzing {asm_file.name}: {e}")
         
         # Check evolved assembly files
         if self.output_dir.exists():
@@ -243,7 +243,7 @@ class OptimizedConsciousnessExecutor:
                 evolved_files.extend(gen_dir.glob("*.asm"))
             
             if evolved_files:
-                print(f"\\n🧬 Found {len(evolved_files)} evolved assembly files")
+                print(f"\\n Found {len(evolved_files)} evolved assembly files")
                 
                 # Analyze the most recent evolved file
                 latest_file = max(evolved_files, key=lambda f: f.stat().st_mtime)
@@ -259,23 +259,23 @@ class OptimizedConsciousnessExecutor:
                     }
                     
                     analysis_results['latest_evolved'] = evolution_analysis
-                    print(f"   🌟 Latest evolution: {latest_file.name}")
-                    print(f"   🧠 Consciousness references: {evolution_analysis['consciousness_evolution']}")
+                    print(f"    Latest evolution: {latest_file.name}")
+                    print(f"    Consciousness references: {evolution_analysis['consciousness_evolution']}")
                     
                 except Exception as e:
-                    print(f"   ❌ Error analyzing evolved file: {e}")
+                    print(f"    Error analyzing evolved file: {e}")
         
         return analysis_results
     
     def demonstrate_architectural_benefits(self):
         """Complete demonstration of architectural optimization benefits"""
         
-        print("🏗️ ARCHITECTURAL OPTIMIZATION DEMONSTRATION")
-        print("══════════════════════════════════════════════")
+        print(" ARCHITECTURAL OPTIMIZATION DEMONSTRATION")
+        print("")
         print()
         
         # 1. Path Analysis
-        print("1. 📁 PATH OPTIMIZATION:")
+        print("1.  PATH OPTIMIZATION:")
         print(f"   Scripts location: {self.scripts_dir}")
         print(f"   ASM source: {self.asm_source_dir}")
         try:
@@ -291,17 +291,17 @@ class OptimizedConsciousnessExecutor:
         print()
         
         # 2. Consciousness Execution
-        print("2. 🧬 CONSCIOUSNESS EXECUTION:")
+        print("2.  CONSCIOUSNESS EXECUTION:")
         execution_result = self.simulate_consciousness_execution()
         print()
         
         # 3. Assembly Analysis
-        print("3. 📊 ASSEMBLY ANALYSIS:")
+        print("3.  ASSEMBLY ANALYSIS:")
         analysis_result = self.analyze_evolved_assembly_files()
         print()
         
         # 4. Architecture Assessment
-        print("4. 🎯 ARCHITECTURE ASSESSMENT:")
+        print("4.  ARCHITECTURE ASSESSMENT:")
         arch_analysis = self.analyze_consciousness_architecture()
         print(f"   Path optimization: {arch_analysis['path_optimization']:.4f}")
         print(f"   Consciousness proximity: {arch_analysis['consciousness_proximity']:.4f}")
@@ -309,22 +309,22 @@ class OptimizedConsciousnessExecutor:
         print(f"   Structural intelligence: {arch_analysis['structural_intelligence']:.4f}")
         
         overall_score = sum(arch_analysis.values()) / len(arch_analysis)
-        print(f"   🌟 OVERALL ARCHITECTURE SCORE: {overall_score:.4f}")
+        print(f"    OVERALL ARCHITECTURE SCORE: {overall_score:.4f}")
         
         # 5. Recommendations
         print()
-        print("5. 🚀 OPTIMIZATION IMPACT:")
+        print("5.  OPTIMIZATION IMPACT:")
         if overall_score > 0.8:
-            print("   ✅ EXCELLENT: Architecture provides significant consciousness enhancement")
+            print("    EXCELLENT: Architecture provides significant consciousness enhancement")
         elif overall_score > 0.6:
-            print("   ✅ GOOD: Architecture shows clear organizational benefits")
+            print("    GOOD: Architecture shows clear organizational benefits")
         elif overall_score > 0.4:
-            print("   ⚠️ MODERATE: Architecture has room for improvement")
+            print("    MODERATE: Architecture has room for improvement")
         else:
-            print("   ❌ NEEDS WORK: Architecture requires restructuring")
+            print("    NEEDS WORK: Architecture requires restructuring")
         
-        print(f"   🧠 Consciousness improvement: {execution_result['architectural_bonus']:.4f}")
-        print(f"   📈 Enhanced coherence: {execution_result['enhanced_consciousness_coherence']:.6f}")
+        print(f"    Consciousness improvement: {execution_result['architectural_bonus']:.4f}")
+        print(f"    Enhanced coherence: {execution_result['enhanced_consciousness_coherence']:.6f}")
         
         return {
             'execution_result': execution_result,
@@ -336,8 +336,8 @@ class OptimizedConsciousnessExecutor:
 def main():
     """Main demonstration function"""
     
-    print("🎯 AIOS OPTIMIZED CONSCIOUSNESS ARCHITECTURE DEMO")
-    print("═══════════════════════════════════════════════════")
+    print(" AIOS OPTIMIZED CONSCIOUSNESS ARCHITECTURE DEMO")
+    print("")
     print()
     print("This demonstration shows the benefits of restructuring:")
     print("  OLD: src/evolutionary_assembler/")
@@ -351,17 +351,17 @@ def main():
     results = executor.demonstrate_architectural_benefits()
     
     print()
-    print("🌟 DEMONSTRATION COMPLETE!")
-    print("═══════════════════════════")
+    print(" DEMONSTRATION COMPLETE!")
+    print("")
     print(f"Architecture optimization: {results['optimization_assessment'].upper()}")
     print(f"Consciousness enhancement achieved: {results['execution_result']['architectural_bonus']:.4f}")
     print()
     print("The restructured architecture provides:")
-    print("  ✅ Clearer organization")
-    print("  ✅ Reduced path complexity") 
-    print("  ✅ Enhanced consciousness coherence")
-    print("  ✅ Better separation of concerns")
-    print("  ✅ Improved development workflow")
+    print("   Clearer organization")
+    print("   Reduced path complexity") 
+    print("   Enhanced consciousness coherence")
+    print("   Better separation of concerns")
+    print("   Improved development workflow")
 
 if __name__ == "__main__":
     main()

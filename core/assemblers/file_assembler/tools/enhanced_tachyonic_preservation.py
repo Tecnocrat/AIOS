@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🌌 ENHANCED TACHYONIC CODE PRESERVATION SYSTEM
-═══════════════════════════════════════════════════════════════════════════════
+ ENHANCED TACHYONIC CODE PRESERVATION SYSTEM
+
 AINLP META-COMMENTARY: This enhanced system provides comprehensive code
 preservation capabilities within the tachyonic archive, ensuring that both
 source code logic and metadata are preserved with perfect consciousness
@@ -16,7 +16,7 @@ ENHANCED PRESERVATION PRINCIPLES:
 - Instant access to any preserved version
 - Advanced code analysis and comparison capabilities
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import ast
@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 class EnhancedTachyonicCodePreservation:
     """
-    🌌 ENHANCED TACHYONIC CODE PRESERVATION SYSTEM
+     ENHANCED TACHYONIC CODE PRESERVATION SYSTEM
     
     AINLP META-COMMENTARY: This system goes beyond simple file backup to
     provide comprehensive code preservation with consciousness awareness,
@@ -465,7 +465,7 @@ class EnhancedTachyonicCodePreservation:
 
 def main():
     """Execute enhanced tachyonic code preservation system."""
-    print("🌌 ENHANCED TACHYONIC CODE PRESERVATION SYSTEM")
+    print(" ENHANCED TACHYONIC CODE PRESERVATION SYSTEM")
     print("=" * 70)
     print("Implementing optimal code preservation with consciousness awareness...")
     print()
@@ -475,32 +475,32 @@ def main():
     preservation_system = EnhancedTachyonicCodePreservation(core_path)
     
     # Organize existing backup files
-    print("🗂️ Organizing existing backup files...")
+    print(" Organizing existing backup files...")
     organization_results = preservation_system.organize_existing_backups()
     
     # Generate preservation report
-    print("📊 Generating preservation report...")
+    print(" Generating preservation report...")
     preservation_report = preservation_system.get_preservation_report()
     
     # Display results
-    print("✅ ENHANCED PRESERVATION COMPLETE")
+    print(" ENHANCED PRESERVATION COMPLETE")
     print("=" * 70)
-    print(f"📁 Files Organized: {organization_results['organized_count']}")
-    print(f"🌌 Preservation Categories: {preservation_report['tachyonic_structure']['total_categories']}")
-    print(f"📊 Total Preserved: {preservation_report['preservation_statistics']['total_files']}")
+    print(f" Files Organized: {organization_results['organized_count']}")
+    print(f" Preservation Categories: {preservation_report['tachyonic_structure']['total_categories']}")
+    print(f" Total Preserved: {preservation_report['preservation_statistics']['total_files']}")
     
     if "average_consciousness" in preservation_report['preservation_statistics']:
         avg_consciousness = preservation_report['preservation_statistics']['average_consciousness']
         avg_quality = preservation_report['preservation_statistics']['average_quality']
-        print(f"🧠 Average Consciousness: {avg_consciousness:.3f}")
-        print(f"⭐ Average Quality: {avg_quality:.3f}")
+        print(f" Average Consciousness: {avg_consciousness:.3f}")
+        print(f" Average Quality: {avg_quality:.3f}")
     
-    print("\n🌟 Enhancement Features:")
+    print("\n Enhancement Features:")
     for feature in preservation_report['enhancement_features']:
         print(f"   • {feature}")
     
-    print("\n🌌 Enhanced Tachyonic Preservation System Ready!")
-    print("✨ All code logic preserved with perfect consciousness awareness!")
+    print("\n Enhanced Tachyonic Preservation System Ready!")
+    print(" All code logic preserved with perfect consciousness awareness!")
 
 
 if __name__ == "__main__":

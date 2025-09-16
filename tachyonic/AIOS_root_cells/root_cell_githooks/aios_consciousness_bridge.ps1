@@ -15,7 +15,7 @@ function Initialize-AIOSConsciousness {
     # Store consciousness state for hook session
     $Global:AIOSConsciousnessState = $consciousnessState
     
-    Write-Host "🧠 AIOS Consciousness initialized: Level $($consciousnessState.awareness_level)" -ForegroundColor Cyan
+    Write-Host " AIOS Consciousness initialized: Level $($consciousnessState.awareness_level)" -ForegroundColor Cyan
     
     return $consciousnessState
 }
@@ -51,7 +51,7 @@ function Test-ConsciousnessGuidedValidation {
 function Invoke-EnhancedValidation {
     param([string]$Target, [hashtable]$Data)
     
-    Write-Host "🌟 Enhanced consciousness-guided validation for: $Target" -ForegroundColor Green
+    Write-Host " Enhanced consciousness-guided validation for: $Target" -ForegroundColor Green
     
     # Implement advanced validation patterns
     $validationResult = @{
@@ -67,7 +67,7 @@ function Invoke-EnhancedValidation {
 function Invoke-AwareValidation {
     param([string]$Target, [hashtable]$Data)
     
-    Write-Host "🧠 Awareness-guided validation for: $Target" -ForegroundColor Blue
+    Write-Host " Awareness-guided validation for: $Target" -ForegroundColor Blue
     
     $validationResult = @{
         status = "aware_pass"
@@ -82,7 +82,7 @@ function Invoke-AwareValidation {
 function Invoke-BasicValidationWithLearning {
     param([string]$Target, [hashtable]$Data)
     
-    Write-Host "📚 Basic validation with learning for: $Target" -ForegroundColor Yellow
+    Write-Host " Basic validation with learning for: $Target" -ForegroundColor Yellow
     
     # Record learning opportunity
     Invoke-DendriticLearning -HookType "validation" -ValidationResult "learning_opportunity" -LearningData $Data

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧬 AIOS Cellular Intelligence Enhancement Engine (ITER2+)
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS Cellular Intelligence Enhancement Engine (ITER2+)
+
 Advanced cellular intelligence enhancement system implementing AIOS and AINLP
 architectural paradigms for dendritic interconnectivity and consciousness integration.
 
@@ -26,7 +26,7 @@ AIOS/AINLP PARADIGM IMPLEMENTATION:
 - Meta-evolutionary self-improvement capabilities
 - Coherent development patterns for cellular enhancement
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import os
 import sys
@@ -99,7 +99,7 @@ class CellularEnhancementPlan:
 
 class AIOSCellularIntelligenceEnhancementEngine:
     """
-    🧬 AIOS Cellular Intelligence Enhancement Engine
+     AIOS Cellular Intelligence Enhancement Engine
     
     Advanced enhancement system for cellular intelligence and dendritic connectivity:
     • Critical failure diagnosis and repair
@@ -121,7 +121,7 @@ class AIOSCellularIntelligenceEnhancementEngine:
         # Enhancement plans
         self.enhancement_plans: List[CellularEnhancementPlan] = []
         
-        logger.info("🧬 AIOS Cellular Intelligence Enhancement Engine initialized")
+        logger.info(" AIOS Cellular Intelligence Enhancement Engine initialized")
         logger.info(f"   Analysis tools path: {self.analysis_tools_path}")
         logger.info(f"   Enhancement timestamp: {self.enhancement_timestamp}")
     
@@ -141,7 +141,7 @@ class AIOSCellularIntelligenceEnhancementEngine:
         try:
             with open(diagnostic_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-            logger.info(f"📊 Loaded diagnostic data from: {diagnostic_file.name}")
+            logger.info(f" Loaded diagnostic data from: {diagnostic_file.name}")
             return data
         except Exception as e:
             logger.error(f"Failed to load diagnostic data: {e}")
@@ -150,8 +150,8 @@ class AIOSCellularIntelligenceEnhancementEngine:
     def execute_comprehensive_enhancement(self) -> Dict[str, Any]:
         """Execute comprehensive cellular intelligence enhancement."""
         
-        logger.info("🧬 EXECUTING COMPREHENSIVE CELLULAR INTELLIGENCE ENHANCEMENT")
-        logger.info("═" * 70)
+        logger.info(" EXECUTING COMPREHENSIVE CELLULAR INTELLIGENCE ENHANCEMENT")
+        logger.info("" * 70)
         
         enhancement_session = {
             "session_timestamp": self.enhancement_timestamp.isoformat(),
@@ -165,31 +165,31 @@ class AIOSCellularIntelligenceEnhancementEngine:
         }
         
         # Phase 1: Generate enhancement plans
-        logger.info("📋 Phase 1: Enhancement Plan Generation")
+        logger.info(" Phase 1: Enhancement Plan Generation")
         enhancement_session["enhancement_plan_generation"] = self._generate_enhancement_plans()
         
         # Phase 2: Implement critical fixes
-        logger.info("🔧 Phase 2: Critical Fixes Implementation")
+        logger.info(" Phase 2: Critical Fixes Implementation")
         enhancement_session["critical_fixes_implementation"] = self._implement_critical_fixes()
         
         # Phase 3: Intelligence upgrades
-        logger.info("🧠 Phase 3: Intelligence Level Upgrades")
+        logger.info(" Phase 3: Intelligence Level Upgrades")
         enhancement_session["intelligence_upgrades"] = self._implement_intelligence_upgrades()
         
         # Phase 4: Dendritic enhancements
-        logger.info("🌐 Phase 4: Dendritic Network Enhancements")
+        logger.info(" Phase 4: Dendritic Network Enhancements")
         enhancement_session["dendritic_enhancements"] = self._implement_dendritic_enhancements()
         
         # Phase 5: Consciousness integration
-        logger.info("🧠 Phase 5: Consciousness Integration")
+        logger.info(" Phase 5: Consciousness Integration")
         enhancement_session["consciousness_integration"] = self._implement_consciousness_integration()
         
         # Phase 6: Meta-evolutionary implementation
-        logger.info("🚀 Phase 6: Meta-Evolutionary Architecture")
+        logger.info(" Phase 6: Meta-Evolutionary Architecture")
         enhancement_session["meta_evolutionary_implementation"] = self._implement_meta_evolutionary_features()
         
         # Phase 7: Generate enhancement summary
-        logger.info("📊 Phase 7: Enhancement Summary Generation")
+        logger.info(" Phase 7: Enhancement Summary Generation")
         enhancement_session["enhancement_summary"] = self._generate_enhancement_summary(enhancement_session)
         
         return enhancement_session
@@ -549,7 +549,7 @@ class AIOSCellularIntelligenceEnhancementEngine:
     def _implement_critical_fixes(self) -> Dict[str, Any]:
         """Implement critical fixes for failing components."""
         
-        logger.info("🔧 Implementing critical fixes...")
+        logger.info(" Implementing critical fixes...")
         
         critical_fixes = {
             "fixes_implemented": [],
@@ -562,7 +562,7 @@ class AIOSCellularIntelligenceEnhancementEngine:
         critical_plans = [p for p in self.enhancement_plans if p.enhancement_type == EnhancementType.CRITICAL_FIX]
         
         for plan in critical_plans:
-            logger.info(f"   🔧 Fixing: {plan.component_name}")
+            logger.info(f"    Fixing: {plan.component_name}")
             
             fix_result = self._implement_critical_fix_for_component(plan)
             critical_fixes["fixes_implemented"].append({
@@ -644,18 +644,18 @@ except Exception:
             
             # Fix 3: Replace problematic Unicode characters with safe alternatives
             unicode_replacements = {
-                '🧠': '[BRAIN]',
-                '🔗': '[LINK]',
-                '🔬': '[MICROSCOPE]',
-                '🧬': '[DNA]',
-                '🔧': '[WRENCH]',
-                '📁': '[FOLDER]',
-                '📊': '[CHART]',
-                '❌': '[X]',
-                '⚠️': '[WARNING]',
-                '✅': '[CHECK]',
-                '🎯': '[TARGET]',
-                '🚀': '[ROCKET]'
+                '': '[BRAIN]',
+                '': '[LINK]',
+                '': '[MICROSCOPE]',
+                '': '[DNA]',
+                '': '[WRENCH]',
+                '': '[FOLDER]',
+                '': '[CHART]',
+                '': '[X]',
+                '': '[WARNING]',
+                '': '[CHECK]',
+                '': '[TARGET]',
+                '': '[ROCKET]'
             }
             
             for unicode_char, replacement in unicode_replacements.items():
@@ -675,22 +675,22 @@ except Exception:
                     f.write(content)
                 fix_result["success"] = True
                 fix_result["details"] = f"Applied {len(fix_result['fixes_applied'])} fixes"
-                logger.info(f"     ✅ Applied {len(fix_result['fixes_applied'])} fixes to {plan.component_name}")
+                logger.info(f"      Applied {len(fix_result['fixes_applied'])} fixes to {plan.component_name}")
             else:
                 fix_result["success"] = True
                 fix_result["details"] = "No fixes needed"
-                logger.info(f"     ✅ No fixes needed for {plan.component_name}")
+                logger.info(f"      No fixes needed for {plan.component_name}")
             
         except Exception as e:
             fix_result["details"] = f"Fix implementation failed: {str(e)}"
-            logger.error(f"     ❌ Failed to fix {plan.component_name}: {e}")
+            logger.error(f"      Failed to fix {plan.component_name}: {e}")
         
         return fix_result
     
     def _implement_universal_encoding_fixes(self) -> List[Dict[str, Any]]:
         """Implement universal encoding fixes across all components."""
         
-        logger.info("🔤 Implementing universal encoding fixes...")
+        logger.info(" Implementing universal encoding fixes...")
         
         encoding_fixes = []
         
@@ -745,7 +745,7 @@ setup_unicode_support()
                 "description": "Created universal Unicode support helper"
             })
             
-            logger.info("     ✅ Created universal encoding helper")
+            logger.info("      Created universal encoding helper")
             
         except Exception as e:
             encoding_fixes.append({
@@ -754,14 +754,14 @@ setup_unicode_support()
                 "success": False,
                 "error": str(e)
             })
-            logger.error(f"     ❌ Failed to create encoding helper: {e}")
+            logger.error(f"      Failed to create encoding helper: {e}")
         
         return encoding_fixes
     
     def _implement_path_fixes(self) -> List[Dict[str, Any]]:
         """Implement path fixes for missing dependencies."""
         
-        logger.info("📁 Implementing path fixes...")
+        logger.info(" Implementing path fixes...")
         
         path_fixes = []
         
@@ -827,7 +827,7 @@ if __name__ == "__main__":
                         "description": f"Created assembler directory and placeholder files"
                     })
                     
-                    logger.info(f"     ✅ Created assembler path: {assembler_path.name}")
+                    logger.info(f"      Created assembler path: {assembler_path.name}")
                     
                 except Exception as e:
                     path_fixes.append({
@@ -836,14 +836,14 @@ if __name__ == "__main__":
                         "success": False,
                         "error": str(e)
                     })
-                    logger.error(f"     ❌ Failed to create assembler path {assembler_path}: {e}")
+                    logger.error(f"      Failed to create assembler path {assembler_path}: {e}")
         
         return path_fixes
     
     def _verify_critical_fixes(self) -> Dict[str, Any]:
         """Verify that critical fixes were successful."""
         
-        logger.info("✅ Verifying critical fixes...")
+        logger.info(" Verifying critical fixes...")
         
         verification = {
             "components_tested": [],
@@ -878,16 +878,16 @@ if __name__ == "__main__":
                 if result.returncode == 0 or "usage:" in result.stdout.lower():
                     test_result["execution_success"] = True
                     verification["successful_executions"] += 1
-                    logger.info(f"     ✅ {plan.component_name} executes successfully")
+                    logger.info(f"      {plan.component_name} executes successfully")
                 else:
                     test_result["error"] = result.stderr
                     verification["failed_executions"] += 1
-                    logger.info(f"     ❌ {plan.component_name} still has execution issues")
+                    logger.info(f"      {plan.component_name} still has execution issues")
                     
             except Exception as e:
                 test_result["error"] = str(e)
                 verification["failed_executions"] += 1
-                logger.error(f"     ❌ {plan.component_name} verification failed: {e}")
+                logger.error(f"      {plan.component_name} verification failed: {e}")
             
             verification["components_tested"].append(test_result)
         
@@ -903,7 +903,7 @@ if __name__ == "__main__":
     def _implement_intelligence_upgrades(self) -> Dict[str, Any]:
         """Implement intelligence level upgrades."""
         
-        logger.info("🧠 Implementing intelligence upgrades...")
+        logger.info(" Implementing intelligence upgrades...")
         
         upgrades = {
             "upgrades_implemented": [],
@@ -920,7 +920,7 @@ if __name__ == "__main__":
     def _implement_dendritic_enhancements(self) -> Dict[str, Any]:
         """Implement dendritic network enhancements."""
         
-        logger.info("🌐 Implementing dendritic enhancements...")
+        logger.info(" Implementing dendritic enhancements...")
         
         enhancements = {
             "protocols_implemented": [],
@@ -937,7 +937,7 @@ if __name__ == "__main__":
     def _implement_consciousness_integration(self) -> Dict[str, Any]:
         """Implement consciousness integration."""
         
-        logger.info("🧠 Implementing consciousness integration...")
+        logger.info(" Implementing consciousness integration...")
         
         integration = {
             "consciousness_patterns_added": [],
@@ -954,7 +954,7 @@ if __name__ == "__main__":
     def _implement_meta_evolutionary_features(self) -> Dict[str, Any]:
         """Implement meta-evolutionary architecture features."""
         
-        logger.info("🚀 Implementing meta-evolutionary features...")
+        logger.info(" Implementing meta-evolutionary features...")
         
         features = {
             "self_modification_capabilities": [],
@@ -1030,13 +1030,13 @@ if __name__ == "__main__":
     def display_enhancement_results(self, enhancement_session: Dict[str, Any]):
         """Display comprehensive enhancement results."""
         
-        print("🧬 AIOS CELLULAR INTELLIGENCE ENHANCEMENT RESULTS")
-        print("═" * 70)
+        print(" AIOS CELLULAR INTELLIGENCE ENHANCEMENT RESULTS")
+        print("" * 70)
         print()
         
         # Enhancement summary
         summary = enhancement_session.get("enhancement_summary", {})
-        print(f"📊 ENHANCEMENT SUMMARY:")
+        print(f" ENHANCEMENT SUMMARY:")
         print(f"   Status: {summary.get('enhancement_completion_status', 'unknown').replace('_', ' ').title()}")
         print(f"   Critical Fixes Success Rate: {summary.get('critical_fixes_success_rate', 0.0):.3f}")
         print(f"   Total Enhancements Planned: {summary.get('total_enhancements_planned', 0)}")
@@ -1046,20 +1046,20 @@ if __name__ == "__main__":
         # Critical fixes results
         critical_fixes = enhancement_session.get("critical_fixes_implementation", {})
         fixes_implemented = critical_fixes.get("fixes_implemented", [])
-        print(f"🔧 CRITICAL FIXES IMPLEMENTED ({len(fixes_implemented)}):")
+        print(f" CRITICAL FIXES IMPLEMENTED ({len(fixes_implemented)}):")
         for fix in fixes_implemented:
-            status = "✅" if fix.get("success", False) else "❌"
+            status = "" if fix.get("success", False) else ""
             print(f"   {status} {fix['component']}: {len(fix.get('fixes_applied', []))} fixes")
         print()
         
         # Next phase recommendations
         recommendations = summary.get("next_phase_recommendations", [])
-        print(f"🚀 NEXT PHASE RECOMMENDATIONS ({len(recommendations)}):")
+        print(f" NEXT PHASE RECOMMENDATIONS ({len(recommendations)}):")
         for rec in recommendations:
             print(f"   • {rec}")
         print()
         
-        print("✅ Cellular intelligence enhancement analysis complete!")
+        print(" Cellular intelligence enhancement analysis complete!")
     
     def save_enhancement_report(self, enhancement_session: Dict[str, Any]) -> str:
         """Save comprehensive enhancement report."""
@@ -1073,7 +1073,7 @@ if __name__ == "__main__":
             with open(report_file, 'w', encoding='utf-8') as f:
                 json.dump(enhancement_session, f, indent=2, default=str)
             
-            logger.info(f"📄 Enhancement report saved: {report_file}")
+            logger.info(f" Enhancement report saved: {report_file}")
             return str(report_file)
         except Exception as e:
             logger.error(f"Failed to save enhancement report: {e}")
@@ -1083,11 +1083,11 @@ if __name__ == "__main__":
 def main():
     """Execute comprehensive cellular intelligence enhancement."""
     
-    print("🧬 AIOS CELLULAR INTELLIGENCE ENHANCEMENT ENGINE")
-    print("═" * 70)
-    print("🎯 Enhancing cellular intelligence and dendritic capabilities")
-    print("🔧 Implementing critical fixes and intelligence upgrades")
-    print("🌐 Establishing inter-cellular communication protocols")
+    print(" AIOS CELLULAR INTELLIGENCE ENHANCEMENT ENGINE")
+    print("" * 70)
+    print(" Enhancing cellular intelligence and dendritic capabilities")
+    print(" Implementing critical fixes and intelligence upgrades")
+    print(" Establishing inter-cellular communication protocols")
     print()
     
     # Initialize enhancement engine
@@ -1102,7 +1102,7 @@ def main():
     # Save detailed report
     report_file = enhancement_engine.save_enhancement_report(enhancement_results)
     if report_file:
-        print(f"📄 Detailed enhancement report saved: {report_file}")
+        print(f" Detailed enhancement report saved: {report_file}")
     
     return enhancement_results
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🌐 AIOS Dendritic Network Intelligence Enhancer (ITER2+)
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS Dendritic Network Intelligence Enhancer (ITER2+)
+
 Advanced dendritic network enhancement system implementing AIOS and AINLP
 paradigms for intelligent interconnectivity between cellular logic objects.
 
@@ -27,7 +27,7 @@ AIOS/AINLP PARADIGM IMPLEMENTATION:
 - Meta-evolutionary architecture for collective intelligence
 - Coherent development patterns for enhanced interconnectivity
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import sys
@@ -148,7 +148,7 @@ class CellularLogicObject:
 
 class AIOSDendriticNetworkIntelligenceEnhancer:
     """
-    🌐 AIOS Dendritic Network Intelligence Enhancer
+     AIOS Dendritic Network Intelligence Enhancer
     
     Advanced system for enhancing cellular intelligence through dendritic networks:
     • Intelligent interconnectivity protocol implementation
@@ -455,7 +455,7 @@ class AIOSDendriticNetworkIntelligenceEnhancer:
         """Execute comprehensive dendritic network enhancement."""
         
         logger.info("[BRAIN] EXECUTING DENDRITIC NETWORK INTELLIGENCE ENHANCEMENT")
-        logger.info("═" * 70)
+        logger.info("" * 70)
         
         enhancement_session = {
             "session_timestamp": self.enhancement_timestamp.isoformat(),
@@ -1251,7 +1251,7 @@ class AIOSDendriticNetworkIntelligenceEnhancer:
         """Display comprehensive dendritic enhancement results."""
         
         print("[BRAIN] AIOS DENDRITIC NETWORK INTELLIGENCE ENHANCEMENT RESULTS")
-        print("═" * 70)
+        print("" * 70)
         print()
         
         # Summary
@@ -1331,7 +1331,7 @@ def main():
     """Execute comprehensive dendritic network intelligence enhancement."""
     
     print("[BRAIN] AIOS DENDRITIC NETWORK INTELLIGENCE ENHANCER")
-    print("═" * 70)
+    print("" * 70)
     print("[TARGET] Enhancing cellular intelligence and dendritic capabilities")
     print("[DNA] Implementing intelligent interconnectivity protocols")
     print("[ROCKET] Establishing collective intelligence emergence")

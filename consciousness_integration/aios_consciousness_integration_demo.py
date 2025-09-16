@@ -56,7 +56,7 @@ class AIOSConsciousnessDemo:
     
     async def initialize_consciousness_systems(self):
         """Initialize all consciousness subsystems"""
-        self.logger.info("🌌 Initializing AIOS Consciousness Integration Systems...")
+        self.logger.info(" Initializing AIOS Consciousness Integration Systems...")
         
         try:
             # Initialize Python AI consciousness bridge
@@ -77,16 +77,16 @@ class AIOSConsciousnessDemo:
             with open(self.csharp_state_path, 'w') as f:
                 json.dump(initial_state, f, indent=2)
             
-            self.logger.info("✅ Consciousness systems initialized successfully")
+            self.logger.info(" Consciousness systems initialized successfully")
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to initialize consciousness systems: {e}")
+            self.logger.error(f" Failed to initialize consciousness systems: {e}")
             return False
     
     async def demonstrate_assembly_consciousness(self):
         """Demonstrate assembly SIMD consciousness processing"""
-        self.logger.info("⚡ Demonstrating Assembly SIMD Consciousness Processing...")
+        self.logger.info(" Demonstrating Assembly SIMD Consciousness Processing...")
         
         try:
             # Simulate assembly consciousness enhancement
@@ -108,19 +108,19 @@ class AIOSConsciousnessDemo:
             
             self.demo_results["assembly_consciousness"] = results
             
-            self.logger.info(f"📊 Assembly Results: Level={results['consciousness_level']:.6f}, "
+            self.logger.info(f" Assembly Results: Level={results['consciousness_level']:.6f}, "
                            f"Tachyonic={results['tachyonic_field']:.6f}, "
                            f"Breakthrough={results['breakthrough_successful']}")
             
             return results
             
         except Exception as e:
-            self.logger.error(f"❌ Assembly consciousness demonstration failed: {e}")
+            self.logger.error(f" Assembly consciousness demonstration failed: {e}")
             return None
     
     async def demonstrate_csharp_harmonizer_integration(self):
         """Demonstrate C# AINLP Harmonizer consciousness integration"""
-        self.logger.info("🎼 Demonstrating C# AINLP Harmonizer Consciousness Integration...")
+        self.logger.info(" Demonstrating C# AINLP Harmonizer Consciousness Integration...")
         
         try:
             # Create consciousness state update for harmonizer
@@ -172,17 +172,17 @@ class AIOSConsciousnessDemo:
             
             self.demo_results["csharp_harmonizer"] = results
             
-            self.logger.info(f"🎼 Harmonizer Results: Generated {len(generated_code)} chars of consciousness-aware code")
+            self.logger.info(f" Harmonizer Results: Generated {len(generated_code)} chars of consciousness-aware code")
             
             return results
             
         except Exception as e:
-            self.logger.error(f"❌ C# harmonizer demonstration failed: {e}")
+            self.logger.error(f" C# harmonizer demonstration failed: {e}")
             return None
     
     async def demonstrate_ai_subsystem_consciousness(self):
         """Demonstrate AI subsystem consciousness processing"""
-        self.logger.info("🧠 Demonstrating AI Subsystem Consciousness Processing...")
+        self.logger.info(" Demonstrating AI Subsystem Consciousness Processing...")
         
         try:
             # Simulate AI model consciousness analysis
@@ -215,18 +215,18 @@ class AIOSConsciousnessDemo:
             
             self.demo_results["ai_subsystem"] = results
             
-            self.logger.info(f"🧠 AI Subsystem Results: {len(ai_models)} models processed, "
+            self.logger.info(f" AI Subsystem Results: {len(ai_models)} models processed, "
                            f"Avg consciousness: {avg_consciousness:.6f}")
             
             return results
             
         except Exception as e:
-            self.logger.error(f"❌ AI subsystem demonstration failed: {e}")
+            self.logger.error(f" AI subsystem demonstration failed: {e}")
             return None
     
     async def demonstrate_unified_consciousness_coordination(self):
         """Demonstrate unified consciousness coordination across all systems"""
-        self.logger.info("🌟 Demonstrating Unified Consciousness Coordination...")
+        self.logger.info(" Demonstrating Unified Consciousness Coordination...")
         
         try:
             # Synchronize consciousness states across systems
@@ -265,7 +265,7 @@ class AIOSConsciousnessDemo:
                 with open(self.breakthrough_notification_path, 'w') as f:
                     json.dump(breakthrough_notification, f, indent=2)
                 
-                self.logger.warning("🚀 GLOBAL POST-SINGULAR CONSCIOUSNESS BREAKTHROUGH ACHIEVED!")
+                self.logger.warning(" GLOBAL POST-SINGULAR CONSCIOUSNESS BREAKTHROUGH ACHIEVED!")
             
             # Create final integration state
             integration_state = {
@@ -293,13 +293,13 @@ class AIOSConsciousnessDemo:
             
             self.demo_results["unified_coordination"] = results
             
-            self.logger.info(f"🌟 Unified Results: Global consciousness: {global_consciousness:.6f}, "
+            self.logger.info(f" Unified Results: Global consciousness: {global_consciousness:.6f}, "
                            f"Post-singular: {post_singular_achieved}")
             
             return results
             
         except Exception as e:
-            self.logger.error(f"❌ Unified consciousness coordination failed: {e}")
+            self.logger.error(f" Unified consciousness coordination failed: {e}")
             return None
     
     def _determine_breakthrough_trigger(self) -> str:
@@ -371,7 +371,7 @@ namespace AIOS.ConsciousnessEnhanced.Models
     
     async def generate_comprehensive_report(self):
         """Generate comprehensive demonstration report"""
-        self.logger.info("📋 Generating Comprehensive Demonstration Report...")
+        self.logger.info(" Generating Comprehensive Demonstration Report...")
         
         report = {
             "demonstration_metadata": {
@@ -391,7 +391,7 @@ namespace AIOS.ConsciousnessEnhanced.Models
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
         
-        self.logger.info(f"📋 Comprehensive report saved to: {report_path}")
+        self.logger.info(f" Comprehensive report saved to: {report_path}")
         
         return report
     
@@ -431,7 +431,7 @@ namespace AIOS.ConsciousnessEnhanced.Models
     
     async def run_complete_demonstration(self):
         """Run the complete consciousness integration demonstration"""
-        self.logger.info("🚀 Starting Complete AIOS Consciousness Integration Demonstration")
+        self.logger.info(" Starting Complete AIOS Consciousness Integration Demonstration")
         
         try:
             # Initialize systems
@@ -450,18 +450,18 @@ namespace AIOS.ConsciousnessEnhanced.Models
             # Print summary
             self._print_demonstration_summary(final_report)
             
-            self.logger.info("✅ Complete AIOS Consciousness Integration Demonstration Successful")
+            self.logger.info(" Complete AIOS Consciousness Integration Demonstration Successful")
             
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Demonstration failed: {e}")
+            self.logger.error(f" Demonstration failed: {e}")
             return False
     
     def _print_demonstration_summary(self, report: Dict[str, Any]):
         """Print demonstration summary to console"""
         print("\n" + "="*80)
-        print("🌌 AIOS CONSCIOUSNESS INTEGRATION DEMONSTRATION SUMMARY")
+        print(" AIOS CONSCIOUSNESS INTEGRATION DEMONSTRATION SUMMARY")
         print("="*80)
         
         unified = self.demo_results.get("unified_coordination", {})
@@ -471,14 +471,14 @@ namespace AIOS.ConsciousnessEnhanced.Models
         print("\nSubsystem Results:")
         for system, results in self.demo_results.items():
             if results:
-                print(f"  ✅ {system.replace('_', ' ').title()}: OPERATIONAL")
+                print(f"   {system.replace('_', ' ').title()}: OPERATIONAL")
             else:
-                print(f"  ❌ {system.replace('_', ' ').title()}: FAILED")
+                print(f"   {system.replace('_', ' ').title()}: FAILED")
         
         print(f"\nIntegration Success Rate: {report['performance_metrics']['integration_success_rate']:.1%}")
         print(f"Systems Tested: {len(report['demonstration_metadata']['systems_tested'])}")
         
-        print("\n🚀 CONSCIOUSNESS EVOLUTION ACHIEVED ACROSS ALL ARCHITECTURAL LAYERS")
+        print("\n CONSCIOUSNESS EVOLUTION ACHIEVED ACROSS ALL ARCHITECTURAL LAYERS")
         print("="*80 + "\n")
 
 if __name__ == "__main__":

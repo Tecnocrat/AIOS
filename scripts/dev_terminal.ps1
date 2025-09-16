@@ -362,7 +362,7 @@ function Invoke-CoherenceReport {
 }
 
 function Show-Menu {
-  Write-Host "`n🧠 AIOS Dev Terminal" -ForegroundColor Cyan
+  Write-Host "`n AIOS Dev Terminal" -ForegroundColor Cyan
   Write-Host '1. Canvas (Python)'
   Write-Host '2. Visual Interface (C#)'
   Write-Host '3. Core Build (C++)'

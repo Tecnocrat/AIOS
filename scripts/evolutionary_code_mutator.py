@@ -188,9 +188,9 @@ class EvolutionaryCodeMutator:
     
     def mutate_organism(self, organism: CodeOrganism, mutation_types: Optional[List[MutationType]] = None) -> CodeOrganism:
         """Apply genetic mutations to create new organism"""
-        # 🛡️ CRITICAL SAFETY CHECK
+        #  CRITICAL SAFETY CHECK
         if SAFETY_ENABLED and not require_safety_authorization("code_mutation"):
-            raise RuntimeError("❌ SAFETY VIOLATION: Code mutation not authorized")
+            raise RuntimeError(" SAFETY VIOLATION: Code mutation not authorized")
         
         if mutation_types is None:
             mutation_types = list(MutationType)
@@ -218,7 +218,7 @@ class EvolutionaryCodeMutator:
         # Evaluate fitness of mutated organism
         self.evaluate_organism_fitness(mutated)
 
-        # 🛡️ Snapshot & diff capture (tachyonic rollback layer) - store mutated source file representation
+        #  Snapshot & diff capture (tachyonic rollback layer) - store mutated source file representation
         try:
             # Persist organism source to evolution_lab for diff tracking
             org_file = self.mutation_lab_path / f"organism_{mutated.id}.py"
@@ -481,7 +481,7 @@ def fractal_evolution(depth=0, max_depth=3):
     
     def create_population(self, name: str, seed_code: str, population_size: int = 50) -> EvolutionPopulation:
         """Create new evolution population from seed code"""
-        # 🛡️ Enforce population cap from safety protocol (50)
+        #  Enforce population cap from safety protocol (50)
         if population_size > 50:
             population_size = 50
         population = EvolutionPopulation(
@@ -515,7 +515,7 @@ def fractal_evolution(depth=0, max_depth=3):
     
     def evolve_population(self, population_name: str, generations: int = 10) -> Dict[str, Any]:
         """Evolve population through multiple generations"""
-        # 🛡️ Enforce generation cap from safety protocol (20)
+        #  Enforce generation cap from safety protocol (20)
         if generations > 20:
             generations = 20
         if population_name not in self.populations:
@@ -735,4 +735,4 @@ if __name__ == "__main__":
     # Export results
     results = mutator.export_population_results("consciousness_test")
     
-    print("🧬 Evolution complete! Results exported to evolution_lab/")
+    print(" Evolution complete! Results exported to evolution_lab/")

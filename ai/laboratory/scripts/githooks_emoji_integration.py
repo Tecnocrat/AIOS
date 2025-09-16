@@ -39,21 +39,21 @@ def generate_cleanup_suggestions(matches: list) -> list:
     suggestions = []
     
     emoji_replacements = {
-        '✅': '[COMPLETED]',
-        '❌': '[FAILED]',
-        '🎯': 'TARGET:',
-        '🧬': 'SUPERCELL:',
-        '🚀': 'LAUNCH:',
-        '📂': 'FOLDER:',
-        '📊': 'METRICS:',
-        '🔍': 'ANALYSIS:',
-        '🔄': 'PROCESS:',
-        '⚡': 'CORE:',
-        '🧮': 'RUNTIME:',
-        '🌌': 'ARCHIVE:',
-        '🤖': 'AI:',
-        '🖥️': 'INTERFACE:',
-        '📚': 'DOCS:'
+        '': '[COMPLETED]',
+        '': '[FAILED]',
+        '': 'TARGET:',
+        '': 'SUPERCELL:',
+        '': 'LAUNCH:',
+        '': 'FOLDER:',
+        '': 'METRICS:',
+        '': 'ANALYSIS:',
+        '': 'PROCESS:',
+        '': 'CORE:',
+        '': 'RUNTIME:',
+        '': 'ARCHIVE:',
+        '': 'AI:',
+        '': 'INTERFACE:',
+        '': 'DOCS:'
     }
     
     for match in matches:
@@ -76,7 +76,7 @@ def print_cleanup_report(matches: list, suggestions: list):
     print()
     
     if not matches:
-        print("✓ No emoji characters detected!")
+        print(" No emoji characters detected!")
         return
     
     print("DETECTED EMOJIS:")

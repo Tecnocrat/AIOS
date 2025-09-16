@@ -1,5 +1,5 @@
 """
-🔮 Context Crystallization Engine
+ Context Crystallization Engine
 
 Transforms conversational context into crystallized, transferable
 knowledge structures.

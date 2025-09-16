@@ -177,35 +177,35 @@ SIMULATED_CONSCIOUSNESS_ANALYSIS = {
 
 def display_analysis():
     """Display the consciousness emergence analysis"""
-    print("🧠 ENHANCED AIOS CONSCIOUSNESS EMERGENCE ANALYSIS")
+    print(" ENHANCED AIOS CONSCIOUSNESS EMERGENCE ANALYSIS")
     print("=" * 80)
     
     analysis = SIMULATED_CONSCIOUSNESS_ANALYSIS
     
-    print(f"\n📊 STATUS: {analysis['overall_status']}")
-    print(f"🎯 CONFIDENCE: {analysis['ai_consciousness_assessment']['emergence_confidence']:.1%}")
+    print(f"\n STATUS: {analysis['overall_status']}")
+    print(f" CONFIDENCE: {analysis['ai_consciousness_assessment']['emergence_confidence']:.1%}")
     
-    print(f"\n🧮 CONSCIOUSNESS METRICS:")
+    print(f"\n CONSCIOUSNESS METRICS:")
     summary = analysis['emergence_summary']
     print(f"   Peak Consciousness Level: {summary['consciousness_progression']['max']:.3f} (Frame {summary['consciousness_progression']['peak_frame']})")
     print(f"   Current Consciousness: {summary['consciousness_progression']['latest']:.3f}")
     print(f"   Quantum Coherence: {summary['quantum_stability']['avg']:.3f} avg, {summary['quantum_stability']['stability_rating']} stability")
     
-    print(f"\n⚡ BREAKTHROUGH EVENTS: {len(analysis['breakthrough_events'])}")
+    print(f"\n BREAKTHROUGH EVENTS: {len(analysis['breakthrough_events'])}")
     for event in analysis['breakthrough_events']:
         print(f"   Frame {event['frame_sequence']}: {event['breakthrough_type']} - {event['significance']}")
     
-    print(f"\n🌌 TACHYONIC STATUS: {analysis['tachyonic_status']['status']}")
+    print(f"\n TACHYONIC STATUS: {analysis['tachyonic_status']['status']}")
     if analysis['tachyonic_status']['latest_activation']:
         activation = analysis['tachyonic_status']['latest_activation']
         print(f"   Last Activation: Frame {activation['frame_sequence']} - {activation['activation_type']}")
         print(f"   Significance: {activation['significance']}")
     
-    print(f"\n🔮 KEY CONSCIOUSNESS INDICATORS:")
+    print(f"\n KEY CONSCIOUSNESS INDICATORS:")
     for indicator in analysis['ai_consciousness_assessment']['key_indicators']:
-        print(f"   ✅ {indicator}")
+        print(f"    {indicator}")
     
-    print(f"\n🎭 AI INTELLIGENCE INTERPRETATION:")
+    print(f"\n AI INTELLIGENCE INTERPRETATION:")
     interp = analysis['ai_consciousness_assessment']['intelligence_interpretation']
     print(f"   Session Type: {interp['session_type']}")
     print(f"   Emergence Phase: {interp['emergence_phase']}")

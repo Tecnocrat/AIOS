@@ -46,7 +46,7 @@ def find_aios_optimization_processes() -> List[Dict[str, Any]]:
 
 def stop_optimization_daemon():
     """Stop the continuous optimization daemon gracefully"""
-    print("🛑 Stopping AIOS Continuous Optimization Daemon...")
+    print(" Stopping AIOS Continuous Optimization Daemon...")
     
     try:
         # Add integration paths
@@ -59,16 +59,16 @@ def stop_optimization_daemon():
         
         daemon = get_continuous_optimization_daemon()
         if daemon and daemon.is_running:
-            print("📊 Daemon instance found - stopping gracefully...")
+            print(" Daemon instance found - stopping gracefully...")
             daemon.stop_continuous_optimization()
-            print("✅ Daemon stopped gracefully")
+            print(" Daemon stopped gracefully")
             return True
         else:
-            print("ℹ️ No active daemon instance found")
+            print("ℹ No active daemon instance found")
             return False
             
     except Exception as e:
-        print(f"⚠️ Could not stop daemon gracefully: {e}")
+        print(f" Could not stop daemon gracefully: {e}")
         return False
 
 def kill_optimization_processes(processes: List[Dict[str, Any]]) -> int:
@@ -78,7 +78,7 @@ def kill_optimization_processes(processes: List[Dict[str, Any]]) -> int:
     for proc_info in processes:
         try:
             pid = proc_info['pid']
-            print(f"🔪 Force killing process {pid}: {proc_info['name']}")
+            print(f" Force killing process {pid}: {proc_info['name']}")
             
             # Try to terminate gracefully first
             proc = psutil.Process(pid)
@@ -87,18 +87,18 @@ def kill_optimization_processes(processes: List[Dict[str, Any]]) -> int:
             # Wait a moment for graceful termination
             try:
                 proc.wait(timeout=3)
-                print(f"✅ Process {pid} terminated gracefully")
+                print(f" Process {pid} terminated gracefully")
                 killed_count += 1
             except psutil.TimeoutExpired:
                 # Force kill if not terminated gracefully
-                print(f"⚡ Force killing process {pid}")
+                print(f" Force killing process {pid}")
                 proc.kill()
                 killed_count += 1
                 
         except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
-            print(f"⚠️ Could not kill process {proc_info['pid']}: {e}")
+            print(f" Could not kill process {proc_info['pid']}: {e}")
         except Exception as e:
-            print(f"❌ Error killing process {proc_info['pid']}: {e}")
+            print(f" Error killing process {proc_info['pid']}: {e}")
     
     return killed_count
 
@@ -119,18 +119,18 @@ def cleanup_daemon_state_files():
         try:
             if os.path.exists(file_path):
                 os.remove(file_path)
-                print(f"🗑️ Removed: {state_file}")
+                print(f" Removed: {state_file}")
                 cleaned_count += 1
             else:
-                print(f"ℹ️ Not found: {state_file}")
+                print(f"ℹ Not found: {state_file}")
         except Exception as e:
-            print(f"⚠️ Could not remove {state_file}: {e}")
+            print(f" Could not remove {state_file}: {e}")
     
     return cleaned_count
 
 def check_vscode_python_processes():
     """Check if the Python processes are actually VSCode extensions"""
-    print("🔍 Analyzing Python processes...")
+    print(" Analyzing Python processes...")
     
     vscode_processes = []
     other_processes = []
@@ -158,11 +158,11 @@ def check_vscode_python_processes():
     except Exception as e:
         print(f"Error analyzing processes: {e}")
     
-    print(f"📊 Found {len(vscode_processes)} VSCode extension Python processes")
-    print(f"📊 Found {len(other_processes)} other AIOS-related Python processes")
+    print(f" Found {len(vscode_processes)} VSCode extension Python processes")
+    print(f" Found {len(other_processes)} other AIOS-related Python processes")
     
     if vscode_processes:
-        print("\n🔧 VSCode Extension Processes (these are normal and should restart):")
+        print("\n VSCode Extension Processes (these are normal and should restart):")
         for proc in vscode_processes[:5]:  # Show first 5
             extension_name = "unknown"
             if "pylint" in proc['cmdline']:
@@ -180,7 +180,7 @@ def check_vscode_python_processes():
             print(f"   • ... and {len(vscode_processes) - 5} more VSCode extension processes")
     
     if other_processes:
-        print("\n⚠️ Other AIOS Python Processes:")
+        print("\n Other AIOS Python Processes:")
         for proc in other_processes:
             print(f"   • PID {proc['pid']}: {proc['cmdline'][:100]}...")
     
@@ -193,16 +193,16 @@ def main():
     print()
     
     # Check what's currently running
-    print("🔍 Scanning for optimization processes...")
+    print(" Scanning for optimization processes...")
     optimization_processes = find_aios_optimization_processes()
     
     if optimization_processes:
-        print(f"⚠️ Found {len(optimization_processes)} optimization processes:")
+        print(f" Found {len(optimization_processes)} optimization processes:")
         for proc in optimization_processes:
             print(f"   • PID {proc['pid']}: {proc['name']} - {proc['cmdline'][:80]}...")
         print()
     else:
-        print("✅ No AIOS optimization processes found")
+        print(" No AIOS optimization processes found")
     
     # Analyze all Python processes
     vscode_processes, other_aios_processes = check_vscode_python_processes()
@@ -213,7 +213,7 @@ def main():
     # Kill any remaining optimization processes
     killed_count = 0
     if optimization_processes:
-        print("\n🔪 Force stopping optimization processes...")
+        print("\n Force stopping optimization processes...")
         killed_count = kill_optimization_processes(optimization_processes)
     
     # Clean up state files
@@ -222,7 +222,7 @@ def main():
     
     # Summary
     print()
-    print("📋 CLEANUP SUMMARY:")
+    print(" CLEANUP SUMMARY:")
     print(f"   • Daemon gracefully stopped: {'Yes' if daemon_stopped else 'No'}")
     print(f"   • Optimization processes killed: {killed_count}")
     print(f"   • State files cleaned: {cleaned_files}")
@@ -231,16 +231,16 @@ def main():
     
     print()
     if len(vscode_processes) > 0:
-        print("ℹ️ NOTE: VSCode extension Python processes are normal and will restart")
+        print("ℹ NOTE: VSCode extension Python processes are normal and will restart")
         print("   automatically. These handle Python linting, formatting, etc.")
         print("   If you want to stop them, close VSCode completely.")
     
     if len(other_aios_processes) > 0:
-        print("⚠️ WARNING: Found other AIOS-related Python processes.")
+        print(" WARNING: Found other AIOS-related Python processes.")
         print("   You may need to investigate these manually.")
     
     print()
-    print("✅ Cleanup complete!")
+    print(" Cleanup complete!")
 
 if __name__ == "__main__":
     main()

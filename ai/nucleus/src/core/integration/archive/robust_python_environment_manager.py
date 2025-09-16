@@ -756,7 +756,7 @@ if __name__ == "__main__":
     # List environments
     print(f"\nAvailable Environments:")
     for env in manager.list_environments():
-        status = "✓" if env.health_status == "healthy" else "✗"
+        status = "" if env.health_status == "healthy" else ""
         active = " (ACTIVE)" if env.is_active else ""
         print(f"  {status} {env.name}{active}")
         print(f"    Path: {env.python_path}")

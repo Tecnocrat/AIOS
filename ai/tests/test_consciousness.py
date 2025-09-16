@@ -30,4 +30,4 @@ if __name__ == "__main__":
     test_consciousness_crystallization()
     test_hyperdimensional_architecture()
     test_zero_logic_generation()
-    print("✅ Consciousness testing complete - Universal layer aligned")
+    print(" Consciousness testing complete - Universal layer aligned")

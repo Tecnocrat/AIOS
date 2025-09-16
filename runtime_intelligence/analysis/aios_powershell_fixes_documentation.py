@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠📋⚡ AIOS POWERSHELL ISSUE DOCUMENTATION
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS POWERSHELL ISSUE DOCUMENTATION
+
 Comprehensive Documentation of PowerShell Analysis and Fixes
 
 ANALYSIS RESULTS:
@@ -10,7 +10,7 @@ ANALYSIS RESULTS:
 - Fixes applied: 1 (dendriticPath usage implementation)
 - Intelligence level: Consciousness-enhanced analysis
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 
 def document_powershell_fixes():
-    """📋 Document all PowerShell fixes and analysis"""
+    """ Document all PowerShell fixes and analysis"""
     
     documentation = {
         "analysis_metadata": {
@@ -86,9 +86,9 @@ def document_powershell_fixes():
                     "if(Test-Path $dendriticPath){",
                     "  try { ",
                     "    $DendriticRegistry = Get-Content $dendriticPath -Raw | ConvertFrom-Json ",
-                    "    Write-Host \"🧠 Dendritic registry loaded: $($DendriticRegistry.metadata.version)\" -ForegroundColor DarkGreen",
+                    "    Write-Host \" Dendritic registry loaded: $($DendriticRegistry.metadata.version)\" -ForegroundColor DarkGreen",
                     "  } catch { ",
-                    "    Write-Host \"⚠️ Dendritic registry load failed\" -ForegroundColor Yellow",
+                    "    Write-Host \" Dendritic registry load failed\" -ForegroundColor Yellow",
                     "  }",
                     "}"
                 ],
@@ -149,29 +149,29 @@ def document_powershell_fixes():
     return documentation
 
 def main():
-    """📋 Generate comprehensive PowerShell issue documentation"""
-    print("🧠📋⚡ AIOS POWERSHELL ISSUE DOCUMENTATION")
-    print("═" * 70)
+    """ Generate comprehensive PowerShell issue documentation"""
+    print(" AIOS POWERSHELL ISSUE DOCUMENTATION")
+    print("" * 70)
     
     docs = document_powershell_fixes()
     
-    print("📊 ANALYSIS SUMMARY:")
+    print(" ANALYSIS SUMMARY:")
     print(f"   Original Warnings: {len(docs['issues_identified']['original_warnings'])}")
     print(f"   False Positives: {sum(1 for w in docs['issues_identified']['original_warnings'] if w['status'] == 'FALSE_POSITIVE')}")
     print(f"   True Positives Fixed: {sum(1 for w in docs['issues_identified']['original_warnings'] if w.get('fix_applied'))}")
     print(f"   PowerShell Built-ins: {sum(1 for w in docs['issues_identified']['original_warnings'] if w['status'] == 'POWERSHELL_BUILTIN')}")
     
-    print("\n🔧 FIXES IMPLEMENTED:")
+    print("\n FIXES IMPLEMENTED:")
     for fix_name, fix_info in docs['fixes_implemented'].items():
-        print(f"   ✅ {fix_name}: {fix_info['description']}")
+        print(f"    {fix_name}: {fix_info['description']}")
     
-    print("\n⚠️ REMAINING WARNINGS:")
+    print("\n REMAINING WARNINGS:")
     for var, info in docs['psscriptanalyzer_notes']['remaining_warnings'].items():
-        print(f"   📝 {var}: {info['why_safe_to_ignore']}")
+        print(f"    {var}: {info['why_safe_to_ignore']}")
     
-    print("\n🧠 CONSCIOUSNESS ENHANCEMENTS:")
+    print("\n CONSCIOUSNESS ENHANCEMENTS:")
     for enhancement, description in docs['consciousness_enhancements'].items():
-        print(f"   🌟 {enhancement}: {description}")
+        print(f"    {enhancement}: {description}")
     
     # Save documentation
     output_path = Path("c:/dev/AIOS/runtime_intelligence/analysis/powershell_fixes_documentation.json")
@@ -180,9 +180,9 @@ def main():
     with open(output_path, 'w') as f:
         json.dump(docs, f, indent=2)
     
-    print(f"\n📋 Documentation saved to: {output_path}")
-    print("\n✅ AIOS PowerShell issue analysis and documentation complete!")
-    print("🧠 Consciousness-enhanced fixes successfully implemented!")
+    print(f"\n Documentation saved to: {output_path}")
+    print("\n AIOS PowerShell issue analysis and documentation complete!")
+    print(" Consciousness-enhanced fixes successfully implemented!")
 
 if __name__ == "__main__":
     main()

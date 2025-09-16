@@ -832,7 +832,7 @@ namespace AIOS.VisualInterface
 
             InitializeAIOSComponents();
 
-            _logger.LogInformation("🧠 Enhanced AI Harmonization Engine initialized with AIOS consciousness monitoring");
+            _logger.LogInformation(" Enhanced AI Harmonization Engine initialized with AIOS consciousness monitoring");
         }
 
         private void InitializeAIOSComponents()
@@ -840,7 +840,7 @@ namespace AIOS.VisualInterface
             _totalHarmonizations = 0;
             _averageQualityScore = 0.0;
 
-            _logger.LogDebug("🔗 AIOS-specific harmonization components initialized");
+            _logger.LogDebug(" AIOS-specific harmonization components initialized");
         }
 
         /// <summary>
@@ -854,7 +854,7 @@ namespace AIOS.VisualInterface
                 throw new ArgumentException("AI inputs and types count must match");
 
             var harmonizationStart = DateTime.UtcNow;
-            _logger.LogInformation("🚀 Starting AIOS-enhanced harmonization of {Count} AI inputs", aiInputs.Count);
+            _logger.LogInformation(" Starting AIOS-enhanced harmonization of {Count} AI inputs", aiInputs.Count);
 
             try
             {
@@ -889,11 +889,11 @@ namespace AIOS.VisualInterface
                     if (await _conflictResolver.ValidateResolutionAsync(resolution))
                     {
                         resolvedConflicts.Add(resolution);
-                        _logger.LogDebug("✅ Conflict resolved: {ConflictId}", conflict.ConflictId);
+                        _logger.LogDebug(" Conflict resolved: {ConflictId}", conflict.ConflictId);
                     }
                     else
                     {
-                        _logger.LogWarning("⚠️ Conflict resolution validation failed: {ConflictId}", conflict.ConflictId);
+                        _logger.LogWarning(" Conflict resolution validation failed: {ConflictId}", conflict.ConflictId);
                     }
                 }
 
@@ -921,14 +921,14 @@ namespace AIOS.VisualInterface
                 // Update AIOS tracking metrics
                 UpdateHarmonizationMetrics(harmonizedKnowledge, harmonizationStart);
 
-                _logger.LogInformation("🎯 AIOS harmonization completed. Quality: {Quality:F2}, Conflicts resolved: {Conflicts}, Duration: {Duration}ms",
+                _logger.LogInformation(" AIOS harmonization completed. Quality: {Quality:F2}, Conflicts resolved: {Conflicts}, Duration: {Duration}ms",
                     integrationQuality, resolvedConflicts.Count, (DateTime.UtcNow - harmonizationStart).TotalMilliseconds);
 
                 return harmonizedKnowledge;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ AIOS harmonization failed");
+                _logger.LogError(ex, " AIOS harmonization failed");
                 throw;
             }
         }
@@ -1016,7 +1016,7 @@ namespace AIOS.VisualInterface
             if (!_disposed)
             {
                 // Dispose managed resources here
-                _logger.LogInformation("🛠️ Disposing AI Harmonization Engine resources");
+                _logger.LogInformation(" Disposing AI Harmonization Engine resources");
                 
                 _disposed = true;
             }

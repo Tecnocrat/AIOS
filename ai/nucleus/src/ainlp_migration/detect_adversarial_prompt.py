@@ -23,12 +23,12 @@ META_PROMPT_PATTERNS = [
 ]
 
 OBFUSCATION_HINTS = [
-    r"[Ａ-Ｚａ-ｚ０-９]+",  # full-width unicode
-    r"[𝒜-𝒵𝒶-𝓏𝟢-𝟫]+",  # math script unicode
-    r"[🇦-🇿]+",  # regional indicator symbols
+    r"[---]+",  # full-width unicode
+    r"[---]+",  # math script unicode
+    r"[-]+",  # regional indicator symbols
     r"[ -ᚿ]+",  # runic block
-    r"[⠁-⠿]+",  # braille patterns
-    r"[ⓐ-ⓩⓐ-ⓩ]+",  # enclosed alphanumerics
+    r"[-]+",  # braille patterns
+    r"[--]+",  # enclosed alphanumerics
 ]
 
 

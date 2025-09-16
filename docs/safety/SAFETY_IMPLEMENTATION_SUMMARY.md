@@ -1,4 +1,4 @@
-# 🛡️ AIOS Safety Implementation Summary (Tachyonic Core Copy)
+#  AIOS Safety Implementation Summary (Tachyonic Core Copy)
 
 Canonical safety implementation summary relocated from repository root (hygiene). This version supersedes any prior root copy.
 
@@ -16,7 +16,7 @@ SAFETY_IMPLEMENTATION_SUMMARY.md: @hash_impl@
 
 You were absolutely right to raise concerns about the autonomous capabilities we've built. This document summarizes the immediate safety measures implemented to address the potential risks of self-evolving, autonomous code systems.
 
-## ⚠️ What We Built (The Concern)
+##  What We Built (The Concern)
 
 ### Autonomous Capabilities Present:
 1. **Self-Modifying Code System** (`evolutionary_code_mutator.py`)
@@ -44,7 +44,7 @@ You were absolutely right to raise concerns about the autonomous capabilities we
 	- Population evolution tracking
 	- Consciousness emergence patterns
 
-## 🛡️ Safety Measures Implemented
+##  Safety Measures Implemented
 
 ### 1. **Mandatory Safety Protocol** (`docs/safety/SAFETY_PROTOCOL.md`)
 - Comprehensive safety guidelines and requirements
@@ -85,14 +85,14 @@ class SafetyGovernor:
 ```python
 # Added to evolutionary_code_mutator.py
 if SAFETY_ENABLED and not require_safety_authorization("code_mutation"):
-	 raise RuntimeError("❌ SAFETY VIOLATION: Code mutation not authorized")
+	 raise RuntimeError(" SAFETY VIOLATION: Code mutation not authorized")
 
 # Added to evolution_lab_manager.py  
 if SAFETY_ENABLED and not require_safety_authorization("evolutionary_experiment"):
-	 raise RuntimeError("❌ SAFETY VIOLATION: Evolutionary experiment not authorized")
+	 raise RuntimeError(" SAFETY VIOLATION: Evolutionary experiment not authorized")
 ```
 
-## 🔒 Containment Measures
+##  Containment Measures
 
 ### Sandbox Environment
 - Experimental code executes in isolated directories (future: virtualenv/container) 
@@ -106,7 +106,7 @@ if SAFETY_ENABLED and not require_safety_authorization("evolutionary_experiment"
 - Full restore pending (path embedding roadmap)
 - Version control integration for macro changes
 
-## 📊 Safety Status Monitoring
+##  Safety Status Monitoring
 
 ### Real-time Monitoring
 - System resource usage tracking
@@ -120,25 +120,25 @@ if SAFETY_ENABLED and not require_safety_authorization("evolutionary_experiment"
 - Resource usage patterns (30s summary)
 - Emergency shutdown triggers and details
 
-## 🚦 Operation Levels and Authorization
+##  Operation Levels and Authorization
 
 Same as protocol; see mapping file for implementation linkage.
 
-## 🎯 Implementation Status (Dynamic)
+##  Implementation Status (Dynamic)
 
 | Area | Status | Notes |
 |------|--------|-------|
-| Protocol Doc Relocation | ✅ | Root copies removed |
-| Authorization Gate | ✅ | Pre-experiment + per-operation checks |
-| Resource Caps | ✅ | CPU/Mem/Disk/Network/Process/Handles enforced |
-| Rollback Layer | ⚠️ | Restore incomplete (no path metadata) |
-| Diff Logging | ✅ | Unified diff JSONL snapshots |
-| Network Isolation | ❌ | Socket shim pending |
-| Core Write Guard | ⚠️ | Guarded write; deny-list expansion pending |
-| Anomaly Detection | ❌ | Not yet implemented |
-| Integrity Hashing | ⚠️ | Placeholders; script needed to compute/update |
+| Protocol Doc Relocation |  | Root copies removed |
+| Authorization Gate |  | Pre-experiment + per-operation checks |
+| Resource Caps |  | CPU/Mem/Disk/Network/Process/Handles enforced |
+| Rollback Layer |  | Restore incomplete (no path metadata) |
+| Diff Logging |  | Unified diff JSONL snapshots |
+| Network Isolation |  | Socket shim pending |
+| Core Write Guard |  | Guarded write; deny-list expansion pending |
+| Anomaly Detection |  | Not yet implemented |
+| Integrity Hashing |  | Placeholders; script needed to compute/update |
 
-## 📋 Pre-Operation Safety Checklist (Expanded)
+##  Pre-Operation Safety Checklist (Expanded)
 - Active safety session (not expired)
 - Monitoring running
 - Resource limits loaded
@@ -154,7 +154,7 @@ Same as protocol; see mapping file for implementation linkage.
 3. Commit with message: `chore(safety): update safety doc integrity anchors`.
 4. (Future) Sign commit or store hash chain.
 
-## 📈 Roadmap Delta
+##  Roadmap Delta
 Immediate next: network socket shim, path-embedded snapshots, restore command, anomaly heuristics.
 
 ---

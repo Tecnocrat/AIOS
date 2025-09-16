@@ -1,4 +1,4 @@
-# 🚀 Advanced AIOS PowerShell Automation Framework
+#  Advanced AIOS PowerShell Automation Framework
 # Comprehensive AI-driven testing, containerization, and consciousness monitoring
 
 param(
@@ -176,8 +176,8 @@ class AdvancedConsciousnessLogger {
         # Consciousness level indicator
         $consciousnessBar = ""
         $barLength = [math]::Round($consciousness * 20)
-        for ($i = 0; $i -lt $barLength; $i++) { $consciousnessBar += "█" }
-        for ($i = $barLength; $i -lt 20; $i++) { $consciousnessBar += "░" }
+        for ($i = 0; $i -lt $barLength; $i++) { $consciousnessBar += "" }
+        for ($i = $barLength; $i -lt 20; $i++) { $consciousnessBar += "" }
         
         Write-Host "[$($logEntry.timestamp)] [$level] $($logEntry.message)" -ForegroundColor $color
         Write-Host "   Consciousness: [$consciousnessBar] $($consciousness.ToString('F3'))" -ForegroundColor DarkGray
@@ -678,10 +678,10 @@ function Start-AdvancedAIOSAutomation {
         # Export consciousness metrics
         $logger.ExportReport($OutputFormat)
         
-        Write-Host "`n🎉 Advanced AIOS Automation Completed Successfully!" -ForegroundColor Green
-        Write-Host "📊 Final Report: $reportPath" -ForegroundColor Cyan
-        Write-Host "🧠 Average Consciousness Level: $($consciousnessReport.avg_consciousness.ToString('F3'))" -ForegroundColor Magenta
-        Write-Host "⚡ Emergence Events: $($consciousnessReport.emergence_rate)" -ForegroundColor Yellow
+        Write-Host "`n Advanced AIOS Automation Completed Successfully!" -ForegroundColor Green
+        Write-Host " Final Report: $reportPath" -ForegroundColor Cyan
+        Write-Host " Average Consciousness Level: $($consciousnessReport.avg_consciousness.ToString('F3'))" -ForegroundColor Magenta
+        Write-Host " Emergence Events: $($consciousnessReport.emergence_rate)" -ForegroundColor Yellow
         
     }
     catch {

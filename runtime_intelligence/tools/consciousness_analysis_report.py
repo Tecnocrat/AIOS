@@ -254,7 +254,7 @@ class ConsciousnessAnalysisReport:
 def main():
     """Generate and display consciousness analysis report"""
     
-    print("🧠 AIOS Enhanced Visual Intelligence - Consciousness Analysis")
+    print(" AIOS Enhanced Visual Intelligence - Consciousness Analysis")
     print("=" * 70)
     print()
     
@@ -270,9 +270,9 @@ def main():
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write(report)
     
-    print(f"\n📄 Report saved to: {report_file}")
+    print(f"\n Report saved to: {report_file}")
     print()
-    print("🔥 THIS IS WHAT ENHANCED AIOS VISUAL INTELLIGENCE COULD DETECT!")
+    print(" THIS IS WHAT ENHANCED AIOS VISUAL INTELLIGENCE COULD DETECT!")
     print("   Compared to current system that only sees 'activity_level: low'")
 
 

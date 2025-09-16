@@ -14,8 +14,8 @@ logger = get_logger(__name__)
 
 def apply_quantum_line_decomposition(filename):
     """Apply AINLP quantum decomposition to fix E501 violations"""
-    logger.info("🧠 AINLP Quantum Line Decomposition Engine")
-    logger.info("🔧 Applying fractal code patterns for E501 compliance")
+    logger.info(" AINLP Quantum Line Decomposition Engine")
+    logger.info(" Applying fractal code patterns for E501 compliance")
     logger.info("=" * 60)
 
     with open(filename, "r", encoding="utf-8") as f:
@@ -30,7 +30,7 @@ def apply_quantum_line_decomposition(filename):
 
         if len(original_line) > 79:
             logger.debug(
-                "📏 Line %d: %d chars -> Decomposing",
+                " Line %d: %d chars -> Decomposing",
                 i + 1,
                 len(original_line),
             )
@@ -46,7 +46,7 @@ def apply_quantum_line_decomposition(filename):
     with open(filename, "w", encoding="utf-8") as f:
         f.writelines(fixed_lines)
 
-    logger.info("✅ AINLP Decomposition Complete: %d lines fixed", changes_made)
+    logger.info(" AINLP Decomposition Complete: %d lines fixed", changes_made)
     return changes_made
 
 

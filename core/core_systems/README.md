@@ -1,9 +1,9 @@
-# 📁 Core Systems Subcell
+#  Core Systems Subcell
 
-## 📝 Description
+##  Description
 Core system implementations and neuronal organizers
 
-## 📄 Files (10)
+##  Files (10)
 - `AINLPCompiler.cs`
 - `AINLPHarmonizer.cs`
 - `AIOS.Core.csproj`
@@ -15,7 +15,7 @@ Core system implementations and neuronal organizers
 - `ITER2_AINLPHarmonizer.cs`
 - `ITER2_EnhancedAINLPCompiler.cs`
 
-## 🏗️ Subcellular Organization
+##  Subcellular Organization
 This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
 
 **Organization Date**: 2025-09-06 00:05:09  

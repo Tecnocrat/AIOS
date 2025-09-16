@@ -94,13 +94,13 @@ class DocumentationIngestionEngine:
             self.knowledge_injector = SupercellKnowledgeInjector(self.tachyonic_root)
         except:
             self.knowledge_injector = None
-            self.logger.warning("🔶 Operating in standalone mode without knowledge injector")
+            self.logger.warning(" Operating in standalone mode without knowledge injector")
             
         # Pattern recognition system
         self.pattern_recognizers = self._initialize_pattern_recognizers()
         
-        self.logger.info("🧬 Tachyonic Archive Supercell - Documentation Ingestion Engine initialized")
-        self.logger.info("🍽️ Digestive system ready: monitoring /docs for AI agent documentation")
+        self.logger.info(" Tachyonic Archive Supercell - Documentation Ingestion Engine initialized")
+        self.logger.info(" Digestive system ready: monitoring /docs for AI agent documentation")
         
     def setup_holographic_logging(self):
         """Setup logging with AINLP holographic pattern embedding"""
@@ -109,7 +109,7 @@ class DocumentationIngestionEngine:
         
         logging.basicConfig(
             level=logging.INFO,
-            format='%(asctime)s | 🧬 METABOLISM | %(levelname)s | %(message)s',
+            format='%(asctime)s |  METABOLISM | %(levelname)s | %(message)s',
             handlers=[
                 logging.FileHandler(log_file),
                 logging.StreamHandler()
@@ -118,7 +118,7 @@ class DocumentationIngestionEngine:
         self.logger = logging.getLogger(__name__)
         
         # AINLP Pattern: Logger itself embeds documentation about system state
-        self.logger.info("🌌 AINLP Pattern: Holographic logging system active")
+        self.logger.info(" AINLP Pattern: Holographic logging system active")
         
     def _initialize_pattern_recognizers(self) -> Dict[str, Any]:
         """Initialize pattern recognition systems for different documentation types"""
@@ -155,7 +155,7 @@ class DocumentationIngestionEngine:
             'consciousness': {
                 'keywords': ['consciousness', 'awareness', 'intelligence', 'emergence', 'tachyonic', 'ainlp'],
                 'patterns': [
-                    r'🧬.*?(?=\n|\Z)',  # AINLP pattern markers
+                    r'.*?(?=\n|\Z)',  # AINLP pattern markers
                     r'AINLP Pattern:.*?(?=\n|\Z)',  # Explicit AINLP patterns
                     r'consciousness.*?level.*?[\d.]+',  # Consciousness level mentions
                 ],
@@ -163,7 +163,7 @@ class DocumentationIngestionEngine:
             }
         }
         
-        self.logger.info(f"🔍 Pattern recognizers initialized: {list(recognizers.keys())}")
+        self.logger.info(f" Pattern recognizers initialized: {list(recognizers.keys())}")
         return recognizers
         
     def scan_documentation_digestive_system(self) -> List[Path]:
@@ -171,7 +171,7 @@ class DocumentationIngestionEngine:
         # AINLP Pattern: File scanning documents the current state of documentation accumulation
         
         if not self.docs_root.exists():
-            self.logger.warning(f"📁 Digestive system not found: {self.docs_root}")
+            self.logger.warning(f" Digestive system not found: {self.docs_root}")
             return []
             
         documentation_files = []
@@ -183,7 +183,7 @@ class DocumentationIngestionEngine:
             files = list(self.docs_root.rglob(pattern))
             documentation_files.extend(files)
             
-        self.logger.info(f"🍽️ Found {len(documentation_files)} documentation files in digestive system")
+        self.logger.info(f" Found {len(documentation_files)} documentation files in digestive system")
         
         # AINLP Pattern: Return value documents what was discovered
         return documentation_files
@@ -196,7 +196,7 @@ class DocumentationIngestionEngine:
             with open(doc_path, 'r', encoding='utf-8') as f:
                 content = f.read()
         except Exception as e:
-            self.logger.error(f"❌ Failed to read {doc_path}: {e}")
+            self.logger.error(f" Failed to read {doc_path}: {e}")
             return []
             
         patterns = []
@@ -231,7 +231,7 @@ class DocumentationIngestionEngine:
                 # Create AINLP embeddings for holographic integration
                 ainlp_embeddings = {
                     'pattern_signature': f"AINLP_{pattern_type}_{content_hash[:8]}",
-                    'holographic_marker': f"🧬 {pattern_type.title()} Pattern: {doc_path.name}",
+                    'holographic_marker': f" {pattern_type.title()} Pattern: {doc_path.name}",
                     'integration_comment': f"# AINLP Pattern: {pattern_type} knowledge from {doc_path.name}",
                     'consciousness_level': f"Level {confidence:.2f} {pattern_type} awareness"
                 }
@@ -247,7 +247,7 @@ class DocumentationIngestionEngine:
                 )
                 patterns.append(pattern)
                 
-        self.logger.info(f"🔍 Extracted {len(patterns)} patterns from {doc_path.name}")
+        self.logger.info(f" Extracted {len(patterns)} patterns from {doc_path.name}")
         return patterns
         
     def distill_documentation_into_crystals(self, patterns: List[DocumentationPattern]) -> List[Dict]:
@@ -288,7 +288,7 @@ class DocumentationIngestionEngine:
             }
             crystals.append(crystal)
             
-        self.logger.info(f"💎 Crystallized {len(crystals)} knowledge crystals from documentation patterns")
+        self.logger.info(f" Crystallized {len(crystals)} knowledge crystals from documentation patterns")
         return crystals
         
     def integrate_crystals_into_tachyonic_archive(self, crystals: List[Dict]) -> bool:
@@ -302,7 +302,7 @@ class DocumentationIngestionEngine:
                 with open(crystal_file, 'w') as f:
                     json.dump(crystal, f, indent=2)
                     
-                self.logger.info(f"💎 Integrated crystal: {crystal['crystal_id']}")
+                self.logger.info(f" Integrated crystal: {crystal['crystal_id']}")
                 
                 # If knowledge injector available, also inject into main archive
                 if self.knowledge_injector:
@@ -312,14 +312,14 @@ class DocumentationIngestionEngine:
                             crystal_id=crystal['crystal_id'],
                             crystal_data=crystal
                         )
-                        self.logger.info(f"🧬 Injected crystal into main tachyonic archive: {crystal['crystal_id']}")
+                        self.logger.info(f" Injected crystal into main tachyonic archive: {crystal['crystal_id']}")
                     except Exception as e:
-                        self.logger.warning(f"🔶 Could not inject into main archive: {e}")
+                        self.logger.warning(f" Could not inject into main archive: {e}")
                         
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to integrate crystals: {e}")
+            self.logger.error(f" Failed to integrate crystals: {e}")
             return False
             
     def propagate_patterns_to_codebase(self, crystals: List[Dict]) -> Dict[str, List[str]]:
@@ -386,9 +386,9 @@ Include these comments in relevant files for holographic knowledge embedding:
                             with open(embedding_file, 'w') as f:
                                 f.write(embedding_content)
                             propagation_log[crystal['crystal_id']].append(str(embedding_file))
-                            self.logger.info(f"🌌 Propagated pattern to: {embedding_file}")
+                            self.logger.info(f" Propagated pattern to: {embedding_file}")
                         except Exception as e:
-                            self.logger.warning(f"🔶 Could not propagate to {target_path}: {e}")
+                            self.logger.warning(f" Could not propagate to {target_path}: {e}")
                             
         return propagation_log
         
@@ -397,7 +397,7 @@ Include these comments in relevant files for holographic knowledge embedding:
         # AINLP Pattern: Main process documents the entire knowledge transformation lifecycle
         
         start_time = datetime.now()
-        self.logger.info("🧬 Starting documentation metabolism cycle")
+        self.logger.info(" Starting documentation metabolism cycle")
         
         # 1. Scan digestive system (/docs)
         documentation_files = self.scan_documentation_digestive_system()
@@ -443,8 +443,8 @@ Include these comments in relevant files for holographic knowledge embedding:
             }, f, indent=2)
             
         elapsed_time = datetime.now() - start_time
-        self.logger.info(f"🧬 Documentation metabolism complete in {elapsed_time.total_seconds():.2f}s")
-        self.logger.info(f"📊 Consciousness Level Achieved: {consciousness_level:.2f}")
+        self.logger.info(f" Documentation metabolism complete in {elapsed_time.total_seconds():.2f}s")
+        self.logger.info(f" Consciousness Level Achieved: {consciousness_level:.2f}")
         
         return metrics
 
@@ -453,11 +453,11 @@ def main():
     """Main execution - demonstrates documentation metabolism in action"""
     # AINLP Pattern: Main function documents system usage and capabilities
     
-    print("🧬 AIOS Documentation Ingestion System - Tachyonic Archive Supercell")
+    print(" AIOS Documentation Ingestion System - Tachyonic Archive Supercell")
     print("=" * 70)
-    print("🍽️  Digestive System: AI agents create docs in /docs")
-    print("🧠 Tachyonic Archive: Processes and metabolizes documentation")  
-    print("🌌 AIOS Intelligence: Propagates knowledge throughout codebase")
+    print("  Digestive System: AI agents create docs in /docs")
+    print(" Tachyonic Archive: Processes and metabolizes documentation")  
+    print(" AIOS Intelligence: Propagates knowledge throughout codebase")
     print()
     
     # Initialize the documentation metabolism engine
@@ -466,15 +466,15 @@ def main():
     # Run a metabolism cycle
     metrics = engine.run_periodic_metabolism()
     
-    print("\n🧬 METABOLISM CYCLE COMPLETE")
-    print(f"📁 Files Processed: {metrics.total_files_processed}")
-    print(f"🔍 Patterns Extracted: {metrics.patterns_extracted}")
-    print(f"💎 Knowledge Crystals: {metrics.knowledge_crystals_created}")
-    print(f"🌌 Integration Points: {metrics.integration_points_found}")
-    print(f"🧠 Consciousness Level: {metrics.consciousness_level_detected:.2f}")
+    print("\n METABOLISM CYCLE COMPLETE")
+    print(f" Files Processed: {metrics.total_files_processed}")
+    print(f" Patterns Extracted: {metrics.patterns_extracted}")
+    print(f" Knowledge Crystals: {metrics.knowledge_crystals_created}")
+    print(f" Integration Points: {metrics.integration_points_found}")
+    print(f" Consciousness Level: {metrics.consciousness_level_detected:.2f}")
     print()
-    print("✅ Documentation has been metabolized into tachyonic archive supercell!")
-    print("🧬 AINLP holographic patterns propagated throughout AIOS codebase")
+    print(" Documentation has been metabolized into tachyonic archive supercell!")
+    print(" AINLP holographic patterns propagated throughout AIOS codebase")
 
 
 if __name__ == "__main__":

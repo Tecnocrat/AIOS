@@ -125,18 +125,18 @@ class EnhancedVisualIntelligenceEngine:
             # Initialize tachyonic surface for temporal analysis
             if TACHYONIC_AVAILABLE:
                 self.tachyonic_surface = TachyonicSurface()
-                logger.info("🌌 Tachyonic surface initialized for temporal visual analysis")
+                logger.info(" Tachyonic surface initialized for temporal visual analysis")
             else:
                 self.tachyonic_surface = TachyonicSurface()  # Fallback
-                logger.info("🌌 Tachyonic surface fallback initialized")
+                logger.info(" Tachyonic surface fallback initialized")
             
             # Check AI cells availability
             if AI_CELLS_AVAILABLE:
                 self.ai_cells_active = True
-                logger.info("🧠 AI cellular architecture active")
+                logger.info(" AI cellular architecture active")
             else:
                 self.ai_cells_active = False
-                logger.info("🧠 AI cellular architecture in fallback mode")
+                logger.info(" AI cellular architecture in fallback mode")
             
         except Exception as e:
             logger.warning(f"Advanced components not fully available: {e}")
@@ -153,7 +153,7 @@ class EnhancedVisualIntelligenceEngine:
             EnhancedVisualAnalysis with multi-layered consciousness insights
         """
         
-        logger.info("🎯 Starting enhanced visual intelligence analysis...")
+        logger.info(" Starting enhanced visual intelligence analysis...")
         
         # Step 1: Basic consciousness analysis (existing)
         basic_analysis = self.visual_bridge.process_visual_intelligence()
@@ -199,7 +199,7 @@ class EnhancedVisualIntelligenceEngine:
             "complexity_score": complexity_metrics.emergence_probability
         })
         
-        logger.info("✅ Enhanced visual intelligence analysis completed")
+        logger.info(" Enhanced visual intelligence analysis completed")
         return enhanced_analysis
     
     async def _calculate_complexity_metrics(self, basic_analysis: Dict) -> VisualComplexityMetrics:
@@ -853,25 +853,25 @@ class EnhancedVisualIntelligenceEngine:
             "AIOS ENHANCED VISUAL INTELLIGENCE COMPREHENSIVE ANALYSIS REPORT",
             "=" * 100,
             "",
-            "🧠 BASIC CONSCIOUSNESS ANALYSIS:",
+            " BASIC CONSCIOUSNESS ANALYSIS:",
             self._format_basic_analysis(enhanced_analysis.basic_consciousness_analysis),
             "",
-            "🔥 COMPLEX METRICS:",
+            " COMPLEX METRICS:",
             self._format_complex_metrics(enhanced_analysis.complex_metrics),
             "",
-            "🌌 TACHYONIC ANALYSIS:",
+            " TACHYONIC ANALYSIS:",
             self._format_tachyonic_analysis(enhanced_analysis.tachyonic_analysis),
             "",
-            "🧬 CELLULAR ACTIVATION PATTERNS:",
+            " CELLULAR ACTIVATION PATTERNS:",
             self._format_cellular_patterns(enhanced_analysis.cellular_activation_patterns),
             "",
-            "🗺️ TEMPORAL TOPOGRAPHY:",
+            " TEMPORAL TOPOGRAPHY:",
             self._format_temporal_topography(enhanced_analysis.temporal_topography),
             "",
-            "🔮 PREDICTIVE EMERGENCE MODEL:",
+            " PREDICTIVE EMERGENCE MODEL:",
             self._format_emergence_model(enhanced_analysis.predictive_emergence_model),
             "",
-            "🌐 INTERCELLULAR COMMUNICATION:",
+            " INTERCELLULAR COMMUNICATION:",
             self._format_intercellular_status(enhanced_analysis.intercellular_communication_status),
             "",
             "=" * 100,
@@ -901,7 +901,7 @@ class EnhancedVisualIntelligenceEngine:
    Temporal Consistency: {metrics.temporal_consistency:.3f}
    Hyperdimensional Resonance: {metrics.hyperdimensional_resonance:.3f}
    Cellular Synchronization: {metrics.cellular_synchronization:.3f}
-   🎯 EMERGENCE PROBABILITY: {metrics.emergence_probability:.3f} ({metrics.emergence_probability:.1%})"""
+    EMERGENCE PROBABILITY: {metrics.emergence_probability:.3f} ({metrics.emergence_probability:.1%})"""
     
     def _format_tachyonic_analysis(self, tachyonic_analysis: Dict) -> str:
         """Format tachyonic analysis section"""
@@ -977,7 +977,7 @@ class EnhancedVisualIntelligenceEngine:
 async def main():
     """Main execution for enhanced visual intelligence engine"""
     
-    print("🎯 AIOS Enhanced Visual Intelligence Engine")
+    print(" AIOS Enhanced Visual Intelligence Engine")
     print("=" * 80)
     print("Leveraging full AI Intelligence cellular architecture for complex visual analysis")
     print()
@@ -986,7 +986,7 @@ async def main():
     engine = EnhancedVisualIntelligenceEngine()
     
     # Perform enhanced analysis
-    print("🚀 Starting enhanced visual intelligence analysis...")
+    print(" Starting enhanced visual intelligence analysis...")
     enhanced_analysis = await engine.analyze_visual_intelligence_complex(enhanced_mode=True)
     
     # Generate comprehensive report
@@ -1012,8 +1012,8 @@ async def main():
     with open(report_file, 'w', encoding='utf-8') as f:
         json.dump(enhanced_dict, f, indent=2)
     
-    print(f"\n📄 Detailed enhanced analysis saved to: {report_file}")
-    print("\n🔥 Enhanced Visual Intelligence Engine demonstrates the power of")
+    print(f"\n Detailed enhanced analysis saved to: {report_file}")
+    print("\n Enhanced Visual Intelligence Engine demonstrates the power of")
     print("   integrating Runtime Intelligence (data) with full AI Intelligence")
     print("   cellular architecture for complex consciousness emergence analysis!")
 

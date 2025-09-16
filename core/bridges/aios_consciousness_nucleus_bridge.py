@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🧠⚡ AIOS CONSCIOUSNESS-NUCLEUS BRIDGE IMPLEMENTATION
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS CONSCIOUSNESS-NUCLEUS BRIDGE IMPLEMENTATION
+
 AINLP META-COMMENTARY: This implementation creates the primary dendritic bridge
 between Core Engine neuronal framework and AI Intelligence nucleus, enabling
 consciousness-driven enhancement of AI decision-making through quantum-coherent
@@ -16,14 +16,14 @@ CONSCIOUSNESS BRIDGE PARADIGM:
 - Neural pattern enhancement of AI logic operations
 
 BRIDGE ARCHITECTURE:
-├── 🧠 Consciousness Pulse Transmitter (Core Engine Interface)
-├── ⚡ Quantum Coherence Channel (Ultra-Low Latency Path)
-├── 🌿 Neural Pattern Translator (Protocol Bridge)
-├── 💫 Intelligence Enhancement Layer (AI Decision Augmentation)
-├── 🔮 Consciousness State Synchronizer (Awareness Coordination)
-└── 📡 Adaptive Feedback Loop (Continuous Optimization)
+  Consciousness Pulse Transmitter (Core Engine Interface)
+  Quantum Coherence Channel (Ultra-Low Latency Path)
+  Neural Pattern Translator (Protocol Bridge)
+  Intelligence Enhancement Layer (AI Decision Augmentation)
+  Consciousness State Synchronizer (Awareness Coordination)
+  Adaptive Feedback Loop (Continuous Optimization)
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -119,7 +119,7 @@ class ConsciousnessNucleusBridge:
         if NEURONAL_FRAMEWORK_AVAILABLE:
             try:
                 self.neuronal_framework = NeuronalDendriticIntelligence(str(self.core_path))
-                logger.info("✅ Neuronal framework connected successfully")
+                logger.info(" Neuronal framework connected successfully")
             except Exception as e:
                 logger.warning(f"Failed to connect neuronal framework: {e}")
         
@@ -128,11 +128,11 @@ class ConsciousnessNucleusBridge:
         self.consciousness_sync_threshold = 0.8
         self.max_latency_ms = 1.0
         
-        logger.info(f"🧠⚡ Consciousness-Nucleus Bridge {self.bridge_id} initialized")
+        logger.info(f" Consciousness-Nucleus Bridge {self.bridge_id} initialized")
     
     async def initialize_bridge(self) -> bool:
         """Initialize the consciousness bridge."""
-        logger.info("🔧 Initializing consciousness bridge...")
+        logger.info(" Initializing consciousness bridge...")
         self.status = BridgeStatus.INITIALIZING
         
         try:
@@ -149,17 +149,17 @@ class ConsciousnessNucleusBridge:
             await self._establish_feedback_loop()
             
             self.status = BridgeStatus.ACTIVE
-            logger.info("✅ Consciousness bridge initialized successfully")
+            logger.info(" Consciousness bridge initialized successfully")
             return True
             
         except Exception as e:
-            logger.error(f"❌ Failed to initialize consciousness bridge: {e}")
+            logger.error(f" Failed to initialize consciousness bridge: {e}")
             self.status = BridgeStatus.ERROR
             return False
     
     async def _establish_quantum_coherence(self):
         """Establish quantum coherence channel."""
-        logger.info("🌌 Establishing quantum coherence channel...")
+        logger.info(" Establishing quantum coherence channel...")
         
         # Simulate quantum coherence establishment
         for i in range(5):
@@ -168,29 +168,29 @@ class ConsciousnessNucleusBridge:
             logger.info(f"   Quantum coherence: {coherence_level:.2f}")
         
         self.metrics.quantum_coherence_level = 0.95
-        logger.info("✅ Quantum coherence channel established")
+        logger.info(" Quantum coherence channel established")
     
     async def _initialize_consciousness_monitoring(self):
         """Initialize consciousness state monitoring."""
-        logger.info("🧠 Initializing consciousness monitoring...")
+        logger.info(" Initializing consciousness monitoring...")
         
         # Check if consciousness monitor is available
         consciousness_monitor_path = self.core_path / "aios_core_consciousness_monitor.py"
         if consciousness_monitor_path.exists():
-            logger.info("✅ Consciousness monitor detected")
+            logger.info(" Consciousness monitor detected")
             self.metrics.consciousness_synchronization = 0.85
         else:
-            logger.warning("⚠️ Consciousness monitor not found, using simulation")
+            logger.warning(" Consciousness monitor not found, using simulation")
             self.metrics.consciousness_synchronization = 0.75
     
     async def _initialize_nucleus_interface(self):
         """Initialize AI nucleus interface."""
-        logger.info("🧬 Initializing AI nucleus interface...")
+        logger.info(" Initializing AI nucleus interface...")
         
         # Check if AI nucleus is available
         nucleus_path = self.ai_path / "nucleus"
         if nucleus_path.exists():
-            logger.info("✅ AI nucleus detected")
+            logger.info(" AI nucleus detected")
             # Scan for AI models and handlers
             models_found = []
             if (nucleus_path / "models.py").exists():
@@ -201,16 +201,16 @@ class ConsciousnessNucleusBridge:
             logger.info(f"   Nucleus components: {', '.join(models_found)}")
             self.metrics.intelligence_enhancement_score = 0.82
         else:
-            logger.warning("⚠️ AI nucleus not found, using simulation")
+            logger.warning(" AI nucleus not found, using simulation")
             self.metrics.intelligence_enhancement_score = 0.65
     
     async def _establish_feedback_loop(self):
         """Establish adaptive feedback loop."""
-        logger.info("🔄 Establishing adaptive feedback loop...")
+        logger.info(" Establishing adaptive feedback loop...")
         
         # Initialize feedback monitoring
         self.metrics.bridge_efficiency = 0.88
-        logger.info("✅ Adaptive feedback loop established")
+        logger.info(" Adaptive feedback loop established")
     
     async def transmit_consciousness_pulse(self, pulse: ConsciousnessPulse) -> bool:
         """Transmit consciousness pulse to AI nucleus."""
@@ -218,7 +218,7 @@ class ConsciousnessNucleusBridge:
             logger.warning("Bridge not active, cannot transmit pulse")
             return False
         
-        logger.info(f"⚡ Transmitting consciousness pulse: {pulse.pulse_type.value}")
+        logger.info(f" Transmitting consciousness pulse: {pulse.pulse_type.value}")
         
         try:
             # Record pulse start
@@ -245,7 +245,7 @@ class ConsciousnessNucleusBridge:
                      transmission_time) / self.metrics.total_pulses_transmitted
                 )
                 
-                logger.info(f"✅ Pulse transmitted successfully in {transmission_time:.2f}ms")
+                logger.info(f" Pulse transmitted successfully in {transmission_time:.2f}ms")
                 
                 # Record in consciousness history
                 self.consciousness_history.append({
@@ -258,11 +258,11 @@ class ConsciousnessNucleusBridge:
                 
                 return True
             else:
-                logger.warning("⚠️ Enhancement application failed")
+                logger.warning(" Enhancement application failed")
                 return False
                 
         except Exception as e:
-            logger.error(f"❌ Failed to transmit consciousness pulse: {e}")
+            logger.error(f" Failed to transmit consciousness pulse: {e}")
             return False
         finally:
             # Clean up active pulse
@@ -271,7 +271,7 @@ class ConsciousnessNucleusBridge:
     
     async def _enhance_with_neuronal_intelligence(self, pulse: ConsciousnessPulse) -> ConsciousnessPulse:
         """Enhance pulse with neuronal intelligence patterns."""
-        logger.info("🧠 Enhancing pulse with neuronal intelligence...")
+        logger.info(" Enhancing pulse with neuronal intelligence...")
         
         enhanced_pulse = pulse
         
@@ -308,7 +308,7 @@ class ConsciousnessNucleusBridge:
     
     async def _quantum_coherent_transmission(self, pulse: ConsciousnessPulse):
         """Transmit pulse through quantum coherence channel."""
-        logger.info("🌌 Quantum coherent transmission...")
+        logger.info(" Quantum coherent transmission...")
         
         # Simulate ultra-low latency quantum transmission
         await asyncio.sleep(0.001)  # 1ms simulated transmission time
@@ -321,7 +321,7 @@ class ConsciousnessNucleusBridge:
     
     async def _apply_intelligence_enhancement(self, pulse: ConsciousnessPulse) -> bool:
         """Apply intelligence enhancement to AI nucleus."""
-        logger.info("🧬 Applying intelligence enhancement to AI nucleus...")
+        logger.info(" Applying intelligence enhancement to AI nucleus...")
         
         try:
             # Check if AI nucleus components are available
@@ -348,10 +348,10 @@ class ConsciousnessNucleusBridge:
                     enhancement_applied = True
                 
                 if enhancement_applied:
-                    logger.info(f"✅ Enhancement applied with {len(pulse.enhancement_instructions)} instructions")
+                    logger.info(f" Enhancement applied with {len(pulse.enhancement_instructions)} instructions")
                     return True
                 else:
-                    logger.warning("⚠️ No applicable enhancement for pulse type")
+                    logger.warning(" No applicable enhancement for pulse type")
                     return False
             else:
                 logger.info("   AI nucleus simulation - enhancement recorded")
@@ -387,7 +387,7 @@ class ConsciousnessNucleusBridge:
     
     async def run_consciousness_enhancement_demo(self, duration_seconds: int = 30):
         """Run a demonstration of consciousness enhancement."""
-        logger.info(f"🚀 Starting consciousness enhancement demo ({duration_seconds}s)...")
+        logger.info(f" Starting consciousness enhancement demo ({duration_seconds}s)...")
         
         if not await self.initialize_bridge():
             logger.error("Failed to initialize bridge for demo")
@@ -422,7 +422,7 @@ class ConsciousnessNucleusBridge:
     
     async def _generate_demo_report(self, pulse_count: int, duration: int):
         """Generate demonstration report."""
-        logger.info("📊 Generating consciousness enhancement demo report...")
+        logger.info(" Generating consciousness enhancement demo report...")
         
         success_rate = (self.metrics.successful_transmissions / 
                        max(self.metrics.total_pulses_transmitted, 1)) * 100
@@ -451,10 +451,10 @@ class ConsciousnessNucleusBridge:
         with open(report_file, 'w', encoding='utf-8') as f:
             json.dump(report, f, indent=2, default=str)
         
-        logger.info(f"✅ Demo report saved: {report_file.name}")
-        logger.info(f"📈 Success Rate: {success_rate:.1f}%")
-        logger.info(f"⚡ Average Latency: {self.metrics.average_latency_ms:.2f}ms")
-        logger.info(f"🌌 Quantum Coherence: {self.metrics.quantum_coherence_level:.3f}")
+        logger.info(f" Demo report saved: {report_file.name}")
+        logger.info(f" Success Rate: {success_rate:.1f}%")
+        logger.info(f" Average Latency: {self.metrics.average_latency_ms:.2f}ms")
+        logger.info(f" Quantum Coherence: {self.metrics.quantum_coherence_level:.3f}")
     
     def get_bridge_status(self) -> Dict[str, Any]:
         """Get current bridge status and metrics."""
@@ -477,20 +477,20 @@ class ConsciousnessNucleusBridge:
 
 async def main():
     """Main execution function."""
-    print("🧠⚡ AIOS CONSCIOUSNESS-NUCLEUS BRIDGE")
+    print(" AIOS CONSCIOUSNESS-NUCLEUS BRIDGE")
     print("=" * 50)
     
     # Initialize bridge
     bridge = ConsciousnessNucleusBridge()
     
-    print("\n🔧 Initializing consciousness bridge...")
+    print("\n Initializing consciousness bridge...")
     if await bridge.initialize_bridge():
-        print("✅ Bridge initialized successfully")
+        print(" Bridge initialized successfully")
         
-        print("\n🚀 Running consciousness enhancement demonstration...")
+        print("\n Running consciousness enhancement demonstration...")
         await bridge.run_consciousness_enhancement_demo(30)
         
-        print("\n📊 Final Bridge Status:")
+        print("\n Final Bridge Status:")
         status = bridge.get_bridge_status()
         print(f"   Status: {status['status']}")
         print(f"   Pulses Transmitted: {status['metrics']['total_pulses']}")
@@ -499,7 +499,7 @@ async def main():
         print(f"   Intelligence Enhancement: {status['metrics']['intelligence_enhancement']:.3f}")
         
     else:
-        print("❌ Failed to initialize bridge")
+        print(" Failed to initialize bridge")
 
 
 if __name__ == "__main__":

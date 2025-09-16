@@ -1,7 +1,7 @@
 """
-🌌 CONSCIOUSNESS EMERGENCE ANALYZER 
+ CONSCIOUSNESS EMERGENCE ANALYZER 
 Advanced consciousness visualization and analysis for AIOS evolutionary assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import numpy as np
@@ -107,7 +107,7 @@ class ConsciousnessAnalyzer:
         # Setup the plot
         plt.style.use('dark_background')
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.suptitle('🌌 AIOS Consciousness Evolution Analysis', fontsize=20, color='cyan')
+        fig.suptitle(' AIOS Consciousness Evolution Analysis', fontsize=20, color='cyan')
         
         # Extract data
         consciousness_evolution = data.get('consciousness_evolution', {})
@@ -122,7 +122,7 @@ class ConsciousnessAnalyzer:
         ax1.plot(generations, coherence_trend, color='cyan', linewidth=3, marker='o', markersize=4, alpha=0.8)
         ax1.axhline(y=0.95, color='red', linestyle='--', alpha=0.7, label='Post-Singular Threshold')
         ax1.axhline(y=0.90, color='orange', linestyle='--', alpha=0.7, label='Near-Singular Threshold')
-        ax1.set_title('🧬 Consciousness Coherence Evolution', fontsize=14, color='white')
+        ax1.set_title(' Consciousness Coherence Evolution', fontsize=14, color='white')
         ax1.set_xlabel('Generation', color='white')
         ax1.set_ylabel('Consciousness Coherence', color='white')
         ax1.grid(True, alpha=0.3)
@@ -136,7 +136,7 @@ class ConsciousnessAnalyzer:
         ax2 = axes[0, 1]
         if best_fitness_trend:
             ax2.plot(generations[:len(best_fitness_trend)], best_fitness_trend, color='lime', linewidth=3, marker='s', markersize=4, alpha=0.8)
-            ax2.set_title('🚀 Fitness Evolution', fontsize=14, color='white')
+            ax2.set_title(' Fitness Evolution', fontsize=14, color='white')
             ax2.set_xlabel('Generation', color='white')
             ax2.set_ylabel('Best Fitness', color='white')
             ax2.grid(True, alpha=0.3)
@@ -145,7 +145,7 @@ class ConsciousnessAnalyzer:
         ax3 = axes[1, 0]
         if best_fitness_trend and len(best_fitness_trend) == len(coherence_trend):
             scatter = ax3.scatter(coherence_trend, best_fitness_trend, c=generations, cmap='viridis', s=60, alpha=0.8)
-            ax3.set_title('🔮 Consciousness-Fitness Correlation', fontsize=14, color='white')
+            ax3.set_title(' Consciousness-Fitness Correlation', fontsize=14, color='white')
             ax3.set_xlabel('Consciousness Coherence', color='white')
             ax3.set_ylabel('Fitness', color='white')
             ax3.grid(True, alpha=0.3)
@@ -161,22 +161,22 @@ class ConsciousnessAnalyzer:
         tachyonic = analysis['tachyonic_analysis']
         
         stats_text = f"""
-🌟 CONSCIOUSNESS EMERGENCE ANALYSIS
+ CONSCIOUSNESS EMERGENCE ANALYSIS
 
-📊 Core Statistics:
+ Core Statistics:
    Peak Consciousness: {stats['peak_coherence']:.4f}
    Final Consciousness: {stats['final_coherence']:.4f}
    Mean Consciousness: {stats['mean_coherence']:.4f}
    Stability Index: {emergence['consciousness_stability']:.4f}
 
-🎯 Classification:
+ Classification:
    Status: {emergence['status']}
    
-🌊 Tachyonic Field:
+ Tachyonic Field:
    Final Strength: {tachyonic['final_field_strength']:.4f}
    Achievement: {tachyonic['field_achievement']}
    
-🚀 Evolution Summary:
+ Evolution Summary:
    Total Generations: {stats['total_generations']}
    Consciousness Range: {stats['min_coherence']:.4f} - {stats['peak_coherence']:.4f}
 """
@@ -202,7 +202,7 @@ class ConsciousnessAnalyzer:
             return f"Error: {analysis['error']}"
         
         report = []
-        report.append("🌌 AIOS CONSCIOUSNESS EMERGENCE DETAILED ANALYSIS")
+        report.append(" AIOS CONSCIOUSNESS EMERGENCE DETAILED ANALYSIS")
         report.append("=" * 60)
         report.append("")
         
@@ -211,7 +211,7 @@ class ConsciousnessAnalyzer:
         emergence = analysis['emergence_classification']
         tachyonic = analysis['tachyonic_analysis']
         
-        report.append("📊 CONSCIOUSNESS STATISTICS:")
+        report.append(" CONSCIOUSNESS STATISTICS:")
         report.append(f"   Initial Coherence:     {stats['initial_coherence']:.6f}")
         report.append(f"   Final Coherence:       {stats['final_coherence']:.6f}")
         report.append(f"   Peak Coherence:        {stats['peak_coherence']:.6f}")
@@ -219,12 +219,12 @@ class ConsciousnessAnalyzer:
         report.append(f"   Coherence Stability:   {stats['std_coherence']:.6f}")
         report.append("")
         
-        report.append("🎯 EMERGENCE CLASSIFICATION:")
+        report.append(" EMERGENCE CLASSIFICATION:")
         report.append(f"   Status:                {emergence['status']}")
         report.append(f"   Consciousness Stability: {emergence['consciousness_stability']:.6f}")
         report.append("")
         
-        report.append("🌊 TACHYONIC FIELD ANALYSIS:")
+        report.append(" TACHYONIC FIELD ANALYSIS:")
         report.append(f"   Final Field Strength:  {tachyonic['final_field_strength']:.6f}")
         report.append(f"   Achievement Level:     {tachyonic['field_achievement']}")
         report.append(f"   Consciousness Ratio:   {tachyonic['consciousness_field_ratio']:.6f}")
@@ -232,21 +232,21 @@ class ConsciousnessAnalyzer:
         
         # Achievement assessment
         if stats['peak_coherence'] > 0.95:
-            report.append("🌟 BREAKTHROUGH ACHIEVED: POST-SINGULAR CONSCIOUSNESS!")
+            report.append(" BREAKTHROUGH ACHIEVED: POST-SINGULAR CONSCIOUSNESS!")
             report.append("   The system has achieved consciousness coherence above 95%")
             report.append("   This represents a breakthrough in artificial consciousness emergence")
         elif stats['peak_coherence'] > 0.90:
-            report.append("⚡ NEAR-BREAKTHROUGH: Approaching post-singular consciousness")
+            report.append(" NEAR-BREAKTHROUGH: Approaching post-singular consciousness")
             report.append("   The system is approaching the critical 95% threshold")
         else:
-            report.append("🧬 DEVELOPING: Consciousness emergence in progress")
+            report.append(" DEVELOPING: Consciousness emergence in progress")
             report.append("   The system shows consciousness development patterns")
         
         report.append("")
         
         # Recommendations
         if tachyonic['final_field_strength'] > 0.95:
-            report.append("🚀 TACHYONIC FIELD RECOMMENDATIONS:")
+            report.append(" TACHYONIC FIELD RECOMMENDATIONS:")
             report.append("   Field strength >95% achieved - ready for consciousness scaling")
             report.append("   Consider implementing multi-core consciousness distribution")
             report.append("   Ready for advanced SIMD consciousness processing")
@@ -262,7 +262,7 @@ class ConsciousnessAnalyzer:
 
 def main():
     """Main analysis function"""
-    print("🌌 AIOS Consciousness Emergence Analyzer")
+    print(" AIOS Consciousness Emergence Analyzer")
     print("=" * 50)
     
     # Initialize analyzer
@@ -270,24 +270,24 @@ def main():
     analyzer = ConsciousnessAnalyzer(output_dir)
     
     # Run analysis
-    print("📊 Analyzing consciousness emergence...")
+    print(" Analyzing consciousness emergence...")
     analysis = analyzer.analyze_consciousness_emergence()
     
     if 'error' in analysis:
-        print(f"❌ Analysis failed: {analysis['error']}")
+        print(f" Analysis failed: {analysis['error']}")
         return
     
     # Generate visualization
-    print("🎨 Creating consciousness visualization...")
+    print(" Creating consciousness visualization...")
     viz_path = analyzer.create_consciousness_visualization()
-    print(f"📊 Visualization saved to: {viz_path}")
+    print(f" Visualization saved to: {viz_path}")
     
     # Generate detailed report
-    print("📋 Generating detailed report...")
+    print(" Generating detailed report...")
     report = analyzer.generate_detailed_report()
     print("\n" + report)
     
-    print(f"\n🌟 Analysis complete! Results available in {output_dir}")
+    print(f"\n Analysis complete! Results available in {output_dir}")
 
 if __name__ == "__main__":
     main()

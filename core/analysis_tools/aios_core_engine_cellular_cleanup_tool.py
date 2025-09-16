@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 🧹 AIOS Core Engine Cellular Cleanup & Reorganization Tool
-═══════════════════════════════════════════════════════════════════════════════
+
 Cleanup tool to move incorrectly placed files from Core Engine root to their
 proper subfolder locations and create proper linking/navigation files in root.
 
@@ -17,7 +17,7 @@ ORGANIZATIONAL PRINCIPLE:
 - Subfolders: Specialized cellular components and functionality
 - Clean separation between coordination (root) and implementation (subfolders)
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import sys
@@ -177,7 +177,7 @@ class AIOSCoreEngineCellularCleanup:
         """Execute the cellular cleanup and reorganization."""
         
         logger.info("[CLEANUP] EXECUTING CELLULAR CLEANUP AND REORGANIZATION")
-        logger.info("═" * 70)
+        logger.info("" * 70)
         
         cleanup_session = {
             "cleanup_timestamp": self.cleanup_timestamp.isoformat(),
@@ -447,7 +447,7 @@ class AIOSCoreEngineCellularCleanup:
         """Display comprehensive cleanup results."""
         
         print("[CLEANUP] AIOS CORE ENGINE CELLULAR CLEANUP RESULTS")
-        print("═" * 70)
+        print("" * 70)
         print()
         
         # Summary
@@ -517,7 +517,7 @@ def main():
     """Execute comprehensive Core Engine cellular cleanup."""
     
     print("[CLEANUP] AIOS CORE ENGINE CELLULAR CLEANUP TOOL")
-    print("═" * 70)
+    print("" * 70)
     print("[INFO] Moving functional files from root to proper subfolders")
     print("[INFO] Creating navigation indexes for AI ingestion")
     print("[INFO] Maintaining clean cellular organization")

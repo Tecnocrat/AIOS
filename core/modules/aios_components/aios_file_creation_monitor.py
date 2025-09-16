@@ -120,9 +120,9 @@ class AIOSFileMonitor:
             changes = self.check_changes()
             
             if changes:
-                print(f"\n🚨 DETECTED {len(changes)} NEW FILES:")
+                print(f"\n DETECTED {len(changes)} NEW FILES:")
                 for change in changes:
-                    print(f"  📁 {change['filename']}")
+                    print(f"   {change['filename']}")
                     print(f"     Path: {change['path']}")
                     print(f"     Size: {change['size']} bytes")
                     print(f"     Preview: {change['content_preview']}")
@@ -159,12 +159,12 @@ if __name__ == "__main__":
         monitor.save_log()
         
         if log:
-            print("\n🔍 INVESTIGATION SUMMARY:")
+            print("\n INVESTIGATION SUMMARY:")
             for event in log:
                 print(f"  • {event['filename']} created by {event.get('creating_process', {}).get('name', 'UNKNOWN')}")
         else:
-            print("\n✅ No new files detected during monitoring period.")
+            print("\n No new files detected during monitoring period.")
             
     except KeyboardInterrupt:
-        print("\n⏹️ Monitoring stopped by user")
+        print("\n⏹ Monitoring stopped by user")
         monitor.save_log()

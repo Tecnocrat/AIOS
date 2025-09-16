@@ -110,9 +110,9 @@ jobs:
             const deltaTableRows = changedScores.slice(0,15).map(d=>`| ${d.path} | ${d.prev??'-'} | ${d.cur} | ${d.delta===null?'(new)':d.delta.toFixed(2)} |`).join('\n');
             const deltaHeader = '| Path | Prev | Cur | Δ |';
             const deltaSep = '|------|------|-----|----|';
-            const body = `### 📊 File Criticality Impact\nChanged high-impact files (top up to 10):\n${header}\n${sep}\n${tableRows || '(none)'}\n\n**Δ Score Summary** (vs base): avg=${avgDelta} (pos=${pos} neg=${neg} zero=${unchanged})\n${deltaHeader}\n${deltaSep}\n${deltaTableRows || '(no scored changes)'}\n\n_Total files scored: ${indexMap.length}. Core/High deletions require staged deprecation._`;
+            const body = `###  File Criticality Impact\nChanged high-impact files (top up to 10):\n${header}\n${sep}\n${tableRows || '(none)'}\n\n**Δ Score Summary** (vs base): avg=${avgDelta} (pos=${pos} neg=${neg} zero=${unchanged})\n${deltaHeader}\n${deltaSep}\n${deltaTableRows || '(no scored changes)'}\n\n_Total files scored: ${indexMap.length}. Core/High deletions require staged deprecation._`;
             const {owner, repo} = context.repo; const issue_number = context.issue.number;
-            const marker = '### 📊 File Criticality Impact';
+            const marker = '###  File Criticality Impact';
             const comments = await github.rest.issues.listComments({owner, repo, issue_number, per_page: 100});
             const existing = comments.data.find(c => c.body && c.body.startsWith(marker));
             if (existing) {

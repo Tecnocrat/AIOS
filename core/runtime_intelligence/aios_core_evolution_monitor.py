@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 [CHART] AIOS Core Evolution Monitor (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Monitors evolutionary progress of Core Engine components using iter2 capabilities.
 
 MONITORING SCOPE:
@@ -17,7 +17,7 @@ ITER2 CAPABILITIES:
 - Meta-evolutionary metrics
 
 AIOS - Evolution monitoring with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import sys
 import json

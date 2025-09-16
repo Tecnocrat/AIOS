@@ -27,7 +27,7 @@ class VSCodeHealthValidator:
     def validate_workspace_configuration(self) -> Dict[str, Any]:
         """Validate workspace configuration for health issues"""
         
-        print("🏥 AIOS VSCode Workspace Health Check")
+        print(" AIOS VSCode Workspace Health Check")
         print("=" * 50)
         
         # Check workspace file
@@ -61,7 +61,7 @@ class VSCodeHealthValidator:
     def _check_workspace_file(self) -> Dict[str, Any]:
         """Check AIOS.code-workspace for configuration health"""
         if not self.workspace_file.exists():
-            self.health_issues.append("❌ AIOS.code-workspace file missing")
+            self.health_issues.append(" AIOS.code-workspace file missing")
             return {"status": "missing", "score": 0.0}
         
         try:
@@ -83,35 +83,35 @@ class VSCodeHealthValidator:
             settings = workspace_config.get("settings", {})
             
             if settings.get("editor.formatOnSave", True):
-                issues.append("❌ editor.formatOnSave should be false")
+                issues.append(" editor.formatOnSave should be false")
             
             if settings.get("python.formatting.provider") != "none":
-                issues.append("❌ python.formatting.provider should be 'none'")
+                issues.append(" python.formatting.provider should be 'none'")
             
             if settings.get("python.linting.enabled", True):
-                issues.append("❌ python.linting.enabled should be false")
+                issues.append(" python.linting.enabled should be false")
             
             code_actions = settings.get("editor.codeActionsOnSave", {})
             if code_actions.get("source.fixAll") != "never":
-                issues.append("❌ source.fixAll should be 'never'")
+                issues.append(" source.fixAll should be 'never'")
             
             if not issues:
-                print("✅ Workspace file: HEALTHY")
+                print(" Workspace file: HEALTHY")
                 return {"status": "healthy", "score": 1.0, "issues": []}
             else:
-                print(f"⚠️  Workspace file: {len(issues)} issues found")
+                print(f"  Workspace file: {len(issues)} issues found")
                 for issue in issues:
                     print(f"   {issue}")
                 return {"status": "issues", "score": 0.5, "issues": issues}
                 
         except Exception as e:
-            self.health_issues.append(f"❌ Workspace file parse error: {e}")
+            self.health_issues.append(f" Workspace file parse error: {e}")
             return {"status": "error", "score": 0.0}
 
     def _check_settings_file(self) -> Dict[str, Any]:
         """Check .vscode/settings.json for conflicts"""
         if not self.settings_file.exists():
-            print("⚠️  .vscode/settings.json missing (using workspace defaults)")
+            print("  .vscode/settings.json missing (using workspace defaults)")
             return {"status": "missing", "score": 0.8}
         
         try:
@@ -129,29 +129,29 @@ class VSCodeHealthValidator:
             
             # Check for conflicting formatter settings
             if settings.get("python.analysis.autoImportCompletions", False):
-                issues.append("❌ autoImportCompletions should be false")
+                issues.append(" autoImportCompletions should be false")
             
             if settings.get("python.linting.enabled", False):
-                issues.append("❌ Python linting should be disabled")
+                issues.append(" Python linting should be disabled")
             
             if settings.get("omnisharp.organizeImportsOnFormat", False):
-                issues.append("❌ C# organize imports on format should be false")
+                issues.append(" C# organize imports on format should be false")
             
             if not issues:
-                print("✅ Settings file: HEALTHY")
+                print(" Settings file: HEALTHY")
                 return {"status": "healthy", "score": 1.0, "issues": []}
             else:
-                print(f"⚠️  Settings file: {len(issues)} issues found")
+                print(f"  Settings file: {len(issues)} issues found")
                 return {"status": "issues", "score": 0.6, "issues": issues}
                 
         except Exception as e:
-            self.health_issues.append(f"❌ Settings file parse error: {e}")
+            self.health_issues.append(f" Settings file parse error: {e}")
             return {"status": "error", "score": 0.0}
 
     def _check_editorconfig(self) -> Dict[str, Any]:
         """Check .editorconfig for format enforcement"""
         if not self.editorconfig.exists():
-            self.recommendations.append("💡 Consider adding .editorconfig for consistent formatting")
+            self.recommendations.append(" Consider adding .editorconfig for consistent formatting")
             return {"status": "missing", "score": 0.7}
         
         try:
@@ -162,10 +162,10 @@ class VSCodeHealthValidator:
             missing = [section for section in required_sections if section not in content]
             
             if not missing:
-                print("✅ .editorconfig: HEALTHY")
+                print(" .editorconfig: HEALTHY")
                 return {"status": "healthy", "score": 1.0, "missing": []}
             else:
-                print(f"⚠️  .editorconfig: Missing {len(missing)} recommendations")
+                print(f"  .editorconfig: Missing {len(missing)} recommendations")
                 return {"status": "partial", "score": 0.8, "missing": missing}
                 
         except Exception as e:
@@ -185,9 +185,9 @@ class VSCodeHealthValidator:
             "ms-python.isort"  # Useful for import organization
         ]
         
-        print("✅ Formatters beneficial with manual control in Copilot")
+        print(" Formatters beneficial with manual control in Copilot")
         self.recommendations.append(
-            "💡 Keep formatters for Copilot cleanup, ensure formatOnSave=false"
+            " Keep formatters for Copilot cleanup, ensure formatOnSave=false"
         )
         
         return {"status": "manual_check_needed", "score": 0.8}
@@ -205,13 +205,13 @@ class VSCodeHealthValidator:
         overall = sum(scores)
         
         if overall >= 0.9:
-            print(f"\n🎉 Overall Health: EXCELLENT ({overall:.1%})")
+            print(f"\n Overall Health: EXCELLENT ({overall:.1%})")
         elif overall >= 0.7:
-            print(f"\n✅ Overall Health: GOOD ({overall:.1%})")
+            print(f"\n Overall Health: GOOD ({overall:.1%})")
         elif overall >= 0.5:
-            print(f"\n⚠️  Overall Health: NEEDS ATTENTION ({overall:.1%})")
+            print(f"\n  Overall Health: NEEDS ATTENTION ({overall:.1%})")
         else:
-            print(f"\n❌ Overall Health: CRITICAL ({overall:.1%})")
+            print(f"\n Overall Health: CRITICAL ({overall:.1%})")
         
         return overall
 
@@ -221,32 +221,32 @@ class VSCodeHealthValidator:
         
         report = [
             "\n" + "=" * 60,
-            "🏥 AIOS VSCODE WORKSPACE HEALTH REPORT",
+            " AIOS VSCODE WORKSPACE HEALTH REPORT",
             "=" * 60,
             f"Overall Health Score: {validation_result['overall_health']:.1%}",
             ""
         ]
         
         if self.health_issues:
-            report.append("🚨 Critical Issues:")
+            report.append(" Critical Issues:")
             for issue in self.health_issues:
                 report.append(f"  {issue}")
             report.append("")
         
         if self.recommendations:
-            report.append("💡 Recommendations:")
+            report.append(" Recommendations:")
             for rec in self.recommendations:
                 report.append(f"  {rec}")
             report.append("")
         
         report.extend([
-            "📋 Component Health:",
+            " Component Health:",
             f"  Workspace Config: {validation_result['workspace_file']['score']:.1%}",
             f"  Settings File: {validation_result['settings_file']['score']:.1%}",
             f"  EditorConfig: {validation_result['editorconfig']['score']:.1%}",
             f"  Extension Check: {validation_result['extension_conflicts']['score']:.1%}",
             "",
-            "🎯 Next Steps:",
+            " Next Steps:",
             "  1. Fix any critical issues above",
             "  2. Implement recommendations for optimal health",
             "  3. Run health check after VSCode restart",
@@ -274,12 +274,12 @@ def main():
         with open(report_file, 'w', encoding='utf-8') as f:
             f.write(report)
         
-        print(f"\n📄 Health report saved: {report_file}")
+        print(f"\n Health report saved: {report_file}")
         
         return 0
         
     except Exception as e:
-        print(f"❌ Health check failed: {e}")
+        print(f" Health check failed: {e}")
         return 1
 
 

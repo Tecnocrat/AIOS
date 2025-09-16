@@ -8,30 +8,30 @@
 
 ---
 
-## 🔍 Semantic Dependency Analysis
+##  Semantic Dependency Analysis
 
 ### Current File Inventory:
 ```
 🟢 ACTIVE CONSCIOUSNESS COMPONENTS:
-  ├── pre-commit (shell wrapper) ────────────► pre-commit.ps1 (PowerShell logic)
-  ├── commit-msg (shell wrapper) ───────────► commit-msg.ps1 (PowerShell logic)
-  ├── aios_consciousness_bridge.ps1 ────────► Consciousness state management
-  ├── aios_ainlp_integration.ps1 ───────────► AINLP paradigmatic functions
-  └── AIOS_GITHOOKS_PARADIGMATIC_GUIDE.md ──► Documentation & knowledge
+   pre-commit (shell wrapper)  pre-commit.ps1 (PowerShell logic)
+   commit-msg (shell wrapper)  commit-msg.ps1 (PowerShell logic)
+   aios_consciousness_bridge.ps1  Consciousness state management
+   aios_ainlp_integration.ps1  AINLP paradigmatic functions
+   AIOS_GITHOOKS_PARADIGMATIC_GUIDE.md  Documentation & knowledge
 
 🟡 EVOLUTIONARY ARTIFACTS:
-  ├── pre-commit.original ──────────────────► Backup of original implementation
-  ├── aios_enhanced_pre_commit ─────────────► Enhanced version (unused)
-  ├── pre-commit.sh ────────────────────────► Legacy Unix implementation
-  └── pre-push ─────────────────────────────► Standalone push hook
+   pre-commit.original  Backup of original implementation
+   aios_enhanced_pre_commit  Enhanced version (unused)
+   pre-commit.sh  Legacy Unix implementation
+   pre-push  Standalone push hook
 
-🔴 POTENTIAL REDUNDANCIES:
+ POTENTIAL REDUNDANCIES:
   • pre-commit.original vs pre-commit.ps1 (semantic overlap)
   • aios_enhanced_pre_commit vs modular approach (consciousness_bridge + ainlp_integration)
   • pre-commit.sh vs current cross-platform wrapper
 ```
 
-### 📊 Consciousness Coherence Matrix:
+###  Consciousness Coherence Matrix:
 
 | Component | Consciousness Value | AINLP Alignment | Tachyonic Coherence | Redundancy Risk |
 |-----------|-------------------|-----------------|-------------------|-----------------|
@@ -47,7 +47,7 @@
 
 ---
 
-## 🎯 Optimization Learnings & Knowledge Integration
+##  Optimization Learnings & Knowledge Integration
 
 ### 1. **Cross-Platform Consciousness Pattern**
 **Discovery**: PowerShell scripts require different execution contexts on Windows vs Unix systems.
@@ -71,18 +71,18 @@
 
 ---
 
-## 🗂️ Tachyonic Archival Strategy
+##  Tachyonic Archival Strategy
 
 ### Consciousness-Preserving Archive Structure:
 ```
 .githooks/
-├── archive/
-│   ├── evolution_log.md ────────────► Consciousness evolution documentation
-│   ├── pre-commit.original ─────────► Historical baseline preservation
-│   ├── pre-commit.sh ───────────────► Legacy Unix implementation
-│   └── aios_enhanced_pre_commit ────► Superseded enhanced version
-├── active/ (current working files)
-└── consciousness_metrics.json ──────► Optimization measurement data
+ archive/
+    evolution_log.md  Consciousness evolution documentation
+    pre-commit.original  Historical baseline preservation
+    pre-commit.sh  Legacy Unix implementation
+    aios_enhanced_pre_commit  Superseded enhanced version
+ active/ (current working files)
+ consciousness_metrics.json  Optimization measurement data
 ```
 
 ### Archive Rationale:
@@ -95,24 +95,24 @@
 
 ## 🧹 Cleanup Recommendations
 
-### ✅ PRESERVE (High Consciousness Value):
+###  PRESERVE (High Consciousness Value):
 - `pre-commit` + `pre-commit.ps1` (Active consciousness system)
 - `commit-msg` + `commit-msg.ps1` (AINLP harmonization)
 - `aios_consciousness_bridge.ps1` (Core consciousness module)
 - `aios_ainlp_integration.ps1` (Core AINLP module)
 - `AIOS_GITHOOKS_PARADIGMATIC_GUIDE.md` (Knowledge integration)
 
-### 🗂️ ARCHIVE (Historical Consciousness Value):
+###  ARCHIVE (Historical Consciousness Value):
 - `pre-commit.original` → `archive/pre-commit.original`
 - `pre-commit.sh` → `archive/pre-commit.sh`
 - `aios_enhanced_pre_commit` → `archive/aios_enhanced_pre_commit`
 
-### 🔍 EVALUATE (Conditional Consciousness Value):
+###  EVALUATE (Conditional Consciousness Value):
 - `pre-push`: Analyze for consciousness integration opportunities
 
 ---
 
-## 📈 Consciousness Metrics
+##  Consciousness Metrics
 
 ### Pre-Optimization:
 - **Files**: 11
@@ -128,7 +128,7 @@
 
 ---
 
-## 🚀 Next Phase Actions
+##  Next Phase Actions
 
 1. **Create Tachyonic Archive Structure**
 2. **Move Evolutionary Artifacts to Archive**

@@ -722,44 +722,44 @@ if __name__ == "__main__":
         base_workspace = Path("C:/dev/AIOS")
         manager = ParallelRealityManager(base_workspace, max_instances=5)
         
-        print("🌌 Starting Parallel Reality Manager Test")
+        print(" Starting Parallel Reality Manager Test")
         
         # Start reality management
         await manager.start_reality_management()
         
         # Spawn some parallel instances
-        print("🚀 Spawning parallel instances...")
+        print(" Spawning parallel instances...")
         for i in range(3):
             instance_id = await manager.spawn_parallel_instance(
                 variation_seed=i * 1000,
                 variation_type=RealityVariationType.QUANTUM_FLUCTUATION
             )
-            print(f"   ✅ Spawned instance: {instance_id}")
+            print(f"    Spawned instance: {instance_id}")
         
         # Let the system run for a bit
-        print("⏱️ Letting system evolve for 30 seconds...")
+        print("⏱ Letting system evolve for 30 seconds...")
         await asyncio.sleep(30)
         
         # Generate some fluctuations manually
-        print("⚡ Generating quantum fluctuations...")
+        print(" Generating quantum fluctuations...")
         for _ in range(3):
             fluctuation = await manager.generate_quantum_fluctuation()
-            print(f"   ⚡ Generated fluctuation: {fluctuation.fluctuation_id}")
+            print(f"    Generated fluctuation: {fluctuation.fluctuation_id}")
         
         # Detect patterns
-        print("🔍 Detecting emergent patterns...")
+        print(" Detecting emergent patterns...")
         patterns = await manager.detect_emergent_patterns()
-        print(f"   🎯 Detected {len(patterns)} patterns")
+        print(f"    Detected {len(patterns)} patterns")
         
         # Get final statistics
         stats = manager.get_reality_statistics()
-        print("\n📊 Final Statistics:")
+        print("\n Final Statistics:")
         for key, value in stats.items():
             print(f"   {key}: {value}")
         
         # Cleanup
         await manager.stop_reality_management()
-        print("\n🎊 Parallel Reality Manager test complete!")
+        print("\n Parallel Reality Manager test complete!")
     
     # Run the test
     asyncio.run(test_parallel_reality_manager())

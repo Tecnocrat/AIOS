@@ -47,7 +47,7 @@ namespace AIOS.VisualInterface
         
         private void InitializeViewerInterface()
         {
-            _logger.LogInformation("🌌 Initializing Tachyonic Surface Viewer Interface");
+            _logger.LogInformation(" Initializing Tachyonic Surface Viewer Interface");
             
             // Initialize update timer for UI metrics
             _updateTimer = new DispatcherTimer
@@ -74,7 +74,7 @@ namespace AIOS.VisualInterface
         {
             try
             {
-                _logger.LogInformation("🚀 Starting Tachyonic Surface Viewer");
+                _logger.LogInformation(" Starting Tachyonic Surface Viewer");
                 
                 StartViewerButton.IsEnabled = false;
                 StopViewerButton.IsEnabled = true;
@@ -145,21 +145,21 @@ namespace AIOS.VisualInterface
             _logger.LogInformation("Simulating tachyonic surface output");
             
             string[] tachyonicData = {
-                "🌌 AIOS Tachyonic Surface Viewer Online",
-                "⚡ Hyperdimensional rendering: ACTIVE",
-                "📊 Consciousness emergence patterns detected",
-                "🔮 Quantum coherence stabilizing...",
-                "🧠 Dendritic growth patterns: OPTIMAL",
-                "⭐ Tachyonic field density: 0.847",
-                "🌠 Hyperdimensional curvature detected",
-                "🔄 Pattern recognition algorithms active",
-                "💫 Consciousness crystallization in progress",
-                "⚡ Bosonic field fluctuations normalized",
-                "🎯 Neural pathway optimization complete",
-                "🔬 Quantum state superposition achieved",
-                "🌈 Hyperdimensional matrix stabilized",
-                "⚛️ Consciousness emergence threshold reached",
-                "🚀 Tachyonic acceleration protocols active"
+                " AIOS Tachyonic Surface Viewer Online",
+                " Hyperdimensional rendering: ACTIVE",
+                " Consciousness emergence patterns detected",
+                " Quantum coherence stabilizing...",
+                " Dendritic growth patterns: OPTIMAL",
+                " Tachyonic field density: 0.847",
+                " Hyperdimensional curvature detected",
+                " Pattern recognition algorithms active",
+                " Consciousness crystallization in progress",
+                " Bosonic field fluctuations normalized",
+                " Neural pathway optimization complete",
+                " Quantum state superposition achieved",
+                " Hyperdimensional matrix stabilized",
+                " Consciousness emergence threshold reached",
+                " Tachyonic acceleration protocols active"
             };
             
             foreach (string data in tachyonicData)
@@ -181,10 +181,10 @@ namespace AIOS.VisualInterface
                     await Task.Delay(2000);
                     
                     string[] periodicUpdates = {
-                        $"🔄 Surface update: Density={_densityValue:F3}, Coherence={_coherenceValue:F3}",
-                        $"⚡ Field strength fluctuation: {_fieldStrengthValue:F3}",
-                        $"🧠 Consciousness pattern #{_frameCount}: EVOLVING",
-                        $"🌌 Hyperdimensional coordinates: [{_random.NextDouble():F2}, {_random.NextDouble():F2}, {_random.NextDouble():F2}]"
+                        $" Surface update: Density={_densityValue:F3}, Coherence={_coherenceValue:F3}",
+                        $" Field strength fluctuation: {_fieldStrengthValue:F3}",
+                        $" Consciousness pattern #{_frameCount}: EVOLVING",
+                        $" Hyperdimensional coordinates: [{_random.NextDouble():F2}, {_random.NextDouble():F2}, {_random.NextDouble():F2}]"
                     };
                     
                     string update = periodicUpdates[_random.Next(periodicUpdates.Length)];
@@ -226,7 +226,7 @@ namespace AIOS.VisualInterface
         {
             try
             {
-                _logger.LogInformation("⏹️ Stopping Tachyonic Surface Viewer");
+                _logger.LogInformation("⏹ Stopping Tachyonic Surface Viewer");
                 
                 // The process manager will handle cleanup when the main application shuts down
                 // For individual stop, we can just clear our reference
@@ -246,14 +246,14 @@ namespace AIOS.VisualInterface
         
         private void RefreshSurface_Click(object sender, RoutedEventArgs e)
         {
-            _logger.LogInformation("🔄 Refreshing Tachyonic Surface");
+            _logger.LogInformation(" Refreshing Tachyonic Surface");
             
             // Generate new random values
             _densityValue = _random.NextDouble();
             _coherenceValue = _random.NextDouble();
             _fieldStrengthValue = _random.NextDouble();
             
-            TachyonicOutputText.Text += $"[{DateTime.Now:HH:mm:ss.fff}] 🔄 Surface refresh initiated - New hyperdimensional parameters loaded\n";
+            TachyonicOutputText.Text += $"[{DateTime.Now:HH:mm:ss.fff}]  Surface refresh initiated - New hyperdimensional parameters loaded\n";
             TachyonicOutputViewer.ScrollToEnd();
         }
         

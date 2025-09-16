@@ -19,7 +19,7 @@ from pathlib import Path
 try:
     from runtime_intelligence import RuntimeIntelligence, EventLevel, ModuleType, RuntimeEvent
 except ImportError:
-    print("⚠️  Runtime Intelligence not available - using fallback logging")
+    print("  Runtime Intelligence not available - using fallback logging")
     RuntimeIntelligence = None
     
     class EventLevel(Enum):
@@ -74,7 +74,7 @@ class UniversalLogger:
     
     def _initialize_runtime_intelligence(self):
         if RuntimeIntelligence is None:
-            print("⚠️  Runtime Intelligence disabled - using basic logging")
+            print("  Runtime Intelligence disabled - using basic logging")
             return
         
         try:
@@ -84,9 +84,9 @@ class UniversalLogger:
                 session_name="universal_logging_session"
             )
             self._runtime_intelligence.start()
-            print("✅ Universal Logging integrated with Runtime Intelligence")
+            print(" Universal Logging integrated with Runtime Intelligence")
         except Exception as e:
-            print(f"❌ Failed to initialize Runtime Intelligence: {e}")
+            print(f" Failed to initialize Runtime Intelligence: {e}")
             self._runtime_intelligence = None
     
     def register_module(self, config: ModuleConfig):
@@ -144,7 +144,7 @@ class UniversalLogger:
     def shutdown(self):
         if self._runtime_intelligence:
             self._runtime_intelligence.shutdown()
-            print("🔹 Universal Logging shutdown complete")
+            print(" Universal Logging shutdown complete")
 
 # Global instance
 universal_logger = UniversalLogger()
@@ -401,7 +401,7 @@ import atexit
 atexit.register(universal_logger.shutdown)
 
 if __name__ == "__main__":
-    print("🧠 AIOS Universal Logging Integration - Demo")
+    print(" AIOS Universal Logging Integration - Demo")
     print("=" * 50)
     
     @aios_module("demo_module", ModuleType.CORE)
@@ -443,6 +443,6 @@ if __name__ == "__main__":
     log_performance_metric("demo_system", "processing_rate", 125.7)
     
     summary = universal_logger.get_runtime_summary()
-    print(f"\n📊 Runtime Summary: {summary}")
+    print(f"\n Runtime Summary: {summary}")
     
-    print("\n✅ Universal Logging Demo Complete")
+    print("\n Universal Logging Demo Complete")

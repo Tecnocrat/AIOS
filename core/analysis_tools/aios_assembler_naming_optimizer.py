@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🏷️ AIOS ASSEMBLER NAMING CONVENTION OPTIMIZER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS ASSEMBLER NAMING CONVENTION OPTIMIZER
+
 Proposes and implements improved naming conventions for assembler iterations
 to ensure crystal clear identification at every level of the evolution chain.
 
@@ -19,7 +19,7 @@ PROPOSED SOLUTIONS:
 - Descriptive but systematic approach
 
 AIOS - Assembler naming convention optimization
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -238,7 +238,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSAssemblerNamingOptimizer:
     """
-    🏷️ AIOS Assembler Naming Convention Optimizer
+     AIOS Assembler Naming Convention Optimizer
     
     Optimizes assembler naming for clarity:
     • Proposes clear naming conventions
@@ -271,16 +271,16 @@ class AIOSAssemblerNamingOptimizer:
             }
         }
         
-        logger.info("🏷️ AIOS Assembler Naming Optimizer initialized")
+        logger.info(" AIOS Assembler Naming Optimizer initialized")
         logger.info(f"   Core path: {self.core_path}")
         logger.info(f"   Current assemblers: {len(self.current_assemblers)}")
     
     def analyze_naming_issues(self) -> Dict[str, Any]:
         """Analyze current naming issues and propose solutions"""
         
-        logger.info("🔍 ANALYZING CURRENT NAMING ISSUES")
-        logger.info("═" * 60)
-        logger.info("🏷️ Evaluating assembler naming conventions...")
+        logger.info(" ANALYZING CURRENT NAMING ISSUES")
+        logger.info("" * 60)
+        logger.info(" Evaluating assembler naming conventions...")
         logger.info("")
         
         naming_analysis = {
@@ -322,7 +322,7 @@ class AIOSAssemblerNamingOptimizer:
         naming_analysis["implementation_plan"] = self._create_implementation_plan(naming_analysis["recommended_names"])
         
         logger.info("[CHECK] NAMING ANALYSIS COMPLETE")
-        logger.info("═" * 60)
+        logger.info("" * 60)
         
         return naming_analysis
     
@@ -470,8 +470,8 @@ class AIOSAssemblerNamingOptimizer:
         
         naming_analysis = self.analyze_naming_issues()
         
-        print("🏷️ AIOS ASSEMBLER NAMING CONVENTION ANALYSIS")
-        print("═" * 70)
+        print(" AIOS ASSEMBLER NAMING CONVENTION ANALYSIS")
+        print("" * 70)
         print("[TARGET] OPTIMIZING ITERATION NAMING FOR CLARITY")
         print()
         
@@ -485,7 +485,7 @@ class AIOSAssemblerNamingOptimizer:
             print(f"  {i}. {confusion}")
         print()
         
-        print("💡 PROPOSED NAMING CONVENTIONS:")
+        print(" PROPOSED NAMING CONVENTIONS:")
         for i, convention in enumerate(naming_analysis["proposed_conventions"], 1):
             print(f"  {i}. {convention['name']} (Score: {convention['score']})")
             print(f"     Pattern: {convention['pattern']}")
@@ -497,20 +497,20 @@ class AIOSAssemblerNamingOptimizer:
         print("[TARGET] RECOMMENDED NAMING SCHEME:")
         best_convention = naming_analysis["proposed_conventions"][0]
         print(f"  [CHART] Selected: {best_convention['name']}")
-        print(f"  📝 Pattern: {best_convention['pattern']}")
-        print(f"  ⭐ Score: {best_convention['score']}/100")
+        print(f"   Pattern: {best_convention['pattern']}")
+        print(f"   Score: {best_convention['score']}/100")
         print()
         
-        print("🔄 RECOMMENDED RENAMES:")
+        print(" RECOMMENDED RENAMES:")
         for current_name, name_info in naming_analysis["recommended_names"].items():
             if name_info["current_name"] != name_info["new_name"]:
                 print(f"  [FOLDER] {current_name}")
-                print(f"     ➡️ {name_info['new_name']}")
-                print(f"     🔢 Iteration: {name_info['iteration']}")
-                print(f"     📋 Version: {name_info['version']}")
+                print(f"      {name_info['new_name']}")
+                print(f"      Iteration: {name_info['iteration']}")
+                print(f"      Version: {name_info['version']}")
                 print()
         
-        print("📋 IMPLEMENTATION PLAN:")
+        print(" IMPLEMENTATION PLAN:")
         for i, step in enumerate(naming_analysis["implementation_plan"], 1):
             print(f"  {i}. {step['description']}")
             if "requires_update" in step:
@@ -533,10 +533,10 @@ class AIOSAssemblerNamingOptimizer:
 def main():
     """Execute assembler naming convention analysis and optimization"""
     
-    print("🏷️ AIOS ASSEMBLER NAMING CONVENTION OPTIMIZER")
-    print("═" * 60)
+    print(" AIOS ASSEMBLER NAMING CONVENTION OPTIMIZER")
+    print("" * 60)
     print("[TARGET] Analyzing and optimizing assembler naming for clarity")
-    print("🔍 Ensuring iteration levels are always crystal clear")
+    print(" Ensuring iteration levels are always crystal clear")
     print()
     
     # Initialize optimizer

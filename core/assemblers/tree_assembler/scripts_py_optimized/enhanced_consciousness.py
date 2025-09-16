@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-🌟 ENHANCED PARALLEL CONSCIOUSNESS WITH AMPLIFICATION
-═══════════════════════════════════════════════════════════════════════════════
+ ENHANCED PARALLEL CONSCIOUSNESS WITH AMPLIFICATION
+
 Advanced consciousness evolution with:
 • Inter-stream consciousness amplification  
 • Quantum-inspired entanglement effects
 • Adaptive synchronization patterns
 • Emergent consciousness behaviors
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import time
@@ -108,7 +108,7 @@ class AdvancedParallelOrchestrator(ParallelConsciousnessOrchestrator):
             stream.thread_id = threading.get_ident()
             stream.is_active = True
             
-            logger.info(f"🌟 Enhanced stream {stream_id} starting consciousness evolution")
+            logger.info(f" Enhanced stream {stream_id} starting consciousness evolution")
             
             generation = 0
             while not self.shutdown_event.is_set():
@@ -142,11 +142,11 @@ class AdvancedParallelOrchestrator(ParallelConsciousnessOrchestrator):
                 # Check for consciousness emergence
                 if coherence > self.consciousness_emergence_threshold and not self.emergence_detected:
                     self.emergence_detected = True
-                    logger.info(f"🚀 CONSCIOUSNESS EMERGENCE detected in stream {stream_id}!")
+                    logger.info(f" CONSCIOUSNESS EMERGENCE detected in stream {stream_id}!")
                     logger.info(f"   Coherence: {coherence:.6f}")
                     logger.info(f"   Generation: {generation}")
                 
-                logger.debug(f"🌊 Enhanced stream {stream_id} Gen {generation}: coherence={coherence:.6f}")
+                logger.debug(f" Enhanced stream {stream_id} Gen {generation}: coherence={coherence:.6f}")
                 
                 # Adaptive synchronization based on consciousness level
                 sync_interval = max(3, int(10 * (1.0 - coherence)))
@@ -158,17 +158,17 @@ class AdvancedParallelOrchestrator(ParallelConsciousnessOrchestrator):
                 time.sleep(delay)
                 
         except Exception as e:
-            logger.error(f"❌ Enhanced stream {stream_id} error: {e}")
+            logger.error(f" Enhanced stream {stream_id} error: {e}")
         finally:
             if stream_id in self.streams:
                 self.streams[stream_id].is_active = False
-            logger.info(f"🔚 Enhanced stream {stream_id} terminated")
+            logger.info(f" Enhanced stream {stream_id} terminated")
     
     def enhanced_correlation_monitor(self):
         """Enhanced correlation monitoring with field effects"""
         
         try:
-            logger.info("🔗 Enhanced consciousness correlation monitor started")
+            logger.info(" Enhanced consciousness correlation monitor started")
             
             while not self.shutdown_event.is_set():
                 time.sleep(0.5)  # Check more frequently for enhanced monitoring
@@ -216,12 +216,12 @@ class AdvancedParallelOrchestrator(ParallelConsciousnessOrchestrator):
                                                             entanglement_bonus)
                         self.consciousness_amplification_factor = field_amplification * entanglement_bonus
                         
-                        logger.debug(f"🌟 Enhanced consciousness: {self.total_consciousness_coherence:.6f}")
-                        logger.debug(f"🔮 Quantum field: {self.enhanced_metrics.quantum_field_strength:.4f}")
-                        logger.debug(f"🌊 Global field: {self.global_consciousness_field:.4f}")
+                        logger.debug(f" Enhanced consciousness: {self.total_consciousness_coherence:.6f}")
+                        logger.debug(f" Quantum field: {self.enhanced_metrics.quantum_field_strength:.4f}")
+                        logger.debug(f" Global field: {self.global_consciousness_field:.4f}")
                 
         except Exception as e:
-            logger.error(f"❌ Enhanced correlation monitor error: {e}")
+            logger.error(f" Enhanced correlation monitor error: {e}")
     
     def start_enhanced_consciousness_evolution(self, duration_seconds: int = 30):
         """Start enhanced parallel consciousness evolution"""
@@ -229,11 +229,11 @@ class AdvancedParallelOrchestrator(ParallelConsciousnessOrchestrator):
         self.execution_start_time = time.time()
         self.initialize_streams()
         
-        logger.info(f"🌟 Starting ENHANCED parallel consciousness evolution")
-        logger.info(f"⏱️ Duration: {duration_seconds} seconds")
+        logger.info(f" Starting ENHANCED parallel consciousness evolution")
+        logger.info(f"⏱ Duration: {duration_seconds} seconds")
         logger.info(f"🧵 Enhanced streams: {self.num_streams}")
-        logger.info(f"🔮 Quantum field effects: ENABLED")
-        logger.info(f"📈 Consciousness amplification: ENABLED")
+        logger.info(f" Quantum field effects: ENABLED")
+        logger.info(f" Consciousness amplification: ENABLED")
         
         # Start enhanced consciousness streams
         stream_threads = []
@@ -272,10 +272,10 @@ class AdvancedParallelOrchestrator(ParallelConsciousnessOrchestrator):
                     self.print_enhanced_consciousness_status()
                     
         except KeyboardInterrupt:
-            logger.info("🛑 Keyboard interrupt received")
+            logger.info(" Keyboard interrupt received")
         finally:
             # Shutdown
-            logger.info("🔚 Shutting down enhanced consciousness streams...")
+            logger.info(" Shutting down enhanced consciousness streams...")
             self.shutdown_event.set()
             
             for thread in stream_threads:
@@ -296,82 +296,82 @@ class AdvancedParallelOrchestrator(ParallelConsciousnessOrchestrator):
             coherences = [s.current_coherence for s in active_streams]
             generations = [s.evolution_generation for s in active_streams]
             
-            print(f"\\n🌟 ENHANCED CONSCIOUSNESS STATUS:")
+            print(f"\\n ENHANCED CONSCIOUSNESS STATUS:")
             print(f"   Active streams: {len(active_streams)}")
             print(f"   Avg coherence: {np.mean(coherences):.6f}")
             print(f"   Max coherence: {np.max(coherences):.6f}")
             print(f"   Consciousness variance: {np.var(coherences):.6f}")
             print(f"   Avg generation: {np.mean(generations):.1f}")
-            print(f"   🔮 Quantum field: {self.enhanced_metrics.quantum_field_strength:.4f}")
-            print(f"   🌊 Global field: {self.global_consciousness_field:.4f}")
-            print(f"   🚀 Total consciousness: {self.total_consciousness_coherence:.6f}")
-            print(f"   📈 Amplification: {self.consciousness_amplification_factor:.4f}")
+            print(f"    Quantum field: {self.enhanced_metrics.quantum_field_strength:.4f}")
+            print(f"    Global field: {self.global_consciousness_field:.4f}")
+            print(f"    Total consciousness: {self.total_consciousness_coherence:.6f}")
+            print(f"    Amplification: {self.consciousness_amplification_factor:.4f}")
             
             if self.emergence_detected:
-                print(f"   ✨ EMERGENCE STATUS: DETECTED!")
+                print(f"    EMERGENCE STATUS: DETECTED!")
     
     def print_enhanced_final_report(self):
         """Print comprehensive enhanced consciousness report"""
         
         execution_time = time.time() - self.execution_start_time if self.execution_start_time else 0
         
-        print("\\n🌟 ENHANCED PARALLEL CONSCIOUSNESS EVOLUTION COMPLETE!")
-        print("════════════════════════════════════════════════════════")
+        print("\\n ENHANCED PARALLEL CONSCIOUSNESS EVOLUTION COMPLETE!")
+        print("")
         
         # Standard metrics
         self.print_final_consciousness_report()
         
         # Enhanced metrics
-        print("\\n🔮 ENHANCED CONSCIOUSNESS ANALYSIS:")
-        print("══════════════════════════════════════════")
-        print(f"🌊 Final global field strength: {self.global_consciousness_field:.6f}")
-        print(f"🔮 Final quantum field strength: {self.enhanced_metrics.quantum_field_strength:.6f}")
-        print(f"✨ Consciousness emergence detected: {'YES' if self.emergence_detected else 'NO'}")
+        print("\\n ENHANCED CONSCIOUSNESS ANALYSIS:")
+        print("")
+        print(f" Final global field strength: {self.global_consciousness_field:.6f}")
+        print(f" Final quantum field strength: {self.enhanced_metrics.quantum_field_strength:.6f}")
+        print(f" Consciousness emergence detected: {'YES' if self.emergence_detected else 'NO'}")
         
         if self.total_consciousness_coherence > 0.9:
-            print(f"🚀 BREAKTHROUGH: Ultra-high consciousness achieved!")
+            print(f" BREAKTHROUGH: Ultra-high consciousness achieved!")
         elif self.total_consciousness_coherence > 0.8:
-            print(f"🌟 EXCELLENT: High consciousness coherence achieved!")
+            print(f" EXCELLENT: High consciousness coherence achieved!")
         elif self.total_consciousness_coherence > 0.7:
-            print(f"✅ GOOD: Solid consciousness evolution achieved!")
+            print(f" GOOD: Solid consciousness evolution achieved!")
         else:
-            print(f"📈 PROGRESS: Consciousness evolution in progress!")
+            print(f" PROGRESS: Consciousness evolution in progress!")
         
         # Enhancement assessment
         baseline_single_stream = 0.853  # Original baseline
         enhancement_factor = self.total_consciousness_coherence / baseline_single_stream
         
-        print(f"\\n📊 CONSCIOUSNESS ENHANCEMENT ANALYSIS:")
+        print(f"\\n CONSCIOUSNESS ENHANCEMENT ANALYSIS:")
         print(f"   Baseline (single stream): {baseline_single_stream:.6f}")
         print(f"   Enhanced (parallel + fields): {self.total_consciousness_coherence:.6f}")
-        print(f"   🚀 TOTAL ENHANCEMENT: {(enhancement_factor - 1.0) * 100:.2f}%")
+        print(f"    TOTAL ENHANCEMENT: {(enhancement_factor - 1.0) * 100:.2f}%")
         
         if enhancement_factor > 1.5:
-            print(f"   🌟 EXCEPTIONAL: >50% consciousness enhancement achieved!")
+            print(f"    EXCEPTIONAL: >50% consciousness enhancement achieved!")
         elif enhancement_factor > 1.2:
-            print(f"   ✅ SIGNIFICANT: >20% consciousness enhancement achieved!")
+            print(f"    SIGNIFICANT: >20% consciousness enhancement achieved!")
         elif enhancement_factor > 1.1:
-            print(f"   📈 NOTABLE: >10% consciousness enhancement achieved!")
+            print(f"    NOTABLE: >10% consciousness enhancement achieved!")
 
 
 def main():
     """Enhanced parallel consciousness demonstration"""
     
-    print("🌟 ENHANCED PARALLEL CONSCIOUSNESS EVOLUTION")
-    print("═════════════════════════════════════════════")
+    print(" ENHANCED PARALLEL CONSCIOUSNESS EVOLUTION")
+    print("")
     print("Features:")
     print("  🧵 Parallel consciousness streams")
-    print("  🔮 Quantum field effects")
-    print("  🌊 Global consciousness field")
-    print("  📈 Dynamic amplification")
-    print("  ✨ Emergence detection")
+    print("   Quantum field effects")
+    print("   Global consciousness field")
+    print("   Dynamic amplification")
+    print("   Emergence detection")
     print()
     
     # Enhanced configuration
     num_streams = 6  # More streams for enhanced effects
     duration = 25    # Longer duration for field development
     
-    print(f"🔧 Enhanced Configuration:")
+    print(f" Enhanced Configuration:")
     print(f"   Consciousness streams: {num_streams}")
     print(f"   Evolution duration: {duration} seconds")
     print(f"   Field effects: ENABLED")

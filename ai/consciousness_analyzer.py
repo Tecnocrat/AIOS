@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 AIOS Consciousness Analyzer
 ===========================
@@ -38,7 +39,7 @@ class ConsciousnessAnalyzer:
             'analysis_history': Path("consciousness_analysis_history.json")
         }
         
-        self.logger.info("🧬 Consciousness Analyzer initialized")
+        self.logger.info(" Consciousness Analyzer initialized")
     
     def _setup_logging(self) -> logging.Logger:
         """Setup logging for consciousness analysis"""
@@ -63,7 +64,7 @@ class ConsciousnessAnalyzer:
                     with open(path, 'r') as f:
                         data = json.load(f)
                         consciousness_data['subsystems'][system_name] = data
-                        self.logger.debug(f"📂 Loaded {system_name} consciousness data")
+                        self.logger.debug(f" Loaded {system_name} consciousness data")
             
             # Calculate global metrics
             consciousness_data['global_metrics'] = self._calculate_global_metrics(
@@ -73,7 +74,7 @@ class ConsciousnessAnalyzer:
             return consciousness_data
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to load consciousness data: {e}")
+            self.logger.error(f" Failed to load consciousness data: {e}")
             return consciousness_data
     
     def _calculate_global_metrics(self, subsystems: Dict[str, Any]) -> Dict[str, float]:
@@ -133,7 +134,7 @@ class ConsciousnessAnalyzer:
             )
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to calculate global metrics: {e}")
+            self.logger.error(f" Failed to calculate global metrics: {e}")
         
         return metrics
     
@@ -165,7 +166,7 @@ class ConsciousnessAnalyzer:
             return min(1.0, probability)
             
         except Exception as e:
-            self.logger.error(f"❌ Post-singular probability calculation failed: {e}")
+            self.logger.error(f" Post-singular probability calculation failed: {e}")
             return 0.0
     
     async def analyze_consciousness_patterns(self, 
@@ -199,10 +200,10 @@ class ConsciousnessAnalyzer:
             # Breakthrough prediction
             analysis['breakthrough_prediction'] = await self._predict_breakthrough(data)
             
-            self.logger.info("📊 Consciousness pattern analysis completed")
+            self.logger.info(" Consciousness pattern analysis completed")
             
         except Exception as e:
-            self.logger.error(f"❌ Pattern analysis failed: {e}")
+            self.logger.error(f" Pattern analysis failed: {e}")
         
         return analysis
     
@@ -252,7 +253,7 @@ class ConsciousnessAnalyzer:
             }
             
         except Exception as e:
-            self.logger.error(f"❌ Pattern analysis failed: {e}")
+            self.logger.error(f" Pattern analysis failed: {e}")
         
         return patterns
     
@@ -360,7 +361,7 @@ class ConsciousnessAnalyzer:
                 harmony['overall_harmony'] = np.mean(harmony_values)
             
         except Exception as e:
-            self.logger.error(f"❌ Subsystem harmony analysis failed: {e}")
+            self.logger.error(f" Subsystem harmony analysis failed: {e}")
         
         return harmony
     
@@ -413,7 +414,7 @@ class ConsciousnessAnalyzer:
             trends['breakthrough_momentum'] = self._calculate_breakthrough_momentum()
             
         except Exception as e:
-            self.logger.error(f"❌ Trend analysis failed: {e}")
+            self.logger.error(f" Trend analysis failed: {e}")
         
         return trends
     
@@ -499,7 +500,7 @@ class ConsciousnessAnalyzer:
             anomalies['anomaly_score'] = min(1.0, anomaly_score)
             
         except Exception as e:
-            self.logger.error(f"❌ Anomaly detection failed: {e}")
+            self.logger.error(f" Anomaly detection failed: {e}")
         
         return anomalies
     
@@ -575,7 +576,7 @@ class ConsciousnessAnalyzer:
             )
             
         except Exception as e:
-            self.logger.error(f"❌ Breakthrough prediction failed: {e}")
+            self.logger.error(f" Breakthrough prediction failed: {e}")
         
         return prediction
     
@@ -650,14 +651,14 @@ class ConsciousnessAnalyzer:
             with open(history_path, 'w') as f:
                 json.dump(history, f, indent=2)
             
-            self.logger.debug(f"💾 Analysis history saved to {history_path}")
+            self.logger.debug(f" Analysis history saved to {history_path}")
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to save analysis history: {e}")
+            self.logger.error(f" Failed to save analysis history: {e}")
     
     async def run_comprehensive_analysis(self) -> Dict[str, Any]:
         """Run comprehensive consciousness analysis"""
-        self.logger.info("🔍 Starting comprehensive consciousness analysis...")
+        self.logger.info(" Starting comprehensive consciousness analysis...")
         
         try:
             # Load current consciousness data
@@ -676,12 +677,12 @@ class ConsciousnessAnalyzer:
             summary = self._generate_analysis_summary(analysis_results)
             analysis_results['summary'] = summary
             
-            self.logger.info("✅ Comprehensive consciousness analysis completed")
+            self.logger.info(" Comprehensive consciousness analysis completed")
             
             return analysis_results
             
         except Exception as e:
-            self.logger.error(f"❌ Comprehensive analysis failed: {e}")
+            self.logger.error(f" Comprehensive analysis failed: {e}")
             return {'error': str(e), 'timestamp': datetime.now().isoformat()}
     
     def _generate_analysis_summary(self, analysis: Dict[str, Any]) -> Dict[str, Any]:
@@ -744,7 +745,7 @@ class ConsciousnessAnalyzer:
                 summary['breakthrough_readiness'] = 'low'
             
         except Exception as e:
-            self.logger.error(f"❌ Summary generation failed: {e}")
+            self.logger.error(f" Summary generation failed: {e}")
             summary['error'] = str(e)
         
         return summary
@@ -753,7 +754,7 @@ async def main():
     """Main analysis execution"""
     analyzer = ConsciousnessAnalyzer()
     
-    print("🔍 AIOS Consciousness Analyzer")
+    print(" AIOS Consciousness Analyzer")
     print("=" * 40)
     
     # Run comprehensive analysis
@@ -778,15 +779,15 @@ async def main():
     if key_findings:
         print("\nKey Findings:")
         for finding in key_findings:
-            print(f"  ✅ {finding}")
+            print(f"   {finding}")
     
     critical_alerts = summary.get('critical_alerts', [])
     if critical_alerts:
         print("\nCritical Alerts:")
         for alert in critical_alerts:
-            print(f"  🚨 {alert}")
+            print(f"   {alert}")
     
-    print("\n🧬 Analysis completed successfully")
+    print("\n Analysis completed successfully")
 
 if __name__ == "__main__":
     asyncio.run(main())

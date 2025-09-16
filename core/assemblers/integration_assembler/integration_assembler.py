@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠🔗⚡ AIOS INTEGRATION ASSEMBLER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS INTEGRATION ASSEMBLER
+
 Scattered Logic Consolidation and Architectural Coherence Enhancement
 
 PURPOSE:
@@ -21,7 +21,7 @@ CAPABILITIES:
 4. Module Creation from Related Components
 5. Import Optimization and Deduplication
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import logging
@@ -76,7 +76,7 @@ class IntegrationAssembler:
     def __init__(self, root_path: str = None):
         """Initialize integration assembler."""
         
-        logger.info("🧠🔗 Initializing Integration Assembler...")
+        logger.info(" Initializing Integration Assembler...")
         
         self.root_path = Path(root_path) if root_path else Path.cwd()
         
@@ -92,8 +92,8 @@ class IntegrationAssembler:
         # Analysis results
         self.integration_plan: Optional[IntegrationPlan] = None
         
-        logger.info(f"🔗 Integration Assembler ready for: {self.root_path}")
-        logger.info(f"🎯 Similarity threshold: {self.similarity_threshold}")
+        logger.info(f" Integration Assembler ready for: {self.root_path}")
+        logger.info(f" Similarity threshold: {self.similarity_threshold}")
     
     def analyze_integration_opportunities(self) -> IntegrationPlan:
         """
@@ -103,7 +103,7 @@ class IntegrationAssembler:
         semantic analysis to identify consolidation candidates.
         """
         
-        logger.info("🔍 Analyzing integration opportunities...")
+        logger.info(" Analyzing integration opportunities...")
         
         # Get environmental context
         self.environment = self.context_assembler.analyze_environment()
@@ -112,19 +112,19 @@ class IntegrationAssembler:
         
         # Find integration candidates
         candidates = self._find_integration_candidates()
-        logger.info(f"📋 Found {len(candidates)} integration candidates")
+        logger.info(f" Found {len(candidates)} integration candidates")
         
         # Analyze shared imports
         shared_imports = self._analyze_shared_imports()
-        logger.info(f"📦 Identified {len(shared_imports)} shared imports")
+        logger.info(f" Identified {len(shared_imports)} shared imports")
         
         # Detect duplicate functions
         duplicate_functions = self._detect_duplicate_functions()
-        logger.info(f"🔄 Found {len(duplicate_functions)} duplicate functions")
+        logger.info(f" Found {len(duplicate_functions)} duplicate functions")
         
         # Suggest organizational modules
         organizational_modules = self._suggest_organizational_modules()
-        logger.info(f"📁 Suggested {len(organizational_modules)} modules")
+        logger.info(f" Suggested {len(organizational_modules)} modules")
         
         # Estimate coherence improvement
         coherence_improvement = self._estimate_coherence_improvement(
@@ -142,9 +142,9 @@ class IntegrationAssembler:
         
         analysis_time = (datetime.now() - start_time).total_seconds()
         
-        logger.info(f"✅ Integration analysis complete in {analysis_time:.2f}s")
+        logger.info(f" Integration analysis complete in {analysis_time:.2f}s")
         logger.info(
-            f"📈 Estimated coherence improvement: "
+            f" Estimated coherence improvement: "
             f"+{coherence_improvement:.2f} points"
         )
         
@@ -548,15 +548,15 @@ class IntegrationAssembler:
         plan = self.integration_plan
         
         report = []
-        report.append("🧠🔗⚡ INTEGRATION ASSEMBLER ANALYSIS REPORT")
-        report.append("═" * 80)
+        report.append(" INTEGRATION ASSEMBLER ANALYSIS REPORT")
+        report.append("" * 80)
         report.append(f"Analysis Time: {datetime.now()}")
         report.append(f"Root Path: {self.root_path}")
         report.append(f"Current Coherence: {self.environment.coherence_score}/10.0")
         report.append(f"Estimated Improvement: +{plan.estimated_coherence_improvement}")
         report.append("")
         
-        report.append("🔗 INTEGRATION CANDIDATES:")
+        report.append(" INTEGRATION CANDIDATES:")
         for i, candidate in enumerate(plan.candidates, 1):
             report.append(f"  {i}. {candidate.suggested_name}")
             report.append(f"     Type: {candidate.integration_type}")
@@ -569,49 +569,49 @@ class IntegrationAssembler:
             report.append("")
         
         if not plan.candidates:
-            report.append("  ✅ No integration candidates found - good modularity!")
+            report.append("   No integration candidates found - good modularity!")
         report.append("")
         
-        report.append("📦 SHARED IMPORTS ANALYSIS:")
+        report.append(" SHARED IMPORTS ANALYSIS:")
         if plan.shared_imports:
-            report.append(f"  📋 {len(plan.shared_imports)} imports used across multiple files:")
+            report.append(f"   {len(plan.shared_imports)} imports used across multiple files:")
             for imp in sorted(list(plan.shared_imports)[:10]):
                 report.append(f"    - {imp}")
             if len(plan.shared_imports) > 10:
                 report.append(f"    ... and {len(plan.shared_imports) - 10} more")
-            report.append("  💡 Consider creating shared_imports.py module")
+            report.append("   Consider creating shared_imports.py module")
         else:
-            report.append("  ✅ No excessive import duplication detected")
+            report.append("   No excessive import duplication detected")
         report.append("")
         
-        report.append("🔄 DUPLICATE FUNCTIONS:")
+        report.append(" DUPLICATE FUNCTIONS:")
         if plan.duplicate_functions:
-            report.append(f"  ⚠️ {len(plan.duplicate_functions)} functions appear in multiple files:")
+            report.append(f"   {len(plan.duplicate_functions)} functions appear in multiple files:")
             for func, files in list(plan.duplicate_functions.items())[:5]:
                 report.append(f"    - {func}: {', '.join(files)}")
             if len(plan.duplicate_functions) > 5:
                 report.append(f"    ... and {len(plan.duplicate_functions) - 5} more")
         else:
-            report.append("  ✅ No duplicate functions detected")
+            report.append("   No duplicate functions detected")
         report.append("")
         
-        report.append("📁 SUGGESTED MODULES:")
+        report.append(" SUGGESTED MODULES:")
         for module in plan.organizational_modules:
-            report.append(f"  📂 {module}")
+            report.append(f"   {module}")
         if not plan.organizational_modules:
-            report.append("  ✅ Current organization is appropriate")
+            report.append("   Current organization is appropriate")
         report.append("")
         
-        report.append("🎯 INTEGRATION RECOMMENDATIONS:")
+        report.append(" INTEGRATION RECOMMENDATIONS:")
         if plan.estimated_coherence_improvement > 1.0:
-            report.append("  📈 Significant coherence improvement possible")
-            report.append("  💡 Recommend proceeding with integration")
+            report.append("   Significant coherence improvement possible")
+            report.append("   Recommend proceeding with integration")
         elif plan.estimated_coherence_improvement > 0.5:
-            report.append("  📊 Moderate coherence improvement possible")
-            report.append("  💭 Consider selective integration")
+            report.append("   Moderate coherence improvement possible")
+            report.append("   Consider selective integration")
         else:
-            report.append("  ✅ Current architecture is well-organized")
-            report.append("  🎯 Focus on maintaining current coherence")
+            report.append("   Current architecture is well-organized")
+            report.append("   Focus on maintaining current coherence")
         
         return "\n".join(report)
 
@@ -619,7 +619,7 @@ class IntegrationAssembler:
 def demo_integration_analysis():
     """Demonstrate integration assembler capabilities."""
     
-    print("🧠🔗⚡ INTEGRATION ASSEMBLER DEMONSTRATION")
+    print(" INTEGRATION ASSEMBLER DEMONSTRATION")
     print("=" * 70)
     
     # Initialize for assemblers directory
@@ -627,11 +627,11 @@ def demo_integration_analysis():
     assembler = IntegrationAssembler(str(assemblers_path))
     
     # Analyze integration opportunities
-    print("\n🔍 Analyzing integration opportunities...")
+    print("\n Analyzing integration opportunities...")
     integration_plan = assembler.analyze_integration_opportunities()
     
     # Generate and display report
-    print("\n📋 Generating integration analysis report...")
+    print("\n Generating integration analysis report...")
     report = assembler.generate_integration_report()
     print(report)
     
@@ -641,7 +641,7 @@ def demo_integration_analysis():
 def main():
     """Main function for integration assembler demonstration."""
     
-    print("🧠🔗⚡ AIOS INTEGRATION ASSEMBLER")
+    print(" AIOS INTEGRATION ASSEMBLER")
     print("=" * 80)
     print("Scattered Logic Consolidation and Architectural Coherence")
     print("=" * 80)
@@ -649,9 +649,9 @@ def main():
     # Run demonstration
     assembler = demo_integration_analysis()
     
-    print("\n✅ INTEGRATION ANALYSIS COMPLETE")
-    print("🔗 Consolidation opportunities identified!")
-    print("🧠 Architectural coherence enhancement ready!")
+    print("\n INTEGRATION ANALYSIS COMPLETE")
+    print(" Consolidation opportunities identified!")
+    print(" Architectural coherence enhancement ready!")
     
     return assembler
 

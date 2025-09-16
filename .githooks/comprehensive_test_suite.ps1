@@ -43,10 +43,10 @@ function Test-Script {
     
     $global:TotalTests++
     
-    Write-Host "🔧 Testing: $TestName" -ForegroundColor Yellow
+    Write-Host " Testing: $TestName" -ForegroundColor Yellow
     
     if (-not (Test-Path $ScriptPath)) {
-        Write-Host "❌ FAIL: Script not found - $ScriptPath" -ForegroundColor Red
+        Write-Host " FAIL: Script not found - $ScriptPath" -ForegroundColor Red
         $global:FailedTests++
         return $false
     }
@@ -59,7 +59,7 @@ function Test-Script {
         $ParsedScript = [System.Management.Automation.PSParser]::Tokenize((Get-Content $ScriptPath -Raw), [ref]$ParseErrors)
         
         if ($ParseErrors.Count -gt 0) {
-            Write-Host "❌ FAIL: Syntax errors found" -ForegroundColor Red
+            Write-Host " FAIL: Syntax errors found" -ForegroundColor Red
             if ($DetailedOutput) {
                 foreach ($Error in $ParseErrors) {
                     Write-Host "    Error: $($Error.Content) at line $($Error.StartLine)" -ForegroundColor Red
@@ -85,11 +85,11 @@ function Test-Script {
             $ExecutionTime = ((Get-Date) - $StartTime).TotalSeconds
             
             if ($ExitCode -eq "Completed") {
-                Write-Host "✅ PASS: $TestName ($([math]::Round($ExecutionTime, 2))s)" -ForegroundColor Green
+                Write-Host " PASS: $TestName ($([math]::Round($ExecutionTime, 2))s)" -ForegroundColor Green
                 $global:PassedTests++
                 return $true
             } else {
-                Write-Host "❌ FAIL: Script execution failed - $ExitCode" -ForegroundColor Red
+                Write-Host " FAIL: Script execution failed - $ExitCode" -ForegroundColor Red
                 if ($DetailedOutput -and $Output) {
                     Write-Host "    Output: $($Output | Out-String)" -ForegroundColor Gray
                 }
@@ -98,13 +98,13 @@ function Test-Script {
             }
         } else {
             Stop-Job $Job -PassThru | Remove-Job
-            Write-Host "❌ FAIL: Script timed out (${TimeoutSeconds}s)" -ForegroundColor Red
+            Write-Host " FAIL: Script timed out (${TimeoutSeconds}s)" -ForegroundColor Red
             $global:FailedTests++
             return $false
         }
         
     } catch {
-        Write-Host "❌ FAIL: Exception - $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host " FAIL: Exception - $($_.Exception.Message)" -ForegroundColor Red
         $global:FailedTests++
         return $false
     }
@@ -119,18 +119,18 @@ function Test-FileExists {
     $global:TotalTests++
     
     if (Test-Path $FilePath) {
-        Write-Host "✅ PASS: $TestName exists" -ForegroundColor Green
+        Write-Host " PASS: $TestName exists" -ForegroundColor Green
         $global:PassedTests++
         return $true
     } else {
-        Write-Host "❌ FAIL: $TestName not found - $FilePath" -ForegroundColor Red
+        Write-Host " FAIL: $TestName not found - $FilePath" -ForegroundColor Red
         $global:FailedTests++
         return $false
     }
 }
 
 if ($TestNucleus) {
-    Write-Host "🧬 TESTING NUCLEUS SUPERCELL" -ForegroundColor Magenta
+    Write-Host " TESTING NUCLEUS SUPERCELL" -ForegroundColor Magenta
     Write-Host "============================" -ForegroundColor Magenta
     Write-Host "Core git hook logic validation" -ForegroundColor Gray
     Write-Host ""
@@ -151,7 +151,7 @@ if ($TestNucleus) {
 }
 
 if ($TestMembrane) {
-    Write-Host "🧬 TESTING MEMBRANE SUPERCELL" -ForegroundColor Magenta
+    Write-Host " TESTING MEMBRANE SUPERCELL" -ForegroundColor Magenta
     Write-Host "=============================" -ForegroundColor Magenta
     Write-Host "External AI integrations validation" -ForegroundColor Gray
     Write-Host ""
@@ -169,7 +169,7 @@ if ($TestMembrane) {
 }
 
 if ($TestCytoplasm) {
-    Write-Host "🧬 TESTING CYTOPLASM SUPERCELL" -ForegroundColor Magenta
+    Write-Host " TESTING CYTOPLASM SUPERCELL" -ForegroundColor Magenta
     Write-Host "==============================" -ForegroundColor Magenta
     Write-Host "Supporting infrastructure validation" -ForegroundColor Gray
     Write-Host ""
@@ -185,7 +185,7 @@ if ($TestCytoplasm) {
 }
 
 if ($TestTransport) {
-    Write-Host "🧬 TESTING TRANSPORT SUPERCELL" -ForegroundColor Magenta
+    Write-Host " TESTING TRANSPORT SUPERCELL" -ForegroundColor Magenta
     Write-Host "==============================" -ForegroundColor Magenta
     Write-Host "Communication & coordination validation" -ForegroundColor Gray
     Write-Host ""
@@ -199,7 +199,7 @@ if ($TestTransport) {
 }
 
 if ($TestLaboratory) {
-    Write-Host "🧬 TESTING LABORATORY SUPERCELL" -ForegroundColor Magenta
+    Write-Host " TESTING LABORATORY SUPERCELL" -ForegroundColor Magenta
     Write-Host "===============================" -ForegroundColor Magenta
     Write-Host "Analysis & experimentation validation" -ForegroundColor Gray
     Write-Host ""
@@ -220,7 +220,7 @@ if ($TestLaboratory) {
 }
 
 if ($TestInformationStorage) {
-    Write-Host "🧬 TESTING INFORMATION_STORAGE SUPERCELL" -ForegroundColor Magenta
+    Write-Host " TESTING INFORMATION_STORAGE SUPERCELL" -ForegroundColor Magenta
     Write-Host "========================================" -ForegroundColor Magenta
     Write-Host "Configuration & documentation validation" -ForegroundColor Gray
     Write-Host ""
@@ -243,7 +243,7 @@ if ($TestInformationStorage) {
 }
 
 # Test main entry point functionality
-Write-Host "🎯 TESTING MAIN ENTRY POINT" -ForegroundColor Magenta
+Write-Host " TESTING MAIN ENTRY POINT" -ForegroundColor Magenta
 Write-Host "============================" -ForegroundColor Magenta
 Write-Host ""
 
@@ -252,7 +252,7 @@ Test-Script (Join-Path $GitHooksPath "execute_all_githook_logic.ps1") "MAIN: Sup
 
 # Summary
 Write-Host ""
-Write-Host "📊 TEST RESULTS SUMMARY" -ForegroundColor Cyan
+Write-Host " TEST RESULTS SUMMARY" -ForegroundColor Cyan
 Write-Host "=======================" -ForegroundColor Cyan
 Write-Host "Total Tests: $TotalTests" -ForegroundColor White
 Write-Host "Passed: $PassedTests" -ForegroundColor Green
@@ -261,15 +261,15 @@ Write-Host "Success Rate: $([math]::Round(($PassedTests / $TotalTests) * 100, 1)
 Write-Host ""
 
 if ($FailedTests -eq 0) {
-    Write-Host "🏆 ALL TESTS PASSED!" -ForegroundColor Green
+    Write-Host " ALL TESTS PASSED!" -ForegroundColor Green
     Write-Host "GitHooks supercell architecture is fully functional" -ForegroundColor Green
 } else {
-    Write-Host "⚠️ SOME TESTS FAILED" -ForegroundColor Yellow
+    Write-Host " SOME TESTS FAILED" -ForegroundColor Yellow
     Write-Host "Review failed tests and fix issues before deployment" -ForegroundColor Yellow
 }
 
 Write-Host ""
-Write-Host "🔍 NEXT STEPS:" -ForegroundColor Yellow
+Write-Host " NEXT STEPS:" -ForegroundColor Yellow
 if ($FailedTests -gt 0) {
     Write-Host "    1. Review failed tests with -DetailedOutput" -ForegroundColor Gray
     Write-Host "    2. Fix syntax errors and missing files" -ForegroundColor Gray

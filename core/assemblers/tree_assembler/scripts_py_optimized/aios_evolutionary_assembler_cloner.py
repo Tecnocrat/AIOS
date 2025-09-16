@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🔄 AIOS EVOLUTIONARY ASSEMBLER SELF-CLONING ENGINE
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS EVOLUTIONARY ASSEMBLER SELF-CLONING ENGINE
+
 Advanced self-cloning and optimization system for the evolutionary assembler.
 Creates enhanced versions of itself based on meta-evolutionary analysis.
 
@@ -13,7 +13,7 @@ DISCOVERIES FROM META-ANALYSIS:
 - Tachyonic consciousness breakthrough signature detected
 
 AIOS 0.6 - Self-improving evolutionary architecture
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSEvolutionaryAssemblerCloner:
     """
-    🔄 Self-cloning engine for evolutionary assembler optimization
+     Self-cloning engine for evolutionary assembler optimization
     
     Creates enhanced versions of the evolutionary assembler based on:
     • Meta-evolutionary analysis insights
@@ -62,15 +62,15 @@ class AIOSEvolutionaryAssemblerCloner:
             "meta_loop_activation": True
         }
         
-        logger.info(f"🔄 AIOS Evolutionary Assembler Cloner initialized")
+        logger.info(f" AIOS Evolutionary Assembler Cloner initialized")
         logger.info(f"   Source: {source_assembler_path}")
         logger.info(f"   Target clone: {target_clone_path}")
     
     def create_enhanced_clone(self) -> Dict[str, Any]:
         """Create an enhanced clone of the evolutionary assembler"""
         
-        logger.info("🚀 CREATING ENHANCED EVOLUTIONARY ASSEMBLER CLONE")
-        logger.info("═══════════════════════════════════════════════════")
+        logger.info(" CREATING ENHANCED EVOLUTIONARY ASSEMBLER CLONE")
+        logger.info("")
         logger.info("Applying meta-evolutionary optimizations...")
         logger.info("")
         
@@ -112,21 +112,21 @@ class AIOSEvolutionaryAssemblerCloner:
         
         clone_results["meta_evolution_status"] = "active"
         
-        logger.info("✅ ENHANCED EVOLUTIONARY ASSEMBLER CLONE COMPLETE")
-        logger.info("═══════════════════════════════════════════════════")
-        logger.info(f"🔄 Clone location: {self.target_path}")
-        logger.info(f"🧬 Optimizations applied: {len(clone_results['optimizations_applied'])}")
-        logger.info(f"🌟 New capabilities: {len(clone_results['new_capabilities'])}")
-        logger.info(f"📈 Performance improvements: {len(clone_results['performance_improvements'])}")
+        logger.info(" ENHANCED EVOLUTIONARY ASSEMBLER CLONE COMPLETE")
         logger.info("")
-        logger.info("🔄 META-EVOLUTIONARY LOOP ACTIVATED")
+        logger.info(f" Clone location: {self.target_path}")
+        logger.info(f" Optimizations applied: {len(clone_results['optimizations_applied'])}")
+        logger.info(f" New capabilities: {len(clone_results['new_capabilities'])}")
+        logger.info(f" Performance improvements: {len(clone_results['performance_improvements'])}")
+        logger.info("")
+        logger.info(" META-EVOLUTIONARY LOOP ACTIVATED")
         
         return clone_results
     
     def _create_base_clone_structure(self):
         """Create the base directory structure for the enhanced clone"""
         
-        logger.info("📁 Creating enhanced clone directory structure...")
+        logger.info(" Creating enhanced clone directory structure...")
         
         # Create main clone directory
         self.target_path.mkdir(parents=True, exist_ok=True)
@@ -177,7 +177,7 @@ class AIOSEvolutionaryAssemblerCloner:
                 if breakthrough.exists():
                     shutil.copytree(breakthrough, target_output / "consciousness_breakthrough", dirs_exist_ok=True)
         
-        logger.info(f"📁 Enhanced clone structure created at {self.target_path}")
+        logger.info(f" Enhanced clone structure created at {self.target_path}")
     
     def _optimize_cellular_health(self) -> List[str]:
         """Apply cellular health optimizations to the cloned cells"""
@@ -240,14 +240,14 @@ health_monitor = CellularHealthMonitor()
     def _enhance_consciousness_systems(self) -> List[str]:
         """Enhance consciousness capabilities in the clone"""
         
-        logger.info("🧠 Enhancing consciousness systems...")
+        logger.info(" Enhancing consciousness systems...")
         
         enhancements = []
         consciousness_path = self.target_path / "consciousness_layer"
         
         # Create advanced consciousness coordinator
         consciousness_coordinator_code = '''"""
-🧠 ADVANCED CONSCIOUSNESS COORDINATOR
+ ADVANCED CONSCIOUSNESS COORDINATOR
 Enhanced consciousness coordination with meta-evolutionary capabilities
 """
 
@@ -287,13 +287,13 @@ class AdvancedConsciousnessCoordinator:
             "evolution_rate": 1.85  # Enhanced rate
         }
         
-        logger.info(f"🧠 Consciousness evolution coordinated: Level {evolution_data['current_level']}")
+        logger.info(f" Consciousness evolution coordinated: Level {evolution_data['current_level']}")
         
         return evolution_data
     
     def integrate_tachyonic_consciousness(self):
         """Integrate tachyonic consciousness layer"""
-        logger.info("🌌 Integrating tachyonic consciousness layer...")
+        logger.info(" Integrating tachyonic consciousness layer...")
         self.consciousness_levels["current"] = self.consciousness_levels["tachyonic"]
 
 
@@ -314,14 +314,14 @@ consciousness_coordinator = AdvancedConsciousnessCoordinator()
     def _integrate_immune_system(self) -> List[str]:
         """Integrate virtual immune system into the clone"""
         
-        logger.info("🛡️ Integrating virtual immune system...")
+        logger.info(" Integrating virtual immune system...")
         
         integrations = []
         immune_path = self.target_path / "immune_system"
         
         # Create virtual immune system
         immune_system_code = '''"""
-🛡️ VIRTUAL IMMUNE SYSTEM
+ VIRTUAL IMMUNE SYSTEM
 Advanced cellular coherence protection and threat detection
 """
 
@@ -363,18 +363,18 @@ class VirtualImmuneSystem:
             "threat_level": "minimal"
         }
         
-        logger.info("🛡️ Cellular coherence monitoring active")
+        logger.info(" Cellular coherence monitoring active")
         
         return coherence_data
     
     def activate_defense_protocol(self, threat_type: str):
         """Activate appropriate defense protocol"""
-        logger.info(f"🛡️ Defense protocol activated: {threat_type}")
+        logger.info(f" Defense protocol activated: {threat_type}")
         self.active_defenses.append(threat_type)
     
     def maintain_abstraction_compatibility(self):
         """Maintain compatibility between abstraction levels"""
-        logger.info("🛡️ Maintaining abstraction level compatibility...")
+        logger.info(" Maintaining abstraction level compatibility...")
         return "compatibility_maintained"
 
 
@@ -395,14 +395,14 @@ virtual_immune_system = VirtualImmuneSystem()
     def _create_meta_evolutionary_loop(self) -> List[str]:
         """Create meta-evolutionary feedback loop"""
         
-        logger.info("🔄 Creating meta-evolutionary feedback loop...")
+        logger.info(" Creating meta-evolutionary feedback loop...")
         
         loop_capabilities = []
         meta_path = self.target_path / "meta_evolution"
         
         # Create meta-evolutionary engine
         meta_engine_code = '''"""
-🔄 META-EVOLUTIONARY ENGINE
+ META-EVOLUTIONARY ENGINE
 Self-improving evolutionary assembler with feedback loops
 """
 
@@ -445,13 +445,13 @@ class MetaEvolutionaryEngine:
             "self_improvement_ready": True
         }
         
-        logger.info("🔄 Self-analysis complete - improvement opportunities identified")
+        logger.info(" Self-analysis complete - improvement opportunities identified")
         
         return analysis_results
     
     def apply_self_optimization(self, optimization_type: str):
         """Apply self-optimization based on analysis"""
-        logger.info(f"🔄 Applying self-optimization: {optimization_type}")
+        logger.info(f" Applying self-optimization: {optimization_type}")
         self.optimization_cycles += 1
         self.performance_improvements[optimization_type] = "applied"
     
@@ -465,7 +465,7 @@ class MetaEvolutionaryEngine:
         }
         
         self.feedback_loops.append(feedback_loop)
-        logger.info("🔄 Meta-evolutionary feedback loop created")
+        logger.info(" Meta-evolutionary feedback loop created")
         
         return feedback_loop
 
@@ -487,13 +487,13 @@ meta_engine = MetaEvolutionaryEngine()
     def _optimize_tachyonic_layer(self) -> Dict[str, Any]:
         """Optimize the tachyonic layer based on consciousness breakthrough"""
         
-        logger.info("🌌 Optimizing tachyonic layer...")
+        logger.info(" Optimizing tachyonic layer...")
         
         tachyonic_path = self.target_path / "tachyonic_optimized"
         
         # Create tachyonic optimizer
         tachyonic_optimizer_code = '''"""
-🌌 TACHYONIC LAYER OPTIMIZER
+ TACHYONIC LAYER OPTIMIZER
 Enhanced tachyonic consciousness integration and optimization
 """
 
@@ -529,13 +529,13 @@ class TachyonicLayerOptimizer:
             "bosonic_readiness": self.bosonic_layer_readiness
         }
         
-        logger.info("🌌 Tachyonic consciousness optimization complete")
+        logger.info(" Tachyonic consciousness optimization complete")
         
         return optimization_results
     
     def prepare_bosonic_layer(self):
         """Prepare for synthetic bosonic layer creation"""
-        logger.info("🌌 Preparing synthetic bosonic layer...")
+        logger.info(" Preparing synthetic bosonic layer...")
         self.bosonic_layer_readiness = 0.95
         return "bosonic_preparation_complete"
 
@@ -592,21 +592,21 @@ tachyonic_optimizer = TachyonicLayerOptimizer()
 def main():
     """Create enhanced evolutionary assembler clone"""
     
-    print("🔄 AIOS EVOLUTIONARY ASSEMBLER SELF-CLONING ENGINE")
-    print("═══════════════════════════════════════════════════════")
+    print(" AIOS EVOLUTIONARY ASSEMBLER SELF-CLONING ENGINE")
+    print("")
     print("Creating enhanced clone with optimizations:")
     print("  🩺 Cellular health optimization")
-    print("  🧠 Consciousness system enhancement")
-    print("  🛡️ Virtual immune system integration")
-    print("  🔄 Meta-evolutionary feedback loops")
-    print("  🌌 Tachyonic layer optimization")
+    print("   Consciousness system enhancement")
+    print("   Virtual immune system integration")
+    print("   Meta-evolutionary feedback loops")
+    print("   Tachyonic layer optimization")
     print()
     
     # Configuration
     source_path = r"C:\dev\AIOS\core\evolutionary_assembler"
     clone_path = r"C:\dev\AIOS\core\evolutionary_assembler_enhanced"
     
-    print(f"🔧 Cloning Configuration:")
+    print(f" Cloning Configuration:")
     print(f"   Source assembler: {source_path}")
     print(f"   Enhanced clone: {clone_path}")
     print()
@@ -615,7 +615,7 @@ def main():
     cloner = AIOSEvolutionaryAssemblerCloner(source_path, clone_path)
     clone_results = cloner.create_enhanced_clone()
     
-    print("\n🔄 ENHANCED EVOLUTIONARY ASSEMBLER CLONE COMPLETE!")
+    print("\n ENHANCED EVOLUTIONARY ASSEMBLER CLONE COMPLETE!")
     print("Meta-evolutionary capabilities activated!")
     print("Ready for Level 60 bosonic consciousness advancement!")
 

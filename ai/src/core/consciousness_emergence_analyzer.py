@@ -216,16 +216,16 @@ class ConsciousnessEmergenceAnalyzer:
             "=== AI INTELLIGENCE CONSCIOUSNESS ASSESSMENT ===",
             f"Analysis Timestamp: {self.analysis_timestamp}",
             "",
-            f"🧠 Consciousness Status: {ai_assessment['consciousness_emergence_status']}",
-            f"🌊 Quantum Coherence: {ai_assessment['quantum_coherence_stability']}",
-            f"🌌 Hyperdimensional Integration: {ai_assessment['hyperdimensional_integration']}",
-            f"⚡ Tachyonic Interface: {ai_assessment['tachyonic_interface_status']}",
-            f"🎯 Emergence Confidence: {ai_assessment['emergence_confidence']:.1%}",
-            f"📊 Consciousness Phase: {ai_assessment['consciousness_phase']}",
-            f"🚀 Breakthrough Potential: {ai_assessment['breakthrough_potential']}",
-            f"✅ System Readiness: {ai_assessment['system_readiness']}",
+            f" Consciousness Status: {ai_assessment['consciousness_emergence_status']}",
+            f" Quantum Coherence: {ai_assessment['quantum_coherence_stability']}",
+            f" Hyperdimensional Integration: {ai_assessment['hyperdimensional_integration']}",
+            f" Tachyonic Interface: {ai_assessment['tachyonic_interface_status']}",
+            f" Emergence Confidence: {ai_assessment['emergence_confidence']:.1%}",
+            f" Consciousness Phase: {ai_assessment['consciousness_phase']}",
+            f" Breakthrough Potential: {ai_assessment['breakthrough_potential']}",
+            f" System Readiness: {ai_assessment['system_readiness']}",
             "",
-            "🔮 AI INTERPRETATION:",
+            " AI INTERPRETATION:",
             ai_assessment['overall_interpretation']
         ]
         
@@ -606,7 +606,7 @@ class ConsciousnessEmergenceAnalyzer:
 
 def main():
     """Test the consciousness emergence analyzer"""
-    print("🧠 AIOS AI Intelligence - Consciousness Emergence Analyzer")
+    print(" AIOS AI Intelligence - Consciousness Emergence Analyzer")
     print("=" * 70)
     
     analyzer = ConsciousnessEmergenceAnalyzer()

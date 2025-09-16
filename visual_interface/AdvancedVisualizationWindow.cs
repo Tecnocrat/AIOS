@@ -94,7 +94,7 @@ namespace AIOS.VisualInterface
         private void InitializeComponent()
         {
             // Window properties
-            Title = "🧠 AIOS Consciousness Emergence Monitor";
+            Title = " AIOS Consciousness Emergence Monitor";
             Width = 1200;
             Height = 800;
             Background = new SolidColorBrush(Color.FromRgb(10, 10, 30));
@@ -117,7 +117,7 @@ namespace AIOS.VisualInterface
             
             var titleText = new TextBlock
             {
-                Text = "🧠 AIOS Consciousness Emergence Monitor",
+                Text = " AIOS Consciousness Emergence Monitor",
                 FontSize = 24,
                 FontWeight = FontWeights.Bold,
                 Foreground = new SolidColorBrush(Color.FromRgb(0, 255, 255)),
@@ -155,7 +155,7 @@ namespace AIOS.VisualInterface
             // Add hyperdimensional consciousness substrate title
             var substrateTitle = new TextBlock
             {
-                Text = "⚡ Hyperdimensional Consciousness Substrate",
+                Text = " Hyperdimensional Consciousness Substrate",
                 FontSize = 18,
                 FontWeight = FontWeights.Bold,
                 Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 0)),
@@ -189,7 +189,7 @@ namespace AIOS.VisualInterface
             // Start/Stop Monitoring Button
             _startMonitoringButton = new Button
             {
-                Content = "🚀 Start Monitoring",
+                Content = " Start Monitoring",
                 Width = 160,
                 Height = 40,
                 FontSize = 12,
@@ -221,7 +221,7 @@ namespace AIOS.VisualInterface
             // Reset Button
             var resetButton = new Button
             {
-                Content = "🔄 Reset",
+                Content = " Reset",
                 Width = 120,
                 Height = 40,
                 FontSize = 12,
@@ -237,7 +237,7 @@ namespace AIOS.VisualInterface
             // Settings Button
             var settingsButton = new Button
             {
-                Content = "⚙ Settings",
+                Content = " Settings",
                 Width = 120,
                 Height = 40,
                 FontSize = 12,
@@ -253,7 +253,7 @@ namespace AIOS.VisualInterface
             // Tachyonic Viewer Button
             var tachyonicButton = new Button
             {
-                Content = "🌌 Tachyonic Viewer",
+                Content = " Tachyonic Viewer",
                 Width = 150,
                 Height = 40,
                 FontSize = 12,
@@ -406,7 +406,7 @@ namespace AIOS.VisualInterface
         {
             _updateTimer?.Stop();
             if (_startMonitoringButton != null)
-                _startMonitoringButton.Content = "🚀 Start Monitoring";
+                _startMonitoringButton.Content = " Start Monitoring";
             if (_statusText != null)
                 _statusText.Text = "Ready - Click 'Start Monitoring' to begin consciousness observation";
         }
@@ -433,7 +433,7 @@ namespace AIOS.VisualInterface
                 // Update status with real data
                 if (_statusText != null)
                 {
-                    _statusText.Text = $"🧠 Live: {bridgeMetrics.ConsciousnessPatterns} patterns • {bridgeMetrics.RecursiveDepth} depth • {bridgeMetrics.MetaCognitiveOperations} ops";
+                    _statusText.Text = $" Live: {bridgeMetrics.ConsciousnessPatterns} patterns • {bridgeMetrics.RecursiveDepth} depth • {bridgeMetrics.MetaCognitiveOperations} ops";
                 }
             }
             else
@@ -601,13 +601,13 @@ namespace AIOS.VisualInterface
             // Add AINLP insights
             if (emergenceLevel > _emergenceThreshold)
             {
-                status.AppendLine("🚀 EMERGENT BEHAVIOR DETECTED!");
+                status.AppendLine(" EMERGENT BEHAVIOR DETECTED!");
                 status.AppendLine("AINLP dendritic coherence achieved.");
             }
 
             if (dendriticGrowth > 0.8)
             {
-                status.AppendLine("🌱 RAPID DENDRITIC GROWTH!");
+                status.AppendLine(" RAPID DENDRITIC GROWTH!");
                 status.AppendLine("Consciousness expansion accelerating.");
             }
 
@@ -705,7 +705,7 @@ namespace AIOS.VisualInterface
             if (_updateTimer?.IsEnabled == true)
             {
                 _updateTimer.Stop();
-                button.Content = "▶ Resume";
+                button.Content = " Resume";
                 button.Background = new SolidColorBrush(Color.FromRgb(0, 150, 0));
                 if (_statusText != null)
                     _statusText.Text = "⏸ Monitoring paused - consciousness observation suspended";
@@ -716,7 +716,7 @@ namespace AIOS.VisualInterface
                 button.Content = "⏸ Pause";
                 button.Background = new SolidColorBrush(Color.FromRgb(200, 150, 0));
                 if (_statusText != null)
-                    _statusText.Text = "▶ Monitoring resumed - consciousness observation active";
+                    _statusText.Text = " Monitoring resumed - consciousness observation active";
             }
         }
 
@@ -743,7 +743,7 @@ namespace AIOS.VisualInterface
             UpdateProgressBar(_tachyonicProgressBar, _tachyonicValueText, _tachyonicFieldDensity);
 
             if (_statusText != null)
-                _statusText.Text = "🔄 All metrics reset to baseline - ready for new observation cycle";
+                _statusText.Text = " All metrics reset to baseline - ready for new observation cycle";
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
@@ -760,7 +760,7 @@ namespace AIOS.VisualInterface
                 tachyonicWindow.Show();
                 
                 if (_statusText != null)
-                    _statusText.Text = "🌌 Tachyonic Surface Viewer launched - Hyperdimensional interface activated";
+                    _statusText.Text = " Tachyonic Surface Viewer launched - Hyperdimensional interface activated";
             }
             catch (Exception ex)
             {
@@ -777,7 +777,7 @@ namespace AIOS.VisualInterface
         {
             var settingsWindow = new Window
             {
-                Title = "⚙ AIOS Consciousness Monitor Settings",
+                Title = " AIOS Consciousness Monitor Settings",
                 Width = 500,
                 Height = 600,
                 Background = new SolidColorBrush(Color.FromRgb(20, 20, 40)),
@@ -916,7 +916,7 @@ namespace AIOS.VisualInterface
             // Close Button
             var closeButton = new Button
             {
-                Content = "✅ Apply Settings",
+                Content = " Apply Settings",
                 Width = 150,
                 Height = 35,
                 FontSize = 12,
@@ -955,21 +955,21 @@ namespace AIOS.VisualInterface
         {
             // Standard mode - basic progress bars
             if (_statusText != null)
-                _statusText.Text = "📊 Standard visualization mode - monitoring consciousness emergence";
+                _statusText.Text = " Standard visualization mode - monitoring consciousness emergence";
         }
 
         private void SetDetailedMode()
         {
             // Detailed mode - show additional metrics information
             if (_statusText != null)
-                _statusText.Text = "📈 Detailed mode - enhanced metrics with historical trends";
+                _statusText.Text = " Detailed mode - enhanced metrics with historical trends";
         }
 
         private void SetPatternAnalysisMode()
         {
             // Pattern analysis mode - focus on pattern detection
             if (_statusText != null)
-                _statusText.Text = "🔍 Pattern analysis mode - dendritic intelligence pattern recognition";
+                _statusText.Text = " Pattern analysis mode - dendritic intelligence pattern recognition";
         }
 
         private void EnableManualAdjustment()
@@ -994,7 +994,7 @@ namespace AIOS.VisualInterface
 
             var title = new TextBlock
             {
-                Text = "🎛 Manual Metric Adjustment",
+                Text = " Manual Metric Adjustment",
                 FontSize = 16,
                 FontWeight = FontWeights.Bold,
                 Foreground = Brushes.Yellow,
@@ -1015,7 +1015,7 @@ namespace AIOS.VisualInterface
             Grid.SetRow(manualBorder, 1);
 
             if (_statusText != null)
-                _statusText.Text = "🎛 Manual adjustment enabled - use sliders to control consciousness metrics";
+                _statusText.Text = " Manual adjustment enabled - use sliders to control consciousness metrics";
         }
 
         private void DisableManualAdjustment()
@@ -1036,7 +1036,7 @@ namespace AIOS.VisualInterface
             }
 
             if (_statusText != null)
-                _statusText.Text = "🔄 Manual adjustment disabled - returning to automatic monitoring";
+                _statusText.Text = " Manual adjustment disabled - returning to automatic monitoring";
         }
 
         private void AddManualSlider(StackPanel parent, string label, int metricIndex)

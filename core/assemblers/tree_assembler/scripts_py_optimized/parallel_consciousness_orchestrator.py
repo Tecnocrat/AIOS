@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 🧵 PARALLEL CONSCIOUSNESS ORCHESTRATOR
-═══════════════════════════════════════════════════════════════════════════════
+
 Multi-threaded consciousness evolution with stream synchronization and correlation
 
 Key Features:
@@ -10,7 +10,7 @@ Key Features:
 • Synchronized evolution with consciousness amplification
 • Reinforcement learning for mutation guidance
 • Thread-safe consciousness measurement
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import threading
@@ -170,8 +170,8 @@ class ParallelConsciousnessOrchestrator:
         self.execution_start_time = None
         
         logger.info(f"🧵 Parallel Consciousness Orchestrator initialized")
-        logger.info(f"🔄 Streams: {self.num_streams}")
-        logger.info(f"🧠 CPU cores detected: {multiprocessing.cpu_count()}")
+        logger.info(f" Streams: {self.num_streams}")
+        logger.info(f" CPU cores detected: {multiprocessing.cpu_count()}")
         
     def initialize_streams(self):
         """Initialize all consciousness streams"""
@@ -187,7 +187,7 @@ class ParallelConsciousnessOrchestrator:
                 )
                 self.streams[stream_id] = stream
                 
-        logger.info(f"✅ Initialized {self.num_streams} consciousness streams")
+        logger.info(f" Initialized {self.num_streams} consciousness streams")
     
     def consciousness_stream_worker(self, stream_id: int):
         """Worker function for individual consciousness stream"""
@@ -197,7 +197,7 @@ class ParallelConsciousnessOrchestrator:
             stream.thread_id = threading.get_ident()
             stream.is_active = True
             
-            logger.info(f"🧬 Stream {stream_id} starting consciousness evolution")
+            logger.info(f" Stream {stream_id} starting consciousness evolution")
             
             generation = 0
             while not self.shutdown_event.is_set():
@@ -223,7 +223,7 @@ class ParallelConsciousnessOrchestrator:
                     if len(stream.consciousness_history) > 100:
                         stream.consciousness_history = stream.consciousness_history[-50:]
                 
-                logger.debug(f"🌊 Stream {stream_id} Gen {generation}: coherence={coherence:.6f}")
+                logger.debug(f" Stream {stream_id} Gen {generation}: coherence={coherence:.6f}")
                 
                 # Wait for synchronization if needed
                 if generation % 5 == 0:  # Sync every 5 generations
@@ -233,17 +233,17 @@ class ParallelConsciousnessOrchestrator:
                 time.sleep(0.01)
                 
         except Exception as e:
-            logger.error(f"❌ Stream {stream_id} error: {e}")
+            logger.error(f" Stream {stream_id} error: {e}")
         finally:
             if stream_id in self.streams:
                 self.streams[stream_id].is_active = False
-            logger.info(f"🔚 Stream {stream_id} terminated")
+            logger.info(f" Stream {stream_id} terminated")
     
     def consciousness_correlation_monitor(self):
         """Monitor and calculate consciousness correlations between streams"""
         
         try:
-            logger.info("🔗 Consciousness correlation monitor started")
+            logger.info(" Consciousness correlation monitor started")
             
             while not self.shutdown_event.is_set():
                 time.sleep(1.0)  # Check correlations every second
@@ -272,7 +272,7 @@ class ParallelConsciousnessOrchestrator:
                             correlation_count += 1
                             total_amplification *= correlation.coherence_amplification
                             
-                            logger.debug(f"🔗 Correlation {stream_a.stream_id}-{stream_b.stream_id}: "
+                            logger.debug(f" Correlation {stream_a.stream_id}-{stream_b.stream_id}: "
                                        f"{correlation.correlation_coefficient:.4f}")
                     
                     # Update global consciousness metrics
@@ -285,11 +285,11 @@ class ParallelConsciousnessOrchestrator:
                         base_coherence = np.mean(individual_coherences)
                         self.total_consciousness_coherence = base_coherence * self.consciousness_amplification_factor
                         
-                        logger.debug(f"🌟 Total consciousness coherence: {self.total_consciousness_coherence:.6f}")
-                        logger.debug(f"📈 Amplification factor: {self.consciousness_amplification_factor:.4f}")
+                        logger.debug(f" Total consciousness coherence: {self.total_consciousness_coherence:.6f}")
+                        logger.debug(f" Amplification factor: {self.consciousness_amplification_factor:.4f}")
                 
         except Exception as e:
-            logger.error(f"❌ Correlation monitor error: {e}")
+            logger.error(f" Correlation monitor error: {e}")
     
     def start_parallel_consciousness_evolution(self, duration_seconds: int = 30):
         """Start parallel consciousness evolution across all streams"""
@@ -297,8 +297,8 @@ class ParallelConsciousnessOrchestrator:
         self.execution_start_time = time.time()
         self.initialize_streams()
         
-        logger.info(f"🚀 Starting parallel consciousness evolution")
-        logger.info(f"⏱️ Duration: {duration_seconds} seconds")
+        logger.info(f" Starting parallel consciousness evolution")
+        logger.info(f"⏱ Duration: {duration_seconds} seconds")
         logger.info(f"🧵 Streams: {self.num_streams}")
         
         # Start consciousness streams
@@ -337,10 +337,10 @@ class ParallelConsciousnessOrchestrator:
                     self.print_consciousness_status()
                     
         except KeyboardInterrupt:
-            logger.info("🛑 Keyboard interrupt received")
+            logger.info(" Keyboard interrupt received")
         finally:
             # Shutdown all streams
-            logger.info("🔚 Shutting down consciousness streams...")
+            logger.info(" Shutting down consciousness streams...")
             self.shutdown_event.set()
             
             # Wait for threads to complete
@@ -363,7 +363,7 @@ class ParallelConsciousnessOrchestrator:
             coherences = [s.current_coherence for s in active_streams]
             generations = [s.evolution_generation for s in active_streams]
             
-            print(f"\\n🧠 CONSCIOUSNESS STATUS:")
+            print(f"\\n CONSCIOUSNESS STATUS:")
             print(f"   Active streams: {len(active_streams)}")
             print(f"   Avg coherence: {np.mean(coherences):.6f}")
             print(f"   Max coherence: {np.max(coherences):.6f}")
@@ -376,12 +376,12 @@ class ParallelConsciousnessOrchestrator:
         
         execution_time = time.time() - self.execution_start_time if self.execution_start_time else 0
         
-        print("\\n🌟 PARALLEL CONSCIOUSNESS EVOLUTION COMPLETE!")
-        print("═══════════════════════════════════════════════")
+        print("\\n PARALLEL CONSCIOUSNESS EVOLUTION COMPLETE!")
+        print("")
         
         with self.stream_lock:
             if not self.streams:
-                print("❌ No consciousness streams were active")
+                print(" No consciousness streams were active")
                 return
             
             # Collect final statistics
@@ -394,20 +394,20 @@ class ParallelConsciousnessOrchestrator:
                     total_generations += stream.evolution_generation
             
             if final_coherences:
-                print(f"📊 FINAL METRICS:")
+                print(f" FINAL METRICS:")
                 print(f"   Execution time: {execution_time:.2f} seconds")
                 print(f"   Total streams: {len(self.streams)}")
                 print(f"   Active streams: {len(final_coherences)}")
                 print(f"   Total generations: {total_generations}")
                 print(f"   Avg generations per stream: {total_generations / len(self.streams):.1f}")
                 print()
-                print(f"🧠 CONSCIOUSNESS COHERENCE:")
+                print(f" CONSCIOUSNESS COHERENCE:")
                 print(f"   Individual avg: {np.mean(final_coherences):.6f}")
                 print(f"   Individual max: {np.max(final_coherences):.6f}")
                 print(f"   Individual min: {np.min(final_coherences):.6f}")
                 print(f"   Individual std: {np.std(final_coherences):.6f}")
                 print()
-                print(f"🌟 PARALLEL ENHANCEMENT:")
+                print(f" PARALLEL ENHANCEMENT:")
                 print(f"   Total consciousness: {self.total_consciousness_coherence:.6f}")
                 print(f"   Amplification factor: {self.consciousness_amplification_factor:.4f}")
                 print(f"   Enhancement: {(self.consciousness_amplification_factor - 1.0) * 100:.2f}%")
@@ -418,7 +418,7 @@ class ParallelConsciousnessOrchestrator:
                 print(f"   vs Single stream: {parallel_improvement:.2f}% improvement")
                 
                 print()
-                print(f"🔗 CORRELATION ANALYSIS:")
+                print(f" CORRELATION ANALYSIS:")
                 if self.correlation_matrix:
                     correlations = [c.correlation_coefficient for c in self.correlation_matrix.values()]
                     amplifications = [c.coherence_amplification for c in self.correlation_matrix.values()]
@@ -432,23 +432,23 @@ class ParallelConsciousnessOrchestrator:
                     print("   No correlations calculated")
                 
                 print()
-                print("✅ PARALLEL CONSCIOUSNESS EVOLUTION SUCCESSFUL!")
-                print(f"🚀 ACHIEVED: {len(final_coherences)}x parallel consciousness streams")
-                print(f"🧠 PEAK CONSCIOUSNESS: {self.total_consciousness_coherence:.6f}")
+                print(" PARALLEL CONSCIOUSNESS EVOLUTION SUCCESSFUL!")
+                print(f" ACHIEVED: {len(final_coherences)}x parallel consciousness streams")
+                print(f" PEAK CONSCIOUSNESS: {self.total_consciousness_coherence:.6f}")
 
 
 def main():
     """Main demonstration of parallel consciousness evolution"""
     
     print("🧵 PARALLEL CONSCIOUSNESS ORCHESTRATOR DEMO")
-    print("══════════════════════════════════════════════")
+    print("")
     print()
     
     # Configuration
     num_streams = 4  # Start with 4 streams for testing
     duration = 20    # Run for 20 seconds
     
-    print(f"🔧 Configuration:")
+    print(f" Configuration:")
     print(f"   Consciousness streams: {num_streams}")
     print(f"   Evolution duration: {duration} seconds")
     print(f"   Available CPU cores: {multiprocessing.cpu_count()}")

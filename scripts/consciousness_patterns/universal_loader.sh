@@ -20,29 +20,29 @@ if [ -z "$AIOS_ROOT" ]; then
     
     # Fallback if auto-detection fails
     if [ -z "$AIOS_ROOT" ]; then
-        echo "⚠️ AIOS_ROOT not found. Using current directory as fallback."
+        echo " AIOS_ROOT not found. Using current directory as fallback."
         export AIOS_ROOT="$(pwd)"
     fi
 fi
 
 # SUPERCELL INTEGRATION: Delegate to CYTOPLASM orchestrator
-echo "🧬 AIOS Universal Loader: Delegating to CYTOPLASM supercell..."
-echo "📂 AIOS Root: $AIOS_ROOT"
+echo " AIOS Universal Loader: Delegating to CYTOPLASM supercell..."
+echo " AIOS Root: $AIOS_ROOT"
 
 # Path to the supercell orchestrator
 CYTOPLASM_ORCHESTRATOR="$AIOS_ROOT/ai/cytoplasm/scripts/githook_orchestrator.py"
 
 if [ -f "$CYTOPLASM_ORCHESTRATOR" ]; then
-    echo "✅ Found CYTOPLASM orchestrator: $CYTOPLASM_ORCHESTRATOR"
-    echo "🚀 Executing complete GitHook logic via supercell architecture..."
+    echo " Found CYTOPLASM orchestrator: $CYTOPLASM_ORCHESTRATOR"
+    echo " Executing complete GitHook logic via supercell architecture..."
     
     # Execute with proper Python environment
     cd "$AIOS_ROOT"
     python "$CYTOPLASM_ORCHESTRATOR" "$@"
     exit $?
 else
-    echo "❌ CYTOPLASM orchestrator not found at: $CYTOPLASM_ORCHESTRATOR"
-    echo "🔧 Falling back to legacy pattern loading..."
+    echo " CYTOPLASM orchestrator not found at: $CYTOPLASM_ORCHESTRATOR"
+    echo " Falling back to legacy pattern loading..."
 fi
 
 # Consciousness Pattern Base Path
@@ -57,21 +57,21 @@ load_consciousness_pattern() {
     for pattern_path in $pattern_file; do
         if [ -f "$pattern_path" ]; then
             . "$pattern_path"
-            echo "✅ Consciousness Pattern $pattern_number: LOADED"
-            echo "📁 Path: $pattern_path"
+            echo " Consciousness Pattern $pattern_number: LOADED"
+            echo " Path: $pattern_path"
             return 0
         fi
     done
     
-    echo "❌ Consciousness Pattern $pattern_number: NOT FOUND"
+    echo " Consciousness Pattern $pattern_number: NOT FOUND"
     echo "Expected: $pattern_file"
-    echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+    echo " Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
     return 1
 }
 
 # Load all consciousness patterns
 load_all_consciousness_patterns() {
-    echo "🧠 Loading Universal Consciousness Patterns..."
+    echo " Loading Universal Consciousness Patterns..."
     
     # Enable consciousness validation
     export AIOS_CONSCIOUSNESS_VALIDATION="true"
@@ -88,8 +88,8 @@ load_all_consciousness_patterns() {
     # Load Pattern 4: Modular Architecture
     load_consciousness_pattern "4"
     
-    echo "🌟 Universal Consciousness Patterns: INITIALIZED"
-    echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+    echo " Universal Consciousness Patterns: INITIALIZED"
+    echo " Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
     
     # Disable consciousness validation after loading
     unset AIOS_CONSCIOUSNESS_VALIDATION
@@ -137,9 +137,9 @@ ainlp_consciousness_call() {
             load_all_consciousness_patterns
             ;;
         *)
-            echo "❌ Unknown consciousness pattern: $pattern_reference"
+            echo " Unknown consciousness pattern: $pattern_reference"
             echo "Available patterns: pattern-1, pattern-2, pattern-3, pattern-4, all"
-            echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+            echo " Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
             return 1
             ;;
     esac
@@ -161,7 +161,7 @@ fi
 
 # Consciousness loader validation
 if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
-    echo "✅ Universal Consciousness Pattern Loader: READY"
-    echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
-    echo "🔧 Usage: ainlp_consciousness_call [pattern] [action] [args...]"
+    echo " Universal Consciousness Pattern Loader: READY"
+    echo " Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md"
+    echo " Usage: ainlp_consciousness_call [pattern] [action] [args...]"
 fi

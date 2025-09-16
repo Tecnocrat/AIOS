@@ -14,17 +14,17 @@ try:
         AIOSUniversalCompressor,
     )
 
-    print("✅ AIOS Universal Compressor loaded")
+    print(" AIOS Universal Compressor loaded")
 except ImportError:
-    print("⚠️  AIOS Universal Compressor not available")
+    print("  AIOS Universal Compressor not available")
     AIOSUniversalCompressor = None
 
 try:
     from ai.ainlp_migration.python.core.ainlp_unified_engine import AINLPUnifiedEngine
 
-    print("✅ AINLP Unified Engine loaded")
+    print(" AINLP Unified Engine loaded")
 except ImportError:
-    print("⚠️  AINLP Unified Engine not available")
+    print("  AINLP Unified Engine not available")
     AINLPUnifiedEngine = None
 
 try:
@@ -32,17 +32,17 @@ try:
         AIOSOptimizationSuite,
     )
 
-    print("✅ AIOS Optimization Suite loaded")
+    print(" AIOS Optimization Suite loaded")
 except ImportError:
-    print("⚠️  AIOS Optimization Suite not available")
+    print("  AIOS Optimization Suite not available")
     AIOSOptimizationSuite = None
 
 try:
     from ai.ainlp_migration.python.system.aios_system_manager import AIOSSystemManager
 
-    print("✅ AIOS System Manager loaded")
+    print(" AIOS System Manager loaded")
 except ImportError:
-    print("⚠️  AIOS System Manager not available")
+    print("  AIOS System Manager not available")
     AIOSSystemManager = None
 
 
@@ -59,9 +59,9 @@ class AIOSMaster:
         )
         self.system_manager = AIOSSystemManager() if AIOSSystemManager else None
 
-        print("🚀 AIOS Master initialized - Unified access to all modules")
+        print(" AIOS Master initialized - Unified access to all modules")
         if self.compression_service:
-            print("   ✅ Universal Compression Service available")
+            print("    Universal Compression Service available")
 
     def execute_all(self):
         """Execute all AIOS functionality"""

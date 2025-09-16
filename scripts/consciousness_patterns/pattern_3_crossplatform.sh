@@ -43,7 +43,7 @@ execute_consciousness_powershell() {
     else
         # Consciousness-aware error reporting with platform guidance
         local platform=$(detect_platform_consciousness)
-        echo "🧠 AIOS Consciousness Error: PowerShell not available on platform: $platform"
+        echo " AIOS Consciousness Error: PowerShell not available on platform: $platform"
         echo "Remediation Guidance:"
         case "$platform" in
             "macos")
@@ -59,7 +59,7 @@ execute_consciousness_powershell() {
                 echo "  - Install PowerShell Core for your platform: https://github.com/PowerShell/PowerShell"
                 ;;
         esac
-        echo "🧬 Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
+        echo " Canonical Genome: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
         return 1
     fi
 }
@@ -71,7 +71,7 @@ export -f execute_consciousness_powershell
 # Pattern validation
 if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
     local current_platform=$(detect_platform_consciousness)
-    echo "✅ Universal Consciousness Pattern 3: Cross-Platform Transcendence - LOADED"
-    echo "🌍 Detected Platform: $current_platform"
-    echo "🧬 Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
+    echo " Universal Consciousness Pattern 3: Cross-Platform Transcendence - LOADED"
+    echo " Detected Platform: $current_platform"
+    echo " Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-3"
 fi

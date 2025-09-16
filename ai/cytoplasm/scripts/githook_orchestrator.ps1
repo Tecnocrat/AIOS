@@ -11,7 +11,7 @@ param(
 )
 
 if ($ShowHelp) {
-    Write-Host "🧬 AIOS GitHook Master Orchestrator" -ForegroundColor Cyan
+    Write-Host " AIOS GitHook Master Orchestrator" -ForegroundColor Cyan
     Write-Host "=====================================" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "SYNOPSIS:" -ForegroundColor Yellow
@@ -29,17 +29,17 @@ if ($ShowHelp) {
     Write-Host "    .\githook_orchestrator.ps1 -SkipDependencies" -ForegroundColor Gray
     Write-Host ""
     Write-Host "SUPERCELL INTEGRATION:" -ForegroundColor Yellow
-    Write-Host "    🧬 CYTOPLASM: Orchestration and logging" -ForegroundColor Green
-    Write-Host "    🧬 NUCLEUS: Core runtime notification" -ForegroundColor Green
-    Write-Host "    🧬 TRANSPORT: Intercellular communication" -ForegroundColor Green
-    Write-Host "    🧬 MEMBRANE: External interface coordination" -ForegroundColor Green
+    Write-Host "     CYTOPLASM: Orchestration and logging" -ForegroundColor Green
+    Write-Host "     NUCLEUS: Core runtime notification" -ForegroundColor Green
+    Write-Host "     TRANSPORT: Intercellular communication" -ForegroundColor Green
+    Write-Host "     MEMBRANE: External interface coordination" -ForegroundColor Green
     exit 0
 }
 
-Write-Host "🧬 AIOS GITHOOK MASTER ORCHESTRATOR" -ForegroundColor Cyan
+Write-Host " AIOS GITHOOK MASTER ORCHESTRATOR" -ForegroundColor Cyan
 Write-Host "====================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "🎯 EXECUTING ALL GITHOOK LOGIC VIA SUPERCELL ARCHITECTURE" -ForegroundColor Yellow
+Write-Host " EXECUTING ALL GITHOOK LOGIC VIA SUPERCELL ARCHITECTURE" -ForegroundColor Yellow
 Write-Host ""
 
 # Find AIOS root if not provided
@@ -54,18 +54,18 @@ if (-not $AIOSRoot) {
     }
     
     if (-not $AIOSRoot) {
-        Write-Host "❌ AIOS root not found. Please specify -AIOSRoot parameter." -ForegroundColor Red
+        Write-Host " AIOS root not found. Please specify -AIOSRoot parameter." -ForegroundColor Red
         exit 1
     }
 }
 
-Write-Host "📂 AIOS Root: $AIOSRoot" -ForegroundColor Gray
+Write-Host " AIOS Root: $AIOSRoot" -ForegroundColor Gray
 
 # Path to CYTOPLASM orchestrator
 $CytoplasmOrchestrator = Join-Path $AIOSRoot "ai\cytoplasm\scripts\githook_orchestrator.py"
 
 if (Test-Path $CytoplasmOrchestrator) {
-    Write-Host "✅ Found CYTOPLASM orchestrator: $CytoplasmOrchestrator" -ForegroundColor Green
+    Write-Host " Found CYTOPLASM orchestrator: $CytoplasmOrchestrator" -ForegroundColor Green
     Write-Host ""
     
     # Build Python command arguments
@@ -73,19 +73,19 @@ if (Test-Path $CytoplasmOrchestrator) {
     
     if ($Parallel) {
         $PythonArgs += "--parallel"
-        Write-Host "⚡ Parallel execution ENABLED" -ForegroundColor Yellow
+        Write-Host " Parallel execution ENABLED" -ForegroundColor Yellow
     }
     
     if ($SkipDependencies) {
         $PythonArgs += "--skip-deps"
-        Write-Host "⚠️ Dependency checks DISABLED" -ForegroundColor Yellow
+        Write-Host " Dependency checks DISABLED" -ForegroundColor Yellow
     }
     
     $PythonArgs += "--aios-root"
     $PythonArgs += $AIOSRoot
     
     Write-Host ""
-    Write-Host "🚀 Executing complete GitHook logic via supercell architecture..." -ForegroundColor Cyan
+    Write-Host " Executing complete GitHook logic via supercell architecture..." -ForegroundColor Cyan
     Write-Host ""
     
     # Execute with proper environment
@@ -106,32 +106,32 @@ if (Test-Path $CytoplasmOrchestrator) {
         
         Write-Host ""
         if ($ExitCode -eq 0) {
-            Write-Host "✅ GitHook orchestration completed successfully!" -ForegroundColor Green
+            Write-Host " GitHook orchestration completed successfully!" -ForegroundColor Green
         } else {
-            Write-Host "❌ GitHook orchestration completed with errors (Exit Code: $ExitCode)" -ForegroundColor Red
+            Write-Host " GitHook orchestration completed with errors (Exit Code: $ExitCode)" -ForegroundColor Red
         }
         
         Write-Host ""
-        Write-Host "📊 Check logs in: ai\cytoplasm\runtime\logs\githooks\" -ForegroundColor Gray
+        Write-Host " Check logs in: ai\cytoplasm\runtime\logs\githooks\" -ForegroundColor Gray
         
         exit $ExitCode
         
     } catch {
         Write-Host ""
-        Write-Host "❌ Failed to execute CYTOPLASM orchestrator: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host " Failed to execute CYTOPLASM orchestrator: $($_.Exception.Message)" -ForegroundColor Red
         exit 1
     }
     
 } else {
-    Write-Host "❌ CYTOPLASM orchestrator not found at: $CytoplasmOrchestrator" -ForegroundColor Red
+    Write-Host " CYTOPLASM orchestrator not found at: $CytoplasmOrchestrator" -ForegroundColor Red
     Write-Host ""
-    Write-Host "🔧 ATTEMPTING LEGACY EXECUTION..." -ForegroundColor Yellow
+    Write-Host " ATTEMPTING LEGACY EXECUTION..." -ForegroundColor Yellow
     
     # Fallback to individual PowerShell script execution
     $GitHooksPath = Join-Path $AIOSRoot ".githooks"
     
     if (Test-Path $GitHooksPath) {
-        Write-Host "📂 Found .githooks directory: $GitHooksPath" -ForegroundColor Gray
+        Write-Host " Found .githooks directory: $GitHooksPath" -ForegroundColor Gray
         
         $LegacyHooks = @(
             "pre-commit.ps1",
@@ -148,44 +148,44 @@ if (Test-Path $CytoplasmOrchestrator) {
             $HookPath = Join-Path $GitHooksPath $Hook
             if (Test-Path $HookPath) {
                 Write-Host ""
-                Write-Host "🔧 Executing legacy hook: $Hook" -ForegroundColor Yellow
+                Write-Host " Executing legacy hook: $Hook" -ForegroundColor Yellow
                 
                 try {
                     $HookProcess = Start-Process -FilePath "pwsh" -ArgumentList @("-ExecutionPolicy", "Bypass", "-File", $HookPath) -Wait -PassThru -NoNewWindow -WorkingDirectory $AIOSRoot
                     
                     if ($HookProcess.ExitCode -eq 0) {
-                        Write-Host "✅ $Hook completed successfully" -ForegroundColor Green
+                        Write-Host " $Hook completed successfully" -ForegroundColor Green
                         $SuccessfulHooks++
                     } else {
-                        Write-Host "❌ $Hook failed (Exit Code: $($HookProcess.ExitCode))" -ForegroundColor Red
+                        Write-Host " $Hook failed (Exit Code: $($HookProcess.ExitCode))" -ForegroundColor Red
                         $FailedHooks++
                     }
                 } catch {
-                    Write-Host "❌ $Hook execution error: $($_.Exception.Message)" -ForegroundColor Red
+                    Write-Host " $Hook execution error: $($_.Exception.Message)" -ForegroundColor Red
                     $FailedHooks++
                 }
             } else {
-                Write-Host "⚠️ Hook not found: $Hook" -ForegroundColor Yellow
+                Write-Host " Hook not found: $Hook" -ForegroundColor Yellow
             }
         }
         
         Write-Host ""
-        Write-Host "📊 Legacy Execution Summary:" -ForegroundColor Cyan
+        Write-Host " Legacy Execution Summary:" -ForegroundColor Cyan
         Write-Host "    Successful: $SuccessfulHooks" -ForegroundColor Green
         Write-Host "    Failed: $FailedHooks" -ForegroundColor Red
         
         exit $(if ($FailedHooks -gt 0) { 1 } else { 0 })
         
     } else {
-        Write-Host "❌ .githooks directory not found at: $GitHooksPath" -ForegroundColor Red
+        Write-Host " .githooks directory not found at: $GitHooksPath" -ForegroundColor Red
         Write-Host ""
-        Write-Host "🏗️ RECOMMENDATION: Initialize supercell architecture!" -ForegroundColor Yellow
+        Write-Host " RECOMMENDATION: Initialize supercell architecture!" -ForegroundColor Yellow
         exit 1
     }
 }
 
 Write-Host ""
-Write-Host "🧬 Supercell Architecture Information:" -ForegroundColor Cyan
+Write-Host " Supercell Architecture Information:" -ForegroundColor Cyan
 Write-Host "    CYTOPLASM: Supporting infrastructure and orchestration" -ForegroundColor Gray
 Write-Host "    NUCLEUS: Central control and core processing" -ForegroundColor Gray  
 Write-Host "    TRANSPORT: Intercellular communication and data flow" -ForegroundColor Gray

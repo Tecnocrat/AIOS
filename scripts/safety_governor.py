@@ -10,7 +10,7 @@ This module provides essential safety controls including:
 - Containment verification
 - Comprehensive safety logging
 
-⚠️ CRITICAL: This module must be initialized before any evolutionary operations
+ CRITICAL: This module must be initialized before any evolutionary operations
 """
 
 import time
@@ -106,7 +106,7 @@ class SafetyGovernor:
         # Default resource limits
         self.default_limits = ResourceLimits()
         
-        self.safety_logger.critical("🛡️ AIOS Safety Governor initialized - System protected")
+        self.safety_logger.critical(" AIOS Safety Governor initialized - System protected")
     
     def setup_safety_logging(self):
         """Initialize comprehensive safety logging"""
@@ -144,9 +144,9 @@ class SafetyGovernor:
         """
         Request human authorization for evolutionary experiment
         
-        ⚠️ CRITICAL: This MUST be called before any autonomous operation
+         CRITICAL: This MUST be called before any autonomous operation
         """
-        self.safety_logger.warning(f"🔐 Authorization requested for: {experiment_description}")
+        self.safety_logger.warning(f" Authorization requested for: {experiment_description}")
         self.safety_logger.warning(f"   Safety Level: {safety_level.value}")
         self.safety_logger.warning(f"   Duration: {duration_minutes} minutes")
         self.safety_logger.warning(f"   Authorized by: {authorized_by}")
@@ -155,7 +155,7 @@ class SafetyGovernor:
         # For now, we'll simulate the authorization process
         
         print("\n" + "="*80)
-        print("🛡️  AIOS SAFETY GOVERNOR - AUTHORIZATION REQUIRED")
+        print("  AIOS SAFETY GOVERNOR - AUTHORIZATION REQUIRED")
         print("="*80)
         print(f"Experiment: {experiment_description}")
         print(f"Safety Level: {safety_level.value}")
@@ -169,7 +169,7 @@ class SafetyGovernor:
         auto_env = os.environ.get("AIOS_SAFETY_AUTO_APPROVE", "").lower()
         if auto_env in {"1", "true", "yes", "y"}:
             self.safety_logger.critical(
-                "✅ AUTO-AUTHORIZED via env flag by %s" % authorized_by
+                " AUTO-AUTHORIZED via env flag by %s" % authorized_by
             )
             return True
 
@@ -180,12 +180,12 @@ class SafetyGovernor:
         
         if response in ['yes', 'y']:
             self.safety_logger.critical(
-                "✅ Experiment AUTHORIZED by %s" % authorized_by
+                " Experiment AUTHORIZED by %s" % authorized_by
             )
             return True
         else:
             self.safety_logger.critical(
-                "❌ Experiment DENIED by %s" % authorized_by
+                " Experiment DENIED by %s" % authorized_by
             )
             return False
     
@@ -201,7 +201,7 @@ class SafetyGovernor:
         # Check if already in session
         if self.current_session:
             self.safety_logger.error(
-                "❌ Cannot start session - another session active"
+                " Cannot start session - another session active"
             )
             return False
         
@@ -243,7 +243,7 @@ class SafetyGovernor:
         )
         self.resource_monitor_thread.start()
         
-        self.safety_logger.info("📊 Resource monitoring started")
+        self.safety_logger.info(" Resource monitoring started")
     
     def _monitor_resources(self):
         """Background resource monitoring loop"""
@@ -381,22 +381,22 @@ class SafetyGovernor:
                                 limits.max_file_handles,
                             )
                         )
-                    self.safety_logger.info(f"📊 Resources: {summary}")
+                    self.safety_logger.info(f" Resources: {summary}")
                 
                 time.sleep(1)
                 
             except Exception as e:
-                self.safety_logger.error(f"❌ Monitoring error: {e}")
+                self.safety_logger.error(f" Monitoring error: {e}")
                 time.sleep(5)
     
     def human_check_in(self, operator: str) -> bool:
         """Record human check-in for ongoing session"""
         if not self.current_session:
-            self.safety_logger.error("❌ No active session for check-in")
+            self.safety_logger.error(" No active session for check-in")
             return False
         
         self.current_session.last_check_in = datetime.now()
-        self.safety_logger.info(f"✅ Human check-in recorded: {operator}")
+        self.safety_logger.info(f" Human check-in recorded: {operator}")
         return True
     
     def emergency_shutdown(self, reason: EmergencyReason, details: str = ""):
@@ -404,7 +404,7 @@ class SafetyGovernor:
         self.is_emergency_stopped = True
         self.monitoring_active = False
         
-        self.safety_logger.critical(f"🚨 EMERGENCY SHUTDOWN: {reason.value}")
+        self.safety_logger.critical(f" EMERGENCY SHUTDOWN: {reason.value}")
         self.safety_logger.critical(f"   Details: {details}")
         
         # Call emergency callback if provided
@@ -412,7 +412,7 @@ class SafetyGovernor:
             try:
                 self.emergency_shutdown_callback(reason, details)
             except Exception as e:
-                self.safety_logger.error(f"❌ Emergency callback failed: {e}")
+                self.safety_logger.error(f" Emergency callback failed: {e}")
         
         # Terminate current session
         if self.current_session:
@@ -422,7 +422,7 @@ class SafetyGovernor:
             self.current_session = None
         
         print("\n" + "="*80)
-        print("🚨 AIOS EMERGENCY SHUTDOWN ACTIVATED")
+        print(" AIOS EMERGENCY SHUTDOWN ACTIVATED")
         print("="*80)
         print(f"Reason: {reason.value}")
         print(f"Details: {details}")
@@ -434,13 +434,13 @@ class SafetyGovernor:
         """Check if an operation is authorized under current safety session"""
         if self.is_emergency_stopped:
             self.safety_logger.error(
-                "❌ Blocked - emergency stop: %s" % operation_name
+                " Blocked - emergency stop: %s" % operation_name
             )
             return False
         
         if not self.current_session:
             self.safety_logger.error(
-                "❌ Operation blocked - no active session: %s" % operation_name
+                " Operation blocked - no active session: %s" % operation_name
             )
             return False
         
@@ -451,13 +451,13 @@ class SafetyGovernor:
             )
             return False
         
-        self.safety_logger.debug(f"✅ Operation authorized: {operation_name}")
+        self.safety_logger.debug(f" Operation authorized: {operation_name}")
         return True
     
     def end_session(self, operator: str = "unknown"):
         """Safely end the current session"""
         if not self.current_session:
-            self.safety_logger.warning("⚠️ No active session to end")
+            self.safety_logger.warning(" No active session to end")
             return
         
         session_id = self.current_session.session_id
@@ -465,9 +465,9 @@ class SafetyGovernor:
         self.current_session = None
         
         self.safety_logger.critical(
-            "🔴 Safety session ended by %s: %s" % (operator, session_id)
+            " Safety session ended by %s: %s" % (operator, session_id)
         )
-        print(f"\n✅ Safety session ended successfully: {session_id}")
+        print(f"\n Safety session ended successfully: {session_id}")
     
     def get_status(self) -> Dict[str, Any]:
         """Get current safety status"""
@@ -558,11 +558,11 @@ class SafetyGovernor:
         ok = len(failures) == 0
         if not ok:
             self.safety_logger.error(
-                f"❌ Pre-experiment safety verification failed: {failures}"
+                f" Pre-experiment safety verification failed: {failures}"
             )
         else:
             self.safety_logger.info(
-                "🛡️ Pre-experiment safety verification passed"
+                " Pre-experiment safety verification passed"
             )
 
         return {"ok": ok, "failures": failures, "checklist": checklist}
@@ -594,7 +594,7 @@ def emergency_shutdown(reason: str = "Manual shutdown"):
 
 if __name__ == "__main__":
     # Test safety governor
-    print("🛡️ Testing AIOS Safety Governor")
+    print(" Testing AIOS Safety Governor")
     
     governor = SafetyGovernor()
     
@@ -605,7 +605,7 @@ if __name__ == "__main__":
         5,  # 5 minutes
         "test_operator"
     ):
-        print("✅ Session started successfully")
+        print(" Session started successfully")
         
         # Simulate some work
         time.sleep(2)
@@ -616,4 +616,4 @@ if __name__ == "__main__":
         # End session
         governor.end_session("test_operator")
     else:
-        print("❌ Session authorization failed")
+        print(" Session authorization failed")

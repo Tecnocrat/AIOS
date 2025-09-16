@@ -76,36 +76,36 @@ class BiologicalArchitectureMonitor:
     async def initialize(self) -> bool:
         """Initialize the biological architecture monitor."""
         try:
-            self.logger.info("🔬 Initializing Biological Architecture Monitor...")
+            self.logger.info(" Initializing Biological Architecture Monitor...")
             
             # Initialize dendritic integration
             try:
                 self.dendritic_integration = await get_runtime_intelligence_dendritic_integration()
                 self.component_statuses['dendritic_supervisor'] = 'active'
-                self.logger.info("✅ Dendritic supervisor integration active")
+                self.logger.info(" Dendritic supervisor integration active")
             except Exception as e:
-                self.logger.warning(f"⚠️ Dendritic supervisor unavailable: {e}")
+                self.logger.warning(f" Dendritic supervisor unavailable: {e}")
                 self.component_statuses['dendritic_supervisor'] = 'unavailable'
             
             # Initialize visual bridge
             try:
                 self.visual_bridge = await get_enhanced_visual_intelligence_bridge()
                 self.component_statuses['runtime_intelligence'] = 'active'
-                self.logger.info("✅ Enhanced visual intelligence bridge active")
+                self.logger.info(" Enhanced visual intelligence bridge active")
             except Exception as e:
-                self.logger.warning(f"⚠️ Visual bridge unavailable: {e}")
+                self.logger.warning(f" Visual bridge unavailable: {e}")
                 self.component_statuses['runtime_intelligence'] = 'limited'
             
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to initialize monitor: {e}")
+            self.logger.error(f" Failed to initialize monitor: {e}")
             return False
     
     async def get_comprehensive_status(self) -> Dict[str, Any]:
         """Get comprehensive status of the biological architecture."""
         try:
-            self.logger.info("📊 Generating comprehensive biological architecture status...")
+            self.logger.info(" Generating comprehensive biological architecture status...")
             
             status = {
                 'timestamp': datetime.now().isoformat(),
@@ -494,12 +494,12 @@ AIOS Biological Architecture Status Report
 ==========================================
 Generated: {status['timestamp']}
 
-🧬 BIOLOGICAL ARCHITECTURE OVERVIEW
+ BIOLOGICAL ARCHITECTURE OVERVIEW
 Status: {status['biological_architecture']['status'].upper()}
 Compliance: {status['biological_architecture']['score']:.2f} ({status['biological_architecture']['status']})
 Overall Health: {status['overall_health']['score']:.2f} ({status['overall_health']['status'].upper()})
 
-🏗️ SUPERCELL STATUS
+ SUPERCELL STATUS
 """
             
             # Add supercell details
@@ -516,7 +516,7 @@ Overall Health: {status['overall_health']['score']:.2f} ({status['overall_health
             # Add dendritic connections
             dendritic_data = status.get('dendritic_connections', {})
             report += f"""
-🌿 DENDRITIC CONNECTIONS
+ DENDRITIC CONNECTIONS
 Status: {dendritic_data.get('status', 'unknown').upper()}
 Health: {dendritic_data.get('health_score', 0.0):.2f}
 
@@ -525,16 +525,16 @@ Connection Details:
             
             connections = dendritic_data.get('connections', {})
             for conn_name, conn_status in connections.items():
-                status_icon = "✅" if conn_status else "❌"
+                status_icon = "" if conn_status else ""
                 report += f"  {status_icon} {conn_name.replace('_', ' ').title()}\n"
             
             report += f"""
-📊 ARCHITECTURE SUMMARY
+ ARCHITECTURE SUMMARY
 Supercells Active: {status['overall_health'].get('supercell_count', 0)}
-Dendritic Integration: {'✅' if status['overall_health'].get('dendritic_integration', False) else '❌'}
+Dendritic Integration: {'' if status['overall_health'].get('dendritic_integration', False) else ''}
 Biological Compliance: {status['biological_architecture']['score']:.2f}
 
-🎯 RECOMMENDATIONS
+ RECOMMENDATIONS
 """
             
             # Add recommendations based on status
@@ -570,14 +570,14 @@ async def get_biological_architecture_monitor() -> BiologicalArchitectureMonitor
 
 async def main():
     """Test the biological architecture monitor."""
-    print("🔬 AIOS Biological Architecture Monitor")
+    print(" AIOS Biological Architecture Monitor")
     print("=" * 50)
     
     # Initialize monitor
     monitor = await get_biological_architecture_monitor()
     
     # Generate status report
-    print("📊 Generating comprehensive status report...\n")
+    print(" Generating comprehensive status report...\n")
     report = await monitor.generate_status_report()
     print(report)
 

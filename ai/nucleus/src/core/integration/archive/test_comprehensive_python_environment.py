@@ -293,7 +293,7 @@ def run_comprehensive_test():
 
     if passed == total:
         print(
-        "\n✅ All tests passed! AIOS Python environment management is ready.")
+        "\n All tests passed! AIOS Python environment management is ready.")
         print("\nNext steps:")
         print(
         "1. The system is now resilient to OS reinstalls and PATH issues")
@@ -302,7 +302,7 @@ def run_comprehensive_test():
         print("4. Integration with AIOS fractal/holographic context is active")
     else:
         print(
-        f"\n❌ {total - passed} tests failed. Please check the issues above.")
+        f"\n {total - passed} tests failed. Please check the issues above.")
 
     return passed == total
 

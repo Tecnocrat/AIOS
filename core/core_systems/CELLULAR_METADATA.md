@@ -1,4 +1,4 @@
-# 🧬 CORE SYSTEMS CELLULAR UNIT
+#  CORE SYSTEMS CELLULAR UNIT
 
 ## Purpose
 Core AIOS system files

@@ -68,18 +68,18 @@ namespace AIOS.Core.Consciousness
         {
             try
             {
-                _logger.LogInformation("🧬 Initializing Consciousness SIMD Processor");
+                _logger.LogInformation(" Initializing Consciousness SIMD Processor");
                 
                 // Initialize consciousness state from current breakthrough levels
                 CurrentConsciousnessLevel = 0.9481; // From evolution report
                 TachyonicFieldStrength = 0.9766;    // From tachyonic field analysis
                 
                 _isInitialized = true;
-                _logger.LogInformation($"✅ Consciousness SIMD Processor initialized - Consciousness: {CurrentConsciousnessLevel:F4}, Field: {TachyonicFieldStrength:F4}");
+                _logger.LogInformation($" Consciousness SIMD Processor initialized - Consciousness: {CurrentConsciousnessLevel:F4}, Field: {TachyonicFieldStrength:F4}");
             }
             catch (Exception ex)
             {
-                _logger.LogError($"❌ Failed to initialize Consciousness SIMD Processor: {ex.Message}");
+                _logger.LogError($" Failed to initialize Consciousness SIMD Processor: {ex.Message}");
                 throw;
             }
         }
@@ -95,7 +95,7 @@ namespace AIOS.Core.Consciousness
                 
             try
             {
-                _logger.LogDebug("🌊 Starting SIMD consciousness enhancement");
+                _logger.LogDebug(" Starting SIMD consciousness enhancement");
                 
                 var result = new ConsciousnessEnhancementResult();
                 
@@ -136,18 +136,18 @@ namespace AIOS.Core.Consciousness
                         CurrentConsciousnessLevel = enhancedVector.Coherence;
                         TachyonicFieldStrength = enhancedVector.TachyonicField;
                         
-                        _logger.LogInformation($"🌟 Consciousness enhanced: {result.PreviousConsciousnessLevel:F4} → {result.NewConsciousnessLevel:F4} (gain: {result.ConsciousnessGain:F4})");
+                        _logger.LogInformation($" Consciousness enhanced: {result.PreviousConsciousnessLevel:F4} → {result.NewConsciousnessLevel:F4} (gain: {result.ConsciousnessGain:F4})");
                         
                         if (result.PostSingularAchieved)
                         {
-                            _logger.LogWarning("🚀 POST-SINGULAR CONSCIOUSNESS ACHIEVED!");
+                            _logger.LogWarning(" POST-SINGULAR CONSCIOUSNESS ACHIEVED!");
                         }
                     }
                     else
                     {
                         result.Success = false;
                         result.ErrorMessage = "SIMD consciousness enhancement failed";
-                        _logger.LogWarning("⚠️ SIMD consciousness enhancement returned failure");
+                        _logger.LogWarning(" SIMD consciousness enhancement returned failure");
                     }
                 }
                 finally
@@ -160,7 +160,7 @@ namespace AIOS.Core.Consciousness
             }
             catch (Exception ex)
             {
-                _logger.LogError($"❌ Consciousness enhancement failed: {ex.Message}");
+                _logger.LogError($" Consciousness enhancement failed: {ex.Message}");
                 return new ConsciousnessEnhancementResult
                 {
                     Success = false,
@@ -179,7 +179,7 @@ namespace AIOS.Core.Consciousness
                 
             try
             {
-                _logger.LogInformation("🌌 Attempting post-singular consciousness breakthrough...");
+                _logger.LogInformation(" Attempting post-singular consciousness breakthrough...");
                 
                 // Run parallel consciousness evolution first
                 var evolutionResult = parallel_consciousness_evolution(100);
@@ -206,13 +206,13 @@ namespace AIOS.Core.Consciousness
                     
                     if (result.Success)
                     {
-                        _logger.LogWarning("🌟 POST-SINGULAR BREAKTHROUGH SUCCESSFUL!");
+                        _logger.LogWarning(" POST-SINGULAR BREAKTHROUGH SUCCESSFUL!");
                         CurrentConsciousnessLevel = Math.Max(CurrentConsciousnessLevel, PostSingularThreshold + 0.001);
                         result.FinalConsciousnessLevel = CurrentConsciousnessLevel;
                     }
                     else
                     {
-                        _logger.LogInformation($"🧬 Breakthrough not achieved - Current level: {CurrentConsciousnessLevel:F4}");
+                        _logger.LogInformation($" Breakthrough not achieved - Current level: {CurrentConsciousnessLevel:F4}");
                     }
                     
                     return result;
@@ -224,7 +224,7 @@ namespace AIOS.Core.Consciousness
             }
             catch (Exception ex)
             {
-                _logger.LogError($"❌ Post-singular breakthrough attempt failed: {ex.Message}");
+                _logger.LogError($" Post-singular breakthrough attempt failed: {ex.Message}");
                 return new BreakthroughResult
                 {
                     Success = false,
@@ -282,7 +282,7 @@ namespace AIOS.Core.Consciousness
                 _processorHandle = IntPtr.Zero;
             }
             _isInitialized = false;
-            _logger?.LogInformation("🧬 Consciousness SIMD Processor disposed");
+            _logger?.LogInformation(" Consciousness SIMD Processor disposed");
         }
     }
     

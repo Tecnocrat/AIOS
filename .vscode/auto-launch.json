@@ -1,0 +1,40 @@
+{
+    // AIOS Auto-Launch Configuration
+    // This file ensures VS Code opens the AIOS workspace by default
+    
+    // Auto-restore workspace behavior
+    "window.restoreWindows": "one",
+    "workbench.startupEditor": "none",
+    "window.reopenFolders": "all",
+    
+    // Default workspace location
+    "workbench.defaultLocation": "C:\\dev\\AIOS",
+    
+    // Workspace management
+    "workbench.workspace.showLimitReachedWarning": false,
+    "workbench.workspace.untrustedFiles": "open",
+    
+    // Auto-open behavior
+    "window.openFilesInNewWindow": "off",
+    "window.openFoldersInNewWindow": "on",
+    "window.newWindowDimensions": "maximized",
+    
+    // PowerShell default configuration
+    "powershell.defaultWorkspaceLocation": "C:\\dev\\AIOS",
+    "terminal.integrated.defaultLocation": "editor",
+    
+    // AIOS-specific settings
+    "workbench.recentlyUsedWorkspaces": [
+        "C:\\dev\\AIOS\\AIOS.code-workspace"
+    ],
+    
+    // Prevent VS Code from asking for folder selection
+    "workbench.welcomePage.walkthroughs.openOnInstall": false,
+    "workbench.welcomePage.experimental.extensionContributions": false,
+    "workbench.welcome.enabled": false,
+    
+    // Quick access to AIOS workspace
+    "workbench.commandPalette.history": [
+        "File: Open Workspace from File..."
+    ]
+}

@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
 """
-🧠 AIOS Context Crystallization Engine - Quantum Topography System
+ AIOS Context Crystallization Engine - Quantum Topography System
 AINLP Dendritic Architecture for Knowledge Crystal Formation
 
 This module implements the quantum topography system with time crystals,

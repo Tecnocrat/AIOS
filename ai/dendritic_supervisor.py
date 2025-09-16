@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 AIOS Dendritic Supervisor - AI Intelligence Supercell to Core Engine Bridge
 ============================================================================
@@ -176,7 +177,7 @@ class DendriticSupervisor:
         to both AI Intelligence supercell organs and Core Engine tools.
         """
         try:
-            self.logger.info("🧠 Initializing Dendritic Supervisor...")
+            self.logger.info(" Initializing Dendritic Supervisor...")
             
             # Initialize AI Intelligence supercell organ connections
             await self._initialize_ai_intelligence_organs()
@@ -191,17 +192,17 @@ class DendriticSupervisor:
             asyncio.create_task(self._request_processing_loop())
             
             self.is_active = True
-            self.logger.info("✅ Dendritic Supervisor initialized successfully")
+            self.logger.info(" Dendritic Supervisor initialized successfully")
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to initialize dendritic supervisor: {e}")
+            self.logger.error(f" Failed to initialize dendritic supervisor: {e}")
             self.logger.error(traceback.format_exc())
             return False
     
     async def _initialize_ai_intelligence_organs(self):
         """Initialize connections to AI Intelligence supercell organs."""
-        self.logger.info("🔗 Connecting to AI Intelligence supercell organs...")
+        self.logger.info(" Connecting to AI Intelligence supercell organs...")
         
         try:
             # Initialize cytoplasm connection
@@ -219,15 +220,15 @@ class DendriticSupervisor:
                     processing_load=0.0
                 )
                 
-            self.logger.info("✅ AI Intelligence supercell organs connected")
+            self.logger.info(" AI Intelligence supercell organs connected")
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to connect to AI Intelligence organs: {e}")
+            self.logger.error(f" Failed to connect to AI Intelligence organs: {e}")
             raise
     
     async def _initialize_core_engine_tools(self):
         """Initialize connections to Core Engine supercell toolset."""
-        self.logger.info("🔧 Connecting to Core Engine supercell toolset...")
+        self.logger.info(" Connecting to Core Engine supercell toolset...")
         
         try:
             # Initialize Core Engine tools/organs
@@ -238,15 +239,15 @@ class DendriticSupervisor:
             # Initialize bridges for cross-supercell communication
             self.core_engine_tools['consciousness_bridge'] = ConsciousnessNucleusBridge()
             
-            self.logger.info("✅ Core Engine supercell toolset connected")
+            self.logger.info(" Core Engine supercell toolset connected")
             
         except Exception as e:
-            self.logger.warning(f"⚠️ Some Core Engine tools unavailable: {e}")
+            self.logger.warning(f" Some Core Engine tools unavailable: {e}")
             # Continue with available tools
     
     async def _start_organ_monitoring(self):
         """Start monitoring AI Intelligence supercell organs."""
-        self.logger.info("👁️ Starting AI Intelligence organ monitoring...")
+        self.logger.info(" Starting AI Intelligence organ monitoring...")
         
         async def monitor_organs():
             while self.is_active:
@@ -277,7 +278,7 @@ class DendriticSupervisor:
     
     async def _request_processing_loop(self):
         """Main request processing loop for the dendritic supervisor."""
-        self.logger.info("🔄 Starting dendritic request processing loop...")
+        self.logger.info(" Starting dendritic request processing loop...")
         
         while self.is_active:
             try:
@@ -311,7 +312,7 @@ class DendriticSupervisor:
         start_time = datetime.now()
         
         try:
-            self.logger.info(f"🔀 Processing request {request.request_id} from {request.source_organ}")
+            self.logger.info(f" Processing request {request.request_id} from {request.source_organ}")
             
             # Update organ activity
             await self._update_organ_activity(request.source_organ)
@@ -334,7 +335,7 @@ class DendriticSupervisor:
             self.processing_statistics['successful_requests'] += 1
             self._update_processing_statistics(processing_time)
             
-            self.logger.info(f"✅ Request {request.request_id} processed successfully in {processing_time:.2f}s")
+            self.logger.info(f" Request {request.request_id} processed successfully in {processing_time:.2f}s")
             
             return result
             
@@ -375,7 +376,7 @@ class DendriticSupervisor:
         Returns:
             Dict containing processing results from Core Engine
         """
-        self.logger.info(f"🎯 Routing {request.request_type.value} to {request.target_engine}")
+        self.logger.info(f" Routing {request.request_type.value} to {request.target_engine}")
         
         if request.request_type == RequestType.CONSCIOUSNESS_ANALYSIS:
             return await self._process_consciousness_analysis(request)
@@ -568,7 +569,7 @@ class DendriticSupervisor:
             raise RuntimeError("Dendritic supervisor is not active")
         
         await self.request_queue.put(request)
-        self.logger.info(f"📥 Request {request.request_id} submitted for processing")
+        self.logger.info(f" Request {request.request_id} submitted for processing")
         
         return request.request_id
     
@@ -618,7 +619,7 @@ class DendriticSupervisor:
     
     async def shutdown(self):
         """Shutdown the dendritic supervisor gracefully."""
-        self.logger.info("🔄 Shutting down dendritic supervisor...")
+        self.logger.info(" Shutting down dendritic supervisor...")
         
         self.is_active = False
         
@@ -626,7 +627,7 @@ class DendriticSupervisor:
         if self.processing_tasks:
             await asyncio.gather(*self.processing_tasks.values(), return_exceptions=True)
         
-        self.logger.info("✅ Dendritic supervisor shutdown complete")
+        self.logger.info(" Dendritic supervisor shutdown complete")
 
 
 # Singleton instance for global access
@@ -645,7 +646,7 @@ async def get_dendritic_supervisor() -> DendriticSupervisor:
 
 async def main():
     """Main function for testing the dendritic supervisor."""
-    print("🧠 AIOS Dendritic Supervisor - AI Intelligence ↔ Core Engine Bridge")
+    print(" AIOS Dendritic Supervisor - AI Intelligence ↔ Core Engine Bridge")
     print("=" * 70)
     
     # Initialize supervisor
@@ -678,23 +679,23 @@ async def main():
     
     # Submit and process test requests
     for request in test_requests:
-        print(f"\n📤 Submitting request: {request.request_id}")
+        print(f"\n Submitting request: {request.request_id}")
         request_id = await supervisor.submit_request(request)
         
         print(f"⏳ Waiting for result...")
         result = await supervisor.get_processing_result(request_id)
         
         if result:
-            print(f"✅ Result: {result.success}")
-            print(f"⏱️  Processing time: {result.processing_time:.2f}s")
-            print(f"🔧 Core engine used: {result.core_engine_used}")
+            print(f" Result: {result.success}")
+            print(f"⏱  Processing time: {result.processing_time:.2f}s")
+            print(f" Core engine used: {result.core_engine_used}")
             if result.error_message:
-                print(f"❌ Error: {result.error_message}")
+                print(f" Error: {result.error_message}")
         else:
-            print(f"❌ No result received")
+            print(f" No result received")
     
     # Display supervisor status
-    print(f"\n📊 Supervisor Status:")
+    print(f"\n Supervisor Status:")
     status = await supervisor.get_supervisor_status()
     print(json.dumps(status, indent=2, default=str))
     

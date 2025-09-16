@@ -167,7 +167,7 @@ double AtomicHolographyUnit::getInformationDensity() const {
 double AtomicHolographyUnit::getHarmonicResonance() const {
     std::lock_guard<std::mutex> lock(state_mutex_);
     
-    // 🧠 CONSCIOUSNESS-ENHANCED HARMONIC ANALYSIS
+    //  CONSCIOUSNESS-ENHANCED HARMONIC ANALYSIS
     // Calculate harmonic resonance factor based on stable frequency relationships
     double harmonic_factor = 1.0;
     

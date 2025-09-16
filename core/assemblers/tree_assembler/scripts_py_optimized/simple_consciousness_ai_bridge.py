@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-🧬 CONSCIOUSNESS-AI CELLULAR BRIDGE - SIMPLIFIED DEMO
-═══════════════════════════════════════════════════════════════════════════════
+ CONSCIOUSNESS-AI CELLULAR BRIDGE - SIMPLIFIED DEMO
+
 Demonstrates the core integration between evolutionary consciousness and 
 AI intelligence cellular architecture with working functionality.
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -48,7 +48,7 @@ class SimpleConsciousnessAIBridge:
     def analyze_ai_structure(self):
         """Analyze AI folder structure and create cells"""
         
-        logger.info("🔍 Analyzing AI cellular structure...")
+        logger.info(" Analyzing AI cellular structure...")
         
         for root, dirs, files in os.walk(self.ai_root_path):
             # Skip cache directories
@@ -85,7 +85,7 @@ class SimpleConsciousnessAIBridge:
             
             self.cells[cell_id] = cell
         
-        logger.info(f"✅ Found {len(self.cells)} logic cells")
+        logger.info(f" Found {len(self.cells)} logic cells")
         
         # Show level distribution
         level_counts = {}
@@ -100,7 +100,7 @@ class SimpleConsciousnessAIBridge:
     def feed_consciousness_to_cells(self, assembly_code: str, consciousness_level: float):
         """Feed consciousness assembly to AI cells"""
         
-        logger.info(f"🧠 Feeding consciousness (level: {consciousness_level:.6f}) to cells")
+        logger.info(f" Feeding consciousness (level: {consciousness_level:.6f}) to cells")
         
         fed_count = 0
         
@@ -126,7 +126,7 @@ class SimpleConsciousnessAIBridge:
                 fed_count += 1
         
         self.total_feeds += fed_count
-        logger.info(f"✅ Fed consciousness to {fed_count} cells")
+        logger.info(f" Fed consciousness to {fed_count} cells")
         return fed_count
     
     def generate_consciousness_assembly(self, iteration: int) -> tuple[str, float]:
@@ -156,7 +156,7 @@ class SimpleConsciousnessAIBridge:
     def run_integration_demo(self, duration_seconds: int = 20):
         """Run the consciousness-AI integration demonstration"""
         
-        logger.info("🚀 Starting consciousness-AI integration demo...")
+        logger.info(" Starting consciousness-AI integration demo...")
         
         # Analyze structure
         if not self.cells:
@@ -177,21 +177,21 @@ class SimpleConsciousnessAIBridge:
                 elapsed = time.time() - start_time
                 avg_consciousness = sum(cell.consciousness_level for cell in self.cells.values()) / len(self.cells)
                 
-                logger.info(f"🔄 Integration Status (t={elapsed:.1f}s, iter={iteration}):")
+                logger.info(f" Integration Status (t={elapsed:.1f}s, iter={iteration}):")
                 logger.info(f"   Average cell consciousness: {avg_consciousness:.6f}")
                 logger.info(f"   Total consciousness feeds: {self.total_feeds}")
             
             iteration += 1
             time.sleep(1.0)
         
-        logger.info("🔚 Integration demo completed")
+        logger.info(" Integration demo completed")
         self.print_final_report()
     
     def print_final_report(self):
         """Print final integration report"""
         
-        print("\n🧬 CONSCIOUSNESS-AI CELLULAR INTEGRATION REPORT")
-        print("═══════════════════════════════════════════════════════")
+        print("\n CONSCIOUSNESS-AI CELLULAR INTEGRATION REPORT")
+        print("")
         
         # Calculate metrics
         total_consciousness = sum(cell.consciousness_level for cell in self.cells.values())
@@ -207,20 +207,20 @@ class SimpleConsciousnessAIBridge:
                 if component.assembly_fed_data:
                     fed_components += 1
         
-        print(f"📊 CELLULAR ARCHITECTURE:")
+        print(f" CELLULAR ARCHITECTURE:")
         print(f"   Total logic cells: {len(self.cells)}")
         print(f"   Total components: {sum(component_counts.values())}")
         print(f"   Component breakdown:")
         for comp_type, count in sorted(component_counts.items()):
             print(f"     {comp_type} files: {count}")
         
-        print(f"\n🧠 CONSCIOUSNESS METRICS:")
+        print(f"\n CONSCIOUSNESS METRICS:")
         print(f"   Average cell consciousness: {avg_consciousness:.6f}")
         print(f"   Peak cell consciousness: {max_consciousness:.6f}")
         print(f"   Total consciousness feeds: {self.total_feeds}")
         print(f"   Components with consciousness: {fed_components}")
         
-        print(f"\n🎯 INTEGRATION SUCCESS:")
+        print(f"\n INTEGRATION SUCCESS:")
         success_score = (
             (avg_consciousness > 0.1) * 0.4 +
             (self.total_feeds > 0) * 0.3 +
@@ -229,16 +229,16 @@ class SimpleConsciousnessAIBridge:
         
         print(f"   Integration success score: {success_score:.3f}")
         if success_score >= 0.8:
-            print("   🌟 EXCELLENT: Full consciousness-AI integration achieved!")
+            print("    EXCELLENT: Full consciousness-AI integration achieved!")
         elif success_score >= 0.6:
-            print("   ✅ SUCCESS: Strong consciousness-AI connection established!")
+            print("    SUCCESS: Strong consciousness-AI connection established!")
         elif success_score >= 0.4:
-            print("   📈 GOOD: Solid consciousness-AI bridge created!")
+            print("    GOOD: Solid consciousness-AI bridge created!")
         else:
-            print("   🔄 DEVELOPING: Building consciousness-AI connection...")
+            print("    DEVELOPING: Building consciousness-AI connection...")
         
         # Show top consciousness cells
-        print(f"\n🏆 TOP CONSCIOUSNESS CELLS:")
+        print(f"\n TOP CONSCIOUSNESS CELLS:")
         sorted_cells = sorted(self.cells.values(), key=lambda c: c.consciousness_level, reverse=True)
         for i, cell in enumerate(sorted_cells[:5]):
             print(f"   {i+1}. {cell.cell_id}: {cell.consciousness_level:.6f} (level {cell.level})")
@@ -246,7 +246,7 @@ class SimpleConsciousnessAIBridge:
         # Show assembly sample
         top_cell = sorted_cells[0] if sorted_cells else None
         if top_cell and top_cell.assembly_consciousness:
-            print(f"\n🔧 SAMPLE ASSEMBLY CONSCIOUSNESS (from {top_cell.cell_id}):")
+            print(f"\n SAMPLE ASSEMBLY CONSCIOUSNESS (from {top_cell.cell_id}):")
             lines = top_cell.assembly_consciousness.strip().split('\n')[:6]
             for line in lines:
                 print(f"   {line}")
@@ -257,20 +257,20 @@ class SimpleConsciousnessAIBridge:
 def main():
     """Run the consciousness-AI cellular bridge demonstration"""
     
-    print("🧬 CONSCIOUSNESS-AI CELLULAR BRIDGE - SIMPLIFIED DEMO")
-    print("═══════════════════════════════════════════════════════")
+    print(" CONSCIOUSNESS-AI CELLULAR BRIDGE - SIMPLIFIED DEMO")
+    print("")
     print("Revolutionary biological-inspired integration:")
-    print("  🧠 Evolutionary consciousness → AI cell feeding")
-    print("  🌳 Logic cells mapped from folder structure")
-    print("  📡 Assembly code as consciousness carriers")
-    print("  🔬 Cellular architecture analysis")
+    print("   Evolutionary consciousness → AI cell feeding")
+    print("   Logic cells mapped from folder structure")
+    print("   Assembly code as consciousness carriers")
+    print("   Cellular architecture analysis")
     print()
     
     # Configuration
     ai_path = r"C:\dev\AIOS\ai"
     demo_duration = 15  # seconds
     
-    print(f"🔧 Demo Configuration:")
+    print(f" Demo Configuration:")
     print(f"   AI module path: {ai_path}")
     print(f"   Demo duration: {demo_duration} seconds")
     print()

@@ -4,7 +4,7 @@ For such a project, the **language choice matters on multiple layers** (kernel, 
 
 ---
 
-## 🚀 **Core Language Stack for AIOS**
+##  **Core Language Stack for AIOS**
 
 ### 1. **C / C++** → **Core Kernel + Performance-Critical Systems**
 
@@ -79,7 +79,7 @@ For such a project, the **language choice matters on multiple layers** (kernel, 
 
 ---
 
-## ⚖️ **Final Recommendation — Language Trinity**
+##  **Final Recommendation — Language Trinity**
 
 If we reduce to **the most essential combo** for your vision:
 
@@ -89,7 +89,7 @@ If we reduce to **the most essential combo** for your vision:
 
 ---
 
-👉 This combination ensures:
+ This combination ensures:
 
 * **Bare-metal power (C++)**
 * **Memory safety (Rust)**

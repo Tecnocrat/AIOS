@@ -14,7 +14,7 @@ except Exception:
 #!/usr/bin/env python3
 """
 [ROCKET] AIOS Core Engine Root Files Analyzer & Optimizer (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Apply evolutionary_assembler_iter2 capabilities to analyze, upgrade, patch and 
 optimize Core Engine root files using AIOS paradigmatic architectural guidelines
 and AINLP directives.
@@ -34,7 +34,7 @@ ITER2 CAPABILITIES APPLIED:
 - Harmonization patterns for consistent architecture
 
 AIOS - Core Engine root files evolution with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import os
 import sys
@@ -130,7 +130,7 @@ class AIOSCoreEngineRootAnalyzer:
     def analyze_root_files_comprehensive(self) -> Dict[str, Any]:
         """Perform comprehensive analysis of Core Engine root files."""
         
-        logger.info("🔍 ANALYZING CORE ENGINE ROOT FILES WITH ITER2")
+        logger.info(" ANALYZING CORE ENGINE ROOT FILES WITH ITER2")
         
         # Get root files
         root_files = self._discover_root_files()
@@ -841,7 +841,7 @@ class AIOSCoreEngineRootAnalyzer:
         """Display comprehensive analysis results."""
         
         print("[ROCKET] AIOS CORE ENGINE ROOT FILES ANALYSIS (ITER2)")
-        print("═" * 70)
+        print("" * 70)
         print()
         
         # Summary
@@ -875,7 +875,7 @@ class AIOSCoreEngineRootAnalyzer:
         
         # Optimization opportunities
         opportunities = results.get("optimization_opportunities", [])
-        print(f"⚡ OPTIMIZATION OPPORTUNITIES ({len(opportunities)}):")
+        print(f" OPTIMIZATION OPPORTUNITIES ({len(opportunities)}):")
         for opp in opportunities[:5]:  # Show top 5
             print(f"   • {opp.get('description', 'Unknown')} ({opp.get('priority', 'unknown')} priority)")
         print()
@@ -891,7 +891,7 @@ class AIOSCoreEngineRootAnalyzer:
         # Tree configuration
         tree_config = results.get("tree_configuration", {})
         recommended = tree_config.get("recommended_structure", {})
-        print(f"🌳 RECOMMENDED TREE STRUCTURE:")
+        print(f" RECOMMENDED TREE STRUCTURE:")
         for folder, config in recommended.items():
             print(f"   {folder}")
             print(f"     Purpose: {config.get('purpose', 'Unknown')}")
@@ -917,7 +917,7 @@ class AIOSCoreEngineRootAnalyzer:
             with open(report_file, 'w', encoding='utf-8') as f:
                 json.dump(results, f, indent=2, default=str)
             
-            logger.info(f"📄 Analysis report saved: {report_file}")
+            logger.info(f" Analysis report saved: {report_file}")
             return str(report_file)
         except Exception as e:
             logger.error(f"Failed to save analysis report: {e}")
@@ -928,9 +928,9 @@ def main():
     """Execute Core Engine root files analysis with iter2 assembler."""
     
     print("[ROCKET] AIOS CORE ENGINE ROOT FILES ANALYZER & OPTIMIZER (ITER2)")
-    print("═" * 70)
+    print("" * 70)
     print("[TARGET] Applying evolutionary_assembler_iter2 to Core Engine root files")
-    print("📐 Using AIOS paradigmatic architectural guidelines")
+    print(" Using AIOS paradigmatic architectural guidelines")
     print("[BRAIN] Implementing AINLP directives for coherent development")
     print()
     
@@ -946,7 +946,7 @@ def main():
     # Save detailed report
     report_file = analyzer.save_analysis_report(results)
     if report_file:
-        print(f"📄 Detailed report saved: {report_file}")
+        print(f" Detailed report saved: {report_file}")
     
     return results
 

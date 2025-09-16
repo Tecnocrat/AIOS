@@ -141,7 +141,27 @@
 		// AIOS Theme and appearance
 		"workbench.colorTheme": "Default Dark Modern",
 		"workbench.iconTheme": "vs-seti",
-		"powershell.cwd": "🧠 AIOS Core",
+		
+		// PowerShell Configuration - Set default working directory to AIOS Core
+		"powershell.cwd": "${workspaceFolder}",
+		"powershell.startAutomatically": true,
+		"powershell.integratedConsole.startInBackground": false,
+		"powershell.integratedConsole.suppressStartupBanner": false,
+		
+		// Terminal Configuration - Ensure proper working directory
+		"terminal.integrated.cwd": "${workspaceFolder}",
+		"terminal.integrated.defaultProfile.windows": "PowerShell",
+		"terminal.integrated.profiles.windows": {
+			"PowerShell": {
+				"source": "PowerShell",
+				"icon": "terminal-powershell",
+				"args": ["-NoLogo", "-WorkingDirectory", "${workspaceFolder}"]
+			}
+		},
+		
+		// Auto-open workspace and default folder behavior
+		"window.openFilesInNewWindow": "off",
+		"window.openFoldersInNewWindow": "on",
 
 		// CMake Tools: preselect generator/platform to avoid prompts
 		"cmake.generator": "Visual Studio 17 2022",

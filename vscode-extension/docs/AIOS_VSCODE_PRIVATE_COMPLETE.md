@@ -1,19 +1,19 @@
 # AIOS VSCode Extension - Complete Private Use Guide
 
-## 🔒 **PRIVATE USE ONLY - CRITICAL SETUP**
+##  **PRIVATE USE ONLY - CRITICAL SETUP**
 
 This extension is **exclusively for private/local use** and solves the critical chat iteration reset problem in AI-assisted VSCode development.
 
 ---
 
-## 🚨 **Problem Solved**
+##  **Problem Solved**
 
 **Before**: VSCode restarts → AI chat context lost → Development continuity broken
 **After**: VSCode restarts → AI chat context preserved → Seamless development experience
 
 ---
 
-## 🎯 **Quick Start (1 Minute)**
+##  **Quick Start (1 Minute)**
 
 ### **Step 1: Install Extension**
 ```powershell
@@ -43,12 +43,12 @@ code --list-extensions | grep aios
 # 2. Type: @aios Hello, remember this conversation
 # 3. Have 5+ message conversation
 # 4. Restart VSCode
-# 5. ✅ Context should be preserved
+# 5.  Context should be preserved
 ```
 
 ---
 
-## 🔧 **Private Use Configuration**
+##  **Private Use Configuration**
 
 ### **Automated Configuration**
 ```powershell
@@ -86,7 +86,7 @@ Add to your VSCode `settings.json`:
 
 ---
 
-## 🚀 **Usage Examples**
+##  **Usage Examples**
 
 ### **Basic Chat with Context Preservation**
 ```
@@ -124,15 +124,15 @@ AIOS: [Remembers previous conversation and continues]
 
 ---
 
-## 🔐 **Privacy & Security**
+##  **Privacy & Security**
 
 ### **What's Private**
-- ✅ All data stays on local machine
-- ✅ No network calls to external services
-- ✅ Context stored locally only
-- ✅ No telemetry or analytics
-- ✅ No cloud synchronization
-- ✅ No external API calls
+-  All data stays on local machine
+-  No network calls to external services
+-  Context stored locally only
+-  No telemetry or analytics
+-  No cloud synchronization
+-  No external API calls
 
 ### **Data Storage Locations**
 ```
@@ -153,7 +153,7 @@ code --list-extensions | grep aios
 
 ---
 
-## 🛠️ **Advanced Features**
+##  **Advanced Features**
 
 ### **Context Management**
 ```
@@ -214,7 +214,7 @@ cd "c:\dev\AIOS\vscode-extension"
 
 ---
 
-## 🆘 **Troubleshooting**
+##  **Troubleshooting**
 
 ### **Extension Not Loading**
 ```powershell
@@ -255,7 +255,7 @@ F1 → "Preferences: Open Settings (JSON)"
 
 ---
 
-## 📋 **Maintenance**
+##  **Maintenance**
 
 ### **Updates**
 ```powershell
@@ -284,7 +284,7 @@ cd "c:\dev\AIOS\vscode-extension"
 
 ---
 
-## 🏁 **Success Checklist**
+##  **Success Checklist**
 
 - [ ] Extension installed from VSIX
 - [ ] Private settings configured
@@ -297,7 +297,7 @@ cd "c:\dev\AIOS\vscode-extension"
 
 ---
 
-## 📞 **Support**
+##  **Support**
 
 **Remember**: This is a private extension for personal use only.
 
@@ -309,7 +309,7 @@ cd "c:\dev\AIOS\vscode-extension"
 
 ---
 
-## 🎉 **You're Ready!**
+##  **You're Ready!**
 
 Your AIOS VSCode extension is now configured for private use with persistent context. The critical chat iteration reset problem is solved!
 

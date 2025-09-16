@@ -1,4 +1,4 @@
-# 🧬 ANALYSIS TOOLS CELLULAR UNIT
+#  ANALYSIS TOOLS CELLULAR UNIT
 
 ## Purpose
 Analysis and optimization tools

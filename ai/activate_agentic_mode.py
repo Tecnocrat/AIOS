@@ -31,19 +31,19 @@ try:
     
     AGENTIC_COMPONENTS_AVAILABLE = True
 except ImportError as e:
-    print(f"⚠️ Agentic components not fully available: {e}")
+    print(f" Agentic components not fully available: {e}")
     AGENTIC_COMPONENTS_AVAILABLE = False
 
 
 def activate_agentic_mode(target_path: str = None, force_activation: bool = True):
     """Activate autonomous agentic refactoring mode"""
     
-    print("🤖 AIOS AGENTIC MODE ACTIVATION")
+    print(" AIOS AGENTIC MODE ACTIVATION")
     print("==============================")
     print()
     
     if not AGENTIC_COMPONENTS_AVAILABLE:
-        print("❌ Agentic components not available - using fallback activation")
+        print(" Agentic components not available - using fallback activation")
         return activate_fallback_mode()
     
     workspace_root = Path(__file__).parent.parent
@@ -51,7 +51,7 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
     
     try:
         # Step 1: Quality Analysis via Emoji Detection
-        print("🔍 Step 1: Performing quality analysis...")
+        print(" Step 1: Performing quality analysis...")
         emoji_detector = EmojiDetector()
         emoji_results = emoji_detector.scan_directory(target_path)
         
@@ -61,7 +61,7 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
             "emoji_analysis": {
                 "total_emojis": 46,
                 "files_with_emojis": 1,
-                "emoji_frequency": {"✅": 33, "❌": 9, "🎯": 2, "🔄": 2}
+                "emoji_frequency": {"": 33, "": 9, "": 2, "": 2}
             },
             "integration_analysis": {"integration_score": 0.8},
             "lint_errors": 291,
@@ -73,7 +73,7 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
         print()
         
         # Step 2: Agentic Decision Making
-        print("🧠 Step 2: Agentic decision analysis...")
+        print(" Step 2: Agentic decision analysis...")
         auto_controller = AgenticAutoController(workspace_root)
         decision_result = auto_controller.analyze_and_trigger(quality_results, force_activation)
         
@@ -84,7 +84,7 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
         
         if decision_result['should_trigger_agentic']:
             # Step 3: AI Agent Preparation
-            print("🔗 Step 3: Preparing AI agent interface...")
+            print(" Step 3: Preparing AI agent interface...")
             ai_bridge = AIAgentBridge(workspace_root)
             session = ai_bridge.prepare_ai_request(
                 decision_result['ai_prompt_ready'],
@@ -97,7 +97,7 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
             print()
             
             # Step 4: Generate Final Activation Prompt
-            print("🚀 Step 4: Generating autonomous execution prompt...")
+            print(" Step 4: Generating autonomous execution prompt...")
             activation_prompt = generate_final_activation_prompt(decision_result, session)
             
             # Save activation prompt
@@ -111,7 +111,7 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
             print()
             
             # Step 5: Display Activation Instructions
-            print("🎯 AUTONOMOUS ACTIVATION READY!")
+            print(" AUTONOMOUS ACTIVATION READY!")
             print("==============================")
             print()
             print("To activate autonomous refactoring:")
@@ -119,12 +119,12 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
             print("2. Submit the prompt content to trigger GitHub Copilot")
             print("3. Monitor the autonomous execution progress")
             print()
-            print("🔥 ACTIVATION PROMPT PREVIEW:")
+            print(" ACTIVATION PROMPT PREVIEW:")
             print("-" * 50)
             print(activation_prompt[:500] + "...")
             print("-" * 50)
             print()
-            print("✅ Agentic mode activation COMPLETE!")
+            print(" Agentic mode activation COMPLETE!")
             
             return {
                 "success": True,
@@ -134,11 +134,11 @@ def activate_agentic_mode(target_path: str = None, force_activation: bool = True
                 "estimated_changes": sum(task.estimated_changes for task in decision_result['agentic_tasks'])
             }
         else:
-            print("ℹ️ Agentic mode not triggered - quality threshold not met")
+            print("ℹ Agentic mode not triggered - quality threshold not met")
             return {"success": False, "reason": "Quality threshold not met"}
             
     except Exception as e:
-        print(f"❌ Agentic activation failed: {e}")
+        print(f" Agentic activation failed: {e}")
         return {"success": False, "error": str(e)}
 
 
@@ -220,26 +220,26 @@ protocols and architectural constraints outlined above.
 def activate_fallback_mode():
     """Fallback activation when agentic components unavailable"""
     
-    print("🔄 FALLBACK ACTIVATION MODE")
+    print(" FALLBACK ACTIVATION MODE")
     print("==========================")
     print()
     print("Agentic components not fully available - providing manual activation guidance:")
     print()
-    print("1. 📁 Review files in ai/:")
+    print("1.  Review files in ai/:")
     print("   - AGENTIC_ACTIVATION.md (comprehensive activation guide)")
     print("   - AUTONOMOUS_REFACTORING_REQUEST.md (detailed execution request)")
     print()
-    print("2. 🎯 Manual activation steps:")
+    print("2.  Manual activation steps:")
     print("   - Copy content from AUTONOMOUS_REFACTORING_REQUEST.md")
     print("   - Submit to GitHub Copilot with #github-pull-request_copilot-coding-agent")
     print("   - Monitor autonomous execution progress")
     print()
-    print("3. 🛡️ Safety reminders:")
+    print("3.  Safety reminders:")
     print("   - Create feature branch before starting")
     print("   - Test changes incrementally")
     print("   - Monitor supercell communication integrity")
     print()
-    print("✅ Fallback guidance provided!")
+    print(" Fallback guidance provided!")
     
     return {"success": True, "mode": "fallback", "guidance_provided": True}
 
@@ -257,10 +257,10 @@ def main():
     result = activate_agentic_mode(args.target, args.force)
     
     if result.get("success"):
-        print("🎉 Agentic activation completed successfully!")
+        print(" Agentic activation completed successfully!")
         sys.exit(0)
     else:
-        print("❌ Agentic activation failed!")
+        print(" Agentic activation failed!")
         sys.exit(1)
 
 

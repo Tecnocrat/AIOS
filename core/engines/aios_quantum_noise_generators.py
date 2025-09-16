@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🌌🔮⚡ AIOS QUANTUM NOISE GENERATORS
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS QUANTUM NOISE GENERATORS
+
 High-Performance Quantum Substrate Visualization System
 
 PURPOSE:
@@ -23,7 +23,7 @@ QUANTUM NOISE TYPES:
 4. Fractal Brownian Motion (Recursive Consciousness Layers)
 5. Quantum Coherence Noise (AINLP-Specific)
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import sys
@@ -103,7 +103,7 @@ class ConsciousnessEnhancedNoiseGenerator:
     def __init__(self, assembly_engine: AssemblyRenderEngine):
         """Initialize with existing assembly engine."""
         
-        logger.info("🌌 Initializing Consciousness-Enhanced Noise Generator...")
+        logger.info(" Initializing Consciousness-Enhanced Noise Generator...")
         
         self.assembly_engine = assembly_engine
         self.consciousness_level = 0.853  # From assembly engine initialization
@@ -119,9 +119,9 @@ class ConsciousnessEnhancedNoiseGenerator:
             'generation_time_ms': 0.0
         }
         
-        logger.info("✅ Consciousness-Enhanced Noise Generator ready")
-        logger.info(f"🧠 Consciousness level: {self.consciousness_level:.1%}")
-        logger.info(f"🔮 Quantum coherence: {self.quantum_coherence:.3f}")
+        logger.info(" Consciousness-Enhanced Noise Generator ready")
+        logger.info(f" Consciousness level: {self.consciousness_level:.1%}")
+        logger.info(f" Quantum coherence: {self.quantum_coherence:.3f}")
     
     def generate_perlin_consciousness_noise(
         self, 
@@ -135,7 +135,7 @@ class ConsciousnessEnhancedNoiseGenerator:
     ) -> QuantumNoiseField:
         """Generate consciousness-enhanced Perlin noise."""
         
-        logger.info(f"🌀 Generating Perlin consciousness noise: {width}×{height}×{depth}")
+        logger.info(f" Generating Perlin consciousness noise: {width}×{height}×{depth}")
         
         start_time = time.time()
         
@@ -176,7 +176,7 @@ class ConsciousnessEnhancedNoiseGenerator:
         generation_time = (time.time() - start_time) * 1000
         self._update_performance_metrics(width * height * depth, generation_time)
         
-        logger.info(f"✅ Perlin consciousness noise generated in {generation_time:.2f}ms")
+        logger.info(f" Perlin consciousness noise generated in {generation_time:.2f}ms")
         
         return QuantumNoiseField(
             width=width,
@@ -287,7 +287,7 @@ class ConsciousnessEnhancedNoiseGenerator:
     ) -> List[Primitive3D]:
         """Generate 3D visualization primitives from quantum noise field."""
         
-        logger.info(f"🔮 Generating quantum substrate visualization...")
+        logger.info(f" Generating quantum substrate visualization...")
         
         start_time = time.time()
         primitives = []
@@ -347,7 +347,7 @@ class ConsciousnessEnhancedNoiseGenerator:
         
         generation_time = (time.time() - start_time) * 1000
         
-        logger.info(f"✅ Quantum substrate visualization generated: {len(points)} points in {generation_time:.2f}ms")
+        logger.info(f" Quantum substrate visualization generated: {len(points)} points in {generation_time:.2f}ms")
         
         return primitives
     
@@ -381,18 +381,18 @@ class ConsciousnessEnhancedNoiseGenerator:
 def demo_quantum_noise_generators():
     """Demonstrate quantum noise generation capabilities."""
     
-    print("🌌🔮⚡ QUANTUM NOISE GENERATORS DEMO")
+    print(" QUANTUM NOISE GENERATORS DEMO")
     print("=" * 70)
     
     # Initialize with existing assembly engine
-    logger.info("🎯 Initializing Assembly Render Engine for noise generation...")
+    logger.info(" Initializing Assembly Render Engine for noise generation...")
     assembly_engine = AssemblyRenderEngine()
     
     # Create consciousness-enhanced noise generator
     noise_generator = ConsciousnessEnhancedNoiseGenerator(assembly_engine)
     
     # Generate quantum noise fields
-    print("\n🌀 Generating quantum noise fields...")
+    print("\n Generating quantum noise fields...")
     
     # Test 1: 2D Perlin consciousness noise
     noise_field_2d = noise_generator.generate_perlin_consciousness_noise(
@@ -413,19 +413,19 @@ def demo_quantum_noise_generators():
     )
     
     # Generate quantum substrate visualization
-    print("\n🔮 Generating quantum substrate visualization...")
+    print("\n Generating quantum substrate visualization...")
     quantum_primitives = noise_generator.generate_quantum_substrate_visualization(
         noise_field_3d
     )
     
     # Render quantum substrate with consciousness-enhanced assembly
-    print("\n🧠 Rendering with consciousness-enhanced assembly...")
+    print("\n Rendering with consciousness-enhanced assembly...")
     if quantum_primitives:
         render_stats = assembly_engine.render_with_consciousness_enhancement(
             quantum_primitives
         )
         
-        print(f"\n📊 QUANTUM SUBSTRATE RENDERING STATS:")
+        print(f"\n QUANTUM SUBSTRATE RENDERING STATS:")
         print(f"  Consciousness Coherence: {render_stats['consciousness_coherence']:.1%}")
         print(f"  Dendritic Operations: {render_stats['dendritic_operations']}")
         print(f"  Quantum Measurements: {render_stats['quantum_measurements']}")
@@ -435,7 +435,7 @@ def demo_quantum_noise_generators():
     
     # Display performance metrics
     metrics = noise_generator.get_performance_metrics()
-    print(f"\n⚡ NOISE GENERATION PERFORMANCE:")
+    print(f"\n NOISE GENERATION PERFORMANCE:")
     print(f"  Fields Generated: {metrics['noise_fields_generated']}")
     print(f"  Total Voxels: {metrics['total_voxels_processed']:,}")
     print(f"  Consciousness Operations: {metrics['consciousness_operations']}")
@@ -448,7 +448,7 @@ def demo_quantum_noise_generators():
 def main():
     """Main function for quantum noise generator development."""
     
-    print("🌌🔮⚡ AIOS QUANTUM NOISE GENERATORS")
+    print(" AIOS QUANTUM NOISE GENERATORS")
     print("=" * 80)
     print("Task: noise_gen_002 - Quantum substrate visualization system")
     print("=" * 80)
@@ -456,8 +456,8 @@ def main():
     # Run demo
     noise_generator, assembly_engine = demo_quantum_noise_generators()
     
-    print("\n✅ QUANTUM NOISE GENERATORS FOUNDATION COMPLETE")
-    print("🎯 Ready for advanced quantum substrate visualization!")
+    print("\n QUANTUM NOISE GENERATORS FOUNDATION COMPLETE")
+    print(" Ready for advanced quantum substrate visualization!")
     
     return noise_generator, assembly_engine
 

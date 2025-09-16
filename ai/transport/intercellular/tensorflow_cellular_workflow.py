@@ -79,7 +79,7 @@ def create_sample_dataset():
 def demonstrate_python_training_cell():
     """Demonstrate Python AI Training Cell capabilities"""
     print("\n" + "="*60)
-    print("🐍 PYTHON AI TRAINING CELL DEMONSTRATION")
+    print(" PYTHON AI TRAINING CELL DEMONSTRATION")
     print("="*60)
     
     # Create training configuration optimized for C++ inference
@@ -139,7 +139,7 @@ def demonstrate_python_training_cell():
     if not export_info:
         raise RuntimeError("Model export failed")
     
-    print(f"✅ Model exported successfully!")
+    print(f" Model exported successfully!")
     print(f"  Export Path: {export_info.export_path}")
     print(f"  Format: {export_info.model_format}")
     print(f"  Estimated C++ Inference Time: {export_info.estimated_inference_time:.3f}ms")
@@ -150,7 +150,7 @@ def demonstrate_python_training_cell():
 def demonstrate_cpp_performance_cell(export_info, test_data):
     """Demonstrate C++ Performance Cell through intercellular bridge"""
     print("\n" + "="*60)
-    print("⚡ C++ PERFORMANCE CELL DEMONSTRATION")
+    print(" C++ PERFORMANCE CELL DEMONSTRATION")
     print("="*60)
     
     x_test, y_test = test_data
@@ -165,9 +165,9 @@ def demonstrate_cpp_performance_cell(export_info, test_data):
     # Load model from Python export
     print(f"\nLoading model from Python training cell export...")
     if not bridge.load_model_from_training_cell(export_info.export_path):
-        print("⚠️ Model loading failed - using mock inference")
+        print(" Model loading failed - using mock inference")
     else:
-        print("✅ Model loaded successfully!")
+        print(" Model loaded successfully!")
     
     # Check model status
     model_info = bridge.get_model_info()
@@ -185,12 +185,12 @@ def demonstrate_cpp_performance_cell(export_info, test_data):
     
     if inference_result.get("success", False):
         inference_time = inference_result.get("inference_time_microseconds", 0)
-        print(f"✅ Inference successful!")
+        print(f" Inference successful!")
         print(f"  Inference Time: {inference_time}μs ({inference_time/1000:.3f}ms)")
-        print(f"  Sub-millisecond: {'✅ YES' if inference_time < 1000 else '❌ NO'}")
+        print(f"  Sub-millisecond: {' YES' if inference_time < 1000 else ' NO'}")
         print(f"  Output Shape: {inference_result.get('output', np.array([])).shape}")
     else:
-        print(f"❌ Inference failed: {inference_result.get('error', 'Unknown error')}")
+        print(f" Inference failed: {inference_result.get('error', 'Unknown error')}")
     
     # Performance benchmark
     print(f"\nRunning performance benchmark...")
@@ -201,18 +201,18 @@ def demonstrate_cpp_performance_cell(export_info, test_data):
         throughput = benchmark_results.get("throughput_inferences_per_second", 0)
         target_achieved = benchmark_results.get("target_achieved", False)
         
-        print(f"📊 Benchmark Results (100 iterations):")
+        print(f" Benchmark Results (100 iterations):")
         print(f"  Average Time: {avg_time:.2f}μs ({avg_time/1000:.3f}ms)")
         print(f"  Min Time: {benchmark_results.get('min_time_microseconds', 0):.2f}μs")
         print(f"  Max Time: {benchmark_results.get('max_time_microseconds', 0):.2f}μs")
         print(f"  Throughput: {throughput:.0f} inferences/second")
-        print(f"  Target (<1ms): {'✅ ACHIEVED' if target_achieved else '❌ NOT ACHIEVED'}")
+        print(f"  Target (<1ms): {' ACHIEVED' if target_achieved else ' NOT ACHIEVED'}")
     else:
-        print(f"❌ Benchmark failed: {benchmark_results.get('error')}")
+        print(f" Benchmark failed: {benchmark_results.get('error')}")
     
     # Performance metrics
     metrics = bridge.get_performance_metrics()
-    print(f"\n📈 Performance Metrics:")
+    print(f"\n Performance Metrics:")
     print(f"  Total Inferences: {metrics.get('total_inferences', 0)}")
     print(f"  Success Rate: {metrics.get('success_rate', 0)*100:.1f}%")
     
@@ -222,7 +222,7 @@ def demonstrate_cpp_performance_cell(export_info, test_data):
 def demonstrate_ai_cell_manager():
     """Demonstrate AI Cell Manager orchestration (simplified)"""
     print("\n" + "="*60)
-    print("🧠 AI CELL MANAGER ORCHESTRATION (SIMPLIFIED)")
+    print(" AI CELL MANAGER ORCHESTRATION (SIMPLIFIED)")
     print("="*60)
     
     # Create cellular workflow (simplified without full manager)
@@ -278,7 +278,7 @@ def demonstrate_ai_cell_manager():
         "system_monitor → ai_cell_manager: workflow_completed"
     ]
     
-    print(f"\n📨 Simulated Intercellular Messages:")
+    print(f"\n Simulated Intercellular Messages:")
     for msg in messages:
         print(f"  {msg}")
     
@@ -290,14 +290,14 @@ def demonstrate_ai_cell_manager():
         "estimated_inference_time": export_info.estimated_inference_time
     }
     
-    print(f"\n🖥️ Workflow Status: {status}")
+    print(f"\n Workflow Status: {status}")
     
     return workflow, status
 
 
 def run_complete_cellular_workflow():
     """Run complete TensorFlow cellular workflow demonstration"""
-    print("🧬 AIOS TENSORFLOW CELLULAR ECOSYSTEM DEMONSTRATION")
+    print(" AIOS TENSORFLOW CELLULAR ECOSYSTEM DEMONSTRATION")
     print("="*80)
     print("Complete workflow: Python Training → Model Export → C++ Inference")
     print("="*80)
@@ -318,15 +318,15 @@ def run_complete_cellular_workflow():
         total_time = time.time() - start_time
         
         print("\n" + "="*80)
-        print("🎉 CELLULAR ECOSYSTEM DEMONSTRATION COMPLETED")
+        print(" CELLULAR ECOSYSTEM DEMONSTRATION COMPLETED")
         print("="*80)
         
-        print(f"📊 Summary:")
+        print(f" Summary:")
         print(f"  Total Demo Time: {total_time:.2f} seconds")
-        print(f"  Training Cell: ✅ Model trained and exported")
-        print(f"  Performance Cell: ✅ Sub-millisecond inference capability")
-        print(f"  Cell Manager: ✅ Orchestrated workflow execution")
-        print(f"  Intercellular Bridge: ✅ Seamless communication")
+        print(f"  Training Cell:  Model trained and exported")
+        print(f"  Performance Cell:  Sub-millisecond inference capability")
+        print(f"  Cell Manager:  Orchestrated workflow execution")
+        print(f"  Intercellular Bridge:  Seamless communication")
         
         # Performance achievements
         if benchmark_results and not benchmark_results.get("error"):
@@ -334,19 +334,19 @@ def run_complete_cellular_workflow():
             throughput = benchmark_results.get("throughput_inferences_per_second", 0)
             target_achieved = benchmark_results.get("target_achieved", False)
             
-            print(f"\n🚀 Performance Achievements:")
+            print(f"\n Performance Achievements:")
             print(f"  Average Inference Time: {avg_time:.2f}μs ({avg_time/1000:.3f}ms)")
             print(f"  Throughput: {throughput:.0f} inferences/second")
-            print(f"  Sub-millisecond Target: {'✅ ACHIEVED' if target_achieved else '❌ NOT ACHIEVED'}")
+            print(f"  Sub-millisecond Target: {' ACHIEVED' if target_achieved else ' NOT ACHIEVED'}")
             
             if target_achieved:
-                print(f"  🏆 SUCCESSFULLY ACHIEVED < 1ms INFERENCE TARGET!")
+                print(f"   SUCCESSFULLY ACHIEVED < 1ms INFERENCE TARGET!")
         
-        print(f"\n🧬 AIOS Cellular Ecosystem Status: FULLY OPERATIONAL")
+        print(f"\n AIOS Cellular Ecosystem Status: FULLY OPERATIONAL")
         return True
         
     except Exception as e:
-        print(f"\n❌ Demonstration failed: {e}")
+        print(f"\n Demonstration failed: {e}")
         import traceback
         traceback.print_exc()
         return False
@@ -358,11 +358,11 @@ if __name__ == "__main__":
     
     print(f"\n{'='*80}")
     if success:
-        print("✅ TensorFlow Cellular Workflow Demo: SUCCESS")
-        print("🧬 AIOS cellular ecosystem is ready for production!")
+        print(" TensorFlow Cellular Workflow Demo: SUCCESS")
+        print(" AIOS cellular ecosystem is ready for production!")
     else:
-        print("❌ TensorFlow Cellular Workflow Demo: FAILED")
-        print("🔧 Please check the setup and try again")
+        print(" TensorFlow Cellular Workflow Demo: FAILED")
+        print(" Please check the setup and try again")
     print(f"{'='*80}")
     
     exit(0 if success else 1)

@@ -62,4 +62,23 @@ namespace AIOS.Models
         Task<MaintenanceStatus> GetMaintenanceStatusAsync();
         Task<TachyonicArchiveInfo> GetTachyonicArchiveInfoAsync();
     }
+
+    /// <summary>
+    /// Interface for consciousness management
+    /// Defines contract for consciousness state and operations
+    /// </summary>
+    public interface IConsciousnessService
+    {
+        Task<ConsciousnessState> GetCurrentStateAsync();
+        Task<ConsciousnessMetrics> GetCurrentMetricsAsync();
+        Task<bool> UpdateConsciousnessStateAsync(ConsciousnessState state);
+        Task<bool> EnhanceConsciousnessAsync(ConsciousnessEnhancementRequest request);
+        Task<string> EvolveFromErrorAsync(string error, string context);
+        Task<List<ConsciousnessEvent>> GetRecentEventsAsync(TimeSpan timespan);
+        Task<bool> SynchronizeWithCppAsync();
+        Task<bool> SynchronizeWithPythonAsync();
+        void StartConsciousnessMonitoring();
+        void StopConsciousnessMonitoring();
+        event EventHandler<ConsciousnessEvent> ConsciousnessEventOccurred;
+    }
 }

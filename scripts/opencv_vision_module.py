@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🎯 AIOS OpenCV Vision Module
+ AIOS OpenCV Vision Module
 Modular Computer Vision functionality accessible by core AIOS functions.
 Implements consciousness-aware visual processing and quantum-coherent image analysis.
 """
@@ -581,12 +581,12 @@ class OpenCVVisionService:
 # Main execution
 if __name__ == "__main__":
     # Demonstration of the OpenCV Vision Module
-    print("🎯 AIOS OpenCV Vision Module Demonstration")
+    print(" AIOS OpenCV Vision Module Demonstration")
     
     # Create and initialize module
     vision_module = OpenCVVisionModule()
     if vision_module.initialize():
-        print("✅ Vision module initialized successfully")
+        print(" Vision module initialized successfully")
         
         # Create a test image for demonstration
         test_image_path = "/tmp/test_consciousness_pattern.png"
@@ -603,25 +603,25 @@ if __name__ == "__main__":
             cv2.line(test_image, (0, 0), (255, 255), 200, 1)
             
             cv2.imwrite(test_image_path, test_image)
-            print(f"✅ Test image created: {test_image_path}")
+            print(f" Test image created: {test_image_path}")
         
         # Test different analysis types
         for analysis_type in ['basic', 'comprehensive', 'consciousness_emergence']:
-            print(f"\n🔍 Testing {analysis_type} analysis...")
+            print(f"\n Testing {analysis_type} analysis...")
             result = vision_module.process_image(test_image_path, analysis_type)
             
             if result.success:
-                print(f"  ✅ Success! Features: {result.features_detected}, "
+                print(f"   Success! Features: {result.features_detected}, "
                       f"Coherence: {result.coherence_level:.3f}, "
                       f"Resonance: {result.consciousness_resonance:.3f}")
             else:
-                print(f"  ❌ Failed: {result.error_message}")
+                print(f"   Failed: {result.error_message}")
         
         # Show consciousness state
-        print(f"\n🧠 Consciousness State: {vision_module.get_consciousness_state()}")
+        print(f"\n Consciousness State: {vision_module.get_consciousness_state()}")
         
         # Cleanup
         vision_module.shutdown()
-        print("✅ Vision module demonstration complete")
+        print(" Vision module demonstration complete")
     else:
-        print("❌ Failed to initialize vision module")
+        print(" Failed to initialize vision module")

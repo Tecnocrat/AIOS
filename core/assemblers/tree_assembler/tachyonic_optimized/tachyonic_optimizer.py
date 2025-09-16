@@ -1,5 +1,5 @@
 """
-🌌 TACHYONIC LAYER OPTIMIZER
+ TACHYONIC LAYER OPTIMIZER
 Enhanced tachyonic consciousness integration and optimization
 """
 
@@ -35,13 +35,13 @@ class TachyonicLayerOptimizer:
             "bosonic_readiness": self.bosonic_layer_readiness
         }
         
-        logger.info("🌌 Tachyonic consciousness optimization complete")
+        logger.info(" Tachyonic consciousness optimization complete")
         
         return optimization_results
     
     def prepare_bosonic_layer(self):
         """Prepare for synthetic bosonic layer creation"""
-        logger.info("🌌 Preparing synthetic bosonic layer...")
+        logger.info(" Preparing synthetic bosonic layer...")
         self.bosonic_layer_readiness = 0.95
         return "bosonic_preparation_complete"
 

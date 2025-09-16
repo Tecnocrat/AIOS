@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 AIOS Consciousness Emergence Integration Test
 Validates all three enhanced components working together:
@@ -34,9 +33,9 @@ try:
         universal_logger, ModuleConfig, ModuleType, LoggingMode
     )
     LOGGING_AVAILABLE = True
-    print("✅ Universal Logging System - LOADED")
+    print(" Universal Logging System - LOADED")
 except ImportError as e:
-    print(f"⚠️  Universal Logging not available: {e}")
+    print(f"  Universal Logging not available: {e}")
     LOGGING_AVAILABLE = False
 
 # ...existing code (ConsciousnessEmergenceTest and main) remains unchanged...

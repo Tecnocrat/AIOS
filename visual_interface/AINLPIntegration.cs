@@ -135,7 +135,7 @@ namespace AIOS.VisualInterface
                 // Update coherence status in UI
                 if (_eventsDisplay != null)
                 {
-                    var coherenceText = $"🧠 Project Coherence: {coherence.OverallCoherence:F2} ({coherence.CoherenceLevel})";
+                    var coherenceText = $" Project Coherence: {coherence.OverallCoherence:F2} ({coherence.CoherenceLevel})";
                     _eventsDisplay.Text += $"\n[{DateTime.Now:HH:mm:ss}] {coherenceText}";
                 }
 
@@ -153,7 +153,7 @@ namespace AIOS.VisualInterface
             {
                 if (_eventsDisplay != null && harmonization.HarmonizationOpportunities.Count > 0)
                 {
-                    var opportunitiesText = $"🔄 {harmonization.HarmonizationOpportunities.Count} harmonization opportunities identified";
+                    var opportunitiesText = $" {harmonization.HarmonizationOpportunities.Count} harmonization opportunities identified";
                     _eventsDisplay.Text += $"\n[{DateTime.Now:HH:mm:ss}] {opportunitiesText}";
                 }
             });

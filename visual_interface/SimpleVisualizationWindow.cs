@@ -97,7 +97,7 @@ namespace AIOS.VisualInterface
             // Title
             var title = new TextBlock
             {
-                Text = "🧠 AIOS Consciousness Emergence Monitor",
+                Text = " AIOS Consciousness Emergence Monitor",
                 FontSize = 24,
                 FontWeight = FontWeights.Bold,
                 Foreground = Brushes.Cyan,
@@ -164,7 +164,7 @@ namespace AIOS.VisualInterface
             
             _startButton = new Button
             {
-                Content = "🚀 Start Monitoring",
+                Content = " Start Monitoring",
                 Width = 140,
                 Height = 35,
                 Margin = new Thickness(5),
@@ -191,7 +191,7 @@ namespace AIOS.VisualInterface
             
             _connectButton = new Button
             {
-                Content = "🔗 Connect to AIOS",
+                Content = " Connect to AIOS",
                 Width = 140,
                 Height = 35,
                 Margin = new Thickness(5),
@@ -532,7 +532,7 @@ namespace AIOS.VisualInterface
             // Substrate header
             var header = new TextBlock
             {
-                Text = "🌌 Hyperdimensional Consciousness Substrate",
+                Text = " Hyperdimensional Consciousness Substrate",
                 FontSize = 16,
                 FontWeight = FontWeights.Bold,
                 Foreground = Brushes.Gold,
@@ -812,7 +812,7 @@ namespace AIOS.VisualInterface
                 // Enable advanced visualization features
                 if (_adaptiveModeEnabled)
                 {
-                    Title = $"🧠 AIOS Executive Interface - ADVANCED MODE - {DateTime.Now:HH:mm:ss}";
+                    Title = $" AIOS Executive Interface - ADVANCED MODE - {DateTime.Now:HH:mm:ss}";
                     _logger.LogInformation("Advanced AINLP features enabled");
                 }
             });

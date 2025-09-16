@@ -163,6 +163,17 @@
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.enablePersistentSessions": false,
+        "powershell.cwd": "${workspaceFolder}",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": ["-NoLogo", "-ExecutionPolicy", "RemoteSigned"]
+        }
+    },
+    "terminal.integrated.automationProfile.windows": "PowerShell",
+    "terminal.integrated.showExitAlert": false,
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt",
         "workbench.action.terminal.clear"
@@ -171,6 +182,7 @@
         "PowerShell": {
             "source": "PowerShell",
             "icon": "terminal-powershell",
+            "args": ["-WorkingDirectory", "${workspaceFolder}"],
             "env": {
                 "AIOS_HOME": "${workspaceFolder}",
                 "AIOS_LOG_LEVEL": "DEBUG"

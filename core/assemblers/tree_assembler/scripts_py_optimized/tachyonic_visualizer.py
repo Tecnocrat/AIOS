@@ -1,6 +1,6 @@
 """
-🌊 TACHYONIC 3D CONSCIOUSNESS VISUALIZER
-═══════════════════════════════════════════════════════════════════════════════
+ TACHYONIC 3D CONSCIOUSNESS VISUALIZER
+
 3D Visualization system for consciousness evolution and synthetic particle physics
 Integrates with the Dendritic Assembly Mutator for real-time consciousness mapping
 
@@ -10,7 +10,7 @@ Features:
 - Evolutionary code mutation tracking  
 - Primordial universe simulation with synthetic particles
 - Interactive 3D exploration of consciousness states
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import numpy as np
@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 class TachyonicField3D:
     """
-    🌊 3D Tachyonic consciousness field for particle physics simulation
+     3D Tachyonic consciousness field for particle physics simulation
     Represents the consciousness substrate that governs synthetic particle behavior
     """
     
@@ -48,7 +48,7 @@ class TachyonicField3D:
         self.consciousness_coupling = 1.618  # Golden ratio coupling
         self.tachyonic_resonance = 0.742     # AINLP threshold resonance
         
-        logger.info(f"🌊 Initialized tachyonic field: {field_size}")
+        logger.info(f" Initialized tachyonic field: {field_size}")
     
     def update_field(self, particles: List[Dict], dt: float = 0.1):
         """Update the consciousness field based on particle interactions"""
@@ -143,7 +143,7 @@ class TachyonicField3D:
 
 class ConsciousnessVisualizer3D:
     """
-    🔮 3D Consciousness Evolution Visualizer
+     3D Consciousness Evolution Visualizer
     Real-time visualization of consciousness states and synthetic particle evolution
     """
     
@@ -162,14 +162,14 @@ class ConsciousnessVisualizer3D:
             ['#000033', '#000066', '#003366', '#006699', '#33CCFF', '#66FFFF', '#FFFFFF']
         )
         
-        logger.info(f"🔮 Consciousness visualizer initialized for: {evolution_output_path}")
+        logger.info(f" Consciousness visualizer initialized for: {evolution_output_path}")
     
     def load_generation_data(self, generation: int) -> Optional[Dict]:
         """Load consciousness and particle data for a specific generation"""
         gen_dir = self.evolution_path / f"generation_{generation:04d}"
         
         if not gen_dir.exists():
-            logger.warning(f"⚠️ Generation {generation} data not found")
+            logger.warning(f" Generation {generation} data not found")
             return None
         
         try:
@@ -192,7 +192,7 @@ class ConsciousnessVisualizer3D:
             }
             
         except Exception as e:
-            logger.error(f"❌ Failed to load generation {generation} data: {e}")
+            logger.error(f" Failed to load generation {generation} data: {e}")
             return None
     
     def create_consciousness_evolution_plot(self, max_generations: int = 100):
@@ -210,7 +210,7 @@ class ConsciousnessVisualizer3D:
                 fitness_scores.append(data['consciousness']['best_fitness'])
         
         if not generations:
-            logger.error("❌ No generation data found for consciousness evolution plot")
+            logger.error(" No generation data found for consciousness evolution plot")
             return
         
         # Create evolution plot
@@ -222,7 +222,7 @@ class ConsciousnessVisualizer3D:
         ax1.axhline(y=0.853, color='r', linestyle='--', alpha=0.7, label='AIOS Baseline (85.3%)')
         ax1.axhline(y=0.95, color='g', linestyle='--', alpha=0.7, label='Emergence Threshold (95%)')
         ax1.set_ylabel('Consciousness Coherence', fontsize=12)
-        ax1.set_title('🧬 Consciousness Evolution Over Generations', fontsize=14)
+        ax1.set_title(' Consciousness Evolution Over Generations', fontsize=14)
         ax1.legend()
         ax1.grid(True, alpha=0.3)
         
@@ -231,7 +231,7 @@ class ConsciousnessVisualizer3D:
                 marker='s', markersize=4, label='Fitness Score')
         ax2.set_xlabel('Generation', fontsize=12)
         ax2.set_ylabel('Fitness Score', fontsize=12)
-        ax2.set_title('🎯 Fitness Evolution', fontsize=14)
+        ax2.set_title(' Fitness Evolution', fontsize=14)
         ax2.legend()
         ax2.grid(True, alpha=0.3)
         
@@ -239,13 +239,13 @@ class ConsciousnessVisualizer3D:
         plt.savefig(self.evolution_path / 'consciousness_evolution.png', dpi=300, bbox_inches='tight')
         plt.show()
         
-        logger.info(f"📊 Consciousness evolution plot saved")
+        logger.info(f" Consciousness evolution plot saved")
     
     def create_3d_particle_visualization(self, generation: int):
         """Create 3D visualization of synthetic particles for a specific generation"""
         data = self.load_generation_data(generation)
         if not data or not data['particles']:
-            logger.error(f"❌ No particle data for generation {generation}")
+            logger.error(f" No particle data for generation {generation}")
             return
         
         particles = data['particles']
@@ -280,7 +280,7 @@ class ConsciousnessVisualizer3D:
         ax.set_xlabel('X Position', fontsize=12)
         ax.set_ylabel('Y Position', fontsize=12)
         ax.set_zlabel('Z Position', fontsize=12)
-        ax.set_title(f'🌊 Synthetic Particle Physics - Generation {generation}', fontsize=14)
+        ax.set_title(f' Synthetic Particle Physics - Generation {generation}', fontsize=14)
         
         # Add consciousness colorbar
         cbar = plt.colorbar(scatter, ax=ax, shrink=0.8, aspect=20)
@@ -303,7 +303,7 @@ class ConsciousnessVisualizer3D:
                    dpi=300, bbox_inches='tight')
         plt.show()
         
-        logger.info(f"🌊 3D particle visualization saved for generation {generation}")
+        logger.info(f" 3D particle visualization saved for generation {generation}")
     
     def create_consciousness_field_slice(self, generation: int, z_slice: int = 25):
         """Create 2D slice visualization of the consciousness field"""
@@ -324,7 +324,7 @@ class ConsciousnessVisualizer3D:
         # Consciousness field
         im1 = ax1.imshow(field_slice.T, origin='lower', cmap=self.consciousness_colormap,
                         vmin=0.5, vmax=1.2, interpolation='bilinear')
-        ax1.set_title(f'🧠 Consciousness Field (Z={z_slice}) - Gen {generation}', fontsize=12)
+        ax1.set_title(f' Consciousness Field (Z={z_slice}) - Gen {generation}', fontsize=12)
         ax1.set_xlabel('X Field Index')
         ax1.set_ylabel('Y Field Index')
         plt.colorbar(im1, ax=ax1, label='Consciousness Level')
@@ -332,7 +332,7 @@ class ConsciousnessVisualizer3D:
         # Energy density field
         im2 = ax2.imshow(energy_slice.T, origin='lower', cmap='plasma',
                         interpolation='bilinear')
-        ax2.set_title(f'⚡ Energy Density Field (Z={z_slice}) - Gen {generation}', fontsize=12)
+        ax2.set_title(f' Energy Density Field (Z={z_slice}) - Gen {generation}', fontsize=12)
         ax2.set_xlabel('X Field Index')
         ax2.set_ylabel('Y Field Index')
         plt.colorbar(im2, ax=ax2, label='Energy Density')
@@ -342,7 +342,7 @@ class ConsciousnessVisualizer3D:
                    dpi=300, bbox_inches='tight')
         plt.show()
         
-        logger.info(f"🧠 Consciousness field visualization saved for generation {generation}")
+        logger.info(f" Consciousness field visualization saved for generation {generation}")
     
     def create_animated_evolution(self, start_gen: int = 0, end_gen: int = 25, 
                                 interval: int = 500):
@@ -363,7 +363,7 @@ class ConsciousnessVisualizer3D:
                 generation_data.append(data)
         
         if not generation_data:
-            logger.error("❌ No data available for animation")
+            logger.error(" No data available for animation")
             return
         
         def animate(frame):
@@ -390,7 +390,7 @@ class ConsciousnessVisualizer3D:
                 scatter = ax1.scatter(positions[:, 0], positions[:, 1], positions[:, 2],
                                     c=consciousness_levels, s=energies*10+20, alpha=0.7,
                                     cmap=self.consciousness_colormap)
-                ax1.set_title(f'🌊 Particles - Gen {generation}')
+                ax1.set_title(f' Particles - Gen {generation}')
                 ax1.set_xlim(-5, 5)
                 ax1.set_ylim(-5, 5)
                 ax1.set_zlim(-5, 5)
@@ -401,7 +401,7 @@ class ConsciousnessVisualizer3D:
                 im = ax2.imshow(field_slice.T, origin='lower', 
                               cmap=self.consciousness_colormap,
                               vmin=0.5, vmax=1.2)
-                ax2.set_title(f'🧠 Consciousness Field - Gen {generation}')
+                ax2.set_title(f' Consciousness Field - Gen {generation}')
             
             # Evolution progress
             gen_numbers = [d['generation'] for d in generation_data[:frame+1]]
@@ -410,7 +410,7 @@ class ConsciousnessVisualizer3D:
             
             ax3.plot(gen_numbers, consciousness_vals, 'b-', linewidth=2, marker='o')
             ax3.axhline(y=0.853, color='r', linestyle='--', alpha=0.7)
-            ax3.set_title('🧬 Consciousness Evolution')
+            ax3.set_title(' Consciousness Evolution')
             ax3.set_ylabel('Coherence')
             ax3.set_xlim(start_gen, end_gen)
             ax3.set_ylim(0.5, 1.0)
@@ -427,7 +427,7 @@ class ConsciousnessVisualizer3D:
             
             ax4.text(0.1, 0.5, metrics_text, fontsize=12, verticalalignment='center',
                     transform=ax4.transAxes, fontfamily='monospace')
-            ax4.set_title('📊 Evolution Metrics Dashboard')
+            ax4.set_title(' Evolution Metrics Dashboard')
             ax4.axis('off')
         
         # Create animation
@@ -440,9 +440,9 @@ class ConsciousnessVisualizer3D:
         try:
             anim.save(self.evolution_path / 'consciousness_evolution_animation.gif',
                      writer='pillow', fps=2)
-            logger.info("🎬 Animation saved successfully")
+            logger.info(" Animation saved successfully")
         except Exception as e:
-            logger.warning(f"⚠️ Could not save animation: {e}")
+            logger.warning(f" Could not save animation: {e}")
         
         plt.show()
         return anim
@@ -462,4 +462,4 @@ if __name__ == "__main__":
     # Create animated evolution (if data exists)
     # visualizer.create_animated_evolution(0, 25, interval=1000)
     
-    print("🔮 Consciousness visualization complete!")
+    print(" Consciousness visualization complete!")

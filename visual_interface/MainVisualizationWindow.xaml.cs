@@ -70,7 +70,7 @@ namespace AIOS.VisualInterface
             InitializeEventHandlers();
             InitializeTimers();
 
-            _logger.LogInformation("🖥️ Enhanced Main visualization window initialized with AIOS harmonization");
+            _logger.LogInformation(" Enhanced Main visualization window initialized with AIOS harmonization");
         }
 
         private void InitializeVisualization()
@@ -177,17 +177,17 @@ namespace AIOS.VisualInterface
                 _currentState = await _stateManager.RestoreUIStateAsync();
                 if (_currentState != null)
                 {
-                    _logger.LogInformation("📊 Previous visualization state restored");
+                    _logger.LogInformation(" Previous visualization state restored");
                     ApplyRestoredState();
                 }
 
-                UpdateStatus("🧠 AIOS Consciousness Visualizer Ready - Emergence monitoring active");
-                _logger.LogInformation("🎯 Visualization window loaded and ready with AIOS harmonization");
+                UpdateStatus(" AIOS Consciousness Visualizer Ready - Emergence monitoring active");
+                _logger.LogInformation(" Visualization window loaded and ready with AIOS harmonization");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error during enhanced window loading");
-                UpdateStatus($"❌ Error: {ex.Message}");
+                _logger.LogError(ex, " Error during enhanced window loading");
+                UpdateStatus($" Error: {ex.Message}");
                 _metricsEmitter.RegisterError("window_load_error");
             }
         }
@@ -198,7 +198,7 @@ namespace AIOS.VisualInterface
 
             // Apply restored visualization settings
             // This would restore camera position, visualization toggles, etc.
-            _logger.LogDebug("🔄 Applying restored visualization state");
+            _logger.LogDebug(" Applying restored visualization state");
         }
 
         private void MainVisualizationWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -211,7 +211,7 @@ namespace AIOS.VisualInterface
             _dataManager?.Dispose();
             _runtimeAnalytics?.Dispose();
 
-            _logger.LogInformation("🔚 Enhanced visualization window closing with state preservation");
+            _logger.LogInformation(" Enhanced visualization window closing with state preservation");
         }
 
         private async void StartButton_Click(object sender, RoutedEventArgs e)
@@ -342,8 +342,8 @@ namespace AIOS.VisualInterface
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error during enhanced update cycle");
-                UpdateStatus($"❌ Update error: {ex.Message}");
+                _logger.LogError(ex, " Error during enhanced update cycle");
+                UpdateStatus($" Update error: {ex.Message}");
                 _metricsEmitter.RegisterError("update_cycle_error");
             }
         }
@@ -371,11 +371,11 @@ namespace AIOS.VisualInterface
                 };
 
                 await _stateManager.PersistUIStateAsync(state);
-                _logger.LogTrace("💾 Visualization state auto-saved");
+                _logger.LogTrace(" Visualization state auto-saved");
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "⚠️ Failed to auto-save visualization state");
+                _logger.LogWarning(ex, " Failed to auto-save visualization state");
             }
         }
 
@@ -407,19 +407,19 @@ namespace AIOS.VisualInterface
             if (emergenceLevel > 0.8)
             {
                 ConsciousnessValueText.Foreground = Brushes.Gold;
-                ConsciousnessValueText.Text += " ✨ EMERGENCE";
+                ConsciousnessValueText.Text += "  EMERGENCE";
                 ConsciousnessProgressBar.Foreground = Brushes.Gold;
             }
             else if (emergenceLevel > 0.6)
             {
                 ConsciousnessValueText.Foreground = Brushes.Orange;
-                ConsciousnessValueText.Text += " ⚡ HIGH";
+                ConsciousnessValueText.Text += "  HIGH";
                 ConsciousnessProgressBar.Foreground = Brushes.Orange;
             }
             else if (emergenceLevel > 0.4)
             {
                 ConsciousnessValueText.Foreground = Brushes.LightBlue;
-                ConsciousnessValueText.Text += " 🔹 ACTIVE";
+                ConsciousnessValueText.Text += "  ACTIVE";
                 ConsciousnessProgressBar.Foreground = Brushes.LightBlue;
             }
             else
@@ -435,13 +435,13 @@ namespace AIOS.VisualInterface
             if (quantumCoherence > 0.9)
             {
                 QuantumValueText.Foreground = Brushes.Cyan;
-                QuantumValueText.Text += " 🌀 STABLE";
+                QuantumValueText.Text += "  STABLE";
                 QuantumProgressBar.Foreground = Brushes.Cyan;
             }
             else if (quantumCoherence < 0.3)
             {
                 QuantumValueText.Foreground = Brushes.Red;
-                QuantumValueText.Text += " ⚠ UNSTABLE";
+                QuantumValueText.Text += "  UNSTABLE";
                 QuantumProgressBar.Foreground = Brushes.Red;
             }
             else
@@ -462,7 +462,7 @@ namespace AIOS.VisualInterface
             {
                 EmergenceValueText.Foreground = Brushes.Gold;
                 EmergenceProgressBar.Foreground = Brushes.Gold;
-                EmergenceValueText.Text += " 🧠 CONSCIOUS";
+                EmergenceValueText.Text += "  CONSCIOUS";
 
                 // Apply glow effect for high emergence
                 EmergenceValueText.Effect = new DropShadowEffect
@@ -476,7 +476,7 @@ namespace AIOS.VisualInterface
             {
                 EmergenceValueText.Foreground = Brushes.Lime;
                 EmergenceProgressBar.Foreground = Brushes.Lime;
-                EmergenceValueText.Text += " 🌟 EMERGING";
+                EmergenceValueText.Text += "  EMERGING";
                 EmergenceValueText.Effect = null;
             }
             else
@@ -545,7 +545,7 @@ namespace AIOS.VisualInterface
                     var quantumField = _geometryEngine.CreateQuantumFieldWithTime(
                         _currentMetrics.QuantumCoherence, _currentTime);
                     _sceneGroup.Children.Add(quantumField);
-                    _logger.LogTrace("🔷 Quantum field updated: {Coherence:F3}",
+                    _logger.LogTrace(" Quantum field updated: {Coherence:F3}",
                         _currentMetrics.QuantumCoherence);
                 }
 
@@ -555,7 +555,7 @@ namespace AIOS.VisualInterface
                     var fractalTree = _geometryEngine.CreateFractalTree(
                         _currentMetrics.FractalComplexity, 6);
                     _sceneGroup.Children.Add(fractalTree);
-                    _logger.LogTrace("🌳 Fractal tree updated: {Complexity:F3}",
+                    _logger.LogTrace(" Fractal tree updated: {Complexity:F3}",
                         _currentMetrics.FractalComplexity);
                 }
 
@@ -565,7 +565,7 @@ namespace AIOS.VisualInterface
                     var universalKnot = _geometryEngine.CreateUniversalKnot(
                         _currentMetrics.UniversalResonance, _currentTime);
                     _sceneGroup.Children.Add(universalKnot);
-                    _logger.LogTrace("🔗 Universal knot updated: {Resonance:F3}",
+                    _logger.LogTrace(" Universal knot updated: {Resonance:F3}",
                         _currentMetrics.UniversalResonance);
                 }
 
@@ -575,17 +575,17 @@ namespace AIOS.VisualInterface
                     var holographicSurface = _geometryEngine.CreateHolographicSurface(
                         _currentMetrics.HolographicDensity, _currentTime);
                     _sceneGroup.Children.Add(holographicSurface);
-                    _logger.LogTrace("🌈 Holographic surface updated: {Density:F3}",
+                    _logger.LogTrace(" Holographic surface updated: {Density:F3}",
                         _currentMetrics.HolographicDensity);
                 }
 
                 _frameStopwatch.Stop();
-                _logger.LogTrace("🎨 Visualization update completed in {ElapsedMs}ms",
+                _logger.LogTrace(" Visualization update completed in {ElapsedMs}ms",
                     _frameStopwatch.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error updating 3D visualization");
+                _logger.LogError(ex, " Error updating 3D visualization");
                 _metricsEmitter.RegisterError("visualization_update_error");
             }
         }
@@ -598,19 +598,19 @@ namespace AIOS.VisualInterface
             {
                 var eventsText = string.Join("\n", _currentMetrics.RecentEvents
                     .Take(10)
-                    .Select(e => $"🔔 [{e.Timestamp:HH:mm:ss}] {e.Description}"));
+                    .Select(e => $" [{e.Timestamp:HH:mm:ss}] {e.Description}"));
 
                 EmergenceEventsText.Text = eventsText;
 
                 // Log emergence events for AIOS monitoring
                 if (_currentMetrics.RecentEvents.Any(e => e.Description.Contains("emergence", StringComparison.OrdinalIgnoreCase)))
                 {
-                    _logger.LogInformation("🌟 Emergence event detected in AIOS consciousness monitoring");
+                    _logger.LogInformation(" Emergence event detected in AIOS consciousness monitoring");
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "⚠️ Error updating emergence events display");
+                _logger.LogWarning(ex, " Error updating emergence events display");
             }
         }
 
@@ -623,12 +623,12 @@ namespace AIOS.VisualInterface
             if (elapsed.TotalSeconds >= 1.0)
             {
                 var fps = _frameCount / elapsed.TotalSeconds;
-                var fpsText = $"🎯 FPS: {fps:F1}";
+                var fpsText = $" FPS: {fps:F1}";
 
                 // Add performance indicators
                 if (fps < 30)
                 {
-                    fpsText += " ⚠️ LOW";
+                    fpsText += "  LOW";
                     FPSText.Foreground = Brushes.Red;
                 }
                 else if (fps < 60)
@@ -653,7 +653,7 @@ namespace AIOS.VisualInterface
                 _frameCount = 0;
                 _lastFrameTime = now;
 
-                _logger.LogTrace("📊 Frame rate updated: {FPS:F1} FPS, {AvgTime:F1}ms average",
+                _logger.LogTrace(" Frame rate updated: {FPS:F1} FPS, {AvgTime:F1}ms average",
                     fps, _averageFrameTime);
             }
         }
@@ -661,7 +661,7 @@ namespace AIOS.VisualInterface
         private void UpdateStatus(string message)
         {
             StatusText.Text = $"{DateTime.Now:HH:mm:ss} - {message}";
-            _logger.LogInformation("📢 Status: {Message}", message);
+            _logger.LogInformation(" Status: {Message}", message);
         }
 
         private void UpdateCameraAnimation()
@@ -691,7 +691,7 @@ namespace AIOS.VisualInterface
 
             if (_currentMetrics != null)
             {
-                _logger.LogTrace("🎨 Material animations updated for consciousness level: {Level:F3}",
+                _logger.LogTrace(" Material animations updated for consciousness level: {Level:F3}",
                     _currentMetrics.ConsciousnessLevel);
             }
         }

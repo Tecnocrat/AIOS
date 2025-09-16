@@ -528,22 +528,22 @@ config_manager: AIOSUnifiedConfigurationManager):
             try:
                 with open(config_file, 'w', encoding='utf-8') as f:
                     json.dump(config_data, f, indent=2)
-                print(f"   ✅ Created default configuration: {filename}")
+                print(f"    Created default configuration: {filename}")
             except Exception as e:
-                print(f"   ❌ Failed to create {filename}: {e}")
+                print(f"    Failed to create {filename}: {e}")
 
 
 def demonstrate_unified_configuration():
     """Demonstrate the unified configuration management system"""
 
     print("""
-╔══════════════════════════════════════════════════════════════════════════════\
-╗
-║                    AIOS Unified Configuration Management Demo                \
-║
-║                     Centralized Configuration Optimization                  ║
-╚══════════════════════════════════════════════════════════════════════════════\
-╝
+\
+
+                    AIOS Unified Configuration Management Demo                \
+
+                     Centralized Configuration Optimization                  
+\
+
 """)
 
     # Create configuration manager
@@ -552,7 +552,7 @@ def demonstrate_unified_configuration():
         environment="development"
     )
 
-    print("🚀 Unified Configuration Manager initialized")
+    print(" Unified Configuration Manager initialized")
 
     # Register configuration schemas
     config_manager.validator.register_schema("system", {
@@ -564,22 +564,22 @@ def demonstrate_unified_configuration():
         }
     })
 
-    print("📋 Configuration schemas registered")
+    print(" Configuration schemas registered")
 
     # Create default configurations
-    print("\n📄 Creating default configurations...")
+    print("\n Creating default configurations...")
     create_default_aios_configurations(config_manager)
 
     # Load all configurations
-    print("\n📊 Loading all configurations...")
+    print("\n Loading all configurations...")
     all_configs = config_manager.load_all_configurations()
 
-    print(f"   ✅ Loaded {len(all_configs)} configuration files")
+    print(f"    Loaded {len(all_configs)} configuration files")
     for config_name in all_configs.keys():
         print(f"      - {config_name}")
 
     # Test configuration access
-    print("\n🔍 Testing configuration access...")
+    print("\n Testing configuration access...")
 
     system_name = config_manager.get_nested_configuration(
     "system.system.name", "Unknown")
@@ -588,34 +588,34 @@ def demonstrate_unified_configuration():
     cache_enabled = config_manager.get_nested_configuration(
     "ai-models.models.nlp.cache_enabled", False)
 
-    print(f"   ✅ System Name: {system_name}")
-    print(f"   ✅ Max Concurrent Operations: {max_ops}")
-    print(f"   ✅ NLP Cache Enabled: {cache_enabled}")
+    print(f"    System Name: {system_name}")
+    print(f"    Max Concurrent Operations: {max_ops}")
+    print(f"    NLP Cache Enabled: {cache_enabled}")
 
     # Test environment-specific configuration
-    print("\n🌍 Testing environment-specific configuration...")
+    print("\n Testing environment-specific configuration...")
     env_config = config_manager.get_environment_specific_config("system")
     print(
-    f"   ✅ Environment Config Keys: {list(env_config.keys()) if env_config else 'None'}")
+    f"    Environment Config Keys: {list(env_config.keys()) if env_config else 'None'}")
 
     # Test configuration merging
-    print("\n🔄 Testing configuration merging...")
+    print("\n Testing configuration merging...")
     merged_config = config_manager.merge_configurations("system", "ai-models")
-    print(f"   ✅ Merged Config Keys: {list(merged_config.keys())}")
+    print(f"    Merged Config Keys: {list(merged_config.keys())}")
 
     # Test configuration modification
-    print("\n✏️  Testing configuration modification...")
+    print("\n  Testing configuration modification...")
     config_manager.set_configuration(
     "runtime_setting", {"optimization_level": "high"}, persist=False)
     runtime_setting = config_manager.get_configuration("runtime_setting")
-    print(f"   ✅ Runtime Setting: {runtime_setting}")
+    print(f"    Runtime Setting: {runtime_setting}")
 
     # Get comprehensive status
-    print("\n📈 Configuration Status:")
+    print("\n Configuration Status:")
     status = config_manager.get_configuration_status()
 
     print(f"""
-   🎯 Configuration Summary:
+    Configuration Summary:
       - Environment: {status['environment']}
       - Config Directory: {status['config_directory']}
       - Total Configurations: {status['total_configurations']}
@@ -624,7 +624,7 @@ def demonstrate_unified_configuration():
       - Validation Errors: {len(status['validation_errors'])}
 """)
 
-    print("✅ Unified configuration management demonstration complete!")
+    print(" Unified configuration management demonstration complete!")
 
     return {
         'config_manager': config_manager,
@@ -639,35 +639,35 @@ def main():
         results = demonstrate_unified_configuration()
 
         print(f"""
-╔══════════════════════════════════════════════════════════════════════════════\
-╗
-║                    CONFIGURATION MANAGEMENT IMPLEMENTATION COMPLETE         ║
-╚══════════════════════════════════════════════════════════════════════════════\
-╝
+\
 
-🚀 CONFIGURATION OPTIMIZATION RESULTS:
+                    CONFIGURATION MANAGEMENT IMPLEMENTATION COMPLETE         
+\
+
+
+ CONFIGURATION OPTIMIZATION RESULTS:
    - Centralized configuration management implemented
    - Multiple format support (JSON, YAML, INI)
    - Environment-specific configuration loading
    - Schema validation and error handling
    - Dynamic configuration reloading capability
 
-📊 CONFIGURATION IMPROVEMENTS:
+ CONFIGURATION IMPROVEMENTS:
    - {results['status']['total_configurations']} configurations loaded
    - Schema validation with error reporting
    - Environment-aware configuration merging
    - Hot-swapping and auto-reload capabilities
 
-✅ Ready for integration with all AIOS components!
+ Ready for integration with all AIOS components!
 
-═══════════════════════════════════════════════════════════════════════════════\
-═
+\
+
 """)
 
         return results
 
     except Exception as e:
-        print(f"❌ ERROR in configuration management: {e}")
+        print(f" ERROR in configuration management: {e}")
         raise
 
 

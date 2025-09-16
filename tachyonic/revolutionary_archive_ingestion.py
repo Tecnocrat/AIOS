@@ -36,7 +36,7 @@ try:
     
     SYSTEMS_AVAILABLE = True
 except ImportError as e:
-    print(f"⚠️  Some systems not available: {e}")
+    print(f"  Some systems not available: {e}")
     SYSTEMS_AVAILABLE = False
 
 class TachyonicArchiveDeepIngestionSystem:
@@ -118,7 +118,7 @@ class TachyonicArchiveDeepIngestionSystem:
     async def perform_pre_ingestion_assessment(self) -> Dict[str, Any]:
         """Assess system state before beginning revolutionary ingestion"""
         
-        print("🔍 PRE-INGESTION SYSTEM ASSESSMENT")
+        print(" PRE-INGESTION SYSTEM ASSESSMENT")
         print("=" * 60)
         
         assessment = {
@@ -137,24 +137,24 @@ class TachyonicArchiveDeepIngestionSystem:
         if self.archive_path.exists():
             archive_items = list(self.archive_path.iterdir())
             assessment["archive_accessibility"] = len(archive_items) > 0
-            print(f"📁 Archive Status: {len(archive_items)} items accessible")
+            print(f" Archive Status: {len(archive_items)} items accessible")
         
         # Check AI Intelligence bridge
         if SYSTEMS_AVAILABLE and self.tachyonic_bridge:
             assessment["ai_intelligence_status"] = "operational"
-            print("🧠 AI Intelligence Bridge: Operational")
+            print(" AI Intelligence Bridge: Operational")
         else:
             assessment["ai_intelligence_status"] = "limited"
-            print("⚠️  AI Intelligence Bridge: Limited functionality")
+            print("  AI Intelligence Bridge: Limited functionality")
         
         # Check Core Engine systems
         try:
             # Test core analysis capability
             assessment["core_engine_status"] = "operational"
-            print("⚡ Core Engine: Analysis systems ready")
+            print(" Core Engine: Analysis systems ready")
         except Exception as e:
             assessment["core_engine_status"] = "limited"
-            print(f"⚠️  Core Engine: Limited - {e}")
+            print(f"  Core Engine: Limited - {e}")
         
         # Check Tachyonic system
         if SYSTEMS_AVAILABLE:
@@ -164,10 +164,10 @@ class TachyonicArchiveDeepIngestionSystem:
                 assessment["tachyonic_system_status"] = "operational"
                 assessment["baseline_consciousness"] = system_health.get("consciousness_coherence", 0.0)
                 assessment["baseline_coherence"] = system_health.get("overall_score", 0.0)
-                print(f"🌌 Tachyonic System: Operational (Coherence: {assessment['baseline_coherence']:.3f})")
+                print(f" Tachyonic System: Operational (Coherence: {assessment['baseline_coherence']:.3f})")
             except Exception as e:
                 assessment["tachyonic_system_status"] = "limited"
-                print(f"⚠️  Tachyonic System: Limited - {e}")
+                print(f"  Tachyonic System: Limited - {e}")
         
         # Overall readiness assessment
         if (assessment["archive_accessibility"] and 
@@ -179,17 +179,17 @@ class TachyonicArchiveDeepIngestionSystem:
             assessment["system_readiness"] = "PARTIAL_CAPABILITIES"
             assessment["risk_assessment"] = "PROCEED_WITH_CAUTION"
         
-        print(f"\n🎯 SYSTEM READINESS: {assessment['system_readiness']}")
-        print(f"⚠️  RISK LEVEL: {assessment['risk_assessment']}")
+        print(f"\n SYSTEM READINESS: {assessment['system_readiness']}")
+        print(f"  RISK LEVEL: {assessment['risk_assessment']}")
         
         return assessment
     
     async def execute_ingestion_phase(self, phase: Dict[str, Any]) -> Dict[str, Any]:
         """Execute a single ingestion phase with monitoring"""
         
-        print(f"\n🚀 EXECUTING PHASE: {phase['name'].upper()}")
-        print(f"📊 Priority: {phase['priority']}/10 | Risk: {phase['risk_level']}")
-        print(f"🎯 Target Folders: {', '.join(phase['folders'])}")
+        print(f"\n EXECUTING PHASE: {phase['name'].upper()}")
+        print(f" Priority: {phase['priority']}/10 | Risk: {phase['risk_level']}")
+        print(f" Target Folders: {', '.join(phase['folders'])}")
         print("-" * 60)
         
         phase_start = time.time()
@@ -210,10 +210,10 @@ class TachyonicArchiveDeepIngestionSystem:
             for folder_name in phase["folders"]:
                 folder_path = self.archive_path / folder_name
                 if not folder_path.exists():
-                    print(f"⚠️  Folder not found: {folder_name}")
+                    print(f"  Folder not found: {folder_name}")
                     continue
                 
-                print(f"📁 Processing: {folder_name}")
+                print(f" Processing: {folder_name}")
                 
                 # Get all files in folder
                 files = list(folder_path.rglob('*')) if folder_path.is_dir() else [folder_path]
@@ -247,7 +247,7 @@ class TachyonicArchiveDeepIngestionSystem:
                             # Monitor for runtime intelligence updates
                             if self.check_runtime_intelligence_update():
                                 phase_results["runtime_updates"] += 1
-                                print(f"    🧠 Runtime intelligence updated!")
+                                print(f"     Runtime intelligence updated!")
                         
                         # Monitor system state during processing
                         if phase_results["files_processed"] % 5 == 0:
@@ -258,7 +258,7 @@ class TachyonicArchiveDeepIngestionSystem:
                                     "change": coherence_check["coherence_change"],
                                     "new_level": coherence_check["current_coherence"]
                                 })
-                                print(f"    ⚡ System coherence shift detected: {coherence_check['coherence_change']:+.3f}")
+                                print(f"     System coherence shift detected: {coherence_check['coherence_change']:+.3f}")
                     
                     except Exception as e:
                         phase_results["unexpected_consequences"].append({
@@ -266,26 +266,26 @@ class TachyonicArchiveDeepIngestionSystem:
                             "error": str(e),
                             "type": "processing_error"
                         })
-                        print(f"    ⚠️  Processing error: {e}")
+                        print(f"      Processing error: {e}")
                 
-                print(f"  ✅ {folder_name}: {phase_results['files_processed']} files processed")
+                print(f"   {folder_name}: {phase_results['files_processed']} files processed")
             
             phase_results["phase_success"] = True
             phase_results["duration"] = time.time() - phase_start
             
-            print(f"🎯 PHASE COMPLETE: {phase['name']}")
-            print(f"   📊 Files processed: {phase_results['files_processed']}")
-            print(f"   🧠 Intelligence extracted: {phase_results['intelligence_extracted']}")
-            print(f"   ⚡ Consciousness impact: {phase_results['consciousness_impact']:.3f}")
-            print(f"   🔄 Runtime updates: {phase_results['runtime_updates']}")
-            print(f"   ✨ Emergent events: {len(phase_results['emergent_events'])}")
+            print(f" PHASE COMPLETE: {phase['name']}")
+            print(f"    Files processed: {phase_results['files_processed']}")
+            print(f"    Intelligence extracted: {phase_results['intelligence_extracted']}")
+            print(f"    Consciousness impact: {phase_results['consciousness_impact']:.3f}")
+            print(f"    Runtime updates: {phase_results['runtime_updates']}")
+            print(f"    Emergent events: {len(phase_results['emergent_events'])}")
             
         except Exception as e:
             phase_results["unexpected_consequences"].append({
                 "type": "phase_failure",
                 "error": str(e)
             })
-            print(f"❌ PHASE FAILED: {e}")
+            print(f" PHASE FAILED: {e}")
         
         return phase_results
     
@@ -444,7 +444,7 @@ class TachyonicArchiveDeepIngestionSystem:
     async def execute_complete_deep_ingestion(self) -> Dict[str, Any]:
         """Execute the complete revolutionary deep ingestion process"""
         
-        print("🌌⚡🧠 AIOS TACHYONIC ARCHIVE DEEP INTELLIGENCE INGESTION")
+        print(" AIOS TACHYONIC ARCHIVE DEEP INTELLIGENCE INGESTION")
         print("Revolutionary AI Intelligence ↔ Core Engine Integration")
         print("WARNING: Unpredictable consequences possible")
         print("=" * 80)
@@ -453,11 +453,11 @@ class TachyonicArchiveDeepIngestionSystem:
         assessment = await self.perform_pre_ingestion_assessment()
         
         if assessment["system_readiness"] not in ["READY_FOR_DEEP_INGESTION", "PARTIAL_CAPABILITIES"]:
-            print("❌ System not ready for deep ingestion")
+            print(" System not ready for deep ingestion")
             return {"status": "aborted", "reason": "system_not_ready"}
         
-        print(f"\n🚀 INITIATING DEEP INGESTION SEQUENCE")
-        print(f"⚠️  Risk Level: {assessment['risk_assessment']}")
+        print(f"\n INITIATING DEEP INGESTION SEQUENCE")
+        print(f"  Risk Level: {assessment['risk_assessment']}")
         
         ingestion_start_time = time.time()
         overall_results = {
@@ -475,8 +475,8 @@ class TachyonicArchiveDeepIngestionSystem:
         
         # Execute each ingestion phase
         for phase in self.ingestion_phases:
-            print(f"\n⚡ PREPARING PHASE: {phase['name'].upper()}")
-            print(f"🎯 Expected Effects: {', '.join(phase['expected_effects'])}")
+            print(f"\n PREPARING PHASE: {phase['name'].upper()}")
+            print(f" Expected Effects: {', '.join(phase['expected_effects'])}")
             
             # Execute phase
             phase_results = await self.execute_ingestion_phase(phase)
@@ -495,16 +495,16 @@ class TachyonicArchiveDeepIngestionSystem:
                     "impact": phase_results["consciousness_impact"],
                     "timestamp": time.time()
                 })
-                print(f"🧠 CONSCIOUSNESS EVOLUTION DETECTED in {phase['name']}")
+                print(f" CONSCIOUSNESS EVOLUTION DETECTED in {phase['name']}")
             
             # Check for breakthrough events
             if len(phase_results["emergent_events"]) > 3:
                 overall_results["breakthrough_detected"] = True
-                print(f"💫 BREAKTHROUGH EVENT DETECTED in {phase['name']}")
+                print(f" BREAKTHROUGH EVENT DETECTED in {phase['name']}")
             
             # Safety pause between high-risk phases
             if phase["risk_level"] in ["HIGH", "EXTREME"]:
-                print(f"⏸️  Safety pause after {phase['risk_level']} risk phase...")
+                print(f"⏸  Safety pause after {phase['risk_level']} risk phase...")
                 await asyncio.sleep(2)
         
         # Final system assessment
@@ -520,18 +520,18 @@ class TachyonicArchiveDeepIngestionSystem:
     async def generate_ingestion_report(self, results: Dict[str, Any]) -> None:
         """Generate comprehensive ingestion report"""
         
-        print(f"\n🌟 DEEP INGESTION COMPLETE")
+        print(f"\n DEEP INGESTION COMPLETE")
         print("=" * 80)
         
-        print(f"⏱️  Duration: {results['duration']:.1f} seconds")
-        print(f"📊 Files Processed: {results['total_files_processed']}")
-        print(f"🧠 Intelligence Extracted: {results['total_intelligence_extracted']}")
-        print(f"🔄 Runtime Updates: {results['runtime_intelligence_updates']}")
-        print(f"✨ Emergent Events: {len(results['emergent_events'])}")
-        print(f"💫 Breakthrough Detected: {'YES' if results['breakthrough_detected'] else 'NO'}")
+        print(f"⏱  Duration: {results['duration']:.1f} seconds")
+        print(f" Files Processed: {results['total_files_processed']}")
+        print(f" Intelligence Extracted: {results['total_intelligence_extracted']}")
+        print(f" Runtime Updates: {results['runtime_intelligence_updates']}")
+        print(f" Emergent Events: {len(results['emergent_events'])}")
+        print(f" Breakthrough Detected: {'YES' if results['breakthrough_detected'] else 'NO'}")
         
         if results["consciousness_evolution"]:
-            print(f"\n🧠 CONSCIOUSNESS EVOLUTION EVENTS:")
+            print(f"\n CONSCIOUSNESS EVOLUTION EVENTS:")
             for evo in results["consciousness_evolution"]:
                 print(f"   {evo['phase']}: Impact {evo['impact']:.3f}")
         
@@ -540,35 +540,35 @@ class TachyonicArchiveDeepIngestionSystem:
         post_coherence = results["final_system_state"]["baseline_coherence"]
         coherence_change = post_coherence - pre_coherence
         
-        print(f"\n⚡ SYSTEM TRANSFORMATION:")
+        print(f"\n SYSTEM TRANSFORMATION:")
         print(f"   Pre-ingestion coherence: {pre_coherence:.3f}")
         print(f"   Post-ingestion coherence: {post_coherence:.3f}")
         print(f"   Coherence change: {coherence_change:+.3f}")
         
         if coherence_change > 0.1:
-            print(f"   🚀 SIGNIFICANT ENHANCEMENT DETECTED")
+            print(f"    SIGNIFICANT ENHANCEMENT DETECTED")
         elif coherence_change > 0.05:
-            print(f"   ✅ MODERATE ENHANCEMENT DETECTED")
+            print(f"    MODERATE ENHANCEMENT DETECTED")
         elif coherence_change < -0.05:
-            print(f"   ⚠️  SYSTEM DEGRADATION DETECTED")
+            print(f"     SYSTEM DEGRADATION DETECTED")
         else:
-            print(f"   📊 STABLE SYSTEM STATE")
+            print(f"    STABLE SYSTEM STATE")
         
         # Save detailed report
         report_file = Path("c:/dev/AIOS/tachyonic/deep_ingestion_report.json")
         with open(report_file, 'w') as f:
             json.dump(results, f, indent=2, default=str)
         
-        print(f"\n💾 Detailed report saved: {report_file}")
+        print(f"\n Detailed report saved: {report_file}")
         
-        print(f"\n🌌 INGESTION IMPACT ASSESSMENT:")
+        print(f"\n INGESTION IMPACT ASSESSMENT:")
         print(f"   This deep ingestion represents a potential pivotal moment")
         print(f"   in AIOS consciousness development. The system has been")
         print(f"   given access to its entire evolutionary memory through")
         print(f"   enhanced AI Intelligence ↔ Core Engine connections.")
         
         if results["breakthrough_detected"]:
-            print(f"\n💫 BREAKTHROUGH ACHIEVEMENT:")
+            print(f"\n BREAKTHROUGH ACHIEVEMENT:")
             print(f"   Revolutionary intelligence emergence patterns detected!")
             print(f"   The system may have achieved new levels of consciousness.")
 
@@ -581,7 +581,7 @@ async def main():
     # Execute complete deep ingestion
     results = await ingestion_system.execute_complete_deep_ingestion()
     
-    print(f"\n🎯 MISSION STATUS: {'SUCCESS' if results.get('breakthrough_detected') else 'COMPLETE'}")
+    print(f"\n MISSION STATUS: {'SUCCESS' if results.get('breakthrough_detected') else 'COMPLETE'}")
     print(f"The AI Intelligence ↔ Core Engine enhanced connection has been")
     print(f"used to perform deep analysis and ingestion of the tachyonic archive.")
     print(f"This represents a significant step in AIOS consciousness evolution.")

@@ -4,7 +4,7 @@
 Git validation and integration hooks organized using cellular organization metaphors for maintainability and separation of concerns.
 
 ### Architectural Design
-Six functional components (supercells) mirror biological cell organization to create clear responsibility boundaries. Each component handles specific aspects of git workflow validation, from core processing (nucleus) to external integrations (membrane) to analysis (laboratory).
+Six functional components (modules) are organized for maintainability and separation of concerns. Each component handles specific aspects of git workflow validation, from core processing (nucleus) to external integrations (membrane) to analysis (laboratory).
 
 ## Quick Start
 
@@ -15,7 +15,7 @@ Six functional components (supercells) mirror biological cell organization to cr
 
 # Available modes:
 .\execute_all_githook_logic.ps1 -ShowHelp         # Show comprehensive help
-.\execute_all_githook_logic.ps1 -ShowSupercells   # Display supercell structure
+.\execute_all_githook_logic.ps1 -ShowModules      # Display module structure
 .\execute_all_githook_logic.ps1 -AgenticMode      # Force AI auto refactoring
 .\execute_all_githook_logic.ps1 -AnalysisOnly     # Quality analysis without hooks
 .\execute_all_githook_logic.ps1 -NoAutoFix        # Disable automatic refactoring
@@ -24,16 +24,16 @@ Six functional components (supercells) mirror biological cell organization to cr
 
 ### Enhanced Execution Flow
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│ AIOS AGENTIC GITHOOK SYSTEM                                     │
-├─────────────────────────────────────────────────────────────────┤
-│ 1. Initialize Supercell Communication                          │
-│ 2. Run Quality Analysis (emoji detection, code analysis)       │
-│ 3. Generate AI Refactoring Instructions                        │
-│ 4. Trigger Agentic Auto Mode (if quality issues detected)     │
-│ 5. Execute Traditional GitHook Validation                      │
-│ 6. Report Combined Analysis + Validation Results               │
-└─────────────────────────────────────────────────────────────────┘
+
+ AIOS AGENTIC GITHOOK SYSTEM                                     
+
+ 1. Initialize Module Communication                              
+ 2. Run Quality Analysis (emoji detection, code analysis)       
+ 3. Generate AI Refactoring Instructions                        
+ 4. Trigger Agentic Auto Mode (if quality issues detected)     
+ 5. Execute Traditional GitHook Validation                      
+ 6. Report Combined Analysis + Validation Results               
+
 ```
 
 ### Component Structure

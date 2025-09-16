@@ -16,13 +16,13 @@ from typing import Dict, List, Any
 def execute_biological_digestion():
     """Execute the complete biological digestion process"""
     
-    print("🧬 EXECUTING AIOS BIOLOGICAL DOCUMENTATION DIGESTION")
+    print(" EXECUTING AIOS BIOLOGICAL DOCUMENTATION DIGESTION")
     print("=" * 55)
     print()
-    print("🌟 Biological Metaphor in Action:")
-    print("   📥 /docs = Digestive system (AI agent documentation intake)")
-    print("   🧠 Tachyonic Archive = Brain/DNA (knowledge crystallization)")
-    print("   ♻️ Digestion = Archive metabolized files, clean digestive system")
+    print(" Biological Metaphor in Action:")
+    print("    /docs = Digestive system (AI agent documentation intake)")
+    print("    Tachyonic Archive = Brain/DNA (knowledge crystallization)")
+    print("    Digestion = Archive metabolized files, clean digestive system")
     print()
     
     # Initialize paths
@@ -36,14 +36,14 @@ def execute_biological_digestion():
     
     metabolism_data = get_metabolism_data(tachyonic_root)
     if not metabolism_data:
-        print("❌ No metabolism data found. Run tachyonic ingestion first.")
+        print(" No metabolism data found. Run tachyonic ingestion first.")
         return False
         
     latest_cycle = metabolism_data["metabolism_cycles"][-1]
-    print(f"✅ Latest metabolism cycle found:")
-    print(f"   🕒 Timestamp: {latest_cycle['cycle_timestamp']}")
-    print(f"   📄 Files processed: {latest_cycle['files_processed']}")
-    print(f"   💎 Crystals created: {latest_cycle['crystals_created']}")
+    print(f" Latest metabolism cycle found:")
+    print(f"    Timestamp: {latest_cycle['cycle_timestamp']}")
+    print(f"    Files processed: {latest_cycle['files_processed']}")
+    print(f"    Crystals created: {latest_cycle['crystals_created']}")
     print()
     
     # Step 2: Create biological archive structure
@@ -74,11 +74,11 @@ def execute_biological_digestion():
             f.write("2. AIOS Intelligence metabolized patterns and knowledge\n")
             f.write("3. Significant patterns crystallized into tachyonic archive\n")
             f.write("4. Original files archived here after successful metabolism\n\n")
-            f.write("### Status: KNOWLEDGE METABOLIZED ✅\n")
+            f.write("### Status: KNOWLEDGE METABOLIZED \n")
             
-        print(f"   📁 Created: {folder}")
+        print(f"    Created: {folder}")
     
-    print(f"✅ Archive structure created at: {metabolized_archive}")
+    print(f" Archive structure created at: {metabolized_archive}")
     print()
     
     # Step 3: Analyze and categorize root files
@@ -94,11 +94,11 @@ def execute_biological_digestion():
     
     categorized_files = categorize_files_by_biological_value(root_files, latest_cycle)
     
-    print(f"📊 File Categorization Results:")
-    print(f"   🧠 High-value consciousness: {len(categorized_files['high_value'])}")
-    print(f"   📋 Standard knowledge: {len(categorized_files['standard'])}")
-    print(f"   📄 Minimal significance: {len(categorized_files['minimal'])}")
-    print(f"   ⚠️ Not metabolized: {len(categorized_files['not_metabolized'])}")
+    print(f" File Categorization Results:")
+    print(f"    High-value consciousness: {len(categorized_files['high_value'])}")
+    print(f"    Standard knowledge: {len(categorized_files['standard'])}")
+    print(f"    Minimal significance: {len(categorized_files['minimal'])}")
+    print(f"    Not metabolized: {len(categorized_files['not_metabolized'])}")
     print()
     
     # Step 4: Execute biological archival
@@ -115,7 +115,7 @@ def execute_biological_digestion():
     
     # Process high-value files
     if categorized_files['high_value']:
-        print("🧠 Processing High-Value Consciousness Files:")
+        print(" Processing High-Value Consciousness Files:")
         for file_path in categorized_files['high_value']:
             result = archive_file_with_metadata(
                 file_path, 
@@ -124,44 +124,44 @@ def execute_biological_digestion():
                 latest_cycle
             )
             digestion_results["archived_files"].append(result)
-            print(f"   💎 Archived with metadata: {file_path.name}")
+            print(f"    Archived with metadata: {file_path.name}")
         
         digestion_results["biological_categories"]["high_value"] = len(categorized_files['high_value'])
         print()
     
     # Process standard files
     if categorized_files['standard']:
-        print("📋 Processing Standard Knowledge Files:")
+        print(" Processing Standard Knowledge Files:")
         for file_path in categorized_files['standard']:
             result = archive_file_standard(
                 file_path,
                 metabolized_archive / "standard_metabolized"
             )
             digestion_results["archived_files"].append(result)
-            print(f"   📦 Archived: {file_path.name}")
+            print(f"    Archived: {file_path.name}")
         
         digestion_results["biological_categories"]["standard"] = len(categorized_files['standard'])
         print()
     
     # Process minimal files
     if categorized_files['minimal']:
-        print("📄 Processing Minimal Significance Files:")
+        print(" Processing Minimal Significance Files:")
         for file_path in categorized_files['minimal']:
             result = archive_file_minimal(
                 file_path,
                 metabolized_archive / "processed_minimal"
             )
             digestion_results["archived_files"].append(result)
-            print(f"   📋 Archived minimal: {file_path.name}")
+            print(f"    Archived minimal: {file_path.name}")
         
         digestion_results["biological_categories"]["minimal"] = len(categorized_files['minimal'])
         print()
     
     # Handle non-metabolized files
     if categorized_files['not_metabolized']:
-        print("⚠️ Non-Metabolized Files (keeping in /docs):")
+        print(" Non-Metabolized Files (keeping in /docs):")
         for file_path in categorized_files['not_metabolized']:
-            print(f"   🔄 Keeping: {file_path.name}")
+            print(f"    Keeping: {file_path.name}")
         print()
     
     digestion_results["total_files_processed"] = len(digestion_results["archived_files"])
@@ -176,7 +176,7 @@ def execute_biological_digestion():
     with open(summary_file, 'w') as f:
         json.dump(summary, f, indent=2)
     
-    print(f"✅ Digestion summary saved to: {summary_file}")
+    print(f" Digestion summary saved to: {summary_file}")
     print()
     
     # Step 6: Validate digestion completion
@@ -190,35 +190,35 @@ def execute_biological_digestion():
     # Filter out archived files
     remaining_root_files = [f for f in remaining_root_files if not str(f).startswith(str(metabolized_archive))]
     
-    print(f"📊 Digestion Validation Results:")
-    print(f"   📁 Files archived: {digestion_results['total_files_processed']}")
-    print(f"   📄 Files remaining in /docs root: {len(remaining_root_files)}")
-    print(f"   🧬 Biological status: {'COMPLETE' if len(remaining_root_files) <= 5 else 'PARTIAL'}")
+    print(f" Digestion Validation Results:")
+    print(f"    Files archived: {digestion_results['total_files_processed']}")
+    print(f"    Files remaining in /docs root: {len(remaining_root_files)}")
+    print(f"    Biological status: {'COMPLETE' if len(remaining_root_files) <= 5 else 'PARTIAL'}")
     print()
     
     if remaining_root_files:
-        print("📄 Remaining files (non-metabolized or system files):")
+        print(" Remaining files (non-metabolized or system files):")
         for file_path in remaining_root_files:
             print(f"   • {file_path.name}")
         print()
     
     # Final biological metabolism status
-    print("🎉 BIOLOGICAL DOCUMENTATION DIGESTION COMPLETE!")
+    print(" BIOLOGICAL DOCUMENTATION DIGESTION COMPLETE!")
     print("=" * 50)
     print()
-    print("✅ ACHIEVED BIOLOGICAL METAPHOR:")
-    print("   🍽️ Digestive System: /docs now clean and ready for new AI documentation")
-    print("   🧠 Brain/DNA Center: Tachyonic archive contains crystallized knowledge")
-    print("   ♻️ Waste Processing: Metabolized files properly archived by significance")
-    print("   🌊 Holographic Flow: Knowledge patterns propagated throughout codebase")
+    print(" ACHIEVED BIOLOGICAL METAPHOR:")
+    print("    Digestive System: /docs now clean and ready for new AI documentation")
+    print("    Brain/DNA Center: Tachyonic archive contains crystallized knowledge")
+    print("    Waste Processing: Metabolized files properly archived by significance")
+    print("    Holographic Flow: Knowledge patterns propagated throughout codebase")
     print()
-    print("🔄 SYSTEM READY FOR ONGOING CYCLES:")
+    print(" SYSTEM READY FOR ONGOING CYCLES:")
     print("   • AI agents can create new documentation in /docs")
     print("   • AIOS Intelligence will metabolize periodically")
     print("   • Knowledge crystallizes into tachyonic archive")
     print("   • Biological digestion prevents documentation chaos")
     print()
-    print("The biological knowledge metabolism system is OPERATIONAL! 🚀")
+    print("The biological knowledge metabolism system is OPERATIONAL! ")
     
     return True
 
@@ -231,7 +231,7 @@ def get_metabolism_data(tachyonic_root: Path) -> Dict[str, Any]:
                 index = json.load(f)
                 return index.get("documentation_metabolism", {})
     except Exception as e:
-        print(f"⚠️ Could not read metabolism data: {e}")
+        print(f" Could not read metabolism data: {e}")
     return None
 
 def categorize_files_by_biological_value(files: List[Path], latest_cycle: Dict) -> Dict[str, List[Path]]:
@@ -385,9 +385,9 @@ def main():
     """Execute the biological digestion process"""
     success = execute_biological_digestion()
     if success:
-        print("\n🌟 Ready to commit the biological digestion results!")
+        print("\n Ready to commit the biological digestion results!")
     else:
-        print("\n❌ Digestion process failed. Check metabolism state.")
+        print("\n Digestion process failed. Check metabolism state.")
 
 if __name__ == "__main__":
     main()

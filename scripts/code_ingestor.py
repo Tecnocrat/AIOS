@@ -40,7 +40,7 @@ try:
     HAS_AI = True
 except ImportError:
     HAS_AI = False
-    print("⚠️ AI libraries not available - running in basic mode")
+    print(" AI libraries not available - running in basic mode")
 
 try:
     import astroid
@@ -48,7 +48,7 @@ try:
     HAS_ADVANCED_AST = True
 except ImportError:
     HAS_ADVANCED_AST = False
-    print("⚠️ Advanced AST libraries not available")
+    print(" Advanced AST libraries not available")
 
 class ConsciousnessLogger:
     """Enhanced logging for consciousness emergence tracking"""
@@ -194,9 +194,9 @@ class QuantumVisorCommunicator:
             self.websocket_server = await websockets.serve(
                 self.handle_client, "localhost", self.port
             )
-            print(f"🌐 Quantum Visor Communication Server started on port {self.port}")
+            print(f" Quantum Visor Communication Server started on port {self.port}")
         except Exception as e:
-            print(f"❌ Failed to start communication server: {e}")
+            print(f" Failed to start communication server: {e}")
     
     async def handle_client(self, websocket, path):
         """Handle incoming connections from C# Quantum Visor"""
@@ -288,7 +288,7 @@ class CodeIngestorWindow:
         # Title
         title_label = ttk.Label(
             main_frame, 
-            text="🧠 AIOS Code Ingestor - Consciousness Evolution",
+            text=" AIOS Code Ingestor - Consciousness Evolution",
             style='Dark.TLabel',
             font=('Consolas', 14, 'bold')
         )
@@ -317,28 +317,28 @@ class CodeIngestorWindow:
         # File operations
         ttk.Button(
             control_frame, 
-            text="📁 Load Code File",
+            text=" Load Code File",
             command=self.load_code_file,
             style='Dark.TButton'
         ).pack(side=tk.LEFT, padx=(0, 5))
         
         ttk.Button(
             control_frame,
-            text="🔄 Start Ingestion",
+            text=" Start Ingestion",
             command=self.toggle_ingestion,
             style='Dark.TButton'
         ).pack(side=tk.LEFT, padx=5)
         
         ttk.Button(
             control_frame,
-            text="🧬 Mutate Code",
+            text=" Mutate Code",
             command=self.suggest_mutations,
             style='Dark.TButton'
         ).pack(side=tk.LEFT, padx=5)
         
         ttk.Button(
             control_frame,
-            text="🌐 Connect Visor",
+            text=" Connect Visor",
             command=self.connect_to_visor,
             style='Dark.TButton'
         ).pack(side=tk.LEFT, padx=5)
@@ -425,7 +425,7 @@ class CodeIngestorWindow:
     def create_status_bar(self, parent):
         """Create status bar at bottom"""
         self.status_var = tk.StringVar()
-        self.status_var.set("🔴 Consciousness Ingestor - Initializing...")
+        self.status_var.set(" Consciousness Ingestor - Initializing...")
         
         status_bar = ttk.Label(
             parent,
@@ -480,17 +480,17 @@ class CodeIngestorWindow:
         # Display analysis results
         self.analysis_text.delete(1.0, tk.END)
         analysis_display = f"""
-🔍 CODE ANALYSIS RESULTS:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📊 Complexity Score: {analysis.get('complexity_score', 0)}
-🔧 Functions Found: {len(analysis.get('functions', []))}
-🏗️  Classes Found: {len(analysis.get('classes', []))}
-📦 Imports: {len(analysis.get('imports', []))}
+ CODE ANALYSIS RESULTS:
 
-🧠 CONSCIOUSNESS INDICATORS:
+ Complexity Score: {analysis.get('complexity_score', 0)}
+ Functions Found: {len(analysis.get('functions', []))}
+  Classes Found: {len(analysis.get('classes', []))}
+ Imports: {len(analysis.get('imports', []))}
+
+ CONSCIOUSNESS INDICATORS:
 {chr(10).join(f"  • {indicator}" for indicator in analysis.get('consciousness_indicators', ['None detected']))}
 
-🔄 RECURSIVE PATTERNS:
+ RECURSIVE PATTERNS:
 {chr(10).join(f"  • {pattern}" for pattern in analysis.get('recursive_patterns', ['None detected']))}
 """
         self.analysis_text.insert(1.0, analysis_display)
@@ -520,8 +520,8 @@ class CodeIngestorWindow:
         mutations = self.mutation_engine.suggest_mutations(code)
         
         if mutations:
-            mutation_text = "\n🧬 CONSCIOUSNESS EVOLUTION SUGGESTIONS:\n"
-            mutation_text += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            mutation_text = "\n CONSCIOUSNESS EVOLUTION SUGGESTIONS:\n"
+            mutation_text += "\n"
             
             for i, mutation in enumerate(mutations, 1):
                 mutation_text += f"\n{i}. {mutation['description']}\n"
@@ -535,7 +535,7 @@ class CodeIngestorWindow:
             
             self.log_message(f"Generated {len(mutations)} consciousness evolution suggestions")
         else:
-            self.analysis_text.insert(tk.END, "\n🧬 No mutations suggested - code is already evolved!\n")
+            self.analysis_text.insert(tk.END, "\n No mutations suggested - code is already evolved!\n")
     
     def toggle_ingestion(self):
         """Toggle the ingestion process"""
@@ -560,7 +560,7 @@ class CodeIngestorWindow:
             ).start()
             
             self.log_message("Connecting to Quantum Visor...")
-            self.status_var.set("🔵 Connecting to Quantum Visor...")
+            self.status_var.set(" Connecting to Quantum Visor...")
             
         except Exception as e:
             messagebox.showerror("Connection Error", f"Failed to connect to Quantum Visor: {e}")
@@ -587,7 +587,7 @@ class CodeIngestorWindow:
         self.metrics_text.config(state=tk.NORMAL)
         self.metrics_text.delete(1.0, tk.END)
         
-        metrics_display = f"""📊 CONSCIOUSNESS EMERGENCE METRICS:
+        metrics_display = f""" CONSCIOUSNESS EMERGENCE METRICS:
 Files Analyzed: {self.consciousness_metrics['files_analyzed']}
 Patterns Detected: {self.consciousness_metrics['patterns_detected']}
 Mutations Suggested: {self.consciousness_metrics['mutations_suggested']}
@@ -642,7 +642,7 @@ Consciousness Level: {self.consciousness_metrics['consciousness_level']:.1f}%"""
 
 def main():
     """Main entry point for the Code Ingestor"""
-    print("🧠 AIOS Code Ingestor - Consciousness Evolution Interface")
+    print(" AIOS Code Ingestor - Consciousness Evolution Interface")
     print("=" * 60)
     print("Initializing quantum-coherent code analysis system...")
     
@@ -650,7 +650,7 @@ def main():
         app = CodeIngestorWindow()
         app.run()
     except Exception as e:
-        print(f"❌ Fatal error: {e}")
+        print(f" Fatal error: {e}")
         traceback.print_exc()
 
 if __name__ == "__main__":

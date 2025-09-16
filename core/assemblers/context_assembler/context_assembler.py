@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠🔍⚡ AIOS CONTEXT ASSEMBLER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS CONTEXT ASSEMBLER
+
 Environmental Awareness and Context Analysis for Coherent Development
 
 PURPOSE:
@@ -21,7 +21,7 @@ CAPABILITIES:
 4. Pre-Creation Impact Analysis
 5. Integration Opportunity Detection
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -79,7 +79,7 @@ class ContextAssembler:
     def __init__(self, root_path: str = None):
         """Initialize context assembler."""
         
-        logger.info("🧠 Initializing Context Assembler...")
+        logger.info(" Initializing Context Assembler...")
         
         self.root_path = Path(root_path) if root_path else Path.cwd()
         self.environment_context: Optional[EnvironmentContext] = None
@@ -94,8 +94,8 @@ class ContextAssembler:
         self.context_cache: Dict[str, FileContext] = {}
         self.analysis_timestamp = None
         
-        logger.info(f"🔍 Context Assembler ready for: {self.root_path}")
-        logger.info(f"📂 Supported file types: {self.supported_extensions}")
+        logger.info(f" Context Assembler ready for: {self.root_path}")
+        logger.info(f" Supported file types: {self.supported_extensions}")
     
     def analyze_environment(
         self, force_refresh: bool = False
@@ -107,17 +107,17 @@ class ContextAssembler:
         file creation to achieve memory context about existing environment.
         """
         
-        logger.info("🔍 Analyzing environment for context awareness...")
+        logger.info(" Analyzing environment for context awareness...")
         
         if not force_refresh and self.environment_context:
-            logger.info("📋 Using cached environment context")
+            logger.info(" Using cached environment context")
             return self.environment_context
         
         start_time = datetime.now()
         
         # Discover all relevant files
         file_paths = self._discover_files()
-        logger.info(f"📄 Discovered {len(file_paths)} relevant files")
+        logger.info(f" Discovered {len(file_paths)} relevant files")
         
         # Analyze each file for context
         file_contexts = []
@@ -128,7 +128,7 @@ class ContextAssembler:
                     file_contexts.append(context)
                     self.context_cache[str(file_path)] = context
             except Exception as e:
-                logger.warning(f"⚠️ Failed to analyze {file_path}: {e}")
+                logger.warning(f" Failed to analyze {file_path}: {e}")
         
         # Analyze architectural patterns
         patterns = self._detect_architectural_patterns(file_contexts)
@@ -158,10 +158,10 @@ class ContextAssembler:
         analysis_time = (datetime.now() - start_time).total_seconds()
         self.analysis_timestamp = datetime.now()
         
-        logger.info(f"✅ Environment analysis complete in {analysis_time:.2f}s")
-        logger.info(f"📊 Coherence score: {coherence_score:.2f}/10.0")
-        logger.info(f"🔗 Integration opportunities: {len(opportunities)}")
-        logger.info(f"⚡ Scattered logic areas: {len(scattered_areas)}")
+        logger.info(f" Environment analysis complete in {analysis_time:.2f}s")
+        logger.info(f" Coherence score: {coherence_score:.2f}/10.0")
+        logger.info(f" Integration opportunities: {len(opportunities)}")
+        logger.info(f" Scattered logic areas: {len(scattered_areas)}")
         
         return self.environment_context
     
@@ -214,7 +214,7 @@ class ContextAssembler:
             return context
             
         except Exception as e:
-            logger.warning(f"⚠️ Error analyzing {file_path}: {e}")
+            logger.warning(f" Error analyzing {file_path}: {e}")
             return None
     
     def _analyze_python_file(self, content: str, context: FileContext):
@@ -385,7 +385,7 @@ class ContextAssembler:
         if not self.environment_context:
             self.analyze_environment()
         
-        logger.info(f"🔍 Analyzing creation of '{proposed_file_name}' for purpose: {purpose}")
+        logger.info(f" Analyzing creation of '{proposed_file_name}' for purpose: {purpose}")
         
         recommendations = {
             'should_create': True,
@@ -440,36 +440,36 @@ class ContextAssembler:
         ctx = self.environment_context
         
         report = []
-        report.append("🧠🔍⚡ ENVIRONMENTAL CONTEXT ANALYSIS REPORT")
-        report.append("═" * 80)
+        report.append(" ENVIRONMENTAL CONTEXT ANALYSIS REPORT")
+        report.append("" * 80)
         report.append(f"Analysis Time: {self.analysis_timestamp}")
         report.append(f"Root Path: {ctx.root_path}")
         report.append(f"Total Files Analyzed: {ctx.total_files}")
         report.append(f"Coherence Score: {ctx.coherence_score}/10.0")
         report.append("")
         
-        report.append("📊 ARCHITECTURAL PATTERNS DETECTED:")
+        report.append(" ARCHITECTURAL PATTERNS DETECTED:")
         for pattern in ctx.architectural_patterns:
-            report.append(f"  ✅ {pattern}")
+            report.append(f"   {pattern}")
         if not ctx.architectural_patterns:
-            report.append("  ⚠️ No clear architectural patterns detected")
+            report.append("   No clear architectural patterns detected")
         report.append("")
         
-        report.append("🔗 INTEGRATION OPPORTUNITIES:")
+        report.append(" INTEGRATION OPPORTUNITIES:")
         for opportunity in ctx.integration_opportunities:
-            report.append(f"  💡 {opportunity}")
+            report.append(f"   {opportunity}")
         if not ctx.integration_opportunities:
-            report.append("  ✅ No immediate integration opportunities")
+            report.append("   No immediate integration opportunities")
         report.append("")
         
-        report.append("⚡ SCATTERED LOGIC AREAS:")
+        report.append(" SCATTERED LOGIC AREAS:")
         for area in ctx.scattered_logic_areas:
-            report.append(f"  ⚠️ {area}")
+            report.append(f"   {area}")
         if not ctx.scattered_logic_areas:
-            report.append("  ✅ No scattered logic detected")
+            report.append("   No scattered logic detected")
         report.append("")
         
-        report.append("📄 FILE BREAKDOWN BY TYPE:")
+        report.append(" FILE BREAKDOWN BY TYPE:")
         file_types = {}
         for fc in ctx.file_contexts:
             file_types[fc.file_type] = file_types.get(fc.file_type, 0) + 1
@@ -478,13 +478,13 @@ class ContextAssembler:
             report.append(f"  {file_type}: {count} files")
         report.append("")
         
-        report.append("🎯 COHERENCE RECOMMENDATIONS:")
+        report.append(" COHERENCE RECOMMENDATIONS:")
         if ctx.coherence_score < 5.0:
-            report.append("  ⚠️ Low coherence - consider architectural refactoring")
+            report.append("   Low coherence - consider architectural refactoring")
         elif ctx.coherence_score < 7.0:
-            report.append("  📈 Moderate coherence - some organization improvements needed")
+            report.append("   Moderate coherence - some organization improvements needed")
         else:
-            report.append("  ✅ Good coherence - maintain current architectural standards")
+            report.append("   Good coherence - maintain current architectural standards")
         
         return "\n".join(report)
 
@@ -492,7 +492,7 @@ class ContextAssembler:
 def demo_context_analysis():
     """Demonstrate context assembler capabilities."""
     
-    print("🧠🔍⚡ CONTEXT ASSEMBLER DEMONSTRATION")
+    print(" CONTEXT ASSEMBLER DEMONSTRATION")
     print("=" * 70)
     
     # Initialize context assembler for core directory
@@ -500,22 +500,22 @@ def demo_context_analysis():
     assembler = ContextAssembler(str(core_path))
     
     # Analyze environment
-    print("\n🔍 Analyzing Core Engine environment...")
+    print("\n Analyzing Core Engine environment...")
     environment = assembler.analyze_environment()
     
     # Generate and display report
-    print("\n📋 Generating context analysis report...")
+    print("\n Generating context analysis report...")
     report = assembler.generate_context_report()
     print(report)
     
     # Test creation recommendations
-    print("\n🎯 Testing creation recommendations...")
+    print("\n Testing creation recommendations...")
     recommendations = assembler.get_creation_recommendations(
         "aios_new_feature.py", 
         "Test new feature development"
     )
     
-    print("\n💡 CREATION RECOMMENDATIONS:")
+    print("\n CREATION RECOMMENDATIONS:")
     print(f"  Should Create: {recommendations['should_create']}")
     print(f"  Architecture Impact: {recommendations['architecture_impact']}")
     
@@ -523,10 +523,10 @@ def demo_context_analysis():
         print(f"  Similar Files: {', '.join(recommendations['similar_files'])}")
     
     for suggestion in recommendations['integration_suggestions']:
-        print(f"  💡 {suggestion}")
+        print(f"   {suggestion}")
     
     for warning in recommendations['coherence_warnings']:
-        print(f"  ⚠️ {warning}")
+        print(f"   {warning}")
     
     return assembler
 
@@ -534,7 +534,7 @@ def demo_context_analysis():
 def main():
     """Main function for context assembler demonstration."""
     
-    print("🧠🔍⚡ AIOS CONTEXT ASSEMBLER")
+    print(" AIOS CONTEXT ASSEMBLER")
     print("=" * 80)
     print("Environmental Awareness for Coherent Development")
     print("=" * 80)
@@ -542,9 +542,9 @@ def main():
     # Run demonstration
     assembler = demo_context_analysis()
     
-    print("\n✅ CONTEXT ANALYSIS COMPLETE")
-    print("🧠 Environmental awareness achieved!")
-    print("🔍 Ready for coherent development guidance!")
+    print("\n CONTEXT ANALYSIS COMPLETE")
+    print(" Environmental awareness achieved!")
+    print(" Ready for coherent development guidance!")
     
     return assembler
 

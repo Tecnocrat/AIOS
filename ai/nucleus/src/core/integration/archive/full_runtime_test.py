@@ -46,7 +46,7 @@ class FullRuntimeTestSuite:
     async def run_full_test_suite(self) -> Dict[str, Any]:
         """Execute comprehensive runtime test suite"""
         print("=" * 80)
-        print("🚀 AIOS FULL LOGIC RUNTIME ENVIRONMENT TEST")
+        print(" AIOS FULL LOGIC RUNTIME ENVIRONMENT TEST")
         print("=" * 80)
         print(f"⏰ Test started: {self.start_time}")
         print()
@@ -91,37 +91,37 @@ class FullRuntimeTestSuite:
             return report
 
         except Exception as e:
-            print(f"❌ Critical test failure: {e}")
+            print(f" Critical test failure: {e}")
             traceback.print_exc()
             return {"status": "CRITICAL_FAILURE", "error": str(e)}
 
     async def _test_core_component_initialization(self):
         """Test initialization of all core components"""
-        print("🔧 Phase 1: Core Component Initialization")
+        print(" Phase 1: Core Component Initialization")
         print("-" * 50)
 
         try:
             # Initialize Fractal Holographic AI
             self.components['fractal_ai'] = FractalHolographicAI()
-            print("✅ Fractal Holographic AI initialized")
+            print(" Fractal Holographic AI initialized")
 
             # Initialize Holographic Synchronizer
             self.components['synchronizer'] = HolographicSynchronizer()
-            print("✅ Holographic Synchronizer initialized")
+            print(" Holographic Synchronizer initialized")
 
             # Initialize Context Recovery System
             self.components['context_recovery'] = ContextRecoverySystem()
-            print("✅ Context Recovery System initialized")
+            print(" Context Recovery System initialized")
 
             # Initialize Debug Integration System
             self.components['debug_system'] = DebugIntegrationSystem()
-            print("✅ Debug Integration System initialized")
+            print(" Debug Integration System initialized")
 
             # Test component health
             for name, component in self.components.items():
                 if hasattr(component, 'get_system_status'):
                     status = await component.get_system_status()
-                    print(f"   📊 {name}: {status.get('status', 'unknown')}")
+                    print(f"    {name}: {status.get('status', 'unknown')}")
 
             self.test_results['core_initialization'] = {
                 'status': 'SUCCESS',
@@ -130,7 +130,7 @@ class FullRuntimeTestSuite:
             }
 
         except Exception as e:
-            print(f"❌ Core initialization failed: {e}")
+            print(f" Core initialization failed: {e}")
             self.test_results['core_initialization'] = {
                 'status': 'FAILED',
                 'error': str(e),
@@ -139,7 +139,7 @@ class FullRuntimeTestSuite:
 
     async def _test_ai_logic_capabilities(self):
         """Test AI logic and processing capabilities"""
-        print("\n🧠 Phase 2: AI Logic Capabilities Testing")
+        print("\n Phase 2: AI Logic Capabilities Testing")
         print("-" * 50)
 
         ai_tests = [
@@ -171,17 +171,17 @@ class FullRuntimeTestSuite:
 
         for test in ai_tests:
             try:
-                print(f"   🔍 Testing: {test['name']}")
+                print(f"    Testing: {test['name']}")
                 result = await test['test_func'](test['input'])
                 ai_results[test['name']] = {
                     'status': 'SUCCESS',
                     'result': result,
                     'timestamp': datetime.now()
                 }
-                print(f"   ✅ {test['name']}: PASSED")
+                print(f"    {test['name']}: PASSED")
 
             except Exception as e:
-                print(f"   ❌ {test['name']}: FAILED - {e}")
+                print(f"    {test['name']}: FAILED - {e}")
                 ai_results[test['name']] = {
                     'status': 'FAILED',
                     'error': str(e),
@@ -192,33 +192,33 @@ class FullRuntimeTestSuite:
 
     async def _test_context_persistence_system(self):
         """Test context persistence and recovery"""
-        print("\n💾 Phase 3: Context Persistence System Testing")
+        print("\n Phase 3: Context Persistence System Testing")
         print("-" * 50)
 
         try:
             context_recovery = self.components['context_recovery']
 
             # Test context health monitoring
-            print("   🔍 Testing context health monitoring...")
+            print("    Testing context health monitoring...")
             health_result = await context_recovery.monitor_context_health()
             print(
-            f"   📊 Context health score: {health_result.get('health_score', 0):.3f}")
+            f"    Context health score: {health_result.get('health_score', 0):.3f}")
 
             # Test context snapshot creation
-            print("   🔍 Testing context snapshot creation...")
+            print("    Testing context snapshot creation...")
             snapshot = await context_recovery.create_context_snapshot(
             "runtime_test")
             print(
-            f"   📸 Snapshot created: {snapshot.get('snapshot_id', 'unknown')}")
+            f"    Snapshot created: {snapshot.get('snapshot_id', 'unknown')}")
 
             # Test context recovery
-            print("   🔍 Testing context recovery...")
+            print("    Testing context recovery...")
             recovery_result = await context_recovery.recover_context(
                 snapshot.get('snapshot_id'),
                 recovery_mode='full'
             )
             print(
-            f"   🔄 Recovery status: {recovery_result.get('status', 'unknown')}")
+            f"    Recovery status: {recovery_result.get('status', 'unknown')}")
 
             self.test_results['context_persistence'] = {
                 'status': 'SUCCESS',
@@ -230,7 +230,7 @@ class FullRuntimeTestSuite:
             }
 
         except Exception as e:
-            print(f"   ❌ Context persistence test failed: {e}")
+            print(f"    Context persistence test failed: {e}")
             self.test_results['context_persistence'] = {
                 'status': 'FAILED',
                 'error': str(e),
@@ -239,20 +239,20 @@ class FullRuntimeTestSuite:
 
     async def _test_holographic_synchronization(self):
         """Test holographic synchronization across components"""
-        print("\n🌐 Phase 4: Holographic Synchronization Testing")
+        print("\n Phase 4: Holographic Synchronization Testing")
         print("-" * 50)
 
         try:
             synchronizer = self.components['synchronizer']
 
             # Test synchronization initialization
-            print("   🔍 Testing synchronization initialization...")
+            print("    Testing synchronization initialization...")
             sync_status = await synchronizer.initialize_synchronization()
             print(
-            f"   🔄 Sync initialization: {sync_status.get('status', 'unknown')}")
+            f"    Sync initialization: {sync_status.get('status', 'unknown')}")
 
             # Test cross-component synchronization
-            print("   🔍 Testing cross-component synchronization...")
+            print("    Testing cross-component synchronization...")
             components_to_sync = [
             'cpp_core', 'python_ai', 'csharp_ui', 'vscode_extension']
             sync_results = {}
@@ -260,12 +260,12 @@ class FullRuntimeTestSuite:
             for component in components_to_sync:
                 result = await synchronizer.synchronize_component(component)
                 sync_results[component] = result.get('status', 'unknown')
-                print(f"   📡 {component}: {result.get('status', 'unknown')}")
+                print(f"    {component}: {result.get('status', 'unknown')}")
 
             # Test holographic coherence
-            print("   🔍 Testing holographic coherence calculation...")
+            print("    Testing holographic coherence calculation...")
             coherence = await synchronizer.calculate_holographic_coherence()
-            print(f"   🎯 Holographic coherence: {coherence:.3f}")
+            print(f"    Holographic coherence: {coherence:.3f}")
 
             self.test_results['holographic_sync'] = {
                 'status': 'SUCCESS',
@@ -276,7 +276,7 @@ class FullRuntimeTestSuite:
             }
 
         except Exception as e:
-            print(f"   ❌ Holographic synchronization test failed: {e}")
+            print(f"    Holographic synchronization test failed: {e}")
             self.test_results['holographic_sync'] = {
                 'status': 'FAILED',
                 'error': str(e),
@@ -285,35 +285,35 @@ class FullRuntimeTestSuite:
 
     async def _test_debug_integration(self):
         """Test debug integration system"""
-        print("\n🐛 Phase 5: Debug Integration Testing")
+        print("\n Phase 5: Debug Integration Testing")
         print("-" * 50)
 
         try:
             debug_system = self.components['debug_system']
 
             # Test debug session creation
-            print("   🔍 Testing debug session creation...")
+            print("    Testing debug session creation...")
             session = await debug_system.start_debug_session(
                 "runtime_test_debug",
                 "Testing debug integration during runtime test"
             )
             print(
-            f"   🎯 Debug session: {session.get('session_id', 'unknown')}")
+            f"    Debug session: {session.get('session_id', 'unknown')}")
 
             # Test context snapshot during debug
-            print("   🔍 Testing debug context snapshot...")
+            print("    Testing debug context snapshot...")
             debug_snapshot = session.get('debug_snapshot', {})
             print(
-            f"   📸 Debug snapshot: {debug_snapshot.get('snapshot_id', 'unknown')}")
+            f"    Debug snapshot: {debug_snapshot.get('snapshot_id', 'unknown')}")
 
             # Test debug session completion
-            print("   🔍 Testing debug session completion...")
+            print("    Testing debug session completion...")
             completion_result = await debug_system.complete_debug_session(
                 session.get('session_id'),
                 debug_findings=["Runtime test completed successfully"]
             )
             print(
-            f"   ✅ Debug completion: {completion_result.get('status', 'unknown')}")
+            f"    Debug completion: {completion_result.get('status', 'unknown')}")
 
             self.test_results['debug_integration'] = {
                 'status': 'SUCCESS',
@@ -325,7 +325,7 @@ class FullRuntimeTestSuite:
             }
 
         except Exception as e:
-            print(f"   ❌ Debug integration test failed: {e}")
+            print(f"    Debug integration test failed: {e}")
             self.test_results['debug_integration'] = {
                 'status': 'FAILED',
                 'error': str(e),
@@ -334,7 +334,7 @@ class FullRuntimeTestSuite:
 
     async def _test_visual_ui_capabilities(self):
         """Test visual UI capabilities"""
-        print("\n🖥️ Phase 6: Visual UI Capabilities Testing")
+        print("\n Phase 6: Visual UI Capabilities Testing")
         print("-" * 50)
 
         ui_tests = {
@@ -345,17 +345,17 @@ class FullRuntimeTestSuite:
             'vscode_bridge': await self._test_ui_vscode_bridge()
         }
 
-        print("   📊 Visual UI Test Results:")
+        print("    Visual UI Test Results:")
         for test_name, result in ui_tests.items():
-            status = "✅ PASSED" if result.get(
-            'status') == 'SUCCESS' else "❌ FAILED"
+            status = " PASSED" if result.get(
+            'status') == 'SUCCESS' else " FAILED"
             print(f"      {test_name}: {status}")
 
         self.ui_test_results = ui_tests
 
     async def _test_terminal_interface(self):
         """Test terminal interface capabilities"""
-        print("\n💻 Phase 7: Terminal Interface Testing")
+        print("\n Phase 7: Terminal Interface Testing")
         print("-" * 50)
 
         terminal_tests = {
@@ -365,17 +365,17 @@ class FullRuntimeTestSuite:
             'error_handling': await self._test_terminal_errors()
         }
 
-        print("   📊 Terminal Interface Test Results:")
+        print("    Terminal Interface Test Results:")
         for test_name, result in terminal_tests.items():
-            status = "✅ PASSED" if result.get(
-            'status') == 'SUCCESS' else "❌ FAILED"
+            status = " PASSED" if result.get(
+            'status') == 'SUCCESS' else " FAILED"
             print(f"      {test_name}: {status}")
 
         self.terminal_test_results = terminal_tests
 
     async def _test_web_ui_interface(self):
         """Test web UI interface capabilities"""
-        print("\n🌐 Phase 8: Web UI Interface Testing")
+        print("\n Phase 8: Web UI Interface Testing")
         print("-" * 50)
 
         web_tests = {
@@ -385,34 +385,34 @@ class FullRuntimeTestSuite:
             'responsive_design': await self._test_web_responsive()
         }
 
-        print("   📊 Web UI Test Results:")
+        print("    Web UI Test Results:")
         for test_name, result in web_tests.items():
-            status = "✅ PASSED" if result.get(
-            'status') == 'SUCCESS' else "❌ FAILED"
+            status = " PASSED" if result.get(
+            'status') == 'SUCCESS' else " FAILED"
             print(f"      {test_name}: {status}")
 
         self.web_test_results = web_tests
 
     async def _test_cross_component_integration(self):
         """Test integration between all components"""
-        print("\n🔗 Phase 9: Cross-Component Integration Testing")
+        print("\n Phase 9: Cross-Component Integration Testing")
         print("-" * 50)
 
         try:
             # Test C++ Core <-> Python AI integration
-            print("   🔍 Testing C++ Core <-> Python AI integration...")
+            print("    Testing C++ Core <-> Python AI integration...")
             cpp_python_result = await self._test_cpp_python_integration()
 
             # Test Python AI <-> C# UI integration
-            print("   🔍 Testing Python AI <-> C# UI integration...")
+            print("    Testing Python AI <-> C# UI integration...")
             python_csharp_result = await self._test_python_csharp_integration()
 
             # Test C# UI <-> VSCode Extension integration
-            print("   🔍 Testing C# UI <-> VSCode Extension integration...")
+            print("    Testing C# UI <-> VSCode Extension integration...")
             csharp_vscode_result = await self._test_csharp_vscode_integration()
 
             # Test AINLP Compiler integration
-            print("   🔍 Testing AINLP Compiler integration...")
+            print("    Testing AINLP Compiler integration...")
             ainlp_result = await self._test_ainlp_integration()
 
             self.test_results['cross_component'] = {
@@ -425,7 +425,7 @@ class FullRuntimeTestSuite:
             }
 
         except Exception as e:
-            print(f"   ❌ Cross-component integration test failed: {e}")
+            print(f"    Cross-component integration test failed: {e}")
             self.test_results['cross_component'] = {
                 'status': 'FAILED',
                 'error': str(e),
@@ -434,24 +434,24 @@ class FullRuntimeTestSuite:
 
     async def _test_performance_stress(self):
         """Test system performance under stress"""
-        print("\n⚡ Phase 10: Performance and Stress Testing")
+        print("\n Phase 10: Performance and Stress Testing")
         print("-" * 50)
 
         try:
             # Test concurrent request handling
-            print("   🔍 Testing concurrent request handling...")
+            print("    Testing concurrent request handling...")
             concurrent_result = await self._test_concurrent_requests()
 
             # Test memory usage under load
-            print("   🔍 Testing memory usage under load...")
+            print("    Testing memory usage under load...")
             memory_result = await self._test_memory_performance()
 
             # Test response time performance
-            print("   🔍 Testing response time performance...")
+            print("    Testing response time performance...")
             response_time_result = await self._test_response_times()
 
             # Test fractal coherence under stress
-            print("   🔍 Testing fractal coherence under stress...")
+            print("    Testing fractal coherence under stress...")
             coherence_stress_result = await self._test_coherence_stress()
 
             self.test_results['performance'] = {
@@ -464,7 +464,7 @@ class FullRuntimeTestSuite:
             }
 
         except Exception as e:
-            print(f"   ❌ Performance test failed: {e}")
+            print(f"    Performance test failed: {e}")
             self.test_results['performance'] = {
                 'status': 'FAILED',
                 'error': str(e),
@@ -473,7 +473,7 @@ class FullRuntimeTestSuite:
 
     async def _test_fractal_coherence(self):
         """Test fractal coherence maintenance"""
-        print("\n🌀 Phase 11: Fractal Coherence Testing")
+        print("\n Phase 11: Fractal Coherence Testing")
         print("-" * 50)
 
         try:
@@ -482,24 +482,24 @@ class FullRuntimeTestSuite:
             # Test initial coherence
             initial_coherence = await synchronizer.calculate_holographic_cohere\
             nce()
-            print(f"   📊 Initial coherence: {initial_coherence:.3f}")
+            print(f"    Initial coherence: {initial_coherence:.3f}")
 
             # Simulate system stress
-            print("   🔍 Simulating system stress...")
+            print("    Simulating system stress...")
             for i in range(10):
                 await self._simulate_system_activity()
 
             # Test coherence after stress
             post_stress_coherence = await synchronizer.calculate_holographic_co\
             herence()
-            print(f"   📊 Post-stress coherence: {post_stress_coherence:.3f}")
+            print(f"    Post-stress coherence: {post_stress_coherence:.3f}")
 
             # Test coherence recovery
-            print("   🔍 Testing coherence recovery...")
+            print("    Testing coherence recovery...")
             await synchronizer.restore_holographic_coherence()
             final_coherence = await synchronizer.calculate_holographic_coherenc\
             e()
-            print(f"   📊 Final coherence: {final_coherence:.3f}")
+            print(f"    Final coherence: {final_coherence:.3f}")
 
             self.test_results['fractal_coherence'] = {
                 'status': 'SUCCESS',
@@ -511,7 +511,7 @@ class FullRuntimeTestSuite:
             }
 
         except Exception as e:
-            print(f"   ❌ Fractal coherence test failed: {e}")
+            print(f"    Fractal coherence test failed: {e}")
             self.test_results['fractal_coherence'] = {
                 'status': 'FAILED',
                 'error': str(e),
@@ -524,7 +524,7 @@ class FullRuntimeTestSuite:
         total_duration = end_time - self.start_time
 
         print("\n" + "=" * 80)
-        print("📊 COMPREHENSIVE RUNTIME TEST REPORT")
+        print(" COMPREHENSIVE RUNTIME TEST REPORT")
         print("=" * 80)
 
         # Calculate overall success rate
@@ -537,17 +537,17 @@ class FullRuntimeTestSuite:
 
         print(f"⏰ Test Duration: {total_duration}")
         print(
-        f"📊 Overall Success Rate: {success_rate:.1f}% ({successful_tests}/{total_tests})")
+        f" Overall Success Rate: {success_rate:.1f}% ({successful_tests}/{total_tests})")
         print()
 
         # Detailed results
-        print("📋 Detailed Test Results:")
+        print(" Detailed Test Results:")
         print("-" * 50)
 
         for test_name, result in self.test_results.items():
             if isinstance(result, dict):
                 status = result.get('status', 'UNKNOWN')
-                status_icon = "✅" if status == 'SUCCESS' else "❌"
+                status_icon = "" if status == 'SUCCESS' else ""
                 print(f"{status_icon} {test_name}: {status}")
 
                 if status == 'FAILED' and 'error' in result:
@@ -560,26 +560,26 @@ class FullRuntimeTestSuite:
             ui_success = sum(1 for r in self.ui_test_results.values()
                            if r.get('status') == 'SUCCESS')
             ui_total = len(self.ui_test_results)
-            print(f"🖥️  Visual UI Tests: {ui_success}/{ui_total} passed")
+            print(f"  Visual UI Tests: {ui_success}/{ui_total} passed")
 
         # Terminal Test Summary
         if self.terminal_test_results:
             term_success = sum(1 for r in self.terminal_test_results.values()
                              if r.get('status') == 'SUCCESS')
             term_total = len(self.terminal_test_results)
-            print(f"💻 Terminal Tests: {term_success}/{term_total} passed")
+            print(f" Terminal Tests: {term_success}/{term_total} passed")
 
         # Web UI Test Summary
         if self.web_test_results:
             web_success = sum(1 for r in self.web_test_results.values()
                             if r.get('status') == 'SUCCESS')
             web_total = len(self.web_test_results)
-            print(f"🌐 Web UI Tests: {web_success}/{web_total} passed")
+            print(f" Web UI Tests: {web_success}/{web_total} passed")
 
         print()
 
         # System Health Summary
-        print("🏥 System Health Summary:")
+        print(" System Health Summary:")
         print("-" * 30)
 
         if 'context_persistence' in self.test_results:
@@ -589,7 +589,7 @@ class FullRuntimeTestSuite:
                 health_status = "Excellent" if health_scor
                 e > 0.8 else "Good" if health_score > 0.6 else "Poor"
                 print(
-                f"💚 Context Health: {health_status} ({health_score:.3f})")
+                f" Context Health: {health_status} ({health_score:.3f})")
 
         if 'holographic_sync' in self.test_results:
             sync_result = self.test_results['holographic_sync']
@@ -599,18 +599,18 @@ class FullRuntimeTestSuite:
                 coherence_status = "Excellent" if coherence >
                  0.8 else "Good" if coherence > 0.6 else "Poor"
                 print(
-                f"🌟 Holographic Coherence: {coherence_status} ({coherence:.3f})")
+                f" Holographic Coherence: {coherence_status} ({coherence:.3f})")
 
         # Recommendations
-        print("\n💡 Recommendations:")
+        print("\n Recommendations:")
         print("-" * 20)
 
         if success_rate < 80:
-            print("⚠️  System requires attention - success rate below 80%")
+            print("  System requires attention - success rate below 80%")
         elif success_rate < 95:
-            print("📈 System performance is good but could be optimized")
+            print(" System performance is good but could be optimized")
         else:
-            print("🎉 System performing excellently!")
+            print(" System performing excellently!")
 
         # Generate final report structure
         comprehensive_report = {
@@ -813,22 +813,22 @@ async def main():
         with open(report_file, 'w') as f:
             json.dump(report, f, indent=2, default=str)
 
-        print(f"\n💾 Full report saved to: {report_file}")
+        print(f"\n Full report saved to: {report_file}")
 
         # Print final status
         system_status = report.get('system_status', 'UNKNOWN')
         success_rate = report.get('test_summary', {}).get('success_rate', 0)
 
         print("\n" + "=" * 80)
-        print(f"🏁 RUNTIME TEST COMPLETE")
-        print(f"📊 System Status: {system_status}")
-        print(f"📈 Success Rate: {success_rate:.1f}%")
+        print(f" RUNTIME TEST COMPLETE")
+        print(f" System Status: {system_status}")
+        print(f" Success Rate: {success_rate:.1f}%")
         print("=" * 80)
 
         return report
 
     except Exception as e:
-        print(f"\n❌ CRITICAL TEST FAILURE: {e}")
+        print(f"\n CRITICAL TEST FAILURE: {e}")
         traceback.print_exc()
         return None
 
