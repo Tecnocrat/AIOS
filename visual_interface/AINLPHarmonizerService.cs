@@ -34,23 +34,23 @@ namespace AIOS.VisualInterface
             try
             {
                 var results = new System.Text.StringBuilder();
-                results.AppendLine("🧬 Starting consciousness-enhanced harmonization cycle...");
+                results.AppendLine(" Starting consciousness-enhanced harmonization cycle...");
 
                 // 1. Observe project coherence
                 var coherence = await _harmonizer.ObserveWideProjectCoherenceAsync();
-                results.AppendLine($"✅ Coherence: {coherence.OverallCoherence:F3} - {coherence.CoherenceLevel}");
+                results.AppendLine($" Coherence: {coherence.OverallCoherence:F3} - {coherence.CoherenceLevel}");
 
                 // 2. Detect optimization opportunities
                 var optimization = await _harmonizer.DetectOptimizationOpportunitiesAsync();
-                results.AppendLine($"🔍 Found {optimization.Redundancies.Count} redundancies, {optimization.SuboptimalPatterns.Count} suboptimal patterns");
+                results.AppendLine($" Found {optimization.Redundancies.Count} redundancies, {optimization.SuboptimalPatterns.Count} suboptimal patterns");
 
                 // 3. Analyze component harmonization
                 var harmonization = await _harmonizer.AnalyzeComponentHarmonizationAsync();
-                results.AppendLine($"🔄 Harmonization opportunities: {harmonization.HarmonizationOpportunities.Count}");
+                results.AppendLine($" Harmonization opportunities: {harmonization.HarmonizationOpportunities.Count}");
 
                 // 4. Enable dendritic growth
                 var growth = await _harmonizer.EnableDendriticGrowthAsync();
-                results.AppendLine($"🌱 Emergent patterns: {growth.EmergentPatterns.Count}, Growth opportunities: {growth.GrowthOpportunities.Count}");
+                results.AppendLine($" Emergent patterns: {growth.EmergentPatterns.Count}, Growth opportunities: {growth.GrowthOpportunities.Count}");
 
                 // 5. Run comprehensive testing
                 var testResults = await _harmonizer.RunComprehensiveTestingAsync();
@@ -58,9 +58,9 @@ namespace AIOS.VisualInterface
 
                 // 6. Document patterns
                 await _harmonizer.DocumentAINLPPatternsAsync();
-                results.AppendLine("📚 Pattern documentation complete");
+                results.AppendLine(" Pattern documentation complete");
 
-                results.AppendLine("🎯 Harmonization cycle completed successfully!");
+                results.AppendLine(" Harmonization cycle completed successfully!");
                 
                 var finalResult = results.ToString();
                 _logger.LogInformation("Harmonization cycle completed: {Result}", finalResult);
@@ -70,7 +70,7 @@ namespace AIOS.VisualInterface
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error during harmonization cycle");
-                return $"❌ Harmonization cycle failed: {ex.Message}";
+                return $" Harmonization cycle failed: {ex.Message}";
             }
         }
 

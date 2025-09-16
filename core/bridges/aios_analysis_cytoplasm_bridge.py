@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🔬 AIOS ANALYSIS-CYTOPLASM BRIDGE 🧪🌊
+ AIOS ANALYSIS-CYTOPLASM BRIDGE 🧪
 ====================================
 
 Enhanced dendritic bridge between Core Engine analysis tools and AI Intelligence cytoplasm environment.
@@ -469,31 +469,31 @@ class AnalysisCytoplasmBridge:
             "intelligence_enhancements": 0
         }
         
-        logger.info(f"🔬🌊 Analysis-Cytoplasm Bridge {self.bridge_id} initialized")
+        logger.info(f" Analysis-Cytoplasm Bridge {self.bridge_id} initialized")
     
     async def initialize_bridge(self):
         """Initialize the analysis-cytoplasm bridge"""
-        logger.info("🔧 Initializing analysis-cytoplasm bridge...")
+        logger.info(" Initializing analysis-cytoplasm bridge...")
         
         # Test analysis interface
-        logger.info("🔬 Testing core analysis interface...")
+        logger.info(" Testing core analysis interface...")
         test_pattern = await self.core_analysis.perform_comprehensive_analysis()
         
         if test_pattern:
             self.metrics.analysis_accuracy = test_pattern.confidence_level
             self.metrics.pattern_recognition_score = test_pattern.complexity_score
-            logger.info("✅ Core analysis interface operational")
+            logger.info(" Core analysis interface operational")
             logger.info(f"   Analysis accuracy: {self.metrics.analysis_accuracy:.3f}")
             logger.info(f"   Pattern recognition: {self.metrics.pattern_recognition_score:.3f}")
         
         # Test cytoplasm interface
-        logger.info("🌊 Testing AI cytoplasm interface...")
+        logger.info(" Testing AI cytoplasm interface...")
         environment_count = len(self.ai_cytoplasm.cytoplasm_environments)
         
         if environment_count > 0:
             avg_homeostasis = sum(env.homeostasis_score for env in self.ai_cytoplasm.cytoplasm_environments.values()) / environment_count
             self.metrics.environment_stability = avg_homeostasis
-            logger.info("✅ AI cytoplasm interface operational")
+            logger.info(" AI cytoplasm interface operational")
             logger.info(f"   Cytoplasm environments: {environment_count}")
             logger.info(f"   Average stability: {avg_homeostasis:.3f}")
         
@@ -501,13 +501,13 @@ class AnalysisCytoplasmBridge:
         self.metrics.cellular_coordination = random.uniform(0.85, 0.95)
         self.metrics.intelligence_enhancement = random.uniform(0.78, 0.89)
         
-        logger.info("✅ Analysis-cytoplasm bridge initialized successfully")
+        logger.info(" Analysis-cytoplasm bridge initialized successfully")
         logger.info(f"   Cellular coordination: {self.metrics.cellular_coordination:.3f}")
         logger.info(f"   Intelligence enhancement: {self.metrics.intelligence_enhancement:.3f}")
     
     async def perform_intelligent_environment_management(self, cycles: int = 5) -> List[Dict[str, Any]]:
         """Perform intelligent environment management cycles"""
-        logger.info(f"🔄 Starting {cycles} intelligent environment management cycles...")
+        logger.info(f" Starting {cycles} intelligent environment management cycles...")
         
         management_results = []
         total_response_time = 0
@@ -516,7 +516,7 @@ class AnalysisCytoplasmBridge:
             cycle_start_time = time.perf_counter()
             
             try:
-                logger.info(f"🔬 Cycle {cycle + 1}: Performing analysis...")
+                logger.info(f" Cycle {cycle + 1}: Performing analysis...")
                 
                 # Perform comprehensive analysis
                 analysis_pattern = await self.core_analysis.perform_comprehensive_analysis()
@@ -526,7 +526,7 @@ class AnalysisCytoplasmBridge:
                 target_env_id = random.choice(target_environments)
                 target_environment = self.ai_cytoplasm.cytoplasm_environments[target_env_id]
                 
-                logger.info(f"🌊 Cycle {cycle + 1}: Optimizing environment {target_env_id}...")
+                logger.info(f" Cycle {cycle + 1}: Optimizing environment {target_env_id}...")
                 
                 # Generate environmental optimization
                 optimization = self.core_analysis.pattern_processor.generate_environmental_optimization(
@@ -553,10 +553,10 @@ class AnalysisCytoplasmBridge:
                     if final_state.get("intelligence_saturation", 0) > 0.8:
                         self.coordination_stats["intelligence_enhancements"] += 1
                     
-                    status = "✅ SUCCESS"
+                    status = " SUCCESS"
                 else:
                     self.coordination_stats["failed_optimizations"] += 1
-                    status = "❌ FAILED"
+                    status = " FAILED"
                 
                 cycle_result = {
                     "cycle": cycle + 1,
@@ -585,13 +585,13 @@ class AnalysisCytoplasmBridge:
                 await asyncio.sleep(0.1)
                 
             except Exception as e:
-                logger.error(f"❌ Error in cycle {cycle + 1}: {e}")
+                logger.error(f" Error in cycle {cycle + 1}: {e}")
                 self.coordination_stats["failed_optimizations"] += 1
                 
                 management_results.append({
                     "cycle": cycle + 1,
                     "error": str(e),
-                    "status": "❌ ERROR"
+                    "status": " ERROR"
                 })
         
         # Update bridge metrics
@@ -604,7 +604,7 @@ class AnalysisCytoplasmBridge:
             self.metrics.optimization_effectiveness = success_rate
         
         success_rate = self.metrics.optimization_effectiveness * 100
-        logger.info(f"📊 Environment management completed: {success_rate:.1f}% success rate")
+        logger.info(f" Environment management completed: {success_rate:.1f}% success rate")
         
         return management_results
     
@@ -640,13 +640,13 @@ class AnalysisCytoplasmBridge:
         with open(report_path, 'w') as f:
             json.dump(report_data, f, indent=2)
         
-        logger.info(f"📊 Bridge report generated: {report_path}")
+        logger.info(f" Bridge report generated: {report_path}")
         return report_path
 
 
 async def run_analysis_cytoplasm_bridge_demo():
     """Run the analysis-cytoplasm bridge demonstration"""
-    print("\n🔬🌊 AIOS ANALYSIS-CYTOPLASM BRIDGE")
+    print("\n AIOS ANALYSIS-CYTOPLASM BRIDGE")
     print("=" * 50)
     
     # Initialize paths
@@ -659,16 +659,16 @@ async def run_analysis_cytoplasm_bridge_demo():
     # Initialize bridge
     bridge = AnalysisCytoplasmBridge(core_path, ai_path)
     
-    print("\n🔧 Initializing analysis-cytoplasm bridge...")
+    print("\n Initializing analysis-cytoplasm bridge...")
     await bridge.initialize_bridge()
     
-    print("\n🚀 Running intelligent environment management demonstration...")
+    print("\n Running intelligent environment management demonstration...")
     management_results = await bridge.perform_intelligent_environment_management(cycles=6)
     
-    print("\n📊 Generating bridge performance report...")
+    print("\n Generating bridge performance report...")
     report_path = bridge.generate_bridge_report()
     
-    print("\n📈 Bridge Performance Summary:")
+    print("\n Bridge Performance Summary:")
     print(f"   Analysis Accuracy: {bridge.metrics.analysis_accuracy:.3f}")
     print(f"   Environment Stability: {bridge.metrics.environment_stability:.3f}")
     print(f"   Pattern Recognition: {bridge.metrics.pattern_recognition_score:.3f}")

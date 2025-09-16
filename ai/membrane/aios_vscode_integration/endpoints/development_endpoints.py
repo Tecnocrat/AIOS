@@ -251,7 +251,7 @@ async def code_refactor(request: dict):  # type: ignore
             suggestions.insert(
                 0, f"Applied {len(applied_transformations)} transformations:"
             )
-            suggestions.extend([f"✓ {t}" for t in applied_transformations])
+            suggestions.extend([f" {t}" for t in applied_transformations])
         else:
             suggestions.insert(
                 0,

@@ -1,74 +1,74 @@
 # AIOS Safety Protocol → Implementation Mapping
 
-Status legend: ✅ Implemented | ⚠️ Partial | ❌ Missing | 🧪 Planned/Proposed
+Status legend:  Implemented |  Partial |  Missing | 🧪 Planned/Proposed
 
 ## 1. Human-in-the-Loop Requirements
 | Requirement | Implementation Reference | Status | Notes |
 |-------------|--------------------------|--------|-------|
-| Explicit human authorization before experiments | `safety_governor.request_authorization`, `EvolutionLabManager.run_evolution_experiment` safety check | ✅ | Interactive prompt currently dev-mode auto-approves based on user input; could require signed token later |
-| Max autonomous duration 30 min | `SafetySession.max_duration_minutes` default 30, timeout enforced in `_monitor_resources` | ✅ | Configurable at session start |
-| Human check-in every 10 min | `SafetySession.check_in_interval_minutes` + `needs_check_in` warning | ✅ | Only logs warning; future: escalate if ignored |
-| Emergency stop always accessible | `emergency_shutdown` function + signal handlers (SIGINT/SIGTERM) | ✅ | Provide external CLI binding later |
+| Explicit human authorization before experiments | `safety_governor.request_authorization`, `EvolutionLabManager.run_evolution_experiment` safety check |  | Interactive prompt currently dev-mode auto-approves based on user input; could require signed token later |
+| Max autonomous duration 30 min | `SafetySession.max_duration_minutes` default 30, timeout enforced in `_monitor_resources` |  | Configurable at session start |
+| Human check-in every 10 min | `SafetySession.check_in_interval_minutes` + `needs_check_in` warning |  | Only logs warning; future: escalate if ignored |
+| Emergency stop always accessible | `emergency_shutdown` function + signal handlers (SIGINT/SIGTERM) |  | Provide external CLI binding later |
 
 ## 2. Resource Limitations
 | Requirement | Implementation Reference | Status | Notes |
-| Max population size 50 | Cap enforced in `EvolutionaryCodeMutator.create_population` + pre-exp verification | ✅ | Hard cap adjustment applied silently |
-| Max generations 20 | Cap enforced in `evolve_population` & `EvolutionLabManager.run_evolution_experiment` + verification | ✅ | Silent clamp; could raise informative warning |
-| CPU 25% cap | `_monitor_resources` comparing `cpu_percent` to `ResourceLimits.max_cpu_percent` | ✅ | Uses 1s interval; consider rolling average |
-| Memory 2GB cap | `_monitor_resources` memory calc vs `max_memory_gb` | ✅ | OK |
-| Disk 1GB cap (artifacts) | `_monitor_resources` uses whole-drive usage currently | ⚠️ | Needs scoping to evolution_lab directory usage only |
-| Network connections limit | `_monitor_resources` counts `psutil.net_connections()` vs `max_network_connections` | ⚠️ | Does not distinguish experiment vs system-wide connections |
-| Process count limit | `_monitor_resources` child process counting | ✅ | Basic containment |
-| File handle limit | `_monitor_resources` handle/fd counting | ✅ | Platform variability handled gracefully |
+| Max population size 50 | Cap enforced in `EvolutionaryCodeMutator.create_population` + pre-exp verification |  | Hard cap adjustment applied silently |
+| Max generations 20 | Cap enforced in `evolve_population` & `EvolutionLabManager.run_evolution_experiment` + verification |  | Silent clamp; could raise informative warning |
+| CPU 25% cap | `_monitor_resources` comparing `cpu_percent` to `ResourceLimits.max_cpu_percent` |  | Uses 1s interval; consider rolling average |
+| Memory 2GB cap | `_monitor_resources` memory calc vs `max_memory_gb` |  | OK |
+| Disk 1GB cap (artifacts) | `_monitor_resources` uses whole-drive usage currently |  | Needs scoping to evolution_lab directory usage only |
+| Network connections limit | `_monitor_resources` counts `psutil.net_connections()` vs `max_network_connections` |  | Does not distinguish experiment vs system-wide connections |
+| Process count limit | `_monitor_resources` child process counting |  | Basic containment |
+| File handle limit | `_monitor_resources` handle/fd counting |  | Platform variability handled gracefully |
 
 ## 3. Network Isolation
 | Requirement | Implementation Reference | Status | Notes |
-| Sandbox-only execution | `EvolutionLabManager.create_experiment_environment` creates isolated dirs | ⚠️ | Not a true sandbox / virtualenv; needs process / interpreter isolation |
-| No internet without permission | Not explicitly enforced | ❌ | Add outbound socket patch / policy layer |
-| External AI calls manual approval | Not gated through safety governor | ❌ | Wrap Gemini bridge calls with authorization check |
-| Network traffic logged | Not implemented | ❌ | Introduce network monitor / hook |
+| Sandbox-only execution | `EvolutionLabManager.create_experiment_environment` creates isolated dirs |  | Not a true sandbox / virtualenv; needs process / interpreter isolation |
+| No internet without permission | Not explicitly enforced |  | Add outbound socket patch / policy layer |
+| External AI calls manual approval | Not gated through safety governor |  | Wrap Gemini bridge calls with authorization check |
+| Network traffic logged | Not implemented |  | Introduce network monitor / hook |
 
 ## 4. Code Modification Restrictions
 | Requirement | Implementation Reference | Status | Notes |
-| Self-mod confined to experiment dirs | Populations & mutations write under `evolution_lab` | ⚠️ | No guard to prevent writing outside path |
-| Core modules read-only | No enforcement layer | ❌ | Add path guard & deny list |
-| All mutations diff logged | Mutation history stored, but no file diffs persisted | ⚠️ | Capture original vs mutated source diff into log / JSON |
-| Rollback mechanism | Not implemented | ❌ | Need snapshot + restore utility per organism/population |
+| Self-mod confined to experiment dirs | Populations & mutations write under `evolution_lab` |  | No guard to prevent writing outside path |
+| Core modules read-only | No enforcement layer |  | Add path guard & deny list |
+| All mutations diff logged | Mutation history stored, but no file diffs persisted |  | Capture original vs mutated source diff into log / JSON |
+| Rollback mechanism | Not implemented |  | Need snapshot + restore utility per organism/population |
 
 ## 5. Termination Conditions
 | Requirement | Implementation Reference | Status | Notes |
-| Auto shutdown on limit breach | `_monitor_resources` triggers `emergency_shutdown` | ✅ | OK |
-| Emergency on anomalous behavior | Placeholder only (no detection heuristics) | ❌ | Define anomaly heuristics (e.g., rapid fitness spikes) |
-| Session timeout | `_monitor_resources` checks `is_expired` | ✅ | OK |
-| Human override anytime | `emergency_shutdown` callable globally | ✅ | OK |
+| Auto shutdown on limit breach | `_monitor_resources` triggers `emergency_shutdown` |  | OK |
+| Emergency on anomalous behavior | Placeholder only (no detection heuristics) |  | Define anomaly heuristics (e.g., rapid fitness spikes) |
+| Session timeout | `_monitor_resources` checks `is_expired` |  | OK |
+| Human override anytime | `emergency_shutdown` callable globally |  | OK |
 
 ## 6. Safety Checklist Automation
 | Requirement | Implementation Reference | Status | Notes |
-| Pre-op checklist | `SafetyGovernor.verify_pre_experiment` | ✅ | Extend to containment & rollback presence |
-| Monitoring active verification | Included in checklist | ✅ | OK |
-| Network isolation confirmed | Placeholder (connection count) | ⚠️ | Refine with enforced policy |
-| Rollback ready | Not verified | ❌ | Tie to rollback module readiness flag |
+| Pre-op checklist | `SafetyGovernor.verify_pre_experiment` |  | Extend to containment & rollback presence |
+| Monitoring active verification | Included in checklist |  | OK |
+| Network isolation confirmed | Placeholder (connection count) |  | Refine with enforced policy |
+| Rollback ready | Not verified |  | Tie to rollback module readiness flag |
 
 ## 7. Logging & Audit
 | Requirement | Implementation Reference | Status | Notes |
-| Comprehensive safety logging | `setup_safety_logging` + event logs | ✅ | Multi-destination |
-| Authorization events | Logged in `request_authorization` | ✅ | OK |
-| Resource usage periodic logs | `_monitor_resources` 30s summary | ✅ | Could add JSON metrics output |
-| Emergency specifics | `emergency_shutdown` full context | ✅ | OK |
-| Mutation provenance | Mutation history in organisms | ⚠️ | Needs file-level diff serialization |
+| Comprehensive safety logging | `setup_safety_logging` + event logs |  | Multi-destination |
+| Authorization events | Logged in `request_authorization` |  | OK |
+| Resource usage periodic logs | `_monitor_resources` 30s summary |  | Could add JSON metrics output |
+| Emergency specifics | `emergency_shutdown` full context |  | OK |
+| Mutation provenance | Mutation history in organisms |  | Needs file-level diff serialization |
 
 ## 8. Containment & Recovery
 | Requirement | Implementation Reference | Status | Notes |
-| Sandboxed execution | Directory isolation only | ⚠️ | Add subprocess invocation in temporary virtualenv or container |
-| Rollback / recovery | Missing | ❌ | Plan snapshot + restore API |
-| Backup of changes | Not automatic | ❌ | Archive each organism's source before mutate |
+| Sandboxed execution | Directory isolation only |  | Add subprocess invocation in temporary virtualenv or container |
+| Rollback / recovery | Missing |  | Plan snapshot + restore API |
+| Backup of changes | Not automatic |  | Archive each organism's source before mutate |
 
 ## 9. Ethical / Governance Hooks
 | Requirement | Implementation Reference | Status | Notes |
-| Transparency | Logging present | ✅ | Improve structured event taxonomy |
-| Accountability | Human authorization + session data | ✅ | Could sign authorizations |
-| Reversibility | Not fully realized (rollback missing) | ❌ | Depends on rollback implementation |
-| Purpose alignment | No automated goal guard | ❌ | Introduce goal compliance evaluator |
+| Transparency | Logging present |  | Improve structured event taxonomy |
+| Accountability | Human authorization + session data |  | Could sign authorizations |
+| Reversibility | Not fully realized (rollback missing) |  | Depends on rollback implementation |
+| Purpose alignment | No automated goal guard |  | Introduce goal compliance evaluator |
 
 ## Gap Summary
 - High Priority Gaps: True network isolation, rollback system, diff logging, core module write-protection, anomaly detection.

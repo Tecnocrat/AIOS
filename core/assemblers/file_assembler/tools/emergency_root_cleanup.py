@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 🧹 CORE ENGINE ROOT CLEANUP - EMERGENCY TACHYONIC RESTORATION
-═══════════════════════════════════════════════════════════════════════════════
+
 AINLP META-COMMENTARY: This emergency cleanup tool restores the Core Engine
 root to its pristine architectural state by moving all misplaced files to
 proper tachyonic storage categories. The Core Engine root should ONLY contain
@@ -12,7 +12,7 @@ CELLULAR PRINCIPLE: The Super Cell root is the sacred nucleus that must remain
 clean and focused. All metadata, reports, and temporary files belong in the
 tachyonic archive system for proper cellular organization.
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -323,8 +323,8 @@ def main():
     """Execute emergency Core Engine root cleanup."""
     print("🧹 EMERGENCY CORE ENGINE ROOT CLEANUP")
     print("=" * 70)
-    print("🚨 Restoring sacred cellular architecture...")
-    print("🌌 Moving violations to tachyonic storage...")
+    print(" Restoring sacred cellular architecture...")
+    print(" Moving violations to tachyonic storage...")
     print()
     
     # Initialize cleanup system
@@ -336,32 +336,32 @@ def main():
     cleanup_results = cleanup_system.perform_emergency_cleanup()
     
     # Verify results
-    print("🔍 Verifying root cleanliness...")
+    print(" Verifying root cleanliness...")
     verification = cleanup_system.verify_root_cleanliness()
     
     # Display results
-    print("✅ EMERGENCY CLEANUP COMPLETE")
+    print(" EMERGENCY CLEANUP COMPLETE")
     print("=" * 70)
-    print(f"🚨 Violations Found: {cleanup_results['cleanup_summary']['violations_found']}")
-    print(f"✅ Violations Fixed: {cleanup_results['cleanup_summary']['violations_fixed']}")
-    print(f"📊 Fix Success Rate: {cleanup_results['cleanup_summary']['fix_success_rate']:.1%}")
-    print(f"📁 Files Relocated: {len(cleanup_results['files_relocated'])}")
-    print(f"🏠 Essential Files Preserved: {len(cleanup_results['files_preserved'])}")
+    print(f" Violations Found: {cleanup_results['cleanup_summary']['violations_found']}")
+    print(f" Violations Fixed: {cleanup_results['cleanup_summary']['violations_fixed']}")
+    print(f" Fix Success Rate: {cleanup_results['cleanup_summary']['fix_success_rate']:.1%}")
+    print(f" Files Relocated: {len(cleanup_results['files_relocated'])}")
+    print(f" Essential Files Preserved: {len(cleanup_results['files_preserved'])}")
     print()
     
-    print("🔍 ROOT VERIFICATION:")
+    print(" ROOT VERIFICATION:")
     print(f"🧹 Root is Clean: {verification['root_is_clean']}")
-    print(f"📊 Cleanliness Score: {verification['cleanliness_score']:.1%}")
-    print(f"✅ Essential Files Present: {len(verification['essential_files_present'])}")
-    print(f"❌ Unexpected Items: {len(verification['unexpected_items'])}")
+    print(f" Cleanliness Score: {verification['cleanliness_score']:.1%}")
+    print(f" Essential Files Present: {len(verification['essential_files_present'])}")
+    print(f" Unexpected Items: {len(verification['unexpected_items'])}")
     
     if verification["unexpected_items"]:
-        print("\n🚨 Remaining Issues:")
+        print("\n Remaining Issues:")
         for item in verification["unexpected_items"]:
             print(f"   • {item}")
     
-    print("\n🌌 Sacred cellular architecture restored!")
-    print("✨ Core Engine root is now pristine!")
+    print("\n Sacred cellular architecture restored!")
+    print(" Core Engine root is now pristine!")
 
 
 if __name__ == "__main__":

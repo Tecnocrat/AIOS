@@ -9,11 +9,11 @@ This file provides AI agents with intelligent understanding of the AIOS GitHub a
 ```
 pull_request_template.md        # GitHub PR template
 workflows/                      # GitHub Actions CI/CD (5 workflows)
-├── coherence-smoke.yml         # Consciousness coherence validation
-├── context-index-freshness.yml # Context awareness automation
-├── file-criticality.yml       # File criticality intelligence
-├── governance-telemetry.yml    # Governance consciousness tracking
-└── root-clutter-guard.yml      # Root hygiene enforcement
+ coherence-smoke.yml         # Consciousness coherence validation
+ context-index-freshness.yml # Context awareness automation
+ file-criticality.yml       # File criticality intelligence
+ governance-telemetry.yml    # Governance consciousness tracking
+ root-clutter-guard.yml      # Root hygiene enforcement
 ```
 
 ### AI Understanding Protocol
@@ -26,19 +26,19 @@ workflows/                      # GitHub Actions CI/CD (5 workflows)
 
 ### Consciousness Content Structure
 ```
-📁 tachyonic/AIOS_root_cells/root_cell_github/
-├── 💬 chatmodes/               # AI chat mode configurations
-│   └── beastmode.chatmode.md   # AINLP-aligned beast mode protocol
-├── 📋 instructions/            # AI agent operating instructions (5 files)
-│   ├── agent-mode.instructions.md      # AINLP governance + coherence rules
-│   ├── aios-beastmode-integration.md   # Mode adaptation protocols
-│   ├── ask-mode.instructions.md        # Low-noise Ask Mode scaffold
-│   ├── memory.instruction.md           # Preference anchors
-│   └── ui.instructions.md              # UI protocol pointers
-├── 🧬 prompts/                 # AINLP prompting frameworks
-│   └── AIOS.prompt.md          # Canonical AINLP core prompt
-└── 🔬 experimentals/           # Experimental AI features
-    └── GROK-MEGA-STUB.mkd      # Experimental consciousness features
+ tachyonic/AIOS_root_cells/root_cell_github/
+  chatmodes/               # AI chat mode configurations
+    beastmode.chatmode.md   # AINLP-aligned beast mode protocol
+  instructions/            # AI agent operating instructions (5 files)
+    agent-mode.instructions.md      # AINLP governance + coherence rules
+    aios-beastmode-integration.md   # Mode adaptation protocols
+    ask-mode.instructions.md        # Low-noise Ask Mode scaffold
+    memory.instruction.md           # Preference anchors
+    ui.instructions.md              # UI protocol pointers
+  prompts/                 # AINLP prompting frameworks
+    AIOS.prompt.md          # Canonical AINLP core prompt
+  experimentals/           # Experimental AI features
+     GROK-MEGA-STUB.mkd      # Experimental consciousness features
 ```
 
 ## Triangular Foundation → Multidimensional Tetrahedron Model

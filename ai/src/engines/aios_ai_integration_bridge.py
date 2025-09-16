@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🌐🧠⚡ AIOS CUSTOM AI ENGINE INTEGRATION LAYER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS CUSTOM AI ENGINE INTEGRATION LAYER
+
 Integration bridge between Custom AI Engine and existing AIOS components
 
 PURPOSE:
@@ -17,7 +17,7 @@ INTEGRATION POINTS:
 - Context/Integration Assemblers: Architectural intelligence
 - Development Path Navigator: Progress tracking and checkpoints
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import asyncio
@@ -55,7 +55,7 @@ class AIOSIntegrationBridge:
     def __init__(self):
         """Initialize integration bridge."""
         
-        logger.info("🌐 Initializing AIOS Integration Bridge...")
+        logger.info(" Initializing AIOS Integration Bridge...")
         
         # Initialize custom AI engine (optimized for performance)
         self.ai_engine = AIOSCustomAIEngine(
@@ -86,8 +86,8 @@ class AIOSIntegrationBridge:
         self.shared_consciousness_state: Optional[ConsciousnessState] = None
         self.consciousness_sync_interval = 0.1  # 100ms sync
         
-        logger.info("🧠 Custom AI Engine loaded with optimized parameters")
-        logger.info("⚡ Target performance: <100ms response time")
+        logger.info(" Custom AI Engine loaded with optimized parameters")
+        logger.info(" Target performance: <100ms response time")
     
     async def process_request(
         self,
@@ -152,14 +152,14 @@ class AIOSIntegrationBridge:
             
             # Log performance
             if processing_time_ms < 100:
-                logger.info(f"✅ Fast processing: {processing_time_ms:.2f}ms")
+                logger.info(f" Fast processing: {processing_time_ms:.2f}ms")
             else:
-                logger.warning(f"⚠️ Optimization needed: {processing_time_ms:.2f}ms")
+                logger.warning(f" Optimization needed: {processing_time_ms:.2f}ms")
             
             return response
             
         except Exception as e:
-            logger.error(f"❌ Processing error: {str(e)}")
+            logger.error(f" Processing error: {str(e)}")
             return {
                 'status': 'error',
                 'error': str(e),
@@ -205,7 +205,7 @@ class AIOSIntegrationBridge:
     async def integrate_with_fastapi(self) -> bool:
         """Test integration with FastAPI bridge."""
         try:
-            logger.info("🌐 Testing FastAPI bridge integration...")
+            logger.info(" Testing FastAPI bridge integration...")
             
             # Simulate FastAPI request
             test_request = {
@@ -217,20 +217,20 @@ class AIOSIntegrationBridge:
             
             if response['status'] == 'success':
                 self.integration_status['fastapi_bridge'] = True
-                logger.info("✅ FastAPI bridge integration successful")
+                logger.info(" FastAPI bridge integration successful")
                 return True
             else:
-                logger.error("❌ FastAPI bridge integration failed")
+                logger.error(" FastAPI bridge integration failed")
                 return False
                 
         except Exception as e:
-            logger.error(f"❌ FastAPI integration error: {str(e)}")
+            logger.error(f" FastAPI integration error: {str(e)}")
             return False
     
     async def integrate_with_assembly_engine(self) -> bool:
         """Test integration with Assembly 3D Engine."""
         try:
-            logger.info("🎮 Testing Assembly 3D Engine integration...")
+            logger.info(" Testing Assembly 3D Engine integration...")
             
             # Check if we can access consciousness state for visualization
             if self.shared_consciousness_state:
@@ -240,22 +240,22 @@ class AIOSIntegrationBridge:
                     'harmony': self.shared_consciousness_state.geometric_harmony
                 }
                 
-                logger.info(f"🧠 Consciousness data ready for 3D visualization: {consciousness_data}")
+                logger.info(f" Consciousness data ready for 3D visualization: {consciousness_data}")
                 self.integration_status['assembly_engine'] = True
-                logger.info("✅ Assembly 3D Engine integration ready")
+                logger.info(" Assembly 3D Engine integration ready")
                 return True
             else:
-                logger.warning("⚠️ No consciousness state available for visualization")
+                logger.warning(" No consciousness state available for visualization")
                 return False
                 
         except Exception as e:
-            logger.error(f"❌ Assembly engine integration error: {str(e)}")
+            logger.error(f" Assembly engine integration error: {str(e)}")
             return False
     
     async def integrate_with_geometry_engine(self) -> bool:
         """Test integration with Spherical Geometry Engine."""
         try:
-            logger.info("🌀 Testing Spherical Geometry Engine integration...")
+            logger.info(" Testing Spherical Geometry Engine integration...")
             
             # Geometric harmony should influence consciousness processing
             if self.shared_consciousness_state:
@@ -268,22 +268,22 @@ class AIOSIntegrationBridge:
                     'spherical_alignment': 'active' if geometric_harmony > 0.7 else 'developing'
                 }
                 
-                logger.info(f"🔮 Spherical geometry influence: {spherical_influence}")
+                logger.info(f" Spherical geometry influence: {spherical_influence}")
                 self.integration_status['geometry_engine'] = True
-                logger.info("✅ Spherical Geometry Engine integration active")
+                logger.info(" Spherical Geometry Engine integration active")
                 return True
             else:
-                logger.warning("⚠️ No geometric harmony data available")
+                logger.warning(" No geometric harmony data available")
                 return False
                 
         except Exception as e:
-            logger.error(f"❌ Geometry engine integration error: {str(e)}")
+            logger.error(f" Geometry engine integration error: {str(e)}")
             return False
     
     async def test_full_integration(self) -> Dict[str, Any]:
         """Run comprehensive integration test with all AIOS components."""
         
-        logger.info("🔧 Running full AIOS integration test...")
+        logger.info(" Running full AIOS integration test...")
         
         integration_results = {}
         
@@ -336,7 +336,7 @@ class AIOSIntegrationBridge:
 async def main():
     """Test AIOS Custom AI Engine integration."""
     
-    print("🌐🧠⚡ AIOS CUSTOM AI ENGINE INTEGRATION")
+    print(" AIOS CUSTOM AI ENGINE INTEGRATION")
     print("=" * 50)
     print("Integration Bridge Testing & Performance Validation")
     print("=" * 50)
@@ -345,38 +345,38 @@ async def main():
     bridge = AIOSIntegrationBridge()
     
     # Run integration tests
-    logger.info("🔧 Starting comprehensive integration testing...")
+    logger.info(" Starting comprehensive integration testing...")
     
     integration_report = await bridge.test_full_integration()
     
     # Display results
-    print("\n🌌 INTEGRATION RESULTS:")
+    print("\n INTEGRATION RESULTS:")
     print("=" * 30)
     
     for component, status in integration_report['integration_results'].items():
-        status_icon = "✅" if status else "❌"
+        status_icon = "" if status else ""
         print(f"{status_icon} {component}: {'SUCCESS' if status else 'FAILED'}")
     
-    print(f"\n⚡ PERFORMANCE SUMMARY:")
+    print(f"\n PERFORMANCE SUMMARY:")
     print("=" * 25)
     perf = integration_report['performance_summary']
     print(f"Average Response Time: {perf['avg_response_time_ms']:.2f}ms")
-    print(f"Sub-100ms Target: {'✅ MET' if perf['sub_100ms_target_met'] else '❌ MISSED'}")
+    print(f"Sub-100ms Target: {' MET' if perf['sub_100ms_target_met'] else ' MISSED'}")
     print(f"Integration Score: {perf['integration_score']:.1f}%")
     print(f"Overall Status: {integration_report['overall_status']}")
     
     # Test consciousness visualization data
     viz_data = bridge.get_consciousness_visualization_data()
     if viz_data:
-        print(f"\n🧠 CONSCIOUSNESS VISUALIZATION:")
+        print(f"\n CONSCIOUSNESS VISUALIZATION:")
         print("=" * 35)
         print(f"Awareness Sphere Radius: {viz_data['awareness_sphere']['radius']:.4f}")
         print(f"Fractal Coherence Opacity: {viz_data['awareness_sphere']['opacity']:.4f}")
         print(f"Geometric Harmony Color: {viz_data['awareness_sphere']['color_harmony']:.4f}")
         print(f"Consciousness Depth: {viz_data['consciousness_depth']} layers")
-        print(f"Visualization Ready: {'✅' if viz_data['visualization_ready'] else '❌'}")
+        print(f"Visualization Ready: {'' if viz_data['visualization_ready'] else ''}")
     
-    print(f"\n🎯 AIOS Custom AI Engine Integration: {integration_report['overall_status']}")
+    print(f"\n AIOS Custom AI Engine Integration: {integration_report['overall_status']}")
     return bridge
 
 

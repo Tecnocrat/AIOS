@@ -26,7 +26,7 @@ class QuantumInterfaceLauncher:
     def launch_quantum_visor(self):
         """Launch the C# Quantum Visor"""
         try:
-            print("🌌 Launching Quantum Visor (C# WPF)...")
+            print(" Launching Quantum Visor (C# WPF)...")
             cmd = ["dotnet", "run", "--project", str(self.visual_interface_path)]
             self.visor_process = subprocess.Popen(
                 cmd,
@@ -34,16 +34,16 @@ class QuantumInterfaceLauncher:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE
             )
-            print("✅ Quantum Visor launched successfully")
+            print(" Quantum Visor launched successfully")
             return True
         except Exception as e:
-            print(f"❌ Failed to launch Quantum Visor: {e}")
+            print(f" Failed to launch Quantum Visor: {e}")
             return False
             
     def launch_code_ingestor(self):
         """Launch the Python Code Ingestor"""
         try:
-            print("🧬 Launching Code Ingestor (Python)...")
+            print(" Launching Code Ingestor (Python)...")
             cmd = [sys.executable, "quantum_code_ingestor.py"]
             self.ingestor_process = subprocess.Popen(
                 cmd,
@@ -51,15 +51,15 @@ class QuantumInterfaceLauncher:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE
             )
-            print("✅ Code Ingestor launched successfully")
+            print(" Code Ingestor launched successfully")
             return True
         except Exception as e:
-            print(f"❌ Failed to launch Code Ingestor: {e}")
+            print(f" Failed to launch Code Ingestor: {e}")
             return False
             
     def launch_both_interfaces(self):
         """Launch both interfaces simultaneously"""
-        print("🚀 AIOS Quantum Interface Launcher")
+        print(" AIOS Quantum Interface Launcher")
         print("=" * 50)
         
         # Launch visor first
@@ -70,51 +70,51 @@ class QuantumInterfaceLauncher:
         ingestor_success = self.launch_code_ingestor()
         
         if visor_success and ingestor_success:
-            print("\n🎉 Both quantum interfaces launched successfully!")
-            print("🌌 Quantum Visor: Consciousness emergence monitoring")
-            print("🧬 Code Ingestor: Live code mutation and AI schema processing")
+            print("\n Both quantum interfaces launched successfully!")
+            print(" Quantum Visor: Consciousness emergence monitoring")
+            print(" Code Ingestor: Live code mutation and AI schema processing")
             print("\nPress Ctrl+C to stop both interfaces")
             
             try:
                 # Wait for processes
                 while True:
                     if self.visor_process and self.visor_process.poll() is not None:
-                        print("⚠️ Quantum Visor has stopped")
+                        print(" Quantum Visor has stopped")
                         break
                     if self.ingestor_process and self.ingestor_process.poll() is not None:
-                        print("⚠️ Code Ingestor has stopped")
+                        print(" Code Ingestor has stopped")
                         break
                     time.sleep(1)
                     
             except KeyboardInterrupt:
-                print("\n🛑 Shutting down quantum interfaces...")
+                print("\n Shutting down quantum interfaces...")
                 self.shutdown_interfaces()
                 
         else:
-            print("❌ Failed to launch one or both interfaces")
+            print(" Failed to launch one or both interfaces")
             self.shutdown_interfaces()
             
     def shutdown_interfaces(self):
         """Gracefully shutdown both interfaces"""
         if self.visor_process:
             self.visor_process.terminate()
-            print("🌌 Quantum Visor terminated")
+            print(" Quantum Visor terminated")
             
         if self.ingestor_process:
             self.ingestor_process.terminate()
-            print("🧬 Code Ingestor terminated")
+            print(" Code Ingestor terminated")
             
     def create_launcher_gui(self):
         """Create a simple GUI launcher"""
         root = tk.Tk()
-        root.title("🚀 AIOS Quantum Interface Launcher")
+        root.title(" AIOS Quantum Interface Launcher")
         root.geometry("500x300")
         root.configure(bg='#000000')
         
         # Title
         title_label = tk.Label(
             root,
-            text="🚀 AIOS QUANTUM INTERFACE LAUNCHER",
+            text=" AIOS QUANTUM INTERFACE LAUNCHER",
             font=('Courier New', 14, 'bold'),
             fg='#00FF00',
             bg='#000000'
@@ -137,7 +137,7 @@ class QuantumInterfaceLauncher:
         
         launch_visor_btn = tk.Button(
             button_frame,
-            text="🌌 Launch Quantum Visor",
+            text=" Launch Quantum Visor",
             command=self.gui_launch_visor,
             bg='#001133',
             fg='#00AAFF',
@@ -148,7 +148,7 @@ class QuantumInterfaceLauncher:
         
         launch_ingestor_btn = tk.Button(
             button_frame,
-            text="🧬 Launch Code Ingestor",
+            text=" Launch Code Ingestor",
             command=self.gui_launch_ingestor,
             bg='#330033',
             fg='#FF00FF',
@@ -159,7 +159,7 @@ class QuantumInterfaceLauncher:
         
         launch_both_btn = tk.Button(
             button_frame,
-            text="🚀 Launch Both Interfaces",
+            text=" Launch Both Interfaces",
             command=self.gui_launch_both,
             bg='#003300',
             fg='#00FF00',
@@ -170,7 +170,7 @@ class QuantumInterfaceLauncher:
         
         stop_btn = tk.Button(
             button_frame,
-            text="🛑 Stop All",
+            text=" Stop All",
             command=self.gui_stop_all,
             bg='#330000',
             fg='#FF0000',

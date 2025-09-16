@@ -200,14 +200,14 @@
 
 <body>
     <div class="header">
-        <h1>🛠️ AIOS Maintenance Center</h1>
+        <h1> AIOS Maintenance Center</h1>
         <p>Fractal/Holographic Development Environment - Maintenance Operations</p>
     </div>
 
     <div class="container">
         <!-- System Status Panel -->
         <div class="panel">
-            <h2>📊 System Status</h2>
+            <h2> System Status</h2>
             <div class="status-grid">
                 <div class="status-item">
                     <div class="status-value" id="health-score">--</div>
@@ -233,31 +233,31 @@
 
         <!-- Maintenance Operations Panel -->
         <div class="panel">
-            <h2>⚡ Maintenance Operations</h2>
+            <h2> Maintenance Operations</h2>
             <button class="operation-button" onclick="optimizeDocumentation()">
-                📚 Optimize Documentation
+                 Optimize Documentation
             </button>
             <button class="operation-button" onclick="consolidateBackups()">
-                📦 Consolidate Backups
+                 Consolidate Backups
             </button>
             <button class="operation-button" onclick="runGarbageCollection()">
-                🗑️ Run Garbage Collection
+                 Run Garbage Collection
             </button>
             <button class="operation-button" onclick="runComprehensiveMaintenance()">
-                🚀 Comprehensive Maintenance
+                 Comprehensive Maintenance
             </button>
         </div>
 
         <!-- Natural Language Commands Panel -->
         <div class="panel">
-            <h2>🗣️ Natural Language Commands</h2>
+            <h2> Natural Language Commands</h2>
             <input type="text" class="nl-command" id="nl-input"
                 placeholder="Enter maintenance command in natural language...">
             <button class="operation-button" onclick="processNaturalLanguageCommand()">
-                🎯 Execute Command
+                 Execute Command
             </button>
             <div class="log-output" id="nl-output">
-                <div class="log-entry info">💡 Try commands like:</div>
+                <div class="log-entry info"> Try commands like:</div>
                 <div class="log-entry">• "Clean up documentation and optimize structure"</div>
                 <div class="log-entry">• "Archive old backup files using tachyonic system"</div>
                 <div class="log-entry">• "Run complete maintenance with garbage collection"</div>
@@ -266,10 +266,10 @@
 
         <!-- Activity Log Panel -->
         <div class="panel">
-            <h2>📋 Activity Log</h2>
+            <h2> Activity Log</h2>
             <div class="log-output" id="activity-log">
-                <div class="log-entry info">🎯 AIOS Maintenance Center initialized</div>
-                <div class="log-entry info">📡 Connecting to maintenance services...</div>
+                <div class="log-entry info"> AIOS Maintenance Center initialized</div>
+                <div class="log-entry info"> Connecting to maintenance services...</div>
             </div>
         </div>
     </div>
@@ -289,22 +289,22 @@
                     this.maintenanceService = window.chrome?.webview?.hostObjects?.maintenanceService;
 
                     if (this.maintenanceService) {
-                        this.log('✅ Connected to AIOS Maintenance Service', 'success');
+                        this.log(' Connected to AIOS Maintenance Service', 'success');
                         await this.refreshStatus();
                         this.isInitialized = true;
                     } else {
-                        this.log('⚠️ Maintenance service not available - running in demo mode', 'info');
+                        this.log(' Maintenance service not available - running in demo mode', 'info');
                         this.loadDemoData();
                     }
                 } catch (error) {
-                    this.log(`❌ Initialization error: ${error.message}`, 'error');
+                    this.log(` Initialization error: ${error.message}`, 'error');
                     this.loadDemoData();
                 }
             }
 
             async refreshStatus() {
                 try {
-                    this.log('🔄 Refreshing system status...', 'info');
+                    this.log(' Refreshing system status...', 'info');
 
                     if (this.maintenanceService) {
                         const status = await this.maintenanceService.GetMaintenanceStatusAsync();
@@ -313,13 +313,13 @@
                         this.loadDemoData();
                     }
                 } catch (error) {
-                    this.log(`❌ Failed to refresh status: ${error.message}`, 'error');
+                    this.log(` Failed to refresh status: ${error.message}`, 'error');
                 }
             }
 
             updateStatusDisplay(status) {
                 if (status.Error) {
-                    this.log(`❌ Status error: ${status.Error}`, 'error');
+                    this.log(` Status error: ${status.Error}`, 'error');
                     return;
                 }
 
@@ -331,32 +331,32 @@
                     (status.DocumentationFragmentation * 100).toFixed(1) + '%';
 
                 document.getElementById('backup-status').textContent =
-                    status.BackupSystemStatus?.IsOperational ? '✅' : '❌';
+                    status.BackupSystemStatus?.IsOperational ? '' : '';
 
                 document.getElementById('archive-status').textContent =
-                    status.TachyonicArchiveStatus?.IsOperational ? '✅' : '❌';
+                    status.TachyonicArchiveStatus?.IsOperational ? '' : '';
 
                 // Update progress bar
                 const overallProgress = status.SystemHealth?.OverallScore * 100;
                 document.getElementById('overall-progress').style.width = `${overallProgress}%`;
 
-                this.log('✅ Status updated successfully', 'success');
+                this.log(' Status updated successfully', 'success');
             }
 
             loadDemoData() {
                 // Demo data for when service is not available
                 document.getElementById('health-score').textContent = '95.0%';
                 document.getElementById('fragmentation-score').textContent = '0.0%';
-                document.getElementById('backup-status').textContent = '✅';
-                document.getElementById('archive-status').textContent = '✅';
+                document.getElementById('backup-status').textContent = '';
+                document.getElementById('archive-status').textContent = '';
                 document.getElementById('overall-progress').style.width = '95%';
 
-                this.log('📊 Demo data loaded', 'info');
+                this.log(' Demo data loaded', 'info');
             }
 
             async executeOperation(operationName, parameters = null) {
                 try {
-                    this.log(`🚀 Executing: ${operationName}`, 'info');
+                    this.log(` Executing: ${operationName}`, 'info');
                     this.setButtonsDisabled(true);
 
                     let result;
@@ -391,16 +391,16 @@
                     }
 
                     if (result.Success) {
-                        this.log(`✅ ${operationName}: ${result.Message || 'Completed successfully'}`, 'success');
+                        this.log(` ${operationName}: ${result.Message || 'Completed successfully'}`, 'success');
                     } else {
-                        this.log(`❌ ${operationName}: ${result.Error || 'Operation failed'}`, 'error');
+                        this.log(` ${operationName}: ${result.Error || 'Operation failed'}`, 'error');
                     }
 
                     // Refresh status after operation
                     await this.refreshStatus();
 
                 } catch (error) {
-                    this.log(`❌ ${operationName} failed: ${error.message}`, 'error');
+                    this.log(` ${operationName} failed: ${error.message}`, 'error');
                 } finally {
                     this.setButtonsDisabled(false);
                 }
@@ -465,7 +465,7 @@
             const command = input.value.trim();
 
             if (!command) {
-                maintenanceCenter.log('⚠️ Please enter a command', 'info');
+                maintenanceCenter.log(' Please enter a command', 'info');
                 return;
             }
 
@@ -473,7 +473,7 @@
             const nlOutput = document.getElementById('nl-output');
             const commandEntry = document.createElement('div');
             commandEntry.className = 'log-entry info';
-            commandEntry.textContent = `🎯 Command: ${command}`;
+            commandEntry.textContent = ` Command: ${command}`;
             nlOutput.appendChild(commandEntry);
             nlOutput.scrollTop = nlOutput.scrollHeight;
 

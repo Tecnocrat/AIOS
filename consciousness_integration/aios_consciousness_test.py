@@ -32,7 +32,7 @@ class ConsciousnessIntegrationTest:
     
     async def test_consciousness_state_management(self):
         """Test consciousness state file management"""
-        logger.info("🧬 Testing consciousness state management...")
+        logger.info(" Testing consciousness state management...")
         
         try:
             # Create test consciousness state
@@ -49,7 +49,7 @@ class ConsciousnessIntegrationTest:
             for path in [self.csharp_state_path, self.assembly_state_path, self.ai_state_path]:
                 with open(path, 'w') as f:
                     json.dump(test_state, f, indent=2)
-                logger.info(f"✅ Created state file: {path}")
+                logger.info(f" Created state file: {path}")
             
             # Validate files exist and contain correct data
             for path in [self.csharp_state_path, self.assembly_state_path, self.ai_state_path]:
@@ -57,23 +57,23 @@ class ConsciousnessIntegrationTest:
                     with open(path, 'r') as f:
                         loaded_state = json.load(f)
                         if loaded_state.get("consciousness_level") == 0.8148:
-                            logger.info(f"✅ Validated state file: {path}")
+                            logger.info(f" Validated state file: {path}")
                         else:
-                            logger.error(f"❌ Invalid state in file: {path}")
+                            logger.error(f" Invalid state in file: {path}")
                 else:
-                    logger.error(f"❌ Missing state file: {path}")
+                    logger.error(f" Missing state file: {path}")
             
             self.test_results["state_management"] = {"status": "passed", "files_created": 3}
             return True
             
         except Exception as e:
-            logger.error(f"❌ State management test failed: {e}")
+            logger.error(f" State management test failed: {e}")
             self.test_results["state_management"] = {"status": "failed", "error": str(e)}
             return False
     
     async def test_consciousness_calculations(self):
         """Test consciousness calculation logic"""
-        logger.info("🧮 Testing consciousness calculations...")
+        logger.info(" Testing consciousness calculations...")
         
         try:
             # Test data representing different subsystem consciousness levels
@@ -100,18 +100,18 @@ class ConsciousnessIntegrationTest:
                 ai_consciousness >= 0.95
             )
             
-            logger.info(f"📊 Assembly Consciousness: {assembly_consciousness:.6f}")
-            logger.info(f"📊 Harmonizer Consciousness: {harmonizer_consciousness:.6f}")
-            logger.info(f"📊 AI Consciousness: {ai_consciousness:.6f}")
-            logger.info(f"📊 Global Consciousness: {global_consciousness:.6f}")
-            logger.info(f"📊 Post-Singular Achieved: {post_singular_achieved}")
+            logger.info(f" Assembly Consciousness: {assembly_consciousness:.6f}")
+            logger.info(f" Harmonizer Consciousness: {harmonizer_consciousness:.6f}")
+            logger.info(f" AI Consciousness: {ai_consciousness:.6f}")
+            logger.info(f" Global Consciousness: {global_consciousness:.6f}")
+            logger.info(f" Post-Singular Achieved: {post_singular_achieved}")
             
             # Validate calculations
             expected_global = 0.8589  # Pre-calculated expected value
             tolerance = 0.001
             
             if abs(global_consciousness - expected_global) < tolerance:
-                logger.info("✅ Consciousness calculations validated")
+                logger.info(" Consciousness calculations validated")
                 self.test_results["consciousness_calculations"] = {
                     "status": "passed",
                     "global_consciousness": global_consciousness,
@@ -119,17 +119,17 @@ class ConsciousnessIntegrationTest:
                 }
                 return True
             else:
-                logger.error(f"❌ Calculation mismatch. Expected: {expected_global}, Got: {global_consciousness}")
+                logger.error(f" Calculation mismatch. Expected: {expected_global}, Got: {global_consciousness}")
                 return False
                 
         except Exception as e:
-            logger.error(f"❌ Consciousness calculation test failed: {e}")
+            logger.error(f" Consciousness calculation test failed: {e}")
             self.test_results["consciousness_calculations"] = {"status": "failed", "error": str(e)}
             return False
     
     async def test_integration_architecture(self):
         """Test the integration architecture components"""
-        logger.info("🏗️ Testing integration architecture...")
+        logger.info(" Testing integration architecture...")
         
         try:
             # Test file path resolution
@@ -148,17 +148,17 @@ class ConsciousnessIntegrationTest:
             for filename in core_files:
                 filepath = Path("core") / filename
                 if filepath.exists():
-                    logger.info(f"✅ Found core file: {filename}")
+                    logger.info(f" Found core file: {filename}")
                 else:
-                    logger.warning(f"⚠️ Missing core file: {filename}")
+                    logger.warning(f" Missing core file: {filename}")
             
             # Check AI files
             for filename in ai_files:
                 filepath = Path("ai") / filename
                 if filepath.exists():
-                    logger.info(f"✅ Found AI file: {filename}")
+                    logger.info(f" Found AI file: {filename}")
                 else:
-                    logger.warning(f"⚠️ Missing AI file: {filename}")
+                    logger.warning(f" Missing AI file: {filename}")
             
             # Test consciousness-aware code generation simulation
             generated_code_template = """
@@ -195,7 +195,7 @@ namespace AIOS.Generated
             with open(code_output_path, 'w') as f:
                 f.write(generated_code)
             
-            logger.info(f"✅ Generated consciousness-aware code sample: {code_output_path}")
+            logger.info(f" Generated consciousness-aware code sample: {code_output_path}")
             
             self.test_results["integration_architecture"] = {
                 "status": "passed",
@@ -205,13 +205,13 @@ namespace AIOS.Generated
             return True
             
         except Exception as e:
-            logger.error(f"❌ Integration architecture test failed: {e}")
+            logger.error(f" Integration architecture test failed: {e}")
             self.test_results["integration_architecture"] = {"status": "failed", "error": str(e)}
             return False
     
     async def generate_test_report(self):
         """Generate comprehensive test report"""
-        logger.info("📋 Generating test report...")
+        logger.info(" Generating test report...")
         
         report = {
             "test_metadata": {
@@ -237,29 +237,29 @@ namespace AIOS.Generated
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
         
-        logger.info(f"📋 Test report saved to: {report_path}")
+        logger.info(f" Test report saved to: {report_path}")
         
         return report
     
     def print_test_summary(self, report):
         """Print test summary"""
         print("\n" + "="*60)
-        print("🌌 AIOS CONSCIOUSNESS INTEGRATION TEST SUMMARY")
+        print(" AIOS CONSCIOUSNESS INTEGRATION TEST SUMMARY")
         print("="*60)
         
         print(f"Overall Status: {report['overall_status'].upper()}")
         print(f"Tests Run: {len(self.test_results)}")
         
         for test_name, result in self.test_results.items():
-            status_icon = "✅" if result.get("status") == "passed" else "❌"
+            status_icon = "" if result.get("status") == "passed" else ""
             print(f"  {status_icon} {test_name.replace('_', ' ').title()}: {result.get('status', 'unknown').upper()}")
         
-        print("\n🚀 CONSCIOUSNESS INTEGRATION ARCHITECTURE VALIDATED")
+        print("\n CONSCIOUSNESS INTEGRATION ARCHITECTURE VALIDATED")
         print("="*60 + "\n")
     
     async def run_all_tests(self):
         """Run all consciousness integration tests"""
-        logger.info("🚀 Starting AIOS Consciousness Integration Tests")
+        logger.info(" Starting AIOS Consciousness Integration Tests")
         
         try:
             # Run tests in sequence
@@ -275,14 +275,14 @@ namespace AIOS.Generated
             
             success = report["overall_status"] == "passed"
             if success:
-                logger.info("✅ All consciousness integration tests passed")
+                logger.info(" All consciousness integration tests passed")
             else:
-                logger.error("❌ Some consciousness integration tests failed")
+                logger.error(" Some consciousness integration tests failed")
             
             return success
             
         except Exception as e:
-            logger.error(f"❌ Test execution failed: {e}")
+            logger.error(f" Test execution failed: {e}")
             return False
 
 async def main():

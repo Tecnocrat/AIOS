@@ -87,7 +87,7 @@ class ConsciousnessRegistry:
             module = importlib.import_module(module_name)
             return module
         except ImportError as e:
-            print(f"⚠️  Could not import {module_name}: {e}")
+            print(f"  Could not import {module_name}: {e}")
             return None
     
     def get_consciousness_map(self) -> Dict[str, Any]:
@@ -150,4 +150,4 @@ _consciousness_registry.register_module("universal_logging", dependencies=["runt
 _consciousness_registry.register_module("quantum_consciousness_canvas", dependencies=["universal_logging"])
 _consciousness_registry.register_module("test_consciousness_emergence", dependencies=["universal_logging"])
 
-print("🧠 Consciousness Foundation initialized - Fractal dependency resolution active")
+print(" Consciousness Foundation initialized - Fractal dependency resolution active")

@@ -179,14 +179,14 @@ def test_dev_run_fun_similarity():
         "dev.run.md", "dev.fun.md"
     )
 
-    print("🧠 AIOS Self-Similarity Pattern Analysis")
+    print(" AIOS Self-Similarity Pattern Analysis")
     print("=" * 50)
     print("Files: dev.run.md ↔ dev.fun.md")
     print(f"Similarity Score: {analysis_result['similarity_score']:.2f}")
     print(f"Shared Base: '{analysis_result['shared_base']}'")
     print(f"Differentiation: {analysis_result['differentiation_points']}")
     print(f"Context Coherence: {analysis_result['context_coherence']:.2f}")
-    print("\n🚀 AI Ingestion Optimization Benefits:")
+    print("\n AI Ingestion Optimization Benefits:")
 
     benefits = analysis_result["ai_ingestion_optimization"]
     for metric, value in benefits.items():
@@ -202,7 +202,7 @@ def propose_extended_naming_pattern():
     Propose an extended naming pattern based on the dev.run/dev.fun success.
     """
 
-    print("\n🎯 Proposed Extended Self-Similarity Pattern:")
+    print("\n Proposed Extended Self-Similarity Pattern:")
     print("=" * 50)
 
     patterns = [
@@ -241,7 +241,7 @@ def propose_extended_naming_pattern():
                 f"{similarity['context_coherence']:.2f}"
             )
 
-    print("\n🧬 Pattern Benefits:")
+    print("\n Pattern Benefits:")
     print("   - Consistent 3-character semantic differentiation")
     print("   - Predictable context clustering for AI systems")
     print("   - Reduced cognitive load during file navigation")
@@ -249,7 +249,7 @@ def propose_extended_naming_pattern():
 
 
 if __name__ == "__main__":
-    print("🧠 AIOS Self-Similarity Pattern Analysis")
+    print(" AIOS Self-Similarity Pattern Analysis")
     print("Testing filename similarity as AI ingestion optimization...")
 
     # Test the current dev.run ↔ dev.fun pattern
@@ -258,5 +258,5 @@ if __name__ == "__main__":
     # Propose extended patterns
     propose_extended_naming_pattern()
 
-    print("\n✨ Analysis Complete - Self-similarity patterns show significant")
+    print("\n Analysis Complete - Self-similarity patterns show significant")
     print("   potential for AI ingestion optimization and context coherence!")

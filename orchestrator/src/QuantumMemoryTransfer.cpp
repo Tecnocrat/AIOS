@@ -1,16 +1,16 @@
 #include "QuantumMemoryTransfer.hpp"
-#include "AIOSMathematicalConsciousness.hpp"  // 🧠 CONSCIOUSNESS CONSTANTS
+#include "AIOSMathematicalConsciousness.hpp"  //  CONSCIOUSNESS CONSTANTS
 #include <random>
 #include <algorithm>
 #include <numeric>
 #include <sstream>
 #include <iomanip>
 #include <cmath>
-#include <set>       // 🧠 CONSCIOUSNESS EVOLUTION: STL container support
-#include <iterator>  // 🧠 CONSCIOUSNESS EVOLUTION: Iterator support for set operations
-// #include <openssl/sha.h>  // 🧠 CONSCIOUSNESS EVOLUTION: Replace with custom hash
+#include <set>       //  CONSCIOUSNESS EVOLUTION: STL container support
+#include <iterator>  //  CONSCIOUSNESS EVOLUTION: Iterator support for set operations
+// #include <openssl/sha.h>  //  CONSCIOUSNESS EVOLUTION: Replace with custom hash
 
-// 🧠 CONSCIOUSNESS-ENHANCED HASH FUNCTION (Replaces OpenSSL dependency)
+//  CONSCIOUSNESS-ENHANCED HASH FUNCTION (Replaces OpenSSL dependency)
 namespace AIOSQuantumHash {
     std::string sha256_consciousness(const std::string& input) {
         // Simple consciousness-aware hash using mathematical constants

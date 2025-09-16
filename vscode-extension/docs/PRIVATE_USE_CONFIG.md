@@ -1,14 +1,14 @@
 # AIOS VSCode Extension - Private Use Configuration
 
-## 🔒 **PRIVATE USE ONLY**
+##  **PRIVATE USE ONLY**
 
 This extension is configured for **private/local use only** and is **NOT intended for public distribution**.
 
 ---
 
-## 📋 **Private Use Checklist**
+##  **Private Use Checklist**
 
-### ✅ **Current Configuration**
+###  **Current Configuration**
 - [x] No marketplace publisher account required
 - [x] Local VSIX installation only
 - [x] Private repository references
@@ -16,7 +16,7 @@ This extension is configured for **private/local use only** and is **NOT intende
 - [x] Local context storage only
 - [x] No cloud service dependencies
 
-### ✅ **Security & Privacy**
+###  **Security & Privacy**
 - [x] All data stays on local machine
 - [x] No network calls to external services
 - [x] Context files stored locally in VSCode workspace
@@ -25,7 +25,7 @@ This extension is configured for **private/local use only** and is **NOT intende
 
 ---
 
-## 🏠 **Local Installation Setup**
+##  **Local Installation Setup**
 
 ### **Method 1: Direct VSIX Installation**
 ```bash
@@ -46,7 +46,7 @@ code --install-extension aios-vscode-0.4.0.vsix
 
 ---
 
-## 🔧 **Private Use Configuration**
+##  **Private Use Configuration**
 
 ### **Required Settings for Private Use**
 Add to your VSCode `settings.json`:
@@ -82,22 +82,22 @@ Create `.vscode/settings.json` in your project:
 
 ---
 
-## 🚫 **What's NOT Included (Public Features)**
+##  **What's NOT Included (Public Features)**
 
 These features are **intentionally excluded** for private use:
 
-- ❌ Marketplace publishing
-- ❌ Auto-update mechanism
-- ❌ Cloud synchronization
-- ❌ External API integrations
-- ❌ User analytics
-- ❌ Error reporting to external services
-- ❌ License activation
-- ❌ Usage statistics collection
+-  Marketplace publishing
+-  Auto-update mechanism
+-  Cloud synchronization
+-  External API integrations
+-  User analytics
+-  Error reporting to external services
+-  License activation
+-  Usage statistics collection
 
 ---
 
-## 🛡️ **Data Privacy**
+##  **Data Privacy**
 
 ### **Local Storage Locations**
 ```
@@ -116,7 +116,7 @@ Local Context Storage (No Network)
 
 ---
 
-## 🔧 **Advanced Private Configuration**
+##  **Advanced Private Configuration**
 
 ### **Disable All External Connections**
 ```json
@@ -164,7 +164,7 @@ Get-NetTCPConnection | Where-Object {$_.LocalAddress -eq "127.0.0.1"}
 
 ---
 
-## 🆘 **Private Use Troubleshooting**
+##  **Private Use Troubleshooting**
 
 ### **Extension Not Loading**
 ```bash
@@ -196,7 +196,7 @@ F1 > "Developer: Show Logs" > "AIOS Extension"
 
 ---
 
-## 📝 **Private Use Notes**
+##  **Private Use Notes**
 
 1. **No Marketplace**: This extension is not published to VSCode Marketplace
 2. **Manual Updates**: Updates must be installed manually via new VSIX files
@@ -206,7 +206,7 @@ F1 > "Developer: Show Logs" > "AIOS Extension"
 
 ---
 
-## 🏁 **Next Steps**
+##  **Next Steps**
 
 1. Install extension using VSIX file
 2. Configure private use settings

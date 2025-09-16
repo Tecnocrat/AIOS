@@ -20,10 +20,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 try:
     from ai_integration_bridge import AICodeAnalyzer, CodeAnalysisRequest
     AI_AVAILABLE = True
-    print("✅ Real AIOS AI infrastructure loaded successfully!")
+    print(" Real AIOS AI infrastructure loaded successfully!")
 except ImportError as e:
     AI_AVAILABLE = False
-    print(f"❌ Could not load AIOS AI infrastructure: {e}")
+    print(f" Could not load AIOS AI infrastructure: {e}")
     print("   Falling back to simple pattern-based fixing...")
 
 class RealAILintFixer:
@@ -39,7 +39,7 @@ class RealAILintFixer:
         if not self.ai_analyzer:
             return {"error": "AI analyzer not available"}
             
-        print(f"🧠 Analyzing {file_path} with REAL AIOS AI...")
+        print(f" Analyzing {file_path} with REAL AIOS AI...")
         
         if file_path.endswith('.py'):
             return self.ai_analyzer.analyze_python_code(file_path)
@@ -63,21 +63,21 @@ class RealAILintFixer:
                     fixed_line = line.rstrip() + line[len(line.rstrip()):]  # Preserve line endings
                     fixed_lines.append(line.rstrip('\n\r') + '\n')
                     fixes_count += 1
-                    print(f"   🔧 Line {line_num}: Fixed trailing whitespace")
+                    print(f"    Line {line_num}: Fixed trailing whitespace")
                 else:
                     fixed_lines.append(line)
             
             if fixes_count > 0 and not dry_run:
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.writelines(fixed_lines)
-                print(f"   ✅ Applied {fixes_count} trailing whitespace fixes")
+                print(f"    Applied {fixes_count} trailing whitespace fixes")
             elif fixes_count > 0:
-                print(f"   🔍 Found {fixes_count} trailing whitespace issues (dry run)")
+                print(f"    Found {fixes_count} trailing whitespace issues (dry run)")
             
             return fixes_count
             
         except Exception as e:
-            print(f"   ❌ Error fixing trailing whitespace: {e}")
+            print(f"    Error fixing trailing whitespace: {e}")
             return 0
     
     def fix_long_lines_intelligently(self, file_path: str, analysis: dict, dry_run: bool = True) -> int:
@@ -91,22 +91,22 @@ class RealAILintFixer:
         if not long_line_issues:
             return 0
             
-        print(f"   🧠 AI found {len(long_line_issues)} long line issues")
+        print(f"    AI found {len(long_line_issues)} long line issues")
         
         if not dry_run:
             # In a real implementation, we'd use the AI analysis to suggest 
             # intelligent break points based on Python syntax analysis
-            print("   🚧 Intelligent line breaking would be implemented here")
+            print("    Intelligent line breaking would be implemented here")
             print("       (Using AST analysis from the AI bridge)")
             
         return len(long_line_issues)
     
     def process_file(self, file_path: str, dry_run: bool = True) -> dict:
         """Process a single file with real AI analysis and fixing."""
-        print(f"\n📁 Processing: {file_path}")
+        print(f"\n Processing: {file_path}")
         
         if not os.path.exists(file_path):
-            print(f"   ❌ File not found: {file_path}")
+            print(f"    File not found: {file_path}")
             return {"error": "File not found"}
         
         results = {
@@ -121,14 +121,14 @@ class RealAILintFixer:
         results["ai_analysis"] = ai_analysis
         
         if "error" in ai_analysis:
-            print(f"   ⚠️  AI analysis failed: {ai_analysis['error']}")
+            print(f"     AI analysis failed: {ai_analysis['error']}")
         else:
             # Report AI findings
             if 'potential_issues' in ai_analysis:
                 issues_count = len(ai_analysis['potential_issues'])
                 results["issues_found"] = issues_count
                 self.issues_found += issues_count
-                print(f"   🎯 AI found {issues_count} potential issues:")
+                print(f"    AI found {issues_count} potential issues:")
                 for issue in ai_analysis['potential_issues'][:3]:  # Show first 3
                     print(f"      - {issue}")
                 if len(ai_analysis['potential_issues']) > 3:
@@ -143,9 +143,9 @@ class RealAILintFixer:
         self.fixes_applied += total_fixes
         
         if total_fixes > 0:
-            print(f"   ✅ Total fixes: {total_fixes}")
+            print(f"    Total fixes: {total_fixes}")
         else:
-            print(f"   ✨ File looks good!")
+            print(f"    File looks good!")
         
         return results
 
@@ -161,9 +161,9 @@ def main():
     
     args = parser.parse_args()
     
-    print("🤖 AIOS Real AI-Powered Lint Fixer")
+    print(" AIOS Real AI-Powered Lint Fixer")
     print("=" * 40)
-    print("🎯 Using REAL AI analysis, not fake consciousness enhancement!")
+    print(" Using REAL AI analysis, not fake consciousness enhancement!")
     print()
     
     # Determine dry-run mode
@@ -183,7 +183,7 @@ def main():
         current_dir = Path.cwd()
         python_files = list(current_dir.glob("**/*.py"))
         files_to_process = [str(f) for f in python_files[:args.max_files]]
-        print(f"🔍 Auto-discovered {len(files_to_process)} Python files")
+        print(f" Auto-discovered {len(files_to_process)} Python files")
     
     # Process files
     for file_path in files_to_process[:args.max_files]:
@@ -191,7 +191,7 @@ def main():
     
     # Summary
     print("\n" + "=" * 50)
-    print("📊 REAL AI LINT FIXING SUMMARY")
+    print(" REAL AI LINT FIXING SUMMARY")
     print("=" * 50)
     print(f"Files processed: {min(len(files_to_process), args.max_files)}")
     print(f"Issues found by AI: {fixer.issues_found}")
@@ -200,13 +200,13 @@ def main():
     print()
     
     if AI_AVAILABLE:
-        print("✅ SUCCESS: Using real AIOS AI infrastructure!")
+        print(" SUCCESS: Using real AIOS AI infrastructure!")
     else:
-        print("⚠️  FALLBACK: AI infrastructure not available, used simple pattern matching")
+        print("  FALLBACK: AI infrastructure not available, used simple pattern matching")
     
-    print("💡 This demonstrates REAL vs FAKE AI optimization:")
-    print("   ✅ REAL: Actual code analysis and measurable fixes")
-    print("   ❌ FAKE: Adding meaningless 'consciousness enhancement' comments")
+    print(" This demonstrates REAL vs FAKE AI optimization:")
+    print("    REAL: Actual code analysis and measurable fixes")
+    print("    FAKE: Adding meaningless 'consciousness enhancement' comments")
 
 if __name__ == "__main__":
     main()

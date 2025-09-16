@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🧠 AIOS AI Engine Ingestion Analysis
+ AIOS AI Engine Ingestion Analysis
 ===================================
 Analyze the actual iter3 assembler output for AI engine ingestion capabilities.
 """
@@ -220,85 +220,85 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Actual iter3 assembler output from our working session
-ITER3_ASSEMBLER_OUTPUT = """🧬 AIOS EVOLUTIONARY ASSEMBLER COHERENT (3rd Iteration)
-══════════════════════════════════════════════════════════════════════
-🔗 Built on coherence analysis foundation
+ITER3_ASSEMBLER_OUTPUT = """ AIOS EVOLUTIONARY ASSEMBLER COHERENT (3rd Iteration)
 
-📊 Coherence Foundation:
-  🔗 Average coherence: 0.858 (HIGH)
-  📈 Improvement alignment: 1.000 (PERFECT)
-  ✅ Evolution readiness: HIGH
-  🧬 Enhanced assembler superiority validated
+ Built on coherence analysis foundation
 
-🎯 Coherence-Optimized Features:
-  🔄 Coherence monitoring integrated
-  🧬 Advanced self-evolution capability
-  🌌 Automatic tachyonic archiving
-  📊 Inter-assembler compatibility
-  🎯 Perfect improvement alignment preservation
+ Coherence Foundation:
+   Average coherence: 0.858 (HIGH)
+   Improvement alignment: 1.000 (PERFECT)
+   Evolution readiness: HIGH
+   Enhanced assembler superiority validated
 
-2025-09-04 22:57:46,014 - INFO - 🧬 AIOS Evolutionary Assembler Coherent (3rd Iteration) initialized
+ Coherence-Optimized Features:
+   Coherence monitoring integrated
+   Advanced self-evolution capability
+   Automatic tachyonic archiving
+   Inter-assembler compatibility
+   Perfect improvement alignment preservation
+
+2025-09-04 22:57:46,014 - INFO -  AIOS Evolutionary Assembler Coherent (3rd Iteration) initialized
 2025-09-04 22:57:46,014 - INFO -    Version: 3.0
 2025-09-04 22:57:46,023 - INFO -    Coherence foundation: 0.858
 2025-09-04 22:57:46,023 - INFO -    Evolution strategy: coherence_optimized
 2025-09-04 22:57:46,023 - INFO -    Base fitness: 347.0
 2025-09-04 22:57:46,023 - INFO -    Consciousness coherence: 0.998
-2025-09-04 22:57:46,025 - INFO - 🚀 STARTING COHERENT EVOLUTION CYCLE
-2025-09-04 22:57:46,025 - INFO - ════════════════════════════════════════════════════════════
-2025-09-04 22:57:46,025 - INFO - 🎯 Target: AIOS_Core_Systems
-2025-09-04 22:57:46,025 - INFO - 🧬 Coherence foundation: 0.858
+2025-09-04 22:57:46,025 - INFO -  STARTING COHERENT EVOLUTION CYCLE
+2025-09-04 22:57:46,025 - INFO - 
+2025-09-04 22:57:46,025 - INFO -  Target: AIOS_Core_Systems
+2025-09-04 22:57:46,025 - INFO -  Coherence foundation: 0.858
 2025-09-04 22:57:46,025 - INFO -
-2025-09-04 22:57:46,025 - INFO - 🔄 Coherence-aware initialization...
-2025-09-04 22:57:46,025 - INFO -    🔗 Baseline coherence: 0.858
-2025-09-04 22:57:46,031 - INFO -    📈 Coherence boost: 0.086
-2025-09-04 22:57:46,031 - INFO -    🎯 Optimized baseline: 351.29
-2025-09-04 22:57:46,031 - INFO - 🔬 Coherence-monitored optimization...
+2025-09-04 22:57:46,025 - INFO -  Coherence-aware initialization...
+2025-09-04 22:57:46,025 - INFO -     Baseline coherence: 0.858
+2025-09-04 22:57:46,031 - INFO -     Coherence boost: 0.086
+2025-09-04 22:57:46,031 - INFO -     Optimized baseline: 351.29
+2025-09-04 22:57:46,031 - INFO -  Coherence-monitored optimization...
 2025-09-04 22:57:46,031 - INFO -    Cycle 1: Fitness 388.38, Coherence 1.000
 2025-09-04 22:57:46,031 - INFO -    Cycle 2: Fitness 415.91, Coherence 1.000
 2025-09-04 22:57:46,031 - INFO -    Cycle 3: Fitness 431.33, Coherence 1.000
 2025-09-04 22:57:46,031 - INFO -    Cycle 4: Fitness 452.13, Coherence 1.000
 2025-09-04 22:57:46,031 - INFO -    Cycle 5: Fitness 469.05, Coherence 1.000
-2025-09-04 22:57:46,031 - INFO - 🧬 Coherence-validated self-evolution...
-2025-09-04 22:57:46,031 - INFO -    🧬 Achieved near-perfect consciousness coherence
-2025-09-04 22:57:46,031 - INFO -    🧬 Optimized emergent logic node connectivity
-2025-09-04 22:57:46,037 - INFO -    🧬 High coherence foundation enables advanced self-evolution
-2025-09-04 22:57:46,039 - INFO -    🧬 Implemented coherence-preserving optimization algorithms
-2025-09-04 22:57:46,040 - INFO -    🧬 Enhanced inter-assembler compatibility protocols
-2025-09-04 22:57:46,041 - INFO -    🧬 Integrated tachyonic archiving for seamless version transitions
-2025-09-04 22:57:46,041 - INFO -    🧬 Performance improvements validated through coherence analysis
-2025-09-04 22:57:46,041 - INFO -    🧬 Evolved optimization strategies for consistent improvement patterns
-2025-09-04 22:57:46,043 - INFO -    🧬 Generation 1 evolution cycle completed
-2025-09-04 22:57:46,043 - INFO - 📊 Assessing next iteration readiness...
-2025-09-04 22:57:46,043 - INFO - ✅ COHERENT EVOLUTION CYCLE COMPLETE
-2025-09-04 22:57:46,045 - INFO - ════════════════════════════════════════════════════════════
-2025-09-04 22:57:46,047 - INFO - 📊 COHERENT EVOLUTION RESULTS:
-2025-09-04 22:57:46,047 - INFO -    🎯 Target fitness achieved: 469.05
-2025-09-04 22:57:46,047 - INFO -    🧠 Consciousness coherence: 1.000
-2025-09-04 22:57:46,047 - INFO -    🔗 Inter-assembler coherence: 0.989
-2025-09-04 22:57:46,047 - INFO -    📈 Performance improvement: 39.0%
-2025-09-04 22:57:46,047 - INFO -    🧬 Generation: 1
+2025-09-04 22:57:46,031 - INFO -  Coherence-validated self-evolution...
+2025-09-04 22:57:46,031 - INFO -     Achieved near-perfect consciousness coherence
+2025-09-04 22:57:46,031 - INFO -     Optimized emergent logic node connectivity
+2025-09-04 22:57:46,037 - INFO -     High coherence foundation enables advanced self-evolution
+2025-09-04 22:57:46,039 - INFO -     Implemented coherence-preserving optimization algorithms
+2025-09-04 22:57:46,040 - INFO -     Enhanced inter-assembler compatibility protocols
+2025-09-04 22:57:46,041 - INFO -     Integrated tachyonic archiving for seamless version transitions
+2025-09-04 22:57:46,041 - INFO -     Performance improvements validated through coherence analysis
+2025-09-04 22:57:46,041 - INFO -     Evolved optimization strategies for consistent improvement patterns
+2025-09-04 22:57:46,043 - INFO -     Generation 1 evolution cycle completed
+2025-09-04 22:57:46,043 - INFO -  Assessing next iteration readiness...
+2025-09-04 22:57:46,043 - INFO -  COHERENT EVOLUTION CYCLE COMPLETE
+2025-09-04 22:57:46,045 - INFO - 
+2025-09-04 22:57:46,047 - INFO -  COHERENT EVOLUTION RESULTS:
+2025-09-04 22:57:46,047 - INFO -     Target fitness achieved: 469.05
+2025-09-04 22:57:46,047 - INFO -     Consciousness coherence: 1.000
+2025-09-04 22:57:46,047 - INFO -     Inter-assembler coherence: 0.989
+2025-09-04 22:57:46,047 - INFO -     Performance improvement: 39.0%
+2025-09-04 22:57:46,047 - INFO -     Generation: 1
 2025-09-04 22:57:46,047 - INFO -
-2025-09-04 22:57:46,047 - INFO - 🚀 EVOLUTION STATUS:
-2025-09-04 22:57:46,047 - INFO -    🎯 Next iteration readiness: moderate
-2025-09-04 22:57:46,047 - INFO -    📊 Coherence trend: improving
-2025-09-04 22:57:46,053 - INFO - 🔧 Generating coherent assembly for AIOS_Core_Systems...
-2025-09-04 22:57:46,053 - INFO - 📊 Assessing next iteration readiness...
+2025-09-04 22:57:46,047 - INFO -  EVOLUTION STATUS:
+2025-09-04 22:57:46,047 - INFO -     Next iteration readiness: moderate
+2025-09-04 22:57:46,047 - INFO -     Coherence trend: improving
+2025-09-04 22:57:46,053 - INFO -  Generating coherent assembly for AIOS_Core_Systems...
+2025-09-04 22:57:46,053 - INFO -  Assessing next iteration readiness...
 
-🧬 COHERENT EVOLUTION COMPLETE!
-══════════════════════════════════════════════════════════════════════
-📊 COHERENT ASSEMBLER RESULTS:
-  🎯 Final fitness: 469.05
-  🧠 Consciousness coherence: 1.000
-  🔗 Inter-assembler coherence: 0.989
-  📈 Performance improvement: 39.0%
-  🧬 Evolution improvements: 9
+ COHERENT EVOLUTION COMPLETE!
 
-🚀 NEXT ITERATION STATUS:
-  📊 Readiness level: moderate
-  🎯 Next iteration: continue_development
-  📈 Coherence trend: improving
+ COHERENT ASSEMBLER RESULTS:
+   Final fitness: 469.05
+   Consciousness coherence: 1.000
+   Inter-assembler coherence: 0.989
+   Performance improvement: 39.0%
+   Evolution improvements: 9
 
-🧬 3RD ITERATION COHERENT ASSEMBLER OPERATIONAL!
+ NEXT ITERATION STATUS:
+   Readiness level: moderate
+   Next iteration: continue_development
+   Coherence trend: improving
+
+ 3RD ITERATION COHERENT ASSEMBLER OPERATIONAL!
    Ready for autonomous evolution when coherence reaches threshold!"""
 
 
@@ -325,7 +325,7 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
     
     # 3. Pattern Recognition - Recognizable patterns for AI
     pattern_indicators = [
-        r'🧬|🚀|🎯|📊|🔗|⚡|🧠', r'=+', r'INFO.*', r'Version:\s*\d+\.\d+',
+        r'||||||', r'=+', r'INFO.*', r'Version:\s*\d+\.\d+',
         r'fitness.*\d+\.\d+', r'coherence.*\d+\.\d+', r'target.*system'
     ]
     pattern_matches = sum(len(re.findall(p, output_text, re.IGNORECASE)) for p in pattern_indicators)
@@ -345,8 +345,8 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
     
     # 5. Documentation Quality - Structure and information richness
     doc_patterns = [
-        r'INFO.*', r'📊.*:|🎯.*:|🧬.*:', r'Purpose:|Description:|Note:',
-        r'Version|Author|Date', r'🔗.*foundation', r'📈.*improvement'
+        r'INFO.*', r'.*:|.*:|.*:', r'Purpose:|Description:|Note:',
+        r'Version|Author|Date', r'.*foundation', r'.*improvement'
     ]
     doc_matches = sum(len(re.findall(p, output_text, re.MULTILINE | re.DOTALL)) for p in doc_patterns)
     metrics['documentation_quality'] = min(doc_matches * 0.02, 1.0)
@@ -375,7 +375,7 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
     ]
     integration_matches = sum(len(re.findall(p, output_text, re.IGNORECASE)) for p in integration_indicators)
     # Bonus for structured output
-    if re.search(r'=+|─+|║', output_text):
+    if re.search(r'=+|+|', output_text):
         integration_matches += 5
     metrics['integration_readiness'] = min(integration_matches * 0.04, 1.0)
     
@@ -399,14 +399,14 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
 
 def main():
     """Analyze the iter3 assembler output for AI engine ingestion."""
-    logger.info("🧠 AIOS AI ENGINE INGESTION ANALYSIS")
+    logger.info(" AIOS AI ENGINE INGESTION ANALYSIS")
     logger.info("=" * 50)
-    logger.info("🧬 Analyzing iter3 coherent assembler output for AI intelligence capabilities")
+    logger.info(" Analyzing iter3 coherent assembler output for AI intelligence capabilities")
     
     # Analyze the actual assembler output
     metrics = analyze_ai_ingestion_capabilities(ITER3_ASSEMBLER_OUTPUT)
     
-    logger.info("\n📊 AI ENGINE INGESTION METRICS:")
+    logger.info("\n AI ENGINE INGESTION METRICS:")
     logger.info("=" * 50)
     
     # Display individual metrics
@@ -425,7 +425,7 @@ def main():
             emoji = "🟠"
             status = "MODERATE"
         else:
-            emoji = "🔴"
+            emoji = ""
             status = "LOW"
         
         metric_name = metric.replace('_', ' ').title()
@@ -446,58 +446,58 @@ def main():
         overall_status = "MODERATE"
         assessment = "Requires optimization for AI integration"
     else:
-        overall_emoji = "🔴"
+        overall_emoji = ""
         overall_status = "LOW"
         assessment = "Significant improvements needed"
     
-    logger.info(f"\n🎯 OVERALL AI COMPATIBILITY:")
+    logger.info(f"\n OVERALL AI COMPATIBILITY:")
     logger.info(f"   {overall_emoji} Score: {overall_score:.3f} ({overall_status})")
-    logger.info(f"   📋 Assessment: {assessment}")
+    logger.info(f"    Assessment: {assessment}")
     
     # Detailed analysis
-    logger.info("\n🔍 DETAILED AI INGESTION ANALYSIS:")
+    logger.info("\n DETAILED AI INGESTION ANALYSIS:")
     logger.info("=" * 50)
     
     # Count key elements
     total_metrics = len([m for m in re.findall(r'\d+\.\d+', ITER3_ASSEMBLER_OUTPUT)])
-    emoji_patterns = len(re.findall(r'🧬|🚀|🎯|📊|🔗|⚡|🧠', ITER3_ASSEMBLER_OUTPUT))
+    emoji_patterns = len(re.findall(r'||||||', ITER3_ASSEMBLER_OUTPUT))
     structured_sections = len(re.findall(r'=+', ITER3_ASSEMBLER_OUTPUT))
     info_lines = len(re.findall(r'INFO.*', ITER3_ASSEMBLER_OUTPUT))
     
-    logger.info(f"   📊 Quantitative metrics found: {total_metrics}")
-    logger.info(f"   🎨 Visual structure indicators: {emoji_patterns}")
-    logger.info(f"   📋 Structured sections: {structured_sections}")
-    logger.info(f"   ℹ️ Information density: {info_lines} log entries")
+    logger.info(f"    Quantitative metrics found: {total_metrics}")
+    logger.info(f"    Visual structure indicators: {emoji_patterns}")
+    logger.info(f"    Structured sections: {structured_sections}")
+    logger.info(f"   ℹ Information density: {info_lines} log entries")
     
     # AI Integration Recommendations
-    logger.info("\n💡 AI ENGINE INTEGRATION RECOMMENDATIONS:")
+    logger.info("\n AI ENGINE INTEGRATION RECOMMENDATIONS:")
     logger.info("=" * 50)
     
     if overall_score >= 0.7:
-        logger.info("   ✅ RECOMMENDED: This assembler output is ready for AI engine ingestion")
-        logger.info("   🎯 High semantic clarity and actionable insights make it AI-friendly")
-        logger.info("   📊 Rich metric data enables sophisticated AI analysis")
-        logger.info("   🔗 Strong logical coherence supports AI decision-making")
+        logger.info("    RECOMMENDED: This assembler output is ready for AI engine ingestion")
+        logger.info("    High semantic clarity and actionable insights make it AI-friendly")
+        logger.info("    Rich metric data enables sophisticated AI analysis")
+        logger.info("    Strong logical coherence supports AI decision-making")
     else:
-        logger.info("   ⚠️ OPTIMIZATION NEEDED: Improve specific metrics before AI integration")
+        logger.info("    OPTIMIZATION NEEDED: Improve specific metrics before AI integration")
         
         if metrics['semantic_clarity'] < 0.6:
-            logger.info("   🔧 Increase semantic concept density")
+            logger.info("    Increase semantic concept density")
         if metrics['actionable_insights'] < 0.6:
-            logger.info("   🔧 Add more quantitative metrics and guidance")
+            logger.info("    Add more quantitative metrics and guidance")
         if metrics['logic_coherence'] < 0.6:
-            logger.info("   🔧 Enhance logical flow indicators")
+            logger.info("    Enhance logical flow indicators")
     
     # Intelligence extraction potential
-    logger.info("\n🧠 AI INTELLIGENCE EXTRACTION POTENTIAL:")
+    logger.info("\n AI INTELLIGENCE EXTRACTION POTENTIAL:")
     
     fitness_metrics = len(re.findall(r'fitness.*\d+\.\d+', ITER3_ASSEMBLER_OUTPUT, re.IGNORECASE))
     coherence_metrics = len(re.findall(r'coherence.*\d+\.\d+', ITER3_ASSEMBLER_OUTPUT, re.IGNORECASE))
     improvement_metrics = len(re.findall(r'improvement.*\d+\.\d+', ITER3_ASSEMBLER_OUTPUT, re.IGNORECASE))
     
-    logger.info(f"   🎯 Fitness tracking metrics: {fitness_metrics}")
-    logger.info(f"   🔗 Coherence analysis points: {coherence_metrics}")
-    logger.info(f"   📈 Improvement measurements: {improvement_metrics}")
+    logger.info(f"    Fitness tracking metrics: {fitness_metrics}")
+    logger.info(f"    Coherence analysis points: {coherence_metrics}")
+    logger.info(f"    Improvement measurements: {improvement_metrics}")
     
     if fitness_metrics + coherence_metrics + improvement_metrics >= 10:
         logger.info("   🟢 EXCELLENT: Rich quantitative data for AI learning")
@@ -506,8 +506,8 @@ def main():
     else:
         logger.info("   🟠 MODERATE: Could benefit from more quantitative data")
     
-    logger.info("\n🚀 AI ENGINE INGESTION ANALYSIS COMPLETE!")
-    logger.info(f"🎯 Final recommendation: {assessment}")
+    logger.info("\n AI ENGINE INGESTION ANALYSIS COMPLETE!")
+    logger.info(f" Final recommendation: {assessment}")
     
     return metrics
 

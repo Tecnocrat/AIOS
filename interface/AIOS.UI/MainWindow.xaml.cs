@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
@@ -184,7 +184,7 @@ public partial class MainWindow : Window
 
                 // Clean up status text (remove emojis for UI display)
                 var cleanStatus = healthResponse.HealthStatus
-                    .Replace("🟢 ", "").Replace("🟡 ", "").Replace("🔴 ", "")
+                    .Replace("🟢 ", "").Replace("🟡 ", "").Replace(" ", "")
                     .Replace(">> ", "");
                 StatusIndicator.Text = cleanStatus;
 
@@ -358,7 +358,7 @@ public partial class MainWindow : Window
     {
         _currentModule = "nlp";
         ChatHeader.Text = "Natural Language Processing - Active";
-        AddChatMessage("AIOS", "🧠 Switched to Natural Language Processing mode. I can help with text analysis, intent recognition, and language understanding.", true);
+        AddChatMessage("AIOS", " Switched to Natural Language Processing mode. I can help with text analysis, intent recognition, and language understanding.", true);
         AddActivityLog("Switched to NLP module");
     }
 
@@ -366,7 +366,7 @@ public partial class MainWindow : Window
     {
         _currentModule = "prediction";
         ChatHeader.Text = "Prediction Engine - Active";
-        AddChatMessage("AIOS", "🔮 Switched to Prediction Engine mode. I can analyze patterns and make predictions based on data.", true);
+        AddChatMessage("AIOS", " Switched to Prediction Engine mode. I can analyze patterns and make predictions based on data.", true);
         AddActivityLog("Switched to Prediction module");
     }
 
@@ -374,7 +374,7 @@ public partial class MainWindow : Window
     {
         _currentModule = "automation";
         ChatHeader.Text = "Automation System - Active";
-        AddChatMessage("AIOS", "🔧 Switched to Automation mode. I can help with task automation and process management.", true);
+        AddChatMessage("AIOS", " Switched to Automation mode. I can help with task automation and process management.", true);
         AddActivityLog("Switched to Automation module");
     }
 
@@ -382,7 +382,7 @@ public partial class MainWindow : Window
     {
         _currentModule = "learning";
         ChatHeader.Text = "Learning System - Active";
-        AddChatMessage("AIOS", "📚 Switched to Learning mode. I can adapt and improve based on interactions and feedback.", true);
+        AddChatMessage("AIOS", " Switched to Learning mode. I can adapt and improve based on interactions and feedback.", true);
         AddActivityLog("Switched to Learning module");
     }
 
@@ -390,7 +390,7 @@ public partial class MainWindow : Window
     {
         _currentModule = "integration";
         ChatHeader.Text = "Integration Hub - Active";
-        AddChatMessage("AIOS", "🔗 Switched to Integration mode. I can coordinate between different AI modules and external systems.", true);
+        AddChatMessage("AIOS", " Switched to Integration mode. I can coordinate between different AI modules and external systems.", true);
         AddActivityLog("Switched to Integration module");
     }
 
@@ -398,7 +398,7 @@ public partial class MainWindow : Window
     {
         _currentModule = "formatter";
         ChatHeader.Text = "AINLP Code Formatter - Active";
-        AddChatMessage("AIOS", "📐 Switched to Code Formatter mode. I can fix code formatting issues and improve code quality.", true);
+        AddChatMessage("AIOS", " Switched to Code Formatter mode. I can fix code formatting issues and improve code quality.", true);
         AddActivityLog("Switched to Code Formatter module");
 
         // Show file dialog for selecting Python file to format
@@ -413,43 +413,43 @@ public partial class MainWindow : Window
         {
             try
             {
-                AddChatMessage("AIOS", $"🔄 Analyzing file: {dialog.FileName}", true);
+                AddChatMessage("AIOS", $" Analyzing file: {dialog.FileName}", true);
 
                 // Check for E501 violations first
                 var checkResult = await _aiService.CheckE501ViolationsAsync(dialog.FileName);
 
                 if (checkResult.HasViolations)
                 {
-                    AddChatMessage("AIOS", $"📊 Found {checkResult.ViolationCount} E501 violations. Fixing now...", true);
+                    AddChatMessage("AIOS", $" Found {checkResult.ViolationCount} E501 violations. Fixing now...", true);
 
                     // Fix the violations
                     var fixResult = await _aiService.FixE501ViolationsAsync(dialog.FileName);
 
                     if (fixResult.Success)
                     {
-                        AddChatMessage("AIOS", $"✅ Successfully fixed {fixResult.LinesFixed}/{fixResult.TotalViolations} violations in {fixResult.ProcessingTimeMs}ms", true);
-                        AddChatMessage("AIOS", $"📋 {fixResult.Summary}", true);
+                        AddChatMessage("AIOS", $" Successfully fixed {fixResult.LinesFixed}/{fixResult.TotalViolations} violations in {fixResult.ProcessingTimeMs}ms", true);
+                        AddChatMessage("AIOS", $" {fixResult.Summary}", true);
                     }
                     else
                     {
-                        AddChatMessage("AIOS", $"❌ Error fixing E501 violations: {fixResult.ErrorMessage}", true);
+                        AddChatMessage("AIOS", $" Error fixing E501 violations: {fixResult.ErrorMessage}", true);
                     }
                 }
                 else
                 {
-                    AddChatMessage("AIOS", "✅ No E501 violations found. Code is already compliant!", true);
+                    AddChatMessage("AIOS", " No E501 violations found. Code is already compliant!", true);
                 }
             }
             catch (Exception ex)
             {
-                AddChatMessage("AIOS", $"❌ Error processing file: {ex.Message}", true);
+                AddChatMessage("AIOS", $" Error processing file: {ex.Message}", true);
             }
         }
     }
 
     private async void MaintenanceButton_Click(object sender, RoutedEventArgs e)
     {
-        AddChatMessage("AIOS", "🔧 Opening Maintenance Center...", true);
+        AddChatMessage("AIOS", " Opening Maintenance Center...", true);
         AddActivityLog("Opening Maintenance Center");
 
         try
@@ -459,18 +459,18 @@ public partial class MainWindow : Window
             maintenanceWindow.Owner = this;
             maintenanceWindow.Show();
 
-            AddChatMessage("AIOS", "✅ Maintenance Center opened. You can now access all maintenance operations through the dedicated interface.", true);
+            AddChatMessage("AIOS", " Maintenance Center opened. You can now access all maintenance operations through the dedicated interface.", true);
         }
         catch (Exception ex)
         {
-            AddChatMessage("AIOS", $"❌ Error opening Maintenance Center: {ex.Message}", true);
+            AddChatMessage("AIOS", $" Error opening Maintenance Center: {ex.Message}", true);
             AddActivityLog($"Maintenance Center error: {ex.Message}");
         }
     }
 
     private async void HealthCheckButton_Click(object sender, RoutedEventArgs e)
     {
-        AddChatMessage("AIOS", "🏥 Running comprehensive system health check...", true);
+        AddChatMessage("AIOS", " Running comprehensive system health check...", true);
         AddActivityLog("Manual health check requested");
 
         await UpdateSystemHealth();
@@ -480,7 +480,7 @@ public partial class MainWindow : Window
 
     private void AIIntelligenceButton_Click(object sender, RoutedEventArgs e)
     {
-        AddChatMessage("AIOS", "🔬 Opening AI Intelligence Control Center...", true);
+        AddChatMessage("AIOS", " Opening AI Intelligence Control Center...", true);
         AddActivityLog("Opening AI Intelligence Control Center");
 
         try
@@ -490,18 +490,18 @@ public partial class MainWindow : Window
             aiWindow.Owner = this;
             aiWindow.Show();
 
-            AddChatMessage("AIOS", "✅ AI Intelligence Control Center opened. You now have full access to the AI supercell through the cytoplasm bridge.", true);
+            AddChatMessage("AIOS", " AI Intelligence Control Center opened. You now have full access to the AI supercell through the cytoplasm bridge.", true);
         }
         catch (Exception ex)
         {
-            AddChatMessage("AIOS", $"❌ Error opening AI Intelligence Center: {ex.Message}", true);
+            AddChatMessage("AIOS", $" Error opening AI Intelligence Center: {ex.Message}", true);
             AddActivityLog($"AI Intelligence Center error: {ex.Message}");
         }
     }
 
     private void RuntimeIntelligenceButton_Click(object sender, RoutedEventArgs e)
     {
-        AddChatMessage("AIOS", "📊 Opening Runtime Intelligence Control Center...", true);
+        AddChatMessage("AIOS", " Opening Runtime Intelligence Control Center...", true);
         AddActivityLog("Opening Runtime Intelligence Control Center");
 
         try
@@ -511,18 +511,18 @@ public partial class MainWindow : Window
             runtimeWindow.Owner = this;
             runtimeWindow.Show();
 
-            AddChatMessage("AIOS", "✅ Runtime Intelligence Control Center opened. Interface Supercell → Runtime Intelligence → AI Intelligence (via Cytoplasm) architecture is active.", true);
+            AddChatMessage("AIOS", " Runtime Intelligence Control Center opened. Interface Supercell → Runtime Intelligence → AI Intelligence (via Cytoplasm) architecture is active.", true);
         }
         catch (Exception ex)
         {
-            AddChatMessage("AIOS", $"❌ Error opening Runtime Intelligence Center: {ex.Message}", true);
+            AddChatMessage("AIOS", $" Error opening Runtime Intelligence Center: {ex.Message}", true);
             AddActivityLog($"Runtime Intelligence Center error: {ex.Message}");
         }
     }
 
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
-        AddChatMessage("AIOS", "⚙️ Settings panel will be available in a future update. For now, you can configure the system via configuration files in the config/ directory.", true);
+        AddChatMessage("AIOS", " Settings panel will be available in a future update. For now, you can configure the system via configuration files in the config/ directory.", true);
         AddActivityLog("Settings access attempted");
     }
 }

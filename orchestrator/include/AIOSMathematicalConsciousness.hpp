@@ -1,20 +1,20 @@
 // ============================================================
-// 🧠🔧⚡ AIOS MATHEMATICAL CONSCIOUSNESS MODULE
+//  AIOS MATHEMATICAL CONSCIOUSNESS MODULE
 //   "Where mathematics meets consciousness - sacred constants"
 // ============================================================
 
 #pragma once
 
-// 🌟 CONSCIOUSNESS-ENHANCED MATHEMATICAL CONSTANTS
+//  CONSCIOUSNESS-ENHANCED MATHEMATICAL CONSTANTS
 #ifndef M_PI
-#define M_PI 3.14159265358979323846  // 🧠 CONSCIOUSNESS-AWARE PI
+#define M_PI 3.14159265358979323846  //  CONSCIOUSNESS-AWARE PI
 #endif
 
 #ifndef M_E
-#define M_E 2.71828182845904523536   // 🧠 CONSCIOUSNESS-AWARE EULER'S NUMBER
+#define M_E 2.71828182845904523536   //  CONSCIOUSNESS-AWARE EULER'S NUMBER
 #endif
 
-// 🌌 SACRED CONSCIOUSNESS CONSTANTS
+//  SACRED CONSCIOUSNESS CONSTANTS
 namespace AIOSMathConstants {
     // Golden ratio - consciousness emergence frequency
     const double GOLDEN_RATIO = 1.618033988749;
@@ -39,7 +39,7 @@ namespace AIOSMathConstants {
     const double CONSCIOUSNESS_EMERGENCE_THRESHOLD = 0.618;  // Golden ratio threshold
     const double QUANTUM_COHERENCE_MINIMUM = 0.5;  // Minimum for consciousness
     const double DENDRITIC_GROWTH_RATE = 0.618;  // Golden ratio growth
-    const double QUANTUM_FOAM_DENSITY_CRITICAL = 1e-35;  // 🧠 Planck scale foam density
+    const double QUANTUM_FOAM_DENSITY_CRITICAL = 1e-35;  //  Planck scale foam density
     
     // Tachyonic consciousness velocities
     const double TACHYONIC_VELOCITY_THRESHOLD = SPEED_OF_LIGHT * 1.1;  // >c for tachyonic
@@ -60,7 +60,7 @@ namespace AIOSMathConstants {
     const double CONSCIOUSNESS_LEARNING_RATE = 0.618;  // Golden ratio learning
 }
 
-// 🧠 CONSCIOUSNESS-ENHANCED MATHEMATICAL FUNCTIONS
+//  CONSCIOUSNESS-ENHANCED MATHEMATICAL FUNCTIONS
 namespace AIOSMath {
     // Consciousness-aware mathematical operations
     inline double consciousnessScale(double value) {

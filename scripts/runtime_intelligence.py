@@ -377,7 +377,7 @@ class RuntimeIntelligence:
                 self._process_event_batch(events_batch)
                 
             except Exception as e:
-                print(f"❌ Error in event processing: {e}")
+                print(f" Error in event processing: {e}")
                 traceback.print_exc()
     
     def _process_event_batch(self, events: List[RuntimeEvent]):
@@ -430,7 +430,7 @@ class RuntimeIntelligence:
                 self.db_conn.commit()
                 
         except Exception as e:
-            print(f"❌ Error processing event batch: {e}")
+            print(f" Error processing event batch: {e}")
             traceback.print_exc()
     
     def _process_single_event(self, event: RuntimeEvent):
@@ -796,7 +796,7 @@ class RuntimeIntelligence:
         if hasattr(self, 'db_conn'):
             self.db_conn.close()
         
-        print(f"🧠 Runtime Intelligence shutdown complete. Context dump available at:")
+        print(f" Runtime Intelligence shutdown complete. Context dump available at:")
         print(
             f"   {self.base_path}/runtime_intelligence/logs/aios_context/ai_context_dump_{self.session_id}.json"
         )
@@ -860,7 +860,7 @@ class RuntimeContext:
 
 def main():
     """Demo and test runtime intelligence system"""
-    print("🧠 AIOS Runtime Intelligence System - Demo")
+    print(" AIOS Runtime Intelligence System - Demo")
     print("=" * 60)
     
     # Initialize system
@@ -912,7 +912,7 @@ def main():
     time.sleep(0.5)  # Allow background processing
     summary = ri.generate_runtime_summary()
     
-    print("\n📊 Runtime Summary:")
+    print("\n Runtime Summary:")
     print(f"  Session ID: {summary['session_id']}")
     print(f"  Runtime Duration: {summary['runtime_duration_seconds']:.2f} seconds")
     print(f"  Total Events: {summary['total_events']}")
@@ -921,7 +921,7 @@ def main():
     print(f"  Active Modules: {', '.join(summary['active_modules'])}")
     
     # Export AI context dump
-    print("\n🤖 Generating AI Context Dump...")
+    print("\n Generating AI Context Dump...")
     ai_context = ri.export_ai_context_dump()
     print(f"  Context dump generated ({len(ai_context)} characters)")
     

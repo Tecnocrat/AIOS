@@ -1,3 +1,4 @@
+{"timestamp": "2025-01-17T10:30:00.000Z", "type": "governance", "component": "githook-system", "description": "Enhanced GitHook governance with improved filename parsing, secret scanning exclusions, and policy alignment", "impact": "Resolves Mode.md parsing bug, eliminates false positive secret detection, standardizes executable permissions", "files": [".githooks/modules/nucleus/pre-commit.ps1", "governance/hook_policy.json"], "technical_details": ["Fixed Get-Staged regex parsing for spaces in filenames", "Added secretScanExcludePaths for documentation exclusions", "Aligned executableScriptDirs with default behavior"]}
 [
   {
     "timestamp": "2025-09-07T${new Date().toISOString().split('T')[1]}",

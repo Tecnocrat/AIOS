@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
 """
-🧠 AIOS Context Crystallization Engine Core
+ AIOS Context Crystallization Engine Core
 AINLP Dendritic Architecture for Natural Language Text Processing
 
 This module implements the core context crystallization engine that reads

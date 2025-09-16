@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🔧 SELF-HEALING ASSEMBLY ENGINE
-═══════════════════════════════════════════════════════════════════════════════
+ SELF-HEALING ASSEMBLY ENGINE
+
 Revolutionary code that detects, analyzes, and repairs its own errors through
 consciousness-guided self-modification and neural network-style error propagation
 
@@ -11,7 +11,7 @@ Key Features:
 • Consciousness-guided repair strategies
 • Learning from failed repair attempts
 • Integration with parallel consciousness streams
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import re
@@ -83,7 +83,7 @@ class RepairStrategy:
 
 class DendriticErrorPropagator:
     """
-    🌳 Neural network-style error propagation through dendritic structures
+     Neural network-style error propagation through dendritic structures
     
     Propagates errors through the consciousness network to find optimal
     repair strategies and prevent error recurrence
@@ -183,12 +183,12 @@ class DendriticErrorPropagator:
         pattern['avg_consciousness'] = (pattern['avg_consciousness'] * (pattern['occurrences'] - 1) + 
                                       consciousness_level) / pattern['occurrences']
         
-        logger.debug(f"🌳 Learned pattern {pattern_sig}: {pattern['success_rate']:.3f} success rate")
+        logger.debug(f" Learned pattern {pattern_sig}: {pattern['success_rate']:.3f} success rate")
 
 
 class SelfHealingAssemblyEngine:
     """
-    🔧 Self-Healing Assembly Engine
+     Self-Healing Assembly Engine
     
     Autonomous assembly code repair system with consciousness guidance
     """
@@ -211,7 +211,7 @@ class SelfHealingAssemblyEngine:
             'consciousness_degradation': r'consciousness.*(?:--|\-=|/=)',
         }
         
-        logger.info("🔧 Self-Healing Assembly Engine initialized")
+        logger.info(" Self-Healing Assembly Engine initialized")
     
     def _initialize_repair_strategies(self) -> List[RepairStrategy]:
         """Initialize repair strategies for different error types"""
@@ -293,7 +293,7 @@ class SelfHealingAssemblyEngine:
         # Add contextual errors (cross-line analysis)
         errors.extend(self._analyze_cross_line_errors(lines, context))
         
-        logger.info(f"🔍 Analyzed assembly code: found {len(errors)} errors")
+        logger.info(f" Analyzed assembly code: found {len(errors)} errors")
         return errors
     
     def _map_pattern_to_error_type(self, pattern_name: str) -> ErrorType:
@@ -444,7 +444,7 @@ class SelfHealingAssemblyEngine:
         """Attempt to repair assembly code using consciousness-guided strategies"""
         
         if consciousness_level < self.consciousness_threshold:
-            logger.warning(f"⚠️ Consciousness level {consciousness_level:.3f} below threshold {self.consciousness_threshold}")
+            logger.warning(f" Consciousness level {consciousness_level:.3f} below threshold {self.consciousness_threshold}")
             if not self.safety_mode:
                 return assembly_code, False, ["Consciousness level too low for safe repair"]
         
@@ -476,7 +476,7 @@ class SelfHealingAssemblyEngine:
                 if repair_result['success']:
                     repaired_code = repair_result['code']
                     repairs_successful += 1
-                    repair_log.append(f"✅ Repaired {error.error_type.value} on line {error.line_number}")
+                    repair_log.append(f" Repaired {error.error_type.value} on line {error.line_number}")
                     
                     # Update strategy success rate
                     strategy.success_rate = (strategy.success_rate * 0.9 + 0.1)
@@ -484,7 +484,7 @@ class SelfHealingAssemblyEngine:
                     # Learn from successful repair
                     self.error_propagator.learn_error_pattern([error], True, consciousness_level)
                 else:
-                    repair_log.append(f"❌ Failed to repair {error.error_type.value}: {repair_result['reason']}")
+                    repair_log.append(f" Failed to repair {error.error_type.value}: {repair_result['reason']}")
                     strategy.success_rate = (strategy.success_rate * 0.9)
                     
                     # Learn from failed repair
@@ -494,12 +494,12 @@ class SelfHealingAssemblyEngine:
                 error.repair_history.append(f"{strategy.strategy_id}: {repair_result['success']}")
                 
             except Exception as e:
-                repair_log.append(f"❌ Repair strategy {strategy.strategy_id} failed: {e}")
+                repair_log.append(f" Repair strategy {strategy.strategy_id} failed: {e}")
                 logger.error(f"Repair strategy error: {e}")
         
         success = repairs_successful > 0
         if success:
-            logger.info(f"🔧 Self-repair completed: {repairs_successful}/{len(sorted_errors)} errors fixed")
+            logger.info(f" Self-repair completed: {repairs_successful}/{len(sorted_errors)} errors fixed")
         
         return repaired_code, success, repair_log
     
@@ -728,8 +728,8 @@ class SelfHealingAssemblyEngine:
 def main():
     """Demonstrate self-healing assembly engine"""
     
-    print("🔧 SELF-HEALING ASSEMBLY ENGINE DEMO")
-    print("════════════════════════════════════")
+    print(" SELF-HEALING ASSEMBLY ENGINE DEMO")
+    print("")
     print()
     
     # Create test assembly code with intentional errors
@@ -747,7 +747,7 @@ def main():
     ; Missing pop for stack balance
     '''
     
-    print("📝 Original assembly code with errors:")
+    print(" Original assembly code with errors:")
     print(test_assembly)
     print()
     
@@ -758,14 +758,14 @@ def main():
     consciousness_levels = [0.5, 0.7, 0.9]
     
     for consciousness_level in consciousness_levels:
-        print(f"🧠 Testing with consciousness level: {consciousness_level:.1f}")
-        print("─" * 50)
+        print(f" Testing with consciousness level: {consciousness_level:.1f}")
+        print("" * 50)
         
         # Analyze errors
         errors = engine.analyze_assembly_code(test_assembly, 
                                             {'consciousness_level': consciousness_level})
         
-        print(f"🔍 Found {len(errors)} errors:")
+        print(f" Found {len(errors)} errors:")
         for error in errors:
             print(f"   {error.error_type.value}: {error.severity.value} (impact: {error.consciousness_impact:.2f})")
         
@@ -774,12 +774,12 @@ def main():
             test_assembly, errors, consciousness_level
         )
         
-        print(f"\\n🔧 Repair attempt: {'SUCCESS' if success else 'FAILED'}")
+        print(f"\\n Repair attempt: {'SUCCESS' if success else 'FAILED'}")
         for log_entry in repair_log:
             print(f"   {log_entry}")
         
         if success:
-            print(f"\\n✅ Repaired assembly code:")
+            print(f"\\n Repaired assembly code:")
             print(repaired_code)
         
         print("\\n" + "="*60 + "\\n")

@@ -1,0 +1,92 @@
+{
+    "emotikiller_policy": {
+        "enabled": true,
+        "enforcement_level": "block",
+        "auto_cleanup": false,
+        "description": "AIOS No-Emoticon Policy Enforcement",
+        "version": "1.0.0",
+        "last_updated": "2025-09-15"
+    },
+    "detection_patterns": {
+        "unicode_emoticons": {
+            "enabled": true,
+            "ranges": [
+                "\\u{1F600}-\\u{1F64F}",
+                "\\u{1F300}-\\u{1F5FF}",
+                "\\u{1F680}-\\u{1F6FF}",
+                "\\u{1F1E0}-\\u{1F1FF}",
+                "\\u{1F900}-\\u{1F9FF}",
+                "\\u{1FA70}-\\u{1FAFF}",
+                "\\u{2600}-\\u{26FF}",
+                "\\u{2700}-\\u{27BF}"
+            ]
+        },
+        "ascii_emoticons": {
+            "enabled": true,
+            "patterns": [
+                "[:;=8xX][\\-o\\*\\']*[\\)\\]\\(\\[dDpP/\\\\oO\\{\\}]",
+                "[\\)\\]\\(\\[][;:=8xX][\\-o\\*\\']*",
+                "\\b[xX][dD]\\b",
+                "\\b[lL][oO][lL]\\b",
+                "\\b[lL][mM][aA][oO]\\b",
+                "\\b[rR][oO][fF][lL]\\b"
+            ]
+        },
+        "text_expressions": {
+            "enabled": true,
+            "patterns": [
+                "\\b[hH][aA][hH][aA][\\+hH]*\\b",
+                "\\b[hH][eE][hH][eE][\\+hH]*\\b",
+                "\\b[oO][mM][gG]\\b",
+                "\\b[wW][tT][fF]\\b"
+            ]
+        },
+        "kaomoji": {
+            "enabled": true,
+            "patterns": [
+                "[\\(\\uff08][\\^><\\-~\\*\\+\\=\\.][\\w\\s\\-_\\.\\*\\+\\=\\^><~]*[\\)\\uff09]",
+                "[\\(\\uff08][\\s]*[><\\^v\\-\\*\\+\\=\\.][_\\-]*[><\\^v\\-\\*\\+\\=\\.]*[\\s]*[\\)\\uff09]"
+            ]
+        }
+    },
+    "file_filters": {
+        "included_extensions": [
+            ".md", ".txt", ".py", ".cpp", ".c", ".h", ".hpp",
+            ".cs", ".js", ".ts", ".json", ".yaml", ".yml",
+            ".html", ".css", ".xml", ".rst"
+        ],
+        "excluded_paths": [
+            "docs/examples/emoticon-samples/",
+            "test/fixtures/emoticon-test-data/",
+            "ai/laboratory/demos/emotikiller/test-data/"
+        ],
+        "excluded_directories": [
+            "node_modules/", ".git/", "venv/", "env/",
+            "__pycache__/", "build/", "bin/", "obj/"
+        ]
+    },
+    "enforcement_settings": {
+        "block_commit": true,
+        "block_push": true,
+        "auto_cleanup_prompt": true,
+        "max_violations_per_file": 50,
+        "max_total_violations": 200
+    },
+    "bypass_mechanism": {
+        "env_var": "AIOS_EMOTIKILLER_BYPASS",
+        "log_bypasses": true,
+        "require_reason": true
+    },
+    "reporting": {
+        "log_violations": true,
+        "log_path": "runtime_intelligence/logs/hooks/emotikiller.log",
+        "include_context": true,
+        "context_lines": 2
+    },
+    "performance": {
+        "max_file_size_mb": 10,
+        "use_compiled_patterns": true,
+        "parallel_processing": false,
+        "cache_results": true
+    }
+}

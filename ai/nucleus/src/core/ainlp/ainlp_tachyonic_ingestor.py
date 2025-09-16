@@ -459,7 +459,7 @@ class AINLPTachyonicIngestor:
         lines.append("")
 
         # Metadata section
-        lines.append("## 📊 Source Document Analysis")
+        lines.append("##  Source Document Analysis")
         lines.append("")
         for filepath, meta in metadata.items():
             lines.append(f"### `{Path(filepath).name}`")
@@ -469,7 +469,7 @@ class AINLPTachyonicIngestor:
             lines.append("")
 
         # Table of contents
-        lines.append("## 📚 Table of Contents")
+        lines.append("##  Table of Contents")
         lines.append("")
         current_level = 0
         for section in sections:
@@ -497,7 +497,7 @@ class AINLPTachyonicIngestor:
 
         # Footer
         lines.append("---")
-        lines.append("## 🔄 AINLP Harmonization Complete")
+        lines.append("##  AINLP Harmonization Complete")
         lines.append("")
         lines.append(f"**Processing Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         lines.append("**Engine**: AINLP Tachyonic Ingestor v1.0")
@@ -562,17 +562,17 @@ def main():
     workspace_root = Path(r"c:\dev\AIOS")
     ingestor = AINLPTachyonicIngestor(workspace_root)
 
-    print("🚀 AINLP Tachyonic Ingestion Engine - Activated")
+    print(" AINLP Tachyonic Ingestion Engine - Activated")
     print("=" * 60)
 
     # Run full optimization
     results = ingestor.run_full_optimization()
 
-    print("\n📊 Optimization Results:")
+    print("\n Optimization Results:")
     print(f"Processed Files: {len(results['processed_files'])}")
     print(f"Created Optimized Documents: {len(results['optimized_documents'])}")
 
-    print("\n📈 Analysis Summary:")
+    print("\n Analysis Summary:")
     for filename, analysis in results['analysis_summary'].items():
         print(f"\n{filename}:")
         print(f"  - Sections: {analysis['sections']}")
@@ -580,12 +580,12 @@ def main():
         print(f"  - Complexity: {analysis['complexity']:.2f}")
         print(f"  - Optimization Potential: {analysis['optimization_potential']:.2f}")
 
-    print("\n🎯 Optimization Opportunities:")
+    print("\n Optimization Opportunities:")
     for category, files in results['optimization_opportunities'].items():
         if files:
             print(f"  {category}: {len(files)} files")
 
-    print("\n✨ AINLP Tachyonic Ingestion Complete!")
+    print("\n AINLP Tachyonic Ingestion Complete!")
 
 
 if __name__ == "__main__":

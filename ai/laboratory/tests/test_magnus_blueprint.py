@@ -54,7 +54,7 @@ class MagnusBlueprintTestSuite:
 
     async def run_all_tests(self):
         """Run all Magnus Blueprint tests."""
-        self.logger.info("🚀 Starting Magnus Blueprint Test Suite")
+        self.logger.info(" Starting Magnus Blueprint Test Suite")
 
         test_methods = [
             self.test_context_crystallization_engine,
@@ -81,7 +81,7 @@ class MagnusBlueprintTestSuite:
                     'timestamp': datetime.now().isoformat()
                 }
                 self.logger.info(
-                    f"✅ Test {test_name}: {'PASSED' if result else 'FAILED'}"
+                    f" Test {test_name}: {'PASSED' if result else 'FAILED'}"
                 )
 
             except Exception as e:
@@ -91,7 +91,7 @@ class MagnusBlueprintTestSuite:
                     'traceback': traceback.format_exc(),
                     'timestamp': datetime.now().isoformat()
                 }
-                self.logger.error(f"❌ Test {test_name}: ERROR - {e}")
+                self.logger.error(f" Test {test_name}: ERROR - {e}")
 
         self.generate_test_report()
         return self.test_results
@@ -746,7 +746,7 @@ class MagnusBlueprintTestSuite:
             json.dump(summary, f, indent=2)
 
         # Log summary
-        self.logger.info("📊 Magnus Blueprint Test Report Generated")
+        self.logger.info(" Magnus Blueprint Test Report Generated")
         self.logger.info(f"Total Tests: {total_tests}")
         self.logger.info(
             f"Passed: {passed_tests} "
@@ -766,7 +766,7 @@ class MagnusBlueprintTestSuite:
 
 async def main():
     """Main test execution function."""
-    print("🌌 Magnus Blueprint AI Knowledge Transfer Protocol - Test Suite")
+    print(" Magnus Blueprint AI Knowledge Transfer Protocol - Test Suite")
     print("=" * 70)
 
     # Create and run test suite
@@ -780,15 +780,15 @@ async def main():
     )
 
     print("\n" + "=" * 70)
-    print(f"🏁 Test Suite Completed: {passed_tests}/{total_tests} tests passed")
+    print(f" Test Suite Completed: {passed_tests}/{total_tests} tests passed")
 
     if passed_tests == total_tests:
-        print("🎉 ALL TESTS PASSED - Magnus Blueprint is ready for deployment!")
+        print(" ALL TESTS PASSED - Magnus Blueprint is ready for deployment!")
     else:
-        print("⚠️  Some tests failed - Review the test report for details")
+        print("  Some tests failed - Review the test report for details")
 
-    print("📄 Detailed report saved to: magnus_blueprint_test_report.json")
-    print("📋 Test log saved to: magnus_blueprint_test.log")
+    print(" Detailed report saved to: magnus_blueprint_test_report.json")
+    print(" Test log saved to: magnus_blueprint_test.log")
 
 
 if __name__ == "__main__":

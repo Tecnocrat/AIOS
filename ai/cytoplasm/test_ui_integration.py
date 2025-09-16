@@ -22,22 +22,22 @@ def test_complete_integration():
     Simulates the C# service calling Python bridge
     """
     
-    print("🧬 AIOS AI Intelligence - Complete UI Integration Test")
+    print(" AIOS AI Intelligence - Complete UI Integration Test")
     print("=" * 70)
     
     bridge = get_ui_bridge()
     
     # Test 1: Get Available Functions
-    print("\n📋 Test 1: Getting Available AI Functions")
+    print("\n Test 1: Getting Available AI Functions")
     print("-" * 40)
     
     functions = bridge.get_available_functions()
-    print(f"✅ Found {len(functions)} AI functions:")
+    print(f" Found {len(functions)} AI functions:")
     for func in functions:
         print(f"  • {func['name']} ({func['category']})")
     
     # Test 2: System Health Check
-    print("\n🏥 Test 2: System Health Check")
+    print("\n Test 2: System Health Check")
     print("-" * 40)
     
     health_result = bridge.execute_ai_function("system_health_check")
@@ -50,7 +50,7 @@ def test_complete_integration():
             print(f"  {component}: {status}")
     
     # Test 3: Visual Intelligence Processing
-    print("\n🔍 Test 3: Visual Intelligence Processing")
+    print("\n Test 3: Visual Intelligence Processing")
     print("-" * 40)
     
     visual_result = bridge.execute_ai_function("process_visual_intelligence", {
@@ -63,7 +63,7 @@ def test_complete_integration():
         print(f"Data Keys: {list(visual_result['data'].keys())}")
     
     # Test 4: Enhanced Visual Analysis (Cellular)
-    print("\n🧬 Test 4: Enhanced Visual Analysis (Cellular Architecture)")
+    print("\n Test 4: Enhanced Visual Analysis (Cellular Architecture)")
     print("-" * 40)
     
     enhanced_result = bridge.execute_ai_function("enhanced_visual_analysis", {
@@ -78,7 +78,7 @@ def test_complete_integration():
             print(f"Enhanced Data Keys: {list(data.keys())}")
     
     # Test 5: Consciousness Pattern Analysis
-    print("\n🧠 Test 5: Consciousness Pattern Analysis")
+    print("\n Test 5: Consciousness Pattern Analysis")
     print("-" * 40)
     
     consciousness_result = bridge.execute_ai_function("analyze_consciousness_patterns", {
@@ -88,7 +88,7 @@ def test_complete_integration():
     print(f"Temporal Window: {consciousness_result.get('temporal_window')} seconds")
     
     # Test 6: Session Management
-    print("\n📝 Test 6: Session Management")
+    print("\n Test 6: Session Management")
     print("-" * 40)
     
     # Create session
@@ -108,7 +108,7 @@ def test_complete_integration():
     print(f"Active Sessions: {list_result.get('count', 0)}")
     
     # Test 7: Real-time Monitoring (Short Test)
-    print("\n⏱️ Test 7: Real-time Monitoring")
+    print("\n⏱ Test 7: Real-time Monitoring")
     print("-" * 40)
     
     # Start real-time monitoring
@@ -127,7 +127,7 @@ def test_complete_integration():
     print(f"Stop Message: {stop_rt.get('message', 'No message')}")
     
     # Test 8: Data Export
-    print("\n💾 Test 8: Data Export")
+    print("\n Test 8: Data Export")
     print("-" * 40)
     
     export_result = bridge.execute_ai_function("export_analysis_data", {
@@ -139,7 +139,7 @@ def test_complete_integration():
         print(f"Export Path: {export_result['filepath']}")
     
     # Test 9: Configuration
-    print("\n⚙️ Test 9: Analysis Configuration")
+    print("\n Test 9: Analysis Configuration")
     print("-" * 40)
     
     config_result = bridge.execute_ai_function("configure_analysis_parameters", {
@@ -153,7 +153,7 @@ def test_complete_integration():
     print(f"Applied Config: {config_result.get('applied_config', {})}")
     
     # Test 10: Debug Information
-    print("\n🔧 Test 10: Debug Information")
+    print("\n Test 10: Debug Information")
     print("-" * 40)
     
     debug_info = bridge.get_debug_info()
@@ -166,23 +166,23 @@ def test_complete_integration():
         print(f"Error Count: {len(debug_manager_info.get('errors', []))}")
     
     # Summary
-    print("\n🎯 Integration Test Summary")
+    print("\n Integration Test Summary")
     print("=" * 70)
-    print("✅ All AI Intelligence functions accessible through cytoplasm bridge")
-    print("✅ System health monitoring operational")
-    print("✅ Visual intelligence processing functional")
-    print("✅ Enhanced cellular analysis available")
-    print("✅ Consciousness pattern analysis working")
-    print("✅ Session management operational")
-    print("✅ Real-time monitoring controls functional")
-    print("✅ Data export capabilities working")
-    print("✅ Configuration system responsive")
-    print("✅ Debug information accessible")
+    print(" All AI Intelligence functions accessible through cytoplasm bridge")
+    print(" System health monitoring operational")
+    print(" Visual intelligence processing functional")
+    print(" Enhanced cellular analysis available")
+    print(" Consciousness pattern analysis working")
+    print(" Session management operational")
+    print(" Real-time monitoring controls functional")
+    print(" Data export capabilities working")
+    print(" Configuration system responsive")
+    print(" Debug information accessible")
     print()
-    print("🧬 Cytoplasm Bridge successfully manages external/internal communication")
-    print("🔬 Complete AI Intelligence functionality exposed to UI layer")
+    print(" Cytoplasm Bridge successfully manages external/internal communication")
+    print(" Complete AI Intelligence functionality exposed to UI layer")
     print()
-    print("Ready for C# UI integration! 🚀")
+    print("Ready for C# UI integration! ")
     
 
 def simulate_csharp_service_calls():
@@ -191,7 +191,7 @@ def simulate_csharp_service_calls():
     """
     
     print("\n" + "=" * 70)
-    print("🖥️ Simulating C# Service Integration")
+    print(" Simulating C# Service Integration")
     print("=" * 70)
     
     # Simulate command file approach
@@ -222,7 +222,7 @@ def simulate_csharp_service_calls():
     bridge = get_ui_bridge()
     
     for i, command_data in enumerate(test_commands, 1):
-        print(f"\n📤 C# Service Command {i}:")
+        print(f"\n C# Service Command {i}:")
         print(f"Command: {command_data['command']}")
         print(f"Parameters: {command_data['parameters']}")
         
@@ -239,15 +239,15 @@ def simulate_csharp_service_calls():
         else:
             result = {"status": "error", "message": f"Unknown command: {command}"}
         
-        print(f"📥 Response Status: {result.get('status', 'unknown')}")
+        print(f" Response Status: {result.get('status', 'unknown')}")
         if 'functions' in result:
-            print(f"📥 Functions Count: {len(result['functions'])}")
+            print(f" Functions Count: {len(result['functions'])}")
         elif 'overall_health' in result:
-            print(f"📥 System Health: {result['overall_health']}")
+            print(f" System Health: {result['overall_health']}")
         elif 'data' in result:
-            print(f"📥 Data Available: Yes")
+            print(f" Data Available: Yes")
         
-        print("✅ Command processed successfully through cytoplasm bridge")
+        print(" Command processed successfully through cytoplasm bridge")
 
 
 if __name__ == "__main__":
@@ -255,10 +255,10 @@ if __name__ == "__main__":
         test_complete_integration()
         simulate_csharp_service_calls()
         
-        print("\n🎉 Complete UI Integration Test PASSED!")
+        print("\n Complete UI Integration Test PASSED!")
         print("The cytoplasm bridge successfully connects UI to AI Intelligence!")
         
     except Exception as e:
-        print(f"\n❌ Integration test failed: {e}")
+        print(f"\n Integration test failed: {e}")
         import traceback
         traceback.print_exc()

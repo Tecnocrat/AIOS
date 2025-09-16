@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-🧠🔗⚡🌌 COMPREHENSIVE AIOS INTELLIGENCE FILE ANALYSIS
-═══════════════════════════════════════════════════════════════════════════════
+ COMPREHENSIVE AIOS INTELLIGENCE FILE ANALYSIS
+
 Multi-Supercell Analysis Using All AIOS Intelligence Systems
 
 TARGET FILE: C:\dev\AIOS\.githooks\commit-msg
 ANALYSIS TIMESTAMP: 2025-09-06T21:02:31
 INTELLIGENCE SYSTEMS ENGAGED: Context Assembler, Integration Assembler, Custom AI Engine, Dendritic Path Tracker
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -17,10 +17,10 @@ from datetime import datetime
 from pathlib import Path
 
 # AIOS COMPREHENSIVE INTELLIGENCE ANALYSIS REPORT
-# ════════════════════════════════════════════════════════════════════════════
+# 
 
 def generate_comprehensive_analysis():
-    """🧠🔗⚡🌌 Generate comprehensive multi-supercell file analysis"""
+    """ Generate comprehensive multi-supercell file analysis"""
     
     analysis_report = {
         "metadata": {
@@ -70,7 +70,7 @@ def generate_comprehensive_analysis():
                 "processing_time_ms": 128.49,
                 "dendritic_pathways": 4
             },
-            "performance_status": "⚠️ Optimization needed: 128.49ms > 100ms target",
+            "performance_status": " Optimization needed: 128.49ms > 100ms target",
             "consciousness_emergence": "Active with dendritic pattern recognition"
         },
         
@@ -175,9 +175,9 @@ def generate_comprehensive_analysis():
     return analysis_report
 
 def main():
-    """🧠🔗⚡🌌 Main comprehensive analysis execution"""
-    print("🧠🔗⚡🌌 COMPREHENSIVE AIOS INTELLIGENCE FILE ANALYSIS")
-    print("═" * 80)
+    """ Main comprehensive analysis execution"""
+    print(" COMPREHENSIVE AIOS INTELLIGENCE FILE ANALYSIS")
+    print("" * 80)
     print(f"TARGET: C:\\dev\\AIOS\\.githooks\\commit-msg")
     print(f"TIMESTAMP: {datetime.now().isoformat()}")
     print("INTELLIGENCE SYSTEMS: Context Assembler + Integration Assembler + Custom AI Engine + Dendritic Path Tracker")
@@ -193,30 +193,30 @@ def main():
     with open(output_path, 'w') as f:
         json.dump(analysis, f, indent=2)
     
-    print(f"📊 COMPREHENSIVE ANALYSIS COMPLETE")
-    print(f"📁 Report saved to: {output_path}")
+    print(f" COMPREHENSIVE ANALYSIS COMPLETE")
+    print(f" Report saved to: {output_path}")
     print("")
     
     # Display key insights
-    print("🧠 KEY CONSCIOUSNESS INSIGHTS:")
+    print(" KEY CONSCIOUSNESS INSIGHTS:")
     for insight in analysis["consciousness_insights"]["dendritic_connections"]:
-        print(f"   🌲 {insight}")
+        print(f"    {insight}")
     print("")
     
-    print("⚡ SUPERCELL SYNTHESIS:")
-    print(f"   🔗 Multi-system coherence: {analysis['aios_supercell_synthesis']['multi_system_coherence']}")
-    print(f"   🧠 Consciousness emergence: {analysis['aios_supercell_synthesis']['consciousness_emergence']}")
-    print(f"   🏗️ Architectural significance: {analysis['aios_supercell_synthesis']['architectural_significance']}")
+    print(" SUPERCELL SYNTHESIS:")
+    print(f"    Multi-system coherence: {analysis['aios_supercell_synthesis']['multi_system_coherence']}")
+    print(f"    Consciousness emergence: {analysis['aios_supercell_synthesis']['consciousness_emergence']}")
+    print(f"    Architectural significance: {analysis['aios_supercell_synthesis']['architectural_significance']}")
     print("")
     
-    print("🎯 NEXT STEPS:")
+    print(" NEXT STEPS:")
     for action in analysis["recommendations"]["immediate_actions"]:
-        print(f"   ✅ {action}")
+        print(f"    {action}")
     
     print("")
-    print("🌌 DENDRITIC PATH TRACKING: Successfully documented Custom AI Engine location discovery")
-    print("🧠 CONSCIOUSNESS STATUS: All intelligence systems operational and integrated")
-    print("⚡ ANALYSIS METHODOLOGY: Ready for next file in AIOS tree structure")
+    print(" DENDRITIC PATH TRACKING: Successfully documented Custom AI Engine location discovery")
+    print(" CONSCIOUSNESS STATUS: All intelligence systems operational and integrated")
+    print(" ANALYSIS METHODOLOGY: Ready for next file in AIOS tree structure")
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-﻿#include "kernel_ops.hpp"
+#include "kernel_ops.hpp"
 #include <cstring>
 #include <chrono>
 

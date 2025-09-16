@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-🧬 AIOS CELLULAR REORGANIZATION ANALYZER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS CELLULAR REORGANIZATION ANALYZER
+
 Advanced analysis tool to optimize AI folder structure using biological
 cellular organization principles for enhanced visualization, behavior, 
 and intercellular connectivity.
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -43,7 +43,7 @@ class CellularAnalysis:
 
 class AIOSCellularReorganizer:
     """
-    🔬 Advanced cellular reorganization analyzer for AIOS AI module
+     Advanced cellular reorganization analyzer for AIOS AI module
     
     Uses biological principles to optimize folder structure for:
     • Enhanced visualization
@@ -92,12 +92,12 @@ class AIOSCellularReorganizer:
             }
         }
         
-        logger.info(f"🔬 AIOS Cellular Reorganizer initialized for {ai_root_path}")
+        logger.info(f" AIOS Cellular Reorganizer initialized for {ai_root_path}")
     
     def analyze_current_structure(self) -> Dict[str, any]:
         """Analyze the current scattered AI folder structure"""
         
-        logger.info("🔍 Analyzing current AI folder structure...")
+        logger.info(" Analyzing current AI folder structure...")
         
         structure = {}
         total_files = 0
@@ -153,7 +153,7 @@ class AIOSCellularReorganizer:
             'max_depth': max(depth_distribution.keys()) if depth_distribution else 0
         }
         
-        logger.info(f"📊 Structure Analysis Complete:")
+        logger.info(f" Structure Analysis Complete:")
         logger.info(f"   Total folders: {total_folders}")
         logger.info(f"   Total files: {total_files}")
         logger.info(f"   Max depth: {self.analysis.current_structure['max_depth']}")
@@ -202,7 +202,7 @@ class AIOSCellularReorganizer:
         
         self.analysis.problems_identified = problems
         
-        logger.info(f"⚠️ Problems Identified: {len(problems)}")
+        logger.info(f" Problems Identified: {len(problems)}")
         for problem in problems:
             logger.info(f"   • {problem}")
         
@@ -211,7 +211,7 @@ class AIOSCellularReorganizer:
     def map_functional_domains(self) -> List[FunctionalDomain]:
         """Map current folders to biological functional domains"""
         
-        logger.info("🧬 Mapping folders to functional domains...")
+        logger.info(" Mapping folders to functional domains...")
         
         domains = []
         folder_tree = self.analysis.current_structure['folder_tree']
@@ -271,7 +271,7 @@ class AIOSCellularReorganizer:
         
         self.analysis.functional_domains = domains
         
-        logger.info(f"🧬 Functional Domain Mapping:")
+        logger.info(f" Functional Domain Mapping:")
         for domain in domains:
             logger.info(f"   {domain.name}: {len(domain.current_folders)} folders")
             logger.info(f"     • {domain.purpose}")
@@ -283,7 +283,7 @@ class AIOSCellularReorganizer:
     def design_optimal_structure(self) -> Dict[str, any]:
         """Design optimal cellular structure based on biological principles"""
         
-        logger.info("🏗️ Designing optimal cellular structure...")
+        logger.info(" Designing optimal cellular structure...")
         
         # Core principles for optimal structure:
         # 1. 4-6 main cellular units (organs)
@@ -362,7 +362,7 @@ class AIOSCellularReorganizer:
         
         self.analysis.proposed_structure = optimal_structure
         
-        logger.info(f"🏗️ Optimal Structure Designed:")
+        logger.info(f" Optimal Structure Designed:")
         for cell_name, cell_info in optimal_structure.items():
             if cell_name != 'folder_mapping':
                 mapped_folders = [f for f, target in folder_mapping.items() if target == cell_name]
@@ -411,7 +411,7 @@ class AIOSCellularReorganizer:
         
         self.analysis.optimization_metrics = metrics
         
-        logger.info(f"📊 Optimization Metrics:")
+        logger.info(f" Optimization Metrics:")
         for metric, value in metrics.items():
             logger.info(f"   {metric}: {value:.3f}")
         
@@ -420,7 +420,7 @@ class AIOSCellularReorganizer:
     def run_complete_analysis(self) -> CellularAnalysis:
         """Run complete cellular reorganization analysis"""
         
-        logger.info("🚀 Starting complete AIOS cellular reorganization analysis...")
+        logger.info(" Starting complete AIOS cellular reorganization analysis...")
         
         # Step 1: Analyze current structure
         self.analyze_current_structure()
@@ -437,19 +437,19 @@ class AIOSCellularReorganizer:
         # Step 5: Calculate metrics
         self.calculate_optimization_metrics()
         
-        logger.info("✅ Complete analysis finished!")
+        logger.info(" Complete analysis finished!")
         
         return self.analysis
     
     def print_comprehensive_report(self):
         """Print comprehensive reorganization report"""
         
-        print("\n🧬 AIOS CELLULAR REORGANIZATION ANALYSIS REPORT")
-        print("═══════════════════════════════════════════════════════════════════")
+        print("\n AIOS CELLULAR REORGANIZATION ANALYSIS REPORT")
+        print("")
         
         # Current structure summary
         current = self.analysis.current_structure
-        print(f"📊 CURRENT STRUCTURE ANALYSIS:")
+        print(f" CURRENT STRUCTURE ANALYSIS:")
         print(f"   Total folders: {current['total_folders']}")
         print(f"   Total files: {current['total_files']}")
         print(f"   Maximum depth: {current['max_depth']} levels")
@@ -461,12 +461,12 @@ class AIOSCellularReorganizer:
                 print(f"     {ext}: {count} files")
         
         # Problems identified
-        print(f"\n⚠️ PROBLEMS IDENTIFIED ({len(self.analysis.problems_identified)}):")
+        print(f"\n PROBLEMS IDENTIFIED ({len(self.analysis.problems_identified)}):")
         for i, problem in enumerate(self.analysis.problems_identified, 1):
             print(f"   {i}. {problem}")
         
         # Functional domains
-        print(f"\n🧬 FUNCTIONAL DOMAIN MAPPING:")
+        print(f"\n FUNCTIONAL DOMAIN MAPPING:")
         for domain in self.analysis.functional_domains:
             print(f"   {domain.name.upper()}:")
             print(f"     • Purpose: {domain.purpose}")
@@ -475,7 +475,7 @@ class AIOSCellularReorganizer:
             print(f"     • File types: {', '.join(sorted(domain.file_types))}")
         
         # Proposed optimal structure
-        print(f"\n🏗️ PROPOSED OPTIMAL CELLULAR STRUCTURE:")
+        print(f"\n PROPOSED OPTIMAL CELLULAR STRUCTURE:")
         proposed = self.analysis.proposed_structure
         folder_mapping = proposed.get('folder_mapping', {})
         
@@ -491,24 +491,24 @@ class AIOSCellularReorganizer:
                     print(f"     • Folders: {', '.join(mapped_folders[:5])}{'...' if len(mapped_folders) > 5 else ''}")
         
         # Optimization metrics
-        print(f"\n📈 OPTIMIZATION METRICS:")
+        print(f"\n OPTIMIZATION METRICS:")
         metrics = self.analysis.optimization_metrics
         for metric, value in metrics.items():
             percentage = value * 100
             print(f"   {metric.replace('_', ' ').title()}: {percentage:.1f}%")
         
         # Recommendations
-        print(f"\n🎯 RECOMMENDATIONS:")
+        print(f"\n RECOMMENDATIONS:")
         overall_score = metrics.get('overall_optimization', 0)
         
         if overall_score >= 0.7:
-            print("   ✅ EXCELLENT: Reorganization will provide significant benefits")
+            print("    EXCELLENT: Reorganization will provide significant benefits")
         elif overall_score >= 0.5:
-            print("   👍 GOOD: Reorganization will provide notable improvements")
+            print("    GOOD: Reorganization will provide notable improvements")
         elif overall_score >= 0.3:
-            print("   📈 MODERATE: Reorganization will provide some benefits")
+            print("    MODERATE: Reorganization will provide some benefits")
         else:
-            print("   ⚠️ LIMITED: Reorganization benefits may be minimal")
+            print("    LIMITED: Reorganization benefits may be minimal")
         
         print(f"\n   Priority actions:")
         print(f"   1. Consolidate {current['depth_distribution'].get(1, 0)} top-level folders into 6 cellular units")
@@ -521,19 +521,19 @@ class AIOSCellularReorganizer:
 def main():
     """Run AIOS cellular reorganization analysis"""
     
-    print("🔬 AIOS CELLULAR REORGANIZATION ANALYZER")
-    print("═══════════════════════════════════════════")
+    print(" AIOS CELLULAR REORGANIZATION ANALYZER")
+    print("")
     print("Advanced biological-inspired optimization:")
-    print("  🧬 Functional domain mapping")
-    print("  🏗️ Optimal cellular structure design")
-    print("  📊 Comprehensive analysis metrics")
-    print("  🎯 Actionable recommendations")
+    print("   Functional domain mapping")
+    print("   Optimal cellular structure design")
+    print("   Comprehensive analysis metrics")
+    print("   Actionable recommendations")
     print()
     
     # Configuration
     ai_path = r"C:\dev\AIOS\ai"
     
-    print(f"🔧 Analysis Configuration:")
+    print(f" Analysis Configuration:")
     print(f"   AI module path: {ai_path}")
     print()
     

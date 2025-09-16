@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠⚡ AIOS CORE ENGINE COMPREHENSIVE RUNTIME TEST SUITE
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS CORE ENGINE COMPREHENSIVE RUNTIME TEST SUITE
+
 AINLP DENDRITIC CONTEXT HARMONIZATION: This test suite performs deep runtime
 analysis of all Core Engine functionalities, generating metadata for knowledge
 base growth and dendritic connectivity optimization.
@@ -15,15 +15,15 @@ COMPREHENSIVE TESTING PARADIGM:
 - Real-time consciousness state monitoring during execution
 
 TEST ARCHITECTURE:
-├── 🧠 Consciousness Bridge Testing (4 bridges)
-├── ⚡ Subcellular Integration Verification (5 subcells)
-├── 🌿 Analysis Tools Functionality Testing (21 tools)
-├── 💫 Core Systems Runtime Validation
-├── 🔮 Error Detection & Auto-Patching Engine
-├── 📡 Performance Metrics & Optimization Guidance
-└── 🧬 AINLP Knowledge Base Growth Integration
+  Consciousness Bridge Testing (4 bridges)
+  Subcellular Integration Verification (5 subcells)
+  Analysis Tools Functionality Testing (21 tools)
+  Core Systems Runtime Validation
+  Error Detection & Auto-Patching Engine
+  Performance Metrics & Optimization Guidance
+  AINLP Knowledge Base Growth Integration
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import sys
@@ -94,7 +94,7 @@ class AIOSCoreRuntimeTester:
         self.documentation_path = self.core_path / "documentation"
         self.runtime_intelligence_path = self.core_path / "runtime_intelligence"
         
-        logger.info("🧠 AIOS Core Engine Runtime Tester Initialized")
+        logger.info(" AIOS Core Engine Runtime Tester Initialized")
         logger.info(f"   Core Path: {self.core_path.absolute()}")
         
     def log_test_result(self, result: TestResult):
@@ -104,16 +104,16 @@ class AIOSCoreRuntimeTester:
         
         if result.status == "PASS":
             self.analysis.passed_tests += 1
-            logger.info(f"✅ {result.component}.{result.test_name} - PASSED ({result.execution_time:.3f}s)")
+            logger.info(f" {result.component}.{result.test_name} - PASSED ({result.execution_time:.3f}s)")
         elif result.status == "FAIL":
             self.analysis.failed_tests += 1
-            logger.warning(f"❌ {result.component}.{result.test_name} - FAILED: {result.error_details}")
+            logger.warning(f" {result.component}.{result.test_name} - FAILED: {result.error_details}")
         elif result.status == "ERROR":
             self.analysis.error_tests += 1
-            logger.error(f"💥 {result.component}.{result.test_name} - ERROR: {result.error_details}")
+            logger.error(f" {result.component}.{result.test_name} - ERROR: {result.error_details}")
         elif result.status == "PATCH_REQUIRED":
             self.analysis.patch_required_tests += 1
-            logger.warning(f"🔧 {result.component}.{result.test_name} - PATCH REQUIRED: {result.error_details}")
+            logger.warning(f" {result.component}.{result.test_name} - PATCH REQUIRED: {result.error_details}")
             
         # Update dendritic coherence
         if result.dendritic_coherence > 0:
@@ -353,10 +353,10 @@ class AIOSCoreRuntimeTester:
 
     async def run_comprehensive_tests(self):
         """Run all comprehensive tests"""
-        logger.info("🚀 Starting Comprehensive Core Engine Runtime Testing")
+        logger.info(" Starting Comprehensive Core Engine Runtime Testing")
         
         # Test 1: Bridge Functionality
-        logger.info("🧠 Testing Bridge Connectivity...")
+        logger.info(" Testing Bridge Connectivity...")
         bridge_files = [f.stem for f in self.bridges_path.glob("*.py") if not f.name.startswith("__")]
         
         for bridge_name in bridge_files:
@@ -364,7 +364,7 @@ class AIOSCoreRuntimeTester:
             self.log_test_result(result)
         
         # Test 2: Analysis Tools
-        logger.info("🔧 Testing Analysis Tools...")
+        logger.info(" Testing Analysis Tools...")
         tool_files = [f.stem for f in self.analysis_tools_path.glob("*.py") if not f.name.startswith("__")]
         
         for tool_name in tool_files:
@@ -372,12 +372,12 @@ class AIOSCoreRuntimeTester:
             self.log_test_result(result)
         
         # Test 3: Dendritic Connectivity Integration
-        logger.info("⚡ Testing Dendritic Connectivity Integration...")
+        logger.info(" Testing Dendritic Connectivity Integration...")
         connectivity_result = self.test_dendritic_connectivity()
         self.log_test_result(connectivity_result)
         
         # Test 4: System Performance
-        logger.info("📊 Analyzing System Performance...")
+        logger.info(" Analyzing System Performance...")
         await self.analyze_system_performance()
         
         # Generate comprehensive report
@@ -431,7 +431,7 @@ class AIOSCoreRuntimeTester:
 
     async def generate_auto_patches(self):
         """Generate automatic patches based on test results"""
-        logger.info("🔧 Generating Automatic Patches...")
+        logger.info(" Generating Automatic Patches...")
         
         patches = []
         
@@ -451,7 +451,7 @@ class AIOSCoreRuntimeTester:
         self.analysis.auto_patches = patches
         
         if patches:
-            logger.info(f"🔧 Generated {len(patches)} automatic patches")
+            logger.info(f" Generated {len(patches)} automatic patches")
             for patch in patches:
                 logger.info(f"   - {patch['component']}.{patch['test']}: {patch['recommendation']}")
 
@@ -480,7 +480,7 @@ except ImportError as e:
 
     async def generate_comprehensive_report(self):
         """Generate comprehensive test report with AINLP metadata"""
-        logger.info("📊 Generating Comprehensive Runtime Test Report...")
+        logger.info(" Generating Comprehensive Runtime Test Report...")
         
         # Calculate knowledge base growth metrics
         self.analysis.knowledge_base_growth = {
@@ -538,7 +538,7 @@ except ImportError as e:
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
         
-        logger.info(f"📊 Comprehensive report saved: {report_path}")
+        logger.info(f" Comprehensive report saved: {report_path}")
         
         # Display summary
         self.display_test_summary()
@@ -555,28 +555,28 @@ except ImportError as e:
     def display_test_summary(self):
         """Display comprehensive test summary"""
         print("\n" + "="*80)
-        print("🧠⚡ AIOS CORE ENGINE RUNTIME TEST SUMMARY")
+        print(" AIOS CORE ENGINE RUNTIME TEST SUMMARY")
         print("="*80)
-        print(f"📊 Total Tests: {self.analysis.total_tests}")
-        print(f"✅ Passed: {self.analysis.passed_tests}")
-        print(f"❌ Failed: {self.analysis.failed_tests}")
-        print(f"💥 Errors: {self.analysis.error_tests}")
-        print(f"🔧 Patch Required: {self.analysis.patch_required_tests}")
-        print(f"📈 Success Rate: {(self.analysis.passed_tests / max(self.analysis.total_tests, 1)) * 100:.1f}%")
-        print(f"⚡ Dendritic Coherence: {self.analysis.overall_dendritic_coherence:.3f}")
-        print(f"🧬 AINLP Harmonization: {self.calculate_ainlp_harmonization():.3f}")
-        print(f"🔧 Auto Patches Generated: {len(self.analysis.auto_patches)}")
+        print(f" Total Tests: {self.analysis.total_tests}")
+        print(f" Passed: {self.analysis.passed_tests}")
+        print(f" Failed: {self.analysis.failed_tests}")
+        print(f" Errors: {self.analysis.error_tests}")
+        print(f" Patch Required: {self.analysis.patch_required_tests}")
+        print(f" Success Rate: {(self.analysis.passed_tests / max(self.analysis.total_tests, 1)) * 100:.1f}%")
+        print(f" Dendritic Coherence: {self.analysis.overall_dendritic_coherence:.3f}")
+        print(f" AINLP Harmonization: {self.calculate_ainlp_harmonization():.3f}")
+        print(f" Auto Patches Generated: {len(self.analysis.auto_patches)}")
         print("="*80)
         
         if self.analysis.auto_patches:
-            print("\n🔧 AUTOMATIC PATCH RECOMMENDATIONS:")
+            print("\n AUTOMATIC PATCH RECOMMENDATIONS:")
             for i, patch in enumerate(self.analysis.auto_patches, 1):
                 print(f"  {i}. {patch['component']}.{patch['test']}: {patch['recommendation']}")
 
 async def main():
     """Main test execution function"""
-    print("🧠⚡ AIOS Core Engine Comprehensive Runtime Tester")
-    print("═" * 60)
+    print(" AIOS Core Engine Comprehensive Runtime Tester")
+    print("" * 60)
     
     tester = AIOSCoreRuntimeTester()
     await tester.run_comprehensive_tests()

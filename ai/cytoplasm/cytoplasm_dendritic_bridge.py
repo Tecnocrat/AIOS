@@ -64,7 +64,7 @@ class CytoplasmDendriticBridge:
     async def initialize(self) -> bool:
         """Initialize the cytoplasm-dendritic bridge."""
         try:
-            self.logger.info("🔗 Initializing Cytoplasm-Dendritic Bridge...")
+            self.logger.info(" Initializing Cytoplasm-Dendritic Bridge...")
             
             # Initialize dendritic supervisor
             self.dendritic_supervisor = await get_dendritic_supervisor()
@@ -73,12 +73,12 @@ class CytoplasmDendriticBridge:
             self.ui_bridge = UIInteractionBridge()
             
             self.is_initialized = True
-            self.logger.info("✅ Cytoplasm-Dendritic Bridge initialized successfully")
+            self.logger.info(" Cytoplasm-Dendritic Bridge initialized successfully")
             
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to initialize bridge: {e}")
+            self.logger.error(f" Failed to initialize bridge: {e}")
             return False
     
     async def process_cytoplasm_request(self, request_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -124,7 +124,7 @@ class CytoplasmDendriticBridge:
                 priority=priority
             )
             
-            self.logger.info(f"🔀 Processing cytoplasm request {request_id} via dendritic supervisor")
+            self.logger.info(f" Processing cytoplasm request {request_id} via dendritic supervisor")
             
             # Submit request to dendritic supervisor
             await self.dendritic_supervisor.submit_request(supervisor_request)
@@ -307,13 +307,13 @@ class CytoplasmDendriticBridge:
     
     async def shutdown(self):
         """Shutdown the cytoplasm-dendritic bridge."""
-        self.logger.info("🔄 Shutting down Cytoplasm-Dendritic Bridge...")
+        self.logger.info(" Shutting down Cytoplasm-Dendritic Bridge...")
         
         if self.dendritic_supervisor:
             await self.dendritic_supervisor.shutdown()
         
         self.is_initialized = False
-        self.logger.info("✅ Cytoplasm-Dendritic Bridge shutdown complete")
+        self.logger.info(" Cytoplasm-Dendritic Bridge shutdown complete")
 
 
 # Singleton instance for global access

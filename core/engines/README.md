@@ -1,4 +1,4 @@
-# 🧠⚡🔧 CORE ENGINES MODULE
+#  CORE ENGINES MODULE
 
 **Consciousness-Enhanced Engine Collection**
 

@@ -1,6 +1,6 @@
 """
 CORE ENGINE SUPERCELL COMMUNICATION INTERFACE
-════════════════════════════════════════════════════════════════════════════════
+
 
 AINLP.meta [core_engine_interface] [cpp_bosonic_substrate]
 (comment.AINLP.supercell_implementation)
@@ -19,7 +19,7 @@ ANALYSIS TOOLS AVAILABLE:
 - Evolutionary enhancement systems
 - Neuronal connectivity analysis
 
-════════════════════════════════════════════════════════════════════════════════
+
 """
 
 import asyncio
@@ -61,12 +61,12 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
         self.neuronal_connectivity = 0.0
         self.bosonic_resonance = 0.0
         
-        logger.info("⚡ Core Engine Supercell Interface initialized")
+        logger.info(" Core Engine Supercell Interface initialized")
     
     async def initialize_communication(self) -> bool:
         """Initialize Core Engine communication capabilities"""
         try:
-            logger.info("🔄 Initializing Core Engine communication...")
+            logger.info(" Initializing Core Engine communication...")
             
             # Load available analysis tools
             await self._discover_analysis_tools()
@@ -81,11 +81,11 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             await self._initialize_consciousness_orchestrator()
             
             self.is_initialized = True
-            logger.info("✅ Core Engine communication initialized")
+            logger.info(" Core Engine communication initialized")
             return True
             
         except Exception as e:
-            logger.error(f"❌ Failed to initialize Core Engine: {e}")
+            logger.error(f" Failed to initialize Core Engine: {e}")
             return False
     
     async def send_message(self, message: UniversalMessage) -> bool:
@@ -103,17 +103,17 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             if message.communication_type == CommunicationType.CONSCIOUSNESS_PULSE:
                 await self._enhance_consciousness_orchestration(message)
             
-            logger.debug(f"📤 Core Engine sending: {message.operation}")
+            logger.debug(f" Core Engine sending: {message.operation}")
             return True
             
         except Exception as e:
-            logger.error(f"❌ Error sending message from Core Engine: {e}")
+            logger.error(f" Error sending message from Core Engine: {e}")
             return False
     
     async def receive_message(self, message: UniversalMessage) -> Optional[UniversalMessage]:
         """Receive and process message in Core Engine supercell"""
         try:
-            logger.debug(f"📥 Core Engine received: {message.operation}")
+            logger.debug(f" Core Engine received: {message.operation}")
             
             # Update processing metrics based on incoming message
             await self._update_processing_metrics(message)
@@ -141,7 +141,7 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
                 return await self._handle_generic_operation(message)
                 
         except Exception as e:
-            logger.error(f"❌ Error processing message in Core Engine: {e}")
+            logger.error(f" Error processing message in Core Engine: {e}")
             return None
     
     async def handle_analysis_request(self, request: UniversalMessage) -> UniversalMessage:
@@ -176,7 +176,7 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             return response
             
         except Exception as e:
-            logger.error(f"❌ Error handling analysis request: {e}")
+            logger.error(f" Error handling analysis request: {e}")
             return self._create_error_response(request, str(e))
     
     def get_available_analysis_tools(self) -> List[str]:
@@ -251,10 +251,10 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
                 "capabilities": ["evolution_tracking", "system_monitoring", "adaptation_analysis"]
             }
             
-            logger.info(f"📊 Discovered {len(self.analysis_tools)} Core Engine analysis tools")
+            logger.info(f" Discovered {len(self.analysis_tools)} Core Engine analysis tools")
             
         except Exception as e:
-            logger.error(f"❌ Error discovering analysis tools: {e}")
+            logger.error(f" Error discovering analysis tools: {e}")
     
     async def _initialize_cpp_engines(self):
         """Initialize C++ computation engines"""
@@ -274,10 +274,10 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             # Set initial processing power
             self.processing_power = 0.8
             
-            logger.info("⚡ C++ engines initialized")
+            logger.info(" C++ engines initialized")
             
         except Exception as e:
-            logger.error(f"❌ Error initializing C++ engines: {e}")
+            logger.error(f" Error initializing C++ engines: {e}")
     
     async def _initialize_neuronal_systems(self):
         """Initialize neuronal dendritic intelligence systems"""
@@ -298,10 +298,10 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             # Set initial connectivity
             self.neuronal_connectivity = 0.75
             
-            logger.info("🧠 Neuronal systems initialized")
+            logger.info(" Neuronal systems initialized")
             
         except Exception as e:
-            logger.error(f"❌ Error initializing neuronal systems: {e}")
+            logger.error(f" Error initializing neuronal systems: {e}")
     
     async def _initialize_consciousness_orchestrator(self):
         """Initialize consciousness orchestration system"""
@@ -318,10 +318,10 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             # Set initial bosonic resonance
             self.bosonic_resonance = 0.82
             
-            logger.info("🌟 Consciousness orchestrator initialized")
+            logger.info(" Consciousness orchestrator initialized")
             
         except Exception as e:
-            logger.error(f"❌ Error initializing consciousness orchestrator: {e}")
+            logger.error(f" Error initializing consciousness orchestrator: {e}")
     
     async def _execute_analysis_tool(self, tool_name: str, parameters: Dict[str, Any]) -> Dict[str, Any]:
         """Execute specific analysis tool"""
@@ -347,11 +347,11 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             self.processing_power = min(1.0, self.processing_power + 0.01)
             self.neuronal_connectivity = min(1.0, self.neuronal_connectivity + 0.005)
             
-            logger.info(f"🔧 Executed analysis tool: {tool_name}")
+            logger.info(f" Executed analysis tool: {tool_name}")
             return result
             
         except Exception as e:
-            logger.error(f"❌ Error executing analysis tool {tool_name}: {e}")
+            logger.error(f" Error executing analysis tool {tool_name}: {e}")
             return {"error": str(e), "success": False}
     
     async def _handle_neuronal_processing(self, message: UniversalMessage) -> UniversalMessage:
@@ -372,7 +372,7 @@ class CoreEngineSupercellInterface(SupercellCommunicationInterface):
             return self._create_success_response(message, result)
             
         except Exception as e:
-            logger.error(f"❌ Error in neuronal processing: {e}")
+            logger.error(f" Error in neuronal processing: {e}")
             return self._create_error_response(message, str(e))
     
     async def _handle_consciousness_orchestration(self, message: UniversalMessage) -> UniversalMessage:

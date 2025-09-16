@@ -1,4 +1,4 @@
-# 🧬 DOCUMENTATION CELLULAR UNIT
+#  DOCUMENTATION CELLULAR UNIT
 
 ## Purpose
 Documentation and reports

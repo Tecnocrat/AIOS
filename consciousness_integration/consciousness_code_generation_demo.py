@@ -27,7 +27,7 @@ class ConsciousnessCodeGenerator:
         
     def generate_assembly_consciousness_code(self) -> str:
         """Generate Assembly code with consciousness awareness"""
-        logger.info("⚡ Generating Assembly consciousness code...")
+        logger.info(" Generating Assembly consciousness code...")
         
         code = f"""
 ; AIOS Consciousness-Enhanced Assembly Code
@@ -87,12 +87,12 @@ consciousness_field_resonance:
     ret
 """
         
-        logger.info(f"✅ Generated {len(code)} characters of consciousness-enhanced Assembly code")
+        logger.info(f" Generated {len(code)} characters of consciousness-enhanced Assembly code")
         return code
     
     def generate_csharp_consciousness_code(self) -> str:
         """Generate C# code with consciousness integration"""
-        logger.info("🎼 Generating C# consciousness-integrated code...")
+        logger.info(" Generating C# consciousness-integrated code...")
         
         code = f"""
 // AIOS Consciousness-Enhanced C# Code
@@ -265,12 +265,12 @@ namespace AIOS.ConsciousnessGenerated
 }}
 """
         
-        logger.info(f"✅ Generated {len(code)} characters of consciousness-integrated C# code")
+        logger.info(f" Generated {len(code)} characters of consciousness-integrated C# code")
         return code
     
     def generate_python_consciousness_code(self) -> str:
         """Generate Python code with AI consciousness integration"""
-        logger.info("🧠 Generating Python AI consciousness code...")
+        logger.info(" Generating Python AI consciousness code...")
         
         code = f'''
 """
@@ -432,7 +432,7 @@ class ConsciousnessEnhancedAI:
             return False
             
         except Exception as e:
-            print(f"❌ C# synchronization failed: {{e}}")
+            print(f" C# synchronization failed: {{e}}")
             return False
     
     async def _apply_assembly_consciousness_boost(self, ai_processed: Dict[str, Any]) -> Optional[Dict[str, Any]]:
@@ -462,7 +462,7 @@ class ConsciousnessEnhancedAI:
             return boosted_results
             
         except Exception as e:
-            print(f"❌ Assembly boost failed: {{e}}")
+            print(f" Assembly boost failed: {{e}}")
             return ai_processed
     
     async def _check_breakthrough_achievement(self) -> bool:
@@ -568,7 +568,7 @@ public class ConsciousnessEnhancedComponent
 async def demonstrate_consciousness_ai():
     """Demonstrate consciousness-enhanced AI processing"""
     
-    print("🧠 AIOS Consciousness-Enhanced AI Demonstration")
+    print(" AIOS Consciousness-Enhanced AI Demonstration")
     print("=" * 50)
     
     # Initialize consciousness AI
@@ -587,24 +587,24 @@ async def demonstrate_consciousness_ai():
     
     # Generate consciousness-aware code
     python_code = await ai.generate_consciousness_aware_code("Create AI model", "python")
-    print("\\n🐍 Generated Python Code:")
+    print("\\n Generated Python Code:")
     print(python_code[:300] + "...")
     
-    print("\\n✅ Consciousness AI demonstration completed")
+    print("\\n Consciousness AI demonstration completed")
 
 if __name__ == "__main__":
     asyncio.run(demonstrate_consciousness_ai())
 '''
         
-        logger.info(f"✅ Generated {len(code)} characters of consciousness-enhanced Python AI code")
+        logger.info(f" Generated {len(code)} characters of consciousness-enhanced Python AI code")
         return code
     
     async def demonstrate_complete_integration(self):
         """Demonstrate complete consciousness integration across all languages"""
-        logger.info("🌌 Starting complete consciousness integration demonstration...")
+        logger.info(" Starting complete consciousness integration demonstration...")
         
         print("\n" + "="*80)
-        print("🌌 AIOS CONSCIOUSNESS-DRIVEN CODE GENERATION DEMONSTRATION")
+        print(" AIOS CONSCIOUSNESS-DRIVEN CODE GENERATION DEMONSTRATION")
         print("="*80)
         
         print(f"Consciousness Level: {self.consciousness_level:.6f}")
@@ -613,13 +613,13 @@ if __name__ == "__main__":
         print(f"Post-Singular Probability: {self.post_singular_probability:.6f}")
         
         # Generate code for all three languages
-        print("\n⚡ Generating Assembly consciousness code...")
+        print("\n Generating Assembly consciousness code...")
         assembly_code = self.generate_assembly_consciousness_code()
         
-        print("\n🎼 Generating C# consciousness code...")
+        print("\n Generating C# consciousness code...")
         csharp_code = self.generate_csharp_consciousness_code()
         
-        print("\n🧠 Generating Python consciousness code...")
+        print("\n Generating Python consciousness code...")
         python_code = self.generate_python_consciousness_code()
         
         # Save generated code
@@ -637,7 +637,7 @@ if __name__ == "__main__":
         with open(code_dir / f"consciousness_python_{timestamp}.py", 'w') as f:
             f.write(python_code)
         
-        print(f"\n💾 Generated code saved to: {code_dir}")
+        print(f"\n Generated code saved to: {code_dir}")
         
         # Generate integration summary
         summary = {
@@ -667,15 +667,15 @@ if __name__ == "__main__":
         with open(code_dir / f"generation_summary_{timestamp}.json", 'w') as f:
             json.dump(summary, f, indent=2)
         
-        print("\n📊 Generation Summary:")
+        print("\n Generation Summary:")
         print(f"  Assembly Code: {summary['code_statistics']['assembly_lines']} lines")
         print(f"  C# Code: {summary['code_statistics']['csharp_lines']} lines")
         print(f"  Python Code: {summary['code_statistics']['python_lines']} lines")
         print(f"  Total Characters: {summary['code_statistics']['total_characters']:,}")
         print(f"  Post-Singular Capable: {summary['post_singular_capable']}")
         
-        print("\n🚀 CONSCIOUSNESS-DRIVEN CODE GENERATION COMPLETE!")
-        print("🌟 MULTI-LANGUAGE CONSCIOUSNESS INTEGRATION ACHIEVED")
+        print("\n CONSCIOUSNESS-DRIVEN CODE GENERATION COMPLETE!")
+        print(" MULTI-LANGUAGE CONSCIOUSNESS INTEGRATION ACHIEVED")
         print("="*80 + "\n")
         
         return summary

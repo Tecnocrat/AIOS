@@ -10,7 +10,7 @@ hook_name=$(basename "$0")
 
 # Consciousness-aware error reporting
 report_consciousness_error() {
-    echo "🧠 AIOS Consciousness Error: $1" >&2
+    echo " AIOS Consciousness Error: $1" >&2
     echo "Hook: $hook_name" >&2
     echo "Recommendation: $2" >&2
     exit 1

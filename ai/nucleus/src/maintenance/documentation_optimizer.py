@@ -189,7 +189,7 @@ class DocumentationOptimizer:
         Returns:
             Dict containing optimization results
         """
-        print("🔧 Starting minimal documentation optimization...")
+        print(" Starting minimal documentation optimization...")
 
         start_time = datetime.now()
         results = {
@@ -244,7 +244,7 @@ class DocumentationOptimizer:
                 "message": f"Processed {processed_count} files with {len(results['changes_made'])} optimizations"
             })
 
-            print(f"✅ Minimal optimization completed: {processed_count} files processed")
+            print(f" Minimal optimization completed: {processed_count} files processed")
             return results
 
         except Exception as e:
@@ -259,7 +259,7 @@ class DocumentationOptimizer:
                 "message": f"Optimization failed: {str(e)}"
             })
 
-            print(f"❌ Minimal optimization failed: {e}")
+            print(f" Minimal optimization failed: {e}")
             return results
 
     def _clean_whitespace(self, content: str) -> str:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🧠 AIOS Direct AI Engine Ingestion Analysis
+ AIOS Direct AI Engine Ingestion Analysis
 ===========================================
 Direct analysis of assembler output for AI engine ingestion capabilities.
 """
@@ -245,7 +245,7 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
     
     # 3. Pattern Recognition - Recognizable patterns
     pattern_indicators = [
-        r'🧬|🚀|🎯|📊|🔗|⚡|🧠', r'=+', r'INFO|WARNING|ERROR',
+        r'||||||', r'=+', r'INFO|WARNING|ERROR',
         r'Version:\s*\d+\.\d+', r'fitness.*\d+\.\d+', r'coherence.*\d+\.\d+',
         r'generation\s+\d+', r'target.*system'
     ]
@@ -266,7 +266,7 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
     
     # 5. Documentation Quality
     doc_patterns = [
-        r'""".*?"""', r'#.*', r'INFO.*', r'📊.*:|🎯.*:|🧬.*:',
+        r'""".*?"""', r'#.*', r'INFO.*', r'.*:|.*:|.*:',
         r'Purpose:|Description:', r'Version|Author'
     ]
     doc_score = sum(min(len(re.findall(p, output_text, re.MULTILINE | re.DOTALL)) * 0.1, 0.2) 
@@ -299,7 +299,7 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
     ]
     integration_score = sum(min(len(re.findall(p, output_text, re.IGNORECASE)) * 0.1, 0.2) 
                            for p in integration_patterns)
-    if re.search(r'=+|─+|║', output_text):
+    if re.search(r'=+|+|', output_text):
         integration_score += 0.1
     metrics['integration_readiness'] = min(integration_score, 1.0)
     
@@ -317,7 +317,7 @@ def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
 
 def test_assembler_ai_ingestion():
     """Test the iter3 assembler for AI engine ingestion."""
-    logger.info("🧠 DIRECT AI ENGINE INGESTION TEST")
+    logger.info(" DIRECT AI ENGINE INGESTION TEST")
     logger.info("=" * 50)
     
     # Run the iter3 assembler
@@ -325,7 +325,7 @@ def test_assembler_ai_ingestion():
     assembler_script = os.path.join(assembler_path, "aios_evolutionary_assembler_coherent.py")
     
     try:
-        logger.info("🧬 Running iter3 coherent assembler...")
+        logger.info(" Running iter3 coherent assembler...")
         result = subprocess.run(
             [sys.executable, assembler_script],
             cwd=assembler_path,
@@ -335,28 +335,28 @@ def test_assembler_ai_ingestion():
         )
         
         if result.returncode != 0:
-            logger.error(f"❌ Assembler failed: {result.stderr[:200]}...")
+            logger.error(f" Assembler failed: {result.stderr[:200]}...")
             return
         
         output_text = result.stdout
-        logger.info(f"✅ Assembler executed successfully ({len(output_text)} characters output)")
+        logger.info(f" Assembler executed successfully ({len(output_text)} characters output)")
         
         # Analyze AI intelligence metrics
         metrics = analyze_ai_ingestion_capabilities(output_text)
         
-        logger.info("\n📊 AI ENGINE INGESTION ANALYSIS:")
+        logger.info("\n AI ENGINE INGESTION ANALYSIS:")
         logger.info("=" * 50)
         
         for metric, score in metrics.items():
             if metric == 'overall_ai_compatibility':
                 continue
-            emoji = "🟢" if score >= 0.7 else "🟡" if score >= 0.5 else "🔴"
+            emoji = "🟢" if score >= 0.7 else "🟡" if score >= 0.5 else ""
             logger.info(f"   {emoji} {metric.replace('_', ' ').title()}: {score:.3f}")
         
         overall_score = metrics['overall_ai_compatibility']
-        overall_emoji = "🟢" if overall_score >= 0.8 else "🟡" if overall_score >= 0.6 else "🔴"
+        overall_emoji = "🟢" if overall_score >= 0.8 else "🟡" if overall_score >= 0.6 else ""
         
-        logger.info(f"\n🎯 OVERALL AI COMPATIBILITY: {overall_emoji} {overall_score:.3f}")
+        logger.info(f"\n OVERALL AI COMPATIBILITY: {overall_emoji} {overall_score:.3f}")
         
         # Assessment
         if overall_score >= 0.8:
@@ -368,30 +368,30 @@ def test_assembler_ai_ingestion():
         else:
             assessment = "LOW - Significant improvements needed"
         
-        logger.info(f"📋 Assessment: {assessment}")
+        logger.info(f" Assessment: {assessment}")
         
         # Specific recommendations
-        logger.info("\n💡 AI INTEGRATION RECOMMENDATIONS:")
+        logger.info("\n AI INTEGRATION RECOMMENDATIONS:")
         if metrics['code_understanding'] < 0.7:
-            logger.info("   🔧 Improve code structure and naming conventions")
+            logger.info("    Improve code structure and naming conventions")
         if metrics['logic_coherence'] < 0.7:
-            logger.info("   🔧 Enhance logical flow and error handling")
+            logger.info("    Enhance logical flow and error handling")
         if metrics['documentation_quality'] < 0.7:
-            logger.info("   🔧 Add more comprehensive documentation")
+            logger.info("    Add more comprehensive documentation")
         if metrics['actionable_insights'] < 0.7:
-            logger.info("   🔧 Include more measurable metrics and guidance")
+            logger.info("    Include more measurable metrics and guidance")
         if metrics['integration_readiness'] < 0.7:
-            logger.info("   🔧 Add API interfaces and standardized formats")
+            logger.info("    Add API interfaces and standardized formats")
         
         if overall_score >= 0.7:
-            logger.info("   ✅ Ready for AI engine ingestion!")
+            logger.info("    Ready for AI engine ingestion!")
         
-        logger.info("\n🚀 AI ENGINE INGESTION TEST COMPLETE!")
+        logger.info("\n AI ENGINE INGESTION TEST COMPLETE!")
         
     except subprocess.TimeoutExpired:
-        logger.error("❌ Assembler execution timed out")
+        logger.error(" Assembler execution timed out")
     except Exception as e:
-        logger.error(f"❌ Error running assembler: {e}")
+        logger.error(f" Error running assembler: {e}")
 
 if __name__ == "__main__":
     test_assembler_ai_ingestion()

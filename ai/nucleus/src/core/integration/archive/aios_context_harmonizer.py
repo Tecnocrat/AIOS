@@ -161,7 +161,7 @@ class AIOSContextHarmonizer:
         Perform comprehensive project context scan to understand
         current file organization and usage patterns.
         """
-        self.logger.info("🔍 Scanning AIOS project context...")
+        self.logger.info(" Scanning AIOS project context...")
 
         # Scan all files
         for file_path in self.root_path.rglob("*"):
@@ -561,8 +561,8 @@ if __name__ == "__main__":
     harmonizer = initialize_context_harmonization(root_path)
     recommendations = harmonizer.scan_project_context()
 
-    print("🎯 AIOS Context Harmonization Results:")
-    print(f"📁 Total files analyzed: {len(harmonizer.profiles)}")
-    print(f"🔥 High priority monitoring: {len(recommendations['high_priority_monitoring'])}")
-    print(f"🧠 AI reingestion candidates: {len(recommendations['ai_reingestion_candidates'])}")
-    print(f"📋 Organization suggestions: {len(recommendations['organization_suggestions'])}")
+    print(" AIOS Context Harmonization Results:")
+    print(f" Total files analyzed: {len(harmonizer.profiles)}")
+    print(f" High priority monitoring: {len(recommendations['high_priority_monitoring'])}")
+    print(f" AI reingestion candidates: {len(recommendations['ai_reingestion_candidates'])}")
+    print(f" Organization suggestions: {len(recommendations['organization_suggestions'])}")

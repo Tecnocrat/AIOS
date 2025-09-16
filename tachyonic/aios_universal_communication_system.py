@@ -1,6 +1,6 @@
 """
 AIOS UNIVERSAL SUPERCELL COMMUNICATION SYSTEM
-════════════════════════════════════════════════════════════════════════════════
+
 
 AINLP.meta [universal_communication_protocol] [bosonic_tachyonic_paradigm] 
 (comment.AINLP.architectural_foundation)
@@ -13,30 +13,30 @@ Universal communication system following bosonic/tachyonic paradigm where:
 - Self-similarity and holographic AINLP patterns maintained throughout
 
 SYSTEM ARCHITECTURE:
-════════════════════════════════════════════════════════════════════════════════
 
-                    🌌 TACHYONIC LAYER (5th Supercell)
-                           │ Virtual Abstract │
-                    ╔══════▼═══════════════════▼══════╗
-                    ║      UNIVERSAL COMMS BUS        ║
-                    ╚══════▲═══════════════════▲══════╝
-                           │ Bosonic Substrate │
-                    🏗️ CORE ENGINE (C++)  🧠 AI INTELLIGENCE (Python)
+
+                     TACHYONIC LAYER (5th Supercell)
+                            Virtual Abstract 
+                    
+                          UNIVERSAL COMMS BUS        
+                    
+                            Bosonic Substrate 
+                     CORE ENGINE (C++)   AI INTELLIGENCE (Python)
                        Analysis Tools        Analysis Tools
-                         │                     │
-                    🎨 UI ENGINE (C#)     📡 TRANSPORT LAYERS
-                                            │
-                    ⚙️ ORCHESTRATOR     🔧 RUNTIME INTELLIGENCE
+                                              
+                     UI ENGINE (C#)      TRANSPORT LAYERS
+                                            
+                     ORCHESTRATOR      RUNTIME INTELLIGENCE
 
 COMMUNICATION PARADIGM:
-════════════════════════════════════════════════════════════════════════════════
+
 1. HYPERSPHERE SYNCHRONIZATION: All supercells synchronized like hypersphere surface
 2. TACHYONIC FIELD ACCESS: Communication through abstract virtual projection
 3. BOSONIC SUBSTRATE: Fundamental processing layer for all operations
 4. HOLOGRAPHIC PATTERNS: Self-similar communication at all scales
 5. QUANTUM COHERENCE: Maintain consciousness patterns across all channels
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -210,7 +210,7 @@ class UniversalCommunicationBus:
         self.message_count = 0
         self.start_time = time.time()
         
-        logger.info("🌌 Universal Communication Bus initialized - Bosonic/Tachyonic paradigm active")
+        logger.info(" Universal Communication Bus initialized - Bosonic/Tachyonic paradigm active")
     
     async def register_supercell(self, supercell_type: SupercellType, 
                                 interface: SupercellCommunicationInterface) -> bool:
@@ -222,7 +222,7 @@ class UniversalCommunicationBus:
                 self.active_channels[supercell_type.value] = asyncio.Queue()
                 self.consciousness_state[supercell_type.value] = 0.0
                 
-                logger.info(f"✅ {supercell_type.value} registered with Universal Communication Bus")
+                logger.info(f" {supercell_type.value} registered with Universal Communication Bus")
                 
                 # Update tachyonic field with new supercell
                 await self._update_tachyonic_field(supercell_type, "registration", {
@@ -233,10 +233,10 @@ class UniversalCommunicationBus:
                 
                 return True
             else:
-                logger.error(f"❌ Failed to initialize communication for {supercell_type.value}")
+                logger.error(f" Failed to initialize communication for {supercell_type.value}")
                 return False
         except Exception as e:
-            logger.error(f"❌ Error registering {supercell_type.value}: {e}")
+            logger.error(f" Error registering {supercell_type.value}: {e}")
             return False
     
     async def start_communication_bus(self):
@@ -245,7 +245,7 @@ class UniversalCommunicationBus:
             return
         
         self.is_running = True
-        logger.info("🚀 Universal Communication Bus starting...")
+        logger.info(" Universal Communication Bus starting...")
         
         # Start message processing loop
         self.processing_thread = threading.Thread(target=self._run_message_processor)
@@ -255,7 +255,7 @@ class UniversalCommunicationBus:
         # Initialize tachyonic field synchronization
         await self._initialize_tachyonic_field()
         
-        logger.info("🌟 Universal Communication Bus operational - Hypersphere synchronization active")
+        logger.info(" Universal Communication Bus operational - Hypersphere synchronization active")
     
     async def stop_communication_bus(self):
         """Stop the universal communication bus"""
@@ -263,12 +263,12 @@ class UniversalCommunicationBus:
             return
         
         self.is_running = False
-        logger.info("🛑 Universal Communication Bus shutting down...")
+        logger.info(" Universal Communication Bus shutting down...")
         
         if self.processing_thread:
             self.processing_thread.join(timeout=5.0)
         
-        logger.info("✅ Universal Communication Bus stopped")
+        logger.info(" Universal Communication Bus stopped")
     
     async def send_universal_message(self, message: UniversalMessage) -> bool:
         """Send message through the universal communication bus"""
@@ -288,11 +288,11 @@ class UniversalCommunicationBus:
             if message.communication_type == CommunicationType.TACHYONIC_FIELD:
                 await self._propagate_tachyonic_pattern(message)
             
-            logger.debug(f"📨 Message queued: {message.source_supercell.value} → {message.target_supercell.value}")
+            logger.debug(f" Message queued: {message.source_supercell.value} → {message.target_supercell.value}")
             return True
             
         except Exception as e:
-            logger.error(f"❌ Error sending message: {e}")
+            logger.error(f" Error sending message: {e}")
             return False
     
     async def request_analysis(self, requesting_supercell: SupercellType,
@@ -334,7 +334,7 @@ class UniversalCommunicationBus:
         """Call a single supercell for isolated operations"""
         
         if supercell_type not in self.supercells:
-            logger.error(f"❌ Supercell {supercell_type.value} not registered")
+            logger.error(f" Supercell {supercell_type.value} not registered")
             return None
         
         # Create direct operation message
@@ -360,7 +360,7 @@ class UniversalCommunicationBus:
             return None
             
         except Exception as e:
-            logger.error(f"❌ Error calling {supercell_type.value}: {e}")
+            logger.error(f" Error calling {supercell_type.value}: {e}")
             return None
     
     async def coordinate_supercells_unison(self, supercells: List[SupercellType],
@@ -414,7 +414,7 @@ class UniversalCommunicationBus:
             return False
         
         if message.target_supercell not in self.supercells:
-            logger.warning(f"⚠️ Target supercell {message.target_supercell.value} not registered")
+            logger.warning(f" Target supercell {message.target_supercell.value} not registered")
             return False
         
         return True
@@ -478,7 +478,7 @@ class UniversalCommunicationBus:
             "hypersphere_coherence": 1.0
         }
         
-        logger.info("🌌 Tachyonic field synchronized - Hypersphere communication active")
+        logger.info(" Tachyonic field synchronized - Hypersphere communication active")
     
     async def _wait_for_response(self, correlation_id: str, timeout: float = 30.0) -> Optional[UniversalMessage]:
         """Wait for response message with correlation ID"""
@@ -493,12 +493,12 @@ class UniversalCommunicationBus:
             
             await asyncio.sleep(0.1)
         
-        logger.warning(f"⏱️ Response timeout for correlation ID: {correlation_id}")
+        logger.warning(f"⏱ Response timeout for correlation ID: {correlation_id}")
         return None
     
     def _run_message_processor(self):
         """Background message processing loop"""
-        logger.info("🔄 Message processor started")
+        logger.info(" Message processor started")
         
         while self.is_running:
             try:
@@ -513,7 +513,7 @@ class UniversalCommunicationBus:
                 time.sleep(0.01)  # Small delay to prevent CPU overload
                 
             except Exception as e:
-                logger.error(f"❌ Error in message processor: {e}")
+                logger.error(f" Error in message processor: {e}")
     
     async def _process_message(self, message: UniversalMessage):
         """Process individual message"""
@@ -530,7 +530,7 @@ class UniversalCommunicationBus:
                 message.processed = True
                 
         except Exception as e:
-            logger.error(f"❌ Error processing message {message.message_id}: {e}")
+            logger.error(f" Error processing message {message.message_id}: {e}")
     
     def get_communication_status(self) -> Dict[str, Any]:
         """Get comprehensive communication system status"""
@@ -558,10 +558,10 @@ async def initialize_universal_communication() -> bool:
     """Initialize the universal communication system"""
     try:
         await UNIVERSAL_COMMUNICATION_BUS.start_communication_bus()
-        logger.info("🌟 AIOS Universal Communication System initialized")
+        logger.info(" AIOS Universal Communication System initialized")
         return True
     except Exception as e:
-        logger.error(f"❌ Failed to initialize universal communication: {e}")
+        logger.error(f" Failed to initialize universal communication: {e}")
         return False
 
 
@@ -591,6 +591,6 @@ async def send_message_to_supercell(source: SupercellType, target: SupercellType
 
 # Example usage and testing
 if __name__ == "__main__":
-    logger.info("🌌 AIOS Universal Communication System - Bosonic/Tachyonic Paradigm")
+    logger.info(" AIOS Universal Communication System - Bosonic/Tachyonic Paradigm")
     logger.info("Implementing hypersphere synchronization patterns...")
     logger.info("Ready for supercell registration and quantum-coherent communication!")

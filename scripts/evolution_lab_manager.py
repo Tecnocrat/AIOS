@@ -122,17 +122,17 @@ psutil>=5.8.0
                                 build_frequency: int = 3) -> ExperimentRun:
         """Run complete evolution experiment with builds and testing"""
         
-        # 🛡️ CRITICAL SAFETY CHECK
+        #  CRITICAL SAFETY CHECK
         if SAFETY_ENABLED and not require_safety_authorization("evolutionary_experiment"):
-            raise RuntimeError("❌ SAFETY VIOLATION: Evolutionary experiment not authorized")
+            raise RuntimeError(" SAFETY VIOLATION: Evolutionary experiment not authorized")
 
-        # 🛡️ Pre-experiment verification & enforcement
+        #  Pre-experiment verification & enforcement
         if SAFETY_ENABLED:
             governor = get_safety_governor()
             if governor:
                 verification = governor.verify_pre_experiment(population_size, generations)
                 if not verification.get("ok"):
-                    raise RuntimeError(f"❌ SAFETY VIOLATION: Pre-experiment checklist failed: {verification.get('failures')}")
+                    raise RuntimeError(f" SAFETY VIOLATION: Pre-experiment checklist failed: {verification.get('failures')}")
         # Enforce caps even if caller passed larger numbers
         if population_size > 50:
             population_size = 50
@@ -152,11 +152,11 @@ psutil>=5.8.0
         self.active_experiments[run_id] = experiment_run
         
         try:
-            # 🛡️ Additional safety check for resource limits
+            #  Additional safety check for resource limits
             if SAFETY_ENABLED:
                 governor = get_safety_governor()
                 if governor and not governor.is_operation_authorized("evolutionary_experiment"):
-                    raise RuntimeError("❌ SAFETY VIOLATION: Operation not authorized by safety governor")
+                    raise RuntimeError(" SAFETY VIOLATION: Operation not authorized by safety governor")
         
             # Create experiment environment
             env_path = self.create_experiment_environment(run_id)
@@ -166,7 +166,7 @@ psutil>=5.8.0
                 experiment_name, seed_code, population_size
             )
 
-            # 🛡️ Tachyonic baseline snapshots for initial population sources
+            #  Tachyonic baseline snapshots for initial population sources
             try:
                 for org in population.organisms:
                     org_path = self.lab_path / f"organism_{org.id}.py"

@@ -46,7 +46,7 @@ namespace AIOS.VisualInterface
                 // Initialize AI Visual Feedback Service for agentic stimulation
                 var aiVisualService = _host.Services.GetRequiredService<AIVisualFeedbackService>();
 
-                _logger.LogInformation("🧠 AIOS Advanced Consciousness Visualizer starting up");
+                _logger.LogInformation(" AIOS Advanced Consciousness Visualizer starting up");
 
                 // Initialize state management
                 await InitializeApplicationStateAsync();
@@ -74,7 +74,7 @@ namespace AIOS.VisualInterface
                 base.OnStartup(e);
 
                 _startupTimer.Stop();
-                _logger.LogInformation("🚀 AIOS Advanced Consciousness Visualizer started successfully in {ElapsedMs}ms",
+                _logger.LogInformation(" AIOS Advanced Consciousness Visualizer started successfully in {ElapsedMs}ms",
                     _startupTimer.ElapsedMilliseconds);
 
                 // Register successful startup
@@ -82,7 +82,7 @@ namespace AIOS.VisualInterface
             }
             catch (Exception ex)
             {
-                _logger?.LogError(ex, "💥 Critical startup failure in AIOS Visualizer");
+                _logger?.LogError(ex, " Critical startup failure in AIOS Visualizer");
                 MessageBox.Show($"Failed to start application: {ex.Message}", "AIOS Startup Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Shutdown(1);
@@ -93,7 +93,7 @@ namespace AIOS.VisualInterface
         {
             try
             {
-                _logger?.LogInformation("📊 Initializing AIOS application state");
+                _logger?.LogInformation(" Initializing AIOS application state");
 
                 // Restore previous state if available
                 if (_stateManager != null)
@@ -101,11 +101,11 @@ namespace AIOS.VisualInterface
                     var previousState = await _stateManager.RestoreUIStateAsync();
                     if (previousState != null)
                     {
-                        _logger?.LogInformation("✅ Previous AIOS state restored successfully");
+                        _logger?.LogInformation(" Previous AIOS state restored successfully");
                     }
                     else
                     {
-                        _logger?.LogInformation("ℹ️ No previous state found, starting with clean slate");
+                        _logger?.LogInformation("ℹ No previous state found, starting with clean slate");
                     }
                 }
 
@@ -114,7 +114,7 @@ namespace AIOS.VisualInterface
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "⚠️ Failed to initialize application state, continuing with defaults");
+                _logger?.LogWarning(ex, " Failed to initialize application state, continuing with defaults");
             }
         }
 
@@ -173,7 +173,7 @@ namespace AIOS.VisualInterface
         {
             try
             {
-                _logger?.LogInformation("🔄 AIOS Consciousness Visualizer shutting down");
+                _logger?.LogInformation(" AIOS Consciousness Visualizer shutting down");
 
                 // Initiate centralized process cleanup FIRST
                 if (_processManager != null)
@@ -192,12 +192,12 @@ namespace AIOS.VisualInterface
                     _host.Dispose();
                 }
 
-                _logger?.LogInformation("✅ AIOS Visualizer shutdown completed successfully");
+                _logger?.LogInformation(" AIOS Visualizer shutdown completed successfully");
             }
             catch (Exception ex)
             {
                 // Log shutdown error but don't prevent shutdown
-                _logger?.LogError(ex, "❌ Error during AIOS application shutdown");
+                _logger?.LogError(ex, " Error during AIOS application shutdown");
             }
             finally
             {
@@ -221,12 +221,12 @@ namespace AIOS.VisualInterface
                     };
 
                     await _stateManager.PersistUIStateAsync(finalState);
-                    _logger?.LogInformation("💾 Final AIOS state saved successfully");
+                    _logger?.LogInformation(" Final AIOS state saved successfully");
                 }
             }
             catch (Exception ex)
             {
-                _logger?.LogWarning(ex, "⚠️ Failed to save final state during shutdown");
+                _logger?.LogWarning(ex, " Failed to save final state during shutdown");
             }
         }
 
@@ -235,7 +235,7 @@ namespace AIOS.VisualInterface
         {
             try
             {
-                _logger?.LogError(e.Exception, "💥 Unhandled AIOS application exception");
+                _logger?.LogError(e.Exception, " Unhandled AIOS application exception");
 
                 // Register error in metrics
                 _metricsEmitter?.RegisterError("dispatcher_exception");
@@ -249,11 +249,11 @@ namespace AIOS.VisualInterface
                 if (result == MessageBoxResult.Yes)
                 {
                     e.Handled = true;
-                    _logger?.LogWarning("👤 User chose to continue after critical error");
+                    _logger?.LogWarning(" User chose to continue after critical error");
                 }
                 else
                 {
-                    _logger?.LogError("🔚 User chose to exit after critical error");
+                    _logger?.LogError(" User chose to exit after critical error");
                     Shutdown(1);
                 }
             }

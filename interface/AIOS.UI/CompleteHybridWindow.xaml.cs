@@ -73,13 +73,13 @@ namespace AIOS.UI
                 // Load the HTML interface
                 await LoadHtmlInterface();
 
-                StatusText.Text = "✅ AIOS Hybrid Interface Ready";
+                StatusText.Text = " AIOS Hybrid Interface Ready";
                 _logger.LogInformation("Hybrid interface setup complete");
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to setup hybrid interface");
-                StatusText.Text = $"❌ Setup failed: {ex.Message}";
+                StatusText.Text = $" Setup failed: {ex.Message}";
                 ShowFallbackInterface();
             }
         }
@@ -248,7 +248,7 @@ namespace AIOS.UI
     private void OnNavigationStarting(object? sender, CoreWebView2NavigationStartingEventArgs e)
         {
             _logger.LogInformation($"Navigation starting: {e.Uri}");
-            StatusText.Text = "🔄 Loading interface...";
+            StatusText.Text = " Loading interface...";
         }
 
     private async void OnNavigationCompleted(object? sender, CoreWebView2NavigationCompletedEventArgs e)
@@ -257,14 +257,14 @@ namespace AIOS.UI
 
             if (e.IsSuccess)
             {
-                StatusText.Text = "✅ Interface loaded successfully";
+                StatusText.Text = " Interface loaded successfully";
 
                 // Send initialization data to web interface
                 await SendInitializationData();
             }
             else
             {
-                StatusText.Text = "❌ Failed to load interface";
+                StatusText.Text = " Failed to load interface";
                 _logger.LogError($"Navigation failed: {e.WebErrorStatus}");
             }
         }
@@ -281,12 +281,12 @@ namespace AIOS.UI
                 // Start real-time updates
                 await StartRealTimeUpdates();
 
-                StatusText.Text = "✅ AIOS Hybrid Interface Ready";
+                StatusText.Text = " AIOS Hybrid Interface Ready";
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error during DOM content loaded");
-                StatusText.Text = $"⚠️ Initialization error: {ex.Message}";
+                StatusText.Text = $" Initialization error: {ex.Message}";
             }
         }
 
@@ -330,13 +330,13 @@ namespace AIOS.UI
                 await InitializeWebView();
                 await LoadHtmlInterface();
                 LoadingOverlay.Visibility = Visibility.Collapsed;
-                StatusText.Text = "✅ AIOS Hybrid Interface Ready";
+                StatusText.Text = " AIOS Hybrid Interface Ready";
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Retry failed");
                 ErrorFallback.Visibility = Visibility.Visible;
-                StatusText.Text = $"❌ Retry failed: {ex.Message}";
+                StatusText.Text = $" Retry failed: {ex.Message}";
             }
         }
 
@@ -353,7 +353,7 @@ namespace AIOS.UI
     private void OnProcessFailed(object? sender, CoreWebView2ProcessFailedEventArgs e)
         {
             _logger.LogError($"WebView2 process failed: {e.Reason}");
-            StatusText.Text = $"❌ WebView2 process failed: {e.Reason}";
+            StatusText.Text = $" WebView2 process failed: {e.Reason}";
 
             // Attempt to recover
             Task.Run(async () =>
@@ -485,7 +485,7 @@ namespace AIOS.UI
             try
             {
                 _logger.LogInformation("Attempting WebView2 recovery");
-                StatusText.Text = "🔄 Attempting recovery...";
+                StatusText.Text = " Attempting recovery...";
 
                 // Restart the hybrid interface
                 Task.Run(async () =>
@@ -497,7 +497,7 @@ namespace AIOS.UI
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Recovery attempt failed");
-                StatusText.Text = "❌ Recovery failed";
+                StatusText.Text = " Recovery failed";
             }
         }
 

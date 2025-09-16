@@ -61,37 +61,37 @@ class AIOSAgenticOptimizer:
         self.intelligence_context: AIOSIntelligenceContext = None
         self.session_start_time = datetime.now()
         
-        logger.info("🤖 AIOS Agentic Optimizer initialized")
-        logger.info("🎯 Focus: Real-time AI-guided optimization passes")
+        logger.info(" AIOS Agentic Optimizer initialized")
+        logger.info(" Focus: Real-time AI-guided optimization passes")
     
     def execute_optimization_iteration(self) -> Dict[str, Any]:
         """Execute a single intelligent optimization iteration"""
-        logger.info("🚀 Starting AIOS agentic optimization iteration...")
+        logger.info(" Starting AIOS agentic optimization iteration...")
         
         start_time = time.time()
         
         # Phase 1: Intelligence Context Assessment
-        logger.info("🧠 Phase 1: AIOS Intelligence Context Assessment")
+        logger.info(" Phase 1: AIOS Intelligence Context Assessment")
         self._assess_intelligence_context()
         
         # Phase 2: Guided Focus Area Selection
-        logger.info("🎯 Phase 2: AI-Guided Focus Area Selection")
+        logger.info(" Phase 2: AI-Guided Focus Area Selection")
         focus_area = self._select_optimization_focus()
         
         # Phase 3: Contextual Analysis
-        logger.info("🔍 Phase 3: Contextual Component Analysis")
+        logger.info(" Phase 3: Contextual Component Analysis")
         analysis_results = self._perform_contextual_analysis(focus_area)
         
         # Phase 4: AINLP-Guided Optimization
-        logger.info("🧬 Phase 4: AINLP-Guided Optimization Application")
+        logger.info(" Phase 4: AINLP-Guided Optimization Application")
         optimization_results = self._apply_ainlp_optimizations(analysis_results)
         
         # Phase 5: Coherence Validation
-        logger.info("📊 Phase 5: Context Coherence Validation")
+        logger.info(" Phase 5: Context Coherence Validation")
         coherence_improvement = self._validate_coherence_improvement()
         
         # Phase 6: Next Iteration Planning
-        logger.info("🔮 Phase 6: Next Iteration Planning")
+        logger.info(" Phase 6: Next Iteration Planning")
         next_focus_areas = self._plan_next_iteration()
         
         # Record optimization pass
@@ -132,10 +132,10 @@ class AIOSAgenticOptimizer:
             }
         }
         
-        logger.info(f"✅ Optimization iteration completed in {iteration_time:.2f}s")
-        logger.info(f"🎯 Focus: {focus_area}")
-        logger.info(f"📈 Coherence improvement: {coherence_improvement:.3f}")
-        logger.info(f"🔍 Insights discovered: {len(analysis_results.get('insights', []))}")
+        logger.info(f" Optimization iteration completed in {iteration_time:.2f}s")
+        logger.info(f" Focus: {focus_area}")
+        logger.info(f" Coherence improvement: {coherence_improvement:.3f}")
+        logger.info(f" Insights discovered: {len(analysis_results.get('insights', []))}")
         
         return results
     
@@ -166,7 +166,7 @@ class AIOSAgenticOptimizer:
             optimization_priorities=optimization_priorities
         )
         
-        logger.info(f"🧠 Intelligence context assessed:")
+        logger.info(f" Intelligence context assessed:")
         logger.info(f"   • Cellular architecture: {cellular_status.get('implementation_level', 0):.3f}")
         logger.info(f"   • AINLP integration: {ainlp_level:.3f}")
         logger.info(f"   • Context coherence: {coherence_metrics.get('overall', 0):.3f}")
@@ -432,7 +432,7 @@ class AIOSAgenticOptimizer:
     
     def _perform_contextual_analysis(self, focus_area: str) -> Dict[str, Any]:
         """Perform contextual analysis based on focus area"""
-        logger.info(f"🔍 Analyzing focus area: {focus_area}")
+        logger.info(f" Analyzing focus area: {focus_area}")
         
         analysis_methods = {
             'cellular_architecture_enhancement': self._analyze_cellular_architecture,
@@ -875,7 +875,7 @@ class AIOSAgenticOptimizer:
 
 def main():
     """Main function for agentic optimization execution"""
-    print("🤖 AIOS AGENTIC OPTIMIZATION ENGINE")
+    print(" AIOS AGENTIC OPTIMIZATION ENGINE")
     print("=" * 50)
     print("Real-time AI-guided optimization using AIOS intelligence systems")
     print("AINLP paradigmatical guidelines • No background daemons")
@@ -885,16 +885,16 @@ def main():
     optimizer = AIOSAgenticOptimizer()
     
     # Execute optimization iteration
-    print("🚀 Executing optimization iteration...")
+    print(" Executing optimization iteration...")
     results = optimizer.execute_optimization_iteration()
     
     # Display results
     print("\n" + "="*50)
-    print("📊 OPTIMIZATION ITERATION RESULTS")
+    print(" OPTIMIZATION ITERATION RESULTS")
     print("="*50)
     
     pass_summary = results['pass_summary']
-    print(f"\n🎯 Pass Summary:")
+    print(f"\n Pass Summary:")
     print(f"   • Pass ID: {pass_summary['pass_id']}")
     print(f"   • Focus Area: {pass_summary['focus_area']}")
     print(f"   • Execution Time: {pass_summary['execution_time_seconds']:.2f}s")
@@ -905,28 +905,28 @@ def main():
     # Display insights
     analysis = results['detailed_results']['analysis']
     if analysis.get('insights'):
-        print(f"\n🔍 Key Insights:")
+        print(f"\n Key Insights:")
         for insight in analysis['insights'][:5]:  # Show top 5
             print(f"   • {insight}")
     
     # Display optimizations
     optimizations = results['detailed_results']['optimizations']
     if optimizations.get('optimizations'):
-        print(f"\n⚡ Applied Optimizations:")
+        print(f"\n Applied Optimizations:")
         for optimization in optimizations['optimizations'][:5]:  # Show top 5
             print(f"   • {optimization}")
     
     # Display next focus areas
     next_focus = results['detailed_results']['next_focus']
     if next_focus:
-        print(f"\n🔮 Next Focus Areas:")
+        print(f"\n Next Focus Areas:")
         for area in next_focus:
             print(f"   • {area}")
     
     # Intelligence context
     if results.get('intelligence_context'):
         context = results['intelligence_context']
-        print(f"\n🧠 Intelligence Context:")
+        print(f"\n Intelligence Context:")
         print(f"   • AINLP Integration: {context.get('ainlp_integration_level', 0):.3f}")
         if context.get('cellular_architecture_status'):
             cellular = context['cellular_architecture_status']
@@ -937,12 +937,12 @@ def main():
     
     # Session metrics
     session_metrics = results['session_metrics']
-    print(f"\n📈 Session Metrics:")
+    print(f"\n Session Metrics:")
     print(f"   • Total Passes: {session_metrics['total_passes']}")
     print(f"   • Session Duration: {session_metrics['session_duration']:.1f}s")
     print(f"   • Cumulative Improvements: {session_metrics['cumulative_improvements']:.3f}")
     
-    print("\n🎯 AGENTIC OPTIMIZATION COMPLETE!")
+    print("\n AGENTIC OPTIMIZATION COMPLETE!")
     print("Use execute_optimization_iteration() for next guided optimization pass.")
     
     # Save results
@@ -950,9 +950,9 @@ def main():
     try:
         with open(results_file, 'w') as f:
             json.dump(results, f, indent=2, default=str)
-        print(f"\n💾 Results saved to: {results_file}")
+        print(f"\n Results saved to: {results_file}")
     except Exception as e:
-        print(f"\n⚠️ Could not save results: {e}")
+        print(f"\n Could not save results: {e}")
 
 
 if __name__ == "__main__":

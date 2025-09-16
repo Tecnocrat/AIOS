@@ -114,7 +114,7 @@ namespace AIOS.UI
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>🔧 AIOS Maintenance Center</h1>
+            <h1> AIOS Maintenance Center</h1>
             <p>Tachyonic Documentation & System Optimization</p>
         </div>
 
@@ -125,10 +125,10 @@ namespace AIOS.UI
 
         <div class='status-card'>
             <h3>Quick Actions</h3>
-            <button class='action-button' onclick='runQuickOptimize()'>⚡ Quick Optimize</button>
-            <button class='action-button' onclick='runFullMaintenance()'>🔧 Full Maintenance</button>
-            <button class='action-button' onclick='checkSystemHealth()'>🏥 System Health Check</button>
-            <button class='action-button' onclick='openTachyonicArchive()'>📦 Tachyonic Archive</button>
+            <button class='action-button' onclick='runQuickOptimize()'> Quick Optimize</button>
+            <button class='action-button' onclick='runFullMaintenance()'> Full Maintenance</button>
+            <button class='action-button' onclick='checkSystemHealth()'> System Health Check</button>
+            <button class='action-button' onclick='openTachyonicArchive()'> Tachyonic Archive</button>
         </div>
 
         <div id='output'></div>
@@ -242,18 +242,18 @@ namespace AIOS.UI
                 if (result.Success)
                 {
                     UpdateMaintenanceStatus("READY", "#FF28A745");
-                    await SendMessageToWebView($"✅ Quick optimization completed: {result.Message}");
+                    await SendMessageToWebView($" Quick optimization completed: {result.Message}");
                 }
                 else
                 {
                     UpdateMaintenanceStatus("ERROR", "#FFDC3545");
-                    await SendMessageToWebView($"❌ Optimization failed: {result.Message}");
+                    await SendMessageToWebView($" Optimization failed: {result.Message}");
                 }
             }
             catch (Exception ex)
             {
                 UpdateMaintenanceStatus("ERROR", "#FFDC3545");
-                await SendMessageToWebView($"❌ Error during optimization: {ex.Message}");
+                await SendMessageToWebView($" Error during optimization: {ex.Message}");
             }
         }
 
@@ -269,18 +269,18 @@ namespace AIOS.UI
                 if (result.Success)
                 {
                     UpdateMaintenanceStatus("READY", "#FF28A745");
-                    await SendMessageToWebView($"✅ Full maintenance completed: {result.Message}");
+                    await SendMessageToWebView($" Full maintenance completed: {result.Message}");
                 }
                 else
                 {
                     UpdateMaintenanceStatus("ERROR", "#FFDC3545");
-                    await SendMessageToWebView($"❌ Maintenance failed: {result.Message}");
+                    await SendMessageToWebView($" Maintenance failed: {result.Message}");
                 }
             }
             catch (Exception ex)
             {
                 UpdateMaintenanceStatus("ERROR", "#FFDC3545");
-                await SendMessageToWebView($"❌ Error during maintenance: {ex.Message}");
+                await SendMessageToWebView($" Error during maintenance: {ex.Message}");
             }
         }
 
@@ -292,7 +292,7 @@ namespace AIOS.UI
 
                 var status = await _maintenanceService.GetMaintenanceStatusAsync();
 
-                await SendMessageToWebView($"🏥 Health Check Results:");
+                await SendMessageToWebView($" Health Check Results:");
                 await SendMessageToWebView($"  - System Health: {status.SystemHealth}");
                 await SendMessageToWebView($"  - Documentation Fragments: {status.DocumentationFragmentation}");
                 await SendMessageToWebView($"  - Backup System: {status.BackupSystemStatus}");
@@ -301,7 +301,7 @@ namespace AIOS.UI
             }
             catch (Exception ex)
             {
-                await SendMessageToWebView($"❌ Health check error: {ex.Message}");
+                await SendMessageToWebView($" Health check error: {ex.Message}");
             }
         }
 
@@ -313,7 +313,7 @@ namespace AIOS.UI
 
                 var archiveInfo = await _maintenanceService.GetTachyonicArchiveInfoAsync();
 
-                await SendMessageToWebView($"📦 Tachyonic Archive Information:");
+                await SendMessageToWebView($" Tachyonic Archive Information:");
                 await SendMessageToWebView($"  - Total archived files: {archiveInfo.TotalFiles}");
                 await SendMessageToWebView($"  - Archive size: {archiveInfo.TotalSize}");
                 await SendMessageToWebView($"  - Last archive operation: {archiveInfo.LastArchiveTime}");
@@ -321,7 +321,7 @@ namespace AIOS.UI
             }
             catch (Exception ex)
             {
-                await SendMessageToWebView($"❌ Archive access error: {ex.Message}");
+                await SendMessageToWebView($" Archive access error: {ex.Message}");
             }
         }
 

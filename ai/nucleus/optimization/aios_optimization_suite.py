@@ -26,7 +26,7 @@ class AIOSOptimizationSuite:
         self.workspace_root = Path(workspace_root)
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        print("⚡ AIOS Optimization Suite Initialized")
+        print(" AIOS Optimization Suite Initialized")
         print(f"   Workspace: c:\dev\AIOS")
         print(f"   Mode: UNIFIED_OPTIMIZATION")
 
@@ -39,7 +39,7 @@ class AIOSOptimizationSuite:
             'system_optimization': self._execute_system_optimization()
         }
 
-        print("✅ Optimization suite execution complete")
+        print(" Optimization suite execution complete")
         return results
 
     def _execute_context_optimization(self) -> Dict[str, Any]:

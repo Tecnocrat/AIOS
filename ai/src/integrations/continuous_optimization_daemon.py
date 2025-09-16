@@ -94,7 +94,7 @@ class ContinuousOptimizationDaemon:
         signal.signal(signal.SIGINT, self._signal_handler)
         signal.signal(signal.SIGTERM, self._signal_handler)
         
-        continuous_logger.info("🔄 Continuous Optimization Daemon initialized")
+        continuous_logger.info(" Continuous Optimization Daemon initialized")
     
     def _initialize_integrations(self):
         """Initialize all required integration components"""
@@ -106,17 +106,17 @@ class ContinuousOptimizationDaemon:
             # Initialize unified optimizer
             from unified_development_optimizer import AIOSUnifiedDevelopmentOptimizer
             self.unified_optimizer = AIOSUnifiedDevelopmentOptimizer(self.aios_root)
-            continuous_logger.info("✅ Unified optimizer initialized")
+            continuous_logger.info(" Unified optimizer initialized")
             
             # Initialize consciousness bridge
             from consciousness_bridge import get_consciousness_bridge
             self.consciousness_bridge = get_consciousness_bridge()
-            continuous_logger.info("✅ Consciousness bridge initialized")
+            continuous_logger.info(" Consciousness bridge initialized")
             
             # Initialize error analyzer
             from vscode_realtime_error_intelligence import VSCodeRealtimeErrorAnalyzer
             self.error_analyzer = VSCodeRealtimeErrorAnalyzer(self.aios_root)
-            continuous_logger.info("✅ Error analyzer initialized")
+            continuous_logger.info(" Error analyzer initialized")
             
         except Exception as e:
             continuous_logger.error(f"Failed to initialize integrations: {e}")
@@ -147,13 +147,13 @@ class ContinuousOptimizationDaemon:
         )
         self.optimization_thread.start()
         
-        continuous_logger.info("🚀 Continuous optimization daemon started")
-        continuous_logger.info(f"📊 Base cycle interval: {self.config['base_cycle_interval']} seconds")
-        continuous_logger.info(f"🔍 Monitoring interval: {self.config['monitoring_interval']} seconds")
+        continuous_logger.info(" Continuous optimization daemon started")
+        continuous_logger.info(f" Base cycle interval: {self.config['base_cycle_interval']} seconds")
+        continuous_logger.info(f" Monitoring interval: {self.config['monitoring_interval']} seconds")
     
     def stop_continuous_optimization(self):
         """Stop the continuous optimization daemon"""
-        continuous_logger.info("🛑 Stopping continuous optimization daemon...")
+        continuous_logger.info(" Stopping continuous optimization daemon...")
         
         self.is_running = False
         self.stop_event.set()
@@ -167,11 +167,11 @@ class ContinuousOptimizationDaemon:
         # Save current state
         self._save_optimization_state()
         
-        continuous_logger.info("✅ Continuous optimization daemon stopped")
+        continuous_logger.info(" Continuous optimization daemon stopped")
     
     def _monitoring_loop(self):
         """Main monitoring loop for real-time state tracking"""
-        continuous_logger.info("🔍 Starting continuous monitoring loop")
+        continuous_logger.info(" Starting continuous monitoring loop")
         
         while self.is_running and not self.stop_event.wait(self.config['monitoring_interval']):
             try:
@@ -182,7 +182,7 @@ class ContinuousOptimizationDaemon:
     
     def _optimization_loop(self):
         """Main optimization loop for scheduled enhancement cycles"""
-        continuous_logger.info("⚡ Starting continuous optimization loop")
+        continuous_logger.info(" Starting continuous optimization loop")
         
         while self.is_running:
             try:
@@ -225,11 +225,11 @@ class ContinuousOptimizationDaemon:
             )
             
             if emergency_detected and not self.emergency_mode:
-                continuous_logger.warning("🚨 Emergency conditions detected - activating emergency optimization")
+                continuous_logger.warning(" Emergency conditions detected - activating emergency optimization")
                 self.emergency_mode = True
                 self._trigger_emergency_optimization()
             elif not emergency_detected and self.emergency_mode:
-                continuous_logger.info("✅ Emergency conditions resolved - returning to normal mode")
+                continuous_logger.info(" Emergency conditions resolved - returning to normal mode")
                 self.emergency_mode = False
             
             # Update performance trends
@@ -264,22 +264,22 @@ class ContinuousOptimizationDaemon:
                 emergency_conditions.append(f"High consciousness impact: {consciousness_impact}")
         
         if emergency_conditions:
-            continuous_logger.warning(f"🚨 Emergency conditions: {', '.join(emergency_conditions)}")
+            continuous_logger.warning(f" Emergency conditions: {', '.join(emergency_conditions)}")
         
         return len(emergency_conditions) > 0
     
     def _trigger_emergency_optimization(self):
         """Trigger emergency optimization cycle"""
-        continuous_logger.info("🚨 Triggering emergency optimization cycle")
+        continuous_logger.info(" Triggering emergency optimization cycle")
         
         try:
             # Execute immediate optimization
             cycle_result = self._execute_optimization_cycle(emergency=True)
             
             if cycle_result:
-                continuous_logger.info(f"✅ Emergency optimization completed: {cycle_result['cycle_id']}")
+                continuous_logger.info(f" Emergency optimization completed: {cycle_result['cycle_id']}")
             else:
-                continuous_logger.error("❌ Emergency optimization failed")
+                continuous_logger.error(" Emergency optimization failed")
                 
         except Exception as e:
             continuous_logger.error(f"Emergency optimization error: {e}")
@@ -314,7 +314,7 @@ class ContinuousOptimizationDaemon:
         if emergency:
             cycle_id = f"emergency_{cycle_id}"
         
-        continuous_logger.info(f"⚡ Starting optimization cycle: {cycle_id}")
+        continuous_logger.info(f" Starting optimization cycle: {cycle_id}")
         
         start_time = datetime.now()
         
@@ -372,7 +372,7 @@ class ContinuousOptimizationDaemon:
             self.last_optimization = cycle
             
             continuous_logger.info(
-                f"✅ Optimization cycle completed: {cycle_id} "
+                f" Optimization cycle completed: {cycle_id} "
                 f"(Duration: {cycle.duration_seconds:.1f}s, "
                 f"Enhancement: {cycle.enhancement_score:.3f}, "
                 f"Fixes: {cycle.fixes_applied})"
@@ -389,7 +389,7 @@ class ContinuousOptimizationDaemon:
             cycle.duration_seconds = (cycle.end_time - cycle.start_time).total_seconds()
             cycle.logs.append(f"Error: {str(e)}")
             
-            continuous_logger.error(f"❌ Optimization cycle failed: {cycle_id} - {e}")
+            continuous_logger.error(f" Optimization cycle failed: {cycle_id} - {e}")
             
             self.optimization_history.append(cycle)
             return None
@@ -577,7 +577,7 @@ class ContinuousOptimizationDaemon:
             with open(state_file, 'w') as f:
                 json.dump(state_data, f, indent=2, default=str)
             
-            continuous_logger.info(f"💾 Optimization state saved to {state_file}")
+            continuous_logger.info(f" Optimization state saved to {state_file}")
             
         except Exception as e:
             continuous_logger.error(f"Error saving optimization state: {e}")
@@ -600,7 +600,7 @@ class ContinuousOptimizationDaemon:
                 # Restore emergency mode
                 self.emergency_mode = state_data.get('emergency_mode', False)
                 
-                continuous_logger.info(f"📂 Optimization state loaded from {state_file}")
+                continuous_logger.info(f" Optimization state loaded from {state_file}")
                 
         except Exception as e:
             continuous_logger.error(f"Error loading optimization state: {e}")
@@ -663,7 +663,7 @@ def deactivate_continuous_optimization():
 
 def main():
     """Main function for testing continuous optimization"""
-    print("🔄 AIOS Continuous Optimization Daemon")
+    print(" AIOS Continuous Optimization Daemon")
     print("=" * 45)
     
     daemon = ContinuousOptimizationDaemon()
@@ -675,11 +675,11 @@ def main():
         # Start continuous optimization
         daemon.start_continuous_optimization()
         
-        print("🚀 Continuous optimization activated!")
-        print("📊 Monitoring and optimization cycles started")
+        print(" Continuous optimization activated!")
+        print(" Monitoring and optimization cycles started")
         print("⏰ Base cycle interval: 30 minutes")
-        print("🔍 Monitoring interval: 1 minute")
-        print("🚨 Emergency optimization: enabled")
+        print(" Monitoring interval: 1 minute")
+        print(" Emergency optimization: enabled")
         print()
         print("Press Ctrl+C to stop...")
         
@@ -690,17 +690,17 @@ def main():
             # Show status every 30 seconds
             if int(time.time()) % 30 == 0:
                 status = daemon.get_status_report()
-                print(f"📈 Status: {status['daemon_status']} | "
+                print(f" Status: {status['daemon_status']} | "
                       f"Emergency: {status['emergency_mode']} | "
                       f"Cycles: {status['optimization_history_count']}")
         
     except KeyboardInterrupt:
-        print("\n🛑 Shutdown requested...")
+        print("\n Shutdown requested...")
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
     finally:
         daemon.stop_continuous_optimization()
-        print("✅ Continuous optimization daemon stopped")
+        print(" Continuous optimization daemon stopped")
 
 
 if __name__ == "__main__":

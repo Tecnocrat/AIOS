@@ -1,5 +1,5 @@
 """
-🌐 AI Knowledge Transfer System
+ AI Knowledge Transfer System
 Comprehensive system for transferring knowledge between AI agent instances
 with quantum-coherent memory structures and multi-AI harmonization.
 

@@ -1,6 +1,6 @@
 # AI Quick Reference - AIOS Project
 
-## 🤖 **IMMEDIATE ACTIONS FOR NEW AI CHAT SESSION**
+##  **IMMEDIATE ACTIONS FOR NEW AI CHAT SESSION**
 
 ### **1. Bootstrap Protocol (MANDATORY)**
 ```bash
@@ -33,7 +33,7 @@ semantic_search("AIOS current implementation")
 semantic_search("user requirements")
 ```
 
-## 📋 **CRITICAL FILES TO UNDERSTAND**
+##  **CRITICAL FILES TO UNDERSTAND**
 
 | File | Purpose | When to Read |
 |------|---------|--------------|
@@ -45,7 +45,7 @@ semantic_search("user requirements")
 | `docs/DEVELOPMENT.md` | Development workflow | When coding |
 | `test_integration.py` | System health verification | Before any work |
 
-## 🔧 **COMMON COMMANDS**
+##  **COMMON COMMANDS**
 
 ### **System Health**
 ```bash
@@ -81,7 +81,7 @@ grep_search("TODO|UPDATE", false, "docs/")
 file_search("docs/*.md")
 ```
 
-## 🚨 **EMERGENCY PROCEDURES**
+##  **EMERGENCY PROCEDURES**
 
 ### **When Context is Lost**
 1. **STOP** all current work
@@ -102,16 +102,16 @@ file_search("docs/*.md")
 3. **ASK** user for clarification
 4. **NEVER** make assumptions
 
-## 📊 **PROJECT STATE QUICK REFERENCE**
+##  **PROJECT STATE QUICK REFERENCE**
 
-### **What's Working ✅**
+### **What's Working **
 - C++ core with vcpkg dependencies
 - Python AI modules (all 5 modules)
 - Build system (CMake + vcpkg)
 - Integration tests
 - Documentation system
 
-### **What's Not Done ⚠️**
+### **What's Not Done **
 - C# UI implementation
 - Git repository initialization
 - Advanced AI features
@@ -122,7 +122,7 @@ file_search("docs/*.md")
 - `core/build/` - C++ build output
 - `ai/venv/` - Python environment
 
-## 🔄 **ITERATION RULES**
+##  **ITERATION RULES**
 
 ### **Every 3rd Turn**
 - Execute full bootstrap protocol
@@ -146,23 +146,23 @@ file_search("docs/*.md")
 
 ---
 
-## 🎯 **SUCCESS CRITERIA**
+##  **SUCCESS CRITERIA**
 
 ### **You're Ready to Work When:**
-- ✅ Bootstrap protocol executed
-- ✅ System health verified
-- ✅ Context fully understood
-- ✅ User requirements clear
+-  Bootstrap protocol executed
+-  System health verified
+-  Context fully understood
+-  User requirements clear
 
 ### **You Should Stop and Ask When:**
-- ❌ Context is unclear
-- ❌ System health failing
-- ❌ User requirements ambiguous
-- ❌ Integration tests failing
+-  Context is unclear
+-  System health failing
+-  User requirements ambiguous
+-  Integration tests failing
 
 ---
 
-## 🧠 **ADAPTIVE CONTEXT HEALTH SYSTEM**
+##  **ADAPTIVE CONTEXT HEALTH SYSTEM**
 
 ### **Smart Reingestion Algorithm**
 ```javascript
@@ -181,7 +181,7 @@ if (contextHealth < 0.7 || userMentionsConfusion) {
 ### **Context Health Indicators**
 - 🟢 **Healthy (0.8-1.0)**: Tests pass, user satisfied, no errors
 - 🟡 **Degraded (0.5-0.7)**: Minor issues, user asking questions
-- 🔴 **Critical (0.0-0.4)**: Tests failing, user confused, build errors
+-  **Critical (0.0-0.4)**: Tests failing, user confused, build errors
 
 ### **Trigger Phrases for Immediate Reingestion**
 - User says: "What were we doing?", "I'm confused", "This isn't working"

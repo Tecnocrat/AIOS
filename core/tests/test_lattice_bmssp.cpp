@@ -27,6 +27,6 @@ int main() {
     auto json = space.to_json();
     assert(json["dimension"].get<size_t>() == 3);
     assert(json["nodes"].size() == 24);
-    std::cout << "\n✅ Lattice + BMSSP integration test passed." << std::endl;
+    std::cout << "\n Lattice + BMSSP integration test passed." << std::endl;
     return 0;
 }

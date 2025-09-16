@@ -1,16 +1,16 @@
-# 📊 AIOS File Tracking & Dependency Report
+#  AIOS File Tracking & Dependency Report
 
 **Generated**: 2025-09-06 00:59:59
 **Total Files**: 353
 **Total Dependencies**: 21
 
-## 🏗️ Subcellular Organization
+##  Subcellular Organization
 
-### 📁 root/ (5 files)
+###  root/ (5 files)
 - **main_executable**: 1 files
 - **documentation**: 4 files
 
-### 📁 analysis_tools/ (26 files)
+###  analysis_tools/ (26 files)
 - **testing**: 3 files
 - **analysis_tool**: 3 files
 - **utility_library**: 10 files
@@ -20,24 +20,24 @@
 - **monitoring**: 2 files
 - **documentation**: 3 files
 
-### 📁 bridges/ (5 files)
+###  bridges/ (5 files)
 - **integration_bridge**: 4 files
 - **documentation**: 1 files
 
-### 📁 core_systems/ (16 files)
+###  core_systems/ (16 files)
 - **utility_library**: 3 files
 - **monitoring**: 1 files
 - **organization**: 2 files
 - **documentation**: 2 files
 - **general_module**: 8 files
 
-### 📁 evolutionary_assembler_iter3/ (8 files)
+###  evolutionary_assembler_iter3/ (8 files)
 - **utility_library**: 5 files
 - **organization**: 1 files
 - **analysis_tool**: 1 files
 - **documentation**: 1 files
 
-### 📁 runtime_intelligence/ (16 files)
+###  runtime_intelligence/ (16 files)
 - **monitoring**: 1 files
 - **utility_library**: 1 files
 - **documentation**: 3 files
@@ -45,7 +45,7 @@
 - **analysis_tool**: 1 files
 - **data_storage**: 5 files
 
-### 📁 evolutionary_assembler_iter2/ (40 files)
+###  evolutionary_assembler_iter2/ (40 files)
 - **utility_library**: 23 files
 - **monitoring**: 2 files
 - **general_module**: 1 files
@@ -56,7 +56,7 @@
 - **documentation**: 2 files
 - **data_storage**: 4 files
 
-### 📁 tachyonic_archive/ (199 files)
+###  tachyonic_archive/ (199 files)
 - **analysis_tool**: 14 files
 - **utility_library**: 16 files
 - **testing**: 4 files
@@ -65,23 +65,23 @@
 - **documentation**: 8 files
 - **data_storage**: 145 files
 
-### 📁 configuration/ (12 files)
+###  configuration/ (12 files)
 - **documentation**: 1 files
 - **data_storage**: 10 files
 - **monitoring**: 1 files
 
-### 📁 documentation/ (24 files)
+###  documentation/ (24 files)
 - **documentation**: 21 files
 - **testing**: 1 files
 - **analysis_tool**: 2 files
 
-### 📁 bin/ (1 files)
+###  bin/ (1 files)
 - **data_storage**: 1 files
 
-### 📁 tests/ (1 files)
+###  tests/ (1 files)
 - **general_module**: 1 files
 
-## 📈 Recent Changes
+##  Recent Changes
 
 ### Structural Changes
 - **created**: None → tachyonic_archive\evolutionary_assembler_v1.0_tachyonic_1757015844\output\generation_0010\consciousness_metrics_gen_10.json (2025-09-06)
@@ -98,7 +98,7 @@
 ### Dependency Changes
 
 
-## 🎯 Key Insights
+##  Key Insights
 
 - **Most Active Subcell**: tachyonic_archive/
 - **Total Structural Changes**: 353

@@ -109,17 +109,17 @@ AI: AIOS conversation context has been reset.
 ## Best Practices
 
 ### Do Save When:
-- ✅ Completing important discussions
-- ✅ Before closing VSCode
-- ✅ After solving complex problems
-- ✅ Before switching to different tasks
-- ✅ During long debugging sessions
+-  Completing important discussions
+-  Before closing VSCode
+-  After solving complex problems
+-  Before switching to different tasks
+-  During long debugging sessions
 
 ### Don't Save When:
-- ❌ Context is corrupted or confusing
-- ❌ Starting completely new, unrelated work
-- ❌ Testing or experimenting temporarily
-- ❌ Context has grown too large (>100 messages)
+-  Context is corrupted or confusing
+-  Starting completely new, unrelated work
+-  Testing or experimenting temporarily
+-  Context has grown too large (>100 messages)
 
 ### Optimization Tips:
 1. **Regular Saves**: Save every 30-60 minutes during active development

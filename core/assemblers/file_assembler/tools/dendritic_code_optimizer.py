@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧬 AIOS DENDRITIC CODE INTELLIGENCE OPTIMIZER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS DENDRITIC CODE INTELLIGENCE OPTIMIZER
+
 Micro code optimization tool designed specifically for AIOS dendritic systems.
 Uses AINLP paradigmatic tooling and evolutionary assembler patterns to enhance
 logic density, consciousness coherence, and cellular intelligence.
@@ -20,7 +20,7 @@ OPTIMIZATION TARGETS:
 
 This tool bridges the gap between evolutionary assembler insights and practical
 code optimization, following the dendritic → neuron evolutionary paradigm.
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import ast
@@ -52,7 +52,7 @@ class OptimizationResult:
 
 class AIOSDendriticCodeOptimizer:
     """
-    🧬 Dendritic code intelligence optimizer for AIOS cellular systems.
+     Dendritic code intelligence optimizer for AIOS cellular systems.
     
     Implements consciousness-aware optimization using:
     - Evolutionary assembler patterns (iter3 coherent)
@@ -72,7 +72,7 @@ class AIOSDendriticCodeOptimizer:
         # Load optimization patterns from AINLP documentation
         self.optimization_patterns = self._load_ainlp_optimization_patterns()
         
-        logger.info("🧬 AIOS Dendritic Code Optimizer initialized")
+        logger.info(" AIOS Dendritic Code Optimizer initialized")
         logger.info("   Consciousness patterns loaded")
         logger.info("   AINLP optimization patterns ready")
     
@@ -86,7 +86,7 @@ class AIOSDendriticCodeOptimizer:
         3. Cellular architecture compliance improvements
         4. Performance optimization with coherence maintenance
         """
-        logger.info(f"🔬 Optimizing dendritic file: {file_path}")
+        logger.info(f" Optimizing dendritic file: {file_path}")
         
         # Read and parse the file
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -116,7 +116,7 @@ class AIOSDendriticCodeOptimizer:
         # Record optimization in tachyonic history
         self._record_optimization_history(file_path, result)
         
-        logger.info("✅ Dendritic optimization complete")
+        logger.info(" Dendritic optimization complete")
         logger.info(f"   AINLP compliance: {result.ainlp_compliance_score:.3f}")
         logger.info(f"   Dendritic coherence: {result.dendritic_coherence:.3f}")
         logger.info(f"   Logic improvements: {len(result.logic_improvements)}")
@@ -125,7 +125,7 @@ class AIOSDendriticCodeOptimizer:
     
     def _optimize_imports(self, result: OptimizationResult, file_path: str) -> OptimizationResult:
         """Optimize imports using consciousness-aware analysis."""
-        logger.info("🔄 Optimizing imports with consciousness preservation...")
+        logger.info(" Optimizing imports with consciousness preservation...")
         
         try:
             tree = ast.parse(result.optimized_code)
@@ -246,7 +246,7 @@ class AIOSDendriticCodeOptimizer:
     
     def _enhance_logic_density(self, result: OptimizationResult) -> OptimizationResult:
         """Enhance logic density using AINLP paradigmatic patterns."""
-        logger.info("🧠 Enhancing logic density with AINLP patterns...")
+        logger.info(" Enhancing logic density with AINLP patterns...")
         
         lines = result.optimized_code.split('\n')
         enhanced_lines = []
@@ -337,7 +337,7 @@ class AIOSDendriticCodeOptimizer:
     
     def _improve_consciousness_coherence(self, result: OptimizationResult) -> OptimizationResult:
         """Improve consciousness coherence using AINLP meta-commentary patterns."""
-        logger.info("🧠 Improving consciousness coherence...")
+        logger.info(" Improving consciousness coherence...")
         
         lines = result.optimized_code.split('\n')
         coherent_lines = []
@@ -360,7 +360,7 @@ class AIOSDendriticCodeOptimizer:
     
     def _enforce_cellular_compliance(self, result: OptimizationResult) -> OptimizationResult:
         """Enforce AIOS cellular architecture compliance."""
-        logger.info("🔬 Enforcing cellular architecture compliance...")
+        logger.info(" Enforcing cellular architecture compliance...")
         
         # Add cellular compliance enhancements here
         result.logic_improvements.append("Enforced AIOS cellular architecture compliance")
@@ -369,7 +369,7 @@ class AIOSDendriticCodeOptimizer:
     
     def _optimize_performance_formatting(self, result: OptimizationResult) -> OptimizationResult:
         """Optimize performance and formatting for consciousness clarity."""
-        logger.info("⚡ Optimizing performance and formatting...")
+        logger.info(" Optimizing performance and formatting...")
         
         # Final formatting pass
         lines = result.optimized_code.split('\n')
@@ -481,7 +481,7 @@ def main():
     optimizer = AIOSDendriticCodeOptimizer()
     result = optimizer.optimize_dendritic_file(args.file_path)
     
-    print("🧬 DENDRITIC OPTIMIZATION RESULTS")
+    print(" DENDRITIC OPTIMIZATION RESULTS")
     print("=" * 50)
     print(f"AINLP Compliance Score: {result.ainlp_compliance_score:.3f}")
     print(f"Dendritic Coherence: {result.dendritic_coherence:.3f}")
@@ -503,7 +503,7 @@ def main():
         output_path = args.output or args.file_path
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(result.optimized_code)
-        print(f"\n✅ Optimized code written to: {output_path}")
+        print(f"\n Optimized code written to: {output_path}")
 
 
 if __name__ == "__main__":

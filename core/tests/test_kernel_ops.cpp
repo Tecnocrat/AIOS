@@ -18,6 +18,6 @@ int main() {
 
     // (Temporarily disabled cycle + SIMD tests for diagnosing non-zero exit)
 
-    std::cout << "\n✅ kernel_ops extended test passed." << std::endl;
+    std::cout << "\n kernel_ops extended test passed." << std::endl;
     return 0;
 }

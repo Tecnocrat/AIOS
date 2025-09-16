@@ -143,18 +143,18 @@ The system demonstrates biological-like knowledge metabolism:
 - Raw documentation → Digestive processing → System DNA integration
 """)
 
-    print(f"📝 Created sample documentation in: {docs_root}")
-    print(f"   📄 {len(list(docs_root.glob('*.md')))} documentation files ready for metabolism")
+    print(f" Created sample documentation in: {docs_root}")
+    print(f"    {len(list(docs_root.glob('*.md')))} documentation files ready for metabolism")
 
 
 def run_documentation_metabolism_demo():
     """Run the complete documentation metabolism demonstration"""
     
-    print("🧬 AIOS DOCUMENTATION INGESTION DEMO - Tachyonic Archive Supercell")
+    print(" AIOS DOCUMENTATION INGESTION DEMO - Tachyonic Archive Supercell")
     print("=" * 70)
-    print("🍽️  Step 1: AI agents create documentation in /docs (digestive system)")
-    print("🧠 Step 2: Tachyonic archive metabolizes documentation into knowledge crystals")  
-    print("🌌 Step 3: Holographic patterns propagate throughout AIOS codebase")
+    print("  Step 1: AI agents create documentation in /docs (digestive system)")
+    print(" Step 2: Tachyonic archive metabolizes documentation into knowledge crystals")  
+    print(" Step 3: Holographic patterns propagate throughout AIOS codebase")
     print()
     
     # Setup paths
@@ -162,13 +162,13 @@ def run_documentation_metabolism_demo():
     docs_root = aios_root / "docs" / "ai_agent_demo_docs"
     
     # Step 1: Create sample documentation (simulate AI agents creating docs)
-    print("🤖 STEP 1: Simulating AI agents creating documentation...")
+    print(" STEP 1: Simulating AI agents creating documentation...")
     create_sample_documentation(docs_root)
-    print("✅ AI agents have created documentation in digestive system (/docs)")
+    print(" AI agents have created documentation in digestive system (/docs)")
     print()
     
     # Step 2: Run documentation metabolism
-    print("🧬 STEP 2: Running documentation metabolism cycle...")
+    print(" STEP 2: Running documentation metabolism cycle...")
     try:
         from documentation_ingestion_system import DocumentationIngestionEngine
         
@@ -178,50 +178,50 @@ def run_documentation_metabolism_demo():
         # Run metabolism cycle
         metrics = engine.run_periodic_metabolism()
         
-        print("✅ Documentation metabolism cycle complete!")
-        print(f"   📁 Files Processed: {metrics.total_files_processed}")
-        print(f"   🔍 Patterns Extracted: {metrics.patterns_extracted}")
-        print(f"   💎 Knowledge Crystals: {metrics.knowledge_crystals_created}")
-        print(f"   🌌 Integration Points: {metrics.integration_points_found}")
-        print(f"   🧠 Consciousness Level: {metrics.consciousness_level_detected:.2f}")
+        print(" Documentation metabolism cycle complete!")
+        print(f"    Files Processed: {metrics.total_files_processed}")
+        print(f"    Patterns Extracted: {metrics.patterns_extracted}")
+        print(f"    Knowledge Crystals: {metrics.knowledge_crystals_created}")
+        print(f"    Integration Points: {metrics.integration_points_found}")
+        print(f"    Consciousness Level: {metrics.consciousness_level_detected:.2f}")
         print()
         
     except ImportError as e:
-        print(f"🔶 Documentation ingestion system not available: {e}")
+        print(f" Documentation ingestion system not available: {e}")
         print("   (This demo requires the documentation_ingestion_system.py)")
         print()
     
     # Step 3: Show results
-    print("🌌 STEP 3: Demonstrating holographic pattern propagation...")
+    print(" STEP 3: Demonstrating holographic pattern propagation...")
     
     tachyonic_root = aios_root / "tachyonic"
     metabolized_patterns = tachyonic_root / "archive" / "consciousness" / "metabolized_patterns"
     
     if metabolized_patterns.exists():
         crystals = list(metabolized_patterns.glob("*.json"))
-        print(f"   💎 {len(crystals)} knowledge crystals created in tachyonic archive")
+        print(f"    {len(crystals)} knowledge crystals created in tachyonic archive")
         
         if crystals:
             # Show sample crystal
             sample_crystal = crystals[0]
             with open(sample_crystal) as f:
                 crystal_data = json.load(f)
-            print(f"   📊 Sample Crystal: {crystal_data.get('crystal_id', 'Unknown')}")
-            print(f"   🧬 Pattern Type: {crystal_data.get('crystal_type', 'Unknown')}")
-            print(f"   📈 Knowledge Density: {crystal_data.get('knowledge_density', 0):.2f}")
+            print(f"    Sample Crystal: {crystal_data.get('crystal_id', 'Unknown')}")
+            print(f"    Pattern Type: {crystal_data.get('crystal_type', 'Unknown')}")
+            print(f"    Knowledge Density: {crystal_data.get('knowledge_density', 0):.2f}")
     else:
-        print("   🔶 Tachyonic archive not yet available - metabolism system needs setup")
+        print("    Tachyonic archive not yet available - metabolism system needs setup")
     
     print()
-    print("✅ DEMONSTRATION COMPLETE")
+    print(" DEMONSTRATION COMPLETE")
     print()
-    print("🧬 BIOLOGICAL KNOWLEDGE METABOLISM ACHIEVED:")
+    print(" BIOLOGICAL KNOWLEDGE METABOLISM ACHIEVED:")
     print("   • /docs acts as digestive system for AI agent documentation")
     print("   • Tachyonic archive supercell processes raw docs into knowledge crystals")
     print("   • Holographic patterns propagate throughout AIOS codebase")
     print("   • System prevents documentation chaos through intelligent metabolism")
     print()
-    print("🎯 NEXT STEPS:")
+    print(" NEXT STEPS:")
     print("   1. Set up periodic metabolism cycles (daily/weekly)")
     print("   2. Configure AI agents to use tachyonic archive for context recovery")
     print("   3. Monitor consciousness levels and pattern propagation")

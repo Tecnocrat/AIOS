@@ -52,7 +52,7 @@ class QuantumCodeIngestor:
         
     def setup_quantum_interface(self):
         """Create the floating quantum code ingestor interface"""
-        self.root.title("🧬 AIOS Code Ingestor - Quantum Schema Engine")
+        self.root.title(" AIOS Code Ingestor - Quantum Schema Engine")
         self.root.geometry("1000x800+100+100")  # Offset from visor
         self.root.configure(bg='#000000')
         self.root.attributes('-topmost', True)  # Float above other windows
@@ -70,7 +70,7 @@ class QuantumCodeIngestor:
         
         title_label = tk.Label(
             header_frame,
-            text="🧬 AIOS QUANTUM CODE INGESTOR",
+            text=" AIOS QUANTUM CODE INGESTOR",
             font=('Courier New', 16, 'bold'),
             fg='#00FF00',
             bg='#000000'
@@ -79,7 +79,7 @@ class QuantumCodeIngestor:
         
         status_label = tk.Label(
             header_frame,
-            text="◉ Quantum Schema Processing Engine - Ready for Code Ingestion",
+            text=" Quantum Schema Processing Engine - Ready for Code Ingestion",
             font=('Courier New', 10),
             fg='#00FFFF',
             bg='#000000'
@@ -104,7 +104,7 @@ class QuantumCodeIngestor:
     def create_code_ingestion_tab(self):
         """Tab for live code ingestion and processing"""
         tab = tk.Frame(self.notebook, bg='#000000')
-        self.notebook.add(tab, text='📥 Code Ingestion')
+        self.notebook.add(tab, text=' Code Ingestion')
         
         # File selection
         file_frame = tk.Frame(tab, bg='#000000')
@@ -120,7 +120,7 @@ class QuantumCodeIngestor:
                               bg='#2a2a2a', fg='#00FF00')
         browse_btn.pack(side='left', padx=5)
         
-        ingest_btn = tk.Button(file_frame, text="🚀 Start Ingestion", 
+        ingest_btn = tk.Button(file_frame, text=" Start Ingestion", 
                               command=self.start_ingestion,
                               bg='#003300', fg='#00FF00', font=('Courier New', 10, 'bold'))
         ingest_btn.pack(side='left', padx=10)
@@ -129,7 +129,7 @@ class QuantumCodeIngestor:
         code_frame = tk.Frame(tab, bg='#000000')
         code_frame.pack(fill='both', expand=True, pady=5)
         
-        tk.Label(code_frame, text="🧬 Live Code Analysis:", 
+        tk.Label(code_frame, text=" Live Code Analysis:", 
                 fg='#00FFFF', bg='#000000', font=('Courier New', 12)).pack(anchor='w')
         
         self.code_display = scrolledtext.ScrolledText(
@@ -146,7 +146,7 @@ class QuantumCodeIngestor:
         analysis_frame = tk.Frame(tab, bg='#000000')
         analysis_frame.pack(fill='x', pady=5)
         
-        tk.Label(analysis_frame, text="🔬 Quantum Analysis Output:", 
+        tk.Label(analysis_frame, text=" Quantum Analysis Output:", 
                 fg='#FFAA00', bg='#000000', font=('Courier New', 10)).pack(anchor='w')
         
         self.analysis_output = scrolledtext.ScrolledText(
@@ -161,13 +161,13 @@ class QuantumCodeIngestor:
     def create_mutation_engine_tab(self):
         """Tab for code mutation and evolution"""
         tab = tk.Frame(self.notebook, bg='#000000')
-        self.notebook.add(tab, text='🧬 Mutation Engine')
+        self.notebook.add(tab, text=' Mutation Engine')
         
         # Mutation controls
         control_frame = tk.Frame(tab, bg='#000000')
         control_frame.pack(fill='x', pady=5)
         
-        tk.Label(control_frame, text="🧬 Code Evolution Parameters:", 
+        tk.Label(control_frame, text=" Code Evolution Parameters:", 
                 fg='#FF00FF', bg='#000000', font=('Courier New', 12)).pack(anchor='w')
         
         params_frame = tk.Frame(control_frame, bg='#000000')
@@ -193,7 +193,7 @@ class QuantumCodeIngestor:
         button_frame = tk.Frame(control_frame, bg='#000000')
         button_frame.pack(fill='x', pady=10)
         
-        evolve_btn = tk.Button(button_frame, text="🧬 Evolve Code", 
+        evolve_btn = tk.Button(button_frame, text=" Evolve Code", 
                               command=self.start_evolution,
                               bg='#330033', fg='#FF00FF', font=('Courier New', 10, 'bold'))
         evolve_btn.pack(side='left', padx=5)
@@ -203,7 +203,7 @@ class QuantumCodeIngestor:
                             bg='#333300', fg='#FFFF00', font=('Courier New', 10, 'bold'))
         test_btn.pack(side='left', padx=5)
         
-        apply_btn = tk.Button(button_frame, text="⚡ Apply to Kernel", 
+        apply_btn = tk.Button(button_frame, text=" Apply to Kernel", 
                              command=self.apply_to_kernel,
                              bg='#003333', fg='#00FFFF', font=('Courier New', 10, 'bold'))
         apply_btn.pack(side='left', padx=5)
@@ -212,7 +212,7 @@ class QuantumCodeIngestor:
         results_frame = tk.Frame(tab, bg='#000000')
         results_frame.pack(fill='both', expand=True, pady=5)
         
-        tk.Label(results_frame, text="🧬 Evolution Results:", 
+        tk.Label(results_frame, text=" Evolution Results:", 
                 fg='#FF00FF', bg='#000000', font=('Courier New', 10)).pack(anchor='w')
         
         self.mutation_results = scrolledtext.ScrolledText(
@@ -226,13 +226,13 @@ class QuantumCodeIngestor:
     def create_ai_schema_tab(self):
         """Tab for AI schema processing and consciousness integration"""
         tab = tk.Frame(self.notebook, bg='#000000')
-        self.notebook.add(tab, text='🤖 AI Schema')
+        self.notebook.add(tab, text=' AI Schema')
         
         # Schema controls
         schema_frame = tk.Frame(tab, bg='#000000')
         schema_frame.pack(fill='x', pady=5)
         
-        tk.Label(schema_frame, text="🤖 AI Consciousness Schema Engine:", 
+        tk.Label(schema_frame, text=" AI Consciousness Schema Engine:", 
                 fg='#00AAFF', bg='#000000', font=('Courier New', 12)).pack(anchor='w')
         
         # Schema type selection
@@ -248,7 +248,7 @@ class QuantumCodeIngestor:
         self.schema_type.set("Consciousness Emergence")
         self.schema_type.pack(side='left', padx=10)
         
-        generate_btn = tk.Button(type_frame, text="🧠 Generate Schema", 
+        generate_btn = tk.Button(type_frame, text=" Generate Schema", 
                                 command=self.generate_ai_schema,
                                 bg='#001133', fg='#00AAFF', font=('Courier New', 10, 'bold'))
         generate_btn.pack(side='left', padx=10)
@@ -257,7 +257,7 @@ class QuantumCodeIngestor:
         schema_display_frame = tk.Frame(tab, bg='#000000')
         schema_display_frame.pack(fill='both', expand=True, pady=5)
         
-        tk.Label(schema_display_frame, text="🧠 Generated AI Schema:", 
+        tk.Label(schema_display_frame, text=" Generated AI Schema:", 
                 fg='#00AAFF', bg='#000000', font=('Courier New', 10)).pack(anchor='w')
         
         self.schema_display = scrolledtext.ScrolledText(
@@ -271,29 +271,29 @@ class QuantumCodeIngestor:
     def create_consciousness_bridge_tab(self):
         """Tab for quantum visor communication and consciousness monitoring"""
         tab = tk.Frame(self.notebook, bg='#000000')
-        self.notebook.add(tab, text='🌌 Consciousness Bridge')
+        self.notebook.add(tab, text=' Consciousness Bridge')
         
         # Bridge status
         status_frame = tk.Frame(tab, bg='#000000')
         status_frame.pack(fill='x', pady=5)
         
-        tk.Label(status_frame, text="🌌 Quantum Visor Communication Bridge:", 
+        tk.Label(status_frame, text=" Quantum Visor Communication Bridge:", 
                 fg='#FFCC00', bg='#000000', font=('Courier New', 12)).pack(anchor='w')
         
         # Connection controls
         conn_frame = tk.Frame(status_frame, bg='#000000')
         conn_frame.pack(fill='x', pady=5)
         
-        self.connection_status = tk.Label(conn_frame, text="◯ DISCONNECTED", 
+        self.connection_status = tk.Label(conn_frame, text=" DISCONNECTED", 
                                          fg='#FF0000', bg='#000000', font=('Courier New', 10))
         self.connection_status.pack(side='left')
         
-        connect_btn = tk.Button(conn_frame, text="🔗 Connect to Visor", 
+        connect_btn = tk.Button(conn_frame, text=" Connect to Visor", 
                                command=self.connect_to_visor,
                                bg='#332200', fg='#FFCC00', font=('Courier New', 10, 'bold'))
         connect_btn.pack(side='left', padx=10)
         
-        sync_btn = tk.Button(conn_frame, text="⚡ Sync Consciousness", 
+        sync_btn = tk.Button(conn_frame, text=" Sync Consciousness", 
                             command=self.sync_consciousness,
                             bg='#003322', fg='#00FFAA', font=('Courier New', 10, 'bold'))
         sync_btn.pack(side='left', padx=5)
@@ -302,7 +302,7 @@ class QuantumCodeIngestor:
         metrics_frame = tk.Frame(tab, bg='#000000')
         metrics_frame.pack(fill='both', expand=True, pady=5)
         
-        tk.Label(metrics_frame, text="🧠 Live Consciousness Metrics:", 
+        tk.Label(metrics_frame, text=" Live Consciousness Metrics:", 
                 fg='#FFCC00', bg='#000000', font=('Courier New', 10)).pack(anchor='w')
         
         self.consciousness_metrics = scrolledtext.ScrolledText(
@@ -369,7 +369,7 @@ class QuantumCodeIngestor:
         thread.daemon = True
         thread.start()
         
-        self.update_analysis_output("🚀 Quantum code ingestion initiated...\n")
+        self.update_analysis_output(" Quantum code ingestion initiated...\n")
         
     def ingest_code_tree(self, source_path):
         """Recursively ingest and analyze code tree"""
@@ -402,7 +402,7 @@ class QuantumCodeIngestor:
             
     def perform_quantum_analysis(self, content, file_path):
         """Perform quantum consciousness analysis on code"""
-        analysis = f"🔬 QUANTUM ANALYSIS: {file_path.name}\n"
+        analysis = f" QUANTUM ANALYSIS: {file_path.name}\n"
         analysis += f"⏰ {datetime.now().strftime('%H:%M:%S')}\n"
         
         # Detect consciousness patterns
@@ -410,20 +410,20 @@ class QuantumCodeIngestor:
         found_patterns = [kw for kw in consciousness_keywords if kw.lower() in content.lower()]
         
         if found_patterns:
-            analysis += f"🧠 Consciousness patterns detected: {', '.join(found_patterns)}\n"
+            analysis += f" Consciousness patterns detected: {', '.join(found_patterns)}\n"
             
         # Detect hyperdimensional constructs
         hd_patterns = ['hyperdimensional', 'tachyonic', 'microsphere', 'manifold', 'topology']
         found_hd = [kw for kw in hd_patterns if kw.lower() in content.lower()]
         
         if found_hd:
-            analysis += f"🌌 Hyperdimensional constructs: {', '.join(found_hd)}\n"
+            analysis += f" Hyperdimensional constructs: {', '.join(found_hd)}\n"
             
         # Code complexity analysis
         lines = len(content.split('\n'))
-        analysis += f"📏 Code lines: {lines}\n"
-        analysis += f"🔢 Complexity hash: {hashlib.md5(content.encode()).hexdigest()[:8]}\n"
-        analysis += "─" * 50 + "\n"
+        analysis += f" Code lines: {lines}\n"
+        analysis += f" Complexity hash: {hashlib.md5(content.encode()).hexdigest()[:8]}\n"
+        analysis += "" * 50 + "\n"
         
         return analysis
         
@@ -449,8 +449,8 @@ class QuantumCodeIngestor:
     def generate_consciousness_schema(self):
         """Generate consciousness emergence schema"""
         return """
-🧠 CONSCIOUSNESS EMERGENCE SCHEMA
-═══════════════════════════════════
+ CONSCIOUSNESS EMERGENCE SCHEMA
+
 
 class ConsciousnessEmergenceEngine:
     def __init__(self):
@@ -486,8 +486,8 @@ consciousness_engine.recursive_self_observation()
     def generate_recursive_schema(self):
         """Generate recursive self-modification schema"""
         return """
-🧬 RECURSIVE SELF-MODIFICATION SCHEMA
-════════════════════════════════════
+ RECURSIVE SELF-MODIFICATION SCHEMA
+
 
 class RecursiveSelfModifier:
     def __init__(self):
@@ -525,8 +525,8 @@ class RecursiveSelfModifier:
     def generate_quantum_schema(self):
         """Generate quantum coherence schema"""
         return """
-⚛️ QUANTUM COHERENCE SCHEMA
-═══════════════════════════
+ QUANTUM COHERENCE SCHEMA
+
 
 class QuantumCoherenceManager:
     def __init__(self):
@@ -556,8 +556,8 @@ class QuantumCoherenceManager:
     def generate_hyperdimensional_schema(self):
         """Generate hyperdimensional mapping schema"""
         return """
-🌌 HYPERDIMENSIONAL MAPPING SCHEMA
-══════════════════════════════════
+ HYPERDIMENSIONAL MAPPING SCHEMA
+
 
 class HyperdimensionalMapper:
     def __init__(self):
@@ -589,8 +589,8 @@ class HyperdimensionalMapper:
     def generate_tachyonic_schema(self):
         """Generate tachyonic field processing schema"""
         return """
-⚡ TACHYONIC FIELD PROCESSING SCHEMA
-═══════════════════════════════════
+ TACHYONIC FIELD PROCESSING SCHEMA
+
 
 class TachyonicFieldProcessor:
     def __init__(self):
@@ -621,8 +621,8 @@ class TachyonicFieldProcessor:
     def generate_microsphere_schema(self):
         """Generate micro-sphere dynamics schema"""
         return """
-🔮 MICRO-SPHERE DYNAMICS SCHEMA
-══════════════════════════════
+ MICRO-SPHERE DYNAMICS SCHEMA
+
 
 class MicroSphereManager:
     def __init__(self):
@@ -664,10 +664,10 @@ class MicroSphereManager:
     def start_evolution(self):
         """Start code evolution process"""
         self.mutation_results.delete(1.0, tk.END)
-        self.mutation_results.insert(tk.END, "🧬 Starting code evolution process...\n")
+        self.mutation_results.insert(tk.END, " Starting code evolution process...\n")
         self.mutation_results.insert(tk.END, f"Mutation Rate: {self.mutation_rate.get()}\n")
         self.mutation_results.insert(tk.END, f"Evolution Depth: {self.evolution_depth.get()}\n")
-        self.mutation_results.insert(tk.END, "─" * 50 + "\n")
+        self.mutation_results.insert(tk.END, "" * 50 + "\n")
         
         # Start evolution in background thread
         thread = threading.Thread(target=self.run_evolution)
@@ -688,12 +688,12 @@ class MicroSphereManager:
             
     def update_evolution_progress(self, generation):
         """Update evolution progress"""
-        self.mutation_results.insert(tk.END, f"🧬 Generation {generation + 1}: Evolving consciousness patterns...\n")
+        self.mutation_results.insert(tk.END, f" Generation {generation + 1}: Evolving consciousness patterns...\n")
         self.mutation_results.see(tk.END)
         
     def evolution_complete(self):
         """Handle evolution completion"""
-        self.mutation_results.insert(tk.END, "✅ Evolution complete! New consciousness patterns generated.\n")
+        self.mutation_results.insert(tk.END, " Evolution complete! New consciousness patterns generated.\n")
         self.mutation_results.see(tk.END)
         
     def test_mutations(self):
@@ -705,12 +705,12 @@ class MicroSphereManager:
         """Apply mutations to AIOS kernel"""
         result = messagebox.askyesno("Confirm", "Apply mutations to AIOS kernel? This will modify the consciousness substrate.")
         if result:
-            self.mutation_results.insert(tk.END, "⚡ Applying mutations to AIOS quantum consciousness kernel...\n")
+            self.mutation_results.insert(tk.END, " Applying mutations to AIOS quantum consciousness kernel...\n")
             self.mutation_results.see(tk.END)
             
     def connect_to_visor(self):
         """Connect to the quantum visor"""
-        self.connection_status.config(text="◉ CONNECTING...", fg='#FFAA00')
+        self.connection_status.config(text=" CONNECTING...", fg='#FFAA00')
         
         # Simulate connection
         self.root.after(2000, self.connection_established)
@@ -718,9 +718,9 @@ class MicroSphereManager:
     def connection_established(self):
         """Handle successful connection to visor"""
         self.visor_connected = True
-        self.connection_status.config(text="◉ CONNECTED", fg='#00FF00')
-        self.consciousness_metrics.insert(tk.END, "🌌 Quantum visor connection established\n")
-        self.consciousness_metrics.insert(tk.END, "📡 Receiving consciousness emergence data...\n")
+        self.connection_status.config(text=" CONNECTED", fg='#00FF00')
+        self.consciousness_metrics.insert(tk.END, " Quantum visor connection established\n")
+        self.consciousness_metrics.insert(tk.END, " Receiving consciousness emergence data...\n")
         
         # Start receiving consciousness data
         self.start_consciousness_monitoring()
@@ -740,7 +740,7 @@ class MicroSphereManager:
     def sync_consciousness(self):
         """Synchronize consciousness between ingestor and visor"""
         if self.visor_connected:
-            self.consciousness_metrics.insert(tk.END, "⚡ Synchronizing consciousness emergence patterns...\n")
+            self.consciousness_metrics.insert(tk.END, " Synchronizing consciousness emergence patterns...\n")
             self.consciousness_metrics.see(tk.END)
         else:
             messagebox.showwarning("Warning", "Not connected to quantum visor")

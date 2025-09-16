@@ -54,7 +54,7 @@ def merge_documents(source_files, output_path):
         lines.append("")
 
     # Footer
-    lines.append("## 🔄 AINLP Harmonization Complete")
+    lines.append("##  AINLP Harmonization Complete")
     lines.append("")
     lines.append(f"**Processing Date**: {datetime.now().strftime('%Y-%m-%d')}")
     lines.append("**Engine**: AINLP Tachyonic Ingestor v1.0")
@@ -73,7 +73,7 @@ def main():
     docs_dir = workspace_root / "docs"
     backup_dir = docs_dir / "tachyonic_backups"
 
-    print("🚀 AINLP Tachyonic Ingestion Engine - Simplified")
+    print(" AINLP Tachyonic Ingestion Engine - Simplified")
     print("=" * 50)
 
     # Target files for optimization
@@ -83,18 +83,18 @@ def main():
     ]
 
     # Create backups
-    print("\n📦 Creating tachyonic backups...")
+    print("\n Creating tachyonic backups...")
     for filepath in source_files:
         if filepath.exists():
             create_tachyonic_backup(filepath, backup_dir)
 
     # Create optimized merged document
-    print("\n🔄 Creating optimized merged document...")
+    print("\n Creating optimized merged document...")
     output_path = docs_dir /
      "AINLP_OPTIMIZED_SPECIFICATION_AND_IMPLEMENTATION.md"
     merged_doc = merge_documents(source_files, output_path)
 
-    print(f"\n✅ Optimization complete!")
+    print(f"\n Optimization complete!")
     print(f"Merged document created: {merged_doc}")
     print(f"Backups stored in: {backup_dir}")
 

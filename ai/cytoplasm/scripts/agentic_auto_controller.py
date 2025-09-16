@@ -404,7 +404,7 @@ def main():
         "emoji_analysis": {
             "total_emojis": 46,
             "files_with_emojis": 1,
-            "emoji_frequency": {"✅": 33, "❌": 9, "🎯": 2, "🔄": 2},
+            "emoji_frequency": {"": 33, "": 9, "": 2, "": 2},
         },
         "integration_analysis": {"integration_score": 0.8},
     }

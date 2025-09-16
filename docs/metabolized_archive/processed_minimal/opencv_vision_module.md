@@ -1,4 +1,4 @@
-# 🎯 AIOS OpenCV Vision Module Documentation
+#  AIOS OpenCV Vision Module Documentation
 
 ## Overview
 
@@ -15,13 +15,13 @@ The OpenCV module follows the AIOS modular design patterns and integrates with:
 
 ## Core Capabilities
 
-### 🔍 Vision Processing Modes
+###  Vision Processing Modes
 
 1. **Basic Analysis**: Fundamental image statistics and entropy calculation
 2. **Comprehensive Analysis**: Feature detection with SIFT, ORB, FAST, and Harris corners
 3. **Consciousness Emergence Analysis**: Advanced pattern recognition for consciousness signatures
 
-### 🧠 Consciousness-Aware Features
+###  Consciousness-Aware Features
 
 - **Quantum Coherence Tracking**: Visual processing coherence measurements
 - **Fractal Dimension Analysis**: Detection of self-similar consciousness patterns

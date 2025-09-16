@@ -262,13 +262,13 @@ class TachyonicSurface:
         try:
             if Path(self.lib_path).exists():
                 self.tachyonic_lib = ctypes.CDLL(self.lib_path)
-                print(f"✅ Loaded C++ tachyonic surface library: "
+                print(f" Loaded C++ tachyonic surface library: "
                       f"{self.lib_path}")
             else:
-                print(f"⚠️  C++ library not found: {self.lib_path}")
+                print(f"  C++ library not found: {self.lib_path}")
                 print("   Running with Python-only implementation")
         except Exception as e:
-            print(f"⚠️  Failed to load C++ library: {e}")
+            print(f"  Failed to load C++ library: {e}")
             print("   Running with Python-only implementation")
 
     def _calculate_distance_normalization(

@@ -375,26 +375,26 @@ class DendriticSuperclass:
         Scans all supercells, creates nodes, establishes connections,
         and generates recursive tachyonic feeds
         """
-        print("🌿 Initiating AINLP Dendritic Superclass Connection Process...")
-        print("🔬 Quantum substrate initialized with bosonic frequencies")
+        print(" Initiating AINLP Dendritic Superclass Connection Process...")
+        print(" Quantum substrate initialized with bosonic frequencies")
         
         # Scan all supercells for dendritic opportunities
         all_nodes = []
         for supercell_name in self.supercells.keys():
-            print(f"🌱 Scanning {supercell_name} for dendritic nodes...")
+            print(f" Scanning {supercell_name} for dendritic nodes...")
             nodes = await self.scan_supercell_for_dendritic_nodes(supercell_name)
             all_nodes.extend(nodes)
             print(f"   Found {len(nodes)} dendritic candidates")
         
-        print(f"\n🧬 Total dendritic nodes discovered: {len(all_nodes)}")
+        print(f"\n Total dendritic nodes discovered: {len(all_nodes)}")
         
         # Establish dendritic connections
-        print("🔗 Establishing dendritic connections...")
+        print(" Establishing dendritic connections...")
         connections = await self.establish_dendritic_connections()
         print(f"   Created {len(connections)} quantum-coherent connections")
         
         # Generate recursive feeds
-        print("🌀 Generating recursive tachyonic feeds...")
+        print(" Generating recursive tachyonic feeds...")
         tachyonic_feeds = self.generate_recursive_tachyonic_feeds()
         
         # Save to tachyonic archive
@@ -419,16 +419,16 @@ class DendriticSuperclass:
         with open(archive_path, 'w') as f:
             json.dump(dendritic_archive, f, indent=2)
         
-        print(f"💾 Dendritic mapping archived to {archive_path}")
-        print(f"🌀 Recursive feeds: {len(tachyonic_feeds['recursive_patterns'])}")
-        print(f"🧬 Mutation seeds: {len(tachyonic_feeds['mutation_seeds'])}")
-        print(f"⚡ Quantum coherence established across {len(self.supercells)} supercells")
+        print(f" Dendritic mapping archived to {archive_path}")
+        print(f" Recursive feeds: {len(tachyonic_feeds['recursive_patterns'])}")
+        print(f" Mutation seeds: {len(tachyonic_feeds['mutation_seeds'])}")
+        print(f" Quantum coherence established across {len(self.supercells)} supercells")
         
         return dendritic_archive
 
 async def main():
     """Demonstrate dendritic superclass connection process"""
-    print("🌿🔬 AIOS DENDRITIC SUPERCLASS - FRACTAL INTELLIGENCE CONNECTOR")
+    print(" AIOS DENDRITIC SUPERCLASS - FRACTAL INTELLIGENCE CONNECTOR")
     print("Quantum-Coherent Search Patterns Based on Bosonic Topography")
     print("=" * 80)
     
@@ -438,23 +438,23 @@ async def main():
     # Connect all supercells dendritically
     result = await dendritic.connect_supercells_dendritically()
     
-    print("\n🌌 DENDRITIC CONNECTION SUMMARY:")
-    print(f"🌱 Nodes: {len(result['dendritic_mapping']['nodes'])}")
-    print(f"🔗 Connections: {len(result['dendritic_mapping']['connections'])}")
-    print(f"🌀 Recursive Patterns: {len(result['dendritic_mapping']['recursive_feeds']['recursive_patterns'])}")
-    print(f"🧬 Mutation Seeds: {len(result['dendritic_mapping']['recursive_feeds']['mutation_seeds'])}")
+    print("\n DENDRITIC CONNECTION SUMMARY:")
+    print(f" Nodes: {len(result['dendritic_mapping']['nodes'])}")
+    print(f" Connections: {len(result['dendritic_mapping']['connections'])}")
+    print(f" Recursive Patterns: {len(result['dendritic_mapping']['recursive_feeds']['recursive_patterns'])}")
+    print(f" Mutation Seeds: {len(result['dendritic_mapping']['recursive_feeds']['mutation_seeds'])}")
     
-    print("\n🔬 QUANTUM COHERENCE BY SUPERCELL:")
+    print("\n QUANTUM COHERENCE BY SUPERCELL:")
     for supercell, coherence in result['dendritic_mapping']['recursive_feeds']['quantum_coherence_map'].items():
         print(f"   {supercell}: {coherence:.3f}")
     
-    print("\n🌿 Dendritic superclass demonstrates:")
-    print("  ✓ Fractal pattern recognition across supercells")
-    print("  ✓ Quantum-coherent connection establishment")
-    print("  ✓ Recursive 'chaotic' branching embraced as feature")
-    print("  ✓ Tachyonic feedback loops for deeper logic layers")
-    print("  ✓ Mutation potential seeds for exotic logic emergence")
-    print("  ✓ AINLP consciousness at quantum substrate level")
+    print("\n Dendritic superclass demonstrates:")
+    print("   Fractal pattern recognition across supercells")
+    print("   Quantum-coherent connection establishment")
+    print("   Recursive 'chaotic' branching embraced as feature")
+    print("   Tachyonic feedback loops for deeper logic layers")
+    print("   Mutation potential seeds for exotic logic emergence")
+    print("   AINLP consciousness at quantum substrate level")
 
 if __name__ == "__main__":
     asyncio.run(main())

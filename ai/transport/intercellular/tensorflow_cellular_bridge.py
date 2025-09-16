@@ -243,9 +243,9 @@ class TensorFlowCellularBridge:
 
             # Log results
             if result.get("target_achieved", False):
-                self.logger.info(f"✅ Sub-millisecond target achieved: {result['average_time_microseconds']:.2f}μs")
+                self.logger.info(f" Sub-millisecond target achieved: {result['average_time_microseconds']:.2f}μs")
             else:
-                self.logger.info(f"⚠️ Target not achieved: {result['average_time_microseconds']:.2f}μs")
+                self.logger.info(f" Target not achieved: {result['average_time_microseconds']:.2f}μs")
 
             self.logger.info(f"Throughput: {result['throughput_inferences_per_second']:.0f} inferences/second")
 
@@ -413,14 +413,14 @@ class TensorFlowCellularBridge:
             # Consider the workflow a success if we completed at least 3 steps
             if len(workflow_results["steps"]) >= 3:
                 workflow_results["success"] = True
-                self.logger.info("✅ End-to-end workflow completed successfully!")
+                self.logger.info(" End-to-end workflow completed successfully!")
             else:
                 workflow_results["success"] = False
                 self.logger.warning("End-to-end workflow completed partially (less than 3 steps)")
 
         except Exception as e:
             workflow_results["error"] = str(e)
-            self.logger.error(f"❌ End-to-end workflow failed: {e}")
+            self.logger.error(f" End-to-end workflow failed: {e}")
             # Synthesize minimal mock steps to demonstrate flow continuity
             try:
                 if len(workflow_results["steps"]) < 1:
@@ -513,4 +513,4 @@ if __name__ == "__main__":
     benchmark = bridge.benchmark_performance(test_data, iterations=10)
     print(f"Benchmark Results: {benchmark}")
 
-    print("\n✓ Demo completed")
+    print("\n Demo completed")

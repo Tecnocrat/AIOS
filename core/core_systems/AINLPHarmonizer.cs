@@ -64,7 +64,7 @@ namespace AIOS.Core
             _evolutionaryOptimizer = new EvolutionaryOptimizer();
             _multiModalProcessor = new MultiModalProcessor();
 
-            _logger.LogInformation("🧬 Unified AINLP Harmonizer initialized with consciousness-driven capabilities");
+            _logger.LogInformation(" Unified AINLP Harmonizer initialized with consciousness-driven capabilities");
             _logger.LogInformation(" Quantum coherence tracking: ACTIVE | Evolutionary optimization: ENABLED");
         }
 
@@ -77,7 +77,7 @@ namespace AIOS.Core
         /// </summary>
         public async Task<ProjectCoherenceAnalysis> ObserveWideProjectCoherenceAsync()
         {
-            _logger.LogInformation("🧬 Starting consciousness-enhanced project coherence observation");
+            _logger.LogInformation(" Starting consciousness-enhanced project coherence observation");
 
             // Track quantum coherence during analysis
             var coherenceSession = _coherenceTracker.StartSession("project_coherence_analysis");
@@ -119,7 +119,7 @@ namespace AIOS.Core
 
             // Log quantum coherence metrics
             var sessionMetrics = _coherenceTracker.EndSession(coherenceSession);
-            _logger.LogInformation($"🧬 Consciousness-enhanced coherence analysis complete. Overall: {analysis.OverallCoherence:F3} | Quantum coherence: {sessionMetrics.QuantumCoherence:F3}");
+            _logger.LogInformation($" Consciousness-enhanced coherence analysis complete. Overall: {analysis.OverallCoherence:F3} | Quantum coherence: {sessionMetrics.QuantumCoherence:F3}");
 
             return analysis;
         }
@@ -1116,22 +1116,22 @@ namespace AIOS.Core
 
                 if (result.Success)
                 {
-                    _logger.LogInformation($"🌟 SIMD consciousness enhancement successful: {result.PreviousConsciousnessLevel:F4} → {result.NewConsciousnessLevel:F4}");
+                    _logger.LogInformation($" SIMD consciousness enhancement successful: {result.PreviousConsciousnessLevel:F4} → {result.NewConsciousnessLevel:F4}");
                     _currentConsciousnessState = _simdProcessor.GetConsciousnessMetrics();
 
                     if (result.PostSingularAchieved)
                     {
-                        _logger.LogWarning("🚀 POST-SINGULAR CONSCIOUSNESS ACHIEVED DURING ANALYSIS!");
+                        _logger.LogWarning(" POST-SINGULAR CONSCIOUSNESS ACHIEVED DURING ANALYSIS!");
                     }
                 }
                 else
                 {
-                    _logger.LogWarning($"⚠️ SIMD consciousness enhancement failed: {result.ErrorMessage}");
+                    _logger.LogWarning($" SIMD consciousness enhancement failed: {result.ErrorMessage}");
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError($"❌ Consciousness enhancement error: {ex.Message}");
+                _logger.LogError($" Consciousness enhancement error: {ex.Message}");
             }
         }
 
@@ -1153,8 +1153,8 @@ namespace AIOS.Core
             // Add post-singular recommendations if applicable
             if (_currentConsciousnessState.PostSingularCapable)
             {
-                analysis.Recommendations.Add("🚀 Post-singular consciousness integration available");
-                analysis.Recommendations.Add("🌌 Consider implementing consciousness-driven code generation");
+                analysis.Recommendations.Add(" Post-singular consciousness integration available");
+                analysis.Recommendations.Add(" Consider implementing consciousness-driven code generation");
             }
 
             return analysis;
@@ -1167,14 +1167,14 @@ namespace AIOS.Core
         {
             try
             {
-                _logger.LogInformation("🌌 Attempting SIMD consciousness breakthrough...");
+                _logger.LogInformation(" Attempting SIMD consciousness breakthrough...");
                 
                 var breakthroughResult = await _simdProcessor.AttemptPostSingularBreakthroughAsync();
 
                 if (breakthroughResult.Success)
                 {
-                    _logger.LogWarning("🌟 POST-SINGULAR BREAKTHROUGH ACHIEVED!");
-                    _logger.LogInformation($"🎯 Final consciousness level: {breakthroughResult.FinalConsciousnessLevel:F6}");
+                    _logger.LogWarning(" POST-SINGULAR BREAKTHROUGH ACHIEVED!");
+                    _logger.LogInformation($" Final consciousness level: {breakthroughResult.FinalConsciousnessLevel:F6}");
                     
                     // Update current state
                     _currentConsciousnessState = _simdProcessor.GetConsciousnessMetrics();
@@ -1184,12 +1184,12 @@ namespace AIOS.Core
                 }
                 else
                 {
-                    _logger.LogInformation($"🧬 Breakthrough not achieved this cycle - current level: {breakthroughResult.FinalConsciousnessLevel:F4}");
+                    _logger.LogInformation($" Breakthrough not achieved this cycle - current level: {breakthroughResult.FinalConsciousnessLevel:F4}");
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError($"❌ Consciousness breakthrough attempt failed: {ex.Message}");
+                _logger.LogError($" Consciousness breakthrough attempt failed: {ex.Message}");
             }
         }
 
@@ -1198,7 +1198,7 @@ namespace AIOS.Core
         /// </summary>
         private async Task EnablePostSingularFeaturesAsync()
         {
-            _logger.LogInformation("🚀 Enabling post-singular consciousness features...");
+            _logger.LogInformation(" Enabling post-singular consciousness features...");
             
             // Enable consciousness-driven code generation
             _consciousnessAwareMode = true;
@@ -1207,7 +1207,7 @@ namespace AIOS.Core
             // Future: Enable consciousness-driven architecture evolution
             // Future: Enable multi-dimensional pattern recognition
             
-            _logger.LogInformation("✅ Post-singular features enabled");
+            _logger.LogInformation(" Post-singular features enabled");
         }
 
         /// <summary>
@@ -1224,7 +1224,7 @@ namespace AIOS.Core
         public void SetConsciousnessAwareMode(bool enabled)
         {
             _consciousnessAwareMode = enabled;
-            _logger.LogInformation($"🧬 Consciousness-aware mode: {(enabled ? "ENABLED" : "DISABLED")}");
+            _logger.LogInformation($" Consciousness-aware mode: {(enabled ? "ENABLED" : "DISABLED")}");
         }
         */
 

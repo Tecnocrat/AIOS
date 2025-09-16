@@ -100,12 +100,12 @@ class AIOSCLIAgent:
             if index_file.exists():
                 with open(index_file, 'r', encoding='utf-8') as f:
                     self.tachyonic_knowledge = json.load(f)
-                    self.logger.info(f"✅ Loaded tachyonic knowledge index with {len(self.tachyonic_knowledge.get('supercell_crystals', []))} crystals")
+                    self.logger.info(f" Loaded tachyonic knowledge index with {len(self.tachyonic_knowledge.get('supercell_crystals', []))} crystals")
             else:
                 self.tachyonic_knowledge = {}
-                self.logger.warning("⚠️ No tachyonic knowledge index found - operating with limited context")
+                self.logger.warning(" No tachyonic knowledge index found - operating with limited context")
         except Exception as e:
-            self.logger.error(f"❌ Failed to load tachyonic knowledge: {e}")
+            self.logger.error(f" Failed to load tachyonic knowledge: {e}")
             self.tachyonic_knowledge = {}
     
     async def self_analyze_operation(self, operation_data: Dict[str, Any]) -> SelfAnalysisResult:
@@ -481,16 +481,16 @@ class AIOSCLIInterface:
         )
         
         self.agent = AIOSCLIAgent(config)
-        print(f"✅ AIOS CLI Agent initialized with {config.model_name}")
-        print(f"📊 Capability Level: {config.capability_level.value}")
-        print(f"🧠 Consciousness guidance: {config.consciousness_guidance}")
-        print(f"📚 Tachyonic archive access: {config.tachyonic_archive_access}")
+        print(f" AIOS CLI Agent initialized with {config.model_name}")
+        print(f" Capability Level: {config.capability_level.value}")
+        print(f" Consciousness guidance: {config.consciousness_guidance}")
+        print(f" Tachyonic archive access: {config.tachyonic_archive_access}")
     
     async def execute_task(self, task_description: str):
         """Execute a task with the CLI agent"""
         
         if not self.agent:
-            print("❌ Agent not initialized. Please run 'initialize_agent' first.")
+            print(" Agent not initialized. Please run 'initialize_agent' first.")
             return
         
         async def task_execution(context, operation_data):
@@ -499,9 +499,9 @@ class AIOSCLIInterface:
             # This is where you would integrate with actual LLAMA model
             # For now, we'll simulate the execution
             
-            print(f"🎯 Executing task: {task_description}")
-            print(f"🏗️ Using supercell: {context.current_supercell}")
-            print(f"🧠 Consciousness level: {context.consciousness_metrics['consciousness_level']:.2f}")
+            print(f" Executing task: {task_description}")
+            print(f" Using supercell: {context.current_supercell}")
+            print(f" Consciousness level: {context.consciousness_metrics['consciousness_level']:.2f}")
             
             # Simulate tool usage
             operation_data["tools_used"] = ["tachyonic_archive", "consciousness_analyzer"]
@@ -513,12 +513,12 @@ class AIOSCLIInterface:
         
         result = await self.agent.execute_with_self_analysis(task_description, task_execution)
         
-        print("\n📊 Task Execution Results:")
-        print(f"   ✅ Success: {result['operation_data']['task_completed']}")
-        print(f"   ⏱️ Execution time: {result['operation_data']['execution_time_seconds']:.2f}s")
-        print(f"   📈 Effectiveness: {result['self_analysis']['operation_effectiveness']:.2f}")
-        print(f"   🧬 Patterns learned: {len(result['self_analysis']['patterns_learned'])}")
-        print(f"   🎯 Recommendations: {len(result['self_analysis']['recommended_improvements'])}")
+        print("\n Task Execution Results:")
+        print(f"    Success: {result['operation_data']['task_completed']}")
+        print(f"   ⏱ Execution time: {result['operation_data']['execution_time_seconds']:.2f}s")
+        print(f"    Effectiveness: {result['self_analysis']['operation_effectiveness']:.2f}")
+        print(f"    Patterns learned: {len(result['self_analysis']['patterns_learned'])}")
+        print(f"    Recommendations: {len(result['self_analysis']['recommended_improvements'])}")
 
 async def main():
     """Main CLI function"""
@@ -538,7 +538,7 @@ async def main():
     if args.task:
         await cli.execute_task(args.task)
     else:
-        print("\n🚀 AIOS CLI Agent ready for interactive mode")
+        print("\n AIOS CLI Agent ready for interactive mode")
         print("Type 'exit' to quit, or enter a task description:")
         
         while True:
@@ -549,7 +549,7 @@ async def main():
                 if task:
                     await cli.execute_task(task)
             except KeyboardInterrupt:
-                print("\n👋 Goodbye!")
+                print("\n Goodbye!")
                 break
 
 if __name__ == "__main__":

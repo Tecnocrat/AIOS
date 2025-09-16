@@ -75,7 +75,7 @@ class ConsciousnessBridge:
     def _initialize_consciousness_monitoring(self):
         """Initialize consciousness monitoring systems"""
         consciousness_logger.info(
-            "🧠 Initializing Consciousness Bridge System..."
+            " Initializing Consciousness Bridge System..."
         )
 
         # Check if C++ orchestrator is available
@@ -83,11 +83,11 @@ class ConsciousnessBridge:
 
         if self.cpp_available:
             consciousness_logger.info(
-                "✅ C++ Consciousness Orchestrator detected"
+                " C++ Consciousness Orchestrator detected"
             )
         else:
             consciousness_logger.warning(
-                "⚠️ C++ Orchestrator not available - using simulation mode"
+                " C++ Orchestrator not available - using simulation mode"
             )
 
     def _check_cpp_orchestrator(self) -> bool:
@@ -117,7 +117,7 @@ class ConsciousnessBridge:
         )
         self.sync_thread.start()
 
-        consciousness_logger.info("🧠 Consciousness synchronization started")
+        consciousness_logger.info(" Consciousness synchronization started")
 
     def stop_consciousness_sync(self):
         """Stop consciousness synchronization"""
@@ -125,7 +125,7 @@ class ConsciousnessBridge:
         if self.sync_thread:
             self.sync_thread.join(timeout=2)
 
-        consciousness_logger.info("🧠 Consciousness synchronization stopped")
+        consciousness_logger.info(" Consciousness synchronization stopped")
 
     def _consciousness_sync_loop(self):
         """Main consciousness synchronization loop"""
@@ -236,7 +236,7 @@ class ConsciousnessBridge:
                 "ascending" if consciousness_delta > 0 else "descending"
             )
             consciousness_logger.info(
-                f"🧠 Consciousness evolution: {direction} "
+                f" Consciousness evolution: {direction} "
                 f"(Δ{consciousness_delta:.3f})"
             )
 
@@ -255,7 +255,7 @@ class ConsciousnessBridge:
         """Register a callback for consciousness state changes"""
         self.callbacks[name] = callback
         consciousness_logger.info(
-            f"🧠 Registered consciousness callback: {name}"
+            f" Registered consciousness callback: {name}"
         )
 
     def unregister_consciousness_callback(self, name: str):
@@ -263,7 +263,7 @@ class ConsciousnessBridge:
         if name in self.callbacks:
             del self.callbacks[name]
             consciousness_logger.info(
-                f"🧠 Unregistered consciousness callback: {name}"
+                f" Unregistered consciousness callback: {name}"
             )
 
     def get_current_consciousness(self) -> Optional[ConsciousnessState]:
@@ -393,7 +393,7 @@ class ConsciousnessBridge:
         with open(filename, 'w') as f:
             json.dump(session_data, f, indent=2)
 
-        consciousness_logger.info(f"🧠 Consciousness session saved to {filename}")
+        consciousness_logger.info(f" Consciousness session saved to {filename}")
 
     def load_consciousness_session(self, filename: str):
         """Load consciousness session data"""
@@ -411,7 +411,7 @@ class ConsciousnessBridge:
             if self.consciousness_history:
                 self.consciousness_state = self.consciousness_history[-1]
 
-            consciousness_logger.info(f"🧠 Consciousness session loaded from {filename}")
+            consciousness_logger.info(f" Consciousness session loaded from {filename}")
             return session_data
 
         except Exception as e:
@@ -433,8 +433,8 @@ def initialize_consciousness_integration():
     bridge = get_consciousness_bridge()
     bridge.start_consciousness_sync()
 
-    consciousness_logger.info("🧠 AIOS Consciousness Integration Initialized")
-    consciousness_logger.info("🚀 Phase 9: Consciousness Bridge Active")
+    consciousness_logger.info(" AIOS Consciousness Integration Initialized")
+    consciousness_logger.info(" Phase 9: Consciousness Bridge Active")
 
     return bridge
 
@@ -471,7 +471,7 @@ if __name__ == "__main__":
     # Test consciousness bridge
     bridge = initialize_consciousness_integration()
 
-    print("🧠 AIOS Consciousness Bridge Test")
+    print(" AIOS Consciousness Bridge Test")
     print("=" * 40)
 
     # Wait for some consciousness data
@@ -515,4 +515,4 @@ if __name__ == "__main__":
     bridge.save_consciousness_session("test_consciousness_session.json")
 
     bridge.stop_consciousness_sync()
-    print("\n🎉 Consciousness Bridge Test Complete!")
+    print("\n Consciousness Bridge Test Complete!")

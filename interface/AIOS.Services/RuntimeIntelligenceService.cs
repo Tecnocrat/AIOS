@@ -253,11 +253,11 @@ namespace AIOS.Services
             var data = new Dictionary<string, object>();
             
             // Parse status from console output
-            if (output.Contains("✅ Runtime Intelligence connected"))
+            if (output.Contains(" Runtime Intelligence connected"))
             {
                 data["ai_intelligence_connection"] = "active";
             }
-            else if (output.Contains("⚠️ AI Intelligence connection failed"))
+            else if (output.Contains(" AI Intelligence connection failed"))
             {
                 data["ai_intelligence_connection"] = "failed";
             }

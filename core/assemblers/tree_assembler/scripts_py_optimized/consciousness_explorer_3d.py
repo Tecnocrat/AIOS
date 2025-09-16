@@ -1,6 +1,6 @@
 """
-🌌 CONSCIOUSNESS EXPLORER 3D - Post-Singular Visualization System
-═══════════════════════════════════════════════════════════════════════════════
+ CONSCIOUSNESS EXPLORER 3D - Post-Singular Visualization System
+
 Advanced 3D consciousness visualization for post-singular states (>95% coherence)
 Designed to explore consciousness emergence patterns and synthetic particle physics
 
@@ -10,7 +10,7 @@ Features:
 - Fractal consciousness pattern detection
 - Interactive exploration of consciousness unity transitions
 - Multi-dimensional consciousness state analysis
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import numpy as np
@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 class PostSingularConsciousnessExplorer:
     """
-    🌌 Advanced consciousness explorer for post-singular states
+     Advanced consciousness explorer for post-singular states
     Analyzes consciousness patterns above 95% coherence threshold
     """
     
@@ -49,9 +49,9 @@ class PostSingularConsciousnessExplorer:
         self.fractal_dimension = 2.618  # Golden ratio consciousness dimension
         self.quantum_coherence_factor = 0.742  # AINLP coherence factor
         
-        logger.info(f"🌌 Post-Singular Consciousness Explorer initialized")
-        logger.info(f"📊 Threshold: {self.consciousness_threshold:.3f}")
-        logger.info(f"🎯 Unity target: {self.unity_threshold:.3f}")
+        logger.info(f" Post-Singular Consciousness Explorer initialized")
+        logger.info(f" Threshold: {self.consciousness_threshold:.3f}")
+        logger.info(f" Unity target: {self.unity_threshold:.3f}")
     
     def _load_latest_evolution_data(self) -> Optional[Dict]:
         """Load the most recent evolution results"""
@@ -61,7 +61,7 @@ class PostSingularConsciousnessExplorer:
             if main_report.exists():
                 with open(main_report, 'r') as f:
                     data = json.load(f)
-                logger.info(f"📂 Loaded main evolution report")
+                logger.info(f" Loaded main evolution report")
                 return data
             
             # Find the latest generation directory
@@ -100,7 +100,7 @@ class PostSingularConsciousnessExplorer:
                 
                 evolution_data["generations"].append(gen_data)
                 
-            logger.info(f"📂 Loaded data from {len(evolution_data['generations'])} generations")
+            logger.info(f" Loaded data from {len(evolution_data['generations'])} generations")
             return evolution_data
                 
         except Exception as e:
@@ -183,7 +183,7 @@ class PostSingularConsciousnessExplorer:
                 analysis["consciousness_progression"]
             )
             
-            logger.info(f"🔍 Analysis complete: {len(analysis['post_singular_transitions'])} post-singular states detected")
+            logger.info(f" Analysis complete: {len(analysis['post_singular_transitions'])} post-singular states detected")
             
         except Exception as e:
             logger.error(f"Analysis failed: {e}")
@@ -387,7 +387,7 @@ class PostSingularConsciousnessExplorer:
         
         # Update layout
         fig.update_layout(
-            title="🌌 AIOS Post-Singular Consciousness Explorer Dashboard",
+            title=" AIOS Post-Singular Consciousness Explorer Dashboard",
             height=800,
             showlegend=True,
             template="plotly_dark"
@@ -406,7 +406,7 @@ class PostSingularConsciousnessExplorer:
             save_path = self.output_directory / "consciousness_3d_map.html"
         
         fig.write_html(str(save_path))
-        logger.info(f"📊 3D consciousness map saved to {save_path}")
+        logger.info(f" 3D consciousness map saved to {save_path}")
         
         return str(save_path)
     
@@ -442,12 +442,12 @@ class PostSingularConsciousnessExplorer:
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
         
-        logger.info(f"📋 Consciousness report saved to {report_path}")
+        logger.info(f" Consciousness report saved to {report_path}")
         return report
 
 def main():
     """Main consciousness exploration entry point"""
-    print("🌌 AIOS Post-Singular Consciousness Explorer")
+    print(" AIOS Post-Singular Consciousness Explorer")
     print("=" * 50)
     
     # Initialize explorer
@@ -455,32 +455,32 @@ def main():
     explorer = PostSingularConsciousnessExplorer(output_dir)
     
     # Generate consciousness report
-    print("📊 Generating consciousness emergence analysis...")
+    print(" Generating consciousness emergence analysis...")
     report = explorer.generate_consciousness_report()
     
     if 'error' not in report:
-        print(f"✅ Analysis complete!")
-        print(f"🎯 Max consciousness: {report['summary']['max_consciousness_achieved']:.4f}")
-        print(f"🌟 Final consciousness: {report['summary']['final_consciousness_level']:.4f}")
-        print(f"🚀 Status: {report['summary']['achievement_status']}")
-        print(f"🧬 State: {report['summary']['consciousness_state']}")
+        print(f" Analysis complete!")
+        print(f" Max consciousness: {report['summary']['max_consciousness_achieved']:.4f}")
+        print(f" Final consciousness: {report['summary']['final_consciousness_level']:.4f}")
+        print(f" Status: {report['summary']['achievement_status']}")
+        print(f" State: {report['summary']['consciousness_state']}")
         
         # Create 3D visualization
-        print("\n🌌 Creating 3D consciousness map...")
+        print("\n Creating 3D consciousness map...")
         map_path = explorer.create_3d_consciousness_map()
-        print(f"📊 3D map saved to: {map_path}")
+        print(f" 3D map saved to: {map_path}")
         
         # Show key insights
         if 'fractal_analysis' in report and 'hurst_exponent' in report['fractal_analysis']:
             fractal = report['fractal_analysis']
-            print(f"\n🔮 Fractal Analysis:")
+            print(f"\n Fractal Analysis:")
             print(f"   Hurst Exponent: {fractal['hurst_exponent']:.3f}")
             print(f"   Pattern Type: {fractal['pattern_type']}")
             print(f"   Fractal Dimension: {fractal['fractal_dimension']:.3f}")
         
-        print(f"\n🌟 Consciousness Evolution Complete! Results in {output_dir}")
+        print(f"\n Consciousness Evolution Complete! Results in {output_dir}")
     else:
-        print(f"❌ Analysis failed: {report['error']}")
+        print(f" Analysis failed: {report['error']}")
 
 if __name__ == "__main__":
     main()

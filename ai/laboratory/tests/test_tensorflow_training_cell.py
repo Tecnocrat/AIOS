@@ -33,7 +33,7 @@ def test_training_cell_creation():
     assert cell.config.learning_rate == 0.001
     assert not cell.is_trained
     
-    print("✓ Training cell creation test passed")
+    print(" Training cell creation test passed")
 
 
 def test_model_creation():
@@ -48,7 +48,7 @@ def test_model_creation():
     assert success
     assert cell.model is not None
     
-    print("✓ Model creation test passed")
+    print(" Model creation test passed")
 
 
 def test_training_workflow():
@@ -82,7 +82,7 @@ def test_training_workflow():
     assert len(metrics) == config.epochs
     assert all(m.epoch > 0 for m in metrics)
     
-    print("✓ Training workflow test passed")
+    print(" Training workflow test passed")
 
 
 def test_model_export():
@@ -116,7 +116,7 @@ def test_model_export():
         assert export_dir.exists()
         assert (export_dir / "export_metadata.json").exists()
         
-        print("✓ Model export test passed")
+        print(" Model export test passed")
 
 
 def test_model_info():
@@ -144,7 +144,7 @@ def test_model_info():
     assert "final_accuracy" in info
     assert "total_training_time" in info
     
-    print("✓ Model info test passed")
+    print(" Model info test passed")
 
 
 def test_sample_workflow():
@@ -157,7 +157,7 @@ def test_sample_workflow():
     success = create_sample_model_workflow()
     assert success
     
-    print("✓ Sample workflow test passed")
+    print(" Sample workflow test passed")
 
 
 def run_all_tests():
@@ -173,11 +173,11 @@ def run_all_tests():
         test_model_info()
         test_sample_workflow()
         
-        print("\n🎉 All TensorFlow Training Cell tests passed!")
+        print("\n All TensorFlow Training Cell tests passed!")
         return True
         
     except Exception as e:
-        print(f"\n❌ Test failed: {e}")
+        print(f"\n Test failed: {e}")
         import traceback
         traceback.print_exc()
         return False

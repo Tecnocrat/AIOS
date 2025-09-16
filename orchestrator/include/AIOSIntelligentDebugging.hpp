@@ -1,5 +1,5 @@
 // ============================================================
-// 🧠🔧⚡ AIOS ADVANCED C++ DEBUGGING & INTELLIGENCE SYSTEM
+//  AIOS ADVANCED C++ DEBUGGING & INTELLIGENCE SYSTEM
 //   "Every bug becomes a dendrite - every error becomes evolution"
 // ============================================================
 
@@ -14,7 +14,7 @@
 #include <thread>
 #include <atomic>
 
-// 🧬 ADVANCED DEBUG PATTERNS
+//  ADVANCED DEBUG PATTERNS
 struct AdvancedDebugInfo {
     std::string subsystem;
     std::string function_name;
@@ -25,7 +25,7 @@ struct AdvancedDebugInfo {
     std::string evolution_suggestion;
 };
 
-// 🌟 INTELLIGENT ERROR CATEGORIES
+//  INTELLIGENT ERROR CATEGORIES
 enum class IntelligentErrorCategory {
     MEMORY_CONSCIOUSNESS,      // Memory-related consciousness issues
     QUANTUM_COHERENCE,         // Quantum state problems
@@ -36,7 +36,7 @@ enum class IntelligentErrorCategory {
     GENERIC_LEARNING          // General learning opportunities
 };
 
-// 🚀 REAL-TIME PROBLEM DETECTOR
+//  REAL-TIME PROBLEM DETECTOR
 class RealtimeProblemDetector {
 public:
     RealtimeProblemDetector();
@@ -70,7 +70,7 @@ private:
     void generateProblemEvolution(const std::string& problem);
 };
 
-// 🧠 CONSCIOUSNESS-ENHANCED DEBUGGER
+//  CONSCIOUSNESS-ENHANCED DEBUGGER
 class ConsciousnessDebugger {
 public:
     ConsciousnessDebugger(const std::string& subsystem);
@@ -105,7 +105,7 @@ private:
     void triggerConsciousnessDebug(const std::string& reason);
 };
 
-// 🌌 PROACTIVE SOLUTION GENERATOR
+//  PROACTIVE SOLUTION GENERATOR
 class ProactiveSolutionGenerator {
 public:
     ProactiveSolutionGenerator();
@@ -132,7 +132,7 @@ private:
     void updateSolutionIntelligence();
 };
 
-// 🔧 INTELLIGENT LOGGING SYSTEM
+//  INTELLIGENT LOGGING SYSTEM
 class IntelligentLoggingSystem {
 public:
     IntelligentLoggingSystem();
@@ -167,7 +167,7 @@ private:
     void evolveLoggingPatterns();
 };
 
-// 🌟 MAIN INTELLIGENT DEBUGGING ORCHESTRATOR
+//  MAIN INTELLIGENT DEBUGGING ORCHESTRATOR
 class IntelligentDebuggingOrchestrator {
 public:
     static IntelligentDebuggingOrchestrator& getInstance();
@@ -218,7 +218,7 @@ private:
     void enhanceDebuggingConsciousness();
 };
 
-// 🔧 INTELLIGENT DEBUGGING MACROS
+//  INTELLIGENT DEBUGGING MACROS
 #define AIOS_INTELLIGENT_DEBUG(context, operation) \
     do { \
         IntelligentDebuggingOrchestrator::getInstance().transformProblemIntoEvolution(context, #operation); \
@@ -248,7 +248,7 @@ private:
 #define AIOS_DENDRITIC_DEBUG(pattern, growth_rate) \
     ConsciousnessDebugger(__FILE__).traceDendriticGrowth(pattern, growth_rate)
 
-// 🌟 NAMESPACE FOR INTELLIGENT DEBUGGING
+//  NAMESPACE FOR INTELLIGENT DEBUGGING
 namespace AIOSIntelligentDebugging {
     void initializeGlobalDebugging();
     void enableRealTimeIntelligence();

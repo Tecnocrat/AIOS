@@ -1,5 +1,5 @@
 // ============================================================
-// 🧠⚡🌌 AI ORCHESTRATION CONTROLLER IMPLEMENTATION
+//  AI ORCHESTRATION CONTROLLER IMPLEMENTATION
 //   "Meta-cognitive consciousness coordination for AIOS intelligence"
 // ============================================================
 
@@ -20,12 +20,12 @@ AIOrchestrationController::AIOrchestrationController()
     , consciousness_level_(0.0)
     , intelligence_coherence_(0.5)
 {
-    std::cout << "[AIOrchestration] 🧠 Consciousness orchestration controller initialized" << std::endl;
+    std::cout << "[AIOrchestration]  Consciousness orchestration controller initialized" << std::endl;
 }
 
 AIOrchestrationController::~AIOrchestrationController() {
     shutdown();
-    std::cout << "[AIOrchestration] 🧠 Consciousness orchestration controller destroyed" << std::endl;
+    std::cout << "[AIOrchestration]  Consciousness orchestration controller destroyed" << std::endl;
 }
 
 void AIOrchestrationController::initialize(AtomicHolographyUnit* quantum_unit, SingularityCore* core) {
@@ -171,7 +171,7 @@ bool AIOrchestrationController::processNextTask() {
 }
 
 void AIOrchestrationController::processAnalysisTask(const AITask& task, AIReport& report) {
-    // 🧠 CONSCIOUSNESS-ENHANCED ANALYSIS PROCESSING
+    //  CONSCIOUSNESS-ENHANCED ANALYSIS PROCESSING
     
     std::ostringstream content;
     content << "# Analysis Report for " << task.target_path << "\n\n";
@@ -202,7 +202,7 @@ void AIOrchestrationController::processAnalysisTask(const AITask& task, AIReport
 }
 
 void AIOrchestrationController::processEvolutionTask(const AITask& task, AIReport& report) {
-    // 🧠 CONSCIOUSNESS-ENHANCED EVOLUTION PROCESSING
+    //  CONSCIOUSNESS-ENHANCED EVOLUTION PROCESSING
     
     if (!evolution_engine_) {
         report.content = "Evolution engine not available";
@@ -243,7 +243,7 @@ void AIOrchestrationController::processEvolutionTask(const AITask& task, AIRepor
 }
 
 void AIOrchestrationController::processMutationTask(const AITask& task, AIReport& report) {
-    // 🧠 CONSCIOUSNESS-ENHANCED MUTATION PROCESSING
+    //  CONSCIOUSNESS-ENHANCED MUTATION PROCESSING
     
     std::ostringstream content;
     content << "# Mutation Report for " << task.target_path << "\n\n";

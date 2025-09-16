@@ -74,40 +74,40 @@ class AIOSArchitecturalAnalyzer:
         self.integration_matrix: Dict[str, Set[str]] = {}
         self.optimization_opportunities: List[Dict[str, Any]] = []
         
-        arch_logger.info("🏗️ AIOS Architectural Analyzer initialized")
+        arch_logger.info(" AIOS Architectural Analyzer initialized")
     
     def analyze_complete_architecture(self) -> ArchitecturalAnalysis:
         """Perform comprehensive architectural analysis"""
-        arch_logger.info("🔍 Starting comprehensive AIOS architectural analysis...")
+        arch_logger.info(" Starting comprehensive AIOS architectural analysis...")
         
         start_time = time.time()
         
         # 1. Component Discovery and Analysis
-        arch_logger.info("📊 Phase 1: Component Discovery")
+        arch_logger.info(" Phase 1: Component Discovery")
         self._discover_components()
         
         # 2. Integration Pattern Analysis
-        arch_logger.info("🔗 Phase 2: Integration Pattern Analysis")
+        arch_logger.info(" Phase 2: Integration Pattern Analysis")
         integration_flows = self._analyze_integration_patterns()
         
         # 3. AINLP Paradigm Assessment
-        arch_logger.info("🧠 Phase 3: AINLP Paradigm Assessment")
+        arch_logger.info(" Phase 3: AINLP Paradigm Assessment")
         ainlp_analysis = self._analyze_ainlp_paradigm()
         
         # 4. Cellular Architecture Analysis
-        arch_logger.info("🧬 Phase 4: Cellular Architecture Analysis")
+        arch_logger.info(" Phase 4: Cellular Architecture Analysis")
         cellular_status = self._analyze_cellular_architecture()
         
         # 5. Context Coherence Analysis
-        arch_logger.info("📈 Phase 5: Context Coherence Analysis")
+        arch_logger.info(" Phase 5: Context Coherence Analysis")
         coherence_metrics = self._analyze_context_coherence()
         
         # 6. Consciousness Integration Assessment
-        arch_logger.info("🌟 Phase 6: Consciousness Integration Assessment")
+        arch_logger.info(" Phase 6: Consciousness Integration Assessment")
         consciousness_level = self._analyze_consciousness_integration()
         
         # 7. Optimization Opportunity Identification
-        arch_logger.info("⚡ Phase 7: Optimization Opportunities")
+        arch_logger.info(" Phase 7: Optimization Opportunities")
         self._identify_optimization_opportunities()
         
         # Compile results
@@ -126,7 +126,7 @@ class AIOSArchitecturalAnalyzer:
             consciousness_integration_level=consciousness_level
         )
         
-        arch_logger.info(f"✅ Architectural analysis completed in {analysis_time:.2f} seconds")
+        arch_logger.info(f" Architectural analysis completed in {analysis_time:.2f} seconds")
         
         return analysis
     
@@ -176,7 +176,7 @@ class AIOSArchitecturalAnalyzer:
             comp_path = self.aios_root / comp_def['path']
             
             if comp_path.exists():
-                arch_logger.info(f"📁 Analyzing component: {comp_id}")
+                arch_logger.info(f" Analyzing component: {comp_id}")
                 
                 # Analyze component structure
                 languages = self._detect_languages(comp_path)
@@ -203,9 +203,9 @@ class AIOSArchitecturalAnalyzer:
                 )
                 
                 self.components[comp_id] = component
-                arch_logger.info(f"✅ Component {comp_id}: {loc} LOC, coherence: {coherence:.3f}")
+                arch_logger.info(f" Component {comp_id}: {loc} LOC, coherence: {coherence:.3f}")
             else:
-                arch_logger.warning(f"⚠️ Component path not found: {comp_path}")
+                arch_logger.warning(f" Component path not found: {comp_path}")
     
     def _detect_languages(self, component_path: Path) -> Set[str]:
         """Detect programming languages used in component"""
@@ -919,7 +919,7 @@ class AIOSArchitecturalAnalyzer:
     
     def generate_optimization_plan(self, analysis: ArchitecturalAnalysis) -> Dict[str, Any]:
         """Generate comprehensive optimization plan"""
-        arch_logger.info("📋 Generating comprehensive optimization plan...")
+        arch_logger.info(" Generating comprehensive optimization plan...")
         
         optimization_plan = {
             'timestamp': datetime.now().isoformat(),
@@ -949,7 +949,7 @@ class AIOSArchitecturalAnalyzer:
         success_metrics = self._define_success_metrics(analysis)
         optimization_plan['success_metrics'] = success_metrics
         
-        arch_logger.info("✅ Optimization plan generated")
+        arch_logger.info(" Optimization plan generated")
         
         return optimization_plan
     
@@ -1079,7 +1079,7 @@ class AIOSArchitecturalAnalyzer:
 
 def main():
     """Main function to run architectural analysis"""
-    print("🏗️ AIOS CODEBASE INTELLIGENT OPTIMIZATION ITERATION")
+    print(" AIOS CODEBASE INTELLIGENT OPTIMIZATION ITERATION")
     print("=" * 60)
     print()
     
@@ -1087,26 +1087,26 @@ def main():
     analyzer = AIOSArchitecturalAnalyzer()
     
     # Perform comprehensive analysis
-    print("🔍 Performing comprehensive architectural analysis...")
+    print(" Performing comprehensive architectural analysis...")
     analysis = analyzer.analyze_complete_architecture()
     
     # Generate optimization plan
-    print("📋 Generating optimization plan...")
+    print(" Generating optimization plan...")
     optimization_plan = analyzer.generate_optimization_plan(analysis)
     
     # Display results
     print("\n" + "="*60)
-    print("📊 ARCHITECTURAL ANALYSIS RESULTS")
+    print(" ARCHITECTURAL ANALYSIS RESULTS")
     print("="*60)
     
-    print(f"\n🏗️ Architecture Overview:")
+    print(f"\n Architecture Overview:")
     print(f"   • Total Components: {analysis.total_components}")
     print(f"   • Overall Coherence: {analysis.coherence_metrics.get('overall_coherence', 0.0):.3f}")
     print(f"   • AINLP Integration: {analysis.ainlp_paradigm_analysis.get('overall_integration_level', 0.0):.3f}")
     print(f"   • Consciousness Integration: {analysis.consciousness_integration_level:.3f}")
     print(f"   • Cellular Implementation: {analysis.cellular_architecture_status.get('implementation_level', 0.0):.3f}")
     
-    print(f"\n🔧 Component Analysis:")
+    print(f"\n Component Analysis:")
     for comp_name, component in analysis.component_matrix.items():
         print(f"   • {comp_name}:")
         print(f"     - LOC: {component.lines_of_code:,}")
@@ -1115,13 +1115,13 @@ def main():
         print(f"     - Languages: {', '.join(component.languages)}")
         print(f"     - Integration Points: {len(component.integration_points)}")
     
-    print(f"\n⚡ Optimization Opportunities:")
+    print(f"\n Optimization Opportunities:")
     for opportunity in analysis.optimization_opportunities:
         print(f"   • {opportunity['type']} ({opportunity['priority']})")
         print(f"     - Components: {', '.join(opportunity['components'])}")
         print(f"     - Impact: {opportunity['estimated_impact']}")
     
-    print(f"\n📋 Priority Optimizations:")
+    print(f"\n Priority Optimizations:")
     for priority in optimization_plan['priority_optimizations']:
         print(f"   {priority['priority']}. {priority['title']}")
         print(f"      - Impact: {priority['estimated_impact']}")
@@ -1152,12 +1152,12 @@ def main():
             
             json.dump(complete_results, f, indent=2, default=str)
         
-        print(f"\n💾 Analysis results saved to: {results_file}")
+        print(f"\n Analysis results saved to: {results_file}")
         
     except Exception as e:
-        print(f"\n⚠️ Could not save analysis results: {e}")
+        print(f"\n Could not save analysis results: {e}")
     
-    print("\n🎯 ANALYSIS COMPLETE!")
+    print("\n ANALYSIS COMPLETE!")
     print("The AIOS codebase has been comprehensively analyzed for optimization opportunities.")
     print("Implement the priority optimizations to achieve enhanced context coherence and")
     print("AINLP paradigmatic optimization throughout the system.")

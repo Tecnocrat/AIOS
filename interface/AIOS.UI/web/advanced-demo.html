@@ -436,24 +436,24 @@
 
         <!-- Sidebar -->
         <div class="sidebar">
-            <h3>🤖 AI Modules</h3>
+            <h3> AI Modules</h3>
             <button class="module-button" onclick="demonstrateAI()">
-                <span>🧠</span> Natural Language Processing
+                <span></span> Natural Language Processing
             </button>
             <button class="module-button" onclick="demonstrateDatabase()">
-                <span>🗄️</span> Intelligent Database
+                <span></span> Intelligent Database
             </button>
             <button class="module-button" onclick="demonstrateAINLP()">
-                <span>🔮</span> AINLP Compiler
+                <span></span> AINLP Compiler
             </button>
             <button class="module-button" onclick="toggleChatInterface()">
-                <span>💬</span> AI Chat Interface
+                <span></span> AI Chat Interface
             </button>
             <button class="module-button" onclick="showSystemHealth()">
-                <span>❤️</span> System Health
+                <span></span> System Health
             </button>
             <button class="module-button" onclick="toggleRealTimeMode()">
-                <span>📡</span> Real-time Mode
+                <span></span> Real-time Mode
             </button>
         </div>
 
@@ -465,7 +465,7 @@
             </div>
 
             <div class="demo-section">
-                <h4>🧠 AI & Natural Language Processing</h4>
+                <h4> AI & Natural Language Processing</h4>
                 <p>Demonstrate AI capabilities with natural language understanding and processing.</p>
                 <button class="demo-button" onclick="demonstrateAI()">Process Natural Language</button>
                 <button class="demo-button" onclick="makePrediction()">Make AI Prediction</button>
@@ -474,7 +474,7 @@
             </div>
 
             <div class="demo-section">
-                <h4>🗄️ Intelligent Database Operations</h4>
+                <h4> Intelligent Database Operations</h4>
                 <p>Showcase AI-powered database queries and intelligent data operations.</p>
                 <button class="demo-button" onclick="demonstrateDatabase()">Intelligent Query</button>
                 <button class="demo-button" onclick="querySystemLogs()">Query System Logs</button>
@@ -483,7 +483,7 @@
             </div>
 
             <div class="demo-section">
-                <h4>🔮 AINLP - Natural Language Programming</h4>
+                <h4> AINLP - Natural Language Programming</h4>
                 <p>Experience the future of programming with natural language commands.</p>
                 <input type="text" class="ainlp-input" id="ainlp-input" 
                        placeholder="Enter natural language command (e.g., 'Create a dashboard showing system metrics')">
@@ -493,7 +493,7 @@
             </div>
 
             <div class="demo-section">
-                <h4>📡 Real-time Integration</h4>
+                <h4> Real-time Integration</h4>
                 <p>Monitor real-time system events and AI responses.</p>
                 <button class="demo-button" onclick="startRealTimeMonitoring()">Start Monitoring</button>
                 <button class="demo-button" onclick="stopRealTimeMonitoring()">Stop Monitoring</button>
@@ -503,7 +503,7 @@
 
             <!-- Chat Interface -->
             <div class="chat-interface" id="chat-interface">
-                <h4>💬 AI Chat Interface</h4>
+                <h4> AI Chat Interface</h4>
                 <div class="chat-messages" id="chat-messages"></div>
                 <input type="text" class="chat-input" id="chat-input" 
                        placeholder="Chat with AIOS AI..." onkeypress="handleChatInput(event)">
@@ -517,7 +517,7 @@
 
             <!-- Fallback UI -->
             <div class="fallback-ui" id="fallback-ui">
-                <h3>⚠️ WebView2 Not Available</h3>
+                <h3> WebView2 Not Available</h3>
                 <p>This interface requires WebView2 integration with C# backend.</p>
                 <p>Please ensure the desktop application is running properly.</p>
             </div>
@@ -525,7 +525,7 @@
 
         <!-- Status Bar -->
         <div class="statusbar">
-            <h3>🔧 AI Module Status</h3>
+            <h3> AI Module Status</h3>
             <div class="ai-modules" id="ai-modules">
                 <div class="loading">
                     <div class="spinner"></div>
@@ -754,7 +754,7 @@
         function startRealTimeMonitoring() {
             realTimeMonitoring = true;
             realTimeInterval = setInterval(updateRealTimeData, 2000);
-            document.getElementById('real-time-indicator').textContent = '📡 Real-time Active';
+            document.getElementById('real-time-indicator').textContent = ' Real-time Active';
             showNotification('Real-time Monitoring Started', 'info');
         }
 
@@ -812,9 +812,9 @@
         function updateRealTimeIndicator() {
             const indicator = document.getElementById('real-time-indicator');
             if (indicator && realTimeMonitoring) {
-                indicator.textContent = '📡 Real-time Active ●';
+                indicator.textContent = ' Real-time Active ';
                 setTimeout(() => {
-                    indicator.textContent = '📡 Real-time Active';
+                    indicator.textContent = ' Real-time Active';
                 }, 200);
             }
         }

@@ -76,7 +76,7 @@ class RuntimeIntelligenceDendriticIntegration:
     async def initialize(self) -> bool:
         """Initialize the Runtime Intelligence - Dendritic Supervisor integration."""
         try:
-            self.logger.info("🔗 Initializing Runtime Intelligence - Dendritic Integration...")
+            self.logger.info(" Initializing Runtime Intelligence - Dendritic Integration...")
             
             # Initialize dendritic supervisor
             self.dendritic_supervisor = await get_dendritic_supervisor()
@@ -85,12 +85,12 @@ class RuntimeIntelligenceDendriticIntegration:
             self.cytoplasm_bridge = await get_cytoplasm_dendritic_bridge()
             
             self.is_initialized = True
-            self.logger.info("✅ Runtime Intelligence - Dendritic Integration initialized")
+            self.logger.info(" Runtime Intelligence - Dendritic Integration initialized")
             
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to initialize integration: {e}")
+            self.logger.error(f" Failed to initialize integration: {e}")
             return False
     
     async def process_visual_intelligence_enhanced(self, request_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -103,7 +103,7 @@ class RuntimeIntelligenceDendriticIntegration:
             await self.initialize()
         
         try:
-            self.logger.info("👁️ Processing enhanced visual intelligence request")
+            self.logger.info(" Processing enhanced visual intelligence request")
             
             # Step 1: Process through AI Intelligence supercell
             ai_request = {
@@ -171,7 +171,7 @@ class RuntimeIntelligenceDendriticIntegration:
             await self.initialize()
         
         try:
-            self.logger.info("🏥 Processing enhanced system health check")
+            self.logger.info(" Processing enhanced system health check")
             
             # Step 1: Monitor AI Intelligence organs
             organ_monitoring = await self.cytoplasm_bridge.get_ai_intelligence_status()
@@ -236,7 +236,7 @@ class RuntimeIntelligenceDendriticIntegration:
             await self.initialize()
         
         try:
-            self.logger.info("📊 Starting enhanced continuous monitoring")
+            self.logger.info(" Starting enhanced continuous monitoring")
             
             # Monitor all supercell components continuously
             monitoring_tasks = [
@@ -317,12 +317,12 @@ class RuntimeIntelligenceDendriticIntegration:
         recommendations = []
         
         if health_score < 0.7:
-            recommendations.append("🔧 Consider Core Engine optimization to improve overall performance")
-            recommendations.append("🧠 Run consciousness enhancement routines")
+            recommendations.append(" Consider Core Engine optimization to improve overall performance")
+            recommendations.append(" Run consciousness enhancement routines")
             
         if health_score < 0.5:
-            recommendations.append("⚠️ Critical: Multiple supercell components need attention")
-            recommendations.append("🔄 Restart affected organs and engines")
+            recommendations.append(" Critical: Multiple supercell components need attention")
+            recommendations.append(" Restart affected organs and engines")
             
         # AI Intelligence specific recommendations
         if 'ai_intelligence_supercell' in organ_status:
@@ -332,11 +332,11 @@ class RuntimeIntelligenceDendriticIntegration:
             ]
             
             if inactive_organs:
-                recommendations.append(f"🔋 Reactivate inactive AI Intelligence organs: {', '.join(inactive_organs)}")
+                recommendations.append(f" Reactivate inactive AI Intelligence organs: {', '.join(inactive_organs)}")
         
         if health_score >= 0.8:
-            recommendations.append("✅ System operating optimally across biological architecture")
-            recommendations.append("🚀 Consider advanced enhancement protocols")
+            recommendations.append(" System operating optimally across biological architecture")
+            recommendations.append(" Consider advanced enhancement protocols")
         
         return recommendations
     
@@ -484,7 +484,7 @@ class RuntimeIntelligenceDendriticIntegration:
     
     async def shutdown(self):
         """Shutdown the integration gracefully."""
-        self.logger.info("🔄 Shutting down Runtime Intelligence - Dendritic Integration...")
+        self.logger.info(" Shutting down Runtime Intelligence - Dendritic Integration...")
         
         if self.cytoplasm_bridge:
             await self.cytoplasm_bridge.shutdown()
@@ -493,7 +493,7 @@ class RuntimeIntelligenceDendriticIntegration:
             await self.dendritic_supervisor.shutdown()
         
         self.is_initialized = False
-        self.logger.info("✅ Integration shutdown complete")
+        self.logger.info(" Integration shutdown complete")
 
 
 # Singleton instance for global access
@@ -512,7 +512,7 @@ async def get_runtime_intelligence_dendritic_integration() -> RuntimeIntelligenc
 
 async def main():
     """Test the complete biological architecture integration."""
-    print("🧠 AIOS Complete Biological Architecture Integration Test")
+    print(" AIOS Complete Biological Architecture Integration Test")
     print("=" * 70)
     print("Flow: Interface → Runtime Intelligence → AI Intelligence → Core Engine")
     print("=" * 70)
@@ -521,7 +521,7 @@ async def main():
     integration = await get_runtime_intelligence_dendritic_integration()
     
     # Test enhanced visual intelligence
-    print("\n👁️ Testing Enhanced Visual Intelligence...")
+    print("\n Testing Enhanced Visual Intelligence...")
     visual_result = await integration.process_visual_intelligence_enhanced({
         'visual_data': {'image_type': 'test', 'complexity': 'high'},
         'parameters': {'analysis_depth': 'comprehensive'},
@@ -532,7 +532,7 @@ async def main():
         print(f"Combined Intelligence Score: {visual_result['combined_insights']['integrated_analysis']['combined_intelligence_score']}")
     
     # Test enhanced system health
-    print("\n🏥 Testing Enhanced System Health...")
+    print("\n Testing Enhanced System Health...")
     health_result = await integration.process_system_health_enhanced({})
     print(f"Result: {health_result.get('success')}")
     if health_result.get('success'):
@@ -540,7 +540,7 @@ async def main():
         print(f"Recommendations: {len(health_result['recommendations'])}")
     
     # Test integration status
-    print("\n📊 Integration Status:")
+    print("\n Integration Status:")
     status = await integration.get_integration_status()
     if 'error' not in status:
         print(f"Biological Architecture Compliance: {status['biological_architecture_compliance']}")
@@ -548,7 +548,7 @@ async def main():
     
     # Shutdown
     await integration.shutdown()
-    print("\n✅ Integration test complete")
+    print("\n Integration test complete")
 
 
 if __name__ == "__main__":

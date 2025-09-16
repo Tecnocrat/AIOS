@@ -580,7 +580,7 @@ def create_sample_model_workflow() -> bool:
     export_info = cell.export_for_cpp_inference(export_path)
 
     if export_info:
-        print("\n✅ Sample workflow completed successfully!")
+        print("\n Sample workflow completed successfully!")
         print(f"Model exported to: {export_info.export_path}")
         print(
             "Estimated C++ inference time: "

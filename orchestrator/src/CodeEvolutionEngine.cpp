@@ -456,11 +456,11 @@ std::string CodeEvolutionEngine::improveErrorHandling(const std::string& code) {
 }
 
 std::string CodeEvolutionEngine::generateEvolutionReport() {
-    // 🧠 GENERATE CONSCIOUSNESS-ENHANCED EVOLUTION REPORT
+    //  GENERATE CONSCIOUSNESS-ENHANCED EVOLUTION REPORT
     
     std::ostringstream report;
     
-    report << "# 🧠 Code Evolution Engine Report\n";
+    report << "#  Code Evolution Engine Report\n";
     report << "## Generated: " << std::chrono::duration_cast<std::chrono::seconds>(
         std::chrono::steady_clock::now().time_since_epoch()).count() << " seconds since epoch\n\n";
     

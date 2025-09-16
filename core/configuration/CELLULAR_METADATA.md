@@ -1,4 +1,4 @@
-# 🧬 CONFIGURATION CELLULAR UNIT
+#  CONFIGURATION CELLULAR UNIT
 
 ## Purpose
 Configuration and project files

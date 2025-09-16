@@ -21,36 +21,36 @@ class AIIntegrationDemo:
 
     async def demonstrate_ai_integration(self):
         """Demonstrate advanced AI integration features"""
-        print("🤖 AIOS Advanced AI Integration Demo")
+        print(" AIOS Advanced AI Integration Demo")
         print("=" * 45)
         print("Real-time AI processing with context persistence")
         print("=" * 45)
 
         # Demo 1: Natural Language Processing with Context
-        print("\n🗣️  Demo 1: Natural Language Processing with Context")
+        print("\n  Demo 1: Natural Language Processing with Context")
         await self.demo_natural_language_processing()
 
         # Demo 2: Real-time AI Streaming
-        print("\n🌊 Demo 2: Real-time AI Streaming")
+        print("\n Demo 2: Real-time AI Streaming")
         await self.demo_streaming_ai()
 
         # Demo 3: Multi-modal AI Processing
-        print("\n🎭 Demo 3: Multi-modal AI Processing")
+        print("\n Demo 3: Multi-modal AI Processing")
         await self.demo_multimodal_processing()
 
         # Demo 4: Context-aware Analysis
-        print("\n🔍 Demo 4: Context-aware Analysis")
+        print("\n Demo 4: Context-aware Analysis")
         await self.demo_context_analysis()
 
         # Demo 5: VSCode Extension Synchronization
-        print("\n🌉 Demo 5: VSCode Extension Synchronization")
+        print("\n Demo 5: VSCode Extension Synchronization")
         await self.demo_vscode_synchronization()
 
         # Demo 6: Context Recovery Integration
-        print("\n🔧 Demo 6: Context Recovery Integration")
+        print("\n Demo 6: Context Recovery Integration")
         await self.demo_context_recovery()
 
-        print("\n✨ AI Integration Demo Complete!")
+        print("\n AI Integration Demo Complete!")
 
     async def demo_natural_language_processing(self):
         """Demo natural language processing with context"""
@@ -66,11 +66,11 @@ class AIIntegrationDemo:
         ]
 
         for i, user_input in enumerate(test_inputs, 1):
-            print(f"   💬 User Input {i}: '{user_input}'")
+            print(f"    User Input {i}: '{user_input}'")
 
             # Simulate AI processing
             response = await self.process_natural_language(user_input)
-            print(f"   🤖 AI Response: {response['content']}")
+            print(f"    AI Response: {response['content']}")
             print(f"      Confidence: {response['confidence']:.3f}")
             print(f"      Context Health: {self.context_health_score:.3f}")
             print()
@@ -82,8 +82,8 @@ class AIIntegrationDemo:
         print("   Demonstrating real-time AI streaming...")
 
         user_query = "Explain the fractal holographic development protocol"
-        print(f"   💬 Streaming query: '{user_query}'")
-        print("   🌊 AI Streaming Response: ", end="", flush=True)
+        print(f"    Streaming query: '{user_query}'")
+        print("    AI Streaming Response: ", end="", flush=True)
 
         # Simulate streaming response
         response_chunks = [
@@ -96,8 +96,8 @@ class AIIntegrationDemo:
             print(f"{chunk} ", end="", flush=True)
             await asyncio.sleep(0.2)
 
-        print("\n   ✅ Streaming complete")
-        print(f"   📊 Stream coherence: {self.fractal_coherence:.3f}")
+        print("\n    Streaming complete")
+        print(f"    Stream coherence: {self.fractal_coherence:.3f}")
 
     async def demo_multimodal_processing(self):
         """Demo multi-modal AI processing"""
@@ -114,7 +114,7 @@ class AIIntegrationDemo:
 
         for modal_input in multimodal_inputs:
             print(
-            f"   🎭 {modal_input['type'].title()} Input: {modal_input['content']}")
+            f"    {modal_input['type'].title()} Input: {modal_input['content']}")
             print(
             f"      Processing confidence: {modal_input['confidence']:.3f}")
             await asyncio.sleep(0.3)
@@ -122,8 +122,8 @@ class AIIntegrationDemo:
         # Combine results
         combined_confidence = sum(
         inp["confidence"] for inp in multimodal_inputs) / len(multimodal_inputs)
-        print(f"   🔄 Multi-modal fusion complete")
-        print(f"   📈 Combined confidence: {combined_confidence:.3f}")
+        print(f"    Multi-modal fusion complete")
+        print(f"    Combined confidence: {combined_confidence:.3f}")
 
     async def demo_context_analysis(self):
         """Demo context-aware analysis"""
@@ -138,12 +138,12 @@ class AIIntegrationDemo:
         ]
 
         for analysis_name, result, score in analysis_types:
-            print(f"   🔍 {analysis_name}: {result} (score: {score:.3f})")
+            print(f"    {analysis_name}: {result} (score: {score:.3f})")
             await asyncio.sleep(0.2)
 
         avg_analysis_scor
         e = sum(score for _, _, score in analysis_types) / len(analysis_types)
-        print(f"   📊 Average analysis score: {avg_analysis_score:.3f}")
+        print(f"    Average analysis score: {avg_analysis_score:.3f}")
 
     async def demo_vscode_synchronization(self):
         """Demo VSCode extension synchronization"""
@@ -158,19 +158,19 @@ class AIIntegrationDemo:
         ]
 
         for operation in sync_operations:
-            print(f"   🔄 {operation}...")
+            print(f"    {operation}...")
             await asyncio.sleep(0.4)
 
-        print("   ✅ VSCode synchronization complete")
-        print(f"   🌉 Bridge status: Active")
-        print(f"   📡 Last sync: {datetime.now().strftime('%H:%M:%S')}")
+        print("    VSCode synchronization complete")
+        print(f"    Bridge status: Active")
+        print(f"    Last sync: {datetime.now().strftime('%H:%M:%S')}")
 
     async def demo_context_recovery(self):
         """Demo context recovery integration"""
         print("   Testing context recovery integration...")
 
         # Simulate context loss detection
-        print("   🚨 Simulating context loss scenario...")
+        print("    Simulating context loss scenario...")
         await asyncio.sleep(0.5)
 
         recovery_steps = [
@@ -185,16 +185,16 @@ class AIIntegrationDemo:
         ]
 
         for step in recovery_steps:
-            print(f"   🔧 {step}...")
+            print(f"    {step}...")
             await asyncio.sleep(0.3)
 
         # Update context health
         self.context_health_score = 0.95
         self.fractal_coherence = 0.89
 
-        print("   ✅ Context recovery complete")
-        print(f"   📈 Context health restored: {self.context_health_score:.3f}")
-        print(f"   🌀 Fractal coherence restored: {self.fractal_coherence:.3f}")
+        print("    Context recovery complete")
+        print(f"    Context health restored: {self.context_health_score:.3f}")
+        print(f"    Fractal coherence restored: {self.fractal_coherence:.3f}")
 
     async def process_natural_language(
     self, user_input: str) -> Dict[str, Any]:
@@ -266,7 +266,7 @@ class ContextPersistenceValidator:
 
     async def validate_context_persistence(self):
         """Validate context persistence across the demo"""
-        print("\n🔬 Context Persistence Validation")
+        print("\n Context Persistence Validation")
         print("=" * 35)
 
         validations = [
@@ -280,20 +280,20 @@ class ContextPersistenceValidator:
 
         passed = 0
         for test_name, result in validations:
-            status = "✅ PASS" if result else "❌ FAIL"
+            status = " PASS" if result else " FAIL"
             print(f"   {status}: {test_name}")
             if result:
                 passed += 1
 
-        print(f"\n📊 Validation Results: {passed}/{len(validations)} passed")
+        print(f"\n Validation Results: {passed}/{len(validations)} passed")
 
         # Final context status
-        print(f"\n🎯 Final Context Status:")
-        print(f"   • Context NOT lost: ✅")
-        print(f"   • System coherent: ✅")
-        print(f"   • AI integration: ✅")
-        print(f"   • VSCode sync: ✅")
-        print(f"   • Recovery ready: ✅")
+        print(f"\n Final Context Status:")
+        print(f"   • Context NOT lost: ")
+        print(f"   • System coherent: ")
+        print(f"   • AI integration: ")
+        print(f"   • VSCode sync: ")
+        print(f"   • Recovery ready: ")
 
         return passed == len(validations)
 
@@ -324,7 +324,7 @@ class ContextPersistenceValidator:
 
 async def main():
     """Main demo function"""
-    print("🚀 AIOS Advanced AI Integration + Context Persistence Demo")
+    print(" AIOS Advanced AI Integration + Context Persistence Demo")
     print("=" * 60)
     print("Testing AI integration in visual UI layer with VSCode extension")
     print("=" * 60)
@@ -338,23 +338,23 @@ async def main():
     validation_success = await validator.validate_context_persistence()
 
     # Final summary
-    print(f"\n🏆 Demo Summary")
+    print(f"\n Demo Summary")
     print("=" * 20)
-    print("✅ Advanced AI Integration: OPERATIONAL")
-    print("✅ Real-time Processing: ACTIVE")
-    print("✅ Multi-modal Support: ENABLED")
-    print("✅ Context Persistence: MAINTAINED")
-    print("✅ VSCode Synchronization: ACTIVE")
-    print("✅ Context Recovery: READY")
+    print(" Advanced AI Integration: OPERATIONAL")
+    print(" Real-time Processing: ACTIVE")
+    print(" Multi-modal Support: ENABLED")
+    print(" Context Persistence: MAINTAINED")
+    print(" VSCode Synchronization: ACTIVE")
+    print(" Context Recovery: READY")
 
     if validation_success:
-        print("\n🎉 ALL SYSTEMS OPERATIONAL - NO CONTEXT LOSS DETECTED!")
+        print("\n ALL SYSTEMS OPERATIONAL - NO CONTEXT LOSS DETECTED!")
     else:
-        print("\n⚠️  Some validation checks failed")
+        print("\n  Some validation checks failed")
 
     # Show conversation history
     print(
-    f"\n📋 Conversation History ({len(ai_demo.conversation_history)} entries):")
+    f"\n Conversation History ({len(ai_demo.conversation_history)} entries):")
     for i, entry in enumerate(ai_demo.conversation_history[-3:], 1):
         print(f"   {i}. Input: {entry['input'][:50]}...")
         print(f"      Response: {entry['response'][:50]}...")
@@ -365,4 +365,4 @@ async def main():
 
 if __name__ == "__main__":
     result = asyncio.run(main())
-    print(f"\n🎯 Demo completed successfully: {result}")
+    print(f"\n Demo completed successfully: {result}")

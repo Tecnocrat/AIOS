@@ -13,8 +13,8 @@ except Exception:
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🌳 AIOS Core Engine Tree Structure Demonstrator (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS Core Engine Tree Structure Demonstrator (Iter2)
+
 Demonstrates the optimized Core Engine tree structure after iter2 assembler
 optimization, showcasing cellular organization, naming conventions, and 
 architectural improvements.
@@ -33,7 +33,7 @@ ITER2 OPTIMIZATIONS SHOWCASED:
 - Harmonization-based architecture
 
 AIOS - Tree structure demonstration with iter2 enhancement
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import os
 import sys
@@ -50,7 +50,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSCoreEngineTreeDemonstrator:
     """
-    🌳 AIOS Core Engine Tree Structure Demonstrator
+     AIOS Core Engine Tree Structure Demonstrator
     
     Demonstrates the optimized tree structure:
     • Cellular organization principles
@@ -81,14 +81,14 @@ class AIOSCoreEngineTreeDemonstrator:
             }
         }
         
-        logger.info("🌳 AIOS Core Engine Tree Demonstrator initialized")
+        logger.info(" AIOS Core Engine Tree Demonstrator initialized")
         logger.info(f"   Core path: {self.core_path}")
         logger.info(f"   Demonstration timestamp: {self.demonstration_timestamp}")
     
     def demonstrate_tree_structure(self) -> Dict[str, Any]:
         """Demonstrate the complete optimized tree structure."""
         
-        logger.info("🌳 DEMONSTRATING OPTIMIZED CORE ENGINE TREE STRUCTURE")
+        logger.info(" DEMONSTRATING OPTIMIZED CORE ENGINE TREE STRUCTURE")
         
         demonstration = {
             "demonstration_timestamp": self.demonstration_timestamp.isoformat(),
@@ -382,8 +382,8 @@ class AIOSCoreEngineTreeDemonstrator:
     def display_tree_demonstration(self, demonstration: Dict[str, Any]):
         """Display comprehensive tree structure demonstration."""
         
-        print("🌳 AIOS CORE ENGINE TREE STRUCTURE DEMONSTRATION (ITER2)")
-        print("═" * 70)
+        print(" AIOS CORE ENGINE TREE STRUCTURE DEMONSTRATION (ITER2)")
+        print("" * 70)
         print()
         
         # Tree structure overview
@@ -409,7 +409,7 @@ class AIOSCoreEngineTreeDemonstrator:
         # Naming conventions demo
         naming = demonstration.get("naming_analysis", {})
         standard = naming.get("aios_naming_standard", {})
-        print("🏷️ NAMING CONVENTION DEMONSTRATION:")
+        print(" NAMING CONVENTION DEMONSTRATION:")
         print(f"   Pattern: {standard.get('pattern', 'Unknown')}")
         print("   Examples:")
         for example in standard.get("examples", [])[:3]:
@@ -429,7 +429,7 @@ class AIOSCoreEngineTreeDemonstrator:
         # Achievements summary
         achievements = demonstration.get("optimization_achievements", {})
         transform_metrics = achievements.get("transformation_metrics", {})
-        print("🏆 OPTIMIZATION ACHIEVEMENTS:")
+        print(" OPTIMIZATION ACHIEVEMENTS:")
         print(f"   Files organized: {transform_metrics.get('files_organized', 'Unknown')}")
         print(f"   Cellular units: {transform_metrics.get('cellular_units_created', 'Unknown')}")
         print(f"   Success rate: {transform_metrics.get('success_rate', 'Unknown')}")
@@ -452,7 +452,7 @@ class AIOSCoreEngineTreeDemonstrator:
             with open(report_file, 'w', encoding='utf-8') as f:
                 json.dump(demonstration, f, indent=2, default=str)
             
-            logger.info(f"📄 Tree demonstration report saved: {report_file}")
+            logger.info(f" Tree demonstration report saved: {report_file}")
             return str(report_file)
         except Exception as e:
             logger.error(f"Failed to save demonstration report: {e}")
@@ -462,8 +462,8 @@ class AIOSCoreEngineTreeDemonstrator:
 def main():
     """Execute tree structure demonstration."""
     
-    print("🌳 AIOS CORE ENGINE TREE STRUCTURE DEMONSTRATOR (ITER2)")
-    print("═" * 70)
+    print(" AIOS CORE ENGINE TREE STRUCTURE DEMONSTRATOR (ITER2)")
+    print("" * 70)
     print("[TARGET] Demonstrating optimized Core Engine tree structure")
     print("[DNA] Showcasing cellular organization and naming conventions")
     print("[ROCKET] Highlighting iter2 assembler architectural improvements")
@@ -481,7 +481,7 @@ def main():
     # Save detailed report
     report_file = demonstrator.save_demonstration_report(demonstration_results)
     if report_file:
-        print(f"📄 Detailed demonstration report saved: {report_file}")
+        print(f" Detailed demonstration report saved: {report_file}")
     
     return demonstration_results
 

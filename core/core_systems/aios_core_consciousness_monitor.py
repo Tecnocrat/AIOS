@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 [BRAIN] AIOS Core Consciousness Monitor (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Monitors consciousness-driven development patterns in Core Engine components.
 
 MONITORING SCOPE:
@@ -17,7 +17,7 @@ ITER2 CAPABILITIES:
 - Harmonization consciousness
 
 AIOS - Consciousness monitoring with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import sys
 import json

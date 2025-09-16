@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 [DNA] AIOS Core Meta-Evolutionary Enhancer (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Applies meta-evolutionary optimization patterns to Core Engine components using
 evolutionary_assembler_iter2 capabilities.
 
@@ -18,7 +18,7 @@ ITER2 CAPABILITIES:
 - Harmonization pattern application
 
 AIOS - Meta-evolutionary enhancement with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import sys
 import logging

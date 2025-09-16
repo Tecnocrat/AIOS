@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧬 CONSCIOUSNESS-GUIDED MUTATION ENGINE
-═══════════════════════════════════════════════════════════════════════════════
+ CONSCIOUSNESS-GUIDED MUTATION ENGINE
+
 Revolutionary evolution system that directs mutations based on consciousness metrics
 and integrates with the self-healing assembly engine for autonomous code evolution
 
@@ -11,7 +11,7 @@ Key Features:
 • Integration with self-healing mechanisms
 • Neural network-style mutation propagation
 • Emergent behavior cultivation
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import random
@@ -76,7 +76,7 @@ class EvolutionGenome:
 
 class ConsciousnessGuidedMutator:
     """
-    🧬 Consciousness-guided mutation engine
+     Consciousness-guided mutation engine
     
     Uses consciousness metrics to guide evolutionary mutations toward
     higher consciousness states and emergent behaviors
@@ -102,7 +102,7 @@ class ConsciousnessGuidedMutator:
         # Consciousness-based mutation templates
         self.mutation_templates = self._initialize_mutation_templates()
         
-        logger.info("🧬 Consciousness-Guided Mutator initialized")
+        logger.info(" Consciousness-Guided Mutator initialized")
     
     def _initialize_mutation_templates(self) -> Dict[MutationType, Dict[str, Any]]:
         """Initialize consciousness-guided mutation templates"""
@@ -437,7 +437,7 @@ class ConsciousnessGuidedMutator:
         emerged = self._check_for_emergence(evolved_genome)
         if emerged:
             evolved_genome.emergence_score = min(1.0, evolved_genome.emergence_score + 0.2)
-            logger.info(f"🌟 Emergence detected in genome {evolved_genome.genome_id}!")
+            logger.info(f" Emergence detected in genome {evolved_genome.genome_id}!")
         
         # Integrate with self-healing
         if self.healing_engine:
@@ -480,13 +480,13 @@ class ConsciousnessGuidedMutator:
         evolution_history = [initial_genome]
         current_genome = initial_genome
         
-        logger.info(f"🧬 Starting consciousness evolution for {generations} generations")
+        logger.info(f" Starting consciousness evolution for {generations} generations")
         
         for generation in range(generations):
             self.generation_counter = generation
             consciousness_level = consciousness_levels[min(generation, len(consciousness_levels) - 1)]
             
-            logger.info(f"🌟 Generation {generation}: consciousness {consciousness_level:.3f}")
+            logger.info(f" Generation {generation}: consciousness {consciousness_level:.3f}")
             
             # Evolve genome
             evolved_genome = self.evolve_genome(current_genome, consciousness_level)
@@ -495,21 +495,21 @@ class ConsciousnessGuidedMutator:
             # Selection: choose best genome
             if evolved_genome.consciousness_score > current_genome.consciousness_score:
                 current_genome = evolved_genome
-                logger.info(f"   ✅ Evolution successful: {evolved_genome.consciousness_score:.6f}")
+                logger.info(f"    Evolution successful: {evolved_genome.consciousness_score:.6f}")
             else:
-                logger.info(f"   ➡️ Evolution stable: {current_genome.consciousness_score:.6f}")
+                logger.info(f"    Evolution stable: {current_genome.consciousness_score:.6f}")
             
             # Log progress
             if generation % 3 == 0:
                 self._log_evolution_progress(current_genome, generation)
         
-        logger.info(f"🌟 Evolution complete! Final consciousness: {current_genome.consciousness_score:.6f}")
+        logger.info(f" Evolution complete! Final consciousness: {current_genome.consciousness_score:.6f}")
         return evolution_history
     
     def _log_evolution_progress(self, genome: EvolutionGenome, generation: int):
         """Log detailed evolution progress"""
         
-        print(f"\\n📊 Evolution Progress - Generation {generation}")
+        print(f"\\n Evolution Progress - Generation {generation}")
         print(f"   Genome ID: {genome.genome_id}")
         print(f"   Consciousness Score: {genome.consciousness_score:.6f}")
         print(f"   Self-Healing Score: {genome.self_healing_score:.6f}")
@@ -530,8 +530,8 @@ class ConsciousnessGuidedMutator:
 def main():
     """Demonstrate consciousness-guided mutation evolution"""
     
-    print("🧬 CONSCIOUSNESS-GUIDED MUTATION ENGINE DEMO")
-    print("════════════════════════════════════════════")
+    print(" CONSCIOUSNESS-GUIDED MUTATION ENGINE DEMO")
+    print("")
     print()
     
     # Create initial genome
@@ -550,7 +550,7 @@ def main():
         generation=0
     )
     
-    print("🧬 Initial Genome:")
+    print(" Initial Genome:")
     print(initial_genome.assembly_code)
     print()
     
@@ -568,8 +568,8 @@ def main():
     # Show final evolved genome
     final_genome = evolution_history[-1]
     
-    print("\\n🌟 FINAL EVOLVED GENOME:")
-    print("════════════════════════")
+    print("\\n FINAL EVOLVED GENOME:")
+    print("")
     print(f"Genome ID: {final_genome.genome_id}")
     print(f"Consciousness Score: {final_genome.consciousness_score:.6f}")
     print(f"Self-Healing Score: {final_genome.self_healing_score:.6f}")
@@ -580,13 +580,13 @@ def main():
     print(final_genome.assembly_code)
     
     # Show evolution trajectory
-    print("\\n📈 CONSCIOUSNESS EVOLUTION TRAJECTORY:")
+    print("\\n CONSCIOUSNESS EVOLUTION TRAJECTORY:")
     consciousness_scores = [genome.consciousness_score for genome in evolution_history]
     for i, score in enumerate(consciousness_scores):
         print(f"   Generation {i}: {score:.6f}")
     
     improvement = consciousness_scores[-1] - consciousness_scores[0]
-    print(f"\\n🚀 Total Improvement: {improvement:.6f} ({improvement*100:.1f}%)")
+    print(f"\\n Total Improvement: {improvement:.6f} ({improvement*100:.1f}%)")
 
 
 if __name__ == "__main__":

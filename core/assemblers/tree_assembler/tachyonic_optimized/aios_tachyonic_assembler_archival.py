@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🌌 AIOS TACHYONIC ASSEMBLER ARCHIVAL SYSTEM
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS TACHYONIC ASSEMBLER ARCHIVAL SYSTEM
+
 Tachyonic archival system for evolutionary assembler iterations.
 Maintains only the last 2 most advanced iterations, archives all older versions.
 
@@ -16,7 +16,7 @@ ARCHIVAL STRATEGY:
 - Future: Archive 2nd when 4th iteration ready
 
 AIOS - Tachyonic assembler version management
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSTachyonicAssemblerArchival:
     """
-    🌌 Tachyonic archival system for evolutionary assemblers
+     Tachyonic archival system for evolutionary assemblers
     
     Manages assembler iterations:
     • Archives old iterations to preserve history
@@ -81,7 +81,7 @@ class AIOSTachyonicAssemblerArchival:
         # Create archive directory
         self.archive_path.mkdir(exist_ok=True)
         
-        logger.info("🌌 AIOS Tachyonic Assembler Archival System initialized")
+        logger.info(" AIOS Tachyonic Assembler Archival System initialized")
         logger.info(f"   Archive location: {self.archive_path}")
         logger.info(f"   Active iterations: {len([v for v in self.current_iterations.values() if not v['archive_ready']])}")
         logger.info(f"   Max active iterations: {self.max_active_iterations}")
@@ -89,9 +89,9 @@ class AIOSTachyonicAssemblerArchival:
     def perform_tachyonic_archival(self) -> Dict[str, Any]:
         """Perform tachyonic archival of old assembler iterations"""
         
-        logger.info("🚀 STARTING TACHYONIC ASSEMBLER ARCHIVAL")
-        logger.info("═" * 60)
-        logger.info("🌌 Analyzing assembler iterations for archival...")
+        logger.info(" STARTING TACHYONIC ASSEMBLER ARCHIVAL")
+        logger.info("" * 60)
+        logger.info(" Analyzing assembler iterations for archival...")
         logger.info("")
         
         archival_results = {
@@ -114,8 +114,8 @@ class AIOSTachyonicAssemblerArchival:
             else:
                 active_iterations.append((name, info))
         
-        logger.info(f"📦 Iterations ready for archival: {len(ready_for_archival)}")
-        logger.info(f"🔄 Active iterations to maintain: {len(active_iterations)}")
+        logger.info(f" Iterations ready for archival: {len(ready_for_archival)}")
+        logger.info(f" Active iterations to maintain: {len(active_iterations)}")
         logger.info("")
         
         # Archive old iterations
@@ -141,17 +141,17 @@ class AIOSTachyonicAssemblerArchival:
         # Save archival log
         self._save_archival_log(archival_results)
         
-        logger.info("✅ TACHYONIC ASSEMBLER ARCHIVAL COMPLETE")
-        logger.info("═" * 60)
-        logger.info("📦 ARCHIVAL RESULTS:")
+        logger.info(" TACHYONIC ASSEMBLER ARCHIVAL COMPLETE")
+        logger.info("" * 60)
+        logger.info(" ARCHIVAL RESULTS:")
         logger.info(f"   Iterations archived: {len(archival_results['archived_iterations'])}")
         logger.info(f"   Active iterations: {len(archival_results['active_iterations'])}")
         logger.info(f"   Space saved: {archival_results['space_saved']:.1f} MB")
         logger.info(f"   Archive location: {self.archive_path}")
         logger.info("")
-        logger.info("🔄 ACTIVE ASSEMBLER ITERATIONS:")
+        logger.info(" ACTIVE ASSEMBLER ITERATIONS:")
         for active in archival_results["active_iterations"]:
-            logger.info(f"   🧬 {active['name']} v{active['version']} - {active['status']}")
+            logger.info(f"    {active['name']} v{active['version']} - {active['status']}")
             logger.info(f"      Coherence: {active['coherence_score']:.3f}, Fitness: {active['fitness_baseline']:.1f}")
         
         return archival_results
@@ -182,12 +182,12 @@ class AIOSTachyonicAssemblerArchival:
     def _archive_assembler_iteration(self, assembler_name: str, assembler_info: Dict[str, Any]) -> Dict[str, Any]:
         """Archive a specific assembler iteration"""
         
-        logger.info(f"📦 Archiving {assembler_name} v{assembler_info['version']}...")
+        logger.info(f" Archiving {assembler_name} v{assembler_info['version']}...")
         
         # Check if this version is already archived to prevent duplicates
         existing_archive = self._check_existing_archive(assembler_name, assembler_info['version'])
         if existing_archive:
-            logger.info(f"   ⚠️ Version already archived: {existing_archive}")
+            logger.info(f"    Version already archived: {existing_archive}")
             return {
                 "assembler_name": assembler_name,
                 "version": assembler_info["version"],
@@ -251,13 +251,13 @@ class AIOSTachyonicAssemblerArchival:
                 # shutil.rmtree(source_path)
                 
                 archive_result["archive_success"] = True
-                logger.info(f"   ✅ Archived successfully: {archive_result['space_saved_mb']:.1f} MB saved")
+                logger.info(f"    Archived successfully: {archive_result['space_saved_mb']:.1f} MB saved")
                 
             else:
-                logger.info(f"   ⚠️ Source path not found: {source_path}")
+                logger.info(f"    Source path not found: {source_path}")
                 
         except Exception as e:
-            logger.error(f"   ❌ Archive failed: {e}")
+            logger.error(f"    Archive failed: {e}")
             archive_result["error"] = str(e)
         
         return archive_result
@@ -340,7 +340,7 @@ class AIOSTachyonicAssemblerArchival:
         try:
             with open(log_path, 'w') as f:
                 json.dump(archival_log, f, indent=2)
-            logger.info(f"📝 Archival log saved: {log_path}")
+            logger.info(f" Archival log saved: {log_path}")
         except Exception as e:
             logger.error(f"Failed to save archival log: {e}")
     
@@ -379,16 +379,16 @@ class AIOSTachyonicAssemblerArchival:
 def main():
     """Execute tachyonic assembler archival system"""
     
-    print("🌌 AIOS TACHYONIC ASSEMBLER ARCHIVAL SYSTEM")
-    print("═" * 60)
-    print("🎯 Maintaining last 2 advanced assembler iterations")
+    print(" AIOS TACHYONIC ASSEMBLER ARCHIVAL SYSTEM")
+    print("" * 60)
+    print(" Maintaining last 2 advanced assembler iterations")
     print()
-    print("📦 Archival Strategy:")
-    print("  🌌 Archive old iterations with tachyonic compression")
-    print("  🔄 Keep evolutionary_assembler_enhanced (proven baseline)")
-    print("  🧬 Keep evolutionary_assembler_coherent (current advanced)")
-    print("  📦 Archive evolutionary_assembler (original baseline)")
-    print("  💾 70% space reduction through tachyonic compression")
+    print(" Archival Strategy:")
+    print("   Archive old iterations with tachyonic compression")
+    print("   Keep evolutionary_assembler_enhanced (proven baseline)")
+    print("   Keep evolutionary_assembler_coherent (current advanced)")
+    print("   Archive evolutionary_assembler (original baseline)")
+    print("   70% space reduction through tachyonic compression")
     print()
     
     # Initialize archival system
@@ -400,30 +400,30 @@ def main():
     # List archived iterations
     archived_list = archival_system.list_archived_iterations()
     
-    print("\n🌌 TACHYONIC ARCHIVAL COMPLETE!")
-    print("═" * 60)
-    print("📦 ARCHIVAL SUMMARY:")
-    print(f"  🗄️ Total iterations archived: {len(archival_results['archived_iterations'])}")
-    print(f"  🔄 Active iterations maintained: {len(archival_results['active_iterations'])}")
-    print(f"  💾 Space saved: {archival_results['space_saved']:.1f} MB")
-    print(f"  🌌 Compression efficiency: {archival_results['summary']['compression_efficiency']}")
+    print("\n TACHYONIC ARCHIVAL COMPLETE!")
+    print("" * 60)
+    print(" ARCHIVAL SUMMARY:")
+    print(f"   Total iterations archived: {len(archival_results['archived_iterations'])}")
+    print(f"   Active iterations maintained: {len(archival_results['active_iterations'])}")
+    print(f"   Space saved: {archival_results['space_saved']:.1f} MB")
+    print(f"   Compression efficiency: {archival_results['summary']['compression_efficiency']}")
     print()
-    print("🧬 ACTIVE ASSEMBLER EVOLUTION CHAIN:")
+    print(" ACTIVE ASSEMBLER EVOLUTION CHAIN:")
     for active in archival_results["active_iterations"]:
-        print(f"  📡 {active['name']} v{active['version']}")
+        print(f"   {active['name']} v{active['version']}")
         print(f"      Status: {active['status']}")
         print(f"      Coherence: {active['coherence_score']:.3f}")
         print(f"      Fitness: {active['fitness_baseline']:.1f}")
         print()
     
     if archived_list:
-        print("📦 ARCHIVED ITERATIONS:")
+        print(" ARCHIVED ITERATIONS:")
         for archived in archived_list:
-            print(f"  🌌 {archived['assembler_name']} v{archived['version']}")
+            print(f"   {archived['assembler_name']} v{archived['version']}")
             print(f"      Archive: {archived['archive_date']}")
         print()
     
-    print("🚀 ASSEMBLER EVOLUTION MANAGEMENT OPERATIONAL!")
+    print(" ASSEMBLER EVOLUTION MANAGEMENT OPERATIONAL!")
     print("   Ready for 4th iteration when coherence threshold reached!")
 
 

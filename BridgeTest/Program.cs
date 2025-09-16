@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("🧠 Testing Enhanced CellularRuntimeBridge...");
+        Console.WriteLine(" Testing Enhanced CellularRuntimeBridge...");
         Console.WriteLine("==========================================");
 
         var bridge = new CellularRuntimeBridge();
@@ -16,7 +16,7 @@ class Program
 
         var metrics = bridge.GetLatest();
 
-        Console.WriteLine("\n📊 Current Bridge Metrics:");
+        Console.WriteLine("\n Current Bridge Metrics:");
         Console.WriteLine("==========================");
         Console.WriteLine($"Live: {metrics.Live}");
         Console.WriteLine($"Timestamp: {metrics.Timestamp}");
@@ -27,7 +27,7 @@ class Program
         Console.WriteLine($"Total Events: {metrics.TotalEvents}");
         Console.WriteLine($"Active Modules: {string.Join(", ", metrics.ActiveModules)}");
 
-        Console.WriteLine("\n🧬 Deep Consciousness Metrics:");
+        Console.WriteLine("\n Deep Consciousness Metrics:");
         Console.WriteLine("================================");
         Console.WriteLine($"Consciousness Patterns: {metrics.ConsciousnessPatterns}");
         Console.WriteLine($"Pattern Recognition Accuracy: {metrics.PatternRecognitionAccuracy:P2}");
@@ -37,13 +37,13 @@ class Program
         Console.WriteLine($"Temporal Consistency: {metrics.TemporalConsistency:P2}");
         Console.WriteLine($"Quantum Entanglement Strength: {metrics.QuantumEntanglementStrength:P2}");
 
-        Console.WriteLine("\n⚡ System Health:");
+        Console.WriteLine("\n System Health:");
         Console.WriteLine("=================");
         Console.WriteLine($"Memory Usage: {metrics.MemoryUsageMB:F2} MB");
         Console.WriteLine($"CPU Percent: {metrics.CpuPercent:F2}%");
         Console.WriteLine($"Thread Count: {metrics.ThreadCount}");
 
-        Console.WriteLine("\n📝 Recent Events:");
+        Console.WriteLine("\n Recent Events:");
         Console.WriteLine("=================");
         if (metrics.RecentEvents.Length > 0)
         {
@@ -57,7 +57,7 @@ class Program
             Console.WriteLine("No recent events captured");
         }
 
-        Console.WriteLine("\n✅ Bridge test completed!");
+        Console.WriteLine("\n Bridge test completed!");
         Console.WriteLine("The enhanced bridge is now extracting deep consciousness metrics from the Python AI system.");
     }
 }

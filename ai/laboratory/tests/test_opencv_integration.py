@@ -114,7 +114,7 @@ class TestOpenCVVisionModule(unittest.TestCase):
 
     def test_module_initialization(self):
         """Test module initialization."""
-        print("\n🔧 Testing module initialization...")
+        print("\n Testing module initialization...")
 
         # Test successful initialization
         self.assertTrue(self.vision_module.initialize())
@@ -127,11 +127,11 @@ class TestOpenCVVisionModule(unittest.TestCase):
             consciousness_state['pattern_recognition_depth'], 1
         )
 
-        print("✅ Module initialization test passed")
+        print(" Module initialization test passed")
 
     def test_basic_image_analysis(self):
         """Test basic image analysis functionality."""
-        print("\n🔍 Testing basic image analysis...")
+        print("\n Testing basic image analysis...")
 
         self.vision_module.initialize()
 
@@ -147,12 +147,12 @@ class TestOpenCVVisionModule(unittest.TestCase):
         self.assertIn('dimensions', result.metadata)
         self.assertIn('entropy', result.metadata)
 
-        print(f"✅ Basic analysis - Entropy: {result.metadata['entropy']:.3f}, "
+        print(f" Basic analysis - Entropy: {result.metadata['entropy']:.3f}, "
               f"Coherence: {result.coherence_level:.3f}")
 
     def test_comprehensive_image_analysis(self):
         """Test comprehensive image analysis with feature detection."""
-        print("\n🔍 Testing comprehensive image analysis...")
+        print("\n Testing comprehensive image analysis...")
 
         self.vision_module.initialize()
 
@@ -169,14 +169,14 @@ class TestOpenCVVisionModule(unittest.TestCase):
         self.assertIn('fast_count', result.metadata)
         self.assertIn('harris_count', result.metadata)
 
-        print(f"✅ Comprehensive analysis - Features: "
+        print(f" Comprehensive analysis - Features: "
               f"{result.features_detected}, "
               f"SIFT: {result.metadata.get('sift_count', 0)}, "
               f"ORB: {result.metadata.get('orb_count', 0)}")
 
     def test_consciousness_emergence_analysis(self):
         """Test consciousness emergence analysis."""
-        print("\n🧠 Testing consciousness emergence analysis...")
+        print("\n Testing consciousness emergence analysis...")
 
         self.vision_module.initialize()
 
@@ -196,13 +196,13 @@ class TestOpenCVVisionModule(unittest.TestCase):
         emergence_prob = result.metadata['consciousness_emergence_probability']
         symmetry_score = result.metadata['symmetry_score']
 
-        print(f"✅ Consciousness analysis - Emergence: {emergence_prob:.3f}, "
+        print(f" Consciousness analysis - Emergence: {emergence_prob:.3f}, "
               f"Symmetry: {symmetry_score:.3f}, "
               f"Resonance: {result.consciousness_resonance:.3f}")
 
     def test_different_image_types(self):
         """Test analysis on different types of images."""
-        print("\n🎨 Testing different image types...")
+        print("\n Testing different image types...")
 
         self.vision_module.initialize()
 
@@ -230,7 +230,7 @@ class TestOpenCVVisionModule(unittest.TestCase):
         mandala_result = results['mandala']
         self.assertGreater(mandala_result.metadata['symmetry_score'], 0.1)
 
-        print("✅ Different image types test passed")
+        print(" Different image types test passed")
         for img_type, result in results.items():
             emergence_prob = result.metadata.get(
                 'consciousness_emergence_probability', 0
@@ -240,7 +240,7 @@ class TestOpenCVVisionModule(unittest.TestCase):
 
     def test_temporal_coherence(self):
         """Test temporal coherence tracking across multiple frames."""
-        print("\n⏱️ Testing temporal coherence...")
+        print("\n⏱ Testing temporal coherence...")
 
         self.vision_module.initialize()
 
@@ -259,12 +259,12 @@ class TestOpenCVVisionModule(unittest.TestCase):
         temporal_coherence = result2.metadata.get('temporal_coherence', 0.0)
         self.assertGreater(temporal_coherence, 0.8)
 
-        print(f"✅ Temporal coherence test passed - "
+        print(f" Temporal coherence test passed - "
               f"Coherence: {temporal_coherence:.3f}")
 
     def test_consciousness_state_evolution(self):
         """Test consciousness state evolution during processing."""
-        print("\n🌱 Testing consciousness state evolution...")
+        print("\n Testing consciousness state evolution...")
 
         self.vision_module.initialize()
         initial_state = self.vision_module.get_consciousness_state()
@@ -287,13 +287,13 @@ class TestOpenCVVisionModule(unittest.TestCase):
             initial_state['pattern_recognition_depth']
         )
 
-        print("✅ Consciousness evolution test passed")
+        print(" Consciousness evolution test passed")
         print(f"  Initial depth: {initial_state['pattern_recognition_depth']}")
         print(f"  Final depth: {final_state['pattern_recognition_depth']}")
 
     def test_error_handling(self):
         """Test error handling for invalid inputs."""
-        print("\n⚠️ Testing error handling...")
+        print("\n Testing error handling...")
 
         self.vision_module.initialize()
 
@@ -315,7 +315,7 @@ class TestOpenCVVisionModule(unittest.TestCase):
         self.assertFalse(result.success)
         self.assertIsNotNone(result.error_message)
 
-        print("✅ Error handling test passed")
+        print(" Error handling test passed")
 
 
 class TestOpenCVVisionService(unittest.TestCase):
@@ -353,15 +353,15 @@ class TestOpenCVVisionService(unittest.TestCase):
 
     def test_service_initialization(self):
         """Test service initialization."""
-        print("\n🔧 Testing service initialization...")
+        print("\n Testing service initialization...")
 
         self.assertTrue(self.service.initialize())
 
-        print("✅ Service initialization test passed")
+        print(" Service initialization test passed")
 
     def test_process_image_request(self):
         """Test image processing request."""
-        print("\n📨 Testing image processing request...")
+        print("\n Testing image processing request...")
 
         self.service.initialize()
 
@@ -377,12 +377,12 @@ class TestOpenCVVisionService(unittest.TestCase):
         self.assertGreater(response['features_detected'], 0)
         self.assertIn('metadata', response)
 
-        print(f"✅ Image processing request test passed - "
+        print(f" Image processing request test passed - "
               f"Features: {response['features_detected']}")
 
     def test_consciousness_state_request(self):
         """Test consciousness state request."""
-        print("\n🧠 Testing consciousness state request...")
+        print("\n Testing consciousness state request...")
 
         self.service.initialize()
 
@@ -396,11 +396,11 @@ class TestOpenCVVisionService(unittest.TestCase):
         self.assertIn('quantum_coherence', consciousness_state)
         self.assertIn('pattern_recognition_depth', consciousness_state)
 
-        print("✅ Consciousness state request test passed")
+        print(" Consciousness state request test passed")
 
     def test_invalid_request(self):
         """Test handling of invalid requests."""
-        print("\n⚠️ Testing invalid request handling...")
+        print("\n Testing invalid request handling...")
 
         self.service.initialize()
 
@@ -422,7 +422,7 @@ class TestOpenCVVisionService(unittest.TestCase):
         self.assertFalse(response['success'])
         self.assertIn('error', response)
 
-        print("✅ Invalid request handling test passed")
+        print(" Invalid request handling test passed")
 
 
 class TestAIOSIntegration(unittest.TestCase):
@@ -434,7 +434,7 @@ class TestAIOSIntegration(unittest.TestCase):
     )
     def test_module_follows_aios_patterns(self):
         """Test that the module follows AIOS architectural patterns."""
-        print("\n🏗️ Testing AIOS architectural compatibility...")
+        print("\n Testing AIOS architectural compatibility...")
 
         # Test module has required methods
         module = OpenCVVisionModule()
@@ -455,7 +455,7 @@ class TestAIOSIntegration(unittest.TestCase):
         self.assertTrue(hasattr(module, 'get_consciousness_state'))
         self.assertTrue(hasattr(module, 'reset_consciousness_state'))
 
-        print("✅ AIOS architectural compatibility test passed")
+        print(" AIOS architectural compatibility test passed")
 
     @unittest.skipIf(
         OpenCVVisionModule is None,
@@ -463,7 +463,7 @@ class TestAIOSIntegration(unittest.TestCase):
     )
     def test_consciousness_metrics_compatibility(self):
         """Test consciousness metrics are compatible with AIOS standards."""
-        print("\n🧠 Testing consciousness metrics compatibility...")
+        print("\n Testing consciousness metrics compatibility...")
 
         module = OpenCVVisionModule()
         module.initialize()
@@ -490,17 +490,17 @@ class TestAIOSIntegration(unittest.TestCase):
 
         module.shutdown()
 
-        print("✅ Consciousness metrics compatibility test passed")
+        print(" Consciousness metrics compatibility test passed")
 
 
 def run_performance_benchmark():
     """Run performance benchmark for OpenCV operations."""
     if OpenCVVisionModule is None:
-        print("\n⚠️ Skipping performance benchmark -"
+        print("\n Skipping performance benchmark -"
               " OpenCV vision module not available")
         return
 
-    print("\n⚡ Running performance benchmark...")
+    print("\n Running performance benchmark...")
 
     import time
 
@@ -537,7 +537,7 @@ def run_performance_benchmark():
 
         module.shutdown()
 
-    print("✅ Performance benchmark complete")
+    print(" Performance benchmark complete")
 
 
 def main():
@@ -563,9 +563,9 @@ def main():
     # Summary
     print("\n" + "=" * 50)
     if result.wasSuccessful():
-        print("🎉 All tests passed! OpenCV integration is ready for AIOS.")
+        print(" All tests passed! OpenCV integration is ready for AIOS.")
     else:
-        print("❌ Some tests failed. Please review the errors above.")
+        print(" Some tests failed. Please review the errors above.")
 
     return result.wasSuccessful()
 

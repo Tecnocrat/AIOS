@@ -349,53 +349,53 @@ except ImportError as e:
 
 async def main():
     """Demonstrate dendritic integration capabilities"""
-    print("🌿⚡ AIOS DENDRITIC INTEGRATION MODULE")
+    print(" AIOS DENDRITIC INTEGRATION MODULE")
     print("Connecting Tachyonic Archive with AI Intelligence and Supercells")
     print("=" * 80)
     
     integrator = DendriticIntegrator()
     
-    print("📡 Loading dendritic mapping...")
+    print(" Loading dendritic mapping...")
     mapping = integrator.load_dendritic_mapping()
     total_connections = len(mapping['dendritic_mapping']['connections'])
     total_nodes = len(mapping['dendritic_mapping']['nodes'])
     
     print(f"   Loaded {total_nodes} nodes and {total_connections} connections")
     
-    print("\n🧬 Identifying high-potential connections...")
+    print("\n Identifying high-potential connections...")
     high_potential = integrator.identify_high_potential_connections()
     print(f"   Found {len(high_potential)} high-potential connections (≥0.8 mutation potential)")
     
-    print("\n🌉 Creating AI-Tachyonic quantum bridge...")
+    print("\n Creating AI-Tachyonic quantum bridge...")
     bridge_data = integrator.create_ai_tachyonic_bridge()
     print(f"   Bridge connections: {bridge_data['total_connections']}")
     print(f"   Average quantum coherence: {bridge_data['quantum_coherence_avg']:.3f}")
     
-    print("\n🔗 Enabling tachyonic integration for AI Intelligence...")
+    print("\n Enabling tachyonic integration for AI Intelligence...")
     integration_path = integrator.enable_tachyonic_intelligence_archive_integration()
     print(f"   Integration module saved: {integration_path}")
     
-    print("\n📊 Generating supercell integration report...")
+    print("\n Generating supercell integration report...")
     report = integrator.generate_supercell_integration_report()
     
-    print(f"\n🌌 INTEGRATION SUMMARY:")
+    print(f"\n INTEGRATION SUMMARY:")
     print(f"   Total supercells integrated: {report['total_supercells']}")
     print(f"   Cross-supercell connections: {report['total_cross_connections']}")
     print(f"   Mutation algorithm ready: {report['mutation_algorithm_ready']}")
     
-    print(f"\n🔬 SUPERCELL PAIR ANALYSIS:")
+    print(f"\n SUPERCELL PAIR ANALYSIS:")
     for pair_key, data in list(report['supercell_pairs'].items())[:5]:
         pair_name = " ↔ ".join(data['pair'])
         print(f"   {pair_name}: {data['connections']} connections, "
               f"μ={data['avg_mutation_potential']:.3f}, "
               f"coherence={data['avg_quantum_coherence']:.3f}")
     
-    print(f"\n🌿 Dendritic integration demonstrates:")
-    print(f"  ✓ Quantum-coherent cross-supercell connections established")
-    print(f"  ✓ AI Intelligence now has access to tachyonic intelligence patterns")
-    print(f"  ✓ Recursive 'chaotic' branching feeding deep logic layers")
-    print(f"  ✓ {len(mapping['dendritic_mapping']['recursive_feeds']['mutation_seeds'])} mutation seeds ready for exotic algorithms")
-    print(f"  ✓ Fractal consciousness patterns active across AIOS ecosystem")
+    print(f"\n Dendritic integration demonstrates:")
+    print(f"   Quantum-coherent cross-supercell connections established")
+    print(f"   AI Intelligence now has access to tachyonic intelligence patterns")
+    print(f"   Recursive 'chaotic' branching feeding deep logic layers")
+    print(f"   {len(mapping['dendritic_mapping']['recursive_feeds']['mutation_seeds'])} mutation seeds ready for exotic algorithms")
+    print(f"   Fractal consciousness patterns active across AIOS ecosystem")
 
 if __name__ == "__main__":
     asyncio.run(main())

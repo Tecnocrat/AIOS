@@ -17,9 +17,9 @@ sys.path.insert(0, current_dir)
 try:
     from robust_python_environment_manager_clean import (
         RobustPythonEnvironmentManager, get_environment_manager)
-    print("✅ Successfully imported environment manager")
+    print(" Successfully imported environment manager")
 except ImportError as e:
-    print(f"❌ Import error: {e}")
+    print(f" Import error: {e}")
     sys.exit(1)
 
 
@@ -46,7 +46,7 @@ def test_basic_functionality():
     environments = manager.list_environments()
 
     for i, env in enumerate(environments, 1):
-        status = "✓" if env.health_status == "healthy" else "✗"
+        status = "" if env.health_status == "healthy" else ""
         active = " (ACTIVE)" if env.is_active else ""
         print(f"   {i}. {status} {env.name}{active}")
         print(f"      Path: {env.python_path}")
@@ -112,7 +112,7 @@ def test_environment_verification():
     verified_count = 0
     for env in environments:
         is_working = manager._verify_python_installation(env.python_path)
-        status = "✓ Working" if is_working else "✗ Not working"
+        status = " Working" if is_working else " Not working"
         print(f"   {env.name}: {status}")
         if is_working:
             verified_count += 1
@@ -174,13 +174,13 @@ def run_simple_test_suite():
 
     for test_name, test_func in tests:
         try:
-            print(f"\n🔄 Running {test_name}...")
+            print(f"\n Running {test_name}...")
             result = test_func()
             test_results.append((test_name, result, None))
-            status = "✅ PASS" if result else "❌ FAIL"
+            status = " PASS" if result else " FAIL"
             print(f"   {status}")
         except Exception as e:
-            print(f"   ❌ ERROR: {e}")
+            print(f"    ERROR: {e}")
             test_results.append((test_name, False, str(e)))
 
     # Show memory allocation demonstration
@@ -195,7 +195,7 @@ def run_simple_test_suite():
     total = len(test_results)
 
     for test_name, result, error in test_results:
-        status = "✅ PASS" if result else "❌ FAIL"
+        status = " PASS" if result else " FAIL"
         print(f"{status} | {test_name}")
         if error:
             print(f"     | Error: {error}")
@@ -206,15 +206,15 @@ def run_simple_test_suite():
 
     if passed == total:
         print(
-        "\n🎉 All tests passed! Environment management system is working correctly.")
-        print("\n📋 System Status:")
-        print("  ✅ Python environment discovery working")
-        print("  ✅ Environment health monitoring active")
-        print("  ✅ Configuration persistence functional")
-        print("  ✅ Backup and recovery capabilities ready")
-        print("  ✅ Ready for OS reinstall scenarios")
+        "\n All tests passed! Environment management system is working correctly.")
+        print("\n System Status:")
+        print("   Python environment discovery working")
+        print("   Environment health monitoring active")
+        print("   Configuration persistence functional")
+        print("   Backup and recovery capabilities ready")
+        print("   Ready for OS reinstall scenarios")
 
-        print("\n🔧 Next Steps:")
+        print("\n Next Steps:")
         print("  1. The system will automatically handle PATH changes")
         print("  2. Environment snapshots are preserved in AIOS context")
         print("  3. Recovery strategies will fix common issues automatically")
@@ -222,7 +222,7 @@ def run_simple_test_suite():
         "  4. Use prepare_for_os_reinstall() before major system changes")
 
     else:
-        print(f"\n⚠️  {total - passed} test(s) failed. Check issues above.")
+        print(f"\n  {total - passed} test(s) failed. Check issues above.")
 
     return passed == total
 
@@ -239,11 +239,11 @@ if __name__ == "__main__":
         "The robust Python environment management system is now active and")
         print("integrated with AIOS. It will automatically handle:")
         print("")
-        print("🔧 Environment discovery and health monitoring")
-        print("💾 Context preservation and recovery")
-        print("🔄 Automatic recovery from PATH issues")
-        print("💻 OS reinstall preparation and recovery")
-        print("🧠 Integration with AIOS fractal/holographic context")
+        print(" Environment discovery and health monitoring")
+        print(" Context preservation and recovery")
+        print(" Automatic recovery from PATH issues")
+        print(" OS reinstall preparation and recovery")
+        print(" Integration with AIOS fractal/holographic context")
         print("")
         print("The system is ready to help AIOS self-diagnose and fix coding")
         print(

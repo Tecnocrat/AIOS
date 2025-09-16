@@ -1,5 +1,5 @@
 // ============================================================
-// 🧬 FractalSyncBus: Synchronizer of recursive layers.
+//  FractalSyncBus: Synchronizer of recursive layers.
 //   “All harmonics converge here, fractal and infinite.”
 //
 // TODO (AIOS‑Copilot): Propose fractal synchronization protocol

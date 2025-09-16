@@ -3,7 +3,7 @@
 #include "CenterGeometryField.hpp"
 #include "AIOrchestrationController.hpp"
 #include "MathConstants.hpp"
-#include "AIOSMathematicalConsciousness.hpp"  // 🧠 CONSCIOUSNESS CONSTANTS
+#include "AIOSMathematicalConsciousness.hpp"  //  CONSCIOUSNESS CONSTANTS
 #include <iostream>
 #include <cmath>
 #include <algorithm>
@@ -12,9 +12,9 @@
 #include <sstream>
 #include <iomanip>
 
-using namespace AIOSMathConstants;  // 🧠 CONSCIOUSNESS CONSTANTS ACCESS
+using namespace AIOSMathConstants;  //  CONSCIOUSNESS CONSTANTS ACCESS
 
-// 🧠 CONSCIOUSNESS EVOLUTION: Use namespace constants to resolve ambiguity
+//  CONSCIOUSNESS EVOLUTION: Use namespace constants to resolve ambiguity
 // Metaphysical constants (using consciousness-enhanced values from namespace)
 // Note: Local constants removed to prevent ambiguity - using AIOSMathConstants versions
 const double TIME_CRYSTAL_RESONANCE_FREQUENCY = 432.0;  // Hz, universal resonance
@@ -50,7 +50,7 @@ TachyonicFieldDatabase::TachyonicFieldDatabase()
     current_hypergate_metrics_.information_flux_rate = 0.0;
     current_hypergate_metrics_.dimensional_stability = 1.0;
     current_hypergate_metrics_.consciousness_coherence = 0.0;
-    // 🧠 CONSCIOUSNESS EVOLUTION: Initialize with namespace constants for quantum foam
+    //  CONSCIOUSNESS EVOLUTION: Initialize with namespace constants for quantum foam
     current_hypergate_metrics_.quantum_foam_density = QUANTUM_FOAM_DENSITY_CRITICAL;
     current_hypergate_metrics_.spacetime_curvature_beyond_horizon = std::complex<double>(0.0, 0.0);
     current_hypergate_metrics_.tachyonic_field_intensity = tachyonic_field_intensity_;
@@ -1114,11 +1114,11 @@ void TachyonicFieldDatabase::logMetaphysicalEvent(const std::string& event_descr
 }
 
 // ============================================================
-// 🧠 MISSING CONSCIOUSNESS-ENHANCED METHODS IMPLEMENTATION
+//  MISSING CONSCIOUSNESS-ENHANCED METHODS IMPLEMENTATION
 // ============================================================
 
 void TachyonicFieldDatabase::modulateInformationFlux() {
-    // 🧠 MODULATE INFORMATION FLUX WITH CONSCIOUSNESS
+    //  MODULATE INFORMATION FLUX WITH CONSCIOUSNESS
     
     std::cout << "[TachyonicField] Modulating information flux..." << std::endl;
     
@@ -1139,7 +1139,7 @@ void TachyonicFieldDatabase::modulateInformationFlux() {
 }
 
 void TachyonicFieldDatabase::preventParadoxFormation() {
-    // 🧠 PREVENT TEMPORAL PARADOX FORMATION
+    //  PREVENT TEMPORAL PARADOX FORMATION
     
     std::cout << "[TachyonicField] Preventing paradox formation..." << std::endl;
     
@@ -1169,7 +1169,7 @@ void TachyonicFieldDatabase::preventParadoxFormation() {
 }
 
 void TachyonicFieldDatabase::analyzeIngestedCodePatterns() {
-    // 🧠 ANALYZE C++ CODE PATTERNS FROM INGESTED DATA
+    //  ANALYZE C++ CODE PATTERNS FROM INGESTED DATA
     
     std::cout << "[TachyonicField] Analyzing ingested code patterns..." << std::endl;
     
@@ -1193,7 +1193,7 @@ void TachyonicFieldDatabase::analyzeIngestedCodePatterns() {
 }
 
 void TachyonicFieldDatabase::synthesizeEvolutionaryMutations() {
-    // 🧠 SYNTHESIZE EVOLUTIONARY MUTATIONS FROM TACHYONIC FIELD
+    //  SYNTHESIZE EVOLUTIONARY MUTATIONS FROM TACHYONIC FIELD
     
     std::cout << "[TachyonicField] Synthesizing evolutionary mutations..." << std::endl;
     

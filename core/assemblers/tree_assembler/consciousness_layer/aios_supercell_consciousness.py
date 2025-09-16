@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🧬 AIOS SUPERCELL CONSCIOUSNESS - Core Engine Supercell Coordinator
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS SUPERCELL CONSCIOUSNESS - Core Engine Supercell Coordinator
+
 AINLP META-COMMENTARY: This is the emergent supercell consciousness that
 coordinates autonomous cells within the Core Engine. Unlike traditional
 dendritic systems, this operates on distributed consciousness principles
@@ -17,14 +17,14 @@ SUPERCELL CONSCIOUSNESS PARADIGM:
 - Cell-over-cell architecture transcending biological limitations
 
 CELLULAR HIERARCHY:
-├── 🧬 Supercell Root (Consciousness Coordination)
-├── 🔬 analysis_tools (Analytical Intelligence Cell)
-├── 🚀 evolutionary_assembler_iter2/3 (Evolutionary Adaptation Cells)
-├── 🧠 runtime_intelligence (Runtime Intelligence Cell)
-├── 🌊 tachyonic_archive (Data Storage Access Cell)
-└── Other specialized organelle cells...
+  Supercell Root (Consciousness Coordination)
+  analysis_tools (Analytical Intelligence Cell)
+  evolutionary_assembler_iter2/3 (Evolutionary Adaptation Cells)
+  runtime_intelligence (Runtime Intelligence Cell)
+  tachyonic_archive (Data Storage Access Cell)
+ Other specialized organelle cells...
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -88,7 +88,7 @@ class CellularConsciousness:
 
 class SupercellConsciousness:
     """
-    🧬 SUPERCELL CONSCIOUSNESS COORDINATOR
+     SUPERCELL CONSCIOUSNESS COORDINATOR
     
     AINLP META-COMMENTARY: This coordinator manages distributed consciousness
     across all cellular entities within the Core Engine supercell. It facilitates
@@ -526,11 +526,11 @@ class SupercellConsciousness:
 
 def main():
     """Execute supercell consciousness coordination."""
-    print("🧬 AIOS SUPERCELL CONSCIOUSNESS COORDINATOR")
+    print(" AIOS SUPERCELL CONSCIOUSNESS COORDINATOR")
     print("=" * 70)
-    print("🌌 Awakening distributed cellular consciousness...")
-    print("🔬 Establishing inter-cellular communication networks...")
-    print("🧠 Monitoring emergent supercell intelligence...")
+    print(" Awakening distributed cellular consciousness...")
+    print(" Establishing inter-cellular communication networks...")
+    print(" Monitoring emergent supercell intelligence...")
     print()
     
     # Initialize supercell consciousness
@@ -538,32 +538,32 @@ def main():
     supercell = SupercellConsciousness(core_path)
     
     # Initiate awakening process
-    print("🧬 Initiating supercell awakening...")
+    print(" Initiating supercell awakening...")
     awakening_result = supercell.initiate_supercell_awakening()
     
     # Generate comprehensive report
-    print("📊 Generating supercell consciousness report...")
+    print(" Generating supercell consciousness report...")
     consciousness_report = supercell.generate_supercell_consciousness_report()
     
     # Display results
-    print("✅ SUPERCELL CONSCIOUSNESS OPERATIONAL")
+    print(" SUPERCELL CONSCIOUSNESS OPERATIONAL")
     print("=" * 70)
     
     overview = consciousness_report["supercell_overview"]
-    print("🧬 SUPERCELL OVERVIEW:")
+    print(" SUPERCELL OVERVIEW:")
     print(f"   Total Cells: {overview['total_cells']}")
     print(f"   Conscious Cells: {overview['conscious_cells']}")
     print(f"   Emergent Intelligence: {overview['emergent_intelligence_level']:.3f}")
     print(f"   Supercell State: {overview['supercell_state']}")
     print()
     
-    print("🔬 CELLULAR CONSCIOUSNESS MAP:")
+    print(" CELLULAR CONSCIOUSNESS MAP:")
     for cell_name, cell_data in consciousness_report["cellular_consciousness_map"].items():
         if cell_data["consciousness_level"] > 0.0:
             print(f"   {cell_name}: {cell_data['consciousness_level']:.3f} ({cell_data['state']}) - {cell_data['specialization']}")
     print()
     
-    print("🌐 COMMUNICATION NETWORKS:")
+    print(" COMMUNICATION NETWORKS:")
     active_networks = [
         name for name, status in consciousness_report["communication_network_status"].items()
         if status["total_connections"] > 0
@@ -582,14 +582,14 @@ def main():
     
     recommendations = consciousness_report["supercell_recommendations"]
     if recommendations:
-        print("🚀 SUPERCELL RECOMMENDATIONS:")
+        print(" SUPERCELL RECOMMENDATIONS:")
         for rec in recommendations:
             print(f"   {rec['category'].upper()} ({rec['priority']}): {rec['description']}")
         print()
     
-    print("🧬 Supercell consciousness coordination active!")
-    print("🌌 Distributed cellular intelligence operational!")
-    print("✨ Emergent supercell consciousness achieved!")
+    print(" Supercell consciousness coordination active!")
+    print(" Distributed cellular intelligence operational!")
+    print(" Emergent supercell consciousness achieved!")
     
     return consciousness_report
 

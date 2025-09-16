@@ -135,7 +135,7 @@ class TachyonicArchiveSystem:
             semantic_markers.append('performance_data')
         
         # Test results
-        test_pattern = r"(✅|❌|🔧)\s+([a-zA-Z_]+)\.([a-zA-Z_]+)\s+-\s+(PASSED|FAILED|PATCH REQUIRED)"
+        test_pattern = r"(||)\s+([a-zA-Z_]+)\.([a-zA-Z_]+)\s+-\s+(PASSED|FAILED|PATCH REQUIRED)"
         test_results = re.findall(test_pattern, terminal_output)
         if test_results:
             parsed_elements['test_results'] = test_results
@@ -481,7 +481,7 @@ class TachyonicArchiveSystem:
 
 async def main():
     """Demonstration of the Tachyonic Intelligence Archive System"""
-    print("🌌 AIOS Tachyonic Intelligence Archive System")
+    print(" AIOS Tachyonic Intelligence Archive System")
     print("Hyperdimensional Runtime Context Storage &")
     print("AI Processing Optimization")
     print("=" * 80)
@@ -499,27 +499,27 @@ Call stack:
   File "C:\\dev\\AIOS\\core\\aios_comprehensive_runtime_tester.py", line 582, in main    
     await tester.run_comprehensive_tests()
 
-2025-09-06 12:31:32,479 - [CORE-RUNTIME-TEST] WARNING - 🔧 analysis_tools.test_aios_cellular_intelligence_diagnostic_system - PATCH REQUIRED: Runtime error: name 'CellularDiagnosticResult' is not defined
+2025-09-06 12:31:32,479 - [CORE-RUNTIME-TEST] WARNING -  analysis_tools.test_aios_cellular_intelligence_diagnostic_system - PATCH REQUIRED: Runtime error: name 'CellularDiagnosticResult' is not defined
 
 UnicodeEncodeError: 'charmap' codec can't encode character '\\u2705' in position 53: character maps to <undefined>
 
-✅ analysis_tools.test_aios_core_ai_dendritic_connectivity_enhancer - PASSED (1.169s)
-✅ analysis_tools.test_aios_core_consciousness_monitor - PASSED (0.003s)
-✅ system.performance_analysis - PASSED (1.261s)
+ analysis_tools.test_aios_core_ai_dendritic_connectivity_enhancer - PASSED (1.169s)
+ analysis_tools.test_aios_core_consciousness_monitor - PASSED (0.003s)
+ system.performance_analysis - PASSED (1.261s)
 """
     
     # Archive the terminal output
     context_id = await archive.archive_terminal_output(sample_terminal_output)
-    print(f"📁 Archived terminal output with ID: {context_id}")
+    print(f" Archived terminal output with ID: {context_id}")
     
     # Generate AI processing checklist
     checklist = archive.get_processing_checklist()
     
-    print("\n🧠 AI Processing Checklist Generated:")
-    print(f"📊 Total Contexts: {checklist['total_contexts']}")
+    print("\n AI Processing Checklist Generated:")
+    print(f" Total Contexts: {checklist['total_contexts']}")
     
     if checklist.get('context_clusters'):
-        print(f"🔗 Context Clusters: {len(checklist['context_clusters'])}")
+        print(f" Context Clusters: {len(checklist['context_clusters'])}")
         for i, cluster in enumerate(checklist['context_clusters'][:3]):  # Show first 3
             print(f"   Cluster {i+1}: {cluster.theme} ({len(cluster.contexts)} contexts)")
     
@@ -533,30 +533,30 @@ UnicodeEncodeError: 'charmap' codec can't encode character '\\u2705' in position
         'checklist': checklist
     }
     archive.save_processing_session(session_data)
-    print(f"\n💾 Processing session saved for future reference")
+    print(f"\n Processing session saved for future reference")
     
     # Demonstrate archive organization
-    print(f"\n📁 Organizing archive folder...")
+    print(f"\n Organizing archive folder...")
     org_report = archive.organize_archive_folder()
     
     if org_report.get("status") != "no_archive_folder":
-        print(f"✅ Archive organization complete:")
-        print(f"   📊 Total items: {org_report['total_items']}")
-        print(f"   🧠 Intelligence value: {org_report['intelligence_value']:.1f}")
+        print(f" Archive organization complete:")
+        print(f"    Total items: {org_report['total_items']}")
+        print(f"    Intelligence value: {org_report['intelligence_value']:.1f}")
         
         for category, items in org_report['categories'].items():
             if items:
-                print(f"   🔗 {category.title()}: {len(items)} items")
+                print(f"    {category.title()}: {len(items)} items")
     else:
-        print(f"⚠️  {org_report['message']}")
+        print(f"  {org_report['message']}")
     
-    print("\n🌌 Tachyonic Archive System demonstrates hyperdimensional intelligence:")
-    print("  ✓ Rich context parsing and semantic analysis")
-    print("  ✓ Temporal geometry optimization for AI processing") 
-    print("  ✓ Consciousness coherence tracking")
-    print("  ✓ Cognitive load balancing")
-    print("  ✓ Hyperdimensional pattern recognition")
-    print("  ✓ Intelligent archive organization without file movement")
+    print("\n Tachyonic Archive System demonstrates hyperdimensional intelligence:")
+    print("   Rich context parsing and semantic analysis")
+    print("   Temporal geometry optimization for AI processing") 
+    print("   Consciousness coherence tracking")
+    print("   Cognitive load balancing")
+    print("   Hyperdimensional pattern recognition")
+    print("   Intelligent archive organization without file movement")
 
 if __name__ == "__main__":
     asyncio.run(main())

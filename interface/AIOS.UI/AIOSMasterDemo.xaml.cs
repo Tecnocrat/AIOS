@@ -63,7 +63,7 @@ namespace AIOS.UI
         {
             try
             {
-                UpdateStatus("🚀 Initializing AIOS Master Demo...");
+                UpdateStatus(" Initializing AIOS Master Demo...");
 
                 // Initialize all services
                 await InitializeAllServices();
@@ -71,7 +71,7 @@ namespace AIOS.UI
                 // Set up demonstration scenarios
                 await SetupDemoScenarios();
 
-                UpdateStatus("✅ AIOS Master Demo Ready - All systems operational");
+                UpdateStatus(" AIOS Master Demo Ready - All systems operational");
                 _isInitialized = true;
 
                 // Show initial system state
@@ -81,22 +81,22 @@ namespace AIOS.UI
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to setup demo interface");
-                UpdateStatus($"❌ Demo setup failed: {ex.Message}");
+                UpdateStatus($" Demo setup failed: {ex.Message}");
             }
         }
 
         private async Task InitializeAllServices()
         {
-            UpdateStatus("🔧 Initializing AI Services...");
+            UpdateStatus(" Initializing AI Services...");
             await Task.Delay(500); // Simulate initialization
 
-            UpdateStatus("🗄️ Initializing Database Services...");
+            UpdateStatus(" Initializing Database Services...");
             await Task.Delay(300);
 
-            UpdateStatus("🧠 Initializing AINLP Compiler...");
+            UpdateStatus(" Initializing AINLP Compiler...");
             await Task.Delay(200);
 
-            UpdateStatus("🌐 Initializing Web Interface Services...");
+            UpdateStatus(" Initializing Web Interface Services...");
             await Task.Delay(100);
         }
 
@@ -107,42 +107,42 @@ namespace AIOS.UI
             {
                 new DemoScenario
                 {
-                    Name = "🧠 AI Natural Language Processing",
+                    Name = " AI Natural Language Processing",
                     Description = "Process natural language queries and generate intelligent responses",
                     Category = "AI Services",
                     Action = DemonstrateNLP
                 },
                 new DemoScenario
                 {
-                    Name = "🔮 AI Prediction Engine",
+                    Name = " AI Prediction Engine",
                     Description = "Make predictions using machine learning models",
                     Category = "AI Services",
                     Action = DemonstratePrediction
                 },
                 new DemoScenario
                 {
-                    Name = "🗄️ Intelligent Database Operations",
+                    Name = " Intelligent Database Operations",
                     Description = "Execute AI-powered database queries with natural language",
                     Category = "Database Services",
                     Action = DemonstrateDatabase
                 },
                 new DemoScenario
                 {
-                    Name = "🚀 AINLP Natural Language Programming",
+                    Name = " AINLP Natural Language Programming",
                     Description = "Generate complete applications from natural language specifications",
                     Category = "AINLP Compiler",
                     Action = DemonstrateAINLP
                 },
                 new DemoScenario
                 {
-                    Name = "🌐 Hybrid HTML5 + C# Interface",
+                    Name = " Hybrid HTML5 + C# Interface",
                     Description = "Showcase seamless integration between web and desktop technologies",
                     Category = "Hybrid UI",
                     Action = DemonstrateHybridUI
                 },
                 new DemoScenario
                 {
-                    Name = "⚡ Real-time System Integration",
+                    Name = " Real-time System Integration",
                     Description = "Monitor and display real-time system metrics and AI responses",
                     Category = "System Integration",
                     Action = DemonstrateRealTime
@@ -181,18 +181,18 @@ namespace AIOS.UI
         {
             try
             {
-                UpdateStatus($"🎯 Executing: {scenario.Name}");
+                UpdateStatus($" Executing: {scenario.Name}");
                 AddLogEntry($"Starting demonstration: {scenario.Name}");
 
                 await scenario.Action();
 
-                UpdateStatus($"✅ Completed: {scenario.Name}");
+                UpdateStatus($" Completed: {scenario.Name}");
                 AddLogEntry($"Successfully completed: {scenario.Name}");
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"Demo scenario failed: {scenario.Name}");
-                UpdateStatus($"❌ Failed: {scenario.Name}");
+                UpdateStatus($" Failed: {scenario.Name}");
                 AddLogEntry($"Error in {scenario.Name}: {ex.Message}");
             }
         }
@@ -212,12 +212,12 @@ namespace AIOS.UI
 
             foreach (var query in queries)
             {
-                AddLogEntry($"🧠 Processing NLP Query: {query}");
+                AddLogEntry($" Processing NLP Query: {query}");
 
                 var response = await _aiService.ProcessNLP(query);
                 results.Add($"Query: {query}\nResponse: {response.Response}\nConfidence: {response.Confidence:P1}");
 
-                AddLogEntry($"✅ NLP Response: {response.Response} (Confidence: {response.Confidence:P1})");
+                AddLogEntry($" NLP Response: {response.Response} (Confidence: {response.Confidence:P1})");
                 await Task.Delay(1000); // Simulate processing time
             }
 
@@ -238,14 +238,14 @@ namespace AIOS.UI
 
             foreach (var scenario in predictionScenarios)
             {
-                AddLogEntry($"🔮 Making Prediction: {scenario.Name}");
+                AddLogEntry($" Making Prediction: {scenario.Name}");
 
                 var dataJson = System.Text.Json.JsonSerializer.Serialize(scenario.Data);
                 var prediction = await _aiService.MakePrediction(dataJson, "performance");
 
                 results.Add($"Scenario: {scenario.Name}\nPrediction: {System.Text.Json.JsonSerializer.Serialize(prediction.Prediction, new System.Text.Json.JsonSerializerOptions { WriteIndented = true })}\nConfidence: {prediction.Confidence:P1}");
 
-                AddLogEntry($"✅ Prediction Complete: {scenario.Name} (Confidence: {prediction.Confidence:P1})");
+                AddLogEntry($" Prediction Complete: {scenario.Name} (Confidence: {prediction.Confidence:P1})");
                 await Task.Delay(800);
             }
 
@@ -266,12 +266,12 @@ namespace AIOS.UI
 
             foreach (var query in queries)
             {
-                AddLogEntry($"🗄️ Executing Intelligent Query: {query}");
+                AddLogEntry($" Executing Intelligent Query: {query}");
 
                 var result = await _dbService.ExecuteIntelligentQuery(query);
                 results.Add($"Query: {query}\nResult: {System.Text.Json.JsonSerializer.Serialize(result, new System.Text.Json.JsonSerializerOptions { WriteIndented = true })}");
 
-                AddLogEntry($"✅ Database Query Complete: {query}");
+                AddLogEntry($" Database Query Complete: {query}");
                 await Task.Delay(600);
             }
 
@@ -315,7 +315,7 @@ namespace AIOS.UI
 
             foreach (var spec in specifications)
             {
-                AddLogEntry($"🚀 Compiling AINLP Specification...");
+                AddLogEntry($" Compiling AINLP Specification...");
 
                 var compilationResult = await _ainlpCompiler.CompileNaturalLanguage(spec);
 
@@ -325,12 +325,12 @@ namespace AIOS.UI
                               $"Generated Code: {compilationResult.GeneratedCode.Code.Substring(0, Math.Min(compilationResult.GeneratedCode.Code.Length, 500))}...\n" +
                               $"Confidence: {compilationResult.Confidence:P1}");
 
-                    AddLogEntry($"✅ AINLP Compilation Success (Confidence: {compilationResult.Confidence:P1})");
+                    AddLogEntry($" AINLP Compilation Success (Confidence: {compilationResult.Confidence:P1})");
                 }
                 else
                 {
                     results.Add($"Specification: {spec.Substring(0, Math.Min(spec.Length, 100))}...\nError: {compilationResult.Error}");
-                    AddLogEntry($"❌ AINLP Compilation Failed: {compilationResult.Error}");
+                    AddLogEntry($" AINLP Compilation Failed: {compilationResult.Error}");
                 }
 
                 await Task.Delay(1500);
@@ -341,7 +341,7 @@ namespace AIOS.UI
 
         private async Task DemonstrateHybridUI()
         {
-            AddLogEntry("🌐 Launching Hybrid HTML5 + C# Interface...");
+            AddLogEntry(" Launching Hybrid HTML5 + C# Interface...");
 
             if (_hybridWindow == null)
             {
@@ -358,7 +358,7 @@ namespace AIOS.UI
 
             await Task.Delay(1000);
 
-            AddLogEntry("✅ Hybrid Interface Launched Successfully");
+            AddLogEntry(" Hybrid Interface Launched Successfully");
             ShowResults("Hybrid UI Integration",
                 "The hybrid interface demonstrates:\n" +
                 "• WebView2 integration with WPF\n" +
@@ -370,7 +370,7 @@ namespace AIOS.UI
 
         private async Task DemonstrateRealTime()
         {
-            AddLogEntry("⚡ Starting Real-time System Monitoring...");
+            AddLogEntry(" Starting Real-time System Monitoring...");
 
             var monitoringTasks = new[]
             {
@@ -386,7 +386,7 @@ namespace AIOS.UI
             var combinedResults = string.Join("\n\n", results);
             ShowResults("Real-time System Monitoring", combinedResults);
 
-            AddLogEntry("✅ Real-time Monitoring Complete");
+            AddLogEntry(" Real-time Monitoring Complete");
         }
 
         private async Task<string> MonitorSystemHealth()

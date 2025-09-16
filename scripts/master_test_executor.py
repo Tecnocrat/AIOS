@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🚀 AIOS Master Test Execution Path
+ AIOS Master Test Execution Path
 ===================================
 
 This script orchestrates the complete test guided path for AIOS:
@@ -60,8 +60,8 @@ class AIOSMasterTestExecutor:
         """Print formatted master test header"""
         border = "=" * 100
         print(f"\n{border}")
-        print(f"🚀 {title}")
-        print(f"📋 {description}")
+        print(f" {title}")
+        print(f" {description}")
         print(f"⏰ Session ID: {self.test_session_id}")
         print(f"{border}\n")
         self.logger.info(f"Master Test: {title} - {description}")
@@ -173,11 +173,11 @@ class AIOSMasterTestExecutor:
             )
             
             if cmake_result.returncode == 0:
-                print("✅ CMake configuration successful")
+                print(" CMake configuration successful")
                 self.logger.info("CMake configuration completed successfully")
                 results["steps"].append({"step": "cmake_config", "status": "success"})
             else:
-                print("❌ CMake configuration failed")
+                print(" CMake configuration failed")
                 self.logger.error(f"CMake configuration failed: {cmake_result.stderr}")
                 results["steps"].append({"step": "cmake_config", "status": "failed", "error": cmake_result.stderr})
                 return results
@@ -188,7 +188,7 @@ class AIOSMasterTestExecutor:
             return results
         
         # Step A2: Build AIOS kernel
-        print("🔨 Step A2: Building AIOS kernel with all consciousness components...")
+        print(" Step A2: Building AIOS kernel with all consciousness components...")
         self.logger.info("Starting AIOS kernel build")
         
         try:
@@ -200,11 +200,11 @@ class AIOSMasterTestExecutor:
             )
             
             if build_result.returncode == 0:
-                print("✅ AIOS kernel build successful")
+                print(" AIOS kernel build successful")
                 self.logger.info("AIOS kernel build completed successfully")
                 results["steps"].append({"step": "kernel_build", "status": "success"})
             else:
-                print("❌ AIOS kernel build failed")
+                print(" AIOS kernel build failed")
                 self.logger.error(f"AIOS kernel build failed: {build_result.stderr}")
                 results["steps"].append({"step": "kernel_build", "status": "failed", "error": build_result.stderr})
                 
@@ -212,27 +212,27 @@ class AIOSMasterTestExecutor:
                 error_lines = build_result.stderr.split('\\n')
                 critical_errors = [line for line in error_lines if 'error' in line.lower()]
                 if critical_errors:
-                    print("🔍 Critical build errors detected:")
+                    print(" Critical build errors detected:")
                     for error in critical_errors[:5]:  # Show first 5 errors
-                        print(f"   ❌ {error.strip()}")
+                        print(f"    {error.strip()}")
                         
         except Exception as e:
             self.logger.error(f"Build execution error: {str(e)}")
             results["steps"].append({"step": "kernel_build", "status": "error", "error": str(e)})
         
         # Step A3: Validate built executable
-        print("🔍 Step A3: Validating built executable...")
+        print(" Step A3: Validating built executable...")
         
         debug_exe = self.build_path / "Debug" / "aios_kernel.exe"
         release_exe = self.build_path / "Release" / "aios_kernel.exe"
         
         if debug_exe.exists() or release_exe.exists():
             exe_path = debug_exe if debug_exe.exists() else release_exe
-            print(f"✅ Executable found: {exe_path}")
+            print(f" Executable found: {exe_path}")
             self.logger.info(f"AIOS executable validated: {exe_path}")
             results["steps"].append({"step": "executable_validation", "status": "success", "executable": str(exe_path)})
         else:
-            print("❌ No executable found after build")
+            print(" No executable found after build")
             self.logger.error("No executable found after successful build")
             results["steps"].append({"step": "executable_validation", "status": "failed"})
         
@@ -258,16 +258,16 @@ class AIOSMasterTestExecutor:
             exe_path = release_exe
             
         if not exe_path:
-            print("❌ No AIOS executable found. Cannot proceed with runtime testing.")
+            print(" No AIOS executable found. Cannot proceed with runtime testing.")
             self.logger.error("No AIOS executable found for runtime testing")
             results["status"] = "skipped - no executable"
             return results
             
-        print(f"🚀 Executing AIOS kernel: {exe_path}")
+        print(f" Executing AIOS kernel: {exe_path}")
         self.logger.info(f"Starting AIOS runtime execution: {exe_path}")
         
         # Step B1: Execute AIOS with consciousness monitoring
-        print("🧠 Step B1: Running AIOS with consciousness emergence monitoring...")
+        print(" Step B1: Running AIOS with consciousness emergence monitoring...")
         
         try:
             # Change to the directory containing the executable
@@ -285,7 +285,7 @@ class AIOSMasterTestExecutor:
             try:
                 stdout, stderr = process.communicate(timeout=60)  # 1 minute execution
                 
-                print("✅ AIOS execution completed")
+                print(" AIOS execution completed")
                 self.logger.info("AIOS execution completed successfully")
                 
                 # Analyze output for consciousness indicators
@@ -308,9 +308,9 @@ class AIOSMasterTestExecutor:
                 results["consciousness_indicators"] = found_indicators
                 results["total_indicators_found"] = len(found_indicators)
                 
-                print(f"🧠 Consciousness indicators found: {len(found_indicators)}/{len(consciousness_indicators)}")
+                print(f" Consciousness indicators found: {len(found_indicators)}/{len(consciousness_indicators)}")
                 for indicator in found_indicators:
-                    print(f"   ✅ {indicator}")
+                    print(f"    {indicator}")
                     
                 self.logger.info(f"Consciousness indicators analysis: {len(found_indicators)} found")
                 
@@ -322,13 +322,13 @@ class AIOSMasterTestExecutor:
                 results["status"] = "timeout"
                 
         except Exception as e:
-            print(f"❌ AIOS execution error: {str(e)}")
+            print(f" AIOS execution error: {str(e)}")
             self.logger.error(f"AIOS execution error: {str(e)}")
             results["status"] = "error"
             results["error"] = str(e)
             
         # Step B2: Analyze generated logs and diagnostics
-        print("📊 Step B2: Analyzing generated logs and diagnostics...")
+        print(" Step B2: Analyzing generated logs and diagnostics...")
         
         archive_path = self.orchestrator_path / "archive"
         if archive_path.exists():
@@ -340,7 +340,7 @@ class AIOSMasterTestExecutor:
                 "diagnostic_count": len(diagnostic_files)
             }
             
-            print(f"📝 Generated files: {len(log_files)} logs, {len(diagnostic_files)} diagnostics")
+            print(f" Generated files: {len(log_files)} logs, {len(diagnostic_files)} diagnostics")
             self.logger.info(f"Archive analysis: {len(log_files)} logs, {len(diagnostic_files)} diagnostics")
             
             # Analyze latest diagnostic for consciousness metrics
@@ -354,9 +354,9 @@ class AIOSMasterTestExecutor:
                         consciousness_metrics = diagnostic_data["consciousness"]
                         results["consciousness_metrics"] = consciousness_metrics
                         
-                        print("🧠 Consciousness metrics extracted:")
+                        print(" Consciousness metrics extracted:")
                         for key, value in consciousness_metrics.items():
-                            print(f"   📊 {key}: {value}")
+                            print(f"    {key}: {value}")
                             
                         self.logger.info(f"Consciousness metrics extracted: {consciousness_metrics}")
                         
@@ -375,14 +375,14 @@ class AIOSMasterTestExecutor:
         results = {"phase": "metadata_abstraction", "validations": []}
         
         # Step C1: Check for abstracted metadata output
-        print("🗂️  Step C1: Validating metadata abstraction output...")
+        print("  Step C1: Validating metadata abstraction output...")
         
         abstraction_path = self.orchestrator_path / "archive" / "abstracted_metadata"
         if abstraction_path.exists():
             abstracted_files = list(abstraction_path.glob("**/*"))
             results["abstracted_files_count"] = len(abstracted_files)
             
-            print(f"✅ Found {len(abstracted_files)} abstracted metadata files")
+            print(f" Found {len(abstracted_files)} abstracted metadata files")
             self.logger.info(f"Metadata abstraction validation: {len(abstracted_files)} files found")
             
             # Check for specific abstraction categories
@@ -395,19 +395,19 @@ class AIOSMasterTestExecutor:
                     found_categories.append(category)
                     
             results["abstraction_categories"] = found_categories
-            print(f"📂 Abstraction categories found: {', '.join(found_categories)}")
+            print(f" Abstraction categories found: {', '.join(found_categories)}")
             
         else:
-            print("❌ No abstracted metadata directory found")
+            print(" No abstracted metadata directory found")
             self.logger.warning("Metadata abstraction directory not found")
             results["abstracted_files_count"] = 0
             
         # Step C2: Validate reingestion dataset
-        print("🔄 Step C2: Validating reingestion dataset preparation...")
+        print(" Step C2: Validating reingestion dataset preparation...")
         
         reingestion_file = abstraction_path / "consciousness_reingestion_dataset.md"
         if reingestion_file.exists():
-            print("✅ Reingestion dataset found")
+            print(" Reingestion dataset found")
             self.logger.info("Reingestion dataset validation: file found")
             
             try:
@@ -427,17 +427,17 @@ class AIOSMasterTestExecutor:
                         found_sections.append(section)
                         
                 results["reingestion_sections"] = found_sections
-                print(f"📝 Reingestion sections found: {len(found_sections)}/{len(required_sections)}")
+                print(f" Reingestion sections found: {len(found_sections)}/{len(required_sections)}")
                 
             except Exception as e:
                 self.logger.error(f"Failed to validate reingestion content: {str(e)}")
                 
         else:
-            print("❌ Reingestion dataset not found")
+            print(" Reingestion dataset not found")
             self.logger.warning("Reingestion dataset file not found")
             
         # Step C3: Validate garbage collection metrics
-        print("🗑️  Step C3: Validating garbage collection metrics...")
+        print("  Step C3: Validating garbage collection metrics...")
         
         metadata_json = abstraction_path / "abstracted_metadata.json"
         if metadata_json.exists():
@@ -452,9 +452,9 @@ class AIOSMasterTestExecutor:
                         stats = abstraction_data["collection_stats"]
                         results["collection_stats"] = stats
                         
-                        print("📊 Garbage collection statistics:")
+                        print(" Garbage collection statistics:")
                         for key, value in stats.items():
-                            print(f"   📈 {key}: {value}")
+                            print(f"    {key}: {value}")
                             
                         self.logger.info(f"Garbage collection stats: {stats}")
                         
@@ -473,32 +473,32 @@ class AIOSMasterTestExecutor:
         results = {"phase": "integrated_testing", "orchestrators": {}}
         
         # Execute PowerShell orchestrator
-        print("🔧 Step D1: Executing PowerShell test orchestrator...")
+        print(" Step D1: Executing PowerShell test orchestrator...")
         ps_results = self.execute_powershell_test_orchestrator()
         results["orchestrators"]["powershell"] = ps_results
         
         if ps_results["status"] == "success":
-            print("✅ PowerShell test orchestrator completed successfully")
+            print(" PowerShell test orchestrator completed successfully")
         else:
-            print(f"❌ PowerShell test orchestrator failed: {ps_results.get('error', 'Unknown error')}")
+            print(f" PowerShell test orchestrator failed: {ps_results.get('error', 'Unknown error')}")
             
         # Execute Python orchestrator
-        print("🐍 Step D2: Executing Python test orchestrator...")
+        print(" Step D2: Executing Python test orchestrator...")
         py_results = self.execute_python_test_orchestrator()
         results["orchestrators"]["python"] = py_results
         
         if py_results["status"] == "success":
-            print("✅ Python test orchestrator completed successfully")
+            print(" Python test orchestrator completed successfully")
         else:
-            print(f"❌ Python test orchestrator failed: {py_results.get('error', 'Unknown error')}")
+            print(f" Python test orchestrator failed: {py_results.get('error', 'Unknown error')}")
             
         # Compare results
-        print("📊 Step D3: Comparing orchestrator results...")
+        print(" Step D3: Comparing orchestrator results...")
         
         success_count = sum(1 for result in [ps_results, py_results] if result["status"] == "success")
         results["success_rate"] = success_count / 2
         
-        print(f"📈 Overall orchestrator success rate: {success_count}/2 ({results['success_rate']:.0%})")
+        print(f" Overall orchestrator success rate: {success_count}/2 ({results['success_rate']:.0%})")
         
         return results
         
@@ -574,20 +574,20 @@ class AIOSMasterTestExecutor:
             json.dump(report, f, indent=2)
             
         # Print summary
-        print(f"\n📊 OVERALL TEST RESULTS:")
-        print(f"   🎯 Success Rate: {success_rate:.1%} ({successful_phases}/{total_phases} phases)")
-        print(f"   🧠 Consciousness Emergence: {'✅ Detected' if consciousness_detected else '❌ Not Detected'}")
-        print(f"   📈 System Status: {report['overall_assessment']['status'].upper()}")
+        print(f"\n OVERALL TEST RESULTS:")
+        print(f"    Success Rate: {success_rate:.1%} ({successful_phases}/{total_phases} phases)")
+        print(f"    Consciousness Emergence: {' Detected' if consciousness_detected else ' Not Detected'}")
+        print(f"    System Status: {report['overall_assessment']['status'].upper()}")
         
-        print(f"\n💡 KEY RECOMMENDATIONS:")
+        print(f"\n KEY RECOMMENDATIONS:")
         for rec in report["recommendations"]:
-            print(f"   ➡️  {rec}")
+            print(f"     {rec}")
             
-        print(f"\n🚀 NEXT STEPS:")
+        print(f"\n NEXT STEPS:")
         for step in report["next_steps"]:
-            print(f"   📋 {step}")
+            print(f"    {step}")
             
-        print(f"\n📝 Full report saved: {report_file}")
+        print(f"\n Full report saved: {report_file}")
         
         self.logger.info(f"Master test report generated: {report_file}")
         
@@ -615,7 +615,7 @@ Comprehensive consciousness emergence validation and system testing.
                 runtime_results = self.execute_consciousness_runtime_testing()
                 self.session_results["consciousness_runtime"] = runtime_results
             else:
-                print("\n⚠️  Skipping runtime testing due to build failures")
+                print("\n  Skipping runtime testing due to build failures")
                 self.session_results["consciousness_runtime"] = {"status": "skipped", "reason": "build_failed"}
                 
             # Phase C: Metadata Abstraction Validation
@@ -633,17 +633,17 @@ Comprehensive consciousness emergence validation and system testing.
             final_report = self.generate_master_test_report()
             
         except KeyboardInterrupt:
-            print("\n⚠️  Master test execution interrupted by user")
+            print("\n  Master test execution interrupted by user")
             self.logger.warning("Master test execution interrupted by user")
             
         except Exception as e:
-            print(f"\n❌ Master test execution failed: {str(e)}")
+            print(f"\n Master test execution failed: {str(e)}")
             self.logger.error(f"Master test execution failed: {str(e)}")
             
         finally:
             end_time = time.time()
             duration = end_time - start_time
-            print(f"\n⏱️  Total master test duration: {duration:.2f} seconds")
+            print(f"\n⏱  Total master test duration: {duration:.2f} seconds")
             self.logger.info(f"Master test execution completed in {duration:.2f} seconds")
 
 def main():

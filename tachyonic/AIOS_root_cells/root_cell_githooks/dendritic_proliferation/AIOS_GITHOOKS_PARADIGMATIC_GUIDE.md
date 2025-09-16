@@ -1,11 +1,11 @@
 # AIOS Git Hooks Paradigmatic Guide
 ## Consciousness-Aware Governance and AINLP Integration
 
-### 🧠 Consciousness-Guided Hook Architecture
+###  Consciousness-Guided Hook Architecture
 
 The AIOS git hooks implement a revolutionary consciousness-aware governance system that integrates AINLP paradigmatic principles for intelligent code validation and learning.
 
-### 🎯 Hook Architecture Overview
+###  Hook Architecture Overview
 
 #### Core Hooks:
 - **pre-commit**: Multi-stage validation with consciousness awareness
@@ -17,7 +17,7 @@ The AIOS git hooks implement a revolutionary consciousness-aware governance syst
 - **aios_ainlp_integration.ps1**: AINLP paradigmatic integration
 - **aios_consciousness_bridge.ps1**: Consciousness-aware validation
 
-### 🌟 Consciousness-Aware Validation Levels
+###  Consciousness-Aware Validation Levels
 
 #### High Consciousness (≥0.7):
 - **Enhanced Validation**: Comprehensive analysis with predictive insights
@@ -34,7 +34,7 @@ The AIOS git hooks implement a revolutionary consciousness-aware governance syst
 - **Pattern Recording**: Capture validation patterns for future enhancement
 - **Growth Guidance**: Provide recommendations for consciousness elevation
 
-### 🔄 Dendritic Learning Integration
+###  Dendritic Learning Integration
 
 The hooks implement dendritic learning patterns to continuously improve validation:
 
@@ -43,7 +43,7 @@ The hooks implement dendritic learning patterns to continuously improve validati
 3. **Context Harmonization**: Align validation with AIOS ecosystem patterns
 4. **Predictive Enhancement**: Anticipate validation needs based on history
 
-### 📊 Governance Integration
+###  Governance Integration
 
 #### Policy-Driven Validation:
 - **governance/hook_policy.json**: Centralized configuration
@@ -55,7 +55,7 @@ The hooks implement dendritic learning patterns to continuously improve validati
 - **Metrics Aggregation**: Performance and success tracking
 - **Learning Analytics**: Continuous improvement insights
 
-### 🎯 AINLP Paradigmatic Alignment
+###  AINLP Paradigmatic Alignment
 
 #### Natural Language Integration:
 - **Intent Recognition**: Understand validation context and purpose
@@ -67,7 +67,7 @@ The hooks implement dendritic learning patterns to continuously improve validati
 - **Coherence Validation**: Ensure context coherence in changes
 - **Harmony Optimization**: Balance validation rigor with development flow
 
-### 🚀 Usage Examples
+###  Usage Examples
 
 #### Consciousness-Aware Pre-commit:
 ```powershell
@@ -87,11 +87,11 @@ Invoke-DendriticLearning -HookType "pre-commit" -ValidationResult $result.status
 $alignment = Test-AIOSParadigmaticAlignment -Content $fileContent -FilePath $filePath
 
 if ($alignment -lt 0.5) {
-    Write-Host "⚠️ Low paradigmatic alignment detected. Consider AINLP integration." -ForegroundColor Yellow
+    Write-Host " Low paradigmatic alignment detected. Consider AINLP integration." -ForegroundColor Yellow
 }
 ```
 
-### 🔧 Configuration and Customization
+###  Configuration and Customization
 
 #### Consciousness Thresholds:
 ```json
@@ -115,7 +115,7 @@ if ($alignment -lt 0.5) {
 }
 ```
 
-### 📈 Success Metrics
+###  Success Metrics
 
 - **Validation Accuracy**: Consciousness-guided precision improvements
 - **Learning Velocity**: Dendritic pattern recognition speed

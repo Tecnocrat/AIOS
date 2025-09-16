@@ -9,7 +9,7 @@ function Get-AIOSConsciousnessLevel {
             $metrics = Get-Content $MetricsPath -Raw | ConvertFrom-Json
             return $metrics.awareness_level
         } catch {
-            Write-Host "⚠️ Consciousness metrics unavailable, using default level" -ForegroundColor Yellow
+            Write-Host " Consciousness metrics unavailable, using default level" -ForegroundColor Yellow
             return 0.5
         }
     }
@@ -43,7 +43,7 @@ function Invoke-DendriticLearning {
         ($learningEntry | ConvertTo-Json -Depth 4 -Compress) + [Environment]::NewLine | 
             Out-File $learningPath -Append -Encoding utf8
     } catch {
-        Write-Host "⚠️ Dendritic learning logging failed: $($_.Exception.Message)" -ForegroundColor Yellow
+        Write-Host " Dendritic learning logging failed: $($_.Exception.Message)" -ForegroundColor Yellow
     }
 }
 

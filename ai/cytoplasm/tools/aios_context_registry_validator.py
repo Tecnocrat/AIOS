@@ -44,7 +44,7 @@ def _create_snapshot_if_needed(live_path: Path):
             ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             snap_name = f".aios_context_snapshot_{ts}.json"
             shutil.copy2(live_path, TACHYONIC_BASE_PATH / snap_name)
-            print(f"🕒 Snapshot created: {snap_name}")
+            print(f" Snapshot created: {snap_name}")
     except Exception as e:
         print(f"[WARN] snapshot creation failed: {e}")
 
@@ -79,7 +79,7 @@ class TachyonicContextIntelligence:
         backup_path = self.tachyonic_path / backup_name
 
         shutil.copy2(self.registry_path, backup_path)
-        print(f"🕐 Tachyonic backup created: {backup_name}")
+        print(f" Tachyonic backup created: {backup_name}")
         return backup_name
 
     def analyze_file_nested_logic(self, file_path: Path) -> Dict[str, Any]:
@@ -242,7 +242,7 @@ class TachyonicContextIntelligence:
         Perform full namespace analysis and update context registry
         with tachyonic backup creation
         """
-        print("🧠 Starting Tachyonic Context Intelligence Analysis...")
+        print(" Starting Tachyonic Context Intelligence Analysis...")
         
         # Create tachyonic backup
         backup_name = self.create_tachyonic_backup()
@@ -257,13 +257,13 @@ class TachyonicContextIntelligence:
             _write_json_atomic(self.registry_path, updated_registry)
             
             print(
-                "✅ Context registry updated with consciousness intelligence"
+                " Context registry updated with consciousness intelligence"
             )
-            print(f"📁 Tachyonic backup: {backup_name}")
+            print(f" Tachyonic backup: {backup_name}")
             return True
             
         except Exception as e:
-            print(f"❌ Context update failed: {e}")
+            print(f" Context update failed: {e}")
             return False
     
     def _perform_full_namespace_analysis(self) -> Dict[str, Any]:
@@ -584,7 +584,7 @@ def main():
         )
     else:
         # Run enhanced tachyonic context intelligence
-        print("\n🌌 Launching Tachyonic Context Intelligence System...")
+        print("\n Launching Tachyonic Context Intelligence System...")
         tachyonic_system = TachyonicContextIntelligence()
         tachyonic_system.update_context_registry()
 

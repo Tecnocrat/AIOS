@@ -46,7 +46,7 @@ class MaintenanceOrchestrator:
         Returns:
             Dict containing comprehensive optimization results
         """
-        print("🚀 Initiating AIOS Tachyonic Optimization...")
+        print(" Initiating AIOS Tachyonic Optimization...")
 
         optimization_result = {
             "session_id": datetime.now().strftime("%Y%m%d_%H%M%S"),
@@ -59,12 +59,12 @@ class MaintenanceOrchestrator:
 
         try:
             # Execute garbage collection cycle
-            print("📊 Running comprehensive optimization cycle...")
+            print(" Running comprehensive optimization cycle...")
             gc_result = self.garbage_collector.run_full_optimization()
             optimization_result["phases"]["garbage_collection"] = gc_result
 
             # Verify system integrity
-            print("🔍 Verifying system integrity...")
+            print(" Verifying system integrity...")
             integrity_result = self.garbage_collector.verify_integrity()
             optimization_result["phases"]["integrity_verification"] = integrity_result
 
@@ -80,17 +80,17 @@ class MaintenanceOrchestrator:
                 integrity_result
             )
 
-            print("✅ Optimization complete!")
+            print(" Optimization complete!")
 
         except Exception as e:
             optimization_result["error"] = str(e)
-            print(f"❌ Optimization failed: {e}")
+            print(f" Optimization failed: {e}")
 
         # Save report if requested
         if save_report:
             report_path = self._save_optimization_report(optimization_result)
             optimization_result["report_path"] = str(report_path)
-            print(f"📄 Report saved: {report_path}")
+            print(f" Report saved: {report_path}")
 
         return optimization_result
 
@@ -103,7 +103,7 @@ class MaintenanceOrchestrator:
         Returns:
             Dict containing quick optimization results
         """
-        print("⚡ Running AIOS Quick Optimization...")
+        print(" Running AIOS Quick Optimization...")
 
         start_time = datetime.now()
         results = {
@@ -114,7 +114,7 @@ class MaintenanceOrchestrator:
 
         try:
             # Step 1: Quick documentation analysis
-            print("📊 Analyzing documentation structure...")
+            print(" Analyzing documentation structure...")
             analysis = self.optimizer.analyze_documentation_structure()
             results["steps"].append({
                 "step": "analysis",
@@ -124,7 +124,7 @@ class MaintenanceOrchestrator:
 
             # Step 2: Light optimization (only if needed)
             if analysis.get('fragmentation_score', 0) > 0.3:
-                print("🔧 Running lightweight optimization...")
+                print(" Running lightweight optimization...")
                 opt_result = self.optimizer.optimize_with_minimal_changes()
                 results["steps"].append({
                     "step": "optimization",
@@ -132,7 +132,7 @@ class MaintenanceOrchestrator:
                     "details": f"Optimized {opt_result.get('files_processed', 0)} files"
                 })
             else:
-                print("✅ Documentation already optimized")
+                print(" Documentation already optimized")
                 results["steps"].append({
                     "step": "optimization",
                     "status": "skipped",
@@ -140,7 +140,7 @@ class MaintenanceOrchestrator:
                 })
 
             # Step 3: Update metadata
-            print("📝 Updating system metadata...")
+            print(" Updating system metadata...")
             metadata = self._update_maintenance_metadata("quick_optimization")
             results["steps"].append({
                 "step": "metadata_update",
@@ -159,7 +159,7 @@ class MaintenanceOrchestrator:
                 "message": f"Quick optimization completed in {duration:.1f} seconds"
             })
 
-            print(f"✅ Quick optimization completed in {duration:.1f} seconds")
+            print(f" Quick optimization completed in {duration:.1f} seconds")
             return results
 
         except Exception as e:
@@ -174,7 +174,7 @@ class MaintenanceOrchestrator:
                 "message": f"Quick optimization failed: {str(e)}"
             })
 
-            print(f"❌ Quick optimization failed: {e}")
+            print(f" Quick optimization failed: {e}")
             return results
 
     def quick_analysis(self) -> Dict:
@@ -184,7 +184,7 @@ class MaintenanceOrchestrator:
         Returns:
             Dict containing analysis results
         """
-        print("🔍 Running quick system analysis...")
+        print(" Running quick system analysis...")
 
         analysis_result = {
             "timestamp": datetime.now().isoformat(),
@@ -218,7 +218,7 @@ class MaintenanceOrchestrator:
                 "Documentation structure is optimal. System is well-maintained."
             )
 
-        print("✅ Analysis complete!")
+        print(" Analysis complete!")
         return analysis_result
 
     def search_archives(self, query: str, category: Optional[str] = None) -> Dict:
@@ -232,7 +232,7 @@ class MaintenanceOrchestrator:
         Returns:
             Dict containing search results
         """
-        print(f"🔍 Searching archives for: {query}")
+        print(f" Searching archives for: {query}")
 
         search_results = self.archiver.search_archive(query, category)
 
@@ -244,7 +244,7 @@ class MaintenanceOrchestrator:
             "results": search_results
         }
 
-        print(f"📋 Found {len(search_results)} matching documents")
+        print(f" Found {len(search_results)} matching documents")
         return result
 
     def restore_from_archive(self, content_hash: str,
@@ -259,7 +259,7 @@ class MaintenanceOrchestrator:
         Returns:
             Dict containing restoration result
         """
-        print(f"🔄 Restoring content: {content_hash[:8]}...")
+        print(f" Restoring content: {content_hash[:8]}...")
 
         content = self.archiver.retrieve_content(content_hash)
 
@@ -277,7 +277,7 @@ class MaintenanceOrchestrator:
             with open(restore_path, 'w', encoding='utf-8') as f:
                 f.write(content)
 
-            print(f"✅ Content restored to: {restore_path}")
+            print(f" Content restored to: {restore_path}")
 
             return {
                 "success": True,
@@ -349,15 +349,15 @@ class MaintenanceOrchestrator:
 
         if integrity_status == "optimal":
             recommendations.append(
-                "✅ System is in optimal state. Maintain current structure."
+                " System is in optimal state. Maintain current structure."
             )
         elif integrity_status == "acceptable":
             recommendations.append(
-                "⚠️ System is acceptable but could be improved. Monitor closely."
+                " System is acceptable but could be improved. Monitor closely."
             )
         else:
             recommendations.append(
-                "❌ System needs attention. Consider manual review."
+                " System needs attention. Consider manual review."
             )
 
         # Check fragmentation
@@ -366,11 +366,11 @@ class MaintenanceOrchestrator:
 
         if fragmentation < 0.1:
             recommendations.append(
-                "📚 Documentation structure is perfectly optimized."
+                " Documentation structure is perfectly optimized."
             )
         elif fragmentation > 0.5:
             recommendations.append(
-                "📚 Consider running additional optimization cycles."
+                " Consider running additional optimization cycles."
             )
 
         return recommendations

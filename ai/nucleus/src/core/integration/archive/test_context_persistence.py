@@ -43,37 +43,37 @@ class VSCodeExtensionContextTest:
         }
 
         # Test 1: Basic Context Health Check
-        print("\n📋 Test 1: Basic Context Health Check")
+        print("\n Test 1: Basic Context Health Check")
         health_result = self.test_basic_context_health()
         test_results["tests"].append(health_result)
 
         # Test 2: Context Loss Detection
-        print("\n🚨 Test 2: Context Loss Detection")
+        print("\n Test 2: Context Loss Detection")
         loss_result = self.test_context_loss_detection()
         test_results["tests"].append(loss_result)
 
         # Test 3: Context Recovery Process
-        print("\n🔧 Test 3: Context Recovery Process")
+        print("\n Test 3: Context Recovery Process")
         recovery_result = self.test_context_recovery()
         test_results["tests"].append(recovery_result)
 
         # Test 4: Cross-Component Synchronization
-        print("\n🔄 Test 4: Cross-Component Synchronization")
+        print("\n Test 4: Cross-Component Synchronization")
         sync_result = self.test_cross_component_sync()
         test_results["tests"].append(sync_result)
 
         # Test 5: VSCode Extension Bridge
-        print("\n🌉 Test 5: VSCode Extension Bridge")
+        print("\n Test 5: VSCode Extension Bridge")
         bridge_result = self.test_vscode_extension_bridge()
         test_results["tests"].append(bridge_result)
 
         # Test 6: AI Integration Context Persistence
-        print("\n🤖 Test 6: AI Integration Context Persistence")
+        print("\n Test 6: AI Integration Context Persistence")
         ai_result = self.test_ai_integration_context()
         test_results["tests"].append(ai_result)
 
         # Test 7: Fractal Holographic Memory
-        print("\n🧠 Test 7: Fractal Holographic Memory")
+        print("\n Test 7: Fractal Holographic Memory")
         memory_result = self.test_fractal_holographic_memory()
         test_results["tests"].append(memory_result)
 
@@ -83,7 +83,7 @@ class VSCodeExtensionContextTest:
         test_results[
         "context_health"] = self.recovery_system.calculate_context_health()
 
-        print(f"\n📊 Test Results Summary:")
+        print(f"\n Test Results Summary:")
         print(f"   Total Tests: {len(test_results['tests'])}")
         print(f"   Passed: {len(test_results['tests']) - len(failed_tests)}")
         print(f"   Failed: {len(failed_tests)}")
@@ -106,7 +106,7 @@ class VSCodeExtensionContextTest:
             assert not
              health_bad.is_healthy(), "Degraded context should be detected"
 
-            print("   ✅ Basic context health monitoring works correctly")
+            print("    Basic context health monitoring works correctly")
             return {
                 "name": "Basic Context Health",
                 "success": True,
@@ -116,7 +116,7 @@ class VSCodeExtensionContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Basic context health test failed: {e}")
+            print(f"    Basic context health test failed: {e}")
             return {
                 "name": "Basic Context Health",
                 "success": False,
@@ -149,9 +149,9 @@ class VSCodeExtensionContextTest:
             result["detected"] for result in detection_results)
 
             if all_detected:
-                print("   ✅ Context loss detection works for all test phrases")
+                print("    Context loss detection works for all test phrases")
             else:
-                print("   ⚠️  Some context loss phrases not detected")
+                print("     Some context loss phrases not detected")
 
             return {
                 "name": "Context Loss Detection",
@@ -164,7 +164,7 @@ class VSCodeExtensionContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Context loss detection test failed: {e}")
+            print(f"    Context loss detection test failed: {e}")
             return {
                 "name": "Context Loss Detection",
                 "success": False,
@@ -185,7 +185,7 @@ class VSCodeExtensionContextTest:
             # Check if iteration count was reset
             assert self.recovery_system.iteration_count == 0
 
-            print("   ✅ Context recovery process executed successfully")
+            print("    Context recovery process executed successfully")
             return {
                 "name": "Context Recovery Process",
                 "success": True,
@@ -195,7 +195,7 @@ class VSCodeExtensionContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Context recovery test failed: {e}")
+            print(f"    Context recovery test failed: {e}")
             return {
                 "name": "Context Recovery Process",
                 "success": False,
@@ -228,7 +228,7 @@ class VSCodeExtensionContextTest:
             assert 0.0 <= coherence <= 1.0
 
             print(
-            f"   ✅ Cross-component sync successful (coherence: {coherence:.3f})")
+            f"    Cross-component sync successful (coherence: {coherence:.3f})")
             return {
                 "name": "Cross-Component Synchronization",
                 "success": True,
@@ -238,7 +238,7 @@ class VSCodeExtensionContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Cross-component sync test failed: {e}")
+            print(f"    Cross-component sync test failed: {e}")
             return {
                 "name": "Cross-Component Synchronization",
                 "success": False,
@@ -262,7 +262,7 @@ class VSCodeExtensionContextTest:
             sync_success = self.simulate_context_sync_with_extension(
             context_data)
 
-            print(f"   ✅ VSCode extension bridge test completed")
+            print(f"    VSCode extension bridge test completed")
             return {
                 "name": "VSCode Extension Bridge",
                 "success": True,
@@ -273,7 +273,7 @@ class VSCodeExtensionContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ VSCode extension bridge test failed: {e}")
+            print(f"    VSCode extension bridge test failed: {e}")
             return {
                 "name": "VSCode Extension Bridge",
                 "success": False,
@@ -301,7 +301,7 @@ class VSCodeExtensionContextTest:
             context_maintained = all(r["context_aware"] for r in ai_results)
 
             print(
-            f"   ✅ AI integration context persistence: {len(ai_results)} queries processed")
+            f"    AI integration context persistence: {len(ai_results)} queries processed")
             return {
                 "name": "AI Integration Context Persistence",
                 "success": context_maintained,
@@ -313,7 +313,7 @@ class VSCodeExtensionContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ AI integration context test failed: {e}")
+            print(f"    AI integration context test failed: {e}")
             return {
                 "name": "AI Integration Context Persistence",
                 "success": False,
@@ -344,7 +344,7 @@ class VSCodeExtensionContextTest:
             r["success"] for r in memory_results) and sync_result
 
             print(
-            f"   ✅ Fractal holographic memory: {len(memory_results)} allocations tested")
+            f"    Fractal holographic memory: {len(memory_results)} allocations tested")
             return {
                 "name": "Fractal Holographic Memory",
                 "success": all_success,
@@ -355,7 +355,7 @@ class VSCodeExtensionContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Fractal holographic memory test failed: {e}")
+            print(f"    Fractal holographic memory test failed: {e}")
             return {
                 "name": "Fractal Holographic Memory",
                 "success": False,
@@ -399,7 +399,7 @@ class VSCodeExtensionContextTest:
 
 async def run_extended_context_test():
     """Run extended context persistence test"""
-    print("🔬 Extended Context Persistence Test")
+    print(" Extended Context Persistence Test")
     print("=" * 40)
 
     # Test with context recovery system
@@ -407,11 +407,11 @@ async def run_extended_context_test():
     results = test_system.run_context_persistence_tests()
 
     # Test real-time context updates
-    print("\n🔄 Real-time Context Updates Test")
+    print("\n Real-time Context Updates Test")
     await test_real_time_context_updates()
 
     # Test persistence across sessions
-    print("\n💾 Cross-Session Persistence Test")
+    print("\n Cross-Session Persistence Test")
     await test_cross_session_persistence()
 
     return results
@@ -419,19 +419,19 @@ async def run_extended_context_test():
 
 async def test_real_time_context_updates():
     """Test real-time context updates"""
-    print("   🔄 Testing real-time context updates...")
+    print("    Testing real-time context updates...")
 
     # Simulate context updates over time
     for i in range(5):
         print(f"   Update {i+1}: Context coherence = {0.8 + i * 0.02:.3f}")
         await asyncio.sleep(0.5)
 
-    print("   ✅ Real-time context updates working")
+    print("    Real-time context updates working")
 
 
 async def test_cross_session_persistence():
     """Test context persistence across sessions"""
-    print("   💾 Testing cross-session persistence...")
+    print("    Testing cross-session persistence...")
 
     # Simulate session data
     session_data = {
@@ -442,13 +442,13 @@ async def test_cross_session_persistence():
     }
 
     # Simulate saving and loading context
-    print(f"   📝 Saving session: {session_data['session_id']}")
+    print(f"    Saving session: {session_data['session_id']}")
     await asyncio.sleep(0.2)
 
-    print(f"   📖 Loading session: {session_data['session_id']}")
+    print(f"    Loading session: {session_data['session_id']}")
     await asyncio.sleep(0.2)
 
-    print("   ✅ Cross-session persistence working")
+    print("    Cross-session persistence working")
 
 
 def main():
@@ -464,27 +464,27 @@ def main():
         results = test_system.run_context_persistence_tests()
 
         # Run asynchronous tests
-        print("\n🚀 Running Extended Tests...")
+        print("\n Running Extended Tests...")
         asyncio.run(run_extended_context_test())
 
         # Final summary
-        print("\n📊 Final Test Summary")
+        print("\n Final Test Summary")
         print("=" * 30)
-        print(f"✅ All context persistence tests completed")
-        print(f"🔄 Real-time synchronization: Active")
-        print(f"🌉 VSCode extension bridge: Ready")
-        print(f"🤖 AI integration: Context-aware")
-        print(f"🧠 Holographic memory: Operational")
+        print(f" All context persistence tests completed")
+        print(f" Real-time synchronization: Active")
+        print(f" VSCode extension bridge: Ready")
+        print(f" AI integration: Context-aware")
+        print(f" Holographic memory: Operational")
         print(
-        f"📈 Overall system coherence: {results.get('context_health', {}).get('score', 0.85):.3f}")
+        f" Overall system coherence: {results.get('context_health', {}).get('score', 0.85):.3f}")
 
         return results
 
     except Exception as e:
-        print(f"❌ Test suite failed: {e}")
+        print(f" Test suite failed: {e}")
         return {"error": str(e), "success": False}
 
 
 if __name__ == "__main__":
     results = main()
-    print(f"\n🎯 Test Results: {json.dumps(results, indent=2, default=str)}")
+    print(f"\n Test Results: {json.dumps(results, indent=2, default=str)}")

@@ -16,8 +16,8 @@ def main():
     """Main integration function."""
     workspace_root = Path(__file__).parent.parent.parent
 
-    print("🚀 Integrating AIOS Maintenance System...")
-    print(f"📁 Workspace: {workspace_root}")
+    print(" Integrating AIOS Maintenance System...")
+    print(f" Workspace: {workspace_root}")
 
     # Step 1: Clean up temporary scripts from root
     cleanup_temp_scripts(workspace_root)
@@ -28,8 +28,8 @@ def main():
     # Step 3: Test the new system
     test_maintenance_system(workspace_root)
 
-    print("✅ Integration complete!")
-    print("\n🎯 Next Steps:")
+    print(" Integration complete!")
+    print("\n Next Steps:")
     print("1. Use 'python ai/scripts/maintenance_cli.py' for maintenance operations")
     print("2. Update documentation to reference new maintenance workflow")
     print("3. Future utility scripts should be created in ai/src/maintenance/")
@@ -59,19 +59,19 @@ def cleanup_temp_scripts(workspace_root: Path):
                 if file_path.is_file():
                     file_path.unlink()
                     removed_files.append(str(file_path.name))
-                    print(f"  ❌ Removed: {file_path.name}")
+                    print(f"   Removed: {file_path.name}")
             except Exception as e:
-                print(f"  ⚠️ Error removing {file_path}: {e}")
+                print(f"   Error removing {file_path}: {e}")
 
     if removed_files:
-        print(f"📋 Removed {len(removed_files)} temporary files")
+        print(f" Removed {len(removed_files)} temporary files")
     else:
-        print("✅ No temporary files found")
+        print(" No temporary files found")
 
 
 def verify_maintenance_module(workspace_root: Path):
     """Verify the maintenance module is properly set up."""
-    print("\n🔍 Verifying maintenance module...")
+    print("\n Verifying maintenance module...")
 
     maintenance_path = workspace_root / "ai" / "src" / "maintenance"
     required_files = [
@@ -89,21 +89,21 @@ def verify_maintenance_module(workspace_root: Path):
         if not file_path.exists():
             missing_files.append(file_name)
         else:
-            print(f"  ✅ {file_name}")
+            print(f"   {file_name}")
 
     if missing_files:
-        print(f"❌ Missing files: {', '.join(missing_files)}")
+        print(f" Missing files: {', '.join(missing_files)}")
         return False
 
     # Check CLI script
     cli_path = workspace_root / "ai" / "scripts" / "maintenance_cli.py"
     if cli_path.exists():
-        print("  ✅ maintenance_cli.py")
+        print("   maintenance_cli.py")
     else:
-        print("  ❌ maintenance_cli.py missing")
+        print("   maintenance_cli.py missing")
         return False
 
-    print("✅ Maintenance module is complete")
+    print(" Maintenance module is complete")
     return True
 
 
@@ -125,23 +125,23 @@ def test_maintenance_system(workspace_root: Path):
         result = orchestrator.quick_analysis()
 
         if "documentation_analysis" in result:
-            print("✅ Maintenance system is functional")
+            print(" Maintenance system is functional")
 
             # Print quick stats
             doc_analysis = result["documentation_analysis"]
-            print(f"  📄 Documentation files: {doc_analysis.get('total_files', 0)}")
-            print(f"  📊 Fragmentation: {doc_analysis.get('fragmentation_score', 1.0):.3f}")
+            print(f"   Documentation files: {doc_analysis.get('total_files', 0)}")
+            print(f"   Fragmentation: {doc_analysis.get('fragmentation_score', 1.0):.3f}")
 
             archive_stats = result["archive_status"]
-            print(f"  🗄️ Archived documents: {archive_stats.get('total_documents', 0)}")
+            print(f"   Archived documents: {archive_stats.get('total_documents', 0)}")
 
             return True
         else:
-            print("❌ Maintenance system test failed")
+            print(" Maintenance system test failed")
             return False
 
     except Exception as e:
-        print(f"❌ Maintenance system test error: {e}")
+        print(f" Maintenance system test error: {e}")
         return False
 
 
