@@ -1,4 +1,4 @@
-# 🧠🔧⚡ AIOS COMPONENTS MODULE
+#  AIOS COMPONENTS MODULE
 
 **Organized collection of AIOS-specific components**
 

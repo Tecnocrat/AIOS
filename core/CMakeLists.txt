@@ -8,18 +8,38 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Include directories
 include_directories(include)
 include_directories(src)
+include_directories(../orchestrator/include)
 
 # Add subdirectories
 add_subdirectory(src)
+
+# Include consciousness engine components
+include(consciousness.cmake)
 
 # Main executable
 add_executable(aios_core
     src/main.cpp
 )
 
+# Consciousness test executable
+add_executable(consciousness_test
+    consciousness_test.cpp
+)
+
+# Find threading support
+find_package(Threads REQUIRED)
+
 # Link libraries
 target_link_libraries(aios_core
-    ${CMAKE_THREAD_LIBS_INIT}
+    aios_core_lib
+    aios_consciousness_engine
+    Threads::Threads
+)
+
+target_link_libraries(consciousness_test
+    aios_core_lib
+    aios_consciousness_engine
+    Threads::Threads
 )
 
 # Platform-specific settings

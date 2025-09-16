@@ -104,12 +104,12 @@ class DebugIntegrationSystem:
             session_type = DebugSessionType.STANDARD
 
         try:
-            print(f"\n🐛 Starting Debug Session: {debug_target}")
+            print(f"\n Starting Debug Session: {debug_target}")
 
             # Create debug context snapshot
             snapshot = await self._create_debug_snapshot(debug_target,
                                                          description)
-            print(f"✅ Debug snapshot created: {snapshot.id}")
+            print(f" Debug snapshot created: {snapshot.id}")
 
             # Initialize debug session
             session = DebugSession(
@@ -124,9 +124,9 @@ class DebugIntegrationSystem:
             # Update system context
             await self._update_debug_mode(True, session.id)
 
-            print(f"🔧 Debug session active: {session.id}")
-            print(f"📋 Session type: {session_type.value}")
-            print(f"🎯 Target: {debug_target}")
+            print(f" Debug session active: {session.id}")
+            print(f" Session type: {session_type.value}")
+            print(f" Target: {debug_target}")
 
             return session
 
@@ -145,8 +145,8 @@ class DebugIntegrationSystem:
         session = self.active_sessions[session_id]
         findings = debug_findings or []
 
-        print(f"\n🔄 Completing Debug Session: {session_id}")
-        print(f"📊 Debug findings: {len(findings)} items")
+        print(f"\n Completing Debug Session: {session_id}")
+        print(f" Debug findings: {len(findings)} items")
 
         try:
             # Update session
@@ -158,15 +158,15 @@ class DebugIntegrationSystem:
 
             # Restore context if requested
             if restore_context and session.snapshot_id:
-                print("🔧 Restoring pre-debug context...")
+                print(" Restoring pre-debug context...")
                 recovery_result = await self._restore_debug_context(
                     session.snapshot_id, findings
                 )
 
                 if recovery_result.success:
-                    print("✅ Context restored successfully")
+                    print(" Context restored successfully")
                 else:
-                    print(f"❌ Context restoration failed: "
+                    print(f" Context restoration failed: "
                           f"{recovery_result.error}")
 
             # Complete session
@@ -177,7 +177,7 @@ class DebugIntegrationSystem:
             # Update system context
             await self._update_debug_mode(False, None)
 
-            print(f"🎉 Debug session completed: {session_id}")
+            print(f" Debug session completed: {session_id}")
 
             return recovery_result or DebugRecoveryResult(
                 snapshot_id=session.snapshot_id,
@@ -554,7 +554,7 @@ class DebugSessionError(Exception):
 # Example usage and testing
 async def demo_debug_integration():
     """Demonstrate debug integration capabilities"""
-    print("🌟 AIOS Debug Integration System Demo")
+    print(" AIOS Debug Integration System Demo")
     print("=" * 50)
 
     # Mock dependencies for demo
@@ -563,20 +563,20 @@ async def demo_debug_integration():
             return {"coherence": 0.85, "learning_state": {"patterns": 42}}
 
         async def restore_state(self, state):
-            print(f"   🔧 Restoring fractal AI state: {state}")
+            print(f"    Restoring fractal AI state: {state}")
 
         async def integrate_learning(self, learning):
-            print(f"   🧠 Integrating debug learning: {learning}")
+            print(f"    Integrating debug learning: {learning}")
 
     class MockHolographicSync:
         async def get_sync_state(self):
             return {"components": 5, "sync_health": 0.92}
 
         async def restore_sync_state(self, state):
-            print(f"   🔄 Restoring holographic sync: {state}")
+            print(f"    Restoring holographic sync: {state}")
 
         async def update_context(self, key, value):
-            print(f"   📝 Context update: {key} = {value}")
+            print(f"    Context update: {key} = {value}")
 
     class MockContextRecovery:
         async def check_context_health(self):
@@ -594,7 +594,7 @@ async def demo_debug_integration():
 
     try:
         # Demo 1: Start debug session
-        print("\n📋 Demo 1: Starting Debug Session")
+        print("\n Demo 1: Starting Debug Session")
         session = await debug_system.start_debug_session(
             "context_persistence_ui",
             "Investigating context loss in UI component",
@@ -602,12 +602,12 @@ async def demo_debug_integration():
         )
 
         # Demo 2: Check status
-        print("\n📊 Demo 2: Debug Session Status")
+        print("\n Demo 2: Debug Session Status")
         status = await debug_system.get_debug_session_status(session.id)
         print(f"Status: {json.dumps(status, indent=2)}")
 
         # Demo 3: Process debug commands
-        print("\n🎮 Demo 3: Processing Debug Commands")
+        print("\n Demo 3: Processing Debug Commands")
         commands = [
             "Save debug context for memory leak investigation",
             "Start debugging the fractal synchronization module",
@@ -621,7 +621,7 @@ async def demo_debug_integration():
             print(f"Result: {json.dumps(result, indent=2)}")
 
         # Demo 4: Complete session
-        print("\n🔄 Demo 4: Completing Debug Session")
+        print("\n Demo 4: Completing Debug Session")
         findings = [
             "Context loss occurs during UI refresh",
             "Memory leak in holographic display component",
@@ -635,7 +635,7 @@ async def demo_debug_integration():
         print(f"Recovery result: {recovery.success}")
         print(f"Steps executed: {recovery.steps_executed}")
 
-        print("\n✅ Debug Integration Demo Complete!")
+        print("\n Debug Integration Demo Complete!")
 
     finally:
         debug_system.shutdown()

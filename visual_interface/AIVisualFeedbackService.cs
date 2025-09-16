@@ -43,7 +43,7 @@ namespace AIOS.VisualInterface
             // Initialize capture timer (500ms intervals)
             _captureTimer = new Timer(CaptureScreenshotCallback, null, Timeout.Infinite, 500);
             
-            _logger.LogInformation("🔍 AI Visual Feedback Service initialized - Ready for agentic stimulation");
+            _logger.LogInformation(" AI Visual Feedback Service initialized - Ready for agentic stimulation");
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace AIOS.VisualInterface
                 JsonSerializer.Serialize(sessionMetadata, new JsonSerializerOptions { WriteIndented = true })
             );
             
-            _logger.LogInformation("📸 AI Visual Capture Started - Agentic feedback loop active");
+            _logger.LogInformation(" AI Visual Capture Started - Agentic feedback loop active");
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace AIOS.VisualInterface
                 JsonSerializer.Serialize(sessionSummary, new JsonSerializerOptions { WriteIndented = true })
             );
             
-            _logger.LogInformation("🛑 AI Visual Capture Stopped - {Frames} frames captured", _frameCounter);
+            _logger.LogInformation(" AI Visual Capture Stopped - {Frames} frames captured", _frameCounter);
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace AIOS.VisualInterface
                 // Log every 10 frames to avoid spam
                 if (_frameCounter % 10 == 0)
                 {
-                    _logger.LogDebug("📸 AI Visual Feedback: Frame {Frame} captured", _frameCounter);
+                    _logger.LogDebug(" AI Visual Feedback: Frame {Frame} captured", _frameCounter);
                 }
             }
             catch (Exception ex)
@@ -236,7 +236,7 @@ namespace AIOS.VisualInterface
             var objectiveFile = Path.Combine(_aiStateDirectory, $"objective_{Guid.NewGuid():N}.json");
             File.WriteAllText(objectiveFile, JsonSerializer.Serialize(objectiveData, new JsonSerializerOptions { WriteIndented = true }));
 
-            _logger.LogInformation("🎯 AI Objective Registered: {Objective}", objective);
+            _logger.LogInformation(" AI Objective Registered: {Objective}", objective);
         }
 
         public void Dispose()
@@ -247,7 +247,7 @@ namespace AIOS.VisualInterface
             _captureTimer?.Dispose();
             _disposed = true;
 
-            _logger.LogInformation("🔍 AI Visual Feedback Service disposed");
+            _logger.LogInformation(" AI Visual Feedback Service disposed");
         }
     }
 }

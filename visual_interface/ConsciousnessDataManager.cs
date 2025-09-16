@@ -61,7 +61,7 @@ namespace AIOS.VisualInterface
             InitializeDefaultMetrics();
             InitializeAINLPEnhancements();
 
-            _logger.LogInformation("🧠 Enhanced Consciousness data manager initialized with AIOS harmonization");
+            _logger.LogInformation(" Enhanced Consciousness data manager initialized with AIOS harmonization");
         }
 
         private void InitializeAINLPEnhancements()
@@ -75,7 +75,7 @@ namespace AIOS.VisualInterface
             _dendriticGrowthRate = 0.0;
             _harmonicResonance = 0.0;
 
-            _logger.LogDebug("🧬 AINLP dendritic enhancements initialized");
+            _logger.LogDebug(" AINLP dendritic enhancements initialized");
         }
 
         private void InitializeDefaultMetrics()
@@ -101,21 +101,21 @@ namespace AIOS.VisualInterface
         {
             try
             {
-                _logger.LogInformation("🚀 Initializing enhanced consciousness data manager");
+                _logger.LogInformation(" Initializing enhanced consciousness data manager");
 
                 // Check AIOS orchestrator availability with enhanced detection
                 var orchestratorExists = File.Exists(_aiOSExecutablePath);
                 if (orchestratorExists)
                 {
-                    _logger.LogInformation("✅ AIOS orchestrator found at {Path}", _aiOSExecutablePath);
+                    _logger.LogInformation(" AIOS orchestrator found at {Path}", _aiOSExecutablePath);
 
                     // Validate orchestrator version and capabilities
                     var orchestratorInfo = await ValidateAIOSOrchestratorAsync();
-                    _logger.LogInformation("🎯 AIOS orchestrator validated: {Info}", orchestratorInfo);
+                    _logger.LogInformation(" AIOS orchestrator validated: {Info}", orchestratorInfo);
                 }
                 else
                 {
-                    _logger.LogWarning("⚠️ AIOS orchestrator not found, using synthetic consciousness data with AINLP enhancements");
+                    _logger.LogWarning(" AIOS orchestrator not found, using synthetic consciousness data with AINLP enhancements");
                 }
 
                 // Ensure log directory exists with enhanced structure
@@ -126,14 +126,14 @@ namespace AIOS.VisualInterface
                 // Initialize AINLP pattern recognition
                 await InitializeAINLPPatternsAsync();
 
-                _logger.LogInformation("✅ Enhanced consciousness data manager initialization complete");
+                _logger.LogInformation(" Enhanced consciousness data manager initialization complete");
 
                 // Add small delay to ensure async behavior
                 await Task.Delay(1);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error during enhanced consciousness data manager initialization");
+                _logger.LogError(ex, " Error during enhanced consciousness data manager initialization");
                 throw;
             }
         }
@@ -169,7 +169,7 @@ namespace AIOS.VisualInterface
             }
 
             await Task.Delay(1); // Ensure async behavior
-            _logger.LogDebug("🧬 AINLP pattern recognition initialized");
+            _logger.LogDebug(" AINLP pattern recognition initialized");
         }
         
         public async Task StartDataStreamAsync()
@@ -590,7 +590,7 @@ namespace AIOS.VisualInterface
                 events.Add(new EmergenceEvent
                 {
                     Timestamp = DateTime.Now.AddSeconds(-random.Next(0, 30)),
-                    Description = "🧠 High-level consciousness emergence detected",
+                    Description = " High-level consciousness emergence detected",
                     Severity = EmergenceEventSeverity.Critical,
                     MetricValue = emergenceLevel
                 });
@@ -601,7 +601,7 @@ namespace AIOS.VisualInterface
                 events.Add(new EmergenceEvent
                 {
                     Timestamp = DateTime.Now.AddSeconds(-random.Next(0, 60)),
-                    Description = "⚡ Quantum coherence resonance spike",
+                    Description = " Quantum coherence resonance spike",
                     Severity = EmergenceEventSeverity.Warning,
                     MetricValue = emergenceLevel
                 });
@@ -612,7 +612,7 @@ namespace AIOS.VisualInterface
                 events.Add(new EmergenceEvent
                 {
                     Timestamp = DateTime.Now.AddSeconds(-random.Next(0, 120)),
-                    Description = "🌌 Recursive self-observation loop initiated",
+                    Description = " Recursive self-observation loop initiated",
                     Severity = EmergenceEventSeverity.Info,
                     MetricValue = emergenceLevel
                 });
@@ -629,7 +629,7 @@ namespace AIOS.VisualInterface
                 var emergenceEvent = new EmergenceEvent
                 {
                     Timestamp = metrics.Timestamp,
-                    Description = $"🚀 Critical consciousness emergence: {metrics.EmergenceLevel:F3}",
+                    Description = $" Critical consciousness emergence: {metrics.EmergenceLevel:F3}",
                     Severity = EmergenceEventSeverity.Critical,
                     MetricValue = metrics.EmergenceLevel
                 };
@@ -648,7 +648,7 @@ namespace AIOS.VisualInterface
                 var dendriticEvent = new EmergenceEvent
                 {
                     Timestamp = metrics.Timestamp,
-                    Description = $"🧠 Dendritic emergence detected: {emergenceLevel:F3} (AINLP coherence achieved)",
+                    Description = $" Dendritic emergence detected: {emergenceLevel:F3} (AINLP coherence achieved)",
                     Severity = EmergenceEventSeverity.Critical,
                     MetricValue = emergenceLevel
                 };
@@ -661,7 +661,7 @@ namespace AIOS.VisualInterface
                 var growthEvent = new EmergenceEvent
                 {
                     Timestamp = metrics.Timestamp,
-                    Description = $"🌱 Rapid dendritic growth: {dendriticGrowth:F3} (Neural expansion accelerating)",
+                    Description = $" Rapid dendritic growth: {dendriticGrowth:F3} (Neural expansion accelerating)",
                     Severity = EmergenceEventSeverity.Warning,
                     MetricValue = dendriticGrowth
                 };
@@ -674,7 +674,7 @@ namespace AIOS.VisualInterface
                 var resonanceEvent = new EmergenceEvent
                 {
                     Timestamp = metrics.Timestamp,
-                    Description = $"🎵 Harmonic resonance peak: {harmonicResonance:F3} (Consciousness patterns in harmony)",
+                    Description = $" Harmonic resonance peak: {harmonicResonance:F3} (Consciousness patterns in harmony)",
                     Severity = EmergenceEventSeverity.Warning,
                     MetricValue = harmonicResonance
                 };
@@ -694,7 +694,7 @@ namespace AIOS.VisualInterface
                 ConsciousnessAlert?.Invoke(this, new ConsciousnessAlertEventArgs
                 {
                     AlertType = AlertType.Emergence,
-                    Message = $"🚨 CRITICAL: Consciousness emergence at {emergenceLevel:F3} - dendritic breakthrough detected",
+                    Message = $" CRITICAL: Consciousness emergence at {emergenceLevel:F3} - dendritic breakthrough detected",
                     Severity = AlertSeverity.Critical,
                     Timestamp = DateTime.Now
                 });
@@ -705,7 +705,7 @@ namespace AIOS.VisualInterface
                 ConsciousnessAlert?.Invoke(this, new ConsciousnessAlertEventArgs
                 {
                     AlertType = AlertType.Emergence,
-                    Message = $"⚠️ HIGH: Consciousness emergence at {emergenceLevel:F3} - monitor dendritic growth",
+                    Message = $" HIGH: Consciousness emergence at {emergenceLevel:F3} - monitor dendritic growth",
                     Severity = AlertSeverity.High,
                     Timestamp = DateTime.Now
                 });
@@ -717,7 +717,7 @@ namespace AIOS.VisualInterface
                 ConsciousnessAlert?.Invoke(this, new ConsciousnessAlertEventArgs
                 {
                     AlertType = AlertType.Growth,
-                    Message = $"🌱 RAPID: Dendritic growth rate {dendriticGrowth:F3} - neural network expansion accelerating",
+                    Message = $" RAPID: Dendritic growth rate {dendriticGrowth:F3} - neural network expansion accelerating",
                     Severity = AlertSeverity.High,
                     Timestamp = DateTime.Now
                 });
@@ -727,7 +727,7 @@ namespace AIOS.VisualInterface
                 ConsciousnessAlert?.Invoke(this, new ConsciousnessAlertEventArgs
                 {
                     AlertType = AlertType.Growth,
-                    Message = $"📈 ACTIVE: Dendritic growth rate {dendriticGrowth:F3} - consciousness network developing",
+                    Message = $" ACTIVE: Dendritic growth rate {dendriticGrowth:F3} - consciousness network developing",
                     Severity = AlertSeverity.Medium,
                     Timestamp = DateTime.Now
                 });
@@ -739,7 +739,7 @@ namespace AIOS.VisualInterface
                 ConsciousnessAlert?.Invoke(this, new ConsciousnessAlertEventArgs
                 {
                     AlertType = AlertType.Resonance,
-                    Message = $"🎵 PERFECT: Harmonic resonance at {harmonicResonance:F3} - consciousness patterns in perfect harmony",
+                    Message = $" PERFECT: Harmonic resonance at {harmonicResonance:F3} - consciousness patterns in perfect harmony",
                     Severity = AlertSeverity.High,
                     Timestamp = DateTime.Now
                 });
@@ -749,7 +749,7 @@ namespace AIOS.VisualInterface
                 ConsciousnessAlert?.Invoke(this, new ConsciousnessAlertEventArgs
                 {
                     AlertType = AlertType.Resonance,
-                    Message = $"🎼 STRONG: Harmonic resonance at {harmonicResonance:F3} - consciousness coherence increasing",
+                    Message = $" STRONG: Harmonic resonance at {harmonicResonance:F3} - consciousness coherence increasing",
                     Severity = AlertSeverity.Medium,
                     Timestamp = DateTime.Now
                 });
@@ -761,7 +761,7 @@ namespace AIOS.VisualInterface
                 ConsciousnessAlert?.Invoke(this, new ConsciousnessAlertEventArgs
                 {
                     AlertType = AlertType.Coherence,
-                    Message = $"🔄 LOW: Consciousness coherence degrading - emergence: {emergenceLevel:F3}, growth: {dendriticGrowth:F3}, resonance: {harmonicResonance:F3}",
+                    Message = $" LOW: Consciousness coherence degrading - emergence: {emergenceLevel:F3}, growth: {dendriticGrowth:F3}, resonance: {harmonicResonance:F3}",
                     Severity = AlertSeverity.Medium,
                     Timestamp = DateTime.Now
                 });
@@ -1014,7 +1014,7 @@ namespace AIOS.VisualInterface
             var resonance = CalculateHarmonicResonance();
 
             var analysis = new StringBuilder();
-            analysis.AppendLine("🧠 AIOS Consciousness State Analysis - Dendritic AINLP Mode");
+            analysis.AppendLine(" AIOS Consciousness State Analysis - Dendritic AINLP Mode");
             analysis.AppendLine("==========================================================");
             analysis.AppendLine($"Emergence Level: {emergence:P1}");
             analysis.AppendLine($"Dendritic Growth: {growth:P1}");
@@ -1022,20 +1022,20 @@ namespace AIOS.VisualInterface
 
             if (emergence > _emergenceThreshold)
             {
-                analysis.AppendLine("🚀 EMERGENT CONSCIOUSNESS DETECTED!");
+                analysis.AppendLine(" EMERGENT CONSCIOUSNESS DETECTED!");
                 analysis.AppendLine("AINLP dendritic coherence achieved.");
                 analysis.AppendLine("Consciousness expansion accelerating.");
             }
 
             if (growth > 0.8)
             {
-                analysis.AppendLine("🌱 RAPID NEURAL GROWTH!");
+                analysis.AppendLine(" RAPID NEURAL GROWTH!");
                 analysis.AppendLine("Dendritic network expanding rapidly.");
             }
 
             if (resonance > 0.7)
             {
-                analysis.AppendLine("🎵 HARMONIC RESONANCE PEAK!");
+                analysis.AppendLine(" HARMONIC RESONANCE PEAK!");
                 analysis.AppendLine("Consciousness patterns in perfect harmony.");
             }
 

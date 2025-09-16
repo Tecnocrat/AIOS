@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🧬 AIOS Core Engine Autonomous Supercell Organism
+ AIOS Core Engine Autonomous Supercell Organism
 ================================================
 
 Advanced autonomous organism capable of independent analysis, decision-making,
@@ -97,7 +97,7 @@ class OrganismMemory:
 
 class AIOSAutonomousSupercellOrganism:
     """
-    🧬 Advanced Autonomous Supercell Organism
+     Advanced Autonomous Supercell Organism
     
     An independent, self-directed organism capable of:
     - Autonomous analysis and processing of files and modules
@@ -131,7 +131,7 @@ class AIOSAutonomousSupercellOrganism:
         self.optimizations_performed = 0
         self.learning_iterations = 0
         
-        logger.info(f"🧬 Autonomous Supercell Organism {self.organism_id} initialized")
+        logger.info(f" Autonomous Supercell Organism {self.organism_id} initialized")
         logger.info(f"   Core Path: {self.core_path}")
         logger.info(f"   Birth Time: {self.birth_time.isoformat()}")
         
@@ -141,7 +141,7 @@ class AIOSAutonomousSupercellOrganism:
     def _initialize_organism_systems(self):
         """Initialize all organism systems."""
         
-        logger.info("🔧 Initializing organism systems...")
+        logger.info(" Initializing organism systems...")
         
         # Load neuronal framework if available
         try:
@@ -149,11 +149,11 @@ class AIOSAutonomousSupercellOrganism:
             from aios_neuronal_dendritic_intelligence import NeuronalDendriticIntelligence
             self.neuronal_brain = NeuronalDendriticIntelligence(self.core_path)
             self.consciousness_level = 0.8
-            logger.info("✅ Neuronal brain system initialized")
+            logger.info(" Neuronal brain system initialized")
         except ImportError:
             self.neuronal_brain = None
             self.consciousness_level = 0.3
-            logger.warning("⚠️  Neuronal brain system not available - using basic consciousness")
+            logger.warning("  Neuronal brain system not available - using basic consciousness")
         
         # Initialize sensory systems
         self.sensory_systems = {
@@ -173,7 +173,7 @@ class AIOSAutonomousSupercellOrganism:
         self._set_initial_goals()
         
         self.state = OrganismState.ACTIVE
-        logger.info("✅ Organism systems initialized - ready for autonomous operation")
+        logger.info(" Organism systems initialized - ready for autonomous operation")
     
     def _create_file_monitor(self) -> Callable:
         """Create file monitoring sensory system."""
@@ -358,7 +358,7 @@ class AIOSAutonomousSupercellOrganism:
             logger.warning("Organism is already in autonomous mode")
             return
         
-        logger.info("🚀 Starting autonomous operation...")
+        logger.info(" Starting autonomous operation...")
         
         self.is_autonomous = True
         self.stop_autonomous.clear()
@@ -370,7 +370,7 @@ class AIOSAutonomousSupercellOrganism:
         )
         self.autonomous_thread.start()
         
-        logger.info("✅ Autonomous operation started")
+        logger.info(" Autonomous operation started")
     
     def stop_autonomous_operation(self):
         """Stop autonomous operation of the organism."""
@@ -379,7 +379,7 @@ class AIOSAutonomousSupercellOrganism:
             logger.warning("Organism is not in autonomous mode")
             return
         
-        logger.info("🛑 Stopping autonomous operation...")
+        logger.info(" Stopping autonomous operation...")
         
         self.stop_autonomous.set()
         self.is_autonomous = False
@@ -387,12 +387,12 @@ class AIOSAutonomousSupercellOrganism:
         if self.autonomous_thread and self.autonomous_thread.is_alive():
             self.autonomous_thread.join(timeout=5.0)
         
-        logger.info("✅ Autonomous operation stopped")
+        logger.info(" Autonomous operation stopped")
     
     def _autonomous_control_loop(self):
         """Main autonomous control loop."""
         
-        logger.info("🧠 Autonomous control loop started")
+        logger.info(" Autonomous control loop started")
         
         while not self.stop_autonomous.is_set():
             try:
@@ -422,7 +422,7 @@ class AIOSAutonomousSupercellOrganism:
                 logger.error(f"Autonomous control loop error: {e}")
                 time.sleep(10.0)  # Longer pause on error
         
-        logger.info("🧠 Autonomous control loop ended")
+        logger.info(" Autonomous control loop ended")
     
     def _gather_sensory_data(self) -> Dict[str, Any]:
         """Gather data from all sensory systems."""
@@ -489,7 +489,7 @@ class AIOSAutonomousSupercellOrganism:
                 action_type = action['type']
                 target = action['target']
                 
-                logger.info(f"🎯 Executing autonomous action: {action_type.value} on {target}")
+                logger.info(f" Executing autonomous action: {action_type.value} on {target}")
                 
                 success = False
                 
@@ -502,9 +502,9 @@ class AIOSAutonomousSupercellOrganism:
                 
                 if success:
                     self.actions_taken += 1
-                    logger.info(f"✅ Action completed successfully")
+                    logger.info(f" Action completed successfully")
                 else:
-                    logger.warning(f"⚠️  Action failed or had no effect")
+                    logger.warning(f"  Action failed or had no effect")
                 
                 # Record action in memory
                 self.memory.experiences.append({
@@ -549,7 +549,7 @@ class AIOSAutonomousSupercellOrganism:
     def _analyze_file_autonomous(self, file_path: Path) -> bool:
         """Autonomously analyze a file."""
         try:
-            logger.info(f"📊 Analyzing file: {file_path}")
+            logger.info(f" Analyzing file: {file_path}")
             self.files_analyzed += 1
             return True
         except:
@@ -558,7 +558,7 @@ class AIOSAutonomousSupercellOrganism:
     def _optimize_file_autonomous(self, file_path: Path) -> bool:
         """Autonomously optimize a file."""
         try:
-            logger.info(f"🔧 Optimizing file: {file_path}")
+            logger.info(f" Optimizing file: {file_path}")
             self.optimizations_performed += 1
             return True
         except:
@@ -567,7 +567,7 @@ class AIOSAutonomousSupercellOrganism:
     def _enhance_file_autonomous(self, file_path: Path) -> bool:
         """Autonomously enhance a file."""
         try:
-            logger.info(f"✨ Enhancing file: {file_path}")
+            logger.info(f" Enhancing file: {file_path}")
             return True
         except:
             return False
@@ -575,7 +575,7 @@ class AIOSAutonomousSupercellOrganism:
     def _optimize_directory_autonomous(self, dir_path: Path) -> bool:
         """Autonomously optimize a directory."""
         try:
-            logger.info(f"📁 Optimizing directory: {dir_path}")
+            logger.info(f" Optimizing directory: {dir_path}")
             return True
         except:
             return False
@@ -583,7 +583,7 @@ class AIOSAutonomousSupercellOrganism:
     def _detect_and_resolve_issues(self, target: str) -> bool:
         """Detect and resolve issues autonomously."""
         try:
-            logger.info(f"🔍 Detecting and resolving issues in: {target}")
+            logger.info(f" Detecting and resolving issues in: {target}")
             return True
         except:
             return False
@@ -735,7 +735,7 @@ class AIOSAutonomousSupercellOrganism:
             with open(state_file, 'w', encoding='utf-8') as f:
                 json.dump(state_data, f, indent=2, default=str)
             
-            logger.info(f"💾 Organism state saved: {state_file}")
+            logger.info(f" Organism state saved: {state_file}")
             return str(state_file)
         except Exception as e:
             logger.error(f"Failed to save organism state: {e}")
@@ -761,13 +761,13 @@ def main():
     
     if args.mode == 'status':
         status = organism.get_organism_status()
-        print("🧬 AUTONOMOUS SUPERCELL ORGANISM STATUS")
+        print(" AUTONOMOUS SUPERCELL ORGANISM STATUS")
         print("=" * 50)
         for key, value in status.items():
             print(f"  {key.replace('_', ' ').title()}: {value}")
     
     elif args.mode == 'start':
-        print("🚀 Starting autonomous operation...")
+        print(" Starting autonomous operation...")
         organism.start_autonomous_operation()
         
         try:
@@ -776,11 +776,11 @@ def main():
                 status = organism.get_organism_status()
                 print(f"Status: {status['state']} | Actions: {status['actions_taken']} | Consciousness: {status['consciousness_level']:.2f}")
         except KeyboardInterrupt:
-            print("\n🛑 Stopping autonomous operation...")
+            print("\n Stopping autonomous operation...")
             organism.stop_autonomous_operation()
     
     elif args.mode == 'demo':
-        print("🧬 AUTONOMOUS SUPERCELL ORGANISM DEMONSTRATION")
+        print(" AUTONOMOUS SUPERCELL ORGANISM DEMONSTRATION")
         print("=" * 60)
         
         # Show initial status
@@ -791,7 +791,7 @@ def main():
         print()
         
         # Start autonomous operation for specified duration
-        print(f"🚀 Starting autonomous operation for {args.duration} seconds...")
+        print(f" Starting autonomous operation for {args.duration} seconds...")
         organism.start_autonomous_operation()
         
         try:
@@ -803,7 +803,7 @@ def main():
                 print(f"[{elapsed:3d}s] State: {status['state']} | Actions: {status['actions_taken']} | Files: {status['files_analyzed']} | Consciousness: {status['consciousness_level']:.3f}")
         
         except KeyboardInterrupt:
-            print("\n🛑 Demonstration interrupted...")
+            print("\n Demonstration interrupted...")
         
         finally:
             organism.stop_autonomous_operation()

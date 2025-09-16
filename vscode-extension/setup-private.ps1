@@ -31,21 +31,21 @@ function Test-VSCodeInstalled {
 }
 
 function Install-AIOSExtension {
-    Write-ColorOutput "🔧 Installing AIOS VSCode Extension..." $Blue
+    Write-ColorOutput " Installing AIOS VSCode Extension..." $Blue
 
     if (-not (Test-VSCodeInstalled)) {
-        Write-ColorOutput "❌ VSCode not found in PATH. Please install VSCode first." $Red
+        Write-ColorOutput " VSCode not found in PATH. Please install VSCode first." $Red
         return $false
     }
 
     $vsixPath = "c:\dev\AIOS\vscode-extension\aios-vscode-0.4.0.vsix"
 
     if (-not (Test-Path $vsixPath)) {
-        Write-ColorOutput "❌ VSIX file not found at: $vsixPath" $Red
+        Write-ColorOutput " VSIX file not found at: $vsixPath" $Red
         return $false
     }
 
-    Write-ColorOutput "📦 Installing from VSIX: $vsixPath" $Yellow
+    Write-ColorOutput " Installing from VSIX: $vsixPath" $Yellow
 
     try {
         # Uninstall existing version if present
@@ -54,22 +54,22 @@ function Install-AIOSExtension {
         # Install new version
         & code --install-extension $vsixPath
 
-        Write-ColorOutput "✅ Extension installed successfully!" $Green
+        Write-ColorOutput " Extension installed successfully!" $Green
         return $true
     } catch {
-        Write-ColorOutput "❌ Failed to install extension: $($_.Exception.Message)" $Red
+        Write-ColorOutput " Failed to install extension: $($_.Exception.Message)" $Red
         return $false
     }
 }
 
 function Set-PrivateSettings {
-    Write-ColorOutput "🔧 Configuring private use settings..." $Blue
+    Write-ColorOutput " Configuring private use settings..." $Blue
 
     # Get VSCode settings file path
     $settingsPath = "$env:APPDATA\Code\User\settings.json"
 
     if (-not (Test-Path $settingsPath)) {
-        Write-ColorOutput "📝 Creating new settings file..." $Yellow
+        Write-ColorOutput " Creating new settings file..." $Yellow
         New-Item -Path $settingsPath -ItemType File -Force | Out-Null
         Set-Content -Path $settingsPath -Value "{}"
     }
@@ -105,10 +105,10 @@ function Set-PrivateSettings {
     # Save settings
     try {
         $currentSettings | ConvertTo-Json -Depth 10 | Set-Content -Path $settingsPath
-        Write-ColorOutput "✅ Private settings configured successfully!" $Green
+        Write-ColorOutput " Private settings configured successfully!" $Green
         return $true
     } catch {
-        Write-ColorOutput "❌ Failed to configure settings: $($_.Exception.Message)" $Red
+        Write-ColorOutput " Failed to configure settings: $($_.Exception.Message)" $Red
         return $false
     }
 }
@@ -117,13 +117,13 @@ function Test-PrivateConfiguration {
     Write-ColorOutput "🧪 Testing private configuration..." $Blue
 
     # Test VSCode can find extension
-    Write-ColorOutput "📋 Checking installed extensions..." $Yellow
+    Write-ColorOutput " Checking installed extensions..." $Yellow
     $extensions = & code --list-extensions
 
     if ($extensions -like "*aios-vscode*") {
-        Write-ColorOutput "✅ AIOS extension found in installed extensions" $Green
+        Write-ColorOutput " AIOS extension found in installed extensions" $Green
     } else {
-        Write-ColorOutput "❌ AIOS extension not found in installed extensions" $Red
+        Write-ColorOutput " AIOS extension not found in installed extensions" $Red
         return $false
     }
 
@@ -134,37 +134,37 @@ function Test-PrivateConfiguration {
         $settings = Get-Content -Path $settingsPath -Raw | ConvertFrom-Json
 
         if ($settings."aios.core.enabled" -eq $true) {
-            Write-ColorOutput "✅ AIOS core enabled in settings" $Green
+            Write-ColorOutput " AIOS core enabled in settings" $Green
         } else {
-            Write-ColorOutput "❌ AIOS core not enabled in settings" $Red
+            Write-ColorOutput " AIOS core not enabled in settings" $Red
             return $false
         }
 
         if ($settings."aios.privacy.mode" -eq "strict") {
-            Write-ColorOutput "✅ Privacy mode set to strict" $Green
+            Write-ColorOutput " Privacy mode set to strict" $Green
         } else {
-            Write-ColorOutput "❌ Privacy mode not configured" $Red
+            Write-ColorOutput " Privacy mode not configured" $Red
             return $false
         }
 
         if ($settings."telemetry.telemetryLevel" -eq "off") {
-            Write-ColorOutput "✅ Telemetry disabled" $Green
+            Write-ColorOutput " Telemetry disabled" $Green
         } else {
-            Write-ColorOutput "❌ Telemetry not disabled" $Red
+            Write-ColorOutput " Telemetry not disabled" $Red
             return $false
         }
     } else {
-        Write-ColorOutput "❌ Settings file not found" $Red
+        Write-ColorOutput " Settings file not found" $Red
         return $false
     }
 
-    Write-ColorOutput "✅ All private configuration tests passed!" $Green
+    Write-ColorOutput " All private configuration tests passed!" $Green
     return $true
 }
 
 function Show-Usage {
     Write-ColorOutput @"
-🔒 AIOS VSCode Extension - Private Use Setup
+ AIOS VSCode Extension - Private Use Setup
 
 Usage:
   .\setup-private.ps1 -Install      # Install extension from VSIX
@@ -182,7 +182,7 @@ Examples:
 
 # Main execution
 if ($All) {
-    Write-ColorOutput "🚀 Starting complete private setup..." $Blue
+    Write-ColorOutput " Starting complete private setup..." $Blue
 
     $success = $true
     $success = $success -and (Install-AIOSExtension)
@@ -192,19 +192,19 @@ if ($All) {
     if ($success) {
         Write-ColorOutput @"
 
-🎉 AIOS VSCode Extension - Private Setup Complete!
+ AIOS VSCode Extension - Private Setup Complete!
 
-✅ Extension installed locally
-✅ Private settings configured
-✅ All tests passed
+ Extension installed locally
+ Private settings configured
+ All tests passed
 
-🔒 Your extension is now configured for private use only:
+ Your extension is now configured for private use only:
    - No external connections
    - Local data storage only
    - Privacy mode enabled
    - Telemetry disabled
 
-🚀 Next steps:
+ Next steps:
    1. Restart VSCode
    2. Open any project
    3. Press F1 and type 'AIOS'
@@ -212,7 +212,7 @@ if ($All) {
 
 "@ $Green
     } else {
-        Write-ColorOutput "❌ Setup incomplete. Please check errors above." $Red
+        Write-ColorOutput " Setup incomplete. Please check errors above." $Red
     }
 } elseif ($Install) {
     Install-AIOSExtension

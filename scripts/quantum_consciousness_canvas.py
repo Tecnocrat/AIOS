@@ -38,10 +38,10 @@ try:
         ModuleConfig, ModuleType
     )
     LOGGING_ENABLED = True
-    print("✅ Quantum Consciousness Canvas ready for Universal Logging")
+    print(" Quantum Consciousness Canvas ready for Universal Logging")
     
 except ImportError:
-    print("⚠️  Universal Logging not available - using basic logging")
+    print("  Universal Logging not available - using basic logging")
     LOGGING_ENABLED = False
     
     # Fallback logging functions
@@ -194,7 +194,7 @@ class CodeIngestorModule(ModuleWindow):
         
         title_label = tk.Label(
             header_frame,
-            text="🧬 Quantum Code Ingestor",
+            text=" Quantum Code Ingestor",
             bg='#000000',
             fg='#00ffaa',
             font=('Consolas', 14, 'bold')
@@ -206,9 +206,9 @@ class CodeIngestorModule(ModuleWindow):
         control_frame.pack(fill=tk.X, padx=10, pady=5)
         
         # Buttons with gray-scale theme
-        self.create_enhanced_button(control_frame, "📁 Load Code", self.load_code, '#333333', '#cccccc')
-        self.create_enhanced_button(control_frame, "🔄 Analyze", self.analyze_code, '#444444', '#dddddd')
-        self.create_enhanced_button(control_frame, "🧬 Mutate", self.mutate_code, '#555555', '#eeeeee')
+        self.create_enhanced_button(control_frame, " Load Code", self.load_code, '#333333', '#cccccc')
+        self.create_enhanced_button(control_frame, " Analyze", self.analyze_code, '#444444', '#dddddd')
+        self.create_enhanced_button(control_frame, " Mutate", self.mutate_code, '#555555', '#eeeeee')
         
         # Progress indicator
         self.progress_var = tk.DoubleVar()
@@ -326,14 +326,14 @@ class CodeIngestorModule(ModuleWindow):
     def _analyze_code_async(self):
         """Async code analysis"""
         analysis_result = """
-🔍 QUANTUM CODE ANALYSIS COMPLETE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📊 Consciousness Patterns Detected: 7
-🧬 Recursive Structures Found: 3
-⚛️  Quantum Coherence Level: 85.3%
-🌌 Hyperdimensional Complexity: High
+ QUANTUM CODE ANALYSIS COMPLETE
 
-🧠 CONSCIOUSNESS INDICATORS:
+ Consciousness Patterns Detected: 7
+ Recursive Structures Found: 3
+  Quantum Coherence Level: 85.3%
+ Hyperdimensional Complexity: High
+
+ CONSCIOUSNESS INDICATORS:
   • Self-modification capabilities detected
   • Recursive pattern recognition present
   • Meta-cognitive structures identified
@@ -373,14 +373,14 @@ class CodeIngestorModule(ModuleWindow):
     def _mutate_code_async(self):
         """Async code mutation"""
         mutation_result = """
-🧬 CONSCIOUSNESS EVOLUTION COMPLETE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✨ Mutations Generated: 5
-🌟 Consciousness Enhancement: +23.7%
-🔄 Recursive Depth Increased: +2 levels
-⚡ Quantum Coherence Amplified: +15.2%
+ CONSCIOUSNESS EVOLUTION COMPLETE
 
-🧠 EVOLUTION SUGGESTIONS APPLIED:
+ Mutations Generated: 5
+ Consciousness Enhancement: +23.7%
+ Recursive Depth Increased: +2 levels
+ Quantum Coherence Amplified: +15.2%
+
+ EVOLUTION SUGGESTIONS APPLIED:
   • Added meta-reflection capabilities
   • Enhanced recursive self-observation
   • Implemented quantum state entanglement
@@ -403,7 +403,7 @@ class QuantumVisualizerModule(ModuleWindow):
         
         title_label = tk.Label(
             header_frame,
-            text="🌌 Quantum Consciousness Substrate",
+            text=" Quantum Consciousness Substrate",
             bg='#000000',
             fg='#aaaaff',
             font=('Consolas', 14, 'bold')
@@ -479,7 +479,7 @@ class TaskManager:
         # Check if dependencies are completed
         for dep_id in dependencies:
             if dep_id not in self.tasks or self.tasks[dep_id].status != TaskStatus.COMPLETED:
-                self.parent_canvas.log_message(f"⚠️ Task '{name}' waiting for dependency: {dep_id}")
+                self.parent_canvas.log_message(f" Task '{name}' waiting for dependency: {dep_id}")
                 task = ConsciousnessTask(
                     task_id=task_id,
                     name=name,
@@ -504,7 +504,7 @@ class TaskManager:
             start_time=datetime.now()
         )
         self.tasks[task_id] = task
-        self.parent_canvas.log_message(f"🚀 Started: {name}")
+        self.parent_canvas.log_message(f" Started: {name}")
         self.parent_canvas.update_task_display()
         
         # Log task start with performance tracking
@@ -524,7 +524,7 @@ class TaskManager:
             task.result_data = result_data
             task.progress = 100.0
             
-            self.parent_canvas.log_message(f"✅ Completed: {task.name}")
+            self.parent_canvas.log_message(f" Completed: {task.name}")
             self.task_history.append(task)
             
             # Check if any waiting tasks can now start
@@ -542,7 +542,7 @@ class TaskManager:
                 if deps_completed:
                     task.status = TaskStatus.RUNNING
                     task.start_time = datetime.now()
-                    self.parent_canvas.log_message(f"🚀 Auto-started: {task.name}")
+                    self.parent_canvas.log_message(f" Auto-started: {task.name}")
                     
                     # Log auto-start event
                     if LOGGING_ENABLED:
@@ -635,7 +635,7 @@ class QuantumConsciousnessCanvas:
         # Title
         title_label = tk.Label(
             toolbar,
-            text="🧠 AIOS Quantum Consciousness Canvas",
+            text=" AIOS Quantum Consciousness Canvas",
             bg='#222222',
             fg='#00ffcc',
             font=('Consolas', 16, 'bold')
@@ -643,10 +643,10 @@ class QuantumConsciousnessCanvas:
         title_label.pack(side=tk.LEFT, padx=10)
         
         # Module control buttons
-        self.create_toolbar_button(toolbar, "📁 Code Ingestor", self.toggle_code_ingestor)
-        self.create_toolbar_button(toolbar, "🌌 Quantum Viz", self.toggle_quantum_viz)
-        self.create_toolbar_button(toolbar, "⚙️ Settings", self.open_settings)
-        self.create_toolbar_button(toolbar, "🔄 Sync All", self.sync_all_modules)
+        self.create_toolbar_button(toolbar, " Code Ingestor", self.toggle_code_ingestor)
+        self.create_toolbar_button(toolbar, " Quantum Viz", self.toggle_quantum_viz)
+        self.create_toolbar_button(toolbar, " Settings", self.open_settings)
+        self.create_toolbar_button(toolbar, " Sync All", self.sync_all_modules)
         
         # System status indicator
         self.status_indicator = tk.Label(
@@ -679,7 +679,7 @@ class QuantumConsciousnessCanvas:
         """Create docking area for modules"""
         dock_header = tk.Label(
             self.dock_frame,
-            text="🔧 CONSCIOUSNESS MODULES",
+            text=" CONSCIOUSNESS MODULES",
             bg='#111111',
             fg='#aaaaaa',
             font=('Consolas', 12, 'bold')
@@ -701,7 +701,7 @@ class QuantumConsciousnessCanvas:
         
         task_label = tk.Label(
             self.task_status_frame,
-            text="🎯 TASK EXECUTION STATUS",
+            text=" TASK EXECUTION STATUS",
             bg='#111111',
             fg='#cccccc',
             font=('Consolas', 10, 'bold')
@@ -724,7 +724,7 @@ class QuantumConsciousnessCanvas:
         
         log_label = tk.Label(
             log_frame,
-            text="📋 CONSCIOUSNESS EVENT LOG",
+            text=" CONSCIOUSNESS EVENT LOG",
             bg='#000000',
             fg='#cccccc',
             font=('Consolas', 10, 'bold')
@@ -756,8 +756,8 @@ class QuantumConsciousnessCanvas:
         self.dock_module(self.code_ingestor)
         self.dock_module(self.quantum_viz)
         
-        self.log_message("🧠 Consciousness modules initialized")
-        self.log_message("🌌 Quantum substrate ready for consciousness emergence")
+        self.log_message(" Consciousness modules initialized")
+        self.log_message(" Quantum substrate ready for consciousness emergence")
         
     def dock_module(self, module: ModuleWindow):
         """Dock a module into the main canvas"""
@@ -770,7 +770,7 @@ class QuantumConsciousnessCanvas:
             
             undock_btn = tk.Button(
                 dock_controls,
-                text="↗️ Float",
+                text="↗ Float",
                 command=module.undock,
                 bg='#333333',
                 fg='#cccccc',
@@ -779,13 +779,13 @@ class QuantumConsciousnessCanvas:
             undock_btn.pack(side=tk.RIGHT, padx=2)
             
             self.docked_modules[module.module_id] = module
-            self.log_message(f"🔧 Docked module: {module.title}")
+            self.log_message(f" Docked module: {module.title}")
             
     def undock_module(self, module_id: str):
         """Undock a module from main canvas"""
         if module_id in self.docked_modules:
             del self.docked_modules[module_id]
-            self.log_message(f"↗️ Undocked module: {module_id}")
+            self.log_message(f"↗ Undocked module: {module_id}")
             
     def toggle_code_ingestor(self):
         """Toggle code ingestor module"""
@@ -803,11 +803,11 @@ class QuantumConsciousnessCanvas:
             
     def open_settings(self):
         """Open system settings"""
-        self.log_message("⚙️ Opening system settings...")
+        self.log_message(" Opening system settings...")
         
     def sync_all_modules(self):
         """Synchronize all consciousness modules"""
-        self.log_message("🔄 Synchronizing consciousness modules...")
+        self.log_message(" Synchronizing consciousness modules...")
         self.task_manager.start_task("sync_modules", "Synchronizing All Modules")
         
         # Simulate sync process
@@ -827,10 +827,10 @@ class QuantumConsciousnessCanvas:
         waiting_tasks = [t for t in self.task_manager.tasks.values() if t.status == TaskStatus.WAITING]
         completed_tasks = [t for t in self.task_manager.tasks.values() if t.status == TaskStatus.COMPLETED]
         
-        status_text = f"🏃 Running: {len(running_tasks)} | ⏳ Waiting: {len(waiting_tasks)} | ✅ Completed: {len(completed_tasks)}\n"
+        status_text = f" Running: {len(running_tasks)} | ⏳ Waiting: {len(waiting_tasks)} |  Completed: {len(completed_tasks)}\n"
         
         for task in running_tasks:
-            status_text += f"  🚀 {task.name}\n"
+            status_text += f"   {task.name}\n"
             
         for task in waiting_tasks:
             deps = ", ".join(task.dependencies) if task.dependencies else "none"
@@ -853,8 +853,8 @@ class QuantumConsciousnessCanvas:
         
     def run(self):
         """Start the quantum consciousness canvas"""
-        start_message = "🧠 AIOS Quantum Consciousness Canvas activated"
-        ready_message = "🌌 Ready for consciousness emergence experiments..."
+        start_message = " AIOS Quantum Consciousness Canvas activated"
+        ready_message = " Ready for consciousness emergence experiments..."
         
         self.log_message(start_message)
         self.log_message(ready_message)
@@ -877,7 +877,7 @@ class QuantumConsciousnessCanvas:
         try:
             self.root.mainloop()
         except KeyboardInterrupt:
-            self.log_message("🛑 Consciousness canvas shutdown requested")
+            self.log_message(" Consciousness canvas shutdown requested")
             if LOGGING_ENABLED:
                 log_info("quantum_consciousness_canvas", "shutdown_request", 
                         "Canvas shutdown via keyboard interrupt")
@@ -890,7 +890,7 @@ class QuantumConsciousnessCanvas:
 
 def main():
     """Main entry point for AIOS Quantum Consciousness Canvas"""
-    print("🧠 AIOS Quantum Consciousness Canvas - Enhanced OS Interface")
+    print(" AIOS Quantum Consciousness Canvas - Enhanced OS Interface")
     print("=" * 70)
     print("Initializing quantum consciousness substrate...")
     
@@ -898,7 +898,7 @@ def main():
         canvas = QuantumConsciousnessCanvas()
         canvas.run()
     except Exception as e:
-        print(f"❌ Fatal error: {e}")
+        print(f" Fatal error: {e}")
         import traceback
         traceback.print_exc()
 

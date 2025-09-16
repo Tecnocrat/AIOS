@@ -1,4 +1,4 @@
-# 🌌 AIOS Development Path Navigator - Usage Guide
+#  AIOS Development Path Navigator - Usage Guide
 
 ## Purpose
 Navigate long AIOS development cycles while maintaining context coherence and supporting auto agent mode optimization runs.
@@ -111,10 +111,10 @@ recommendations = navigator._get_agent_mode_recommendations()
 
 ```
 tachyonic_development_archive/
-├── checkpoints/           # Context restoration points
-├── development_logs/      # Progress and decision logs  
-├── context_maps/         # Context relationship mapping
-└── development_state.json # Current state persistence
+ checkpoints/           # Context restoration points
+ development_logs/      # Progress and decision logs  
+ context_maps/         # Context relationship mapping
+ development_state.json # Current state persistence
 ```
 
 ## Context Harmonization

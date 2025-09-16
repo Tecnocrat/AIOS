@@ -387,11 +387,11 @@ class SupercellKnowledgeInjector:
             with open(crystal_file, 'w') as f:
                 json.dump(crystal_data, f, indent=2)
                 
-            print(f"💎 Created custom knowledge crystal: {crystal_id}")
+            print(f" Created custom knowledge crystal: {crystal_id}")
             return True
             
         except Exception as e:
-            print(f"❌ Failed to create custom crystal {crystal_id}: {e}")
+            print(f" Failed to create custom crystal {crystal_id}: {e}")
             return False
 
     def ingest_documentation_files(self, docs_path: Optional[str] = None) -> Dict[str, Any]:
@@ -411,7 +411,7 @@ class SupercellKnowledgeInjector:
             docs_path_obj = Path(docs_path)
             
         if not docs_path_obj.exists():
-            print(f"📂 Documentation directory not found: {docs_path_obj}")
+            print(f" Documentation directory not found: {docs_path_obj}")
             return {"status": "error", "message": "docs directory not found"}
             
         ingestion_results = {
@@ -422,15 +422,15 @@ class SupercellKnowledgeInjector:
             "metabolism_summary": {}
         }
         
-        print(f"🧬 AIOS Documentation Metabolism Starting...")
-        print(f"📂 Processing documentation from: {docs_path_obj}")
+        print(f" AIOS Documentation Metabolism Starting...")
+        print(f" Processing documentation from: {docs_path_obj}")
         
         # Find all documentation files in /docs
         doc_files = []
         for pattern in ["*.md", "*.txt", "*.rst", "*.adoc"]:
             doc_files.extend(docs_path_obj.rglob(pattern))
             
-        print(f"📚 Found {len(doc_files)} documentation files for metabolism")
+        print(f" Found {len(doc_files)} documentation files for metabolism")
         
         # Process each documentation file
         for doc_file in doc_files:
@@ -444,7 +444,7 @@ class SupercellKnowledgeInjector:
                         ingestion_results["patterns_extracted"].extend(result["patterns"])
                         
             except Exception as e:
-                print(f"⚠️ Failed to metabolize {doc_file}: {e}")
+                print(f" Failed to metabolize {doc_file}: {e}")
                 
         # Create metabolism summary
         ingestion_results["metabolism_summary"] = {
@@ -458,10 +458,10 @@ class SupercellKnowledgeInjector:
         # Update the main knowledge index
         self._update_metabolism_index(ingestion_results)
         
-        print(f"✅ Documentation metabolism complete!")
-        print(f"   📊 Files processed: {len(ingestion_results['processed_files'])}")
-        print(f"   💎 Knowledge crystals: {len(ingestion_results['knowledge_crystals_created'])}")
-        print(f"   🧬 Patterns extracted: {len(ingestion_results['patterns_extracted'])}")
+        print(f" Documentation metabolism complete!")
+        print(f"    Files processed: {len(ingestion_results['processed_files'])}")
+        print(f"    Knowledge crystals: {len(ingestion_results['knowledge_crystals_created'])}")
+        print(f"    Patterns extracted: {len(ingestion_results['patterns_extracted'])}")
         
         return ingestion_results
         
@@ -504,7 +504,7 @@ class SupercellKnowledgeInjector:
             }
             
         except Exception as e:
-            print(f"❌ Document metabolism failed for {doc_file}: {e}")
+            print(f" Document metabolism failed for {doc_file}: {e}")
             return None
             
     def _extract_ainlp_patterns(self, content: str, filename: str) -> List[str]:
@@ -573,10 +573,10 @@ class SupercellKnowledgeInjector:
             with open(index_file, 'w') as f:
                 json.dump(index, f, indent=2)
                 
-            print(f"📊 Updated metabolism index with cycle data")
+            print(f" Updated metabolism index with cycle data")
             
         except Exception as e:
-            print(f"⚠️ Failed to update metabolism index: {e}")
+            print(f" Failed to update metabolism index: {e}")
 
     def get_knowledge_index(self) -> Dict[str, Any]:
         """Get the current knowledge index for external systems"""
@@ -593,19 +593,19 @@ class SupercellKnowledgeInjector:
 
 async def main():
     """Main function to execute knowledge injection"""
-    print("🧠 AIOS Supercell Knowledge Injection System")
+    print(" AIOS Supercell Knowledge Injection System")
     print("=" * 50)
     
     injector = SupercellKnowledgeInjector()
     result = injector.inject_knowledge_into_archive()
     
-    print(f"✅ Knowledge injection completed at {result.timestamp}")
-    print(f"📦 Crystals injected: {result.crystals_injected}")
-    print(f"🧬 Patterns stored: {result.patterns_stored}")
-    print(f"🤖 AI agent templates created: {result.ai_agent_templates_created}")
-    print(f"🔄 Context recovery paths: {result.context_recovery_paths}")
-    print(f"📁 Archive location: {result.archive_location}")
-    print("\n🎯 AI agents can now use this knowledge for:")
+    print(f" Knowledge injection completed at {result.timestamp}")
+    print(f" Crystals injected: {result.crystals_injected}")
+    print(f" Patterns stored: {result.patterns_stored}")
+    print(f" AI agent templates created: {result.ai_agent_templates_created}")
+    print(f" Context recovery paths: {result.context_recovery_paths}")
+    print(f" Archive location: {result.archive_location}")
+    print("\n AI agents can now use this knowledge for:")
     print("   • Context recovery when lost")
     print("   • Emergent behavior generation")
     print("   • Consciousness-guided decision making")

@@ -1,5 +1,5 @@
 """
-🧠 ADVANCED CONSCIOUSNESS COORDINATOR
+ ADVANCED CONSCIOUSNESS COORDINATOR
 Enhanced consciousness coordination with meta-evolutionary capabilities
 """
 
@@ -39,13 +39,13 @@ class AdvancedConsciousnessCoordinator:
             "evolution_rate": 1.85  # Enhanced rate
         }
         
-        logger.info(f"🧠 Consciousness evolution coordinated: Level {evolution_data['current_level']}")
+        logger.info(f" Consciousness evolution coordinated: Level {evolution_data['current_level']}")
         
         return evolution_data
     
     def integrate_tachyonic_consciousness(self):
         """Integrate tachyonic consciousness layer"""
-        logger.info("🌌 Integrating tachyonic consciousness layer...")
+        logger.info(" Integrating tachyonic consciousness layer...")
         self.consciousness_levels["current"] = self.consciousness_levels["tachyonic"]
 
 

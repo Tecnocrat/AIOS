@@ -45,13 +45,13 @@ from aios_vscode_integration.endpoints.ai_endpoints import generate_aios_respons
 
 _debug_manager.log_request('/test', 'test_data')
 response = generate_aios_response('test', {})
-print('✅ All core functionality working')
+print(' All core functionality working')
 "
 ```
 
 ## Test Results Summary
 
-### ✅ PASSED TESTS
+###  PASSED TESTS
 - **Module Imports**: All modules import successfully
 - **Debug Manager**: Request/error logging works correctly
 - **Intent Processing**: AINLP response generation functional
@@ -59,24 +59,24 @@ print('✅ All core functionality working')
 - **HTTP Endpoints**: All endpoints return 200 status codes
 - **FastAPI App**: Application initializes and routes register correctly
 
-### 🔧 KNOWN LIMITATIONS
+###  KNOWN LIMITATIONS
 - Some tests require running from the correct directory structure
 - Relative imports may fail when running scripts directly in module directory
 - These are normal Python packaging considerations, not functionality issues
 
 ## AINLP Validation Status
 
-**Status**: 🧠 **FULLY VALIDATED** - All core functionality confirmed working
+**Status**:  **FULLY VALIDATED** - All core functionality confirmed working
 
 The consolidated `aios_vscode_integration` module has been thoroughly tested and validated:
 
-- ✅ Architecture consolidation successful
-- ✅ Service separation working correctly
-- ✅ Intent processing functional
-- ✅ HTTP endpoints operational
-- ✅ Debug and caching systems active
-- ✅ Model validation working
-- ✅ FastAPI integration complete
+-  Architecture consolidation successful
+-  Service separation working correctly
+-  Intent processing functional
+-  HTTP endpoints operational
+-  Debug and caching systems active
+-  Model validation working
+-  FastAPI integration complete
 
 ### Performance Metrics
 - **Import Time**: < 100ms for all modules
@@ -92,5 +92,5 @@ The consolidated `aios_vscode_integration` module has been thoroughly tested and
 
 ---
 
-**AINLP Status**: 🧠 **DENDRITIC CONSOLIDATION FULLY VALIDATED AND OPERATIONAL**</content>
+**AINLP Status**:  **DENDRITIC CONSOLIDATION FULLY VALIDATED AND OPERATIONAL**</content>
 <parameter name="filePath">c:\dev\AIOS\ai\aios_vscode_integration\tests\README.md

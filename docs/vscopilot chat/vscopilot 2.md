@@ -963,17 +963,17 @@ Tecnocrat: Great integration. We have a terminal error at start server exec:
 
 python start_server.py
 PS C:\dev\AIOS\ai> python start_server.py
-🚀 Starting AIOS VSCode Integration Server...
+ Starting AIOS VSCode Integration Server...
 🧪 Running preflight integration diagnostics...
 Traceback (most recent call last):
   File "C:\dev\AIOS\ai\tests\aios_vscode_integration.py", line 13,
  in <module>                                                          import requests
 ModuleNotFoundError: No module named 'requests'
-⚠️  Preflight diagnostics reported issues.
-📂 Working directory: C:\dev\AIOS\ai
-🐍 Python executable: C:\msys64\mingw64\bin\python.exe
-📄 Server file: C:\dev\AIOS\ai\aios_vscode_integration_server.py
-🌐 Starting server on http://localhost:8080
+  Preflight diagnostics reported issues.
+ Working directory: C:\dev\AIOS\ai
+ Python executable: C:\msys64\mingw64\bin\python.exe
+ Server file: C:\dev\AIOS\ai\aios_vscode_integration_server.py
+ Starting server on http://localhost:8080
 --------------------------------------------------
 Traceback (most recent call last):
   File "C:\dev\AIOS\ai\aios_vscode_integration_server.py", line 18
@@ -2799,7 +2799,7 @@ GitHub Copilot: Yes, I agree with the /fix output and the reasoning.
 - With `%` formatting, the string interpolation only happens if the log level is enabled, which is more efficient.
 - Your current line:
   ```python
-  logger.info("✅ AINLP Decomposition Complete: %d lines fixed", changes_made)
+  logger.info(" AINLP Decomposition Complete: %d lines fixed", changes_made)
   ```
   is already using the correct lazy `%` formatting.
 
@@ -4670,7 +4670,7 @@ GitHub Copilot: **AIOS Structure Audit Report (2025-07-17)**
 Add the following to your documentation index or a new audit log:
 
 ```markdown
-## 🛠️ AIOS Structure Audit Log (2025-07-17)
+##  AIOS Structure Audit Log (2025-07-17)
 - Refactored logic-heavy `__init__.py` files to dedicated modules.
 - Archived or annotated empty/placeholder files.
 - Added folder-level documentation for clarity.
@@ -6369,7 +6369,7 @@ GitHub Copilot: ````python
 # ...existing code...
 
         print(
-            f"\n✅ Sample workflow completed successfully!"
+            f"\n Sample workflow completed successfully!"
         )
         print(
             f"Model exported to: {export_info.export_path}"

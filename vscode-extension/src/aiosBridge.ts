@@ -78,7 +78,7 @@ export class AIOSBridge {
             });
 
             if (response.ok) {
-                this.logger.info('✅ Python AI training cells connected successfully');
+                this.logger.info(' Python AI training cells connected successfully');
                 this.cellularEcosystemStatus.pythonAiCellsStatus = 'active';
             } else {
                 throw new Error(`Python AI cells connection failed: ${response.status}`);
@@ -101,7 +101,7 @@ export class AIOSBridge {
             if (response.ok) {
                 const status = await response.json();
                 if (status.cpp_core_active) {
-                    this.logger.info('✅ C++ performance cells connected successfully');
+                    this.logger.info(' C++ performance cells connected successfully');
                     this.cellularEcosystemStatus.cppPerformanceCellsStatus = 'active';
 
                     // Update performance metrics if available
@@ -144,7 +144,7 @@ export class AIOSBridge {
             if (response.ok) {
                 const result = await response.json();
                 if (result.bridge_active) {
-                    this.logger.info('✅ Intercellular communication bridges initialized successfully');
+                    this.logger.info(' Intercellular communication bridges initialized successfully');
                     this.cellularEcosystemStatus.intercellularBridgesStatus = 'active';
                 } else {
                     throw new Error('Bridge test failed');
@@ -186,10 +186,10 @@ export class AIOSBridge {
                     subMillisecondAchieved: (results.inference_latency || roundTripTime) < 1
                 };
 
-                this.logger.info(`✅ Cellular performance test completed: ${roundTripTime}ms round-trip`);
+                this.logger.info(` Cellular performance test completed: ${roundTripTime}ms round-trip`);
 
                 if (this.cellularEcosystemStatus.performanceMetrics.subMillisecondAchieved) {
-                    this.logger.info('🚀 Sub-millisecond performance achieved!');
+                    this.logger.info(' Sub-millisecond performance achieved!');
                 }
             } else {
                 throw new Error(`Performance test failed: ${response.status}`);
@@ -364,7 +364,7 @@ export class AIOSBridge {
                 }
             };
 
-            this.logger.info('✅ Real AIOS processing completed successfully', {
+            this.logger.info(' Real AIOS processing completed successfully', {
                 confidence: formattedResponse.confidence,
                 processingTime: aiosResponse.processing_time,
                 actionsCount: formattedResponse.actions?.length || 0

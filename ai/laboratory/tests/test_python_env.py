@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 🧪 AIOS Python Environment Test (pytest)
 Validates essential Python packages used by AIOS.
@@ -13,34 +12,34 @@ AINLP provenance:
 
 def test_essential_imports():
     """Smoke test essential AIOS packages; prints versions for visibility."""
-    print("🔍 Testing AIOS Python Environment (pytest)...")
+    print(" Testing AIOS Python Environment (pytest)...")
 
     import sys
-    print(f"✅ Python version: {sys.version}")
+    print(f" Python version: {sys.version}")
 
     import numpy as np
-    print(f"✅ NumPy {np.__version__} - Scientific computing")
+    print(f" NumPy {np.__version__} - Scientific computing")
 
     import pandas as pd
-    print(f"✅ Pandas {pd.__version__} - Data manipulation")
+    print(f" Pandas {pd.__version__} - Data manipulation")
 
     import openai
-    print(f"✅ OpenAI {openai.__version__} - AI integration")
+    print(f" OpenAI {openai.__version__} - AI integration")
 
     import aiohttp
-    print(f"✅ aiohttp {aiohttp.__version__} - Async HTTP")
+    print(f" aiohttp {aiohttp.__version__} - Async HTTP")
 
     import rich  # noqa: F401
-    print("✅ Rich (console output) - OK")
+    print(" Rich (console output) - OK")
 
     import astroid
-    print(f"✅ Astroid {astroid.__version__} - Code analysis")
+    print(f" Astroid {astroid.__version__} - Code analysis")
 
     import pytest as _pytest
-    print(f"✅ Pytest {_pytest.__version__} - Testing framework")
+    print(f" Pytest {_pytest.__version__} - Testing framework")
 
     import cv2
-    print(f"✅ OpenCV {cv2.__version__} - Computer vision")
+    print(f" OpenCV {cv2.__version__} - Computer vision")
 
     # If imports succeeded without exceptions, the environment is OK
     assert True

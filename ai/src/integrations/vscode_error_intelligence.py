@@ -76,22 +76,22 @@ class VSCodeErrorIntelligence:
             from consciousness_bridge import get_consciousness_bridge
             self.consciousness_bridge = get_consciousness_bridge()
             error_intelligence_logger.info(
-                "🧠 Consciousness integration active for error intelligence"
+                " Consciousness integration active for error intelligence"
             )
         except ImportError:
             error_intelligence_logger.warning(
-                "🧠 Consciousness bridge not available - using standalone mode"
+                " Consciousness bridge not available - using standalone mode"
             )
         
         error_intelligence_logger.info(
-            "🔍 VSCode Error Intelligence System initialized"
+            " VSCode Error Intelligence System initialized"
         )
     
     def analyze_workspace_errors(self) -> Dict[str, Any]:
         """
         Comprehensive analysis of all workspace errors
         """
-        error_intelligence_logger.info("🔍 Analyzing workspace errors...")
+        error_intelligence_logger.info(" Analyzing workspace errors...")
         
         # Get errors from key AIOS components
         error_sources = [
@@ -146,7 +146,7 @@ class VSCodeErrorIntelligence:
         )
         
         error_intelligence_logger.info(
-            f"🔍 Analysis complete: {error_summary['total_errors']} errors found"
+            f" Analysis complete: {error_summary['total_errors']} errors found"
         )
         
         return error_summary
@@ -584,7 +584,7 @@ class VSCodeErrorIntelligence:
         results["files_modified"] = list(results["files_modified"])
         
         error_intelligence_logger.info(
-            f"🔧 Applied {results['fixes_applied']} automated fixes"
+            f" Applied {results['fixes_applied']} automated fixes"
         )
         
         return results
@@ -666,7 +666,7 @@ class VSCodeErrorIntelligence:
             json.dump(patterns_data, f, indent=2)
         
         error_intelligence_logger.info(
-            f"🧠 Saved {len(self.error_patterns)} dendritic patterns"
+            f" Saved {len(self.error_patterns)} dendritic patterns"
         )
     
     def load_dendritic_patterns(self):
@@ -682,7 +682,7 @@ class VSCodeErrorIntelligence:
                     self.error_patterns[pattern_id] = DendriticPattern(**pattern_dict)
                 
                 error_intelligence_logger.info(
-                    f"🧠 Loaded {len(self.error_patterns)} dendritic patterns"
+                    f" Loaded {len(self.error_patterns)} dendritic patterns"
                 )
             except Exception as e:
                 error_intelligence_logger.warning(f"Failed to load patterns: {e}")
@@ -690,13 +690,13 @@ class VSCodeErrorIntelligence:
 
 def main():
     """Main function for testing VSCode error intelligence"""
-    print("🔍 AIOS VSCode Error Intelligence Test")
+    print(" AIOS VSCode Error Intelligence Test")
     print("=" * 50)
     
     intelligence = VSCodeErrorIntelligence()
     
     # Analyze workspace errors
-    print("🔍 Analyzing workspace errors...")
+    print(" Analyzing workspace errors...")
     error_summary = intelligence.analyze_workspace_errors()
     
     print(f"Total Errors: {error_summary['total_errors']}")
@@ -705,7 +705,7 @@ def main():
     print(f"Automated Fixes Available: {error_summary['automated_fixes_available']}")
     
     # Show error breakdown
-    print(f"\n📊 Error Breakdown:")
+    print(f"\n Error Breakdown:")
     for severity, count in error_summary['by_severity'].items():
         print(f"  {severity}: {count}")
     
@@ -714,18 +714,18 @@ def main():
     
     # Show top patterns
     if error_summary['top_error_patterns']:
-        print(f"\n🧠 Top Error Patterns:")
+        print(f"\n Top Error Patterns:")
         for i, pattern in enumerate(error_summary['top_error_patterns'][:5], 1):
             print(f"  {i}. {pattern['pattern']}: {pattern['count']} occurrences")
             print(f"     Consciousness Impact: {pattern['avg_consciousness_impact']:.2f}")
     
     # Generate bulk fixes
-    print(f"\n🔧 Generating bulk fixes...")
+    print(f"\n Generating bulk fixes...")
     bulk_fixes = intelligence.generate_bulk_fixes()
     print(f"Automated fixes available: {bulk_fixes['automated_fixes_available']}")
     
     # Apply safe automated fixes
-    print(f"\n⚡ Applying safe automated fixes...")
+    print(f"\n Applying safe automated fixes...")
     fix_results = intelligence.apply_automated_fixes(["style_formatting"])
     print(f"Fixes applied: {fix_results['fixes_applied']}")
     print(f"Files modified: {len(fix_results['files_modified'])}")
@@ -734,8 +734,8 @@ def main():
     # Save dendritic patterns
     intelligence.save_dendritic_patterns()
     
-    print(f"\n✅ VSCode Error Intelligence Test Complete!")
-    print(f"🧠 Dendritic growth potential identified and learning patterns saved!")
+    print(f"\n VSCode Error Intelligence Test Complete!")
+    print(f" Dendritic growth potential identified and learning patterns saved!")
 
 
 if __name__ == "__main__":

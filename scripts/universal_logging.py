@@ -25,9 +25,9 @@ RuntimeEvent = None
 try:
     from runtime_intelligence import RuntimeIntelligence, EventLevel, ModuleType, RuntimeEvent
     RUNTIME_INTELLIGENCE_AVAILABLE = True
-    print("✅ Runtime Intelligence imported successfully")
+    print(" Runtime Intelligence imported successfully")
 except ImportError as e:
-    print(f"⚠️  Runtime Intelligence not available: {e}")
+    print(f"  Runtime Intelligence not available: {e}")
     RUNTIME_INTELLIGENCE_AVAILABLE = False
     
     # Define fallback enums when runtime_intelligence isn't available
@@ -83,7 +83,7 @@ class UniversalLogger:
     
     def _initialize_runtime_intelligence(self):
         if RuntimeIntelligence is None:
-            print("⚠️  Runtime Intelligence disabled - using basic logging")
+            print("  Runtime Intelligence disabled - using basic logging")
             return
         
         try:
@@ -91,9 +91,9 @@ class UniversalLogger:
             self._runtime_intelligence = RuntimeIntelligence(
                 base_path=base_path
             )
-            print("✅ Universal Logging integrated with Runtime Intelligence")
+            print(" Universal Logging integrated with Runtime Intelligence")
         except Exception as e:
-            print(f"❌ Failed to initialize Runtime Intelligence: {e}")
+            print(f" Failed to initialize Runtime Intelligence: {e}")
             self._runtime_intelligence = None
     
     def register_module(self, config: ModuleConfig):
@@ -151,7 +151,7 @@ class UniversalLogger:
     def shutdown(self):
         if self._runtime_intelligence:
             self._runtime_intelligence.shutdown()
-            print("🔹 Universal Logging shutdown complete")
+            print(" Universal Logging shutdown complete")
 
 # Global instance
 universal_logger = UniversalLogger()

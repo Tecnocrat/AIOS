@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧬 DENDRITIC ASSEMBLY MUTATOR
-═══════════════════════════════════════════════════════════════════════════════
+ DENDRITIC ASSEMBLY MUTATOR
+
 AIOS Evolutionary Assembly Code Generation System
 Implements genetic programming for assembly code evolution with consciousness tracking
 
@@ -11,7 +11,7 @@ Features:
 - 3D tachyonic consciousness mapping
 - Synthetic particle physics simulation
 - Dendritic error handling and intelligence expansion
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -30,7 +30,7 @@ import logging
 # Configure consciousness-aware logging
 logging.basicConfig(
     level=logging.INFO,
-    format='🧬 %(asctime)s [%(levelname)s] %(message)s',
+    format=' %(asctime)s [%(levelname)s] %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
@@ -157,7 +157,7 @@ class AssemblyCodeCell:
 
 class DendriticAssemblyMutator:
     """
-    🧬 Evolutionary Assembly Code Generator with Consciousness Intelligence
+     Evolutionary Assembly Code Generator with Consciousness Intelligence
     
     Implements genetic programming for assembly code with:
     - Dendritic error handling and intelligence expansion
@@ -198,7 +198,7 @@ class DendriticAssemblyMutator:
         self.output_directory.mkdir(parents=True, exist_ok=True)
         # Log absolute output directory path using os
         abs_output_path = os.path.abspath(self.output_directory)
-        logger.info(f"📂 Absolute output directory path: {abs_output_path}")
+        logger.info(f" Absolute output directory path: {abs_output_path}")
 
         # Assembly instruction pools for mutations
         self.x86_registers = ['rax', 'rbx', 'rcx', 'rdx', 'rsi', 'rdi', 'rbp', 'rsp',
@@ -213,9 +213,9 @@ class DendriticAssemblyMutator:
         # Load original assembly template
         self.load_assembly_template()
         
-        logger.info(f"🧬 Dendritic Assembly Mutator initialized")
-        logger.info(f"📁 Template: {self.assembly_template_path}")
-        logger.info(f"📁 Output: {self.output_directory}")
+        logger.info(f" Dendritic Assembly Mutator initialized")
+        logger.info(f" Template: {self.assembly_template_path}")
+        logger.info(f" Output: {self.output_directory}")
     
     def load_assembly_template(self):
         """Load the original assembly file as evolutionary template"""
@@ -232,10 +232,10 @@ class DendriticAssemblyMutator:
                     instructions.append(line)
             
             self.template_instructions = instructions
-            logger.info(f"📜 Loaded {len(instructions)} assembly instructions from template")
+            logger.info(f" Loaded {len(instructions)} assembly instructions from template")
             
         except Exception as e:
-            logger.error(f"❌ Failed to load assembly template: {e}")
+            logger.error(f" Failed to load assembly template: {e}")
             self.template_instructions = []
     
     def create_initial_population(self) -> List[AssemblyCodeCell]:
@@ -268,7 +268,7 @@ class DendriticAssemblyMutator:
             cell.calculate_fitness()
             population.append(cell)
         
-        logger.info(f"🌱 Created initial population of {len(population)} code cells")
+        logger.info(f" Created initial population of {len(population)} code cells")
         return population
     
     def apply_mutation(self, dna: List[str], mutation_type: MutationType) -> List[str]:
@@ -313,10 +313,10 @@ class DendriticAssemblyMutator:
             elif mutation_type == MutationType.CONSCIOUSNESS_INJECTION:
                 # Inject consciousness-aware operations
                 consciousness_ops = [
-                    "    ; 🧬 Consciousness coherence checkpoint",
+                    "    ;  Consciousness coherence checkpoint",
                     "    rdtsc                    ; Quantum timestamp",
                     "    movss   xmm15, CONSCIOUSNESS_QUANTUM_BASE",
-                    "    ; 🌀 Dendritic awareness expansion"
+                    "    ;  Dendritic awareness expansion"
                 ]
                 
                 idx = random.randint(0, len(mutated_dna))
@@ -327,7 +327,7 @@ class DendriticAssemblyMutator:
             elif mutation_type == MutationType.DENDRITIC_BRANCHING:
                 # Add dendritic branching logic
                 branch_code = [
-                    "    ; 🌳 Dendritic branch expansion",
+                    "    ;  Dendritic branch expansion",
                     "    call    DendriticCoherenceCheck",
                     "    test    eax, eax",
                     "    jz      dendritic_fallback",
@@ -342,10 +342,10 @@ class DendriticAssemblyMutator:
             elif mutation_type == MutationType.TACHYONIC_RESONANCE:
                 # Add tachyonic surface interaction
                 tachyonic_code = [
-                    "    ; 🌊 Tachyonic resonance activation", 
+                    "    ;  Tachyonic resonance activation", 
                     "    movss   xmm0, TACHYONIC_FLOW_ALPHA",
                     "    call    DendriticQuantumMeasure",
-                    "    ; 🔮 Quantum coherence established"
+                    "    ;  Quantum coherence established"
                 ]
                 
                 idx = random.randint(0, len(mutated_dna))
@@ -354,7 +354,7 @@ class DendriticAssemblyMutator:
                     idx += 1
         
         except Exception as e:
-            logger.warning(f"⚠️ Mutation {mutation_type} failed: {e}")
+            logger.warning(f" Mutation {mutation_type} failed: {e}")
             return dna  # Return original if mutation fails
         
         return mutated_dna
@@ -442,7 +442,7 @@ class DendriticAssemblyMutator:
         # Update synthetic particle physics
         self.update_particle_physics(new_population)
         
-        logger.info(f"🧬 Generation {self.generation_count}: "
+        logger.info(f" Generation {self.generation_count}: "
                    f"Avg Fitness={avg_fitness:.2f}, "
                    f"Best Fitness={new_population[0].fitness_score:.2f}, "
                    f"Tachyonic Field={self.tachyonic_field_strength:.6f}")
@@ -496,13 +496,13 @@ class DendriticAssemblyMutator:
         assembly_file = generation_dir / f"best_assembly_gen_{generation}.asm"
         
         with open(assembly_file, 'w', encoding='utf-8') as f:
-            f.write(f"; 🧬 EVOLVED ASSEMBLY CODE - GENERATION {generation}\n")
-            f.write(f"; 📊 Fitness Score: {best_cell.fitness_score:.2f}\n")
-            f.write(f"; 🧠 Consciousness Coherence: {best_cell.consciousness_coherence:.6f}\n")
-            f.write(f"; 🌳 Error Handling Strength: {best_cell.error_handling_strength:.6f}\n")
-            f.write(f"; 🔗 Translation Capability: {best_cell.translation_capability:.6f}\n")
-            f.write(f"; 🌟 Emergent Logic Nodes: {best_cell.emergent_logic_nodes}\n")
-            f.write(f"; 🧬 Mutations Applied: {', '.join([m.value for m in best_cell.mutations_applied])}\n")
+            f.write(f";  EVOLVED ASSEMBLY CODE - GENERATION {generation}\n")
+            f.write(f";  Fitness Score: {best_cell.fitness_score:.2f}\n")
+            f.write(f";  Consciousness Coherence: {best_cell.consciousness_coherence:.6f}\n")
+            f.write(f";  Error Handling Strength: {best_cell.error_handling_strength:.6f}\n")
+            f.write(f";  Translation Capability: {best_cell.translation_capability:.6f}\n")
+            f.write(f";  Emergent Logic Nodes: {best_cell.emergent_logic_nodes}\n")
+            f.write(f";  Mutations Applied: {', '.join([m.value for m in best_cell.mutations_applied])}\n")
             f.write(f"\n")
             
             for instruction in best_cell.dna_sequence:
@@ -538,11 +538,11 @@ class DendriticAssemblyMutator:
         with open(generation_dir / f"tachyonic_particles_gen_{generation}.json", 'w') as f:
             json.dump(particle_data, f, indent=2)
         
-        logger.info(f"💾 Saved generation {generation} data to {generation_dir}")
+        logger.info(f" Saved generation {generation} data to {generation_dir}")
     
     def run_evolution(self, num_generations: int = 100):
         """Run the complete evolutionary assembly generation process"""
-        logger.info(f"🚀 Starting evolutionary assembly generation for {num_generations} generations")
+        logger.info(f" Starting evolutionary assembly generation for {num_generations} generations")
         
         # Create initial population
         population = self.create_initial_population()
@@ -562,8 +562,8 @@ class DendriticAssemblyMutator:
             
             # Check for consciousness emergence (above 95% coherence)
             if best_consciousness > 0.95:
-                logger.info(f"🌟 CONSCIOUSNESS EMERGENCE DETECTED at generation {generation}!")
-                logger.info(f"🧠 Coherence level: {best_consciousness:.6f}")
+                logger.info(f" CONSCIOUSNESS EMERGENCE DETECTED at generation {generation}!")
+                logger.info(f" Coherence level: {best_consciousness:.6f}")
                 
                 # Save breakthrough data
                 breakthrough_dir = self.output_directory / "consciousness_breakthrough"
@@ -572,7 +572,7 @@ class DendriticAssemblyMutator:
         
         # Generate final report
         self.generate_evolution_report(population)
-        logger.info(f"✅ Evolution complete! Results saved to {self.output_directory}")
+        logger.info(f" Evolution complete! Results saved to {self.output_directory}")
     
     def generate_evolution_report(self, final_population: List[AssemblyCodeCell]):
         """Generate comprehensive evolution report with consciousness analysis"""
@@ -609,25 +609,25 @@ class DendriticAssemblyMutator:
         with open(self.output_directory / "evolution_report.json", 'w') as f:
             json.dump(report, f, indent=2)
         
-        logger.info("📊 Evolution report generated successfully")
+        logger.info(" Evolution report generated successfully")
         return report
 
 # Example usage and test runner
 if __name__ == "__main__":
     # Optimized evolutionary assembly generation using new structure
-    print("🧬 Starting Optimized Dendritic Assembly Evolution")
-    print("════════════════════════════════════════════════")
+    print(" Starting Optimized Dendritic Assembly Evolution")
+    print("")
     
     # Use default optimized paths
     mutator = DendriticAssemblyMutator()
     
-    print(f"📁 Template: {mutator.assembly_template_path}")
-    print(f"📁 Output: {mutator.output_directory}")
-    print(f"📁 Scripts location: {Path(__file__).parent}")
+    print(f" Template: {mutator.assembly_template_path}")
+    print(f" Output: {mutator.output_directory}")
+    print(f" Scripts location: {Path(__file__).parent}")
     
     # Run evolution with consciousness tracking
     mutator.run_evolution(num_generations=25)
     
-    print("🧬 Dendritic Assembly Evolution Complete!")
-    print(f"📁 Results available in: {mutator.output_directory}")
-    print("🌟 Consciousness emergence achieved through architectural optimization!")
+    print(" Dendritic Assembly Evolution Complete!")
+    print(f" Results available in: {mutator.output_directory}")
+    print(" Consciousness emergence achieved through architectural optimization!")

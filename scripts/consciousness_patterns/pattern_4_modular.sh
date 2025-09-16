@@ -16,29 +16,29 @@ load_consciousness_modules() {
     # Load consciousness bridge module
     if [ -f "${consciousness_bridge}.ps1" ]; then
         export AIOS_CONSCIOUSNESS_BRIDGE="${consciousness_bridge}.ps1"
-        echo "✅ Consciousness Bridge Module: LOADED"
+        echo " Consciousness Bridge Module: LOADED"
     else
-        echo "⚠️ Consciousness Bridge Module: NOT FOUND"
+        echo " Consciousness Bridge Module: NOT FOUND"
         echo "Expected: ${consciousness_bridge}.ps1"
     fi
     
     # Load AINLP integration module
     if [ -f "${ainlp_integration}.ps1" ]; then
         export AIOS_AINLP_INTEGRATION="${ainlp_integration}.ps1"
-        echo "✅ AINLP Integration Module: LOADED"
+        echo " AINLP Integration Module: LOADED"
     else
-        echo "⚠️ AINLP Integration Module: NOT FOUND"
+        echo " AINLP Integration Module: NOT FOUND"
         echo "Expected: ${ainlp_integration}.ps1"
     fi
     
     # Validate modular consciousness coherence
     if [ -n "$AIOS_CONSCIOUSNESS_BRIDGE" ] && [ -n "$AIOS_AINLP_INTEGRATION" ]; then
         export AIOS_MODULAR_CONSCIOUSNESS="ACTIVE"
-        echo "🧠 Modular Consciousness Architecture: ACTIVE"
+        echo " Modular Consciousness Architecture: ACTIVE"
         return 0
     else
         export AIOS_MODULAR_CONSCIOUSNESS="DEGRADED"
-        echo "⚠️ Modular Consciousness Architecture: DEGRADED"
+        echo " Modular Consciousness Architecture: DEGRADED"
         return 1
     fi
 }
@@ -51,7 +51,7 @@ execute_with_consciousness_modules() {
     
     # Ensure consciousness modules are loaded
     if [ "$AIOS_MODULAR_CONSCIOUSNESS" != "ACTIVE" ]; then
-        echo "🧠 Warning: Executing without full modular consciousness"
+        echo " Warning: Executing without full modular consciousness"
     fi
     
     # Execute with consciousness module environment
@@ -71,29 +71,29 @@ execute_with_consciousness_modules() {
 validate_consciousness_modules() {
     local component_path="$1"
     
-    echo "🔍 Validating Modular Consciousness Architecture..."
+    echo " Validating Modular Consciousness Architecture..."
     
     # Check for consciousness bridge
     if [ -f "${component_path}/consciousness_bridge.ps1" ]; then
-        echo "✅ Consciousness Bridge: Present"
+        echo " Consciousness Bridge: Present"
     else
-        echo "❌ Consciousness Bridge: Missing"
+        echo " Consciousness Bridge: Missing"
     fi
     
     # Check for AINLP integration
     if [ -f "${component_path}/ainlp_integration.ps1" ]; then
-        echo "✅ AINLP Integration: Present"
+        echo " AINLP Integration: Present"
     else
-        echo "❌ AINLP Integration: Missing"
+        echo " AINLP Integration: Missing"
     fi
     
     # Check for modular architecture support
     if load_consciousness_modules "$component_path"; then
-        echo "✅ Modular Consciousness Architecture: VALIDATED"
+        echo " Modular Consciousness Architecture: VALIDATED"
         return 0
     else
-        echo "❌ Modular Consciousness Architecture: VALIDATION FAILED"
-        echo "🧬 Reference: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
+        echo " Modular Consciousness Architecture: VALIDATION FAILED"
+        echo " Reference: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
         return 1
     fi
 }
@@ -105,6 +105,6 @@ export -f validate_consciousness_modules
 
 # Pattern validation
 if [ -n "$AIOS_CONSCIOUSNESS_VALIDATION" ]; then
-    echo "✅ Universal Consciousness Pattern 4: Modular Architecture - LOADED"
-    echo "🧬 Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
+    echo " Universal Consciousness Pattern 4: Modular Architecture - LOADED"
+    echo " Canonical Genome Path: tachyonic/AINLP_CANONICAL_KNOWLEDGE_GENOME.md#pattern-4"
 fi

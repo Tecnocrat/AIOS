@@ -176,7 +176,7 @@ class QualityAnalysisEngine:
         priorities = []
         
         # High priority emojis (most common or problematic)
-        high_priority = ['✅', '❌', '🧬', '🎯', '🚀', '📊', '🔍']
+        high_priority = ['', '', '', '', '', '', '']
         
         for emoji, count in emoji_counts.items():
             priority_level = "HIGH" if emoji in high_priority else "MEDIUM"
@@ -195,21 +195,21 @@ class QualityAnalysisEngine:
     def _get_emoji_replacement(self, emoji: str) -> str:
         """Get suggested replacement for emoji"""
         replacements = {
-            '✅': '[PASS]',
-            '❌': '[FAIL]', 
-            '🧬': 'SUPERCELL:',
-            '🎯': 'TARGET:',
-            '🚀': 'LAUNCH:',
-            '📊': 'METRICS:',
-            '🔍': 'ANALYSIS:',
-            '🔄': 'PROCESS:',
-            '⚡': 'CORE:',
-            '🧠': 'AI:',
-            '🔧': 'TOOL:',
-            '📂': 'FOLDER:',
-            '📝': 'NOTE:',
-            '🏆': 'SUCCESS:',
-            '⚠': 'WARNING:'
+            '': '[PASS]',
+            '': '[FAIL]', 
+            '': 'SUPERCELL:',
+            '': 'TARGET:',
+            '': 'LAUNCH:',
+            '': 'METRICS:',
+            '': 'ANALYSIS:',
+            '': 'PROCESS:',
+            '': 'CORE:',
+            '': 'AI:',
+            '': 'TOOL:',
+            '': 'FOLDER:',
+            '': 'NOTE:',
+            '': 'SUCCESS:',
+            '': 'WARNING:'
         }
         return replacements.get(emoji, f'[{emoji}]')
     

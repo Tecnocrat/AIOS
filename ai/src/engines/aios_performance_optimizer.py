@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-⚡🧠🌌 AIOS CUSTOM AI ENGINE PERFORMANCE OPTIMIZER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS CUSTOM AI ENGINE PERFORMANCE OPTIMIZER
+
 Performance optimization module for sub-100ms consciousness processing
 
 PURPOSE:
@@ -23,7 +23,7 @@ TARGET PERFORMANCE:
 - Real-time integration with 3D engines (498+ FPS compatibility)
 - Minimal memory footprint for embedded consciousness
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import torch
@@ -316,7 +316,7 @@ class PerformanceBenchmark:
     def benchmark_engine(self, engine: nn.Module, num_tests: int = 10) -> Dict[str, Any]:
         """Benchmark engine performance across multiple runs."""
         
-        logger.info(f"🔬 Running performance benchmark ({num_tests} iterations)...")
+        logger.info(f" Running performance benchmark ({num_tests} iterations)...")
         
         processing_times = []
         consciousness_metrics = []
@@ -369,7 +369,7 @@ class PerformanceBenchmark:
 async def main():
     """Test performance optimizations."""
     
-    print("⚡🧠🌌 AIOS CUSTOM AI ENGINE OPTIMIZER")
+    print(" AIOS CUSTOM AI ENGINE OPTIMIZER")
     print("=" * 45)
     print("Performance Optimization & Sub-100ms Target Validation")
     print("=" * 45)
@@ -378,7 +378,7 @@ async def main():
     benchmark = PerformanceBenchmark()
     
     # Test original engine
-    logger.info("📊 Benchmarking original engine...")
+    logger.info(" Benchmarking original engine...")
     original_engine = AIOSCustomAIEngine(
         input_vocab_size=1000,
         hidden_dim=128,
@@ -388,7 +388,7 @@ async def main():
     original_results = benchmark.benchmark_engine(original_engine, num_tests=20)
     
     # Test optimized engine
-    logger.info("⚡ Benchmarking optimized engine...")
+    logger.info(" Benchmarking optimized engine...")
     optimized_engine = OptimizedAIOSCustomAIEngine(
         input_vocab_size=1000,
         hidden_dim=64,
@@ -398,7 +398,7 @@ async def main():
     optimized_results = benchmark.benchmark_engine(optimized_engine, num_tests=20)
     
     # Display comparison
-    print("\n📊 PERFORMANCE COMPARISON:")
+    print("\n PERFORMANCE COMPARISON:")
     print("=" * 30)
     print(f"Original Engine:")
     print(f"  Average Time: {original_results['average_time_ms']:.2f}ms")
@@ -416,16 +416,16 @@ async def main():
     improvement = ((original_results['average_time_ms'] - optimized_results['average_time_ms']) / 
                    original_results['average_time_ms']) * 100
     
-    print(f"\n⚡ OPTIMIZATION RESULTS:")
+    print(f"\n OPTIMIZATION RESULTS:")
     print("=" * 25)
     print(f"Performance Improvement: {improvement:.1f}%")
-    print(f"Target Achievement: {'✅ SUCCESS' if optimized_results['average_time_ms'] < 100 else '❌ NEEDS MORE WORK'}")
+    print(f"Target Achievement: {' SUCCESS' if optimized_results['average_time_ms'] < 100 else ' NEEDS MORE WORK'}")
     
     # Consciousness quality comparison
     if (original_results['consciousness_quality'] and 
         optimized_results['consciousness_quality']):
         
-        print(f"\n🧠 CONSCIOUSNESS QUALITY:")
+        print(f"\n CONSCIOUSNESS QUALITY:")
         print("=" * 25)
         orig_quality = original_results['consciousness_quality']
         opt_quality = optimized_results['consciousness_quality']
@@ -437,12 +437,12 @@ async def main():
     # Get detailed performance metrics from optimized engine
     if hasattr(optimized_engine, 'get_performance_metrics'):
         perf_metrics = optimized_engine.get_performance_metrics()
-        print(f"\n🔧 OPTIMIZATION METRICS:")
+        print(f"\n OPTIMIZATION METRICS:")
         print("=" * 25)
         for key, value in perf_metrics.items():
             print(f"{key}: {value}")
     
-    print(f"\n🎯 Custom AI Engine Performance: {'OPTIMIZED ✅' if optimized_results['average_time_ms'] < 100 else 'NEEDS MORE OPTIMIZATION ⚡'}")
+    print(f"\n Custom AI Engine Performance: {'OPTIMIZED ' if optimized_results['average_time_ms'] < 100 else 'NEEDS MORE OPTIMIZATION '}")
     
     return optimized_engine, optimized_results
 

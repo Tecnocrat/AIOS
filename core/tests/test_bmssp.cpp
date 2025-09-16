@@ -32,6 +32,6 @@ int main() {
               << " nodesWithinB: " << withinBound << std::endl;
     // Minimal guarantee: at least the source node distance is 0
     assert(dist[0] == 0.0);
-    std::cout << "\n✅ BMSSP skeleton test passed." << std::endl;
+    std::cout << "\n BMSSP skeleton test passed." << std::endl;
     return 0;
 }

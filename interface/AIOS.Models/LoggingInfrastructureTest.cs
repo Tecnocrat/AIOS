@@ -62,7 +62,7 @@ namespace AIOS.Models.Tests
             logger.LogError("This is an error message");
             logger.LogCritical("This is a critical message");
 
-            Console.WriteLine("✓ Basic logging test completed\n");
+            Console.WriteLine(" Basic logging test completed\n");
         }
 
         private static void TestStructuredLogging()
@@ -100,7 +100,7 @@ namespace AIOS.Models.Tests
                 "Database connection pool status",
                 systemData);
 
-            Console.WriteLine("✓ Structured logging test completed\n");
+            Console.WriteLine(" Structured logging test completed\n");
         }
 
         private static async Task TestPerformanceLogging()
@@ -129,7 +129,7 @@ namespace AIOS.Models.Tests
                     ["CacheHitRate"] = 0.85
                 });
 
-            Console.WriteLine("✓ Performance logging test completed\n");
+            Console.WriteLine(" Performance logging test completed\n");
         }
 
         private static void TestAIOperationLogging()
@@ -167,7 +167,7 @@ namespace AIOS.Models.Tests
                     ["Features"] = new[] { "Season", "Marketing", "Economy" }
                 });
 
-            Console.WriteLine("✓ AI operation logging test completed\n");
+            Console.WriteLine(" AI operation logging test completed\n");
         }
 
         private static void TestHealthMonitoring()
@@ -210,7 +210,7 @@ namespace AIOS.Models.Tests
                     ["ErrorMessage"] = "Service unavailable"
                 });
 
-            Console.WriteLine("✓ Health monitoring test completed\n");
+            Console.WriteLine(" Health monitoring test completed\n");
         }
 
         private static void TestErrorScenarios()
@@ -251,7 +251,7 @@ namespace AIOS.Models.Tests
                     AffectedServices = new[] { "AIService", "DatabaseService" }
                 });
 
-            Console.WriteLine("✓ Error scenario testing completed\n");
+            Console.WriteLine(" Error scenario testing completed\n");
         }
     }
 }

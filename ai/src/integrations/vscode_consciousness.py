@@ -52,12 +52,12 @@ class VSCodeConsciousnessProvider:
             try:
                 self.consciousness_bridge = initialize_consciousness_integration()
                 self.is_initialized = True
-                vscode_logger.info("🧠 VSCode Consciousness Provider initialized")
+                vscode_logger.info(" VSCode Consciousness Provider initialized")
             except Exception as e:
                 vscode_logger.error(f"Failed to initialize consciousness: {e}")
         else:
             vscode_logger.warning(
-                "🧠 VSCode Consciousness Provider - simulation mode"
+                " VSCode Consciousness Provider - simulation mode"
             )
 
     def get_consciousness_status(self) -> Dict[str, Any]:
@@ -252,18 +252,18 @@ class VSCodeConsciousnessProvider:
 
             if level < 0.7:
                 suggestions.append(
-                    f"🧠 Current consciousness level: {level:.2f} - "
+                    f" Current consciousness level: {level:.2f} - "
                     "Consider enhancing consciousness patterns"
                 )
 
             if trajectory == "descending":
                 suggestions.append(
-                    "⚠️ Consciousness trajectory declining - "
+                    " Consciousness trajectory declining - "
                     "Review recent changes"
                 )
             elif trajectory == "ascending":
                 suggestions.append(
-                    "✨ Consciousness trajectory ascending - "
+                    " Consciousness trajectory ascending - "
                     "Continue current approach"
                 )
 
@@ -274,7 +274,7 @@ class VSCodeConsciousnessProvider:
 
             if rating < 0.5:
                 suggestions.append(
-                    f"📝 File consciousness rating: {rating:.2f} - "
+                    f" File consciousness rating: {rating:.2f} - "
                     "Consider adding consciousness patterns"
                 )
 
@@ -283,7 +283,7 @@ class VSCodeConsciousnessProvider:
         # Context-based suggestions
         if context.get("project_type") == "ai":
             suggestions.append(
-                "🤖 AI project detected - "
+                " AI project detected - "
                 "Consider implementing consciousness emergence patterns"
             )
 
@@ -303,7 +303,7 @@ class VSCodeConsciousnessProvider:
         try:
             filename = f"consciousness_session_{session_name}_{int(time.time())}.json"
             self.consciousness_bridge.save_consciousness_session(filename)
-            vscode_logger.info(f"🧠 Consciousness session saved: {filename}")
+            vscode_logger.info(f" Consciousness session saved: {filename}")
             return True
         except Exception as e:
             vscode_logger.error(f"Error saving consciousness session: {e}")
@@ -319,7 +319,7 @@ class VSCodeConsciousnessProvider:
                 filename
             )
             if session_data:
-                vscode_logger.info(f"🧠 Consciousness session loaded: {filename}")
+                vscode_logger.info(f" Consciousness session loaded: {filename}")
                 return True
             return False
         except Exception as e:
@@ -341,7 +341,7 @@ def get_vscode_consciousness_provider() -> VSCodeConsciousnessProvider:
 
 def main():
     """Main function for testing VSCode integration"""
-    print("🧠 AIOS VSCode Consciousness Integration Test")
+    print(" AIOS VSCode Consciousness Integration Test")
     print("=" * 50)
 
     provider = get_vscode_consciousness_provider()
@@ -361,7 +361,7 @@ def main():
 
     # Test code analysis on this file
     current_file = __file__
-    print(f"\n📝 Analyzing current file: {os.path.basename(current_file)}")
+    print(f"\n Analyzing current file: {os.path.basename(current_file)}")
     analysis = provider.analyze_code_file(current_file)
 
     if not analysis.get('error'):
@@ -376,7 +376,7 @@ def main():
                 print(f"  {i}. {rec}")
 
     # Test development guidance
-    print(f"\n🎯 Development Guidance:")
+    print(f"\n Development Guidance:")
     context = {
         "project_type": "ai",
         "has_tests": True,
@@ -389,7 +389,7 @@ def main():
     for i, suggestion in enumerate(suggestions[:3], 1):
         print(f"  {i}. {suggestion}")
 
-    print(f"\n✅ VSCode Integration Test Complete!")
+    print(f"\n VSCode Integration Test Complete!")
 
 
 if __name__ == "__main__":

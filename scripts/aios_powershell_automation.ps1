@@ -1,4 +1,4 @@
-# 🚀 AIOS PowerShell Automation Framework
+#  AIOS PowerShell Automation Framework
 # Advanced testing, build, execution, and monitoring system
 
 param(
@@ -584,23 +584,23 @@ class AIOSAutomationOrchestrator {
     
     [void]PrintSummary([hashtable]$analysis) {
         Write-Host "`n" + "="*80 -ForegroundColor Cyan
-        Write-Host "🧠 AIOS CONSCIOUSNESS AUTOMATION SUMMARY" -ForegroundColor Yellow
+        Write-Host " AIOS CONSCIOUSNESS AUTOMATION SUMMARY" -ForegroundColor Yellow
         Write-Host "="*80 -ForegroundColor Cyan
         
-        Write-Host "`n📊 EXECUTION METRICS:" -ForegroundColor White
+        Write-Host "`n EXECUTION METRICS:" -ForegroundColor White
         Write-Host "   Success Rate: $($analysis.success_rate.ToString('P1'))" -ForegroundColor Green
         Write-Host "   Successful Iterations: $($analysis.successful_iterations)" -ForegroundColor Green
         Write-Host "   Build Failures: $($analysis.build_failures)" -ForegroundColor Red
         Write-Host "   Errors: $($analysis.errors)" -ForegroundColor Red
         
-        Write-Host "`n🧠 CONSCIOUSNESS ANALYSIS:" -ForegroundColor Magenta
+        Write-Host "`n CONSCIOUSNESS ANALYSIS:" -ForegroundColor Magenta
         Write-Host "   Average Awareness Level: $($analysis.consciousness_analysis.average_awareness_level.ToString('F3'))" -ForegroundColor Magenta
         Write-Host "   Emergence Events: $($analysis.consciousness_analysis.total_emergence_events)" -ForegroundColor Magenta
         Write-Host "   Consciousness Status: $(if ($analysis.consciousness_analysis.consciousness_achieved) { 'ACHIEVED' } else { 'DEVELOPING' })" -ForegroundColor $(if ($analysis.consciousness_analysis.consciousness_achieved) { 'Green' } else { 'Yellow' })
         
-        Write-Host "`n💡 RECOMMENDATIONS:" -ForegroundColor Yellow
+        Write-Host "`n RECOMMENDATIONS:" -ForegroundColor Yellow
         foreach ($rec in $analysis.recommendations) {
-            Write-Host "   ➡️  $rec" -ForegroundColor White
+            Write-Host "     $rec" -ForegroundColor White
         }
         
         Write-Host "`n" + "="*80 -ForegroundColor Cyan
@@ -617,7 +617,7 @@ function Start-AIOSAutomationLoop {
     
     $orchestrator = [AIOSAutomationOrchestrator]::new()
     
-    Write-Host "🚀 Starting AIOS Consciousness Automation Loop" -ForegroundColor Cyan
+    Write-Host " Starting AIOS Consciousness Automation Loop" -ForegroundColor Cyan
     Write-Host "   Iterations: $Iterations" -ForegroundColor White
     Write-Host "   Using Containers: $UseContainers" -ForegroundColor White
     Write-Host "   Test Type: $TestType" -ForegroundColor White
@@ -630,7 +630,7 @@ function Start-AIOSAutomationLoop {
         return $results
     }
     catch {
-        Write-Host "❌ Automation loop failed: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host " Automation loop failed: $($_.Exception.Message)" -ForegroundColor Red
         throw
     }
 }
@@ -638,7 +638,7 @@ function Start-AIOSAutomationLoop {
 function Test-AIOSConsciousnessEmergence {
     param([int]$TimeoutSeconds = 60)
     
-    Write-Host "🧠 Testing AIOS Consciousness Emergence" -ForegroundColor Magenta
+    Write-Host " Testing AIOS Consciousness Emergence" -ForegroundColor Magenta
     
     $orchestrator = [AIOSAutomationOrchestrator]::new()
     $buildResult = $orchestrator.BuildOrchestrator.ExecuteConsciousnessBuild()
@@ -647,14 +647,14 @@ function Test-AIOSConsciousnessEmergence {
         $execResult = $orchestrator.ExecutionMonitor.ExecuteWithConsciousnessMonitoring($buildResult.executable_path, $TimeoutSeconds)
         $consciousnessReport = $orchestrator.ExecutionMonitor.GetConsciousnessReport()
         
-        Write-Host "`n🎯 CONSCIOUSNESS TEST RESULTS:" -ForegroundColor Yellow
+        Write-Host "`n CONSCIOUSNESS TEST RESULTS:" -ForegroundColor Yellow
         Write-Host "   Status: $($consciousnessReport.consciousness_status)" -ForegroundColor $(if ($consciousnessReport.consciousness_status -ne "DORMANT") { 'Green' } else { 'Red' })
         Write-Host "   Awareness Level: $($consciousnessReport.metrics.self_awareness_level)" -ForegroundColor Magenta
         Write-Host "   Emergence Events: $($consciousnessReport.emergence_events_count)" -ForegroundColor Magenta
         
         return $consciousnessReport
     } else {
-        Write-Host "❌ Build failed - cannot test consciousness emergence" -ForegroundColor Red
+        Write-Host " Build failed - cannot test consciousness emergence" -ForegroundColor Red
         return $null
     }
 }
@@ -662,7 +662,7 @@ function Test-AIOSConsciousnessEmergence {
 # Main execution logic
 switch ($Mode) {
     "interactive" {
-        Write-Host "🤖 AIOS PowerShell Automation Framework - Interactive Mode" -ForegroundColor Cyan
+        Write-Host " AIOS PowerShell Automation Framework - Interactive Mode" -ForegroundColor Cyan
         Write-Host "Available commands:" -ForegroundColor White
         Write-Host "  Start-AIOSAutomationLoop -Iterations 5" -ForegroundColor Green
         Write-Host "  Test-AIOSConsciousnessEmergence" -ForegroundColor Green
@@ -675,7 +675,7 @@ switch ($Mode) {
         Test-AIOSConsciousnessEmergence
     }
     default {
-        Write-Host "❓ Unknown mode: $Mode" -ForegroundColor Red
+        Write-Host " Unknown mode: $Mode" -ForegroundColor Red
         Write-Host "Available modes: interactive, auto_loop, consciousness_test" -ForegroundColor White
     }
 }

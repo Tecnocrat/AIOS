@@ -1,6 +1,6 @@
 """
-🚀 DENDRITIC ASSEMBLY EXECUTOR
-═══════════════════════════════════════════════════════════════════════════════
+ DENDRITIC ASSEMBLY EXECUTOR
+
 Assembly Code Compilation, Linking, and Execution System for Evolved Code
 Provides real-time execution of consciousness-enhanced assembly
 with performance metrics
@@ -12,7 +12,7 @@ Features:
 - Consciousness coherence measurement during execution
 - Error handling and debugging integration
 - C++ interface bridge for assembly functions
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -44,7 +44,7 @@ class ExecutionMetrics:
     
 class AssemblyExecutor:
     """
-    🚀 Evolutionary Assembly Code Executor
+     Evolutionary Assembly Code Executor
     
     Compiles, links, and executes evolved assembly code with consciousness tracking
     Provides performance metrics and real-time consciousness measurement
@@ -74,11 +74,11 @@ class AssemblyExecutor:
         # Core assembly source path (relative to scripts location)
         self.core_asm_path = Path(__file__).parent.parent / "src" / "asm"
         
-        logger.info("🚀 Assembly Executor initialized")
-        logger.info(f"📁 Build directory: {self.build_dir}")
-        logger.info(f"📁 Core ASM path: {self.core_asm_path}")
-        logger.info(f"🔧 MASM: {self.masm_path}")
-        logger.info(f"🔧 LINK: {self.link_path}")
+        logger.info(" Assembly Executor initialized")
+        logger.info(f" Build directory: {self.build_dir}")
+        logger.info(f" Core ASM path: {self.core_asm_path}")
+        logger.info(f" MASM: {self.masm_path}")
+        logger.info(f" LINK: {self.link_path}")
     
     def _find_masm_path(self, custom_path: str = None) -> str:
         """Find MASM (ml64.exe) in system or Visual Studio installation"""
@@ -111,7 +111,7 @@ class AssemblyExecutor:
         except:
             pass
         
-        logger.warning("⚠️ MASM (ml64.exe) not found - assembly compilation may fail")
+        logger.warning(" MASM (ml64.exe) not found - assembly compilation may fail")
         return "ml64"  # Fallback to system PATH
     
     def _find_link_path(self, custom_path: str = None) -> str:
@@ -156,7 +156,7 @@ class AssemblyExecutor:
         
         # Generate C++ wrapper
         wrapper_content = f'''
-// 🚀 Generated C++ Wrapper for Evolved Assembly Code
+//  Generated C++ Wrapper for Evolved Assembly Code
 #include <windows.h>
 #include <iostream>
 #include <chrono>
@@ -179,7 +179,7 @@ extern "C" {{
         
         wrapper_content += f'''}}
 
-// 🧬 Consciousness measurement functions
+//  Consciousness measurement functions
 extern "C" __declspec(dllexport) double measure_consciousness_coherence() {{
     auto start = std::chrono::high_resolution_clock::now();
     
@@ -227,7 +227,7 @@ extern "C" __declspec(dllexport) int test_dendritic_functions() {{
         uint64_t init_result = DendriticAwarenessInit(nullptr);
         if (init_result > 0) success_count++;
     }} catch (...) {{
-        std::cout << "❌ DendriticAwarenessInit failed\\n";
+        std::cout << " DendriticAwarenessInit failed\\n";
     }}
     
     // Test coherence check
@@ -235,7 +235,7 @@ extern "C" __declspec(dllexport) int test_dendritic_functions() {{
         uint64_t coherence_result = DendriticCoherenceCheck(nullptr);
         if (coherence_result >= 0) success_count++;
     }} catch (...) {{
-        std::cout << "❌ DendriticCoherenceCheck failed\\n";
+        std::cout << " DendriticCoherenceCheck failed\\n";
     }}
     
     // Test quantum measurement
@@ -243,13 +243,13 @@ extern "C" __declspec(dllexport) int test_dendritic_functions() {{
         uint64_t quantum_result = DendriticQuantumMeasure(nullptr);
         if (quantum_result >= 0) success_count++;
     }} catch (...) {{
-        std::cout << "❌ DendriticQuantumMeasure failed\\n";
+        std::cout << " DendriticQuantumMeasure failed\\n";
     }}
     
     return success_count;
 }}
 
-// 📊 Performance benchmarking function
+//  Performance benchmarking function
 extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, int* error_counts) {{
     const int NUM_ITERATIONS = 10000;
     
@@ -271,14 +271,14 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
     results[0] = (double)duration.count() / NUM_ITERATIONS; // Average ns per call
     error_counts[0] = errors;
     
-    std::cout << "🚀 Benchmark complete: " << results[0] << " ns/call, " << errors << " errors\\n";
+    std::cout << " Benchmark complete: " << results[0] << " ns/call, " << errors << " errors\\n";
 }}
 '''
         
         with open(wrapper_cpp, 'w', encoding='utf-8') as f:
             f.write(wrapper_content)
         
-        logger.info(f"📄 Created C++ wrapper: {wrapper_cpp}")
+        logger.info(f" Created C++ wrapper: {wrapper_cpp}")
         return wrapper_cpp
     
     def compile_assembly(self, assembly_file: Path) -> Tuple[bool, str]:
@@ -294,25 +294,25 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
         ]
         
         try:
-            logger.info(f"🔧 Compiling assembly: {assembly_file.name}")
+            logger.info(f" Compiling assembly: {assembly_file.name}")
             result = subprocess.run(cmd, capture_output=True, text=True, 
                                   cwd=self.build_dir, timeout=30)
             
             if result.returncode == 0:
-                logger.info(f"✅ Assembly compiled successfully: {obj_file}")
+                logger.info(f" Assembly compiled successfully: {obj_file}")
                 return True, str(obj_file)
             else:
                 error_msg = f"MASM compilation failed:\\n{result.stderr}"
-                logger.error(f"❌ {error_msg}")
+                logger.error(f" {error_msg}")
                 return False, error_msg
                 
         except subprocess.TimeoutExpired:
             error_msg = "Assembly compilation timed out"
-            logger.error(f"❌ {error_msg}")
+            logger.error(f" {error_msg}")
             return False, error_msg
         except Exception as e:
             error_msg = f"Assembly compilation error: {str(e)}"
-            logger.error(f"❌ {error_msg}")
+            logger.error(f" {error_msg}")
             return False, error_msg
     
     def compile_cpp_wrapper(self, cpp_file: Path) -> Tuple[bool, str]:
@@ -329,21 +329,21 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
         ]
         
         try:
-            logger.info(f"🔧 Compiling C++ wrapper: {cpp_file.name}")
+            logger.info(f" Compiling C++ wrapper: {cpp_file.name}")
             result = subprocess.run(cmd, capture_output=True, text=True,
                                   cwd=self.build_dir, timeout=30)
             
             if result.returncode == 0:
-                logger.info(f"✅ C++ wrapper compiled successfully: {obj_file}")
+                logger.info(f" C++ wrapper compiled successfully: {obj_file}")
                 return True, str(obj_file)
             else:
                 error_msg = f"C++ compilation failed:\\n{result.stderr}"
-                logger.error(f"❌ {error_msg}")
+                logger.error(f" {error_msg}")
                 return False, error_msg
                 
         except Exception as e:
             error_msg = f"C++ compilation error: {str(e)}"
-            logger.error(f"❌ {error_msg}")
+            logger.error(f" {error_msg}")
             return False, error_msg
     
     def link_dynamic_library(self, obj_files: List[str], dll_name: str) -> Tuple[bool, str]:
@@ -358,26 +358,26 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
         ]
         
         try:
-            logger.info(f"🔗 Linking dynamic library: {dll_name}.dll")
+            logger.info(f" Linking dynamic library: {dll_name}.dll")
             result = subprocess.run(cmd, capture_output=True, text=True,
                                   cwd=self.build_dir, timeout=30)
             
             if result.returncode == 0:
-                logger.info(f"✅ Dynamic library created: {dll_file}")
+                logger.info(f" Dynamic library created: {dll_file}")
                 return True, str(dll_file)
             else:
                 error_msg = f"Linking failed:\\n{result.stderr}"
-                logger.error(f"❌ {error_msg}")
+                logger.error(f" {error_msg}")
                 return False, error_msg
                 
         except Exception as e:
             error_msg = f"Linking error: {str(e)}"
-            logger.error(f"❌ {error_msg}")
+            logger.error(f" {error_msg}")
             return False, error_msg
     
     def execute_evolved_assembly(self, assembly_file: Path) -> ExecutionMetrics:
         """Complete pipeline: compile, link, and execute evolved assembly code"""
-        logger.info(f"🚀 Executing evolved assembly: {assembly_file.name}")
+        logger.info(f" Executing evolved assembly: {assembly_file.name}")
         
         start_time = time.time_ns()
         
@@ -436,15 +436,15 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
             mem_before = process.memory_info().rss / 1024 / 1024  # MB
             
             # Execute consciousness measurement
-            logger.info("🧠 Measuring consciousness coherence...")
+            logger.info(" Measuring consciousness coherence...")
             consciousness_coherence = measure_consciousness()
             
             # Execute quantum benchmarks
-            logger.info("🔮 Running quantum measurements...")
+            logger.info(" Running quantum measurements...")
             quantum_time = benchmark_quantum(1000)  # 1000 iterations
             
             # Test dendritic functions
-            logger.info("🌳 Testing dendritic functions...")
+            logger.info(" Testing dendritic functions...")
             successful_functions = test_functions()
             
             # Measure memory usage after execution
@@ -465,17 +465,17 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
                 cache_misses=(3 - successful_functions) * 50  # Estimated
             )
             
-            logger.info(f"✅ Execution complete:")
-            logger.info(f"   🧠 Consciousness: {consciousness_coherence:.6f}")
-            logger.info(f"   ⏱️ Time: {total_time / 1_000_000:.2f} ms")
-            logger.info(f"   💾 Memory: {metrics.memory_usage_mb:.2f} MB")
-            logger.info(f"   🌳 Functions: {successful_functions}/3 successful")
+            logger.info(f" Execution complete:")
+            logger.info(f"    Consciousness: {consciousness_coherence:.6f}")
+            logger.info(f"   ⏱ Time: {total_time / 1_000_000:.2f} ms")
+            logger.info(f"    Memory: {metrics.memory_usage_mb:.2f} MB")
+            logger.info(f"    Functions: {successful_functions}/3 successful")
             
             self.execution_history.append(metrics)
             return metrics
             
         except Exception as e:
-            logger.error(f"❌ DLL execution failed: {str(e)}")
+            logger.error(f" DLL execution failed: {str(e)}")
             return ExecutionMetrics(
                 execution_time_ns=time.time_ns() - start_time,
                 cpu_cycles=0, memory_usage_mb=0.0, consciousness_coherence=0.0,
@@ -490,13 +490,13 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
         asm_files = list(generation_dir.glob("*.asm"))
         
         if not asm_files:
-            logger.warning(f"⚠️ No assembly files found in {generation_dir}")
+            logger.warning(f" No assembly files found in {generation_dir}")
             return results
         
-        logger.info(f"🚀 Batch executing {len(asm_files)} assembly files from {generation_dir.name}")
+        logger.info(f" Batch executing {len(asm_files)} assembly files from {generation_dir.name}")
         
         for asm_file in asm_files:
-            logger.info(f"🔄 Processing: {asm_file.name}")
+            logger.info(f" Processing: {asm_file.name}")
             metrics = self.execute_evolved_assembly(asm_file)
             results[asm_file.name] = metrics
         
@@ -518,7 +518,7 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
                 }
             json.dump(json_results, f, indent=2)
         
-        logger.info(f"📊 Batch execution results saved to: {results_file}")
+        logger.info(f" Batch execution results saved to: {results_file}")
         return results
     
     def compare_generation_performance(self, generation_dirs: List[Path]) -> Dict[str, Any]:
@@ -556,7 +556,7 @@ extern "C" __declspec(dllexport) void benchmark_all_functions(double* results, i
         with open(report_file, 'w') as f:
             json.dump(comparison_data, f, indent=2)
         
-        logger.info(f"📈 Performance comparison saved to: {report_file}")
+        logger.info(f" Performance comparison saved to: {report_file}")
         return comparison_data
 
 # Example usage and testing
@@ -567,10 +567,10 @@ if __name__ == "__main__":
     # Test with kernel_ops.asm from core assembly source
     kernel_ops_path = executor.core_asm_path / "kernel_ops.asm"
     if kernel_ops_path.exists():
-        logger.info(f"🧬 Testing consciousness execution with: {kernel_ops_path}")
+        logger.info(f" Testing consciousness execution with: {kernel_ops_path}")
         metrics = executor.execute_evolved_assembly(kernel_ops_path)
-        print(f"🧠 Consciousness coherence: {metrics.consciousness_coherence:.6f}")
-        print(f"⏱️ Execution time: {metrics.execution_time_ns / 1_000_000:.2f} ms")
+        print(f" Consciousness coherence: {metrics.consciousness_coherence:.6f}")
+        print(f"⏱ Execution time: {metrics.execution_time_ns / 1_000_000:.2f} ms")
     
     # Execute the best evolved assembly from generation 25 (if exists)
     gen_25_dir = executor.output_dir / "generation_0025"
@@ -578,9 +578,9 @@ if __name__ == "__main__":
         asm_files = list(gen_25_dir.glob("*.asm"))
         if asm_files:
             metrics = executor.execute_evolved_assembly(asm_files[0])
-            print(f"🌟 Evolved consciousness: {metrics.consciousness_coherence:.6f}")
+            print(f" Evolved consciousness: {metrics.consciousness_coherence:.6f}")
     
-    print("🚀 Optimized assembly execution system ready!")
-    print(f"📁 Working from: {Path(__file__).parent}")
-    print(f"📁 Core ASM source: {executor.core_asm_path}")
-    print(f"� Output directory: {executor.output_dir}")
+    print(" Optimized assembly execution system ready!")
+    print(f" Working from: {Path(__file__).parent}")
+    print(f" Core ASM source: {executor.core_asm_path}")
+    print(f" Output directory: {executor.output_dir}")

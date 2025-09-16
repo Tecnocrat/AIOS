@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
 """
-🧠 AIOS AI Knowledge Transfer System - Dendritic Stub
+ AIOS AI Knowledge Transfer System - Dendritic Stub
 AINLP Dendritic Architecture for Multi-AI Knowledge Harmonization
 
 This module implements the dendritic stub pattern for AI knowledge transfer,

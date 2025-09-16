@@ -25,7 +25,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-Write-Host "🧠 AIOS Environment Bootstrap" -ForegroundColor Cyan
+Write-Host " AIOS Environment Bootstrap" -ForegroundColor Cyan
 Write-Host "================================" -ForegroundColor Cyan
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
@@ -172,7 +172,7 @@ try {
     Get-EnvironmentReport
     $importResult = Test-CoreImports
     if ($importResult -eq 2) { exit 2 }
-    Write-AIOSLog '🎉 Environment bootstrap complete' 'INFO'
+    Write-AIOSLog ' Environment bootstrap complete' 'INFO'
     exit 0
 }
 catch {

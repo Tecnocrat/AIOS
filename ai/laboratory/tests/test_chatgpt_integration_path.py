@@ -34,16 +34,16 @@ def _print_summary(status: Dict[str, bool], repo_root: Path) -> None:
     print(f"Target:    {repo_root / 'chatgpt_integration'}")
 
     if status["root_exists"]:
-        print("✅ chatgpt_integration/ exists")
+        print(" chatgpt_integration/ exists")
     else:
-        print("❌ chatgpt_integration/ missing")
+        print(" chatgpt_integration/ missing")
 
     for key, label in (
         ("ingestion_dir", "ingestion/"),
         ("md_dir", "md/"),
         ("chatgpt_py", "chatgpt.py"),
     ):
-        prefix = "✅ " if status[key] else "❌ "
+        prefix = " " if status[key] else " "
         suffix = " exists" if status[key] else " missing"
         print(prefix + label + suffix)
 
@@ -53,7 +53,7 @@ def _print_summary(status: Dict[str, bool], repo_root: Path) -> None:
     if cgi.exists():
         for _, _, files in os.walk(cgi):
             total_files += len(files)
-    print(f"📊 Total files in chatgpt_integration: {total_files}")
+    print(f" Total files in chatgpt_integration: {total_files}")
 
 
 def test_chatgpt_integration_path_pytest() -> None:
@@ -66,11 +66,11 @@ def test_chatgpt_integration_path_pytest() -> None:
     # if optional pieces are missing.
     # If these are required, flip to asserts.
     if not status["ingestion_dir"]:
-        print("⚠️ ingestion/ directory missing")
+        print(" ingestion/ directory missing")
     if not status["md_dir"]:
-        print("⚠️ md/ directory missing")
+        print(" md/ directory missing")
     if not status["chatgpt_py"]:
-        print("⚠️ chatgpt.py missing")
+        print(" chatgpt.py missing")
 
 
 if __name__ == "__main__":

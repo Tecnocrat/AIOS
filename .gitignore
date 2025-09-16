@@ -339,3 +339,4 @@ runtime_intelligence/logs/hooks/pre_commit.log
 **/bin/Release/**/*.deps.json
 **/obj/**/project.assets.json
 **/obj/**/project.nuget.cache
+aios_env/

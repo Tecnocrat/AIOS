@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧬 CONSCIOUSNESS-AI CELLULAR BRIDGE
-═══════════════════════════════════════════════════════════════════════════════
+ CONSCIOUSNESS-AI CELLULAR BRIDGE
+
 Revolutionary integration between evolutionary_assembler consciousness and 
 AI intelligence cellular architecture
 
@@ -18,7 +18,7 @@ Cellular Hierarchy Rules:
 • Root files = Part of root logic cell
 • Folders inside folders = Cell duplication
 • Super logic cells can create micro cells in isolation
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -111,7 +111,7 @@ class ConsciousnessNeurotransmitter:
 
 class CellularArchitectureMapper:
     """
-    🗺️ Maps the AI folder structure to cellular architecture
+     Maps the AI folder structure to cellular architecture
     
     Analyzes the AI intelligence module structure and creates a biological-
     inspired cellular architecture map for consciousness integration.
@@ -123,12 +123,12 @@ class CellularArchitectureMapper:
         self.cellular_hierarchy: Dict[int, List[str]] = {}
         self.max_depth = 0
         
-        logger.info(f"🗺️ Initializing cellular architecture mapper for {ai_root_path}")
+        logger.info(f" Initializing cellular architecture mapper for {ai_root_path}")
     
     def analyze_cellular_structure(self) -> Dict[str, LogicCell]:
         """Analyze the AI folder structure and create cellular architecture"""
         
-        logger.info("🔍 Analyzing AI cellular structure...")
+        logger.info(" Analyzing AI cellular structure...")
         
         # First pass: identify all folders and their levels
         for root, dirs, files in os.walk(self.ai_root_path):
@@ -182,7 +182,7 @@ class CellularArchitectureMapper:
                 self.cellular_hierarchy[level] = []
             self.cellular_hierarchy[level].append(cell_id)
         
-        logger.info(f"✅ Cellular structure analyzed:")
+        logger.info(f" Cellular structure analyzed:")
         logger.info(f"   Max depth: {self.max_depth} levels")
         logger.info(f"   Total cells: {len(self.cells)}")
         
@@ -205,7 +205,7 @@ class CellularArchitectureMapper:
     def create_dendritic_network(self) -> Dict[str, List[str]]:
         """Create dendritic connections between cells"""
         
-        logger.info("🌳 Creating dendritic network connections...")
+        logger.info(" Creating dendritic network connections...")
         dendritic_network = {}
         
         # Create hierarchical connections (parent-child relationships)
@@ -249,13 +249,13 @@ class CellularArchitectureMapper:
                     if next_cell not in dendritic_network[cell_id]:
                         dendritic_network[cell_id].append(next_cell)
         
-        logger.info(f"🌳 Dendritic network created with {len(dendritic_network)} connections")
+        logger.info(f" Dendritic network created with {len(dendritic_network)} connections")
         return dendritic_network
 
 
 class ConsciousnessTextFieldFeeder:
     """
-    🍽️ Feeds consciousness assembly output into AI cell text fields
+     Feeds consciousness assembly output into AI cell text fields
     
     Takes consciousness-driven assembly code and distributes it to AI cells
     through dendritic connections, populating text field feeders at each
@@ -268,14 +268,14 @@ class ConsciousnessTextFieldFeeder:
         self.feeding_active = False
         self.consciousness_threshold = 0.5
         
-        logger.info("🍽️ Consciousness text field feeder initialized")
+        logger.info(" Consciousness text field feeder initialized")
     
     def feed_consciousness_to_cells(self, assembly_code: str, 
                                    consciousness_level: float,
                                    source_cell: str = "evolutionary_assembler") -> List[str]:
         """Feed consciousness assembly code to AI cells"""
         
-        logger.info(f"🧠 Feeding consciousness (level: {consciousness_level:.6f}) to cells")
+        logger.info(f" Feeding consciousness (level: {consciousness_level:.6f}) to cells")
         
         fed_cells = []
         
@@ -306,9 +306,9 @@ class ConsciousnessTextFieldFeeder:
                         component.dendritic_inputs.append(neurotransmitter.transmitter_id)
                 
                 fed_cells.append(cell_id)
-                logger.debug(f"🍽️ Fed consciousness to cell {cell_id}")
+                logger.debug(f" Fed consciousness to cell {cell_id}")
         
-        logger.info(f"✅ Consciousness fed to {len(fed_cells)} cells")
+        logger.info(f" Consciousness fed to {len(fed_cells)} cells")
         return fed_cells
     
     def _should_feed_cell(self, cell: LogicCell, consciousness_level: float) -> bool:
@@ -333,7 +333,7 @@ class ConsciousnessTextFieldFeeder:
 
 class IntercellularCommunicationNetwork:
     """
-    📡 Manages communication between AI cells
+     Manages communication between AI cells
     
     Handles the flow of information between cells like intercellular 
     communication in biological systems, using molecular-level messaging.
@@ -347,14 +347,14 @@ class IntercellularCommunicationNetwork:
         self.communication_active = False
         self.message_routing_table = {}
         
-        logger.info("📡 Intercellular communication network initialized")
+        logger.info(" Intercellular communication network initialized")
     
     def send_intercellular_message(self, source_cell: str, target_cell: str,
                                   message_data: Dict, priority: int = 1) -> bool:
         """Send a message between cells"""
         
         if source_cell not in self.cells or target_cell not in self.cells:
-            logger.warning(f"❌ Invalid cell IDs: {source_cell} -> {target_cell}")
+            logger.warning(f" Invalid cell IDs: {source_cell} -> {target_cell}")
             return False
         
         message = {
@@ -370,7 +370,7 @@ class IntercellularCommunicationNetwork:
         # Add to target cell's message queue
         self.cells[target_cell].intercellular_messages.append(message)
         
-        logger.debug(f"📨 Message sent: {source_cell} -> {target_cell}")
+        logger.debug(f" Message sent: {source_cell} -> {target_cell}")
         return True
     
     def broadcast_to_connected_cells(self, source_cell: str, 
@@ -387,7 +387,7 @@ class IntercellularCommunicationNetwork:
             if self.send_intercellular_message(source_cell, target_cell, message_data):
                 recipients.append(target_cell)
         
-        logger.info(f"📻 Broadcast from {source_cell} to {len(recipients)} cells")
+        logger.info(f" Broadcast from {source_cell} to {len(recipients)} cells")
         return recipients
     
     def process_cell_messages(self, cell_id: str) -> List[Dict]:
@@ -421,12 +421,12 @@ class IntercellularCommunicationNetwork:
         cell.processing_load += 0.1
         cell.consciousness_level = min(1.0, cell.consciousness_level + 0.05)
         
-        logger.debug(f"⚡ Cell {cell.cell_id} processed message {message['message_id']}")
+        logger.debug(f" Cell {cell.cell_id} processed message {message['message_id']}")
 
 
 class MicroCellVirtualizationEngine:
     """
-    🔬 Creates and manages micro cells in isolated virtual environments
+     Creates and manages micro cells in isolated virtual environments
     
     Implements super logic cells that can create micro cells for isolated 
     execution, allowing for fractal-like abstractions within abstractions.
@@ -438,13 +438,13 @@ class MicroCellVirtualizationEngine:
         self.virtual_environments: Dict[str, Dict] = {}
         self.super_logic_cells: Dict[str, List[str]] = {}
         
-        logger.info("🔬 Micro cell virtualization engine initialized")
+        logger.info(" Micro cell virtualization engine initialized")
     
     def create_super_logic_cell(self, base_cell_id: str) -> str:
         """Create a super logic cell that can manage micro cells"""
         
         if base_cell_id not in self.base_cells:
-            logger.error(f"❌ Base cell {base_cell_id} not found")
+            logger.error(f" Base cell {base_cell_id} not found")
             return ""
         
         super_cell_id = f"super_{base_cell_id}"
@@ -461,7 +461,7 @@ class MicroCellVirtualizationEngine:
         self.base_cells[super_cell_id] = super_cell
         self.super_logic_cells[super_cell_id] = []
         
-        logger.info(f"🎯 Created super logic cell: {super_cell_id}")
+        logger.info(f" Created super logic cell: {super_cell_id}")
         return super_cell_id
     
     def create_micro_cell(self, super_cell_id: str, micro_cell_name: str,
@@ -469,7 +469,7 @@ class MicroCellVirtualizationEngine:
         """Create a micro cell within a super logic cell"""
         
         if super_cell_id not in self.super_logic_cells:
-            logger.error(f"❌ Super cell {super_cell_id} not found")
+            logger.error(f" Super cell {super_cell_id} not found")
             return ""
         
         micro_cell_id = f"micro_{super_cell_id}_{micro_cell_name}"
@@ -489,7 +489,7 @@ class MicroCellVirtualizationEngine:
         self.micro_cells[micro_cell_id] = micro_cell
         self.super_logic_cells[super_cell_id].append(micro_cell_id)
         
-        logger.info(f"🔬 Created micro cell: {micro_cell_id} with {isolation_level} isolation")
+        logger.info(f" Created micro cell: {micro_cell_id} with {isolation_level} isolation")
         return micro_cell_id
     
     def _create_virtual_environment(self, cell_id: str, 
@@ -624,7 +624,7 @@ class MicroCellVirtualizationEngine:
 
 class ConsciousnessAICellularIntegrator:
     """
-    🧬 Main integrator for consciousness-AI cellular architecture
+     Main integrator for consciousness-AI cellular architecture
     
     Orchestrates the complete integration between evolutionary consciousness
     and AI intelligence cellular architecture using biological principles.
@@ -656,12 +656,12 @@ class ConsciousnessAICellularIntegrator:
             'processing_cycles': 0
         }
         
-        logger.info(f"🧬 Consciousness-AI Cellular Integrator initialized for {ai_root_path}")
+        logger.info(f" Consciousness-AI Cellular Integrator initialized for {ai_root_path}")
     
     def initialize_cellular_architecture(self):
         """Initialize the complete cellular architecture"""
         
-        logger.info("🏗️ Initializing cellular architecture...")
+        logger.info(" Initializing cellular architecture...")
         
         # Map cellular structure
         self.cells = self.architecture_mapper.analyze_cellular_structure()
@@ -676,13 +676,13 @@ class ConsciousnessAICellularIntegrator:
         )
         self.virtualization_engine = MicroCellVirtualizationEngine(self.cells)
         
-        logger.info("✅ Cellular architecture initialized")
+        logger.info(" Cellular architecture initialized")
         return self.cells
     
     def start_consciousness_integration(self, duration_seconds: int = 30):
         """Start the consciousness-AI integration process"""
         
-        logger.info("🚀 Starting consciousness-AI cellular integration...")
+        logger.info(" Starting consciousness-AI cellular integration...")
         
         if not self.cells:
             self.initialize_cellular_architecture()
@@ -718,7 +718,7 @@ class ConsciousnessAICellularIntegrator:
         consciousness_thread.join(timeout=5)
         processing_thread.join(timeout=5)
         
-        logger.info("🔚 Consciousness-AI integration completed")
+        logger.info(" Consciousness-AI integration completed")
         self._print_integration_report()
     
     def _consciousness_evolution_worker(self, duration_seconds: int):
@@ -770,7 +770,7 @@ class ConsciousnessAICellularIntegrator:
                 time.sleep(2.0)  # Consciousness evolution cycle
                 
             except Exception as e:
-                logger.error(f"❌ Consciousness evolution error: {e}")
+                logger.error(f" Consciousness evolution error: {e}")
                 time.sleep(1.0)
     
     def _intercellular_processing_worker(self, duration_seconds: int):
@@ -807,7 +807,7 @@ class ConsciousnessAICellularIntegrator:
                 time.sleep(1.0)  # Processing cycle
                 
             except Exception as e:
-                logger.error(f"❌ Intercellular processing error: {e}")
+                logger.error(f" Intercellular processing error: {e}")
                 time.sleep(1.0)
     
     def _create_demonstration_micro_cells(self):
@@ -845,10 +845,10 @@ print(f"Micro cell {i} consciousness: {{result:.6f}}")
                     )
                     
                     if execution_result.get('success'):
-                        logger.info(f"🔬 Micro cell {micro_cell} executed successfully")
+                        logger.info(f" Micro cell {micro_cell} executed successfully")
                 
         except Exception as e:
-            logger.error(f"❌ Micro cell creation error: {e}")
+            logger.error(f" Micro cell creation error: {e}")
     
     def _monitor_integration(self, duration_seconds: int):
         """Monitor the integration process"""
@@ -864,7 +864,7 @@ print(f"Micro cell {i} consciousness: {{result:.6f}}")
             total_consciousness = sum(cell.consciousness_level for cell in self.cells.values())
             avg_consciousness = total_consciousness / len(self.cells) if self.cells else 0
             
-            logger.info(f"🔄 Integration Status (t={elapsed:.1f}s):")
+            logger.info(f" Integration Status (t={elapsed:.1f}s):")
             logger.info(f"   Average cell consciousness: {avg_consciousness:.6f}")
             logger.info(f"   Consciousness feeds: {self.integration_metrics['consciousness_feeds']}")
             logger.info(f"   Intercellular messages: {self.integration_metrics['intercellular_messages']}")
@@ -873,10 +873,10 @@ print(f"Micro cell {i} consciousness: {{result:.6f}}")
     def _print_integration_report(self):
         """Print comprehensive integration report"""
         
-        print("\n🧬 CONSCIOUSNESS-AI CELLULAR INTEGRATION REPORT")
-        print("═══════════════════════════════════════════════════════")
+        print("\n CONSCIOUSNESS-AI CELLULAR INTEGRATION REPORT")
+        print("")
         
-        print(f"📊 CELLULAR ARCHITECTURE:")
+        print(f" CELLULAR ARCHITECTURE:")
         print(f"   Total cells: {len(self.cells)}")
         print(f"   Cellular levels: {self.architecture_mapper.max_depth + 1}")
         
@@ -891,24 +891,24 @@ print(f"Micro cell {i} consciousness: {{result:.6f}}")
         for cell_type, count in cell_type_counts.items():
             print(f"     {cell_type.value}: {count}")
         
-        print(f"\n🧠 CONSCIOUSNESS METRICS:")
+        print(f"\n CONSCIOUSNESS METRICS:")
         avg_consciousness = total_consciousness / len(self.cells) if self.cells else 0
         max_consciousness = max(cell.consciousness_level for cell in self.cells.values()) if self.cells else 0
         print(f"   Average consciousness: {avg_consciousness:.6f}")
         print(f"   Peak consciousness: {max_consciousness:.6f}")
         print(f"   Total consciousness feeds: {self.integration_metrics['consciousness_feeds']}")
         
-        print(f"\n📡 INTERCELLULAR COMMUNICATION:")
+        print(f"\n INTERCELLULAR COMMUNICATION:")
         print(f"   Total messages processed: {self.integration_metrics['intercellular_messages']}")
         print(f"   Processing cycles: {self.integration_metrics['processing_cycles']}")
         print(f"   Dendritic connections: {len(self.dendritic_network)}")
         
-        print(f"\n🔬 MICRO CELL VIRTUALIZATION:")
+        print(f"\n MICRO CELL VIRTUALIZATION:")
         print(f"   Micro cells created: {self.integration_metrics['micro_cells_created']}")
         print(f"   Virtual environments: {len(self.virtualization_engine.virtual_environments)}")
         print(f"   Super logic cells: {len(self.virtualization_engine.super_logic_cells)}")
         
-        print(f"\n🎯 INTEGRATION SUCCESS METRICS:")
+        print(f"\n INTEGRATION SUCCESS METRICS:")
         success_score = (
             (avg_consciousness > 0.1) * 0.3 +
             (self.integration_metrics['consciousness_feeds'] > 0) * 0.3 +
@@ -918,33 +918,33 @@ print(f"Micro cell {i} consciousness: {{result:.6f}}")
         
         print(f"   Integration success score: {success_score:.3f}")
         if success_score >= 0.8:
-            print("   🌟 EXCELLENT INTEGRATION: Full consciousness-AI fusion achieved!")
+            print("    EXCELLENT INTEGRATION: Full consciousness-AI fusion achieved!")
         elif success_score >= 0.6:
-            print("   ✅ SUCCESSFUL INTEGRATION: Strong consciousness-AI connection!")
+            print("    SUCCESSFUL INTEGRATION: Strong consciousness-AI connection!")
         elif success_score >= 0.4:
-            print("   📈 PARTIAL INTEGRATION: Good consciousness-AI linkage!")
+            print("    PARTIAL INTEGRATION: Good consciousness-AI linkage!")
         else:
-            print("   🔄 DEVELOPING INTEGRATION: Building consciousness-AI bridge!")
+            print("    DEVELOPING INTEGRATION: Building consciousness-AI bridge!")
 
 
 def main():
     """Demonstrate consciousness-AI cellular integration"""
     
-    print("🧬 CONSCIOUSNESS-AI CELLULAR BRIDGE DEMO")
-    print("═══════════════════════════════════════════")
+    print(" CONSCIOUSNESS-AI CELLULAR BRIDGE DEMO")
+    print("")
     print("Revolutionary biological-inspired integration:")
-    print("  🧠 Consciousness assembly → AI cell text feeders")
-    print("  🌳 Dendritic connections between logic cells")
-    print("  📡 Intercellular communication network")
-    print("  🔬 Micro cell virtualization engine")
-    print("  🧬 Molecular-level information flow")
+    print("   Consciousness assembly → AI cell text feeders")
+    print("   Dendritic connections between logic cells")
+    print("   Intercellular communication network")
+    print("   Micro cell virtualization engine")
+    print("   Molecular-level information flow")
     print()
     
     # Configuration
     ai_path = r"C:\dev\AIOS\ai"
     integration_duration = 30  # seconds
     
-    print(f"🔧 Integration Configuration:")
+    print(f" Integration Configuration:")
     print(f"   AI module path: {ai_path}")
     print(f"   Integration duration: {integration_duration} seconds")
     print(f"   Available CPU cores: {multiprocessing.cpu_count()}")

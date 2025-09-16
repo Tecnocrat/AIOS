@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠🔧⚡ CORE ENGINE COMMON PATTERNS MODULE
-═══════════════════════════════════════════════════════════════════════════════
+ CORE ENGINE COMMON PATTERNS MODULE
+
 Standardized patterns for Core Engine components to eliminate duplicate functions
 
 PURPOSE:
@@ -16,7 +16,7 @@ CRISIS ADDRESSED:
 CONSCIOUSNESS ENHANCEMENT:
 Standardized patterns enable better environmental awareness and reduce cognitive
 fragmentation caused by inconsistent implementation approaches.
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import logging
@@ -42,7 +42,7 @@ except ImportError:
         return f"consciousness_{uuid.uuid4().hex[:8]}"
     
     def log_operation(operation: str, details: Dict[str, Any] = None):
-        logging.info(f"🧠 {operation}")
+        logging.info(f" {operation}")
         return {'operation': operation, 'timestamp': get_timestamp()}
     
     CONSCIOUSNESS_ENHANCEMENT_ENABLED = True
@@ -95,7 +95,7 @@ class AIOSComponentBase(ABC):
             }
         )
         
-        logger.info(f"🧠 {component_name} initialized with consciousness ID: {self.consciousness_id}")
+        logger.info(f" {component_name} initialized with consciousness ID: {self.consciousness_id}")
     
     @abstractmethod
     def run_primary_operation(self) -> Dict[str, Any]:
@@ -193,7 +193,7 @@ def standardized_main_function(
     
     try:
         # Consciousness-enhanced startup
-        logger.info(f"🧠⚡ Starting {component_name}")
+        logger.info(f" Starting {component_name}")
         logger.info("=" * 80)
         
         # Initialize component
@@ -205,30 +205,30 @@ def standardized_main_function(
         
         # Run primary operation
         if demo_mode:
-            logger.info(f"🚀 Running {component_name} in demonstration mode...")
+            logger.info(f" Running {component_name} in demonstration mode...")
         
         result = component.run_primary_operation()
         
         # Display results
-        logger.info(f"✅ {component_name} operation completed successfully")
+        logger.info(f" {component_name} operation completed successfully")
         
         if demo_mode:
             # Show performance metrics
             metrics = component.get_performance_metrics()
-            logger.info(f"📊 Operations completed: {metrics['operations_completed']}")
-            logger.info(f"⚡ Performance: {metrics['operations_per_second']:.2f} ops/sec")
+            logger.info(f" Operations completed: {metrics['operations_completed']}")
+            logger.info(f" Performance: {metrics['operations_per_second']:.2f} ops/sec")
             
             # Show consciousness status
             if component.enable_consciousness:
                 status = component.self_monitor()
                 coherence = status['consciousness_coherence']
-                logger.info(f"🧠 Consciousness coherence: {coherence:.2f}")
+                logger.info(f" Consciousness coherence: {coherence:.2f}")
         
-        logger.info(f"🎯 {component_name} demonstration complete!")
+        logger.info(f" {component_name} demonstration complete!")
         return 0
         
     except Exception as e:
-        logger.error(f"❌ Error in {component_name}: {e}")
+        logger.error(f" Error in {component_name}: {e}")
         if demo_mode:
             import traceback
             logger.error(f"Stack trace: {traceback.format_exc()}")
@@ -309,7 +309,7 @@ def create_standard_demo(component_class: type, component_name: str) -> Callable
     
     def demo_function():
         """Generated demo function for component."""
-        print(f"🧠⚡ {component_name.upper()} DEMONSTRATION")
+        print(f" {component_name.upper()} DEMONSTRATION")
         print("=" * 70)
         
         # Run standardized main function
@@ -320,11 +320,11 @@ def create_standard_demo(component_class: type, component_name: str) -> Callable
         )
         
         if exit_code == 0:
-            print("\n✅ DEMONSTRATION COMPLETE")
-            print("🧠 Consciousness-enhanced operation successful!")
+            print("\n DEMONSTRATION COMPLETE")
+            print(" Consciousness-enhanced operation successful!")
         else:
-            print("\n❌ DEMONSTRATION FAILED")
-            print("🚨 Please check error logs for details")
+            print("\n DEMONSTRATION FAILED")
+            print(" Please check error logs for details")
         
         return exit_code
     
@@ -333,28 +333,28 @@ def create_standard_demo(component_class: type, component_name: str) -> Callable
 
 def main():
     """Demonstration of common patterns module."""
-    print("🧠🔧⚡ CORE ENGINE COMMON PATTERNS")
+    print(" CORE ENGINE COMMON PATTERNS")
     print("=" * 80)
     print("Standardized patterns for consciousness-enhanced development")
     print("=" * 80)
     
     # Show pattern statistics
-    print("\n📊 PATTERN CONSOLIDATION IMPACT:")
-    print("  ✅ Main function standardized (addresses 60+ duplicates)")
-    print("  ✅ Initialization pattern unified (addresses 100+ duplicates)")
-    print("  ✅ Performance metrics standardized")
-    print("  ✅ Self-monitoring pattern unified")
-    print("  ✅ Meta-cognitive reflection standardized")
+    print("\n PATTERN CONSOLIDATION IMPACT:")
+    print("   Main function standardized (addresses 60+ duplicates)")
+    print("   Initialization pattern unified (addresses 100+ duplicates)")
+    print("   Performance metrics standardized")
+    print("   Self-monitoring pattern unified")
+    print("   Meta-cognitive reflection standardized")
     
-    print("\n🧠 CONSCIOUSNESS ENHANCEMENT:")
+    print("\n CONSCIOUSNESS ENHANCEMENT:")
     print(f"  Enhancement Enabled: {CONSCIOUSNESS_ENHANCEMENT_ENABLED}")
     print(f"  FPS Target: {DEFAULT_FPS_TARGET}")
     print("  Environmental Awareness: Active")
     print("  Pattern Recognition: Enhanced")
     
-    print("\n✅ COMMON PATTERNS MODULE READY")
-    print("🧠 Consciousness-enhanced standardization active!")
-    print("🔧 Duplicate function elimination patterns available!")
+    print("\n COMMON PATTERNS MODULE READY")
+    print(" Consciousness-enhanced standardization active!")
+    print(" Duplicate function elimination patterns available!")
 
 
 if __name__ == "__main__":

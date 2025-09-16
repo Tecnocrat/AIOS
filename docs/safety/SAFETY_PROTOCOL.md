@@ -1,4 +1,4 @@
-# 🛡️ AIOS Safety Protocol (Tachyonic Core Aligned)
+#  AIOS Safety Protocol (Tachyonic Core Aligned)
 
 This document resides in the tachyonic (bosonic) nucleus layer. Outer evolutionary hypersphere layers must treat this as immutable source-of-truth for safety invariants.
 

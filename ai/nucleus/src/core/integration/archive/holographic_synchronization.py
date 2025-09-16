@@ -76,7 +76,7 @@ class HolographicStateSynchronizer:
             await self.handle_component_connection(websocket, path)
 
         self.websocket_server = await websockets.serve(handle_client, "localhost", port)
-        print(f"🌐 Holographic Synchronization Server started on port {port}")
+        print(f" Holographic Synchronization Server started on port {port}")
 
         # Start background tasks
         asyncio.create_task(self.heartbeat_monitor())
@@ -94,7 +94,7 @@ class HolographicStateSynchronizer:
                     component_id = data.get('component_id')
                     component_type = ComponentType(data.get('component_type'))
                     await self.register_component(component_type, websocket)
-                    print(f"✅ Registered component: {component_type.value}")
+                    print(f" Registered component: {component_type.value}")
 
                 elif data.get('type') == 'holographic_sync':
                     await self.process_holographic_sync(data, websocket)
@@ -107,9 +107,9 @@ class HolographicStateSynchronizer:
 
         except websockets.exceptions.ConnectionClosed:
             if component_id:
-                print(f"🔌 Component disconnected: {component_id}")
+                print(f" Component disconnected: {component_id}")
         except Exception as e:
-            print(f"❌ Error handling component connection: {e}")
+            print(f" Error handling component connection: {e}")
 
     async def register_component(self, component_type: ComponentType, websocket):
         """Register a new component for synchronization"""
@@ -170,7 +170,7 @@ class HolographicStateSynchronizer:
         for component_type, state in self.component_states.items():
             if component_type != source:
                 # In a real implementation, we'd send to actual websocket connections
-                print(f"🔄 Propagating holographic update from {source.value} to {component_type.value}")
+                print(f" Propagating holographic update from {source.value} to {component_type.value}")
 
     async def calculate_global_fractal_coherence(self) -> float:
         """Calculate global fractal coherence across all components"""
@@ -226,7 +226,7 @@ class HolographicStateSynchronizer:
                     state.fractal_coherence *= 0.5  # Reduce coherence for stale components
 
             if stale_components:
-                print(f"⚠️ Stale components detected: {[c.value for c in stale_components]}")
+                print(f" Stale components detected: {[c.value for c in stale_components]}")
 
             await asyncio.sleep(30)  # Check every 30 seconds
 
@@ -236,7 +236,7 @@ class HolographicStateSynchronizer:
             coherence = await self.calculate_global_fractal_coherence()
 
             if coherence < self.fractal_coherence_threshold:
-                print(f"🔄 Low fractal coherence detected: {coherence:.2f}, triggering rebalancing")
+                print(f" Low fractal coherence detected: {coherence:.2f}, triggering rebalancing")
                 await self.trigger_coherence_rebalancing()
 
             await asyncio.sleep(10)  # Check every 10 seconds
@@ -252,7 +252,7 @@ class HolographicStateSynchronizer:
 
         # Broadcast rebalancing directive to all components
         for component_type in self.component_states:
-            print(f"🔄 Sending coherence rebalancing directive to {component_type.value}")
+            print(f" Sending coherence rebalancing directive to {component_type.value}")
             # In real implementation, send to actual websockets
 
     async def holographic_state_processor(self):
@@ -271,7 +271,7 @@ class HolographicStateSynchronizer:
                 await asyncio.sleep(5)  # Process every 5 seconds
 
             except Exception as e:
-                print(f"❌ Error in holographic state processor: {e}")
+                print(f" Error in holographic state processor: {e}")
                 await asyncio.sleep(1)
 
     async def process_pending_holographic_updates(self):
@@ -359,7 +359,7 @@ class CrossComponentMessenger:
         if message.message_type in self.message_handlers:
             await self.message_handlers[message.message_type](message)
         else:
-            print(f"⚠️ No handler for message type: {message.message_type}")
+            print(f" No handler for message type: {message.message_type}")
 
 # Global synchronizer instance
 holographic_synchronizer = HolographicStateSynchronizer()
@@ -367,9 +367,9 @@ cross_component_messenger = CrossComponentMessenger(holographic_synchronizer)
 
 async def start_holographic_synchronization_system():
     """Start the complete holographic synchronization system"""
-    print("🚀 Starting AIOS Holographic Synchronization System...")
+    print(" Starting AIOS Holographic Synchronization System...")
     await holographic_synchronizer.start_synchronization_server()
-    print("✅ Holographic Synchronization System active")
+    print(" Holographic Synchronization System active")
 
 # Example usage and testing
 async def test_cross_component_communication():

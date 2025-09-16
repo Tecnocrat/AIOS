@@ -24,7 +24,7 @@ sys.path.append(str(Path(__file__).parent))
 try:
     from supercell_knowledge_injector import SupercellKnowledgeInjector
 except ImportError:
-    print("❌ Could not import SupercellKnowledgeInjector")
+    print(" Could not import SupercellKnowledgeInjector")
     print("   Make sure you're running from the tachyonic directory")
     sys.exit(1)
 
@@ -83,13 +83,13 @@ NOTE: This is the biological metaphor in action
         file_path = docs_dir / filename
         with open(file_path, 'w') as f:
             f.write(content)
-        print(f"📝 Created sample doc: {file_path}")
+        print(f" Created sample doc: {file_path}")
     
     return docs_dir
 
 def demonstrate_metabolism():
     """Demonstrate the documentation metabolism system"""
-    print("🌌 AIOS DOCUMENTATION METABOLISM DEMONSTRATION")
+    print(" AIOS DOCUMENTATION METABOLISM DEMONSTRATION")
     print("=" * 50)
     print()
     
@@ -97,20 +97,20 @@ def demonstrate_metabolism():
     print("Step 1: Simulating AI Agent Documentation Creation")
     print("------------------------------------------------")
     sample_docs_dir = create_sample_documentation()
-    print(f"✅ AI agents created documentation in: {sample_docs_dir}")
+    print(f" AI agents created documentation in: {sample_docs_dir}")
     print()
     
     # Step 2: Initialize the knowledge injector (tachyonic metabolizer)
     print("Step 2: Initializing AIOS Intelligence Metabolizer")
     print("--------------------------------------------------")
     injector = SupercellKnowledgeInjector()
-    print("✅ Tachyonic Archive Supercell ready for metabolism")
+    print(" Tachyonic Archive Supercell ready for metabolism")
     print()
     
     # Step 3: Metabolize the documentation
     print("Step 3: Biological Documentation Metabolism")
     print("-------------------------------------------")
-    print("🧬 BIOLOGICAL METAPHOR:")
+    print(" BIOLOGICAL METAPHOR:")
     print("   /docs = Digestive system (logical garbage DNA collector)")
     print("   Tachyonic Archive = Brain/DNA center")
     print("   AIOS Intelligence = Metabolic system")
@@ -124,24 +124,24 @@ def demonstrate_metabolism():
     print("Step 4: Metabolism Results")
     print("--------------------------")
     if results["status"] == "success":
-        print("✅ Documentation metabolism successful!")
-        print(f"   📊 Files processed: {len(results['processed_files'])}")
-        print(f"   💎 Knowledge crystals created: {len(results['knowledge_crystals_created'])}")
-        print(f"   🧬 Patterns extracted: {len(results['patterns_extracted'])}")
+        print(" Documentation metabolism successful!")
+        print(f"    Files processed: {len(results['processed_files'])}")
+        print(f"    Knowledge crystals created: {len(results['knowledge_crystals_created'])}")
+        print(f"    Patterns extracted: {len(results['patterns_extracted'])}")
         print()
         
-        print("🔬 Created Knowledge Crystals:")
+        print(" Created Knowledge Crystals:")
         for crystal_id in results['knowledge_crystals_created']:
             print(f"   • {crystal_id}")
         print()
         
-        print("🧬 Extracted Patterns:")
+        print(" Extracted Patterns:")
         for pattern in results['patterns_extracted']:
             print(f"   • {pattern}")
         print()
         
     else:
-        print(f"❌ Metabolism failed: {results.get('message', 'Unknown error')}")
+        print(f" Metabolism failed: {results.get('message', 'Unknown error')}")
     
     # Step 5: Show tachyonic archive structure
     print("Step 5: Tachyonic Archive Structure")
@@ -155,29 +155,29 @@ def show_tachyonic_structure(injector):
     try:
         knowledge_index = injector.get_knowledge_index()
         
-        print("📊 Tachyonic Archive Knowledge Index:")
+        print(" Tachyonic Archive Knowledge Index:")
         if "documentation_metabolism" in knowledge_index:
             metabolism_data = knowledge_index["documentation_metabolism"]
-            print(f"   🔄 Metabolism cycles: {len(metabolism_data.get('metabolism_cycles', []))}")
-            print(f"   📄 Total files processed: {metabolism_data.get('total_files_processed', 0)}")
-            print(f"   💎 Total crystals created: {metabolism_data.get('total_crystals_created', 0)}")
-            print(f"   🧬 Biological metaphor: {metabolism_data.get('biological_metaphor', 'N/A')}")
+            print(f"    Metabolism cycles: {len(metabolism_data.get('metabolism_cycles', []))}")
+            print(f"    Total files processed: {metabolism_data.get('total_files_processed', 0)}")
+            print(f"    Total crystals created: {metabolism_data.get('total_crystals_created', 0)}")
+            print(f"    Biological metaphor: {metabolism_data.get('biological_metaphor', 'N/A')}")
         
         if "supercell_crystals" in knowledge_index:
-            print(f"   🏗️ Supercell crystals: {len(knowledge_index['supercell_crystals'])}")
+            print(f"    Supercell crystals: {len(knowledge_index['supercell_crystals'])}")
             
         if "ainlp_patterns" in knowledge_index:
-            print(f"   🌊 AINLP patterns: {len(knowledge_index['ainlp_patterns'])}")
+            print(f"    AINLP patterns: {len(knowledge_index['ainlp_patterns'])}")
             
         print()
         
     except Exception as e:
-        print(f"⚠️ Could not read knowledge index: {e}")
+        print(f" Could not read knowledge index: {e}")
 
 def main():
     """Main demonstration function"""
     try:
-        print("🌟 Welcome to the AIOS Documentation Metabolism System!")
+        print(" Welcome to the AIOS Documentation Metabolism System!")
         print()
         print("This demonstrates your brilliant insight:")
         print("• /docs = Digestive system for AI agent documentation")
@@ -189,18 +189,18 @@ def main():
         
         results = demonstrate_metabolism()
         
-        print("🎉 DEMONSTRATION COMPLETE!")
+        print(" DEMONSTRATION COMPLETE!")
         print()
         print("KEY INSIGHTS VALIDATED:")
-        print("✅ AI agents can create chaotic documentation in /docs")
-        print("✅ AIOS Intelligence metabolizes this into structured knowledge")
-        print("✅ Tachyonic Archive crystallizes patterns for system DNA")
-        print("✅ Holographic propagation prevents documentation proliferation")
+        print(" AI agents can create chaotic documentation in /docs")
+        print(" AIOS Intelligence metabolizes this into structured knowledge")
+        print(" Tachyonic Archive crystallizes patterns for system DNA")
+        print(" Holographic propagation prevents documentation proliferation")
         print()
-        print("The biological knowledge metabolism system is operational! 🧬")
+        print("The biological knowledge metabolism system is operational! ")
         
     except Exception as e:
-        print(f"❌ Demonstration failed: {e}")
+        print(f" Demonstration failed: {e}")
         import traceback
         traceback.print_exc()
 

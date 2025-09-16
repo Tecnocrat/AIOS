@@ -607,7 +607,7 @@ def main():
     """Demonstrate Gemini CLI bridge functionality"""
     bridge = GeminiCLIBridge()
     
-    print("🌉 AIOS Gemini CLI Bridge")
+    print(" AIOS Gemini CLI Bridge")
     print("=" * 50)
     
     # Export configuration
@@ -662,4 +662,4 @@ class MetaCognitive:
 
 if __name__ == "__main__":
     session_id = main()
-    print(f"\\n✅ Bridge demonstration complete. Session: {session_id}")
+    print(f"\\n Bridge demonstration complete. Session: {session_id}")

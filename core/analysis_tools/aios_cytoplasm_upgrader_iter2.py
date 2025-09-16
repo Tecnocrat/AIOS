@@ -504,7 +504,7 @@ class AIOSCytoplasmUpgrader:
         # Check for configuration coherence
         init_file = path / '__init__.py'
         if not init_file.exists():
-            logger.info(f"   📝 Adding __init__.py to {path.name}")
+            logger.info(f"    Adding __init__.py to {path.name}")
             init_file.write_text('"""Configuration module for AIOS cytoplasm."""\n')
         
         # Ensure proper JSON configuration
@@ -515,23 +515,23 @@ class AIOSCytoplasmUpgrader:
         """Optimize dependencies component."""
         # Check for requirements optimization
         req_files = list(path.glob('requirements*.txt'))
-        logger.info(f"   📦 Found {len(req_files)} dependency files")
+        logger.info(f"    Found {len(req_files)} dependency files")
         
         # Check shadows subfolder
         shadows_path = path / 'shadows'
         if shadows_path.exists():
-            logger.info(f"   🌒 Shadows subfolder detected: optimization opportunities")
+            logger.info(f"    Shadows subfolder detected: optimization opportunities")
     
     def _optimize_env_component(self, path: Path):
         """Optimize environment component."""
         # Check for environment files
         yml_files = list(path.glob('*.yml'))
-        logger.info(f"   🌍 Found {len(yml_files)} environment files")
+        logger.info(f"    Found {len(yml_files)} environment files")
         
         # Ensure README exists
         readme_file = path / 'README.md'
         if not readme_file.exists():
-            logger.info(f"   📝 Adding README.md to {path.name}")
+            logger.info(f"    Adding README.md to {path.name}")
             readme_file.write_text('# Environment Configuration\n\nAIOS environment setup and configuration files.\n')
     
     def _optimize_runtime_component(self, path: Path):
@@ -548,12 +548,12 @@ class AIOSCytoplasmUpgrader:
         """Optimize scripts component."""
         # Check for Python scripts
         py_files = list(path.glob('*.py'))
-        logger.info(f"   🐍 Found {len(py_files)} Python scripts")
+        logger.info(f"    Found {len(py_files)} Python scripts")
         
         # Ensure __init__.py exists
         init_file = path / '__init__.py'
         if not init_file.exists():
-            logger.info(f"   📝 Adding __init__.py to {path.name}")
+            logger.info(f"    Adding __init__.py to {path.name}")
             init_file.write_text('"""Utility scripts for AIOS cytoplasm."""\n')
     
     def _optimize_tools_component(self, path: Path):
@@ -593,8 +593,8 @@ class AIOSCytoplasmUpgrader:
             after_health = health_after['component_health'].get(component, {}).get('health_score', 0.0)
             improvement = after_health - before_health
             
-            status_emoji = "🟢" if after_health > 0.8 else "🟡" if after_health > 0.6 else "🔴"
-            improvement_emoji = "📈" if improvement > 0 else "[CHART]" if improvement == 0 else "📉"
+            status_emoji = "🟢" if after_health > 0.8 else "🟡" if after_health > 0.6 else ""
+            improvement_emoji = "" if improvement > 0 else "[CHART]" if improvement == 0 else ""
             
             report_lines.append(f"  {status_emoji} **{component}**: {after_health:.3f} {improvement_emoji} (+{improvement:.3f})")
         
@@ -655,7 +655,7 @@ class AIOSCytoplasmUpgrader:
         logger.info(f"[WRENCH] Components upgraded: {upgrade_count}")
         
         improvement = health_after['overall_health'] - health_before['overall_health']
-        logger.info(f"📈 Health improvement: +{improvement:.3f}")
+        logger.info(f" Health improvement: +{improvement:.3f}")
         
         return {
             'health_before': health_before,

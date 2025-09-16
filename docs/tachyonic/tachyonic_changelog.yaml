@@ -1,13 +1,31 @@
-version: "OS0.6"
-date: "2025-09-13"
-changes:
-  major:
-    - title: "Centralized Process Management System"
-      description: "Implemented AIOSProcessManager for unified lifecycle management of all AIOS components"
-      impact: "Eliminates orphaned processes and provides centralized shutdown control"
-      files:
-        - "visual_interface/AIOSProcessManager.cs"
-        - "visual_interface/App.xaml.cs"
+changelog:
+  - version: "OS0.6.2"
+    date: "2025-01-17"
+    changes:
+      major:
+        - title: "GitHook Governance Enhancement"
+          description: "Enhanced GitHook system with improved filename parsing, secret scanning exclusions, and executable policy alignment"
+          impact: "Resolves Mode.md parsing issue, eliminates false positive secret detection in documentation, and standardizes executable permission enforcement"
+          files:
+            - ".githooks/modules/nucleus/pre-commit.ps1"
+            - "governance/hook_policy.json" 
+            - "docs/CHANGELOG.md"
+          technical_details:
+            - "Fixed Get-Staged function to properly handle filenames with spaces using regex parsing"
+            - "Added secretScanExcludePaths to prevent false positives in documentation files"
+            - "Aligned executableScriptDirs policy with default GitHook behavior"
+            - "Enhanced root file organization by moving documentation to docs/ directory"
+
+  - version: "OS0.6"
+    date: "2025-09-13"
+    changes:
+      major:
+        - title: "Centralized Process Management System"
+          description: "Implemented AIOSProcessManager for unified lifecycle management of all AIOS components"
+          impact: "Eliminates orphaned processes and provides centralized shutdown control"
+          files:
+            - "visual_interface/AIOSProcessManager.cs"
+            - "visual_interface/App.xaml.cs"
         - "visual_interface/AdvancedVisualizationWindow.cs"
     
     - title: "Tachyonic Hyperdimensional Viewer Integration"

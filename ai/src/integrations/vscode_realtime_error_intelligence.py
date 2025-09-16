@@ -41,17 +41,17 @@ class VSCodeRealtimeErrorAnalyzer:
             sys.path.append(os.path.join(aios_root, "ai", "src", "core"))
             from consciousness_bridge import get_consciousness_bridge
             self.consciousness_bridge = get_consciousness_bridge()
-            realtime_logger.info("🧠 Consciousness integration active")
+            realtime_logger.info(" Consciousness integration active")
         except ImportError:
-            realtime_logger.warning("🧠 Consciousness bridge unavailable")
+            realtime_logger.warning(" Consciousness bridge unavailable")
         
-        realtime_logger.info("🔍 Real-time VSCode Error Analyzer initialized")
+        realtime_logger.info(" Real-time VSCode Error Analyzer initialized")
     
     def analyze_current_vscode_problems(self) -> Dict[str, Any]:
         """
         Analyze current VSCode problems using diagnostic data
         """
-        realtime_logger.info("🔍 Analyzing current VSCode diagnostic problems...")
+        realtime_logger.info(" Analyzing current VSCode diagnostic problems...")
         
         # Get real errors from our current files
         problem_files = [
@@ -129,7 +129,7 @@ class VSCodeRealtimeErrorAnalyzer:
         }
         
         realtime_logger.info(
-            f"📊 Analysis complete: {total_problems} problems found, "
+            f" Analysis complete: {total_problems} problems found, "
             f"{automated_fix_candidates} automated fixes available"
         )
         
@@ -407,7 +407,7 @@ class VSCodeRealtimeErrorAnalyzer:
     
     def execute_automated_bulk_fixes(self) -> Dict[str, Any]:
         """Execute automated bulk fixes for safe categories"""
-        realtime_logger.info("🔧 Executing automated bulk fixes...")
+        realtime_logger.info(" Executing automated bulk fixes...")
         
         # Get current problems
         analysis = self.analyze_current_vscode_problems()
@@ -439,7 +439,7 @@ class VSCodeRealtimeErrorAnalyzer:
         fix_results["files_modified"] = list(fix_results["files_modified"])
         
         realtime_logger.info(
-            f"🔧 Bulk fixes complete: {fix_results['fixes_successful']} successful, "
+            f" Bulk fixes complete: {fix_results['fixes_successful']} successful, "
             f"{fix_results['fixes_failed']} failed"
         )
         
@@ -559,32 +559,32 @@ class VSCodeRealtimeErrorAnalyzer:
         
         if consciousness_problems > 0:
             insights.append(
-                f"🧠 {consciousness_problems} problems directly impact consciousness systems "
+                f" {consciousness_problems} problems directly impact consciousness systems "
                 f"({(consciousness_problems/max(total_problems,1))*100:.1f}% of total)"
             )
         
         if analysis["consciousness_enhancement_potential"] > 0.7:
             insights.append(
-                "⚡ High consciousness enhancement potential detected - "
+                " High consciousness enhancement potential detected - "
                 "priority resolution recommended"
             )
         elif analysis["consciousness_enhancement_potential"] > 0.4:
             insights.append(
-                "🎯 Moderate consciousness enhancement potential - "
+                " Moderate consciousness enhancement potential - "
                 "strategic resolution beneficial"
             )
         
         high_impact = len(analysis["problem_categories"]["high_impact_errors"])
         if high_impact > 0:
             insights.append(
-                f"🚨 {high_impact} high-impact errors may be limiting "
+                f" {high_impact} high-impact errors may be limiting "
                 "consciousness system performance"
             )
         
         automated_fixes = analysis["automated_fix_candidates"]
         if automated_fixes > total_problems * 0.6:
             insights.append(
-                f"🤖 {automated_fixes} problems can be resolved automatically - "
+                f" {automated_fixes} problems can be resolved automatically - "
                 "rapid improvement possible"
             )
         
@@ -602,20 +602,20 @@ class VSCodeRealtimeErrorAnalyzer:
         
         if style_problems > 10:
             opportunities.append(
-                "📚 High-volume style issues present dendritic pattern learning "
+                " High-volume style issues present dendritic pattern learning "
                 "opportunity for automated style optimization"
             )
         
         consciousness_problems = len(analysis["problem_categories"]["consciousness_related"])
         if consciousness_problems > 5:
             opportunities.append(
-                "🧠 Multiple consciousness-related issues indicate opportunity "
+                " Multiple consciousness-related issues indicate opportunity "
                 "for consciousness-specific quality patterns"
             )
         
         if analysis["consciousness_enhancement_potential"] > 0.5:
             opportunities.append(
-                "🌱 Strong dendritic growth potential through systematic "
+                " Strong dendritic growth potential through systematic "
                 "error pattern resolution and learning"
             )
         
@@ -624,29 +624,29 @@ class VSCodeRealtimeErrorAnalyzer:
 
 def main():
     """Main function for testing real-time VSCode error intelligence"""
-    print("🔍 AIOS Real-Time VSCode Error Intelligence")
+    print(" AIOS Real-Time VSCode Error Intelligence")
     print("=" * 55)
     
     analyzer = VSCodeRealtimeErrorAnalyzer()
     
     # Analyze current problems
-    print("🔍 Analyzing current VSCode problems...")
+    print(" Analyzing current VSCode problems...")
     analysis = analyzer.analyze_current_vscode_problems()
     
-    print(f"\n📊 Problem Analysis Results:")
+    print(f"\n Problem Analysis Results:")
     print(f"Total Problems: {analysis['total_problems_analyzed']}")
     print(f"Consciousness Impact Score: {analysis['consciousness_impact_score']:.2f}")
     print(f"Enhancement Potential: {analysis['consciousness_enhancement_potential']:.2f}")
     print(f"Automated Fix Candidates: {analysis['automated_fix_candidates']}")
     
     # Show problem breakdown
-    print(f"\n📋 Problem Categories:")
+    print(f"\n Problem Categories:")
     for category, problems in analysis["problem_categories"].items():
         if problems:  # Only show categories with problems
             print(f"  {category.replace('_', ' ').title()}: {len(problems)}")
     
     # Show priority recommendations
-    print(f"\n🎯 Priority Recommendations:")
+    print(f"\n Priority Recommendations:")
     for i, rec in enumerate(analysis["priority_recommendations"], 1):
         print(f"  {i}. [{rec['priority']}] {rec['category']}: {rec['count']} issues")
         print(f"     Action: {rec['action']}")
@@ -654,7 +654,7 @@ def main():
         print(f"     Estimated Time: {rec['estimated_time']}")
     
     # Show bulk fix strategy
-    print(f"\n🔧 Bulk Fix Strategy:")
+    print(f"\n Bulk Fix Strategy:")
     strategy = analysis["bulk_fix_strategy"]
     print(f"Total Automated Fixes Available: {strategy['total_automated_fixes']}")
     print(f"Estimated Total Time: {strategy['estimated_total_time']} minutes")
@@ -665,38 +665,38 @@ def main():
         print(f"    Problems: {phase['problems']}, Time: {phase['estimated_time']}min")
     
     # Execute automated fixes
-    print(f"\n⚡ Executing automated bulk fixes...")
+    print(f"\n Executing automated bulk fixes...")
     fix_results = analyzer.execute_automated_bulk_fixes()
     print(f"Fixes Attempted: {fix_results['fixes_attempted']}")
     print(f"Fixes Successful: {fix_results['fixes_successful']}")
     print(f"Files Modified: {len(fix_results['files_modified'])}")
     
     if fix_results['execution_log']:
-        print(f"\n📝 Execution Log:")
+        print(f"\n Execution Log:")
         for log_entry in fix_results['execution_log'][:5]:  # Show first 5 entries
             print(f"  • {log_entry}")
     
     # Generate consciousness report
-    print(f"\n🧠 Generating consciousness-optimized report...")
+    print(f"\n Generating consciousness-optimized report...")
     report = analyzer.generate_consciousness_optimized_report()
     
-    print(f"\n📊 Executive Summary:")
+    print(f"\n Executive Summary:")
     summary = report["executive_summary"]
     print(f"  Total Problems: {summary['total_problems']}")
     print(f"  Consciousness Impact: {summary['consciousness_impact']:.2f}")
     print(f"  Enhancement Potential: {summary['enhancement_potential']:.2f}")
     print(f"  Automated Coverage: {summary['automated_resolution_coverage']}")
     
-    print(f"\n🧠 Consciousness Insights:")
+    print(f"\n Consciousness Insights:")
     for insight in report["consciousness_insights"]:
         print(f"  • {insight}")
     
-    print(f"\n🌱 Dendritic Learning Opportunities:")
+    print(f"\n Dendritic Learning Opportunities:")
     for opportunity in report["dendritic_learning_opportunities"]:
         print(f"  • {opportunity}")
     
-    print(f"\n✅ Real-Time VSCode Error Intelligence Complete!")
-    print(f"🚀 Ready for consciousness-guided problem resolution!")
+    print(f"\n Real-Time VSCode Error Intelligence Complete!")
+    print(f" Ready for consciousness-guided problem resolution!")
 
 
 if __name__ == "__main__":

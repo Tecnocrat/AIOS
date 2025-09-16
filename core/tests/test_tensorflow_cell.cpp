@@ -8,26 +8,26 @@ int main() {
     try {
         // Test cell creation
         aios::tensorflow::TensorFlowPerformanceCell cell;
-        std::cout << "✓ TensorFlow Performance Cell creation test passed" << std::endl;
+        std::cout << " TensorFlow Performance Cell creation test passed" << std::endl;
         
         // Test initialization
         bool initialized = cell.initialize();
         assert(initialized);
         (void)initialized; // Suppress unused warning
-        std::cout << "✓ TensorFlow Performance Cell initialization test passed" << std::endl;
+        std::cout << " TensorFlow Performance Cell initialization test passed" << std::endl;
         
         // Test model loading (simulate with empty path for now)
         bool modelLoaded = cell.loadModel("models/mock_model", {"serve"});
         assert(modelLoaded);
         assert(cell.isModelLoaded());
         (void)modelLoaded; // Suppress unused warning
-        std::cout << "✓ Model loading test passed" << std::endl;
+        std::cout << " Model loading test passed" << std::endl;
         
         // Test model info
         auto modelInfo = cell.getModelInfo();
         assert(modelInfo["status"] == "loaded");
         assert(modelInfo["framework"] == "TensorFlow");
-        std::cout << "✓ Model info test passed" << std::endl;
+        std::cout << " Model info test passed" << std::endl;
         
         // Test inference
         std::vector<aios::tensorflow::Tensor> inputs;
@@ -41,7 +41,7 @@ int main() {
         assert(result.success);
         assert(!result.outputs.empty());
         assert(result.outputs[0].data.size() == 4);
-        std::cout << "✓ Inference test passed" << std::endl;
+        std::cout << " Inference test passed" << std::endl;
         
         // Test multiple inferences for performance metrics
         for (int i = 0; i < 5; ++i) {
@@ -53,14 +53,14 @@ int main() {
         assert(metrics.successfulInferences == metrics.totalInferences);
         assert(metrics.successRate == 1.0);
         (void)metrics; // Suppress unused warning
-        std::cout << "✓ Performance metrics test passed" << std::endl;
+        std::cout << " Performance metrics test passed" << std::endl;
         
         // Test warmup
         cell.warmup(3);
         auto metricsAfterWarmup = cell.getMetrics();
         assert(metricsAfterWarmup.totalInferences == metrics.totalInferences); // Warmup shouldn't count
         (void)metricsAfterWarmup; // Suppress unused warning
-        std::cout << "✓ Warmup test passed" << std::endl;
+        std::cout << " Warmup test passed" << std::endl;
         
         // Test metrics reset
         cell.resetMetrics();
@@ -68,13 +68,13 @@ int main() {
         assert(resetMetrics.totalInferences == 0);
         assert(resetMetrics.successfulInferences == 0);
         (void)resetMetrics; // Suppress unused warning
-        std::cout << "✓ Metrics reset test passed" << std::endl;
+        std::cout << " Metrics reset test passed" << std::endl;
         
-        std::cout << "\n🎉 All TensorFlow Performance Cell tests passed!" << std::endl;
+        std::cout << "\n All TensorFlow Performance Cell tests passed!" << std::endl;
         return 0;
         
     } catch (const std::exception& e) {
-        std::cerr << "❌ Test failed: " << e.what() << std::endl;
+        std::cerr << " Test failed: " << e.what() << std::endl;
         return 1;
     }
 }

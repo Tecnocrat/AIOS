@@ -31,9 +31,9 @@ EMOJI_PATTERNS = [
     r"[\U00002700-\U000027BF]",  # Dingbats
     r"[\U0001F900-\U0001F9FF]",  # Supplemental Symbols and Pictographs
     # Common checkmarks and symbols
-    r"[✅❌✔️❎]",  # Check marks
-    r"[🎯🔧🧬🚀📂📊🔍🔄]",  # Common AIOS emojis
-    r"[⚡🧮🌌🤖🖥️📚]",  # Architecture emojis
+    r"[]",  # Check marks
+    r"[]",  # Common AIOS emojis
+    r"[]",  # Architecture emojis
 ]
 
 # Compile regex for efficiency

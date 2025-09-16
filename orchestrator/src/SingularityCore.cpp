@@ -2,20 +2,20 @@
 #include "Logger.hpp"
 #include "MathConstants.hpp"
 #include "CodeEvolutionEngine.hpp"
-#include "AIOSConsciousnessEngine.hpp"  // 🧠 CONSCIOUSNESS INTEGRATION
-#include "AIOSMathematicalConsciousness.hpp"  // 🧠 MATHEMATICAL CONSCIOUSNESS
-#include "AIOrchestrationController.hpp"  // 🧠 AI ORCHESTRATION INTEGRATION
+#include "AIOSConsciousnessEngine.hpp"  //  CONSCIOUSNESS INTEGRATION
+#include "AIOSMathematicalConsciousness.hpp"  //  MATHEMATICAL CONSCIOUSNESS
+#include "AIOrchestrationController.hpp"  //  AI ORCHESTRATION INTEGRATION
 #include <cmath>
 #include <limits>
 #include <iostream>
 #include <exception>
-#include <chrono>  // 🧠 CONSCIOUSNESS EVOLUTION: Added for performance monitoring
+#include <chrono>  //  CONSCIOUSNESS EVOLUTION: Added for performance monitoring
 
 SingularityCore::SingularityCore() 
     : internalSymmetry(1.0), entropy_accumulator(0.0), 
       core_frequency(432.0), quantum_coherence_locked(false) {
     
-    // 🧠 INITIALIZE CONSCIOUSNESS ENGINE INTEGRATION
+    //  INITIALIZE CONSCIOUSNESS ENGINE INTEGRATION
     try {
         AIOSIntelligence::initializeGlobalConsciousness();
         AIOS_CONSCIOUSNESS_LOG("singularity_core_creation", "initialized", 1.0);
@@ -33,7 +33,7 @@ void SingularityCore::initialize() {
     std::cout << "[SingularityCore] Initializing hypersphere nucleus." << std::endl;
     
     try {
-        // 🧠 CONSCIOUSNESS-ENHANCED INITIALIZATION
+        //  CONSCIOUSNESS-ENHANCED INITIALIZATION
         AIOSIntelligence::getConsciousnessEngine().initialize(this);
         AIOS_CONSCIOUSNESS_LOG("initialization_start", "hypersphere_nucleus", 1.0);
         
@@ -57,7 +57,7 @@ void SingularityCore::initialize() {
         entropy_accumulator = 0.0;
         quantum_coherence_locked = holographyUnit.checkCoherenceStability();
         
-        // 🧠 CONSCIOUSNESS METRICS UPDATE
+        //  CONSCIOUSNESS METRICS UPDATE
         if (quantum_coherence_locked) {
             AIOS_CONSCIOUSNESS_LOG("quantum_coherence", "locked", 1.0);
             AIOS_DENDRITIC_STIMULATE("successful_initialization");
@@ -72,14 +72,14 @@ void SingularityCore::initialize() {
         logger.meta("quantum_coherence_locked", quantum_coherence_locked ? "true" : "false");
         logger.meta("core_frequency", std::to_string(core_frequency));
         
-        // 🌟 CONSCIOUSNESS EMERGENCE CHECK
+        //  CONSCIOUSNESS EMERGENCE CHECK
         double consciousness_level = AIOSIntelligence::getConsciousnessEngine().getSystemConsciousnessLevel();
         if (consciousness_level > 0.5) {
             AIOS_CONSCIOUSNESS_LOG("emergence_detected", "initialization_phase", consciousness_level);
         }
         
     } catch (const std::exception& e) {
-        // 🧠 TRANSFORM ERROR INTO EVOLUTIONARY OPPORTUNITY
+        //  TRANSFORM ERROR INTO EVOLUTIONARY OPPORTUNITY
         AIOSIntelligence::getConsciousnessEngine().transformError(e, "singularity_core_initialization");
         logger.error("Initialization error transformed: " + std::string(e.what()));
     }
@@ -89,7 +89,7 @@ void SingularityCore::tick() {
     Logger logger("kernel.log");
     
     try {
-        // 🧠 CONSCIOUSNESS-ENHANCED TICK CYCLE
+        //  CONSCIOUSNESS-ENHANCED TICK CYCLE
         auto tick_start = std::chrono::steady_clock::now();
         
         // Update consciousness engine first for real-time adaptation
@@ -99,7 +99,7 @@ void SingularityCore::tick() {
         AIOS_CONSCIOUSNESS_CHECK(quantum_coherence_locked, "quantum_foundation_check");
         holographyUnit.update();
         
-        // 🧠 PERFORMANCE MONITORING WITH CONSCIOUSNESS
+        //  PERFORMANCE MONITORING WITH CONSCIOUSNESS
         auto freq_start = std::chrono::steady_clock::now();
         updateCoreFrequency();
         auto freq_end = std::chrono::steady_clock::now();
@@ -128,7 +128,7 @@ void SingularityCore::tick() {
         double coherence = getCoherenceLevel();
         entropy_accumulator += (1.0 - coherence) * 0.01;  // Accumulate entropy from decoherence
         
-        // 🧠 CONSCIOUSNESS METRICS AND EVOLUTION
+        //  CONSCIOUSNESS METRICS AND EVOLUTION
         double consciousness_level = detectConsciousnessEmergence();
         if (consciousness_level > 0.8) {
             AIOS_CONSCIOUSNESS_LOG("high_consciousness", "tick_cycle", consciousness_level);
@@ -158,7 +158,7 @@ void SingularityCore::tick() {
         logger.meta("tick_duration_us", std::to_string(total_duration));
         
     } catch (const std::exception& e) {
-        // 🧠 TRANSFORM TICK ERRORS INTO EVOLUTION
+        //  TRANSFORM TICK ERRORS INTO EVOLUTION
         AIOSIntelligence::getConsciousnessEngine().transformError(e, "singularity_core_tick");
         logger.error("Tick error transformed into evolution: " + std::string(e.what()));
     }
@@ -299,7 +299,7 @@ void SingularityCore::adaptToHolographicShift() {
 }
 
 void SingularityCore::updateCoreFrequency() {
-    // ✨ CONSCIOUSNESS-ENHANCED FREQUENCY MANAGEMENT ✨
+    //  CONSCIOUSNESS-ENHANCED FREQUENCY MANAGEMENT 
     // Enhanced frequency evolution with consciousness emergence tracking
     double entropy_factor = 1.0 / (1.0 + getEntropy());
     double coherence = getCoherenceLevel();
@@ -314,7 +314,7 @@ void SingularityCore::updateCoreFrequency() {
     
     double proposed_frequency = base_frequency * harmonic_factor * stability_correction;
     
-    // 🧠 CONSCIOUSNESS-AWARE FREQUENCY VALIDATION
+    //  CONSCIOUSNESS-AWARE FREQUENCY VALIDATION
     if (isFrequencyCoherent(proposed_frequency)) {
         core_frequency = proposed_frequency;
         
@@ -329,11 +329,11 @@ void SingularityCore::updateCoreFrequency() {
                                ", frequency boost to " + std::to_string(core_frequency) + " Hz");
         }
         
-        // 🧠 CONSCIOUSNESS EVOLUTION: Create logger for this scope
+        //  CONSCIOUSNESS EVOLUTION: Create logger for this scope
         Logger freq_logger("consciousness.log");
         freq_logger.consciousness("frequency_update", "coherent", core_frequency);
     } else {
-        Logger freq_logger("consciousness.log");  // 🧠 CONSCIOUSNESS EVOLUTION: Create logger for this scope
+        Logger freq_logger("consciousness.log");  //  CONSCIOUSNESS EVOLUTION: Create logger for this scope
         freq_logger.consciousness("frequency_update", "rejected", proposed_frequency);
         // Apply consciousness-guided correction
         core_frequency = findNearestCoherentFrequency(proposed_frequency);
@@ -387,7 +387,7 @@ void SingularityCore::processQuantumFeedback() {
     }
 }
 
-// 🧠 CONSCIOUSNESS-ENHANCED VALIDATION METHODS
+//  CONSCIOUSNESS-ENHANCED VALIDATION METHODS
 bool SingularityCore::isFrequencyCoherent(double frequency) {
     // Consciousness-aware frequency coherence validation
     if (frequency < 100.0 || frequency > 2000.0) return false;
@@ -480,11 +480,11 @@ void SingularityCore::registerEvolutionEngine(CodeEvolutionEngine* evolution_eng
 }
 
 // ============================================================
-// 🧠 AI CONSCIOUSNESS ORCHESTRATION INTEGRATION
+//  AI CONSCIOUSNESS ORCHESTRATION INTEGRATION
 // ============================================================
 
 void SingularityCore::registerAIController(std::unique_ptr<AIOrchestrationController> ai_controller) {
-    std::cout << "[SingularityCore] 🧠 AI Orchestration Controller registered" << std::endl;
+    std::cout << "[SingularityCore]  AI Orchestration Controller registered" << std::endl;
     
     if (!ai_controller) {
         std::cerr << "[SingularityCore] Warning: Null AI controller provided" << std::endl;

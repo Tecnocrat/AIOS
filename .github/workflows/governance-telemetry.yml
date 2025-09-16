@@ -132,12 +132,12 @@ jobs:
             scan.counts = scan.counts || {}; scan.findings = scan.findings || {};
             const risks = readJson('governance_risks.json') || {};
             const hook = readJson('hook_summary.json') || {};
-            const table = `### 🔐 Governance Telemetry\n| Metric | Value |\n|-------|-------|\n| Files Analyzed | ${scan.counts.analyzed || 0} |\n| Oversized | ${(scan.findings.oversized||[]).length} |\n| Secrets | ${(scan.findings.secrets||[]).length} |\n| Deletion % | ${risks.deletionPct ?? 0}% |\n| Needs Rationale | ${risks.needsRationale ?? false} |\n| Has Rationale Tag | ${risks.hasRationaleTag ?? false} |\n| Policy Changed | ${risks.policyChanged ?? false} |\n| Capsule Updated | ${risks.capsuleUpdated ?? false} |\n| Hook Passes | ${hook.passes || 0} |\n| Hook Blocks | ${hook.blocks || 0} |`;
+            const table = `###  Governance Telemetry\n| Metric | Value |\n|-------|-------|\n| Files Analyzed | ${scan.counts.analyzed || 0} |\n| Oversized | ${(scan.findings.oversized||[]).length} |\n| Secrets | ${(scan.findings.secrets||[]).length} |\n| Deletion % | ${risks.deletionPct ?? 0}% |\n| Needs Rationale | ${risks.needsRationale ?? false} |\n| Has Rationale Tag | ${risks.hasRationaleTag ?? false} |\n| Policy Changed | ${risks.policyChanged ?? false} |\n| Capsule Updated | ${risks.capsuleUpdated ?? false} |\n| Hook Passes | ${hook.passes || 0} |\n| Hook Blocks | ${hook.blocks || 0} |`;
             const advisory = `\n\n_Thresholds:_ LFC>=0.85, GPC>=0.75 (checked in separate workflow). Large deletion rationale enforced locally via commit-msg hook.`;
             const body = table + advisory;
             const {owner, repo} = context.repo;
             const issue_number = context.issue.number;
-            const marker = '### 🔐 Governance Telemetry';
+            const marker = '###  Governance Telemetry';
             const comments = await github.rest.issues.listComments({owner, repo, issue_number, per_page: 100});
             const existing = comments.data.find(c => c.body && c.body.startsWith(marker));
             if (existing) {

@@ -1,13 +1,13 @@
 #!/bin/sh
 # AIOS GitHook Entry Point - Pre-Commit
-# Delegates to NUCLEUS supercell for actual hook logic
+# Delegates to PowerShell version for Windows or nucleus module for cross-platform
 
 # For Windows/PowerShell environments, use the .ps1 version
 if command -v pwsh >/dev/null 2>&1; then
-    exec pwsh -ExecutionPolicy Bypass -File ".githooks/supercells/nucleus/pre-commit.ps1"
+    exec pwsh -ExecutionPolicy Bypass -File ".githooks/pre-commit.ps1" "$@"
 elif command -v powershell >/dev/null 2>&1; then
-    exec powershell -ExecutionPolicy Bypass -File ".githooks/supercells/nucleus/pre-commit.ps1"
+    exec powershell -ExecutionPolicy Bypass -File ".githooks/pre-commit.ps1" "$@"
 else
-    # Fallback to shell version
-    exec .githooks/supercells/nucleus/pre-commit "$@"
+    # Fallback to nucleus module directly for non-Windows systems
+    exec .githooks/modules/nucleus/pre-commit "$@"
 fi

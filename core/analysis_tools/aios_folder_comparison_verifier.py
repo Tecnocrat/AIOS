@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🔍 AIOS FOLDER COMPARISON VERIFICATION
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS FOLDER COMPARISON VERIFICATION
+
 Comprehensive comparison between backup folder and tachyonic archive to verify
 identical content before safe deletion of backup folder.
 
@@ -14,7 +14,7 @@ COMPARISON SCOPE:
 - Safe deletion confirmation
 
 AIOS - Folder comparison and verification system
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -234,7 +234,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSFolderComparisonVerifier:
     """
-    🔍 AIOS Folder Comparison Verifier
+     AIOS Folder Comparison Verifier
     
     Performs comprehensive comparison between two folders:
     • Verifies file counts and structure
@@ -248,15 +248,15 @@ class AIOSFolderComparisonVerifier:
         self.backup_folder = self.core_path / "evolutionary_assembler_BACKUP_TO_DELETE"
         self.archive_folder = self.core_path / "tachyonic_archive" / "evolutionary_assembler_v1.0_tachyonic_1757015844"
         
-        logger.info("🔍 AIOS Folder Comparison Verifier initialized")
+        logger.info(" AIOS Folder Comparison Verifier initialized")
         logger.info(f"   Backup folder: {self.backup_folder}")
         logger.info(f"   Archive folder: {self.archive_folder}")
     
     def perform_comprehensive_comparison(self) -> Dict[str, Any]:
         """Perform comprehensive comparison between backup and archive folders"""
         
-        logger.info("🔍 PERFORMING COMPREHENSIVE FOLDER COMPARISON")
-        logger.info("═" * 60)
+        logger.info(" PERFORMING COMPREHENSIVE FOLDER COMPARISON")
+        logger.info("" * 60)
         logger.info("[CHART] Analyzing folder structures and content...")
         logger.info("")
         
@@ -305,7 +305,7 @@ class AIOSFolderComparisonVerifier:
         comparison_results["deletion_recommendation"] = self._generate_deletion_recommendation(comparison_results)
         
         logger.info("[CHECK] COMPREHENSIVE FOLDER COMPARISON COMPLETE")
-        logger.info("═" * 60)
+        logger.info("" * 60)
         
         return comparison_results
     
@@ -430,7 +430,7 @@ class AIOSFolderComparisonVerifier:
             
             content_verification["file_results"][file_path] = result
         
-        logger.info(f"🔍 Content verification:")
+        logger.info(f" Content verification:")
         logger.info(f"   Identical files: {content_verification['identical_files']}")
         logger.info(f"   Different files: {content_verification['different_files']}")
         logger.info(f"   Missing files: {content_verification['missing_files']}")
@@ -469,7 +469,7 @@ class AIOSFolderComparisonVerifier:
             "unique_to_archive": list(archive_files - backup_files)
         }
         
-        logger.info(f"📋 Unique files:")
+        logger.info(f" Unique files:")
         logger.info(f"   Unique to backup: {len(unique_files['unique_to_backup'])}")
         logger.info(f"   Unique to archive: {len(unique_files['unique_to_archive'])}")
         
@@ -499,7 +499,7 @@ class AIOSFolderComparisonVerifier:
                          only_expected_unique and 
                          no_important_backup_files)
         
-        logger.info(f"🛡️ Safety assessment:")
+        logger.info(f" Safety assessment:")
         logger.info(f"   Critical files identical: {critical_files_identical}")
         logger.info(f"   Only expected unique files: {only_expected_unique}")
         logger.info(f"   No important backup-only files: {no_important_backup_files}")
@@ -536,28 +536,28 @@ class AIOSFolderComparisonVerifier:
         
         comparison_results = self.perform_comprehensive_comparison()
         
-        print("🔍 AIOS FOLDER COMPARISON VERIFICATION")
-        print("═" * 70)
+        print(" AIOS FOLDER COMPARISON VERIFICATION")
+        print("" * 70)
         print("[CHART] COMPREHENSIVE COMPARISON RESULTS")
         print()
         
-        print("📈 FILE COUNT SUMMARY:")
+        print(" FILE COUNT SUMMARY:")
         file_counts = comparison_results["file_counts"]
         print(f"  [FOLDER] Backup folder: {file_counts['backup_files']} files, {file_counts['backup_directories']} directories")
-        print(f"  📦 Archive folder: {file_counts['archive_files']} files, {file_counts['archive_directories']} directories")
+        print(f"   Archive folder: {file_counts['archive_files']} files, {file_counts['archive_directories']} directories")
         print(f"  [CHART] Difference: {file_counts['file_count_difference']} files, {file_counts['directory_count_difference']} directories")
         print()
         
-        print("🔍 CONTENT VERIFICATION:")
+        print(" CONTENT VERIFICATION:")
         content = comparison_results["content_verification"]
         print(f"  [CHECK] Identical files: {content['identical_files']}")
         print(f"  [X] Different files: {content['different_files']}")
         print(f"  [WARNING] Missing files: {content['missing_files']}")
         print()
         
-        print("📋 UNIQUE FILES:")
-        print(f"  🔹 Unique to backup: {len(comparison_results['unique_to_backup'])}")
-        print(f"  🔸 Unique to archive: {len(comparison_results['unique_to_archive'])}")
+        print(" UNIQUE FILES:")
+        print(f"   Unique to backup: {len(comparison_results['unique_to_backup'])}")
+        print(f"   Unique to archive: {len(comparison_results['unique_to_archive'])}")
         if comparison_results["unique_to_archive"]:
             print(f"      Archive-only files: {', '.join(comparison_results['unique_to_archive'])}")
         print()
@@ -577,10 +577,10 @@ class AIOSFolderComparisonVerifier:
 def main():
     """Execute folder comparison verification"""
     
-    print("🔍 AIOS FOLDER COMPARISON VERIFIER")
-    print("═" * 60)
+    print(" AIOS FOLDER COMPARISON VERIFIER")
+    print("" * 60)
     print("[TARGET] Verifying identical content between backup and archive")
-    print("🛡️ Ensuring safe deletion of backup folder")
+    print(" Ensuring safe deletion of backup folder")
     print()
     
     # Initialize verifier

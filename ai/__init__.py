@@ -53,9 +53,9 @@ def initialize_ai_intelligence():
             'information_storage': initialize_information_storage()
         }
         
-        print(f"🧬 AI Intelligence Cellular Systems Initialized:")
+        print(f" AI Intelligence Cellular Systems Initialized:")
         for unit, status in cellular_status.items():
-            print(f"   {unit}: {'✅' if status else '❌'}")
+            print(f"   {unit}: {'' if status else ''}")
             
         return all(cellular_status.values())
         

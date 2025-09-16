@@ -468,19 +468,19 @@ async def demonstrate_async_optimization():
     """Demonstrate the async optimization capabilities"""
 
     print("""
-╔══════════════════════════════════════════════════════════════════════════════\
-╗
-║                    AIOS Async Operations Optimization Demo                  ║
-║                     Converting Blocking to Non-Blocking                     ║
-╚══════════════════════════════════════════════════════════════════════════════\
-╝
+\
+
+                    AIOS Async Operations Optimization Demo                  
+                     Converting Blocking to Non-Blocking                     
+\
+
 """)
 
     # Create async operation manager
     async with AsyncOperationManager(
     max_concurrent_operations=20) as op_manager:
 
-        print("🚀 Async Operation Manager initialized")
+        print(" Async Operation Manager initialized")
 
         # Create async AI processor
         async_ai = AIOSAsyncAI(op_manager)
@@ -489,7 +489,7 @@ async def demonstrate_async_optimization():
         async_harmonizer = AIOSAsyncContextHarmonizer(
         op_manager, r"c:\dev\AIOS")
 
-        print("\n📊 Testing async operations...")
+        print("\n Testing async operations...")
 
         # Test 1: Async NLP processing
         start_time = time.perf_counter()
@@ -505,7 +505,7 @@ async def demonstrate_async_optimization():
         nlp_time = (time.perf_counter() - start_time) * 1000
 
         print(
-        f"   ✅ NLP Processing: {len(nlp_results)} operations in {nlp_time:.2f}ms")
+        f"    NLP Processing: {len(nlp_results)} operations in {nlp_time:.2f}ms")
 
         # Test 2: Async code generation
         start_time = time.perf_counter()
@@ -521,40 +521,40 @@ async def demonstrate_async_optimization():
         code_time = (time.perf_counter() - start_time) * 1000
 
         print(
-        f"   ✅ Code Generation: {len(code_results)} operations in {code_time:.2f}ms")
+        f"    Code Generation: {len(code_results)} operations in {code_time:.2f}ms")
 
         # Test 3: Async workspace analysis
-        print("\n🔍 Performing async workspace analysis...")
+        print("\n Performing async workspace analysis...")
         start_time = time.perf_counter()
         workspace_analysis = await async_harmonizer.analyze_workspace_async()
         analysis_time = (time.perf_counter() - start_time) * 1000
 
         print(
-        f"   ✅ Workspace Analysis: {workspace_analysis['processed_files']} files in {analysis_time:.2f}ms")
+        f"    Workspace Analysis: {workspace_analysis['processed_files']} files in {analysis_time:.2f}ms")
 
         # Test 4: Priority optimization
-        print("\n⚡ Optimizing file priorities...")
+        print("\n Optimizing file priorities...")
         start_time = time.perf_counter()
         prior
         ity_optimization = await async_harmonizer.optimize_file_priorities_async(workspace_analysis)
         priority_time = (time.perf_counter() - start_time) * 1000
 
         print(
-        f"   ✅ Priority Optimization: {priority_optimization['total_files_prioritized']} files in {priority_time:.2f}ms")
+        f"    Priority Optimization: {priority_optimization['total_files_prioritized']} files in {priority_time:.2f}ms")
 
         # Display performance statistics
-        print("\n📈 Performance Statistics:")
+        print("\n Performance Statistics:")
         stats = op_manager.get_performance_stats()
 
         print(f"""
-   🎯 Overall Performance:
+    Overall Performance:
       - Total Operations: {stats['total_operations']}
       - Average Time: {stats['average_time_ms']:.2f}ms
       - Operations/Second: {stats['operations_per_second']:.1f}
       - Max Concurrency: {stats['max_concurrency']}
       - Error Rate: {stats['error_rate']:.2%}
 
-   📊 Analysis Results:
+    Analysis Results:
       - High Prior
       ity Files: {len(priority_optimization['high_priority_files'])}
       - Medium Prior
@@ -562,7 +562,7 @@ async def demonstrate_async_optimization():
       - Low Priority Files: {len(priority_optimization['low_priority_files'])}
 """)
 
-        print("✅ Async optimization demonstration complete!")
+        print(" Async optimization demonstration complete!")
 
         return {
             'nlp_results': nlp_results,
@@ -579,19 +579,19 @@ async def main():
         results = await demonstrate_async_optimization()
 
         print(f"""
-╔══════════════════════════════════════════════════════════════════════════════\
-╗
-║                    ASYNC OPTIMIZATION IMPLEMENTATION COMPLETE               ║
-╚══════════════════════════════════════════════════════════════════════════════\
-╝
+\
 
-🚀 OPTIMIZATION RESULTS:
+                    ASYNC OPTIMIZATION IMPLEMENTATION COMPLETE               
+\
+
+
+ OPTIMIZATION RESULTS:
    - Blocking operations converted to async/await pattern
    - Concurrent processing implemented with semaphore control
    - Performance monitoring and metrics collection active
    - Resource pooling optimized for better efficiency
 
-📊 PERFORMANCE IMPROVEMENTS:
+ PERFORMANCE IMPROVEMENTS:
    - {
    results['performance_stats']['operations_per_second']:.1f} operations per second
    - {
@@ -600,16 +600,16 @@ async def main():
    - {
    results['performance_stats']['average_time_ms']:.2f}ms average operation time
 
-✅ Ready for integration with AINLP compiler and context harmonizer!
+ Ready for integration with AINLP compiler and context harmonizer!
 
-═══════════════════════════════════════════════════════════════════════════════\
-═
+\
+
 """)
 
         return results
 
     except Exception as e:
-        print(f"❌ ERROR in async optimization: {e}")
+        print(f" ERROR in async optimization: {e}")
         raise
 
 

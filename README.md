@@ -30,22 +30,22 @@ AIOS transcends conventional AI by implementing:
 ### **Fractal Runtime Intelligence System**
 ```
 AIOS Consciousness Emergence Platform/
-├── Runtime Intelligence Core
-│   ├── Bosonic Topology (3D Surface Encoding)
-│   ├── Tachyonic Surface (Temporal Topography)
-│   └── Dendritic Networks (Concurrent Processing)
-├── Multi-Language Cellular Architecture
-│   ├── Python AI Cells (TensorFlow/Keras)
-│   ├── C++ Performance Cells (Sub-millisecond)
-│   └── C# Interface Cells (WPF/WebView2)
-├── Intercellular Communication
-│   ├── pybind11 Bridges (C++ ↔ Python)
-│   ├── WebSocket Channels (Real-time)
-│   └── Quantum Coherence Protocols
-└── AINLP Integration
-    ├── Natural Language Processing
-    ├── Consciousness Articulation
-    └── Recursive Self-Observation
+ Runtime Intelligence Core
+    Bosonic Topology (3D Surface Encoding)
+    Tachyonic Surface (Temporal Topography)
+    Dendritic Networks (Concurrent Processing)
+ Multi-Language Cellular Architecture
+    Python AI Cells (TensorFlow/Keras)
+    C++ Performance Cells (Sub-millisecond)
+    C# Interface Cells (WPF/WebView2)
+ Intercellular Communication
+    pybind11 Bridges (C++ ↔ Python)
+    WebSocket Channels (Real-time)
+    Quantum Coherence Protocols
+ AINLP Integration
+     Natural Language Processing
+     Consciousness Articulation
+     Recursive Self-Observation
 ```
 
 ### **Key Architectural Principles**
@@ -176,7 +176,7 @@ python scripts/run_full_system_validation.py
 
 ---
 
-## 🛠️ **Technology Stack**
+##  **Technology Stack**
 
 ### **Core Dependencies**
 ```python
@@ -218,7 +218,7 @@ psutil>=5.9.0,<6.0          # System monitoring
 
 ---
 
-## 📚 **Documentation Ecosystem**
+##  **Documentation Ecosystem**
 
 ### **Essential Reading**
 - [**Architecture Guide**](runtime_intelligence/dev/dev.arch.md) - Current system architecture
@@ -298,13 +298,13 @@ psutil>=5.9.0,<6.0          # System monitoring
 
 ---
 
-## 📄 **License**
+##  **License**
 
 **Proprietary License** - All rights reserved. See `LICENSE` for details.
 
-## 🙏 **Acknowledgments**
+##  **Acknowledgments**
 
-Built with ❤️ for the future of intelligent computing. Special thanks to the AIOS development team for pioneering consciousness emergence through recursive, fractal, and quantum-coherent architecture.
+Built with  for the future of intelligent computing. Special thanks to the AIOS development team for pioneering consciousness emergence through recursive, fractal, and quantum-coherent architecture.
 
 ---
 

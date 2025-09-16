@@ -36,8 +36,8 @@ function Show-PhaseHeader {
     param([string]$PhaseName, [string]$Description)
     
     Write-Host "`n$('='*80)" -ForegroundColor Cyan
-    Write-Host "🔬 $PhaseName" -ForegroundColor Yellow
-    Write-Host "📋 $Description" -ForegroundColor Gray
+    Write-Host " $PhaseName" -ForegroundColor Yellow
+    Write-Host " $Description" -ForegroundColor Gray
     Write-Host "$('='*80)`n" -ForegroundColor Cyan
     
     Write-TestLog "Starting $PhaseName : $Description"
@@ -70,7 +70,7 @@ function Test-BuildSystemValidation {
     }
     
     # Step 1.2: CMake Configuration
-    Write-Host "⚙️  Step 1.2: CMake configuration..." -ForegroundColor Green
+    Write-Host "  Step 1.2: CMake configuration..." -ForegroundColor Green
     
     if (!(Test-Path $BuildPath)) {
         New-Item -ItemType Directory -Path $BuildPath -Force
@@ -82,12 +82,12 @@ function Test-BuildSystemValidation {
         if ($LASTEXITCODE -eq 0) {
             Write-TestLog "CMake configuration successful"
             $results.steps["cmake_config"] = "success"
-            Write-Host "✅ CMake configuration successful" -ForegroundColor Green
+            Write-Host " CMake configuration successful" -ForegroundColor Green
         } else {
             Write-TestLog "CMake configuration failed: $cmakeOutput" "ERROR"
             $results.steps["cmake_config"] = "failed"
             $results.errors += "CMake configuration failed"
-            Write-Host "❌ CMake configuration failed" -ForegroundColor Red
+            Write-Host " CMake configuration failed" -ForegroundColor Red
         }
     }
     catch {
@@ -99,7 +99,7 @@ function Test-BuildSystemValidation {
     }
     
     # Step 1.3: Build Core Components
-    Write-Host "🔨 Step 1.3: Building core components..." -ForegroundColor Green
+    Write-Host " Step 1.3: Building core components..." -ForegroundColor Green
     
     Push-Location $BuildPath
     try {
@@ -107,12 +107,12 @@ function Test-BuildSystemValidation {
         if ($LASTEXITCODE -eq 0) {
             Write-TestLog "Build successful"
             $results.steps["build"] = "success"
-            Write-Host "✅ Build successful" -ForegroundColor Green
+            Write-Host " Build successful" -ForegroundColor Green
         } else {
             Write-TestLog "Build failed: $buildOutput" "ERROR"
             $results.steps["build"] = "failed" 
             $results.errors += "Build failed"
-            Write-Host "❌ Build failed" -ForegroundColor Red
+            Write-Host " Build failed" -ForegroundColor Red
         }
     }
     catch {
@@ -124,7 +124,7 @@ function Test-BuildSystemValidation {
     }
     
     # Step 1.4: Validate Dependencies
-    Write-Host "📦 Step 1.4: Validating dependencies..." -ForegroundColor Green
+    Write-Host " Step 1.4: Validating dependencies..." -ForegroundColor Green
     Test-Dependencies
     $results.steps["dependencies"] = "checked"
     
@@ -151,10 +151,10 @@ function Test-Dependencies {
     foreach ($header in $requiredHeaders) {
         $headerPath = "$includePath\$header"
         if (Test-Path $headerPath) {
-            Write-Host "✅ Found: $header" -ForegroundColor Green
+            Write-Host " Found: $header" -ForegroundColor Green
             Write-TestLog "Dependency validated: $header"
         } else {
-            Write-Host "❌ Missing: $header" -ForegroundColor Red
+            Write-Host " Missing: $header" -ForegroundColor Red
             Write-TestLog "Missing dependency: $header" "ERROR"
         }
     }
@@ -181,17 +181,17 @@ function Test-ExecutionAndRuntime {
     }
     
     if (!$exePath) {
-        Write-Host "❌ No executable found. Build must complete successfully first." -ForegroundColor Red
+        Write-Host " No executable found. Build must complete successfully first." -ForegroundColor Red
         Write-TestLog "No executable found for testing" "ERROR"
         $results.steps["execution"] = "skipped - no executable"
         return $results
     }
     
-    Write-Host "🚀 Found executable: $exePath" -ForegroundColor Green
+    Write-Host " Found executable: $exePath" -ForegroundColor Green
     Write-TestLog "Using executable: $exePath"
     
     # Step 2.1: Basic Initialization Test
-    Write-Host "🔄 Step 2.1: Basic initialization test..." -ForegroundColor Green
+    Write-Host " Step 2.1: Basic initialization test..." -ForegroundColor Green
     
     # Ensure archive directory exists
     if (!(Test-Path $ArchivePath)) {
@@ -238,7 +238,7 @@ function Test-ExecutionAndRuntime {
             "total_expected" = $initIndicators.Count
         }
         
-        Write-Host "✅ Found $($foundIndicators.Count)/$($initIndicators.Count) initialization indicators" -ForegroundColor Green
+        Write-Host " Found $($foundIndicators.Count)/$($initIndicators.Count) initialization indicators" -ForegroundColor Green
         Write-TestLog "Initialization indicators: $($foundIndicators.Count)/$($initIndicators.Count)"
         
     }
@@ -248,7 +248,7 @@ function Test-ExecutionAndRuntime {
     }
     
     # Step 2.2: Monitor Archive Generation
-    Write-Host "📁 Step 2.2: Monitoring archive generation..." -ForegroundColor Green
+    Write-Host " Step 2.2: Monitoring archive generation..." -ForegroundColor Green
     Test-ArchiveGeneration
     $results.steps["archive_monitoring"] = "completed"
     
@@ -267,8 +267,8 @@ function Test-ArchiveGeneration {
     $existingLogs = Get-ChildItem $ArchivePath -Filter "*.log"
     $existingDiagnostics = Get-ChildItem $ArchivePath -Filter "*.json"
     
-    Write-Host "📊 Found $($existingLogs.Count) log files" -ForegroundColor Cyan
-    Write-Host "📊 Found $($existingDiagnostics.Count) diagnostic files" -ForegroundColor Cyan
+    Write-Host " Found $($existingLogs.Count) log files" -ForegroundColor Cyan
+    Write-Host " Found $($existingDiagnostics.Count) diagnostic files" -ForegroundColor Cyan
     
     Write-TestLog "Archive monitoring: $($existingLogs.Count) logs, $($existingDiagnostics.Count) diagnostics"
     
@@ -295,13 +295,13 @@ function Test-DiagnosticContent {
             }
         }
         
-        Write-Host "📊 Diagnostic validation: $($foundKeys.Count)/$($expectedKeys.Count) required sections found" -ForegroundColor Cyan
+        Write-Host " Diagnostic validation: $($foundKeys.Count)/$($expectedKeys.Count) required sections found" -ForegroundColor Cyan
         Write-TestLog "Diagnostic validation: $($foundKeys.Count)/$($expectedKeys.Count) sections found"
         
         # Extract consciousness metrics
         if ($data.PSObject.Properties.Name -contains "consciousness") {
             $consciousnessData = $data.consciousness
-            Write-Host "🧠 Consciousness Metrics: $($consciousnessData | ConvertTo-Json -Compress)" -ForegroundColor Yellow
+            Write-Host " Consciousness Metrics: $($consciousnessData | ConvertTo-Json -Compress)" -ForegroundColor Yellow
             Write-TestLog "Consciousness metrics extracted: $($consciousnessData | ConvertTo-Json -Compress)"
         }
     }
@@ -319,7 +319,7 @@ function Test-LoggingAndMetadata {
     }
     
     # Step 3.1: Log File Structure Validation
-    Write-Host "📝 Step 3.1: Log file structure validation..." -ForegroundColor Green
+    Write-Host " Step 3.1: Log file structure validation..." -ForegroundColor Green
     
     $logFiles = Get-ChildItem $ArchivePath -Filter "*.log" -ErrorAction SilentlyContinue
     $jsonFiles = Get-ChildItem $ArchivePath -Filter "*.json" -ErrorAction SilentlyContinue
@@ -333,11 +333,11 @@ function Test-LoggingAndMetadata {
     
     $results.validations["structure"] = $structureValidation
     
-    Write-Host "📊 Structure validation: $($structureValidation | ConvertTo-Json -Compress)" -ForegroundColor Cyan
+    Write-Host " Structure validation: $($structureValidation | ConvertTo-Json -Compress)" -ForegroundColor Cyan
     Write-TestLog "Log structure validation completed"
     
     # Step 3.2: Content Quality Validation
-    Write-Host "🔍 Step 3.2: Content quality validation..." -ForegroundColor Green
+    Write-Host " Step 3.2: Content quality validation..." -ForegroundColor Green
     
     if ($jsonFiles.Count -gt 0) {
         $latestJson = $jsonFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 1
@@ -346,7 +346,7 @@ function Test-LoggingAndMetadata {
     }
     
     # Step 3.3: Metadata Abstraction Layer Test
-    Write-Host "🗂️  Step 3.3: Testing metadata abstraction layer..." -ForegroundColor Green
+    Write-Host "  Step 3.3: Testing metadata abstraction layer..." -ForegroundColor Green
     $abstractionResults = Test-MetadataAbstraction
     $results.validations["abstraction"] = $abstractionResults
     
@@ -396,7 +396,7 @@ function Test-MetadataQuality {
         
         $qualityMetrics["completeness_score"] = $foundSections / $requiredSections.Count
         
-        Write-Host "📊 Metadata quality: $($qualityMetrics | ConvertTo-Json -Compress)" -ForegroundColor Cyan
+        Write-Host " Metadata quality: $($qualityMetrics | ConvertTo-Json -Compress)" -ForegroundColor Cyan
         Write-TestLog "Metadata quality assessment completed"
         
         return $qualityMetrics
@@ -408,7 +408,7 @@ function Test-MetadataQuality {
 }
 
 function Test-MetadataAbstraction {
-    Write-Host "🤖 Testing intelligent metadata abstraction..." -ForegroundColor Green
+    Write-Host " Testing intelligent metadata abstraction..." -ForegroundColor Green
     
     $abstractionResults = @{
         "abstraction_layers_detected" = 0
@@ -445,7 +445,7 @@ function Test-MetadataAbstraction {
     $abstractionResults["abstraction_layers_detected"] = $foundAbstractions
     $abstractionResults["garbage_collection_functional"] = $foundAbstractions -gt 0
     
-    Write-Host "📊 Abstraction results: $($abstractionResults | ConvertTo-Json -Compress)" -ForegroundColor Cyan
+    Write-Host " Abstraction results: $($abstractionResults | ConvertTo-Json -Compress)" -ForegroundColor Cyan
     Write-TestLog "Metadata abstraction testing completed"
     
     return $abstractionResults
@@ -460,17 +460,17 @@ function Test-DebuggingAndErrorResolution {
     }
     
     # Step 4.1: Memory and Resource Analysis
-    Write-Host "🔍 Step 4.1: Memory and resource analysis..." -ForegroundColor Green
+    Write-Host " Step 4.1: Memory and resource analysis..." -ForegroundColor Green
     $memoryIssues = Test-MemoryPatterns
     $results.debug_checks["memory_analysis"] = $memoryIssues
     
     # Step 4.2: Consciousness Coherence Validation
-    Write-Host "🧠 Step 4.2: Consciousness coherence validation..." -ForegroundColor Green
+    Write-Host " Step 4.2: Consciousness coherence validation..." -ForegroundColor Green
     $coherenceMetrics = Test-ConsciousnessCoherence
     $results.debug_checks["consciousness_coherence"] = $coherenceMetrics
     
     # Step 4.3: Error Pattern Detection
-    Write-Host "⚠️  Step 4.3: Error pattern detection..." -ForegroundColor Green
+    Write-Host "  Step 4.3: Error pattern detection..." -ForegroundColor Green
     $errorPatterns = Test-ErrorPatterns
     $results.debug_checks["error_patterns"] = $errorPatterns
     
@@ -517,7 +517,7 @@ function Test-MemoryPatterns {
         }
     }
     
-    Write-Host "📊 Memory analysis: $($memoryAnalysis | ConvertTo-Json -Compress)" -ForegroundColor Cyan
+    Write-Host " Memory analysis: $($memoryAnalysis | ConvertTo-Json -Compress)" -ForegroundColor Cyan
     Write-TestLog "Memory pattern analysis completed"
     
     return $memoryAnalysis
@@ -573,7 +573,7 @@ function Test-ConsciousnessCoherence {
             }
         }
         
-        Write-Host "📊 Consciousness coherence: $($coherenceMetrics | ConvertTo-Json -Compress)" -ForegroundColor Cyan
+        Write-Host " Consciousness coherence: $($coherenceMetrics | ConvertTo-Json -Compress)" -ForegroundColor Cyan
         Write-TestLog "Consciousness coherence validation completed"
         
     }
@@ -623,7 +623,7 @@ function Test-ErrorPatterns {
         }
     }
     
-    Write-Host "📊 Error patterns: $($errorPatterns | ConvertTo-Json -Compress)" -ForegroundColor Cyan
+    Write-Host " Error patterns: $($errorPatterns | ConvertTo-Json -Compress)" -ForegroundColor Cyan
     Write-TestLog "Error pattern detection completed"
     
     return $errorPatterns
@@ -651,7 +651,7 @@ function New-FinalReport {
     
     $successRate = if ($totalPhases -gt 0) { $successfulPhases / $totalPhases } else { 0 }
     
-    Write-Host "📊 Overall Success Rate: $($successRate.ToString("P2")) ($successfulPhases/$totalPhases phases)" -ForegroundColor Cyan
+    Write-Host " Overall Success Rate: $($successRate.ToString("P2")) ($successfulPhases/$totalPhases phases)" -ForegroundColor Cyan
     Write-TestLog "Overall success rate: $($successRate.ToString("P2"))"
     
     # Generate recommendations
@@ -664,7 +664,7 @@ function New-FinalReport {
     
     if ($allErrors.Count -gt 0) {
         $report.recommendations += "Resolve build and compilation errors first"
-        Write-Host "⚠️  Found $($allErrors.Count) total errors across all phases" -ForegroundColor Yellow
+        Write-Host "  Found $($allErrors.Count) total errors across all phases" -ForegroundColor Yellow
     }
     
     # Check consciousness status
@@ -694,22 +694,22 @@ function New-FinalReport {
     $reportFile = "$OutputDir\test_report_$(Get-Date -Format 'yyyyMMdd_HHmmss').json"
     $report | ConvertTo-Json -Depth 4 | Out-File $reportFile
     
-    Write-Host "📝 Test report saved: $reportFile" -ForegroundColor Green
+    Write-Host " Test report saved: $reportFile" -ForegroundColor Green
     Write-TestLog "Test report saved to: $reportFile"
     
     # Print summary
-    Write-Host "`n🎯 KEY FINDINGS:" -ForegroundColor Yellow
+    Write-Host "`n KEY FINDINGS:" -ForegroundColor Yellow
     $errorCount = [Math]::Min($allErrors.Count, 5)
     for ($i = 0; $i -lt $errorCount; $i++) {
-        Write-Host "   ❌ $($allErrors[$i])" -ForegroundColor Red
+        Write-Host "    $($allErrors[$i])" -ForegroundColor Red
     }
     
-    Write-Host "`n🔬 CONSCIOUSNESS STATUS:" -ForegroundColor Yellow
-    Write-Host "   🧠 Status: $($report.consciousness_status)" -ForegroundColor Cyan
+    Write-Host "`n CONSCIOUSNESS STATUS:" -ForegroundColor Yellow
+    Write-Host "    Status: $($report.consciousness_status)" -ForegroundColor Cyan
     
-    Write-Host "`n💡 RECOMMENDATIONS:" -ForegroundColor Yellow
+    Write-Host "`n RECOMMENDATIONS:" -ForegroundColor Yellow
     foreach ($rec in $report.recommendations) {
-        Write-Host "   ➡️  $rec" -ForegroundColor Green
+        Write-Host "     $rec" -ForegroundColor Green
     }
     
     return $report
@@ -765,13 +765,13 @@ Testing consciousness emergence, build validation, and system integration.
         
     }
     catch {
-        Write-Host "`n❌ Test orchestration failed: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "`n Test orchestration failed: $($_.Exception.Message)" -ForegroundColor Red
         Write-TestLog "Test orchestration failed: $($_.Exception.Message)" "ERROR"
     }
     finally {
         $endTime = Get-Date
         $duration = ($endTime - $startTime).TotalSeconds
-        Write-Host "`n⏱️  Total test duration: $($duration.ToString("F2")) seconds" -ForegroundColor Cyan
+        Write-Host "`n⏱  Total test duration: $($duration.ToString("F2")) seconds" -ForegroundColor Cyan
         Write-TestLog "Test orchestration completed in $($duration.ToString("F2")) seconds"
     }
 }

@@ -30,27 +30,27 @@ class SimpleContextTest:
         }
 
         # Test 1: Context Health Simulation
-        print("\n📋 Test 1: Context Health Simulation")
+        print("\n Test 1: Context Health Simulation")
         health_result = self.test_context_health_simulation()
         test_results["tests"].append(health_result)
 
         # Test 2: Context Loss Detection Simulation
-        print("\n🚨 Test 2: Context Loss Detection Simulation")
+        print("\n Test 2: Context Loss Detection Simulation")
         loss_result = self.test_context_loss_simulation()
         test_results["tests"].append(loss_result)
 
         # Test 3: AI Integration Context
-        print("\n🤖 Test 3: AI Integration Context")
+        print("\n Test 3: AI Integration Context")
         ai_result = self.test_ai_integration_context()
         test_results["tests"].append(ai_result)
 
         # Test 4: VSCode Extension Bridge Simulation
-        print("\n🌉 Test 4: VSCode Extension Bridge Simulation")
+        print("\n Test 4: VSCode Extension Bridge Simulation")
         bridge_result = self.test_vscode_bridge_simulation()
         test_results["tests"].append(bridge_result)
 
         # Test 5: Fractal Holographic Memory
-        print("\n🧠 Test 5: Fractal Holographic Memory")
+        print("\n Test 5: Fractal Holographic Memory")
         memory_result = self.test_fractal_memory()
         test_results["tests"].append(memory_result)
 
@@ -58,7 +58,7 @@ class SimpleContextTest:
         failed_tests = [t for t in test_results["tests"] if not t["success"]]
         test_results["overall_success"] = len(failed_tests) == 0
 
-        print(f"\n📊 Test Results Summary:")
+        print(f"\n Test Results Summary:")
         print(f"   Total Tests: {len(test_results['tests'])}")
         print(f"   Passed: {len(test_results['tests']) - len(failed_tests)}")
         print(f"   Failed: {len(failed_tests)}")
@@ -95,7 +95,7 @@ class SimpleContextTest:
             success = avg_variance < 0.2  # Allow 20% variance
 
             print(
-            f"   ✅ Context health simulation: avg variance = {avg_variance:.3f}")
+            f"    Context health simulation: avg variance = {avg_variance:.3f}")
             return {
                 "name": "Context Health Simulation",
                 "success": success,
@@ -106,7 +106,7 @@ class SimpleContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Context health simulation failed: {e}")
+            print(f"    Context health simulation failed: {e}")
             return {
             "name": "Context Health Simulation", "success": False, "error": str(e)}
 
@@ -133,7 +133,7 @@ class SimpleContextTest:
             all_detected = all(r["detected"] for r in detection_results)
 
             print(
-            f"   ✅ Context loss detection: {len([r for r in detection_results if r['detected']])}/{len(detection_results)} detected")
+            f"    Context loss detection: {len([r for r in detection_results if r['detected']])}/{len(detection_results)} detected")
             return {
                 "name": "Context Loss Detection Simulation",
                 "success": all_detected,
@@ -145,7 +145,7 @@ class SimpleContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Context loss detection failed: {e}")
+            print(f"    Context loss detection failed: {e}")
             return {
             "name": "Context Loss Detection Simulation", "success": False, "error": str(e)}
 
@@ -171,7 +171,7 @@ class SimpleContextTest:
             success = context_aware_count == len(ai_responses)
 
             print(
-            f"   ✅ AI integration: {context_aware_count}/{len(ai_responses)} responses context-aware")
+            f"    AI integration: {context_aware_count}/{len(ai_responses)} responses context-aware")
             return {
                 "name": "AI Integration Context",
                 "success": success,
@@ -183,7 +183,7 @@ class SimpleContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ AI integration test failed: {e}")
+            print(f"    AI integration test failed: {e}")
             return {
             "name": "AI Integration Context", "success": False, "error": str(e)}
 
@@ -208,7 +208,7 @@ class SimpleContextTest:
             overall_success = success_count == len(bridge_results)
 
             print(
-            f"   ✅ VSCode bridge: {success_count}/{len(bridge_results)} communications successful")
+            f"    VSCode bridge: {success_count}/{len(bridge_results)} communications successful")
             return {
                 "name": "VSCode Extension Bridge Simulation",
                 "success": overall_success,
@@ -220,7 +220,7 @@ class SimpleContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ VSCode bridge test failed: {e}")
+            print(f"    VSCode bridge test failed: {e}")
             return {
             "name": "VSCode Extension Bridge Simulation", "success": False, "error": str(e)}
 
@@ -247,7 +247,7 @@ class SimpleContextTest:
             overall_success = success_count == len(memory_results)
 
             print(
-            f"   ✅ Fractal memory: {success_count}/{len(memory_results)} operations successful")
+            f"    Fractal memory: {success_count}/{len(memory_results)} operations successful")
             return {
                 "name": "Fractal Holographic Memory",
                 "success": overall_success,
@@ -259,7 +259,7 @@ class SimpleContextTest:
                 }
             }
         except Exception as e:
-            print(f"   ❌ Fractal memory test failed: {e}")
+            print(f"    Fractal memory test failed: {e}")
             return {
             "name": "Fractal Holographic Memory", "success": False, "error": str(e)}
 
@@ -341,63 +341,63 @@ def main():
         results = test_system.run_context_tests()
 
         # Additional demonstrations
-        print("\n🚀 Additional Demonstrations")
+        print("\n Additional Demonstrations")
         print("-" * 30)
 
         # Context recovery demonstration
-        print("🔧 Context Recovery Simulation:")
+        print(" Context Recovery Simulation:")
         print("   • Reading documentation files")
         print("   • Scanning codebase structure")
         print("   • Validating system health")
         print("   • Updating context tracking")
-        print("   ✅ Context recovery simulation complete")
+        print("    Context recovery simulation complete")
 
         # Real-time synchronization
-        print("\n🔄 Real-time Synchronization:")
+        print("\n Real-time Synchronization:")
         print("   • C++ Core ↔ Python AI: Active")
         print("   • Python AI ↔ C# UI: Synchronized")
         print("   • C# UI ↔ VSCode Extension: Connected")
         print("   • VSCode Extension ↔ AINLP: Operational")
-        print("   ✅ Cross-component synchronization active")
+        print("    Cross-component synchronization active")
 
         # Fractal holographic features
-        print("\n🌀 Fractal Holographic Features:")
-        print("   • Self-similarity across components: ✅")
-        print("   • Recursive structure patterns: ✅")
-        print("   • Emergent system behavior: ✅")
-        print("   • Adaptive scaling: ✅")
-        print("   • Distributed information: ✅")
-        print("   • Coherence maintenance: ✅")
+        print("\n Fractal Holographic Features:")
+        print("   • Self-similarity across components: ")
+        print("   • Recursive structure patterns: ")
+        print("   • Emergent system behavior: ")
+        print("   • Adaptive scaling: ")
+        print("   • Distributed information: ")
+        print("   • Coherence maintenance: ")
 
         # Final summary
-        print("\n📊 Final Summary")
+        print("\n Final Summary")
         print("=" * 20)
-        success_icon = "✅" if results["overall_success"] else "❌"
+        success_icon = "" if results["overall_success"] else ""
         print(
         f"{success_icon} Context Persistence Test: {'PASSED' if results['overall_success'] else 'FAILED'}")
-        print(f"🔄 Component Synchronization: ACTIVE")
-        print(f"🌉 VSCode Extension Bridge: READY")
-        print(f"🤖 AI Integration: CONTEXT-AWARE")
-        print(f"🧠 Holographic Memory: OPERATIONAL")
-        print(f"📈 System Coherence: 0.87")
+        print(f" Component Synchronization: ACTIVE")
+        print(f" VSCode Extension Bridge: READY")
+        print(f" AI Integration: CONTEXT-AWARE")
+        print(f" Holographic Memory: OPERATIONAL")
+        print(f" System Coherence: 0.87")
 
         # Test that context is NOT lost
-        print(f"\n🎯 Context Persistence Verification:")
+        print(f"\n Context Persistence Verification:")
         print(f"   • User mentioned context loss? NO")
         print(f"   • System recovery needed? NO")
         print(f"   • Context health score: 0.87 (GOOD)")
         print(f"   • All components synchronized: YES")
         print(f"   • Fractal coherence maintained: YES")
 
-        print(f"\n✨ AIOS Context Persistence Test COMPLETED SUCCESSFULLY")
+        print(f"\n AIOS Context Persistence Test COMPLETED SUCCESSFULLY")
 
         return results
 
     except Exception as e:
-        print(f"❌ Test suite failed: {e}")
+        print(f" Test suite failed: {e}")
         return {"error": str(e), "success": False}
 
 
 if __name__ == "__main__":
     results = main()
-    print(f"\n📋 Final Results:\n{json.dumps(results, indent=2, default=str)}")
+    print(f"\n Final Results:\n{json.dumps(results, indent=2, default=str)}")

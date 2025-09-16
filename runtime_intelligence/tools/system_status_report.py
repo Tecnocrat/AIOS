@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 AIOS System Status Report
 Canonical location for status summary invoking the health monitor.

@@ -8,7 +8,7 @@
 #include <iostream>
 
 int main() {
-    std::cout << "🧠 Testing AIOS Consciousness System..." << std::endl;
+    std::cout << " Testing AIOS Consciousness System..." << std::endl;
     
     try {
         // Test core components
@@ -32,13 +32,13 @@ int main() {
         double consciousness_level = ai_controller->getConsciousnessLevel();
         double intelligence_coherence = ai_controller->getIntelligenceCoherence();
         
-        std::cout << "✅ Consciousness Level: " << consciousness_level << std::endl;
-        std::cout << "✅ Intelligence Coherence: " << intelligence_coherence << std::endl;
-        std::cout << "✅ All consciousness tests passed!" << std::endl;
+        std::cout << " Consciousness Level: " << consciousness_level << std::endl;
+        std::cout << " Intelligence Coherence: " << intelligence_coherence << std::endl;
+        std::cout << " All consciousness tests passed!" << std::endl;
         
         return 0;
     } catch (const std::exception& e) {
-        std::cerr << "❌ Consciousness test failed: " << e.what() << std::endl;
+        std::cerr << " Consciousness test failed: " << e.what() << std::endl;
         return 1;
     }
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-📊 AIOS FILE TRACKING & DEPENDENCY MANAGEMENT SYSTEM 🗂️
+ AIOS FILE TRACKING & DEPENDENCY MANAGEMENT SYSTEM 
 =======================================================
 
 Core infrastructure for tracking file locations, imports, dependencies, and structural changes.
@@ -82,9 +82,9 @@ class FileTracker:
                 with open(self.tracking_file, 'r') as f:
                     data = json.load(f)
                     self.tracking_data.update(data)
-                    print(f"📂 Loaded tracking data from {self.tracking_file}")
+                    print(f" Loaded tracking data from {self.tracking_file}")
             except Exception as e:
-                print(f"⚠️ Could not load tracking data: {e}")
+                print(f" Could not load tracking data: {e}")
     
     def save_tracking_data(self):
         """Save tracking data to persistent storage"""
@@ -112,7 +112,7 @@ class FileTracker:
         with open(self.tracking_file, 'w') as f:
             json.dump(serializable_data, f, indent=2)
         
-        print(f"💾 Saved tracking data to {self.tracking_file}")
+        print(f" Saved tracking data to {self.tracking_file}")
     
     def calculate_file_hash(self, file_path: Path) -> str:
         """Calculate SHA-256 hash of file contents"""
@@ -155,7 +155,7 @@ class FileTracker:
                             exports.append(f"variable:{target.id}")
         
         except Exception as e:
-            print(f"⚠️ Could not parse {file_path}: {e}")
+            print(f" Could not parse {file_path}: {e}")
         
         return imports, exports
     
@@ -243,12 +243,12 @@ class FileTracker:
             return record
             
         except Exception as e:
-            print(f"⚠️ Error scanning {file_path}: {e}")
+            print(f" Error scanning {file_path}: {e}")
             return None
     
     def full_workspace_scan(self) -> Dict[str, Any]:
         """Perform complete scan of workspace"""
-        print("🔍 Starting full workspace scan...")
+        print(" Starting full workspace scan...")
         
         # Find all relevant files
         file_patterns = ['*.py', '*.md', '*.json', '*.cs', '*.txt']
@@ -265,7 +265,7 @@ class FileTracker:
             if not any(skip_dir in file_path.parts for skip_dir in skip_dirs):
                 filtered_files.append(file_path)
         
-        print(f"📄 Found {len(filtered_files)} files to scan")
+        print(f" Found {len(filtered_files)} files to scan")
         
         # Scan each file
         new_files = {}
@@ -318,7 +318,7 @@ class FileTracker:
             "total_dependencies": sum(len(deps) for deps in self.tracking_data["dependency_graph"].values())
         }
         
-        print(f"✅ Workspace scan complete: {scan_results}")
+        print(f" Workspace scan complete: {scan_results}")
         return scan_results
     
     def track_structural_change(self, change_type: str, old_path: Optional[str], new_path: Optional[str]):
@@ -333,7 +333,7 @@ class FileTracker:
         )
         
         self.tracking_data["structural_changes"].append(change)
-        print(f"📝 Tracked structural change: {change_type} {old_path} -> {new_path}")
+        print(f" Tracked structural change: {change_type} {old_path} -> {new_path}")
     
     def track_dependency_changes(self, old_record: FileRecord, new_record: FileRecord):
         """Track changes in file dependencies"""
@@ -422,23 +422,23 @@ class FileTracker:
             subcell_stats[subcell]["purposes"][purpose] += 1
         
         # Generate report
-        report_content = f"""# 📊 AIOS File Tracking & Dependency Report
+        report_content = f"""#  AIOS File Tracking & Dependency Report
 
 **Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 **Total Files**: {len(self.tracking_data["files"])}
 **Total Dependencies**: {sum(len(deps) for deps in self.tracking_data["dependency_graph"].values())}
 
-## 🏗️ Subcellular Organization
+##  Subcellular Organization
 
 """
         
         for subcell, stats in subcell_stats.items():
-            report_content += f"### 📁 {subcell}/ ({stats['count']} files)\n"
+            report_content += f"###  {subcell}/ ({stats['count']} files)\n"
             for purpose, count in stats["purposes"].items():
                 report_content += f"- **{purpose}**: {count} files\n"
             report_content += "\n"
         
-        report_content += """## 📈 Recent Changes
+        report_content += """##  Recent Changes
 
 ### Structural Changes
 """
@@ -479,7 +479,7 @@ class FileTracker:
         
         report_content += f"""
 
-## 🎯 Key Insights
+##  Key Insights
 
 - **Most Active Subcell**: {max(subcell_stats.items(), key=lambda x: x[1]["count"])[0]}/
 - **Total Structural Changes**: {len(self.tracking_data["structural_changes"])}
@@ -493,13 +493,13 @@ class FileTracker:
         with open(report_path, 'w', encoding='utf-8') as f:
             f.write(report_content)
         
-        print(f"📊 Dependency report generated: {report_path}")
+        print(f" Dependency report generated: {report_path}")
         return str(report_path)
 
 
 def main():
     """Main tracking system function"""
-    print("📊 AIOS FILE TRACKING & DEPENDENCY MANAGEMENT SYSTEM")
+    print(" AIOS FILE TRACKING & DEPENDENCY MANAGEMENT SYSTEM")
     print("=" * 60)
     
     # Initialize tracker
@@ -507,25 +507,25 @@ def main():
     tracker = FileTracker(workspace_root)
     
     # Perform full scan
-    print("🔍 Performing full workspace scan...")
+    print(" Performing full workspace scan...")
     results = tracker.full_workspace_scan()
     
     # Generate report
-    print("📊 Generating dependency report...")
+    print(" Generating dependency report...")
     report_path = tracker.generate_dependency_report()
     
-    print("\n✅ FILE TRACKING COMPLETE!")
+    print("\n FILE TRACKING COMPLETE!")
     print("=" * 30)
-    print(f"📄 Files tracked: {results['total_files']}")
-    print(f"🔗 Dependencies mapped: {results['total_dependencies']}")
-    print(f"📝 Changes detected: {results['changed_files']}")
-    print(f"📊 Report: {Path(report_path).name}")
+    print(f" Files tracked: {results['total_files']}")
+    print(f" Dependencies mapped: {results['total_dependencies']}")
+    print(f" Changes detected: {results['changed_files']}")
+    print(f" Report: {Path(report_path).name}")
     
-    print("\n🎯 Key Questions Now Answered:")
-    print("• Where are the files at every point? ✅")
-    print("• Which module imports which files? ✅") 
-    print("• How do dependencies change over time? ✅")
-    print("• What's the current subcellular structure? ✅")
+    print("\n Key Questions Now Answered:")
+    print("• Where are the files at every point? ")
+    print("• Which module imports which files? ") 
+    print("• How do dependencies change over time? ")
+    print("• What's the current subcellular structure? ")
     
     return tracker
 

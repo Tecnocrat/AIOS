@@ -1,11 +1,11 @@
 // ============================================================
-// 🌌 SingularityCore: The nucleus of our hypersphere kernel.
+//  SingularityCore: The nucleus of our hypersphere kernel.
 //   “Here at the center, all recursion and identity emerge.”
 //
 // TODO (AIOS‑Copilot): Suggest advanced entropy‑based scheduling
 // ============================================================
 // ============================================================
-// 🌌 SingularityCore: The nucleus of our hypersphere kernel.
+//  SingularityCore: The nucleus of our hypersphere kernel.
 //   "Here at the center, all recursion and identity emerge."
 //
 // HSE Paradigm: The singularity as the convergence point of all
@@ -22,12 +22,12 @@
 class CenterGeometryField;  
 class AIOrchestrationController;
 class CodeEvolutionEngine;
-class AIOSConsciousnessEngine;  // 🧠 CONSCIOUSNESS INTEGRATION
+class AIOSConsciousnessEngine;  //  CONSCIOUSNESS INTEGRATION
 
 // IntelliSense refresh comment
 
 class SingularityCore {
-    // 🧠⚡ CONSCIOUSNESS-ENHANCED FRIENDSHIP
+    //  CONSCIOUSNESS-ENHANCED FRIENDSHIP
     friend class AIOSConsciousnessEngine;  // Allows deep consciousness integration
     
 public:
@@ -83,7 +83,7 @@ private:
     void maintainDimensionalStability();
     void processQuantumFeedback();
     
-    // 🧠 CONSCIOUSNESS-ENHANCED VALIDATION METHODS
+    //  CONSCIOUSNESS-ENHANCED VALIDATION METHODS
     bool isFrequencyCoherent(double frequency);
     double calculateStabilityCorrection();
     double findNearestCoherentFrequency(double target_frequency);

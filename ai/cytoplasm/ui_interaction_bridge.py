@@ -595,23 +595,23 @@ if __name__ == "__main__":
     
     elif args.demo:
         # Demo/test functionality
-        print("🧬 AIOS AI Intelligence - Cytoplasm UI Bridge Demo")
+        print(" AIOS AI Intelligence - Cytoplasm UI Bridge Demo")
         print("=" * 60)
         
         # Show available functions
-        print("\n📋 Available AI Functions:")
+        print("\n Available AI Functions:")
         for func in bridge.get_available_functions():
             print(f"  • {func['name']} ({func['category']}): {func['description']}")
         
         # Test system health
-        print("\n🏥 System Health Check:")
+        print("\n System Health Check:")
         health = bridge.execute_ai_function("system_health_check")
         print(f"  Overall Health: {health.get('overall_health', 'unknown')}")
         for component, status in health.get('components', {}).items():
             print(f"  {component}: {status}")
         
         # Test visual intelligence processing
-        print("\n🔍 Testing Visual Intelligence Processing:")
+        print("\n Testing Visual Intelligence Processing:")
         result = bridge.execute_ai_function("process_visual_intelligence", {
             "analysis_depth": "enhanced"
         })
@@ -619,7 +619,7 @@ if __name__ == "__main__":
         if result.get('data'):
             print(f"  Data keys: {list(result['data'].keys())}")
         
-        print(f"\n✅ Cytoplasm UI Bridge Demo Complete")
+        print(f"\n Cytoplasm UI Bridge Demo Complete")
     
     else:
         print("Usage: python ui_interaction_bridge.py [--command-file FILE] [--demo]")

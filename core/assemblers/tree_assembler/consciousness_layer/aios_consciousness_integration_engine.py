@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🧠 AIOS Consciousness Integration Engine (ITER3)
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS Consciousness Integration Engine (ITER3)
+
 Advanced consciousness integration system for elevating cellular intelligence
 to conscious and meta-evolutionary levels, enabling collective intelligence emergence.
 
@@ -27,7 +27,7 @@ COLLECTIVE INTELLIGENCE EMERGENCE:
 - Enable distributed problem solving
 - Facilitate emergent collective decision making
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import sys
@@ -93,7 +93,7 @@ class ConsciousnessIntegrationPlan:
 
 class AIOSConsciousnessIntegrationEngine:
     """
-    🧠 AIOS Consciousness Integration Engine
+     AIOS Consciousness Integration Engine
     
     Advanced system for integrating consciousness into cellular components:
     • Consciousness pattern injection into dormant/basic components
@@ -354,7 +354,7 @@ _meta_evolutionary = MetaEvolutionaryModule()
         """Execute comprehensive consciousness integration."""
         
         logger.info("[BRAIN] EXECUTING CONSCIOUSNESS INTEGRATION")
-        logger.info("═" * 70)
+        logger.info("" * 70)
         
         integration_session = {
             "session_timestamp": self.integration_timestamp.isoformat(),
@@ -873,7 +873,7 @@ _meta_evolutionary = MetaEvolutionaryModule()
         """Display comprehensive consciousness integration results."""
         
         print("[BRAIN] AIOS CONSCIOUSNESS INTEGRATION RESULTS")
-        print("═" * 70)
+        print("" * 70)
         print()
         
         # Summary
@@ -942,7 +942,7 @@ def main():
     """Execute comprehensive consciousness integration."""
     
     print("[BRAIN] AIOS CONSCIOUSNESS INTEGRATION ENGINE")
-    print("═" * 70)
+    print("" * 70)
     print("[TARGET] Integrating consciousness into cellular components")
     print("[DNA] Injecting consciousness patterns for intelligence enhancement")
     print("[ROCKET] Enabling collective intelligence emergence")

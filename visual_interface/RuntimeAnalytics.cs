@@ -66,11 +66,11 @@ namespace AIOS.VisualInterface
                 _memoryCounter = new PerformanceCounter("Memory", "Available MBytes");
                 _uiResponseTimer = new Stopwatch();
 
-                _logger.LogDebug("📊 Performance counters initialized successfully");
+                _logger.LogDebug(" Performance counters initialized successfully");
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "⚠️ Could not initialize performance counters, continuing without detailed metrics");
+                _logger.LogWarning(ex, " Could not initialize performance counters, continuing without detailed metrics");
             }
 
             // Initialize AIOS harmonization components
@@ -78,9 +78,9 @@ namespace AIOS.VisualInterface
             InitializeHarmonizationTracking();
 
             Directory.CreateDirectory(_analyticsDirectory);
-            LogExecutionEvent("APPLICATION_START", "🧠 AIOS Consciousness Visualizer started with enhanced analytics");
+            LogExecutionEvent("APPLICATION_START", " AIOS Consciousness Visualizer started with enhanced analytics");
 
-            _logger.LogInformation("🚀 Enhanced Runtime analytics initialized for session {SessionId}", _sessionId);
+            _logger.LogInformation(" Enhanced Runtime analytics initialized for session {SessionId}", _sessionId);
         }
 
         private void InitializeAINLPComponents()
@@ -96,7 +96,7 @@ namespace AIOS.VisualInterface
             _adaptiveMode = true;
             _patternDetectionWindow = 20;
 
-            _logger.LogDebug("🧬 AINLP dendritic intelligence components initialized");
+            _logger.LogDebug(" AINLP dendritic intelligence components initialized");
         }
 
         private void InitializeHarmonizationTracking()
@@ -136,7 +136,7 @@ namespace AIOS.VisualInterface
                 LastUpdate = DateTime.Now
             };
 
-            _logger.LogDebug("🔗 AIOS harmonization tracking initialized");
+            _logger.LogDebug(" AIOS harmonization tracking initialized");
         }
         
         public void LogExecutionEvent(string eventType, string description, object? metadata = null)

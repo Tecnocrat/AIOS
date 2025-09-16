@@ -239,7 +239,7 @@ class GitHookOrchestrator:
                 error=f"Hook file not found: {hook_path}",
             )
 
-        self.logger.info(f"🔧 Executing: {hook_name}")
+        self.logger.info(f" Executing: {hook_name}")
         start_time = datetime.now()
 
         try:
@@ -307,7 +307,7 @@ class GitHookOrchestrator:
         """Execute multiple hooks in parallel (for independent hooks)"""
         import concurrent.futures
 
-        self.logger.info(f"⚡ Executing {len(hook_names)} hooks in parallel")
+        self.logger.info(f" Executing {len(hook_names)} hooks in parallel")
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
             futures = {
@@ -321,11 +321,11 @@ class GitHookOrchestrator:
                 try:
                     result = future.result()
                     results.append(result)
-                    status = "✅" if result.success else "❌"
+                    status = "" if result.success else ""
                     self.logger.info(f"{status} {hook_name} completed")
                 except Exception as e:
                     self.logger.error(
-                        f"❌ {hook_name} parallel execution failed: {e}"
+                        f" {hook_name} parallel execution failed: {e}"
                     )
                     results.append(
                         GitHookExecution(
@@ -343,7 +343,7 @@ class GitHookOrchestrator:
         self, hook_results: List[GitHookExecution]
     ) -> Dict[str, Any]:
         """Synchronize GitHook results with all supercells"""
-        self.logger.info("🔄 Synchronizing with supercells...")
+        self.logger.info(" Synchronizing with supercells...")
 
         supercell_data = {
             "execution_timestamp": datetime.now().isoformat(),
@@ -379,39 +379,39 @@ class GitHookOrchestrator:
 
             supercell_data["supercell_notifications"][
                 "cytoplasm"
-            ] = "✅ Logs stored"
+            ] = " Logs stored"
         except Exception as e:
             supercell_data["supercell_notifications"][
                 "cytoplasm"
-            ] = f"❌ {str(e)}"
+            ] = f" {str(e)}"
 
         # NUCLEUS: Notify core runtime
         try:
             self.runtime.notify_githook_execution_complete(hook_results)
             supercell_data["supercell_notifications"][
                 "nucleus"
-            ] = "✅ Runtime notified"
+            ] = " Runtime notified"
         except Exception as e:
             supercell_data["supercell_notifications"][
                 "nucleus"
-            ] = f"❌ {str(e)}"
+            ] = f" {str(e)}"
 
         # TRANSPORT: Update intercellular state
         try:
             self.cellular_bridge.update_githook_state(supercell_data)
             supercell_data["supercell_notifications"][
                 "transport"
-            ] = "✅ State synchronized"
+            ] = " State synchronized"
         except Exception as e:
             supercell_data["supercell_notifications"][
                 "transport"
-            ] = f"❌ {str(e)}"
+            ] = f" {str(e)}"
 
         return supercell_data
 
     def _log_orchestration_summary(self, result: OrchestrationResult):
         """Log comprehensive orchestration summary"""
-        self.logger.info("📊 GitHook Orchestration Summary")
+        self.logger.info(" GitHook Orchestration Summary")
         self.logger.info("=" * 50)
         self.logger.info(f"Total Hooks: {result.total_hooks}")
         self.logger.info(f"Successful: {result.successful_hooks}")
@@ -421,16 +421,16 @@ class GitHookOrchestrator:
             f"Average Time: {result.total_execution_time/result.total_hooks:.2f}s per hook"
         )
 
-        self.logger.info("\n🔍 Hook-by-Hook Results:")
+        self.logger.info("\n Hook-by-Hook Results:")
         for hook_result in result.hook_results:
-            status = "✅" if hook_result.success else "❌"
+            status = "" if hook_result.success else ""
             self.logger.info(
                 f"  {status} {hook_result.hook_name} ({hook_result.execution_time:.2f}s)"
             )
             if hook_result.error:
                 self.logger.error(f"    Error: {hook_result.error}")
 
-        self.logger.info(f"\n🧬 Supercell Integration:")
+        self.logger.info(f"\n Supercell Integration:")
         for supercell, status in result.supercell_integration.get(
             "supercell_notifications", {}
         ).items():

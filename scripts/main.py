@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import logging
 import os
@@ -38,11 +39,11 @@ def initialize_services():
         opencv_service = OpenCVVisionService()
         if opencv_service.initialize():
             _service_registry['opencv_vision'] = opencv_service
-            logging.info("✅ OpenCV Vision Service initialized")
+            logging.info(" OpenCV Vision Service initialized")
         else:
-            logging.error("❌ Failed to initialize OpenCV Vision Service")
+            logging.error(" Failed to initialize OpenCV Vision Service")
     except Exception as e:
-        logging.error(f"❌ Error initializing OpenCV Vision Service: {e}")
+        logging.error(f" Error initializing OpenCV Vision Service: {e}")
     
     logging.info(f"Services initialized: {list(_service_registry.keys())}")
 
@@ -102,9 +103,9 @@ def shutdown_services():
     for service_name, service in _service_registry.items():
         try:
             service.shutdown()
-            logging.info(f"✅ {service_name} service shut down")
+            logging.info(f" {service_name} service shut down")
         except Exception as e:
-            logging.error(f"❌ Error shutting down {service_name}: {e}")
+            logging.error(f" Error shutting down {service_name}: {e}")
     
     _service_registry.clear()
     logging.info("All services shut down")
@@ -169,7 +170,7 @@ def main():
             )
             
             # Show example usage
-            print("\n🎯 AIOS OpenCV Vision Integration Examples:")
+            print("\n AIOS OpenCV Vision Integration Examples:")
             print("  List services:")
             print("    python main.py --list-services")
             print("  Process image:")

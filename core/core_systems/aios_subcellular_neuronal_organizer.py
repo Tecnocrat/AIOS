@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🧬 AIOS Subcellular Neuronal Organizer
+ AIOS Subcellular Neuronal Organizer
 =====================================
 
 Advanced neuronal intelligence for subcellular organization and enhancement.
@@ -344,9 +344,9 @@ class AIOSSubcellularNeuronalOrganizer:
         }
         
         if dry_run:
-            print(f"🧬 DRY RUN: Neuronal optimization for {self.subcellular_name}")
+            print(f" DRY RUN: Neuronal optimization for {self.subcellular_name}")
         else:
-            print(f"🧬 EXECUTING: Neuronal optimization for {self.subcellular_name}")
+            print(f" EXECUTING: Neuronal optimization for {self.subcellular_name}")
             
         # Create tachyonic archive if needed
         archive_path = None
@@ -368,14 +368,14 @@ class AIOSSubcellularNeuronalOrganizer:
             action = data['recommended_action']
             files = data['files']
             
-            print(f"  📁 {category.upper()}: {data['count']} files -> {action}")
+            print(f"   {category.upper()}: {data['count']} files -> {action}")
             
             if action == 'tachyonic_archive' and files:
                 self._archive_files(files, category, archive_path, dry_run, optimization_log)
             elif action == 'subcellular_organize' and files:
                 self._organize_metadata_files(files, dry_run, optimization_log)
             elif action == 'keep_active':
-                print(f"    ✅ Keeping {len(files)} operational files active")
+                print(f"     Keeping {len(files)} operational files active")
                 optimization_log['actions_taken'].append({
                     'action': 'kept_active',
                     'category': category,
@@ -391,7 +391,7 @@ class AIOSSubcellularNeuronalOrganizer:
                          analysis['neuronal_metrics']['neuronal_coherence_score'])
             optimization_log['coherence_improvement'] = improvement
             
-            print(f"  🧠 Neuronal coherence improvement: {improvement:+.3f}")
+            print(f"   Neuronal coherence improvement: {improvement:+.3f}")
         
         return optimization_log
     
@@ -401,7 +401,7 @@ class AIOSSubcellularNeuronalOrganizer:
         if self.mode != 'core_engine':
             return {'error': 'Organizer not in core_engine mode'}
         
-        print("🏗️ CORE ENGINE SUBCELLULAR ORGANIZATION")
+        print(" CORE ENGINE SUBCELLULAR ORGANIZATION")
         print("=" * 50)
         
         # Analyze current structure
@@ -425,9 +425,9 @@ class AIOSSubcellularNeuronalOrganizer:
             subcell_path = self.subcellular_path / subcell
             if not dry_run:
                 subcell_path.mkdir(exist_ok=True)
-                print(f"📁 Ensured subcell: {subcell}/")
+                print(f" Ensured subcell: {subcell}/")
             else:
-                print(f"📁 Would ensure subcell: {subcell}/")
+                print(f" Would ensure subcell: {subcell}/")
         
         # Process each category
         for category, data in analysis['categories'].items():
@@ -438,12 +438,12 @@ class AIOSSubcellularNeuronalOrganizer:
             files = data['files']
             target_subcell = data.get('target_subcell', None)
             
-            print(f"\n📂 {category.upper()}: {data['count']} files -> {action}")
+            print(f"\n {category.upper()}: {data['count']} files -> {action}")
             
             if action.startswith('move_to_') and target_subcell:
                 self._move_files_to_subcell(files, target_subcell, dry_run, organization_log)
             elif action == 'keep_active':
-                print(f"    ✅ Keeping {len(files)} files in root")
+                print(f"     Keeping {len(files)} files in root")
                 organization_log['actions_taken'].append({
                     'action': 'kept_in_root',
                     'category': category,
@@ -454,7 +454,7 @@ class AIOSSubcellularNeuronalOrganizer:
         if not dry_run:
             self._create_subcellular_indexes(subcell_dirs, organization_log)
         
-        print(f"\n✅ Core Engine organization {'simulated' if dry_run else 'complete'}!")
+        print(f"\n Core Engine organization {'simulated' if dry_run else 'complete'}!")
         return organization_log
     
     def _move_files_to_subcell(self, files: List[str], target_subcell: str, 
@@ -469,14 +469,14 @@ class AIOSSubcellularNeuronalOrganizer:
             target = target_path / file
             
             if dry_run:
-                print(f"    📁 Would move: {file} → {target_subcell}/")
+                print(f"     Would move: {file} → {target_subcell}/")
             else:
                 try:
                     shutil.move(str(source), str(target))
                     moved_files.append(file)
-                    print(f"    📁 Moved: {file} → {target_subcell}/")
+                    print(f"     Moved: {file} → {target_subcell}/")
                 except Exception as e:
-                    print(f"    ⚠️  Failed to move {file}: {e}")
+                    print(f"      Failed to move {file}: {e}")
         
         log['actions_taken'].append({
             'action': f'moved_to_{target_subcell}',
@@ -504,12 +504,12 @@ class AIOSSubcellularNeuronalOrganizer:
             # Get files in subcell
             files = [f.name for f in subcell_path.iterdir() if f.is_file()]
             
-            readme_content = f"""# 📁 {subcell.title().replace('_', ' ')} Subcell
+            readme_content = f"""#  {subcell.title().replace('_', ' ')} Subcell
 
-## 📝 Description
+##  Description
 {subcell_descriptions.get(subcell, 'Subcellular component of AIOS Core Engine')}
 
-## 📄 Files ({len(files)})
+##  Files ({len(files)})
 """
             
             for file_name in sorted(files):
@@ -517,7 +517,7 @@ class AIOSSubcellularNeuronalOrganizer:
                     readme_content += f"- `{file_name}`\n"
             
             readme_content += f"""
-## 🏗️ Subcellular Organization
+##  Subcellular Organization
 This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
 
 **Organization Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  
@@ -528,7 +528,7 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
             with open(readme_path, 'w', encoding='utf-8') as f:
                 f.write(readme_content)
             
-            print(f"📋 Created index: {subcell}/README.md")
+            print(f" Created index: {subcell}/README.md")
         
         log['actions_taken'].append({
             'action': 'created_subcellular_indexes',
@@ -552,9 +552,9 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
         }
         
         if dry_run:
-            print(f"🧬 DRY RUN: Neuronal optimization for {self.subcellular_name}")
+            print(f" DRY RUN: Neuronal optimization for {self.subcellular_name}")
         else:
-            print(f"🧬 EXECUTING: Neuronal optimization for {self.subcellular_name}")
+            print(f" EXECUTING: Neuronal optimization for {self.subcellular_name}")
             
         # Create tachyonic archive if needed
         archive_path = None
@@ -576,14 +576,14 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
             action = data['recommended_action']
             files = data['files']
             
-            print(f"  📁 {category.upper()}: {data['count']} files -> {action}")
+            print(f"   {category.upper()}: {data['count']} files -> {action}")
             
             if action == 'tachyonic_archive' and files:
                 self._archive_files(files, category, archive_path, dry_run, optimization_log)
             elif action == 'subcellular_organize' and files:
                 self._organize_metadata_files(files, dry_run, optimization_log)
             elif action == 'keep_active':
-                print(f"    ✅ Keeping {len(files)} operational files active")
+                print(f"     Keeping {len(files)} operational files active")
                 optimization_log['actions_taken'].append({
                     'action': 'kept_active',
                     'category': category,
@@ -600,7 +600,7 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
             improvement = post_score - pre_score
             optimization_log['coherence_improvement'] = improvement
             
-            print(f"  🧠 Neuronal coherence improvement: {improvement:+.3f}")
+            print(f"   Neuronal coherence improvement: {improvement:+.3f}")
         
         return optimization_log
     
@@ -609,11 +609,11 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
         """Archive files to tachyonic storage."""
         
         if dry_run:
-            print(f"    📦 Would archive {len(files)} {category} files")
+            print(f"     Would archive {len(files)} {category} files")
             return
             
         if not archive_path:
-            print(f"    ⚠️  Cannot archive {category} files - no archive path")
+            print(f"      Cannot archive {category} files - no archive path")
             return
         
         # Map category to archive subfolder
@@ -634,9 +634,9 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
             try:
                 shutil.move(str(source), str(target))
                 archived_files.append(file)
-                print(f"    📦 Archived: {file}")
+                print(f"     Archived: {file}")
             except Exception as e:
-                print(f"    ⚠️  Failed to archive {file}: {e}")
+                print(f"      Failed to archive {file}: {e}")
         
         log['actions_taken'].append({
             'action': 'tachyonic_archive',
@@ -650,7 +650,7 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
         """Organize metadata files into subcellular structure."""
         
         if dry_run:
-            print(f"    📋 Would organize {len(files)} metadata files")
+            print(f"     Would organize {len(files)} metadata files")
             return
         
         # Create metadata subfolder
@@ -668,9 +668,9 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
             try:
                 shutil.move(str(source), str(target))
                 organized_files.append(file)
-                print(f"    📋 Organized: {file}")
+                print(f"     Organized: {file}")
             except Exception as e:
-                print(f"    ⚠️  Failed to organize {file}: {e}")
+                print(f"      Failed to organize {file}: {e}")
         
         log['actions_taken'].append({
             'action': 'subcellular_organize',
@@ -683,7 +683,7 @@ This subcell is part of the AIOS Core Engine enhanced dendritic architecture.
         """Generate detailed optimization report."""
         
         report = f"""
-# 🧬 SUBCELLULAR NEURONAL OPTIMIZATION REPORT
+#  SUBCELLULAR NEURONAL OPTIMIZATION REPORT
 
 ## Subcellular Unit: {optimization_log['subcellular_name']}
 **Timestamp**: {optimization_log['timestamp']}
@@ -748,13 +748,13 @@ def main():
     
     if args.mode == 'core-organize':
         # Core Engine organization mode
-        print("🏗️ CORE ENGINE ORGANIZATION MODE")
+        print(" CORE ENGINE ORGANIZATION MODE")
         dry_run = input("Run in dry-run mode? (y/N): ").lower().startswith('y')
         
         result = organizer.organize_core_engine_structure(dry_run=dry_run)
         
         if 'error' in result:
-            print(f"❌ Error: {result['error']}")
+            print(f" Error: {result['error']}")
             return
         
         if args.report:
@@ -762,7 +762,7 @@ def main():
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             report_file = f"CORE_ENGINE_ORGANIZATION_REPORT_{timestamp}.md"
             
-            report_content = f"""# 🏗️ CORE ENGINE ORGANIZATION REPORT
+            report_content = f"""#  CORE ENGINE ORGANIZATION REPORT
 
 **Timestamp**: {result['timestamp']}
 **Mode**: {'DRY RUN' if result['dry_run'] else 'EXECUTION'}
@@ -783,17 +783,17 @@ def main():
             with open(report_file, 'w', encoding='utf-8') as f:
                 f.write(report_content)
             
-            print(f"📋 Report saved: {report_file}")
+            print(f" Report saved: {report_file}")
     
     elif args.mode == 'analyze':
-        print("🧬 NEURONAL ANALYSIS MODE")
+        print(" NEURONAL ANALYSIS MODE")
         analysis = organizer.analyze_neuronal_coherence()
         
         if 'error' in analysis:
-            print(f"❌ Error: {analysis['error']}")
+            print(f" Error: {analysis['error']}")
             return
         
-        print(f"\n📊 ANALYSIS: {analysis['subcellular_name']}")
+        print(f"\n ANALYSIS: {analysis['subcellular_name']}")
         print("=" * 50)
         print(f"Total Files: {analysis['total_files']}")
         if 'neuronal_coherence_score' in analysis['neuronal_metrics']:
@@ -801,7 +801,7 @@ def main():
             print(f"Neuronal Coherence Score: {score:.3f}")
         print()
         
-        print("📁 FILE CATEGORIES:")
+        print(" FILE CATEGORIES:")
         for category, data in analysis['categories'].items():
             if data['count'] > 0:
                 action = data['recommended_action']
@@ -809,18 +809,18 @@ def main():
         print()
         
         if analysis['optimization_recommendations']:
-            print("⚠️  OPTIMIZATION RECOMMENDATIONS:")
+            print("  OPTIMIZATION RECOMMENDATIONS:")
             for rec in analysis['optimization_recommendations']:
                 print(f"  - {rec['issue']}: {rec['ratio']:.3f} -> {rec['action']}")
         else:
-            print("✅ No optimization recommendations - structure is coherent")
+            print(" No optimization recommendations - structure is coherent")
     
     elif args.mode in ['optimize', 'dry-run']:
         dry_run = (args.mode == 'dry-run')
         optimization_log = organizer.execute_neuronal_optimization(dry_run=dry_run)
         
         if 'error' in optimization_log:
-            print(f"❌ Error: {optimization_log['error']}")
+            print(f" Error: {optimization_log['error']}")
             return
         
         if args.report:
@@ -833,7 +833,7 @@ def main():
             with open(report_file, 'w', encoding='utf-8') as f:
                 f.write(report)
             
-            print(f"📋 Report saved: {report_file}")
+            print(f" Report saved: {report_file}")
 
 
 if __name__ == '__main__':

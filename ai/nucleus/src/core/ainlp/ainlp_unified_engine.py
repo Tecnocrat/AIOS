@@ -35,11 +35,11 @@ class AINLPUnifiedEngine:
         # Initialize compression service integration
         self.compression_tools = self._initialize_compression_tools()
 
-        logger.info("🚀 AINLP Unified Engine Initialized")
+        logger.info(" AINLP Unified Engine Initialized")
         logger.info("   Workspace: c:\dev\AIOS")
         logger.info("   Mode: UNIFIED_PARADIGM_EXECUTION")
         if self.compression_tools:
-            logger.info("   ✅ Compression tools integrated")
+            logger.info("    Compression tools integrated")
 
     def _initialize_compression_tools(self):
         """Initialize compression tools integration"""
@@ -55,7 +55,7 @@ class AINLPUnifiedEngine:
                 "request_class": CompressionRequest,
             }
         except ImportError:
-            logger.warning("   ⚠️  Compression tools not available")
+            logger.warning("     Compression tools not available")
             return None
 
     def execute_unified_paradigm(self) -> Dict[str, Any]:
@@ -68,7 +68,7 @@ class AINLPUnifiedEngine:
             "compression_tools": self._get_compression_tools_status(),
         }
 
-        logger.info("✅ Unified AINLP paradigm execution complete")
+        logger.info(" Unified AINLP paradigm execution complete")
         return results
 
     def compress_workspace_files(

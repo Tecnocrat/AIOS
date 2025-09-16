@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 AIOS System Health Monitor
 Comprehensive system-wide health checking and module harmonization

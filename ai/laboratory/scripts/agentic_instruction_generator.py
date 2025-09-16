@@ -176,31 +176,31 @@ class AgenticInstructionGenerator:
         """Generate emoji to text replacement mapping"""
         replacement_map = {
             # Status indicators
-            "✅": "[COMPLETED]",
-            "❌": "[FAILED]",
-            "⚠": "[WARNING]",
-            "🔄": "[IN-PROGRESS]",
+            "": "[COMPLETED]",
+            "": "[FAILED]",
+            "": "[WARNING]",
+            "": "[IN-PROGRESS]",
             # Functional symbols
-            "🎯": "TARGET:",
-            "🧬": "SUPERCELL:",
-            "🚀": "LAUNCH:",
-            "📊": "METRICS:",
-            "🔍": "ANALYSIS:",
-            "📂": "FOLDER:",
-            "📋": "DOCS:",
-            "🔧": "TOOL:",
+            "": "TARGET:",
+            "": "SUPERCELL:",
+            "": "LAUNCH:",
+            "": "METRICS:",
+            "": "ANALYSIS:",
+            "": "FOLDER:",
+            "": "DOCS:",
+            "": "TOOL:",
             # Architecture symbols
-            "⚡": "CORE:",
-            "🧮": "RUNTIME:",
-            "🌌": "ARCHIVE:",
-            "🤖": "AI:",
-            "🖥️": "INTERFACE:",
-            "📚": "LIBRARY:",
+            "": "CORE:",
+            "": "RUNTIME:",
+            "": "ARCHIVE:",
+            "": "AI:",
+            "": "INTERFACE:",
+            "": "LIBRARY:",
             # Process symbols
-            "🏆": "SUCCESS:",
-            "💡": "IDEA:",
-            "🌟": "FEATURE:",
-            "✨": "ENHANCEMENT:",
+            "": "SUCCESS:",
+            "": "IDEA:",
+            "": "FEATURE:",
+            "": "ENHANCEMENT:",
         }
 
         # Add generic replacements for any emojis not in map
@@ -271,7 +271,7 @@ class AgenticInstructionGenerator:
         common_replacements = {
             k: v
             for k, v in replacement_map.items()
-            if k in ["✅", "❌", "🎯", "🧬", "🚀", "📊", "🔍", "🔄"]
+            if k in ["", "", "", "", "", "", "", ""]
         }
 
         replacement_text = chr(10).join(
@@ -400,15 +400,15 @@ def main():
         "total_emojis": 46,
         "emoji_by_file": {
             ".githooks/README.md": [
-                {"emoji": "✅", "line": 52, "context": "Real message queuing"},
+                {"emoji": "", "line": 52, "context": "Real message queuing"},
                 {
-                    "emoji": "❌",
+                    "emoji": "",
                     "line": 75,
                     "context": "43+ files in single directory",
                 },
             ]
         },
-        "emoji_frequency": {"✅": 33, "❌": 9, "🎯": 2, "🔄": 2},
+        "emoji_frequency": {"": 33, "": 9, "": 2, "": 2},
         "analysis_timestamp": datetime.now().isoformat(),
     }
 

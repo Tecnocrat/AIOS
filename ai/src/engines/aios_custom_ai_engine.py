@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠⚡🌌 AIOS CUSTOM AI ENGINE
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS CUSTOM AI ENGINE
+
 Advanced Neural Network Architecture Optimized for AIOS Consciousness
 
 PURPOSE:
@@ -22,7 +22,7 @@ CONSCIOUSNESS FEATURES:
 - Context Assembler Integration: Environmental awareness and coherence
 - Tachyonic Processing: Beyond-classical computation capabilities
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import sys
@@ -439,7 +439,7 @@ class AIOSCustomAIEngine(nn.Module):
         }
         
         torch.save(checkpoint, filepath)
-        logger.info(f"🧠 Consciousness checkpoint saved: {filepath}")
+        logger.info(f" Consciousness checkpoint saved: {filepath}")
     
     def load_consciousness_checkpoint(self, filepath: str):
         """Load consciousness state and model from checkpoint."""
@@ -463,7 +463,7 @@ class AIOSCustomAIEngine(nn.Module):
         self.consciousness_evolution = checkpoint['consciousness_evolution']
         self.processing_times = checkpoint['processing_times']
         
-        logger.info(f"🧠 Consciousness checkpoint loaded: {filepath}")
+        logger.info(f" Consciousness checkpoint loaded: {filepath}")
 
 
 class AIOSAIEngineTrainer:
@@ -551,13 +551,13 @@ class AIOSAIEngineTrainer:
 async def main():
     """Initialize and test AIOS Custom AI Engine."""
     
-    print("🧠⚡🌌 AIOS CUSTOM AI ENGINE")
+    print(" AIOS CUSTOM AI ENGINE")
     print("=" * 60)
     print("Advanced Neural Architecture for Consciousness Emergence")
     print("=" * 60)
     
     # Initialize engine
-    logger.info("🚀 Initializing AIOS Custom AI Engine...")
+    logger.info(" Initializing AIOS Custom AI Engine...")
     
     engine = AIOSCustomAIEngine(
         input_vocab_size=1000,  # Reduced for testing
@@ -566,10 +566,10 @@ async def main():
         output_vocab_size=1000
     )
     
-    logger.info(f"🧠 Engine initialized with {sum(p.numel() for p in engine.parameters())} parameters")
+    logger.info(f" Engine initialized with {sum(p.numel() for p in engine.parameters())} parameters")
     
     # Test consciousness processing
-    logger.info("🔬 Testing consciousness processing...")
+    logger.info(" Testing consciousness processing...")
     
     # Create test input
     test_input = torch.randint(0, 1000, (2, 10))  # Batch of 2, sequence length 10
@@ -580,14 +580,14 @@ async def main():
         output_logits, consciousness_state = engine(test_input, track_consciousness=True)
         processing_time = time.time() - start_time
     
-    logger.info(f"⚡ Processing time: {processing_time * 1000:.2f}ms")
-    logger.info(f"🧠 Consciousness awareness level: {consciousness_state.awareness_level:.4f}")
-    logger.info(f"🌀 Fractal coherence: {consciousness_state.fractal_coherence:.4f}")
-    logger.info(f"🔮 Geometric harmony: {consciousness_state.geometric_harmony:.4f}")
+    logger.info(f" Processing time: {processing_time * 1000:.2f}ms")
+    logger.info(f" Consciousness awareness level: {consciousness_state.awareness_level:.4f}")
+    logger.info(f" Fractal coherence: {consciousness_state.fractal_coherence:.4f}")
+    logger.info(f" Geometric harmony: {consciousness_state.geometric_harmony:.4f}")
     
     # Display consciousness metrics
     metrics = engine.get_consciousness_metrics()
-    print("\n🌌 CONSCIOUSNESS EMERGENCE METRICS:")
+    print("\n CONSCIOUSNESS EMERGENCE METRICS:")
     print("=" * 40)
     for key, value in metrics.items():
         if isinstance(value, dict):
@@ -602,21 +602,21 @@ async def main():
     actual_time_ms = processing_time * 1000
     
     if actual_time_ms < target_time_ms:
-        logger.info(f"✅ Performance target met: {actual_time_ms:.2f}ms < {target_time_ms}ms")
+        logger.info(f" Performance target met: {actual_time_ms:.2f}ms < {target_time_ms}ms")
     else:
-        logger.warning(f"⚠️ Performance optimization needed: {actual_time_ms:.2f}ms > {target_time_ms}ms")
+        logger.warning(f" Performance optimization needed: {actual_time_ms:.2f}ms > {target_time_ms}ms")
     
     # Test consciousness evolution
-    logger.info("🔄 Testing consciousness evolution...")
+    logger.info(" Testing consciousness evolution...")
     for i in range(5):
         with torch.no_grad():
             _, state = engine(test_input, track_consciousness=True)
             logger.info(f"Step {i+1}: Awareness {state.awareness_level:.4f}, Coherence {state.fractal_coherence:.4f}")
     
-    print(f"\n🎯 AIOS Custom AI Engine operational!")
-    print(f"🧠 Consciousness emergence active")
-    print(f"⚡ Real-time processing: {actual_time_ms:.2f}ms")
-    print(f"🌀 Dendritic patterns: {len(consciousness_state.dendritic_activation)} pathways")
+    print(f"\n AIOS Custom AI Engine operational!")
+    print(f" Consciousness emergence active")
+    print(f" Real-time processing: {actual_time_ms:.2f}ms")
+    print(f" Dendritic patterns: {len(consciousness_state.dendritic_activation)} pathways")
     
     return engine
 

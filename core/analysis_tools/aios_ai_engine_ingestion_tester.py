@@ -518,7 +518,7 @@ class AIOSAIEngineIngestionTester:
     def analyze_pattern_recognition(self, output: str) -> float:
         """Analyze recognizable patterns and conventions."""
         pattern_indicators = [
-            r'[DNA]|[ROCKET]|[TARGET]|[CHART]|[LINK]|⚡|[BRAIN]',          # Emoji patterns for structure
+            r'[DNA]|[ROCKET]|[TARGET]|[CHART]|[LINK]||[BRAIN]',          # Emoji patterns for structure
             r'=+',                             # Section dividers
             r'INFO|WARNING|ERROR',             # Log levels
             r'Version:\s*\d+\.\d+',            # Version patterns
@@ -641,7 +641,7 @@ class AIOSAIEngineIngestionTester:
             integration_score += min(matches * 0.1, 0.2)  # Cap each indicator
         
         # Bonus for structured output
-        if re.search(r'=+|─+|║', output):
+        if re.search(r'=+|+|', output):
             integration_score += 0.1
         
         return min(integration_score, 1.0)
@@ -753,7 +753,7 @@ class AIOSAIEngineIngestionTester:
                           for iter_name in iterations}
         best_iter = max(compatibilities.keys(), key=lambda k: compatibilities[k])
         
-        logger.info(f"   🏆 Best AI compatibility: {best_iter} ({compatibilities[best_iter]:.3f})")
+        logger.info(f"    Best AI compatibility: {best_iter} ({compatibilities[best_iter]:.3f})")
         
         # Compare specific metrics
         metrics_comparison = {}
@@ -787,26 +787,26 @@ class AIOSAIEngineIngestionTester:
                            key=lambda k: successful_tests[k]['overall_ai_compatibility'])
         best_score = successful_tests[best_assembler]['overall_ai_compatibility']
         
-        logger.info(f"   🏆 Recommended assembler for AI integration: {best_assembler}")
+        logger.info(f"    Recommended assembler for AI integration: {best_assembler}")
         logger.info(f"   [CHART] AI compatibility score: {best_score:.3f}")
         
         # Specific recommendations based on metrics
         metrics = successful_tests[best_assembler]['intelligence_metrics']
         
         if metrics['code_understanding'] < 0.7:
-            logger.info("   💡 Recommendation: Improve code structure and naming conventions")
+            logger.info("    Recommendation: Improve code structure and naming conventions")
         
         if metrics['logic_coherence'] < 0.7:
-            logger.info("   💡 Recommendation: Enhance logical flow and error handling")
+            logger.info("    Recommendation: Enhance logical flow and error handling")
         
         if metrics['documentation_quality'] < 0.7:
-            logger.info("   💡 Recommendation: Add more comprehensive documentation")
+            logger.info("    Recommendation: Add more comprehensive documentation")
         
         if metrics['actionable_insights'] < 0.7:
-            logger.info("   💡 Recommendation: Include more measurable metrics and next-step guidance")
+            logger.info("    Recommendation: Include more measurable metrics and next-step guidance")
         
         if metrics['integration_readiness'] < 0.7:
-            logger.info("   💡 Recommendation: Add API interfaces and standardized data formats")
+            logger.info("    Recommendation: Add API interfaces and standardized data formats")
         
         # Overall assessment
         if best_score >= 0.8:
@@ -845,7 +845,7 @@ def main():
         
         best_result = max((r for r in results.values() if r.get('execution_success', False)),
                          key=lambda x: x['overall_ai_compatibility'])
-        print(f"   🏆 Best compatibility: {best_result['overall_ai_compatibility']:.3f} ({best_result['iteration']})")
+        print(f"    Best compatibility: {best_result['overall_ai_compatibility']:.3f} ({best_result['iteration']})")
     
     print("\n[ROCKET] AI engine ingestion testing complete!")
     return results

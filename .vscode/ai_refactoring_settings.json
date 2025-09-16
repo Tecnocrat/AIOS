@@ -1,0 +1,9 @@
+{
+    "aiRefactoringContext.enabled": true,
+    "aiRefactoringContext.autoLoad": true,
+    "aiRefactoringContext.contextFile": ".vscode/ai_refactoring_context.md",
+    "aiRefactoringContext.triggerOnPreCommit": true,
+    "aios.aiIntegration.powershellOnly": true,
+    "aios.aiIntegration.holographicPatterns": true,
+    "aios.aiIntegration.biologicalMetaphors": true
+}

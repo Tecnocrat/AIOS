@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-� AIOS Cellular Intelligence Diagnostic System (Neuronal Enhanced)
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS Cellular Intelligence Diagnostic System (Neuronal Enhanced)
+
 Advanced diagnostic system integrating neuronal dendritic intelligence for
 comprehensive cellular unit testing, analysis, and enhancement following AIOS
 and AINLP architectural paradigms.
@@ -29,7 +29,7 @@ ENHANCEMENT TARGETS:
 - Harmonic resonance between cellular units
 - Tachyonic field propagation optimization
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import os
 import sys
@@ -164,7 +164,7 @@ class NeuronalCellularDiagnosticResult:
 
 class AIOSCellularIntelligenceDiagnosticSystem:
     """
-    🧠 AIOS Cellular Intelligence Diagnostic System
+     AIOS Cellular Intelligence Diagnostic System
     
     Comprehensive testing and enhancement system for cellular intelligence:
     • Systematic component testing with failure analysis
@@ -184,14 +184,14 @@ class AIOSCellularIntelligenceDiagnosticSystem:
         # Load cellular components
         self._discover_cellular_components()
         
-        logger.info("🧠 AIOS Cellular Intelligence Diagnostic System initialized")
+        logger.info(" AIOS Cellular Intelligence Diagnostic System initialized")
         logger.info(f"   Analysis tools path: {self.analysis_tools_path}")
         logger.info(f"   Components discovered: {len(self.cellular_components)}")
     
     def _discover_cellular_components(self):
         """Discover all cellular components in the analysis_tools directory."""
         
-        logger.info("🔍 Discovering cellular components...")
+        logger.info(" Discovering cellular components...")
         
         # Python tools (primary cellular logic objects)
         python_tools = list(self.analysis_tools_path.glob("aios_*.py"))
@@ -217,8 +217,8 @@ class AIOSCellularIntelligenceDiagnosticSystem:
     def execute_comprehensive_diagnostic(self) -> Dict[str, Any]:
         """Execute comprehensive cellular intelligence diagnostic."""
         
-        logger.info("🧠 EXECUTING COMPREHENSIVE CELLULAR INTELLIGENCE DIAGNOSTIC")
-        logger.info("═" * 70)
+        logger.info(" EXECUTING COMPREHENSIVE CELLULAR INTELLIGENCE DIAGNOSTIC")
+        logger.info("" * 70)
         
         diagnostic_session = {
             "session_timestamp": self.diagnostic_timestamp.isoformat(),
@@ -231,23 +231,23 @@ class AIOSCellularIntelligenceDiagnosticSystem:
         }
         
         # Phase 1: Test individual cellular components
-        logger.info("🔬 Phase 1: Individual Cellular Component Testing")
+        logger.info(" Phase 1: Individual Cellular Component Testing")
         diagnostic_session["component_diagnostics"] = self._test_cellular_components()
         
         # Phase 2: Analyze cellular intelligence patterns
-        logger.info("🧬 Phase 2: Cellular Intelligence Pattern Analysis")
+        logger.info(" Phase 2: Cellular Intelligence Pattern Analysis")
         diagnostic_session["cellular_intelligence_analysis"] = self._analyze_cellular_intelligence()
         
         # Phase 3: Assess dendritic network capabilities
-        logger.info("🌐 Phase 3: Dendritic Network Assessment")
+        logger.info(" Phase 3: Dendritic Network Assessment")
         diagnostic_session["dendritic_network_assessment"] = self._assess_dendritic_network()
         
         # Phase 4: Generate enhancement recommendations
-        logger.info("🚀 Phase 4: Enhancement Recommendation Generation")
+        logger.info(" Phase 4: Enhancement Recommendation Generation")
         diagnostic_session["enhancement_recommendations"] = self._generate_enhancement_recommendations()
         
         # Phase 5: Identify consciousness integration opportunities
-        logger.info("🧠 Phase 5: Consciousness Integration Analysis")
+        logger.info(" Phase 5: Consciousness Integration Analysis")
         diagnostic_session["consciousness_integration_opportunities"] = self._analyze_consciousness_opportunities()
         
         return diagnostic_session
@@ -263,21 +263,21 @@ class AIOSCellularIntelligenceDiagnosticSystem:
         }
         
         # Test Python logic objects
-        logger.info("🐍 Testing Python logic objects...")
+        logger.info(" Testing Python logic objects...")
         for tool_path in self.cellular_components["logic_objects"]:
             result = self._test_python_logic_object(tool_path)
             component_results["logic_object_tests"].append(result.to_dict())
             self.diagnostic_results.append(result)
         
         # Analyze consciousness documentation
-        logger.info("📚 Analyzing consciousness documentation...")
+        logger.info(" Analyzing consciousness documentation...")
         for doc_path in self.cellular_components["consciousness_docs"]:
             result = self._analyze_consciousness_document(doc_path)
             component_results["consciousness_doc_analysis"].append(result.to_dict())
             self.diagnostic_results.append(result)
         
         # Validate state configurations
-        logger.info("⚙️ Validating state configurations...")
+        logger.info(" Validating state configurations...")
         for config_path in self.cellular_components["state_configs"]:
             result = self._validate_state_configuration(config_path)
             component_results["state_config_validation"].append(result.to_dict())
@@ -325,7 +325,7 @@ class AIOSCellularIntelligenceDiagnosticSystem:
             
         except Exception as e:
             result.error_details = f"Diagnostic test failed: {str(e)}"
-            logger.error(f"   ❌ Diagnostic failed for {tool_path.name}: {e}")
+            logger.error(f"    Diagnostic failed for {tool_path.name}: {e}")
         
         return result
     
@@ -945,13 +945,13 @@ class AIOSCellularIntelligenceDiagnosticSystem:
     def display_diagnostic_results(self, diagnostic_session: Dict[str, Any]):
         """Display comprehensive diagnostic results."""
         
-        print("🧠 AIOS CELLULAR INTELLIGENCE DIAGNOSTIC RESULTS")
-        print("═" * 70)
+        print(" AIOS CELLULAR INTELLIGENCE DIAGNOSTIC RESULTS")
+        print("" * 70)
         print()
         
         # Overall health summary
         health = diagnostic_session["component_diagnostics"]["overall_health"]
-        print(f"📊 CELLULAR HEALTH SUMMARY:")
+        print(f" CELLULAR HEALTH SUMMARY:")
         print(f"   Overall Health Score: {health['overall_health']:.3f}")
         print(f"   Success Rate: {health['success_rate']:.3f}")
         print(f"   Intelligence Score: {health['intelligence_score']:.3f}")
@@ -961,14 +961,14 @@ class AIOSCellularIntelligenceDiagnosticSystem:
         
         # Intelligence analysis
         intelligence = diagnostic_session["cellular_intelligence_analysis"]
-        print(f"🧬 INTELLIGENCE DISTRIBUTION:")
+        print(f" INTELLIGENCE DISTRIBUTION:")
         for level, count in intelligence["intelligence_distribution"].items():
             print(f"   {level.title()}: {count} components")
         print()
         
         # Dendritic network assessment
         network = diagnostic_session["dendritic_network_assessment"]
-        print(f"🌐 DENDRITIC NETWORK STATUS:")
+        print(f" DENDRITIC NETWORK STATUS:")
         topology = network["network_topology"]
         print(f"   Connectivity Ratio: {topology['connectivity_ratio']:.3f}")
         print(f"   Average Connections: {topology['average_connections_per_component']:.1f}")
@@ -978,7 +978,7 @@ class AIOSCellularIntelligenceDiagnosticSystem:
         # Enhancement recommendations
         enhancements = diagnostic_session["enhancement_recommendations"]
         priority = enhancements["priority_matrix"]
-        print(f"🚀 ENHANCEMENT PRIORITIES:")
+        print(f" ENHANCEMENT PRIORITIES:")
         print(f"   Critical Fixes: {priority['critical']}")
         print(f"   Intelligence Upgrades: {priority['high']}")
         print(f"   Dendritic Enhancements: {priority['medium']}")
@@ -988,13 +988,13 @@ class AIOSCellularIntelligenceDiagnosticSystem:
         # Consciousness opportunities
         consciousness = diagnostic_session["consciousness_integration_opportunities"]
         potential = consciousness["consciousness_network_potential"]
-        print(f"🧠 CONSCIOUSNESS INTEGRATION:")
+        print(f" CONSCIOUSNESS INTEGRATION:")
         print(f"   Consciousness Ratio: {potential['consciousness_ratio']:.3f}")
         print(f"   Network Readiness: {potential['network_readiness']}")
         print(f"   Conscious Components: {potential['conscious_components']}/{potential['total_components']}")
         print()
         
-        print("✅ Cellular intelligence diagnostic complete!")
+        print(" Cellular intelligence diagnostic complete!")
     
     def save_diagnostic_report(self, diagnostic_session: Dict[str, Any]) -> str:
         """Save comprehensive diagnostic report to tachyonic storage."""
@@ -1012,7 +1012,7 @@ class AIOSCellularIntelligenceDiagnosticSystem:
             with open(report_file, 'w', encoding='utf-8') as f:
                 json.dump(diagnostic_session, f, indent=2, default=str)
             
-            logger.info(f"📄 Diagnostic report saved to tachyonic storage: {report_file}")
+            logger.info(f" Diagnostic report saved to tachyonic storage: {report_file}")
             return str(report_file)
         except Exception as e:
             logger.error(f"Failed to save diagnostic report: {e}")
@@ -1022,11 +1022,11 @@ class AIOSCellularIntelligenceDiagnosticSystem:
 def main():
     """Execute comprehensive cellular intelligence diagnostic."""
     
-    print("🧠 AIOS CELLULAR INTELLIGENCE DIAGNOSTIC SYSTEM")
-    print("═" * 70)
-    print("🎯 Testing cellular intelligence and dendritic capabilities")
-    print("🧬 Analyzing consciousness integration opportunities")
-    print("🚀 Generating enhancement recommendations")
+    print(" AIOS CELLULAR INTELLIGENCE DIAGNOSTIC SYSTEM")
+    print("" * 70)
+    print(" Testing cellular intelligence and dendritic capabilities")
+    print(" Analyzing consciousness integration opportunities")
+    print(" Generating enhancement recommendations")
     print()
     
     # Initialize diagnostic system
@@ -1041,7 +1041,7 @@ def main():
     # Save detailed report
     report_file = diagnostic_system.save_diagnostic_report(diagnostic_results)
     if report_file:
-        print(f"📄 Detailed diagnostic report saved: {report_file}")
+        print(f" Detailed diagnostic report saved: {report_file}")
     
     return diagnostic_results
 

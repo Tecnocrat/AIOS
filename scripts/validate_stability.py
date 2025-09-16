@@ -30,7 +30,7 @@ def validate_stability_protocol() -> bool:
     workspace_root = Path(__file__).parent.parent
     issues: List[str] = []
 
-    print("🔍 AIOS Stability Protocol Validation")
+    print(" AIOS Stability Protocol Validation")
     print("=" * 50)
 
     # 1. Check Python environment pinning
@@ -44,9 +44,9 @@ def validate_stability_protocol() -> bool:
         python_path = workspace_data.get("settings", {}).get(
             "python.defaultInterpreterPath")
         if python_path == "./aios_env/Scripts/python.exe":
-            print("✅ Python pinned to aios_env")
+            print(" Python pinned to aios_env")
         else:
-            print(f"❌ Python not properly pinned: {python_path}")
+            print(f" Python not properly pinned: {python_path}")
             issues.append("Python environment not pinned to aios_env")
 
     # 2. Check formatter suppression
@@ -57,15 +57,15 @@ def validate_stability_protocol() -> bool:
         "python.formatting.provider")
 
     if format_on_save is False:
-        print("✅ Format on save disabled")
+        print(" Format on save disabled")
     else:
-        print(f"❌ Format on save not disabled: {format_on_save}")
+        print(f" Format on save not disabled: {format_on_save}")
         issues.append("Format on save not disabled")
 
     if python_formatting == "none":
-        print("✅ Python formatting provider set to none")
+        print(" Python formatting provider set to none")
     else:
-        print(f"❌ Python formatting not disabled: {python_formatting}")
+        print(f" Python formatting not disabled: {python_formatting}")
         issues.append("Python formatting not disabled")
 
     # 3. Check auto-restore prevention
@@ -76,21 +76,21 @@ def validate_stability_protocol() -> bool:
         "window.restoreWindows")
 
     if git_autofetch is False:
-        print("✅ Git auto-fetch disabled")
+        print(" Git auto-fetch disabled")
     else:
-        print(f"❌ Git auto-fetch not disabled: {git_autofetch}")
+        print(f" Git auto-fetch not disabled: {git_autofetch}")
         issues.append("Git auto-fetch not disabled")
 
     if hot_exit == "off":
-        print("✅ Hot exit disabled")
+        print(" Hot exit disabled")
     else:
-        print(f"❌ Hot exit not disabled: {hot_exit}")
+        print(f" Hot exit not disabled: {hot_exit}")
         issues.append("Hot exit not disabled")
 
     if restore_windows == "none":
-        print("✅ Window restore disabled")
+        print(" Window restore disabled")
     else:
-        print(f"❌ Window restore not disabled: {restore_windows}")
+        print(f" Window restore not disabled: {restore_windows}")
         issues.append("Window restore not disabled")
 
     # 4. Check aios_env existence and validity
@@ -99,40 +99,40 @@ def validate_stability_protocol() -> bool:
     python_exe = aios_env_path / "Scripts" / "python.exe"
 
     if aios_env_path.exists():
-        print("✅ aios_env directory exists")
+        print(" aios_env directory exists")
         if python_exe.exists():
-            print("✅ Python executable found in aios_env")
+            print(" Python executable found in aios_env")
             try:
                 result = subprocess.run(
                     [str(python_exe), "--version"],
                     capture_output=True, text=True, timeout=10)
                 if result.returncode == 0:
                     version = result.stdout.strip()
-                    print(f"✅ Python executable functional: {version}")
+                    print(f" Python executable functional: {version}")
                 else:
                     error = result.stderr
-                    print(f"❌ Python executable not functional: {error}")
+                    print(f" Python executable not functional: {error}")
                     issues.append("Python executable not functional")
             except Exception as e:
-                print(f"❌ Error testing Python executable: {e}")
+                print(f" Error testing Python executable: {e}")
                 issues.append(f"Error testing Python executable: {e}")
         else:
-            print("❌ Python executable not found in aios_env")
+            print(" Python executable not found in aios_env")
             issues.append("Python executable not found in aios_env")
     else:
-        print("❌ aios_env directory does not exist")
+        print(" aios_env directory does not exist")
         issues.append("aios_env directory does not exist")
 
     # 5. Summary
     print("\n" + "=" * 50)
     if issues:
-        print(f"❌ Stability Protocol Issues Found: {len(issues)}")
+        print(f" Stability Protocol Issues Found: {len(issues)}")
         for issue in issues:
             print(f"  - {issue}")
         return False
     else:
-        print("✅ Stability Protocol Fully Implemented")
-        print("🎉 AIOS workspace is stable and ready for development")
+        print(" Stability Protocol Fully Implemented")
+        print(" AIOS workspace is stable and ready for development")
         return True
 
 

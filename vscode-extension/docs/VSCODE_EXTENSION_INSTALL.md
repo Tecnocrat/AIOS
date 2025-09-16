@@ -1,6 +1,6 @@
 # AIOS VSCode Extension - Quick Installation Guide
 
-## 🚨 **Critical Problem Solved**
+##  **Critical Problem Solved**
 
 **Chat Iteration Reset Issue**: VSCode extension restarts cause complete AI chat context loss, breaking development continuity.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## ⚡ **1-Minute Installation**
+##  **1-Minute Installation**
 
 ### **Step 1: Install Extension**
 ```bash
@@ -47,7 +47,7 @@
 1. Start chat with AI assistant
 2. Have conversation with 5+ messages
 3. Restart VSCode
-4. ❌ Context is lost, conversation resets
+4.  Context is lost, conversation resets
 ```
 
 ### **After AIOS Extension**
@@ -55,12 +55,12 @@
 1. Start chat with @aios
 2. Have conversation with 5+ messages
 3. Restart VSCode
-4. ✅ Context preserved, conversation continues
+4.  Context preserved, conversation continues
 ```
 
 ---
 
-## 🎯 **Usage Examples**
+##  **Usage Examples**
 
 ### **Basic Chat**
 ```
@@ -88,7 +88,7 @@
 
 ---
 
-## 🔧 **Configuration**
+##  **Configuration**
 
 ### **Settings**
 Access via: `File > Preferences > Settings > Extensions > AIOS`
@@ -112,7 +112,7 @@ Then check: `View > Output > AIOS` for detailed logs
 
 ---
 
-## 🚨 **Troubleshooting**
+##  **Troubleshooting**
 
 ### **Extension Not Working**
 ```bash
@@ -148,7 +148,7 @@ Requires VSCode 1.95.0 or higher
 
 ---
 
-## ✅ **Success Verification**
+##  **Success Verification**
 
 ### **Test Checklist**
 - [ ] Extension installs without errors
@@ -158,14 +158,14 @@ Requires VSCode 1.95.0 or higher
 - [ ] Debug logs available in Output panel
 
 ### **Expected Benefits**
-- ✅ **No Context Loss**: Conversations continue across restarts
-- ✅ **Professional Integration**: Native VSCode chat experience
-- ✅ **AIOS AI Power**: Multi-language AI coordination
-- ✅ **Smart Context**: Automatic optimization and management
+-  **No Context Loss**: Conversations continue across restarts
+-  **Professional Integration**: Native VSCode chat experience
+-  **AIOS AI Power**: Multi-language AI coordination
+-  **Smart Context**: Automatic optimization and management
 
 ---
 
-## 🎉 **Next Steps**
+##  **Next Steps**
 
 1. **Use AIOS for Development**: Try @aios for code analysis, generation, and architecture questions
 2. **Explore Commands**: Use @aios /help to see all available features
@@ -174,7 +174,7 @@ Requires VSCode 1.95.0 or higher
 
 ---
 
-## 📞 **Support**
+##  **Support**
 
 **Issues**: Check AIOS Output panel (`View > Output > AIOS`)
 **Commands**: `@aios /help` for full command list

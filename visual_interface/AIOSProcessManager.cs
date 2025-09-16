@@ -28,7 +28,7 @@ namespace AIOS.VisualInterface
             Application.Current.Exit += OnApplicationExit;
             Application.Current.SessionEnding += OnSessionEnding;
             
-            _logger.LogInformation("🔧 AIOS Process Manager initialized");
+            _logger.LogInformation(" AIOS Process Manager initialized");
         }
 
         /// <summary>
@@ -64,12 +64,12 @@ namespace AIOS.VisualInterface
                 process.Start();
                 _managedProcesses.Add(process);
                 
-                _logger.LogInformation("✅ AIOS UI process launched (PID: {ProcessId})", process.Id);
+                _logger.LogInformation(" AIOS UI process launched (PID: {ProcessId})", process.Id);
                 return process;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Failed to launch AIOS UI process");
+                _logger.LogError(ex, " Failed to launch AIOS UI process");
                 return null;
             }
         }
@@ -88,12 +88,12 @@ namespace AIOS.VisualInterface
             {
                 if (sender is Window closingWindow && IsMainWindow(closingWindow))
                 {
-                    _logger.LogInformation("🚪 Main window closing - initiating system shutdown");
+                    _logger.LogInformation(" Main window closing - initiating system shutdown");
                     _ = InitiateSystemShutdownAsync();
                 }
             };
             
-            _logger.LogInformation("📋 Window registered for management: {WindowTitle}", window.Title);
+            _logger.LogInformation(" Window registered for management: {WindowTitle}", window.Title);
         }
 
         /// <summary>
@@ -133,14 +133,14 @@ namespace AIOS.VisualInterface
                 process.Start();
                 _managedProcesses.Add(process);
                 
-                _logger.LogInformation("🚀 Managed process launched: {ProcessName} (PID: {ProcessId})", 
+                _logger.LogInformation(" Managed process launched: {ProcessName} (PID: {ProcessId})", 
                     Path.GetFileName(executablePath), process.Id);
                 
                 return process;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Failed to launch managed process: {Path}", executablePath);
+                _logger.LogError(ex, " Failed to launch managed process: {Path}", executablePath);
                 return null;
             }
         }
@@ -152,12 +152,12 @@ namespace AIOS.VisualInterface
         {
             if (_isShuttingDown)
             {
-                _logger.LogInformation("⏸️ Shutdown already in progress");
+                _logger.LogInformation("⏸ Shutdown already in progress");
                 return;
             }
 
             _isShuttingDown = true;
-            _logger.LogInformation("🔄 Initiating AIOS system shutdown...");
+            _logger.LogInformation(" Initiating AIOS system shutdown...");
 
             try
             {
@@ -170,7 +170,7 @@ namespace AIOS.VisualInterface
                 // Kill any orphaned .NET host processes
                 await CleanupOrphanedHostsAsync();
                 
-                _logger.LogInformation("✅ AIOS system shutdown completed successfully");
+                _logger.LogInformation(" AIOS system shutdown completed successfully");
                 
                 // Finally, exit the application
                 Application.Current.Dispatcher.BeginInvoke(() =>
@@ -180,7 +180,7 @@ namespace AIOS.VisualInterface
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error during system shutdown");
+                _logger.LogError(ex, " Error during system shutdown");
                 
                 // Force exit if graceful shutdown fails
                 Application.Current.Dispatcher.BeginInvoke(() =>
@@ -195,7 +195,7 @@ namespace AIOS.VisualInterface
         /// </summary>
         private async Task CloseAllWindowsAsync()
         {
-            _logger.LogInformation("🚪 Closing all managed windows...");
+            _logger.LogInformation(" Closing all managed windows...");
             
             var windowsToClose = _managedWindows.ToList();
             
@@ -210,12 +210,12 @@ namespace AIOS.VisualInterface
                             window.Close();
                         });
                         
-                        _logger.LogInformation("✅ Window closed: {WindowTitle}", window.Title);
+                        _logger.LogInformation(" Window closed: {WindowTitle}", window.Title);
                     }
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogWarning(ex, "⚠️ Failed to close window: {WindowTitle}", window.Title);
+                    _logger.LogWarning(ex, " Failed to close window: {WindowTitle}", window.Title);
                 }
             }
             
@@ -227,7 +227,7 @@ namespace AIOS.VisualInterface
         /// </summary>
         private async Task TerminateAllProcessesAsync()
         {
-            _logger.LogInformation("⏹️ Terminating all managed processes...");
+            _logger.LogInformation("⏹ Terminating all managed processes...");
             
             var processesToKill = _managedProcesses.ToList();
             
@@ -237,7 +237,7 @@ namespace AIOS.VisualInterface
                 {
                     if (!process.HasExited)
                     {
-                        _logger.LogInformation("🔄 Terminating process: {ProcessName} (PID: {ProcessId})", 
+                        _logger.LogInformation(" Terminating process: {ProcessName} (PID: {ProcessId})", 
                             process.ProcessName, process.Id);
                         
                         // Try graceful termination first
@@ -248,12 +248,12 @@ namespace AIOS.VisualInterface
                         {
                             // Force kill if graceful shutdown fails
                             process.Kill();
-                            _logger.LogWarning("⚡ Force-killed process: {ProcessName} (PID: {ProcessId})", 
+                            _logger.LogWarning(" Force-killed process: {ProcessName} (PID: {ProcessId})", 
                                 process.ProcessName, process.Id);
                         }
                         else
                         {
-                            _logger.LogInformation("✅ Process terminated gracefully: {ProcessName}", process.ProcessName);
+                            _logger.LogInformation(" Process terminated gracefully: {ProcessName}", process.ProcessName);
                         }
                     }
                     
@@ -261,7 +261,7 @@ namespace AIOS.VisualInterface
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogWarning(ex, "⚠️ Failed to terminate process: {ProcessId}", process.Id);
+                    _logger.LogWarning(ex, " Failed to terminate process: {ProcessId}", process.Id);
                 }
             }
             
@@ -293,7 +293,7 @@ namespace AIOS.VisualInterface
                         // Check if this is likely an AIOS-related process
                         if (IsAIOSRelatedProcess(process))
                         {
-                            _logger.LogInformation("🔄 Terminating orphaned process: {ProcessName} (PID: {ProcessId})", 
+                            _logger.LogInformation(" Terminating orphaned process: {ProcessName} (PID: {ProcessId})", 
                                 process.ProcessName, process.Id);
                             
                             process.Kill();
@@ -302,7 +302,7 @@ namespace AIOS.VisualInterface
                     }
                     catch (Exception ex)
                     {
-                        _logger.LogWarning(ex, "⚠️ Failed to terminate orphaned process: {ProcessId}", process.Id);
+                        _logger.LogWarning(ex, " Failed to terminate orphaned process: {ProcessId}", process.Id);
                     }
                     finally
                     {
@@ -310,11 +310,11 @@ namespace AIOS.VisualInterface
                     }
                 }
                 
-                _logger.LogInformation("✅ Orphaned process cleanup completed");
+                _logger.LogInformation(" Orphaned process cleanup completed");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error during orphaned process cleanup");
+                _logger.LogError(ex, " Error during orphaned process cleanup");
             }
         }
 
@@ -342,7 +342,7 @@ namespace AIOS.VisualInterface
         /// </summary>
         private async void OnApplicationExit(object sender, ExitEventArgs e)
         {
-            _logger.LogInformation("🚪 Application exit event triggered");
+            _logger.LogInformation(" Application exit event triggered");
             await InitiateSystemShutdownAsync();
         }
 
@@ -351,7 +351,7 @@ namespace AIOS.VisualInterface
         /// </summary>
         private async void OnSessionEnding(object sender, SessionEndingCancelEventArgs e)
         {
-            _logger.LogInformation("🔄 Session ending event triggered: {Reason}", e.ReasonSessionEnding);
+            _logger.LogInformation(" Session ending event triggered: {Reason}", e.ReasonSessionEnding);
             await InitiateSystemShutdownAsync();
         }
 

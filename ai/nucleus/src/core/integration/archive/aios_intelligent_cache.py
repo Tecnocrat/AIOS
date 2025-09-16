@@ -423,11 +423,11 @@ class AIOSIntelligentCacheManager:
         self._cache_namespaces: Dict[str, str] = {}
 
         print(f"""
-🧠 AIOS Intelligent Cache Manager Initialized
-   💾 Memory Cache: {memory_cache_size} entries
-   💿 Disk Cache: {disk_cache_size_mb} MB
-   📁 Cache Directory: {cache_dir}
-   🎯 Multi-layer caching strategy active
+ AIOS Intelligent Cache Manager Initialized
+    Memory Cache: {memory_cache_size} entries
+    Disk Cache: {disk_cache_size_mb} MB
+    Cache Directory: {cache_dir}
+    Multi-layer caching strategy active
 """)
 
     def get(self, key: str, namespace: str = "default") -> Optional[Any]:
@@ -503,7 +503,7 @@ class AIOSIntelligentCacheManager:
         """Register cache warming strategy for namespace"""
         self._warming_strategies[namespace] = strategy
         print(
-        f"   🔥 Cache warming strategy registered for namespace: {namespace}")
+        f"    Cache warming strategy registered for namespace: {namespace}")
 
     def warm_cache(self, namespace: str, keys: List[str]):
         """Warm cache with predefined keys"""
@@ -523,7 +523,7 @@ class AIOSIntelligentCacheManager:
                 continue
 
         print(
-        f"   🔥 Cache warmed: {warmed}/{len(keys)} entries for {namespace}")
+        f"    Cache warmed: {warmed}/{len(keys)} entries for {namespace}")
 
     def get_comprehensive_stats(self) -> Dict[str, Any]:
         """Get comprehensive cache statistics"""
@@ -612,12 +612,12 @@ def create_optimized_aios_cache() -> AIOSIntelligentCacheManager:
 def main():
     """Demonstration of AIOS intelligent caching system"""
     print("""
-╔══════════════════════════════════════════════════════════════════════════════\
-╗
-║                    AIOS Intelligent Caching System Demo                     ║
-║                     Multi-Layer Performance Optimization                    ║
-╚══════════════════════════════════════════════════════════════════════════════\
-╝
+\
+
+                    AIOS Intelligent Caching System Demo                     
+                     Multi-Layer Performance Optimization                    
+\
+
 """)
 
     # Create optimized cache manager
@@ -630,40 +630,40 @@ def main():
     cache_manager.put(
     "test_function", "compiled_code_here", namespace="ainlp_compilation")
     result = cache_manager.get("test_function", namespace="ainlp_compilation")
-    print(f"   ✅ AINLP cache test: {'PASSED' if result else 'FAILED'}")
+    print(f"    AINLP cache test: {'PASSED' if result else 'FAILED'}")
 
     # Test context analysis caching
     cache_manager.put(
     "main_context", {"files": 49, "analysis": "complete"}, namespace="context_analysis")
     result = cache_manager.get("main_context", namespace="context_analysis")
-    print(f"   ✅ Context cache test: {'PASSED' if result else 'FAILED'}")
+    print(f"    Context cache test: {'PASSED' if result else 'FAILED'}")
 
     # Test cache warming
-    print("\n🔥 Testing cache warming...")
+    print("\n Testing cache warming...")
     cache_manager.warm_cache(
     "ainlp_compilation", ["compile:test1", "compile:test2"])
 
     # Display cache statistics
-    print("\n📊 Cache Performance Statistics:")
+    print("\n Cache Performance Statistics:")
     stats = cache_manager.get_comprehensive_stats()
 
     print(f"""
-   💾 Memory Cache:
+    Memory Cache:
       - Size: {
       stats['memory_cache']['size']}/{stats['memory_cache']['max_size']}
       - Hit Ratio: {stats['memory_cache']['hit_ratio']:.2%}
       - Avg Response: {stats['memory_cache']['avg_response_time_ms']:.2f}ms
 
-   💿 Disk Cache:
+    Disk Cache:
       - Hit Ratio: {stats['disk_cache']['hit_ratio']:.2%}
       - Total Requests: {stats['disk_cache']['total_requests']}
 
-   🎯 Overall Performance:
+    Overall Performance:
       - Effective Hit Ratio: {stats['overall']['effective_hit_ratio']:.2%}
       - Warming Strategies: {stats['overall']['warming_strategies']}
 """)
 
-    print("✅ AIOS Intelligent Caching System ready for integration!")
+    print(" AIOS Intelligent Caching System ready for integration!")
 
 
 if __name__ == "__main__":

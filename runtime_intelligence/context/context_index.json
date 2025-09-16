@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-09-02T12:45:29Z",
+  "generated_at": "2025-09-15T21:33:14Z",
   "source_file": "AIOS_PROJECT_CONTEXT.md",
   "capsules": [
     {
@@ -24,19 +24,19 @@
       "similarity_alert": false
     },
     {
-      "id": "capsule",
-      "title": "\ud83c\udfaf",
+      "id": "post-loading",
+      "title": "POST-LOADING",
       "type": "note",
       "ingested_date": null,
       "start_line": 57,
       "end_line": 72,
-      "content_hash": "706071b0de6b071d7eb72d68c8c29b88fcf4341fda7e51d8a1c8e6de202ae882",
+      "content_hash": "8dbf5986e920c20752c073d1d15b326c10d3f3ecebe8ff06d35019f254ff0843",
       "semantic_tags": [
         "consciousness"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 103,
+      "token_estimate": 102,
       "jaccard_overlap_prev": 0.0943,
       "similarity_alert": false
     },
@@ -58,35 +58,35 @@
       "similarity_alert": true
     },
     {
-      "id": "-2",
-      "title": "\ud83d\ude80",
+      "id": "revolutionary",
+      "title": "**Revolutionary",
       "type": "note",
       "ingested_date": null,
       "start_line": 76,
       "end_line": 107,
-      "content_hash": "293cfc96857a1337850389c56711873d8b1ea045eb23d5962bba348d484fe761",
+      "content_hash": "24783d57615dcfe3a32d09b42e967cf611db28ced434e74f164c50304b05d607",
       "semantic_tags": [],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 194,
+      "token_estimate": 170,
       "jaccard_overlap_prev": 0.1905,
       "similarity_alert": false
     },
     {
-      "id": "-3",
-      "title": "\ud83d\ude80",
+      "id": "latest",
+      "title": "**Latest",
       "type": "note",
       "ingested_date": null,
       "start_line": 108,
       "end_line": 183,
-      "content_hash": "f3693dab90092519225ad6ff38004fa8dbbf85bfbe6a5b95859bef1b355295e7",
+      "content_hash": "c4934210bf5629a7cb963e642bf39386f647f10f2432b47c4f434402bdf7c12e",
       "semantic_tags": [
         "consciousness",
         "optimization"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 614,
+      "token_estimate": 597,
       "jaccard_overlap_prev": 0.1966,
       "similarity_alert": false
     },
@@ -97,7 +97,7 @@
       "ingested_date": null,
       "start_line": 184,
       "end_line": 204,
-      "content_hash": "9e899274176a1bc71828dc6405ffa4d351c8a370964bbcae9c4260f8e5f5020a",
+      "content_hash": "f55772f1f3d051ce8f03fc1121ab736fd07b96d05f75d3f0eba6dbf33e30535d",
       "semantic_tags": [
         "optimization"
       ],
@@ -133,14 +133,14 @@
       "ingested_date": null,
       "start_line": 251,
       "end_line": 336,
-      "content_hash": "b47c387a3c3f9b60bf03b101570caeb0f4df60b9b2fba4ef756d4bbe1dd5235a",
+      "content_hash": "5a186510fa7dfd45efe41435a8cf0fd3a242ac8e879e0cee924b7f1d4d5c095e",
       "semantic_tags": [
         "dependency",
         "optimization"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 478,
+      "token_estimate": 293,
       "jaccard_overlap_prev": 0.1374,
       "similarity_alert": false
     },
@@ -170,13 +170,13 @@
       "ingested_date": null,
       "start_line": 406,
       "end_line": 456,
-      "content_hash": "f7c26df03ed35faf89a5f09585acae4fc6f6f51b498eef41471a7a3c753fbaad",
+      "content_hash": "b5282bf10372b1c12094e408a8775db1159d5b4c7ad4af457c7816d99f7fe6f2",
       "semantic_tags": [
         "optimization"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 306,
+      "token_estimate": 295,
       "jaccard_overlap_prev": 0.1633,
       "similarity_alert": false
     },
@@ -204,14 +204,14 @@
       "ingested_date": null,
       "start_line": 474,
       "end_line": 495,
-      "content_hash": "fc085755c53399509f8ea548ba3c18477b934ab61c485e90de10820abb98d1ea",
+      "content_hash": "4f2264d46b5ab5a94c46749d05b0d6c088debe17c37f9b4b103aedc58889de64",
       "semantic_tags": [
         "environment",
         "optimization"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 159,
+      "token_estimate": 157,
       "jaccard_overlap_prev": 0.0702,
       "similarity_alert": true
     },
@@ -222,7 +222,7 @@
       "ingested_date": null,
       "start_line": 496,
       "end_line": 503,
-      "content_hash": "657f51753a5f70b0e54314c3bd93b0d26ad0856b2036f942bdd309c1661b79ad",
+      "content_hash": "597ca09c259749b01837eebd309b5eb1fdd9354c19c047ff81d80561e57f5fef",
       "semantic_tags": [
         "environment"
       ],
@@ -239,7 +239,7 @@
       "ingested_date": null,
       "start_line": 504,
       "end_line": 540,
-      "content_hash": "79e9d6ea9804bd8582575642dc9c240eb454ae2bceb7b94e6c4469559c26c24e",
+      "content_hash": "f12ddf44ea2297162647adfb29197afe1b3c1ffdb74ab58ace55ed1092310d1b",
       "semantic_tags": [
         "consciousness",
         "optimization",
@@ -247,7 +247,7 @@
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 277,
+      "token_estimate": 273,
       "jaccard_overlap_prev": 0.1579,
       "similarity_alert": false
     },
@@ -495,13 +495,13 @@
       "similarity_alert": false
     },
     {
-      "id": "capsule-2",
+      "id": "capsule",
       "title": "Capsule",
       "type": "capsule",
       "ingested_date": "2025-06-29",
       "start_line": 1121,
       "end_line": 1141,
-      "content_hash": "eaaa08686a40ff3caefe01db23888743f835099d6a627e82b5a1a6d383bcb99f",
+      "content_hash": "e6fc64c00ed17768aa878d985503eb308c1f127ac7d273eaddb8a48a90633674",
       "semantic_tags": [
         "consciousness",
         "optimization"
@@ -511,50 +511,50 @@
         "2025-06-29",
         "2025-08-16"
       ],
-      "token_estimate": 279,
+      "token_estimate": 278,
       "jaccard_overlap_prev": 0.0979,
       "similarity_alert": false
     },
     {
-      "id": "-4",
-      "title": "\u2705",
+      "id": "mission",
+      "title": "**Mission",
       "type": "note",
       "ingested_date": null,
       "start_line": 1142,
       "end_line": 1148,
-      "content_hash": "9e605a9fb7298e8e498f8392b2c52670f5db407787ec32eadd9792447d6f3a7e",
+      "content_hash": "c12a0d4216dd25d2f8b7bc79fbb7c130da27bf7dbc6e3992f39e838c2e821e03",
       "semantic_tags": [],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 17,
+      "token_estimate": 16,
       "jaccard_overlap_prev": 0.0139,
       "similarity_alert": true
     },
     {
-      "id": "-5",
-      "title": "\ud83d\udcca",
+      "id": "integration",
+      "title": "**Integration",
       "type": "note",
       "ingested_date": null,
       "start_line": 1149,
       "end_line": 1164,
-      "content_hash": "8882fcfb7627c04aafa3eb7a9a786941e23f297577993adb7a7aabd413de8579",
+      "content_hash": "f2ef73331cb9d0a0c0a093d7fe62f183ac5bd87bce775d402f09d658ecfbf7b6",
       "semantic_tags": [
         "recovery"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 106,
+      "token_estimate": 105,
       "jaccard_overlap_prev": 0.0426,
       "similarity_alert": true
     },
     {
-      "id": "-6",
-      "title": "\ud83c\udfaf",
+      "id": "three-objective",
+      "title": "**Three-Objective",
       "type": "note",
       "ingested_date": null,
       "start_line": 1165,
       "end_line": 1206,
-      "content_hash": "6527902be2f0c8380950177eb8446f45b3c6752dcaaf8aa5635233dafdd2ff0e",
+      "content_hash": "8fd5499a7023518b8a82a923ce319243bb4e80ba0f67596423e27209ea0934d2",
       "semantic_tags": [
         "consciousness",
         "optimization",
@@ -562,54 +562,54 @@
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 250,
+      "token_estimate": 238,
       "jaccard_overlap_prev": 0.0417,
       "similarity_alert": true
     },
     {
-      "id": "-7",
-      "title": "\ud83d\udcc8",
+      "id": "success-2",
+      "title": "**Success",
       "type": "note",
       "ingested_date": null,
       "start_line": 1207,
       "end_line": 1228,
-      "content_hash": "28080b3e97a430fdafba0c5f3eb8861740f38b781d843670b1444903222cf303",
+      "content_hash": "e21e6d314b057388d87161388f71aabc073c996b116ba567520035f5deed0ad7",
       "semantic_tags": [
         "consciousness",
         "recovery"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 92,
+      "token_estimate": 91,
       "jaccard_overlap_prev": 0.2126,
       "similarity_alert": false
     },
     {
-      "id": "-8",
-      "title": "\ud83e\udde0",
+      "id": "consciousness-2",
+      "title": "**Consciousness",
       "type": "note",
       "ingested_date": null,
       "start_line": 1229,
       "end_line": 1244,
-      "content_hash": "fa0e51778cbd602b0d673a3dd8ed0b2e8f4764eaa2b02bac5c765cabda4c9e01",
+      "content_hash": "5db5f7343fb519c76cc222a9438c170e5135bc719be7a6ad6c4e80941693366b",
       "semantic_tags": [
         "consciousness",
         "environment"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 94,
+      "token_estimate": 89,
       "jaccard_overlap_prev": 0.1111,
       "similarity_alert": false
     },
     {
-      "id": "-9",
-      "title": "\ud83d\ude80",
+      "id": "immediate",
+      "title": "**Immediate",
       "type": "note",
       "ingested_date": null,
       "start_line": 1245,
       "end_line": 1266,
-      "content_hash": "f2304b9ddd6507789ab8dae0d1cfcc1688deccbd3c647f038853218f5bd286b9",
+      "content_hash": "55a45fe9d1832d852bc20cab66069df86656fda6b7600daf8922643d87a5ed26",
       "semantic_tags": [
         "consciousness",
         "phase",
@@ -617,18 +617,18 @@
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 114,
+      "token_estimate": 113,
       "jaccard_overlap_prev": 0.068,
       "similarity_alert": true
     },
     {
-      "id": "-10",
-      "title": "\ud83c\udf8a",
+      "id": "project-3",
+      "title": "**Project",
       "type": "note",
       "ingested_date": null,
       "start_line": 1267,
       "end_line": 1290,
-      "content_hash": "f061ff953a850d2f1916de0415ca9099d093035c729301cf29d7390fff9fd89b",
+      "content_hash": "f6d037d1bde9a2c606e72dfedc7dd03ca78fe2074af6ca9fdc189eb8795d24f8",
       "semantic_tags": [
         "consciousness",
         "dependency",
@@ -638,94 +638,94 @@
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 167,
+      "token_estimate": 160,
       "jaccard_overlap_prev": 0.1622,
       "similarity_alert": false
     },
     {
-      "id": "-11",
-      "title": "\ud83c\udf0a",
+      "id": "quantum",
+      "title": "**Quantum",
       "type": "note",
       "ingested_date": null,
       "start_line": 1291,
       "end_line": 1307,
-      "content_hash": "650cec59e723092ace4641a070304396ab4c2d73333749b438b940a733acb8a3",
+      "content_hash": "7c59aa785717ebd72d67631513a2ed262a81d6936940ead21ed783c7b3983da2",
       "semantic_tags": [
         "consciousness",
         "phase"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 97,
+      "token_estimate": 96,
       "jaccard_overlap_prev": 0.1923,
       "similarity_alert": false
     },
     {
-      "id": "-12",
-      "title": "\ud83c\udf0c",
+      "id": "consciousness-3",
+      "title": "**Consciousness",
       "type": "note",
       "ingested_date": null,
       "start_line": 1308,
       "end_line": 1337,
-      "content_hash": "b9317e99cc74b040c1f031622f44bca6fa0141f30ef376873741b13a242a616e",
+      "content_hash": "6f992763ef4cdf99fb2840a30dc35821aade0564bc6c93ac64f5aaa213cf1310",
       "semantic_tags": [
         "consciousness"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 207,
+      "token_estimate": 206,
       "jaccard_overlap_prev": 0.1103,
       "similarity_alert": false
     },
     {
-      "id": "-13",
-      "title": "\ud83e\uddec",
+      "id": "consciousness-4",
+      "title": "**Consciousness",
       "type": "note",
       "ingested_date": null,
       "start_line": 1338,
       "end_line": 1359,
-      "content_hash": "46b89ae59fcf37d120ae9e40ebbd4566b860040049bf97a3a86490a839c0e188",
+      "content_hash": "08400aadd85f8e8f52ca6f92d18687c53dbba881f465ac63321d84782b7a33d7",
       "semantic_tags": [
         "consciousness",
         "optimization"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 146,
+      "token_estimate": 145,
       "jaccard_overlap_prev": 0.1265,
       "similarity_alert": false
     },
     {
-      "id": "-14",
-      "title": "\ud83c\udf0a",
+      "id": "ainlp",
+      "title": "**AINLP",
       "type": "note",
       "ingested_date": null,
       "start_line": 1360,
       "end_line": 1381,
-      "content_hash": "8674d9968be57ea2ca38aaea53fe2a2dc774627a48e782c62397fecbe81a7d30",
+      "content_hash": "98e2929376ff1acd208379f4b5204e3abf85225f913cd9163a7d162fc00f5aab",
       "semantic_tags": [
         "consciousness"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 153,
+      "token_estimate": 152,
       "jaccard_overlap_prev": 0.068,
       "similarity_alert": true
     },
     {
-      "id": "-15",
-      "title": "\ud83c\udfaf",
+      "id": "consciousness-5",
+      "title": "**Consciousness",
       "type": "note",
       "ingested_date": null,
       "start_line": 1382,
       "end_line": 1392,
-      "content_hash": "47c46447706ce85b2ea0414743bb352cf4749c0294d11c6399780e2eee3fe5b0",
+      "content_hash": "a4443f6bb86605e83955477939a4aadc8bc7ef48141304cbd4ce972c1902b41f",
       "semantic_tags": [
         "consciousness"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 99,
+      "token_estimate": 98,
       "jaccard_overlap_prev": 0.0424,
       "similarity_alert": true
     }
@@ -733,7 +733,7 @@
   "stats": {
     "capsule_count": 36,
     "total_lines_indexed": 1391,
-    "aggregate_token_estimate": 10415
+    "aggregate_token_estimate": 10137
   },
   "errors": []
 }

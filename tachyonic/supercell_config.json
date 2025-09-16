@@ -4,7 +4,7 @@
     "description": "Hyperdimensional Intelligence Archive & Quantum Storage Layer",
     "architecture_level": "supercell",
     "path": "./tachyonic",
-    "icon": "🌌",
+    "icon": "",
     "capabilities": [
       "hyperdimensional_storage",
       "intelligence_archiving",

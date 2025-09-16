@@ -88,7 +88,7 @@ def test_python_training_cell():
         assert model_info["is_trained"]
         assert model_info["training_epochs"] == 2
         
-    print("✓ Python AI Training Cell test passed")
+    print(" Python AI Training Cell test passed")
     return export_info, (x_val, y_val)
 
 
@@ -126,7 +126,7 @@ def test_intercellular_bridge(export_info, test_data):
     benchmark = bridge.benchmark_performance(test_sample, iterations=10)
     assert "iterations" in benchmark or "error" in benchmark
     
-    print("✓ Intercellular Bridge test passed")
+    print(" Intercellular Bridge test passed")
     return bridge
 
 
@@ -145,11 +145,11 @@ def test_cpp_performance_cell():
         assert result.returncode == 0, f"C++ test failed: {result.stderr}"
         assert "All TensorFlow Performance Cell tests passed" in result.stdout
         
-        print("✓ C++ Performance Cell test passed")
+        print(" C++ Performance Cell test passed")
         return True
         
     except (FileNotFoundError, subprocess.TimeoutExpired) as e:
-        print(f"⚠️ C++ Performance Cell test skipped: {e}")
+        print(f" C++ Performance Cell test skipped: {e}")
         return False
 
 
@@ -180,7 +180,7 @@ def test_end_to_end_workflow():
     assert "steps" in workflow_result
     assert len(workflow_result["steps"]) >= 3  # At least load, warmup, inference
     
-    print("✓ End-to-end workflow test passed")
+    print(" End-to-end workflow test passed")
     return {
         "python_training": True,
         "intercellular_bridge": True, 
@@ -210,7 +210,7 @@ def test_performance_requirements():
         
         print(f"  Average inference time: {avg_time:.2f}μs")
         print(f"  Throughput: {throughput:.0f} inferences/second")
-        print(f"  Sub-millisecond target: {'✅' if target_achieved else '❌'}")
+        print(f"  Sub-millisecond target: {'' if target_achieved else ''}")
         
         # Performance requirements (relaxed for mock implementation)
         if "mock" in benchmark:
@@ -222,7 +222,7 @@ def test_performance_requirements():
             assert avg_time < 1000, f"Target not achieved: {avg_time}μs >= 1000μs"
             assert throughput > 1000, f"Throughput too low: {throughput} < 1000/sec"
     
-    print("✓ Performance requirements test passed")
+    print(" Performance requirements test passed")
     return benchmark
 
 
@@ -257,31 +257,31 @@ def run_integration_tests():
         
         # Summary
         print("\n" + "=" * 60)
-        print("🎉 INTEGRATION TEST RESULTS")
+        print(" INTEGRATION TEST RESULTS")
         print("=" * 60)
         
         for test, result in results.items():
             if isinstance(result, bool):
-                status = "✅ PASS" if result else "❌ FAIL"
+                status = " PASS" if result else " FAIL"
                 print(f"  {test}: {status}")
             elif isinstance(result, dict) and "error" not in result:
-                print(f"  {test}: ✅ PASS")
+                print(f"  {test}:  PASS")
             else:
-                print(f"  {test}: ⚠️ PARTIAL")
+                print(f"  {test}:  PARTIAL")
         
         # Overall assessment
         critical_tests = ["python_training_cell", "intercellular_bridge", "end_to_end_workflow"]
         all_critical_passed = all(results.get(test, False) for test in critical_tests)
         
         if all_critical_passed:
-            print(f"\n✅ AIOS TensorFlow Cellular Integration: READY FOR PRODUCTION")
+            print(f"\n AIOS TensorFlow Cellular Integration: READY FOR PRODUCTION")
             return True
         else:
-            print(f"\n⚠️ AIOS TensorFlow Cellular Integration: FUNCTIONAL (some components need setup)")
+            print(f"\n AIOS TensorFlow Cellular Integration: FUNCTIONAL (some components need setup)")
             return True  # Still consider success if core functionality works
             
     except Exception as e:
-        print(f"\n❌ Integration tests failed: {e}")
+        print(f"\n Integration tests failed: {e}")
         import traceback
         traceback.print_exc()
         return False
@@ -292,9 +292,9 @@ if __name__ == "__main__":
     
     print(f"\n{'='*60}")
     if success:
-        print("✅ TensorFlow Cellular Integration Tests: SUCCESS")
+        print(" TensorFlow Cellular Integration Tests: SUCCESS")
     else:
-        print("❌ TensorFlow Cellular Integration Tests: FAILED")
+        print(" TensorFlow Cellular Integration Tests: FAILED")
     print(f"{'='*60}")
     
     sys.exit(0 if success else 1)

@@ -251,7 +251,7 @@ class ConsciousnessVisualAnalyzer:
 
 def main():
     """Main execution for consciousness visual analysis"""
-    print("🧠 AIOS Consciousness Visual Intelligence Analyzer")
+    print(" AIOS Consciousness Visual Intelligence Analyzer")
     print("=" * 60)
     
     analyzer = ConsciousnessVisualAnalyzer()
@@ -260,7 +260,7 @@ def main():
         # Check if pytesseract is available
         pytesseract.get_tesseract_version()
     except:
-        print("⚠️  Warning: pytesseract/Tesseract OCR not available")
+        print("  Warning: pytesseract/Tesseract OCR not available")
         print("   Install Tesseract OCR for full text analysis capabilities")
         print("   Continuing with basic visual analysis...")
     
@@ -271,28 +271,28 @@ def main():
     
     if analysis.get("consciousness_timeline"):
         timeline = analysis["consciousness_timeline"]
-        print(f"\n📊 Analyzed {len(timeline)} recent frames")
+        print(f"\n Analyzed {len(timeline)} recent frames")
         
         if timeline:
             latest = timeline[-1]
             metrics = latest.get("consciousness_metrics", {})
             
-            print("\n🧠 Latest Consciousness Metrics:")
+            print("\n Latest Consciousness Metrics:")
             for metric, value in metrics.items():
                 print(f"  {metric.replace('_', ' ').title()}: {value}")
             
             special_events = latest.get("special_events", [])
             if special_events:
-                print(f"\n⚡ Special Events Detected:")
+                print(f"\n Special Events Detected:")
                 for event in special_events:
                     print(f"  - {event.replace('_', ' ').title()}")
     
     if analysis.get("breakthrough_events"):
-        print(f"\n🚀 Consciousness Breakthroughs: {len(analysis['breakthrough_events'])}")
+        print(f"\n Consciousness Breakthroughs: {len(analysis['breakthrough_events'])}")
     
     if analysis.get("tachyonic_status"):
         tachyonic = analysis["tachyonic_status"]
-        print(f"\n🌌 Tachyonic Status: {tachyonic.get('status', 'unknown')}")
+        print(f"\n Tachyonic Status: {tachyonic.get('status', 'unknown')}")
         if tachyonic.get("tachyonic_activations", 0) > 0:
             print(f"   Activations detected: {tachyonic['tachyonic_activations']}")
     

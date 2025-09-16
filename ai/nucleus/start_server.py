@@ -34,11 +34,11 @@ def run_preflight_diagnostics():
             [sys.executable, integration_path, "--preflight"]
         )
         if result.returncode != 0:
-            print("⚠️  Preflight diagnostics reported issues.")
+            print("  Preflight diagnostics reported issues.")
         else:
-            print("✅ Preflight diagnostics passed.")
+            print(" Preflight diagnostics passed.")
     else:
-        print("⚠️  Integration diagnostics script not found.")
+        print("  Integration diagnostics script not found.")
 
 
 def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
@@ -61,25 +61,25 @@ def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
             exit_code = proc.returncode
             run_time = time.time() - start_time
             if exit_code == 0:
-                print("✅ Server exited cleanly.")
+                print(" Server exited cleanly.")
                 return 0
             else:
                 # If server fails in <2s, treat as unrecoverable
                 if run_time < 2:
                     print(
-                        f"❌ Server failed immediately (exit {
+                        f" Server failed immediately (exit {
                             exit_code}). Not retrying."
                     )
                     if stderr:
                         print("--- Server error output ---")
                         print(stderr.decode(errors="ignore")[-500:])
                     print(
-                        "ℹ️  Run diagnostics with: python"
+                        "ℹ  Run diagnostics with: python"
                         " ai/tests/aios_vscode_integration.py --preflight"
                     )
                     return exit_code
                 print(
-                    f"⚠️  Server exited with code {
+                    f"  Server exited with code {
                         exit_code
                         } after {
                         run_time:.1f
@@ -91,35 +91,35 @@ def run_server_with_supervisor(server_file, max_restarts=5, restart_delay=3):
                     print(stderr.decode(errors="ignore")[-500:])
                 last_error = stderr.decode(errors="ignore") if stderr else None
         except KeyboardInterrupt:
-            print("\n🛑 Server stopped by user (supervisor exiting)")
+            print("\n Server stopped by user (supervisor exiting)")
             proc.terminate()
             return 0
         except Exception as e:
-            print(f"❌ Supervisor error: {e}")
+            print(f" Supervisor error: {e}")
             proc.terminate()
         restarts += 1
         time.sleep(delay)
         delay = min(delay * 2, 60)  # Exponential backoff, max 60s
-    print("❌ Max restart attempts reached. Supervisor exiting.")
+    print(" Max restart attempts reached. Supervisor exiting.")
     if last_error:
         print("--- Last server error output ---")
         print(last_error[-500:])
     print(
-        "ℹ️  Run diagnostics with:"
+        "ℹ  Run diagnostics with:"
         " python ai/tests/aios_vscode_integration.py --preflight"
     )
     return 1
 
 
 def main():
-    print("🚀 Starting AIOS VSCode Integration Server...")
+    print(" Starting AIOS VSCode Integration Server...")
 
     # Find the server file
     server_file = find_server_file()
     if not server_file:
-        print("❌ Server file not found: aios_vscode_integration_server.py")
+        print(" Server file not found: aios_vscode_integration_server.py")
         print(
-            "ℹ️  Run diagnostics with:"
+            "ℹ  Run diagnostics with:"
             " python ai/tests/aios_vscode_integration.py --preflight"
         )
         return 1

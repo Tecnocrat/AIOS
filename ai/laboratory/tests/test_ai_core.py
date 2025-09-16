@@ -32,16 +32,16 @@ async def test_ai_core():
         ai_core = AICore()
 
         if not await ai_core.initialize():
-            print("❌ Failed to initialize AI Core")
+            print(" Failed to initialize AI Core")
             return False
-        print("✅ AI Core initialized successfully")
+        print(" AI Core initialized successfully")
 
         # Start AI Core
         print("\n2. Starting AI Core services...")
         if not await ai_core.start():
-            print("❌ Failed to start AI Core services")
+            print(" Failed to start AI Core services")
             return False
-        print("✅ AI Core services started successfully")
+        print(" AI Core services started successfully")
 
         # Test natural language processing
         print("\n3. Testing natural language processing...")
@@ -98,14 +98,14 @@ async def test_ai_core():
         # Stop AI Core
         print("\n9. Stopping AI Core...")
         await ai_core.stop()
-        print("✅ AI Core stopped successfully")
+        print(" AI Core stopped successfully")
 
         print("\n" + "=" * 50)
-        print("🎉 All tests passed! AIOS AI Core is working correctly.")
+        print(" All tests passed! AIOS AI Core is working correctly.")
         return True
 
     except Exception as e:
-        print(f"❌ Test failed with error: {e}")
+        print(f" Test failed with error: {e}")
         import traceback
 
         traceback.print_exc()
@@ -137,7 +137,7 @@ async def test_individual_managers():
         )
 
         await nlp_manager.stop()
-        print("✅ NLP Manager test passed")
+        print(" NLP Manager test passed")
 
         # Test Prediction Manager
         print("\n2. Testing Prediction Manager...")
@@ -149,7 +149,7 @@ async def test_individual_managers():
         print(f"   Prediction result: {len(pred_result['predictions'])} predictions")
 
         await pred_manager.stop()
-        print("✅ Prediction Manager test passed")
+        print(" Prediction Manager test passed")
 
         # Test Automation Manager
         print("\n3. Testing Automation Manager...")
@@ -163,7 +163,7 @@ async def test_individual_managers():
         print(f"   Automation result: {task_result['status']}")
 
         await auto_manager.stop()
-        print("✅ Automation Manager test passed")
+        print(" Automation Manager test passed")
 
         # Test Learning Manager
         print("\n4. Testing Learning Manager...")
@@ -177,7 +177,7 @@ async def test_individual_managers():
         print(f"   Learning result: {learn_result['update_type']}")
 
         await learn_manager.stop()
-        print("✅ Learning Manager test passed")
+        print(" Learning Manager test passed")
 
         # Test Integration Bridge
         print("\n5. Testing Integration Bridge...")
@@ -189,14 +189,14 @@ async def test_individual_managers():
         print(f"   Bridge result: {bridge_result['status']}")
 
         await bridge.stop()
-        print("✅ Integration Bridge test passed")
+        print(" Integration Bridge test passed")
 
         print("\n" + "=" * 50)
-        print("🎉 All individual manager tests passed!")
+        print(" All individual manager tests passed!")
         return True
 
     except Exception as e:
-        print(f"❌ Manager test failed with error: {e}")
+        print(f" Manager test failed with error: {e}")
         import traceback
 
         traceback.print_exc()
@@ -214,9 +214,9 @@ def test_configuration_loading():
         if config_path.exists():
             with open(config_path, "r") as f:
                 system_config = json.load(f)
-            print(f"✅ System config loaded: {system_config['system']['name']}")
+            print(f" System config loaded: {system_config['system']['name']}")
         else:
-            print("❌ System config file not found")
+            print(" System config file not found")
             return False
 
         # Test AI models config
@@ -225,10 +225,10 @@ def test_configuration_loading():
             with open(ai_config_path, "r") as f:
                 ai_config = json.load(f)
             print(
-                f"✅ AI models config loaded: {len(ai_config['models'])} model categories"
+                f" AI models config loaded: {len(ai_config['models'])} model categories"
             )
         else:
-            print("❌ AI models config file not found")
+            print(" AI models config file not found")
             return False
 
         # Test UI themes config
@@ -236,17 +236,17 @@ def test_configuration_loading():
         if ui_config_path.exists():
             with open(ui_config_path, "r") as f:
                 ui_config = json.load(f)
-            print(f"✅ UI themes config loaded: {len(ui_config['themes'])} themes")
+            print(f" UI themes config loaded: {len(ui_config['themes'])} themes")
         else:
-            print("❌ UI themes config file not found")
+            print(" UI themes config file not found")
             return False
 
         print("\n" + "=" * 50)
-        print("🎉 All configuration files loaded successfully!")
+        print(" All configuration files loaded successfully!")
         return True
 
     except Exception as e:
-        print(f"❌ Configuration test failed with error: {e}")
+        print(f" Configuration test failed with error: {e}")
         return False
 
 
@@ -267,11 +267,11 @@ async def main():
             core_test = await test_ai_core()
 
             if core_test:
-                print("\n🎉 All tests completed successfully!")
+                print("\n All tests completed successfully!")
                 print("AIOS AI Core is ready for use!")
                 return True
 
-    print("\n❌ Some tests failed. Please check the output above.")
+    print("\n Some tests failed. Please check the output above.")
     return False
 
 

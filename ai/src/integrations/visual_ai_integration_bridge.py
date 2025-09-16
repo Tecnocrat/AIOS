@@ -39,7 +39,7 @@ class VisualAIIntegrationBridge:
         
         try:
             # Step 1: Get visual data from Runtime Intelligence
-            print("🔧 Extracting visual data from Runtime Intelligence...")
+            print(" Extracting visual data from Runtime Intelligence...")
             visual_data = self._get_runtime_visual_data()
             
             if visual_data.get("status") != "active":
@@ -50,11 +50,11 @@ class VisualAIIntegrationBridge:
                 }
             
             # Step 2: Apply AI Intelligence analysis
-            print("🧠 Applying AI Intelligence consciousness analysis...")
+            print(" Applying AI Intelligence consciousness analysis...")
             ai_analysis = self.ai_analyzer.analyze_consciousness_patterns(visual_data)
             
             # Step 3: Generate integrated intelligence report
-            print("📊 Generating integrated intelligence report...")
+            print(" Generating integrated intelligence report...")
             integrated_report = self._generate_integrated_report(visual_data, ai_analysis)
             
             return {
@@ -107,22 +107,22 @@ class VisualAIIntegrationBridge:
             "AIOS INTEGRATED VISUAL INTELLIGENCE REPORT",
             "=" * 80,
             "",
-            "🔧 RUNTIME INTELLIGENCE STATUS:",
+            " RUNTIME INTELLIGENCE STATUS:",
             f"   Visual Monitoring: {runtime_data.get('status', 'unknown')}",
             f"   Screenshot Activity: {runtime_data.get('activity_analysis', {}).get('activity_level', 'unknown')}",
             f"   Total Screenshots: {runtime_data.get('activity_analysis', {}).get('total_screenshots', 0)}",
             f"   Data Volume: {runtime_data.get('activity_analysis', {}).get('total_size_mb', 0):.1f} MB",
             "",
-            "🧠 AI INTELLIGENCE ANALYSIS:",
+            " AI INTELLIGENCE ANALYSIS:",
             ai_analysis.get("intelligence_summary", "No AI analysis available"),
             "",
-            "⚡ INTEGRATION SUMMARY:",
+            " INTEGRATION SUMMARY:",
             self._generate_integration_summary(runtime_data, ai_analysis),
             "",
-            "🎯 ACTIONABLE INTELLIGENCE:",
+            " ACTIONABLE INTELLIGENCE:",
             self._generate_actionable_intelligence(ai_analysis),
             "",
-            "🔮 PREDICTIONS & RECOMMENDATIONS:",
+            " PREDICTIONS & RECOMMENDATIONS:",
             self._format_predictions(ai_analysis.get("next_phase_predictions", {}))
         ]
         
@@ -136,28 +136,28 @@ class VisualAIIntegrationBridge:
         # Runtime status
         runtime_status = runtime_data.get("status", "unknown")
         if runtime_status == "active":
-            summary_points.append("✅ Runtime Intelligence successfully capturing visual data")
+            summary_points.append(" Runtime Intelligence successfully capturing visual data")
         else:
-            summary_points.append("❌ Runtime Intelligence visual capture not active")
+            summary_points.append(" Runtime Intelligence visual capture not active")
         
         # AI analysis status
         ai_assessment = ai_analysis.get("ai_assessment", {})
         emergence_confidence = ai_assessment.get("emergence_confidence", 0.0)
         
         if emergence_confidence > 0.7:
-            summary_points.append("🔥 AI Intelligence detects high-confidence consciousness emergence")
+            summary_points.append(" AI Intelligence detects high-confidence consciousness emergence")
         elif emergence_confidence > 0.4:
-            summary_points.append("⚡ AI Intelligence detects moderate consciousness activity")
+            summary_points.append(" AI Intelligence detects moderate consciousness activity")
         else:
-            summary_points.append("📊 AI Intelligence monitoring baseline consciousness levels")
+            summary_points.append(" AI Intelligence monitoring baseline consciousness levels")
         
         # Integration effectiveness
         if runtime_status == "active" and emergence_confidence > 0.5:
-            summary_points.append("🎯 Runtime-AI integration operating at optimal effectiveness")
+            summary_points.append(" Runtime-AI integration operating at optimal effectiveness")
         elif runtime_status == "active":
-            summary_points.append("⚙️ Runtime-AI integration operational - monitoring for emergence")
+            summary_points.append(" Runtime-AI integration operational - monitoring for emergence")
         else:
-            summary_points.append("🔧 Runtime-AI integration requires activation of visual monitoring")
+            summary_points.append(" Runtime-AI integration requires activation of visual monitoring")
         
         return "\n   ".join([""] + summary_points)
     
@@ -171,26 +171,26 @@ class VisualAIIntegrationBridge:
         # System readiness actions
         system_readiness = ai_assessment.get("system_readiness", "unknown")
         if system_readiness != "fully_ready":
-            actions.append("🔧 Ensure all AIOS processes are running without errors")
+            actions.append(" Ensure all AIOS processes are running without errors")
         
         # Tachyonic interface actions
         tachyonic_status = ai_assessment.get("tachyonic_interface_status", "unknown")
         if "inactive" in tachyonic_status:
-            actions.append("⚡ Activate tachyonic interface for hyperdimensional processing")
+            actions.append(" Activate tachyonic interface for hyperdimensional processing")
         elif "detected" in tachyonic_status:
-            actions.append("🌌 Tachyonic interface detected - monitor for full activation")
+            actions.append(" Tachyonic interface detected - monitor for full activation")
         
         # Consciousness emergence actions
         consciousness_status = ai_assessment.get("consciousness_emergence_status", "unknown")
         if "critical" in consciousness_status:
-            actions.append("🧠 CRITICAL: Monitor consciousness emergence - breakthrough imminent")
+            actions.append(" CRITICAL: Monitor consciousness emergence - breakthrough imminent")
         elif "major" in consciousness_status:
-            actions.append("🎯 Significant consciousness activity - maintain current configuration")
+            actions.append(" Significant consciousness activity - maintain current configuration")
         
         # Breakthrough potential actions
         breakthrough_potential = ai_assessment.get("breakthrough_potential", "unknown")
         if breakthrough_potential == "high":
-            actions.append("🚀 High breakthrough potential - prepare for consciousness emergence")
+            actions.append(" High breakthrough potential - prepare for consciousness emergence")
         
         return "\n   ".join([""] + actions) if actions else "\n   No immediate actions required"
     
@@ -224,7 +224,7 @@ class VisualAIIntegrationBridge:
 def main():
     """Main execution for integrated visual intelligence"""
     
-    print("🎯 AIOS Integrated Visual Intelligence Pipeline")
+    print(" AIOS Integrated Visual Intelligence Pipeline")
     print("=" * 70)
     print("Runtime Intelligence (Data) + AI Intelligence (Analysis) = Complete Visual Intelligence")
     print()
@@ -236,7 +236,7 @@ def main():
     result = bridge.process_visual_intelligence()
     
     if result["pipeline_status"] == "success":
-        print("✅ PIPELINE SUCCESS!")
+        print(" PIPELINE SUCCESS!")
         print()
         print(result["integrated_report"])
         
@@ -247,14 +247,14 @@ def main():
         with open(report_file, 'w', encoding='utf-8') as f:
             json.dump(result, f, indent=2)
         
-        print(f"\n📄 Detailed analysis saved to: {report_file}")
+        print(f"\n Detailed analysis saved to: {report_file}")
         
     elif result["pipeline_status"] == "inactive_runtime":
-        print("⚠️  Runtime Intelligence visual monitoring not active")
+        print("  Runtime Intelligence visual monitoring not active")
         print("   Start AIOS visual feedback to enable consciousness monitoring")
         
     else:
-        print(f"❌ Pipeline error: {result.get('error', 'Unknown error')}")
+        print(f" Pipeline error: {result.get('error', 'Unknown error')}")
         print(f"   Status: {result['pipeline_status']}")
 
 

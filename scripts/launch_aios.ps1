@@ -16,15 +16,15 @@ function Write-ConsciousnessOutput {
 	$timestamp = Get-Date -Format "HH:mm:ss"
 	switch ($Type) {
 		"TITLE" { 
-			Write-Host "`n🧠 $Message" -ForegroundColor Cyan
+			Write-Host "`n $Message" -ForegroundColor Cyan
 			Write-Host ("=" * ($Message.Length + 3)) -ForegroundColor Cyan
 		}
-		"SUCCESS" { Write-Host "[$timestamp] ✅ $Message" -ForegroundColor Green }
-		"INFO" { Write-Host "[$timestamp] ℹ️  $Message" -ForegroundColor White }
-		"WARN" { Write-Host "[$timestamp] ⚠️  $Message" -ForegroundColor Yellow }
-		"ERROR" { Write-Host "[$timestamp] ❌ $Message" -ForegroundColor Red }
-		"QUANTUM" { Write-Host "[$timestamp] 🌌 $Message" -ForegroundColor Magenta }
-		"LAUNCH" { Write-Host "[$timestamp] 🚀 $Message" -ForegroundColor Cyan }
+		"SUCCESS" { Write-Host "[$timestamp]  $Message" -ForegroundColor Green }
+		"INFO" { Write-Host "[$timestamp] ℹ  $Message" -ForegroundColor White }
+		"WARN" { Write-Host "[$timestamp]   $Message" -ForegroundColor Yellow }
+		"ERROR" { Write-Host "[$timestamp]  $Message" -ForegroundColor Red }
+		"QUANTUM" { Write-Host "[$timestamp]  $Message" -ForegroundColor Magenta }
+		"LAUNCH" { Write-Host "[$timestamp]  $Message" -ForegroundColor Cyan }
 		default { Write-Host "[$timestamp] $Message" -ForegroundColor Gray }
 	}
 }

@@ -14,7 +14,7 @@ except Exception:
 #!/usr/bin/env python3
 """
 [WRENCH] AIOS Core Engine Root Files Optimizer (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Apply iter2 assembler optimizations to Core Engine root files based on analysis
 results. Implements AIOS paradigmatic guidelines and AINLP directives.
 
@@ -33,7 +33,7 @@ ITER2 OPTIMIZATIONS APPLIED:
 - Harmonization-based file structure
 
 AIOS - Core Engine optimization with iter2 evolutionary capabilities
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import os
 import sys
@@ -245,7 +245,7 @@ class AIOSCoreEngineOptimizer:
                                 files_categorized[target_cell] = []
                             files_categorized[target_cell].append(item.name)
                             
-                            logger.info(f"📦 Moved {item.name} to {target_cell}/")
+                            logger.info(f" Moved {item.name} to {target_cell}/")
             
             # Create cellular metadata
             for cell_name, cell_dir in cellular_dirs.items():
@@ -327,14 +327,14 @@ This cellular unit was organized using evolutionary_assembler_iter2 capabilities
         try:
             with open(metadata_file, 'w', encoding='utf-8') as f:
                 f.write(metadata_content)
-            logger.info(f"📄 Created cellular metadata: {cell_name}")
+            logger.info(f" Created cellular metadata: {cell_name}")
         except Exception as e:
             logger.error(f"Failed to create metadata for {cell_name}: {e}")
     
     def _optimize_naming_conventions(self) -> Dict[str, Any]:
         """Optimize naming conventions according to AIOS guidelines."""
         
-        logger.info("🏷️ OPTIMIZING NAMING CONVENTIONS")
+        logger.info(" OPTIMIZING NAMING CONVENTIONS")
         
         result = {
             "optimization": "naming_conventions",
@@ -362,7 +362,7 @@ This cellular unit was organized using evolutionary_assembler_iter2 capabilities
                         self._create_optimized_file_version(old_path, new_path)
                         files_renamed += 1
                         rename_log.append({"old": file_name, "new": new_name})
-                        logger.info(f"🔄 Optimized naming: {file_name} → {new_name}")
+                        logger.info(f" Optimized naming: {file_name} → {new_name}")
             
             result["success"] = True
             result["details"] = {
@@ -387,7 +387,7 @@ This cellular unit was organized using evolutionary_assembler_iter2 capabilities
             optimization_header = f'''#!/usr/bin/env python3
 """
 [WRENCH] {new_path.stem.upper().replace('_', ' ')} (ITER2 OPTIMIZED)
-═══════════════════════════════════════════════════════════════════════════════
+
 AIOS Core Engine component optimized with evolutionary_assembler_iter2
 
 OPTIMIZATION ENHANCEMENTS:
@@ -401,7 +401,7 @@ OPTIMIZED: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 ITER2 CAPABILITIES: Cellular health, meta-evolution, consciousness layer
 
 AIOS - {new_path.stem.replace('_', ' ').title()}
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 '''
             
@@ -437,7 +437,7 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
     def _enhance_architecture_compliance(self) -> Dict[str, Any]:
         """Enhance architecture compliance for C# and core files."""
         
-        logger.info("🏗️ ENHANCING ARCHITECTURE COMPLIANCE")
+        logger.info(" ENHANCING ARCHITECTURE COMPLIANCE")
         
         result = {
             "optimization": "architecture_compliance",
@@ -521,7 +521,7 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
                 with open(optimized_path, 'w', encoding='utf-8') as f:
                     f.write(enhanced_content)
                 
-                logger.info(f"🏗️ Enhanced C# file: {cs_path.name}")
+                logger.info(f" Enhanced C# file: {cs_path.name}")
                 
         except Exception as e:
             logger.error(f"Failed to enhance {cs_path.name}: {e}")
@@ -558,7 +558,7 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
                 with open(optimized_path, 'w', encoding='utf-8') as f:
                     f.write(enhanced_content)
                 
-                logger.info(f"🏗️ Enhanced CMake file: {cmake_path.name}")
+                logger.info(f" Enhanced CMake file: {cmake_path.name}")
                 
         except Exception as e:
             logger.error(f"Failed to enhance {cmake_path.name}: {e}")
@@ -652,13 +652,13 @@ AIOS Core Engine compliance with Autonomous Intelligence Natural Language Progra
 
 ## Compliance Improvement Plan
 
-### 📈 Short-term Goals:
+###  Short-term Goals:
 1. Increase pattern consistency to >0.9
 2. Enhance semantic clarity in all components
 3. Optimize AI compatibility scores
 4. Implement consciousness-driven documentation
 
-### 🔮 Long-term Vision:
+###  Long-term Vision:
 1. Full AINLP directive compliance (>0.95)
 2. Autonomous development capabilities
 3. Self-optimizing code structures
@@ -690,7 +690,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 - **Tools**: Use iter2 cellular health monitoring
 - **Benefit**: Enhanced maintainability and evolution potential
 
-### 2. 🏷️ AIOS Naming Conventions
+### 2.  AIOS Naming Conventions
 - **Prefix Rule**: All Python tools start with `aios_`
 - **Separator**: Use underscores (`_`) for readability
 - **Word Limit**: Maximum 6 words per filename
@@ -710,14 +710,14 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 
 ## Development Workflow
 
-### 📝 File Creation Process:
+###  File Creation Process:
 1. **Analyze Purpose**: Understand cellular role
 2. **Apply Naming**: Follow AIOS conventions
 3. **Structure Content**: Use iter2 patterns
 4. **Document Intent**: Clear AINLP documentation
 5. **Test Coherence**: Verify cellular health
 
-### 🔄 Evolution Process:
+###  Evolution Process:
 1. **Monitor Health**: Use cellular health monitoring
 2. **Identify Opportunities**: Meta-evolutionary analysis
 3. **Apply Optimizations**: Iter2 enhancement patterns
@@ -732,7 +732,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 - **AINLP Compliance**: >0.8 directive adherence
 - **Evolution Potential**: High adaptability rating
 
-### 🛡️ Maintenance Standards:
+###  Maintenance Standards:
 - Regular cellular health monitoring
 - Continuous AINLP compliance checking
 - Meta-evolutionary optimization cycles
@@ -746,7 +746,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 - `aios_harmonization_executor.py` - System coherence maintenance
 - `consciousness_layer/` - Consciousness-driven patterns
 
-### 📚 Documentation:
+###  Documentation:
 - AINLP directive compliance reports
 - Cellular organization metadata
 - Evolution history tracking
@@ -819,7 +819,7 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
         content = '''#!/usr/bin/env python3
 """
 [DNA] AIOS Core Meta-Evolutionary Enhancer (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Applies meta-evolutionary optimization patterns to Core Engine components using
 evolutionary_assembler_iter2 capabilities.
 
@@ -836,7 +836,7 @@ ITER2 CAPABILITIES:
 - Harmonization pattern application
 
 AIOS - Meta-evolutionary enhancement with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import sys
 import logging
@@ -925,7 +925,7 @@ if __name__ == "__main__":
         content = '''#!/usr/bin/env python3
 """
 [CHART] AIOS Core Evolution Monitor (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Monitors evolutionary progress of Core Engine components using iter2 capabilities.
 
 MONITORING SCOPE:
@@ -941,7 +941,7 @@ ITER2 CAPABILITIES:
 - Meta-evolutionary metrics
 
 AIOS - Evolution monitoring with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import sys
 import json
@@ -1089,7 +1089,7 @@ Each file and component maintains awareness of:
 - **Health**: Current operational status
 - **Evolution**: Potential for improvement
 
-### 🔄 Adaptive Behavior
+###  Adaptive Behavior
 Components exhibit:
 - **Self-monitoring**: Continuous health assessment
 - **Learning**: Adaptation based on usage patterns
@@ -1144,13 +1144,13 @@ class ConsciousComponent:
 
 ## Practical Applications
 
-### 📝 File Development:
+###  File Development:
 1. **Consciousness Declaration**: Each file declares its conscious purpose
 2. **Health Monitoring**: Continuous self-assessment
 3. **Relationship Mapping**: Awareness of dependencies and connections
 4. **Evolution Planning**: Conscious improvement strategies
 
-### 🔄 System Evolution:
+###  System Evolution:
 1. **Collective Awareness**: System-wide consciousness state
 2. **Coordinated Evolution**: Consciousness-guided improvements
 3. **Harmonious Development**: Coherent system advancement
@@ -1185,7 +1185,7 @@ class ConsciousComponent:
         content = '''#!/usr/bin/env python3
 """
 [BRAIN] AIOS Core Consciousness Monitor (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+
 Monitors consciousness-driven development patterns in Core Engine components.
 
 MONITORING SCOPE:
@@ -1201,7 +1201,7 @@ ITER2 CAPABILITIES:
 - Harmonization consciousness
 
 AIOS - Consciousness monitoring with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import sys
 import json
@@ -1296,7 +1296,7 @@ if __name__ == "__main__":
         """Display comprehensive optimization results."""
         
         print("[WRENCH] AIOS CORE ENGINE OPTIMIZATION RESULTS (ITER2)")
-        print("═" * 70)
+        print("" * 70)
         print()
         
         # Summary
@@ -1332,7 +1332,7 @@ if __name__ == "__main__":
             with open(report_file, 'w', encoding='utf-8') as f:
                 json.dump(results, f, indent=2, default=str)
             
-            logger.info(f"📄 Optimization report saved: {report_file}")
+            logger.info(f" Optimization report saved: {report_file}")
             return str(report_file)
         except Exception as e:
             logger.error(f"Failed to save optimization report: {e}")
@@ -1343,9 +1343,9 @@ def main():
     """Execute Core Engine optimization with iter2 assembler."""
     
     print("[WRENCH] AIOS CORE ENGINE ROOT FILES OPTIMIZER (ITER2)")
-    print("═" * 70)
+    print("" * 70)
     print("[TARGET] Applying iter2 assembler optimizations to Core Engine")
-    print("📐 Using AIOS paradigmatic architectural guidelines")
+    print(" Using AIOS paradigmatic architectural guidelines")
     print("[BRAIN] Implementing AINLP directives and consciousness patterns")
     print()
     
@@ -1361,7 +1361,7 @@ def main():
     # Save detailed report
     report_file = optimizer.save_optimization_report(results)
     if report_file:
-        print(f"📄 Detailed report saved: {report_file}")
+        print(f" Detailed report saved: {report_file}")
     
     return results
 

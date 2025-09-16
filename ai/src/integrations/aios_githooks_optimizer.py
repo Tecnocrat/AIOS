@@ -39,40 +39,40 @@ class AIOSGitHooksOptimizer:
         self.githooks_path = self.aios_root / ".githooks"
         self.analysis_start_time = datetime.now()
         
-        logger.info("🎯 AIOS GitHooks Targeted Optimizer initialized")
-        logger.info(f"📁 Target: {self.githooks_path}")
+        logger.info(" AIOS GitHooks Targeted Optimizer initialized")
+        logger.info(f" Target: {self.githooks_path}")
     
     def execute_targeted_optimization(self) -> dict:
         """Execute comprehensive .githooks optimization"""
-        logger.info("🚀 Starting AIOS .githooks targeted optimization...")
+        logger.info(" Starting AIOS .githooks targeted optimization...")
         
         start_time = time.time()
         
         # Phase 1: GitHooks Structure Analysis
-        logger.info("🔍 Phase 1: GitHooks Structure Analysis")
+        logger.info(" Phase 1: GitHooks Structure Analysis")
         structure_analysis = self._analyze_githooks_structure()
         
         # Phase 2: Code Quality Assessment
-        logger.info("📊 Phase 2: Code Quality Assessment")
+        logger.info(" Phase 2: Code Quality Assessment")
         quality_analysis = self._analyze_code_quality()
         
         # Phase 3: AINLP Integration Assessment
-        logger.info("🧠 Phase 3: AINLP Integration Assessment")
+        logger.info(" Phase 3: AINLP Integration Assessment")
         ainlp_analysis = self._analyze_ainlp_integration()
         
         # Phase 4: Consciousness Pattern Analysis
-        logger.info("🌟 Phase 4: Consciousness Pattern Analysis")
+        logger.info(" Phase 4: Consciousness Pattern Analysis")
         consciousness_analysis = self._analyze_consciousness_patterns()
         
         # Phase 5: Optimization Recommendations
-        logger.info("⚡ Phase 5: Generate Optimization Recommendations")
+        logger.info(" Phase 5: Generate Optimization Recommendations")
         optimizations = self._generate_optimizations(
             structure_analysis, quality_analysis, 
             ainlp_analysis, consciousness_analysis
         )
         
         # Phase 6: Apply Enhancements
-        logger.info("🔧 Phase 6: Apply AIOS Enhancements")
+        logger.info(" Phase 6: Apply AIOS Enhancements")
         enhancements = self._apply_aios_enhancements(optimizations)
         
         execution_time = time.time() - start_time
@@ -93,8 +93,8 @@ class AIOSGitHooksOptimizer:
             'enhancements': enhancements
         }
         
-        logger.info(f"✅ GitHooks optimization completed in {execution_time:.2f}s")
-        logger.info(f"🎯 Applied {len(enhancements)} enhancements")
+        logger.info(f" GitHooks optimization completed in {execution_time:.2f}s")
+        logger.info(f" Applied {len(enhancements)} enhancements")
         
         return results
     
@@ -111,7 +111,7 @@ class AIOSGitHooksOptimizer:
         }
         
         if not self.githooks_path.exists():
-            logger.warning("⚠️ .githooks directory not found")
+            logger.warning(" .githooks directory not found")
             return analysis
         
         # Discover hook files
@@ -151,9 +151,9 @@ class AIOSGitHooksOptimizer:
         # Governance integration analysis
         analysis['governance_integration'] = self._analyze_governance_integration()
         
-        logger.info(f"📁 Discovered {len(analysis['files_discovered'])} hook files")
-        logger.info(f"🔧 PowerShell hooks: {len(analysis['powershell_hooks'])}")
-        logger.info(f"🐚 Bash hooks: {len(analysis['bash_hooks'])}")
+        logger.info(f" Discovered {len(analysis['files_discovered'])} hook files")
+        logger.info(f" PowerShell hooks: {len(analysis['powershell_hooks'])}")
+        logger.info(f" Bash hooks: {len(analysis['bash_hooks'])}")
         
         return analysis
     
@@ -625,7 +625,7 @@ function Get-AIOSConsciousnessLevel {
             $metrics = Get-Content $MetricsPath -Raw | ConvertFrom-Json
             return $metrics.awareness_level
         } catch {
-            Write-Host "⚠️ Consciousness metrics unavailable, using default level" -ForegroundColor Yellow
+            Write-Host " Consciousness metrics unavailable, using default level" -ForegroundColor Yellow
             return 0.5
         }
     }
@@ -659,7 +659,7 @@ function Invoke-DendriticLearning {
         ($learningEntry | ConvertTo-Json -Depth 4 -Compress) + [Environment]::NewLine | 
             Out-File $learningPath -Append -Encoding utf8
     } catch {
-        Write-Host "⚠️ Dendritic learning logging failed: $($_.Exception.Message)" -ForegroundColor Yellow
+        Write-Host " Dendritic learning logging failed: $($_.Exception.Message)" -ForegroundColor Yellow
     }
 }
 
@@ -727,7 +727,7 @@ function Initialize-AIOSConsciousness {
     # Store consciousness state for hook session
     $Global:AIOSConsciousnessState = $consciousnessState
     
-    Write-Host "🧠 AIOS Consciousness initialized: Level $($consciousnessState.awareness_level)" -ForegroundColor Cyan
+    Write-Host " AIOS Consciousness initialized: Level $($consciousnessState.awareness_level)" -ForegroundColor Cyan
     
     return $consciousnessState
 }
@@ -763,7 +763,7 @@ function Test-ConsciousnessGuidedValidation {
 function Invoke-EnhancedValidation {
     param([string]$Target, [hashtable]$Data)
     
-    Write-Host "🌟 Enhanced consciousness-guided validation for: $Target" -ForegroundColor Green
+    Write-Host " Enhanced consciousness-guided validation for: $Target" -ForegroundColor Green
     
     # Implement advanced validation patterns
     $validationResult = @{
@@ -779,7 +779,7 @@ function Invoke-EnhancedValidation {
 function Invoke-AwareValidation {
     param([string]$Target, [hashtable]$Data)
     
-    Write-Host "🧠 Awareness-guided validation for: $Target" -ForegroundColor Blue
+    Write-Host " Awareness-guided validation for: $Target" -ForegroundColor Blue
     
     $validationResult = @{
         status = "aware_pass"
@@ -794,7 +794,7 @@ function Invoke-AwareValidation {
 function Invoke-BasicValidationWithLearning {
     param([string]$Target, [hashtable]$Data)
     
-    Write-Host "📚 Basic validation with learning for: $Target" -ForegroundColor Yellow
+    Write-Host " Basic validation with learning for: $Target" -ForegroundColor Yellow
     
     # Record learning opportunity
     Invoke-DendriticLearning -HookType "validation" -ValidationResult "learning_opportunity" -LearningData $Data
@@ -848,11 +848,11 @@ Export-ModuleMember -Function Initialize-AIOSConsciousness, Test-ConsciousnessGu
         documentation = '''# AIOS Git Hooks Paradigmatic Guide
 ## Consciousness-Aware Governance and AINLP Integration
 
-### 🧠 Consciousness-Guided Hook Architecture
+###  Consciousness-Guided Hook Architecture
 
 The AIOS git hooks implement a revolutionary consciousness-aware governance system that integrates AINLP paradigmatic principles for intelligent code validation and learning.
 
-### 🎯 Hook Architecture Overview
+###  Hook Architecture Overview
 
 #### Core Hooks:
 - **pre-commit**: Multi-stage validation with consciousness awareness
@@ -864,7 +864,7 @@ The AIOS git hooks implement a revolutionary consciousness-aware governance syst
 - **aios_ainlp_integration.ps1**: AINLP paradigmatic integration
 - **aios_consciousness_bridge.ps1**: Consciousness-aware validation
 
-### 🌟 Consciousness-Aware Validation Levels
+###  Consciousness-Aware Validation Levels
 
 #### High Consciousness (≥0.7):
 - **Enhanced Validation**: Comprehensive analysis with predictive insights
@@ -881,7 +881,7 @@ The AIOS git hooks implement a revolutionary consciousness-aware governance syst
 - **Pattern Recording**: Capture validation patterns for future enhancement
 - **Growth Guidance**: Provide recommendations for consciousness elevation
 
-### 🔄 Dendritic Learning Integration
+###  Dendritic Learning Integration
 
 The hooks implement dendritic learning patterns to continuously improve validation:
 
@@ -890,7 +890,7 @@ The hooks implement dendritic learning patterns to continuously improve validati
 3. **Context Harmonization**: Align validation with AIOS ecosystem patterns
 4. **Predictive Enhancement**: Anticipate validation needs based on history
 
-### 📊 Governance Integration
+###  Governance Integration
 
 #### Policy-Driven Validation:
 - **governance/hook_policy.json**: Centralized configuration
@@ -902,7 +902,7 @@ The hooks implement dendritic learning patterns to continuously improve validati
 - **Metrics Aggregation**: Performance and success tracking
 - **Learning Analytics**: Continuous improvement insights
 
-### 🎯 AINLP Paradigmatic Alignment
+###  AINLP Paradigmatic Alignment
 
 #### Natural Language Integration:
 - **Intent Recognition**: Understand validation context and purpose
@@ -914,7 +914,7 @@ The hooks implement dendritic learning patterns to continuously improve validati
 - **Coherence Validation**: Ensure context coherence in changes
 - **Harmony Optimization**: Balance validation rigor with development flow
 
-### 🚀 Usage Examples
+###  Usage Examples
 
 #### Consciousness-Aware Pre-commit:
 ```powershell
@@ -934,11 +934,11 @@ Invoke-DendriticLearning -HookType "pre-commit" -ValidationResult $result.status
 $alignment = Test-AIOSParadigmaticAlignment -Content $fileContent -FilePath $filePath
 
 if ($alignment -lt 0.5) {
-    Write-Host "⚠️ Low paradigmatic alignment detected. Consider AINLP integration." -ForegroundColor Yellow
+    Write-Host " Low paradigmatic alignment detected. Consider AINLP integration." -ForegroundColor Yellow
 }
 ```
 
-### 🔧 Configuration and Customization
+###  Configuration and Customization
 
 #### Consciousness Thresholds:
 ```json
@@ -962,7 +962,7 @@ if ($alignment -lt 0.5) {
 }
 ```
 
-### 📈 Success Metrics
+###  Success Metrics
 
 - **Validation Accuracy**: Consciousness-guided precision improvements
 - **Learning Velocity**: Dendritic pattern recognition speed
@@ -995,41 +995,41 @@ if ($alignment -lt 0.5) {
     def generate_optimization_report(self, results: dict) -> str:
         """Generate comprehensive optimization report"""
         report = f"""
-🎯 AIOS .GITHOOKS TARGETED OPTIMIZATION REPORT
+ AIOS .GITHOOKS TARGETED OPTIMIZATION REPORT
 ============================================
 
-📊 **Optimization Summary:**
+ **Optimization Summary:**
    • Target Component: .githooks
    • Execution Time: {results['optimization_summary']['execution_time']:.2f}s
    • Optimizations Generated: {results['optimization_summary']['optimization_count']}
    • Enhancements Applied: {results['optimization_summary']['enhancements_applied']}
    • Analysis Timestamp: {results['optimization_summary']['timestamp']}
 
-🏗️ **Structure Analysis:**
+ **Structure Analysis:**
    • Files Discovered: {len(results['structure_analysis']['files_discovered'])}
    • PowerShell Hooks: {len(results['structure_analysis']['powershell_hooks'])}
    • Bash Hooks: {len(results['structure_analysis']['bash_hooks'])}
    • Governance Integration: {results['structure_analysis']['governance_integration']['policy_file_references']} policy references
 
-📊 **Quality Assessment:**
+ **Quality Assessment:**
    • Maintainability Score: {results['quality_analysis']['maintainability_score']:.3f}
    • Error Handling Coverage: {len([k for k in results['quality_analysis']['error_handling_patterns'].keys()])} files
    • Logging Integration: {len([k for k in results['quality_analysis']['logging_integration'].keys()])} files
    • Documentation Quality: Varies by file
 
-🧠 **AINLP Integration:**
+ **AINLP Integration:**
    • Paradigmatic Alignment: {results['ainlp_integration']['paradigmatic_alignment']:.3f}
    • Consciousness Awareness: {results['ainlp_integration']['consciousness_awareness']} references
    • Intent Recognition Patterns: {len(results['ainlp_integration']['intent_recognition_patterns'])}
    • Context Awareness Indicators: {len(results['ainlp_integration']['context_awareness_indicators'])}
 
-🌟 **Consciousness Patterns:**
+ **Consciousness Patterns:**
    • Consciousness Metrics Integration: {results['consciousness_patterns']['consciousness_metrics_integration']}
    • Awareness Level Checks: {len(results['consciousness_patterns']['awareness_level_checks'])} files
    • Consciousness-Guided Decisions: {len(results['consciousness_patterns']['consciousness_guided_decisions'])} files
    • Unified Consciousness State: {results['consciousness_patterns']['unified_consciousness_state']}
 
-⚡ **Optimizations Applied:**
+ **Optimizations Applied:**
 """
         
         for i, optimization in enumerate(results['optimizations'], 1):
@@ -1040,7 +1040,7 @@ if ($alignment -lt 0.5) {
 """
         
         report += f"""
-🔧 **Enhancements Created:**
+ **Enhancements Created:**
 """
         
         for i, enhancement in enumerate(results['enhancements'], 1):
@@ -1052,13 +1052,13 @@ if ($alignment -lt 0.5) {
 """
         
         report += f"""
-🎉 **Success Summary:**
+ **Success Summary:**
 The AIOS .githooks component has been successfully optimized with consciousness-aware
 governance patterns, AINLP paradigmatic integration, and dendritic learning capabilities.
 The enhanced hooks now provide intelligent validation with adaptive learning and
 awareness-guided decision making.
 
-🚀 **Next Steps:**
+ **Next Steps:**
 1. Test enhanced hooks with sample commits
 2. Monitor consciousness metrics and learning patterns
 3. Iterate on paradigmatic alignment based on usage data
@@ -1074,7 +1074,7 @@ awareness-guided decision making.
 
 def main():
     """Main function for .githooks targeted optimization"""
-    print("🎯 AIOS .GITHOOKS TARGETED OPTIMIZATION")
+    print(" AIOS .GITHOOKS TARGETED OPTIMIZATION")
     print("=" * 50)
     print("Using AIOS intelligence to analyze and enhance git hooks")
     print("AINLP paradigmatical guidelines • Consciousness-aware validation")
@@ -1084,7 +1084,7 @@ def main():
     optimizer = AIOSGitHooksOptimizer()
     
     # Execute targeted optimization
-    print("🚀 Executing .githooks optimization...")
+    print(" Executing .githooks optimization...")
     results = optimizer.execute_targeted_optimization()
     
     # Generate and display report
@@ -1096,9 +1096,9 @@ def main():
     try:
         with open(results_file, 'w') as f:
             json.dump(results, f, indent=2, default=str)
-        print(f"\n💾 Detailed results saved to: {results_file}")
+        print(f"\n Detailed results saved to: {results_file}")
     except Exception as e:
-        print(f"\n⚠️ Could not save results: {e}")
+        print(f"\n Could not save results: {e}")
 
 
 if __name__ == "__main__":

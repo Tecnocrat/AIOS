@@ -2,6 +2,31 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "ai-guided-refactoring",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"& '${workspaceFolder}\\.githooks\\modules\\nucleus\\ai_guided_refactoring_engine.ps1' -InteractiveMode"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "AI-guided intelligent refactoring analysis and suggestions",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "python-system-health",
 			"command": "python",
 			"type": "shell",
@@ -323,6 +348,25 @@
 			"args": [
 				"runtime_intelligence/tools/biological_architecture_monitor.py"
 			]
+		},
+		{
+			"label": "ai-context-reminder",
+			"type": "shell",
+			"command": "powershell",
+			"args": ["-File", "${workspaceFolder}/.vscode/ai-context-enforcer.ps1"],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"problemMatcher": []
 		}
 	]
 }

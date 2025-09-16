@@ -80,7 +80,7 @@ class AIOSUniversalCompressor:
             "last_compression": None,
         }
 
-        print("🔧 AIOS Universal Compressor initialized")
+        print(" AIOS Universal Compressor initialized")
         print(f"   Workspace: {self.workspace_root}")
         print(f"   Compression workspace: {self.compression_workspace}")
 
@@ -616,7 +616,7 @@ def cli_interface():
 
     # Output results
     if result.success:
-        print(f"✅ Compression successful!")
+        print(f" Compression successful!")
         print(f"   Compression ratio: {result.compression_ratio:.1%}")
         print(f"   Files processed: {result.files_processed}")
         print(f"   Files merged: {result.files_merged}")
@@ -627,7 +627,7 @@ def cli_interface():
             for module in result.unified_modules:
                 print(f"     - {module}")
     else:
-        print(f"❌ Compression failed: {result.error_message}")
+        print(f" Compression failed: {result.error_message}")
         if result.warnings:
             for warning in result.warnings:
                 print(f"   Warning: {warning}")
@@ -676,18 +676,18 @@ try:
             import win32com.server.register
 
             win32com.server.register.UseCommandLine(AIOSCompressionService)
-            print("✅ COM service registered successfully")
+            print(" COM service registered successfully")
         except ImportError:
-            print("⚠️  pywin32 not available - COM registration skipped")
+            print("  pywin32 not available - COM registration skipped")
         except Exception as e:
-            print(f"❌ COM registration failed: {e}")
+            print(f" COM registration failed: {e}")
 
 except ImportError:
-    print("⚠️  pywin32 not available - COM interface disabled")
+    print("  pywin32 not available - COM interface disabled")
     AIOSCompressionService = None
 
     def register_com_service():
-        print("⚠️  COM service registration skipped - pywin32 not available")
+        print("  COM service registration skipped - pywin32 not available")
 
 
 # ========== MAIN EXECUTION ==========
@@ -698,6 +698,6 @@ if __name__ == "__main__":
     else:
         # Interactive mode
         compressor = AIOSUniversalCompressor()
-        print("🔧 AIOS Universal Compression Toolkit")
+        print(" AIOS Universal Compression Toolkit")
         print("   Ready for compression operations")
         print("   Use compress() method or CLI interface")

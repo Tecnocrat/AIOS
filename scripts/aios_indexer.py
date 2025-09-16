@@ -1,5 +1,5 @@
 # ============================================================
-# 🧠 aios_indexer.py
+#  aios_indexer.py
 # Parses C++/C#/Python modules and generates:
 # - docs/dependency_graph.dot (and .svg)
 # - docs/services_registry.json
@@ -124,10 +124,10 @@ def build_graph(registry: list[dict],
         # Ensure output directory exists
         os.makedirs(os.path.dirname(out_dot), exist_ok=True)
         dot.render(out_dot, format='svg', cleanup=True)
-        print(f"✅ AIOS dependency graph generated: {out_dot} and {out_svg}")
+        print(f" AIOS dependency graph generated: {out_dot} and {out_svg}")
         
     except Exception as e:
-        print(f"❌ Error generating dependency graph: {e}")
+        print(f" Error generating dependency graph: {e}")
 
 
 def save_registry(registry: list[dict], 
@@ -166,10 +166,10 @@ def save_registry(registry: list[dict],
         
         with open(out_json, 'w', encoding='utf-8') as f:
             json.dump(enhanced_registry, f, indent=2)
-        print(f"✅ AIOS service registry saved: {out_json}")
+        print(f" AIOS service registry saved: {out_json}")
         
     except Exception as e:
-        print(f"❌ Error saving service registry: {e}")
+        print(f" Error saving service registry: {e}")
 
 
 if __name__ == '__main__':
@@ -179,17 +179,17 @@ if __name__ == '__main__':
     Orchestrates the complete AIOS service discovery and dependency 
     analysis workflow for AI context harmonization.
     """
-    print("🚀 AIOS Service Discovery & Dependency Analysis")
+    print(" AIOS Service Discovery & Dependency Analysis")
     print("=" * 50)
     
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    print(f"📁 Scanning AIOS base path: {base_path}")
+    print(f" Scanning AIOS base path: {base_path}")
     
     # Execute AIOS discovery workflow
     registry = discover_services(base_path)
-    print(f"🔍 Discovered {len(registry)} services")
+    print(f" Discovered {len(registry)} services")
     
     build_graph(registry)
     save_registry(registry)
     
-    print("✅ AIOS indexing complete - Ready for AI harmonization!")
+    print(" AIOS indexing complete - Ready for AI harmonization!")

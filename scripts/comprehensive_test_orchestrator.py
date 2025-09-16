@@ -61,8 +61,8 @@ class AIosTestOrchestrator:
     def print_phase_header(self, phase_name, description):
         """Print formatted phase header"""
         print(f"\n{'='*80}")
-        print(f"🔬 {phase_name}")
-        print(f"📋 {description}")
+        print(f" {phase_name}")
+        print(f" {description}")
         print(f"{'='*80}\n")
         self.logger.info(f"Starting {phase_name}: {description}")
         
@@ -119,7 +119,7 @@ class AIosTestOrchestrator:
                 phase_results["steps"]["clean"] = f"failed: {str(e)}"
         
         # Step 1.2: CMake Configuration
-        print("⚙️  Step 1.2: CMake configuration...")
+        print("  Step 1.2: CMake configuration...")
         os.makedirs(self.build_path, exist_ok=True)
         cmake_result = self.run_command(
             "cmake .. -DCMAKE_BUILD_TYPE=Debug",
@@ -128,14 +128,14 @@ class AIosTestOrchestrator:
         
         if cmake_result and cmake_result.returncode == 0:
             phase_results["steps"]["cmake_config"] = "success"
-            print("✅ CMake configuration successful")
+            print(" CMake configuration successful")
         else:
             phase_results["steps"]["cmake_config"] = "failed"
-            print("❌ CMake configuration failed")
+            print(" CMake configuration failed")
             self.test_results["errors"].append("CMake configuration failed")
             
         # Step 1.3: Build Core Components
-        print("🔨 Step 1.3: Building core components...")
+        print(" Step 1.3: Building core components...")
         build_result = self.run_command(
             "cmake --build . --target aios_kernel --config Debug --verbose",
             cwd=self.build_path
@@ -143,14 +143,14 @@ class AIosTestOrchestrator:
         
         if build_result and build_result.returncode == 0:
             phase_results["steps"]["build"] = "success"
-            print("✅ Build successful")
+            print(" Build successful")
         else:
             phase_results["steps"]["build"] = "failed"
-            print("❌ Build failed")
+            print(" Build failed")
             self.test_results["errors"].append("Build failed")
             
         # Step 1.4: Validate Dependencies
-        print("📦 Step 1.4: Validating dependencies...")
+        print(" Step 1.4: Validating dependencies...")
         self.validate_dependencies()
         phase_results["steps"]["dependencies"] = "checked"
         
@@ -172,9 +172,9 @@ class AIosTestOrchestrator:
         for header in required_headers:
             header_file = include_path / header
             if header_file.exists():
-                print(f"✅ Found: {header}")
+                print(f" Found: {header}")
             else:
-                print(f"❌ Missing: {header}")
+                print(f" Missing: {header}")
                 self.test_results["errors"].append(f"Missing header: {header}")
                 
     def phase_2_execution_testing(self):
@@ -197,15 +197,15 @@ class AIosTestOrchestrator:
             exe_path = release_exe
             
         if not exe_path:
-            print("❌ No executable found. Build must complete successfully first.")
+            print(" No executable found. Build must complete successfully first.")
             phase_results["status"] = "skipped - no executable"
             self.test_results["phases"]["execution_testing"] = phase_results
             return
             
-        print(f"🚀 Found executable: {exe_path}")
+        print(f" Found executable: {exe_path}")
         
         # Step 2.1: Basic Initialization Test
-        print("🔄 Step 2.1: Basic initialization test...")
+        print(" Step 2.1: Basic initialization test...")
         
         # Run with timeout to prevent infinite loops
         init_result = self.run_command(str(exe_path), timeout=30)
@@ -233,10 +233,10 @@ class AIosTestOrchestrator:
                 "total_expected": len(init_indicators)
             }
             
-            print(f"✅ Found {len(found_indicators)}/{len(init_indicators)} initialization indicators")
+            print(f" Found {len(found_indicators)}/{len(init_indicators)} initialization indicators")
             
         # Step 2.2: Monitor Archive Generation
-        print("📁 Step 2.2: Monitoring archive generation...")
+        print(" Step 2.2: Monitoring archive generation...")
         self.monitor_archive_generation()
         phase_results["steps"]["archive_monitoring"] = "completed"
         
@@ -252,8 +252,8 @@ class AIosTestOrchestrator:
         existing_logs = list(self.archive_path.glob("*.log"))
         existing_diagnostics = list(self.archive_path.glob("*.json"))
         
-        print(f"📊 Found {len(existing_logs)} log files")
-        print(f"📊 Found {len(existing_diagnostics)} diagnostic files")
+        print(f" Found {len(existing_logs)} log files")
+        print(f" Found {len(existing_diagnostics)} diagnostic files")
         
         # Validate latest diagnostic content
         if existing_diagnostics:
@@ -275,13 +275,13 @@ class AIosTestOrchestrator:
             ]
             
             found_keys = [key for key in expected_keys if key in data]
-            print(f"📊 Diagnostic validation: {len(found_keys)}/{len(expected_keys)} required sections found")
+            print(f" Diagnostic validation: {len(found_keys)}/{len(expected_keys)} required sections found")
             
             # Extract consciousness metrics for analysis
             if "consciousness" in data:
                 consciousness_data = data["consciousness"]
                 self.test_results["consciousness_metrics"] = consciousness_data
-                print(f"🧠 Consciousness Metrics: {consciousness_data}")
+                print(f" Consciousness Metrics: {consciousness_data}")
                 
         except Exception as e:
             self.logger.error(f"Failed to validate diagnostic: {str(e)}")
@@ -296,7 +296,7 @@ class AIosTestOrchestrator:
         phase_results = {"status": "started", "validations": {}}
         
         # Step 3.1: Log File Structure Validation
-        print("📝 Step 3.1: Log file structure validation...")
+        print(" Step 3.1: Log file structure validation...")
         
         log_files = list(self.archive_path.glob("*.log"))
         json_files = list(self.archive_path.glob("*.json"))
@@ -311,7 +311,7 @@ class AIosTestOrchestrator:
         phase_results["validations"]["structure"] = structure_validation
         
         # Step 3.2: Content Quality Validation
-        print("🔍 Step 3.2: Content quality validation...")
+        print(" Step 3.2: Content quality validation...")
         
         if json_files:
             latest_json = max(json_files, key=os.path.getctime)
@@ -319,7 +319,7 @@ class AIosTestOrchestrator:
             phase_results["validations"]["content"] = content_validation
             
         # Step 3.3: Metadata Abstraction Layer Test
-        print("🗂️  Step 3.3: Testing metadata abstraction layer...")
+        print("  Step 3.3: Testing metadata abstraction layer...")
         abstraction_results = self.test_metadata_abstraction()
         phase_results["validations"]["abstraction"] = abstraction_results
         
@@ -360,7 +360,7 @@ class AIosTestOrchestrator:
             
     def test_metadata_abstraction(self):
         """Test intelligent metadata abstraction and garbage collection"""
-        print("🤖 Testing intelligent metadata abstraction...")
+        print(" Testing intelligent metadata abstraction...")
         
         abstraction_results = {
             "abstraction_layers_detected": 0,
@@ -405,20 +405,20 @@ class AIosTestOrchestrator:
         phase_results = {"status": "started", "debug_checks": {}}
         
         # Step 4.1: Memory and Resource Analysis
-        print("🔍 Step 4.1: Memory and resource analysis...")
+        print(" Step 4.1: Memory and resource analysis...")
         
         # Check for memory-related errors in logs
         memory_issues = self.analyze_memory_patterns()
         phase_results["debug_checks"]["memory_analysis"] = memory_issues
         
         # Step 4.2: Consciousness Coherence Validation
-        print("🧠 Step 4.2: Consciousness coherence validation...")
+        print(" Step 4.2: Consciousness coherence validation...")
         
         coherence_metrics = self.validate_consciousness_coherence()
         phase_results["debug_checks"]["consciousness_coherence"] = coherence_metrics
         
         # Step 4.3: Error Pattern Detection
-        print("⚠️  Step 4.3: Error pattern detection...")
+        print("  Step 4.3: Error pattern detection...")
         
         error_patterns = self.detect_error_patterns()
         phase_results["debug_checks"]["error_patterns"] = error_patterns
@@ -560,7 +560,7 @@ class AIosTestOrchestrator:
         
         success_rate = successful_phases / total_phases if total_phases > 0 else 0
         
-        print(f"📊 Overall Success Rate: {success_rate:.2%} ({successful_phases}/{total_phases} phases)")
+        print(f" Overall Success Rate: {success_rate:.2%} ({successful_phases}/{total_phases} phases)")
         
         # Generate recommendations based on results
         if len(self.test_results["errors"]) > 0:
@@ -583,22 +583,22 @@ class AIosTestOrchestrator:
         with open(report_file, 'w') as f:
             json.dump(report, f, indent=2)
             
-        print(f"📝 Test report saved: {report_file}")
+        print(f" Test report saved: {report_file}")
         
         # Print summary
-        print("\n🎯 KEY FINDINGS:")
+        print("\n KEY FINDINGS:")
         for error in self.test_results["errors"][:5]:  # Show first 5 errors
-            print(f"   ❌ {error}")
+            print(f"    {error}")
             
-        print("\n🔬 CONSCIOUSNESS STATUS:")
-        print(f"   🧠 Status: {report['consciousness_status']}")
+        print("\n CONSCIOUSNESS STATUS:")
+        print(f"    Status: {report['consciousness_status']}")
         if "consciousness_metrics" in self.test_results:
             for key, value in self.test_results["consciousness_metrics"].items():
-                print(f"   📊 {key}: {value}")
+                print(f"    {key}: {value}")
                 
-        print("\n💡 RECOMMENDATIONS:")
+        print("\n RECOMMENDATIONS:")
         for rec in report["recommendations"]:
-            print(f"   ➡️  {rec}")
+            print(f"     {rec}")
             
         return report
         
@@ -623,17 +623,17 @@ Testing consciousness emergence, build validation, and system integration.
             self.generate_final_report()
             
         except KeyboardInterrupt:
-            print("\n⚠️  Test orchestration interrupted by user")
+            print("\n  Test orchestration interrupted by user")
             self.logger.warning("Test orchestration interrupted")
             
         except Exception as e:
-            print(f"\n❌ Test orchestration failed: {str(e)}")
+            print(f"\n Test orchestration failed: {str(e)}")
             self.logger.error(f"Test orchestration failed: {str(e)}")
             
         finally:
             end_time = time.time()
             duration = end_time - start_time
-            print(f"\n⏱️  Total test duration: {duration:.2f} seconds")
+            print(f"\n⏱  Total test duration: {duration:.2f} seconds")
             self.logger.info(f"Test orchestration completed in {duration:.2f} seconds")
 
 def main():
@@ -671,7 +671,7 @@ Phases:
         elif phase_num == 4:
             orchestrator.phase_4_debugging_validation()
         else:
-            print("❌ Invalid phase number. Use 1-4.")
+            print(" Invalid phase number. Use 1-4.")
     else:
         # Run complete test orchestration
         orchestrator.run_comprehensive_test()
