@@ -1,0 +1,204 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:06.497545",
+  "folder_info": {
+    "name": "AINLP",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\AINLP",
+    "relative_path": "docs\\AINLP",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "docs",
+      "AINLP"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS",
+      "ARCHITECTURE_PATTERNS",
+      "Architect",
+      "ai-context",
+      "ai_agent_demo_docs",
+      "analysis",
+      "archive",
+      "changelog",
+      "chatgpt",
+      "chatgpt_integration",
+      "consciousness",
+      "metabolized_archive",
+      "reports",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "ui",
+      "unified_backups",
+      "vscopilot chat"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 88483,
+      "file_count": 7,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AINLP_DOCUMENTATION_MANAGEMENT_STRATEGY.md",
+          "size": 10198,
+          "modified": "2025-09-15T22:30:20.513321",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_HUMAN.md",
+          "size": 27045,
+          "modified": "2025-09-15T22:30:22.184088",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_KERNEL_TOOLING_LOCATION_ANALYSIS.md",
+          "size": 7831,
+          "modified": "2025-09-15T22:30:22.781421",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_NEXTGEN_DOCUMENTATION_DISTILLATION.md",
+          "size": 11656,
+          "modified": "2025-09-15T22:30:23.292670",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_SPECIFICATION.md",
+          "size": 22163,
+          "modified": "2025-09-15T22:30:24.276260",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_PARADIGM_FOUNDATION.md",
+          "size": 7968,
+          "modified": "2025-09-15T22:30:24.741613",
+          "category": "documentation"
+        }
+      ],
+      ".ainlp": [
+        {
+          "name": "cmd.ainlp",
+          "size": 1622,
+          "modified": "2025-08-02T17:33:13.872334",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "CONSCIOUSNESS_PARADIGM_FOUNDATION.md",
+        "size": 7968,
+        "modified": "2025-09-15T22:30:24.741613",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "CONSCIOUSNESS_PARADIGM_FOUNDATION.md",
+        "size": 7968,
+        "modified": "2025-09-15T22:30:24.741613",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_SPECIFICATION.md",
+        "size": 22163,
+        "modified": "2025-09-15T22:30:24.276260",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_NEXTGEN_DOCUMENTATION_DISTILLATION.md",
+        "size": 11656,
+        "modified": "2025-09-15T22:30:23.292670",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_KERNEL_TOOLING_LOCATION_ANALYSIS.md",
+        "size": 7831,
+        "modified": "2025-09-15T22:30:22.781421",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_HUMAN.md",
+        "size": 27045,
+        "modified": "2025-09-15T22:30:22.184088",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_DOCUMENTATION_MANAGEMENT_STRATEGY.md",
+        "size": 10198,
+        "modified": "2025-09-15T22:30:20.513321",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".md",
+        ".ainlp"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 6,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 70,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > AINLP",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AINLP' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AINLP' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AINLP' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "ai\\nucleus\\src\\ainlp_migration"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:31:00.391079",
+  "folder_info": {
+    "name": "legacy",
+    "absolute_path": "C:\\dev\\AIOS\\scripts\\legacy",
+    "relative_path": "scripts\\legacy",
+    "parent_path": "scripts",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "scripts",
+      "legacy"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "consciousness_patterns",
+      "orchestration"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 672,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "tiny"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "test_opencv_aios_integration.py",
+          "size": 672,
+          "modified": "2025-09-14T04:48:48.600493",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "test_opencv_aios_integration.py",
+        "size": 672,
+        "modified": "2025-09-14T04:48:48.600493",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "test_opencv_aios_integration.py",
+        "size": 672,
+        "modified": "2025-09-14T04:48:48.600493",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "scripts > legacy",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\scripts\\legacy' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\scripts\\legacy' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\scripts\\legacy' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "scripts",
+      "aios_env\\Scripts",
+      "ai\\cytoplasm\\scripts",
+      "ai\\laboratory\\scripts",
+      "core\\assemblers\\tree_assembler\\scripts_py_optimized",
+      "core\\legacy_consciousness_backup"
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:31:47.984008",
+  "folder_info": {
+    "name": "src",
+    "absolute_path": "C:\\dev\\AIOS\\vscode-extension\\src",
+    "relative_path": "vscode-extension\\src",
+    "parent_path": "vscode-extension",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "vscode-extension",
+      "src"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "dist",
+      "docs",
+      "node_modules"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 46934,
+      "file_count": 5,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".ts": [
+        {
+          "name": "aiosBridge.ts",
+          "size": 19997,
+          "modified": "2025-09-15T22:02:31.317843",
+          "category": "other"
+        },
+        {
+          "name": "chatParticipant.ts",
+          "size": 7168,
+          "modified": "2025-08-02T17:33:14.078542",
+          "category": "other"
+        },
+        {
+          "name": "contextManager.ts",
+          "size": 11660,
+          "modified": "2025-08-02T17:33:14.081255",
+          "category": "other"
+        },
+        {
+          "name": "extension.ts",
+          "size": 5815,
+          "modified": "2025-08-02T17:33:14.083254",
+          "category": "other"
+        },
+        {
+          "name": "logger.ts",
+          "size": 2294,
+          "modified": "2025-08-02T17:33:14.084254",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aiosBridge.ts",
+        "size": 19997,
+        "modified": "2025-09-15T22:02:31.317843",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "aiosBridge.ts",
+        "size": 19997,
+        "modified": "2025-09-15T22:02:31.317843",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".ts"
+      ],
+      "dominant_type": ".ts"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "vscode-extension > src",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\vscode-extension\\src' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\vscode-extension\\src' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\vscode-extension\\src' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "vscode-extension",
+      "ai\\src",
+      "core\\src",
+      "orchestrator\\src",
+      "ai\\nucleus\\src"
+    ]
+  }
+}

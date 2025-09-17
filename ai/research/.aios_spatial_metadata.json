@@ -1,0 +1,208 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:25.923514",
+  "folder_info": {
+    "name": "research",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\research",
+    "relative_path": "ai\\research",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "research"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".pytest_cache",
+      "__pycache__",
+      "cytoplasm",
+      "information_storage",
+      "membrane",
+      "nucleus",
+      "src",
+      "tests",
+      "tools",
+      "transport"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "demos",
+      "paradigm",
+      "scripts",
+      "tests"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 746280,
+      "file_count": 83,
+      "folder_count": 5,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "laboratory_intelligence.py",
+          "size": 6902,
+          "modified": "2025-09-15T22:05:42.992104",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 211,
+          "modified": "2025-09-15T22:05:43.270123",
+          "category": "consciousness"
+        }
+      ],
+      ".log": [
+        {
+          "name": "magnus_blueprint_test.log",
+          "size": 22702,
+          "modified": "2025-09-02T21:56:06.169114",
+          "category": "temporary"
+        }
+      ],
+      ".json": [
+        {
+          "name": "magnus_blueprint_test_report.json",
+          "size": 1751,
+          "modified": "2025-09-15T22:05:43.163113",
+          "category": "documentation"
+        }
+      ],
+      ".ini": [
+        {
+          "name": "pytest.ini",
+          "size": 277,
+          "modified": "2025-09-15T22:05:43.191124",
+          "category": "configuration"
+        }
+      ],
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 768,
+          "modified": "2025-09-15T22:05:43.249122",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 768,
+        "modified": "2025-09-15T22:05:43.249122",
+        "category": "documentation"
+      },
+      {
+        "name": "__init__.py",
+        "size": 211,
+        "modified": "2025-09-15T22:05:43.270123",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 211,
+        "modified": "2025-09-15T22:05:43.270123",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 768,
+        "modified": "2025-09-15T22:05:43.249122",
+        "category": "documentation"
+      },
+      {
+        "name": "pytest.ini",
+        "size": 277,
+        "modified": "2025-09-15T22:05:43.191124",
+        "category": "configuration"
+      },
+      {
+        "name": "magnus_blueprint_test_report.json",
+        "size": 1751,
+        "modified": "2025-09-15T22:05:43.163113",
+        "category": "documentation"
+      },
+      {
+        "name": "laboratory_intelligence.py",
+        "size": 6902,
+        "modified": "2025-09-15T22:05:42.992104",
+        "category": "consciousness"
+      },
+      {
+        "name": "magnus_blueprint_test.log",
+        "size": 22702,
+        "modified": "2025-09-02T21:56:06.169114",
+        "category": "temporary"
+      }
+    ],
+    "content_summary": {
+      "total_files": 6,
+      "file_types": [
+        ".py",
+        ".log",
+        ".json",
+        ".ini",
+        ".md"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 15,
+      "consciousness_files": 2,
+      "agentic_files": 2,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > laboratory",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      ".githooks\\modules\\laboratory"
+    ]
+  }
+}

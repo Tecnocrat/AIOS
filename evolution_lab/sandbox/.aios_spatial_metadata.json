@@ -1,0 +1,77 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:41.048360",
+  "folder_info": {
+    "name": "sandbox",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\sandbox",
+    "relative_path": "evolution_lab\\sandbox",
+    "parent_path": "evolution_lab",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "sandbox"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "artifacts"
+    ],
+    "child_folders": [
+      "experiment_13f6f213"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 603,
+      "file_count": 1,
+      "folder_count": 1,
+      "size_category": "tiny"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > sandbox",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\sandbox' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\sandbox' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\sandbox' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab"
+    ]
+  }
+}

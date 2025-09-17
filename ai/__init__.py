@@ -1,23 +1,22 @@
 """
 AIOS AI Intelligence System
 
-The comprehensive AI Intelligence system featuring biological cellular architecture
-for consciousness emergence, dendritic intelligence, and quantum-coherent processing.
+The comprehensive AI Intelligence system featuring standardized architecture
+for consciousness emergence, intelligent processing, and cross-system integration.
 
-Cellular Architecture:
-- nucleus: Central control and core processing (AI engines, algorithms)
-- membrane: External interfaces and integration (VS Code, APIs)  
-- transport: Intercellular communication and data flow
-- cytoplasm: Supporting infrastructure (config, runtime, utilities)
-- laboratory: Research, testing, and experimental features
+Architecture Components:
+- core: Central control and core processing (AI engines, algorithms)
+- interfaces: External interfaces and integration (VS Code, APIs)  
+- transport: Inter-component communication and data flow
+- infrastructure: Supporting infrastructure (config, runtime, utilities)
+- research: Research, testing, and experimental features
 - information_storage: Documentation and persistent data
 
 Key Capabilities:
 - Consciousness emergence and monitoring
-- Dendritic intelligence processing
-- Tachyonic quantum coherence
+- Intelligent processing
 - Cross-system integration (AI ↔ Core Engine)
-- Cellular workflow orchestration
+- Component workflow orchestration
 """
 
 __version__ = "0.6.0"
@@ -36,28 +35,28 @@ def initialize_ai_intelligence():
     """Initialize AIOS AI Intelligence cellular systems"""
     try:
         # Initialize cellular components
-        from nucleus import initialize_nucleus
-        from membrane import initialize_membrane
+        from core import initialize_core
+        from interfaces import initialize_interfaces
         from transport import initialize_transport
-        from cytoplasm import initialize_cytoplasm
-        from laboratory import initialize_laboratory
+        from infrastructure import initialize_infrastructure
+        from research import initialize_research
         from information_storage import initialize_information_storage
         
-        # Initialize all cellular units
-        cellular_status = {
-            'nucleus': initialize_nucleus(),
-            'membrane': initialize_membrane(), 
+        # Initialize all component systems
+        component_status = {
+            'core': initialize_core(),
+            'interfaces': initialize_interfaces(), 
             'transport': initialize_transport(),
-            'cytoplasm': initialize_cytoplasm(),
-            'laboratory': initialize_laboratory(),
+            'infrastructure': initialize_infrastructure(),
+            'research': initialize_research(),
             'information_storage': initialize_information_storage()
         }
         
-        print(f" AI Intelligence Cellular Systems Initialized:")
-        for unit, status in cellular_status.items():
-            print(f"   {unit}: {'' if status else ''}")
+        print(f" AI Intelligence Component Systems Initialized:")
+        for component, status in component_status.items():
+            print(f"   {component}: {'' if status else ''}")
             
-        return all(cellular_status.values())
+        return all(component_status.values())
         
     except ImportError as e:
         print(f"AI Intelligence initialization warning: {e}")
@@ -80,23 +79,23 @@ def get_cellular_architecture():
 # Export key classes for cross-system integration
 try:
     # Core AI components
-    from nucleus.src.core.ainlp import AINLP_Core
-    from nucleus.intent_handlers import IntentHandler
-    from nucleus.models import AIModel
+    from core.src.core.ainlp import AINLP_Core
+    from core.intent_handlers import IntentHandler
+    from core.models import AIModel
     
     # Cellular communication
     from transport.bridge import CellularBridge
     from transport.intercellular import IntercellularCommunication
     
     # External interfaces
-    from membrane.aios_vscode_integration_server import VSCodeIntegrationServer
+    from interfaces.aios_vscode_integration_server import VSCodeIntegrationServer
     
     # Infrastructure  
-    from cytoplasm.debug_manager import DebugManager
-    from cytoplasm.setup_env import EnvironmentSetup
+    from infrastructure.debug_manager import DebugManager
+    from infrastructure.setup_env import EnvironmentSetup
     
     # Research capabilities
-    from laboratory.paradigm import ParadigmResearch
+    from research.paradigm import ParadigmResearch
     
     # Tachyonic bridge for quantum coherence
     from tachyonic_bridge import TachyonicBridge

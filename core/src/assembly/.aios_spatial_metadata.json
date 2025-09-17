@@ -1,0 +1,115 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:10.952636",
+  "folder_info": {
+    "name": "assembly",
+    "absolute_path": "C:\\dev\\AIOS\\core\\src\\assembly",
+    "relative_path": "core\\src\\assembly",
+    "parent_path": "core\\src",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "src",
+      "assembly"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "asm"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 3844,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".asm": [
+        {
+          "name": "matrix_operations.asm",
+          "size": 1573,
+          "modified": "2025-09-06T16:42:22.901364",
+          "category": "other"
+        },
+        {
+          "name": "vector_operations.asm",
+          "size": 2271,
+          "modified": "2025-09-06T16:42:22.905363",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "vector_operations.asm",
+        "size": 2271,
+        "modified": "2025-09-06T16:42:22.905363",
+        "category": "other"
+      },
+      {
+        "name": "matrix_operations.asm",
+        "size": 1573,
+        "modified": "2025-09-06T16:42:22.901364",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".asm"
+      ],
+      "dominant_type": ".asm"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > src > assembly",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src\\assembly' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src\\assembly' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src\\assembly' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "ai\\src"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

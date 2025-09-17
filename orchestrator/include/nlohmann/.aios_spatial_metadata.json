@@ -1,0 +1,93 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:41:23.458734",
+  "folder_info": {
+    "name": "nlohmann",
+    "absolute_path": "C:\\dev\\AIOS\\orchestrator\\include\\nlohmann",
+    "relative_path": "orchestrator\\include\\nlohmann",
+    "parent_path": "orchestrator\\include",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "orchestrator",
+      "include",
+      "nlohmann"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 984946,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".hpp": [
+        {
+          "name": "json.hpp",
+          "size": 984946,
+          "modified": "2025-08-02T17:32:45.431389",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".hpp"
+      ],
+      "dominant_type": ".hpp"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "orchestrator > include > nlohmann",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\orchestrator\\include\\nlohmann' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\orchestrator\\include\\nlohmann' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\orchestrator\\include\\nlohmann' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "orchestrator",
+      "core\\include",
+      "orchestrator\\include",
+      "core\\core_systems\\include",
+      "vscode-extension\\node_modules\\lodash.includes"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

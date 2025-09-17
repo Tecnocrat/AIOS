@@ -1,0 +1,594 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:48.400622",
+  "folder_info": {
+    "name": "scripts",
+    "absolute_path": "C:\\dev\\AIOS\\scripts",
+    "relative_path": "scripts",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "scripts"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "consciousness_patterns",
+      "legacy",
+      "orchestration"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 1134669,
+      "file_count": 73,
+      "folder_count": 4,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".ps1": [
+        {
+          "name": "advanced_aios_automation.ps1",
+          "size": 28347,
+          "modified": "2025-09-15T22:02:19.634613",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_powershell_automation.ps1",
+          "size": 28477,
+          "modified": "2025-09-15T22:02:19.681614",
+          "category": "consciousness"
+        },
+        {
+          "name": "comprehensive_test_orchestrator.ps1",
+          "size": 30152,
+          "modified": "2025-09-15T22:02:19.748612",
+          "category": "consciousness"
+        },
+        {
+          "name": "dev_terminal.ps1",
+          "size": 21637,
+          "modified": "2025-09-15T22:02:19.825613",
+          "category": "consciousness"
+        },
+        {
+          "name": "generate_folder_structure.ps1",
+          "size": 3759,
+          "modified": "2025-08-15T13:30:15.318777",
+          "category": "consciousness"
+        },
+        {
+          "name": "install_ai_stacks.ps1",
+          "size": 1396,
+          "modified": "2025-08-15T17:45:11.900602",
+          "category": "consciousness"
+        },
+        {
+          "name": "install_git_hooks.ps1",
+          "size": 2240,
+          "modified": "2025-08-19T11:50:54.862868",
+          "category": "consciousness"
+        },
+        {
+          "name": "launch_aios.ps1",
+          "size": 8866,
+          "modified": "2025-09-15T22:02:20.026614",
+          "category": "consciousness"
+        },
+        {
+          "name": "launch_aios_integrated.ps1",
+          "size": 3478,
+          "modified": "2025-09-15T22:02:20.068614",
+          "category": "consciousness"
+        },
+        {
+          "name": "refresh_locks.ps1",
+          "size": 1860,
+          "modified": "2025-08-15T22:42:34.703714",
+          "category": "consciousness"
+        },
+        {
+          "name": "root_clutter_guard.ps1",
+          "size": 2317,
+          "modified": "2025-08-15T15:34:58.765256",
+          "category": "consciousness"
+        },
+        {
+          "name": "setup_env.ps1",
+          "size": 9329,
+          "modified": "2025-09-15T22:02:20.300612",
+          "category": "consciousness"
+        },
+        {
+          "name": "simple_test_orchestrator.ps1",
+          "size": 8298,
+          "modified": "2025-08-02T17:32:45.507422",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_process_cleanup.ps1",
+          "size": 2811,
+          "modified": "2025-09-15T22:02:20.381633",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_realtime_intelligence.ps1",
+          "size": 3972,
+          "modified": "2025-09-16T22:04:52.226922",
+          "category": "consciousness"
+        },
+        {
+          "name": "verify_and_purge_safety_docs.ps1",
+          "size": 612,
+          "modified": "2025-08-14T19:32:37.723686",
+          "category": "consciousness"
+        },
+        {
+          "name": "verify_and_purge_safety_protocol.ps1",
+          "size": 673,
+          "modified": "2025-08-14T19:15:30.280476",
+          "category": "consciousness"
+        }
+      ],
+      ".py": [
+        {
+          "name": "aios_indexer.py",
+          "size": 7586,
+          "modified": "2025-09-15T22:02:19.638613",
+          "category": "consciousness"
+        },
+        {
+          "name": "ai_integration_bridge.py",
+          "size": 31302,
+          "modified": "2025-08-02T17:32:45.470275",
+          "category": "consciousness"
+        },
+        {
+          "name": "ai_knowledge_transfer.py",
+          "size": 28789,
+          "modified": "2025-09-15T22:02:19.694613",
+          "category": "consciousness"
+        },
+        {
+          "name": "artifact_factory.py",
+          "size": 23964,
+          "modified": "2025-08-02T17:32:45.476297",
+          "category": "consciousness"
+        },
+        {
+          "name": "code_ingestor.py",
+          "size": 24443,
+          "modified": "2025-09-15T22:02:19.707615",
+          "category": "consciousness"
+        },
+        {
+          "name": "comprehensive_test_orchestrator.py",
+          "size": 28194,
+          "modified": "2025-09-15T22:02:19.761613",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_foundation.py",
+          "size": 6132,
+          "modified": "2025-09-15T22:02:19.765613",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_mcp_server.py",
+          "size": 20800,
+          "modified": "2025-08-02T17:32:45.482081",
+          "category": "consciousness"
+        },
+        {
+          "name": "context_crystallization_engine.py",
+          "size": 32401,
+          "modified": "2025-09-15T22:02:19.779614",
+          "category": "consciousness"
+        },
+        {
+          "name": "context_reindex.py",
+          "size": 10270,
+          "modified": "2025-08-16T15:03:39.432509",
+          "category": "consciousness"
+        },
+        {
+          "name": "enhanced_artifact_ingestor.py",
+          "size": 27647,
+          "modified": "2025-08-02T17:32:45.484092",
+          "category": "consciousness"
+        },
+        {
+          "name": "evolutionary_code_mutator.py",
+          "size": 30170,
+          "modified": "2025-09-15T22:02:19.838614",
+          "category": "consciousness"
+        },
+        {
+          "name": "evolution_lab_manager.py",
+          "size": 25297,
+          "modified": "2025-09-15T22:02:19.850614",
+          "category": "consciousness"
+        },
+        {
+          "name": "gemini_cli_bridge.py",
+          "size": 25625,
+          "modified": "2025-09-15T22:02:19.858614",
+          "category": "consciousness"
+        },
+        {
+          "name": "generate_status_capsule.py",
+          "size": 11031,
+          "modified": "2025-08-16T23:27:26.970236",
+          "category": "consciousness"
+        },
+        {
+          "name": "launch_quantum_interfaces.py",
+          "size": 7300,
+          "modified": "2025-09-15T22:02:20.079613",
+          "category": "consciousness"
+        },
+        {
+          "name": "magnus_component_registry.py",
+          "size": 2456,
+          "modified": "2025-08-16T15:03:39.439510",
+          "category": "consciousness"
+        },
+        {
+          "name": "main.py",
+          "size": 6313,
+          "modified": "2025-09-16T07:53:50.047810",
+          "category": "consciousness"
+        },
+        {
+          "name": "master_test_executor.py",
+          "size": 30474,
+          "modified": "2025-09-15T22:02:20.093613",
+          "category": "consciousness"
+        },
+        {
+          "name": "opencv_vision_module.py",
+          "size": 25496,
+          "modified": "2025-09-15T22:02:20.101614",
+          "category": "consciousness"
+        },
+        {
+          "name": "parallel_reality_manager.py",
+          "size": 32705,
+          "modified": "2025-09-15T22:02:20.112612",
+          "category": "consciousness"
+        },
+        {
+          "name": "quantum_code_ingestor.py",
+          "size": 39063,
+          "modified": "2025-09-15T22:02:20.130615",
+          "category": "consciousness"
+        },
+        {
+          "name": "quantum_consciousness_canvas.py",
+          "size": 35555,
+          "modified": "2025-09-15T22:02:20.148616",
+          "category": "consciousness"
+        },
+        {
+          "name": "real_ai_lint_fixer.py",
+          "size": 8729,
+          "modified": "2025-09-15T22:02:20.154614",
+          "category": "consciousness"
+        },
+        {
+          "name": "remove_emoticons.py",
+          "size": 10286,
+          "modified": "2025-09-15T22:22:13.370318",
+          "category": "consciousness"
+        },
+        {
+          "name": "runtime_intelligence.py",
+          "size": 37529,
+          "modified": "2025-09-15T22:02:20.254612",
+          "category": "consciousness"
+        },
+        {
+          "name": "run_full_system_validation.py",
+          "size": 30556,
+          "modified": "2025-08-17T05:26:59.117836",
+          "category": "consciousness"
+        },
+        {
+          "name": "safety_gateway.py",
+          "size": 3027,
+          "modified": "2025-08-14T19:44:05.055756",
+          "category": "consciousness"
+        },
+        {
+          "name": "safety_governor.py",
+          "size": 24135,
+          "modified": "2025-09-15T22:02:20.264610",
+          "category": "consciousness"
+        },
+        {
+          "name": "safety_validate.py",
+          "size": 2006,
+          "modified": "2025-08-15T08:26:52.470100",
+          "category": "consciousness"
+        },
+        {
+          "name": "sem.py",
+          "size": 1719,
+          "modified": "2025-08-02T17:32:45.505414",
+          "category": "consciousness"
+        },
+        {
+          "name": "taxonomy_extraction.py",
+          "size": 9963,
+          "modified": "2025-08-17T06:52:23.392707",
+          "category": "consciousness"
+        },
+        {
+          "name": "universal_logging.py",
+          "size": 9062,
+          "modified": "2025-09-15T22:02:20.390615",
+          "category": "consciousness"
+        },
+        {
+          "name": "universal_logging_v2.py",
+          "size": 16043,
+          "modified": "2025-09-15T22:02:20.400619",
+          "category": "consciousness"
+        },
+        {
+          "name": "validate_stability.py",
+          "size": 5133,
+          "modified": "2025-09-15T22:02:20.405614",
+          "category": "consciousness"
+        }
+      ],
+      ".bat": [
+        {
+          "name": "launch-aios-workspace.bat",
+          "size": 363,
+          "modified": "2025-09-15T22:53:24.733815",
+          "category": "executable"
+        }
+      ],
+      ".log": [
+        {
+          "name": "magnus_blueprint_test.log",
+          "size": 119,
+          "modified": "2025-08-02T17:32:45.488107",
+          "category": "temporary"
+        },
+        {
+          "name": "main.log",
+          "size": 853,
+          "modified": "2025-08-02T17:32:45.490113",
+          "category": "temporary"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "requirements.txt",
+          "size": 521,
+          "modified": "2025-08-02T17:32:45.503406",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "advanced_aios_automation.ps1",
+        "size": 28347,
+        "modified": "2025-09-15T22:02:19.634613",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_indexer.py",
+        "size": 7586,
+        "modified": "2025-09-15T22:02:19.638613",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_powershell_automation.ps1",
+        "size": 28477,
+        "modified": "2025-09-15T22:02:19.681614",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_foundation.py",
+        "size": 6132,
+        "modified": "2025-09-15T22:02:19.765613",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_mcp_server.py",
+        "size": 20800,
+        "modified": "2025-08-02T17:32:45.482081",
+        "category": "consciousness"
+      },
+      {
+        "name": "context_reindex.py",
+        "size": 10270,
+        "modified": "2025-08-16T15:03:39.432509",
+        "category": "consciousness"
+      },
+      {
+        "name": "launch-aios-workspace.bat",
+        "size": 363,
+        "modified": "2025-09-15T22:53:24.733815",
+        "category": "executable"
+      },
+      {
+        "name": "launch_aios.ps1",
+        "size": 8866,
+        "modified": "2025-09-15T22:02:20.026614",
+        "category": "consciousness"
+      },
+      {
+        "name": "launch_aios_integrated.ps1",
+        "size": 3478,
+        "modified": "2025-09-15T22:02:20.068614",
+        "category": "consciousness"
+      },
+      {
+        "name": "main.log",
+        "size": 853,
+        "modified": "2025-08-02T17:32:45.490113",
+        "category": "temporary"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "test_realtime_intelligence.ps1",
+        "size": 3972,
+        "modified": "2025-09-16T22:04:52.226922",
+        "category": "consciousness"
+      },
+      {
+        "name": "main.py",
+        "size": 6313,
+        "modified": "2025-09-16T07:53:50.047810",
+        "category": "consciousness"
+      },
+      {
+        "name": "launch-aios-workspace.bat",
+        "size": 363,
+        "modified": "2025-09-15T22:53:24.733815",
+        "category": "executable"
+      },
+      {
+        "name": "remove_emoticons.py",
+        "size": 10286,
+        "modified": "2025-09-15T22:22:13.370318",
+        "category": "consciousness"
+      },
+      {
+        "name": "validate_stability.py",
+        "size": 5133,
+        "modified": "2025-09-15T22:02:20.405614",
+        "category": "consciousness"
+      },
+      {
+        "name": "universal_logging_v2.py",
+        "size": 16043,
+        "modified": "2025-09-15T22:02:20.400619",
+        "category": "consciousness"
+      },
+      {
+        "name": "universal_logging.py",
+        "size": 9062,
+        "modified": "2025-09-15T22:02:20.390615",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_process_cleanup.ps1",
+        "size": 2811,
+        "modified": "2025-09-15T22:02:20.381633",
+        "category": "consciousness"
+      },
+      {
+        "name": "setup_env.ps1",
+        "size": 9329,
+        "modified": "2025-09-15T22:02:20.300612",
+        "category": "consciousness"
+      },
+      {
+        "name": "safety_governor.py",
+        "size": 24135,
+        "modified": "2025-09-15T22:02:20.264610",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 56,
+      "file_types": [
+        ".ps1",
+        ".py",
+        ".bat",
+        ".log",
+        ".txt"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 18,
+      "consciousness_files": 3,
+      "agentic_files": 0,
+      "intelligence_files": 3
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "aios_indexer.py",
+      "context_reindex.py",
+      "main.log",
+      "main.py"
+    ],
+    "config_files": [
+      "setup_env.ps1"
+    ],
+    "breadcrumb_path": "scripts",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "aios_env\\Scripts",
+      "ai\\cytoplasm\\scripts",
+      "ai\\laboratory\\scripts",
+      "core\\assemblers\\tree_assembler\\scripts_py_optimized",
+      "docs\\archive\\legacy_scripts"
+    ]
+  }
+}

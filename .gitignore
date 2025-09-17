@@ -286,12 +286,29 @@ docs/site/
 *.epub
 *.pdf
 
-# Backup files
+# Backup files - AIOS Centralized Backup Policy
 *.bak
 *.backup
 *.old
 *~
 .#*
+
+# AIOS Centralized Backup Management
+# Track backup directory structure but ignore backup file contents
+backups/*.backup*
+backups/*.bak*
+backups/*.old*
+!backups/.aios_spatial_metadata.json
+
+# --- Tachyonic Archive Organization ---
+# Include tachyonic archive reports and analysis files
+!tachyonic/archive/optimization_reports/*.json
+!tachyonic/archive/intelligence_reports/*.json
+!tachyonic/archive/quality_reports/*.json
+
+# --- Documentation Archive ---
+# Include consolidated documentation archive
+!docs/archive/consolidated_2025/*.md
 
 # --- Runtime Intelligence tachyonic logs (allow discovery) ---
 # Include the runtime_intelligence/logs directory and JSON/DB artifacts

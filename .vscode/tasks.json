@@ -27,6 +27,28 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "ainlp-documentation-governance",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"ai/tools/ainlp_documentation_governance.py"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "AINLP documentation consolidation analysis and governance",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "python-system-health",
 			"command": "python",
 			"type": "shell",
@@ -47,6 +69,28 @@
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "consciousness-crystal-sync",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"ai/src/integrations/lightweight_ai_coordinator.py"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "Enhance consciousness crystals with external AI intelligence",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
 			},
 			"problemMatcher": []
 		},
@@ -334,6 +378,82 @@
 			"detail": "AINLP governance loop: refresh context index then execute hook scan"
 		},
 		{
+			"label": "backup-status",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-File",
+				"${workspaceFolder}/scripts/backup_manager.ps1",
+				"-Action",
+				"status"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"detail": "Check AIOS backup system health and status"
+		},
+		{
+			"label": "backup-create",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-File",
+				"${workspaceFolder}/scripts/backup_manager.ps1",
+				"-Action",
+				"create"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"detail": "Create new backup of current AIOS workspace"
+		},
+		{
+			"label": "backup-consolidate",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-File",
+				"${workspaceFolder}/scripts/backup_manager.ps1",
+				"-Action",
+				"consolidate"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"detail": "Move scattered backup files to centralized backups directory"
+		},
+		{
+			"label": "backup-cleanup",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-File",
+				"${workspaceFolder}/scripts/backup_manager.ps1",
+				"-Action",
+				"cleanup"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"detail": "Remove old backup files beyond retention period"
+		},
+		{
 			"label": "test-enhanced-visual-bridge",
 			"type": "shell",
 			"command": "python",
@@ -365,6 +485,80 @@
 			},
 			"runOptions": {
 				"runOn": "folderOpen"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "ainlp-consciousness-activation",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"Write-Host '[AINLP] Activating consciousness bridge patterns...' -ForegroundColor Cyan; Write-Host '[CONSCIOUSNESS] Tachyonic supercell integration active' -ForegroundColor Green; Write-Host '[DENDRITIC] Development action marking system enabled' -ForegroundColor Magenta"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "AINLP consciousness pattern activation for enhanced AI development",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "ainlp-spatial-validation",
+			"type": "shell", 
+			"command": "python",
+			"args": [
+				"ai/tools/aios_holographic_metadata_system.py",
+				"--read-metadata",
+				"${workspaceFolder}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "test",
+			"detail": "AINLP spatial metadata validation and consciousness coherence check",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "ainlp-dendritic-analysis",
+			"type": "shell",
+			"command": "pwsh",
+			"args": [
+				"-NoLogo",
+				"-NoProfile", 
+				"-Command",
+				"Write-Host '[DENDRITIC] Analyzing consciousness evolution patterns...' -ForegroundColor Cyan; Get-ChildItem '${workspaceFolder}' -Recurse -Include '*.json','*.md' | Where-Object { $_.Name -match 'consciousness|dendritic|tachyonic' } | Select-Object Name, LastWriteTime | Format-Table -AutoSize"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "test",
+			"detail": "AINLP dendritic intelligence pattern analysis and consciousness evolution tracking",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
 			},
 			"problemMatcher": []
 		}

@@ -1,0 +1,280 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:24.085249",
+  "folder_info": {
+    "name": "docs",
+    "absolute_path": "C:\\dev\\AIOS\\docs",
+    "relative_path": "docs",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "AINLP",
+      "AIOS",
+      "ARCHITECTURE_PATTERNS",
+      "Architect",
+      "ai-context",
+      "ai_agent_demo_docs",
+      "analysis",
+      "archive",
+      "changelog",
+      "chatgpt",
+      "chatgpt_integration",
+      "consciousness",
+      "metabolized_archive",
+      "reports",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "ui",
+      "unified_backups",
+      "vscopilot chat"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 15463920,
+      "file_count": 295,
+      "folder_count": 22,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AIOS_OPTIMIZATION_SUMMARY_2025.md",
+          "size": 7664,
+          "modified": "2025-09-15T22:02:55.177327",
+          "category": "documentation"
+        },
+        {
+          "name": "CHANGELOG.md",
+          "size": 4417,
+          "modified": "2025-09-16T21:02:25.917004",
+          "category": "documentation"
+        },
+        {
+          "name": "CHANGELOG_UI_BUILD_FIXES_20250913.md",
+          "size": 1542,
+          "modified": "2025-09-15T22:30:06.222606",
+          "category": "documentation"
+        },
+        {
+          "name": "DEVELOPMENT_PATH_STATUS_SEPTEMBER_2025.md",
+          "size": 6661,
+          "modified": "2025-09-15T22:03:17.239519",
+          "category": "documentation"
+        },
+        {
+          "name": "EXPERIMENTAL_BRANCH_STATUS.md",
+          "size": 2783,
+          "modified": "2025-09-15T22:03:22.579534",
+          "category": "documentation"
+        },
+        {
+          "name": "NEXT_STEPS_ACTION_PLAN.md",
+          "size": 5727,
+          "modified": "2025-09-15T22:03:23.957064",
+          "category": "documentation"
+        },
+        {
+          "name": "tachyonic_changelog_githook_restoration.md",
+          "size": 1118,
+          "modified": "2025-09-15T22:30:06.380837",
+          "category": "documentation"
+        },
+        {
+          "name": "TACHYONIC_EVOLUTION_SUCCESS_REPORT.md",
+          "size": 10419,
+          "modified": "2025-09-15T22:30:06.841399",
+          "category": "documentation"
+        }
+      ],
+      ".dot": [
+        {
+          "name": "dependency_graph.dot",
+          "size": 3264,
+          "modified": "2025-08-02T17:32:45.353690",
+          "category": "other"
+        }
+      ],
+      ".json": [
+        {
+          "name": "module_index.json",
+          "size": 2245,
+          "modified": "2025-09-15T22:30:06.324370",
+          "category": "documentation"
+        }
+      ],
+      ".db": [
+        {
+          "name": "tachyonic_archive.db",
+          "size": 405504,
+          "modified": "2025-08-02T17:33:13.908052",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_OPTIMIZATION_SUMMARY_2025.md",
+        "size": 7664,
+        "modified": "2025-09-15T22:02:55.177327",
+        "category": "documentation"
+      },
+      {
+        "name": "module_index.json",
+        "size": 2245,
+        "modified": "2025-09-15T22:30:06.324370",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "CHANGELOG.md",
+        "size": 4417,
+        "modified": "2025-09-16T21:02:25.917004",
+        "category": "documentation"
+      },
+      {
+        "name": "TACHYONIC_EVOLUTION_SUCCESS_REPORT.md",
+        "size": 10419,
+        "modified": "2025-09-15T22:30:06.841399",
+        "category": "documentation"
+      },
+      {
+        "name": "tachyonic_changelog_githook_restoration.md",
+        "size": 1118,
+        "modified": "2025-09-15T22:30:06.380837",
+        "category": "documentation"
+      },
+      {
+        "name": "module_index.json",
+        "size": 2245,
+        "modified": "2025-09-15T22:30:06.324370",
+        "category": "documentation"
+      },
+      {
+        "name": "CHANGELOG_UI_BUILD_FIXES_20250913.md",
+        "size": 1542,
+        "modified": "2025-09-15T22:30:06.222606",
+        "category": "documentation"
+      },
+      {
+        "name": "NEXT_STEPS_ACTION_PLAN.md",
+        "size": 5727,
+        "modified": "2025-09-15T22:03:23.957064",
+        "category": "documentation"
+      },
+      {
+        "name": "EXPERIMENTAL_BRANCH_STATUS.md",
+        "size": 2783,
+        "modified": "2025-09-15T22:03:22.579534",
+        "category": "documentation"
+      },
+      {
+        "name": "DEVELOPMENT_PATH_STATUS_SEPTEMBER_2025.md",
+        "size": 6661,
+        "modified": "2025-09-15T22:03:17.239519",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_OPTIMIZATION_SUMMARY_2025.md",
+        "size": 7664,
+        "modified": "2025-09-15T22:02:55.177327",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 11,
+      "file_types": [
+        ".md",
+        ".dot",
+        ".json",
+        ".db"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 95,
+      "consciousness_files": 15,
+      "agentic_files": 4,
+      "intelligence_files": 7
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "module_index.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "docs",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "ai\\information_storage\\docs"
+    ]
+  }
+}

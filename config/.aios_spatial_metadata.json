@@ -1,0 +1,206 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:19.173613",
+  "folder_info": {
+    "name": "config",
+    "absolute_path": "C:\\dev\\AIOS\\config",
+    "relative_path": "config",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "config"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 21644,
+      "file_count": 7,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "ai-models.json",
+          "size": 4596,
+          "modified": "2025-09-15T22:24:25.328491",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_agentic_config.json",
+          "size": 842,
+          "modified": "2025-09-15T22:24:25.399444",
+          "category": "documentation"
+        },
+        {
+          "name": "python-environment-simple.json",
+          "size": 376,
+          "modified": "2025-09-15T22:24:25.420067",
+          "category": "documentation"
+        },
+        {
+          "name": "python_environments.json",
+          "size": 4570,
+          "modified": "2025-09-15T22:24:25.574962",
+          "category": "documentation"
+        },
+        {
+          "name": "python_environments_backup.json",
+          "size": 4570,
+          "modified": "2025-09-15T22:24:25.759632",
+          "category": "documentation"
+        },
+        {
+          "name": "system.json",
+          "size": 2698,
+          "modified": "2025-09-15T22:24:33.380781",
+          "category": "documentation"
+        },
+        {
+          "name": "ui-themes.json",
+          "size": 3992,
+          "modified": "2025-09-15T22:24:33.536600",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_agentic_config.json",
+        "size": 842,
+        "modified": "2025-09-15T22:24:25.399444",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "ui-themes.json",
+        "size": 3992,
+        "modified": "2025-09-15T22:24:33.536600",
+        "category": "documentation"
+      },
+      {
+        "name": "system.json",
+        "size": 2698,
+        "modified": "2025-09-15T22:24:33.380781",
+        "category": "documentation"
+      },
+      {
+        "name": "python_environments_backup.json",
+        "size": 4570,
+        "modified": "2025-09-15T22:24:25.759632",
+        "category": "documentation"
+      },
+      {
+        "name": "python_environments.json",
+        "size": 4570,
+        "modified": "2025-09-15T22:24:25.574962",
+        "category": "documentation"
+      },
+      {
+        "name": "python-environment-simple.json",
+        "size": 376,
+        "modified": "2025-09-15T22:24:25.420067",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_agentic_config.json",
+        "size": 842,
+        "modified": "2025-09-15T22:24:25.399444",
+        "category": "documentation"
+      },
+      {
+        "name": "ai-models.json",
+        "size": 4596,
+        "modified": "2025-09-15T22:24:25.328491",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 1,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [
+      "aios_agentic_config.json"
+    ],
+    "breadcrumb_path": "config",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\config' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\config' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\config' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core\\configuration",
+      "gemini_cli_bridge\\config",
+      ".githooks\\modules\\information_storage\\config",
+      "ai\\cytoplasm\\config",
+      "ai\\nucleus\\src\\core\\integration\\config"
+    ]
+  }
+}

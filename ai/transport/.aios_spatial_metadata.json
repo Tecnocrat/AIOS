@@ -1,0 +1,173 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:27.365612",
+  "folder_info": {
+    "name": "transport",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\transport",
+    "relative_path": "ai\\transport",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "transport"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".pytest_cache",
+      "__pycache__",
+      "cytoplasm",
+      "information_storage",
+      "laboratory",
+      "membrane",
+      "nucleus",
+      "src",
+      "tests",
+      "tools"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "intercellular",
+      "runtime"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 113922,
+      "file_count": 17,
+      "folder_count": 3,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "bridge.py",
+          "size": 1483,
+          "modified": "2025-09-15T22:07:16.200569",
+          "category": "consciousness"
+        },
+        {
+          "name": "transport_intelligence.py",
+          "size": 6915,
+          "modified": "2025-09-15T22:07:16.487007",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 213,
+          "modified": "2025-09-15T22:07:16.533630",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 715,
+          "modified": "2025-09-15T22:07:16.232716",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 715,
+        "modified": "2025-09-15T22:07:16.232716",
+        "category": "documentation"
+      },
+      {
+        "name": "__init__.py",
+        "size": 213,
+        "modified": "2025-09-15T22:07:16.533630",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 213,
+        "modified": "2025-09-15T22:07:16.533630",
+        "category": "consciousness"
+      },
+      {
+        "name": "transport_intelligence.py",
+        "size": 6915,
+        "modified": "2025-09-15T22:07:16.487007",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 715,
+        "modified": "2025-09-15T22:07:16.232716",
+        "category": "documentation"
+      },
+      {
+        "name": "bridge.py",
+        "size": 1483,
+        "modified": "2025-09-15T22:07:16.200569",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".py",
+        ".md"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > transport",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\transport' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\transport' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\transport' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      ".githooks\\modules\\transport"
+    ]
+  }
+}

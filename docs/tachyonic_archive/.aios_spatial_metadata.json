@@ -1,0 +1,212 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:29.977565",
+  "folder_info": {
+    "name": "tachyonic_archive",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\tachyonic_archive",
+    "relative_path": "docs\\tachyonic_archive",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "docs",
+      "tachyonic_archive"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "ARCHITECTURE_PATTERNS",
+      "Architect",
+      "ai-context",
+      "ai_agent_demo_docs",
+      "analysis",
+      "archive",
+      "changelog",
+      "chatgpt",
+      "chatgpt_integration",
+      "consciousness",
+      "metabolized_archive",
+      "reports",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "ui",
+      "unified_backups",
+      "vscopilot chat"
+    ],
+    "child_folders": [
+      "folder_structure"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 4332751,
+      "file_count": 10,
+      "folder_count": 1,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "path_20250907_172803.md",
+          "size": 14154,
+          "modified": "2025-08-16T21:26:14.148572",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "system_health_index.json",
+          "size": 758,
+          "modified": "2025-09-14T04:48:48.552920",
+          "category": "documentation"
+        },
+        {
+          "name": "system_health_report.latest.json",
+          "size": 3394,
+          "modified": "2025-09-14T04:48:48.556645",
+          "category": "documentation"
+        },
+        {
+          "name": "system_health_report_20250907_152742.json",
+          "size": 3340,
+          "modified": "2025-09-07T17:27:42.383249",
+          "category": "documentation"
+        },
+        {
+          "name": "system_health_report_20250913_112132.json",
+          "size": 3393,
+          "modified": "2025-09-13T13:21:32.446711",
+          "category": "documentation"
+        },
+        {
+          "name": "system_health_report_20250913_133652.json",
+          "size": 3394,
+          "modified": "2025-09-13T15:36:52.203445",
+          "category": "documentation"
+        },
+        {
+          "name": "system_health_report_20250913_134153.json",
+          "size": 3394,
+          "modified": "2025-09-13T15:41:53.847873",
+          "category": "documentation"
+        },
+        {
+          "name": "system_health_report_20250913_231003.json",
+          "size": 3393,
+          "modified": "2025-09-14T19:06:27.712764",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "system_health_index.json",
+        "size": 758,
+        "modified": "2025-09-14T04:48:48.552920",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "system_health_report_20250913_231003.json",
+        "size": 3393,
+        "modified": "2025-09-14T19:06:27.712764",
+        "category": "documentation"
+      },
+      {
+        "name": "system_health_report.latest.json",
+        "size": 3394,
+        "modified": "2025-09-14T04:48:48.556645",
+        "category": "documentation"
+      },
+      {
+        "name": "system_health_index.json",
+        "size": 758,
+        "modified": "2025-09-14T04:48:48.552920",
+        "category": "documentation"
+      },
+      {
+        "name": "system_health_report_20250913_134153.json",
+        "size": 3394,
+        "modified": "2025-09-13T15:41:53.847873",
+        "category": "documentation"
+      },
+      {
+        "name": "system_health_report_20250913_133652.json",
+        "size": 3394,
+        "modified": "2025-09-13T15:36:52.203445",
+        "category": "documentation"
+      },
+      {
+        "name": "system_health_report_20250913_112132.json",
+        "size": 3393,
+        "modified": "2025-09-13T13:21:32.446711",
+        "category": "documentation"
+      },
+      {
+        "name": "system_health_report_20250907_152742.json",
+        "size": 3340,
+        "modified": "2025-09-07T17:27:42.383249",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".md",
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "system_health_index.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "docs > tachyonic_archive",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\tachyonic_archive' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\tachyonic_archive' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\tachyonic_archive' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "core\\tachyonic_archive"
+    ]
+  }
+}

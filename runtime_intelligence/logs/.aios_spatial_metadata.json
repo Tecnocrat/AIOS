@@ -1,0 +1,428 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:30:56.387837",
+  "folder_info": {
+    "name": "logs",
+    "absolute_path": "C:\\dev\\AIOS\\runtime_intelligence\\logs",
+    "relative_path": "runtime_intelligence\\logs",
+    "parent_path": "runtime_intelligence",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Runtime Intelligence",
+    "secondary_areas": [],
+    "path_classification": [
+      "runtime_intelligence",
+      "logs"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "aios_cellular_workspace",
+      "analysis",
+      "context",
+      "iterations",
+      "tools"
+    ],
+    "child_folders": [
+      "agent",
+      "aios_context",
+      "cache",
+      "core",
+      "evolution",
+      "file_scores",
+      "hooks",
+      "sessions",
+      "subprocess",
+      "system",
+      "tachyonic",
+      "ui",
+      "vision",
+      "vision_demo"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 4114524,
+      "file_count": 105,
+      "folder_count": 14,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".log": [
+        {
+          "name": "biological_architecture_monitor.log",
+          "size": 0,
+          "modified": "2025-09-13T13:23:37.196132",
+          "category": "temporary"
+        },
+        {
+          "name": "iteration_20250810_230049.log",
+          "size": 218,
+          "modified": "2025-08-11T01:00:49.954699",
+          "category": "temporary"
+        },
+        {
+          "name": "iteration_20250810_230126.log",
+          "size": 227,
+          "modified": "2025-08-11T01:01:26.922676",
+          "category": "temporary"
+        },
+        {
+          "name": "iteration_20250810_230210.log",
+          "size": 227,
+          "modified": "2025-08-11T01:02:10.141140",
+          "category": "temporary"
+        },
+        {
+          "name": "iteration_20250810_230321.log",
+          "size": 227,
+          "modified": "2025-08-11T01:03:21.221184",
+          "category": "temporary"
+        },
+        {
+          "name": "iteration_20250829_094844.log",
+          "size": 226,
+          "modified": "2025-08-29T11:48:44.929706",
+          "category": "temporary"
+        },
+        {
+          "name": "iteration_20250912_223527.log",
+          "size": 226,
+          "modified": "2025-09-13T00:35:27.552308",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_180230_50025c77.log",
+          "size": 292,
+          "modified": "2025-08-02T17:32:45.452467",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_183936_a3858d84.log",
+          "size": 292,
+          "modified": "2025-08-02T17:32:45.452467",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_184049_81e7fc9b.log",
+          "size": 8343,
+          "modified": "2025-08-02T17:32:45.454474",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_184450_aa9946cd.log",
+          "size": 292,
+          "modified": "2025-08-02T17:32:45.454474",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_184507_9464ba0f.log",
+          "size": 8343,
+          "modified": "2025-08-02T17:32:45.454474",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_190857_b0bb11f0.log",
+          "size": 292,
+          "modified": "2025-08-02T17:32:45.456482",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_191051_57c4794e.log",
+          "size": 7477,
+          "modified": "2025-08-02T17:32:45.456482",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_193313_4c55a194.log",
+          "size": 452,
+          "modified": "2025-08-02T17:32:45.456482",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_193326_6b96e003.log",
+          "size": 631,
+          "modified": "2025-08-02T17:32:45.458489",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_193632_43468db0.log",
+          "size": 5411,
+          "modified": "2025-08-02T17:32:45.458489",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_194824_a4e5c75f.log",
+          "size": 466,
+          "modified": "2025-08-02T17:32:45.458489",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_194855_75e1ca7e.log",
+          "size": 466,
+          "modified": "2025-08-02T17:32:45.460496",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_195112_9a944e8d.log",
+          "size": 292,
+          "modified": "2025-08-02T17:32:45.460496",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_200652_2aed5aab.log",
+          "size": 8343,
+          "modified": "2025-08-02T17:32:45.462504",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_200900_c796af25.log",
+          "size": 471,
+          "modified": "2025-08-02T17:32:45.462504",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_211142_0d847d6e.log",
+          "size": 8343,
+          "modified": "2025-08-02T17:32:45.464254",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250629_213933_85c82ac0.log",
+          "size": 471,
+          "modified": "2025-08-02T17:32:45.466260",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250811_214931_a7d76ed1.log",
+          "size": 292,
+          "modified": "2025-08-11T21:49:31.067801",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250811_220407_3e2543c7.log",
+          "size": 292,
+          "modified": "2025-08-11T22:04:08.002156",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250811_220422_48da9d15.log",
+          "size": 292,
+          "modified": "2025-08-11T22:04:22.486270",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250813_235739_d04bb138.log",
+          "size": 12395,
+          "modified": "2025-08-13T23:58:46.047704",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250816_172409_0485427a.log",
+          "size": 13749,
+          "modified": "2025-08-16T17:29:19.436347",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250816_174844_47b01432.log",
+          "size": 8154,
+          "modified": "2025-08-16T17:50:29.406556",
+          "category": "temporary"
+        },
+        {
+          "name": "session_AIOS_20250829_114350_09456140.log",
+          "size": 4819,
+          "modified": "2025-08-29T11:46:34.335027",
+          "category": "temporary"
+        }
+      ],
+      ".jsonl": [
+        {
+          "name": "canonical_mutations.jsonl",
+          "size": 2544,
+          "modified": "2025-09-07T14:42:23.865403",
+          "category": "other"
+        },
+        {
+          "name": "dendritic_commit_learning.jsonl",
+          "size": 2437,
+          "modified": "2025-09-16T21:12:15.500073",
+          "category": "other"
+        },
+        {
+          "name": "pre_push_failures.jsonl",
+          "size": 6844,
+          "modified": "2025-09-14T20:42:47.060593",
+          "category": "other"
+        },
+        {
+          "name": "pre_push_success.jsonl",
+          "size": 2008,
+          "modified": "2025-09-16T21:13:11.200464",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "session_AIOS_20250629_180230_50025c77.log",
+        "size": 292,
+        "modified": "2025-08-02T17:32:45.452467",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_183936_a3858d84.log",
+        "size": 292,
+        "modified": "2025-08-02T17:32:45.452467",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_184049_81e7fc9b.log",
+        "size": 8343,
+        "modified": "2025-08-02T17:32:45.454474",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_184450_aa9946cd.log",
+        "size": 292,
+        "modified": "2025-08-02T17:32:45.454474",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_184507_9464ba0f.log",
+        "size": 8343,
+        "modified": "2025-08-02T17:32:45.454474",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_190857_b0bb11f0.log",
+        "size": 292,
+        "modified": "2025-08-02T17:32:45.456482",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_191051_57c4794e.log",
+        "size": 7477,
+        "modified": "2025-08-02T17:32:45.456482",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_193313_4c55a194.log",
+        "size": 452,
+        "modified": "2025-08-02T17:32:45.456482",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_193326_6b96e003.log",
+        "size": 631,
+        "modified": "2025-08-02T17:32:45.458489",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250629_193632_43468db0.log",
+        "size": 5411,
+        "modified": "2025-08-02T17:32:45.458489",
+        "category": "temporary"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "pre_push_success.jsonl",
+        "size": 2008,
+        "modified": "2025-09-16T21:13:11.200464",
+        "category": "other"
+      },
+      {
+        "name": "dendritic_commit_learning.jsonl",
+        "size": 2437,
+        "modified": "2025-09-16T21:12:15.500073",
+        "category": "other"
+      },
+      {
+        "name": "pre_push_failures.jsonl",
+        "size": 6844,
+        "modified": "2025-09-14T20:42:47.060593",
+        "category": "other"
+      },
+      {
+        "name": "biological_architecture_monitor.log",
+        "size": 0,
+        "modified": "2025-09-13T13:23:37.196132",
+        "category": "temporary"
+      },
+      {
+        "name": "iteration_20250912_223527.log",
+        "size": 226,
+        "modified": "2025-09-13T00:35:27.552308",
+        "category": "temporary"
+      },
+      {
+        "name": "canonical_mutations.jsonl",
+        "size": 2544,
+        "modified": "2025-09-07T14:42:23.865403",
+        "category": "other"
+      },
+      {
+        "name": "iteration_20250829_094844.log",
+        "size": 226,
+        "modified": "2025-08-29T11:48:44.929706",
+        "category": "temporary"
+      },
+      {
+        "name": "session_AIOS_20250829_114350_09456140.log",
+        "size": 4819,
+        "modified": "2025-08-29T11:46:34.335027",
+        "category": "temporary"
+      }
+    ],
+    "content_summary": {
+      "total_files": 35,
+      "file_types": [
+        ".log",
+        ".jsonl"
+      ],
+      "dominant_type": ".log"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 40,
+      "consciousness_files": 6,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "runtime_intelligence > logs",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\logs' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\logs' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\logs' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "runtime_intelligence",
+      "core\\runtime_intelligence",
+      "interface\\runtime_intelligence",
+      "tachyonic\\runtime_intelligence",
+      "visual_interface\\runtime_intelligence",
+      "logs"
+    ]
+  }
+}

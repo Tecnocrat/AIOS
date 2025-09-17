@@ -1,0 +1,221 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:53.004891",
+  "folder_info": {
+    "name": "context_maps",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps",
+    "relative_path": "tachyonic\\tachyonic_development_archive\\context_maps",
+    "parent_path": "tachyonic\\tachyonic_development_archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "tachyonic_development_archive",
+      "context_maps"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "checkpoints",
+      "development_logs"
+    ],
+    "child_folders": [
+      "archive",
+      "dev",
+      "unified_checkpoints"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 160940,
+      "file_count": 12,
+      "folder_count": 3,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "dev.arch.md",
+          "size": 50782,
+          "modified": "2025-09-15T22:02:28.455051",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.consolidate.md",
+          "size": 11857,
+          "modified": "2025-09-15T22:02:28.488020",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.deploy.md",
+          "size": 15976,
+          "modified": "2025-09-15T22:02:28.524022",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.fun.md",
+          "size": 14468,
+          "modified": "2025-09-15T22:02:28.585017",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.opt.md",
+          "size": 15453,
+          "modified": "2025-09-15T22:02:28.609016",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.refactor.md",
+          "size": 9305,
+          "modified": "2025-09-15T22:02:28.629018",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.run.md",
+          "size": 16983,
+          "modified": "2025-09-15T22:02:28.720017",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.test.md",
+          "size": 15219,
+          "modified": "2025-09-15T22:02:28.776017",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.unified.md",
+          "size": 8340,
+          "modified": "2025-09-15T22:02:28.806028",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "unified_state.json",
+          "size": 2557,
+          "modified": "2025-09-06T23:31:23.508451",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "dev.unified.md",
+        "size": 8340,
+        "modified": "2025-09-15T22:02:28.806028",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.test.md",
+        "size": 15219,
+        "modified": "2025-09-15T22:02:28.776017",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.run.md",
+        "size": 16983,
+        "modified": "2025-09-15T22:02:28.720017",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.refactor.md",
+        "size": 9305,
+        "modified": "2025-09-15T22:02:28.629018",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.opt.md",
+        "size": 15453,
+        "modified": "2025-09-15T22:02:28.609016",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.fun.md",
+        "size": 14468,
+        "modified": "2025-09-15T22:02:28.585017",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.deploy.md",
+        "size": 15976,
+        "modified": "2025-09-15T22:02:28.524022",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.consolidate.md",
+        "size": 11857,
+        "modified": "2025-09-15T22:02:28.488020",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.arch.md",
+        "size": 50782,
+        "modified": "2025-09-15T22:02:28.455051",
+        "category": "documentation"
+      },
+      {
+        "name": "unified_state.json",
+        "size": 2557,
+        "modified": "2025-09-06T23:31:23.508451",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 10,
+      "file_types": [
+        ".md",
+        ".json"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tachyonic_development_archive > context_maps",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "tachyonic\\tachyonic_development_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}
