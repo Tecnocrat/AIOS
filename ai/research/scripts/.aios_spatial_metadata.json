@@ -1,0 +1,153 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:22.561276",
+  "folder_info": {
+    "name": "scripts",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\laboratory\\scripts",
+    "relative_path": "ai\\laboratory\\scripts",
+    "parent_path": "ai\\laboratory",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "laboratory",
+      "scripts"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "demos",
+      "paradigm",
+      "tests"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 69950,
+      "file_count": 6,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "agentic_instruction_generator.py",
+          "size": 15425,
+          "modified": "2025-09-15T22:05:51.425050",
+          "category": "consciousness"
+        },
+        {
+          "name": "emoji_detector.py",
+          "size": 9060,
+          "modified": "2025-09-15T22:05:52.306948",
+          "category": "consciousness"
+        },
+        {
+          "name": "enhanced_quality_integration.py",
+          "size": 13941,
+          "modified": "2025-09-15T22:05:53.930228",
+          "category": "consciousness"
+        },
+        {
+          "name": "githooks_emoji_integration.py",
+          "size": 3599,
+          "modified": "2025-09-15T22:05:54.453464",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "githooks_emoji_integration.py",
+        "size": 3599,
+        "modified": "2025-09-15T22:05:54.453464",
+        "category": "consciousness"
+      },
+      {
+        "name": "enhanced_quality_integration.py",
+        "size": 13941,
+        "modified": "2025-09-15T22:05:53.930228",
+        "category": "consciousness"
+      },
+      {
+        "name": "emoji_detector.py",
+        "size": 9060,
+        "modified": "2025-09-15T22:05:52.306948",
+        "category": "consciousness"
+      },
+      {
+        "name": "agentic_instruction_generator.py",
+        "size": 15425,
+        "modified": "2025-09-15T22:05:51.425050",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 2,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > laboratory > scripts",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory\\scripts' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory\\scripts' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory\\scripts' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "ai\\laboratory",
+      "scripts"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

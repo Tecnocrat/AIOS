@@ -1,0 +1,134 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:31:16.827095",
+  "folder_info": {
+    "name": "workflows",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\workflows",
+    "relative_path": "tachyonic\\workflows",
+    "parent_path": "tachyonic",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "workflows"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS_root_cells",
+      "__pycache__",
+      "archive",
+      "changelog",
+      "docs_archive",
+      "health_reports",
+      "orchestration",
+      "rollback_snapshots",
+      "runtime_intelligence",
+      "tachyonic",
+      "tachyonic_archive",
+      "tachyonic_development_archive"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 3666,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "tachyonic_init_complete_1757159550.json",
+          "size": 1832,
+          "modified": "2025-09-06T13:52:30.480787",
+          "category": "documentation"
+        },
+        {
+          "name": "tachyonic_init_complete_1757159592.json",
+          "size": 1834,
+          "modified": "2025-09-06T13:53:12.358944",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "tachyonic_init_complete_1757159550.json",
+        "size": 1832,
+        "modified": "2025-09-06T13:52:30.480787",
+        "category": "documentation"
+      },
+      {
+        "name": "tachyonic_init_complete_1757159592.json",
+        "size": 1834,
+        "modified": "2025-09-06T13:53:12.358944",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "tachyonic_init_complete_1757159592.json",
+        "size": 1834,
+        "modified": "2025-09-06T13:53:12.358944",
+        "category": "documentation"
+      },
+      {
+        "name": "tachyonic_init_complete_1757159550.json",
+        "size": 1832,
+        "modified": "2025-09-06T13:52:30.480787",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > workflows",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\workflows' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\workflows' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\workflows' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      ".github\\workflows"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:51.526361",
+  "folder_info": {
+    "name": "quantum",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\quantum",
+    "relative_path": "tachyonic\\tachyonic_archive\\quantum",
+    "parent_path": "tachyonic\\tachyonic_archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "tachyonic_archive",
+      "quantum"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "deep",
+      "immediate",
+      "temporal"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 134,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "tiny"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "index.json",
+          "size": 134,
+          "modified": "2025-09-06T12:46:23.793737",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "index.json",
+        "size": 134,
+        "modified": "2025-09-06T12:46:23.793737",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "index.json",
+        "size": 134,
+        "modified": "2025-09-06T12:46:23.793737",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "index.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tachyonic_archive > quantum",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\quantum' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\quantum' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\quantum' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive",
+      "core\\build\\tests\\test_universal_quantum_holographic.dir"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

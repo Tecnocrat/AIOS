@@ -1,0 +1,291 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:24.763869",
+  "folder_info": {
+    "name": "cytoplasm",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\cytoplasm",
+    "relative_path": "ai\\cytoplasm",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "cytoplasm"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".pytest_cache",
+      "__pycache__",
+      "information_storage",
+      "laboratory",
+      "membrane",
+      "nucleus",
+      "src",
+      "tests",
+      "tools",
+      "transport"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "config",
+      "deps",
+      "env",
+      "runtime",
+      "scripts",
+      "tools"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 274052,
+      "file_count": 69,
+      "folder_count": 7,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "cytoplasm_dendritic_bridge.py",
+          "size": 13319,
+          "modified": "2025-09-15T22:05:14.065988",
+          "category": "consciousness"
+        },
+        {
+          "name": "cytoplasm_intelligence.py",
+          "size": 6903,
+          "modified": "2025-09-15T22:05:14.998306",
+          "category": "consciousness"
+        },
+        {
+          "name": "debug_manager.py",
+          "size": 1237,
+          "modified": "2025-09-15T22:05:15.249857",
+          "category": "consciousness"
+        },
+        {
+          "name": "setup_env.py",
+          "size": 1097,
+          "modified": "2025-09-15T22:05:16.654161",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_ui_integration.py",
+          "size": 9526,
+          "modified": "2025-09-15T22:05:18.935685",
+          "category": "consciousness"
+        },
+        {
+          "name": "ui_interaction_bridge.py",
+          "size": 25121,
+          "modified": "2025-09-15T22:05:21.479235",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 203,
+          "modified": "2025-09-15T22:05:21.826845",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "CYTOPLASM_UPGRADE_REPORT_ITER2.md",
+          "size": 1138,
+          "modified": "2025-09-15T22:05:15.153275",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 761,
+          "modified": "2025-09-15T22:05:15.332727",
+          "category": "documentation"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "requirements.txt",
+          "size": 1117,
+          "modified": "2025-09-15T22:05:15.550631",
+          "category": "documentation"
+        }
+      ],
+      ".ps1": [
+        {
+          "name": "setup.ps1",
+          "size": 3926,
+          "modified": "2025-09-15T22:05:16.354421",
+          "category": "consciousness"
+        }
+      ],
+      ".bat": [
+        {
+          "name": "start_server.bat",
+          "size": 552,
+          "modified": "2025-09-15T22:05:16.724757",
+          "category": "executable"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 761,
+        "modified": "2025-09-15T22:05:15.332727",
+        "category": "documentation"
+      },
+      {
+        "name": "requirements.txt",
+        "size": 1117,
+        "modified": "2025-09-15T22:05:15.550631",
+        "category": "documentation"
+      },
+      {
+        "name": "setup.ps1",
+        "size": 3926,
+        "modified": "2025-09-15T22:05:16.354421",
+        "category": "consciousness"
+      },
+      {
+        "name": "setup_env.py",
+        "size": 1097,
+        "modified": "2025-09-15T22:05:16.654161",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 203,
+        "modified": "2025-09-15T22:05:21.826845",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 203,
+        "modified": "2025-09-15T22:05:21.826845",
+        "category": "consciousness"
+      },
+      {
+        "name": "ui_interaction_bridge.py",
+        "size": 25121,
+        "modified": "2025-09-15T22:05:21.479235",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_ui_integration.py",
+        "size": 9526,
+        "modified": "2025-09-15T22:05:18.935685",
+        "category": "consciousness"
+      },
+      {
+        "name": "start_server.bat",
+        "size": 552,
+        "modified": "2025-09-15T22:05:16.724757",
+        "category": "executable"
+      },
+      {
+        "name": "setup_env.py",
+        "size": 1097,
+        "modified": "2025-09-15T22:05:16.654161",
+        "category": "consciousness"
+      },
+      {
+        "name": "setup.ps1",
+        "size": 3926,
+        "modified": "2025-09-15T22:05:16.354421",
+        "category": "consciousness"
+      },
+      {
+        "name": "requirements.txt",
+        "size": 1117,
+        "modified": "2025-09-15T22:05:15.550631",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 761,
+        "modified": "2025-09-15T22:05:15.332727",
+        "category": "documentation"
+      },
+      {
+        "name": "debug_manager.py",
+        "size": 1237,
+        "modified": "2025-09-15T22:05:15.249857",
+        "category": "consciousness"
+      },
+      {
+        "name": "CYTOPLASM_UPGRADE_REPORT_ITER2.md",
+        "size": 1138,
+        "modified": "2025-09-15T22:05:15.153275",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 12,
+      "file_types": [
+        ".py",
+        ".md",
+        ".txt",
+        ".ps1",
+        ".bat"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 8,
+      "consciousness_files": 0,
+      "agentic_files": 2,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [
+      "setup.ps1",
+      "setup_env.py"
+    ],
+    "breadcrumb_path": "ai > cytoplasm",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      ".githooks\\modules\\cytoplasm"
+    ]
+  }
+}

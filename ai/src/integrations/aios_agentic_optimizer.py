@@ -946,7 +946,7 @@ def main():
     print("Use execute_optimization_iteration() for next guided optimization pass.")
     
     # Save results
-    results_file = "c:\\dev\\AIOS\\aios_agentic_optimization_results.json"
+    results_file = "c:\\dev\\AIOS\\tachyonic\\archive\\optimization_reports\\aios_agentic_optimization_results.json"
     try:
         with open(results_file, 'w') as f:
             json.dump(results, f, indent=2, default=str)

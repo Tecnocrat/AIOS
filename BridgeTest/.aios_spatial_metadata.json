@@ -1,0 +1,144 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:12.318955",
+  "folder_info": {
+    "name": "BridgeTest",
+    "absolute_path": "C:\\dev\\AIOS\\BridgeTest",
+    "relative_path": "BridgeTest",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "BridgeTest"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "bin",
+      "obj"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 6405921,
+      "file_count": 76,
+      "folder_count": 2,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".csproj": [
+        {
+          "name": "BridgeTest.csproj",
+          "size": 374,
+          "modified": "2025-08-29T14:44:55.497657",
+          "category": "other"
+        }
+      ],
+      ".cs": [
+        {
+          "name": "Program.cs",
+          "size": 2892,
+          "modified": "2025-09-15T22:07:21.048076",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "BridgeTest.csproj",
+        "size": 374,
+        "modified": "2025-08-29T14:44:55.497657",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "Program.cs",
+        "size": 2892,
+        "modified": "2025-09-15T22:07:21.048076",
+        "category": "consciousness"
+      },
+      {
+        "name": "BridgeTest.csproj",
+        "size": 374,
+        "modified": "2025-08-29T14:44:55.497657",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".csproj",
+        ".cs"
+      ],
+      "dominant_type": ".csproj"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 5,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 50,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "BridgeTest",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\BridgeTest' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\BridgeTest' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\BridgeTest' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": []
+  }
+}

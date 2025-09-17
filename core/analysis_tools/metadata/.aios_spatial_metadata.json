@@ -1,0 +1,123 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:49.101794",
+  "folder_info": {
+    "name": "metadata",
+    "absolute_path": "C:\\dev\\AIOS\\core\\analysis_tools\\metadata",
+    "relative_path": "core\\analysis_tools\\metadata",
+    "parent_path": "core\\analysis_tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "analysis_tools",
+      "metadata"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 7143,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+          "size": 3429,
+          "modified": "2025-09-15T22:25:13.814026",
+          "category": "documentation"
+        },
+        {
+          "name": "CYTOPLASM_ITER2_ANALYSIS_SUMMARY.md",
+          "size": 3714,
+          "modified": "2025-09-15T22:25:14.025504",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+        "size": 3429,
+        "modified": "2025-09-15T22:25:13.814026",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "CYTOPLASM_ITER2_ANALYSIS_SUMMARY.md",
+        "size": 3714,
+        "modified": "2025-09-15T22:25:14.025504",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+        "size": 3429,
+        "modified": "2025-09-15T22:25:13.814026",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > analysis_tools > metadata",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools\\metadata' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools\\metadata' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools\\metadata' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "core\\analysis_tools",
+      "docs\\metabolized_archive\\metabolism_metadata"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

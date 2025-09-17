@@ -1,0 +1,343 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:44.673700",
+  "folder_info": {
+    "name": "high_value_metabolized",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\metabolized_archive\\high_value_metabolized",
+    "relative_path": "docs\\metabolized_archive\\high_value_metabolized",
+    "parent_path": "docs\\metabolized_archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "metabolized_archive",
+      "high_value_metabolized"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "metabolism_metadata",
+      "processed_minimal",
+      "standard_metabolized"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 86902,
+      "file_count": 21,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION.md",
+          "size": 7594,
+          "modified": "2025-09-15T22:02:11.429830",
+          "category": "documentation"
+        },
+        {
+          "name": "BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_SUMMARY.md",
+          "size": 8805,
+          "modified": "2025-09-15T22:02:11.472825",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_achievement_summary.md",
+          "size": 5868,
+          "modified": "2025-09-15T22:02:11.514839",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_emergence_demo.md",
+          "size": 5164,
+          "modified": "2025-09-15T22:02:11.561826",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_test_guide.md",
+          "size": 8449,
+          "modified": "2025-09-15T22:02:11.614867",
+          "category": "documentation"
+        },
+        {
+          "name": "quantum_architecture.md",
+          "size": 9033,
+          "modified": "2025-09-15T22:02:11.659829",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 124,
+          "modified": "2025-09-13T18:21:45.904937",
+          "category": "documentation"
+        },
+        {
+          "name": "SYNTHETIC_BOSONIC_TACHYONIC_ARCHITECTURE.md",
+          "size": 13399,
+          "modified": "2025-09-15T22:02:11.717831",
+          "category": "documentation"
+        },
+        {
+          "name": "TACHYONIC_INTEGRATION_README.md",
+          "size": 5381,
+          "modified": "2025-09-15T22:02:11.765253",
+          "category": "documentation"
+        },
+        {
+          "name": "universal_consciousness_architecture.md",
+          "size": 12728,
+          "modified": "2025-09-15T22:02:11.815253",
+          "category": "documentation"
+        },
+        {
+          "name": "visual_intelligence_architecture.md",
+          "size": 8151,
+          "modified": "2025-09-15T22:02:11.857258",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION.metadata.json",
+          "size": 236,
+          "modified": "2025-09-13T18:21:45.921794",
+          "category": "documentation"
+        },
+        {
+          "name": "BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_SUMMARY.metadata.json",
+          "size": 233,
+          "modified": "2025-09-13T18:21:45.943932",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_achievement_summary.metadata.json",
+          "size": 220,
+          "modified": "2025-09-13T18:21:45.953926",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_emergence_demo.metadata.json",
+          "size": 215,
+          "modified": "2025-09-13T18:21:45.956925",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_test_guide.metadata.json",
+          "size": 211,
+          "modified": "2025-09-13T18:21:45.960578",
+          "category": "documentation"
+        },
+        {
+          "name": "quantum_architecture.metadata.json",
+          "size": 207,
+          "modified": "2025-09-13T18:21:45.977268",
+          "category": "documentation"
+        },
+        {
+          "name": "SYNTHETIC_BOSONIC_TACHYONIC_ARCHITECTURE.metadata.json",
+          "size": 227,
+          "modified": "2025-09-13T18:21:45.986268",
+          "category": "documentation"
+        },
+        {
+          "name": "TACHYONIC_INTEGRATION_README.metadata.json",
+          "size": 215,
+          "modified": "2025-09-13T18:21:45.989267",
+          "category": "documentation"
+        },
+        {
+          "name": "universal_consciousness_architecture.metadata.json",
+          "size": 223,
+          "modified": "2025-09-13T18:21:45.997951",
+          "category": "documentation"
+        },
+        {
+          "name": "visual_intelligence_architecture.metadata.json",
+          "size": 219,
+          "modified": "2025-09-13T18:21:46.001334",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION.md",
+        "size": 7594,
+        "modified": "2025-09-15T22:02:11.429830",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION.metadata.json",
+        "size": 236,
+        "modified": "2025-09-13T18:21:45.921794",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_achievement_summary.md",
+        "size": 5868,
+        "modified": "2025-09-15T22:02:11.514839",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_achievement_summary.metadata.json",
+        "size": 220,
+        "modified": "2025-09-13T18:21:45.953926",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_emergence_demo.md",
+        "size": 5164,
+        "modified": "2025-09-15T22:02:11.561826",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_emergence_demo.metadata.json",
+        "size": 215,
+        "modified": "2025-09-13T18:21:45.956925",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_test_guide.md",
+        "size": 8449,
+        "modified": "2025-09-15T22:02:11.614867",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_test_guide.metadata.json",
+        "size": 211,
+        "modified": "2025-09-13T18:21:45.960578",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 124,
+        "modified": "2025-09-13T18:21:45.904937",
+        "category": "documentation"
+      },
+      {
+        "name": "TACHYONIC_INTEGRATION_README.md",
+        "size": 5381,
+        "modified": "2025-09-15T22:02:11.765253",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "visual_intelligence_architecture.md",
+        "size": 8151,
+        "modified": "2025-09-15T22:02:11.857258",
+        "category": "documentation"
+      },
+      {
+        "name": "universal_consciousness_architecture.md",
+        "size": 12728,
+        "modified": "2025-09-15T22:02:11.815253",
+        "category": "documentation"
+      },
+      {
+        "name": "TACHYONIC_INTEGRATION_README.md",
+        "size": 5381,
+        "modified": "2025-09-15T22:02:11.765253",
+        "category": "documentation"
+      },
+      {
+        "name": "SYNTHETIC_BOSONIC_TACHYONIC_ARCHITECTURE.md",
+        "size": 13399,
+        "modified": "2025-09-15T22:02:11.717831",
+        "category": "documentation"
+      },
+      {
+        "name": "quantum_architecture.md",
+        "size": 9033,
+        "modified": "2025-09-15T22:02:11.659829",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_test_guide.md",
+        "size": 8449,
+        "modified": "2025-09-15T22:02:11.614867",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_emergence_demo.md",
+        "size": 5164,
+        "modified": "2025-09-15T22:02:11.561826",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_achievement_summary.md",
+        "size": 5868,
+        "modified": "2025-09-15T22:02:11.514839",
+        "category": "documentation"
+      },
+      {
+        "name": "BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_SUMMARY.md",
+        "size": 8805,
+        "modified": "2025-09-15T22:02:11.472825",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION.md",
+        "size": 7594,
+        "modified": "2025-09-15T22:02:11.429830",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 21,
+      "file_types": [
+        ".md",
+        ".json"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 4,
+      "consciousness_files": 10,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > metabolized_archive > high_value_metabolized",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\metabolized_archive\\high_value_metabolized' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\metabolized_archive\\high_value_metabolized' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\metabolized_archive\\high_value_metabolized' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "docs\\metabolized_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

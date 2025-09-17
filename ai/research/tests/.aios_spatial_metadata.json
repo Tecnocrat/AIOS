@@ -1,0 +1,310 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:22.600480",
+  "folder_info": {
+    "name": "tests",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\laboratory\\tests",
+    "relative_path": "ai\\laboratory\\tests",
+    "parent_path": "ai\\laboratory",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "laboratory",
+      "tests"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "demos",
+      "paradigm",
+      "scripts"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "integration",
+      "performance",
+      "quick"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 448686,
+      "file_count": 54,
+      "folder_count": 4,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_vscode_integration.py",
+          "size": 16667,
+          "modified": "2025-09-15T22:05:55.668800",
+          "category": "consciousness"
+        },
+        {
+          "name": "conftest.py",
+          "size": 1774,
+          "modified": "2025-09-15T22:05:55.940212",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_ainlp_adversarial_grok_mega.py",
+          "size": 1253,
+          "modified": "2025-09-15T22:05:56.215910",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_ai_cell_manager_registry.py",
+          "size": 1563,
+          "modified": "2025-09-15T22:05:56.327777",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_ai_core.py",
+          "size": 9255,
+          "modified": "2025-09-15T22:05:57.295054",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_chatgpt_integration_path.py",
+          "size": 2886,
+          "modified": "2025-09-15T22:05:57.598980",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_compression_integration.py",
+          "size": 33303,
+          "modified": "2025-09-15T22:06:01.028889",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_consciousness_emergence.py",
+          "size": 1542,
+          "modified": "2025-09-16T07:53:34.778842",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_env.py",
+          "size": 968,
+          "modified": "2025-09-15T22:06:02.316824",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_integration_ai_cells.py",
+          "size": 1698,
+          "modified": "2025-09-15T22:06:02.699323",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_magnus_blueprint.py",
+          "size": 30668,
+          "modified": "2025-09-15T22:06:06.460658",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_model_hash_determinism.py",
+          "size": 818,
+          "modified": "2025-09-15T22:06:06.977532",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_opencv_integration.py",
+          "size": 20836,
+          "modified": "2025-09-15T22:06:08.430692",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_python_env.py",
+          "size": 1545,
+          "modified": "2025-09-16T07:53:34.789840",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_safety_validate.py",
+          "size": 1251,
+          "modified": "2025-09-15T22:06:08.722070",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_taxonomy_baseline.py",
+          "size": 2274,
+          "modified": "2025-09-15T22:06:08.863536",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_tensorflow_training_cell.py",
+          "size": 5669,
+          "modified": "2025-09-15T22:06:09.107337",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_vision_demo_summary.py",
+          "size": 1480,
+          "modified": "2025-09-15T22:06:09.193744",
+          "category": "consciousness"
+        }
+      ],
+      ".json": [
+        {
+          "name": "system_health_report.json",
+          "size": 2698,
+          "modified": "2025-09-15T22:05:56.121259",
+          "category": "documentation"
+        },
+        {
+          "name": "test_results.json",
+          "size": 1001,
+          "modified": "2025-09-15T22:06:08.665790",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_vscode_integration.py",
+        "size": 16667,
+        "modified": "2025-09-15T22:05:55.668800",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_ai_core.py",
+        "size": 9255,
+        "modified": "2025-09-15T22:05:57.295054",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_consciousness_emergence.py",
+        "size": 1542,
+        "modified": "2025-09-16T07:53:34.778842",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "test_python_env.py",
+        "size": 1545,
+        "modified": "2025-09-16T07:53:34.789840",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_consciousness_emergence.py",
+        "size": 1542,
+        "modified": "2025-09-16T07:53:34.778842",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_vision_demo_summary.py",
+        "size": 1480,
+        "modified": "2025-09-15T22:06:09.193744",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_tensorflow_training_cell.py",
+        "size": 5669,
+        "modified": "2025-09-15T22:06:09.107337",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_taxonomy_baseline.py",
+        "size": 2274,
+        "modified": "2025-09-15T22:06:08.863536",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_safety_validate.py",
+        "size": 1251,
+        "modified": "2025-09-15T22:06:08.722070",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_results.json",
+        "size": 1001,
+        "modified": "2025-09-15T22:06:08.665790",
+        "category": "documentation"
+      },
+      {
+        "name": "test_opencv_integration.py",
+        "size": 20836,
+        "modified": "2025-09-15T22:06:08.430692",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_model_hash_determinism.py",
+        "size": 818,
+        "modified": "2025-09-15T22:06:06.977532",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_magnus_blueprint.py",
+        "size": 30668,
+        "modified": "2025-09-15T22:06:06.460658",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 20,
+      "file_types": [
+        ".py",
+        ".json"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 14,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > laboratory > tests",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory\\tests' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory\\tests' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\laboratory\\tests' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "ai\\laboratory",
+      "ai\\tests"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

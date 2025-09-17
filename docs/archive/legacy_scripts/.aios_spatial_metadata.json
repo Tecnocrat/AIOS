@@ -1,0 +1,162 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:31.696935",
+  "folder_info": {
+    "name": "legacy_scripts",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\archive\\legacy_scripts",
+    "relative_path": "docs\\archive\\legacy_scripts",
+    "parent_path": "docs\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "archive",
+      "legacy_scripts"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "INFRASTRUCTURE",
+      "ainlp_paradigms",
+      "compression",
+      "compression_reports",
+      "deprecated_root_docs",
+      "documentation_snapshots",
+      "iteration-logs",
+      "private_implementation",
+      "quantum_bootstrap",
+      "tachyonic_archive",
+      "unified_backups",
+      "vscode_integration"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 116618,
+      "file_count": 8,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "ainlp_e501_formatter.py",
+          "size": 4631,
+          "modified": "2025-07-14T08:21:17.811696",
+          "category": "consciousness"
+        },
+        {
+          "name": "ainlp_mega_consolidator.py",
+          "size": 11244,
+          "modified": "2025-07-14T08:21:17.843232",
+          "category": "consciousness"
+        },
+        {
+          "name": "ainlp_optimization_verification.py",
+          "size": 3223,
+          "modified": "2025-07-14T08:21:17.872982",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_documentation_garbage_collector.py",
+          "size": 26092,
+          "modified": "2025-07-14T08:21:17.907935",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_quantum_bootstrap.py",
+          "size": 48471,
+          "modified": "2025-07-14T08:21:17.949069",
+          "category": "consciousness"
+        },
+        {
+          "name": "context_harmonization_demo.py",
+          "size": 7746,
+          "modified": "2025-07-14T08:21:17.979288",
+          "category": "consciousness"
+        },
+        {
+          "name": "documentation_optimization_analysis.py",
+          "size": 13937,
+          "modified": "2025-07-14T08:21:18.011827",
+          "category": "consciousness"
+        },
+        {
+          "name": "validate_e501.py",
+          "size": 1274,
+          "modified": "2025-07-11T20:02:26.179524",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_documentation_garbage_collector.py",
+        "size": 26092,
+        "modified": "2025-07-14T08:21:17.907935",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_quantum_bootstrap.py",
+        "size": 48471,
+        "modified": "2025-07-14T08:21:17.949069",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 5,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 50,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > archive > legacy_scripts",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\legacy_scripts' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\legacy_scripts' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\legacy_scripts' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

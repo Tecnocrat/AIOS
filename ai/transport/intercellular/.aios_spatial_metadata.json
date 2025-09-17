@@ -1,0 +1,207 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:34.002165",
+  "folder_info": {
+    "name": "intercellular",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\transport\\intercellular",
+    "relative_path": "ai\\transport\\intercellular",
+    "parent_path": "ai\\transport",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "transport",
+      "intercellular"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "runtime"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 100513,
+      "file_count": 10,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "cellular_communication.py",
+          "size": 768,
+          "modified": "2025-09-15T22:07:17.144078",
+          "category": "consciousness"
+        },
+        {
+          "name": "enhanced_cellular_communication.py",
+          "size": 10618,
+          "modified": "2025-09-16T07:53:34.849840",
+          "category": "consciousness"
+        },
+        {
+          "name": "setup.py",
+          "size": 3292,
+          "modified": "2025-09-15T22:07:18.223866",
+          "category": "consciousness"
+        },
+        {
+          "name": "tensorflow_cellular_bridge.py",
+          "size": 20537,
+          "modified": "2025-09-15T22:07:19.861948",
+          "category": "consciousness"
+        },
+        {
+          "name": "tensorflow_cellular_workflow.py",
+          "size": 13747,
+          "modified": "2025-09-15T22:07:20.723523",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 6628,
+          "modified": "2025-09-15T22:07:18.001628",
+          "category": "documentation"
+        }
+      ],
+      ".cpp": [
+        {
+          "name": "tensorflow_bridge.cpp",
+          "size": 9500,
+          "modified": "2025-09-15T22:07:18.752975",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 6628,
+        "modified": "2025-09-15T22:07:18.001628",
+        "category": "documentation"
+      },
+      {
+        "name": "setup.py",
+        "size": 3292,
+        "modified": "2025-09-15T22:07:18.223866",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "enhanced_cellular_communication.py",
+        "size": 10618,
+        "modified": "2025-09-16T07:53:34.849840",
+        "category": "consciousness"
+      },
+      {
+        "name": "tensorflow_cellular_workflow.py",
+        "size": 13747,
+        "modified": "2025-09-15T22:07:20.723523",
+        "category": "consciousness"
+      },
+      {
+        "name": "tensorflow_cellular_bridge.py",
+        "size": 20537,
+        "modified": "2025-09-15T22:07:19.861948",
+        "category": "consciousness"
+      },
+      {
+        "name": "tensorflow_bridge.cpp",
+        "size": 9500,
+        "modified": "2025-09-15T22:07:18.752975",
+        "category": "consciousness"
+      },
+      {
+        "name": "setup.py",
+        "size": 3292,
+        "modified": "2025-09-15T22:07:18.223866",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 6628,
+        "modified": "2025-09-15T22:07:18.001628",
+        "category": "documentation"
+      },
+      {
+        "name": "cellular_communication.py",
+        "size": 768,
+        "modified": "2025-09-15T22:07:17.144078",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".py",
+        ".md",
+        ".cpp"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [
+      "setup.py"
+    ],
+    "breadcrumb_path": "ai > transport > intercellular",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\transport\\intercellular' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\transport\\intercellular' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\transport\\intercellular' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "ai\\transport"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

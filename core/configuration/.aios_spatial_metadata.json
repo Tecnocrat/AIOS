@@ -1,0 +1,284 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:48.841023",
+  "folder_info": {
+    "name": "configuration",
+    "absolute_path": "C:\\dev\\AIOS\\core\\configuration",
+    "relative_path": "core\\configuration",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "configuration"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "__pycache__",
+      "analysis_tools",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "core_systems",
+      "documentation",
+      "engines",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "runtime_intelligence",
+      "src",
+      "tachyonic_archive",
+      "tests"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 121237,
+      "file_count": 12,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "AI_INGESTION_POINTERS.json",
+          "size": 338,
+          "modified": "2025-09-15T22:26:38.576290",
+          "category": "documentation"
+        },
+        {
+          "name": "ASSEMBLER_EVOLUTION_STATUS_REPORT.json",
+          "size": 6462,
+          "modified": "2025-09-15T22:26:38.814893",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_015932.json",
+          "size": 77240,
+          "modified": "2025-09-15T22:26:42.204286",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_212410.json",
+          "size": 3502,
+          "modified": "2025-09-15T22:26:42.946707",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_212813.json",
+          "size": 3502,
+          "modified": "2025-09-15T22:26:43.094660",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117.json",
+          "size": 5874,
+          "modified": "2025-09-15T22:26:43.331482",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_011155.json",
+          "size": 3903,
+          "modified": "2025-09-15T22:26:43.534231",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_EVOLUTION_MONITOR_REPORT_20250905_015931.json",
+          "size": 699,
+          "modified": "2025-09-15T22:26:43.595686",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+          "size": 837,
+          "modified": "2025-09-15T22:26:43.643915",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATED_DENDRITIC_NETWORK_INDEX.json",
+          "size": 511,
+          "modified": "2025-09-15T22:26:43.667047",
+          "category": "documentation"
+        },
+        {
+          "name": "TREE_STRUCTURE_DEMONSTRATION_20250905_011500.json",
+          "size": 17514,
+          "modified": "2025-09-15T22:26:44.385542",
+          "category": "documentation"
+        }
+      ],
+      ".md": [
+        {
+          "name": "CELLULAR_METADATA.md",
+          "size": 855,
+          "modified": "2025-09-15T22:26:42.835234",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_212410.json",
+        "size": 3502,
+        "modified": "2025-09-15T22:26:42.946707",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_212813.json",
+        "size": 3502,
+        "modified": "2025-09-15T22:26:43.094660",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117.json",
+        "size": 5874,
+        "modified": "2025-09-15T22:26:43.331482",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_011155.json",
+        "size": 3903,
+        "modified": "2025-09-15T22:26:43.534231",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_EVOLUTION_MONITOR_REPORT_20250905_015931.json",
+        "size": 699,
+        "modified": "2025-09-15T22:26:43.595686",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+        "size": 837,
+        "modified": "2025-09-15T22:26:43.643915",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_DENDRITIC_NETWORK_INDEX.json",
+        "size": 511,
+        "modified": "2025-09-15T22:26:43.667047",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "TREE_STRUCTURE_DEMONSTRATION_20250905_011500.json",
+        "size": 17514,
+        "modified": "2025-09-15T22:26:44.385542",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_DENDRITIC_NETWORK_INDEX.json",
+        "size": 511,
+        "modified": "2025-09-15T22:26:43.667047",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+        "size": 837,
+        "modified": "2025-09-15T22:26:43.643915",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_EVOLUTION_MONITOR_REPORT_20250905_015931.json",
+        "size": 699,
+        "modified": "2025-09-15T22:26:43.595686",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_011155.json",
+        "size": 3903,
+        "modified": "2025-09-15T22:26:43.534231",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117.json",
+        "size": 5874,
+        "modified": "2025-09-15T22:26:43.331482",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_212813.json",
+        "size": 3502,
+        "modified": "2025-09-15T22:26:43.094660",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_212410.json",
+        "size": 3502,
+        "modified": "2025-09-15T22:26:42.946707",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_METADATA.md",
+        "size": 855,
+        "modified": "2025-09-15T22:26:42.835234",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_015932.json",
+        "size": 77240,
+        "modified": "2025-09-15T22:26:42.204286",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 12,
+      "file_types": [
+        ".json",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+      "RELOCATED_DENDRITIC_NETWORK_INDEX.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "core > configuration",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\configuration' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\configuration' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\configuration' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "tachyonic\\archive\\configurations"
+    ]
+  }
+}

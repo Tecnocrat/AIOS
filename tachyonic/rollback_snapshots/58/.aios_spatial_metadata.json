@@ -1,0 +1,97 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:49.628238",
+  "folder_info": {
+    "name": "58",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\rollback_snapshots\\58",
+    "relative_path": "tachyonic\\rollback_snapshots\\58",
+    "parent_path": "tachyonic\\rollback_snapshots",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "rollback_snapshots",
+      "58"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "f9"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 104,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "tiny"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".snap": [
+        {
+          "name": "58ca4f9c6a1ff399234695a3cb73cebcb0b323b5ef2a72d160e36766916be577.snap",
+          "size": 104,
+          "modified": "2025-08-15T10:09:51.557961",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".snap"
+      ],
+      "dominant_type": ".snap"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > rollback_snapshots > 58",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\rollback_snapshots\\58' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\rollback_snapshots\\58' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\rollback_snapshots\\58' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "tachyonic\\rollback_snapshots",
+      ".git\\objects\\58"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

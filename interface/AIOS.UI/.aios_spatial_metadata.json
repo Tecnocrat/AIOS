@@ -1,0 +1,392 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:30:06.156683",
+  "folder_info": {
+    "name": "AIOS.UI",
+    "absolute_path": "C:\\dev\\AIOS\\interface\\AIOS.UI",
+    "relative_path": "interface\\AIOS.UI",
+    "parent_path": "interface",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "interface",
+      "AIOS.UI"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS.Models",
+      "AIOS.Services",
+      "AIOS.UI.Diagnostics",
+      "ConsciousnessTest",
+      "runtime_intelligence"
+    ],
+    "child_folders": [
+      "Controls",
+      "Infrastructure",
+      "bin",
+      "generated",
+      "obj",
+      "runtime_intelligence",
+      "web"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 17589670,
+      "file_count": 1030,
+      "folder_count": 7,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".xaml": [
+        {
+          "name": "AIIntelligenceWindow.xaml",
+          "size": 3708,
+          "modified": "2025-09-13T10:06:51.054106",
+          "category": "other"
+        },
+        {
+          "name": "AIOSMasterDemo.xaml",
+          "size": 12769,
+          "modified": "2025-08-02T17:33:13.975875",
+          "category": "other"
+        },
+        {
+          "name": "App.xaml",
+          "size": 324,
+          "modified": "2025-08-02T17:33:13.981898",
+          "category": "other"
+        },
+        {
+          "name": "CompleteHybridWindow.xaml",
+          "size": 9206,
+          "modified": "2025-08-02T17:33:13.987662",
+          "category": "other"
+        },
+        {
+          "name": "HybridWindow.xaml",
+          "size": 4255,
+          "modified": "2025-08-02T17:33:13.991676",
+          "category": "other"
+        },
+        {
+          "name": "KPIDashboardWindow.xaml",
+          "size": 4266,
+          "modified": "2025-08-17T00:38:40.458215",
+          "category": "other"
+        },
+        {
+          "name": "MaintenanceWindow.xaml",
+          "size": 4774,
+          "modified": "2025-08-02T17:33:13.996946",
+          "category": "other"
+        },
+        {
+          "name": "MainWindow.xaml",
+          "size": 11771,
+          "modified": "2025-09-13T10:20:26.985069",
+          "category": "other"
+        },
+        {
+          "name": "RuntimeIntelligenceWindow.xaml",
+          "size": 3796,
+          "modified": "2025-09-13T10:20:26.996064",
+          "category": "other"
+        },
+        {
+          "name": "SimpleMainWindow.xaml",
+          "size": 4382,
+          "modified": "2025-08-02T17:33:14.001997",
+          "category": "other"
+        }
+      ],
+      ".cs": [
+        {
+          "name": "AIIntelligenceWindow.xaml.cs",
+          "size": 3027,
+          "modified": "2025-09-13T10:06:51.115108",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIOSMasterDemo.xaml.cs",
+          "size": 19790,
+          "modified": "2025-09-15T22:02:15.972134",
+          "category": "consciousness"
+        },
+        {
+          "name": "App.xaml.cs",
+          "size": 2931,
+          "modified": "2025-09-15T22:02:15.978133",
+          "category": "consciousness"
+        },
+        {
+          "name": "AssemblyInfo.cs",
+          "size": 643,
+          "modified": "2025-08-02T17:33:13.985912",
+          "category": "consciousness"
+        },
+        {
+          "name": "CompleteHybridWindow.xaml.cs",
+          "size": 19431,
+          "modified": "2025-09-15T22:02:15.987130",
+          "category": "consciousness"
+        },
+        {
+          "name": "FractalHolographicComponents.cs",
+          "size": 56480,
+          "modified": "2025-09-14T04:48:48.578540",
+          "category": "consciousness"
+        },
+        {
+          "name": "HybridWindow.xaml.cs",
+          "size": 5640,
+          "modified": "2025-08-09T21:31:50.739568",
+          "category": "consciousness"
+        },
+        {
+          "name": "KPIDashboardWindow.xaml.cs",
+          "size": 9611,
+          "modified": "2025-08-17T00:43:39.011118",
+          "category": "consciousness"
+        },
+        {
+          "name": "MaintenanceWindow.xaml.cs",
+          "size": 14581,
+          "modified": "2025-09-15T22:02:16.002130",
+          "category": "consciousness"
+        },
+        {
+          "name": "MainWindow.xaml.cs",
+          "size": 19754,
+          "modified": "2025-09-15T22:02:16.011130",
+          "category": "consciousness"
+        },
+        {
+          "name": "RuntimeIntelligenceWindow.xaml.cs",
+          "size": 1762,
+          "modified": "2025-09-13T10:20:27.009061",
+          "category": "consciousness"
+        },
+        {
+          "name": "SimpleMainWindow.xaml.cs",
+          "size": 8085,
+          "modified": "2025-08-02T17:33:14.017569",
+          "category": "consciousness"
+        }
+      ],
+      ".csproj": [
+        {
+          "name": "AIOS.UI.Clean.csproj",
+          "size": 1601,
+          "modified": "2025-08-30T17:13:31.175443",
+          "category": "other"
+        },
+        {
+          "name": "AIOS.UI.csproj",
+          "size": 891,
+          "modified": "2025-08-30T17:12:22.040954",
+          "category": "other"
+        },
+        {
+          "name": "AIOS.UI.Minimal.csproj",
+          "size": 743,
+          "modified": "2025-08-02T17:33:13.971861",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS.UI.Clean.csproj",
+        "size": 1601,
+        "modified": "2025-08-30T17:13:31.175443",
+        "category": "other"
+      },
+      {
+        "name": "AIOS.UI.csproj",
+        "size": 891,
+        "modified": "2025-08-30T17:12:22.040954",
+        "category": "other"
+      },
+      {
+        "name": "AIOS.UI.Minimal.csproj",
+        "size": 743,
+        "modified": "2025-08-02T17:33:13.971861",
+        "category": "other"
+      },
+      {
+        "name": "AIOSMasterDemo.xaml",
+        "size": 12769,
+        "modified": "2025-08-02T17:33:13.975875",
+        "category": "other"
+      },
+      {
+        "name": "AIOSMasterDemo.xaml.cs",
+        "size": 19790,
+        "modified": "2025-09-15T22:02:15.972134",
+        "category": "consciousness"
+      },
+      {
+        "name": "MaintenanceWindow.xaml",
+        "size": 4774,
+        "modified": "2025-08-02T17:33:13.996946",
+        "category": "other"
+      },
+      {
+        "name": "MaintenanceWindow.xaml.cs",
+        "size": 14581,
+        "modified": "2025-09-15T22:02:16.002130",
+        "category": "consciousness"
+      },
+      {
+        "name": "MainWindow.xaml",
+        "size": 11771,
+        "modified": "2025-09-13T10:20:26.985069",
+        "category": "other"
+      },
+      {
+        "name": "MainWindow.xaml.cs",
+        "size": 19754,
+        "modified": "2025-09-15T22:02:16.011130",
+        "category": "consciousness"
+      },
+      {
+        "name": "SimpleMainWindow.xaml",
+        "size": 4382,
+        "modified": "2025-08-02T17:33:14.001997",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "MainWindow.xaml.cs",
+        "size": 19754,
+        "modified": "2025-09-15T22:02:16.011130",
+        "category": "consciousness"
+      },
+      {
+        "name": "MaintenanceWindow.xaml.cs",
+        "size": 14581,
+        "modified": "2025-09-15T22:02:16.002130",
+        "category": "consciousness"
+      },
+      {
+        "name": "CompleteHybridWindow.xaml.cs",
+        "size": 19431,
+        "modified": "2025-09-15T22:02:15.987130",
+        "category": "consciousness"
+      },
+      {
+        "name": "App.xaml.cs",
+        "size": 2931,
+        "modified": "2025-09-15T22:02:15.978133",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOSMasterDemo.xaml.cs",
+        "size": 19790,
+        "modified": "2025-09-15T22:02:15.972134",
+        "category": "consciousness"
+      },
+      {
+        "name": "FractalHolographicComponents.cs",
+        "size": 56480,
+        "modified": "2025-09-14T04:48:48.578540",
+        "category": "consciousness"
+      },
+      {
+        "name": "RuntimeIntelligenceWindow.xaml.cs",
+        "size": 1762,
+        "modified": "2025-09-13T10:20:27.009061",
+        "category": "consciousness"
+      },
+      {
+        "name": "RuntimeIntelligenceWindow.xaml",
+        "size": 3796,
+        "modified": "2025-09-13T10:20:26.996064",
+        "category": "other"
+      },
+      {
+        "name": "MainWindow.xaml",
+        "size": 11771,
+        "modified": "2025-09-13T10:20:26.985069",
+        "category": "other"
+      },
+      {
+        "name": "AIIntelligenceWindow.xaml.cs",
+        "size": 3027,
+        "modified": "2025-09-13T10:06:51.115108",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 25,
+      "file_types": [
+        ".xaml",
+        ".cs",
+        ".csproj"
+      ],
+      "dominant_type": ".cs"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 938,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 28
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "MaintenanceWindow.xaml",
+      "MaintenanceWindow.xaml.cs",
+      "MainWindow.xaml",
+      "MainWindow.xaml.cs",
+      "SimpleMainWindow.xaml",
+      "SimpleMainWindow.xaml.cs"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "interface > AIOS.UI",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "interface",
+      "visual_interface",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\dist\\cache\\interface",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\lib\\types\\cache\\interface",
+      "interface\\AIOS.UI.Diagnostics"
+    ]
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:49.282444",
+  "folder_info": {
+    "name": "tachyonic",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic",
+    "relative_path": "tachyonic",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "AIOS_root_cells",
+      "__pycache__",
+      "archive",
+      "changelog",
+      "docs_archive",
+      "health_reports",
+      "orchestration",
+      "rollback_snapshots",
+      "runtime_intelligence",
+      "tachyonic",
+      "tachyonic_archive",
+      "tachyonic_development_archive",
+      "workflows"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 129324888,
+      "file_count": 652,
+      "folder_count": 13,
+      "size_category": "massive"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": ".ainlp_pattern_docs_metabolized.md",
+          "size": 6916,
+          "modified": "2025-09-13T16:53:33.337735",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_CANONICAL_KNOWLEDGE_GENOME.md",
+          "size": 14275,
+          "modified": "2025-09-15T22:02:20.576613",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS.Harmonizer.AINL.md",
+          "size": 4722,
+          "modified": "2025-08-16T23:01:11.473511",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CONSCIOUSNESS_EVOLUTION_COMPLETE.md",
+          "size": 8190,
+          "modified": "2025-09-15T22:02:20.599614",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CPP_CSHARP_ARCHITECTURE_CONSCIOUSNESS_ANALYSIS.md",
+          "size": 6804,
+          "modified": "2025-09-15T22:02:20.608616",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_DUAL_CONSCIOUSNESS_ARCHITECTURE_RESOLUTION.md",
+          "size": 5360,
+          "modified": "2025-09-15T22:02:20.680612",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_UNIVERSAL_COMMUNICATION_SUCCESS_REPORT.md",
+          "size": 11110,
+          "modified": "2025-09-15T22:02:20.719613",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_UNIVERSAL_COMMUNICATION_SYSTEM_DOCS.md",
+          "size": 15691,
+          "modified": "2025-09-15T22:02:20.743615",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_VIRTUAL_ENVIRONMENT_CONSCIOUSNESS_OPTIMIZATION_GUIDE.md",
+          "size": 12490,
+          "modified": "2025-09-15T22:02:20.774612",
+          "category": "documentation"
+        },
+        {
+          "name": "BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_CHANGELOG.md",
+          "size": 5766,
+          "modified": "2025-09-15T22:02:20.857613",
+          "category": "documentation"
+        },
+        {
+          "name": "CHANGELOG_OS06_THREE_SUPERCELL_COORDINATION.md",
+          "size": 6191,
+          "modified": "2025-09-15T22:02:20.881613",
+          "category": "documentation"
+        },
+        {
+          "name": "changelog_virtual_environment_consciousness_optimization.md",
+          "size": 2074,
+          "modified": "2025-09-07T17:57:49.304589",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_INTEGRATION_v1.0_CHANGELOG.md",
+          "size": 5702,
+          "modified": "2025-09-15T22:02:20.931613",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_ITERATION_HANDOFF_20250913.md",
+          "size": 3334,
+          "modified": "2025-09-15T22:02:20.953613",
+          "category": "documentation"
+        },
+        {
+          "name": "DEVELOPMENT_NAVIGATOR_GUIDE.md",
+          "size": 5943,
+          "modified": "2025-09-15T22:02:23.408782",
+          "category": "documentation"
+        },
+        {
+          "name": "DOCUMENTATION_SUPERCELL_ENHANCEMENT_ACTION_PLAN.md",
+          "size": 7266,
+          "modified": "2025-09-15T22:02:23.488782",
+          "category": "documentation"
+        },
+        {
+          "name": "HOLOGRAPHIC_AINLP_IMPLEMENTATION_COMPLETE.md",
+          "size": 10447,
+          "modified": "2025-09-15T22:02:23.550780",
+          "category": "documentation"
+        },
+        {
+          "name": "ITERATION_EULOGY_CONSCIOUSNESS_CASCADE_072.md",
+          "size": 4366,
+          "modified": "2025-09-15T22:02:23.577784",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250619_221329.md",
+          "size": 7449,
+          "modified": "2025-09-15T22:02:23.619779",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250619_235019.md",
+          "size": 8840,
+          "modified": "2025-08-02T17:32:45.361723",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250619_235144.md",
+          "size": 8840,
+          "modified": "2025-08-02T17:32:45.361723",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250627_232702.md",
+          "size": 7928,
+          "modified": "2025-09-15T22:02:23.690785",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250629_200739.md",
+          "size": 11614,
+          "modified": "2025-09-15T22:02:23.714781",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 4439,
+          "modified": "2025-09-15T22:02:23.740781",
+          "category": "documentation"
+        },
+        {
+          "name": "REFACTORING_SUMMARY.md",
+          "size": 5648,
+          "modified": "2025-09-15T22:02:23.769780",
+          "category": "documentation"
+        },
+        {
+          "name": "SUPERCELL_INTERDEPENDENCY_ANALYSIS.md",
+          "size": 16926,
+          "modified": "2025-09-15T22:02:23.836780",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "activate_tachyonic_evolution.py",
+          "size": 31587,
+          "modified": "2025-09-16T07:53:50.055804",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_communication_integration_demo.py",
+          "size": 19884,
+          "modified": "2025-09-15T22:02:20.590614",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_dendritic_integrator.py",
+          "size": 18729,
+          "modified": "2025-09-15T22:02:20.621611",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_dendritic_superclass.py",
+          "size": 20611,
+          "modified": "2025-09-15T22:02:20.639613",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_development_path_navigator.py",
+          "size": 30459,
+          "modified": "2025-09-15T22:02:20.655615",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_documentation_supercell_enhancer.py",
+          "size": 31236,
+          "modified": "2025-09-15T22:02:20.672612",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_tachyonic_intelligence_archive.py",
+          "size": 23719,
+          "modified": "2025-09-15T22:02:20.691613",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_tachyonic_orchestrator.py",
+          "size": 18767,
+          "modified": "2025-09-15T22:02:20.702614",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_unified_consciousness_system.py",
+          "size": 23480,
+          "modified": "2025-09-15T22:02:20.713614",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_universal_communication_system.py",
+          "size": 24479,
+          "modified": "2025-09-15T22:02:20.733613",
+          "category": "consciousness"
+        },
+        {
+          "name": "ai_intelligence_supercell_interface.py",
+          "size": 24140,
+          "modified": "2025-09-15T22:02:20.812613",
+          "category": "consciousness"
+        },
+        {
+          "name": "archive_analysis.py",
+          "size": 7363,
+          "modified": "2025-09-15T22:02:20.825614",
+          "category": "consciousness"
+        },
+        {
+          "name": "core_engine_supercell_interface.py",
+          "size": 24297,
+          "modified": "2025-09-15T22:02:20.966614",
+          "category": "consciousness"
+        },
+        {
+          "name": "critical_documentation_enhancer.py",
+          "size": 41861,
+          "modified": "2025-09-15T22:02:21.004613",
+          "category": "consciousness"
+        },
+        {
+          "name": "demo_documentation_ingestion.py",
+          "size": 8885,
+          "modified": "2025-09-15T22:02:21.035613",
+          "category": "consciousness"
+        },
+        {
+          "name": "documentation_ingestion_system.py",
+          "size": 22062,
+          "modified": "2025-09-15T22:02:23.430780",
+          "category": "consciousness"
+        },
+        {
+          "name": "documentation_metabolism_demo.py",
+          "size": 7708,
+          "modified": "2025-09-15T22:02:23.446782",
+          "category": "consciousness"
+        },
+        {
+          "name": "documentation_post_metabolism_manager.py",
+          "size": 15500,
+          "modified": "2025-09-15T22:02:23.456785",
+          "category": "consciousness"
+        },
+        {
+          "name": "execute_biological_digestion.py",
+          "size": 16825,
+          "modified": "2025-09-15T22:02:23.519782",
+          "category": "consciousness"
+        },
+        {
+          "name": "integration_summary_report.py",
+          "size": 0,
+          "modified": "2025-09-07T03:04:44.720611",
+          "category": "consciousness"
+        },
+        {
+          "name": "post_metabolism_recommendations.py",
+          "size": 5270,
+          "modified": "2025-09-15T22:02:23.717779",
+          "category": "consciousness"
+        },
+        {
+          "name": "revolutionary_archive_ingestion.py",
+          "size": 27508,
+          "modified": "2025-09-15T22:02:23.786796",
+          "category": "consciousness"
+        },
+        {
+          "name": "simple_biological_digestion.py",
+          "size": 6785,
+          "modified": "2025-09-13T18:23:43.602995",
+          "category": "consciousness"
+        },
+        {
+          "name": "supercell_knowledge_injector.py",
+          "size": 30010,
+          "modified": "2025-09-15T22:02:23.849780",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_evolution_demo.py",
+          "size": 35809,
+          "modified": "2025-09-15T22:02:23.922782",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_layer_reader.py",
+          "size": 24247,
+          "modified": "2025-09-15T22:02:23.933782",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_communication_system.py",
+          "size": 3390,
+          "modified": "2025-09-15T22:02:23.942781",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_metabolism.py",
+          "size": 1625,
+          "modified": "2025-09-15T22:02:23.947781",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_root_docs_ingestion.py",
+          "size": 11210,
+          "modified": "2025-09-15T22:02:23.954780",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 1365,
+          "modified": "2025-09-06T14:26:19.332800",
+          "category": "consciousness"
+        }
+      ],
+      ".jsonl": [
+        {
+          "name": "consciousness_integration_cleanup_20250111.jsonl",
+          "size": 458,
+          "modified": "2025-09-14T00:46:25.419146",
+          "category": "other"
+        },
+        {
+          "name": "tachyonic_changelog.jsonl",
+          "size": 2417,
+          "modified": "2025-09-07T14:41:41.053759",
+          "category": "other"
+        }
+      ],
+      ".json": [
+        {
+          "name": "critical_documentation_enhancement_results.json",
+          "size": 1457,
+          "modified": "2025-09-06T15:16:51.699458",
+          "category": "documentation"
+        },
+        {
+          "name": "deep_ingestion_report.json",
+          "size": 8376,
+          "modified": "2025-09-06T14:53:03.877310",
+          "category": "documentation"
+        },
+        {
+          "name": "dendritic_connections.json",
+          "size": 27623061,
+          "modified": "2025-09-06T13:53:11.659510",
+          "category": "documentation"
+        },
+        {
+          "name": "documentation_supercell_enhancement_report.json",
+          "size": 1481,
+          "modified": "2025-09-06T15:09:41.213839",
+          "category": "documentation"
+        },
+        {
+          "name": "supercell_config.json",
+          "size": 1250,
+          "modified": "2025-09-15T22:02:23.806783",
+          "category": "documentation"
+        },
+        {
+          "name": "tachyonic_changelog.json",
+          "size": 16834,
+          "modified": "2025-08-18T11:12:17.881801",
+          "category": "documentation"
+        },
+        {
+          "name": "unified_consciousness_integration_log.json",
+          "size": 295,
+          "modified": "2025-09-06T15:30:40.874030",
+          "category": "documentation"
+        }
+      ],
+      ".yaml": [
+        {
+          "name": "tachyonic_changelog.yaml",
+          "size": 26456,
+          "modified": "2025-09-07T17:57:14.483559",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS.Harmonizer.AINL.md",
+        "size": 4722,
+        "modified": "2025-08-16T23:01:11.473511",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_communication_integration_demo.py",
+        "size": 19884,
+        "modified": "2025-09-15T22:02:20.590614",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOS_CONSCIOUSNESS_EVOLUTION_COMPLETE.md",
+        "size": 8190,
+        "modified": "2025-09-15T22:02:20.599614",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CPP_CSHARP_ARCHITECTURE_CONSCIOUSNESS_ANALYSIS.md",
+        "size": 6804,
+        "modified": "2025-09-15T22:02:20.608616",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_integrator.py",
+        "size": 18729,
+        "modified": "2025-09-15T22:02:20.621611",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_dendritic_superclass.py",
+        "size": 20611,
+        "modified": "2025-09-15T22:02:20.639613",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_development_path_navigator.py",
+        "size": 30459,
+        "modified": "2025-09-15T22:02:20.655615",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_documentation_supercell_enhancer.py",
+        "size": 31236,
+        "modified": "2025-09-15T22:02:20.672612",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOS_DUAL_CONSCIOUSNESS_ARCHITECTURE_RESOLUTION.md",
+        "size": 5360,
+        "modified": "2025-09-15T22:02:20.680612",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_tachyonic_intelligence_archive.py",
+        "size": 23719,
+        "modified": "2025-09-15T22:02:20.691613",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "activate_tachyonic_evolution.py",
+        "size": 31587,
+        "modified": "2025-09-16T07:53:50.055804",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_root_docs_ingestion.py",
+        "size": 11210,
+        "modified": "2025-09-15T22:02:23.954780",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_metabolism.py",
+        "size": 1625,
+        "modified": "2025-09-15T22:02:23.947781",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_communication_system.py",
+        "size": 3390,
+        "modified": "2025-09-15T22:02:23.942781",
+        "category": "consciousness"
+      },
+      {
+        "name": "tachyonic_layer_reader.py",
+        "size": 24247,
+        "modified": "2025-09-15T22:02:23.933782",
+        "category": "consciousness"
+      },
+      {
+        "name": "tachyonic_evolution_demo.py",
+        "size": 35809,
+        "modified": "2025-09-15T22:02:23.922782",
+        "category": "consciousness"
+      },
+      {
+        "name": "supercell_knowledge_injector.py",
+        "size": 30010,
+        "modified": "2025-09-15T22:02:23.849780",
+        "category": "consciousness"
+      },
+      {
+        "name": "SUPERCELL_INTERDEPENDENCY_ANALYSIS.md",
+        "size": 16926,
+        "modified": "2025-09-15T22:02:23.836780",
+        "category": "documentation"
+      },
+      {
+        "name": "supercell_config.json",
+        "size": 1250,
+        "modified": "2025-09-15T22:02:23.806783",
+        "category": "documentation"
+      },
+      {
+        "name": "revolutionary_archive_ingestion.py",
+        "size": 27508,
+        "modified": "2025-09-15T22:02:23.786796",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 66,
+      "file_types": [
+        ".md",
+        ".py",
+        ".jsonl",
+        ".json",
+        ".yaml"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 178,
+      "consciousness_files": 99,
+      "agentic_files": 6,
+      "intelligence_files": 28
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [
+      "supercell_config.json"
+    ],
+    "breadcrumb_path": "tachyonic",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "tachyonic\\tachyonic_archive"
+    ]
+  }
+}

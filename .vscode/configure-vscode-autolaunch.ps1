@@ -22,116 +22,78 @@ if (-not (Test-Path $workspacePath)) {
 }
 
 function Set-VSCodeDefaultWorkspace {
-    Write-Host "[CONFIG] Setting VS Code default workspace to AIOS"
+    Write-Host "[CONFIG] VS Code settings configured for workspace only (no global modifications)"
     
-    # VS Code user settings directory
-    $vscodeUserDir = "$env:APPDATA\Code\User"
-    $userSettingsPath = "$vscodeUserDir\settings.json"
+    # AIOS operates entirely within its workspace - no global VSCode settings modified
+    # All configuration is contained within the workspace .vscode/settings.json
     
-    # Create user settings directory if it doesn't exist
-    if (-not (Test-Path $vscodeUserDir)) {
-        New-Item -ItemType Directory -Path $vscodeUserDir -Force | Out-Null
+    $workspaceVscodeDir = "$aiosRoot\.vscode"
+    $workspaceSettingsPath = "$workspaceVscodeDir\settings.json"
+    
+    # Ensure workspace .vscode directory exists
+    if (-not (Test-Path $workspaceVscodeDir)) {
+        New-Item -ItemType Directory -Path $workspaceVscodeDir -Force | Out-Null
     }
     
-    # Default user settings for AIOS
-    $userSettings = @{
-        "window.restoreWindows" = "one"
-        "workbench.startupEditor" = "none"
-        "window.reopenFolders" = "all"
-        "window.openFilesInNewWindow" = "off"
-        "window.openFoldersInNewWindow" = "on"
-        "window.newWindowDimensions" = "maximized"
-        "workbench.welcomePage.walkthroughs.openOnInstall" = $false
-        "workbench.welcome.enabled" = $false
-        "powershell.cwd" = $aiosRoot
-        "terminal.integrated.defaultLocation" = "editor"
-        "terminal.integrated.cwd" = $aiosRoot
+    # Verify workspace settings exist (they should already be committed)
+    if (Test-Path $workspaceSettingsPath) {
+        Write-Host "[SUCCESS] Workspace settings configured - no global modifications needed" -ForegroundColor Green
+        return $true
     }
-    
-    # Read existing settings if they exist
-    $existingSettings = @{}
-    if (Test-Path $userSettingsPath) {
-        try {
-            $existingContent = Get-Content $userSettingsPath -Raw
-            $existingSettings = $existingContent | ConvertFrom-Json -AsHashtable
-        }
-        catch {
-            Write-Host "[WARNING] Could not parse existing user settings, creating new file" -ForegroundColor Yellow
-        }
-    }
-    
-    # Merge settings
-    foreach ($key in $userSettings.Keys) {
-        $existingSettings[$key] = $userSettings[$key]
-    }
-    
-    # Write updated settings
-    $existingSettings | ConvertTo-Json -Depth 10 | Set-Content $userSettingsPath -Encoding UTF8
-    Write-Host "[SUCCESS] VS Code user settings updated" -ForegroundColor Green
-}
-
-function New-AIOSShortcut {
-    Write-Host "[CONFIG] Creating AIOS workspace shortcut"
-    
-    $shortcutPath = "$env:USERPROFILE\Desktop\AIOS Workspace.lnk"
-    $vscodeExe = Get-Command code -ErrorAction SilentlyContinue
-    
-    if (-not $vscodeExe) {
-        Write-Host "[ERROR] VS Code not found in PATH" -ForegroundColor Red
+    else {
+        Write-Host "[WARNING] Workspace settings not found at $workspaceSettingsPath" -ForegroundColor Yellow
         return $false
     }
+}
+
+
+function New-AIOSWorkspaceLauncher {
+    Write-Host "[CONFIG] Creating workspace-contained launcher (no desktop shortcuts)"
     
-    # Create shortcut using WScript.Shell
-    $shell = New-Object -ComObject WScript.Shell
-    $shortcut = $shell.CreateShortcut($shortcutPath)
-    $shortcut.TargetPath = $vscodeExe.Source
-    $shortcut.Arguments = "`"$workspacePath`""
-    $shortcut.WorkingDirectory = $aiosRoot
-    $shortcut.Description = "AIOS Development Workspace"
-    $shortcut.IconLocation = $vscodeExe.Source
-    $shortcut.Save()
+    # SECURITY: AIOS creates NO files outside C:\dev\AIOS workspace
+    # No desktop shortcuts, no user directory modifications
     
-    Write-Host "[SUCCESS] Desktop shortcut created: $shortcutPath" -ForegroundColor Green
+    $workspaceLauncher = "$aiosRoot\launch-aios.bat"
+    $launcherContent = @"
+@echo off
+REM AIOS Workspace Launcher - Contained within C:\dev\AIOS only
+echo [AIOS] Launching workspace from C:\dev\AIOS
+code "%~dp0AIOS.code-workspace"
+"@
+    
+    Set-Content -Path $workspaceLauncher -Value $launcherContent
+    Write-Host "[SUCCESS] Workspace launcher created: $workspaceLauncher" -ForegroundColor Green
+    Write-Host "[SECURITY] No external files created - workspace contained" -ForegroundColor Green
     return $true
 }
 
 function Set-PowerShellStartupLocation {
-    Write-Host "[CONFIG] Configuring PowerShell startup location"
+    Write-Host "[CONFIG] AIOS workspace-only configuration (no external profile modification)"
     
-    # PowerShell profile path
-    $profilePath = $PROFILE.CurrentUserAllHosts
-    $profileDir = Split-Path $profilePath -Parent
+    # SECURITY: AIOS NEVER modifies user PowerShell profiles or personal directories
+    # All configuration is contained within C:\dev\AIOS workspace only
     
-    # Create profile directory if it doesn't exist
-    if (-not (Test-Path $profileDir)) {
-        New-Item -ItemType Directory -Path $profileDir -Force | Out-Null
-    }
+    Write-Host "[SECURITY] AIOS respects user privacy - no profile modifications" -ForegroundColor Green
+    Write-Host "[INFO] Use 'cd C:\dev\AIOS' manually or workspace shortcuts" -ForegroundColor Yellow
     
-    # AIOS startup configuration
+    # Create workspace-local startup script instead
+    $workspaceStartup = "$aiosRoot\.vscode\workspace-startup.ps1"
     $startupConfig = @"
+# AIOS Workspace-Local Startup Script
+# This script runs only when explicitly called from within AIOS workspace
 
-# AIOS Development Environment Auto-Configuration
-if (Test-Path 'C:\dev\AIOS') {
-    if ((Get-Location).Path -eq $env:USERPROFILE -or (Get-Location).Path -eq 'C:\Windows\System32') {
-        Set-Location 'C:\dev\AIOS'
-        Write-Host '[AIOS] Workspace ready: C:\dev\AIOS' -ForegroundColor Green
-    }
+Write-Host '[AIOS] Workspace startup script executed' -ForegroundColor Green
+Write-Host '[LOCATION] Current directory: C:\dev\AIOS' -ForegroundColor Cyan
+
+# Verify we're in the correct workspace
+if ((Get-Location).Path -ne 'C:\dev\AIOS') {
+    Write-Warning '[AIOS] Not in AIOS workspace directory'
+    Write-Host '[SUGGESTION] Navigate to C:\dev\AIOS manually' -ForegroundColor Yellow
 }
-
 "@
 
-    # Add to profile if not already present
-    $profileContent = ""
-    if (Test-Path $profilePath) {
-        $profileContent = Get-Content $profilePath -Raw
-    }
-    
-    if ($profileContent -notlike "*AIOS Development Environment Auto-Configuration*") {
-        Add-Content -Path $profilePath -Value $startupConfig
-        Write-Host "[SUCCESS] PowerShell profile updated" -ForegroundColor Green
-    } else {
-        Write-Host "[INFO] PowerShell profile already configured" -ForegroundColor Yellow
-    }
+    Set-Content -Path $workspaceStartup -Value $startupConfig
+    Write-Host "[SUCCESS] Workspace-local startup script created: $workspaceStartup" -ForegroundColor Green
 }
 
 function New-BatchLauncher {
@@ -204,25 +166,28 @@ if ($Install -or $Configure) {
     New-BatchLauncher
     
     if ($CreateShortcut) {
-        New-AIOSShortcut
+        New-AIOSWorkspaceLauncher
     }
     
     Write-Host "`n[SUCCESS] AIOS VS Code auto-launch configuration completed" -ForegroundColor Green
     Write-Host "[INFO] Restart VS Code to apply changes" -ForegroundColor Cyan
     Write-Host "[INFO] Use 'launch-aios-workspace.bat' for direct workspace launch" -ForegroundColor Cyan
+    Write-Host "[SECURITY] All configuration contained within C:\dev\AIOS workspace" -ForegroundColor Green
 }
 elseif ($CreateShortcut) {
-    New-AIOSShortcut
+    New-AIOSWorkspaceLauncher
 }
 else {
     Write-Host "Usage: .\configure-vscode-autolaunch.ps1 [-Install] [-Configure] [-CreateShortcut]"
     Write-Host ""
     Write-Host "Options:"
-    Write-Host "  -Install        Configure VS Code and PowerShell for AIOS auto-launch"
+    Write-Host "  -Install        Configure VS Code workspace (no global modifications)"
     Write-Host "  -Configure      Same as -Install (alias)"
-    Write-Host "  -CreateShortcut Create desktop shortcut for AIOS workspace"
+    Write-Host "  -CreateShortcut Create workspace launcher (no desktop shortcuts)"
     Write-Host ""
     Write-Host "Examples:"
     Write-Host "  .\configure-vscode-autolaunch.ps1 -Install -CreateShortcut"
     Write-Host "  .\configure-vscode-autolaunch.ps1 -Configure"
+    Write-Host ""
+    Write-Host "SECURITY: AIOS creates NO files outside C:\dev\AIOS workspace"
 }

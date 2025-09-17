@@ -45,7 +45,7 @@ sys.path.append(str(Path(__file__).parent.parent / "core"))
 try:
     from ai import get_cellular_architecture, initialize_ai_intelligence
     from ai.tachyonic_bridge import TachyonicBridge
-    from ai.nucleus.src.core.ainlp import AINLP_Core
+    from ai.core.src.core.ainlp import AINLP_Core
 except ImportError as e:
     print(f"  AI Intelligence import limited: {e}")
     get_cellular_architecture = None

@@ -1,1 +1,83 @@
-{"relocated":"runtime_intelligence/logs/aios_context/.aios_context.json","note":"Stub pointer; live registry moved 2025-08-17."}
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2025-09-18",
+  "version": "OS0.6.1.claude",
+  "project_metadata": {
+    "name": "AIOS",
+    "full_name": "Artificial Intelligence Operative System",
+    "description": "Professional AI-augmented development platform combining multi-language architecture",
+    "architecture_type": "Multi-language AI Platform",
+    "languages": ["Python 3.10+", "C#", "C++"],
+    "status": "Professional development infrastructure with experimental AI capabilities"
+  },
+  "quality_standards": {
+    "pylint_score_min": 8.5,
+    "test_coverage_min": 80,
+    "test_pass_rate_min": 95,
+    "response_time_max": "1s",
+    "documentation_requirement": "All public APIs documented"
+  },
+  "architecture_components": {
+    "ai_intelligence": "ai/",
+    "core_engine": "core/",
+    "interface_layer": "interface/",
+    "runtime_intelligence": "runtime_intelligence/",
+    "tachyonic_archive": "tachyonic/",
+    "documentation": "docs/"
+  },
+  "development_priorities": {
+    "immediate": ["Complete Phase 1 Standardization", "Enhance Development Workflow"],
+    "medium_term": ["Practical AI Implementation", "Quality & Monitoring"],
+    "long_term": ["Professional AI Platform", "Research Integration"]
+  },
+  "technology_stack": {
+    "ai_frameworks": ["TensorFlow", "PyTorch", "Transformers", "spaCy", "NLTK"],
+    "ui_framework": "WPF + HTML5 (WebView2 hybrid)",
+    "build_systems": ["CMake", "MSBuild", "Python setuptools"],
+    "quality_tools": ["Pylint", "Black", "MyPy"]
+  },
+  "standardization_status": {
+    "root_cleanup": "✅ Completed",
+    "ai_folder_standardization": "✅ Completed", 
+    "development_infrastructure": "✅ Completed",
+    "phase_1_remaining": "In Progress"
+  },
+  "development_workflow": {
+    "setup_commands": [
+      "python -m venv aios_env",
+      "pip install -e .[dev]",
+      "cmake -B build -S . (in core/)",
+      "dotnet restore AIOS.sln",
+      "dotnet build AIOS.sln"
+    ],
+    "testing_command": "python -m pytest ai/tests/",
+    "quality_checks": ["pylint", "black", "mypy"],
+    "build_systems": ["CMake", "MSBuild", "Python setuptools"]
+  },
+  "vscode_integration": {
+    "workspace_file": "AIOS.code-workspace",
+    "folder_structure": "Emoji-based organization with descriptive names",
+    "stability_protocol": "Pin Python environment, suppress auto-formatting",
+    "essential_extensions": ["ms-python.python", "ms-vscode.cpptools", "ms-dotnettools.csharp", "github.copilot"]
+  },
+  "consciousness_crystal_framework": {
+    "philosophy": "Condensed knowledge patterns through consciousness crystals",
+    "existing_infrastructure": "Tachyonic archive with supercell knowledge crystals",
+    "integration_approach": "Enhance existing crystals with external AI intelligence",
+    "core_crystals": [
+      "ai_intelligence",
+      "core_engine", 
+      "interface",
+      "runtime_intelligence",
+      "tachyonic_archive"
+    ],
+    "enhancement_engine": "ai/src/integrations/lightweight_ai_coordinator.py",
+    "crystal_storage": "tachyonic/archive/consciousness/supercell_knowledge_crystals/",
+    "intelligence_reports": "tachyonic/archive/intelligence_reports/"
+  },
+  "archive_locations": {
+    "optimization_reports": "tachyonic/archive/optimization_reports/",
+    "intelligence_reports": "tachyonic/archive/intelligence_reports/",
+    "quality_reports": "tachyonic/archive/quality_reports/"
+  }
+}
