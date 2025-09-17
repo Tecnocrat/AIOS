@@ -26,10 +26,23 @@ try {
     $PreCommitScript = Join-Path $GitRoot ".githooks\modules\nucleus\pre-commit.ps1"
     $RefactoringScript = Join-Path $GitRoot ".githooks\modules\nucleus\ai_guided_refactoring_engine.ps1"
     $AIReminderScript = Join-Path $GitRoot ".githooks\modules\membrane\ai_context_reminder.ps1"
+    $BackupPolicyScript = Join-Path $GitRoot ".githooks\modules\membrane\backup_policy_enforcement.ps1"
     
     if (-not (Test-Path $PreCommitScript)) {
         Write-Error "GitHook nucleus pre-commit script not found: $PreCommitScript"
         exit 1
+    }
+    
+    # Execute backup policy enforcement first
+    if (Test-Path $BackupPolicyScript) {
+        Write-Host "`n🗄️ [BACKUP-POLICY] Enforcing centralized backup storage..." -ForegroundColor Blue
+        & $BackupPolicyScript
+        $BackupPolicyResult = $LASTEXITCODE
+        
+        if ($BackupPolicyResult -ne 0) {
+            Write-Host "✗ [BACKUP-POLICY] Backup policy violations must be resolved before commit" -ForegroundColor Red
+            exit $BackupPolicyResult
+        }
     }
     
     # Execute the actual pre-commit logic

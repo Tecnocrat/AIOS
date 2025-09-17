@@ -1,0 +1,189 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:30:53.372727",
+  "folder_info": {
+    "name": "context",
+    "absolute_path": "C:\\dev\\AIOS\\runtime_intelligence\\context",
+    "relative_path": "runtime_intelligence\\context",
+    "parent_path": "runtime_intelligence",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Runtime Intelligence",
+    "secondary_areas": [],
+    "path_classification": [
+      "runtime_intelligence",
+      "context"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "aios_cellular_workspace",
+      "analysis",
+      "iterations",
+      "logs",
+      "tools"
+    ],
+    "child_folders": [
+      "crystals"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 779254,
+      "file_count": 15,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "aios_path_registry.json",
+          "size": 2786,
+          "modified": "2025-09-06T22:32:09.216599",
+          "category": "documentation"
+        },
+        {
+          "name": "context_adjacency.json",
+          "size": 6660,
+          "modified": "2025-09-15T23:33:14.237063",
+          "category": "documentation"
+        },
+        {
+          "name": "context_index.json",
+          "size": 20580,
+          "modified": "2025-09-15T23:33:14.234062",
+          "category": "documentation"
+        },
+        {
+          "name": "full_system_validation.json",
+          "size": 8128,
+          "modified": "2025-09-02T14:45:32.597738",
+          "category": "documentation"
+        },
+        {
+          "name": "kpi_thresholds.json",
+          "size": 1988,
+          "modified": "2025-08-17T05:24:15.836545",
+          "category": "documentation"
+        },
+        {
+          "name": "magnus_components.json",
+          "size": 1514,
+          "modified": "2025-08-16T15:03:47.224387",
+          "category": "documentation"
+        },
+        {
+          "name": "taxonomy_baseline.json",
+          "size": 3013,
+          "modified": "2025-08-17T06:52:32.649191",
+          "category": "documentation"
+        }
+      ],
+      ".db": [
+        {
+          "name": "knowledge_crystals.db",
+          "size": 733184,
+          "modified": "2025-09-02T14:45:32.591707",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_path_registry.json",
+        "size": 2786,
+        "modified": "2025-09-06T22:32:09.216599",
+        "category": "documentation"
+      },
+      {
+        "name": "context_index.json",
+        "size": 20580,
+        "modified": "2025-09-15T23:33:14.234062",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "context_adjacency.json",
+        "size": 6660,
+        "modified": "2025-09-15T23:33:14.237063",
+        "category": "documentation"
+      },
+      {
+        "name": "context_index.json",
+        "size": 20580,
+        "modified": "2025-09-15T23:33:14.234062",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_path_registry.json",
+        "size": 2786,
+        "modified": "2025-09-06T22:32:09.216599",
+        "category": "documentation"
+      },
+      {
+        "name": "full_system_validation.json",
+        "size": 8128,
+        "modified": "2025-09-02T14:45:32.597738",
+        "category": "documentation"
+      },
+      {
+        "name": "knowledge_crystals.db",
+        "size": 733184,
+        "modified": "2025-09-02T14:45:32.591707",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".json",
+        ".db"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "context_index.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "runtime_intelligence > context",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\context' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\context' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\context' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "runtime_intelligence",
+      "core\\runtime_intelligence",
+      "interface\\runtime_intelligence",
+      "tachyonic\\runtime_intelligence",
+      "visual_interface\\runtime_intelligence",
+      "docs\\ai-context"
+    ]
+  }
+}

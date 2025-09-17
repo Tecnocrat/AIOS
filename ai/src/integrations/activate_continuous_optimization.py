@@ -302,7 +302,7 @@ def main():
             'success': True
         }
         
-        report_file = os.path.join("c:\\dev\\AIOS", "continuous_optimization_activation_report.json")
+        report_file = os.path.join("c:\\dev\\AIOS\\tachyonic\\archive\\optimization_reports", "continuous_optimization_activation_report.json")
         with open(report_file, 'w') as f:
             json.dump(activation_report, f, indent=2, default=str)
         

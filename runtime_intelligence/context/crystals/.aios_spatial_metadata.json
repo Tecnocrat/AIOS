@@ -1,0 +1,131 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:41:37.870794",
+  "folder_info": {
+    "name": "crystals",
+    "absolute_path": "C:\\dev\\AIOS\\runtime_intelligence\\context\\crystals",
+    "relative_path": "runtime_intelligence\\context\\crystals",
+    "parent_path": "runtime_intelligence\\context",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Runtime Intelligence",
+    "secondary_areas": [],
+    "path_classification": [
+      "runtime_intelligence",
+      "context",
+      "crystals"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 1401,
+      "file_count": 7,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "phase1b_taxonomy_baseline_20250817_063459.json",
+          "size": 201,
+          "modified": "2025-08-17T06:34:59.661706",
+          "category": "documentation"
+        },
+        {
+          "name": "phase1b_taxonomy_baseline_20250817_063703.json",
+          "size": 200,
+          "modified": "2025-08-17T06:37:03.788703",
+          "category": "documentation"
+        },
+        {
+          "name": "phase1b_taxonomy_baseline_20250817_064417.json",
+          "size": 200,
+          "modified": "2025-08-17T06:44:17.835978",
+          "category": "documentation"
+        },
+        {
+          "name": "phase1b_taxonomy_baseline_20250817_064421.json",
+          "size": 200,
+          "modified": "2025-08-17T06:44:21.738789",
+          "category": "documentation"
+        },
+        {
+          "name": "phase1b_taxonomy_baseline_20250817_064426.json",
+          "size": 200,
+          "modified": "2025-08-17T06:44:26.471594",
+          "category": "documentation"
+        },
+        {
+          "name": "phase1b_taxonomy_baseline_20250817_065227.json",
+          "size": 200,
+          "modified": "2025-08-17T06:52:27.873186",
+          "category": "documentation"
+        },
+        {
+          "name": "phase1b_taxonomy_baseline_20250817_065232.json",
+          "size": 200,
+          "modified": "2025-08-17T06:52:32.649191",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "runtime_intelligence > context > crystals",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\context\\crystals' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\context\\crystals' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\context\\crystals' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "runtime_intelligence",
+      "core\\runtime_intelligence",
+      "interface\\runtime_intelligence",
+      "tachyonic\\runtime_intelligence",
+      "visual_interface\\runtime_intelligence",
+      "docs\\ai-context",
+      "tachyonic\\archive\\consciousness\\supercell_knowledge_crystals"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

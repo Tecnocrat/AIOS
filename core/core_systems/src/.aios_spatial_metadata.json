@@ -1,0 +1,174 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:06.109740",
+  "folder_info": {
+    "name": "src",
+    "absolute_path": "C:\\dev\\AIOS\\core\\core_systems\\src",
+    "relative_path": "core\\core_systems\\src",
+    "parent_path": "core\\core_systems",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [
+      "Core Engine"
+    ],
+    "path_classification": [
+      "core",
+      "core_systems",
+      "src"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "bin",
+      "build",
+      "include",
+      "obj"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 30522,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".cpp": [
+        {
+          "name": "aios_core.cpp",
+          "size": 8725,
+          "modified": "2025-09-15T22:27:19.909656",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_core.cpp",
+          "size": 11199,
+          "modified": "2025-09-15T22:27:29.879719",
+          "category": "consciousness"
+        },
+        {
+          "name": "main.cpp",
+          "size": 4569,
+          "modified": "2025-09-15T22:27:30.138062",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_surface_viewer_main.cpp",
+          "size": 6029,
+          "modified": "2025-09-15T22:27:30.385783",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_core.cpp",
+        "size": 8725,
+        "modified": "2025-09-15T22:27:19.909656",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_core.cpp",
+        "size": 11199,
+        "modified": "2025-09-15T22:27:29.879719",
+        "category": "consciousness"
+      },
+      {
+        "name": "main.cpp",
+        "size": 4569,
+        "modified": "2025-09-15T22:27:30.138062",
+        "category": "consciousness"
+      },
+      {
+        "name": "tachyonic_surface_viewer_main.cpp",
+        "size": 6029,
+        "modified": "2025-09-15T22:27:30.385783",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "tachyonic_surface_viewer_main.cpp",
+        "size": 6029,
+        "modified": "2025-09-15T22:27:30.385783",
+        "category": "consciousness"
+      },
+      {
+        "name": "main.cpp",
+        "size": 4569,
+        "modified": "2025-09-15T22:27:30.138062",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_core.cpp",
+        "size": 11199,
+        "modified": "2025-09-15T22:27:29.879719",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core.cpp",
+        "size": 8725,
+        "modified": "2025-09-15T22:27:19.909656",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".cpp"
+      ],
+      "dominant_type": ".cpp"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 3,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "main.cpp",
+      "tachyonic_surface_viewer_main.cpp"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "core > core_systems > src",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems\\src' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems\\src' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems\\src' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "core\\core_systems",
+      "ai\\src"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

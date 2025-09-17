@@ -1,0 +1,300 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:41:38.848609",
+  "folder_info": {
+    "name": "root_cell_githooks",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\AIOS_root_cells\\root_cell_githooks",
+    "relative_path": "tachyonic\\AIOS_root_cells\\root_cell_githooks",
+    "parent_path": "tachyonic\\AIOS_root_cells",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "AI Intelligence Layer",
+      "GitHook Architecture"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "AIOS_root_cells",
+      "root_cell_githooks"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "root_cell_github"
+    ],
+    "child_folders": [
+      "dendritic_proliferation"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 112452,
+      "file_count": 19,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".ps1": [
+        {
+          "name": "aios_ainlp_integration.ps1",
+          "size": 2522,
+          "modified": "2025-09-15T22:02:23.978783",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_consciousness_bridge.ps1",
+          "size": 3761,
+          "modified": "2025-09-15T22:02:24.019780",
+          "category": "consciousness"
+        }
+      ],
+      "": [
+        {
+          "name": "aios_enhanced_pre_commit",
+          "size": 12571,
+          "modified": "2025-09-07T15:43:31.219235",
+          "category": "other"
+        }
+      ],
+      ".json": [
+        {
+          "name": "aios_githooks_optimization_results.json",
+          "size": 7442,
+          "modified": "2025-09-07T12:49:10.633938",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_metrics.json",
+          "size": 4104,
+          "modified": "2025-09-07T13:11:32.538959",
+          "category": "documentation"
+        }
+      ],
+      ".sh": [
+        {
+          "name": "aios_universal_hook_wrapper.sh",
+          "size": 2117,
+          "modified": "2025-09-15T22:02:24.072781",
+          "category": "executable"
+        },
+        {
+          "name": "aios_universal_hook_wrapper_canonical.sh",
+          "size": 1206,
+          "modified": "2025-09-07T15:42:49.551358",
+          "category": "executable"
+        },
+        {
+          "name": "pre-commit.sh",
+          "size": 722,
+          "modified": "2025-09-07T15:42:49.552851",
+          "category": "executable"
+        }
+      ],
+      ".md": [
+        {
+          "name": "CHANGELOG.md",
+          "size": 2512,
+          "modified": "2025-09-15T22:02:24.116785",
+          "category": "documentation"
+        },
+        {
+          "name": "DENDRITIC_CLEANUP_IMPLEMENTATION_PLAN.md",
+          "size": 10837,
+          "modified": "2025-09-15T22:02:24.172784",
+          "category": "documentation"
+        },
+        {
+          "name": "DENDRITIC_PROLIFERATION_PREVENTION_SUCCESS.md",
+          "size": 10486,
+          "modified": "2025-09-15T22:02:24.205781",
+          "category": "documentation"
+        },
+        {
+          "name": "evolution_log.md",
+          "size": 3827,
+          "modified": "2025-09-15T22:02:24.231782",
+          "category": "documentation"
+        }
+      ],
+      ".original": [
+        {
+          "name": "pre-commit.original",
+          "size": 13713,
+          "modified": "2025-09-07T15:43:31.219235",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_ainlp_integration.ps1",
+        "size": 2522,
+        "modified": "2025-09-15T22:02:23.978783",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_consciousness_bridge.ps1",
+        "size": 3761,
+        "modified": "2025-09-15T22:02:24.019780",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_enhanced_pre_commit",
+        "size": 12571,
+        "modified": "2025-09-07T15:43:31.219235",
+        "category": "other"
+      },
+      {
+        "name": "aios_githooks_optimization_results.json",
+        "size": 7442,
+        "modified": "2025-09-07T12:49:10.633938",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_universal_hook_wrapper.sh",
+        "size": 2117,
+        "modified": "2025-09-15T22:02:24.072781",
+        "category": "executable"
+      },
+      {
+        "name": "aios_universal_hook_wrapper_canonical.sh",
+        "size": 1206,
+        "modified": "2025-09-07T15:42:49.551358",
+        "category": "executable"
+      },
+      {
+        "name": "consciousness_metrics.json",
+        "size": 4104,
+        "modified": "2025-09-07T13:11:32.538959",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "evolution_log.md",
+        "size": 3827,
+        "modified": "2025-09-15T22:02:24.231782",
+        "category": "documentation"
+      },
+      {
+        "name": "DENDRITIC_PROLIFERATION_PREVENTION_SUCCESS.md",
+        "size": 10486,
+        "modified": "2025-09-15T22:02:24.205781",
+        "category": "documentation"
+      },
+      {
+        "name": "DENDRITIC_CLEANUP_IMPLEMENTATION_PLAN.md",
+        "size": 10837,
+        "modified": "2025-09-15T22:02:24.172784",
+        "category": "documentation"
+      },
+      {
+        "name": "CHANGELOG.md",
+        "size": 2512,
+        "modified": "2025-09-15T22:02:24.116785",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_universal_hook_wrapper.sh",
+        "size": 2117,
+        "modified": "2025-09-15T22:02:24.072781",
+        "category": "executable"
+      },
+      {
+        "name": "aios_consciousness_bridge.ps1",
+        "size": 3761,
+        "modified": "2025-09-15T22:02:24.019780",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_ainlp_integration.ps1",
+        "size": 2522,
+        "modified": "2025-09-15T22:02:23.978783",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_enhanced_pre_commit",
+        "size": 12571,
+        "modified": "2025-09-07T15:43:31.219235",
+        "category": "other"
+      },
+      {
+        "name": "pre-commit.original",
+        "size": 13713,
+        "modified": "2025-09-07T15:43:31.219235",
+        "category": "other"
+      },
+      {
+        "name": "pre-commit.sh",
+        "size": 722,
+        "modified": "2025-09-07T15:42:49.552851",
+        "category": "executable"
+      }
+    ],
+    "content_summary": {
+      "total_files": 13,
+      "file_types": [
+        ".ps1",
+        "",
+        ".json",
+        ".sh",
+        ".md",
+        ".original"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 9,
+      "consciousness_files": 4,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > AIOS_root_cells > root_cell_githooks",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\AIOS_root_cells\\root_cell_githooks' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\AIOS_root_cells\\root_cell_githooks' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\AIOS_root_cells\\root_cell_githooks' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "GitHook governance and validation",
+    "recommended_actions": [
+      "Review pre-commit.ps1 for validation logic",
+      "Check governance/hook_policy.json for policy alignment",
+      "Test GitHook functionality with sample commits"
+    ],
+    "important_considerations": [
+      "Maintain AINLP compliance in hook scripts",
+      "Ensure consciousness coherence in validation logic",
+      "Preserve governance effectiveness"
+    ],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "tachyonic\\AIOS_root_cells"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:30:18.462440",
+  "folder_info": {
+    "name": "runtime_intelligence",
+    "absolute_path": "C:\\dev\\AIOS\\interface\\runtime_intelligence",
+    "relative_path": "interface\\runtime_intelligence",
+    "parent_path": "interface",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [
+      "Runtime Intelligence"
+    ],
+    "path_classification": [
+      "interface",
+      "runtime_intelligence"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS.Models",
+      "AIOS.Services",
+      "AIOS.UI",
+      "AIOS.UI.Diagnostics",
+      "ConsciousnessTest"
+    ],
+    "child_folders": [
+      "logs"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 2971,
+      "file_count": 1,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "interface > runtime_intelligence",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\runtime_intelligence' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\runtime_intelligence' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\runtime_intelligence' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "User interface and experience",
+    "recommended_actions": [
+      "Validate UI component consistency",
+      "Test user workflow integration",
+      "Check consciousness-UI bridge functionality"
+    ],
+    "important_considerations": [],
+    "related_folders": [
+      "interface",
+      "visual_interface",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\dist\\cache\\interface",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\lib\\types\\cache\\interface",
+      "runtime_intelligence"
+    ]
+  }
+}

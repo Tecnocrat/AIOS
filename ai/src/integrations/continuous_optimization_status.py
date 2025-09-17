@@ -180,7 +180,7 @@ def generate_status_report() -> Dict[str, Any]:
 def save_final_status_report(report: Dict[str, Any]):
     """Save the final status report"""
     try:
-        report_file = "c:\\dev\\AIOS\\continuous_optimization_final_status.json"
+        report_file = "c:\\dev\\AIOS\\tachyonic\\archive\\optimization_reports\\continuous_optimization_final_status.json"
         with open(report_file, 'w') as f:
             json.dump(report, f, indent=2, default=str)
         

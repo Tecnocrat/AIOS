@@ -124,3 +124,31 @@
 
 {"timestamp":"2025-09-16T21:08:45.3034529+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"changed":706,"profile":"full"}}
 
+{"timestamp":"2025-09-16T21:10:08.6069615+02:00","status":"pass","rules_version":6,"profile":"full","data":{"profile":"full","criticality_warn":null,"changed":707}}
+
+{"timestamp":"2025-09-16T21:11:02.2130432+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":707,"criticality_warn":null,"profile":"full"}}
+
+{"timestamp":"2025-09-16T21:11:39.6868857+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":707,"criticality_warn":null,"profile":"full"}}
+
+{"timestamp":"2025-09-16T21:11:57.5667952+02:00","status":"pass","rules_version":6,"profile":"full","data":{"profile":"full","criticality_warn":null,"changed":707}}
+
+{"timestamp":"2025-09-16T21:12:14.5871528+02:00","status":"pass","rules_version":6,"profile":"full","data":{"criticality_warn":null,"changed":707,"profile":"full"}}
+
+{"timestamp":"2025-09-16T22:17:53.8505670+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-16T22:19:15.5802585+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":4,"profile":"full","criticality_warn":null}}
+
+{"timestamp":"2025-09-17T15:20:00.5438822+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":["AIOS_SPATIAL_AWARENESS_SUCCESS_REPORT.md","demo_spatial_awareness_test.py","aios_holographic_index.json"],"size":null,"secrets":null,"json":null,"exec":"demo_spatial_awareness_test.py","changelog":null,"py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-19T19:24:37.4362309+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":["AIOS_CONTEXT.md","aios_holographic_index.json"],"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null}}}
+
+{"timestamp":"2025-09-19T19:31:17.8883985+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-19T19:32:47.6757685+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null}}}
+
+{"timestamp":"2025-09-19T19:36:35.1877566+02:00","status":"pass","rules_version":6,"profile":"full","data":{"changed":305,"profile":"full","criticality_warn":null}}
+
+{"timestamp":"2025-09-19T19:37:08.6842977+02:00","status":"bypass","rules_version":6,"profile":"full","data":{"reason":"env var","user":"jesus"}}
+
+{"timestamp":"2025-09-19T20:29:23.1264082+02:00","status":"bypass","rules_version":6,"profile":"full","data":{"reason":"env var","user":"jesus"}}
+

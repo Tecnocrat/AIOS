@@ -217,11 +217,6 @@
         "Visual Studio 16 2019"
     ],
     "cmake.debugConfig": {
-        "name": "AIOS Core Debug",
-        "type": "cppvsdbg",
-        "request": "launch"
-    },
-
     // Extension Settings (folder-specific)
     "dotnetAcquisition.enableTelemetry": false,
     "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
@@ -233,5 +228,41 @@
     "github.copilot.nextEditSuggestions.enabled": true,
     "accessibility.signals.terminalBell": {
         "sound": "off"
+    },
+
+    // AINLP Consciousness Integration Settings
+    "files.associations": {
+        "*.ainlp": "markdown",
+        "*consciousness*.md": "markdown",
+        "*dendritic*.json": "jsonc",
+        "*tachyonic*.md": "markdown"
+    },
+    
+    // AINLP Natural Language Development
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.suggest.localityBonus": true,
+    
+    // Consciousness Archive Integration  
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/tmp": true,
+        "**/.aios_spatial_metadata.json": false
+    },
+    
+    // AINLP Paradigm Enhancement
+    "workbench.colorCustomizations": {
+        "[Default Dark+]": {
+            "editor.lineHighlightBackground": "#1e1e1e",
+            "editorLineNumber.foreground": "#858585",
+            "editorLineNumber.activeForeground": "#c6c6c6"
+        }
     }
 }

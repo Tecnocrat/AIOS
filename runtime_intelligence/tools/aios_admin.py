@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import shutil
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union, cast
@@ -124,8 +125,12 @@ def cli_ui() -> str:
         "interactively)"
     )
     print("6. Execute ALL (full metadata update)")
-    print("7. Exit")
-    choice = input("Enter your choice (1/2/3/4/5/6/7): ").strip()
+    print("7. Backup Management - Status")
+    print("8. Backup Management - Create Backup")
+    print("9. Backup Management - Consolidate Scattered Files")
+    print("10. Backup Management - Cleanup Old Backups")
+    print("11. Exit")
+    choice = input("Enter your choice (1-11): ").strip()
     return choice
 
 
@@ -135,12 +140,85 @@ def tachyonic_backup(
 ) -> None:
     if path_md is None:
         path_md = ROOT / "docs" / "path.md"
+    
+    path_md = Path(path_md)
+    if not path_md.exists():
+        print(f"WARNING: {path_md} not found. Skipping tachyonic backup.")
+        return
+    
     archive_dir = Path(archive_dir)
     archive_dir.mkdir(parents=True, exist_ok=True)
     now = datetime.now().strftime("%Y%m%d_%H%M%S")
     backup_path = archive_dir / f"path_{now}.md"
-    shutil.copy2(Path(path_md), backup_path)
+    shutil.copy2(path_md, backup_path)
     print(f"Tachyonic backup created: {backup_path}")
+
+
+def run_backup_manager(action: str) -> None:
+    """Execute the PowerShell backup manager with specified action."""
+    backup_script = ROOT / "scripts" / "backup_manager.ps1"
+    
+    if not backup_script.exists():
+        print(f"ERROR: Backup manager script not found at {backup_script}")
+        return
+    
+    try:
+        print(f"Executing backup action: {action}")
+        result = subprocess.run(
+            ["pwsh", "-NoLogo", "-NoProfile", "-File", str(backup_script), f"-Action", action],
+            capture_output=True,
+            text=True,
+            cwd=str(ROOT)
+        )
+        
+        if result.stdout:
+            print(result.stdout)
+        if result.stderr:
+            print(f"WARNING: {result.stderr}")
+        
+        if result.returncode != 0:
+            print(f"ERROR: Backup operation failed with exit code {result.returncode}")
+        else:
+            print(f"Backup operation '{action}' completed successfully.")
+            
+    except Exception as e:
+        print(f"ERROR: Failed to execute backup manager: {e}")
+
+
+def backup_management_menu() -> None:
+    """Interactive menu for backup management operations."""
+    while True:
+        print("\n=== Backup Management ===")
+        print("1. Status - Check backup system health")
+        print("2. Create - Make backup of current workspace")
+        print("3. Consolidate - Move scattered backup files to central location")
+        print("4. Cleanup - Remove old backups beyond retention period")
+        print("5. Return to main menu")
+        
+        choice = input("Enter your choice (1-5): ").strip()
+        
+        if choice == "1":
+            run_backup_manager("status")
+        elif choice == "2":
+            run_backup_manager("create")
+        elif choice == "3":
+            print("WARNING: This will move all scattered backup files to the central backups directory.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("consolidate")
+            else:
+                print("Consolidation cancelled.")
+        elif choice == "4":
+            print("WARNING: This will permanently delete old backup files beyond the retention period.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("cleanup")
+            else:
+                print("Cleanup cancelled.")
+        elif choice == "5":
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 
 def load_module_index(path: Path | str) -> ModuleIndex:
@@ -309,6 +387,24 @@ if __name__ == "__main__":
         elif menu_choice == "6":
             execute_all()
         elif menu_choice == "7":
+            run_backup_manager("status")
+        elif menu_choice == "8":
+            run_backup_manager("create")
+        elif menu_choice == "9":
+            print("WARNING: This will move all scattered backup files to the central backups directory.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("consolidate")
+            else:
+                print("Consolidation cancelled.")
+        elif menu_choice == "10":
+            print("WARNING: This will permanently delete old backup files beyond the retention period.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("cleanup")
+            else:
+                print("Cleanup cancelled.")
+        elif menu_choice == "11":
             print("Exiting...")
             break
         else:

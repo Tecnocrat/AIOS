@@ -107,10 +107,11 @@ def cleanup_daemon_state_files():
     print("🧹 Cleaning up daemon state files...")
     
     aios_root = "c:\\dev\\AIOS"
+    # Check both old and new locations
     state_files = [
         "continuous_optimization_state.json",
-        "continuous_optimization_activation_report.json",
-        "continuous_optimization_final_status.json"
+        "tachyonic\\archive\\optimization_reports\\continuous_optimization_activation_report.json",
+        "tachyonic\\archive\\optimization_reports\\continuous_optimization_final_status.json"
     ]
     
     cleaned_count = 0

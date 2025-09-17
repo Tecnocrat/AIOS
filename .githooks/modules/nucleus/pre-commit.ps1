@@ -53,6 +53,22 @@ if (Test-Path $AIContextPath) {
     Write-Verbose "[NUCLEUS] AI Context reminder not found"
 }
 
+# Import AI Intelligence Extrusion Bridge
+$AIExtrusionPath = Join-Path (Split-Path $PSScriptRoot -Parent) "membrane\ai_intelligence_extrusion_bridge.ps1"
+if (Test-Path $AIExtrusionPath) {
+    try {
+        . $AIExtrusionPath
+        $AIExtrusionAvailable = $true
+        Write-Verbose "[NUCLEUS] AI Intelligence Extrusion Bridge loaded"
+    } catch {
+        $AIExtrusionAvailable = $false
+        Write-Warning "[NUCLEUS] Failed to load AI intelligence extrusion bridge: $($_.Exception.Message)"
+    }
+} else {
+    $AIExtrusionAvailable = $false
+    Write-Verbose "[NUCLEUS] AI Intelligence Extrusion Bridge not found"
+}
+
 # -------------------- Utility & Core Functions --------------------
 function New-DirIfMissing($Path) { if (-not (Test-Path $Path)) { New-Item -ItemType Directory -Force -Path $Path | Out-Null } }
 
@@ -250,6 +266,17 @@ if ($violations.Count -eq 0) {
   if ($results.Contains('criticality_warn') -and $results.criticality_warn) {
     Write-Host " Core file modifications (review advised): $($results.criticality_warn -join ', ')" -ForegroundColor Yellow
   }
+  
+  # 🧠 AIOS AI Intelligence Extrusion - Feed real-time direction to AI engine
+  if ($AIExtrusionAvailable) {
+    try {
+      Write-Host "🧠 [AIOS-AI-EXTRUSION] Extracting intelligence for AI guidance..." -ForegroundColor Cyan
+      & $AIExtrusionPath -HookType "pre-commit" -RealTimeMode
+    } catch {
+      Write-Warning "[NUCLEUS] AI Intelligence Extrusion failed: $($_.Exception.Message)"
+    }
+  }
+  
   $warningsData = if ($results.Contains('criticality_warn')) { $results.criticality_warn } else { $null }
   Write-JsonLog -Status 'pass' -Data @{ changed=$stagedEntries.Count; profile=$HookProfile; criticality_warn=$warningsData }
   $metricsDelta = @{ passes=1 }

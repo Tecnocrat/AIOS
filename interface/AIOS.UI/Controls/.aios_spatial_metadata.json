@@ -1,0 +1,194 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:41:10.818876",
+  "folder_info": {
+    "name": "Controls",
+    "absolute_path": "C:\\dev\\AIOS\\interface\\AIOS.UI\\Controls",
+    "relative_path": "interface\\AIOS.UI\\Controls",
+    "parent_path": "interface\\AIOS.UI",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "interface",
+      "AIOS.UI",
+      "Controls"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "Infrastructure",
+      "bin",
+      "generated",
+      "obj",
+      "runtime_intelligence",
+      "web"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 55175,
+      "file_count": 7,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".xaml": [
+        {
+          "name": "AIIntelligenceControl.xaml",
+          "size": 10167,
+          "modified": "2025-09-13T10:28:12.461911",
+          "category": "other"
+        },
+        {
+          "name": "AIResultWindow.xaml",
+          "size": 3733,
+          "modified": "2025-09-13T05:27:26.037193",
+          "category": "other"
+        },
+        {
+          "name": "RuntimeIntelligenceControl.xaml",
+          "size": 14337,
+          "modified": "2025-09-13T10:20:26.987067",
+          "category": "other"
+        },
+        {
+          "name": "RuntimeIntelligenceResultWindow.xaml",
+          "size": 4049,
+          "modified": "2025-09-13T10:20:26.988070",
+          "category": "other"
+        }
+      ],
+      ".cs": [
+        {
+          "name": "AIIntelligenceControl.xaml.cs",
+          "size": 13042,
+          "modified": "2025-09-13T05:27:26.057207",
+          "category": "consciousness"
+        },
+        {
+          "name": "RuntimeIntelligenceControl.xaml.cs",
+          "size": 9090,
+          "modified": "2025-09-13T22:16:48.691426",
+          "category": "consciousness"
+        },
+        {
+          "name": "RuntimeIntelligenceResultWindow.xaml.cs",
+          "size": 757,
+          "modified": "2025-09-13T22:16:48.691426",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "RuntimeIntelligenceControl.xaml.cs",
+        "size": 9090,
+        "modified": "2025-09-13T22:16:48.691426",
+        "category": "consciousness"
+      },
+      {
+        "name": "RuntimeIntelligenceResultWindow.xaml.cs",
+        "size": 757,
+        "modified": "2025-09-13T22:16:48.691426",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIIntelligenceControl.xaml",
+        "size": 10167,
+        "modified": "2025-09-13T10:28:12.461911",
+        "category": "other"
+      },
+      {
+        "name": "RuntimeIntelligenceResultWindow.xaml",
+        "size": 4049,
+        "modified": "2025-09-13T10:20:26.988070",
+        "category": "other"
+      },
+      {
+        "name": "RuntimeIntelligenceControl.xaml",
+        "size": 14337,
+        "modified": "2025-09-13T10:20:26.987067",
+        "category": "other"
+      },
+      {
+        "name": "AIIntelligenceControl.xaml.cs",
+        "size": 13042,
+        "modified": "2025-09-13T05:27:26.057207",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIResultWindow.xaml",
+        "size": 3733,
+        "modified": "2025-09-13T05:27:26.037193",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".xaml",
+        ".cs"
+      ],
+      "dominant_type": ".xaml"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 7,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 6
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "interface > AIOS.UI > Controls",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI\\Controls' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI\\Controls' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI\\Controls' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "interface",
+      "visual_interface",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\dist\\cache\\interface",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\lib\\types\\cache\\interface",
+      "interface\\AIOS.UI",
+      "interface\\AIOS.UI\\obj\\Debug\\net9.0-windows\\Controls"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

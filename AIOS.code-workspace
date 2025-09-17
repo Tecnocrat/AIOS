@@ -1,33 +1,43 @@
 // AIOS VSCode Workspace Configuration
+// Intelligent Development Environment for AI-Augmented Platform
+// Architecture: Multi-language (Python 3.10+, C#, C++) with AI Integration
+// Quality Standards: Pylint >8.5, Test Coverage >80%, Performance <1s
 {
 	"folders": [
 		{
 			"name": "🧠 AIOS Core",
-			"path": "."
+			"path": ".",
+			"description": "Root configuration & essential project files"
 		},
 		{
 			"name": "🤖 AI Intelligence",
-			"path": "./ai"
+			"path": "./ai",
+			"description": "Python AI processing, research & core algorithms"
 		},
 		{
 			"name": "⚡ Core Engine",
-			"path": "./core"
+			"path": "./core",
+			"description": "C++ performance components & system foundation"
 		},
 		{
 			"name": "🖥️ Interface",
-			"path": "./interface"
+			"path": "./interface",
+			"description": "C# UI & service architecture (WPF + WebView2)"
 		},
 		{
 			"name": "📚 Documentation",
-			"path": "./docs"
+			"path": "./docs",
+			"description": "Technical documentation & API references"
 		},
 		{
 			"name": "🧮 Runtime Intelligence",
-			"path": "./runtime_intelligence"
+			"path": "./runtime_intelligence",
+			"description": "System monitoring, optimization & telemetry"
 		},
 		{
 			"name": "🌌 Tachyonic Archive",
-			"path": "./tachyonic"
+			"path": "./tachyonic",
+			"description": "Historical data, evolution tracking & status reports"
 		}
 		// AIOS Context retention and harmonization
 	],
@@ -112,7 +122,8 @@
 			"**/*.stub": true,
 			"**/*.generated.*": true,
 			"**/*.Up2Date": true,
-			"**/.git/hooks": false
+			"**/.git/hooks": false,
+			"**/.vs": true
 		},
 
 		// Language Server Control - DEFENSIVE SETTINGS
@@ -188,16 +199,26 @@
 		"workbench.settings.editor": "json",
 		"workbench.startupEditor": "none",
 		"window.newWindowDimensions": "maximized",
-		"window.restoreFullscreen": true
+		"window.restoreFullscreen": true,
+		
+		// GitHub Copilot Chat Configuration - AIOS Agent Mode
+		"github.copilot.chat.defaultParticipant": "agent",
+		"github.copilot.chat.welcomeMessage": "disabled",
+		"github.copilot.enable": {
+			"*": true,
+			"yaml": true,
+			"plaintext": true,
+			"markdown": true
+		}
 	},
 	"extensions": {
+		// Only add extensions critical for project function
 		"recommendations": [
 			"ms-python.python",
 			"ms-vscode.cpptools",
 			"ms-dotnettools.csharp",
 			"github.copilot",
 			"github.copilot-chat"
-			// Only add extensions critical for project function
 		]
 	},
 	"tasks": {

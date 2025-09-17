@@ -1,0 +1,237 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:50.691535",
+  "folder_info": {
+    "name": "immediate",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\immediate",
+    "relative_path": "tachyonic\\tachyonic_archive\\immediate",
+    "parent_path": "tachyonic\\tachyonic_archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "tachyonic_archive",
+      "immediate"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "deep",
+      "quantum",
+      "temporal"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 5023,
+      "file_count": 12,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "030817a73240.json",
+          "size": 439,
+          "modified": "2025-09-06T13:26:49.802105",
+          "category": "documentation"
+        },
+        {
+          "name": "090e2cd5336c.json",
+          "size": 456,
+          "modified": "2025-09-06T13:26:50.406849",
+          "category": "documentation"
+        },
+        {
+          "name": "2eb15174e3a8.json",
+          "size": 399,
+          "modified": "2025-09-06T13:53:11.661852",
+          "category": "documentation"
+        },
+        {
+          "name": "323033b511d0.json",
+          "size": 460,
+          "modified": "2025-09-06T13:04:26.382438",
+          "category": "documentation"
+        },
+        {
+          "name": "3e25e50302ef.json",
+          "size": 452,
+          "modified": "2025-09-06T13:26:50.989769",
+          "category": "documentation"
+        },
+        {
+          "name": "546ac8ffb408.json",
+          "size": 438,
+          "modified": "2025-09-06T13:26:49.192204",
+          "category": "documentation"
+        },
+        {
+          "name": "93cbc381bf7c.json",
+          "size": 460,
+          "modified": "2025-09-06T13:26:51.607570",
+          "category": "documentation"
+        },
+        {
+          "name": "940e46e89ec6.json",
+          "size": 451,
+          "modified": "2025-09-06T13:04:26.049249",
+          "category": "documentation"
+        },
+        {
+          "name": "c69d018c73dd.json",
+          "size": 438,
+          "modified": "2025-09-06T13:04:25.033365",
+          "category": "documentation"
+        },
+        {
+          "name": "d794e226ab16.json",
+          "size": 438,
+          "modified": "2025-09-06T13:04:25.366147",
+          "category": "documentation"
+        },
+        {
+          "name": "f163074770b8.json",
+          "size": 456,
+          "modified": "2025-09-06T13:04:25.699315",
+          "category": "documentation"
+        },
+        {
+          "name": "index.json",
+          "size": 136,
+          "modified": "2025-09-06T13:02:56.445326",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "index.json",
+        "size": 136,
+        "modified": "2025-09-06T13:02:56.445326",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "2eb15174e3a8.json",
+        "size": 399,
+        "modified": "2025-09-06T13:53:11.661852",
+        "category": "documentation"
+      },
+      {
+        "name": "93cbc381bf7c.json",
+        "size": 460,
+        "modified": "2025-09-06T13:26:51.607570",
+        "category": "documentation"
+      },
+      {
+        "name": "3e25e50302ef.json",
+        "size": 452,
+        "modified": "2025-09-06T13:26:50.989769",
+        "category": "documentation"
+      },
+      {
+        "name": "090e2cd5336c.json",
+        "size": 456,
+        "modified": "2025-09-06T13:26:50.406849",
+        "category": "documentation"
+      },
+      {
+        "name": "030817a73240.json",
+        "size": 439,
+        "modified": "2025-09-06T13:26:49.802105",
+        "category": "documentation"
+      },
+      {
+        "name": "546ac8ffb408.json",
+        "size": 438,
+        "modified": "2025-09-06T13:26:49.192204",
+        "category": "documentation"
+      },
+      {
+        "name": "323033b511d0.json",
+        "size": 460,
+        "modified": "2025-09-06T13:04:26.382438",
+        "category": "documentation"
+      },
+      {
+        "name": "940e46e89ec6.json",
+        "size": 451,
+        "modified": "2025-09-06T13:04:26.049249",
+        "category": "documentation"
+      },
+      {
+        "name": "f163074770b8.json",
+        "size": 456,
+        "modified": "2025-09-06T13:04:25.699315",
+        "category": "documentation"
+      },
+      {
+        "name": "d794e226ab16.json",
+        "size": 438,
+        "modified": "2025-09-06T13:04:25.366147",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 12,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "index.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tachyonic_archive > immediate",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\immediate' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\immediate' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_archive\\immediate' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive",
+      "tachyonic\\archive\\immediate"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}
