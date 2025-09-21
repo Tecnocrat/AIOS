@@ -18,6 +18,10 @@
 "test ai components" → Runs AI-specific testing workflows
 "validate spatial metadata" → Performs consciousness coherence validation
 "analyze dendritic growth" → Reviews intelligence pattern evolution
+"start interface bridge" → Starts HTTP API server for C# integration
+"stop interface bridge" → Stops API server gracefully
+"restart interface bridge" → Restarts API server with fresh discovery
+"check interface status" → Monitors API server health and tool discovery
 ```
 
 ### Documentation Governance Commands
