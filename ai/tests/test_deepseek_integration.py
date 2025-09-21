@@ -7,12 +7,14 @@ import asyncio
 import sys
 import os
 from pathlib import Path
+import pytest
 
 # Add AIOS path
 AIOS_ROOT = Path(__file__).parent
 ai_src_path = AIOS_ROOT / "ai" / "src"
 sys.path.insert(0, str(ai_src_path))
 
+@pytest.mark.asyncio
 async def test_deepseek_integration():
     """Test DeepSeek with configured API key"""
     
