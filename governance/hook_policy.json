@@ -8,6 +8,7 @@
   "rootAllowed": [
     ".githooks",
     "README.md",
+    "CHANGELOG.md",
     "AIOS_PROJECT_CONTEXT.md",
     "AIOS.code-workspace",
     "requirements.txt",
