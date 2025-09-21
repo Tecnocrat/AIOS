@@ -1,0 +1,200 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:23.151771",
+  "folder_info": {
+    "name": "deprecated_root_docs",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\archive\\deprecated_root_docs",
+    "relative_path": "docs\\archive\\deprecated_root_docs",
+    "parent_path": "docs\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "Documentation"
+    ],
+    "path_classification": [
+      "docs",
+      "archive",
+      "deprecated_root_docs"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "INFRASTRUCTURE",
+      "ainlp_paradigms",
+      "compression",
+      "compression_reports",
+      "documentation_snapshots",
+      "iteration-logs",
+      "legacy_scripts",
+      "private_implementation",
+      "quantum_bootstrap",
+      "tachyonic_archive",
+      "unified_backups",
+      "vscode_integration"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 127863,
+      "file_count": 15,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "CELLULAR_DEVELOPMENT_EXAMPLE.md",
+          "size": 7904,
+          "modified": "2025-07-15T21:29:54.060589",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_ITERATION_MANAGEMENT.md",
+          "size": 7889,
+          "modified": "2025-07-15T21:29:54.061591",
+          "category": "documentation"
+        },
+        {
+          "name": "DEVELOPMENT_PATH_ANCHORING_SYSTEM.md",
+          "size": 7806,
+          "modified": "2025-07-15T21:29:54.061591",
+          "category": "documentation"
+        },
+        {
+          "name": "DOCUMENTATION_ORGANIZATION_OPTIMIZATION.md",
+          "size": 10455,
+          "modified": "2025-07-15T21:21:59.113345",
+          "category": "documentation"
+        },
+        {
+          "name": "FRACTAL_ARCHITECTURE_CODEX.md",
+          "size": 9143,
+          "modified": "2025-07-15T21:29:54.062592",
+          "category": "documentation"
+        },
+        {
+          "name": "ITERATION_CONTEXT_MASTER.md",
+          "size": 5536,
+          "modified": "2025-07-13T19:04:54.345064",
+          "category": "documentation"
+        },
+        {
+          "name": "MULTI_LANGUAGE_DEVELOPMENT_WAYPOINTS.md",
+          "size": 11574,
+          "modified": "2025-07-15T21:29:54.062592",
+          "category": "documentation"
+        },
+        {
+          "name": "MULTI_LANGUAGE_HOLOGRAPHIC_ARCHITECTURE.md",
+          "size": 7863,
+          "modified": "2025-07-15T21:29:54.063695",
+          "category": "documentation"
+        },
+        {
+          "name": "QUANTUM_INTEGRATION_LAYER_SUMMARY.md",
+          "size": 6075,
+          "modified": "2025-07-15T21:29:54.065202",
+          "category": "documentation"
+        },
+        {
+          "name": "SCRIPTS_REFERENCE.md",
+          "size": 4863,
+          "modified": "2025-07-13T19:04:54.345849",
+          "category": "documentation"
+        },
+        {
+          "name": "TENSORFLOW_AGENT_IMPLEMENTATION_PLAN.md",
+          "size": 10213,
+          "modified": "2025-07-15T21:32:03.769898",
+          "category": "documentation"
+        },
+        {
+          "name": "TENSORFLOW_CELLULAR_INTEGRATION_COMPLETE.md",
+          "size": 8340,
+          "modified": "2025-07-13T19:01:45.616686",
+          "category": "documentation"
+        },
+        {
+          "name": "TENSORFLOW_MERGE_GUIDE.md",
+          "size": 9712,
+          "modified": "2025-07-13T19:01:45.617262",
+          "category": "documentation"
+        },
+        {
+          "name": "VSCODE_SOLUTIONS_GUIDE.md",
+          "size": 9845,
+          "modified": "2025-07-13T19:01:45.617823",
+          "category": "documentation"
+        },
+        {
+          "name": "WORKSPACE_BRIDGE_PROTOCOL.md",
+          "size": 10645,
+          "modified": "2025-07-13T19:04:54.347004",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "CONSCIOUSNESS_ITERATION_MANAGEMENT.md",
+        "size": 7889,
+        "modified": "2025-07-15T21:29:54.061591",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 15,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 1,
+      "agentic_files": 1,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > archive > deprecated_root_docs",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\deprecated_root_docs' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\deprecated_root_docs' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\deprecated_root_docs' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

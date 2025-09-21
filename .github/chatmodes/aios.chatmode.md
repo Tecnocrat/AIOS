@@ -155,7 +155,23 @@ python runtime_intelligence/tools/biological_architecture_monitor.py
 
 # Execute documentation governance
 python ai/tools/ainlp_documentation_governance.py
+
+# Interface Bridge server management
+python ai/server_manager.py start      # Start API server (background)
+python ai/server_manager.py stop       # Stop API server gracefully
+python ai/server_manager.py restart    # Restart API server
+python ai/server_manager.py status     # Check server health and status
 ```
+
+### AIOS Interface Bridge Integration:
+Before executing Python AI tools or testing C# integration, ensure the Interface Bridge is running:
+
+1. **Start Interface Bridge**: `python ai/server_manager.py start`
+2. **Verify Status**: Check http://localhost:8000/health
+3. **Tool Discovery**: Access http://localhost:8000/tools
+4. **C# Integration**: Use generated bridge classes in `interface/AIOS.Models/PythonAIToolsBridge.cs`
+
+The Interface Bridge provides HTTP API access to all 14 discovered Python AI tools for C#/.NET integration.
 
 ### Response Format:
 Always respond with technical accuracy, clear explanations, and actionable guidance while maintaining professional standards without decorative elements.

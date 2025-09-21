@@ -27,6 +27,124 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "interface-bridge-start",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"server_manager.py",
+				"start"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai"
+			},
+			"group": "build",
+			"detail": "Start AIOS Interface Bridge HTTP API server",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "interface-bridge-stop",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"server_manager.py",
+				"stop"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai"
+			},
+			"group": "build",
+			"detail": "Stop AIOS Interface Bridge HTTP API server",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "interface-bridge-status",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"server_manager.py",
+				"status"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai"
+			},
+			"group": "test",
+			"detail": "Check AIOS Interface Bridge status and health",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "interface-bridge-restart",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"server_manager.py",
+				"restart"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai"
+			},
+			"group": "build",
+			"detail": "Restart AIOS Interface Bridge with fresh tool discovery",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "start-interface-bridge",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"core/interface_bridge.py"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/ai"
+			},
+			"group": "build",
+			"detail": "Start AIOS Interface Bridge HTTP API server on localhost:8000",
+			"isBackground": true,
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": [],
+			"runOptions": {
+				"instanceLimit": 1
+			}
+		},
+		{
 			"label": "ainlp-documentation-governance",
 			"type": "shell",
 			"command": "python",
