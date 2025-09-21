@@ -307,8 +307,17 @@ backups/*.old*
 !runtime_intelligence/logs/**/*.db
 !runtime_intelligence/logs/**/*.log
 
-# Exclude sensitive hook logs that may contain detected secrets
+# Exclude volatile runtime files that shouldn't be tracked in git
+# (These files are preserved locally for AI ingestion and tachyonic archival)
 runtime_intelligence/logs/hooks/pre_commit.log
+runtime_intelligence/logs/hooks/summary.json
+runtime_intelligence/logs/dendritic_commit_learning.jsonl
+runtime_intelligence/logs/pre_push_success.jsonl
+runtime_intelligence/logs/**/*.jsonl
+
+# GitHooks runtime logs (generated during hook execution)
+.githooks/logs/*.log
+.githooks/logs/**/*.jsonl
 
 # --- AIOS VSCode Integration Runtime Logs ---
 # Include runtime logs for debugging and system monitoring

@@ -142,12 +142,14 @@ function Invoke-PreCommitHook {
     Write-AIOSLog "Starting pre-commit validation" -Component "PreCommit"
     
     $stagedFiles = Get-StagedFiles
-    if ($stagedFiles.Count -eq 0) {
+    $fileCount = if ($stagedFiles) { @($stagedFiles).Count } else { 0 }
+    
+    if ($fileCount -eq 0) {
         Write-AIOSLog "No staged files found" -Component "PreCommit" -Level "Warning"
         return 0
     }
     
-    Write-AIOSLog "Processing $($stagedFiles.Count) staged files" -Component "PreCommit"
+    Write-AIOSLog "Processing $fileCount staged files" -Component "PreCommit"
     
     $validationErrors = @()
     
@@ -159,20 +161,20 @@ function Invoke-PreCommitHook {
     
     # Emoticon check
     $emoticonViolations = Invoke-EmoticonCheck -StagedFiles $stagedFiles
-    if ($emoticonViolations -and $emoticonViolations.Count -gt 0) {
+    if ($emoticonViolations -and @($emoticonViolations).Count -gt 0) {
         $validationErrors += "emoticons_detected"
         Write-AIOSLog "Emoticons detected in: $($emoticonViolations -join ', ')" -Level "Error" -Component "Emoticon"
     }
     
     # File safety check
     $unsafeFiles = Test-FileSafety -StagedFiles $stagedFiles
-    if ($unsafeFiles -and $unsafeFiles.Count -gt 0) {
+    if ($unsafeFiles -and @($unsafeFiles).Count -gt 0) {
         $validationErrors += "unsafe_files"
         Write-AIOSLog "Unsafe files detected: $($unsafeFiles -join ', ')" -Level "Error" -Component "Safety"
     }
     
     # Report results
-    if ($validationErrors.Count -gt 0) {
+    if (@($validationErrors).Count -gt 0) {
         Write-AIOSLog "Commit blocked due to validation failures" -Level "Error" -Component "PreCommit"
         Write-Host "`nCommit blocked:" -ForegroundColor Red
         foreach ($validationError in $validationErrors) {
