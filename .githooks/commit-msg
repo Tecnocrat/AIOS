@@ -1,13 +1,12 @@
 #!/bin/sh
-# AIOS GitHook Entry Point - Commit Message
-# Delegates to NUCLEUS module for actual hook logic
+# AIOS Commit-msg Hook - Optimized Entry Point
 
-# For Windows/PowerShell environments, use the .ps1 version
+# Use optimized integrated hook system
 if command -v pwsh >/dev/null 2>&1; then
-    exec pwsh -ExecutionPolicy Bypass -File ".githooks/modules/nucleus/commit-msg.ps1" "$1"
+    exec pwsh -NoProfile -ExecutionPolicy Bypass -File ".githooks/aios_hooks_optimized.ps1" "commit-msg" "$@"
 elif command -v powershell >/dev/null 2>&1; then
-    exec powershell -ExecutionPolicy Bypass -File ".githooks/modules/nucleus/commit-msg.ps1" "$1"
+    exec powershell -NoProfile -ExecutionPolicy Bypass -File ".githooks/aios_hooks_optimized.ps1" "commit-msg" "$@"
 else
-    # Fallback to shell version
-    exec .githooks/modules/nucleus/commit-msg "$@"
+    echo "PowerShell not found. Please install PowerShell Core (pwsh) or Windows PowerShell."
+    exit 1
 fi

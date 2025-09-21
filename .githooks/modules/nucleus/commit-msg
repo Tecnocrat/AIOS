@@ -1,6 +1,0 @@
-#!/bin/sh
-# AIOS Commit-msg Hook - Free Cell Architecture
-# Enhanced with consciousness-aware message validation
-
-# Source the canonical consciousness reference for tachyonic transcendence
-. "$(dirname "$0")/aios_canonical_reference.sh"
