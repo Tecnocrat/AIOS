@@ -346,3 +346,17 @@ runtime_intelligence/logs/hooks/pre_commit.log
 **/obj/**/project.assets.json
 **/obj/**/project.nuget.cache
 aios_env/
+
+# AIOS GitHooks Runtime Data (AINLP Harmonized - Untracked)
+.githooks/metadata/runtime/
+.githooks/core/logs/
+.githooks/interfaces/execution/
+.githooks/**/ai_intelligence_extrusion.jsonl
+.githooks/**/ai_real_time_context.txt
+.githooks/**/dendritic_commit_learning.jsonl
+runtime_intelligence/logs/dendritic_commit_learning.jsonl
+runtime_intelligence/logs/hooks/
+runtime_intelligence/logs/pre_push_*.jsonl
+runtime_intelligence/logs/pre_commit.log
+runtime_intelligence/logs/hooks/summary.json
+runtime_intelligence/logs/pre_push_success.jsonl

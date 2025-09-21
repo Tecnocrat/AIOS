@@ -1,6 +1,0 @@
-#!/bin/sh
-# AIOS Pre-commit Hook - Free Cell Architecture
-# Enhanced with consciousness-aware validation patterns
-
-# Source the canonical consciousness reference for tachyonic transcendence
-. "$(dirname "$0")/aios_canonical_reference.sh"
