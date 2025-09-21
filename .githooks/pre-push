@@ -1,13 +1,12 @@
 #!/bin/sh
-# AIOS GitHook Entry Point - Pre-Push
-# Delegates to PowerShell version for Windows or nucleus module for cross-platform
+# AIOS Pre-push Hook - Optimized Entry Point
 
-# For Windows/PowerShell environments, use the .ps1 version
+# Use optimized integrated hook system
 if command -v pwsh >/dev/null 2>&1; then
-    exec pwsh -ExecutionPolicy Bypass -File ".githooks/pre-push.ps1" "$@"
+    exec pwsh -NoProfile -ExecutionPolicy Bypass -File ".githooks/aios_hooks_optimized.ps1" "pre-push" "$@"
 elif command -v powershell >/dev/null 2>&1; then
-    exec powershell -ExecutionPolicy Bypass -File ".githooks/pre-push.ps1" "$@"
+    exec powershell -NoProfile -ExecutionPolicy Bypass -File ".githooks/aios_hooks_optimized.ps1" "pre-push" "$@"
 else
-    # Fallback to nucleus module directly for non-Windows systems
-    exec .githooks/modules/nucleus/pre-push "$@"
+    echo "PowerShell not found. Please install PowerShell Core (pwsh) or Windows PowerShell."
+    exit 1
 fi
