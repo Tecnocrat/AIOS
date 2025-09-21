@@ -7,7 +7,7 @@ name = "aios"
 version = "0.1.0"  # Harmonized placeholder
 description = "AIOS Consciousness Emergence System"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 license = {text = "Proprietary"}
 authors = [ { name = "AIOS Team" } ]
 dependencies = []  # Transitional: runtime still via requirements.txt until lock + CI freshness enforcement.
@@ -24,7 +24,7 @@ keywords = ["AI", "Consciousness", "Cellular Architecture", "AINLP"]
 
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12",
     "License :: Other/Proprietary License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
@@ -72,7 +72,7 @@ line-length = 100
 max-line-length = 100
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.12"
 strict = false
 
 [tool.isort]

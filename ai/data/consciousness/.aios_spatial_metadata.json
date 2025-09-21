@@ -1,0 +1,126 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-19T22:20:15.705799",
+  "folder_info": {
+    "name": "consciousness",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\data\\consciousness",
+    "relative_path": "ai\\data\\consciousness",
+    "parent_path": "ai\\data",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "ai",
+      "data",
+      "consciousness"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "sessions"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 1629,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "analysis_history.json",
+          "size": 1379,
+          "modified": "2025-09-17T21:28:25.583941",
+          "category": "documentation"
+        },
+        {
+          "name": "breakthrough_events.json",
+          "size": 250,
+          "modified": "2025-09-17T21:28:25.586941",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "breakthrough_events.json",
+        "size": 250,
+        "modified": "2025-09-17T21:28:25.586941",
+        "category": "documentation"
+      },
+      {
+        "name": "analysis_history.json",
+        "size": 1379,
+        "modified": "2025-09-17T21:28:25.583941",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > data > consciousness",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\data\\consciousness' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\data\\consciousness' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\data\\consciousness' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "ai\\data",
+      "consciousness_integration"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

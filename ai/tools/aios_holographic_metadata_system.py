@@ -32,7 +32,12 @@ class AIOSHolographicMetadataSystem:
     def __init__(self, workspace_root: Path = None):
         self.workspace_root = workspace_root or Path(__file__).parents[2]
         self.metadata_filename = ".aios_spatial_metadata.json"
-        self.holographic_index_file = "aios_holographic_index.json"
+        
+        # Tachyonic archival pattern with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.holographic_index_file = (
+            f"tachyonic/archive/aios_holographic_index_{timestamp}.json"
+        )
         
         # Configuration for metadata generation
         self.metadata_config = {
@@ -41,7 +46,21 @@ class AIOSHolographicMetadataSystem:
             "include_file_hashes": True,
             "include_content_analysis": True,
             "spatial_awareness_level": "detailed",
-            "consciousness_integration": True
+            "consciousness_integration": True,
+            "file_type_monitoring": True,
+            "track_file_changes": True
+        }
+        
+        # File type monitoring configuration - Runtime Intelligence paths
+        self.file_type_history_file = (
+            "runtime_intelligence/analysis/aios_file_type_history.json"
+        )
+        self.monitoring_config = {
+            "track_extensions": True,
+            "track_counts": True,
+            "track_size_changes": True,
+            "history_retention_days": 90,
+            "significant_change_threshold": 0.05  # 5% change is significant
         }
         
         # File type categorization for AIOS consciousness
@@ -392,6 +411,263 @@ class AIOSHolographicMetadataSystem:
         
         return guidance
     
+    def scan_workspace_file_types(self) -> Dict[str, Any]:
+        """
+        Comprehensive file type analysis across entire AIOS workspace
+        Returns current file type distribution and statistics
+        """
+        logger.info("🔍 Scanning workspace file types...")
+        
+        file_stats = {}
+        total_files = 0
+        total_size = 0
+        scan_start = datetime.now()
+        
+        # Track by extension, category, and architecture area
+        by_extension = {}
+        by_category = {}
+        by_architecture = {}
+        
+        for file_path in self.workspace_root.rglob('*'):
+            if not file_path.is_file():
+                continue
+                
+            try:
+                # Skip problematic paths
+                if any(skip in str(file_path).lower() 
+                       for skip in ['node_modules', '.git', '__pycache__', '.vs']):
+                    continue
+                    
+                total_files += 1
+                file_size = file_path.stat().st_size
+                total_size += file_size
+                
+                # Get extension and category
+                ext = file_path.suffix.lower()
+                category = self._categorize_file_type(ext)
+                
+                # Determine architecture area
+                relative_path = file_path.relative_to(self.workspace_root)
+                arch_area = self._classify_architectural_area(relative_path)
+                primary_area = arch_area.get('primary_area', 'unknown')
+                
+                # Count by extension
+                if ext not in by_extension:
+                    by_extension[ext] = {'count': 0, 'size': 0, 'files': []}
+                by_extension[ext]['count'] += 1
+                by_extension[ext]['size'] += file_size
+                by_extension[ext]['files'].append(str(relative_path))
+                
+                # Count by category
+                if category not in by_category:
+                    by_category[category] = {'count': 0, 'size': 0}
+                by_category[category]['count'] += 1
+                by_category[category]['size'] += file_size
+                
+                # Count by architecture area
+                if primary_area not in by_architecture:
+                    by_architecture[primary_area] = {'count': 0, 'size': 0}
+                by_architecture[primary_area]['count'] += 1
+                by_architecture[primary_area]['size'] += file_size
+                
+            except (PermissionError, OSError) as e:
+                logger.debug(f"⚠️ Skipping file {file_path}: {e}")
+                continue
+        
+        scan_duration = (datetime.now() - scan_start).total_seconds()
+        
+        # Sort by count (descending)
+        sorted_extensions = dict(sorted(by_extension.items(), 
+                                      key=lambda x: x[1]['count'], reverse=True))
+        sorted_categories = dict(sorted(by_category.items(), 
+                                      key=lambda x: x[1]['count'], reverse=True))
+        sorted_architecture = dict(sorted(by_architecture.items(), 
+                                        key=lambda x: x[1]['count'], reverse=True))
+        
+        file_stats = {
+            "scan_timestamp": datetime.now().isoformat(),
+            "scan_duration_seconds": round(scan_duration, 2),
+            "workspace_root": str(self.workspace_root),
+            "summary": {
+                "total_files": total_files,
+                "total_size_bytes": total_size,
+                "total_size_mb": round(total_size / (1024 * 1024), 2),
+                "unique_extensions": len(by_extension),
+                "file_categories": len(by_category),
+                "architecture_areas": len(by_architecture)
+            },
+            "by_extension": sorted_extensions,
+            "by_category": sorted_categories,
+            "by_architecture": sorted_architecture,
+            "top_extensions": dict(list(sorted_extensions.items())[:20]),
+            "language_analysis": self._analyze_programming_languages(sorted_extensions)
+        }
+        
+        logger.info(f"📊 File type scan complete: {total_files} files analyzed")
+        return file_stats
+    
+    def _analyze_programming_languages(self, extensions_data: Dict) -> Dict[str, Any]:
+        """Analyze programming language distribution"""
+        
+        language_map = {
+            '.py': 'Python',
+            '.cs': 'C#',
+            '.cpp': 'C++',
+            '.c': 'C',
+            '.h': 'C/C++ Headers',
+            '.hpp': 'C++ Headers',
+            '.js': 'JavaScript',
+            '.ts': 'TypeScript',
+            '.html': 'HTML',
+            '.css': 'CSS',
+            '.json': 'JSON',
+            '.yaml': 'YAML',
+            '.yml': 'YAML',
+            '.md': 'Markdown',
+            '.xaml': 'XAML',
+            '.ps1': 'PowerShell',
+            '.sh': 'Shell Script',
+            '.asm': 'Assembly',
+            '.sql': 'SQL'
+        }
+        
+        languages = {}
+        total_code_files = 0
+        
+        for ext, data in extensions_data.items():
+            if ext in language_map:
+                lang = language_map[ext]
+                if lang not in languages:
+                    languages[lang] = {'count': 0, 'size': 0, 'extensions': []}
+                languages[lang]['count'] += data['count']
+                languages[lang]['size'] += data['size']
+                languages[lang]['extensions'].append(ext)
+                total_code_files += data['count']
+        
+        # Sort by count
+        sorted_languages = dict(sorted(languages.items(), 
+                                     key=lambda x: x[1]['count'], reverse=True))
+        
+        return {
+            "languages": sorted_languages,
+            "total_code_files": total_code_files,
+            "primary_languages": list(sorted_languages.keys())[:8],
+            "code_vs_other_ratio": round(total_code_files / max(sum(d['count'] for d in extensions_data.values()), 1), 3)
+        }
+    
+    def track_file_type_changes(self) -> Dict[str, Any]:
+        """
+        Track changes in file type distribution over time
+        Stores history and detects significant changes
+        """
+        logger.info("📈 Tracking file type changes...")
+        
+        # Get current file type stats
+        current_stats = self.scan_workspace_file_types()
+        
+        # Load historical data
+        history_file = self.workspace_root / self.file_type_history_file
+        history_data = []
+        
+        if history_file.exists():
+            try:
+                with open(history_file, 'r', encoding='utf-8') as f:
+                    history_data = json.load(f)
+            except Exception as e:
+                logger.warning(f"⚠️ Could not load history file: {e}")
+                history_data = []
+        
+        # Add current stats to history
+        history_entry = {
+            "timestamp": current_stats["scan_timestamp"],
+            "summary": current_stats["summary"],
+            "top_extensions": current_stats["top_extensions"],
+            "languages": current_stats["language_analysis"]["languages"]
+        }
+        
+        history_data.append(history_entry)
+        
+        # Clean old entries (keep last 90 days)
+        from datetime import timedelta
+        cutoff_date = datetime.now() - timedelta(days=self.monitoring_config["history_retention_days"])
+        history_data = [entry for entry in history_data 
+                       if datetime.fromisoformat(entry["timestamp"]) > cutoff_date]
+        
+        # Detect significant changes
+        changes = self._detect_significant_changes(history_data)
+        
+        # Save updated history
+        try:
+            with open(history_file, 'w', encoding='utf-8') as f:
+                json.dump(history_data, f, indent=2, ensure_ascii=False)
+            logger.info(f"📋 File type history updated: {history_file}")
+        except Exception as e:
+            logger.error(f"❌ Failed to save history: {e}")
+        
+        return {
+            "current_stats": current_stats,
+            "history_entries": len(history_data),
+            "significant_changes": changes,
+            "monitoring_active": True,
+            "next_scan_recommended": (datetime.now() + timedelta(hours=24)).isoformat()
+        }
+    
+    def _detect_significant_changes(self, history_data: List[Dict]) -> Dict[str, Any]:
+        """Detect significant changes in file type distribution"""
+        
+        if len(history_data) < 2:
+            return {"message": "Insufficient history for change detection"}
+        
+        current = history_data[-1]
+        previous = history_data[-2]
+        threshold = self.monitoring_config["significant_change_threshold"]
+        
+        changes = {
+            "timestamp": current["timestamp"],
+            "comparison_with": previous["timestamp"],
+            "file_count_changes": {},
+            "new_extensions": [],
+            "removed_extensions": [],
+            "significant_changes": []
+        }
+        
+        # Compare file counts
+        current_total = current["summary"]["total_files"]
+        previous_total = previous["summary"]["total_files"]
+        
+        if previous_total > 0:
+            total_change = (current_total - previous_total) / previous_total
+            if abs(total_change) > threshold:
+                changes["significant_changes"].append({
+                    "type": "total_files",
+                    "change_percent": round(total_change * 100, 2),
+                    "current_count": current_total,
+                    "previous_count": previous_total
+                })
+        
+        # Compare extensions
+        current_exts = set(current["top_extensions"].keys())
+        previous_exts = set(previous["top_extensions"].keys())
+        
+        changes["new_extensions"] = list(current_exts - previous_exts)
+        changes["removed_extensions"] = list(previous_exts - current_exts)
+        
+        # Compare counts for common extensions
+        for ext in current_exts & previous_exts:
+            current_count = current["top_extensions"][ext]["count"]
+            previous_count = previous["top_extensions"][ext]["count"]
+            
+            if previous_count > 0:
+                change_ratio = (current_count - previous_count) / previous_count
+                if abs(change_ratio) > threshold:
+                    changes["file_count_changes"][ext] = {
+                        "change_percent": round(change_ratio * 100, 2),
+                        "current_count": current_count,
+                        "previous_count": previous_count
+                    }
+        
+        return changes
+    
     def create_holographic_metadata(self, target_folder: Path = None, overwrite: bool = False) -> Dict[str, str]:
         """Create holographic metadata file for a specific folder"""
         
@@ -618,6 +894,9 @@ def main():
     parser.add_argument('--create-system', action='store_true', help='Create full holographic system')
     parser.add_argument('--create-folder', type=Path, help='Create metadata for specific folder')
     parser.add_argument('--read-metadata', type=Path, help='Read metadata for specific folder')
+    parser.add_argument('--scan-file-types', action='store_true', help='Scan workspace file types')
+    parser.add_argument('--track-changes', action='store_true', help='Track file type changes over time')
+    parser.add_argument('--file-type-report', action='store_true', help='Generate comprehensive file type report')
     parser.add_argument('--max-depth', type=int, default=3, help='Maximum folder depth to process')
     parser.add_argument('--overwrite', action='store_true', help='Overwrite existing metadata files')
     parser.add_argument('--workspace', type=Path, help='AIOS workspace root')
@@ -650,13 +929,87 @@ def main():
             print(json.dumps(metadata, indent=2))
         else:
             print(f"❌ No metadata found for: {args.read_metadata}")
+    elif args.scan_file_types:
+        print("🔍 Scanning workspace file types...")
+        result = system.scan_workspace_file_types()
+        print(f"\n📊 File Type Analysis Complete!")
+        print(f"Total Files: {result['summary']['total_files']:,}")
+        print(f"Unique Extensions: {result['summary']['unique_extensions']}")
+        print(f"Size: {result['summary']['total_size_mb']:.1f} MB")
+        print(f"\n🔝 Top File Types:")
+        for ext, data in list(result['top_extensions'].items())[:10]:
+            print(f"  {ext or '(no ext)'}: {data['count']:,} files")
+        print(f"\n💻 Primary Languages:")
+        for lang in result['language_analysis']['primary_languages'][:5]:
+            count = result['language_analysis']['languages'][lang]['count']
+            print(f"  {lang}: {count:,} files")
+    elif args.track_changes:
+        print("� Tracking file type changes...")
+        result = system.track_file_type_changes()
+        print(f"\n✅ File Type Change Tracking Complete!")
+        print(f"History Entries: {result['history_entries']}")
+        
+        changes = result['significant_changes']
+        if 'significant_changes' in changes and changes['significant_changes']:
+            print(f"\n⚠️ Significant Changes Detected:")
+            for change in changes['significant_changes']:
+                print(f"  {change['type']}: {change['change_percent']:+.1f}%")
+        else:
+            print(f"\n✅ No significant changes detected")
+            
+        if changes.get('new_extensions'):
+            print(f"\n🆕 New Extensions: {', '.join(changes['new_extensions'])}")
+        if changes.get('removed_extensions'):
+            print(f"\n❌ Removed Extensions: {', '.join(changes['removed_extensions'])}")
+            
+    elif args.file_type_report:
+        print("📋 Generating comprehensive file type report...")
+        
+        # Get current scan
+        scan_result = system.scan_workspace_file_types()
+        
+        # Get change tracking
+        track_result = system.track_file_type_changes()
+        
+        # Save comprehensive report to Runtime Intelligence analysis area
+        report_file = (
+            system.workspace_root
+            / "runtime_intelligence/analysis/aios_file_type_report.json"
+        )
+        report_data = {
+            "report_timestamp": datetime.now().isoformat(),
+            "current_analysis": scan_result,
+            "change_tracking": track_result,
+            "report_summary": {
+                "total_files_analyzed": scan_result['summary']['total_files'],
+                "languages_detected": len(scan_result['language_analysis']['languages']),
+                "monitoring_active": track_result['monitoring_active'],
+                "significant_changes": len(track_result['significant_changes'].get('significant_changes', []))
+            }
+        }
+        
+        try:
+            with open(report_file, 'w', encoding='utf-8') as f:
+                json.dump(report_data, f, indent=2, ensure_ascii=False)
+            print(f"\n✅ Comprehensive report saved: {report_file}")
+            print(f"📊 Files: {scan_result['summary']['total_files']:,}")
+            print(f"💻 Languages: {len(scan_result['language_analysis']['languages'])}")
+            print(f"📈 History: {track_result['history_entries']} entries")
+        except Exception as e:
+            print(f"❌ Failed to save report: {e}")
     else:
-        print("🔮 AIOS Holographic Metadata System")
-        print("Use --create-system to generate full holographic metadata")
-        print("Use --create-folder <path> to create metadata for specific folder")
-        print("Use --read-metadata <path> to read folder metadata")
-        print("Use --overwrite to update existing metadata files")
-        print("Use --verbose for detailed logging")
+        print("�🔮 AIOS Holographic Metadata System with File Type Monitoring")
+        print("📊 File Type Analysis:")
+        print("  --scan-file-types        Analyze current file type distribution")
+        print("  --track-changes          Track changes over time with history")
+        print("  --file-type-report       Generate comprehensive report")
+        print("🗃️ Spatial Metadata:")
+        print("  --create-system          Generate full holographic metadata")
+        print("  --create-folder <path>   Create metadata for specific folder")
+        print("  --read-metadata <path>   Read folder metadata")
+        print("⚙️ Options:")
+        print("  --overwrite              Update existing metadata files")
+        print("  --verbose                Enable detailed logging")
 
 if __name__ == "__main__":
     main()

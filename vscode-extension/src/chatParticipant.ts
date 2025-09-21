@@ -118,6 +118,7 @@ export class AIOSChatParticipant {
     private formatActionTitle(action: string): string {
         // Convert action names to user-friendly titles
         const actionTitles: { [key: string]: string } = {
+            // Legacy actions
             'analyze-workspace': 'Analyze Workspace',
             'suggest-improvements': 'Suggest Improvements',
             'cross-language-analysis': 'Cross-Language Analysis',
@@ -127,7 +128,25 @@ export class AIOSChatParticipant {
             'generate-code': 'Generate Code',
             'explain-code': 'Explain Code',
             'find-issues': 'Find Issues',
-            'optimize': 'Optimize Code'
+            'optimize': 'Optimize Code',
+            
+            // Enhanced intelligent actions
+            'run-system-health': '🔍 Run System Health Check',
+            'run-tests': '🧪 Execute Test Suite',
+            'build-project': '🔨 Build Project',
+            'analyze-architecture': '🏗️ Analyze Architecture',
+            'check-dependencies': '📦 Check Dependencies',
+            'review-code-quality': '📊 Review Code Quality',
+            'provide-guidance': '📚 Provide Guidance',
+            'show-examples': '💡 Show Examples',
+            'explain-architecture': '🏛️ Explain Architecture',
+            'create-python-module': '🐍 Create Python Module',
+            'create-cpp-component': '⚡ Create C++ Component',
+            'create-csharp-class': '🔷 Create C# Class',
+            'general-assistance': '🤝 General Assistance',
+            'workspace-overview': '📋 Workspace Overview',
+            'development-guide': '📖 Development Guide',
+            'basic-assistance': '⚙️ Basic Assistance'
         };
 
         return actionTitles[action] || action.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
