@@ -17,3 +17,5 @@
 {"commit_pattern":"fix: [tested] Complete build system fixes and XAML","governance_stage":6,"timestamp":"2025-09-19T22:02:15.758+02:00","validation_success":true,"aios_version":"0.6.0"}
 {"aios_version":"0.6.0","validation_success":true,"governance_stage":6,"commit_pattern":"test: Trigger AI-enhanced git hook guidance system","timestamp":"2025-09-21T10:39:02.352+02:00"}
 {"validation_success":false,"commit_pattern":"feat: Test AI-enhanced changelog guidance system","timestamp":"2025-09-21T10:41:35.809+02:00","governance_stage":6,"aios_version":"0.6.0"}
+{"governance_stage":6,"timestamp":"2025-09-21T11:19:26.146+02:00","validation_success":false,"aios_version":"0.6.0","commit_pattern":"fix: Add pytest-asyncio marker for async test"}
+{"commit_pattern":"fix: Add pytest-asyncio marker for async test [tes","aios_version":"0.6.0","timestamp":"2025-09-21T11:19:35.029+02:00","validation_success":true,"governance_stage":6}
