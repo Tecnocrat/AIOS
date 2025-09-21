@@ -32,7 +32,24 @@ export interface AIOSResponse {
         realAiosConnection?: boolean;
         fallbackReason?: string;
         contextProvided?: boolean;
+        autoInjected?: boolean;
+        engineTargets?: string[];
     };
+}
+
+export interface ContextInjectionConfig {
+    targetEngines: ('copilot' | 'aios-chat' | 'claude' | 'all')[];
+    injectionMethod: 'system-message' | 'context-state' | 'hybrid';
+    coordinateWithTasks: boolean;
+    preventDuplicates: boolean;
+}
+
+export interface MultiEngineContext {
+    aiosContext: any;
+    aiContextAutoLoad: string;
+    chatmodeRules: string;
+    gitHookContext: string;
+    spatialMetadata: any;
 }
 
 export interface ConversationState {
@@ -97,6 +114,95 @@ export class AIOSContextManager {
                 aiosVersion: '0.4.0'
             }
         };
+    }
+
+    // Multi-Engine Context Loading for Hybrid Architecture
+    public async loadMultiEngineContext(): Promise<MultiEngineContext> {
+        this.logger.debug('Loading multi-engine context for hybrid coordination');
+        
+        try {
+            const [aiosContext, aiContextAutoLoad, chatmodeRules, spatialMetadata] = await Promise.all([
+                this.loadAIOSContextFile(),
+                this.loadAIContextAutoLoadFile(),
+                this.loadChatmodeRules(),
+                this.loadSpatialMetadata()
+            ]);
+
+            return {
+                aiosContext,
+                aiContextAutoLoad,
+                chatmodeRules,
+                gitHookContext: this.generateGitHookContext(),
+                spatialMetadata
+            };
+        } catch (error) {
+            this.logger.error('Failed to load multi-engine context:', error);
+            throw error;
+        }
+    }
+
+    private async loadAIOSContextFile(): Promise<any> {
+        try {
+            const workspaceFolders = vscode.workspace.workspaceFolders;
+            if (!workspaceFolders?.length) return null;
+            
+            const contextUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.aios_context.json');
+            const content = await vscode.workspace.fs.readFile(contextUri);
+            return JSON.parse(content.toString());
+        } catch (error) {
+            this.logger.warn('Failed to load .aios_context.json:', error);
+            return null;
+        }
+    }
+
+    private async loadAIContextAutoLoadFile(): Promise<string> {
+        try {
+            const workspaceFolders = vscode.workspace.workspaceFolders;
+            if (!workspaceFolders?.length) return '';
+            
+            const contextUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.vscode', 'AI_CONTEXT_AUTO_LOAD.md');
+            const content = await vscode.workspace.fs.readFile(contextUri);
+            return content.toString();
+        } catch (error) {
+            this.logger.warn('Failed to load AI_CONTEXT_AUTO_LOAD.md:', error);
+            return '';
+        }
+    }
+
+    private async loadChatmodeRules(): Promise<string> {
+        try {
+            const workspaceFolders = vscode.workspace.workspaceFolders;
+            if (!workspaceFolders?.length) return '';
+            
+            const chatmodeUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.github', 'chatmodes', 'aios.chatmode.md');
+            const content = await vscode.workspace.fs.readFile(chatmodeUri);
+            return content.toString();
+        } catch (error) {
+            this.logger.warn('Failed to load aios.chatmode.md:', error);
+            return '';
+        }
+    }
+
+    private async loadSpatialMetadata(): Promise<any> {
+        try {
+            const workspaceFolders = vscode.workspace.workspaceFolders;
+            if (!workspaceFolders?.length) return null;
+            
+            const metadataUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.aios_spatial_metadata.json');
+            const content = await vscode.workspace.fs.readFile(metadataUri);
+            return JSON.parse(content.toString());
+        } catch (error) {
+            this.logger.debug('No root spatial metadata found (this is normal)');
+            return null;
+        }
+    }
+
+    private generateGitHookContext(): string {
+        return `# GitHook Context Enforcement
+- PowerShell environment required
+- AI engines must use PowerShell syntax
+- No Linux bash commands allowed
+- Spatial metadata compliance required`;
     }
 
     private generateConversationId(): string {

@@ -286,14 +286,36 @@ if ($violations.Count -eq 0) {
 
 Write-Host " Commit blocked:" -ForegroundColor Red
 foreach($k in $violations){ $vals = $results[$k] -join ', '; Write-Host " - ${k}: ${vals}" -ForegroundColor Red }
-Write-Host "Remediation:" -ForegroundColor Yellow
+
+# 🤖 AI-Enhanced Guidance for Changelog Requirements
+if ($results.changelog) {
+  Write-Host "`n🤖 [AI-ENHANCED-GUIDANCE] Intelligent changelog assistance activated..." -ForegroundColor Cyan
+  try {
+    $AIPointerPath = Join-Path (Split-Path $PSScriptRoot -Parent) "laboratory\ai_enhanced_git_hook_pointer.ps1"
+    if (Test-Path $AIPointerPath) {
+      & $AIPointerPath -ModifiedFiles ($stagedEntries | Where-Object { $_.Status -ne 'D' } | ForEach-Object { $_.Path })
+    } else {
+      Write-Host "   💡 Quick Fix: Run these commands to resolve changelog requirement:" -ForegroundColor Yellow
+      Write-Host "   echo '## [$(Get-Date -Format 'yyyy-MM-dd')] - AIOS Enhancement' >> CHANGELOG.md" -ForegroundColor Cyan
+      Write-Host "   git add CHANGELOG.md" -ForegroundColor Cyan
+    }
+  } catch {
+    Write-Warning "[AI-GUIDANCE] Enhanced guidance failed: $($_.Exception.Message)"
+  }
+}
+
+Write-Host "`nRemediation:" -ForegroundColor Yellow
 if ($results.deprecated){ Write-Host " * Remove or exclude deprecated files (deletion allowed)." -ForegroundColor Yellow }
 if ($results.root){ Write-Host " * Move unexpected root files into proper subdirectories or update policy." -ForegroundColor Yellow }
 if ($results.size){ Write-Host " * Reduce or split oversized files or whitelist path." -ForegroundColor Yellow }
 if ($results.secrets){ Write-Host " * Remove / rotate secrets; use env vars or secret manager." -ForegroundColor Yellow }
 if ($results.json){ Write-Host " * Fix JSON syntax in listed files." -ForegroundColor Yellow }
 if ($results.exec){ Write-Host " * Move script to approved directory or remove shebang." -ForegroundColor Yellow }
-if ($results.changelog){ Write-Host " * Add changelog entry file (tachyonic) for governed path changes." -ForegroundColor Yellow }
+if ($results.changelog){ 
+  Write-Host " * CHANGELOG REQUIRED: Changes detected in governed paths (ai/, core/, interface/, etc.)" -ForegroundColor Yellow 
+  Write-Host "   Required files: CHANGELOG.md, docs/tachyonic/tachyonic_changelog.yaml, docs/tachyonic/tachyonic_changelog.jsonl" -ForegroundColor Gray
+  Write-Host "   💡 Use: pwsh .githooks/modules/laboratory/ai_enhanced_git_hook_pointer.ps1 -AutoSuggest" -ForegroundColor Cyan
+}
 if ($results.py){ Write-Host " * Fix Python syntax errors (py_compile)." -ForegroundColor Yellow }
 if ($results.tests){ Write-Host " * Investigate failing targeted tests." -ForegroundColor Yellow }
 if ($results.Contains('criticality_warn') -and $results.criticality_warn){ Write-Host " * Core file modifications detected (non-blocking) -> ensure ledger ID & dual review if escalated." -ForegroundColor Yellow }

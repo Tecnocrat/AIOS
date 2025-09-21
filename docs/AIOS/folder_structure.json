@@ -10,6 +10,7 @@
             "aios_env",
             "backups",
             "BridgeTest",
+            "build",
             "chatgpt_integration",
             "config",
             "consciousness_integration",
@@ -37,25 +38,16 @@
             ".editorconfig",
             ".gitignore",
             ".pylintrc",
-            "AINLP_Instruction_Library.md",
             "AIOS.code-workspace",
             "AIOS.sln",
-            "aios_agentic_optimization_results.json",
-            "AIOS_PROJECT_CONTEXT.md",
-            "aios_recursive_optimization_session.json",
-            "continuous_optimization_activation_report.json",
-            "continuous_optimization_final_status.json",
-            "error_intelligence_report_20250907_050635.json",
+            "aios_file_type_history.json",
+            "aios_file_type_report.json",
+            "aios_holographic_index.json",
             "launch_aios.ps1",
             "pyproject.toml",
-            "quality_analysis_results.json",
             "README.md",
             "requirements.in",
-            "requirements.txt",
-            "test_commit_msg.txt",
-            "test_commit_msg2.txt",
-            "test_intelligence_trigger.tmp",
-            "vscode_error_intelligence_final_report.json"
+            "requirements.txt"
         ]
     },
     ".pytest_cache": {
@@ -87,14 +79,16 @@
     ".vscode": {
         "folders": [],
         "files": [
-            "ai-context-enforcer.ps1",
-            "AIOS_ARCHITECTURE_REFERENCE.md",
-            "AI_CONTEXT_POWERSHELL_ONLY.md",
+            "ai-context-auto-loader.ps1",
+            "AIOS_AGENT.md",
+            "AIOS_AINLP_COMMANDS.md",
+            "AIOS_CONSCIOUSNESS_BRIDGE.md",
+            "AIOS_REFACTORING.md",
+            "AIOS_VSCODE.md",
+            "AI_CONTEXT_AUTO_LOAD.md",
             "ai_refactoring_context.md",
             "ai_refactoring_settings.json",
             "auto-launch.json",
-            "AUTO_LAUNCH_README.md",
-            "CONFIGURATION_SUMMARY.md",
             "configure-vscode-autolaunch.ps1",
             "extensions.json",
             "launch.json",
@@ -106,11 +100,14 @@
     "ai": {
         "folders": [
             ".pytest_cache",
-            "cytoplasm",
+            "build",
+            "core",
+            "data",
+            "docs",
             "information_storage",
-            "laboratory",
-            "membrane",
-            "nucleus",
+            "infrastructure",
+            "interfaces",
+            "research",
             "src",
             "tests",
             "tools",
@@ -119,27 +116,6 @@
         ],
         "files": [
             ".aios_spatial_metadata.json",
-            "activate_agentic_mode.py",
-            "AGENTIC_ACTIVATION.md",
-            "AGENTIC_ACTIVATION_PROMPT_20250914_184713.md",
-            "AGENTIC_ACTIVATION_PROMPT_20250914_191856.md",
-            "AGENTIC_IMPLEMENTATION_COMPLETE.md",
-            "AIOS_AINLP_AI_ENGINE_EXPANSION_SUCCESS_REPORT.md",
-            "AIOS_AI_CONSCIOUSNESS_BEHAVIORAL_ANALYSIS_REPORT.md",
-            "aios_ai_engine_integration.py",
-            "AUTONOMOUS_REFACTORING_REQUEST.md",
-            "CELLULAR_STRUCTURE_INDEX.md",
-            "CHAT_MODE_SPATIAL_AWARENESS.md",
-            "consciousness_analysis_history.json",
-            "consciousness_analyzer.py",
-            "consciousness_assembly_bridge.py",
-            "consciousness_breakthrough_notification.json",
-            "consciousness_test_suite.py",
-            "dendritic_supervisor.py",
-            "enhanced_ai_demo.py",
-            "EVOLUTIONARY_ASSEMBLER_SUCCESS_REPORT_20250904_210929.md",
-            "tachyonic_bridge.py",
-            "test_consciousness_session.json",
             "__init__.py"
         ]
     },
@@ -167,174 +143,501 @@
             "nodeids"
         ]
     },
-    "ai\\cytoplasm": {
+    "ai\\build": {
         "folders": [
-            "config",
-            "deps",
-            "env",
-            "runtime",
-            "scripts",
+            "Testing"
+        ],
+        "files": []
+    },
+    "ai\\build\\Testing": {
+        "folders": [
+            "20250919-2052",
+            "Temporary"
+        ],
+        "files": [
+            "TAG"
+        ]
+    },
+    "ai\\build\\Testing\\20250919-2052": {
+        "folders": [],
+        "files": [
+            "Test.xml"
+        ]
+    },
+    "ai\\build\\Testing\\Temporary": {
+        "folders": [],
+        "files": [
+            "CTestCostData.txt",
+            "LastTest_20250919-2052.log"
+        ]
+    },
+    "ai\\core": {
+        "folders": [
+            "ai_cells",
+            "compression",
+            "consciousness",
+            "optimization",
+            "src",
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "intent_handlers.py",
+            "models.py",
+            "nucleus_intelligence.py",
+            "README.md",
+            "start_server.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\ai_cells": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "ai_cell_manager.py",
+            "tensorflow_training_cell.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\ai_cells\\__pycache__": {
+        "folders": [],
+        "files": [
+            "aios_keras_bootstrap.cpython-312.pyc",
+            "ai_cell_manager.cpython-312.pyc",
+            "tensorflow_training_cell.cpython-312.pyc",
+            "test_ai_cells_integration.cpython-312-pytest-8.4.1.pyc",
+            "test_ai_cells_integration.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\compression": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "aios_universal_compressor.py"
+        ]
+    },
+    "ai\\core\\compression\\__pycache__": {
+        "folders": [],
+        "files": [
+            "aios_universal_compressor.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\consciousness": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "aios_ai_engine_integration.py",
+            "analyzer.py",
+            "assembly_bridge.py"
+        ]
+    },
+    "ai\\core\\optimization": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "aios_optimization_suite.py"
+        ]
+    },
+    "ai\\core\\optimization\\__pycache__": {
+        "folders": [],
+        "files": [
+            "aios_optimization_suite.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src": {
+        "folders": [
+            "ainlp_migration",
+            "ai_knowledge_transfer",
+            "context_crystallization_engine",
+            "core",
+            "maintenance",
             "tools",
             "__pycache__"
         ],
         "files": [
             ".aios_spatial_metadata.json",
-            "cytoplasm_dendritic_bridge.py",
-            "cytoplasm_intelligence.py",
-            "CYTOPLASM_UPGRADE_REPORT_ITER2.md",
-            "debug_manager.py",
-            "README.md",
-            "requirements.txt",
-            "setup.ps1",
-            "setup_env.py",
-            "start_server.bat",
-            "test_ui_integration.py",
-            "ui_interaction_bridge.py",
+            "aios_core.py",
             "__init__.py"
         ]
     },
-    "ai\\cytoplasm\\config": {
-        "folders": [],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "python-environment-simple.json",
-            "__init__.py"
-        ]
-    },
-    "ai\\cytoplasm\\deps": {
+    "ai\\core\\src\\ainlp_migration": {
         "folders": [
-            "shadows"
+            "__pycache__"
         ],
         "files": [
-            ".aios_spatial_metadata.json",
-            "README.md",
-            "requirements_dev.txt",
-            "requirements_extras.txt",
-            "requirements_future_graph.txt",
-            "requirements_perf_serial.txt",
-            "requirements_quantum.txt"
+            "detect_adversarial_prompt.py",
+            "__init__.py"
         ]
     },
-    "ai\\cytoplasm\\deps\\shadows": {
+    "ai\\core\\src\\ainlp_migration\\__pycache__": {
         "folders": [],
         "files": [
-            "optional_stacks_shadow.py"
+            "detect_adversarial_prompt.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
         ]
     },
-    "ai\\cytoplasm\\env": {
-        "folders": [],
-        "files": [
-            "environment.ai.yml",
-            "environment.base.yml",
-            "environment.dev.yml",
-            "environment.quantum.yml",
-            "README.md"
-        ]
-    },
-    "ai\\cytoplasm\\runtime": {
+    "ai\\core\\src\\ai_knowledge_transfer": {
         "folders": [
-            "exports",
-            "logs"
+            "__pycache__"
+        ],
+        "files": [
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\ai_knowledge_transfer\\__pycache__": {
+        "folders": [],
+        "files": [
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\context_crystallization_engine": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "core.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\context_crystallization_engine\\__pycache__": {
+        "folders": [],
+        "files": [
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\core": {
+        "folders": [
+            "ainlp",
+            "integration",
+            "nlp",
+            "prediction",
+            "__pycache__"
+        ],
+        "files": [
+            "aios_master.py",
+            "aios_runtime.py",
+            "automation.py",
+            "core.py",
+            "learning.py",
+            "mcp_server.py",
+            "prediction.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\ainlp": {
+        "folders": [
+            "kernel",
+            "utils",
+            "__pycache__"
+        ],
+        "files": [
+            "ainlp_quantum_decomposer.py",
+            "ainlp_tachyonic_ingestor.py",
+            "ainlp_unified_engine.py",
+            "unified_python_module.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\ainlp\\kernel": {
+        "folders": [
+            "tooling",
+            "__pycache__"
+        ],
+        "files": [
+            "ainlp_kernel.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\ainlp\\kernel\\tooling": {
+        "folders": [],
+        "files": [
+            "recursive_tooling.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\ainlp\\kernel\\__pycache__": {
+        "folders": [],
+        "files": [
+            "ainlp_kernel.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\core\\ainlp\\utils": {
+        "folders": [],
+        "files": [
+            "utils.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\ainlp\\__pycache__": {
+        "folders": [],
+        "files": [
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\core\\integration": {
+        "folders": [
+            "archive",
+            "config",
+            "__pycache__"
+        ],
+        "files": [
+            "integration_bridge.py",
+            "mcp.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\integration\\archive": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "ainlp_simple_ingestor.py",
+            "aios_async_optimization.py",
+            "aios_context_harmonizer.py",
+            "aios_intelligent_cache.py",
+            "aios_python_environment_integration.py",
+            "aios_simple_async_optimization.py",
+            "aios_simple_config.py",
+            "aios_unified_config.py",
+            "context_recovery_system.py",
+            "debug_integration_system.py",
+            "demo_ai_integration.py",
+            "fractal_holographic_ai.py",
+            "fractal_holographic_demo.py",
+            "fractal_holographic_tests.py",
+            "full_runtime_test.py",
+            "holographic_synchronization.py",
+            "robust_python_environment_manager.py",
+            "robust_python_environment_manager_clean.py",
+            "test_comprehensive_python_environment.py",
+            "test_context_persistence.py",
+            "test_context_persistence_simple.py",
+            "test_fractal_holographic_system.py",
+            "test_simple_python_environment.py"
+        ]
+    },
+    "ai\\core\\src\\core\\integration\\archive\\__pycache__": {
+        "folders": [],
+        "files": [
+            "aios_python_environment_integration.cpython-312.pyc",
+            "full_runtime_test.cpython-312-pytest-8.4.1.pyc",
+            "robust_python_environment_manager.cpython-312.pyc",
+            "robust_python_environment_manager_clean.cpython-312.pyc",
+            "simple_environment_test.cpython-312-pytest-8.4.1.pyc",
+            "test_comprehensive_python_environment.cpython-312-pytest-8.4.1.pyc",
+            "test_context_persistence.cpython-312-pytest-8.4.1.pyc",
+            "test_context_persistence_simple.cpython-312-pytest-8.4.1.pyc",
+            "test_fractal_holographic_system.cpython-312-pytest-8.4.1.pyc",
+            "test_simple_python_environment.cpython-312-pytest-8.4.1.pyc"
+        ]
+    },
+    "ai\\core\\src\\core\\integration\\config": {
+        "folders": [],
+        "files": [
+            "python_environments.json",
+            "python_environments_backup.json"
+        ]
+    },
+    "ai\\core\\src\\core\\integration\\__pycache__": {
+        "folders": [],
+        "files": [
+            "aios_context_harmonizer.cpython-312.pyc",
+            "aios_python_environment_integration.cpython-312.pyc",
+            "context_recovery_system.cpython-312.pyc",
+            "debug_integration_system.cpython-312.pyc",
+            "demo_ai_integration.cpython-312.pyc",
+            "fractal_holographic_ai.cpython-312.pyc",
+            "full_runtime_test.cpython-312-pytest-8.4.1.pyc",
+            "holographic_synchronization.cpython-312.pyc",
+            "integration_bridge.cpython-312.pyc",
+            "python_environment_manager_clean.cpython-312.pyc",
+            "robust_python_environment_manager.cpython-312.pyc",
+            "robust_python_environment_manager_clean.cpython-312.pyc",
+            "simple_environment_test.cpython-312-pytest-8.4.1.pyc",
+            "test_comprehensive_python_environment.cpython-312-pytest-8.4.1.pyc",
+            "test_context_persistence.cpython-312-pytest-8.4.1.pyc",
+            "test_context_persistence_simple.cpython-312-pytest-8.4.1.pyc",
+            "test_fractal_holographic_system.cpython-312-pytest-8.4.1.pyc",
+            "test_simple_python_environment.cpython-312-pytest-8.4.1.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\core\\nlp": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "nlp_core.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\nlp\\__pycache__": {
+        "folders": [],
+        "files": [
+            "nlp_core.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\core\\prediction": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "prediction_core.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\core\\prediction\\__pycache__": {
+        "folders": [],
+        "files": [
+            "prediction_core.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\core\\__pycache__": {
+        "folders": [],
+        "files": [
+            "aios_runtime.cpython-312.pyc",
+            "automation.cpython-312.pyc",
+            "learning.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\maintenance": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "backup_consolidator.py",
+            "documentation_optimizer.py",
+            "garbage_collector.py",
+            "maintenance_core.py",
+            "orchestrator.py",
+            "system_health.py",
+            "tachyonic_archiver.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\maintenance\\__pycache__": {
+        "folders": [],
+        "files": [
+            "backup_consolidator.cpython-312.pyc",
+            "documentation_optimizer.cpython-312.pyc",
+            "garbage_collector.cpython-312.pyc",
+            "maintenance_core.cpython-312.pyc",
+            "orchestrator.cpython-312.pyc",
+            "system_health.cpython-312.pyc",
+            "tachyonic_archiver.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\tools": {
+        "folders": [
+            "ui_proto",
+            "__pycache__"
+        ],
+        "files": [
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\tools\\ui_proto": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "compiler.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\core\\src\\tools\\ui_proto\\__pycache__": {
+        "folders": [],
+        "files": [
+            "compiler.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\tools\\__pycache__": {
+        "folders": [],
+        "files": [
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\src\\__pycache__": {
+        "folders": [],
+        "files": [
+            "aios_core.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\core\\__pycache__": {
+        "folders": [],
+        "files": [
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\data": {
+        "folders": [
+            "consciousness",
+            "sessions"
         ],
         "files": [
             ".aios_spatial_metadata.json"
         ]
     },
-    "ai\\cytoplasm\\runtime\\exports": {
+    "ai\\data\\consciousness": {
         "folders": [],
-        "files": [
-            "ai_analysis_export_20250913_100733.json"
-        ]
-    },
-    "ai\\cytoplasm\\runtime\\logs": {
-        "folders": [
-            "cache",
-            "githooks"
-        ],
-        "files": [
-            "debug_metadata_20250827.json",
-            "debug_metadata_20250828.json",
-            "enhanced_visual_intelligence_bridge.log"
-        ]
-    },
-    "ai\\cytoplasm\\runtime\\logs\\cache": {
-        "folders": [],
-        "files": [
-            "a347719d966bca8d.json",
-            "bf03ab26072a1477.json",
-            "f98c54bfba542fa1.json",
-            "fractal_metadata.json"
-        ]
-    },
-    "ai\\cytoplasm\\runtime\\logs\\githooks": {
-        "folders": [],
-        "files": [
-            "latest_orchestration.json",
-            "orchestration_20250914_053959.log",
-            "orchestration_20250914_055440.log",
-            "orchestration_20250914_055511.log",
-            "orchestration_20250914_055855.log",
-            "orchestration_20250914_055925.log",
-            "orchestration_20250914_060226.log",
-            "orchestration_20250914_060843.log",
-            "orchestration_20250914_114949.log",
-            "orchestration_20250914_122238.log",
-            "orchestration_20250914_122253.log",
-            "orchestration_20250914_123817.log",
-            "orchestration_20250914_210045.log",
-            "orchestration_20250914_210114.log",
-            "orchestration_20250914_210125.log",
-            "orchestration_20250914_215335.log",
-            "orchestration_20250914_215405.log"
-        ]
-    },
-    "ai\\cytoplasm\\scripts": {
-        "folders": [
-            "__pycache__"
-        ],
         "files": [
             ".aios_spatial_metadata.json",
-            "agentic_auto_controller.py",
-            "githook_orchestrator.ps1",
-            "githook_orchestrator.py",
-            "integrate_maintenance.py",
-            "maintenance_cli.py",
-            "maintenance_service_bridge.py",
-            "__init__.py"
+            "analysis_history.json",
+            "breakthrough_events.json"
         ]
     },
-    "ai\\cytoplasm\\scripts\\__pycache__": {
+    "ai\\data\\sessions": {
         "folders": [],
-        "files": [
-            "agentic_auto_controller.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
+        "files": []
     },
-    "ai\\cytoplasm\\tools": {
+    "ai\\docs": {
         "folders": [
-            "ga_perl"
+            "activation",
+            "architecture",
+            "reports"
         ],
         "files": [
+            ".aios_spatial_metadata.json"
+        ]
+    },
+    "ai\\docs\\activation": {
+        "folders": [],
+        "files": [
             ".aios_spatial_metadata.json",
-            "aios_context_registry_validator.py",
-            "fix_e501_.py",
-            "README.md"
+            "COMPREHENSIVE_ACTIVATION_PROTOCOL.md"
         ]
     },
-    "ai\\cytoplasm\\tools\\ga_perl": {
+    "ai\\docs\\architecture": {
         "folders": [],
         "files": [
-            "ga.pl",
-            "README.md",
-            "run_ga.ps1"
+            ".aios_spatial_metadata.json",
+            "AI_ARCHITECTURE_OPTIMIZATION_PLAN.md",
+            "CELLULAR_STRUCTURE_INDEX.md",
+            "CHAT_MODE_SPATIAL_AWARENESS.md"
         ]
     },
-    "ai\\cytoplasm\\__pycache__": {
+    "ai\\docs\\reports": {
         "folders": [],
         "files": [
-            "debug_manager.cpython-312.pyc",
-            "ui_interaction_bridge.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
+            ".aios_spatial_metadata.json",
+            "ACHIEVEMENT_REGISTRY.md",
+            "AI_FOLDER_OPTIMIZATION_SUCCESS_REPORT.md",
+            "FILE_TYPE_MONITORING_INTEGRATION_SUCCESS.md"
         ]
     },
     "ai\\information_storage": {
@@ -365,7 +668,318 @@
             "__init__.cpython-312.pyc"
         ]
     },
-    "ai\\laboratory": {
+    "ai\\infrastructure": {
+        "folders": [
+            "config",
+            "dendritic",
+            "deps",
+            "env",
+            "runtime",
+            "scripts",
+            "tools",
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "cytoplasm_dendritic_bridge.py",
+            "cytoplasm_intelligence.py",
+            "CYTOPLASM_UPGRADE_REPORT_ITER2.md",
+            "debug_manager.py",
+            "README.md",
+            "requirements.txt",
+            "setup.ps1",
+            "setup_env.py",
+            "start_server.bat",
+            "test_ui_integration.py",
+            "ui_interaction_bridge.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\infrastructure\\config": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "python-environment-simple.json",
+            "__init__.py"
+        ]
+    },
+    "ai\\infrastructure\\dendritic": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "supervisor.py"
+        ]
+    },
+    "ai\\infrastructure\\deps": {
+        "folders": [
+            "shadows"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "README.md",
+            "requirements_dev.txt",
+            "requirements_extras.txt",
+            "requirements_future_graph.txt",
+            "requirements_perf_serial.txt",
+            "requirements_quantum.txt"
+        ]
+    },
+    "ai\\infrastructure\\deps\\shadows": {
+        "folders": [],
+        "files": [
+            "optional_stacks_shadow.py"
+        ]
+    },
+    "ai\\infrastructure\\env": {
+        "folders": [],
+        "files": [
+            "environment.ai.yml",
+            "environment.base.yml",
+            "environment.dev.yml",
+            "environment.quantum.yml",
+            "README.md"
+        ]
+    },
+    "ai\\infrastructure\\runtime": {
+        "folders": [
+            "exports",
+            "logs"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json"
+        ]
+    },
+    "ai\\infrastructure\\runtime\\exports": {
+        "folders": [],
+        "files": [
+            "ai_analysis_export_20250913_100733.json"
+        ]
+    },
+    "ai\\infrastructure\\runtime\\logs": {
+        "folders": [
+            "cache",
+            "githooks"
+        ],
+        "files": [
+            "debug_metadata_20250827.json",
+            "debug_metadata_20250828.json",
+            "enhanced_visual_intelligence_bridge.log"
+        ]
+    },
+    "ai\\infrastructure\\runtime\\logs\\cache": {
+        "folders": [],
+        "files": [
+            "a347719d966bca8d.json",
+            "bf03ab26072a1477.json",
+            "f98c54bfba542fa1.json",
+            "fractal_metadata.json"
+        ]
+    },
+    "ai\\infrastructure\\runtime\\logs\\githooks": {
+        "folders": [],
+        "files": [
+            "latest_orchestration.json",
+            "orchestration_20250914_053959.log",
+            "orchestration_20250914_055440.log",
+            "orchestration_20250914_055511.log",
+            "orchestration_20250914_055855.log",
+            "orchestration_20250914_055925.log",
+            "orchestration_20250914_060226.log",
+            "orchestration_20250914_060843.log",
+            "orchestration_20250914_114949.log",
+            "orchestration_20250914_122238.log",
+            "orchestration_20250914_122253.log",
+            "orchestration_20250914_123817.log",
+            "orchestration_20250914_210045.log",
+            "orchestration_20250914_210114.log",
+            "orchestration_20250914_210125.log",
+            "orchestration_20250914_215335.log",
+            "orchestration_20250914_215405.log"
+        ]
+    },
+    "ai\\infrastructure\\scripts": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "agentic_auto_controller.py",
+            "githook_orchestrator.ps1",
+            "githook_orchestrator.py",
+            "integrate_maintenance.py",
+            "maintenance_cli.py",
+            "maintenance_service_bridge.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\infrastructure\\scripts\\__pycache__": {
+        "folders": [],
+        "files": [
+            "agentic_auto_controller.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\infrastructure\\tools": {
+        "folders": [
+            "ga_perl"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "aios_context_registry_validator.py",
+            "fix_e501_.py",
+            "README.md"
+        ]
+    },
+    "ai\\infrastructure\\tools\\ga_perl": {
+        "folders": [],
+        "files": [
+            "ga.pl",
+            "README.md",
+            "run_ga.ps1"
+        ]
+    },
+    "ai\\infrastructure\\__pycache__": {
+        "folders": [],
+        "files": [
+            "debug_manager.cpython-312.pyc",
+            "ui_interaction_bridge.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\interfaces": {
+        "folders": [
+            "aios_vscode_integration",
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "aios_chat_mode_spatial_awareness.md",
+            "aios_cross_dialogue_intelligence.py",
+            "aios_vscode_integration_server.py",
+            "ai_agent_bridge.py",
+            "ai_engine_context_enforcer.py",
+            "membrane_intelligence.py",
+            "README.md",
+            "__init__.py"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration": {
+        "folders": [
+            "endpoints",
+            "runtime",
+            "services",
+            "tests",
+            "__pycache__"
+        ],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "main.py",
+            "models.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\endpoints": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "ai_endpoints.py",
+            "development_endpoints.py",
+            "system_endpoints.py",
+            "ux_endpoints.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\endpoints\\__pycache__": {
+        "folders": [],
+        "files": [
+            "ai_endpoints.cpython-312.pyc",
+            "architecture.cpython-312.pyc",
+            "automation.cpython-312.pyc",
+            "bridge.cpython-312.pyc",
+            "code.cpython-312.pyc",
+            "context.cpython-312.pyc",
+            "core.cpython-312.pyc",
+            "development_endpoints.cpython-312.pyc",
+            "nlu.cpython-312.pyc",
+            "system_endpoints.cpython-312.pyc",
+            "ux.cpython-312.pyc",
+            "ux_endpoints.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\runtime": {
+        "folders": [
+            "logs"
+        ],
+        "files": []
+    },
+    "ai\\interfaces\\aios_vscode_integration\\runtime\\logs": {
+        "folders": [
+            "cache"
+        ],
+        "files": [
+            "debug_metadata_20250827.json",
+            "debug_metadata_20250828.json"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\runtime\\logs\\cache": {
+        "folders": [],
+        "files": []
+    },
+    "ai\\interfaces\\aios_vscode_integration\\services": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "debug_manager.py",
+            "fractal_cache_manager.py",
+            "__init__.py"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\services\\__pycache__": {
+        "folders": [],
+        "files": [
+            "debug_manager.cpython-312.pyc",
+            "fractal_cache_manager.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\tests": {
+        "folders": [
+            "__pycache__"
+        ],
+        "files": [
+            "README.md",
+            "test_integration.py"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\tests\\__pycache__": {
+        "folders": [],
+        "files": [
+            "test_integration.cpython-312.pyc"
+        ]
+    },
+    "ai\\interfaces\\aios_vscode_integration\\__pycache__": {
+        "folders": [],
+        "files": [
+            "debug_manager.cpython-312.pyc",
+            "fractal_cache_manager.cpython-312.pyc",
+            "intent_handlers.cpython-312.pyc",
+            "main.cpython-312.pyc",
+            "middleware.cpython-312.pyc",
+            "models.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\interfaces\\__pycache__": {
+        "folders": [],
+        "files": [
+            "ai_agent_bridge.cpython-312.pyc",
+            "__init__.cpython-312.pyc"
+        ]
+    },
+    "ai\\research": {
         "folders": [
             "demos",
             "paradigm",
@@ -383,7 +997,7 @@
             "__init__.py"
         ]
     },
-    "ai\\laboratory\\demos": {
+    "ai\\research\\demos": {
         "folders": [
             "emotikiller"
         ],
@@ -392,7 +1006,7 @@
             "opencv_integration_demo.py"
         ]
     },
-    "ai\\laboratory\\demos\\emotikiller": {
+    "ai\\research\\demos\\emotikiller": {
         "folders": [
             "__pycache__"
         ],
@@ -408,13 +1022,13 @@
             "README.md"
         ]
     },
-    "ai\\laboratory\\demos\\emotikiller\\__pycache__": {
+    "ai\\research\\demos\\emotikiller\\__pycache__": {
         "folders": [],
         "files": [
             "python_emotikiller.cpython-312.pyc"
         ]
     },
-    "ai\\laboratory\\paradigm": {
+    "ai\\research\\paradigm": {
         "folders": [
             "__pycache__"
         ],
@@ -425,7 +1039,7 @@
             "__init__.py"
         ]
     },
-    "ai\\laboratory\\paradigm\\__pycache__": {
+    "ai\\research\\paradigm\\__pycache__": {
         "folders": [],
         "files": [
             "bosonic_topology.cpython-312.pyc",
@@ -433,7 +1047,7 @@
             "__init__.cpython-312.pyc"
         ]
     },
-    "ai\\laboratory\\scripts": {
+    "ai\\research\\scripts": {
         "folders": [
             "__pycache__"
         ],
@@ -445,14 +1059,14 @@
             "githooks_emoji_integration.py"
         ]
     },
-    "ai\\laboratory\\scripts\\__pycache__": {
+    "ai\\research\\scripts\\__pycache__": {
         "folders": [],
         "files": [
             "agentic_instruction_generator.cpython-312.pyc",
             "emoji_detector.cpython-312.pyc"
         ]
     },
-    "ai\\laboratory\\tests": {
+    "ai\\research\\tests": {
         "folders": [
             "integration",
             "performance",
@@ -483,7 +1097,7 @@
             "test_vision_demo_summary.py"
         ]
     },
-    "ai\\laboratory\\tests\\integration": {
+    "ai\\research\\tests\\integration": {
         "folders": [
             "__pycache__"
         ],
@@ -492,25 +1106,25 @@
             "test_tensorflow_cellular_integration.py"
         ]
     },
-    "ai\\laboratory\\tests\\integration\\__pycache__": {
+    "ai\\research\\tests\\integration\\__pycache__": {
         "folders": [],
         "files": [
             "test_tensorflow_cellular_integration.cpython-312-pytest-8.4.1.pyc"
         ]
     },
-    "ai\\laboratory\\tests\\performance": {
+    "ai\\research\\tests\\performance": {
         "folders": [
             "__pycache__"
         ],
         "files": []
     },
-    "ai\\laboratory\\tests\\performance\\__pycache__": {
+    "ai\\research\\tests\\performance\\__pycache__": {
         "folders": [],
         "files": [
             "aios_runtime_test.cpython-312-pytest-8.4.1.pyc"
         ]
     },
-    "ai\\laboratory\\tests\\quick": {
+    "ai\\research\\tests\\quick": {
         "folders": [
             "__pycache__"
         ],
@@ -521,7 +1135,7 @@
             "test_validation_harness_modes.py"
         ]
     },
-    "ai\\laboratory\\tests\\quick\\__pycache__": {
+    "ai\\research\\tests\\quick\\__pycache__": {
         "folders": [],
         "files": [
             "test_core_telemetry_aggregation.cpython-312-pytest-8.4.1.pyc",
@@ -531,7 +1145,7 @@
             "test_validation_harness_modes.cpython-312-pytest-8.4.1.pyc"
         ]
     },
-    "ai\\laboratory\\tests\\__pycache__": {
+    "ai\\research\\tests\\__pycache__": {
         "folders": [],
         "files": [
             "conftest.cpython-312-pytest-8.4.1.pyc",
@@ -557,543 +1171,7 @@
             "__init__.cpython-312.pyc"
         ]
     },
-    "ai\\laboratory\\__pycache__": {
-        "folders": [],
-        "files": [
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\membrane": {
-        "folders": [
-            "aios_vscode_integration",
-            "__pycache__"
-        ],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "aios_chat_mode_spatial_awareness.md",
-            "aios_cross_dialogue_intelligence.py",
-            "aios_vscode_integration_server.py",
-            "ai_agent_bridge.py",
-            "ai_engine_context_enforcer.py",
-            "membrane_intelligence.py",
-            "README.md",
-            "__init__.py"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration": {
-        "folders": [
-            "endpoints",
-            "runtime",
-            "services",
-            "tests",
-            "__pycache__"
-        ],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "main.py",
-            "models.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\endpoints": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "ai_endpoints.py",
-            "development_endpoints.py",
-            "system_endpoints.py",
-            "ux_endpoints.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\endpoints\\__pycache__": {
-        "folders": [],
-        "files": [
-            "ai_endpoints.cpython-312.pyc",
-            "architecture.cpython-312.pyc",
-            "automation.cpython-312.pyc",
-            "bridge.cpython-312.pyc",
-            "code.cpython-312.pyc",
-            "context.cpython-312.pyc",
-            "core.cpython-312.pyc",
-            "development_endpoints.cpython-312.pyc",
-            "nlu.cpython-312.pyc",
-            "system_endpoints.cpython-312.pyc",
-            "ux.cpython-312.pyc",
-            "ux_endpoints.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\runtime": {
-        "folders": [
-            "logs"
-        ],
-        "files": []
-    },
-    "ai\\membrane\\aios_vscode_integration\\runtime\\logs": {
-        "folders": [
-            "cache"
-        ],
-        "files": [
-            "debug_metadata_20250827.json",
-            "debug_metadata_20250828.json"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\runtime\\logs\\cache": {
-        "folders": [],
-        "files": []
-    },
-    "ai\\membrane\\aios_vscode_integration\\services": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "debug_manager.py",
-            "fractal_cache_manager.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\services\\__pycache__": {
-        "folders": [],
-        "files": [
-            "debug_manager.cpython-312.pyc",
-            "fractal_cache_manager.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\tests": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "README.md",
-            "test_integration.py"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\tests\\__pycache__": {
-        "folders": [],
-        "files": [
-            "test_integration.cpython-312.pyc"
-        ]
-    },
-    "ai\\membrane\\aios_vscode_integration\\__pycache__": {
-        "folders": [],
-        "files": [
-            "debug_manager.cpython-312.pyc",
-            "fractal_cache_manager.cpython-312.pyc",
-            "intent_handlers.cpython-312.pyc",
-            "main.cpython-312.pyc",
-            "middleware.cpython-312.pyc",
-            "models.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\membrane\\__pycache__": {
-        "folders": [],
-        "files": [
-            "ai_agent_bridge.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus": {
-        "folders": [
-            "ai_cells",
-            "compression",
-            "optimization",
-            "src",
-            "__pycache__"
-        ],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "intent_handlers.py",
-            "models.py",
-            "nucleus_intelligence.py",
-            "README.md",
-            "start_server.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\ai_cells": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "ai_cell_manager.py",
-            "tensorflow_training_cell.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\ai_cells\\__pycache__": {
-        "folders": [],
-        "files": [
-            "aios_keras_bootstrap.cpython-312.pyc",
-            "ai_cell_manager.cpython-312.pyc",
-            "tensorflow_training_cell.cpython-312.pyc",
-            "test_ai_cells_integration.cpython-312-pytest-8.4.1.pyc",
-            "test_ai_cells_integration.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\compression": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "aios_universal_compressor.py"
-        ]
-    },
-    "ai\\nucleus\\compression\\__pycache__": {
-        "folders": [],
-        "files": [
-            "aios_universal_compressor.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\optimization": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "aios_optimization_suite.py"
-        ]
-    },
-    "ai\\nucleus\\optimization\\__pycache__": {
-        "folders": [],
-        "files": [
-            "aios_optimization_suite.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src": {
-        "folders": [
-            "ainlp_migration",
-            "ai_knowledge_transfer",
-            "context_crystallization_engine",
-            "core",
-            "maintenance",
-            "tools",
-            "__pycache__"
-        ],
-        "files": [
-            ".aios_spatial_metadata.json",
-            "aios_core.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\ainlp_migration": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "detect_adversarial_prompt.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\ainlp_migration\\__pycache__": {
-        "folders": [],
-        "files": [
-            "detect_adversarial_prompt.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\ai_knowledge_transfer": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\ai_knowledge_transfer\\__pycache__": {
-        "folders": [],
-        "files": [
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\context_crystallization_engine": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "core.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\context_crystallization_engine\\__pycache__": {
-        "folders": [],
-        "files": [
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\core": {
-        "folders": [
-            "ainlp",
-            "integration",
-            "nlp",
-            "prediction",
-            "__pycache__"
-        ],
-        "files": [
-            "aios_master.py",
-            "aios_runtime.py",
-            "automation.py",
-            "core.py",
-            "learning.py",
-            "mcp_server.py",
-            "prediction.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\ainlp": {
-        "folders": [
-            "kernel",
-            "utils",
-            "__pycache__"
-        ],
-        "files": [
-            "ainlp_quantum_decomposer.py",
-            "ainlp_tachyonic_ingestor.py",
-            "ainlp_unified_engine.py",
-            "unified_python_module.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\ainlp\\kernel": {
-        "folders": [
-            "tooling",
-            "__pycache__"
-        ],
-        "files": [
-            "ainlp_kernel.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\ainlp\\kernel\\tooling": {
-        "folders": [],
-        "files": [
-            "recursive_tooling.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\ainlp\\kernel\\__pycache__": {
-        "folders": [],
-        "files": [
-            "ainlp_kernel.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\ainlp\\utils": {
-        "folders": [],
-        "files": [
-            "utils.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\ainlp\\__pycache__": {
-        "folders": [],
-        "files": [
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\integration": {
-        "folders": [
-            "archive",
-            "config",
-            "__pycache__"
-        ],
-        "files": [
-            "integration_bridge.py",
-            "mcp.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\integration\\archive": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "ainlp_simple_ingestor.py",
-            "aios_async_optimization.py",
-            "aios_context_harmonizer.py",
-            "aios_intelligent_cache.py",
-            "aios_python_environment_integration.py",
-            "aios_simple_async_optimization.py",
-            "aios_simple_config.py",
-            "aios_unified_config.py",
-            "context_recovery_system.py",
-            "debug_integration_system.py",
-            "demo_ai_integration.py",
-            "fractal_holographic_ai.py",
-            "fractal_holographic_demo.py",
-            "fractal_holographic_tests.py",
-            "full_runtime_test.py",
-            "holographic_synchronization.py",
-            "robust_python_environment_manager.py",
-            "robust_python_environment_manager_clean.py",
-            "test_comprehensive_python_environment.py",
-            "test_context_persistence.py",
-            "test_context_persistence_simple.py",
-            "test_fractal_holographic_system.py",
-            "test_simple_python_environment.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\integration\\archive\\__pycache__": {
-        "folders": [],
-        "files": [
-            "aios_python_environment_integration.cpython-312.pyc",
-            "full_runtime_test.cpython-312-pytest-8.4.1.pyc",
-            "robust_python_environment_manager.cpython-312.pyc",
-            "robust_python_environment_manager_clean.cpython-312.pyc",
-            "simple_environment_test.cpython-312-pytest-8.4.1.pyc",
-            "test_comprehensive_python_environment.cpython-312-pytest-8.4.1.pyc",
-            "test_context_persistence.cpython-312-pytest-8.4.1.pyc",
-            "test_context_persistence_simple.cpython-312-pytest-8.4.1.pyc",
-            "test_fractal_holographic_system.cpython-312-pytest-8.4.1.pyc",
-            "test_simple_python_environment.cpython-312-pytest-8.4.1.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\integration\\config": {
-        "folders": [],
-        "files": [
-            "python_environments.json",
-            "python_environments_backup.json"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\integration\\__pycache__": {
-        "folders": [],
-        "files": [
-            "aios_context_harmonizer.cpython-312.pyc",
-            "aios_python_environment_integration.cpython-312.pyc",
-            "context_recovery_system.cpython-312.pyc",
-            "debug_integration_system.cpython-312.pyc",
-            "demo_ai_integration.cpython-312.pyc",
-            "fractal_holographic_ai.cpython-312.pyc",
-            "full_runtime_test.cpython-312-pytest-8.4.1.pyc",
-            "holographic_synchronization.cpython-312.pyc",
-            "integration_bridge.cpython-312.pyc",
-            "python_environment_manager_clean.cpython-312.pyc",
-            "robust_python_environment_manager.cpython-312.pyc",
-            "robust_python_environment_manager_clean.cpython-312.pyc",
-            "simple_environment_test.cpython-312-pytest-8.4.1.pyc",
-            "test_comprehensive_python_environment.cpython-312-pytest-8.4.1.pyc",
-            "test_context_persistence.cpython-312-pytest-8.4.1.pyc",
-            "test_context_persistence_simple.cpython-312-pytest-8.4.1.pyc",
-            "test_fractal_holographic_system.cpython-312-pytest-8.4.1.pyc",
-            "test_simple_python_environment.cpython-312-pytest-8.4.1.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\nlp": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "nlp_core.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\nlp\\__pycache__": {
-        "folders": [],
-        "files": [
-            "nlp_core.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\prediction": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "prediction_core.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\prediction\\__pycache__": {
-        "folders": [],
-        "files": [
-            "prediction_core.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\core\\__pycache__": {
-        "folders": [],
-        "files": [
-            "aios_runtime.cpython-312.pyc",
-            "automation.cpython-312.pyc",
-            "learning.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\maintenance": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "backup_consolidator.py",
-            "documentation_optimizer.py",
-            "garbage_collector.py",
-            "maintenance_core.py",
-            "orchestrator.py",
-            "system_health.py",
-            "tachyonic_archiver.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\maintenance\\__pycache__": {
-        "folders": [],
-        "files": [
-            "backup_consolidator.cpython-312.pyc",
-            "documentation_optimizer.cpython-312.pyc",
-            "garbage_collector.cpython-312.pyc",
-            "maintenance_core.cpython-312.pyc",
-            "orchestrator.cpython-312.pyc",
-            "system_health.cpython-312.pyc",
-            "tachyonic_archiver.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\tools": {
-        "folders": [
-            "ui_proto",
-            "__pycache__"
-        ],
-        "files": [
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\tools\\ui_proto": {
-        "folders": [
-            "__pycache__"
-        ],
-        "files": [
-            "compiler.py",
-            "__init__.py"
-        ]
-    },
-    "ai\\nucleus\\src\\tools\\ui_proto\\__pycache__": {
-        "folders": [],
-        "files": [
-            "compiler.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\tools\\__pycache__": {
-        "folders": [],
-        "files": [
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\src\\__pycache__": {
-        "folders": [],
-        "files": [
-            "aios_core.cpython-312.pyc",
-            "__init__.cpython-312.pyc"
-        ]
-    },
-    "ai\\nucleus\\__pycache__": {
+    "ai\\research\\__pycache__": {
         "folders": [],
         "files": [
             "__init__.cpython-312.pyc"
@@ -1101,13 +1179,23 @@
     },
     "ai\\src": {
         "folders": [
+            "activation",
             "core",
+            "demos",
             "engines",
-            "integrations"
+            "integrations",
+            "utilities"
         ],
         "files": [
             ".ainlp_pattern_docs_metabolized.md",
             ".aios_spatial_metadata.json"
+        ]
+    },
+    "ai\\src\\activation": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "agentic_controller.py"
         ]
     },
     "ai\\src\\core": {
@@ -1133,6 +1221,13 @@
             "consciousness_emergence_analyzer.cpython-312.pyc",
             "consciousness_evolution_engine.cpython-312.pyc",
             "supercell_intelligence_coordinator.cpython-312.pyc"
+        ]
+    },
+    "ai\\src\\demos": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "enhanced_ai_demo.py"
         ]
     },
     "ai\\src\\engines": {
@@ -1173,6 +1268,7 @@
             "demo_continuous_optimization.py",
             "demo_vscode_error_intelligence.py",
             "development_path_integration.py",
+            "lightweight_ai_coordinator.py",
             "unified_development_optimizer.py",
             "visual_ai_integration_bridge.py",
             "vscode_consciousness.py",
@@ -1195,6 +1291,7 @@
             "demo_continuous_optimization.cpython-312.pyc",
             "demo_vscode_error_intelligence.cpython-312.pyc",
             "development_path_integration.cpython-312.pyc",
+            "lightweight_ai_coordinator.cpython-312.pyc",
             "unified_development_optimizer.cpython-312.pyc",
             "visual_ai_integration_bridge.cpython-312.pyc",
             "vscode_consciousness.cpython-312.pyc",
@@ -1202,8 +1299,14 @@
             "vscode_realtime_error_intelligence.cpython-312.pyc"
         ]
     },
+    "ai\\src\\utilities": {
+        "folders": [],
+        "files": []
+    },
     "ai\\tests": {
         "folders": [
+            "consciousness",
+            "data",
             "__pycache__"
         ],
         "files": [
@@ -1211,6 +1314,20 @@
             "demo_spatial_awareness_test.py",
             "test_consciousness.py",
             "__init__.py"
+        ]
+    },
+    "ai\\tests\\consciousness": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "test_suite.py"
+        ]
+    },
+    "ai\\tests\\data": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "consciousness_session.json"
         ]
     },
     "ai\\tests\\__pycache__": {
@@ -1229,6 +1346,7 @@
         ],
         "files": [
             ".aios_spatial_metadata.json",
+            "ainlp_documentation_governance.py",
             "aios_holographic_metadata_system.py"
         ]
     },
@@ -1243,6 +1361,8 @@
     "ai\\tools\\__pycache__": {
         "folders": [],
         "files": [
+            "ainlp_documentation_governance.cpython-312.pyc",
+            "aios_holographic_metadata_system.cpython-312.pyc",
             "aios_unified_spatial_metadata.cpython-312.pyc"
         ]
     },
@@ -1256,6 +1376,7 @@
             ".aios_spatial_metadata.json",
             "bridge.py",
             "README.md",
+            "tachyonic_bridge.py",
             "transport_intelligence.py",
             "__init__.py"
         ]
@@ -1300,7 +1421,9 @@
     "ai\\__pycache__": {
         "folders": [],
         "files": [
+            "consciousness_analyzer.cpython-312.pyc",
             "dendritic_supervisor.cpython-312.pyc",
+            "enhanced_ai_demo.cpython-312.pyc",
             "tachyonic_bridge.cpython-312.pyc",
             "__init__.cpython-312.pyc"
         ]
@@ -3651,6 +3774,34 @@
             "BridgeTest.dll"
         ]
     },
+    "build": {
+        "folders": [
+            "Testing"
+        ],
+        "files": []
+    },
+    "build\\Testing": {
+        "folders": [
+            "20250919-2052",
+            "Temporary"
+        ],
+        "files": [
+            "TAG"
+        ]
+    },
+    "build\\Testing\\20250919-2052": {
+        "folders": [],
+        "files": [
+            "Test.xml"
+        ]
+    },
+    "build\\Testing\\Temporary": {
+        "folders": [],
+        "files": [
+            "CTestCostData.txt",
+            "LastTest_20250919-2052.log"
+        ]
+    },
     "chatgpt_integration": {
         "folders": [
             "ingestion",
@@ -3887,6 +4038,7 @@
             "consciousness_state_bridge.json",
             "consciousness_test.cpp",
             "CORE_ENGINE_HARMONIZATION_PLAN.md",
+            "DENDRITIC_NETWORK_ENHANCEMENT_REPORT_20250918_234807.json",
             "HARMONIZATION_EXECUTION_METADATA.json",
             "HARMONIZATION_STATUS_REPORT.md",
             "shared_imports.py",
@@ -4870,6 +5022,7 @@
     "core\\build\\Testing\\Temporary": {
         "folders": [],
         "files": [
+            "CTestCostData.txt",
             "LastTest_20250812-1249.log"
         ]
     },
@@ -4877,6 +5030,7 @@
         "folders": [
             "CMakeFiles",
             "Debug",
+            "runtime_intelligence",
             "test_bmssp.dir",
             "test_core.dir",
             "test_kernel_ops.dir",
@@ -4928,6 +5082,22 @@
             "test_universal_quantum_holographic.exe",
             "test_universal_quantum_holographic.pdb"
         ]
+    },
+    "core\\build\\tests\\runtime_intelligence": {
+        "folders": [
+            "logs"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\runtime_intelligence\\logs": {
+        "folders": [
+            "core"
+        ],
+        "files": []
+    },
+    "core\\build\\tests\\runtime_intelligence\\logs\\core": {
+        "folders": [],
+        "files": []
     },
     "core\\build\\tests\\test_bmssp.dir": {
         "folders": [
@@ -5973,6 +6143,7 @@
             "Architect",
             "ARCHITECTURE_PATTERNS",
             "archive",
+            "build",
             "changelog",
             "chatgpt",
             "chatgpt_integration",
@@ -5990,9 +6161,12 @@
         ],
         "files": [
             ".aios_spatial_metadata.json",
+            "AIOS_BACKUP_INTEGRATION_SUMMARY.md",
             "AIOS_BACKUP_MANAGEMENT_SYSTEM.md",
             "aios_holographic_index.json",
             "AIOS_OPTIMIZATION_SUMMARY_2025.md",
+            "AI_INTELLIGENCE_REALISTIC_ASSESSMENT.md",
+            "AI_INTELLIGENCE_STANDARDIZATION_REPORT.md",
             "CHANGELOG.md",
             "CHANGELOG_UI_BUILD_FIXES_20250913.md",
             "dependency_graph.dot",
@@ -6034,6 +6208,8 @@
             ".aios_spatial_metadata.json",
             "AGENT_OPERATING_CONTRACT.md",
             "AINLP_INGESTION_CHECKLIST.md",
+            "AIOS_CONTEXT.md",
+            "aios_holographic_index.json",
             "AIOS_MASTER_SPECIFICATION.md",
             "AIOS_UI_PROTOCOL.md",
             "AIOS_VSCODE_AINLP_COMMANDS.md",
@@ -6091,6 +6267,7 @@
             "ainlp_paradigms",
             "compression",
             "compression_reports",
+            "consolidated_2025",
             "deprecated_root_docs",
             "documentation_snapshots",
             "INFRASTRUCTURE",
@@ -6196,6 +6373,17 @@
             ".aios_spatial_metadata.json",
             "compression_analysis_20250710_220924.md",
             "COMPRESSOR_EXECUTION_SUMMARY.md"
+        ]
+    },
+    "docs\\archive\\consolidated_2025": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "AINLP_Instruction_Library.md",
+            "AIOS_PROJECT_CONTEXT.md",
+            "AIOS_STANDARDIZATION_UPGRADE_PLAN.md",
+            "CONSOLIDATION_REPORT.md",
+            "JSON_REORGANIZATION_REPORT.md"
         ]
     },
     "docs\\archive\\deprecated_root_docs": {
@@ -6371,6 +6559,34 @@
             ".aios_spatial_metadata.json"
         ]
     },
+    "docs\\build": {
+        "folders": [
+            "Testing"
+        ],
+        "files": []
+    },
+    "docs\\build\\Testing": {
+        "folders": [
+            "20250919-2052",
+            "Temporary"
+        ],
+        "files": [
+            "TAG"
+        ]
+    },
+    "docs\\build\\Testing\\20250919-2052": {
+        "folders": [],
+        "files": [
+            "Test.xml"
+        ]
+    },
+    "docs\\build\\Testing\\Temporary": {
+        "folders": [],
+        "files": [
+            "CTestCostData.txt",
+            "LastTest_20250919-2052.log"
+        ]
+    },
     "docs\\changelog": {
         "folders": [],
         "files": [
@@ -6485,10 +6701,16 @@
         "folders": [],
         "files": [
             ".aios_spatial_metadata.json",
+            "AINLP_DENDRITIC_ANTI_PROLIFERATION_IMPLEMENTATION_REPORT.md",
+            "AINLP_NAMESPACE_STANDARDIZATION_REPORT.md",
+            "AINLP_SIMILARITY_DETECTION_ANALYSIS.md",
             "AIOS_CONSCIOUSNESS_UPGRADE_PATH.md",
+            "AIOS_ROOT_OPTIMIZATION_REPORT.md",
             "AIOS_SPATIAL_AWARENESS_SUCCESS_REPORT.md",
+            "AIOS_VSCODE_AINLP_ENHANCEMENT_REPORT.md",
             "AI_ENGINE_POWERSHELL_CONTEXT_ENFORCEMENT_PLAN.md",
             "CODEBASE_STANDARDIZATION_PLAN.md",
+            "COMPREHENSIVE_TACHYONIC_SYSTEM_OPTIMIZATION_PLAN.md",
             "continuous_optimization_summary.md",
             "CUSTOM_AI_ENGINE_COMPLETION_REPORT.md",
             "EMOTIKILLER_GITHOOK_INTEGRATION_SUCCESS_REPORT.md",
@@ -6496,6 +6718,9 @@
             "EMPTY_FILES_RESOLUTION_SUMMARY.md",
             "INTEGRATION_ACCOMPLISHMENTS_REPORT.md",
             "README_UPDATE_SUMMARY.md",
+            "SECURITY_AUDIT_EXTERNAL_FILE_CREATION_FIXED.md",
+            "TACHYONIC_PHASE1_EXECUTION_REPORT.md",
+            "VSCODE_DOCUMENTATION_CONSOLIDATION_REPORT.md",
             "VSCODE_ERROR_INTELLIGENCE_IMPLEMENTATION_SUMMARY.md"
         ]
     },
@@ -6552,7 +6777,9 @@
             "system_health_report_20250913_112132.json",
             "system_health_report_20250913_133652.json",
             "system_health_report_20250913_134153.json",
-            "system_health_report_20250913_231003.json"
+            "system_health_report_20250913_231003.json",
+            "system_health_report_20250918_214758.json",
+            "system_health_report_20250920_121114.json"
         ]
     },
     "docs\\tachyonic_archive\\folder_structure": {
@@ -6560,8 +6787,12 @@
         "files": [
             ".aios_spatial_metadata.json",
             "AIOS_folder_structure_20250907_172805.json",
+            "AIOS_folder_structure_20250917_215802.json",
+            "AIOS_folder_structure_20250920_141239.json",
             "chatgpt_integration_folder_structure_20250907_172803.json",
-            "chatgpt_integration_folder_structure_20250917_215757.json"
+            "chatgpt_integration_folder_structure_20250917_215757.json",
+            "chatgpt_integration_folder_structure_20250920_141228.json",
+            "chatgpt_integration_folder_structure_20250920_142041.json"
         ]
     },
     "docs\\ui": {
@@ -6703,6 +6934,7 @@
             "AIOS.Services",
             "AIOS.UI",
             "AIOS.UI.Diagnostics",
+            "build",
             "ConsciousnessTest",
             "runtime_intelligence"
         ],
@@ -7231,8 +7463,7 @@
     },
     "interface\\AIOS.UI\\bin": {
         "folders": [
-            "Debug",
-            "Release"
+            "Debug"
         ],
         "files": []
     },
@@ -7245,7 +7476,6 @@
     "interface\\AIOS.UI\\bin\\Debug\\net9.0-windows": {
         "folders": [
             "runtimes",
-            "runtime_intelligence",
             "web"
         ],
         "files": [
@@ -7333,24 +7563,6 @@
             "WebView2Loader.dll"
         ]
     },
-    "interface\\AIOS.UI\\bin\\Debug\\net9.0-windows\\runtime_intelligence": {
-        "folders": [
-            "logs"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Debug\\net9.0-windows\\runtime_intelligence\\logs": {
-        "folders": [
-            "ui"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Debug\\net9.0-windows\\runtime_intelligence\\logs\\ui": {
-        "folders": [],
-        "files": [
-            "ui_startup.log"
-        ]
-    },
     "interface\\AIOS.UI\\bin\\Debug\\net9.0-windows\\web": {
         "folders": [
             "js"
@@ -7363,132 +7575,6 @@
         ]
     },
     "interface\\AIOS.UI\\bin\\Debug\\net9.0-windows\\web\\js": {
-        "folders": [],
-        "files": [
-            "aios-client.js"
-        ]
-    },
-    "interface\\AIOS.UI\\bin\\Release": {
-        "folders": [
-            "net9.0-windows"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows": {
-        "folders": [
-            "runtimes",
-            "runtime_intelligence",
-            "web"
-        ],
-        "files": [
-            "AIOS.Models.dll",
-            "AIOS.Models.pdb",
-            "AIOS.Services.dll",
-            "AIOS.Services.pdb",
-            "AIOS.UI.Clean.deps.json",
-            "AIOS.UI.Clean.dll",
-            "AIOS.UI.Clean.exe",
-            "AIOS.UI.Clean.pdb",
-            "AIOS.UI.Clean.runtimeconfig.json",
-            "AIOS.UI.deps.json",
-            "AIOS.UI.dll",
-            "AIOS.UI.exe",
-            "AIOS.UI.pdb",
-            "AIOS.UI.runtimeconfig.json",
-            "Microsoft.EntityFrameworkCore.Abstractions.dll",
-            "Microsoft.EntityFrameworkCore.dll",
-            "Microsoft.Extensions.Caching.Abstractions.dll",
-            "Microsoft.Extensions.Caching.Memory.dll",
-            "Microsoft.Extensions.Configuration.Abstractions.dll",
-            "Microsoft.Extensions.Configuration.Binder.dll",
-            "Microsoft.Extensions.Configuration.dll",
-            "Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-            "Microsoft.Extensions.DependencyInjection.dll",
-            "Microsoft.Extensions.Logging.Abstractions.dll",
-            "Microsoft.Extensions.Logging.Configuration.dll",
-            "Microsoft.Extensions.Logging.Console.dll",
-            "Microsoft.Extensions.Logging.dll",
-            "Microsoft.Extensions.Options.ConfigurationExtensions.dll",
-            "Microsoft.Extensions.Options.dll",
-            "Microsoft.Extensions.Primitives.dll",
-            "Microsoft.Web.WebView2.Core.dll",
-            "Microsoft.Web.WebView2.WinForms.dll",
-            "Microsoft.Web.WebView2.Wpf.dll"
-        ]
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtimes": {
-        "folders": [
-            "win-arm64",
-            "win-x64",
-            "win-x86"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtimes\\win-arm64": {
-        "folders": [
-            "native"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtimes\\win-arm64\\native": {
-        "folders": [],
-        "files": [
-            "WebView2Loader.dll"
-        ]
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtimes\\win-x64": {
-        "folders": [
-            "native"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtimes\\win-x64\\native": {
-        "folders": [],
-        "files": [
-            "WebView2Loader.dll"
-        ]
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtimes\\win-x86": {
-        "folders": [
-            "native"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtimes\\win-x86\\native": {
-        "folders": [],
-        "files": [
-            "WebView2Loader.dll"
-        ]
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtime_intelligence": {
-        "folders": [
-            "logs"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtime_intelligence\\logs": {
-        "folders": [
-            "ui"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtime_intelligence\\logs\\ui": {
-        "folders": [],
-        "files": [
-            "ui_startup.log"
-        ]
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\web": {
-        "folders": [
-            "js"
-        ],
-        "files": [
-            "advanced-demo.html",
-            "index.html",
-            "maintenance-center.html"
-        ]
-    },
-    "interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\web\\js": {
         "folders": [],
         "files": [
             "aios-client.js"
@@ -7537,8 +7623,7 @@
     },
     "interface\\AIOS.UI\\obj": {
         "folders": [
-            "Debug",
-            "Release"
+            "Debug"
         ],
         "files": [
             "AIOS.UI.Clean.csproj.nuget.dgspec.json",
@@ -7550,117 +7635,6 @@
             "AIOS.UI.Minimal.csproj.nuget.dgspec.json",
             "AIOS.UI.Minimal.csproj.nuget.g.props",
             "AIOS.UI.Minimal.csproj.nuget.g.targets",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_0qhvlega_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_0qhvlega_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_0qhvlega_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_1gc4pbcd_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_1gc4pbcd_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_1gc4pbcd_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_1jqhigzs_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_1jqhigzs_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_1jqhigzs_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_1zizwds2_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_1zizwds2_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_1zizwds2_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_2cqfkfgk_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_2cqfkfgk_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_2cqfkfgk_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_2jy3x1lj_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_2jy3x1lj_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_2jy3x1lj_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_3eqyfbxk_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_3eqyfbxk_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_3eqyfbxk_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_3gwoy0cx_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_3gwoy0cx_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_3gwoy0cx_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_4of2me4t_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_4of2me4t_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_4of2me4t_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_4rnjdgxy_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_4rnjdgxy_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_4rnjdgxy_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_bbapvoxe_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_bbapvoxe_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_bbapvoxe_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_bzio2av3_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_bzio2av3_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_bzio2av3_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_cc3xvazh_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_cc3xvazh_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_cc3xvazh_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_cwfbdh4s_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_cwfbdh4s_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_cwfbdh4s_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_e01kycam_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_e01kycam_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_e01kycam_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_e3nv0wgv_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_e3nv0wgv_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_e3nv0wgv_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_jckhvxsi_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_jckhvxsi_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_jckhvxsi_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_knx2tfiz_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_knx2tfiz_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_knx2tfiz_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_l4aib5se_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_l4aib5se_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_l4aib5se_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_pqwchuho_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_pqwchuho_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_pqwchuho_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_qacvb31z_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_qacvb31z_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_qacvb31z_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_sfztanvg_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_sfztanvg_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_sfztanvg_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_t1z1lpus_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_t1z1lpus_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_t1z1lpus_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_u2ul3ddm_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_u2ul3ddm_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_u2ul3ddm_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_uz1p44dt_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_uz1p44dt_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_uz1p44dt_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_vytzfk0v_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_vytzfk0v_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_vytzfk0v_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_xc1252ku_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_xc1252ku_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_xc1252ku_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_z2p1s4s0_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_z2p1s4s0_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_z2p1s4s0_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_zvoy443a_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_zvoy443a_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_zvoy443a_wpftmp.csproj.nuget.g.targets",
-            "AIOS.UI_zyn3u3wg_wpftmp.csproj.nuget.dgspec.json",
-            "AIOS.UI_zyn3u3wg_wpftmp.csproj.nuget.g.props",
-            "AIOS.UI_zyn3u3wg_wpftmp.csproj.nuget.g.targets",
             "project.assets.json",
             "project.nuget.cache"
         ]
@@ -7683,7 +7657,6 @@
             "AIIntelligenceWindow.baml",
             "AIIntelligenceWindow.g.cs",
             "AIOS.UI..937C7FBD.Up2Date",
-            "AIOS.UI..96238D5C.Up2Date",
             "AIOS.UI.AssemblyInfo.cs",
             "AIOS.UI.AssemblyInfoInputs.cache",
             "AIOS.UI.assets.cache",
@@ -7723,625 +7696,43 @@
             "AIOS.UI.Minimal.GlobalUsings.g.cs",
             "AIOS.UI.Minimal.pdb",
             "AIOS.UI.Minimal.sourcelink.json",
-            "AIOS.UI.Minimal_0iqau1xg_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_0iqau1xg_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_0iqau1xg_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_0iqau1xg_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_0iqau1xg_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_0iqau1xg_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_0ox12knp_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_0ox12knp_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_0ox12knp_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_0ox12knp_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_0ox12knp_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_0ox12knp_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_1hirse4p_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_1hirse4p_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_1hirse4p_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_1hirse4p_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_1hirse4p_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_1hirse4p_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_2mgmvwdk_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_2mgmvwdk_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_2mgmvwdk_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_2mgmvwdk_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_2mgmvwdk_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_2mgmvwdk_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_ag0bq5eo_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_ag0bq5eo_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_ag0bq5eo_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_ag0bq5eo_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_ag0bq5eo_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_ag0bq5eo_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_cdzus0xh_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_cpu1mmo1_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_cpu1mmo1_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_cpu1mmo1_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_cpu1mmo1_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_cpu1mmo1_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_cpu1mmo1_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_d45vxihy_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_d45vxihy_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_d45vxihy_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_d45vxihy_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_d45vxihy_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_d45vxihy_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_e4lfzs5t_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_e4lfzs5t_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_e4lfzs5t_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_e4lfzs5t_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_e4lfzs5t_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_e4lfzs5t_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_em2r1zol_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_em2r1zol_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_em2r1zol_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_em2r1zol_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_em2r1zol_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_em2r1zol_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_gdeue5ui_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_h4saiwam_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_h4saiwam_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_h4saiwam_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_h4saiwam_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_h4saiwam_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_h4saiwam_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_hyfcbkjq_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_hyfcbkjq_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_hyfcbkjq_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_hyfcbkjq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_hyfcbkjq_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_hyfcbkjq_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_ir4x5pcz_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_ir4x5pcz_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_ir4x5pcz_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_ir4x5pcz_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_ir4x5pcz_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_ir4x5pcz_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_jgfygyli_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_jgfygyli_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_jgfygyli_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_jgfygyli_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_jgfygyli_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_jgfygyli_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_jldiinw1_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_jldiinw1_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_jldiinw1_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_jldiinw1_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_jldiinw1_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_jldiinw1_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_jm2ymz0k_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_jm2ymz0k_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_jm2ymz0k_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_jm2ymz0k_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_jm2ymz0k_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_jm2ymz0k_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_lp3njlr4_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_lp3njlr4_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_lp3njlr4_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_lp3njlr4_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_lp3njlr4_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_lp3njlr4_wpftmp.sourcelink.json",
+            "AIOS.UI.Minimal_0gv2h5pa_wpftmp.AssemblyInfo.cs",
+            "AIOS.UI.Minimal_0gv2h5pa_wpftmp.AssemblyInfoInputs.cache",
+            "AIOS.UI.Minimal_0gv2h5pa_wpftmp.assets.cache",
+            "AIOS.UI.Minimal_0gv2h5pa_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
+            "AIOS.UI.Minimal_0gv2h5pa_wpftmp.GlobalUsings.g.cs",
+            "AIOS.UI.Minimal_0gv2h5pa_wpftmp.sourcelink.json",
+            "AIOS.UI.Minimal_lcvh5wqa_wpftmp.AssemblyInfo.cs",
+            "AIOS.UI.Minimal_lcvh5wqa_wpftmp.AssemblyInfoInputs.cache",
+            "AIOS.UI.Minimal_lcvh5wqa_wpftmp.assets.cache",
+            "AIOS.UI.Minimal_lcvh5wqa_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
+            "AIOS.UI.Minimal_lcvh5wqa_wpftmp.GlobalUsings.g.cs",
+            "AIOS.UI.Minimal_lcvh5wqa_wpftmp.sourcelink.json",
             "AIOS.UI.Minimal_MarkupCompile.cache",
             "AIOS.UI.Minimal_MarkupCompile.lref",
-            "AIOS.UI.Minimal_nkzdymhl_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_nkzdymhl_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_nkzdymhl_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_nkzdymhl_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_nkzdymhl_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_nkzdymhl_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_nubyntmm_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_nubyntmm_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_nubyntmm_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_nubyntmm_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_nubyntmm_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_nubyntmm_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_o5rqkwxa_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_o5rqkwxa_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_o5rqkwxa_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_o5rqkwxa_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_o5rqkwxa_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_o5rqkwxa_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_oeapkicu_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_oeapkicu_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_oeapkicu_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_oeapkicu_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_oeapkicu_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_oeapkicu_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_oko1s4a5_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_oko1s4a5_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_oko1s4a5_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_oko1s4a5_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_oko1s4a5_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_oko1s4a5_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_qy1b55uj_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_qy1b55uj_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_qy1b55uj_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_qy1b55uj_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_qy1b55uj_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_qy1b55uj_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_r03rxq0a_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_r03rxq0a_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_r03rxq0a_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_r03rxq0a_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_r03rxq0a_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_r03rxq0a_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_rranqbad_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_rranqbad_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_rranqbad_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_rranqbad_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_rranqbad_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_rranqbad_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_rx1y55as_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_sin2athb_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_sin2athb_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_sin2athb_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_sin2athb_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_sin2athb_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_sin2athb_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_tss4oflh_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_tss4oflh_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_tss4oflh_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_tss4oflh_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_tss4oflh_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_tss4oflh_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_uxrttm3k_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_uxrttm3k_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_uxrttm3k_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_uxrttm3k_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_uxrttm3k_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_uxrttm3k_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_uzskhyiq_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_uzskhyiq_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_uzskhyiq_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_uzskhyiq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_uzskhyiq_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_uzskhyiq_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_vea5mg1t_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_wj2adecq_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_xskjf43p_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_ydlf0cb1_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_ydlf0cb1_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_ydlf0cb1_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_ydlf0cb1_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_ydlf0cb1_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_ydlf0cb1_wpftmp.sourcelink.json",
             "AIOS.UI.pdb",
             "AIOS.UI.sourcelink.json",
-            "AIOS.UI_0qhvlega_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_0qhvlega_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_0qhvlega_wpftmp.assets.cache",
-            "AIOS.UI_0qhvlega_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_0qhvlega_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_0qhvlega_wpftmp.sourcelink.json",
-            "AIOS.UI_0vggoazx_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_0vggoazx_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_0vggoazx_wpftmp.assets.cache",
-            "AIOS.UI_0vggoazx_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_0vggoazx_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_0vggoazx_wpftmp.sourcelink.json",
-            "AIOS.UI_1gc4pbcd_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_1gc4pbcd_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_1gc4pbcd_wpftmp.assets.cache",
-            "AIOS.UI_1gc4pbcd_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_1gc4pbcd_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_1gc4pbcd_wpftmp.sourcelink.json",
-            "AIOS.UI_1jqhigzs_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_1jqhigzs_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_1jqhigzs_wpftmp.assets.cache",
-            "AIOS.UI_1jqhigzs_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_1jqhigzs_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_1jqhigzs_wpftmp.sourcelink.json",
-            "AIOS.UI_1jxyyunx_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_1jxyyunx_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_1jxyyunx_wpftmp.assets.cache",
-            "AIOS.UI_1jxyyunx_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_1jxyyunx_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_1jxyyunx_wpftmp.sourcelink.json",
-            "AIOS.UI_1zizwds2_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_1zizwds2_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_1zizwds2_wpftmp.assets.cache",
-            "AIOS.UI_1zizwds2_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_1zizwds2_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_1zizwds2_wpftmp.sourcelink.json",
-            "AIOS.UI_24rbsklb_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_24rbsklb_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_24rbsklb_wpftmp.assets.cache",
-            "AIOS.UI_24rbsklb_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_24rbsklb_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_24rbsklb_wpftmp.sourcelink.json",
-            "AIOS.UI_25afdghu_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_25afdghu_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_25afdghu_wpftmp.assets.cache",
-            "AIOS.UI_25afdghu_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_25afdghu_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_25afdghu_wpftmp.sourcelink.json",
-            "AIOS.UI_2cqfkfgk_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_2cqfkfgk_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_2cqfkfgk_wpftmp.assets.cache",
-            "AIOS.UI_2cqfkfgk_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_2cqfkfgk_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_2cqfkfgk_wpftmp.sourcelink.json",
-            "AIOS.UI_2jy3x1lj_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_2jy3x1lj_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_2jy3x1lj_wpftmp.assets.cache",
-            "AIOS.UI_2jy3x1lj_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_2jy3x1lj_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_2jy3x1lj_wpftmp.sourcelink.json",
-            "AIOS.UI_2uc3lnva_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_2uc3lnva_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_2uc3lnva_wpftmp.assets.cache",
-            "AIOS.UI_2uc3lnva_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_2uc3lnva_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_2uc3lnva_wpftmp.sourcelink.json",
-            "AIOS.UI_3eqyfbxk_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_3eqyfbxk_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_3eqyfbxk_wpftmp.assets.cache",
-            "AIOS.UI_3eqyfbxk_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_3eqyfbxk_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_3eqyfbxk_wpftmp.sourcelink.json",
-            "AIOS.UI_3gwftxba_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_3gwftxba_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_3gwftxba_wpftmp.assets.cache",
-            "AIOS.UI_3gwftxba_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_3gwftxba_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_3gwftxba_wpftmp.sourcelink.json",
-            "AIOS.UI_3gwoy0cx_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_3gwoy0cx_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_3gwoy0cx_wpftmp.assets.cache",
-            "AIOS.UI_3gwoy0cx_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_3gwoy0cx_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_3gwoy0cx_wpftmp.sourcelink.json",
-            "AIOS.UI_3uxd2xde_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_3uxd2xde_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_3uxd2xde_wpftmp.assets.cache",
-            "AIOS.UI_3uxd2xde_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_3uxd2xde_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_3uxd2xde_wpftmp.sourcelink.json",
-            "AIOS.UI_4551mpzz_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_4551mpzz_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_4551mpzz_wpftmp.assets.cache",
-            "AIOS.UI_4551mpzz_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_4551mpzz_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_4551mpzz_wpftmp.sourcelink.json",
-            "AIOS.UI_4qaqixln_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_4qaqixln_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_4qaqixln_wpftmp.assets.cache",
-            "AIOS.UI_4qaqixln_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_4qaqixln_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_4qaqixln_wpftmp.sourcelink.json",
-            "AIOS.UI_4rnjdgxy_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_4rnjdgxy_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_4rnjdgxy_wpftmp.assets.cache",
-            "AIOS.UI_4rnjdgxy_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_4rnjdgxy_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_4rnjdgxy_wpftmp.sourcelink.json",
-            "AIOS.UI_alf5xpnk_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_alf5xpnk_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_alf5xpnk_wpftmp.assets.cache",
-            "AIOS.UI_alf5xpnk_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_alf5xpnk_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_alf5xpnk_wpftmp.sourcelink.json",
-            "AIOS.UI_ayoabpkt_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ayoabpkt_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ayoabpkt_wpftmp.assets.cache",
-            "AIOS.UI_ayoabpkt_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ayoabpkt_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ayoabpkt_wpftmp.sourcelink.json",
-            "AIOS.UI_bbapvoxe_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_bbapvoxe_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_bbapvoxe_wpftmp.assets.cache",
-            "AIOS.UI_bbapvoxe_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_bbapvoxe_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_bbapvoxe_wpftmp.sourcelink.json",
-            "AIOS.UI_bhvbebaw_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_bhvbebaw_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_bhvbebaw_wpftmp.assets.cache",
-            "AIOS.UI_bhvbebaw_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_bhvbebaw_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_bhvbebaw_wpftmp.sourcelink.json",
-            "AIOS.UI_bzio2av3_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_bzio2av3_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_bzio2av3_wpftmp.assets.cache",
-            "AIOS.UI_bzio2av3_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_bzio2av3_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_bzio2av3_wpftmp.sourcelink.json",
-            "AIOS.UI_cc3xvazh_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_cc3xvazh_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_cc3xvazh_wpftmp.assets.cache",
-            "AIOS.UI_cc3xvazh_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_cc3xvazh_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_cc3xvazh_wpftmp.sourcelink.json",
             "AIOS.UI_Content.g.cs",
-            "AIOS.UI_d0utnnsq_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_d0utnnsq_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_d0utnnsq_wpftmp.assets.cache",
-            "AIOS.UI_d0utnnsq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_d0utnnsq_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_d0utnnsq_wpftmp.sourcelink.json",
-            "AIOS.UI_dmmefmte_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_dmmefmte_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_dmmefmte_wpftmp.assets.cache",
-            "AIOS.UI_dmmefmte_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_dmmefmte_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_dmmefmte_wpftmp.sourcelink.json",
-            "AIOS.UI_e01kycam_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_e01kycam_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_e01kycam_wpftmp.assets.cache",
-            "AIOS.UI_e01kycam_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_e01kycam_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_e01kycam_wpftmp.sourcelink.json",
-            "AIOS.UI_e3nv0wgv_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_e3nv0wgv_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_e3nv0wgv_wpftmp.assets.cache",
-            "AIOS.UI_e3nv0wgv_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_e3nv0wgv_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_e3nv0wgv_wpftmp.sourcelink.json",
-            "AIOS.UI_hmrfhdvp_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_hmrfhdvp_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_hmrfhdvp_wpftmp.assets.cache",
-            "AIOS.UI_hmrfhdvp_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_hmrfhdvp_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_hmrfhdvp_wpftmp.sourcelink.json",
-            "AIOS.UI_ht2yg5r4_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ht2yg5r4_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ht2yg5r4_wpftmp.assets.cache",
-            "AIOS.UI_ht2yg5r4_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ht2yg5r4_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ht2yg5r4_wpftmp.sourcelink.json",
-            "AIOS.UI_iesup10s_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_iesup10s_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_iesup10s_wpftmp.assets.cache",
-            "AIOS.UI_iesup10s_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_iesup10s_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_iesup10s_wpftmp.sourcelink.json",
-            "AIOS.UI_jckhvxsi_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_jckhvxsi_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_jckhvxsi_wpftmp.assets.cache",
-            "AIOS.UI_jckhvxsi_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_jckhvxsi_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_jckhvxsi_wpftmp.sourcelink.json",
-            "AIOS.UI_ka23caja_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ka23caja_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ka23caja_wpftmp.assets.cache",
-            "AIOS.UI_ka23caja_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ka23caja_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ka23caja_wpftmp.sourcelink.json",
-            "AIOS.UI_kawm0srb_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_kawm0srb_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_kawm0srb_wpftmp.assets.cache",
-            "AIOS.UI_kawm0srb_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_kawm0srb_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_kawm0srb_wpftmp.sourcelink.json",
-            "AIOS.UI_kn2j3b4w_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_kn2j3b4w_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_kn2j3b4w_wpftmp.assets.cache",
-            "AIOS.UI_kn2j3b4w_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_kn2j3b4w_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_kn2j3b4w_wpftmp.sourcelink.json",
-            "AIOS.UI_knx2tfiz_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_knx2tfiz_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_knx2tfiz_wpftmp.assets.cache",
-            "AIOS.UI_knx2tfiz_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_knx2tfiz_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_knx2tfiz_wpftmp.sourcelink.json",
-            "AIOS.UI_l0gfj0zb_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_l0gfj0zb_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_l0gfj0zb_wpftmp.assets.cache",
-            "AIOS.UI_l0gfj0zb_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_l0gfj0zb_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_l0gfj0zb_wpftmp.sourcelink.json",
-            "AIOS.UI_l4aib5se_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_l4aib5se_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_l4aib5se_wpftmp.assets.cache",
-            "AIOS.UI_l4aib5se_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_l4aib5se_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_l4aib5se_wpftmp.sourcelink.json",
-            "AIOS.UI_lvdbpgqw_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_lvdbpgqw_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_lvdbpgqw_wpftmp.assets.cache",
-            "AIOS.UI_lvdbpgqw_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_lvdbpgqw_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_lvdbpgqw_wpftmp.sourcelink.json",
             "AIOS.UI_MarkupCompile.cache",
             "AIOS.UI_MarkupCompile.lref",
-            "AIOS.UI_mb3k2yac_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_mb3k2yac_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_mb3k2yac_wpftmp.assets.cache",
-            "AIOS.UI_mb3k2yac_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_mb3k2yac_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_mb3k2yac_wpftmp.sourcelink.json",
-            "AIOS.UI_mhpopki4_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_mhpopki4_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_mhpopki4_wpftmp.assets.cache",
-            "AIOS.UI_mhpopki4_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_mhpopki4_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_mhpopki4_wpftmp.sourcelink.json",
-            "AIOS.UI_o3x2jol2_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_o3x2jol2_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_o3x2jol2_wpftmp.assets.cache",
-            "AIOS.UI_o3x2jol2_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_o3x2jol2_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_o3x2jol2_wpftmp.sourcelink.json",
-            "AIOS.UI_ogfvsxsl_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ogfvsxsl_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ogfvsxsl_wpftmp.assets.cache",
-            "AIOS.UI_ogfvsxsl_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ogfvsxsl_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ogfvsxsl_wpftmp.sourcelink.json",
-            "AIOS.UI_pqwchuho_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_pqwchuho_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_pqwchuho_wpftmp.assets.cache",
-            "AIOS.UI_pqwchuho_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_pqwchuho_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_pqwchuho_wpftmp.sourcelink.json",
-            "AIOS.UI_qacvb31z_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_qacvb31z_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_qacvb31z_wpftmp.assets.cache",
-            "AIOS.UI_qacvb31z_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_qacvb31z_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_qacvb31z_wpftmp.sourcelink.json",
-            "AIOS.UI_rev5ugpk_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_rev5ugpk_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_rev5ugpk_wpftmp.assets.cache",
-            "AIOS.UI_rev5ugpk_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_rev5ugpk_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_rev5ugpk_wpftmp.sourcelink.json",
-            "AIOS.UI_rhwzfmcb_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_rhwzfmcb_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_rhwzfmcb_wpftmp.assets.cache",
-            "AIOS.UI_rhwzfmcb_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_rhwzfmcb_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_rhwzfmcb_wpftmp.sourcelink.json",
-            "AIOS.UI_s0g3tzb3_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_s0g3tzb3_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_s0g3tzb3_wpftmp.assets.cache",
-            "AIOS.UI_s0g3tzb3_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_s0g3tzb3_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_s0g3tzb3_wpftmp.sourcelink.json",
-            "AIOS.UI_sfztanvg_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_sfztanvg_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_sfztanvg_wpftmp.assets.cache",
-            "AIOS.UI_sfztanvg_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_sfztanvg_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_sfztanvg_wpftmp.sourcelink.json",
-            "AIOS.UI_ss4hqwib_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ss4hqwib_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ss4hqwib_wpftmp.assets.cache",
-            "AIOS.UI_ss4hqwib_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ss4hqwib_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ss4hqwib_wpftmp.sourcelink.json",
-            "AIOS.UI_t1z1lpus_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_t1z1lpus_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_t1z1lpus_wpftmp.assets.cache",
-            "AIOS.UI_t1z1lpus_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_t1z1lpus_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_t1z1lpus_wpftmp.sourcelink.json",
-            "AIOS.UI_tak3j4iv_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_tak3j4iv_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_tak3j4iv_wpftmp.assets.cache",
-            "AIOS.UI_tak3j4iv_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_tak3j4iv_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_tak3j4iv_wpftmp.sourcelink.json",
-            "AIOS.UI_u2ul3ddm_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_u2ul3ddm_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_u2ul3ddm_wpftmp.assets.cache",
-            "AIOS.UI_u2ul3ddm_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_u2ul3ddm_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_u2ul3ddm_wpftmp.sourcelink.json",
-            "AIOS.UI_ujhrt1qi_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ujhrt1qi_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ujhrt1qi_wpftmp.assets.cache",
-            "AIOS.UI_ujhrt1qi_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ujhrt1qi_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ujhrt1qi_wpftmp.sourcelink.json",
-            "AIOS.UI_ulkb00ev_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ulkb00ev_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ulkb00ev_wpftmp.assets.cache",
-            "AIOS.UI_ulkb00ev_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ulkb00ev_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ulkb00ev_wpftmp.sourcelink.json",
-            "AIOS.UI_uz1p44dt_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_uz1p44dt_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_uz1p44dt_wpftmp.assets.cache",
-            "AIOS.UI_uz1p44dt_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_uz1p44dt_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_uz1p44dt_wpftmp.sourcelink.json",
-            "AIOS.UI_vytzfk0v_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_vytzfk0v_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_vytzfk0v_wpftmp.assets.cache",
-            "AIOS.UI_vytzfk0v_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_vytzfk0v_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_vytzfk0v_wpftmp.sourcelink.json",
-            "AIOS.UI_x5gwfbfr_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_x5gwfbfr_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_x5gwfbfr_wpftmp.assets.cache",
-            "AIOS.UI_x5gwfbfr_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_x5gwfbfr_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_x5gwfbfr_wpftmp.sourcelink.json",
-            "AIOS.UI_xc1252ku_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_xc1252ku_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_xc1252ku_wpftmp.assets.cache",
-            "AIOS.UI_xc1252ku_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_xc1252ku_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_xc1252ku_wpftmp.sourcelink.json",
-            "AIOS.UI_xxu11hlf_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_xxu11hlf_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_xxu11hlf_wpftmp.assets.cache",
-            "AIOS.UI_xxu11hlf_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_xxu11hlf_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_xxu11hlf_wpftmp.sourcelink.json",
-            "AIOS.UI_y5w3ntbb_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_y5w3ntbb_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_y5w3ntbb_wpftmp.assets.cache",
-            "AIOS.UI_y5w3ntbb_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_y5w3ntbb_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_y5w3ntbb_wpftmp.sourcelink.json",
-            "AIOS.UI_yvzyg2ay_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_yvzyg2ay_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_yvzyg2ay_wpftmp.assets.cache",
-            "AIOS.UI_yvzyg2ay_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_yvzyg2ay_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_yvzyg2ay_wpftmp.sourcelink.json",
-            "AIOS.UI_z2p1s4s0_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_z2p1s4s0_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_z2p1s4s0_wpftmp.assets.cache",
-            "AIOS.UI_z2p1s4s0_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_z2p1s4s0_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_z2p1s4s0_wpftmp.sourcelink.json",
-            "AIOS.UI_zau3holl_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_zau3holl_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_zau3holl_wpftmp.assets.cache",
-            "AIOS.UI_zau3holl_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_zau3holl_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_zau3holl_wpftmp.sourcelink.json",
-            "AIOS.UI_zvoy443a_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_zvoy443a_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_zvoy443a_wpftmp.assets.cache",
-            "AIOS.UI_zvoy443a_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_zvoy443a_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_zvoy443a_wpftmp.sourcelink.json",
-            "AIOS.UI_zykaorux_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_zykaorux_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_zykaorux_wpftmp.assets.cache",
-            "AIOS.UI_zykaorux_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_zykaorux_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_zykaorux_wpftmp.sourcelink.json",
-            "AIOS.UI_zyn3u3wg_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_zyn3u3wg_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_zyn3u3wg_wpftmp.assets.cache",
-            "AIOS.UI_zyn3u3wg_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_zyn3u3wg_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_zyn3u3wg_wpftmp.sourcelink.json",
+            "AIOS.UI_rppo3bh2_wpftmp.AssemblyInfo.cs",
+            "AIOS.UI_rppo3bh2_wpftmp.AssemblyInfoInputs.cache",
+            "AIOS.UI_rppo3bh2_wpftmp.assets.cache",
+            "AIOS.UI_rppo3bh2_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
+            "AIOS.UI_rppo3bh2_wpftmp.GlobalUsings.g.cs",
+            "AIOS.UI_rppo3bh2_wpftmp.sourcelink.json",
+            "AIOS.UI_sgamp3ty_wpftmp.AssemblyInfo.cs",
+            "AIOS.UI_sgamp3ty_wpftmp.AssemblyInfoInputs.cache",
+            "AIOS.UI_sgamp3ty_wpftmp.assets.cache",
+            "AIOS.UI_sgamp3ty_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
+            "AIOS.UI_sgamp3ty_wpftmp.GlobalUsings.g.cs",
+            "AIOS.UI_sgamp3ty_wpftmp.sourcelink.json",
+            "AIOS.UI_x3x2qbq0_wpftmp.AssemblyInfo.cs",
+            "AIOS.UI_x3x2qbq0_wpftmp.AssemblyInfoInputs.cache",
+            "AIOS.UI_x3x2qbq0_wpftmp.assets.cache",
+            "AIOS.UI_x3x2qbq0_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
+            "AIOS.UI_x3x2qbq0_wpftmp.GlobalUsings.g.cs",
+            "AIOS.UI_x3x2qbq0_wpftmp.sourcelink.json",
             "AIOSMasterDemo.baml",
             "AIOSMasterDemo.g.cs",
             "App.g.cs",
@@ -8403,143 +7794,6 @@
             "AIOS.UI.Clean.dll",
             "AIOS.UI.dll",
             "AIOS.UI.Minimal.dll"
-        ]
-    },
-    "interface\\AIOS.UI\\obj\\Release": {
-        "folders": [
-            "net9.0-windows"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\obj\\Release\\net9.0-windows": {
-        "folders": [
-            "Controls",
-            "generated",
-            "ref",
-            "refint"
-        ],
-        "files": [
-            ".NETCoreApp,Version=v9.0.AssemblyAttributes.cs",
-            "AIIntelligenceWindow.g.cs",
-            "AIOS.UI..937C7FBD.Up2Date",
-            "AIOS.UI.AssemblyInfo.cs",
-            "AIOS.UI.AssemblyInfoInputs.cache",
-            "AIOS.UI.assets.cache",
-            "AIOS.UI.Clean.AssemblyInfo.cs",
-            "AIOS.UI.Clean.AssemblyInfoInputs.cache",
-            "AIOS.UI.Clean.assets.cache",
-            "AIOS.UI.Clean.csproj.AssemblyReference.cache",
-            "AIOS.UI.Clean.csproj.CoreCompileInputs.cache",
-            "AIOS.UI.Clean.csproj.FileListAbsolute.txt",
-            "AIOS.UI.Clean.dll",
-            "AIOS.UI.Clean.g.resources",
-            "AIOS.UI.Clean.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Clean.genruntimeconfig.cache",
-            "AIOS.UI.Clean.GlobalUsings.g.cs",
-            "AIOS.UI.Clean.pdb",
-            "AIOS.UI.Clean.sourcelink.json",
-            "AIOS.UI.Clean_Content.g.cs",
-            "AIOS.UI.Clean_MarkupCompile.cache",
-            "AIOS.UI.csproj.AssemblyReference.cache",
-            "AIOS.UI.csproj.CoreCompileInputs.cache",
-            "AIOS.UI.csproj.FileListAbsolute.txt",
-            "AIOS.UI.dll",
-            "AIOS.UI.g.resources",
-            "AIOS.UI.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.genruntimeconfig.cache",
-            "AIOS.UI.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal.assets.cache",
-            "AIOS.UI.Minimal.csproj.AssemblyReference.cache",
-            "AIOS.UI.Minimal.csproj.FileListAbsolute.txt",
-            "AIOS.UI.Minimal.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.assets.cache",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI.Minimal_i5dtqwuy_wpftmp.sourcelink.json",
-            "AIOS.UI.Minimal_MarkupCompile.cache",
-            "AIOS.UI.Minimal_MarkupCompile.lref",
-            "AIOS.UI.pdb",
-            "AIOS.UI.sourcelink.json",
-            "AIOS.UI_4of2me4t_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_4of2me4t_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_4of2me4t_wpftmp.assets.cache",
-            "AIOS.UI_4of2me4t_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_4of2me4t_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_4of2me4t_wpftmp.sourcelink.json",
-            "AIOS.UI_Content.g.cs",
-            "AIOS.UI_ctomentv_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_ctomentv_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_ctomentv_wpftmp.assets.cache",
-            "AIOS.UI_ctomentv_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_ctomentv_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_ctomentv_wpftmp.sourcelink.json",
-            "AIOS.UI_cwfbdh4s_wpftmp.AssemblyInfo.cs",
-            "AIOS.UI_cwfbdh4s_wpftmp.AssemblyInfoInputs.cache",
-            "AIOS.UI_cwfbdh4s_wpftmp.assets.cache",
-            "AIOS.UI_cwfbdh4s_wpftmp.GeneratedMSBuildEditorConfig.editorconfig",
-            "AIOS.UI_cwfbdh4s_wpftmp.GlobalUsings.g.cs",
-            "AIOS.UI_cwfbdh4s_wpftmp.sourcelink.json",
-            "AIOS.UI_MarkupCompile.cache",
-            "AIOS.UI_MarkupCompile.lref",
-            "AIOSMasterDemo.baml",
-            "AIOSMasterDemo.g.cs",
-            "App.g.cs",
-            "apphost.exe",
-            "CompleteHybridWindow.baml",
-            "CompleteHybridWindow.g.cs",
-            "GeneratedInternalTypeHelper.g.cs",
-            "HybridWindow.baml",
-            "HybridWindow.g.cs",
-            "KPIDashboardWindow.baml",
-            "KPIDashboardWindow.g.cs",
-            "MaintenanceWindow.baml",
-            "MaintenanceWindow.g.cs",
-            "MainWindow.g.cs",
-            "RuntimeIntelligenceWindow.g.cs",
-            "SimpleMainWindow.baml",
-            "SimpleMainWindow.g.cs"
-        ]
-    },
-    "interface\\AIOS.UI\\obj\\Release\\net9.0-windows\\Controls": {
-        "folders": [],
-        "files": [
-            "AIIntelligenceControl.baml",
-            "AIIntelligenceControl.g.cs",
-            "AIResultWindow.baml",
-            "AIResultWindow.g.cs",
-            "RuntimeIntelligenceControl.baml",
-            "RuntimeIntelligenceControl.g.cs",
-            "RuntimeIntelligenceResultWindow.baml",
-            "RuntimeIntelligenceResultWindow.g.cs"
-        ]
-    },
-    "interface\\AIOS.UI\\obj\\Release\\net9.0-windows\\generated": {
-        "folders": [
-            "wpf"
-        ],
-        "files": []
-    },
-    "interface\\AIOS.UI\\obj\\Release\\net9.0-windows\\generated\\wpf": {
-        "folders": [],
-        "files": [
-            "View.baml",
-            "View.g.cs"
-        ]
-    },
-    "interface\\AIOS.UI\\obj\\Release\\net9.0-windows\\ref": {
-        "folders": [],
-        "files": [
-            "AIOS.UI.Clean.dll",
-            "AIOS.UI.dll"
-        ]
-    },
-    "interface\\AIOS.UI\\obj\\Release\\net9.0-windows\\refint": {
-        "folders": [],
-        "files": [
-            "AIOS.UI.Clean.dll",
-            "AIOS.UI.dll"
         ]
     },
     "interface\\AIOS.UI\\runtime_intelligence": {
@@ -8792,6 +8046,34 @@
         "folders": [],
         "files": []
     },
+    "interface\\build": {
+        "folders": [
+            "Testing"
+        ],
+        "files": []
+    },
+    "interface\\build\\Testing": {
+        "folders": [
+            "20250919-2052",
+            "Temporary"
+        ],
+        "files": [
+            "TAG"
+        ]
+    },
+    "interface\\build\\Testing\\20250919-2052": {
+        "folders": [],
+        "files": [
+            "Test.xml"
+        ]
+    },
+    "interface\\build\\Testing\\Temporary": {
+        "folders": [],
+        "files": [
+            "CTestCostData.txt",
+            "LastTest_20250919-2052.log"
+        ]
+    },
     "interface\\ConsciousnessTest": {
         "folders": [
             "bin",
@@ -9004,6 +8286,7 @@
             ".aios_spatial_metadata.json",
             "aios_intelligence_execution_completion_report_1757784862.json",
             "aios_intelligence_execution_report_intelligence_execution_1757784727.json",
+            "dendritic_enhancement.log",
             "tachyonic_evolution_summary_tachyonic_demo_1757783310.json",
             "three_supercell_coordination_completion_report_1757785580.json",
             "three_supercell_interface_optimization_three_supercell_opt_1757785345.json"
@@ -9520,6 +8803,7 @@
         "folders": [
             "aios_cellular_workspace",
             "analysis",
+            "build",
             "context",
             "iterations",
             "logs",
@@ -9700,6 +8984,34 @@
             "aios_comprehensive_file_analysis_commit_msg.cpython-312.pyc",
             "aios_deep_thought_commit_msg_analysis.cpython-312.pyc",
             "aios_powershell_fixes_documentation.cpython-312.pyc"
+        ]
+    },
+    "runtime_intelligence\\build": {
+        "folders": [
+            "Testing"
+        ],
+        "files": []
+    },
+    "runtime_intelligence\\build\\Testing": {
+        "folders": [
+            "20250919-2052",
+            "Temporary"
+        ],
+        "files": [
+            "TAG"
+        ]
+    },
+    "runtime_intelligence\\build\\Testing\\20250919-2052": {
+        "folders": [],
+        "files": [
+            "Test.xml"
+        ]
+    },
+    "runtime_intelligence\\build\\Testing\\Temporary": {
+        "folders": [],
+        "files": [
+            "CTestCostData.txt",
+            "LastTest_20250919-2052.log"
         ]
     },
     "runtime_intelligence\\context": {
@@ -9980,6 +9292,7 @@
         "folders": [],
         "files": [
             "ainlp_holographic_documentation_system.cpython-312.pyc",
+            "aios_admin.cpython-312.pyc",
             "aios_cli_agent_system.cpython-312.pyc",
             "aios_cpp_analyzer.cpython-312.pyc",
             "aios_dendritic_path_tracker.cpython-312.pyc",
@@ -10083,6 +9396,7 @@
             "setup_env.ps1",
             "simple_test_orchestrator.ps1",
             "taxonomy_extraction.py",
+            "test_backup_integration.py",
             "test_process_cleanup.ps1",
             "test_realtime_intelligence.ps1",
             "universal_logging.py",
@@ -10321,9 +9635,11 @@
             "immediate",
             "ingestion",
             "ingestion_data",
+            "intelligence_reports",
             "metadata",
             "optimization_history",
             "optimization_reports",
+            "quality_reports",
             "quantum",
             "root_optimization",
             "root_optimization_analysis",
@@ -10652,7 +9968,9 @@
             "core",
             "interface"
         ],
-        "files": []
+        "files": [
+            ".aios_spatial_metadata.json"
+        ]
     },
     "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai": {
         "folders": [
@@ -15298,6 +14616,16 @@
             "AI_INGESTION_POINTERS_RELOCATED_20250905_212830.json"
         ]
     },
+    "tachyonic\\archive\\intelligence_reports": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "consciousness_sync_20250918_233634.json",
+            "error_intelligence_report_20250907_050635.json",
+            "lightweight_ai_sync_20250918_233044.json",
+            "vscode_error_intelligence_final_report.json"
+        ]
+    },
     "tachyonic\\archive\\metadata": {
         "folders": [],
         "files": [
@@ -15317,8 +14645,19 @@
         "folders": [],
         "files": [
             ".aios_spatial_metadata.json",
+            "aios_agentic_optimization_results.json",
+            "aios_recursive_optimization_session.json",
+            "continuous_optimization_activation_report.json",
+            "continuous_optimization_final_status.json",
             "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_212410_RELOCATED_20250905_212624.json",
             "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_212813_RELOCATED_20250905_212830.json"
+        ]
+    },
+    "tachyonic\\archive\\quality_reports": {
+        "folders": [],
+        "files": [
+            ".aios_spatial_metadata.json",
+            "quality_analysis_results.json"
         ]
     },
     "tachyonic\\archive\\quantum": {
@@ -15453,7 +14792,8 @@
             "20250914_automated_ainlp_optimization.md",
             "20250916_ai_guided_refactoring_integration.md",
             "20250916_ai_guided_refactoring_meta_improvement.md",
-            "20250916_complete_architecture_enhancement.md"
+            "20250916_complete_architecture_enhancement.md",
+            "20250919_ainlp_documentation_governance_implementation.md"
         ]
     },
     "tachyonic\\docs_archive": {
@@ -15565,7 +14905,9 @@
             "session_02d52fb8.json",
             "session_0edd6aa7fb86.json",
             "session_154a1531353d.json",
+            "session_8aea70ceb7a2.json",
             "session_9cdbe2dcec2c.json",
+            "session_c4f68d2a7e5e.json",
             "session_d9c4d37405e4.json"
         ]
     },
@@ -15574,6 +14916,7 @@
         "files": [
             ".aios_spatial_metadata.json",
             "26da3ed4b881.json",
+            "f27ef6c9a320.json",
             "index.json"
         ]
     },

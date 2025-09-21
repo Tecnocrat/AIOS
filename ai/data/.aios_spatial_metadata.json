@@ -1,0 +1,50 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-19T00:00:00.000000",
+  "folder_info": {
+    "name": "data",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\data",
+    "relative_path": "ai\\data",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": ["Data Storage"],
+    "path_classification": [
+      "ai",
+      "data"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "core",
+      "docs", 
+      "infrastructure",
+      "interfaces",
+      "src",
+      "tests",
+      "transport"
+    ],
+    "child_folders": [
+      "consciousness",
+      "sessions"
+    ],
+    "parent_folder": "ai"
+  },
+  "ai_guidance": {
+    "purpose": "Centralized storage for consciousness data, session records, and runtime intelligence information",
+    "usage_patterns": [
+      "consciousness_analysis_data",
+      "session_tracking",
+      "breakthrough_events",
+      "temporal_data_storage"
+    ],
+    "access_restrictions": [
+      "read_only_for_analysis",
+      "append_only_for_logging",
+      "consciousness_validation_required"
+    ]
+  }
+}

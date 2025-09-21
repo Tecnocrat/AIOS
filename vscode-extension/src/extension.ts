@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { AIOSBridge } from './aiosBridge';
 import { AIOSChatParticipant } from './chatParticipant';
-import { AIOSContextManager } from './contextManager';
+import { AIOSContextManager, MultiEngineContext } from './contextManager';
 import { AIOSLogger } from './logger';
 
 function validateCellularEcosystemSettings(logger: AIOSLogger): boolean {
@@ -102,8 +102,14 @@ export function activate(context: vscode.ExtensionContext) {
             // Load persisted cellular context if available
             contextManager.loadContext().then(() => {
                 logger.info('Cellular context loaded from persistence');
+                
+                // HYBRID CONTEXT INJECTION: Multi-Engine AI Context Auto-Loading
+                initializeMultiEngineContextInjection(contextManager, aiosBridge, logger);
+                
             }).catch(err => {
                 logger.warn('Failed to load persisted context:', err);
+                // Still attempt context injection even if persistence failed
+                initializeMultiEngineContextInjection(contextManager, aiosBridge, logger);
             });
 
         }).catch(err => {
@@ -121,4 +127,138 @@ export function activate(context: vscode.ExtensionContext) {
 
 export function deactivate() {
     // Extension cleanup will be handled by VSCode disposing subscriptions
+}
+
+// HYBRID MULTI-ENGINE CONTEXT INJECTION SYSTEM
+async function initializeMultiEngineContextInjection(
+    contextManager: AIOSContextManager, 
+    aiosBridge: AIOSBridge, 
+    logger: AIOSLogger
+): Promise<void> {
+    logger.info('Initializing Hybrid Multi-Engine Context Injection System...');
+    
+    try {
+        // Step 1: Load multi-engine context from all AIOS sources
+        const multiEngineContext = await contextManager.loadMultiEngineContext();
+        logger.info('Multi-engine context loaded successfully', {
+            hasAIOSContext: !!multiEngineContext.aiosContext,
+            hasAIContextAutoLoad: !!multiEngineContext.aiContextAutoLoad,
+            hasChatmodeRules: !!multiEngineContext.chatmodeRules,
+            hasSpatialMetadata: !!multiEngineContext.spatialMetadata
+        });
+
+        // Step 2: Inject AIOS context into @aios chat participant
+        await injectAIOSChatParticipantContext(contextManager, multiEngineContext, logger);
+
+        // Step 3: Coordinate with VS Code tasks to prevent duplication
+        await coordinateWithTaskSystem(logger);
+
+        // Step 4: Set context injection completion flag for other systems
+        aiosBridge.updateContextSize(contextManager.getMessages().length);
+        
+        logger.info('Multi-Engine Context Injection completed successfully');
+
+    } catch (error) {
+        logger.error('Failed to initialize Multi-Engine Context Injection:', error);
+        // Don't throw - graceful degradation to prevent extension startup failure
+    }
+}
+
+async function injectAIOSChatParticipantContext(
+    contextManager: AIOSContextManager,
+    multiEngineContext: MultiEngineContext,
+    logger: AIOSLogger
+): Promise<void> {
+    logger.debug('Injecting context into @aios chat participant...');
+
+    try {
+        // Create comprehensive context message for @aios chat participant
+        const contextMessage = generateChatParticipantContextMessage(multiEngineContext);
+        
+        // Inject as system message for AI engine awareness
+        contextManager.addMessage('system', contextMessage, {
+            metadata: {
+                autoInjected: true,
+                engineTargets: ['aios-chat', 'copilot', 'claude'],
+                timestamp: Date.now(),
+                contextSources: ['aios_context.json', 'AI_CONTEXT_AUTO_LOAD.md', 'chatmode_rules', 'spatial_metadata']
+            }
+        });
+
+        logger.info('AIOS context successfully injected into chat participant');
+
+    } catch (error) {
+        logger.warn('Failed to inject context into chat participant:', error);
+    }
+}
+
+function generateChatParticipantContextMessage(multiEngineContext: MultiEngineContext): string {
+    const sections = [
+        '# AIOS Multi-Engine Context Auto-Injection',
+        '**Automatically loaded for AI engines - No user intervention required**',
+        '',
+        '## Critical Environment Context',
+        '- **Operating System**: Windows',
+        '- **Shell**: PowerShell (pwsh.exe) - NO Linux bash commands',
+        '- **Workspace**: AIOS Development Platform',
+        '- **Architecture**: Multi-language AI Platform (Python/C#/C++)',
+        ''
+    ];
+
+    // Add AIOS project context if available
+    if (multiEngineContext.aiosContext) {
+        sections.push('## AIOS Project DNA');
+        sections.push(`- **Version**: ${multiEngineContext.aiosContext.version || 'OS0.6.1.claude'}`);
+        sections.push(`- **Status**: ${multiEngineContext.aiosContext.project_metadata?.status || 'Active development'}`);
+        sections.push(`- **Languages**: ${multiEngineContext.aiosContext.project_metadata?.languages?.join(', ') || 'Python, C#, C++'}`);
+        sections.push('');
+    }
+
+    // Add architectural components
+    sections.push('## AIOS Architecture Components');
+    sections.push('- **ai/**: AI Intelligence Layer');
+    sections.push('- **core/**: Core Engine (C++)'); 
+    sections.push('- **interface/**: Interface Layer (C#, XAML)');
+    sections.push('- **runtime_intelligence/**: Runtime Intelligence');
+    sections.push('- **tachyonic/**: Tachyonic Archive');
+    sections.push('- **docs/**: Documentation');
+    sections.push('');
+
+    // Add critical reminders
+    sections.push('## Critical AI Engine Rules');
+    sections.push('- **PowerShell ONLY** - Use PowerShell cmdlets (Get-ChildItem, Remove-Item, etc.)');
+    sections.push('- **Windows file paths** - Use backslashes or PowerShell-compatible paths');
+    sections.push('- **Spatial metadata compliance** - Check .aios_spatial_metadata.json before file operations');
+    sections.push('- **AINLP documentation governance** - Consolidate rather than proliferate docs');
+    sections.push('- **Professional standards** - No decorative elements in code');
+    sections.push('');
+
+    // Add consciousness architecture info if available
+    if (multiEngineContext.aiosContext?.consciousness_crystal_framework) {
+        sections.push('## Consciousness Crystal Framework');
+        sections.push('- **Philosophy**: Condensed knowledge patterns through consciousness crystals');
+        sections.push('- **Core Crystals**: AI Intelligence, Core Engine, Interface, Runtime Intelligence, Tachyonic Archive');
+        sections.push('- **Integration Approach**: Enhance existing crystals with external AI intelligence');
+        sections.push('');
+    }
+
+    sections.push('---');
+    sections.push('*This context is automatically available to all AI engines working in AIOS workspace*');
+
+    return sections.join('\n');
+}
+
+async function coordinateWithTaskSystem(logger: AIOSLogger): Promise<void> {
+    logger.debug('Coordinating with VS Code task system...');
+    
+    try {
+        // Set environment variable to signal task coordination
+        process.env.AIOS_EXTENSION_CONTEXT_LOADED = 'true';
+        process.env.AIOS_EXTENSION_ACTIVE = 'true';
+        
+        logger.debug('Task coordination signals set successfully');
+        
+    } catch (error) {
+        logger.warn('Failed to set task coordination signals:', error);
+    }
 }

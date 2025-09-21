@@ -1,0 +1,148 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-19T22:20:16.679783",
+  "folder_info": {
+    "name": "architecture",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\docs\\architecture",
+    "relative_path": "ai\\docs\\architecture",
+    "parent_path": "ai\\docs",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [
+      "Documentation"
+    ],
+    "path_classification": [
+      "ai",
+      "docs",
+      "architecture"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "activation",
+      "reports"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 13449,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AI_ARCHITECTURE_OPTIMIZATION_PLAN.md",
+          "size": 6001,
+          "modified": "2025-09-19T22:18:20.859780",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_STRUCTURE_INDEX.md",
+          "size": 1964,
+          "modified": "2025-09-17T21:28:25.576759",
+          "category": "documentation"
+        },
+        {
+          "name": "CHAT_MODE_SPATIAL_AWARENESS.md",
+          "size": 5484,
+          "modified": "2025-09-17T21:28:25.577759",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "CELLULAR_STRUCTURE_INDEX.md",
+        "size": 1964,
+        "modified": "2025-09-17T21:28:25.576759",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "AI_ARCHITECTURE_OPTIMIZATION_PLAN.md",
+        "size": 6001,
+        "modified": "2025-09-19T22:18:20.859780",
+        "category": "documentation"
+      },
+      {
+        "name": "CHAT_MODE_SPATIAL_AWARENESS.md",
+        "size": 5484,
+        "modified": "2025-09-17T21:28:25.577759",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_STRUCTURE_INDEX.md",
+        "size": 1964,
+        "modified": "2025-09-17T21:28:25.576759",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "CELLULAR_STRUCTURE_INDEX.md"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > docs > architecture",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\docs\\architecture' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\docs\\architecture' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\docs\\architecture' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs",
+      "docs\\ARCHITECTURE_PATTERNS"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

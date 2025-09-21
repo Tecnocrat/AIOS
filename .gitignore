@@ -1,33 +1,26 @@
-# Git ignore file for AIOS TensorFlow Cellular Ecosystem
+# Git ignore file for AIOS PyTorch AI Platform
 
-# 🧬 TensorFlow Cellular Integration
-# Python AI cells compiled extensions
-python/ai_cells/__pycache__/
-python/ai_cells/*.pyc
-python/ai_cells/*.so
-python/ai_cells/*.pyd
-python/ai_cells/build/
-python/ai_cells/dist/
+# 🧬 PyTorch AI Integration
+# Python AI components compiled extensions
+ai/__pycache__/
+ai/*.pyc
+ai/*.so
+ai/*.pyd
+ai/build/
+ai/dist/
 
-# Intercellular bridge build artifacts
-intercellular/build/
-intercellular/dist/
-intercellular/*.so
-intercellular/*.pyd
-intercellular/__pycache__/
-
-# TensorFlow cellular model files
-python/ai_cells/models/
-examples/models/
-*.pb
-*.tflite
-*.ckpt*
+# PyTorch model files
+ai/models/
+*.pt
+*.pth
+*.onnx
 saved_model/
+checkpoints/
 
-# Cellular performance logs
-examples/performance_logs/
-examples/cellular_metrics/
-cellular_benchmarks/
+# AI performance logs
+ai/performance_logs/
+ai/metrics/
+ai/benchmarks/
 
 # Tachyonic Archival System (Local only - not for version control)
 # archive/  # Commented out - tachyonic archive should be tracked
@@ -50,7 +43,7 @@ x86/
 *.vcxproj.filters
 *.vcxproj.user
 
-# Python virtual environment & TensorFlow dependencies
+# Python virtual environment & PyTorch dependencies
 ai/venv/
 ai/venv-win/
 ai/__pycache__/
@@ -66,12 +59,12 @@ ENV/
 env.bak/
 venv.bak/
 
-# TensorFlow Python packages cache
-ai/.tensorflow/
+# PyTorch Python packages cache
+ai/.torch/
 ai/tensorboard_logs/
 ai/training_checkpoints/
 
-# Python specific & TensorFlow artifacts
+# Python specific & PyTorch artifacts
 *.egg-info/
 dist/
 .pytest_cache/
@@ -81,14 +74,11 @@ dist/
 __pycache__/
 .ipynb_checkpoints/
 
-# TensorFlow specific files
-*.pb
-*.tflite
+# PyTorch specific files
+*.pt
+*.pth
+*.onnx
 checkpoint
-*.ckpt.*
-*.meta
-*.index
-*.data-*
 events.out.tfevents.*
 
 # C++ specific & TensorFlow C++ builds
@@ -114,13 +104,13 @@ events.out.tfevents.*
 *.VC.db
 *.VC.VC.opendb
 
-# TensorFlow C++ artifacts
-core/tensorflow_cc/
-core/build/tensorflow/
+# PyTorch C++ artifacts
+core/pytorch_cc/
+core/build/pytorch/
 *.so
 *.dylib
 
-# CMake & TensorFlow build system
+# CMake & PyTorch build system
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
@@ -129,9 +119,9 @@ Makefile
 !CMakeLists.txt
 !scripts/*.cmake
 
-# TensorFlow CMake specific
-core/build/tensorflow_cc/
-intercellular/cmake_build/
+# PyTorch CMake specific
+core/build/pytorch_cc/
+ai/cmake_build/
 
 # NuGet
 packages/
@@ -148,8 +138,8 @@ packages/
 *.swp
 *.swo
 
-# TensorFlow development files
-.tensorflow/
+# PyTorch development files
+.torch/
 .tensorboard/
 jupyter_notebooks/.ipynb_checkpoints/
 
@@ -174,7 +164,7 @@ logs/
 *.swo
 *~
 
-# AI model files & TensorFlow models (too large for git)
+# AI model files & PyTorch models (too large for git)
 ai/models/*.bin
 ai/models/*.pt
 ai/models/*.pth
@@ -183,11 +173,10 @@ ai/models/*.h5
 ai/models/*.pkl
 ai/models/*.joblib
 
-# TensorFlow cellular model files
-python/ai_cells/trained_models/
-python/ai_cells/saved_models/
-python/ai_cells/checkpoints/
-examples/trained_models/
+# PyTorch model files
+ai/trained_models/
+ai/saved_models/
+ai/checkpoints/
 intercellular/model_cache/
 
 # Large TensorFlow datasets

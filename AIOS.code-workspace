@@ -1,6 +1,6 @@
 // AIOS VSCode Workspace Configuration
 // Intelligent Development Environment for AI-Augmented Platform
-// Architecture: Multi-language (Python 3.10+, C#, C++) with AI Integration
+// Architecture: Multi-language (Python 3.12+, C#, C++) with AI Integration
 // Quality Standards: Pylint >8.5, Test Coverage >80%, Performance <1s
 {
 	"folders": [
@@ -99,7 +99,6 @@
 		
 		// AIOS Multi-language integration paths
 		"C_Cpp.default.intelliSenseMode": "gcc-x64",
-		// Unified root solution (2025-08-17): deprecated interface/AIOS.sln
 		"dotnet.defaultSolution": "${workspaceFolder}/AIOS.sln",
 		
 		// AIOS Consciousness and polymorphic development support
@@ -123,27 +122,25 @@
 			"**/*.generated.*": true,
 			"**/*.Up2Date": true,
 			"**/.git/hooks": false,
-			"**/.vs": true
+			"**/.vs": true,
+			// AIOS-specific inclusions
+			".vscode/AI_CONTEXT_AUTO_LOAD.md": false,
+			".aios_context.json": false
 		},
 
 		// Language Server Control - DEFENSIVE SETTINGS
 		"omnisharp.enableEditorConfigSupport": true,
 		"omnisharp.enableRoslynAnalyzers": false,
-		"omnisharp.enableImportCompletion": false,
-		"omnisharp.organizeImportsOnFormat": false,
 		"omnisharp.enableAsyncCompletion": false,
 		"omnisharp.autoStart": false,
 		"C_Cpp.autocomplete": "disabled",
 		"C_Cpp.suggestSnippets": false,
 		"C_Cpp.autoAddFileAssociations": false,
 
-		// CMake Configuration - MINIMAL AUTO-ACTIONS
-		"cmake.configureOnOpen": false,
+		// CMake Configuration - MINIMAL AUTO-ACTIONS  
 		"cmake.configureOnEdit": false,
 		"cmake.autoRestartBuild": false,
 		"cmake.buildBeforeRun": false,
-			"**/.vs": true
-		},
 		
 		// Telemetry and privacy
 		"telemetry.telemetryLevel": "off",
@@ -154,7 +151,7 @@
 		"workbench.iconTheme": "vs-seti",
 		
 		// PowerShell Configuration - Set default working directory to AIOS Core
-		"powershell.cwd": "${workspaceFolder}",
+		"powershell.cwd": "🧠 AIOS Core",
 		"powershell.startAutomatically": true,
 		"powershell.integratedConsole.startInBackground": false,
 		"powershell.integratedConsole.suppressStartupBanner": false,
@@ -201,6 +198,11 @@
 		"window.newWindowDimensions": "maximized",
 		"window.restoreFullscreen": true,
 		
+		// AI Context Auto-Loading - Critical for AIOS Development
+		"files.watcherExclude": {
+			".vscode/AI_CONTEXT_AUTO_LOAD.md": false,
+			".aios_context.json": false
+		},
 		// GitHub Copilot Chat Configuration - AIOS Agent Mode
 		"github.copilot.chat.defaultParticipant": "agent",
 		"github.copilot.chat.welcomeMessage": "disabled",
@@ -209,7 +211,9 @@
 			"yaml": true,
 			"plaintext": true,
 			"markdown": true
-		}
+		},
+		"dotnet.completion.showCompletionItemsFromUnimportedNamespaces": false,
+		"dotnet.formatting.organizeImportsOnFormat": false
 	},
 	"extensions": {
 		// Only add extensions critical for project function
@@ -300,7 +304,7 @@
 				"type": "shell",
 				"command": "python",
 				"args": [
-					"${workspaceFolder}/runtime_intelligence/tools/ainlp_agent.py",
+					"${workspaceFolder}/ai/core/src/ainlp_migration/ainlp_agent.py",
 					"continue",
 					"--cache-ttl",
 					"300"
@@ -316,7 +320,7 @@
 				"type": "shell",
 				"command": "python",
 				"args": [
-					"${workspaceFolder}/runtime_intelligence/tools/ainlp_agent.py",
+					"${workspaceFolder}/ai/core/src/ainlp_migration/ainlp_agent.py",
 					"status"
 				],
 				"options": {
