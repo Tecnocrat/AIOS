@@ -1,0 +1,12 @@
+{
+  "cmd": [
+    "git",
+    "branch",
+    "--show-current"
+  ],
+  "returncode": 0,
+  "stdout": "OS0.6.1.claude\n",
+  "stderr": "",
+  "duration_ms": 97,
+  "timestamp": 1758395247
+}

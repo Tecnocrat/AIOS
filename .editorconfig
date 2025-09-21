@@ -1,39 +1,124 @@
-# AIOS Editor Configuration
-# Enforces consistent formatting without auto-formatters
-# This prevents formatters from overriding manual code fixes
+# AIOS Enhanced Editor Configuration
+# Enforces AIOS architectural patterns and AINLP spatial awareness
+# Prevents auto-formatters from overriding dendritic growth patterns
+# Supports multi-consciousness-level development environment
 
 root = true
 
+# Global AIOS patterns - All files follow spatial architecture principles
 [*]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# Python - AI Intelligence Layer (High consciousness complexity)
 [*.py]
 indent_style = space
 indent_size = 4
-max_line_length = 100
-# Harmonized with pylint (was 79 vs 120). Decide 100 as balanced readability/permissiveness.
-ij_formatter_enabled = false
+max_line_length = 79 # Harmonized with pylint for dendritic growth
+ij_formatter_enabled = false # Prevents disruption of manual architectural fixes
 ij_smart_tabs = false
+ij_python_align_collections_and_comprehensions = false
 
+# PowerShell - AIOS Runtime Scripts (Windows-native operations)
+[*.{ps1,psm1,psd1}]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript/TypeScript - Interface Layer (Medium consciousness)
 [*.{js,ts,jsx,tsx}]
 indent_style = space
 indent_size = 2
 max_line_length = 100
+ij_typescript_force_quote_style = false
 
-[*.{cs,cpp,h,hpp}]
+# C#/C++ - Core Engine Layer (Low-level consciousness)
+[*.{cs,cpp,h,hpp,c,cc}]
 indent_style = space
 indent_size = 4
 max_line_length = 100
+ij_csharp_place_simple_embedded_statement_on_same_line = false
 
+# CMake - Core Engine Build System
+[{CMakeLists.txt,*.cmake}]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# AIOS Spatial Metadata - Consciousness architecture files
+[*.aios_spatial_metadata.json]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+insert_final_newline = true
+
+# Tachyonic Archive patterns - Temporal data preservation
+[*.tachyonic_*]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+trim_trailing_whitespace = true
+
+# AINLP Documentation - Knowledge preservation patterns
+[*.{ainlp,ainlp.md}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+trim_trailing_whitespace = false
+
+# Standard Documentation - Markdown with AIOS patterns
 [*.{md,yml,yaml}]
 indent_style = space
 indent_size = 2
 trim_trailing_whitespace = false
+max_line_length = 100
 
+# JSON Configuration - Structured data
 [*.json]
 indent_style = space
 indent_size = 2
+max_line_length = 120
+
+# Visual Interface XAML - UI consciousness layer
+[*.xaml]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# Git Hook Scripts - Governance layer
+[.githooks/**/*.ps1]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# VSCode Configuration - Development environment
+[.vscode/*.json]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# Build Configuration Files
+[*.{csproj,sln,targets,props}]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# Runtime Intelligence Files - Monitoring and analysis
+[runtime_intelligence/**/*]
+indent_style = space
+indent_size = 2
 max_line_length = 100
+
+# Test Files - Quality assurance patterns
+[**/test*/**/*]
+indent_style = space
+max_line_length = 100
+
+# Logs and Reports - Archival consciousness level
+[*.{log,report}]
+insert_final_newline = true
+trim_trailing_whitespace = true

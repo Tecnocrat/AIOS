@@ -1,0 +1,11 @@
+{
+  "cmd": [
+    "python",
+    "--version"
+  ],
+  "returncode": 0,
+  "stdout": "Python 3.12.8\r\n",
+  "stderr": "",
+  "duration_ms": 1186,
+  "timestamp": 1758395247
+}

@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-09-20T18:13:02.545438",
+  "overall_score": 100.0,
+  "integration_status": "EXCELLENT",
+  "duration_seconds": 13.35,
+  "components": {
+    "python": {
+      "status": "success",
+      "version": "Python 3.12.8",
+      "dependencies": [
+        "torch==2.7.1+cu118",
+        "numpy==2.1.3",
+        "pytest==8.4.1"
+      ],
+      "errors": []
+    },
+    "dotnet": {
+      "status": "success",
+      "version": "9.0.305",
+      "sdks": [
+        "8.0.414 [C:\\Program Files\\dotnet\\sdk]",
+        "9.0.305 [C:\\Program Files\\dotnet\\sdk]"
+      ],
+      "projects": [
+        "AIOS.sln restored successfully"
+      ],
+      "errors": []
+    },
+    "cpp": {
+      "status": "success",
+      "cmake_version": "cmake version 4.0.3",
+      "build_dir": "core\\build",
+      "errors": []
+    }
+  }
+}

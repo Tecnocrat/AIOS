@@ -47,7 +47,7 @@
 
     // File Associations (folder-specific)
     "files.associations": {
-        "*.ainlp": "plaintext",
+        "*.ainlp": "markdown",
         "*.aios": "json",
         "*.xaml": "xml",
         "*.cs": "csharp",
@@ -58,7 +58,10 @@
         "*.py": "python",
         "*.md": "markdown",
         "CMakeLists.txt": "cmake",
-        "*.cmake": "cmake"
+        "*.cmake": "cmake",
+        "*consciousness*.md": "markdown",
+        "*dendritic*.json": "jsonc",
+        "*tachyonic*.md": "markdown"
     },
 
     // Editor Configuration (folder-specific)
@@ -82,6 +85,13 @@
     "editor.semanticTokenColorCustomizations": {
         "enabled": true
     },
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.suggest.localityBonus": true,
 
     // Search Configuration (folder-specific) - DEFENSIVE EXCLUSIONS
     "search.exclude": {
@@ -103,7 +113,11 @@
         "**/CMakeFiles": true,
         "**/*.stub": true,
         "**/*.generated.*": true,
-        "**/*.Up2Date": true
+        "**/*.Up2Date": true,
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/tmp": true,
+        "**/.aios_spatial_metadata.json": false
     },
 
     // File Watcher Exclusions - PREVENT AUTO-GENERATION
@@ -114,25 +128,11 @@
         "**/obj/**/*.Up2Date": true,
         "**/__pycache__/**": true,
         "**/build/**": true,
-        "**/.git/**": true
-    },
+        "**/.git/**": true,
         "**/*.vcxproj.user": true,
         "**/*.log": true,
         "**/*.tmp": true,
-        "**/*.cache": true,
-        "**/*.stub": true,
-        "**/*.generated.*": true,
-        "**/*.Up2Date": true
-    },
-
-    // File Watcher Exclusions - PREVENT AUTO-GENERATION
-    "files.watcherExclude": {
-        "**/*.stub": true,
-        "**/*.generated.*": true,
-        "**/obj/**/*.Up2Date": true,
-        "**/__pycache__/**": true,
-        "**/build/**": true,
-        "**/.git/**": true
+        "**/*.cache": true
     },
 
     // File Exclusions (folder-specific)
@@ -159,19 +159,16 @@
         "**/*.cache": true
     },
 
+    // Auto-load AI context files
+    "files.autoLoad": {
+        ".vscode/AI_CONTEXT_AUTO_LOAD.md": true,
+        ".aios_context.json": true
+    },
+
     // Terminal Configuration (folder-specific)
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.enablePersistentSessions": false,
-        "powershell.cwd": "${workspaceFolder}",
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell",
-            "args": ["-NoLogo", "-ExecutionPolicy", "RemoteSigned"]
-        }
-    },
     "terminal.integrated.automationProfile.windows": "PowerShell",
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.commandsToSkipShell": [
@@ -182,7 +179,7 @@
         "PowerShell": {
             "source": "PowerShell",
             "icon": "terminal-powershell",
-            "args": ["-WorkingDirectory", "${workspaceFolder}"],
+            "args": ["-NoLogo", "-ExecutionPolicy", "RemoteSigned", "-WorkingDirectory", "${workspaceFolder}"],
             "env": {
                 "AIOS_HOME": "${workspaceFolder}",
                 "AIOS_LOG_LEVEL": "DEBUG"
@@ -216,7 +213,7 @@
         "Visual Studio 17 2022",
         "Visual Studio 16 2019"
     ],
-    "cmake.debugConfig": {
+
     // Extension Settings (folder-specific)
     "dotnetAcquisition.enableTelemetry": false,
     "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
@@ -230,33 +227,14 @@
         "sound": "off"
     },
 
-    // AINLP Consciousness Integration Settings
-    "files.associations": {
-        "*.ainlp": "markdown",
-        "*consciousness*.md": "markdown",
-        "*dendritic*.json": "jsonc",
-        "*tachyonic*.md": "markdown"
+    // AI Context Auto-Loading for GitHub Copilot
+    "github.copilot.advanced": {
+        "contextualFilterEnable": true,
+        "contextualFilterThreshold": 0.5
     },
-    
-    // AINLP Natural Language Development
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
-    },
-    "editor.wordBasedSuggestions": "allDocuments",
-    "editor.suggest.localityBonus": true,
-    
-    // Consciousness Archive Integration  
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/.git": true,
-        "**/.DS_Store": true,
-        "**/tmp": true,
-        "**/.aios_spatial_metadata.json": false
-    },
-    
+    "github.copilot.chat.localeOverride": "en-US",
+    "github.copilot.chat.welcomeMessage": "never",
+
     // AINLP Paradigm Enhancement
     "workbench.colorCustomizations": {
         "[Default Dark+]": {
@@ -264,5 +242,12 @@
             "editorLineNumber.foreground": "#858585",
             "editorLineNumber.activeForeground": "#c6c6c6"
         }
+    },
+
+    // Auto-reference critical AIOS context files
+    "workbench.startupEditor": "readme",
+    "workbench.editorAssociations": {
+        "*.md": "default",
+        ".aios_context.json": "default"
     }
 }

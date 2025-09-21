@@ -1,0 +1,11 @@
+{
+  "cmd": [
+    "pip",
+    "--version"
+  ],
+  "returncode": 0,
+  "stdout": "pip 25.2 from C:\\Users\\jesus\\AppData\\Roaming\\Python\\Python312\\site-packages\\pip (python 3.12)\r\r\n",
+  "stderr": "",
+  "duration_ms": 2196,
+  "timestamp": 1758395248
+}

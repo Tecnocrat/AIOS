@@ -154,3 +154,13 @@
 
 {"timestamp":"2025-09-19T22:01:58.7861673+02:00","status":"bypass","rules_version":6,"profile":"full","data":{"user":"jesus","reason":"env var"}}
 
+{"timestamp":"2025-09-19T22:02:08.8246435+02:00","status":"bypass","rules_version":6,"profile":"full","data":{"reason":"env var","user":"jesus"}}
+
+{"timestamp":"2025-09-19T22:02:15.0398946+02:00","status":"bypass","rules_version":6,"profile":"full","data":{"reason":"env var","user":"jesus"}}
+
+{"timestamp":"2025-09-21T09:54:26.8963747+02:00","status":"block","rules_version":6,"profile":"full","data":{"profile":"full","violations":{"deprecated":null,"root":"test_deepseek_integration.py","size":null,"secrets":null,"json":null,"exec":"test_deepseek_integration.py","changelog":"(changelog-missing)","py":null,"tests":null}}}
+
+{"timestamp":"2025-09-21T09:55:31.5515174+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
+{"timestamp":"2025-09-21T09:58:22.2268545+02:00","status":"block","rules_version":6,"profile":"full","data":{"violations":{"deprecated":null,"root":null,"size":null,"secrets":null,"json":null,"exec":null,"changelog":"(changelog-missing)","py":null,"tests":null},"profile":"full"}}
+
