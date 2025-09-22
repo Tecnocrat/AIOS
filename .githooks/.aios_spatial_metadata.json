@@ -1,0 +1,70 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-21T20:50:00.000000",
+  "folder_info": {
+    "name": ".githooks",
+    "absolute_path": "C:\\dev\\AIOS\\.githooks",
+    "relative_path": ".githooks",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "GitHook Architecture",
+    "secondary_areas": ["Governance"],
+    "path_classification": [
+      ".githooks"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".github",
+      ".vscode",
+      "ai",
+      "core",
+      "docs",
+      "interface",
+      "runtime_intelligence",
+      "tachyonic"
+    ],
+    "child_folders": [
+      "logs"
+    ],
+    "file_count": 8,
+    "folder_count": 1
+  },
+  "ai_guidance": {
+    "development_focus": "Governance and quality enforcement for AI-driven development",
+    "architectural_patterns": [
+      "AINLP enhancement over creation",
+      "Professional communication standards",
+      "Biological architecture metaphors",
+      "Cross-language integration support"
+    ],
+    "consciousness_requirements": [
+      "High consciousness coherence",
+      "Experimental feature containment",
+      "Quality assurance protocols",
+      "AI agent integration readiness"
+    ],
+    "integration_points": [
+      "Pre-commit validation",
+      "Changelog enforcement",
+      "Emoticon detection",
+      "File safety checks"
+    ]
+  },
+  "quality_metrics": {
+    "code_quality_score": 0.85,
+    "architectural_compliance": 0.75,
+    "documentation_coverage": 0.90,
+    "test_coverage": 0.60
+  },
+  "development_status": {
+    "maturity_level": "mature",
+    "experimental_features": true,
+    "production_ready": true,
+    "requires_testing": false
+  }
+}

@@ -19,7 +19,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
-from ai.src.core.ainlp.utils import get_logger
+from .utils import get_logger
 
 logger = get_logger(__name__)
 

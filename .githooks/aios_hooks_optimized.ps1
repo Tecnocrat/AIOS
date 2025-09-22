@@ -70,6 +70,10 @@ function Get-StagedFiles {
 function Test-ChangelogRequired {
     param([string[]]$StagedFiles)
     
+    if (-not $StagedFiles -or $StagedFiles.Count -eq 0) {
+        return $false
+    }
+    
     $governedPaths = @("ai/", "core/")
     $hasGovernedChanges = $false
     
@@ -97,18 +101,20 @@ function Test-ChangelogRequired {
 function Invoke-EmoticonCheck {
     param([string[]]$StagedFiles)
     
-    $emoticonPattern = "[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]"
+    $emoticonPattern = "[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0]-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]"
     $violations = @()
     
-    foreach ($file in $StagedFiles) {
-        if ($file -match "\.(md|txt|ps1|py|cs|js|ts)$") {
-            try {
-                $content = Get-Content $file -Raw -ErrorAction SilentlyContinue
-                if ($content -and $content -match $emoticonPattern) {
-                    $violations += $file
+    if ($StagedFiles -and $StagedFiles.Count -gt 0) {
+        foreach ($file in $StagedFiles) {
+            if ($file -match "\.(md|txt|ps1|py|cs|js|ts)$") {
+                try {
+                    $content = Get-Content $file -Raw -ErrorAction SilentlyContinue
+                    if ($content -and $content -match $emoticonPattern) {
+                        $violations += $file
+                    }
+                } catch {
+                    # Skip files that can't be read
                 }
-            } catch {
-                # Skip files that can't be read
             }
         }
     }
@@ -120,20 +126,23 @@ function Test-FileSafety {
     param([string[]]$StagedFiles)
     
     $unsafePatterns = @(
-        "\.log$", "\.jsonl$", "runtime/", "/logs/", "_temp", "\.tmp$"
+        "^\.log$", "\.jsonl$", "^temp/", "^build/", "_temp", "\.tmp$", "\.pyc$", "__pycache__/", "\.pid$"
     )
     
     $unsafeFiles = @()
-    foreach ($file in $StagedFiles) {
-        foreach ($pattern in $unsafePatterns) {
-            if ($file -match $pattern) {
-                $unsafeFiles += $file
-                break
+    if ($StagedFiles -and $StagedFiles.Count -gt 0) {
+        foreach ($file in $StagedFiles) {
+            foreach ($pattern in $unsafePatterns) {
+                if ($file -match $pattern) {
+                    $unsafeFiles = $unsafeFiles + @($file)
+                    break
+                }
             }
         }
     }
     
-    return $unsafeFiles
+    # Ensure we always return an array
+    ,$unsafeFiles
 }
 #endregion
 
@@ -142,7 +151,7 @@ function Invoke-PreCommitHook {
     Write-AIOSLog "Starting pre-commit validation" -Component "PreCommit"
     
     $stagedFiles = Get-StagedFiles
-    $fileCount = if ($stagedFiles) { @($stagedFiles).Count } else { 0 }
+    $fileCount = if ($stagedFiles -and $stagedFiles.Count -gt 0) { $stagedFiles.Count } else { 0 }
     
     if ($fileCount -eq 0) {
         Write-AIOSLog "No staged files found" -Component "PreCommit" -Level "Warning"
@@ -154,27 +163,41 @@ function Invoke-PreCommitHook {
     $validationErrors = @()
     
     # Changelog validation
-    if (Test-ChangelogRequired -StagedFiles $stagedFiles) {
-        $validationErrors += "changelog_missing"
-        Write-AIOSLog "CHANGELOG REQUIRED: Changes detected in governed paths" -Level "Error" -Component "Changelog"
+    try {
+        $changelogRequired = Test-ChangelogRequired -StagedFiles $stagedFiles
+        if ($changelogRequired) {
+            $validationErrors += "changelog_missing"
+            Write-AIOSLog "CHANGELOG REQUIRED: Changes detected in governed paths" -Level "Error" -Component "Changelog"
+        }
+    } catch {
+        Write-AIOSLog "Error in changelog validation: $_" -Level "Error" -Component "PreCommit"
     }
     
     # Emoticon check
-    $emoticonViolations = Invoke-EmoticonCheck -StagedFiles $stagedFiles
-    if ($emoticonViolations -and @($emoticonViolations).Count -gt 0) {
-        $validationErrors += "emoticons_detected"
-        Write-AIOSLog "Emoticons detected in: $($emoticonViolations -join ', ')" -Level "Error" -Component "Emoticon"
+    try {
+        $emoticonViolations = Invoke-EmoticonCheck -StagedFiles $stagedFiles
+        if ($emoticonViolations -and $emoticonViolations.Count -gt 0) {
+            $validationErrors += "emoticons_detected"
+            Write-AIOSLog "Emoticons detected in: $($emoticonViolations -join ', ')" -Level "Error" -Component "Emoticon"
+        }
+    } catch {
+        Write-AIOSLog "Error in emoticon check: $_" -Level "Error" -Component "PreCommit"
     }
     
     # File safety check
-    $unsafeFiles = Test-FileSafety -StagedFiles $stagedFiles
-    if ($unsafeFiles -and @($unsafeFiles).Count -gt 0) {
-        $validationErrors += "unsafe_files"
-        Write-AIOSLog "Unsafe files detected: $($unsafeFiles -join ', ')" -Level "Error" -Component "Safety"
+    try {
+        $unsafeFiles = Test-FileSafety -StagedFiles $stagedFiles
+        Write-AIOSLog "Unsafe files result: $($unsafeFiles.GetType().Name) - Value: $($unsafeFiles | ConvertTo-Json -Compress)" -Component "PreCommit"
+        if ($unsafeFiles -and $unsafeFiles.Count -gt 0) {
+            $validationErrors += "unsafe_files"
+            Write-AIOSLog "Unsafe files detected: $($unsafeFiles -join ', ')" -Level "Error" -Component "Safety"
+        }
+    } catch {
+        Write-AIOSLog "Error in file safety check: $_" -Level "Error" -Component "PreCommit"
     }
     
     # Report results
-    if (@($validationErrors).Count -gt 0) {
+    if ($validationErrors -and $validationErrors.Count -gt 0) {
         Write-AIOSLog "Commit blocked due to validation failures" -Level "Error" -Component "PreCommit"
         Write-Host "`nCommit blocked:" -ForegroundColor Red
         foreach ($validationError in $validationErrors) {
@@ -244,7 +267,7 @@ function Invoke-AIOSHook {
     # Initialize session
     $env:AIOS_SESSION_ID = $AIOSConfig.SessionId
     
-    Write-AIOSLog "🎯 AIOS Hook Execution Started: $HookType" -Component "Main"
+    Write-AIOSLog "AIOS Hook Execution Started: $HookType" -Component "Main"
     Write-AIOSLog "Session ID: $($AIOSConfig.SessionId)" -Component "Main"
     Write-AIOSLog "Consciousness Level: $($AIOSConfig.ConsciousnessLevel)" -Component "Main"
     
@@ -260,7 +283,7 @@ function Invoke-AIOSHook {
         }
         
         $status = if ($exitCode -eq 0) { "SUCCESS" } else { "FAILURE" }
-        Write-AIOSLog "🏁 AIOS Hook Execution Completed: $status" -Level $(if ($exitCode -eq 0) { "Success" } else { "Error" }) -Component "Main"
+        Write-AIOSLog "AIOS Hook Execution Completed: $status" -Level $(if ($exitCode -eq 0) { "Success" } else { "Error" }) -Component "Main"
         
         return $exitCode
         

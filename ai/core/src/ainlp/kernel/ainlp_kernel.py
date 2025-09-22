@@ -16,7 +16,7 @@ import logging
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from ai.src.core.ainlp.utils import get_logger
+from ..utils import get_logger
 
 # Fix import path for tooling module
 from .tooling.recursive_tooling import get_kernel_processor

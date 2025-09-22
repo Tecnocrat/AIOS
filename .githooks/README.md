@@ -34,13 +34,13 @@ pwsh .githooks/aios_hooks_optimized.ps1 "pre-commit"pwsh .githooks/aios_hooks_op
 
 
 
-- ✅ **92% fewer files** (1 vs 13 PowerShell files)- ✅ **92% fewer files** (1 vs 13 PowerShell files)
+- [PASS] **92% fewer files** (1 vs 13 PowerShell files)- [PASS] **92% fewer files** (1 vs 13 PowerShell files)
 
-- ✅ **Sub-second execution** (vs multi-second initialization)- ✅ **Sub-second execution** (vs multi-second initialization)
+- [PASS] **Sub-second execution** (vs multi-second initialization)- [PASS] **Sub-second execution** (vs multi-second initialization)
 
-- ✅ **100% functionality preservation** (all governance rules maintained)- ✅ **100% functionality preservation** (all governance rules maintained)
+- [PASS] **100% functionality preservation** (all governance rules maintained)- [PASS] **100% functionality preservation** (all governance rules maintained)
 
-- ✅ **Simplified maintenance** (single file to update/debug)- ✅ **Simplified maintenance** (single file to update/debug)
+- [PASS] **Simplified maintenance** (single file to update/debug)- [PASS] **Simplified maintenance** (single file to update/debug)
 
 .\execute_all_githook_logic.ps1 -NoAutoFix        # Disable automatic refactoring
 
@@ -74,7 +74,7 @@ pwsh .githooks/aios_hooks_optimized.ps1 "pre-commit"pwsh .githooks/aios_hooks_op
 
 
 
-### 🔒 Governance Enforcement```
+### [LOCK] Governance Enforcement```
 
 - **Changelog Requirements**: Auto-detects changes in governed paths (`ai/`, `core/`, `interface/`, `runtime_intelligence/`) and requires changelog updates
 
@@ -84,7 +84,7 @@ pwsh .githooks/aios_hooks_optimized.ps1 "pre-commit"pwsh .githooks/aios_hooks_op
 
 ### NUCLEUS - Core Git Hook Logic
 
-### ⚡ Performance & Reliability  **Purpose:** Central control and core processing
+### [FAST] Performance & Reliability  **Purpose:** Central control and core processing
 
 - **Fast Execution**: Sub-second hook execution- `pre-commit.ps1` - Core pre-commit validation
 
@@ -102,15 +102,15 @@ pwsh .githooks/aios_hooks_optimized.ps1 "pre-commit"pwsh .githooks/aios_hooks_op
 
 ### Pre-commit- `comprehensive_analysis.ps1` - Code analysis
 
-- ✅ Validates staged files for governed path changes- `intelligence_reports.ps1` - Intelligence reporting  
+- [PASS] Validates staged files for governed path changes- `intelligence_reports.ps1` - Intelligence reporting  
 
-- ✅ Requires changelog updates when needed  - `optimization_analysis.ps1` - Performance analysis
+- [PASS] Requires changelog updates when needed  - `optimization_analysis.ps1` - Performance analysis
 
-- ✅ Detects and blocks emoticons in code files- `emoji_detector.py` - [COMPLETE] Unicode emoji detection engine (773 emojis found)
+- [PASS] Detects and blocks emoticons in code files- `emoji_detector.py` - [COMPLETE] Unicode emoji detection engine (773 emojis found)
 
-- ✅ Prevents tracking of runtime/temporary files- `enhanced_quality_integration.py` - [COMPLETE] Quality analysis with supercell communication
+- [PASS] Prevents tracking of runtime/temporary files- `enhanced_quality_integration.py` - [COMPLETE] Quality analysis with supercell communication
 
-- ❌ **Blocks commit** if violations found- `agentic_instruction_generator.py` - [OPERATIONAL] AI instruction parser for automated refactoring
+- [FAIL] **Blocks commit** if violations found- `agentic_instruction_generator.py` - [OPERATIONAL] AI instruction parser for automated refactoring
 
 - Experimental features and demos
 
@@ -118,7 +118,7 @@ pwsh .githooks/aios_hooks_optimized.ps1 "pre-commit"pwsh .githooks/aios_hooks_op
 
 ```### MEMBRANE - External Integrations
 
-[Info] 🎯 AIOS Hook Execution Started: pre-commit**Purpose:** External interfaces and AI integration
+[Info] [TARGET] AIOS Hook Execution Started: pre-commit**Purpose:** External interfaces and AI integration
 
 [Info] Processing 6 staged files- `aios_copilot_orchestrator.ps1` - GitHub Copilot integration
 
@@ -140,21 +140,21 @@ Commit blocked:- `ai_agent_bridge.py` - [OPERATIONAL] AI chat agent interface fo
 
 ### Pre-push  - `environment_setup.ps1` - Environment preparation
 
-- ✅ Validates branch safety (warns on main/master pushes)- `auto_optimization.ps1` - Automated optimization
+- [PASS] Validates branch safety (warns on main/master pushes)- `auto_optimization.ps1` - Automated optimization
 
-- ✅ Basic push validation- `agentic_auto_controller.py` - [OPERATIONAL] AI-driven automatic refactoring controller
+- [PASS] Basic push validation- `agentic_auto_controller.py` - [OPERATIONAL] AI-driven automatic refactoring controller
 
-- ✅ **Always allows push** (warnings only)- Utilities and common functions
+- [PASS] **Always allows push** (warnings only)- Utilities and common functions
 
 
 
 ### Commit-msg### TRANSPORT - Communication & Coordination
 
-- ✅ Validates commit message exists and is non-empty  **Purpose:** Intercellular communication and data flow
+- [PASS] Validates commit message exists and is non-empty  **Purpose:** Intercellular communication and data flow
 
-- ✅ Warns on overly long subject lines (>72 chars)- `supercell_bridge.ps1` - Inter-supercell communication
+- [PASS] Warns on overly long subject lines (>72 chars)- `supercell_bridge.ps1` - Inter-supercell communication
 
-- ✅ Basic message format validation- `enhanced_cellular_communication.py` - [COMPLETE] Real message queuing and state management
+- [PASS] Basic message format validation- `enhanced_cellular_communication.py` - [COMPLETE] Real message queuing and state management
 
 - `cellular_communication.py` - [COMPLETE] Backwards-compatible interface (stub preserved)
 

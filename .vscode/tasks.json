@@ -449,6 +449,12 @@
 			"problemMatcher": [],
 			"presentation": {
 				"reveal": "never"
+			},
+			"options": {
+				"cwd": "${workspaceFolder}/ai",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/ai/src"
+				}
 			}
 		},
 		{

@@ -1,9 +1,9 @@
 {
   "spatial_metadata_version": "1.0.0",
-  "generation_timestamp": "2025-09-16T22:29:07.593646",
+  "generation_timestamp": "2025-09-22T15:32:20.932063",
   "folder_info": {
     "name": "AIOS",
-    "absolute_path": "C:\\dev\\AIOS\\docs\\AIOS",
+    "absolute_path": "c:\\dev\\AIOS\\docs\\AIOS",
     "relative_path": "docs\\AIOS",
     "parent_path": "docs",
     "depth_level": 2
@@ -22,296 +22,402 @@
   "spatial_context": {
     "sibling_folders": [
       "AINLP",
-      "ARCHITECTURE_PATTERNS",
       "Architect",
-      "ai-context",
-      "ai_agent_demo_docs",
-      "analysis",
       "archive",
+      "build",
       "changelog",
-      "chatgpt",
-      "chatgpt_integration",
-      "consciousness",
-      "metabolized_archive",
-      "reports",
+      "development",
+      "runtime_intelligence",
       "safety",
       "sample_ai_generated",
       "summary",
       "tachyonic",
       "tachyonic_archive",
-      "ui",
-      "unified_backups",
       "vscopilot chat"
     ],
-    "child_folders": [],
+    "child_folders": [
+      "ai-context",
+      "architecture",
+      "interface",
+      "reports"
+    ],
     "spatial_metrics": {
-      "total_size_bytes": 3137651,
-      "file_count": 17,
-      "folder_count": 0,
+      "total_size_bytes": 2622277,
+      "file_count": 91,
+      "folder_count": 4,
       "size_category": "medium"
     },
     "spatial_relationships": {
       "has_siblings": true,
-      "has_children": false,
+      "has_children": true,
       "isolation_level": "connected"
     }
   },
   "content_analysis": {
     "files_by_type": {
+      ".json": [
+        {
+          "name": ".aios_spatial_metadata.json",
+          "size": 9874,
+          "modified": "2025-09-21T13:01:22.838892",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_holographic_index.json",
+          "size": 55448,
+          "modified": "2025-09-21T13:01:22.945130",
+          "category": "documentation"
+        },
+        {
+          "name": "ai_agent_demo_spatial_metadata.json",
+          "size": 4832,
+          "modified": "2025-09-21T13:01:22.942132",
+          "category": "documentation"
+        },
+        {
+          "name": "ai_context_spatial_metadata.json",
+          "size": 4700,
+          "modified": "2025-09-21T13:01:22.943131",
+          "category": "documentation"
+        },
+        {
+          "name": "folder_structure.json",
+          "size": 1690479,
+          "modified": "2025-09-21T13:01:22.963915",
+          "category": "documentation"
+        }
+      ],
       ".md": [
         {
           "name": "AGENT_OPERATING_CONTRACT.md",
           "size": 1532,
-          "modified": "2025-09-15T22:30:24.852478",
+          "modified": "2025-09-17T21:28:26.452476",
           "category": "documentation"
         },
         {
           "name": "AINLP_INGESTION_CHECKLIST.md",
           "size": 3807,
-          "modified": "2025-09-15T22:30:25.014163",
+          "modified": "2025-09-17T21:28:26.454475",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CHAT_MODE.md",
+          "size": 7074,
+          "modified": "2025-09-21T13:01:22.840901",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CONTEXT.md",
+          "size": 26603,
+          "modified": "2025-09-21T13:01:22.842494",
           "category": "documentation"
         },
         {
           "name": "AIOS_MASTER_SPECIFICATION.md",
           "size": 295054,
-          "modified": "2025-09-15T22:30:55.678628",
+          "modified": "2025-09-21T13:01:22.848560",
           "category": "documentation"
         },
         {
           "name": "AIOS_UI_PROTOCOL.md",
           "size": 2046,
-          "modified": "2025-09-15T22:31:09.552085",
+          "modified": "2025-09-17T21:28:26.459477",
           "category": "documentation"
         },
         {
           "name": "AIOS_VSCODE_AINLP_COMMANDS.md",
           "size": 3521,
-          "modified": "2025-09-15T22:31:09.687126",
+          "modified": "2025-09-21T13:01:22.850570",
           "category": "documentation"
         },
         {
           "name": "AIOS_VSCODE_INTEGRATION_ARCHITECTURE.md",
           "size": 10522,
-          "modified": "2025-09-15T22:31:10.146939",
+          "modified": "2025-09-21T13:01:22.858835",
           "category": "documentation"
         },
         {
           "name": "AIOS_VSCODE_INTEGRATION_CONSOLIDATION_REPORT.md",
           "size": 12116,
-          "modified": "2025-09-15T22:31:10.733992",
+          "modified": "2025-09-21T13:01:22.861439",
           "category": "documentation"
         },
         {
           "name": "AIOS_VSCODE_SAVE_ANALYSIS.md",
           "size": 6202,
-          "modified": "2025-09-15T22:31:34.328636",
+          "modified": "2025-09-21T13:01:22.863840",
           "category": "documentation"
         },
         {
           "name": "AIOS_VSCODE_SAVE_COMMAND.md",
           "size": 6788,
-          "modified": "2025-09-15T22:31:34.718750",
+          "modified": "2025-09-17T21:28:26.465628",
           "category": "documentation"
         },
         {
           "name": "AIOS_VSCODE_SAVE_USAGE.md",
           "size": 4884,
-          "modified": "2025-09-15T22:31:34.931859",
+          "modified": "2025-09-21T13:01:22.873702",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_VSCODE_STARTUP_TASK_SYSTEM.md",
+          "size": 13316,
+          "modified": "2025-09-22T15:31:30.024068",
+          "category": "documentation"
+        },
+        {
+          "name": "ai_agent_architecture_notes.md",
+          "size": 737,
+          "modified": "2025-09-21T13:01:22.939565",
+          "category": "documentation"
+        },
+        {
+          "name": "ai_agent_behavioral_patterns.md",
+          "size": 725,
+          "modified": "2025-09-21T13:01:22.941128",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_context_reallocator.md",
+          "size": 14574,
+          "modified": "2025-09-21T13:01:22.881253",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_QUICK_REFERENCE.md",
+          "size": 5378,
+          "modified": "2025-09-21T13:01:22.879546",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_CONSOLIDATION_MASTER.md",
+          "size": 11412,
+          "modified": "2025-09-21T13:01:22.882263",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_emergence_observations.md",
+          "size": 940,
+          "modified": "2025-09-21T13:01:22.946486",
+          "category": "documentation"
+        },
+        {
+          "name": "DEEPSEEK_INTEGRATION.md",
+          "size": 7227,
+          "modified": "2025-09-21T13:01:22.883262",
           "category": "documentation"
         },
         {
           "name": "DEV_PATH_MAIN_INTEGRATION_GUIDE.md",
           "size": 4051,
-          "modified": "2025-09-15T22:31:35.134360",
+          "modified": "2025-09-21T13:01:22.916150",
           "category": "documentation"
         },
         {
           "name": "ENGINEERING_TENETS_KERNEL_GRADE.md",
           "size": 3126,
-          "modified": "2025-09-15T22:31:35.286371",
+          "modified": "2025-09-17T21:28:26.469628",
           "category": "documentation"
         },
         {
           "name": "PATH_1_BREAKTHROUGH_SUMMARY.md",
           "size": 5902,
-          "modified": "2025-09-15T22:02:11.066830",
+          "modified": "2025-09-21T13:01:22.925752",
           "category": "documentation"
         },
         {
           "name": "PATH_1_TESTING_GUIDE.md",
           "size": 3306,
-          "modified": "2025-09-15T22:02:11.087829",
+          "modified": "2025-09-21T13:01:22.929765",
+          "category": "documentation"
+        },
+        {
+          "name": "PROJECT_STATUS.md",
+          "size": 8784,
+          "modified": "2025-09-21T13:01:22.929765",
           "category": "documentation"
         },
         {
           "name": "SAFETY_PROTOCOL_MAPPING.md",
           "size": 7943,
-          "modified": "2025-09-15T22:02:11.114832",
+          "modified": "2025-09-21T13:01:22.931514",
+          "category": "documentation"
+        },
+        {
+          "name": "SEPTEMBER_2025_DEEPSEEK_INTEGRATION_SUMMARY.md",
+          "size": 6419,
+          "modified": "2025-09-21T13:01:22.933522",
           "category": "documentation"
         },
         {
           "name": "STRATEGIC_DEVELOPMENT_PATH_2025_2026.md",
           "size": 11101,
-          "modified": "2025-09-15T22:02:11.149834",
+          "modified": "2025-09-21T13:01:22.935530",
           "category": "documentation"
-        }
-      ],
-      ".json": [
+        },
         {
-          "name": "folder_structure.json",
-          "size": 2755750,
-          "modified": "2025-09-07T17:28:05.750285",
+          "name": "supercell_integration_notes.md",
+          "size": 884,
+          "modified": "2025-09-21T13:01:22.964581",
           "category": "documentation"
         }
       ]
     },
     "important_files": [
       {
+        "name": ".aios_spatial_metadata.json",
+        "size": 9874,
+        "modified": "2025-09-21T13:01:22.838892",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CHAT_MODE.md",
+        "size": 7074,
+        "modified": "2025-09-21T13:01:22.840901",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CONTEXT.md",
+        "size": 26603,
+        "modified": "2025-09-21T13:01:22.842494",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_holographic_index.json",
+        "size": 55448,
+        "modified": "2025-09-21T13:01:22.945130",
+        "category": "documentation"
+      },
+      {
         "name": "AIOS_MASTER_SPECIFICATION.md",
         "size": 295054,
-        "modified": "2025-09-15T22:30:55.678628",
+        "modified": "2025-09-21T13:01:22.848560",
         "category": "documentation"
       },
       {
         "name": "AIOS_UI_PROTOCOL.md",
         "size": 2046,
-        "modified": "2025-09-15T22:31:09.552085",
+        "modified": "2025-09-17T21:28:26.459477",
         "category": "documentation"
       },
       {
         "name": "AIOS_VSCODE_AINLP_COMMANDS.md",
         "size": 3521,
-        "modified": "2025-09-15T22:31:09.687126",
+        "modified": "2025-09-21T13:01:22.850570",
         "category": "documentation"
       },
       {
         "name": "AIOS_VSCODE_INTEGRATION_ARCHITECTURE.md",
         "size": 10522,
-        "modified": "2025-09-15T22:31:10.146939",
+        "modified": "2025-09-21T13:01:22.858835",
         "category": "documentation"
       },
       {
         "name": "AIOS_VSCODE_INTEGRATION_CONSOLIDATION_REPORT.md",
         "size": 12116,
-        "modified": "2025-09-15T22:31:10.733992",
+        "modified": "2025-09-21T13:01:22.861439",
         "category": "documentation"
       },
       {
         "name": "AIOS_VSCODE_SAVE_ANALYSIS.md",
         "size": 6202,
-        "modified": "2025-09-15T22:31:34.328636",
-        "category": "documentation"
-      },
-      {
-        "name": "AIOS_VSCODE_SAVE_COMMAND.md",
-        "size": 6788,
-        "modified": "2025-09-15T22:31:34.718750",
-        "category": "documentation"
-      },
-      {
-        "name": "AIOS_VSCODE_SAVE_USAGE.md",
-        "size": 4884,
-        "modified": "2025-09-15T22:31:34.931859",
-        "category": "documentation"
-      },
-      {
-        "name": "DEV_PATH_MAIN_INTEGRATION_GUIDE.md",
-        "size": 4051,
-        "modified": "2025-09-15T22:31:35.134360",
+        "modified": "2025-09-21T13:01:22.863840",
         "category": "documentation"
       }
     ],
     "recent_files": [
       {
-        "name": "ENGINEERING_TENETS_KERNEL_GRADE.md",
-        "size": 3126,
-        "modified": "2025-09-15T22:31:35.286371",
+        "name": "AIOS_VSCODE_STARTUP_TASK_SYSTEM.md",
+        "size": 13316,
+        "modified": "2025-09-22T15:31:30.024068",
         "category": "documentation"
       },
       {
-        "name": "DEV_PATH_MAIN_INTEGRATION_GUIDE.md",
-        "size": 4051,
-        "modified": "2025-09-15T22:31:35.134360",
+        "name": "supercell_integration_notes.md",
+        "size": 884,
+        "modified": "2025-09-21T13:01:22.964581",
         "category": "documentation"
       },
       {
-        "name": "AIOS_VSCODE_SAVE_USAGE.md",
-        "size": 4884,
-        "modified": "2025-09-15T22:31:34.931859",
+        "name": "folder_structure.json",
+        "size": 1690479,
+        "modified": "2025-09-21T13:01:22.963915",
         "category": "documentation"
       },
       {
-        "name": "AIOS_VSCODE_SAVE_COMMAND.md",
-        "size": 6788,
-        "modified": "2025-09-15T22:31:34.718750",
+        "name": "consciousness_emergence_observations.md",
+        "size": 940,
+        "modified": "2025-09-21T13:01:22.946486",
         "category": "documentation"
       },
       {
-        "name": "AIOS_VSCODE_SAVE_ANALYSIS.md",
-        "size": 6202,
-        "modified": "2025-09-15T22:31:34.328636",
+        "name": "aios_holographic_index.json",
+        "size": 55448,
+        "modified": "2025-09-21T13:01:22.945130",
         "category": "documentation"
       },
       {
-        "name": "AIOS_VSCODE_INTEGRATION_CONSOLIDATION_REPORT.md",
-        "size": 12116,
-        "modified": "2025-09-15T22:31:10.733992",
+        "name": "ai_context_spatial_metadata.json",
+        "size": 4700,
+        "modified": "2025-09-21T13:01:22.943131",
         "category": "documentation"
       },
       {
-        "name": "AIOS_VSCODE_INTEGRATION_ARCHITECTURE.md",
-        "size": 10522,
-        "modified": "2025-09-15T22:31:10.146939",
+        "name": "ai_agent_demo_spatial_metadata.json",
+        "size": 4832,
+        "modified": "2025-09-21T13:01:22.942132",
         "category": "documentation"
       },
       {
-        "name": "AIOS_VSCODE_AINLP_COMMANDS.md",
-        "size": 3521,
-        "modified": "2025-09-15T22:31:09.687126",
+        "name": "ai_agent_behavioral_patterns.md",
+        "size": 725,
+        "modified": "2025-09-21T13:01:22.941128",
         "category": "documentation"
       },
       {
-        "name": "AIOS_UI_PROTOCOL.md",
-        "size": 2046,
-        "modified": "2025-09-15T22:31:09.552085",
+        "name": "ai_agent_architecture_notes.md",
+        "size": 737,
+        "modified": "2025-09-21T13:01:22.939565",
         "category": "documentation"
       },
       {
-        "name": "AIOS_MASTER_SPECIFICATION.md",
-        "size": 295054,
-        "modified": "2025-09-15T22:30:55.678628",
+        "name": "STRATEGIC_DEVELOPMENT_PATH_2025_2026.md",
+        "size": 11101,
+        "modified": "2025-09-21T13:01:22.935530",
         "category": "documentation"
       }
     ],
     "content_summary": {
-      "total_files": 17,
+      "total_files": 34,
       "file_types": [
-        ".md",
-        ".json"
+        ".json",
+        ".md"
       ],
       "dominant_type": ".md"
     }
   },
   "consciousness_metrics": {
     "consciousness_indicators": {
-      "ai_files": 10,
-      "consciousness_files": 0,
-      "agentic_files": 1,
-      "intelligence_files": 0
+      "ai_files": 52,
+      "consciousness_files": 4,
+      "agentic_files": 4,
+      "intelligence_files": 4
     },
     "consciousness_score": 100,
     "consciousness_level": "high"
   },
   "navigation_aids": {
     "entry_points": [
+      "aios_holographic_index.json",
       "DEV_PATH_MAIN_INTEGRATION_GUIDE.md"
     ],
     "config_files": [],
     "breadcrumb_path": "docs > AIOS",
     "quick_commands": {
-      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AIOS' -Recurse",
-      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AIOS' -Recurse -Filter '*.py'",
-      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AIOS' -Recurse -Filter '*.ps1'"
+      "list_files": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\AIOS' -Recurse",
+      "find_python": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\AIOS' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\AIOS' -Recurse -Filter '*.ps1'"
     }
   },
   "ai_guidance": {
@@ -328,11 +434,15 @@
     ],
     "related_folders": [
       "docs",
-      "docs\\ai_agent_demo_docs",
+      "ai\\docs",
       "tachyonic\\docs_archive",
       "vscode-extension\\docs",
-      ".githooks\\modules\\information_storage\\docs",
+      "ai\\information_storage\\docs",
       "aios_env"
     ]
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": true
   }
 }
