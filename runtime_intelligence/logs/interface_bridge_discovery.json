@@ -1,0 +1,487 @@
+{
+  "discovery_timestamp": "2025-09-21T14:57:51.280025",
+  "total_tools": 14,
+  "tools": [
+    {
+      "name": "ai_cell_manager",
+      "display_name": "Ai Cell Manager",
+      "description": "AI Cell Manager for AIOS Cellular Ecosystem Orchestrates training workflows and coordinates communication between Python AI Training Cells and C++ Performance Inference Cells.",
+      "category": "ai_cell",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "knowledge_processing",
+        "session_management"
+      ],
+      "parameters": [
+        {
+          "name": "ai_engine",
+          "type": "string",
+          "required": true,
+          "description": "AI engine identifier",
+          "example": "claude-sonnet-3.5"
+        },
+        {
+          "name": "branch",
+          "type": "string",
+          "required": true,
+          "description": "Git branch identifier",
+          "example": "OS"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "ai_engine_handoff",
+      "display_name": "Ai Engine Handoff",
+      "description": "AIOS AI Engine Handoff Generator Automatically creates knowledge transfer artifacts when transitioning between AI engines This component is part of the AIOS Sequencer system for organized runtime execution.",
+      "category": "ai_cell",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "knowledge_processing",
+        "knowledge_transfer",
+        "session_management"
+      ],
+      "parameters": [
+        {
+          "name": "ai_engine",
+          "type": "string",
+          "required": true,
+          "description": "AI engine identifier",
+          "example": "claude-sonnet-3.5"
+        },
+        {
+          "name": "branch",
+          "type": "string",
+          "required": true,
+          "description": "Git branch identifier",
+          "example": "OS"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "tensorflow_training_cell",
+      "display_name": "Tensorflow Training Cell",
+      "description": "TensorFlow Training Cell for AIOS Cellular Ecosystem This module provides Python-based AI training capabilities that integrate seamlessly with C++ performance inference cells through intercellular bridges.",
+      "category": "ai_cell",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "knowledge_processing",
+        "session_management"
+      ],
+      "parameters": [
+        {
+          "name": "ai_engine",
+          "type": "string",
+          "required": true,
+          "description": "AI engine identifier",
+          "example": "claude-sonnet-3.5"
+        },
+        {
+          "name": "branch",
+          "type": "string",
+          "required": true,
+          "description": "Git branch identifier",
+          "example": "OS"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "aios_context_registry_validator",
+      "display_name": "Aios Context Registry Validator",
+      "description": "aios_context_registry_validator.py This script validates the .aios_context.json registry against the actual file system.",
+      "category": "tool",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "analysis",
+        "automation"
+      ],
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true,
+          "description": "Operation to perform",
+          "example": "extract_knowledge"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "cross_pollination_automator",
+      "display_name": "Cross Pollination Automator",
+      "description": "AIOS Cross-Pollination Automation System Automates knowledge transfer between AI engine development branches This component is part of the AIOS Sequencer system for organized runtime execution.",
+      "category": "tool",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "process_automation",
+        "ai_collaboration",
+        "analysis",
+        "automation"
+      ],
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true,
+          "description": "Operation to perform",
+          "example": "extract_knowledge"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "fix_e501_",
+      "display_name": "Fix E501 ",
+      "description": "AINLP E501 Comprehensive Fixer Systematically fixes line length violations with a simple CLI UI and debug logging",
+      "category": "tool",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "analysis",
+        "automation"
+      ],
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true,
+          "description": "Operation to perform",
+          "example": "extract_knowledge"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "recursive_tooling",
+      "display_name": "Recursive Tooling",
+      "description": "AINLP Kernel Tooling - Recursive Background Processing System ============================================================ This module implements the core AINLP kernel tooling with recursive background",
+      "category": "tool",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "analysis",
+        "automation"
+      ],
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true,
+          "description": "Operation to perform",
+          "example": "extract_knowledge"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "start_server",
+      "display_name": "Start Server",
+      "description": "AIOS Server Startup Script Simplified startup for the AIOS VSCode Integration Server",
+      "category": "service",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "background_processing",
+        "api_endpoints"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "aios_vscode_integration_server",
+      "display_name": "Aios Vscode Integration Server",
+      "description": "AIOS VSCode Extension Integration Server (modular entrypoint) This file is now a stub. All logic has been refactored into the aios_vscode_integration package. To run the server, use the app",
+      "category": "integration",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "data_exchange",
+        "external_communication"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "mcp_server",
+      "display_name": "Mcp Server",
+      "description": "",
+      "category": "service",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "background_processing",
+        "api_endpoints"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "aios_cross_dialogue_intelligence",
+      "display_name": "Aios Cross Dialogue Intelligence",
+      "description": "AIOS Cross-Dialogue Intelligence System Real-time AI engine communication bridge using GitHook intelligence extrusion Location: ai/membrane/aios_cross_dialogue_intelligence.py",
+      "category": "integration",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "data_exchange",
+        "external_communication"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "ai_agent_bridge",
+      "display_name": "Ai Agent Bridge",
+      "description": "AIOS AI Agent Bridge =================== Location: ai/membrane/ai_agent_bridge.py",
+      "category": "integration",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "data_exchange",
+        "external_communication"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "ai_engine_context_enforcer",
+      "display_name": "Ai Engine Context Enforcer",
+      "description": "AI Engine Context Enforcement for AIOS Workspace Ensures AI engines remember PowerShell-only context through consciousness integration",
+      "category": "integration",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "data_exchange",
+        "external_communication"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    },
+    {
+      "name": "membrane_intelligence",
+      "display_name": "Membrane Intelligence",
+      "description": "MEMBRANE SUPERCELL INTELLIGENCE MODULE Interface management and external communication Intelligence Focus: Protocol adaptation and interface optimization",
+      "category": "integration",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "data_exchange",
+        "external_communication"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-21T14:57:51.280025"
+    }
+  ],
+  "server_status": "running",
+  "api_endpoints": {
+    "health": "/health",
+    "tools": "/tools",
+    "discovery": "/tools/{tool_name}",
+    "execute": "/tools/{tool_name}/execute",
+    "categories": "/categories",
+    "refresh": "/discovery/refresh"
+  }
+}

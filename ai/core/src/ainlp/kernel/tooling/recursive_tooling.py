@@ -25,13 +25,18 @@ from queue import PriorityQueue, Queue
 from typing import Any, Callable, Dict, List, Optional
 
 # Add parent directories to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from integration.aios_context_harmonizer import AIOSContextHarmonizer
-from integration.fractal_holographic_ai import FractalHolographicAI
-from integration.holographic_synchronization import HolographicSynchronization
+try:
+    from ai.core.src.integration.archive.aios_context_harmonizer import AIOSContextHarmonizer
+    from ai.core.src.integration.archive.fractal_holographic_ai import FractalHolographicAI
+    from ai.core.src.integration.archive.holographic_synchronization import HolographicSynchronization
+except ImportError:
+    AIOSContextHarmonizer = None
+    FractalHolographicAI = None
+    HolographicSynchronization = None
 
-from ai.src.core.ainlp.utils import get_logger
+from ...utils import get_logger
 
 
 @dataclass

@@ -10,18 +10,32 @@ namespace AIOS.UI
 {
     public partial class SimpleMainWindow : Window
     {
-        private readonly AIOS.Services.AIServiceManager _aiService;
-        private readonly AIOS.Services.MaintenanceService _maintenanceService;
+        private readonly AIOS.Services.AIServiceManager? _aiService;
+        private readonly AIOS.Services.MaintenanceService? _maintenanceService;
         private readonly ILogger<SimpleMainWindow> _logger;
 
         public SimpleMainWindow()
         {
             InitializeComponent();
 
-            // Initialize services
-            _aiService = new AIOS.Services.AIServiceManager();
-            _maintenanceService = new AIOS.Services.MaintenanceService();
-            _logger = Microsoft.Extensions.Logging.Abstractions.NullLogger<SimpleMainWindow>.Instance;
+            // Initialize services with error handling
+            try
+            {
+                _aiService = new AIOS.Services.AIServiceManager();
+                _maintenanceService = new AIOS.Services.MaintenanceService();
+                _logger = Microsoft.Extensions.Logging.Abstractions.NullLogger<SimpleMainWindow>.Instance;
+            }
+            catch (Exception ex)
+            {
+                // Fallback: create null services and show error
+                _aiService = null;
+                _maintenanceService = null;
+                _logger = Microsoft.Extensions.Logging.Abstractions.NullLogger<SimpleMainWindow>.Instance;
+                
+                // Show error in UI
+                StatusText.Text = $"Service initialization failed: {ex.Message}";
+                return;
+            }
 
             // Load initial status
             LoadInitialStatus();
@@ -29,6 +43,12 @@ namespace AIOS.UI
 
         private async void LoadInitialStatus()
         {
+            if (_aiService == null)
+            {
+                StatusText.Text = "Services not available";
+                return;
+            }
+
             try
             {
                 StatusText.Text = "Loading system status...";
@@ -55,7 +75,33 @@ namespace AIOS.UI
 
         private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            await ProcessChatInput();
+            if (_aiService == null)
+            {
+                ChatOutput.Text += "\n\nError: AI service not available";
+                return;
+            }
+
+            var input = ChatInput.Text.Trim();
+            if (string.IsNullOrEmpty(input)) return;
+
+            ChatOutput.Text += $"\n\nUser: {input}";
+            ChatInput.Text = "";
+            StatusText.Text = "Processing...";
+
+            try
+            {
+                var response = await _aiService!.ProcessAsync("general", input);
+
+                ChatOutput.Text += $"\n\nAI: {response.Response}";
+                ChatOutput.ScrollToEnd();
+
+                StatusText.Text = response.Success ? "Ready" : "Error in processing";
+            }
+            catch (Exception ex)
+            {
+                ChatOutput.Text += $"\n\nError: {ex.Message}";
+                StatusText.Text = "Error";
+            }
         }
 
         private async void ChatInput_KeyDown(object sender, KeyEventArgs e)
@@ -80,7 +126,7 @@ namespace AIOS.UI
                 StatusText.Text = "Processing...";
 
                 // Process with AI service
-                var response = await _aiService.ProcessAsync("general", input);
+                var response = await _aiService!.ProcessAsync("general", input);
 
                 // Add AI response to chat
                 ChatOutput.Text += $"\n\nAI: {response.Response}";
@@ -100,12 +146,19 @@ namespace AIOS.UI
 
         private async void RefreshStatusButton_Click(object sender, RoutedEventArgs e)
         {
+            if (_aiService == null || _maintenanceService == null)
+            {
+                SystemStatusOutput.Text = "Services not available for status refresh";
+                StatusText.Text = "Error";
+                return;
+            }
+
             try
             {
                 StatusText.Text = "Refreshing status...";
 
                 var healthResponse = await _aiService.GetSystemHealthAsync();
-                var maintenanceStatus = await _maintenanceService.GetMaintenanceStatusAsync();
+                var maintenanceStatus = await _maintenanceService!.GetMaintenanceStatusAsync();
 
                 SystemStatusOutput.Text = $"=== SYSTEM HEALTH ===\n" +
                                         $"Health Status: {healthResponse.HealthStatus}\n" +
@@ -163,6 +216,13 @@ namespace AIOS.UI
 
         private async void CheckHealthButton_Click(object sender, RoutedEventArgs e)
         {
+            if (_aiService == null)
+            {
+                MaintenanceOutput.Text = "AI service not available for health check";
+                StatusText.Text = "Error";
+                return;
+            }
+
             try
             {
                 StatusText.Text = "Checking system health...";
