@@ -30,7 +30,7 @@ namespace AIOS.Services.Controllers
         {
             try
             {
-                var tools = await _pythonToolsService.DiscoverToolsAsync();
+                var tools = await _pythonToolsService.GetAvailableToolsAsync();
                 return Ok(tools);
             }
             catch (Exception ex)
@@ -48,7 +48,7 @@ namespace AIOS.Services.Controllers
         {
             try
             {
-                var metadata = await _pythonToolsService.GetToolsMetadataAsync();
+                var metadata = await _pythonToolsService.GenerateMetadataSnapshotAsync();
                 return Ok(metadata);
             }
             catch (Exception ex)
@@ -62,11 +62,11 @@ namespace AIOS.Services.Controllers
         /// Execute a specific Python AI tool
         /// </summary>
         [HttpPost("execute/{toolId}")]
-        public async Task<IActionResult> ExecuteTool(string toolId, [FromBody] JsonElement parameters)
+        public async Task<IActionResult> ExecuteTool(string toolId, [FromBody] Dictionary<string, object> parameters)
         {
             try
             {
-                var result = await _pythonToolsService.ExecuteToolAsync(toolId, parameters.GetRawText());
+                var result = await _pythonToolsService.ExecuteToolAsync(toolId, parameters);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace AIOS.Services.Controllers
         {
             try
             {
-                var results = await _pythonToolsService.SearchToolsAsync(query, category);
+                var results = await _pythonToolsService.SearchToolsByCapabilityAsync(query);
                 return Ok(results);
             }
             catch (Exception ex)
@@ -102,7 +102,8 @@ namespace AIOS.Services.Controllers
         {
             try
             {
-                var health = await _pythonToolsService.GetHealthStatusAsync();
+                var isAvailable = await _pythonToolsService.IsInterfaceBridgeAvailable();
+                var health = new { available = isAvailable, status = isAvailable ? "healthy" : "unavailable" };
                 return Ok(health);
             }
             catch (Exception ex)
@@ -120,7 +121,7 @@ namespace AIOS.Services.Controllers
         {
             try
             {
-                await _pythonToolsService.RefreshToolsCacheAsync();
+                await _pythonToolsService.RefreshAvailableToolsAsync();
                 return Ok(new { message = "Tools cache refreshed successfully" });
             }
             catch (Exception ex)
@@ -134,12 +135,12 @@ namespace AIOS.Services.Controllers
         /// Generate C# bridge classes for discovered Python tools
         /// </summary>
         [HttpPost("generate-bridge")]
-        public async Task<IActionResult> GenerateBridge()
+        public IActionResult GenerateBridge()
         {
             try
             {
-                var bridgeCode = await _pythonToolsService.GenerateCSharpBridgeAsync();
-                return Ok(new { bridge_code = bridgeCode });
+                // TODO: Implement GenerateCSharpBridgeAsync in PythonAIToolsService
+                return Ok(new { message = "Bridge generation not yet implemented", bridge_code = "" });
             }
             catch (Exception ex)
             {

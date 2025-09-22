@@ -7,7 +7,7 @@ AINLP.quantum [line_decomposition] (comment.AINLP.class)
 
 import re
 
-from ai.src.core.ainlp.utils import get_logger
+from .utils import get_logger
 
 logger = get_logger(__name__)
 

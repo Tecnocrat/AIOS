@@ -129,7 +129,7 @@ namespace AIOS.Services
         private readonly string _compressionModulePath;
         private readonly Dictionary<string, Process> _activeCompressions;
 
-        public AIOSCompressionService(ILogger<AIOSCompressionService> logger = null)
+        public AIOSCompressionService(ILogger<AIOSCompressionService>? logger = null)
         {
             _logger = logger ?? Microsoft.Extensions.Logging.Abstractions.NullLogger<AIOSCompressionService>.Instance;
             _pythonPath = FindPythonExecutable();

@@ -42,10 +42,10 @@ namespace AIOS.Services
             _aiModulesPath = @"c:\dev\AIOS\ai\src";
 
             // Initialize compression service
-            _compressionService = compressionService ?? new AIOSCompressionService(_logger as ILogger<AIOSCompressionService>);
+            _compressionService = compressionService ?? new AIOSCompressionService(Microsoft.Extensions.Logging.Abstractions.NullLogger<AIOSCompressionService>.Instance);
 
             // Initialize formatter service
-            _formatterService = new FormatterService(_logger as ILogger<FormatterService>);
+            _formatterService = new FormatterService(Microsoft.Extensions.Logging.Abstractions.NullLogger<FormatterService>.Instance);
 
             InitializeAIModules();
             RegisterCompressionTool();
