@@ -164,6 +164,10 @@ logs/
 *.swo
 *~
 
+# Process ID files (environment-specific, should not be versioned)
+*.pid
+ai/interface_bridge.pid
+
 # AI model files & PyTorch models (too large for git)
 ai/models/*.bin
 ai/models/*.pt
