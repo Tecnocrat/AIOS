@@ -293,6 +293,7 @@ intercellular_test_logs/
 tachyonic/archive/backups/*.backup*
 tachyonic/archive/backups/*.bak*
 tachyonic/archive/backups/*.old*
+tachyonic/archive/backups/backups/
 !tachyonic/archive/backups/.aios_spatial_metadata.json
 
 # ============================================================================
