@@ -40,7 +40,7 @@ class AICore:
     Main AI Core class that orchestrates all AI functionality.
     """
 
-    def __init__(self, config_path: str = "config/ai-models.json"):
+    def __init__(self, config_path: str = "../../infrastructure/config/ai-models.json"):
         self.config_path = Path(config_path)
         self.config = self._load_config()
         self.is_initialized = False
@@ -266,7 +266,7 @@ def get_ai_core() -> AICore:
 
 
 async def initialize_ai_core(
-    config_path: str = "config/ai-models.json",
+    config_path: str = "../../infrastructure/config/ai-models.json",
 ) -> bool:
     """Initialize the global AI Core instance."""
     global _ai_core_instance

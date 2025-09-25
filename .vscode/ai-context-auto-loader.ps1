@@ -9,10 +9,14 @@ param(
     [switch]$ForceLoad = $false
 )
 
-# Context files to auto-load
+# Determine workspace root based on script location
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$workspaceRoot = Split-Path -Parent $scriptDir
+
+# Context files to auto-load (absolute paths)
 $contextFiles = @{
-    "AI_CONTEXT_AUTO_LOAD" = ".vscode/AI_CONTEXT_AUTO_LOAD.md"
-    "AIOS_CONTEXT" = ".aios_context.json"
+    "AI_CONTEXT_AUTO_LOAD" = Join-Path $workspaceRoot "docs/AIOS/AI_CONTEXT_AUTO_LOAD.md"
+    "AIOS_CONTEXT" = Join-Path $workspaceRoot ".aios_context.json"
 }
 
 # Check for extension coordination to prevent duplication

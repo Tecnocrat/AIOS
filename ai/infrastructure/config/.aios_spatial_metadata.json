@@ -1,38 +1,65 @@
 {
   "spatial_metadata_version": "1.0.0",
-  "generation_timestamp": "2025-09-16T22:39:13.278478",
+  "generation_timestamp": "2025-09-16T22:27:19.173613",
   "folder_info": {
     "name": "config",
-    "absolute_path": "C:\\dev\\AIOS\\ai\\cytoplasm\\config",
-    "relative_path": "ai\\cytoplasm\\config",
-    "parent_path": "ai\\cytoplasm",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\infrastructure\\config",
+    "relative_path": "ai\\infrastructure\\config",
+    "parent_path": "ai\\infrastructure",
     "depth_level": 3
   },
   "architectural_classification": {
     "primary_area": "AI Intelligence Layer",
-    "secondary_areas": [],
+    "secondary_areas": [
+      "infrastructure",
+      "cytoplasm"
+    ],
     "path_classification": [
       "ai",
-      "cytoplasm",
+      "infrastructure",
       "config"
     ],
     "consciousness_level": "high"
   },
   "spatial_context": {
     "sibling_folders": [
-      "__pycache__",
-      "deps",
-      "env",
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
       "runtime",
+      "runtime_intelligence",
+      "safety_logs",
       "scripts",
-      "tools"
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
     ],
     "child_folders": [],
     "spatial_metrics": {
-      "total_size_bytes": 411,
-      "file_count": 2,
+      "total_size_bytes": 21644,
+      "file_count": 7,
       "folder_count": 0,
-      "size_category": "tiny"
+      "size_category": "small"
     },
     "spatial_relationships": {
       "has_siblings": true,
@@ -44,98 +71,141 @@
     "files_by_type": {
       ".json": [
         {
-          "name": "python-environment-simple.json",
-          "size": 363,
-          "modified": "2025-09-15T22:05:21.930841",
+          "name": "ai-models.json",
+          "size": 4596,
+          "modified": "2025-09-15T22:24:25.328491",
           "category": "documentation"
-        }
-      ],
-      ".py": [
+        },
         {
-          "name": "__init__.py",
-          "size": 48,
-          "modified": "2025-09-15T22:05:21.951841",
-          "category": "consciousness"
+          "name": "aios_agentic_config.json",
+          "size": 842,
+          "modified": "2025-09-15T22:24:25.399444",
+          "category": "documentation"
+        },
+        {
+          "name": "python-environment-simple.json",
+          "size": 376,
+          "modified": "2025-09-15T22:24:25.420067",
+          "category": "documentation"
+        },
+        {
+          "name": "python_environments.json",
+          "size": 4570,
+          "modified": "2025-09-15T22:24:25.574962",
+          "category": "documentation"
+        },
+        {
+          "name": "python_environments_backup.json",
+          "size": 4570,
+          "modified": "2025-09-15T22:24:25.759632",
+          "category": "documentation"
+        },
+        {
+          "name": "system.json",
+          "size": 2698,
+          "modified": "2025-09-15T22:24:33.380781",
+          "category": "documentation"
+        },
+        {
+          "name": "ui-themes.json",
+          "size": 3992,
+          "modified": "2025-09-15T22:24:33.536600",
+          "category": "documentation"
         }
       ]
     },
     "important_files": [
       {
-        "name": "__init__.py",
-        "size": 48,
-        "modified": "2025-09-15T22:05:21.951841",
-        "category": "consciousness"
+        "name": "aios_agentic_config.json",
+        "size": 842,
+        "modified": "2025-09-15T22:24:25.399444",
+        "category": "documentation"
       }
     ],
     "recent_files": [
       {
-        "name": "__init__.py",
-        "size": 48,
-        "modified": "2025-09-15T22:05:21.951841",
-        "category": "consciousness"
+        "name": "ui-themes.json",
+        "size": 3992,
+        "modified": "2025-09-15T22:24:33.536600",
+        "category": "documentation"
+      },
+      {
+        "name": "system.json",
+        "size": 2698,
+        "modified": "2025-09-15T22:24:33.380781",
+        "category": "documentation"
+      },
+      {
+        "name": "python_environments_backup.json",
+        "size": 4570,
+        "modified": "2025-09-15T22:24:25.759632",
+        "category": "documentation"
+      },
+      {
+        "name": "python_environments.json",
+        "size": 4570,
+        "modified": "2025-09-15T22:24:25.574962",
+        "category": "documentation"
       },
       {
         "name": "python-environment-simple.json",
-        "size": 363,
-        "modified": "2025-09-15T22:05:21.930841",
+        "size": 376,
+        "modified": "2025-09-15T22:24:25.420067",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_agentic_config.json",
+        "size": 842,
+        "modified": "2025-09-15T22:24:25.399444",
+        "category": "documentation"
+      },
+      {
+        "name": "ai-models.json",
+        "size": 4596,
+        "modified": "2025-09-15T22:24:25.328491",
         "category": "documentation"
       }
     ],
     "content_summary": {
-      "total_files": 2,
+      "total_files": 7,
       "file_types": [
-        ".json",
-        ".py"
+        ".json"
       ],
       "dominant_type": ".json"
     }
   },
   "consciousness_metrics": {
     "consciousness_indicators": {
-      "ai_files": 0,
+      "ai_files": 2,
       "consciousness_files": 0,
-      "agentic_files": 0,
+      "agentic_files": 1,
       "intelligence_files": 0
     },
-    "consciousness_score": 0,
-    "consciousness_level": "low"
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
   },
   "navigation_aids": {
-    "entry_points": [
-      "__init__.py"
+    "entry_points": [],
+    "config_files": [
+      "aios_agentic_config.json"
     ],
-    "config_files": [],
-    "breadcrumb_path": "ai > cytoplasm > config",
+    "breadcrumb_path": "config",
     "quick_commands": {
-      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm\\config' -Recurse",
-      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm\\config' -Recurse -Filter '*.py'",
-      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm\\config' -Recurse -Filter '*.ps1'"
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\config' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\config' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\config' -Recurse -Filter '*.ps1'"
     }
   },
   "ai_guidance": {
-    "primary_focus": "AI intelligence and consciousness",
-    "recommended_actions": [
-      "Validate consciousness coherence across components",
-      "Test agentic auto-controller functionality",
-      "Review AINLP pattern compliance"
-    ],
-    "important_considerations": [
-      "Maintain consciousness architecture integrity",
-      "Ensure agentic pattern consistency",
-      "Preserve dendritic growth capabilities"
-    ],
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
     "related_folders": [
-      "ai",
-      "aios_env",
-      "docs\\ai-context",
-      "docs\\AINLP",
-      "docs\\AIOS",
-      "ai\\cytoplasm",
-      "config"
+      "core\\configuration",
+      "gemini_cli_bridge\\config",
+      ".githooks\\modules\\information_storage\\config",
+      "ai\\cytoplasm\\config",
+      "ai\\nucleus\\src\\core\\integration\\config"
     ]
-  },
-  "creation_info": {
-    "overwrite_mode": false,
-    "previous_metadata_existed": false
   }
 }

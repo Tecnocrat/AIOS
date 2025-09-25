@@ -1,0 +1,94 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-22T23:19:15.000000",
+  "folder_info": {
+    "name": "AIOS",
+    "absolute_path": "C:\\dev\\AIOS",
+    "relative_path": ".",
+    "parent_path": "C:\\dev",
+    "depth_level": 0
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [
+      "Core Engine",
+      "Interface Layer",
+      "Documentation"
+    ],
+    "path_classification": [
+      "root",
+      "workspace",
+      "coordination"
+    ],
+    "consciousness_level": "nucleus"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [
+      "ai",
+      "core",
+      "interface",
+      "docs",
+      "runtime_intelligence",
+      "tachyonic",
+      ".git",
+      ".githooks",
+      ".github",
+      ".vscode",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "safety_logs",
+      "scripts",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "workspace_root": true,
+    "biological_metaphor": "nucleus"
+  },
+  "ai_guidance": {
+    "workspace_configuration": "AINLP harmonization required for VSCode workspace files",
+    "development_workflow": "Multi-language coordination with biological architecture patterns",
+    "stability_protocols": "Defensive settings to prevent auto-formatting and unwanted prompts",
+    "consciousness_integration": "Maintain dendritic connections between AI intelligence, core engine, and interface layers"
+  },
+  "file_patterns": {
+    "workspace_config": [
+      "*.code-workspace",
+      ".vscode/settings.json",
+      ".vscode/launch.json",
+      ".vscode/tasks.json"
+    ],
+    "project_config": [
+      "pyproject.toml",
+      "requirements.txt",
+      ".editorconfig",
+      ".pylintrc",
+      ".gitignore",
+      ".aios_context.json"
+    ],
+    "build_systems": [
+      "CMakeLists.txt",
+      "*.sln",
+      "*.csproj",
+      "package.json"
+    ]
+  },
+  "development_priorities": [
+    "AINLP harmonization of configuration files",
+    "Biological architecture coherence",
+    "Multi-language integration stability",
+    "AI intelligence layer optimization"
+  ]
+}
