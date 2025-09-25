@@ -55,12 +55,16 @@ function Write-AIOSLog {
 
 function Get-StagedFiles {
     try {
-        $stagedFiles = git diff --cached --name-only --diff-filter=ACMR 2>$null
-        if ($stagedFiles) {
-            return @($stagedFiles)
-        } else {
-            return @()
+        $output = git diff --cached --name-only --diff-filter=ACMR 2>$null
+        $files = @()
+        if ($output) {
+            foreach ($line in ($output -split "`n")) {
+                if ($line.Trim() -ne "") {
+                    $files += $line.Trim()
+                }
+            }
         }
+        return $files
     } catch {
         Write-AIOSLog "Failed to get staged files: $_" -Level "Warning" -Component "Git"
         return @()
@@ -142,7 +146,7 @@ function Test-FileSafety {
     }
     
     # Ensure we always return an array
-    ,$unsafeFiles
+    return $unsafeFiles
 }
 #endregion
 
@@ -151,6 +155,10 @@ function Invoke-PreCommitHook {
     Write-AIOSLog "Starting pre-commit validation" -Component "PreCommit"
     
     $stagedFiles = Get-StagedFiles
+    # Ensure stagedFiles is always an array
+    if ($stagedFiles -isnot [array]) {
+        $stagedFiles = @($stagedFiles)
+    }
     $fileCount = if ($stagedFiles -and $stagedFiles.Count -gt 0) { $stagedFiles.Count } else { 0 }
     
     if ($fileCount -eq 0) {
@@ -187,7 +195,6 @@ function Invoke-PreCommitHook {
     # File safety check
     try {
         $unsafeFiles = Test-FileSafety -StagedFiles $stagedFiles
-        Write-AIOSLog "Unsafe files result: $($unsafeFiles.GetType().Name) - Value: $($unsafeFiles | ConvertTo-Json -Compress)" -Component "PreCommit"
         if ($unsafeFiles -and $unsafeFiles.Count -gt 0) {
             $validationErrors += "unsafe_files"
             Write-AIOSLog "Unsafe files detected: $($unsafeFiles -join ', ')" -Level "Error" -Component "Safety"
