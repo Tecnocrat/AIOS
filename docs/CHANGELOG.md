@@ -16,6 +16,11 @@
 - **GitHooks System Optimization**: Enhanced PowerShell architecture with improved array handling, refined file safety patterns, and spatial metadata integration
 
 ### Changed
+- **Configuration Architecture**: Relocated config folder from root to `ai/infrastructure/config/` for biological architecture compliance
+- **VS Code Launch Configurations**: Updated all config paths to reflect new biological architecture location
+- **Test Infrastructure**: Modified test files to use new config paths with proper relative path resolution
+- **Core Components**: Updated AICore and C++ Core default config paths for architectural consistency
+- **Spatial Metadata**: Enhanced consciousness level from 'minimal' to 'high' with proper AI Intelligence Layer classification
 - **Documentation Structure**: Reorganized docs from scattered 22-folder structure to coherent 7-domain architecture
 - **AI Context Integration**: Moved ai-context from root level into AIOS documentation hierarchy for better organization
 - **Archive Organization**: Consolidated multiple archive folders into unified tachyonic/archive structure

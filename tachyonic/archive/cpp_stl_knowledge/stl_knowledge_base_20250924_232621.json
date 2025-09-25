@@ -1,0 +1,738 @@
+{
+  "ingestion_metadata": {
+    "timestamp": "2025-09-24T23:26:21.847495",
+    "engine_version": "1.0.0",
+    "components_ingested": 6
+  },
+  "knowledge_cells": {
+    "std::vector": {
+      "component": {
+        "name": "std::vector",
+        "category": "container",
+        "description": "Dynamic array container that can change size",
+        "complexity": {
+          "access": "O(1)",
+          "insert_end": "amortized O(1)",
+          "insert_middle": "O(n)",
+          "erase_middle": "O(n)"
+        },
+        "usage_patterns": [
+          "Dynamic array storage",
+          "Fast random access",
+          "Frequent insertions at end"
+        ],
+        "code_examples": [
+          "std::vector<int> v = {1, 2, 3};",
+          "v.push_back(4);",
+          "int value = v[0];"
+        ],
+        "related_components": [
+          "std::array",
+          "std::deque",
+          "std::list"
+        ],
+        "thread_safety": "not thread-safe",
+        "memory_model": "contiguous",
+        "ingestion_timestamp": "2025-09-24T23:26:21.847495"
+      },
+      "knowledge_graph": {
+        "entity": "std::vector",
+        "category": "container",
+        "properties": {
+          "complexity": {
+            "access": "O(1)",
+            "insert_end": "amortized O(1)",
+            "insert_middle": "O(n)",
+            "erase_middle": "O(n)"
+          },
+          "thread_safety": "not thread-safe",
+          "memory_model": "contiguous"
+        },
+        "relationships": {
+          "related_to": [
+            "std::array",
+            "std::deque",
+            "std::list"
+          ],
+          "used_for": [
+            "Dynamic array storage",
+            "Fast random access",
+            "Frequent insertions at end"
+          ]
+        },
+        "examples": [
+          "std::vector<int> v = {1, 2, 3};",
+          "v.push_back(4);",
+          "int value = v[0];"
+        ]
+      },
+      "reasoning_patterns": [
+        {
+          "trigger": "need fast access",
+          "reasoning": "std::vector provides O(1) access",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "need fast insert_end",
+          "reasoning": "std::vector provides O(1) insert_end",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "dynamic array storage",
+          "reasoning": "std::vector is suitable for Dynamic array storage",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "fast random access",
+          "reasoning": "std::vector is suitable for Fast random access",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "frequent insertions at end",
+          "reasoning": "std::vector is suitable for Frequent insertions at end",
+          "confidence": 0.7
+        }
+      ],
+      "code_generation_templates": [
+        {
+          "template": "std::vector<int> v = {1, 2, 3};",
+          "context": "container usage",
+          "complexity": {
+            "access": "O(1)",
+            "insert_end": "amortized O(1)",
+            "insert_middle": "O(n)",
+            "erase_middle": "O(n)"
+          },
+          "description": "Generated std::vector usage pattern"
+        },
+        {
+          "template": "v.push_back(4);",
+          "context": "container usage",
+          "complexity": {
+            "access": "O(1)",
+            "insert_end": "amortized O(1)",
+            "insert_middle": "O(n)",
+            "erase_middle": "O(n)"
+          },
+          "description": "Generated std::vector usage pattern"
+        },
+        {
+          "template": "int value = v[0];",
+          "context": "container usage",
+          "complexity": {
+            "access": "O(1)",
+            "insert_end": "amortized O(1)",
+            "insert_middle": "O(n)",
+            "erase_middle": "O(n)"
+          },
+          "description": "Generated std::vector usage pattern"
+        }
+      ]
+    },
+    "std::map": {
+      "component": {
+        "name": "std::map",
+        "category": "container",
+        "description": "Sorted associative container with unique keys",
+        "complexity": {
+          "access": "O(log n)",
+          "insert": "O(log n)",
+          "erase": "O(log n)"
+        },
+        "usage_patterns": [
+          "Ordered key-value storage",
+          "Fast lookups with ordering",
+          "Unique key requirements"
+        ],
+        "code_examples": [
+          "std::map<std::string, int> m;",
+          "m[\"key\"] = 42;",
+          "auto it = m.find(\"key\");"
+        ],
+        "related_components": [
+          "std::unordered_map",
+          "std::set",
+          "std::multimap"
+        ],
+        "thread_safety": "not thread-safe",
+        "memory_model": "node-based",
+        "ingestion_timestamp": "2025-09-24T23:26:21.847495"
+      },
+      "knowledge_graph": {
+        "entity": "std::map",
+        "category": "container",
+        "properties": {
+          "complexity": {
+            "access": "O(log n)",
+            "insert": "O(log n)",
+            "erase": "O(log n)"
+          },
+          "thread_safety": "not thread-safe",
+          "memory_model": "node-based"
+        },
+        "relationships": {
+          "related_to": [
+            "std::unordered_map",
+            "std::set",
+            "std::multimap"
+          ],
+          "used_for": [
+            "Ordered key-value storage",
+            "Fast lookups with ordering",
+            "Unique key requirements"
+          ]
+        },
+        "examples": [
+          "std::map<std::string, int> m;",
+          "m[\"key\"] = 42;",
+          "auto it = m.find(\"key\");"
+        ]
+      },
+      "reasoning_patterns": [
+        {
+          "trigger": "need ordered access",
+          "reasoning": "std::map provides O(log n) access",
+          "confidence": 0.8
+        },
+        {
+          "trigger": "need ordered insert",
+          "reasoning": "std::map provides O(log n) insert",
+          "confidence": 0.8
+        },
+        {
+          "trigger": "need ordered erase",
+          "reasoning": "std::map provides O(log n) erase",
+          "confidence": 0.8
+        },
+        {
+          "trigger": "ordered key-value storage",
+          "reasoning": "std::map is suitable for Ordered key-value storage",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "fast lookups with ordering",
+          "reasoning": "std::map is suitable for Fast lookups with ordering",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "unique key requirements",
+          "reasoning": "std::map is suitable for Unique key requirements",
+          "confidence": 0.7
+        }
+      ],
+      "code_generation_templates": [
+        {
+          "template": "std::map<std::string, int> m;",
+          "context": "container usage",
+          "complexity": {
+            "access": "O(log n)",
+            "insert": "O(log n)",
+            "erase": "O(log n)"
+          },
+          "description": "Generated std::map usage pattern"
+        },
+        {
+          "template": "m[\"key\"] = 42;",
+          "context": "container usage",
+          "complexity": {
+            "access": "O(log n)",
+            "insert": "O(log n)",
+            "erase": "O(log n)"
+          },
+          "description": "Generated std::map usage pattern"
+        },
+        {
+          "template": "auto it = m.find(\"key\");",
+          "context": "container usage",
+          "complexity": {
+            "access": "O(log n)",
+            "insert": "O(log n)",
+            "erase": "O(log n)"
+          },
+          "description": "Generated std::map usage pattern"
+        }
+      ]
+    },
+    "std::unordered_map": {
+      "component": {
+        "name": "std::unordered_map",
+        "category": "container",
+        "description": "Unordered associative container with unique keys",
+        "complexity": {
+          "access": "average O(1), worst O(n)",
+          "insert": "average O(1), worst O(n)",
+          "erase": "average O(1), worst O(n)"
+        },
+        "usage_patterns": [
+          "Fast key-value lookups",
+          "No ordering requirements",
+          "Hash-based access"
+        ],
+        "code_examples": [
+          "std::unordered_map<std::string, int> um;",
+          "um[\"key\"] = 42;",
+          "auto it = um.find(\"key\");"
+        ],
+        "related_components": [
+          "std::map",
+          "std::unordered_set",
+          "std::unordered_multimap"
+        ],
+        "thread_safety": "not thread-safe",
+        "memory_model": "hash table",
+        "ingestion_timestamp": "2025-09-24T23:26:21.847495"
+      },
+      "knowledge_graph": {
+        "entity": "std::unordered_map",
+        "category": "container",
+        "properties": {
+          "complexity": {
+            "access": "average O(1), worst O(n)",
+            "insert": "average O(1), worst O(n)",
+            "erase": "average O(1), worst O(n)"
+          },
+          "thread_safety": "not thread-safe",
+          "memory_model": "hash table"
+        },
+        "relationships": {
+          "related_to": [
+            "std::map",
+            "std::unordered_set",
+            "std::unordered_multimap"
+          ],
+          "used_for": [
+            "Fast key-value lookups",
+            "No ordering requirements",
+            "Hash-based access"
+          ]
+        },
+        "examples": [
+          "std::unordered_map<std::string, int> um;",
+          "um[\"key\"] = 42;",
+          "auto it = um.find(\"key\");"
+        ]
+      },
+      "reasoning_patterns": [
+        {
+          "trigger": "need fast access",
+          "reasoning": "std::unordered_map provides O(1) access",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "need fast insert",
+          "reasoning": "std::unordered_map provides O(1) insert",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "need fast erase",
+          "reasoning": "std::unordered_map provides O(1) erase",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "fast key-value lookups",
+          "reasoning": "std::unordered_map is suitable for Fast key-value lookups",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "no ordering requirements",
+          "reasoning": "std::unordered_map is suitable for No ordering requirements",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "hash-based access",
+          "reasoning": "std::unordered_map is suitable for Hash-based access",
+          "confidence": 0.7
+        }
+      ],
+      "code_generation_templates": [
+        {
+          "template": "std::unordered_map<std::string, int> um;",
+          "context": "container usage",
+          "complexity": {
+            "access": "average O(1), worst O(n)",
+            "insert": "average O(1), worst O(n)",
+            "erase": "average O(1), worst O(n)"
+          },
+          "description": "Generated std::unordered_map usage pattern"
+        },
+        {
+          "template": "um[\"key\"] = 42;",
+          "context": "container usage",
+          "complexity": {
+            "access": "average O(1), worst O(n)",
+            "insert": "average O(1), worst O(n)",
+            "erase": "average O(1), worst O(n)"
+          },
+          "description": "Generated std::unordered_map usage pattern"
+        },
+        {
+          "template": "auto it = um.find(\"key\");",
+          "context": "container usage",
+          "complexity": {
+            "access": "average O(1), worst O(n)",
+            "insert": "average O(1), worst O(n)",
+            "erase": "average O(1), worst O(n)"
+          },
+          "description": "Generated std::unordered_map usage pattern"
+        }
+      ]
+    },
+    "std::sort": {
+      "component": {
+        "name": "std::sort",
+        "category": "algorithm",
+        "description": "Sorts elements in range using operator<",
+        "complexity": {
+          "average": "O(n log n)",
+          "worst": "O(n log n)",
+          "best": "O(n)"
+        },
+        "usage_patterns": [
+          "Sorting collections",
+          "Preparing data for binary search",
+          "Ordering requirements"
+        ],
+        "code_examples": [
+          "std::vector<int> v = {3, 1, 4, 1, 5};",
+          "std::sort(v.begin(), v.end());",
+          "std::sort(v.begin(), v.end(), std::greater<int>());"
+        ],
+        "related_components": [
+          "std::stable_sort",
+          "std::partial_sort",
+          "std::nth_element"
+        ],
+        "thread_safety": "can be used with parallel execution policies",
+        "memory_model": "in-place",
+        "ingestion_timestamp": "2025-09-24T23:26:21.847495"
+      },
+      "knowledge_graph": {
+        "entity": "std::sort",
+        "category": "algorithm",
+        "properties": {
+          "complexity": {
+            "average": "O(n log n)",
+            "worst": "O(n log n)",
+            "best": "O(n)"
+          },
+          "thread_safety": "can be used with parallel execution policies",
+          "memory_model": "in-place"
+        },
+        "relationships": {
+          "related_to": [
+            "std::stable_sort",
+            "std::partial_sort",
+            "std::nth_element"
+          ],
+          "used_for": [
+            "Sorting collections",
+            "Preparing data for binary search",
+            "Ordering requirements"
+          ]
+        },
+        "examples": [
+          "std::vector<int> v = {3, 1, 4, 1, 5};",
+          "std::sort(v.begin(), v.end());",
+          "std::sort(v.begin(), v.end(), std::greater<int>());"
+        ]
+      },
+      "reasoning_patterns": [
+        {
+          "trigger": "sorting collections",
+          "reasoning": "std::sort is suitable for Sorting collections",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "preparing data for binary search",
+          "reasoning": "std::sort is suitable for Preparing data for binary search",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "ordering requirements",
+          "reasoning": "std::sort is suitable for Ordering requirements",
+          "confidence": 0.7
+        }
+      ],
+      "code_generation_templates": [
+        {
+          "template": "std::vector<int> v = {3, 1, 4, 1, 5};",
+          "context": "algorithm usage",
+          "complexity": {
+            "average": "O(n log n)",
+            "worst": "O(n log n)",
+            "best": "O(n)"
+          },
+          "description": "Generated std::sort usage pattern"
+        },
+        {
+          "template": "std::sort(v.begin(), v.end());",
+          "context": "algorithm usage",
+          "complexity": {
+            "average": "O(n log n)",
+            "worst": "O(n log n)",
+            "best": "O(n)"
+          },
+          "description": "Generated std::sort usage pattern"
+        },
+        {
+          "template": "std::sort(v.begin(), v.end(), std::greater<int>());",
+          "context": "algorithm usage",
+          "complexity": {
+            "average": "O(n log n)",
+            "worst": "O(n log n)",
+            "best": "O(n)"
+          },
+          "description": "Generated std::sort usage pattern"
+        }
+      ]
+    },
+    "std::unique_ptr": {
+      "component": {
+        "name": "std::unique_ptr",
+        "category": "smart_pointer",
+        "description": "Exclusive ownership smart pointer",
+        "complexity": {
+          "construction": "O(1)",
+          "destruction": "O(1)",
+          "dereference": "O(1)"
+        },
+        "usage_patterns": [
+          "Exclusive resource ownership",
+          "RAII resource management",
+          "Preventing memory leaks"
+        ],
+        "code_examples": [
+          "std::unique_ptr<int> ptr = std::make_unique<int>(42);",
+          "int value = *ptr;",
+          "auto moved_ptr = std::move(ptr);"
+        ],
+        "related_components": [
+          "std::shared_ptr",
+          "std::weak_ptr",
+          "std::auto_ptr"
+        ],
+        "thread_safety": "not thread-safe",
+        "memory_model": "exclusive ownership",
+        "ingestion_timestamp": "2025-09-24T23:26:21.847495"
+      },
+      "knowledge_graph": {
+        "entity": "std::unique_ptr",
+        "category": "smart_pointer",
+        "properties": {
+          "complexity": {
+            "construction": "O(1)",
+            "destruction": "O(1)",
+            "dereference": "O(1)"
+          },
+          "thread_safety": "not thread-safe",
+          "memory_model": "exclusive ownership"
+        },
+        "relationships": {
+          "related_to": [
+            "std::shared_ptr",
+            "std::weak_ptr",
+            "std::auto_ptr"
+          ],
+          "used_for": [
+            "Exclusive resource ownership",
+            "RAII resource management",
+            "Preventing memory leaks"
+          ]
+        },
+        "examples": [
+          "std::unique_ptr<int> ptr = std::make_unique<int>(42);",
+          "int value = *ptr;",
+          "auto moved_ptr = std::move(ptr);"
+        ]
+      },
+      "reasoning_patterns": [
+        {
+          "trigger": "need fast construction",
+          "reasoning": "std::unique_ptr provides O(1) construction",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "need fast destruction",
+          "reasoning": "std::unique_ptr provides O(1) destruction",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "need fast dereference",
+          "reasoning": "std::unique_ptr provides O(1) dereference",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "exclusive resource ownership",
+          "reasoning": "std::unique_ptr is suitable for Exclusive resource ownership",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "raii resource management",
+          "reasoning": "std::unique_ptr is suitable for RAII resource management",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "preventing memory leaks",
+          "reasoning": "std::unique_ptr is suitable for Preventing memory leaks",
+          "confidence": 0.7
+        }
+      ],
+      "code_generation_templates": [
+        {
+          "template": "std::unique_ptr<int> ptr = std::make_unique<int>(42);",
+          "context": "smart_pointer usage",
+          "complexity": {
+            "construction": "O(1)",
+            "destruction": "O(1)",
+            "dereference": "O(1)"
+          },
+          "description": "Generated std::unique_ptr usage pattern"
+        },
+        {
+          "template": "int value = *ptr;",
+          "context": "smart_pointer usage",
+          "complexity": {
+            "construction": "O(1)",
+            "destruction": "O(1)",
+            "dereference": "O(1)"
+          },
+          "description": "Generated std::unique_ptr usage pattern"
+        },
+        {
+          "template": "auto moved_ptr = std::move(ptr);",
+          "context": "smart_pointer usage",
+          "complexity": {
+            "construction": "O(1)",
+            "destruction": "O(1)",
+            "dereference": "O(1)"
+          },
+          "description": "Generated std::unique_ptr usage pattern"
+        }
+      ]
+    },
+    "std::thread": {
+      "component": {
+        "name": "std::thread",
+        "category": "concurrency",
+        "description": "Represents a single thread of execution",
+        "complexity": {
+          "creation": "O(1)",
+          "join": "O(1)",
+          "detach": "O(1)"
+        },
+        "usage_patterns": [
+          "Parallel execution",
+          "Asynchronous operations",
+          "CPU-bound task parallelism"
+        ],
+        "code_examples": [
+          "std::thread t([]{ std::cout << \"Hello from thread\"; });",
+          "t.join();",
+          "std::thread t2(func, arg1, arg2);"
+        ],
+        "related_components": [
+          "std::mutex",
+          "std::condition_variable",
+          "std::atomic"
+        ],
+        "thread_safety": "thread-safe operations",
+        "memory_model": "system thread",
+        "ingestion_timestamp": "2025-09-24T23:26:21.847495"
+      },
+      "knowledge_graph": {
+        "entity": "std::thread",
+        "category": "concurrency",
+        "properties": {
+          "complexity": {
+            "creation": "O(1)",
+            "join": "O(1)",
+            "detach": "O(1)"
+          },
+          "thread_safety": "thread-safe operations",
+          "memory_model": "system thread"
+        },
+        "relationships": {
+          "related_to": [
+            "std::mutex",
+            "std::condition_variable",
+            "std::atomic"
+          ],
+          "used_for": [
+            "Parallel execution",
+            "Asynchronous operations",
+            "CPU-bound task parallelism"
+          ]
+        },
+        "examples": [
+          "std::thread t([]{ std::cout << \"Hello from thread\"; });",
+          "t.join();",
+          "std::thread t2(func, arg1, arg2);"
+        ]
+      },
+      "reasoning_patterns": [
+        {
+          "trigger": "need fast creation",
+          "reasoning": "std::thread provides O(1) creation",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "need fast join",
+          "reasoning": "std::thread provides O(1) join",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "need fast detach",
+          "reasoning": "std::thread provides O(1) detach",
+          "confidence": 0.9
+        },
+        {
+          "trigger": "parallel execution",
+          "reasoning": "std::thread is suitable for Parallel execution",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "asynchronous operations",
+          "reasoning": "std::thread is suitable for Asynchronous operations",
+          "confidence": 0.7
+        },
+        {
+          "trigger": "cpu-bound task parallelism",
+          "reasoning": "std::thread is suitable for CPU-bound task parallelism",
+          "confidence": 0.7
+        }
+      ],
+      "code_generation_templates": [
+        {
+          "template": "std::thread t([]{ std::cout << \"Hello from thread\"; });",
+          "context": "concurrency usage",
+          "complexity": {
+            "creation": "O(1)",
+            "join": "O(1)",
+            "detach": "O(1)"
+          },
+          "description": "Generated std::thread usage pattern"
+        },
+        {
+          "template": "t.join();",
+          "context": "concurrency usage",
+          "complexity": {
+            "creation": "O(1)",
+            "join": "O(1)",
+            "detach": "O(1)"
+          },
+          "description": "Generated std::thread usage pattern"
+        },
+        {
+          "template": "std::thread t2(func, arg1, arg2);",
+          "context": "concurrency usage",
+          "complexity": {
+            "creation": "O(1)",
+            "join": "O(1)",
+            "detach": "O(1)"
+          },
+          "description": "Generated std::thread usage pattern"
+        }
+      ]
+    }
+  }
+}

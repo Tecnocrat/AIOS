@@ -43,7 +43,7 @@ AIOS VSCode Startup Task Architecture/
 └── Context Sources (Multiple formats)
     ├── .aios_context.json (machine-readable)
     ├── docs/AIOS/AIOS_CONTEXT.md (human-readable)
-    ├── .vscode/AI_CONTEXT_AUTO_LOAD.md (VSCode-specific)
+    ├── docs/AIOS/AI_CONTEXT_AUTO_LOAD.md (VSCode-specific)
     └── .github/chatmodes/aios.chatmode.md (GitHub Copilot rules)
 ```
 
@@ -131,7 +131,7 @@ if ($extensionActive -eq "true" -and $contextLoaded -eq "true" -and -not $ForceL
 $contextFiles = @(
     ".aios_context.json",
     "docs/AIOS/AIOS_CONTEXT.md", 
-    ".vscode/AI_CONTEXT_AUTO_LOAD.md",
+    "docs/AIOS/AI_CONTEXT_AUTO_LOAD.md",
     ".github/chatmodes/aios.chatmode.md"
 )
 
@@ -218,7 +218,7 @@ export class AIOSContextManager {
         return {
             aiContext: await this.loadFile('.aios_context.json'),
             humanReadableContext: await this.loadFile('docs/AIOS/AIOS_CONTEXT.md'),
-            vscodeSpecificContext: await this.loadFile('.vscode/AI_CONTEXT_AUTO_LOAD.md'),
+            vscodeSpecificContext: await this.loadFile('docs/AIOS/AI_CONTEXT_AUTO_LOAD.md'),
             githubCopilotRules: await this.loadFile('.github/chatmodes/aios.chatmode.md'),
             spatialMetadata: await this.loadSpatialMetadata()
         };

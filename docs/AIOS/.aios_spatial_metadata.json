@@ -1,6 +1,6 @@
 {
   "spatial_metadata_version": "1.0.0",
-  "generation_timestamp": "2025-09-22T15:32:20.932063",
+  "generation_timestamp": "2025-09-23T08:37:32.102909",
   "folder_info": {
     "name": "AIOS",
     "absolute_path": "c:\\dev\\AIOS\\docs\\AIOS",
@@ -42,8 +42,8 @@
       "reports"
     ],
     "spatial_metrics": {
-      "total_size_bytes": 2622277,
-      "file_count": 91,
+      "total_size_bytes": 2649137,
+      "file_count": 95,
       "folder_count": 4,
       "size_category": "medium"
     },
@@ -58,8 +58,8 @@
       ".json": [
         {
           "name": ".aios_spatial_metadata.json",
-          "size": 9874,
-          "modified": "2025-09-21T13:01:22.838892",
+          "size": 13458,
+          "modified": "2025-09-23T08:34:46.785355",
           "category": "documentation"
         },
         {
@@ -101,9 +101,27 @@
           "category": "documentation"
         },
         {
+          "name": "AIOS_AGENT.md",
+          "size": 8994,
+          "modified": "2025-09-21T13:01:19.510303",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_ARCHITECTURE_REFERENCE.md",
+          "size": 5836,
+          "modified": "2025-09-21T13:01:19.496198",
+          "category": "documentation"
+        },
+        {
           "name": "AIOS_CHAT_MODE.md",
           "size": 7074,
           "modified": "2025-09-21T13:01:22.840901",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CONSCIOUSNESS_BRIDGE.md",
+          "size": 6627,
+          "modified": "2025-09-21T13:01:19.512311",
           "category": "documentation"
         },
         {
@@ -176,6 +194,12 @@
           "name": "ai_agent_behavioral_patterns.md",
           "size": 725,
           "modified": "2025-09-21T13:01:22.941128",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_CONTEXT_AUTO_LOAD.md",
+          "size": 1819,
+          "modified": "2025-09-21T13:01:19.516801",
           "category": "documentation"
         },
         {
@@ -267,14 +291,32 @@
     "important_files": [
       {
         "name": ".aios_spatial_metadata.json",
-        "size": 9874,
-        "modified": "2025-09-21T13:01:22.838892",
+        "size": 13458,
+        "modified": "2025-09-23T08:34:46.785355",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_AGENT.md",
+        "size": 8994,
+        "modified": "2025-09-21T13:01:19.510303",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_ARCHITECTURE_REFERENCE.md",
+        "size": 5836,
+        "modified": "2025-09-21T13:01:19.496198",
         "category": "documentation"
       },
       {
         "name": "AIOS_CHAT_MODE.md",
         "size": 7074,
         "modified": "2025-09-21T13:01:22.840901",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CONSCIOUSNESS_BRIDGE.md",
+        "size": 6627,
+        "modified": "2025-09-21T13:01:19.512311",
         "category": "documentation"
       },
       {
@@ -306,27 +348,15 @@
         "size": 3521,
         "modified": "2025-09-21T13:01:22.850570",
         "category": "documentation"
-      },
-      {
-        "name": "AIOS_VSCODE_INTEGRATION_ARCHITECTURE.md",
-        "size": 10522,
-        "modified": "2025-09-21T13:01:22.858835",
-        "category": "documentation"
-      },
-      {
-        "name": "AIOS_VSCODE_INTEGRATION_CONSOLIDATION_REPORT.md",
-        "size": 12116,
-        "modified": "2025-09-21T13:01:22.861439",
-        "category": "documentation"
-      },
-      {
-        "name": "AIOS_VSCODE_SAVE_ANALYSIS.md",
-        "size": 6202,
-        "modified": "2025-09-21T13:01:22.863840",
-        "category": "documentation"
       }
     ],
     "recent_files": [
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 13458,
+        "modified": "2025-09-23T08:34:46.785355",
+        "category": "documentation"
+      },
       {
         "name": "AIOS_VSCODE_STARTUP_TASK_SYSTEM.md",
         "size": 13316,
@@ -380,16 +410,10 @@
         "size": 737,
         "modified": "2025-09-21T13:01:22.939565",
         "category": "documentation"
-      },
-      {
-        "name": "STRATEGIC_DEVELOPMENT_PATH_2025_2026.md",
-        "size": 11101,
-        "modified": "2025-09-21T13:01:22.935530",
-        "category": "documentation"
       }
     ],
     "content_summary": {
-      "total_files": 34,
+      "total_files": 38,
       "file_types": [
         ".json",
         ".md"
@@ -399,9 +423,9 @@
   },
   "consciousness_metrics": {
     "consciousness_indicators": {
-      "ai_files": 52,
-      "consciousness_files": 4,
-      "agentic_files": 4,
+      "ai_files": 56,
+      "consciousness_files": 5,
+      "agentic_files": 5,
       "intelligence_files": 4
     },
     "consciousness_score": 100,
@@ -437,7 +461,7 @@
       "ai\\docs",
       "tachyonic\\docs_archive",
       "vscode-extension\\docs",
-      "ai\\information_storage\\docs",
+      "ai\\core\\docs",
       "aios_env"
     ]
   },

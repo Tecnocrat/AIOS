@@ -1,0 +1,225 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-23T08:37:23.618131",
+  "folder_info": {
+    "name": ".vscode",
+    "absolute_path": "c:\\dev\\AIOS\\.vscode",
+    "relative_path": ".vscode",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      ".vscode"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "backups",
+      "build",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 42561,
+      "file_count": 9,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".ps1": [
+        {
+          "name": "ai-context-auto-loader.ps1",
+          "size": 3467,
+          "modified": "2025-09-21T13:01:19.518593",
+          "category": "consciousness"
+        },
+        {
+          "name": "configure-vscode-autolaunch.ps1",
+          "size": 7202,
+          "modified": "2025-09-21T13:01:19.534238",
+          "category": "consciousness"
+        }
+      ],
+      ".json": [
+        {
+          "name": "ai_refactoring_settings.json",
+          "size": 376,
+          "modified": "2025-09-21T13:01:19.526733",
+          "category": "documentation"
+        },
+        {
+          "name": "auto-launch.json",
+          "size": 1354,
+          "modified": "2025-09-21T13:01:19.530791",
+          "category": "documentation"
+        },
+        {
+          "name": "extensions.json",
+          "size": 861,
+          "modified": "2025-09-21T13:01:19.542081",
+          "category": "documentation"
+        },
+        {
+          "name": "launch.json",
+          "size": 4351,
+          "modified": "2025-08-20T11:48:43.322776",
+          "category": "documentation"
+        },
+        {
+          "name": "mcp.json",
+          "size": 36,
+          "modified": "2025-08-02T17:33:13.460500",
+          "category": "documentation"
+        },
+        {
+          "name": "settings.json",
+          "size": 8729,
+          "modified": "2025-09-23T08:30:49.152570",
+          "category": "documentation"
+        },
+        {
+          "name": "tasks.json",
+          "size": 16185,
+          "modified": "2025-09-22T22:11:29.839344",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "configure-vscode-autolaunch.ps1",
+        "size": 7202,
+        "modified": "2025-09-21T13:01:19.534238",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "settings.json",
+        "size": 8729,
+        "modified": "2025-09-23T08:30:49.152570",
+        "category": "documentation"
+      },
+      {
+        "name": "tasks.json",
+        "size": 16185,
+        "modified": "2025-09-22T22:11:29.839344",
+        "category": "documentation"
+      },
+      {
+        "name": "extensions.json",
+        "size": 861,
+        "modified": "2025-09-21T13:01:19.542081",
+        "category": "documentation"
+      },
+      {
+        "name": "configure-vscode-autolaunch.ps1",
+        "size": 7202,
+        "modified": "2025-09-21T13:01:19.534238",
+        "category": "consciousness"
+      },
+      {
+        "name": "auto-launch.json",
+        "size": 1354,
+        "modified": "2025-09-21T13:01:19.530791",
+        "category": "documentation"
+      },
+      {
+        "name": "ai_refactoring_settings.json",
+        "size": 376,
+        "modified": "2025-09-21T13:01:19.526733",
+        "category": "documentation"
+      },
+      {
+        "name": "ai-context-auto-loader.ps1",
+        "size": 3467,
+        "modified": "2025-09-21T13:01:19.518593",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 9,
+      "file_types": [
+        ".ps1",
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [
+      "ai_refactoring_settings.json",
+      "configure-vscode-autolaunch.ps1",
+      "settings.json"
+    ],
+    "breadcrumb_path": ".vscode",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'c:\\dev\\AIOS\\.vscode' -Recurse",
+      "find_python": "Get-ChildItem 'c:\\dev\\AIOS\\.vscode' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'c:\\dev\\AIOS\\.vscode' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core\\.vscode",
+      "orchestrator\\.vscode",
+      "vscode-extension\\node_modules\\node-sarif-builder\\.vscode"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": false
+  }
+}

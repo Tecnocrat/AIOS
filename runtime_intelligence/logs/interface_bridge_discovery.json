@@ -1,6 +1,6 @@
 {
-  "discovery_timestamp": "2025-09-21T14:57:51.280025",
-  "total_tools": 14,
+  "discovery_timestamp": "2025-09-24T21:18:25.101942",
+  "total_tools": 15,
   "tools": [
     {
       "name": "ai_cell_manager",
@@ -39,7 +39,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "ai_engine_handoff",
@@ -79,7 +79,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "tensorflow_training_cell",
@@ -118,7 +118,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "aios_context_registry_validator",
@@ -128,8 +128,8 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "analysis",
-        "automation"
+        "automation",
+        "analysis"
       ],
       "parameters": [
         {
@@ -150,7 +150,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "cross_pollination_automator",
@@ -160,10 +160,10 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
+        "automation",
         "process_automation",
-        "ai_collaboration",
         "analysis",
-        "automation"
+        "ai_collaboration"
       ],
       "parameters": [
         {
@@ -184,7 +184,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "fix_e501_",
@@ -194,8 +194,8 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "analysis",
-        "automation"
+        "automation",
+        "analysis"
       ],
       "parameters": [
         {
@@ -216,7 +216,41 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
+    },
+    {
+      "name": "conversation_processor_tool",
+      "display_name": "Conversation Processor Tool",
+      "description": "AIOS Conversation Processor Tool Enhanced conversation archiving and analysis tool based on chatgpt_integration Provides multi-format conversation processing, archiving, and iteration management",
+      "category": "tool",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "data_analysis",
+        "automation",
+        "analysis"
+      ],
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true,
+          "description": "Operation to perform",
+          "example": "extract_knowledge"
+        }
+      ],
+      "output_formats": [
+        "json",
+        "csv"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "recursive_tooling",
@@ -226,8 +260,8 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "analysis",
-        "automation"
+        "automation",
+        "analysis"
       ],
       "parameters": [
         {
@@ -248,7 +282,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "start_server",
@@ -258,8 +292,8 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "background_processing",
-        "api_endpoints"
+        "api_endpoints",
+        "background_processing"
       ],
       "parameters": [
         {
@@ -280,7 +314,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "aios_vscode_integration_server",
@@ -312,7 +346,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "mcp_server",
@@ -322,8 +356,8 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "background_processing",
-        "api_endpoints"
+        "api_endpoints",
+        "background_processing"
       ],
       "parameters": [
         {
@@ -344,7 +378,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "aios_cross_dialogue_intelligence",
@@ -376,7 +410,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "ai_agent_bridge",
@@ -408,7 +442,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "ai_engine_context_enforcer",
@@ -440,7 +474,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     },
     {
       "name": "membrane_intelligence",
@@ -472,7 +506,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-21T14:57:51.280025"
+      "metadata_generated": "2025-09-24T21:18:25.101942"
     }
   ],
   "server_status": "running",

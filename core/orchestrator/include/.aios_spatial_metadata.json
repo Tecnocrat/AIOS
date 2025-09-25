@@ -1,0 +1,339 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:30:41.798900",
+  "folder_info": {
+    "name": "include",
+    "absolute_path": "C:\\dev\\AIOS\\orchestrator\\include",
+    "relative_path": "orchestrator\\include",
+    "parent_path": "orchestrator",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "orchestrator",
+      "include"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "archive",
+      "build",
+      "src"
+    ],
+    "child_folders": [
+      "nlohmann"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 1102196,
+      "file_count": 29,
+      "folder_count": 1,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".hpp": [
+        {
+          "name": "AIOrchestrationController.hpp",
+          "size": 6225,
+          "modified": "2025-09-07T04:40:40.449622",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIOSConsciousnessEngine.hpp",
+          "size": 11286,
+          "modified": "2025-09-15T22:02:16.833134",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIOSIntelligentDebugging.hpp",
+          "size": 10120,
+          "modified": "2025-09-15T22:02:16.855130",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIOSMathematicalConsciousness.hpp",
+          "size": 3878,
+          "modified": "2025-09-15T22:02:16.881130",
+          "category": "consciousness"
+        },
+        {
+          "name": "AtomicHolographyUnit.hpp",
+          "size": 1879,
+          "modified": "2025-09-15T22:02:16.898134",
+          "category": "consciousness"
+        },
+        {
+          "name": "CenterGeometryField.hpp",
+          "size": 7260,
+          "modified": "2025-08-02T17:32:45.391340",
+          "category": "consciousness"
+        },
+        {
+          "name": "CodeEvolutionEngine.hpp",
+          "size": 6042,
+          "modified": "2025-08-02T17:32:45.391340",
+          "category": "consciousness"
+        },
+        {
+          "name": "FractalSyncBus.hpp",
+          "size": 742,
+          "modified": "2025-09-15T22:02:16.972133",
+          "category": "consciousness"
+        },
+        {
+          "name": "IIPCManager.hpp",
+          "size": 306,
+          "modified": "2025-08-02T17:32:45.395099",
+          "category": "consciousness"
+        },
+        {
+          "name": "IntelligentMetadataAbstractor.hpp",
+          "size": 7882,
+          "modified": "2025-08-02T17:32:45.399118",
+          "category": "consciousness"
+        },
+        {
+          "name": "IPCManager.hpp",
+          "size": 600,
+          "modified": "2025-08-02T17:32:45.397110",
+          "category": "consciousness"
+        },
+        {
+          "name": "MathConstants.hpp",
+          "size": 906,
+          "modified": "2025-08-02T17:32:45.399118",
+          "category": "consciousness"
+        },
+        {
+          "name": "NaturalLanguageInterface.hpp",
+          "size": 5501,
+          "modified": "2025-08-02T17:32:45.399118",
+          "category": "consciousness"
+        },
+        {
+          "name": "QuantumMemoryTransfer.hpp",
+          "size": 10115,
+          "modified": "2025-09-15T22:02:17.292556",
+          "category": "consciousness"
+        },
+        {
+          "name": "QuantumRandomGenerator.hpp",
+          "size": 3828,
+          "modified": "2025-08-02T17:32:45.401126",
+          "category": "consciousness"
+        },
+        {
+          "name": "RecursiveSelfIngestor.hpp",
+          "size": 6715,
+          "modified": "2025-08-02T17:32:45.403135",
+          "category": "consciousness"
+        },
+        {
+          "name": "SingularityCore.hpp",
+          "size": 3623,
+          "modified": "2025-09-15T22:02:17.433546",
+          "category": "consciousness"
+        },
+        {
+          "name": "SphereShellManager.hpp",
+          "size": 8954,
+          "modified": "2025-08-02T17:32:45.403135",
+          "category": "consciousness"
+        },
+        {
+          "name": "SubspaceProjector.hpp",
+          "size": 468,
+          "modified": "2025-08-02T17:32:45.405142",
+          "category": "consciousness"
+        },
+        {
+          "name": "TachyonicFieldDatabase.hpp",
+          "size": 9132,
+          "modified": "2025-08-02T17:32:45.405142",
+          "category": "consciousness"
+        },
+        {
+          "name": "UniversalConsciousnessSubstrate.hpp",
+          "size": 8046,
+          "modified": "2025-08-02T17:32:45.405142",
+          "category": "consciousness"
+        }
+      ],
+      ".h": [
+        {
+          "name": "HealthMonitor.h",
+          "size": 183,
+          "modified": "2025-08-02T17:32:45.393348",
+          "category": "consciousness"
+        },
+        {
+          "name": "IHealthMonitor.h",
+          "size": 580,
+          "modified": "2025-08-02T17:32:45.393348",
+          "category": "consciousness"
+        },
+        {
+          "name": "IIPCManager.h",
+          "size": 703,
+          "modified": "2025-08-02T17:32:45.395099",
+          "category": "consciousness"
+        },
+        {
+          "name": "IPCManager.h",
+          "size": 1167,
+          "modified": "2025-08-02T17:32:45.395099",
+          "category": "consciousness"
+        },
+        {
+          "name": "IPluginLoader.h",
+          "size": 642,
+          "modified": "2025-08-02T17:32:45.397110",
+          "category": "consciousness"
+        },
+        {
+          "name": "IService.h",
+          "size": 142,
+          "modified": "2025-08-02T17:32:45.397110",
+          "category": "consciousness"
+        },
+        {
+          "name": "PluginLoader.h",
+          "size": 325,
+          "modified": "2025-08-02T17:32:45.401126",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOSConsciousnessEngine.hpp",
+        "size": 11286,
+        "modified": "2025-09-15T22:02:16.833134",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOSIntelligentDebugging.hpp",
+        "size": 10120,
+        "modified": "2025-09-15T22:02:16.855130",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOSMathematicalConsciousness.hpp",
+        "size": 3878,
+        "modified": "2025-09-15T22:02:16.881130",
+        "category": "consciousness"
+      },
+      {
+        "name": "SingularityCore.hpp",
+        "size": 3623,
+        "modified": "2025-09-15T22:02:17.433546",
+        "category": "consciousness"
+      },
+      {
+        "name": "UniversalConsciousnessSubstrate.hpp",
+        "size": 8046,
+        "modified": "2025-08-02T17:32:45.405142",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "SingularityCore.hpp",
+        "size": 3623,
+        "modified": "2025-09-15T22:02:17.433546",
+        "category": "consciousness"
+      },
+      {
+        "name": "QuantumMemoryTransfer.hpp",
+        "size": 10115,
+        "modified": "2025-09-15T22:02:17.292556",
+        "category": "consciousness"
+      },
+      {
+        "name": "FractalSyncBus.hpp",
+        "size": 742,
+        "modified": "2025-09-15T22:02:16.972133",
+        "category": "consciousness"
+      },
+      {
+        "name": "AtomicHolographyUnit.hpp",
+        "size": 1879,
+        "modified": "2025-09-15T22:02:16.898134",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOSMathematicalConsciousness.hpp",
+        "size": 3878,
+        "modified": "2025-09-15T22:02:16.881130",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOSIntelligentDebugging.hpp",
+        "size": 10120,
+        "modified": "2025-09-15T22:02:16.855130",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOSConsciousnessEngine.hpp",
+        "size": 11286,
+        "modified": "2025-09-15T22:02:16.833134",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOrchestrationController.hpp",
+        "size": 6225,
+        "modified": "2025-09-07T04:40:40.449622",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 28,
+      "file_types": [
+        ".hpp",
+        ".h"
+      ],
+      "dominant_type": ".hpp"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 4,
+      "consciousness_files": 3,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 70,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "orchestrator > include",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\orchestrator\\include' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\orchestrator\\include' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\orchestrator\\include' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "orchestrator",
+      "core\\include",
+      "core\\core_systems\\include",
+      "vscode-extension\\node_modules\\lodash.includes"
+    ]
+  }
+}

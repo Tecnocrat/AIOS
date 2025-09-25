@@ -5,7 +5,7 @@
 
 .DESCRIPTION
     This script enforces the AIOS backup policy by:
-    1. Moving any scattered backup files to the centralized backups/ folder
+    1. Moving any scattered backup files to the centralized tachyonic/archive/backups/ folder
     2. Providing functions to create properly named backups
     3. Cleaning up old backup files based on retention policies
     4. Ensuring compliance with AIOS spatial awareness guidelines
@@ -38,7 +38,7 @@ param(
 )
 
 # AIOS Backup Management Configuration
-$script:BackupDir = "backups"
+$script:BackupDir = "tachyonic\archive\backups"
 $script:WorkspaceRoot = Get-Location
 $script:BackupPath = Join-Path $WorkspaceRoot $BackupDir
 
@@ -237,7 +237,7 @@ switch ($Action) {
 }
 
 Write-Host "`nAIOS Backup Management Policy:" -ForegroundColor Blue
-Write-Host "• All backup files must be stored in centralized backups/ directory" -ForegroundColor Blue
+Write-Host "• All backup files must be stored in centralized tachyonic/archive/backups/ directory" -ForegroundColor Blue
 Write-Host "• Use this script to create properly named backups" -ForegroundColor Blue
 Write-Host "• Regular cleanup prevents backup accumulation" -ForegroundColor Blue
 Write-Host "• Follows AIOS spatial awareness guidelines" -ForegroundColor Blue

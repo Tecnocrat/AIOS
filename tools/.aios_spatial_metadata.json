@@ -23,7 +23,6 @@
       ".github",
       ".pytest_cache",
       ".vscode",
-      "BridgeTest",
       "ai",
       "aios_env",
       "chatgpt_integration",

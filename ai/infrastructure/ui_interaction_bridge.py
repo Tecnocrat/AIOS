@@ -12,6 +12,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, List, Optional, Callable
 from dataclasses import dataclass, asdict
+import csv
 
 # Add AI src to path for imports
 ai_src_path = Path(__file__).parent.parent / "src"
@@ -126,9 +127,9 @@ class CytoplasmUIBridge:
             ),
             UIFunction(
                 name="export_analysis_data",
-                description="Export analysis data in various formats",
+                description="Export analysis data in various formats (JSON, TXT, CSV, XML) with markdown file support",
                 category="Export",
-                parameters={"format": "string", "session_id": "string"},
+                parameters={"format": "string", "session_id": "string", "source_file": "string"},
                 endpoint="/export/data"
             ),
             UIFunction(
@@ -420,13 +421,19 @@ class CytoplasmUIBridge:
         }
     
     def _export_analysis_data(self, parameters: Dict[str, Any]) -> Dict[str, Any]:
-        """Export analysis data in various formats"""
+        """Export analysis data in various formats (enhanced with multi-format support)"""
         
         format_type = parameters.get("format", "json")
         session_id = parameters.get("session_id")
+        source_file = parameters.get("source_file")  # New: support markdown file conversion
         
         # Get data to export
-        if session_id and session_id in self.active_sessions:
+        if source_file and Path(source_file).exists():
+            # Convert from markdown file (new capability from chatgpt_integration)
+            with open(source_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            data = {"content": content, "source": source_file}
+        elif session_id and session_id in self.active_sessions:
             data = self.active_sessions[session_id]["data"]
         else:
             # Get current analysis data
@@ -436,28 +443,72 @@ class CytoplasmUIBridge:
         export_path.mkdir(exist_ok=True)
         
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"ai_analysis_export_{timestamp}.{format_type}"
+        
+        # Handle different source types for filename
+        if source_file:
+            base_name = Path(source_file).stem
+            filename = f"{base_name}_export_{timestamp}.{format_type}"
+        else:
+            filename = f"ai_analysis_export_{timestamp}.{format_type}"
+            
         filepath = export_path / filename
         
         try:
             if format_type == "json":
-                with open(filepath, 'w') as f:
+                with open(filepath, 'w', encoding='utf-8') as f:
                     json.dump(data, f, indent=2)
             elif format_type == "txt":
-                with open(filepath, 'w') as f:
-                    f.write(str(data))
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    if isinstance(data, dict) and "content" in data:
+                        f.write(data["content"])
+                    else:
+                        f.write(str(data))
+            elif format_type == "csv":
+                # Enhanced CSV export from chatgpt_integration
+                with open(filepath, 'w', encoding='utf-8', newline='') as f:
+                    writer = csv.writer(f)
+                    if isinstance(data, dict):
+                        if "content" in data:
+                            # Simple content export
+                            writer.writerow(["Title", "Description"])
+                            for line in data["content"].split('\n'):
+                                if line.strip():
+                                    writer.writerow([line.strip()[:50], line.strip()])
+                        else:
+                            # Structured data export
+                            writer.writerow(["Key", "Value"])
+                            for key, value in data.items():
+                                writer.writerow([key, str(value)[:200]])
+                    else:
+                        writer.writerow(["Data"])
+                        writer.writerow([str(data)])
+            elif format_type == "xml":
+                # XML export from chatgpt_integration
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+                    f.write('<document>\n')
+                    if isinstance(data, dict):
+                        if "content" in data:
+                            f.write(f'<content>{data["content"]}</content>\n')
+                        else:
+                            for key, value in data.items():
+                                f.write(f'<{key}>{str(value)}</{key}>\n')
+                    else:
+                        f.write(f'<content>{str(data)}</content>\n')
+                    f.write('</document>\n')
             else:
                 return {
                     "status": "error",
                     "message": f"Unsupported format: {format_type}",
-                    "supported_formats": ["json", "txt"]
+                    "supported_formats": ["json", "txt", "csv", "xml"]
                 }
             
             return {
                 "status": "success",
                 "message": "Data exported successfully",
                 "filepath": str(filepath),
-                "format": format_type
+                "format": format_type,
+                "source": source_file or "analysis_data"
             }
             
         except Exception as e:

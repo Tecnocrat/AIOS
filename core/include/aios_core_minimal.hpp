@@ -34,7 +34,7 @@ namespace aios {
         /**
          * @brief Construct a new Core object
          */
-        explicit Core(const std::string& configPath = "config/system.json");
+        explicit Core(const std::string& configPath = "../ai/infrastructure/config/system.json");
 
         /**
          * @brief Destroy the Core object

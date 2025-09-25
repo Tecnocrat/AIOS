@@ -9,6 +9,7 @@ import sys
 import time
 import json
 import requests
+import os
 from pathlib import Path
 
 class InterfaceBridgeManager:
@@ -26,14 +27,34 @@ class InterfaceBridgeManager:
             
         print("Starting AIOS Interface Bridge server...")
         
-        # Start the server process
-        process = subprocess.Popen(
-            [sys.executable, str(self.bridge_script)],
-            cwd=str(self.ai_root),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            env={"PYTHONIOENCODING": "utf-8"}
-        )
+        # Start the server process in detached mode
+        if sys.platform == "win32":
+            # Windows: Use detached process flags
+            creationflags = (subprocess.DETACHED_PROCESS |
+                             subprocess.CREATE_NEW_PROCESS_GROUP)
+            # Redirect output to files to prevent blocking
+            with open(self.log_file, 'w') as log:
+                process = subprocess.Popen(
+                    [sys.executable, "-m", "uvicorn",
+                     "ai.core.interface_bridge:app",
+                     "--host", "localhost", "--port", "8000"],
+                    cwd=r"C:\dev\AIOS",
+                    creationflags=creationflags,
+                    stdout=log,
+                    stderr=log,
+                    env=os.environ.copy()
+                )
+        else:
+            # Unix-like systems
+            process = subprocess.Popen(
+                [sys.executable, "-m", "uvicorn", 
+                 "ai.core.interface_bridge:app", 
+                 "--host", "localhost", "--port", "8000"],
+                cwd=r"C:\dev\AIOS",
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                env={"PYTHONIOENCODING": "utf-8"}
+            )
         
         # Save PID
         with open(self.pid_file, 'w') as f:
@@ -44,9 +65,10 @@ class InterfaceBridgeManager:
         for attempt in range(max_attempts):
             time.sleep(1)
             if self.check_health():
-                print(f"Interface Bridge started successfully (PID: {process.pid})")
-                print(f"API available at: http://localhost:8000")
-                print(f"Documentation: http://localhost:8000/docs")
+                print("Interface Bridge started successfully "
+                      f"(PID: {process.pid})")
+                print("API available at: http://localhost:8000")
+                print("Documentation: http://localhost:8000/docs")
                 return True
                 
         print("Failed to start Interface Bridge")
@@ -71,8 +93,8 @@ class InterfaceBridgeManager:
             print(f"Process {pid} not found or already stopped")
         except ImportError:
             # Fallback if psutil not available
-            subprocess.run(["taskkill", "/F", "/PID", str(pid)], 
-                         capture_output=True)
+            subprocess.run(["taskkill", "/F", "/PID", str(pid)],
+                           capture_output=True)
             print(f"Interface Bridge stopped (PID: {pid})")
             
         self.pid_file.unlink()
@@ -109,7 +131,7 @@ class InterfaceBridgeManager:
         try:
             response = requests.get("http://localhost:8000/health", timeout=2)
             return response.status_code == 200
-        except:
+        except Exception:
             return False
             
     def status(self):
@@ -124,18 +146,23 @@ class InterfaceBridgeManager:
                 try:
                     response = requests.get("http://localhost:8000/health")
                     health_data = response.json()
-                    print(f"Tools Discovered: {health_data.get('tools_discovered', 'N/A')}")
-                    print(f"Discovery Age: {health_data.get('discovery_age_seconds', 'N/A')}s")
-                    print(f"Sequencer Status: {health_data.get('sequencer_status', 'N/A')}")
-                except:
+                    print("Tools Discovered: "
+                          f"{health_data.get('tools_discovered', 'N/A')}")
+                    print("Discovery Age: "
+                          f"{health_data.get('discovery_age_seconds', 'N/A')}"
+                          "s")
+                    print("Sequencer Status: "
+                          f"{health_data.get('sequencer_status', 'N/A')}")
+                except Exception:
                     print("API responding but data unavailable")
             else:
                 print("API Status: NOT RESPONDING")
         else:
             print("Server Status: STOPPED")
             
-        print(f"API URL: http://localhost:8000")
-        print(f"Documentation: http://localhost:8000/docs")
+        print("API URL: http://localhost:8000")
+        print("Documentation: http://localhost:8000/docs")
+
 
 def main():
     manager = InterfaceBridgeManager()
@@ -157,6 +184,7 @@ def main():
     else:
         print(f"Unknown command: {command}")
         print("Available commands: start, stop, restart, status")
+
 
 if __name__ == "__main__":
     main()

@@ -156,7 +156,8 @@
         "**/*.exe": true,
         "**/*.dll": true,
         "**/*.pdb": true,
-        "**/*.cache": true
+        "**/*.cache": true,
+        "**/build": false
     },
 
     // Auto-load AI context files

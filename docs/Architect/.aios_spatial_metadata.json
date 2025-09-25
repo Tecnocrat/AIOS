@@ -1,9 +1,9 @@
 {
   "spatial_metadata_version": "1.0.0",
-  "generation_timestamp": "2025-09-16T22:29:11.947195",
+  "generation_timestamp": "2025-09-23T08:12:22.800551",
   "folder_info": {
     "name": "Architect",
-    "absolute_path": "C:\\dev\\AIOS\\docs\\Architect",
+    "absolute_path": "c:\\dev\\AIOS\\docs\\Architect",
     "relative_path": "docs\\Architect",
     "parent_path": "docs",
     "depth_level": 2
@@ -21,32 +21,24 @@
     "sibling_folders": [
       "AINLP",
       "AIOS",
-      "ARCHITECTURE_PATTERNS",
-      "ai-context",
-      "ai_agent_demo_docs",
-      "analysis",
       "archive",
+      "build",
       "changelog",
-      "chatgpt",
-      "chatgpt_integration",
-      "consciousness",
-      "metabolized_archive",
-      "reports",
+      "development",
+      "runtime_intelligence",
       "safety",
       "sample_ai_generated",
       "summary",
       "tachyonic",
       "tachyonic_archive",
-      "ui",
-      "unified_backups",
       "vscopilot chat"
     ],
     "child_folders": [],
     "spatial_metrics": {
-      "total_size_bytes": 2,
-      "file_count": 1,
+      "total_size_bytes": 4074,
+      "file_count": 2,
       "folder_count": 0,
-      "size_category": "tiny"
+      "size_category": "small"
     },
     "spatial_relationships": {
       "has_siblings": true,
@@ -58,31 +50,60 @@
     "files_by_type": {
       ".json": [
         {
-          "name": "folder_structure.json",
-          "size": 2,
-          "modified": "2025-08-02T17:32:45.343910",
+          "name": ".aios_spatial_metadata.json",
+          "size": 2883,
+          "modified": "2025-09-21T13:01:23.062649",
+          "category": "documentation"
+        }
+      ],
+      ".md": [
+        {
+          "name": "ARCHITECTURAL_IMPROVEMENT_LOG.md",
+          "size": 1191,
+          "modified": "2025-09-23T07:56:45.948312",
           "category": "documentation"
         }
       ]
     },
-    "important_files": [],
-    "recent_files": [],
+    "important_files": [
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 2883,
+        "modified": "2025-09-21T13:01:23.062649",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "ARCHITECTURAL_IMPROVEMENT_LOG.md",
+        "size": 1191,
+        "modified": "2025-09-23T07:56:45.948312",
+        "category": "documentation"
+      },
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 2883,
+        "modified": "2025-09-21T13:01:23.062649",
+        "category": "documentation"
+      }
+    ],
     "content_summary": {
-      "total_files": 1,
+      "total_files": 2,
       "file_types": [
-        ".json"
+        ".json",
+        ".md"
       ],
       "dominant_type": ".json"
     }
   },
   "consciousness_metrics": {
     "consciousness_indicators": {
-      "ai_files": 0,
+      "ai_files": 1,
       "consciousness_files": 0,
       "agentic_files": 0,
       "intelligence_files": 0
     },
-    "consciousness_score": 0,
+    "consciousness_score": 10,
     "consciousness_level": "low"
   },
   "navigation_aids": {
@@ -90,9 +111,9 @@
     "config_files": [],
     "breadcrumb_path": "docs > Architect",
     "quick_commands": {
-      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\Architect' -Recurse",
-      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\Architect' -Recurse -Filter '*.py'",
-      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\Architect' -Recurse -Filter '*.ps1'"
+      "list_files": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\Architect' -Recurse",
+      "find_python": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\Architect' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\Architect' -Recurse -Filter '*.ps1'"
     }
   },
   "ai_guidance": {
@@ -101,11 +122,15 @@
     "important_considerations": [],
     "related_folders": [
       "docs",
-      "docs\\ai_agent_demo_docs",
+      "ai\\docs",
       "tachyonic\\docs_archive",
       "vscode-extension\\docs",
-      ".githooks\\modules\\information_storage\\docs",
-      "docs\\ARCHITECTURE_PATTERNS"
+      "ai\\core\\docs",
+      "ai\\docs\\architecture"
     ]
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": true
   }
 }
