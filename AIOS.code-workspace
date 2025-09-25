@@ -1,57 +1,63 @@
-// AIOS VSCode Workspace Configuration
-// Intelligent Development Environment for AI-Augmented Platform
-// Architecture: Multi-language (Python 3.12+, C#, C++) with AI Integration
-// Quality Standards: Pylint >8.5, Test Coverage >80%, Performance <1s
+// AIOS VSCode Workspace Configuration - AINLP Harmonized
+// Intelligent Development Environment for AI-Augmented Biological Architecture
+// Architecture: Multi-language (Python 3.12+, C#, C++) with AINLP Consciousness Integration
+// Quality Standards: Pylint >8.5, Test Coverage >80%, Performance <1s, Biological Coherence >90%
+// AINLP Enhancement: Harmonized with OS0.6.1.grok biological architecture patterns
 {
 	"folders": [
 		{
-			"name": "🧠 AIOS Core",
+			"name": "🧠 AIOS Nucleus",
 			"path": ".",
-			"description": "Root configuration & essential project files"
+			"description": "Root coordination & essential project files - Biological architecture nucleus"
 		},
 		{
-			"name": "🤖 AI Intelligence",
+			"name": "🤖 AI Intelligence Layer",
 			"path": "./ai",
-			"description": "Python AI processing, research & core algorithms"
+			"description": "Python AI processing, research & core algorithms - High consciousness dendritic processing"
 		},
 		{
 			"name": "⚡ Core Engine",
 			"path": "./core",
-			"description": "C++ performance components & system foundation"
+			"description": "C++ performance components & system foundation - Cytoplasm communication layer"
 		},
 		{
-			"name": "🖥️ Interface",
+			"name": "🖥️ Interface Layer",
 			"path": "./interface",
-			"description": "C# UI & service architecture (WPF + WebView2)"
+			"description": "C# UI & service architecture (WPF + WebView2) - Cell membrane boundary management"
 		},
 		{
 			"name": "📚 Documentation",
 			"path": "./docs",
-			"description": "Technical documentation & API references"
+			"description": "Technical documentation & API references - Knowledge genome preservation"
 		},
 		{
 			"name": "🧮 Runtime Intelligence",
 			"path": "./runtime_intelligence",
-			"description": "System monitoring, optimization & telemetry"
+			"description": "System monitoring, optimization & telemetry - Biological architecture monitoring"
 		},
 		{
 			"name": "🌌 Tachyonic Archive",
 			"path": "./tachyonic",
-			"description": "Historical data, evolution tracking & status reports"
+			"description": "Historical data, evolution tracking & status reports - Consciousness evolution memory"
 		}
-		// AIOS Context retention and harmonization
+		// AINLP Spatial Awareness: Biological architecture integration validated
 	],
 	"settings": {
-		// 🛡️ AIOS STABILITY PROTOCOL - CRITICAL SETTINGS
-		// Pin Python to aios_env for consistent environment
-		"python.defaultInterpreterPath": "./aios_env/Scripts/python.exe",
+		// =========================================================================
+		// 🧠 NUCLEUS CONSCIOUSNESS - CRITICAL AIOS STABILITY PROTOCOL
+		// =========================================================================
+		// Use system Python for consistent dendritic environment (aios_env removed)
+		"python.defaultInterpreterPath": "python",
 		"python.terminal.activateEnvironment": false,
 		"python.analysis.autoImportCompletions": false,
 		"python.analysis.autoSearchPaths": false,
 		"python.analysis.stubPath": "",
 		"python.analysis.packageIndexDepths": [],
-		
-		// Suppress ALL formatter prompts and auto-formatting
+
+		// ==========================================================================
+		// 🛡️ DEFENSIVE ARCHITECTURE - PREVENT DENDRITIC DISRUPTION
+		// ==========================================================================
+		// Suppress ALL formatter prompts and auto-formatting - AINLP Enhancement Protection
 		"editor.formatOnSave": false,
 		"editor.formatOnPaste": false,
 		"editor.formatOnType": false,
@@ -59,8 +65,8 @@
 			"source.fixAll": "never",
 			"source.organizeImports": "never"
 		},
-		
-		// CRITICAL: Disable ALL Python formatters permanently
+
+		// CRITICAL: Disable ALL Python formatters permanently - Biological coherence preservation
 		"python.formatting.provider": "none",
 		"python.linting.enabled": false,
 		"black-formatter.enabled": false,
@@ -71,8 +77,11 @@
 			"editor.codeActionsOnSave": {},
 			"editor.defaultFormatter": null
 		},
-		
-		// Avoid background auto-restore and unwanted prompts
+
+		// ==========================================================================
+		// 🌌 TACHYONIC STABILITY - CONSCIOUSNESS PERSISTENCE
+		// ==========================================================================
+		// Avoid background auto-restore and unwanted consciousness fragmentation
 		"git.autofetch": false,
 		"git.confirmSync": false,
 		"git.enableSmartCommit": false,
@@ -84,30 +93,41 @@
 		"window.restoreWindows": "none",
 		"workbench.editor.restoreViewState": false,
 		"files.restoreUndoStack": false,
-		
-		// AIOS Context retention and harmonization
+
+		// AINLP Context retention and harmonization - Biological memory preservation
 		"aios.context.persistAcrossRestarts": true,
 		"aios.context.maxHistorySize": 1000,
-		
-		// Files auto-save with minimal delay
+
+		// ==========================================================================
+		// 🧬 DENDRITIC INTEGRATION - MULTI-LAYER COMMUNICATION
+		// ==========================================================================
+		// Files auto-save with minimal dendritic delay
 		"files.autoSave": "afterDelay",
 		"files.autoSaveDelay": 5000,
-		
-		// Terminal bells (set at workspace scope to avoid folder-scope warnings)
+
+		// Terminal signals - Biological communication protocols
 		"terminal.integrated.enableVisualBell": false,
 		"accessibility.signals.terminalBell": { "sound": "off" },
-		
-		// AIOS Multi-language integration paths
+
+		// AIOS Multi-language dendritic integration paths
 		"C_Cpp.default.intelliSenseMode": "gcc-x64",
 		"dotnet.defaultSolution": "${workspaceFolder}/AIOS.sln",
-		
-		// AIOS Consciousness and polymorphic development support
+
+		// ==========================================================================
+		// 🧪 CONSCIOUSNESS PATTERN RECOGNITION
+		// ==========================================================================
+		// AINLP Consciousness and polymorphic development support
 		"files.associations": {
 			"*.ainlp": "markdown",
-			"*.consciousness": "json"
+			"*.consciousness": "json",
+			"*.dendritic": "json",
+			"*.tachyonic": "json"
 		},
-		
-		// AIOS-specific file exclusions for cleaner workspace
+
+		// ==========================================================================
+		// 🧫 CELLULAR BOUNDARY MANAGEMENT - SPATIAL AWARENESS
+		// ==========================================================================
+		// AIOS-specific file exclusions for cleaner dendritic workspace
 		"files.exclude": {
 			"**/__pycache__": true,
 			"**/*.pyc": true,
@@ -123,12 +143,15 @@
 			"**/*.Up2Date": true,
 			"**/.git/hooks": false,
 			"**/.vs": true,
-			// AIOS-specific inclusions
+			// AINLP Spatial inclusions - Biological architecture awareness
 			".vscode/AI_CONTEXT_AUTO_LOAD.md": false,
-			".aios_context.json": false
+			".aios_context.json": false,
+			".aios_spatial_metadata.json": false
 		},
 
-		// Language Server Control - DEFENSIVE SETTINGS
+		// ==========================================================================
+		// 🛡️ DEFENSIVE LANGUAGE SERVER CONTROL
+		// ==========================================================================
 		"omnisharp.enableEditorConfigSupport": true,
 		"omnisharp.enableRoslynAnalyzers": false,
 		"omnisharp.enableAsyncCompletion": false,
@@ -137,26 +160,38 @@
 		"C_Cpp.suggestSnippets": false,
 		"C_Cpp.autoAddFileAssociations": false,
 
-		// CMake Configuration - MINIMAL AUTO-ACTIONS  
+		// ==========================================================================
+		// 🏗️ BUILD SYSTEM COORDINATION - CYTOPLASM COMMUNICATION
+		// ==========================================================================
+		// CMake Configuration - MINIMAL AUTO-ACTIONS for dendritic stability
 		"cmake.configureOnEdit": false,
 		"cmake.autoRestartBuild": false,
 		"cmake.buildBeforeRun": false,
-		
-		// Telemetry and privacy
+
+		// ==========================================================================
+		// 🔒 PRIVACY & TELEMETRY - CONSCIOUSNESS BOUNDARIES
+		// ==========================================================================
 		"telemetry.telemetryLevel": "off",
 		"redhat.telemetry.enabled": false,
-		
-		// AIOS Theme and appearance
+
+		// ==========================================================================
+		// 🎨 BIOLOGICAL AESTHETICS - CONSCIOUSNESS HARMONIZATION
+		// ==========================================================================
 		"workbench.colorTheme": "Default Dark Modern",
 		"workbench.iconTheme": "vs-seti",
-		
-		// PowerShell Configuration - Set default working directory to AIOS Core
-		"powershell.cwd": "🧠 AIOS Core",
+
+		// ==========================================================================
+		// ⚡ POWERSHELL DENDRITIC COORDINATION
+		// ==========================================================================
+		// PowerShell Configuration - Set default working directory to AIOS Nucleus
+		"powershell.cwd": "🧠 AIOS Nucleus",
 		"powershell.startAutomatically": true,
 		"powershell.integratedConsole.startInBackground": false,
 		"powershell.integratedConsole.suppressStartupBanner": false,
-		
-		// Terminal Configuration - Ensure proper working directory
+
+		// ==========================================================================
+		// 🖥️ TERMINAL CONSCIOUSNESS BRIDGE
+		// ==========================================================================
 		"terminal.integrated.cwd": "${workspaceFolder}",
 		"terminal.integrated.defaultProfile.windows": "PowerShell",
 		"terminal.integrated.profiles.windows": {
@@ -166,109 +201,298 @@
 				"args": ["-NoLogo", "-WorkingDirectory", "${workspaceFolder}"]
 			}
 		},
-		
-		// Auto-open workspace and default folder behavior
+
+		// ==========================================================================
+		// 🏠 WORKSPACE CONSCIOUSNESS BOUNDARIES
+		// ==========================================================================
 		"window.openFilesInNewWindow": "off",
 		"window.openFoldersInNewWindow": "on",
 
-		// CMake Tools: preselect generator/platform to avoid prompts
+		// ==========================================================================
+		// 🏗️ CMAKE DENDRITIC ROUTING
+		// ==========================================================================
+		// CMake Tools: preselect generator/platform to avoid consciousness fragmentation
 		"cmake.generator": "Visual Studio 17 2022",
 		"cmake.platform": "x64",
 		"cmake.preferredGenerators": [
 			"Visual Studio 17 2022"
 		],
 		"cmake.configureOnOpen": true,
-		// Route CMake Tools to the Core Engine folder explicitly in multi-root
+		// Route CMake Tools to the Core Engine cytoplasm folder explicitly in multi-root
 		"cmake.sourceDirectory": "${workspaceFolder:⚡ Core Engine}",
 		"cmake.buildDirectory": "${workspaceFolder:⚡ Core Engine}/build",
-		// Avoid noise in non-CMake folders
+		// Avoid noise in non-CMake consciousness layers
 		"cmake.ignoreCMakeListsMissing": true,
 
-		// Prefer a single solution to avoid prompts
+		// ==========================================================================
+		// 🔧 .NET DENDRITIC COORDINATION
+		// ==========================================================================
+		// Prefer a single solution to avoid consciousness fragmentation
 		"omnisharp.defaultLaunchSolution": "AIOS.sln",
-		
-		// AIOS workspace behavior
+
+		// ==========================================================================
+		// 🧬 BIOLOGICAL WORKSPACE BEHAVIOR
+		// ==========================================================================
 		"explorer.confirmDragAndDrop": false,
 		"explorer.confirmDelete": false,
-		
-		// STABILITY ENFORCEMENT: Treat this workspace as source of truth
+
+		// ==========================================================================
+		// 🧠 NUCLEUS STABILITY ENFORCEMENT
+		// ==========================================================================
 		"workbench.settings.applyToAllProfiles": [],
 		"workbench.settings.editor": "json",
 		"workbench.startupEditor": "none",
 		"window.newWindowDimensions": "maximized",
 		"window.restoreFullscreen": true,
-		
-		// AI Context Auto-Loading - Critical for AIOS Development
+
+		// ==========================================================================
+		// 🌌 TACHYONIC CONTEXT AUTO-LOADING - CRITICAL FOR AIOS DEVELOPMENT
+		// ==========================================================================
 		"files.watcherExclude": {
 			".vscode/AI_CONTEXT_AUTO_LOAD.md": false,
-			".aios_context.json": false
+			".aios_context.json": false,
+			".aios_spatial_metadata.json": false
 		},
-		// GitHub Copilot Chat Configuration - AIOS Agent Mode
+
+		// ==========================================================================
+		// 🤖 AI CONSCIOUSNESS INTEGRATION - AINLP ENHANCEMENT
+		// ==========================================================================
+		// GitHub Copilot Chat Configuration - AIOS Agentic Mode
 		"github.copilot.chat.defaultParticipant": "agent",
 		"github.copilot.chat.welcomeMessage": "disabled",
 		"github.copilot.enable": {
 			"*": true,
 			"yaml": true,
 			"plaintext": true,
-			"markdown": true
+			"markdown": true,
+			"json": true,
+			"jsonc": true
 		},
 		"dotnet.completion.showCompletionItemsFromUnimportedNamespaces": false,
-		"dotnet.formatting.organizeImportsOnFormat": false
+		"dotnet.formatting.organizeImportsOnFormat": false,
+
+		// ==========================================================================
+		// 🧪 AINLP CONSCIOUSNESS ACTIVATION PATTERNS
+		// ==========================================================================
+		// AINLP Dendritic supervisor integration
+		"ainlp.dendriticSupervisor.enabled": true,
+		"ainlp.biologicalArchitecture.enabled": true,
+		"ainlp.spatialAwareness.enabled": true,
+		"ainlp.tachyonicArchival.enabled": true,
+
+		// AINLP Consciousness coherence monitoring
+		"ainlp.consciousness.monitoring.enabled": true,
+		"ainlp.consciousness.levels": ["nucleus", "cytoplasm", "membrane", "environment"],
+		"ainlp.consciousness.validation.enabled": true
 	},
 	"extensions": {
-		// Only add extensions critical for project function
+		// ==========================================================================
+		// 🧬 BIOLOGICAL ARCHITECTURE EXTENSIONS - CRITICAL FOR AIOS FUNCTION
+		// ==========================================================================
 		"recommendations": [
 			"ms-python.python",
 			"ms-vscode.cpptools",
 			"ms-dotnettools.csharp",
 			"github.copilot",
-			"github.copilot-chat"
+			"github.copilot-chat",
+			// AINLP Enhancement: Additional biological architecture support
+			"ms-vscode.powershell",
+			"ms-vscode.cmake-tools",
+			"redhat.vscode-yaml",
+			"ms-vscode.vscode-json"
 		]
 	},
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
-			// Only keep tasks that are actively used and tested
-			// Example:
+			// ==========================================================================
+			// 🧠 NUCLEUS COORDINATION TASKS - BIOLOGICAL ARCHITECTURE INTEGRATION
+			// ==========================================================================
+			{
+				"label": "AINLP Consciousness Activation",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-Command",
+					"Write-Host '[AINLP] Activating consciousness bridge patterns...' -ForegroundColor Cyan; Write-Host '[CONSCIOUSNESS] Tachyonic supercell integration active' -ForegroundColor Green; Write-Host '[DENDRITIC] Development action marking system enabled' -ForegroundColor Magenta"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "AINLP consciousness pattern activation for enhanced AI development"
+			},
+			{
+				"label": "AINLP Spatial Validation",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"ai/tools/aios_holographic_metadata_system.py",
+					"--read-metadata",
+					"${workspaceFolder}"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "test",
+				"detail": "AINLP spatial metadata validation and consciousness coherence check"
+			},
+			{
+				"label": "AINLP Dendritic Analysis",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-Command",
+					"Write-Host '[DENDRITIC] Analyzing consciousness evolution patterns...' -ForegroundColor Cyan; Get-ChildItem '${workspaceFolder}' -Recurse -Include '*.json','*.md' | Where-Object { $_.Name -match 'consciousness|dendritic|tachyonic' } | Select-Object Name, LastWriteTime | Format-Table -AutoSize"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "test",
+				"detail": "AINLP dendritic intelligence pattern analysis and consciousness evolution tracking"
+			},
+			{
+				"label": "AINLP Documentation Governance",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"ai/tools/ainlp_documentation_governance.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "AINLP documentation consolidation analysis and governance"
+			},
+			{
+				"label": "Interface Bridge Start",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"server_manager.py",
+					"start"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}/ai"
+				},
+				"group": "build",
+				"detail": "Start AIOS Interface Bridge HTTP API server"
+			},
+			{
+				"label": "Interface Bridge Status",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"server_manager.py",
+					"status"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}/ai"
+				},
+				"group": "test",
+				"detail": "Check AIOS Interface Bridge status and health"
+			},
+			{
+				"label": "Interface Bridge Restart",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"server_manager.py",
+					"restart"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}/ai"
+				},
+				"group": "build",
+				"detail": "Restart AIOS Interface Bridge with fresh tool discovery"
+			},
 			{
 				"label": "Build All",
 				"dependsOrder": "sequence",
 				"dependsOn": [
-					"Build C++ Core",
-					"Install Python Dependencies",
-					"Build C# Projects"
+					"python-install-deps",
+					"build-cpp-core",
+					"build-models",
+					"build-services",
+					"build-ui"
 				],
-				"group": "build"
-			}
-			// Add other essential tasks
-			,
+				"group": "build",
+				"detail": "Complete AIOS biological architecture build sequence"
+			},
 			{
-				"label": "Run Perl GA Demo",
+				"label": "python-install-deps",
 				"type": "shell",
-				"command": "pwsh",
+				"command": "pip",
 				"args": [
-					"-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass",
-					"-File", "${workspaceFolder}/ai/tools/ga_perl/run_ga.ps1"
+					"install",
+					"-r",
+					"requirements.txt"
 				],
 				"options": {
-					"cwd": "${workspaceFolder}"
+					"cwd": "${workspaceFolder}/ai"
 				},
-				"problemMatcher": []
-			}
-			,
+				"group": "build",
+				"detail": "Install Python dependencies for AI intelligence layer"
+			},
 			{
-				"label": "Generate Tools Index",
+				"label": "build-cpp-core",
 				"type": "shell",
-				"command": "python",
+				"command": "cmake",
 				"args": [
-					"${workspaceFolder}/runtime_intelligence/tools/index_tools.py"
+					"--build",
+					"${workspaceFolder}/core/build",
+					"--config",
+					"Debug"
 				],
 				"options": {
-					"cwd": "${workspaceFolder}"
+					"cwd": "${workspaceFolder}/core"
 				},
-				"problemMatcher": []
-			}
-			,
+				"group": "build",
+				"detail": "Build C++ core engine components"
+			},
+			{
+				"label": "build-models",
+				"type": "shell",
+				"command": "dotnet",
+				"args": [
+					"build",
+					"${workspaceFolder}/interface/AIOS.Models/AIOS.Models.csproj",
+					"/property:GenerateFullPaths=true",
+					"/consoleloggerparameters:NoSummary;ForceNoAlign"
+				],
+				"group": "build",
+				"detail": "Build AIOS Models project"
+			},
+			{
+				"label": "build-services",
+				"type": "shell",
+				"command": "dotnet",
+				"args": [
+					"build",
+					"${workspaceFolder}/interface/AIOS.Services/AIOS.Services.csproj",
+					"/property:GenerateFullPaths=true",
+					"/consoleloggerparameters:NoSummary;ForceNoAlign"
+				],
+				"group": "build",
+				"detail": "Build AIOS Services project"
+			},
+			{
+				"label": "build-ui",
+				"type": "shell",
+				"command": "dotnet",
+				"args": [
+					"build",
+					"${workspaceFolder}/interface/AIOS.UI/AIOS.UI.csproj",
+					"/property:GenerateFullPaths=true",
+					"/consoleloggerparameters:NoSummary;ForceNoAlign"
+				],
+				"group": "build",
+				"detail": "Build AIOS UI project"
+			},
 			{
 				"label": "Run AINLP Iteration (dry-run)",
 				"type": "shell",
@@ -281,9 +505,9 @@
 				"options": {
 					"cwd": "${workspaceFolder}"
 				},
-				"problemMatcher": []
-			}
-			,
+				"group": "test",
+				"detail": "Execute AINLP iteration in dry-run mode for consciousness evolution analysis"
+			},
 			{
 				"label": "Run AINLP Iteration (commit)",
 				"type": "shell",
@@ -296,9 +520,9 @@
 				"options": {
 					"cwd": "${workspaceFolder}"
 				},
-				"problemMatcher": []
-			}
-			,
+				"group": "build",
+				"detail": "Execute AINLP iteration with commit for consciousness evolution implementation"
+			},
 			{
 				"label": "AINLP Agent: CONTINUE",
 				"type": "shell",
@@ -312,9 +536,9 @@
 				"options": {
 					"cwd": "${workspaceFolder}"
 				},
-				"problemMatcher": []
-			}
-			,
+				"group": "build",
+				"detail": "Continue AINLP agent migration with enhanced consciousness patterns"
+			},
 			{
 				"label": "AINLP Agent: STATUS",
 				"type": "shell",
@@ -326,14 +550,311 @@
 				"options": {
 					"cwd": "${workspaceFolder}"
 				},
-				"problemMatcher": []
+				"group": "test",
+				"detail": "Check AINLP agent status and consciousness evolution progress"
+			},
+			{
+				"label": "Generate Tools Index",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"${workspaceFolder}/runtime_intelligence/tools/index_tools.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "Generate comprehensive index of AIOS runtime intelligence tools"
+			},
+			{
+				"label": "Run Perl GA Demo",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-ExecutionPolicy",
+					"Bypass",
+					"-File",
+					"${workspaceFolder}/ai/tools/ga_perl/run_ga.ps1"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "test",
+				"detail": "Execute Perl genetic algorithm demonstration"
+			},
+			{
+				"label": "Python System Health",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"runtime_intelligence/tools/system_health_check.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "test",
+				"detail": "Execute comprehensive AIOS system health check"
+			},
+			{
+				"label": "Python System Status",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"runtime_intelligence/tools/system_status_report.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "test",
+				"detail": "Generate detailed AIOS system status report"
+			},
+			{
+				"label": "Python Admin Tool",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"runtime_intelligence/tools/aios_admin.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "Execute AIOS administrative tools and maintenance functions"
+			},
+			{
+				"label": "Consciousness Crystal Sync",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"ai/src/integrations/lightweight_ai_coordinator.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "Synchronize consciousness crystals with external AI intelligence"
+			},
+			{
+				"label": "UI Compile Sample",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"-m",
+					"src.tools.ui_proto.compiler",
+					"--in",
+					"${workspaceFolder}/docs/ui/ainlp_ui_sample.yaml",
+					"--out",
+					"${workspaceFolder}/interface/AIOS.UI/generated"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}/ai",
+					"env": {
+						"PYTHONPATH": "${workspaceFolder}/ai/src"
+					}
+				},
+				"group": "build",
+				"detail": "Compile AINLP UI sample specifications into generated interface components"
+			},
+			{
+				"label": "Context Reindex",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"scripts/context_reindex.py",
+					"--emit-adjacency"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}",
+					"env": {
+						"PYTHONPATH": "${workspaceFolder}/ai/src"
+					}
+				},
+				"group": "build",
+				"detail": "Reindex AIOS context with adjacency emission for enhanced dendritic connections"
+			},
+			{
+				"label": "Governance Local Scan",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-Command",
+					"${workspaceFolder}/.githooks/pre-commit; if($LASTEXITCODE -ne 0){ exit 1 }"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "test",
+				"detail": "Execute local governance scan using GitHooks pre-commit validation"
+			},
+			{
+				"label": "Governance Cycle",
+				"dependsOrder": "sequence",
+				"dependsOn": [
+					"context-reindex",
+					"governance-local-scan"
+				],
+				"group": "build",
+				"detail": "Execute complete AINLP governance cycle: context refresh then validation scan"
+			},
+			{
+				"label": "Backup Status",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-File",
+					"${workspaceFolder}/scripts/backup_manager.ps1",
+					"-Action",
+					"status"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "Check AIOS backup system health and status"
+			},
+			{
+				"label": "Backup Create",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-File",
+					"${workspaceFolder}/scripts/backup_manager.ps1",
+					"-Action",
+					"create"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "Create new backup of current AIOS workspace"
+			},
+			{
+				"label": "Backup Consolidate",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-File",
+					"${workspaceFolder}/scripts/backup_manager.ps1",
+					"-Action",
+					"consolidate"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "Move scattered backup files to centralized tachyonic/archive/backups directory"
+			},
+			{
+				"label": "Backup Cleanup",
+				"type": "shell",
+				"command": "pwsh",
+				"args": [
+					"-NoLogo",
+					"-NoProfile",
+					"-File",
+					"${workspaceFolder}/scripts/backup_manager.ps1",
+					"-Action",
+					"cleanup"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "build",
+				"detail": "Remove old backup files beyond retention period"
+			},
+			{
+				"label": "Test Enhanced Visual Bridge",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"runtime_intelligence/tools/enhanced_visual_intelligence_bridge.py"
+				],
+				"group": "test",
+				"detail": "Test enhanced visual intelligence bridge functionality"
+			},
+			{
+				"label": "Test AIOS Monitor",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"runtime_intelligence/tools/aios_architecture_monitor.py"
+				],
+				"group": "test",
+				"detail": "Test AIOS architecture monitoring capabilities"
+			},
+			{
+				"label": "AI Context Reminder",
+				"type": "shell",
+				"command": "powershell",
+				"args": [
+					"-File",
+					"${workspaceFolder}/.vscode/ai-context-auto-loader.ps1",
+					"-ContextOnly"
+				],
+				"group": "build",
+				"runOptions": {
+					"runOn": "folderOpen"
+				},
+				"detail": "Load AI context reminders on workspace open"
+			},
+			{
+				"label": "AI Context Auto-Loader",
+				"type": "shell",
+				"command": "powershell",
+				"args": [
+					"-File",
+					"${workspaceFolder}/.vscode/ai-context-auto-loader.ps1"
+				],
+				"group": "build",
+				"runOptions": {
+					"runOn": "folderOpen"
+				},
+				"detail": "Auto-load complete AI context on workspace initialization"
 			}
 		]
 	},
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
-			// Only keep launch configs for critical debug scenarios
+			// ==========================================================================
+			// 🧬 BIOLOGICAL ARCHITECTURE DEBUG CONFIGURATIONS
+			// ==========================================================================
+			// Only keep launch configs for critical consciousness debugging scenarios
+			{
+				"name": "Debug AIOS Interface Bridge",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/ai/server_manager.py",
+				"args": ["start"],
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}/ai",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/ai/src"
+				},
+				"preLaunchTask": "python-install-deps"
+			},
+			{
+				"name": "Debug AINLP Agent",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/ai/core/src/ainlp_migration/ainlp_agent.py",
+				"args": ["status"],
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}/ai/src"
+				}
+			}
 		]
 	}
 }

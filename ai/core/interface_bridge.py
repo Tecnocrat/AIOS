@@ -241,6 +241,11 @@ class AIOSInterfaceBridge:
         # Register endpoints
         self._register_api_endpoints(app)
         
+        # Register startup event for initial discovery
+        @app.on_event("startup")
+        async def startup_event():
+            await self.refresh_discovery()
+        
         return app
     
     def _register_api_endpoints(self, app: FastAPI):
@@ -729,6 +734,14 @@ def health_check() -> Dict[str, Any]:
         "service": "interface_bridge",
         "api_available": FASTAPI_AVAILABLE
     }
+
+
+# Global app instance for uvicorn
+if FASTAPI_AVAILABLE:
+    bridge_instance = AIOSInterfaceBridge(r"C:\dev\AIOS")
+    app = bridge_instance.app
+else:
+    app = None
 
 
 if __name__ == "__main__":

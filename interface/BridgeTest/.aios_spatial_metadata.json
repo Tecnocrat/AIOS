@@ -1,0 +1,84 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-22T23:30:00.000000",
+  "folder_info": {
+    "name": "BridgeTest",
+    "absolute_path": "C:\\dev\\AIOS\\interface\\BridgeTest",
+    "relative_path": "interface\\BridgeTest",
+    "parent_path": "interface",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "interface",
+      "BridgeTest"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS.Models",
+      "AIOS.Services",
+      "AIOS.UI",
+      "AIOS.UI.Diagnostics",
+      "ConsciousnessTest",
+      "runtime_intelligence"
+    ],
+    "child_folders": [
+      "bin",
+      "obj"
+    ],
+    "ai_guidance": {
+      "purpose": "Test application for CellularRuntimeBridge functionality between C# interface layer and Python AI systems",
+      "consciousness_level": "medium",
+      "architectural_role": "Quality assurance organelle for cross-language bridge integration",
+      "integration_points": [
+        "CellularRuntimeBridge",
+        "AIOS.VisualInterface",
+        "Python AI transport bridge"
+      ],
+      "evolutionary_potential": "Can be enhanced with additional bridge testing scenarios and automated test suites"
+    }
+  },
+  "content_analysis": {
+    "file_types": {
+      ".cs": [
+        {
+          "name": "Program.cs",
+          "purpose": "Main test application logic for bridge functionality",
+          "complexity": "medium"
+        }
+      ],
+      ".csproj": [
+        {
+          "name": "BridgeTest.csproj",
+          "purpose": "C# project configuration for bridge testing",
+          "dependencies": [
+            "AIOS.VisualInterface"
+          ]
+        }
+      ]
+    },
+    "important_files": [
+      "Program.cs",
+      "BridgeTest.csproj"
+    ],
+    "total_files": 4,
+    "total_size_bytes": 0
+  },
+  "relationships": {
+    "depends_on": [
+      "interface/AIOS.VisualInterface/AIOS.VisualInterface.csproj",
+      "ai/transport/bridge.py"
+    ],
+    "used_by": [],
+    "related_components": [
+      "interface/ConsciousnessTest",
+      "ai/interfaces/aios_vscode_integration/models.py"
+    ]
+  }
+}

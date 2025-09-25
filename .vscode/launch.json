@@ -14,7 +14,7 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
                 "AIOS_LOG_LEVEL": "Debug",
-                "AIOS_CONFIG_PATH": "${workspaceFolder}/config"
+                "AIOS_CONFIG_PATH": "${workspaceFolder}/ai/infrastructure/config"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/interface/AIOS.UI"
@@ -33,7 +33,7 @@
             "program": "${workspaceFolder}/core/build/bin/Debug/aios_main.exe",
             "args": [
                 "--config",
-                "${workspaceFolder}/config/system.json"
+                "${workspaceFolder}/ai/infrastructure/config/system.json"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/core",
@@ -57,7 +57,7 @@
             "args": [
                 "--debug",
                 "--config",
-                "${workspaceFolder}/config/ai-models.json"
+                "${workspaceFolder}/ai/infrastructure/config/ai-models.json"
             ],
             "cwd": "${workspaceFolder}/ai",
             "env": {

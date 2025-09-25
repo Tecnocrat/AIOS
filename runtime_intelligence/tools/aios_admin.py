@@ -202,7 +202,8 @@ def backup_management_menu() -> None:
         elif choice == "2":
             run_backup_manager("create")
         elif choice == "3":
-            print("WARNING: This will move all scattered backup files to the central backups directory.")
+            print("WARNING: This will move scattered backup files to")
+            print("         tachyonic/archive/backups directory.")
             confirm = input("Continue? (y/n): ").strip().lower()
             if confirm == "y":
                 run_backup_manager("consolidate")
@@ -391,7 +392,8 @@ if __name__ == "__main__":
         elif menu_choice == "8":
             run_backup_manager("create")
         elif menu_choice == "9":
-            print("WARNING: This will move all scattered backup files to the central backups directory.")
+            print("WARNING: This will move scattered backup files to")
+            print("         tachyonic/archive/backups directory.")
             confirm = input("Continue? (y/n): ").strip().lower()
             if confirm == "y":
                 run_backup_manager("consolidate")

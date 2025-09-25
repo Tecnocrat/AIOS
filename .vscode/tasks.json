@@ -481,8 +481,11 @@
 			"args": [
 				"-NoLogo",
 				"-NoProfile",
-				"-Command",
-				"${workspaceFolder}/.githooks/pre-commit; if($LASTEXITCODE -ne 0){ exit 1 }"
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"${workspaceFolder}/.githooks/aios_hooks_optimized.ps1",
+				"pre-commit"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"

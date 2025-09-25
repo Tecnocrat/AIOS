@@ -54,13 +54,14 @@
       "AIOS.Services",
       "AIOS.UI",
       "AIOS.UI.Diagnostics",
+      "BridgeTest",
       "ConsciousnessTest",
       "runtime_intelligence"
     ],
     "spatial_metrics": {
       "total_size_bytes": 33891227,
       "file_count": 1271,
-      "folder_count": 6,
+      "folder_count": 7,
       "size_category": "large"
     },
     "spatial_relationships": {

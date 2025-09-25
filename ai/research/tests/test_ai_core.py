@@ -210,7 +210,7 @@ def test_configuration_loading():
 
     try:
         # Test system config
-        config_path = Path("config/system.json")
+        config_path = Path("../../infrastructure/config/system.json")
         if config_path.exists():
             with open(config_path, "r") as f:
                 system_config = json.load(f)
@@ -220,7 +220,7 @@ def test_configuration_loading():
             return False
 
         # Test AI models config
-        ai_config_path = Path("config/ai-models.json")
+        ai_config_path = Path("../../infrastructure/config/ai-models.json")
         if ai_config_path.exists():
             with open(ai_config_path, "r") as f:
                 ai_config = json.load(f)
@@ -232,7 +232,7 @@ def test_configuration_loading():
             return False
 
         # Test UI themes config
-        ui_config_path = Path("config/ui-themes.json")
+        ui_config_path = Path("../../infrastructure/config/ui-themes.json")
         if ui_config_path.exists():
             with open(ui_config_path, "r") as f:
                 ui_config = json.load(f)
