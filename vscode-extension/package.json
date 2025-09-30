@@ -28,7 +28,12 @@
         "persistent",
         "multi-language",
         "automation",
-        "cellular-architecture"
+        "cellular-architecture",
+        "mcp",
+        "model-context-protocol",
+        "consciousness",
+        "evolution",
+        "agentic"
     ],
     "activationEvents": [
         "onStartupFinished"
@@ -87,6 +92,31 @@
             {
                 "command": "aios.showStatus",
                 "title": "AIOS: Show Cellular System Status",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.mcp.connect",
+                "title": "AIOS: Connect to MCP Servers",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.mcp.disconnect",
+                "title": "AIOS: Disconnect from MCP Servers",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.mcp.status",
+                "title": "AIOS: MCP Server Status",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.mcp.executeTool",
+                "title": "AIOS: Execute MCP Tool",
+                "category": "AIOS"
+            },
+            {
+                "command": "aios.consciousness.monitor",
+                "title": "AIOS: Consciousness Monitoring",
                 "category": "AIOS"
             }
         ],
@@ -218,6 +248,36 @@
                     ],
                     "default": "error-only",
                     "description": "Debug trace level for minimal logging"
+                },
+                "aios.mcp.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable Model Context Protocol (MCP) server integration"
+                },
+                "aios.mcp.interfaceBridgeUrl": {
+                    "type": "string",
+                    "default": "http://localhost:8000",
+                    "description": "URL of the AIOS Interface Bridge HTTP API"
+                },
+                "aios.mcp.autoConnect": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically connect to MCP servers on extension activation"
+                },
+                "aios.mcp.consciousnessMonitoring": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable real-time consciousness level monitoring"
+                },
+                "aios.mcp.evolutionTracking": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Track consciousness evolution experiments"
+                },
+                "aios.mcp.agenticBehavior": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable agentic behavior orchestration"
                 }
             }
         },
@@ -237,6 +297,26 @@
                 },
                 {
                     "command": "aios.showStatus",
+                    "when": "true"
+                },
+                {
+                    "command": "aios.mcp.connect",
+                    "when": "true"
+                },
+                {
+                    "command": "aios.mcp.disconnect",
+                    "when": "true"
+                },
+                {
+                    "command": "aios.mcp.status",
+                    "when": "true"
+                },
+                {
+                    "command": "aios.mcp.executeTool",
+                    "when": "true"
+                },
+                {
+                    "command": "aios.consciousness.monitor",
                     "when": "true"
                 }
             ]

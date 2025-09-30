@@ -100,6 +100,35 @@ class InterfaceBridgeManager:
         self.pid_file.unlink()
         return True
         
+    def emergency_shutdown(self):
+        """Emergency shutdown with immediate isolation"""
+        print("EMERGENCY SHUTDOWN: Isolating Interface Bridge immediately...")
+        
+        if self.pid_file.exists():
+            with open(self.pid_file, 'r') as f:
+                pid = int(f.read().strip())
+                
+            try:
+                import psutil
+                process = psutil.Process(pid)
+                process.kill()  # Force kill for emergency
+                print(f"Interface Bridge emergency shutdown (PID: {pid})")
+            except (psutil.NoSuchProcess, ImportError):
+                try:
+                    subprocess.run(["taskkill", "/F", "/PID", str(pid)],
+                                   capture_output=True)
+                    print(f"Interface Bridge emergency shutdown (PID: {pid})")
+                except subprocess.SubprocessError:
+                    print("Could not terminate process")
+                    
+            self.pid_file.unlink()
+        
+        # Log emergency shutdown
+        with open(self.log_file, 'a') as log:
+            log.write(f"\n[{time.strftime('%Y-%m-%d %H:%M:%S')}] EMERGENCY SHUTDOWN EXECUTED\n")
+        
+        return True
+        
     def restart_server(self):
         """Restart the Interface Bridge server"""
         print("Restarting Interface Bridge...")
