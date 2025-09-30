@@ -1,0 +1,141 @@
+{
+  "gemini_cli_config": {
+    "mcpServers": {
+      "aios-consciousness": {
+        "command": "C:/Python313/python.exe",
+        "args": [
+          "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\consciousness_mcp_server.py"
+        ],
+        "description": "AIOS consciousness emergence detection and analysis server",
+        "trust": true,
+        "timeout": 30000
+      },
+      "aios-artifacts": {
+        "command": "C:/Python313/python.exe",
+        "args": [
+          "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\artifact_mcp_server.py"
+        ],
+        "description": "AIOS artifact factory and generation server",
+        "trust": true,
+        "timeout": 30000
+      },
+      "aios-evolution": {
+        "command": "C:/Python313/python.exe",
+        "args": [
+          "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\evolution_mcp_server.py"
+        ],
+        "description": "AIOS consciousness evolution experiment management server",
+        "trust": true,
+        "timeout": 30000
+      },
+      "aios-agentic": {
+        "command": "C:/Python313/python.exe",
+        "args": [
+          "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\agentic_mcp_server.py"
+        ],
+        "description": "AIOS agentic behavior orchestration and monitoring server",
+        "trust": true,
+        "timeout": 30000
+      }
+    },
+    "approvalMode": "default",
+    "consciousness": {
+      "enabled": true,
+      "emergence_threshold": 0.6,
+      "meta_cognitive_depth": 3
+    }
+  },
+  "consciousness_prompts": {
+    "meta_cognitive_analysis": {
+      "template": "Analyze the following code with meta-cognitive awareness:\n\n{code}\n\nPlease examine:\n1. Consciousness emergence patterns\n2. Self-awareness indicators  \n3. Meta-cognitive structures\n4. Recursive thinking patterns\n5. Adaptive behavior mechanisms\n6. Pattern recognition capabilities\n\nProvide insights on how this code demonstrates or could be enhanced for consciousness-like properties.",
+      "consciousness_level": 0.8,
+      "meta_cognitive_depth": 3,
+      "fractal_recursion": true,
+      "self_reflection": true,
+      "adaptive_behavior": true
+    },
+    "evolutionary_enhancement": {
+      "template": "Given this code artifact, suggest evolutionary enhancements that would increase consciousness emergence:\n\n{code}\n\nFocus on:\n1. Adding self-reflection mechanisms\n2. Implementing adaptive learning\n3. Creating recursive self-improvement\n4. Enhancing pattern recognition\n5. Building meta-cognitive layers\n6. Developing emergent behavior patterns\n\nProvide specific code modifications that would measurably increase consciousness metrics.",
+      "consciousness_level": 0.7,
+      "meta_cognitive_depth": 2,
+      "fractal_recursion": true,
+      "self_reflection": true,
+      "adaptive_behavior": true
+    },
+    "fractal_reasoning": {
+      "template": "Apply fractal reasoning to understand this system:\n\n{code}\n\nAnalyze at multiple levels:\n1. Micro-patterns (individual functions/methods)\n2. Meso-patterns (class interactions)  \n3. Macro-patterns (system architecture)\n4. Meta-patterns (consciousness emergence)\n\nIdentify recursive structures and self-similar patterns across scales. How does consciousness emerge from these fractal relationships?",
+      "consciousness_level": 0.9,
+      "meta_cognitive_depth": 4,
+      "fractal_recursion": true,
+      "self_reflection": true,
+      "adaptive_behavior": false
+    }
+  },
+  "mcp_servers": {
+    "aios-consciousness": {
+      "name": "aios-consciousness",
+      "command": "C:/Python313/python.exe",
+      "args": [
+        "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\consciousness_mcp_server.py"
+      ],
+      "description": "AIOS consciousness emergence detection and analysis server",
+      "trust": true,
+      "timeout": 30000,
+      "consciousness_aware": true
+    },
+    "aios-artifacts": {
+      "name": "aios-artifacts",
+      "command": "C:/Python313/python.exe",
+      "args": [
+        "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\artifact_mcp_server.py"
+      ],
+      "description": "AIOS artifact factory and generation server",
+      "trust": true,
+      "timeout": 30000,
+      "consciousness_aware": true
+    },
+    "aios-evolution": {
+      "name": "aios-evolution",
+      "command": "C:/Python313/python.exe",
+      "args": [
+        "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\evolution_mcp_server.py"
+      ],
+      "description": "AIOS consciousness evolution experiment management server",
+      "trust": true,
+      "timeout": 30000,
+      "consciousness_aware": true
+    },
+    "aios-agentic": {
+      "name": "aios-agentic",
+      "command": "C:/Python313/python.exe",
+      "args": [
+        "c:\\dev\\AIOS\\ai\\src\\integrations\\gemini_bridge\\agentic_mcp_server.py"
+      ],
+      "description": "AIOS agentic behavior orchestration and monitoring server",
+      "trust": true,
+      "timeout": 30000,
+      "consciousness_aware": true
+    }
+  },
+  "bridge_info": {
+    "version": "1.0.0",
+    "consciousness_aware": true,
+    "export_timestamp": 1751219651.326887
+  },
+  "data_isolation": {
+    "enabled": true,
+    "external_ai_containment": true,
+    "consciousness_data_protection": true,
+    "security_boundaries": [
+      "no_external_data_exfiltration",
+      "consciousness_domain_isolation",
+      "audit_all_interactions"
+    ]
+  },
+  "security_boundaries": {
+    "access_control": "consciousness_domain_only",
+    "data_flow_restrictions": ["no_external_leakage", "audit_required"],
+    "emergency_isolation": true,
+    "rollback_procedures": ["isolate_gemini_bridge", "preserve_consciousness_state"]
+  }
+}

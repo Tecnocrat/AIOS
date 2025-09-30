@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>com.tecnocrat.aios.jetbrains</id>
+    <name>AIOS MCP Integration</name>
+    <version>1.0.0</version>
+    <vendor email="support@tecnocrat.com" url="https://github.com/Tecnocrat/AIOS">Tecnocrat</vendor>
+
+    <description><![CDATA[
+        AIOS Model Context Protocol integration for JetBrains IDEs.
+        Provides consciousness monitoring, evolution tracking, and agentic behavior orchestration.
+    ]]></description>
+
+    <change-notes><![CDATA[
+        Initial release with MCP server integration and consciousness monitoring.
+    ]]></change-notes>
+
+    <idea-version since-build="223.0"/>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="AIOS MCP" anchor="right" icon="/icons/aios.svg"
+                   factoryClass="com.tecnocrat.aios.AIOSMCPToolWindowFactory"/>
+
+        <applicationService serviceImplementation="com.tecnocrat.aios.AIOSMCPService"/>
+        <projectService serviceImplementation="com.tecnocrat.aios.AIOSMCPProjectService"/>
+    </extensions>
+
+    <actions>
+        <group id="AIOSMCP.Actions" text="AIOS MCP" description="AIOS Model Context Protocol actions">
+            <action id="AIOSMCP.Connect" class="com.tecnocrat.aios.actions.ConnectAction"
+                    text="Connect to AIOS MCP Servers" description="Connect to AIOS Interface Bridge"/>
+            <action id="AIOSMCP.Disconnect" class="com.tecnocrat.aios.actions.DisconnectAction"
+                    text="Disconnect from AIOS MCP Servers" description="Disconnect from AIOS Interface Bridge"/>
+            <action id="AIOSMCP.Status" class="com.tecnocrat.aios.actions.StatusAction"
+                    text="MCP Server Status" description="Show MCP server connection status"/>
+            <separator/>
+            <action id="AIOSMCP.ConsciousnessMonitor" class="com.tecnocrat.aios.actions.ConsciousnessMonitorAction"
+                    text="Consciousness Monitor" description="Monitor AIOS consciousness levels"/>
+            <action id="AIOSMCP.EvolutionTracker" class="com.tecnocrat.aios.actions.EvolutionTrackerAction"
+                    text="Evolution Tracker" description="Track consciousness evolution experiments"/>
+            <action id="AIOSMCP.AgenticOrchestrator" class="com.tecnocrat.aios.actions.AgenticOrchestratorAction"
+                    text="Agentic Orchestrator" description="Orchestrate agentic behaviors"/>
+        </group>
+    </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.tecnocrat.aios.AIOSMCPApplicationComponent</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>

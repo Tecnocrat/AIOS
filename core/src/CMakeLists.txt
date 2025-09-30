@@ -33,6 +33,9 @@ endif()
 find_package(Threads REQUIRED)
 target_link_libraries(aios_core_lib Threads::Threads)
 
+# Link assembly library to core library
+target_link_libraries(aios_core_lib aios_asm_lib)
+
 # Add subdirectories if they have their own CMakeLists
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/asm/CMakeLists.txt)
     add_subdirectory(asm)
@@ -40,4 +43,22 @@ endif()
 
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/assembly/CMakeLists.txt)
     add_subdirectory(assembly)
+endif()
+
+# Build test executables
+if(BUILD_TESTS)
+    # Consciousness SIMD processor test
+    add_executable(test_consciousness_simd test_consciousness_simd.cpp)
+    target_link_libraries(test_consciousness_simd
+        aios_core_lib
+        Threads::Threads
+    )
+    target_include_directories(test_consciousness_simd PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+    )
+
+    # Set test properties
+    set_target_properties(test_consciousness_simd PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests
+    )
 endif()

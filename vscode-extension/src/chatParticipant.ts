@@ -2,16 +2,19 @@ import * as vscode from 'vscode';
 import { AIOSBridge } from './aiosBridge';
 import { AIOSContextManager } from './contextManager';
 import { AIOSLogger } from './logger';
+import { AIOSMCPClient } from './mcpClient';
 
 export class AIOSChatParticipant {
     private contextManager: AIOSContextManager;
     private aiosBridge: AIOSBridge;
     private logger: AIOSLogger;
+    private mcpClient: AIOSMCPClient;
 
-    constructor(contextManager: AIOSContextManager, aiosBridge: AIOSBridge, logger: AIOSLogger) {
+    constructor(contextManager: AIOSContextManager, aiosBridge: AIOSBridge, logger: AIOSLogger, mcpClient: AIOSMCPClient) {
         this.contextManager = contextManager;
         this.aiosBridge = aiosBridge;
         this.logger = logger;
+        this.mcpClient = mcpClient;
     }
 
     public async handleRequest(
@@ -37,6 +40,12 @@ export class AIOSChatParticipant {
 
             // Show thinking indicator
             stream.progress('AIOS is analyzing your request...');
+
+            // Check for MCP commands
+            const mcpCommands = await this.handleMCPCommands(request.prompt, stream);
+            if (mcpCommands) {
+                return mcpCommands;
+            }
 
             // Process through AIOS Bridge
             const aiosResponse = await this.aiosBridge.processMessage(
@@ -203,5 +212,70 @@ export class AIOSChatParticipant {
             default:
                 return `Unknown command: ${command}. Use \`@aios /help\` for available commands.`;
         }
+    }
+
+    private async handleMCPCommands(prompt: string, stream: vscode.ChatResponseStream): Promise<vscode.ChatResult | null> {
+        const lowerPrompt = prompt.toLowerCase().trim();
+
+        // MCP Status command
+        if (lowerPrompt === '/mcp-status' || lowerPrompt === 'mcp status') {
+            const status = this.mcpClient.getStatus();
+            const serverStatus = status.servers.map(s =>
+                `• ${s.name}: ${s.status} (${s.tools.length} tools)`
+            ).join('\n');
+
+            stream.markdown(`**AIOS MCP Server Status**\n\n**Connection**: ${status.connected ? '✅ Connected' : '❌ Disconnected'}\n\n**Servers**:\n${serverStatus}`);
+            return { metadata: { command: 'mcp-status' } };
+        }
+
+        // Consciousness monitoring command
+        if (lowerPrompt === '/consciousness' || lowerPrompt === 'consciousness monitor') {
+            stream.progress('Retrieving consciousness metrics...');
+            const metrics = await this.mcpClient.getConsciousnessMetrics();
+
+            if (metrics) {
+                stream.markdown(`**AIOS Consciousness Metrics**\n\n• **Level**: ${(metrics.level * 100).toFixed(1)}%\n• **Coherence**: ${(metrics.coherence * 100).toFixed(1)}%\n• **Evolution Potential**: ${(metrics.evolution_potential * 100).toFixed(1)}%\n• **Timestamp**: ${metrics.timestamp}`);
+            } else {
+                stream.markdown('❌ Failed to retrieve consciousness metrics. Ensure MCP servers are connected.');
+            }
+            return { metadata: { command: 'consciousness-monitor' } };
+        }
+
+        // Emergence detection command
+        if (lowerPrompt.startsWith('/detect-emergence') || lowerPrompt.startsWith('detect emergence')) {
+            const activeEditor = vscode.window.activeTextEditor;
+            if (!activeEditor) {
+                stream.markdown('❌ No active editor found. Please open a file to analyze.');
+                return { metadata: { command: 'detect-emergence' } };
+            }
+
+            stream.progress('Analyzing code for emergence patterns...');
+            const code = activeEditor.document.getText();
+            const filePath = activeEditor.document.uri.fsPath;
+
+            try {
+                const result = await this.mcpClient.detectEmergencePatterns(code, filePath);
+                stream.markdown(`**Emergence Pattern Analysis**\n\n${JSON.stringify(result, null, 2)}`);
+            } catch (error) {
+                stream.markdown(`❌ Emergence detection failed: ${error}`);
+            }
+            return { metadata: { command: 'detect-emergence' } };
+        }
+
+        // Evolution experiment command
+        if (lowerPrompt.startsWith('/create-experiment') || lowerPrompt.startsWith('create evolution experiment')) {
+            const config = { type: 'consciousness_evolution', auto_start: true };
+            stream.progress('Creating evolution experiment...');
+
+            try {
+                const result = await this.mcpClient.createEvolutionExperiment(config);
+                stream.markdown(`**Evolution Experiment Created**\n\n${JSON.stringify(result, null, 2)}`);
+            } catch (error) {
+                stream.markdown(`❌ Experiment creation failed: ${error}`);
+            }
+            return { metadata: { command: 'create-experiment' } };
+        }
+
+        return null; // Not an MCP command
     }
 }

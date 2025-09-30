@@ -1,0 +1,33 @@
+2025-09-26 20:11:54,029 | EVOLUTION | INFO | [EVOLUTION] Initializing consciousness evolution engine...
+2025-09-26 20:11:54,030 | EVOLUTION | ERROR | [EVOLUTION] Evolution lab not found
+2025-09-26 20:11:54,030 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: calculator
+2025-09-26 20:12:58,783 | EVOLUTION | INFO | [EVOLUTION] Initializing consciousness evolution engine...
+2025-09-26 20:12:58,787 | EVOLUTION | INFO | [EVOLUTION] Loaded population: test_evolution
+2025-09-26 20:12:58,788 | EVOLUTION | WARNING | [EVOLUTION] Dendritic supervisor unavailable
+2025-09-26 20:12:58,790 | EVOLUTION | INFO | [EVOLUTION] Consciousness evolution engine ready
+2025-09-26 20:12:58,793 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: calculator
+2025-09-26 20:13:17,230 | EVOLUTION | INFO | [EVOLUTION] Initializing consciousness evolution engine...
+2025-09-26 20:13:17,232 | EVOLUTION | INFO | [EVOLUTION] Loaded population: test_evolution
+2025-09-26 20:13:17,233 | EVOLUTION | WARNING | [EVOLUTION] Dendritic supervisor unavailable
+2025-09-26 20:13:17,233 | EVOLUTION | INFO | [EVOLUTION] Consciousness evolution engine ready
+2025-09-26 20:13:17,234 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: calculator
+2025-09-26 20:13:17,235 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: data_explorer
+2025-09-26 20:13:17,235 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: text_analyzer
+2025-09-26 20:13:35,064 | EVOLUTION | INFO | [EVOLUTION] Initializing consciousness evolution engine...
+2025-09-26 20:13:35,067 | EVOLUTION | INFO | [EVOLUTION] Loaded population: test_evolution
+2025-09-26 20:13:35,068 | EVOLUTION | WARNING | [EVOLUTION] Dendritic supervisor unavailable
+2025-09-26 20:13:35,068 | EVOLUTION | INFO | [EVOLUTION] Consciousness evolution engine ready
+2025-09-26 20:13:35,069 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: calculator
+2025-09-26 20:13:35,070 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: data_explorer
+2025-09-26 20:13:35,071 | EVOLUTION | INFO | [EVOLUTION] Evolving consciousness artifacts for: text_analyzer
+2025-09-27 13:25:46,340 | EVOLUTION | INFO | [INGESTION] Starting ingestion of: https://github.com/Tecnocrat/run-gemini-cli.git
+2025-09-27 13:25:46,340 | EVOLUTION | INFO | [INGESTION] Cloning repository to: C:\dev\AIOS\ai\ingested_repositories\gemini_cli_bridge
+2025-09-27 13:25:48,331 | EVOLUTION | INFO | [INGESTION] Repository cloned successfully
+2025-09-27 13:25:48,468 | EVOLUTION | INFO | [INGESTION] Successfully ingested: gemini_cli_bridge
+2025-09-27 13:26:10,561 | EVOLUTION | INFO | [INGESTION] Starting ingestion of: https://github.com/Tecnocrat/run-gemini-cli.git
+2025-09-27 13:26:10,564 | EVOLUTION | INFO | [INGESTION] Cloning repository to: C:\dev\AIOS\ai\ingested_repositories\gemini_cli_bridge
+2025-09-27 13:26:10,572 | EVOLUTION | ERROR | [INGESTION] Failed to ingest https://github.com/Tecnocrat/run-gemini-cli.git: [WinError 5] Acceso denegado: 'C:\\dev\\AIOS\\ai\\ingested_repositories\\gemini_cli_bridge\\.git\\objects\\pack\\pack-3bff9ecdd64c28db170e57efcc1e4633a66c70aa.idx'
+2025-09-27 13:27:22,179 | EVOLUTION | INFO | [INGESTION] Starting ingestion of: https://github.com/Tecnocrat/run-gemini-cli.git
+2025-09-27 13:27:22,179 | EVOLUTION | INFO | [INGESTION] Cloning repository to: C:\dev\AIOS\ai\ingested_repositories\gemini_cli_bridge
+2025-09-27 13:27:23,430 | EVOLUTION | INFO | [INGESTION] Repository cloned successfully
+2025-09-27 13:27:23,479 | EVOLUTION | INFO | [INGESTION] Successfully ingested: gemini_cli_bridge
