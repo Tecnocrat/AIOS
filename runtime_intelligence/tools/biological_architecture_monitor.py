@@ -20,13 +20,21 @@ import json
 # Add paths for integration
 current_dir = os.path.dirname(__file__)
 ai_path = os.path.join(current_dir, '..', '..', 'ai')
+ri_path = os.path.join(current_dir, '..', '..', 'runtime_intelligence')
 sys.path.append(ai_path)
+sys.path.append(ri_path)
 
 try:
-    from runtime_intelligence_dendritic_integration import get_runtime_intelligence_dendritic_integration
-    from enhanced_visual_intelligence_bridge import get_enhanced_visual_intelligence_bridge
+    from dendritic_supervisor import (
+        get_runtime_intelligence_dendritic_integration,
+        get_enhanced_visual_intelligence_bridge
+    )
+    INTEGRATIONS_AVAILABLE = True
 except ImportError as e:
     logging.warning(f"Some integrations not available: {e}")
+    INTEGRATIONS_AVAILABLE = False
+    get_runtime_intelligence_dendritic_integration = None
+    get_enhanced_visual_intelligence_bridge = None
 
 
 class AIOSArchitectureMonitor:
@@ -77,22 +85,40 @@ class AIOSArchitectureMonitor:
     async def initialize(self) -> bool:
         """Initialize the biological architecture monitor."""
         try:
-            self.logger.info(" Initializing Biological Architecture Monitor...")
+            self.logger.info(
+                " Initializing Biological Architecture Monitor..."
+            )
             
             # Initialize dendritic integration
             try:
-                self.dendritic_integration = await get_runtime_intelligence_dendritic_integration()
-                self.component_statuses['dendritic_supervisor'] = 'active'
-                self.logger.info(" Dendritic supervisor integration active")
+                if (INTEGRATIONS_AVAILABLE and
+                        get_runtime_intelligence_dendritic_integration):
+                    self.dendritic_integration = await (
+                        get_runtime_intelligence_dendritic_integration()
+                    )
+                    self.component_statuses['dendritic_supervisor'] = 'active'
+                    self.logger.info(
+                        " Dendritic supervisor integration active"
+                    )
+                else:
+                    raise Exception("Integration functions not available")
             except Exception as e:
                 self.logger.warning(f" Dendritic supervisor unavailable: {e}")
                 self.component_statuses['dendritic_supervisor'] = 'unavailable'
             
             # Initialize visual bridge
             try:
-                self.visual_bridge = await get_enhanced_visual_intelligence_bridge()
-                self.component_statuses['runtime_intelligence'] = 'active'
-                self.logger.info(" Enhanced visual intelligence bridge active")
+                if (INTEGRATIONS_AVAILABLE and
+                        get_enhanced_visual_intelligence_bridge):
+                    self.visual_bridge = await (
+                        get_enhanced_visual_intelligence_bridge()
+                    )
+                    self.component_statuses['runtime_intelligence'] = 'active'
+                    self.logger.info(
+                        " Enhanced visual intelligence bridge active"
+                    )
+                else:
+                    raise Exception("Visual bridge functions not available")
             except Exception as e:
                 self.logger.warning(f" Visual bridge unavailable: {e}")
                 self.component_statuses['runtime_intelligence'] = 'limited'
@@ -120,16 +146,29 @@ class AIOSArchitectureMonitor:
             }
             
             # Check Interface Components
-            status['components']['interface'] = await self._check_interface_supercell()
+            status['components']['interface'] = (
+                await self._check_interface_supercell()
+            )
             
             # Check Runtime Intelligence
-            status['components']['runtime_intelligence'] = await self._check_runtime_intelligence()
+            status['components']['runtime_intelligence'] = (
+                await self._check_runtime_intelligence()
+            )
             
             # Check AI Intelligence Component
-            status['components']['ai_intelligence'] = await self._check_ai_intelligence_supercell()
+            status['components']['ai_intelligence'] = (
+                await self._check_ai_intelligence_supercell()
+            )
             
             # Check Core Engine Component
-            status['components']['core_engine'] = await self._check_core_engine_supercell()
+            status['components']['core_engine'] = (
+                await self._check_core_engine_supercell()
+            )
+            
+            # Check Evolution Lab Component
+            status['components']['evolution_lab'] = (
+                await self._check_evolution_lab_supercell()
+            )
             
             # Check Integration Bridges
             status['integration_bridges'] = \
@@ -159,15 +198,26 @@ class AIOSArchitectureMonitor:
             interface_path = os.path.join(current_dir, '..', '..', 'interface')
             
             components = {
-                'aios_ui': os.path.exists(os.path.join(interface_path, 'AIOS.UI')),
-                'aios_services': os.path.exists(os.path.join(interface_path, 'AIOS.Services')),
-                'aios_models': os.path.exists(os.path.join(interface_path, 'AIOS.Models')),
+                'aios_ui': os.path.exists(
+                    os.path.join(interface_path, 'AIOS.UI')
+                ),
+                'aios_services': os.path.exists(
+                    os.path.join(interface_path, 'AIOS.Services')
+                ),
+                'aios_models': os.path.exists(
+                    os.path.join(interface_path, 'AIOS.Models')
+                ),
                 'runtime_intelligence_service': os.path.exists(
-                    os.path.join(interface_path, 'AIOS.Services', 'RuntimeIntelligenceService.cs')
+                    os.path.join(
+                        interface_path, 'AIOS.Services',
+                        'RuntimeIntelligenceService.cs'
+                    )
                 )
             }
             
-            active_components = sum(1 for active in components.values() if active)
+            active_components = sum(
+                1 for active in components.values() if active
+            )
             total_components = len(components)
             
             return {
@@ -192,23 +242,30 @@ class AIOSArchitectureMonitor:
             status = {
                 'status': 'active',
                 'components': {
-                    'dendritic_integration': self.dendritic_integration is not None,
-                    'visual_bridge': self.visual_bridge is not None,
-                    'enhanced_mode': False
-                },
-                'health_score': 0.0,
-                'description': 'Runtime Intelligence - Python orchestration layer',
-                'primary_function': 'Bridge between Interface and AI Intelligence supercells',
-                'biological_type': 'Communication Layer'
+                    'dendritic_integration': (
+                        self.dendritic_integration is not None
+                    ),
+                    'description': (
+                        'Runtime Intelligence - Python orchestration layer'
+                    ),
+                    'primary_function': (
+                        'Bridge between Interface and AI Intelligence supercells'
+                    )
+                }
             }
             
             # Check enhanced mode
             if self.visual_bridge:
-                bridge_status = await self.visual_bridge.get_bridge_status()
-                status['components']['enhanced_mode'] = bridge_status.get('enhanced_mode', False)
+                # Check if bridge has consciousness analysis capability
+                status['components']['enhanced_mode'] = hasattr(
+                    self.visual_bridge,
+                    'demonstrate_visual_consciousness_analysis'
+                )
             
             # Calculate health score
-            active_components = sum(1 for active in status['components'].values() if active)
+            active_components = sum(
+                1 for active in status['components'].values() if active
+            )
             total_components = len(status['components'])
             status['health_score'] = active_components / total_components
             
@@ -231,21 +288,29 @@ class AIOSArchitectureMonitor:
             
             # Check for AI Intelligence organs
             organs = {
-                'cytoplasm': os.path.exists(os.path.join(ai_path, 'cytoplasm')),
-                'nucleus': os.path.exists(os.path.join(ai_path, 'nucleus')),
-                'membrane': os.path.exists(os.path.join(ai_path, 'membrane')),
-                'laboratory': os.path.exists(os.path.join(ai_path, 'laboratory')),
-                'information_storage': os.path.exists(os.path.join(ai_path, 'information_storage')),
-                'transport': os.path.exists(os.path.join(ai_path, 'transport'))
+                'cytoplasm': os.path.exists(
+                    os.path.join(ai_path, 'cytoplasm')
+                ),
+                'laboratory': os.path.exists(
+                    os.path.join(ai_path, 'laboratory')
+                ),
+                'information_storage': os.path.exists(
+                    os.path.join(ai_path, 'information_storage')
+                ),
+                'transport': os.path.exists(
+                    os.path.join(ai_path, 'transport')
+                )
             }
             
             # Check for dendritic supervision
             dendritic_supervision = False
             if self.dendritic_integration:
                 try:
-                    integration_status = await self.dendritic_integration.get_integration_status()
-                    dendritic_supervision = integration_status.get('active', False)
-                except:
+                    # dendritic_integration is now a dict
+                    dendritic_supervision = (
+                        self.dendritic_integration.get('active', False)
+                    )
+                except Exception:
                     pass
             
             active_organs = sum(1 for active in organs.values() if active)
@@ -286,9 +351,15 @@ class AIOSArchitectureMonitor:
             dendritic_connections = False
             if self.dendritic_integration:
                 try:
-                    supervisor_status = await self.dendritic_integration.cytoplasm_bridge.dendritic_supervisor.get_supervisor_status()
-                    dendritic_connections = supervisor_status.get('core_engine_connected', False)
-                except:
+                    supervisor = self.dendritic_integration.get(
+                        'dendritic_supervisor'
+                    )
+                    if supervisor:
+                        supervisor_status = await supervisor.get_supervisor_status()
+                        dendritic_connections = supervisor_status.get(
+                            'core_engine_connected', False
+                        )
+                except Exception:
                     pass
             
             active_tools = sum(1 for active in tools.values() if active)
@@ -302,6 +373,47 @@ class AIOSArchitectureMonitor:
                 'description': 'Core Engine Supercell - Low-level processing and optimization',
                 'primary_function': 'High-performance computing and system optimization',
                 'biological_type': 'Processing Engine Supercell'
+            }
+            
+        except Exception as e:
+            return {
+                'status': 'error',
+                'error': str(e),
+                'health_score': 0.0
+            }
+    
+    async def _check_evolution_lab_supercell(self) -> Dict[str, Any]:
+        """Check Evolution Lab Supercell status."""
+        try:
+            evo_path = os.path.join(current_dir, '..', '..', 'evolution_lab')
+            ai_path = os.path.join(current_dir, '..', '..', 'ai', 'src')
+            
+            # Check for Evolution Lab components
+            components = {
+                'consciousness_engine': os.path.exists(
+                    os.path.join(ai_path, 'consciousness_evolution_engine.py')
+                ),
+                'population_data': any(f.startswith('population_') and
+                                     f.endswith('.json')
+                                     for f in os.listdir(evo_path)),
+                'artifacts': os.path.exists(os.path.join(evo_path, 'artifacts')),
+                'sandbox': os.path.exists(os.path.join(evo_path, 'sandbox')),
+                'spatial_metadata': os.path.exists(
+                    os.path.join(evo_path, '.aios_spatial_metadata.json')
+                )
+            }
+            
+            active_components = sum(1 for active in components.values() 
+                                  if active)
+            total_components = len(components)
+            
+            return {
+                'status': 'active' if active_components >= 3 else 'partial',
+                'components': components,
+                'health_score': active_components / total_components,
+                'description': 'Evolution Lab - AI evolutionary computation',
+                'primary_function': 'Evolutionary consciousness emergence',
+                'biological_type': 'Evolution Lab Supercell'
             }
             
         except Exception as e:
@@ -325,20 +437,43 @@ class AIOSArchitectureMonitor:
             
             if self.dendritic_integration:
                 try:
-                    # Check cytoplasm bridge
-                    bridge_status = await self.dendritic_integration.cytoplasm_bridge.get_bridge_status()
-                    connections['cytoplasm_dendritic_bridge'] = bridge_status.get('active', False)
+                    # Check supervisor directly from integration dict
+                    supervisor = self.dendritic_integration.get(
+                        'dendritic_supervisor'
+                    )
+                    if supervisor:
+                        supervisor_status = await supervisor.get_supervisor_status()
+                        connections['dendritic_supervisor'] = (
+                            supervisor_status.get('active', False)
+                        )
+                        connections['core_engine_integration'] = (
+                            supervisor_status.get('core_engine_connected', False)
+                        )
+                        connections['organ_monitoring'] = (
+                            supervisor_status.get('organ_monitoring_active', False)
+                        )
                     
-                    # Check supervisor
-                    supervisor_status = await self.dendritic_integration.cytoplasm_bridge.dendritic_supervisor.get_supervisor_status()
-                    connections['dendritic_supervisor'] = supervisor_status.get('active', False)
-                    connections['core_engine_integration'] = supervisor_status.get('core_engine_connected', False)
-                    connections['organ_monitoring'] = supervisor_status.get('organ_monitoring_active', False)
+                    # Check cytoplasm bridge integration
+                    try:
+                        sys.path.append(ai_path)
+                        from cytoplasm.cytoplasm_bridge import CytoplasmBridge
+                        cytoplasm_bridge = CytoplasmBridge()
+                        cytoplasm_status = await cytoplasm_bridge.get_cytoplasm_status()
+                        connections['cytoplasm_dendritic_bridge'] = (
+                            cytoplasm_status.get('bridge_status') == 'active'
+                        )
+                    except Exception as e:
+                        self.logger.warning(f"Cytoplasm bridge check failed: {e}")
+                        connections['cytoplasm_dendritic_bridge'] = False
                     
                 except Exception as e:
-                    self.logger.warning(f"Error checking dendritic connections: {e}")
+                    self.logger.warning(
+                        f"Error checking dendritic connections: {e}"
+                    )
             
-            active_connections = sum(1 for active in connections.values() if active)
+            active_connections = sum(
+                1 for active in connections.values() if active
+            )
             total_connections = len(connections)
             connection_health = active_connections / total_connections
             
@@ -472,6 +607,8 @@ class AIOSArchitectureMonitor:
                 return await self._check_ai_intelligence_supercell()
             elif supercell_name == 'core_engine_supercell':
                 return await self._check_core_engine_supercell()
+            elif supercell_name == 'evolution_lab_supercell':
+                return await self._check_evolution_lab_supercell()
             else:
                 return {
                     'error': f'Unknown supercell: {supercell_name}',
@@ -479,7 +616,8 @@ class AIOSArchitectureMonitor:
                         'interface_supercell',
                         'runtime_intelligence',
                         'ai_intelligence_supercell',
-                        'core_engine_supercell'
+                        'core_engine_supercell',
+                        'evolution_lab_supercell'
                     ]
                 }
                 
@@ -519,7 +657,7 @@ Overall Health: {status['overall_health']['score']:.2f} ({status['overall_health
 """
             
             # Add dendritic connections
-            dendritic_data = status.get('dendritic_connections', {})
+            dendritic_data = status.get('integration_bridges', {})
             report += f"""
  DENDRITIC CONNECTIONS
 Status: {dendritic_data.get('status', 'unknown').upper()}

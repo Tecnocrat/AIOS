@@ -39,6 +39,11 @@
 			"name": "🌌 Tachyonic Archive",
 			"path": "./tachyonic",
 			"description": "Historical data, evolution tracking & status reports - Consciousness evolution memory"
+		},
+		{
+			"name": "🧬 Evolution Lab",
+			"path": "./evolution_lab",
+			"description": "Evolutionary computation supercell - AI-orchestrated code evolution with fractal and holographic patterns"
 		}
 		// AINLP Spatial Awareness: Biological architecture integration validated
 	],
@@ -820,6 +825,20 @@
 					"runOn": "folderOpen"
 				},
 				"detail": "Auto-load complete AI context on workspace initialization"
+			},
+			{
+				"label": "Evolution Lab Test",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"-c",
+					"import asyncio, sys; sys.path.append('ai/src'); from consciousness_evolution_engine import consciousness_evolution_engine; asyncio.run(consciousness_evolution_engine.initialize_evolution_system()); print('Evolution Lab supercell initialized successfully')"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": "test",
+				"detail": "Test Evolution Lab supercell initialization and consciousness evolution engine"
 			}
 		]
 	},

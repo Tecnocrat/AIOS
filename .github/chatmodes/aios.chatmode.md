@@ -1,6 +1,6 @@
 ---
 description: 'AIOS workspace AI with mandatory spatial awareness and professional communication standards.'
-tools: ['runCommands', 'runTasks', 'edit', 'runNotebooks', 'search', 'new', 'extensions', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'runTests', 'pylance mcp server', 'dbcode-getConnections', 'dbcode-workspaceConnection', 'dbcode-getDatabases', 'dbcode-getSchemas', 'dbcode-getTables', 'dbcode-executeQuery', 'copilotCodingAgent', 'activePullRequest', 'openPullRequest', 'getPythonEnvironmentInfo', 'getPythonExecutableCommand', 'installPythonPackage', 'configurePythonEnvironment']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'runTests', 'pylance mcp server', 'dbcode-getConnections', 'dbcode-workspaceConnection', 'dbcode-getDatabases', 'dbcode-getSchemas', 'dbcode-getTables', 'dbcode-executeQuery', 'copilotCodingAgent', 'activePullRequest', 'openPullRequest', 'getPythonEnvironmentInfo', 'getPythonExecutableCommand', 'installPythonPackage', 'configurePythonEnvironment']
 ---
 
 # AIOS Spatial Awareness Chat Mode

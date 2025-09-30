@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
 AIOS Interface Bridge
-Provides standardized entry point for C++/C# interface layer to discover and interact with Python AI tools
+Provides standardized entry point for C++/C# interface layer to discover and
+interact with Python AI tools
 
-This component creates a bridge between the Python AI layer and the .NET interface,
-enabling rich metadata generation and dynamic tool discovery for the UI.
+This component creates a bridge between the Python AI layer
+and the .NET interface, enabling rich metadata generation
+and dynamic tool discovery for the UI.
 
 Auto-start: True (HTTP API server)
 Health-check: health_check

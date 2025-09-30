@@ -1,0 +1,120 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-25T22:52:24.641546",
+  "folder_info": {
+    "name": "docs",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\core\\docs",
+    "relative_path": "ai\\core\\docs",
+    "parent_path": "ai\\core",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [
+      "Core Engine",
+      "Documentation"
+    ],
+    "path_classification": [
+      "ai",
+      "core",
+      "docs"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "ai_cells",
+      "compression",
+      "consciousness",
+      "optimization",
+      "src"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 2503,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "AINLP_HEALTH_ASSESSMENT_20250923_075551.json",
+          "size": 2503,
+          "modified": "2025-09-23T07:55:51.414794",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "AINLP_HEALTH_ASSESSMENT_20250923_075551.json",
+        "size": 2503,
+        "modified": "2025-09-23T07:55:51.414794",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > core > docs",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\core\\docs' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\core\\docs' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\core\\docs' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "interface\\AIOS.Models",
+      "core",
+      "docs"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}
