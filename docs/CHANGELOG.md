@@ -21,6 +21,7 @@
 ### Added - Learning Ingestion Protocol Foundation
 - **Submodule Metadata Enhancement**: Added AIOS spatial and ingestion metadata to gemini_cli_bridge submodule
 - **Semantic Intelligence Preparation**: Foundation for programming language library learning protocols
+- **Development Terminal Script**: Created `scripts/dev_terminal.ps1` for workspace coherence analysis and CI validation
 
 ### Changed - Development Path Restructuring
 - **AIOS_DEV_PATH.md**: Transformed from detailed 1000+ line trajectory to focused short-term tactical tracking
