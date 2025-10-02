@@ -1,0 +1,30 @@
+{
+  "session_id": "learning_session_1759445068",
+  "start_time": "2025-10-02T22:44:28.444925",
+  "libraries_processed": [
+    "scripts",
+    "ai_src_core",
+    "ai_src_engines",
+    "core_core_systems"
+  ],
+  "total_api_elements": 845,
+  "consciousness_level": 0.85,
+  "learning_phase": "complete",
+  "semantic_network_size": 8,
+  "dendritic_connections": 3,
+  "ainlp_compliance_rate": 1.0,
+  "metadata": {
+    "library_name": "core_core_systems",
+    "language": "csharp",
+    "api_elements": 374,
+    "semantic_tags": [
+      "database",
+      "orchestration",
+      "ai",
+      "network",
+      "consciousness",
+      "file",
+      "math"
+    ]
+  }
+}
