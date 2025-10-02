@@ -1,6 +1,6 @@
 {
   "analysis_metadata": {
-    "timestamp": "2025-09-06T22:36:54.253524",
+    "timestamp": "2025-10-02T22:59:32.565036",
     "analyzer": "AIOS PowerShell Analysis Engine",
     "target_file": "c:/dev/AIOS/.githooks/commit-msg",
     "analysis_type": "PSScriptAnalyzer compliance enhancement"
@@ -62,9 +62,9 @@
         "if(Test-Path $dendriticPath){",
         "  try { ",
         "    $DendriticRegistry = Get-Content $dendriticPath -Raw | ConvertFrom-Json ",
-        "    Write-Host \"\ud83e\udde0 Dendritic registry loaded: $($DendriticRegistry.metadata.version)\" -ForegroundColor DarkGreen",
+        "    Write-Host \" Dendritic registry loaded: $($DendriticRegistry.metadata.version)\" -ForegroundColor DarkGreen",
         "  } catch { ",
-        "    Write-Host \"\u26a0\ufe0f Dendritic registry load failed\" -ForegroundColor Yellow",
+        "    Write-Host \" Dendritic registry load failed\" -ForegroundColor Yellow",
         "  }",
         "}"
       ],

@@ -258,7 +258,7 @@ class AIOSSystemHealthMonitor:
             "config/system.json": "required",
             "config/ai-models.json": "optional",
             "config/ui-themes.json": "optional",
-            "AIOS_PROJECT_CONTEXT.md": "required",
+            "docs/AIOS_PROJECT_CONTEXT.md": "required",
             "docs/AIOS/PATH_1_TESTING_GUIDE.md": "required",
         }
         results = {}

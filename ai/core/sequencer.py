@@ -129,6 +129,10 @@ class AIOSSequencer:
         integrations = await self._discover_integrations()
         discovered.update(integrations)
         
+        # Discover runtime intelligence tools
+        runtime_intelligence = await self._discover_runtime_intelligence()
+        discovered.update(runtime_intelligence)
+        
         self.components = discovered
         self.state.components_discovered = len(discovered)
         
@@ -213,6 +217,36 @@ class AIOSSequencer:
                         integrations[component.name] = component
         
         return integrations
+    
+    async def _discover_runtime_intelligence(self) -> Dict[str, ExecutableComponent]:
+        """Discover runtime intelligence tools and components"""
+        runtime_tools = {}
+        # Get path relative to this sequencer.py file location
+        sequencer_dir = Path(__file__).parent
+        runtime_dir = (sequencer_dir / "../../runtime_intelligence").resolve()
+        
+        if runtime_dir.exists():
+            # Discover tools in runtime_intelligence/tools/
+            tools_dir = runtime_dir / "tools"
+            if tools_dir.exists():
+                for py_file in tools_dir.glob("*.py"):
+                    if py_file.name != "__init__.py":
+                        component = await self._analyze_python_component(
+                            py_file, "tool"
+                        )
+                        if component:
+                            runtime_tools[component.name] = component
+            
+            # Discover other runtime intelligence components
+            for py_file in runtime_dir.glob("*.py"):
+                if py_file.name != "__init__.py":
+                    component = await self._analyze_python_component(
+                        py_file, "tool"
+                    )
+                    if component and component.name not in runtime_tools:
+                        runtime_tools[component.name] = component
+        
+        return runtime_tools
     
     async def _analyze_python_component(
         self, 

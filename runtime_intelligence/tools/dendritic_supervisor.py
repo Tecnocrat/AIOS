@@ -69,14 +69,17 @@ class DendriticSupervisor:
     
     def _setup_logging(self) -> logging.Logger:
         """AINLP-compliant logging setup"""
+        # Ensure logs directory exists
+        logs_dir = Path(__file__).parent.parent / 'logs'
+        logs_dir.mkdir(exist_ok=True)
+        
+        log_file = logs_dir / 'dendritic_supervisor.log'
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s | DENDRITIC | %(levelname)s | %(message)s',
             handlers=[
                 logging.StreamHandler(),
-                logging.FileHandler(
-                    'runtime_intelligence/logs/dendritic_supervisor.log'
-                )
+                logging.FileHandler(str(log_file))
             ]
         )
         return logging.getLogger('DendriticSupervisor')

@@ -144,9 +144,9 @@ export class AIOSContextManager {
     private async loadAIOSContextFile(): Promise<any> {
         try {
             const workspaceFolders = vscode.workspace.workspaceFolders;
-            if (!workspaceFolders?.length) return null;
+            if (!workspaceFolders || workspaceFolders.length === 0) return null;
             
-            const contextUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.aios_context.json');
+            const contextUri = vscode.Uri.joinPath(workspaceFolders[0]!.uri, '.aios_context.json');
             const content = await vscode.workspace.fs.readFile(contextUri);
             return JSON.parse(content.toString());
         } catch (error) {
@@ -158,9 +158,9 @@ export class AIOSContextManager {
     private async loadAIContextAutoLoadFile(): Promise<string> {
         try {
             const workspaceFolders = vscode.workspace.workspaceFolders;
-            if (!workspaceFolders?.length) return '';
+            if (!workspaceFolders || workspaceFolders.length === 0) return '';
             
-            const contextUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.vscode', 'AI_CONTEXT_AUTO_LOAD.md');
+            const contextUri = vscode.Uri.joinPath(workspaceFolders[0]!.uri, '.vscode', 'AI_CONTEXT_AUTO_LOAD.md');
             const content = await vscode.workspace.fs.readFile(contextUri);
             return content.toString();
         } catch (error) {
@@ -172,9 +172,9 @@ export class AIOSContextManager {
     private async loadChatmodeRules(): Promise<string> {
         try {
             const workspaceFolders = vscode.workspace.workspaceFolders;
-            if (!workspaceFolders?.length) return '';
+            if (!workspaceFolders || workspaceFolders.length === 0) return '';
             
-            const chatmodeUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.github', 'chatmodes', 'aios.chatmode.md');
+            const chatmodeUri = vscode.Uri.joinPath(workspaceFolders[0]!.uri, '.github', 'chatmodes', 'aios.chatmode.md');
             const content = await vscode.workspace.fs.readFile(chatmodeUri);
             return content.toString();
         } catch (error) {
@@ -186,9 +186,9 @@ export class AIOSContextManager {
     private async loadSpatialMetadata(): Promise<any> {
         try {
             const workspaceFolders = vscode.workspace.workspaceFolders;
-            if (!workspaceFolders?.length) return null;
+            if (!workspaceFolders || workspaceFolders.length === 0) return null;
             
-            const metadataUri = vscode.Uri.joinPath(workspaceFolders[0].uri, '.aios_spatial_metadata.json');
+            const metadataUri = vscode.Uri.joinPath(workspaceFolders[0]!.uri, '.aios_spatial_metadata.json');
             const content = await vscode.workspace.fs.readFile(metadataUri);
             return JSON.parse(content.toString());
         } catch (error) {
@@ -220,7 +220,7 @@ export class AIOSContextManager {
             openFiles,
             gitBranch: this.detectGitBranch(),
             projectType: this.detectProjectType()
-        };
+        } as WorkspaceContext;
     }
 
     private detectGitBranch(): string | undefined {

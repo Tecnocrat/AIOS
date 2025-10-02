@@ -263,7 +263,7 @@ export class AIOSBridge {
 
         try {
             // Step 1: Analyze message intent and workspace context
-            const analysis = await this.analyzeMessageIntent(message, context);
+            const analysis = await this.analyzeMessageIntent(message);
             
             // Step 2: Generate intelligent response based on AIOS capabilities
             const response = await this.generateIntelligentResponse(message, analysis, context);
@@ -276,7 +276,7 @@ export class AIOSBridge {
         }
     }
 
-    private async analyzeMessageIntent(message: string, context?: any): Promise<any> {
+    private async analyzeMessageIntent(message: string): Promise<any> {
         const intent: {
             type: string;
             confidence: number;
