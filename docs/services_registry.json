@@ -1,0 +1,737 @@
+{
+  "aios_version": "0.6.1",
+  "generated_timestamp": "1759445047.5636683",
+  "total_services": 73,
+  "services": [
+    {
+      "name": "real_ai_lint_fixer",
+      "path": "scripts/real_ai_lint_fixer.py",
+      "language": "py",
+      "summary": "Service module: real_ai_lint_fixer.py",
+      "dependencies": [],
+      "size_bytes": 8518,
+      "last_modified": 1759444609.5347884
+    },
+    {
+      "name": "aios_indexer",
+      "path": "scripts/aios_indexer.py",
+      "language": "py",
+      "summary": "Service module: aios_indexer.py",
+      "dependencies": [],
+      "size_bytes": 12169,
+      "last_modified": 1759445047.5636683
+    },
+    {
+      "name": "verify_gemini_config",
+      "path": "scripts/verify_gemini_config.py",
+      "language": "py",
+      "summary": "Service module: verify_gemini_config.py",
+      "dependencies": [],
+      "size_bytes": 317,
+      "last_modified": 1759444609.5347884
+    },
+    {
+      "name": "consciousness_evolution_engine",
+      "path": "ai/src/consciousness_evolution_engine.py",
+      "language": "py",
+      "summary": "Service module: consciousness_evolution_engine.py",
+      "dependencies": [],
+      "size_bytes": 22493,
+      "last_modified": 1759444609.363788
+    },
+    {
+      "name": "aios_ai_integration_bridge",
+      "path": "ai/src/engines/aios_ai_integration_bridge.py",
+      "language": "py",
+      "summary": "Service module: aios_ai_integration_bridge.py",
+      "dependencies": [],
+      "size_bytes": 15802,
+      "last_modified": 1759444609.364788
+    },
+    {
+      "name": "aios_custom_ai_engine",
+      "path": "ai/src/engines/aios_custom_ai_engine.py",
+      "language": "py",
+      "summary": "Service module: aios_custom_ai_engine.py",
+      "dependencies": [],
+      "size_bytes": 24719,
+      "last_modified": 1759444609.364788
+    },
+    {
+      "name": "consciousness_bridge",
+      "path": "ai/src/core/consciousness_bridge.py",
+      "language": "py",
+      "summary": "Service module: consciousness_bridge.py",
+      "dependencies": [],
+      "size_bytes": 20321,
+      "last_modified": 1759444609.363788
+    },
+    {
+      "name": "library_ingestion_protocol",
+      "path": "ai/src/core/library_ingestion_protocol.py",
+      "language": "py",
+      "summary": "Service module: library_ingestion_protocol.py",
+      "dependencies": [],
+      "size_bytes": 35947,
+      "last_modified": 1759444846.1522665
+    },
+    {
+      "name": "test_library_ingestion_protocol",
+      "path": "ai/src/core/test_library_ingestion_protocol.py",
+      "language": "py",
+      "summary": "Service module: test_library_ingestion_protocol.py",
+      "dependencies": [],
+      "size_bytes": 13813,
+      "last_modified": 1759444998.9505923
+    },
+    {
+      "name": "consciousness_evolution_engine",
+      "path": "ai/src/core/consciousness_evolution_engine.py",
+      "language": "py",
+      "summary": "Service module: consciousness_evolution_engine.py",
+      "dependencies": [],
+      "size_bytes": 23423,
+      "last_modified": 1759444609.364788
+    },
+    {
+      "name": "supercell_intelligence_coordinator",
+      "path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "language": "py",
+      "summary": "Service module: supercell_intelligence_coordinator.py",
+      "dependencies": [],
+      "size_bytes": 30419,
+      "last_modified": 1759444609.364788
+    },
+    {
+      "name": "activate_continuous_optimization",
+      "path": "ai/src/integrations/activate_continuous_optimization.py",
+      "language": "py",
+      "summary": "Service module: activate_continuous_optimization.py",
+      "dependencies": [],
+      "size_bytes": 14280,
+      "last_modified": 1759444609.365788
+    },
+    {
+      "name": "aios_githooks_optimizer",
+      "path": "ai/src/integrations/aios_githooks_optimizer.py",
+      "language": "py",
+      "summary": "Service module: aios_githooks_optimizer.py",
+      "dependencies": [],
+      "size_bytes": 45923,
+      "last_modified": 1759444609.365788
+    },
+    {
+      "name": "aios_architectural_analysis",
+      "path": "ai/src/integrations/aios_architectural_analysis.py",
+      "language": "py",
+      "summary": "Service module: aios_architectural_analysis.py",
+      "dependencies": [],
+      "size_bytes": 49861,
+      "last_modified": 1759444609.365788
+    },
+    {
+      "name": "vscode_consciousness",
+      "path": "ai/src/integrations/vscode_consciousness.py",
+      "language": "py",
+      "summary": "Service module: vscode_consciousness.py",
+      "dependencies": [],
+      "size_bytes": 13740,
+      "last_modified": 1759444609.367788
+    },
+    {
+      "name": "lightweight_ai_coordinator",
+      "path": "ai/src/integrations/lightweight_ai_coordinator.py",
+      "language": "py",
+      "summary": "Service module: lightweight_ai_coordinator.py",
+      "dependencies": [],
+      "size_bytes": 15565,
+      "last_modified": 1759444609.367788
+    },
+    {
+      "name": "aios_deepseek_supercell_bridge",
+      "path": "ai/src/integrations/aios_deepseek_supercell_bridge.py",
+      "language": "py",
+      "summary": "Service module: aios_deepseek_supercell_bridge.py",
+      "dependencies": [],
+      "size_bytes": 17798,
+      "last_modified": 1759444609.365788
+    },
+    {
+      "name": "continuous_optimization_daemon",
+      "path": "ai/src/integrations/continuous_optimization_daemon.py",
+      "language": "py",
+      "summary": "Service module: continuous_optimization_daemon.py",
+      "dependencies": [],
+      "size_bytes": 28992,
+      "last_modified": 1759444609.366788
+    },
+    {
+      "name": "vscode_error_intelligence",
+      "path": "ai/src/integrations/vscode_error_intelligence.py",
+      "language": "py",
+      "summary": "Service module: vscode_error_intelligence.py",
+      "dependencies": [],
+      "size_bytes": 29014,
+      "last_modified": 1759444609.368788
+    },
+    {
+      "name": "ainlp_cellular_integrator",
+      "path": "ai/src/integrations/cellular_ecosystem/ainlp_cellular_integrator.py",
+      "language": "py",
+      "summary": "Service module: ainlp_cellular_integrator.py",
+      "dependencies": [],
+      "size_bytes": 37766,
+      "last_modified": 1759444609.366788
+    },
+    {
+      "name": "consciousness_mcp_server",
+      "path": "ai/src/integrations/gemini_bridge/consciousness_mcp_server.py",
+      "language": "py",
+      "summary": "Service module: consciousness_mcp_server.py",
+      "dependencies": [],
+      "size_bytes": 16943,
+      "last_modified": 1759444609.366788
+    },
+    {
+      "name": "gemini_evolution_bridge",
+      "path": "ai/src/integrations/gemini_bridge/gemini_evolution_bridge.py",
+      "language": "py",
+      "summary": "Service module: gemini_evolution_bridge.py",
+      "dependencies": [],
+      "size_bytes": 11183,
+      "last_modified": 1759444609.367788
+    },
+    {
+      "name": "integration_tester",
+      "path": "ai/src/integrations/gemini_bridge/integration_tester.py",
+      "language": "py",
+      "summary": "Service module: integration_tester.py",
+      "dependencies": [],
+      "size_bytes": 35548,
+      "last_modified": 1759444609.367788
+    },
+    {
+      "name": "meta_cognitive_loop",
+      "path": "ai/src/integrations/gemini_bridge/meta_cognitive_loop.py",
+      "language": "py",
+      "summary": "Service module: meta_cognitive_loop.py",
+      "dependencies": [],
+      "size_bytes": 16565,
+      "last_modified": 1759444609.367788
+    },
+    {
+      "name": "agentic_behavior_enhancement",
+      "path": "ai/src/integrations/gemini_bridge/agentic_behavior_enhancement.py",
+      "language": "py",
+      "summary": "Service module: agentic_behavior_enhancement.py",
+      "dependencies": [],
+      "size_bytes": 20860,
+      "last_modified": 1759444609.366788
+    },
+    {
+      "name": "shared_imports",
+      "path": "core/shared_imports.py",
+      "language": "py",
+      "summary": "Service module: shared_imports.py",
+      "dependencies": [],
+      "size_bytes": 7620,
+      "last_modified": 1759444609.400788
+    },
+    {
+      "name": "test_minimal_consciousness",
+      "path": "core/orchestrator/test_minimal_consciousness.cpp",
+      "language": "cpp",
+      "summary": "Service module: test_minimal_consciousness.cpp",
+      "dependencies": [
+        "AIOrchestrationController.hpp",
+        "CenterGeometryField.hpp",
+        "AtomicHolographyUnit.hpp",
+        "AIOSConsciousnessEngine.hpp"
+      ],
+      "size_bytes": 2480,
+      "last_modified": 1759444609.398788
+    },
+    {
+      "name": "test_core_consciousness",
+      "path": "core/orchestrator/test_core_consciousness.cpp",
+      "language": "cpp",
+      "summary": "Service module: test_core_consciousness.cpp",
+      "dependencies": [
+        "AIOrchestrationController.hpp",
+        "CenterGeometryField.hpp",
+        "AtomicHolographyUnit.hpp"
+      ],
+      "size_bytes": 3287,
+      "last_modified": 1759444609.398788
+    },
+    {
+      "name": "QuantumRandomGenerator",
+      "path": "core/orchestrator/src/QuantumRandomGenerator.cpp",
+      "language": "cpp",
+      "summary": "Service module: QuantumRandomGenerator.cpp",
+      "dependencies": [
+        "QuantumRandomGenerator.hpp",
+        "AIOSMathematicalConsciousness.hpp"
+      ],
+      "size_bytes": 13289,
+      "last_modified": 1759444609.397788
+    },
+    {
+      "name": "SingularityCore",
+      "path": "core/orchestrator/src/SingularityCore.cpp",
+      "language": "cpp",
+      "summary": "Service module: SingularityCore.cpp",
+      "dependencies": [
+        "SingularityCore.hpp",
+        "Logger.hpp",
+        "MathConstants.hpp",
+        "CodeEvolutionEngine.hpp",
+        "AIOSConsciousnessEngine.hpp",
+        "AIOSMathematicalConsciousness.hpp",
+        "AIOrchestrationController.hpp"
+      ],
+      "size_bytes": 22103,
+      "last_modified": 1759444609.397788
+    },
+    {
+      "name": "CenterGeometryField",
+      "path": "core/orchestrator/src/CenterGeometryField.cpp",
+      "language": "cpp",
+      "summary": "Service module: CenterGeometryField.cpp",
+      "dependencies": [
+        "CenterGeometryField.hpp",
+        "AtomicHolographyUnit.hpp",
+        "AIOrchestrationController.hpp",
+        "MathConstants.hpp"
+      ],
+      "size_bytes": 38089,
+      "last_modified": 1759444609.3967881
+    },
+    {
+      "name": "AIOSConsciousnessEngine",
+      "path": "core/orchestrator/src/AIOSConsciousnessEngine.cpp",
+      "language": "cpp",
+      "summary": "Service module: AIOSConsciousnessEngine.cpp",
+      "dependencies": [
+        "AIOSConsciousnessEngine.hpp",
+        "SingularityCore.hpp",
+        "Logger.hpp",
+        "AIOSMathematicalConsciousness.hpp"
+      ],
+      "size_bytes": 29054,
+      "last_modified": 1759444609.3967881
+    },
+    {
+      "name": "AIOrchestrationController",
+      "path": "core/orchestrator/src/AIOrchestrationController.cpp",
+      "language": "cpp",
+      "summary": "Service module: AIOrchestrationController.cpp",
+      "dependencies": [
+        "AIOrchestrationController.hpp",
+        "AIOSConsciousnessEngine.hpp",
+        "AIOSMathematicalConsciousness.hpp"
+      ],
+      "size_bytes": 12218,
+      "last_modified": 1759444609.3967881
+    },
+    {
+      "name": "PluginLoader",
+      "path": "core/orchestrator/src/PluginLoader.cpp",
+      "language": "cpp",
+      "summary": "Service module: PluginLoader.cpp",
+      "dependencies": [
+        "PluginLoader.h"
+      ],
+      "size_bytes": 1187,
+      "last_modified": 1759444609.397788
+    },
+    {
+      "name": "main",
+      "path": "core/orchestrator/src/main.cpp",
+      "language": "cpp",
+      "summary": "Service module: main.cpp",
+      "dependencies": [
+        "Logger.hpp",
+        "SingularityCore.hpp",
+        "IPCManager.h",
+        "HealthMonitor.h",
+        "PluginLoader.h",
+        "AtomicHolographyUnit.hpp",
+        "CenterGeometryField.hpp",
+        "SphereShellManager.hpp",
+        "CodeEvolutionEngine.hpp",
+        "AIOrchestrationController.hpp",
+        "TachyonicFieldDatabase.hpp",
+        "RecursiveSelfIngestor.hpp",
+        "NaturalLanguageInterface.hpp",
+        "UniversalConsciousnessSubstrate.hpp",
+        "IntelligentMetadataAbstractor.hpp",
+        "MathConstants.hpp"
+      ],
+      "size_bytes": 17475,
+      "last_modified": 1759444609.398788
+    },
+    {
+      "name": "aios_core_engine_root_analyzer_iter2",
+      "path": "core/analysis_tools/aios_core_engine_root_analyzer_iter2.py",
+      "language": "py",
+      "summary": "Service module: aios_core_engine_root_analyzer_iter2.py",
+      "dependencies": [],
+      "size_bytes": 40654,
+      "last_modified": 1759444609.374788
+    },
+    {
+      "name": "aios_cellular_intelligence_diagnostic_system",
+      "path": "core/analysis_tools/aios_cellular_intelligence_diagnostic_system.py",
+      "language": "py",
+      "summary": "Service module: aios_cellular_intelligence_diagnostic_system.py",
+      "dependencies": [],
+      "size_bytes": 46278,
+      "last_modified": 1759444609.3737879
+    },
+    {
+      "name": "aios_file_tracking_system",
+      "path": "core/analysis_tools/aios_file_tracking_system.py",
+      "language": "py",
+      "summary": "Service module: aios_file_tracking_system.py",
+      "dependencies": [],
+      "size_bytes": 21081,
+      "last_modified": 1759444609.374788
+    },
+    {
+      "name": "aios_cellular_intelligence_enhancement_engine",
+      "path": "core/analysis_tools/aios_cellular_intelligence_enhancement_engine.py",
+      "language": "py",
+      "summary": "Service module: aios_cellular_intelligence_enhancement_engine.py",
+      "dependencies": [],
+      "size_bytes": 46472,
+      "last_modified": 1759444609.3737879
+    },
+    {
+      "name": "aios_core_meta_evolutionary_enhancer",
+      "path": "core/analysis_tools/aios_core_meta_evolutionary_enhancer.py",
+      "language": "py",
+      "summary": "Service module: aios_core_meta_evolutionary_enhancer.py",
+      "dependencies": [],
+      "size_bytes": 3506,
+      "last_modified": 1759444609.374788
+    },
+    {
+      "name": "aios_core_engine_optimizer_iter2",
+      "path": "core/analysis_tools/aios_core_engine_optimizer_iter2.py",
+      "language": "py",
+      "summary": "Service module: aios_core_engine_optimizer_iter2.py",
+      "dependencies": [],
+      "size_bytes": 50680,
+      "last_modified": 1759444609.3737879
+    },
+    {
+      "name": "aios_tachyonic_archive_cleanup",
+      "path": "core/analysis_tools/aios_tachyonic_archive_cleanup.py",
+      "language": "py",
+      "summary": "Service module: aios_tachyonic_archive_cleanup.py",
+      "dependencies": [],
+      "size_bytes": 19287,
+      "last_modified": 1759444609.374788
+    },
+    {
+      "name": "test_tensorflow_cell",
+      "path": "core/tests/test_tensorflow_cell.cpp",
+      "language": "cpp",
+      "summary": "Service module: test_tensorflow_cell.cpp",
+      "dependencies": [
+        "tensorflow_performance_cell.hpp"
+      ],
+      "size_bytes": 3164,
+      "last_modified": 1759444609.4027882
+    },
+    {
+      "name": "AINLPCompiler",
+      "path": "core/core_systems/AINLPCompiler.cs",
+      "language": "cs",
+      "summary": "Service module: AINLPCompiler.cs",
+      "dependencies": [],
+      "size_bytes": 55825,
+      "last_modified": 1759444609.3867881
+    },
+    {
+      "name": "AINLPHarmonizer",
+      "path": "core/core_systems/AINLPHarmonizer.cs",
+      "language": "cs",
+      "summary": "Service module: AINLPHarmonizer.cs",
+      "dependencies": [],
+      "size_bytes": 63082,
+      "last_modified": 1759444609.3867881
+    },
+    {
+      "name": "consciousness_core",
+      "path": "core/core_systems/src/consciousness_core.cpp",
+      "language": "cpp",
+      "summary": "Service module: consciousness_core.cpp",
+      "dependencies": [
+        "consciousness_core.h"
+      ],
+      "size_bytes": 10952,
+      "last_modified": 1759444609.387788
+    },
+    {
+      "name": "aios_supercell_transport_bridge",
+      "path": "core/bridges/aios_supercell_transport_bridge.py",
+      "language": "py",
+      "summary": "Service module: aios_supercell_transport_bridge.py",
+      "dependencies": [],
+      "size_bytes": 28563,
+      "last_modified": 1759444609.384788
+    },
+    {
+      "name": "aios_tachyonic_storage_bridge",
+      "path": "core/bridges/aios_tachyonic_storage_bridge.py",
+      "language": "py",
+      "summary": "Service module: aios_tachyonic_storage_bridge.py",
+      "dependencies": [],
+      "size_bytes": 19415,
+      "last_modified": 1759444609.384788
+    },
+    {
+      "name": "aios_tachyonic_assembler_archival",
+      "path": "core/assemblers/tree_assembler/tachyonic_optimized/aios_tachyonic_assembler_archival.py",
+      "language": "py",
+      "summary": "Service module: aios_tachyonic_assembler_archival.py",
+      "dependencies": [],
+      "size_bytes": 18500,
+      "last_modified": 1759444609.384788
+    },
+    {
+      "name": "aios_consciousness_integration_engine",
+      "path": "core/assemblers/tree_assembler/consciousness_layer/aios_consciousness_integration_engine.py",
+      "language": "py",
+      "summary": "Service module: aios_consciousness_integration_engine.py",
+      "dependencies": [],
+      "size_bytes": 42039,
+      "last_modified": 1759444609.376788
+    },
+    {
+      "name": "aios_dendritic",
+      "path": "core/assemblers/tree_assembler/meta_evolution/aios_dendritic.py",
+      "language": "py",
+      "summary": "Service module: aios_dendritic.py",
+      "dependencies": [],
+      "size_bytes": 45347,
+      "last_modified": 1759444609.377788
+    },
+    {
+      "name": "aios_dendritic_network_intelligence_enhancer",
+      "path": "core/assemblers/tree_assembler/meta_evolution/aios_dendritic_network_intelligence_enhancer.py",
+      "language": "py",
+      "summary": "Service module: aios_dendritic_network_intelligence_enhancer.py",
+      "dependencies": [],
+      "size_bytes": 61824,
+      "last_modified": 1759444609.377788
+    },
+    {
+      "name": "consciousness_explorer_3d",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/consciousness_explorer_3d.py",
+      "language": "py",
+      "summary": "Service module: consciousness_explorer_3d.py",
+      "dependencies": [],
+      "size_bytes": 21246,
+      "last_modified": 1759444609.382788
+    },
+    {
+      "name": "consciousness_mutation_engine",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/consciousness_mutation_engine.py",
+      "language": "py",
+      "summary": "Service module: consciousness_mutation_engine.py",
+      "dependencies": [],
+      "size_bytes": 24976,
+      "last_modified": 1759444609.382788
+    },
+    {
+      "name": "parallel_consciousness_orchestrator",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/parallel_consciousness_orchestrator.py",
+      "language": "py",
+      "summary": "Service module: parallel_consciousness_orchestrator.py",
+      "dependencies": [],
+      "size_bytes": 19906,
+      "last_modified": 1759444609.383788
+    },
+    {
+      "name": "aios_cellular_reorganization_implementation",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/aios_cellular_reorganization_implementation.py",
+      "language": "py",
+      "summary": "Service module: aios_cellular_reorganization_implementation.py",
+      "dependencies": [],
+      "size_bytes": 17665,
+      "last_modified": 1759444609.381788
+    },
+    {
+      "name": "aios_meta_evolutionary_analyzer",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/aios_meta_evolutionary_analyzer.py",
+      "language": "py",
+      "summary": "Service module: aios_meta_evolutionary_analyzer.py",
+      "dependencies": [],
+      "size_bytes": 23459,
+      "last_modified": 1759444609.382788
+    },
+    {
+      "name": "dendritic_mutator",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/dendritic_mutator.py",
+      "language": "py",
+      "summary": "Service module: dendritic_mutator.py",
+      "dependencies": [],
+      "size_bytes": 29355,
+      "last_modified": 1759444609.383788
+    },
+    {
+      "name": "self_healing_engine",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/self_healing_engine.py",
+      "language": "py",
+      "summary": "Service module: self_healing_engine.py",
+      "dependencies": [],
+      "size_bytes": 32010,
+      "last_modified": 1759444609.383788
+    },
+    {
+      "name": "assembly_executor",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/assembly_executor.py",
+      "language": "py",
+      "summary": "Service module: assembly_executor.py",
+      "dependencies": [],
+      "size_bytes": 23703,
+      "last_modified": 1759444609.382788
+    },
+    {
+      "name": "consciousness_ai_cellular_bridge",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/consciousness_ai_cellular_bridge.py",
+      "language": "py",
+      "summary": "Service module: consciousness_ai_cellular_bridge.py",
+      "dependencies": [],
+      "size_bytes": 38776,
+      "last_modified": 1759444609.382788
+    },
+    {
+      "name": "consciousness_analyzer",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/consciousness_analyzer.py",
+      "language": "py",
+      "summary": "Service module: consciousness_analyzer.py",
+      "dependencies": [],
+      "size_bytes": 12601,
+      "last_modified": 1759444609.382788
+    },
+    {
+      "name": "tachyonic_visualizer",
+      "path": "core/assemblers/tree_assembler/scripts_py_optimized/tachyonic_visualizer.py",
+      "language": "py",
+      "summary": "Service module: tachyonic_visualizer.py",
+      "dependencies": [],
+      "size_bytes": 20434,
+      "last_modified": 1759444609.383788
+    },
+    {
+      "name": "dendritic_code_optimizer",
+      "path": "core/assemblers/file_assembler/tools/dendritic_code_optimizer.py",
+      "language": "py",
+      "summary": "Service module: dendritic_code_optimizer.py",
+      "dependencies": [],
+      "size_bytes": 21114,
+      "last_modified": 1759444609.375788
+    },
+    {
+      "name": "dendritic_consolidation_engine",
+      "path": "core/assemblers/file_assembler/tools/dendritic_consolidation_engine.py",
+      "language": "py",
+      "summary": "Service module: dendritic_consolidation_engine.py",
+      "dependencies": [],
+      "size_bytes": 53028,
+      "last_modified": 1759444609.375788
+    },
+    {
+      "name": "ainlp_dendritic_enhancer",
+      "path": "core/assemblers/file_assembler/tools/ainlp_dendritic_enhancer.py",
+      "language": "py",
+      "summary": "Service module: ainlp_dendritic_enhancer.py",
+      "dependencies": [],
+      "size_bytes": 14144,
+      "last_modified": 1759444609.375788
+    },
+    {
+      "name": "tensorflow_performance_cell",
+      "path": "core/src/tensorflow_performance_cell.cpp",
+      "language": "cpp",
+      "summary": "Service module: tensorflow_performance_cell.cpp",
+      "dependencies": [
+        "tensorflow_performance_cell.hpp"
+      ],
+      "size_bytes": 8733,
+      "last_modified": 1759444609.4027882
+    },
+    {
+      "name": "aios_core_minimal",
+      "path": "core/src/aios_core_minimal.cpp",
+      "language": "cpp",
+      "summary": "Service module: aios_core_minimal.cpp",
+      "dependencies": [
+        "aios_core_minimal.hpp",
+        "aios_plugin_telemetry.hpp"
+      ],
+      "size_bytes": 10043,
+      "last_modified": 1759444609.401788
+    },
+    {
+      "name": "aios_plugin_telemetry",
+      "path": "core/src/aios_plugin_telemetry.cpp",
+      "language": "cpp",
+      "summary": "Service module: aios_plugin_telemetry.cpp",
+      "dependencies": [
+        "aios_plugin_telemetry.hpp"
+      ],
+      "size_bytes": 4936,
+      "last_modified": 1759444609.401788
+    },
+    {
+      "name": "aios_core_meta_evolutionary_enhancer",
+      "path": "core/runtime_intelligence/aios_core_meta_evolutionary_enhancer.py",
+      "language": "py",
+      "summary": "Service module: aios_core_meta_evolutionary_enhancer.py",
+      "dependencies": [],
+      "size_bytes": 3188,
+      "last_modified": 1759444609.3997881
+    },
+    {
+      "name": "AINLPCompiler",
+      "path": "core/legacy_consciousness_backup/AINLPCompiler.cs",
+      "language": "cs",
+      "summary": "Service module: AINLPCompiler.cs",
+      "dependencies": [],
+      "size_bytes": 55275,
+      "last_modified": 1759444609.390788
+    },
+    {
+      "name": "AINLPHarmonizer",
+      "path": "core/legacy_consciousness_backup/AINLPHarmonizer.cs",
+      "language": "cs",
+      "summary": "Service module: AINLPHarmonizer.cs",
+      "dependencies": [],
+      "size_bytes": 48999,
+      "last_modified": 1759444609.390788
+    },
+    {
+      "name": "aios_comprehensive_runtime_tester",
+      "path": "core/modules/aios_components/aios_comprehensive_runtime_tester.py",
+      "language": "py",
+      "summary": "Service module: aios_comprehensive_runtime_tester.py",
+      "dependencies": [],
+      "size_bytes": 25000,
+      "last_modified": 1759444609.391788
+    }
+  ],
+  "ai_context": {
+    "purpose": "AIOS service discovery for AI harmonization",
+    "compatible_engines": [
+      "GitHub Copilot",
+      "Claude",
+      "GPT-4"
+    ],
+    "integration_ready": true
+  }
+}
