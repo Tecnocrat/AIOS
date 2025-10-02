@@ -21,6 +21,7 @@ Path: `runtime_intelligence/tools`
 - runtime_intelligence/tools/__pycache__/aios_cli_agent_system.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/aios_cpp_analyzer.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/aios_dendritic_path_tracker.cpython-312.pyc
+- runtime_intelligence/tools/__pycache__/aios_dev_setup.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/aios_powershell_analyzer.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/architectural_compliance_validator.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/biological_architecture_monitor.cpython-312.pyc
@@ -32,6 +33,10 @@ Path: `runtime_intelligence/tools`
 - runtime_intelligence/tools/__pycache__/dendritic_supervisor.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/enhanced_consciousness_demo.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/enhanced_visual_intelligence_bridge.cpython-312.pyc
+- runtime_intelligence/tools/__pycache__/generate_file_scores.cpython-312.pyc
+- runtime_intelligence/tools/__pycache__/index_tools.cpython-312.pyc
+- runtime_intelligence/tools/__pycache__/python_environment_validator.cpython-312.pyc
+- runtime_intelligence/tools/__pycache__/runtime_intelligence_comprehensive_test.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/runtime_intelligence_dendritic_integration.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/safety_demo.cpython-312.pyc
 - runtime_intelligence/tools/__pycache__/safety_rollback.cpython-312.pyc
@@ -47,6 +52,7 @@ Path: `runtime_intelligence/tools`
 - runtime_intelligence/tools/aios_cli_agent_system.py
 - runtime_intelligence/tools/aios_cpp_analyzer.py
 - runtime_intelligence/tools/aios_dendritic_path_tracker.py
+- runtime_intelligence/tools/aios_dev_setup.py
 - runtime_intelligence/tools/aios_powershell_analyzer.py
 - runtime_intelligence/tools/architectural_compliance_validator.py
 - runtime_intelligence/tools/biological_architecture_monitor.py
@@ -56,14 +62,51 @@ Path: `runtime_intelligence/tools`
 - runtime_intelligence/tools/consciousness_visual_analyzer.py
 - runtime_intelligence/tools/demo_enhanced_commit_hook.py
 - runtime_intelligence/tools/dendritic_supervisor.py
+- runtime_intelligence/tools/docs/tachyonic_archive/system_health_index.json
+- runtime_intelligence/tools/docs/tachyonic_archive/system_health_report.latest.json
+- runtime_intelligence/tools/docs/tachyonic_archive/system_health_report_20251002_210149.json
 - runtime_intelligence/tools/enhanced_consciousness_demo.py
 - runtime_intelligence/tools/enhanced_visual_intelligence_bridge.py
+- runtime_intelligence/tools/general/.aios_spatial_metadata.json
+- runtime_intelligence/tools/general/INTEGRATION_MARKER.md
+- runtime_intelligence/tools/general/runtime/logs/vscode_health_report.txt
+- runtime_intelligence/tools/general/tools/.aios_spatial_metadata.json
+- runtime_intelligence/tools/general/tools/__pycache__/audit_init_py.cpython-312.pyc
+- runtime_intelligence/tools/general/tools/__pycache__/vscode_health_checker.cpython-312.pyc
+- runtime_intelligence/tools/general/tools/AIOSStateReporter/.aios_spatial_metadata.json
+- runtime_intelligence/tools/general/tools/AIOSStateReporter/Program.cs
+- runtime_intelligence/tools/general/tools/archive/.aios_spatial_metadata.json
+- runtime_intelligence/tools/general/tools/archive/init_audit_report.txt
+- runtime_intelligence/tools/general/tools/audit_init_py.py
+- runtime_intelligence/tools/general/tools/vscode_health_checker.py
 - runtime_intelligence/tools/generate_file_scores.py
 - runtime_intelligence/tools/index_tools.py
+- runtime_intelligence/tools/python_environment_validator.py
 - runtime_intelligence/tools/README.md
+- runtime_intelligence/tools/runtime_intelligence_comprehensive_test.py
 - runtime_intelligence/tools/runtime_intelligence_dendritic_integration.py
 - runtime_intelligence/tools/safety_demo.py
 - runtime_intelligence/tools/safety_rollback.py
+- runtime_intelligence/tools/scripts/.aios_spatial_metadata.json
+- runtime_intelligence/tools/scripts/INTEGRATION_MARKER.md
+- runtime_intelligence/tools/scripts/scripts/.aios_spatial_metadata.json
+- runtime_intelligence/tools/scripts/scripts/__pycache__/aios_indexer.cpython-312.pyc
+- runtime_intelligence/tools/scripts/scripts/__pycache__/check_tools.cpython-312.pyc
+- runtime_intelligence/tools/scripts/scripts/__pycache__/real_ai_lint_fixer.cpython-312.pyc
+- runtime_intelligence/tools/scripts/scripts/__pycache__/remove_emoticons.cpython-312.pyc
+- runtime_intelligence/tools/scripts/scripts/__pycache__/test_mcp_execution.cpython-312.pyc
+- runtime_intelligence/tools/scripts/scripts/__pycache__/verify_gemini_config.cpython-312.pyc
+- runtime_intelligence/tools/scripts/scripts/aios_indexer.py
+- runtime_intelligence/tools/scripts/scripts/backup_manager.ps1
+- runtime_intelligence/tools/scripts/scripts/check_tools.py
+- runtime_intelligence/tools/scripts/scripts/consciousness_patterns/.aios_spatial_metadata.json
+- runtime_intelligence/tools/scripts/scripts/consciousness_patterns/universal_loader.sh
+- runtime_intelligence/tools/scripts/scripts/launch_aios.ps1
+- runtime_intelligence/tools/scripts/scripts/real_ai_lint_fixer.py
+- runtime_intelligence/tools/scripts/scripts/remove_emoticons.py
+- runtime_intelligence/tools/scripts/scripts/test_mcp_execution.py
+- runtime_intelligence/tools/scripts/scripts/test_realtime_intelligence.ps1
+- runtime_intelligence/tools/scripts/scripts/verify_gemini_config.py
 - runtime_intelligence/tools/self_similarity_analyzer.py
 - runtime_intelligence/tools/subprocess_manager.py
 - runtime_intelligence/tools/system_health_check.py
@@ -84,10 +127,21 @@ Path: `ai/tools`
 - ai/tools/aios_holographic_metadata_system.py
 - ai/tools/conversation_processor_tool.py
 - ai/tools/cpp_stl_knowledge_ingestion_tool.py
+- ai/tools/security_compliance_validator.py
 
 ## duplicates
 
 - .aios_spatial_metadata.json
   - ai/tools/.aios_spatial_metadata.json
   - runtime_intelligence/tools/.aios_spatial_metadata.json
+  - runtime_intelligence/tools/general/.aios_spatial_metadata.json
+  - runtime_intelligence/tools/general/tools/.aios_spatial_metadata.json
+  - runtime_intelligence/tools/general/tools/AIOSStateReporter/.aios_spatial_metadata.json
+  - runtime_intelligence/tools/general/tools/archive/.aios_spatial_metadata.json
+  - runtime_intelligence/tools/scripts/.aios_spatial_metadata.json
+  - runtime_intelligence/tools/scripts/scripts/.aios_spatial_metadata.json
+  - runtime_intelligence/tools/scripts/scripts/consciousness_patterns/.aios_spatial_metadata.json
+- INTEGRATION_MARKER.md
+  - runtime_intelligence/tools/general/INTEGRATION_MARKER.md
+  - runtime_intelligence/tools/scripts/INTEGRATION_MARKER.md
 

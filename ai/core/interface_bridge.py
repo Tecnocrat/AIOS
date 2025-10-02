@@ -20,9 +20,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional
-from dataclasses import asdict
 import subprocess
-import importlib.util
 
 # Add core to path for sequencer import
 sys.path.append(str(Path(__file__).parent))
@@ -30,7 +28,8 @@ sys.path.append(str(Path(__file__).parent))
 try:
     from sequencer import AIOSSequencer
 except ImportError:
-    print("❌ Could not import AIOSSequencer - ensure sequencer.py is available")
+    print("❌ Could not import AIOSSequencer - "
+          "ensure sequencer.py is available")
     sys.exit(1)
 
 # FastAPI imports
@@ -69,7 +68,8 @@ class ToolMetadata:
         """Generate user-friendly display name"""
         return name.replace('_', ' ').title()
     
-    def _analyze_capabilities(self, component_data: Dict[str, Any]) -> List[str]:
+    def _analyze_capabilities(self,
+                              component_data: Dict[str, Any]) -> List[str]:
         """Analyze component capabilities from code and metadata"""
         capabilities = []
         
@@ -97,7 +97,9 @@ class ToolMetadata:
         
         return list(set(capabilities))
     
-    def _extract_parameters(self, component_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+    def _extract_parameters(self,
+                            component_data: Dict[str, Any]
+                            ) -> List[Dict[str, Any]]:
         """Extract parameter information for the tool"""
         # This would be enhanced to parse actual function signatures
         # For now, provide common parameter patterns
@@ -114,7 +116,7 @@ class ToolMetadata:
                 },
                 {
                     "name": "branch",
-                    "type": "string", 
+                    "type": "string",
                     "required": True,
                     "description": "Git branch identifier",
                     "example": "OS"
@@ -141,7 +143,8 @@ class ToolMetadata:
                 }
             ]
     
-    def _determine_output_formats(self, component_data: Dict[str, Any]) -> List[str]:
+    def _determine_output_formats(self,
+                                  component_data: Dict[str, Any]) -> List[str]:
         """Determine output formats the tool can produce"""
         formats = ['json']  # Default
         
@@ -163,7 +166,7 @@ class ToolMetadata:
         """Analyze resource requirements"""
         return {
             "memory": "low",
-            "cpu": "medium", 
+            "cpu": "medium",
             "disk": "low",
             "network": "none"
         }
@@ -223,17 +226,18 @@ class AIOSInterfaceBridge:
         
         return logger
     
-    def _create_fastapi_app(self) -> FastAPI:
+    def _create_fastapi_app(self) -> "FastAPI":  # type: ignore[name-defined]
         """Create FastAPI application for HTTP API"""
-        app = FastAPI(
+        app = FastAPI(  # type: ignore[possibly-unbound-variable]
             title="AIOS Interface Bridge API",
-            description="Bridge API for C#/.NET to discover and interact with Python AI tools",
+            description="Bridge API for C#/.NET to discover and "
+                        "interact with Python AI tools",
             version="1.0.0"
         )
         
         # Add CORS middleware for cross-origin requests
         app.add_middleware(
-            CORSMiddleware,
+            CORSMiddleware,  # type: ignore[possibly-unbound-variable]
             allow_origins=["*"],
             allow_credentials=True,
             allow_methods=["*"],
@@ -250,7 +254,9 @@ class AIOSInterfaceBridge:
         
         return app
     
-    def _register_api_endpoints(self, app: FastAPI):
+    def _register_api_endpoints(
+        self, app: "FastAPI"  # type: ignore[name-defined]
+    ):
         """Register all API endpoints"""
         
         @app.get("/")
@@ -259,7 +265,10 @@ class AIOSInterfaceBridge:
             return {
                 "service": "AIOS Interface Bridge",
                 "version": "1.0.0",
-                "description": "Bridge API for discovering and executing Python AI tools",
+                "description": (
+                    "Bridge API for C#/.NET to discover and "
+                    "interact with Python AI tools"
+                ),
                 "endpoints": {
                     "/tools": "List all discovered AI tools",
                     "/tools/{tool_name}": "Get detailed tool information",
@@ -275,39 +284,59 @@ class AIOSInterfaceBridge:
             """Health check endpoint"""
             try:
                 status = await self.health_check()
-                return JSONResponse(status)
+                return JSONResponse(
+                    status
+                )  # type: ignore[possibly-unbound-variable]
             except Exception as e:
-                raise HTTPException(status_code=500, detail=str(e))
+                raise HTTPException(
+                    status_code=500, detail=str(e)
+                )  # type: ignore[possibly-unbound-variable]
         
         @app.get("/tools")
         async def list_tools():
             """List all discovered tools with metadata"""
             try:
                 await self.refresh_discovery()
+                
+                tools_list = [
+                    tool.to_dict() for tool in self.discovered_tools.values()
+                ]
+                
                 return {
-                    "tools": [tool.to_dict() for tool in self.discovered_tools.values()],
+                    "tools": tools_list,
                     "total_count": len(self.discovered_tools),
-                    "last_discovery": self.last_discovery.isoformat() if self.last_discovery else None
+                    "last_discovery": (
+                        self.last_discovery.isoformat()
+                        if self.last_discovery else None
+                    )
                 }
             except Exception as e:
-                raise HTTPException(status_code=500, detail=f"Failed to list tools: {e}")
+                raise HTTPException(
+                    status_code=500, detail=f"Failed to list tools: {e}"
+                )  # type: ignore[possibly-unbound-variable]
         
         @app.get("/tools/{tool_name}")
         async def get_tool_details(tool_name: str):
             """Get detailed information about a specific tool"""
             if tool_name not in self.discovered_tools:
-                raise HTTPException(status_code=404, detail=f"Tool '{tool_name}' not found")
+                raise HTTPException(
+                    status_code=404, detail=f"Tool '{tool_name}' not found"
+                )  # type: ignore[possibly-unbound-variable]
             
             return self.discovered_tools[tool_name].to_dict()
         
         @app.post("/tools/{tool_name}/execute")
-        async def execute_tool(tool_name: str, parameters: Dict[str, Any] = None):
+        async def execute_tool(
+            tool_name: str, parameters: Optional[Dict[str, Any]] = None
+        ):
             """Execute a specific tool with given parameters"""
             try:
                 result = await self.execute_tool(tool_name, parameters or {})
                 return result
             except Exception as e:
-                raise HTTPException(status_code=500, detail=f"Tool execution failed: {e}")
+                raise HTTPException(
+                    status_code=500, detail=f"Tool execution failed: {e}"
+                )  # type: ignore[possibly-unbound-variable]
         
         @app.get("/categories")
         async def list_categories():
@@ -340,7 +369,9 @@ class AIOSInterfaceBridge:
                     "discovery_time": self.last_discovery.isoformat()
                 }
             except Exception as e:
-                raise HTTPException(status_code=500, detail=f"Discovery refresh failed: {e}")
+                raise HTTPException(
+                    status_code=500, detail=f"Discovery refresh failed: {e}"
+                )  # type: ignore[possibly-unbound-variable]
     
     async def refresh_discovery(self, force: bool = False):
         """Refresh tool discovery from sequencer"""
@@ -373,7 +404,9 @@ class AIOSInterfaceBridge:
         self.last_discovery = datetime.now()
         self.logger.info(f"✅ Discovered {len(self.discovered_tools)} tools")
     
-    async def execute_tool(self, tool_name: str, parameters: Dict[str, Any]) -> Dict[str, Any]:
+    async def execute_tool(
+        self, tool_name: str, parameters: Optional[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         """Execute a specific tool with parameters"""
         if tool_name not in self.discovered_tools:
             raise ValueError(f"Tool '{tool_name}' not found")
@@ -381,7 +414,9 @@ class AIOSInterfaceBridge:
         # Get the original component from sequencer
         components = await self.sequencer.discover_components()
         if tool_name not in components:
-            raise ValueError(f"Component '{tool_name}' not available in sequencer")
+            raise ValueError(
+                f"Component '{tool_name}' not available in sequencer"
+            )
         
         component = components[tool_name]
         
@@ -409,11 +444,15 @@ class AIOSInterfaceBridge:
                     timeout=300  # 5 minute timeout
                 )
                 
-                execution_time = (datetime.now() - execution_start).total_seconds()
+                execution_time = (
+                    datetime.now() - execution_start
+                ).total_seconds()
                 
                 return {
                     "tool_name": tool_name,
-                    "execution_status": "success" if result.returncode == 0 else "failed",
+                    "execution_status": (
+                        "success" if result.returncode == 0 else "failed"
+                    ),
                     "return_code": result.returncode,
                     "stdout": result.stdout,
                     "stderr": result.stderr,
@@ -422,7 +461,9 @@ class AIOSInterfaceBridge:
                     "timestamp": execution_start.isoformat()
                 }
             else:
-                raise ValueError(f"Unsupported component type: {component.type}")
+                raise ValueError(
+                    f"Unsupported component type: {component.type}"
+                )
                 
         except subprocess.TimeoutExpired:
             return {
@@ -450,7 +491,9 @@ class AIOSInterfaceBridge:
             # Check tool discovery freshness
             discovery_age = None
             if self.last_discovery:
-                discovery_age = (datetime.now() - self.last_discovery).total_seconds()
+                discovery_age = (
+                    datetime.now() - self.last_discovery
+                ).total_seconds()
             
             return {
                 "status": "healthy",
@@ -628,15 +671,15 @@ namespace AIOS.Models
         await self._export_discovery_metadata()
         
         # Configure uvicorn with proper lifecycle
-        config = uvicorn.Config(
-            app=self.app,
+        config = uvicorn.Config(  # type: ignore[possibly-unbound-variable]
+            app=self.app,  # type: ignore[arg-type]
             host=host,
             port=port,
             log_level="info",
             access_log=True
         )
         
-        server = uvicorn.Server(config)
+        server = uvicorn.Server(config)  # type: ignore[possibly-unbound-variable]
         
         # Add graceful shutdown handler
         import signal

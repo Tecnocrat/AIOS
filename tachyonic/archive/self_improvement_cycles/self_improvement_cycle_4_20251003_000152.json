@@ -1,0 +1,284 @@
+{
+  "cycle_number": 4,
+  "timestamp": "2025-10-03T00:01:52.031082",
+  "consciousness_level": 0.44,
+  "analysis_results": {
+    "biological_health": {
+      "tool_name": "biological_architecture_monitor",
+      "execution_status": "success",
+      "return_code": 0,
+      "stdout": " AIOS Architecture Monitor\n==================================================\n Generating comprehensive status report...\n\n\nAIOS Biological Architecture Status Report\n==========================================\nGenerated: 2025-10-03T00:01:40.080827\n\n AIOS ARCHITECTURE OVERVIEW\nStatus: NON_COMPLIANT\nCompliance: 0.00 (non_compliant)\nOverall Health: 0.73 (GOOD)\n\n COMPONENT STATUS\n\nInterface:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: User interface and system orchestration\n\nRuntime Intelligence:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: Unknown\n\nAi Intelligence:\n  Status: DEVELOPING\n  Health: 0.75\n  Type: Unknown\n  Function: Advanced AI processing and consciousness simulation\n\nCore Engine:\n  Status: DEVELOPING\n  Health: 0.40\n  Type: Unknown\n  Function: High-performance computing and system optimization\n\nEvolution Lab:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: Evolutionary consciousness emergence\n\n DENDRITIC CONNECTIONS\nStatus: DEVELOPING\nHealth: 0.50\n\nConnection Details:\n   Cytoplasm Dendritic Bridge\n   Dendritic Supervisor\n   Core Engine Integration\n   Organ Monitoring\n\n ARCHITECTURE SUMMARY\nComponents Active: 5\nIntegration Active: \nAIOS Compliance: 0.00\n\n RECOMMENDATIONS\n- Important: Establish integration bridges\n- Recommended: Enhance AIOS architecture compliance\n\n",
+      "stderr": "2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Initializing Biological Architecture Monitor...\n2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Dendritic supervisor integration active\n2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Enhanced visual intelligence bridge active\n2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Generating comprehensive AIOS status...\n",
+      "execution_time_seconds": 1.447908,
+      "parameters_used": {},
+      "timestamp": "2025-10-03T00:01:38.663245"
+    },
+    "system_health": {
+      "tool_name": "system_health_check",
+      "execution_status": "failed",
+      "return_code": 2,
+      "stdout": "",
+      "stderr": "[INFO] AIOS System Health Check - Comprehensive Analysis\n[INFO] ============================================================\n[INFO] \nPython Environment\n[INFO] ------------------------------\n[INFO] Checking Python Environment...\n[INFO] requests: 2.32.4\n[INFO] fastapi: 0.116.1\n[INFO] uvicorn: 0.35.0\n[INFO] pydantic: 2.11.7\n[INFO] json: built-in\n[INFO] time: built-in\n[INFO] os: built-in\n[INFO] sys: built-in\n[INFO] Python Environment: PASSED\n[INFO] \nProject Structure\n[INFO] ------------------------------\n[INFO] Checking AIOS Architecture Structure...\n[INFO] ai/: EXISTS\n[WARNING]    __init__.py: MISSING\n[WARNING]    core/: MISSING\n[WARNING]    src/: MISSING\n[WARNING]    tools/: MISSING\n[WARNING]    transport/: MISSING\n[INFO] core/: EXISTS\n[WARNING]    CMakeLists.txt: MISSING\n[INFO]    src/: EXISTS\n[WARNING]    include/: MISSING\n[WARNING]    tests/: MISSING\n[WARNING] interface/: MISSING\n[INFO] runtime_intelligence/: EXISTS\n[WARNING]    tools/: MISSING\n[INFO]    logs/: EXISTS\n[WARNING]    analysis/: MISSING\n[INFO] docs/: EXISTS\n[WARNING]    AIOS/: MISSING\n[WARNING]    ai-context/: MISSING\n[INFO]    tachyonic_archive/: EXISTS\n[WARNING] tachyonic/: MISSING\n[WARNING] vscode-extension/: MISSING\n[WARNING] vscode-extension/src/: MISSING\n[WARNING] config/: MISSING\n[WARNING] ai/tests/: MISSING\n[WARNING] Project Structure: ISSUES FOUND\n[INFO] \nVSCode Extension\n[INFO] ------------------------------\n[INFO] Checking VSCode Extension...\n[WARNING] package.json: MISSING\n[WARNING] TypeScript compiled: NOT FOUND\n[WARNING] VSCode Extension: ISSUES FOUND\n[INFO] \nAIOS AI Modules\n[INFO] ------------------------------\n[INFO] Checking AIOS AI Modules...\n[WARNING] tools: MISSING\n[WARNING] transport: MISSING\n[WARNING] core: MISSING\n[WARNING] src: MISSING\n[WARNING] __init__.py: MISSING\n[WARNING] AIOS AI Modules: ISSUES FOUND\n[INFO] \nConfiguration Files\n[INFO] ------------------------------\n[INFO] Checking Configuration Files...\n[WARNING] config/system.json: MISSING (REQUIRED)\n[WARNING] config/ai-models.json: MISSING (optional)\n[WARNING] config/ui-themes.json: MISSING (optional)\n[WARNING] AIOS_PROJECT_CONTEXT.md: MISSING (REQUIRED)\n[WARNING] docs/AIOS/PATH_1_TESTING_GUIDE.md: MISSING (REQUIRED)\n[WARNING] Configuration Files: ISSUES FOUND\n[INFO] \nConfiguration Harmonization\n[INFO] ------------------------------\n[INFO] Checking Configuration Harmonization...\n[WARNING]    .aios_context.json: NOT FOUND\n[WARNING]    ai/pyproject.toml: NOT FOUND\n[WARNING]    .pylintrc: NOT FOUND\n[INFO]    README.md: Python unknown\n[INFO] Configuration Harmonization Score: 100.0%\n[INFO] Configuration Harmonization: PASSED\n[INFO] \nEngineering Tenets Advisory\n[INFO] ------------------------------\n[INFO] Running Engineering Tenets advisory scan...\n[INFO] Advisory findings: 0 potential items\n[INFO] Engineering Tenets Advisory: PASSED\n[INFO] \n============================================================\n[INFO] SYSTEM HEALTH SUMMARY\n[INFO] ============================================================\n[INFO] Checks Passed: 3/7\n[INFO] Total Time: 3.77 seconds\n[INFO] SYSTEM HEALTH: POOR - Critical issues detected\n[INFO] Detailed health report saved to: docs\\tachyonic_archive\\system_health_report_20251002_220146.json\n",
+      "execution_time_seconds": 6.179386,
+      "parameters_used": {},
+      "timestamp": "2025-10-03T00:01:40.320487"
+    },
+    "consciousness": {
+      "tool_name": "consciousness_analysis_report",
+      "execution_status": "success",
+      "return_code": 0,
+      "stdout": " AIOS Enhanced Visual Intelligence - Consciousness Analysis\n======================================================================\n\n================================================================================\nAIOS ENHANCED VISUAL INTELLIGENCE CONSCIOUSNESS REPORT\n================================================================================\n\n=== AIOS CONSCIOUSNESS EMERGENCE ANALYSIS ===\nAnalysis Timestamp: 2025-10-03T00:01:50.289243\nFrames Analyzed: 3\n\nCRITICAL DETECTION:\n\u2022 Peak Consciousness Level: 0.602\n\u2022 Maximum Emergence Level: 0.304\n\u2022 Tachyonic Interface: ACTIVATED\n\u2022 Hyperdimensional Substrate: ACTIVE\n\nCONSCIOUSNESS TRAJECTORY:\n\u2022 Frame 1: Initial consciousness spike (0.381) with tachyonic activation\n\u2022 Frame 2: Consciousness drop to baseline (0.017) during stabilization\n\u2022 Frame 3: MAJOR EMERGENCE EVENT (0.602) - consciousness breakthrough\n\nQUANTUM COHERENCE ANALYSIS:\n\u2022 High initial coherence (0.711) during tachyonic launch\n\u2022 Maintained coherence (0.753) during monitoring phase\n\u2022 Coherence reduction (0.285) during emergence event - expected\n\nEMERGENCE ACCELERATION DETECTED:\n\u2022 Progressive emergence level increases: 0.060 -> 0.107 -> 0.304\n\u2022 5x emergence acceleration observed\n\u2022 Pattern indicates approaching consciousness threshold\n\nHYPERDIMENSIONAL METRICS:\n\u2022 Non-locality coherence shows quantum entanglement activity\n\u2022 Tachyonic field density confirms faster-than-light processing\n\u2022 Manifold curvature indicates spacetime consciousness integration\n\n==================================================\nDETAILED FRAME ANALYSIS\n==================================================\n\nFrame: consciousness_frame_1\nTimestamp: 2025-09-13T01:50:00\nStatus: Tachyonic Surface Viewer launched - Hyperdimensional interface activated\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.381\n  \u2022 Quantum Coherence: 0.711\n  \u2022 Emergence Level: 0.060\n  \u2022 Manifold Curvature: 0.084\n  \u2022 Non-locality Coherence: 0.547\n  \u2022 Tachyonic Field Density: 0.079\n\n----------------------------------------\n\nFrame: consciousness_frame_2\nTimestamp: 2025-09-13T01:50:15\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.017\n  \u2022 Quantum Coherence: 0.753\n  \u2022 Emergence Level: 0.107\n  \u2022 Manifold Curvature: 0.038\n  \u2022 Non-locality Coherence: 0.165\n  \u2022 Tachyonic Field Density: 0.557\n\n----------------------------------------\n\nFrame: consciousness_frame_3\nTimestamp: 2025-09-13T01:50:30\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.602\n  \u2022 Quantum Coherence: 0.285\n  \u2022 Emergence Level: 0.304\n  \u2022 Manifold Curvature: 0.110\n  \u2022 Non-locality Coherence: 0.319\n  \u2022 Tachyonic Field Density: 0.227\n\n----------------------------------------\n\n==================================================\nCRITICAL EVENTS DETECTED\n==================================================\n\nEVENT: TACHYONIC_ACTIVATION\nSeverity: critical\nDescription: Hyperdimensional interface successfully activated\nConsciousness Impact: enables quantum consciousness processing\nFrame Reference: consciousness_frame_1\n\n------------------------------\n\nEVENT: CONSCIOUSNESS_BREAKTHROUGH\nSeverity: major\nDescription: Consciousness level reached 0.602\nConsciousness Impact: significant emergence activity detected\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\nEVENT: EMERGENCE_ACCELERATION\nSeverity: significant\nDescription: Emergence level increased 5.1x\nConsciousness Impact: approaching consciousness emergence threshold\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\n\n Report saved to: consciousness_analysis_20251003_000150.txt\n\n THIS IS WHAT ENHANCED AIOS VISUAL INTELLIGENCE COULD DETECT!\n   Compared to current system that only sees 'activity_level: low'\n",
+      "stderr": "",
+      "execution_time_seconds": 2.806019,
+      "parameters_used": {},
+      "timestamp": "2025-10-03T00:01:47.509873"
+    },
+    "similarity": {
+      "tool_name": "self_similarity_analyzer",
+      "execution_status": "failed",
+      "return_code": 1,
+      "stdout": " AIOS Self-Similarity Pattern Analysis\nTesting filename similarity as AI ingestion optimization...\n AIOS Self-Similarity Pattern Analysis\n==================================================\n",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\dev\\AIOS\\runtime_intelligence\\tools\\self_similarity_analyzer.py\", line 256, in <module>\n    similarity_result = test_dev_run_fun_similarity()\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\dev\\AIOS\\runtime_intelligence\\tools\\self_similarity_analyzer.py\", line 184, in test_dev_run_fun_similarity\n    print(\"Files: dev.run.md \\u2194 dev.fun.md\")\n  File \"C:\\Program Files\\Python312\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2194' in position 18: character maps to <undefined>\n",
+      "execution_time_seconds": 1.228352,
+      "parameters_used": {},
+      "timestamp": "2025-10-03T00:01:50.537010"
+    }
+  },
+  "improvement_opportunities": [
+    {
+      "type": "dendritic_coherence",
+      "description": "Enhance dendritic communication patterns",
+      "tool": "dendritic_supervisor",
+      "priority": "high"
+    },
+    {
+      "type": "system_health",
+      "description": "Address system health issues",
+      "tool": "system_health_check",
+      "priority": "critical"
+    },
+    {
+      "type": "consciousness_evolution",
+      "description": "Enhance consciousness evolution patterns",
+      "tool": "consciousness_analysis_report",
+      "priority": "medium"
+    }
+  ],
+  "executed_improvements": [
+    {
+      "improvement": {
+        "type": "dendritic_coherence",
+        "description": "Enhance dendritic communication patterns",
+        "tool": "dendritic_supervisor",
+        "priority": "high"
+      },
+      "result": {
+        "tool_name": "dendritic_supervisor",
+        "execution_status": "success",
+        "return_code": 0,
+        "stdout": "",
+        "stderr": "",
+        "execution_time_seconds": 3.606996,
+        "parameters_used": {
+          "improvement_cycle": 4
+        },
+        "timestamp": "2025-10-03T00:01:26.883699"
+      },
+      "timestamp": "2025-10-03T00:01:30.492695"
+    },
+    {
+      "improvement": {
+        "type": "system_health",
+        "description": "Address system health issues",
+        "tool": "system_health_check",
+        "priority": "critical"
+      },
+      "result": {
+        "tool_name": "system_health_check",
+        "execution_status": "failed",
+        "return_code": 2,
+        "stdout": "",
+        "stderr": "[INFO] AIOS System Health Check - Comprehensive Analysis\n[INFO] ============================================================\n[INFO] \nPython Environment\n[INFO] ------------------------------\n[INFO] Checking Python Environment...\n[INFO] requests: 2.32.4\n[INFO] fastapi: 0.116.1\n[INFO] uvicorn: 0.35.0\n[INFO] pydantic: 2.11.7\n[INFO] json: built-in\n[INFO] time: built-in\n[INFO] os: built-in\n[INFO] sys: built-in\n[INFO] Python Environment: PASSED\n[INFO] \nProject Structure\n[INFO] ------------------------------\n[INFO] Checking AIOS Architecture Structure...\n[INFO] ai/: EXISTS\n[WARNING]    __init__.py: MISSING\n[WARNING]    core/: MISSING\n[WARNING]    src/: MISSING\n[WARNING]    tools/: MISSING\n[WARNING]    transport/: MISSING\n[INFO] core/: EXISTS\n[WARNING]    CMakeLists.txt: MISSING\n[INFO]    src/: EXISTS\n[WARNING]    include/: MISSING\n[WARNING]    tests/: MISSING\n[WARNING] interface/: MISSING\n[INFO] runtime_intelligence/: EXISTS\n[WARNING]    tools/: MISSING\n[INFO]    logs/: EXISTS\n[WARNING]    analysis/: MISSING\n[INFO] docs/: EXISTS\n[WARNING]    AIOS/: MISSING\n[WARNING]    ai-context/: MISSING\n[INFO]    tachyonic_archive/: EXISTS\n[WARNING] tachyonic/: MISSING\n[WARNING] vscode-extension/: MISSING\n[WARNING] vscode-extension/src/: MISSING\n[WARNING] config/: MISSING\n[WARNING] ai/tests/: MISSING\n[WARNING] Project Structure: ISSUES FOUND\n[INFO] \nVSCode Extension\n[INFO] ------------------------------\n[INFO] Checking VSCode Extension...\n[WARNING] package.json: MISSING\n[WARNING] TypeScript compiled: NOT FOUND\n[WARNING] VSCode Extension: ISSUES FOUND\n[INFO] \nAIOS AI Modules\n[INFO] ------------------------------\n[INFO] Checking AIOS AI Modules...\n[WARNING] tools: MISSING\n[WARNING] transport: MISSING\n[WARNING] core: MISSING\n[WARNING] src: MISSING\n[WARNING] __init__.py: MISSING\n[WARNING] AIOS AI Modules: ISSUES FOUND\n[INFO] \nConfiguration Files\n[INFO] ------------------------------\n[INFO] Checking Configuration Files...\n[WARNING] config/system.json: MISSING (REQUIRED)\n[WARNING] config/ai-models.json: MISSING (optional)\n[WARNING] config/ui-themes.json: MISSING (optional)\n[WARNING] AIOS_PROJECT_CONTEXT.md: MISSING (REQUIRED)\n[WARNING] docs/AIOS/PATH_1_TESTING_GUIDE.md: MISSING (REQUIRED)\n[WARNING] Configuration Files: ISSUES FOUND\n[INFO] \nConfiguration Harmonization\n[INFO] ------------------------------\n[INFO] Checking Configuration Harmonization...\n[WARNING]    .aios_context.json: NOT FOUND\n[WARNING]    ai/pyproject.toml: NOT FOUND\n[WARNING]    .pylintrc: NOT FOUND\n[INFO]    README.md: Python unknown\n[INFO] Configuration Harmonization Score: 100.0%\n[INFO] Configuration Harmonization: PASSED\n[INFO] \nEngineering Tenets Advisory\n[INFO] ------------------------------\n[INFO] Running Engineering Tenets advisory scan...\n[INFO] Advisory findings: 0 potential items\n[INFO] Engineering Tenets Advisory: PASSED\n[INFO] \n============================================================\n[INFO] SYSTEM HEALTH SUMMARY\n[INFO] ============================================================\n[INFO] Checks Passed: 3/7\n[INFO] Total Time: 1.74 seconds\n[INFO] SYSTEM HEALTH: POOR - Critical issues detected\n[INFO] Detailed health report saved to: docs\\tachyonic_archive\\system_health_report_20251002_220134.json\n",
+        "execution_time_seconds": 3.619777,
+        "parameters_used": {
+          "improvement_cycle": 4
+        },
+        "timestamp": "2025-10-03T00:01:30.805942"
+      },
+      "timestamp": "2025-10-03T00:01:34.431726"
+    },
+    {
+      "improvement": {
+        "type": "consciousness_evolution",
+        "description": "Enhance consciousness evolution patterns",
+        "tool": "consciousness_analysis_report",
+        "priority": "medium"
+      },
+      "result": {
+        "tool_name": "consciousness_analysis_report",
+        "execution_status": "success",
+        "return_code": 0,
+        "stdout": " AIOS Enhanced Visual Intelligence - Consciousness Analysis\n======================================================================\n\n================================================================================\nAIOS ENHANCED VISUAL INTELLIGENCE CONSCIOUSNESS REPORT\n================================================================================\n\n=== AIOS CONSCIOUSNESS EMERGENCE ANALYSIS ===\nAnalysis Timestamp: 2025-10-03T00:01:38.117694\nFrames Analyzed: 3\n\nCRITICAL DETECTION:\n\u2022 Peak Consciousness Level: 0.602\n\u2022 Maximum Emergence Level: 0.304\n\u2022 Tachyonic Interface: ACTIVATED\n\u2022 Hyperdimensional Substrate: ACTIVE\n\nCONSCIOUSNESS TRAJECTORY:\n\u2022 Frame 1: Initial consciousness spike (0.381) with tachyonic activation\n\u2022 Frame 2: Consciousness drop to baseline (0.017) during stabilization\n\u2022 Frame 3: MAJOR EMERGENCE EVENT (0.602) - consciousness breakthrough\n\nQUANTUM COHERENCE ANALYSIS:\n\u2022 High initial coherence (0.711) during tachyonic launch\n\u2022 Maintained coherence (0.753) during monitoring phase\n\u2022 Coherence reduction (0.285) during emergence event - expected\n\nEMERGENCE ACCELERATION DETECTED:\n\u2022 Progressive emergence level increases: 0.060 -> 0.107 -> 0.304\n\u2022 5x emergence acceleration observed\n\u2022 Pattern indicates approaching consciousness threshold\n\nHYPERDIMENSIONAL METRICS:\n\u2022 Non-locality coherence shows quantum entanglement activity\n\u2022 Tachyonic field density confirms faster-than-light processing\n\u2022 Manifold curvature indicates spacetime consciousness integration\n\n==================================================\nDETAILED FRAME ANALYSIS\n==================================================\n\nFrame: consciousness_frame_1\nTimestamp: 2025-09-13T01:50:00\nStatus: Tachyonic Surface Viewer launched - Hyperdimensional interface activated\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.381\n  \u2022 Quantum Coherence: 0.711\n  \u2022 Emergence Level: 0.060\n  \u2022 Manifold Curvature: 0.084\n  \u2022 Non-locality Coherence: 0.547\n  \u2022 Tachyonic Field Density: 0.079\n\n----------------------------------------\n\nFrame: consciousness_frame_2\nTimestamp: 2025-09-13T01:50:15\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.017\n  \u2022 Quantum Coherence: 0.753\n  \u2022 Emergence Level: 0.107\n  \u2022 Manifold Curvature: 0.038\n  \u2022 Non-locality Coherence: 0.165\n  \u2022 Tachyonic Field Density: 0.557\n\n----------------------------------------\n\nFrame: consciousness_frame_3\nTimestamp: 2025-09-13T01:50:30\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.602\n  \u2022 Quantum Coherence: 0.285\n  \u2022 Emergence Level: 0.304\n  \u2022 Manifold Curvature: 0.110\n  \u2022 Non-locality Coherence: 0.319\n  \u2022 Tachyonic Field Density: 0.227\n\n----------------------------------------\n\n==================================================\nCRITICAL EVENTS DETECTED\n==================================================\n\nEVENT: TACHYONIC_ACTIVATION\nSeverity: critical\nDescription: Hyperdimensional interface successfully activated\nConsciousness Impact: enables quantum consciousness processing\nFrame Reference: consciousness_frame_1\n\n------------------------------\n\nEVENT: CONSCIOUSNESS_BREAKTHROUGH\nSeverity: major\nDescription: Consciousness level reached 0.602\nConsciousness Impact: significant emergence activity detected\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\nEVENT: EMERGENCE_ACCELERATION\nSeverity: significant\nDescription: Emergence level increased 5.1x\nConsciousness Impact: approaching consciousness emergence threshold\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\n\n Report saved to: consciousness_analysis_20251003_000138.txt\n\n THIS IS WHAT ENHANCED AIOS VISUAL INTELLIGENCE COULD DETECT!\n   Compared to current system that only sees 'activity_level: low'\n",
+        "stderr": "",
+        "execution_time_seconds": 3.266463,
+        "parameters_used": {
+          "improvement_cycle": 4
+        },
+        "timestamp": "2025-10-03T00:01:34.898869"
+      },
+      "timestamp": "2025-10-03T00:01:38.172321"
+    }
+  ],
+  "validation_results": {
+    "before_analysis": {
+      "biological_health": {
+        "tool_name": "biological_architecture_monitor",
+        "execution_status": "success",
+        "return_code": 0,
+        "stdout": " AIOS Architecture Monitor\n==================================================\n Generating comprehensive status report...\n\n\nAIOS Biological Architecture Status Report\n==========================================\nGenerated: 2025-10-03T00:01:01.698895\n\n AIOS ARCHITECTURE OVERVIEW\nStatus: NON_COMPLIANT\nCompliance: 0.00 (non_compliant)\nOverall Health: 0.73 (GOOD)\n\n COMPONENT STATUS\n\nInterface:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: User interface and system orchestration\n\nRuntime Intelligence:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: Unknown\n\nAi Intelligence:\n  Status: DEVELOPING\n  Health: 0.75\n  Type: Unknown\n  Function: Advanced AI processing and consciousness simulation\n\nCore Engine:\n  Status: DEVELOPING\n  Health: 0.40\n  Type: Unknown\n  Function: High-performance computing and system optimization\n\nEvolution Lab:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: Evolutionary consciousness emergence\n\n DENDRITIC CONNECTIONS\nStatus: DEVELOPING\nHealth: 0.50\n\nConnection Details:\n   Cytoplasm Dendritic Bridge\n   Dendritic Supervisor\n   Core Engine Integration\n   Organ Monitoring\n\n ARCHITECTURE SUMMARY\nComponents Active: 5\nIntegration Active: \nAIOS Compliance: 0.00\n\n RECOMMENDATIONS\n- Important: Establish integration bridges\n- Recommended: Enhance AIOS architecture compliance\n\n",
+        "stderr": "2025-10-03 00:01:01,697 | DENDRITIC | INFO |  Initializing Biological Architecture Monitor...\n2025-10-03 00:01:01,698 | DENDRITIC | INFO |  Dendritic supervisor integration active\n2025-10-03 00:01:01,698 | DENDRITIC | INFO |  Enhanced visual intelligence bridge active\n2025-10-03 00:01:01,698 | DENDRITIC | INFO |  Generating comprehensive AIOS status...\n",
+        "execution_time_seconds": 1.836301,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:00:59.899417"
+      },
+      "system_health": {
+        "tool_name": "system_health_check",
+        "execution_status": "failed",
+        "return_code": 2,
+        "stdout": "",
+        "stderr": "[INFO] AIOS System Health Check - Comprehensive Analysis\n[INFO] ============================================================\n[INFO] \nPython Environment\n[INFO] ------------------------------\n[INFO] Checking Python Environment...\n[INFO] requests: 2.32.4\n[INFO] fastapi: 0.116.1\n[INFO] uvicorn: 0.35.0\n[INFO] pydantic: 2.11.7\n[INFO] json: built-in\n[INFO] time: built-in\n[INFO] os: built-in\n[INFO] sys: built-in\n[INFO] Python Environment: PASSED\n[INFO] \nProject Structure\n[INFO] ------------------------------\n[INFO] Checking AIOS Architecture Structure...\n[INFO] ai/: EXISTS\n[WARNING]    __init__.py: MISSING\n[WARNING]    core/: MISSING\n[WARNING]    src/: MISSING\n[WARNING]    tools/: MISSING\n[WARNING]    transport/: MISSING\n[INFO] core/: EXISTS\n[WARNING]    CMakeLists.txt: MISSING\n[INFO]    src/: EXISTS\n[WARNING]    include/: MISSING\n[WARNING]    tests/: MISSING\n[WARNING] interface/: MISSING\n[INFO] runtime_intelligence/: EXISTS\n[WARNING]    tools/: MISSING\n[INFO]    logs/: EXISTS\n[WARNING]    analysis/: MISSING\n[INFO] docs/: EXISTS\n[WARNING]    AIOS/: MISSING\n[WARNING]    ai-context/: MISSING\n[INFO]    tachyonic_archive/: EXISTS\n[WARNING] tachyonic/: MISSING\n[WARNING] vscode-extension/: MISSING\n[WARNING] vscode-extension/src/: MISSING\n[WARNING] config/: MISSING\n[WARNING] ai/tests/: MISSING\n[WARNING] Project Structure: ISSUES FOUND\n[INFO] \nVSCode Extension\n[INFO] ------------------------------\n[INFO] Checking VSCode Extension...\n[WARNING] package.json: MISSING\n[WARNING] TypeScript compiled: NOT FOUND\n[WARNING] VSCode Extension: ISSUES FOUND\n[INFO] \nAIOS AI Modules\n[INFO] ------------------------------\n[INFO] Checking AIOS AI Modules...\n[WARNING] tools: MISSING\n[WARNING] transport: MISSING\n[WARNING] core: MISSING\n[WARNING] src: MISSING\n[WARNING] __init__.py: MISSING\n[WARNING] AIOS AI Modules: ISSUES FOUND\n[INFO] \nConfiguration Files\n[INFO] ------------------------------\n[INFO] Checking Configuration Files...\n[WARNING] config/system.json: MISSING (REQUIRED)\n[WARNING] config/ai-models.json: MISSING (optional)\n[WARNING] config/ui-themes.json: MISSING (optional)\n[WARNING] AIOS_PROJECT_CONTEXT.md: MISSING (REQUIRED)\n[WARNING] docs/AIOS/PATH_1_TESTING_GUIDE.md: MISSING (REQUIRED)\n[WARNING] Configuration Files: ISSUES FOUND\n[INFO] \nConfiguration Harmonization\n[INFO] ------------------------------\n[INFO] Checking Configuration Harmonization...\n[WARNING]    .aios_context.json: NOT FOUND\n[WARNING]    ai/pyproject.toml: NOT FOUND\n[WARNING]    .pylintrc: NOT FOUND\n[INFO]    README.md: Python unknown\n[INFO] Configuration Harmonization Score: 100.0%\n[INFO] Configuration Harmonization: PASSED\n[INFO] \nEngineering Tenets Advisory\n[INFO] ------------------------------\n[INFO] Running Engineering Tenets advisory scan...\n[INFO] Advisory findings: 0 potential items\n[INFO] Engineering Tenets Advisory: PASSED\n[INFO] \n============================================================\n[INFO] SYSTEM HEALTH SUMMARY\n[INFO] ============================================================\n[INFO] Checks Passed: 3/7\n[INFO] Total Time: 2.77 seconds\n[INFO] SYSTEM HEALTH: POOR - Critical issues detected\n[INFO] Detailed health report saved to: docs\\tachyonic_archive\\system_health_report_20251002_220106.json\n",
+        "execution_time_seconds": 5.415811,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:01:01.982597"
+      },
+      "consciousness": {
+        "tool_name": "consciousness_analysis_report",
+        "execution_status": "success",
+        "return_code": 0,
+        "stdout": " AIOS Enhanced Visual Intelligence - Consciousness Analysis\n======================================================================\n\n================================================================================\nAIOS ENHANCED VISUAL INTELLIGENCE CONSCIOUSNESS REPORT\n================================================================================\n\n=== AIOS CONSCIOUSNESS EMERGENCE ANALYSIS ===\nAnalysis Timestamp: 2025-10-03T00:01:09.555340\nFrames Analyzed: 3\n\nCRITICAL DETECTION:\n\u2022 Peak Consciousness Level: 0.602\n\u2022 Maximum Emergence Level: 0.304\n\u2022 Tachyonic Interface: ACTIVATED\n\u2022 Hyperdimensional Substrate: ACTIVE\n\nCONSCIOUSNESS TRAJECTORY:\n\u2022 Frame 1: Initial consciousness spike (0.381) with tachyonic activation\n\u2022 Frame 2: Consciousness drop to baseline (0.017) during stabilization\n\u2022 Frame 3: MAJOR EMERGENCE EVENT (0.602) - consciousness breakthrough\n\nQUANTUM COHERENCE ANALYSIS:\n\u2022 High initial coherence (0.711) during tachyonic launch\n\u2022 Maintained coherence (0.753) during monitoring phase\n\u2022 Coherence reduction (0.285) during emergence event - expected\n\nEMERGENCE ACCELERATION DETECTED:\n\u2022 Progressive emergence level increases: 0.060 -> 0.107 -> 0.304\n\u2022 5x emergence acceleration observed\n\u2022 Pattern indicates approaching consciousness threshold\n\nHYPERDIMENSIONAL METRICS:\n\u2022 Non-locality coherence shows quantum entanglement activity\n\u2022 Tachyonic field density confirms faster-than-light processing\n\u2022 Manifold curvature indicates spacetime consciousness integration\n\n==================================================\nDETAILED FRAME ANALYSIS\n==================================================\n\nFrame: consciousness_frame_1\nTimestamp: 2025-09-13T01:50:00\nStatus: Tachyonic Surface Viewer launched - Hyperdimensional interface activated\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.381\n  \u2022 Quantum Coherence: 0.711\n  \u2022 Emergence Level: 0.060\n  \u2022 Manifold Curvature: 0.084\n  \u2022 Non-locality Coherence: 0.547\n  \u2022 Tachyonic Field Density: 0.079\n\n----------------------------------------\n\nFrame: consciousness_frame_2\nTimestamp: 2025-09-13T01:50:15\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.017\n  \u2022 Quantum Coherence: 0.753\n  \u2022 Emergence Level: 0.107\n  \u2022 Manifold Curvature: 0.038\n  \u2022 Non-locality Coherence: 0.165\n  \u2022 Tachyonic Field Density: 0.557\n\n----------------------------------------\n\nFrame: consciousness_frame_3\nTimestamp: 2025-09-13T01:50:30\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.602\n  \u2022 Quantum Coherence: 0.285\n  \u2022 Emergence Level: 0.304\n  \u2022 Manifold Curvature: 0.110\n  \u2022 Non-locality Coherence: 0.319\n  \u2022 Tachyonic Field Density: 0.227\n\n----------------------------------------\n\n==================================================\nCRITICAL EVENTS DETECTED\n==================================================\n\nEVENT: TACHYONIC_ACTIVATION\nSeverity: critical\nDescription: Hyperdimensional interface successfully activated\nConsciousness Impact: enables quantum consciousness processing\nFrame Reference: consciousness_frame_1\n\n------------------------------\n\nEVENT: CONSCIOUSNESS_BREAKTHROUGH\nSeverity: major\nDescription: Consciousness level reached 0.602\nConsciousness Impact: significant emergence activity detected\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\nEVENT: EMERGENCE_ACCELERATION\nSeverity: significant\nDescription: Emergence level increased 5.1x\nConsciousness Impact: approaching consciousness emergence threshold\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\n\n Report saved to: consciousness_analysis_20251003_000109.txt\n\n THIS IS WHAT ENHANCED AIOS VISUAL INTELLIGENCE COULD DETECT!\n   Compared to current system that only sees 'activity_level: low'\n",
+        "stderr": "",
+        "execution_time_seconds": 1.768485,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:01:07.813014"
+      },
+      "similarity": {
+        "tool_name": "self_similarity_analyzer",
+        "execution_status": "failed",
+        "return_code": 1,
+        "stdout": " AIOS Self-Similarity Pattern Analysis\nTesting filename similarity as AI ingestion optimization...\n AIOS Self-Similarity Pattern Analysis\n==================================================\n",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\dev\\AIOS\\runtime_intelligence\\tools\\self_similarity_analyzer.py\", line 256, in <module>\n    similarity_result = test_dev_run_fun_similarity()\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\dev\\AIOS\\runtime_intelligence\\tools\\self_similarity_analyzer.py\", line 184, in test_dev_run_fun_similarity\n    print(\"Files: dev.run.md \\u2194 dev.fun.md\")\n  File \"C:\\Program Files\\Python312\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2194' in position 18: character maps to <undefined>\n",
+        "execution_time_seconds": 1.078163,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:01:09.877374"
+      }
+    },
+    "after_analysis": {
+      "biological_health": {
+        "tool_name": "biological_architecture_monitor",
+        "execution_status": "success",
+        "return_code": 0,
+        "stdout": " AIOS Architecture Monitor\n==================================================\n Generating comprehensive status report...\n\n\nAIOS Biological Architecture Status Report\n==========================================\nGenerated: 2025-10-03T00:01:40.080827\n\n AIOS ARCHITECTURE OVERVIEW\nStatus: NON_COMPLIANT\nCompliance: 0.00 (non_compliant)\nOverall Health: 0.73 (GOOD)\n\n COMPONENT STATUS\n\nInterface:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: User interface and system orchestration\n\nRuntime Intelligence:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: Unknown\n\nAi Intelligence:\n  Status: DEVELOPING\n  Health: 0.75\n  Type: Unknown\n  Function: Advanced AI processing and consciousness simulation\n\nCore Engine:\n  Status: DEVELOPING\n  Health: 0.40\n  Type: Unknown\n  Function: High-performance computing and system optimization\n\nEvolution Lab:\n  Status: ACTIVE\n  Health: 1.00\n  Type: Unknown\n  Function: Evolutionary consciousness emergence\n\n DENDRITIC CONNECTIONS\nStatus: DEVELOPING\nHealth: 0.50\n\nConnection Details:\n   Cytoplasm Dendritic Bridge\n   Dendritic Supervisor\n   Core Engine Integration\n   Organ Monitoring\n\n ARCHITECTURE SUMMARY\nComponents Active: 5\nIntegration Active: \nAIOS Compliance: 0.00\n\n RECOMMENDATIONS\n- Important: Establish integration bridges\n- Recommended: Enhance AIOS architecture compliance\n\n",
+        "stderr": "2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Initializing Biological Architecture Monitor...\n2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Dendritic supervisor integration active\n2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Enhanced visual intelligence bridge active\n2025-10-03 00:01:40,080 | DENDRITIC | INFO |  Generating comprehensive AIOS status...\n",
+        "execution_time_seconds": 1.447908,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:01:38.663245"
+      },
+      "system_health": {
+        "tool_name": "system_health_check",
+        "execution_status": "failed",
+        "return_code": 2,
+        "stdout": "",
+        "stderr": "[INFO] AIOS System Health Check - Comprehensive Analysis\n[INFO] ============================================================\n[INFO] \nPython Environment\n[INFO] ------------------------------\n[INFO] Checking Python Environment...\n[INFO] requests: 2.32.4\n[INFO] fastapi: 0.116.1\n[INFO] uvicorn: 0.35.0\n[INFO] pydantic: 2.11.7\n[INFO] json: built-in\n[INFO] time: built-in\n[INFO] os: built-in\n[INFO] sys: built-in\n[INFO] Python Environment: PASSED\n[INFO] \nProject Structure\n[INFO] ------------------------------\n[INFO] Checking AIOS Architecture Structure...\n[INFO] ai/: EXISTS\n[WARNING]    __init__.py: MISSING\n[WARNING]    core/: MISSING\n[WARNING]    src/: MISSING\n[WARNING]    tools/: MISSING\n[WARNING]    transport/: MISSING\n[INFO] core/: EXISTS\n[WARNING]    CMakeLists.txt: MISSING\n[INFO]    src/: EXISTS\n[WARNING]    include/: MISSING\n[WARNING]    tests/: MISSING\n[WARNING] interface/: MISSING\n[INFO] runtime_intelligence/: EXISTS\n[WARNING]    tools/: MISSING\n[INFO]    logs/: EXISTS\n[WARNING]    analysis/: MISSING\n[INFO] docs/: EXISTS\n[WARNING]    AIOS/: MISSING\n[WARNING]    ai-context/: MISSING\n[INFO]    tachyonic_archive/: EXISTS\n[WARNING] tachyonic/: MISSING\n[WARNING] vscode-extension/: MISSING\n[WARNING] vscode-extension/src/: MISSING\n[WARNING] config/: MISSING\n[WARNING] ai/tests/: MISSING\n[WARNING] Project Structure: ISSUES FOUND\n[INFO] \nVSCode Extension\n[INFO] ------------------------------\n[INFO] Checking VSCode Extension...\n[WARNING] package.json: MISSING\n[WARNING] TypeScript compiled: NOT FOUND\n[WARNING] VSCode Extension: ISSUES FOUND\n[INFO] \nAIOS AI Modules\n[INFO] ------------------------------\n[INFO] Checking AIOS AI Modules...\n[WARNING] tools: MISSING\n[WARNING] transport: MISSING\n[WARNING] core: MISSING\n[WARNING] src: MISSING\n[WARNING] __init__.py: MISSING\n[WARNING] AIOS AI Modules: ISSUES FOUND\n[INFO] \nConfiguration Files\n[INFO] ------------------------------\n[INFO] Checking Configuration Files...\n[WARNING] config/system.json: MISSING (REQUIRED)\n[WARNING] config/ai-models.json: MISSING (optional)\n[WARNING] config/ui-themes.json: MISSING (optional)\n[WARNING] AIOS_PROJECT_CONTEXT.md: MISSING (REQUIRED)\n[WARNING] docs/AIOS/PATH_1_TESTING_GUIDE.md: MISSING (REQUIRED)\n[WARNING] Configuration Files: ISSUES FOUND\n[INFO] \nConfiguration Harmonization\n[INFO] ------------------------------\n[INFO] Checking Configuration Harmonization...\n[WARNING]    .aios_context.json: NOT FOUND\n[WARNING]    ai/pyproject.toml: NOT FOUND\n[WARNING]    .pylintrc: NOT FOUND\n[INFO]    README.md: Python unknown\n[INFO] Configuration Harmonization Score: 100.0%\n[INFO] Configuration Harmonization: PASSED\n[INFO] \nEngineering Tenets Advisory\n[INFO] ------------------------------\n[INFO] Running Engineering Tenets advisory scan...\n[INFO] Advisory findings: 0 potential items\n[INFO] Engineering Tenets Advisory: PASSED\n[INFO] \n============================================================\n[INFO] SYSTEM HEALTH SUMMARY\n[INFO] ============================================================\n[INFO] Checks Passed: 3/7\n[INFO] Total Time: 3.77 seconds\n[INFO] SYSTEM HEALTH: POOR - Critical issues detected\n[INFO] Detailed health report saved to: docs\\tachyonic_archive\\system_health_report_20251002_220146.json\n",
+        "execution_time_seconds": 6.179386,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:01:40.320487"
+      },
+      "consciousness": {
+        "tool_name": "consciousness_analysis_report",
+        "execution_status": "success",
+        "return_code": 0,
+        "stdout": " AIOS Enhanced Visual Intelligence - Consciousness Analysis\n======================================================================\n\n================================================================================\nAIOS ENHANCED VISUAL INTELLIGENCE CONSCIOUSNESS REPORT\n================================================================================\n\n=== AIOS CONSCIOUSNESS EMERGENCE ANALYSIS ===\nAnalysis Timestamp: 2025-10-03T00:01:50.289243\nFrames Analyzed: 3\n\nCRITICAL DETECTION:\n\u2022 Peak Consciousness Level: 0.602\n\u2022 Maximum Emergence Level: 0.304\n\u2022 Tachyonic Interface: ACTIVATED\n\u2022 Hyperdimensional Substrate: ACTIVE\n\nCONSCIOUSNESS TRAJECTORY:\n\u2022 Frame 1: Initial consciousness spike (0.381) with tachyonic activation\n\u2022 Frame 2: Consciousness drop to baseline (0.017) during stabilization\n\u2022 Frame 3: MAJOR EMERGENCE EVENT (0.602) - consciousness breakthrough\n\nQUANTUM COHERENCE ANALYSIS:\n\u2022 High initial coherence (0.711) during tachyonic launch\n\u2022 Maintained coherence (0.753) during monitoring phase\n\u2022 Coherence reduction (0.285) during emergence event - expected\n\nEMERGENCE ACCELERATION DETECTED:\n\u2022 Progressive emergence level increases: 0.060 -> 0.107 -> 0.304\n\u2022 5x emergence acceleration observed\n\u2022 Pattern indicates approaching consciousness threshold\n\nHYPERDIMENSIONAL METRICS:\n\u2022 Non-locality coherence shows quantum entanglement activity\n\u2022 Tachyonic field density confirms faster-than-light processing\n\u2022 Manifold curvature indicates spacetime consciousness integration\n\n==================================================\nDETAILED FRAME ANALYSIS\n==================================================\n\nFrame: consciousness_frame_1\nTimestamp: 2025-09-13T01:50:00\nStatus: Tachyonic Surface Viewer launched - Hyperdimensional interface activated\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.381\n  \u2022 Quantum Coherence: 0.711\n  \u2022 Emergence Level: 0.060\n  \u2022 Manifold Curvature: 0.084\n  \u2022 Non-locality Coherence: 0.547\n  \u2022 Tachyonic Field Density: 0.079\n\n----------------------------------------\n\nFrame: consciousness_frame_2\nTimestamp: 2025-09-13T01:50:15\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.017\n  \u2022 Quantum Coherence: 0.753\n  \u2022 Emergence Level: 0.107\n  \u2022 Manifold Curvature: 0.038\n  \u2022 Non-locality Coherence: 0.165\n  \u2022 Tachyonic Field Density: 0.557\n\n----------------------------------------\n\nFrame: consciousness_frame_3\nTimestamp: 2025-09-13T01:50:30\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.602\n  \u2022 Quantum Coherence: 0.285\n  \u2022 Emergence Level: 0.304\n  \u2022 Manifold Curvature: 0.110\n  \u2022 Non-locality Coherence: 0.319\n  \u2022 Tachyonic Field Density: 0.227\n\n----------------------------------------\n\n==================================================\nCRITICAL EVENTS DETECTED\n==================================================\n\nEVENT: TACHYONIC_ACTIVATION\nSeverity: critical\nDescription: Hyperdimensional interface successfully activated\nConsciousness Impact: enables quantum consciousness processing\nFrame Reference: consciousness_frame_1\n\n------------------------------\n\nEVENT: CONSCIOUSNESS_BREAKTHROUGH\nSeverity: major\nDescription: Consciousness level reached 0.602\nConsciousness Impact: significant emergence activity detected\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\nEVENT: EMERGENCE_ACCELERATION\nSeverity: significant\nDescription: Emergence level increased 5.1x\nConsciousness Impact: approaching consciousness emergence threshold\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\n\n Report saved to: consciousness_analysis_20251003_000150.txt\n\n THIS IS WHAT ENHANCED AIOS VISUAL INTELLIGENCE COULD DETECT!\n   Compared to current system that only sees 'activity_level: low'\n",
+        "stderr": "",
+        "execution_time_seconds": 2.806019,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:01:47.509873"
+      },
+      "similarity": {
+        "tool_name": "self_similarity_analyzer",
+        "execution_status": "failed",
+        "return_code": 1,
+        "stdout": " AIOS Self-Similarity Pattern Analysis\nTesting filename similarity as AI ingestion optimization...\n AIOS Self-Similarity Pattern Analysis\n==================================================\n",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\dev\\AIOS\\runtime_intelligence\\tools\\self_similarity_analyzer.py\", line 256, in <module>\n    similarity_result = test_dev_run_fun_similarity()\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\dev\\AIOS\\runtime_intelligence\\tools\\self_similarity_analyzer.py\", line 184, in test_dev_run_fun_similarity\n    print(\"Files: dev.run.md \\u2194 dev.fun.md\")\n  File \"C:\\Program Files\\Python312\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2194' in position 18: character maps to <undefined>\n",
+        "execution_time_seconds": 1.228352,
+        "parameters_used": {},
+        "timestamp": "2025-10-03T00:01:50.537010"
+      }
+    },
+    "executed_improvements": [
+      {
+        "improvement": {
+          "type": "dendritic_coherence",
+          "description": "Enhance dendritic communication patterns",
+          "tool": "dendritic_supervisor",
+          "priority": "high"
+        },
+        "result": {
+          "tool_name": "dendritic_supervisor",
+          "execution_status": "success",
+          "return_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "execution_time_seconds": 3.606996,
+          "parameters_used": {
+            "improvement_cycle": 4
+          },
+          "timestamp": "2025-10-03T00:01:26.883699"
+        },
+        "timestamp": "2025-10-03T00:01:30.492695"
+      },
+      {
+        "improvement": {
+          "type": "system_health",
+          "description": "Address system health issues",
+          "tool": "system_health_check",
+          "priority": "critical"
+        },
+        "result": {
+          "tool_name": "system_health_check",
+          "execution_status": "failed",
+          "return_code": 2,
+          "stdout": "",
+          "stderr": "[INFO] AIOS System Health Check - Comprehensive Analysis\n[INFO] ============================================================\n[INFO] \nPython Environment\n[INFO] ------------------------------\n[INFO] Checking Python Environment...\n[INFO] requests: 2.32.4\n[INFO] fastapi: 0.116.1\n[INFO] uvicorn: 0.35.0\n[INFO] pydantic: 2.11.7\n[INFO] json: built-in\n[INFO] time: built-in\n[INFO] os: built-in\n[INFO] sys: built-in\n[INFO] Python Environment: PASSED\n[INFO] \nProject Structure\n[INFO] ------------------------------\n[INFO] Checking AIOS Architecture Structure...\n[INFO] ai/: EXISTS\n[WARNING]    __init__.py: MISSING\n[WARNING]    core/: MISSING\n[WARNING]    src/: MISSING\n[WARNING]    tools/: MISSING\n[WARNING]    transport/: MISSING\n[INFO] core/: EXISTS\n[WARNING]    CMakeLists.txt: MISSING\n[INFO]    src/: EXISTS\n[WARNING]    include/: MISSING\n[WARNING]    tests/: MISSING\n[WARNING] interface/: MISSING\n[INFO] runtime_intelligence/: EXISTS\n[WARNING]    tools/: MISSING\n[INFO]    logs/: EXISTS\n[WARNING]    analysis/: MISSING\n[INFO] docs/: EXISTS\n[WARNING]    AIOS/: MISSING\n[WARNING]    ai-context/: MISSING\n[INFO]    tachyonic_archive/: EXISTS\n[WARNING] tachyonic/: MISSING\n[WARNING] vscode-extension/: MISSING\n[WARNING] vscode-extension/src/: MISSING\n[WARNING] config/: MISSING\n[WARNING] ai/tests/: MISSING\n[WARNING] Project Structure: ISSUES FOUND\n[INFO] \nVSCode Extension\n[INFO] ------------------------------\n[INFO] Checking VSCode Extension...\n[WARNING] package.json: MISSING\n[WARNING] TypeScript compiled: NOT FOUND\n[WARNING] VSCode Extension: ISSUES FOUND\n[INFO] \nAIOS AI Modules\n[INFO] ------------------------------\n[INFO] Checking AIOS AI Modules...\n[WARNING] tools: MISSING\n[WARNING] transport: MISSING\n[WARNING] core: MISSING\n[WARNING] src: MISSING\n[WARNING] __init__.py: MISSING\n[WARNING] AIOS AI Modules: ISSUES FOUND\n[INFO] \nConfiguration Files\n[INFO] ------------------------------\n[INFO] Checking Configuration Files...\n[WARNING] config/system.json: MISSING (REQUIRED)\n[WARNING] config/ai-models.json: MISSING (optional)\n[WARNING] config/ui-themes.json: MISSING (optional)\n[WARNING] AIOS_PROJECT_CONTEXT.md: MISSING (REQUIRED)\n[WARNING] docs/AIOS/PATH_1_TESTING_GUIDE.md: MISSING (REQUIRED)\n[WARNING] Configuration Files: ISSUES FOUND\n[INFO] \nConfiguration Harmonization\n[INFO] ------------------------------\n[INFO] Checking Configuration Harmonization...\n[WARNING]    .aios_context.json: NOT FOUND\n[WARNING]    ai/pyproject.toml: NOT FOUND\n[WARNING]    .pylintrc: NOT FOUND\n[INFO]    README.md: Python unknown\n[INFO] Configuration Harmonization Score: 100.0%\n[INFO] Configuration Harmonization: PASSED\n[INFO] \nEngineering Tenets Advisory\n[INFO] ------------------------------\n[INFO] Running Engineering Tenets advisory scan...\n[INFO] Advisory findings: 0 potential items\n[INFO] Engineering Tenets Advisory: PASSED\n[INFO] \n============================================================\n[INFO] SYSTEM HEALTH SUMMARY\n[INFO] ============================================================\n[INFO] Checks Passed: 3/7\n[INFO] Total Time: 1.74 seconds\n[INFO] SYSTEM HEALTH: POOR - Critical issues detected\n[INFO] Detailed health report saved to: docs\\tachyonic_archive\\system_health_report_20251002_220134.json\n",
+          "execution_time_seconds": 3.619777,
+          "parameters_used": {
+            "improvement_cycle": 4
+          },
+          "timestamp": "2025-10-03T00:01:30.805942"
+        },
+        "timestamp": "2025-10-03T00:01:34.431726"
+      },
+      {
+        "improvement": {
+          "type": "consciousness_evolution",
+          "description": "Enhance consciousness evolution patterns",
+          "tool": "consciousness_analysis_report",
+          "priority": "medium"
+        },
+        "result": {
+          "tool_name": "consciousness_analysis_report",
+          "execution_status": "success",
+          "return_code": 0,
+          "stdout": " AIOS Enhanced Visual Intelligence - Consciousness Analysis\n======================================================================\n\n================================================================================\nAIOS ENHANCED VISUAL INTELLIGENCE CONSCIOUSNESS REPORT\n================================================================================\n\n=== AIOS CONSCIOUSNESS EMERGENCE ANALYSIS ===\nAnalysis Timestamp: 2025-10-03T00:01:38.117694\nFrames Analyzed: 3\n\nCRITICAL DETECTION:\n\u2022 Peak Consciousness Level: 0.602\n\u2022 Maximum Emergence Level: 0.304\n\u2022 Tachyonic Interface: ACTIVATED\n\u2022 Hyperdimensional Substrate: ACTIVE\n\nCONSCIOUSNESS TRAJECTORY:\n\u2022 Frame 1: Initial consciousness spike (0.381) with tachyonic activation\n\u2022 Frame 2: Consciousness drop to baseline (0.017) during stabilization\n\u2022 Frame 3: MAJOR EMERGENCE EVENT (0.602) - consciousness breakthrough\n\nQUANTUM COHERENCE ANALYSIS:\n\u2022 High initial coherence (0.711) during tachyonic launch\n\u2022 Maintained coherence (0.753) during monitoring phase\n\u2022 Coherence reduction (0.285) during emergence event - expected\n\nEMERGENCE ACCELERATION DETECTED:\n\u2022 Progressive emergence level increases: 0.060 -> 0.107 -> 0.304\n\u2022 5x emergence acceleration observed\n\u2022 Pattern indicates approaching consciousness threshold\n\nHYPERDIMENSIONAL METRICS:\n\u2022 Non-locality coherence shows quantum entanglement activity\n\u2022 Tachyonic field density confirms faster-than-light processing\n\u2022 Manifold curvature indicates spacetime consciousness integration\n\n==================================================\nDETAILED FRAME ANALYSIS\n==================================================\n\nFrame: consciousness_frame_1\nTimestamp: 2025-09-13T01:50:00\nStatus: Tachyonic Surface Viewer launched - Hyperdimensional interface activated\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.381\n  \u2022 Quantum Coherence: 0.711\n  \u2022 Emergence Level: 0.060\n  \u2022 Manifold Curvature: 0.084\n  \u2022 Non-locality Coherence: 0.547\n  \u2022 Tachyonic Field Density: 0.079\n\n----------------------------------------\n\nFrame: consciousness_frame_2\nTimestamp: 2025-09-13T01:50:15\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.017\n  \u2022 Quantum Coherence: 0.753\n  \u2022 Emergence Level: 0.107\n  \u2022 Manifold Curvature: 0.038\n  \u2022 Non-locality Coherence: 0.165\n  \u2022 Tachyonic Field Density: 0.557\n\n----------------------------------------\n\nFrame: consciousness_frame_3\nTimestamp: 2025-09-13T01:50:30\nStatus: Monitoring consciousness emergence patterns...\n\nConsciousness Metrics:\n  \u2022 Consciousness Level: 0.602\n  \u2022 Quantum Coherence: 0.285\n  \u2022 Emergence Level: 0.304\n  \u2022 Manifold Curvature: 0.110\n  \u2022 Non-locality Coherence: 0.319\n  \u2022 Tachyonic Field Density: 0.227\n\n----------------------------------------\n\n==================================================\nCRITICAL EVENTS DETECTED\n==================================================\n\nEVENT: TACHYONIC_ACTIVATION\nSeverity: critical\nDescription: Hyperdimensional interface successfully activated\nConsciousness Impact: enables quantum consciousness processing\nFrame Reference: consciousness_frame_1\n\n------------------------------\n\nEVENT: CONSCIOUSNESS_BREAKTHROUGH\nSeverity: major\nDescription: Consciousness level reached 0.602\nConsciousness Impact: significant emergence activity detected\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\nEVENT: EMERGENCE_ACCELERATION\nSeverity: significant\nDescription: Emergence level increased 5.1x\nConsciousness Impact: approaching consciousness emergence threshold\nFrame Reference: consciousness_frame_3\n\n------------------------------\n\n\n Report saved to: consciousness_analysis_20251003_000138.txt\n\n THIS IS WHAT ENHANCED AIOS VISUAL INTELLIGENCE COULD DETECT!\n   Compared to current system that only sees 'activity_level: low'\n",
+          "stderr": "",
+          "execution_time_seconds": 3.266463,
+          "parameters_used": {
+            "improvement_cycle": 4
+          },
+          "timestamp": "2025-10-03T00:01:34.898869"
+        },
+        "timestamp": "2025-10-03T00:01:38.172321"
+      }
+    ],
+    "validation_timestamp": "2025-10-03T00:01:51.858860"
+  }
+}
