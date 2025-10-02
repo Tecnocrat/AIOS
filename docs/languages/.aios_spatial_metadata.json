@@ -1,0 +1,118 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-30T22:35:58.846411",
+  "folder_info": {
+    "name": "languages",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\languages",
+    "relative_path": "docs\\languages",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "languages"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "Architect",
+      "archive",
+      "build",
+      "changelog",
+      "development",
+      "reports",
+      "runtime_intelligence",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "vscopilot chat"
+    ],
+    "child_folders": [
+      "languages"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 21210,
+      "file_count": 8,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "INTEGRATION_MARKER.md",
+          "size": 1323,
+          "modified": "2025-09-30T22:34:08.953426",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "INTEGRATION_MARKER.md",
+        "size": 1323,
+        "modified": "2025-09-30T22:34:08.953426",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 4,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > languages",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\languages' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\languages' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\languages' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      "ai\\core\\docs",
+      "ai\\languages"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

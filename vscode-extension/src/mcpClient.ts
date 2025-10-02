@@ -83,7 +83,7 @@ export class AIOSMCPClient {
 
         if (this.consciousnessMonitor) {
             clearInterval(this.consciousnessMonitor);
-            this.consciousnessMonitor = undefined;
+            this.consciousnessMonitor = null as any;
         }
 
         this.servers.clear();
@@ -197,7 +197,7 @@ export class AIOSMCPClient {
         }
     }
 
-    private async initializeMCPServers(toolsData: any[]): Promise<void> {
+    private async initializeMCPServers(_toolsData: any[]): Promise<void> {
         // Map Interface Bridge tools to MCP servers
         const mcpServerNames = ['consciousness_mcp_server', 'evolution_mcp_server', 'agentic_mcp_server'];
 

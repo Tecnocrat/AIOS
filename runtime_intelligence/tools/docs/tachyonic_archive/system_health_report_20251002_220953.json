@@ -1,0 +1,152 @@
+{
+  "timestamp": 1759442993.880028,
+  "total_checks": 7,
+  "passed_checks": 3,
+  "health_status": "POOR",
+  "detailed_results": {
+    "python_environment": {
+      "python_version": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+      "python_executable": "C:\\Program Files\\Python312\\python.exe",
+      "path": [
+        "C:\\dev\\AIOS\\runtime_intelligence\\tools",
+        "C:\\dev\\AIOS\\runtime_intelligence\\tools\\dev",
+        "C:\\Program Files\\Python312\\python312.zip"
+      ],
+      "packages": {
+        "requests": "2.32.4",
+        "fastapi": "0.116.1",
+        "uvicorn": "0.35.0",
+        "pydantic": "2.11.7",
+        "json": "built-in",
+        "time": "built-in",
+        "os": "built-in",
+        "sys": "built-in"
+      }
+    },
+    "project_structure": {
+      "ai/": {
+        "exists": true,
+        "files": {
+          "__init__.py": false,
+          "core/": false,
+          "src/": false,
+          "tools/": false,
+          "transport/": false
+        }
+      },
+      "core/": {
+        "exists": true,
+        "files": {
+          "CMakeLists.txt": false,
+          "src/": true,
+          "include/": false,
+          "tests/": false
+        }
+      },
+      "interface/": {
+        "exists": false,
+        "files": {}
+      },
+      "runtime_intelligence/": {
+        "exists": true,
+        "files": {
+          "tools/": false,
+          "logs/": true,
+          "analysis/": false
+        }
+      },
+      "docs/": {
+        "exists": true,
+        "files": {
+          "AIOS/": false,
+          "ai-context/": false,
+          "tachyonic_archive/": true
+        }
+      },
+      "tachyonic/": {
+        "exists": false,
+        "files": {}
+      },
+      "vscode-extension/": {
+        "exists": false,
+        "files": {}
+      },
+      "vscode-extension/src/": {
+        "exists": false,
+        "files": {}
+      },
+      "config/": {
+        "exists": false,
+        "files": {}
+      },
+      "ai/tests/": {
+        "exists": false,
+        "files": {}
+      }
+    },
+    "vscode_extension": {
+      "package_json": false,
+      "typescript_compiled": false,
+      "dependencies": {}
+    },
+    "aios_modules": {
+      "tools": "missing",
+      "transport": "missing",
+      "core": "missing",
+      "src": "missing",
+      "__init__.py": "missing"
+    },
+    "configuration_files": {
+      "config/system.json": {
+        "exists": false,
+        "importance": "required"
+      },
+      "config/ai-models.json": {
+        "exists": false,
+        "importance": "optional"
+      },
+      "config/ui-themes.json": {
+        "exists": false,
+        "importance": "optional"
+      },
+      "AIOS_PROJECT_CONTEXT.md": {
+        "exists": false,
+        "importance": "required"
+      },
+      "docs/AIOS/PATH_1_TESTING_GUIDE.md": {
+        "exists": false,
+        "importance": "required"
+      }
+    },
+    "configuration_harmonization": {
+      "python_versions": {
+        "consistent": true,
+        "details": {
+          ".aios_context.json": "FILE_NOT_FOUND",
+          "ai/pyproject.toml": "FILE_NOT_FOUND",
+          ".pylintrc": "FILE_NOT_FOUND",
+          "README.md": "unknown"
+        }
+      },
+      "ai_frameworks": {
+        "aligned": true,
+        "details": {}
+      },
+      "timestamps": {
+        "current": true,
+        "details": {}
+      },
+      "config_sync": {
+        "synchronized": true,
+        "details": {}
+      },
+      "harmonization_score": 100.0,
+      "status": "HARMONIZED"
+    },
+    "engineering_tenets_advisory": {
+      "findings": [],
+      "tenets_doc": "docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md",
+      "note": "Advisory only. Improve clarity and scoping per tenets."
+    }
+  }
+}

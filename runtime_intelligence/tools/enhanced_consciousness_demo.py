@@ -50,12 +50,18 @@ class EnhancedConsciousnessDemo:
 
     def _setup_logging(self) -> logging.Logger:
         """AINLP-compliant logging setup"""
+        # Ensure logs directory exists
+        logs_dir = Path(__file__).parent.parent / 'logs'
+        logs_dir.mkdir(exist_ok=True)
+        
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_file = logs_dir / f'enhanced_consciousness_demo_{timestamp}.log'
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s | %(levelname)8s | %(name)s | %(message)s',
             handlers=[
                 logging.StreamHandler(),
-                logging.FileHandler(f'runtime_intelligence/logs/enhanced_consciousness_demo_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log')
+                logging.FileHandler(str(log_file))
             ]
         )
         return logging.getLogger('EnhancedConsciousnessDemo')

@@ -1,6 +1,6 @@
 {
-  "discovery_timestamp": "2025-09-24T21:18:25.101942",
-  "total_tools": 15,
+  "discovery_timestamp": "2025-10-02T08:31:42.418021",
+  "total_tools": 22,
   "tools": [
     {
       "name": "ai_cell_manager",
@@ -10,8 +10,8 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "knowledge_processing",
-        "session_management"
+        "session_management",
+        "knowledge_processing"
       ],
       "parameters": [
         {
@@ -39,7 +39,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "ai_engine_handoff",
@@ -49,9 +49,9 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
+        "session_management",
         "knowledge_processing",
-        "knowledge_transfer",
-        "session_management"
+        "knowledge_transfer"
       ],
       "parameters": [
         {
@@ -79,7 +79,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "tensorflow_training_cell",
@@ -89,8 +89,8 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "knowledge_processing",
-        "session_management"
+        "session_management",
+        "knowledge_processing"
       ],
       "parameters": [
         {
@@ -118,7 +118,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "aios_context_registry_validator",
@@ -150,7 +150,39 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
+    },
+    {
+      "name": "comprehensive_linter",
+      "display_name": "Comprehensive Linter",
+      "description": "AINLP Comprehensive Linting Enhancement Tool Enhanced systematic fixer for line length, imports, whitespace, and type issues Follows AINLP enhancement-over-creation paradigm",
+      "category": "tool",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "automation",
+        "analysis"
+      ],
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true,
+          "description": "Operation to perform",
+          "example": "extract_knowledge"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "cross_pollination_automator",
@@ -161,9 +193,9 @@
       "status": "available",
       "capabilities": [
         "automation",
-        "process_automation",
+        "ai_collaboration",
         "analysis",
-        "ai_collaboration"
+        "process_automation"
       ],
       "parameters": [
         {
@@ -184,12 +216,12 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "fix_e501_",
       "display_name": "Fix E501 ",
-      "description": "AINLP E501 Comprehensive Fixer Systematically fixes line length violations with a simple CLI UI and debug logging",
+      "description": "AINLP Comprehensive Linting Fixer Enhanced systematic fixer for line length, imports, and type checking issues AINLP.fixer [comprehensive_linting_solution] (comment.AINLP.class)",
       "category": "tool",
       "version": "1.0.0",
       "status": "available",
@@ -216,7 +248,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "conversation_processor_tool",
@@ -226,9 +258,9 @@
       "version": "1.0.0",
       "status": "available",
       "capabilities": [
-        "data_analysis",
         "automation",
-        "analysis"
+        "analysis",
+        "data_analysis"
       ],
       "parameters": [
         {
@@ -250,7 +282,39 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
+    },
+    {
+      "name": "cpp_stl_knowledge_ingestion_tool",
+      "display_name": "Cpp Stl Knowledge Ingestion Tool",
+      "description": "AIOS C++ STL Knowledge Ingestion Engine MARKER 1: EXTRACTION - Convert STL into machine-readable knowledge base MARKER 2: REPRESENTATION - Encode into AIOS fractal knowledge cells",
+      "category": "tool",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "automation",
+        "analysis"
+      ],
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true,
+          "description": "Operation to perform",
+          "example": "extract_knowledge"
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "recursive_tooling",
@@ -282,7 +346,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "start_server",
@@ -314,7 +378,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "aios_vscode_integration_server",
@@ -346,7 +410,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "mcp_server",
@@ -378,7 +442,169 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
+    },
+    {
+      "name": "agentic_mcp_server",
+      "display_name": "Agentic Mcp Server",
+      "description": "AIOS Agentic MCP Server Provides agentic behavior orchestration and monitoring tools",
+      "category": "service",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "api_endpoints",
+        "background_processing"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-10-02T08:31:42.418021"
+    },
+    {
+      "name": "artifact_mcp_server",
+      "display_name": "Artifact Mcp Server",
+      "description": "AIOS Artifact Factory MCP Server Provides artifact creation and management tools",
+      "category": "service",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "api_endpoints",
+        "background_processing"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-10-02T08:31:42.418021"
+    },
+    {
+      "name": "consciousness_mcp_server",
+      "display_name": "Consciousness Mcp Server",
+      "description": "AIOS Consciousness MCP Server Provides consciousness analysis and emergence detection tools using Gemini CLI integration",
+      "category": "service",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "api_endpoints",
+        "data_analysis",
+        "background_processing"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json",
+        "csv"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-10-02T08:31:42.418021"
+    },
+    {
+      "name": "evolution_mcp_server",
+      "display_name": "Evolution Mcp Server",
+      "description": "AIOS Evolution MCP Server Provides consciousness evolution experiment management tools",
+      "category": "service",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "api_endpoints",
+        "background_processing"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-10-02T08:31:42.418021"
+    },
+    {
+      "name": "ingestor_mcp_server",
+      "display_name": "Ingestor Mcp Server",
+      "description": "AIOS Evolution Ingestor MCP Server Provides evolutionary experiment tools",
+      "category": "service",
+      "version": "1.0.0",
+      "status": "available",
+      "capabilities": [
+        "api_endpoints",
+        "background_processing"
+      ],
+      "parameters": [
+        {
+          "name": "config",
+          "type": "object",
+          "required": false,
+          "description": "Configuration parameters",
+          "example": {}
+        }
+      ],
+      "output_formats": [
+        "json"
+      ],
+      "execution_time_estimate": "medium",
+      "resource_requirements": {
+        "memory": "low",
+        "cpu": "medium",
+        "disk": "low",
+        "network": "none"
+      },
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "aios_cross_dialogue_intelligence",
@@ -410,7 +636,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "ai_agent_bridge",
@@ -442,7 +668,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "ai_engine_context_enforcer",
@@ -474,7 +700,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     },
     {
       "name": "membrane_intelligence",
@@ -506,7 +732,7 @@
         "disk": "low",
         "network": "none"
       },
-      "metadata_generated": "2025-09-24T21:18:25.101942"
+      "metadata_generated": "2025-10-02T08:31:42.418021"
     }
   ],
   "server_status": "running",

@@ -1,0 +1,129 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-30T22:35:47.919011",
+  "folder_info": {
+    "name": "cytoplasm",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\cytoplasm",
+    "relative_path": "ai\\cytoplasm",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "cytoplasm"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".pytest_cache",
+      "__pycache__",
+      "core",
+      "data",
+      "docs",
+      "information_storage",
+      "infrastructure",
+      "ingested_repositories",
+      "interfaces",
+      "languages",
+      "research",
+      "runtime_intelligence",
+      "src",
+      "tachyonic",
+      "tests",
+      "tools",
+      "transport"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "runtime"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 26949,
+      "file_count": 3,
+      "folder_count": 2,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "cytoplasm_bridge.py",
+          "size": 12177,
+          "modified": "2025-09-27T20:32:46.814926",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "cytoplasm_bridge.py",
+        "size": 12177,
+        "modified": "2025-09-27T20:32:46.814926",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > cytoplasm",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "interface\\AIOS.Models",
+      "ai\\infrastructure\\dendritic\\cytoplasm"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

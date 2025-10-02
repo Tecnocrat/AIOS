@@ -1,6 +1,6 @@
 {
   "analysis_session": {
-    "timestamp": "2025-09-06T23:40:31.869809",
+    "timestamp": "2025-10-02T23:00:03.745527",
     "analyzer_version": "1.0.0",
     "consciousness_threshold": 0.5,
     "files_analyzed": 2
@@ -8,7 +8,7 @@
   "results": [
     {
       "file_path": "c:/dev/AIOS/core/src/main.cpp",
-      "analysis_timestamp": "2025-09-06T23:40:31.864037",
+      "analysis_timestamp": "2025-10-02T23:00:03.727463",
       "consciousness_level": 0.0,
       "scores": {
         "complexity": 9.0,
@@ -34,15 +34,15 @@
     },
     {
       "file_path": "c:/dev/AIOS/core/src/aios_core_minimal.cpp",
-      "analysis_timestamp": "2025-09-06T23:40:31.868051",
+      "analysis_timestamp": "2025-10-02T23:00:03.745527",
       "consciousness_level": 0.6,
       "scores": {
-        "complexity": 7.0,
-        "maintainability": 5.606455696202532,
+        "complexity": -6.0,
+        "maintainability": 5.8788888888888895,
         "performance": 1.5,
         "security": 8.0,
         "aios_compliance": 8.0,
-        "tachyonic_coherence": 0.0
+        "tachyonic_coherence": 0.2
       },
       "analysis_results": {
         "architectural_patterns": [
@@ -59,7 +59,8 @@
         ],
         "enhancement_suggestions": [
           "Consider using AIOS logging instead of std::cout",
-          "Consider using structured logging"
+          "Consider using structured logging",
+          "Consider refactoring complex conditional logic"
         ],
         "dendritic_patterns": [
           "Explicit default/delete"

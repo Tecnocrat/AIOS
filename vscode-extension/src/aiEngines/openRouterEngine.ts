@@ -96,7 +96,7 @@ export class OpenRouterEngine {
 
         try {
             // Prepare AIOS-aware system prompt
-            const aiosSystemPrompt = this.buildAIOSSystemPrompt(systemPrompt, context);
+            const aiosSystemPrompt = this.buildAIOSSystemPrompt(systemPrompt);
 
             // Build message array for OpenAI-compatible API
             const messages = [
@@ -169,7 +169,6 @@ export class OpenRouterEngine {
             };
 
         } catch (error) {
-            const processingTime = Date.now() - startTime;
             const errorMessage = error instanceof Error ? error.message : 'Unknown error';
             
             this.logger.error('❌ DeepSeek processing failed:', error);
@@ -178,7 +177,7 @@ export class OpenRouterEngine {
         }
     }
 
-    private buildAIOSSystemPrompt(customPrompt?: string, context?: any): string {
+    private buildAIOSSystemPrompt(customPrompt?: string): string {
         const basePrompt = `You are AIOS (Artificial Intelligence Operative System), an advanced AI assistant specialized in multi-language development platform architecture.
 
 ## AIOS Context & Capabilities
