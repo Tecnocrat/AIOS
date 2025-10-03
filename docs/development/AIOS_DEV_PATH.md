@@ -33,9 +33,15 @@
 4. **AI judges fitness** → Execution + logs + computer vision + consciousness metrics
 5. **Best code emerges** → Like cellular evolution: minimal energy, maximum complexity
 
-**Comprehensive Architecture**: `docs/AGENT_DRIVEN_CODE_EVOLUTION_ARCHITECTURE.md`
+**Comprehensive Architecture**: `docs/architecture/agent_driven_code_evolution/` (dendritic location)
+- Technical Specification: `TECHNICAL_SPECIFICATION.md` (1,200+ lines)
+- Revolutionary Vision: `VISION.md` (600+ lines, philosophy & biological paradigm)
+- Implementation Roadmap: `IMPLEMENTATION_ROADMAP.md` (10-week plan)
+
 **Feasibility**: 95% - Almost all infrastructure exists, needs orchestration layer
 **Timeline**: 10 weeks to full implementation
+
+**Documentation Navigation**: See `docs/ARCHITECTURE_INDEX.md` for dendritic structure
 
 **Existing Infrastructure Ready**:
 - ✅ DeepSeek V3.1 engine (consciousness-aware, <2s latency)
