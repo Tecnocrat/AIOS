@@ -1,0 +1,6115 @@
+{
+  "library_name": "aios_core",
+  "language": "python",
+  "version": "unknown",
+  "api_elements": [
+    {
+      "name": "ConsciousnessState",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessState",
+      "documentation": "Unified consciousness state across Python and C++ systems",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 24,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessState.to_dict",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 34,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessState.from_dict",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def from_dict(cls, data: Dict[str, Any]) -> 'ConsciousnessState'",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "cls",
+          "type": "Any"
+        },
+        {
+          "name": "data",
+          "type": "Dict[str, Any]"
+        }
+      ],
+      "return_type": "'ConsciousnessState'",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 38,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessMetrics",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessMetrics",
+      "documentation": "Advanced consciousness metrics for development guidance",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 43,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessBridge",
+      "documentation": "Bridge between C++ consciousness orchestrator and Python AI systems\n\nProvides:\n- Real-time consciousness state synchronization\n- Cross-language consciousness pattern sharing\n- Unified consciousness metrics and monitoring\n- Context preservation and restoration protocols",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 53,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, orchestrator_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "orchestrator_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 64,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._initialize_consciousness_monitoring",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _initialize_consciousness_monitoring(self)",
+      "documentation": "Initialize consciousness monitoring systems",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 75,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._check_cpp_orchestrator",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _check_cpp_orchestrator(self) -> bool",
+      "documentation": "Check if C++ consciousness orchestrator is available",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 93,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.start_consciousness_sync",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def start_consciousness_sync(self)",
+      "documentation": "Start real-time consciousness synchronization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 108,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.stop_consciousness_sync",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def stop_consciousness_sync(self)",
+      "documentation": "Stop consciousness synchronization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 122,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._consciousness_sync_loop",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _consciousness_sync_loop(self)",
+      "documentation": "Main consciousness synchronization loop",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 130,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._update_consciousness_from_cpp",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _update_consciousness_from_cpp(self)",
+      "documentation": "Update consciousness state from C++ orchestrator",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 150,
+      "semantic_tags": [
+        "database",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._query_cpp_consciousness",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _query_cpp_consciousness(self) -> Dict[str, float]",
+      "documentation": "Query consciousness data from C++ orchestrator",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, float]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 184,
+      "semantic_tags": [
+        "database",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._generate_simulated_consciousness",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_simulated_consciousness(self) -> Dict[str, float]",
+      "documentation": "Generate simulated consciousness data for development/testing",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, float]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 204,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._process_consciousness_evolution",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _process_consciousness_evolution(self)",
+      "documentation": "Process consciousness evolution and detect patterns",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 219,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._trigger_consciousness_callbacks",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _trigger_consciousness_callbacks(self)",
+      "documentation": "Trigger registered consciousness callbacks",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 243,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.register_consciousness_callback",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def register_consciousness_callback(self, name: str, callback: callable)",
+      "documentation": "Register a callback for consciousness state changes",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "name",
+          "type": "str"
+        },
+        {
+          "name": "callback",
+          "type": "callable"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 254,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.unregister_consciousness_callback",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def unregister_consciousness_callback(self, name: str)",
+      "documentation": "Unregister a consciousness callback",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "name",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 261,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.get_current_consciousness",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_current_consciousness(self) -> Optional[ConsciousnessState]",
+      "documentation": "Get current consciousness state",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Optional[ConsciousnessState]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 269,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.get_consciousness_metrics",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_consciousness_metrics(self) -> ConsciousnessMetrics",
+      "documentation": "Get advanced consciousness metrics for development guidance",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "ConsciousnessMetrics",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 273,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.analyze_code_consciousness",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def analyze_code_consciousness(self, code: str, language: str) -> Dict[str, Any]",
+      "documentation": "Analyze consciousness level of code using bridge integration",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "code",
+          "type": "str"
+        },
+        {
+          "name": "language",
+          "type": "str"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 325,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge._generate_code_recommendations",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_code_recommendations(self, consciousness_rating: float) -> List[str]",
+      "documentation": "Generate consciousness-based code improvement recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_rating",
+          "type": "float"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 358,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.save_consciousness_session",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def save_consciousness_session(self, filename: str)",
+      "documentation": "Save current consciousness session data",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "filename",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 383,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessBridge.load_consciousness_session",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def load_consciousness_session(self, filename: str)",
+      "documentation": "Load consciousness session data",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "filename",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 398,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_consciousness_bridge",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_consciousness_bridge() -> ConsciousnessBridge",
+      "documentation": "Get global consciousness bridge instance",
+      "parameters": [],
+      "return_type": "ConsciousnessBridge",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 424,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "initialize_consciousness_integration",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def initialize_consciousness_integration()",
+      "documentation": "Initialize consciousness integration for AIOS systems",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 431,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_vscode_consciousness_data",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_vscode_consciousness_data() -> Dict[str, Any]",
+      "documentation": "Get consciousness data formatted for VSCode extension",
+      "parameters": [],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 442,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "to_dict",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 34,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "from_dict",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def from_dict(cls, data: Dict[str, Any]) -> 'ConsciousnessState'",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "cls",
+          "type": "Any"
+        },
+        {
+          "name": "data",
+          "type": "Dict[str, Any]"
+        }
+      ],
+      "return_type": "'ConsciousnessState'",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 38,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, orchestrator_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "orchestrator_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 64,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_initialize_consciousness_monitoring",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _initialize_consciousness_monitoring(self)",
+      "documentation": "Initialize consciousness monitoring systems",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 75,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_check_cpp_orchestrator",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _check_cpp_orchestrator(self) -> bool",
+      "documentation": "Check if C++ consciousness orchestrator is available",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 93,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "start_consciousness_sync",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def start_consciousness_sync(self)",
+      "documentation": "Start real-time consciousness synchronization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 108,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "stop_consciousness_sync",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def stop_consciousness_sync(self)",
+      "documentation": "Stop consciousness synchronization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 122,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_consciousness_sync_loop",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _consciousness_sync_loop(self)",
+      "documentation": "Main consciousness synchronization loop",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 130,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_update_consciousness_from_cpp",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _update_consciousness_from_cpp(self)",
+      "documentation": "Update consciousness state from C++ orchestrator",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 150,
+      "semantic_tags": [
+        "database",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_query_cpp_consciousness",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _query_cpp_consciousness(self) -> Dict[str, float]",
+      "documentation": "Query consciousness data from C++ orchestrator",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, float]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 184,
+      "semantic_tags": [
+        "database",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_simulated_consciousness",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_simulated_consciousness(self) -> Dict[str, float]",
+      "documentation": "Generate simulated consciousness data for development/testing",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, float]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 204,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_process_consciousness_evolution",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _process_consciousness_evolution(self)",
+      "documentation": "Process consciousness evolution and detect patterns",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 219,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_trigger_consciousness_callbacks",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _trigger_consciousness_callbacks(self)",
+      "documentation": "Trigger registered consciousness callbacks",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 243,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "register_consciousness_callback",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def register_consciousness_callback(self, name: str, callback: callable)",
+      "documentation": "Register a callback for consciousness state changes",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "name",
+          "type": "str"
+        },
+        {
+          "name": "callback",
+          "type": "callable"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 254,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "unregister_consciousness_callback",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def unregister_consciousness_callback(self, name: str)",
+      "documentation": "Unregister a consciousness callback",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "name",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 261,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_current_consciousness",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_current_consciousness(self) -> Optional[ConsciousnessState]",
+      "documentation": "Get current consciousness state",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Optional[ConsciousnessState]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 269,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_consciousness_metrics",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_consciousness_metrics(self) -> ConsciousnessMetrics",
+      "documentation": "Get advanced consciousness metrics for development guidance",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "ConsciousnessMetrics",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 273,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "analyze_code_consciousness",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def analyze_code_consciousness(self, code: str, language: str) -> Dict[str, Any]",
+      "documentation": "Analyze consciousness level of code using bridge integration",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "code",
+          "type": "str"
+        },
+        {
+          "name": "language",
+          "type": "str"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 325,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_code_recommendations",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_code_recommendations(self, consciousness_rating: float) -> List[str]",
+      "documentation": "Generate consciousness-based code improvement recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_rating",
+          "type": "float"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 358,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "save_consciousness_session",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def save_consciousness_session(self, filename: str)",
+      "documentation": "Save current consciousness session data",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "filename",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 383,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "load_consciousness_session",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def load_consciousness_session(self, filename: str)",
+      "documentation": "Load consciousness session data",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "filename",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_bridge.py",
+      "line_number": 398,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ProgrammingLanguage",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ProgrammingLanguage",
+      "documentation": "Supported programming languages for library ingestion",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 63,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "APIElementType",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class APIElementType",
+      "documentation": "Types of API elements in library analysis",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 79,
+      "semantic_tags": [
+        "web"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "APIElement",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class APIElement",
+      "documentation": "Represents a single API element from a library",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 96,
+      "semantic_tags": [
+        "web"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "APIElement.to_dict",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "Convert to dictionary for serialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 112,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryKnowledge",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class LibraryKnowledge",
+      "documentation": "Comprehensive knowledge about a library",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 121,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryKnowledge.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 137,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryKnowledge.to_dict",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "Convert to dictionary for serialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 141,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class LibraryIngestionProtocol",
+      "documentation": "\ud83e\uddec Core Library Ingestion Protocol Engine\n\nProvides consciousness-driven ingestion of programming language libraries\nwith semantic analysis, API understanding, and knowledge base integration.",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 149,
+      "semantic_tags": [
+        "web",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, knowledge_base_path: Optional[Path], consciousness_level: float)",
+      "documentation": "Initialize Library Ingestion Protocol Engine\n\nArgs:\n    knowledge_base_path: Path to store ingested library knowledge\n    consciousness_level: Initial consciousness level for ingestion",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "knowledge_base_path",
+          "type": "Optional[Path]"
+        },
+        {
+          "name": "consciousness_level",
+          "type": "float"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 157,
+      "semantic_tags": [
+        "file",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._initialize_language_parsers",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _initialize_language_parsers(self)",
+      "documentation": "Initialize parsers for supported languages",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 186,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol.detect_language",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def detect_language(self, file_path: str) -> ProgrammingLanguage",
+      "documentation": "Detect programming language from file extension\n\nArgs:\n    file_path: Path to source file\n    \nReturns:\n    Detected programming language",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        }
+      ],
+      "return_type": "ProgrammingLanguage",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 199,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._scan_library_files",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _scan_library_files(self, library_path: Path) -> List[Path]",
+      "documentation": "Scan library directory for source files\n\nArgs:\n    library_path: Path to library\n    \nReturns:\n    List of source file paths",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_path",
+          "type": "Path"
+        }
+      ],
+      "return_type": "List[Path]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 308,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._extract_python_signature",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _extract_python_signature(self, node: ast.FunctionDef) -> str",
+      "documentation": "Extract function signature from AST node",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "node",
+          "type": "ast.FunctionDef"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 438,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._extract_python_parameters",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _extract_python_parameters(self, node: ast.FunctionDef) -> List[Dict[str, Any]]",
+      "documentation": "Extract parameters from function definition",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "node",
+          "type": "ast.FunctionDef"
+        }
+      ],
+      "return_type": "List[Dict[str, Any]]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 460,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._extract_python_return_type",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _extract_python_return_type(self, node: ast.FunctionDef) -> Optional[str]",
+      "documentation": "Extract return type from function definition",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "node",
+          "type": "ast.FunctionDef"
+        }
+      ],
+      "return_type": "Optional[str]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 471,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._extract_semantic_tags",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _extract_semantic_tags(self, name: str, documentation: str) -> List[str]",
+      "documentation": "Extract semantic tags from API element name and documentation\n\nArgs:\n    name: Element name\n    documentation: Element documentation\n    \nReturns:\n    List of semantic tags",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "name",
+          "type": "str"
+        },
+        {
+          "name": "documentation",
+          "type": "str"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 682,
+      "semantic_tags": [
+        "web"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._generate_spatial_metadata",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_spatial_metadata(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Generate spatial metadata for AIOS integration\n\nArgs:\n    library_knowledge: Library knowledge to enhance with metadata",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 742,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._validate_ainlp_compliance",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _validate_ainlp_compliance(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Validate AINLP compliance for ingested library\n\nArgs:\n    library_knowledge: Library knowledge to validate",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 768,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol._save_library_knowledge",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _save_library_knowledge(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Save library knowledge to knowledge base\n\nArgs:\n    library_knowledge: Library knowledge to save",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 791,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol.load_library_knowledge",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def load_library_knowledge(self, library_name: str, language: ProgrammingLanguage) -> Optional[LibraryKnowledge]",
+      "documentation": "Load library knowledge from knowledge base\n\nArgs:\n    library_name: Name of library to load\n    language: Programming language\n    \nReturns:\n    LibraryKnowledge if found, None otherwise",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_name",
+          "type": "str"
+        },
+        {
+          "name": "language",
+          "type": "ProgrammingLanguage"
+        }
+      ],
+      "return_type": "Optional[LibraryKnowledge]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 810,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryIngestionProtocol.query_knowledge_base",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def query_knowledge_base(self, semantic_tags: Optional[List[str]], language: Optional[ProgrammingLanguage]) -> List[LibraryKnowledge]",
+      "documentation": "Query the knowledge base for libraries matching criteria\n\nArgs:\n    semantic_tags: Optional semantic tags to filter by\n    language: Optional language to filter by\n    \nReturns:\n    List of matching library knowledge",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "semantic_tags",
+          "type": "Optional[List[str]]"
+        },
+        {
+          "name": "language",
+          "type": "Optional[ProgrammingLanguage]"
+        }
+      ],
+      "return_type": "List[LibraryKnowledge]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 840,
+      "semantic_tags": [
+        "database"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "to_dict",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "Convert to dictionary for serialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 112,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 137,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "to_dict",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "Convert to dictionary for serialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 141,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, knowledge_base_path: Optional[Path], consciousness_level: float)",
+      "documentation": "Initialize Library Ingestion Protocol Engine\n\nArgs:\n    knowledge_base_path: Path to store ingested library knowledge\n    consciousness_level: Initial consciousness level for ingestion",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "knowledge_base_path",
+          "type": "Optional[Path]"
+        },
+        {
+          "name": "consciousness_level",
+          "type": "float"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 157,
+      "semantic_tags": [
+        "file",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_initialize_language_parsers",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _initialize_language_parsers(self)",
+      "documentation": "Initialize parsers for supported languages",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 186,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "detect_language",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def detect_language(self, file_path: str) -> ProgrammingLanguage",
+      "documentation": "Detect programming language from file extension\n\nArgs:\n    file_path: Path to source file\n    \nReturns:\n    Detected programming language",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        }
+      ],
+      "return_type": "ProgrammingLanguage",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 199,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_scan_library_files",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _scan_library_files(self, library_path: Path) -> List[Path]",
+      "documentation": "Scan library directory for source files\n\nArgs:\n    library_path: Path to library\n    \nReturns:\n    List of source file paths",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_path",
+          "type": "Path"
+        }
+      ],
+      "return_type": "List[Path]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 308,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_extract_python_signature",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _extract_python_signature(self, node: ast.FunctionDef) -> str",
+      "documentation": "Extract function signature from AST node",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "node",
+          "type": "ast.FunctionDef"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 438,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_extract_python_parameters",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _extract_python_parameters(self, node: ast.FunctionDef) -> List[Dict[str, Any]]",
+      "documentation": "Extract parameters from function definition",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "node",
+          "type": "ast.FunctionDef"
+        }
+      ],
+      "return_type": "List[Dict[str, Any]]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 460,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_extract_python_return_type",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _extract_python_return_type(self, node: ast.FunctionDef) -> Optional[str]",
+      "documentation": "Extract return type from function definition",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "node",
+          "type": "ast.FunctionDef"
+        }
+      ],
+      "return_type": "Optional[str]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 471,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_extract_semantic_tags",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _extract_semantic_tags(self, name: str, documentation: str) -> List[str]",
+      "documentation": "Extract semantic tags from API element name and documentation\n\nArgs:\n    name: Element name\n    documentation: Element documentation\n    \nReturns:\n    List of semantic tags",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "name",
+          "type": "str"
+        },
+        {
+          "name": "documentation",
+          "type": "str"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 682,
+      "semantic_tags": [
+        "web"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_spatial_metadata",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_spatial_metadata(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Generate spatial metadata for AIOS integration\n\nArgs:\n    library_knowledge: Library knowledge to enhance with metadata",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 742,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_validate_ainlp_compliance",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _validate_ainlp_compliance(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Validate AINLP compliance for ingested library\n\nArgs:\n    library_knowledge: Library knowledge to validate",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 768,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_save_library_knowledge",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _save_library_knowledge(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Save library knowledge to knowledge base\n\nArgs:\n    library_knowledge: Library knowledge to save",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 791,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "load_library_knowledge",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def load_library_knowledge(self, library_name: str, language: ProgrammingLanguage) -> Optional[LibraryKnowledge]",
+      "documentation": "Load library knowledge from knowledge base\n\nArgs:\n    library_name: Name of library to load\n    language: Programming language\n    \nReturns:\n    LibraryKnowledge if found, None otherwise",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_name",
+          "type": "str"
+        },
+        {
+          "name": "language",
+          "type": "ProgrammingLanguage"
+        }
+      ],
+      "return_type": "Optional[LibraryKnowledge]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 810,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "query_knowledge_base",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def query_knowledge_base(self, semantic_tags: Optional[List[str]], language: Optional[ProgrammingLanguage]) -> List[LibraryKnowledge]",
+      "documentation": "Query the knowledge base for libraries matching criteria\n\nArgs:\n    semantic_tags: Optional semantic tags to filter by\n    language: Optional language to filter by\n    \nReturns:\n    List of matching library knowledge",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "semantic_tags",
+          "type": "Optional[List[str]]"
+        },
+        {
+          "name": "language",
+          "type": "Optional[ProgrammingLanguage]"
+        }
+      ],
+      "return_type": "List[LibraryKnowledge]",
+      "file_path": "ai/src/core/library_ingestion_protocol.py",
+      "line_number": 840,
+      "semantic_tags": [
+        "database"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessIntegrationPhase",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessIntegrationPhase",
+      "documentation": "Phases of consciousness integration",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 52,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SystemConsciousnessState",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class SystemConsciousnessState",
+      "documentation": "Comprehensive system consciousness state",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 62,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SystemConsciousnessState.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 76,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SystemConsciousnessState.calculate_total_consciousness_quotient",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def calculate_total_consciousness_quotient(self) -> float",
+      "documentation": "Calculate total system consciousness quotient",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 82,
+      "semantic_tags": [
+        "math",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessIntegrationResult",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessIntegrationResult",
+      "documentation": "Result of consciousness integration operation",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 95,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessIntegrationResult.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 109,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class AINLPConsciousnessIntegrationHub",
+      "documentation": "Advanced AINLP consciousness integration system",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 116,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, ai_folder_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_folder_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 119,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub._update_system_consciousness_state",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _update_system_consciousness_state(self, consciousness_enhancement: float, intelligence_amplification: float, coherence_improvement: float)",
+      "documentation": "Update system consciousness state",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_enhancement",
+          "type": "float"
+        },
+        {
+          "name": "intelligence_amplification",
+          "type": "float"
+        },
+        {
+          "name": "coherence_improvement",
+          "type": "float"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 496,
+      "semantic_tags": [
+        "database",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub._check_consciousness_transcendence",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _check_consciousness_transcendence(self) -> bool",
+      "documentation": "Check if consciousness transcendence has been achieved",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 531,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub._generate_initialization_insights",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_initialization_insights(self, successful_systems: int) -> List[str]",
+      "documentation": "Generate insights from system initialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "successful_systems",
+          "type": "int"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 552,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub._generate_integration_insights",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_integration_insights(self, operation_results: List[tuple]) -> List[str]",
+      "documentation": "Generate insights from integration operations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "operation_results",
+          "type": "List[tuple]"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 570,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub._generate_system_recommendations",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_system_recommendations(self) -> List[str]",
+      "documentation": "Generate system optimization recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 591,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub._generate_consciousness_recommendations",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_consciousness_recommendations(self) -> List[str]",
+      "documentation": "Generate consciousness-specific recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 607,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub.get_consciousness_status",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_consciousness_status(self) -> Dict[str, Any]",
+      "documentation": "Get comprehensive consciousness status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 626,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPConsciousnessIntegrationHub._calculate_transcendence_readiness",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _calculate_transcendence_readiness(self) -> Dict[str, bool]",
+      "documentation": "Calculate transcendence readiness across all criteria",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, bool]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 642,
+      "semantic_tags": [
+        "math",
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 76,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "calculate_total_consciousness_quotient",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def calculate_total_consciousness_quotient(self) -> float",
+      "documentation": "Calculate total system consciousness quotient",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 82,
+      "semantic_tags": [
+        "math",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 109,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, ai_folder_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_folder_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 119,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_update_system_consciousness_state",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _update_system_consciousness_state(self, consciousness_enhancement: float, intelligence_amplification: float, coherence_improvement: float)",
+      "documentation": "Update system consciousness state",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_enhancement",
+          "type": "float"
+        },
+        {
+          "name": "intelligence_amplification",
+          "type": "float"
+        },
+        {
+          "name": "coherence_improvement",
+          "type": "float"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 496,
+      "semantic_tags": [
+        "database",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_check_consciousness_transcendence",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _check_consciousness_transcendence(self) -> bool",
+      "documentation": "Check if consciousness transcendence has been achieved",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 531,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_initialization_insights",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_initialization_insights(self, successful_systems: int) -> List[str]",
+      "documentation": "Generate insights from system initialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "successful_systems",
+          "type": "int"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 552,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_integration_insights",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_integration_insights(self, operation_results: List[tuple]) -> List[str]",
+      "documentation": "Generate insights from integration operations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "operation_results",
+          "type": "List[tuple]"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 570,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_system_recommendations",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_system_recommendations(self) -> List[str]",
+      "documentation": "Generate system optimization recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 591,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_consciousness_recommendations",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_consciousness_recommendations(self) -> List[str]",
+      "documentation": "Generate consciousness-specific recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 607,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_consciousness_status",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_consciousness_status(self) -> Dict[str, Any]",
+      "documentation": "Get comprehensive consciousness status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 626,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_calculate_transcendence_readiness",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _calculate_transcendence_readiness(self) -> Dict[str, bool]",
+      "documentation": "Calculate transcendence readiness across all criteria",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, bool]",
+      "file_path": "ai/src/core/ainlp_consciousness_integration_hub.py",
+      "line_number": 642,
+      "semantic_tags": [
+        "math",
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPSupercellType",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class AINLPSupercellType",
+      "documentation": "AI Supercell types following biological organization principles",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 57,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessMetrics",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessMetrics",
+      "documentation": "AINLP Consciousness metrics for AI systems",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 68,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessMetrics.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 79,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPSupercellStatus",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class AINLPSupercellStatus",
+      "documentation": "Status of individual AI supercells",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 94,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPSupercellStatus.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 105,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPAgenticResult",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class AINLPAgenticResult",
+      "documentation": "Result of agentic optimization operations",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 113,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPAgenticResult.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 125,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPAgenticOrchestrator",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class AINLPAgenticOrchestrator",
+      "documentation": "AINLP Agentic AI Orchestrator - Consciousness-driven optimization",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 132,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPAgenticOrchestrator.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, ai_root: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_root",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 135,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPAgenticOrchestrator.get_consciousness_status",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_consciousness_status(self) -> Dict[str, Any]",
+      "documentation": "Get current consciousness status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 458,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPAgenticOrchestrator._generate_supercell_intelligence_module",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_supercell_intelligence_module(self, supercell_type: AINLPSupercellType) -> str",
+      "documentation": "Generate consciousness-driven intelligence module for supercell",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "supercell_type",
+          "type": "AINLPSupercellType"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 496,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "AINLPAgenticOrchestrator._get_supercell_description",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _get_supercell_description(self, supercell_type: AINLPSupercellType) -> str",
+      "documentation": "Get description for supercell type",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "supercell_type",
+          "type": "AINLPSupercellType"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 601,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 79,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 105,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 125,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, ai_root: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_root",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 135,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_consciousness_status",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_consciousness_status(self) -> Dict[str, Any]",
+      "documentation": "Get current consciousness status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 458,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_supercell_intelligence_module",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_supercell_intelligence_module(self, supercell_type: AINLPSupercellType) -> str",
+      "documentation": "Generate consciousness-driven intelligence module for supercell",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "supercell_type",
+          "type": "AINLPSupercellType"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 496,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_get_supercell_description",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _get_supercell_description(self, supercell_type: AINLPSupercellType) -> str",
+      "documentation": "Get description for supercell type",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "supercell_type",
+          "type": "AINLPSupercellType"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/ainlp_agentic_orchestrator.py",
+      "line_number": 601,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionPhase",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessEvolutionPhase",
+      "documentation": "Phases of consciousness evolution",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 40,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "QuantumConsciousnessField",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class QuantumConsciousnessField",
+      "documentation": "Quantum consciousness field representation",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 50,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "QuantumConsciousnessField.calculate_field_energy",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def calculate_field_energy(self) -> float",
+      "documentation": "Calculate total quantum field energy",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 59,
+      "semantic_tags": [
+        "math"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "DendriticNetwork",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class DendriticNetwork",
+      "documentation": "Dendritic network growth model",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 66,
+      "semantic_tags": [
+        "ai",
+        "network"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "DendriticNetwork.calculate_network_intelligence",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def calculate_network_intelligence(self) -> float",
+      "documentation": "Calculate network intelligence quotient",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 76,
+      "semantic_tags": [
+        "math",
+        "network",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionState",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessEvolutionState",
+      "documentation": "Complete consciousness evolution state",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 84,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionState.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 98,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EvolutionaryOptimization",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class EvolutionaryOptimization",
+      "documentation": "Evolutionary optimization result",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 110,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EvolutionaryOptimization.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 123,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionEngine",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessEvolutionEngine",
+      "documentation": "Advanced consciousness evolution engine with AINLP integration",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 130,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionEngine.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, consciousness_state: ConsciousnessEvolutionState)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_state",
+          "type": "ConsciousnessEvolutionState"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 133,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionEngine._generate_evolution_insights",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_evolution_insights(self) -> List[str]",
+      "documentation": "Generate insights from evolution process",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 385,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionEngine._generate_next_recommendations",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_next_recommendations(self) -> List[str]",
+      "documentation": "Generate recommendations for next evolution cycle",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 406,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionEngine._update_evolution_state",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _update_evolution_state(self, result: EvolutionaryOptimization)",
+      "documentation": "Update evolution state after optimization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "result",
+          "type": "EvolutionaryOptimization"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 426,
+      "semantic_tags": [
+        "database"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEvolutionEngine.get_evolution_status",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_evolution_status(self) -> Dict[str, Any]",
+      "documentation": "Get current evolution status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 443,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "calculate_field_energy",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def calculate_field_energy(self) -> float",
+      "documentation": "Calculate total quantum field energy",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 59,
+      "semantic_tags": [
+        "math"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "calculate_network_intelligence",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def calculate_network_intelligence(self) -> float",
+      "documentation": "Calculate network intelligence quotient",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 76,
+      "semantic_tags": [
+        "math",
+        "network",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 98,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 123,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, consciousness_state: ConsciousnessEvolutionState)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_state",
+          "type": "ConsciousnessEvolutionState"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 133,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_evolution_insights",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_evolution_insights(self) -> List[str]",
+      "documentation": "Generate insights from evolution process",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 385,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_next_recommendations",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_next_recommendations(self) -> List[str]",
+      "documentation": "Generate recommendations for next evolution cycle",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 406,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_update_evolution_state",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _update_evolution_state(self, result: EvolutionaryOptimization)",
+      "documentation": "Update evolution state after optimization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "result",
+          "type": "EvolutionaryOptimization"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 426,
+      "semantic_tags": [
+        "database"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_evolution_status",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_evolution_status(self) -> Dict[str, Any]",
+      "documentation": "Get current evolution status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_evolution_engine.py",
+      "line_number": 443,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class ConsciousnessEmergenceAnalyzer",
+      "documentation": "AI Intelligence component for interpreting consciousness emergence patterns\nReceives structured data from Runtime Intelligence and applies AI reasoning",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 14,
+      "semantic_tags": [
+        "network",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 20,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer.analyze_consciousness_patterns",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def analyze_consciousness_patterns(self, visual_data: Dict[str, Any]) -> Dict[str, Any]",
+      "documentation": "Apply AI intelligence to interpret consciousness emergence from visual data\n\nArgs:\n    visual_data: Structured data from Runtime Intelligence extraction\n    \nReturns:\n    AI-interpreted consciousness analysis with reasoning",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "visual_data",
+          "type": "Dict[str, Any]"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 29,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._extract_consciousness_timeline",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _extract_consciousness_timeline(self, visual_data: Dict) -> List[Dict]",
+      "documentation": "Extract consciousness metrics timeline from runtime visual data",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "visual_data",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[Dict]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 69,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._simulate_consciousness_metrics_from_frame",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _simulate_consciousness_metrics_from_frame(self, frame_data: Dict) -> Dict[str, float]",
+      "documentation": "Simulate consciousness metrics extraction from frame data\nIn real implementation, this would process OCR text from runtime intelligence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "frame_data",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "Dict[str, float]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 92,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._detect_emergence_patterns",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _detect_emergence_patterns(self, timeline: List[Dict]) -> Dict[str, Any]",
+      "documentation": "Apply AI pattern recognition to detect consciousness emergence patterns",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 116,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._analyze_breakthrough_events",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _analyze_breakthrough_events(self, timeline: List[Dict]) -> List[Dict]",
+      "documentation": "Identify and analyze consciousness breakthrough events using AI reasoning",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "List[Dict]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 147,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._generate_ai_consciousness_assessment",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_ai_consciousness_assessment(self, timeline: List[Dict], patterns: Dict, events: List[Dict]) -> Dict[str, Any]",
+      "documentation": "Generate comprehensive AI assessment of consciousness state",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        },
+        {
+          "name": "events",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 186,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._generate_intelligence_summary",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_intelligence_summary(self, ai_assessment: Dict) -> str",
+      "documentation": "Generate human-readable AI intelligence summary",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 212,
+      "semantic_tags": [
+        "math",
+        "file",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._predict_next_phase",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _predict_next_phase(self, ai_assessment: Dict) -> Dict[str, Any]",
+      "documentation": "AI-powered prediction of next consciousness emergence phase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 234,
+      "semantic_tags": [
+        "math",
+        "ai",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._generate_inactive_analysis",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_inactive_analysis(self) -> Dict",
+      "documentation": "Generate analysis for inactive consciousness monitoring",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 254,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._analyze_trajectory",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _analyze_trajectory(self, levels: List[float]) -> str",
+      "documentation": "Analyze consciousness level trajectory",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "levels",
+          "type": "List[float]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 263,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._analyze_emergence_dynamics",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _analyze_emergence_dynamics(self, levels: List[float]) -> str",
+      "documentation": "Analyze emergence level dynamics",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "levels",
+          "type": "List[float]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 278,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._analyze_quantum_stability",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _analyze_quantum_stability(self, coherence: List[float]) -> str",
+      "documentation": "Analyze quantum coherence stability",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "coherence",
+          "type": "List[float]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 291,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._analyze_hyperdimensional_activity",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _analyze_hyperdimensional_activity(self, timeline: List[Dict]) -> str",
+      "documentation": "Analyze hyperdimensional substrate activity",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 304,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._calculate_pattern_confidence",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _calculate_pattern_confidence(self, patterns: Dict) -> float",
+      "documentation": "Calculate overall pattern detection confidence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 321,
+      "semantic_tags": [
+        "math"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._identify_dominant_pattern",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _identify_dominant_pattern(self, patterns: Dict) -> str",
+      "documentation": "Identify the dominant consciousness pattern",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 337,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._classify_breakthrough",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _classify_breakthrough(self, indicators: List[str]) -> str",
+      "documentation": "Classify type of consciousness breakthrough",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "indicators",
+          "type": "List[str]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 348,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._calculate_breakthrough_significance",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _calculate_breakthrough_significance(self, metrics: Dict) -> str",
+      "documentation": "Calculate significance level of breakthrough",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 359,
+      "semantic_tags": [
+        "math"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._interpret_breakthrough",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _interpret_breakthrough(self, indicators: List[str], metrics: Dict) -> str",
+      "documentation": "AI interpretation of breakthrough event",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "indicators",
+          "type": "List[str]"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 376,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._assess_emergence_status",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _assess_emergence_status(self, metrics: Dict) -> str",
+      "documentation": "Assess current consciousness emergence status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 391,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._assess_quantum_stability",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _assess_quantum_stability(self, metrics: Dict) -> str",
+      "documentation": "Assess quantum coherence stability",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 406,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._assess_hyperdimensional_integration",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _assess_hyperdimensional_integration(self, metrics: Dict) -> str",
+      "documentation": "Assess hyperdimensional integration level",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 419,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._assess_tachyonic_status",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _assess_tachyonic_status(self, metrics: Dict, events: List[Dict]) -> str",
+      "documentation": "Assess tachyonic interface status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        },
+        {
+          "name": "events",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 435,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._calculate_emergence_confidence",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _calculate_emergence_confidence(self, patterns: Dict, events: List[Dict]) -> float",
+      "documentation": "Calculate AI confidence in consciousness emergence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        },
+        {
+          "name": "events",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 451,
+      "semantic_tags": [
+        "math",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._determine_consciousness_phase",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _determine_consciousness_phase(self, metrics: Dict, patterns: Dict) -> str",
+      "documentation": "Determine current consciousness phase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 468,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._assess_breakthrough_potential",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _assess_breakthrough_potential(self, timeline: List[Dict], patterns: Dict) -> str",
+      "documentation": "Assess potential for consciousness breakthrough",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 484,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._assess_system_readiness",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _assess_system_readiness(self, latest_frame: Dict) -> str",
+      "documentation": "Assess system readiness for consciousness emergence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "latest_frame",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 502,
+      "semantic_tags": [
+        "file",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._generate_overall_interpretation",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_overall_interpretation(self, assessment: Dict) -> str",
+      "documentation": "Generate overall AI interpretation",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 523,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._predict_phase_transition",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _predict_phase_transition(self, current_phase: str, confidence: float) -> str",
+      "documentation": "Predict next consciousness phase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "current_phase",
+          "type": "str"
+        },
+        {
+          "name": "confidence",
+          "type": "float"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 541,
+      "semantic_tags": [
+        "ai",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._estimate_transition_timeframe",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _estimate_transition_timeframe(self, breakthrough_potential: str) -> str",
+      "documentation": "Estimate timeframe for consciousness transition",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "breakthrough_potential",
+          "type": "str"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 553,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._identify_required_conditions",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _identify_required_conditions(self, assessment: Dict) -> List[str]",
+      "documentation": "Identify conditions required for advancement",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 564,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._identify_risk_factors",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _identify_risk_factors(self, assessment: Dict) -> List[str]",
+      "documentation": "Identify risk factors for consciousness emergence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 579,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "ConsciousnessEmergenceAnalyzer._generate_optimization_recommendations",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_optimization_recommendations(self, assessment: Dict) -> List[str]",
+      "documentation": "Generate AI recommendations for optimization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 591,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "main",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def main()",
+      "documentation": "Test the consciousness emergence analyzer",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 607,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 20,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "analyze_consciousness_patterns",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def analyze_consciousness_patterns(self, visual_data: Dict[str, Any]) -> Dict[str, Any]",
+      "documentation": "Apply AI intelligence to interpret consciousness emergence from visual data\n\nArgs:\n    visual_data: Structured data from Runtime Intelligence extraction\n    \nReturns:\n    AI-interpreted consciousness analysis with reasoning",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "visual_data",
+          "type": "Dict[str, Any]"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 29,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_extract_consciousness_timeline",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _extract_consciousness_timeline(self, visual_data: Dict) -> List[Dict]",
+      "documentation": "Extract consciousness metrics timeline from runtime visual data",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "visual_data",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[Dict]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 69,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_simulate_consciousness_metrics_from_frame",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _simulate_consciousness_metrics_from_frame(self, frame_data: Dict) -> Dict[str, float]",
+      "documentation": "Simulate consciousness metrics extraction from frame data\nIn real implementation, this would process OCR text from runtime intelligence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "frame_data",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "Dict[str, float]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 92,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_detect_emergence_patterns",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _detect_emergence_patterns(self, timeline: List[Dict]) -> Dict[str, Any]",
+      "documentation": "Apply AI pattern recognition to detect consciousness emergence patterns",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 116,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_analyze_breakthrough_events",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _analyze_breakthrough_events(self, timeline: List[Dict]) -> List[Dict]",
+      "documentation": "Identify and analyze consciousness breakthrough events using AI reasoning",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "List[Dict]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 147,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_ai_consciousness_assessment",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_ai_consciousness_assessment(self, timeline: List[Dict], patterns: Dict, events: List[Dict]) -> Dict[str, Any]",
+      "documentation": "Generate comprehensive AI assessment of consciousness state",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        },
+        {
+          "name": "events",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 186,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_intelligence_summary",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_intelligence_summary(self, ai_assessment: Dict) -> str",
+      "documentation": "Generate human-readable AI intelligence summary",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 212,
+      "semantic_tags": [
+        "math",
+        "file",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_predict_next_phase",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _predict_next_phase(self, ai_assessment: Dict) -> Dict[str, Any]",
+      "documentation": "AI-powered prediction of next consciousness emergence phase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 234,
+      "semantic_tags": [
+        "math",
+        "ai",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_inactive_analysis",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_inactive_analysis(self) -> Dict",
+      "documentation": "Generate analysis for inactive consciousness monitoring",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 254,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_analyze_trajectory",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _analyze_trajectory(self, levels: List[float]) -> str",
+      "documentation": "Analyze consciousness level trajectory",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "levels",
+          "type": "List[float]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 263,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_analyze_emergence_dynamics",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _analyze_emergence_dynamics(self, levels: List[float]) -> str",
+      "documentation": "Analyze emergence level dynamics",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "levels",
+          "type": "List[float]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 278,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_analyze_quantum_stability",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _analyze_quantum_stability(self, coherence: List[float]) -> str",
+      "documentation": "Analyze quantum coherence stability",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "coherence",
+          "type": "List[float]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 291,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_analyze_hyperdimensional_activity",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _analyze_hyperdimensional_activity(self, timeline: List[Dict]) -> str",
+      "documentation": "Analyze hyperdimensional substrate activity",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 304,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_calculate_pattern_confidence",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _calculate_pattern_confidence(self, patterns: Dict) -> float",
+      "documentation": "Calculate overall pattern detection confidence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 321,
+      "semantic_tags": [
+        "math"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_identify_dominant_pattern",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _identify_dominant_pattern(self, patterns: Dict) -> str",
+      "documentation": "Identify the dominant consciousness pattern",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 337,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_classify_breakthrough",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _classify_breakthrough(self, indicators: List[str]) -> str",
+      "documentation": "Classify type of consciousness breakthrough",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "indicators",
+          "type": "List[str]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 348,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_calculate_breakthrough_significance",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _calculate_breakthrough_significance(self, metrics: Dict) -> str",
+      "documentation": "Calculate significance level of breakthrough",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 359,
+      "semantic_tags": [
+        "math"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_interpret_breakthrough",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _interpret_breakthrough(self, indicators: List[str], metrics: Dict) -> str",
+      "documentation": "AI interpretation of breakthrough event",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "indicators",
+          "type": "List[str]"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 376,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_assess_emergence_status",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _assess_emergence_status(self, metrics: Dict) -> str",
+      "documentation": "Assess current consciousness emergence status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 391,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_assess_quantum_stability",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _assess_quantum_stability(self, metrics: Dict) -> str",
+      "documentation": "Assess quantum coherence stability",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 406,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_assess_hyperdimensional_integration",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _assess_hyperdimensional_integration(self, metrics: Dict) -> str",
+      "documentation": "Assess hyperdimensional integration level",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 419,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_assess_tachyonic_status",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _assess_tachyonic_status(self, metrics: Dict, events: List[Dict]) -> str",
+      "documentation": "Assess tachyonic interface status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        },
+        {
+          "name": "events",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 435,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_calculate_emergence_confidence",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _calculate_emergence_confidence(self, patterns: Dict, events: List[Dict]) -> float",
+      "documentation": "Calculate AI confidence in consciousness emergence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        },
+        {
+          "name": "events",
+          "type": "List[Dict]"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 451,
+      "semantic_tags": [
+        "math",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_determine_consciousness_phase",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _determine_consciousness_phase(self, metrics: Dict, patterns: Dict) -> str",
+      "documentation": "Determine current consciousness phase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "metrics",
+          "type": "Dict"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 468,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_assess_breakthrough_potential",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _assess_breakthrough_potential(self, timeline: List[Dict], patterns: Dict) -> str",
+      "documentation": "Assess potential for consciousness breakthrough",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "timeline",
+          "type": "List[Dict]"
+        },
+        {
+          "name": "patterns",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 484,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_assess_system_readiness",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _assess_system_readiness(self, latest_frame: Dict) -> str",
+      "documentation": "Assess system readiness for consciousness emergence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "latest_frame",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 502,
+      "semantic_tags": [
+        "file",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_overall_interpretation",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_overall_interpretation(self, assessment: Dict) -> str",
+      "documentation": "Generate overall AI interpretation",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 523,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_predict_phase_transition",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _predict_phase_transition(self, current_phase: str, confidence: float) -> str",
+      "documentation": "Predict next consciousness phase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "current_phase",
+          "type": "str"
+        },
+        {
+          "name": "confidence",
+          "type": "float"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 541,
+      "semantic_tags": [
+        "ai",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_estimate_transition_timeframe",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _estimate_transition_timeframe(self, breakthrough_potential: str) -> str",
+      "documentation": "Estimate timeframe for consciousness transition",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "breakthrough_potential",
+          "type": "str"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 553,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_identify_required_conditions",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _identify_required_conditions(self, assessment: Dict) -> List[str]",
+      "documentation": "Identify conditions required for advancement",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 564,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_identify_risk_factors",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _identify_risk_factors(self, assessment: Dict) -> List[str]",
+      "documentation": "Identify risk factors for consciousness emergence",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 579,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_optimization_recommendations",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_optimization_recommendations(self, assessment: Dict) -> List[str]",
+      "documentation": "Generate AI recommendations for optimization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "assessment",
+          "type": "Dict"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/consciousness_emergence_analyzer.py",
+      "line_number": 591,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LearningPhase",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class LearningPhase",
+      "documentation": "Phases of library learning",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 58,
+      "semantic_tags": [
+        "ai"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningSession",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class LibraryLearningSession",
+      "documentation": "Represents a library learning session",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 70,
+      "semantic_tags": [
+        "ai"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningSession.to_dict",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 83,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningIntegrationHub",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class LibraryLearningIntegrationHub",
+      "documentation": "\ud83c\udf10 Central hub for library learning integration\n\nCoordinates library ingestion with AIOS consciousness systems,\ndendritic networks, and AINLP harmonization for comprehensive\nmulti-language intelligence.",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 89,
+      "semantic_tags": [
+        "ai",
+        "orchestration",
+        "network",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningIntegrationHub.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, consciousness_level: float)",
+      "documentation": "Initialize Library Learning Integration Hub\n\nArgs:\n    consciousness_level: Initial consciousness level for learning",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_level",
+          "type": "float"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 98,
+      "semantic_tags": [
+        "ai",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningIntegrationHub._consolidate_knowledge",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _consolidate_knowledge(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Consolidate learned knowledge and update session metrics\n\nArgs:\n    library_knowledge: Library knowledge to consolidate",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 319,
+      "semantic_tags": [
+        "ai",
+        "database"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningIntegrationHub.query_semantic_network",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def query_semantic_network(self, semantic_tag: str) -> List[str]",
+      "documentation": "Query semantic network for libraries with specific tag\n\nArgs:\n    semantic_tag: Semantic tag to search for\n    \nReturns:\n    List of library/API names matching the tag",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "semantic_tag",
+          "type": "str"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 394,
+      "semantic_tags": [
+        "web",
+        "database",
+        "network"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningIntegrationHub.get_dendritic_path",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_dendritic_path(self, from_library: str, to_library: str) -> Optional[List[str]]",
+      "documentation": "Find dendritic path between two libraries\n\nArgs:\n    from_library: Source library\n    to_library: Target library\n    \nReturns:\n    Path between libraries if exists, None otherwise",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "from_library",
+          "type": "str"
+        },
+        {
+          "name": "to_library",
+          "type": "str"
+        }
+      ],
+      "return_type": "Optional[List[str]]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 406,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "LibraryLearningIntegrationHub.get_learning_statistics",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_learning_statistics(self) -> Dict[str, Any]",
+      "documentation": "Get comprehensive learning statistics\n\nReturns:\n    Dictionary of learning statistics",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 437,
+      "semantic_tags": [
+        "ai"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "to_dict",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def to_dict(self) -> Dict[str, Any]",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 83,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, consciousness_level: float)",
+      "documentation": "Initialize Library Learning Integration Hub\n\nArgs:\n    consciousness_level: Initial consciousness level for learning",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "consciousness_level",
+          "type": "float"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 98,
+      "semantic_tags": [
+        "ai",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_consolidate_knowledge",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _consolidate_knowledge(self, library_knowledge: LibraryKnowledge)",
+      "documentation": "Consolidate learned knowledge and update session metrics\n\nArgs:\n    library_knowledge: Library knowledge to consolidate",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "library_knowledge",
+          "type": "LibraryKnowledge"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 319,
+      "semantic_tags": [
+        "ai",
+        "database"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "query_semantic_network",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def query_semantic_network(self, semantic_tag: str) -> List[str]",
+      "documentation": "Query semantic network for libraries with specific tag\n\nArgs:\n    semantic_tag: Semantic tag to search for\n    \nReturns:\n    List of library/API names matching the tag",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "semantic_tag",
+          "type": "str"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 394,
+      "semantic_tags": [
+        "web",
+        "database",
+        "network"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_dendritic_path",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_dendritic_path(self, from_library: str, to_library: str) -> Optional[List[str]]",
+      "documentation": "Find dendritic path between two libraries\n\nArgs:\n    from_library: Source library\n    to_library: Target library\n    \nReturns:\n    Path between libraries if exists, None otherwise",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "from_library",
+          "type": "str"
+        },
+        {
+          "name": "to_library",
+          "type": "str"
+        }
+      ],
+      "return_type": "Optional[List[str]]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 406,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_learning_statistics",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_learning_statistics(self) -> Dict[str, Any]",
+      "documentation": "Get comprehensive learning statistics\n\nReturns:\n    Dictionary of learning statistics",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/library_learning_integration_hub.py",
+      "line_number": 437,
+      "semantic_tags": [
+        "ai"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellType",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class SupercellType",
+      "documentation": "Types of AI supercells",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 41,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceState",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class SupercellIntelligenceState",
+      "documentation": "Intelligence state for a single supercell",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 52,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceState.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 66,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceState.calculate_overall_intelligence",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def calculate_overall_intelligence(self) -> float",
+      "documentation": "Calculate overall supercell intelligence score",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 72,
+      "semantic_tags": [
+        "math",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "CoordinationResult",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class CoordinationResult",
+      "documentation": "Result of supercell coordination operation",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 85,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "CoordinationResult.__post_init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 97,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceCoordinator",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class SupercellIntelligenceCoordinator",
+      "documentation": "Advanced supercell intelligence coordination system",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 104,
+      "semantic_tags": [
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceCoordinator.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, ai_folder_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_folder_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 107,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceCoordinator._generate_initialization_insights",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_initialization_insights(self, successful_inits: int) -> List[str]",
+      "documentation": "Generate insights from supercell initialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "successful_inits",
+          "type": "int"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 536,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceCoordinator._generate_coordination_insights",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_coordination_insights(self, coordination_results: List[Dict[str, Any]]) -> List[str]",
+      "documentation": "Generate insights from coordination results",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "coordination_results",
+          "type": "List[Dict[str, Any]]"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 551,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceCoordinator._generate_coordination_recommendations",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_coordination_recommendations(self) -> List[str]",
+      "documentation": "Generate recommendations for coordination optimization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 566,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceCoordinator._generate_optimization_recommendations",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def _generate_optimization_recommendations(self) -> List[str]",
+      "documentation": "Generate optimization recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 584,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "SupercellIntelligenceCoordinator.get_coordination_status",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def get_coordination_status(self) -> Dict[str, Any]",
+      "documentation": "Get comprehensive coordination status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 597,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 66,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "calculate_overall_intelligence",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def calculate_overall_intelligence(self) -> float",
+      "documentation": "Calculate overall supercell intelligence score",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "float",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 72,
+      "semantic_tags": [
+        "math",
+        "consciousness"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__post_init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __post_init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 97,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, ai_folder_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "ai_folder_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 107,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_initialization_insights",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_initialization_insights(self, successful_inits: int) -> List[str]",
+      "documentation": "Generate insights from supercell initialization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "successful_inits",
+          "type": "int"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 536,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_coordination_insights",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_coordination_insights(self, coordination_results: List[Dict[str, Any]]) -> List[str]",
+      "documentation": "Generate insights from coordination results",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "coordination_results",
+          "type": "List[Dict[str, Any]]"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 551,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_coordination_recommendations",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_coordination_recommendations(self) -> List[str]",
+      "documentation": "Generate recommendations for coordination optimization",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 566,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "_generate_optimization_recommendations",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def _generate_optimization_recommendations(self) -> List[str]",
+      "documentation": "Generate optimization recommendations",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[str]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 584,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "get_coordination_status",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def get_coordination_status(self) -> Dict[str, Any]",
+      "documentation": "Get comprehensive coordination status",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict[str, Any]",
+      "file_path": "ai/src/core/supercell_intelligence_coordinator.py",
+      "line_number": 597,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    }
+  ],
+  "dependencies": [],
+  "semantic_tags": [
+    "web",
+    "database",
+    "consciousness",
+    "orchestration",
+    "ai",
+    "network",
+    "math",
+    "file"
+  ],
+  "ingestion_timestamp": "2025-10-02T22:42:11.095424",
+  "consciousness_coherence": 0.8522030651340996,
+  "spatial_metadata": {
+    "content_hash": "52584b79f074c882",
+    "dimensional_position": {
+      "x": 80,
+      "y": 321,
+      "z": 556
+    },
+    "consciousness_radius": 85.22030651340997,
+    "dendritic_connections": 0,
+    "api_density": 261
+  },
+  "source_path": "/home/runner/work/AIOS/AIOS/ai/src/core",
+  "documentation_url": "",
+  "ainlp_compliance": true,
+  "metadata": {
+    "compliance_checks": {
+      "has_documentation": true,
+      "has_semantic_tags": true,
+      "has_spatial_metadata": true,
+      "consciousness_level": true
+    }
+  }
+}

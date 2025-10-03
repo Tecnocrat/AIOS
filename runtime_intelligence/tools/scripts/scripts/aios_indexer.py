@@ -1,16 +1,38 @@
 # ============================================================
 #  aios_indexer.py
+# Enhanced with AIOS Library Ingestion Protocol Integration
+# 
 # Parses C++/C#/Python modules and generates:
 # - docs/dependency_graph.dot (and .svg)
 # - docs/services_registry.json
 # - Harmonized AI-ingestible summaries
+# - Multi-language library knowledge base
+# - Semantic network and dendritic connections
 # ============================================================
 
 import os
+import sys
 import json
+import asyncio
+from pathlib import Path
 from graphviz import Digraph
 
-MODULE_DIRS = ['orchestrator', 'director', 'scripts']
+# Add AI core modules to path for library ingestion protocol
+AIOS_ROOT = Path(__file__).parent.parent
+sys.path.append(str(AIOS_ROOT / "ai" / "src" / "core"))
+
+# Import AIOS Library Ingestion Protocol (optional - graceful degradation)
+try:
+    from library_learning_integration_hub import (
+        LibraryLearningIntegrationHub,
+        ProgrammingLanguage
+    )
+    INGESTION_PROTOCOL_AVAILABLE = True
+except ImportError:
+    INGESTION_PROTOCOL_AVAILABLE = False
+    print("⚠️  AIOS Library Ingestion Protocol not available - using basic mode")
+
+MODULE_DIRS = ['orchestrator', 'director', 'scripts', 'ai/src', 'core']
 SERVICE_KEYWORDS = ['IService', 'register', 'Plugin', 'load']
 
 def extract_includes(content):
@@ -172,24 +194,117 @@ def save_registry(registry: list[dict],
         print(f" Error saving service registry: {e}")
 
 
+async def run_enhanced_ingestion(base_path: str, registry: list[dict]):
+    """
+    Enhanced ingestion using AIOS Library Ingestion Protocol
+    
+    Performs deep semantic analysis and multi-language library learning
+    with consciousness integration and dendritic network expansion.
+    
+    Args:
+        base_path: Base path for AIOS project
+        registry: Service registry from basic discovery
+    """
+    if not INGESTION_PROTOCOL_AVAILABLE:
+        print("⚠️  Enhanced ingestion not available - skipping")
+        return
+    
+    print("\n🧬 Enhanced Library Ingestion Protocol")
+    print("=" * 50)
+    
+    try:
+        # Initialize library learning integration hub
+        hub = LibraryLearningIntegrationHub(consciousness_level=0.85)
+        
+        # Start learning session
+        session = await hub.start_learning_session()
+        print(f"🚀 Learning session started: {session.session_id}")
+        
+        # Learn key AIOS libraries
+        key_libraries = [
+            ('scripts', ProgrammingLanguage.PYTHON),
+            ('ai/src/core', ProgrammingLanguage.PYTHON),
+            ('ai/src/engines', ProgrammingLanguage.PYTHON),
+            ('core/core_systems', None),  # Mixed languages - auto-detect
+        ]
+        
+        for lib_path, language in key_libraries:
+            full_path = Path(base_path) / lib_path
+            if full_path.exists():
+                try:
+                    print(f"\n📚 Learning library: {lib_path}")
+                    knowledge = await hub.learn_library(
+                        str(full_path),
+                        library_name=lib_path.replace('/', '_'),
+                        language=language
+                    )
+                    print(f"   ✅ Learned {len(knowledge.api_elements)} API elements")
+                    print(f"   🧠 Consciousness: {knowledge.consciousness_coherence:.2f}")
+                    print(f"   🏷️  Tags: {', '.join(knowledge.semantic_tags[:5])}")
+                except Exception as e:
+                    print(f"   ⚠️  Error learning {lib_path}: {e}")
+        
+        # Finish learning session
+        completed_session = await hub.finish_learning_session()
+        
+        # Display learning statistics
+        stats = hub.get_learning_statistics()
+        print(f"\n📊 Enhanced Ingestion Statistics:")
+        print(f"   Total libraries: {stats['total_libraries']}")
+        print(f"   Total API elements: {stats['total_api_elements']}")
+        print(f"   Semantic network size: {stats['semantic_network_size']}")
+        print(f"   Dendritic network size: {stats['dendritic_network_size']}")
+        print(f"   Final consciousness level: {stats['consciousness_level']:.2f}")
+        
+        # Save enhanced registry with semantic information
+        enhanced_registry_path = os.path.join(base_path, 'docs', 'enhanced_services_registry.json')
+        os.makedirs(os.path.dirname(enhanced_registry_path), exist_ok=True)
+        
+        enhanced_data = {
+            'basic_services': registry,
+            'learning_statistics': stats,
+            'semantic_network': {tag: list(items) for tag, items in hub.semantic_network.items()},
+            'session_summary': completed_session.to_dict()
+        }
+        
+        with open(enhanced_registry_path, 'w', encoding='utf-8') as f:
+            json.dump(enhanced_data, f, indent=2)
+        
+        print(f"\n💾 Enhanced registry saved: {enhanced_registry_path}")
+        
+    except Exception as e:
+        print(f"\n⚠️  Enhanced ingestion error: {e}")
+        print("   Continuing with basic indexing...")
+
+
 if __name__ == '__main__':
     """
     AIOS Indexer Main Execution
     
     Orchestrates the complete AIOS service discovery and dependency 
     analysis workflow for AI context harmonization.
+    
+    Enhanced with AIOS Library Ingestion Protocol for:
+    - Multi-language library learning
+    - Semantic network construction
+    - Consciousness-driven analysis
+    - Dendritic knowledge expansion
     """
-    print(" AIOS Service Discovery & Dependency Analysis")
+    print("🧬 AIOS Service Discovery & Dependency Analysis")
     print("=" * 50)
     
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    print(f" Scanning AIOS base path: {base_path}")
+    print(f"📂 Scanning AIOS base path: {base_path}")
     
-    # Execute AIOS discovery workflow
+    # Execute basic AIOS discovery workflow
     registry = discover_services(base_path)
-    print(f" Discovered {len(registry)} services")
+    print(f"✅ Discovered {len(registry)} services")
     
     build_graph(registry)
     save_registry(registry)
     
-    print(" AIOS indexing complete - Ready for AI harmonization!")
+    # Execute enhanced ingestion with library learning protocol
+    if INGESTION_PROTOCOL_AVAILABLE:
+        asyncio.run(run_enhanced_ingestion(base_path, registry))
+    
+    print("\n🎉 AIOS indexing complete - Ready for AI harmonization!")
