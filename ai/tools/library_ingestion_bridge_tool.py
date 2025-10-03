@@ -29,25 +29,46 @@ from typing import Dict, Any, Optional, List
 from datetime import datetime
 import sys
 
-# AIOS path integration
+# AIOS path integration  
 AIOS_ROOT = Path(__file__).parent.parent.parent
-sys.path.append(str(AIOS_ROOT))
-sys.path.append(str(AIOS_ROOT / "ai"))
-sys.path.append(str(AIOS_ROOT / "ai" / "src"))
+AI_ROOT = AIOS_ROOT / "ai"
+sys.path.insert(0, str(AIOS_ROOT))
 
 # Import library ingestion components
 try:
-    from ai.src.core.library_ingestion_protocol import (
-        LibraryIngestionProtocol,
-        LibraryKnowledge,
-        ProgrammingLanguage,
-        APIElement
+    # Try importing from ai.src.core first
+    import importlib.util
+    
+    # Direct file path imports
+    lib_ingestion_path = AI_ROOT / "src" / "core" / "library_ingestion_protocol.py"
+    lib_hub_path = AI_ROOT / "src" / "core" / "library_learning_integration_hub.py"
+    
+    # Load library_ingestion_protocol module
+    spec = importlib.util.spec_from_file_location(
+        "library_ingestion_protocol", 
+        lib_ingestion_path
     )
-    from ai.src.core.library_learning_integration_hub import (
-        LibraryLearningIntegrationHub,
-        LibraryLearningSession,
-        LearningPhase
+    lib_ingestion_module = importlib.util.module_from_spec(spec)
+    sys.modules["library_ingestion_protocol"] = lib_ingestion_module
+    spec.loader.exec_module(lib_ingestion_module)
+    
+    LibraryIngestionProtocol = lib_ingestion_module.LibraryIngestionProtocol
+    LibraryKnowledge = lib_ingestion_module.LibraryKnowledge
+    ProgrammingLanguage = lib_ingestion_module.ProgrammingLanguage
+    APIElement = lib_ingestion_module.APIElement
+    
+    # Load library_learning_integration_hub module
+    spec = importlib.util.spec_from_file_location(
+        "library_learning_integration_hub",
+        lib_hub_path
     )
+    lib_hub_module = importlib.util.module_from_spec(spec)
+    sys.modules["library_learning_integration_hub"] = lib_hub_module
+    spec.loader.exec_module(lib_hub_module)
+    
+    LibraryLearningIntegrationHub = lib_hub_module.LibraryLearningIntegrationHub
+    LibraryLearningSession = lib_hub_module.LibraryLearningSession
+    LearningPhase = lib_hub_module.LearningPhase
     INGESTION_AVAILABLE = True
 except ImportError as e:
     logging.warning(f"Library ingestion imports failed: {e}")
@@ -184,9 +205,9 @@ class LibraryIngestionBridgeTool:
             session_data["current_phase"] = LearningPhase.INGESTION.value
             session_data["progress_percent"] = 25.0
             
-            # Perform actual ingestion
+            # Perform actual ingestion via protocol
             library_name = library_path.name
-            await self.learning_hub.ingest_library(
+            await self.learning_hub.ingestion_protocol.ingest_library(
                 library_path=str(library_path),
                 library_name=library_name,
                 language=language
