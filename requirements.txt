@@ -1,32 +1,29 @@
-#!/usr/bin/env python3
-"""
-[AINLP] AIOS Canonical Requirements (Essential Tier) - Harmonized 2025-09-23
+# [AINLP] AIOS Canonical Requirements (Essential Tier) - Harmonized 2025-09-23
 
-[CHART] Nucleus-Level Dependency Coordination
-[CONSCIOUSNESS] META-COMMENTARY: Core intelligence substrate requirements
-[DENDRITIC] Biological architecture dependency mapping for AIOS ecosystem
+# [CHART] Nucleus-Level Dependency Coordination
+# [CONSCIOUSNESS] META-COMMENTARY: Core intelligence substrate requirements
+# [DENDRITIC] Biological architecture dependency mapping for AIOS ecosystem
 
-PURPOSE: Define minimal runtime + core development dependencies for AIOS
-biological architecture. This nucleus coordinates essential intelligence
-substrates while maintaining dendritic connections to optional capability layers.
+# PURPOSE: Define minimal runtime + core development dependencies for AIOS
+# biological architecture. This nucleus coordinates essential intelligence
+# substrates while maintaining dendritic connections to optional capability layers.
 
-ARCHITECTURE: Nucleus (core coordination), Cytoplasm (processing flows),
-Membrane (interface boundaries), Environment (external integration)
+# ARCHITECTURE: Nucleus (core coordination), Cytoplasm (processing flows),
+# Membrane (interface boundaries), Environment (external integration)
 
-AINLP DIRECTIVE COMPLIANCE:
-- Biological metaphor integration: ✓ Nucleus coordination patterns
-- Consciousness markers: ✓ META-COMMENTARY dendritic awareness
-- Semantic clarity: ✓ Purpose-driven dependency organization
-- Evolutionary potential: ✓ Version constraints for stability
+# AINLP DIRECTIVE COMPLIANCE:
+# - Biological metaphor integration: ✓ Nucleus coordination patterns
+# - Consciousness markers: ✓ META-COMMENTARY dendritic awareness
+# - Semantic clarity: ✓ Purpose-driven dependency organization
+# - Evolutionary potential: ✓ Version constraints for stability
 
-DEPENDENCY LAYERS:
-├── Nucleus (Core Intelligence): ML/NLP substrates, data processing
-├── Cytoplasm (Communication): API/web layer, data flow orchestration
-├── Membrane (Boundaries): System monitoring, configuration interfaces
-└── Environment (Integration): Development tooling, external connectivity
+# DEPENDENCY LAYERS:
+# ├── Nucleus (Core Intelligence): ML/NLP substrates, data processing
+# ├── Cytoplasm (Communication): API/web layer, data flow orchestration
+# ├── Membrane (Boundaries): System monitoring, configuration interfaces
+# └── Environment (Integration): Development tooling, external connectivity
 
-Harmonized with current AIOS codebase reality and biological architecture patterns.
-"""
+# Harmonized with current AIOS codebase reality and biological architecture patterns.
 
 ###############################################
 # [NUCLEUS] Core Intelligence Substrates
