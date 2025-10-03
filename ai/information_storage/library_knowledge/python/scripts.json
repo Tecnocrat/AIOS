@@ -1,0 +1,838 @@
+{
+  "library_name": "scripts",
+  "language": "python",
+  "version": "unknown",
+  "api_elements": [
+    {
+      "name": "RealAILintFixer",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class RealAILintFixer",
+      "documentation": "Real AI-powered lint fixer using existing AIOS infrastructure.",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 29,
+      "semantic_tags": [
+        "math"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "RealAILintFixer.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 32,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "RealAILintFixer.analyze_with_real_ai",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def analyze_with_real_ai(self, file_path: str) -> dict",
+      "documentation": "Use the real AIOS AI analyzer to find issues.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        }
+      ],
+      "return_type": "dict",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 37,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "RealAILintFixer.fix_trailing_whitespace",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def fix_trailing_whitespace(self, file_path: str, dry_run: bool) -> int",
+      "documentation": "Fix trailing whitespace - simple but measurable improvement.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        },
+        {
+          "name": "dry_run",
+          "type": "bool"
+        }
+      ],
+      "return_type": "int",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 51,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "RealAILintFixer.fix_long_lines_intelligently",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def fix_long_lines_intelligently(self, file_path: str, analysis: dict, dry_run: bool) -> int",
+      "documentation": "Use AI analysis to intelligently suggest line break points.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        },
+        {
+          "name": "analysis",
+          "type": "dict"
+        },
+        {
+          "name": "dry_run",
+          "type": "bool"
+        }
+      ],
+      "return_type": "int",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 83,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "RealAILintFixer.process_file",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def process_file(self, file_path: str, dry_run: bool) -> dict",
+      "documentation": "Process a single file with real AI analysis and fixing.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        },
+        {
+          "name": "dry_run",
+          "type": "bool"
+        }
+      ],
+      "return_type": "dict",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 104,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "main",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def main()",
+      "documentation": "",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 152,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 32,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "analyze_with_real_ai",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def analyze_with_real_ai(self, file_path: str) -> dict",
+      "documentation": "Use the real AIOS AI analyzer to find issues.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        }
+      ],
+      "return_type": "dict",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 37,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "fix_trailing_whitespace",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def fix_trailing_whitespace(self, file_path: str, dry_run: bool) -> int",
+      "documentation": "Fix trailing whitespace - simple but measurable improvement.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        },
+        {
+          "name": "dry_run",
+          "type": "bool"
+        }
+      ],
+      "return_type": "int",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 51,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "fix_long_lines_intelligently",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def fix_long_lines_intelligently(self, file_path: str, analysis: dict, dry_run: bool) -> int",
+      "documentation": "Use AI analysis to intelligently suggest line break points.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        },
+        {
+          "name": "analysis",
+          "type": "dict"
+        },
+        {
+          "name": "dry_run",
+          "type": "bool"
+        }
+      ],
+      "return_type": "int",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 83,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "process_file",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def process_file(self, file_path: str, dry_run: bool) -> dict",
+      "documentation": "Process a single file with real AI analysis and fixing.",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "str"
+        },
+        {
+          "name": "dry_run",
+          "type": "bool"
+        }
+      ],
+      "return_type": "dict",
+      "file_path": "scripts/real_ai_lint_fixer.py",
+      "line_number": 104,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "extract_includes",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def extract_includes(content)",
+      "documentation": "Extract include dependencies from C++ source code.\n\nAnalyzes C++ content to identify #include directives and extract\nthe included file names for dependency mapping.\n\nArgs:\n    content (str): C++ source code content to analyze\n    \nReturns:\n    list[str]: List of included file names\n    \nExample:\n    >>> content = '#include \"myheader.h\"\\n#include <iostream>'\n    >>> extract_includes(content)\n    ['myheader.h']",
+      "parameters": [
+        {
+          "name": "content",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "scripts/aios_indexer.py",
+      "line_number": 38,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "discover_services",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def discover_services(base_path: str) -> list[dict]",
+      "documentation": "Discover and catalog service modules across AIOS architecture layers.\n\nScans the AIOS codebase for service implementations and plugins,\nbuilding a comprehensive registry for dependency analysis.\n\nArgs:\n    base_path (str): Root path of AIOS project to scan\n    \nReturns:\n    list[dict]: Registry of discovered services with metadata\n    \nAIOS Architecture Integration:\n    - Supports multi-language service discovery (C++, C#, Python)\n    - Identifies service patterns across all AIOS layers\n    - Provides harmonized context for AI processing",
+      "parameters": [
+        {
+          "name": "base_path",
+          "type": "str"
+        }
+      ],
+      "return_type": "list[dict]",
+      "file_path": "scripts/aios_indexer.py",
+      "line_number": 64,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "build_graph",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def build_graph(registry: list[dict], out_dot: str, out_svg: str) -> None",
+      "documentation": "Generate AIOS dependency visualization using intelligent graph analysis.\n\nCreates both DOT and SVG representations of service dependencies\nfor architectural understanding and AI context harmonization.\n\nArgs:\n    registry (list[dict]): Service registry from discover_services()\n    out_dot (str): Output path for DOT file\n    out_svg (str): Output path for SVG visualization\n    \nAIOS Integration:\n    - Provides visual context for AI-driven architectural decisions\n    - Supports real-time dependency analysis\n    - Enhances AIOS pattern recognition capabilities",
+      "parameters": [
+        {
+          "name": "registry",
+          "type": "list[dict]"
+        },
+        {
+          "name": "out_dot",
+          "type": "str"
+        },
+        {
+          "name": "out_svg",
+          "type": "str"
+        }
+      ],
+      "return_type": "None",
+      "file_path": "scripts/aios_indexer.py",
+      "line_number": 113,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "save_registry",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def save_registry(registry: list[dict], out_json: str) -> None",
+      "documentation": "Persist AIOS service registry for AI context harmonization.\n\nSaves the discovered service registry in JSON format for use by\nAIOS AI engines and context harmonization systems.\n\nArgs:\n    registry (list[dict]): Complete service registry\n    out_json (str): Output JSON file path\n    \nAIOS AI Integration:\n    - Provides structured context for GitHub Copilot\n    - Enables intelligent code analysis and suggestions\n    - Supports automated refactoring workflows",
+      "parameters": [
+        {
+          "name": "registry",
+          "type": "list[dict]"
+        },
+        {
+          "name": "out_json",
+          "type": "str"
+        }
+      ],
+      "return_type": "None",
+      "file_path": "scripts/aios_indexer.py",
+      "line_number": 155,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover",
+      "element_type": "class",
+      "language": "python",
+      "signature": "class EmoticonRemover",
+      "documentation": "Tool for removing emoticons from codebase",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 14,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.__init__",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def __init__(self, root_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "root_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 17,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.find_emoticons_in_text",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def find_emoticons_in_text(self, text: str) -> List[Tuple[str, int, int]]",
+      "documentation": "Find all emoticons in text and return with positions",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "text",
+          "type": "str"
+        }
+      ],
+      "return_type": "List[Tuple[str, int, int]]",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 66,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.remove_emoticons_from_text",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def remove_emoticons_from_text(self, text: str) -> str",
+      "documentation": "Remove all emoticons from text",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "text",
+          "type": "str"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 74,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.process_file",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def process_file(self, file_path: Path) -> bool",
+      "documentation": "Process a single file to remove emoticons",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "Path"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 80,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.should_process_file",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def should_process_file(self, file_path: Path) -> bool",
+      "documentation": "Determine if file should be processed",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "Path"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 114,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.scan_codebase",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def scan_codebase(self) -> List[Path]",
+      "documentation": "Scan codebase for files to process",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[Path]",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 127,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.remove_all_emoticons",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def remove_all_emoticons(self) -> Dict",
+      "documentation": "Remove all emoticons from the codebase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 142,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "EmoticonRemover.create_enforcement_pre_commit_hook",
+      "element_type": "method",
+      "language": "python",
+      "signature": "def create_enforcement_pre_commit_hook(self)",
+      "documentation": "Create a pre-commit hook to enforce no-emoticon policy",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 178,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "main",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def main()",
+      "documentation": "Main execution function",
+      "parameters": [],
+      "return_type": null,
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 260,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "__init__",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def __init__(self, root_path: str)",
+      "documentation": "",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "root_path",
+          "type": "str"
+        }
+      ],
+      "return_type": null,
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 17,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "find_emoticons_in_text",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def find_emoticons_in_text(self, text: str) -> List[Tuple[str, int, int]]",
+      "documentation": "Find all emoticons in text and return with positions",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "text",
+          "type": "str"
+        }
+      ],
+      "return_type": "List[Tuple[str, int, int]]",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 66,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "remove_emoticons_from_text",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def remove_emoticons_from_text(self, text: str) -> str",
+      "documentation": "Remove all emoticons from text",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "text",
+          "type": "str"
+        }
+      ],
+      "return_type": "str",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 74,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "process_file",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def process_file(self, file_path: Path) -> bool",
+      "documentation": "Process a single file to remove emoticons",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "Path"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 80,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "should_process_file",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def should_process_file(self, file_path: Path) -> bool",
+      "documentation": "Determine if file should be processed",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        },
+        {
+          "name": "file_path",
+          "type": "Path"
+        }
+      ],
+      "return_type": "bool",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 114,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "scan_codebase",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def scan_codebase(self) -> List[Path]",
+      "documentation": "Scan codebase for files to process",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "List[Path]",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 127,
+      "semantic_tags": [
+        "file"
+      ],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "remove_all_emoticons",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def remove_all_emoticons(self) -> Dict",
+      "documentation": "Remove all emoticons from the codebase",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": "Dict",
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 142,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    },
+    {
+      "name": "create_enforcement_pre_commit_hook",
+      "element_type": "function",
+      "language": "python",
+      "signature": "def create_enforcement_pre_commit_hook(self)",
+      "documentation": "Create a pre-commit hook to enforce no-emoticon policy",
+      "parameters": [
+        {
+          "name": "self",
+          "type": "Any"
+        }
+      ],
+      "return_type": null,
+      "file_path": "scripts/remove_emoticons.py",
+      "line_number": 178,
+      "semantic_tags": [],
+      "consciousness_score": 0.5,
+      "cross_references": [],
+      "metadata": {}
+    }
+  ],
+  "dependencies": [],
+  "semantic_tags": [
+    "file",
+    "math"
+  ],
+  "ingestion_timestamp": "2025-10-02T22:44:28.445662",
+  "consciousness_coherence": 0.8514705882352941,
+  "spatial_metadata": {
+    "content_hash": "c049e9ed115ac227",
+    "dimensional_position": {
+      "x": 225,
+      "y": 885,
+      "z": 442
+    },
+    "consciousness_radius": 85.1470588235294,
+    "dendritic_connections": 0,
+    "api_density": 34
+  },
+  "source_path": "/home/runner/work/AIOS/AIOS/scripts",
+  "documentation_url": "",
+  "ainlp_compliance": true,
+  "metadata": {
+    "compliance_checks": {
+      "has_documentation": true,
+      "has_semantic_tags": true,
+      "has_spatial_metadata": true,
+      "consciousness_level": true
+    }
+  }
+}
