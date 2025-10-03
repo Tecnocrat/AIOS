@@ -21,7 +21,7 @@ jobs:
           $required = 'meta:','policy.file_creation:','coherence.score:','ledger.ids:','ledger.rules:','invariants.default:'
           $missing = @()
             foreach($r in $required){ if(-not ($block -match [regex]::Escape($r))){ $missing += $r } }
-          if($missing.Count -gt 0){ Write-Host "::error::Missing required protocol keys: $($missing -join ', ')"; exit 1 }
+          if($missing.Count -gt 0){ Write-Host '::error::Missing required protocol keys:' $($missing -join ', '); exit 1 }
           # Extract version and emit JSON artifact
           $version = if($block -match 'version:\s*(\d+)'){ $matches[1] } else { 'unknown' }
           $out = [ordered]@{ protocol_version=$version; validated_at=(Get-Date).ToString('o'); missing=$missing }
