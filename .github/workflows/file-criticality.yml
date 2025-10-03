@@ -9,6 +9,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for git diff operations
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -45,12 +47,15 @@ jobs:
               return fs.readFileSync('governance/file_criticality_index.jsonl','utf8')
                 .split(/\r?\n/).filter(Boolean).map(l=>{ try { return JSON.parse(l) } catch { return null } }).filter(Boolean);
             }
-            function loadChanged(){
-              const evt = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,'utf8'));
-              const base = evt.pull_request.base.sha; const head = evt.pull_request.head.sha;
-              const cp = require('child_process');
-              const diff = cp.execSync(`git diff --name-status ${base}..${head}`, {encoding:'utf8'});
-              return diff.split(/\r?\n/).filter(Boolean).map(line=>{ const parts=line.split(/\s+/); return {Status:parts[0], Path:parts.slice(1).join(' ')} });
+            async function loadChanged(){
+              // Use GitHub API instead of git diff since fetch-depth:1 limits history
+              const files = await github.rest.pulls.listFiles({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                per_page: 100
+              });
+              return files.data.map(f => ({Status: f.status.toUpperCase()[0], Path: f.filename}));
             }
             function regenerateIndexForCommit(commit){
               const cp = require('child_process');
@@ -67,7 +72,7 @@ jobs:
               return m;
             }
             const indexMap = loadIndex();
-            const changed = loadChanged();
+            const changed = await loadChanged();
             // Base index regeneration for delta (best effort)
             const evt = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,'utf8'));
             const baseSha = evt.pull_request.base.sha;
@@ -75,9 +80,12 @@ jobs:
             const cp = require('child_process');
             let baseIndex = [];
             try {
-              baseIndex = regenerateIndexForCommit(baseSha);
+              // Skip base index regeneration if commits not available (shallow clone)
+              if (cp.execSync('git cat-file -t ' + baseSha, {encoding:'utf8'}).trim() === 'commit') {
+                baseIndex = regenerateIndexForCommit(baseSha);
+              }
             } catch (e) {
-              // ignore
+              // ignore - base index not available
             } finally {
               // Restore head
               try { cp.execSync(`git checkout --quiet ${headSha}`); } catch {}
