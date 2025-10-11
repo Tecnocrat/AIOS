@@ -133,13 +133,32 @@ function Test-FileSafety {
         "^\.log$", "\.jsonl$", "^temp/", "^build/", "_temp", "\.tmp$", "\.pyc$", "__pycache__/", "\.pid$"
     )
     
+    # Exemptions: legitimate files that match unsafe patterns but are safe
+    $exemptionPatterns = @(
+        "_template\.(json|py|md|txt|yaml|yml)$",   # Template files (e.g., *_template.json, *_template.py)
+        "_crystal\.(json|py|md)$",                  # Knowledge crystal files (e.g., *_crystal.json)
+        "_templates\.(json|py|md)$"                 # Plural templates (e.g., context_recovery_templates.json)
+    )
+    
     $unsafeFiles = @()
     if ($StagedFiles -and $StagedFiles.Count -gt 0) {
         foreach ($file in $StagedFiles) {
-            foreach ($pattern in $unsafePatterns) {
-                if ($file -match $pattern) {
-                    $unsafeFiles = $unsafeFiles + @($file)
+            # Check if file matches any exemption pattern
+            $isExempt = $false
+            foreach ($exemption in $exemptionPatterns) {
+                if ($file -match $exemption) {
+                    $isExempt = $true
                     break
+                }
+            }
+            
+            # If not exempt, check unsafe patterns
+            if (-not $isExempt) {
+                foreach ($pattern in $unsafePatterns) {
+                    if ($file -match $pattern) {
+                        $unsafeFiles = $unsafeFiles + @($file)
+                        break
+                    }
                 }
             }
         }
