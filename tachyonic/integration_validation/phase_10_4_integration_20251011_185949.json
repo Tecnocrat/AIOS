@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-10-11T16:59:49.861490+00:00",
+  "summary": {
+    "total_tests": 8,
+    "passed": 2,
+    "failed": 6,
+    "pass_rate": 0.25
+  },
+  "results": [
+    {
+      "test": "population_manager_operational",
+      "category": "individual",
+      "passed": false,
+      "duration": 0.001,
+      "message": "Failed: Missing evolution_dir attribute",
+      "details": null
+    },
+    {
+      "test": "agent_conversations_operational",
+      "category": "individual",
+      "passed": true,
+      "duration": 0.002,
+      "message": "Multi-Agent Debate operational (mock agents)",
+      "details": {
+        "agents": [
+          "ollama",
+          "gemini",
+          "deepseek"
+        ]
+      }
+    },
+    {
+      "test": "knowledge_oracle_operational",
+      "category": "individual",
+      "passed": false,
+      "duration": 0.001,
+      "message": "Failed: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+      "details": null
+    },
+    {
+      "test": "population_to_conversations_integration",
+      "category": "pairwise",
+      "passed": false,
+      "duration": 0.002,
+      "message": "Population \u2192 Debate integration validated (mock mode)",
+      "details": {
+        "integration_ready": false
+      }
+    },
+    {
+      "test": "conversations_to_knowledge_integration",
+      "category": "pairwise",
+      "passed": false,
+      "duration": 0.001,
+      "message": "Failed: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+      "details": null
+    },
+    {
+      "test": "knowledge_to_population_integration",
+      "category": "pairwise",
+      "passed": false,
+      "duration": 0.0,
+      "message": "Failed: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+      "details": null
+    },
+    {
+      "test": "full_workflow_integration",
+      "category": "workflow",
+      "passed": false,
+      "duration": 0.006,
+      "message": "Failed: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+      "details": null
+    },
+    {
+      "test": "dark_spot_validation",
+      "category": "dark_spot",
+      "passed": true,
+      "duration": 0.0,
+      "message": "Identified 5 dark spots for Week 2 Day 5-6 remediation",
+      "details": {
+        "dark_spots": [
+          "Agent infrastructure: ollama/gemini/deepseek adapters not yet implemented",
+          "Full agent execution: MultiAgentDebate requires real agent_pool",
+          "Knowledge base: Python 3.14 documentation index not yet populated",
+          "Population execution: Organism evolution requires fitness scoring",
+          "Integration testing: End-to-end workflow execution pending agent infrastructure"
+        ]
+      }
+    }
+  ],
+  "dark_spots": [
+    "Debate\u2192Knowledge integration failed: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+    "Population execution: Organism evolution requires fitness scoring",
+    "Population Manager not operational: Missing evolution_dir attribute",
+    "Knowledge\u2192Population integration failed: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+    "Knowledge Oracle not operational: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+    "Full agent execution: MultiAgentDebate requires real agent_pool",
+    "Full workflow failed: [Errno 13] Permission denied: 'C:\\\\dev\\\\AIOS\\\\ai\\\\data\\\\knowledge'",
+    "Integration testing: End-to-end workflow execution pending agent infrastructure",
+    "Knowledge base: Python 3.14 documentation index not yet populated",
+    "Agent infrastructure: ollama/gemini/deepseek adapters not yet implemented"
+  ],
+  "recommendations": [
+    "Fix failed tests before Week 2 Day 5-6",
+    "Implement real agent infrastructure (ollama/gemini/deepseek)",
+    "Address 10 identified dark spots"
+  ]
+}

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIOS - Artificial Intelligence Operating System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
+            color: #cccccc;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .aios-container {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar main statusbar"
+                "footer footer footer";
+            grid-template-rows: 60px 1fr 40px;
+            grid-template-columns: 250px 1fr 300px;
+            height: 100vh;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .header {
+            grid-area: header;
+            background: rgba(45, 45, 48, 0.9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 {
+            color: #00d4ff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .system-status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-indicator {
+            padding: 8px 16px;
+            background: #007acc;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: rgba(45, 45, 48, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .module-button {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(62, 62, 66, 0.8);
+            border: none;
+            border-radius: 6px;
+            color: #cccccc;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .module-button:hover {
+            background: #007acc;
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            grid-area: main;
+            background: rgba(45, 45, 48, 0.9);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: rgba(62, 62, 66, 0.8);
+            padding: 15px 20px;
+            border-bottom: 1px solid #404040;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            max-width: 80%;
+            animation: slideIn 0.3s ease;
+        }
+
+        .message.user {
+            background: rgba(0, 116, 204, 0.3);
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .message.ai {
+            background: rgba(0, 212, 255, 0.2);
+            border-left: 3px solid #00d4ff;
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            background: rgba(62, 62, 66, 0.8);
+            border-top: 1px solid #404040;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid #404040;
+            border-radius: 6px;
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        .send-button {
+            padding: 12px 24px;
+            background: #007acc;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .send-button:hover {
+            background: #005a9b;
+        }
+
+        .statusbar {
+            grid-area: statusbar;
+            background: rgba(45, 45, 48, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-card {
+            background: rgba(62, 62, 66, 0.8);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d4ff, #007acc);
+            transition: width 0.3s ease;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: rgba(45, 45, 48, 0.9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #00d4ff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="aios-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <h1>AIOS</h1>
+                <span>Artificial Intelligence Operating System</span>
+            </div>
+            <div class="system-status">
+                <div class="status-indicator" id="statusIndicator">HEALTHY</div>
+                <button onclick="toggleSettings()"></button>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3 style="color: #00d4ff; margin-bottom: 20px;">AI Modules</h3>
+            <button class="module-button" onclick="activateModule('nlp')">
+                 Natural Language Processing
+            </button>
+            <button class="module-button" onclick="activateModule('prediction')">
+                 Prediction Engine
+            </button>
+            <button class="module-button" onclick="activateModule('automation')">
+                 Automation System
+            </button>
+            <button class="module-button" onclick="activateModule('learning')">
+                 Learning Engine
+            </button>
+            <button class="module-button" onclick="activateModule('integration')">
+                 Integration Hub
+            </button>
+            <hr style="border: 1px solid #404040; margin: 20px 0;">
+            <button class="module-button" onclick="runHealthCheck()">
+                 System Health Check
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="chat-header">
+                <h3 id="chatHeader">AI Assistant Ready</h3>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai">
+                    <strong>AIOS:</strong> Welcome to the Artificial Intelligence Operating System. 
+                    I'm ready to assist you with natural language processing, predictions, automation, 
+                    and intelligent system management. How can I help you today?
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" 
+                       placeholder="Type your message here..." 
+                       onkeypress="handleKeyPress(event)">
+                <button class="send-button" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="statusbar">
+            <h3 style="color: #00d4ff; margin-bottom: 15px;">System Status</h3>
+            
+            <div class="status-card">
+                <div style="font-size: 12px; color: #aaaaaa;">Health Score</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="healthProgress" style="width: 100%"></div>
+                </div>
+                <div id="healthScore">100%</div>
+            </div>
+
+            <div class="status-card">
+                <div style="font-size: 12px; color: #aaaaaa;">Active Modules</div>
+                <div id="activeModules">5 / 5</div>
+            </div>
+
+            <div class="status-card">
+                <div style="font-size: 12px; color: #aaaaaa;">System Load</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="loadProgress" style="width: 45%"></div>
+                </div>
+                <div id="systemLoad">45%</div>
+            </div>
+
+            <div class="status-card" style="max-height: 150px; overflow-y: auto;">
+                <div style="font-size: 12px; color: #aaaaaa; margin-bottom: 10px;">Activity Log</div>
+                <div id="activityLog" style="font-size: 11px; color: #888888;">
+                    <div>System initialized successfully</div>
+                    <div>AI modules loaded</div>
+                    <div>Health check completed</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div id="statusText">Ready - All systems operational</div>
+            <div id="versionText">AIOS v0.4.0</div>
+        </div>
+    </div>
+
+    <script>
+        // AIOS Web Interface JavaScript
+        class AIOSInterface {
+            constructor() {
+                this.currentModule = null;
+                this.messageHistory = [];
+                this.init();
+            }
+
+            async init() {
+                // Initialize AIOS API when available
+                if (window.AIOS) {
+                    this.setupAIOSHandlers();
+                    await this.updateSystemStatus();
+                } else {
+                    // Fallback for development/testing
+                    console.log('AIOS API not available - running in demo mode');
+                    this.simulateSystem();
+                }
+            }
+
+            setupAIOSHandlers() {
+                // Set up real-time event handlers
+                window.AIOS.onDataUpdate = (data) => this.handleDataUpdate(data);
+                window.AIOS.onSystemAlert = (alert) => this.handleSystemAlert(alert);
+                window.AIOS.onAIResponse = (response) => this.handleAIResponse(response);
+            }
+
+            async sendMessage() {
+                const input = document.getElementById('chatInput');
+                const message = input.value.trim();
+                
+                if (!message) return;
+
+                // Add user message to chat
+                this.addMessage(message, 'user');
+                input.value = '';
+
+                // Show typing indicator
+                this.showTypingIndicator();
+
+                try {
+                    let response;
+                    
+                    if (window.AIOS) {
+                        // Real AIOS integration
+                        switch (this.currentModule) {
+                            case 'nlp':
+                                response = await window.AIOS.processNLP(message);
+                                break;
+                            case 'prediction':
+                                response = await window.AIOS.makePrediction({ input: message });
+                                break;
+                            case 'automation':
+                                response = await window.AIOS.runAutomation({ task: message });
+                                break;
+                            default:
+                                response = await window.AIOS.processNLP(message);
+                        }
+                    } else {
+                        // Demo mode
+                        response = await this.simulateAIResponse(message);
+                    }
+
+                    this.hideTypingIndicator();
+                    this.addMessage(this.formatAIResponse(response), 'ai');
+                    
+                } catch (error) {
+                    this.hideTypingIndicator();
+                    this.addMessage(`Error: ${error.message}`, 'ai');
+                }
+            }
+
+            addMessage(content, type) {
+                const messagesContainer = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}`;
+                
+                if (type === 'ai') {
+                    messageDiv.innerHTML = `<strong>AIOS:</strong> ${content}`;
+                } else {
+                    messageDiv.textContent = content;
+                }
+                
+                messagesContainer.appendChild(messageDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                
+                this.messageHistory.push({ content, type, timestamp: new Date() });
+            }
+
+            showTypingIndicator() {
+                const indicator = document.createElement('div');
+                indicator.className = 'message ai';
+                indicator.id = 'typingIndicator';
+                indicator.innerHTML = '<strong>AIOS:</strong> <span class="loading"></span> Processing...';
+                
+                document.getElementById('chatMessages').appendChild(indicator);
+                document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+            }
+
+            hideTypingIndicator() {
+                const indicator = document.getElementById('typingIndicator');
+                if (indicator) {
+                    indicator.remove();
+                }
+            }
+
+            async activateModule(moduleName) {
+                this.currentModule = moduleName;
+                document.getElementById('chatHeader').textContent = `${moduleName.toUpperCase()} Module Active`;
+                
+                const moduleDescriptions = {
+                    nlp: 'Natural Language Processing module activated. I can understand and process human language.',
+                    prediction: 'Prediction Engine activated. I can analyze data and make intelligent predictions.',
+                    automation: 'Automation System activated. I can help automate tasks and workflows.',
+                    learning: 'Learning Engine activated. I can learn from data and improve over time.',
+                    integration: 'Integration Hub activated. I can connect and coordinate different systems.'
+                };
+
+                this.addMessage(moduleDescriptions[moduleName] || 'Module activated successfully.', 'ai');
+                this.logActivity(`Activated ${moduleName} module`);
+            }
+
+            async runHealthCheck() {
+                this.addMessage('Running comprehensive system health check...', 'ai');
+                
+                try {
+                    if (window.AIOS) {
+                        const health = await window.AIOS.getSystemHealth();
+                        this.updateSystemHealth(health);
+                        this.addMessage(`Health check complete. System status: ${health.status}`, 'ai');
+                    } else {
+                        // Demo mode
+                        setTimeout(() => {
+                            this.addMessage('Health check complete. All systems operational.', 'ai');
+                        }, 2000);
+                    }
+                } catch (error) {
+                    this.addMessage(`Health check failed: ${error.message}`, 'ai');
+                }
+            }
+
+            updateSystemHealth(healthData) {
+                if (healthData.score !== undefined) {
+                    document.getElementById('healthProgress').style.width = `${healthData.score * 100}%`;
+                    document.getElementById('healthScore').textContent = `${Math.round(healthData.score * 100)}%`;
+                }
+                
+                if (healthData.status) {
+                    document.getElementById('statusIndicator').textContent = healthData.status.toUpperCase();
+                }
+            }
+
+            logActivity(message) {
+                const log = document.getElementById('activityLog');
+                const entry = document.createElement('div');
+                entry.textContent = `${new Date().toLocaleTimeString()} - ${message}`;
+                log.insertBefore(entry, log.firstChild);
+                
+                // Keep only last 10 entries
+                while (log.children.length > 10) {
+                    log.removeChild(log.lastChild);
+                }
+            }
+
+            formatAIResponse(response) {
+                if (typeof response === 'string') {
+                    return response;
+                }
+                
+                if (response.message) {
+                    return response.message;
+                }
+                
+                return JSON.stringify(response, null, 2);
+            }
+
+            // Demo/Simulation methods
+            simulateSystem() {
+                setInterval(() => {
+                    const load = Math.random() * 100;
+                    document.getElementById('loadProgress').style.width = `${load}%`;
+                    document.getElementById('systemLoad').textContent = `${Math.round(load)}%`;
+                }, 5000);
+            }
+
+            async simulateAIResponse(message) {
+                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+                
+                const responses = [
+                    `I understand you said: "${message}". How can I help you further?`,
+                    `Processing your request about "${message}". Based on my analysis, I recommend...`,
+                    `Your input "${message}" has been processed. Here are the results...`,
+                    `Thank you for the information. I've learned from "${message}" and updated my knowledge base.`
+                ];
+                
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+
+            handleKeyPress(event) {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    this.sendMessage();
+                }
+            }
+
+            // Event handlers for AIOS integration
+            handleDataUpdate(data) {
+                this.logActivity(`Data updated: ${data.type}`);
+            }
+
+            handleSystemAlert(alert) {
+                this.logActivity(`System alert: ${alert.message}`);
+                this.addMessage(`System Alert: ${alert.message}`, 'ai');
+            }
+
+            handleAIResponse(response) {
+                if (response.type === 'background_process') {
+                    this.logActivity(`Background process: ${response.message}`);
+                }
+            }
+        }
+
+        // Global functions
+        let aiosInterface;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            aiosInterface = new AIOSInterface();
+        });
+
+        function sendMessage() {
+            aiosInterface.sendMessage();
+        }
+
+        function activateModule(moduleName) {
+            aiosInterface.activateModule(moduleName);
+        }
+
+        function runHealthCheck() {
+            aiosInterface.runHealthCheck();
+        }
+
+        function handleKeyPress(event) {
+            aiosInterface.handleKeyPress(event);
+        }
+
+        function toggleSettings() {
+            alert('Settings panel not implemented yet');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+{
+  "timestamp": "2025-10-04T20:17:13.656119",
+  "dry_run": false,
+  "analysis": {
+    "timestamp": "2025-10-04T20:17:13.645125",
+    "workspace_root": "C:\\dev\\AIOS",
+    "violations_found": [
+      {
+        "filename": "consciousness_analysis_20251003_001135.txt",
+        "size_bytes": 3617,
+        "modified": "2025-10-03T00:11:35.538505",
+        "target_location": "C:\\dev\\AIOS\\docs\\reports\\consciousness",
+        "category": "consciousness"
+      },
+      {
+        "filename": "DUAL_AGENT_SUCCESS.md",
+        "size_bytes": 10640,
+        "modified": "2025-10-04T16:03:14.027368",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success",
+        "category": "development_success"
+      },
+      {
+        "filename": "FIXES_APPLIED.md",
+        "size_bytes": 8382,
+        "modified": "2025-10-04T16:47:27.565766",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\development_fixes",
+        "category": "development_fixes"
+      },
+      {
+        "filename": "GEMINI_INTEGRATION_SUMMARY.md",
+        "size_bytes": 5705,
+        "modified": "2025-10-04T14:06:47.108339",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\summaries",
+        "category": "summaries"
+      },
+      {
+        "filename": "GEMINI_SETUP.md",
+        "size_bytes": 2891,
+        "modified": "2025-10-04T14:06:47.082305",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\setup_guides",
+        "category": "setup_guides"
+      },
+      {
+        "filename": "GEMINI_SUCCESS.md",
+        "size_bytes": 1811,
+        "modified": "2025-10-04T14:24:00.521585",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success",
+        "category": "development_success"
+      },
+      {
+        "filename": "LIBRARY_GENERATION_SUCCESS.md",
+        "size_bytes": 6503,
+        "modified": "2025-10-04T15:52:11.622847",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success",
+        "category": "development_success"
+      },
+      {
+        "filename": "paradigms_extracted_test.json",
+        "size_bytes": 53772,
+        "modified": "2025-10-04T13:46:19.411895",
+        "target_location": "C:\\dev\\AIOS\\evolution_lab\\test_data",
+        "category": "test_data"
+      },
+      {
+        "filename": "ROOT_CLEANUP_ANALYSIS.md",
+        "size_bytes": 13051,
+        "modified": "2025-10-04T19:14:49.006240",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\documentation",
+        "category": "general_docs"
+      },
+      {
+        "filename": "ROOT_CLEANUP_QUICK_GUIDE.md",
+        "size_bytes": 3831,
+        "modified": "2025-10-04T19:14:49.006240",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\documentation",
+        "category": "general_docs"
+      },
+      {
+        "filename": "UI_INTEGRATION_SUCCESS.md",
+        "size_bytes": 11221,
+        "modified": "2025-10-04T16:13:12.023173",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success",
+        "category": "development_success"
+      },
+      {
+        "filename": "UI_MOCKUP.md",
+        "size_bytes": 17470,
+        "modified": "2025-10-04T16:17:28.780733",
+        "target_location": "C:\\dev\\AIOS\\tachyonic\\archive\\design_mockups",
+        "category": "design_mockups"
+      }
+    ],
+    "essential_files": [
+      "AIOS.code-workspace",
+      "AIOS.sln",
+      "launch_aios.ps1",
+      "pyproject.toml",
+      "README.md",
+      "requirements.in",
+      "requirements.txt",
+      "test_gemini_bridge.py",
+      "test_library_generation.py",
+      "test_ollama_bridge.py",
+      "test_paradigm_extraction.py"
+    ],
+    "total_files_analyzed": 23,
+    "violations_count": 12
+  },
+  "relocations": [
+    {
+      "filename": "consciousness_analysis_20251003_001135.txt",
+      "source": "C:\\dev\\AIOS\\consciousness_analysis_20251003_001135.txt",
+      "target": "C:\\dev\\AIOS\\docs\\reports\\consciousness\\consciousness_analysis_20251003_001135.txt",
+      "category": "consciousness",
+      "status": "relocated"
+    },
+    {
+      "filename": "DUAL_AGENT_SUCCESS.md",
+      "source": "C:\\dev\\AIOS\\DUAL_AGENT_SUCCESS.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success\\DUAL_AGENT_SUCCESS.md",
+      "category": "development_success",
+      "status": "relocated"
+    },
+    {
+      "filename": "FIXES_APPLIED.md",
+      "source": "C:\\dev\\AIOS\\FIXES_APPLIED.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\development_fixes\\FIXES_APPLIED.md",
+      "category": "development_fixes",
+      "status": "relocated"
+    },
+    {
+      "filename": "GEMINI_INTEGRATION_SUMMARY.md",
+      "source": "C:\\dev\\AIOS\\GEMINI_INTEGRATION_SUMMARY.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\summaries\\GEMINI_INTEGRATION_SUMMARY.md",
+      "category": "summaries",
+      "status": "relocated"
+    },
+    {
+      "filename": "GEMINI_SETUP.md",
+      "source": "C:\\dev\\AIOS\\GEMINI_SETUP.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\setup_guides\\GEMINI_SETUP.md",
+      "category": "setup_guides",
+      "status": "relocated"
+    },
+    {
+      "filename": "GEMINI_SUCCESS.md",
+      "source": "C:\\dev\\AIOS\\GEMINI_SUCCESS.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success\\GEMINI_SUCCESS.md",
+      "category": "development_success",
+      "status": "relocated"
+    },
+    {
+      "filename": "LIBRARY_GENERATION_SUCCESS.md",
+      "source": "C:\\dev\\AIOS\\LIBRARY_GENERATION_SUCCESS.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success\\LIBRARY_GENERATION_SUCCESS.md",
+      "category": "development_success",
+      "status": "relocated"
+    },
+    {
+      "filename": "paradigms_extracted_test.json",
+      "source": "C:\\dev\\AIOS\\paradigms_extracted_test.json",
+      "target": "C:\\dev\\AIOS\\evolution_lab\\test_data\\paradigms_extracted_test.json",
+      "category": "test_data",
+      "status": "relocated"
+    },
+    {
+      "filename": "ROOT_CLEANUP_ANALYSIS.md",
+      "source": "C:\\dev\\AIOS\\ROOT_CLEANUP_ANALYSIS.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\documentation\\ROOT_CLEANUP_ANALYSIS.md",
+      "category": "general_docs",
+      "status": "relocated"
+    },
+    {
+      "filename": "ROOT_CLEANUP_QUICK_GUIDE.md",
+      "source": "C:\\dev\\AIOS\\ROOT_CLEANUP_QUICK_GUIDE.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\documentation\\ROOT_CLEANUP_QUICK_GUIDE.md",
+      "category": "general_docs",
+      "status": "relocated"
+    },
+    {
+      "filename": "UI_INTEGRATION_SUCCESS.md",
+      "source": "C:\\dev\\AIOS\\UI_INTEGRATION_SUCCESS.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\development_success\\UI_INTEGRATION_SUCCESS.md",
+      "category": "development_success",
+      "status": "relocated"
+    },
+    {
+      "filename": "UI_MOCKUP.md",
+      "source": "C:\\dev\\AIOS\\UI_MOCKUP.md",
+      "target": "C:\\dev\\AIOS\\tachyonic\\archive\\design_mockups\\UI_MOCKUP.md",
+      "category": "design_mockups",
+      "status": "relocated"
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "status": "completed",
+    "files_relocated": 12,
+    "errors": 0,
+    "root_violations_resolved": 12
+  }
+}

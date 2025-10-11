@@ -74,13 +74,20 @@ class ParadigmExtractionEngine:
         Extract all paradigms from an ingested library.
         
         Args:
-            library_name: Name of library (e.g., "requests", "flask")
+            library_name: Name of library (e.g., "requests", "flask", "aios_core")
             
         Returns:
             List of extracted programming paradigms
         """
-        library_path = self.knowledge_base_path / library_name
-        if not library_path.exists():
+        # Look for the library JSON file in language subdirectories
+        json_files = []
+        for lang_dir in self.knowledge_base_path.iterdir():
+            if lang_dir.is_dir():
+                library_file = lang_dir / f"{library_name}.json"
+                if library_file.exists():
+                    json_files.append(library_file)
+        
+        if not json_files:
             logger.error(f"❌ Library not found: {library_name}")
             logger.info(f"💡 Run library ingestion first: LibraryIngestionProtocol().ingest_library('{library_name}')")
             return []
@@ -90,8 +97,7 @@ class ParadigmExtractionEngine:
         # Clear previous paradigms
         self.paradigms = []
         
-        # Find all JSON knowledge files
-        json_files = list(library_path.rglob("*.json"))
+        # Process found JSON knowledge files
         logger.info(f"📄 Found {len(json_files)} knowledge files")
         
         for json_file in json_files:
@@ -109,8 +115,18 @@ class ParadigmExtractionEngine:
         try:
             with open(json_file, 'r', encoding='utf-8') as f:
                 knowledge = json.load(f)
+            
+            # Handle new api_elements format
+            if "api_elements" in knowledge:
+                # Separate by type
+                functions = [e for e in knowledge["api_elements"] if e["element_type"] == "function"]
+                methods = [e for e in knowledge["api_elements"] if e["element_type"] == "method"]
+                classes = [e for e in knowledge["api_elements"] if e["element_type"] == "class"]
                 
-            # Extract from different knowledge types
+                self._extract_function_paradigms(functions + methods)
+                self._extract_class_paradigms(classes)
+            
+            # Handle legacy format
             if "functions" in knowledge:
                 self._extract_function_paradigms(knowledge["functions"])
             if "classes" in knowledge:

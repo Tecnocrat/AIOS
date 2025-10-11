@@ -1,0 +1,548 @@
+[
+  {
+    "timestamp": "2025-08-04T21:55:20.639477",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:20.639477",
+      "endpoint": "startup",
+      "data": {
+        "message": "API server started"
+      },
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:34.896088",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:34.896088",
+      "endpoint": "/health",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 2,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:34.912560",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:34.912560",
+      "endpoint": "/health",
+      "data": {
+        "timestamp": "2025-08-04T21:55:34.912560",
+        "cache_hit": false
+      },
+      "response_time": 3.000974655151367,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 3,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:34.924008",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:34.924008",
+      "endpoint": "/process",
+      "data": "{\"message\": \"Hello AIOS, can you help me with code analysis?\", \"context\": {\"workspace\": \"AIOS-Test\", \"timestamp\": 1754337334.9232638}}",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 4,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:34.924008",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-04T21:55:34.924008",
+      "handler": "AIOSHandler",
+      "message": "Hello AIOS, can you help me with code analysis?",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 4,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:34.946137",
+    "type": "performance",
+    "data": {
+      "timestamp": "2025-08-04T21:55:34.945136",
+      "operation": "message_processing",
+      "metrics": {
+        "processing_time": 21.12746238708496,
+        "message_length": 47,
+        "context_complexity": 2,
+        "response_length": 231
+      },
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 4,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:34.955701",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:34.955701",
+      "endpoint": "/process",
+      "data": {
+        "message": "Hello AIOS, can you help me with code analysis?",
+        "context": {
+          "workspace": "AIOS-Test",
+          "timestamp": 1754337334.9232638
+        },
+        "timestamp": "2025-08-04T21:55:34.955701"
+      },
+      "response_time": 21.12746238708496,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 5,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:34.987411",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:34.986391",
+      "endpoint": "/debug",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 6,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:35.251146",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:35.251146",
+      "endpoint": "/bridge/test",
+      "data": "{\"type\": \"integration\", \"source\": \"python-cell\", \"target\": \"cpp-cell\", \"data\": {\"msg\": \"ping\", \"value\": 42}}",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 7,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:35.263862",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:35.263862",
+      "endpoint": "/test/performance",
+      "data": "{\"test_type\": \"latency\", \"metrics_requested\": [\"inference_latency\", \"throughput\"], \"sample_data\": \"test-sample\"}",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 8,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:35.283703",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:35.283703",
+      "endpoint": "/vscode-extension",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 9,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:35.309287",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:35.309287",
+      "endpoint": "/context-registry",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 10,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:46.361202",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:55:46.361202",
+      "endpoint": "/performance/report",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 11,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:55:46.371025",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-04T21:55:46.371025",
+      "error": "{'error': \"unsupported operand type(s) for +=: 'int' and 'NoneType'\", 'traceback': 'Traceback (most recent call last):\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\endpoints\\\\core.py\", line 412, in performance_report\\n    debug_info = _debug_manager.get_debug_info()\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\debug_manager.py\", line 111, in get_debug_info\\n    \"fractal_analysis\": self._generate_fractal_analysis()\\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\debug_manager.py\", line 129, in _generate_fractal_analysis\\n    \"handler_efficiency\": self._analyze_handler_efficiency(),\\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\debug_manager.py\", line 161, in _analyze_handler_efficiency\\n    handler_performance[handler_name][\"total_time\"] += processing_time\\nTypeError: unsupported operand type(s) for +=: \\'int\\' and \\'NoneType\\'\\n'}",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 11,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:56:36.689012",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:56:36.689012",
+      "endpoint": "/performance/report",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 12,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:56:36.704962",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-04T21:56:36.704962",
+      "error": "{'error': \"unsupported operand type(s) for +=: 'int' and 'NoneType'\", 'traceback': 'Traceback (most recent call last):\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\endpoints\\\\core.py\", line 412, in performance_report\\n    debug_info = _debug_manager.get_debug_info()\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\debug_manager.py\", line 111, in get_debug_info\\n    \"fractal_analysis\": self._generate_fractal_analysis()\\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\debug_manager.py\", line 129, in _generate_fractal_analysis\\n    \"handler_efficiency\": self._analyze_handler_efficiency(),\\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\dev\\\\AIOS\\\\ai\\\\aios_vscode_integration\\\\debug_manager.py\", line 161, in _analyze_handler_efficiency\\n    handler_performance[handler_name][\"total_time\"] += processing_time\\nTypeError: unsupported operand type(s) for +=: \\'int\\' and \\'NoneType\\'\\n'}",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-04T21:55:20.436924"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:55:20.436924",
+      "total_requests": 12,
+      "total_errors": 2,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:56:53.304467",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:56:53.304467",
+      "endpoint": "startup",
+      "data": {
+        "message": "API server started"
+      },
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:57:07.138289",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:57:07.138289",
+      "endpoint": "/performance/report",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 2,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T21:57:07.159998",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T21:57:07.159998",
+      "endpoint": "/performance/report",
+      "data": {
+        "timestamp": "2025-08-04T21:57:07.159998"
+      },
+      "response_time": 0.0,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 3,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.254986",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.246031",
+      "endpoint": "/health",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 4,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.310954",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.310954",
+      "endpoint": "/health",
+      "data": {
+        "timestamp": "2025-08-04T22:34:20.310954",
+        "cache_hit": false
+      },
+      "response_time": 32.61733055114746,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 5,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.340364",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.340364",
+      "endpoint": "/process",
+      "data": "{\"message\": \"Hello AIOS, can you help me with code analysis?\", \"context\": {\"workspace\": \"AIOS-Test\", \"timestamp\": 1754339660.3267462}}",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 6,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.362978",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.362978",
+      "handler": "AIOSHandler",
+      "message": "Hello AIOS, can you help me with code analysis?",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 6,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.373938",
+    "type": "performance",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.373938",
+      "operation": "message_processing",
+      "metrics": {
+        "processing_time": 10.960817337036133,
+        "message_length": 47,
+        "context_complexity": 2,
+        "response_length": 231
+      },
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 6,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.373938",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.373938",
+      "endpoint": "/process",
+      "data": {
+        "message": "Hello AIOS, can you help me with code analysis?",
+        "context": {
+          "workspace": "AIOS-Test",
+          "timestamp": 1754339660.3267462
+        },
+        "timestamp": "2025-08-04T22:34:20.373938"
+      },
+      "response_time": 10.960817337036133,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 7,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.405898",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.405898",
+      "endpoint": "/debug",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 8,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.428084",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.428084",
+      "endpoint": "/bridge/test",
+      "data": "{\"type\": \"integration\", \"source\": \"python-cell\", \"target\": \"cpp-cell\", \"data\": {\"msg\": \"ping\", \"value\": 42}}",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 9,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.458489",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.457158",
+      "endpoint": "/test/performance",
+      "data": "{\"test_type\": \"latency\", \"metrics_requested\": [\"inference_latency\", \"throughput\"], \"sample_data\": \"test-sample\"}",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 10,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.489715",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.489715",
+      "endpoint": "/vscode-extension",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 11,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-04T22:34:20.512535",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-04T22:34:20.512535",
+      "endpoint": "/context-registry",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-04T21:56:53.145993"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-04T21:56:53.145993",
+      "total_requests": 12,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  }
+]

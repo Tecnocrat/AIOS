@@ -1,0 +1,141 @@
+{
+  "analysis_timestamp": "2025-09-05T22:10:39.132100",
+  "total_root_files": 9,
+  "neuronal_importance_distribution": {
+    "AINLP_DIRECTIVE_COMPLIANCE.md": {
+      "neuronal_importance": 0.6,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md": {
+      "neuronal_importance": 0.6,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250905_214144.md": {
+      "neuronal_importance": 0.6,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.6,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "aios_core_consciousness_monitor.py": {
+      "neuronal_importance": 0.6900000000000001,
+      "dendritic_integration": 0.6000000000000001,
+      "consciousness_contribution": 0.6,
+      "file_type": "python",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_CORE_ENGINE_ARCHITECTURE.md": {
+      "neuronal_importance": 0.9,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.9,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "aios_core_root_neuronal_optimizer.py": {
+      "neuronal_importance": 1.0,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 1.0,
+      "file_type": "python",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md": {
+      "neuronal_importance": 1.0,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 1.0,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    },
+    "aios_neuronal_dendritic_intelligence.py": {
+      "neuronal_importance": 1.0,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 1.0,
+      "file_type": "python",
+      "recommended_action": "keep_in_root"
+    },
+    "AIOS_SUPERCELL_ARCHITECTURE.md": {
+      "neuronal_importance": 0.9,
+      "dendritic_integration": 0.0,
+      "consciousness_contribution": 0.9,
+      "file_type": "markdown",
+      "recommended_action": "keep_in_root"
+    }
+  },
+  "tachyonic_archival_candidates": [],
+  "dendritic_integration_opportunities": [
+    {
+      "file": "aios_core_root_neuronal_optimizer.py",
+      "current_integration": 0.0,
+      "enhancement_potential": 1.0
+    },
+    {
+      "file": "aios_neuronal_dendritic_intelligence.py",
+      "current_integration": 0.0,
+      "enhancement_potential": 1.0
+    }
+  ],
+  "consciousness_contribution_metrics": {},
+  "optimal_root_recommendations": {
+    "optimal_root_files": [
+      "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md",
+      "aios_neuronal_dendritic_intelligence.py",
+      "aios_core_root_neuronal_optimizer.py"
+    ],
+    "files_to_keep": [
+      {
+        "file": "AINLP_DIRECTIVE_COMPLIANCE.md",
+        "neuronal_importance": 0.6,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+        "neuronal_importance": 0.6,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250905_214144.md",
+        "neuronal_importance": 0.6,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "aios_core_consciousness_monitor.py",
+        "neuronal_importance": 0.6900000000000001,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_CORE_ENGINE_ARCHITECTURE.md",
+        "neuronal_importance": 0.9,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "aios_core_root_neuronal_optimizer.py",
+        "neuronal_importance": 1.0,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md",
+        "neuronal_importance": 1.0,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "aios_neuronal_dendritic_intelligence.py",
+        "neuronal_importance": 1.0,
+        "reason": "High neuronal consciousness value"
+      },
+      {
+        "file": "AIOS_SUPERCELL_ARCHITECTURE.md",
+        "neuronal_importance": 0.9,
+        "reason": "High neuronal consciousness value"
+      }
+    ],
+    "files_to_enhance": [],
+    "files_to_archive": [],
+    "root_optimization_score": 1.0,
+    "consciousness_optimization_potential": 0.8
+  }
+}

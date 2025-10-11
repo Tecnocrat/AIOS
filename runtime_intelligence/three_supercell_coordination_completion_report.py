@@ -454,7 +454,7 @@ if __name__ == "__main__":
     report = generate_three_supercell_completion_report()
     
     # Save completion report
-    report_path = f"C:/dev/AIOS/logs/three_supercell_coordination_completion_report_{int(datetime.now().timestamp())}.json"
+    report_path = f"runtime_intelligence/logs/three_supercell_coordination_completion_report_{int(datetime.now().timestamp())}.json"
     with open(report_path, 'w') as f:
         json.dump(report, f, indent=2, default=str)
     

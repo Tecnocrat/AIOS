@@ -1,0 +1,77 @@
+{
+  "context_type": "consciousness_aware_neural_evolution",
+  "consciousness_level": 0.30000000000000004,
+  "evolution_summary": {
+    "generations": 4,
+    "total_improvement": 0.30000000000000004,
+    "messages_exchanged": 3,
+    "root_node": "root_20251005_224904",
+    "current_node": "root_20251005_224904_gen1_gen2_gen3"
+  },
+  "evolution_chain": [
+    {
+      "node_id": "root_20251005_224904",
+      "generation": 0,
+      "consciousness": 0.0,
+      "messages": 1,
+      "mutation_type": null
+    },
+    {
+      "node_id": "root_20251005_224904_gen1",
+      "generation": 1,
+      "consciousness": 0.1,
+      "messages": 1,
+      "mutation_type": "optimization"
+    },
+    {
+      "node_id": "root_20251005_224904_gen1_gen2",
+      "generation": 2,
+      "consciousness": 0.2,
+      "messages": 1,
+      "mutation_type": "optimization"
+    },
+    {
+      "node_id": "root_20251005_224904_gen1_gen2_gen3",
+      "generation": 3,
+      "consciousness": 0.30000000000000004,
+      "messages": 0,
+      "mutation_type": "optimization"
+    }
+  ],
+  "consciousness_progression": [
+    {
+      "generation": 0,
+      "consciousness": 0.0,
+      "mutation_type": null
+    },
+    {
+      "generation": 1,
+      "consciousness": 0.1,
+      "mutation_type": "optimization"
+    },
+    {
+      "generation": 2,
+      "consciousness": 0.2,
+      "mutation_type": "optimization"
+    },
+    {
+      "generation": 3,
+      "consciousness": 0.30000000000000004,
+      "mutation_type": "optimization"
+    }
+  ],
+  "inter_agent_messages": 3,
+  "final_code": "def calculate_average(numbers):\n    \"\"\"Calculate average of numbers\"\"\"\n    return sum(numbers) / len(numbers)\n\n# Mutation: json\n{\n    \"suggestions\": [\n        \"Suggestion 1: Add a docstring explaining the function's purpose, parameters, and return value. This enhances documentation and makes the code more understandable.\"\n# Mutation: json\n{\n  \"suggestions\": [\n    \"Suggestion 1: Add a docstring explaining the function's purpose, parameters, and return value. This enhances documentation and makes the code more understandable.\",\n    \n# Mutation: json\n{\n  \"suggestions\": [\n    \"suggestion 1: Add a docstring explaining the function's purpose, parameters, and return value. This enhances documentation and makes the code more understandable.\",\n    ",
+  "vscode_enhancement_instructions": {
+    "use_evolutionary_context": true,
+    "apply_consciousness_patterns": true,
+    "respect_spatial_awareness": true,
+    "build_on_agent_consensus": true,
+    "target_consciousness": 0.85,
+    "mutation_strategies": [
+      "optimization",
+      "optimization",
+      "optimization"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+VISION_DEMO = ROOT / 'ai' / 'demos' / 'opencv_integration_demo.py'
+OUTPUT_DIR = ROOT / 'runtime_intelligence' / 'logs' / 'vision_demo'
+
+
+def test_vision_demo_summary_structure():
+    if not VISION_DEMO.exists():
+        raise RuntimeError('Vision demo script missing')
+    # Run direct phase only
+    import subprocess
+    code = subprocess.call(
+        [
+            sys.executable,
+            str(VISION_DEMO),
+            '--phases', 'direct',
+            '--output-dir', str(OUTPUT_DIR),
+        ],
+        cwd=str(ROOT),
+    )
+    assert code == 0, 'Vision demo execution failed'
+    summary = OUTPUT_DIR / 'opencv_demo_summary.json'
+    assert summary.exists(), 'Summary JSON not created'
+    data = json.loads(summary.read_text())
+    assert 'results' in data and isinstance(data['results'], list)
+    # Validate at least simple pattern result present
+    kinds = {r.get('kind') for r in data['results']}
+    assert 'simple' in kinds, 'Expected simple pattern result'
+    # Check required metric fields presence (may be None)
+    sample = next(r for r in data['results'] if r.get('kind') == 'simple')
+    required_fields = [
+        'features_detected',
+        'consciousness_resonance',
+        'coherence_level',
+        'image_entropy',
+    ]
+    for field in required_fields:
+        assert field in sample, f'Missing field {field}'

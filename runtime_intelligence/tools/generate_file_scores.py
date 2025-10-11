@@ -1,7 +1,7 @@
 """Generate per-file criticality scores.
 
 Outputs:
-  - governance/file_criticality_index.jsonl (authoritative index)
+  - docs/governance/file_criticality_index.jsonl (authoritative index)
   - runtime_intelligence/logs/file_scores/latest.json (telemetry snapshot)
 
 Scoring references agent-mode instructions file_criticality.* keys.
@@ -17,7 +17,7 @@ from dataclasses import dataclass, asdict
 from typing import List, Dict, Optional
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
-INDEX_PATH = REPO_ROOT / 'governance' / 'file_criticality_index.jsonl'
+INDEX_PATH = REPO_ROOT / 'docs' / 'governance' / 'file_criticality_index.jsonl'
 TELEMETRY_OUT = (
     REPO_ROOT / 'runtime_intelligence' / 'logs' / 'file_scores' / 'latest.json'
 )

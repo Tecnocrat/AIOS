@@ -1,0 +1,43 @@
+# Human-Guided Experiment
+# Date: 2025-10-08T14:54:12.580369
+# Agent: ollama
+# Task: Write a C++ function that reverses a string using STL
+
+======================================================================
+PROMPT:
+Task: Write a C++ function that reverses a string using STL
+
+Generate output following these guidelines:
+- Be clear and concise
+- Show your reasoning
+- Provide concrete examples if applicable
+
+Output:
+
+======================================================================
+RESPONSE:
+cpp
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+// Function to reverse a string using the STL's reverse function
+string reverseString(string str) {
+  reverse(str.begin(), str.end());
+  return str;
+}
+
+int main() {
+  string str1 = "hello";
+  string str2 = "world";
+
+  cout << "Original string: " << str1 << endl;
+  cout << "Reversed string: " << reverseString(str1) << endl;
+
+  cout << "Original string: " << str2 << endl;
+  cout << "Reversed string: " << reverseString(str2) << endl;
+
+  return 0;
+}

@@ -1,0 +1,8 @@
+{
+  "render_fps": 0.0,
+  "cpp_python_latency_ms": null,
+  "ui_uptime_pct": null,
+  "state_restore_sec": null,
+  "metadata_rate_ctx_per_min": null,
+  "_stub": true
+}

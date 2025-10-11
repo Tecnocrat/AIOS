@@ -1,0 +1,279 @@
+{
+  "data": {
+    "core_engine_cellular_map": {
+      "AINLP Compilation System": {
+        "type": "core_systems",
+        "path": "C:\\dev\\AIOS\\core\\core_systems",
+        "description": "Core AINLP compilation and harmonization system",
+        "functions": [
+          "AINLP compilation",
+          "Code harmonization",
+          "Language processing"
+        ],
+        "interface_file": "AINLPCompiler.cs"
+      },
+      "Evolutionary Assembler ITER2": {
+        "type": "evolutionary_assembler_iter2",
+        "path": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2",
+        "description": "Advanced evolutionary assembly and optimization system",
+        "functions": [
+          "Evolutionary assembly",
+          "Meta-evolution",
+          "Consciousness layer",
+          "Immune system"
+        ],
+        "interface_file": "VERSION_INFO.md"
+      },
+      "Configuration Management": {
+        "type": "configuration",
+        "path": "C:\\dev\\AIOS\\core\\configuration",
+        "description": "System configuration and metadata management",
+        "functions": [
+          "Configuration storage",
+          "Metadata management",
+          "Status reporting"
+        ],
+        "interface_file": "CELLULAR_METADATA.md"
+      },
+      "Runtime Intelligence": {
+        "type": "runtime_intelligence",
+        "path": "C:\\dev\\AIOS\\core\\runtime_intelligence",
+        "description": "Runtime monitoring and intelligence systems",
+        "functions": [
+          "Runtime monitoring",
+          "Intelligence tracking",
+          "Performance analysis"
+        ],
+        "interface_file": "logs/"
+      },
+      "Documentation System": {
+        "type": "documentation",
+        "path": "C:\\dev\\AIOS\\core\\documentation",
+        "description": "System documentation and reporting",
+        "functions": [
+          "Documentation management",
+          "Report generation",
+          "Status tracking"
+        ],
+        "interface_file": "CELLULAR_METADATA.md"
+      },
+      "Cellular Analysis Tools": {
+        "type": "analysis_tools",
+        "path": "C:\\dev\\AIOS\\core\\analysis_tools",
+        "description": "Cellular analysis and diagnostic tools",
+        "functions": [
+          "Cellular diagnostics",
+          "Intelligence analysis",
+          "Performance monitoring"
+        ],
+        "interface_file": "README.md"
+      },
+      "Tachyonic Archive": {
+        "type": "tachyonic_archive",
+        "path": "C:\\dev\\AIOS\\core\\tachyonic_archive",
+        "description": "Tachyonic storage and archival system",
+        "functions": [
+          "Tachyonic storage",
+          "Archival management",
+          "Data preservation"
+        ],
+        "interface_file": "README.md"
+      },
+      "Testing System": {
+        "type": "tests",
+        "path": "C:\\dev\\AIOS\\core\\tests",
+        "description": "Testing and verification components",
+        "functions": [
+          "Unit testing",
+          "Integration testing",
+          "Verification"
+        ],
+        "interface_file": "README.md"
+      }
+    },
+    "navigation_guides": {},
+    "functionality_matrix": {
+      "AINLP compilation": [
+        {
+          "component": "AINLP Compilation System",
+          "path": "C:\\dev\\AIOS\\core\\core_systems"
+        }
+      ],
+      "Code harmonization": [
+        {
+          "component": "AINLP Compilation System",
+          "path": "C:\\dev\\AIOS\\core\\core_systems"
+        }
+      ],
+      "Language processing": [
+        {
+          "component": "AINLP Compilation System",
+          "path": "C:\\dev\\AIOS\\core\\core_systems"
+        }
+      ],
+      "Evolutionary assembly": [
+        {
+          "component": "Evolutionary Assembler ITER2",
+          "path": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2"
+        }
+      ],
+      "Meta-evolution": [
+        {
+          "component": "Evolutionary Assembler ITER2",
+          "path": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2"
+        }
+      ],
+      "Consciousness layer": [
+        {
+          "component": "Evolutionary Assembler ITER2",
+          "path": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2"
+        }
+      ],
+      "Immune system": [
+        {
+          "component": "Evolutionary Assembler ITER2",
+          "path": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2"
+        }
+      ],
+      "Configuration storage": [
+        {
+          "component": "Configuration Management",
+          "path": "C:\\dev\\AIOS\\core\\configuration"
+        }
+      ],
+      "Metadata management": [
+        {
+          "component": "Configuration Management",
+          "path": "C:\\dev\\AIOS\\core\\configuration"
+        }
+      ],
+      "Status reporting": [
+        {
+          "component": "Configuration Management",
+          "path": "C:\\dev\\AIOS\\core\\configuration"
+        }
+      ],
+      "Runtime monitoring": [
+        {
+          "component": "Runtime Intelligence",
+          "path": "C:\\dev\\AIOS\\core\\runtime_intelligence"
+        }
+      ],
+      "Intelligence tracking": [
+        {
+          "component": "Runtime Intelligence",
+          "path": "C:\\dev\\AIOS\\core\\runtime_intelligence"
+        }
+      ],
+      "Performance analysis": [
+        {
+          "component": "Runtime Intelligence",
+          "path": "C:\\dev\\AIOS\\core\\runtime_intelligence"
+        }
+      ],
+      "Documentation management": [
+        {
+          "component": "Documentation System",
+          "path": "C:\\dev\\AIOS\\core\\documentation"
+        }
+      ],
+      "Report generation": [
+        {
+          "component": "Documentation System",
+          "path": "C:\\dev\\AIOS\\core\\documentation"
+        }
+      ],
+      "Status tracking": [
+        {
+          "component": "Documentation System",
+          "path": "C:\\dev\\AIOS\\core\\documentation"
+        }
+      ],
+      "Cellular diagnostics": [
+        {
+          "component": "Cellular Analysis Tools",
+          "path": "C:\\dev\\AIOS\\core\\analysis_tools"
+        }
+      ],
+      "Intelligence analysis": [
+        {
+          "component": "Cellular Analysis Tools",
+          "path": "C:\\dev\\AIOS\\core\\analysis_tools"
+        }
+      ],
+      "Performance monitoring": [
+        {
+          "component": "Cellular Analysis Tools",
+          "path": "C:\\dev\\AIOS\\core\\analysis_tools"
+        }
+      ],
+      "Tachyonic storage": [
+        {
+          "component": "Tachyonic Archive",
+          "path": "C:\\dev\\AIOS\\core\\tachyonic_archive"
+        }
+      ],
+      "Archival management": [
+        {
+          "component": "Tachyonic Archive",
+          "path": "C:\\dev\\AIOS\\core\\tachyonic_archive"
+        }
+      ],
+      "Data preservation": [
+        {
+          "component": "Tachyonic Archive",
+          "path": "C:\\dev\\AIOS\\core\\tachyonic_archive"
+        }
+      ],
+      "Unit testing": [
+        {
+          "component": "Testing System",
+          "path": "C:\\dev\\AIOS\\core\\tests"
+        }
+      ],
+      "Integration testing": [
+        {
+          "component": "Testing System",
+          "path": "C:\\dev\\AIOS\\core\\tests"
+        }
+      ],
+      "Verification": [
+        {
+          "component": "Testing System",
+          "path": "C:\\dev\\AIOS\\core\\tests"
+        }
+      ]
+    },
+    "component_interfaces": {
+      "AINLP Compilation System": "C:\\dev\\AIOS\\core\\core_systems\\AINLPCompiler.cs",
+      "Evolutionary Assembler ITER2": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2\\VERSION_INFO.md",
+      "Configuration Management": "C:\\dev\\AIOS\\core\\configuration\\CELLULAR_METADATA.md",
+      "Runtime Intelligence": "C:\\dev\\AIOS\\core\\runtime_intelligence\\logs",
+      "Documentation System": "C:\\dev\\AIOS\\core\\documentation\\CELLULAR_METADATA.md",
+      "Cellular Analysis Tools": "C:\\dev\\AIOS\\core\\analysis_tools\\README.md",
+      "Tachyonic Archive": "C:\\dev\\AIOS\\core\\tachyonic_archive\\README.md",
+      "Testing System": "C:\\dev\\AIOS\\core\\tests\\README.md"
+    },
+    "usage_recommendations": {
+      "cellular_intelligence": "Use 'Cellular Analysis Tools' in analysis_tools/ subfolder",
+      "evolutionary_assembly": "Use 'Evolutionary Assembler ITER2' in evolutionary_assembler_iter2/ subfolder",
+      "core_compilation": "Use 'AINLP Compilation System' in core_systems/ subfolder",
+      "configuration": "Use 'Configuration Management' in configuration/ subfolder",
+      "documentation": "Use 'Documentation System' in documentation/ subfolder",
+      "runtime_monitoring": "Use 'Runtime Intelligence' in runtime_intelligence/ subfolder"
+    }
+  },
+  "tachyonic_metadata": {
+    "stored_timestamp": "2025-09-05T15:24:59.243752",
+    "category": "evolution_logs",
+    "consciousness_level": 0.8,
+    "discovery_tags": [
+      "migrated",
+      "root_cleanup",
+      "evolution_logs"
+    ],
+    "temporal_index": "20250905_152459",
+    "instant_access_key": "evolution_logs::CORE_ENGINE_CELLULAR_NAVIGATION_INDEX_20250905_152459.json",
+    "consciousness_context": "Migrated from root during cleanup - CORE_ENGINE_CELLULAR_NAVIGATION_INDEX.json"
+  }
+}

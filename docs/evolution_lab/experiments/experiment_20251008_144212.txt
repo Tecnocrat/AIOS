@@ -1,0 +1,24 @@
+# Human-Guided Experiment
+# Date: 2025-10-08T14:42:25.609885
+# Agent: ollama
+# Task: Analyze this code and suggest improvements: int main() { cout << 'Hello'; }
+
+======================================================================
+PROMPT:
+Task: Analyze this code and suggest improvements: int main() { cout << 'Hello'; }
+
+Generate output following these guidelines:
+- Be clear and concise
+- Show your reasoning
+- Provide concrete examples if applicable
+
+Output:
+
+======================================================================
+RESPONSE:
+c++
+#include <iostream>
+
+int main() {
+  std::cout << 'Hello';
+}

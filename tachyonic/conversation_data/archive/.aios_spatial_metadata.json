@@ -1,0 +1,192 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:38.394081",
+  "folder_info": {
+    "name": "archive",
+    "absolute_path": "C:\\dev\\AIOS\\chatgpt_integration\\ingestion\\archive",
+    "relative_path": "chatgpt_integration\\ingestion\\archive",
+    "parent_path": "chatgpt_integration\\ingestion",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "chatgpt_integration",
+      "ingestion",
+      "archive"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [
+      "csv",
+      "json",
+      "txt",
+      "xml"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 3815699,
+      "file_count": 94,
+      "folder_count": 4,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".csv": [
+        {
+          "name": "chatgpt.csv",
+          "size": 58376,
+          "modified": "2025-08-02T17:32:45.126452",
+          "category": "other"
+        },
+        {
+          "name": "copilot.csv",
+          "size": 39180,
+          "modified": "2025-08-02T17:32:45.132477",
+          "category": "other"
+        },
+        {
+          "name": "gemini.csv",
+          "size": 19,
+          "modified": "2025-08-02T17:32:45.178209",
+          "category": "other"
+        },
+        {
+          "name": "VSCopilot.csv",
+          "size": 30497,
+          "modified": "2025-08-02T17:32:45.122437",
+          "category": "other"
+        }
+      ],
+      ".json": [
+        {
+          "name": "chatgpt.json",
+          "size": 59795,
+          "modified": "2025-08-02T17:32:45.126452",
+          "category": "documentation"
+        },
+        {
+          "name": "copilot.json",
+          "size": 39590,
+          "modified": "2025-08-02T17:32:45.132477",
+          "category": "documentation"
+        },
+        {
+          "name": "gemini.json",
+          "size": 23,
+          "modified": "2025-08-02T17:32:45.178209",
+          "category": "documentation"
+        },
+        {
+          "name": "VSCopilot.json",
+          "size": 30652,
+          "modified": "2025-08-02T17:32:45.122437",
+          "category": "documentation"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "chatgpt.txt",
+          "size": 58357,
+          "modified": "2025-08-02T17:32:45.128461",
+          "category": "documentation"
+        },
+        {
+          "name": "copilot.txt",
+          "size": 39161,
+          "modified": "2025-08-02T17:32:45.134483",
+          "category": "documentation"
+        },
+        {
+          "name": "VSCopilot.txt",
+          "size": 30478,
+          "modified": "2025-08-02T17:32:45.124445",
+          "category": "documentation"
+        }
+      ],
+      ".xml": [
+        {
+          "name": "chatgpt.xml",
+          "size": 58441,
+          "modified": "2025-08-02T17:32:45.130469",
+          "category": "other"
+        },
+        {
+          "name": "copilot.xml",
+          "size": 39245,
+          "modified": "2025-08-02T17:32:45.134483",
+          "category": "other"
+        },
+        {
+          "name": "gemini.xml",
+          "size": 84,
+          "modified": "2025-08-02T17:32:45.180228",
+          "category": "other"
+        },
+        {
+          "name": "VSCopilot.xml",
+          "size": 30562,
+          "modified": "2025-08-02T17:32:45.124445",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 15,
+      "file_types": [
+        ".csv",
+        ".json",
+        ".txt",
+        ".xml"
+      ],
+      "dominant_type": ".csv"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "chatgpt_integration > ingestion > archive",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\chatgpt_integration\\ingestion\\archive' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\chatgpt_integration\\ingestion\\archive' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\chatgpt_integration\\ingestion\\archive' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "chatgpt_integration",
+      "docs\\chatgpt_integration",
+      "chatgpt_integration\\ingestion",
+      "test_results\\code_ingestion",
+      "tachyonic\\archive\\ingestion",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

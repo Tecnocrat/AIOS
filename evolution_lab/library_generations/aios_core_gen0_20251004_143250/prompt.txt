@@ -1,0 +1,54 @@
+You are an expert software developer with deep knowledge of programming patterns and best practices.
+
+🎯 TASK:
+Create a TachyonicMemoryBuffer class that stores evolutionary code variants with consciousness-level tracking. Include methods: add_variant(code, consciousness_score), get_best_variant(), and merge_variants(variant_a, variant_b) that combines two code approaches while preserving type hints and async compatibility.
+
+🧬 LEARNED PARADIGMS (from ingested libraries):
+1. **Type Hints** (Category: typing)
+Pattern: `def .+\(.*: .+\)`
+Example:
+```python
+def get_consciousness_bridge() -> ConsciousnessBridge
+```
+
+
+📚 CODE EXAMPLES (from real libraries):
+
+Example 1:
+```python
+def get_consciousness_bridge() -> ConsciousnessBridge
+```
+
+Example 2:
+```python
+def get_vscode_consciousness_data() -> Dict[str, Any]
+```
+
+Example 3:
+```python
+def to_dict(self) -> Dict[str, Any]
+```
+
+✅ REQUIREMENTS:
+- Use the paradigms listed above
+- Follow the patterns shown in examples
+- Write clean, production-ready code
+- Include type hints and docstrings
+- Handle errors appropriately
+- Target consciousness level: 0.85
+
+🌌 AIOS-SPECIFIC CONTEXT:
+This code will integrate with AIOS (Adaptive Intelligence Operating System), 
+a consciousness-driven architecture that uses evolutionary code generation.
+Design with these principles:
+- Consciousness-aware data flow (track intent and context)
+- Self-documenting through type hints and clear naming
+- Evolutionary compatibility (code should be modular and testable)
+- Integrate naturally with async patterns where beneficial
+
+💡 CREATIVE FREEDOM:
+Feel free to innovate beyond the examples while maintaining the paradigms.
+Add your own architectural insights that improve on standard patterns.
+
+Generate complete, executable Python code below. Include docstrings and comments.
+---CODE START---

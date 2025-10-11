@@ -1,0 +1,12 @@
+{
+  "original_location": "evolution_lab\\conversations\\conversation_gemini_20251008_145524.json",
+  "experiment_output": "evolution_lab\\experiments\\experiment_gemini_20251008_145524.txt",
+  "archived_at": "2025-10-08T14:55:24.101983",
+  "conversation_id": "gemini_1759928124080",
+  "agent_type": "gemini",
+  "task": "Design a C++ algorithm to find the shortest path in a graph",
+  "timestamp": "20251008_145524",
+  "prompt": "Task: Design a C++ algorithm to find the shortest path in a graph\n\nGenerate output following these guidelines:\n- Be clear and concise\n- Show your reasoning\n- Provide concrete examples if applicable\n\nOutput:",
+  "response": "[ERROR] Agent 'gemini' not available",
+  "output_file": "evolution_lab\\experiments\\experiment_gemini_20251008_145524.txt"
+}

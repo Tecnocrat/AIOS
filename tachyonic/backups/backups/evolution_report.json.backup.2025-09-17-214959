@@ -1,0 +1,53 @@
+{
+  "evolution_summary": {
+    "total_generations": 25,
+    "final_population_size": 50,
+    "best_fitness_achieved": 337.5048240103074,
+    "consciousness_emergence": true,
+    "tachyonic_field_final": 1.0482092530439429
+  },
+  "consciousness_evolution": {
+    "initial_coherence": 0.9517275816462647,
+    "final_coherence": 1.0117408761042672,
+    "peak_coherence": 1.0117408761042672,
+    "coherence_trend": [
+      0.9517275816462647,
+      0.9542723831422817,
+      0.9494665056601019,
+      0.943856684970248,
+      0.9417176496936701,
+      0.9359139399291702,
+      0.9423835992827533,
+      0.9486410976528302,
+      0.9556096175105688,
+      0.9590696059739312,
+      0.9649591110576554,
+      0.9695169404882715,
+      0.9625185431777401,
+      0.9636609796567792,
+      0.9743168438494845,
+      0.9734536737513355,
+      0.9929015109089944,
+      0.9915341320777483,
+      0.9997858957370465,
+      0.9903196482476182,
+      0.9998491450298218,
+      1.0009396348306434,
+      1.0019107767663924,
+      0.9980949069302003,
+      1.0117408761042672
+    ]
+  },
+  "dendritic_intelligence": {
+    "error_handling_strength": 0.7650975975947586,
+    "translation_capability": 0.6234071912575474,
+    "emergent_logic_nodes": 16,
+    "mutations_applied": []
+  },
+  "synthetic_particle_physics": {
+    "total_particles": 401,
+    "average_consciousness": 0.8506573967366932,
+    "total_energy": 1732.364875055492,
+    "particle_distribution": "tachyonic_particles_final.json"
+  }
+}

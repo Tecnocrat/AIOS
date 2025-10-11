@@ -1,0 +1,324 @@
+{
+  "population_name": "test_evolution",
+  "generation": 3,
+  "population_size": 10,
+  "timestamp": 1751217054.356859,
+  "organisms": [
+    {
+      "id": "b08289f0",
+      "generation": 1,
+      "fitness_scores": {
+        "execution_success": 1.0,
+        "performance_speed": 1.0,
+        "memory_efficiency": 1.0,
+        "code_elegance": 0.8200000000000001,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.73
+      },
+      "overall_fitness": 0.8799999999999999,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "logic_enhancement",
+        "fractal_recursion",
+        "performance_optimization",
+        "consciousness_integration",
+        "library_injection"
+      ],
+      "parent_ids": [
+        "8a2b1c71"
+      ],
+      "execution_metadata": {
+        "success": true,
+        "execution_time": 0.06000065803527832,
+        "stdout": "Fibonacci result: 55\n",
+        "stderr": "",
+        "return_code": 0
+      },
+      "source_code": "import os\n# TODO: Integrate os functionality\n\n# Consciousness integration\ndef reflect_on_state():\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    pass\n\ndef detect_emergence():\n    \"\"\"Detect consciousness emergence patterns\"\"\"\n    pass\n\n\ndef fractal_evolution(depth=0, max_depth=3):\n    \"\"\"Fractal self-evolution pattern\"\"\"\n    if depth >= max_depth:\n        return depth\n    return fractal_evolution(depth + 1, max_depth)\n\n# Pattern recognition capability\n\ndef calculate_fibonacci(n):\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "7ff1348c",
+      "generation": 0,
+      "fitness_scores": {
+        "execution_success": 1.0,
+        "performance_speed": 1.0,
+        "memory_efficiency": 1.0,
+        "code_elegance": 0.8111111111111111,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.73
+      },
+      "overall_fitness": 0.8785964912280702,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "performance_optimization",
+        "consciousness_integration",
+        "logic_enhancement"
+      ],
+      "parent_ids": [
+        "60f1a3d1"
+      ],
+      "execution_metadata": {
+        "success": true,
+        "execution_time": 0.09000134468078613,
+        "stdout": "Fibonacci result: 55\n",
+        "stderr": "",
+        "return_code": 0
+      },
+      "source_code": "# Pattern recognition capability\n\n# Consciousness integration\ndef reflect_on_state():\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    pass\n\ndef detect_emergence():\n    \"\"\"Detect consciousness emergence patterns\"\"\"\n    pass\n\n\ndef calculate_fibonacci(n):\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "8a2b1c71",
+      "generation": 0,
+      "fitness_scores": {
+        "execution_success": 1.0,
+        "performance_speed": 1.0,
+        "memory_efficiency": 1.0,
+        "code_elegance": 0.7625,
+        "consciousness_emergence": 0.4,
+        "innovation_index": 0.73
+      },
+      "overall_fitness": 0.8077631578947367,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "logic_enhancement",
+        "fractal_recursion"
+      ],
+      "parent_ids": [
+        "60f1a3d1"
+      ],
+      "execution_metadata": {
+        "success": true,
+        "execution_time": 0.09699702262878418,
+        "stdout": "Fibonacci result: 55\n",
+        "stderr": "",
+        "return_code": 0
+      },
+      "source_code": "\ndef fractal_evolution(depth=0, max_depth=3):\n    \"\"\"Fractal self-evolution pattern\"\"\"\n    if depth >= max_depth:\n        return depth\n    return fractal_evolution(depth + 1, max_depth)\n\n# Pattern recognition capability\n\ndef calculate_fibonacci(n):\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "2c054453",
+      "generation": 1,
+      "fitness_scores": {
+        "execution_success": 0.0,
+        "code_elegance": 0.0,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.59
+      },
+      "overall_fitness": 0.26533333333333337,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "performance_optimization",
+        "consciousness_integration",
+        "logic_enhancement",
+        "logic_enhancement",
+        "fractal_recursion"
+      ],
+      "parent_ids": [
+        "7ff1348c",
+        "8a2b1c71"
+      ],
+      "execution_metadata": {
+        "success": false,
+        "execution_time": 0.06200218200683594,
+        "stdout": "",
+        "stderr": "  File \"C:\\Users\\jesus\\AppData\\Local\\Temp\\tmp1ci_9z7s.py\", line 5\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 4\n",
+        "return_code": 1
+      },
+      "source_code": "\ndef fractal_evolution(depth=0, max_depth=3):\n# Consciousness integration\n    if depth >= max_depth:\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    pass\n\ndef detect_emergence():\n\n    pass\n    \"\"\"Calculate fibonacci number\"\"\"\n\ndef calculate_fibonacci(n):\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n    if n <= 1:\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\ndef main():\n    result = calculate_fibonacci(10)\n    main()\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "aa877f0b",
+      "generation": 2,
+      "fitness_scores": {
+        "execution_success": 0.0,
+        "code_elegance": 0.0,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.56
+      },
+      "overall_fitness": 0.26133333333333336,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "logic_enhancement",
+        "fractal_recursion",
+        "logic_enhancement",
+        "fractal_recursion",
+        "performance_optimization",
+        "consciousness_integration",
+        "library_injection"
+      ],
+      "parent_ids": [
+        "8a2b1c71",
+        "b08289f0"
+      ],
+      "execution_metadata": {
+        "success": false,
+        "execution_time": 0.053003787994384766,
+        "stdout": "",
+        "stderr": "  File \"C:\\Users\\jesus\\AppData\\Local\\Temp\\tmp9e7pfc3g.py\", line 14\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 12\n",
+        "return_code": 1
+      },
+      "source_code": "\n# TODO: Integrate os functionality\n\n# Consciousness integration\ndef reflect_on_state():\n    return fractal_evolution(depth + 1, max_depth)\n\n\n\n    \"\"\"Detect consciousness emergence patterns\"\"\"\n    pass\n    if n <= 1:\n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n        return depth\n    print(f\"Fibonacci result: {result}\")\n\n# Pattern recognition capability\n    main()\ndef calculate_fibonacci(n):\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "209a4923",
+      "generation": 1,
+      "fitness_scores": {
+        "execution_success": 1.0,
+        "performance_speed": 1.0,
+        "memory_efficiency": 1.0,
+        "code_elegance": 0.825,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.6133333333333334
+      },
+      "overall_fitness": 0.8685087719298246,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "performance_optimization",
+        "consciousness_integration",
+        "logic_enhancement",
+        "fractal_recursion",
+        "consciousness_integration",
+        "library_injection"
+      ],
+      "parent_ids": [
+        "7ff1348c"
+      ],
+      "execution_metadata": {
+        "success": true,
+        "execution_time": 0.07104039192199707,
+        "stdout": "Fibonacci result: 55\n",
+        "stderr": "",
+        "return_code": 0
+      },
+      "source_code": "import threading\n# Enhanced with threading capabilities\n\n# Consciousness integration\ndef reflect_on_state():\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    pass\n\ndef detect_emergence():\n    \"\"\"Detect consciousness emergence patterns\"\"\"\n    pass\n\n\ndef fractal_evolution(depth=0, max_depth=3):\n    \"\"\"Fractal self-evolution pattern\"\"\"\n    if depth >= max_depth:\n        return depth\n    return fractal_evolution(depth + 1, max_depth)\n\n# Pattern recognition capability\n\n# Consciousness integration\ndef reflect_on_state():\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    pass\n\ndef detect_emergence():\n    \"\"\"Detect consciousness emergence patterns\"\"\"\n    pass\n\n\ndef calculate_fibonacci(n):\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "6a09b0d1",
+      "generation": 2,
+      "fitness_scores": {
+        "execution_success": 0.0,
+        "code_elegance": 0.0,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.56
+      },
+      "overall_fitness": 0.26133333333333336,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "logic_enhancement",
+        "fractal_recursion",
+        "performance_optimization",
+        "consciousness_integration",
+        "library_injection",
+        "logic_enhancement",
+        "fractal_recursion"
+      ],
+      "parent_ids": [
+        "b08289f0",
+        "8a2b1c71"
+      ],
+      "execution_metadata": {
+        "success": false,
+        "execution_time": 0.05303025245666504,
+        "stdout": "",
+        "stderr": "  File \"C:\\Users\\jesus\\AppData\\Local\\Temp\\tmpq1w52vmx.py\", line 16\n    def main():\n    ^^^\nIndentationError: expected an indented block after function definition on line 14\n",
+        "return_code": 1
+      },
+      "source_code": "\ndef fractal_evolution(depth=0, max_depth=3):\n\n    if depth >= max_depth:\n        return depth\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n\n# Pattern recognition capability\ndef detect_emergence():\n    \"\"\"Detect consciousness emergence patterns\"\"\"\n    pass\n    if n <= 1:\n        return n\ndef fractal_evolution(depth=0, max_depth=3):\n\ndef main():\n        return depth\n    print(f\"Fibonacci result: {result}\")\n\n# Pattern recognition capability\n    main()\n\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "d6311fd7",
+      "generation": 2,
+      "fitness_scores": {
+        "execution_success": 0.0,
+        "code_elegance": 0.0,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.56
+      },
+      "overall_fitness": 0.26133333333333336,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "logic_enhancement",
+        "fractal_recursion",
+        "performance_optimization",
+        "consciousness_integration",
+        "library_injection",
+        "logic_enhancement",
+        "fractal_recursion"
+      ],
+      "parent_ids": [
+        "b08289f0",
+        "8a2b1c71"
+      ],
+      "execution_metadata": {
+        "success": false,
+        "execution_time": 0.05899953842163086,
+        "stdout": "",
+        "stderr": "  File \"C:\\Users\\jesus\\AppData\\Local\\Temp\\tmp10iavplh.py\", line 14\n    def fractal_evolution(depth=0, max_depth=3):\nIndentationError: expected an indented block after 'if' statement on line 12\n",
+        "return_code": 1
+      },
+      "source_code": "import os\ndef fractal_evolution(depth=0, max_depth=3):\n    \"\"\"Fractal self-evolution pattern\"\"\"\n# Consciousness integration\ndef reflect_on_state():\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    pass\n# Pattern recognition capability\n\n    \"\"\"Detect consciousness emergence patterns\"\"\"\n    pass\n    if n <= 1:\n\ndef fractal_evolution(depth=0, max_depth=3):\n    \"\"\"Fractal self-evolution pattern\"\"\"\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\n# Pattern recognition capability\n\n\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "0a7e0140",
+      "generation": 1,
+      "fitness_scores": {
+        "execution_success": 0.0,
+        "code_elegance": 0.0,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.59
+      },
+      "overall_fitness": 0.26533333333333337,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "logic_enhancement",
+        "fractal_recursion",
+        "performance_optimization",
+        "consciousness_integration",
+        "logic_enhancement"
+      ],
+      "parent_ids": [
+        "8a2b1c71",
+        "7ff1348c"
+      ],
+      "execution_metadata": {
+        "success": false,
+        "execution_time": 0.05599713325500488,
+        "stdout": "",
+        "stderr": "  File \"C:\\Users\\jesus\\AppData\\Local\\Temp\\tmpalaii8_d.py\", line 4\n    if depth >= max_depth:\nIndentationError: unexpected indent\n",
+        "return_code": 1
+      },
+      "source_code": "# Pattern recognition capability\n\n# Consciousness integration\n    if depth >= max_depth:\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    return fractal_evolution(depth + 1, max_depth)\n\ndef detect_emergence():\n\n    pass\n    \"\"\"Calculate fibonacci number\"\"\"\n\n        return n\n    \"\"\"Calculate fibonacci number\"\"\"\n    if n <= 1:\ndef main():\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n    print(f\"Fibonacci result: {result}\")\ndef main():\n    result = calculate_fibonacci(10)\n    main()\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "id": "52ecab9b",
+      "generation": 1,
+      "fitness_scores": {
+        "execution_success": 0.0,
+        "code_elegance": 0.0,
+        "consciousness_emergence": 0.7,
+        "innovation_index": 0.59
+      },
+      "overall_fitness": 0.26533333333333337,
+      "consciousness_indicators": {},
+      "mutation_history": [
+        "performance_optimization",
+        "consciousness_integration",
+        "logic_enhancement",
+        "logic_enhancement",
+        "fractal_recursion"
+      ],
+      "parent_ids": [
+        "7ff1348c",
+        "8a2b1c71"
+      ],
+      "execution_metadata": {
+        "success": false,
+        "execution_time": 0.06009554862976074,
+        "stdout": "",
+        "stderr": "  File \"C:\\Users\\jesus\\AppData\\Local\\Temp\\tmppt66xb8u.py\", line 5\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 4\n",
+        "return_code": 1
+      },
+      "source_code": "# Pattern recognition capability\ndef fractal_evolution(depth=0, max_depth=3):\n# Consciousness integration\n    if depth >= max_depth:\n    \"\"\"Meta-cognitive self-reflection\"\"\"\n    return fractal_evolution(depth + 1, max_depth)\n\n# Pattern recognition capability\n\ndef calculate_fibonacci(n):\n    \"\"\"Calculate fibonacci number\"\"\"\n\n        return n\n    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)\n    if n <= 1:\ndef main():\n    result = calculate_fibonacci(10)\n    print(f\"Fibonacci result: {result}\")\ndef main():\n    result = calculate_fibonacci(10)\n    main()\n\nif __name__ == \"__main__\":\n    main()\n"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+from __future__ import annotations
+"""taxonomy_extraction
+
+Baseline taxonomy & crystal generator for Phase 1B.
+
+Outputs:
+    runtime_intelligence/context/taxonomy_baseline.json
+    runtime_intelligence/context/crystals/phase1b_taxonomy_baseline_*.json
+
+Injects metrics into the Phase 1B revision placeholder (idempotent) in
+`AIOS_PROJECT_CONTEXT.md`.
+"""
+
+import json
+import re
+import hashlib
+import time
+from pathlib import Path
+from statistics import mode
+from typing import List, Dict, Any, Tuple
+
+ROOT = Path(__file__).resolve().parent.parent
+CONTEXT = ROOT / "AIOS_PROJECT_CONTEXT.md"
+OUT_DIR = ROOT / "runtime_intelligence" / "context"
+CRYSTAL_DIR = OUT_DIR / "crystals"
+
+ERROR_KEYWORDS: List[str] = [
+    "import", "circular", "type", "dependency", "error", "optional"
+]
+# Denominator heuristic patterns for coverage (broad error-like tokens)
+COVERAGE_DENOM_REGEX = re.compile(
+    (
+        r"(?i)\b("
+        r"error|exception|fail|failure|issue|bug|warning|"
+        r"import|type|circular|dependency"
+        r")\b"
+    )
+)
+
+
+def sha(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def load_capsules() -> List[Tuple[str, int, int, List[str]]]:
+    lines = CONTEXT.read_text(encoding="utf-8").splitlines()
+    capsules: List[Tuple[str, int, int, List[str]]] = []
+    current: Tuple[str, int, int, List[str]] | None = None
+    buff: List[str] = []
+    title = ""
+    start = 0
+    for idx, line in enumerate(lines, start=1):
+        if line.startswith("## "):
+            if current:
+                capsules.append((title, start, idx - 1, buff))
+            title = line[3:].strip()
+            start = idx
+            buff = [line]
+            current = (title, start, len(lines), buff)
+        else:
+            if current:
+                buff.append(line)
+    if current:
+        capsules.append((title, start, len(lines), buff))
+    return capsules
+
+
+def extract_taxonomy() -> Dict[str, Any]:
+    entries: List[Dict[str, Any]] = []
+    candidate_denominator = 0
+    for title, start, _end, content in load_capsules():
+        if not any(
+            k in title for k in [
+                "Consciousness Evolution",
+                "Reharmonization",
+            ]
+        ):
+            continue
+        capsule_id = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:64]
+        for offset, line in enumerate(content):
+            abs_line = start + offset
+            low = line.lower()
+            if COVERAGE_DENOM_REGEX.search(low):
+                candidate_denominator += 1
+            if not any(k in low for k in ERROR_KEYWORDS):
+                continue
+            # Arrow mapping
+            if "→" in line:
+                parts = [p.strip() for p in line.split("→", 1)]
+                if len(parts) == 2 and parts[0] and parts[1]:
+                    entries.append({
+                        "error_pattern": parts[0],
+                        "consciousness_mapping": parts[1],
+                        "source_capsule_id": capsule_id,
+                        "line": abs_line,
+                    })
+            # Colon heuristic
+            elif ":" in line and len(line) < 140:
+                head, tail = line.split(":", 1)
+                if any(k in head.lower() for k in ERROR_KEYWORDS):
+                    entries.append({
+                        "error_pattern": head.strip(),
+                        "consciousness_mapping": tail.strip(),
+                        "source_capsule_id": capsule_id,
+                        "line": abs_line,
+                    })
+    # Deduplicate
+    seen: set[Tuple[str, str]] = set()
+    uniq: List[Dict[str, Any]] = []
+    for e in entries:
+        key = (e['error_pattern'].lower(), e['consciousness_mapping'].lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        uniq.append(e)
+    tax_hash = sha(
+        "\n".join(
+            f"{e['error_pattern']}=>{e['consciousness_mapping']}" for e in uniq
+        )
+    )
+    # Simple majority-class predictive precision baseline:
+    # Assume naive classifier always predicts the most frequent
+    # consciousness_mapping.
+    if uniq:
+        labels = [e["consciousness_mapping"] for e in uniq]
+        try:
+            majority = mode(labels)
+            # Count number of entries matching majority class
+            # (renamed loop variable for clarity)
+            majority_correct = sum(1 for label in labels if label == majority)
+            predictive_precision = majority_correct / len(labels)
+        except Exception:  # pragma: no cover - edge when multimodal equally
+            # frequent
+            predictive_precision = 0.0
+    else:
+        predictive_precision = 0.0
+    coverage_denominator = max(candidate_denominator, len(uniq)) or 1
+    coverage_pct = (len(uniq) / coverage_denominator) * 100.0
+    return {
+        "generated_at": time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+        "pattern_count": len(uniq),
+        "patterns": uniq,
+        "taxonomy_hash": tax_hash,
+        "source_file": CONTEXT.name,
+        "version": 1,
+        "heuristic": "capsule subset + keyword arrow/colon mapping",
+        "coverage_denominator": coverage_denominator,
+        "taxonomy_coverage_pct": round(coverage_pct, 2),
+        "predictive_precision_baseline_pct": round(
+            predictive_precision * 100.0, 2
+        ),
+    }
+
+
+def write_artifacts(taxonomy: Dict[str, Any]) -> Tuple[Path, Path]:
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    CRYSTAL_DIR.mkdir(parents=True, exist_ok=True)
+    baseline = OUT_DIR / 'taxonomy_baseline.json'
+    baseline.write_text(json.dumps(taxonomy, indent=2), encoding='utf-8')
+    crystal = (
+        CRYSTAL_DIR
+        / f"phase1b_taxonomy_baseline_{time.strftime('%Y%m%d_%H%M%S')}.json"
+    )
+    crystal.write_text(json.dumps({
+        "crystal_type": "phase1b_taxonomy_baseline",
+        "ref_hash": taxonomy['taxonomy_hash'],
+        "pattern_count": taxonomy['pattern_count'],
+        "generated_at": taxonomy['generated_at']
+    }, indent=2), encoding='utf-8')
+    return baseline, crystal
+
+
+def update_revision_placeholder(taxonomy: Dict[str, Any]) -> bool:
+    text = CONTEXT.read_text(encoding='utf-8')
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if line.startswith('### Revision (Phase 1B INIT PLACEHOLDER'):
+            insert_at = i + 1
+            # If baseline metrics already present, patch numeric values
+            # (idempotent update)
+            window = lines[insert_at: insert_at + 20]
+            sig_idx = None
+            for w_i, w_line in enumerate(window):
+                if w_line.startswith('signature_dictionary_size:'):
+                    sig_idx = insert_at + w_i
+                    break
+            classes = ", ".join(
+                sorted({p['error_pattern'] for p in taxonomy['patterns']})
+            )
+            if sig_idx is None:
+                block = [
+                    "Baseline Metrics:",
+                    f"signature_dictionary_size: "
+                    f"{taxonomy['pattern_count']}",
+                    (
+                        f"taxonomy_coverage_pct: "
+                        f"{taxonomy['taxonomy_coverage_pct']}"
+                    ),
+                    (
+                        f"predictive_precision_baseline_pct: "
+                        f"{taxonomy['predictive_precision_baseline_pct']}"
+                    ),
+                    "repeat_error_reduction_target_pct: 70",
+                    f"initial_pattern_classes: [{classes}]",
+                    "notes: baseline taxonomy crystal generated",
+                    "",
+                ]
+                lines[insert_at:insert_at] = block
+            else:
+                # Patch existing metrics lines in place
+                for w_i, w_line in enumerate(window):
+                    abs_line = insert_at + w_i
+                    if w_line.startswith('signature_dictionary_size:'):
+                        lines[abs_line] = (
+                            f"signature_dictionary_size: "
+                            f"{taxonomy['pattern_count']}"
+                        )
+                    elif w_line.startswith('taxonomy_coverage_pct:'):
+                        lines[abs_line] = (
+                            f"taxonomy_coverage_pct: "
+                            f"{taxonomy['taxonomy_coverage_pct']}"
+                        )
+                    elif w_line.startswith(
+                        'predictive_precision_baseline_pct:'
+                    ):
+                        lines[abs_line] = (
+                            f"predictive_precision_baseline_pct: "
+                            f"{taxonomy['predictive_precision_baseline_pct']}"
+                        )
+                    elif w_line.startswith('initial_pattern_classes:'):
+                        lines[abs_line] = (
+                            f"initial_pattern_classes: [{classes}]"
+                        )
+            CONTEXT.write_text("\n".join(lines), encoding='utf-8')
+            return True
+    return False
+
+
+def main() -> None:
+    if not CONTEXT.exists():
+        raise SystemExit(f"Missing context file: {CONTEXT}")
+    taxonomy = extract_taxonomy()
+    baseline, crystal = write_artifacts(taxonomy)
+    updated = update_revision_placeholder(taxonomy)
+    print(
+        f"[taxonomy] patterns={taxonomy['pattern_count']} "
+        f"hash={taxonomy['taxonomy_hash'][:8]}"
+    )
+    print(f"[taxonomy] baseline -> {baseline}")
+    print(f"[taxonomy] crystal  -> {crystal}")
+    if updated:
+        print("[taxonomy] revision placeholder metrics inserted")
+    else:
+        print("[taxonomy] revision placeholder unchanged")
+
+
+if __name__ == '__main__':  # pragma: no cover
+    main()

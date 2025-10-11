@@ -1,0 +1,745 @@
+#!/usr/bin/env python3
+"""
+AIOS Comprehensive Codebase Analyzer
+====================================
+Location: ai/tools/aios_comprehensive_codebase_analyzer.py
+Purpose: Advanced codebase analysis combining existing AIOS tools for systematic improvement
+
+This tool integrates and enhances existing AIOS capabilities:
+- EmoticonDestroyer for unicode cleanup
+- AICodeAnalyzer for AST analysis  
+- File tracking database for function/import mapping
+- Spatial metadata system for architectural awareness
+- Automated refactoring and cleanup coordination
+
+Features:
+- Function catalog across entire codebase
+- Import correlation mapping and dependency analysis
+- Systematic emoticon cleanup using existing tools
+- Architectural pattern detection and enforcement
+- Integration with GitHook spatial metadata system
+- Performance optimization recommendations
+"""
+
+import os
+import json
+import subprocess
+import sys
+import logging
+import ast
+import re
+import importlib.util
+from pathlib import Path
+from datetime import datetime, timezone
+from typing import Dict, List, Any, Optional, Set, Tuple
+from dataclasses import dataclass, field
+import hashlib
+
+# Setup logging without emoticons
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger('AIOSCodebaseAnalyzer')
+
+@dataclass
+class FunctionCatalogEntry:
+    """Comprehensive function catalog entry"""
+    name: str
+    file_path: str
+    line_number: int
+    signature: str
+    docstring: Optional[str]
+    complexity: int
+    parameters: List[str]
+    return_type: Optional[str]
+    decorators: List[str]
+    is_method: bool
+    class_name: Optional[str]
+    module_path: str
+    hash_id: str
+    dependencies: List[str] = field(default_factory=list)
+    calls_functions: List[str] = field(default_factory=list)
+    architectural_area: Optional[str] = None
+    consciousness_level: str = "unknown"
+
+@dataclass
+class ImportCorrelation:
+    """Import dependency correlation"""
+    source_module: str
+    imported_module: str
+    import_type: str  # 'import', 'from_import', 'relative'
+    usage_count: int
+    line_numbers: List[int]
+    is_used: bool
+    suggested_action: str = "keep"
+
+@dataclass 
+class CodebaseHealth:
+    """Overall codebase health metrics"""
+    total_files: int
+    total_functions: int
+    total_classes: int
+    total_imports: int
+    emoticon_count: int
+    unicode_issues: int
+    architectural_violations: int
+    duplicate_functions: int
+    unused_imports: int
+    complexity_score: float
+    maintainability_score: float
+    consciousness_coherence: float
+
+class AIOSComprehensiveCodebaseAnalyzer:
+    """
+    Comprehensive codebase analyzer integrating existing AIOS tools
+    """
+    
+    def __init__(self, workspace_root: Path = None):
+        self.workspace_root = workspace_root or Path(__file__).parents[2]
+        self.results_dir = self.workspace_root / "ai" / "tools" / "analysis_results"
+        self.results_dir.mkdir(exist_ok=True)
+        
+        # Initialize existing AIOS tools
+        self.emoticon_destroyer = None
+        self.ai_code_analyzer = None
+        self.spatial_metadata_system = None
+        
+        # Analysis results storage
+        self.function_catalog: Dict[str, FunctionCatalogEntry] = {}
+        self.import_correlations: List[ImportCorrelation] = []
+        self.codebase_health = CodebaseHealth(
+            total_files=0, total_functions=0, total_classes=0, total_imports=0,
+            emoticon_count=0, unicode_issues=0, architectural_violations=0,
+            duplicate_functions=0, unused_imports=0, complexity_score=0.0,
+            maintainability_score=0.0, consciousness_coherence=0.0
+        )
+        
+        # Configuration
+        self.config = {
+            "include_extensions": {".py", ".cpp", ".cs", ".js", ".ts", ".h", ".hpp"},
+            "exclude_dirs": {"node_modules", ".git", "venv", "__pycache__", "build", "dist"},
+            "analysis_depth": "comprehensive",
+            "enable_cleanup": True,
+            "backup_before_changes": True
+        }
+        
+        logger.info("AIOS Comprehensive Codebase Analyzer initialized")
+        logger.info(f"Workspace: {self.workspace_root}")
+        logger.info(f"Results directory: {self.results_dir}")
+    
+    def initialize_existing_tools(self):
+        """Initialize existing AIOS tools for integration"""
+        logger.info("Initializing existing AIOS tools...")
+        
+        # Initialize EmoticonDestroyer
+        try:
+            emotikiller_path = self.workspace_root / "ai" / "laboratory" / "demos" / "emotikiller" / "python_emotikiller.py"
+            if emotikiller_path.exists():
+                spec = importlib.util.spec_from_file_location("emotikiller", emotikiller_path)
+                emotikiller_module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(emotikiller_module)
+                self.emoticon_destroyer = emotikiller_module.EmoticonDestroyer(
+                    create_backup=True, verbose=False
+                )
+                logger.info("EmoticonDestroyer tool initialized")
+            else:
+                logger.warning("EmoticonDestroyer not found, will skip emoticon cleanup")
+        except Exception as e:
+            logger.warning(f"Failed to initialize EmoticonDestroyer: {e}")
+        
+        # Initialize AICodeAnalyzer
+        try:
+            analyzer_path = self.workspace_root / "scripts" / "ai_integration_bridge.py"
+            if analyzer_path.exists():
+                spec = importlib.util.spec_from_file_location("ai_bridge", analyzer_path)
+                bridge_module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(bridge_module)
+                self.ai_code_analyzer = bridge_module.AICodeAnalyzer()
+                logger.info("AICodeAnalyzer tool initialized")
+            else:
+                logger.warning("AICodeAnalyzer not found, will use built-in analysis")
+        except Exception as e:
+            logger.warning(f"Failed to initialize AICodeAnalyzer: {e}")
+        
+        # Initialize spatial metadata system
+        try:
+            spatial_path = self.workspace_root / "ai" / "tools" / "aios_unified_spatial_metadata.py"
+            if spatial_path.exists():
+                spec = importlib.util.spec_from_file_location("spatial", spatial_path)
+                spatial_module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(spatial_module)
+                self.spatial_metadata_system = spatial_module.AIOSUnifiedSpatialMetadata(self.workspace_root)
+                logger.info("Spatial metadata system initialized")
+            else:
+                logger.warning("Spatial metadata system not found")
+        except Exception as e:
+            logger.warning(f"Failed to initialize spatial metadata system: {e}")
+    
+    def load_file_tracking_database(self) -> Dict[str, Any]:
+        """Load existing file tracking database"""
+        db_path = self.workspace_root / "core" / "runtime_intelligence" / "file_tracking_database.json"
+        
+        if not db_path.exists():
+            logger.warning("File tracking database not found")
+            return {}
+        
+        try:
+            with open(db_path, 'r', encoding='utf-8') as f:
+                db = json.load(f)
+            logger.info(f"Loaded file tracking database with {len(db.get('files', {}))} files")
+            return db
+        except Exception as e:
+            logger.error(f"Failed to load file tracking database: {e}")
+            return {}
+    
+    def analyze_python_file_comprehensive(self, file_path: Path) -> Dict[str, Any]:
+        """Comprehensive analysis of Python file using AST"""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Parse AST
+            tree = ast.parse(content)
+            
+            analysis = {
+                "functions": [],
+                "classes": [],
+                "imports": [],
+                "globals": [],
+                "complexity_metrics": {},
+                "emoticon_count": 0,
+                "unicode_issues": [],
+                "architectural_classification": "unknown"
+            }
+            
+            # Extract functions with detailed analysis
+            for node in ast.walk(tree):
+                if isinstance(node, ast.FunctionDef):
+                    func_entry = self._analyze_function_node(node, file_path, content)
+                    analysis["functions"].append(func_entry)
+                    
+                    # Add to global function catalog
+                    self.function_catalog[func_entry.hash_id] = func_entry
+                
+                elif isinstance(node, ast.ClassDef):
+                    class_info = self._analyze_class_node(node, file_path)
+                    analysis["classes"].append(class_info)
+                
+                elif isinstance(node, (ast.Import, ast.ImportFrom)):
+                    import_info = self._analyze_import_node(node, file_path)
+                    analysis["imports"].append(import_info)
+            
+            # Emoticon detection using existing tool
+            if self.emoticon_destroyer:
+                analysis["emoticon_count"] = self.emoticon_destroyer.count_emoticons(content)
+            
+            # Architectural classification using spatial metadata
+            if self.spatial_metadata_system:
+                relative_path = file_path.relative_to(self.workspace_root)
+                arch_info = self.spatial_metadata_system._classify_architectural_area(relative_path)
+                analysis["architectural_classification"] = arch_info
+            
+            return analysis
+            
+        except Exception as e:
+            logger.error(f"Failed to analyze Python file {file_path}: {e}")
+            return {"error": str(e)}
+    
+    def _analyze_function_node(self, node: ast.FunctionDef, file_path: Path, content: str) -> FunctionCatalogEntry:
+        """Detailed analysis of function AST node"""
+        
+        # Calculate function signature
+        args = [arg.arg for arg in node.args.args]
+        signature = f"{node.name}({', '.join(args)})"
+        
+        # Extract decorators
+        decorators = []
+        for decorator in node.decorator_list:
+            if isinstance(decorator, ast.Name):
+                decorators.append(decorator.id)
+            elif isinstance(decorator, ast.Attribute):
+                decorators.append(f"{decorator.value.id}.{decorator.attr}")
+        
+        # Calculate complexity (simple cyclomatic complexity)
+        complexity = self._calculate_cyclomatic_complexity(node)
+        
+        # Get docstring
+        docstring = ast.get_docstring(node)
+        
+        # Determine if it's a method and class name
+        is_method = False
+        class_name = None
+        for parent in ast.walk(ast.Module(body=[node])):
+            if isinstance(parent, ast.ClassDef):
+                is_method = True
+                class_name = parent.name
+                break
+        
+        # Create hash ID
+        func_content = f"{file_path}:{node.lineno}:{signature}"
+        hash_id = hashlib.md5(func_content.encode()).hexdigest()[:16]
+        
+        # Module path
+        try:
+            module_path = str(file_path.relative_to(self.workspace_root)).replace(os.sep, '.').replace('.py', '')
+        except ValueError:
+            module_path = str(file_path)
+        
+        return FunctionCatalogEntry(
+            name=node.name,
+            file_path=str(file_path),
+            line_number=node.lineno,
+            signature=signature,
+            docstring=docstring,
+            complexity=complexity,
+            parameters=args,
+            return_type=None,  # Would need type hints analysis
+            decorators=decorators,
+            is_method=is_method,
+            class_name=class_name,
+            module_path=module_path,
+            hash_id=hash_id
+        )
+    
+    def _analyze_class_node(self, node: ast.ClassDef, file_path: Path) -> Dict[str, Any]:
+        """Analyze class AST node"""
+        methods = []
+        for item in node.body:
+            if isinstance(item, ast.FunctionDef):
+                methods.append(item.name)
+        
+        inheritance = []
+        for base in node.bases:
+            if isinstance(base, ast.Name):
+                inheritance.append(base.id)
+            elif isinstance(base, ast.Attribute):
+                inheritance.append(f"{base.value.id}.{base.attr}")
+        
+        return {
+            "name": node.name,
+            "line_number": node.lineno,
+            "methods": methods,
+            "inheritance": inheritance,
+            "docstring": ast.get_docstring(node)
+        }
+    
+    def _analyze_import_node(self, node: ast.AST, file_path: Path) -> Dict[str, Any]:
+        """Analyze import AST node"""
+        if isinstance(node, ast.Import):
+            imports = []
+            for alias in node.names:
+                imports.append({
+                    "module": alias.name,
+                    "alias": alias.asname,
+                    "type": "import",
+                    "line": node.lineno
+                })
+            return imports
+        elif isinstance(node, ast.ImportFrom):
+            imports = []
+            for alias in node.names:
+                imports.append({
+                    "module": node.module,
+                    "name": alias.name,
+                    "alias": alias.asname,
+                    "type": "from_import",
+                    "line": node.lineno,
+                    "level": node.level
+                })
+            return imports
+        return {}
+    
+    def _calculate_cyclomatic_complexity(self, node: ast.AST) -> int:
+        """Calculate cyclomatic complexity for AST node"""
+        complexity = 1  # Base complexity
+        
+        for child in ast.walk(node):
+            if isinstance(child, (ast.If, ast.While, ast.For, ast.With, ast.Try)):
+                complexity += 1
+            elif isinstance(child, ast.BoolOp):
+                complexity += len(child.values) - 1
+            elif isinstance(child, (ast.And, ast.Or)):
+                complexity += 1
+        
+        return complexity
+    
+    def scan_entire_codebase(self) -> Dict[str, Any]:
+        """Comprehensive scan of entire AIOS codebase"""
+        logger.info("Starting comprehensive codebase scan...")
+        
+        # Initialize tools
+        self.initialize_existing_tools()
+        
+        # Load existing file tracking database
+        file_db = self.load_file_tracking_database()
+        
+        scan_results = {
+            "files_analyzed": 0,
+            "functions_cataloged": 0,
+            "imports_mapped": 0,
+            "emoticons_found": 0,
+            "unicode_issues": 0,
+            "architectural_areas": {},
+            "duplicate_functions": [],
+            "unused_imports": [],
+            "optimization_opportunities": []
+        }
+        
+        # Scan all relevant files
+        for file_path in self._find_target_files():
+            try:
+                logger.info(f"Analyzing: {file_path.relative_to(self.workspace_root)}")
+                
+                if file_path.suffix == ".py":
+                    analysis = self.analyze_python_file_comprehensive(file_path)
+                    scan_results["files_analyzed"] += 1
+                    scan_results["functions_cataloged"] += len(analysis.get("functions", []))
+                    scan_results["imports_mapped"] += len(analysis.get("imports", []))
+                    scan_results["emoticons_found"] += analysis.get("emoticon_count", 0)
+                    
+                    # Track architectural areas
+                    arch_area = analysis.get("architectural_classification", {}).get("primary_area", "unknown")
+                    if arch_area not in scan_results["architectural_areas"]:
+                        scan_results["architectural_areas"][arch_area] = 0
+                    scan_results["architectural_areas"][arch_area] += 1
+                
+            except Exception as e:
+                logger.error(f"Failed to analyze {file_path}: {e}")
+        
+        # Detect duplicates and issues
+        scan_results["duplicate_functions"] = self._find_duplicate_functions()
+        scan_results["unused_imports"] = self._find_unused_imports()
+        scan_results["optimization_opportunities"] = self._find_optimization_opportunities()
+        
+        # Update codebase health
+        self._update_codebase_health(scan_results)
+        
+        logger.info("Comprehensive codebase scan completed")
+        logger.info(f"Files analyzed: {scan_results['files_analyzed']}")
+        logger.info(f"Functions cataloged: {scan_results['functions_cataloged']}")
+        logger.info(f"Emoticons found: {scan_results['emoticons_found']}")
+        
+        return scan_results
+    
+    def _find_target_files(self) -> List[Path]:
+        """Find all target files for analysis"""
+        target_files = []
+        
+        for root, dirs, files in os.walk(self.workspace_root):
+            # Skip excluded directories
+            dirs[:] = [d for d in dirs if d not in self.config["exclude_dirs"]]
+            
+            for file in files:
+                file_path = Path(root) / file
+                if file_path.suffix in self.config["include_extensions"]:
+                    target_files.append(file_path)
+        
+        return target_files
+    
+    def _find_duplicate_functions(self) -> List[Dict[str, Any]]:
+        """Find duplicate functions across codebase"""
+        duplicates = []
+        name_groups = {}
+        
+        # Group functions by name
+        for func in self.function_catalog.values():
+            if func.name not in name_groups:
+                name_groups[func.name] = []
+            name_groups[func.name].append(func)
+        
+        # Find groups with multiple functions
+        for name, functions in name_groups.items():
+            if len(functions) > 1:
+                # Check if they're actually duplicates (same signature)
+                signature_groups = {}
+                for func in functions:
+                    if func.signature not in signature_groups:
+                        signature_groups[func.signature] = []
+                    signature_groups[func.signature].append(func)
+                
+                for signature, sig_functions in signature_groups.items():
+                    if len(sig_functions) > 1:
+                        duplicates.append({
+                            "function_name": name,
+                            "signature": signature,
+                            "locations": [{"file": f.file_path, "line": f.line_number} for f in sig_functions],
+                            "count": len(sig_functions)
+                        })
+        
+        return duplicates
+    
+    def _find_unused_imports(self) -> List[Dict[str, Any]]:
+        """Find unused imports (placeholder - would need more sophisticated analysis)"""
+        # This would require analyzing usage of imported names throughout files
+        # For now, return empty list
+        return []
+    
+    def _find_optimization_opportunities(self) -> List[Dict[str, Any]]:
+        """Find optimization opportunities"""
+        opportunities = []
+        
+        # High complexity functions
+        for func in self.function_catalog.values():
+            if func.complexity > 10:
+                opportunities.append({
+                    "type": "high_complexity",
+                    "function": func.name,
+                    "file": func.file_path,
+                    "complexity": func.complexity,
+                    "suggestion": "Consider breaking down into smaller functions"
+                })
+        
+        # Missing docstrings
+        for func in self.function_catalog.values():
+            if not func.docstring and not func.name.startswith("_"):
+                opportunities.append({
+                    "type": "missing_docstring",
+                    "function": func.name,
+                    "file": func.file_path,
+                    "suggestion": "Add docstring for better documentation"
+                })
+        
+        return opportunities
+    
+    def _update_codebase_health(self, scan_results: Dict[str, Any]):
+        """Update codebase health metrics"""
+        self.codebase_health.total_files = scan_results["files_analyzed"]
+        self.codebase_health.total_functions = scan_results["functions_cataloged"]
+        self.codebase_health.emoticon_count = scan_results["emoticons_found"]
+        self.codebase_health.duplicate_functions = len(scan_results["duplicate_functions"])
+        
+        # Calculate scores
+        total_complexity = sum(f.complexity for f in self.function_catalog.values())
+        avg_complexity = total_complexity / max(len(self.function_catalog), 1)
+        self.codebase_health.complexity_score = min(avg_complexity / 10.0, 1.0)  # Normalize to 0-1
+        
+        # Maintainability score (inverse of issues)
+        total_issues = (self.codebase_health.emoticon_count + 
+                       self.codebase_health.duplicate_functions + 
+                       len(scan_results["optimization_opportunities"]))
+        self.codebase_health.maintainability_score = max(0.0, 1.0 - (total_issues / max(self.codebase_health.total_files, 1)))
+    
+    def execute_systematic_cleanup(self, dry_run: bool = False) -> Dict[str, Any]:
+        """Execute systematic cleanup using existing AIOS tools"""
+        logger.info("Starting systematic cleanup...")
+        
+        cleanup_results = {
+            "emoticons_removed": 0,
+            "files_modified": 0,
+            "imports_optimized": 0,
+            "spatial_metadata_updated": 0,
+            "backup_files_created": 0,
+            "errors": []
+        }
+        
+        if not dry_run and self.config.get("backup_before_changes", True):
+            logger.info("Creating backup before cleanup...")
+            self._create_workspace_backup()
+        
+        # 1. Emoticon cleanup using EmoticonDestroyer
+        if self.emoticon_destroyer and self.codebase_health.emoticon_count > 0:
+            logger.info("Executing emoticon cleanup...")
+            try:
+                for file_path in self._find_target_files():
+                    if file_path.suffix in {".py", ".md", ".cpp", ".cs"}:
+                        if not dry_run:
+                            result = self.emoticon_destroyer.process_file(file_path)
+                            if result.get("emoticons_removed", 0) > 0:
+                                cleanup_results["emoticons_removed"] += result["emoticons_removed"]
+                                cleanup_results["files_modified"] += 1
+                        else:
+                            logger.info(f"Would cleanup emoticons in: {file_path}")
+            except Exception as e:
+                logger.error(f"Emoticon cleanup failed: {e}")
+                cleanup_results["errors"].append(f"Emoticon cleanup: {e}")
+        
+        # 2. Update spatial metadata using existing system
+        if self.spatial_metadata_system:
+            logger.info("Updating spatial metadata...")
+            try:
+                if not dry_run:
+                    result = self.spatial_metadata_system.run_incremental_update(force=True)
+                    cleanup_results["spatial_metadata_updated"] = result.get("metadata_updated", 0)
+                else:
+                    logger.info("Would update spatial metadata across workspace")
+            except Exception as e:
+                logger.error(f"Spatial metadata update failed: {e}")
+                cleanup_results["errors"].append(f"Spatial metadata: {e}")
+        
+        # 3. Generate comprehensive report
+        self._generate_cleanup_report(cleanup_results, dry_run)
+        
+        logger.info("Systematic cleanup completed")
+        return cleanup_results
+    
+    def _create_workspace_backup(self):
+        """Create backup of workspace before making changes"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_dir = self.workspace_root / "tachyonic" / "archive" / f"codebase_analyzer_backup_{timestamp}"
+        backup_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Backup key files and directories
+        important_dirs = ["ai", "core", "interface", "scripts"]
+        for dir_name in important_dirs:
+            src_dir = self.workspace_root / dir_name
+            if src_dir.exists():
+                import shutil
+                shutil.copytree(src_dir, backup_dir / dir_name, ignore=shutil.ignore_patterns("*.pyc", "__pycache__"))
+        
+        logger.info(f"Workspace backup created: {backup_dir}")
+    
+    def _generate_cleanup_report(self, cleanup_results: Dict[str, Any], dry_run: bool):
+        """Generate comprehensive cleanup report"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        report_file = self.results_dir / f"cleanup_report_{timestamp}.json"
+        
+        report = {
+            "timestamp": datetime.now().isoformat(),
+            "workspace_root": str(self.workspace_root),
+            "dry_run": dry_run,
+            "cleanup_results": cleanup_results,
+            "codebase_health": {
+                "total_files": self.codebase_health.total_files,
+                "total_functions": self.codebase_health.total_functions,
+                "emoticon_count": self.codebase_health.emoticon_count,
+                "duplicate_functions": self.codebase_health.duplicate_functions,
+                "complexity_score": self.codebase_health.complexity_score,
+                "maintainability_score": self.codebase_health.maintainability_score
+            },
+            "function_catalog_stats": {
+                "total_functions": len(self.function_catalog),
+                "functions_by_area": self._get_functions_by_architectural_area(),
+                "complexity_distribution": self._get_complexity_distribution()
+            },
+            "recommendations": self._generate_recommendations()
+        }
+        
+        with open(report_file, 'w', encoding='utf-8') as f:
+            json.dump(report, f, indent=2, ensure_ascii=False)
+        
+        logger.info(f"Cleanup report generated: {report_file}")
+    
+    def _get_functions_by_architectural_area(self) -> Dict[str, int]:
+        """Get function count by architectural area"""
+        area_counts = {}
+        for func in self.function_catalog.values():
+            area = func.architectural_area or "unknown"
+            area_counts[area] = area_counts.get(area, 0) + 1
+        return area_counts
+    
+    def _get_complexity_distribution(self) -> Dict[str, int]:
+        """Get distribution of function complexities"""
+        distribution = {"low": 0, "medium": 0, "high": 0, "very_high": 0}
+        for func in self.function_catalog.values():
+            if func.complexity <= 3:
+                distribution["low"] += 1
+            elif func.complexity <= 7:
+                distribution["medium"] += 1
+            elif func.complexity <= 15:
+                distribution["high"] += 1
+            else:
+                distribution["very_high"] += 1
+        return distribution
+    
+    def _generate_recommendations(self) -> List[str]:
+        """Generate improvement recommendations"""
+        recommendations = []
+        
+        if self.codebase_health.emoticon_count > 0:
+            recommendations.append(f"Remove {self.codebase_health.emoticon_count} emoticons for Windows terminal compatibility")
+        
+        if self.codebase_health.duplicate_functions > 5:
+            recommendations.append(f"Refactor {self.codebase_health.duplicate_functions} duplicate functions to reduce redundancy")
+        
+        high_complexity = len([f for f in self.function_catalog.values() if f.complexity > 10])
+        if high_complexity > 0:
+            recommendations.append(f"Break down {high_complexity} high-complexity functions for better maintainability")
+        
+        missing_docs = len([f for f in self.function_catalog.values() if not f.docstring and not f.name.startswith("_")])
+        if missing_docs > 10:
+            recommendations.append(f"Add docstrings to {missing_docs} functions for better documentation")
+        
+        return recommendations
+    
+    def generate_function_database(self) -> str:
+        """Generate comprehensive function database"""
+        db_file = self.results_dir / "aios_function_database.json"
+        
+        # Convert function catalog to serializable format
+        db_data = {
+            "metadata": {
+                "generated": datetime.now().isoformat(),
+                "workspace_root": str(self.workspace_root),
+                "total_functions": len(self.function_catalog),
+                "analyzer_version": "1.0.0"
+            },
+            "functions": {}
+        }
+        
+        for hash_id, func in self.function_catalog.items():
+            db_data["functions"][hash_id] = {
+                "name": func.name,
+                "file_path": func.file_path,
+                "line_number": func.line_number,
+                "signature": func.signature,
+                "docstring": func.docstring,
+                "complexity": func.complexity,
+                "parameters": func.parameters,
+                "decorators": func.decorators,
+                "is_method": func.is_method,
+                "class_name": func.class_name,
+                "module_path": func.module_path,
+                "architectural_area": func.architectural_area,
+                "consciousness_level": func.consciousness_level
+            }
+        
+        with open(db_file, 'w', encoding='utf-8') as f:
+            json.dump(db_data, f, indent=2, ensure_ascii=False)
+        
+        logger.info(f"Function database generated: {db_file}")
+        return str(db_file)
+
+def main():
+    """CLI entry point"""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='AIOS Comprehensive Codebase Analyzer')
+    parser.add_argument('--scan', action='store_true', help='Scan entire codebase')
+    parser.add_argument('--cleanup', action='store_true', help='Execute systematic cleanup')
+    parser.add_argument('--dry-run', action='store_true', help='Dry run mode (no changes)')
+    parser.add_argument('--function-db', action='store_true', help='Generate function database')
+    parser.add_argument('--workspace', type=Path, help='Workspace root path')
+    
+    args = parser.parse_args()
+    
+    # Initialize analyzer
+    analyzer = AIOSComprehensiveCodebaseAnalyzer(args.workspace)
+    
+    if args.scan:
+        logger.info("Starting comprehensive codebase scan...")
+        results = analyzer.scan_entire_codebase()
+        print(f"Scan completed: {results['files_analyzed']} files, {results['functions_cataloged']} functions")
+    
+    if args.function_db:
+        logger.info("Generating function database...")
+        db_file = analyzer.generate_function_database()
+        print(f"Function database generated: {db_file}")
+    
+    if args.cleanup:
+        logger.info("Starting systematic cleanup...")
+        results = analyzer.execute_systematic_cleanup(dry_run=args.dry_run)
+        if args.dry_run:
+            print("Dry run completed - no changes made")
+        else:
+            print(f"Cleanup completed: {results['files_modified']} files modified")
+    
+    if not any([args.scan, args.cleanup, args.function_db]):
+        print("AIOS Comprehensive Codebase Analyzer")
+        print("  --scan         Scan entire codebase")
+        print("  --cleanup      Execute systematic cleanup")
+        print("  --function-db  Generate function database")
+        print("  --dry-run      Preview changes without making them")
+
+if __name__ == "__main__":
+    main()
