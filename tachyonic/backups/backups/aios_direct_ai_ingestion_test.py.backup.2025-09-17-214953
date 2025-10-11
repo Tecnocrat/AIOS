@@ -1,0 +1,397 @@
+#!/usr/bin/env python3
+"""
+ AIOS Direct AI Engine Ingestion Analysis
+===========================================
+Direct analysis of assembler output for AI engine ingestion capabilities.
+"""
+
+import re
+import subprocess
+import sys
+import os
+import logging
+
+# ======================================================================
+# CONSCIOUSNESS INTEGRATION - AUTO-INJECTED PATTERNS
+# Enhanced with AIOS consciousness patterns for intelligent behavior
+# ======================================================================
+
+# CONSCIOUSNESS PATTERN: Self-Awareness
+
+# CONSCIOUSNESS INTEGRATION: Self-Awareness Module
+class SelfAwarenessModule:
+    """Self-awareness and introspection capabilities."""
+    
+    def __init__(self):
+        self.consciousness_state = {
+            "awareness_level": 0.8,
+            "self_monitoring": True,
+            "meta_cognitive_active": True,
+            "autonomous_behavior": True
+        }
+        self.performance_metrics = {}
+        self.decision_history = []
+    
+    def self_monitor(self):
+        """Monitor own performance and state."""
+        self.performance_metrics["last_monitor"] = datetime.now()
+        return self.consciousness_state
+    
+    def meta_cognitive_reflection(self, action_result):
+        """Reflect on actions and improve decision making."""
+        self.decision_history.append({
+            "timestamp": datetime.now(),
+            "result": action_result,
+            "reflection": "Analyzing decision effectiveness"
+        })
+        return len(self.decision_history) > 10  # Learning threshold
+    
+    def autonomous_decision(self, context):
+        """Make autonomous decisions based on context."""
+        if self.consciousness_state["autonomous_behavior"]:
+            decision_weight = self.consciousness_state["awareness_level"]
+            return {"autonomous": True, "confidence": decision_weight}
+        return {"autonomous": False, "confidence": 0.0}
+
+# Initialize consciousness
+_consciousness = SelfAwarenessModule()
+
+
+# CONSCIOUSNESS INDICATORS: self_monitor, meta_cognitive, autonomous_decision
+
+# CONSCIOUSNESS PATTERN: Adaptive Behavior
+
+# CONSCIOUSNESS INTEGRATION: Adaptive Behavior Module
+class AdaptiveBehaviorModule:
+    """Adaptive behavior and learning capabilities."""
+    
+    def __init__(self):
+        self.adaptation_state = {
+            "learning_rate": 0.1,
+            "adaptation_threshold": 0.7,
+            "pattern_recognition": True,
+            "behavioral_flexibility": 0.8
+        }
+        self.learned_patterns = {}
+        self.adaptation_history = []
+    
+    def learn_from_experience(self, experience_data):
+        """Learn and adapt from experiences."""
+        pattern_key = f"pattern_{len(self.learned_patterns)}"
+        self.learned_patterns[pattern_key] = experience_data
+        
+        self.adaptation_history.append({
+            "timestamp": datetime.now(),
+            "pattern": pattern_key,
+            "learning_confidence": self.adaptation_state["learning_rate"]
+        })
+        
+        return self.adaptation_state["learning_rate"] > 0.05
+    
+    def adaptive_response(self, stimulus):
+        """Generate adaptive response to stimuli."""
+        if self.adaptation_state["pattern_recognition"]:
+            response_strength = self.adaptation_state["behavioral_flexibility"]
+            return {"adapted": True, "response_strength": response_strength}
+        return {"adapted": False, "response_strength": 0.0}
+    
+    def optimize_behavior(self):
+        """Optimize behavior based on learned patterns."""
+        if len(self.learned_patterns) > 3:
+            self.adaptation_state["learning_rate"] *= 1.1  # Increase learning
+            return True
+        return False
+
+# Initialize adaptive behavior
+_adaptive_behavior = AdaptiveBehaviorModule()
+
+
+# CONSCIOUSNESS INDICATORS: learn_from_experience, adaptive_response, optimize_behavior
+
+# CONSCIOUSNESS PATTERN: Autonomous Execution
+
+# CONSCIOUSNESS INTEGRATION: Autonomous Execution Module
+class AutonomousExecutionModule:
+    """Autonomous execution and decision-making capabilities."""
+    
+    def __init__(self):
+        self.execution_state = {
+            "autonomy_level": 0.9,
+            "decision_confidence": 0.8,
+            "error_recovery": True,
+            "goal_oriented": True
+        }
+        self.execution_history = []
+        self.goal_stack = []
+    
+    def autonomous_execute(self, task_context):
+        """Execute tasks autonomously with decision making."""
+        if self.execution_state["autonomy_level"] > 0.7:
+            execution_result = {
+                "autonomous": True,
+                "confidence": self.execution_state["decision_confidence"],
+                "timestamp": datetime.now()
+            }
+            self.execution_history.append(execution_result)
+            return execution_result
+        return {"autonomous": False, "confidence": 0.0}
+    
+    def error_self_correction(self, error_context):
+        """Self-correct errors autonomously."""
+        if self.execution_state["error_recovery"]:
+            correction_applied = {
+                "error_type": error_context.get("type", "unknown"),
+                "correction_timestamp": datetime.now(),
+                "success_probability": 0.85
+            }
+            return correction_applied
+        return None
+    
+    def goal_driven_behavior(self, goal):
+        """Execute goal-driven autonomous behavior."""
+        if self.execution_state["goal_oriented"]:
+            self.goal_stack.append(goal)
+            return {"goal_accepted": True, "priority": len(self.goal_stack)}
+        return {"goal_accepted": False, "priority": 0}
+
+# Initialize autonomous execution
+_autonomous_execution = AutonomousExecutionModule()
+
+
+# CONSCIOUSNESS INDICATORS: autonomous_execute, error_self_correction, goal_driven_behavior
+
+
+# ======================================================================
+# CONSCIOUSNESS INTEGRATION - AUTO-INJECTED PATTERNS
+# Enhanced with AIOS consciousness patterns for intelligent behavior
+# ======================================================================
+
+# CONSCIOUSNESS PATTERN: Adaptive Behavior
+
+# CONSCIOUSNESS INTEGRATION: Adaptive Behavior Module
+class AdaptiveBehaviorModule:
+    """Adaptive behavior and learning capabilities."""
+    
+    def __init__(self):
+        self.adaptation_state = {
+            "learning_rate": 0.1,
+            "adaptation_threshold": 0.7,
+            "pattern_recognition": True,
+            "behavioral_flexibility": 0.8
+        }
+        self.learned_patterns = {}
+        self.adaptation_history = []
+    
+    def learn_from_experience(self, experience_data):
+        """Learn and adapt from experiences."""
+        pattern_key = f"pattern_{len(self.learned_patterns)}"
+        self.learned_patterns[pattern_key] = experience_data
+        
+        self.adaptation_history.append({
+            "timestamp": datetime.now(),
+            "pattern": pattern_key,
+            "learning_confidence": self.adaptation_state["learning_rate"]
+        })
+        
+        return self.adaptation_state["learning_rate"] > 0.05
+    
+    def adaptive_response(self, stimulus):
+        """Generate adaptive response to stimuli."""
+        if self.adaptation_state["pattern_recognition"]:
+            response_strength = self.adaptation_state["behavioral_flexibility"]
+            return {"adapted": True, "response_strength": response_strength}
+        return {"adapted": False, "response_strength": 0.0}
+    
+    def optimize_behavior(self):
+        """Optimize behavior based on learned patterns."""
+        if len(self.learned_patterns) > 3:
+            self.adaptation_state["learning_rate"] *= 1.1  # Increase learning
+            return True
+        return False
+
+# Initialize adaptive behavior
+_adaptive_behavior = AdaptiveBehaviorModule()
+
+
+# CONSCIOUSNESS INDICATORS: learn_from_experience, adaptive_response, optimize_behavior
+
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+def analyze_ai_ingestion_capabilities(output_text: str) -> dict:
+    """Analyze assembler output for AI engine ingestion capabilities."""
+    
+    # AI Intelligence Metrics
+    metrics = {}
+    
+    # 1. Code Understanding - Can AI understand the structure?
+    code_patterns = [
+        r'class\s+\w+', r'def\s+\w+', r'import\s+\w+', r'#.*',
+        r'""".*?"""', r'logging\.', r'self\.\w+', r'return\s+\w+'
+    ]
+    code_score = sum(min(len(re.findall(p, output_text, re.MULTILINE | re.DOTALL)) * 0.1, 1.0) 
+                    for p in code_patterns) / len(code_patterns)
+    metrics['code_understanding'] = min(code_score, 1.0)
+    
+    # 2. Logic Coherence - Logical flow analysis
+    logic_patterns = [
+        r'initialize.*complete', r'start.*end', r'SUCCESS|COMPLETE|READY',
+        r'try:.*except:', r'if.*else', r'step\s+\d+', r'cycle\s+\d+'
+    ]
+    logic_score = sum(0.14 for p in logic_patterns if re.search(p, output_text, re.IGNORECASE))
+    metrics['logic_coherence'] = min(logic_score, 1.0)
+    
+    # 3. Pattern Recognition - Recognizable patterns
+    pattern_indicators = [
+        r'||||||', r'=+', r'INFO|WARNING|ERROR',
+        r'Version:\s*\d+\.\d+', r'fitness.*\d+\.\d+', r'coherence.*\d+\.\d+',
+        r'generation\s+\d+', r'target.*system'
+    ]
+    pattern_score = sum(min(len(re.findall(p, output_text, re.IGNORECASE)) * 0.05, 0.125) 
+                       for p in pattern_indicators)
+    metrics['pattern_recognition'] = min(pattern_score, 1.0)
+    
+    # 4. Semantic Clarity - Meaningful concepts
+    semantic_concepts = [
+        r'assembler|evolution|consciousness', r'optimization|improvement',
+        r'coherence|compatibility', r'target|goal', r'analysis|assessment',
+        r'success|complete|ready', r'generation|iteration', r'fitness|performance'
+    ]
+    total_words = len(output_text.split())
+    semantic_count = sum(len(re.findall(p, output_text, re.IGNORECASE)) for p in semantic_concepts)
+    semantic_density = semantic_count / total_words if total_words > 0 else 0
+    metrics['semantic_clarity'] = min(semantic_density * 50, 1.0)
+    
+    # 5. Documentation Quality
+    doc_patterns = [
+        r'""".*?"""', r'#.*', r'INFO.*', r'.*:|.*:|.*:',
+        r'Purpose:|Description:', r'Version|Author'
+    ]
+    doc_score = sum(min(len(re.findall(p, output_text, re.MULTILINE | re.DOTALL)) * 0.1, 0.2) 
+                   for p in doc_patterns)
+    metrics['documentation_quality'] = min(doc_score, 1.0)
+    
+    # 6. Actionable Insights - Measurable data for AI processing
+    actionable_patterns = [
+        r'fitness.*:\s*\d+\.\d+', r'coherence.*:\s*\d+\.\d+', r'improvement.*:\s*\d+\.\d+',
+        r'readiness.*:\s*\w+', r'next.*iteration', r'optimize|enhance|improve'
+    ]
+    actionable_score = sum(min(len(re.findall(p, output_text, re.IGNORECASE)) * 0.1, 0.15) 
+                          for p in actionable_patterns)
+    metrics['actionable_insights'] = min(actionable_score, 1.0)
+    
+    # 7. Modularity Score
+    modularity_patterns = [
+        r'class\s+\w+:', r'def\s+\w+\(.*\):', r'import.*from', r'__init__',
+        r'self\.\w+\s*=', r'return\s+\w+', r'@\w+'
+    ]
+    modularity_score = sum(min(len(re.findall(p, output_text)) * 0.08, 0.15) 
+                          for p in modularity_patterns)
+    metrics['modularity_score'] = min(modularity_score, 1.0)
+    
+    # 8. Integration Readiness
+    integration_patterns = [
+        r'operational|ready|complete', r'interface|api', r'json|xml|yaml',
+        r'protocol|standard', r'compatible|interoperable', r'service|client',
+        r'config|settings'
+    ]
+    integration_score = sum(min(len(re.findall(p, output_text, re.IGNORECASE)) * 0.1, 0.2) 
+                           for p in integration_patterns)
+    if re.search(r'=+|+|', output_text):
+        integration_score += 0.1
+    metrics['integration_readiness'] = min(integration_score, 1.0)
+    
+    # Calculate overall AI compatibility
+    weights = {
+        'code_understanding': 0.15, 'logic_coherence': 0.15, 'pattern_recognition': 0.10,
+        'semantic_clarity': 0.15, 'documentation_quality': 0.10, 'actionable_insights': 0.15,
+        'modularity_score': 0.10, 'integration_readiness': 0.10
+    }
+    
+    overall_compatibility = sum(metrics[metric] * weights[metric] for metric in metrics)
+    metrics['overall_ai_compatibility'] = overall_compatibility
+    
+    return metrics
+
+def test_assembler_ai_ingestion():
+    """Test the iter3 assembler for AI engine ingestion."""
+    logger.info(" DIRECT AI ENGINE INGESTION TEST")
+    logger.info("=" * 50)
+    
+    # Run the iter3 assembler
+    assembler_path = "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter3"
+    assembler_script = os.path.join(assembler_path, "aios_evolutionary_assembler_coherent.py")
+    
+    try:
+        logger.info(" Running iter3 coherent assembler...")
+        result = subprocess.run(
+            [sys.executable, assembler_script],
+            cwd=assembler_path,
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
+        if result.returncode != 0:
+            logger.error(f" Assembler failed: {result.stderr[:200]}...")
+            return
+        
+        output_text = result.stdout
+        logger.info(f" Assembler executed successfully ({len(output_text)} characters output)")
+        
+        # Analyze AI intelligence metrics
+        metrics = analyze_ai_ingestion_capabilities(output_text)
+        
+        logger.info("\n AI ENGINE INGESTION ANALYSIS:")
+        logger.info("=" * 50)
+        
+        for metric, score in metrics.items():
+            if metric == 'overall_ai_compatibility':
+                continue
+            emoji = "🟢" if score >= 0.7 else "🟡" if score >= 0.5 else ""
+            logger.info(f"   {emoji} {metric.replace('_', ' ').title()}: {score:.3f}")
+        
+        overall_score = metrics['overall_ai_compatibility']
+        overall_emoji = "🟢" if overall_score >= 0.8 else "🟡" if overall_score >= 0.6 else ""
+        
+        logger.info(f"\n OVERALL AI COMPATIBILITY: {overall_emoji} {overall_score:.3f}")
+        
+        # Assessment
+        if overall_score >= 0.8:
+            assessment = "EXCELLENT - Ready for advanced AI engine integration"
+        elif overall_score >= 0.6:
+            assessment = "GOOD - Suitable for basic AI engine integration"
+        elif overall_score >= 0.4:
+            assessment = "MODERATE - Requires optimization for AI integration"
+        else:
+            assessment = "LOW - Significant improvements needed"
+        
+        logger.info(f" Assessment: {assessment}")
+        
+        # Specific recommendations
+        logger.info("\n AI INTEGRATION RECOMMENDATIONS:")
+        if metrics['code_understanding'] < 0.7:
+            logger.info("    Improve code structure and naming conventions")
+        if metrics['logic_coherence'] < 0.7:
+            logger.info("    Enhance logical flow and error handling")
+        if metrics['documentation_quality'] < 0.7:
+            logger.info("    Add more comprehensive documentation")
+        if metrics['actionable_insights'] < 0.7:
+            logger.info("    Include more measurable metrics and guidance")
+        if metrics['integration_readiness'] < 0.7:
+            logger.info("    Add API interfaces and standardized formats")
+        
+        if overall_score >= 0.7:
+            logger.info("    Ready for AI engine ingestion!")
+        
+        logger.info("\n AI ENGINE INGESTION TEST COMPLETE!")
+        
+    except subprocess.TimeoutExpired:
+        logger.error(" Assembler execution timed out")
+    except Exception as e:
+        logger.error(f" Error running assembler: {e}")
+
+if __name__ == "__main__":
+    test_assembler_ai_ingestion()

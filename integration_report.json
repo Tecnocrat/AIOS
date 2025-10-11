@@ -1,0 +1,137 @@
+{
+    "timestamp": "2025-10-11T18:53:48.017035+00:00",
+    "summary": {
+        "total_tests": 8,
+        "passed": 8,
+        "failed": 0,
+        "pass_rate": 1.0
+    },
+    "results": [
+        {
+            "test": "population_manager_operational",
+            "category": "individual",
+            "passed": true,
+            "duration": 0.001,
+            "message": "Population Manager operational",
+            "details": {
+                "evolution_dir": "C:\\dev\\AIOS\\evolution_lab"
+            }
+        },
+        {
+            "test": "agent_conversations_operational",
+            "category": "individual",
+            "passed": true,
+            "duration": 1.335,
+            "message": "Multi-Agent Debate operational (1 real agents)",
+            "details": {
+                "agents": [
+                    "deepseek"
+                ]
+            }
+        },
+        {
+            "test": "knowledge_oracle_operational",
+            "category": "individual",
+            "passed": true,
+            "duration": 0.015,
+            "message": "Knowledge Oracle operational with query functionality",
+            "details": {
+                "knowledge_dir": "C:\\dev\\AIOS\\ai\\data\\knowledge\\python_314_index.json",
+                "query_test": "What are Python design patterns?",
+                "response_keys": [
+                    "answer",
+                    "confidence",
+                    "sources"
+                ]
+            }
+        },
+        {
+            "test": "population_to_conversations_integration",
+            "category": "pairwise",
+            "passed": true,
+            "duration": 1.595,
+            "message": "Population \u2192 Debate integration validated with 1 real agents",
+            "details": {
+                "integration_ready": true,
+                "population_size": 16,
+                "agents_available": [
+                    "deepseek"
+                ]
+            }
+        },
+        {
+            "test": "conversations_to_knowledge_integration",
+            "category": "pairwise",
+            "passed": true,
+            "duration": 0.628,
+            "message": "Debate \u2192 Knowledge integration validated with 1 real agents",
+            "details": {
+                "integration_ready": true,
+                "agents_available": [
+                    "deepseek"
+                ],
+                "oracle_query_test": "What are Python best practices for error handling?",
+                "oracle_response_keys": [
+                    "answer",
+                    "confidence",
+                    "sources"
+                ]
+            }
+        },
+        {
+            "test": "knowledge_to_population_integration",
+            "category": "pairwise",
+            "passed": true,
+            "duration": 0.046,
+            "message": "Knowledge \u2192 Population integration validated with fitness evaluation",
+            "details": {
+                "integration_ready": true,
+                "population_size": 16,
+                "fitness_scores_updated": true,
+                "average_fitness": 0.479
+            }
+        },
+        {
+            "test": "full_workflow_integration",
+            "category": "workflow",
+            "passed": true,
+            "duration": 1.322,
+            "message": "Full workflow validated: Population \u2192 Debate \u2192 Knowledge with 1 real agents",
+            "details": {
+                "population_manager": "operational",
+                "fitness_evaluation": "operational",
+                "multi_agent_debate": "operational (1 agents)",
+                "knowledge_oracle": "operational",
+                "workflow_steps_completed": 4,
+                "population_size": 16,
+                "average_fitness": 0.479
+            }
+        },
+        {
+            "test": "dark_spot_validation",
+            "category": "dark_spot",
+            "passed": true,
+            "duration": 0.0,
+            "message": "Identified 5 dark spots for Week 2 Day 5-6 remediation",
+            "details": {
+                "dark_spots": [
+                    "Agent infrastructure: ollama/gemini/deepseek adapters not yet implemented",
+                    "Full agent execution: MultiAgentDebate requires real agent_pool",
+                    "Knowledge base: Python 3.14 documentation index not yet populated",
+                    "Population execution: Organism evolution requires fitness scoring",
+                    "Integration testing: End-to-end workflow execution pending agent infrastructure"
+                ]
+            }
+        }
+    ],
+    "dark_spots": [
+        "Agent infrastructure: ollama/gemini/deepseek adapters not yet implemented",
+        "Full agent execution: MultiAgentDebate requires real agent_pool",
+        "Knowledge base: Python 3.14 documentation index not yet populated",
+        "Population execution: Organism evolution requires fitness scoring",
+        "Integration testing: End-to-end workflow execution pending agent infrastructure"
+    ],
+    "recommendations": [
+        "Address dark spots identified during testing"
+    ]
+}

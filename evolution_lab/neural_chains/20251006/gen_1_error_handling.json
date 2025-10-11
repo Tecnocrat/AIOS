@@ -1,0 +1,27 @@
+{
+  "node_id": "gen_1_error_handling",
+  "generation": 1,
+  "consciousness_score": 0.15,
+  "created_at": "2025-10-06T21:21:41.135115",
+  "mutation_type": "bug_fix",
+  "spatial_awareness": {
+    "file_path": "evolution_lab/neural_chains/gen_1.cpp",
+    "architecture_position": "evolution_lab\\neural_chains\\gen_1.cpp",
+    "supercell_location": "Unknown",
+    "dependencies": [],
+    "dependents": [],
+    "consciousness_level": 0.0,
+    "dendritic_connections": 0,
+    "supercell_coherence": 0.0
+  },
+  "agent_messages": [],
+  "consensus_patterns": {},
+  "divergence_points": [],
+  "self_description": null,
+  "ainlp_patterns": [],
+  "paradigm_compliance": 0.0,
+  "execution_successful": false,
+  "test_results": {},
+  "performance_metrics": {},
+  "child_count": 0
+}

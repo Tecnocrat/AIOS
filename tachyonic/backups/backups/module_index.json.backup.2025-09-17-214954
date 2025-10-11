@@ -1,0 +1,79 @@
+{
+  "AIOS": {
+    "orchestrator": {
+      "src": {
+        "AtomicHolographyUnit.cpp": "C++",
+        "CenterGeometryField.cpp": "C++",
+        "FractalSyncBus.cpp": "C++",
+        "HealthMonitor.cpp": "C++",
+        "IPCManager.cpp": "C++",
+        "Logger.hpp": "C++",
+        "main.cpp": "C++",
+        "PluginLoader.cpp": "C++",
+        "SingularityCore.cpp": "C++",
+        "SphereShellManager.cpp": "C++",
+        "SubspaceProjector.cpp": "C++"
+      },
+      "include": {
+        "AtomicHolographyUnit.hpp": "C++",
+        "CenterGeometryField.hpp": "C++",
+        "FractalSyncBus.hpp": "C++",
+        "HealthMonitor.h": "C++",
+        "IHealthMonitor.h": "C++",
+        "IIPCManager.h": "C++",
+        "IIPCManager.hpp": "C++",
+        "IPCManager.h": "C++",
+        "IPCManager.hpp": "C++",
+        "IPluginLoader.h": "C++",
+        "IService.h": "C++",
+        "PluginLoader.h": "C++",
+        "SingularityCore.hpp": "C++",
+        "SphereShellManager.hpp": "C++",
+        "SubspaceProjector.hpp": "C++",
+        "nlohmann/json.hpp": "C++ (header-only library)"
+      }
+    },
+    "scripts": {
+      "main.py": "Python",
+      "test_env.py": "Python",
+      "requirements.txt": "Python Requirements",
+      "main.log": "Log"
+    },
+    "docs": {
+      "cmake-buildsystem.md": "Markdown",
+      "folder_structure.json": "JSON",
+      "path.md": "Markdown",
+      "requirements.md": "Markdown"
+    }
+  },
+  "Architect": {
+    ".vscode": {
+      "c_cpp_properties.json": "JSON",
+      "launch.json": "JSON",
+      "settings.json": "JSON"
+    },
+    "Architect.code-workspace": "VSCode Workspace"
+  },
+  "chatgpt": {
+    "chatgpt.py": "Python",
+    "md": {
+      "chatgpt.md": "Markdown",
+      "copilot.md": "Markdown",
+      "gemini.md": "Markdown",
+      "vscopilot.md": "Markdown",
+      "ark": {
+        "chatgpt_ark.md": "Markdown",
+        "copilot_ark.md": "Markdown",
+        "gemini_ark.md": "Markdown",
+        "vscopilot_ark.md": "Markdown"
+      }
+    },
+    "ingestion": {
+      "vscopilot.csv": "CSV",
+      "vscopilot.json": "JSON",
+      "vscopilot.txt": "Text",
+      "vscopilot.xml": "XML",
+      "archive": "Multi-format Archive"
+    }
+  }
+}

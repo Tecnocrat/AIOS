@@ -1,0 +1,52 @@
+{
+  "orchestration_session": {
+    "execution_timestamp": "2025-09-14T21:54:06.002636",
+    "total_hooks_executed": 7,
+    "successful_hooks": 0,
+    "supercell_notifications": {}
+  },
+  "hook_details": [
+    {
+      "hook": "pre-commit.ps1",
+      "success": false,
+      "execution_time": 0.0,
+      "error": "Hook file not found: C:\\dev\\AIOS\\.githooks\\pre-commit.ps1"
+    },
+    {
+      "hook": "aios_copilot_orchestrator.ps1",
+      "success": false,
+      "execution_time": 0.0,
+      "error": "Hook file not found: C:\\dev\\AIOS\\.githooks\\aios_copilot_orchestrator.ps1"
+    },
+    {
+      "hook": "aios_auto_optimization.ps1",
+      "success": false,
+      "execution_time": 0.0,
+      "error": "Hook file not found: C:\\dev\\AIOS\\.githooks\\aios_auto_optimization.ps1"
+    },
+    {
+      "hook": "aios_consciousness_bridge.ps1",
+      "success": false,
+      "execution_time": 0.0,
+      "error": "Hook file not found: C:\\dev\\AIOS\\.githooks\\aios_consciousness_bridge.ps1"
+    },
+    {
+      "hook": "aios_reality_check.ps1",
+      "success": false,
+      "execution_time": 0.0,
+      "error": "Hook file not found: C:\\dev\\AIOS\\.githooks\\aios_reality_check.ps1"
+    },
+    {
+      "hook": "comprehensive_analysis.ps1",
+      "success": false,
+      "execution_time": 0.0,
+      "error": "Hook file not found: C:\\dev\\AIOS\\.githooks\\comprehensive_analysis.ps1"
+    },
+    {
+      "hook": "ecosystem_intelligence_report.ps1",
+      "success": false,
+      "execution_time": 0.0,
+      "error": "Hook file not found: C:\\dev\\AIOS\\.githooks\\ecosystem_intelligence_report.ps1"
+    }
+  ]
+}

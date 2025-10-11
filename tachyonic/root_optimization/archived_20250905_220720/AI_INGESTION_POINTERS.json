@@ -1,0 +1,6 @@
+{
+  "cellular_intelligence_tools": "analysis_tools/aios_cellular_*.py",
+  "consciousness_integration": "evolutionary_assembler_iter2/consciousness_layer/aios_consciousness_*.py",
+  "dendritic_network": "evolutionary_assembler_iter2/meta_evolution/aios_dendritic_*.py",
+  "core_monitoring": "runtime_intelligence/aios_*_monitor*.py"
+}

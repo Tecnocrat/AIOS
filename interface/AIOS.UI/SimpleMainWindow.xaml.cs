@@ -1,6 +1,9 @@
 using System;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using AIOS.Models;
 using AIOS.Services;
@@ -244,6 +247,260 @@ namespace AIOS.UI
                 _logger.LogError(ex, "Error checking health");
                 MaintenanceOutput.Text = $"Error checking health: {ex.Message}";
                 StatusText.Text = "Health check error";
+            }
+        }
+
+        // Library Generation functionality
+        private async void GenerateButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                GenerateButton.IsEnabled = false;
+                GenerationStatus.Text = "🚀 Launching dual-agent generation...";
+                StatusText.Text = "Generating code...";
+                VariantsPanel.Children.Clear();
+                CodePreview.Text = "Generation in progress...\n\nThis may take 30-60 seconds...";
+
+                // Get selected library and task
+                var library = (LibrarySelector.SelectedItem as ComboBoxItem)?.Content.ToString() ?? "aios_core";
+                var task = TaskDescription.Text;
+                var variantCount = (int)VariantCountSlider.Value;
+
+                // Build Python command
+                var pythonExe = "python";
+                
+                // Get the correct path - test_library_generation.py is in the root AIOS directory
+                var workingDir = @"C:\dev\AIOS";
+                var scriptPath = System.IO.Path.Combine(workingDir, "test_library_generation.py");
+                
+                if (!System.IO.File.Exists(scriptPath))
+                {
+                    GenerationStatus.Text = "❌ Script not found";
+                    CodePreview.Text = $"Error: Could not find test_library_generation.py\n\nExpected location: {scriptPath}\n\nPlease ensure the file exists in C:\\dev\\AIOS\\";
+                    return;
+                }
+
+                _logger.LogInformation($"Running: {pythonExe} {scriptPath}");
+                _logger.LogInformation($"Working directory: {workingDir}");
+
+                // Create process to run Python script
+                var processInfo = new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = pythonExe,
+                    Arguments = "test_library_generation.py",
+                    WorkingDirectory = workingDir,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                using var process = new System.Diagnostics.Process { StartInfo = processInfo };
+                
+                var outputBuilder = new System.Text.StringBuilder();
+                var errorBuilder = new System.Text.StringBuilder();
+
+                process.OutputDataReceived += (s, args) =>
+                {
+                    if (!string.IsNullOrEmpty(args.Data))
+                    {
+                        outputBuilder.AppendLine(args.Data);
+                        
+                        // Update status with progress
+                        Dispatcher.Invoke(() =>
+                        {
+                            if (args.Data.Contains("Gemini") || args.Data.Contains("Ollama"))
+                            {
+                                GenerationStatus.Text = args.Data;
+                            }
+                        });
+                    }
+                };
+
+                process.ErrorDataReceived += (s, args) =>
+                {
+                    if (!string.IsNullOrEmpty(args.Data))
+                    {
+                        errorBuilder.AppendLine(args.Data);
+                    }
+                };
+
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+
+                await process.WaitForExitAsync();
+
+                var output = outputBuilder.ToString();
+                var errors = errorBuilder.ToString();
+
+                if (process.ExitCode == 0)
+                {
+                    GenerationStatus.Text = "✅ Generation complete!";
+                    StatusText.Text = "Code generated successfully";
+                    
+                    // Load and display results
+                    await LoadGenerationResults(workingDir);
+                }
+                else
+                {
+                    GenerationStatus.Text = "❌ Generation failed";
+                    StatusText.Text = "Error during generation";
+                    CodePreview.Text = $"Error Output:\n{errors}\n\nStandard Output:\n{output}";
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error running library generation");
+                GenerationStatus.Text = $"❌ Error: {ex.Message}";
+                StatusText.Text = "Generation error";
+                CodePreview.Text = $"Exception: {ex.Message}\n\nStack Trace:\n{ex.StackTrace}";
+            }
+            finally
+            {
+                GenerateButton.IsEnabled = true;
+            }
+        }
+
+        private async Task LoadGenerationResults(string workingDir)
+        {
+            try
+            {
+                // Find the most recent generation folder
+                var generationsPath = System.IO.Path.Combine(workingDir, "evolution_lab", "library_generations");
+                
+                if (!System.IO.Directory.Exists(generationsPath))
+                {
+                    CodePreview.Text = "Generation folder not found. Check output for errors.";
+                    return;
+                }
+
+                var directories = System.IO.Directory.GetDirectories(generationsPath)
+                    .OrderByDescending(d => System.IO.Directory.GetCreationTime(d))
+                    .ToList();
+
+                if (directories.Count == 0)
+                {
+                    CodePreview.Text = "No generation results found.";
+                    return;
+                }
+
+                var latestGen = directories[0];
+                _logger.LogInformation($"Loading results from: {latestGen}");
+
+                // Load variants
+                var variantFiles = System.IO.Directory.GetFiles(latestGen, "variant_*.py")
+                    .OrderBy(f => f)
+                    .ToList();
+
+                if (variantFiles.Count == 0)
+                {
+                    CodePreview.Text = "No variant files found.";
+                    return;
+                }
+
+                // Display variants
+                for (int i = 0; i < variantFiles.Count; i++)
+                {
+                    var variantFile = variantFiles[i];
+                    var analysisFile = variantFile.Replace(".py", "_analysis.json");
+                    
+                    double consciousness = 0.0;
+                    string agent = "Unknown";
+                    
+                    // Try to load analysis
+                    if (System.IO.File.Exists(analysisFile))
+                    {
+                        try
+                        {
+                            var analysisJson = await System.IO.File.ReadAllTextAsync(analysisFile);
+                            var analysis = System.Text.Json.JsonSerializer.Deserialize<System.Text.Json.JsonElement>(analysisJson);
+                            
+                            if (analysis.TryGetProperty("consciousness_score", out var scoreElement))
+                            {
+                                consciousness = scoreElement.GetDouble();
+                            }
+                        }
+                        catch { }
+                    }
+
+                    // Determine agent from filename or content
+                    agent = i == 0 ? "Gemini" : "Ollama";
+
+                    // Create variant button
+                    var variantButton = new System.Windows.Controls.Button
+                    {
+                        Content = $"Variant {i} ({agent})\nConsciousness: {consciousness:F2}",
+                        Background = new System.Windows.Media.SolidColorBrush(
+                            System.Windows.Media.Color.FromRgb(0x2d, 0x2d, 0x2d)),
+                        Foreground = System.Windows.Media.Brushes.White,
+                        Padding = new Thickness(10),
+                        Margin = new Thickness(5),
+                        HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch,
+                        Tag = variantFile
+                    };
+
+                    // Highlight best variant
+                    if (consciousness >= 0.6)
+                    {
+                        variantButton.Background = new System.Windows.Media.SolidColorBrush(
+                            System.Windows.Media.Color.FromRgb(0x0d, 0x73, 0x77));
+                        variantButton.Content += " ⭐";
+                    }
+
+                    variantButton.Click += VariantButton_Click;
+                    
+                    VariantsPanel.Children.Add(variantButton);
+                }
+
+                // Auto-select first variant
+                if (VariantsPanel.Children.Count > 0)
+                {
+                    var firstButton = VariantsPanel.Children[0] as System.Windows.Controls.Button;
+                    if (firstButton != null)
+                    {
+                        await LoadVariantCode(firstButton.Tag.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error loading generation results");
+                CodePreview.Text = $"Error loading results: {ex.Message}";
+            }
+        }
+
+        private async void VariantButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as System.Windows.Controls.Button;
+            if (button?.Tag is string filePath)
+            {
+                await LoadVariantCode(filePath);
+            }
+        }
+
+        private async Task LoadVariantCode(string filePath)
+        {
+            try
+            {
+                if (System.IO.File.Exists(filePath))
+                {
+                    var code = await System.IO.File.ReadAllTextAsync(filePath);
+                    var fileName = System.IO.Path.GetFileName(filePath);
+                    
+                    CodePreview.Text = $"=== {fileName} ===\n\n{code}";
+                    
+                    _logger.LogInformation($"Loaded variant: {fileName}");
+                }
+                else
+                {
+                    CodePreview.Text = $"File not found: {filePath}";
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error loading variant code");
+                CodePreview.Text = $"Error loading code: {ex.Message}";
             }
         }
     }

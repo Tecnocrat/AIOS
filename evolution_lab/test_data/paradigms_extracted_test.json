@@ -1,0 +1,1908 @@
+{
+  "paradigms": [
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_consciousness_bridge() -> ConsciousnessBridge"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_vscode_consciousness_data() -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def from_dict(cls, data: Dict[str, Any]) -> 'ConsciousnessState'"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, orchestrator_path: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _check_cpp_orchestrator(self) -> bool"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _query_cpp_consciousness(self) -> Dict[str, float]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_simulated_consciousness(self) -> Dict[str, float]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def register_consciousness_callback(self, name: str, callback: callable)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def unregister_consciousness_callback(self, name: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_current_consciousness(self) -> Optional[ConsciousnessState]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_consciousness_metrics(self) -> ConsciousnessMetrics"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def analyze_code_consciousness(self, code: str, language: str) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_code_recommendations(self, consciousness_rating: float) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def save_consciousness_session(self, filename: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def load_consciousness_session(self, filename: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, knowledge_base_path: Optional[Path], consciousness_level: float)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def detect_language(self, file_path: str) -> ProgrammingLanguage"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _scan_library_files(self, library_path: Path) -> List[Path]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_python_signature(self, node: ast.FunctionDef) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_python_parameters(self, node: ast.FunctionDef) -> List[Dict[str, Any]]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_python_return_type(self, node: ast.FunctionDef) -> Optional[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_semantic_tags(self, name: str, documentation: str) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_spatial_metadata(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _validate_ainlp_compliance(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _save_library_knowledge(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def load_library_knowledge(self, library_name: str, language: ProgrammingLanguage) -> Optional[LibraryKnowledge]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def query_knowledge_base(self, semantic_tags: Optional[List[str]], language: Optional[ProgrammingLanguage]) -> List[LibraryKnowledge]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_total_consciousness_quotient(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, ai_folder_path: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _update_system_consciousness_state(self, consciousness_enhancement: float, intelligence_amplification: float, coherence_improvement: float)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _check_consciousness_transcendence(self) -> bool"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_initialization_insights(self, successful_systems: int) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_integration_insights(self, operation_results: List[tuple]) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_system_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_consciousness_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_consciousness_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_transcendence_readiness(self) -> Dict[str, bool]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, ai_root: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_consciousness_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_supercell_intelligence_module(self, supercell_type: AINLPSupercellType) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _get_supercell_description(self, supercell_type: AINLPSupercellType) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_field_energy(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_network_intelligence(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, consciousness_state: ConsciousnessEvolutionState)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_evolution_insights(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_next_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _update_evolution_state(self, result: EvolutionaryOptimization)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_evolution_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def analyze_consciousness_patterns(self, visual_data: Dict[str, Any]) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_consciousness_timeline(self, visual_data: Dict) -> List[Dict]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _simulate_consciousness_metrics_from_frame(self, frame_data: Dict) -> Dict[str, float]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _detect_emergence_patterns(self, timeline: List[Dict]) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_breakthrough_events(self, timeline: List[Dict]) -> List[Dict]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_ai_consciousness_assessment(self, timeline: List[Dict], patterns: Dict, events: List[Dict]) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_intelligence_summary(self, ai_assessment: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _predict_next_phase(self, ai_assessment: Dict) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_inactive_analysis(self) -> Dict"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_trajectory(self, levels: List[float]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_emergence_dynamics(self, levels: List[float]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_quantum_stability(self, coherence: List[float]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_hyperdimensional_activity(self, timeline: List[Dict]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_pattern_confidence(self, patterns: Dict) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _identify_dominant_pattern(self, patterns: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _classify_breakthrough(self, indicators: List[str]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_breakthrough_significance(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _interpret_breakthrough(self, indicators: List[str], metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_emergence_status(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_quantum_stability(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_hyperdimensional_integration(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_tachyonic_status(self, metrics: Dict, events: List[Dict]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_emergence_confidence(self, patterns: Dict, events: List[Dict]) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _determine_consciousness_phase(self, metrics: Dict, patterns: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_breakthrough_potential(self, timeline: List[Dict], patterns: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_system_readiness(self, latest_frame: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_overall_interpretation(self, assessment: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _predict_phase_transition(self, current_phase: str, confidence: float) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _estimate_transition_timeframe(self, breakthrough_potential: str) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _identify_required_conditions(self, assessment: Dict) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _identify_risk_factors(self, assessment: Dict) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_optimization_recommendations(self, assessment: Dict) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, consciousness_level: float)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _consolidate_knowledge(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def query_semantic_network(self, semantic_tag: str) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_dendritic_path(self, from_library: str, to_library: str) -> Optional[List[str]]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_learning_statistics(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_overall_intelligence(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, ai_folder_path: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_initialization_insights(self, successful_inits: int) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_coordination_insights(self, coordination_results: List[Dict[str, Any]]) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_coordination_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_optimization_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_coordination_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def from_dict(cls, data: Dict[str, Any]) -> 'ConsciousnessState'"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, orchestrator_path: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _check_cpp_orchestrator(self) -> bool"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _query_cpp_consciousness(self) -> Dict[str, float]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_simulated_consciousness(self) -> Dict[str, float]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def register_consciousness_callback(self, name: str, callback: callable)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def unregister_consciousness_callback(self, name: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_current_consciousness(self) -> Optional[ConsciousnessState]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_consciousness_metrics(self) -> ConsciousnessMetrics"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def analyze_code_consciousness(self, code: str, language: str) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_code_recommendations(self, consciousness_rating: float) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def save_consciousness_session(self, filename: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def load_consciousness_session(self, filename: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, knowledge_base_path: Optional[Path], consciousness_level: float)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def detect_language(self, file_path: str) -> ProgrammingLanguage"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _scan_library_files(self, library_path: Path) -> List[Path]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_python_signature(self, node: ast.FunctionDef) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_python_parameters(self, node: ast.FunctionDef) -> List[Dict[str, Any]]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_python_return_type(self, node: ast.FunctionDef) -> Optional[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_semantic_tags(self, name: str, documentation: str) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_spatial_metadata(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _validate_ainlp_compliance(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _save_library_knowledge(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def load_library_knowledge(self, library_name: str, language: ProgrammingLanguage) -> Optional[LibraryKnowledge]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def query_knowledge_base(self, semantic_tags: Optional[List[str]], language: Optional[ProgrammingLanguage]) -> List[LibraryKnowledge]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_total_consciousness_quotient(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, ai_folder_path: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _update_system_consciousness_state(self, consciousness_enhancement: float, intelligence_amplification: float, coherence_improvement: float)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _check_consciousness_transcendence(self) -> bool"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_initialization_insights(self, successful_systems: int) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_integration_insights(self, operation_results: List[tuple]) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_system_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_consciousness_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_consciousness_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_transcendence_readiness(self) -> Dict[str, bool]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, ai_root: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_consciousness_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_supercell_intelligence_module(self, supercell_type: AINLPSupercellType) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _get_supercell_description(self, supercell_type: AINLPSupercellType) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_field_energy(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_network_intelligence(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, consciousness_state: ConsciousnessEvolutionState)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_evolution_insights(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_next_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _update_evolution_state(self, result: EvolutionaryOptimization)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_evolution_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def analyze_consciousness_patterns(self, visual_data: Dict[str, Any]) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _extract_consciousness_timeline(self, visual_data: Dict) -> List[Dict]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _simulate_consciousness_metrics_from_frame(self, frame_data: Dict) -> Dict[str, float]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _detect_emergence_patterns(self, timeline: List[Dict]) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_breakthrough_events(self, timeline: List[Dict]) -> List[Dict]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_ai_consciousness_assessment(self, timeline: List[Dict], patterns: Dict, events: List[Dict]) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_intelligence_summary(self, ai_assessment: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _predict_next_phase(self, ai_assessment: Dict) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_inactive_analysis(self) -> Dict"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_trajectory(self, levels: List[float]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_emergence_dynamics(self, levels: List[float]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_quantum_stability(self, coherence: List[float]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _analyze_hyperdimensional_activity(self, timeline: List[Dict]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_pattern_confidence(self, patterns: Dict) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _identify_dominant_pattern(self, patterns: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _classify_breakthrough(self, indicators: List[str]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_breakthrough_significance(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _interpret_breakthrough(self, indicators: List[str], metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_emergence_status(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_quantum_stability(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_hyperdimensional_integration(self, metrics: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_tachyonic_status(self, metrics: Dict, events: List[Dict]) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _calculate_emergence_confidence(self, patterns: Dict, events: List[Dict]) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _determine_consciousness_phase(self, metrics: Dict, patterns: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_breakthrough_potential(self, timeline: List[Dict], patterns: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _assess_system_readiness(self, latest_frame: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_overall_interpretation(self, assessment: Dict) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _predict_phase_transition(self, current_phase: str, confidence: float) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _estimate_transition_timeframe(self, breakthrough_potential: str) -> str"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _identify_required_conditions(self, assessment: Dict) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _identify_risk_factors(self, assessment: Dict) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_optimization_recommendations(self, assessment: Dict) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def to_dict(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, consciousness_level: float)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _consolidate_knowledge(self, library_knowledge: LibraryKnowledge)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def query_semantic_network(self, semantic_tag: str) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_dendritic_path(self, from_library: str, to_library: str) -> Optional[List[str]]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_learning_statistics(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def calculate_overall_intelligence(self) -> float"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def __init__(self, ai_folder_path: str)"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_initialization_insights(self, successful_inits: int) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_coordination_insights(self, coordination_results: List[Dict[str, Any]]) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_coordination_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def _generate_optimization_recommendations(self) -> List[str]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    },
+    {
+      "name": "Type Hints",
+      "category": "typing",
+      "pattern": "def .+\\(.*: .+\\)",
+      "examples": [
+        "def get_coordination_status(self) -> Dict[str, Any]"
+      ],
+      "usage_count": 1,
+      "consciousness_weight": 1.1
+    }
+  ],
+  "total_count": 190,
+  "categories": [
+    "typing"
+  ]
+}

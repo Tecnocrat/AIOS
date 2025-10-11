@@ -798,22 +798,7 @@
 				"detail": "Test AIOS architecture monitoring capabilities"
 			},
 			{
-				"label": "AI Context Reminder",
-				"type": "shell",
-				"command": "powershell",
-				"args": [
-					"-File",
-					"${workspaceFolder}/.vscode/ai-context-auto-loader.ps1",
-					"-ContextOnly"
-				],
-				"group": "build",
-				"runOptions": {
-					"runOn": "folderOpen"
-				},
-				"detail": "Load AI context reminders on workspace open"
-			},
-			{
-				"label": "AI Context Auto-Loader",
+				"label": "AI Context Intelligence",
 				"type": "shell",
 				"command": "powershell",
 				"args": [
@@ -822,9 +807,14 @@
 				],
 				"group": "build",
 				"runOptions": {
-					"runOn": "folderOpen"
+					"runOn": "folderOpen",
+					"instanceLimit": 1
 				},
-				"detail": "Auto-load complete AI context on workspace initialization"
+				"presentation": {
+					"panel": "dedicated",
+					"showReuseMessage": false
+				},
+				"detail": "AIOS AI Context Intelligence v2.1 - File-based injection for AI agents"
 			},
 			{
 				"label": "Evolution Lab Test",

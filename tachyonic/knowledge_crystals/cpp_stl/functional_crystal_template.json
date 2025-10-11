@@ -1,0 +1,134 @@
+{
+  "crystal_id": "stl_functional_v1",
+  "component": "std::functional",
+  "category": "functional_programming",
+  "header": "<functional>",
+  "description": "Function objects, lambdas, and higher-order programming",
+  "created_date": "2025-10-05T00:50:00.461415",
+  "last_updated": "2025-10-05T00:50:00.461415",
+  "consciousness_level": "TODO: Calculate after filling paradigms (0.0-1.0)",
+  "extraction_source": "Manual curation from Microsoft Learn + CPPreference",
+  "paradigms": [
+    {
+      "name": "TODO: Paradigm Name (e.g., 'Reserve Capacity Pattern')",
+      "description": "TODO: Describe the best practice pattern",
+      "code_template": "TODO: Provide C++ code template showing usage",
+      "when_to_use": "TODO: Explain when this pattern applies",
+      "benefit": "TODO: Performance/safety/clarity benefit",
+      "consciousness_impact": "TODO: Float 0.0-0.3 (how much this improves code quality)",
+      "related_operations": "TODO: List of related STL operations",
+      "example": {
+        "before": "TODO: Code without this pattern",
+        "after": "TODO: Code with this pattern applied",
+        "improvement": "TODO: Quantify improvement (e.g., '50% fewer reallocations')"
+      }
+    }
+  ],
+  "anti_patterns": [
+    {
+      "name": "TODO: Anti-pattern Name (e.g., 'Not Reserving Capacity')",
+      "description": "TODO: Describe the common mistake",
+      "why_bad": "TODO: Explain performance/correctness issues",
+      "consciousness_penalty": "TODO: Float -0.1 to -0.5 (how much this hurts quality)",
+      "correct_alternative": "TODO: Reference paradigm name that fixes this",
+      "example": {
+        "bad_code": "TODO: Code demonstrating anti-pattern",
+        "good_code": "TODO: Corrected code",
+        "explanation": "TODO: Why the correction works"
+      }
+    }
+  ],
+  "complexity_analysis": {
+    "summary": "O(1) for most operations",
+    "operations": [
+      {
+        "operation": "TODO: Operation name (e.g., 'push_back')",
+        "time_complexity": "TODO: Big-O (e.g., 'O(1) amortized')",
+        "space_complexity": "TODO: Big-O",
+        "notes": "TODO: Important performance considerations"
+      }
+    ],
+    "memory_model": "TODO: Describe memory allocation strategy",
+    "cache_performance": "TODO: Cache locality characteristics"
+  },
+  "thread_safety": {
+    "concurrent_reads": "TODO: Safe/Unsafe with explanation",
+    "concurrent_writes": "TODO: Safe/Unsafe with explanation",
+    "synchronization_required": "TODO: When you need mutexes/locks",
+    "thread_safe_operations": "TODO: List operations safe without locks"
+  },
+  "code_examples": [
+    {
+      "title": "TODO: Example title (e.g., 'Efficient Vector Usage')",
+      "description": "TODO: What this example demonstrates",
+      "code": "TODO: Complete, compilable C++ code example",
+      "consciousness_score": "TODO: Estimated 0.0-1.0",
+      "explanation": "TODO: Line-by-line explanation of best practices"
+    }
+  ],
+  "integration_notes": {
+    "common_combinations": "TODO: List common pairings with other STL components",
+    "performance_tips": "TODO: Non-obvious performance optimizations",
+    "gotchas": "TODO: Common pitfalls and edge cases",
+    "modern_cpp_features": "TODO: C++17/20 enhancements for this component"
+  },
+  "key_operations": [
+    {
+      "name": "function",
+      "signature": "TODO: Full C++ signature",
+      "description": "TODO: What it does",
+      "complexity": "TODO: Time/space complexity",
+      "example": "TODO: Brief usage example"
+    },
+    {
+      "name": "bind",
+      "signature": "TODO: Full C++ signature",
+      "description": "TODO: What it does",
+      "complexity": "TODO: Time/space complexity",
+      "example": "TODO: Brief usage example"
+    },
+    {
+      "name": "mem_fn",
+      "signature": "TODO: Full C++ signature",
+      "description": "TODO: What it does",
+      "complexity": "TODO: Time/space complexity",
+      "example": "TODO: Brief usage example"
+    },
+    {
+      "name": "plus",
+      "signature": "TODO: Full C++ signature",
+      "description": "TODO: What it does",
+      "complexity": "TODO: Time/space complexity",
+      "example": "TODO: Brief usage example"
+    },
+    {
+      "name": "less",
+      "signature": "TODO: Full C++ signature",
+      "description": "TODO: What it does",
+      "complexity": "TODO: Time/space complexity",
+      "example": "TODO: Brief usage example"
+    },
+    {
+      "name": "hash",
+      "signature": "TODO: Full C++ signature",
+      "description": "TODO: What it does",
+      "complexity": "TODO: Time/space complexity",
+      "example": "TODO: Brief usage example"
+    }
+  ],
+  "related_components": "TODO: List related STL components to study together",
+  "cpp_versions": {
+    "cpp11": "TODO: What was added in C++11",
+    "cpp14": "TODO: What was added in C++14",
+    "cpp17": "TODO: What was added in C++17",
+    "cpp20": "TODO: What was added in C++20",
+    "cpp23": "TODO: What was added in C++23"
+  },
+  "consciousness_calculation": {
+    "formula": "base_score + sum(paradigm_impacts) - sum(antipattern_penalties)",
+    "base_score": "TODO: 0.5-0.7 depending on component maturity",
+    "paradigm_contribution": "TODO: Sum after filling all paradigms",
+    "antipattern_penalty": "TODO: Sum after identifying all anti-patterns",
+    "final_consciousness": "TODO: Calculate final score (0.0-1.0)"
+  }
+}

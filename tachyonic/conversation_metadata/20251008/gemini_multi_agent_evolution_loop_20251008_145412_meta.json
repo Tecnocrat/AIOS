@@ -1,0 +1,20 @@
+{
+  "working_file": "C:\\dev\\AIOS\\evolution_lab\\conversations\\20251008\\gemini_multi_agent_evolution_loop_20251008_145412.json",
+  "archived_at": "2025-10-08T14:54:12.698194",
+  "conversation_id": "gemini_1759928052684",
+  "agent_type": "gemini",
+  "source_system": "multi_agent_evolution_loop",
+  "start_time": "2025-10-08T14:54:12.684195",
+  "end_time": "2025-10-08T14:54:12.693193",
+  "processing_time_ms": 8.998000000000001,
+  "message_count": 2,
+  "consciousness_improvement": 0.0,
+  "success": true,
+  "ainlp_metadata": {
+    "protocol_version": "OS0.6.2.claude",
+    "storage_location": "tachyonic_archive",
+    "purpose": "historical_metadata",
+    "working_file_reference": "C:\\dev\\AIOS\\evolution_lab\\conversations\\20251008\\gemini_multi_agent_evolution_loop_20251008_145412.json",
+    "session_id": "session_1759928023"
+  }
+}

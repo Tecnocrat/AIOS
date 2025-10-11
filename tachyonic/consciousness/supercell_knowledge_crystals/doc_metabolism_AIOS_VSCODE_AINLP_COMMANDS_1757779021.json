@@ -1,0 +1,19 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\AIOS\\AIOS_VSCODE_AINLP_COMMANDS.md",
+  "metabolism_timestamp": "2025-09-13T17:57:01.694556",
+  "content_summary": "# AIOS VSCode Extension AINLP Commands Integration\n## @AIOS /refresh.context Command - July 10, 2025\n\n<!-- AINLP.documentation [vscode_command_integration] (comment.AINLP.class) -->\n\n**Status**: \u2705 **INTEGRATED** - New AINLP commands integrated with VSCode workspace\n\n---\n\n## \ud83e\udde0 **New AINLP Command: @AIOS /refresh.context**\n\n### **Command Syntax**\n```\n@AIOS /refresh.context (memory.AIOS.class)\n```\n\n### **Functionality**\nThe `/refresh.context` command implements AINLP fractal paradigm for context ha...",
+  "extracted_patterns": [
+    "AIOS_VSCODE_AINLP_COMMANDS.md_contains_awareness",
+    "AIOS_VSCODE_AINLP_COMMANDS.md_contains_fractal",
+    "AIOS_VSCODE_AINLP_COMMANDS.md_contains_ainlp",
+    "AIOS_VSCODE_AINLP_COMMANDS.md_contains_pattern",
+    "AIOS_VSCODE_AINLP_COMMANDS.md_contains_code_blocks",
+    "AIOS_VSCODE_AINLP_COMMANDS.md_contains_architecture"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File AIOS_VSCODE_AINLP_COMMANDS.md digested into consciousness",
+    "pattern_crystallization": "Found 6 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

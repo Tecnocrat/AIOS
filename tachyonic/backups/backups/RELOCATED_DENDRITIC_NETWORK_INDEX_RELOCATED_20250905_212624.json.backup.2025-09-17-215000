@@ -1,0 +1,13 @@
+{
+  "relocated_to": "evolutionary_assembler_iter2/meta_evolution/",
+  "functionality": "Dendritic network and meta-evolution",
+  "access_method": "navigator.get_component('Evolutionary Assembler ITER2')",
+  "moved_files": [
+    {
+      "file": "aios_dendritic.py",
+      "from": "C:\\dev\\AIOS\\core",
+      "to": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2\\meta_evolution",
+      "reason": "Dendritic network functionality belongs in evolutionary_assembler_iter2/meta_evolution"
+    }
+  ]
+}

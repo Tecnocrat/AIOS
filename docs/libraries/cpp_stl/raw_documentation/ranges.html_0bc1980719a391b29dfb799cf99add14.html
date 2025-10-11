@@ -1,0 +1,1587 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>&lt;ranges&gt; | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Get an overview of the Standard Template Library (STL) ranges." />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/cpp/standard-library/ranges?view=msvc-170" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="&lt;ranges&gt;" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/cpp/standard-library/ranges?view=msvc-170" />
+			<meta property="og:description" content="Get an overview of the Standard Template Library (STL) ranges." />
+			<meta name="platform_id" content="4fe12977-87dd-59eb-a4aa-48e579fd149e" /> <meta name="scope" content="C++" />
+			<meta name="locale" content="en-us" />
+			 <meta name="adobe-target" content="true" />
+			<meta name="uhfHeaderId" content="MSDocsHeader-CPP" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="breadcrumb_path" content="../_breadcrumb/toc.json" />
+	
+		<meta name="ROBOTS" content="INDEX,FOLLOW" />
+	
+		<meta name="manager" content="coxford" />
+	
+		<meta name="ms.date" content="2023-01-27T00:00:00Z" />
+	
+		<meta name="ms.topic" content="reference" />
+	
+		<meta name="audience" content="developer" />
+	
+		<meta name="ms.service" content="visual-cpp" />
+	
+		<meta name="ms.tgt_pltfrm" content="Windows" />
+	
+		<meta name="ms.workload" content="cplusplus" />
+	
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="feedback_product_url" content="https://developercommunity.visualstudio.com/cpp/" />
+	
+		<meta name="feedback_help_link_url" content="https://learn.microsoft.com/en-us/answers/tags/314/cpp" />
+	
+		<meta name="feedback_help_link_type" content="get-help-at-qna" />
+	
+		<meta name="ms.subservice" content="standard-libraries" />
+	
+		<meta name="ms.update-cycle" content="3650-days" />
+	
+		<meta name="author" content="TylerMSFT" />
+	
+		<meta name="ms.author" content="twhitney" />
+	
+		<meta name="document_id" content="09c6f742-afcf-a303-7acc-dfa44b09061a" />
+	
+		<meta name="document_version_independent_id" content="26144e86-f484-07ed-b9ca-df1d1a10bccc" />
+	
+		<meta name="updated_at" content="2023-01-30T18:34:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/ranges.md" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/534561a89ce9d365971ef14380b582766dd28244/docs/standard-library/ranges.md" />
+	
+		<meta name="git_commit_id" content="534561a89ce9d365971ef14380b582766dd28244" />
+	
+		<meta name="monikers" content="msvc-140" />
+	
+		<meta name="monikers" content="msvc-150" />
+	
+		<meta name="monikers" content="msvc-160" />
+	
+		<meta name="monikers" content="msvc-170" />
+	
+		<meta name="default_moniker" content="msvc-170" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="VS.vcppdocs" />
+	
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="toc_rel" content="toc.json" />
+	
+		<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/VS.vcppdocs/{branchName}{pdfName}" />
+	
+		<meta name="search.mshattr.devlang" content="cpp" />
+	
+		<meta name="word_count" content="1543" />
+	
+		<meta name="config_moniker_range" content="&gt;= msvc-140" />
+	
+		<meta name="asset_id" content="standard-library/ranges" />
+	
+		<meta name="moniker_range_name" content="5256ac7f630e06bcd294e6d414b26624" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="docs/standard-library/ranges.md" />
+	
+		<meta name="previous_tlsh_hash" content="FA264C02510CC0387ED22F56300FB65158F0D14FA1B01EE469356ED362486CE21B558AEA57227BC123770656127684CF62CFDB9BC4F9D3B98A619B6DC528B362D3993BB3F8" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/ranges.md" />
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/8a94907f-2511-4271-b5ca-ec7f2e75067c" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bffa8e88-f633-409d-a24d-083bdbc68872" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60bfc045-f127-4841-9d00-ea35495a5800" data-source="generated" />
+	
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03195.7140-e052f86a/styles/site-ltr.css" />
+			<link rel="preconnect" href="//mscom.demdex.net" crossorigin />
+						<link rel="dns-prefetch" href="//target.microsoft.com" />
+						<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net" />
+						<link
+							rel="preload"
+							as="script"
+							href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+							integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+							crossorigin="anonymous"
+							id="adobe-target-script"
+							type="application/javascript"
+						/>
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			<script src="/_themes/docs.theme/master/en-us/_themes/global/deprecation.js"></script>
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "get-help-at-qna",
+    "feedbackHelpLinkUrl": "https://learn.microsoft.com/en-us/answers/tags/314/cpp",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "MicrosoftDocs/cpp-docs",
+    "feedbackProductUrl": "https://developercommunity.visualstudio.com/cpp/",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": false,
+    "contributors": [
+      {
+        "name": "TylerMSFT",
+        "url": "https://github.com/TylerMSFT"
+      },
+      {
+        "name": "ShawnJackson",
+        "url": "https://github.com/ShawnJackson"
+      }
+    ]
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script src="/static/assets/0.4.03195.7140-e052f86a/scripts/en-us/index-docs.js"></script>
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<header
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				role="banner"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+				></div>
+			</header>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu display-flex"
+					data-bi-name="menu"
+			  >
+					<div
+		id="left-container"
+		class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full"
+	>
+		<nav
+			id="affixed-left-container"
+			class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+			aria-label="Primary"
+		></nav>
+	</div>
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit editor mode</span>
+			</button>
+		</div>
+	</div>
+			<div data-main-column class="padding-sm padding-top-none padding-top-sm-tablet">
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			class="button button-sm flex-shrink-0 margin-right-xxs display-none display-inline-flex-desktop"
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Focus mode</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="button-block button-sm has-inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon">
+				<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+			</span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm has-inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	 
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	
+					
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to plan</span>
+		</button>
+	  
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			
+			href="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/ranges.md"
+			data-original_content_git_url="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/ranges.md"
+			data-original_content_git_url_template="{repo}/blob/{branch}/docs/standard-library/ranges.md"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	
+					
+		<hr class="margin-block-xxs" />
+		<h4 class="font-size-sm padding-left-xxs">Share via</h4>
+		
+					<a
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-facebook"
+						data-bi-name="facebook"
+						data-page-action-item="overflow-all"
+						href="#"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-facebook-share"></span>
+						</span>
+						<span>Facebook</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-twitter"
+						data-bi-name="twitter"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-text" aria-hidden="true">
+							<span class="docon docon-xlogo-share"></span>
+						</span>
+						<span>x.com</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-linkedin"
+						data-bi-name="linkedin"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-linked-in-logo"></span>
+						</span>
+						<span>LinkedIn</span>
+					</a>
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-email"
+						data-bi-name="email"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-mail-message"></span>
+						</span>
+						<span>Email</span>
+					</a>
+			  
+	 
+		<hr class="margin-block-xxs" />
+		<button
+			class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			type="button"
+			data-bi-name="print"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			data-print-page
+			data-check-hidden="true"
+		>
+			<span class="icon color-primary" aria-hidden="true">
+				<span class="docon docon-print"></span>
+			</span>
+			<span>Print</span>
+		</button>
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon">
+							<span class="docon docon-exclamation-circle-solid" aria-hidden="true"></span>
+						</span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="ranges"><code>&lt;ranges&gt;</code></h1></div>
+					
+		<div
+			id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			
+		<div class="margin-block-xxs">
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				  <li class="visibility-hidden-visual-diff">
+			<local-time
+				format="twoDigitNumeric"
+				datetime="2023-01-30T00:00:00.000Z"
+				data-article-date-source="calculated"
+				class="is-invisible"
+			>
+				2023-01-30
+			</local-time>
+		</li>  
+			</ul>
+		</div>
+	 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	 
+		<nav
+			id="center-doc-outline"
+			class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				In this article
+			</h2>
+		</nav>
+	
+					<div class="content"><p>At a high level, a <em>range</em> is something that you can iterate over. A range is represented by an iterator that marks the beginning of the range and a sentinel that marks the end of the range. The sentinel may be the same type as the begin iterator, or it may be different. The containers, such as <code>vector</code> and <code>list</code>, in the C++ Standard Library are ranges. A range abstracts iterators in a way that simplifies and amplifies your ability to use the Standard Template Library (STL).</p>
+<p>STL algorithms usually take iterators that point to the portion of the collection that they should operate on. For example, consider how you sort a <code>vector</code> by using <code>std::sort()</code>. You pass two iterators that mark the beginning and end of the <code>vector</code>. That provides flexibility, but passing the iterators to the algorithm is extra work because you probably just want to sort the whole thing.</p>
+<p>With ranges, you can call <code>std::ranges::sort(myVector);</code>, which is treated as if you called <code>std::sort(myVector.begin(), myVector.end());</code>. In range libraries, algorithms take ranges as parameters (although they can also take iterators, if you want). They can operate directly on collections. Examples of range algorithms available in <code>&lt;algorithm&gt;</code> include <code>copy</code>, <code>copy_n</code>, <code>copy_if</code>, <code>all_of</code>, <code>any_of</code>, <code>none_of</code>, <code>find</code>, <code>find_if</code>, <code>find_if_not</code>, <code>count</code>, <code>count_if</code>, <code>for_each</code>, <code>for_each_n</code>, <code>equal</code>, and <code>mismatch</code>.</p>
+<p>But perhaps the most important benefit of ranges is that you can compose STL algorithms that operate on ranges in a style that's reminiscent of functional programming.</p>
+<h2 id="a-ranges-example">A ranges example</h2>
+<p>Before ranges, if you wanted to transform the elements of a collection that met a certain criterion, you needed to introduce an intermediate step to hold the results between operations. For example, if you wanted to build a vector of squares from the elements in another vector that are divisible by three, you could write something like:</p>
+<pre><code class="lang-cpp">std::vector&lt;int&gt; input = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+std::vector&lt;int&gt; intermediate, output;
+
+std::copy_if(input.begin(), input.end(), std::back_inserter(intermediate), [](const int i) { return i%3 == 0; });
+std::transform(intermediate.begin(), intermediate.end(), std::back_inserter(output), [](const int i) {return i*i; });
+</code></pre>
+<p>With ranges, you can accomplish the same thing without needing the <code>intermediate</code> vector:</p>
+<pre><code class="lang-cpp">// requires /std:c++20
+std::vector&lt;int&gt; input = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+auto output = input
+    | std::views::filter([](const int n) {return n % 3 == 0; })
+    | std::views::transform([](const int n) {return n * n; });
+</code></pre>
+<p>Besides being easier to read, this code avoids the memory allocation that's required for the <code>intermediate</code> vector and its contents. It also allows you to compose two operations.</p>
+<p>In the preceding code, each element that's divisible by three is combined with an operation to square that element. The pipe (<code>|</code>) symbol chains the operations together and is read left to right.</p>
+<p>The result, <code>output</code>, is itself a kind of range called a <em>view</em>.</p>
+<h2 id="views">Views</h2>
+<p>A view is a lightweight range. View operations--such as default construction, move construction/assignment, copy construction/assignment (if present), destruction, begin, and end--all happen in constant time regardless of the number of elements in the view.</p>
+<p>Views are created by range adaptors, which are discussed in the following section. For more information about the classes that implement various views, see <a href="view-classes?view=msvc-170" data-linktype="relative-path">View classes</a>.</p>
+<p>How the elements in the view appear depends on the range adaptor that you use to create the view. In the previous example, a range adaptor takes a range and returns a view of the elements divisible by three. The underlying range is unchanged.</p>
+<p>Views are composable, which is powerful. In the previous example, the view of vector elements that are divisible by three is combined with the view that squares those elements.</p>
+<p>The elements of a view are evaluated lazily. That is, the transformations that you apply to each element in a view aren't evaluated until you ask for the element. For example, if you run the following code in a debugger and put a breakpoint on the lines <code>auto divisible_by_three = ...</code> and <code>auto square =  ...</code>, you'll see that you hit the <code>divisible_by_three</code> lambda breakpoint as each element in <code>input</code> is tested for divisibility by three. The <code>square</code> lambda breakpoint will be hit as the elements that are divisible by three are squared.</p>
+<pre><code class="lang-cpp">// requires /std:c++20
+#include &lt;ranges&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+    std::vector&lt;int&gt; input =  { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    auto divisible_by_three = [](const int n) {return n % 3 == 0; };
+    auto square = [](const int n) {return n * n; };
+
+    auto x = input | std::views::filter(divisible_by_three)
+                   | std::views::transform(square);
+
+    for (int i : x)
+    {
+        std::cout &lt;&lt; i &lt;&lt; '\n';
+    }
+    return 0;
+}
+</code></pre>
+<p>For more information about views, see <a href="view-classes?view=msvc-170" data-linktype="relative-path"><code>&lt;ranges&gt;</code> view classes</a>.</p>
+<h2 id="range-adaptors">Range adaptors</h2>
+<p>Range adaptors take a range and produce a view. Range adaptors produce lazily evaluated views. That is, you don't incur the cost of transforming every element in the range to produce the view. You only pay the cost to process an element in the view when you access that element.</p>
+<p>In the previous example, the <code>filter</code> range adaptor creates a view named <code>input</code> that contains the elements that are divisible by three. The <code>transform</code> range adaptor takes the view of elements divisible by three and creates a view of those elements squared.</p>
+<p>Range adaptors can be chained together (composed), which is the heart of the power and flexibility of ranges. Composing range adaptors allows you to overcome the problem that the previous STL algorithms aren't easily composable.</p>
+<p>For more information about creating views, see <a href="range-adaptors?view=msvc-170" data-linktype="relative-path">Range adaptors</a>.</p>
+<h2 id="range-algorithms">Range algorithms</h2>
+<p>Some range algorithms take a range argument. An example is <code>std::ranges::sort(myVector);</code>.</p>
+<p>The range algorithms are almost identical to the corresponding iterator-pair algorithms in the <code>std</code> namespace. The difference is that they have <a href="range-concepts?view=msvc-170" data-linktype="relative-path">concept-enforced constraints</a>, and they accept either range arguments or more iterator-sentinel argument pairs. They can work directly on a container and can be easily chained together.</p>
+<h2 id="ranges-functions"><code>&lt;ranges&gt;</code> functions</h2>
+<p>The following functions are used to create iterators and sentinels for ranges, and to get the size of a range.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="range-functions?view=msvc-170#begin" data-linktype="relative-path"><code>begin</code></a><sup>C++20</sup></td>
+<td>Get an iterator to the first element in the range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#cbegin" data-linktype="relative-path"><code>cbegin</code></a><sup>C++20</sup></td>
+<td>Get a <code>const</code> iterator to the first element in the range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#cend" data-linktype="relative-path"><code>cend</code></a><sup>C++20</sup></td>
+<td>Get the sentinel at the end of the <code>const</code>-qualified range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#cdata" data-linktype="relative-path"><code>cdata</code></a><sup>C++20</sup></td>
+<td>Get a <code>const</code> pointer to the first element in the contiguous range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#crbegin" data-linktype="relative-path"><code>crbegin</code></a><sup>C++20</sup></td>
+<td>Get a reverse <code>const</code> iterator to the beginning of the range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#crend" data-linktype="relative-path"><code>crend</code></a><sup>C++20</sup></td>
+<td>Get the sentinel at the end of what <code>crbegin()</code> returns.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#data" data-linktype="relative-path"><code>data</code></a><sup>C++20</sup></td>
+<td>Get a pointer to the first element in the contiguous range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#empty" data-linktype="relative-path"><code>empty</code></a><sup>C++20</sup></td>
+<td>Determine if the range is empty.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#end" data-linktype="relative-path"><code>end</code></a><sup>C++20</sup></td>
+<td>Get the sentinel at the end of the range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#rbegin" data-linktype="relative-path"><code>rbegin</code></a><sup>C++20</sup></td>
+<td>Get a reverse iterator to the beginning of the range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#rend" data-linktype="relative-path"><code>rend</code></a><sup>C++20</sup></td>
+<td>Get a reverse iterator to the sentinel at the end of the range.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#size" data-linktype="relative-path"><code>size</code></a><sup>C++20</sup></td>
+<td>Get the size of the range as an unsigned value.</td>
+</tr>
+<tr>
+<td><a href="range-functions?view=msvc-170#ssize" data-linktype="relative-path"><code>ssize</code></a><sup>C++20</sup></td>
+<td>Get the size of the range as a signed value.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, see <a href="range-functions?view=msvc-170" data-linktype="relative-path"><code>&lt;ranges&gt;</code> functions</a>.</p>
+<h2 id="range-concepts">Range concepts</h2>
+<p>How you iterate over the elements of a range depends on its underlying iterator type. Ranges use C++ concepts that specify which iterator they support.</p>
+<p>In C++20, to say that concept <em>X</em> refines concept <em>Y</em> means that everything that satisfies concept <em>Y</em> also satisfies concept <em>X</em>. For example: <em>car</em>, <em>bus</em>, and <em>truck</em> all refine <em>vehicle</em>.</p>
+<p>Some range concepts mirror the hierarchy of iterator categories. The following table lists the range concepts, along with the types of containers that they can be applied to.</p>
+<table>
+<thead>
+<tr>
+<th>Range concept</th>
+<th>Description</th>
+<th>Supported containers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="range-concepts?view=msvc-170#output_range" data-linktype="relative-path"><code>std::ranges::output_range</code></a></td>
+<td>Can iterate forward.</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="range-concepts?view=msvc-170#input_range" data-linktype="relative-path"><code>std::ranges::input_range</code></a></td>
+<td>Can iterate from beginning to end at least once.</td>
+<td><code>std::forward_list</code><br><code>std::unordered_map</code><br><code>std::unordered_multimap</code><br><code>std::unordered_set</code><br><code>std::unordered_multiset</code><br><code>basic_istream_view</code></td>
+</tr>
+<tr>
+<td><a href="range-concepts?view=msvc-170#forward_range" data-linktype="relative-path"><code>std::ranges::forward_range</code></a></td>
+<td>Can iterate from beginning to end more than once.</td>
+<td><code>std::forward_list</code><br><code>std::unordered_map</code><br><code>std::unordered_multimap</code><br><code>std::unordered_set</code><br><code>std::unordered_multiset</code></td>
+</tr>
+<tr>
+<td><a href="range-concepts?view=msvc-170#bidirectional_range" data-linktype="relative-path"><code>std::ranges::bidirectional_range</code></a></td>
+<td>Can iterate forward and backward more than once.</td>
+<td><code>std::list</code><br><code>std::map</code><br><code>std::multimap</code><br><code>std::multiset</code><br><code>std::set</code></td>
+</tr>
+<tr>
+<td><a href="range-concepts?view=msvc-170#random_access_range" data-linktype="relative-path"><code>std::ranges::random_access_range</code></a></td>
+<td>Can access an arbitrary element (in constant time) by using the <code>[]</code> operator.</td>
+<td><code>std::deque</code></td>
+</tr>
+<tr>
+<td><a href="range-concepts?view=msvc-170#contiguous_range" data-linktype="relative-path"><code>std::ranges::contiguous_range</code></a></td>
+<td>The elements are stored in memory consecutively.</td>
+<td><code>std::array</code><br><code>std::string</code><br><code>std::vector</code></td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="range-concepts?view=msvc-170" data-linktype="relative-path"><code>&lt;ranges&gt;</code> concepts</a> for more information about these concepts.</p>
+<h2 id="ranges-alias-templates"><code>&lt;ranges&gt;</code> alias templates</h2>
+<p>The following alias templates determine the types of iterators and sentinels for a range:</p>
+<table>
+<thead>
+<tr>
+<th>Alias template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#borrowed_iterator_t" data-linktype="relative-path"><code>borrowed_iterator_t</code></a><sup>C++20</sup></td>
+<td>Determine if an iterator returned for a <code>range</code> refers to a range whose lifetime has ended.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#borrowed_subrange_t" data-linktype="relative-path"><code>borrowed_subrange_t</code></a><sup>C++20</sup></td>
+<td>Determine if an iterator returned for a <code>subrange</code> refers to a subrange whose lifetime has ended.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#dangling" data-linktype="relative-path"><code>dangling</code></a><sup>C++20</sup></td>
+<td>Indicates that the returned iterator of a <code>range</code>/<code>subrange</code> outlives the lifetime of the <code>range</code>/<code>subrange</code> it refers to.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#iterator_t" data-linktype="relative-path"><code>iterator_t</code></a><sup>C++20</sup></td>
+<td>Returns the iterator type of the specified range type.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#range_difference_t" data-linktype="relative-path"><code>range_difference_t</code></a><sup>C++20</sup></td>
+<td>Returns the difference type of the specified range's iterator type.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#range_reference_t" data-linktype="relative-path"><code>range_reference_t</code></a><sup>C++20</sup></td>
+<td>Returns the reference type of the specified range's iterator type.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#range_rvalue_reference_t" data-linktype="relative-path"><code>range_rvalue_reference_t</code></a><sup>C++20</sup></td>
+<td>Returns the rvalue reference type for the specified range's iterator type. In other words, the rvalue reference type of the range's elements.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#range_size_t" data-linktype="relative-path"><code>range_size_t</code></a><sup>C++20</sup></td>
+<td>Returns the type used to report the specified range's size.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#range_value_t" data-linktype="relative-path"><code>range_value_t</code></a><sup>C++20</sup></td>
+<td>Returns the value type of the specified range's iterator type. Or in other words, the type of the elements in the range.</td>
+</tr>
+<tr>
+<td><a href="ranges-alias-templates?view=msvc-170#sentinel_t" data-linktype="relative-path"><code>sentinel_t</code></a><sup>C++20</sup></td>
+<td>Returns the sentinel type of the specified range.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information about these alias templates, see <a href="ranges-alias-templates?view=msvc-170" data-linktype="relative-path"><code>&lt;ranges&gt;</code> alias templates</a>.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="range-functions?view=msvc-170" data-linktype="relative-path"><code>&lt;ranges&gt;</code> functions</a><br>
+<a href="range-concepts?view=msvc-170" data-linktype="relative-path"><code>&lt;ranges&gt;</code> concepts</a><br>
+<a href="range-adaptors?view=msvc-170" data-linktype="relative-path">Range adaptors</a><br>
+<a href="cpp-standard-library-header-files?view=msvc-170" data-linktype="relative-path">Header files reference</a></p>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Need help with this topic?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				Additional resources
+			</h2>
+			 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-qna-mobile"
+			class="margin-top-xxs"
+			data-bi-name="qna-link-card"
+			hidden
+		></section>
+	
+		</div>
+	
+			</div>
+			
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside "
+					data-bi-name="aside"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+			role="complementary"
+			aria-label="Additional resources"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<p class="font-weight-semibold margin-bottom-xs">Was this page helpful?</p>
+			<div class="buttons">
+				<button
+					class="thumb-rating-button like button button-primary button-sm"
+					data-test-id="right-rail-rating-yes"
+					data-binary-rating-response="rating-yes"
+					type="button"
+					title="This article is helpful"
+					data-bi-name="button-rating-yes"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-like"></span>
+					</span>
+					<span>Yes</span>
+				</button>
+				<button
+					class="thumb-rating-button dislike button button-primary button-sm"
+					id="right-rail-no-button"
+					hidden
+					data-test-id="right-rail-rating-no"
+					data-binary-rating-response="rating-no"
+					type="button"
+					title="This article is not helpful"
+					data-bi-name="button-rating-no"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-dislike"></span>
+					</span>
+					<span>No</span>
+				</button>
+				<details class="popover" id="help-popover" data-test-id="feedback-popover">
+					<summary
+						tabindex="0"
+						class="thumb-rating-button dislike button button-primary button-sm"
+						data-test-id="details-right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+						data-bi-an="feedback-unhelpful-popover"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</summary>
+					<div
+						class="popover-content width-200 width-300-tablet"
+						role="dialog"
+						aria-labelledby="popover-heading"
+						aria-describedby="popover-description"
+					>
+						<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+							Need help with this topic?
+						</p>
+						<p id="popover-description" class="font-size-sm margin-bottom-xs">
+							Want to try using Ask Learn to clarify or guide you through this topic?
+						</p>
+						
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+					</div>
+				</details>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout has-padding has-default-focus border-top  uhf-container"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	
+				<div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-expanded="false"
+				title="Theme"
+				data-bi-name="theme"
+			>
+				<span class="icon">
+					<span class="docon docon-sun" aria-hidden="true"></span>
+				</span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu">
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="light"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="dark"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="high-contrast"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2025</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>

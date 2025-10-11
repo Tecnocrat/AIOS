@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-10-04T20:20:50.738121",
+  "dry_run": true,
+  "analysis": {
+    "timestamp": "2025-10-04T20:20:50.734121",
+    "workspace_root": "C:\\dev\\AIOS",
+    "violations_found": [],
+    "essential_files": [
+      "AIOS.code-workspace",
+      "AIOS.sln",
+      "launch_aios.ps1",
+      "pyproject.toml",
+      "README.md",
+      "requirements.in",
+      "requirements.txt",
+      "test_gemini_bridge.py",
+      "test_library_generation.py",
+      "test_ollama_bridge.py",
+      "test_paradigm_extraction.py"
+    ],
+    "total_files_analyzed": 11,
+    "violations_count": 0
+  },
+  "relocations": [],
+  "errors": [],
+  "summary": {
+    "status": "compliant",
+    "files_relocated": 0,
+    "errors": 0
+  }
+}

@@ -1,0 +1,314 @@
+[
+  {
+    "timestamp": "2025-08-28T11:36:15.865501",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-28T11:36:15.865501",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-28T11:36:15.819124"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T11:36:15.819124",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T11:36:15.868956",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-28T11:36:15.868956",
+      "error": "test error",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-28T11:36:15.819124"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T11:36:15.819124",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T11:43:49.375234",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-28T11:43:49.375234",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-28T11:43:49.375234"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T11:43:49.375234",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T11:43:49.395392",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-28T11:43:49.395392",
+      "error": "test error",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-28T11:43:49.375234"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T11:43:49.375234",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:14:39.597484",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-28T15:14:39.597484",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-28T15:14:39.595045"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:14:39.595045",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:14:39.616004",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-28T15:14:39.616004",
+      "error": "test error",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-28T15:14:39.595045"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:14:39.595045",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:15:34.356235",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-28T15:15:34.356235",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-28T15:15:34.336872"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:15:34.336872",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:15:34.378094",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-28T15:15:34.378094",
+      "error": "test error",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-28T15:15:34.336872"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:15:34.336872",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.352528",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.352528",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.382316",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.376773",
+      "error": "test error",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.406718",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.406718",
+      "handler": "DefaultHandler",
+      "message": "test message",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.436214",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.436214",
+      "handler": "AIOSHandler",
+      "message": "tell me about aios",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.464931",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.464931",
+      "handler": "DevelopmentHandler",
+      "message": "tell me about code",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.484886",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.484886",
+      "handler": "ArchitectureHandler",
+      "message": "tell me about architecture",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.507363",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.507363",
+      "handler": "PerformanceHandler",
+      "message": "tell me about performance",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T15:49:48.534332",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-28T15:49:48.534332",
+      "handler": "HelpHandler",
+      "message": "tell me about help",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-28T15:49:47.970089"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T15:49:47.970089",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T16:37:57.878944",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-28T16:37:57.878944",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-28T16:37:57.848445"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T16:37:57.848445",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-28T16:37:57.928225",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-28T16:37:57.928225",
+      "error": "test error",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-28T16:37:57.848445"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-28T16:37:57.848445",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  }
+]

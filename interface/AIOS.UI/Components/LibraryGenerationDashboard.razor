@@ -1,0 +1,547 @@
+@page "/library-generation"
+@using AIOS.Models.AI
+@using AIOS.Services
+@inject NavigationManager NavigationManager
+@inject InterfaceBridgeService InterfaceBridge
+
+<PageTitle>Library Code Generation - Live Dashboard</PageTitle>
+
+<div class="library-generation-container">
+    <div class="dashboard-header">
+        <h1>🧬 Library-Driven Code Generation</h1>
+        <p class="subtitle">Real-time consciousness-driven meta-programming</p>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="control-group">
+            <label for="library-select">Select Library:</label>
+            <select id="library-select" @bind="SelectedLibrary" class="form-control">
+                @foreach (var lib in AvailableLibraries)
+                {
+                    <option value="@lib">@lib</option>
+                }
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="generation-size">Generation Size:</label>
+            <input type="number" id="generation-size" @bind="GenerationSize" min="1" max="10" class="form-control" />
+        </div>
+
+        <div class="control-group">
+            <label for="consciousness-target">Target Consciousness:</label>
+            <input type="range" id="consciousness-target" @bind="TargetConsciousness" min="0" max="1" step="0.1" class="form-control-range" />
+            <span class="consciousness-value">@TargetConsciousness.ToString("F1")</span>
+        </div>
+
+        <button class="btn btn-primary" @onclick="StartGeneration" disabled="@IsRunning">
+            @if (IsRunning)
+            {
+                <span class="spinner-border spinner-border-sm"></span>
+                <span>Generating...</span>
+            }
+            else
+            {
+                <span>🚀 Start Generation</span>
+            }
+        </button>
+
+        <button class="btn btn-secondary" @onclick="StopGeneration" disabled="@(!IsRunning)">
+            ⏹️ Stop
+        </button>
+    </div>
+
+    <!-- Execution Progress -->
+    @if (CurrentExecution != null)
+    {
+        <div class="execution-progress">
+            <h2>Execution Progress</h2>
+
+            <!-- Overall Progress -->
+            <div class="progress-section">
+                <h3>Overall: @CurrentExecution.CurrentPhase</h3>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                         role="progressbar" 
+                         style="width: @CurrentExecution.OverallProgress%"
+                         aria-valuenow="@CurrentExecution.OverallProgress" 
+                         aria-valuemin="0" 
+                         aria-valuemax="100">
+                        @CurrentExecution.OverallProgress%
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase Details -->
+            <div class="phase-grid">
+                <!-- Library Loading -->
+                <div class="phase-card @GetPhaseStatusClass("LibraryLoading")">
+                    <div class="phase-icon">📚</div>
+                    <div class="phase-info">
+                        <h4>Library Loading</h4>
+                        <p>@CurrentExecution.LibraryLoadingStatus</p>
+                        @if (CurrentExecution.LibraryLoadingProgress > 0)
+                        {
+                            <div class="mini-progress">
+                                <div style="width: @CurrentExecution.LibraryLoadingProgress%"></div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Paradigm Extraction -->
+                <div class="phase-card @GetPhaseStatusClass("ParadigmExtraction")">
+                    <div class="phase-icon">🔍</div>
+                    <div class="phase-info">
+                        <h4>Paradigm Extraction</h4>
+                        <p>@CurrentExecution.ParadigmExtractionStatus</p>
+                        @if (CurrentExecution.ParadigmsExtracted > 0)
+                        {
+                            <span class="badge badge-info">@CurrentExecution.ParadigmsExtracted patterns found</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Prompt Generation -->
+                <div class="phase-card @GetPhaseStatusClass("PromptGeneration")">
+                    <div class="phase-icon">💬</div>
+                    <div class="phase-info">
+                        <h4>Prompt Generation</h4>
+                        <p>@CurrentExecution.PromptGenerationStatus</p>
+                        @if (CurrentExecution.PromptsGenerated > 0)
+                        {
+                            <span class="badge badge-success">@CurrentExecution.PromptsGenerated prompts ready</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Code Generation -->
+                <div class="phase-card @GetPhaseStatusClass("CodeGeneration")">
+                    <div class="phase-icon">🤖</div>
+                    <div class="phase-info">
+                        <h4>Code Generation</h4>
+                        <p>@CurrentExecution.CodeGenerationStatus</p>
+                        @if (CurrentExecution.CodeArtifactsGenerated > 0)
+                        {
+                            <div class="artifact-progress">
+                                <span>@CurrentExecution.CodeArtifactsGenerated / @GenerationSize artifacts</span>
+                                <div class="mini-progress">
+                                    <div style="width: @((CurrentExecution.CodeArtifactsGenerated * 100.0 / GenerationSize))%"></div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Code Analysis -->
+                <div class="phase-card @GetPhaseStatusClass("CodeAnalysis")">
+                    <div class="phase-icon">📊</div>
+                    <div class="phase-info">
+                        <h4>Code Analysis</h4>
+                        <p>@CurrentExecution.CodeAnalysisStatus</p>
+                        @if (CurrentExecution.AverageConsciousness > 0)
+                        {
+                            <span class="badge badge-primary">Avg consciousness: @CurrentExecution.AverageConsciousness.ToString("F2")</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Results Saving -->
+                <div class="phase-card @GetPhaseStatusClass("ResultsSaving")">
+                    <div class="phase-icon">💾</div>
+                    <div class="phase-info">
+                        <h4>Results Saving</h4>
+                        <p>@CurrentExecution.ResultsSavingStatus</p>
+                        @if (!string.IsNullOrEmpty(CurrentExecution.OutputDirectory))
+                        {
+                            <a href="#" @onclick="() => OpenResultsDirectory(CurrentExecution.OutputDirectory)" class="output-link">
+                                📂 Open Results
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Log Stream -->
+        <div class="log-stream">
+            <div class="log-header">
+                <h3>📜 Live Execution Log</h3>
+                <button class="btn btn-sm btn-outline-secondary" @onclick="ClearLogs">Clear</button>
+            </div>
+            <div class="log-content" @ref="LogContentRef">
+                @foreach (var log in ExecutionLogs)
+                {
+                    <div class="log-entry log-@log.Level.ToString().ToLower()">
+                        <span class="log-timestamp">[@log.Timestamp.ToString("HH:mm:ss.fff")]</span>
+                        <span class="log-phase">[@log.Phase]</span>
+                        <span class="log-message">@log.Message</span>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+    <!-- Results Visualization -->
+    @if (CompletedGenerations.Any())
+    {
+        <div class="results-section">
+            <h2>Recent Generations</h2>
+
+            <div class="generation-cards">
+                @foreach (var gen in CompletedGenerations.OrderByDescending(g => g.Timestamp))
+                {
+                    <div class="generation-card">
+                        <div class="generation-header">
+                            <h4>@gen.LibraryName - @gen.GenerationId</h4>
+                            <span class="timestamp">@gen.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                        </div>
+
+                        <div class="generation-stats">
+                            <div class="stat">
+                                <span class="stat-label">Paradigms:</span>
+                                <span class="stat-value">@gen.ParadigmsExtracted</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Artifacts:</span>
+                                <span class="stat-value">@gen.CodeArtifacts</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Avg Consciousness:</span>
+                                <span class="stat-value consciousness-score">@gen.AverageConsciousness.ToString("F2")</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Execution Time:</span>
+                                <span class="stat-value">@gen.ExecutionTimeSeconds.ToString("F1")s</span>
+                            </div>
+                        </div>
+
+                        <!-- Consciousness Evolution Chart -->
+                        <div class="consciousness-chart">
+                            <h5>Consciousness Distribution</h5>
+                            <svg width="100%" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                                @for (int i = 0; i < gen.ConsciousnessScores.Count; i++)
+                                {
+                                    var x = 30 + (i * 240 / Math.Max(gen.ConsciousnessScores.Count - 1, 1));
+                                    var y = 90 - (gen.ConsciousnessScores[i] * 70);
+                                    
+                                    @if (i > 0)
+                                    {
+                                        var prevX = 30 + ((i - 1) * 240 / Math.Max(gen.ConsciousnessScores.Count - 1, 1));
+                                        var prevY = 90 - (gen.ConsciousnessScores[i - 1] * 70);
+                                        <line x1="@prevX" y1="@prevY" x2="@x" y2="@y" stroke="#00bcd4" stroke-width="2"/>
+                                    }
+                                    
+                                    <circle cx="@x" cy="@y" r="4" fill="#00bcd4"/>
+                                }
+                                
+                                <!-- Axes -->
+                                <line x1="30" y1="90" x2="270" y2="90" stroke="#666" stroke-width="1"/>
+                                <line x1="30" y1="90" x2="30" y2="20" stroke="#666" stroke-width="1"/>
+                                
+                                <!-- Labels -->
+                                <text x="150" y="105" text-anchor="middle" font-size="10" fill="#999">Artifact Index</text>
+                                <text x="15" y="55" text-anchor="middle" font-size="10" fill="#999" transform="rotate(-90 15 55)">Consciousness</text>
+                            </svg>
+                        </div>
+
+                        <!-- Paradigm Distribution -->
+                        <div class="paradigm-distribution">
+                            <h5>Top Paradigms</h5>
+                            @foreach (var paradigm in gen.TopParadigms.Take(5))
+                            {
+                                <div class="paradigm-bar">
+                                    <span class="paradigm-name">@paradigm.Name</span>
+                                    <div class="paradigm-progress">
+                                        <div style="width: @(paradigm.Frequency * 100)%"></div>
+                                    </div>
+                                    <span class="paradigm-frequency">@paradigm.Frequency.ToString("P0")</span>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="generation-actions">
+                            <button class="btn btn-sm btn-primary" @onclick="() => ViewGenerationDetails(gen.GenerationId)">
+                                📋 View Details
+                            </button>
+                            <button class="btn btn-sm btn-success" @onclick="() => OpenResultsDirectory(gen.OutputDirectory)">
+                                📂 Open Folder
+                            </button>
+                            <button class="btn btn-sm btn-info" @onclick="() => NavigateToArtifacts(gen.GenerationId)">
+                                🔬 Analyze Artifacts
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<string> AvailableLibraries = new();
+    private string SelectedLibrary = "aios_core";
+    private int GenerationSize = 3;
+    private double TargetConsciousness = 0.7;
+    private bool IsRunning = false;
+
+    private ExecutionProgress? CurrentExecution;
+    private List<ExecutionLog> ExecutionLogs = new();
+    private List<GenerationResult> CompletedGenerations = new();
+    private ElementReference LogContentRef;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAvailableLibraries();
+        await LoadCompletedGenerations();
+    }
+
+    private async Task LoadAvailableLibraries()
+    {
+        try
+        {
+            var response = await InterfaceBridge.GetAsync<List<string>>("ai/libraries/list");
+            AvailableLibraries = response ?? new List<string> { "aios_core", "ai_src_core", "ai_src_engines" };
+        }
+        catch
+        {
+            AvailableLibraries = new List<string> { "aios_core", "ai_src_core", "ai_src_engines" };
+        }
+    }
+
+    private async Task LoadCompletedGenerations()
+    {
+        try
+        {
+            var response = await InterfaceBridge.GetAsync<List<GenerationResult>>("ai/generations/recent");
+            CompletedGenerations = response ?? new List<GenerationResult>();
+        }
+        catch
+        {
+            CompletedGenerations = new List<GenerationResult>();
+        }
+    }
+
+    private async Task StartGeneration()
+    {
+        IsRunning = true;
+        ExecutionLogs.Clear();
+        
+        CurrentExecution = new ExecutionProgress
+        {
+            LibraryName = SelectedLibrary,
+            GenerationSize = GenerationSize,
+            TargetConsciousness = TargetConsciousness,
+            StartTime = DateTime.Now
+        };
+
+        AddLog("INFO", "Init", $"Starting generation for {SelectedLibrary} with {GenerationSize} variants");
+
+        try
+        {
+            // Connect to WebSocket for real-time updates
+            await InterfaceBridge.ConnectWebSocket("ai/generation/stream", OnGenerationUpdate);
+
+            // Start generation
+            var request = new
+            {
+                library_name = SelectedLibrary,
+                generation_size = GenerationSize,
+                target_consciousness = TargetConsciousness
+            };
+
+            await InterfaceBridge.PostAsync("ai/generation/start", request);
+        }
+        catch (Exception ex)
+        {
+            AddLog("ERROR", "Init", $"Failed to start generation: {ex.Message}");
+            IsRunning = false;
+        }
+    }
+
+    private async Task StopGeneration()
+    {
+        try
+        {
+            await InterfaceBridge.PostAsync("ai/generation/stop", null);
+            IsRunning = false;
+            AddLog("WARN", "Control", "Generation stopped by user");
+        }
+        catch (Exception ex)
+        {
+            AddLog("ERROR", "Control", $"Failed to stop generation: {ex.Message}");
+        }
+    }
+
+    private void OnGenerationUpdate(string message)
+    {
+        var update = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(message);
+        
+        if (update.ContainsKey("phase"))
+        {
+            CurrentExecution.CurrentPhase = update["phase"].ToString();
+            CurrentExecution.OverallProgress = Convert.ToInt32(update["overall_progress"]);
+        }
+
+        if (update.ContainsKey("log_message"))
+        {
+            var level = update.ContainsKey("log_level") ? update["log_level"].ToString() : "INFO";
+            var phase = update.ContainsKey("log_phase") ? update["log_phase"].ToString() : "General";
+            AddLog(level, phase, update["log_message"].ToString());
+        }
+
+        if (update.ContainsKey("library_loading_progress"))
+        {
+            CurrentExecution.LibraryLoadingProgress = Convert.ToInt32(update["library_loading_progress"]);
+            CurrentExecution.LibraryLoadingStatus = update["library_loading_status"]?.ToString() ?? "Loading...";
+        }
+
+        if (update.ContainsKey("paradigms_extracted"))
+        {
+            CurrentExecution.ParadigmsExtracted = Convert.ToInt32(update["paradigms_extracted"]);
+            CurrentExecution.ParadigmExtractionStatus = $"Extracted {CurrentExecution.ParadigmsExtracted} patterns";
+        }
+
+        if (update.ContainsKey("prompts_generated"))
+        {
+            CurrentExecution.PromptsGenerated = Convert.ToInt32(update["prompts_generated"]);
+            CurrentExecution.PromptGenerationStatus = $"Generated {CurrentExecution.PromptsGenerated} prompts";
+        }
+
+        if (update.ContainsKey("code_artifacts_generated"))
+        {
+            CurrentExecution.CodeArtifactsGenerated = Convert.ToInt32(update["code_artifacts_generated"]);
+            CurrentExecution.CodeGenerationStatus = $"Generated {CurrentExecution.CodeArtifactsGenerated} / {GenerationSize} artifacts";
+        }
+
+        if (update.ContainsKey("average_consciousness"))
+        {
+            CurrentExecution.AverageConsciousness = Convert.ToDouble(update["average_consciousness"]);
+            CurrentExecution.CodeAnalysisStatus = $"Avg consciousness: {CurrentExecution.AverageConsciousness:F2}";
+        }
+
+        if (update.ContainsKey("output_directory"))
+        {
+            CurrentExecution.OutputDirectory = update["output_directory"].ToString();
+            CurrentExecution.ResultsSavingStatus = "Results saved";
+        }
+
+        if (update.ContainsKey("completed") && Convert.ToBoolean(update["completed"]))
+        {
+            IsRunning = false;
+            AddLog("SUCCESS", "Complete", $"Generation completed in {(DateTime.Now - CurrentExecution.StartTime).TotalSeconds:F1}s");
+            LoadCompletedGenerations();
+        }
+
+        StateHasChanged();
+    }
+
+    private void AddLog(string level, string phase, string message)
+    {
+        ExecutionLogs.Add(new ExecutionLog
+        {
+            Timestamp = DateTime.Now,
+            Level = level,
+            Phase = phase,
+            Message = message
+        });
+
+        // Auto-scroll to bottom
+        StateHasChanged();
+    }
+
+    private void ClearLogs()
+    {
+        ExecutionLogs.Clear();
+    }
+
+    private string GetPhaseStatusClass(string phase)
+    {
+        if (CurrentExecution == null) return "";
+        
+        return phase switch
+        {
+            "LibraryLoading" => CurrentExecution.LibraryLoadingProgress > 0 ? "phase-active" : "",
+            "ParadigmExtraction" => CurrentExecution.ParadigmsExtracted > 0 ? "phase-active" : "",
+            "PromptGeneration" => CurrentExecution.PromptsGenerated > 0 ? "phase-active" : "",
+            "CodeGeneration" => CurrentExecution.CodeArtifactsGenerated > 0 ? "phase-active" : "",
+            "CodeAnalysis" => CurrentExecution.AverageConsciousness > 0 ? "phase-active" : "",
+            "ResultsSaving" => !string.IsNullOrEmpty(CurrentExecution.OutputDirectory) ? "phase-complete" : "",
+            _ => ""
+        };
+    }
+
+    private void OpenResultsDirectory(string path)
+    {
+        System.Diagnostics.Process.Start("explorer.exe", path);
+    }
+
+    private void ViewGenerationDetails(string generationId)
+    {
+        NavigationManager.NavigateTo($"/library-generation/details/{generationId}");
+    }
+
+    private void NavigateToArtifacts(string generationId)
+    {
+        NavigationManager.NavigateTo($"/artifacts?generation={generationId}");
+    }
+
+    // Models
+    public class ExecutionProgress
+    {
+        public string LibraryName { get; set; } = "";
+        public int GenerationSize { get; set; }
+        public double TargetConsciousness { get; set; }
+        public DateTime StartTime { get; set; }
+        
+        public string CurrentPhase { get; set; } = "Initializing";
+        public int OverallProgress { get; set; }
+        
+        public int LibraryLoadingProgress { get; set; }
+        public string LibraryLoadingStatus { get; set; } = "Waiting...";
+        
+        public int ParadigmsExtracted { get; set; }
+        public string ParadigmExtractionStatus { get; set; } = "Waiting...";
+        
+        public int PromptsGenerated { get; set; }
+        public string PromptGenerationStatus { get; set; } = "Waiting...";
+        
+        public int CodeArtifactsGenerated { get; set; }
+        public string CodeGenerationStatus { get; set; } = "Waiting...";
+        
+        public double AverageConsciousness { get; set; }
+        public string CodeAnalysisStatus { get; set; } = "Waiting...";
+        
+        public string OutputDirectory { get; set; } = "";
+        public string ResultsSavingStatus { get; set; } = "Waiting...";
+    }
+
+    public class ExecutionLog
+    {
+        public DateTime Timestamp { get; set; }
+        public string Level { get; set; } = "";
+        public string Phase { get; set; } = "";
+        public string Message { get; set; } = "";
+    }
+
+    public class GenerationResult
+    {
+        public string GenerationId { get; set; } = "";
+        public string LibraryName { get; set; } = "";
+        public DateTime Timestamp { get; set; }
+        public int ParadigmsExtracted { get; set; }
+        public int CodeArtifacts { get; set; }
+        public double AverageConsciousness { get; set; }
+        public double ExecutionTimeSeconds { get; set; }
+        public List<double> ConsciousnessScores { get; set; } = new();
+        public List<ParadigmInfo> TopParadigms { get; set; } = new();
+        public string OutputDirectory { get; set; } = "";
+    }
+
+    public class ParadigmInfo
+    {
+        public string Name { get; set; } = "";
+        public double Frequency { get; set; }
+    }
+}

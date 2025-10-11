@@ -134,7 +134,7 @@ class PythonEnvironmentValidator:
         """Check cross-component import integration"""
         components = {
             "interface_bridge": (
-                "ai.core.interface_bridge", "AIOSInterfaceBridge"
+                "ai.nucleus.interface_bridge", "AIOSInterfaceBridge"
             ),
             "dendritic_supervisor": (
                 "runtime_intelligence.tools.dendritic_supervisor",

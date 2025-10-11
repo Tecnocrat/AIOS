@@ -1,0 +1,47 @@
+# Human-Guided Experiment
+# Date: 2025-10-08T14:42:12.620078
+# Agent: ollama
+# Task: Write a simple C++ function that calculates factorial recursively
+
+======================================================================
+PROMPT:
+Task: Write a simple C++ function that calculates factorial recursively
+
+Generate output following these guidelines:
+- Be clear and concise
+- Show your reasoning
+- Provide concrete examples if applicable
+
+Output:
+
+======================================================================
+RESPONSE:
+cpp
+#include <iostream>
+
+// Function to calculate the factorial of a non-negative integer using recursion.
+long long factorial(int n) {
+  // Base case: factorial of 0 is 1.
+  if (n == 0) {
+    return 1;
+  } else {
+    // Recursive step: factorial of n is n * factorial(n-1).
+    return n * factorial(n - 1);
+  }
+}
+
+int main() {
+  int num = 5;
+  long long fact = factorial(num);
+  std::cout << "Factorial of " << num << " is: " << fact << std::endl;
+
+  num = 0;
+  fact = factorial(num);
+  std::cout << "Factorial of " << num << " is: " << fact << std::endl;
+
+  num = 1;
+  fact = factorial(num);
+  std::cout << "Factorial of " << num << " is: " << fact << std::endl;
+  
+  return 0;
+}

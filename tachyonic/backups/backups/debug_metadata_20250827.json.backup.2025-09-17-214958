@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-08-27T21:50:37.785013",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T21:50:37.785013",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-27T21:50:37.779232"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T21:50:37.779232",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T21:50:37.790386",
+    "type": "error",
+    "data": {
+      "timestamp": "2025-08-27T21:50:37.790386",
+      "error": "test error",
+      "context": {},
+      "severity": "error",
+      "session_id": "2025-08-27T21:50:37.779232"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T21:50:37.779232",
+      "total_requests": 1,
+      "total_errors": 1,
+      "dendrite_level": "debug_neuron_active"
+    }
+  }
+]

@@ -1,0 +1,1999 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>&lt;type_traits&gt; | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Learn more about: " />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/cpp/standard-library/type-traits?view=msvc-170" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="&lt;type_traits&gt;" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/cpp/standard-library/type-traits?view=msvc-170" />
+			<meta property="og:description" content="Learn more about: " />
+			<meta name="platform_id" content="befbee8a-f43e-a7fe-8dab-3e3db79fc9bc" /> <meta name="scope" content="C++" />
+			<meta name="locale" content="en-us" />
+			 <meta name="adobe-target" content="true" />
+			<meta name="uhfHeaderId" content="MSDocsHeader-CPP" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="breadcrumb_path" content="../_breadcrumb/toc.json" />
+	
+		<meta name="ROBOTS" content="INDEX,FOLLOW" />
+	
+		<meta name="manager" content="coxford" />
+	
+		<meta name="ms.date" content="2019-02-21T00:00:00Z" />
+	
+		<meta name="ms.topic" content="reference" />
+	
+		<meta name="audience" content="developer" />
+	
+		<meta name="ms.service" content="visual-cpp" />
+	
+		<meta name="ms.tgt_pltfrm" content="Windows" />
+	
+		<meta name="ms.workload" content="cplusplus" />
+	
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="feedback_product_url" content="https://developercommunity.visualstudio.com/cpp/" />
+	
+		<meta name="feedback_help_link_url" content="https://learn.microsoft.com/en-us/answers/tags/314/cpp" />
+	
+		<meta name="feedback_help_link_type" content="get-help-at-qna" />
+	
+		<meta name="ms.subservice" content="standard-libraries" />
+	
+		<meta name="ms.update-cycle" content="3650-days" />
+	
+		<meta name="author" content="TylerMSFT" />
+	
+		<meta name="ms.author" content="twhitney" />
+	
+		<meta name="document_id" content="72357062-e444-4ce3-b344-54653435a47a" />
+	
+		<meta name="document_version_independent_id" content="bf73b8a4-168f-7591-7b30-d1c54bca84a8" />
+	
+		<meta name="updated_at" content="2025-10-03T17:34:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/type-traits.md" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/df9fd880b938904c386e8f212debaeac52d4cd54/docs/standard-library/type-traits.md" />
+	
+		<meta name="git_commit_id" content="df9fd880b938904c386e8f212debaeac52d4cd54" />
+	
+		<meta name="monikers" content="msvc-140" />
+	
+		<meta name="monikers" content="msvc-150" />
+	
+		<meta name="monikers" content="msvc-160" />
+	
+		<meta name="monikers" content="msvc-170" />
+	
+		<meta name="default_moniker" content="msvc-170" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="VS.vcppdocs" />
+	
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="toc_rel" content="toc.json" />
+	
+		<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/VS.vcppdocs/{branchName}{pdfName}" />
+	
+		<meta name="search.mshattr.devlang" content="cpp" />
+	
+		<meta name="word_count" content="1406" />
+	
+		<meta name="config_moniker_range" content="&gt;= msvc-140" />
+	
+		<meta name="asset_id" content="standard-library/type-traits" />
+	
+		<meta name="moniker_range_name" content="5256ac7f630e06bcd294e6d414b26624" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="docs/standard-library/type-traits.md" />
+	
+		<meta name="previous_tlsh_hash" content="3935F2220E9D860DBA021EEEB83FDF442AE4208BA364B234112A3D50D42F0E90DB349CEF96C35721F7BB45B549C21B2BF5D9D390C9B927767CB04ADE45BE10525729B2B7E4" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/type-traits.md" />
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/97159432-14a9-4307-a469-d2f2c75f0e33" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/8b896464-3b7d-4e1f-84b0-9bb45aeb5f64" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60bfc045-f127-4841-9d00-ea35495a5800" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/50565c62-5f6b-4687-be38-323113c72c2e" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/b1d2d671-9549-46e8-918c-24349120dbf5" data-source="generated" />
+	
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03195.7140-e052f86a/styles/site-ltr.css" />
+			<link rel="preconnect" href="//mscom.demdex.net" crossorigin />
+						<link rel="dns-prefetch" href="//target.microsoft.com" />
+						<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net" />
+						<link
+							rel="preload"
+							as="script"
+							href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+							integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+							crossorigin="anonymous"
+							id="adobe-target-script"
+							type="application/javascript"
+						/>
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			<script src="/_themes/docs.theme/master/en-us/_themes/global/deprecation.js"></script>
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "get-help-at-qna",
+    "feedbackHelpLinkUrl": "https://learn.microsoft.com/en-us/answers/tags/314/cpp",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "MicrosoftDocs/cpp-docs",
+    "feedbackProductUrl": "https://developercommunity.visualstudio.com/cpp/",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": false,
+    "contributors": [
+      {
+        "name": "TylerMSFT",
+        "url": "https://github.com/TylerMSFT"
+      },
+      {
+        "name": "Rageking8",
+        "url": "https://github.com/Rageking8"
+      },
+      {
+        "name": "Taojunshen",
+        "url": "https://github.com/Taojunshen"
+      },
+      {
+        "name": "v-kents",
+        "url": "https://github.com/v-kents"
+      },
+      {
+        "name": "mikeblome",
+        "url": "https://github.com/mikeblome"
+      },
+      {
+        "name": "Mikejo5000",
+        "url": "https://github.com/Mikejo5000"
+      },
+      {
+        "name": "ghogen",
+        "url": "https://github.com/ghogen"
+      },
+      {
+        "name": "Saisang",
+        "url": "https://github.com/Saisang"
+      }
+    ]
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script src="/static/assets/0.4.03195.7140-e052f86a/scripts/en-us/index-docs.js"></script>
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<header
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				role="banner"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+				></div>
+			</header>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu display-flex"
+					data-bi-name="menu"
+			  >
+					<div
+		id="left-container"
+		class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full"
+	>
+		<nav
+			id="affixed-left-container"
+			class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+			aria-label="Primary"
+		></nav>
+	</div>
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit editor mode</span>
+			</button>
+		</div>
+	</div>
+			<div data-main-column class="padding-sm padding-top-none padding-top-sm-tablet">
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			class="button button-sm flex-shrink-0 margin-right-xxs display-none display-inline-flex-desktop"
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Focus mode</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="button-block button-sm has-inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon">
+				<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+			</span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm has-inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	 
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	
+					
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to plan</span>
+		</button>
+	  
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			
+			href="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/type-traits.md"
+			data-original_content_git_url="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/type-traits.md"
+			data-original_content_git_url_template="{repo}/blob/{branch}/docs/standard-library/type-traits.md"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	
+					
+		<hr class="margin-block-xxs" />
+		<h4 class="font-size-sm padding-left-xxs">Share via</h4>
+		
+					<a
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-facebook"
+						data-bi-name="facebook"
+						data-page-action-item="overflow-all"
+						href="#"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-facebook-share"></span>
+						</span>
+						<span>Facebook</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-twitter"
+						data-bi-name="twitter"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-text" aria-hidden="true">
+							<span class="docon docon-xlogo-share"></span>
+						</span>
+						<span>x.com</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-linkedin"
+						data-bi-name="linkedin"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-linked-in-logo"></span>
+						</span>
+						<span>LinkedIn</span>
+					</a>
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-email"
+						data-bi-name="email"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-mail-message"></span>
+						</span>
+						<span>Email</span>
+					</a>
+			  
+	 
+		<hr class="margin-block-xxs" />
+		<button
+			class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			type="button"
+			data-bi-name="print"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			data-print-page
+			data-check-hidden="true"
+		>
+			<span class="icon color-primary" aria-hidden="true">
+				<span class="docon docon-print"></span>
+			</span>
+			<span>Print</span>
+		</button>
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon">
+							<span class="docon docon-exclamation-circle-solid" aria-hidden="true"></span>
+						</span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="type_traits"><code>&lt;type_traits&gt;</code></h1></div>
+					
+		<div
+			id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			
+		<div class="margin-block-xxs">
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				  <li class="visibility-hidden-visual-diff">
+			<local-time
+				format="twoDigitNumeric"
+				datetime="2021-12-07T00:00:00.000Z"
+				data-article-date-source="calculated"
+				class="is-invisible"
+			>
+				2021-12-07
+			</local-time>
+		</li>  
+			</ul>
+		</div>
+	 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	 
+		<nav
+			id="center-doc-outline"
+			class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				In this article
+			</h2>
+		</nav>
+	
+					<div class="content"><p>Defines templates for compile-time constants that give information about the properties of their type arguments, or produce transformed types.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="lang-cpp">#include &lt;type_traits&gt;
+</code></pre>
+<h2 id="remarks">Remarks</h2>
+<p>The classes and templates in &lt;type_traits&gt; are used to support type inference, classification, and transformation at compile time. They are also used to detect type-related errors, and to help you optimize your generic code. Unary type traits describe a property of a type, binary type traits describe a relationship between types, and transformation traits modify a property of a type.</p>
+<p>The helper class <code>integral_constant</code> and its template specializations <code>true_type</code> and <code>false_type</code> form the base classes for type predicates. A <em>type predicate</em> is a template that takes one or more type arguments. When a type predicate <em>holds true</em>, it's publicly derived, directly or indirectly, from <a href="type-traits-typedefs?view=msvc-170#true_type" data-linktype="relative-path">true_type</a>. When a type predicate <em>holds false</em>, it's publicly derived, directly or indirectly, from <a href="type-traits-typedefs?view=msvc-170#false_type" data-linktype="relative-path">false_type</a>.</p>
+<p>A <em>type modifier</em> or <em>transformation trait</em> is a template that takes one or more template arguments and has one member, <code>type</code>, which is a synonym for the modified type.</p>
+<h3 id="alias-templates">Alias Templates</h3>
+<p>To simplify type traits expressions, <a href="../cpp/aliases-and-typedefs-cpp?view=msvc-170" data-linktype="relative-path">alias templates</a> for <code>typename some_trait&lt;T&gt;::type</code> are provided, where <em>some_trait</em> is the class template name. For example, <a href="add-const-class?view=msvc-170" data-linktype="relative-path">add_const</a> has an alias template for its type, <code>add_const_t</code>, defined as:</p>
+<pre><code class="lang-cpp">template &lt;class T&gt;
+using add_const_t = typename add_const&lt;T&gt;::type;
+</code></pre>
+<p>These are the provided aliases for the <code>type</code> members:</p>
+<section class="row">
+<div class="column">
+<p><code>add_const_t</code><br>
+<code>add_cv_t</code><br>
+<code>add_lvalue_reference_t</code><br>
+<code>add_pointer_t</code><br>
+<code>add_rvalue_reference_t</code><br>
+<code>add_volatile_t</code><br>
+<code>aligned_storage_t</code><br>
+<code>aligned_union_t</code></p>
+</div>
+<div class="column">
+<p><code>common_type_t</code><br>
+<code>conditional_t</code><br>
+<code>decay_t</code><br>
+<code>enable_if_t</code><br>
+<code>invoke_result_t</code><br>
+<code>make_signed_t</code><br>
+<code>make_unsigned_t</code><br>
+<code>remove_all_extents_t</code></p>
+</div>
+<div class="column">
+<p><code>remove_const_t</code><br>
+<code>remove_cv_t</code><br>
+<code>remove_extent_t</code><br>
+<code>remove_pointer_t</code><br>
+<code>remove_reference_t</code><br>
+<code>remove_volatile_t</code><br>
+<code>result_of_t</code><br>
+<code>underlying_type_t</code></p>
+</div>
+</section>
+<h3 id="classes">Classes</h3>
+<p>Helper class and typedefs</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="integral-constant-class-bool-constant-class?view=msvc-170" data-linktype="relative-path">integral_constant</a></td>
+<td>Makes an integral constant from a type and a value.</td>
+</tr>
+<tr>
+<td><a href="type-traits-typedefs?view=msvc-170#true_type" data-linktype="relative-path">true_type</a></td>
+<td>Holds integral constant with true value.</td>
+</tr>
+<tr>
+<td><a href="type-traits-typedefs?view=msvc-170#false_type" data-linktype="relative-path">false_type</a></td>
+<td>Holds integral constant with false value.</td>
+</tr>
+</tbody>
+</table>
+<p>Primary type categories</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="is-void-class?view=msvc-170" data-linktype="relative-path">is_void</a></td>
+<td>Tests whether the type is <strong><code>void</code></strong>.</td>
+</tr>
+<tr>
+<td><a href="is-null-pointer-class?view=msvc-170" data-linktype="relative-path">is_null_pointer</a></td>
+<td>Tests whether the type is <code>std::nullptr_t</code>.</td>
+</tr>
+<tr>
+<td><a href="is-integral-class?view=msvc-170" data-linktype="relative-path">is_integral</a></td>
+<td>Tests whether the type is integral.</td>
+</tr>
+<tr>
+<td><a href="is-floating-point-class?view=msvc-170" data-linktype="relative-path">is_floating_point</a></td>
+<td>Tests whether the type is floating-point.</td>
+</tr>
+<tr>
+<td><a href="is-array-class?view=msvc-170" data-linktype="relative-path">is_array</a></td>
+<td>Tests whether the type is an array.</td>
+</tr>
+<tr>
+<td><a href="is-pointer-class?view=msvc-170" data-linktype="relative-path">is_pointer</a></td>
+<td>Tests whether the type is a pointer.</td>
+</tr>
+<tr>
+<td><a href="is-lvalue-reference-class?view=msvc-170" data-linktype="relative-path">is_lvalue_reference</a></td>
+<td>Tests if type is an lvalue reference.</td>
+</tr>
+<tr>
+<td><a href="is-rvalue-reference-class?view=msvc-170" data-linktype="relative-path">is_rvalue_reference</a></td>
+<td>Tests if type is an rvalue reference.</td>
+</tr>
+<tr>
+<td><a href="is-member-object-pointer-class?view=msvc-170" data-linktype="relative-path">is_member_object_pointer</a></td>
+<td>Tests whether the type is a pointer to a member object.</td>
+</tr>
+<tr>
+<td><a href="is-member-function-pointer-class?view=msvc-170" data-linktype="relative-path">is_member_function_pointer</a></td>
+<td>Tests whether the type is a pointer to a member function.</td>
+</tr>
+<tr>
+<td><a href="is-enum-class?view=msvc-170" data-linktype="relative-path">is_enum</a></td>
+<td>Tests whether the type is an enumeration.</td>
+</tr>
+<tr>
+<td><a href="is-union-class?view=msvc-170" data-linktype="relative-path">is_union</a></td>
+<td>Tests whether the type is a union.</td>
+</tr>
+<tr>
+<td><a href="is-class-class?view=msvc-170" data-linktype="relative-path">is_class</a></td>
+<td>Tests whether the type is a class.</td>
+</tr>
+<tr>
+<td><a href="is-function-class?view=msvc-170" data-linktype="relative-path">is_function</a></td>
+<td>Tests whether the type is a function type.</td>
+</tr>
+</tbody>
+</table>
+<p>Composite type categories</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="is-reference-class?view=msvc-170" data-linktype="relative-path">is_reference</a></td>
+<td>Tests whether the type is a reference.</td>
+</tr>
+<tr>
+<td><a href="is-arithmetic-class?view=msvc-170" data-linktype="relative-path">is_arithmetic</a></td>
+<td>Tests whether the type is arithmetic.</td>
+</tr>
+<tr>
+<td><a href="is-fundamental-class?view=msvc-170" data-linktype="relative-path">is_fundamental</a></td>
+<td>Tests whether the type is <strong><code>void</code></strong> or arithmetic.</td>
+</tr>
+<tr>
+<td><a href="is-object-class?view=msvc-170" data-linktype="relative-path">is_object</a></td>
+<td>Tests whether the type is an object type.</td>
+</tr>
+<tr>
+<td><a href="is-scalar-class?view=msvc-170" data-linktype="relative-path">is_scalar</a></td>
+<td>Tests whether the type is scalar.</td>
+</tr>
+<tr>
+<td><a href="is-compound-class?view=msvc-170" data-linktype="relative-path">is_compound</a></td>
+<td>Tests whether the type is not scalar.</td>
+</tr>
+<tr>
+<td><a href="is-member-pointer-class?view=msvc-170" data-linktype="relative-path">is_member_pointer</a></td>
+<td>Tests whether the type is a pointer to a member.</td>
+</tr>
+</tbody>
+</table>
+<p>Type properties</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="is-const-class?view=msvc-170" data-linktype="relative-path">is_const</a></td>
+<td>Tests whether the type is <strong><code>const</code></strong>.</td>
+</tr>
+<tr>
+<td><a href="is-volatile-class?view=msvc-170" data-linktype="relative-path">is_volatile</a></td>
+<td>Tests whether the type is <strong><code>volatile</code></strong>.</td>
+</tr>
+<tr>
+<td><a href="is-trivial-class?view=msvc-170" data-linktype="relative-path">is_trivial</a></td>
+<td>Tests whether the type is trivial.</td>
+</tr>
+<tr>
+<td><a href="is-trivially-copyable-class?view=msvc-170" data-linktype="relative-path">is_trivially_copyable</a></td>
+<td>Tests whether the type is trivially copyable.</td>
+</tr>
+<tr>
+<td><a href="is-standard-layout-class?view=msvc-170" data-linktype="relative-path">is_standard_layout</a></td>
+<td>Tests if type is a standard layout type.</td>
+</tr>
+<tr>
+<td><a href="is-pod-class?view=msvc-170" data-linktype="relative-path">is_pod</a></td>
+<td>Tests whether the type is a POD.</td>
+</tr>
+<tr>
+<td><a href="is-literal-type-class?view=msvc-170" data-linktype="relative-path">is_literal_type</a></td>
+<td>Tests whether the type can be a <strong><code>constexpr</code></strong> variable or used in a <strong><code>constexpr</code></strong> function.</td>
+</tr>
+<tr>
+<td><a href="is-empty-class?view=msvc-170" data-linktype="relative-path">is_empty</a></td>
+<td>Tests whether the type is an empty class.</td>
+</tr>
+<tr>
+<td><a href="is-polymorphic-class?view=msvc-170" data-linktype="relative-path">is_polymorphic</a></td>
+<td>Tests whether the type is a polymorphic class.</td>
+</tr>
+<tr>
+<td><a href="is-abstract-class?view=msvc-170" data-linktype="relative-path">is_abstract</a></td>
+<td>Tests whether the type is an abstract class.</td>
+</tr>
+<tr>
+<td><a href="is-final-class?view=msvc-170" data-linktype="relative-path">is_final</a></td>
+<td>Tests whether the type is a class type marked <code>final</code>.</td>
+</tr>
+<tr>
+<td><a href="is-aggregate-class?view=msvc-170" data-linktype="relative-path">is_aggregate</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is-signed-class?view=msvc-170" data-linktype="relative-path">is_signed</a></td>
+<td>Tests whether the type is a signed integer.</td>
+</tr>
+<tr>
+<td><a href="is-unsigned-class?view=msvc-170" data-linktype="relative-path">is_unsigned</a></td>
+<td>Tests whether the type is an unsigned integer.</td>
+</tr>
+<tr>
+<td><a href="is-constructible-class?view=msvc-170" data-linktype="relative-path">is_constructible</a></td>
+<td>Tests whether the type is constructible using the specified argument types.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_default_constructible" data-linktype="relative-path">is_default_constructible</a></td>
+<td>Tests whether the type has a default constructor.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_copy_constructible" data-linktype="relative-path">is_copy_constructible</a></td>
+<td>Tests whether the type has a copy constructor.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_move_constructible" data-linktype="relative-path">is_move_constructible</a></td>
+<td>Tests whether the type has a move constructor.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_assignable" data-linktype="relative-path">is_assignable</a></td>
+<td>Tests whether the first type can be assigned a value of the second type.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_copy_assignable" data-linktype="relative-path">is_copy_assignable</a></td>
+<td>Tests whether a type can be assigned a const reference value of the type.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_move_assignable" data-linktype="relative-path">is_move_assignable</a></td>
+<td>Tests whether a type can be assigned an rvalue reference of the type.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_swappable" data-linktype="relative-path">is_swappable</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_swappable_with" data-linktype="relative-path">is_swappable_with</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is-destructible-class?view=msvc-170" data-linktype="relative-path">is_destructible</a></td>
+<td>Tests whether the type is destructible.</td>
+</tr>
+<tr>
+<td><a href="is-trivially-constructible-class?view=msvc-170" data-linktype="relative-path">is_trivially_constructible</a></td>
+<td>Tests whether the type uses no non-trivial operations when constructed using the specified types.</td>
+</tr>
+<tr>
+<td><a href="is-trivially-default-constructible-class?view=msvc-170" data-linktype="relative-path">is_trivially_default_constructible</a></td>
+<td>Tests whether the type uses no non-trivial operations when default constructed.</td>
+</tr>
+<tr>
+<td><a href="is-trivially-copy-constructible-class?view=msvc-170" data-linktype="relative-path">is_trivially_copy_constructible</a></td>
+<td>Tests whether the type uses no non-trivial operations when copy constructed.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_trivially_move_constructible" data-linktype="relative-path">is_trivially_move_constructible</a></td>
+<td>Tests whether the type uses no non-trivial operations when move constructed.</td>
+</tr>
+<tr>
+<td><a href="is-trivially-assignable-class?view=msvc-170" data-linktype="relative-path">is_trivially_assignable</a></td>
+<td>Tests whether the types are assignable and the assignment uses no non-trivial operations.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_trivially_copy_assignable" data-linktype="relative-path">is_trivially_copy_assignable</a></td>
+<td>Tests whether the type is copy assignable and the assignment uses no non-trivial operations.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_trivially_move_assignable" data-linktype="relative-path">is_trivially_move_assignable</a></td>
+<td>Tests whether the type is move assignable and the assignment uses no non-trivial operations.</td>
+</tr>
+<tr>
+<td><a href="is-trivially-destructible-class?view=msvc-170" data-linktype="relative-path">is_trivially_destructible</a></td>
+<td>Tests whether the type is destructible and the destructor uses no non-trivial operations.</td>
+</tr>
+<tr>
+<td><a href="is-nothrow-constructible-class?view=msvc-170" data-linktype="relative-path">is_nothrow_constructible</a></td>
+<td>Tests whether the type is constructible and is known not to throw when constructed using the specified types.</td>
+</tr>
+<tr>
+<td><a href="is-nothrow-default-constructible-class?view=msvc-170" data-linktype="relative-path">is_nothrow_default_constructible</a></td>
+<td>Tests whether the type is default constructible and is known not to throw when default constructed.</td>
+</tr>
+<tr>
+<td><a href="is-nothrow-copy-constructible-class?view=msvc-170" data-linktype="relative-path">is_nothrow_copy_constructible</a></td>
+<td>Tests whether the type is copy constructible and the copy constructor is known not to throw.</td>
+</tr>
+<tr>
+<td><a href="is-nothrow-move-constructible-class?view=msvc-170" data-linktype="relative-path">is_nothrow_move_constructible</a></td>
+<td>Tests whether the type is move constructible and the move constructor is known not to throw.</td>
+</tr>
+<tr>
+<td><a href="is-nothrow-assignable-class?view=msvc-170" data-linktype="relative-path">is_nothrow_assignable</a></td>
+<td>Tests whether the type is assignable using the specified type and the assignment is known not to throw.</td>
+</tr>
+<tr>
+<td><a href="is-nothrow-copy-assignable-class?view=msvc-170" data-linktype="relative-path">is_nothrow_copy_assignable</a></td>
+<td>Tests whether the type is copy assignable and the assignment is known not to throw.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_nothrow_move_assignable" data-linktype="relative-path">is_nothrow_move_assignable</a></td>
+<td>Tests whether the type is move assignable and the assignment is known not to throw.</td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_nothrow_swappable" data-linktype="relative-path">is_nothrow_swappable</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="type-traits-functions?view=msvc-170#is_nothrow_swappable_with" data-linktype="relative-path">is_nothrow_swappable_with</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is-nothrow-destructible-class?view=msvc-170" data-linktype="relative-path">is_nothrow_destructible</a></td>
+<td>Tests whether the type is destructible and the destructor is known not to throw.</td>
+</tr>
+<tr>
+<td><code>has_virtual_destructor</code></td>
+<td>Tests whether the type has a virtual destructor.</td>
+</tr>
+<tr>
+<td><code>has_unique_object_representations</code></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is-invocable-classes?view=msvc-170" data-linktype="relative-path">is_invocable</a></td>
+<td>Tests whether a callable type can be invoked using the specified argument types.<br> Added in C++17.</td>
+</tr>
+<tr>
+<td><a href="is-invocable-classes?view=msvc-170" data-linktype="relative-path">is_invocable_r</a></td>
+<td>Tests whether a callable type can be invoked using the specified argument types and the result is convertible to the specified type.<br> Added in C++17.</td>
+</tr>
+<tr>
+<td><a href="is-invocable-classes?view=msvc-170" data-linktype="relative-path">is_nothrow_invocable</a></td>
+<td>Tests whether a callable type can be invoked using the specified argument types and is known not to throw exceptions.<br> Added in C++17.</td>
+</tr>
+<tr>
+<td><a href="is-invocable-classes?view=msvc-170" data-linktype="relative-path">is_nothrow_invocable_r</a></td>
+<td>Tests whether a callable type can be invoked using the specified argument types and is known not to throw exceptions, and the result is convertible to the specified type.<br> Added in C++17.</td>
+</tr>
+</tbody>
+</table>
+<p>Type property queries</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="alignment-of-class?view=msvc-170" data-linktype="relative-path">alignment_of</a></td>
+<td>Gets the alignment of a type.</td>
+</tr>
+<tr>
+<td><a href="rank-class?view=msvc-170" data-linktype="relative-path">rank</a></td>
+<td>Gets the number of array dimensions.</td>
+</tr>
+<tr>
+<td><a href="extent-class?view=msvc-170" data-linktype="relative-path">extent</a></td>
+<td>Gets the number of elements in the specified array dimension.</td>
+</tr>
+</tbody>
+</table>
+<p>Type relations</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="is-same-class?view=msvc-170" data-linktype="relative-path">is_same</a></td>
+<td>Tests whether two types are the same.</td>
+</tr>
+<tr>
+<td><a href="is-base-of-class?view=msvc-170" data-linktype="relative-path">is_base_of</a></td>
+<td>Tests whether one type is a base of another.</td>
+</tr>
+<tr>
+<td><a href="is-convertible-class?view=msvc-170" data-linktype="relative-path">is_convertible</a></td>
+<td>Tests whether one type is convertible to another.</td>
+</tr>
+</tbody>
+</table>
+<p>Const-volatile modifications</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="add-const-class?view=msvc-170" data-linktype="relative-path">add_const</a></td>
+<td>Produces a <strong><code>const</code></strong> type from type.</td>
+</tr>
+<tr>
+<td><a href="add-volatile-class?view=msvc-170" data-linktype="relative-path">add_volatile</a></td>
+<td>Produces a <strong><code>volatile</code></strong> type from type.</td>
+</tr>
+<tr>
+<td><a href="add-cv-class?view=msvc-170" data-linktype="relative-path">add_cv</a></td>
+<td>Produces a <strong><code>const volatile</code></strong> type from type.</td>
+</tr>
+<tr>
+<td><a href="remove-const-class?view=msvc-170" data-linktype="relative-path">remove_const</a></td>
+<td>Produces a non-const type from type.</td>
+</tr>
+<tr>
+<td><a href="remove-volatile-class?view=msvc-170" data-linktype="relative-path">remove_volatile</a></td>
+<td>Produces a non-volatile type from type.</td>
+</tr>
+<tr>
+<td><a href="remove-cv-class?view=msvc-170" data-linktype="relative-path">remove_cv</a></td>
+<td>Produces a non-const non-volatile type from type.</td>
+</tr>
+</tbody>
+</table>
+<p>Reference modifications</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="add-lvalue-reference-class?view=msvc-170" data-linktype="relative-path">add_lvalue_reference</a></td>
+<td>Produces a reference to type from type.</td>
+</tr>
+<tr>
+<td><a href="add-rvalue-reference-class?view=msvc-170" data-linktype="relative-path">add_rvalue_reference</a></td>
+<td>Produces an rvalue reference to type from type</td>
+</tr>
+<tr>
+<td><a href="remove-reference-class?view=msvc-170" data-linktype="relative-path">remove_reference</a></td>
+<td>Produces a non-reference type from type.</td>
+</tr>
+</tbody>
+</table>
+<p>Sign modifications</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="make-signed-class?view=msvc-170" data-linktype="relative-path">make_signed</a></td>
+<td>Produces the type if signed, or the smallest signed type greater than or equal in size to type.</td>
+</tr>
+<tr>
+<td><a href="make-unsigned-class?view=msvc-170" data-linktype="relative-path">make_unsigned</a></td>
+<td>Produces the type if unsigned, or the smallest unsigned type greater than or equal in size to type.</td>
+</tr>
+</tbody>
+</table>
+<p>Array modifications</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="remove-all-extents-class?view=msvc-170" data-linktype="relative-path">remove_all_extents</a></td>
+<td>Produces a non-array type from an array type.</td>
+</tr>
+<tr>
+<td><a href="remove-extent-class?view=msvc-170" data-linktype="relative-path">remove_extent</a></td>
+<td>Produces the element type from an array type.</td>
+</tr>
+</tbody>
+</table>
+<p>Pointer modifications</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="add-pointer-class?view=msvc-170" data-linktype="relative-path">add_pointer</a></td>
+<td>Produces a pointer to type from type.</td>
+</tr>
+<tr>
+<td><a href="remove-pointer-class?view=msvc-170" data-linktype="relative-path">remove_pointer</a></td>
+<td>Produces a type from a pointer to type.</td>
+</tr>
+</tbody>
+</table>
+<p>Other transformations</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="aligned-storage-class?view=msvc-170" data-linktype="relative-path">aligned_storage</a></td>
+<td>Allocates uninitialized memory for an aligned type.</td>
+</tr>
+<tr>
+<td><a href="aligned-union-class?view=msvc-170" data-linktype="relative-path">aligned_union</a></td>
+<td>Allocates uninitialized memory for an aligned union with a non-trivial constructor or destructor.</td>
+</tr>
+<tr>
+<td><a href="common-type-class?view=msvc-170" data-linktype="relative-path">common_type</a></td>
+<td>Produces the common type of all the types of the parameter pack.</td>
+</tr>
+<tr>
+<td><a href="conditional-class?view=msvc-170" data-linktype="relative-path">conditional</a></td>
+<td>If the condition is true, produces the first specified type, otherwise the second specified type.</td>
+</tr>
+<tr>
+<td><a href="decay-class?view=msvc-170" data-linktype="relative-path">decay</a></td>
+<td>Produces the type as passed by value. Makes non-reference, non-const, or non-volatile type, or makes a pointer to type.</td>
+</tr>
+<tr>
+<td><a href="enable-if-class?view=msvc-170" data-linktype="relative-path">enable_if</a></td>
+<td>If the condition is true, produces the specified type, otherwise no type.</td>
+</tr>
+<tr>
+<td><a href="invoke-result-class?view=msvc-170" data-linktype="relative-path">invoke_result</a></td>
+<td>Determines the return type of the callable type that takes the specified argument types. <br>Added in C++17.</td>
+</tr>
+<tr>
+<td><a href="result-of-class?view=msvc-170" data-linktype="relative-path">result_of</a></td>
+<td>Determines the return type of the callable type that takes the specified argument types. <br>Added in C++14, deprecated in C++17.</td>
+</tr>
+<tr>
+<td><a href="underlying-type-class?view=msvc-170" data-linktype="relative-path">underlying_type</a></td>
+<td>Produces the underlying integral type for an enumeration type.</td>
+</tr>
+</tbody>
+</table>
+<p>Logical operator traits</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="conjunction-class?view=msvc-170" data-linktype="relative-path">conjunction</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="disjunction-class?view=msvc-170" data-linktype="relative-path">disjunction</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="negation-class?view=msvc-170" data-linktype="relative-path">negation</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<p><a href="functional?view=msvc-170" data-linktype="relative-path">&lt;functional&gt;</a></p>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Need help with this topic?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				Additional resources
+			</h2>
+			 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-qna-mobile"
+			class="margin-top-xxs"
+			data-bi-name="qna-link-card"
+			hidden
+		></section>
+	
+		</div>
+	
+			</div>
+			
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside "
+					data-bi-name="aside"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+			role="complementary"
+			aria-label="Additional resources"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<p class="font-weight-semibold margin-bottom-xs">Was this page helpful?</p>
+			<div class="buttons">
+				<button
+					class="thumb-rating-button like button button-primary button-sm"
+					data-test-id="right-rail-rating-yes"
+					data-binary-rating-response="rating-yes"
+					type="button"
+					title="This article is helpful"
+					data-bi-name="button-rating-yes"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-like"></span>
+					</span>
+					<span>Yes</span>
+				</button>
+				<button
+					class="thumb-rating-button dislike button button-primary button-sm"
+					id="right-rail-no-button"
+					hidden
+					data-test-id="right-rail-rating-no"
+					data-binary-rating-response="rating-no"
+					type="button"
+					title="This article is not helpful"
+					data-bi-name="button-rating-no"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-dislike"></span>
+					</span>
+					<span>No</span>
+				</button>
+				<details class="popover" id="help-popover" data-test-id="feedback-popover">
+					<summary
+						tabindex="0"
+						class="thumb-rating-button dislike button button-primary button-sm"
+						data-test-id="details-right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+						data-bi-an="feedback-unhelpful-popover"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</summary>
+					<div
+						class="popover-content width-200 width-300-tablet"
+						role="dialog"
+						aria-labelledby="popover-heading"
+						aria-describedby="popover-description"
+					>
+						<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+							Need help with this topic?
+						</p>
+						<p id="popover-description" class="font-size-sm margin-bottom-xs">
+							Want to try using Ask Learn to clarify or guide you through this topic?
+						</p>
+						
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+					</div>
+				</details>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout has-padding has-default-focus border-top  uhf-container"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	
+				<div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-expanded="false"
+				title="Theme"
+				data-bi-name="theme"
+			>
+				<span class="icon">
+					<span class="docon docon-sun" aria-hidden="true"></span>
+				</span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu">
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="light"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="dark"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="high-contrast"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2025</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>

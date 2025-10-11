@@ -1,0 +1,1571 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>&lt;cstdlib&gt; | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Learn more about: " />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/cpp/standard-library/cstdlib?view=msvc-170" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="&lt;cstdlib&gt;" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/cpp/standard-library/cstdlib?view=msvc-170" />
+			<meta property="og:description" content="Learn more about: " />
+			<meta name="platform_id" content="f31c8b3d-c2aa-350a-d207-bf9ce69194a5" /> <meta name="scope" content="C++" />
+			<meta name="locale" content="en-us" />
+			 <meta name="adobe-target" content="true" />
+			<meta name="uhfHeaderId" content="MSDocsHeader-CPP" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="breadcrumb_path" content="../_breadcrumb/toc.json" />
+	
+		<meta name="ROBOTS" content="INDEX,FOLLOW" />
+	
+		<meta name="manager" content="coxford" />
+	
+		<meta name="ms.date" content="2016-11-04T00:00:00Z" />
+	
+		<meta name="ms.topic" content="reference" />
+	
+		<meta name="audience" content="developer" />
+	
+		<meta name="ms.service" content="visual-cpp" />
+	
+		<meta name="ms.tgt_pltfrm" content="Windows" />
+	
+		<meta name="ms.workload" content="cplusplus" />
+	
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="feedback_product_url" content="https://developercommunity.visualstudio.com/cpp/" />
+	
+		<meta name="feedback_help_link_url" content="https://learn.microsoft.com/en-us/answers/tags/314/cpp" />
+	
+		<meta name="feedback_help_link_type" content="get-help-at-qna" />
+	
+		<meta name="ms.subservice" content="standard-libraries" />
+	
+		<meta name="ms.update-cycle" content="3650-days" />
+	
+		<meta name="author" content="TylerMSFT" />
+	
+		<meta name="ms.author" content="twhitney" />
+	
+		<meta name="document_id" content="9eb9fdb9-8fdb-7595-3139-e4d5266d2b15" />
+	
+		<meta name="document_version_independent_id" content="30dc7138-42be-eb4a-e6e6-4e4ce938ff68" />
+	
+		<meta name="updated_at" content="2022-02-25T18:30:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/cstdlib.md" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/ce6e9f8823d2a3466b0f9b4646fc604288825e9a/docs/standard-library/cstdlib.md" />
+	
+		<meta name="git_commit_id" content="ce6e9f8823d2a3466b0f9b4646fc604288825e9a" />
+	
+		<meta name="monikers" content="msvc-140" />
+	
+		<meta name="monikers" content="msvc-150" />
+	
+		<meta name="monikers" content="msvc-160" />
+	
+		<meta name="monikers" content="msvc-170" />
+	
+		<meta name="default_moniker" content="msvc-170" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="VS.vcppdocs" />
+	
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="toc_rel" content="toc.json" />
+	
+		<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/VS.vcppdocs/{branchName}{pdfName}" />
+	
+		<meta name="search.mshattr.devlang" content="cpp" />
+	
+		<meta name="word_count" content="1201" />
+	
+		<meta name="config_moniker_range" content="&gt;= msvc-140" />
+	
+		<meta name="asset_id" content="standard-library/cstdlib" />
+	
+		<meta name="moniker_range_name" content="5256ac7f630e06bcd294e6d414b26624" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="docs/standard-library/cstdlib.md" />
+	
+		<meta name="previous_tlsh_hash" content="6797BEC1320C6711F6A70F041579FE8D56D1E00A76B0B6B8131B67E1D9862EB72F40ECE3833DB64163214EE3B228F40F17EED772D05822650491C19ED8DE94A697D93B7ADE" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/cstdlib.md" />
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60bfc045-f127-4841-9d00-ea35495a5800" data-source="generated" />
+	
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03195.7140-e052f86a/styles/site-ltr.css" />
+			<link rel="preconnect" href="//mscom.demdex.net" crossorigin />
+						<link rel="dns-prefetch" href="//target.microsoft.com" />
+						<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net" />
+						<link
+							rel="preload"
+							as="script"
+							href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+							integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+							crossorigin="anonymous"
+							id="adobe-target-script"
+							type="application/javascript"
+						/>
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			<script src="/_themes/docs.theme/master/en-us/_themes/global/deprecation.js"></script>
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "get-help-at-qna",
+    "feedbackHelpLinkUrl": "https://learn.microsoft.com/en-us/answers/tags/314/cpp",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "MicrosoftDocs/cpp-docs",
+    "feedbackProductUrl": "https://developercommunity.visualstudio.com/cpp/",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": false,
+    "contributors": [
+      {
+        "name": "TylerMSFT",
+        "url": "https://github.com/TylerMSFT"
+      },
+      {
+        "name": "Taojunshen",
+        "url": "https://github.com/Taojunshen"
+      },
+      {
+        "name": "v-kents",
+        "url": "https://github.com/v-kents"
+      },
+      {
+        "name": "Ja-Dunn",
+        "url": "https://github.com/Ja-Dunn"
+      },
+      {
+        "name": "mdsebolt",
+        "url": "https://github.com/mdsebolt"
+      },
+      {
+        "name": "mikeblome",
+        "url": "https://github.com/mikeblome"
+      },
+      {
+        "name": "Mikejo5000",
+        "url": "https://github.com/Mikejo5000"
+      },
+      {
+        "name": "ghogen",
+        "url": "https://github.com/ghogen"
+      },
+      {
+        "name": "Saisang",
+        "url": "https://github.com/Saisang"
+      }
+    ]
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script src="/static/assets/0.4.03195.7140-e052f86a/scripts/en-us/index-docs.js"></script>
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<header
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				role="banner"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+				></div>
+			</header>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu display-flex"
+					data-bi-name="menu"
+			  >
+					<div
+		id="left-container"
+		class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full"
+	>
+		<nav
+			id="affixed-left-container"
+			class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+			aria-label="Primary"
+		></nav>
+	</div>
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit editor mode</span>
+			</button>
+		</div>
+	</div>
+			<div data-main-column class="padding-sm padding-top-none padding-top-sm-tablet">
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			class="button button-sm flex-shrink-0 margin-right-xxs display-none display-inline-flex-desktop"
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Focus mode</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="button-block button-sm has-inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon">
+				<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+			</span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm has-inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	 
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	
+					
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to plan</span>
+		</button>
+	  
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			
+			href="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/cstdlib.md"
+			data-original_content_git_url="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/cstdlib.md"
+			data-original_content_git_url_template="{repo}/blob/{branch}/docs/standard-library/cstdlib.md"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	
+					
+		<hr class="margin-block-xxs" />
+		<h4 class="font-size-sm padding-left-xxs">Share via</h4>
+		
+					<a
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-facebook"
+						data-bi-name="facebook"
+						data-page-action-item="overflow-all"
+						href="#"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-facebook-share"></span>
+						</span>
+						<span>Facebook</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-twitter"
+						data-bi-name="twitter"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-text" aria-hidden="true">
+							<span class="docon docon-xlogo-share"></span>
+						</span>
+						<span>x.com</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-linkedin"
+						data-bi-name="linkedin"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-linked-in-logo"></span>
+						</span>
+						<span>LinkedIn</span>
+					</a>
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-email"
+						data-bi-name="email"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-mail-message"></span>
+						</span>
+						<span>Email</span>
+					</a>
+			  
+	 
+		<hr class="margin-block-xxs" />
+		<button
+			class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			type="button"
+			data-bi-name="print"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			data-print-page
+			data-check-hidden="true"
+		>
+			<span class="icon color-primary" aria-hidden="true">
+				<span class="docon docon-print"></span>
+			</span>
+			<span>Print</span>
+		</button>
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon">
+							<span class="docon docon-exclamation-circle-solid" aria-hidden="true"></span>
+						</span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="cstdlib"><code>&lt;cstdlib&gt;</code></h1></div>
+					
+		<div
+			id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			
+		<div class="margin-block-xxs">
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				  <li class="visibility-hidden-visual-diff">
+			<local-time
+				format="twoDigitNumeric"
+				datetime="2022-02-25T00:00:00.000Z"
+				data-article-date-source="calculated"
+				class="is-invisible"
+			>
+				2022-02-25
+			</local-time>
+		</li>  
+			</ul>
+		</div>
+	 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	 
+		<nav
+			id="center-doc-outline"
+			class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				In this article
+			</h2>
+		</nav>
+	
+					<div class="content"><p>Includes the C Standard library header <code>&lt;stdlib.h&gt;</code> and adds the associated names to the <code>std</code> namespace. Including this header ensures that the names declared using external linkage in the C standard library header are declared in the <code>std</code> namespace.</p>
+<div class="NOTE">
+<p>Note</p>
+<p><code>&lt;stdlib.h&gt;</code> doesn't include the type <strong><code>wchar_t</code></strong>.</p>
+</div>
+<h2 id="requirements">Requirements</h2>
+<p><strong>Header</strong>: <code>&lt;cstdlib&gt;</code></p>
+<p><strong>Namespace:</strong> <code>std</code></p>
+<h2 id="namespace-and-macros">Namespace and Macros</h2>
+<pre><code class="lang-cpp">namespace std {
+    using size_t = see definition;
+    using div_t = see definition;
+    using ldiv_t = see definition;
+    using lldiv_t = see definition;
+}
+
+#define NULL
+#define EXIT_FAILURE
+#define EXIT_SUCCESS
+#define RAND_MAX
+#define MB_CUR_MAX
+</code></pre>
+<h2 id="exposition-only-functions">Exposition only functions</h2>
+<pre><code class="lang-cpp">extern "C" using c-atexit-handler = void();
+extern "C++" using atexit-handler = void();
+extern "C" using c-compare-pred = int(const void*, const void*);
+extern "C++" using compare-pred = int(const void*, const void*);
+</code></pre>
+<h2 id="start-and-termination-functions">Start and termination functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#_exit" data-linktype="self-bookmark"><code>_Exit</code></a></td>
+<td>Terminates program without using destructors or registered functions.</td>
+</tr>
+<tr>
+<td><a href="#abort" data-linktype="self-bookmark"><code>abort</code></a></td>
+<td>Terminates program without using destructors.</td>
+</tr>
+<tr>
+<td><a href="#atexit" data-linktype="self-bookmark"><code>atexit</code></a></td>
+<td>Registers function for program termination.</td>
+</tr>
+<tr>
+<td><a href="#exit" data-linktype="self-bookmark"><code>exit</code></a></td>
+<td>Destroys objects with thread and static storage, then returns control.</td>
+</tr>
+<tr>
+<td><a href="#at_quick_exit" data-linktype="self-bookmark"><code>at_quick_exit</code></a></td>
+<td>Registers function without arguments for program termination.</td>
+</tr>
+<tr>
+<td><a href="#quick_exit" data-linktype="self-bookmark"><code>quick_exit</code></a></td>
+<td>Registers function with preserved objects for program termination.</td>
+</tr>
+<tr>
+<td><a href="#getenv" data-linktype="self-bookmark"><code>getenv</code></a></td>
+<td>See C standard library reference.</td>
+</tr>
+<tr>
+<td><a href="#system" data-linktype="self-bookmark"><code>system</code></a></td>
+<td>See C standard library reference.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_exit"> <code>_Exit</code></h3>
+<pre><code class="lang-cpp">[[noreturn]] void _Exit(int status) noexcept;
+</code></pre>
+<h4 id="remarks">Remarks</h4>
+<p>The program is terminated without executing destructors for objects of automatic, thread, or static storage duration and without calling functions passed to <code>atexit()</code>. The function <code>_Exit</code> is signal-safe.</p>
+<h3 id="abort"> <code>abort</code></h3>
+<pre><code class="lang-cpp">[[noreturn]] void abort() noexcept;
+</code></pre>
+<h4 id="remarks-1">Remarks</h4>
+<p>The program is terminated without executing destructors for objects of automatic, thread, or static storage duration and without calling functions passed to <code>atexit()</code>. The function <code>abort</code> is signal-safe.</p>
+<h3 id="at_quick_exit"> <code>at_quick_exit</code></h3>
+<pre><code class="lang-cpp">int at_quick_exit(c-atexit-handler * func) noexcept;
+int at_quick_exit(atexit-handler * func) noexcept;
+</code></pre>
+<h4 id="return-value">Return Value</h4>
+<p>Zero if the registration succeeds, non-zero if it fails.</p>
+<h4 id="remarks-2">Remarks</h4>
+<p>The <code>at_quick_exit()</code> functions register a function <em><code>func</code></em>, which is called without arguments when <code>quick_exit()</code> is called. A call to <code>at_quick_exit()</code> that doesn't happen before all calls to <code>quick_exit()</code> may not succeed. The <code>at_quick_exit()</code> functions don't introduce a data race. The order of registration may be indeterminate if <code>at_quick_exit()</code> was called from more than one thread. Since <code>at_quick_exit()</code> registrations are distinct from the <code>atexit()</code> registrations, applications may need to call both registration functions using the same argument. MSVC supports the registration of at least 32 functions.</p>
+<h3 id="atexit"> <code>atexit</code></h3>
+<pre><code class="lang-cpp">int atexit(c-atexit-handler * func) noexcept;
+int atexit(atexit-handler * func) noexcept;
+</code></pre>
+<h4 id="remarks-3">Remarks</h4>
+<p>The <code>atexit()</code> functions register the function pointed to by <em><code>func</code></em> to be called without arguments at normal program termination. A call to <code>atexit()</code> that doesn't happen before a call to <code>exit()</code> may not succeed. The <code>atexit()</code> functions don't introduce a data race.</p>
+<h4 id="return-value-1">Return Value</h4>
+<p>Returns zero if the registration succeeds, nonzero if it fails.</p>
+<h3 id="exit"> <code>exit</code></h3>
+<pre><code class="lang-cpp">[[noreturn]] void exit(int status);
+</code></pre>
+<h4 id="remarks-4">Remarks</h4>
+<p>First, objects with thread storage duration and associated with the current thread are destroyed.</p>
+<p>Next, objects with static storage duration are destroyed and functions registered by calling <code>atexit()</code> are called. Automatic objects aren't destroyed when <code>exit()</code> is called. If control leaves a registered function called by <code>exit()</code> because the function doesn't provide a handler for a thrown exception, <code>std::terminate()</code> is called. A function is called once for every time it's registered. Objects with automatic storage duration are all destroyed in a program whose <code>main</code> function contains no automatic objects and executes the call to <code>exit()</code>. Control can be transferred directly to such a <code>main</code> function by throwing an exception that's caught in <code>main</code>.</p>
+<p>Next, all open C streams (as mediated by the function signatures declared in <code>&lt;cstdio&gt;</code>) with unwritten buffered data are flushed, all open C streams are closed, and all files created by calling <code>tmpfile()</code> are removed.</p>
+<p>Finally, control is returned to the host environment. When <em><code>status</code></em> is zero or <code>EXIT_SUCCESS</code>, an implementation-defined form of the status successful termination is returned. MSVC returns a value of zero. If <em><code>status</code></em> is <code>EXIT_FAILURE</code>, MSVC returns a value of 3. Otherwise, MSVC returns the <em><code>status</code></em> parameter value.</p>
+<h3 id="getenv"> <code>getenv</code></h3>
+<pre><code class="lang-cpp">char* getenv(const char* name);
+</code></pre>
+<h3 id="quick_exit"> <code>quick_exit</code></h3>
+<pre><code class="lang-cpp">[[noreturn]] void quick_exit(int status) noexcept;
+</code></pre>
+<h4 id="remarks-5">Remarks</h4>
+<p>Generally, functions registered by calls to <code>at_quick_exit()</code> are called in the reverse order of their registration. This order doesn't apply to functions registered after other registered functions have already been called. No objects are destroyed when <code>quick_exit()</code> is called. If control leaves a registered function called by <code>quick_exit()</code> because the function doesn't provide a handler for a thrown exception, <code>std::terminate()</code> is called. A function registered via <code>at_quick_exit()</code> is invoked by the thread that calls <code>quick_exit()</code>, which can be a different thread than the one that registered it. That means registered functions shouldn't rely on the identity of objects that have thread storage duration. After calling registered functions, <code>quick_exit()</code> calls <code>_Exit(status)</code>. The standard file buffers aren't flushed. The function <code>quick_exit()</code> is signal-safe when the functions registered with <code>at_quick_exit()</code> are.</p>
+<h3 id="system"> <code>system</code></h3>
+<pre><code class="lang-cpp">int system(const char* string);
+</code></pre>
+<h2 id="memory-allocation-functions">Memory allocation functions</h2>
+<pre><code class="lang-cpp">// void* aligned_alloc(size_t alignment, size_t size); // Unsupported in MSVC
+void* calloc(size_t nmemb, size_t size);
+void free(void* ptr);
+void* malloc(size_t size);
+void* realloc(void* ptr, size_t size);
+</code></pre>
+<h3 id="remarks-6">Remarks</h3>
+<p>These functions have the semantics specified in the C standard library. MSVC doesn't support the <code>aligned_alloc</code> function. C11 specified <code>aligned_alloc()</code> in a way that's incompatible with the Microsoft implementation of <code>free()</code>, namely, that <code>free()</code> must be able to handle highly aligned allocations.</p>
+<h2 id="numeric-string-conversions">Numeric string conversions</h2>
+<pre><code class="lang-cpp">double atof(const char* nptr);
+int atoi(const char* nptr);
+long int atol(const char* nptr);
+long long int atoll(const char* nptr);
+double strtod(const char* nptr, char** endptr);
+float strtof(const char* nptr, char** endptr);
+long double strtold(const char* nptr, char** endptr);
+long int strtol(const char* nptr, char** endptr, int base);
+long long int strtoll(const char* nptr, char** endptr, int base);
+unsigned long int strtoul(const char* nptr, char** endptr, int base);
+unsigned long long int strtoull(const char* nptr, char** endptr, int base);
+</code></pre>
+<h3 id="remarks-7">Remarks</h3>
+<p>These functions have the semantics specified in the C standard library.</p>
+<h2 id="multibyte--wide-string-and-character-conversion-functions">Multibyte / wide string and character conversion functions</h2>
+<pre><code class="lang-cpp">int mblen(const char* s, size_t n);
+int mbtowc(wchar_t* pwc, const char* s, size_t n);
+int wctomb(char* s, wchar_t wchar);
+size_t mbstowcs(wchar_t* pwcs, const char* s, size_t n);
+size_t wcstombs(char* s, const wchar_t* pwcs, size_t n);
+</code></pre>
+<h3 id="remarks-8">Remarks</h3>
+<p>These functions have the semantics specified in the C standard library.</p>
+<h2 id="algorithm-functions">Algorithm functions</h2>
+<pre><code class="lang-cpp">void* bsearch(const void* key, const void* base, size_t nmemb, size_t size, c-compare-pred * compar);
+void* bsearch(const void* key, const void* base, size_t nmemb, size_t size, compare-pred * compar);
+void qsort(void* base, size_t nmemb, size_t size, c-compare-pred * compar);
+void qsort(void* base, size_t nmemb, size_t size, compare-pred * compar);
+</code></pre>
+<h3 id="remarks-9">Remarks</h3>
+<p>These functions have the semantics specified in the C standard library.</p>
+<h2 id="low-quality-random-number-generation-functions">Low-quality random number generation functions</h2>
+<pre><code class="lang-cpp">int rand();
+void srand(unsigned int seed);
+</code></pre>
+<h3 id="remarks-10">Remarks</h3>
+<p>These functions have the semantics specified in the C standard library.</p>
+<h2 id="absolute-values">Absolute values</h2>
+<pre><code class="lang-cpp">int abs(int j);
+long int abs(long int j);
+long long int abs(long long int j);
+float abs(float j);
+double abs(double j);
+long double abs(long double j);
+long int labs(long int j);
+long long int llabs(long long int j);
+</code></pre>
+<h3 id="remarks-11">Remarks</h3>
+<p>These functions have the semantics specified in the C standard library.</p>
+<h2 id="integer-division">Integer division</h2>
+<pre><code class="lang-cpp">div_t div(int numer, int denom);
+ldiv_t div(long int numer, long int denom);
+lldiv_t div(long long int numer, long long int denom);
+ldiv_t ldiv(long int numer, long int denom);
+lldiv_t lldiv(long long int numer, long long int denom);
+</code></pre>
+<h3 id="remarks-12">Remarks</h3>
+<p>These functions have the semantics specified in the C standard library.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="cpp-standard-library-header-files?view=msvc-170" data-linktype="relative-path">Header Files Reference</a><br>
+<a href="cpp-standard-library-overview?view=msvc-170" data-linktype="relative-path">C++ Standard Library Overview</a><br>
+<a href="thread-safety-in-the-cpp-standard-library?view=msvc-170" data-linktype="relative-path">Thread Safety in the C++ Standard Library</a></p>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Need help with this topic?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				Additional resources
+			</h2>
+			 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-qna-mobile"
+			class="margin-top-xxs"
+			data-bi-name="qna-link-card"
+			hidden
+		></section>
+	
+		</div>
+	
+			</div>
+			
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside "
+					data-bi-name="aside"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+			role="complementary"
+			aria-label="Additional resources"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<p class="font-weight-semibold margin-bottom-xs">Was this page helpful?</p>
+			<div class="buttons">
+				<button
+					class="thumb-rating-button like button button-primary button-sm"
+					data-test-id="right-rail-rating-yes"
+					data-binary-rating-response="rating-yes"
+					type="button"
+					title="This article is helpful"
+					data-bi-name="button-rating-yes"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-like"></span>
+					</span>
+					<span>Yes</span>
+				</button>
+				<button
+					class="thumb-rating-button dislike button button-primary button-sm"
+					id="right-rail-no-button"
+					hidden
+					data-test-id="right-rail-rating-no"
+					data-binary-rating-response="rating-no"
+					type="button"
+					title="This article is not helpful"
+					data-bi-name="button-rating-no"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-dislike"></span>
+					</span>
+					<span>No</span>
+				</button>
+				<details class="popover" id="help-popover" data-test-id="feedback-popover">
+					<summary
+						tabindex="0"
+						class="thumb-rating-button dislike button button-primary button-sm"
+						data-test-id="details-right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+						data-bi-an="feedback-unhelpful-popover"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</summary>
+					<div
+						class="popover-content width-200 width-300-tablet"
+						role="dialog"
+						aria-labelledby="popover-heading"
+						aria-describedby="popover-description"
+					>
+						<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+							Need help with this topic?
+						</p>
+						<p id="popover-description" class="font-size-sm margin-bottom-xs">
+							Want to try using Ask Learn to clarify or guide you through this topic?
+						</p>
+						
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+					</div>
+				</details>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout has-padding has-default-focus border-top  uhf-container"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	
+				<div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-expanded="false"
+				title="Theme"
+				data-bi-name="theme"
+			>
+				<span class="icon">
+					<span class="docon docon-sun" aria-hidden="true"></span>
+				</span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu">
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="light"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="dark"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="high-contrast"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2025</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>

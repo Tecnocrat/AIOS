@@ -1,0 +1,382 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:40.295946",
+  "folder_info": {
+    "name": "analysis_tools",
+    "absolute_path": "C:\\dev\\AIOS\\core\\analysis_tools",
+    "relative_path": "core\\analysis_tools",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "analysis_tools"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "__pycache__",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "configuration",
+      "core_systems",
+      "documentation",
+      "engines",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "runtime_intelligence",
+      "src",
+      "tachyonic_archive",
+      "tests"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "metadata"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 1070466,
+      "file_count": 50,
+      "folder_count": 2,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_ai_engine_ingestion_tester.py",
+          "size": 37221,
+          "modified": "2025-09-15T22:24:45.461133",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_ai_ingestion_analysis.py",
+          "size": 22643,
+          "modified": "2025-09-15T22:24:46.691652",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_analysis_tools_neuronal_test.py",
+          "size": 3609,
+          "modified": "2025-09-15T22:24:46.972179",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_assembler_evolution_status_clarifier.py",
+          "size": 25757,
+          "modified": "2025-09-15T22:24:48.153274",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_assembler_naming_optimizer.py",
+          "size": 22284,
+          "modified": "2025-09-15T22:24:50.436126",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cellular_intelligence_diagnostic_system.py",
+          "size": 47328,
+          "modified": "2025-09-15T22:24:52.645852",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cellular_intelligence_enhancement_engine.py",
+          "size": 47583,
+          "modified": "2025-09-15T22:24:55.264655",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cellular_migration_cleanup_tool.py",
+          "size": 0,
+          "modified": "2025-09-15T22:24:55.567989",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_ai_dendritic_connectivity_enhancer.py",
+          "size": 39127,
+          "modified": "2025-09-15T22:24:57.246347",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_consciousness_monitor.py",
+          "size": 4023,
+          "modified": "2025-09-15T22:24:57.629097",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_cellular_cleanup_tool.py",
+          "size": 23849,
+          "modified": "2025-09-15T22:24:58.660347",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_optimizer_iter2.py",
+          "size": 52050,
+          "modified": "2025-09-15T22:25:02.477680",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_root_analyzer_iter2.py",
+          "size": 41609,
+          "modified": "2025-09-15T22:25:04.811531",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_tree_demonstrator_iter2.py",
+          "size": 21143,
+          "modified": "2025-09-15T22:25:05.898755",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_evolution_monitor.py",
+          "size": 11388,
+          "modified": "2025-09-15T22:25:06.429250",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_meta_evolutionary_enhancer.py",
+          "size": 3617,
+          "modified": "2025-09-15T22:25:06.626247",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cytoplasm_upgrader_iter2.py",
+          "size": 28450,
+          "modified": "2025-09-15T22:25:07.829375",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_direct_ai_ingestion_test.py",
+          "size": 16183,
+          "modified": "2025-09-15T22:25:08.764677",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_file_tracking_system.py",
+          "size": 21615,
+          "modified": "2025-09-15T22:25:09.749564",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_folder_comparison_verifier.py",
+          "size": 24822,
+          "modified": "2025-09-15T22:25:12.268192",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_tachyonic_archive_cleanup.py",
+          "size": 19767,
+          "modified": "2025-09-15T22:25:13.262578",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_unicode_helper.py",
+          "size": 1007,
+          "modified": "2025-09-15T22:25:13.446279",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 1255,
+          "modified": "2025-09-15T22:25:13.639447",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "CELLULAR_METADATA.md",
+          "size": 1365,
+          "modified": "2025-09-15T22:25:13.520383",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 1148,
+          "modified": "2025-09-15T22:25:13.583920",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_ai_engine_ingestion_tester.py",
+        "size": 37221,
+        "modified": "2025-09-15T22:24:45.461133",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_ai_ingestion_analysis.py",
+        "size": 22643,
+        "modified": "2025-09-15T22:24:46.691652",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_analysis_tools_neuronal_test.py",
+        "size": 3609,
+        "modified": "2025-09-15T22:24:46.972179",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_assembler_evolution_status_clarifier.py",
+        "size": 25757,
+        "modified": "2025-09-15T22:24:48.153274",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_assembler_naming_optimizer.py",
+        "size": 22284,
+        "modified": "2025-09-15T22:24:50.436126",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cellular_intelligence_diagnostic_system.py",
+        "size": 47328,
+        "modified": "2025-09-15T22:24:52.645852",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cellular_intelligence_enhancement_engine.py",
+        "size": 47583,
+        "modified": "2025-09-15T22:24:55.264655",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cellular_migration_cleanup_tool.py",
+        "size": 0,
+        "modified": "2025-09-15T22:24:55.567989",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_ai_dendritic_connectivity_enhancer.py",
+        "size": 39127,
+        "modified": "2025-09-15T22:24:57.246347",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_consciousness_monitor.py",
+        "size": 4023,
+        "modified": "2025-09-15T22:24:57.629097",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 1255,
+        "modified": "2025-09-15T22:25:13.639447",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 1148,
+        "modified": "2025-09-15T22:25:13.583920",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_METADATA.md",
+        "size": 1365,
+        "modified": "2025-09-15T22:25:13.520383",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_unicode_helper.py",
+        "size": 1007,
+        "modified": "2025-09-15T22:25:13.446279",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_tachyonic_archive_cleanup.py",
+        "size": 19767,
+        "modified": "2025-09-15T22:25:13.262578",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_folder_comparison_verifier.py",
+        "size": 24822,
+        "modified": "2025-09-15T22:25:12.268192",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_file_tracking_system.py",
+        "size": 21615,
+        "modified": "2025-09-15T22:25:09.749564",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_direct_ai_ingestion_test.py",
+        "size": 16183,
+        "modified": "2025-09-15T22:25:08.764677",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cytoplasm_upgrader_iter2.py",
+        "size": 28450,
+        "modified": "2025-09-15T22:25:07.829375",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.py",
+        "size": 3617,
+        "modified": "2025-09-15T22:25:06.626247",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 25,
+      "file_types": [
+        ".py",
+        ".md"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 45,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 4
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "core > analysis_tools",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "tachyonic\\archive\\subcellular_archives\\analysis_tools"
+    ]
+  }
+}

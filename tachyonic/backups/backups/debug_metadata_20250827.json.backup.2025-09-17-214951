@@ -1,0 +1,210 @@
+[
+  {
+    "timestamp": "2025-08-27T23:48:46.933854",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:48:46.933854",
+      "endpoint": "/test",
+      "data": "test_data",
+      "response_time": null,
+      "session_id": "2025-08-27T23:48:46.821794"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:48:46.821794",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:48:46.935207",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-27T23:48:46.935207",
+      "handler": "DefaultHandler",
+      "message": "test",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-27T23:48:46.821794"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:48:46.821794",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:49:11.953473",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:49:11.953473",
+      "endpoint": "/system/health",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-27T23:49:11.870039"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:49:11.870039",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:49:12.973043",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:49:12.973043",
+      "endpoint": "/ai/nlu/intent",
+      "data": "{\"message\":\"test intent\",\"context\":{\"workspace\":\"test\"}}",
+      "response_time": null,
+      "session_id": "2025-08-27T23:49:11.870039"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:49:11.870039",
+      "total_requests": 2,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:49:13.018303",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-27T23:49:13.018303",
+      "handler": "DefaultHandler",
+      "message": "test intent",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-27T23:49:11.870039"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:49:11.870039",
+      "total_requests": 2,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:49:13.057639",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:49:13.057639",
+      "endpoint": "/debug",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-27T23:49:11.870039"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:49:11.870039",
+      "total_requests": 3,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:50:46.371820",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:50:46.371820",
+      "endpoint": "/validation",
+      "data": "final_test",
+      "response_time": null,
+      "session_id": "2025-08-27T23:50:46.233748"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:50:46.233748",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:50:46.416723",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-27T23:50:46.414703",
+      "handler": "DefaultHandler",
+      "message": "final validation test",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-27T23:50:46.233748"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:50:46.233748",
+      "total_requests": 1,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:50:46.982354",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:50:46.982354",
+      "endpoint": "/system/health",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-27T23:50:46.233748"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:50:46.233748",
+      "total_requests": 2,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:50:48.087876",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:50:48.087876",
+      "endpoint": "/ai/nlu/intent",
+      "data": "{\"message\":\"test\",\"context\":{}}",
+      "response_time": null,
+      "session_id": "2025-08-27T23:50:46.233748"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:50:46.233748",
+      "total_requests": 3,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:50:48.134456",
+    "type": "handler",
+    "data": {
+      "timestamp": "2025-08-27T23:50:48.134456",
+      "handler": "DefaultHandler",
+      "message": "test",
+      "processing_time": null,
+      "confidence": null,
+      "session_id": "2025-08-27T23:50:46.233748"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:50:46.233748",
+      "total_requests": 3,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  },
+  {
+    "timestamp": "2025-08-27T23:50:48.248692",
+    "type": "request",
+    "data": {
+      "timestamp": "2025-08-27T23:50:48.248692",
+      "endpoint": "/debug",
+      "data": "",
+      "response_time": null,
+      "session_id": "2025-08-27T23:50:46.233748"
+    },
+    "fractal_context": {
+      "session_id": "2025-08-27T23:50:46.233748",
+      "total_requests": 4,
+      "total_errors": 0,
+      "dendrite_level": "debug_neuron_active"
+    }
+  }
+]

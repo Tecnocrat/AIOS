@@ -44,7 +44,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('C:/dev/AIOS/logs/tachyonic_evolution.log'),
+        logging.FileHandler('runtime_intelligence/logs/tachyonic_evolution.log'),
         logging.StreamHandler()
     ]
 )

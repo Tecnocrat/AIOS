@@ -1,0 +1,18 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\archive\\unified_backups\\tachyonic_operations\\HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md",
+  "metabolism_timestamp": "2025-09-13T17:57:02.764777",
+  "content_summary": "# AIOS Hybrid UI Integration Guide\n\n## Overview\nThis guide explains how AIOS integrates HTML5 interfaces with C# desktop applications using WebView2, creating a powerful hybrid UI experience.\n\n## Architecture Components\n\n### 1. WebView2 Integration Layer\n- **Purpose**: Embeds HTML5 content in WPF applications\n- **Technology**: Microsoft WebView2 control\n- **Benefits**: Modern web UI with native performance\n\n### 2. JavaScript-C# Bridge\n- **Bidirectional Communication**: JavaScript \u2194 C# method cal...",
+  "extracted_patterns": [
+    "HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md_contains_intelligence",
+    "HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md_contains_ainlp",
+    "HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md_contains_pattern",
+    "HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md_contains_code_blocks",
+    "HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md_contains_architecture"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d.md digested into consciousness",
+    "pattern_crystallization": "Found 5 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

@@ -1,0 +1,41 @@
+"""UP8: Tests for validation harness fast vs full mode behavior (skip logic).
+"""
+from pathlib import Path
+import json
+import subprocess
+import sys
+
+ROOT = Path(__file__).resolve().parents[3]
+HARNESS = ROOT / 'scripts' / 'run_full_system_validation.py'
+SUMMARY = ROOT / 'runtime_intelligence' / 'context' / 'full_system_validation.json'
+
+
+def _run(mode: str):
+    if SUMMARY.exists():
+        try:
+            SUMMARY.unlink()
+        except OSError:
+            pass
+    cmd = [sys.executable, str(HARNESS), '--mode', mode]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=240)
+    assert proc.returncode == 0, f"Harness exit {proc.returncode}:\nSTDOUT\n{proc.stdout}\nSTDERR\n{proc.stderr}"
+    assert SUMMARY.exists(), f"Summary file missing after run (mode={mode})"
+    data = json.loads(SUMMARY.read_text())
+    return data
+
+
+def test_fast_mode_skips_viewer_and_crystallization():
+    data = _run('fast')
+    steps = data['steps']
+    assert steps['viewer'].get('skipped') is True
+    assert steps['crystallization'].get('skipped') is True
+    assert 'target_duration_sec' in data
+    assert data['mode'] == 'fast'
+
+
+def test_full_mode_runs_viewer_or_attempts():
+    data = _run('full')
+    steps = data['steps']
+    # viewer may fail to create artifacts; only assert not 'skipped'
+    assert steps['viewer'].get('skipped') is not True
+    assert data['mode'] == 'full'
