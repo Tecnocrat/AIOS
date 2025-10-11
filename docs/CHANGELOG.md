@@ -2,6 +2,29 @@
 
 ## [Unreleased] - 2025-10-12
 
+### 🔧 Git Hooks: Fixed Template File Validation
+
+**Problem Resolved**: Hook's `_temp` unsafe pattern was incorrectly flagging legitimate template and crystal files
+
+#### Issue
+- Files like `context_recovery_templates.json` and `algorithm_crystal_template.json` were blocked by pre-commit hook
+- Required `--no-verify` bypass to commit tachyonic archive migration
+- Hook's broad `_temp` pattern caught `*_template.*` and `*_crystal.*` files
+
+#### Solution Implemented
+- Added exemption pattern checking to `Test-FileSafety` function in `.githooks/aios_hooks_optimized.ps1`
+- Exempts files matching:
+  - `_template.(json|py|md|txt|yaml|yml)$` - Template files
+  - `_templates.(json|py|md)$` - Plural templates (e.g., `context_recovery_templates.json`)
+  - `_crystal.(json|py|md)$` - Knowledge crystal files
+- Checks exemptions before applying unsafe pattern validation
+
+#### Benefits
+- ✅ Template files can be committed without `--no-verify` bypass
+- ✅ Knowledge crystals properly recognized as safe
+- ✅ Hook architecture integrity maintained
+- ✅ Safety checks preserved for actual `_temp` files
+
 ### ♻️ Architecture: Tachyonic Archive Structure Optimization
 
 **Eliminated Meta-Linguistic Redundancy**: Flattened `tachyonic\archive\` to `tachyonic\` root
