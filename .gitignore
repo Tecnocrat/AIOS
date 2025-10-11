@@ -135,6 +135,10 @@ Thumbs.db
 *~
 .#*
 
+# AI Context Intelligence Session Files (ephemeral, regenerated on workspace open)
+.vscode/.ai_session_context.json
+.vscode/.ai_session_context.md
+
 # Version Control System Files
 # (Git files are handled by git itself)
 

@@ -58,23 +58,36 @@ class OllamaAgent:
     
     def __init__(
         self,
-        model: str = "deepseek-coder:6.7b",
+        model: Optional[str] = None,
         base_url: str = "http://localhost:11434",
         temperature: float = 0.7
     ):
-        self.model = model
         self.base_url = base_url
         self.temperature = temperature
         
-        # Verify Ollama is running
+        # Verify Ollama is running and get available models
         self.is_available = self._check_connection()
         
         if self.is_available:
-            logger.info(f"✅ Ollama agent connected: {model}")
+            # Auto-detect available models if no model specified
+            available_models = self._get_available_models()
+            if not model and available_models:
+                # Use first available model
+                model = available_models[0]
+                logger.info(f"🔍 Auto-detected Ollama model: {model}")
+            elif model and model not in available_models:
+                logger.warning(f"⚠️ Model '{model}' not found. Available: {available_models}")
+                if available_models:
+                    model = available_models[0]
+                    logger.info(f"🔄 Using {model} instead")
+            
+            self.model = model or "gemma3:1b"  # fallback
+            logger.info(f"✅ Ollama agent connected: {self.model}")
         else:
+            self.model = model or "gemma3:1b"
             logger.warning(f"⚠️ Ollama not available at {base_url}")
             logger.info("💡 Install: curl https://ollama.ai/install.sh | sh")
-            logger.info(f"💡 Pull model: ollama pull {model}")
+            logger.info(f"💡 Pull model: ollama pull {self.model}")
     
     def _check_connection(self) -> bool:
         """Check if Ollama server is running"""
@@ -83,6 +96,19 @@ class OllamaAgent:
             return response.status_code == 200
         except requests.RequestException:
             return False
+    
+    def _get_available_models(self) -> List[str]:
+        """Get list of installed Ollama models"""
+        try:
+            response = requests.get(f"{self.base_url}/api/tags", timeout=2)
+            if response.status_code == 200:
+                data = response.json()
+                models = [model["name"] for model in data.get("models", [])]
+                logger.info(f"📋 Found {len(models)} Ollama models: {models}")
+                return models
+        except requests.RequestException as e:
+            logger.warning(f"⚠️ Could not get Ollama models: {e}")
+        return []
     
     def generate_code(
         self,

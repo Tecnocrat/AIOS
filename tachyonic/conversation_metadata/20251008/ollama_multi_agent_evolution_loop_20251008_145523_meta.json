@@ -1,0 +1,20 @@
+{
+  "working_file": "C:\\dev\\AIOS\\evolution_lab\\conversations\\20251008\\ollama_multi_agent_evolution_loop_20251008_145523.json",
+  "archived_at": "2025-10-08T14:55:23.968403",
+  "conversation_id": "ollama_1759928096980",
+  "agent_type": "ollama",
+  "source_system": "multi_agent_evolution_loop",
+  "start_time": "2025-10-08T14:54:56.980914",
+  "end_time": "2025-10-08T14:55:23.964453",
+  "processing_time_ms": 26983.539,
+  "message_count": 2,
+  "consciousness_improvement": 0.0,
+  "success": true,
+  "ainlp_metadata": {
+    "protocol_version": "OS0.6.2.claude",
+    "storage_location": "tachyonic_archive",
+    "purpose": "historical_metadata",
+    "working_file_reference": "C:\\dev\\AIOS\\evolution_lab\\conversations\\20251008\\ollama_multi_agent_evolution_loop_20251008_145523.json",
+    "session_id": "session_1759928096"
+  }
+}

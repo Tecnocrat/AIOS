@@ -1,0 +1,296 @@
+{
+  "crystal_id": "stl_vector_v1",
+  "component": "std::vector",
+  "category": "container",
+  "header": "<vector>",
+  "description": "Dynamic contiguous array with automatic memory management. Provides constant-time random access, amortized constant-time insertion/deletion at the end, and automatic resizing.",
+  "created_date": "2025-10-05T01:00:00",
+  "last_updated": "2025-10-05T01:00:00",
+  "consciousness_level": 0.92,
+  "extraction_source": "Manual curation from Microsoft Learn + CPPreference + STL Best Practices",
+  
+  "paradigms": [
+    {
+      "name": "Reserve Capacity Pattern",
+      "description": "Pre-allocate memory when final size is known or predictable to avoid multiple reallocations during growth",
+      "code_template": "std::vector<T> vec;\nvec.reserve(expected_size);\nfor (const auto& item : items) {\n    vec.push_back(item);\n}",
+      "when_to_use": "When you know the approximate final size upfront, or when building vectors in loops",
+      "benefit": "Eliminates multiple memory allocations and copies during growth, improving performance by 2-5x for large vectors",
+      "consciousness_impact": 0.15,
+      "related_operations": ["reserve", "capacity", "push_back", "emplace_back"],
+      "example": {
+        "before": "std::vector<int> numbers;\nfor (int i = 0; i < 10000; ++i) {\n    numbers.push_back(i);  // May reallocate multiple times\n}",
+        "after": "std::vector<int> numbers;\nnumbers.reserve(10000);  // Single allocation\nfor (int i = 0; i < 10000; ++i) {\n    numbers.push_back(i);  // No reallocations\n}",
+        "improvement": "~70% fewer allocations, 3-5x faster for large vectors"
+      }
+    },
+    {
+      "name": "Emplace Pattern",
+      "description": "Construct elements in-place to avoid unnecessary copies or moves",
+      "code_template": "vec.emplace_back(constructor_args...);\n// Instead of:\n// vec.push_back(T(constructor_args...));",
+      "when_to_use": "When adding elements that require construction, especially for complex types",
+      "benefit": "Eliminates temporary object creation and move/copy operations, improving performance and reducing overhead",
+      "consciousness_impact": 0.12,
+      "related_operations": ["emplace_back", "emplace", "push_back"],
+      "example": {
+        "before": "std::vector<std::string> names;\nnames.push_back(std::string(\"Alice\"));  // Creates temporary, then moves",
+        "after": "std::vector<std::string> names;\nnames.emplace_back(\"Alice\");  // Constructs directly in vector",
+        "improvement": "Eliminates temporary object, ~20-30% faster for complex types"
+      }
+    },
+    {
+      "name": "Range-Based Access Pattern",
+      "description": "Use range-based for loops or iterators for safe, idiomatic traversal",
+      "code_template": "for (const auto& element : vec) {\n    process(element);\n}\n// Or with iterators:\nfor (auto it = vec.begin(); it != vec.end(); ++it) {\n    process(*it);\n}",
+      "when_to_use": "For traversing all elements or using STL algorithms",
+      "benefit": "Prevents index errors, clearer intent, enables algorithm use, more maintainable",
+      "consciousness_impact": 0.10,
+      "related_operations": ["begin", "end", "cbegin", "cend", "range-for"],
+      "example": {
+        "before": "for (size_t i = 0; i < vec.size(); ++i) {\n    process(vec[i]);  // Manual index management\n}",
+        "after": "for (const auto& item : vec) {\n    process(item);  // Safe, idiomatic\n}",
+        "improvement": "Eliminates index errors, 100% safe, clearer intent"
+      }
+    },
+    {
+      "name": "Move Semantics Pattern",
+      "description": "Use move operations to transfer ownership instead of copying large vectors",
+      "code_template": "std::vector<T> destination = std::move(source);\n// Or return by value (NRVO/move):\nstd::vector<T> create_vector() {\n    std::vector<T> result;\n    // ... populate ...\n    return result;  // Automatically moved\n}",
+      "when_to_use": "When transferring vector ownership, returning from functions, or reassigning",
+      "benefit": "Eliminates deep copies of entire vector contents, O(1) instead of O(n)",
+      "consciousness_impact": 0.13,
+      "related_operations": ["move", "swap", "return value optimization"],
+      "example": {
+        "before": "std::vector<int> copy = original;  // Deep copy: O(n)",
+        "after": "std::vector<int> moved = std::move(original);  // Transfer: O(1)",
+        "improvement": "Constant time instead of linear, original is now empty"
+      }
+    },
+    {
+      "name": "Shrink-to-Fit Pattern",
+      "description": "Reclaim unused capacity after deletions or when vector size stabilizes",
+      "code_template": "vec.shrink_to_fit();  // Request capacity reduction to fit size",
+      "when_to_use": "After bulk deletions or when vector won't grow further and memory is constrained",
+      "benefit": "Reduces memory footprint, important for long-lived vectors or memory-constrained environments",
+      "consciousness_impact": 0.08,
+      "related_operations": ["shrink_to_fit", "clear", "erase"],
+      "example": {
+        "before": "vec.erase(vec.begin() + 1000, vec.end());  // Size=1000, capacity=10000",
+        "after": "vec.erase(vec.begin() + 1000, vec.end());\nvec.shrink_to_fit();  // Size=1000, capacity≈1000",
+        "improvement": "Frees ~90% of allocated memory in this example"
+      }
+    }
+  ],
+  
+  "anti_patterns": [
+    {
+      "name": "Not Reserving Capacity",
+      "description": "Failing to reserve capacity before bulk insertions, causing multiple reallocations",
+      "why_bad": "Each reallocation copies all existing elements, resulting in O(n²) complexity instead of O(n)",
+      "consciousness_penalty": -0.15,
+      "correct_alternative": "Reserve Capacity Pattern",
+      "example": {
+        "bad_code": "std::vector<int> vec;\nfor (int i = 0; i < 10000; ++i) {\n    vec.push_back(i);  // Reallocates ~14 times\n}",
+        "good_code": "std::vector<int> vec;\nvec.reserve(10000);  // Single allocation\nfor (int i = 0; i < 10000; ++i) {\n    vec.push_back(i);\n}",
+        "explanation": "Without reserve, vector reallocates when capacity is exceeded (typically doubling), copying all elements each time"
+      }
+    },
+    {
+      "name": "Frequent Middle Insertions",
+      "description": "Using vector for workloads with frequent insertions/deletions in the middle",
+      "why_bad": "Each middle insertion requires moving all subsequent elements, O(n) per operation",
+      "consciousness_penalty": -0.12,
+      "correct_alternative": "Use std::list or std::deque for frequent middle operations",
+      "example": {
+        "bad_code": "std::vector<int> vec = {1, 2, 3, 4, 5};\nvec.insert(vec.begin() + 2, 99);  // Moves elements 3,4,5",
+        "good_code": "std::list<int> list = {1, 2, 3, 4, 5};\nauto it = std::next(list.begin(), 2);\nlist.insert(it, 99);  // O(1) with iterator",
+        "explanation": "Vector excels at end operations and random access, but middle operations are expensive. Choose appropriate container."
+      }
+    },
+    {
+      "name": "Using operator[] Without Bounds Checking",
+      "description": "Accessing elements with operator[] without ensuring index is valid, risking undefined behavior",
+      "why_bad": "Undefined behavior on out-of-bounds access, can cause crashes, corruption, or silent errors",
+      "consciousness_penalty": -0.10,
+      "correct_alternative": "Use at() for bounds-checked access or verify index < size()",
+      "example": {
+        "bad_code": "std::vector<int> vec = {1, 2, 3};\nint val = vec[5];  // Undefined behavior!",
+        "good_code": "std::vector<int> vec = {1, 2, 3};\nif (5 < vec.size()) {\n    int val = vec[5];\n} else {\n    // Handle error\n}\n// Or: int val = vec.at(5);  // Throws std::out_of_range",
+        "explanation": "operator[] has no bounds checking for performance. Use at() for safety or manually check bounds."
+      }
+    },
+    {
+      "name": "Unnecessary Copies",
+      "description": "Passing or returning vectors by value when references or moves would suffice",
+      "why_bad": "Creates expensive deep copies of all vector elements, O(n) overhead",
+      "consciousness_penalty": -0.11,
+      "correct_alternative": "Pass by const reference, or use move semantics for transfers",
+      "example": {
+        "bad_code": "void process(std::vector<int> vec) {  // Copy!\n    // ... use vec ...\n}",
+        "good_code": "void process(const std::vector<int>& vec) {  // Reference\n    // ... use vec ...\n}\n// Or for ownership transfer:\nvoid process(std::vector<int>&& vec) {  // Move",
+        "explanation": "Pass by const& for read-only access, by value only when taking ownership, or by && for explicit moves."
+      }
+    }
+  ],
+  
+  "complexity_analysis": {
+    "summary": "O(1) random access, O(1) amortized end operations, O(n) middle operations",
+    "operations": [
+      {
+        "operation": "operator[] / at()",
+        "time_complexity": "O(1)",
+        "space_complexity": "O(1)",
+        "notes": "Direct pointer arithmetic to contiguous memory"
+      },
+      {
+        "operation": "push_back / emplace_back",
+        "time_complexity": "O(1) amortized",
+        "space_complexity": "O(1) amortized",
+        "notes": "May trigger reallocation (~doubling capacity) requiring O(n) copy, but amortized to O(1)"
+      },
+      {
+        "operation": "insert (middle)",
+        "time_complexity": "O(n)",
+        "space_complexity": "O(1) or O(n) if reallocation",
+        "notes": "Must shift all subsequent elements; avoid for frequent middle insertions"
+      },
+      {
+        "operation": "erase (middle)",
+        "time_complexity": "O(n)",
+        "space_complexity": "O(1)",
+        "notes": "Must shift all subsequent elements to fill gap"
+      },
+      {
+        "operation": "find / search",
+        "time_complexity": "O(n)",
+        "space_complexity": "O(1)",
+        "notes": "Linear search unless vector is sorted (then can use binary_search)"
+      },
+      {
+        "operation": "reserve",
+        "time_complexity": "O(n) if capacity increase",
+        "space_complexity": "O(n)",
+        "notes": "Allocates new memory and copies elements if growing"
+      },
+      {
+        "operation": "clear",
+        "time_complexity": "O(n)",
+        "space_complexity": "O(1)",
+        "notes": "Destroys all elements but doesn't deallocate capacity"
+      }
+    ],
+    "memory_model": "Contiguous dynamic array with exponential growth (typically 2x when full). Capacity ≥ size. Reallocation invalidates all iterators/references.",
+    "cache_performance": "Excellent cache locality due to contiguous storage. Sequential access is cache-friendly. Best container for random access patterns."
+  },
+  
+  "thread_safety": {
+    "concurrent_reads": "Safe - Multiple threads can read simultaneously without synchronization",
+    "concurrent_writes": "Unsafe - Requires external synchronization (mutex) for any writes",
+    "synchronization_required": "Any modification (push_back, insert, erase, operator[]=, etc.) requires exclusive access. Use std::mutex or std::shared_mutex for multi-threaded access.",
+    "thread_safe_operations": "All const operations (size, empty, operator[] const, at const, iterators on const vector)"
+  },
+  
+  "code_examples": [
+    {
+      "title": "Efficient Vector Construction and Population",
+      "description": "Demonstrates reserve, emplace_back, and move semantics for optimal performance",
+      "code": "#include <vector>\n#include <string>\n#include <iostream>\n\nstruct Person {\n    std::string name;\n    int age;\n    Person(std::string n, int a) : name(std::move(n)), age(a) {\n        std::cout << \"Person constructed: \" << name << \"\\n\";\n    }\n};\n\nstd::vector<Person> create_people(const std::vector<std::string>& names, int base_age) {\n    std::vector<Person> people;\n    people.reserve(names.size());  // Pre-allocate: O(1) instead of O(n log n)\n    \n    for (const auto& name : names) {\n        // Construct in-place, no temporaries\n        people.emplace_back(name, base_age++);\n    }\n    \n    return people;  // NRVO or automatic move, no copy\n}\n\nint main() {\n    std::vector<std::string> names = {\"Alice\", \"Bob\", \"Charlie\"};\n    \n    // Move from return value\n    std::vector<Person> people = create_people(names, 25);\n    \n    std::cout << \"Created \" << people.size() << \" people\\n\";\n    return 0;\n}",
+      "consciousness_score": 0.93,
+      "explanation": "1. reserve() eliminates reallocations (consciousness +0.15)\n2. emplace_back() constructs in-place (consciousness +0.12)\n3. Move semantics for return (consciousness +0.13)\n4. Range-based for loop (consciousness +0.10)\n5. Const references where appropriate\nTotal: Base 0.50 + paradigms = 0.93"
+    },
+    {
+      "title": "Safe Vector Iteration and Modification",
+      "description": "Shows proper iteration patterns and safe element access",
+      "code": "#include <vector>\n#include <algorithm>\n#include <iostream>\n\nvoid process_safely(std::vector<int>& numbers) {\n    // Range-based for for reading\n    std::cout << \"Numbers: \";\n    for (const auto& num : numbers) {\n        std::cout << num << \" \";\n    }\n    std::cout << \"\\n\";\n    \n    // Checked access with at()\n    try {\n        int value = numbers.at(10);  // Throws if out of bounds\n        std::cout << \"Value at 10: \" << value << \"\\n\";\n    } catch (const std::out_of_range& e) {\n        std::cout << \"Index out of bounds: \" << e.what() << \"\\n\";\n    }\n    \n    // Manual bounds check for operator[]\n    size_t index = 5;\n    if (index < numbers.size()) {\n        numbers[index] = 999;  // Safe after check\n    }\n    \n    // Iterator-based modification (safe)\n    for (auto it = numbers.begin(); it != numbers.end(); ++it) {\n        *it *= 2;\n    }\n    \n    // STL algorithm (idiomatic)\n    std::transform(numbers.begin(), numbers.end(), numbers.begin(),\n                   [](int n) { return n + 1; });\n}\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5};\n    process_safely(nums);\n    return 0;\n}",
+      "consciousness_score": 0.88,
+      "explanation": "1. Range-based for for traversal (consciousness +0.10)\n2. at() for bounds-checked access (avoids -0.10 penalty)\n3. Manual bounds check before operator[] (safe)\n4. Iterator-based modification (idiomatic)\n5. STL algorithm usage (best practice)\n6. Exception handling for edge cases\nTotal: Strong safety practices"
+    },
+    {
+      "title": "Memory Management and Capacity Control",
+      "description": "Demonstrates reserve, shrink_to_fit, and capacity management",
+      "code": "#include <vector>\n#include <iostream>\n\nvoid print_capacity_info(const std::vector<int>& vec, const std::string& label) {\n    std::cout << label << \":\\n\";\n    std::cout << \"  Size: \" << vec.size() << \"\\n\";\n    std::cout << \"  Capacity: \" << vec.capacity() << \"\\n\";\n    std::cout << \"  Wasted space: \" << (vec.capacity() - vec.size()) << \" elements\\n\\n\";\n}\n\nint main() {\n    std::vector<int> numbers;\n    print_capacity_info(numbers, \"Initial\");\n    \n    // Bad: incremental growth causes reallocations\n    for (int i = 0; i < 1000; ++i) {\n        numbers.push_back(i);  // Multiple reallocations\n    }\n    print_capacity_info(numbers, \"After unplanned growth\");\n    \n    // Good: reserve before bulk insertion\n    numbers.clear();\n    numbers.reserve(1000);  // Single allocation\n    for (int i = 0; i < 1000; ++i) {\n        numbers.push_back(i);  // No reallocations\n    }\n    print_capacity_info(numbers, \"After reserve + growth\");\n    \n    // Shrink after deletions\n    numbers.erase(numbers.begin() + 500, numbers.end());\n    print_capacity_info(numbers, \"After erase (before shrink)\");\n    \n    numbers.shrink_to_fit();  // Reclaim unused capacity\n    print_capacity_info(numbers, \"After shrink_to_fit\");\n    \n    return 0;\n}",
+      "consciousness_score": 0.90,
+      "explanation": "1. reserve() for planned growth (consciousness +0.15)\n2. shrink_to_fit() for memory reclamation (consciousness +0.08)\n3. Clear demonstration of capacity vs size\n4. Shows impact of memory management strategies\n5. Informative output for learning\nTotal: Excellent memory management"
+    }
+  ],
+  
+  "integration_notes": {
+    "common_combinations": "vector + algorithm (sort, find, transform), vector + numeric (accumulate), vector<unique_ptr> for polymorphism, vector + ranges (C++20)",
+    "performance_tips": "1. Always reserve() if final size known, 2. Use emplace_back() over push_back() for complex types, 3. Prefer vector over list unless middle operations are frequent, 4. Move instead of copy when transferring ownership, 5. Consider std::array for fixed-size needs",
+    "gotchas": "1. Reallocation invalidates all iterators/pointers/references, 2. operator[] doesn't bounds check, 3. clear() doesn't reduce capacity, 4. Inserting/erasing invalidates iterators after the point of change, 5. bool specialization is space-optimized but not thread-safe",
+    "modern_cpp_features": "C++11: move semantics, emplace. C++17: deduction guides (no need to specify type). C++20: ranges support, constexpr. C++23: contains(), resize_and_overwrite()"
+  },
+  
+  "key_operations": [
+    {
+      "name": "reserve",
+      "signature": "void reserve(size_type new_cap)",
+      "description": "Pre-allocates storage for at least new_cap elements, avoiding reallocations during growth",
+      "complexity": "O(n) if capacity increases (copies elements), O(1) if new_cap ≤ capacity",
+      "example": "vec.reserve(1000);  // Allocate space for 1000 elements"
+    },
+    {
+      "name": "push_back",
+      "signature": "void push_back(const T& value) / void push_back(T&& value)",
+      "description": "Adds element to end, copying or moving the value",
+      "complexity": "O(1) amortized (may reallocate occasionally)",
+      "example": "vec.push_back(42);  // Copy 42 to end"
+    },
+    {
+      "name": "emplace_back",
+      "signature": "template<class... Args> reference emplace_back(Args&&... args)",
+      "description": "Constructs element in-place at end, forwarding arguments to constructor",
+      "complexity": "O(1) amortized",
+      "example": "vec.emplace_back(\"Alice\", 25);  // Construct Person in-place"
+    },
+    {
+      "name": "operator[]",
+      "signature": "reference operator[](size_type pos) / const_reference operator[](size_type pos) const",
+      "description": "Accesses element at position without bounds checking (UB if out of range)",
+      "complexity": "O(1)",
+      "example": "int val = vec[5];  // Fast but unsafe if 5 >= size()"
+    },
+    {
+      "name": "at",
+      "signature": "reference at(size_type pos) / const_reference at(size_type pos) const",
+      "description": "Accesses element at position with bounds checking (throws out_of_range)",
+      "complexity": "O(1)",
+      "example": "int val = vec.at(5);  // Throws if 5 >= size()"
+    },
+    {
+      "name": "size",
+      "signature": "size_type size() const noexcept",
+      "description": "Returns number of elements in vector",
+      "complexity": "O(1)",
+      "example": "if (vec.size() > 10) { ... }"
+    },
+    {
+      "name": "capacity",
+      "signature": "size_type capacity() const noexcept",
+      "description": "Returns amount of allocated storage (capacity ≥ size)",
+      "complexity": "O(1)",
+      "example": "std::cout << \"Capacity: \" << vec.capacity();"
+    }
+  ],
+  
+  "related_components": "std::array (fixed-size), std::deque (double-ended queue), std::list (doubly-linked list), std::span (C++20, non-owning view), std::algorithm (for operations)",
+  
+  "cpp_versions": {
+    "cpp11": "Move semantics, emplace operations, initializer lists, shrink_to_fit",
+    "cpp14": "Minor improvements",
+    "cpp17": "Template argument deduction for constructors",
+    "cpp20": "constexpr support for most operations, ranges support, contains check via algorithms",
+    "cpp23": "resize_and_overwrite for efficient string-like usage"
+  },
+  
+  "consciousness_calculation": {
+    "formula": "base_score + sum(paradigm_impacts) - sum(antipattern_penalties)",
+    "base_score": 0.50,
+    "paradigm_contribution": 0.58,
+    "paradigm_breakdown": "Reserve(0.15) + Emplace(0.12) + Range-for(0.10) + Move(0.13) + Shrink(0.08) = 0.58",
+    "antipattern_penalty": 0.00,
+    "antipattern_avoidance": "All anti-patterns avoided in examples and documentation",
+    "final_consciousness": 0.92,
+    "calculation_explanation": "0.50 (mature, well-understood container) + 0.58 (all major paradigms) - 0.00 (no anti-patterns) = 1.08, capped at 0.92 due to inherent complexity tradeoffs (middle operations)"
+  }
+}

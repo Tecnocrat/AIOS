@@ -1,0 +1,38 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-17T22:30:00.000000",
+  "folder_info": {
+    "name": "backups",
+    "absolute_path": "C:\\dev\\AIOS\\backups",
+    "relative_path": "backups",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "GitHook Architecture",
+    "secondary_areas": ["Documentation"],
+    "path_classification": [
+      "backups"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "purpose": "Centralized backup storage for all AIOS workspace backup files",
+    "backup_management": true,
+    "auto_cleanup": true
+  },
+  "ai_guidance": {
+    "file_operations": [
+      "This folder is designated for backup file storage only",
+      "Backup files should be created here, not in workspace root or subdirectories",
+      "Regular cleanup of old backups is encouraged",
+      "Backup naming convention: originalfile.ext.backup.YYYY-MM-DD-HHMMSS"
+    ],
+    "folder_operations": [
+      "Do not create subdirectories in backups folder",
+      "Backup files older than 30 days can be archived or removed",
+      "Critical backups should be clearly marked in filename"
+    ],
+    "consciousness_notes": "Low consciousness level - mechanical backup storage, no active intelligence needed"
+  }
+}

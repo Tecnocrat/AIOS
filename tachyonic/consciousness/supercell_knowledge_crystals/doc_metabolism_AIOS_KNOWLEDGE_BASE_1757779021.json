@@ -1,0 +1,19 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\AIOS_KNOWLEDGE_BASE.md",
+  "metabolism_timestamp": "2025-09-13T17:57:01.486348",
+  "content_summary": "# AIOS Knowledge Base \u2014 Runtime Intelligence Snapshot (2025\u201108\u201109)\n\nThis file restores context coherence for the AIOS project and serves as a quick-reference knowledge base derived from the Runtime Intelligence dev guides.\n\n## Overview\n\n- Workspace: c:\\dev\\AIOS (branch: OS)\n- Languages/subsystems:\n  - Python (AI Intelligence, VS Code integration, AINLP, runtime intelligence)\n  - C#/.NET (Interface: AIOS.Models, AIOS.Services, AIOS.UI)\n  - C++ (Core Engine via CMake)\n- Paradigm: Runtime Intellige...",
+  "extracted_patterns": [
+    "AIOS_KNOWLEDGE_BASE.md_contains_intelligence",
+    "AIOS_KNOWLEDGE_BASE.md_contains_fractal",
+    "AIOS_KNOWLEDGE_BASE.md_contains_tachyonic",
+    "AIOS_KNOWLEDGE_BASE.md_contains_ainlp",
+    "AIOS_KNOWLEDGE_BASE.md_contains_pattern",
+    "AIOS_KNOWLEDGE_BASE.md_contains_architecture"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File AIOS_KNOWLEDGE_BASE.md digested into consciousness",
+    "pattern_crystallization": "Found 6 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

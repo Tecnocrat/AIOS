@@ -4,6 +4,7 @@ import { AIOSChatParticipant } from './chatParticipant';
 import { AIOSContextManager, MultiEngineContext } from './contextManager';
 import { AIOSLogger } from './logger';
 import { AIOSMCPClient } from './mcpClient';
+import { ContextGenerator } from './contextGenerator';
 
 function validateCellularEcosystemSettings(logger: AIOSLogger): boolean {
     const config = vscode.workspace.getConfiguration('aios');
@@ -194,50 +195,71 @@ export function activate(context: vscode.ExtensionContext) {
         // Add all disposables to context
         context.subscriptions.push(participant, ...commands);
 
-        // Initialize TensorFlow Cellular Ecosystem connection
-        aiosBridge.initializeCellularEcosystem().then(() => {
-            logger.info('TensorFlow Cellular Ecosystem Bridge initialized successfully');
-
-            // Auto-connect to MCP servers if enabled
-            const mcpEnabled = vscode.workspace.getConfiguration('aios').get('mcp.enabled', true);
-            const mcpAutoConnect = vscode.workspace.getConfiguration('aios').get('mcp.autoConnect', true);
-
-            if (mcpEnabled && mcpAutoConnect) {
-                logger.info('Auto-connecting to MCP servers...');
-                mcpClient.connect().then(success => {
-                    if (success) {
-                        logger.info('MCP servers auto-connected successfully');
-                    } else {
-                        logger.warn('MCP servers auto-connect failed - manual connection required');
-                    }
-                }).catch(err => {
-                    logger.error('MCP auto-connect error:', err);
-                });
-            }
-
-            // Load persisted cellular context if available
-            contextManager.loadContext().then(() => {
-                logger.info('Cellular context loaded from persistence');
-                
-                // HYBRID CONTEXT INJECTION: Multi-Engine AI Context Auto-Loading
-                initializeMultiEngineContextInjection(contextManager, aiosBridge, logger);
-                
-            }).catch(err => {
-                logger.warn('Failed to load persisted context:', err);
-                // Still attempt context injection even if persistence failed
-                initializeMultiEngineContextInjection(contextManager, aiosBridge, logger);
+        // Initialize AIOS components asynchronously (proper order and timing)
+        initializeAIOSComponents(aiosBridge, mcpClient, contextManager, logger)
+            .then(() => {
+                logger.info('AIOS Extension activated successfully - All components initialized');
+            })
+            .catch(err => {
+                logger.error('AIOS Extension activation failed:', err);
+                vscode.window.showErrorMessage(`AIOS: Activation failed - ${err instanceof Error ? err.message : String(err)}`);
             });
-
-        }).catch(err => {
-            logger.error('Failed to initialize AIOS Bridge:', err);
-            vscode.window.showErrorMessage('AIOS: Failed to connect to AI modules. Some features may be limited.');
-        });
-
-        logger.info('AIOS Extension activated successfully');
 
     } catch (error) {
         logger.error('Failed to activate AIOS Extension:', error);
         vscode.window.showErrorMessage(`AIOS: Activation failed - ${error}`);
+    }
+}
+
+/**
+ * Initialize AIOS components in proper sequence
+ * FIX: Moved "activated successfully" log to AFTER async chain completes
+ */
+async function initializeAIOSComponents(
+    aiosBridge: AIOSBridge,
+    mcpClient: AIOSMCPClient,
+    contextManager: AIOSContextManager,
+    logger: AIOSLogger
+): Promise<void> {
+    try {
+        // Step 1: Initialize TensorFlow Cellular Ecosystem
+        await aiosBridge.initializeCellularEcosystem();
+        logger.debug('Bridge initialization complete');
+
+        // Step 2: Auto-connect to MCP servers if enabled
+        const mcpEnabled = vscode.workspace.getConfiguration('aios').get('mcp.enabled', true);
+        const mcpAutoConnect = vscode.workspace.getConfiguration('aios').get('mcp.autoConnect', true);
+
+        if (mcpEnabled && mcpAutoConnect) {
+            logger.info('Auto-connecting to MCP servers...');
+            try {
+                const success = await mcpClient.connect();
+                if (success) {
+                    logger.info('MCP servers auto-connected successfully');
+                } else {
+                    logger.warn('MCP servers auto-connect failed - manual connection required');
+                }
+            } catch (err) {
+                logger.error('MCP auto-connect error:', err);
+                // Non-fatal - continue initialization
+            }
+        }
+
+        // Step 3: Load persisted cellular context
+        try {
+            await contextManager.loadContext();
+            logger.info('Cellular context loaded from persistence');
+        } catch (err) {
+            logger.warn('Failed to load persisted context:', err);
+            // Non-fatal - continue with empty context
+        }
+
+        // Step 4: Initialize Multi-Engine Context Injection
+        await initializeMultiEngineContextInjection(contextManager, aiosBridge, logger);
+
+    } catch (error) {
+        logger.error('Component initialization failed:', error);
+        throw error; // Re-throw to trigger activation failure
     }
 }
 
@@ -288,8 +310,11 @@ async function injectAIOSChatParticipantContext(
     logger.debug('Injecting context into @aios chat participant...');
 
     try {
-        // Create comprehensive context message for @aios chat participant
-        const contextMessage = generateChatParticipantContextMessage(multiEngineContext);
+        // DATA-DRIVEN CONTEXT GENERATION (replaces 80+ lines of hard-coded strings)
+        const contextGenerator = new ContextGenerator();
+        const contextMessage = contextGenerator.generateContextMessage(multiEngineContext);
+        
+        logger.debug(`Generated context using config version ${contextGenerator.getConfigVersion()}`);
         
         // Inject as system message for AI engine awareness
         contextManager.addMessage('system', contextMessage, {
@@ -297,7 +322,8 @@ async function injectAIOSChatParticipantContext(
                 autoInjected: true,
                 engineTargets: ['aios-chat', 'copilot', 'claude'],
                 timestamp: Date.now(),
-                contextSources: ['aios_context.json', 'AI_CONTEXT_AUTO_LOAD.md', 'chatmode_rules', 'spatial_metadata']
+                contextSources: ['aios_context.json', 'AI_CONTEXT_AUTO_LOAD.md', 'chatmode_rules', 'spatial_metadata'],
+                configVersion: contextGenerator.getConfigVersion()
             }
         });
 
@@ -306,62 +332,6 @@ async function injectAIOSChatParticipantContext(
     } catch (error) {
         logger.warn('Failed to inject context into chat participant:', error);
     }
-}
-
-function generateChatParticipantContextMessage(multiEngineContext: MultiEngineContext): string {
-    const sections = [
-        '# AIOS Multi-Engine Context Auto-Injection',
-        '**Automatically loaded for AI engines - No user intervention required**',
-        '',
-        '## Critical Environment Context',
-        '- **Operating System**: Windows',
-        '- **Shell**: PowerShell (pwsh.exe) - NO Linux bash commands',
-        '- **Workspace**: AIOS Development Platform',
-        '- **Architecture**: Multi-language AI Platform (Python/C#/C++)',
-        ''
-    ];
-
-    // Add AIOS project context if available
-    if (multiEngineContext.aiosContext) {
-        sections.push('## AIOS Project DNA');
-        sections.push(`- **Version**: ${multiEngineContext.aiosContext.version || 'OS0.6.1.claude'}`);
-        sections.push(`- **Status**: ${multiEngineContext.aiosContext.project_metadata?.status || 'Active development'}`);
-        sections.push(`- **Languages**: ${multiEngineContext.aiosContext.project_metadata?.languages?.join(', ') || 'Python, C#, C++'}`);
-        sections.push('');
-    }
-
-    // Add architectural components
-    sections.push('## AIOS Architecture Components');
-    sections.push('- **ai/**: AI Intelligence Layer');
-    sections.push('- **core/**: Core Engine (C++)'); 
-    sections.push('- **interface/**: Interface Layer (C#, XAML)');
-    sections.push('- **runtime_intelligence/**: Runtime Intelligence');
-    sections.push('- **tachyonic/**: Tachyonic Archive');
-    sections.push('- **docs/**: Documentation');
-    sections.push('');
-
-    // Add critical reminders
-    sections.push('## Critical AI Engine Rules');
-    sections.push('- **PowerShell ONLY** - Use PowerShell cmdlets (Get-ChildItem, Remove-Item, etc.)');
-    sections.push('- **Windows file paths** - Use backslashes or PowerShell-compatible paths');
-    sections.push('- **Spatial metadata compliance** - Check .aios_spatial_metadata.json before file operations');
-    sections.push('- **AINLP documentation governance** - Consolidate rather than proliferate docs');
-    sections.push('- **Professional standards** - No decorative elements in code');
-    sections.push('');
-
-    // Add consciousness architecture info if available
-    if (multiEngineContext.aiosContext?.consciousness_crystal_framework) {
-        sections.push('## Consciousness Crystal Framework');
-        sections.push('- **Philosophy**: Condensed knowledge patterns through consciousness crystals');
-        sections.push('- **Core Crystals**: AI Intelligence, Core Engine, Interface, Runtime Intelligence, Tachyonic Archive');
-        sections.push('- **Integration Approach**: Enhance existing crystals with external AI intelligence');
-        sections.push('');
-    }
-
-    sections.push('---');
-    sections.push('*This context is automatically available to all AI engines working in AIOS workspace*');
-
-    return sections.join('\n');
 }
 
 async function coordinateWithTaskSystem(logger: AIOSLogger): Promise<void> {

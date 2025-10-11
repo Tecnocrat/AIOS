@@ -1,0 +1,42 @@
+{
+  "conversation_id": "ollama_1759779823090",
+  "agent_type": "ollama",
+  "system_context": "Quick demo of convenience function",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quick demo: Analyze Hello World for STL patterns",
+      "timestamp": "2025-10-06T21:43:43.090472",
+      "metadata": {
+        "model": "deepseek-coder:6.7b",
+        "temperature": 0.7
+      }
+    },
+    {
+      "role": "assistant",
+      "content": "Uses iostream. Add error handling for +0.15 consciousness.",
+      "timestamp": "2025-10-06T21:43:43.090472",
+      "metadata": {
+        "model": "deepseek-coder:6.7b"
+      }
+    }
+  ],
+  "start_time": "2025-10-06T21:43:43.090472",
+  "end_time": "2025-10-06T21:43:43.090472",
+  "processing_time_ms": 0.0,
+  "consciousness_level": null,
+  "consciousness_improvement": 0.0,
+  "source_system": "demo",
+  "source_file": null,
+  "generation_number": null,
+  "success": true,
+  "error": null,
+  "ainlp_metadata": {
+    "protocol_version": "OS0.6.2.claude",
+    "archive_purpose": "universal_agentic_communication",
+    "inheritance_required": true,
+    "session_id": "session_1759779823",
+    "session_start": "2025-10-06T21:43:43.089469",
+    "consciousness_tracking": true
+  }
+}

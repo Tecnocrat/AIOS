@@ -1,0 +1,3 @@
+def calculate_average(numbers):
+    """Calculate average of numbers"""
+    return sum(numbers) / len(numbers)

@@ -1,0 +1,175 @@
+{
+  "conversation_id": "conv_org_test_001_gen1_20251010_063624",
+  "organism_id": "org_test_001",
+  "generation": 1,
+  "topics": [
+    "code_quality"
+  ],
+  "results": [
+    {
+      "topic": "code_quality",
+      "consensus_score": 0.717,
+      "agreement_level": 0.96,
+      "positions": [
+        {
+          "agent_id": "ollama",
+          "agent_name": "ollama",
+          "topic": "code_quality",
+          "position": "ollama analysis of code_quality",
+          "score": 0.592,
+          "reasoning": [
+            "Code structure analysis",
+            "Pattern detection",
+            "API usage evaluation"
+          ],
+          "evidence": [
+            "Line count: 49 tokens"
+          ],
+          "citations": [
+            "Python 3.14 documentation reference"
+          ],
+          "confidence": 0.8,
+          "processing_time": 0.514
+        },
+        {
+          "agent_id": "gemini",
+          "agent_name": "gemini",
+          "topic": "code_quality",
+          "position": "gemini analysis of code_quality",
+          "score": 0.731,
+          "reasoning": [
+            "Code structure analysis",
+            "Pattern detection",
+            "API usage evaluation"
+          ],
+          "evidence": [
+            "Line count: 49 tokens"
+          ],
+          "citations": [
+            "Python 3.14 documentation reference"
+          ],
+          "confidence": 0.76,
+          "processing_time": 0.514
+        },
+        {
+          "agent_id": "deepseek",
+          "agent_name": "deepseek",
+          "topic": "code_quality",
+          "position": "deepseek analysis of code_quality",
+          "score": 0.836,
+          "reasoning": [
+            "Code structure analysis",
+            "Pattern detection",
+            "API usage evaluation"
+          ],
+          "evidence": [
+            "Line count: 49 tokens"
+          ],
+          "citations": [
+            "Python 3.14 documentation reference"
+          ],
+          "confidence": 0.73,
+          "processing_time": 0.514
+        }
+      ],
+      "exchanges": [
+        {
+          "round": "debate",
+          "speaker_id": "ollama",
+          "target_id": "gemini",
+          "message": "I scored this lower (0.59 vs 0.73). What strengths did you find?",
+          "challenge": "I scored this lower (0.59 vs 0.73). What strengths did you find?",
+          "response": "Based on my analysis, I found: Code structure analysis, Pattern detection. This led to my 0.73 assessment.",
+          "timestamp": 1760078183.4240603
+        },
+        {
+          "round": "debate",
+          "speaker_id": "ollama",
+          "target_id": "deepseek",
+          "message": "I scored this lower (0.59 vs 0.84). What strengths did you find?",
+          "challenge": "I scored this lower (0.59 vs 0.84). What strengths did you find?",
+          "response": "Based on my analysis, I found: Code structure analysis, Pattern detection. This led to my 0.84 assessment.",
+          "timestamp": 1760078183.7262928
+        },
+        {
+          "round": "debate",
+          "speaker_id": "gemini",
+          "target_id": "ollama",
+          "message": "I scored this higher (0.73 vs 0.59). What concerns did you identify?",
+          "challenge": "I scored this higher (0.73 vs 0.59). What concerns did you identify?",
+          "response": "Based on my analysis, I found: Code structure analysis, Pattern detection. This led to my 0.59 assessment.",
+          "timestamp": 1760078184.038049
+        },
+        {
+          "round": "debate",
+          "speaker_id": "gemini",
+          "target_id": "deepseek",
+          "message": "I scored this lower (0.73 vs 0.84). What strengths did you find?",
+          "challenge": "I scored this lower (0.73 vs 0.84). What strengths did you find?",
+          "response": "Based on my analysis, I found: Code structure analysis, Pattern detection. This led to my 0.84 assessment.",
+          "timestamp": 1760078184.3402689
+        },
+        {
+          "round": "debate",
+          "speaker_id": "deepseek",
+          "target_id": "ollama",
+          "message": "I scored this higher (0.84 vs 0.59). What concerns did you identify?",
+          "challenge": "I scored this higher (0.84 vs 0.59). What concerns did you identify?",
+          "response": "Based on my analysis, I found: Code structure analysis, Pattern detection. This led to my 0.59 assessment.",
+          "timestamp": 1760078184.6556969
+        },
+        {
+          "round": "debate",
+          "speaker_id": "deepseek",
+          "target_id": "gemini",
+          "message": "I scored this higher (0.84 vs 0.73). What concerns did you identify?",
+          "challenge": "I scored this higher (0.84 vs 0.73). What concerns did you identify?",
+          "response": "Based on my analysis, I found: Code structure analysis, Pattern detection. This led to my 0.73 assessment.",
+          "timestamp": 1760078184.9580364
+        },
+        {
+          "round": "consensus",
+          "speaker_id": "ollama",
+          "target_id": null,
+          "message": "After considering all perspectives, I maintain a more critical view. Key factors: Code structure analysis, Pattern detection.",
+          "challenge": null,
+          "response": null,
+          "timestamp": 1760078184.9580364
+        },
+        {
+          "round": "consensus",
+          "speaker_id": "gemini",
+          "target_id": null,
+          "message": "After considering all perspectives, I align with the consensus. Key factors: Code structure analysis, Pattern detection.",
+          "challenge": null,
+          "response": null,
+          "timestamp": 1760078184.9580364
+        },
+        {
+          "round": "consensus",
+          "speaker_id": "deepseek",
+          "target_id": null,
+          "message": "After considering all perspectives, I maintain a more optimistic view. Key factors: Code structure analysis, Pattern detection.",
+          "challenge": null,
+          "response": null,
+          "timestamp": 1760078184.9580364
+        }
+      ],
+      "final_analysis": "Multi-agent consensus score: 0.717 (agreement: 96%)\n\nAgent Positions:\n  ollama: 0.592 - ollama analysis of code_quality\n  gemini: 0.731 - gemini analysis of code_quality\n  deepseek: 0.836 - deepseek analysis of code_quality\n\nDebate exchanges: 6",
+      "recommendations": [],
+      "consciousness_score": 0.659,
+      "total_time": 2.367,
+      "metadata": {
+        "code_length": 106,
+        "agent_count": 3,
+        "exchange_count": 9,
+        "context": {
+          "archetype": "cli_applications"
+        }
+      },
+      "timestamp": "2025-10-10T06:36:24.958739Z"
+    }
+  ],
+  "overall_consciousness": 0.659,
+  "created": "2025-10-10T06:36:24.958739Z"
+}

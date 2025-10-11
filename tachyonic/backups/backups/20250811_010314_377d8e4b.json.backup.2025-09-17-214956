@@ -1,0 +1,13 @@
+{
+  "cmd": [
+    "git",
+    "rev-parse",
+    "--abbrev-ref",
+    "HEAD"
+  ],
+  "returncode": 0,
+  "stdout": "OS\n",
+  "stderr": "",
+  "duration_ms": 168,
+  "timestamp": 1754866994
+}

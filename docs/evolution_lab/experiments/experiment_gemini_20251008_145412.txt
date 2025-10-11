@@ -1,0 +1,19 @@
+# Human-Guided Experiment
+# Date: 2025-10-08T14:54:12.705201
+# Agent: gemini
+# Task: Design a C++ algorithm to find the shortest path in a graph
+
+======================================================================
+PROMPT:
+Task: Design a C++ algorithm to find the shortest path in a graph
+
+Generate output following these guidelines:
+- Be clear and concise
+- Show your reasoning
+- Provide concrete examples if applicable
+
+Output:
+
+======================================================================
+RESPONSE:
+[ERROR] Agent 'gemini' not available

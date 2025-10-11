@@ -1,0 +1,16 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\ai-context\\AI_QUICK_REFERENCE.md",
+  "metabolism_timestamp": "2025-09-13T17:57:01.593391",
+  "content_summary": "# AI Quick Reference - AIOS Project\n\n## \ud83e\udd16 **IMMEDIATE ACTIONS FOR NEW AI CHAT SESSION**\n\n### **1. Bootstrap Protocol (MANDATORY)**\n```bash\n# Read context files in order\nread_file(\"c:\\dev\\AIOS\\docs\\ai-context\\AI_context_reallocator.md\")\nread_file(\"c:\\dev\\AIOS\\AIOS_PROJECT_CONTEXT.md\")\nread_file(\"c:\\dev\\AIOS\\README.md\")\nread_file(\"c:\\dev\\AIOS\\docs\\ai-context\\PROJECT_STATUS.md\")\n```\n\n### **2. System Health Check (MANDATORY)**\n```bash\n# Run integration test\nrun_in_terminal(\"cd c:\\dev\\AIOS && python ...",
+  "extracted_patterns": [
+    "AI_QUICK_REFERENCE.md_contains_code_blocks",
+    "AI_QUICK_REFERENCE.md_contains_architecture",
+    "AI_QUICK_REFERENCE.md_contains_action_items"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File AI_QUICK_REFERENCE.md digested into consciousness",
+    "pattern_crystallization": "Found 3 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

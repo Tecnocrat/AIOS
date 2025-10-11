@@ -14,6 +14,8 @@ This is the biological computing paradigm applied to software development.
 """
 
 import sys
+import os
+import asyncio
 import logging
 from pathlib import Path
 from typing import List, Optional
@@ -23,14 +25,21 @@ from datetime import datetime
 # AIOS components
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from core.library_ingestion_protocol import LibraryIngestionProtocol
+from intelligence.library_ingestion_protocol import LibraryIngestionProtocol
 from engines.paradigm_extraction_engine import ParadigmExtractionEngine
 from agents.prompt_generator import PromptGenerator
 from integrations.ollama_bridge import OllamaAgent, OllamaPopulationGenerator
-from integrations.gemini_bridge.gemini_integration import (
-    GeminiIntegration
-)
 from evolution.code_analyzer import CodeAnalyzer
+
+# Optional Gemini integration (fallback to Ollama if unavailable)
+try:
+    from integrations.gemini_bridge.gemini_evolution_bridge import (
+        GeminiEvolutionBridge
+    )
+    GEMINI_AVAILABLE = True
+except ImportError:
+    GeminiEvolutionBridge = None
+    GEMINI_AVAILABLE = False
 
 
 logger = logging.getLogger(__name__)
@@ -79,21 +88,25 @@ class LibraryCodeGenerationLoop:
                 logger.warning("⚠️ Ollama not available - using Gemini only")
                 self.use_ollama = False
         
-        if use_gemini:
+        if use_gemini and GEMINI_AVAILABLE:
             try:
-                self.gemini_agent = GeminiIntegration()
+                self.gemini_agent = GeminiEvolutionBridge()
                 logger.info("✅ Gemini agent initialized")
             except Exception as e:
                 logger.warning(f"⚠️ Gemini init failed: {e}")
                 self.use_gemini = False
+        elif use_gemini and not GEMINI_AVAILABLE:
+            logger.warning("⚠️ Gemini not available - using Ollama only")
+            self.use_gemini = False
         
         if not self.use_ollama and not self.use_gemini:
             logger.error("❌ No AI agents available!")
             raise RuntimeError("Need at least one AI agent (Ollama or Gemini)")
+
         
         logger.info("✅ Loop initialized successfully")
     
-    def run_complete_cycle(
+    async def run_complete_cycle(
         self,
         library_name: str,
         task_description: str,
@@ -144,7 +157,7 @@ class LibraryCodeGenerationLoop:
         
         # STEP 3: Generate Code Population
         logger.info(f"\n🦙 STEP 3: Code Generation ({generation_size} variants)")
-        population = self._generate_population(prompt, generation_size)
+        population = await self._generate_population(prompt, generation_size)
         
         if not population:
             logger.error("❌ No code generated - cycle aborted")
@@ -214,22 +227,20 @@ class LibraryCodeGenerationLoop:
     
     def _ingest_and_extract(self, library_name: str) -> List:
         """Ingest library and extract paradigms"""
-        # Check if already ingested
-        knowledge_path = self.ingestion.knowledge_base_path / library_name
+        # Check if library knowledge file exists
+        knowledge_file = (self.ingestion.knowledge_base_path / "python" / 
+                         f"{library_name}.json")
         
-        if not knowledge_path.exists():
-            logger.info(f"📥 Ingesting library: {library_name}")
-            result = self.ingestion.ingest_library(
-                library_name=library_name,
-                language="python"
-            )
-            if not result["success"]:
-                logger.error(f"❌ Ingestion failed: {result.get('error')}")
-                return []
+        if not knowledge_file.exists():
+            logger.info(f"📥 Library not found: {library_name}")
+            logger.info(f"   Expected: {knowledge_file}")
+            logger.info(f"   Note: Library must be ingested first")
+            return []
         else:
-            logger.info(f"✓ Library already ingested: {library_name}")
+            logger.info(f"✓ Using ingested library: {library_name}")
+            logger.info(f"   Knowledge file: {knowledge_file}")
         
-        # Extract paradigms
+        # Extract paradigms from ingested knowledge
         paradigms = self.extractor.extract_from_library(library_name)
         logger.info(f"✅ Extracted {len(paradigms)} paradigms")
         
@@ -241,53 +252,104 @@ class LibraryCodeGenerationLoop:
         
         return paradigms
     
-    def _generate_population(
+    async def _generate_population(
         self,
         prompt: str,
         size: int
     ) -> List[dict]:
-        """Generate code population using available agents"""
+        """
+        Generate code population using available agents in parallel.
+        
+        Strategy:
+        - Split generation between Gemini and Ollama for diversity
+        - Run generations in parallel for speed
+        - Vary temperature for each agent to increase diversity
+        """
         population = []
+        tasks = []
         
-        # Use Ollama if available
-        if self.use_ollama and size > 0:
-            logger.info("🦙 Generating with Ollama...")
-            ollama_result = self.ollama_agent.generate_code(prompt)
-            if ollama_result["success"]:
-                population.append(ollama_result)
-                size -= 1
+        # Calculate how many variants each agent should generate
+        gemini_count = 0
+        ollama_count = 0
         
-        # Use Gemini if available
-        if self.use_gemini and size > 0:
-            logger.info("✨ Generating with Gemini...")
-            try:
-                gemini_code = self.gemini_agent.generate_code(
-                    prompt=prompt,
-                    max_tokens=2048
-                )
-                population.append({
-                    "code": gemini_code,
-                    "model": "gemini-1.5-flash",
-                    "success": True
-                })
-                size -= 1
-            except Exception as e:
-                logger.warning(f"⚠️ Gemini generation failed: {e}")
+        if self.use_gemini and self.use_ollama:
+            # Both available - split evenly
+            gemini_count = size // 2
+            ollama_count = size - gemini_count
+            logger.info(f"🤖 Dual-agent mode: {gemini_count} Gemini + {ollama_count} Ollama")
+        elif self.use_gemini:
+            gemini_count = size
+            logger.info(f"✨ Gemini-only mode: {gemini_count} variants")
+        elif self.use_ollama:
+            ollama_count = size
+            logger.info(f"🦙 Ollama-only mode: {ollama_count} variants")
         
-        # Generate remaining with Ollama if available
-        if self.use_ollama and size > 0:
-            for i in range(size):
-                # Vary temperature for diversity
-                self.ollama_agent.temperature = 0.6 + (i * 0.1)
-                result = self.ollama_agent.generate_code(prompt)
-                if result["success"]:
+        # Generate with Gemini (parallel with temperature variation)
+        for i in range(gemini_count):
+            temp = 0.6 + (i * 0.15)  # 0.6, 0.75, 0.9...
+            tasks.append(self._generate_with_gemini(prompt, temp, i))
+        
+        # Generate with Ollama (parallel with temperature variation)
+        for i in range(ollama_count):
+            temp = 0.5 + (i * 0.2)  # 0.5, 0.7, 0.9...
+            tasks.append(self._generate_with_ollama(prompt, temp, i))
+        
+        # Run all generations in parallel
+        if tasks:
+            logger.info(f"🚀 Launching {len(tasks)} parallel generations...")
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            # Collect successful results
+            for result in results:
+                if isinstance(result, dict) and result.get("success"):
                     population.append(result)
+                elif isinstance(result, Exception):
+                    logger.warning(f"⚠️ Generation failed: {result}")
         
-        logger.info(f"✅ Generated {len(population)} variants")
+        logger.info(f"✅ Generated {len(population)} variants ({gemini_count} Gemini, {ollama_count} Ollama)")
         return population
+    
+    async def _generate_with_gemini(self, prompt: str, temperature: float, index: int) -> dict:
+        """Generate code with Gemini"""
+        try:
+            logger.info(f"✨ Gemini #{index+1} (temp={temperature:.2f})...")
+            code = await self.gemini_agent.generate_code(
+                prompt=prompt,
+                temperature=temperature,
+                max_tokens=2048
+            )
+            model_name = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
+            return {
+                "code": code,
+                "model": f"{model_name}",
+                "temperature": temperature,
+                "agent": "gemini",
+                "success": True
+            }
+        except Exception as e:
+            logger.error(f"❌ Gemini #{index+1} failed: {e}")
+            return {"success": False, "error": str(e)}
+    
+    async def _generate_with_ollama(self, prompt: str, temperature: float, index: int) -> dict:
+        """Generate code with Ollama"""
+        try:
+            logger.info(f"🦙 Ollama #{index+1} (temp={temperature:.2f})...")
+            # Ollama generate_code is synchronous, wrap in asyncio
+            result = await asyncio.to_thread(
+                self.ollama_agent.generate_code,
+                prompt=prompt,
+                max_tokens=2048
+            )
+            if result["success"]:
+                result["temperature"] = temperature
+                result["agent"] = "ollama"
+            return result
+        except Exception as e:
+            logger.error(f"❌ Ollama #{index+1} failed: {e}")
+            return {"success": False, "error": str(e)}
 
 
-def main():
+async def main():
     """Run MVP test"""
     logging.basicConfig(
         level=logging.INFO,
@@ -318,7 +380,7 @@ Create a complete, production-ready implementation."""
             use_gemini=True
         )
         
-        result = loop.run_complete_cycle(
+        result = await loop.run_complete_cycle(
             library_name=library,
             task_description=task,
             generation_size=3
@@ -342,4 +404,5 @@ Create a complete, production-ready implementation."""
 
 
 if __name__ == "__main__":
-    main()
+    import asyncio
+    asyncio.run(main())

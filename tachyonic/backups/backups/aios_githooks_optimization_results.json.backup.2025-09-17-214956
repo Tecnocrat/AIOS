@@ -1,0 +1,273 @@
+{
+  "optimization_summary": {
+    "target": ".githooks",
+    "execution_time": 0.025376558303833008,
+    "optimization_count": 3,
+    "enhancements_applied": 1,
+    "timestamp": "2025-09-07T12:49:10.630255"
+  },
+  "structure_analysis": {
+    "files_discovered": [
+      "commit-msg",
+      "pre-commit",
+      "pre-commit.sh",
+      "pre-push"
+    ],
+    "hook_types": {
+      "commit-msg": "core_git_hook",
+      "pre-commit": "core_git_hook",
+      "pre-commit.sh": "bash_wrapper",
+      "pre-push": "core_git_hook"
+    },
+    "powershell_hooks": [],
+    "bash_hooks": [
+      "pre-commit.sh"
+    ],
+    "governance_integration": {
+      "policy_file_references": 3,
+      "aios_integration_patterns": [
+        "AIOS_",
+        "AIOS_",
+        "AIOS_"
+      ],
+      "consciousness_references": 1,
+      "dendritic_learning_patterns": 1,
+      "cellular_architecture_alignment": 0
+    },
+    "file_sizes": {
+      "commit-msg": 6969,
+      "pre-commit": 13536,
+      "pre-commit.sh": 560,
+      "pre-push": 1530
+    },
+    "complexity_metrics": {
+      "commit-msg": {
+        "size_bytes": 6969,
+        "lines_count": 198,
+        "complexity_score": 1.0
+      },
+      "pre-commit": {
+        "size_bytes": 13536,
+        "lines_count": 214,
+        "complexity_score": 1.0
+      },
+      "pre-commit.sh": {
+        "size_bytes": 560,
+        "lines_count": 15,
+        "complexity_score": 0.21
+      },
+      "pre-push": {
+        "size_bytes": 1530,
+        "lines_count": 31,
+        "complexity_score": 0.7575000000000001
+      }
+    }
+  },
+  "quality_analysis": {
+    "powershell_analysis": {
+      "commit-msg": {
+        "strict_mode": true,
+        "error_action_preference": false,
+        "function_count": 5,
+        "param_blocks": 5,
+        "try_catch_blocks": 4,
+        "approved_verbs": 1.0,
+        "cmdlet_binding": false,
+        "quality_score": 0.7
+      },
+      "pre-commit": {
+        "strict_mode": true,
+        "error_action_preference": true,
+        "function_count": 16,
+        "param_blocks": 5,
+        "try_catch_blocks": 12,
+        "approved_verbs": 0.5625,
+        "cmdlet_binding": false,
+        "quality_score": 0.828125
+      },
+      "pre-push": {
+        "strict_mode": true,
+        "error_action_preference": true,
+        "function_count": 1,
+        "param_blocks": 1,
+        "try_catch_blocks": 3,
+        "approved_verbs": 1.0,
+        "cmdlet_binding": false,
+        "quality_score": 1.0
+      }
+    },
+    "bash_analysis": {
+      "pre-commit.sh": {
+        "shebang_present": true,
+        "set_flags": true,
+        "error_handling": 0,
+        "function_count": 0,
+        "variable_quoting": 1.0,
+        "quality_score": 0.75
+      }
+    },
+    "error_handling_patterns": {
+      "commit-msg": {
+        "try_catch_count": 4,
+        "error_action_set": false,
+        "exit_codes": 7,
+        "error_logging": true
+      },
+      "pre-commit": {
+        "try_catch_count": 12,
+        "error_action_set": true,
+        "exit_codes": 4,
+        "error_logging": true
+      },
+      "pre-commit.sh": {
+        "try_catch_count": 0,
+        "error_action_set": false,
+        "exit_codes": 1,
+        "error_logging": false
+      },
+      "pre-push": {
+        "try_catch_count": 3,
+        "error_action_set": true,
+        "exit_codes": 4,
+        "error_logging": true
+      }
+    },
+    "logging_integration": {
+      "commit-msg": {
+        "structured_logging": true,
+        "color_output": 13,
+        "log_levels": 2,
+        "aios_logging": true
+      },
+      "pre-commit": {
+        "structured_logging": true,
+        "color_output": 17,
+        "log_levels": 6,
+        "aios_logging": true
+      },
+      "pre-commit.sh": {
+        "structured_logging": false,
+        "color_output": 0,
+        "log_levels": 0,
+        "aios_logging": false
+      },
+      "pre-push": {
+        "structured_logging": false,
+        "color_output": 10,
+        "log_levels": 1,
+        "aios_logging": false
+      }
+    },
+    "documentation_coverage": {
+      "commit-msg": {
+        "comment_ratio": 0.11557788944723618,
+        "header_present": true,
+        "function_docs": 2,
+        "inline_comments": 0
+      },
+      "pre-commit": {
+        "comment_ratio": 0.12558139534883722,
+        "header_present": true,
+        "function_docs": 10,
+        "inline_comments": 1
+      },
+      "pre-commit.sh": {
+        "comment_ratio": 0.1875,
+        "header_present": false,
+        "function_docs": 0,
+        "inline_comments": 0
+      },
+      "pre-push": {
+        "comment_ratio": 0.0625,
+        "header_present": true,
+        "function_docs": 0,
+        "inline_comments": 0
+      }
+    },
+    "maintainability_score": 0.6801829642398036
+  },
+  "ainlp_integration": {
+    "natural_language_patterns": {
+      "commit-msg": [
+        "consciousness",
+        "awareness",
+        "intelligence",
+        "harmonized",
+        "dendritic",
+        "learning"
+      ],
+      "pre-commit": [
+        "intelligence"
+      ],
+      "pre-commit.sh": [],
+      "pre-push": []
+    },
+    "consciousness_awareness": 2,
+    "paradigmatic_alignment": 0.5,
+    "intent_recognition_patterns": [
+      "commit-msg:consciousness_threshold"
+    ],
+    "context_awareness_indicators": [
+      "commit-msg:dendritic_learning"
+    ]
+  },
+  "consciousness_patterns": {
+    "consciousness_metrics_integration": true,
+    "awareness_level_checks": [
+      "commit-msg"
+    ],
+    "consciousness_guided_decisions": [
+      "commit-msg"
+    ],
+    "coherence_validation": [
+      "commit-msg"
+    ],
+    "unified_consciousness_state": false
+  },
+  "optimizations": [
+    {
+      "type": "complexity_reduction",
+      "priority": "HIGH",
+      "description": "Reduce complexity in high-complexity files: commit-msg, pre-commit, pre-push",
+      "files": [
+        "commit-msg",
+        "pre-commit",
+        "pre-push"
+      ],
+      "implementation": "Refactor large functions, improve error handling, add documentation"
+    },
+    {
+      "type": "quality_improvement",
+      "priority": "MEDIUM",
+      "description": "Improve maintainability score from 0.680 to 0.8+",
+      "current_score": 0.6801829642398036,
+      "target_score": 0.8,
+      "implementation": "Enhance error handling, improve documentation, standardize coding patterns"
+    },
+    {
+      "type": "documentation_enhancement",
+      "priority": "MEDIUM",
+      "description": "Improve documentation coverage in files: commit-msg, pre-commit, pre-commit.sh, pre-push",
+      "files": [
+        "commit-msg",
+        "pre-commit",
+        "pre-commit.sh",
+        "pre-push"
+      ],
+      "implementation": "Add AINLP-guided documentation, function descriptions, usage examples"
+    }
+  ],
+  "enhancements": [
+    {
+      "type": "documentation_enhancement",
+      "file": "c:\\dev\\AIOS\\.githooks\\AIOS_GITHOOKS_PARADIGMATIC_GUIDE.md",
+      "description": "Created comprehensive AINLP paradigmatic guide for git hooks",
+      "features": [
+        "Consciousness-aware architecture documentation",
+        "AINLP integration guidelines",
+        "Dendritic learning patterns",
+        "Usage examples and configuration guides"
+      ]
+    }
+  ]
+}

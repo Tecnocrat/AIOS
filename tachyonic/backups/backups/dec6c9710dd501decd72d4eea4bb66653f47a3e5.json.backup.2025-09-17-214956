@@ -1,0 +1,14 @@
+{
+  "_expiry": 1757716843.2485955,
+  "data": {
+    "cmd": [
+      "python",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "Python 3.12.8\r\n",
+    "stderr": "",
+    "duration_ms": 371,
+    "timestamp": 1757716543
+  }
+}

@@ -1,0 +1,58 @@
+# Pin blis to a version with a pre-built Windows wheel to avoid build errors
+blis==0.7.9
+# AIOS Python AI Module Dependencies
+
+# Core AI and ML libraries
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+huggingface-hub>=0.15.0
+
+# TensorFlow for cellular integration
+tensorflow>=2.13.0
+tensorflow-probability>=0.20.0
+
+# Data processing
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# API and web services
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+httpx>=0.24.0
+
+# Async programming
+asyncio
+aiofiles>=23.0.0
+websockets>=11.0.0
+
+# Configuration and logging
+pyyaml>=6.0
+python-dotenv>=1.0.0
+structlog>=23.0.0
+
+# Natural Language Processing
+spacy>=3.6.0
+nltk>=3.8.0
+textblob>=0.17.0
+
+# Computer Vision (optional)
+opencv-python>=4.8.0
+pillow>=10.0.0
+
+# System integration
+psutil>=5.9.0
+watchdog>=3.0.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0
+
+# Optional: GPU acceleration
+# torch-audio>=2.0.0  # Uncomment if audio processing needed
+# accelerate>=0.20.0  # Uncomment for distributed training

@@ -75,7 +75,7 @@ def validate_environment():
 
     # Check if key modules can be imported
     test_imports = [
-        ('ai.core.interface_bridge', 'AIOSInterfaceBridge'),
+        ('ai.nucleus.interface_bridge', 'AIOSInterfaceBridge'),
         ('runtime_intelligence.tools.biological_architecture_monitor',
          'AIOSArchitectureMonitor'),
     ]

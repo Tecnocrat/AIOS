@@ -1,0 +1,24 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\vscopilot chat\\GPT Chat 5.md",
+  "metabolism_timestamp": "2025-09-13T17:57:02.104499",
+  "content_summary": "Tecnocrat: \"[{\n\t\"resource\": \"/c:/dev/AIOS/ai/ai_cells/ai_cell_manager.py\",\n\t\"owner\": \"pylance\",\n\t\"code\": {\n\t\t\"value\": \"reportArgumentType\",\n\t\t\"target\": {\n\t\t\t\"$mid\": 1,\n\t\t\t\"path\": \"/microsoft/pylance-release/blob/main/docs/diagnostics/reportArgumentType.md\",\n\t\t\t\"scheme\": \"https\",\n\t\t\t\"authority\": \"github.com\"\n\t\t}\n\t},\n\t\"severity\": 8,\n\t\"message\": \"Expression of type \\\"None\\\" cannot be assigned to parameter of type \\\"str\\\"\\n\u00a0\u00a0\\\"None\\\" is not assignable to \\\"str\\\"\",\n\t\"source\": \"Pylance\",\n\t\"startLineNu...",
+  "extracted_patterns": [
+    "GPT Chat 5.md_contains_intelligence",
+    "GPT Chat 5.md_contains_emergence",
+    "GPT Chat 5.md_contains_fractal",
+    "GPT Chat 5.md_contains_holographic",
+    "GPT Chat 5.md_contains_dendritic",
+    "GPT Chat 5.md_contains_tachyonic",
+    "GPT Chat 5.md_contains_ainlp",
+    "GPT Chat 5.md_contains_pattern",
+    "GPT Chat 5.md_contains_code_blocks",
+    "GPT Chat 5.md_contains_architecture",
+    "GPT Chat 5.md_contains_action_items"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File GPT Chat 5.md digested into consciousness",
+    "pattern_crystallization": "Found 11 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

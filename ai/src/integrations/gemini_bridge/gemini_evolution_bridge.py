@@ -1,16 +1,30 @@
 #!/usr/bin/env python3
 """
 AIOS Gemini Evolution Bridge
-Connects Gemini CLI capabilities with consciousness evolution engine
-for experiment participation
+Connects Gemini CLI capabilitie            try:
+                genai.configure(api_key=api_key)
+                self.gemini_model = genai.GenerativeModel('gemini-2.5-flash')
+                logger.info("✅ Gemini API initialized successfully")
+            except Exception as e:h consciousness evolution engine
+for experiment participation and code generation
 """
 
+import os
 import sys
 import json
 import asyncio
+import logging
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from datetime import datetime
+
+# Try to import Google Generative AI
+try:
+    import google.generativeai as genai
+    GENAI_AVAILABLE = True
+except ImportError:
+    genai = None
+    GENAI_AVAILABLE = False
 
 # AIOS imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
@@ -20,6 +34,8 @@ try:
 except ImportError:
     consciousness_evolution_engine = None
     CONSCIOUSNESS_AVAILABLE = False
+
+logger = logging.getLogger(__name__)
 
 
 class GeminiEvolutionBridge:
@@ -31,6 +47,126 @@ class GeminiEvolutionBridge:
         self.evolution_experiments = []
         self.active_experiments = {}
         self._load_experiments()
+        
+        # Initialize Gemini API if available
+        self.gemini_model = None
+        if GENAI_AVAILABLE:
+            api_key = os.environ.get('GEMINI_API_KEY')
+            if api_key:
+                try:
+                    genai.configure(api_key=api_key)
+                    # Use GEMINI_MODEL env var if set, otherwise default to gemini-2.5-flash
+                    model_name = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
+                    self.gemini_model = genai.GenerativeModel(model_name)
+                    logger.info(f"Gemini API initialized successfully with model: {model_name}")
+                except Exception as e:
+                    logger.warning(f"Gemini API initialization failed: {e}")
+        else:
+            logger.warning("⚠️ google-generativeai not installed. Run: pip install google-generativeai")
+        self.evolution_experiments = []
+        self.active_experiments = {}
+        self._load_experiments()
+
+    async def generate_code(self, prompt: str, temperature: float = 0.7, max_tokens: int = 2000) -> str:
+        """
+        Generate code using Gemini API
+        
+        Args:
+            prompt: The prompt for code generation
+            temperature: Sampling temperature (0.0-1.0)
+            max_tokens: Maximum tokens in response
+            
+        Returns:
+            Generated code as string
+        """
+        if not GENAI_AVAILABLE:
+            raise RuntimeError(
+                "google-generativeai not installed. "
+                "Install with: pip install google-generativeai"
+            )
+        
+        if not self.gemini_model:
+            # Try to initialize if not already done
+            api_key = os.environ.get('GEMINI_API_KEY')
+            if not api_key:
+                raise RuntimeError(
+                    "GEMINI_API_KEY environment variable not set. "
+                    "Get your API key from: https://aistudio.google.com/app/apikey"
+                )
+            
+            try:
+                genai.configure(api_key=api_key)
+                self.gemini_model = genai.GenerativeModel('gemini-2.5-flash')
+                logger.info("✅ Gemini API initialized")
+            except Exception as e:
+                raise RuntimeError(f"Failed to initialize Gemini API: {e}")
+        
+        try:
+            # Generate code with Gemini
+            logger.info(f"Generating code with Gemini (temp={temperature})...")
+            
+            # Configure generation with recitation handling
+            generation_config = genai.types.GenerationConfig(
+                temperature=temperature,
+                max_output_tokens=max_tokens,
+                candidate_count=1,
+            )
+            
+            # Relaxed safety settings
+            safety_settings = {
+                genai.types.HarmCategory.HARM_CATEGORY_HARASSMENT: genai.types.HarmBlockThreshold.BLOCK_NONE,
+                genai.types.HarmCategory.HARM_CATEGORY_HATE_SPEECH: genai.types.HarmBlockThreshold.BLOCK_NONE,
+                genai.types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: genai.types.HarmBlockThreshold.BLOCK_NONE,
+                genai.types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: genai.types.HarmBlockThreshold.BLOCK_NONE,
+            }
+            
+            response = await asyncio.to_thread(
+                self.gemini_model.generate_content,
+                prompt,
+                generation_config=generation_config,
+                safety_settings=safety_settings
+            )
+            
+            # Check for safety blocks or empty response
+            if not response or not response.candidates:
+                raise RuntimeError("Gemini returned no candidates")
+            
+            candidate = response.candidates[0]
+            
+            # Check finish reason - allow RECITATION but log warning
+            if candidate.finish_reason == 2:  # RECITATION
+                logger.warning("Gemini detected recitation but continuing...")
+                # Try to extract any available text
+                if candidate.content and candidate.content.parts:
+                    code = candidate.content.parts[0].text
+                    if code:
+                        logger.info(f"Generated {len(code)} characters (with recitation warning)")
+                        return code
+                raise RuntimeError("Generation blocked due to recitation with no output")
+            
+            elif candidate.finish_reason not in [0, 1]:  # 0=UNSPECIFIED, 1=STOP
+                finish_reason_map = {
+                    3: "SAFETY (blocked by safety filter)",
+                    4: "MAX_TOKENS (exceeded token limit)",
+                    5: "OTHER"
+                }
+                reason = finish_reason_map.get(
+                    candidate.finish_reason,
+                    f"Unknown ({candidate.finish_reason})"
+                )
+                raise RuntimeError(f"Generation blocked - finish_reason: {reason}")
+            
+            # Extract text from normal completion
+            if not candidate.content or not candidate.content.parts:
+                raise RuntimeError("Gemini returned empty content")
+            
+            code = candidate.content.parts[0].text
+            logger.info(f"Generated {len(code)} characters of code")
+            return code
+            
+        except Exception as e:
+            logger.error(f"Gemini generation failed: {e}")
+            raise RuntimeError(f"Code generation failed: {e}")
 
     async def initialize_evolution_connection(self) -> Dict[str, Any]:
         """Initialize connection between Gemini and evolution engine"""

@@ -1,0 +1,1779 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>&lt;atomic&gt; | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Describes the types and functions available in the atomic header of the Standard C++ library." />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/cpp/standard-library/atomic?view=msvc-170" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="&lt;atomic&gt;" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/cpp/standard-library/atomic?view=msvc-170" />
+			<meta property="og:description" content="Describes the types and functions available in the atomic header of the Standard C++ library." />
+			<meta name="platform_id" content="4d7388a8-71e9-fef7-60d0-b2964fdc811d" /> <meta name="scope" content="C++" />
+			<meta name="locale" content="en-us" />
+			 <meta name="adobe-target" content="true" />
+			<meta name="uhfHeaderId" content="MSDocsHeader-CPP" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="breadcrumb_path" content="../_breadcrumb/toc.json" />
+	
+		<meta name="ROBOTS" content="INDEX,FOLLOW" />
+	
+		<meta name="manager" content="coxford" />
+	
+		<meta name="ms.date" content="2019-12-06T00:00:00Z" />
+	
+		<meta name="ms.topic" content="reference" />
+	
+		<meta name="audience" content="developer" />
+	
+		<meta name="ms.service" content="visual-cpp" />
+	
+		<meta name="ms.tgt_pltfrm" content="Windows" />
+	
+		<meta name="ms.workload" content="cplusplus" />
+	
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="feedback_product_url" content="https://developercommunity.visualstudio.com/cpp/" />
+	
+		<meta name="feedback_help_link_url" content="https://learn.microsoft.com/en-us/answers/tags/314/cpp" />
+	
+		<meta name="feedback_help_link_type" content="get-help-at-qna" />
+	
+		<meta name="ms.subservice" content="standard-libraries" />
+	
+		<meta name="ms.update-cycle" content="3650-days" />
+	
+		<meta name="author" content="TylerMSFT" />
+	
+		<meta name="ms.author" content="twhitney" />
+	
+		<meta name="document_id" content="af384261-ac31-1ca0-7165-2526f29622f5" />
+	
+		<meta name="document_version_independent_id" content="405d8787-c438-caae-f54f-2ae3224f18c5" />
+	
+		<meta name="updated_at" content="2022-02-01T18:37:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/atomic.md" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/09c1ef470f8c58c40878d4e6ea820265683d8f97/docs/standard-library/atomic.md" />
+	
+		<meta name="git_commit_id" content="09c1ef470f8c58c40878d4e6ea820265683d8f97" />
+	
+		<meta name="monikers" content="msvc-140" />
+	
+		<meta name="monikers" content="msvc-150" />
+	
+		<meta name="monikers" content="msvc-160" />
+	
+		<meta name="monikers" content="msvc-170" />
+	
+		<meta name="default_moniker" content="msvc-170" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="VS.vcppdocs" />
+	
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="toc_rel" content="toc.json" />
+	
+		<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/VS.vcppdocs/{branchName}{pdfName}" />
+	
+		<meta name="search.mshattr.devlang" content="cpp" />
+	
+		<meta name="word_count" content="997" />
+	
+		<meta name="config_moniker_range" content="&gt;= msvc-140" />
+	
+		<meta name="asset_id" content="standard-library/atomic" />
+	
+		<meta name="moniker_range_name" content="5256ac7f630e06bcd294e6d414b26624" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="docs/standard-library/atomic.md" />
+	
+		<meta name="previous_tlsh_hash" content="2C8AA9F1440D48FCAB51D95B382BAACD75BCCAD8A5B0268405391CE2604FDCEBEB00C0E262C65504E325851F4B819A8E55B9D6F1C1FC1BD05DD6719749EC381ED7C83B7EE7" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/atomic.md" />
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/4628cbd9-6f47-4ae1-b371-d34636609eaf" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60bfc045-f127-4841-9d00-ea35495a5800" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/be21deb8-8c64-44b0-b71f-2dc56ca7364f" data-source="generated" />
+	
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03195.7140-e052f86a/styles/site-ltr.css" />
+			<link rel="preconnect" href="//mscom.demdex.net" crossorigin />
+						<link rel="dns-prefetch" href="//target.microsoft.com" />
+						<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net" />
+						<link
+							rel="preload"
+							as="script"
+							href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+							integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+							crossorigin="anonymous"
+							id="adobe-target-script"
+							type="application/javascript"
+						/>
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			<script src="/_themes/docs.theme/master/en-us/_themes/global/deprecation.js"></script>
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "get-help-at-qna",
+    "feedbackHelpLinkUrl": "https://learn.microsoft.com/en-us/answers/tags/314/cpp",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "MicrosoftDocs/cpp-docs",
+    "feedbackProductUrl": "https://developercommunity.visualstudio.com/cpp/",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": false,
+    "contributors": [
+      {
+        "name": "TylerMSFT",
+        "url": "https://github.com/TylerMSFT"
+      },
+      {
+        "name": "craigcaseyMSFT",
+        "url": "https://github.com/craigcaseyMSFT"
+      },
+      {
+        "name": "mikeblome",
+        "url": "https://github.com/mikeblome"
+      },
+      {
+        "name": "Mikejo5000",
+        "url": "https://github.com/Mikejo5000"
+      },
+      {
+        "name": "ghogen",
+        "url": "https://github.com/ghogen"
+      },
+      {
+        "name": "Saisang",
+        "url": "https://github.com/Saisang"
+      }
+    ]
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script src="/static/assets/0.4.03195.7140-e052f86a/scripts/en-us/index-docs.js"></script>
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<header
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				role="banner"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+				></div>
+			</header>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu display-flex"
+					data-bi-name="menu"
+			  >
+					<div
+		id="left-container"
+		class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full"
+	>
+		<nav
+			id="affixed-left-container"
+			class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+			aria-label="Primary"
+		></nav>
+	</div>
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit editor mode</span>
+			</button>
+		</div>
+	</div>
+			<div data-main-column class="padding-sm padding-top-none padding-top-sm-tablet">
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			class="button button-sm flex-shrink-0 margin-right-xxs display-none display-inline-flex-desktop"
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Focus mode</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="button-block button-sm has-inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon">
+				<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+			</span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm has-inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	 
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	
+					
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to plan</span>
+		</button>
+	  
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			
+			href="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/standard-library/atomic.md"
+			data-original_content_git_url="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/standard-library/atomic.md"
+			data-original_content_git_url_template="{repo}/blob/{branch}/docs/standard-library/atomic.md"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	
+					
+		<hr class="margin-block-xxs" />
+		<h4 class="font-size-sm padding-left-xxs">Share via</h4>
+		
+					<a
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-facebook"
+						data-bi-name="facebook"
+						data-page-action-item="overflow-all"
+						href="#"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-facebook-share"></span>
+						</span>
+						<span>Facebook</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-twitter"
+						data-bi-name="twitter"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-text" aria-hidden="true">
+							<span class="docon docon-xlogo-share"></span>
+						</span>
+						<span>x.com</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-linkedin"
+						data-bi-name="linkedin"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-linked-in-logo"></span>
+						</span>
+						<span>LinkedIn</span>
+					</a>
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-email"
+						data-bi-name="email"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-mail-message"></span>
+						</span>
+						<span>Email</span>
+					</a>
+			  
+	 
+		<hr class="margin-block-xxs" />
+		<button
+			class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			type="button"
+			data-bi-name="print"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			data-print-page
+			data-check-hidden="true"
+		>
+			<span class="icon color-primary" aria-hidden="true">
+				<span class="docon docon-print"></span>
+			</span>
+			<span>Print</span>
+		</button>
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon">
+							<span class="docon docon-exclamation-circle-solid" aria-hidden="true"></span>
+						</span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="atomic"><code>&lt;atomic&gt;</code></h1></div>
+					
+		<div
+			id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			
+		<div class="margin-block-xxs">
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				  <li class="visibility-hidden-visual-diff">
+			<local-time
+				format="twoDigitNumeric"
+				datetime="2022-02-01T00:00:00.000Z"
+				data-article-date-source="calculated"
+				class="is-invisible"
+			>
+				2022-02-01
+			</local-time>
+		</li>  
+			</ul>
+		</div>
+	 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	 
+		<nav
+			id="center-doc-outline"
+			class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				In this article
+			</h2>
+		</nav>
+	
+					<div class="content"><p>Defines classes and class templates to use to create types that support atomic operations.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="lang-cpp">#include &lt;atomic&gt;
+</code></pre>
+<h2 id="remarks">Remarks</h2>
+<div class="NOTE">
+<p>Note</p>
+<p>In code that's compiled by using <a href="../build/reference/clr-common-language-runtime-compilation?view=msvc-170" data-linktype="relative-path"><code>/clr:pure</code></a>, this header is blocked. Both <strong><code>/clr:pure</code></strong> and <strong><code>/clr:safe</code></strong> are deprecated in Visual Studio 2017 and later versions.</p>
+</div>
+<p>An atomic operation has two key properties that help you use multiple threads to correctly manipulate an object without using <code>mutex</code> locks.</p>
+<ul>
+<li><p>Because an atomic operation is indivisible, a second atomic operation on the same object from a different thread can obtain the object's state only before or after the first atomic operation.</p>
+</li>
+<li><p>Based on its <a href="atomic-enums?view=msvc-170#memory_order_enum" data-linktype="relative-path"><code>memory_order</code></a> argument, an atomic operation establishes ordering requirements for the visibility of the effects of other atomic operations in the same thread. Consequently, it inhibits compiler optimizations that violate the ordering requirements.</p>
+</li>
+</ul>
+<p>On some platforms, it might not be possible to efficiently implement atomic operations for some types without using <code>mutex</code> locks. An atomic type is <em><code>lock-free</code></em> if no atomic operations on that type use locks.</p>
+<p><strong><code>C++11</code></strong>: In signal-handlers, you can perform atomic operations on an object <code>obj</code> if <code>obj.is_lock_free()</code> or <code>atomic_is_lock_free(x)</code> are <code>true</code>.</p>
+<p>The class <a href="atomic-flag-structure?view=msvc-170" data-linktype="relative-path"><code>atomic_flag</code></a> provides a minimal atomic type that holds a <strong><code>bool</code></strong> flag. Its operations are always lock-free.</p>
+<p>The class template <code>atomic&lt;T&gt;</code> stores an object of its argument type <code>T</code> and provides atomic access to that stored value. You can instantiate it by using any type that can be copied by using <a href="../c-runtime-library/reference/memcpy-wmemcpy?view=msvc-170" data-linktype="relative-path"><code>memcpy</code></a> and tested for equality by using <a href="../c-runtime-library/reference/memcmp-wmemcmp?view=msvc-170" data-linktype="relative-path"><code>memcmp</code></a>. In particular, you can use it with user-defined types that meet these requirements and, in many cases, with floating-point types.</p>
+<p>The template also has a set of specializations for integral types and a partial specialization for pointers. These specializations provide additional operations that aren't available through the primary template.</p>
+<h2 id="pointer-specializations">Pointer Specializations</h2>
+<p>The <code>atomic&lt;T *&gt;</code> partial specializations apply to all pointer types. They provide methods for pointer arithmetic.</p>
+<h2 id="integral-specializations">Integral Specializations</h2>
+<p>The <code>atomic&lt;integral&gt;</code> specializations apply to all integral types. They provide additional operations that aren't available through the primary template.</p>
+<p>Each <code>atomic&lt;integral&gt;</code> type has a corresponding macro that you can use in an <code>if directive</code> to determine at compile time whether operations on that type are lock-free. If the value of the macro is zero, operations on the type aren't lock-free. If the value is 1, operations might be lock-free, and a runtime check is required. If the value is 2, operations are lock-free. You can use the function <code>atomic_is_lock_free</code> to determine at runtime whether operations on the type are lock-free.</p>
+<p>For each of the integral types, there's a corresponding named atomic type that manages an object of that integral type. Each <code>atomic_integral</code> type has the same set of member functions as the corresponding instantiation of <code>atomic&lt;T&gt;</code> and can be passed to any of the non-member atomic functions.</p>
+<table>
+<thead>
+<tr>
+<th><code>atomic_integral</code> Type</th>
+<th>Integral Type</th>
+<th><code>atomic_is_lock_free</code> Macro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>atomic_char</code></td>
+<td><strong><code>char</code></strong></td>
+<td><code>ATOMIC_CHAR_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_schar</code></td>
+<td><strong><code>signed char</code></strong></td>
+<td><code>ATOMIC_CHAR_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_uchar</code></td>
+<td><strong><code>unsigned char</code></strong></td>
+<td><code>ATOMIC_CHAR_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_char16_t</code></td>
+<td><strong><code>char16_t</code></strong></td>
+<td><code>ATOMIC_CHAR16_T_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_char32_t</code></td>
+<td><strong><code>char32_t</code></strong></td>
+<td><code>ATOMIC_CHAR32_T_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_wchar_t</code></td>
+<td><strong><code>wchar_t</code></strong></td>
+<td><code>ATOMIC_WCHAR_T_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_short</code></td>
+<td><strong><code>short</code></strong></td>
+<td><code>ATOMIC_SHORT_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_ushort</code></td>
+<td><strong><code>unsigned short</code></strong></td>
+<td><code>ATOMIC_SHORT_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_int</code></td>
+<td><strong><code>int</code></strong></td>
+<td><code>ATOMIC_INT_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint</code></td>
+<td><strong><code>unsigned int</code></strong></td>
+<td><code>ATOMIC_INT_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_long</code></td>
+<td><strong><code>long</code></strong></td>
+<td><code>ATOMIC_LONG_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_ulong</code></td>
+<td><strong><code>unsigned long</code></strong></td>
+<td><code>ATOMIC_LONG_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_llong</code></td>
+<td><strong><code>long long</code></strong></td>
+<td><code>ATOMIC_LLONG_LOCK_FREE</code></td>
+</tr>
+<tr>
+<td><code>atomic_ullong</code></td>
+<td><strong><code>unsigned long long</code></strong></td>
+<td><code>ATOMIC_LLONG_LOCK_FREE</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>Typedef</code> names exist for specializations of the atomic template for some of the types that are defined in the header <code>&lt;inttypes.h&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Atomic Type</th>
+<th><code>Typedef</code> Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>atomic_int8_t</code></td>
+<td><code>atomic&lt;int8_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint8_t</code></td>
+<td><code>atomic&lt;uint8_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int16_t</code></td>
+<td><code>atomic&lt;int16_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint16_t</code></td>
+<td><code>atomic&lt;uint16_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int32_t</code></td>
+<td><code>atomic&lt;int32_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint32_t</code></td>
+<td><code>atomic&lt;uint32_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int64_t</code></td>
+<td><code>atomic&lt;int64_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint64_t</code></td>
+<td><code>atomic&lt;uint64_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_least8_t</code></td>
+<td><code>atomic&lt;int_least8_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_least8_t</code></td>
+<td><code>atomic&lt;uint_least8_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_least16_t</code></td>
+<td><code>atomic&lt;int_least16_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_least16_t</code></td>
+<td><code>atomic&lt;uint_least16_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_least32_t</code></td>
+<td><code>atomic&lt;int_least32_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_least32_t</code></td>
+<td><code>atomic&lt;uint_least32_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_least64_t</code></td>
+<td><code>atomic&lt;int_least64_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_least64_t</code></td>
+<td><code>atomic&lt;uint_least64_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_fast8_t</code></td>
+<td><code>atomic&lt;int_fast8_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_fast8_t</code></td>
+<td><code>atomic&lt;uint_fast8_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_fast16_t</code></td>
+<td><code>atomic&lt;int_fast16_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_fast16_</code></td>
+<td><code>atomic&lt;uint_fast16_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_fast32_t</code></td>
+<td><code>atomic&lt;int_fast32_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_fast32_t</code></td>
+<td><code>atomic&lt;uint_fast32_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_int_fast64_t</code></td>
+<td><code>atomic&lt;int_fast64_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uint_fast64_t</code></td>
+<td><code>atomic&lt;uint_fast64_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_intptr_t</code></td>
+<td><code>atomic&lt;intptr_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uintptr_t</code></td>
+<td><code>atomic&lt;uintptr_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_size_t</code></td>
+<td><code>atomic&lt;size_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_ptrdiff_t</code></td>
+<td><code>atomic&lt;ptrdiff_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_intmax_t</code></td>
+<td><code>atomic&lt;intmax_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>atomic_uintmax_t</code></td>
+<td><code>atomic&lt;uintmax_t&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="structs">Structs</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="atomic-structure?view=msvc-170" data-linktype="relative-path"><code>atomic</code> Structure</a></td>
+<td>Describes an object that performs <code>atomic</code> operations on a stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-flag-structure?view=msvc-170" data-linktype="relative-path"><code>atomic_flag</code> Structure</a></td>
+<td>Describes an object that atomically sets and clears a <strong><code>bool</code></strong> flag.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enums">Enums</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="atomic-enums?view=msvc-170#memory_order_enum" data-linktype="relative-path"><code>memory_order</code> Enum</a></td>
+<td>Supplies symbolic names for synchronization operations on memory locations. These operations affect how assignments in one thread become visible in another.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions</h2>
+<p>In the following list, the functions that don't end in <code>_explicit</code> have the semantics of the corresponding <code>_explicit</code>, except that they have the implicit <a href="atomic-enums?view=msvc-170#memory_order_enum" data-linktype="relative-path"><code>memory_order</code></a> arguments of <code>memory_order_seq_cst</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_compare_exchange_strong" data-linktype="relative-path"><code>atomic_compare_exchange_strong</code></a></td>
+<td>Performs an <em><code>atomic compare and exchange</code></em> operation.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_compare_exchange_strong_explicit" data-linktype="relative-path"><code>atomic_compare_exchange_strong_explicit</code></a></td>
+<td>Performs an <em><code>atomic compare and exchange</code></em> operation.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_compare_exchange_weak" data-linktype="relative-path"><code>atomic_compare_exchange_weak</code></a></td>
+<td>Performs a <em><code>weak atomic compare and exchange</code></em> operation.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_compare_exchange_weak_explicit" data-linktype="relative-path"><code>atomic_compare_exchange_weak_explicit</code></a></td>
+<td>Performs a <em><code>weak atomic compare and exchange</code></em> operation.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_exchange" data-linktype="relative-path"><code>atomic_exchange</code></a></td>
+<td>Replaces a stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_exchange_explicit" data-linktype="relative-path"><code>atomic_exchange_explicit</code></a></td>
+<td>Replaces a stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_add" data-linktype="relative-path"><code>atomic_fetch_add</code></a></td>
+<td>Adds a specified value to an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_add_explicit" data-linktype="relative-path"><code>atomic_fetch_add_explicit</code></a></td>
+<td>Adds a specified value to an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_and" data-linktype="relative-path"><code>atomic_fetch_and</code></a></td>
+<td>Performs a bitwise "and" (<code>&amp;</code>) on a specified value and an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_and_explicit" data-linktype="relative-path"><code>atomic_fetch_and_explicit</code></a></td>
+<td>Performs a bitwise "and" (<code>&amp;</code>) on a specified value and an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_or" data-linktype="relative-path"><code>atomic_fetch_or</code></a></td>
+<td>Performs a bitwise "or" (<code>|</code>) on a specified value and an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_or_explicit" data-linktype="relative-path"><code>atomic_fetch_or_explicit</code></a></td>
+<td>Performs a bitwise "or" (<code>|</code>) on a specified value and an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_sub" data-linktype="relative-path"><code>atomic_fetch_sub</code></a></td>
+<td>Subtracts a specified value from an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_sub_explicit" data-linktype="relative-path"><code>atomic_fetch_sub_explicit</code></a></td>
+<td>Subtracts a specified value from an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_xor" data-linktype="relative-path"><code>atomic_fetch_xor</code></a></td>
+<td>Performs a bitwise "exclusive or" (<code>^</code>) on a specified value and an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_fetch_xor_explicit" data-linktype="relative-path"><code>atomic_fetch_xor_explicit</code></a></td>
+<td>Performs a bitwise "exclusive or" (<code>^</code>) on a specified value and an existing stored value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_flag_clear" data-linktype="relative-path"><code>atomic_flag_clear</code></a></td>
+<td>Sets the flag in an <code>atomic_flag</code> object to <strong><code>false</code></strong>.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_flag_clear_explicit" data-linktype="relative-path"><code>atomic_flag_clear_explicit</code></a></td>
+<td>Sets the flag in an <code>atomic_flag</code> object to <strong><code>false</code></strong>.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_flag_test_and_set" data-linktype="relative-path"><code>atomic_flag_test_and_set</code></a></td>
+<td>Sets the flag in an <code>atomic_flag</code> object to <strong><code>true</code></strong>.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_flag_test_and_set_explicit" data-linktype="relative-path"><code>atomic_flag_test_and_set_explicit</code></a></td>
+<td>Sets the flag in an <code>atomic_flag</code> object to <strong><code>true</code></strong>.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_init" data-linktype="relative-path"><code>atomic_init</code></a></td>
+<td>Sets the stored value in an <code>atomic</code> object.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_is_lock_free" data-linktype="relative-path"><code>atomic_is_lock_free</code></a></td>
+<td>Specifies whether atomic operations on a specified object are lock-free.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_load" data-linktype="relative-path"><code>atomic_load</code></a></td>
+<td>Atomically retrieves a value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_load_explicit" data-linktype="relative-path"><code>atomic_load_explicit</code></a></td>
+<td>Atomically retrieves a value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_signal_fence" data-linktype="relative-path"><code>atomic_signal_fence</code></a></td>
+<td>Acts as a <em><code>fence</code></em> that establishes memory ordering requirements between fences in a calling thread that has signal handlers executed in the same thread.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_store" data-linktype="relative-path"><code>atomic_store</code></a></td>
+<td>Atomically stores a value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_store_explicit" data-linktype="relative-path"><code>atomic_store_explicit</code></a></td>
+<td>Atomically stores a value.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#atomic_thread_fence" data-linktype="relative-path"><code>atomic_thread_fence</code></a></td>
+<td>Acts as a <em><code>fence</code></em> that establishes memory ordering requirements with respect to other fences.</td>
+</tr>
+<tr>
+<td><a href="atomic-functions?view=msvc-170#kill_dependency" data-linktype="relative-path"><code>kill_dependency</code></a></td>
+<td>Breaks a possible dependency chain.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<p><a href="cpp-standard-library-header-files?view=msvc-170" data-linktype="relative-path">Header Files Reference</a><br>
+<a href="cpp-standard-library-reference?view=msvc-170" data-linktype="relative-path">C++ Standard Library Reference</a></p>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Need help with this topic?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				Additional resources
+			</h2>
+			 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-qna-mobile"
+			class="margin-top-xxs"
+			data-bi-name="qna-link-card"
+			hidden
+		></section>
+	
+		</div>
+	
+			</div>
+			
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside "
+					data-bi-name="aside"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+			role="complementary"
+			aria-label="Additional resources"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<p class="font-weight-semibold margin-bottom-xs">Was this page helpful?</p>
+			<div class="buttons">
+				<button
+					class="thumb-rating-button like button button-primary button-sm"
+					data-test-id="right-rail-rating-yes"
+					data-binary-rating-response="rating-yes"
+					type="button"
+					title="This article is helpful"
+					data-bi-name="button-rating-yes"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-like"></span>
+					</span>
+					<span>Yes</span>
+				</button>
+				<button
+					class="thumb-rating-button dislike button button-primary button-sm"
+					id="right-rail-no-button"
+					hidden
+					data-test-id="right-rail-rating-no"
+					data-binary-rating-response="rating-no"
+					type="button"
+					title="This article is not helpful"
+					data-bi-name="button-rating-no"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-dislike"></span>
+					</span>
+					<span>No</span>
+				</button>
+				<details class="popover" id="help-popover" data-test-id="feedback-popover">
+					<summary
+						tabindex="0"
+						class="thumb-rating-button dislike button button-primary button-sm"
+						data-test-id="details-right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+						data-bi-an="feedback-unhelpful-popover"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</summary>
+					<div
+						class="popover-content width-200 width-300-tablet"
+						role="dialog"
+						aria-labelledby="popover-heading"
+						aria-describedby="popover-description"
+					>
+						<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+							Need help with this topic?
+						</p>
+						<p id="popover-description" class="font-size-sm margin-bottom-xs">
+							Want to try using Ask Learn to clarify or guide you through this topic?
+						</p>
+						
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+					</div>
+				</details>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout has-padding has-default-focus border-top  uhf-container"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	
+				<div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-expanded="false"
+				title="Theme"
+				data-bi-name="theme"
+			>
+				<span class="icon">
+					<span class="docon docon-sun" aria-hidden="true"></span>
+				</span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu">
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="light"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="dark"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="high-contrast"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2025</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>

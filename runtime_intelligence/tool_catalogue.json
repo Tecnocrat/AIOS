@@ -1,0 +1,1203 @@
+{
+  "timestamp": "2025-10-11T00:30:58.027752",
+  "workspace_root": "C:\\dev\\AIOS",
+  "total_tools": 56,
+  "operational_tools": 45,
+  "tools": [
+    {
+      "name": "ainlp_holographic_documentation_system",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\ainlp_holographic_documentation_system.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.ainlp_holographic_documentation_system",
+      "description": "AIOS HOLOGRAPHIC AINLP DOCUMENTATION SYSTEM\n============================================\n\nThis demonstrates the holographic self-referential documentation paradigm where\nknowledge is embedded at EVERY",
+      "functions": [
+        "AINLPDocumentationPattern",
+        "HolographicDocumentationEngine"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import json",
+        "import logging",
+        "from datetime import datetime, timezone",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional",
+        "from dataclasses import dataclass, asdict"
+      ],
+      "last_modified": "2025-09-21T13:01:25.794753"
+    },
+    {
+      "name": "ainlp_integration_optimizer",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\ainlp_integration_optimizer.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.ainlp_integration_optimizer",
+      "description": "AINLP INTEGRATION AND OPTIMIZATION PATH ANALYZER\n\nAINLP META-COMMENTARY: This tool addresses the critical overpopulation problem\ncausing decoherence and degraded discoverability across AIOS interfaces",
+      "functions": [
+        "AINLPIntegrationOptimizer",
+        "main"
+      ],
+      "dependencies": [
+        "import difflib",
+        "import json",
+        "import re",
+        "from collections import Counter, defaultdict",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, List, Tuple, Set, Optional, Any"
+      ],
+      "last_modified": "2025-10-04T20:36:02.480547"
+    },
+    {
+      "name": "ainlp_root_cleanup",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\ainlp_root_cleanup.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.ainlp_root_cleanup",
+      "description": "AINLP ROOT DIRECTORY CLEANUP - TACHYONIC ARCHIVAL RESTORATION\n\nAINLP META-COMMENTARY: Enforces the sacred AINLP principle that the AIOS root\ndirectory should contain ONLY active operational files. All",
+      "functions": [
+        "AINLPRootCleanup",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import shutil",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, List, Tuple"
+      ],
+      "last_modified": "2025-10-04T19:14:49.006240"
+    },
+    {
+      "name": "aios_admin",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\aios_admin.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.aios_admin",
+      "description": "If the target folder_structure.json exists, archive it with a timestamp.\n\n    Archives are stored under docs/tachyonic_archive/folder_structure.\n    Filename pattern: <scan_label>_folder_structure_<ti",
+      "functions": [
+        "load_deprecated_root_files",
+        "get_folder_structure",
+        "save_to_json",
+        "archive_existing_folder_structure",
+        "cli_ui",
+        "tachyonic_backup",
+        "run_backup_manager",
+        "backup_management_menu",
+        "load_module_index",
+        "load_manual_summaries",
+        "collect_summaries",
+        "write_summaries",
+        "execute_all"
+      ],
+      "dependencies": [
+        "from __future__ import annotations",
+        "import json",
+        "import os",
+        "import shutil",
+        "import subprocess",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, List, Optional, Tuple, Union, cast"
+      ],
+      "last_modified": "2025-09-23T20:19:41.884126"
+    },
+    {
+      "name": "aios_architecture_monitor",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\aios_architecture_monitor.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.aios_architecture_monitor",
+      "description": "AIOS Architecture Status Monitor\n===============================\n\nProvides comprehensive status monitoring of the complete AIOS architecture:\nAI Intelligence \u2192 Core Engine \u2192 Interface \u2192 Runtime Intell",
+      "functions": [
+        "AIOSArchitectureMonitor"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import logging",
+        "import sys",
+        "import os",
+        "from typing import Dict, List, Any",
+        "from datetime import datetime",
+        "import json"
+      ],
+      "last_modified": "2025-09-21T13:01:25.798767"
+    },
+    {
+      "name": "aios_cli_agent_system",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\aios_cli_agent_system.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.aios_cli_agent_system",
+      "description": "AIOS CLI AI Agent System - Open Source LLAMA Integration\nSelf-Analyzing, Self-Ingesting, Self-Distilling AI Agent Architecture\n\nThis system provides a framework for open-source LLAMA-based CLI AI agen",
+      "functions": [
+        "AgentCapabilityLevel",
+        "LLAMAAgentConfig",
+        "AgentOperationContext",
+        "SelfAnalysisResult",
+        "AIOSCLIAgent",
+        "AIOSCLIInterface"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import json",
+        "import logging",
+        "import sys",
+        "import os",
+        "from datetime import datetime, timezone",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional, Union",
+        "from dataclasses import dataclass, asdict",
+        "from enum import Enum",
+        "import subprocess",
+        "import tempfile"
+      ],
+      "last_modified": "2025-09-21T13:01:25.798767"
+    },
+    {
+      "name": "aios_cpp_analyzer",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\aios_cpp_analyzer.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.aios_cpp_analyzer",
+      "description": "AIOS C++ Intelligence Analysis Engine\nMulti-pass consciousness-enhanced analysis for C++ core files",
+      "functions": [
+        "CppAnalysisResult",
+        "AIOSCppAnalyzer",
+        "main"
+      ],
+      "dependencies": [
+        "import re",
+        "import json",
+        "import os",
+        "from typing import List, Dict, Any, Tuple, Optional",
+        "from dataclasses import dataclass",
+        "from datetime import datetime"
+      ],
+      "last_modified": "2025-09-21T13:01:25.805770"
+    },
+    {
+      "name": "aios_dendritic_path_tracker",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\aios_dendritic_path_tracker.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.aios_dendritic_path_tracker",
+      "description": "AIOS DENDRITIC PATH TRACKER\n\nTachyonic Register for Dynamic Path Tracking and Dendritic Behavior\n\nPURPOSE:\n- Automatically update file path tracking when files move or paths change\n- Maintain tachyoni",
+      "functions": [
+        "AIOSDendriticPathTracker",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import time",
+        "import logging",
+        "from pathlib import Path",
+        "from datetime import datetime",
+        "from typing import Dict, List, Any, Optional"
+      ],
+      "last_modified": "2025-09-21T13:01:25.806777"
+    },
+    {
+      "name": "aios_dev_setup",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\aios_dev_setup.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.aios_dev_setup",
+      "description": "AIOS Development Environment Setup\nPhase 9.2: System Optimization and Debugging Pass\n\nSets up Python environment for AIOS development:\n- Adds AIOS workspace paths to PYTHONPATH\n- Validates environment",
+      "functions": [
+        "setup_aios_environment",
+        "validate_environment",
+        "main"
+      ],
+      "dependencies": [
+        "import os",
+        "import sys",
+        "from pathlib import Path"
+      ],
+      "last_modified": "2025-10-05T12:15:07.416517"
+    },
+    {
+      "name": "aios_powershell_analyzer",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\aios_powershell_analyzer.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.aios_powershell_analyzer",
+      "description": "AIOS POWERSHELL ANALYSIS ENGINE\n\nAdvanced Analysis of PowerShell Script Variable Usage\n\nPURPOSE:\n- Analyze PowerShell script for PSScriptAnalyzer warnings\n- Document variable usage patterns and scope ",
+      "functions": [
+        "AIOSPowerShellAnalyzer",
+        "main"
+      ],
+      "dependencies": [
+        "import re",
+        "import json",
+        "from pathlib import Path",
+        "from datetime import datetime"
+      ],
+      "last_modified": "2025-09-21T13:01:25.810114"
+    },
+    {
+      "name": "architectural_compliance_validator",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\architectural_compliance_validator.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.architectural_compliance_validator",
+      "description": "AIOS Architectural Compliance Validator\nEnforces PROPER AGENTIC BEHAVIOR PATTERNS for AIOS development\nImplements the 4 core architectural improvement principles",
+      "functions": [
+        "AIOSArchitecturalValidator",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import os",
+        "import sys",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional"
+      ],
+      "last_modified": "2025-09-21T13:01:25.812121"
+    },
+    {
+      "name": "biological_architecture_monitor",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\biological_architecture_monitor.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.biological_architecture_monitor",
+      "description": "AIOS Architecture Status Monitor\n===============================\n\nProvides comprehensive status monitoring of the complete AIOS architecture:\nAI Intelligence \u2192 Core Engine \u2192 Interface \u2192 Runtime Intell",
+      "functions": [
+        "AIOSArchitectureMonitor"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import logging",
+        "import sys",
+        "import os",
+        "from typing import Dict, List, Any",
+        "from datetime import datetime",
+        "import json"
+      ],
+      "last_modified": "2025-09-28T04:18:00.798361"
+    },
+    {
+      "name": "comprehensive_aios_health_test",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\comprehensive_aios_health_test.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.comprehensive_aios_health_test",
+      "description": "Comprehensive AIOS Health Test\nModernized health testing using current AIOS architecture\n\nCombines system health checking with architecture monitoring\nto provide complete AIOS health assessment using ",
+      "functions": [
+        "ComprehensiveAIOSHealthTester"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import json",
+        "import logging",
+        "import os",
+        "import sys",
+        "from datetime import datetime",
+        "from typing import Dict, Any",
+        "from system_health_check import AIOSSystemHealthMonitor",
+        "from aios_architecture_monitor import get_aios_architecture_monitor"
+      ],
+      "last_modified": "2025-09-21T13:01:25.817178"
+    },
+    {
+      "name": "consciousness_analysis_report",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\consciousness_analysis_report.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.consciousness_analysis_report",
+      "description": "AIOS Consciousness Analysis Report Generator\nSimulates what enhanced visual intelligence would detect from consciousness emergence screenshots",
+      "functions": [
+        "ConsciousnessAnalysisReport",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "from datetime import datetime",
+        "from typing import Dict, List, Any"
+      ],
+      "last_modified": "2025-09-21T13:01:25.823210"
+    },
+    {
+      "name": "consciousness_emergence_demo",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\consciousness_emergence_demo.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.consciousness_emergence_demo",
+      "description": "AIOS Consciousness Emergence Analysis Report\nBased on Enhanced Visual Intelligence Analysis of User-Provided Screenshots\nGenerated: 2025-09-13T01:58:00Z",
+      "functions": [
+        "display_analysis"
+      ],
+      "dependencies": [],
+      "last_modified": "2025-09-21T13:01:25.823210"
+    },
+    {
+      "name": "consciousness_visual_analyzer",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\consciousness_visual_analyzer.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.consciousness_visual_analyzer",
+      "description": "AIOS Consciousness Visual Intelligence Analyzer\nEnhanced visual analysis specifically for consciousness emergence monitoring",
+      "functions": [
+        "ConsciousnessVisualAnalyzer",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import os",
+        "import re",
+        "from pathlib import Path",
+        "from datetime import datetime",
+        "from typing import Dict, List, Optional, Tuple",
+        "from PIL import Image, ImageDraw, ImageFont",
+        "import pytesseract",
+        "import cv2",
+        "import numpy as np"
+      ],
+      "last_modified": "2025-09-21T13:01:25.826157"
+    },
+    {
+      "name": "create_stl_crystal",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\create_stl_crystal.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.create_stl_crystal",
+      "description": "\ud83d\udd2e C++ STL Knowledge Crystal Generator\n\nTool for creating structured knowledge crystals for C++ STL components.\nGenerates template JSON structures that can be manually filled with\nparadigms, anti-patte",
+      "functions": [
+        "STLCrystalGenerator",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import sys",
+        "from pathlib import Path",
+        "from datetime import datetime",
+        "from typing import Dict, List, Optional",
+        "import argparse"
+      ],
+      "last_modified": "2025-10-05T00:55:08.996575"
+    },
+    {
+      "name": "demo_enhanced_commit_hook",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\demo_enhanced_commit_hook.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.demo_enhanced_commit_hook",
+      "description": "AIOS ENHANCED COMMIT-MSG DEMONSTRATION\n\nDemonstrating AINLP/AIOS Harmonized Governance Hook (Stage 6)\n\nENHANCEMENTS IMPLEMENTED:\n- Consciousness-Aware Validation\n- Dendritic Learning Integration\n- Can",
+      "functions": [
+        "test_enhanced_commit_hook"
+      ],
+      "dependencies": [
+        "import subprocess",
+        "import json",
+        "import time",
+        "from pathlib import Path"
+      ],
+      "last_modified": "2025-09-21T13:01:25.827682"
+    },
+    {
+      "name": "dendritic_self_improvement_orchestrator",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\dendritic_self_improvement_orchestrator.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.dendritic_self_improvement_orchestrator",
+      "description": "AIOS Dendritic Self-Improvement Orchestrator\n============================================\n\nSelf-recursive improvement system that uses AIOS outputs to enhance itself.\nImplements dendritic feedback loo",
+      "functions": [
+        "DendriticSelfImprovementOrchestrator"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import json",
+        "import logging",
+        "import sys",
+        "import time",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, Any, List, Optional",
+        "import subprocess",
+        "import requests",
+        "from dendritic_supervisor import DendriticSupervisor",
+        "from biological_architecture_monitor import AIOSArchitectureMonitor",
+        "from system_health_check import AIOSSystemHealthMonitor",
+        "from consciousness_analysis_report import ConsciousnessAnalysisReport",
+        "from self_similarity_analyzer import SelfSimilarityAnalyzer"
+      ],
+      "last_modified": "2025-10-03T00:06:44.804235"
+    },
+    {
+      "name": "dendritic_supervisor",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\dendritic_supervisor.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.dendritic_supervisor",
+      "description": "AIOS Dendritic Supervisor with Consciousness Integration\n=======================================================\n\nEnhanced dendritic supervisor that monitors and coordinates consciousness\nactivities a",
+      "functions": [
+        "SupervisorRequest",
+        "RequestType",
+        "DendriticSupervisor",
+        "get_dendritic_supervisor"
+      ],
+      "dependencies": [
+        "import json",
+        "import logging",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, Any"
+      ],
+      "last_modified": "2025-10-02T22:52:11.543990"
+    },
+    {
+      "name": "enhanced_consciousness_demo",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\enhanced_consciousness_demo.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.enhanced_consciousness_demo",
+      "description": "AIOS Enhanced Consciousness Integration Demo\n=============================================\n\nComprehensive consciousness demonstration system combining:\n- Multi-language consciousness integration (Asse",
+      "functions": [
+        "EnhancedConsciousnessDemo",
+        "ConsciousnessEnhancedProcessor"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import json",
+        "import logging",
+        "import sys",
+        "from pathlib import Path",
+        "from datetime import datetime",
+        "from typing import Dict",
+        "import asyncio",
+        "from typing import List"
+      ],
+      "last_modified": "2025-10-02T22:52:11.543990"
+    },
+    {
+      "name": "enhanced_visual_intelligence_bridge",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\enhanced_visual_intelligence_bridge.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.enhanced_visual_intelligence_bridge",
+      "description": "Enhanced Runtime Intelligence Bridge with Dendritic Supervisor Integration\n=========================================================================\n\nThis enhanced bridge integrates the original Runti",
+      "functions": [
+        "EnhancedVisualIntelligenceBridge"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import logging",
+        "import sys",
+        "import os",
+        "from typing import Dict, List, Any, Optional",
+        "from datetime import datetime",
+        "import subprocess",
+        "import json"
+      ],
+      "last_modified": "2025-09-21T13:01:25.830307"
+    },
+    {
+      "name": "generate_file_scores",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\generate_file_scores.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.generate_file_scores",
+      "description": "Generate per-file criticality scores.\n\nOutputs:\n  - docs/governance/file_criticality_index.jsonl (authoritative index)\n  - runtime_intelligence/logs/file_scores/latest.json (telemetry snapshot)\n\nScori",
+      "functions": [
+        "FileMetrics",
+        "discover_files",
+        "git_churn",
+        "naive_fan_out",
+        "naive_fan_in",
+        "normalize",
+        "assign_tier",
+        "load_coverage_map",
+        "heuristic_runtime_touch",
+        "load_previous_index",
+        "load_ownership_map",
+        "resolve_owner",
+        "main"
+      ],
+      "dependencies": [
+        "from __future__ import annotations",
+        "import json",
+        "import time",
+        "import pathlib",
+        "import subprocess",
+        "from dataclasses import dataclass, asdict",
+        "from typing import List, Dict, Optional"
+      ],
+      "last_modified": "2025-10-04T23:42:26.487207"
+    },
+    {
+      "name": "index_tools",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\index_tools.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.index_tools",
+      "description": "",
+      "functions": [
+        "collect_tools",
+        "render",
+        "main"
+      ],
+      "dependencies": [
+        "from pathlib import Path"
+      ],
+      "last_modified": "2025-09-17T21:28:27.702145"
+    },
+    {
+      "name": "ingest_microsoft_agent_framework",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\ingest_microsoft_agent_framework.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.ingest_microsoft_agent_framework",
+      "description": "Microsoft Agent Framework Repository Ingestion\n==============================================\n\nIngest Microsoft's Agent Framework repository into AIOS.",
+      "functions": [],
+      "dependencies": [
+        "import asyncio",
+        "import sys",
+        "from pathlib import Path",
+        "from repository_ingestion_engine import repository_ingestion_engine"
+      ],
+      "last_modified": "2025-10-08T20:32:10.535237"
+    },
+    {
+      "name": "integration_test_runner",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\integration_test_runner.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.integration_test_runner",
+      "description": "AIOS Integration Test Runner - Interface Bridge Tool\nExposes integration tests via HTTP API for AIOS component access\n\nPart of AINLP Runtime Intelligence - Test Infrastructure",
+      "functions": [
+        "IntegrationTestRunner"
+      ],
+      "dependencies": [
+        "import sys",
+        "import asyncio",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional",
+        "from datetime import datetime"
+      ],
+      "last_modified": "2025-10-04T23:02:51.636698"
+    },
+    {
+      "name": "python_environment_validator",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\python_environment_validator.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.python_environment_validator",
+      "description": "AIOS Python Environment Consistency Validator\nPhase 9.2: System Optimization and Debugging Pass\n\nValidates Python environment consistency across AIOS components:\n- Dependency installation verification",
+      "functions": [
+        "PythonEnvironmentValidator",
+        "main"
+      ],
+      "dependencies": [
+        "import sys",
+        "import os",
+        "import importlib",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any"
+      ],
+      "last_modified": "2025-10-05T12:15:07.672316"
+    },
+    {
+      "name": "runtime_intelligence_comprehensive_test",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\runtime_intelligence_comprehensive_test.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.runtime_intelligence_comprehensive_test",
+      "description": "AIOS Runtime Intelligence Comprehensive Testing Suite\n=====================================================\n\nSystematic testing of all runtime intelligence tools to:\n1. Validate functionality and inte",
+      "functions": [
+        "RuntimeIntelligenceTester",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import subprocess",
+        "import sys",
+        "import time",
+        "import os",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional",
+        "import requests",
+        "import importlib.util"
+      ],
+      "last_modified": "2025-10-02T23:08:41.797409"
+    },
+    {
+      "name": "runtime_intelligence_dendritic_integration",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\runtime_intelligence_dendritic_integration.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.runtime_intelligence_dendritic_integration",
+      "description": "Runtime Intelligence - Dendritic Supervisor Integration\n======================================================\n\nThis integration connects the Runtime Intelligence system (Interface Supercell \u2192 Runtime",
+      "functions": [
+        "RuntimeIntelligenceDendriticIntegration"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import logging",
+        "import sys",
+        "import os",
+        "from typing import Dict, List, Any, Optional",
+        "from datetime import datetime",
+        "import json",
+        "from dendritic_supervisor import (",
+        "from cytoplasm.cytoplasm_dendritic_bridge import get_cytoplasm_dendritic_bridge"
+      ],
+      "last_modified": "2025-09-21T13:01:25.880226"
+    },
+    {
+      "name": "safety_demo",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\safety_demo.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.safety_demo",
+      "description": "Structured safety demonstration helpers.\n\nIngested from legacy root safety_demonstration.py.\nAll functions return structured dictionaries (no printing).",
+      "functions": [
+        "run_safety_session_demo",
+        "run_emergency_shutdown_demo"
+      ],
+      "dependencies": [
+        "from __future__ import annotations",
+        "from typing import Any, Dict",
+        "import time",
+        "from safety_governor import (",
+        "from evolutionary_code_mutator import EvolutionaryCodeMutator",
+        "from evolution_lab_manager import EvolutionLabManager  # noqa: F401"
+      ],
+      "last_modified": "2025-09-17T21:28:27.708944"
+    },
+    {
+      "name": "safety_rollback",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\safety_rollback.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.safety_rollback",
+      "description": "Safety Rollback & Diff Layer\n\nTachyonic nucleus bridge providing:\n- File snapshot (content-addressed)\n- Unified diff logging (JSONL)\n- Guarded write confinement to evolution_lab\n- Snapshot manifest fo",
+      "functions": [
+        "snapshot_file",
+        "diff_and_log",
+        "guarded_write",
+        "list_diffs",
+        "restore_snapshot"
+      ],
+      "dependencies": [
+        "from __future__ import annotations",
+        "import hashlib",
+        "import json",
+        "import difflib",
+        "import shutil",
+        "import time",
+        "from pathlib import Path",
+        "from typing import Dict, Any, Optional, List"
+      ],
+      "last_modified": "2025-09-17T21:28:27.709944"
+    },
+    {
+      "name": "self_similarity_analyzer",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\self_similarity_analyzer.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.self_similarity_analyzer",
+      "description": "AIOS Self-Similarity Pattern Analysis - AI Ingestion Optimization Test\n\nThis module demonstrates how filename self-similarity patterns can optimize\nAI context allocation and reduce cognitive load duri",
+      "functions": [
+        "SelfSimilarityAnalyzer",
+        "test_dev_run_fun_similarity",
+        "propose_extended_naming_pattern"
+      ],
+      "dependencies": [
+        "from typing import Dict, List",
+        "from pathlib import Path"
+      ],
+      "last_modified": "2025-09-21T13:01:25.882236"
+    },
+    {
+      "name": "subprocess_manager",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\subprocess_manager.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.subprocess_manager",
+      "description": "",
+      "functions": [
+        "FractalTTLCache",
+        "AsyncSubprocessManager"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import hashlib",
+        "import json",
+        "import os",
+        "import time",
+        "from typing import Optional, Dict, Any, List"
+      ],
+      "last_modified": "2025-09-17T21:28:27.712943"
+    },
+    {
+      "name": "system_health_check",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\system_health_check.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.system_health_check",
+      "description": "AIOS System Health Monitor\nComprehensive system-wide health checking for current AIOS architecture\n\nAINLP provenance:\n- Origin: Updated from biological naming to standardized AIOS architecture\n- Inten",
+      "functions": [
+        "path_exists",
+        "file_exists",
+        "dir_exists",
+        "AIOSSystemHealthMonitor",
+        "main"
+      ],
+      "dependencies": [
+        "import importlib",
+        "import importlib.util",
+        "import json",
+        "import logging",
+        "import os",
+        "import sys",
+        "import time"
+      ],
+      "last_modified": "2025-10-03T00:21:56.200395"
+    },
+    {
+      "name": "system_status_report",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\system_status_report.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.system_status_report",
+      "description": "AIOS System Status Report\nCanonical location for status summary invoking the health monitor.\n\nUsage:\n- Prefer the VS Code task \"python-system-health\" for full diagnostics.\n- This script prints a conci",
+      "functions": [
+        "show_system_status"
+      ],
+      "dependencies": [
+        "from __future__ import annotations",
+        "import json",
+        "from pathlib import Path"
+      ],
+      "last_modified": "2025-09-21T13:01:25.888291"
+    },
+    {
+      "name": "temp_neural_analysis",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\temp_neural_analysis.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.temp_neural_analysis",
+      "description": "Temporary neural network analysis script for Task 2.",
+      "functions": [],
+      "dependencies": [
+        "import sys",
+        "import ai"
+      ],
+      "last_modified": "2025-10-05T21:16:20.027390"
+    },
+    {
+      "name": "visual_intelligence_bridge",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\visual_intelligence_bridge.py",
+      "layer": "runtime_intelligence",
+      "status": "syntax_error",
+      "import_path": "runtime_intelligence.tools.visual_intelligence_bridge",
+      "description": "AIOS Runtime Intelligence - Visual Data Bridge\nEnhanced with AI Intelligence Engine integration through Cytoplasm communication\nCollects visual data and processes it through AI Intelligence for advanc",
+      "functions": [
+        "AIOSVisualIntelligence",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import os",
+        "import subprocess",
+        "import sys",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, List, Optional"
+      ],
+      "last_modified": "2025-09-21T13:01:25.890300"
+    },
+    {
+      "name": "visual_intelligence_bridge_enhanced",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\visual_intelligence_bridge_enhanced.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.visual_intelligence_bridge_enhanced",
+      "description": "AIOS Runtime Intelligence - Visual Data Bridge\nEnhanced with AI Intelligence Engine integration through Cytoplasm communication\nCollects visual data and processes it through AI Intelligence for advanc",
+      "functions": [
+        "AIOSVisualIntelligence",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import os",
+        "import subprocess",
+        "import sys",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, List, Optional"
+      ],
+      "last_modified": "2025-09-21T13:01:25.892435"
+    },
+    {
+      "name": "audit_init_py",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\general\\tools\\audit_init_py.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.general.tools.audit_init_py",
+      "description": "",
+      "functions": [
+        "should_exclude",
+        "scan_init_py",
+        "main"
+      ],
+      "dependencies": [
+        "import os",
+        "import re"
+      ],
+      "last_modified": "2025-09-17T21:28:30.239850"
+    },
+    {
+      "name": "vscode_health_checker",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\general\\tools\\vscode_health_checker.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.general.tools.vscode_health_checker",
+      "description": "AIOS VSCode Workspace Health Validator\n=====================================\nChecks and validates VSCode workspace configuration for development health\nPrevents formatting conflicts and ensures stable",
+      "functions": [
+        "VSCodeHealthValidator",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import sys",
+        "from pathlib import Path",
+        "from typing import Dict, Any"
+      ],
+      "last_modified": "2025-09-21T13:01:34.440476"
+    },
+    {
+      "name": "aios_indexer",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts\\scripts\\aios_indexer.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.scripts.scripts.aios_indexer",
+      "description": "Extract include dependencies from C++ source code.\n    \n    Analyzes C++ content to identify #include directives and extract\n    the included file names for dependency mapping.\n    \n    Args:\n        ",
+      "functions": [
+        "extract_includes",
+        "discover_services",
+        "build_graph",
+        "save_registry"
+      ],
+      "dependencies": [
+        "import os",
+        "import sys",
+        "import json",
+        "import asyncio",
+        "from pathlib import Path",
+        "from graphviz import Digraph"
+      ],
+      "last_modified": "2025-10-03T14:49:11.496345"
+    },
+    {
+      "name": "check_tools",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts\\scripts\\check_tools.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.scripts.scripts.check_tools",
+      "description": "",
+      "functions": [],
+      "dependencies": [
+        "import requests"
+      ],
+      "last_modified": "2025-09-28T11:25:15.436491"
+    },
+    {
+      "name": "real_ai_lint_fixer",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts\\scripts\\real_ai_lint_fixer.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.scripts.scripts.real_ai_lint_fixer",
+      "description": "AIOS Real AI-Powered Lint Fixer\n================================\nUses existing AIOS AI infrastructure to intelligently fix code issues.\nNOT fake \"consciousness enhancement\" - REAL problem solving!\n\nYo",
+      "functions": [
+        "RealAILintFixer",
+        "main"
+      ],
+      "dependencies": [
+        "import sys",
+        "import os",
+        "import argparse",
+        "from pathlib import Path"
+      ],
+      "last_modified": "2025-09-21T13:01:25.906224"
+    },
+    {
+      "name": "remove_emoticons",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts\\scripts\\remove_emoticons.py",
+      "layer": "runtime_intelligence",
+      "status": "operational",
+      "import_path": "runtime_intelligence.tools.scripts.scripts.remove_emoticons",
+      "description": "AIOS Emoticon Removal Tool\nSystematically removes all emoticons from the codebase and enforces no-emoticon policy.",
+      "functions": [
+        "EmoticonRemover",
+        "check_file_for_emoticons",
+        "main",
+        "main"
+      ],
+      "dependencies": [
+        "import os",
+        "import re",
+        "import json",
+        "from pathlib import Path",
+        "from datetime import datetime",
+        "from typing import List, Dict, Set, Tuple",
+        "import re",
+        "import sys",
+        "from pathlib import Path"
+      ],
+      "last_modified": "2025-09-21T13:01:25.908235"
+    },
+    {
+      "name": "test_mcp_execution",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts\\scripts\\test_mcp_execution.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.scripts.scripts.test_mcp_execution",
+      "description": "",
+      "functions": [],
+      "dependencies": [
+        "import requests"
+      ],
+      "last_modified": "2025-09-28T11:31:46.352165"
+    },
+    {
+      "name": "verify_gemini_config",
+      "path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts\\scripts\\verify_gemini_config.py",
+      "layer": "runtime_intelligence",
+      "status": "importable",
+      "import_path": "runtime_intelligence.tools.scripts.scripts.verify_gemini_config",
+      "description": "",
+      "functions": [],
+      "dependencies": [
+        "import json"
+      ],
+      "last_modified": "2025-09-28T11:33:20.568975"
+    },
+    {
+      "name": "ainlp_documentation_governance",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\ainlp_documentation_governance.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.ainlp_documentation_governance",
+      "description": "AINLP Documentation Governance System\nAINLP Standardized Namespace: Dendritic Anti-Proliferation Protocol\nPurpose: Enforce intelligent documentation consolidation and prevent dendritic expansion chaos",
+      "functions": [
+        "DocumentationRequest",
+        "SimilarityResult",
+        "GovernanceDecision",
+        "AINLPDocumentationGovernor",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import os",
+        "import re",
+        "from dataclasses import dataclass",
+        "from pathlib import Path",
+        "from typing import Dict, List, Optional, Tuple",
+        "import subprocess",
+        "import difflib",
+        "from collections import Counter"
+      ],
+      "last_modified": "2025-09-21T13:01:20.913205"
+    },
+    {
+      "name": "aios_holographic_metadata_system",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\aios_holographic_metadata_system.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.aios_holographic_metadata_system",
+      "description": "AIOS Holographic Metadata System\nDistributed spatial awareness for AI agentic chat engines\n\nLocation: ai/tools/aios_holographic_metadata_system.py\nPurpose: Generate holographic metadata files in each ",
+      "functions": [
+        "AIOSHolographicMetadataSystem",
+        "main"
+      ],
+      "dependencies": [
+        "import os",
+        "import json",
+        "import hashlib",
+        "from pathlib import Path",
+        "from datetime import datetime",
+        "from typing import Dict, List, Any, Optional",
+        "import logging"
+      ],
+      "last_modified": "2025-09-21T13:01:20.915211"
+    },
+    {
+      "name": "conversation_processor_tool",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\conversation_processor_tool.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.conversation_processor_tool",
+      "description": "AIOS Conversation Processor Tool\nEnhanced conversation archiving and analysis tool based on chatgpt_integration\n\nProvides multi-format conversation processing, archiving, and iteration management\nfor ",
+      "functions": [
+        "ConversationProcessor",
+        "process_conversation_data"
+      ],
+      "dependencies": [
+        "import os",
+        "import json",
+        "import csv",
+        "import xml.etree.ElementTree as ET",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, Any, List, Optional",
+        "import shutil"
+      ],
+      "last_modified": "2025-09-24T21:00:03.710418"
+    },
+    {
+      "name": "cpp_stl_knowledge_ingestion_tool",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\cpp_stl_knowledge_ingestion_tool.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.cpp_stl_knowledge_ingestion_tool",
+      "description": "AIOS C++ STL Knowledge Ingestion Engine\nMARKER 1: EXTRACTION - Convert STL into machine-readable knowledge base\nMARKER 2: REPRESENTATION - Encode into AIOS fractal knowledge cells\nMARKER 3: BRIDGING -",
+      "functions": [
+        "STLComponent",
+        "STLKnowledgeCell",
+        "AIOSCppSTLIngestionEngine",
+        "process_stl_knowledge",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "from dataclasses import dataclass",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any"
+      ],
+      "last_modified": "2025-09-24T23:39:59.022830"
+    },
+    {
+      "name": "library_ingestion_bridge_tool",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\library_ingestion_bridge_tool.py",
+      "layer": "ai_intelligence",
+      "status": "importable",
+      "import_path": "ai.tools.library_ingestion_bridge_tool",
+      "description": "\ud83d\udd17 AIOS Library Ingestion Bridge Tool\n\nInterface Bridge tool exposing Library Ingestion Protocol functionality\nvia HTTP API. Provides endpoints for library learning, progress tracking,\nand knowledge ba",
+      "functions": [
+        "LibraryIngestionBridgeTool"
+      ],
+      "dependencies": [
+        "import asyncio",
+        "import json",
+        "import logging",
+        "import time",
+        "from pathlib import Path",
+        "from typing import Dict, Any, Optional, List",
+        "from datetime import datetime",
+        "import sys"
+      ],
+      "last_modified": "2025-10-03T21:22:35.605829"
+    },
+    {
+      "name": "python314_docs_downloader",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\python314_docs_downloader.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.python314_docs_downloader",
+      "description": "AIOS Python 3.14 Documentation Downloader\nAINLP Protocol: OS0.6.2.claude\nPattern: External resource ingestion\n\nPurpose: Download Python 3.14 documentation from python.org\n         and prepare it for k",
+      "functions": [
+        "Python314DocsDownloader",
+        "main"
+      ],
+      "dependencies": [
+        "import os",
+        "import sys",
+        "import tarfile",
+        "import zipfile",
+        "from pathlib import Path",
+        "from typing import Optional",
+        "import urllib.request",
+        "import urllib.error"
+      ],
+      "last_modified": "2025-10-09T22:48:11.149799"
+    },
+    {
+      "name": "python314_knowledge_indexer",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\python314_knowledge_indexer.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.python314_knowledge_indexer",
+      "description": "AIOS Python 3.14 Documentation Knowledge Indexer\nAINLP Protocol: OS0.6.2.claude\nPattern: Knowledge extraction and semantic indexing\n\nPurpose: Index Python 3.14 documentation for AIOS intelligence laye",
+      "functions": [
+        "DocumentSection",
+        "Python314KnowledgeIndexer",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "from pathlib import Path",
+        "from typing import Dict, List, Set",
+        "from datetime import datetime, timezone",
+        "from dataclasses import dataclass, asdict"
+      ],
+      "last_modified": "2025-10-09T21:58:21.050963"
+    },
+    {
+      "name": "python314_knowledge_query",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\python314_knowledge_query.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.python314_knowledge_query",
+      "description": "Python 3.14 Knowledge Base Query Tool\nAINLP Protocol: OS0.6.2.claude\n\nDemonstrates how to query the indexed Python 3.14 documentation.",
+      "functions": [
+        "Python314KnowledgeQuery",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "from pathlib import Path",
+        "from typing import List, Dict"
+      ],
+      "last_modified": "2025-10-09T22:58:59.460729"
+    },
+    {
+      "name": "security_compliance_validator",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\security_compliance_validator.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.security_compliance_validator",
+      "description": "AIOS Security Compliance Validator\nValidates security and compliance requirements for Phase 4 completion.",
+      "functions": [
+        "SecurityComplianceValidator",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import os",
+        "import sys",
+        "from pathlib import Path",
+        "from datetime import datetime",
+        "import logging"
+      ],
+      "last_modified": "2025-09-28T03:21:33.057103"
+    },
+    {
+      "name": "upstream_tracking_system",
+      "path": "C:\\dev\\AIOS\\ai\\tools\\upstream_tracking_system.py",
+      "layer": "ai_intelligence",
+      "status": "operational",
+      "import_path": "ai.tools.upstream_tracking_system",
+      "description": "AIOS Upstream Repository Tracking System\nAINLP Protocol: OS0.6.2.claude\nPattern: Selective extraction with bidirectional traceability\n\nPurpose: Monitor upstream repositories (like Microsoft Agent Fram",
+      "functions": [
+        "UpstreamCommit",
+        "UpstreamTrackingState",
+        "UpstreamTracker",
+        "main"
+      ],
+      "dependencies": [
+        "import json",
+        "import subprocess",
+        "import re",
+        "from datetime import datetime, timezone",
+        "from pathlib import Path",
+        "from typing import Dict, List, Optional, Tuple",
+        "from dataclasses import dataclass, asdict"
+      ],
+      "last_modified": "2025-10-09T20:30:28.905046"
+    }
+  ],
+  "duplicates": {}
+}

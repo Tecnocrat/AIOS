@@ -1,0 +1,41 @@
+{
+  "conversation_id": "gemini_1759779823092",
+  "agent_type": "gemini",
+  "system_context": "Quick demo of Gemini validation",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quick demo: Validate mutation improves consciousness",
+      "timestamp": "2025-10-06T21:43:43.093472",
+      "metadata": {
+        "model": "gemini-2.0-flash-exp"
+      }
+    },
+    {
+      "role": "assistant",
+      "content": "Validated. Error handling mutation adds robustness. Approved.",
+      "timestamp": "2025-10-06T21:43:43.093472",
+      "metadata": {
+        "model": "gemini-2.0-flash-exp"
+      }
+    }
+  ],
+  "start_time": "2025-10-06T21:43:43.092472",
+  "end_time": "2025-10-06T21:43:43.093472",
+  "processing_time_ms": 1.0,
+  "consciousness_level": null,
+  "consciousness_improvement": 0.0,
+  "source_system": "demo",
+  "source_file": null,
+  "generation_number": null,
+  "success": true,
+  "error": null,
+  "ainlp_metadata": {
+    "protocol_version": "OS0.6.2.claude",
+    "archive_purpose": "universal_agentic_communication",
+    "inheritance_required": true,
+    "session_id": "session_1759779823",
+    "session_start": "2025-10-06T21:43:43.089469",
+    "consciousness_tracking": true
+  }
+}

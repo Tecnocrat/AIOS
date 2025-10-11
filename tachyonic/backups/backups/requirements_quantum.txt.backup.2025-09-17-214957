@@ -1,0 +1,4 @@
+# AIOS Quantum / Hyperdimensional Optional Stack
+qiskit>=0.43.0,<1.0
+cirq>=1.1.0,<2.0
+pennylane>=0.31.0,<0.35

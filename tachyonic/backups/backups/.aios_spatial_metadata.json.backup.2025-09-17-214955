@@ -1,0 +1,172 @@
+{
+  "spatial_metadata_version": "2.0.0",
+  "generation_timestamp": "2025-09-17T18:05:22.553895+00:00",
+  "folder_info": {
+    "name": "logs",
+    "absolute_path": "C:\\dev\\AIOS\\runtime_intelligence\\logs",
+    "relative_path": "runtime_intelligence\\logs",
+    "parent_path": "runtime_intelligence",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Runtime Intelligence",
+    "secondary_areas": [
+      "Monitoring",
+      "Runtime Intelligence"
+    ],
+    "path_classification": [
+      "runtime_intelligence",
+      "logs"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "aios_cellular_workspace",
+      "analysis",
+      "context",
+      "iterations",
+      "tools"
+    ],
+    "child_folders": [
+      "agent",
+      "aios_context",
+      "cache",
+      "core",
+      "evolution",
+      "file_scores",
+      "hooks",
+      "sessions",
+      "subprocess",
+      "system",
+      "tachyonic",
+      "ui",
+      "vision",
+      "vision_demo"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 4124585,
+      "file_count": 107,
+      "folder_count": 14,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      "documentation": [
+        ".aios_spatial_metadata.json"
+      ],
+      "temporary": [
+        "biological_architecture_monitor.log",
+        "iteration_20250810_230049.log",
+        "iteration_20250810_230126.log",
+        "iteration_20250810_230210.log",
+        "iteration_20250810_230321.log",
+        "iteration_20250829_094844.log",
+        "iteration_20250912_223527.log",
+        "session_AIOS_20250629_180230_50025c77.log",
+        "session_AIOS_20250629_183936_a3858d84.log",
+        "session_AIOS_20250629_184049_81e7fc9b.log",
+        "session_AIOS_20250629_184450_aa9946cd.log",
+        "session_AIOS_20250629_184507_9464ba0f.log",
+        "session_AIOS_20250629_190857_b0bb11f0.log",
+        "session_AIOS_20250629_191051_57c4794e.log",
+        "session_AIOS_20250629_193313_4c55a194.log",
+        "session_AIOS_20250629_193326_6b96e003.log",
+        "session_AIOS_20250629_193632_43468db0.log",
+        "session_AIOS_20250629_194824_a4e5c75f.log",
+        "session_AIOS_20250629_194855_75e1ca7e.log",
+        "session_AIOS_20250629_195112_9a944e8d.log",
+        "session_AIOS_20250629_200652_2aed5aab.log",
+        "session_AIOS_20250629_200900_c796af25.log",
+        "session_AIOS_20250629_211142_0d847d6e.log",
+        "session_AIOS_20250629_213933_85c82ac0.log",
+        "session_AIOS_20250811_214931_a7d76ed1.log",
+        "session_AIOS_20250811_220407_3e2543c7.log",
+        "session_AIOS_20250811_220422_48da9d15.log",
+        "session_AIOS_20250813_235739_d04bb138.log",
+        "session_AIOS_20250816_172409_0485427a.log",
+        "session_AIOS_20250816_174844_47b01432.log",
+        "session_AIOS_20250829_114350_09456140.log"
+      ],
+      "other": [
+        "canonical_mutations.jsonl",
+        "dendritic_commit_learning.jsonl",
+        "pre_push_failures.jsonl",
+        "pre_push_success.jsonl"
+      ]
+    },
+    "important_files": [
+      ".aios_spatial_metadata.json",
+      "session_AIOS_20250629_180230_50025c77.log",
+      "session_AIOS_20250629_183936_a3858d84.log",
+      "session_AIOS_20250629_184049_81e7fc9b.log",
+      "session_AIOS_20250629_184450_aa9946cd.log",
+      "session_AIOS_20250629_184507_9464ba0f.log",
+      "session_AIOS_20250629_190857_b0bb11f0.log",
+      "session_AIOS_20250629_191051_57c4794e.log",
+      "session_AIOS_20250629_193313_4c55a194.log",
+      "session_AIOS_20250629_193326_6b96e003.log"
+    ],
+    "recent_files": [
+      {
+        "name": "dendritic_commit_learning.jsonl",
+        "modified": "2025-09-17T15:47:22.449339"
+      },
+      {
+        "name": ".aios_spatial_metadata.json",
+        "modified": "2025-09-17T15:47:19.896527"
+      },
+      {
+        "name": "pre_push_success.jsonl",
+        "modified": "2025-09-17T15:22:00.320027"
+      },
+      {
+        "name": "pre_push_failures.jsonl",
+        "modified": "2025-09-14T20:42:47.060593"
+      },
+      {
+        "name": "biological_architecture_monitor.log",
+        "modified": "2025-09-13T13:23:37.196132"
+      },
+      {
+        "name": "iteration_20250912_223527.log",
+        "modified": "2025-09-13T00:35:27.552308"
+      },
+      {
+        "name": "canonical_mutations.jsonl",
+        "modified": "2025-09-07T14:42:23.865403"
+      },
+      {
+        "name": "iteration_20250829_094844.log",
+        "modified": "2025-08-29T11:48:44.929706"
+      },
+      {
+        "name": "session_AIOS_20250829_114350_09456140.log",
+        "modified": "2025-08-29T11:46:34.335027"
+      }
+    ],
+    "content_summary": {
+      "total_files": 36,
+      "file_types": [
+        "documentation",
+        "temporary",
+        "other"
+      ],
+      "dominant_type": "temporary"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-17T18:05:22.589637+00:00",
+    "last_updated": "2025-09-17T18:05:22.589637+00:00",
+    "generator_version": "2.0.0-unified",
+    "git_aware": true,
+    "lightweight_mode": true
+  }
+}

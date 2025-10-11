@@ -36,7 +36,7 @@ class InterfaceBridgeManager:
             with open(self.log_file, 'w') as log:
                 process = subprocess.Popen(
                     [sys.executable, "-m", "uvicorn",
-                     "ai.core.interface_bridge:app",
+                     "ai.nucleus.interface_bridge:app",
                      "--host", "localhost", "--port", "8000"],
                     cwd=r"C:\dev\AIOS",
                     creationflags=creationflags,
@@ -48,7 +48,7 @@ class InterfaceBridgeManager:
             # Unix-like systems
             process = subprocess.Popen(
                 [sys.executable, "-m", "uvicorn", 
-                 "ai.core.interface_bridge:app", 
+                 "ai.nucleus.interface_bridge:app", 
                  "--host", "localhost", "--port", "8000"],
                 cwd=r"C:\dev\AIOS",
                 stdout=subprocess.DEVNULL,

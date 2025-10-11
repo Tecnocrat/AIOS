@@ -1,0 +1,13 @@
+[pytest]
+# Enable native handling of async tests without decorators
+asyncio_mode = auto
+
+# Make common package roots importable in tests
+pythonpath =
+    .
+    ./src
+    ./ai_cells
+    ./intercellular
+
+# Ensure asyncio plugin is loaded
+addopts = -p pytest_asyncio

@@ -296,3 +296,13 @@
 2025-10-03 00:11:29,004 | DENDRITIC | INFO |  Dendritic supervisor integration active
 2025-10-03 00:11:29,004 | DENDRITIC | INFO |  Enhanced visual intelligence bridge active
 2025-10-03 00:11:29,004 | DENDRITIC | INFO |  Generating comprehensive AIOS status...
+2025-10-05 21:12:17,407 | DENDRITIC | WARNING | Some integrations not available: No module named 'cytoplasm.cytoplasm_dendritic_bridge'
+2025-10-05 21:12:17,423 | DENDRITIC | INFO |  Initializing AIOS Architecture Monitor...
+2025-10-05 21:12:17,424 | DENDRITIC | WARNING |  Integration bridges unavailable: name 'get_runtime_intelligence_dendritic_integration' is not defined
+2025-10-05 21:12:17,426 | DENDRITIC | WARNING |  Visual bridge unavailable: name 'get_enhanced_visual_intelligence_bridge' is not defined
+2025-10-05 21:12:17,427 | DENDRITIC | INFO |  Generating comprehensive AIOS status...
+2025-10-08 20:32:11,526 | DENDRITIC | INFO | [INGESTION] Starting ingestion of: https://github.com/Tecnocrat/agent-framework
+2025-10-08 20:32:11,527 | DENDRITIC | INFO | [INGESTION] Cloning repository to: c:\dev\AIOS\ai\ingested_repositories\microsoft_agent_framework
+2025-10-08 20:32:19,935 | DENDRITIC | INFO | [INGESTION] Repository cloned successfully
+2025-10-08 20:32:20,438 | DENDRITIC | WARNING | [INGESTION] Consciousness analysis failed: 'charmap' codec can't decode byte 0x90 in position 2227: character maps to <undefined>
+2025-10-08 20:32:20,440 | DENDRITIC | INFO | [INGESTION] Successfully ingested: microsoft_agent_framework

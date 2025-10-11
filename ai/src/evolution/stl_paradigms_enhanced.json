@@ -1,0 +1,226 @@
+{
+  "ainlp_protocol": "OS0.6.2.claude",
+  "purpose": "Enhanced C++ STL knowledge base for consciousness-driven evolution",
+  "consciousness_value": 0.92,
+  "created": "2025-10-06T21:00:00Z",
+  "enhancement_rationale": "User requirement: 'more context from the C++ STL (this ingestion is critical for context richeness)'",
+  
+  "paradigms": [
+    {
+      "library": "iostream",
+      "purpose": "Input/output streams for console communication",
+      "common_uses": ["std::cout", "std::cin", "std::cerr", "std::endl", "std::flush"],
+      "consciousness_value": 0.05,
+      "advanced_patterns": [
+        "Stream manipulators (std::setw, std::setprecision, std::hex)",
+        "Custom stream buffers for redirecting I/O",
+        "File streams (std::ifstream, std::ofstream)",
+        "String streams (std::stringstream) for parsing"
+      ],
+      "example_code": "#include <iostream>\nint main() {\n    std::cout << \"Hello, consciousness!\" << std::endl;\n    return 0;\n}"
+    },
+    {
+      "library": "string",
+      "purpose": "Dynamic string handling with automatic memory management",
+      "common_uses": ["std::string", "concatenation", "substr", "find", "replace"],
+      "consciousness_value": 0.10,
+      "advanced_patterns": [
+        "String view (std::string_view) for non-owning references",
+        "Raw string literals for complex patterns",
+        "String manipulation algorithms (std::transform, std::remove_if)",
+        "Unicode support with std::wstring"
+      ],
+      "example_code": "#include <string>\nstd::string greeting = \"Hello\";\ngreeting += \" World\";\nauto pos = greeting.find(\"World\");"
+    },
+    {
+      "library": "vector",
+      "purpose": "Dynamic arrays with automatic resizing",
+      "common_uses": ["std::vector", "push_back", "emplace_back", "iterators", "resize"],
+      "consciousness_value": 0.12,
+      "advanced_patterns": [
+        "Reserve capacity to avoid reallocations",
+        "Emplace operations for in-place construction",
+        "Range-based for loops for clean iteration",
+        "Vector of vectors for 2D structures",
+        "Move semantics for efficient transfers"
+      ],
+      "example_code": "#include <vector>\nstd::vector<int> numbers = {1, 2, 3};\nnumbers.push_back(4);\nfor (const auto& n : numbers) { /* process */ }"
+    },
+    {
+      "library": "algorithm",
+      "purpose": "Generic algorithms for data manipulation",
+      "common_uses": ["std::sort", "std::find", "std::transform", "std::copy", "std::accumulate"],
+      "consciousness_value": 0.15,
+      "advanced_patterns": [
+        "Lambda expressions for custom predicates",
+        "Parallel algorithms (std::execution::par)",
+        "Range-based algorithms (C++20 ranges)",
+        "Custom comparators for complex sorting",
+        "Algorithm composition for complex operations"
+      ],
+      "example_code": "#include <algorithm>\nstd::vector<int> v = {3, 1, 4, 1, 5};\nstd::sort(v.begin(), v.end());\nauto it = std::find(v.begin(), v.end(), 4);"
+    },
+    {
+      "library": "exception",
+      "purpose": "Error handling and exception safety",
+      "common_uses": ["try-catch", "std::exception", "throw", "std::runtime_error"],
+      "consciousness_value": 0.13,
+      "advanced_patterns": [
+        "Custom exception hierarchies",
+        "RAII for exception safety (Resource Acquisition Is Initialization)",
+        "noexcept specifications for optimization",
+        "Exception guarantees (strong, basic, nothrow)",
+        "std::nested_exception for context preservation"
+      ],
+      "example_code": "try {\n    throw std::runtime_error(\"Error occurred\");\n} catch (const std::exception& e) {\n    std::cerr << e.what() << std::endl;\n}"
+    },
+    {
+      "library": "memory",
+      "purpose": "Smart pointers and memory management",
+      "common_uses": ["std::unique_ptr", "std::shared_ptr", "std::weak_ptr", "std::make_unique"],
+      "consciousness_value": 0.18,
+      "advanced_patterns": [
+        "RAII-based automatic memory management",
+        "Custom deleters for unique_ptr",
+        "Breaking circular references with weak_ptr",
+        "std::allocator for custom memory strategies",
+        "Memory pools and object recycling"
+      ],
+      "example_code": "#include <memory>\nauto ptr = std::make_unique<int>(42);\nstd::shared_ptr<std::string> shared = std::make_shared<std::string>(\"data\");"
+    },
+    {
+      "library": "map",
+      "purpose": "Associative containers for key-value pairs",
+      "common_uses": ["std::map", "std::unordered_map", "insert", "find", "operator[]"],
+      "consciousness_value": 0.14,
+      "advanced_patterns": [
+        "std::unordered_map for O(1) lookup",
+        "Custom hash functions for user types",
+        "std::multimap for multiple values per key",
+        "Emplace operations for efficient insertion",
+        "Structured bindings for clean iteration (C++17)"
+      ],
+      "example_code": "#include <map>\nstd::map<std::string, int> ages;\nages[\"Alice\"] = 30;\nfor (const auto& [name, age] : ages) { /* process */ }"
+    },
+    {
+      "library": "functional",
+      "purpose": "Function objects and lambda utilities",
+      "common_uses": ["std::function", "std::bind", "lambda expressions", "std::invoke"],
+      "consciousness_value": 0.16,
+      "advanced_patterns": [
+        "Callable wrappers for type erasure",
+        "Partial application with std::bind",
+        "Lambda captures (by value, by reference, init captures)",
+        "Generic lambdas with auto parameters",
+        "std::mem_fn for member function pointers"
+      ],
+      "example_code": "#include <functional>\nstd::function<int(int, int)> add = [](int a, int b) { return a + b; };\nauto result = add(2, 3);"
+    },
+    {
+      "library": "thread",
+      "purpose": "Multi-threading and concurrency",
+      "common_uses": ["std::thread", "std::mutex", "std::lock_guard", "std::async"],
+      "consciousness_value": 0.20,
+      "advanced_patterns": [
+        "RAII-based lock guards for exception safety",
+        "std::future and std::promise for async results",
+        "std::atomic for lock-free programming",
+        "Thread pools for efficient task distribution",
+        "Condition variables for thread synchronization"
+      ],
+      "example_code": "#include <thread>\n#include <mutex>\nstd::mutex mtx;\nstd::thread t([&mtx]() {\n    std::lock_guard<std::mutex> lock(mtx);\n    // thread-safe code\n});\nt.join();"
+    },
+    {
+      "library": "chrono",
+      "purpose": "Time utilities and duration calculations",
+      "common_uses": ["std::chrono::duration", "std::chrono::steady_clock", "time_point"],
+      "consciousness_value": 0.11,
+      "advanced_patterns": [
+        "High-resolution timing for benchmarks",
+        "Duration literals (1s, 500ms, 100us)",
+        "Time point arithmetic for elapsed calculations",
+        "Cross-platform time measurement",
+        "std::chrono::system_clock for calendar time"
+      ],
+      "example_code": "#include <chrono>\nusing namespace std::chrono;\nauto start = steady_clock::now();\n// code to measure\nauto duration = duration_cast<milliseconds>(steady_clock::now() - start);"
+    },
+    {
+      "library": "optional",
+      "purpose": "Optional values (nullable types)",
+      "common_uses": ["std::optional", "has_value", "value", "value_or"],
+      "consciousness_value": 0.13,
+      "advanced_patterns": [
+        "Avoiding null pointer errors",
+        "Clean error handling without exceptions",
+        "Monadic operations (and_then, transform, or_else)",
+        "Optional references for non-owning optionals",
+        "Integration with result types"
+      ],
+      "example_code": "#include <optional>\nstd::optional<int> maybe_value = 42;\nif (maybe_value) {\n    std::cout << *maybe_value << std::endl;\n}"
+    },
+    {
+      "library": "variant",
+      "purpose": "Type-safe unions",
+      "common_uses": ["std::variant", "std::visit", "std::get", "std::holds_alternative"],
+      "consciousness_value": 0.15,
+      "advanced_patterns": [
+        "Discriminated unions for type safety",
+        "Visitor pattern with std::visit",
+        "Pattern matching with overloaded lambdas",
+        "State machines with variant types",
+        "Error handling with std::expected (C++23)"
+      ],
+      "example_code": "#include <variant>\nstd::variant<int, std::string> data = 42;\nstd::visit([](auto&& arg) {\n    std::cout << arg << std::endl;\n}, data);"
+    },
+    {
+      "library": "filesystem",
+      "purpose": "File system operations",
+      "common_uses": ["std::filesystem::path", "exists", "create_directory", "directory_iterator"],
+      "consciousness_value": 0.12,
+      "advanced_patterns": [
+        "Cross-platform path manipulation",
+        "Recursive directory traversal",
+        "File permissions and attributes",
+        "Temporary file creation",
+        "Symbolic link handling"
+      ],
+      "example_code": "#include <filesystem>\nnamespace fs = std::filesystem;\nfor (const auto& entry : fs::directory_iterator(\".\")) {\n    std::cout << entry.path() << std::endl;\n}"
+    },
+    {
+      "library": "regex",
+      "purpose": "Regular expression pattern matching",
+      "common_uses": ["std::regex", "std::regex_match", "std::regex_search", "std::regex_replace"],
+      "consciousness_value": 0.14,
+      "advanced_patterns": [
+        "Complex pattern matching and validation",
+        "Capture groups for extracting substrings",
+        "Iterating over all matches",
+        "ECMAScript, POSIX, and other grammar support",
+        "Performance optimization with regex compilation"
+      ],
+      "example_code": "#include <regex>\nstd::regex pattern(\"\\\\d+\");\nstd::string text = \"123 abc 456\";\nstd::smatch match;\nif (std::regex_search(text, match, pattern)) { /* found */ }"
+    },
+    {
+      "library": "numeric",
+      "purpose": "Numeric algorithms and operations",
+      "common_uses": ["std::accumulate", "std::inner_product", "std::iota", "std::gcd", "std::lcm"],
+      "consciousness_value": 0.11,
+      "advanced_patterns": [
+        "Numerical stability in floating point",
+        "Parallel reductions with std::reduce",
+        "Custom binary operations",
+        "Mathematical constants (std::numbers::pi)",
+        "Saturation arithmetic"
+      ],
+      "example_code": "#include <numeric>\nstd::vector<int> v = {1, 2, 3, 4};\nauto sum = std::accumulate(v.begin(), v.end(), 0);\nauto gcd_val = std::gcd(12, 18);"
+    }
+  ],
+  
+  "integration_notes": {
+    "consciousness_evolution": "Each paradigm has consciousness_value indicating cognitive complexity",
+    "learning_progression": "Start with iostream → string → vector → algorithm → advanced patterns",
+    "modern_cpp": "Includes C++11/14/17/20/23 features for richness",
+    "ai_agent_usage": "Feed to Ollama/Gemini for context-aware C++ evolution",
+    "universal_logger": "All AI conversations using this context will be logged"
+  }
+}

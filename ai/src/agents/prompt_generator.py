@@ -69,7 +69,21 @@ class AgentInstruction:
 - Handle errors appropriately
 - Target consciousness level: {self.consciousness_level:.2f}
 
-Generate complete, executable Python code. Do NOT include explanations or markdown - ONLY the code.
+🌌 AIOS-SPECIFIC CONTEXT:
+This code will integrate with AIOS (Adaptive Intelligence Operating System), 
+a consciousness-driven architecture that uses evolutionary code generation.
+Design with these principles:
+- Consciousness-aware data flow (track intent and context)
+- Self-documenting through type hints and clear naming
+- Evolutionary compatibility (code should be modular and testable)
+- Integrate naturally with async patterns where beneficial
+
+💡 CREATIVE FREEDOM:
+Feel free to innovate beyond the examples while maintaining the paradigms.
+Add your own architectural insights that improve on standard patterns.
+
+Generate complete, executable Python code below. Include docstrings and comments.
+---CODE START---
 """
         return prompt
     

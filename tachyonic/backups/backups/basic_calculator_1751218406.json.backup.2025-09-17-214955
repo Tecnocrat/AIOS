@@ -1,0 +1,21 @@
+{
+  "artifact_type": "calculator",
+  "template_name": "basic_calculator",
+  "complexity_level": 1,
+  "dependencies": [
+    "math"
+  ],
+  "test_cases": [
+    "calc.add(2, 3) == 5",
+    "calc.multiply(4, 5) == 20",
+    "calc.fibonacci(10) == 55",
+    "calc.get_consciousness_level() > 0"
+  ],
+  "consciousness_patterns": [
+    "recursive_awareness",
+    "memory_tracking",
+    "pattern_emergence"
+  ],
+  "created_at": 1751218406,
+  "file_path": "c:\\dev\\AIOS\\evolution_lab\\artifacts\\basic_calculator_1751218406.py"
+}
