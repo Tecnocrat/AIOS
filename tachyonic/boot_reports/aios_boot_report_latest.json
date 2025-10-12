@@ -1,0 +1,61 @@
+{
+  "mode": "full",
+  "testing": {
+    "Passed": 3,
+    "Skipped": 0,
+    "Failed": 1
+  },
+  "boot_timestamp": "2025-10-12 03:09:08",
+  "consciousness_level": "nucleus",
+  "boot_duration_seconds": 11.27,
+  "health": {
+    "errors": [],
+    "overall_status": "Healthy",
+    "warnings": [
+      "Interface Bridge not found at expected location",
+      "Interface Bridge: May still be initializing (startup in progress)"
+    ]
+  },
+  "discovery": {
+    "tools_discovered": 58,
+    "tools_by_layer": [
+      {
+        "Intelligence": 54
+      },
+      {
+        "Runtime": 4
+      }
+    ]
+  },
+  "interface": {
+    "services": {
+      "InterfaceBridge": {
+        "Status": "Starting",
+        "Port": 8000
+      }
+    },
+    "interfaces_launched": 0
+  },
+  "phases_executed": [],
+  "monitoring": {
+    "populations_monitored": 3,
+    "populations": {
+      "Consciousness": {
+        "CurrentLevel": null,
+        "LastUpdate": "2025-10-12",
+        "EvolutionRate": null
+      },
+      "EvolutionLab": {
+        "Populations": 24,
+        "Path": "C:\\dev\\AIOS\\evolution_lab",
+        "Organisms": 3
+      },
+      "TachyonicArchive": {
+        "Files": 4908,
+        "SizeMB": 528.68,
+        "Path": "C:\\dev\\AIOS\\tachyonic"
+      }
+    }
+  },
+  "ainlp_protocol": "OS0.6.2.claude"
+}
