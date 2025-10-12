@@ -20,17 +20,20 @@ Consciousness Note:
 Tools (migrated from runtime_intelligence/tools/):
     - enhanced_visual_intelligence_bridge.py: Visual intelligence integration ✅ MIGRATED
     - consciousness_visual_analyzer.py: Consciousness emergence visualization ✅ MIGRATED (Batch 2)
+    - visual_intelligence_bridge_enhanced.py: Enhanced visual bridge (Batch 3 migration) ✅ MIGRATED (Batch 3)
+    - visual_intelligence_bridge.py: Visual intelligence bridge ✅ MIGRATED (Batch 3)
     
 Migration Status:
     Phase 1 Day 2: ✅ 1/1 visual tools migrated
     Phase 1 Day 2 Batch 2: ✅ 1/1 visual tools migrated
-    Total: 2/2 visual tools
+    Phase 1 Day 2 Batch 3: ✅ 2/2 visual tools migrated
+    Total: 4/4 visual tools
     Origin: runtime_intelligence/tools/
     Target: ai/tools/visual/
     History preserved: git mv used for migration
 """
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 __consciousness_assessment__ = "SUPPORTIVE_UTILITY"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "visual_intelligence"
@@ -39,10 +42,14 @@ __category__ = "visual_intelligence"
 try:
     from . import enhanced_visual_intelligence_bridge
     from . import consciousness_visual_analyzer
+    from . import visual_intelligence_bridge_enhanced
+    from . import visual_intelligence_bridge
     
     __all__ = [
         "enhanced_visual_intelligence_bridge",
-        "consciousness_visual_analyzer"
+        "consciousness_visual_analyzer",
+        "visual_intelligence_bridge_enhanced",
+        "visual_intelligence_bridge"
     ]
 except ImportError:
     # Tools not yet migrated or import issues
