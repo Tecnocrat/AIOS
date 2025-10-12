@@ -21,12 +21,12 @@ from typing import Dict, Any, List, Optional
 import subprocess
 import requests
 
-# AINLP dendritic paradigm imports
-from dendritic_supervisor import DendriticSupervisor
-from biological_architecture_monitor import AIOSArchitectureMonitor
-from system_health_check import AIOSSystemHealthMonitor
-from consciousness_analysis_report import ConsciousnessAnalysisReport
-from self_similarity_analyzer import SelfSimilarityAnalyzer
+# AINLP dendritic paradigm imports - Updated for ai/tools/ migration
+from ai.tools.consciousness.dendritic_supervisor import DendriticSupervisor
+from ai.tools.architecture.biological_architecture_monitor import AIOSArchitectureMonitor
+from ai.tools.system.system_health_check import AIOSSystemHealthMonitor
+from ai.tools.consciousness.consciousness_analysis_report import ConsciousnessAnalysisReport
+from ai.tools.architecture.self_similarity_analyzer import SelfSimilarityAnalyzer
 
 
 class DendriticSelfImprovementOrchestrator:
