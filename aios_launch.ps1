@@ -237,12 +237,12 @@ function Invoke-AgentTesting {
     
     # Test Interface Bridge availability
     try {
-        $bridgePath = Join-Path $Global:AIOSRoot "ai\core\interface_bridge.py"
+        $bridgePath = Join-Path $Global:AIOSRoot "ai\nucleus\interface_bridge.py"
         if (Test-Path $bridgePath) {
-            Write-BootSuccess "Interface Bridge: Found at ai\core\interface_bridge.py"
+            Write-BootSuccess "Interface Bridge: Found at ai\nucleus\interface_bridge.py"
             $testResults.Passed++
         } else {
-            Write-BootWarning "Interface Bridge not found at expected location"
+            Write-BootWarning "Interface Bridge not found at expected location (ai\nucleus\interface_bridge.py)"
             $testResults.Failed++
         }
     } catch {
