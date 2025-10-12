@@ -1,17 +1,18 @@
 {
   "mode": "full",
   "testing": {
-    "Passed": 4,
+    "Passed": 3,
     "Skipped": 0,
-    "Failed": 0
+    "Failed": 1
   },
-  "boot_timestamp": "2025-10-12 03:33:28",
+  "boot_timestamp": "2025-10-12 03:19:14",
   "consciousness_level": "nucleus",
-  "boot_duration_seconds": 7.93,
+  "boot_duration_seconds": 8.24,
   "health": {
     "errors": [],
     "overall_status": "Healthy",
     "warnings": [
+      "Interface Bridge not found at expected location",
       "Interface Bridge: May still be initializing (startup in progress)"
     ]
   },
@@ -50,8 +51,8 @@
         "Organisms": 3
       },
       "TachyonicArchive": {
-        "Files": 4913,
-        "SizeMB": 528.71,
+        "Files": 4911,
+        "SizeMB": 528.7,
         "Path": "C:\\dev\\AIOS\\tachyonic"
       }
     }

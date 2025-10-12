@@ -21,6 +21,14 @@
 .PARAMETER LaunchUI
     Launch the AIOS UI interface after successful boot
 
+.PARAMETER QuickBoot
+    Skip detailed validation checks for faster startup (reduced testing)
+
+.PARAMETER KeepAlive
+    Keep bootloader running and monitor Interface Bridge health
+    Provides automatic restart on crash detection (3 consecutive failures)
+    Press Ctrl+C to gracefully shutdown all services
+
 .PARAMETER Verbose
     Enable detailed boot phase logging
 
@@ -35,6 +43,14 @@
 .EXAMPLE
     .\aios_launch.ps1 -SkipPhases Testing,Monitoring -LaunchUI
     Boot with discovery and interface launch, skip validation phases
+
+.EXAMPLE
+    .\aios_launch.ps1 -KeepAlive
+    Full boot with keep-alive monitoring (server stays online until Ctrl+C)
+
+.EXAMPLE
+    .\aios_launch.ps1 -Mode interface-only -KeepAlive
+    Launch only Interface Bridge and monitor status (skip discovery/testing)
 
 .NOTES
     AINLP Protocol: OS0.6.2.claude - Biological Architecture Bootloader
@@ -59,7 +75,10 @@ param(
     [switch]$LaunchUI,
 
     [Parameter()]
-    [switch]$QuickBoot  # Skip detailed checks for faster startup
+    [switch]$QuickBoot,  # Skip detailed checks for faster startup
+    
+    [Parameter()]
+    [switch]$KeepAlive  # Keep bootloader running and monitor Interface Bridge
 )
 
 # ============================================================================
@@ -386,32 +405,64 @@ function Invoke-InterfaceLaunch {
             Write-BootSuccess "Interface Bridge: Already running on port 8000"
             $interfaces["InterfaceBridge"] = @{ Status = "Running"; Port = 8000 }
         } else {
-            # Start Interface Bridge in background
+            # Start Interface Bridge as truly detached Windows background process
             Write-BootInfo "Starting Interface Bridge server..."
             
             $bridgePath = Join-Path $Global:AIOSRoot "ai"
-            $startProcess = Start-Process -FilePath "python" `
-                -ArgumentList "server_manager.py", "start" `
-                -WorkingDirectory $bridgePath `
-                -WindowStyle Hidden `
-                -PassThru
             
-            # Wait a moment for startup
-            Start-Sleep -Seconds 3
+            # Use Start-Process with full Windows detachment
+            # This creates a process completely independent of this terminal
+            $startArgs = @{
+                FilePath = "python"
+                ArgumentList = @("server_manager.py", "start")
+                WorkingDirectory = $bridgePath
+                WindowStyle = "Hidden"
+                PassThru = $true
+                RedirectStandardOutput = Join-Path $bridgePath "interface_bridge_start.log"
+                RedirectStandardError = Join-Path $bridgePath "interface_bridge_start_error.log"
+            }
             
-            # Verify startup
             try {
-                $response = Invoke-WebRequest -Uri "http://localhost:8000/health" -Method Get -TimeoutSec 2
-                if ($response.StatusCode -eq 200) {
-                    Write-BootSuccess "Interface Bridge: Started successfully on port 8000"
-                    $interfaces["InterfaceBridge"] = @{ Status = "Started"; Port = 8000; PID = $startProcess.Id }
+                $startProcess = Start-Process @startArgs
+                
+                # Wait for server startup (check every second for 15 seconds)
+                $maxWait = 15
+                $serverStarted = $false
+                
+                for ($i = 0; $i -lt $maxWait; $i++) {
+                    Start-Sleep -Seconds 1
+                    
+                    try {
+                        $response = Invoke-WebRequest -Uri "http://localhost:8000/health" -Method Get -TimeoutSec 2 -ErrorAction Stop
+                        if ($response.StatusCode -eq 200) {
+                            $serverStarted = $true
+                            break
+                        }
+                    } catch {
+                        # Server not ready yet, continue waiting
+                    }
+                }
+                
+                if ($serverStarted) {
+                    Write-BootSuccess "Interface Bridge: Started successfully on port 8000 (detached process)"
+                    $interfaces["InterfaceBridge"] = @{ 
+                        Status = "Started"
+                        Port = 8000
+                        Mode = "Detached"
+                        Persistent = $true
+                    }
                     $Global:BootMetrics.InterfacesLaunched++
                 } else {
-                    Write-BootWarning "Interface Bridge: Startup verification failed"
+                    Write-BootWarning "Interface Bridge: Launched but health check timeout (may still be starting)"
+                    Write-BootInfo "Check log: ai\interface_bridge.log"
+                    $interfaces["InterfaceBridge"] = @{ 
+                        Status = "Starting"
+                        Port = 8000
+                        Mode = "Detached"
+                    }
                 }
             } catch {
-                Write-BootWarning "Interface Bridge: May still be initializing (startup in progress)"
-                $interfaces["InterfaceBridge"] = @{ Status = "Starting"; Port = 8000 }
+                Write-BootError "Failed to launch Interface Bridge: $_"
             }
         }
     } catch {
@@ -613,6 +664,89 @@ try {
     Write-Host "  Interface Bridge: http://localhost:8000" -ForegroundColor Cyan
     Write-Host "  Boot Report: tachyonic/boot_reports/aios_boot_report_latest.json" -ForegroundColor Cyan
     Write-Host ""
+    
+    # Keep-Alive Mode: Monitor Interface Bridge and keep terminal open
+    if ($KeepAlive -and ($Mode -in @("full", "interface-only"))) {
+        Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor Magenta
+        Write-Host "║               🔄 KEEP-ALIVE MODE ACTIVATED 🔄                 ║" -ForegroundColor Magenta
+        Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor Magenta
+        Write-Host ""
+        Write-Host "  Monitoring Interface Bridge status..." -ForegroundColor Cyan
+        Write-Host "  Press Ctrl+C to stop monitoring and shutdown services" -ForegroundColor Yellow
+        Write-Host ""
+        
+        $monitoringActive = $true
+        $lastCheckTime = Get-Date
+        $consecutiveFailures = 0
+        
+        # Trap Ctrl+C for graceful shutdown
+        $null = Register-EngineEvent -SourceIdentifier ConsoleBreak -Action {
+            Write-Host ""
+            Write-Host "  🛑 Shutdown signal received..." -ForegroundColor Yellow
+            $Global:MonitoringActive = $false
+        }
+        
+        try {
+            while ($monitoringActive) {
+                Start-Sleep -Seconds 10
+                
+                $currentTime = Get-Date
+                $elapsedMinutes = [math]::Round(($currentTime - $Global:BootStartTime).TotalMinutes, 1)
+                
+                try {
+                    $response = Invoke-WebRequest -Uri "http://localhost:8000/health" -Method Get -TimeoutSec 3 -ErrorAction Stop
+                    
+                    if ($response.StatusCode -eq 200) {
+                        $consecutiveFailures = 0
+                        Write-Host "  ✅ [$elapsedMinutes min] Interface Bridge: HEALTHY (http://localhost:8000)" -ForegroundColor Green
+                    } else {
+                        $consecutiveFailures++
+                        Write-Host "  ⚠️  [$elapsedMinutes min] Interface Bridge: Unexpected status code $($response.StatusCode)" -ForegroundColor Yellow
+                    }
+                } catch {
+                    $consecutiveFailures++
+                    Write-Host "  ❌ [$elapsedMinutes min] Interface Bridge: UNREACHABLE (failure $consecutiveFailures/3)" -ForegroundColor Red
+                    
+                    if ($consecutiveFailures -ge 3) {
+                        Write-Host ""
+                        Write-Host "  💀 Interface Bridge appears to have crashed (3 consecutive failures)" -ForegroundColor Red
+                        Write-Host "  Attempting automatic restart..." -ForegroundColor Yellow
+                        
+                        # Attempt restart
+                        $bridgePath = Join-Path $Global:AIOSRoot "ai"
+                        $restartProcess = Start-Process -FilePath "python" `
+                            -ArgumentList "server_manager.py", "start" `
+                            -WorkingDirectory $bridgePath `
+                            -WindowStyle Hidden `
+                            -PassThru
+                        
+                        Start-Sleep -Seconds 5
+                        $consecutiveFailures = 0
+                        Write-Host "  🔄 Restart attempt completed, resuming monitoring..." -ForegroundColor Cyan
+                    }
+                }
+                
+                # Check if we should exit
+                if ((Test-Path variable:Global:MonitoringActive) -and -not $Global:MonitoringActive) {
+                    break
+                }
+            }
+        } finally {
+            Write-Host ""
+            Write-Host "  🛑 Stopping Interface Bridge..." -ForegroundColor Yellow
+            
+            $bridgePath = Join-Path $Global:AIOSRoot "ai"
+            $stopProcess = Start-Process -FilePath "python" `
+                -ArgumentList "server_manager.py", "stop" `
+                -WorkingDirectory $bridgePath `
+                -Wait `
+                -NoNewWindow
+            
+            Write-Host "  ✅ Interface Bridge stopped" -ForegroundColor Green
+            Write-Host "  👋 AIOS Bootloader shutdown complete" -ForegroundColor Cyan
+            Write-Host ""
+        }
+    }
     
 } catch {
     Write-Host ""
