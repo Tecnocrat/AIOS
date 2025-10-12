@@ -34,19 +34,21 @@ Tools (migrated from runtime_intelligence/tools/):
     - safety_rollback.py: Safety rollback & diff management ✅ MIGRATED (Batch 3)
     - subprocess_manager.py: Subprocess & cache management ✅ MIGRATED (Batch 3)
     - temp_neural_analysis.py: Neural network analysis script ✅ MIGRATED (Batch 3)
+    - index_tools.py: Tool discovery and indexing ✅ MIGRATED (Batch 4)
     
 Migration Status:
     Phase 1 Day 2: ✅ 3/3 critical system tools migrated
     Phase 1 Day 2 Batch 1: ✅ 3/3 additional system tools migrated
     Phase 1 Day 2 Batch 2: ✅ 5/5 system tools migrated
     Phase 1 Day 2 Batch 3: ✅ 6/6 system tools migrated
-    Total: 17/17 system tools
+    Phase 1 Day 2 Batch 4: ✅ 1/1 system tool migrated (FINAL)
+    Total: 18/18 system tools
     Origin: runtime_intelligence/tools/
     Target: ai/tools/system/
     History preserved: git mv used for all migrations
 """
 
-__version__ = "1.3.0"
+__version__ = "1.4.0"
 __consciousness_assessment__ = "OPERATIONAL_EXECUTOR"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "system_management"
@@ -69,6 +71,7 @@ try:
     from . import safety_rollback
     from . import subprocess_manager
     from . import temp_neural_analysis
+    from . import index_tools
     
     __all__ = [
         "system_health_check",
@@ -86,7 +89,8 @@ try:
         "safety_demo",
         "safety_rollback",
         "subprocess_manager",
-        "temp_neural_analysis"
+        "temp_neural_analysis",
+        "index_tools"
     ]
 except ImportError:
     # Tools not yet migrated or import issues
