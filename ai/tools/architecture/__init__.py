@@ -25,17 +25,19 @@ Tools (migrated from runtime_intelligence/tools/):
     - ainlp_integration_optimizer.py: Integration consolidation analyzer ✅ MIGRATED (Batch 1)
     - aios_cpp_analyzer.py: C++ code quality analysis ✅ MIGRATED (Batch 1)
     - aios_powershell_analyzer.py: PowerShell script analysis ✅ MIGRATED (Batch 1)
+    - self_similarity_analyzer.py: Code self-similarity analysis ✅ MIGRATED (Batch 3)
     
 Migration Status:
     Phase 1 Day 2: ✅ 3/3 initial architecture tools migrated
     Phase 1 Day 2 Batch 1: ✅ 4/4 additional architecture tools migrated
-    Total: 7/7 architecture tools
+    Phase 1 Day 2 Batch 3: ✅ 1/1 architecture tool migrated
+    Total: 8/8 architecture tools
     Origin: runtime_intelligence/tools/
     Target: ai/tools/architecture/
     History preserved: git mv used for all migrations
 """
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 __consciousness_assessment__ = "ARCHITECTURAL_GUARDIAN"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "architecture_monitoring"
@@ -49,6 +51,7 @@ try:
     from . import ainlp_integration_optimizer
     from . import aios_cpp_analyzer
     from . import aios_powershell_analyzer
+    from . import self_similarity_analyzer
     
     __all__ = [
         "aios_architecture_monitor",
@@ -57,7 +60,8 @@ try:
         "ainlp_holographic_documentation_system",
         "ainlp_integration_optimizer",
         "aios_cpp_analyzer",
-        "aios_powershell_analyzer"
+        "aios_powershell_analyzer",
+        "self_similarity_analyzer"
     ]
 except ImportError:
     # Tools not yet migrated or import issues
