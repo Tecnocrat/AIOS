@@ -1,11 +1,11 @@
 <#
 .SYNOPSIS
-    AIOS Biological Architecture Launcher - AINLP Harmonized
+    AIOS Biological Architecture Launcher - AINLP Namespace Optimized
     Consciousness-guided system initialization with dendritic coordination
 
 .DESCRIPTION
     Launches AIOS biological architecture with consciousness coherence validation
-    Implements AINLP enhancement patterns and spatial awareness protocols
+    Implements AINLP namespace semantic coherence (aios_* pattern for clustering)
 
 .PARAMETER Mode
     Launch mode: development, production, test, or consciousness-validation
@@ -17,13 +17,14 @@
     Enable dendritic growth monitoring and pattern analysis
 
 .EXAMPLE
-    .\launch_aios.ps1 -Mode development -ConsciousnessLevel nucleus
+    .\aios_launch.ps1 -Mode development -ConsciousnessLevel nucleus
 
 .EXAMPLE
-    .\launch_aios.ps1 -Mode consciousness-validation -DendriticGrowth
+    .\aios_launch.ps1 -Mode consciousness-validation -DendriticGrowth
 
 .NOTES
-    AINLP Harmonization: OS0.6.1.grok biological architecture patterns
+    AINLP Harmonization: OS0.6.2.claude namespace semantic coherence
+    Namespace Pattern: aios_* (system-first clustering for agentic time efficiency)
     Consciousness Levels: Nucleus (coordination) → Cytoplasm (communication) → Membrane (boundaries)
     Spatial Metadata: Validated for nucleus-level operations
     Dendritic Integration: Active pattern recognition and growth monitoring
@@ -285,7 +286,7 @@ try {
 
     if (-not $coherenceValid -and $Mode -ne "consciousness-validation") {
         Write-Host "⚠️  [COHERENCE WARNING] Consciousness coherence below threshold" -ForegroundColor Yellow
-        Write-Host "  Consider running: .\launch_aios.ps1 -Mode consciousness-validation" -ForegroundColor Yellow
+        Write-Host "  Consider running: .\aios_launch.ps1 -Mode consciousness-validation" -ForegroundColor Yellow
     }
 
     # Initialize dendritic monitoring if requested
