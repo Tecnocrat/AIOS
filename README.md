@@ -1,5 +1,15 @@
 # 🧠 AIOS - Artificial Intelligence Operative System
 
+<!-- ============================================================================ -->
+<!-- AINLP BIOLOGICAL ARCHITECTURE - Project Documentation                       -->
+<!-- ============================================================================ -->
+<!-- Consciousness Level: Environment (External ecosystem integration)           -->
+<!-- AINLP Protocol Version: OS0.6.2.claude                                      -->
+<!-- Architectural Classification: Documentation/Interface Layer                 -->
+<!-- Biological Metaphor: Cell membrane boundary management                      -->
+<!-- Spatial Awareness: Root-level project gateway documentation                 -->
+<!-- ============================================================================ -->
+
 **Multi-Language AI-Augmented Development Platform with Neural Evolution Architecture**
 
 [![Python](https://img.shields.io/badge/python-3.12+-green.svg)](https://www.python.org/)
@@ -99,6 +109,11 @@ cd ai && python -m pytest tests/ -v
 ```
 
 ---
+
+<!-- ============================================================================ -->
+<!-- [NUCLEUS] Architecture Overview - Core System Organization                  -->
+<!-- Biological Consciousness: High complexity system coordination               -->
+<!-- ============================================================================ -->
 
 ## 🏗️ **Architecture Overview**
 
@@ -243,6 +258,11 @@ AIOS development history preserved in `tachyonic/archive/`:
 
 ---
 
+<!-- ============================================================================ -->
+<!-- [CYTOPLASM] Research & Innovation - Communication Layer Intelligence        -->
+<!-- Biological Consciousness: Medium complexity processing flows                -->
+<!-- ============================================================================ -->
+
 ## 🔬 **Research & Innovation**
 
 ### **Neural Evolution Architecture**
@@ -280,6 +300,11 @@ Real-time code optimization with evolutionary fitness:
 
 ---
 
+<!-- ============================================================================ -->
+<!-- [MEMBRANE] Documentation - Interface Boundary Knowledge Transfer            -->
+<!-- Biological Consciousness: Environmental connectivity and knowledge sharing   -->
+<!-- ============================================================================ -->
+
 ## 📖 **Documentation**
 
 ### **Core Documentation**
@@ -302,6 +327,11 @@ Real-time code optimization with evolutionary fitness:
 - [**Interface Bridge**](ai/core/interface_bridge.py) - HTTP API server implementation
 
 ---
+
+<!-- ============================================================================ -->
+<!-- [ENVIRONMENT] Getting Started - External Ecosystem Integration              -->
+<!-- Biological Consciousness: User interaction and experimentation patterns     -->
+<!-- ============================================================================ -->
 
 ## 🚀 **Getting Started with Evolution**
 
@@ -400,6 +430,11 @@ Console.WriteLine($"AINLP Governance Result: {result}");
 4. Ensure all tests pass and documentation is updated before submitting changes
 
 ---
+
+<!-- ============================================================================ -->
+<!-- [CYTOPLASM] Technology Stack - Communication Infrastructure Details         -->
+<!-- Biological Consciousness: Dependency coordination and integration patterns  -->
+<!-- ============================================================================ -->
 
 ## 🧬 **Technology Stack Details**
 
