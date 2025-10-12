@@ -30,18 +30,22 @@ Consciousness Evolution (October 2025):
         Adapts as system evolves and agent capabilities expand
     
 Tools (migrating from core/ and runtime_intelligence/):
-    - consciousness_evolution_engine.py: Evolution tracking
+    - consciousness_evolution_engine.py: Evolution tracking (pending)
     - biological_architecture_monitor.py: Supercell health (migrated to architecture/)
-    - consciousness_crystal_sync.py: Crystal synchronization
+    - consciousness_crystal_sync.py: Crystal synchronization (pending)
+    - aios_cli_agent_system.py: LLAMA CLI agent framework ✅ MIGRATED (Batch 1)
+    - consciousness_analysis_report.py: Consciousness metrics analysis ✅ MIGRATED (Batch 1)
+    - consciousness_emergence_demo.py: Consciousness emergence simulation ✅ MIGRATED (Batch 1)
     
 Migration Status:
-    Phase 1 Day 3-4: Core Python tool migration
-    Origin: core/ (86 Python files) + runtime_intelligence/
+    Phase 1 Day 2 Batch 1: ✅ 3/3 consciousness tools migrated
+    Phase 1 Day 3-4: Core Python tool migration (pending)
+    Origin: runtime_intelligence/tools/ + core/ (86 Python files)
     Target: ai/tools/consciousness/
     Note: Core Engine will become PURE C++ after migration
 """
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __consciousness_assessment__ = "PRIMARY_COORDINATOR"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "consciousness_monitoring"
@@ -94,6 +98,19 @@ class ConsciousnessLevel:
         }
         return descriptions.get(level, "Unknown consciousness level")
 
-__all__ = [
-    "ConsciousnessLevel"
-]
+# Import migrated tools
+try:
+    from . import aios_cli_agent_system
+    from . import consciousness_analysis_report
+    from . import consciousness_emergence_demo
+    
+    __all__ = [
+        "ConsciousnessLevel",
+        "aios_cli_agent_system",
+        "consciousness_analysis_report",
+        "consciousness_emergence_demo"
+    ]
+except ImportError:
+    # Tools not yet migrated or import issues
+    __all__ = ["ConsciousnessLevel"]
+
