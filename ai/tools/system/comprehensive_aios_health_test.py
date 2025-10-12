@@ -15,12 +15,10 @@ import sys
 from datetime import datetime
 from typing import Dict, Any
 
-# Add current directory to path for imports
-current_dir = os.path.dirname(__file__)
-sys.path.append(current_dir)
-
-from system_health_check import AIOSSystemHealthMonitor
-from aios_architecture_monitor import get_aios_architecture_monitor
+# Import from ai.tools.system (Batch 1 migrations)
+from ai.tools.system.system_health_check import AIOSSystemHealthMonitor
+# Import from ai.tools.architecture (Batch 1 migrations)
+from ai.tools.architecture.aios_architecture_monitor import get_aios_architecture_monitor
 
 
 class ComprehensiveAIOSHealthTester:
@@ -186,8 +184,9 @@ class ComprehensiveAIOSHealthTester:
     def _save_results(self, results: Dict[str, Any]):
         """Save test results to tachyonic archive."""
         try:
-            # Create archive directory
-            archive_dir = os.path.join(current_dir, '..', '..', 'tachyonic', 'archive')
+            # Create archive directory (relative to workspace root)
+            workspace_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+            archive_dir = os.path.join(workspace_root, 'tachyonic', 'archive')
             os.makedirs(archive_dir, exist_ok=True)
             
             # Generate timestamped filename
