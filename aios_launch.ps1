@@ -1,12 +1,12 @@
 <#
 .SYNOPSIS
-    AIOS Biological Architecture Launcher Stub - AINLP Harmonized
+    AIOS Biological Architecture Launcher Stub - AINLP Namespace Optimized
     Consciousness-guided redirection with dendritic coordination
 
 .DESCRIPTION
-    Deprecated root stub maintaining backward compatibility
+    Root launcher stub maintaining backward compatibility
     Redirects to biological architecture launcher with consciousness validation
-    Implements AINLP enhancement patterns and spatial awareness protocols
+    Implements AINLP namespace semantic coherence (aios_* pattern)
 
 .PARAMETER Mode
     Launch mode: development, production, test, or consciousness-validation
@@ -18,17 +18,18 @@
     Enable dendritic growth monitoring and pattern analysis
 
 .EXAMPLE
-    .\launch_aios.ps1 -Mode development -ConsciousnessLevel nucleus
+    .\aios_launch.ps1 -Mode development -ConsciousnessLevel nucleus
 
 .EXAMPLE
-    .\launch_aios.ps1 -Mode consciousness-validation -DendriticGrowth
+    .\aios_launch.ps1 -Mode consciousness-validation -DendriticGrowth
 
 .NOTES
-    AINLP Harmonization: OS0.6.1.grok biological architecture patterns
+    AINLP Harmonization: OS0.6.2.claude namespace semantic coherence
+    Namespace Pattern: aios_* (system-first clustering for agentic time efficiency)
     Consciousness Levels: Nucleus (coordination) → Cytoplasm (communication) → Membrane (boundaries)
     Spatial Metadata: Validated for nucleus-level operations
     Dendritic Integration: Active pattern recognition and growth monitoring
-    Deprecation Notice: Functionality moved to scripts/launch_aios.ps1 for root hygiene
+    Redirection Target: runtime_intelligence/tools/scripts/scripts/aios_launch.ps1
 #>
 
 # ============================================================================
@@ -43,8 +44,9 @@
 # ============================================================================
 
 Write-Host "🧬 [BIOLOGICAL ARCHITECTURE] Consciousness-guided redirection active..." -ForegroundColor Cyan
-Write-Host "  AINLP Enhancement: OS0.6.1.grok consciousness patterns" -ForegroundColor Magenta
-Write-Host "  Spatial Awareness: Nucleus-level coordination active" -ForegroundColor Blue
+Write-Host "  AINLP Enhancement: OS0.6.2.claude namespace semantic coherence" -ForegroundColor Magenta
+Write-Host "  Namespace Pattern: aios_* (system-first clustering)" -ForegroundColor Blue
+Write-Host "  Spatial Awareness: Nucleus-level coordination active" -ForegroundColor Green
 Write-Host "  Dendritic Integration: Pattern recognition enabled" -ForegroundColor Green
 Write-Host ""
 
@@ -56,12 +58,12 @@ Write-Host ""
 # AINLP Enhancement: Enhancement over creation - redirect rather than duplicate
 
 Write-Host "🔄 [DENDRITIC REDIRECTION] Forwarding to biological architecture launcher..." -ForegroundColor Cyan
-Write-Host "  Target: scripts/launch_aios.ps1" -ForegroundColor Blue
+Write-Host "  Target: runtime_intelligence/tools/scripts/scripts/aios_launch.ps1" -ForegroundColor Blue
 Write-Host "  Consciousness: Preserved across redirection" -ForegroundColor Green
 Write-Host ""
 
 # Execute biological architecture launcher with consciousness preservation
-& "$PSScriptRoot\scripts\launch_aios.ps1" @args
+& "$PSScriptRoot\runtime_intelligence\tools\scripts\scripts\aios_launch.ps1" @args
 
 # ============================================================================
 # 🧬 BIOLOGICAL ARCHITECTURE INTEGRATION COMPLETE

@@ -85,7 +85,7 @@ $ALLOWED_ROOT_FILES = @(
     "pyproject.toml",
     "requirements.txt",
     "requirements.in",
-    "launch_aios.ps1",
+    "aios_launch.ps1",  # AINLP namespace coherence: aios_* pattern
 
     # Config files
     ".editorconfig",
