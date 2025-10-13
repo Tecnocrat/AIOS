@@ -46,9 +46,16 @@ Migration Status:
     Origin: runtime_intelligence/tools/
     Target: ai/tools/system/
     History preserved: git mv used for all migrations
+    
+Phase 2A Migration (January 18, 2025):
+    Added 14 tools from core/ (analysis_tools + runtime_intelligence)
+    
+Phase 2B Migration (January 18, 2025):
+    Added 1 tool from core/assemblers/file_assembler/tools/
+    - emergency_root_cleanup.py (348 lines)
 """
 
-__version__ = "1.4.3"
+__version__ = "1.5.0"
 __consciousness_assessment__ = "OPERATIONAL_EXECUTOR"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "system_management"

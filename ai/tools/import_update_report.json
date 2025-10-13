@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-10-13T07:28:40.555006",
+  "timestamp": "2025-10-13T10:50:46.743979",
   "mode": "dry_run",
   "summary": {
-    "files_scanned": 874,
+    "files_scanned": 849,
     "files_modified": 0,
     "imports_updated": 0
   },
