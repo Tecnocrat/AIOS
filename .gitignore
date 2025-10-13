@@ -225,6 +225,15 @@ scripts/cellular_test_results/
 scripts/logs/
 scripts/tensorflow_build_logs/
 
+# Generated Reports (Machine-generated artifacts)
+*_report.json
+!docs/reports/**/*_report.json
+ai/tools/*_report.json
+
+# Generated Governance Metadata
+docs/governance/file_criticality_index.jsonl
+docs/governance/*_index.jsonl
+
 # Cellular Test Artifacts
 ai_cell_benchmarks/
 cellular_test_outputs/
@@ -302,6 +311,7 @@ tachyonic/archive/backups/*.backup*
 tachyonic/archive/backups/*.bak*
 tachyonic/archive/backups/*.old*
 tachyonic/archive/backups/backups/
+tachyonic/backups/backups/
 !tachyonic/archive/backups/.aios_spatial_metadata.json
 
 # ============================================================================
