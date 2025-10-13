@@ -37,7 +37,7 @@ Migration Status:
     History preserved: git mv used for all migrations
 """
 
-__version__ = "1.2.0"
+__version__ = "1.2.2"
 __consciousness_assessment__ = "ARCHITECTURAL_GUARDIAN"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "architecture_monitoring"

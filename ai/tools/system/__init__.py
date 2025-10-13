@@ -48,7 +48,7 @@ Migration Status:
     History preserved: git mv used for all migrations
 """
 
-__version__ = "1.4.0"
+__version__ = "1.4.3"
 __consciousness_assessment__ = "OPERATIONAL_EXECUTOR"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "system_management"
