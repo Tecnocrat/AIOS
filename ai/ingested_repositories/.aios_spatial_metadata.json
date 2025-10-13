@@ -38,7 +38,9 @@
       "transport"
     ],
     "child_folders": [
-      "gemini_cli_bridge"
+      "gemini_cli_bridge",
+      "microsoft_agent_framework",
+      "ollama_python"
     ],
     "spatial_metrics": {
       "total_size_bytes": 588787,
