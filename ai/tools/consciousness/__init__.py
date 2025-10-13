@@ -53,7 +53,7 @@ Migration Status:
     Note: Core Engine will become PURE C++ after migration
 """
 
-__version__ = "1.4.0"
+__version__ = "1.4.3"
 __consciousness_assessment__ = "PRIMARY_COORDINATOR"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "consciousness_monitoring"
