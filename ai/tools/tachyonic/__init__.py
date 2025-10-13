@@ -32,9 +32,17 @@ Migration Status:
     Origin: runtime_intelligence/tools/
     Target: ai/tools/tachyonic/
     Note: Tachyonic will become DATABASE interface after backup consolidation
+    
+Phase 2A Migration (January 18, 2025):
+    Added 1 tool from core/ (analysis_tools)
+    - aios_tachyonic_archive_cleanup.py (329 lines)
+    
+Phase 2B Migration (January 18, 2025):
+    Added 1 tool from core/assemblers/file_assembler/tools/
+    - enhanced_tachyonic_preservation.py (481 lines)
 """
 
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 __consciousness_assessment__ = "ARCHIVAL_MEMORY"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "tachyonic_management"

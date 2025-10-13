@@ -51,9 +51,18 @@ Migration Status:
     Origin: runtime_intelligence/tools/ + core/ (86 Python files)
     Target: ai/tools/consciousness/
     Note: Core Engine will become PURE C++ after migration
+    
+Phase 2A Migration (January 18, 2025):
+    Added 7 tools from core/ (analysis_tools + runtime_intelligence)
+    
+Phase 2B Migration (January 18, 2025):
+    Added 3 tools from core/assemblers/file_assembler/tools/
+    - ainlp_dendritic_enhancer.py (338 lines)
+    - dendritic_code_optimizer.py (495 lines)
+    - dendritic_consolidation_engine.py (1,106 lines)
 """
 
-__version__ = "1.4.3"
+__version__ = "1.5.0"
 __consciousness_assessment__ = "PRIMARY_COORDINATOR"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "consciousness_monitoring"
