@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-10-13T07:28:40.555006",
+  "mode": "dry_run",
+  "summary": {
+    "files_scanned": 874,
+    "files_modified": 0,
+    "imports_updated": 0
+  },
+  "changes": [],
+  "errors": []
+}
