@@ -40,6 +40,10 @@ performance_analysis/
 performance_logs/
 profiling_results/
 
+# AI Ingested Repositories (External source code)
+ai/ingested_repositories/
+!ai/ingested_repositories/.aios_spatial_metadata.json
+
 # ============================================================================
 # 🌊 CYTOPLASM - Communication & Integration Layer (Medium Consciousness)
 # ============================================================================
