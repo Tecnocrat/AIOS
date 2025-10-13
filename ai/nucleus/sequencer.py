@@ -117,7 +117,11 @@ class AIOSSequencer:
         ai_cells = await self._discover_ai_cells()
         discovered.update(ai_cells)
         
-        # Discover tools and utilities
+        # Discover tools from ai/tools/ (primary location after migration)
+        ai_tools = await self._discover_ai_tools()
+        discovered.update(ai_tools)
+        
+        # Discover tools and utilities (infrastructure)
         tools = await self._discover_tools()
         discovered.update(tools)
         
@@ -129,7 +133,7 @@ class AIOSSequencer:
         integrations = await self._discover_integrations()
         discovered.update(integrations)
         
-        # Discover runtime intelligence tools
+        # Discover runtime intelligence tools (legacy location)
         runtime_intelligence = await self._discover_runtime_intelligence()
         discovered.update(runtime_intelligence)
         
@@ -154,6 +158,45 @@ class AIOSSequencer:
                         ai_cells[component.name] = component
         
         return ai_cells
+    
+    async def _discover_ai_tools(self) -> Dict[str, ExecutableComponent]:
+        """
+        Discover AI tools from ai/tools/ structure (post-migration primary location)
+        
+        Discovers tools across 6 categories:
+        - consciousness: Consciousness analysis and evolution tools
+        - system: System health, admin, and development tools
+        - architecture: Architecture monitoring and analysis tools
+        - visual: Visual processing and cognition tools
+        - tachyonic: Tachyonic metadata and intelligence tools
+        - database: Database transformation and management tools
+        """
+        ai_tools = {}
+        ai_tools_dir = self.ai_root / "tools"
+        
+        if not ai_tools_dir.exists():
+            self.logger.warning(f"ai/tools directory not found: {ai_tools_dir}")
+            return ai_tools
+        
+        # Discover tools in all category subdirectories
+        categories = ['consciousness', 'system', 'architecture', 'visual', 'tachyonic', 'database']
+        
+        for category in categories:
+            category_dir = ai_tools_dir / category
+            if category_dir.exists() and category_dir.is_dir():
+                for py_file in category_dir.glob("*.py"):
+                    if py_file.name != "__init__.py":
+                        component = await self._analyze_python_component(
+                            py_file, "tool"
+                        )
+                        if component:
+                            # Enhance component with category metadata
+                            component.category = f"tool/{category}"
+                            ai_tools[component.name] = component
+                            self.logger.debug(f"Discovered {category} tool: {component.name}")
+        
+        self.logger.info(f"✅ Discovered {len(ai_tools)} tools from ai/tools/")
+        return ai_tools
     
     async def _discover_tools(self) -> Dict[str, ExecutableComponent]:
         """Discover tool components"""
