@@ -3,17 +3,20 @@
 AIOS Import Path Update Automation
 ===================================
 
-Automatically updates import statements referencing migrated tools from
-runtime_intelligence/tools/ to new ai/tools/[category]/ structure.
+Automatically updates import statements for multiple migration patterns:
+1. runtime_intelligence/tools/ → ai/tools/[category]/ (Phase 1-2 tools)
+2. core.* → computational_layer.* (Phase 2C language separation)
 
 Usage:
     python ai/tools/update_import_paths.py --dry-run    # Preview changes
     python ai/tools/update_import_paths.py --execute    # Apply updates
     python ai/tools/update_import_paths.py --validate   # Test imports
+    python ai/tools/update_import_paths.py --phase2c    # Phase 2C only
 
 AINLP Integration: ai/tools/update_import_paths.py
-Purpose: Automate import path updates for 31 migrated tools
+Purpose: Automate import path updates for architectural migrations
 Category: system (automated maintenance utility)
+Migration Patterns: Phase 1-2 tools (31 tools) + Phase 2C (core→computational_layer)
 """
 
 import argparse
@@ -28,6 +31,48 @@ from typing import Dict, List, Tuple, Set, Optional
 
 # Workspace root
 ROOT = Path(__file__).resolve().parents[2]  # c:/dev/AIOS
+
+# Phase 2C: Core → Computational Layer module mappings
+# These are Python modules that were migrated from core/ to computational_layer/
+PHASE_2C_MODULES = {
+    # Assemblers (from core/assemblers/)
+    "tree_assembler",
+    "context_assembler", 
+    "integration_assembler",
+    "file_assembler",
+    
+    # Bridges (from core/bridges/)
+    "consciousness_bridge",
+    "tachyonic_bridge",
+    "transport_bridge",
+    "analysis_bridge",
+    
+    # Core Systems (from core/core_systems/)
+    "consciousness_monitor",
+    "cytoplasm_organizer",
+    "dendritic_optimizer",
+    
+    # Engines (from core/engines/)
+    "assembly_3d_engine",
+    "quantum_noise_engine",
+    "spherical_geometry_engine",
+    
+    # Modules (from core/modules/)
+    "connectivity_demo",
+    "file_monitor_supercell",
+    
+    # Runtime Intelligence (from core/runtime_intelligence/)
+    "evolution_monitor",
+    "meta_evolutionary_enhancer",
+    
+    # Utilities (from core/)
+    "common_patterns",
+    "shared_imports",
+    
+    # Other core modules that may be imported
+    "consciousness_emergence_analyzer",
+    "core_engine_supercell_interface",
+}
 
 # Tool category mappings (from migration batches)
 TOOL_CATEGORIES = {
@@ -81,7 +126,7 @@ TOOL_CATEGORIES = {
 }
 
 # Directories to exclude from scanning
-EXCLUDE_DIRS = {
+EXCLUDE_PATHS = {
     ".git",
     ".venv",
     ".venv314t",
@@ -94,7 +139,19 @@ EXCLUDE_DIRS = {
     "runtime_intelligence/tools",  # Exclude old tools directory
     "tachyonic/archive",  # Exclude archives
     "tachyonic/backups",
+    "docs/archive",  # Exclude all archived documentation
+    "evolution_lab",  # Exclude generated organisms
 }
+
+# Additional path patterns to exclude (contains check)
+EXCLUDE_PATTERNS = [
+    "backup_",
+    "archived_files",
+    ".backup",
+    "archive/",
+    "/archives/",
+    "compression/",
+]
 
 # File extensions to scan
 PYTHON_EXTENSIONS = {".py"}
@@ -117,14 +174,12 @@ class ImportPathUpdater:
         
         for path in ROOT.rglob("*.py"):
             # Skip excluded directories
-            if any(excluded in path.parts for excluded in EXCLUDE_DIRS):
+            if any(excluded in path.parts for excluded in EXCLUDE_PATHS):
                 continue
             
-            # Skip if in ai/tools or runtime_intelligence/tools
-            rel_path = path.relative_to(ROOT)
-            if str(rel_path).startswith("ai\\tools") or str(rel_path).startswith("ai/tools"):
-                continue
-            if str(rel_path).startswith("runtime_intelligence\\tools") or str(rel_path).startswith("runtime_intelligence/tools"):
+            # Skip paths containing exclusion patterns
+            rel_path_str = str(path.relative_to(ROOT))
+            if any(pattern in rel_path_str for pattern in EXCLUDE_PATTERNS):
                 continue
                 
             python_files.append(path)
@@ -234,6 +289,58 @@ class ImportPathUpdater:
         # Fallback: return original (shouldn't happen)
         return old_line
     
+    def detect_phase2c_imports(self, file_path: Path) -> List[Tuple[int, str, str]]:
+        """
+        Detect Phase 2C import statements (core.* → computational_layer.*).
+        
+        Returns:
+            List of (line_number, original_line, import_type) tuples
+            import_type: 'from_core_module', 'from_core_submodule', 'import_core'
+        """
+        detections = []
+        
+        try:
+            content = file_path.read_text(encoding="utf-8")
+            lines = content.splitlines()
+            
+            for line_num, line in enumerate(lines, 1):
+                stripped = line.strip()
+                
+                # Pattern 1: from core.module import ...
+                if stripped.startswith("from core."):
+                    detections.append((line_num, line, "from_core_module"))
+                    continue
+                
+                # Pattern 2: import core.module
+                if stripped.startswith("import core."):
+                    detections.append((line_num, line, "import_core"))
+                    continue
+                    
+        except Exception as e:
+            self.errors.append({
+                "file": str(file_path),
+                "error": f"Error reading file for Phase 2C: {e}"
+            })
+            
+        return detections
+    
+    def generate_phase2c_import(self, old_line: str, import_type: str) -> str:
+        """Generate new Phase 2C import statement (core → computational_layer)."""
+        
+        new_line = old_line
+        
+        if import_type == "from_core_module":
+            # from core.assemblers.tree_assembler import X
+            # → from computational_layer.assemblers.tree_assembler import X
+            new_line = re.sub(r'\bfrom core\.', 'from computational_layer.', old_line)
+        
+        elif import_type == "import_core":
+            # import core.assemblers
+            # → import computational_layer.assemblers
+            new_line = re.sub(r'\bimport core\.', 'import computational_layer.', old_line)
+        
+        return new_line
+    
     def update_file(self, file_path: Path, detections: List[Tuple[int, str, str, str]]) -> bool:
         """
         Update file with new import paths.
@@ -292,9 +399,75 @@ class ImportPathUpdater:
             })
             return False
     
-    def process_workspace(self):
-        """Process all Python files in workspace."""
+    def update_file_phase2c(self, file_path: Path, detections: List[Tuple[int, str, str]]) -> bool:
+        """
+        Update file with Phase 2C import paths (core → computational_layer).
+        
+        Returns:
+            True if file was modified, False otherwise
+        """
+        if not detections:
+            return False
+        
+        try:
+            # Read file content
+            content = file_path.read_text(encoding="utf-8")
+            lines = content.splitlines(keepends=True)
+            
+            # Create backup if not dry run
+            if not self.dry_run:
+                backup_path = file_path.with_suffix(file_path.suffix + ".backup")
+                shutil.copy2(file_path, backup_path)
+            
+            # Apply replacements
+            modified = False
+            for line_num, old_line, import_type in detections:
+                new_line = self.generate_phase2c_import(old_line, import_type)
+                
+                if new_line != old_line:
+                    # Update line (preserve line ending)
+                    idx = line_num - 1
+                    original_ending = "\n" if lines[idx].endswith("\n") else ""
+                    lines[idx] = new_line.rstrip() + original_ending
+                    
+                    modified = True
+                    self.imports_updated += 1
+                    
+                    # Record change
+                    self.changes.append({
+                        "file": str(file_path.relative_to(ROOT)),
+                        "line": line_num,
+                        "type": "phase2c",
+                        "pattern": import_type,
+                        "old": old_line.strip(),
+                        "new": new_line.strip()
+                    })
+            
+            # Write updated content if not dry run
+            if modified and not self.dry_run:
+                file_path.write_text("".join(lines), encoding="utf-8")
+                self.files_modified += 1
+            
+            return modified
+            
+        except Exception as e:
+            self.errors.append({
+                "file": str(file_path),
+                "error": f"Error updating file (Phase 2C): {e}"
+            })
+            return False
+    
+    def process_workspace(self, phase2c_only: bool = False):
+        """
+        Process all Python files in workspace.
+        
+        Args:
+            phase2c_only: If True, only process Phase 2C (core->computational_layer) imports.
+                         If False, process runtime_intelligence imports only.
+        """
+        migration_type = "Phase 2C (core -> computational_layer)" if phase2c_only else "Runtime Intelligence (runtime_intelligence.tools -> ai.tools)"
         print(f"[IMPORT PATH UPDATER] Scanning workspace: {ROOT}")
+        print(f"[IMPORT PATH UPDATER] Migration Type: {migration_type}")
         print(f"[IMPORT PATH UPDATER] Mode: {'DRY RUN' if self.dry_run else 'EXECUTE'}")
         print()
         
@@ -308,16 +481,23 @@ class ImportPathUpdater:
         for file_path in python_files:
             self.files_scanned += 1
             
-            # Detect old imports
-            detections = self.detect_old_imports(file_path)
+            if phase2c_only:
+                # Phase 2C: Detect core.* imports
+                detections = self.detect_phase2c_imports(file_path)
+                detection_type = "phase2c"
+            else:
+                # Original: Detect runtime_intelligence imports
+                detections = self.detect_old_imports(file_path)
+                detection_type = "runtime"
             
             if detections:
-                files_with_changes.append((file_path, detections))
+                files_with_changes.append((file_path, detections, detection_type))
                 rel_path = file_path.relative_to(ROOT)
-                print(f"[DETECT] {rel_path}: {len(detections)} old import(s) found")
+                count_msg = f"{len(detections)} {'core.*' if phase2c_only else 'runtime_intelligence'} import(s) found"
+                print(f"[DETECT] {rel_path}: {count_msg}")
         
         print()
-        print(f"[SUMMARY] {len(files_with_changes)} file(s) with old imports")
+        print(f"[SUMMARY] {len(files_with_changes)} file(s) with imports to update")
         print()
         
         # Update files
@@ -325,21 +505,32 @@ class ImportPathUpdater:
             print("[UPDATE] Processing updates...")
             print()
             
-            for file_path, detections in files_with_changes:
+            for file_path, detections, detection_type in files_with_changes:
                 rel_path = file_path.relative_to(ROOT)
-                modified = self.update_file(file_path, detections)
+                
+                # Use appropriate update method
+                if detection_type == "phase2c":
+                    modified = self.update_file_phase2c(file_path, detections)
+                else:
+                    modified = self.update_file(file_path, detections)
                 
                 if modified:
                     status = "PREVIEW" if self.dry_run else "UPDATED"
                     print(f"[{status}] {rel_path}: {len(detections)} import(s)")
         
         print()
-        self.print_report()
+        self.print_report(phase2c_mode=phase2c_only)
     
-    def print_report(self):
-        """Print detailed report of changes."""
+    def print_report(self, phase2c_mode: bool = False):
+        """
+        Print detailed report of changes.
+        
+        Args:
+            phase2c_mode: True if reporting Phase 2C migrations, False for runtime migrations
+        """
         print("=" * 80)
-        print("IMPORT PATH UPDATE REPORT")
+        migration_type = "PHASE 2C (core -> computational_layer)" if phase2c_mode else "RUNTIME (runtime_intelligence -> ai.tools)"
+        print(f"IMPORT PATH UPDATE REPORT - {migration_type}")
         print("=" * 80)
         print()
         
@@ -350,29 +541,54 @@ class ImportPathUpdater:
         print()
         
         if self.changes:
-            print("CHANGES BY CATEGORY:")
-            print()
-            
-            # Group by category
-            by_category = {}
-            for change in self.changes:
-                category = change['category']
-                by_category.setdefault(category, []).append(change)
-            
-            for category, changes in sorted(by_category.items()):
-                print(f"  {category.upper()}: {len(changes)} import(s)")
-            
-            print()
-            print("DETAILED CHANGES:")
-            print()
-            
-            for change in self.changes:
-                print(f"  File: {change['file']}")
-                print(f"  Line: {change['line']}")
-                print(f"  Tool: {change['tool']} → {change['category']}")
-                print(f"  Old:  {change['old']}")
-                print(f"  New:  {change['new']}")
+            if phase2c_mode:
+                # Phase 2C: Group by import pattern type
+                print("CHANGES BY PATTERN:")
                 print()
+                
+                by_pattern = {}
+                for change in self.changes:
+                    pattern = change.get('pattern', 'unknown')
+                    by_pattern.setdefault(pattern, []).append(change)
+                
+                for pattern, changes in sorted(by_pattern.items()):
+                    print(f"  {pattern}: {len(changes)} import(s)")
+                
+                print()
+                print("DETAILED CHANGES:")
+                print()
+                
+                for change in self.changes:
+                    print(f"  File: {change['file']}")
+                    print(f"  Line: {change['line']}")
+                    print(f"  Pattern: {change.get('pattern', 'unknown')}")
+                    print(f"  Old:  {change['old']}")
+                    print(f"  New:  {change['new']}")
+                    print()
+            else:
+                # Original: Group by category
+                print("CHANGES BY CATEGORY:")
+                print()
+                
+                by_category = {}
+                for change in self.changes:
+                    category = change.get('category', 'unknown')
+                    by_category.setdefault(category, []).append(change)
+                
+                for category, changes in sorted(by_category.items()):
+                    print(f"  {category.upper()}: {len(changes)} import(s)")
+                
+                print()
+                print("DETAILED CHANGES:")
+                print()
+                
+                for change in self.changes:
+                    print(f"  File: {change['file']}")
+                    print(f"  Line: {change['line']}")
+                    print(f"  Tool: {change.get('tool', 'unknown')} → {change.get('category', 'unknown')}")
+                    print(f"  Old:  {change['old']}")
+                    print(f"  New:  {change['new']}")
+                    print()
         
         if self.errors:
             print("ERRORS:")
@@ -451,7 +667,25 @@ class ImportPathUpdater:
 def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(
-        description="Update import paths for migrated AIOS tools"
+        description="Update import paths for migrated AIOS tools",
+        epilog="""
+Examples:
+  # Preview runtime_intelligence migrations (default)
+  python update_import_paths.py --dry-run
+  
+  # Apply runtime_intelligence migrations
+  python update_import_paths.py --execute
+  
+  # Preview Phase 2C core→computational_layer migrations
+  python update_import_paths.py --dry-run --phase2c
+  
+  # Apply Phase 2C migrations
+  python update_import_paths.py --execute --phase2c
+  
+  # Validate imports can be resolved
+  python update_import_paths.py --validate
+        """,
+        formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument(
         "--dry-run",
@@ -462,6 +696,11 @@ def main():
         "--execute",
         action="store_true",
         help="Apply changes to files (creates .backup files)"
+    )
+    parser.add_argument(
+        "--phase2c",
+        action="store_true",
+        help="Enable Phase 2C core→computational_layer migrations (default: runtime_intelligence migrations)"
     )
     parser.add_argument(
         "--validate",
@@ -481,9 +720,9 @@ def main():
         updater.validate_imports()
         return
     
-    # Update mode
+    # Update mode (with phase2c_only flag)
     updater = ImportPathUpdater(dry_run=args.dry_run)
-    updater.process_workspace()
+    updater.process_workspace(phase2c_only=args.phase2c)
     updater.save_report()
 
 
