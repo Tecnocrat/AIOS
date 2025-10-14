@@ -216,12 +216,12 @@ Impact: Cleaner build environment, improved discoverability
 - 📍 Working tree clean (no pending changes)
 - 📍 Ready for next optimization phase
 
-**What's Next** (Awaiting Decision):
-- ❓ Execute Core Optimization Phases 3-6 (docs/reports relocation)
-- ❓ OR investigate orchestrator/ first (204 files)
-- ❓ OR begin import path updates (computational_layer.*)
-- ❓ OR start database migration planning (tachyonic consolidation)
-- ❓ OR alternative priority
+**What's Next** (Immediate Action - Import Path Updates):
+1. ✅ **Documentation Governance Check**: Existing `ai/tools/update_import_paths.py` identified (runtime_intelligence → ai/tools migration)
+2. 🔧 **Enhance Existing Tool**: Add core → computational_layer pattern support (EXPANSION not proliferation)
+3. 🔍 **Scan Workspace**: Search for `from core.` and `import core.` patterns (~22 files expected)
+4. ✅ **Execute Updates**: Automated import path correction
+5. ✅ **Validate**: Interface Bridge tool discovery + build tests
 
 ### 📋 DECISION POINTS FOR USER
 
