@@ -4,8 +4,77 @@
 
 ### [OS0.6.2.claude] - 2025-01-18
 
+#### Import Path Updater - Phase 2C Support Added (Verification Required)
+**VIII. Import Path Automation - Phase 2C Detection** (Commit: [current]):
+- **PURPOSE**: Enhance existing import path updater with Phase 2C (core->computational_layer) support
+- **TOOL**: ai/tools/update_import_paths.py (537->731 lines, +194 lines)
+- **GOVERNANCE**: Documentation governance applied (expanded existing tool, not created new)
+
+**Enhancement Details**:
+- **PHASE2C_MODULES Mapping**: 7 computational_layer subdirectories (assemblers, bridges, core_systems, engines, modules, runtime_intelligence, utilities)
+- **detect_phase2c_imports()**: Detects 7 import patterns (from core.*, import core.*, etc.)
+- **generate_phase2c_import()**: Transforms core.* -> computational_layer.* (preserves aliases)
+- **update_file_phase2c()**: Phase 2C-specific file update logic (dry-run + execute modes)
+- **process_workspace()**: Enhanced with phase2c_only parameter (dual detection paths)
+- **print_report()**: Pattern-based grouping for Phase 2C migrations
+- **CLI Integration**: Added --phase2c flag with usage examples
+- **Exclusion Patterns**: Improved backup/archive file filtering
+
+**Phase 2C Detection Results** (dry-run mode):
+- Files scanned: 927 Python files
+- Files with core.* imports: 10 files
+- Import statements detected: 11 imports
+- Pattern: from_core_module (all imports)
+
+**CRITICAL DISCOVERY - Import Updates BLOCKED**:
+The detected modules are NOT in computational_layer/ yet!
+
+**Actual Module Locations**:
+- consciousness_emergence_analyzer -> ai/src/intelligence/ (not computational_layer/)
+- core_engine_supercell_interface -> tachyonic/ (not computational_layer/)
+- library_ingestion_protocol -> ai/src/intelligence/ (not computational_layer/)
+- analysis_tools, integration.mcp, intent_handlers -> core/ (C++ interfaces?)
+
+**Affected Files** (10 files with 11 imports):
+1. tachyonic/activate_tachyonic_evolution.py (core_engine_supercell_interface)
+2. tachyonic/aios_documentation_supercell_enhancer.py (analysis_tools x2)
+3. tachyonic/aios_unified_consciousness_system.py (analysis_tools)
+4. ai/infrastructure/ui_interaction_bridge.py (consciousness_emergence_analyzer)
+5. ai/src/engines/enhanced_visual_intelligence_engine.py (consciousness_emergence_analyzer)
+6. ai/src/integrations/visual_ai_integration_bridge.py (consciousness_emergence_analyzer)
+7. ai/src/intelligence/cpp_stl_ingestion_pipeline.py (library_ingestion_protocol)
+8. ai/src/parsers/cpp_documentation_parser.py (library_ingestion_protocol)
+9. ai/nucleus/src/mcp_server.py (integration.mcp)
+10. ai/infrastructure/dendritic/supervisor.py (intent_handlers)
+
+**Impact**: Applying suggested import changes would break all imports (modules don't exist at target locations)
+
+**Status**: Import updates BLOCKED - awaiting module location verification
+
+**Verification Required**:
+1. Which modules should migrate to computational_layer/?
+2. Which imports are C++ interfaces (should stay in core/)?
+3. Should imports point to actual current locations (ai/src/intelligence/, tachyonic/)?
+
+**Documentation**: docs/development/PHASE2C_IMPORT_VERIFICATION_REQUIRED.md (comprehensive analysis)
+
+**Tool Enhancement Success**:
+- ✅ Detection working (11 imports found)
+- ✅ Transformation logic implemented (7 patterns)
+- ✅ Dry-run preventing accidental breakage
+- ✅ Pattern-based reporting
+- ✅ CLI integration (--phase2c flag)
+
+**Next Action**: Verify module locations before applying import updates
+
+#### Core Optimization - Phases 1-6 Complete
+**VII. Core Directory Cleanup - 74.3% Reduction Achieved** (Commits: 2581970, 88dc466, 730ccfd):
+- **PURPOSE**: Clean core/ directory for pure C++ environment (C++/Python separation)
+- **TARGET ACHIEVED**: 553->142 files (411 files removed/relocated, 74.3% cleanup)
+- **PHASES COMPLETED**: Build artifacts, empty metadata, documentation relocation, reports relocation, orchestrator cleanup, legacy archival
+
 #### Ollama Python Library Ingestion - Local LLM Capability Added
-**I. External Knowledge Enhancement - Ollama SDK Integration** (Commit: [current]):
+**VI. External Knowledge Enhancement - Ollama SDK Integration** (Commit: [previous]):
 - **PURPOSE**: Add local LLM capability to AIOS via official Ollama Python SDK
 - **REPOSITORY**: ollama/ollama-python (commit 9ddd5f0, September 24, 2025)
 - **LOCATION**: ai/ingested_repositories/ollama_python/ (canonical source copy)
