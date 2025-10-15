@@ -36,7 +36,7 @@ sys.path.insert(0, str(AIOS_ROOT / "ai" / "src"))
 
 # Import AIOS core components
 try:
-    from core.library_ingestion_protocol import (
+    from computational_layer.library_ingestion_protocol import (
         LibraryIngestionProtocol,
         LibraryKnowledge,
         APIElement,
