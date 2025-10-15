@@ -1,11 +1,100 @@
 {
-  "timestamp": "2025-10-13T10:50:46.743979",
+  "timestamp": "2025-10-14T21:41:45.416135",
   "mode": "dry_run",
   "summary": {
-    "files_scanned": 849,
+    "files_scanned": 927,
     "files_modified": 0,
-    "imports_updated": 0
+    "imports_updated": 11
   },
-  "changes": [],
+  "changes": [
+    {
+      "file": "tachyonic\\activate_tachyonic_evolution.py",
+      "line": 37,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.core_engine_supercell_interface import CoreEngineSupercell",
+      "new": "from computational_layer.core_engine_supercell_interface import CoreEngineSupercell"
+    },
+    {
+      "file": "tachyonic\\aios_documentation_supercell_enhancer.py",
+      "line": 55,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.analysis_tools import CellularIntelligenceDiagnostic",
+      "new": "from computational_layer.analysis_tools import CellularIntelligenceDiagnostic"
+    },
+    {
+      "file": "tachyonic\\aios_documentation_supercell_enhancer.py",
+      "line": 56,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.analysis_tools.aios_core_consciousness_monitor import ConsciousnessMonitor",
+      "new": "from computational_layer.analysis_tools.aios_core_consciousness_monitor import ConsciousnessMonitor"
+    },
+    {
+      "file": "tachyonic\\aios_unified_consciousness_system.py",
+      "line": 44,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.analysis_tools import CellularIntelligenceDiagnostic",
+      "new": "from computational_layer.analysis_tools import CellularIntelligenceDiagnostic"
+    },
+    {
+      "file": "ai\\infrastructure\\ui_interaction_bridge.py",
+      "line": 23,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer",
+      "new": "from computational_layer.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer"
+    },
+    {
+      "file": "ai\\src\\engines\\enhanced_visual_intelligence_engine.py",
+      "line": 22,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer",
+      "new": "from computational_layer.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer"
+    },
+    {
+      "file": "ai\\src\\integrations\\visual_ai_integration_bridge.py",
+      "line": 17,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer",
+      "new": "from computational_layer.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer"
+    },
+    {
+      "file": "ai\\src\\intelligence\\cpp_stl_ingestion_pipeline.py",
+      "line": 39,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.library_ingestion_protocol import (",
+      "new": "from computational_layer.library_ingestion_protocol import ("
+    },
+    {
+      "file": "ai\\src\\parsers\\cpp_documentation_parser.py",
+      "line": 41,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.library_ingestion_protocol import (",
+      "new": "from computational_layer.library_ingestion_protocol import ("
+    },
+    {
+      "file": "ai\\nucleus\\src\\mcp_server.py",
+      "line": 11,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.integration.mcp import MCPServer, Tool",
+      "new": "from computational_layer.integration.mcp import MCPServer, Tool"
+    },
+    {
+      "file": "ai\\infrastructure\\dendritic\\supervisor.py",
+      "line": 40,
+      "type": "phase2c",
+      "pattern": "from_core_module",
+      "old": "from core.intent_handlers import IntentHandler",
+      "new": "from computational_layer.intent_handlers import IntentHandler"
+    }
+  ],
   "errors": []
 }
