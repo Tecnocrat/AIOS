@@ -34,7 +34,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from tachyonic.tachyonic_layer_reader import TachyonicLayerReader, TachyonicPatternType
 from ai.ai_intelligence_supercell_interface import AIIntelligenceSupercell
-from core.core_engine_supercell_interface import CoreEngineSupercell
+from tachyonic.core_engine_supercell_interface import CoreEngineSupercell
 from runtime_intelligence.runtime_intelligence_supercell_interface import RuntimeIntelligenceSupercell
 from interface.interface_supercell_interface import InterfaceSupercell
 from tachyonic.aios_universal_communication_system import UniversalCommunicationBus

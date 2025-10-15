@@ -19,7 +19,7 @@ ai_src_path = Path(__file__).parent.parent
 sys.path.insert(0, str(ai_src_path))
 
 # Import existing AI Intelligence components
-from core.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer
+from computational_layer.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer
 from integrations.visual_ai_integration_bridge import VisualAIIntegrationBridge
 
 # Import AI cellular components

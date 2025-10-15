@@ -20,7 +20,7 @@ sys.path.insert(0, str(ai_src_path))
 
 try:
     from integrations.visual_ai_integration_bridge import VisualAIIntegrationBridge
-    from core.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer
+    from computational_layer.consciousness_emergence_analyzer import ConsciousnessEmergenceAnalyzer
     from engines.enhanced_visual_intelligence_engine import EnhancedVisualIntelligenceEngine
 except ImportError as e:
     print(f"Warning: Could not import AI Intelligence components: {e}")
