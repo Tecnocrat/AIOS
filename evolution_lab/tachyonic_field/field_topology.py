@@ -71,7 +71,7 @@ class TachyonicField:
         >>> print(f"Emergent clusters: {summary['emergent_clusters']}")
     """
     
-    resonance_threshold: float = 0.7  # Minimum resonance for pattern connection
+    resonance_threshold: float = 0.3  # Minimum resonance for pattern connection (LOWERED for visible connections)
     patterns: Dict[str, PatternQuantum] = field(default_factory=dict)
     topology: nx.Graph = field(default_factory=nx.Graph)
     
