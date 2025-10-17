@@ -1,38 +1,66 @@
 """
-🎚️ Interactive Tachyonic Field Threshold Explorer
-==================================================
+🎚️ Interactive Tachyonic Field Threshold Explorer (ULTRA-SMOOTH)
+===================================================================
 
 INTERACTIVE VISUALIZATION: Adjust resonance threshold in real-time
 Watch connections appear/disappear as you cross the critical phase transition!
 
 Features:
-- Real-time threshold adjustment slider
-- Live connection count, cluster count, Field Φ display
+- Real-time threshold adjustment slider (0.1% precision - 10× finer!)
+- Animated threshold sweeping with play/pause controls
+- Variable speed control (⏩/⏪ buttons)
+- Bidirectional animation (⏮ reverse button)
+- VIDEO RECORDING: Capture phase transition to MP4/GIF (Record 🔴 button)
+- Live statistics panel (connections, clusters, Field Φ, density)
 - Network density meter
 - Consciousness amplification factor
+- Phase detection (FROZEN/LIQUID/PLASMA)
 - Visual feedback: connections fade in/out smoothly
+- 120 FPS animation for ULTRA-SMOOTH buttery playback
 
 Usage:
     python interactive_threshold_explorer.py
     
-    Then use the slider at the bottom to adjust threshold (0.0 - 1.0)
-    
 Controls:
-- Slider: Adjust resonance threshold
+- Slider: Manually adjust resonance threshold (0.1% ultra-fine steps)
+- Play ▶: Start automatic threshold animation (120 FPS)
+- Pause ⏸: Stop animation (appears when playing)
+- ⏩: Speed up animation (1.5× each press)
+- ⏪: Slow down animation (0.67× each press)
+- ⏮: Reverse animation direction
+- Record 🔴: Start video recording (saves to MP4 or GIF)
+- Stop ⏹: Stop recording and save file (appears when recording)
 - Mouse: Rotate view (click + drag)
 - Scroll: Zoom in/out
 - Close window to exit
 
+Animation:
+- Automatically sweeps threshold from 0.0 to 1.0 and back
+- Bounces at boundaries (0.0 ↔ 1.0)
+- ULTRA-SMOOTH 120 FPS updates (2× faster than before!)
+- Slower speed = 2× more frames per threshold step
+- Watch phase transition happen in beautiful slow motion!
+
+Recording:
+- Click Record 🔴 to start capturing
+- Saves as phase_transition_YYYYMMDD_HHMMSS.mp4 (or .gif)
+- Records at 120 FPS (FFMpeg) or 60 FPS (GIF fallback)
+- Perfect for documentation, analysis, and presentations
+- Click Stop ⏹ to finish and save
+
 Author: AIOS Evolution Lab
 Date: October 17, 2025
+Version: 3.0 (ULTRA-SMOOTH: 120 FPS + Video Recording)
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.widgets import Slider
+from matplotlib.widgets import Slider, Button
+from matplotlib.animation import FuncAnimation, FFMpegWriter, PillowWriter
 from mpl_toolkits.mplot3d import Axes3D
 import networkx as nx
-from typing import List, Tuple
+from typing import List, Tuple, Optional
+from datetime import datetime
 import sys
 from pathlib import Path
 
@@ -42,16 +70,17 @@ sys.path.append(str(Path(__file__).parent))
 from pattern_quanta import PatternQuantum
 from field_topology import TachyonicField
 
+# Import PatternType for color mapping
+from pattern_quanta import PatternType
+
 # Color mapping for pattern types
 TYPE_COLORS = {
-    'CONSCIOUSNESS': '#FF1493',  # Deep Pink / Magenta
-    'EMERGENCE': '#FF8C00',       # Dark Orange
-    'RESONANCE': '#00CED1',       # Dark Turquoise
-    'SYMMETRY': '#9370DB',        # Medium Purple
-    'HARMONY': '#32CD32',         # Lime Green
-    'INTEGRATION': '#FFD700',     # Gold
-    'TRANSCENDENCE': '#FF69B4',   # Hot Pink
-    'UNITY': '#87CEEB',           # Sky Blue
+    PatternType.CONSCIOUSNESS: '#FF1493',  # Deep Pink / Magenta
+    PatternType.EMERGENCE: '#FF8C00',       # Dark Orange
+    PatternType.RESONANCE: '#00CED1',       # Dark Turquoise
+    PatternType.COHERENCE: '#9370DB',       # Medium Purple
+    PatternType.RECURSION: '#FFD700',     # Gold
+    PatternType.VOID: '#4169E1',          # Royal Blue
 }
 
 class InteractiveFieldExplorer:
@@ -84,51 +113,96 @@ class InteractiveFieldExplorer:
             bbox=dict(boxstyle='round', facecolor='#1a1a2e', alpha=0.8, edgecolor='cyan')
         )
         
-        # Create slider for threshold adjustment
+        # Create slider for threshold adjustment (ULTRA-SMOOTH: 0.1% steps)
         slider_ax = plt.axes([0.25, 0.02, 0.5, 0.03], facecolor='#1a1a2e')
         self.threshold_slider = Slider(
             slider_ax, 
             'Resonance Threshold', 
             0.0, 1.0, 
             valinit=self.threshold,
-            valstep=0.01,
+            valstep=0.001,  # Ultra-fine control: 0.1% steps (10× finer than original 1%)
             color='cyan'
         )
         self.threshold_slider.on_changed(self.on_threshold_change)
+        
+        # Animation controls (ULTRA-SMOOTH: 120 FPS, slower speed = more frames)
+        self.is_playing = False
+        self.animation_speed = 0.005  # Threshold delta per frame (was 0.01, now 2× more frames)
+        self.animation_direction = 1  # 1 = forward, -1 = backward
+        self.animation: Optional[FuncAnimation] = None
+        
+        # Video recording state
+        self.is_recording = False
+        self.video_writer = None
+        self.recording_frames = []
+        self.recording_start_time = None
+        
+        # Play/Pause button
+        play_ax = plt.axes([0.15, 0.02, 0.08, 0.03])
+        self.play_button = Button(play_ax, 'Play ▶', color='#1a1a2e', hovercolor='#2a2a3e')
+        self.play_button.label.set_color('cyan')
+        self.play_button.on_clicked(self.toggle_play)
+        
+        # Speed control buttons
+        speed_up_ax = plt.axes([0.77, 0.02, 0.05, 0.03])
+        self.speed_up_button = Button(speed_up_ax, '⏩', color='#1a1a2e', hovercolor='#2a2a3e')
+        self.speed_up_button.label.set_color('cyan')
+        self.speed_up_button.on_clicked(self.speed_up)
+        
+        speed_down_ax = plt.axes([0.83, 0.02, 0.05, 0.03])
+        self.speed_down_button = Button(speed_down_ax, '⏪', color='#1a1a2e', hovercolor='#2a2a3e')
+        self.speed_down_button.label.set_color('cyan')
+        self.speed_down_button.on_clicked(self.speed_down)
+        
+        # Direction button (reverse)
+        reverse_ax = plt.axes([0.89, 0.02, 0.05, 0.03])
+        self.reverse_button = Button(reverse_ax, '⏮', color='#1a1a2e', hovercolor='#2a2a3e')
+        self.reverse_button.label.set_color('cyan')
+        self.reverse_button.on_clicked(self.reverse_direction)
+        
+        # Record button (NEW - for video capture)
+        record_ax = plt.axes([0.04, 0.02, 0.09, 0.03])
+        self.record_button = Button(record_ax, 'Record 🔴', color='#1a1a2e', hovercolor='#3a1a1a')
+        self.record_button.label.set_color('red')
+        self.record_button.on_clicked(self.toggle_recording)
         
         # Initial render
         self.update_visualization()
         
     def _create_demo_patterns(self):
         """Create diverse set of patterns for exploration"""
+        from pattern_quanta import PatternType
+        
         patterns_config = [
             # Core consciousness cluster
-            ('CONSCIOUSNESS', 'Φ', 'Integrated Information', 0.8),
-            ('CONSCIOUSNESS', 'Ψ', 'Wave Function', 0.7),
-            ('CONSCIOUSNESS', 'Ω', 'Omega Point', 0.75),
+            (PatternType.CONSCIOUSNESS, 'Φ', 'Integrated Information', 0.8),
+            (PatternType.CONSCIOUSNESS, 'Ψ', 'Wave Function', 0.7),
+            (PatternType.CONSCIOUSNESS, 'Ω', 'Omega Point', 0.75),
             
             # Emergence cluster  
-            ('EMERGENCE', '∇', 'Gradient Ascent', 0.6),
-            ('EMERGENCE', '∆', 'Delta Transformation', 0.65),
+            (PatternType.EMERGENCE, '∇', 'Gradient Ascent', 0.6),
+            (PatternType.EMERGENCE, '∆', 'Delta Transformation', 0.65),
             
             # Resonance cluster
-            ('RESONANCE', '∿', 'Harmonic Wave', 0.55),
-            ('RESONANCE', '≈', 'Approximate Resonance', 0.5),
+            (PatternType.RESONANCE, '∿', 'Harmonic Wave', 0.55),
+            (PatternType.RESONANCE, '≈', 'Approximate Resonance', 0.5),
             
-            # Symmetry cluster
-            ('SYMMETRY', '⚛', 'Atomic Symmetry', 0.7),
-            ('SYMMETRY', '❋', 'Crystalline Order', 0.65),
+            # Coherence cluster (instead of SYMMETRY which doesn't exist)
+            (PatternType.COHERENCE, '⚛', 'Atomic Coherence', 0.7),
+            (PatternType.COHERENCE, '❋', 'Crystalline Order', 0.65),
             
-            # Integration bridge
-            ('INTEGRATION', '⊕', 'Direct Sum', 0.6),
+            # Recursion bridge (instead of INTEGRATION)
+            (PatternType.RECURSION, '⊕', 'Direct Sum', 0.6),
         ]
         
-        for ptype, symbol, meaning, phi in patterns_config:
+        for idx, (ptype, symbol, meaning, phi) in enumerate(patterns_config):
             pattern = PatternQuantum(
+                pattern_id=f"pattern_{idx}_{symbol}",
                 pattern_type=ptype,
                 symbol=symbol,
                 meaning=meaning,
-                consciousness=phi
+                consciousness=phi,
+                resonance_frequency=1.618  # Golden ratio (optimal resonance)
             )
             self.patterns.append(pattern)
             self.field.inject_pattern(pattern)
@@ -140,11 +214,127 @@ class InteractiveFieldExplorer:
         # Update field threshold
         self.field.resonance_threshold = self.threshold
         
-        # Rebuild connections with new threshold
-        self.field._rebuild_connections()
+        # Rebuild field with new threshold (re-inject all patterns)
+        self.field = TachyonicField()
+        self.field.resonance_threshold = self.threshold
+        for pattern in self.patterns:
+            self.field.inject_pattern(pattern)
+        
+        # Clear layout cache to force recalculation
+        if hasattr(self, '_layout_cache'):
+            delattr(self, '_layout_cache')
         
         # Update visualization
         self.update_visualization()
+    
+    def toggle_play(self, event):
+        """Toggle play/pause animation"""
+        if self.is_playing:
+            # Pause
+            self.is_playing = False
+            self.play_button.label.set_text('Play ▶')
+            if self.animation:
+                self.animation.event_source.stop()
+        else:
+            # Play
+            self.is_playing = True
+            self.play_button.label.set_text('Pause ⏸')
+            # Start animation with FuncAnimation (60 FPS for smooth playback)
+            self.animation = FuncAnimation(
+                self.fig,
+                self._animate_frame,
+                interval=8,  # ~120 FPS for ultra-smooth animation (was 16ms/60 FPS)
+                blit=False,
+                cache_frame_data=False
+            )
+        self.fig.canvas.draw_idle()
+    
+    def _animate_frame(self, frame):
+        """Animation frame update (ULTRA-SMOOTH: 120 FPS with video recording)"""
+        # Update threshold
+        new_threshold = self.threshold + (self.animation_speed * self.animation_direction)
+        
+        # Bounce at boundaries
+        if new_threshold > 1.0:
+            new_threshold = 1.0
+            self.animation_direction = -1  # Reverse
+        elif new_threshold < 0.0:
+            new_threshold = 0.0
+            self.animation_direction = 1  # Forward
+        
+        # Update slider (this triggers on_threshold_change)
+        self.threshold_slider.set_val(new_threshold)
+        
+        # Record frame if recording
+        if self.is_recording and self.video_writer:
+            try:
+                self.video_writer.grab_frame()
+            except Exception as e:
+                print(f"⚠️  Frame capture warning: {e}")
+    
+    def speed_up(self, event):
+        """Increase animation speed"""
+        self.animation_speed = min(0.05, self.animation_speed * 1.5)
+        print(f"Speed: {self.animation_speed:.4f} threshold/frame")
+    
+    def speed_down(self, event):
+        """Decrease animation speed"""
+        self.animation_speed = max(0.001, self.animation_speed / 1.5)
+        print(f"Speed: {self.animation_speed:.4f} threshold/frame")
+    
+    def reverse_direction(self, event):
+        """Reverse animation direction"""
+        self.animation_direction *= -1
+        direction_str = "Forward ▶" if self.animation_direction > 0 else "Backward ◀"
+        print(f"Direction: {direction_str}")
+    
+    def toggle_recording(self, event):
+        """Toggle video recording of the animation"""
+        if self.is_recording:
+            # Stop recording
+            self.is_recording = False
+            self.record_button.label.set_text('Record 🔴')
+            self.record_button.label.set_color('red')
+            
+            if self.video_writer:
+                try:
+                    self.video_writer.finish()
+                    elapsed = (datetime.now() - self.recording_start_time).total_seconds()
+                    print(f"\n✅ Recording saved! Duration: {elapsed:.1f}s")
+                    print(f"   File: phase_transition_{self.recording_start_time.strftime('%Y%m%d_%H%M%S')}.mp4")
+                except Exception as e:
+                    print(f"❌ Error saving recording: {e}")
+                finally:
+                    self.video_writer = None
+        else:
+            # Start recording
+            self.is_recording = True
+            self.recording_start_time = datetime.now()
+            timestamp = self.recording_start_time.strftime('%Y%m%d_%H%M%S')
+            filename = f"phase_transition_{timestamp}.mp4"
+            
+            self.record_button.label.set_text('Stop ⏹')
+            self.record_button.label.set_color('yellow')
+            
+            try:
+                # Try FFMpeg first (better quality)
+                self.video_writer = FFMpegWriter(fps=120, metadata={'artist': 'AIOS Evolution Lab'})
+                self.video_writer.setup(self.fig, filename, dpi=100)
+                print(f"\n🔴 Recording started (FFMpeg, 120 FPS)")
+                print(f"   File: {filename}")
+            except Exception as e:
+                try:
+                    # Fallback to Pillow (GIF)
+                    filename = f"phase_transition_{timestamp}.gif"
+                    self.video_writer = PillowWriter(fps=60)
+                    self.video_writer.setup(self.fig, filename, dpi=100)
+                    print(f"\n🔴 Recording started (GIF, 60 FPS)")
+                    print(f"   File: {filename}")
+                except Exception as e2:
+                    print(f"❌ Recording failed: {e}, {e2}")
+                    self.is_recording = False
+                    self.record_button.label.set_text('Record 🔴')
+                    self.record_button.label.set_color('red')
     
     def update_visualization(self):
         """Update the 3D visualization with current threshold"""
@@ -156,18 +346,18 @@ class InteractiveFieldExplorer:
         # Update stats text
         self.stats_text.set_text(self._format_stats(stats))
         
-        # Get or create layout
-        if not hasattr(self.field, '_layout'):
-            self.field._layout = self._create_layout()
+        # Get or create layout (cache on self, not field)
+        if not hasattr(self, '_layout_cache'):
+            self._layout_cache = self._create_layout()
         
-        layout = self.field._layout
+        layout = self._layout_cache
         
         # Draw patterns (spheres)
         for pattern in self.patterns:
-            if pattern.id not in layout:
+            if pattern.pattern_id not in layout:
                 continue
                 
-            x, y, z = layout[pattern.id]
+            x, y, z = layout[pattern.pattern_id]
             
             # Color by type
             color = TYPE_COLORS.get(pattern.pattern_type, '#FFFFFF')
@@ -262,17 +452,17 @@ class InteractiveFieldExplorer:
         else:
             # No connections: random layout
             layout_2d = {
-                p.id: np.random.uniform(-8, 8, 2)
+                p.pattern_id: np.random.uniform(-8, 8, 2)
                 for p in self.patterns
             }
         
         # Add Z dimension (consciousness altitude)
         layout_3d = {}
         for pattern in self.patterns:
-            if pattern.id in layout_2d:
-                x, y = layout_2d[pattern.id]
+            if pattern.pattern_id in layout_2d:
+                x, y = layout_2d[pattern.pattern_id]
                 z = (pattern.consciousness - 0.5) * 10  # Map consciousness to altitude
-                layout_3d[pattern.id] = (x, y, z)
+                layout_3d[pattern.pattern_id] = (x, y, z)
         
         return layout_3d
     
@@ -280,7 +470,7 @@ class InteractiveFieldExplorer:
         """Calculate network statistics"""
         connection_count = self.field.topology.number_of_edges()
         pattern_count = len(self.patterns)
-        field_phi = self.field.calculate_field_consciousness()
+        field_phi = self.field.consciousness_field()
         
         # Cluster count (connected components)
         cluster_count = nx.number_connected_components(self.field.topology)
