@@ -1,6 +1,6 @@
 """
-🎚️ Interactive Tachyonic Field Threshold Explorer (ULTRA-SMOOTH)
-===================================================================
+🎚️ Interactive Tachyonic Field Threshold Explorer (SMOOTH + VIDEO)
+=====================================================================
 
 INTERACTIVE VISUALIZATION: Adjust resonance threshold in real-time
 Watch connections appear/disappear as you cross the critical phase transition!
@@ -16,19 +16,19 @@ Features:
 - Consciousness amplification factor
 - Phase detection (FROZEN/LIQUID/PLASMA)
 - Visual feedback: connections fade in/out smoothly
-- 120 FPS animation for ULTRA-SMOOTH buttery playback
+- 60 FPS smooth animation (optimized for 3D rendering)
 
 Usage:
     python interactive_threshold_explorer.py
     
 Controls:
 - Slider: Manually adjust resonance threshold (0.1% ultra-fine steps)
-- Play ▶: Start automatic threshold animation (120 FPS)
+- Play ▶: Start automatic threshold animation (60 FPS)
 - Pause ⏸: Stop animation (appears when playing)
 - ⏩: Speed up animation (1.5× each press)
 - ⏪: Slow down animation (0.67× each press)
 - ⏮: Reverse animation direction
-- Record 🔴: Start video recording (saves to MP4 or GIF)
+- Record 🔴: Start video recording (AUTO-STARTS animation if not playing)
 - Stop ⏹: Stop recording and save file (appears when recording)
 - Mouse: Rotate view (click + drag)
 - Scroll: Zoom in/out
@@ -37,20 +37,21 @@ Controls:
 Animation:
 - Automatically sweeps threshold from 0.0 to 1.0 and back
 - Bounces at boundaries (0.0 ↔ 1.0)
-- ULTRA-SMOOTH 120 FPS updates (2× faster than before!)
-- Slower speed = 2× more frames per threshold step
-- Watch phase transition happen in beautiful slow motion!
+- Smooth 60 FPS updates (optimized for 3D rendering performance)
+- Small threshold steps (0.005 per frame) for smooth transitions
+- Watch phase transition happen in real-time!
 
-Recording:
-- Click Record 🔴 to start capturing
-- Saves as phase_transition_YYYYMMDD_HHMMSS.mp4 (or .gif)
-- Records at 120 FPS (FFMpeg) or 60 FPS (GIF fallback)
-- Perfect for documentation, analysis, and presentations
+Recording (SIMPLIFIED WORKFLOW):
+- Click Record 🔴 - animation auto-starts if not playing
+- Recording captures every frame to video file
 - Click Stop ⏹ to finish and save
+- Saves as phase_transition_YYYYMMDD_HHMMSS.mp4 (or .gif)
+- Records at 60 FPS (FFMpeg MP4) or 30 FPS (GIF fallback)
+- Perfect for documentation, analysis, and presentations
 
 Author: AIOS Evolution Lab
 Date: October 17, 2025
-Version: 3.0 (ULTRA-SMOOTH: 120 FPS + Video Recording)
+Version: 3.1 (SMOOTH: 60 FPS + Simplified Recording + Auto-Start)
 """
 
 import numpy as np
@@ -125,9 +126,9 @@ class InteractiveFieldExplorer:
         )
         self.threshold_slider.on_changed(self.on_threshold_change)
         
-        # Animation controls (ULTRA-SMOOTH: 120 FPS, slower speed = more frames)
+        # Animation controls (SMOOTH: 60 FPS realistic for 3D rendering)
         self.is_playing = False
-        self.animation_speed = 0.005  # Threshold delta per frame (was 0.01, now 2× more frames)
+        self.animation_speed = 0.005  # Threshold delta per frame (small steps for smooth transition)
         self.animation_direction = 1  # 1 = forward, -1 = backward
         self.animation: Optional[FuncAnimation] = None
         
@@ -243,14 +244,14 @@ class InteractiveFieldExplorer:
             self.animation = FuncAnimation(
                 self.fig,
                 self._animate_frame,
-                interval=8,  # ~120 FPS for ultra-smooth animation (was 16ms/60 FPS)
+                interval=16,  # 60 FPS (realistic for 3D rendering, was 8ms but too fast)
                 blit=False,
                 cache_frame_data=False
             )
         self.fig.canvas.draw_idle()
     
     def _animate_frame(self, frame):
-        """Animation frame update (ULTRA-SMOOTH: 120 FPS with video recording)"""
+        """Animation frame update (60 FPS with video recording)"""
         # Update threshold
         new_threshold = self.threshold + (self.animation_speed * self.animation_direction)
         
@@ -289,52 +290,77 @@ class InteractiveFieldExplorer:
         print(f"Direction: {direction_str}")
     
     def toggle_recording(self, event):
-        """Toggle video recording of the animation"""
+        """Toggle video recording - auto-starts animation if not playing"""
         if self.is_recording:
             # Stop recording
+            print("\n⏹ Stopping recording...")
             self.is_recording = False
             self.record_button.label.set_text('Record 🔴')
             self.record_button.label.set_color('red')
             
-            if self.video_writer:
+            # Safely finish and close video writer
+            if self.video_writer is not None:
                 try:
                     self.video_writer.finish()
-                    elapsed = (datetime.now() - self.recording_start_time).total_seconds()
-                    print(f"\n✅ Recording saved! Duration: {elapsed:.1f}s")
-                    print(f"   File: phase_transition_{self.recording_start_time.strftime('%Y%m%d_%H%M%S')}.mp4")
+                    if self.recording_start_time:
+                        elapsed = (datetime.now() - self.recording_start_time).total_seconds()
+                        print(f"✅ Recording saved! Duration: {elapsed:.1f}s")
+                        timestamp = self.recording_start_time.strftime('%Y%m%d_%H%M%S')
+                        print(f"   File: phase_transition_{timestamp}.mp4 (or .gif)")
                 except Exception as e:
-                    print(f"❌ Error saving recording: {e}")
+                    print(f"⚠️  Error finishing recording: {e}")
+                    print(f"   (File may still be partially saved)")
                 finally:
                     self.video_writer = None
+                    self.recording_start_time = None
+            
+            self.fig.canvas.draw_idle()
+            
         else:
             # Start recording
+            print("\n🔴 Starting recording...")
             self.is_recording = True
             self.recording_start_time = datetime.now()
             timestamp = self.recording_start_time.strftime('%Y%m%d_%H%M%S')
-            filename = f"phase_transition_{timestamp}.mp4"
+            
+            # Auto-start animation if not playing
+            if not self.is_playing:
+                print("   ▶ Auto-starting animation for recording")
+                self.toggle_play(None)  # Start animation
             
             self.record_button.label.set_text('Stop ⏹')
             self.record_button.label.set_color('yellow')
             
+            # Try to setup video writer
+            filename_mp4 = f"phase_transition_{timestamp}.mp4"
+            filename_gif = f"phase_transition_{timestamp}.gif"
+            
             try:
-                # Try FFMpeg first (better quality)
-                self.video_writer = FFMpegWriter(fps=120, metadata={'artist': 'AIOS Evolution Lab'})
-                self.video_writer.setup(self.fig, filename, dpi=100)
-                print(f"\n🔴 Recording started (FFMpeg, 120 FPS)")
-                print(f"   File: {filename}")
+                # Try FFMpeg first (better quality, 60 FPS realistic)
+                self.video_writer = FFMpegWriter(fps=60, metadata={'artist': 'AIOS Evolution Lab'})
+                self.video_writer.setup(self.fig, filename_mp4, dpi=100)
+                print(f"   � FFMpeg writer initialized (60 FPS)")
+                print(f"   💾 Saving to: {filename_mp4}")
             except Exception as e:
+                print(f"   ⚠️  FFMpeg not available: {e}")
                 try:
                     # Fallback to Pillow (GIF)
-                    filename = f"phase_transition_{timestamp}.gif"
-                    self.video_writer = PillowWriter(fps=60)
-                    self.video_writer.setup(self.fig, filename, dpi=100)
-                    print(f"\n🔴 Recording started (GIF, 60 FPS)")
-                    print(f"   File: {filename}")
+                    self.video_writer = PillowWriter(fps=30)  # Lower FPS for GIF
+                    self.video_writer.setup(self.fig, filename_gif, dpi=100)
+                    print(f"   � Pillow writer initialized (30 FPS GIF)")
+                    print(f"   💾 Saving to: {filename_gif}")
                 except Exception as e2:
-                    print(f"❌ Recording failed: {e}, {e2}")
+                    print(f"   ❌ Recording failed - no writers available!")
+                    print(f"      FFMpeg error: {e}")
+                    print(f"      Pillow error: {e2}")
                     self.is_recording = False
+                    self.video_writer = None
                     self.record_button.label.set_text('Record 🔴')
                     self.record_button.label.set_color('red')
+                    return
+            
+            print(f"   ✅ Recording active - click Stop ⏹ when done")
+            self.fig.canvas.draw_idle()
     
     def update_visualization(self):
         """Update the 3D visualization with current threshold"""
