@@ -1,0 +1,30 @@
+{
+  "total_generations": 492,
+  "total_organisms": 7872,
+  "fitness": {
+    "min": 0.5,
+    "max": 0.5,
+    "mean": 0.5,
+    "std": 0.0
+  },
+  "consciousness": {
+    "min": 0.26,
+    "max": 0.3,
+    "mean": 0.260081300813008,
+    "std": 0.0018015056752975873
+  },
+  "threshold": {
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.4398089430894308
+  },
+  "correlations": {
+    "fitness_vs_consciousness": NaN,
+    "fitness_vs_complexity": NaN,
+    "fitness_vs_threshold": NaN,
+    "consciousness_vs_threshold": -0.020677480686860056,
+    "fitness_vs_connections": NaN,
+    "consciousness_vs_connections": 0.030483228197467762,
+    "field_phi_vs_consciousness": 0.030483228197467505
+  }
+}

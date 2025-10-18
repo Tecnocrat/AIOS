@@ -21,6 +21,9 @@
 .PARAMETER LaunchUI
     Launch the AIOS UI interface after successful boot
 
+.PARAMETER LaunchVisualizer
+    Launch the Tachyonic Field Visualizer (interactive 3D network explorer)
+
 .PARAMETER QuickBoot
     Skip detailed validation checks for faster startup (reduced testing)
 
@@ -43,6 +46,10 @@
 .EXAMPLE
     .\aios_launch.ps1 -SkipPhases Testing,Monitoring -LaunchUI
     Boot with discovery and interface launch, skip validation phases
+
+.EXAMPLE
+    .\aios_launch.ps1 -LaunchVisualizer
+    Launch Tachyonic Field Visualizer (interactive 3D network explorer)
 
 .EXAMPLE
     .\aios_launch.ps1 -KeepAlive
@@ -73,6 +80,9 @@ param(
 
     [Parameter()]
     [switch]$LaunchUI,
+
+    [Parameter()]
+    [switch]$LaunchVisualizer,  # Launch Tachyonic Field Visualizer
 
     [Parameter()]
     [switch]$QuickBoot,  # Skip detailed checks for faster startup
@@ -490,6 +500,45 @@ function Invoke-InterfaceLaunch {
         }
     }
     
+    # Launch Tachyonic Field Visualizer if requested
+    if ($LaunchVisualizer) {
+        Write-BootInfo "Launching Tachyonic Field Visualizer v4.0 (Evolution Integrated)..."
+        try {
+            $visualizerPath = Join-Path $Global:AIOSRoot "evolution_lab\tachyonic_field"
+            $visualizerScript = Join-Path $visualizerPath "interactive_threshold_explorer.py"
+            
+            if (Test-Path $visualizerScript) {
+                # Launch visualizer in new terminal window with UTF-8 encoding
+                $env:PYTHONIOENCODING = 'utf-8'
+                Start-Process -FilePath "python" `
+                    -ArgumentList $visualizerScript `
+                    -WorkingDirectory $visualizerPath `
+                    -WindowStyle Normal
+                
+                Write-BootSuccess "Tachyonic Field Visualizer v4.0: Launch initiated"
+                Write-BootInfo "   🧬 Evolution Integration: ENABLED"
+                Write-BootInfo "   • 3D Interactive Network Explorer"
+                Write-BootInfo "   • Population Evolution on Threshold Changes"
+                Write-BootInfo "   • 60 FPS Animation with Recording"
+                Write-BootInfo "   • Rich Metadata Generation"
+                Write-BootInfo "   • Canonical AIOS UI Design"
+                
+                $interfaces["TachyonicVisualizer"] = @{ 
+                    Status = "Launched"
+                    Path = $visualizerPath
+                    Type = "Canonical UI (Evolution Integrated)"
+                    Version = "4.0"
+                    Features = @("3D Network", "Evolution", "Animation", "Recording", "Metadata", "Statistics")
+                }
+                $Global:BootMetrics.InterfacesLaunched++
+            } else {
+                Write-BootWarning "Tachyonic Field Visualizer not found at: $visualizerScript"
+            }
+        } catch {
+            Write-BootError "Tachyonic Field Visualizer launch failed: $_"
+        }
+    }
+    
     Write-BootInfo "Interfaces active: $($interfaces.Count)"
     
     return $interfaces
@@ -663,6 +712,21 @@ try {
     Write-Host ""
     Write-Host "  Interface Bridge: http://localhost:8000" -ForegroundColor Cyan
     Write-Host "  Boot Report: tachyonic/boot_reports/aios_boot_report_latest.json" -ForegroundColor Cyan
+    
+    # Show launched interfaces
+    if ($interfaces.Count -gt 0) {
+        Write-Host ""
+        Write-Host "  🚀 Launched Interfaces:" -ForegroundColor Cyan
+        foreach ($interface in $interfaces.GetEnumerator()) {
+            if ($interface.Value.Status -in @("Running", "Started", "Launched")) {
+                Write-Host "     • $($interface.Key): $($interface.Value.Status)" -ForegroundColor Green
+                if ($interface.Key -eq "TachyonicVisualizer") {
+                    Write-Host "       └─ Canonical AIOS UI v$($interface.Value.Version) - 3D Network Explorer" -ForegroundColor Gray
+                }
+            }
+        }
+    }
+    
     Write-Host ""
     
     # Keep-Alive Mode: Monitor Interface Bridge and keep terminal open
