@@ -1,0 +1,17 @@
+{
+  "population_id": "pop_20251011_181720",
+  "created": "2025-10-11T18:17:20.031759Z",
+  "generations": [
+    {
+      "generation": 0,
+      "file": "pop_20251011_181720_gen000_20251011_181720.json",
+      "organism_count": 16,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.26,
+      "timestamp": "2025-10-11T18:17:20.034065Z"
+    }
+  ],
+  "latest_generation": 0,
+  "latest_file": "pop_20251011_181720_gen000_20251011_181720.json"
+}
