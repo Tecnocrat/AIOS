@@ -1,0 +1,44 @@
+{
+  "population_id": "pop_20251018_105100",
+  "created": "2025-10-18T10:51:00.634103Z",
+  "generations": [
+    {
+      "generation": 0,
+      "file": "pop_20251018_105100_gen000_20251018_105100.json",
+      "organism_count": 16,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.26,
+      "timestamp": "2025-10-18T10:51:00.636405Z"
+    },
+    {
+      "generation": 0,
+      "file": "pop_20251018_105100_gen000_20251018_105100.json",
+      "organism_count": 16,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.26,
+      "timestamp": "2025-10-18T10:51:00.648637Z"
+    },
+    {
+      "generation": 1,
+      "file": "pop_20251018_105100_gen001_20251018_105100.json",
+      "organism_count": 16,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.26,
+      "timestamp": "2025-10-18T10:51:00.665624Z"
+    },
+    {
+      "generation": 2,
+      "file": "pop_20251018_105100_gen002_20251018_105100.json",
+      "organism_count": 16,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.26,
+      "timestamp": "2025-10-18T10:51:00.682913Z"
+    }
+  ],
+  "latest_generation": 2,
+  "latest_file": "pop_20251018_105100_gen002_20251018_105100.json"
+}

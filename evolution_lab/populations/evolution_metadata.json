@@ -1,0 +1,92 @@
+{
+  "orchestrator_info": {
+    "enabled": true,
+    "total_generations": 3,
+    "current_population": "pop_20251018_111256",
+    "last_updated": "2025-10-18T11:12:56.804569Z"
+  },
+  "evolution_history": [
+    {
+      "timestamp": "2025-10-18T11:12:56.774427Z",
+      "generation": 0,
+      "population_id": "pop_20251018_111256",
+      "threshold": 0.3,
+      "frame": 0,
+      "archive_path": "C:\\dev\\AIOS\\evolution_lab\\populations\\pop_20251018_111256_gen000_20251018_111256.json",
+      "organism_count": 16,
+      "avg_fitness": 0.5,
+      "avg_complexity": 0.1,
+      "consciousness": 0.26,
+      "mutation_rate": 0.19,
+      "selection_pressure": 0.2,
+      "archetype_diversity": 0.2,
+      "fitness_bias": 0.01,
+      "connections": 1,
+      "clusters": 2,
+      "field_phi": 0.6,
+      "nodes": 3
+    },
+    {
+      "timestamp": "2025-10-18T11:12:56.788339Z",
+      "generation": 1,
+      "population_id": "pop_20251018_111256",
+      "threshold": 0.5,
+      "frame": 1,
+      "archive_path": "C:\\dev\\AIOS\\evolution_lab\\populations\\pop_20251018_111256_gen001_20251018_111256.json",
+      "organism_count": 16,
+      "avg_fitness": 0.5,
+      "avg_complexity": 0.1,
+      "consciousness": 0.26,
+      "mutation_rate": 0.25,
+      "selection_pressure": 0.2,
+      "archetype_diversity": 0.2,
+      "fitness_bias": 0.01,
+      "connections": 1,
+      "clusters": 2,
+      "field_phi": 0.6,
+      "nodes": 3
+    },
+    {
+      "timestamp": "2025-10-18T11:12:56.804545Z",
+      "generation": 2,
+      "population_id": "pop_20251018_111256",
+      "threshold": 0.7,
+      "frame": 2,
+      "archive_path": "C:\\dev\\AIOS\\evolution_lab\\populations\\pop_20251018_111256_gen002_20251018_111256.json",
+      "organism_count": 16,
+      "avg_fitness": 0.5,
+      "avg_complexity": 0.1,
+      "consciousness": 0.26,
+      "mutation_rate": 0.31,
+      "selection_pressure": 0.2,
+      "archetype_diversity": 0.2,
+      "fitness_bias": 0.01,
+      "connections": 1,
+      "clusters": 2,
+      "field_phi": 0.6,
+      "nodes": 3
+    }
+  ],
+  "summary": {
+    "total_events": 3,
+    "threshold_range": [
+      0.3,
+      0.7
+    ],
+    "fitness_progression": {
+      "min": 0.5,
+      "max": 0.5,
+      "avg": 0.5
+    },
+    "complexity_progression": {
+      "min": 0.1,
+      "max": 0.1,
+      "avg": 0.1
+    },
+    "consciousness_progression": {
+      "min": 0.26,
+      "max": 0.26,
+      "avg": 0.26
+    }
+  }
+}

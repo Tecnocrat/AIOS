@@ -240,7 +240,10 @@ class PopulationManager:
         elif archive_dir is not None:
             self.evolution_dir = Path(archive_dir)
         else:
-            self.evolution_dir = Path("tachyonic/archive/populations")
+            # AINLP.dendritic fix: Use absolute path relative to this file
+            # Evolution Lab root is parent of populations/ directory
+            base_dir = Path(__file__).parent.parent  # evolution_lab/
+            self.evolution_dir = base_dir / "populations"
         
         # Archive configuration (alias for evolution_dir)
         self.archive_dir = self.evolution_dir
