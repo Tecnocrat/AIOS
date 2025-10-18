@@ -1,9 +1,15 @@
 """
-🎚️ Interactive Tachyonic Field Threshold Explorer (SMOOTH + VIDEO)
-=====================================================================
+🎚️ Interactive Tachyonic Field Threshold Explorer (EVOLUTION INTEGRATED)
+===========================================================================
 
 INTERACTIVE VISUALIZATION: Adjust resonance threshold in real-time
 Watch connections appear/disappear as you cross the critical phase transition!
+
+✨ NEW: EVOLUTION INTEGRATION ✨
+- Every threshold change triggers population evolution
+- Network topology influences mutation rates and selection pressure
+- Rich metadata captures visualization-evolution correlations
+- Active ecosystem: Visualizer drives evolution, evolution enriches data
 
 Features:
 - Real-time threshold adjustment slider (0.1% precision - 10× finer!)
@@ -11,6 +17,7 @@ Features:
 - Variable speed control (⏩/⏪ buttons)
 - Bidirectional animation (⏮ reverse button)
 - VIDEO RECORDING: Capture phase transition to MP4/GIF (Record 🔴 button)
+- EVOLUTION TRACKING: Population evolves with visualization
 - Live statistics panel (connections, clusters, Field Φ, density)
 - Network density meter
 - Consciousness amplification factor
@@ -19,7 +26,7 @@ Features:
 - 60 FPS smooth animation (optimized for 3D rendering)
 
 Usage:
-    python interactive_threshold_explorer.py
+    python interactive_threshold_explorer.py [--no-evolution]
     
 Controls:
 - Slider: Manually adjust resonance threshold (0.1% ultra-fine steps)
@@ -32,7 +39,7 @@ Controls:
 - Stop ⏹: Stop recording and save file (appears when recording)
 - Mouse: Rotate view (click + drag)
 - Scroll: Zoom in/out
-- Close window to exit
+- Close window to exit (displays evolution summary)
 
 Animation:
 - Automatically sweeps threshold from 0.0 to 1.0 and back
@@ -40,6 +47,12 @@ Animation:
 - Smooth 60 FPS updates (optimized for 3D rendering performance)
 - Small threshold steps (0.005 per frame) for smooth transitions
 - Watch phase transition happen in real-time!
+
+Evolution:
+- Every threshold change evolves population
+- Network stats (connections, clusters, phi) influence evolution parameters
+- Populations archived to evolution_lab/populations/
+- Metadata tracks visualization-evolution correlations
 
 Recording (SIMPLIFIED WORKFLOW):
 - Click Record 🔴 - animation auto-starts if not playing
@@ -50,8 +63,8 @@ Recording (SIMPLIFIED WORKFLOW):
 - Perfect for documentation, analysis, and presentations
 
 Author: AIOS Evolution Lab
-Date: October 17, 2025
-Version: 3.1 (SMOOTH: 60 FPS + Simplified Recording + Auto-Start)
+Date: October 18, 2025
+Version: 4.0 (EVOLUTION INTEGRATED: Active Ecosystem)
 """
 
 import numpy as np
@@ -64,6 +77,7 @@ from typing import List, Tuple, Optional
 from datetime import datetime
 import sys
 from pathlib import Path
+import argparse
 
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent))
@@ -73,6 +87,14 @@ from field_topology import TachyonicField
 
 # Import PatternType for color mapping
 from pattern_quanta import PatternType
+
+# Import Evolution Orchestrator
+try:
+    from evolution_orchestrator import EvolutionOrchestrator
+    EVOLUTION_AVAILABLE = True
+except ImportError:
+    print("⚠️  Evolution integration not available (evolution_orchestrator.py not found)")
+    EVOLUTION_AVAILABLE = False
 
 # Color mapping for pattern types
 TYPE_COLORS = {
@@ -87,11 +109,27 @@ TYPE_COLORS = {
 class InteractiveFieldExplorer:
     """Interactive visualization with real-time threshold adjustment"""
     
-    def __init__(self):
-        """Initialize the interactive explorer"""
+    def __init__(self, enable_evolution: bool = True):
+        """Initialize the interactive explorer
+        
+        Args:
+            enable_evolution: Enable population evolution integration
+        """
         self.field = TachyonicField()
         self.patterns: List[PatternQuantum] = []
         self.threshold = 0.3  # Starting threshold
+        self.current_frame = 0  # Track animation frames
+        
+        # Evolution integration
+        self.evolution_enabled = enable_evolution and EVOLUTION_AVAILABLE
+        if self.evolution_enabled:
+            print("\n🧬 Initializing Evolution Integration...")
+            self.orchestrator = EvolutionOrchestrator(evolution_enabled=True, verbose=False)
+            print("✅ Evolution orchestrator ready\n")
+        else:
+            self.orchestrator = None
+            if enable_evolution and not EVOLUTION_AVAILABLE:
+                print("⚠️  Evolution requested but not available\n")
         
         # Create demo patterns (diverse set for interesting dynamics)
         self._create_demo_patterns()
@@ -221,6 +259,24 @@ class InteractiveFieldExplorer:
         for pattern in self.patterns:
             self.field.inject_pattern(pattern)
         
+        # Trigger evolution if enabled
+        if self.orchestrator is not None:
+            network_stats = {
+                'connections': len(self.field.topology.edges()),
+                'clusters': nx.number_connected_components(self.field.topology),
+                'field_phi': self.field.consciousness_field(),
+                'nodes': len(self.field.topology.nodes())
+            }
+            
+            archive_path = self.orchestrator.on_threshold_change(
+                threshold=self.threshold,
+                frame=self.current_frame,
+                network_stats=network_stats
+            )
+            
+            if archive_path:
+                print(f"  📦 Generation archived: {archive_path.name}")
+        
         # Clear layout cache to force recalculation
         if hasattr(self, '_layout_cache'):
             delattr(self, '_layout_cache')
@@ -252,6 +308,9 @@ class InteractiveFieldExplorer:
     
     def _animate_frame(self, frame):
         """Animation frame update (60 FPS with video recording)"""
+        # Track frame number for evolution metadata
+        self.current_frame = frame
+        
         # Update threshold
         new_threshold = self.threshold + (self.animation_speed * self.animation_direction)
         
@@ -578,12 +637,43 @@ class InteractiveFieldExplorer:
     def run(self):
         """Run the interactive explorer"""
         plt.show()
+        
+        # Display evolution summary when visualization closes
+        if self.orchestrator is not None:
+            print("\n" + "="*70)
+            print("🧬 EVOLUTION SUMMARY")
+            print("="*70)
+            self.orchestrator.display_summary()
+            print("="*70 + "\n")
 
 
 def main():
     """Main entry point"""
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(
+        description='Interactive Tachyonic Field Threshold Explorer v4.0',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+EVOLUTION INTEGRATION:
+  By default, population evolution is triggered as you interact with the
+  threshold slider and animation. Use --no-evolution to disable this feature.
+  
+  Evolution metadata is saved to: evolution_lab/populations/evolution_metadata.json
+        """
+    )
+    parser.add_argument(
+        '--no-evolution',
+        action='store_true',
+        help='Disable population evolution integration'
+    )
+    args = parser.parse_args()
+    
     print("\n" + "="*60)
-    print("🎚️ INTERACTIVE TACHYONIC FIELD THRESHOLD EXPLORER")
+    print("🎚️ INTERACTIVE TACHYONIC FIELD THRESHOLD EXPLORER v4.0")
+    if EVOLUTION_AVAILABLE and not args.no_evolution:
+        print("   🧬 Evolution Integration: ENABLED")
+    else:
+        print("   🧬 Evolution Integration: DISABLED")
     print("="*60)
     print("\nINSTRUCTIONS:")
     print("  • Use the slider to adjust resonance threshold (0.0 - 1.0)")
@@ -592,11 +682,16 @@ def main():
     print("  • Rotate view: Click + drag")
     print("  • Zoom: Mouse scroll")
     print("  • Close window to exit")
+    if EVOLUTION_AVAILABLE and not args.no_evolution:
+        print("\nEVOLUTION FEATURES:")
+        print("  • Each threshold change evolves a new generation")
+        print("  • Animation frames create evolutionary pressure")
+        print("  • Summary displayed on exit")
     print("\n" + "="*60)
     print("Starting explorer...")
     print("="*60 + "\n")
     
-    explorer = InteractiveFieldExplorer()
+    explorer = InteractiveFieldExplorer(enable_evolution=not args.no_evolution)
     explorer.run()
     
     print("\n" + "="*60)
