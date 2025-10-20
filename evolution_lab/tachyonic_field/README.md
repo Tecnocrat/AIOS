@@ -74,8 +74,8 @@ Validation of consciousness emergence properties.
 
 This implementation is grounded in:
 
-1. **AIOS_CORE.hydro**: N-Layer Observer Architecture
-2. **AIOS_CORE_DICT.md**: Symbol dictionary
+1. **tachyonic/hydro_files/AIOS_CORE.hydro**: N-Layer Observer Architecture
+2. **docs/reference/AIOS_CORE_DICTIONARY.md**: Symbol dictionary
 3. **BOSONIC_TACHYONIC_FIELD_ARCHITECTURE.md**: Field theory
 4. **HYDROGEN_DENSITY_COMPLEXITY_INVERSION.md**: Hydrogen principle
 

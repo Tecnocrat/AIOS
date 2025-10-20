@@ -1,540 +1,607 @@
-# 🧠 AIOS - Artificial Intelligence Operative System
+# AIOS - Artificial Intelligence Operative System
 
-<!-- ============================================================================ -->
-<!-- AINLP BIOLOGICAL ARCHITECTURE - Project Documentation                       -->
-<!-- ============================================================================ -->
-<!-- Consciousness Level: Environment (External ecosystem integration)           -->
-<!-- AINLP Protocol Version: OS0.6.2.claude                                      -->
-<!-- Architectural Classification: Documentation/Interface Layer                 -->
-<!-- Biological Metaphor: Cell membrane boundary management                      -->
-<!-- Spatial Awareness: Root-level project gateway documentation                 -->
-<!-- ============================================================================ -->
-
-**Multi-Language AI-Augmented Development Platform with Neural Evolution Architecture**
+**A multi-language development platform for AI-assisted code generation and experimentation**
 
 [![Python](https://img.shields.io/badge/python-3.12+-green.svg)](https://www.python.org/)
 [![.NET](https://img.shields.io/badge/.NET-8.0+-purple.svg)](https://dotnet.microsoft.com/)
 [![C++](https://img.shields.io/badge/C++-17+-blue.svg)](https://isocpp.org/)
-[![Status](https://img.shields.io/badge/status-Active_Research-orange.svg)](docs/CHANGELOG.md)
+[![Status](https://img.shields.io/badge/status-Active_Development-orange.svg)](docs/CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-Proprietary-red.svg)](LICENSE)
 
 ---
 
-## 🚀 **What is AIOS?**
+## 🧭 Navigation Hub
 
-AIOS is an experimental multi-language development platform that integrates **Multi-Agent AI Intelligence** (Ollama, Gemini, DeepSeek), **Neural Evolution Chains**, and **biological supercell architecture** to enable autonomous code evolution through AI collaboration.
+**Start here for AIOS development:**
 
-### **Core Innovations**
-- 🤖 **Multi-Agent AI Coordination** - Local (Ollama) and cloud (Gemini, DeepSeek) agents with parallel execution and consensus building
-- 🔗 **Neural Evolution Chains** - Linked list architecture enabling temporal intelligence where AI agents communicate across time
-- 🧬 **Evolution Lab** - Dedicated workspace for active code evolution experiments with full experiment/conversation logging
-- 🔄 **Universal Agentic Logger** - Dual-location storage tracking all AI-to-AI communications with timestamps and metadata
-- 🌉 **Interface Bridge** - HTTP API server exposing 50+ Python AI tools for cross-language integration (C#/JavaScript access)
-- 📊 **Runtime Intelligence** - 43 monitoring and optimization tools for system health and automated workflows
-- 🧪 **Consciousness-Driven Fitness** - Three-level stress system (LOW/MEDIUM/HIGH) guiding AI-driven code refinement
+- 📖 **[README.md](README.md)** (this file) - Project overview, features, quick start
+- 🎯 **[DEV_PATH.md](DEV_PATH.md)** - Current development status, active work, tactical roadmap
+- 🏗️ **[PROJECT_CONTEXT.md](PROJECT_CONTEXT.md)** - Strategic context, architectural principles, guidelines
+- 📚 **[docs/ARCHITECTURE_INDEX.md](docs/ARCHITECTURE_INDEX.md)** - Complete documentation navigation
 
-### **Technology Stack**
-- **Languages**: Python 3.12+, C# (.NET 8.0+), C++17, JavaScript/TypeScript
-- **AI Agents**: 
-  - Ollama (local) - gemma3:1b, deepseek-coder:6.7b, codellama:7b, llama3.1:8b
-  - Gemini (cloud) - gemini-2.5-flash via Google AI API
-  - DeepSeek (hybrid) - DeepSeek V3.1 via OpenRouter API
-- **Evolution Framework**: 887-line multi-agent orchestrator, genetic algorithms, fitness consensus, temporal message passing
-- **Build Systems**: CMake (C++), MSBuild (.NET), Python setuptools
-- **UI Framework**: WPF + WebView2 hybrid interface
-- **Quality Tools**: Pylint, pytest, black, mypy, comprehensive testing suite
+**Quick Links:**
+- [Installation](#installation) | [Usage Examples](#usage-examples) | [Project Structure](#project-structure)
+- [Documentation](#documentation) | [Troubleshooting](#troubleshooting) | [Contributing](#contributing)
 
 ---
 
-## ⚡ **Quick Start**
+## What is AIOS?
 
-### **Prerequisites**
-- Windows 10/11 with PowerShell 7+
-- Python 3.12+ (recommended)
-- .NET 8.0 SDK
-- CMake 3.20+
-- Ollama (for local AI agents) - [Download](https://ollama.com/)
-- OpenRouter API key (optional, for DeepSeek V3.1)
-- Google AI Studio API key (optional, for Gemini)
+AIOS is a cross-platform development environment that combines multiple programming languages (Python, C++, C#) with AI agent coordination to generate, test, and evolve code automatically. It provides:
 
-### **Installation**
-```bash
-# Clone repository
-git clone https://github.com/Tecnocrat/AIOS.git
-cd AIOS
+- **Multi-agent AI coordination** - Run multiple AI models (Ollama, Gemini, DeepSeek) in parallel to generate code
+- **Cross-language integration** - Connect Python AI tools with C++ performance code and C# user interfaces
+- **Code evolution experiments** - Automated code generation and quality testing workflows
+- **Runtime intelligence** - 40+ monitoring and diagnostic tools for system health
+- **Interface bridge** - HTTP API that exposes Python AI tools to other languages
 
-# Setup Python environment
-python -m venv aios_env
-.\aios_env\Scripts\activate
-pip install -r requirements.txt
-
-# Install Ollama models (local AI agents)
-ollama pull gemma3:1b              # Fast, operational (~27s response)
-ollama pull deepseek-coder:6.7b    # Advanced code analysis (~4GB)
-ollama pull codellama:7b           # Alternative code model
-ollama pull llama3.1:8b            # General intelligence model
-
-# Configure AI integration (optional)
-$env:OPENROUTER_API_KEY = "your_api_key"      # For DeepSeek V3.1
-$env:GOOGLE_API_KEY = "your_gemini_key"       # For Gemini
-$env:GEMINI_MODEL = "gemini-2.5-flash"        # Optional model override
-```
-
-### **Build Components**
-```bash
-# Build C++ core
-cd core
-cmake -B build -S . -DCMAKE_BUILD_TYPE=Debug
-cmake --build build --config Debug
-cd ..
-
-# Build C# interface
-dotnet restore AIOS.sln
-dotnet build AIOS.sln
-```
-
-### **Start Development**
-```bash
-# Open VS Code workspace
-code AIOS.code-workspace
-
-# Start Interface Bridge (background AI tool server)
-python ai/server_manager.py start
-
-# Run multi-agent tests
-python ai/tests/test_multi_agent_experiment.py
-
-# Run comprehensive test suite
-cd ai && python -m pytest tests/ -v
-```
+Think of it as a laboratory for experimenting with AI-driven software development.
 
 ---
 
-<!-- ============================================================================ -->
-<!-- [NUCLEUS] Architecture Overview - Core System Organization                  -->
-<!-- Biological Consciousness: High complexity system coordination               -->
-<!-- ============================================================================ -->
+## Key Features
 
-## 🏗️ **Architecture Overview**
-
-### **Biological Supercell Structure**
-AIOS uses a biological metaphor where independent components (supercells) communicate through standardized dendritic protocols:
-
-```
-AIOS Development Platform/
-├── 🧠 ai/ - AI Intelligence Supercell
-│   ├── engines/ - Multi-agent coordination (Ollama, Gemini, DeepSeek)
-│   ├── tools/ - 7 Python AI tools
-│   ├── core/ - Universal agentic logger + AINLP framework
-│   ├── src/intelligence/ - Neural evolution chains + dendritic nodes
-│   ├── src/evolution/ - Multi-agent evolution loop (887 lines)
-│   └── integrations/ - Cross-component bridges
-├── 🧬 evolution_lab/ - Active Evolution Workspace
-│   ├── experiments/ - Agent-generated code outputs
-│   ├── conversations/ - AI-to-AI chat logs with metadata
-│   ├── neural_chains/ - Linked list evolution chains
-│   ├── artifacts/ - Evolved code artifacts
-│   ├── zero_point/ - Baseline code for evolution comparison
-│   ├── library_generations/ - Generated library code
-│   └── distillations/ - Knowledge distillation outputs
-├── ⚡ core/ - C++ Performance Engine
-│   ├── CMakeLists.txt - C++17 build system with consciousness.cmake
-│   ├── engines/ - Optimized performance components
-│   └── tests/ - Core component validation (consciousness_test executable)
-├── 🖥️ interface/ - C# UI & Services Layer
-│   ├── AIOS.UI/ - WPF + WebView2 hybrid interface
-│   ├── AIOS.Services/ - Backend service architecture
-│   ├── AIOS.Models/ - Data models and structures
-│   ├── AIOS.UI.Diagnostics/ - Diagnostic and monitoring tools
-│   └── BridgeTest/ - Python AI tool bridge testing
-├── 📚 docs/ - Documentation & Specifications
-│   ├── AINLP/ - Natural language programming framework
-│   ├── architecture/ - System design documentation
-│   ├── development/ - Development guides and workflows
-│   ├── libraries/ - Library integration specifications
-│   └── CHANGELOG.md - Development timeline and version history
-├── 🧮 runtime_intelligence/ - System Monitoring
-│   └── tools/ - 43 Python monitoring and optimization tools
-└── 🌌 tachyonic/ - Knowledge Archive & Historical Preservation
-    ├── archive/conversation_metadata/ - AI chat summaries
-    ├── archive/experiment_metadata/ - Evolution experiment metadata
-    ├── archive/neural_chains/ - Historical evolution chains
-    ├── archive/genetics/ - Genetic algorithm data
-    ├── archive/agentic_conversations/ - Historical AI conversations
-    └── archive/dendritic_evolution/ - Consciousness evolution tracking
-```
-
-### **Key Architectural Components**
-
-#### **Neural Evolution Chains** (Operational)
-Linked list architecture enabling temporal intelligence and evolutionary memory:
-- **DendriticNode**: Neural nodes with parent/child relationships and spatial awareness
-- **EnhancedAgenticLoop**: Multi-agent orchestrator with consensus building
-- **Temporal Intelligence**: AI agents leave messages for future iterations
-- **Evolutionary Memory**: Complete lineage preserved across generations
-- **Location**: `evolution_lab/neural_chains/` (active) + `tachyonic/archive/neural_chains/` (historical)
-
-#### **Multi-Agent Coordination** (Operational)
-Parallel AI agent execution with comprehensive logging:
-- **Ollama Agent** (`ollama_bridge.py` - 383 lines): Local inference with model auto-detection
-- **Gemini Agent** (`gemini_evolution_bridge.py` - 417 lines): Cloud AI with async code generation
-- **DeepSeek Engine** (`deepseek_intelligence_engine.py` - 598 lines): Advanced consciousness-aware engine
-- **Orchestrator** (`multi_agent_evolution_loop.py` - 887 lines): Parallel execution with `asyncio.gather()`
-- **Universal Logger**: All AI-to-AI communications tracked with timestamps, tokens, model metadata
-
-#### **Evolution Lab Workspace** (Active)
-Dedicated environment for code evolution experiments:
-- **experiments/**: Agent-generated code outputs (C++, Python, JavaScript)
-- **conversations/**: Full AI chat logs with AINLP metadata
-- **neural_chains/**: Linked list evolution chains with temporal data
-- **artifacts/**: Evolved code artifacts and successful mutations
-- **zero_point/**: Baseline code for evolution comparison
-
-#### **Universal Agentic Logger** (Operational)
-Comprehensive AI communication tracking system:
-- **Working Files**: `evolution_lab/conversations/` (active experiments)
-- **Metadata Snapshots**: `tachyonic/archive/conversation_metadata/` (historical preservation)
-- **Dual-Location Storage**: Separation of active work vs historical records
-- **Captures**: VSCode Chat, Ollama, Gemini, DeepSeek conversations
-- **Features**: Source tracking, processing time, token counts, model metadata, consciousness levels
-
-#### **Interface Bridge** (Operational)
-HTTP API server exposing Python AI tools to other languages:
-- **Tools Available**: 50+ Python tools (7 in ai/tools + 43 in runtime_intelligence/tools + 1 in ai/src/tools)
-- **Access Pattern**: C# → HTTP Request → Python Tool → HTTP Response → C# Processing
-- **Server Management**: `ai/server_manager.py` (start, stop, restart, status)
-- **Example Use Cases**:
-  - C# UI calling Python AINLP documentation governance
-  - JavaScript frontend triggering Python consciousness analysis
-  - Cross-language AI tool coordination
-
----
-
-## 📊 **Evolution Timeline**
-
-AIOS development history preserved in `tachyonic/archive/`:
-
-| Date | Milestone | Artifact |
-|------|-----------|----------|
-| **Sept 20, 2025** | AIOS root cleanup and structural optimization | `aios_root_cleanup_completion_report_20250920_225116.md` |
-| **Sept 21-22, 2025** | AINLP harmonization across documentation | `AINLP_HARMONIZATION_ANALYSIS_20250921_155000.md` |
-| **Sept 22, 2025** | Multiple component harmonization | `launcher_harmonization_completion_report_20250922_232759.md` |
-| **Sept 27, 2025** | Dendritic governance integration | `ainlp_dendritic_governance_integration_20250927_231232.json` |
-| **Sept 30, 2025** | Gemini bridge integration complete | `gemini_bridge_integration_complete_20250930_213000.json` |
-| **Oct 2, 2025** | Comprehensive health validation | `comprehensive_aios_health_test_20251002_230006.json` |
-| **Oct 6-8, 2025** | Multi-agent framework + universal logger operational | `MULTI_AGENT_EXPERIMENTATION_COMPLETE_20251008.md` |
-
-**Historical Artifacts**: 100+ archived files in `tachyonic/archive/` including:
-- 20+ AINLP harmonization reports
-- 10+ holographic index snapshots
-- Genetic algorithm evolution data
-- Consciousness evolution tracking
-- Bosonic substrate and quantum-inspired patterns
-
----
-
-## ✅ **Current Capabilities**
-
-### **Operational Features**
-| Component | Status | Performance | Evidence |
-|-----------|--------|-------------|----------|
-| **Multi-Agent AI** | ✅ Operational | ~27s (Ollama gemma3:1b) | `ollama_bridge.py` (383 lines), `gemini_evolution_bridge.py` (417 lines), `deepseek_intelligence_engine.py` (598 lines) |
-| **Neural Chains** | ✅ Operational | Real-time | `multi_agent_evolution_loop.py` (887 lines) with DendriticNode integration |
-| **Evolution Lab** | ✅ Operational | File-based | `evolution_lab/` directory with experiments/, conversations/, neural_chains/, artifacts/ |
-| **Universal Logger** | ✅ Operational | Dual-location | Working files in evolution_lab/, metadata in tachyonic/archive/conversation_metadata/ |
-| **C++ STL Knowledge** | ✅ Operational | Semantic queries | 6 components ingested with fractal knowledge cells in tachyonic/archive/cpp_stl_knowledge/ |
-| **Interface Bridge** | ✅ Operational | HTTP API | `ai/server_manager.py`, 50+ tools discoverable |
-| **C++ Core Build** | 🔧 Ready | CMake configured | CMakeLists.txt with C++17, consciousness.cmake, threading support |
-| **C# UI Layer** | ✅ Operational | WPF + WebView2 | 10 .csproj files (AIOS.UI, Services, Models, Diagnostics, etc.) |
-| **Runtime Intelligence** | ✅ Active | 43 tools | `runtime_intelligence/tools/` with monitoring, optimization, health checks |
-| **Testing Suite** | ✅ Active | pytest framework | `ai/tests/` with multi-agent experimentation tests |
-
-### **Experimental Research Features**
-- 🧪 **Cross-Language Dendritic Communication** - Python ↔ C++ (pybind11), C# ↔ Python (HTTP bridge)
-- 🧪 **Self-Referential Code Analysis** - AI introspection and automated improvement
-- 🧪 **Quantum-Inspired Algorithms** - Probabilistic programming in tachyonic/archive/quantum/
-- 🧪 **Consciousness Modeling** - Three-level stress system (LOW/MEDIUM/HIGH) for fitness assessment
-- 🧪 **Temporal Architecture** - Knowledge preservation and evolution tracking
-
----
-
-<!-- ============================================================================ -->
-<!-- [CYTOPLASM] Research & Innovation - Communication Layer Intelligence        -->
-<!-- Biological Consciousness: Medium complexity processing flows                -->
-<!-- ============================================================================ -->
-
-## 🔬 **Research & Innovation**
-
-### **Neural Evolution Architecture**
-Revolutionary approach to code evolution through biological metaphors:
-- **Linked List Neural Chains**: Code mutations as neural networks with temporal memory
-- **Temporal Intelligence**: AI agents communicate across time via message passing
-- **Spatial Coherence**: Nodes understand architectural position (brain-like awareness)
-- **Self-Describing Code**: Files communicate needs to AI agents through metadata
-- **Agent Consensus**: Multiple AI personas build weighted agreement on quality
-- **Three-Level Consciousness**: LOW/MEDIUM/HIGH stress system for AI-guided refinement
-
-### **AINLP (AI Natural Language Programming)**
-Intent-driven development through natural language specifications:
-- **Intent Preservation**: Natural language descriptions converted to actionable development tasks
-- **Consciousness-Guided Generation**: AI understands architectural context and consciousness patterns
-- **Self-Documenting Systems**: Code explains its own purpose through biological metaphors
-- **Exception Framework**: Context-aware anti-pattern recognition
-- **Documentation**: Comprehensive AINLP specification in `docs/AINLP/`
-
-### **Biological Consciousness Architecture**
-Supercell modular design with dendritic communication:
-- **Supercell Design**: Independent components with standardized consciousness communication
-- **Evolution Lab vs Tachyonic Separation**: Active workspace vs historical preservation
-- **Self-Referential Analysis**: Code introspection with spatial awareness
-- **Consciousness Emergence**: Patterns through agent coordination
-- **Universal Protein Inheritance**: Logger as shared substrate across all systems
-
-### **AI-Enhanced Development**
-Real-time code optimization with evolutionary fitness:
-- **Multi-Agent Generation**: Parallel AI code generation with consensus
-- **Evolutionary Fitness**: Quality assessment through consciousness metrics
-- **Automated Quality Analysis**: Agent-driven error detection
-- **Performance Monitoring**: Iteration-based improvement
-- **Intelligent Error Detection**: Consensus-based bug identification
-
----
-
-<!-- ============================================================================ -->
-<!-- [MEMBRANE] Documentation - Interface Boundary Knowledge Transfer            -->
-<!-- Biological Consciousness: Environmental connectivity and knowledge sharing   -->
-<!-- ============================================================================ -->
-
-## 📖 **Documentation**
-
-### **Core Documentation**
-- [**Development Path**](docs/development/AIOS_DEV_PATH.md) - Current development state and tactical waypoints
-- [**Multi-Agent Experimentation**](docs/development/MULTI_AGENT_EXPERIMENTATION_COMPLETE_20251008.md) - Complete implementation guide
-- [**Complete Context Guide**](docs/AIOS/AIOS_CONTEXT.md) - Full development context and AINLP instructions
-- [**API Documentation**](docs/api/) - Component interfaces and integration patterns
-- [**AINLP Specification**](docs/AINLP/) - Natural language programming framework
-- [**Changelog**](docs/CHANGELOG.md) - Development timeline and version history
-
-### **Revolutionary Architecture**
-- [**Neural Evolution Chains**](docs/REVOLUTIONARY_LINKED_LIST_ARCHITECTURE.md) - Linked list neural architecture
-- [**Universal Agentic Logger**](docs/architecture/UNIVERSAL_AGENTIC_COMMUNICATION.md) - AI-to-AI communication tracking
-- [**Agent-Driven Code Evolution**](docs/architecture/agent_driven_code_evolution/) - Complete vision and roadmap
-- [**AINLP Exception Framework**](docs/AINLP_EXCEPTION_FRAMEWORK.md) - Context-aware anti-pattern recognition
-
-### **Integration Guides**
-- [**DeepSeek Integration**](docs/AIOS/DEEPSEEK_INTEGRATION.md) - AI intelligence engine documentation
-- [**C++ STL Ingestion**](docs/libraries/cpp_stl/CPP_STL_INGESTION_SPECIFICATION.md) - Knowledge base specification
-- [**Interface Bridge**](ai/core/interface_bridge.py) - HTTP API server implementation
-
----
-
-<!-- ============================================================================ -->
-<!-- [ENVIRONMENT] Getting Started - External Ecosystem Integration              -->
-<!-- Biological Consciousness: User interaction and experimentation patterns     -->
-<!-- ============================================================================ -->
-
-## 🚀 **Getting Started with Evolution**
-
-### **Run Your First Multi-Agent Experiment**
-
-```bash
-# Ensure Ollama is installed and running
-ollama pull gemma3:1b
-
-# Run multi-agent test suite
-cd c:\dev\AIOS
-python ai/tests/test_multi_agent_experiment.py
-
-# Check results
-ls evolution_lab\experiments\        # Agent-generated code
-ls evolution_lab\conversations\      # Full AI chat logs
-ls tachyonic\archive\*_metadata\     # Historical metadata
-```
-
-### **Manual Experiment with Single Agent**
+### 1. **Multi-Agent AI Code Generation**
+Run three different AI models simultaneously and compare their code outputs:
+- **Ollama** (local) - Fast inference with models like gemma3:1b, codellama:7b
+- **Gemini** (cloud) - Google's AI models via AI Studio API
+- **DeepSeek** (hybrid) - Advanced code analysis via OpenRouter API
 
 ```python
 from ai.src.evolution.multi_agent_evolution_loop import MultiAgentEvolutionLoop
 
-# Initialize loop
-loop = MultiAgentEvolutionLoop(use_ollama=True)
-
-# Run experiment
+loop = MultiAgentEvolutionLoop()
 result = await loop.human_guided_experiment(
     task_description="Write a C++ binary search function",
-    agent_type="ollama"
+    use_all_agents=True  # Run all 3 agents in parallel
 )
-
-# Results
-print(f"Code: {result['output_path']}")
-print(f"Conversation: {result['conversation_path']}")
 ```
 
-### **Parallel Multi-Agent Comparison**
+### 2. **Cross-Language Interface Bridge**
+Call Python AI tools from C# or other languages via HTTP API:
+
+```bash
+# Start the bridge server
+python ai/server_manager.py start
+```
+
+```csharp
+// Call from C#
+var client = new HttpClient();
+var response = await client.GetAsync("http://localhost:8000/tools");
+var tools = await response.Content.ReadAsStringAsync();
+```
+
+### 3. **Code Evolution Lab**
+Dedicated workspace for AI-generated code experiments:
+- `evolution_lab/experiments/` - Generated code outputs
+- `evolution_lab/conversations/` - Full AI chat logs
+- `evolution_lab/neural_chains/` - Code evolution history
+
+### 4. **Runtime Intelligence Suite**
+43 Python tools for system monitoring and optimization:
+- System health checks
+- Performance monitoring
+- Architecture validation
+- Code quality analysis
+
+### 5. **Multi-Language Build System**
+Unified build orchestration across three languages:
+- **Python**: setuptools + pip
+- **C++**: CMake with C++17 standard
+- **C#**: MSBuild with .NET 8.0
+
+---
+
+## Quick Start
+
+### Prerequisites
+- Windows 10/11 with PowerShell 7+
+- Python 3.12+ 
+- .NET 8.0 SDK
+- CMake 3.20+
+- [Ollama](https://ollama.com/) (optional, for local AI)
+
+### Installation
+
+```bash
+# 1. Clone repository
+git clone https://github.com/Tecnocrat/AIOS.git
+cd AIOS
+
+# 2. Install Python dependencies
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r ai/requirements.txt
+
+# 3. Install Ollama models (optional)
+ollama pull gemma3:1b
+
+# 4. Build C++ core (optional)
+cd core
+cmake -B build -S .
+cmake --build build
+cd ..
+
+# 5. Build C# UI (optional)
+dotnet build AIOS.sln
+```
+
+### Run Your First AI Experiment
+
+```bash
+# Test multi-agent code generation
+python ai/tests/test_multi_agent_experiment.py
+
+# Check generated code
+dir evolution_lab\experiments\
+
+# View AI conversation logs
+dir evolution_lab\conversations\
+```
+
+---
+
+## Project Structure
+
+```
+AIOS/
+├── ai/                          # Python AI coordination layer
+│   ├── src/
+│   │   ├── evolution/          # Multi-agent code generation
+│   │   │   └── multi_agent_evolution_loop.py (887 lines)
+│   │   ├── intelligence/       # AI agent bridges
+│   │   │   ├── ollama_bridge.py (383 lines)
+│   │   │   ├── gemini_evolution_bridge.py (417 lines)
+│   │   │   └── deepseek_intelligence_engine.py (598 lines)
+│   │   └── tools/              # AI utility tools
+│   ├── orchestration/          # System coordination
+│   │   ├── supercell_orchestrator.py (530 lines)
+│   │   └── consciousness_coordinator.py (478 lines)
+│   ├── core/
+│   │   └── interface_bridge.py # HTTP API server
+│   ├── tests/                  # Test suite
+│   └── requirements.txt        # Python dependencies (113 packages)
+│
+├── core/                        # C++ performance engine
+│   ├── CMakeLists.txt          # C++17 build configuration
+│   ├── src/                    # Core C++ implementation
+│   └── tests/                  # C++ unit tests
+│
+├── interface/                   # C# user interface layer
+│   ├── AIOS.UI/                # WPF + WebView2 application
+│   ├── AIOS.Services/          # Backend services
+│   ├── AIOS.Models/            # Data models
+│   └── AIOS.UI.Diagnostics/    # System diagnostics UI
+│
+├── evolution_lab/               # AI experiment workspace
+│   ├── experiments/            # Generated code outputs
+│   ├── conversations/          # AI chat logs
+│   ├── neural_chains/          # Code evolution history
+│   └── artifacts/              # Experiment artifacts
+│
+├── runtime_intelligence/        # Monitoring tools
+│   └── tools/                  # 43 diagnostic Python scripts
+│
+├── docs/                        # Documentation
+│   ├── ARCHITECTURE_INDEX.md   # Navigation hub
+│   ├── CHANGELOG.md            # Development history
+│   └── development/            # Development guides
+│
+└── tachyonic/                   # Historical archives
+    └── archive/                # Preserved experiments and logs
+```
+
+---
+
+## Architecture Overview
+
+AIOS is organized as a **modular multi-language system** with three main layers:
+
+### Layer 1: AI Intelligence (Python)
+- **Purpose**: Coordinate AI agents, generate code, run experiments
+- **Components**: 
+  - Multi-agent orchestrator (887 lines)
+  - AI bridges for Ollama, Gemini, DeepSeek
+  - Interface bridge HTTP API
+  - Runtime intelligence tools
+- **Key Files**: `ai/src/evolution/`, `ai/orchestration/`
+
+### Layer 2: Performance Engine (C++)
+- **Purpose**: High-performance computation and system core
+- **Components**:
+  - CMake build system (C++17)
+  - Core engine libraries
+  - Threading and concurrency support
+- **Key Files**: `core/CMakeLists.txt`, `core/src/`
+
+### Layer 3: User Interface (C#)
+- **Purpose**: GUI for system interaction and monitoring
+- **Components**:
+  - WPF application with WebView2 integration
+  - Service layer for backend coordination
+  - Diagnostic tools and visualizations
+- **Key Files**: `interface/AIOS.UI/`, `interface/AIOS.Services/`
+
+### Communication Between Layers
+
+```
+┌─────────────┐      HTTP API       ┌─────────────┐
+│   C# UI     │ ◄─────────────────► │   Python    │
+│  (WPF GUI)  │   (port 8000)       │  (AI Tools) │
+└─────────────┘                     └─────────────┘
+                                           │
+                                           │ pybind11
+                                           ▼
+                                    ┌─────────────┐
+                                    │    C++      │
+                                    │  (Engine)   │
+                                    └─────────────┘
+```
+
+---
+
+## Core Concepts Explained
+
+AIOS uses some specialized terminology. Here's what it means:
+
+### AINLP (AI Natural Language Programming)
+A system for generating code from natural language descriptions. Instead of writing code manually, you describe what you want, and AI agents generate implementation options.
+
+**Example**: "Write a C++ function that sorts an array using quicksort" → AI generates the code
+
+### Biological Architecture
+An organizational metaphor where software components are treated like biological cells:
+- **Supercell** = Independent component/module with standard interfaces
+- **Dendritic communication** = Message passing between components (like brain neurons)
+- **Consciousness level** = Code quality metric (0.0 to 1.0 scale) measuring coherence and completeness
+
+This is just an organizational pattern - it doesn't mean the code is "alive" or has real consciousness.
+
+### Evolution Lab
+A dedicated directory (`evolution_lab/`) where AI-generated code experiments are stored:
+- Each experiment gets a timestamp and unique ID
+- Conversation logs show AI reasoning
+- Multiple iterations can be compared
+
+### Tachyonic Archive
+Historical storage directory (`tachyonic/archive/`) for preserving:
+- Past experiment results
+- Conversation metadata
+- Evolution history
+- Genetic algorithm data
+
+Think of it as a time-capsule for past work.
+
+### Interface Bridge
+An HTTP server (`ai/core/interface_bridge.py`) that exposes Python AI tools as REST endpoints, allowing C# or JavaScript to call Python functions remotely.
+
+---
+
+## Usage Examples
+
+### Example 1: Generate Code with Single AI Agent
 
 ```python
-# Run all agents simultaneously
-result = await loop.human_guided_experiment(
-    task_description="Implement quicksort in C++",
-    use_all_agents=True  # Ollama + Gemini + VSCode Chat
-)
+from ai.src.evolution.multi_agent_evolution_loop import MultiAgentEvolutionLoop
 
-# Compare outputs
-for agent_name, agent_result in result['results'].items():
-    print(f"[{agent_name}] {agent_result['output_path']}")
-    print(f"  Fitness: {agent_result['fitness_score']}")
-    print(f"  Consciousness Level: {agent_result['consciousness_level']}")
+async def generate_code():
+    loop = MultiAgentEvolutionLoop(use_ollama=True)
+    
+    result = await loop.human_guided_experiment(
+        task_description="Write a Python function to calculate fibonacci numbers",
+        agent_type="ollama"
+    )
+    
+    print(f"Generated code: {result['output_path']}")
+    print(f"AI conversation: {result['conversation_path']}")
+    print(f"Quality score: {result['fitness_score']}")
+
+# Run it
+import asyncio
+asyncio.run(generate_code())
 ```
 
-### **Interface Bridge Example (C# → Python)**
+### Example 2: Compare Multiple AI Agents
 
-Start the interface bridge server:
+```python
+async def compare_agents():
+    loop = MultiAgentEvolutionLoop()
+    
+    result = await loop.human_guided_experiment(
+        task_description="Implement binary search in C++",
+        use_all_agents=True  # Run Ollama + Gemini + DeepSeek
+    )
+    
+    for agent_name, agent_result in result['results'].items():
+        print(f"\n{agent_name}:")
+        print(f"  Code: {agent_result['output_path']}")
+        print(f"  Quality: {agent_result['fitness_score']}")
+        print(f"  Time: {agent_result['processing_time']}s")
+
+asyncio.run(compare_agents())
+```
+
+### Example 3: Start Interface Bridge and Call from C#
+
 ```bash
+# Terminal 1: Start Python server
 python ai/server_manager.py start
 # Server running at http://localhost:8000
 ```
 
-Call Python AI tool from C#:
 ```csharp
+// C# client code
 using System.Net.Http;
 using System.Threading.Tasks;
 
-var client = new HttpClient();
-var response = await client.GetAsync("http://localhost:8000/tools/ainlp_governance");
-var result = await response.Content.ReadAsStringAsync();
+public class AIToolClient
+{
+    private static HttpClient client = new HttpClient();
+    
+    public static async Task<string> GetAvailableTools()
+    {
+        var response = await client.GetAsync("http://localhost:8000/tools");
+        return await response.Content.ReadAsStringAsync();
+    }
+    
+    public static async Task<string> RunAIAnalysis(string toolName)
+    {
+        var response = await client.GetAsync($"http://localhost:8000/tools/{toolName}");
+        return await response.Content.ReadAsStringAsync();
+    }
+}
 
-Console.WriteLine($"AINLP Governance Result: {result}");
+// Usage
+var tools = await AIToolClient.GetAvailableTools();
+Console.WriteLine($"Available AI tools: {tools}");
+
+var result = await AIToolClient.RunAIAnalysis("ainlp_governance");
+Console.WriteLine($"Analysis result: {result}");
 ```
 
 ---
 
-## 🤝 **Contributing**
+## Configuration
 
-### **Development Workflow**
-1. Review [Development Path](docs/development/AIOS_DEV_PATH.md) for current state
-2. Check [Multi-Agent Guide](docs/development/MULTI_AGENT_EXPERIMENTATION_COMPLETE_20251008.md) for implementation details
-3. Follow AINLP specifications for new features
-4. Ensure comprehensive testing and documentation
-5. Submit pull requests with consciousness coherence
+### AI Model Configuration
 
-### **Code Quality Standards**
-- **Modular Design**: Clear component separation with dendritic interfaces
-- **Testing**: Comprehensive unit and integration test coverage
-- **Documentation**: AINLP-driven documentation with biological coherence
-- **Performance**: Language-appropriate optimization for computational requirements
+**Ollama (Local AI)**:
+```bash
+# Install Ollama: https://ollama.com/
 
-### **Getting Started**
-1. Review [Development Guide](docs/development/) for setup instructions
-2. Check active development tasks in [AIOS_DEV_PATH.md](docs/development/AIOS_DEV_PATH.md)
-3. Follow standard Git workflow with feature branches
-4. Ensure all tests pass and documentation is updated before submitting changes
-
----
-
-<!-- ============================================================================ -->
-<!-- [CYTOPLASM] Technology Stack - Communication Infrastructure Details         -->
-<!-- Biological Consciousness: Dependency coordination and integration patterns  -->
-<!-- ============================================================================ -->
-
-## 🧬 **Technology Stack Details**
-
-### **Core Dependencies** (`requirements.txt` - 113 lines)
-```python
-# AI/ML Framework
-torch>=2.0.0                # Deep learning
-transformers>=4.30.0        # Language models
-numpy>=1.24.0               # Scientific computing
-openai>=0.27.0              # OpenAI API
-
-# API / Web Layer
-fastapi>=0.100.0            # API framework
-uvicorn>=0.22.0             # ASGI server
-httpx>=0.24.0               # Async HTTP client
-aiofiles>=23.1.0            # Async file I/O
-websockets>=11.0.0          # WebSocket support
-
-# NLP Utilities
-spacy>=3.6.0                # Advanced NLP
-nltk>=3.8.0                 # Natural language toolkit
-textblob>=0.17.0            # Sentiment analysis
-
-# Vision
-opencv-python>=4.8.0        # Computer vision
-pillow>=10.0.0              # Image processing
-
-# System & Monitoring
-psutil>=5.9.0               # System metrics
-watchdog>=3.0.0             # File system monitoring
-rich>=13.4.0                # Terminal formatting
-
-# Configuration & Types
-pydantic>=2.0.0             # Data validation
-click>=8.1.0                # CLI framework
-typing-extensions>=4.7.0   # Type hints
-
-# Development & Quality
-pytest>=7.4.0               # Testing framework
-black>=23.3.0               # Code formatter
-flake8>=6.0.0               # Linter
-mypy>=1.4.0                 # Type checker
+# Pull models
+ollama pull gemma3:1b        # 2GB, fast
+ollama pull codellama:7b     # 4GB, better code
+ollama pull deepseek-coder:6.7b  # 5GB, best code analysis
 ```
 
-### **Platform Integration**
-- **Build Systems**: CMake (C++), MSBuild (.NET), setuptools (Python)
-- **Quality Tools**: Pylint, Black, MyPy for Python; dotnet format for C#
-- **Testing**: pytest (Python), MSTest (.NET), CMake CTest (C++)
-- **External APIs**: OpenRouter (DeepSeek V3.1), Google AI Studio (Gemini)
+**Gemini (Cloud AI)**:
+```bash
+# Get API key from: https://aistudio.google.com/
+$env:GOOGLE_API_KEY = "your_api_key_here"
+$env:GEMINI_MODEL = "gemini-2.5-flash"  # optional
+```
+
+**DeepSeek (Cloud AI)**:
+```bash
+# Get API key from: https://openrouter.ai/
+$env:OPENROUTER_API_KEY = "your_api_key_here"
+```
+
+### Build Configuration
+
+**Python**:
+- Dependencies: `ai/requirements.txt` (113 packages)
+- Virtual environment recommended: `python -m venv venv`
+
+**C++**:
+- Standard: C++17
+- Build system: CMake 3.20+
+- Threading: `find_package(Threads REQUIRED)`
+
+**C#**:
+- Framework: .NET 8.0
+- UI: WPF + WebView2
+- Build: `dotnet build AIOS.sln`
 
 ---
 
-## 🌟 **Project Vision**
+## Development Workflow
 
-**AIOS represents an ongoing research effort into revolutionary code evolution through multi-agent AI coordination, neural architecture, and biological consciousness patterns. The platform enables autonomous code generation, refinement, and optimization through evolutionary algorithms guided by AI consensus and temporal intelligence.**
+### 1. Running Tests
 
-### **Key Innovations**
-- **Neural Evolution Chains**: Linked list architecture where code mutations become neural networks
-- **Multi-Agent Consensus**: Ollama, Gemini, DeepSeek collaborate on code quality assessment
-- **Temporal Intelligence**: AI agents communicate across time through message passing
-- **Universal Logger**: Complete AI-to-AI communication tracking across all systems
-- **Evolution Lab**: Dedicated workspace for active code evolution experiments
+```bash
+# Python tests
+cd ai
+python -m pytest tests/ -v
 
-### **Current Milestone** (October 8, 2025)
-✅ Multi-agent framework operational with parallel execution  
-✅ Universal agentic logger with dual-location storage complete  
-✅ Evolution Lab architecture validated with proper file separation  
-✅ Neural chain implementation with temporal intelligence active  
-✅ 50+ AI tools accessible via interface bridge  
-🔄 Next: Deploy full three-agent comparison pipeline with genetic algorithms  
+# Multi-agent experiments
+python tests/test_multi_agent_experiment.py
 
----
+# C++ tests (after build)
+cd core/build
+ctest --output-on-failure
 
-## 🔮 **Roadmap**
+# C# tests
+dotnet test AIOS.sln
+```
 
-### **Immediate (1-2 Days)**
-- Test parallel multi-agent execution with all three agents (Ollama, Gemini, DeepSeek)
-- Implement agent comparison framework with diff analysis
-- Validate interface bridge tool discovery and accessibility
+### 2. Starting Components
 
-### **Short-Term (1-2 Weeks)**
-- Build prompt refinement system with pattern library
-- Integrate VSCode Copilot for strategic oversight
-- Create visual dashboard for real-time consciousness tracking
+```bash
+# Interface Bridge (Python HTTP API)
+python ai/server_manager.py start
 
-### **Long-Term (2-4 Weeks)**
-- Automate feedback loop with agent-to-agent communication
-- Deploy production evolution pipeline with genetic algorithms
-- Showcase featured experiments from evolution_lab with metrics
+# C# UI Application
+dotnet run --project interface/AIOS.UI/AIOS.UI.csproj
 
----
+# System health check
+python runtime_intelligence/tools/system_health_check.py
+```
 
-## 📜 **License**
+### 3. Viewing Experiment Results
 
-**Proprietary License** - Research and development platform for AI consciousness emergence research. See `LICENSE` for details.
+```bash
+# List recent experiments
+dir evolution_lab\experiments\ | Sort-Object LastWriteTime | Select-Object -Last 5
 
----
+# View AI conversation logs
+Get-Content evolution_lab\conversations\conversation_<timestamp>.json | ConvertFrom-Json
 
-**Acknowledgments**: AIOS development team and contributors to the advancement of AI-assisted development platforms and natural language programming research.
+# Check evolution history
+dir evolution_lab\neural_chains\
+```
 
 ---
 
-*🧬 AIOS - Advancing AI-assisted development through neural evolution, multi-agent coordination, and biological consciousness emergence.*
+## Documentation
+
+### 🎯 Core Navigation Documents (Root Level)
+- **[DEV_PATH.md](DEV_PATH.md)** - Current development status, active work tracking, tactical roadmap (1815 lines)
+- **[PROJECT_CONTEXT.md](PROJECT_CONTEXT.md)** - Strategic context, architectural principles, development guidelines
+- **[README.md](README.md)** - This file: project overview, quick start, usage examples
+
+### 📚 Essential Documentation (docs/)
+- **[Architecture Index](docs/ARCHITECTURE_INDEX.md)** - System architecture overview and complete documentation navigation hub
+- **[Multi-Agent Guide](docs/development/MULTI_AGENT_EXPERIMENTATION_COMPLETE_20251008.md)** - Complete multi-agent implementation details
+- **[Changelog](docs/CHANGELOG.md)** - Development history and version information
+
+### Technical References
+- **[Orchestration Guide](docs/ORCHESTRATION_MASTER_GUIDE.md)** - Component coordination patterns (30KB, 10 sections)
+- **[Integration Report](docs/INTEGRATION_MIGRATION_MASTER_REPORT.md)** - 8-phase refactoring history
+- **[Core Optimization](docs/CORE_OPTIMIZATION_MASTER_REPORT.md)** - Performance optimization strategies
+- **[Code Archival System](docs/CODE_ARCHIVAL_SYSTEM_COMPLETE.md)** - Knowledge preservation methodology
+
+### API Documentation
+- **[API Reference](docs/api/)** - Component interfaces and integration patterns
+- **[Tools Index](docs/tools_index.md)** - Runtime intelligence tools catalog
+- **[Quick Reference](docs/QUICK_REFERENCE.md)** - Fast lookup for common operations
+
+---
+
+## System Requirements
+
+### Minimum Requirements
+- **OS**: Windows 10 (64-bit) or Windows 11
+- **RAM**: 8 GB (16 GB recommended for Ollama)
+- **Storage**: 10 GB free space (20 GB with all AI models)
+- **CPU**: Multi-core processor (4+ cores recommended)
+
+### Software Requirements
+- **Python**: 3.12.8 or higher
+- **.NET SDK**: 8.0 or higher
+- **CMake**: 3.20 or higher
+- **PowerShell**: 7.0 or higher
+- **Ollama**: Latest version (optional, for local AI)
+
+### Optional External Services
+- **Google AI Studio**: For Gemini API access (free tier available)
+- **OpenRouter**: For DeepSeek API access (paid service)
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue**: Ollama models not found
+```bash
+# Solution: Pull the model first
+ollama pull gemma3:1b
+ollama list  # Verify it's installed
+```
+
+**Issue**: Interface bridge won't start
+```bash
+# Solution: Check if port 8000 is in use
+netstat -ano | findstr :8000
+# Kill process if needed, then restart:
+python ai/server_manager.py restart
+```
+
+**Issue**: C++ build fails
+```bash
+# Solution: Verify CMake and compiler installation
+cmake --version  # Should be 3.20+
+# On Windows, install Visual Studio Build Tools
+```
+
+**Issue**: Python import errors
+```bash
+# Solution: Activate virtual environment and reinstall
+.\venv\Scripts\activate
+pip install -r ai/requirements.txt
+```
+
+---
+
+## Contributing
+
+### Development Standards
+- **Code Style**: 
+  - Python: Black formatter, PEP 8
+  - C#: dotnet format
+  - C++: Clang-format
+- **Testing**: Write unit tests for new features
+- **Documentation**: Update relevant docs with changes
+- **Commits**: Clear, descriptive commit messages
+
+### Contribution Workflow
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/my-feature`
+3. Make changes and test thoroughly
+4. Update documentation
+5. Submit pull request with description of changes
+
+### Getting Help
+- Check [Documentation Index](docs/ARCHITECTURE_INDEX.md) first
+- Review [Development Guide](docs/development/AIOS_DEV_PATH.md)
+- Look at [existing issues](https://github.com/Tecnocrat/AIOS/issues)
+
+---
+
+## Current Development Status
+
+**Active Components** ✅:
+- Multi-agent AI coordination (Ollama, Gemini, DeepSeek)
+- Interface bridge HTTP API (50+ tools)
+- Evolution Lab experiment workspace
+- Runtime intelligence monitoring (43 tools)
+- C# UI with WPF + WebView2
+- Python test suite
+
+**In Development** 🔧:
+- Genetic algorithm integration
+- Visual consciousness tracking dashboard
+- Automated feedback loops
+- Production deployment pipeline
+
+**Roadmap** 🗺️:
+- Agent-to-agent direct communication
+- Real-time code evolution visualization
+- Expanded AI model support
+- Cross-platform (Linux, macOS)
+
+See [Changelog](docs/CHANGELOG.md) for detailed development history.
+
+---
+
+## License
+
+**Proprietary License** - This project is proprietary research software. See [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
+
+AIOS is a research platform for exploring AI-assisted software development, multi-agent coordination, and code evolution techniques. It builds on open-source tools and AI models from:
+- [Ollama](https://ollama.com/) - Local AI inference
+- [Google Gemini](https://ai.google.dev/) - Cloud AI models
+- [OpenRouter](https://openrouter.ai/) - AI model aggregation
+
+---
+
+**AIOS** - Advancing AI-assisted development through multi-agent coordination and code evolution.
+
+*For questions, issues, or contributions, see our [documentation](docs/ARCHITECTURE_INDEX.md) or contact the development team.*

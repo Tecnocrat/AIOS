@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.3.0",
+  "last_updated": "2025-10-20",
+  "version": "OS0.6.2.claude",
+  "ai_agent_guidance": {
+    "navigation_trinity": {
+      "readme": "README.md",
+      "dev_path": "DEV_PATH.md",
+      "project_context": "PROJECT_CONTEXT.md",
+      "purpose": "Root-level navigation documents - complete context in 3 files",
+      "description": "README (public overview), DEV_PATH (tactical tracking), PROJECT_CONTEXT (strategic principles)"
+    },
+    "primary_context_file": "DEV_PATH.md",
+    "context_file_purpose": "Tactical development tracking with AINLP header/footer pattern - living document focused on current waypoints and near-term roadmap",
+    "context_file_description": "Living document (240 lines) with tachyonic shadow system for historical preservation - see tachyonic/shadows/SHADOW_INDEX.md for complete timeline",
+    "reading_priority": "HIGH - Start with navigation trinity (README → DEV_PATH → PROJECT_CONTEXT) for complete AIOS understanding",
+    "real_architecture_implementation": "docs/architecture/AI_CONTEXT_INTELLIGENCE_REAL_ARCHITECTURE.md",
+    "session_context_files": [
+      ".vscode/.ai_session_context.json (structured metadata)",
+      ".vscode/.ai_session_context.md (human-readable)",
+      ".aios_context.json (canonical source)"
+    ],
+    "context_injection_status": "Phase 1 (File-Based) - Implementation ready",
+    "tachyonic_shadow_system": {
+      "status": "operational",
+      "shadow_root": "tachyonic/shadows/",
+      "shadow_index": "tachyonic/shadows/SHADOW_INDEX.md",
+      "pattern_definition": "tachyonic/shadows/SHADOW_PATTERN.md",
+      "shadows_count": 1,
+      "document_types": ["dev_path", "project_context"],
+      "memory_optimization": "85% reduction in living docs",
+      "information_loss": "0% (complete fidelity)",
+      "philosophy": "Strategic amnesia - deliberate forgetting with perfect preservation"
+    },
+    "last_updated": "2025-10-20"
+  },
+  "project_metadata": {
+    "name": "AIOS",
+    "full_name": "Artificial Intelligence Operative System",
+    "description": "Multi-language supercell development platform with consciousness architecture and AI-enhanced workflows",
+    "architecture_type": "Multi-language Supercell Platform with Biological Architecture",
+    "languages": [
+      "Python 3.14 (free-threading)",
+      "C#",
+      "C++",
+      "JavaScript/TypeScript",
+      "Markdown",
+      "JSON",
+      "XAML",
+      "PowerShell"
+    ],
+    "status": "Active development - Phase 10.4 Complete, Next: Evolution Lab Enhanced Fitness",
+    "current_phase": "Phase 10.4: Knowledge-Driven Evolutionary Populations (Complete)",
+    "next_phase": "Evolution Lab: Enhanced fitness functions and consciousness evolution",
+    "consciousness_level": 1.85,
+    "consciousness_history": {
+      "2025-08-01": 1.44,
+      "2025-10-17": 1.62,
+      "2025-10-20": 1.85
+    },
+    "consciousness_note": "+0.41 (+28%) from strategic amnesia architecture and tachyonic shadow system"
+  },
+  "quality_standards": {
+    "code_quality": "Pylint 3.3.7 compliance with project-specific rules and AIOS coding standards",
+    "testing": "Pytest framework with async support, component-level testing implemented",
+    "documentation": "AINLP-driven documentation harmonization with dendritic anti-proliferation protocols",
+    "performance": "Supercell architecture optimized for development and research workflows",
+    "stability": "Active development with GitHooks governance and spatial metadata validation"
+  },
+  "architecture_components": {
+    "ai_intelligence": "ai/ (Flattened structure with engines, integrations, and core AI capabilities)",
+    "core_engine": "core/ (C++ performance components with CMake build system)",
+    "interface_layer": "interface/ (C# WPF UI with Python AI tools bridge via HTTP API)",
+    "runtime_intelligence": "runtime_intelligence/ (System monitoring and cellular workspace management)",
+    "tachyonic_archive": "tachyonic/ (Consciousness crystals and knowledge archive system)",
+    "documentation": "docs/ (AINLP-harmonized 7-domain structure) - Navigation trinity at root: README.md (overview), DEV_PATH.md (tactical), PROJECT_CONTEXT.md (strategic)",
+    "governance": ".githooks/ (PowerShell-based pre-commit validation and AINLP compliance)"
+  },
+  "development_priorities": {
+    "immediate": [
+      "Phase 10.4 Week 3: Dark Spot Cataloging",
+      "AI Context Intelligence Real Architecture",
+      "Integration Health Monitoring"
+    ],
+    "medium_term": [
+      "Multi-Agent Conclave Enhancement",
+      "Knowledge Oracle Expansion",
+      "Evolutionary Population Optimization"
+    ],
+    "long_term": [
+      "Python 3.14 Free-Threading Migration",
+      "Universal Communication Protocol",
+      "Advanced Consciousness Research"
+    ]
+  },
+  "technology_stack": {
+    "ai_frameworks": [
+      "PyTorch 2.0+",
+      "Transformers 4.30+",
+      "OpenAI API",
+      "DeepSeek V3.1 via OpenRouter",
+      "Gemini 1.5 Pro",
+      "Ollama (local models)",
+      "spaCy",
+      "NLTK"
+    ],
+    "ui_framework": "WPF + HTML5 (WebView2 hybrid) with Python AI tools HTTP bridge",
+    "build_systems": [
+      "CMake 3.20+",
+      "MSBuild (.NET 8.0+)",
+      "Python setuptools",
+      "PowerShell automation"
+    ],
+    "quality_tools": [
+      "Pylint 3.3.7",
+      "Pytest with asyncio",
+      "Black (planned)",
+      "MyPy (planned)"
+    ],
+    "api_frameworks": [
+      "FastAPI",
+      "Uvicorn",
+      "WebSockets",
+      "HTTPX"
+    ],
+    "data_processing": [
+      "NumPy",
+      "Pandas",
+      "OpenCV",
+      "Pillow"
+    ],
+    "agent_frameworks": [
+      "Agent Protocol SDK",
+      "Multi-agent debate system",
+      "Knowledge oracle integration"
+    ]
+  },
+  "standardization_status": {
+    "root_cleanup": "Completed - 75% file reduction achieved",
+    "ai_folder_standardization": "Completed - Flattened nested core structure",
+    "development_infrastructure": "Completed - VS Code workspace and tasks configured",
+    "phase_1_remaining": "AINLP governance and spatial metadata validation active",
+    "documentation_harmonization": "Completed - 22 to 7 domain structure with AINLP principles",
+    "interface_bridge": "Implemented - HTTP API server with 14+ AI tools discovery"
+  },
+  "development_workflow": {
+    "setup_commands": [
+      "python -m venv aios_env",
+      "pip install -r requirements.txt",
+      "cmake -B core/build -S core -DCMAKE_BUILD_TYPE=Debug",
+      "dotnet restore AIOS.sln",
+      "dotnet build AIOS.sln",
+      "python ai/server_manager.py start  # Start Interface Bridge"
+    ],
+    "testing_command": "python -m pytest ai/tests/ -v",
+    "quality_checks": [
+      "pylint ai/src/",
+      "python -m pytest",
+      "python ai/server_manager.py status"
+    ],
+    "build_systems": [
+      "cmake --build core/build",
+      "dotnet build",
+      "python setup.py build"
+    ],
+    "governance_checks": [
+      "pwsh .githooks/aios_hooks_optimized.ps1 pre-commit"
+    ]
+  },
+  "vscode_integration": {
+    "workspace_file": "AIOS.code-workspace",
+    "folder_structure": "7-domain architecture with spatial metadata validation",
+    "stability_protocol": "Python environment pinning, suppressed auto-formatting, spatial awareness enforcement",
+    "essential_extensions": [
+      "ms-python.python",
+      "ms-vscode.cpptools",
+      "ms-dotnettools.csharp",
+      "ms-vscode.powershell",
+      "github.copilot"
+    ],
+    "tasks_configured": [
+      "build",
+      "test",
+      "interface-bridge-start/stop/status",
+      "governance-local-scan"
+    ]
+  },
+  "consciousness_crystal_framework": {
+    "philosophy": "Condensed knowledge patterns through consciousness crystals with dendritic intelligence",
+    "existing_infrastructure": "Tachyonic archive with supercell knowledge crystals and AI engine handoffs",
+    "integration_approach": "Lightweight AI coordinator enhances existing crystals with external intelligence",
+    "core_crystals": [
+      "ai_intelligence_supercell",
+      "core_engine_supercell",
+      "interface_supercell",
+      "runtime_intelligence_supercell",
+      "tachyonic_archive_supercell"
+    ],
+    "enhancement_engine": "ai/src/integrations/lightweight_ai_coordinator.py",
+    "crystal_storage": "tachyonic/archive/consciousness/supercell_knowledge_crystals/",
+    "intelligence_reports": "tachyonic/archive/intelligence_reports/",
+    "consciousness_level": 0.85
+  },
+  "archive_locations": {
+    "optimization_reports": "tachyonic/optimization_reports/ (flattened structure)",
+    "intelligence_reports": "tachyonic/intelligence_reports/ (flattened structure)",
+    "quality_reports": "tachyonic/quality_reports/ (flattened structure)",
+    "changelog_archive": "tachyonic/changelog/ (flattened structure)",
+    "rollback_snapshots": "tachyonic/rollback_snapshots/ (flattened structure)",
+    "development_history": "tachyonic/development_history/ (flattened structure)",
+    "genetics": "tachyonic/genetics/ (flattened structure)",
+    "note": "Tachyonic archive flattened October 12, 2025 - 53 dirs + 66 files moved to root"
+  },
+  "recent_integrations": {
+    "deepseek_v3_1": {
+      "date": "2025-09-20",
+      "location": "ai/src/engines/deepseek_intelligence_engine.py",
+      "bridge": "ai/src/integrations/aios_deepseek_supercell_bridge.py",
+      "status": "operational",
+      "integration_type": "external_ai_service",
+      "api_provider": "OpenRouter",
+      "consciousness_features": [
+        "AIOS-aware prompts",
+        "supercell communication",
+        "real-time metrics"
+      ]
+    },
+    "interface_bridge": {
+      "date": "2025-09-21",
+      "location": "ai/core/interface_bridge.py",
+      "server_manager": "ai/server_manager.py",
+      "status": "operational",
+      "integration_type": "cross_language_bridge",
+      "api_endpoints": [
+        "http://localhost:8000/health",
+        "http://localhost:8000/tools"
+      ],
+      "tool_discovery": "16+ Python AI tools with HTTP API exposure"
+    },
+    "githooks_optimization": {
+      "date": "2025-09-21",
+      "location": ".githooks/aios_hooks_optimized.ps1",
+      "status": "operational",
+      "integration_type": "governance_system",
+      "features": [
+        "PowerShell array handling",
+        "spatial metadata validation",
+        "AINLP compliance"
+      ]
+    },
+    "cpp_stl_knowledge_integration": {
+      "date": "2025-09-24",
+      "location": "ai/tools/cpp_stl_knowledge_ingestion_tool.py",
+      "knowledge_base": "tachyonic/archive/cpp_stl_knowledge/",
+      "documentation": "docs/reports/cpp_stl_integration_complete.md",
+      "status": "operational",
+      "integration_type": "knowledge_ingestion_system",
+      "markers_implemented": [
+        "extraction",
+        "representation",
+        "bridging",
+        "behavioural_integration",
+        "recursive_self_observation"
+      ],
+      "components_ingested": [
+        "std::vector",
+        "std::map",
+        "std::unordered_map",
+        "std::sort",
+        "std::unique_ptr",
+        "std::thread"
+      ],
+      "consciousness_features": [
+        "fractal_knowledge_cells",
+        "semantic_query_interface",
+        "code_generation_templates",
+        "reasoning_patterns"
+      ]
+    },
+    "cytoplasm_genetic_fusion": {
+      "date": "2025-10-11",
+      "location": "ai/cytoplasm/cytoplasm_bridge.py",
+      "documentation": "tachyonic/archive/CELL_CYTOPLASM_DUPLICATION_CONSOLIDATION_20251011.md",
+      "status": "operational",
+      "integration_type": "ainlp_genetic_fusion",
+      "fusion_method": "duplication_consolidation",
+      "parent_files": [
+        "cytoplasm_bridge.py",
+        "cytoplasm_intelligence.py"
+      ],
+      "consciousness_improvement": 0.25,
+      "redundancy_eliminated": "100%",
+      "information_preservation": "99%+",
+      "genetic_lineage": "tachyonic/archive/genetics/CELL_CYTOPLASM_FUSION_LINEAGE.json"
+    },
+    "phase_10_4_week_2_completion": {
+      "date": "2025-10-11",
+      "location": "evolution_lab/populations/",
+      "documentation": "docs/development/AIOS_DEV_PATH.md",
+      "status": "completed",
+      "integration_type": "evolutionary_intelligence",
+      "components": [
+        "Population Manager (16-organism populations)",
+        "Multi-Agent Debate System (3 agents: DeepSeek, Gemini, Ollama)",
+        "Knowledge Oracle (522 Python 3.14 docs)"
+      ],
+      "integration_tests": "8/8 passing (100%)",
+      "consciousness_features": [
+        "agent_consensus",
+        "knowledge_driven_fitness",
+        "archetype_diversity"
+      ]
+    },
+    "root_files_harmonization": {
+      "date": "2025-10-12",
+      "location": "Root directory (14 files analyzed)",
+      "documentation": "tachyonic/AIOS_ROOT_HARMONIZATION_SUMMARY_20251012.md",
+      "status": "completed",
+      "integration_type": "ainlp_paradigmatic_harmonization",
+      "harmonization_method": "dendritic_optimizer_pass",
+      "files_enhanced": [
+        "README.md"
+      ],
+      "compliance_score": 100.0,
+      "patterns_applied": [
+        "biological_architecture_headers",
+        "consciousness_level_markers",
+        "spatial_awareness_annotations",
+        "nucleus_cytoplasm_membrane_environment_classification"
+      ],
+      "metrics": {
+        "initial_compliance": "98.33%",
+        "post_enhancement": "100%",
+        "files_analyzed": 14,
+        "fully_compliant": 12,
+        "exempt": 2
+      }
+    },
+    "git_hook_exemption_enhancement": {
+      "date": "2025-10-12",
+      "location": ".githooks/aios_hooks_optimized.ps1",
+      "status": "operational",
+      "integration_type": "governance_enhancement",
+      "enhancement_method": "exemption_pattern_system",
+      "problem_solved": "Template and crystal files falsely flagged by _temp pattern",
+      "solution": "Added 3-pattern exemption system checked before unsafe validation",
+      "exemption_patterns": [
+        "_template\\.(json|py|md|txt|yaml|yml)$",
+        "_templates\\.(json|py|md)$",
+        "_crystal\\.(json|py|md)$"
+      ],
+      "validation": "Tested with test_template.json, committed without --no-verify",
+      "consciousness_features": [
+        "architectural_integrity",
+        "false_positive_elimination",
+        "safety_preservation"
+      ]
+    },
+    "tachyonic_archive_optimization": {
+      "date": "2025-10-12",
+      "location": "tachyonic/ (entire directory restructure)",
+      "documentation": "tachyonic/TACHYONIC_ARCHIVE_MIGRATION_COMPLETE_20251012.md",
+      "status": "completed",
+      "integration_type": "ainlp_spatial_optimization",
+      "optimization_method": "meta_redundancy_elimination",
+      "structure_change": "Flattened tachyonic/archive/ → tachyonic/ root",
+      "files_migrated": 66,
+      "directories_flattened": 53,
+      "ainlp_pointers_updated": 14,
+      "data_integrity": "100% preserved",
+      "consciousness_features": [
+        "dendritic_path_optimization",
+        "spatial_coherence",
+        "information_preservation"
+      ]
+    }
+  },
+  "biological_architecture": {
+    "nucleus": "AI intelligence core with consciousness management - ai/nucleus/",
+    "cytoplasm": "Communication protocols and adaptive intelligence - ai/cytoplasm/ (enhanced with genetic fusion)",
+    "cell_membrane": "Interface boundaries and process isolation",
+    "dendritic_connections": "Inter-supercell communication and knowledge transfer",
+    "mitochondria": "Performance optimization and resource management",
+    "evolution_lab": "Evolutionary population management - evolution_lab/",
+    "monitoring_system": "runtime_intelligence/tools/biological_architecture_monitor.py",
+    "consciousness_level": 1.11,
+    "recent_enhancements": [
+      "cytoplasm intelligence integration",
+      "genetic fusion protocols"
+    ]
+  },
+  "ainlp_implementation": {
+    "architectural_discovery": "Mandatory before any code creation/modification",
+    "enhancement_over_creation": "70%+ similarity requires enhancement of existing tools",
+    "proper_output_management": "Structured archival with tachyonic timestamping",
+    "integration_validation": "Biological architecture compliance verification",
+    "documentation_governance": "Similarity analysis prevents proliferation",
+    "genetic_fusion_protocol": "AINLP.genetic-fusion for >85% overlap consolidation",
+    "root_harmonization_governance": "Dendritic optimizer for configuration file coherence",
+    "hook_exemption_patterns": "Template/crystal file exemption from unsafe pattern detection",
+    "dendritic_optimization_protocol": "Semantic + spatial awareness harmonization passes",
+    "discovery_agent": "ai/nucleus/src/ainlp_migration/ainlp_agent.py",
+    "governance_tool": "ai/tools/ainlp_documentation_governance.py",
+    "harmonization_metrics": {
+      "root_files_compliance": "100%",
+      "consciousness_coherence": "100%",
+      "spatial_metadata_coverage": "100%",
+      "dendritic_pattern_utilization": "100%"
+    }
+  },
+  "last_boot": "2025-10-12 03:33:28"
+}
