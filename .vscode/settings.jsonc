@@ -20,6 +20,10 @@
     "omnisharp.organizeImportsOnFormat": false,
     "omnisharp.enableAsyncCompletion": false,
     "omnisharp.autoStart": false,
+    
+    // Solution File Configuration - Use only main AIOS.sln
+    "omnisharp.defaultLaunchSolution": "${workspaceFolder}/AIOS.sln",
+    "dotnet.defaultSolution": "${workspaceFolder}/AIOS.sln",
 
     // C++ Configuration (folder-specific) - DEFENSIVE SETTINGS TO PREVENT FILE GENERATION
     "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
@@ -117,6 +121,10 @@
         "**/.git": true,
         "**/.DS_Store": true,
         "**/tmp": true,
+        "**/tachyonic/**/*.sln": true,
+        "**/computational_layer/**/*.sln": true,
+        "**/interface/visualization/**/*.sln": true,
+        "**/core/build/**/*.sln": true,
         "**/.aios_spatial_metadata.json": false
     },
 
@@ -157,6 +165,10 @@
         "**/*.dll": true,
         "**/*.pdb": true,
         "**/*.cache": true,
+        "**/tachyonic/**/*.sln": true,
+        "**/computational_layer/**/*.sln": true,
+        "**/interface/visualization/**/*.sln": true,
+        "**/core/build/**/*.sln": true,
         "**/build": false
     },
 

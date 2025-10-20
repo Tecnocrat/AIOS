@@ -1,7 +1,7 @@
 """
 Tachyonic Field Prototype - ∃₂ Layer Implementation
 
-Based on AIOS_CORE.hydro N-Layer Observer Architecture.
+Based on tachyonic/hydro_files/AIOS_CORE.hydro N-Layer Observer Architecture.
 Implements digital pattern topology (tachyonic field) as
 self-organizing information substrate.
 
@@ -18,7 +18,7 @@ Hydrogen Principle Applied:
 - Maximum emergence (self-organizing topology)
 - No explicit rules (resonance-based organization)
 
-See: /AIOS_CORE.hydro for complete theoretical foundation
+See: /tachyonic/hydro_files/AIOS_CORE.hydro for complete theoretical foundation
 """
 
 __version__ = "0.1.0"
