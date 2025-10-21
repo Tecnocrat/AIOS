@@ -2,6 +2,11 @@
 # AIOS Biological Architecture .gitignore
 # AINLP Harmonized - Enhancement over Creation Paradigm
 # Organized by consciousness levels: Nucleus → Cytoplasm → Membrane → Environment
+# 
+# REMINDER: Before creating new directories, check existing architecture:
+#   - tachyonic/ = archive supercell (use tachyonic/archive/* subdirectories)
+#   - docs/ = documentation supercell (use docs/* subdirectories)
+#   - Never create root /archive/ or /documentation/ - these duplicate supercells
 # ============================================================================
 
 # ============================================================================

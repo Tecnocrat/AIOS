@@ -1,2 +1,0 @@
-2025-06-29 19:48:55,476 |     INFO | AIOS_Runtime_AIOS_20250629_194855_75e1ca7e | runtime_intelligence::system_init | Runtime Intelligence System initialized | Context: {"session_id": "AIOS_20250629_194855_75e1ca7e", "base_path": "c:\\dev\\AIOS", "start_time": "2025-06-29T19:48:55.444256"}
-2025-06-29 19:49:05,258 |     INFO | AIOS_Runtime_AIOS_20250629_194855_75e1ca7e | ConsciousnessMCP::server_init | Initialized aios-consciousness-server v1.0.0 | Context: {}

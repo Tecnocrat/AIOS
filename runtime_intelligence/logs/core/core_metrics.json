@@ -1,3 +1,0 @@
-{"cpu": 10, "mem_mb": 100, "frame_ms": 16.6, "avg_frame_ms": 16.6}
-{"cpu": 20, "mem_mb": 110, "frame_ms": 18.0, "avg_frame_ms": 17.2}
-{"cpu": 30, "mem_mb": 120, "frame_ms": 17.0, "avg_frame_ms": 17.1}
