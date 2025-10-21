@@ -6,22 +6,22 @@
 {
 	"folders": [
 		{
-			"name": "🧠 AIOS Nucleus",
+			"name": "🧠 AIOS",
 			"path": ".",
 			"description": "Root coordination & essential project files - Biological architecture nucleus"
 		},
 		{
-			"name": "🤖 AI Intelligence Layer",
+			"name": "🤖 AI",
 			"path": "./ai",
 			"description": "Python AI processing, research & core algorithms - High consciousness dendritic processing"
 		},
 		{
-			"name": "⚡ Core Engine",
+			"name": "⚡ Core",
 			"path": "./core",
 			"description": "C++ performance components & system foundation - Cytoplasm communication layer"
 		},
 		{
-			"name": "🖥️ Interface Layer",
+			"name": "🖥️ Interface",
 			"path": "./interface",
 			"description": "C# UI & service architecture (WPF + WebView2) - Cell membrane boundary management"
 		},
@@ -31,17 +31,17 @@
 			"description": "Technical documentation & API references - Knowledge genome preservation"
 		},
 		{
-			"name": "🧮 Runtime Intelligence",
-			"path": "./runtime_intelligence",
+			"name": "🧮 Runtime",
+			"path": "./runtime",
 			"description": "System monitoring, optimization & telemetry - Biological architecture monitoring"
 		},
 		{
-			"name": "🌌 Tachyonic Archive",
+			"name": "🌌 Tachyonic",
 			"path": "./tachyonic",
 			"description": "Historical data, evolution tracking & status reports - Consciousness evolution memory"
 		},
 		{
-			"name": "🧬 Evolution Lab",
+			"name": "🧬 Lab",
 			"path": "./evolution_lab",
 			"description": "Evolutionary computation supercell - AI-orchestrated code evolution with fractal and holographic patterns"
 		}
@@ -188,8 +188,8 @@
 		// ==========================================================================
 		// ⚡ POWERSHELL DENDRITIC COORDINATION
 		// ==========================================================================
-		// PowerShell Configuration - Set default working directory to AIOS Nucleus
-		"powershell.cwd": "🧠 AIOS Nucleus",
+		// PowerShell Configuration - Set default working directory to AIOS
+		"powershell.cwd": "🧠 AIOS",
 		"powershell.startAutomatically": true,
 		"powershell.integratedConsole.startInBackground": false,
 		"powershell.integratedConsole.suppressStartupBanner": false,
@@ -223,9 +223,9 @@
 			"Visual Studio 17 2022"
 		],
 		"cmake.configureOnOpen": true,
-		// Route CMake Tools to the Core Engine cytoplasm folder explicitly in multi-root
-		"cmake.sourceDirectory": "${workspaceFolder:⚡ Core Engine}",
-		"cmake.buildDirectory": "${workspaceFolder:⚡ Core Engine}/build",
+		// Route CMake Tools to the Core cytoplasm folder explicitly in multi-root
+		"cmake.sourceDirectory": "${workspaceFolder:⚡ Core}",
+		"cmake.buildDirectory": "${workspaceFolder:⚡ Core}/build",
 		// Avoid noise in non-CMake consciousness layers
 		"cmake.ignoreCMakeListsMissing": true,
 
