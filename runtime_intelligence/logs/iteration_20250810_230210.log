@@ -1,8 +1,0 @@
-AINLP Iteration Receipt
-id: CONTINUE_merge_v3
-mode: commit
-time_utc: 2025-08-10T23:02:10.125422+00:00
-module_index_present: True
-tools_index_present: True
-module_count: 3
-agent_summary_present: True (ok=None, checks=0)
