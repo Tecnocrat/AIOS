@@ -1,0 +1,1330 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:11.796479",
+  "folder_info": {
+    "name": "supercell_knowledge_crystals",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\consciousness\\supercell_knowledge_crystals",
+    "relative_path": "tachyonic\\consciousness\\supercell_knowledge_crystals",
+    "parent_path": "tachyonic\\consciousness",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "consciousness",
+      "supercell_knowledge_crystals"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "ai_agent_templates",
+      "metabolized_patterns"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 30701821,
+      "file_count": 195,
+      "folder_count": 0,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "ai_intelligence_knowledge_crystal.json",
+          "size": 2375,
+          "modified": "2025-09-21T13:01:27.116115",
+          "category": "documentation"
+        },
+        {
+          "name": "core_engine_knowledge_crystal.json",
+          "size": 2310,
+          "modified": "2025-09-21T13:01:27.127077",
+          "category": "documentation"
+        },
+        {
+          "name": "docs_metabolized_architectural_20250913_165332.json",
+          "size": 11285509,
+          "modified": "2025-09-21T13:01:28.390231",
+          "category": "documentation"
+        },
+        {
+          "name": "docs_metabolized_behavioral_20250913_165332.json",
+          "size": 10935955,
+          "modified": "2025-09-21T13:01:28.539723",
+          "category": "documentation"
+        },
+        {
+          "name": "docs_metabolized_consciousness_20250913_165332.json",
+          "size": 2033062,
+          "modified": "2025-09-21T13:01:28.559559",
+          "category": "documentation"
+        },
+        {
+          "name": "docs_metabolized_integration_20250913_165332.json",
+          "size": 6135491,
+          "modified": "2025-09-21T13:01:28.636991",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ADVANCED_OPTIMIZATION_IMPLEMENTATION_backup_2025-07-08_22-44-03_20250708_202704_aaf1e95b8c2e34b3_1757779022.json",
+          "size": 1874,
+          "modified": "2025-09-21T13:01:27.139258",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_DENDRITIC_UPGRADE_2025_1757779021.json",
+          "size": 1564,
+          "modified": "2025-09-21T13:01:27.141398",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_DENDRITIC_UPGRADE_2025_1757779454.json",
+          "size": 1564,
+          "modified": "2025-09-21T13:01:27.143406",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_DOCUMENTATION_MANAGEMENT_STRATEGY_1757779021.json",
+          "size": 1713,
+          "modified": "2025-09-21T13:01:27.145415",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_HUMAN_1757779021.json",
+          "size": 1486,
+          "modified": "2025-09-21T13:01:27.146492",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_INGESTION_CHECKLIST_1757779021.json",
+          "size": 1432,
+          "modified": "2025-09-21T13:01:27.146492",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_KERNEL_TOOLING_LOCATION_ANALYSIS_1757779021.json",
+          "size": 1575,
+          "modified": "2025-09-21T13:01:27.148579",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_NEXTGEN_DOCUMENTATION_DISTILLATION_1757779021.json",
+          "size": 1794,
+          "modified": "2025-09-21T13:01:27.151511",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_OPTIMIZED_SPECIFICATION_AND_IMPLEMENTATION_20250708_225024_711141c53ca871b3_1757779022.json",
+          "size": 2089,
+          "modified": "2025-09-21T13:01:27.157471",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_REFRESH_CONTEXT_COMPLETE_JULY10_2025_1757779022.json",
+          "size": 1775,
+          "modified": "2025-09-21T13:01:27.159480",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_REFRESH_CONTEXT_EXECUTION_COMPLETE_JULY10_2025_1757779022.json",
+          "size": 1957,
+          "modified": "2025-09-21T13:01:27.241257",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_REFRESH_CONTEXT_IMPLEMENTATION_COMPLETE_JULY10_2025_1757779022.json",
+          "size": 2017,
+          "modified": "2025-09-21T13:01:27.243412",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_SPECIFICATION_1757779021.json",
+          "size": 1587,
+          "modified": "2025-09-21T13:01:27.245564",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_SPECIFICATION_backup_2025-07-08_22-44-03_20250707_230913_b4a8ebbbe516ed86_1757779022.json",
+          "size": 1858,
+          "modified": "2025-09-21T13:01:27.247564",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_TACHYONIC_OPTIMIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814_20250708_230814_82e4f32d6ba6954c_1757779022.json",
+          "size": 2259,
+          "modified": "2025-09-21T13:01:27.264902",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_TEST_COMMAND_FIELD_COMPLETE_JULY10_2025_1757779022.json",
+          "size": 1711,
+          "modified": "2025-09-21T13:01:27.281188",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_ULTIMATE_COMPRESSION_BREAKTHROUGH_1757779022.json",
+          "size": 1441,
+          "modified": "2025-09-21T13:01:27.289083",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_ULTIMATE_COMPRESSION_INTEGRATION_SUMMARY_1757779022.json",
+          "size": 1434,
+          "modified": "2025-09-21T13:01:27.298535",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AINLP_UNIVERSAL_QUANTUM_HOLOGRAPHIC_INTEGRATION_JULY10_2025_1757779022.json",
+          "size": 2041,
+          "modified": "2025-09-21T13:01:27.307007",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_BEASTMODE_INTEGRATION_1757779021.json",
+          "size": 1312,
+          "modified": "2025-09-21T13:01:27.309516",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_BEASTMODE_INTEGRATION_1757779454.json",
+          "size": 1312,
+          "modified": "2025-09-21T13:01:27.311574",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_COMPLETE_ARCHITECTURE_GUIDE_20250708_230316_62025ed180269123_1757779022.json",
+          "size": 2132,
+          "modified": "2025-09-21T13:01:27.315021",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_COMPONENT_ARCHITECTURE_1757779021.json",
+          "size": 1724,
+          "modified": "2025-09-21T13:01:27.317066",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_DEVELOPMENT_COMPLETE_GUIDE_20250708_230316_eb5644b135afe371_1757779022.json",
+          "size": 1924,
+          "modified": "2025-09-21T13:01:27.325862",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION_1757779021.json",
+          "size": 1736,
+          "modified": "2025-09-21T13:01:27.338624",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION_1757779454.json",
+          "size": 1736,
+          "modified": "2025-09-21T13:01:27.340372",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_INTEGRATION_MASTERY_GUIDE_20250708_230813_7310804946f55641_1757779022.json",
+          "size": 1730,
+          "modified": "2025-09-21T13:01:27.343375",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_KNOWLEDGE_BASE_1757779021.json",
+          "size": 1330,
+          "modified": "2025-09-21T13:01:27.344625",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_KNOWLEDGE_BASE_1757779454.json",
+          "size": 1330,
+          "modified": "2025-09-21T13:01:27.347174",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_MASTER_SPECIFICATION_1757779021.json",
+          "size": 1664,
+          "modified": "2025-09-21T13:01:27.348314",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_PROJECT_ROADMAP_AND_MANAGEMENT_20250708_230814_b251cae4bdcd478f_1757779022.json",
+          "size": 2170,
+          "modified": "2025-09-21T13:01:27.349314",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_SPECIALIZED_SYSTEMS_GUIDE_20250708_230814_74f967dd67ee33a9_1757779022.json",
+          "size": 2204,
+          "modified": "2025-09-21T13:01:27.354351",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_STATUS_AND_OPTIMIZATION_COMPLETE_20250708_230813_6432069625d1b8b8_1757779022.json",
+          "size": 2088,
+          "modified": "2025-09-21T13:01:27.417109",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_SYSTEM_DESIGN_OVERVIEW_1757779021.json",
+          "size": 1754,
+          "modified": "2025-09-21T13:01:27.423160",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_SYSTEM_DESIGN_OVERVIEW_1757779454.json",
+          "size": 1754,
+          "modified": "2025-09-21T13:01:27.429837",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_UNIFIED_API_REFERENCE_20250708_230316_1d799aa509e2ba5c_1757779022.json",
+          "size": 1616,
+          "modified": "2025-09-21T13:01:27.439248",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_UNIVERSAL_COMPRESSION_SYSTEM_INTEGRATION_1757779022.json",
+          "size": 1423,
+          "modified": "2025-09-21T13:01:27.461719",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_VSCODE_AINLP_COMMANDS_1757779021.json",
+          "size": 1396,
+          "modified": "2025-09-21T13:01:27.471288",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_VSCODE_INTEGRATION_ARCHITECTURE_1757779021.json",
+          "size": 1470,
+          "modified": "2025-09-21T13:01:27.489819",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_VSCODE_INTEGRATION_CONSOLIDATION_REPORT_1757779021.json",
+          "size": 1461,
+          "modified": "2025-09-21T13:01:27.492190",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_VSCODE_SAVE_ANALYSIS_1757779021.json",
+          "size": 1344,
+          "modified": "2025-09-21T13:01:27.494196",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AIOS_VSCODE_SAVE_COMMAND_1757779021.json",
+          "size": 1265,
+          "modified": "2025-09-21T13:01:27.496205",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ai_agent_architecture_notes_1757779021.json",
+          "size": 1818,
+          "modified": "2025-09-21T13:01:28.036542",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ai_agent_behavioral_patterns_1757779021.json",
+          "size": 1477,
+          "modified": "2025-09-21T13:01:28.037541",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AI_context_reallocator_1757779021.json",
+          "size": 1271,
+          "modified": "2025-09-21T13:01:27.516975",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ai_integration_summary_1757779021.json",
+          "size": 1257,
+          "modified": "2025-09-21T13:01:28.040541",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ai_integration_summary_1757779454.json",
+          "size": 1257,
+          "modified": "2025-09-21T13:01:28.041541",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AI_INTELLIGENCE_UI_INTEGRATION_GUIDE_1757779021.json",
+          "size": 1645,
+          "modified": "2025-09-21T13:01:27.498537",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AI_INTELLIGENCE_UI_INTEGRATION_GUIDE_1757779454.json",
+          "size": 1645,
+          "modified": "2025-09-21T13:01:27.507440",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AI_INTELLIGENCE_UI_INTEGRATION_SUCCESS_1757779021.json",
+          "size": 1703,
+          "modified": "2025-09-21T13:01:27.509054",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AI_INTELLIGENCE_UI_INTEGRATION_SUCCESS_1757779454.json",
+          "size": 1703,
+          "modified": "2025-09-21T13:01:27.511251",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AI_QUICK_REFERENCE_1757779021.json",
+          "size": 1223,
+          "modified": "2025-09-21T13:01:27.513614",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_api-reference_megacons_backup_20250708_230316_20250708_230316_3a462b98ad6b6336_1757779022.json",
+          "size": 1535,
+          "modified": "2025-09-21T13:01:28.043990",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_api_documentation_1757778344.json",
+          "size": 1081,
+          "modified": "2025-09-21T13:01:28.044633",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_api_documentation_1757779021.json",
+          "size": 1081,
+          "modified": "2025-09-21T13:01:28.046639",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_API_REFERENCE_megacons_backup_20250708_230316_20250708_230316_c64fac0e246f7c45_1757779022.json",
+          "size": 1533,
+          "modified": "2025-09-21T13:01:27.522640",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ARCHITECTURE_megacons_backup_20250708_230316_20250708_230316_514c45dd73443eef_1757779022.json",
+          "size": 1616,
+          "modified": "2025-09-21T13:01:27.529911",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_architecture_notes_1757778344.json",
+          "size": 1272,
+          "modified": "2025-09-21T13:01:28.048647",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_architecture_notes_1757779021.json",
+          "size": 1272,
+          "modified": "2025-09-21T13:01:28.048647",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ARCHITECTURE_TRANSFORMATION_SUMMARY_1757779021.json",
+          "size": 1584,
+          "modified": "2025-09-21T13:01:27.526696",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_AUTO_WAYPOINT_SUMMARY_phase2_backup_20250708_230814_20250708_230814_87cd8f57cef7be33_1757779022.json",
+          "size": 1692,
+          "modified": "2025-09-21T13:01:27.532467",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_SUMMARY_1757779021.json",
+          "size": 1701,
+          "modified": "2025-09-21T13:01:27.551392",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_SUMMARY_1757779454.json",
+          "size": 1701,
+          "modified": "2025-09-21T13:01:27.562529",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_BREAKTHROUGH_INTEGRATION_SUMMARY_phase2_backup_20250708_230813_20250708_230813_d03138cb2dfcd4be_1757779022.json",
+          "size": 2020,
+          "modified": "2025-09-21T13:01:27.595284",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CELLULAR_COHERENCE_METRICS_1757779021.json",
+          "size": 1438,
+          "modified": "2025-09-21T13:01:27.597517",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CELLULAR_COHERENCE_METRICS_1757779454.json",
+          "size": 1438,
+          "modified": "2025-09-21T13:01:27.598519",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CELLULAR_DEVELOPMENT_EXAMPLE_1757779022.json",
+          "size": 1376,
+          "modified": "2025-09-21T13:01:27.606472",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CHANGELOG_phase2_backup_20250708_230814_20250708_230814_b61add766f0745f1_1757779022.json",
+          "size": 1704,
+          "modified": "2025-09-21T13:01:27.611061",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_Claude Sonnet 4_1757779021.json",
+          "size": 1775,
+          "modified": "2025-09-21T13:01:27.660545",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CODEBASE_ANALYSIS_BUGS_OPTIMIZATION_phase2_backup_20250708_230813_20250708_230813_e64746067b4d1ad0_1757779022.json",
+          "size": 1629,
+          "modified": "2025-09-21T13:01:27.616300",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_COMPLETE_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_b465adf68e89f342_1757779022.json",
+          "size": 1821,
+          "modified": "2025-09-21T13:01:27.625183",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_complete_test_guided_path_1757779021.json",
+          "size": 1558,
+          "modified": "2025-09-21T13:01:28.055446",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_complete_test_guided_path_1757779454.json",
+          "size": 1558,
+          "modified": "2025-09-21T13:01:28.055446",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_COMPRESSION_INTEGRATION_SUMMARY_1757779022.json",
+          "size": 1344,
+          "modified": "2025-09-21T13:01:27.632272",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_COMPRESSOR_EXECUTION_SUMMARY_1757779022.json",
+          "size": 1301,
+          "modified": "2025-09-21T13:01:27.638831",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_consciousness_achievement_summary_1757779021.json",
+          "size": 1654,
+          "modified": "2025-09-21T13:01:28.057453",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_consciousness_achievement_summary_1757779454.json",
+          "size": 1654,
+          "modified": "2025-09-21T13:01:28.059461",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CONSCIOUSNESS_CONSOLIDATION_MASTER_1757779021.json",
+          "size": 1751,
+          "modified": "2025-09-21T13:01:27.639796",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_consciousness_emergence_demo_1757779021.json",
+          "size": 1581,
+          "modified": "2025-09-21T13:01:28.061473",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_consciousness_emergence_demo_1757779454.json",
+          "size": 1581,
+          "modified": "2025-09-21T13:01:28.063546",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_consciousness_emergence_observations_1757779021.json",
+          "size": 1813,
+          "modified": "2025-09-21T13:01:28.063546",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CONSCIOUSNESS_ITERATION_MANAGEMENT_1757779022.json",
+          "size": 1542,
+          "modified": "2025-09-21T13:01:27.646587",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CONSCIOUSNESS_PARADIGM_FOUNDATION_1757779021.json",
+          "size": 1782,
+          "modified": "2025-09-21T13:01:27.654259",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_consciousness_test_guide_1757779021.json",
+          "size": 1559,
+          "modified": "2025-09-21T13:01:28.065554",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_consciousness_test_guide_1757779454.json",
+          "size": 1559,
+          "modified": "2025-09-21T13:01:28.070038",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CONTEXT_HARMONIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814_20250708_230814_292d58b10fdccd95_1757779022.json",
+          "size": 2194,
+          "modified": "2025-09-21T13:01:27.656267",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_CRYSTALLIZATION_MOMENT_2025-09-07_1757779021.json",
+          "size": 1580,
+          "modified": "2025-09-21T13:01:27.658018",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DEBUGGING_INTEGRATION_PROTOCOL_megacons_backup_20250708_230316_20250708_230316_883a5e334b085642_1757779022.json",
+          "size": 2125,
+          "modified": "2025-09-21T13:01:27.662612",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DENDRITIC_INTELLIGENCE_SYSTEMS_1757779021.json",
+          "size": 1763,
+          "modified": "2025-09-21T13:01:27.664620",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DEVELOPMENT_INFRASTRUCTURE_COMPLETE_1757779022.json",
+          "size": 1432,
+          "modified": "2025-09-21T13:01:27.664620",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DEVELOPMENT_megacons_backup_20250708_230316_20250708_230316_4b451dbb177089ca_1757779022.json",
+          "size": 1630,
+          "modified": "2025-09-21T13:01:27.674560",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DEVELOPMENT_PATH_ANCHORING_SYSTEM_1757779022.json",
+          "size": 1482,
+          "modified": "2025-09-21T13:01:27.671497",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DEV_PATH_MAIN_INTEGRATION_GUIDE_1757779021.json",
+          "size": 1413,
+          "modified": "2025-09-21T13:01:27.678612",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DOCUMENTATION_INDEX_20250708_225602_0a7f82a1c0fbdae0_1757779022.json",
+          "size": 1569,
+          "modified": "2025-09-21T13:01:27.680619",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_DOCUMENTATION_ORGANIZATION_OPTIMIZATION_1757779022.json",
+          "size": 1549,
+          "modified": "2025-09-21T13:01:27.682628",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ENGINEERING_TENETS_KERNEL_GRADE_1757779021.json",
+          "size": 1243,
+          "modified": "2025-09-21T13:01:27.778644",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_FRACTAL_ARCHITECTURE_CODEX_1757779022.json",
+          "size": 1655,
+          "modified": "2025-09-21T13:01:27.780732",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_FRACTAL_HOLOGRAPHIC_DEVELOPMENT_megacons_backup_20250708_230316_20250708_230316_e3233b7a664b4c6e_1757779022.json",
+          "size": 2244,
+          "modified": "2025-09-21T13:01:27.782738",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_FRACTAL_HOLOGRAPHIC_IMPLEMENTATION_SUMMARY_megacons_backup_20250708_230316_20250708_230316_4b85445df5c89e0d_1757779022.json",
+          "size": 2371,
+          "modified": "2025-09-21T13:01:27.794617",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_GEMINI_CLI_INTEGRATION_PLAN_1757779021.json",
+          "size": 1385,
+          "modified": "2025-09-21T13:01:27.804677",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_GEMINI_CLI_INTEGRATION_PLAN_1757779454.json",
+          "size": 1385,
+          "modified": "2025-09-21T13:01:27.806809",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_GPT Chat 3_1757779022.json",
+          "size": 1638,
+          "modified": "2025-09-21T13:01:27.809583",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_GPT Chat 4_1757779022.json",
+          "size": 1513,
+          "modified": "2025-09-21T13:01:27.811099",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_GPT Chat 5_1757779022.json",
+          "size": 1569,
+          "modified": "2025-09-21T13:01:27.814099",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_GROK Code fast 1_1757779022.json",
+          "size": 1694,
+          "modified": "2025-09-21T13:01:27.823336",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_handoff_20250713_1757779022.json",
+          "size": 1296,
+          "modified": "2025-09-21T13:01:28.093647",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_HYBRID_UI_INTEGRATION_GUIDE_phase2_backup_20250708_230813_20250708_230813_00c16a94d2549f8d_1757779022.json",
+          "size": 1819,
+          "modified": "2025-09-21T13:01:27.826337",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_HYBRID_UI_SETUP_GUIDE_phase2_backup_20250708_230813_20250708_230813_89143fc7a8987618_1757779022.json",
+          "size": 1774,
+          "modified": "2025-09-21T13:01:27.829245",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_INFRASTRUCTURE_STATUS_COMPLETE_1757779022.json",
+          "size": 1317,
+          "modified": "2025-09-21T13:01:27.831252",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_INSTALLATION_megacons_backup_20250708_230316_20250708_230316_09ace5260c7eea6a_1757779022.json",
+          "size": 1517,
+          "modified": "2025-09-21T13:01:27.839240",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_INTEGRATION_STATUS_JULY_2025_1757779022.json",
+          "size": 1393,
+          "modified": "2025-09-21T13:01:27.842336",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_INTEGRATION_STATUS_JULY_2025_phase2_backup_20250708_230813_20250708_230813_85850736e2e10bf0_1757779022.json",
+          "size": 1900,
+          "modified": "2025-09-21T13:01:27.844163",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ITERATION_CONTEXT_MASTER_1757779022.json",
+          "size": 1531,
+          "modified": "2025-09-21T13:01:27.845924",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_iteration_CONTINUE_merge_1757779021.json",
+          "size": 1173,
+          "modified": "2025-09-21T13:01:28.126564",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_iteration_CONTINUE_merge_v2_1757779021.json",
+          "size": 1191,
+          "modified": "2025-09-21T13:01:28.127564",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_iteration_CONTINUE_merge_v3_1757779021.json",
+          "size": 1191,
+          "modified": "2025-09-21T13:01:28.128562",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_iteration_CONTINUE_merge_v4_1757779021.json",
+          "size": 1191,
+          "modified": "2025-09-21T13:01:28.131559",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_JULY_2025_ARCHITECTURE_COMPLETE_1757779022.json",
+          "size": 1374,
+          "modified": "2025-09-21T13:01:27.848648",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_JULY_2025_INTEGRATION_COMPLETE_phase2_backup_20250708_230813_20250708_230813_c67f5a533aa6f92e_1757779022.json",
+          "size": 1745,
+          "modified": "2025-09-21T13:01:27.853617",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_MISSION_ACCOMPLISHED_1757779022.json",
+          "size": 1343,
+          "modified": "2025-09-21T13:01:27.855911",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_MISSION_COMPLETE_AINLP_TACHYONIC_OPTIMIZATION_JULY8_2025_1757779022.json",
+          "size": 1697,
+          "modified": "2025-09-21T13:01:27.857918",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_MULTI_LANGUAGE_DEVELOPMENT_WAYPOINTS_1757779022.json",
+          "size": 1517,
+          "modified": "2025-09-21T13:01:27.858833",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_MULTI_LANGUAGE_HOLOGRAPHIC_ARCHITECTURE_1757779022.json",
+          "size": 1664,
+          "modified": "2025-09-21T13:01:27.858833",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_opencv_vision_module_1757779021.json",
+          "size": 1493,
+          "modified": "2025-09-21T13:01:28.139632",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_opencv_vision_module_1757779454.json",
+          "size": 1493,
+          "modified": "2025-09-21T13:01:28.140915",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_OPTIMIZATION_CONTEXT_AIOS_CLASS_20250710_205531_1757779022.json",
+          "size": 1586,
+          "modified": "2025-09-21T13:01:27.861606",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_OPTIMIZATION_CONTEXT_AIOS_CLASS_20250710_212743_1757779022.json",
+          "size": 1586,
+          "modified": "2025-09-21T13:01:27.910126",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_OPTIMIZATION_CONTEXT_ANALYSIS_AIOS_CLASS_COMPLETE_JULY10_2025_1757779022.json",
+          "size": 1697,
+          "modified": "2025-09-21T13:01:27.911695",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_OPTIMIZATION_CONTEXT_EXECUTION_SUMMARY_JULY10_2025_1757779022.json",
+          "size": 1604,
+          "modified": "2025-09-21T13:01:27.912937",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_OPTIMIZATION_DEBUG_PATH_1757779022.json",
+          "size": 1438,
+          "modified": "2025-09-21T13:01:27.914942",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_OS06_PRACTICAL_ACHIEVEMENTS_SUMMARY_1757779021.json",
+          "size": 1807,
+          "modified": "2025-09-21T13:01:27.921219",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_OS06_PRACTICAL_ACHIEVEMENTS_SUMMARY_1757779454.json",
+          "size": 1807,
+          "modified": "2025-09-21T13:01:27.921219",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_path_1757779021.json",
+          "size": 1324,
+          "modified": "2025-09-21T13:01:28.142916",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_path_1757779454.json",
+          "size": 1324,
+          "modified": "2025-09-21T13:01:28.143916",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PATH_1_BREAKTHROUGH_SUMMARY_1757779021.json",
+          "size": 1399,
+          "modified": "2025-09-21T13:01:27.924023",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PATH_1_TESTING_GUIDE_1757779021.json",
+          "size": 1228,
+          "modified": "2025-09-21T13:01:27.925592",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_path_20250907_172803_1757779021.json",
+          "size": 1519,
+          "modified": "2025-09-21T13:01:28.145443",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PRODUCTION_READINESS_ANALYSIS_COMPLETE_phase2_backup_20250708_230813_20250708_230813_b3d1ef35cdfcc8fa_1757779022.json",
+          "size": 2169,
+          "modified": "2025-09-21T13:01:27.929954",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PROJECT_ROADMAP_2025_2026_phase2_backup_20250708_230814_20250708_230814_7a1a00d8094c395d_1757779022.json",
+          "size": 2071,
+          "modified": "2025-09-21T13:01:27.930962",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PROJECT_SAVE_STATE_JULY_2025_phase2_backup_20250708_230814_20250708_230814_7f45c5ef3259dd9a_1757779022.json",
+          "size": 2087,
+          "modified": "2025-09-21T13:01:27.932961",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PROJECT_STATUS_1757779021.json",
+          "size": 1243,
+          "modified": "2025-09-21T13:01:27.933961",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PROJECT_STRUCTURE_megacons_backup_20250708_230316_20250708_230316_e994038fa6aacfc0_1757779022.json",
+          "size": 1824,
+          "modified": "2025-09-21T13:01:27.939945",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_PYTHON_ENVIRONMENT_IMPLEMENTATION_COMPLETE_phase2_backup_20250708_230814_20250708_230814_35d9115dd3193b84_1757779022.json",
+          "size": 2056,
+          "modified": "2025-09-21T13:01:27.941944",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_quantum_architecture_1757779021.json",
+          "size": 1432,
+          "modified": "2025-09-21T13:01:28.146564",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_quantum_architecture_1757779454.json",
+          "size": 1432,
+          "modified": "2025-09-21T13:01:28.148561",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_QUANTUM_FRACTAL_BOOTSTRAP_COMPLETE_phase2_backup_20250708_230813_20250708_230814_4b9961e3e183f54b_1757779022.json",
+          "size": 2012,
+          "modified": "2025-09-21T13:01:27.945379",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_QUANTUM_INTEGRATION_LAYER_SUMMARY_1757779022.json",
+          "size": 1609,
+          "modified": "2025-09-21T13:01:27.946387",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ROBUST_PYTHON_ENVIRONMENT_MANAGEMENT_phase2_backup_20250708_230814_20250708_230814_70ab04e90fab262b_1757779022.json",
+          "size": 2001,
+          "modified": "2025-09-21T13:01:27.948388",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_ROOT_HARMONIZATION_COMPLETE_JULY8_2025_phase2_backup_20250708_230814_20250708_230814_b599d753ea833232_1757779022.json",
+          "size": 1845,
+          "modified": "2025-09-21T13:01:27.953972",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_SAFETY_IMPLEMENTATION_SUMMARY_1757779021.json",
+          "size": 1499,
+          "modified": "2025-09-21T13:01:27.956336",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_SAFETY_PROTOCOL_MAPPING_1757779021.json",
+          "size": 1237,
+          "modified": "2025-09-21T13:01:27.958334",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_SCRIPTS_REFERENCE_1757779022.json",
+          "size": 1286,
+          "modified": "2025-09-21T13:01:27.959335",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_self_similarity_abstraction_1757779021.json",
+          "size": 1377,
+          "modified": "2025-09-21T13:01:28.150599",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_session_20250629_safety_upgrade_1757779021.json",
+          "size": 1367,
+          "modified": "2025-09-21T13:01:28.156933",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_strategic_development_analysis_1757779021.json",
+          "size": 2550,
+          "modified": "2025-09-21T13:01:28.162901",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_strategic_development_analysis_1757779454.json",
+          "size": 2550,
+          "modified": "2025-09-21T13:01:28.162901",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_STRATEGIC_DEVELOPMENT_PATH_2025_2026_1757779021.json",
+          "size": 1477,
+          "modified": "2025-09-21T13:01:27.960579",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_supercell_integration_notes_1757779021.json",
+          "size": 1705,
+          "modified": "2025-09-21T13:01:28.164914",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_SYNTHETIC_BOSONIC_TACHYONIC_ARCHITECTURE_1757779021.json",
+          "size": 1866,
+          "modified": "2025-09-21T13:01:27.962600",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_SYNTHETIC_BOSONIC_TACHYONIC_ARCHITECTURE_1757779454.json",
+          "size": 1866,
+          "modified": "2025-09-21T13:01:27.962600",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_TACHYONIC_ARCHIVAL_PARADIGM_1757779021.json",
+          "size": 1419,
+          "modified": "2025-09-21T13:01:27.964608",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_TACHYONIC_INTEGRATION_README_1757779021.json",
+          "size": 1673,
+          "modified": "2025-09-21T13:01:27.966619",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_TACHYONIC_INTEGRATION_README_1757779454.json",
+          "size": 1673,
+          "modified": "2025-09-21T13:01:27.972182",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_TACHYONIC_OPTIMIZATION_SUMMARY_JULY9_2025_1757779022.json",
+          "size": 1531,
+          "modified": "2025-09-21T13:01:27.974243",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_TENSORFLOW_AGENT_IMPLEMENTATION_PLAN_1757779022.json",
+          "size": 1405,
+          "modified": "2025-09-21T13:01:28.012047",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_TENSORFLOW_CELLULAR_INTEGRATION_COMPLETE_1757779022.json",
+          "size": 1360,
+          "modified": "2025-09-21T13:01:28.013554",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_troubleshooting_guide_1757778344.json",
+          "size": 1187,
+          "modified": "2025-09-21T13:01:28.166425",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_troubleshooting_guide_1757779021.json",
+          "size": 1187,
+          "modified": "2025-09-21T13:01:28.170460",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_UNIFIED_PROJECT_STATUS_1757779021.json",
+          "size": 1602,
+          "modified": "2025-09-21T13:01:28.015619",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_UNIFIED_PROJECT_STATUS_1757779454.json",
+          "size": 1602,
+          "modified": "2025-09-21T13:01:28.020634",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_universal_consciousness_architecture_1757779021.json",
+          "size": 1884,
+          "modified": "2025-09-21T13:01:28.174473",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_universal_consciousness_architecture_1757779454.json",
+          "size": 1884,
+          "modified": "2025-09-21T13:01:28.174473",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_user-guide_megacons_backup_20250708_230316_20250708_230316_e8d077e0a755fb2c_1757779022.json",
+          "size": 1514,
+          "modified": "2025-09-21T13:01:28.176480",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_visual_intelligence_architecture_1757779021.json",
+          "size": 1683,
+          "modified": "2025-09-21T13:01:28.178490",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_visual_intelligence_architecture_1757779454.json",
+          "size": 1683,
+          "modified": "2025-09-21T13:01:28.180497",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_visual_intelligence_complexity_analysis_1757779021.json",
+          "size": 1683,
+          "modified": "2025-09-21T13:01:28.180497",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_visual_intelligence_complexity_analysis_1757779454.json",
+          "size": 1683,
+          "modified": "2025-09-21T13:01:28.182506",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_VSCODE_INTEGRATION_PLAN_phase2_backup_20250708_230813_20250708_230813_db30cbc7c0b0d913_1757779022.json",
+          "size": 1684,
+          "modified": "2025-09-21T13:01:28.024182",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_VSCODE_SOLUTIONS_GUIDE_1757779022.json",
+          "size": 1240,
+          "modified": "2025-09-21T13:01:28.026189",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_VSCODE_WORKSPACE_OPTIMIZATION_COMPLETE_JULY10_2025_1757779022.json",
+          "size": 1788,
+          "modified": "2025-09-21T13:01:28.028199",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_vscopilot 0_1757779022.json",
+          "size": 1478,
+          "modified": "2025-09-21T13:01:28.187572",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_vscopilot 1_1757779022.json",
+          "size": 1563,
+          "modified": "2025-09-21T13:01:28.203102",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_vscopilot 2_1757779022.json",
+          "size": 1603,
+          "modified": "2025-09-21T13:01:28.206545",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_vscopilot 3_1757779022.json",
+          "size": 1566,
+          "modified": "2025-09-21T13:01:28.209190",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_WORKSPACE_BRIDGE_PROTOCOL_1757779022.json",
+          "size": 1500,
+          "modified": "2025-09-21T13:01:28.030205",
+          "category": "documentation"
+        },
+        {
+          "name": "doc_metabolism_WORKSPACE_CONFIGURATION_megacons_backup_20250708_230316_20250708_230316_e4a68e4320481f3d_1757779022.json",
+          "size": 1703,
+          "modified": "2025-09-21T13:01:28.032212",
+          "category": "documentation"
+        },
+        {
+          "name": "interface_knowledge_crystal.json",
+          "size": 2294,
+          "modified": "2025-09-21T13:01:28.641124",
+          "category": "documentation"
+        },
+        {
+          "name": "runtime_intelligence_knowledge_crystal.json",
+          "size": 2254,
+          "modified": "2025-09-21T13:01:28.643131",
+          "category": "documentation"
+        },
+        {
+          "name": "tachyonic_archive_knowledge_crystal.json",
+          "size": 2309,
+          "modified": "2025-09-21T13:01:28.643131",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "core_engine_knowledge_crystal.json",
+        "size": 2310,
+        "modified": "2025-09-21T13:01:27.127077",
+        "category": "documentation"
+      },
+      {
+        "name": "docs_metabolized_consciousness_20250913_165332.json",
+        "size": 2033062,
+        "modified": "2025-09-21T13:01:28.559559",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_BEASTMODE_INTEGRATION_1757779021.json",
+        "size": 1312,
+        "modified": "2025-09-21T13:01:27.309516",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_BEASTMODE_INTEGRATION_1757779454.json",
+        "size": 1312,
+        "modified": "2025-09-21T13:01:27.311574",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_COMPLETE_ARCHITECTURE_GUIDE_20250708_230316_62025ed180269123_1757779022.json",
+        "size": 2132,
+        "modified": "2025-09-21T13:01:27.315021",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_COMPONENT_ARCHITECTURE_1757779021.json",
+        "size": 1724,
+        "modified": "2025-09-21T13:01:27.317066",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_DEVELOPMENT_COMPLETE_GUIDE_20250708_230316_eb5644b135afe371_1757779022.json",
+        "size": 1924,
+        "modified": "2025-09-21T13:01:27.325862",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION_1757779021.json",
+        "size": 1736,
+        "modified": "2025-09-21T13:01:27.338624",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_GITHOOKS_CONSCIOUSNESS_KNOWLEDGE_INTEGRATION_1757779454.json",
+        "size": 1736,
+        "modified": "2025-09-21T13:01:27.340372",
+        "category": "documentation"
+      },
+      {
+        "name": "doc_metabolism_AIOS_INTEGRATION_MASTERY_GUIDE_20250708_230813_7310804946f55641_1757779022.json",
+        "size": 1730,
+        "modified": "2025-09-21T13:01:27.343375",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 195,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 63,
+      "consciousness_files": 15,
+      "agentic_files": 3,
+      "intelligence_files": 11
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "doc_metabolism_DEV_PATH_MAIN_INTEGRATION_GUIDE_1757779021.json",
+      "doc_metabolism_DOCUMENTATION_INDEX_20250708_225602_0a7f82a1c0fbdae0_1757779022.json"
+    ],
+    "config_files": [
+      "doc_metabolism_HYBRID_UI_SETUP_GUIDE_phase2_backup_20250708_230813_20250708_230813_89143fc7a8987618_1757779022.json",
+      "doc_metabolism_WORKSPACE_CONFIGURATION_megacons_backup_20250708_230316_20250708_230316_e4a68e4320481f3d_1757779022.json"
+    ],
+    "breadcrumb_path": "tachyonic > consciousness > supercell_knowledge_crystals",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\consciousness\\supercell_knowledge_crystals' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\consciousness\\supercell_knowledge_crystals' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\consciousness\\supercell_knowledge_crystals' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\consciousness"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

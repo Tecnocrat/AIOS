@@ -1,0 +1,115 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:28:52.842086",
+  "folder_info": {
+    "name": "libraries",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\libraries",
+    "relative_path": "docs\\libraries",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "libraries"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "Architect",
+      "architecture",
+      "archival",
+      "archive",
+      "build",
+      "changelogs",
+      "completion",
+      "consciousness",
+      "development",
+      "evolution_lab",
+      "governance",
+      "guides",
+      "integration",
+      "intelligence",
+      "languages",
+      "refactoring",
+      "reference",
+      "reports",
+      "runtime",
+      "runtime_intelligence",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "theoretical",
+      "ui",
+      "vscopilot chat"
+    ],
+    "child_folders": [
+      "cpp_stl"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 1201291,
+      "file_count": 26,
+      "folder_count": 1,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > libraries",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\libraries' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\libraries' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\libraries' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "ai\\tests\\workbench\\sample_libraries"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

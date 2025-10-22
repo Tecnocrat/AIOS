@@ -1,0 +1,87 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:11.596584",
+  "folder_info": {
+    "name": "evolution_lab",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\evolution_lab",
+    "relative_path": "evolution_lab\\tachyonic_field\\evolution_lab",
+    "parent_path": "evolution_lab\\tachyonic_field",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "tachyonic_field",
+      "evolution_lab"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "analysis"
+    ],
+    "child_folders": [
+      "populations"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 325964,
+      "file_count": 1,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > tachyonic_field > evolution_lab",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\evolution_lab' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\evolution_lab' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\evolution_lab' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field",
+      "evolution_lab",
+      "docs\\evolution_lab"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

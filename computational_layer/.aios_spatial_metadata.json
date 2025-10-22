@@ -1,0 +1,162 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:28:04.423617",
+  "folder_info": {
+    "name": "computational_layer",
+    "absolute_path": "C:\\dev\\AIOS\\computational_layer",
+    "relative_path": "computational_layer",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "computational_layer"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "config",
+      "core",
+      "docs",
+      "evolution_lab",
+      "interface",
+      "runtime",
+      "scripts",
+      "tachyonic",
+      "venv",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "assemblers",
+      "bridges",
+      "core_systems",
+      "engines",
+      "modules",
+      "runtime_intelligence"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 27449072,
+      "file_count": 327,
+      "folder_count": 7,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "common_patterns.py",
+          "size": 13178,
+          "modified": "2025-09-21T13:01:22.215054",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_emergence_analyzer.py",
+          "size": 28638,
+          "modified": "2025-09-21T13:01:20.498302",
+          "category": "consciousness"
+        },
+        {
+          "name": "library_ingestion_protocol.py",
+          "size": 36873,
+          "modified": "2025-10-03T14:49:11.482168",
+          "category": "consciousness"
+        },
+        {
+          "name": "shared_imports.py",
+          "size": 7857,
+          "modified": "2025-09-21T13:01:22.741208",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 1941,
+          "modified": "2025-10-13T16:49:25.969429",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "consciousness_emergence_analyzer.py",
+        "size": 28638,
+        "modified": "2025-09-21T13:01:20.498302",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 1941,
+        "modified": "2025-10-13T16:49:25.969429",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 1941,
+        "modified": "2025-10-13T16:49:25.969429",
+        "category": "consciousness"
+      },
+      {
+        "name": "library_ingestion_protocol.py",
+        "size": 36873,
+        "modified": "2025-10-03T14:49:11.482168",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 132,
+      "consciousness_files": 38,
+      "agentic_files": 3,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "computational_layer",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\computational_layer' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\computational_layer' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\computational_layer' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": []
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

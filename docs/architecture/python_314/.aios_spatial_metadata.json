@@ -1,0 +1,144 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:39.079274",
+  "folder_info": {
+    "name": "python_314",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\architecture\\python_314",
+    "relative_path": "docs\\architecture\\python_314",
+    "parent_path": "docs\\architecture",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "architecture",
+      "python_314"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "agent_driven_code_evolution",
+      "consciousness",
+      "core",
+      "evolution",
+      "interfaces",
+      "populations"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 77193,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "PYTHON_314_DENDRITIC_INGESTION.md",
+          "size": 22003,
+          "modified": "2025-10-11T12:47:45.332944",
+          "category": "documentation"
+        },
+        {
+          "name": "PYTHON_314_FREE_THREADING_MIGRATION.md",
+          "size": 24966,
+          "modified": "2025-10-09T20:54:52.369924",
+          "category": "documentation"
+        },
+        {
+          "name": "PYTHON_314_UPGRADE_COMPLETE.md",
+          "size": 17041,
+          "modified": "2025-10-11T12:28:18.243236",
+          "category": "documentation"
+        },
+        {
+          "name": "PYTHON_314_UPGRADE_GUIDE.md",
+          "size": 13183,
+          "modified": "2025-10-11T12:10:32.436165",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "PYTHON_314_DENDRITIC_INGESTION.md",
+        "size": 22003,
+        "modified": "2025-10-11T12:47:45.332944",
+        "category": "documentation"
+      },
+      {
+        "name": "PYTHON_314_UPGRADE_COMPLETE.md",
+        "size": 17041,
+        "modified": "2025-10-11T12:28:18.243236",
+        "category": "documentation"
+      },
+      {
+        "name": "PYTHON_314_UPGRADE_GUIDE.md",
+        "size": 13183,
+        "modified": "2025-10-11T12:10:32.436165",
+        "category": "documentation"
+      },
+      {
+        "name": "PYTHON_314_FREE_THREADING_MIGRATION.md",
+        "size": 24966,
+        "modified": "2025-10-09T20:54:52.369924",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > architecture > python_314",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\python_314' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\python_314' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\python_314' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\architecture"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:25.344280",
+  "folder_info": {
+    "name": "interface",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\coordinator_backup_20250917_204932\\interface",
+    "relative_path": "tachyonic\\coordinator_backup_20250917_204932\\interface",
+    "parent_path": "tachyonic\\coordinator_backup_20250917_204932",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Interface Layer"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "coordinator_backup_20250917_204932",
+      "interface"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".githooks",
+      "ai",
+      "core"
+    ],
+    "child_folders": [
+      "AIOS.Models",
+      "AIOS.Services",
+      "AIOS.UI",
+      "AIOS.UI.Diagnostics",
+      "ConsciousnessTest",
+      "runtime_intelligence"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 33248533,
+      "file_count": 1218,
+      "folder_count": 6,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1043,
+      "consciousness_files": 22,
+      "agentic_files": 0,
+      "intelligence_files": 18
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > coordinator_backup_20250917_204932 > interface",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\coordinator_backup_20250917_204932\\interface' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\coordinator_backup_20250917_204932\\interface' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\coordinator_backup_20250917_204932\\interface' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "User interface and experience",
+    "recommended_actions": [
+      "Validate UI component consistency",
+      "Test user workflow integration",
+      "Check consciousness-UI bridge functionality"
+    ],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\coordinator_backup_20250917_204932",
+      "interface"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

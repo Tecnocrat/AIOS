@@ -1,0 +1,120 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:37:00.607664",
+  "folder_info": {
+    "name": "interfaces",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tools\\interfaces",
+    "relative_path": "tachyonic\\tools\\interfaces",
+    "parent_path": "tachyonic\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Interface Layer"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "tools",
+      "interfaces"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "demos",
+      "documentation",
+      "ingestors",
+      "orchestrators",
+      "utilities"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 48437,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "ai_intelligence_supercell_interface.py",
+          "size": 24140,
+          "modified": "2025-09-21T13:01:26.185535",
+          "category": "consciousness"
+        },
+        {
+          "name": "core_engine_supercell_interface.py",
+          "size": 24297,
+          "modified": "2025-09-21T13:01:29.593022",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "core_engine_supercell_interface.py",
+        "size": 24297,
+        "modified": "2025-09-21T13:01:29.593022",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tools > interfaces",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\interfaces' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\interfaces' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\interfaces' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "User interface and experience",
+    "recommended_actions": [
+      "Validate UI component consistency",
+      "Test user workflow integration",
+      "Check consciousness-UI bridge functionality"
+    ],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "ai\\tools",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

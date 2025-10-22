@@ -1,0 +1,429 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:28.796845",
+  "folder_info": {
+    "name": "system",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\tools\\system",
+    "relative_path": "ai\\tools\\system",
+    "parent_path": "ai\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "tools",
+      "system"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "analysis_results",
+      "architecture",
+      "archival",
+      "consciousness",
+      "database",
+      "improvement_results",
+      "logs",
+      "tachyonic",
+      "visual"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 561361,
+      "file_count": 43,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "ainlp_root_cleanup.py",
+          "size": 14552,
+          "modified": "2025-10-04T19:14:49.006240",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_admin.py",
+          "size": 15498,
+          "modified": "2025-09-23T20:19:41.884126",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_ai_engine_ingestion_tester.py",
+          "size": 37221,
+          "modified": "2025-09-21T13:01:21.452294",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_ai_ingestion_analysis.py",
+          "size": 22643,
+          "modified": "2025-09-21T13:01:21.453304",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_assembler_naming_optimizer.py",
+          "size": 22284,
+          "modified": "2025-09-21T13:01:21.462866",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cellular_migration_cleanup_tool.py",
+          "size": 0,
+          "modified": "2025-09-21T13:01:21.564653",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_cellular_cleanup_tool.py",
+          "size": 23849,
+          "modified": "2025-09-21T13:01:21.572214",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_optimizer_iter2.py",
+          "size": 52050,
+          "modified": "2025-09-21T13:01:21.576112",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cytoplasm_upgrader_iter2.py",
+          "size": 28450,
+          "modified": "2025-09-21T13:01:21.583666",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_dendritic_path_tracker.py",
+          "size": 10507,
+          "modified": "2025-09-21T13:01:25.806777",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_dev_setup.py",
+          "size": 3905,
+          "modified": "2025-10-05T12:15:07.416517",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_direct_ai_ingestion_test.py",
+          "size": 16183,
+          "modified": "2025-09-21T13:01:21.585188",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_file_tracking_system.py",
+          "size": 21615,
+          "modified": "2025-09-21T13:01:21.586181",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_folder_comparison_verifier.py",
+          "size": 24822,
+          "modified": "2025-09-21T13:01:21.589824",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_unicode_helper.py",
+          "size": 1007,
+          "modified": "2025-09-21T13:01:21.592823",
+          "category": "consciousness"
+        },
+        {
+          "name": "comprehensive_aios_health_test.py",
+          "size": 9015,
+          "modified": "2025-10-12T20:55:08.136320",
+          "category": "consciousness"
+        },
+        {
+          "name": "demo_enhanced_commit_hook.py",
+          "size": 4574,
+          "modified": "2025-09-21T13:01:25.827682",
+          "category": "consciousness"
+        },
+        {
+          "name": "emergency_root_cleanup.py",
+          "size": 15847,
+          "modified": "2025-09-21T13:01:21.690298",
+          "category": "consciousness"
+        },
+        {
+          "name": "generate_file_scores.py",
+          "size": 12077,
+          "modified": "2025-10-04T23:42:26.487207",
+          "category": "consciousness"
+        },
+        {
+          "name": "index_tools.py",
+          "size": 2542,
+          "modified": "2025-10-12T23:57:31.217940",
+          "category": "consciousness"
+        },
+        {
+          "name": "integration_test_runner.py",
+          "size": 6257,
+          "modified": "2025-10-04T23:02:51.636698",
+          "category": "consciousness"
+        },
+        {
+          "name": "python_environment_validator.py",
+          "size": 9453,
+          "modified": "2025-10-05T12:15:07.672316",
+          "category": "consciousness"
+        },
+        {
+          "name": "runtime_intelligence_comprehensive_test.py",
+          "size": 15662,
+          "modified": "2025-10-02T23:08:41.797409",
+          "category": "consciousness"
+        },
+        {
+          "name": "safety_demo.py",
+          "size": 3836,
+          "modified": "2025-09-17T21:28:27.708944",
+          "category": "consciousness"
+        },
+        {
+          "name": "safety_rollback.py",
+          "size": 6346,
+          "modified": "2025-09-17T21:28:27.709944",
+          "category": "consciousness"
+        },
+        {
+          "name": "subprocess_manager.py",
+          "size": 5493,
+          "modified": "2025-09-17T21:28:27.712943",
+          "category": "consciousness"
+        },
+        {
+          "name": "system_health_check.py",
+          "size": 23782,
+          "modified": "2025-10-03T00:21:56.200395",
+          "category": "consciousness"
+        },
+        {
+          "name": "system_status_report.py",
+          "size": 2302,
+          "modified": "2025-09-21T13:01:25.888291",
+          "category": "consciousness"
+        },
+        {
+          "name": "temp_neural_analysis.py",
+          "size": 1209,
+          "modified": "2025-10-05T21:16:20.027390",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_directive_checking.py",
+          "size": 1628,
+          "modified": "2025-09-23T00:25:34.644734",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_requirements_compliance.py",
+          "size": 1337,
+          "modified": "2025-09-23T07:40:56.316141",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 4545,
+          "modified": "2025-10-13T14:09:24.711101",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_admin.py",
+        "size": 15498,
+        "modified": "2025-09-23T20:19:41.884126",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_ai_engine_ingestion_tester.py",
+        "size": 37221,
+        "modified": "2025-09-21T13:01:21.452294",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_ai_ingestion_analysis.py",
+        "size": 22643,
+        "modified": "2025-09-21T13:01:21.453304",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_assembler_naming_optimizer.py",
+        "size": 22284,
+        "modified": "2025-09-21T13:01:21.462866",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cellular_migration_cleanup_tool.py",
+        "size": 0,
+        "modified": "2025-09-21T13:01:21.564653",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_engine_cellular_cleanup_tool.py",
+        "size": 23849,
+        "modified": "2025-09-21T13:01:21.572214",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_engine_optimizer_iter2.py",
+        "size": 52050,
+        "modified": "2025-09-21T13:01:21.576112",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cytoplasm_upgrader_iter2.py",
+        "size": 28450,
+        "modified": "2025-09-21T13:01:21.583666",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_dendritic_path_tracker.py",
+        "size": 10507,
+        "modified": "2025-09-21T13:01:25.806777",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_dev_setup.py",
+        "size": 3905,
+        "modified": "2025-10-05T12:15:07.416517",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 4545,
+        "modified": "2025-10-13T14:09:24.711101",
+        "category": "consciousness"
+      },
+      {
+        "name": "index_tools.py",
+        "size": 2542,
+        "modified": "2025-10-12T23:57:31.217940",
+        "category": "consciousness"
+      },
+      {
+        "name": "comprehensive_aios_health_test.py",
+        "size": 9015,
+        "modified": "2025-10-12T20:55:08.136320",
+        "category": "consciousness"
+      },
+      {
+        "name": "temp_neural_analysis.py",
+        "size": 1209,
+        "modified": "2025-10-05T21:16:20.027390",
+        "category": "consciousness"
+      },
+      {
+        "name": "python_environment_validator.py",
+        "size": 9453,
+        "modified": "2025-10-05T12:15:07.672316",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_dev_setup.py",
+        "size": 3905,
+        "modified": "2025-10-05T12:15:07.416517",
+        "category": "consciousness"
+      },
+      {
+        "name": "generate_file_scores.py",
+        "size": 12077,
+        "modified": "2025-10-04T23:42:26.487207",
+        "category": "consciousness"
+      },
+      {
+        "name": "integration_test_runner.py",
+        "size": 6257,
+        "modified": "2025-10-04T23:02:51.636698",
+        "category": "consciousness"
+      },
+      {
+        "name": "ainlp_root_cleanup.py",
+        "size": 14552,
+        "modified": "2025-10-04T19:14:49.006240",
+        "category": "consciousness"
+      },
+      {
+        "name": "system_health_check.py",
+        "size": 23782,
+        "modified": "2025-10-03T00:21:56.200395",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 32,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 22,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "index_tools.py",
+      "__init__.py"
+    ],
+    "config_files": [
+      "aios_dev_setup.py"
+    ],
+    "breadcrumb_path": "ai > tools > system",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\system' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\system' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\system' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\tools",
+      "computational_layer\\core_systems"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

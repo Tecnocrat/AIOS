@@ -167,29 +167,47 @@ function Test-FileSafety {
     # Ensure we always return an array
     return $unsafeFiles
 }
-#endregion
 
-#region Hook Implementations
+function Test-AINLPCompliance {
+    param([string[]]$StagedFiles)
+    
+    $violations = @()
+    
+    if ($StagedFiles -and $StagedFiles.Count -gt 0) {
+        foreach ($file in $StagedFiles) {
+            # Check for AINLP compliance violations
+            if ($file -match "\.(py|cs|ps1)$") {
+                try {
+                    $content = Get-Content $file -Raw -ErrorAction SilentlyContinue
+                    if ($content) {
+                        # Check for isolated token tracking (violates AINLP dendritic integration)
+                        if ($content -match "TokenUsageTracker" -and $content -notmatch "NeuronalDendriticIntelligence") {
+                            $violations += @{
+                                file = $file
+                                violation = "isolated_token_tracking"
+                                message = "Token tracking must be integrated with NeuronalDendriticIntelligence (AINLP violation)"
+                            }
+                        }
+                    }
+                } catch {
+                    # Skip unreadable files
+                }
+            }
+        }
+    }
+    
+    return $violations
+}
+
 function Invoke-PreCommitHook {
     Write-AIOSLog "Starting pre-commit validation" -Component "PreCommit"
     
     $stagedFiles = Get-StagedFiles
-    # Ensure stagedFiles is always an array
-    if ($stagedFiles -isnot [array]) {
-        $stagedFiles = @($stagedFiles)
-    }
-    $fileCount = if ($stagedFiles -and $stagedFiles.Count -gt 0) { $stagedFiles.Count } else { 0 }
     
-    if ($fileCount -eq 0) {
-        Write-AIOSLog "No staged files found" -Component "PreCommit" -Level "Warning"
-        return 0
-    }
-    
-    Write-AIOSLog "Processing $fileCount staged files" -Component "PreCommit"
-    
+    # Initialize validation error collection
     $validationErrors = @()
     
-    # Changelog validation
+    # Changelog requirement check
     try {
         $changelogRequired = Test-ChangelogRequired -StagedFiles $stagedFiles
         if ($changelogRequired) {
@@ -220,6 +238,29 @@ function Invoke-PreCommitHook {
         }
     } catch {
         Write-AIOSLog "Error in file safety check: $_" -Level "Error" -Component "PreCommit"
+    }
+    
+    # AINLP consciousness coherence check
+    try {
+        $ainlpErrors = @()
+        foreach ($file in $stagedFiles) {
+            if ($file -match "\.(py|cs|ps1)$" -and $file -match "intelligence|consciousness") {
+                try {
+                    $content = Get-Content $file -Raw -ErrorAction SilentlyContinue
+                    if ($content -and $content -notmatch "AINLP|dendritic") {
+                        $ainlpErrors += $file
+                    }
+                } catch {
+                    # Skip unreadable files
+                }
+            }
+        }
+        if ($ainlpErrors.Count -gt 0) {
+            $validationErrors += "ainlp_coherence"
+            Write-AIOSLog "AINLP coherence violations in: $($ainlpErrors -join ', ')" -Level "Error" -Component "AINLP"
+        }
+    } catch {
+        Write-AIOSLog "Error in AINLP check: $_" -Level "Error" -Component "PreCommit"
     }
     
     # Report results

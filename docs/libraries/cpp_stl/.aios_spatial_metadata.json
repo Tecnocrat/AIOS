@@ -1,0 +1,155 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:59.532805",
+  "folder_info": {
+    "name": "cpp_stl",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\libraries\\cpp_stl",
+    "relative_path": "docs\\libraries\\cpp_stl",
+    "parent_path": "docs\\libraries",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "libraries",
+      "cpp_stl"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [
+      "raw_documentation"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 1201291,
+      "file_count": 26,
+      "folder_count": 1,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "CPP_STL_INGESTION_SPECIFICATION.md",
+          "size": 19716,
+          "modified": "2025-10-04T23:51:23.587437",
+          "category": "documentation"
+        },
+        {
+          "name": "CPP_STL_INTEGRATION_SUMMARY.md",
+          "size": 15362,
+          "modified": "2025-10-05T00:44:11.458951",
+          "category": "documentation"
+        },
+        {
+          "name": "ingestion_report.md",
+          "size": 377,
+          "modified": "2025-10-05T00:54:11.063585",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "crawler_state.json",
+          "size": 23540,
+          "modified": "2025-10-04T23:58:34.904081",
+          "category": "documentation"
+        },
+        {
+          "name": "page_metadata.json",
+          "size": 7884,
+          "modified": "2025-10-04T23:58:34.905081",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "ingestion_report.md",
+        "size": 377,
+        "modified": "2025-10-05T00:54:11.063585",
+        "category": "documentation"
+      },
+      {
+        "name": "CPP_STL_INTEGRATION_SUMMARY.md",
+        "size": 15362,
+        "modified": "2025-10-05T00:44:11.458951",
+        "category": "documentation"
+      },
+      {
+        "name": "page_metadata.json",
+        "size": 7884,
+        "modified": "2025-10-04T23:58:34.905081",
+        "category": "documentation"
+      },
+      {
+        "name": "crawler_state.json",
+        "size": 23540,
+        "modified": "2025-10-04T23:58:34.904081",
+        "category": "documentation"
+      },
+      {
+        "name": "CPP_STL_INGESTION_SPECIFICATION.md",
+        "size": 19716,
+        "modified": "2025-10-04T23:51:23.587437",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".md",
+        ".json"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > libraries > cpp_stl",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\libraries\\cpp_stl' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\libraries\\cpp_stl' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\libraries\\cpp_stl' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\libraries",
+      "tachyonic\\cpp_stl_knowledge"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

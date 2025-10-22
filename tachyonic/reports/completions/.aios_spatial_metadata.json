@@ -1,0 +1,229 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:59.360089",
+  "folder_info": {
+    "name": "completions",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\reports\\completions",
+    "relative_path": "tachyonic\\reports\\completions",
+    "parent_path": "tachyonic\\reports",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "reports",
+      "completions"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "archives",
+      "communication",
+      "documentation",
+      "handoffs",
+      "health",
+      "misc",
+      "optimization",
+      "requirements",
+      "sessions",
+      "validation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 67555,
+      "file_count": 9,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "aios_root_cleanup_completion_report_20250920_225116.md",
+          "size": 3888,
+          "modified": "2025-09-21T13:01:26.299051",
+          "category": "documentation"
+        },
+        {
+          "name": "editorconfig_optimization_completion_report_20250920_225547.md",
+          "size": 4867,
+          "modified": "2025-09-21T13:01:28.816694",
+          "category": "documentation"
+        },
+        {
+          "name": "launcher_harmonization_completion_report_20250922_232759.md",
+          "size": 5924,
+          "modified": "2025-09-22T23:29:30.852123",
+          "category": "documentation"
+        },
+        {
+          "name": "pyproject_harmonization_completion_report_20250922_233056.md",
+          "size": 6960,
+          "modified": "2025-09-22T23:32:20.246772",
+          "category": "documentation"
+        },
+        {
+          "name": "readme_harmonization_completion_report_20250922_233410.md",
+          "size": 7040,
+          "modified": "2025-09-22T23:54:41.043457",
+          "category": "documentation"
+        },
+        {
+          "name": "README_REFACTORING_ANALYSIS_20251008.md",
+          "size": 16650,
+          "modified": "2025-10-08T15:31:34.008844",
+          "category": "documentation"
+        },
+        {
+          "name": "README_REFACTORING_COMPLETE_20251008.md",
+          "size": 11488,
+          "modified": "2025-10-08T15:31:34.009845",
+          "category": "documentation"
+        },
+        {
+          "name": "solution_harmonization_completion_report_20250922_232533.md",
+          "size": 5555,
+          "modified": "2025-09-22T23:26:06.036652",
+          "category": "documentation"
+        },
+        {
+          "name": "workspace_harmonization_completion_report_20250922_232135.md",
+          "size": 5183,
+          "modified": "2025-09-22T23:23:15.737067",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_root_cleanup_completion_report_20250920_225116.md",
+        "size": 3888,
+        "modified": "2025-09-21T13:01:26.299051",
+        "category": "documentation"
+      },
+      {
+        "name": "editorconfig_optimization_completion_report_20250920_225547.md",
+        "size": 4867,
+        "modified": "2025-09-21T13:01:28.816694",
+        "category": "documentation"
+      },
+      {
+        "name": "readme_harmonization_completion_report_20250922_233410.md",
+        "size": 7040,
+        "modified": "2025-09-22T23:54:41.043457",
+        "category": "documentation"
+      },
+      {
+        "name": "README_REFACTORING_ANALYSIS_20251008.md",
+        "size": 16650,
+        "modified": "2025-10-08T15:31:34.008844",
+        "category": "documentation"
+      },
+      {
+        "name": "README_REFACTORING_COMPLETE_20251008.md",
+        "size": 11488,
+        "modified": "2025-10-08T15:31:34.009845",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "README_REFACTORING_COMPLETE_20251008.md",
+        "size": 11488,
+        "modified": "2025-10-08T15:31:34.009845",
+        "category": "documentation"
+      },
+      {
+        "name": "README_REFACTORING_ANALYSIS_20251008.md",
+        "size": 16650,
+        "modified": "2025-10-08T15:31:34.008844",
+        "category": "documentation"
+      },
+      {
+        "name": "readme_harmonization_completion_report_20250922_233410.md",
+        "size": 7040,
+        "modified": "2025-09-22T23:54:41.043457",
+        "category": "documentation"
+      },
+      {
+        "name": "pyproject_harmonization_completion_report_20250922_233056.md",
+        "size": 6960,
+        "modified": "2025-09-22T23:32:20.246772",
+        "category": "documentation"
+      },
+      {
+        "name": "launcher_harmonization_completion_report_20250922_232759.md",
+        "size": 5924,
+        "modified": "2025-09-22T23:29:30.852123",
+        "category": "documentation"
+      },
+      {
+        "name": "solution_harmonization_completion_report_20250922_232533.md",
+        "size": 5555,
+        "modified": "2025-09-22T23:26:06.036652",
+        "category": "documentation"
+      },
+      {
+        "name": "workspace_harmonization_completion_report_20250922_232135.md",
+        "size": 5183,
+        "modified": "2025-09-22T23:23:15.737067",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 9,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [
+      "editorconfig_optimization_completion_report_20250920_225547.md"
+    ],
+    "breadcrumb_path": "tachyonic > reports > completions",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\completions' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\completions' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\completions' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\reports"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

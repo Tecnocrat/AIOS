@@ -1,0 +1,129 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:06.604911",
+  "folder_info": {
+    "name": "documentation",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\reports\\documentation",
+    "relative_path": "tachyonic\\reports\\documentation",
+    "parent_path": "tachyonic\\reports",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Documentation"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "reports",
+      "documentation"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "archives",
+      "communication",
+      "completions",
+      "handoffs",
+      "health",
+      "misc",
+      "optimization",
+      "requirements",
+      "sessions",
+      "validation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 18580,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "critical_documentation_enhancement_results.json",
+          "size": 1457,
+          "modified": "2025-09-21T13:01:29.595030",
+          "category": "documentation"
+        },
+        {
+          "name": "deep_ingestion_report.json",
+          "size": 8376,
+          "modified": "2025-09-21T13:01:29.597204",
+          "category": "documentation"
+        },
+        {
+          "name": "documentation_supercell_enhancement_report.json",
+          "size": 1481,
+          "modified": "2025-09-21T13:01:33.804511",
+          "category": "documentation"
+        }
+      ],
+      ".md": [
+        {
+          "name": "DOCUMENTATION_SUPERCELL_ENHANCEMENT_ACTION_PLAN.md",
+          "size": 7266,
+          "modified": "2025-09-21T13:01:26.157708",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".json",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > reports > documentation",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\documentation' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\documentation' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\documentation' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\reports",
+      "tachyonic\\documentation"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

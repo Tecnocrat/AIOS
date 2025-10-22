@@ -1,0 +1,185 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:52.789905",
+  "folder_info": {
+    "name": "library_ingestion",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\integration\\library_ingestion",
+    "relative_path": "docs\\integration\\library_ingestion",
+    "parent_path": "docs\\integration",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "integration",
+      "library_ingestion"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 104113,
+      "file_count": 8,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "CHANGELOG.md",
+          "size": 7930,
+          "modified": "2025-10-03T21:13:34.946741",
+          "category": "documentation"
+        },
+        {
+          "name": "CHANGELOG_MVP_20251004.md",
+          "size": 13627,
+          "modified": "2025-10-04T12:04:46.654693",
+          "category": "documentation"
+        },
+        {
+          "name": "EXECUTION_REALITY_GUIDE.md",
+          "size": 23863,
+          "modified": "2025-10-04T13:29:56.036913",
+          "category": "documentation"
+        },
+        {
+          "name": "MVP_COMPLETION_SUMMARY.md",
+          "size": 13287,
+          "modified": "2025-10-04T12:17:57.217480",
+          "category": "documentation"
+        },
+        {
+          "name": "MVP_IMPLEMENTATION_PLAN.md",
+          "size": 11498,
+          "modified": "2025-10-04T08:52:05.525955",
+          "category": "documentation"
+        },
+        {
+          "name": "PROTOCOL.md",
+          "size": 12351,
+          "modified": "2025-10-03T14:49:11.488349",
+          "category": "documentation"
+        },
+        {
+          "name": "QUICKSTART.md",
+          "size": 5965,
+          "modified": "2025-10-04T12:17:57.219469",
+          "category": "documentation"
+        },
+        {
+          "name": "REALITY_CHECK_SUMMARY.md",
+          "size": 15592,
+          "modified": "2025-10-04T13:29:57.035072",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "REALITY_CHECK_SUMMARY.md",
+        "size": 15592,
+        "modified": "2025-10-04T13:29:57.035072",
+        "category": "documentation"
+      },
+      {
+        "name": "EXECUTION_REALITY_GUIDE.md",
+        "size": 23863,
+        "modified": "2025-10-04T13:29:56.036913",
+        "category": "documentation"
+      },
+      {
+        "name": "QUICKSTART.md",
+        "size": 5965,
+        "modified": "2025-10-04T12:17:57.219469",
+        "category": "documentation"
+      },
+      {
+        "name": "MVP_COMPLETION_SUMMARY.md",
+        "size": 13287,
+        "modified": "2025-10-04T12:17:57.217480",
+        "category": "documentation"
+      },
+      {
+        "name": "CHANGELOG_MVP_20251004.md",
+        "size": 13627,
+        "modified": "2025-10-04T12:04:46.654693",
+        "category": "documentation"
+      },
+      {
+        "name": "MVP_IMPLEMENTATION_PLAN.md",
+        "size": 11498,
+        "modified": "2025-10-04T08:52:05.525955",
+        "category": "documentation"
+      },
+      {
+        "name": "CHANGELOG.md",
+        "size": 7930,
+        "modified": "2025-10-03T21:13:34.946741",
+        "category": "documentation"
+      },
+      {
+        "name": "PROTOCOL.md",
+        "size": 12351,
+        "modified": "2025-10-03T14:49:11.488349",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > integration > library_ingestion",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\integration\\library_ingestion' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\integration\\library_ingestion' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\integration\\library_ingestion' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\integration"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

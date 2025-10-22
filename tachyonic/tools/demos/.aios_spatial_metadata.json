@@ -1,0 +1,138 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:53.903321",
+  "folder_info": {
+    "name": "demos",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tools\\demos",
+    "relative_path": "tachyonic\\tools\\demos",
+    "parent_path": "tachyonic\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "tools",
+      "demos"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "documentation",
+      "ingestors",
+      "interfaces",
+      "orchestrators",
+      "utilities"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 80803,
+      "file_count": 6,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_communication_integration_demo.py",
+          "size": 19884,
+          "modified": "2025-09-21T13:01:26.188745",
+          "category": "consciousness"
+        },
+        {
+          "name": "demo_documentation_ingestion.py",
+          "size": 8885,
+          "modified": "2025-09-21T13:01:29.603249",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_evolution_demo.py",
+          "size": 35809,
+          "modified": "2025-09-21T13:01:34.410348",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_communication_system.py",
+          "size": 3390,
+          "modified": "2025-09-21T13:01:34.413901",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_metabolism.py",
+          "size": 1625,
+          "modified": "2025-09-21T13:01:34.418031",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_root_docs_ingestion.py",
+          "size": 11210,
+          "modified": "2025-09-21T13:01:34.421183",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_communication_integration_demo.py",
+        "size": 19884,
+        "modified": "2025-09-21T13:01:26.188745",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 6,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tools > demos",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\demos' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\demos' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\demos' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "ai\\tools",
+      "ai\\demos"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

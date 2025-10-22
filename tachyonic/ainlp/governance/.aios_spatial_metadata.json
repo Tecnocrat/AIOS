@@ -1,0 +1,133 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:13.481255",
+  "folder_info": {
+    "name": "governance",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\ainlp\\governance",
+    "relative_path": "tachyonic\\ainlp\\governance",
+    "parent_path": "tachyonic\\ainlp",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "AI Intelligence Layer",
+      "GitHook Architecture"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "ainlp",
+      "governance"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "harmonization",
+      "optimization",
+      "patterns",
+      "refactoring"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 15362,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "ainlp_dendritic_governance_integration_20250927_231232.json",
+          "size": 1358,
+          "modified": "2025-09-27T23:12:32.973907",
+          "category": "documentation"
+        }
+      ],
+      ".md": [
+        {
+          "name": "AINLP_NAMESPACE_SEMANTIC_COHERENCE_20251012.md",
+          "size": 14004,
+          "modified": "2025-10-12T03:00:18.761538",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "AINLP_NAMESPACE_SEMANTIC_COHERENCE_20251012.md",
+        "size": 14004,
+        "modified": "2025-10-12T03:00:18.761538",
+        "category": "documentation"
+      },
+      {
+        "name": "ainlp_dendritic_governance_integration_20250927_231232.json",
+        "size": 1358,
+        "modified": "2025-09-27T23:12:32.973907",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".json",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > ainlp > governance",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\ainlp\\governance' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\ainlp\\governance' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\ainlp\\governance' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\AINLP",
+      ".githooks\\governance"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

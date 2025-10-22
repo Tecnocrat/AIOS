@@ -1,0 +1,119 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:56.940454",
+  "folder_info": {
+    "name": "migrations",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\changelog\\migrations",
+    "relative_path": "tachyonic\\changelog\\migrations",
+    "parent_path": "tachyonic\\changelog",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "changelog",
+      "migrations"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "biological_architecture",
+      "consciousness",
+      "supercell",
+      "tachyonic",
+      "venv"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 12825,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "ARCHIVE_MIGRATION_COMPLETE_20251012.md",
+          "size": 7682,
+          "modified": "2025-10-12T01:08:15.363939",
+          "category": "documentation"
+        },
+        {
+          "name": "ARCHIVE_MIGRATION_PLAN.md",
+          "size": 5143,
+          "modified": "2025-10-12T01:05:45.440919",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "ARCHIVE_MIGRATION_COMPLETE_20251012.md",
+        "size": 7682,
+        "modified": "2025-10-12T01:08:15.363939",
+        "category": "documentation"
+      },
+      {
+        "name": "ARCHIVE_MIGRATION_PLAN.md",
+        "size": 5143,
+        "modified": "2025-10-12T01:05:45.440919",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > changelog > migrations",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\changelog\\migrations' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\changelog\\migrations' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\changelog\\migrations' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\changelogs"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

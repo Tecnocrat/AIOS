@@ -1,0 +1,164 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:52.746124",
+  "folder_info": {
+    "name": "experiments",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\evolution_lab\\experiments",
+    "relative_path": "docs\\evolution_lab\\experiments",
+    "parent_path": "docs\\evolution_lab",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "evolution_lab",
+      "experiments"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "conversations"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 5637,
+      "file_count": 6,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".txt": [
+        {
+          "name": "experiment_20251008_144135.txt",
+          "size": 1255,
+          "modified": "2025-10-08T14:42:12.620078",
+          "category": "documentation"
+        },
+        {
+          "name": "experiment_20251008_144212.txt",
+          "size": 634,
+          "modified": "2025-10-08T14:42:25.609885",
+          "category": "documentation"
+        },
+        {
+          "name": "experiment_deepseek_20251008_145412.txt",
+          "size": 574,
+          "modified": "2025-10-08T14:54:12.653195",
+          "category": "documentation"
+        },
+        {
+          "name": "experiment_gemini_20251008_145412.txt",
+          "size": 570,
+          "modified": "2025-10-08T14:54:12.705202",
+          "category": "documentation"
+        },
+        {
+          "name": "experiment_ollama_20251008_145344.txt",
+          "size": 1081,
+          "modified": "2025-10-08T14:54:12.581370",
+          "category": "documentation"
+        },
+        {
+          "name": "experiment_ollama_20251008_145412.txt",
+          "size": 1523,
+          "modified": "2025-10-08T14:54:53.828932",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "experiment_ollama_20251008_145412.txt",
+        "size": 1523,
+        "modified": "2025-10-08T14:54:53.828932",
+        "category": "documentation"
+      },
+      {
+        "name": "experiment_gemini_20251008_145412.txt",
+        "size": 570,
+        "modified": "2025-10-08T14:54:12.705202",
+        "category": "documentation"
+      },
+      {
+        "name": "experiment_deepseek_20251008_145412.txt",
+        "size": 574,
+        "modified": "2025-10-08T14:54:12.653195",
+        "category": "documentation"
+      },
+      {
+        "name": "experiment_ollama_20251008_145344.txt",
+        "size": 1081,
+        "modified": "2025-10-08T14:54:12.581370",
+        "category": "documentation"
+      },
+      {
+        "name": "experiment_20251008_144212.txt",
+        "size": 634,
+        "modified": "2025-10-08T14:42:25.609885",
+        "category": "documentation"
+      },
+      {
+        "name": "experiment_20251008_144135.txt",
+        "size": 1255,
+        "modified": "2025-10-08T14:42:12.620078",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 6,
+      "file_types": [
+        ".txt"
+      ],
+      "dominant_type": ".txt"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > evolution_lab > experiments",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\evolution_lab\\experiments' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\evolution_lab\\experiments' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\evolution_lab\\experiments' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "evolution_lab",
+      "evolution_lab\\experiments"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

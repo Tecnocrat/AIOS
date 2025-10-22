@@ -31,17 +31,17 @@
 ###############################################
 
 # Core ML / NLP (actively used or baseline)
-torch>=2.0.0,<2.2
-torchvision>=0.15.0,<0.17
-transformers>=4.30.0,<4.40
-tokenizers>=0.13.0,<0.15
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+tokenizers>=0.13.0
 openai>=0.27.0,<1.0
 
 # Data / Scientific (mathematical consciousness substrates)
-numpy>=1.24.0,<2.0
-scipy>=1.10.0,<1.15
-pandas>=2.0.0,<2.1
-sympy>=1.12,<2.0
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+sympy>=1.12
 
 ###############################################
 # [CYTOPLASM] Communication & Processing Flows
@@ -49,17 +49,16 @@ sympy>=1.12,<2.0
 ###############################################
 
 # API / Web Layer (cytoplasmic communication protocols)
-fastapi>=0.100.0,<0.110
-uvicorn>=0.22.0,<0.30
-httpx>=0.24.0,<0.26
-aiofiles>=23.1.0,<24.0
-websockets>=11.0.0,<12.0
-requests>=2.31.0,<3.0
+fastapi>=0.100.0
+uvicorn>=0.22.0
+httpx>=0.24.0
+aiofiles>=23.1.0
+websockets>=11.0.0
+requests>=2.31.0
 
 # NLP utilities (language processing cytoplasm)
-spacy>=3.6.0,<4.0
-nltk>=3.8.0,<4.0
-textblob>=0.17.0,<0.18
+# spacy>=3.6.0,<4.0  # Temporarily disabled for Python 3.14 compatibility
+# nltk>=3.8.0,<4.0  # Temporarily disabled for Python 3.14 compatibility
 
 ###############################################
 # [MEMBRANE] Interface Boundaries & Protection
@@ -68,7 +67,7 @@ textblob>=0.17.0,<0.18
 
 # Vision (sensory membrane interfaces)
 opencv-python>=4.8.0,<5.0
-pillow>=10.0.0,<11.0
+# pillow>=10.0.0,<11.0  # Disabled for Python 3.14 compatibility
 
 # System & Monitoring (membrane health monitoring)
 psutil>=5.9.0,<6.0

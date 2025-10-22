@@ -1,0 +1,101 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:45.817413",
+  "folder_info": {
+    "name": "AIOS_obsolete",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\archive\\AIOS_obsolete",
+    "relative_path": "docs\\archive\\AIOS_obsolete",
+    "parent_path": "docs\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "docs",
+      "archive",
+      "AIOS_obsolete"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "changelogs",
+      "deprecated_root_docs",
+      "metabolized",
+      "tachyonic",
+      "unified_backups"
+    ],
+    "child_folders": [
+      "AIOS"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 2730555,
+      "file_count": 103,
+      "folder_count": 1,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 58,
+      "consciousness_files": 7,
+      "agentic_files": 5,
+      "intelligence_files": 4
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > archive > AIOS_obsolete",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\AIOS_obsolete' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\AIOS_obsolete' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\AIOS_obsolete' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

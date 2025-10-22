@@ -1,0 +1,139 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:13.141784",
+  "folder_info": {
+    "name": "frameworks",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\src\\frameworks",
+    "relative_path": "ai\\src\\frameworks",
+    "parent_path": "ai\\src",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "src",
+      "frameworks"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "activation",
+      "agents",
+      "core",
+      "demos",
+      "engines",
+      "evolution",
+      "integrations",
+      "intelligence",
+      "languages",
+      "parsers",
+      "protocols",
+      "quantum_dendritic_field",
+      "runtime",
+      "tools",
+      "utilities"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "agent_protocol"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 148354,
+      "file_count": 15,
+      "folder_count": 2,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "__init__.py",
+          "size": 783,
+          "modified": "2025-10-08T21:04:03.331544",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "__init__.py",
+        "size": 783,
+        "modified": "2025-10-08T21:04:03.331544",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 783,
+        "modified": "2025-10-08T21:04:03.331544",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 4,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > src > frameworks",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\frameworks' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\frameworks' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\frameworks' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\src",
+      "docs\\AINLP\\frameworks"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

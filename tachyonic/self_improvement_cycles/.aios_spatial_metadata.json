@@ -1,0 +1,287 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:33:18.305602",
+  "folder_info": {
+    "name": "self_improvement_cycles",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\self_improvement_cycles",
+    "relative_path": "tachyonic\\self_improvement_cycles",
+    "parent_path": "tachyonic",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "self_improvement_cycles"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS_root_cells",
+      "__pycache__",
+      "agentic_conversations",
+      "ai_engine_handoffs",
+      "ai_engine_knowledge",
+      "ainlp",
+      "analysis_reports",
+      "architecture",
+      "archive",
+      "backups",
+      "boot_reports",
+      "bosonic_substrate",
+      "cellular_reports",
+      "changelog",
+      "cleanup_reports",
+      "code_preservation",
+      "consciousness",
+      "conversation_data",
+      "conversation_metadata",
+      "conversations",
+      "coordinator_backup_20250917_204932",
+      "cpp_stl_knowledge",
+      "database",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "design_mockups",
+      "development_fixes",
+      "development_history",
+      "development_success",
+      "discovery_indexes",
+      "docs_archive",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_chains",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "experiment_metadata",
+      "extracted_paradigms",
+      "genetics",
+      "hydro_files",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "integration_optimization",
+      "integration_validation",
+      "intelligence_reports",
+      "knowledge_crystals",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "orchestration",
+      "paths",
+      "quality_reports",
+      "quantum",
+      "reports",
+      "repository_ingestions",
+      "revolutionary_sessions",
+      "rollback_snapshots",
+      "root_optimization",
+      "root_optimization_analysis",
+      "runtime_intelligence",
+      "self_improvement_reports",
+      "sessions",
+      "setup_guides",
+      "shadows",
+      "snapshots",
+      "structure_analysis",
+      "subcellular_archives",
+      "supercells",
+      "tachyonic",
+      "tachyonic_archive",
+      "tachyonic_development_archive",
+      "temporal",
+      "test_results",
+      "tools",
+      "version_analysis",
+      "workflows"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 514583,
+      "file_count": 10,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "self_improvement_cycle_1_20251002_235935.json",
+          "size": 42335,
+          "modified": "2025-10-02T23:59:35.584282",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_1_20251003_000912.json",
+          "size": 42335,
+          "modified": "2025-10-03T00:09:12.788590",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_2_20251003_000024.json",
+          "size": 53738,
+          "modified": "2025-10-03T00:00:24.627961",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_2_20251003_000930.json",
+          "size": 53740,
+          "modified": "2025-10-03T00:09:30.957719",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_3_20251003_000111.json",
+          "size": 53739,
+          "modified": "2025-10-03T00:01:11.030303",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_3_20251003_000949.json",
+          "size": 53740,
+          "modified": "2025-10-03T00:09:49.663809",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_4_20251003_000152.json",
+          "size": 53740,
+          "modified": "2025-10-03T00:01:52.060348",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_4_20251003_001008.json",
+          "size": 53738,
+          "modified": "2025-10-03T00:10:08.858572",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_5_20251003_000216.json",
+          "size": 53738,
+          "modified": "2025-10-03T00:02:16.866785",
+          "category": "documentation"
+        },
+        {
+          "name": "self_improvement_cycle_5_20251003_001027.json",
+          "size": 53740,
+          "modified": "2025-10-03T00:10:27.496235",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "self_improvement_cycle_5_20251003_001027.json",
+        "size": 53740,
+        "modified": "2025-10-03T00:10:27.496235",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_4_20251003_001008.json",
+        "size": 53738,
+        "modified": "2025-10-03T00:10:08.858572",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_3_20251003_000949.json",
+        "size": 53740,
+        "modified": "2025-10-03T00:09:49.663809",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_2_20251003_000930.json",
+        "size": 53740,
+        "modified": "2025-10-03T00:09:30.957719",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_1_20251003_000912.json",
+        "size": 42335,
+        "modified": "2025-10-03T00:09:12.788590",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_5_20251003_000216.json",
+        "size": 53738,
+        "modified": "2025-10-03T00:02:16.866785",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_4_20251003_000152.json",
+        "size": 53740,
+        "modified": "2025-10-03T00:01:52.060348",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_3_20251003_000111.json",
+        "size": 53739,
+        "modified": "2025-10-03T00:01:11.030303",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_2_20251003_000024.json",
+        "size": 53738,
+        "modified": "2025-10-03T00:00:24.627961",
+        "category": "documentation"
+      },
+      {
+        "name": "self_improvement_cycle_1_20251002_235935.json",
+        "size": 42335,
+        "modified": "2025-10-02T23:59:35.584282",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 10,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > self_improvement_cycles",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\self_improvement_cycles' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\self_improvement_cycles' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\self_improvement_cycles' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

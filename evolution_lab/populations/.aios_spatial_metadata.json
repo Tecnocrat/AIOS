@@ -1,0 +1,3263 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:30:11.439070",
+  "folder_info": {
+    "name": "populations",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\populations",
+    "relative_path": "evolution_lab\\populations",
+    "parent_path": "evolution_lab",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "populations"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "artifacts",
+      "conversations",
+      "distillations",
+      "docs",
+      "experiments",
+      "library_generations",
+      "neural_chains",
+      "sandbox",
+      "tachyonic_field",
+      "test_data",
+      "zero_point"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "backup_20251018_124347",
+      "organisms",
+      "pop_20251011_181057",
+      "pop_20251011_181333",
+      "pop_20251011_181334",
+      "pop_20251011_181338",
+      "pop_20251011_181610",
+      "pop_20251011_181611",
+      "pop_20251011_181612",
+      "pop_20251011_181718",
+      "pop_20251011_181719",
+      "pop_20251011_181720",
+      "pop_20251011_185346",
+      "pop_20251011_185347"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 6734823,
+      "file_count": 566,
+      "folder_count": 15,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "evolution_metadata.json",
+          "size": 2510,
+          "modified": "2025-10-18T13:12:56.802364",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_104457_gen000_20251018_104457.json",
+          "size": 9321,
+          "modified": "2025-10-18T12:44:57.709807",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_104457_gen001_20251018_104457.json",
+          "size": 9641,
+          "modified": "2025-10-18T12:44:57.726809",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_104457_gen002_20251018_104457.json",
+          "size": 9648,
+          "modified": "2025-10-18T12:44:57.748810",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_104457_index.json",
+          "size": 1328,
+          "modified": "2025-10-18T12:44:57.757805",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_105100_gen000_20251018_105100.json",
+          "size": 9339,
+          "modified": "2025-10-18T12:51:00.638562",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_105100_gen001_20251018_105100.json",
+          "size": 9654,
+          "modified": "2025-10-18T12:51:00.646871",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_105100_gen002_20251018_105100.json",
+          "size": 9665,
+          "modified": "2025-10-18T12:51:00.664277",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_105100_index.json",
+          "size": 1328,
+          "modified": "2025-10-18T12:51:00.681132",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111256_gen000_20251018_111256.json",
+          "size": 9339,
+          "modified": "2025-10-18T13:12:56.762980",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111256_gen001_20251018_111256.json",
+          "size": 9654,
+          "modified": "2025-10-18T13:12:56.778671",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111256_gen002_20251018_111256.json",
+          "size": 9665,
+          "modified": "2025-10-18T13:12:56.792431",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111256_index.json",
+          "size": 1328,
+          "modified": "2025-10-18T13:12:56.802364",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen000_20251018_111724.json",
+          "size": 9363,
+          "modified": "2025-10-18T13:17:24.828807",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen001_20251018_111724.json",
+          "size": 9676,
+          "modified": "2025-10-18T13:17:24.923573",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen002_20251018_111725.json",
+          "size": 9689,
+          "modified": "2025-10-18T13:17:25.129941",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen003_20251018_111725.json",
+          "size": 9682,
+          "modified": "2025-10-18T13:17:25.342494",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen004_20251018_111725.json",
+          "size": 9712,
+          "modified": "2025-10-18T13:17:25.542327",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen005_20251018_111725.json",
+          "size": 9720,
+          "modified": "2025-10-18T13:17:25.748372",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen006_20251018_111725.json",
+          "size": 9732,
+          "modified": "2025-10-18T13:17:25.954881",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen007_20251018_111726.json",
+          "size": 9743,
+          "modified": "2025-10-18T13:17:26.172349",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen008_20251018_111726.json",
+          "size": 9770,
+          "modified": "2025-10-18T13:17:26.383879",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen009_20251018_111726.json",
+          "size": 9779,
+          "modified": "2025-10-18T13:17:26.601898",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen010_20251018_111726.json",
+          "size": 9800,
+          "modified": "2025-10-18T13:17:26.796385",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen011_20251018_111726.json",
+          "size": 9811,
+          "modified": "2025-10-18T13:17:26.985195",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen012_20251018_111727.json",
+          "size": 9822,
+          "modified": "2025-10-18T13:17:27.159919",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen013_20251018_111727.json",
+          "size": 9832,
+          "modified": "2025-10-18T13:17:27.366198",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen014_20251018_111727.json",
+          "size": 9844,
+          "modified": "2025-10-18T13:17:27.540854",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen015_20251018_111727.json",
+          "size": 9854,
+          "modified": "2025-10-18T13:17:27.731520",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen016_20251018_111727.json",
+          "size": 9866,
+          "modified": "2025-10-18T13:17:27.922793",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen017_20251018_111728.json",
+          "size": 9876,
+          "modified": "2025-10-18T13:17:28.127734",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen018_20251018_111728.json",
+          "size": 9887,
+          "modified": "2025-10-18T13:17:28.317691",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen019_20251018_111728.json",
+          "size": 9896,
+          "modified": "2025-10-18T13:17:28.515245",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen020_20251018_111728.json",
+          "size": 9909,
+          "modified": "2025-10-18T13:17:28.699311",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen021_20251018_111728.json",
+          "size": 9919,
+          "modified": "2025-10-18T13:17:28.899625",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen022_20251018_111729.json",
+          "size": 9918,
+          "modified": "2025-10-18T13:17:29.111916",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen023_20251018_111729.json",
+          "size": 9929,
+          "modified": "2025-10-18T13:17:29.185682",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen024_20251018_111729.json",
+          "size": 9940,
+          "modified": "2025-10-18T13:17:29.425577",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen025_20251018_111729.json",
+          "size": 9951,
+          "modified": "2025-10-18T13:17:29.683109",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen026_20251018_111729.json",
+          "size": 9962,
+          "modified": "2025-10-18T13:17:29.928657",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen027_20251018_111730.json",
+          "size": 9958,
+          "modified": "2025-10-18T13:17:30.186431",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen028_20251018_111730.json",
+          "size": 9967,
+          "modified": "2025-10-18T13:17:30.981435",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen029_20251018_111731.json",
+          "size": 9995,
+          "modified": "2025-10-18T13:17:31.266745",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen030_20251018_111731.json",
+          "size": 9986,
+          "modified": "2025-10-18T13:17:31.602545",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen031_20251018_111732.json",
+          "size": 10017,
+          "modified": "2025-10-18T13:17:32.219444",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen032_20251018_111732.json",
+          "size": 10013,
+          "modified": "2025-10-18T13:17:32.544688",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen033_20251018_111732.json",
+          "size": 10024,
+          "modified": "2025-10-18T13:17:32.835750",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen034_20251018_111733.json",
+          "size": 10030,
+          "modified": "2025-10-18T13:17:33.177376",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen035_20251018_111736.json",
+          "size": 10045,
+          "modified": "2025-10-18T13:17:36.167006",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen036_20251018_111736.json",
+          "size": 10054,
+          "modified": "2025-10-18T13:17:36.503307",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen037_20251018_111736.json",
+          "size": 10067,
+          "modified": "2025-10-18T13:17:36.936411",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen038_20251018_111737.json",
+          "size": 10076,
+          "modified": "2025-10-18T13:17:37.363572",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen039_20251018_111737.json",
+          "size": 10089,
+          "modified": "2025-10-18T13:17:37.757807",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen040_20251018_111738.json",
+          "size": 10114,
+          "modified": "2025-10-18T13:17:38.908176",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen041_20251018_111739.json",
+          "size": 10111,
+          "modified": "2025-10-18T13:17:39.168895",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen042_20251018_111739.json",
+          "size": 10120,
+          "modified": "2025-10-18T13:17:39.518399",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen043_20251018_111739.json",
+          "size": 10133,
+          "modified": "2025-10-18T13:17:39.910759",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen044_20251018_111740.json",
+          "size": 10158,
+          "modified": "2025-10-18T13:17:40.306883",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen045_20251018_111740.json",
+          "size": 10169,
+          "modified": "2025-10-18T13:17:40.703581",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen046_20251018_111741.json",
+          "size": 10179,
+          "modified": "2025-10-18T13:17:41.083847",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen047_20251018_111741.json",
+          "size": 10191,
+          "modified": "2025-10-18T13:17:41.480335",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen048_20251018_111741.json",
+          "size": 10201,
+          "modified": "2025-10-18T13:17:41.865619",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen049_20251018_111742.json",
+          "size": 10199,
+          "modified": "2025-10-18T13:17:42.275654",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen050_20251018_111742.json",
+          "size": 10208,
+          "modified": "2025-10-18T13:17:42.658101",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen051_20251018_111743.json",
+          "size": 10222,
+          "modified": "2025-10-18T13:17:43.058913",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen052_20251018_111743.json",
+          "size": 10246,
+          "modified": "2025-10-18T13:17:43.497559",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen053_20251018_111743.json",
+          "size": 10258,
+          "modified": "2025-10-18T13:17:43.889248",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen054_20251018_111744.json",
+          "size": 10267,
+          "modified": "2025-10-18T13:17:44.283729",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen055_20251018_111744.json",
+          "size": 10280,
+          "modified": "2025-10-18T13:17:44.661185",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen056_20251018_111745.json",
+          "size": 10290,
+          "modified": "2025-10-18T13:17:45.073008",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen057_20251018_111745.json",
+          "size": 10302,
+          "modified": "2025-10-18T13:17:45.453606",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen058_20251018_111745.json",
+          "size": 10312,
+          "modified": "2025-10-18T13:17:45.848985",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen059_20251018_111746.json",
+          "size": 10324,
+          "modified": "2025-10-18T13:17:46.222052",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen060_20251018_111746.json",
+          "size": 10334,
+          "modified": "2025-10-18T13:17:46.614163",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen061_20251018_111747.json",
+          "size": 10346,
+          "modified": "2025-10-18T13:17:46.994956",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen062_20251018_111747.json",
+          "size": 10356,
+          "modified": "2025-10-18T13:17:47.391237",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen063_20251018_111747.json",
+          "size": 10368,
+          "modified": "2025-10-18T13:17:47.802251",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen064_20251018_111748.json",
+          "size": 10378,
+          "modified": "2025-10-18T13:17:48.213373",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen065_20251018_111748.json",
+          "size": 10390,
+          "modified": "2025-10-18T13:17:48.609623",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen066_20251018_111749.json",
+          "size": 10400,
+          "modified": "2025-10-18T13:17:48.990140",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen067_20251018_111749.json",
+          "size": 10412,
+          "modified": "2025-10-18T13:17:49.391032",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen068_20251018_111749.json",
+          "size": 10422,
+          "modified": "2025-10-18T13:17:49.780947",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen069_20251018_111750.json",
+          "size": 10434,
+          "modified": "2025-10-18T13:17:50.170026",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen070_20251018_111750.json",
+          "size": 10444,
+          "modified": "2025-10-18T13:17:50.560887",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen071_20251018_111750.json",
+          "size": 10456,
+          "modified": "2025-10-18T13:17:50.973965",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen072_20251018_111751.json",
+          "size": 10466,
+          "modified": "2025-10-18T13:17:51.369135",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen073_20251018_111751.json",
+          "size": 10477,
+          "modified": "2025-10-18T13:17:51.793912",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen074_20251018_111752.json",
+          "size": 10486,
+          "modified": "2025-10-18T13:17:52.217420",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen075_20251018_111752.json",
+          "size": 10499,
+          "modified": "2025-10-18T13:17:52.611500",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen076_20251018_111752.json",
+          "size": 10509,
+          "modified": "2025-10-18T13:17:52.997823",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen077_20251018_111753.json",
+          "size": 10521,
+          "modified": "2025-10-18T13:17:53.403441",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen078_20251018_111753.json",
+          "size": 10531,
+          "modified": "2025-10-18T13:17:53.800591",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen079_20251018_111754.json",
+          "size": 10544,
+          "modified": "2025-10-18T13:17:54.199734",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen080_20251018_111754.json",
+          "size": 10554,
+          "modified": "2025-10-18T13:17:54.592485",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen081_20251018_111754.json",
+          "size": 10566,
+          "modified": "2025-10-18T13:17:54.975422",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen082_20251018_111755.json",
+          "size": 10576,
+          "modified": "2025-10-18T13:17:55.401663",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen083_20251018_111755.json",
+          "size": 10588,
+          "modified": "2025-10-18T13:17:55.798236",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen084_20251018_111756.json",
+          "size": 10597,
+          "modified": "2025-10-18T13:17:56.204219",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen085_20251018_111756.json",
+          "size": 10609,
+          "modified": "2025-10-18T13:17:56.593735",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen086_20251018_111756.json",
+          "size": 10619,
+          "modified": "2025-10-18T13:17:56.993012",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen087_20251018_111757.json",
+          "size": 10631,
+          "modified": "2025-10-18T13:17:57.245927",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen088_20251018_111757.json",
+          "size": 10642,
+          "modified": "2025-10-18T13:17:57.642785",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen089_20251018_111758.json",
+          "size": 10670,
+          "modified": "2025-10-18T13:17:58.035753",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen090_20251018_111758.json",
+          "size": 10680,
+          "modified": "2025-10-18T13:17:58.480298",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen091_20251018_111758.json",
+          "size": 10692,
+          "modified": "2025-10-18T13:17:58.906178",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen092_20251018_111759.json",
+          "size": 10702,
+          "modified": "2025-10-18T13:17:59.284858",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen093_20251018_111759.json",
+          "size": 10714,
+          "modified": "2025-10-18T13:17:59.674020",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen094_20251018_111800.json",
+          "size": 10723,
+          "modified": "2025-10-18T13:18:00.076373",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen095_20251018_111800.json",
+          "size": 10736,
+          "modified": "2025-10-18T13:18:00.449375",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen096_20251018_111800.json",
+          "size": 10746,
+          "modified": "2025-10-18T13:18:00.829831",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen097_20251018_111801.json",
+          "size": 10758,
+          "modified": "2025-10-18T13:18:01.215577",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen098_20251018_111801.json",
+          "size": 10751,
+          "modified": "2025-10-18T13:18:01.648409",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen099_20251018_111802.json",
+          "size": 10779,
+          "modified": "2025-10-18T13:18:02.030901",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen100_20251018_111802.json",
+          "size": 10798,
+          "modified": "2025-10-18T13:18:02.452905",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen101_20251018_111802.json",
+          "size": 10809,
+          "modified": "2025-10-18T13:18:02.809581",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen102_20251018_111803.json",
+          "size": 10821,
+          "modified": "2025-10-18T13:18:03.196025",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen103_20251018_111803.json",
+          "size": 10833,
+          "modified": "2025-10-18T13:18:03.545622",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen104_20251018_111803.json",
+          "size": 10842,
+          "modified": "2025-10-18T13:18:03.927756",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen105_20251018_111804.json",
+          "size": 10854,
+          "modified": "2025-10-18T13:18:04.296616",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen106_20251018_111804.json",
+          "size": 10864,
+          "modified": "2025-10-18T13:18:04.645587",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen107_20251018_111805.json",
+          "size": 10875,
+          "modified": "2025-10-18T13:18:05.010804",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen108_20251018_111805.json",
+          "size": 10885,
+          "modified": "2025-10-18T13:18:05.379954",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen109_20251018_111805.json",
+          "size": 10897,
+          "modified": "2025-10-18T13:18:05.744818",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen110_20251018_111806.json",
+          "size": 10907,
+          "modified": "2025-10-18T13:18:06.093630",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen111_20251018_111806.json",
+          "size": 10920,
+          "modified": "2025-10-18T13:18:06.489664",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen112_20251018_111806.json",
+          "size": 10930,
+          "modified": "2025-10-18T13:18:06.854954",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen113_20251018_111807.json",
+          "size": 10942,
+          "modified": "2025-10-18T13:18:07.239511",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen114_20251018_111807.json",
+          "size": 10951,
+          "modified": "2025-10-18T13:18:07.589843",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen115_20251018_111807.json",
+          "size": 10964,
+          "modified": "2025-10-18T13:18:07.935111",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen116_20251018_111808.json",
+          "size": 10974,
+          "modified": "2025-10-18T13:18:08.298989",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen117_20251018_111808.json",
+          "size": 10986,
+          "modified": "2025-10-18T13:18:08.649813",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen118_20251018_111809.json",
+          "size": 10996,
+          "modified": "2025-10-18T13:18:08.990677",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen119_20251018_111809.json",
+          "size": 11008,
+          "modified": "2025-10-18T13:18:09.342195",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen120_20251018_111809.json",
+          "size": 11018,
+          "modified": "2025-10-18T13:18:09.692544",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen121_20251018_111810.json",
+          "size": 11029,
+          "modified": "2025-10-18T13:18:10.057139",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen122_20251018_111810.json",
+          "size": 11039,
+          "modified": "2025-10-18T13:18:10.423101",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen123_20251018_111810.json",
+          "size": 11051,
+          "modified": "2025-10-18T13:18:10.778444",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen124_20251018_111811.json",
+          "size": 11061,
+          "modified": "2025-10-18T13:18:11.127624",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen125_20251018_111811.json",
+          "size": 11073,
+          "modified": "2025-10-18T13:18:11.553201",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen126_20251018_111812.json",
+          "size": 11083,
+          "modified": "2025-10-18T13:18:12.061182",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen127_20251018_111812.json",
+          "size": 11095,
+          "modified": "2025-10-18T13:18:12.516090",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen128_20251018_111812.json",
+          "size": 11105,
+          "modified": "2025-10-18T13:18:12.896585",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen129_20251018_111813.json",
+          "size": 11117,
+          "modified": "2025-10-18T13:18:13.278863",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen130_20251018_111813.json",
+          "size": 11127,
+          "modified": "2025-10-18T13:18:13.635157",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen131_20251018_111813.json",
+          "size": 11139,
+          "modified": "2025-10-18T13:18:13.992208",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen132_20251018_111814.json",
+          "size": 11149,
+          "modified": "2025-10-18T13:18:14.343340",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen133_20251018_111814.json",
+          "size": 11162,
+          "modified": "2025-10-18T13:18:14.690746",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen134_20251018_111815.json",
+          "size": 11170,
+          "modified": "2025-10-18T13:18:15.056132",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen135_20251018_111815.json",
+          "size": 11183,
+          "modified": "2025-10-18T13:18:15.405078",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen136_20251018_111815.json",
+          "size": 11193,
+          "modified": "2025-10-18T13:18:15.757477",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen137_20251018_111816.json",
+          "size": 11205,
+          "modified": "2025-10-18T13:18:16.108023",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen138_20251018_111816.json",
+          "size": 11215,
+          "modified": "2025-10-18T13:18:16.471487",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen139_20251018_111816.json",
+          "size": 11227,
+          "modified": "2025-10-18T13:18:16.831249",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen140_20251018_111817.json",
+          "size": 11237,
+          "modified": "2025-10-18T13:18:17.185757",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen141_20251018_111817.json",
+          "size": 11250,
+          "modified": "2025-10-18T13:18:17.529743",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen142_20251018_111817.json",
+          "size": 11260,
+          "modified": "2025-10-18T13:18:17.887533",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen143_20251018_111818.json",
+          "size": 11272,
+          "modified": "2025-10-18T13:18:18.272003",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen144_20251018_111818.json",
+          "size": 11282,
+          "modified": "2025-10-18T13:18:18.629474",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen145_20251018_111818.json",
+          "size": 11294,
+          "modified": "2025-10-18T13:18:18.977740",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen146_20251018_111819.json",
+          "size": 11304,
+          "modified": "2025-10-18T13:18:19.311054",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen147_20251018_111819.json",
+          "size": 11316,
+          "modified": "2025-10-18T13:18:19.671587",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen148_20251018_111820.json",
+          "size": 11326,
+          "modified": "2025-10-18T13:18:20.028857",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen149_20251018_111820.json",
+          "size": 11338,
+          "modified": "2025-10-18T13:18:20.412722",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen150_20251018_111820.json",
+          "size": 11348,
+          "modified": "2025-10-18T13:18:20.766358",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen151_20251018_111821.json",
+          "size": 11360,
+          "modified": "2025-10-18T13:18:21.144091",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen152_20251018_111821.json",
+          "size": 11370,
+          "modified": "2025-10-18T13:18:21.540458",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen153_20251018_111821.json",
+          "size": 11382,
+          "modified": "2025-10-18T13:18:21.920456",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen154_20251018_111822.json",
+          "size": 11391,
+          "modified": "2025-10-18T13:18:22.301990",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen155_20251018_111822.json",
+          "size": 11404,
+          "modified": "2025-10-18T13:18:22.653415",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen156_20251018_111823.json",
+          "size": 11414,
+          "modified": "2025-10-18T13:18:23.004143",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen157_20251018_111823.json",
+          "size": 11426,
+          "modified": "2025-10-18T13:18:23.377189",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen158_20251018_111823.json",
+          "size": 11436,
+          "modified": "2025-10-18T13:18:23.714766",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen159_20251018_111824.json",
+          "size": 11448,
+          "modified": "2025-10-18T13:18:24.063399",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen160_20251018_111824.json",
+          "size": 11458,
+          "modified": "2025-10-18T13:18:24.418508",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen161_20251018_111824.json",
+          "size": 11470,
+          "modified": "2025-10-18T13:18:24.765522",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen162_20251018_111825.json",
+          "size": 11480,
+          "modified": "2025-10-18T13:18:25.109334",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen163_20251018_111825.json",
+          "size": 11492,
+          "modified": "2025-10-18T13:18:25.462994",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen164_20251018_111825.json",
+          "size": 11502,
+          "modified": "2025-10-18T13:18:25.821417",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen165_20251018_111826.json",
+          "size": 11514,
+          "modified": "2025-10-18T13:18:26.188246",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen166_20251018_111826.json",
+          "size": 11524,
+          "modified": "2025-10-18T13:18:26.536765",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen167_20251018_111826.json",
+          "size": 11536,
+          "modified": "2025-10-18T13:18:26.887423",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen168_20251018_111827.json",
+          "size": 11546,
+          "modified": "2025-10-18T13:18:27.247298",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen169_20251018_111827.json",
+          "size": 11633,
+          "modified": "2025-10-18T13:18:27.588579",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen170_20251018_111827.json",
+          "size": 11643,
+          "modified": "2025-10-18T13:18:27.954617",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen171_20251018_111828.json",
+          "size": 11655,
+          "modified": "2025-10-18T13:18:28.350543",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen172_20251018_111828.json",
+          "size": 11665,
+          "modified": "2025-10-18T13:18:28.699347",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen173_20251018_111829.json",
+          "size": 11677,
+          "modified": "2025-10-18T13:18:29.048656",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen174_20251018_111829.json",
+          "size": 11686,
+          "modified": "2025-10-18T13:18:29.402070",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen175_20251018_111829.json",
+          "size": 11699,
+          "modified": "2025-10-18T13:18:29.740340",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen176_20251018_111830.json",
+          "size": 11709,
+          "modified": "2025-10-18T13:18:30.083144",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen177_20251018_111830.json",
+          "size": 11721,
+          "modified": "2025-10-18T13:18:30.423476",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen178_20251018_111830.json",
+          "size": 11731,
+          "modified": "2025-10-18T13:18:30.762530",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen179_20251018_111831.json",
+          "size": 11816,
+          "modified": "2025-10-18T13:18:31.093094",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen180_20251018_111831.json",
+          "size": 11826,
+          "modified": "2025-10-18T13:18:31.445543",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen181_20251018_111831.json",
+          "size": 11838,
+          "modified": "2025-10-18T13:18:31.788954",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen182_20251018_111832.json",
+          "size": 11848,
+          "modified": "2025-10-18T13:18:32.132856",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen183_20251018_111832.json",
+          "size": 11860,
+          "modified": "2025-10-18T13:18:32.482844",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen184_20251018_111832.json",
+          "size": 11962,
+          "modified": "2025-10-18T13:18:32.821688",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen185_20251018_111833.json",
+          "size": 11974,
+          "modified": "2025-10-18T13:18:33.206389",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen186_20251018_111833.json",
+          "size": 11984,
+          "modified": "2025-10-18T13:18:33.539429",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen187_20251018_111833.json",
+          "size": 11996,
+          "modified": "2025-10-18T13:18:33.890023",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen188_20251018_111834.json",
+          "size": 12006,
+          "modified": "2025-10-18T13:18:34.222149",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen189_20251018_111834.json",
+          "size": 12090,
+          "modified": "2025-10-18T13:18:34.569016",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen190_20251018_111834.json",
+          "size": 12100,
+          "modified": "2025-10-18T13:18:34.903237",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen191_20251018_111835.json",
+          "size": 12112,
+          "modified": "2025-10-18T13:18:35.264049",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen192_20251018_111835.json",
+          "size": 12122,
+          "modified": "2025-10-18T13:18:35.597948",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen193_20251018_111835.json",
+          "size": 12134,
+          "modified": "2025-10-18T13:18:35.949969",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen194_20251018_111836.json",
+          "size": 12143,
+          "modified": "2025-10-18T13:18:36.313210",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen195_20251018_111836.json",
+          "size": 12156,
+          "modified": "2025-10-18T13:18:36.697508",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen196_20251018_111837.json",
+          "size": 12166,
+          "modified": "2025-10-18T13:18:37.089298",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen197_20251018_111837.json",
+          "size": 12178,
+          "modified": "2025-10-18T13:18:37.519698",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen198_20251018_111837.json",
+          "size": 12188,
+          "modified": "2025-10-18T13:18:37.910628",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen199_20251018_111838.json",
+          "size": 12200,
+          "modified": "2025-10-18T13:18:38.308125",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen200_20251018_111838.json",
+          "size": 12210,
+          "modified": "2025-10-18T13:18:38.638849",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen201_20251018_111838.json",
+          "size": 12222,
+          "modified": "2025-10-18T13:18:38.987982",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen202_20251018_111839.json",
+          "size": 12232,
+          "modified": "2025-10-18T13:18:39.338761",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen203_20251018_111839.json",
+          "size": 12244,
+          "modified": "2025-10-18T13:18:39.691146",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen204_20251018_111840.json",
+          "size": 12254,
+          "modified": "2025-10-18T13:18:40.038410",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen205_20251018_111840.json",
+          "size": 12266,
+          "modified": "2025-10-18T13:18:40.420226",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen206_20251018_111840.json",
+          "size": 12276,
+          "modified": "2025-10-18T13:18:40.753999",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen207_20251018_111841.json",
+          "size": 12288,
+          "modified": "2025-10-18T13:18:41.134459",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen208_20251018_111841.json",
+          "size": 12298,
+          "modified": "2025-10-18T13:18:41.498269",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen209_20251018_111841.json",
+          "size": 12310,
+          "modified": "2025-10-18T13:18:41.852848",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen210_20251018_111842.json",
+          "size": 12320,
+          "modified": "2025-10-18T13:18:42.196574",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen211_20251018_111842.json",
+          "size": 12332,
+          "modified": "2025-10-18T13:18:42.562800",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen212_20251018_111842.json",
+          "size": 12342,
+          "modified": "2025-10-18T13:18:42.927572",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen213_20251018_111843.json",
+          "size": 12354,
+          "modified": "2025-10-18T13:18:43.366333",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen214_20251018_111843.json",
+          "size": 12363,
+          "modified": "2025-10-18T13:18:43.701652",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen215_20251018_111844.json",
+          "size": 12376,
+          "modified": "2025-10-18T13:18:44.035781",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen216_20251018_111844.json",
+          "size": 12386,
+          "modified": "2025-10-18T13:18:44.400982",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen217_20251018_111844.json",
+          "size": 12398,
+          "modified": "2025-10-18T13:18:44.755214",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen218_20251018_111845.json",
+          "size": 12408,
+          "modified": "2025-10-18T13:18:45.090060",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen219_20251018_111845.json",
+          "size": 12420,
+          "modified": "2025-10-18T13:18:45.448003",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen220_20251018_111845.json",
+          "size": 12430,
+          "modified": "2025-10-18T13:18:45.774725",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen221_20251018_111846.json",
+          "size": 12442,
+          "modified": "2025-10-18T13:18:46.123509",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen222_20251018_111846.json",
+          "size": 12452,
+          "modified": "2025-10-18T13:18:46.463338",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen223_20251018_111846.json",
+          "size": 12464,
+          "modified": "2025-10-18T13:18:46.813593",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen224_20251018_111847.json",
+          "size": 12474,
+          "modified": "2025-10-18T13:18:47.156485",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen225_20251018_111847.json",
+          "size": 12486,
+          "modified": "2025-10-18T13:18:47.520437",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen226_20251018_111847.json",
+          "size": 12496,
+          "modified": "2025-10-18T13:18:47.859453",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen227_20251018_111848.json",
+          "size": 12508,
+          "modified": "2025-10-18T13:18:48.241730",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen228_20251018_111848.json",
+          "size": 12518,
+          "modified": "2025-10-18T13:18:48.607231",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen229_20251018_111848.json",
+          "size": 12530,
+          "modified": "2025-10-18T13:18:48.964615",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen230_20251018_111849.json",
+          "size": 12540,
+          "modified": "2025-10-18T13:18:49.326716",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen231_20251018_111849.json",
+          "size": 12552,
+          "modified": "2025-10-18T13:18:49.659703",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen232_20251018_111850.json",
+          "size": 12562,
+          "modified": "2025-10-18T13:18:50.015383",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen233_20251018_111850.json",
+          "size": 12574,
+          "modified": "2025-10-18T13:18:50.371364",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen234_20251018_111850.json",
+          "size": 12567,
+          "modified": "2025-10-18T13:18:50.737804",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen235_20251018_111851.json",
+          "size": 12583,
+          "modified": "2025-10-18T13:18:51.071033",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen236_20251018_111851.json",
+          "size": 12592,
+          "modified": "2025-10-18T13:18:51.467992",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen237_20251018_111851.json",
+          "size": 12605,
+          "modified": "2025-10-18T13:18:51.874911",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen238_20251018_111852.json",
+          "size": 12614,
+          "modified": "2025-10-18T13:18:52.270131",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen239_20251018_111852.json",
+          "size": 12627,
+          "modified": "2025-10-18T13:18:52.632722",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen240_20251018_111852.json",
+          "size": 12636,
+          "modified": "2025-10-18T13:18:52.996770",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen241_20251018_111853.json",
+          "size": 12649,
+          "modified": "2025-10-18T13:18:53.378191",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen242_20251018_111853.json",
+          "size": 12658,
+          "modified": "2025-10-18T13:18:53.710447",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen243_20251018_111854.json",
+          "size": 12671,
+          "modified": "2025-10-18T13:18:54.058762",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen244_20251018_111854.json",
+          "size": 12680,
+          "modified": "2025-10-18T13:18:54.408176",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen245_20251018_111854.json",
+          "size": 12693,
+          "modified": "2025-10-18T13:18:54.743681",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen246_20251018_111855.json",
+          "size": 12702,
+          "modified": "2025-10-18T13:18:55.092808",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen247_20251018_111855.json",
+          "size": 12728,
+          "modified": "2025-10-18T13:18:55.442626",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen248_20251018_111855.json",
+          "size": 12738,
+          "modified": "2025-10-18T13:18:55.798891",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen249_20251018_111856.json",
+          "size": 12750,
+          "modified": "2025-10-18T13:18:56.148745",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen250_20251018_111856.json",
+          "size": 12760,
+          "modified": "2025-10-18T13:18:56.497644",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen251_20251018_111856.json",
+          "size": 12772,
+          "modified": "2025-10-18T13:18:56.847020",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen252_20251018_111857.json",
+          "size": 12782,
+          "modified": "2025-10-18T13:18:57.195741",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen253_20251018_111857.json",
+          "size": 12794,
+          "modified": "2025-10-18T13:18:57.550038",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen254_20251018_111857.json",
+          "size": 12803,
+          "modified": "2025-10-18T13:18:57.909113",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen255_20251018_111858.json",
+          "size": 12816,
+          "modified": "2025-10-18T13:18:58.282588",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen256_20251018_111858.json",
+          "size": 12826,
+          "modified": "2025-10-18T13:18:58.627339",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen257_20251018_111858.json",
+          "size": 12838,
+          "modified": "2025-10-18T13:18:58.969099",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen258_20251018_111859.json",
+          "size": 12848,
+          "modified": "2025-10-18T13:18:59.321247",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen259_20251018_111859.json",
+          "size": 12860,
+          "modified": "2025-10-18T13:18:59.674019",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen260_20251018_111900.json",
+          "size": 12870,
+          "modified": "2025-10-18T13:19:00.036723",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen261_20251018_111900.json",
+          "size": 12882,
+          "modified": "2025-10-18T13:19:00.406904",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen262_20251018_111900.json",
+          "size": 12892,
+          "modified": "2025-10-18T13:19:00.933187",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen263_20251018_111901.json",
+          "size": 12904,
+          "modified": "2025-10-18T13:19:01.353891",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen264_20251018_111901.json",
+          "size": 12914,
+          "modified": "2025-10-18T13:19:01.817629",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen265_20251018_111902.json",
+          "size": 12926,
+          "modified": "2025-10-18T13:19:02.422369",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen266_20251018_111902.json",
+          "size": 12936,
+          "modified": "2025-10-18T13:19:02.822704",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen267_20251018_111903.json",
+          "size": 12948,
+          "modified": "2025-10-18T13:19:03.258548",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen268_20251018_111903.json",
+          "size": 12958,
+          "modified": "2025-10-18T13:19:03.635612",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen269_20251018_111903.json",
+          "size": 12970,
+          "modified": "2025-10-18T13:19:03.990121",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen270_20251018_111904.json",
+          "size": 12980,
+          "modified": "2025-10-18T13:19:04.343417",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen271_20251018_111904.json",
+          "size": 12992,
+          "modified": "2025-10-18T13:19:04.706630",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen272_20251018_111905.json",
+          "size": 13002,
+          "modified": "2025-10-18T13:19:05.116226",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen273_20251018_111905.json",
+          "size": 13014,
+          "modified": "2025-10-18T13:19:05.507173",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen274_20251018_111905.json",
+          "size": 13023,
+          "modified": "2025-10-18T13:19:05.899544",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen275_20251018_111906.json",
+          "size": 13036,
+          "modified": "2025-10-18T13:19:06.394857",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen276_20251018_111906.json",
+          "size": 13046,
+          "modified": "2025-10-18T13:19:06.900873",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen277_20251018_111907.json",
+          "size": 13058,
+          "modified": "2025-10-18T13:19:07.204519",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen278_20251018_111907.json",
+          "size": 13068,
+          "modified": "2025-10-18T13:19:07.682500",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen279_20251018_111908.json",
+          "size": 13080,
+          "modified": "2025-10-18T13:19:08.062126",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen280_20251018_111908.json",
+          "size": 13069,
+          "modified": "2025-10-18T13:19:08.474230",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen281_20251018_111908.json",
+          "size": 13081,
+          "modified": "2025-10-18T13:19:08.828507",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen282_20251018_111909.json",
+          "size": 13091,
+          "modified": "2025-10-18T13:19:09.188928",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen283_20251018_111909.json",
+          "size": 13103,
+          "modified": "2025-10-18T13:19:09.555991",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen284_20251018_111909.json",
+          "size": 13113,
+          "modified": "2025-10-18T13:19:09.908830",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen285_20251018_111910.json",
+          "size": 13084,
+          "modified": "2025-10-18T13:19:10.268546",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen286_20251018_111910.json",
+          "size": 13094,
+          "modified": "2025-10-18T13:19:10.626486",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen287_20251018_111910.json",
+          "size": 13106,
+          "modified": "2025-10-18T13:19:10.987257",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen288_20251018_111911.json",
+          "size": 13116,
+          "modified": "2025-10-18T13:19:11.373796",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen289_20251018_111911.json",
+          "size": 13128,
+          "modified": "2025-10-18T13:19:11.802677",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen290_20251018_111912.json",
+          "size": 13119,
+          "modified": "2025-10-18T13:19:12.245543",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen291_20251018_111912.json",
+          "size": 13131,
+          "modified": "2025-10-18T13:19:12.626439",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen292_20251018_111912.json",
+          "size": 13141,
+          "modified": "2025-10-18T13:19:12.978154",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen293_20251018_111913.json",
+          "size": 13153,
+          "modified": "2025-10-18T13:19:13.355930",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen294_20251018_111913.json",
+          "size": 13162,
+          "modified": "2025-10-18T13:19:13.719383",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen295_20251018_111914.json",
+          "size": 13175,
+          "modified": "2025-10-18T13:19:14.090744",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen296_20251018_111914.json",
+          "size": 13185,
+          "modified": "2025-10-18T13:19:14.450702",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen297_20251018_111914.json",
+          "size": 13197,
+          "modified": "2025-10-18T13:19:14.800029",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen298_20251018_111915.json",
+          "size": 13207,
+          "modified": "2025-10-18T13:19:15.164995",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen299_20251018_111915.json",
+          "size": 13219,
+          "modified": "2025-10-18T13:19:15.546155",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen300_20251018_111915.json",
+          "size": 13208,
+          "modified": "2025-10-18T13:19:15.894725",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen301_20251018_111916.json",
+          "size": 13220,
+          "modified": "2025-10-18T13:19:16.261735",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen302_20251018_111916.json",
+          "size": 13230,
+          "modified": "2025-10-18T13:19:16.626184",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen303_20251018_111916.json",
+          "size": 13242,
+          "modified": "2025-10-18T13:19:16.975791",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen304_20251018_111917.json",
+          "size": 13252,
+          "modified": "2025-10-18T13:19:17.345553",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen305_20251018_111917.json",
+          "size": 13264,
+          "modified": "2025-10-18T13:19:17.727049",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen306_20251018_111918.json",
+          "size": 13274,
+          "modified": "2025-10-18T13:19:18.099193",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen307_20251018_111918.json",
+          "size": 13286,
+          "modified": "2025-10-18T13:19:18.481913",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen308_20251018_111918.json",
+          "size": 13296,
+          "modified": "2025-10-18T13:19:18.839435",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen309_20251018_111919.json",
+          "size": 13308,
+          "modified": "2025-10-18T13:19:19.193246",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen310_20251018_111919.json",
+          "size": 13318,
+          "modified": "2025-10-18T13:19:19.559926",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen311_20251018_111919.json",
+          "size": 13330,
+          "modified": "2025-10-18T13:19:19.909196",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen312_20251018_111920.json",
+          "size": 13340,
+          "modified": "2025-10-18T13:19:20.285452",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen313_20251018_111920.json",
+          "size": 13352,
+          "modified": "2025-10-18T13:19:20.666596",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen314_20251018_111921.json",
+          "size": 13361,
+          "modified": "2025-10-18T13:19:21.014905",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen315_20251018_111921.json",
+          "size": 13374,
+          "modified": "2025-10-18T13:19:21.420502",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen316_20251018_111921.json",
+          "size": 13384,
+          "modified": "2025-10-18T13:19:21.884774",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen317_20251018_111922.json",
+          "size": 13396,
+          "modified": "2025-10-18T13:19:22.302213",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen318_20251018_111922.json",
+          "size": 13406,
+          "modified": "2025-10-18T13:19:22.661647",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen319_20251018_111923.json",
+          "size": 13418,
+          "modified": "2025-10-18T13:19:23.010812",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen320_20251018_111923.json",
+          "size": 13428,
+          "modified": "2025-10-18T13:19:23.390481",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen321_20251018_111923.json",
+          "size": 13440,
+          "modified": "2025-10-18T13:19:23.740467",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen322_20251018_111924.json",
+          "size": 13450,
+          "modified": "2025-10-18T13:19:24.107046",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen323_20251018_111924.json",
+          "size": 13462,
+          "modified": "2025-10-18T13:19:24.464830",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen324_20251018_111924.json",
+          "size": 13472,
+          "modified": "2025-10-18T13:19:24.814955",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen325_20251018_111925.json",
+          "size": 13484,
+          "modified": "2025-10-18T13:19:25.180849",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen326_20251018_111925.json",
+          "size": 13494,
+          "modified": "2025-10-18T13:19:25.546905",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen327_20251018_111925.json",
+          "size": 13506,
+          "modified": "2025-10-18T13:19:25.913264",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen328_20251018_111926.json",
+          "size": 13516,
+          "modified": "2025-10-18T13:19:26.293741",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen329_20251018_111926.json",
+          "size": 13528,
+          "modified": "2025-10-18T13:19:26.658894",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen330_20251018_111927.json",
+          "size": 13538,
+          "modified": "2025-10-18T13:19:27.030911",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen331_20251018_111927.json",
+          "size": 13550,
+          "modified": "2025-10-18T13:19:27.380512",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen332_20251018_111927.json",
+          "size": 13560,
+          "modified": "2025-10-18T13:19:27.774698",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen333_20251018_111928.json",
+          "size": 13572,
+          "modified": "2025-10-18T13:19:28.155944",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen334_20251018_111928.json",
+          "size": 13582,
+          "modified": "2025-10-18T13:19:28.507937",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen335_20251018_111928.json",
+          "size": 13595,
+          "modified": "2025-10-18T13:19:28.884913",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen336_20251018_111929.json",
+          "size": 13605,
+          "modified": "2025-10-18T13:19:29.248688",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen337_20251018_111929.json",
+          "size": 13617,
+          "modified": "2025-10-18T13:19:29.615801",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen338_20251018_111929.json",
+          "size": 13627,
+          "modified": "2025-10-18T13:19:29.978861",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen339_20251018_111930.json",
+          "size": 13639,
+          "modified": "2025-10-18T13:19:30.348267",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen340_20251018_111930.json",
+          "size": 13649,
+          "modified": "2025-10-18T13:19:30.710303",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen341_20251018_111931.json",
+          "size": 13660,
+          "modified": "2025-10-18T13:19:31.077426",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen342_20251018_111931.json",
+          "size": 13670,
+          "modified": "2025-10-18T13:19:31.440440",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen343_20251018_111931.json",
+          "size": 13682,
+          "modified": "2025-10-18T13:19:31.806039",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen344_20251018_111932.json",
+          "size": 13692,
+          "modified": "2025-10-18T13:19:32.170619",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen345_20251018_111932.json",
+          "size": 13704,
+          "modified": "2025-10-18T13:19:32.520233",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen346_20251018_111932.json",
+          "size": 13714,
+          "modified": "2025-10-18T13:19:32.887412",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen347_20251018_111933.json",
+          "size": 13726,
+          "modified": "2025-10-18T13:19:33.269722",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen348_20251018_111933.json",
+          "size": 13736,
+          "modified": "2025-10-18T13:19:33.634645",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen349_20251018_111934.json",
+          "size": 13748,
+          "modified": "2025-10-18T13:19:34.016652",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen350_20251018_111934.json",
+          "size": 13758,
+          "modified": "2025-10-18T13:19:34.382773",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen351_20251018_111934.json",
+          "size": 13770,
+          "modified": "2025-10-18T13:19:34.733668",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen352_20251018_111935.json",
+          "size": 13780,
+          "modified": "2025-10-18T13:19:35.115027",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen353_20251018_111935.json",
+          "size": 13793,
+          "modified": "2025-10-18T13:19:35.474703",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen354_20251018_111935.json",
+          "size": 13802,
+          "modified": "2025-10-18T13:19:35.856772",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen355_20251018_111936.json",
+          "size": 13815,
+          "modified": "2025-10-18T13:19:36.310770",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen356_20251018_111936.json",
+          "size": 13825,
+          "modified": "2025-10-18T13:19:36.779351",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen357_20251018_111937.json",
+          "size": 13837,
+          "modified": "2025-10-18T13:19:37.218134",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen358_20251018_111937.json",
+          "size": 13847,
+          "modified": "2025-10-18T13:19:37.689236",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen359_20251018_111938.json",
+          "size": 13859,
+          "modified": "2025-10-18T13:19:38.084715",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen360_20251018_111938.json",
+          "size": 13869,
+          "modified": "2025-10-18T13:19:38.495984",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen361_20251018_111938.json",
+          "size": 13881,
+          "modified": "2025-10-18T13:19:38.892936",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen362_20251018_111939.json",
+          "size": 13892,
+          "modified": "2025-10-18T13:19:39.273927",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen363_20251018_111939.json",
+          "size": 13903,
+          "modified": "2025-10-18T13:19:39.662562",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen364_20251018_111940.json",
+          "size": 13914,
+          "modified": "2025-10-18T13:19:40.036302",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen365_20251018_111940.json",
+          "size": 13926,
+          "modified": "2025-10-18T13:19:40.418152",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen366_20251018_111940.json",
+          "size": 13936,
+          "modified": "2025-10-18T13:19:40.800881",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen367_20251018_111941.json",
+          "size": 13946,
+          "modified": "2025-10-18T13:19:41.226718",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen368_20251018_111941.json",
+          "size": 13957,
+          "modified": "2025-10-18T13:19:41.686666",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen369_20251018_111942.json",
+          "size": 13970,
+          "modified": "2025-10-18T13:19:42.098557",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen370_20251018_111942.json",
+          "size": 13963,
+          "modified": "2025-10-18T13:19:42.496464",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen371_20251018_111942.json",
+          "size": 13991,
+          "modified": "2025-10-18T13:19:42.893307",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen372_20251018_111943.json",
+          "size": 14001,
+          "modified": "2025-10-18T13:19:43.307838",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen373_20251018_111943.json",
+          "size": 14013,
+          "modified": "2025-10-18T13:19:43.731189",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen374_20251018_111944.json",
+          "size": 14022,
+          "modified": "2025-10-18T13:19:44.129390",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen375_20251018_111944.json",
+          "size": 14035,
+          "modified": "2025-10-18T13:19:44.526275",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen376_20251018_111944.json",
+          "size": 14046,
+          "modified": "2025-10-18T13:19:44.958564",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen377_20251018_111945.json",
+          "size": 14058,
+          "modified": "2025-10-18T13:19:45.367301",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen378_20251018_111945.json",
+          "size": 14068,
+          "modified": "2025-10-18T13:19:45.797093",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen379_20251018_111946.json",
+          "size": 14080,
+          "modified": "2025-10-18T13:19:46.207196",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen380_20251018_111946.json",
+          "size": 14074,
+          "modified": "2025-10-18T13:19:46.650301",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen381_20251018_111947.json",
+          "size": 14086,
+          "modified": "2025-10-18T13:19:47.063334",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen382_20251018_111947.json",
+          "size": 14096,
+          "modified": "2025-10-18T13:19:47.476368",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen383_20251018_111947.json",
+          "size": 14108,
+          "modified": "2025-10-18T13:19:47.920241",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen384_20251018_111948.json",
+          "size": 14118,
+          "modified": "2025-10-18T13:19:48.368509",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen385_20251018_111948.json",
+          "size": 14130,
+          "modified": "2025-10-18T13:19:48.794658",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen386_20251018_111949.json",
+          "size": 14140,
+          "modified": "2025-10-18T13:19:49.250403",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen387_20251018_111949.json",
+          "size": 14152,
+          "modified": "2025-10-18T13:19:49.661469",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen388_20251018_111950.json",
+          "size": 14162,
+          "modified": "2025-10-18T13:19:50.088710",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen389_20251018_111950.json",
+          "size": 14173,
+          "modified": "2025-10-18T13:19:50.505097",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen390_20251018_111950.json",
+          "size": 14183,
+          "modified": "2025-10-18T13:19:50.917674",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen391_20251018_111951.json",
+          "size": 14195,
+          "modified": "2025-10-18T13:19:51.353683",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen392_20251018_111951.json",
+          "size": 14205,
+          "modified": "2025-10-18T13:19:51.797240",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen393_20251018_111952.json",
+          "size": 14217,
+          "modified": "2025-10-18T13:19:52.241530",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen394_20251018_111952.json",
+          "size": 14226,
+          "modified": "2025-10-18T13:19:52.673339",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen395_20251018_111953.json",
+          "size": 14240,
+          "modified": "2025-10-18T13:19:53.099411",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen396_20251018_111953.json",
+          "size": 14250,
+          "modified": "2025-10-18T13:19:53.529989",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen397_20251018_111953.json",
+          "size": 14262,
+          "modified": "2025-10-18T13:19:53.949364",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen398_20251018_111954.json",
+          "size": 14272,
+          "modified": "2025-10-18T13:19:54.367423",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen399_20251018_111954.json",
+          "size": 14284,
+          "modified": "2025-10-18T13:19:54.780053",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen400_20251018_111955.json",
+          "size": 14294,
+          "modified": "2025-10-18T13:19:55.214906",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen401_20251018_111955.json",
+          "size": 14306,
+          "modified": "2025-10-18T13:19:55.652374",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen402_20251018_111956.json",
+          "size": 14316,
+          "modified": "2025-10-18T13:19:56.066390",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen403_20251018_111956.json",
+          "size": 14328,
+          "modified": "2025-10-18T13:19:56.479857",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen404_20251018_111956.json",
+          "size": 14338,
+          "modified": "2025-10-18T13:19:56.893357",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen405_20251018_111957.json",
+          "size": 14350,
+          "modified": "2025-10-18T13:19:57.309410",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen406_20251018_111957.json",
+          "size": 14360,
+          "modified": "2025-10-18T13:19:57.728846",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen407_20251018_111958.json",
+          "size": 14372,
+          "modified": "2025-10-18T13:19:58.165927",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen408_20251018_111958.json",
+          "size": 14382,
+          "modified": "2025-10-18T13:19:58.591341",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen409_20251018_111959.json",
+          "size": 14394,
+          "modified": "2025-10-18T13:19:59.004585",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen410_20251018_111959.json",
+          "size": 14404,
+          "modified": "2025-10-18T13:19:59.430557",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen411_20251018_111959.json",
+          "size": 14416,
+          "modified": "2025-10-18T13:19:59.867789",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen412_20251018_112000.json",
+          "size": 14426,
+          "modified": "2025-10-18T13:20:00.294132",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen413_20251018_112000.json",
+          "size": 14437,
+          "modified": "2025-10-18T13:20:00.711037",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen414_20251018_112001.json",
+          "size": 14446,
+          "modified": "2025-10-18T13:20:01.152287",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen415_20251018_112001.json",
+          "size": 14459,
+          "modified": "2025-10-18T13:20:01.602553",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen416_20251018_112002.json",
+          "size": 14470,
+          "modified": "2025-10-18T13:20:02.071636",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen417_20251018_112002.json",
+          "size": 14482,
+          "modified": "2025-10-18T13:20:02.499258",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen418_20251018_112002.json",
+          "size": 14492,
+          "modified": "2025-10-18T13:20:02.942259",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen419_20251018_112003.json",
+          "size": 14504,
+          "modified": "2025-10-18T13:20:03.367922",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen420_20251018_112003.json",
+          "size": 14514,
+          "modified": "2025-10-18T13:20:03.765759",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen421_20251018_112004.json",
+          "size": 14526,
+          "modified": "2025-10-18T13:20:04.195132",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen422_20251018_112004.json",
+          "size": 14536,
+          "modified": "2025-10-18T13:20:04.615709",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen423_20251018_112005.json",
+          "size": 14549,
+          "modified": "2025-10-18T13:20:05.040554",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen424_20251018_112005.json",
+          "size": 14558,
+          "modified": "2025-10-18T13:20:05.466110",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen425_20251018_112005.json",
+          "size": 14570,
+          "modified": "2025-10-18T13:20:05.871527",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen426_20251018_112006.json",
+          "size": 14580,
+          "modified": "2025-10-18T13:20:06.316190",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen427_20251018_112006.json",
+          "size": 14593,
+          "modified": "2025-10-18T13:20:06.768165",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen428_20251018_112007.json",
+          "size": 14603,
+          "modified": "2025-10-18T13:20:07.230794",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen429_20251018_112007.json",
+          "size": 14615,
+          "modified": "2025-10-18T13:20:07.645304",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen430_20251018_112008.json",
+          "size": 14624,
+          "modified": "2025-10-18T13:20:08.072244",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen431_20251018_112008.json",
+          "size": 14636,
+          "modified": "2025-10-18T13:20:08.519881",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen432_20251018_112008.json",
+          "size": 14646,
+          "modified": "2025-10-18T13:20:08.937492",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen433_20251018_112009.json",
+          "size": 14658,
+          "modified": "2025-10-18T13:20:09.363355",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen434_20251018_112009.json",
+          "size": 14650,
+          "modified": "2025-10-18T13:20:09.774400",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen435_20251018_112010.json",
+          "size": 14666,
+          "modified": "2025-10-18T13:20:10.197381",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen436_20251018_112010.json",
+          "size": 14675,
+          "modified": "2025-10-18T13:20:10.625433",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen437_20251018_112011.json",
+          "size": 14688,
+          "modified": "2025-10-18T13:20:11.131750",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen438_20251018_112011.json",
+          "size": 14697,
+          "modified": "2025-10-18T13:20:11.539297",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen439_20251018_112011.json",
+          "size": 14710,
+          "modified": "2025-10-18T13:20:11.953576",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen440_20251018_112012.json",
+          "size": 14735,
+          "modified": "2025-10-18T13:20:12.383616",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen441_20251018_112012.json",
+          "size": 14732,
+          "modified": "2025-10-18T13:20:12.813619",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen442_20251018_112013.json",
+          "size": 14741,
+          "modified": "2025-10-18T13:20:13.261094",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen443_20251018_112013.json",
+          "size": 14754,
+          "modified": "2025-10-18T13:20:13.688096",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen444_20251018_112109.json",
+          "size": 14779,
+          "modified": "2025-10-18T13:21:09.434802",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen445_20251018_112109.json",
+          "size": 14790,
+          "modified": "2025-10-18T13:21:09.831056",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen446_20251018_112110.json",
+          "size": 14800,
+          "modified": "2025-10-18T13:21:10.100070",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen447_20251018_112110.json",
+          "size": 14812,
+          "modified": "2025-10-18T13:21:10.367505",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen448_20251018_112110.json",
+          "size": 14822,
+          "modified": "2025-10-18T13:21:10.632443",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen449_20251018_112110.json",
+          "size": 14820,
+          "modified": "2025-10-18T13:21:10.893072",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen450_20251018_112111.json",
+          "size": 14829,
+          "modified": "2025-10-18T13:21:11.156214",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen451_20251018_112111.json",
+          "size": 14842,
+          "modified": "2025-10-18T13:21:11.430815",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen452_20251018_112111.json",
+          "size": 14866,
+          "modified": "2025-10-18T13:21:11.702615",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen453_20251018_112111.json",
+          "size": 14878,
+          "modified": "2025-10-18T13:21:11.994930",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen454_20251018_112112.json",
+          "size": 14887,
+          "modified": "2025-10-18T13:21:12.253368",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen455_20251018_112112.json",
+          "size": 14900,
+          "modified": "2025-10-18T13:21:12.507267",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen456_20251018_112112.json",
+          "size": 14910,
+          "modified": "2025-10-18T13:21:12.761560",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen457_20251018_112113.json",
+          "size": 14922,
+          "modified": "2025-10-18T13:21:13.029468",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen458_20251018_112113.json",
+          "size": 14932,
+          "modified": "2025-10-18T13:21:13.323187",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen459_20251018_112113.json",
+          "size": 14944,
+          "modified": "2025-10-18T13:21:13.577868",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen460_20251018_112113.json",
+          "size": 14954,
+          "modified": "2025-10-18T13:21:13.848775",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen461_20251018_112114.json",
+          "size": 14966,
+          "modified": "2025-10-18T13:21:14.102281",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen462_20251018_112114.json",
+          "size": 14976,
+          "modified": "2025-10-18T13:21:14.357056",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen463_20251018_112114.json",
+          "size": 14988,
+          "modified": "2025-10-18T13:21:14.616010",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen464_20251018_112114.json",
+          "size": 14998,
+          "modified": "2025-10-18T13:21:14.879238",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen465_20251018_112115.json",
+          "size": 15010,
+          "modified": "2025-10-18T13:21:15.141258",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen466_20251018_112115.json",
+          "size": 15020,
+          "modified": "2025-10-18T13:21:15.394252",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen467_20251018_112115.json",
+          "size": 15032,
+          "modified": "2025-10-18T13:21:15.664023",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen468_20251018_112115.json",
+          "size": 15042,
+          "modified": "2025-10-18T13:21:15.930570",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen469_20251018_112116.json",
+          "size": 15054,
+          "modified": "2025-10-18T13:21:16.195859",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen470_20251018_112116.json",
+          "size": 15064,
+          "modified": "2025-10-18T13:21:16.652253",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen471_20251018_112116.json",
+          "size": 15076,
+          "modified": "2025-10-18T13:21:16.942091",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen472_20251018_112117.json",
+          "size": 15086,
+          "modified": "2025-10-18T13:21:17.222104",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen473_20251018_112117.json",
+          "size": 15097,
+          "modified": "2025-10-18T13:21:17.484888",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen474_20251018_112117.json",
+          "size": 15106,
+          "modified": "2025-10-18T13:21:17.744989",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen475_20251018_112118.json",
+          "size": 15119,
+          "modified": "2025-10-18T13:21:18.004425",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen476_20251018_112118.json",
+          "size": 15129,
+          "modified": "2025-10-18T13:21:18.283098",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen477_20251018_112118.json",
+          "size": 15141,
+          "modified": "2025-10-18T13:21:18.542936",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen478_20251018_112118.json",
+          "size": 15151,
+          "modified": "2025-10-18T13:21:18.807917",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen479_20251018_112119.json",
+          "size": 15164,
+          "modified": "2025-10-18T13:21:19.069515",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen480_20251018_112119.json",
+          "size": 15174,
+          "modified": "2025-10-18T13:21:19.345248",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen481_20251018_112119.json",
+          "size": 15186,
+          "modified": "2025-10-18T13:21:19.601507",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen482_20251018_112119.json",
+          "size": 15196,
+          "modified": "2025-10-18T13:21:19.856474",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen483_20251018_112120.json",
+          "size": 15208,
+          "modified": "2025-10-18T13:21:20.113392",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen484_20251018_112120.json",
+          "size": 15217,
+          "modified": "2025-10-18T13:21:20.399693",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen485_20251018_112120.json",
+          "size": 15229,
+          "modified": "2025-10-18T13:21:20.663223",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen486_20251018_112120.json",
+          "size": 15239,
+          "modified": "2025-10-18T13:21:20.926588",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen487_20251018_112121.json",
+          "size": 15251,
+          "modified": "2025-10-18T13:21:21.198107",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen488_20251018_112121.json",
+          "size": 15262,
+          "modified": "2025-10-18T13:21:21.479980",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen489_20251018_112121.json",
+          "size": 15290,
+          "modified": "2025-10-18T13:21:21.769397",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen490_20251018_112122.json",
+          "size": 15300,
+          "modified": "2025-10-18T13:21:22.042564",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_gen491_20251018_112122.json",
+          "size": 15312,
+          "modified": "2025-10-18T13:21:22.331280",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251018_111724_index.json",
+          "size": 138635,
+          "modified": "2025-10-18T13:21:22.351044",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "population_manager.py",
+          "size": 33314,
+          "modified": "2025-10-18T08:45:37.600314",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 678,
+          "modified": "2025-10-10T08:31:22.841934",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "pop_20251018_104457_index.json",
+        "size": 1328,
+        "modified": "2025-10-18T12:44:57.757805",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_105100_index.json",
+        "size": 1328,
+        "modified": "2025-10-18T12:51:00.681132",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111256_index.json",
+        "size": 1328,
+        "modified": "2025-10-18T13:12:56.802364",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_index.json",
+        "size": 138635,
+        "modified": "2025-10-18T13:21:22.351044",
+        "category": "documentation"
+      },
+      {
+        "name": "__init__.py",
+        "size": 678,
+        "modified": "2025-10-10T08:31:22.841934",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "pop_20251018_111724_index.json",
+        "size": 138635,
+        "modified": "2025-10-18T13:21:22.351044",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen491_20251018_112122.json",
+        "size": 15312,
+        "modified": "2025-10-18T13:21:22.331280",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen490_20251018_112122.json",
+        "size": 15300,
+        "modified": "2025-10-18T13:21:22.042564",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen489_20251018_112121.json",
+        "size": 15290,
+        "modified": "2025-10-18T13:21:21.769397",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen488_20251018_112121.json",
+        "size": 15262,
+        "modified": "2025-10-18T13:21:21.479980",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen487_20251018_112121.json",
+        "size": 15251,
+        "modified": "2025-10-18T13:21:21.198107",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen486_20251018_112120.json",
+        "size": 15239,
+        "modified": "2025-10-18T13:21:20.926588",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen485_20251018_112120.json",
+        "size": 15229,
+        "modified": "2025-10-18T13:21:20.663223",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen484_20251018_112120.json",
+        "size": 15217,
+        "modified": "2025-10-18T13:21:20.399693",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251018_111724_gen483_20251018_112120.json",
+        "size": 15208,
+        "modified": "2025-10-18T13:21:20.113392",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 508,
+      "file_types": [
+        ".json",
+        ".py"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "pop_20251018_104457_index.json",
+      "pop_20251018_105100_index.json",
+      "pop_20251018_111256_index.json",
+      "pop_20251018_111724_index.json",
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > populations",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab\\populations",
+      "docs\\architecture\\populations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

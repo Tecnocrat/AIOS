@@ -1,0 +1,128 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:38.947252",
+  "folder_info": {
+    "name": "interfaces",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\architecture\\interfaces",
+    "relative_path": "docs\\architecture\\interfaces",
+    "parent_path": "docs\\architecture",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "Interface Layer"
+    ],
+    "path_classification": [
+      "docs",
+      "architecture",
+      "interfaces"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "agent_driven_code_evolution",
+      "consciousness",
+      "core",
+      "evolution",
+      "populations",
+      "python_314"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 22630,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "INTERFACE_BRIDGE_SPECIFICATION.md",
+          "size": 15086,
+          "modified": "2025-09-21T15:32:20.262027",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 7544,
+          "modified": "2025-10-04T00:12:49.409898",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 7544,
+        "modified": "2025-10-04T00:12:49.409898",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "README.md",
+        "size": 7544,
+        "modified": "2025-10-04T00:12:49.409898",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > architecture > interfaces",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\interfaces' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\interfaces' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\interfaces' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "User interface and experience",
+    "recommended_actions": [
+      "Validate UI component consistency",
+      "Test user workflow integration",
+      "Check consciousness-UI bridge functionality"
+    ],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\architecture",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

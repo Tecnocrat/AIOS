@@ -1,0 +1,120 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:41:41.951159",
+  "folder_info": {
+    "name": "organisms",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\populations\\organisms",
+    "relative_path": "evolution_lab\\populations\\organisms",
+    "parent_path": "evolution_lab\\populations",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "populations",
+      "organisms"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "backup_20251018_124347",
+      "pop_20251011_181057",
+      "pop_20251011_181333",
+      "pop_20251011_181334",
+      "pop_20251011_181338",
+      "pop_20251011_181610",
+      "pop_20251011_181611",
+      "pop_20251011_181612",
+      "pop_20251011_181718",
+      "pop_20251011_181719",
+      "pop_20251011_181720",
+      "pop_20251011_185346",
+      "pop_20251011_185347"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 506,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "tiny"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "organism_5c3507b1.py",
+          "size": 104,
+          "modified": "2025-09-17T21:28:27.069590",
+          "category": "consciousness"
+        },
+        {
+          "name": "organism_adf629de.py",
+          "size": 104,
+          "modified": "2025-09-17T21:28:27.070745",
+          "category": "consciousness"
+        },
+        {
+          "name": "organism_fce77c9d.py",
+          "size": 298,
+          "modified": "2025-09-17T21:28:27.071745",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > populations > organisms",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations\\organisms' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations\\organisms' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations\\organisms' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "evolution_lab\\populations",
+      "evolution_lab\\tachyonic_field\\evolution_lab\\populations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

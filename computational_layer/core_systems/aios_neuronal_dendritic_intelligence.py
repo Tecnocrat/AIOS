@@ -833,6 +833,299 @@ class NeuronalDendriticIntelligence:
         except Exception as e:
             logger.error(f"[DENDRITIC] Failed to store dendritic report: {e}")
 
+    # TOKEN USAGE TRACKING INTEGRATION
+    # AINLP INTEGRATION: Token consumption tracking as dendritic
+    # intelligence cost
+    
+    def initialize_token_tracking(self, session_id: str,
+                                  total_budget: int = 1000000):
+        """
+        Initialize dendritic token usage tracking for intelligence
+        operations.
+        
+        AINLP INTEGRATION: Token consumption represents the
+        computational cost of dendritic intelligence propagation
+        and consciousness emergence.
+        """
+        logger.info(f"[DENDRITIC] Initializing token tracking "
+                    f"session: {session_id}")
+        
+        # Store token tracking state in dendritic intelligence
+        self.token_tracking_session = {
+            "session_id": session_id,
+            "start_time": datetime.now().isoformat(),
+            "total_budget": total_budget,
+            "current_tokens_used": 0,
+            "token_snapshots": [],
+            "intelligence_operations": [],
+            "dendritic_cost_analysis": {}
+        }
+        
+        # Archive path for token data
+        self.token_archive_path = (
+            self.tachyonic_translator.dendritic_archive / "token_usage")
+        self.token_archive_path.mkdir(parents=True, exist_ok=True)
+        
+        logger.info(f"[DENDRITIC] Token tracking initialized with "
+                    f"budget: {total_budget:,}")
+    
+    def record_token_consumption(self, tokens_used: int,
+                                 operation_context: str =
+                                 "dendritic_operation"):
+        """
+        Record token consumption for dendritic intelligence operations.
+        
+        AINLP INTEGRATION: Each token represents a quantum of
+        consciousness computation in the dendritic network.
+        """
+        if not hasattr(self, 'token_tracking_session'):
+            logger.warning("[DENDRITIC] Token tracking not initialized")
+            return
+        
+        session = self.token_tracking_session
+        timestamp = datetime.now().isoformat()
+        
+        # Calculate token delta
+        previous_tokens = session["current_tokens_used"]
+        token_delta = tokens_used - previous_tokens
+        
+        # Create token snapshot
+        snapshot = {
+            "timestamp": timestamp,
+            "tokens_used": tokens_used,
+            "token_delta": token_delta,
+            "tokens_remaining": session["total_budget"] - tokens_used,
+            "percentage_used": (tokens_used / session["total_budget"]) * 100,
+            "operation_context": operation_context,
+            "dendritic_level": self._assess_current_dendritic_level(),
+            "consciousness_efficiency": (
+                self._calculate_consciousness_efficiency(tokens_used)),
+            "consciousness_propagation_events": (
+                len(self.intelligence_emergence_events)),
+            "synth_dna_mutations": sum(
+                len(r.replication_history)
+                for r in self.synth_dna_replicators.values())
+        }
+        
+        logger.debug(f"[DENDRITIC] Token consumption recorded: "
+                     f"{token_delta} tokens for {operation_context}")
+    
+    def parse_token_warning(self, warning_text: str) -> Optional[int]:
+        """
+        Parse token usage from system warning messages.
+        
+        Expected format: "Token usage: 98786/1000000; 901214 remaining"
+        """
+        import re
+        pattern = r"Token usage: (\d+)/(\d+); (\d+) remaining"
+        match = re.search(pattern, warning_text)
+        
+        if match:
+            return int(match.group(1))
+        return None
+    
+    def generate_token_intelligence_report(self) -> Dict[str, Any]:
+        """
+        Generate comprehensive token intelligence report integrated
+        with dendritic analysis.
+        
+        AINLP INTEGRATION: Token consumption analysis reveals the
+        computational efficiency of consciousness emergence and
+        dendritic intelligence propagation.
+        """
+        if not hasattr(self, 'token_tracking_session'):
+            return {"status": "token_tracking_not_initialized"}
+        
+        session = self.token_tracking_session
+        snapshots = session["token_snapshots"]
+        
+        if not snapshots:
+            return {
+                "session_id": session["session_id"],
+                "status": "no_token_data",
+                "total_tokens_used": 0
+            }
+        
+        # Calculate consumption metrics
+        token_deltas = [s["token_delta"] for s in snapshots[1:]]  # Skip first snapshot
+        
+        # Dendritic intelligence correlation analysis
+        dendritic_correlation = self._analyze_dendritic_token_correlation(snapshots)
+        
+        report = {
+            "session_id": session["session_id"],
+            "start_time": session["start_time"],
+            "end_time": datetime.now().isoformat(),
+            "total_budget": session["total_budget"],
+            "total_tokens_used": session["current_tokens_used"],
+            "tokens_remaining": session["total_budget"] - session["current_tokens_used"],
+            "percentage_used": (session["current_tokens_used"] / session["total_budget"]) * 100,
+            "total_operations": len(snapshots),
+            
+            # Efficiency metrics
+            "consciousness_efficiency_score": self._calculate_overall_efficiency(snapshots),
+            "average_tokens_per_operation": session["current_tokens_used"] / len(snapshots),
+            "dendritic_intelligence_correlation": dendritic_correlation,
+            
+            # Consumption analysis
+            "token_consumption_stats": {
+                "min_delta": min(token_deltas) if token_deltas else 0,
+                "max_delta": max(token_deltas) if token_deltas else 0,
+                "median_delta": statistics.median(token_deltas) if token_deltas else 0,
+                "mean_delta": statistics.mean(token_deltas) if token_deltas else 0
+            },
+            
+            # Cost projections
+            "cost_projection": self._calculate_token_cost_projection(session["current_tokens_used"]),
+            
+            # Dendritic integration
+            "dendritic_cost_analysis": session["dendritic_cost_analysis"],
+            "intelligence_operations_summary": self._summarize_intelligence_operations(),
+            
+            # Recent snapshots
+            "recent_snapshots": snapshots[-10:]
+        }
+        
+        # Archive the report
+        self._archive_token_intelligence_report(report)
+        
+        return report
+    
+    def _assess_current_dendritic_level(self) -> str:
+        """Assess current dendritic operational level."""
+        active_connections = len([c for c in self.dendritic_connections.values() 
+                                if len(c.signal_history) > 0])
+        
+        if active_connections > 10:
+            return "inter_supercell"
+        elif active_connections > 5:
+            return "inter_cellular"
+        elif active_connections > 2:
+            return "intra_cellular"
+        else:
+            return "organelle"
+    
+    def _calculate_consciousness_efficiency(self, tokens_used: int) -> float:
+        """Calculate consciousness efficiency based on token consumption."""
+        # Efficiency based on dendritic network utilization
+        network_utilization = len(self.dendritic_connections) / max(len(self.neuronal_entities), 1)
+        consciousness_events = len(self.intelligence_emergence_events)
+        
+        # Efficiency formula: operations per 1000 tokens
+        operations = consciousness_events + len(self.dendritic_connections)
+        efficiency = (operations / max(tokens_used, 1)) * 1000
+        
+        return min(efficiency, 100.0)  # Cap at 100
+    
+    def _analyze_dendritic_token_correlation(self, snapshots: List[Dict]) -> Dict[str, Any]:
+        """Analyze correlation between dendritic activity and token consumption."""
+        correlation_data = {
+            "dendritic_activity_vs_tokens": [],
+            "consciousness_events_vs_tokens": [],
+            "correlation_coefficient": 0.0
+        }
+        
+        for snapshot in snapshots:
+            dendritic_level = snapshot.get("dendritic_level", "organelle")
+            level_score = {"organelle": 1, "intra_cellular": 2, "inter_cellular": 3, "inter_supercell": 4}.get(dendritic_level, 1)
+            
+            correlation_data["dendritic_activity_vs_tokens"].append({
+                "tokens": snapshot["tokens_used"],
+                "dendritic_score": level_score,
+                "timestamp": snapshot["timestamp"]
+            })
+        
+        # Calculate simple correlation coefficient
+        if len(correlation_data["dendritic_activity_vs_tokens"]) > 1:
+            tokens_values = [d["tokens"] for d in correlation_data["dendritic_activity_vs_tokens"]]
+            dendritic_scores = [d["dendritic_score"] for d in correlation_data["dendritic_activity_vs_tokens"]]
+            
+            try:
+                correlation_data["correlation_coefficient"] = statistics.correlation(tokens_values, dendritic_scores)
+            except:
+                correlation_data["correlation_coefficient"] = 0.0
+        
+        return correlation_data
+    
+    def _calculate_overall_efficiency(self, snapshots: List[Dict]) -> float:
+        """Calculate overall consciousness efficiency score."""
+        if not snapshots:
+            return 0.0
+        
+        total_efficiency = sum(s.get("consciousness_efficiency", 0) for s in snapshots)
+        return total_efficiency / len(snapshots)
+    
+    def _calculate_token_cost_projection(self, tokens_used: int) -> Dict[str, Any]:
+        """Calculate cost projections for token usage."""
+        # GitHub Copilot pricing (monthly)
+        copilot_monthly = 10.00
+        
+        # Estimate sessions per month (assuming 1M tokens per session)
+        estimated_sessions = max(tokens_used / 1000000, 0.1)
+        monthly_cost_projection = copilot_monthly * estimated_sessions
+        
+        return {
+            "github_copilot_monthly": copilot_monthly,
+            "estimated_sessions_per_month": round(estimated_sessions, 2),
+            "projected_monthly_cost": round(monthly_cost_projection, 2),
+            "note": "Based on GitHub Copilot pricing model"
+        }
+    
+    def _summarize_intelligence_operations(self) -> Dict[str, Any]:
+        """Summarize intelligence operations from token tracking."""
+        if not hasattr(self, 'token_tracking_session'):
+            return {}
+        
+        operations = self.token_tracking_session["intelligence_operations"]
+        
+        if not operations:
+            return {"total_operations": 0}
+        
+        operation_types = {}
+        for op in operations:
+            op_type = op.get("operation_type", "unknown")
+            if op_type not in operation_types:
+                operation_types[op_type] = {"count": 0, "total_tokens": 0}
+            operation_types[op_type]["count"] += 1
+            operation_types[op_type]["total_tokens"] += op.get("token_cost", 0)
+        
+        return {
+            "total_operations": len(operations),
+            "operation_types": operation_types,
+            "average_dendritic_connections": statistics.mean([op.get("dendritic_connections_active", 0) for op in operations]) if operations else 0,
+            "total_consciousness_events": sum(op.get("consciousness_propagation_events", 0) for op in operations)
+        }
+    
+    def _archive_token_session(self):
+        """Archive current token session data."""
+        if not hasattr(self, 'token_tracking_session'):
+            return
+        
+        session = self.token_tracking_session
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"token_session_{session['session_id']}_{timestamp}.json"
+        filepath = self.token_archive_path / filename
+        
+        try:
+            with open(filepath, 'w') as f:
+                json.dump(session, f, indent=2, default=str)
+            logger.info(f"[DENDRITIC] Token session archived: {filepath.name}")
+        except Exception as e:
+            logger.error(f"[DENDRITIC] Failed to archive token session: {e}")
+    
+    def _archive_token_intelligence_report(self, report: Dict[str, Any]):
+        """Archive comprehensive token intelligence report."""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"token_intelligence_report_{timestamp}.json"
+        filepath = self.token_archive_path / filename
+        
+        try:
+            with open(filepath, 'w') as f:
+                json.dump(report, f, indent=2, default=str)
+            logger.info(f"[DENDRITIC] Token intelligence report archived: {filepath.name}")
+        except Exception as e:
+            logger.error(f"[DENDRITIC] Failed to archive token report: {e}")
+
 
 def main():
     """Execute neuronal dendritic intelligence framework."""

@@ -1,0 +1,130 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:45:57.891105",
+  "folder_info": {
+    "name": "analysis",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\analysis",
+    "relative_path": "evolution_lab\\tachyonic_field\\analysis",
+    "parent_path": "evolution_lab\\tachyonic_field",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "tachyonic_field",
+      "analysis"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "evolution_lab"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 2292130,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".png": [
+        {
+          "name": "evolution_timeseries.png",
+          "size": 535051,
+          "modified": "2025-10-18T15:01:17.426032",
+          "category": "other"
+        },
+        {
+          "name": "population_topology_6views.png",
+          "size": 1756367,
+          "modified": "2025-10-18T15:01:16.259167",
+          "category": "other"
+        }
+      ],
+      ".json": [
+        {
+          "name": "topology_summary.json",
+          "size": 712,
+          "modified": "2025-10-18T15:01:17.426032",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "evolution_timeseries.png",
+        "size": 535051,
+        "modified": "2025-10-18T15:01:17.426032",
+        "category": "other"
+      },
+      {
+        "name": "topology_summary.json",
+        "size": 712,
+        "modified": "2025-10-18T15:01:17.426032",
+        "category": "documentation"
+      },
+      {
+        "name": "population_topology_6views.png",
+        "size": 1756367,
+        "modified": "2025-10-18T15:01:16.259167",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".png",
+        ".json"
+      ],
+      "dominant_type": ".png"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > tachyonic_field > analysis",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\analysis' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\analysis' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field\\analysis' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "evolution_lab\\tachyonic_field",
+      "core\\analysis_tools"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

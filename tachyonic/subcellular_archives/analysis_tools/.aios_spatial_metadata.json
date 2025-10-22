@@ -1,0 +1,87 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:53.820303",
+  "folder_info": {
+    "name": "analysis_tools",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\subcellular_archives\\analysis_tools",
+    "relative_path": "tachyonic\\subcellular_archives\\analysis_tools",
+    "parent_path": "tachyonic\\subcellular_archives",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "subcellular_archives",
+      "analysis_tools"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [
+      "analysis_outputs",
+      "consciousness_backups"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 225786,
+      "file_count": 14,
+      "folder_count": 2,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 11,
+      "consciousness_files": 11,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > subcellular_archives > analysis_tools",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\subcellular_archives\\analysis_tools' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\subcellular_archives\\analysis_tools' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\subcellular_archives\\analysis_tools' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\subcellular_archives",
+      "core\\analysis_tools"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:25.755366",
+  "folder_info": {
+    "name": "output",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\output",
+    "relative_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\output",
+    "parent_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "output"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "scripts_py"
+    ],
+    "child_folders": [
+      "build",
+      "generation_0000",
+      "generation_0001",
+      "generation_0002",
+      "generation_0009",
+      "generation_0010",
+      "generation_0011",
+      "generation_0012",
+      "generation_0013",
+      "generation_0014",
+      "generation_0015",
+      "generation_0016",
+      "generation_0017",
+      "generation_0018",
+      "generation_0019",
+      "generation_0020",
+      "generation_0021",
+      "generation_0022",
+      "generation_0023",
+      "generation_0024",
+      "generation_0025"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 3184754,
+      "file_count": 62,
+      "folder_count": 21,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "evolution_report.json",
+          "size": 1537,
+          "modified": "2025-09-21T13:01:28.915431",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 20,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > evolutionary_assembler_v1.0_tachyonic_1757015844 > output",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\output' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\output' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\output' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "vscode-extension\\node_modules\\fs-extra\\lib\\output-file"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

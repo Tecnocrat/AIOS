@@ -102,6 +102,14 @@ class AIOSHolographicMetadataSystem:
         relative_path = folder_path.relative_to(self.workspace_root)
         folder_name = folder_path.name
         
+        # Safely calculate parent path relative to workspace
+        try:
+            parent_relative = folder_path.parent.relative_to(self.workspace_root)
+            parent_path_str = str(parent_relative)
+        except ValueError:
+            # Parent is outside workspace (e.g., for root directory)
+            parent_path_str = ""
+        
         metadata = {
             "spatial_metadata_version": "1.0.0",
             "generation_timestamp": datetime.now().isoformat(),
@@ -109,7 +117,7 @@ class AIOSHolographicMetadataSystem:
                 "name": folder_name,
                 "absolute_path": str(folder_path.absolute()),
                 "relative_path": str(relative_path),
-                "parent_path": str(folder_path.parent.relative_to(self.workspace_root)) if folder_path.parent != self.workspace_root else "",
+                "parent_path": parent_path_str,
                 "depth_level": len(relative_path.parts)
             },
             "architectural_classification": self._classify_architectural_area(relative_path),
