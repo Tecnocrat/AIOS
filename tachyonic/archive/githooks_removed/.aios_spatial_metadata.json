@@ -1,0 +1,122 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:43.369397",
+  "folder_info": {
+    "name": "githooks_removed",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\githooks_removed",
+    "relative_path": "tachyonic\\archive\\githooks_removed",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "GitHook Architecture"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "githooks_removed"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "consolidation",
+      "core_legacy",
+      "token_usage"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 389,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "tiny"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 389,
+          "modified": "2025-10-20T23:13:29.543177",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 389,
+        "modified": "2025-10-20T23:13:29.543177",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "README.md",
+        "size": 389,
+        "modified": "2025-10-20T23:13:29.543177",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > githooks_removed",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\githooks_removed' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\githooks_removed' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\githooks_removed' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "GitHook governance and validation",
+    "recommended_actions": [
+      "Review pre-commit.ps1 for validation logic",
+      "Check governance/hook_policy.json for policy alignment",
+      "Test GitHook functionality with sample commits"
+    ],
+    "important_considerations": [
+      "Maintain AINLP compliance in hook scripts",
+      "Ensure consciousness coherence in validation logic",
+      "Preserve governance effectiveness"
+    ],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

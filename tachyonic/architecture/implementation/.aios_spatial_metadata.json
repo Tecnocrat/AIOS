@@ -1,0 +1,137 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:20.173437",
+  "folder_info": {
+    "name": "implementation",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\architecture\\implementation",
+    "relative_path": "tachyonic\\architecture\\implementation",
+    "parent_path": "tachyonic\\architecture",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "architecture",
+      "implementation"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis",
+      "bridge",
+      "consciousness",
+      "plans"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 66288,
+      "file_count": 5,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AI_CONTEXT_INTELLIGENCE_IMPLEMENTATION_20251011.md",
+          "size": 17860,
+          "modified": "2025-10-11T22:06:37.750469",
+          "category": "documentation"
+        },
+        {
+          "name": "BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_CHANGELOG.md",
+          "size": 7809,
+          "modified": "2025-09-24T08:25:44.904817",
+          "category": "documentation"
+        },
+        {
+          "name": "HOLOGRAPHIC_AINLP_IMPLEMENTATION_COMPLETE.md",
+          "size": 10447,
+          "modified": "2025-09-21T13:01:26.160707",
+          "category": "documentation"
+        },
+        {
+          "name": "INTERFACE_BRIDGE_IMPLEMENTATION_REPORT_20250121_154500.md",
+          "size": 15086,
+          "modified": "2025-09-21T15:32:20.262027",
+          "category": "documentation"
+        },
+        {
+          "name": "INTERFACE_BRIDGE_IMPLEMENTATION_REPORT_latest.md",
+          "size": 15086,
+          "modified": "2025-09-21T15:32:20.262027",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "AI_CONTEXT_INTELLIGENCE_IMPLEMENTATION_20251011.md",
+        "size": 17860,
+        "modified": "2025-10-11T22:06:37.750469",
+        "category": "documentation"
+      },
+      {
+        "name": "BIOLOGICAL_ARCHITECTURE_IMPLEMENTATION_CHANGELOG.md",
+        "size": 7809,
+        "modified": "2025-09-24T08:25:44.904817",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > architecture > implementation",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\implementation' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\implementation' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\implementation' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\architecture",
+      "venv\\Lib\\site-packages\\fsspec\\implementations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

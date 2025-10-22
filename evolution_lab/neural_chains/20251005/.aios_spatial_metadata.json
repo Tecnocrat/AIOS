@@ -1,0 +1,270 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:40:22.191188",
+  "folder_info": {
+    "name": "20251005",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\neural_chains\\20251005",
+    "relative_path": "evolution_lab\\neural_chains\\20251005",
+    "parent_path": "evolution_lab\\neural_chains",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "neural_chains",
+      "20251005"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "20251006",
+      "20251007"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 15410,
+      "file_count": 18,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "root_20251005_223934.json",
+          "size": 1157,
+          "modified": "2025-10-05T22:39:34.614387",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042.json",
+          "size": 1799,
+          "modified": "2025-10-05T22:41:33.884429",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042_gen1.json",
+          "size": 1436,
+          "modified": "2025-10-05T22:41:33.892426",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042_gen1_gen2.json",
+          "size": 1441,
+          "modified": "2025-10-05T22:41:33.900420",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042_gen1_gen2_gen3.json",
+          "size": 820,
+          "modified": "2025-10-05T22:41:33.910660",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904.json",
+          "size": 1797,
+          "modified": "2025-10-05T22:49:56.756780",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904_gen1.json",
+          "size": 1435,
+          "modified": "2025-10-05T22:49:56.763772",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904_gen1_gen2.json",
+          "size": 1440,
+          "modified": "2025-10-05T22:49:56.774776",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904_gen1_gen2_gen3.json",
+          "size": 820,
+          "modified": "2025-10-05T22:49:56.780777",
+          "category": "documentation"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "root_20251005_223934_code.txt",
+          "size": 40,
+          "modified": "2025-10-05T22:39:34.617386",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042_code.txt",
+          "size": 40,
+          "modified": "2025-10-05T22:41:33.887421",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042_gen1_code.txt",
+          "size": 258,
+          "modified": "2025-10-05T22:41:33.895425",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042_gen1_gen2_code.txt",
+          "size": 476,
+          "modified": "2025-10-05T22:41:33.903424",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224042_gen1_gen2_gen3_code.txt",
+          "size": 694,
+          "modified": "2025-10-05T22:41:33.913902",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904_code.txt",
+          "size": 113,
+          "modified": "2025-10-05T22:49:56.758775",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904_gen1_code.txt",
+          "size": 330,
+          "modified": "2025-10-05T22:49:56.767787",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904_gen1_gen2_code.txt",
+          "size": 548,
+          "modified": "2025-10-05T22:49:56.776776",
+          "category": "documentation"
+        },
+        {
+          "name": "root_20251005_224904_gen1_gen2_gen3_code.txt",
+          "size": 766,
+          "modified": "2025-10-05T22:49:56.784780",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "root_20251005_224904_gen1_gen2_gen3_code.txt",
+        "size": 766,
+        "modified": "2025-10-05T22:49:56.784780",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224904_gen1_gen2_gen3.json",
+        "size": 820,
+        "modified": "2025-10-05T22:49:56.780777",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224904_gen1_gen2_code.txt",
+        "size": 548,
+        "modified": "2025-10-05T22:49:56.776776",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224904_gen1_gen2.json",
+        "size": 1440,
+        "modified": "2025-10-05T22:49:56.774776",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224904_gen1_code.txt",
+        "size": 330,
+        "modified": "2025-10-05T22:49:56.767787",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224904_gen1.json",
+        "size": 1435,
+        "modified": "2025-10-05T22:49:56.763772",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224904_code.txt",
+        "size": 113,
+        "modified": "2025-10-05T22:49:56.758775",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224904.json",
+        "size": 1797,
+        "modified": "2025-10-05T22:49:56.756780",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224042_gen1_gen2_gen3_code.txt",
+        "size": 694,
+        "modified": "2025-10-05T22:41:33.913902",
+        "category": "documentation"
+      },
+      {
+        "name": "root_20251005_224042_gen1_gen2_gen3.json",
+        "size": 820,
+        "modified": "2025-10-05T22:41:33.910660",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 18,
+      "file_types": [
+        ".json",
+        ".txt"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > neural_chains > 20251005",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\neural_chains\\20251005' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\neural_chains\\20251005' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\neural_chains\\20251005' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "evolution_lab\\neural_chains",
+      "tachyonic\\evolution_chains\\20251005"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

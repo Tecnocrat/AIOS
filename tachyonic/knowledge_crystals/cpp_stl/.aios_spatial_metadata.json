@@ -1,0 +1,162 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:39.337524",
+  "folder_info": {
+    "name": "cpp_stl",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\knowledge_crystals\\cpp_stl",
+    "relative_path": "tachyonic\\knowledge_crystals\\cpp_stl",
+    "parent_path": "tachyonic\\knowledge_crystals",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "knowledge_crystals",
+      "cpp_stl"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 48960,
+      "file_count": 6,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "algorithm_crystal_template.json",
+          "size": 5730,
+          "modified": "2025-10-05T00:50:00.450701",
+          "category": "documentation"
+        },
+        {
+          "name": "functional_crystal_template.json",
+          "size": 5485,
+          "modified": "2025-10-05T00:50:00.461415",
+          "category": "documentation"
+        },
+        {
+          "name": "memory_crystal_template.json",
+          "size": 5284,
+          "modified": "2025-10-05T00:50:00.459401",
+          "category": "documentation"
+        },
+        {
+          "name": "string_crystal_template.json",
+          "size": 5710,
+          "modified": "2025-10-05T00:50:00.450701",
+          "category": "documentation"
+        },
+        {
+          "name": "vector_crystal.json",
+          "size": 21023,
+          "modified": "2025-10-05T01:14:40.317626",
+          "category": "documentation"
+        },
+        {
+          "name": "vector_crystal_template.json",
+          "size": 5728,
+          "modified": "2025-10-05T00:50:00.450701",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "vector_crystal.json",
+        "size": 21023,
+        "modified": "2025-10-05T01:14:40.317626",
+        "category": "documentation"
+      },
+      {
+        "name": "functional_crystal_template.json",
+        "size": 5485,
+        "modified": "2025-10-05T00:50:00.461415",
+        "category": "documentation"
+      },
+      {
+        "name": "memory_crystal_template.json",
+        "size": 5284,
+        "modified": "2025-10-05T00:50:00.459401",
+        "category": "documentation"
+      },
+      {
+        "name": "algorithm_crystal_template.json",
+        "size": 5730,
+        "modified": "2025-10-05T00:50:00.450701",
+        "category": "documentation"
+      },
+      {
+        "name": "string_crystal_template.json",
+        "size": 5710,
+        "modified": "2025-10-05T00:50:00.450701",
+        "category": "documentation"
+      },
+      {
+        "name": "vector_crystal_template.json",
+        "size": 5728,
+        "modified": "2025-10-05T00:50:00.450701",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 6,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > knowledge_crystals > cpp_stl",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\knowledge_crystals\\cpp_stl' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\knowledge_crystals\\cpp_stl' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\knowledge_crystals\\cpp_stl' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\knowledge_crystals",
+      "tachyonic\\cpp_stl_knowledge"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

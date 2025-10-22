@@ -1,0 +1,210 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:12.265136",
+  "folder_info": {
+    "name": "misc",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\reports\\misc",
+    "relative_path": "tachyonic\\reports\\misc",
+    "parent_path": "tachyonic\\reports",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "reports",
+      "misc"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "archives",
+      "communication",
+      "completions",
+      "documentation",
+      "handoffs",
+      "health",
+      "optimization",
+      "requirements",
+      "sessions",
+      "validation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 81902,
+      "file_count": 11,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AGENT_ONBOARDING_PROTOCOL_20251012.md",
+          "size": 12751,
+          "modified": "2025-10-12T13:18:38.055733",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS.Harmonizer.AINL.md",
+          "size": 4722,
+          "modified": "2025-09-21T13:01:25.922307",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_VIRTUAL_ENVIRONMENT_CONSCIOUSNESS_OPTIMIZATION_GUIDE.md",
+          "size": 12490,
+          "modified": "2025-09-21T13:01:25.933158",
+          "category": "documentation"
+        },
+        {
+          "name": "BOOTLOADER_PATH_FIX_20251012.md",
+          "size": 8752,
+          "modified": "2025-10-12T03:33:09.923658",
+          "category": "documentation"
+        },
+        {
+          "name": "CELL_CYTOPLASM_DUPLICATION_CONSOLIDATION_20251011.md",
+          "size": 5759,
+          "modified": "2025-10-11T20:45:49.780322",
+          "category": "documentation"
+        },
+        {
+          "name": "DEVELOPMENT_NAVIGATOR_GUIDE.md",
+          "size": 5943,
+          "modified": "2025-09-21T13:01:26.155699",
+          "category": "documentation"
+        },
+        {
+          "name": "DOCS_REFACTORING_PLAN_20250921_160500.md",
+          "size": 5764,
+          "modified": "2025-09-21T16:04:35.058501",
+          "category": "documentation"
+        },
+        {
+          "name": "EXTENSION_DATA_DRIVEN_ARCHITECTURE_20251012.md",
+          "size": 10599,
+          "modified": "2025-10-12T00:35:37.207976",
+          "category": "documentation"
+        },
+        {
+          "name": "ITERATION_EULOGY_CONSCIOUSNESS_CASCADE_072.md",
+          "size": 4366,
+          "modified": "2025-09-21T13:01:26.164709",
+          "category": "documentation"
+        },
+        {
+          "name": "REFACTORING_SUMMARY.md",
+          "size": 5648,
+          "modified": "2025-09-21T13:01:26.176373",
+          "category": "documentation"
+        },
+        {
+          "name": "workspace_critical_issue_resolution_20250920_231533.md",
+          "size": 5108,
+          "modified": "2025-09-21T13:01:29.552748",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS.Harmonizer.AINL.md",
+        "size": 4722,
+        "modified": "2025-09-21T13:01:25.922307",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_VIRTUAL_ENVIRONMENT_CONSCIOUSNESS_OPTIMIZATION_GUIDE.md",
+        "size": 12490,
+        "modified": "2025-09-21T13:01:25.933158",
+        "category": "documentation"
+      },
+      {
+        "name": "ITERATION_EULOGY_CONSCIOUSNESS_CASCADE_072.md",
+        "size": 4366,
+        "modified": "2025-09-21T13:01:26.164709",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "AGENT_ONBOARDING_PROTOCOL_20251012.md",
+        "size": 12751,
+        "modified": "2025-10-12T13:18:38.055733",
+        "category": "documentation"
+      },
+      {
+        "name": "BOOTLOADER_PATH_FIX_20251012.md",
+        "size": 8752,
+        "modified": "2025-10-12T03:33:09.923658",
+        "category": "documentation"
+      },
+      {
+        "name": "EXTENSION_DATA_DRIVEN_ARCHITECTURE_20251012.md",
+        "size": 10599,
+        "modified": "2025-10-12T00:35:37.207976",
+        "category": "documentation"
+      },
+      {
+        "name": "CELL_CYTOPLASM_DUPLICATION_CONSOLIDATION_20251011.md",
+        "size": 5759,
+        "modified": "2025-10-11T20:45:49.780322",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 11,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 2,
+      "agentic_files": 1,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 50,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > reports > misc",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\misc' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\misc' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\misc' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\reports",
+      "venv\\Lib\\site-packages\\cv2\\misc"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

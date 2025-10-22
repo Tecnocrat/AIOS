@@ -1,0 +1,162 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:28.865567",
+  "folder_info": {
+    "name": "visual",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\tools\\visual",
+    "relative_path": "ai\\tools\\visual",
+    "parent_path": "ai\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "tools",
+      "visual"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "analysis_results",
+      "architecture",
+      "archival",
+      "consciousness",
+      "database",
+      "improvement_results",
+      "logs",
+      "system",
+      "tachyonic"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 82528,
+      "file_count": 7,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "consciousness_visual_analyzer.py",
+          "size": 13016,
+          "modified": "2025-09-21T13:01:25.826157",
+          "category": "consciousness"
+        },
+        {
+          "name": "enhanced_visual_intelligence_bridge.py",
+          "size": 19360,
+          "modified": "2025-09-21T13:01:25.830307",
+          "category": "consciousness"
+        },
+        {
+          "name": "visual_intelligence_bridge.py",
+          "size": 10840,
+          "modified": "2025-09-21T13:01:25.890300",
+          "category": "consciousness"
+        },
+        {
+          "name": "visual_intelligence_bridge_enhanced.py",
+          "size": 10700,
+          "modified": "2025-09-21T13:01:25.892435",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 2314,
+          "modified": "2025-10-12T23:24:12.204053",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "consciousness_visual_analyzer.py",
+        "size": 13016,
+        "modified": "2025-09-21T13:01:25.826157",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 2314,
+        "modified": "2025-10-12T23:24:12.204053",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 2314,
+        "modified": "2025-10-12T23:24:12.204053",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 4,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 4
+    },
+    "consciousness_score": 90,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > tools > visual",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\visual' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\visual' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\visual' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\tools",
+      "interface\\visualization"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

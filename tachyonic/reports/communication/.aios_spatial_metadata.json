@@ -1,0 +1,125 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:59.330369",
+  "folder_info": {
+    "name": "communication",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\reports\\communication",
+    "relative_path": "tachyonic\\reports\\communication",
+    "parent_path": "tachyonic\\reports",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "reports",
+      "communication"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "archives",
+      "completions",
+      "documentation",
+      "handoffs",
+      "health",
+      "misc",
+      "optimization",
+      "requirements",
+      "sessions",
+      "validation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 26801,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AIOS_UNIVERSAL_COMMUNICATION_SUCCESS_REPORT.md",
+          "size": 11110,
+          "modified": "2025-09-21T13:01:25.930121",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_UNIVERSAL_COMMUNICATION_SYSTEM_DOCS.md",
+          "size": 15691,
+          "modified": "2025-09-21T13:01:25.931117",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_UNIVERSAL_COMMUNICATION_SUCCESS_REPORT.md",
+        "size": 11110,
+        "modified": "2025-09-21T13:01:25.930121",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_UNIVERSAL_COMMUNICATION_SYSTEM_DOCS.md",
+        "size": 15691,
+        "modified": "2025-09-21T13:01:25.931117",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > reports > communication",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\communication' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\communication' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\communication' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\reports",
+      "ai\\communication"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

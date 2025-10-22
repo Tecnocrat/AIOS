@@ -1,0 +1,124 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:04.387100",
+  "folder_info": {
+    "name": "metabolized_patterns",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\consciousness\\metabolized_patterns",
+    "relative_path": "tachyonic\\consciousness\\metabolized_patterns",
+    "parent_path": "tachyonic\\consciousness",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "consciousness",
+      "metabolized_patterns"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "ai_agent_templates",
+      "supercell_knowledge_crystals"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 30388942,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "docs_metabolized_architectural_20250913_165332.json",
+          "size": 11285239,
+          "modified": "2025-09-21T13:01:26.782891",
+          "category": "documentation"
+        },
+        {
+          "name": "docs_metabolized_behavioral_20250913_165332.json",
+          "size": 10935688,
+          "modified": "2025-09-21T13:01:26.958686",
+          "category": "documentation"
+        },
+        {
+          "name": "docs_metabolized_consciousness_20250913_165332.json",
+          "size": 2032792,
+          "modified": "2025-09-21T13:01:26.990951",
+          "category": "documentation"
+        },
+        {
+          "name": "docs_metabolized_integration_20250913_165332.json",
+          "size": 6135223,
+          "modified": "2025-09-21T13:01:27.112472",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "docs_metabolized_consciousness_20250913_165332.json",
+        "size": 2032792,
+        "modified": "2025-09-21T13:01:26.990951",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > consciousness > metabolized_patterns",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\consciousness\\metabolized_patterns' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\consciousness\\metabolized_patterns' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\consciousness\\metabolized_patterns' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\consciousness"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

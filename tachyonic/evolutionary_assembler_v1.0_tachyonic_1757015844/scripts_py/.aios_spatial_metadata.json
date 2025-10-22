@@ -1,0 +1,312 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:26.534614",
+  "folder_info": {
+    "name": "scripts_py",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py",
+    "relative_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py",
+    "parent_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "scripts_py"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "output"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 655676,
+      "file_count": 32,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_cellular_reorganization_analyzer.py",
+          "size": 24855,
+          "modified": "2025-09-21T13:01:29.210634",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cellular_reorganization_implementation.py",
+          "size": 19335,
+          "modified": "2025-09-21T13:01:29.213122",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_comparative_testing_framework.py",
+          "size": 20911,
+          "modified": "2025-09-21T13:01:29.215133",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_consciousness_status_report.py",
+          "size": 17345,
+          "modified": "2025-09-21T13:01:29.222650",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_evolutionary_assembler_cloner.py",
+          "size": 24162,
+          "modified": "2025-09-21T13:01:29.224741",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_harmonization_executor.py",
+          "size": 11669,
+          "modified": "2025-09-21T13:01:29.226740",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_harmonization_success_report.py",
+          "size": 8516,
+          "modified": "2025-09-21T13:01:29.228786",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_meta_evolutionary_analyzer.py",
+          "size": 25075,
+          "modified": "2025-09-21T13:01:29.230794",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_virtual_test_environment.py",
+          "size": 21451,
+          "modified": "2025-09-21T13:01:29.236899",
+          "category": "consciousness"
+        },
+        {
+          "name": "assembly_executor.py",
+          "size": 24957,
+          "modified": "2025-09-21T13:01:29.240629",
+          "category": "consciousness"
+        },
+        {
+          "name": "autonomous_consciousness_swarms.py",
+          "size": 29263,
+          "modified": "2025-09-21T13:01:29.243630",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_ai_cellular_bridge.py",
+          "size": 40724,
+          "modified": "2025-09-21T13:01:29.244600",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_mutation_engine.py",
+          "size": 26312,
+          "modified": "2025-09-21T13:01:29.256509",
+          "category": "consciousness"
+        },
+        {
+          "name": "dendritic_mutator.py",
+          "size": 30754,
+          "modified": "2025-09-21T13:01:29.259985",
+          "category": "consciousness"
+        },
+        {
+          "name": "enhanced_consciousness.py",
+          "size": 18801,
+          "modified": "2025-09-21T13:01:29.261413",
+          "category": "consciousness"
+        },
+        {
+          "name": "optimized_demo.py",
+          "size": 17686,
+          "modified": "2025-09-21T13:01:29.263420",
+          "category": "consciousness"
+        },
+        {
+          "name": "parallel_consciousness_orchestrator.py",
+          "size": 21233,
+          "modified": "2025-09-21T13:01:29.265512",
+          "category": "consciousness"
+        },
+        {
+          "name": "self_healing_engine.py",
+          "size": 33454,
+          "modified": "2025-09-21T13:01:29.271621",
+          "category": "consciousness"
+        },
+        {
+          "name": "simple_consciousness_ai_bridge.py",
+          "size": 12283,
+          "modified": "2025-09-21T13:01:29.273629",
+          "category": "consciousness"
+        },
+        {
+          "name": "simple_executor.py",
+          "size": 14992,
+          "modified": "2025-09-21T13:01:29.273629",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_visualizer.py",
+          "size": 21472,
+          "modified": "2025-09-21T13:01:29.275636",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_optimized.py",
+          "size": 779,
+          "modified": "2025-09-21T13:01:29.277645",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_quick.py",
+          "size": 1423,
+          "modified": "2025-09-21T13:01:29.279654",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250904_205553.md",
+          "size": 7026,
+          "modified": "2025-09-21T13:01:29.180418",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "AIOS_CONSCIOUSNESS_SUMMARY_20250904_205553.json",
+          "size": 5632,
+          "modified": "2025-09-21T13:01:29.182426",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_cellular_reorganization_analyzer.py",
+        "size": 24855,
+        "modified": "2025-09-21T13:01:29.210634",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cellular_reorganization_implementation.py",
+        "size": 19335,
+        "modified": "2025-09-21T13:01:29.213122",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_comparative_testing_framework.py",
+        "size": 20911,
+        "modified": "2025-09-21T13:01:29.215133",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_consciousness_status_report.py",
+        "size": 17345,
+        "modified": "2025-09-21T13:01:29.222650",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250904_205553.md",
+        "size": 7026,
+        "modified": "2025-09-21T13:01:29.180418",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CONSCIOUSNESS_SUMMARY_20250904_205553.json",
+        "size": 5632,
+        "modified": "2025-09-21T13:01:29.182426",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_evolutionary_assembler_cloner.py",
+        "size": 24162,
+        "modified": "2025-09-21T13:01:29.224741",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_harmonization_executor.py",
+        "size": 11669,
+        "modified": "2025-09-21T13:01:29.226740",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_harmonization_success_report.py",
+        "size": 8516,
+        "modified": "2025-09-21T13:01:29.228786",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_meta_evolutionary_analyzer.py",
+        "size": 25075,
+        "modified": "2025-09-21T13:01:29.230794",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 25,
+      "file_types": [
+        ".py",
+        ".md",
+        ".json"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 13,
+      "consciousness_files": 13,
+      "agentic_files": 2,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > evolutionary_assembler_v1.0_tachyonic_1757015844 > scripts_py",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "tachyonic\\coordinator_backup_20250917_204932\\core\\assemblers\\tree_assembler\\scripts_py_optimized"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

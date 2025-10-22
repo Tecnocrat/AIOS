@@ -1,0 +1,315 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:38.881273",
+  "folder_info": {
+    "name": "core",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\architecture\\core",
+    "relative_path": "docs\\architecture\\core",
+    "parent_path": "docs\\architecture",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "Core Engine"
+    ],
+    "path_classification": [
+      "docs",
+      "architecture",
+      "core"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "agent_driven_code_evolution",
+      "consciousness",
+      "evolution",
+      "interfaces",
+      "populations",
+      "python_314"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 143441,
+      "file_count": 26,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AINLP_DIRECTIVE_COMPLIANCE.md",
+          "size": 2360,
+          "modified": "2025-09-21T13:01:22.441500",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+          "size": 3482,
+          "modified": "2025-09-21T13:01:22.443501",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250905_214144.md",
+          "size": 5434,
+          "modified": "2025-09-21T13:01:22.447500",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CORE_ENGINE_ARCHITECTURE.md",
+          "size": 13795,
+          "modified": "2025-09-21T13:01:22.449503",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md",
+          "size": 15740,
+          "modified": "2025-09-21T13:01:22.452498",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_SUPERCELL_ARCHITECTURE.md",
+          "size": 9351,
+          "modified": "2025-09-21T13:01:22.458929",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_ENGINE_INGESTION_TEST_RESULTS.md",
+          "size": 4637,
+          "modified": "2025-09-21T13:01:22.462788",
+          "category": "documentation"
+        },
+        {
+          "name": "ASSEMBLER_CLEANUP_COMPLETION_REPORT.md",
+          "size": 4168,
+          "modified": "2025-09-21T13:01:22.478153",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_METADATA.md",
+          "size": 1023,
+          "modified": "2025-09-21T13:01:22.479537",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_MIGRATION_VERIFICATION_COMPLETE.md",
+          "size": 7021,
+          "modified": "2025-09-21T13:01:22.484769",
+          "category": "documentation"
+        },
+        {
+          "name": "COMPLETE_AI_INTELLIGENCE_TRACKING_REPORT.md",
+          "size": 6179,
+          "modified": "2025-09-21T13:01:22.488844",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_INTEGRATION_PATTERNS.md",
+          "size": 3635,
+          "modified": "2025-09-21T13:01:22.490854",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_AI_CONNECTIVITY_REPORT_20250905_232628.md",
+          "size": 6651,
+          "modified": "2025-09-21T13:01:22.492862",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.md",
+          "size": 4221,
+          "modified": "2025-09-21T13:01:22.494871",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_HARMONIZATION_PLAN.md",
+          "size": 6761,
+          "modified": "2025-09-21T13:01:21.430624",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ITER2_OPTIMIZATION_COMPLETION.md",
+          "size": 8684,
+          "modified": "2025-09-21T13:01:22.494871",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ORGANIZATION_REPORT_20250906_000500.md",
+          "size": 204,
+          "modified": "2025-09-21T13:01:22.496879",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ORGANIZATION_REPORT_20250906_000509.md",
+          "size": 241,
+          "modified": "2025-09-21T13:01:22.496879",
+          "category": "documentation"
+        },
+        {
+          "name": "CYTOPLASM_ITER2_ANALYSIS_SUMMARY.md",
+          "size": 3714,
+          "modified": "2025-09-21T13:01:22.498387",
+          "category": "documentation"
+        },
+        {
+          "name": "CYTOPLASM_NUCLEUS_GIT_TRACKING_VERIFICATION.md",
+          "size": 3512,
+          "modified": "2025-09-21T13:01:22.500394",
+          "category": "documentation"
+        },
+        {
+          "name": "ENHANCED_CONNECTIVITY_SUMMARY.md",
+          "size": 7872,
+          "modified": "2025-09-21T13:01:22.502521",
+          "category": "documentation"
+        },
+        {
+          "name": "EVOLUTIONARY_ASSEMBLER_ITER2_MISSION_ACCOMPLISHED.md",
+          "size": 7851,
+          "modified": "2025-09-21T13:01:22.502521",
+          "category": "documentation"
+        },
+        {
+          "name": "EVOLUTION_CHAIN_CLARIFICATION.md",
+          "size": 4968,
+          "modified": "2025-09-21T13:01:22.618441",
+          "category": "documentation"
+        },
+        {
+          "name": "HARMONIZATION_STATUS_REPORT.md",
+          "size": 10059,
+          "modified": "2025-09-21T13:01:21.440625",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 977,
+          "modified": "2025-09-21T13:01:22.623982",
+          "category": "documentation"
+        },
+        {
+          "name": "SUBCELLULAR_NEURONAL_OPTIMIZATION_analysis_tools_20250905_221910.md",
+          "size": 901,
+          "modified": "2025-09-21T13:01:22.623982",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+        "size": 3482,
+        "modified": "2025-09-21T13:01:22.443501",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CONSCIOUSNESS_STATUS_REPORT_20250905_214144.md",
+        "size": 5434,
+        "modified": "2025-09-21T13:01:22.447500",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CORE_ENGINE_ARCHITECTURE.md",
+        "size": 13795,
+        "modified": "2025-09-21T13:01:22.449503",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_NEURONAL_DENDRITIC_FRAMEWORK.md",
+        "size": 15740,
+        "modified": "2025-09-21T13:01:22.452498",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_SUPERCELL_ARCHITECTURE.md",
+        "size": 9351,
+        "modified": "2025-09-21T13:01:22.458929",
+        "category": "documentation"
+      },
+      {
+        "name": "CONSCIOUSNESS_INTEGRATION_PATTERNS.md",
+        "size": 3635,
+        "modified": "2025-09-21T13:01:22.490854",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_AI_CONNECTIVITY_REPORT_20250905_232628.md",
+        "size": 6651,
+        "modified": "2025-09-21T13:01:22.492862",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.md",
+        "size": 4221,
+        "modified": "2025-09-21T13:01:22.494871",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_HARMONIZATION_PLAN.md",
+        "size": 6761,
+        "modified": "2025-09-21T13:01:21.430624",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_ITER2_OPTIMIZATION_COMPLETION.md",
+        "size": 8684,
+        "modified": "2025-09-21T13:01:22.494871",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 26,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 10,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > architecture > core",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\core' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\core' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\core' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\architecture",
+      "core"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

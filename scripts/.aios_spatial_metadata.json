@@ -1,0 +1,115 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:28:16.999583",
+  "folder_info": {
+    "name": "scripts",
+    "absolute_path": "C:\\dev\\AIOS\\scripts",
+    "relative_path": "scripts",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "scripts"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "computational_layer",
+      "config",
+      "core",
+      "docs",
+      "evolution_lab",
+      "interface",
+      "runtime",
+      "tachyonic",
+      "venv",
+      "vscode-extension"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 13350,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "verify_migration_readiness.py",
+          "size": 13350,
+          "modified": "2025-10-12T05:20:38.276042",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "verify_migration_readiness.py",
+        "size": 13350,
+        "modified": "2025-10-12T05:20:38.276042",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "scripts",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "venv\\Scripts",
+      "vscode-extension\\node_modules\\ajv\\scripts",
+      "vscode-extension\\node_modules\\undici\\scripts",
+      "venv\\Lib\\site-packages\\pyflakes\\scripts",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

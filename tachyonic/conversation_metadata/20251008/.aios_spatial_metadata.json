@@ -1,0 +1,162 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:19.288506",
+  "folder_info": {
+    "name": "20251008",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\conversation_metadata\\20251008",
+    "relative_path": "tachyonic\\conversation_metadata\\20251008",
+    "parent_path": "tachyonic\\conversation_metadata",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "conversation_metadata",
+      "20251008"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 5133,
+      "file_count": 6,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "gemini_multi_agent_evolution_loop_20251008_145412_meta.json",
+          "size": 863,
+          "modified": "2025-10-08T14:54:12.699196",
+          "category": "documentation"
+        },
+        {
+          "name": "gemini_multi_agent_evolution_loop_20251008_145524_meta.json",
+          "size": 851,
+          "modified": "2025-10-08T14:55:24.086982",
+          "category": "documentation"
+        },
+        {
+          "name": "ollama_multi_agent_evolution_loop_20251008_145412_meta.json",
+          "size": 855,
+          "modified": "2025-10-08T14:54:12.570367",
+          "category": "documentation"
+        },
+        {
+          "name": "ollama_multi_agent_evolution_loop_20251008_145453_meta.json",
+          "size": 855,
+          "modified": "2025-10-08T14:54:53.819386",
+          "category": "documentation"
+        },
+        {
+          "name": "ollama_multi_agent_evolution_loop_20251008_145523_meta.json",
+          "size": 855,
+          "modified": "2025-10-08T14:55:23.970653",
+          "category": "documentation"
+        },
+        {
+          "name": "ollama_multi_agent_evolution_loop_20251008_145555_meta.json",
+          "size": 854,
+          "modified": "2025-10-08T14:55:55.572510",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "ollama_multi_agent_evolution_loop_20251008_145555_meta.json",
+        "size": 854,
+        "modified": "2025-10-08T14:55:55.572510",
+        "category": "documentation"
+      },
+      {
+        "name": "gemini_multi_agent_evolution_loop_20251008_145524_meta.json",
+        "size": 851,
+        "modified": "2025-10-08T14:55:24.086982",
+        "category": "documentation"
+      },
+      {
+        "name": "ollama_multi_agent_evolution_loop_20251008_145523_meta.json",
+        "size": 855,
+        "modified": "2025-10-08T14:55:23.970653",
+        "category": "documentation"
+      },
+      {
+        "name": "ollama_multi_agent_evolution_loop_20251008_145453_meta.json",
+        "size": 855,
+        "modified": "2025-10-08T14:54:53.819386",
+        "category": "documentation"
+      },
+      {
+        "name": "gemini_multi_agent_evolution_loop_20251008_145412_meta.json",
+        "size": 863,
+        "modified": "2025-10-08T14:54:12.699196",
+        "category": "documentation"
+      },
+      {
+        "name": "ollama_multi_agent_evolution_loop_20251008_145412_meta.json",
+        "size": 855,
+        "modified": "2025-10-08T14:54:12.570367",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 6,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 6,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 60,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > conversation_metadata > 20251008",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\conversation_metadata\\20251008' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\conversation_metadata\\20251008' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\conversation_metadata\\20251008' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\conversation_metadata",
+      "tachyonic\\agentic_conversations\\20251008"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

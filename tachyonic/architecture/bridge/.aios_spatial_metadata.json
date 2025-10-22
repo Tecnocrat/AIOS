@@ -1,0 +1,138 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:20.108506",
+  "folder_info": {
+    "name": "bridge",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\architecture\\bridge",
+    "relative_path": "tachyonic\\architecture\\bridge",
+    "parent_path": "tachyonic\\architecture",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "architecture",
+      "bridge"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis",
+      "consciousness",
+      "implementation",
+      "plans"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 37792,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AIOS_BOOTLOADER_ARCHITECTURE_20251012.md",
+          "size": 16790,
+          "modified": "2025-10-12T03:16:52.233835",
+          "category": "documentation"
+        },
+        {
+          "name": "INTERFACE_BRIDGE_VENV_CORRUPTION_DIAGNOSIS_20251012.md",
+          "size": 8068,
+          "modified": "2025-10-12T04:33:21.568328",
+          "category": "documentation"
+        },
+        {
+          "name": "WINDOWS_NATIVE_INTERFACE_BRIDGE_ARCHITECTURE_20251012.md",
+          "size": 12934,
+          "modified": "2025-10-12T03:50:29.080377",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_BOOTLOADER_ARCHITECTURE_20251012.md",
+        "size": 16790,
+        "modified": "2025-10-12T03:16:52.233835",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "INTERFACE_BRIDGE_VENV_CORRUPTION_DIAGNOSIS_20251012.md",
+        "size": 8068,
+        "modified": "2025-10-12T04:33:21.568328",
+        "category": "documentation"
+      },
+      {
+        "name": "WINDOWS_NATIVE_INTERFACE_BRIDGE_ARCHITECTURE_20251012.md",
+        "size": 12934,
+        "modified": "2025-10-12T03:50:29.080377",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_BOOTLOADER_ARCHITECTURE_20251012.md",
+        "size": 16790,
+        "modified": "2025-10-12T03:16:52.233835",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > architecture > bridge",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\bridge' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\bridge' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\bridge' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\architecture",
+      "computational_layer\\bridges"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

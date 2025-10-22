@@ -1,0 +1,127 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:06.811069",
+  "folder_info": {
+    "name": "agents",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\src\\agents",
+    "relative_path": "ai\\src\\agents",
+    "parent_path": "ai\\src",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "src",
+      "agents"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "activation",
+      "core",
+      "demos",
+      "engines",
+      "evolution",
+      "frameworks",
+      "integrations",
+      "intelligence",
+      "languages",
+      "parsers",
+      "protocols",
+      "quantum_dendritic_field",
+      "runtime",
+      "tools",
+      "utilities"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 11320,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "prompt_generator.py",
+          "size": 11320,
+          "modified": "2025-10-04T15:48:30.422021",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "prompt_generator.py",
+        "size": 11320,
+        "modified": "2025-10-04T15:48:30.422021",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > src > agents",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\agents' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\agents' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\agents' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\src",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\workflow-samples\\setup\\CreateAgents"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:28.652180",
+  "folder_info": {
+    "name": "architecture",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\tools\\architecture",
+    "relative_path": "ai\\tools\\architecture",
+    "parent_path": "ai\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "tools",
+      "architecture"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "analysis_results",
+      "archival",
+      "consciousness",
+      "database",
+      "improvement_results",
+      "logs",
+      "system",
+      "tachyonic",
+      "visual"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 534230,
+      "file_count": 24,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "ainlp_holographic_documentation_system.py",
+          "size": 21868,
+          "modified": "2025-09-21T13:01:25.794753",
+          "category": "consciousness"
+        },
+        {
+          "name": "ainlp_integration_optimizer.py",
+          "size": 36760,
+          "modified": "2025-10-04T20:36:02.480547",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_analysis_tools_neuronal_test.py",
+          "size": 3609,
+          "modified": "2025-09-21T13:01:21.459866",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_architecture_monitor.py",
+          "size": 25166,
+          "modified": "2025-09-21T13:01:25.798767",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_assembler_evolution_status_clarifier.py",
+          "size": 25757,
+          "modified": "2025-09-21T13:01:21.461863",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cellular_intelligence_diagnostic_system.py",
+          "size": 47328,
+          "modified": "2025-09-21T13:01:21.464864",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_root_analyzer_iter2.py",
+          "size": 41609,
+          "modified": "2025-09-21T13:01:21.578112",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_engine_tree_demonstrator_iter2.py",
+          "size": 21143,
+          "modified": "2025-09-21T13:01:21.580019",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_cpp_analyzer.py",
+          "size": 17978,
+          "modified": "2025-09-21T13:01:25.805770",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_powershell_analyzer.py",
+          "size": 9660,
+          "modified": "2025-09-21T13:01:25.810114",
+          "category": "consciousness"
+        },
+        {
+          "name": "architectural_compliance_validator.py",
+          "size": 17658,
+          "modified": "2025-09-21T13:01:25.812121",
+          "category": "consciousness"
+        },
+        {
+          "name": "biological_architecture_monitor.py",
+          "size": 29940,
+          "modified": "2025-09-28T04:18:00.798361",
+          "category": "consciousness"
+        },
+        {
+          "name": "self_similarity_analyzer.py",
+          "size": 9618,
+          "modified": "2025-09-21T13:01:25.882236",
+          "category": "consciousness"
+        },
+        {
+          "name": "supercell_architecture_analyzer.py",
+          "size": 27046,
+          "modified": "2025-09-21T13:01:21.696964",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 3293,
+          "modified": "2025-10-13T14:09:24.507561",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_analysis_tools_neuronal_test.py",
+        "size": 3609,
+        "modified": "2025-09-21T13:01:21.459866",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_architecture_monitor.py",
+        "size": 25166,
+        "modified": "2025-09-21T13:01:25.798767",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_assembler_evolution_status_clarifier.py",
+        "size": 25757,
+        "modified": "2025-09-21T13:01:21.461863",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cellular_intelligence_diagnostic_system.py",
+        "size": 47328,
+        "modified": "2025-09-21T13:01:21.464864",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_engine_root_analyzer_iter2.py",
+        "size": 41609,
+        "modified": "2025-09-21T13:01:21.578112",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_engine_tree_demonstrator_iter2.py",
+        "size": 21143,
+        "modified": "2025-09-21T13:01:21.580019",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_cpp_analyzer.py",
+        "size": 17978,
+        "modified": "2025-09-21T13:01:25.805770",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_powershell_analyzer.py",
+        "size": 9660,
+        "modified": "2025-09-21T13:01:25.810114",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 3293,
+        "modified": "2025-10-13T14:09:24.507561",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 3293,
+        "modified": "2025-10-13T14:09:24.507561",
+        "category": "consciousness"
+      },
+      {
+        "name": "ainlp_integration_optimizer.py",
+        "size": 36760,
+        "modified": "2025-10-04T20:36:02.480547",
+        "category": "consciousness"
+      },
+      {
+        "name": "biological_architecture_monitor.py",
+        "size": 29940,
+        "modified": "2025-09-28T04:18:00.798361",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 15,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 15,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > tools > architecture",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\architecture' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\architecture' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\architecture' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\tools",
+      "docs\\architecture"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

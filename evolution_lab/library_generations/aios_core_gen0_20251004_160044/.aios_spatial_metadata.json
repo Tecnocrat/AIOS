@@ -1,0 +1,210 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:39:20.936458",
+  "folder_info": {
+    "name": "aios_core_gen0_20251004_160044",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_160044",
+    "relative_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_160044",
+    "parent_path": "evolution_lab\\library_generations",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [
+      "Core Engine"
+    ],
+    "path_classification": [
+      "evolution_lab",
+      "library_generations",
+      "aios_core_gen0_20251004_160044"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "aios_core_gen0_20251004_134009",
+      "aios_core_gen0_20251004_142349",
+      "aios_core_gen0_20251004_142438",
+      "aios_core_gen0_20251004_142936",
+      "aios_core_gen0_20251004_143043",
+      "aios_core_gen0_20251004_143138",
+      "aios_core_gen0_20251004_143250",
+      "aios_core_gen0_20251004_155032",
+      "aios_core_gen0_20251004_223029",
+      "aios_core_gen0_20251004_225758"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 30068,
+      "file_count": 8,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "generation_summary.json",
+          "size": 581,
+          "modified": "2025-10-04T16:01:34.052661",
+          "category": "documentation"
+        },
+        {
+          "name": "variant_0_analysis.json",
+          "size": 5855,
+          "modified": "2025-10-04T16:01:33.423737",
+          "category": "documentation"
+        },
+        {
+          "name": "variant_1_analysis.json",
+          "size": 4803,
+          "modified": "2025-10-04T16:01:33.799750",
+          "category": "documentation"
+        },
+        {
+          "name": "variant_2_analysis.json",
+          "size": 4715,
+          "modified": "2025-10-04T16:01:34.050658",
+          "category": "documentation"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "prompt.txt",
+          "size": 1895,
+          "modified": "2025-10-04T16:00:44.712992",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "variant_0.py",
+          "size": 5329,
+          "modified": "2025-10-04T16:01:33.421822",
+          "category": "consciousness"
+        },
+        {
+          "name": "variant_1.py",
+          "size": 3093,
+          "modified": "2025-10-04T16:01:33.421822",
+          "category": "consciousness"
+        },
+        {
+          "name": "variant_2.py",
+          "size": 3797,
+          "modified": "2025-10-04T16:01:33.423737",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "generation_summary.json",
+        "size": 581,
+        "modified": "2025-10-04T16:01:34.052661",
+        "category": "documentation"
+      },
+      {
+        "name": "variant_2_analysis.json",
+        "size": 4715,
+        "modified": "2025-10-04T16:01:34.050658",
+        "category": "documentation"
+      },
+      {
+        "name": "variant_1_analysis.json",
+        "size": 4803,
+        "modified": "2025-10-04T16:01:33.799750",
+        "category": "documentation"
+      },
+      {
+        "name": "variant_0_analysis.json",
+        "size": 5855,
+        "modified": "2025-10-04T16:01:33.423737",
+        "category": "documentation"
+      },
+      {
+        "name": "variant_2.py",
+        "size": 3797,
+        "modified": "2025-10-04T16:01:33.423737",
+        "category": "consciousness"
+      },
+      {
+        "name": "variant_0.py",
+        "size": 5329,
+        "modified": "2025-10-04T16:01:33.421822",
+        "category": "consciousness"
+      },
+      {
+        "name": "variant_1.py",
+        "size": 3093,
+        "modified": "2025-10-04T16:01:33.421822",
+        "category": "consciousness"
+      },
+      {
+        "name": "prompt.txt",
+        "size": 1895,
+        "modified": "2025-10-04T16:00:44.712992",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".json",
+        ".txt",
+        ".py"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > library_generations > aios_core_gen0_20251004_160044",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_160044' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_160044' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_160044' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "evolution_lab\\library_generations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

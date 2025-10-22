@@ -1,0 +1,165 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:20.038404",
+  "folder_info": {
+    "name": "refactoring",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\ainlp\\refactoring",
+    "relative_path": "tachyonic\\ainlp\\refactoring",
+    "parent_path": "tachyonic\\ainlp",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "ainlp",
+      "refactoring"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "governance",
+      "harmonization",
+      "optimization",
+      "patterns"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 62483,
+      "file_count": 5,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AINLP_DENDRITIC_REFACTORING_PLAN_20251018.md",
+          "size": 8413,
+          "modified": "2025-10-18T20:46:07.200328",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_REFACTORING_IMPLEMENTATION_20251018.md",
+          "size": 11979,
+          "modified": "2025-10-18T20:47:38.328034",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_REFACTORING_PHASE1_COMPLETE_20251018.md",
+          "size": 12527,
+          "modified": "2025-10-18T22:10:52.599000",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_REFACTORING_PHASE2_COMPLETE_20251018.md",
+          "size": 13149,
+          "modified": "2025-10-18T22:22:55.225966",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_REFACTORING_PHASE3_COMPLETE_20251018.md",
+          "size": 16415,
+          "modified": "2025-10-18T22:50:53.569313",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "AINLP_REFACTORING_PHASE3_COMPLETE_20251018.md",
+        "size": 16415,
+        "modified": "2025-10-18T22:50:53.569313",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_REFACTORING_PHASE2_COMPLETE_20251018.md",
+        "size": 13149,
+        "modified": "2025-10-18T22:22:55.225966",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_REFACTORING_PHASE1_COMPLETE_20251018.md",
+        "size": 12527,
+        "modified": "2025-10-18T22:10:52.599000",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_REFACTORING_IMPLEMENTATION_20251018.md",
+        "size": 11979,
+        "modified": "2025-10-18T20:47:38.328034",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_DENDRITIC_REFACTORING_PLAN_20251018.md",
+        "size": 8413,
+        "modified": "2025-10-18T20:46:07.200328",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 5,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 50,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > ainlp > refactoring",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\ainlp\\refactoring' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\ainlp\\refactoring' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\ainlp\\refactoring' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\AINLP",
+      "docs\\refactoring"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

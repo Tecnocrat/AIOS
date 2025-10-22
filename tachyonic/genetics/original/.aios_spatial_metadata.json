@@ -1,0 +1,140 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:32.206787",
+  "folder_info": {
+    "name": "original",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\genetics\\original",
+    "relative_path": "tachyonic\\genetics\\original",
+    "parent_path": "tachyonic\\genetics",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "genetics",
+      "original"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 14824,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "cytoplasm_intelligence_20251011_.py",
+          "size": 3654,
+          "modified": "2025-10-11T14:41:55.403213",
+          "category": "consciousness"
+        },
+        {
+          "name": "cytoplasm_intelligence_20251011_204435.py",
+          "size": 3654,
+          "modified": "2025-10-11T14:41:55.403213",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "GEMINI_INTEGRATION_SUMMARY_20251005.md",
+          "size": 5705,
+          "modified": "2025-10-04T14:06:47.108339",
+          "category": "documentation"
+        },
+        {
+          "name": "GEMINI_SUCCESS_20251004.md",
+          "size": 1811,
+          "modified": "2025-10-04T14:24:00.521585",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "cytoplasm_intelligence_20251011_.py",
+        "size": 3654,
+        "modified": "2025-10-11T14:41:55.403213",
+        "category": "consciousness"
+      },
+      {
+        "name": "cytoplasm_intelligence_20251011_204435.py",
+        "size": 3654,
+        "modified": "2025-10-11T14:41:55.403213",
+        "category": "consciousness"
+      },
+      {
+        "name": "GEMINI_SUCCESS_20251004.md",
+        "size": 1811,
+        "modified": "2025-10-04T14:24:00.521585",
+        "category": "documentation"
+      },
+      {
+        "name": "GEMINI_INTEGRATION_SUMMARY_20251005.md",
+        "size": 5705,
+        "modified": "2025-10-04T14:06:47.108339",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".py",
+        ".md"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > genetics > original",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\genetics\\original' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\genetics\\original' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\genetics\\original' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\genetics"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:35.937337",
+  "folder_info": {
+    "name": "core_legacy",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\core_legacy",
+    "relative_path": "tachyonic\\archive\\core_legacy",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Core Engine"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "core_legacy"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "consolidation",
+      "githooks_removed",
+      "token_usage"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 127732,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".cs": [
+        {
+          "name": "AINLPCompiler.cs",
+          "size": 56681,
+          "modified": "2025-09-21T13:01:22.658261",
+          "category": "consciousness"
+        },
+        {
+          "name": "AINLPHarmonizer.cs",
+          "size": 50047,
+          "modified": "2025-09-21T13:01:22.662261",
+          "category": "consciousness"
+        },
+        {
+          "name": "EnhancedAINLPCompiler.cs",
+          "size": 19228,
+          "modified": "2025-09-21T13:01:22.664305",
+          "category": "consciousness"
+        }
+      ],
+      ".json": [
+        {
+          "name": "tachyonic_archival_log.json",
+          "size": 1776,
+          "modified": "2025-09-21T13:01:22.759878",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".cs",
+        ".json"
+      ],
+      "dominant_type": ".cs"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 3,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > core_legacy",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\core_legacy' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\core_legacy' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\core_legacy' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

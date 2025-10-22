@@ -1,0 +1,187 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:13.115475",
+  "folder_info": {
+    "name": "evolution",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\src\\evolution",
+    "relative_path": "ai\\src\\evolution",
+    "parent_path": "ai\\src",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "src",
+      "evolution"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "activation",
+      "agents",
+      "core",
+      "demos",
+      "engines",
+      "frameworks",
+      "integrations",
+      "intelligence",
+      "languages",
+      "parsers",
+      "protocols",
+      "quantum_dendritic_field",
+      "runtime",
+      "tools",
+      "utilities"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 125363,
+      "file_count": 8,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "code_analyzer.py",
+          "size": 13824,
+          "modified": "2025-10-04T09:00:17.623610",
+          "category": "consciousness"
+        },
+        {
+          "name": "code_diff_validator.py",
+          "size": 8192,
+          "modified": "2025-10-06T21:21:38.530781",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_metrics.py",
+          "size": 7449,
+          "modified": "2025-10-06T21:16:23.307064",
+          "category": "consciousness"
+        },
+        {
+          "name": "multi_agent_evolution_loop.py",
+          "size": 35103,
+          "modified": "2025-10-08T14:58:57.859977",
+          "category": "consciousness"
+        }
+      ],
+      ".json": [
+        {
+          "name": "stl_paradigms_enhanced.json",
+          "size": 11153,
+          "modified": "2025-10-07T08:42:23.515680",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "consciousness_metrics.py",
+        "size": 7449,
+        "modified": "2025-10-06T21:16:23.307064",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "multi_agent_evolution_loop.py",
+        "size": 35103,
+        "modified": "2025-10-08T14:58:57.859977",
+        "category": "consciousness"
+      },
+      {
+        "name": "stl_paradigms_enhanced.json",
+        "size": 11153,
+        "modified": "2025-10-07T08:42:23.515680",
+        "category": "documentation"
+      },
+      {
+        "name": "code_diff_validator.py",
+        "size": 8192,
+        "modified": "2025-10-06T21:21:38.530781",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_metrics.py",
+        "size": 7449,
+        "modified": "2025-10-06T21:16:23.307064",
+        "category": "consciousness"
+      },
+      {
+        "name": "code_analyzer.py",
+        "size": 13824,
+        "modified": "2025-10-04T09:00:17.623610",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".py",
+        ".json"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 2,
+      "agentic_files": 2,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > src > evolution",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\evolution' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\evolution' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\evolution' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\src",
+      "evolution_lab"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:46.438285",
+  "folder_info": {
+    "name": "harmonization",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\metadata\\harmonization",
+    "relative_path": "tachyonic\\metadata\\harmonization",
+    "parent_path": "tachyonic\\metadata",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "metadata",
+      "harmonization"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "audits",
+      "integrations",
+      "sessions",
+      "supercell",
+      "vscode"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 1875,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "ainlp_consolidation_20250927_230150.json",
+          "size": 682,
+          "modified": "2025-09-27T23:01:50.492913",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_harmonization_report.json",
+          "size": 1156,
+          "modified": "2025-09-21T13:01:26.281677",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_harmonization_trends.json",
+          "size": 37,
+          "modified": "2025-09-21T13:01:26.282677",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_harmonization_report.json",
+        "size": 1156,
+        "modified": "2025-09-21T13:01:26.281677",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_harmonization_trends.json",
+        "size": 37,
+        "modified": "2025-09-21T13:01:26.282677",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "ainlp_consolidation_20250927_230150.json",
+        "size": 682,
+        "modified": "2025-09-27T23:01:50.492913",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 3,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > metadata > harmonization",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\harmonization' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\harmonization' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\harmonization' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\conversation_metadata",
+      "tachyonic\\ainlp\\harmonization"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

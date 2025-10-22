@@ -1,0 +1,176 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:28.840559",
+  "folder_info": {
+    "name": "tachyonic",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\tools\\tachyonic",
+    "relative_path": "ai\\tools\\tachyonic",
+    "parent_path": "ai\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "ai",
+      "tools",
+      "tachyonic"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "analysis_results",
+      "architecture",
+      "archival",
+      "consciousness",
+      "database",
+      "improvement_results",
+      "logs",
+      "system",
+      "visual"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 85645,
+      "file_count": 8,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_tachyonic_archive_cleanup.py",
+          "size": 19767,
+          "modified": "2025-09-21T13:01:21.590824",
+          "category": "consciousness"
+        },
+        {
+          "name": "create_stl_crystal.py",
+          "size": 15361,
+          "modified": "2025-10-05T00:55:08.996575",
+          "category": "consciousness"
+        },
+        {
+          "name": "enhanced_tachyonic_preservation.py",
+          "size": 22966,
+          "modified": "2025-09-21T13:01:21.694377",
+          "category": "consciousness"
+        },
+        {
+          "name": "ingest_microsoft_agent_framework.py",
+          "size": 2481,
+          "modified": "2025-10-08T20:32:10.535237",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 2360,
+          "modified": "2025-10-13T14:09:25.728795",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_tachyonic_archive_cleanup.py",
+        "size": 19767,
+        "modified": "2025-09-21T13:01:21.590824",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 2360,
+        "modified": "2025-10-13T14:09:25.728795",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 2360,
+        "modified": "2025-10-13T14:09:25.728795",
+        "category": "consciousness"
+      },
+      {
+        "name": "ingest_microsoft_agent_framework.py",
+        "size": 2481,
+        "modified": "2025-10-08T20:32:10.535237",
+        "category": "consciousness"
+      },
+      {
+        "name": "create_stl_crystal.py",
+        "size": 15361,
+        "modified": "2025-10-05T00:55:08.996575",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 2,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > tools > tachyonic",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\tachyonic' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\tachyonic' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\tachyonic' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\tools",
+      "tachyonic"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

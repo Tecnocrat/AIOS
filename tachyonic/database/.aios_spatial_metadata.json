@@ -1,0 +1,180 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:31:30.147729",
+  "folder_info": {
+    "name": "database",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\database",
+    "relative_path": "tachyonic\\database",
+    "parent_path": "tachyonic",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "database"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS_root_cells",
+      "__pycache__",
+      "agentic_conversations",
+      "ai_engine_handoffs",
+      "ai_engine_knowledge",
+      "ainlp",
+      "analysis_reports",
+      "architecture",
+      "archive",
+      "backups",
+      "boot_reports",
+      "bosonic_substrate",
+      "cellular_reports",
+      "changelog",
+      "cleanup_reports",
+      "code_preservation",
+      "consciousness",
+      "conversation_data",
+      "conversation_metadata",
+      "conversations",
+      "coordinator_backup_20250917_204932",
+      "cpp_stl_knowledge",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "design_mockups",
+      "development_fixes",
+      "development_history",
+      "development_success",
+      "discovery_indexes",
+      "docs_archive",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_chains",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "experiment_metadata",
+      "extracted_paradigms",
+      "genetics",
+      "hydro_files",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "integration_optimization",
+      "integration_validation",
+      "intelligence_reports",
+      "knowledge_crystals",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "orchestration",
+      "paths",
+      "quality_reports",
+      "quantum",
+      "reports",
+      "repository_ingestions",
+      "revolutionary_sessions",
+      "rollback_snapshots",
+      "root_optimization",
+      "root_optimization_analysis",
+      "runtime_intelligence",
+      "self_improvement_cycles",
+      "self_improvement_reports",
+      "sessions",
+      "setup_guides",
+      "shadows",
+      "snapshots",
+      "structure_analysis",
+      "subcellular_archives",
+      "supercells",
+      "tachyonic",
+      "tachyonic_archive",
+      "tachyonic_development_archive",
+      "temporal",
+      "test_results",
+      "tools",
+      "version_analysis",
+      "workflows"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 10659,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".sql": [
+        {
+          "name": "schema.sql",
+          "size": 10659,
+          "modified": "2025-10-12T05:25:39.800381",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "schema.sql",
+        "size": 10659,
+        "modified": "2025-10-12T05:25:39.800381",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".sql"
+      ],
+      "dominant_type": ".sql"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > database",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\database' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\database' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\database' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "ai\\tools\\database"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

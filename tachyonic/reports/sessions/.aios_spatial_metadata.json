@@ -1,0 +1,156 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:21.300693",
+  "folder_info": {
+    "name": "sessions",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\reports\\sessions",
+    "relative_path": "tachyonic\\reports\\sessions",
+    "parent_path": "tachyonic\\reports",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "reports",
+      "sessions"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "archives",
+      "communication",
+      "completions",
+      "documentation",
+      "handoffs",
+      "health",
+      "misc",
+      "optimization",
+      "requirements",
+      "validation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 53581,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AIOS_LAUNCH_OPTIMIZATION_COMPLETE_SESSION_20251012.md",
+          "size": 20911,
+          "modified": "2025-10-12T04:41:50.217202",
+          "category": "documentation"
+        },
+        {
+          "name": "INTERFACE_BRIDGE_SESSION_SUMMARY_20251012_0340-0400.md",
+          "size": 8722,
+          "modified": "2025-10-12T04:16:18.155726",
+          "category": "documentation"
+        },
+        {
+          "name": "PHASE_2A_SESSION_SUMMARY_20250118.md",
+          "size": 7383,
+          "modified": "2025-10-13T10:56:23.624261",
+          "category": "documentation"
+        },
+        {
+          "name": "SESSION_COMPLETION_AI_CONTEXT_INTELLIGENCE_20251011.md",
+          "size": 16565,
+          "modified": "2025-10-11T22:11:09.244016",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_LAUNCH_OPTIMIZATION_COMPLETE_SESSION_20251012.md",
+        "size": 20911,
+        "modified": "2025-10-12T04:41:50.217202",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "PHASE_2A_SESSION_SUMMARY_20250118.md",
+        "size": 7383,
+        "modified": "2025-10-13T10:56:23.624261",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_LAUNCH_OPTIMIZATION_COMPLETE_SESSION_20251012.md",
+        "size": 20911,
+        "modified": "2025-10-12T04:41:50.217202",
+        "category": "documentation"
+      },
+      {
+        "name": "INTERFACE_BRIDGE_SESSION_SUMMARY_20251012_0340-0400.md",
+        "size": 8722,
+        "modified": "2025-10-12T04:16:18.155726",
+        "category": "documentation"
+      },
+      {
+        "name": "SESSION_COMPLETION_AI_CONTEXT_INTELLIGENCE_20251011.md",
+        "size": 16565,
+        "modified": "2025-10-11T22:11:09.244016",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > reports > sessions",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\sessions' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\sessions' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\sessions' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\reports",
+      "tachyonic\\revolutionary_sessions"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

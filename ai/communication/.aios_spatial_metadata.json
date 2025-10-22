@@ -1,0 +1,194 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:28:23.036441",
+  "folder_info": {
+    "name": "communication",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\communication",
+    "relative_path": "ai\\communication",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "communication"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".pytest_cache",
+      ".venv314t",
+      "__pycache__",
+      "cytoplasm",
+      "data",
+      "demos",
+      "docs",
+      "information_storage",
+      "infrastructure",
+      "ingested_repositories",
+      "nucleus",
+      "orchestration",
+      "research",
+      "runtime_intelligence",
+      "src",
+      "supercells",
+      "tachyonic",
+      "tests",
+      "tools",
+      "transport"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 113234,
+      "file_count": 10,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "initialization.py",
+          "size": 10874,
+          "modified": "2025-10-18T23:22:41.019729",
+          "category": "consciousness"
+        },
+        {
+          "name": "interfaces.py",
+          "size": 5468,
+          "modified": "2025-10-18T22:05:37.931015",
+          "category": "consciousness"
+        },
+        {
+          "name": "message_types.py",
+          "size": 6914,
+          "modified": "2025-10-18T23:54:14.428330",
+          "category": "consciousness"
+        },
+        {
+          "name": "universal_bus.py",
+          "size": 26511,
+          "modified": "2025-10-18T23:54:17.444671",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 2576,
+          "modified": "2025-10-18T23:22:41.873490",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "initialization.py",
+        "size": 10874,
+        "modified": "2025-10-18T23:22:41.019729",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 2576,
+        "modified": "2025-10-18T23:22:41.873490",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "universal_bus.py",
+        "size": 26511,
+        "modified": "2025-10-18T23:54:17.444671",
+        "category": "consciousness"
+      },
+      {
+        "name": "message_types.py",
+        "size": 6914,
+        "modified": "2025-10-18T23:54:14.428330",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 2576,
+        "modified": "2025-10-18T23:22:41.873490",
+        "category": "consciousness"
+      },
+      {
+        "name": "initialization.py",
+        "size": 10874,
+        "modified": "2025-10-18T23:22:41.019729",
+        "category": "consciousness"
+      },
+      {
+        "name": "interfaces.py",
+        "size": 5468,
+        "modified": "2025-10-18T22:05:37.931015",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > communication",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\communication' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\communication' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\communication' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "tachyonic\\reports\\communication"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

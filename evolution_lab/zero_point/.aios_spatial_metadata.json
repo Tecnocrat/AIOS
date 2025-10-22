@@ -1,0 +1,124 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:30:54.153580",
+  "folder_info": {
+    "name": "zero_point",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\zero_point",
+    "relative_path": "evolution_lab\\zero_point",
+    "parent_path": "evolution_lab",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "zero_point"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "artifacts",
+      "conversations",
+      "distillations",
+      "docs",
+      "experiments",
+      "library_generations",
+      "neural_chains",
+      "populations",
+      "sandbox",
+      "tachyonic_field",
+      "test_data"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 1387,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".cpp": [
+        {
+          "name": "hello_world.cpp",
+          "size": 103,
+          "modified": "2025-10-06T20:50:29.596602",
+          "category": "consciousness"
+        }
+      ],
+      ".json": [
+        {
+          "name": "hello_world_metadata.json",
+          "size": 1284,
+          "modified": "2025-10-06T20:50:29.436450",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "hello_world.cpp",
+        "size": 103,
+        "modified": "2025-10-06T20:50:29.596602",
+        "category": "consciousness"
+      },
+      {
+        "name": "hello_world_metadata.json",
+        "size": 1284,
+        "modified": "2025-10-06T20:50:29.436450",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".cpp",
+        ".json"
+      ],
+      "dominant_type": ".cpp"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > zero_point",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\zero_point' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\zero_point' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\zero_point' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

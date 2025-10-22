@@ -1,0 +1,91 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:28:34.253240",
+  "folder_info": {
+    "name": "analysis_tools",
+    "absolute_path": "C:\\dev\\AIOS\\core\\analysis_tools",
+    "relative_path": "core\\analysis_tools",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "analysis_tools"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "build",
+      "include",
+      "orchestrator",
+      "src",
+      "tests"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 543610,
+      "file_count": 23,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 22,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > analysis_tools",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\analysis_tools' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "computational_layer\\core_systems",
+      "runtime\\core",
+      "vscode-extension\\node_modules\\core-util-is",
+      "vscode-extension\\node_modules\\underscore",
+      "tachyonic\\subcellular_archives\\analysis_tools"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

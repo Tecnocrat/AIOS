@@ -1,0 +1,149 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:29:13.728025",
+  "folder_info": {
+    "name": "conversations",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\conversations",
+    "relative_path": "evolution_lab\\conversations",
+    "parent_path": "evolution_lab",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "conversations"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "artifacts",
+      "distillations",
+      "docs",
+      "experiments",
+      "library_generations",
+      "neural_chains",
+      "populations",
+      "sandbox",
+      "tachyonic_field",
+      "test_data",
+      "zero_point"
+    ],
+    "child_folders": [
+      "20251008"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 16979,
+      "file_count": 10,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "conversation_deepseek_20251008_145524.json",
+          "size": 563,
+          "modified": "2025-10-08T14:55:24.067987",
+          "category": "documentation"
+        },
+        {
+          "name": "conversation_gemini_20251008_145524.json",
+          "size": 557,
+          "modified": "2025-10-08T14:55:24.098986",
+          "category": "documentation"
+        },
+        {
+          "name": "conversation_ollama_20251008_145456.json",
+          "size": 1494,
+          "modified": "2025-10-08T14:55:23.981280",
+          "category": "documentation"
+        },
+        {
+          "name": "conversation_ollama_20251008_145524.json",
+          "size": 1407,
+          "modified": "2025-10-08T14:55:55.578782",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "conversation_ollama_20251008_145524.json",
+        "size": 1407,
+        "modified": "2025-10-08T14:55:55.578782",
+        "category": "documentation"
+      },
+      {
+        "name": "conversation_gemini_20251008_145524.json",
+        "size": 557,
+        "modified": "2025-10-08T14:55:24.098986",
+        "category": "documentation"
+      },
+      {
+        "name": "conversation_deepseek_20251008_145524.json",
+        "size": 563,
+        "modified": "2025-10-08T14:55:24.067987",
+        "category": "documentation"
+      },
+      {
+        "name": "conversation_ollama_20251008_145456.json",
+        "size": 1494,
+        "modified": "2025-10-08T14:55:23.981280",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 6,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 60,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > conversations",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\conversations' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\conversations' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\conversations' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "tachyonic\\agentic_conversations",
+      "tachyonic\\conversations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

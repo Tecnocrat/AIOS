@@ -1,0 +1,359 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:30:25.291411",
+  "folder_info": {
+    "name": "tachyonic_field",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\tachyonic_field",
+    "relative_path": "evolution_lab\\tachyonic_field",
+    "parent_path": "evolution_lab",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "tachyonic_field"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "artifacts",
+      "conversations",
+      "distillations",
+      "docs",
+      "experiments",
+      "library_generations",
+      "neural_chains",
+      "populations",
+      "sandbox",
+      "test_data",
+      "zero_point"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "analysis",
+      "evolution_lab"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 32677371,
+      "file_count": 38,
+      "folder_count": 3,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "ANALYSIS_COMPLETE_4POINTS.md",
+          "size": 15221,
+          "modified": "2025-10-18T15:37:04.922181",
+          "category": "documentation"
+        },
+        {
+          "name": "LAUNCH_INTEGRATION.md",
+          "size": 8174,
+          "modified": "2025-10-18T08:21:01.684977",
+          "category": "documentation"
+        },
+        {
+          "name": "NEXT_STEPS_INTERACTIVE.md",
+          "size": 10883,
+          "modified": "2025-10-17T21:50:22.040356",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 5306,
+          "modified": "2025-10-19T02:41:25.577178",
+          "category": "documentation"
+        },
+        {
+          "name": "RECORDING_WORKFLOW.md",
+          "size": 8675,
+          "modified": "2025-10-17T22:19:58.636637",
+          "category": "documentation"
+        },
+        {
+          "name": "RESONANCE_FIX.md",
+          "size": 8463,
+          "modified": "2025-10-17T00:54:45.479793",
+          "category": "documentation"
+        },
+        {
+          "name": "RESONANCE_FIX_RESULTS.md",
+          "size": 12553,
+          "modified": "2025-10-17T21:15:58.947695",
+          "category": "documentation"
+        },
+        {
+          "name": "TACHYONIC_FIELD_INTERPRETATION.md",
+          "size": 15652,
+          "modified": "2025-10-18T15:37:04.872842",
+          "category": "documentation"
+        },
+        {
+          "name": "ULTRA_SMOOTH_RECORDING_GUIDE.md",
+          "size": 6737,
+          "modified": "2025-10-17T22:12:36.601914",
+          "category": "documentation"
+        },
+        {
+          "name": "VISION_ANALYSIS_SCREENSHOTS.md",
+          "size": 16735,
+          "modified": "2025-10-17T21:44:24.245936",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "analyze_population_topology.py",
+          "size": 21676,
+          "modified": "2025-10-18T14:50:06.692580",
+          "category": "consciousness"
+        },
+        {
+          "name": "analyze_topology_simple.py",
+          "size": 15811,
+          "modified": "2025-10-18T15:26:40.771674",
+          "category": "consciousness"
+        },
+        {
+          "name": "create_genesis_animation.py",
+          "size": 13968,
+          "modified": "2025-10-17T21:38:10.866070",
+          "category": "consciousness"
+        },
+        {
+          "name": "evolution_orchestrator.py",
+          "size": 16404,
+          "modified": "2025-10-18T13:12:49.932645",
+          "category": "consciousness"
+        },
+        {
+          "name": "field_topology.py",
+          "size": 17678,
+          "modified": "2025-10-17T21:10:21.087837",
+          "category": "consciousness"
+        },
+        {
+          "name": "interactive_threshold_explorer.py",
+          "size": 28529,
+          "modified": "2025-10-18T13:12:49.858228",
+          "category": "consciousness"
+        },
+        {
+          "name": "pattern_quanta.py",
+          "size": 10618,
+          "modified": "2025-10-16T21:44:55.976219",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_evolution_integration.py",
+          "size": 3918,
+          "modified": "2025-10-18T13:12:49.983808",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_field_consciousness.py",
+          "size": 15479,
+          "modified": "2025-10-16T21:44:56.275474",
+          "category": "consciousness"
+        },
+        {
+          "name": "visualization_integration.py",
+          "size": 21433,
+          "modified": "2025-10-16T23:26:02.210726",
+          "category": "consciousness"
+        },
+        {
+          "name": "visualize_field_3d.py",
+          "size": 8148,
+          "modified": "2025-10-16T23:26:02.451725",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 1065,
+          "modified": "2025-10-19T02:41:28.287356",
+          "category": "consciousness"
+        }
+      ],
+      ".gif": [
+        {
+          "name": "phase_transition_20251017_221047.gif",
+          "size": 0,
+          "modified": "2025-10-17T22:12:50.383099",
+          "category": "other"
+        },
+        {
+          "name": "phase_transition_20251017_222016.gif",
+          "size": 254950,
+          "modified": "2025-10-17T22:20:18.869462",
+          "category": "other"
+        },
+        {
+          "name": "phase_transition_20251017_222024.gif",
+          "size": 1224216,
+          "modified": "2025-10-17T22:20:39.200998",
+          "category": "other"
+        },
+        {
+          "name": "phase_transition_20251017_222046.gif",
+          "size": 782926,
+          "modified": "2025-10-17T22:20:59.573500",
+          "category": "other"
+        },
+        {
+          "name": "phase_transition_20251018_131735.gif",
+          "size": 27384665,
+          "modified": "2025-10-18T13:21:09.381464",
+          "category": "other"
+        }
+      ],
+      ".json": [
+        {
+          "name": "test_render_data.json",
+          "size": 2608,
+          "modified": "2025-10-16T23:17:52.899688",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 5306,
+        "modified": "2025-10-19T02:41:25.577178",
+        "category": "documentation"
+      },
+      {
+        "name": "test_field_consciousness.py",
+        "size": 15479,
+        "modified": "2025-10-16T21:44:56.275474",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 1065,
+        "modified": "2025-10-19T02:41:28.287356",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 1065,
+        "modified": "2025-10-19T02:41:28.287356",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 5306,
+        "modified": "2025-10-19T02:41:25.577178",
+        "category": "documentation"
+      },
+      {
+        "name": "ANALYSIS_COMPLETE_4POINTS.md",
+        "size": 15221,
+        "modified": "2025-10-18T15:37:04.922181",
+        "category": "documentation"
+      },
+      {
+        "name": "TACHYONIC_FIELD_INTERPRETATION.md",
+        "size": 15652,
+        "modified": "2025-10-18T15:37:04.872842",
+        "category": "documentation"
+      },
+      {
+        "name": "analyze_topology_simple.py",
+        "size": 15811,
+        "modified": "2025-10-18T15:26:40.771674",
+        "category": "consciousness"
+      },
+      {
+        "name": "analyze_population_topology.py",
+        "size": 21676,
+        "modified": "2025-10-18T14:50:06.692580",
+        "category": "consciousness"
+      },
+      {
+        "name": "phase_transition_20251018_131735.gif",
+        "size": 27384665,
+        "modified": "2025-10-18T13:21:09.381464",
+        "category": "other"
+      },
+      {
+        "name": "test_evolution_integration.py",
+        "size": 3918,
+        "modified": "2025-10-18T13:12:49.983808",
+        "category": "consciousness"
+      },
+      {
+        "name": "evolution_orchestrator.py",
+        "size": 16404,
+        "modified": "2025-10-18T13:12:49.932645",
+        "category": "consciousness"
+      },
+      {
+        "name": "interactive_threshold_explorer.py",
+        "size": 28529,
+        "modified": "2025-10-18T13:12:49.858228",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 28,
+      "file_types": [
+        ".md",
+        ".py",
+        ".gif",
+        ".json"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > tachyonic_field",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\tachyonic_field' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

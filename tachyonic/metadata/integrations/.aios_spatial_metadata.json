@@ -1,0 +1,139 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:52.002456",
+  "folder_info": {
+    "name": "integrations",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\metadata\\integrations",
+    "relative_path": "tachyonic\\metadata\\integrations",
+    "parent_path": "tachyonic\\metadata",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "metadata",
+      "integrations"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "audits",
+      "harmonization",
+      "sessions",
+      "supercell",
+      "vscode"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 11234,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "enhanced_consciousness_demo_report.json",
+          "size": 4920,
+          "modified": "2025-09-25T22:51:41.886659",
+          "category": "documentation"
+        },
+        {
+          "name": "gemini_bridge_integration_complete_20250930_213000.json",
+          "size": 6019,
+          "modified": "2025-09-30T21:30:00.654182",
+          "category": "documentation"
+        },
+        {
+          "name": "unified_consciousness_integration_log.json",
+          "size": 295,
+          "modified": "2025-09-21T13:01:34.422995",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "enhanced_consciousness_demo_report.json",
+        "size": 4920,
+        "modified": "2025-09-25T22:51:41.886659",
+        "category": "documentation"
+      },
+      {
+        "name": "unified_consciousness_integration_log.json",
+        "size": 295,
+        "modified": "2025-09-21T13:01:34.422995",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "gemini_bridge_integration_complete_20250930_213000.json",
+        "size": 6019,
+        "modified": "2025-09-30T21:30:00.654182",
+        "category": "documentation"
+      },
+      {
+        "name": "enhanced_consciousness_demo_report.json",
+        "size": 4920,
+        "modified": "2025-09-25T22:51:41.886659",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > metadata > integrations",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\integrations' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\integrations' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\integrations' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\conversation_metadata",
+      "interface\\integrations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}
