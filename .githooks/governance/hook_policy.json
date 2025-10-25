@@ -38,17 +38,21 @@
   ],
   "jsonPaths": [
     "config/*.json",
-    "runtime_intelligence/context/*.json"
+    "runtime/context/*.json",
+    "ai/infrastructure/config/*.json",
+    ".githooks/governance/*.json"
   ],
   "executableScriptDirs": [
     ".githooks/",
     "ai/",
-    "core/", 
-    "tachyonic/",
-    "runtime_intelligence/",
+    "ai/src/",
+    "ai/tools/",
+    "core/",
+    "runtime/",
     "scripts/",
-    "orchestrator/",
-    "tools/"
+    "tachyonic/",
+    "evolution_lab/",
+    "interface/"
   ],
   "bypassEnvVar": "AIOS_HOOK_BYPASS",
   "requireChangelogOnPaths": [
@@ -76,31 +80,48 @@
     "ai/src/core/integration/"
   ],
   "enableTestEnvVar": "AIOS_HOOK_RUN_TESTS",
-  "metricsSummaryPath": "runtime_intelligence/logs/hooks/summary.json",
+  "metricsSummaryPath": "runtime/runtime_intelligence/logs/hooks/summary.json",
   "commitMessagePrefixes": [
     "feat:", "fix:", "docs:", "chore:", "refactor:", "test:", "build:", "ci:", "perf:", "revert:",
-    "governance:", "cellular:", "ai:", "core:", "interface:", "runtime:", "security:"
+    "governance:", "cellular:", "ai:", "core:", "interface:", "runtime:", "security:",
+    "dendritic:", "consciousness:", "tachyonic:", "evolution:"
   ],
   "prePush": {
     "enable": true,
     "buildCommands": [
-      "dotnet build AIOS.sln -c Debug --nologo",
-      "cmake --build core\\core_systems\\build --config Debug"
+      "dotnet build interface/AIOS.sln -c Debug --nologo",
+      "python -m py_compile ai/src/core/ainlp/kernel/tooling/recursive_tooling.py"
     ],
     "testCommands": [
-      "pytest -q ai/tests"
+      "python -m pytest ai/tests/ -v --tb=short"
     ],
     "skipEnvVar": "AIOS_PREPUSH_SKIP"
   },
   "largeDeletionThresholdPct": 60,
   "largeDeletionBypassEnvVar": "AIOS_HOOK_ALLOW_LARGE_DELETE",
-  "cacheDir": "runtime_intelligence/logs/hooks/cache",
+  "cacheDir": "runtime/runtime_intelligence/logs/hooks/cache",
   "enableExternalSecretScanner": true
   ,"criticality": {
-    "indexPath": "governance/file_criticality_index.jsonl",
+    "indexPath": ".githooks/governance/file_criticality_index.jsonl",
     "warnOnCoreModify": true,
     "requireDualReviewTiers": ["core"],
     "blockDeletionTiers": ["core","high"],
-    "scoreRegenScript": "runtime_intelligence/tools/generate_file_scores.py"
+    "scoreRegenScript": "ai/tools/system/generate_file_scores.py"
+  },
+  "dendritic": {
+    "enableDendriticAwareness": true,
+    "dendriticAssessmentInterval": "24h",
+    "explorationPatterns": [
+      "architectural_drift_detection",
+      "ownership_boundary_validation",
+      "criticality_reassessment",
+      "integration_opportunity_discovery"
+    ],
+    "autonomyLevel": "semi_autonomous",
+    "connectionTargets": [
+      "ai/tools/ainlp_documentation_governance.py",
+      "runtime/runtime_intelligence/",
+      ".githooks/"
+    ]
   }
 }
