@@ -1,0 +1,3484 @@
+{
+  "timestamp": 1761244649.4914668,
+  "scan_root": "C:\\dev\\AIOS",
+  "summary": {
+    "files_scanned": 987,
+    "scc_count": 1,
+    "similarity_pairs": 718,
+    "duplicate_names": 22,
+    "orphans": 226
+  },
+  "sccs": [
+    [
+      "ai\\aios_interface_manager.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_explicit_settings.py",
+      "ai\\research\\tests\\test_ai_core.py",
+      "ai\\src\\integrations\\aios_githooks_optimizer.py",
+      "ai\\tools\\visual\\enhanced_visual_intelligence_bridge.py",
+      "ai\\tools\\architecture\\aios_architecture_monitor.py",
+      "ai\\src\\integrations\\activate_continuous_optimization.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\aios_master.py",
+      "ai\\nucleus\\src\\ainlp\\ainlp_tachyonic_ingestor.py",
+      "ai\\tools\\system\\comprehensive_aios_health_test.py",
+      "ai\\transport\\intercellular\\tensorflow_cellular_bridge.py",
+      "ai\\research\\tests\\integration\\test_tensorflow_cellular_integration.py",
+      "ai\\nucleus\\src\\integration\\archive\\test_fractal_holographic_system.py",
+      "ai\\tools\\consciousness\\aios_core_meta_evolutionary_enhancer.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_enhanced_compressor.py",
+      "docs\\archive\\deprecated_root_docs\\legacy_scripts\\context_harmonization_demo.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\consciousness_ai_cellular_bridge.py",
+      "tachyonic\\tools\\documentation\\aios_documentation_supercell_enhancer.py",
+      "ai\\src\\integrations\\aios_agentic_optimizer.py",
+      "ai\\research\\tests\\test_ainlp_adversarial_grok_mega.py",
+      "ai\\nucleus\\src\\ainlp\\ainlp_unified_engine.py",
+      "ai\\supercells\\runtime_intelligence.py",
+      "ai\\nucleus\\src\\integration\\archive\\holographic_synchronization.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_ai_cellular_bridge.py",
+      "ai\\research\\tests\\test_ai_cell_manager_registry.py",
+      "computational_layer\\assemblers\\integration_assembler\\integration_assembler.py",
+      "ai\\tools\\visual\\consciousness_visual_analyzer.py",
+      "ai\\tools\\architecture\\aios_core_engine_root_analyzer_iter2.py",
+      "ai\\tools\\system\\system_health_check.py",
+      "computational_layer\\assemblers\\tree_assembler\\meta_evolution\\aios_meta_evolutionary_optimizer.py",
+      "ai\\nucleus\\src\\integration\\archive\\test_comprehensive_python_environment.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\a2a\\agent_framework_a2a\\_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_workflow.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_workflow_executor.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_runner.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_function_executor.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_events.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_runner_context.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_executor.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_edge.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_edge_runner.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_validation.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_concurrent.py",
+      "evolution_lab\\artifacts\\consciousness_text_analyzer_1751218592.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\parallel_consciousness_orchestrator.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\enhanced_consciousness.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\autonomous_consciousness_swarms.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\consciousness_mutation_engine.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\autonomous_consciousness_swarms.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_mutation_engine.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\enhanced_consciousness.py",
+      "ai\\tools\\ainlp_documentation_governance.py",
+      "ai\\nucleus\\src\\ainlp\\kernel\\tooling\\recursive_tooling.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_types.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_agents.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_clients.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_tools.py",
+      "ai\\tools\\archive_tachyonic_evolution.py",
+      "ai\\src\\integrations\\library_code_generation_loop.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\observability.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\openai\\_responses_client.py",
+      "ai\\tools\\architecture\\ainlp_integration_optimizer.py",
+      "ai\\demos\\universal_agentic_logger_demo.py",
+      "ai\\research\\tests\\test_compression_integration.py",
+      "ai\\src\\runtime\\ai_execution_bridge.py",
+      "ai\\orchestration\\consciousness_coordinator.py",
+      "tachyonic\\tools\\orchestrators\\aios_unified_consciousness_system.py",
+      "ai\\tests\\integration\\integration_test_orchestrator.py",
+      "ai\\tools\\system\\integration_test_runner.py",
+      "computational_layer\\bridges\\aios_analysis_cytoplasm_bridge.py",
+      "ai\\tools\\architecture\\aios_cpp_analyzer.py",
+      "ai\\nucleus\\src\\maintenance\\backup_consolidator.py",
+      "ai\\nucleus\\src\\maintenance\\garbage_collector.py",
+      "ai\\nucleus\\src\\maintenance\\maintenance_core.py",
+      "tachyonic\\archive\\token_usage_tracker_refactored_20251021_233751.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\optimization_context_command.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\_discovery.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\_executor.py",
+      "ai\\src\\intelligence\\library_ingestion_protocol.py",
+      "ai\\src\\intelligence\\test_library_ingestion_protocol.py",
+      "ai\\src\\intelligence\\library_learning_integration_hub.py",
+      "runtime\\tools\\consolidated\\aios_indexer.py",
+      "ai\\nucleus\\src\\ainlp_migration\\ainlp_agent.py",
+      "ai\\tests\\integration\\test_orchestration.py",
+      "ai\\nucleus\\src\\aios_master.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_meta_evolutionary_analyzer.py",
+      "tachyonic\\root_optimization\\archived_20250905_220720\\aios_core_meta_evolutionary_enhancer.py",
+      "ai\\ingested_repositories\\ollama_python\\ollama\\_utils.py",
+      "ai\\nucleus\\src\\ainlp\\ainlp_quantum_decomposer.py",
+      "ai\\research\\tests\\test_tensorflow_training_cell.py",
+      "ai\\transport\\intercellular\\tensorflow_cellular_workflow.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_agent.py",
+      "ai\\nucleus\\ai_cells\\tensorflow_training_cell.py",
+      "ai\\nucleus\\ai_cells\\ai_cell_manager.py",
+      "ai\\supercells\\core_engine.py",
+      "ai\\nucleus\\src\\mcp_server.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\web-search-mcp.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_mcp.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_mcp.py",
+      "ai\\src\\integrations\\vscode_error_intelligence.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\self_healing_engine.py",
+      "computational_layer\\library_ingestion_protocol.py",
+      "ai\\tools\\system\\ainlp_root_cleanup.py",
+      "ai\\src\\integrations\\vscode_ai_bridge.py",
+      "ai\\src\\runtime\\intelligence_dashboard.py",
+      "ai\\supercells\\ai_intelligence.py",
+      "ai\\src\\integrations\\cellular_ecosystem\\ainlp_cellular_integrator.py",
+      "ai\\communication\\initialization.py",
+      "ai\\tests\\integration\\test_phase_10_4_integration.py",
+      "ai\\tools\\upstream_tracking_system.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\tests\\test_schema_generation.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\_shared.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\web_search_gpt_oss_helper.py",
+      "ai\\tools\\system\\aios_core_engine_optimizer_iter2.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_chat_client_with_explicit_settings.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_code_interpreter.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\visualization\\concurrent_with_visualization.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\gaia\\agent_framework_lab_gaia\\gaia.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\parallel_consciousness_orchestrator.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\lightning\\samples\\train_math_agent.py",
+      "ai\\tools\\system\\generate_file_scores.py",
+      "tachyonic\\tools\\ingestors\\aios_tachyonic_intelligence_archive.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_explicit_settings.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\decorator_middleware.py",
+      "ai\\research\\scripts\\emoji_detector.py",
+      "ai\\research\\scripts\\enhanced_quality_integration.py",
+      "ai\\research\\scripts\\githooks_emoji_integration.py",
+      "computational_layer\\core_systems\\aios_neuronal_dendritic_intelligence.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\simple_consciousness_ai_bridge.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\tests\\samples\\getting_started\\test_agent_samples.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\tests\\samples\\getting_started\\test_threads_samples.py",
+      "tachyonic\\tools\\ingestors\\documentation_ingestion_system.py",
+      "ai\\src\\demos\\enhanced_ai_demo.py",
+      "tachyonic\\tools\\demos\\test_communication_system.py",
+      "ai\\src\\integrations\\gemini_bridge\\consciousness_mcp_server.py",
+      "ai\\infrastructure\\tools\\cross_pollination_automator.py",
+      "runtime\\tools\\module_discoverer.py",
+      "computational_layer\\shared_imports.py",
+      "ai\\src\\integrations\\aios_architectural_analysis.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\optimization_context_aios_class.py",
+      "computational_layer\\modules\\aios_components\\aios_file_creation_monitor.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_assistants_with_existing_assistant.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\openai\\_exceptions.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_logging.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\cellular_health_monitor.py",
+      "ai\\tools\\system\\aios_cytoplasm_upgrader_iter2.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\context_providers\\redis\\redis_threads.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_serialization.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_middleware.py",
+      "ai\\tools\\system\\aios_direct_ai_ingestion_test.py",
+      "ai\\research\\tests\\test_integration_ai_cells.py",
+      "ai\\src\\integrations\\gemini_bridge\\agentic_mcp_server.py",
+      "ai\\tools\\system\\subprocess_manager.py",
+      "ai\\tools\\consciousness\\aios_cli_agent_system.py",
+      "ai\\src\\frameworks\\agent_protocol\\base_protocol.py",
+      "ai\\src\\frameworks\\agent_protocol\\aios_adapter_placeholder.py",
+      "computational_layer\\assemblers\\file_assembler\\aios_evolutionary_assembler_coherent.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_compressor_engine.py",
+      "ai\\tools\\system\\aios_ai_ingestion_analysis.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\azure\\test_azure_responses_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\agents\\custom_agent_executors.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\agents\\azure_chat_agents_streaming.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\orchestration\\concurrent_custom_aggregator.py",
+      "ai\\src\\integrations\\gemini_bridge\\agentic_behavior_enhancement.py",
+      "ai\\src\\intelligence\\ainlp\\json_audit.py",
+      "ai\\src\\intelligence\\consciousness_evolution_engine.py",
+      "ai\\src\\repository_ingestion_engine.py",
+      "ai\\research\\tests\\conftest.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_middleware_context_result.py",
+      "runtime\\tools\\consolidated\\remove_emoticons.py",
+      "ai\\tools\\architecture\\aios_powershell_analyzer.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\openai\\test_openai_chat_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_code_interpreter.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_function_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_function_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\agent_and_run_level_middleware.py",
+      "ai\\tools\\system\\aios_ai_engine_ingestion_tester.py",
+      "ai\\tools\\aios_holographic_metadata_system.py",
+      "ai\\tools\\consciousness\\enhanced_consciousness_demo.py",
+      "ai\\src\\consciousness_evolution_engine.py",
+      "ai\\src\\integrations\\gemini_bridge\\integration_tester.py",
+      "ai\\src\\integrations\\gemini_bridge\\gemini_evolution_bridge.py",
+      "ai\\src\\intelligence\\ainlp_consciousness_integration_hub.py",
+      "ai\\tools\\consciousness\\dendritic_supervisor.py",
+      "ai\\tools\\consciousness\\runtime_intelligence_dendritic_integration.py",
+      "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\quantum_field_coherence_monitor.py",
+      "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\quantum_dendritic_field_system.py",
+      "ai\\research\\tests\\test_vision_demo_summary.py",
+      "ai\\src\\frameworks\\agent_protocol\\aios_adapter.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\assembly_executor.py",
+      "ai\\tools\\system\\aios_file_tracking_system.py",
+      "ai\\tests\\integration\\test_ollama_bridge.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\web-search-gpt-oss.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\openai_assistant\\01_basic_openai_assistant.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_code_interpreter.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\tests\\capture_messages.py",
+      "ai\\src\\intelligence\\knowledge_integration.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\development_endpoints.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration\\tests\\test_integration.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration\\main.py",
+      "ai\\research\\demos\\opencv_integration_demo.py",
+      "ai\\src\\intelligence\\enhanced_agentic_loop.py",
+      "docs\\archive\\deprecated_root_docs\\legacy_scripts\\ainlp_e501_formatter.py",
+      "ai\\infrastructure\\tools\\comprehensive_linter.py",
+      "computational_layer\\assemblers\\context_assembler\\context_assembler.py",
+      "ai\\nucleus\\src\\maintenance\\documentation_optimizer.py",
+      "ai\\src\\engines\\paradigm_extraction_engine.py",
+      "ai\\src\\parsers\\cpp_documentation_parser.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\self_healing_engine.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\optimization_context_command.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\azure\\test_azure_chat_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\azure_assistants_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\context_providers\\mem0\\mem0_threads.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\mem0\\tests\\test_mem0_context_provider.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\context_providers\\mem0\\mem0_oss.py",
+      "ai\\tools\\architecture\\biological_architecture_monitor.py",
+      "ai\\tools\\system\\aios_dev_setup.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_explicit_settings.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\azure_ai_chat_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\class_based_middleware.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\_entra_id_authentication.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\azure\\test_entra_id_authentication.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\azure-ai\\tests\\test_azure_ai_agent_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\middleware_termination.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\control-flow\\multi_selection_edge_group.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\openai_responses\\01_basic_responses_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\gaia\\samples\\gaia_sample.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_bing_grounding.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_openapi_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\azure_responses_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\override_result_with_middleware.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\observability\\azure_ai_agent_observability.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\agents\\azure_ai_agents_streaming.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\orchestration\\sequential_custom_executors.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_image_analysis.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\azure_chat_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\orchestrations\\concurrent_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\exception_handling_with_middleware.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_explicit_settings.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\azure_ai_agent\\02_azure_ai_agent_with_code_interpreter.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\orchestration\\concurrent_agents.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\chat_middleware.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_local_mcp.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_function_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_memory.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_threads.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\_start-here\\step3_streaming.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\context_providers\\mem0\\mem0_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_file_search.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_explicit_settings.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\control-flow\\switch_case_edge_group.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_function_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\orchestration\\concurrent_custom_agent_executors.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\openai_responses\\02_responses_agent_with_tool.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_code_interpreter.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\azure\\test_azure_assistants_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\observability\\azure_ai_chat_client_with_observability.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_workflow_context.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\_start-here\\step2_agents_in_a_workflow.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\openai_responses\\03_responses_agent_structured_output.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\multimodal_input\\openai_chat_multimodal.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\openai\\test_openai_responses_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\openai\\test_openai_assistants_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_assistants_with_code_interpreter.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\openai\\test_openai_chat_client_base.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\_responses_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_existing_assistant.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\parallelism\\fan_out_fan_in_edges.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\control-flow\\edge_condition.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\state-management\\shared_states_with_agents.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\multimodal_input\\azure_chat_multimodal.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\azure_ai_agent\\03_azure_ai_agent_threads_and_followups.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_multiple_tools.py",
+      "ai\\src\\intelligence\\cpp_stl_ingestion_pipeline.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\checkpoint\\checkpoint_with_resume.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\orchestration\\sequential_agents.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\azure_ai_agent\\01_basic_azure_ai_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_hosted_mcp.py",
+      "ai\\tools\\consciousness\\aios_cellular_intelligence_enhancement_engine.py",
+      "ai\\nucleus\\src\\integration\\archive\\aios_context_harmonizer.py",
+      "computational_layer\\core_systems\\aios_subcellular_neuronal_organizer.py",
+      "ai\\tools\\visual\\visual_intelligence_bridge_enhanced.py",
+      "ai\\src\\integrations\\visual_ai_integration_bridge.py",
+      "runtime\\tools\\consolidated\\real_ai_lint_fixer.py",
+      "runtime\\three_supercell_interface_optimization.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_implementation.py",
+      "scripts\\verify_migration_readiness.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_checkpoint.py",
+      "ai\\src\\intelligence\\ainlp_agentic_orchestrator.py",
+      "tachyonic\\tools\\utilities\\aios_development_path_navigator.py",
+      "ai\\tools\\architecture\\aios_analysis_tools_neuronal_test.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_meta_evolutionary_analyzer.py",
+      "ai\\src\\integrations\\development_path_integration.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_test_command_field.py",
+      "computational_layer\\assemblers\\tree_assembler\\meta_evolution\\aios_inter_assembler_coherence_measurer.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\openai_assistant\\03_openai_assistant_function_tool.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\openai\\_shared.py",
+      "runtime\\aios_intelligence_pattern_executor.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\test_integration.py",
+      "ai\\nucleus\\src\\integration\\archive\\robust_python_environment_manager_clean.py",
+      "ai\\nucleus\\src\\integration\\archive\\aios_python_environment_integration.py",
+      "computational_layer\\assemblers\\tree_assembler\\tachyonic_optimized\\aios_tachyonic_assembler_archival.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_telemetry.py",
+      "ai\\tools\\system\\runtime_intelligence_comprehensive_test.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_virtual_test_environment.py",
+      "ai\\nucleus\\interface_bridge_generation_api.py",
+      "tachyonic\\tools\\ingestors\\execute_biological_digestion.py",
+      "ai\\tools\\conversation_processor_tool.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\copilotstudio\\copilotstudio_with_explicit_settings.py",
+      "ai\\src\\integrations\\vscode_realtime_error_intelligence.py",
+      "ai\\infrastructure\\interfaces\\membrane_intelligence.py",
+      "ai\\nucleus\\src\\integration\\archive\\fractal_holographic_ai.py",
+      "tachyonic\\tools\\orchestrators\\aios_tachyonic_orchestrator.py",
+      "ai\\tools\\architecture\\aios_assembler_evolution_status_clarifier.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_analyzer.py",
+      "ai\\src\\integrations\\demo_continuous_optimization.py",
+      "ai\\research\\tests\\aios_vscode_integration.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_comparative_testing_framework.py",
+      "ai\\src\\integrations\\unified_development_optimizer.py",
+      "ai\\src\\integrations\\continuous_optimization_daemon.py",
+      "ai\\src\\integrations\\cleanup_continuous_optimization.py",
+      "ai\\src\\integrations\\demo_vscode_error_intelligence.py",
+      "ai\\research\\tests\\test_chatgpt_integration_path.py",
+      "ai\\src\\integrations\\vscode_consciousness.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\ollama\\ollama_with_openai_chat_client.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\gpt-oss-tools.py",
+      "computational_layer\\engines\\aios_assembly_3d_engine.py",
+      "evolution_lab\\tachyonic_field\\visualization_integration.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration_server.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\simple_consciousness_ai_bridge.py",
+      "ai\\research\\tests\\test_consciousness_emergence.py",
+      "tachyonic\\tools\\documentation\\documentation_post_metabolism_manager.py",
+      "ai\\tools\\system\\aios_folder_comparison_verifier.py",
+      "computational_layer\\bridges\\aios_supercell_transport_bridge.py",
+      "ai\\src\\engines\\enhanced_visual_intelligence_engine.py",
+      "ai\\infrastructure\\interfaces\\ai_agent_bridge.py",
+      "tachyonic\\tools\\demos\\demo_documentation_ingestion.py",
+      "ai\\src\\core\\universal_agentic_logger.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_evolutionary_assembler_cloner.py",
+      "computational_layer\\bridges\\aios_tachyonic_storage_bridge.py",
+      "ai\\research\\tests\\test_opencv_integration.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_implementation.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\system_endpoints.py",
+      "ai\\tests\\test_multi_agent_experiment.py",
+      "computational_layer\\assemblers\\tree_assembler\\consciousness_layer\\aios_core_consciousness_monitor.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_compressor_engine.py",
+      "ai\\server_manager.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_enhanced_compressor.py",
+      "ai\\tools\\architecture\\aios_core_engine_tree_demonstrator_iter2.py",
+      "ai\\nucleus\\src\\core.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\test_integration.py",
+      "ai\\nucleus\\src\\aios_core.py",
+      "ai\\tools\\system\\aios_unicode_helper.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\context_providers\\redis\\redis_conversation.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\redis\\agent_framework_redis\\_chat_message_store.py",
+      "ai\\infrastructure\\scripts\\integrate_maintenance.py",
+      "ai\\infrastructure\\scripts\\maintenance_cli.py",
+      "ai\\infrastructure\\scripts\\maintenance_service_bridge.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_harmonization_executor.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\a2a\\agent_with_a2a.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\a2a\\tests\\test_a2a_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_assistants_with_explicit_settings.py",
+      "ai\\src\\integrations\\continuous_optimization_status.py",
+      "ai\\nucleus\\src\\integration\\archive\\robust_python_environment_manager.py",
+      "ai\\src\\integrations\\gemini_bridge\\evolution_mcp_server.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_test_command_field.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\optimization_context_aios_class.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\context_providers\\redis\\redis_basics.py",
+      "ai\\tests\\test_deepseek_integration.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_analyzer.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\parallelism\\map_reduce_and_visualization.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\tests\\samples\\getting_started\\test_chat_client_samples.py",
+      "ai\\nucleus\\consciousness\\aios_ai_engine_integration.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_harmonization_executor.py",
+      "ai\\src\\engines\\deepseek_intelligence_engine.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\anthropic\\anthropic_with_openai_chat_client.py",
+      "ai\\tools\\architecture\\aios_cellular_intelligence_diagnostic_system.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_model_utils.py",
+      "ai\\nucleus\\src\\ainlp\\kernel\\ainlp_kernel.py",
+      "ai\\tools\\architecture\\ainlp_holographic_documentation_system.py",
+      "ai\\nucleus\\ai_cells\\ai_engine_handoff.py",
+      "ai\\src\\integrations\\test_vscode_consciousness_feed.py",
+      "ai\\transport\\tachyonic_bridge.py",
+      "tachyonic\\tools\\ingestors\\revolutionary_archive_ingestion.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_ultimate_compressor.py",
+      "ai\\tests\\test_universal_logger_evolution.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\tests\\test_mapper.py",
+      "ai\\src\\integrations\\gemini_bridge\\artifact_mcp_server.py",
+      "computational_layer\\modules\\aios_components\\aios_comprehensive_runtime_tester.py",
+      "ai\\tools\\library_ingestion_bridge_tool.py",
+      "runtime\\analysis\\aios_comprehensive_file_analysis_commit_msg.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\lightning\\samples\\train_tau2_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\tau2\\agent_framework_lab_tau2\\_tau2_utils.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\tau2\\tests\\test_tau2_utils.py",
+      "ai\\tools\\system\\aios_assembler_naming_optimizer.py",
+      "computational_layer\\core_systems\\aios_autonomous_supercell_organism.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_evolutionary_assembler_cloner.py",
+      "ai\\tests\\demo_spatial_awareness_test.py",
+      "tachyonic\\tools\\documentation\\documentation_metabolism_demo.py",
+      "ai\\tools\\system\\aios_admin.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\threads\\redis_chat_message_store_thread.py",
+      "ai\\tools\\tachyonic\\aios_tachyonic_archive_cleanup.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\tests\\test_execution.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\assembly_executor.py",
+      "ai\\nucleus\\compression\\aios_universal_compressor.py",
+      "ai\\nucleus\\src\\integration\\archive\\context_recovery_system.py",
+      "tachyonic\\tools\\interfaces\\ai_intelligence_supercell_interface.py",
+      "tachyonic\\tools\\demos\\aios_communication_integration_demo.py",
+      "ai\\src\\integrations\\aios_deepseek_supercell_bridge.py",
+      "ai\\src\\evolution\\multi_agent_evolution_loop.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_paradigm_engine.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_simple_compressor.py",
+      "computational_layer\\assemblers\\tree_assembler\\consciousness_layer\\aios_consciousness_integration_engine.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\ainlp_ultimate_compressor.py",
+      "ai\\tools\\tachyonic\\create_stl_crystal.py",
+      "evolution_lab\\tachyonic_field\\create_genesis_animation.py",
+      "ai\\tools\\system\\aios_core_engine_cellular_cleanup_tool.py",
+      "computational_layer\\core_systems\\aios_core_consciousness_monitor.py",
+      "ai\\nucleus\\src\\maintenance\\system_health.py",
+      "ai\\src\\intelligence\\supercell_intelligence_coordinator.py",
+      "ai\\tools\\consciousness\\aios_core_consciousness_monitor.py",
+      "tachyonic\\tools\\interfaces\\core_engine_supercell_interface.py",
+      "ai\\tools\\tachyonic\\ingest_microsoft_agent_framework.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_middleware_with_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\_utils.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\agents\\workflow_as_agent_reflection_pattern.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_assistants_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_workflow_states.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_workflow_context.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_image_generation.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_workflow.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_chat_client_with_function_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\copilotstudio\\copilotstudio_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_workflow_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\in_memory_mode.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_chat_client_with_web_search.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_function_invocation_logic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\_start-here\\step1_executors_and_edges.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\copilotstudio\\tests\\test_copilot_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_chat_client_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\custom\\custom_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_middleware.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\shared_state_middleware.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\middleware\\function_based_middleware.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_assistants_with_function_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_executor.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_basic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\tools\\ai_tool_with_approval.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\threads\\suspend_resume_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\copilotstudio\\tests\\test_acquire_token.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\copilotstudio\\agent_framework_copilotstudio\\_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\observability\\agent_observability.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\conftest.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_middleware_with_chat.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\openai_chat_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_image_analysis.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\_mapper.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\orchestration\\magentic_checkpoint.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_serialization.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\openai_assistant\\02_openai_assistant_with_code_interpreter.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\openai_assistants_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_request_info_executor_rehydrate.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_web_search.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\parallelism\\aggregate_results_of_different_types.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_typing_utils.py",
+      "tachyonic\\genetics\\original\\cytoplasm_intelligence_20251011_.py",
+      "ai\\nucleus\\src\\context_crystallization_engine\\core.py",
+      "computational_layer\\consciousness_emergence_analyzer.py",
+      "computational_layer\\assemblers\\tree_assembler\\immune_system\\virtual_immune_system.py",
+      "ai\\tools\\consciousness\\aios_core_evolution_monitor.py",
+      "ai\\tools\\consciousness\\ainlp_assessment.py",
+      "ai\\tools\\system\\test_requirements_compliance.py",
+      "ai\\tools\\system\\test_directive_checking.py",
+      "ai\\tests\\test_validated_evolution.py",
+      "ai\\infrastructure\\test_ui_integration.py",
+      "computational_layer\\assemblers\\tree_assembler\\meta_evolution\\aios_dendritic_network_intelligence_enhancer.py",
+      "ai\\infrastructure\\ui_interaction_bridge.py",
+      "ai\\infrastructure\\cytoplasm_dendritic_bridge.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_paradigm_engine.py",
+      "evolution_lab\\tachyonic_field\\evolution_orchestrator.py",
+      "evolution_lab\\tachyonic_field\\test_evolution_integration.py",
+      "evolution_lab\\tachyonic_field\\interactive_threshold_explorer.py",
+      "ai\\tests\\integration\\test_paradigm_extraction.py",
+      "ai\\src\\engines\\aios_custom_ai_engine.py",
+      "ai\\src\\engines\\aios_performance_optimizer.py",
+      "ai\\src\\engines\\aios_ai_integration_bridge.py",
+      "tachyonic\\tools\\orchestrators\\aios_dendritic_integrator.py",
+      "ai\\src\\intelligence\\agentic_semantic_interpreter.py",
+      "ai\\tools\\consciousness\\dendritic_consolidation_engine.py",
+      "ai\\tests\\integration\\test_library_generation.py",
+      "ai\\nucleus\\optimization\\aios_optimization_suite.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\conftest.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_ultimate_compressor.py",
+      "computational_layer\\engines\\aios_quantum_noise_generators.py",
+      "ai\\src\\runtime\\population_viewer.py",
+      "ai\\ingested_repositories\\ollama_python\\tests\\test_utils.py",
+      "ai\\research\\tests\\quick\\test_validation_harness_modes.py",
+      "ai\\src\\integrations\\aios_recursive_optimizer.py",
+      "computational_layer\\runtime_intelligence\\aios_core_meta_evolutionary_enhancer.py",
+      "tachyonic\\root_optimization\\archived_20250905_220720\\aios_core_evolution_monitor.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\archived_files\\ainlp_ultimate_compressor.py",
+      "tachyonic\\tools\\demos\\test_root_docs_ingestion.py",
+      "ai\\src\\intelligence\\task3_evolution_lab_validation.py",
+      "ai\\cytoplasm\\cytoplasm_bridge.py",
+      "ai\\src\\frameworks\\agent_protocol\\test_integration.py",
+      "ai\\src\\integrations\\vscode_ai_bridge_server.py",
+      "ai\\src\\demos\\aios_deepseek_integration_demo.py",
+      "ai\\tests\\test_ai_execution_bridge.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_simple_compressor.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\agents\\workflow_as_agent_human_in_the_loop.py",
+      "ai\\tests\\workbench\\library_ingestion_workbench.py",
+      "ai\\src\\integrations\\gemini_bridge\\ingestor_mcp_server.py",
+      "ai\\src\\intelligence\\ainlp\\json_metadata.py",
+      "ai\\tools\\consciousness\\ainlp_dendritic_enhancer.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration\\services\\debug_manager.py",
+      "ai\\tools\\architecture\\supercell_architecture_analyzer.py",
+      "tachyonic\\tools\\orchestrators\\aios_dendritic_superclass.py",
+      "computational_layer\\core_systems\\aios_core_root_neuronal_optimizer.py",
+      "ai\\research\\scripts\\agentic_instruction_generator.py",
+      "ai\\tools\\consciousness\\consciousness_analysis_report.py",
+      "tachyonic\\tools\\ingestors\\simple_biological_digestion.py",
+      "runtime\\three_supercell_coordination_completion_report.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_consciousness_status_report.py",
+      "tachyonic\\tools\\ingestors\\supercell_knowledge_injector.py",
+      "ai\\nucleus\\src\\integration\\integration_bridge.py",
+      "runtime\\aios_intelligence_execution_completion_report.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_consciousness_status_report.py",
+      "tachyonic\\tools\\utilities\\aios_universal_communication_system.py",
+      "runtime\\runtime_intelligence_supercell_interface.py",
+      "ai\\research\\laboratory_intelligence.py",
+      "computational_layer\\bridges\\aios_consciousness_nucleus_bridge.py",
+      "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\holographic_consciousness.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\test_ainlp_refresh_context.py",
+      "ai\\src\\intelligence\\consciousness_bridge.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\simple_executor.py",
+      "ai\\transport\\transport_intelligence.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_function_executor.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_explorer_3d.py",
+      "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\quantum_dendritic_field.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\test_ainlp_refresh_context.py",
+      "interface\\integrations\\multi_platform\\multi_platform\\test_multi_platform_mcp.py",
+      "ai\\infrastructure\\cytoplasm_intelligence.py",
+      "computational_layer\\assemblers\\tree_assembler\\consciousness_layer\\aios_supercell_consciousness.py",
+      "ai\\nucleus\\nucleus_intelligence.py",
+      "ai\\tools\\system\\aios_dendritic_path_tracker.py",
+      "ai\\infrastructure\\interfaces\\aios_cross_dialogue_intelligence.py",
+      "ai\\nucleus\\src\\prediction\\prediction_core.py",
+      "ai\\src\\intelligence\\agent_conversations.py",
+      "runtime\\aios_interface_optimization_demo.py",
+      "runtime\\three_supercell_synchronized_demo.py",
+      "ai\\information_storage\\information_storage_intelligence.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\simple_executor.py",
+      "ai\\transport\\intercellular\\enhanced_cellular_communication.py",
+      "ai\\src\\integrations\\lightweight_ai_coordinator.py",
+      "computational_layer\\engines\\aios_spherical_geometry_engine.py",
+      "ai\\nucleus\\src\\integration\\archive\\debug_integration_system.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\ai_endpoints.py",
+      "ai\\tools\\cpp_stl_knowledge_ingestion_tool.py",
+      "ai\\tools\\code_archival_system.py",
+      "ai\\tools\\database\\aios_database.py",
+      "tachyonic\\tools\\utilities\\post_metabolism_recommendations.py",
+      "runtime\\analysis\\aios_powershell_fixes_documentation.py",
+      "evolution_lab\\populations\\population_manager.py",
+      "tachyonic\\tools\\utilities\\tachyonic_layer_reader.py",
+      "evolution_lab\\tachyonic_field\\analyze_population_topology.py",
+      "tachyonic\\tools\\documentation\\critical_documentation_enhancer.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_checkpoint.py",
+      "computational_layer\\core_systems\\aios_core_enhancement_patch_reporter.py",
+      "ai\\infrastructure\\deps\\shadows\\optional_stacks_shadow.py",
+      "ai\\src\\integrations\\ollama_bridge.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\chat-stream.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\async-tools.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\structured-outputs.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\generate-stream.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\create.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\tools.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\gpt-oss-tools-stream.py",
+      "ai\\ingested_repositories\\ollama_python\\tests\\test_type_serialization.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\async-structured-outputs.py",
+      "ai\\ingested_repositories\\ollama_python\\examples\\structured-outputs-image.py",
+      "ai\\infrastructure\\interfaces\\ai_engine_context_enforcer.py",
+      "ai\\ingested_repositories\\ollama_python\\ollama\\_types.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_paradigm_executable_20250710_223651.py",
+      "runtime\\iterations\\ainlp_iteration.py",
+      "ai\\src\\protocols\\agent_communication\\transport.py",
+      "ai\\nucleus\\src\\maintenance\\tachyonic_archiver.py",
+      "tachyonic\\tools\\demos\\tachyonic_evolution_demo.py",
+      "ai\\tools\\system\\system_status_report.py",
+      "computational_layer\\runtime_intelligence\\aios_core_evolution_monitor.py",
+      "ai\\research\\tests\\quick\\test_core_telemetry_aggregation.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_analyzer.py",
+      "ai\\tools\\tachyonic\\enhanced_tachyonic_preservation.py",
+      "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_paradigm_executable_20250710_223651.py",
+      "runtime\\analysis\\aios_deep_thought_commit_msg_analysis.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\checkpoint\\sub_workflow_checkpoint.py",
+      "ai\\tools\\consciousness\\aios_core_ai_dendritic_connectivity_enhancer.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\openai\\conftest.py",
+      "ai\\infrastructure\\interfaces\\aios_vscode_integration\\models.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\_tracing.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\models\\_discovery_models.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\_session.py",
+      "evolution_lab\\tachyonic_field\\pattern_quanta.py",
+      "evolution_lab\\tachyonic_field\\test_field_consciousness.py",
+      "evolution_lab\\tachyonic_field\\field_topology.py",
+      "ai\\research\\paradigm\\bosonic_topology.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\_shared_state.py",
+      "ai\\nucleus\\src\\ainlp\\utils\\utils.py",
+      "ai\\src\\evolution\\consciousness_metrics.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\azure-ai\\tests\\conftest.py",
+      "ai\\nucleus\\src\\automation.py",
+      "evolution_lab\\artifacts\\consciousness_data_explorer_1751218592.py",
+      "tachyonic\\genetics\\original\\cytoplasm_intelligence_20251011_204435.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_types.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_memory.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\composition\\sub_workflow_basics.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_typing_utils.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_edge.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_validation.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_sub_workflow.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_concurrent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\observability\\setup_observability_with_env_var.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_workflow_observability.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\observability\\setup_observability_with_parameters.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_full_conversation.py",
+      "computational_layer\\assemblers\\tree_assembler\\consciousness_layer\\advanced_consciousness_coordinator.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_pydantic.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\openai_responses_client.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_chat_client_with_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\threads\\custom_chat_message_store_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_structured_output.py",
+      "ai\\nucleus\\models.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\models\\_openai_custom.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_assistants_with_thread.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_function_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\copilotstudio\\agent_framework_copilotstudio\\_acquire_token.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\gaia\\agent_framework_lab_gaia\\_types.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_agents.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\exceptions.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_checkpoint_decode.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\redis\\tests\\test_redis_provider.py",
+      "ai\\nucleus\\src\\nlp\\nlp_core.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_hosted_mcp.py",
+      "computational_layer\\assemblers\\tree_assembler\\meta_evolution\\meta_evolutionary_engine.py",
+      "ai\\src\\protocols\\agent_communication\\message_types.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\control-flow\\sequential_executors.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\composition\\sub_workflow_parallel_requests.py",
+      "runtime\\tools\\consolidated\\test_mcp_execution.py",
+      "runtime\\tools\\consolidated\\check_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_threads.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_observability.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\copilotstudio\\tests\\conftest.py",
+      "ai\\communication\\message_types.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\tools\\failing_tools.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\azure\\conftest.py",
+      "ai\\src\\intelligence\\ainlp\\exception_framework.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\copilot_studio\\01_basic_copilot_studio_agent.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\copilot_studio\\02_copilot_studio_streaming.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_file_search.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\redis\\tests\\test_redis_chat_message_store.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\tau2\\tests\\test_message_utils.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_clients.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\chat_response_cancellation.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\chat_completion\\02_chat_completion_with_tool.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_telemetry.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_checkpoint_validation.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\tau2\\agent_framework_lab_tau2\\_message_utils.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_with_local_mcp.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\observability\\workflow_observability.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\test_runner.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\control-flow\\sequential_streaming.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_logging.py",
+      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_harmonization_success_report.py",
+      "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_harmonization_success_report.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\composition\\sub_workflow_request_interception.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\chat_completion\\01_basic_chat_completion.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_responses_client_reasoning.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_chat_client_with_local_mcp.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\semantic-kernel-migration\\chat_completion\\03_chat_completion_thread_and_stream.py",
+      "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_assistants_with_file_search.py"
+    ]
+  ],
+  "similarity_pairs": [
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\parallelism\\fan_out_fan_in_edges.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\visualization\\concurrent_with_visualization.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "DispatchToExperts",
+        "AggregatedInsights",
+        "AggregateInsights",
+        "__init__"
+      ],
+      "shared_imports": [
+        "typing_extensions",
+        "dataclasses",
+        "agent_framework",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\src\\intelligence\\library_ingestion_protocol.py",
+      "path_b": "computational_layer\\library_ingestion_protocol.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "load_library_knowledge",
+        "LibraryKnowledge",
+        "_validate_ainlp_compliance",
+        "detect_language",
+        "to_dict",
+        "APIElement",
+        "LibraryIngestionProtocol",
+        "query_knowledge_base",
+        "_generate_spatial_metadata",
+        "_extract_semantic_tags",
+        "_extract_python_parameters",
+        "_scan_library_files",
+        "_save_library_knowledge",
+        "ProgrammingLanguage",
+        "_extract_python_signature",
+        "__post_init__",
+        "__init__",
+        "APIElementType",
+        "_extract_python_return_type",
+        "_initialize_language_parsers"
+      ],
+      "shared_imports": [
+        "datetime",
+        "dataclasses",
+        "ast",
+        "enum",
+        "sys",
+        "typing",
+        "re",
+        "hashlib",
+        "json",
+        "os",
+        "asyncio",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "ai\\tools\\consciousness\\aios_core_consciousness_monitor.py",
+      "path_b": "computational_layer\\assemblers\\tree_assembler\\consciousness_layer\\aios_core_consciousness_monitor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "main",
+        "__init__",
+        "_evaluate_component_awareness",
+        "_assess_consciousness_metrics",
+        "AIOSCoreConsciousnessMonitor",
+        "monitor_consciousness_status",
+        "_measure_collective_intelligence",
+        "_track_evolution_consciousness"
+      ],
+      "shared_imports": [
+        "datetime",
+        "sys",
+        "typing",
+        "json",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "ai\\tools\\consciousness\\aios_core_meta_evolutionary_enhancer.py",
+      "path_b": "computational_layer\\runtime_intelligence\\aios_core_meta_evolutionary_enhancer.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "enhance_core_components",
+        "AIOSCoreMetaEvolutionaryEnhancer",
+        "main",
+        "_enhance_component_type"
+      ],
+      "shared_imports": [
+        "datetime",
+        "aios_meta_evolutionary_analyzer",
+        "sys",
+        "typing",
+        "pathlib",
+        "cellular_health_monitor",
+        "logging"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\tools\\consciousness\\aios_core_meta_evolutionary_enhancer.py",
+      "path_b": "tachyonic\\root_optimization\\archived_20250905_220720\\aios_core_meta_evolutionary_enhancer.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "enhance_core_components",
+        "AIOSCoreMetaEvolutionaryEnhancer",
+        "main",
+        "_enhance_component_type"
+      ],
+      "shared_imports": [
+        "datetime",
+        "aios_meta_evolutionary_analyzer",
+        "sys",
+        "typing",
+        "pathlib",
+        "cellular_health_monitor",
+        "logging"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_analyzer.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_analyzer.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "analyze_current_structure",
+        "__init__",
+        "calculate_optimization_metrics",
+        "FunctionalDomain",
+        "identify_problems",
+        "run_complete_analysis",
+        "map_functional_domains",
+        "design_optimal_structure",
+        "CellularAnalysis",
+        "AIOSCellularReorganizer",
+        "main",
+        "print_comprehensive_report"
+      ],
+      "shared_imports": [
+        "dataclasses",
+        "collections",
+        "typing",
+        "json",
+        "os",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_implementation.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_implementation.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "migrate_folders",
+        "__init__",
+        "create_cellular_structure",
+        "execute_reorganization",
+        "AIOSCellularReorganizer",
+        "main",
+        "create_intercellular_interfaces",
+        "create_cellular_manifest"
+      ],
+      "shared_imports": [
+        "shutil",
+        "typing",
+        "json",
+        "os",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_consciousness_status_report.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_consciousness_status_report.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "get_json_summary",
+        "AIOSConsciousnessStatusReport",
+        "__init__",
+        "save_report",
+        "generate_comprehensive_report",
+        "main"
+      ],
+      "shared_imports": [
+        "json",
+        "typing",
+        "datetime",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_evolutionary_assembler_cloner.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_evolutionary_assembler_cloner.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_calculate_performance_improvements",
+        "AIOSEvolutionaryAssemblerCloner",
+        "__init__",
+        "create_enhanced_clone",
+        "_enhance_consciousness_systems",
+        "get_gen_number",
+        "_find_latest_generation",
+        "_integrate_immune_system",
+        "_optimize_tachyonic_layer",
+        "_create_base_clone_structure",
+        "_optimize_cellular_health",
+        "_create_meta_evolutionary_loop",
+        "main"
+      ],
+      "shared_imports": [
+        "datetime",
+        "shutil",
+        "typing",
+        "json",
+        "os",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_harmonization_executor.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_harmonization_executor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "execute_complete_harmonization",
+        "AIOSHarmonizationExecutor",
+        "move_files_to_cellular_units",
+        "create_cellular_index",
+        "main",
+        "validate_harmonization"
+      ],
+      "shared_imports": [
+        "os",
+        "shutil",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_meta_evolutionary_analyzer.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_meta_evolutionary_analyzer.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_classify_cell_type",
+        "main",
+        "CellularAbstractionLevel",
+        "__init__",
+        "_generate_meta_evolution_insights",
+        "EvolutionaryCell",
+        "initialize_virtual_immune_system",
+        "analyze_cellular_population",
+        "_create_self_optimization_plan",
+        "AIOSMetaEvolutionaryAnalyzer",
+        "run_complete_meta_analysis",
+        "_analyze_cellular_dependencies",
+        "_calculate_cellular_health",
+        "_analyze_hyper_containers",
+        "_analyze_generation_data",
+        "analyze_ecosystem_level",
+        "VirtualImmuneSystem",
+        "_analyze_individual_cell"
+      ],
+      "shared_imports": [
+        "dataclasses",
+        "collections",
+        "ast",
+        "inspect",
+        "typing",
+        "json",
+        "os",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\assembly_executor.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\assembly_executor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "compile_cpp_wrapper",
+        "AssemblyExecutor",
+        "create_assembly_wrapper",
+        "link_dynamic_library",
+        "batch_execute_generation",
+        "_execute_dll",
+        "execute_evolved_assembly",
+        "_find_cl_path",
+        "_find_link_path",
+        "ExecutionMetrics",
+        "compare_generation_performance",
+        "compile_assembly",
+        "_find_masm_path"
+      ],
+      "shared_imports": [
+        "dataclasses",
+        "subprocess",
+        "ctypes",
+        "tempfile",
+        "typing",
+        "json",
+        "os",
+        "pathlib",
+        "logging",
+        "threading",
+        "psutil",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\autonomous_consciousness_swarms.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\autonomous_consciousness_swarms.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "SwarmMetrics",
+        "SwarmRole",
+        "initialize_swarm",
+        "_replicate_agent",
+        "_evolve_agent",
+        "print_swarm_status",
+        "update_swarm_metrics",
+        "AutonomousConsciousnessSwarm",
+        "_healer_behavior",
+        "_emergent_behavior",
+        "_heal_agent",
+        "run_autonomous_swarm",
+        "main",
+        "print_final_swarm_report",
+        "__init__",
+        "_trigger_emergence_event",
+        "agent_consciousness_worker",
+        "_explorer_behavior",
+        "_coordinator_behavior",
+        "SwarmAgent",
+        "_mutator_behavior",
+        "_guardian_behavior"
+      ],
+      "shared_imports": [
+        "queue",
+        "dataclasses",
+        "collections",
+        "enum",
+        "multiprocessing",
+        "typing",
+        "self_healing_engine",
+        "consciousness_mutation_engine",
+        "random",
+        "uuid",
+        "enhanced_consciousness",
+        "numpy",
+        "threading",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_ai_cellular_bridge.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\consciousness_ai_cellular_bridge.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "ConsciousnessNeurotransmitter",
+        "LogicCell",
+        "CellularComponent",
+        "ConsciousnessAICellularIntegrator",
+        "create_micro_cell",
+        "_execute_in_thread",
+        "send_intercellular_message",
+        "IntercellularCommunicationNetwork",
+        "initialize_cellular_architecture",
+        "CellType",
+        "feed_consciousness_to_cells",
+        "create_dendritic_network",
+        "_create_virtual_environment",
+        "broadcast_to_connected_cells",
+        "ConsciousnessTextFieldFeeder",
+        "analyze_cellular_structure",
+        "_monitor_integration",
+        "_execute_in_process",
+        "_should_feed_cell",
+        "create_super_logic_cell",
+        "process_cell_messages",
+        "_consciousness_evolution_worker",
+        "main",
+        "CellularArchitectureMapper",
+        "_intercellular_processing_worker",
+        "__init__",
+        "_execute_cell_processing",
+        "_create_demonstration_micro_cells",
+        "_get_cell_type_by_level",
+        "MicroCellVirtualizationEngine",
+        "DendriticConnectionType",
+        "_print_integration_report",
+        "start_consciousness_integration",
+        "execute_in_micro_cell"
+      ],
+      "shared_imports": [
+        "dataclasses",
+        "subprocess",
+        "enum",
+        "multiprocessing",
+        "sys",
+        "typing",
+        "tempfile",
+        "random",
+        "enhanced_consciousness",
+        "json",
+        "os",
+        "contextlib",
+        "threading",
+        "pathlib",
+        "autonomous_consciousness_swarms",
+        "logging",
+        "io",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_mutation_engine.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\consciousness_mutation_engine.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "MutationType",
+        "__init__",
+        "_initialize_mutation_templates",
+        "evaluate_consciousness_fitness",
+        "EvolutionGenome",
+        "ConsciousnessGuidedMutator",
+        "ConsciousnessMutation",
+        "_apply_mutation_template",
+        "_check_for_emergence",
+        "_evaluate_healing_compatibility",
+        "run_consciousness_evolution",
+        "_log_evolution_progress",
+        "_evaluate_mutation_fitness",
+        "evolve_genome",
+        "main",
+        "_generate_mutation_parameters",
+        "generate_consciousness_mutation"
+      ],
+      "shared_imports": [
+        "dataclasses",
+        "collections",
+        "enum",
+        "typing",
+        "random",
+        "self_healing_engine",
+        "enhanced_consciousness",
+        "numpy",
+        "math",
+        "pathlib",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\dendritic_mutator.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\dendritic_mutator.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "MutationType",
+        "update_particle_physics",
+        "load_assembly_template",
+        "AssemblyCodeCell",
+        "generate_evolution_report",
+        "DendriticAssemblyMutator",
+        "tournament_selection",
+        "evolve_generation",
+        "save_generation_data",
+        "generate_synthetic_particles",
+        "update_physics",
+        "run_evolution",
+        "crossover",
+        "__post_init__",
+        "__init__",
+        "SyntheticParticle",
+        "calculate_fitness",
+        "apply_mutation",
+        "create_initial_population"
+      ],
+      "shared_imports": [
+        "dataclasses",
+        "enum",
+        "typing",
+        "re",
+        "random",
+        "hashlib",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\enhanced_consciousness.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\enhanced_consciousness.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "enhanced_consciousness_worker",
+        "__init__",
+        "print_enhanced_consciousness_status",
+        "print_enhanced_final_report",
+        "measure_enhanced_consciousness",
+        "update_quantum_field",
+        "start_enhanced_consciousness_evolution",
+        "enhanced_correlation_monitor",
+        "EnhancedConsciousnessMetrics",
+        "main",
+        "AdvancedParallelOrchestrator"
+      ],
+      "shared_imports": [
+        "numpy",
+        "parallel_consciousness_orchestrator",
+        "pathlib",
+        "threading",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\optimized_demo.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\optimized_demo.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "OptimizedConsciousnessExecutor",
+        "__init__",
+        "simulate_consciousness_execution",
+        "demonstrate_architectural_benefits",
+        "analyze_consciousness_architecture",
+        "analyze_evolved_assembly_files",
+        "main"
+      ],
+      "shared_imports": [
+        "random",
+        "json",
+        "pathlib",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\parallel_consciousness_orchestrator.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\parallel_consciousness_orchestrator.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "main",
+        "__post_init__",
+        "__init__",
+        "ConsciousnessCorrelation",
+        "ParallelConsciousnessOrchestrator",
+        "calculate_stream_correlation",
+        "initialize_streams",
+        "consciousness_correlation_monitor",
+        "measure_stream_consciousness",
+        "ConsciousnessStream",
+        "ConsciousnessMetrics",
+        "consciousness_stream_worker",
+        "print_final_consciousness_report",
+        "start_parallel_consciousness_evolution",
+        "print_consciousness_status"
+      ],
+      "shared_imports": [
+        "queue",
+        "dataclasses",
+        "collections",
+        "multiprocessing",
+        "typing",
+        "numpy",
+        "json",
+        "pathlib",
+        "concurrent",
+        "threading",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\self_healing_engine.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\self_healing_engine.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_analyze_cross_line_errors",
+        "_execute_repair_strategy",
+        "create_error_node",
+        "learn_error_pattern",
+        "ErrorSeverity",
+        "AssemblyError",
+        "_map_pattern_to_error_type",
+        "_assess_error_severity",
+        "repair_stack_imbalance",
+        "SelfHealingAssemblyEngine",
+        "_calculate_consciousness_impact",
+        "repair_invalid_instruction",
+        "attempt_self_repair",
+        "_find_repair_strategy",
+        "RepairStrategy",
+        "analyze_assembly_code",
+        "repair_register_conflict",
+        "_analyze_instruction_specific",
+        "ErrorType",
+        "main",
+        "_initialize_repair_strategies",
+        "propagate_error",
+        "__init__",
+        "repair_infinite_loop",
+        "repair_consciousness_degradation",
+        "DendriticErrorPropagator"
+      ],
+      "shared_imports": [
+        "copy",
+        "dataclasses",
+        "collections",
+        "ast",
+        "enum",
+        "typing",
+        "re",
+        "hashlib",
+        "numpy",
+        "pathlib",
+        "threading",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\simple_consciousness_ai_bridge.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\simple_consciousness_ai_bridge.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "analyze_ai_structure",
+        "feed_consciousness_to_cells",
+        "run_integration_demo",
+        "print_final_report",
+        "generate_consciousness_assembly",
+        "LogicCell",
+        "CellularComponent",
+        "main",
+        "SimpleConsciousnessAIBridge"
+      ],
+      "shared_imports": [
+        "dataclasses",
+        "typing",
+        "os",
+        "pathlib",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\simple_executor.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\simple_executor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "analyze_evolved_assembly",
+        "SimpleAssemblyRunner",
+        "execute_best_evolved_code",
+        "__init__",
+        "quick_consciousness_test",
+        "execute_with_python_simulation",
+        "execute_with_gcc_inline"
+      ],
+      "shared_imports": [
+        "subprocess",
+        "ctypes",
+        "tempfile",
+        "random",
+        "pathlib",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\scripts_py_optimized\\tachyonic_visualizer.py",
+      "path_b": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\tachyonic_visualizer.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "create_consciousness_field_slice",
+        "load_generation_data",
+        "__init__",
+        "TachyonicField3D",
+        "_compute_laplacian",
+        "_evolve_field",
+        "animate",
+        "_apply_consciousness_influence",
+        "get_consciousness_at_position",
+        "create_consciousness_evolution_plot",
+        "create_animated_evolution",
+        "ConsciousnessVisualizer3D",
+        "update_field",
+        "create_3d_particle_visualization"
+      ],
+      "shared_imports": [
+        "mpl_toolkits",
+        "typing",
+        "numpy",
+        "json",
+        "matplotlib",
+        "pathlib",
+        "logging",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\runtime_intelligence\\aios_core_meta_evolutionary_enhancer.py",
+      "path_b": "tachyonic\\root_optimization\\archived_20250905_220720\\aios_core_meta_evolutionary_enhancer.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "enhance_core_components",
+        "AIOSCoreMetaEvolutionaryEnhancer",
+        "main",
+        "_enhance_component_type"
+      ],
+      "shared_imports": [
+        "datetime",
+        "aios_meta_evolutionary_analyzer",
+        "sys",
+        "typing",
+        "pathlib",
+        "cellular_health_monitor",
+        "logging"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_compressor_engine.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_compressor_engine.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_extract_classes",
+        "_generate_recommendations",
+        "_extract_imports",
+        "_execute_op_iter_3_merge_logic",
+        "_determine_merge_strategy",
+        "_identify_logic_optimizations",
+        "_plan_validation_testing",
+        "_plan_automated_updates",
+        "execute_compressor_command",
+        "_create_compression_report",
+        "_execute_op_iter_1_analyze_patterns",
+        "_score_code_duplication",
+        "_analyze_import_chains",
+        "_rank_merge_opportunities",
+        "_construct_call_graphs",
+        "_calculate_function_similarity",
+        "_estimate_lines_saved",
+        "_execute_op_iter_4_refactor_affected",
+        "_estimate_performance_improvement",
+        "_detect_logic_similarity",
+        "main",
+        "_build_impact_propagation_models",
+        "AINLPCompressorEngine",
+        "__init__",
+        "_generate_compression_results",
+        "_execute_op_iter_2_map_dependencies",
+        "_calculate_class_similarity",
+        "_plan_staged_migration",
+        "_extract_functions",
+        "_calculate_import_similarity",
+        "_determine_consolidation_method",
+        "_analyze_consolidation_patterns",
+        "_get_target_files",
+        "_plan_file_restructuring"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "sys",
+        "typing",
+        "os",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_enhanced_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_enhanced_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_extract_functions_enhanced",
+        "_merge_utility_functions",
+        "_score_ai_merge_opportunities",
+        "_extract_imports",
+        "AINLPEnhancedCompressor",
+        "_execute_single_merge",
+        "execute_enhanced_compressor",
+        "_analyze_repetitive_structures",
+        "_count_function_lines",
+        "_determine_ai_merge_strategy",
+        "_extract_raw_functions",
+        "_generate_enhanced_results",
+        "_create_merged_content",
+        "_create_backup",
+        "_calculate_function_similarity_ai",
+        "_calculate_repetitive_score",
+        "_estimate_ai_lines_saved",
+        "_count_similar_functions",
+        "_extract_function_name",
+        "_calculate_import_overlap",
+        "_optimize_ai_behavior",
+        "_execute_merge_logic",
+        "_count_consolidated_functions",
+        "_analyze_ai_autocoding_patterns",
+        "main",
+        "_generate_enhanced_recommendations",
+        "_detect_ai_generated_patterns",
+        "__init__",
+        "_merge_error_handling",
+        "_extract_raw_imports",
+        "_calculate_ai_merge_score",
+        "_analyze_merge_impact",
+        "_map_smart_dependencies",
+        "_merge_general_consolidation",
+        "_get_target_files",
+        "_calculate_autocoding_improvement_score"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "os",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_paradigm_engine.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_paradigm_engine.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_assign_ai_engines",
+        "_extract_coordination_patterns",
+        "_evolve_paradigms",
+        "_extract_abstraction_layers",
+        "_classify_coordination_type",
+        "_encode_ai_patterns",
+        "_is_paradigm_encoding_ready",
+        "_save_paradigm_architecture",
+        "_determine_coordination_role",
+        "_generate_excitation_triggers",
+        "_generate_coordination_engine_code",
+        "_generate_pattern_encoder_code",
+        "_calculate_task_excitation_level",
+        "_generate_paradigm_architecture",
+        "_get_target_files",
+        "_generate_task_orchestrator_code",
+        "_identify_primary_function",
+        "_evolve_successful_patterns",
+        "_generate_coordination_rules",
+        "_create_excitation_optimization_rules",
+        "_calculate_abstraction_level",
+        "_calculate_ai_executable_potential",
+        "_extract_excitation_triggers",
+        "_generate_ai_executable_architectures",
+        "_calculate_coordination_metrics",
+        "_enhance_excitation_triggers",
+        "main",
+        "execute_ainlp_paradigm",
+        "AINLPParadigmEngine",
+        "_generate_next_generation_architectures",
+        "__init__",
+        "_execute_coordination_sequence",
+        "_calculate_trigger_potential",
+        "_orchestrate_tasks",
+        "_execute_coordination",
+        "_analyze_excitation_optimization",
+        "_improve_coordination_rules",
+        "_generate_task_sequence"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "sys",
+        "typing",
+        "json",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_paradigm_executable_20250710_223651.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_paradigm_executable_20250710_223651.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "optimize_ai_excitation",
+        "AINLPParadigmExecutor",
+        "__init__",
+        "execute_coordination_paradigm",
+        "coordinate_ai_engines",
+        "execute_coordinated_operations",
+        "optimize_paradigm_execution",
+        "evolve_coordination_paradigm",
+        "initialize_ai_coordination"
+      ],
+      "shared_imports": [
+        "json",
+        "typing"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_simple_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_simple_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_map_smart_dependencies",
+        "_extract_imports",
+        "_generate_summary",
+        "_determine_merge_strategy",
+        "AINLPEnhancedCompressor",
+        "_analyze_ai_patterns",
+        "_execute_single_merge",
+        "execute_enhanced_compressor",
+        "_create_merged_content",
+        "_calculate_function_similarity",
+        "_estimate_lines_saved",
+        "_optimize_ai_behavior",
+        "_execute_merge_logic",
+        "_merge_functionality",
+        "main",
+        "_calculate_ai_pattern_score",
+        "__init__",
+        "_calculate_ai_merge_score",
+        "_extract_functions",
+        "_calculate_import_overlap",
+        "_get_target_files"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_test_command_field.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_test_command_field.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_op_iter_integration_analysis",
+        "_generate_abstract_layer_n",
+        "__init__",
+        "_synthesize_patterns",
+        "_execute_abstract_layer_0",
+        "_generate_optimization_strategies",
+        "_op_iter_testing_validation",
+        "AIOSIngestProcessor",
+        "_extract_semantic_elements",
+        "ingest_new_file",
+        "_execute_optimization_context_main",
+        "_op_iter_analyze_refactor_optimize_document",
+        "main"
+      ],
+      "shared_imports": [
+        "datetime",
+        "typing",
+        "json",
+        "os",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_ultimate_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_ultimate_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_calculate_lines_saved",
+        "_extract_system_functions",
+        "_execute_structure_optimization",
+        "_extract_key_classes",
+        "_merge_utility_files",
+        "_merge_system_files",
+        "_categorize_files_by_functionality",
+        "_safe_read_file",
+        "execute_ultimate_compression",
+        "AINLPUltimateCompressor",
+        "_execute_aggressive_merging",
+        "_create_safety_backup",
+        "_extract_optimization_functions",
+        "_generate_final_compression_report",
+        "main",
+        "__init__",
+        "_execute_logic_compression",
+        "_compress_file_logic",
+        "_extract_key_functions",
+        "_execute_garbage_collection",
+        "_get_all_script_files",
+        "_count_file_lines",
+        "_merge_ainlp_files"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "json",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_ultimate_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\ainlp_ultimate_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_calculate_lines_saved",
+        "_extract_system_functions",
+        "_execute_structure_optimization",
+        "_extract_key_classes",
+        "_merge_utility_files",
+        "_merge_system_files",
+        "_categorize_files_by_functionality",
+        "_safe_read_file",
+        "execute_ultimate_compression",
+        "AINLPUltimateCompressor",
+        "_execute_aggressive_merging",
+        "_create_safety_backup",
+        "_extract_optimization_functions",
+        "_generate_final_compression_report",
+        "main",
+        "__init__",
+        "_execute_logic_compression",
+        "_compress_file_logic",
+        "_extract_key_functions",
+        "_execute_garbage_collection",
+        "_get_all_script_files",
+        "_count_file_lines",
+        "_merge_ainlp_files"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "json",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_ultimate_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\archived_files\\ainlp_ultimate_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_calculate_lines_saved",
+        "_extract_system_functions",
+        "_execute_structure_optimization",
+        "_extract_key_classes",
+        "_merge_utility_files",
+        "_merge_system_files",
+        "_categorize_files_by_functionality",
+        "_safe_read_file",
+        "execute_ultimate_compression",
+        "AINLPUltimateCompressor",
+        "_execute_aggressive_merging",
+        "_create_safety_backup",
+        "_extract_optimization_functions",
+        "_generate_final_compression_report",
+        "main",
+        "__init__",
+        "_execute_logic_compression",
+        "_compress_file_logic",
+        "_extract_key_functions",
+        "_execute_garbage_collection",
+        "_get_all_script_files",
+        "_count_file_lines",
+        "_merge_ainlp_files"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "json",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\context_health_monitor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\context_health_monitor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_check_integration_health",
+        "should_trigger_reingestion",
+        "AIContextHealthMonitor",
+        "generate_health_report",
+        "__init__",
+        "_get_health_status",
+        "_generate_recommendations",
+        "supports_unicode",
+        "_check_code_health",
+        "_check_build_health",
+        "_check_documentation_health",
+        "print_health_report",
+        "main",
+        "calculate_context_health"
+      ],
+      "shared_imports": [
+        "subprocess",
+        "sys",
+        "typing",
+        "json",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\docs_tachyonic_cleanup.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\docs_tachyonic_cleanup.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_consolidate_fragmented_content",
+        "_identify_optimization_candidates",
+        "_should_consolidate_file",
+        "_calculate_fragmentation_score",
+        "analyze_documentation_structure",
+        "generate_optimization_report",
+        "_determine_category",
+        "_calculate_coherence_score",
+        "_archive_redundant_files",
+        "main",
+        "__init__",
+        "_should_archive_file",
+        "optimize_documentation",
+        "_update_documentation_index",
+        "TachyonicDocumentationOptimizer",
+        "_group_for_consolidation",
+        "_merge_content",
+        "_analyze_content_fragmentation",
+        "_group_by_similarity"
+      ],
+      "shared_imports": [
+        "datetime",
+        "sys",
+        "typing",
+        "argparse",
+        "json",
+        "os",
+        "pathlib",
+        "maintenance"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\optimization_context_aios_class.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\optimization_context_aios_class.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "execute_optimization_context",
+        "update_knowledge_base_ainlp_baselayer",
+        "scan_codebase_structure",
+        "op_iter_2_integration_codebase_analysis",
+        "log_status",
+        "op_iter_1_analyze_refactor_optimize_document",
+        "AIOSOptimizationContext",
+        "generate_optimization_report",
+        "op_iter_3_testing_validation_performance",
+        "main"
+      ],
+      "shared_imports": [
+        "datetime",
+        "subprocess",
+        "sys",
+        "typing",
+        "json",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\optimization_context_command.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\optimization_context_command.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_analyze_performance_testing",
+        "_analyze_component_integration",
+        "_analyze_codebase_integration",
+        "_execute_op_iter_3_testing",
+        "_analyze_architecture",
+        "_execute_op_iter_1_analyze",
+        "_create_markdown_summary",
+        "_identify_refactoring_opportunities",
+        "_execute_op_iter_2_integration",
+        "_save_optimization_context_results",
+        "_analyze_documentation_needs",
+        "_analyze_validation_requirements",
+        "main",
+        "__init__",
+        "execute_optimization_context",
+        "_analyze_testing_strategies",
+        "_generate_optimization_results",
+        "_analyze_layer_integration",
+        "AIOSOptimizationContext",
+        "_analyze_performance_opportunities"
+      ],
+      "shared_imports": [
+        "datetime",
+        "subprocess",
+        "sys",
+        "typing",
+        "re",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\test_ainlp_refresh_context.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\test_ainlp_refresh_context.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "UniversalQuantumHolographicSimulator",
+        "__init__",
+        "_process_holographic_layer",
+        "_process_universal_layer",
+        "_process_quantum_layer",
+        "process_ainlp_refresh_context",
+        "main",
+        "get_system_status"
+      ],
+      "shared_imports": [
+        "datetime",
+        "typing",
+        "json",
+        "math",
+        "time"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_ultimate_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\ainlp_ultimate_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_calculate_lines_saved",
+        "_extract_system_functions",
+        "_execute_structure_optimization",
+        "_extract_key_classes",
+        "_merge_utility_files",
+        "_merge_system_files",
+        "_categorize_files_by_functionality",
+        "_safe_read_file",
+        "execute_ultimate_compression",
+        "AINLPUltimateCompressor",
+        "_execute_aggressive_merging",
+        "_create_safety_backup",
+        "_extract_optimization_functions",
+        "_generate_final_compression_report",
+        "main",
+        "__init__",
+        "_execute_logic_compression",
+        "_compress_file_logic",
+        "_extract_key_functions",
+        "_execute_garbage_collection",
+        "_get_all_script_files",
+        "_count_file_lines",
+        "_merge_ainlp_files"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "json",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_ultimate_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\archived_files\\ainlp_ultimate_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_calculate_lines_saved",
+        "_extract_system_functions",
+        "_execute_structure_optimization",
+        "_extract_key_classes",
+        "_merge_utility_files",
+        "_merge_system_files",
+        "_categorize_files_by_functionality",
+        "_safe_read_file",
+        "execute_ultimate_compression",
+        "AINLPUltimateCompressor",
+        "_execute_aggressive_merging",
+        "_create_safety_backup",
+        "_extract_optimization_functions",
+        "_generate_final_compression_report",
+        "main",
+        "__init__",
+        "_execute_logic_compression",
+        "_compress_file_logic",
+        "_extract_key_functions",
+        "_execute_garbage_collection",
+        "_get_all_script_files",
+        "_count_file_lines",
+        "_merge_ainlp_files"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "json",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\ainlp_ultimate_compressor.py",
+      "path_b": "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\archived_files\\ainlp_ultimate_compressor.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "_calculate_lines_saved",
+        "_extract_system_functions",
+        "_execute_structure_optimization",
+        "_extract_key_classes",
+        "_merge_utility_files",
+        "_merge_system_files",
+        "_categorize_files_by_functionality",
+        "_safe_read_file",
+        "execute_ultimate_compression",
+        "AINLPUltimateCompressor",
+        "_execute_aggressive_merging",
+        "_create_safety_backup",
+        "_extract_optimization_functions",
+        "_generate_final_compression_report",
+        "main",
+        "__init__",
+        "_execute_logic_compression",
+        "_compress_file_logic",
+        "_extract_key_functions",
+        "_execute_garbage_collection",
+        "_get_all_script_files",
+        "_count_file_lines",
+        "_merge_ainlp_files"
+      ],
+      "shared_imports": [
+        "datetime",
+        "ast",
+        "shutil",
+        "sys",
+        "typing",
+        "json",
+        "pathlib"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "evolution_lab\\artifacts\\basic_calculator_1751218393.py",
+      "path_b": "evolution_lab\\artifacts\\basic_calculator_1751218406.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "get_history",
+        "get_consciousness_level",
+        "fibonacci",
+        "multiply",
+        "ConsciousCalculator",
+        "main",
+        "add"
+      ],
+      "shared_imports": [
+        "sys",
+        "math"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "evolution_lab\\artifacts\\basic_calculator_1751218393.py",
+      "path_b": "evolution_lab\\artifacts\\basic_calculator_1751218592.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "get_history",
+        "get_consciousness_level",
+        "fibonacci",
+        "multiply",
+        "ConsciousCalculator",
+        "main",
+        "add"
+      ],
+      "shared_imports": [
+        "sys",
+        "math"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "evolution_lab\\artifacts\\basic_calculator_1751218406.py",
+      "path_b": "evolution_lab\\artifacts\\basic_calculator_1751218592.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__init__",
+        "get_history",
+        "get_consciousness_level",
+        "fibonacci",
+        "multiply",
+        "ConsciousCalculator",
+        "main",
+        "add"
+      ],
+      "shared_imports": [
+        "sys",
+        "math"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "evolution_lab\\library_generations\\aios_core_gen0_20251004_160044\\variant_1.py",
+      "path_b": "evolution_lab\\library_generations\\aios_core_gen0_20251004_223029\\variant_0.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "TachyonicMemoryBuffer",
+        "__init__",
+        "__repr__",
+        "get_best_variant",
+        "merge_variants",
+        "add_variant"
+      ],
+      "shared_imports": [
+        "typing",
+        "asyncio"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "evolution_lab\\library_generations\\aios_core_gen0_20251004_160044\\variant_1.py",
+      "path_b": "evolution_lab\\library_generations\\aios_core_gen0_20251004_225758\\variant_0.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "TachyonicMemoryBuffer",
+        "__init__",
+        "__repr__",
+        "get_best_variant",
+        "merge_variants",
+        "add_variant"
+      ],
+      "shared_imports": [
+        "typing",
+        "asyncio"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "evolution_lab\\library_generations\\aios_core_gen0_20251004_223029\\variant_0.py",
+      "path_b": "evolution_lab\\library_generations\\aios_core_gen0_20251004_225758\\variant_0.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "TachyonicMemoryBuffer",
+        "__init__",
+        "__repr__",
+        "get_best_variant",
+        "merge_variants",
+        "add_variant"
+      ],
+      "shared_imports": [
+        "typing",
+        "asyncio"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "tachyonic\\genetics\\original\\cytoplasm_intelligence_20251011_.py",
+      "path_b": "tachyonic\\genetics\\original\\cytoplasm_intelligence_20251011_204435.py",
+      "similarity": 1.0,
+      "shared_symbols": [
+        "__post_init__",
+        "__init__",
+        "CytoplasmIntelligenceState",
+        "CytoplasmIntelligence",
+        "get_intelligence_status"
+      ],
+      "shared_imports": [
+        "datetime",
+        "dataclasses",
+        "typing",
+        "asyncio",
+        "logging"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\nucleus\\src\\context_crystallization_engine\\core.py",
+      "path_b": "ai\\nucleus\\src\\context_crystallization_engine\\__init__.py",
+      "similarity": 0.964,
+      "shared_symbols": [
+        "TimeCrystal",
+        "_build_relationships",
+        "_create_generic_handler",
+        "_calculate_fractal_resonance",
+        "KnowledgeCrystal",
+        "websocket_handler",
+        "to_dict",
+        "_validate_dendritic_integrity",
+        "_create_holographic_bot",
+        "process_text_input",
+        "create_holographic_projection",
+        "verify_transfer_package_integrity",
+        "http_handler",
+        "create_crystallization_engine",
+        "_handle_generic_stimulus",
+        "CrystalPhase",
+        "set_cache",
+        "create_time_crystal",
+        "ConversationContext",
+        "_process_text_dendritically",
+        "from_dict",
+        "get_crystal_timeline",
+        "BosonicLayer",
+        "adapt_to_protocol",
+        "grpc_handler",
+        "extract_crystal",
+        "generic_error_handler",
+        "crystallize_conversation",
+        "inject_crystal",
+        "_calculate_understanding_depth",
+        "TemporalMapperStub",
+        "_allocate_algorithm_for_error",
+        "get_quantum_topography_status",
+        "_create_websocket_handler",
+        "_calculate_average_health",
+        "__init__",
+        "_generate_quantum_signature",
+        "_extract_text_concepts",
+        "process_conversation_archive",
+        "get_crystal_health",
+        "express",
+        "get_resonance_field",
+        "generic_handler",
+        "_handle_error_stimulus",
+        "QuantumSignature",
+        "_generate_text_hash",
+        "MemoryCrystallizerStub",
+        "ContextCrystallizationEngine",
+        "validate_transfer_package",
+        "DNAStrand",
+        "QuantumState",
+        "clear_cache",
+        "FractalCacheManager",
+        "_generate_verification_hash",
+        "initialize",
+        "_initialize_crystal",
+        "_matches_context",
+        "_extract_key_concepts",
+        "EmbeddingGeneratorStub",
+        "_create_grpc_handler",
+        "get_health_status",
+        "deploy_to_bosonic_layer",
+        "_create_http_handler",
+        "_calculate_concept_proximity",
+        "exchange_information",
+        "get_cache",
+        "_perform_self_healing",
+        "stimulate_crystal",
+        "_calculate_text_understanding",
+        "_handle_adaptation_request",
+        "receive_stimulus",
+        "_handle_knowledge_request",
+        "register_change",
+        "_build_semantic_relationships",
+        "TachyonicLayer",
+        "mutate",
+        "prepare_transfer_package",
+        "map_evolution_timeline",
+        "HolographicBot"
+      ],
+      "shared_imports": [
+        "datetime",
+        "dataclasses",
+        "enum",
+        "typing",
+        "random",
+        "hashlib",
+        "uuid",
+        "math",
+        "threading",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "ai\\tools\\consciousness\\aios_core_consciousness_monitor.py",
+      "path_b": "computational_layer\\core_systems\\aios_core_consciousness_monitor.py",
+      "similarity": 0.943,
+      "shared_symbols": [
+        "main",
+        "__init__",
+        "_evaluate_component_awareness",
+        "_assess_consciousness_metrics",
+        "AIOSCoreConsciousnessMonitor",
+        "monitor_consciousness_status",
+        "_measure_collective_intelligence",
+        "_track_evolution_consciousness"
+      ],
+      "shared_imports": [
+        "datetime",
+        "sys",
+        "typing",
+        "json",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "computational_layer\\assemblers\\tree_assembler\\consciousness_layer\\aios_core_consciousness_monitor.py",
+      "path_b": "computational_layer\\core_systems\\aios_core_consciousness_monitor.py",
+      "similarity": 0.943,
+      "shared_symbols": [
+        "main",
+        "__init__",
+        "_evaluate_component_awareness",
+        "_assess_consciousness_metrics",
+        "AIOSCoreConsciousnessMonitor",
+        "monitor_consciousness_status",
+        "_measure_collective_intelligence",
+        "_track_evolution_consciousness"
+      ],
+      "shared_imports": [
+        "datetime",
+        "sys",
+        "typing",
+        "json",
+        "pathlib",
+        "logging"
+      ],
+      "recommendation": "high_merge_priority"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\agents\\custom_agent_executors.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\workflows\\_start-here\\step3_streaming.py",
+      "similarity": 0.9,
+      "shared_symbols": [
+        "__init__",
+        "Reviewer",
+        "Writer"
+      ],
+      "shared_imports": [
+        "asyncio",
+        "azure",
+        "agent_framework"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\tools\\architecture\\aios_architecture_monitor.py",
+      "path_b": "ai\\tools\\architecture\\biological_architecture_monitor.py",
+      "similarity": 0.855,
+      "shared_symbols": [
+        "_calculate_overall_health",
+        "AIOSArchitectureMonitor",
+        "__init__",
+        "_assess_aios_compliance",
+        "setup_logging"
+      ],
+      "shared_imports": [
+        "datetime",
+        "sys",
+        "typing",
+        "json",
+        "os",
+        "asyncio",
+        "logging"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\a2a\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\a2a\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\devui\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\a2a\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\mem0\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\a2a\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\microsoft\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\a2a\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\redis\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\devui\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\mem0\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\microsoft\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\redis\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\devui\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\mem0\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\devui\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\microsoft\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\devui\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\redis\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\mem0\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\microsoft\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\mem0\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\redis\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\microsoft\\__init__.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\redis\\__init__.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "__dir__",
+        "__getattr__"
+      ],
+      "shared_imports": [
+        "typing",
+        "importlib"
+      ],
+      "recommendation": "review_similarity"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\minimal_sample.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\openai\\openai_chat_client_basic.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "typing",
+        "random",
+        "asyncio",
+        "agent_framework"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\anthropic\\anthropic_with_openai_chat_client.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\ollama\\ollama_with_openai_chat_client.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "typing",
+        "random",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_thread.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_basic.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_thread.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_basic.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_thread.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_basic.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_thread.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\azure_ai_chat_client.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\azure_assistants_client.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_basic.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\chat_client\\azure_chat_client.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_agent.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_thread.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_agent.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_agent.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_agent.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_agent.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_existing_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_explicit_settings.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_explicit_settings.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_explicit_settings.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_explicit_settings.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "os",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_function_tools.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_function_tools.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather",
+        "get_time"
+      ],
+      "shared_imports": [
+        "datetime",
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_function_tools.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_function_tools.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather",
+        "get_time"
+      ],
+      "shared_imports": [
+        "datetime",
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_function_tools.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_with_function_tools.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather",
+        "get_time"
+      ],
+      "shared_imports": [
+        "datetime",
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_basic.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_assistants_with_thread.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_basic.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_chat_client_with_thread.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    },
+    {
+      "path_a": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_ai\\azure_ai_with_thread.py",
+      "path_b": "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\agents\\azure_openai\\azure_responses_client_basic.py",
+      "similarity": 0.85,
+      "shared_symbols": [
+        "get_weather"
+      ],
+      "shared_imports": [
+        "agent_framework",
+        "pydantic",
+        "typing",
+        "random",
+        "azure",
+        "asyncio"
+      ],
+      "recommendation": "consider_merge"
+    }
+  ],
+  "duplicates": [
+    {
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "files": [
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\__init__.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\__init__.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\workflow\\conftest.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\__init__.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\__init__.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\samples\\getting_started\\observability\\__init__.py",
+        "ai\\src\\integrations\\vscode_real_diagnostics.py",
+        "ai\\tools\\system\\aios_cellular_migration_cleanup_tool.py",
+        "computational_layer\\modules\\aios_components\\aios_enhanced_connectivity_demo.py",
+        "tachyonic\\tachyonic_development_archive\\context_maps\\dev\\aios_cpp_analyzer.py",
+        "tachyonic\\tools\\utilities\\integration_summary_report.py"
+      ],
+      "count": 11,
+      "size": 0,
+      "recommendation": "remove_duplicates"
+    },
+    {
+      "hash": "c803d09ab729a2b48c6f9fbe7592dc47",
+      "files": [
+        "evolution_lab\\populations\\backup_20251018_124347\\organism_5c3507b1.py",
+        "evolution_lab\\populations\\backup_20251018_124347\\organism_adf629de.py",
+        "evolution_lab\\populations\\organisms\\organism_5c3507b1.py",
+        "evolution_lab\\populations\\organisms\\organism_adf629de.py"
+      ],
+      "count": 4,
+      "size": 99,
+      "recommendation": "remove_duplicates"
+    },
+    {
+      "hash": "6e6997b92ccc8df45672174fd35de31c",
+      "files": [
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\foundry_agent\\__init__.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\weather_agent\\__init__.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\weather_agent_azure\\__init__.py"
+      ],
+      "count": 3,
+      "size": 142,
+      "recommendation": "remove_duplicates"
+    },
+    {
+      "hash": "1e0ce25bde45f0397732ca9c430af17c",
+      "files": [
+        "evolution_lab\\artifacts\\basic_calculator_1751218393.py",
+        "evolution_lab\\artifacts\\basic_calculator_1751218406.py",
+        "evolution_lab\\artifacts\\basic_calculator_1751218592.py"
+      ],
+      "count": 3,
+      "size": 2033,
+      "recommendation": "remove_duplicates"
+    },
+    {
+      "hash": "5fd303b974bf73255f3a17539c5405c6",
+      "files": [
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\lab\\__init__.py",
+        "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\namespace\\agent_framework\\lab\\__init__.py"
+      ],
+      "count": 2,
+      "size": 167,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "d8f7928bfda5387b565d2a52d79f0641",
+      "files": [
+        "ai\\src\\intelligence\\library_ingestion_protocol.py",
+        "computational_layer\\library_ingestion_protocol.py"
+      ],
+      "count": 2,
+      "size": 35846,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "9117f887c8a0c3486de07b45b81ea258",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_compressor_engine.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_compressor_engine.py"
+      ],
+      "count": 2,
+      "size": 34870,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "34f8dac7c6f471451bd1f6f97a6d6c1b",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_enhanced_compressor.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_enhanced_compressor.py"
+      ],
+      "count": 2,
+      "size": 37156,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "2a92fd3fe3b19009a0e41a1761ae5da8",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_paradigm_engine.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_paradigm_engine.py"
+      ],
+      "count": 2,
+      "size": 44002,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "0b1d67ae46261803b2c56a921765d7d2",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_paradigm_executable_20250710_223651.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_paradigm_executable_20250710_223651.py"
+      ],
+      "count": 2,
+      "size": 11212,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "654042a266339ca489935fe283c61f5d",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_simple_compressor.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_simple_compressor.py"
+      ],
+      "count": 2,
+      "size": 18791,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "b2ddd385f3cd2609a82fb68b999f081c",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_test_command_field.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_test_command_field.py"
+      ],
+      "count": 2,
+      "size": 16336,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "352e144268f31d6dc3f8930d7ec734b0",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\ainlp_ultimate_compressor.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\ainlp_ultimate_compressor.py"
+      ],
+      "count": 2,
+      "size": 39894,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "a7a515c2255d9227dd38143c36201b45",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\context_health_monitor.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\context_health_monitor.py"
+      ],
+      "count": 2,
+      "size": 11837,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "0d681a4f33bd10bbaa13c2ba0d0f48de",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\docs_tachyonic_cleanup.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\docs_tachyonic_cleanup.py"
+      ],
+      "count": 2,
+      "size": 19609,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "4c0214cb0a919f16ccff0744c339d06e",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\optimization_context_aios_class.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\optimization_context_aios_class.py"
+      ],
+      "count": 2,
+      "size": 25473,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "9e4f62d5f1ab5b3b912059684549d1cb",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\optimization_context_command.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\optimization_context_command.py"
+      ],
+      "count": 2,
+      "size": 33986,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "8e13b02d9f1439fe982993d54571a615",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\test_ainlp_refresh_context.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\test_ainlp_refresh_context.py"
+      ],
+      "count": 2,
+      "size": 9701,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "2a0fe5c72a3cc6cc869d5635a6960efc",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\test_integration.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224457\\archived_files\\test_integration.py"
+      ],
+      "count": 2,
+      "size": 5847,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "3025a833396e9b1beb7938aa4459ef01",
+      "files": [
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\ainlp_ultimate_compressor.py",
+        "docs\\archive\\deprecated_root_docs\\compression\\archives\\backup_20250710_224525\\archived_files\\ainlp_ultimate_compressor.py"
+      ],
+      "count": 2,
+      "size": 39907,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "d2c1a59155d2a5e4b8f60c9690ec7d8b",
+      "files": [
+        "evolution_lab\\populations\\backup_20251018_124347\\organism_fce77c9d.py",
+        "evolution_lab\\populations\\organisms\\organism_fce77c9d.py"
+      ],
+      "count": 2,
+      "size": 286,
+      "recommendation": "review_duplicates"
+    },
+    {
+      "hash": "767fbd5b3151c5cceec6a410e5446bfa",
+      "files": [
+        "tachyonic\\genetics\\original\\cytoplasm_intelligence_20251011_.py",
+        "tachyonic\\genetics\\original\\cytoplasm_intelligence_20251011_204435.py"
+      ],
+      "count": 2,
+      "size": 3554,
+      "recommendation": "review_duplicates"
+    }
+  ],
+  "orphans": [
+    "ai\\__init__.py",
+    "ai\\communication\\__init__.py",
+    "ai\\communication\\universal_bus.py",
+    "ai\\cytoplasm\\__init__.py",
+    "ai\\information_storage\\__init__.py",
+    "ai\\infrastructure\\__init__.py",
+    "ai\\infrastructure\\config\\__init__.py",
+    "ai\\infrastructure\\dendritic\\supervisor.py",
+    "ai\\infrastructure\\interfaces\\__init__.py",
+    "ai\\infrastructure\\interfaces\\aios_vscode_integration\\__init__.py",
+    "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\__init__.py",
+    "ai\\infrastructure\\interfaces\\aios_vscode_integration\\services\\__init__.py",
+    "ai\\infrastructure\\interfaces\\aios_vscode_integration\\services\\fractal_cache_manager.py",
+    "ai\\infrastructure\\scripts\\__init__.py",
+    "ai\\infrastructure\\scripts\\githook_orchestrator.py",
+    "ai\\infrastructure\\setup_env.py",
+    "ai\\infrastructure\\tools\\fix_e501_.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\agent_framework_meta\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\check_md_code_blocks.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\docs\\generate_docs.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\a2a\\agent_framework_a2a\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\azure-ai\\agent_framework_azure_ai\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\copilotstudio\\agent_framework_copilotstudio\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\_workflows\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\a2a\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\azure\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\devui\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\lab\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\mem0\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\microsoft\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\openai\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\agent_framework\\redis\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\core\\tests\\core\\test_serializable_mixin.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\agent_framework_devui\\models\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\fanout_workflow\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\foundry_agent\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\spam_workflow\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\weather_agent\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\weather_agent_azure\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\devui\\samples\\workflow_agents\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\gaia\\agent_framework_lab_gaia\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\lightning\\agent_framework_lab_lightning\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\lightning\\tests\\test_lightning.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\namespace\\agent_framework\\__init__.py",
+    "ai\\ingested_repositories\\microsoft_agent_framework\\python\\packages\\lab\\namespace\\agent_framework\\lab\\__init__.py"
+  ],
+  "modules": {
+    "test_consciousness_validation.py": {
+      "path": "test_consciousness_validation.py",
+      "symbols": 

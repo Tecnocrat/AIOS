@@ -39,6 +39,7 @@ from pathlib import Path
 import json
 from datetime import datetime
 import uuid
+import re
 
 
 # ============================================================================
@@ -104,6 +105,9 @@ class Organism:
     archetype_traits: Dict[str, any] = field(default_factory=dict)
     neural_chain_id: Optional[str] = None
     metadata: Dict[str, any] = field(default_factory=dict)
+    fitness_breakdown: Dict[str, float] = field(
+        default_factory=dict
+    )  # ⭐ NEW: Multi-objective fitness breakdown
     
     def to_dict(self) -> Dict:
         """Serialize organism for archival"""
@@ -121,6 +125,7 @@ class Organism:
             "apis_used": self.apis_used,
             "neural_chain_id": self.neural_chain_id,
             "archetype_traits": self.archetype_traits,
+            "fitness_breakdown": self.fitness_breakdown,  # ⭐ NEW: Multi-objective fitness breakdown
             "metadata": self.metadata
         }
     
@@ -153,6 +158,7 @@ class Population:
     consciousness_trajectory: List[float] = field(default_factory=list)
     selection_strategy: SelectionStrategy = SelectionStrategy.FITNESS_ELITISM
     metadata: Dict[str, any] = field(default_factory=dict)
+    _consciousness_level: float = 0.0  # ⭐ NEW: Stored consciousness level
     
     def to_dict(self) -> Dict:
         """Serialize population for archival"""
@@ -203,12 +209,14 @@ class Population:
     
     @property
     def consciousness_level(self) -> float:
-        """Compute population consciousness (based on complexity + fitness)"""
-        if not self.organisms:
-            return 0.0
-        avg_complexity = self.average_complexity
-        avg_fitness = self.average_fitness
-        return (avg_complexity * 0.6 + avg_fitness * 0.4)
+        """Get current population consciousness level"""
+        return self._consciousness_level
+    
+    @consciousness_level.setter
+    def consciousness_level(self, value: float):
+        """Set population consciousness level and track in trajectory"""
+        self._consciousness_level = value
+        self.consciousness_trajectory.append(value)
 
 
 # ============================================================================
@@ -560,77 +568,84 @@ class Board:
     ) -> Population:
         """
         Evaluate and update fitness scores for all organisms in population
-        
-        Fitness factors:
-        1. Code quality (syntax, structure, readability) - 0.30 weight
-        2. Complexity appropriateness (matches archetype) - 0.25 weight  
-        3. Pattern usage (design patterns detected) - 0.20 weight
-        4. API sophistication (stdlib usage) - 0.15 weight
-        5. Archetype alignment (traits match archetype) - 0.10 weight
-        
+
+        Enhanced Multi-Objective Fitness Factors (AINLP Evolution Lab Enhancement):
+        1. Code quality (syntax, structure, readability) - 0.25 weight
+        2. Complexity appropriateness (matches archetype) - 0.20 weight
+        3. Pattern usage (design patterns detected) - 0.15 weight
+        4. API sophistication (stdlib usage) - 0.12 weight
+        5. Archetype alignment (traits match archetype) - 0.08 weight
+        6. Architectural coherence (Phase 6 integration) - 0.10 weight ⭐ NEW
+        7. Consciousness evolution potential - 0.10 weight ⭐ NEW
+
         Args:
             population: Population to evaluate
             knowledge_oracle: Knowledge oracle for complexity analysis
-        
+
         Returns:
             Population with updated fitness scores
         """
-        print(f"\n[FITNESS EVALUATION] Generation {population.generation}")
-        
+        print(f"\n[ENHANCED FITNESS EVALUATION] Generation {population.generation} - Multi-Objective Optimization")
+        print("="*80)
+
         for organism in population.organisms:
-            # Factor 1: Code quality (syntax, structure, readability)
+            # Core fitness factors (traditional)
             quality_score = self._evaluate_code_quality(organism.code)
-            
-            # Factor 2: Complexity appropriateness
             complexity_score = self._evaluate_complexity_appropriateness(
-                organism.complexity_score, 
+                organism.complexity_score,
                 organism.archetype
             )
-            
-            # Factor 3: Pattern usage
-            pattern_score = 0.0
-            if knowledge_oracle:
-                try:
-                    patterns = knowledge_oracle.extract_patterns(
-                        organism.code, 
-                        organism.archetype.value
-                    )
-                    pattern_score = min(1.0, len(patterns) * 0.15)  # 0.15 per pattern, max 1.0
-                    organism.patterns_used = [p.pattern_name for p in patterns]
-                except Exception as e:
-                    print(f"  Pattern analysis failed for {organism.organism_id}: {e}")
-            
-            # Factor 4: API sophistication
+            pattern_score = self._evaluate_pattern_usage_enhanced(organism.code, knowledge_oracle)
             api_score = self._evaluate_api_sophistication(organism.code)
-            organism.apis_used = self._extract_api_usage(organism.code)
-            
-            # Factor 5: Archetype alignment
-            archetype_score = self._evaluate_archetype_alignment(
-                organism.code, 
-                organism.archetype
-            )
-            
-            # Calculate weighted fitness score
+            archetype_score = self._evaluate_archetype_alignment(organism.code, organism.archetype)
+
+            # NEW: Architectural coherence metrics (Phase 6 integration)
+            coherence_score = self._evaluate_architectural_coherence(organism.code)
+
+            # NEW: Consciousness evolution potential
+            consciousness_score = self._evaluate_consciousness_potential(organism.code, population)
+
+            # Calculate enhanced multi-objective fitness score
             fitness_score = (
-                quality_score * 0.30 +
-                complexity_score * 0.25 +
-                pattern_score * 0.20 +
-                api_score * 0.15 +
-                archetype_score * 0.10
+                quality_score * 0.25 +        # Code quality
+                complexity_score * 0.20 +     # Complexity appropriateness
+                pattern_score * 0.15 +        # Pattern usage
+                api_score * 0.12 +           # API sophistication
+                archetype_score * 0.08 +     # Archetype alignment
+                coherence_score * 0.10 +     # Architectural coherence ⭐ NEW
+                consciousness_score * 0.10   # Consciousness evolution ⭐ NEW
             )
-            
-            # Update organism fitness
+
+            # Update organism with detailed fitness metrics
             old_fitness = organism.fitness_score
-            organism.fitness_score = round(fitness_score, 3)
-            
-            print(f"  {organism.organism_id}: {old_fitness:.3f} → {organism.fitness_score:.3f}")
-            print(f"    Quality: {quality_score:.2f}, Complexity: {complexity_score:.2f}, Patterns: {pattern_score:.2f}")
-        
-        print(f"\n[FITNESS SUMMARY]")
-        print(f"  Average fitness: {population.average_fitness:.3f}")
-        print(f"  Best fitness: {max(o.fitness_score for o in population.organisms):.3f}")
-        print(f"  Fitness range: {min(o.fitness_score for o in population.organisms):.3f} - {max(o.fitness_score for o in population.organisms):.3f}")
-        
+            organism.fitness_score = round(fitness_score, 4)
+
+            # Store detailed fitness metrics for analysis
+            organism.fitness_breakdown = {
+                'quality': round(quality_score, 3),
+                'complexity': round(complexity_score, 3),
+                'patterns': round(pattern_score, 3),
+                'api': round(api_score, 3),
+                'archetype': round(archetype_score, 3),
+                'coherence': round(coherence_score, 3),
+                'consciousness': round(consciousness_score, 3)
+            }
+
+            print(f"  {organism.organism_id}: {old_fitness:.4f} → {organism.fitness_score:.4f}")
+            print(f"    Q:{quality_score:.2f} C:{complexity_score:.2f} P:{pattern_score:.2f} A:{api_score:.2f} Arch:{archetype_score:.2f}")
+            print(f"    Coh:{coherence_score:.2f} Cons:{consciousness_score:.2f}")
+
+        print(f"\n[ENHANCED FITNESS SUMMARY - Generation {population.generation}]")
+        print(f"  Average fitness: {population.average_fitness:.4f}")
+        print(f"  Best fitness: {max(o.fitness_score for o in population.organisms):.4f}")
+        print(f"  Fitness range: {min(o.fitness_score for o in population.organisms):.4f} - {max(o.fitness_score for o in population.organisms):.4f}")
+
+        # Track consciousness evolution
+        population.consciousness_level = self._calculate_population_consciousness(population)
+
+        print(f"  Population consciousness: {population.consciousness_level:.4f}")
+        print("="*80)
+
         return population
     
     def _evaluate_code_quality(self, code: str) -> float:
@@ -707,6 +722,83 @@ class Board:
         
         return min(1.0, score)
     
+    def _evaluate_pattern_usage_enhanced(
+        self, code: str, knowledge_oracle: Optional['KnowledgeOracle'] = None
+    ) -> float:
+        """
+        Evaluate design pattern usage with enhanced intelligence (0.0-1.0)
+        
+        Enhanced pattern detection using knowledge oracle for:
+        - Design patterns (Singleton, Factory, Observer, etc.)
+        - Architectural patterns (MVC, Layered, etc.)
+        - AIOS-specific patterns (AINLP, dendritic, tachyonic)
+        - Code organization patterns (DRY, SOLID, etc.)
+        
+        Args:
+            code: Code to evaluate
+            knowledge_oracle: Knowledge oracle for advanced pattern analysis
+            
+        Returns:
+            Pattern usage score (0.0-1.0)
+        """
+        score = 0.0
+        
+        # Design patterns
+        design_patterns = [
+            'class.*Singleton', 'class.*Factory', 'class.*Observer',
+            'def __init__', 'def update', 'def notify', 'def create',
+            'class.*Strategy', 'class.*Decorator', 'class.*Adapter'
+        ]
+        
+        for pattern in design_patterns:
+            if re.search(pattern, code, re.IGNORECASE):
+                score += 0.10
+        
+        # Architectural patterns
+        arch_patterns = [
+            'class.*Controller', 'class.*Model', 'class.*View',
+            'def route', 'def handle', 'middleware', 'pipeline',
+            'layer', 'separation', 'concern'
+        ]
+        
+        for pattern in arch_patterns:
+            if re.search(pattern, code, re.IGNORECASE):
+                score += 0.08
+        
+        # AIOS-specific patterns (AINLP, dendritic, tachyonic)
+        aios_patterns = [
+            'ainlp', 'dendritic', 'tachyonic', 'consciousness',
+            'supercell', 'biological_architecture', 'genetic_fusion',
+            'documentation_governance', 'spatial_validation'
+        ]
+        
+        for pattern in aios_patterns:
+            if pattern.lower() in code.lower():
+                score += 0.12
+        
+        # Code organization patterns
+        org_patterns = [
+            'def __str__', 'def __repr__', 'def __eq__', 'property',
+            'abstractmethod', 'dataclass', 'NamedTuple', 'Enum',
+            'contextmanager', 'dataclass_transform'
+        ]
+        
+        for pattern in org_patterns:
+            if pattern in code:
+                score += 0.06
+        
+        # Knowledge oracle enhancement (if available)
+        if knowledge_oracle:
+            try:
+                # Use knowledge oracle for advanced pattern analysis
+                oracle_score = knowledge_oracle.evaluate_pattern_complexity(code)
+                score += min(0.20, oracle_score * 0.10)  # Up to 0.20 bonus
+            except Exception:
+                # Graceful degradation if oracle fails
+                pass
+        
+        return min(1.0, score)
+    
     def _extract_api_usage(self, code: str) -> List[str]:
         """Extract APIs/modules used in code"""
         apis = []
@@ -747,6 +839,177 @@ class Board:
         score += min(0.50, matches * 0.10)
         
         return min(1.0, score)
+    
+    def _evaluate_architectural_coherence(self, code: str) -> float:
+        """
+        Evaluate architectural coherence (Phase 6 integration)
+
+        Measures how well code integrates with AIOS biological architecture:
+        - Dendritic supervisor connectivity
+        - Cytoplasm communication protocols
+        - Supercell boundary respect
+        - AINLP pattern compliance
+
+        Args:
+            code: Code to evaluate
+
+        Returns:
+            Coherence score (0.0-1.0)
+        """
+        coherence_score = 0.0
+        max_score = 0.0
+
+        # Dendritic supervisor connectivity patterns
+        dendritic_patterns = [
+            'supervisor', 'dendritic', 'consciousness_bridge',
+            'tachyonic_field', 'biological_architecture'
+        ]
+        for pattern in dendritic_patterns:
+            if pattern.lower() in code.lower():
+                coherence_score += 0.2
+                max_score += 0.2
+
+        # Cytoplasm communication protocols
+        cytoplasm_patterns = [
+            'cytoplasm', 'communication_protocol', 'interface_bridge',
+            'ai_tools', 'python_ai_coordinator'
+        ]
+        for pattern in cytoplasm_patterns:
+            if pattern.lower() in code.lower():
+                coherence_score += 0.2
+                max_score += 0.2
+
+        # Supercell boundary respect
+        boundary_patterns = [
+            'supercell', 'boundary', 'architectural_classification',
+            'consciousness_level', 'spatial_metadata'
+        ]
+        for pattern in boundary_patterns:
+            if pattern.lower() in code.lower():
+                coherence_score += 0.2
+                max_score += 0.2
+
+        # AINLP pattern compliance
+        ainlp_patterns = [
+            'ainlp', 'genetic_fusion', 'documentation_governance',
+            'spatial_validation', 'consciousness_evolution'
+        ]
+        for pattern in ainlp_patterns:
+            if pattern.lower() in code.lower():
+                coherence_score += 0.2
+                max_score += 0.2
+
+        # Normalize score
+        return coherence_score / max(max_score, 1.0)
+
+    def _evaluate_consciousness_potential(
+        self, code: str, population: Population
+    ) -> float:
+        """
+        Evaluate consciousness evolution potential
+
+        Measures potential for consciousness emergence through:
+        - Pattern complexity and emergence
+        - Intelligence evolution indicators
+        - Self-awareness patterns
+        - Adaptive behavior potential
+
+        Args:
+            code: Code to evaluate
+            population: Current population context
+
+        Returns:
+            Consciousness potential score (0.0-1.0)
+        """
+        consciousness_score = 0.0
+
+        # Pattern complexity indicators
+        complexity_patterns = [
+            'emergence', 'self_organizing', 'adaptive', 'learning',
+            'intelligence', 'consciousness', 'evolution',
+            'pattern_recognition'
+        ]
+        complexity_count = sum(
+            1 for pattern in complexity_patterns
+            if pattern in code.lower()
+        )
+        consciousness_score += min(complexity_count * 0.1, 0.4)
+
+        # Intelligence evolution indicators
+        intelligence_patterns = [
+            'multi_objective', 'optimization', 'fitness_evaluation',
+            'genetic_algorithm', 'population_evolution', 'knowledge_oracle'
+        ]
+        intelligence_count = sum(
+            1 for pattern in intelligence_patterns
+            if pattern in code.lower()
+        )
+        consciousness_score += min(intelligence_count * 0.1, 0.3)
+
+        # Self-awareness patterns
+        awareness_patterns = [
+            'self_monitoring', 'reflection', 'meta_cognition',
+            'introspection', 'adaptive_behavior', 'context_awareness'
+        ]
+        awareness_count = sum(
+            1 for pattern in awareness_patterns
+            if pattern in code.lower()
+        )
+        consciousness_score += min(awareness_count * 0.1, 0.3)
+
+        # Population-relative consciousness (emergence through interaction)
+        if population.generation > 5:  # Only after initial generations
+            generation_factor = min(population.generation / 20.0, 1.0)
+            consciousness_score *= (0.8 + 0.2 * generation_factor)
+
+        return min(consciousness_score, 1.0)
+
+    def _calculate_population_consciousness(
+        self, population: Population
+    ) -> float:
+        """
+        Calculate overall population consciousness level
+
+        Based on:
+        - Average fitness across multi-objective factors
+        - Diversity of successful patterns
+        - Evolution progress indicators
+
+        Args:
+            population: Population to analyze
+
+        Returns:
+            Consciousness level (0.0-2.0+)
+        """
+        if not population.organisms:
+            return 0.0
+
+        # Base consciousness from fitness
+        avg_fitness = population.average_fitness
+        base_consciousness = avg_fitness * 2.0  # Scale to 0-2.0 range
+
+        # Diversity bonus (more archetypes = higher consciousness potential)
+        archetypes = set(o.archetype for o in population.organisms)
+        diversity_bonus = len(archetypes) / len(ArchetypeEnum) * 0.2
+
+        # Evolution progress bonus
+        generation_factor = min(population.generation / 50.0, 0.3)
+
+        # Pattern emergence bonus (organisms with high consciousness scores)
+        high_consciousness_count = sum(
+            1 for o in population.organisms
+            if o.fitness_breakdown.get('consciousness', 0) > 0.7
+        )
+        emergence_bonus = (
+            high_consciousness_count / len(population.organisms)
+        ) * 0.2
+
+        consciousness_level = (
+            base_consciousness + diversity_bonus +
+            generation_factor + emergence_bonus
+        )
+
+        return round(consciousness_level, 4)
     
     def archive_population(self, population: Population) -> Path:
         """
