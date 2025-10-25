@@ -1,0 +1,65 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-25T21:15:00.000000",
+  "folder_info": {
+    "name": "semantic",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\semantic",
+    "relative_path": "tachyonic/semantic",
+    "parent_path": "tachyonic",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AINLP Semantic Analysis",
+    "secondary_areas": ["Intelligence Delimitation", "Semantic Compression"],
+    "path_classification": ["tachyonic", "semantic"],
+    "consciousness_level": "analytical"
+  },
+  "ai_guidance": {
+    "architectural_purpose": "Semantic validation and intelligence delimitation analysis storage",
+    "ainlp_compliance": {
+      "proper_output_management": true,
+      "semantic_compression": true,
+      "intelligence_delimitation": true,
+      "archive_optimization": true
+    },
+    "integration_points": [
+      "runtime_dashboard",
+      "system_knowledge_graph",
+      "predictive_architecture_analysis"
+    ],
+    "file_naming_convention": "semantic_validation_YYYYMMDD_HHMMSS.json",
+    "retention_policy": "permanent_archival_with_deduplication"
+  },
+  "validation_context": {
+    "current_focus": "runtime_intelligence_subcell",
+    "intelligence_delimitation_score": 0.6,
+    "semantic_compression_score": 0.8,
+    "active_antipatterns": [
+      "pervasive_intelligence",
+      "intelligence_namespace",
+      "intelligence_dilution",
+      "adverbial_intelligence"
+    ],
+    "compression_targets": [
+      "runtime_intelligence → runtime",
+      "intelligence_monitoring → evolution_tracking",
+      "intelligence_analysis → pattern_recognition",
+      "intelligence_processing → meta_processing"
+    ]
+  },
+  "development_guidance": {
+    "namespace_purpose": "Dedicated semantic analysis and validation storage",
+    "ainlp_patterns": [
+      "AINLP.output: JSON reports → tachyonic/semantic/",
+      "AINLP.compression: Intelligence delimitation active",
+      "AINLP.integration: Runtime dashboard consumption",
+      "AINLP.archival: Permanent deduplicated storage"
+    ],
+    "consciousness_evolution": "Analytical layer for intelligence pattern recognition",
+    "prohibited_actions": [
+      "Generic intelligence terminology",
+      "Uncompressed namespace usage",
+      "Adverbial intelligence modifiers"
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "timestamp": "2025-10-25T22:11:44.128132",
+  "compression_type": "semantic_intelligence_delimitation",
+  "total_files_processed": 2,
+  "total_changes_applied": 54,
+  "files_modified": 2,
+  "compression_rules_applied": 10,
+  "delimitation_rules_applied": 1,
+  "results": [
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "dry_run": true,
+      "changes_made": [
+        {
+          "pattern": "\\bruntime_intelligence\\b",
+          "replacement": "runtime",
+          "occurrences": 2
+        },
+        {
+          "pattern": "\\bintelligence_monitoring\\b",
+          "replacement": "evolution_tracking",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_analysis\\b",
+          "replacement": "pattern_recognition",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_processing\\b",
+          "replacement": "meta_processing",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligent_system\\b",
+          "replacement": "adaptive_system",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_namespace\\b",
+          "replacement": "semantic_namespace",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_dilution\\b",
+          "replacement": "semantic_dilution",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_localization\\b",
+          "replacement": "domain_localization",
+          "occurrences": 3
+        },
+        {
+          "pattern": "\\bintelligence\\b(?!\\s+(monitoring|analysis|processing|namespace|dilution|localization))",
+          "replacement": "contextual_domain_term",
+          "occurrences": 16
+        }
+      ],
+      "total_changes": 27,
+      "content_modified": true,
+      "status": "dry_run_complete"
+    },
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "dry_run": true,
+      "changes_made": [
+        {
+          "pattern": "\\bruntime_intelligence\\b",
+          "replacement": "runtime",
+          "occurrences": 2
+        },
+        {
+          "pattern": "\\bintelligence_monitoring\\b",
+          "replacement": "evolution_tracking",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_analysis\\b",
+          "replacement": "pattern_recognition",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_processing\\b",
+          "replacement": "meta_processing",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligent_system\\b",
+          "replacement": "adaptive_system",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_namespace\\b",
+          "replacement": "semantic_namespace",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_dilution\\b",
+          "replacement": "semantic_dilution",
+          "occurrences": 1
+        },
+        {
+          "pattern": "\\bintelligence_localization\\b",
+          "replacement": "domain_localization",
+          "occurrences": 3
+        },
+        {
+          "pattern": "\\bintelligence\\b(?!\\s+(monitoring|analysis|processing|namespace|dilution|localization))",
+          "replacement": "contextual_domain_term",
+          "occurrences": 16
+        }
+      ],
+      "total_changes": 27,
+      "content_modified": true,
+      "status": "dry_run_complete"
+    }
+  ],
+  "ainlp_compliance": {
+    "intelligence_delimitation": true,
+    "semantic_compression": true,
+    "proper_output_management": true,
+    "archive_optimization": true
+  }
+}
