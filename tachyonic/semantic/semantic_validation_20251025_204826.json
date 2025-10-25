@@ -1,0 +1,86 @@
+{
+  "timestamp": "2025-10-25T20:48:26.590654",
+  "runtime_path": "C:\\dev\\AIOS\\ai\\src\\tools",
+  "semantic_compression_score": 0.8,
+  "intelligence_delimitation_score": 0.6,
+  "antipatterns_detected": [
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\cpp_stl_web_crawler.py",
+      "pattern": "adverbial_intelligence",
+      "description": "Intelligence used as adverbial modifier",
+      "severity": "medium",
+      "occurrences": 2,
+      "examples": [
+        "Intelligent page",
+        "Intelligent rate"
+      ]
+    },
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "pattern": "pervasive_intelligence",
+      "description": "Generic intelligence usage without domain qualification",
+      "severity": "high",
+      "occurrences": 19,
+      "examples": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "pattern": "intelligence_namespace",
+      "description": "Uncompressed namespace usage",
+      "severity": "high",
+      "occurrences": 2,
+      "examples": [
+        "runtime_intelligence",
+        "runtime_intelligence"
+      ]
+    },
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "pattern": "intelligence_dilution",
+      "description": "Intelligence as generic qualifier in compound words",
+      "severity": "medium",
+      "occurrences": 11,
+      "examples": [
+        "intelligence_namespace",
+        "intelligence_dilution",
+        "intelligence_localization"
+      ]
+    }
+  ],
+  "compression_opportunities": [
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "from": "intelligence_monitoring",
+      "to": "evolution_tracking",
+      "occurrences": 1
+    },
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "from": "intelligence_analysis",
+      "to": "pattern_recognition",
+      "occurrences": 1
+    },
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "from": "intelligence_processing",
+      "to": "meta_processing",
+      "occurrences": 1
+    },
+    {
+      "file": "C:\\dev\\AIOS\\ai\\src\\tools\\semantic_validator.py",
+      "from": "intelligent_system",
+      "to": "adaptive_system",
+      "occurrences": 1
+    }
+  ],
+  "recommendations": [
+    "Address 2 high-severity intelligence antipatterns immediately",
+    "Apply semantic compression to 4 identified opportunities",
+    "Implement namespace compression: runtime_intelligence \u2192 runtime",
+    "Localize intelligence usage to specific domains (evolutionary, dendritic, cellular, meta)"
+  ]
+}
