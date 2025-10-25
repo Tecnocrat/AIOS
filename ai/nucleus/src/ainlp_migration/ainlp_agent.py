@@ -7,8 +7,10 @@ import time
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
-# Add runtime_intelligence tools to path for subprocess_manager
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', 'runtime_intelligence', 'tools'))
+# Add ai tools to path for subprocess_manager
+tools_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', 
+                         'ai', 'tools', 'system')
+sys.path.insert(0, tools_path)
 
 try:
     from subprocess_manager import (

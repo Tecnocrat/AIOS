@@ -1,0 +1,173 @@
+{
+  "timestamp": 1761288153.8044603,
+  "total_checks": 7,
+  "passed_checks": 4,
+  "health_status": "POOR",
+  "detailed_results": {
+    "python_environment": {
+      "python_version": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+      "python_executable": "C:\\Python314\\python.exe",
+      "path": [
+        "C:\\dev\\AIOS\\ai\\tools\\system",
+        "C:\\dev\\AIOS\\dev",
+        "C:\\Python314\\python314.zip"
+      ],
+      "packages": {
+        "requests": "2.32.5",
+        "fastapi": "0.119.0",
+        "uvicorn": "0.37.0",
+        "pydantic": "2.12.0",
+        "json": "built-in",
+        "time": "built-in",
+        "os": "built-in",
+        "sys": "built-in"
+      }
+    },
+    "project_structure": {
+      "ai/": {
+        "exists": true,
+        "files": {
+          "__init__.py": false,
+          "core/": false,
+          "src/": true,
+          "tools/": true,
+          "transport/": true
+        }
+      },
+      "core/": {
+        "exists": true,
+        "files": {
+          "CMakeLists.txt": true,
+          "src/": true,
+          "include/": true,
+          "tests/": true
+        }
+      },
+      "interface/": {
+        "exists": true,
+        "files": {
+          "AIOS.Models/": true,
+          "AIOS.Services/": true,
+          "AIOS.UI/": true
+        }
+      },
+      "runtime_intelligence/": {
+        "exists": true,
+        "files": {
+          "tools/": false,
+          "logs/": false,
+          "analysis/": false
+        }
+      },
+      "docs/": {
+        "exists": true,
+        "files": {
+          "AIOS/": true,
+          "ai-context/": false,
+          "tachyonic_archive/": true
+        }
+      },
+      "tachyonic/": {
+        "exists": true,
+        "files": {
+          "archive/": true
+        }
+      },
+      "vscode-extension/": {
+        "exists": true,
+        "files": {
+          "package.json": true,
+          "src/": true
+        }
+      },
+      "vscode-extension/src/": {
+        "exists": true,
+        "files": {
+          "aiosBridge.ts": true,
+          "contextManager.ts": true,
+          "extension.ts": true
+        }
+      },
+      "config/": {
+        "exists": true,
+        "files": {
+          "system.json": true
+        }
+      },
+      "ai/tests/": {
+        "exists": true,
+        "files": {
+          "test_aios_integration.py": false
+        }
+      }
+    },
+    "vscode_extension": {
+      "package_json": true,
+      "typescript_compiled": true,
+      "dependencies": {
+        "@vscode/vsce": "^3.6.0",
+        "node-fetch": "^3.3.2",
+        "ws": "^8.18.0"
+      }
+    },
+    "aios_modules": {
+      "tools": "exists",
+      "transport": "exists",
+      "core": "missing",
+      "src": "exists",
+      "__init__.py": "missing"
+    },
+    "configuration_files": {
+      "config/system.json": {
+        "exists": true,
+        "importance": "required"
+      },
+      "config/ai-models.json": {
+        "exists": false,
+        "importance": "optional"
+      },
+      "config/ui-themes.json": {
+        "exists": false,
+        "importance": "optional"
+      },
+      "docs/AIOS_PROJECT_CONTEXT.md": {
+        "exists": false,
+        "importance": "required"
+      },
+      "docs/AIOS/PATH_1_TESTING_GUIDE.md": {
+        "exists": false,
+        "importance": "required"
+      }
+    },
+    "configuration_harmonization": {
+      "python_versions": {
+        "consistent": false,
+        "details": {
+          ".aios_context.json": "unknown",
+          "ai/pyproject.toml": "FILE_NOT_FOUND",
+          ".pylintrc": "unknown",
+          "README.md": "3.12+"
+        }
+      },
+      "ai_frameworks": {
+        "aligned": true,
+        "details": {}
+      },
+      "timestamps": {
+        "current": true,
+        "details": {}
+      },
+      "config_sync": {
+        "synchronized": true,
+        "details": {}
+      },
+      "harmonization_score": 75.0,
+      "status": "PARTIAL_DRIFT"
+    },
+    "engineering_tenets_advisory": {
+      "findings": [],
+      "tenets_doc": "docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md",
+      "note": "Advisory only. Improve clarity and scoping per tenets."
+    }
+  }
+}

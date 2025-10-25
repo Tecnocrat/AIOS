@@ -1,8 +1,8 @@
 {
-  "timestamp": 1760991427.3469524,
+  "timestamp": 1761344199.8944395,
   "total_checks": 7,
-  "passed_checks": 4,
-  "health_status": "POOR",
+  "passed_checks": 7,
+  "health_status": "EXCELLENT",
   "detailed_results": {
     "python_environment": {
       "python_version": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
@@ -28,7 +28,7 @@
         "exists": true,
         "files": {
           "__init__.py": true,
-          "core/": false,
+          "core/": true,
           "src/": true,
           "tools/": true,
           "transport/": true
@@ -63,7 +63,7 @@
         "exists": true,
         "files": {
           "AIOS/": true,
-          "ai-context/": false,
+          "ai-context/": true,
           "tachyonic_archive/": true
         }
       },
@@ -97,7 +97,7 @@
       "ai/tests/": {
         "exists": true,
         "files": {
-          "test_aios_integration.py": false
+          "test_aios_integration.py": true
         }
       }
     },
@@ -113,7 +113,7 @@
     "aios_modules": {
       "tools": "exists",
       "transport": "exists",
-      "core": "missing",
+      "core": "exists",
       "src": "exists",
       "__init__.py": "exists"
     },
@@ -131,11 +131,11 @@
         "importance": "optional"
       },
       "docs/AIOS_PROJECT_CONTEXT.md": {
-        "exists": false,
+        "exists": true,
         "importance": "required"
       },
       "docs/AIOS/PATH_1_TESTING_GUIDE.md": {
-        "exists": false,
+        "exists": true,
         "importance": "required"
       }
     },

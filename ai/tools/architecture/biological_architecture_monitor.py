@@ -21,11 +21,11 @@ import json
 current_dir = os.path.dirname(__file__)
 ai_path = os.path.join(current_dir, '..', '..', 'ai')
 ri_path = os.path.join(current_dir, '..', '..', 'runtime_intelligence')
-sys.path.append(ai_path)
-sys.path.append(ri_path)
+ai_root = os.path.dirname(current_dir)  # ai
+sys.path.insert(0, ai_root)
 
 try:
-    from dendritic_supervisor import (
+    from tools.consciousness.dendritic_supervisor import (
         get_runtime_intelligence_dendritic_integration,
         get_enhanced_visual_intelligence_bridge
     )

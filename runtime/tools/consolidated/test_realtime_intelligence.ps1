@@ -1,4 +1,4 @@
-#!/usr/bin/env pwsh
+    #!/usr/bin/env pwsh
 # AIOS Real-Time Intelligence Demo
 # Demonstrates the GitHook -> AI Intelligence Bridge
 # Location: scripts/test_realtime_intelligence.ps1
