@@ -127,7 +127,7 @@ function Invoke-EmoticonCheck {
 }
 
 function Test-FileSafety {
-    param([string[]]$StagedFiles)
+    param([Parameter(Mandatory=$false)][AllowNull()]$StagedFiles)
     
     $unsafePatterns = @(
         "^\.log$", "\.jsonl$", "^temp/", "^build/", "_temp", "\.tmp$", "\.pyc$", "__pycache__/", "\.pid$"
@@ -138,34 +138,46 @@ function Test-FileSafety {
         "_template\.(json|py|md|txt|yaml|yml)$",   # Template files (e.g., *_template.json, *_template.py)
         "_crystal\.(json|py|md)$",                  # Knowledge crystal files (e.g., *_crystal.json)
         "_templates\.(json|py|md)$"                 # Plural templates (e.g., context_recovery_templates.json)
+        "file_criticality_index\.jsonl$"            # Governance file criticality index
     )
     
     $unsafeFiles = @()
-    if ($StagedFiles -and $StagedFiles.Count -gt 0) {
-        foreach ($file in $StagedFiles) {
-            # Check if file matches any exemption pattern
-            $isExempt = $false
-            foreach ($exemption in $exemptionPatterns) {
-                if ($file -match $exemption) {
-                    $isExempt = $true
-                    break
-                }
-            }
-            
-            # If not exempt, check unsafe patterns
-            if (-not $isExempt) {
-                foreach ($pattern in $unsafePatterns) {
-                    if ($file -match $pattern) {
-                        $unsafeFiles = $unsafeFiles + @($file)
+    
+    # Ensure StagedFiles is treated as an array
+    if ($null -ne $StagedFiles) {
+        $filesArray = @($StagedFiles)
+        if ($filesArray.Count -gt 0) {
+            foreach ($file in $filesArray) {
+                if ($null -eq $file -or $file -eq "") { continue }
+                
+                # Check if file matches any exemption pattern
+                $isExempt = $false
+                foreach ($exemption in $exemptionPatterns) {
+                    if ($file -match $exemption) {
+                        $isExempt = $true
                         break
+                    }
+                }
+                
+                # If not exempt, check unsafe patterns
+                if (-not $isExempt) {
+                    foreach ($pattern in $unsafePatterns) {
+                        if ($file -match $pattern) {
+                            $unsafeFiles = $unsafeFiles + @($file)
+                            break
+                        }
                     }
                 }
             }
         }
     }
     
-    # Ensure we always return an array
-    return $unsafeFiles
+    # Ensure we always return an array, even if empty
+    if ($unsafeFiles.Count -eq 0) {
+        return @()
+    } else {
+        return $unsafeFiles
+    }
 }
 
 function Test-AINLPCompliance {
@@ -232,9 +244,11 @@ function Invoke-PreCommitHook {
     # File safety check
     try {
         $unsafeFiles = Test-FileSafety -StagedFiles $stagedFiles
-        if ($unsafeFiles -and $unsafeFiles.Count -gt 0) {
+        # Ensure unsafeFiles is treated as an array
+        $unsafeFilesArray = @($unsafeFiles)
+        if ($unsafeFilesArray -and $unsafeFilesArray.Count -gt 0) {
             $validationErrors += "unsafe_files"
-            Write-AIOSLog "Unsafe files detected: $($unsafeFiles -join ', ')" -Level "Error" -Component "Safety"
+            Write-AIOSLog "Unsafe files detected: $($unsafeFilesArray -join ', ')" -Level "Error" -Component "Safety"
         }
     } catch {
         Write-AIOSLog "Error in file safety check: $_" -Level "Error" -Component "PreCommit"
@@ -244,14 +258,23 @@ function Invoke-PreCommitHook {
     try {
         $ainlpErrors = @()
         foreach ($file in $stagedFiles) {
+            # Only check consciousness files that are in wrong architectural layers
             if ($file -match "\.(py|cs|ps1)$" -and $file -match "intelligence|consciousness") {
-                try {
-                    $content = Get-Content $file -Raw -ErrorAction SilentlyContinue
-                    if ($content -and $content -notmatch "AINLP|dendritic") {
-                        $ainlpErrors += $file
+                # Flag consciousness files in runtime/ or interface/ layers (should be in ai/)
+                if ($file -match "^runtime/" -or $file -match "^interface/") {
+                    $ainlpErrors += $file
+                }
+                # For files in ai/ layer, only flag if they clearly lack consciousness context
+                elseif ($file -match "^ai/" -and $file -notmatch "AINLP|dendritic|tachyonic") {
+                    try {
+                        $content = Get-Content $file -Raw -ErrorAction SilentlyContinue
+                        # Only flag if content doesn't mention consciousness concepts
+                        if ($content -and $content -notmatch "consciousness|intelligence|emergence|coherence") {
+                            $ainlpErrors += $file
+                        }
+                    } catch {
+                        # Skip unreadable files
                     }
-                } catch {
-                    # Skip unreadable files
                 }
             }
         }

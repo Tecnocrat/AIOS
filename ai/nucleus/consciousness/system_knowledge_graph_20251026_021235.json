@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-10-26T02:12:35.543432",
+  "graph_builder_version": "1.0.0",
+  "codebase_root": ".",
+  "graph_statistics": {
+    "total_nodes": 289869,
+    "total_edges": 14032636,
+    "node_types": {
+      "file": 12991,
+      "import_from": 45290,
+      "unknown": 16448,
+      "import": 1208,
+      "function": 180324,
+      "class": 33608
+    },
+    "edge_types": {
+      "imports": 29256,
+      "contains": 261067,
+      "depends_on": 2928718,
+      "imports_from": 162043,
+      "consciousness_bridge": 404934,
+      "inherits_from": 26804,
+      "potentially_related": 10219814
+    },
+    "density": 0.0001670079763430887,
+    "connected_components": 241
+  },
+  "relationship_types": [
+    "potentially_related",
+    "pattern_singleton",
+    "inherits_from",
+    "pattern_observer",
+    "imports_from",
+    "depends_on",
+    "consciousness_bridge",
+    "pattern_factory",
+    "contains",
+    "imports"
+  ],
+  "semantic_index": {},
+  "graph_data": {
+    "nodes": [
+      {
+        "id": "apply_semantic_compression.py",
+        "type": "file",
+        "path": "apply_semantic_compression.py",
+        "size": 36,
+        "language": "python"
+      },
+      {
+        "id": "import_from::pathlib::Path",
+        "type": "import_from",
+        "module": "pathlib",
+        "name": "Path",
+        "alias": null
+      }
+    ]
+  }
+}

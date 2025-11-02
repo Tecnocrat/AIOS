@@ -43,7 +43,7 @@ def discover_ainlp_agent_path() -> Optional[str]:
         Path(AI_ROOT) / "tools" / "ainlp_agent.py",
         (
             Path(AI_ROOT).parent
-            / "runtime_intelligence"
+            / "runtime"
             / "tools"
             / "ainlp_agent.py"
         )

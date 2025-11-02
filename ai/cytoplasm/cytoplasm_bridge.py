@@ -74,7 +74,7 @@ class CytoplasmBridge:
 
     def _setup_logging(self):
         """Setup logging for cytoplasm bridge"""
-        logs_dir = Path(__file__).parent.parent.parent / "runtime_intelligence" / "logs"
+        logs_dir = Path(__file__).parent.parent.parent / "runtime" / "logs"
         logs_dir.mkdir(parents=True, exist_ok=True)
 
         logging.basicConfig(

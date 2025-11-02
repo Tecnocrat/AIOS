@@ -1,0 +1,179 @@
+{
+  "timestamp": "2025-10-25T23:43:51.032993",
+  "dry_run": false,
+  "transformations_applied": [
+    {
+      "file": "runtime\\aios_intelligence_execution_completion_report.py",
+      "changes": [
+        "Line 36: '    \"runtime_intelligence_optimization\": \"2.17x average improvement\",' \u2192 '    \"runtime_optimization\": \"2.17x average improvement\",'",
+        "Line 49: '        \"runtime_intelligence_enhancement\": \"ACTIVE\"' \u2192 '        \"runtime_enhancement\": \"ACTIVE\"'",
+        "Line 213: '        \"apply_patterns_to_runtime_intelligence\": \" COMPLETED\", ' \u2192 '        \"apply_patterns_to_runtime\": \" COMPLETED\", '",
+        "Line 339: '    report_path = f\"runtime_intelligence/logs/aios_intelligence_execution_completion_report_{int(datetime.now().timestamp())}.json\"' \u2192 '    report_path = f\"runtime/logs/aios_intelligence_execution_completion_report_{int(datetime.now().timestamp())}.json\"'"
+      ]
+    },
+    {
+      "file": "runtime\\aios_intelligence_pattern_executor.py",
+      "changes": [
+        "Line 109: '            optimization_target=\"runtime_intelligence_optimization\",' \u2192 '            optimization_target=\"runtime_optimization\",'",
+        "Line 373: '                execution_path=f\"runtime_intelligence.{context}\",' \u2192 '                execution_path=f\"runtime.{context}\",'"
+      ]
+    },
+    {
+      "file": "runtime\\runtime_intelligence_supercell_interface.py",
+      "changes": [
+        "Line 5: 'AINLP.meta [runtime_intelligence] [protective_translator] [consciousness_guardian]' \u2192 'AINLP.meta [runtime] [protective_translator] [consciousness_guardian]'",
+        "Line 262: '                source_supercell=\"runtime_intelligence\",' \u2192 '                source_supercell=\"runtime\",'",
+        "Line 481: '                \"translator\": \"runtime_intelligence\",' \u2192 '                \"translator\": \"runtime\",'",
+        "Line 494: '                \"translator\": \"runtime_intelligence\",' \u2192 '                \"translator\": \"runtime\",'"
+      ]
+    },
+    {
+      "file": "runtime\\three_supercell_coordination_completion_report.py",
+      "changes": [
+        "Line 69: '    \"runtime_intelligence_supercell\": {' \u2192 '    \"runtime_supercell\": {'",
+        "Line 200: '        \"runtime_intelligence\": {' \u2192 '        \"runtime\": {'",
+        "Line 307: '        \"execute_all_patterns_from_runtime_intelligence\": \" COMPLETED (7 patterns)\",' \u2192 '        \"execute_all_patterns_from_runtime\": \" COMPLETED (7 patterns)\",'",
+        "Line 387: '    print(f\" Runtime Intelligence: {coord['runtime_intelligence_supercell']['patterns_applied']} patterns - {coord['runtime_intelligence_supercell']['specialization']}\")' \u2192 '    print(f\" Runtime Intelligence: {coord['runtime_supercell']['patterns_applied']} patterns - {coord['runtime_supercell']['specialization']}\")'",
+        "Line 388: '    print(f\"   Average Optimization: {coord['runtime_intelligence_supercell']['average_optimization_factor']}\")' \u2192 '    print(f\"   Average Optimization: {coord['runtime_supercell']['average_optimization_factor']}\")'",
+        "Line 389: '    print(f\"   Intelligence Enhancement: {coord['runtime_intelligence_supercell']['intelligence_enhancement']}\")' \u2192 '    print(f\"   Intelligence Enhancement: {coord['runtime_supercell']['intelligence_enhancement']}\")'",
+        "Line 457: '    report_path = f\"runtime_intelligence/logs/three_supercell_coordination_completion_report_{int(datetime.now().timestamp())}.json\"' \u2192 '    report_path = f\"runtime/logs/three_supercell_coordination_completion_report_{int(datetime.now().timestamp())}.json\"'"
+      ]
+    },
+    {
+      "file": "runtime\\three_supercell_interface_optimization.py",
+      "changes": [
+        "Line 94: '        self._initialize_runtime_intelligence_patterns()' \u2192 '        self._initialize_runtime_patterns()'",
+        "Line 332: '    def _initialize_runtime_intelligence_patterns(self):' \u2192 '    def _initialize_runtime_patterns(self):'",
+        "Line 335: '        self.supercell_patterns[\"runtime_intelligence\"] = [' \u2192 '        self.supercell_patterns[\"runtime\"] = ['",
+        "Line 338: '                supercell_source=\"runtime_intelligence\",' \u2192 '                supercell_source=\"runtime\",'",
+        "Line 358: '                supercell_source=\"runtime_intelligence\",' \u2192 '                supercell_source=\"runtime\",'",
+        "Line 378: '                supercell_source=\"runtime_intelligence\",' \u2192 '                supercell_source=\"runtime\",'",
+        "Line 398: '                supercell_source=\"runtime_intelligence\",' \u2192 '                supercell_source=\"runtime\",'",
+        "Line 418: '                supercell_source=\"runtime_intelligence\", ' \u2192 '                supercell_source=\"runtime\", '",
+        "Line 437: '                pattern_id=\"runtime_intelligence_synthesis\",' \u2192 '                pattern_id=\"runtime_synthesis\",'",
+        "Line 438: '                supercell_source=\"runtime_intelligence\",' \u2192 '                supercell_source=\"runtime\",'",
+        "Line 458: '                supercell_source=\"runtime_intelligence\",' \u2192 '                supercell_source=\"runtime\",'",
+        "Line 477: '        logger.info(f\" Runtime Intelligence: {len(self.supercell_patterns['runtime_intelligence'])} patterns initialized\")' \u2192 '        logger.info(f\" Runtime Intelligence: {len(self.supercell_patterns['runtime'])} patterns initialized\")'",
+        "Line 512: '        runtime_results = await self._apply_runtime_intelligence_patterns()' \u2192 '        runtime_results = await self._apply_runtime_patterns()'",
+        "Line 514: '            \"phase\": \"runtime_intelligence_optimization\",' \u2192 '            \"phase\": \"runtime_optimization\",'",
+        "Line 705: '    async def _apply_runtime_intelligence_patterns(self) -> Dict[str, Any]:' \u2192 '    async def _apply_runtime_patterns(self) -> Dict[str, Any]:'",
+        "Line 709: '        runtime_patterns = self.supercell_patterns[\"runtime_intelligence\"]' \u2192 '        runtime_patterns = self.supercell_patterns[\"runtime\"]'",
+        "Line 769: '            \"supercell\": \"runtime_intelligence\",' \u2192 '            \"supercell\": \"runtime\",'",
+        "Line 772: '            \"runtime_intelligence_metrics\": {' \u2192 '            \"runtime_metrics\": {'",
+        "Line 792: '        runtime_patterns = len(self.supercell_patterns[\"runtime_intelligence\"])' \u2192 '        runtime_patterns = len(self.supercell_patterns[\"runtime\"])'",
+        "Line 798: '            \"ai_intelligence_to_runtime\": self._calculate_coordination_strength(\"ai_intelligence\", \"runtime_intelligence\"),' \u2192 '            \"ai_intelligence_to_runtime\": self._calculate_coordination_strength(\"ai_intelligence\", \"runtime\"),'",
+        "Line 799: '            \"core_engine_to_runtime\": self._calculate_coordination_strength(\"core_engine\", \"runtime_intelligence\"),' \u2192 '            \"core_engine_to_runtime\": self._calculate_coordination_strength(\"core_engine\", \"runtime\"),'",
+        "Line 829: '            \"participating_supercells\": [\"ai_intelligence\", \"core_engine\", \"runtime_intelligence\"],' \u2192 '            \"participating_supercells\": [\"ai_intelligence\", \"core_engine\", \"runtime\"],'",
+        "Line 869: '                \"patterns\": [\"ai_learning_adaptation\", \"core_system_integration\", \"runtime_intelligence_synthesis\"],' \u2192 '                \"patterns\": [\"ai_learning_adaptation\", \"core_system_integration\", \"runtime_synthesis\"],'",
+        "Line 1018: '        ai_runtime = self._calculate_coordination_strength(\"ai_intelligence\", \"runtime_intelligence\")' \u2192 '        ai_runtime = self._calculate_coordination_strength(\"ai_intelligence\", \"runtime\")'",
+        "Line 1019: '        core_runtime = self._calculate_coordination_strength(\"core_engine\", \"runtime_intelligence\")' \u2192 '        core_runtime = self._calculate_coordination_strength(\"core_engine\", \"runtime\")'",
+        "Line 1073: '                \"runtime_intelligence\": {' \u2192 '                \"runtime\": {'",
+        "Line 1074: '                    \"patterns_applied\": len(self.supercell_patterns[\"runtime_intelligence\"]),' \u2192 '                    \"patterns_applied\": len(self.supercell_patterns[\"runtime\"]),'",
+        "Line 1105: '                \"runtime_intelligence_contribution\": \"Adaptive consciousness evolution\",' \u2192 '                \"runtime_contribution\": \"Adaptive consciousness evolution\",'"
+      ]
+    },
+    {
+      "file": "runtime\\three_supercell_synchronized_demo.py",
+      "changes": [
+        "Line 133: '                             if phase['phase'] == 'runtime_intelligence_optimization'), None)' \u2192 '                             if phase['phase'] == 'runtime_optimization'), None)'",
+        "Line 141: '            print(f\"\u2022 Average Optimization Factor: {runtime_results['runtime_intelligence_metrics']['average_optimization_factor']:.2f}x\")' \u2192 '            print(f\"\u2022 Average Optimization Factor: {runtime_results['runtime_metrics']['average_optimization_factor']:.2f}x\")'"
+      ]
+    },
+    {
+      "file": "runtime\\analysis\\aios_comprehensive_file_analysis_commit_msg.py",
+      "changes": [
+        "Line 80: '                \"expected_location\": \"runtime_intelligence/tools/aios_custom_ai_engine.py\",' \u2192 '                \"expected_location\": \"runtime/tools/aios_custom_ai_engine.py\",'",
+        "Line 190: '    output_path = Path(\"c:/dev/AIOS/runtime_intelligence/analysis/commit_msg_comprehensive_analysis.json\")' \u2192 '    output_path = Path(\"c:/dev/AIOS/runtime/analysis/commit_msg_comprehensive_analysis.json\")'"
+      ]
+    },
+    {
+      "file": "runtime\\analysis\\aios_deep_thought_commit_msg_analysis.py",
+      "changes": [
+        "Line 238: '    output_path = Path(\"c:/dev/AIOS/runtime_intelligence/analysis/commit_msg_deep_thought_analysis.json\")' \u2192 '    output_path = Path(\"c:/dev/AIOS/runtime/analysis/commit_msg_deep_thought_analysis.json\")'"
+      ]
+    },
+    {
+      "file": "runtime\\analysis\\aios_powershell_fixes_documentation.py",
+      "changes": [
+        "Line 177: '    output_path = Path(\"c:/dev/AIOS/runtime_intelligence/analysis/powershell_fixes_documentation.json\")' \u2192 '    output_path = Path(\"c:/dev/AIOS/runtime/analysis/powershell_fixes_documentation.json\")'"
+      ]
+    },
+    {
+      "file": "runtime\\core\\aios_core_enhancement_patch_reporter.py",
+      "changes": [
+        "Line 350: '3. **System-wide Integration**: Propagate neuronal patterns across interface and runtime_intelligence' \u2192 '3. **System-wide Integration**: Propagate neuronal patterns across interface and runtime'"
+      ]
+    },
+    {
+      "file": "runtime\\core\\aios_neuronal_dendritic_intelligence.py",
+      "changes": [
+        "Line 501: '            \"runtime_intelligence\": \"RUNTIME_BOSONIC_QUANTUM_CONSCIOUSNESS_SUBSTRATE\",' \u2192 '            \"runtime\": \"RUNTIME_BOSONIC_QUANTUM_CONSCIOUSNESS_SUBSTRATE\",'",
+        "Line 536: '            return \"runtime_intelligence\"' \u2192 '            return \"runtime\"'"
+      ]
+    },
+    {
+      "file": "runtime\\core\\aios_subcellular_neuronal_organizer.py",
+      "changes": [
+        "Line 88: '                'action': 'move_to_runtime_intelligence',' \u2192 '                'action': 'move_to_runtime','",
+        "Line 89: '                'target_subcell': 'runtime_intelligence'' \u2192 '                'target_subcell': 'runtime''",
+        "Line 191: '                        'action': 'move_to_runtime_intelligence',' \u2192 '                        'action': 'move_to_runtime','",
+        "Line 289: '        optimal_report = 0.0   # Should be moved to runtime_intelligence/' \u2192 '        optimal_report = 0.0   # Should be moved to runtime/'",
+        "Line 421: '        subcell_dirs = ['documentation', 'runtime_intelligence', 'bridges', ' \u2192 '        subcell_dirs = ['documentation', 'runtime', 'bridges', '",
+        "Line 493: '            'runtime_intelligence': 'Runtime reports, analysis data, and intelligence logs',' \u2192 '            'runtime': 'Runtime reports, analysis data, and intelligence logs','"
+      ]
+    },
+    {
+      "file": "runtime\\iterations\\ainlp_iteration.py",
+      "changes": [
+        "Line 9: '  - Always writes runtime_intelligence/logs/iteration_<timestamp>.log' \u2192 '  - Always writes runtime/logs/iteration_<timestamp>.log'"
+      ]
+    },
+    {
+      "file": "runtime\\tools\\module_discoverer.py",
+      "changes": [
+        "Line 38: '    python -m runtime_intelligence.tools.module_discoverer [options]' \u2192 '    python -m runtime.tools.module_discoverer [options]'",
+        "Line 52: '    python -m runtime_intelligence.tools.module_discoverer \\' \u2192 '    python -m runtime.tools.module_discoverer \\'"
+      ]
+    },
+    {
+      "file": "runtime\\tools\\bridges\\aios_supercell_transport_bridge.py",
+      "changes": [
+        "Line 174: '            \"runtime_intelligence\"' \u2192 '            \"runtime\"'"
+      ]
+    },
+    {
+      "file": "runtime\\tools\\bridges\\quantum_classical_bridge.py",
+      "changes": [
+        "Line 285: '            \"tachyonic/archive/runtime_intelligence_original_20251025/TACHYONIC_STORAGE_BRIDGE_REPORT_20250905_233631.json\"' \u2192 '            \"tachyonic/archive/runtime_original_20251025/TACHYONIC_STORAGE_BRIDGE_REPORT_20250905_233631.json\"'"
+      ]
+    },
+    {
+      "file": "runtime\\tools\\modules\\aios_components\\aios_comprehensive_runtime_tester.py",
+      "changes": [
+        "Line 95: '        self.runtime_intelligence_path = self.core_path / \"runtime_intelligence\"' \u2192 '        self.runtime_path = self.core_path / \"runtime\"'"
+      ]
+    },
+    {
+      "file": "runtime\\tools\\assemblers\\tree_assembler\\consciousness_layer\\aios_supercell_consciousness.py",
+      "changes": [
+        "Line 23: '  runtime_intelligence (Runtime Intelligence Cell)' \u2192 '  runtime (Runtime Intelligence Cell)'",
+        "Line 218: '            assessment[\"specialization\"] = \"runtime_intelligence\"' \u2192 '            assessment[\"specialization\"] = \"runtime\"'",
+        "Line 514: '            \"runtime_intelligence\": [\"tachyonic_archive\", \"analysis_tools\"],' \u2192 '            \"runtime\": [\"tachyonic_archive\", \"analysis_tools\"],'",
+        "Line 515: '            \"tachyonic_archive\": [\"analysis_tools\", \"runtime_intelligence\"]' \u2192 '            \"tachyonic_archive\": [\"analysis_tools\", \"runtime\"]'"
+      ]
+    },
+    {
+      "file": "runtime\\tools\\assemblers\\tree_assembler\\meta_evolution\\aios_dendritic.py",
+      "changes": [
+        "Line 607: '            \"runtime_intelligence\": CellularType.CONSCIOUSNESS,' \u2192 '            \"runtime\": CellularType.CONSCIOUSNESS,'"
+      ]
+    },
+    {
+      "file": "runtime\\tools\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_implementation.py",
+      "changes": [
+        "Line 49: '                    'src/neural_bridge', 'src/neural_optimizer', 'src/runtime_intelligence'' \u2192 '                    'src/neural_bridge', 'src/neural_optimizer', 'src/runtime''"
+      ]
+    }
+  ],
+  "files_modified": 20
+}

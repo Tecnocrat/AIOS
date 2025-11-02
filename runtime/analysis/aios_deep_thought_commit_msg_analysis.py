@@ -235,7 +235,7 @@ def main():
     analysis = analyzer.deep_context_synthesis()
     
     # Save comprehensive analysis
-    output_path = Path("c:/dev/AIOS/runtime_intelligence/analysis/commit_msg_deep_thought_analysis.json")
+    output_path = Path("c:/dev/AIOS/runtime/analysis/commit_msg_deep_thought_analysis.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
     with open(output_path, 'w') as f:

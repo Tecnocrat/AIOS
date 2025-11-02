@@ -134,8 +134,8 @@ class AIOSSequencer:
         discovered.update(integrations)
         
         # Discover runtime intelligence tools (legacy location)
-        runtime_intelligence = await self._discover_runtime_intelligence()
-        discovered.update(runtime_intelligence)
+        runtime = await self._discover_runtime()
+        discovered.update(runtime)
         
         self.components = discovered
         self.state.components_discovered = len(discovered)
@@ -261,15 +261,15 @@ class AIOSSequencer:
         
         return integrations
     
-    async def _discover_runtime_intelligence(self) -> Dict[str, ExecutableComponent]:
+    async def _discover_runtime(self) -> Dict[str, ExecutableComponent]:
         """Discover runtime intelligence tools and components"""
         runtime_tools = {}
         # Get path relative to this sequencer.py file location
         sequencer_dir = Path(__file__).parent
-        runtime_dir = (sequencer_dir / "../../runtime_intelligence").resolve()
+        runtime_dir = (sequencer_dir / "../../runtime").resolve()
         
         if runtime_dir.exists():
-            # Discover tools in runtime_intelligence/tools/
+            # Discover tools in runtime/tools/
             tools_dir = runtime_dir / "tools"
             if tools_dir.exists():
                 for py_file in tools_dir.glob("*.py"):

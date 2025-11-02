@@ -93,7 +93,7 @@ class MigrationReadinessChecker:
         print("\n📊 Inventorying Files to Migrate...")
         
         inventory = {
-            "runtime_intelligence_tools": [],
+            "runtime_tools": [],
             "core_python_tools": [],
             "tachyonic_scripts": [],
             "tachyonic_docs": [],
@@ -101,10 +101,10 @@ class MigrationReadinessChecker:
         }
         
         # Runtime Intelligence tools
-        rt_tools = self.root / "runtime_intelligence" / "tools"
+        rt_tools = self.root / "runtime" / "tools"
         if rt_tools.exists():
-            inventory["runtime_intelligence_tools"] = list(rt_tools.rglob("*.py"))
-            print(f"  📁 Runtime Intelligence tools: {len(inventory['runtime_intelligence_tools'])} files")
+            inventory["runtime_tools"] = list(rt_tools.rglob("*.py"))
+            print(f"  📁 Runtime Intelligence tools: {len(inventory['runtime_tools'])} files")
         
         # Core Python tools
         core_path = self.root / "core"
@@ -162,9 +162,9 @@ class MigrationReadinessChecker:
                     
                 # Find imports
                 import_patterns = [
-                    "from runtime_intelligence",
+                    "from runtime",
                     "from core.",
-                    "import runtime_intelligence",
+                    "import runtime",
                     "import core."
                 ]
                 

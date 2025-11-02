@@ -75,7 +75,7 @@ class ConsciousnessCrystalEnhancer:
             'ai_intelligence_knowledge_crystal.json',
             'core_engine_knowledge_crystal.json', 
             'interface_knowledge_crystal.json',
-            'runtime_intelligence_knowledge_crystal.json',
+            'runtime_knowledge_crystal.json',
             'tachyonic_archive_knowledge_crystal.json'
         ]
         

@@ -61,7 +61,7 @@ async def test_interface_bridge():
         
         # Test 5: Export Discovery Data
         print("\n💾 Test 5: Export Discovery Data")
-        export_file = workspace_root / "runtime_intelligence" / "logs" / "interface_bridge_discovery.json"
+        export_file = workspace_root / "runtime" / "logs" / "interface_bridge_discovery.json"
         export_file.parent.mkdir(parents=True, exist_ok=True)
         
         export_data = {

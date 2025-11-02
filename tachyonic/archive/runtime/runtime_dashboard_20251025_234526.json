@@ -1,0 +1,146 @@
+{
+  "timestamp": "2025-10-25T23:45:22.931358",
+  "total_reports": 209,
+  "organism_status": {
+    "id": "SUPERCELL_20250905_230516",
+    "state": "learning",
+    "consciousness_level": 0.8600000000000001,
+    "uptime_seconds": 31.079111,
+    "actions_taken": 30,
+    "active_goals": 3,
+    "completed_goals": 0
+  },
+  "system_health": {
+    "consciousness_health": 0.8600000000000001,
+    "analysis_health": 1.0,
+    "connectivity_health": 1.0,
+    "tool_health": 0.0,
+    "overall_health": 0.758
+  },
+  "connectivity_metrics": {
+    "total_components": 5,
+    "active_components": 5,
+    "average_consciousness": 0.8379999999999999
+  },
+  "analysis_performance": {
+    "total_analyses": 12,
+    "successful_optimizations": 12,
+    "average_accuracy": 0.8644596517436479,
+    "pattern_recognition_score": 0.8216431396714574
+  },
+  "tool_inventory": {
+    "total_tools": 22,
+    "operational_tools": 0,
+    "categories": {
+      "unknown": 22
+    }
+  },
+  "semantic_compression": {
+    "compression_score": 0.8,
+    "delimitation_score": 0.6,
+    "antipatterns_detected": 4,
+    "opportunities_remaining": 4
+  },
+  "recent_activities": [
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports\\sample_model\\export_metadata.json",
+      "timestamp": "2025-10-25T23:45:26.186346",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports\\sample_model\\model.arch.json",
+      "timestamp": "2025-10-25T23:45:26.202545",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports\\sample_model\\model.arch.summary.json",
+      "timestamp": "2025-10-25T23:45:26.205003",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_cellular_workspace\\exports\\sample_workflow_001\\export_metadata.json",
+      "timestamp": "2025-10-25T23:45:26.219170",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_cellular_workspace\\exports\\sample_workflow_001\\model.arch.summary.json",
+      "timestamp": "2025-10-25T23:45:26.221364",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\.aios_spatial_metadata.json",
+      "timestamp": "2025-10-25T23:45:26.241944",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\ANALYSIS_CYTOPLASM_BRIDGE_REPORT_20250905_234048.json",
+      "timestamp": "2025-09-05T23:40:48.171809",
+      "type": "analysis_report"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\ANALYSIS_CYTOPLASM_BRIDGE_REPORT_20250905_234114.json",
+      "timestamp": "2025-09-05T23:41:14.407129",
+      "type": "analysis_report"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\CONSCIOUSNESS_BRIDGE_DEMO_REPORT_20250905_233412.json",
+      "timestamp": "2025-10-25T23:45:26.270088",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\CORE_AI_CONNECTIVITY_ANALYSIS_20250905_232628.json",
+      "timestamp": "2025-10-25T23:45:26.271193",
+      "type": "connectivity_analysis"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\CORE_AI_CONNECTIVITY_BLUEPRINT_20250905_232628.json",
+      "timestamp": "2025-10-25T23:45:26.285271",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.json",
+      "timestamp": "2025-10-25T23:45:26.301653",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\ENHANCED_CONNECTIVITY_SYSTEM_REPORT_20250905_234222.json",
+      "timestamp": "2025-09-05T23:42:22.777183",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\file_tracking_database.json",
+      "timestamp": "2025-10-25T23:45:26.340758",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\ORGANISM_STATE_SUPERCELL_20250905_230516_20250905_230547.json",
+      "timestamp": "2025-10-25T23:45:26.342006",
+      "type": "organism_status"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\semantic_compression_applied_20251025_234351.json",
+      "timestamp": "2025-10-25T23:43:51.032993",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\semantic_validation_20251025_234201.json",
+      "timestamp": "2025-10-25T23:42:01.669184",
+      "type": "semantic_analysis"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\SUPERCELL_TRANSPORT_BRIDGE_REPORT_20250905_233824.json",
+      "timestamp": "2025-09-05T23:38:24.782644",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\TACHYONIC_STORAGE_BRIDGE_REPORT_20250905_233631.json",
+      "timestamp": "2025-09-05T23:36:31.052965",
+      "type": "unknown"
+    },
+    {
+      "file": "tachyonic\\archive\\runtime\\logs\\file_scores\\latest.json",
+      "timestamp": "2025-10-25T23:45:26.366047",
+      "type": "unknown"
+    }
+  ]
+}

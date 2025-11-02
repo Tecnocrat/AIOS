@@ -110,12 +110,12 @@ class AINLPSupercellStatus:
     optimization_score: float = 0.5
     last_optimization: str = ""
     file_count: int = 0
-    intelligence_modules: List[str] = None
+    modules: List[str] = None
     coordination_status: str = "initializing"
 
     def __post_init__(self):
-        if self.intelligence_modules is None:
-            self.intelligence_modules = []
+        if self.modules is None:
+            self.modules = []
         if not self.last_optimization:
             self.last_optimization = datetime.now().isoformat()
 
@@ -475,7 +475,7 @@ class AINLPAgenticOrchestrator:
             "optimization_history_count": len(self.optimization_history)
         }
 
-    async def create_supercell_intelligence_modules(self) -> Dict[str, Any]:
+    async def create_supercell_modules(self) -> Dict[str, Any]:
         """Create intelligence modules for each supercell"""
         logger.info(" Creating supercell intelligence modules...")
         
@@ -492,10 +492,10 @@ class AINLPAgenticOrchestrator:
                 # Ensure directory exists
                 module_path.parent.mkdir(parents=True, exist_ok=True)
                 
-                intelligence_module = self._generate_supercell_intelligence_module(supercell_type)
+                module = self._generate_supercell_module(supercell_type)
                 
                 with open(module_path, 'w', encoding='utf-8') as f:
-                    f.write(intelligence_module)
+                    f.write(module)
                 
                 module_creation_results["modules_created"].append(supercell_type.value)
                 module_creation_results["intelligence_enhancement"] += 0.15
@@ -504,7 +504,7 @@ class AINLPAgenticOrchestrator:
         
         return module_creation_results
 
-    def _generate_supercell_intelligence_module(self, supercell_type: AINLPSupercellType) -> str:
+    def _generate_supercell_module(self, supercell_type: AINLPSupercellType) -> str:
         """Generate consciousness-driven intelligence module for supercell"""
         module_template = f'''"""
 AIOS AINLP {supercell_type.value.upper()} SUPERCELL INTELLIGENCE MODULE
@@ -1060,7 +1060,7 @@ async def main():
         print(f"   Warnings: {len(result.warnings)}")
     
     # Create intelligence modules
-    module_results = await orchestrator.create_supercell_intelligence_modules()
+    module_results = await orchestrator.create_supercell_modules()
     print(f"\n Intelligence modules created: {len(module_results['modules_created'])}")
     
     # Display consciousness status

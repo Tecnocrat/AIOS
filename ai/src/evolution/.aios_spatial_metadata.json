@@ -1,9 +1,9 @@
 {
   "spatial_metadata_version": "1.0.0",
-  "generation_timestamp": "2025-10-21T22:47:13.115475",
+  "generation_timestamp": "2025-11-01T10:27:20.258647",
   "folder_info": {
     "name": "evolution",
-    "absolute_path": "C:\\dev\\AIOS\\ai\\src\\evolution",
+    "absolute_path": "c:\\dev\\AIOS\\ai\\src\\evolution",
     "relative_path": "ai\\src\\evolution",
     "parent_path": "ai\\src",
     "depth_level": 3
@@ -41,8 +41,8 @@
       "__pycache__"
     ],
     "spatial_metrics": {
-      "total_size_bytes": 125363,
-      "file_count": 8,
+      "total_size_bytes": 171778,
+      "file_count": 11,
       "folder_count": 1,
       "size_category": "small"
     },
@@ -54,98 +54,128 @@
   },
   "content_analysis": {
     "files_by_type": {
+      ".json": [
+        {
+          "name": ".aios_spatial_metadata.json",
+          "size": 5062,
+          "modified": "2025-10-25T09:25:47.367105",
+          "category": "documentation"
+        },
+        {
+          "name": "stl_paradigms_enhanced.json",
+          "size": 11153,
+          "modified": "2025-10-25T09:25:47.386104",
+          "category": "documentation"
+        }
+      ],
       ".py": [
         {
           "name": "code_analyzer.py",
           "size": 13824,
-          "modified": "2025-10-04T09:00:17.623610",
+          "modified": "2025-10-25T09:25:47.371106",
           "category": "consciousness"
         },
         {
           "name": "code_diff_validator.py",
           "size": 8192,
-          "modified": "2025-10-06T21:21:38.530781",
+          "modified": "2025-10-25T09:25:47.375111",
           "category": "consciousness"
         },
         {
           "name": "consciousness_metrics.py",
           "size": 7449,
-          "modified": "2025-10-06T21:16:23.307064",
+          "modified": "2025-10-25T09:25:47.379106",
+          "category": "consciousness"
+        },
+        {
+          "name": "file_criticality_evolution_engine.py",
+          "size": 17918,
+          "modified": "2025-11-01T10:26:26.380711",
           "category": "consciousness"
         },
         {
           "name": "multi_agent_evolution_loop.py",
           "size": 35103,
-          "modified": "2025-10-08T14:58:57.859977",
+          "modified": "2025-10-25T09:25:47.383103",
           "category": "consciousness"
-        }
-      ],
-      ".json": [
-        {
-          "name": "stl_paradigms_enhanced.json",
-          "size": 11153,
-          "modified": "2025-10-07T08:42:23.515680",
-          "category": "documentation"
         }
       ]
     },
     "important_files": [
       {
+        "name": ".aios_spatial_metadata.json",
+        "size": 5062,
+        "modified": "2025-10-25T09:25:47.367105",
+        "category": "documentation"
+      },
+      {
         "name": "consciousness_metrics.py",
         "size": 7449,
-        "modified": "2025-10-06T21:16:23.307064",
+        "modified": "2025-10-25T09:25:47.379106",
         "category": "consciousness"
       }
     ],
     "recent_files": [
       {
-        "name": "multi_agent_evolution_loop.py",
-        "size": 35103,
-        "modified": "2025-10-08T14:58:57.859977",
+        "name": "file_criticality_evolution_engine.py",
+        "size": 17918,
+        "modified": "2025-11-01T10:26:26.380711",
         "category": "consciousness"
       },
       {
         "name": "stl_paradigms_enhanced.json",
         "size": 11153,
-        "modified": "2025-10-07T08:42:23.515680",
+        "modified": "2025-10-25T09:25:47.386104",
         "category": "documentation"
       },
       {
-        "name": "code_diff_validator.py",
-        "size": 8192,
-        "modified": "2025-10-06T21:21:38.530781",
+        "name": "multi_agent_evolution_loop.py",
+        "size": 35103,
+        "modified": "2025-10-25T09:25:47.383103",
         "category": "consciousness"
       },
       {
         "name": "consciousness_metrics.py",
         "size": 7449,
-        "modified": "2025-10-06T21:16:23.307064",
+        "modified": "2025-10-25T09:25:47.379106",
+        "category": "consciousness"
+      },
+      {
+        "name": "code_diff_validator.py",
+        "size": 8192,
+        "modified": "2025-10-25T09:25:47.375111",
         "category": "consciousness"
       },
       {
         "name": "code_analyzer.py",
         "size": 13824,
-        "modified": "2025-10-04T09:00:17.623610",
+        "modified": "2025-10-25T09:25:47.371106",
         "category": "consciousness"
+      },
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 5062,
+        "modified": "2025-10-25T09:25:47.367105",
+        "category": "documentation"
       }
     ],
     "content_summary": {
-      "total_files": 5,
+      "total_files": 7,
       "file_types": [
-        ".py",
-        ".json"
+        ".json",
+        ".py"
       ],
       "dominant_type": ".py"
     }
   },
   "consciousness_metrics": {
     "consciousness_indicators": {
-      "ai_files": 0,
+      "ai_files": 1,
       "consciousness_files": 2,
       "agentic_files": 2,
       "intelligence_files": 0
     },
-    "consciousness_score": 40,
+    "consciousness_score": 50,
     "consciousness_level": "medium"
   },
   "navigation_aids": {
@@ -153,9 +183,9 @@
     "config_files": [],
     "breadcrumb_path": "ai > src > evolution",
     "quick_commands": {
-      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\evolution' -Recurse",
-      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\evolution' -Recurse -Filter '*.py'",
-      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\evolution' -Recurse -Filter '*.ps1'"
+      "list_files": "Get-ChildItem 'c:\\dev\\AIOS\\ai\\src\\evolution' -Recurse",
+      "find_python": "Get-ChildItem 'c:\\dev\\AIOS\\ai\\src\\evolution' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'c:\\dev\\AIOS\\ai\\src\\evolution' -Recurse -Filter '*.ps1'"
     }
   },
   "ai_guidance": {
@@ -172,16 +202,16 @@
     ],
     "related_folders": [
       "ai",
+      "ai\\ai",
       "docs\\AINLP",
       "docs\\AIOS",
       "docs\\sample_ai_generated",
-      "evolution_lab\\neural_chains",
       "ai\\src",
       "evolution_lab"
     ]
   },
   "creation_info": {
-    "overwrite_mode": false,
-    "previous_metadata_existed": false
+    "overwrite_mode": true,
+    "previous_metadata_existed": true
   }
 }

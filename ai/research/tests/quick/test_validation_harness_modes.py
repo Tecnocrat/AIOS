@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[3]
 HARNESS = ROOT / 'scripts' / 'run_full_system_validation.py'
-SUMMARY = ROOT / 'runtime_intelligence' / 'context' / 'full_system_validation.json'
+SUMMARY = ROOT / 'runtime' / 'context' / 'full_system_validation.json'
 
 
 def _run(mode: str):

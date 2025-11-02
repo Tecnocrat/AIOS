@@ -9,7 +9,7 @@ Purpose: Enable plug-and-play agent architecture via structural typing
 Strategy: Wrap existing agents with protocol-compliant interface
 
 Adapted Agents:
-- DeepSeekAgent (ai/src/engines/deepseek_intelligence_engine.py)
+- DeepSeekAgent (ai/src/engines/deepseek_engine.py)
 - GeminiAgent (ai/src/integrations/gemini_bridge/gemini_evolution_bridge.py)
 - OllamaAgent (ai/src/integrations/ollama_bridge.py)
 """
@@ -46,7 +46,7 @@ class ProtocolAgentAdapter:
     protocol-based code without modification.
     
     Usage:
-        from ai.src.engines.deepseek_intelligence_engine import (
+        from ai.src.engines.deepseek_engine import (
             DeepSeekIntelligenceEngine
         )
         
@@ -164,7 +164,7 @@ def adapt_deepseek_agent() -> ProtocolAgentAdapter:
         Protocol-compliant DeepSeek agent
     """
     # AINLP TODO: Import actual DeepSeekIntelligenceEngine
-    # from ai.src.engines.deepseek_intelligence_engine import (
+    # from ai.src.engines.deepseek_engine import (
     #     DeepSeekIntelligenceEngine
     # )
     # engine = DeepSeekIntelligenceEngine()

@@ -43,7 +43,7 @@ class SupercellType(Enum):
     INTERFACE = "ui_engine"  # Alias for UI_ENGINE (backward compatibility)
     ORCHESTRATOR = "orchestrator"
     TACHYONIC_ARCHIVE = "tachyonic_archive"
-    RUNTIME_INTELLIGENCE = "runtime_intelligence"
+    RUNTIME_INTELLIGENCE = "runtime"
     ALL = "all"  # Added for broadcast support
 
 

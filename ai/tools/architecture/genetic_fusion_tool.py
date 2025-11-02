@@ -117,8 +117,8 @@ sys.path.append(ai_path)
 
 # Dendritic supervisor integration (enhanced capability)
 try:
-    from runtime_intelligence_dendritic_integration import (
-        get_runtime_intelligence_dendritic_integration
+    from runtime_dendritic_integration import (
+        get_runtime_dendritic_integration
     )
     DENDRITIC_AVAILABLE = True
 except ImportError:
@@ -182,7 +182,7 @@ class EnhancedVisualIntelligenceBridge:
         # Dendritic supervisor integration (enhanced feature)
         if DENDRITIC_AVAILABLE:
             try:
-                self.dendritic_integration = get_runtime_intelligence_dendritic_integration()
+                self.dendritic_integration = get_runtime_dendritic_integration()
                 self.enhanced_mode = True
                 self.logger.info("✓ Dendritic supervisor integration active")
             except Exception as e:

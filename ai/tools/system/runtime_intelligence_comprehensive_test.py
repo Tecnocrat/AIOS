@@ -30,7 +30,7 @@ class RuntimeIntelligenceTester:
         self.workspace_root = workspace_root
         self.results = {
             "timestamp": datetime.now().isoformat(),
-            "phase": "9.2.5_runtime_intelligence_validation",
+            "phase": "9.2.5_runtime_validation",
             "tools_tested": [],
             "integration_status": {},
             "redundancy_analysis": {},
@@ -228,20 +228,20 @@ class RuntimeIntelligenceTester:
         bridge_tools = self.get_interface_bridge_tools()
         print(f"📋 Interface Bridge reports {len(bridge_tools)} tools available")
 
-        # Find all Python files in runtime_intelligence
-        runtime_intelligence_dir = self.workspace_root / "runtime_intelligence"
+        # Find all Python files in runtime
+        runtime_dir = self.workspace_root / "runtime"
         
-        print(f"Searching in directory: {runtime_intelligence_dir}")
-        print(f"Directory exists: {runtime_intelligence_dir.exists()}")
+        print(f"Searching in directory: {runtime_dir}")
+        print(f"Directory exists: {runtime_dir.exists()}")
         
         # Check if we're in the right place
-        if not runtime_intelligence_dir.exists():
+        if not runtime_dir.exists():
             print(f"Directory not found, trying parent: {self.workspace_root}")
-            runtime_intelligence_dir = self.workspace_root
+            runtime_dir = self.workspace_root
         
         python_files = []
         
-        for root, dirs, files in os.walk(runtime_intelligence_dir):
+        for root, dirs, files in os.walk(runtime_dir):
             print(f"Walking: {root} - {len(files)} files")
             for file in files:
                 if file.endswith('.py'):
@@ -249,7 +249,7 @@ class RuntimeIntelligenceTester:
                     python_files.append(full_path)
                     print(f"Found Python file: {full_path}")
 
-        print(f"🔧 Found {len(python_files)} Python files in runtime_intelligence")
+        print(f"🔧 Found {len(python_files)} Python files in runtime")
 
         # Test each tool
         tool_results = []
@@ -333,7 +333,7 @@ class RuntimeIntelligenceTester:
         """Save comprehensive test results"""
         if output_path is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = self.workspace_root / "tachyonic" / "archive" / f"runtime_intelligence_test_{timestamp}.json"
+            output_path = self.workspace_root / "tachyonic" / "archive" / f"runtime_test_{timestamp}.json"
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
 

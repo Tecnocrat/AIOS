@@ -40,9 +40,9 @@ Created: 2025-10-18 (Phase 3 of AINLP refactoring)
 from ai.supercells.base import BaseSupercellInterface
 from ai.supercells.ai_intelligence import AIIntelligenceSupercell, create_ai_intelligence_supercell
 from ai.supercells.core_engine import CoreEngineSupercell, create_core_engine_supercell
-from ai.supercells.runtime_intelligence import (
+from ai.supercells.runtime import (
     RuntimeIntelligenceSupercell,
-    create_runtime_intelligence_supercell,
+    create_runtime_supercell,
     ProtectionEvent
 )
 from ai.supercells.interface import (
@@ -65,7 +65,7 @@ __all__ = [
     # Factory functions
     'create_ai_intelligence_supercell',
     'create_core_engine_supercell',
-    'create_runtime_intelligence_supercell',
+    'create_runtime_supercell',
     'create_interface_supercell',
     
     # Data classes

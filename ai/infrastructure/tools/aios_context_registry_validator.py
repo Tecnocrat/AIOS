@@ -20,7 +20,7 @@ import shutil
 from typing import Dict, List, Any, Optional
 
 # Tachyonic versioning paths
-TACHYONIC_BASE_PATH = Path("runtime_intelligence/logs/aios_context")
+TACHYONIC_BASE_PATH = Path("runtime/logs/aios_context")
 # Root now holds a lightweight stub .aios_context.json pointing to relocated live registry (2025-08-17)
 REGISTRY_STUB_PATH = Path(".aios_context.json")
 RELOCATED_REGISTRY_PATH = TACHYONIC_BASE_PATH / ".aios_context.json"
@@ -387,7 +387,7 @@ class TachyonicContextIntelligence:
 def load_registry() -> Dict[str, Any]:
     """Load registry, resolving relocated live file or stub pointer.
 
-    Stub format example (root): {"relocated": "runtime_intelligence/logs/aios_context/.aios_context.json"}
+    Stub format example (root): {"relocated": "runtime/logs/aios_context/.aios_context.json"}
     """
     path = REGISTRY_PATH
     if not path.exists():

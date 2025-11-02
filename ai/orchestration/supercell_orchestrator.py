@@ -50,7 +50,7 @@ from ai.supercells import (
     InterfaceSupercell,
     create_ai_intelligence_supercell,
     create_core_engine_supercell,
-    create_runtime_intelligence_supercell,
+    create_runtime_supercell,
     create_interface_supercell
 )
 
@@ -78,7 +78,7 @@ class SupercellOrchestrator:
         self,
         ai_root_path: str = "C:/dev/AIOS/ai",
         core_root_path: str = "C:/dev/AIOS/core",
-        runtime_root_path: str = "C:/dev/AIOS/runtime_intelligence",
+        runtime_root_path: str = "C:/dev/AIOS/runtime",
         interface_root_path: str = "C:/dev/AIOS/interface"
     ):
         """
@@ -180,7 +180,7 @@ class SupercellOrchestrator:
             supercell_configs = [
                 (SupercellType.AI_INTELLIGENCE, create_ai_intelligence_supercell(self.ai_root_path)),
                 (SupercellType.CORE_ENGINE, create_core_engine_supercell(self.core_root_path)),
-                (SupercellType.RUNTIME_INTELLIGENCE, create_runtime_intelligence_supercell(self.runtime_root_path)),
+                (SupercellType.RUNTIME_INTELLIGENCE, create_runtime_supercell(self.runtime_root_path)),
                 (SupercellType.INTERFACE, create_interface_supercell(self.interface_root_path))
             ]
             
@@ -438,7 +438,7 @@ class SupercellOrchestrator:
 def create_orchestrator(
     ai_root_path: str = "C:/dev/AIOS/ai",
     core_root_path: str = "C:/dev/AIOS/core",
-    runtime_root_path: str = "C:/dev/AIOS/runtime_intelligence",
+    runtime_root_path: str = "C:/dev/AIOS/runtime",
     interface_root_path: str = "C:/dev/AIOS/interface"
 ) -> SupercellOrchestrator:
     """

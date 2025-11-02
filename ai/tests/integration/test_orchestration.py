@@ -59,7 +59,7 @@ async def orchestrator():
     orch = create_orchestrator(
         ai_root_path="C:/dev/AIOS/ai",
         core_root_path="C:/dev/AIOS/core",
-        runtime_root_path="C:/dev/AIOS/runtime_intelligence",
+        runtime_root_path="C:/dev/AIOS/runtime",
         interface_root_path="C:/dev/AIOS/interface"
     )
     yield orch
@@ -72,7 +72,7 @@ async def initialized_orchestrator():
     orch = create_orchestrator(
         ai_root_path="C:/dev/AIOS/ai",
         core_root_path="C:/dev/AIOS/core",
-        runtime_root_path="C:/dev/AIOS/runtime_intelligence",
+        runtime_root_path="C:/dev/AIOS/runtime",
         interface_root_path="C:/dev/AIOS/interface"
     )
     success = await orch.initialize()

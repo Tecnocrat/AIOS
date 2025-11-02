@@ -4,7 +4,7 @@ AIOS Import Path Update Automation
 ===================================
 
 Automatically updates import statements for multiple migration patterns:
-1. runtime_intelligence/tools/ → ai/tools/[category]/ (Phase 1-2 tools)
+1. runtime/tools/ → ai/tools/[category]/ (Phase 1-2 tools)
 2. core.* → computational_layer.* (Phase 2C language separation)
 
 Usage:
@@ -61,7 +61,7 @@ PHASE_2C_MODULES = {
     "connectivity_demo",
     "file_monitor_supercell",
     
-    # Runtime Intelligence (from core/runtime_intelligence/)
+    # Runtime Intelligence (from core/runtime/)
     "evolution_monitor",
     "meta_evolutionary_enhancer",
     
@@ -88,7 +88,7 @@ TOOL_CATEGORIES = {
     "generate_file_scores": "system",
     "integration_test_runner": "system",
     "python_environment_validator": "system",
-    "runtime_intelligence_comprehensive_test": "system",
+    "runtime_comprehensive_test": "system",
     "safety_demo": "system",
     "safety_rollback": "system",
     "subprocess_manager": "system",
@@ -111,7 +111,7 @@ TOOL_CATEGORIES = {
     "consciousness_emergence_demo": "consciousness",
     "enhanced_consciousness_demo": "consciousness",
     "dendritic_supervisor": "consciousness",
-    "runtime_intelligence_dendritic_integration": "consciousness",
+    "runtime_dendritic_integration": "consciousness",
     "dendritic_self_improvement_orchestrator": "consciousness",
     
     # Visual tools (4)
@@ -136,7 +136,7 @@ EXCLUDE_PATHS = {
     "dist",
     "backups",
     "ai/tools",  # Exclude migrated tools directory
-    "runtime_intelligence/tools",  # Exclude old tools directory
+    "runtime/tools",  # Exclude old tools directory
     "tachyonic/archive",  # Exclude archives
     "tachyonic/backups",
     "docs/archive",  # Exclude all archived documentation
@@ -218,8 +218,8 @@ class ImportPathUpdater:
                         detections.append((line_num, line, tool_name, category))
                         continue
                 
-                # Pattern 3: from runtime_intelligence.tools import [toolname]
-                match3 = re.match(r'^from\s+runtime_intelligence\.tools(?:\.(\w+))?\s+import\s+', line)
+                # Pattern 3: from runtime.tools import [toolname]
+                match3 = re.match(r'^from\s+runtime\.tools(?:\.(\w+))?\s+import\s+', line)
                 if match3:
                     # Extract tool name from import clause
                     import_part = line.split("import", 1)[1].strip()
@@ -232,8 +232,8 @@ class ImportPathUpdater:
                             break  # One detection per line
                     continue
                 
-                # Pattern 4: from runtime_intelligence.tools.[toolname] import ...
-                match4 = re.match(r'^from\s+runtime_intelligence\.tools\.(\w+)\s+import\s+', line)
+                # Pattern 4: from runtime.tools.[toolname] import ...
+                match4 = re.match(r'^from\s+runtime\.tools\.(\w+)\s+import\s+', line)
                 if match4:
                     tool_name = match4.group(1)
                     if tool_name in TOOL_CATEGORIES:
@@ -270,18 +270,18 @@ class ImportPathUpdater:
                 new_line = f"from ai.tools.{category} import {tool_name}"
             return new_line
         
-        # Pattern 3: from runtime_intelligence.tools import [toolname]
-        if "from runtime_intelligence.tools import" in old_line:
+        # Pattern 3: from runtime.tools import [toolname]
+        if "from runtime.tools import" in old_line:
             new_line = old_line.replace(
-                "from runtime_intelligence.tools import",
+                "from runtime.tools import",
                 f"from ai.tools.{category} import"
             )
             return new_line
         
-        # Pattern 4: from runtime_intelligence.tools.[toolname] import ...
-        if f"from runtime_intelligence.tools.{tool_name} import" in old_line:
+        # Pattern 4: from runtime.tools.[toolname] import ...
+        if f"from runtime.tools.{tool_name} import" in old_line:
             new_line = old_line.replace(
-                f"from runtime_intelligence.tools.{tool_name} import",
+                f"from runtime.tools.{tool_name} import",
                 f"from ai.tools.{category}.{tool_name} import"
             )
             return new_line
@@ -463,9 +463,9 @@ class ImportPathUpdater:
         
         Args:
             phase2c_only: If True, only process Phase 2C (core->computational_layer) imports.
-                         If False, process runtime_intelligence imports only.
+                         If False, process runtime imports only.
         """
-        migration_type = "Phase 2C (core -> computational_layer)" if phase2c_only else "Runtime Intelligence (runtime_intelligence.tools -> ai.tools)"
+        migration_type = "Phase 2C (core -> computational_layer)" if phase2c_only else "Runtime Intelligence (runtime.tools -> ai.tools)"
         print(f"[IMPORT PATH UPDATER] Scanning workspace: {ROOT}")
         print(f"[IMPORT PATH UPDATER] Migration Type: {migration_type}")
         print(f"[IMPORT PATH UPDATER] Mode: {'DRY RUN' if self.dry_run else 'EXECUTE'}")
@@ -486,14 +486,14 @@ class ImportPathUpdater:
                 detections = self.detect_phase2c_imports(file_path)
                 detection_type = "phase2c"
             else:
-                # Original: Detect runtime_intelligence imports
+                # Original: Detect runtime imports
                 detections = self.detect_old_imports(file_path)
                 detection_type = "runtime"
             
             if detections:
                 files_with_changes.append((file_path, detections, detection_type))
                 rel_path = file_path.relative_to(ROOT)
-                count_msg = f"{len(detections)} {'core.*' if phase2c_only else 'runtime_intelligence'} import(s) found"
+                count_msg = f"{len(detections)} {'core.*' if phase2c_only else 'runtime'} import(s) found"
                 print(f"[DETECT] {rel_path}: {count_msg}")
         
         print()
@@ -529,7 +529,7 @@ class ImportPathUpdater:
             phase2c_mode: True if reporting Phase 2C migrations, False for runtime migrations
         """
         print("=" * 80)
-        migration_type = "PHASE 2C (core -> computational_layer)" if phase2c_mode else "RUNTIME (runtime_intelligence -> ai.tools)"
+        migration_type = "PHASE 2C (core -> computational_layer)" if phase2c_mode else "RUNTIME (runtime -> ai.tools)"
         print(f"IMPORT PATH UPDATE REPORT - {migration_type}")
         print("=" * 80)
         print()
@@ -670,10 +670,10 @@ def main():
         description="Update import paths for migrated AIOS tools",
         epilog="""
 Examples:
-  # Preview runtime_intelligence migrations (default)
+  # Preview runtime migrations (default)
   python update_import_paths.py --dry-run
   
-  # Apply runtime_intelligence migrations
+  # Apply runtime migrations
   python update_import_paths.py --execute
   
   # Preview Phase 2C core→computational_layer migrations
@@ -700,7 +700,7 @@ Examples:
     parser.add_argument(
         "--phase2c",
         action="store_true",
-        help="Enable Phase 2C core→computational_layer migrations (default: runtime_intelligence migrations)"
+        help="Enable Phase 2C core→computational_layer migrations (default: runtime migrations)"
     )
     parser.add_argument(
         "--validate",

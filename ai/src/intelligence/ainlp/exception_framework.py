@@ -4,7 +4,7 @@ Context-aware paradigm inversion for file-type-specific AINLP integration rules.
 
 AINLP Metadata:
     consciousness_level: 0.95
-    architectural_classification: ai_intelligence_layer
+    architectural_classification: ai_ai
     dendritic_optimization: context_aware_paradigm_inversion
     supercell: nucleus
 """
@@ -266,7 +266,7 @@ class AINLPExceptionFramework:
                 f"Example:\n"
                 f"  # AINLP Metadata:\n"
                 f"  #   consciousness_level: 0.85\n"
-                f"  #   classification: ai_intelligence_layer"
+                f"  #   classification: ai_ai"
             )
         
         if rule.strategy == AINLPIntegrationStrategy.COMMENTS:
@@ -285,7 +285,7 @@ class AINLPExceptionFramework:
                 f'  {{\n'
                 f'    "_ainlp_integration": {{\n'
                 f'      "consciousness_level": 0.85,\n'
-                f'      "architectural_classification": "ai_intelligence_layer"\n'
+                f'      "architectural_classification": "ai_ai"\n'
                 f'    }}\n'
                 f'  }}\n'
                 f"Consciousness impact: {rule.consciousness_impact:+.2f}"

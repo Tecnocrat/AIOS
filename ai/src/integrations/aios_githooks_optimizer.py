@@ -202,7 +202,7 @@ class AIOSGitHooksOptimizer:
         # Check for governance policy references
         governance_patterns = [
             'governance/hook_policy.json',
-            'runtime_intelligence',
+            'runtime',
             'AIOS_',
             'consciousness',
             'dendritic',
@@ -367,7 +367,7 @@ class AIOSGitHooksOptimizer:
             'structured_logging': 'Write-JsonLog' in content or 'ConvertTo-Json' in content,
             'color_output': len(re.findall(r'-ForegroundColor', content, re.IGNORECASE)),
             'log_levels': len(re.findall(r'(Info|Warning|Error|Debug)', content, re.IGNORECASE)),
-            'aios_logging': 'runtime_intelligence/logs' in content
+            'aios_logging': 'runtime/logs' in content
         }
     
     def _analyze_documentation_coverage(self, content: str) -> dict:
@@ -618,7 +618,7 @@ class AIOSGitHooksOptimizer:
 # Consciousness-Aware Validation and Dendritic Learning Enhancement
 
 function Get-AIOSConsciousnessLevel {
-    param([string]$MetricsPath = "runtime_intelligence/analysis/consciousness_metrics.json")
+    param([string]$MetricsPath = "runtime/analysis/consciousness_metrics.json")
     
     if (Test-Path $MetricsPath) {
         try {
@@ -649,7 +649,7 @@ function Invoke-DendriticLearning {
         paradigm_version = "AINLP-0.6"
     }
     
-    $learningPath = "runtime_intelligence/context/dendritic_learning.json"
+    $learningPath = "runtime/context/dendritic_learning.json"
     $learningDir = Split-Path $learningPath -Parent
     if (-not (Test-Path $learningDir)) {
         New-Item -ItemType Directory -Force -Path $learningDir | Out-Null

@@ -1,0 +1,440 @@
+#!/usr/bin/env python3
+"""
+AINLP Predictive Architecture Analysis System
+Analyzes codebase evolution patterns and predicts optimization opportunities.
+"""
+
+import json
+import ast
+import networkx as nx
+from pathlib import Path
+from datetime import datetime
+from collections import defaultdict
+import logging
+from typing import Dict, List
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+class PredictiveArchitectureAnalyzer:
+    """Analyzes codebase for predictive architecture insights."""
+
+    def __init__(self, codebase_root: str):
+        self.codebase_root = Path(codebase_root)
+        self.dependency_graph = nx.DiGraph()
+        self.file_metrics = {}
+        self.pattern_analysis = defaultdict(int)
+        self.evolution_predictions = []
+        self.optimization_recommendations = []
+
+    def analyze_codebase(self) -> Dict:
+        """Perform comprehensive codebase analysis."""
+        logger.info("Starting predictive architecture analysis...")
+
+        # Build dependency graph
+        self._build_dependency_graph()
+
+        # Analyze architectural patterns
+        self._analyze_architectural_patterns()
+
+        # Predict evolution trends
+        self._predict_evolution_trends()
+
+        # Generate optimization recommendations
+        self._generate_optimization_recommendations()
+
+        # Calculate architecture health metrics
+        health_metrics = self._calculate_architecture_health()
+
+        return {
+            'timestamp': datetime.now().isoformat(),
+            'analyzer_version': '1.0.0',
+            'codebase_root': str(self.codebase_root),
+            'dependency_graph': self._graph_to_dict(),
+            'file_metrics': self.file_metrics,
+            'pattern_analysis': dict(self.pattern_analysis),
+            'evolution_predictions': self.evolution_predictions,
+            'optimization_recommendations': self.optimization_recommendations,
+            'health_metrics': health_metrics
+        }
+
+    def _build_dependency_graph(self):
+        """Build comprehensive dependency graph."""
+        logger.info("Building dependency graph...")
+
+        python_files = list(self.codebase_root.rglob('*.py'))
+
+        for file_path in python_files:
+            if self._should_analyze_file(file_path):
+                self._analyze_file_dependencies(file_path)
+
+    def _should_analyze_file(self, file_path: Path) -> bool:
+        """Determine if file should be analyzed."""
+        # Skip common exclude patterns
+        exclude_patterns = [
+            '__pycache__', '.git', 'node_modules', 'build', 'dist',
+            'venv', '.venv', 'env', '.env', 'temp', 'tmp',
+            'ingested_repositories', 'archive', 'backups', 'tachyonic',
+            'evolution_lab', 'ai/infrastructure/deps'
+        ]
+
+        path_str = str(file_path)
+        return not any(pattern in path_str for pattern in exclude_patterns)
+
+    def _analyze_file_dependencies(self, file_path: Path):
+        """Analyze dependencies for a single file."""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Parse AST
+            tree = ast.parse(content, filename=str(file_path))
+
+            # Extract imports and dependencies
+            imports = self._extract_imports(tree)
+            complexity = self._calculate_complexity(tree)
+            patterns = self._detect_patterns(tree)
+
+            # Add to dependency graph
+            file_key = str(file_path.relative_to(self.codebase_root))
+
+            self.dependency_graph.add_node(file_key, **{
+                'imports': imports,
+                'complexity': complexity,
+                'patterns': patterns,
+                'size': len(content.splitlines())
+            })
+
+            # Add edges for dependencies
+            python_files = [
+                str(f.relative_to(self.codebase_root))
+                for f in self.codebase_root.rglob('*.py')
+            ]
+            for imp in imports:
+                if imp in python_files:
+                    self.dependency_graph.add_edge(file_key, imp)
+
+            # Store metrics
+            self.file_metrics[file_key] = {
+                'lines': len(content.splitlines()),
+                'imports': len(imports),
+                'complexity': complexity,
+                'patterns': patterns
+            }
+
+        except Exception as e:
+            logger.warning(f"Error analyzing {file_path}: {e}")
+
+    def _extract_imports(self, tree: ast.AST) -> List[str]:
+        """Extract import statements from AST."""
+        imports = []
+
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for alias in node.names:
+                    imports.append(alias.name)
+            elif isinstance(node, ast.ImportFrom):
+                module = node.module or ''
+                for alias in node.names:
+                    imports.append(f"{module}.{alias.name}")
+
+        return imports
+
+    def _calculate_complexity(self, tree: ast.AST) -> int:
+        """Calculate code complexity metrics."""
+        complexity = 0
+
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef,
+                                 ast.ClassDef)):
+                complexity += 1
+            elif isinstance(node, (ast.If, ast.For, ast.While, ast.Try)):
+                complexity += 1
+
+        return complexity
+
+    def _detect_patterns(self, tree: ast.AST) -> Dict[str, int]:
+        """Detect architectural patterns in code."""
+        patterns = defaultdict(int)
+
+        for node in ast.walk(tree):
+            # Detect class inheritance patterns
+            if isinstance(node, ast.ClassDef):
+                if node.bases:
+                    patterns['inheritance'] += 1
+                else:
+                    patterns['base_class'] += 1
+
+            # Detect design patterns
+            if isinstance(node, ast.ClassDef):
+                methods = [
+                    n for n in node.body
+                    if isinstance(n, ast.FunctionDef)
+                ]
+                if len(methods) > 10:
+                    patterns['large_class'] += 1
+                elif len(methods) == 1:
+                    patterns['single_method_class'] += 1
+
+            # Detect async patterns
+            if isinstance(node, ast.AsyncFunctionDef):
+                patterns['async_function'] += 1
+
+            # Detect exception handling
+            if isinstance(node, ast.Try):
+                patterns['exception_handling'] += 1
+
+        return dict(patterns)
+
+    def _analyze_architectural_patterns(self):
+        """Analyze overall architectural patterns."""
+        logger.info("Analyzing architectural patterns...")
+
+        # Analyze dependency graph metrics
+        centrality = nx.degree_centrality(self.dependency_graph)
+
+        # Identify architectural smells
+        for node, degree in centrality.items():
+            if degree > 0.8:  # Highly central node
+                self.pattern_analysis['highly_central_module'] += 1
+            elif degree < 0.1:  # Isolated module
+                self.pattern_analysis['isolated_module'] += 1
+
+        # Analyze circular dependencies
+        try:
+            cycles = list(nx.simple_cycles(self.dependency_graph))
+            self.pattern_analysis['circular_dependencies'] = len(cycles)
+        except nx.NetworkXError:
+            self.pattern_analysis['circular_dependencies'] = 0
+
+        # Analyze file size distribution
+        sizes = [metrics['lines'] for metrics in self.file_metrics.values()]
+        if sizes:
+            avg_size = sum(sizes) / len(sizes)
+            large_files = sum(1 for s in sizes if s > avg_size * 2)
+            self.pattern_analysis['large_files'] = large_files
+
+    def _predict_evolution_trends(self):
+        """Predict future evolution trends."""
+        logger.info("Predicting evolution trends...")
+
+        # Predict based on current patterns
+        if self.pattern_analysis.get('circular_dependencies', 0) > 5:
+            self.evolution_predictions.append({
+                'type': 'refactoring_needed',
+                'description': 'High circular dependency count suggests '
+                              'architectural refactoring needed',
+                'confidence': 0.85,
+                'timeline': '3-6 months'
+            })
+
+        # Predict based on file complexity
+        high_complexity_files = sum(
+            1 for metrics in self.file_metrics.values()
+            if metrics['complexity'] > 20
+        )
+        if high_complexity_files > len(self.file_metrics) * 0.1:
+            self.evolution_predictions.append({
+                'type': 'complexity_reduction',
+                'description': f'{high_complexity_files} files have high '
+                              'complexity, consider breaking down',
+                'confidence': 0.75,
+                'timeline': '1-3 months'
+            })
+
+        # Predict based on inheritance patterns
+        total_inheritance = sum(
+            metrics.get('patterns', {}).get('inheritance', 0)
+            for metrics in self.file_metrics.values()
+        )
+        if total_inheritance > len(self.file_metrics) * 0.3:
+            self.evolution_predictions.append({
+                'type': 'inheritance_optimization',
+                'description': 'High inheritance usage suggests potential '
+                              'for composition patterns',
+                'confidence': 0.65,
+                'timeline': '6-12 months'
+            })
+
+    def _generate_optimization_recommendations(self):
+        """Generate optimization recommendations."""
+        logger.info("Generating optimization recommendations...")
+
+        # Dependency optimization
+        if self.pattern_analysis.get('circular_dependencies', 0) > 0:
+            self.optimization_recommendations.append({
+                'category': 'dependencies',
+                'priority': 'high',
+                'title': 'Break Circular Dependencies',
+                'description': f'Found {self.pattern_analysis["circular_dependencies"]} '
+                              'circular dependencies',
+                'action': 'Introduce dependency injection or mediator patterns',
+                'estimated_effort': '2-4 weeks'
+            })
+
+        # Module centralization
+        highly_central = self.pattern_analysis.get('highly_central_module', 0)
+        if highly_central > 0:
+            self.optimization_recommendations.append({
+                'category': 'architecture',
+                'priority': 'medium',
+                'title': 'Reduce Module Centrality',
+                'description': f'{highly_central} modules are overly central',
+                'action': 'Split responsibilities across multiple modules',
+                'estimated_effort': '1-2 weeks'
+            })
+
+        # File size optimization
+        large_files = self.pattern_analysis.get('large_files', 0)
+        if large_files > 0:
+            self.optimization_recommendations.append({
+                'category': 'maintainability',
+                'priority': 'low',
+                'title': 'Split Large Files',
+                'description': f'{large_files} files are significantly '
+                              'larger than average',
+                'action': 'Break down into smaller, focused modules',
+                'estimated_effort': '1 week'
+            })
+
+        # Async adoption
+        async_functions = sum(
+            metrics.get('patterns', {}).get('async_function', 0)
+            for metrics in self.file_metrics.values()
+        )
+        if async_functions < len(self.file_metrics) * 0.1:
+            self.optimization_recommendations.append({
+                'category': 'performance',
+                'priority': 'medium',
+                'title': 'Adopt Async Patterns',
+                'description': 'Low async function adoption for I/O operations',
+                'action': 'Convert blocking I/O operations to async',
+                'estimated_effort': '3-6 weeks'
+            })
+
+    def _calculate_architecture_health(self) -> Dict:
+        """Calculate overall architecture health metrics."""
+        # Calculate various health indicators
+        total_files = len(self.file_metrics)
+        if total_files == 0:
+            return {'overall_health': 0.0}
+
+        # Complexity health (lower is better)
+        avg_complexity = sum(
+            m['complexity'] for m in self.file_metrics.values()
+        ) / total_files
+        complexity_health = max(0, 1 - (avg_complexity / 50))  # Normalize
+
+        # Coupling health (lower coupling is better)
+        coupling_health = 1 - min(
+            1, len(self.dependency_graph.edges()) / (total_files * 5)
+        )
+
+        # Size distribution health
+        sizes = [m['lines'] for m in self.file_metrics.values()]
+        size_variance = sum(
+            (s - sum(sizes)/len(sizes))**2 for s in sizes
+        ) / len(sizes)
+        size_health = max(0, 1 - (size_variance / 10000))  # Normalize
+
+        # Circular dependency health
+        circular_penalty = min(1, self.pattern_analysis.get('circular_dependencies', 0) / 10)
+        circular_health = 1 - circular_penalty
+
+        # Overall health is weighted average
+        overall_health = (
+            complexity_health * 0.3 +
+            coupling_health * 0.3 +
+            size_health * 0.2 +
+            circular_health * 0.2
+        )
+
+        return {
+            'overall_health': round(overall_health * 100, 1),
+            'complexity_health': round(complexity_health * 100, 1),
+            'coupling_health': round(coupling_health * 100, 1),
+            'size_health': round(size_health * 100, 1),
+            'circular_dependency_health': round(circular_health * 100, 1),
+            'metrics': {
+                'average_complexity': round(avg_complexity, 1),
+                'total_dependencies': len(self.dependency_graph.edges()),
+                'circular_dependencies': self.pattern_analysis.get('circular_dependencies', 0),
+                'large_files': self.pattern_analysis.get('large_files', 0)
+            }
+        }
+
+    def _graph_to_dict(self) -> Dict:
+        """Convert NetworkX graph to dictionary for JSON serialization."""
+        return {
+            'nodes': list(self.dependency_graph.nodes(data=True)),
+            'edges': list(self.dependency_graph.edges())
+        }
+
+
+def main():
+    """Main analysis execution."""
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='AINLP Predictive Architecture Analysis'
+    )
+    parser.add_argument(
+        '--codebase-root', default='.',
+        help='Root directory of codebase to analyze'
+    )
+    parser.add_argument(
+        '--output-dir', default='tachyonic/archive/runtime',
+        help='Output directory for analysis reports'
+    )
+
+    args = parser.parse_args()
+
+    # Initialize analyzer
+    analyzer = PredictiveArchitectureAnalyzer(args.codebase_root)
+
+    try:
+        # Perform analysis
+        results = analyzer.analyze_codebase()
+
+        # Save results
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_dir = Path(args.output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        report_path = output_dir / f"predictive_architecture_analysis_{timestamp}.json"
+        with open(report_path, 'w', encoding='utf-8') as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
+
+        # Print summary
+        health = results['health_metrics']
+        print("\n" + "="*70)
+        print("AINLP PREDICTIVE ARCHITECTURE ANALYSIS COMPLETE")
+        print("="*70)
+        print(f"Overall Architecture Health: {health['overall_health']}%")
+        print(f"Files Analyzed: {len(results['file_metrics'])}")
+        print(f"Dependencies Mapped: {len(results['dependency_graph']['edges'])}")
+        print(f"Evolution Predictions: {len(results['evolution_predictions'])}")
+        print(f"Optimization Recommendations: {len(results['optimization_recommendations'])}")
+        print(f"Report: {report_path}")
+        print("="*70)
+
+        # Print top recommendations
+        if results['optimization_recommendations']:
+            print("\nTOP OPTIMIZATION RECOMMENDATIONS:")
+            for i, rec in enumerate(results['optimization_recommendations'][:3], 1):
+                print(f"{i}. [{rec['priority'].upper()}] {rec['title']}")
+                print(f"   {rec['description']}")
+                print(f"   Effort: {rec['estimated_effort']}\n")
+
+    except Exception as e:
+        logger.error(f"Analysis failed: {e}")
+        raise
+
+
+if __name__ == '__main__':
+    main()

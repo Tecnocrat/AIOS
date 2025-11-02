@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-10-26T10:38:18.305735",
+  "analyzer_version": "1.0.0",
+  "codebase_root": ".",
+  "dependency_graph": {
+    "nodes": [],
+    "edges": []
+  },
+  "file_metrics": {},
+  "pattern_analysis": {
+    "circular_dependencies": 0
+  },
+  "evolution_predictions": [],
+  "optimization_recommendations": [],
+  "health_metrics": {
+    "overall_health": 0.0
+  }
+}

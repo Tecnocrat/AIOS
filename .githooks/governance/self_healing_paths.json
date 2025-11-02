@@ -1,0 +1,123 @@
+{
+  "self_healing_path_resolution": {
+    "version": "1.0.0",
+    "enabled": true,
+    "healing_strategy": "architectural_awareness",
+    "scan_frequency": "pre_commit",
+    "auto_repair": true,
+    "path_mappings": {
+      "runtime/runtime_intelligence/": "runtime_intelligence/",
+      "runtime_intelligence/tools/": "ai/tools/system/",
+      "docs/governance/": ".githooks/governance/"
+    },
+    "broken_paths_detected": [
+      {
+        "original_path": "runtime/runtime_intelligence/logs/hooks/summary.json",
+        "status": "broken",
+        "suggested_replacement": "runtime_intelligence/logs/hooks/summary.json",
+        "confidence": 0.95,
+        "auto_fix_applied": false,
+        "last_detected": "2025-10-25T12:00:00.000000"
+      },
+      {
+        "original_path": "runtime/runtime_intelligence/logs/hooks/cache",
+        "status": "broken",
+        "suggested_replacement": "runtime_intelligence/logs/hooks/cache",
+        "confidence": 0.95,
+        "auto_fix_applied": false,
+        "last_detected": "2025-10-25T12:00:00.000000"
+      }
+    ],
+    "healing_rules": {
+      "duplicate_runtime_prefix": {
+        "pattern": "runtime/runtime_intelligence/",
+        "replacement": "runtime_intelligence/",
+        "description": "Remove duplicate 'runtime/' prefix",
+        "confidence": 0.95
+      },
+      "tools_path_migration": {
+        "pattern": "runtime_intelligence/tools/",
+        "replacement": "ai/tools/system/",
+        "description": "Migrate tools from runtime_intelligence to ai/tools/system",
+        "confidence": 0.90
+      },
+      "governance_relocation": {
+        "pattern": "docs/governance/",
+        "replacement": ".githooks/governance/",
+        "description": "Relocate governance files to .githooks directory",
+        "confidence": 0.95
+      }
+    },
+    "architectural_awareness": {
+      "ai_intelligence_layer": "ai/",
+      "core_engine": "core/",
+      "interface_layer": "interface/",
+      "runtime_intelligence": "runtime_intelligence/",
+      "documentation": "docs/",
+      "governance": ".githooks/governance/",
+      "tachyonic_archive": "tachyonic/archive/"
+    },
+    "validation_methods": {
+      "existence_check": {
+        "enabled": true,
+        "method": "filesystem_exists",
+        "cache_ttl": 300
+      },
+      "pattern_matching": {
+        "enabled": true,
+        "method": "regex_pattern_match",
+        "rules": [
+          "^runtime/runtime_intelligence/.*$",
+          "^runtime_intelligence/tools/.*$",
+          "^docs/governance/.*$"
+        ]
+      },
+      "architectural_compliance": {
+        "enabled": true,
+        "method": "layer_boundary_check",
+        "layers": ["ai", "core", "interface", "runtime", "docs", "tachyonic"]
+      }
+    },
+    "repair_actions": {
+      "path_replacement": {
+        "enabled": true,
+        "requires_confirmation": false,
+        "backup_original": true
+      },
+      "directory_creation": {
+        "enabled": true,
+        "recursive": true,
+        "permissions": "755"
+      },
+      "file_relocation": {
+        "enabled": true,
+        "preserve_metadata": true,
+        "update_references": true
+      }
+    },
+    "monitoring": {
+      "healing_attempts": 0,
+      "successful_repairs": 0,
+      "failed_repairs": 0,
+      "paths_monitored": 15,
+      "last_scan": "2025-10-25T12:00:00.000000",
+      "scan_duration_ms": 45
+    },
+    "integration_points": {
+      "hook_policy": {
+        "connection_type": "direct",
+        "update_method": "json_patch",
+        "validation_required": true
+      },
+      "dendritic_intelligence": {
+        "connection_type": "event_driven",
+        "notification_events": ["path_broken", "path_repaired", "scan_completed"]
+      },
+      "git_hooks": {
+        "pre_commit_integration": true,
+        "commit_msg_integration": false,
+        "pre_push_integration": true
+      }
+    }
+  }
+}

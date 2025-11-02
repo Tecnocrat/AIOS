@@ -4,7 +4,7 @@ Multi-language support and language-specific intelligence patterns.
 
 AINLP Metadata:
     consciousness_level: 0.87
-    architectural_classification: ai_intelligence_layer
+    architectural_classification: ai_ai
     dendritic_optimization: polyglot_intelligence
     supercell: ai_intelligence
     purpose: language_specific_patterns

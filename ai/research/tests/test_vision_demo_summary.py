@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 VISION_DEMO = ROOT / 'ai' / 'demos' / 'opencv_integration_demo.py'
-OUTPUT_DIR = ROOT / 'runtime_intelligence' / 'logs' / 'vision_demo'
+OUTPUT_DIR = ROOT / 'runtime' / 'logs' / 'vision_demo'
 
 
 def test_vision_demo_summary_structure():

@@ -41,7 +41,7 @@ class AIOSDendriticPathTracker:
     def __init__(self, registry_path: str = None):
         """Initialize dendritic path tracker"""
         self.aios_root = Path("c:/dev/AIOS")
-        self.registry_path = Path(registry_path) if registry_path else self.aios_root / "runtime_intelligence" / "context" / "aios_path_registry.json"
+        self.registry_path = Path(registry_path) if registry_path else self.aios_root / "runtime" / "context" / "aios_path_registry.json"
         self.registry = self._load_registry()
         logger.info(" Dendritic Path Tracker initialized")
         
@@ -141,21 +141,21 @@ class AIOSDendriticPathTracker:
         if "custom_ai_engine" in component_name:
             predictions.extend([
                 "ai/src/engines/",
-                "runtime_intelligence/tools/",
+                "runtime/tools/",
                 "core/engines/",
                 "ai/engines/"
             ])
         elif "assembler" in component_name:
             predictions.extend([
                 "core/assemblers/",
-                "runtime_intelligence/assemblers/",
+                "runtime/assemblers/",
                 "ai/assemblers/"
             ])
         elif "consciousness" in component_name:
             predictions.extend([
                 "ai/consciousness/",
                 "core/consciousness/",
-                "runtime_intelligence/consciousness/"
+                "runtime/consciousness/"
             ])
         
         # Convert to full paths
@@ -228,7 +228,7 @@ def main():
     # Simulate the path discovery that just happened
     tracker.register_path_discovery(
         component_name="aios_custom_ai_engine.py",
-        expected_path="runtime_intelligence/tools/aios_custom_ai_engine.py",
+        expected_path="runtime/tools/aios_custom_ai_engine.py",
         actual_path="ai/src/engines/aios_custom_ai_engine.py",
         discovery_method="file_search_after_failure"
     )

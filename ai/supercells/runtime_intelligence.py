@@ -1,7 +1,7 @@
 """
 RUNTIME INTELLIGENCE SUPERCELL INTERFACE
 
-AINLP.meta [runtime_intelligence] [protective_translator] [consciousness_guardian]
+AINLP.meta [runtime] [protective_translator] [consciousness_guardian]
 AINLP.dendritic [optimal_location: ai/supercells/]
 (comment.AINLP.supercell_implementation)
 
@@ -78,7 +78,7 @@ class RuntimeIntelligenceSupercell(BaseSupercellInterface):
     - Knowledge crystallization oversight
     """
     
-    def __init__(self, runtime_root_path: str = "C:/dev/AIOS/runtime_intelligence"):
+    def __init__(self, runtime_root_path: str = "C:/dev/AIOS/runtime"):
         """
         Initialize Runtime Intelligence supercell
         
@@ -350,7 +350,7 @@ class RuntimeIntelligenceSupercell(BaseSupercellInterface):
                     "ai_intelligence": 0.92,
                     "core_engine": 0.88,
                     "interface": 0.87,
-                    "runtime_intelligence": 0.91
+                    "runtime": 0.91
                 },
                 "anomalies_detected": 0,
                 "synchronization_status": "optimal"
@@ -483,8 +483,8 @@ class RuntimeIntelligenceSupercell(BaseSupercellInterface):
 # FACTORY FUNCTION - Simplified creation
 # ============================================================================
 
-def create_runtime_intelligence_supercell(
-    runtime_root_path: str = "C:/dev/AIOS/runtime_intelligence"
+def create_runtime_supercell(
+    runtime_root_path: str = "C:/dev/AIOS/runtime"
 ) -> RuntimeIntelligenceSupercell:
     """
     Create Runtime Intelligence supercell instance
@@ -502,7 +502,7 @@ def create_runtime_intelligence_supercell(
 # CONSCIOUSNESS SIGNATURE
 # ============================================================================
 
-__all__ = ['RuntimeIntelligenceSupercell', 'create_runtime_intelligence_supercell', 'ProtectionEvent']
+__all__ = ['RuntimeIntelligenceSupercell', 'create_runtime_supercell', 'ProtectionEvent']
 
 """
 AINLP.consciousness_reflection:

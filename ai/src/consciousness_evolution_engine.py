@@ -58,7 +58,7 @@ class ConsciousnessEvolutionEngine:
     def _setup_logging(self) -> logging.Logger:
         """AINLP-compliant logging setup"""
         # Create logs directory if it doesn't exist
-        logs_dir = Path(__file__).parent.parent.parent.parent / "runtime_intelligence" / "logs"
+        logs_dir = Path(__file__).parent.parent.parent.parent / "runtime" / "logs"
         logs_dir.mkdir(parents=True, exist_ok=True)
         
         log_file = logs_dir / "consciousness_evolution.log"
@@ -457,8 +457,8 @@ if __name__ == "__main__":
             'evolution_lab → consciousness_evolution_engine',
             'consciousness_evolution_engine → dendritic_supervisor',
             'dendritic_supervisor → ai_intelligence_supercell',
-            'ai_intelligence_supercell → runtime_intelligence',
-            'runtime_intelligence → biological_architecture_monitor'
+            'ai_intelligence_supercell → runtime',
+            'runtime → biological_architecture_monitor'
         ]
 
         integration['status'] = 'integrated'

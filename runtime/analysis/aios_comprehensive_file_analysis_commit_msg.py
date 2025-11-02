@@ -77,7 +77,7 @@ def generate_comprehensive_analysis():
         "dendritic_path_tracker_findings": {
             "path_evolution": {
                 "component_tracking": "aios_custom_ai_engine.py path discovery registered",
-                "expected_location": "runtime_intelligence/tools/aios_custom_ai_engine.py",
+                "expected_location": "runtime/tools/aios_custom_ai_engine.py",
                 "actual_location": "ai/src/engines/aios_custom_ai_engine.py",
                 "discovery_method": "file_search_after_failure"
             },
@@ -187,7 +187,7 @@ def main():
     analysis = generate_comprehensive_analysis()
     
     # Save analysis report
-    output_path = Path("c:/dev/AIOS/runtime_intelligence/analysis/commit_msg_comprehensive_analysis.json")
+    output_path = Path("c:/dev/AIOS/runtime/analysis/commit_msg_comprehensive_analysis.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
     with open(output_path, 'w') as f:

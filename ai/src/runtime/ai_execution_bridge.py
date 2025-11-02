@@ -503,7 +503,7 @@ class AIExecutionBridge:
             layer_text = layer_match.group(1).replace(' ', '_').upper()
             # Map to ComponentLayer enum
             layer_mapping = {
-                "RUNTIME_INTELLIGENCE": "runtime_intelligence",
+                "RUNTIME_INTELLIGENCE": "runtime",
                 "AI_INTELLIGENCE": "ai_intelligence",
                 "INTERFACE": "interface",
                 "CORE": "core"
@@ -697,7 +697,7 @@ class AIExecutionBridge:
         """Export tool catalogue to JSON."""
         await self.dashboard.export_tool_catalogue()
         
-        output_path = self.workspace_root / "runtime_intelligence" / "tool_catalogue.json"
+        output_path = self.workspace_root / "runtime" / "tool_catalogue.json"
         
         return {
             "status": "exported",

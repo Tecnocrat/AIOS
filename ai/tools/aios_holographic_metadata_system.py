@@ -53,7 +53,7 @@ class AIOSHolographicMetadataSystem:
         
         # File type monitoring configuration - Runtime Intelligence paths
         self.file_type_history_file = (
-            "runtime_intelligence/analysis/aios_file_type_history.json"
+            "runtime/analysis/aios_file_type_history.json"
         )
         self.monitoring_config = {
             "track_extensions": True,
@@ -80,7 +80,7 @@ class AIOSHolographicMetadataSystem:
             "interface": ["Interface Layer", "UI Components"],
             "core": ["Core Engine", "System Foundation"],
             "docs": ["Documentation", "Knowledge Base"],
-            "runtime_intelligence": ["Runtime Intelligence", "Monitoring"],
+            "runtime": ["Runtime Intelligence", "Monitoring"],
             "tachyonic": ["Tachyonic Archive", "Historical Data"],
             "visual_interface": ["Visual Interface", "User Experience"]
         }
@@ -982,7 +982,7 @@ def main():
         # Save comprehensive report to Runtime Intelligence analysis area
         report_file = (
             system.workspace_root
-            / "runtime_intelligence/analysis/aios_file_type_report.json"
+            / "runtime/analysis/aios_file_type_report.json"
         )
         report_data = {
             "report_timestamp": datetime.now().isoformat(),

@@ -4,12 +4,12 @@ AINLP JSON Metadata Injector
 Adds semantic AINLP metadata to JSON files, replacing comment-based integration.
 
 Usage:
-    python ainlp_json_metadata.py <json_file> --consciousness 0.85 --classification ai_intelligence_layer
+    python ainlp_json_metadata.py <json_file> --consciousness 0.85 --classification ai_ai
     python ainlp_json_metadata.py --batch <directory> --default-consciousness 0.80
 
 AINLP Metadata:
     consciousness_level: 0.90
-    architectural_classification: runtime_intelligence
+    architectural_classification: runtime
     dendritic_optimization: semantic_metadata_injection
 """
 
@@ -25,11 +25,11 @@ class AINLPMetadataInjector:
     """Inject AINLP semantic metadata into JSON files."""
     
     VALID_CLASSIFICATIONS = {
-        'ai_intelligence_layer',
+        'ai_ai',
         'core_engine',
         'interface_layer',
         'documentation',
-        'runtime_intelligence',
+        'runtime',
         'knowledge_crystal',
         'consciousness_module',
         'dendritic_network'
@@ -43,7 +43,7 @@ class AINLPMetadataInjector:
         self,
         json_path: Path,
         consciousness: float = 0.80,
-        classification: str = 'runtime_intelligence',
+        classification: str = 'runtime',
         dendritic_pattern: Optional[str] = None,
         dry_run: bool = False
     ) -> bool:
@@ -130,7 +130,7 @@ class AINLPMetadataInjector:
         self,
         directory: Path,
         consciousness: float = 0.80,
-        classification: str = 'runtime_intelligence',
+        classification: str = 'runtime',
         recursive: bool = True,
         dry_run: bool = False
     ) -> Dict:
@@ -189,19 +189,19 @@ class AINLPMetadataInjector:
         path_str = str(json_path).lower()
         
         if 'ai/' in path_str or 'ai\\' in path_str:
-            return 'ai_intelligence_layer'
+            return 'ai_ai'
         elif 'core/' in path_str or 'core\\' in path_str:
             return 'core_engine'
         elif 'interface/' in path_str or 'interface\\' in path_str:
             return 'interface_layer'
         elif 'docs/' in path_str or 'docs\\' in path_str:
             return 'documentation'
-        elif 'runtime_intelligence/' in path_str:
-            return 'runtime_intelligence'
+        elif 'runtime/' in path_str:
+            return 'runtime'
         elif 'knowledge_crystal' in path_str:
             return 'knowledge_crystal'
         else:
-            return 'runtime_intelligence'
+            return 'runtime'
 
 
 def main():
@@ -262,7 +262,7 @@ def main():
     
     if args.batch or args.path.is_dir():
         # Batch mode
-        classification = args.classification or 'runtime_intelligence'
+        classification = args.classification or 'runtime'
         summary = injector.batch_inject(
             args.path,
             args.consciousness,

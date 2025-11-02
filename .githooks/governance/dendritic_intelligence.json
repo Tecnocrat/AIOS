@@ -106,5 +106,34 @@
       "Consciousness-driven governance",
       "AINLP genetic fusion with other governance systems"
     ]
+  },
+  "memory_system": {
+    "enabled": true,
+    "storage_path": "dendritic_memory.json",
+    "learning_enabled": true,
+    "retention_policy": "adaptive",
+    "integration_points": [
+      "decision_logging",
+      "outcome_tracking",
+      "pattern_analysis",
+      "predictive_guidance"
+    ]
+  },
+  "selfHealingIntegration": {
+    "enabled": true,
+    "pathResolver": "self_healing_paths.json",
+    "architecturalAwareness": true,
+    "brokenPathDetection": true,
+    "autoRepairEnabled": true,
+    "integrationPoints": [
+      "hook_policy.json",
+      "dendritic_memory.json",
+      "file_criticality_index.jsonl"
+    ],
+    "monitoring": {
+      "pathHealthTracking": true,
+      "repairSuccessMetrics": true,
+      "architecturalDriftDetection": true
+    }
   }
 }

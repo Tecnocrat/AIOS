@@ -152,8 +152,8 @@ class AIOSArchitecturalAnalyzer:
                 'description': 'Python AI cellular architecture',
                 'expected_languages': {'python', 'yaml', 'json'}
             },
-            'runtime_intelligence': {
-                'path': 'runtime_intelligence',
+            'runtime': {
+                'path': 'runtime',
                 'type': 'runtime',
                 'description': 'Runtime analysis and optimization',
                 'expected_languages': {'python', 'markdown'}
@@ -584,9 +584,9 @@ class AIOSArchitecturalAnalyzer:
             'ai_to_core': ['ai', 'core'],
             'core_to_interface': ['core', 'interface'],
             'interface_to_ui': ['interface', 'ui'],
-            'runtime_to_all': ['runtime_intelligence', 'ai', 'core', 'interface'],
+            'runtime_to_all': ['runtime', 'ai', 'core', 'interface'],
             'orchestrator_coordination': ['orchestrator', 'ai', 'core', 'interface'],
-            'vscode_extension': ['vscode_extension', 'ai', 'runtime_intelligence']
+            'vscode_extension': ['vscode_extension', 'ai', 'runtime']
         }
         
         for flow_name, components in expected_flows.items():

@@ -35,7 +35,7 @@ OUTPUTS:
 - Optional summary: docs/module_discovery_report_YYYYMMDD_HHMMSS.md
 
 USAGE:
-    python -m runtime_intelligence.tools.module_discoverer [options]
+    python -m runtime.tools.module_discoverer [options]
 
 OPTIONS:
     --root PATH          Workspace root (default: auto-detect)
@@ -49,7 +49,7 @@ OPTIONS:
     --verbose           Detailed logging
 
 EXAMPLE:
-    python -m runtime_intelligence.tools.module_discoverer \
+    python -m runtime.tools.module_discoverer \
         --similarity 0.8 --verbose
 
 DEPENDENCIES:

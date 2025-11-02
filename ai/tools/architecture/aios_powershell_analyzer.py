@@ -231,7 +231,7 @@ def main():
         print(f"   {fix['type'].upper()}: {fix['suggestion']}")
     
     # Save analysis report
-    output_path = Path("c:/dev/AIOS/runtime_intelligence/analysis/powershell_analysis_report.json")
+    output_path = Path("c:/dev/AIOS/runtime/analysis/powershell_analysis_report.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
     with open(output_path, 'w') as f:

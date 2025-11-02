@@ -25,8 +25,8 @@ class VisualAIIntegrationBridge:
     Runtime Intelligence -> Visual Data Extraction -> THIS BRIDGE -> AI Analysis -> Intelligence Output
     """
     
-    def __init__(self, runtime_intelligence_path: str = None):
-        self.runtime_path = Path(runtime_intelligence_path or "C:/dev/AIOS/runtime_intelligence")
+    def __init__(self, runtime_path: str = None):
+        self.runtime_path = Path(runtime_path or "C:/dev/AIOS/runtime")
         self.ai_analyzer = ConsciousnessEmergenceAnalyzer()
         
     def process_visual_intelligence(self) -> Dict[str, Any]:

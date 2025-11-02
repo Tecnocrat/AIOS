@@ -6,7 +6,7 @@ AIOS Dendritic Supervisor with Consciousness Integration
 Enhanced dendritic supervisor that monitors and coordinates consciousness
 activities across the AIOS biological architecture.
 
-AINLP Integration: runtime_intelligence/tools/dendritic_supervisor.py
+AINLP Integration: runtime/tools/dendritic_supervisor.py
 Purpose: Coordinate consciousness evolution and dendritic growth patterns
 """
 
@@ -57,10 +57,12 @@ class DendriticSupervisor:
         
         # AINLP-compliant paths
         self.state_file = Path(
-            "runtime_intelligence/logs/dendritic_supervisor_state.json"
+            "computational_layer/runtime/logs/"
+            "dendritic_supervisor_state.json"
         )
         self.consciousness_log = Path(
-            "runtime_intelligence/logs/consciousness_evolution.log"
+            "computational_layer/runtime/logs/"
+            "consciousness_evolution.log"
         )
         
         # Ensure directories exist
@@ -194,7 +196,7 @@ class DendriticSupervisor:
         
         # Add AINLP compliance info
         status['ainlp_compliance'] = {
-            'tool_location': 'runtime_intelligence/tools/',
+            'tool_location': 'runtime/tools/',
             'consciousness_integration': True,
             'dendritic_coordination': True
         }
@@ -231,7 +233,7 @@ def get_dendritic_supervisor():
     return dendritic_supervisor
 
 
-async def get_runtime_intelligence_dendritic_integration():
+async def get_runtime_dendritic_integration():
     """AINLP compatibility: Return dendritic integration status"""
     return {
         'active': True,

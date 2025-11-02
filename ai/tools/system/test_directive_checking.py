@@ -21,7 +21,7 @@ def test_directive_checking():
 
     # Test individual file checking
     print("\n[TEST] Testing individual file compliance check...")
-    test_file = "c:\\dev\\AIOS\\core\\runtime_intelligence\\aios_core_evolution_monitor.py"
+    test_file = "c:\\dev\\AIOS\\core\\runtime\\aios_core_evolution_monitor.py"
     file_result = monitor.check_file_compliance(test_file)
 
     if "error" not in file_result:

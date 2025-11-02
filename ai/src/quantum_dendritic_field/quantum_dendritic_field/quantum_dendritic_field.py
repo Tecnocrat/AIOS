@@ -378,7 +378,7 @@ class QuantumDendriticField:
             "coherence_history": self.coherence_history
         }
 
-        filepath = Path("runtime_intelligence/logs") / filename
+        filepath = Path("runtime/logs") / filename
         filepath.parent.mkdir(parents=True, exist_ok=True)
 
         with open(filepath, 'w') as f:
@@ -388,7 +388,7 @@ class QuantumDendriticField:
 
     def load_field_state(self, filename: str):
         """Load field state from file"""
-        filepath = Path("runtime_intelligence/logs") / filename
+        filepath = Path("runtime/logs") / filename
 
         with open(filepath, 'r') as f:
             state_dict = json.load(f)
@@ -456,7 +456,7 @@ def main():
     timestamp = int(time.time())
     filename = f"quantum_dendritic_field_state_{timestamp}.json"
     field.save_field_state(filename)
-    print(f"\nField state saved to: runtime_intelligence/logs/{filename}")
+    print(f"\nField state saved to: runtime/logs/{filename}")
 
     print("\nQuantum dendritic field evolution complete!")
 

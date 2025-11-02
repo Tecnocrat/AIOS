@@ -132,7 +132,7 @@ class AIOSSystemHealthMonitor:
             f"{root_prefix}interface/": [
                 "AIOS.Models/", "AIOS.Services/", "AIOS.UI/"
             ],
-            f"{root_prefix}runtime_intelligence/": [
+            f"{root_prefix}runtime/": [
                 "tools/", "logs/", "analysis/"
             ],
             f"{root_prefix}docs/": [
@@ -396,7 +396,7 @@ class AIOSSystemHealthMonitor:
         findings: list[dict] = []
         roots = [
             os.path.join("ai", "src"),
-            os.path.join("runtime_intelligence"),
+            os.path.join("runtime"),
         ]
         try:
             for root in roots:

@@ -18,7 +18,7 @@ _spec.loader.exec_module(mod)  # type: ignore
 
 CORE_LOG_DIR = (
     Path(__file__).resolve().parents[3]
-    / 'runtime_intelligence'
+    / 'runtime'
     / 'logs'
     / 'core'
 )

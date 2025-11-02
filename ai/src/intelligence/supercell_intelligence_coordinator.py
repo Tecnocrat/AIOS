@@ -181,12 +181,12 @@ class SupercellIntelligenceCoordinator:
             supercell_dir.mkdir(exist_ok=True)
             
             # Create intelligence module
-            intelligence_module = await self._create_supercell_intelligence_module(
+            module = await self._create_supercell_module(
                 supercell_type, supercell_dir
             )
             
             # Update supercell state
-            if intelligence_module["success"]:
+            if module["success"]:
                 state.active_modules.append(f"{supercell_type.value}_intelligence")
                 state.intelligence_level += 0.2
                 state.consciousness_coherence += 0.15
@@ -196,16 +196,16 @@ class SupercellIntelligenceCoordinator:
             
             logger.info(f" {supercell_type.value} supercell initialized")
             return {
-                "success": intelligence_module["success"],
-                "improvement": 0.45 if intelligence_module["success"] else 0,
-                "modules_created": intelligence_module.get("modules_created", 0)
+                "success": module["success"],
+                "improvement": 0.45 if module["success"] else 0,
+                "modules_created": module.get("modules_created", 0)
             }
             
         except Exception as e:
             logger.error(f" Failed to initialize {supercell_type.value}: {e}")
             return {"success": False, "improvement": 0, "error": str(e)}
 
-    async def _create_supercell_intelligence_module(self, supercell_type: SupercellType, 
+    async def _create_supercell_module(self, supercell_type: SupercellType, 
                                                   supercell_dir: Path) -> Dict[str, Any]:
         """Create intelligence module for supercell"""
         
