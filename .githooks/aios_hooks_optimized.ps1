@@ -260,8 +260,13 @@ function Invoke-PreCommitHook {
         foreach ($file in $stagedFiles) {
             # Only check consciousness files that are in wrong architectural layers
             if ($file -match "\.(py|cs|ps1)$" -and $file -match "intelligence|consciousness") {
-                # Flag consciousness files in runtime/ or interface/ layers (should be in ai/)
-                if ($file -match "^runtime/" -or $file -match "^interface/") {
+                # Allow consciousness monitoring in runtime/core/ (Core Engine monitoring)
+                if ($file -match "^runtime/core/" -and $file -match "monitor|monitoring") {
+                    # This is acceptable - Core Engine monitoring its own consciousness
+                    continue
+                }
+                # Flag consciousness files in other runtime/ or interface/ layers (should be in ai/)
+                elseif ($file -match "^runtime/" -or $file -match "^interface/") {
                     $ainlpErrors += $file
                 }
                 # For files in ai/ layer, only flag if they clearly lack consciousness context
