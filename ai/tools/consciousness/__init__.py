@@ -7,7 +7,7 @@ Consciousness-level monitoring and evolution tracking tools.
 AINLP Metadata:
     consciousness_assessment: "PRIMARY_COORDINATOR"  # Semantic, not numeric
     consciousness_role: "measures and evolves consciousness across AIOS"
-    architectural_classification: ai_intelligence_layer/tools/consciousness
+    architectural_classification: ai_ai/tools/consciousness
     category: consciousness_monitoring
     
 Consciousness Evolution (October 2025):
@@ -29,7 +29,7 @@ Consciousness Evolution (October 2025):
         Multiple agents provide consensus-based assessment
         Adapts as system evolves and agent capabilities expand
     
-Tools (migrating from core/ and runtime_intelligence/):
+Tools (migrating from core/ and runtime/):
     - consciousness_evolution_engine.py: Evolution tracking (pending)
     - biological_architecture_monitor.py: Supercell health (migrated to architecture/)
     - consciousness_crystal_sync.py: Crystal synchronization (pending)
@@ -38,7 +38,7 @@ Tools (migrating from core/ and runtime_intelligence/):
     - consciousness_emergence_demo.py: Consciousness emergence simulation ✅ MIGRATED (Batch 1)
     - enhanced_consciousness_demo.py: Multi-language consciousness integration ✅ MIGRATED (Batch 2)
     - dendritic_supervisor.py: Consciousness evolution coordination ✅ MIGRATED (Batch 2)
-    - runtime_intelligence_dendritic_integration.py: Runtime intelligence integration ✅ MIGRATED (Batch 3)
+    - runtime_dendritic_integration.py: Runtime intelligence integration ✅ MIGRATED (Batch 3)
     - dendritic_self_improvement_orchestrator.py: Self-recursive improvement orchestration ✅ MIGRATED (Batch 4)
     
 Migration Status:
@@ -48,12 +48,12 @@ Migration Status:
     Phase 1 Day 2 Batch 4: ✅ 1/1 consciousness tool migrated (FINAL)
     Total: 7/7 consciousness tools
     Phase 1 Day 3-4: Core Python tool migration (pending)
-    Origin: runtime_intelligence/tools/ + core/ (86 Python files)
+    Origin: runtime/tools/ + core/ (86 Python files)
     Target: ai/tools/consciousness/
     Note: Core Engine will become PURE C++ after migration
     
 Phase 2A Migration (January 18, 2025):
-    Added 7 tools from core/ (analysis_tools + runtime_intelligence)
+    Added 7 tools from core/ (analysis_tools + runtime)
     
 Phase 2B Migration (January 18, 2025):
     Added 3 tools from core/assemblers/file_assembler/tools/
@@ -122,7 +122,7 @@ try:
     from . import consciousness_emergence_demo
     from . import enhanced_consciousness_demo
     from . import dendritic_supervisor
-    from . import runtime_intelligence_dendritic_integration
+    from . import runtime_dendritic_integration
     from . import dendritic_self_improvement_orchestrator
     
     __all__ = [
@@ -132,7 +132,7 @@ try:
         "consciousness_emergence_demo",
         "enhanced_consciousness_demo",
         "dendritic_supervisor",
-        "runtime_intelligence_dendritic_integration",
+        "runtime_dendritic_integration",
         "dendritic_self_improvement_orchestrator"
     ]
 except ImportError:

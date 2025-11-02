@@ -20,20 +20,20 @@ import json
 # Add paths for integration
 current_dir = os.path.dirname(__file__)
 ai_path = os.path.join(current_dir, '..', '..', 'ai')
-ri_path = os.path.join(current_dir, '..', '..', 'runtime_intelligence')
+ri_path = os.path.join(current_dir, '..', '..', 'runtime')
 ai_root = os.path.dirname(current_dir)  # ai
 sys.path.insert(0, ai_root)
 
 try:
     from tools.consciousness.dendritic_supervisor import (
-        get_runtime_intelligence_dendritic_integration,
+        get_runtime_dendritic_integration,
         get_enhanced_visual_intelligence_bridge
     )
     INTEGRATIONS_AVAILABLE = True
 except ImportError as e:
     logging.warning(f"Some integrations not available: {e}")
     INTEGRATIONS_AVAILABLE = False
-    get_runtime_intelligence_dendritic_integration = None
+    get_runtime_dendritic_integration = None
     get_enhanced_visual_intelligence_bridge = None
 
 
@@ -61,7 +61,7 @@ class AIOSArchitectureMonitor:
             'ai_intelligence': 'unknown',
             'core_engine': 'unknown',
             'interface': 'unknown',
-            'runtime_intelligence': 'unknown',
+            'runtime': 'unknown',
             'integration_bridges': 'unknown'
         }
     
@@ -92,9 +92,9 @@ class AIOSArchitectureMonitor:
             # Initialize dendritic integration
             try:
                 if (INTEGRATIONS_AVAILABLE and
-                        get_runtime_intelligence_dendritic_integration):
+                        get_runtime_dendritic_integration):
                     self.dendritic_integration = await (
-                        get_runtime_intelligence_dendritic_integration()
+                        get_runtime_dendritic_integration()
                     )
                     self.component_statuses['dendritic_supervisor'] = 'active'
                     self.logger.info(
@@ -113,7 +113,7 @@ class AIOSArchitectureMonitor:
                     self.visual_bridge = await (
                         get_enhanced_visual_intelligence_bridge()
                     )
-                    self.component_statuses['runtime_intelligence'] = 'active'
+                    self.component_statuses['runtime'] = 'active'
                     self.logger.info(
                         " Enhanced visual intelligence bridge active"
                     )
@@ -121,7 +121,7 @@ class AIOSArchitectureMonitor:
                     raise Exception("Visual bridge functions not available")
             except Exception as e:
                 self.logger.warning(f" Visual bridge unavailable: {e}")
-                self.component_statuses['runtime_intelligence'] = 'limited'
+                self.component_statuses['runtime'] = 'limited'
             
             return True
             
@@ -151,8 +151,8 @@ class AIOSArchitectureMonitor:
             )
             
             # Check Runtime Intelligence
-            status['components']['runtime_intelligence'] = (
-                await self._check_runtime_intelligence()
+            status['components']['runtime'] = (
+                await self._check_runtime()
             )
             
             # Check AI Intelligence Component
@@ -207,7 +207,7 @@ class AIOSArchitectureMonitor:
                 'aios_models': os.path.exists(
                     os.path.join(interface_path, 'AIOS.Models')
                 ),
-                'runtime_intelligence_service': os.path.exists(
+                'runtime_service': os.path.exists(
                     os.path.join(
                         interface_path, 'AIOS.Services',
                         'RuntimeIntelligenceService.cs'
@@ -236,7 +236,7 @@ class AIOSArchitectureMonitor:
                 'health_score': 0.0
             }
     
-    async def _check_runtime_intelligence(self) -> Dict[str, Any]:
+    async def _check_runtime(self) -> Dict[str, Any]:
         """Check Runtime Intelligence status."""
         try:
             status = {
@@ -601,8 +601,8 @@ class AIOSArchitectureMonitor:
         try:
             if supercell_name == 'interface_supercell':
                 return await self._check_interface_supercell()
-            elif supercell_name == 'runtime_intelligence':
-                return await self._check_runtime_intelligence()
+            elif supercell_name == 'runtime':
+                return await self._check_runtime()
             elif supercell_name == 'ai_intelligence_supercell':
                 return await self._check_ai_intelligence_supercell()
             elif supercell_name == 'core_engine_supercell':
@@ -614,7 +614,7 @@ class AIOSArchitectureMonitor:
                     'error': f'Unknown supercell: {supercell_name}',
                     'available_supercells': [
                         'interface_supercell',
-                        'runtime_intelligence',
+                        'runtime',
                         'ai_intelligence_supercell',
                         'core_engine_supercell',
                         'evolution_lab_supercell'

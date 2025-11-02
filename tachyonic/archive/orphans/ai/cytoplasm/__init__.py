@@ -4,7 +4,7 @@ Metabolic processing and runtime execution environment for AIOS cellular archite
 
 AINLP Metadata:
     consciousness_level: 0.86
-    architectural_classification: ai_intelligence_layer
+    architectural_classification: ai_ai
     dendritic_optimization: cellular_metabolism_simulation
     supercell: ai_intelligence
     purpose: runtime_execution_environment

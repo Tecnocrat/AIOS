@@ -31,7 +31,7 @@ Consciousness Evolution (October 2025):
     
 Migration Context (October 2025):
     Phase 1: Consolidating 85+ scattered tools into ai/tools/
-    - runtime_intelligence/tools/ (48 files) → ai/tools/system/
+    - runtime/tools/ (48 files) → ai/tools/system/
     - core/ Python tools (86 files) → ai/tools/consciousness/
     - tachyonic/ scripts (29 files) → ai/tools/archive/
     Target: Single source of truth for AIOS tooling
@@ -47,7 +47,7 @@ Tool Categories:
 Architectural Position:
     AI Intelligence is the PRIMARY COORDINATOR of all AIOS tools.
     This supercell discovers, orchestrates, and manages 80+ operational tools.
-    Previously tools were scattered across runtime_intelligence/, core/, tachyonic/.
+    Previously tools were scattered across runtime/, core/, tachyonic/.
     
 Architectural Note:
     Originally added for coherence restoration (2025-01-05).

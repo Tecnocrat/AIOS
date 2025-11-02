@@ -340,8 +340,8 @@ class AIOSDatabase:
         total_backups = cursor.fetchone()['total']
         
         # Unique content
-        cursor.execute("SELECT COUNT(*) as unique FROM file_content")
-        unique_content = cursor.fetchone()['unique']
+        cursor.execute("SELECT COUNT(*) as unique_count FROM file_content")
+        unique_content = cursor.fetchone()['unique_count']
         
         # Total size (with duplicates)
         cursor.execute("SELECT SUM(file_size) as total_size FROM backups")

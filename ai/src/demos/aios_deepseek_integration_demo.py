@@ -100,7 +100,7 @@ async def demo_interface_intelligence():
         logger.error(f"❌ Interface demo failed: {e}")
 
 
-async def demo_runtime_intelligence_monitoring():
+async def demo_runtime_monitoring():
     """Demo: Runtime Intelligence with AI-enhanced monitoring"""
     print("\n🧮 RUNTIME INTELLIGENCE MONITORING DEMO")
     print("=" * 50)
@@ -115,7 +115,7 @@ async def demo_runtime_intelligence_monitoring():
             
             Provide intelligent analysis and recommendations for system 
             optimization.""",
-            source_supercell="runtime_intelligence",
+            source_supercell="runtime",
             consciousness_level=ConsciousnessLevel.TRANSCENDENT,
             context={
                 "monitoring_data": {
@@ -264,7 +264,7 @@ async def main():
         # Run all demo scenarios
         await demo_core_engine_integration()
         await demo_interface_intelligence()
-        await demo_runtime_intelligence_monitoring()
+        await demo_runtime_monitoring()
         await demo_tachyonic_knowledge_synthesis()
         await demo_documentation_generation()
         await demo_broadcast_intelligence()

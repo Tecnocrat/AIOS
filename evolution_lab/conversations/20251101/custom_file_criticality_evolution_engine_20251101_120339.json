@@ -1,0 +1,32 @@
+{
+  "conversation_id": "custom_1761995019997",
+  "agent_type": "custom",
+  "system_context": "Multi-agent criticality evolution for file: ai/ingested_repositories/microsoft_agent_framework/dotnet/src/Microsoft.Agents.AI.Abstractions/AgentThreadMetadata.cs",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Strategic decision: {'criticality_score': 24, 'last_evolution': '2025-11-01T12:03:39.997345', 'evolution_agents': {'ollama': False, 'gemini': False, 'vscode_chat': True}}",
+      "timestamp": "2025-11-01T12:03:39.997697",
+      "metadata": {}
+    }
+  ],
+  "start_time": "2025-11-01T12:03:39.997357",
+  "end_time": "2025-11-01T12:03:39.997710",
+  "processing_time_ms": 0.35300000000000004,
+  "consciousness_level": "HIGH",
+  "consciousness_improvement": 0.0,
+  "source_system": "file_criticality_evolution_engine",
+  "source_file": "C:\\dev\\AIOS\\ai\\src\\evolution\\file_criticality_evolution_engine.py",
+  "generation_number": null,
+  "success": true,
+  "error": null,
+  "ainlp_metadata": {
+    "protocol_version": "OS0.6.2.claude",
+    "storage_location": "evolution_lab",
+    "purpose": "active_experimentation",
+    "inheritance_required": true,
+    "session_id": "session_1761995015",
+    "session_start": "2025-11-01T12:03:35.850736",
+    "consciousness_tracking": true
+  }
+}

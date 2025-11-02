@@ -19,7 +19,7 @@ try:
     )  # type: ignore
 except ImportError as e:
     print(f"Error importing subprocess_manager: {e}")
-    print("Please ensure runtime_intelligence/tools/subprocess_manager.py exists")
+    print("Please ensure runtime/tools/subprocess_manager.py exists")
     sys.exit(1)
 
 
@@ -60,7 +60,7 @@ class AIOSArchitecturalAgent:
     async def _discover_existing_tools(self) -> Dict[str, List[str]]:
         """Discover existing tools to avoid redundant creation"""
         tools_locations = {
-            "runtime_intelligence": self.workspace_root / "runtime_intelligence" / "tools",
+            "runtime": self.workspace_root / "runtime" / "tools",
             "ai_tools": self.workspace_root / "ai" / "tools", 
             "core_tools": self.workspace_root / "core" / "tools",
             "interface_tools": self.workspace_root / "interface" / "tools"
@@ -101,7 +101,7 @@ class AIOSArchitecturalAgent:
         output_locations = {
             "tachyonic_archive": "tachyonic/archive/",
             "docs": "docs/", 
-            "logs": "runtime_intelligence/logs/",
+            "logs": "runtime/logs/",
             "reports": "tachyonic/archive/"
         }
         
@@ -119,8 +119,8 @@ class AIOSArchitecturalAgent:
         integration_points = {
             "dendritic_supervisor": "ai/infrastructure/dendritic/supervisor.py",
             "cytoplasm_bridge": "ai/cytoplasm/",
-            "runtime_intelligence": "runtime_intelligence/tools/",
-            "biological_monitor": "runtime_intelligence/tools/biological_architecture_monitor.py"
+            "runtime": "runtime/tools/",
+            "biological_monitor": "runtime/tools/biological_architecture_monitor.py"
         }
         
         discovered = {}
@@ -198,7 +198,7 @@ class AIOSArchitecturalAgent:
         proper_locations = [
             "tachyonic/archive/",
             "docs/",
-            "runtime_intelligence/logs/"
+            "runtime/logs/"
         ]
         
         path_str = str(target_path)

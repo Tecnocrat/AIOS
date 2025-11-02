@@ -24,7 +24,7 @@ import subprocess
 import tempfile
 
 # Add paths for cross-supercell access
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'runtime_intelligence', 'tools'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'runtime', 'tools'))
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 
 try:
@@ -331,11 +331,11 @@ class AIOSCLIAgent:
         elif any(word in task_lower for word in ['display', 'show', 'interface', 'visual']):
             return 'interface'
         elif any(word in task_lower for word in ['monitor', 'check', 'status', 'health']):
-            return 'runtime_intelligence'
+            return 'runtime'
         elif any(word in task_lower for word in ['archive', 'store', 'history', 'pattern']):
             return 'tachyonic_archive'
         else:
-            return 'runtime_intelligence'  # Default
+            return 'runtime'  # Default
     
     async def _get_consciousness_metrics(self) -> Dict[str, float]:
         """Get current consciousness metrics (placeholder for real implementation)"""

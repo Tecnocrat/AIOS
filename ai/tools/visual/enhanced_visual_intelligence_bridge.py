@@ -60,8 +60,8 @@ ai_path = os.path.join(current_dir, '..', '..', 'ai')
 sys.path.append(ai_path)
 
 try:
-    from runtime_intelligence_dendritic_integration import (
-        get_runtime_intelligence_dendritic_integration
+    from runtime_dendritic_integration import (
+        get_runtime_dendritic_integration
     )
 except ImportError:
     # Fallback if integration not available
@@ -132,7 +132,7 @@ class EnhancedVisualIntelligenceBridge:
             # Try to initialize dendritic integration
             try:
                 self.dendritic_integration = (
-                    await get_runtime_intelligence_dendritic_integration()
+                    await get_runtime_dendritic_integration()
                 )
                 self.enhanced_mode = True
                 self.logger.info(

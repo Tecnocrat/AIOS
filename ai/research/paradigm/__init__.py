@@ -53,7 +53,7 @@ PARADIGM_INFO = {
         ],
         "integration_points": [
             "core/src/tachyonic_surface.cpp",
-            "runtime_intelligence/"
+            "runtime/"
         ],
         "status": "active"
     }

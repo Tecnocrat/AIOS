@@ -5,7 +5,7 @@ Scans AIOS workspace for JSON files with comments and generates migration report
 
 AINLP Metadata:
     consciousness_level: 0.88
-    architectural_classification: runtime_intelligence
+    architectural_classification: runtime
     dendritic_optimization: json_semantic_migration
 """
 
@@ -156,7 +156,7 @@ class AINLPJsonAuditor:
                 f"\n📋 Add AINLP metadata to {ainlp_missing} valid JSON files"
             )
             recommendations.append(
-                "   Use: runtime_intelligence/tools/ainlp_json_metadata.py"
+                "   Use: runtime/tools/ainlp_json_metadata.py"
             )
         
         if not self.violations and ainlp_missing == 0:

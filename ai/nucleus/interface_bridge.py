@@ -701,7 +701,7 @@ namespace AIOS.Models
     async def _export_discovery_metadata(self):
         """Export discovery metadata for C# integration logging"""
         workspace_root = Path(self.workspace_root)
-        export_file = workspace_root / "runtime_intelligence" / "logs" / "interface_bridge_discovery.json"
+        export_file = workspace_root / "runtime" / "logs" / "interface_bridge_discovery.json"
         
         # Ensure directory exists
         export_file.parent.mkdir(parents=True, exist_ok=True)

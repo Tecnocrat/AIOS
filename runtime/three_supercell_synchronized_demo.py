@@ -130,7 +130,7 @@ class ThreeSupercellSynchronizedDemo:
         
         # Find the Runtime Intelligence phase
         runtime_phase = next((phase for phase in self.optimization_results['coordination_phases'] 
-                             if phase['phase'] == 'runtime_intelligence_optimization'), None)
+                             if phase['phase'] == 'runtime_optimization'), None)
         
         if runtime_phase:
             print("\n RUNTIME INTELLIGENCE SUPERCELL:")
@@ -138,7 +138,7 @@ class ThreeSupercellSynchronizedDemo:
             runtime_results = runtime_phase['results']
             print(f"• Patterns Applied: {runtime_results['patterns_applied']}")
             print(f"• Intelligence Enhancement: +{runtime_results['intelligence_contribution']:.3f}")
-            print(f"• Average Optimization Factor: {runtime_results['runtime_intelligence_metrics']['average_optimization_factor']:.2f}x")
+            print(f"• Average Optimization Factor: {runtime_results['runtime_metrics']['average_optimization_factor']:.2f}x")
             print("• Key Optimizations:")
             
             for pattern_id, pattern_app in runtime_results['pattern_applications'].items():

@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # AIOS Biological Architecture Solution - AINLP Harmonized
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -19,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.UI.Diagnostics", "inte
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{FBF56CC3-7AE6-AD2D-3F14-7F97FD322CD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.Core", "computational_layer\core_systems\AIOS.Core.csproj", "{76FA93FB-F1A2-4568-9A3D-CE90125527F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIOS.Core", "interface\AIOS.Core\AIOS.Core.csproj", "{76FA93FB-F1A2-4568-9A3D-CE90125527F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "visualization", "visualization", "{67669809-8539-3E91-A02B-EF5DCD213641}"
 EndProject

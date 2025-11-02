@@ -47,7 +47,7 @@ class RepositoryIngestionEngine:
             format='%(asctime)s | INGESTION | %(levelname)s | %(message)s',
             handlers=[
                 logging.StreamHandler(),
-                logging.FileHandler('runtime_intelligence/logs/repository_ingestion.log')
+                logging.FileHandler('runtime/logs/repository_ingestion.log')
             ]
         )
         return logging.getLogger('RepositoryIngestionEngine')

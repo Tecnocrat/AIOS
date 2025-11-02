@@ -872,7 +872,7 @@ class UltimateAIOSDendriticIntelligence:
             "evolutionary_assembler": CellularType.MITOCHONDRIA,
             "evolutionary_assembler_iter2": CellularType.MITOCHONDRIA,
             "evolutionary_assembler_iter3": CellularType.MITOCHONDRIA,
-            "runtime_intelligence": CellularType.CONSCIOUSNESS,
+            "runtime": CellularType.CONSCIOUSNESS,
             "analysis_tools": CellularType.CYTOPLASM,
             "configuration": CellularType.MEMBRANE,
             "documentation": CellularType.VESICLE,

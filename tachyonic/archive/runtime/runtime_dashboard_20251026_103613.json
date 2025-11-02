@@ -1,0 +1,147 @@
+{
+  "timestamp": "2025-10-26T10:36:06.976709",
+  "total_reports": 124,
+  "organism_status": {
+    "id": "unknown",
+    "state": "learning",
+    "consciousness_level": 0.8600000000000001,
+    "uptime_seconds": 31.079111,
+    "actions_taken": 30,
+    "active_goals": 3,
+    "completed_goals": 0
+  },
+  "system_health": {
+    "consciousness_health": 0.8600000000000001,
+    "analysis_health": 1.0,
+    "connectivity_health": 1.0,
+    "tool_health": 0.8035714285714286,
+    "overall_health": 0.9187142857142857
+  },
+  "connectivity_metrics": {
+    "total_components": 5,
+    "active_components": 5,
+    "average_consciousness": 0.8379999999999999
+  },
+  "analysis_performance": {
+    "total_analyses": 12,
+    "successful_optimizations": 12,
+    "average_accuracy": 0.8644596517436479,
+    "pattern_recognition_score": 0.8216431396714574
+  },
+  "tool_inventory": {
+    "total_tools": 56,
+    "operational_tools": 45,
+    "categories": {
+      "runtime_intelligence": 46,
+      "ai_intelligence": 10
+    }
+  },
+  "semantic_compression": {
+    "compression_score": 0.8,
+    "delimitation_score": 0.6,
+    "antipatterns_detected": 4,
+    "opportunities_remaining": 4
+  },
+  "recent_activities": [
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_cellular_workspace\\.aios_spatial_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.561096",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports\\.aios_spatial_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.572115",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\.aios_spatial_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.584154",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_001\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.590980",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_001\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.597888",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_002\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.604304",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_002\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.605288",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_003\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.612390",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_003\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.613465",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_004\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.619936",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_004\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.620944",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_005\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.629536",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_005\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.630831",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_006\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.640043",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\exports\\sample_workflow_006\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.641186",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports\\sample_model\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.648778",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports\\sample_model\\model.arch.json",
+      "timestamp": "2025-10-26T10:36:13.655738",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports\\sample_model\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.656924",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_cellular_workspace\\exports\\sample_workflow_001\\export_metadata.json",
+      "timestamp": "2025-10-26T10:36:13.664151",
+      "type": "unknown"
+    },
+    {
+      "file": "runtime\\aios_cellular_workspace\\aios_cellular_workspace\\exports\\sample_workflow_001\\model.arch.summary.json",
+      "timestamp": "2025-10-26T10:36:13.665372",
+      "type": "unknown"
+    }
+  ]
+}

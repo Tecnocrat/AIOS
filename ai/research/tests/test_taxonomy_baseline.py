@@ -13,7 +13,7 @@ import re
 
 ROOT = Path(__file__).resolve().parent.parent
 CTX = ROOT / 'AIOS_PROJECT_CONTEXT.md'
-OUT = ROOT / 'runtime_intelligence' / 'context'
+OUT = ROOT / 'runtime' / 'context'
 CRYSTALS = OUT / 'crystals'
 
 

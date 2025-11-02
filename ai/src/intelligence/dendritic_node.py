@@ -266,8 +266,8 @@ class DendriticNode:
         if 'ai' in parts:
             idx = parts.index('ai')
             return ' / '.join(parts[idx:]).replace('.py', '')
-        elif 'runtime_intelligence' in parts:
-            idx = parts.index('runtime_intelligence')
+        elif 'runtime' in parts:
+            idx = parts.index('runtime')
             return ' / '.join(parts[idx:]).replace('.py', '')
         elif 'core' in parts:
             idx = parts.index('core')
@@ -279,7 +279,7 @@ class DendriticNode:
         """Infer supercell location from file path"""
         if 'ai/' in file_path or 'ai\\' in file_path:
             return "AI Intelligence Layer"
-        elif 'runtime_intelligence/' in file_path or 'runtime_intelligence\\' in file_path:
+        elif 'runtime/' in file_path or 'runtime\\' in file_path:
             return "Runtime Intelligence"
         elif 'core/' in file_path or 'core\\' in file_path:
             return "Core Engine"

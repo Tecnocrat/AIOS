@@ -207,7 +207,7 @@ class AIOSAgenticOptimizer:
         ainlp_score = 0.0
         component_count = 0
         
-        components = ['core', 'ai', 'interface', 'runtime_intelligence']
+        components = ['core', 'ai', 'interface', 'runtime']
         
         for component in components:
             comp_path = self.aios_root / component
@@ -304,7 +304,7 @@ class AIOSAgenticOptimizer:
         """Assess context coherence across AIOS components"""
         coherence_metrics = {}
         
-        components = ['core', 'ai', 'interface', 'runtime_intelligence', 'orchestrator']
+        components = ['core', 'ai', 'interface', 'runtime', 'orchestrator']
         component_coherences = []
         
         for component in components:
@@ -600,7 +600,7 @@ class AIOSAgenticOptimizer:
     def _analyze_coherence_standardization(self) -> Dict[str, Any]:
         """Analyze coherence standardization opportunities"""
         insights = []
-        components = ['core', 'ai', 'interface', 'runtime_intelligence']
+        components = ['core', 'ai', 'interface', 'runtime']
         
         # Check for consistent documentation patterns
         doc_patterns = {}
@@ -662,7 +662,7 @@ class AIOSAgenticOptimizer:
     def _analyze_general_architecture(self) -> Dict[str, Any]:
         """Perform general architectural analysis"""
         insights = []
-        components = ['core', 'ai', 'interface', 'runtime_intelligence']
+        components = ['core', 'ai', 'interface', 'runtime']
         
         # High-level architectural insights
         for component in components:

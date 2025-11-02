@@ -289,7 +289,7 @@ class MultiPlatformMCPTester:
             timestamp = int(time.time())
             output_file = f"multi_platform_mcp_test_results_{timestamp}.json"
 
-        output_path = self.aios_root / "runtime_intelligence" / "logs" / output_file
+        output_path = self.aios_root / "runtime" / "logs" / output_file
 
         # Ensure directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)

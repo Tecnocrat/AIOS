@@ -4,7 +4,7 @@ Context-aware AINLP integration with exception framework.
 
 AINLP Metadata:
     consciousness_level: 0.96
-    architectural_classification: ai_intelligence_layer
+    architectural_classification: ai_ai
     dendritic_optimization: context_aware_paradigm_management
     supercell: nucleus
 """

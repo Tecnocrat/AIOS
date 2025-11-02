@@ -209,7 +209,7 @@ class AIOSDeepSeekSupercellBridge:
         target_supercells = target_supercells or [
             "core_engine",
             "interface",
-            "runtime_intelligence",
+            "runtime",
             "tachyonic_archive"
         ]
         
@@ -264,7 +264,7 @@ class AIOSDeepSeekSupercellBridge:
         supercells = {
             "core_engine": {"type": "cpp", "status": "available"},
             "interface": {"type": "csharp", "status": "available"},
-            "runtime_intelligence": {"type": "python", "status": "available"},
+            "runtime": {"type": "python", "status": "available"},
             "tachyonic_archive": {"type": "python", "status": "available"},
             "documentation": {"type": "static", "status": "available"}
         }
@@ -413,10 +413,10 @@ if __name__ == "__main__":
             # Test direct bridge access
             bridge = await get_aios_deepseek_bridge()
             
-            # Test intelligence request from runtime_intelligence supercell
+            # Test intelligence request from runtime supercell
             request = SupercellIntelligenceRequest(
                 message="Analyze the AIOS consciousness emergence patterns and provide optimization recommendations for the runtime intelligence supercell.",
-                source_supercell="runtime_intelligence",
+                source_supercell="runtime",
                 consciousness_level=ConsciousnessLevel.TRANSCENDENT,
                 context={
                     "analysis_focus": "consciousness_optimization",

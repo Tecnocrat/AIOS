@@ -9,6 +9,7 @@ using System.Windows.Threading;
 using AIOS.Models;
 using AIOS.Services;
 using System.Text.Json;
+using System.Net.Http;
 
 namespace AIOS.UI;
 
@@ -73,6 +74,34 @@ public partial class MainWindow : Window
 
         // Add welcome message
         AddChatMessage("AIOS", "Welcome to AIOS! I'm your AI assistant. Click on any module to switch modes, or just start chatting!", true);
+
+        // Check Interface Bridge server status
+        CheckServerStatus();
+    }
+
+    private async void CheckServerStatus()
+    {
+        try
+        {
+            using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(5) };
+            var response = await httpClient.GetAsync("http://localhost:8000/health");
+
+            if (response.IsSuccessStatusCode)
+            {
+                ServerStatusText.Text = "Server running";
+                AddActivityLog("Interface Bridge server is running");
+            }
+            else
+            {
+                ServerStatusText.Text = "Server error";
+                AddActivityLog("Interface Bridge server health check failed");
+            }
+        }
+        catch
+        {
+            ServerStatusText.Text = "Server not running";
+            AddActivityLog("Interface Bridge server not accessible");
+        }
     }
 
     private void OpenKPIDashboard_Click(object sender, RoutedEventArgs e)
@@ -447,6 +476,21 @@ public partial class MainWindow : Window
         }
     }
 
+    private void FileExplorerButton_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            var fileExplorer = new FileExplorerWindow();
+            fileExplorer.Owner = this;
+            fileExplorer.Show();
+            AddActivityLog("Opened File Explorer for code quality operations");
+        }
+        catch (Exception ex)
+        {
+            AddChatMessage("AIOS", $" Error opening File Explorer: {ex.Message}", true);
+        }
+    }
+
     private async void MaintenanceButton_Click(object sender, RoutedEventArgs e)
     {
         AddChatMessage("AIOS", " Opening Maintenance Center...", true);
@@ -524,5 +568,135 @@ public partial class MainWindow : Window
     {
         AddChatMessage("AIOS", " Settings panel will be available in a future update. For now, you can configure the system via configuration files in the config/ directory.", true);
         AddActivityLog("Settings access attempted");
+    }
+
+    private async void StartServerButton_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            ServerStatusText.Text = "Starting server...";
+            AddChatMessage("AIOS", " Starting Interface Bridge server...", true);
+            AddActivityLog("Starting Interface Bridge server");
+
+            // Use the server_manager.py script to start the server
+            var startInfo = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "python",
+                Arguments = "ai/server_manager.py start",
+                WorkingDirectory = @"C:\dev\AIOS",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
+
+            using var process = System.Diagnostics.Process.Start(startInfo);
+            await process.WaitForExitAsync();
+
+            if (process.ExitCode == 0)
+            {
+                ServerStatusText.Text = "Server running";
+                AddChatMessage("AIOS", " Interface Bridge server started successfully on localhost:8000", true);
+                AddActivityLog("Interface Bridge server started");
+            }
+            else
+            {
+                ServerStatusText.Text = "Start failed";
+                AddChatMessage("AIOS", " Failed to start Interface Bridge server", true);
+                AddActivityLog("Interface Bridge server start failed");
+            }
+        }
+        catch (Exception ex)
+        {
+            ServerStatusText.Text = "Error";
+            AddChatMessage("AIOS", $" Error starting server: {ex.Message}", true);
+            AddActivityLog($"Server start error: {ex.Message}");
+        }
+    }
+
+    private async void StopServerButton_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            ServerStatusText.Text = "Stopping server...";
+            AddChatMessage("AIOS", " Stopping Interface Bridge server...", true);
+            AddActivityLog("Stopping Interface Bridge server");
+
+            var startInfo = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "python",
+                Arguments = "ai/server_manager.py stop",
+                WorkingDirectory = @"C:\dev\AIOS",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
+
+            using var process = System.Diagnostics.Process.Start(startInfo);
+            await process.WaitForExitAsync();
+
+            if (process.ExitCode == 0)
+            {
+                ServerStatusText.Text = "Server stopped";
+                AddChatMessage("AIOS", " Interface Bridge server stopped successfully", true);
+                AddActivityLog("Interface Bridge server stopped");
+            }
+            else
+            {
+                ServerStatusText.Text = "Stop failed";
+                AddChatMessage("AIOS", " Failed to stop Interface Bridge server", true);
+                AddActivityLog("Interface Bridge server stop failed");
+            }
+        }
+        catch (Exception ex)
+        {
+            ServerStatusText.Text = "Error";
+            AddChatMessage("AIOS", $" Error stopping server: {ex.Message}", true);
+            AddActivityLog($"Server stop error: {ex.Message}");
+        }
+    }
+
+    private async void RestartServerButton_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            ServerStatusText.Text = "Restarting server...";
+            AddChatMessage("AIOS", " Restarting Interface Bridge server...", true);
+            AddActivityLog("Restarting Interface Bridge server");
+
+            var startInfo = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "python",
+                Arguments = "ai/server_manager.py restart",
+                WorkingDirectory = @"C:\dev\AIOS",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
+
+            using var process = System.Diagnostics.Process.Start(startInfo);
+            await process.WaitForExitAsync();
+
+            if (process.ExitCode == 0)
+            {
+                ServerStatusText.Text = "Server restarted";
+                AddChatMessage("AIOS", " Interface Bridge server restarted successfully", true);
+                AddActivityLog("Interface Bridge server restarted");
+            }
+            else
+            {
+                ServerStatusText.Text = "Restart failed";
+                AddChatMessage("AIOS", " Failed to restart Interface Bridge server", true);
+                AddActivityLog("Interface Bridge server restart failed");
+            }
+        }
+        catch (Exception ex)
+        {
+            ServerStatusText.Text = "Error";
+            AddChatMessage("AIOS", $" Error restarting server: {ex.Message}", true);
+            AddActivityLog($"Server restart error: {ex.Message}");
+        }
     }
 }

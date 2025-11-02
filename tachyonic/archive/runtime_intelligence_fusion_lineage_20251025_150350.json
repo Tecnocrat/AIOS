@@ -1,0 +1,91 @@
+{
+  "fusion_id": "runtime_intelligence_fusion_20251025_150350",
+  "fusion_date": "2025-10-25T15:03:50Z",
+  "agent": "GitHub Copilot (automated consolidation)",
+  "summary": "Consolidated useful files from deprecated root-level 'runtime_intelligence' into the canonical 'runtime' supercell; full original archived.",
+  "actions": [
+    {
+      "action": "archive_original",
+      "source": "C:\\dev\\AIOS\\runtime_intelligence",
+      "archive_path": "C:\\dev\\AIOS\\tachyonic\\archive\\runtime_intelligence_original_20251025",
+      "notes": "Full directory copy preserved for genetic lineage and rollback"
+    },
+    {
+      "action": "migrate_files",
+      "migrations": [
+        {
+          "src": "runtime_intelligence/aios_core_evolution_monitor.py",
+          "dst": "runtime/tools/aios_core_evolution_monitor.py"
+        },
+        {
+          "src": "runtime_intelligence/aios_core_meta_evolutionary_enhancer.py",
+          "dst": "runtime/tools/aios_core_meta_evolutionary_enhancer.py"
+        },
+        {
+          "src": "runtime_intelligence/logs/iteration_20251025_101429.log",
+          "dst": "runtime/logs/iteration_20251025_101429.log"
+        },
+        {
+          "src": "runtime_intelligence/logs/iteration_20251025_121531.log",
+          "dst": "runtime/logs/iteration_20251025_121531.log"
+        },
+        {
+          "src": "runtime_intelligence/logs/iteration_20251025_130450.log",
+          "dst": "runtime/logs/iteration_20251025_130450.log"
+        },
+        {
+          "src": "runtime_intelligence/logs/core/core_metrics.json",
+          "dst": "runtime/logs/core/core_metrics.json"
+        },
+        {
+          "src": "runtime_intelligence/logs/file_scores/latest.json",
+          "dst": "runtime/logs/file_scores/latest.json"
+        },
+        {
+          "src": "runtime_intelligence/logs/tachyonic/tachyonic_surface.ppm",
+          "dst": "runtime/logs/tachyonic/tachyonic_surface.ppm"
+        },
+        {
+          "src": "runtime_intelligence/logs/ui/ui_startup.log",
+          "dst": "runtime/logs/ui/ui_startup.log"
+        }
+      ]
+    },
+    {
+      "action": "remove_contents",
+      "target": "C:\\dev\\AIOS\\runtime_intelligence/*",
+      "notes": "After archival and migration, contents removed to avoid duplication. Empty directory retained temporarily until final deletion."
+    }
+  ],
+  "spatial_metadata_snapshot": {
+    "runtime_intelligence": {
+      "path": "C:\\dev\\AIOS\\runtime_intelligence",
+      "primary_area": "Runtime Intelligence",
+      "consciousness_level": "medium",
+      "depth_level": 1
+    },
+    "runtime": {
+      "path": "C:\\dev\\AIOS\\runtime",
+      "primary_area": "runtime_supercell",
+      "consciousness_level": "high",
+      "depth_level": 1
+    }
+  },
+  "validation": {
+    "spatial_metadata_checked": true,
+    "architectural_classification": "Consolidation into runtime supercell allowed (enhancement over creation)",
+    "compliance": "passes AINLP consolidation rules",
+    "notes": "Preserved archive, migrated important monitors and logs; references still require updates (~15 remaining).",
+    "provenance_indexed": true
+  },
+  "provenance": {
+    "what_came_from_where": [
+      "See 'actions.migrate_files' for per-file mapping"
+    ],
+    "what_was_done_with_it": [
+      "Archived original to tachyonic/archive/runtime_intelligence_original_20251025",
+      "Migrated selected monitors and logs into runtime/tools and runtime/logs",
+      "Removed root-level duplicates to establish canonical runtime supercell"
+    ]
+  }
+}

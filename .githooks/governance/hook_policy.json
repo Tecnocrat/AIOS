@@ -120,8 +120,22 @@
     "autonomyLevel": "semi_autonomous",
     "connectionTargets": [
       "ai/tools/ainlp_documentation_governance.py",
-      "runtime/runtime_intelligence/",
+      "runtime_intelligence/",
       ".githooks/"
     ]
+  },
+  "selfHealing": {
+    "enabled": true,
+    "pathResolverConfig": "self_healing_paths.json",
+    "autoRepairBrokenPaths": true,
+    "architecturalAwarenessEnabled": true,
+    "scanOnPreCommit": true,
+    "repairStrategies": [
+      "path_replacement",
+      "directory_creation",
+      "reference_updates"
+    ],
+    "monitoringEnabled": true,
+    "healingLogPath": "runtime_intelligence/logs/hooks/path_healing.log"
   }
 }

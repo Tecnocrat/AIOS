@@ -91,7 +91,7 @@ class ComprehensiveAIOSHealthTester:
             # Display summary
             components = arch_status.get('components', {})
             print(f"Interface: {components.get('interface', {}).get('status', 'unknown')}")
-            print(f"Runtime Intelligence: {components.get('runtime_intelligence', {}).get('status', 'unknown')}")
+            print(f"Runtime Intelligence: {components.get('runtime', {}).get('status', 'unknown')}")
             print(f"AI Intelligence: {components.get('ai_intelligence', {}).get('status', 'unknown')}")
             print(f"Core Engine: {components.get('core_engine', {}).get('status', 'unknown')}")
             

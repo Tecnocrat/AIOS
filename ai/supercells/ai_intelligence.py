@@ -180,7 +180,7 @@ class AIIntelligenceSupercell(BaseSupercellInterface):
         try:
             # Enhanced visual intelligence engine
             self.analysis_tools["enhanced_visual_intelligence"] = {
-                "path": self.root_path / "src/engines/enhanced_visual_intelligence_engine.py",
+                "path": self.root_path / "src/engines/enhanced_visual_engine.py",
                 "description": "Advanced visual pattern recognition and analysis",
                 "capabilities": ["image_analysis", "pattern_detection", "consciousness_visualization"]
             }

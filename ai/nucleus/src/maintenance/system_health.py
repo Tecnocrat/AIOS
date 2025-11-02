@@ -4,7 +4,7 @@ AIOS Maintenance - System Health Runner
 AINLP provenance:
 - Purpose: bridge AI Core to the runtime system health tool without
   coupling tests or core logic to side effects
-- Origin: integrates runtime_intelligence/tools/system_health_check.py
+- Origin: integrates runtime/tools/system_health_check.py
   as an ops/diagnostics callable
 """
 
@@ -20,7 +20,7 @@ from typing import Optional
 def _health_tool_path() -> str:
     root = Path(__file__).resolve().parents[3]  # .../AIOS/ai/src/maintenance
     return str(
-        root / "runtime_intelligence" / "tools" / "system_health_check.py"
+        root / "runtime" / "tools" / "system_health_check.py"
     )
 
 

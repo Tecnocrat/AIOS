@@ -1,0 +1,179 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:55.441213",
+  "folder_info": {
+    "name": "engines",
+    "absolute_path": "C:\\dev\\AIOS\\core\\engines",
+    "relative_path": "core\\engines",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "engines"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "__pycache__",
+      "analysis_tools",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "configuration",
+      "core_systems",
+      "documentation",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "runtime_intelligence",
+      "src",
+      "tachyonic_archive",
+      "tests"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 68959,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_assembly_3d_engine.py",
+          "size": 30222,
+          "modified": "2025-09-15T22:27:50.038747",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_quantum_noise_generators.py",
+          "size": 17401,
+          "modified": "2025-09-15T22:27:50.928243",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_spherical_geometry_engine.py",
+          "size": 20008,
+          "modified": "2025-09-15T22:27:51.836612",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 1328,
+          "modified": "2025-09-15T22:27:52.190507",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_assembly_3d_engine.py",
+        "size": 30222,
+        "modified": "2025-09-15T22:27:50.038747",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_quantum_noise_generators.py",
+        "size": 17401,
+        "modified": "2025-09-15T22:27:50.928243",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_spherical_geometry_engine.py",
+        "size": 20008,
+        "modified": "2025-09-15T22:27:51.836612",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 1328,
+        "modified": "2025-09-15T22:27:52.190507",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "README.md",
+        "size": 1328,
+        "modified": "2025-09-15T22:27:52.190507",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_spherical_geometry_engine.py",
+        "size": 20008,
+        "modified": "2025-09-15T22:27:51.836612",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_quantum_noise_generators.py",
+        "size": 17401,
+        "modified": "2025-09-15T22:27:50.928243",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_assembly_3d_engine.py",
+        "size": 30222,
+        "modified": "2025-09-15T22:27:50.038747",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".py",
+        ".md"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 3,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > engines",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\engines' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\engines' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\engines' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "ai\\src\\engines"
+    ]
+  }
+}

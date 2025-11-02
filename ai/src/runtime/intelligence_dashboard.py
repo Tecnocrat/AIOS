@@ -49,7 +49,7 @@ class ToolStatus(Enum):
 
 class ComponentLayer(Enum):
     """AIOS architectural layer enumeration."""
-    RUNTIME_INTELLIGENCE = "runtime_intelligence"
+    RUNTIME_INTELLIGENCE = "runtime"
     AI_INTELLIGENCE = "ai_intelligence"
     INTERFACE = "interface"
     CORE = "core"
@@ -66,7 +66,7 @@ class ToolInfo:
         path: Absolute path to tool file
         layer: Architectural layer (runtime, ai, interface, core)
         status: Operational status
-        import_path: Python import path (e.g., "runtime_intelligence.tools.system_health_check")
+        import_path: Python import path (e.g., "runtime.tools.system_health_check")
         description: Tool description (from docstring if available)
         functions: List of public functions/classes
         dependencies: Required imports
@@ -102,7 +102,7 @@ class ToolDiscovery:
     Tool discovery engine for AIOS architecture.
     
     Scans 4 architectural layers for Python tools:
-    - runtime_intelligence/tools/
+    - runtime/tools/
     - ai/tools/
     - core/tools/ (if exists)
     - interface/tools/ (if exists)
@@ -136,7 +136,7 @@ class ToolDiscovery:
         
         # Define scan locations
         scan_paths = [
-            (self.workspace_root / "runtime_intelligence" / "tools", ComponentLayer.RUNTIME_INTELLIGENCE),
+            (self.workspace_root / "runtime" / "tools", ComponentLayer.RUNTIME_INTELLIGENCE),
             (self.workspace_root / "ai" / "tools", ComponentLayer.AI_INTELLIGENCE),
             (self.workspace_root / "core" / "tools", ComponentLayer.CORE),
             (self.workspace_root / "interface" / "tools", ComponentLayer.INTERFACE),
@@ -421,7 +421,7 @@ class WorkflowExecutor:
             
             # Check 2: Workspace structure
             print("   [2/4] Checking workspace structure...")
-            required_dirs = ["ai", "core", "interface", "runtime_intelligence", "evolution_lab"]
+            required_dirs = ["ai", "core", "interface", "runtime", "evolution_lab"]
             existing_dirs = [d for d in required_dirs if (self.workspace_root / d).exists()]
             structure_health = len(existing_dirs) / len(required_dirs)
             results["checks"]["structure"] = {
@@ -866,7 +866,7 @@ class UnifiedDashboard:
     
     async def export_tool_catalogue(self) -> None:
         """Export tool catalogue to JSON."""
-        output_path = self.workspace_root / "runtime_intelligence" / "tool_catalogue.json"
+        output_path = self.workspace_root / "runtime" / "tool_catalogue.json"
         
         catalogue = {
             "timestamp": datetime.now().isoformat(),

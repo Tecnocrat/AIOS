@@ -108,7 +108,7 @@ class AINLPCellularIntegrator:
 
     def setup_logging(self):
         """Setup logging for cellular integration."""
-        log_dir = Path(__file__).parent.parent.parent.parent / "runtime_intelligence" / "logs"
+        log_dir = Path(__file__).parent.parent.parent.parent / "runtime" / "logs"
         log_dir.mkdir(parents=True, exist_ok=True)
 
         log_file = log_dir / "ainlp_cellular_integration.log"
@@ -446,7 +446,7 @@ class AINLPCellularIntegrator:
         """Check integration with biological monitor."""
         try:
             # Check if biological monitor tool exists
-            monitor_path = Path(__file__).parent.parent.parent.parent / "runtime_intelligence" / "tools" / "biological_architecture_monitor.py"
+            monitor_path = Path(__file__).parent.parent.parent.parent / "runtime" / "tools" / "biological_architecture_monitor.py"
 
             if monitor_path.exists():
                 return 0.9  # Monitor exists

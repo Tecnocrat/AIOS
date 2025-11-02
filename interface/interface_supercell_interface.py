@@ -137,7 +137,7 @@ class InterfaceSupercell(SupercellCommunicationInterface):
                 )
                 
                 # Send execution result to Runtime Intelligence for translation
-                await self._report_execution_to_runtime_intelligence(
+                await self._report_execution_to_runtime(
                     tool_name, parameters, result
                 )
                 

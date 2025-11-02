@@ -109,7 +109,7 @@ class AICellManager:
                 )
                 repo_root = Path.cwd()
             ws_path = (
-                repo_root / "runtime_intelligence" / "aios_cellular_workspace"
+                repo_root / "runtime" / "aios_cellular_workspace"
             )
         self.workspace_path = ws_path
         self.workspace_path.mkdir(parents=True, exist_ok=True)

@@ -206,7 +206,7 @@ class TestNaturalLanguagePatterns:
         result = await bridge.execute("discover tools in runtime intelligence layer")
         assert result["command"] == "discover_tools"
         # Tools should be filtered by layer
-        print(f"✅ Layer extraction: {result['result']['total']} runtime_intelligence tools")
+        print(f"✅ Layer extraction: {result['result']['total']} runtime tools")
     
     @pytest.mark.asyncio
     async def test_parameter_extraction_scope(self):

@@ -311,7 +311,7 @@ def demonstrate_agentic_interpretation():
         'total': 20,
         'discovered': 3,
         'components': ['infrastructure', 'cytoplasm', 'src', 'nucleus', 
-                      'transport', 'tachyonic', 'runtime_intelligence', 'information_storage'],
+                      'transport', 'tachyonic', 'runtime', 'information_storage'],
         'namespace_collisions': 0,
         'morning_improvement': '+300%'
     }

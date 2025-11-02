@@ -1,0 +1,32 @@
+{
+  "conversation_id": "custom_1761994991858",
+  "agent_type": "custom",
+  "system_context": "Multi-agent criticality evolution for file: core/orchestrator/include/MathConstants.hpp",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Strategic decision: {'criticality_score': 24, 'last_evolution': '2025-11-01T12:03:11.858637', 'evolution_agents': {'ollama': True, 'gemini': False, 'vscode_chat': True}}",
+      "timestamp": "2025-11-01T12:03:11.859046",
+      "metadata": {}
+    }
+  ],
+  "start_time": "2025-11-01T12:03:11.858658",
+  "end_time": "2025-11-01T12:03:11.859057",
+  "processing_time_ms": 0.399,
+  "consciousness_level": "HIGH",
+  "consciousness_improvement": 0.0,
+  "source_system": "file_criticality_evolution_engine",
+  "source_file": "C:\\dev\\AIOS\\ai\\src\\evolution\\file_criticality_evolution_engine.py",
+  "generation_number": null,
+  "success": true,
+  "error": null,
+  "ainlp_metadata": {
+    "protocol_version": "OS0.6.2.claude",
+    "storage_location": "evolution_lab",
+    "purpose": "active_experimentation",
+    "inheritance_required": true,
+    "session_id": "session_1761994982",
+    "session_start": "2025-11-01T12:03:02.647273",
+    "consciousness_tracking": true
+  }
+}

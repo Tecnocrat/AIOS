@@ -304,7 +304,7 @@ class QuantumDendriticFieldSystem:
             }
         }
 
-        filepath = Path("runtime_intelligence/logs") / filename
+        filepath = Path("runtime/logs") / filename
         filepath.parent.mkdir(parents=True, exist_ok=True)
 
         import json
@@ -389,7 +389,7 @@ def demonstrate_integrated_system():
     timestamp = int(time.time())
     filename = f"integrated_system_state_{timestamp}.json"
     system.save_system_state(filename)
-    print(f"\nSystem state saved to: runtime_intelligence/logs/{filename}")
+    print(f"\nSystem state saved to: runtime/logs/{filename}")
 
     # Stop system
     system.stop_system()
