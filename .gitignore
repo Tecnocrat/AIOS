@@ -427,3 +427,11 @@ config/tensorflow_config.json
 *.vcxproj.filters
 *.vcxproj.user
 
+# Tachyonic Shadow Archives (Local snapshots, not for version control)
+tachyonic/shadows/
+tachyonic/archive/file_criticality_shadows/
+
+# Large Generated System Knowledge Graphs (Generated artifacts, not for version control)
+ai/nucleus/consciousness/system_knowledge_graph_*.json
+ai/src/evolution/system_knowledge_graph_*.json
+
