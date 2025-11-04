@@ -74,39 +74,114 @@
                 </StackPanel>
             </Border>
 
-            <!-- Center Panel - Chat Interface -->
+            <!-- Center Panel - Chat Interface and AI Search -->
             <Border Grid.Column="1" Background="#FF2D2D30" CornerRadius="8" Margin="5,0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <!-- Chat Header -->
-                    <Border Grid.Row="0" Background="#FF3E3E42" Padding="15,10">
-                        <TextBlock Name="ChatHeader" Text="AI Assistant Ready" FontSize="16" FontWeight="Bold" Foreground="#FFCCCCCC"/>
-                    </Border>
-
-                    <!-- Chat Messages -->
-                    <ScrollViewer Grid.Row="1" Name="ChatScrollViewer" VerticalScrollBarVisibility="Auto" Padding="15">
-                        <StackPanel Name="ChatMessages" />
-                    </ScrollViewer>
-
-                    <!-- Input Area -->
-                    <Border Grid.Row="2" Background="#FF3E3E42" Padding="15">
+                <TabControl Name="MainTabControl" Background="Transparent" BorderThickness="0">
+                    <TabControl.Resources>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Background" Value="#FF3E3E42"/>
+                            <Setter Property="Foreground" Value="#FFCCCCCC"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Padding" Value="15,8"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabItem">
+                                        <Border Name="Border" Background="{TemplateBinding Background}" CornerRadius="5,5,0,0" Padding="{TemplateBinding Padding}" Margin="2,0">
+                                            <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#FF007ACC"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#FF4A4A50"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabControl.Resources>
+                    
+                    <!-- Tab 1: AI Chat -->
+                    <TabItem Header="💬 AI Chat">
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                            <TextBox Name="ChatInput" Background="#FF1E1E1E" Foreground="#FFCCCCCC" BorderBrush="#FF404040" BorderThickness="1" Padding="10" FontSize="14" KeyDown="ChatInput_KeyDown" Text="Type your message here..."/>
+                            <!-- Chat Header -->
+                            <Border Grid.Row="0" Background="#FF3E3E42" Padding="15,10">
+                                <TextBlock Name="ChatHeader" Text="AI Assistant Ready" FontSize="16" FontWeight="Bold" Foreground="#FFCCCCCC"/>
+                            </Border>
 
-                            <Button Name="SendButton" Grid.Column="1" Content="Send" Background="#FF007ACC" Foreground="White" BorderThickness="0" Padding="20,10" Margin="10,0,0,0" FontWeight="Bold" Click="SendButton_Click"/>
+                            <!-- Chat Messages -->
+                            <ScrollViewer Grid.Row="1" Name="ChatScrollViewer" VerticalScrollBarVisibility="Auto" Padding="15">
+                                <StackPanel Name="ChatMessages" />
+                            </ScrollViewer>
+
+                            <!-- Input Area -->
+                            <Border Grid.Row="2" Background="#FF3E3E42" Padding="15">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBox Name="ChatInput" Background="#FF1E1E1E" Foreground="#FFCCCCCC" BorderBrush="#FF404040" BorderThickness="1" Padding="10" FontSize="14" KeyDown="ChatInput_KeyDown" Text="Type your message here..."/>
+
+                                    <Button Name="SendButton" Grid.Column="1" Content="Send" Background="#FF007ACC" Foreground="White" BorderThickness="0" Padding="20,10" Margin="10,0,0,0" FontWeight="Bold" Click="SendButton_Click"/>
+                                </Grid>
+                            </Border>
                         </Grid>
-                    </Border>
-                </Grid>
+                    </TabItem>
+                    
+                    <!-- Tab 2: AI Search (Phase 11 Day 1) -->
+                    <TabItem Header="🔍 AI Search">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Search Input -->
+                            <Border Grid.Row="0" Background="#FF3E3E42" Padding="15">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="AI-Powered Similarity Search" FontSize="16" FontWeight="Bold" Foreground="#FF00D4FF" Margin="0,0,0,10"/>
+                                    
+                                    <TextBox Name="SearchQueryInput" Grid.Row="1" Grid.Column="0" Background="#FF1E1E1E" Foreground="#FFCCCCCC" BorderBrush="#FF404040" BorderThickness="1" Padding="10" FontSize="14" Text="Search for functionality (e.g., 'tool for health monitoring')"/>
+
+                                    <Button Name="SearchButton" Grid.Row="1" Grid.Column="1" Content="🔍 Search" Background="#FF007ACC" Foreground="White" BorderThickness="0" Padding="20,10" Margin="10,0,0,0" FontWeight="Bold" Click="SearchButton_Click"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- Search Results -->
+                            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="15">
+                                <StackPanel Name="SearchResults">
+                                    <TextBlock Text="Enter a search query to find AI tools, modules, or functionality." FontSize="13" Foreground="#FFAAAAAA" TextWrapping="Wrap" Margin="0,10"/>
+                                    <TextBlock Text="Example queries:" FontSize="13" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="0,15,0,5"/>
+                                    <TextBlock Text="• 'tool for health monitoring'" FontSize="12" Foreground="#FFAAAAAA" Margin="5,2"/>
+                                    <TextBlock Text="• 'database architecture analysis'" FontSize="12" Foreground="#FFAAAAAA" Margin="5,2"/>
+                                    <TextBlock Text="• 'consciousness measurement'" FontSize="12" Foreground="#FFAAAAAA" Margin="5,2"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
             </Border>
 
             <!-- Right Panel - System Info -->
