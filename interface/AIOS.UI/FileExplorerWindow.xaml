@@ -228,7 +228,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Text="Analysis & Results" FontSize="16" FontWeight="Bold" Foreground="#FF00D4FF" Margin="15,15,15,10"/>
+                    <TextBlock Grid.Row="0" Text="Analysis &amp; Results" FontSize="16" FontWeight="Bold" Foreground="#FF00D4FF" Margin="15,15,15,10"/>
 
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="15,0,15,10">
                         <StackPanel Name="AnalysisPanel">
