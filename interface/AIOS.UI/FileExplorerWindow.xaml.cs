@@ -538,9 +538,10 @@ public class FileSystemItem
     public string Modified { get; set; }
 }
 
-public class AgentResponse
-{
-    public string Result { get; set; }
-    public bool Success { get; set; }
-    public string Error { get; set; }
-}
+// TEMP: Commented out due to duplicate definition error (Phase 11 Day 1)
+// public class AgentResponse
+// {
+//     public string Result { get; set; }
+//     public bool Success { get; set; }
+//     public string Error { get; set; }
+// }
