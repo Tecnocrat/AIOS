@@ -29,6 +29,9 @@ public partial class MainWindow : Window
     private string _currentModule = "nlp";
     private int _messageCount = 0;
 
+    // Phase 11 Day 1: AI Layer Client for Python AI integration
+    private AILayerClient _aiLayerClient;
+
     // Fractal holographic components
     private HolographicSystemState _systemState;
     private Dictionary<string, ComponentReflection> _componentReflections;
@@ -43,6 +46,9 @@ public partial class MainWindow : Window
         _maintenanceService = new AIOS.Services.MaintenanceService();
         _systemState = new HolographicSystemState();
         _componentReflections = new Dictionary<string, ComponentReflection>();
+        
+        // Phase 11 Day 1: Initialize AI Layer Client (port 8000 - server_manager default)
+        _aiLayerClient = new AILayerClient("http://localhost:8000");
 
         InitializeUI();
         InitializeFractalComponents();
@@ -697,6 +703,232 @@ public partial class MainWindow : Window
             ServerStatusText.Text = "Error";
             AddChatMessage("AIOS", $" Error restarting server: {ex.Message}", true);
             AddActivityLog($"Server restart error: {ex.Message}");
+        }
+    }
+
+    // ========================================================================
+    // Phase 11 Day 1: AI Search Integration
+    // ========================================================================
+
+    /// <summary>
+    /// Phase 11: AI Similarity Search button handler
+    /// Queries Python AI Layer via Interface Bridge (port 8001)
+    /// </summary>
+    private async void SearchButton_Click(object sender, RoutedEventArgs e)
+    {
+        string query = SearchQueryInput.Text?.Trim() ?? "";
+        
+        if (string.IsNullOrEmpty(query) || 
+            query == "Search for functionality (e.g., 'tool for health monitoring')")
+        {
+            MessageBox.Show(
+                "Please enter a search query",
+                "AI Search",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information
+            );
+            return;
+        }
+
+        // Clear previous results
+        SearchResults.Children.Clear();
+
+        // Show loading indicator
+        var loadingText = new TextBlock
+        {
+            Text = $"🔍 Searching for: '{query}'",
+            FontSize = 14,
+            FontWeight = FontWeights.Bold,
+            Foreground = new SolidColorBrush(Color.FromRgb(0, 212, 255)),
+            Margin = new Thickness(0, 10, 0, 10),
+            TextWrapping = TextWrapping.Wrap
+        };
+        SearchResults.Children.Add(loadingText);
+
+        var loadingSpinner = new TextBlock
+        {
+            Text = "⏳ Querying AI Layer (Embedding + LLM Consensus)...",
+            FontSize = 13,
+            Foreground = new SolidColorBrush(Color.FromRgb(170, 170, 170)),
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+        SearchResults.Children.Add(loadingSpinner);
+
+        try
+        {
+            // Phase 11: Call Python AI Layer via HTTP REST
+            var response = await _aiLayerClient.SimilaritySearchAsync(query, maxResults: 5);
+
+            // Clear loading
+            SearchResults.Children.Clear();
+
+            if (response?.Results == null || response.Results.Count == 0)
+            {
+                var noResultsText = new TextBlock
+                {
+                    Text = "❌ No results found",
+                    FontSize = 14,
+                    Foreground = new SolidColorBrush(Color.FromRgb(220, 53, 69)),
+                    Margin = new Thickness(0, 10, 0, 5)
+                };
+                SearchResults.Children.Add(noResultsText);
+                return;
+            }
+
+            // Display success header
+            var successText = new TextBlock
+            {
+                Text = $"✅ Found {response.Results.Count} result(s) via AI Agent Dendritic Similarity",
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Color.FromRgb(40, 167, 69)),
+                Margin = new Thickness(0, 10, 0, 15)
+            };
+            SearchResults.Children.Add(successText);
+
+            // Display each result
+            int rank = 1;
+            foreach (var result in response.Results)
+            {
+                // Result container
+                var resultBorder = new Border
+                {
+                    Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                    CornerRadius = new CornerRadius(8),
+                    Padding = new Thickness(15),
+                    Margin = new Thickness(0, 0, 0, 15)
+                };
+
+                var resultPanel = new StackPanel();
+
+                // Rank and filename
+                var titleText = new TextBlock
+                {
+                    Text = $"#{rank}. {result.Neuron}",
+                    FontSize = 15,
+                    FontWeight = FontWeights.Bold,
+                    Foreground = new SolidColorBrush(Color.FromRgb(0, 212, 255)),
+                    Margin = new Thickness(0, 0, 0, 8)
+                };
+                resultPanel.Children.Add(titleText);
+
+                // Scores
+                var scoresPanel = new WrapPanel { Margin = new Thickness(0, 0, 0, 8) };
+                
+                // Embedding similarity
+                var embeddingScore = new TextBlock
+                {
+                    Text = $"📊 Embedding: {result.EmbeddingScore:P1}",
+                    FontSize = 12,
+                    Foreground = new SolidColorBrush(Color.FromRgb(170, 170, 170)),
+                    Margin = new Thickness(0, 0, 15, 0)
+                };
+                scoresPanel.Children.Add(embeddingScore);
+
+                // LLM consensus score
+                var llmScore = new TextBlock
+                {
+                    Text = $"🧠 LLM Consensus: {result.LlmScore:P1}",
+                    FontSize = 12,
+                    Foreground = new SolidColorBrush(Color.FromRgb(170, 170, 170)),
+                    Margin = new Thickness(0, 0, 15, 0)
+                };
+                scoresPanel.Children.Add(llmScore);
+
+                // Final score (use Similarity property)
+                var finalScore = new TextBlock
+                {
+                    Text = $"⭐ Final: {result.Similarity:P1}",
+                    FontSize = 12,
+                    FontWeight = FontWeights.Bold,
+                    Foreground = new SolidColorBrush(Color.FromRgb(255, 215, 0))
+                };
+                scoresPanel.Children.Add(finalScore);
+
+                resultPanel.Children.Add(scoresPanel);
+
+                // LLM reasoning
+                if (!string.IsNullOrWhiteSpace(result.Reasoning))
+                {
+                    var reasoningText = new TextBlock
+                    {
+                        Text = $"💭 {result.Reasoning}",
+                        FontSize = 12,
+                        Foreground = new SolidColorBrush(Color.FromRgb(204, 204, 204)),
+                        TextWrapping = TextWrapping.Wrap,
+                        Margin = new Thickness(0, 0, 0, 8)
+                    };
+                    resultPanel.Children.Add(reasoningText);
+                }
+
+                // File path
+                var pathText = new TextBlock
+                {
+                    Text = $"📁 {result.Path}",
+                    FontSize = 11,
+                    Foreground = new SolidColorBrush(Color.FromRgb(136, 136, 136)),
+                    TextWrapping = TextWrapping.Wrap
+                };
+                resultPanel.Children.Add(pathText);
+
+                resultBorder.Child = resultPanel;
+                SearchResults.Children.Add(resultBorder);
+
+                rank++;
+            }
+
+            // Log success
+            AddActivityLog($"AI Search: {response.Results.Count} results for '{query}'");
+        }
+        catch (HttpRequestException ex)
+        {
+            SearchResults.Children.Clear();
+            
+            var errorText = new TextBlock
+            {
+                Text = "❌ Interface Bridge Connection Error",
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Color.FromRgb(220, 53, 69)),
+                Margin = new Thickness(0, 10, 0, 10)
+            };
+            SearchResults.Children.Add(errorText);
+
+            var detailsText = new TextBlock
+            {
+                Text = $"Could not connect to Python AI Layer (port 8001).\n\nError: {ex.Message}\n\nEnsure Interface Bridge server is running:\npython ai/server_manager.py start",
+                FontSize = 12,
+                Foreground = new SolidColorBrush(Color.FromRgb(170, 170, 170)),
+                TextWrapping = TextWrapping.Wrap
+            };
+            SearchResults.Children.Add(detailsText);
+
+            AddActivityLog($"AI Search failed: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            SearchResults.Children.Clear();
+            
+            var errorText = new TextBlock
+            {
+                Text = "❌ Unexpected Error",
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Color.FromRgb(220, 53, 69)),
+                Margin = new Thickness(0, 10, 0, 10)
+            };
+            SearchResults.Children.Add(errorText);
+
+            var detailsText = new TextBlock
+            {
+                Text = $"Error: {ex.Message}\n\nStack Trace:\n{ex.StackTrace}",
+                FontSize = 11,
+                Foreground = new SolidColorBrush(Color.FromRgb(170, 170, 170)),
+                TextWrapping = TextWrapping.Wrap
+            };
+            SearchResults.Children.Add(detailsText);
+
+            AddActivityLog($"AI Search error: {ex.Message}");
         }
     }
 }
