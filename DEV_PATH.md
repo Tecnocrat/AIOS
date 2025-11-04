@@ -102,8 +102,12 @@ Your intuition was **absolutely correct**:
 - [x] Wire TextBox (query) + Button + Results display ✅ COMPLETE
 
 **Testing & Validation Tasks** (CURRENT WAYPOINT):
+- [x] Fix Unicode encoding in interface_bridge.py ([OK] markers) ✅ COMPLETE
+- [x] Fix port mismatch (8001 → 8000) in MainWindow.xaml.cs ✅ COMPLETE
+- [x] Fix XAML entity errors (&amp; escaping) ✅ COMPLETE
+- [x] Fix AgentResponse duplicate definition ✅ COMPLETE
+- [x] Build AIOS.UI project successfully ✅ COMPLETE
 - [ ] Ensure Interface Bridge server running: `python ai/server_manager.py status`
-- [ ] Build AIOS.UI project: `dotnet build interface/AIOS.UI/AIOS.UI.csproj`
 - [ ] Run AIOS UI application
 - [ ] Test AI Search tab functionality:
   - Click "🔍 AI Search" tab
