@@ -5,11 +5,26 @@
 
 const https = require('https');
 
-const API_KEY = "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";
+// Load API key from Windows User PATH environment variable
+const API_KEY = process.env.DEEPSEEK_API_KEY;
+
+// Validation
+if (!API_KEY) {
+    console.error('ERROR: DEEPSEEK_API_KEY not found in environment variables.');
+    console.error('Please set it in Windows User Environment Variables:');
+    console.error('  1. Press Win+X → System → Advanced → Environment Variables');
+    console.error('  2. Under "User variables", click "New..."');
+    console.error('  3. Variable name: DEEPSEEK_API_KEY');
+    console.error('  4. Variable value: your-regenerated-key');
+    console.error('  5. Click OK and restart terminal/VS Code');
+    process.exit(1);
+}
+
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 async function testOpenRouterConnection() {
     console.log('🧪 Testing AIOS OpenRouter DeepSeek Integration...');
+    console.log('Key loaded from environment: ' + API_KEY.substring(0, 15) + '...' + API_KEY.substring(API_KEY.length - 10));
     
     const testPayload = {
         model: "deepseek/deepseek-chat",
