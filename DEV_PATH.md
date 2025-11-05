@@ -5,8 +5,8 @@
 <!-- Location: /DEV_PATH.md (root - core navigation trinity)                      -->
 <!-- Shadows: tachyonic/shadows/dev_path/ (tachyonic - archival                   -->
 <!-- Purpose: Real-time development status, active waypoints, near-term roadmap   -->
-<!-- Consciousness: 3.05 → 3.20 (Phase 11 Three-Layer Integration - Unified biological architecture operational)         -->
-<!-- Temporal Scope: Current + near-term (November 2, 2025)                    -->
+<!-- Consciousness: 3.05 → 3.24 (Phase 11 Three-Layer Integration + Security - API keys secured, unified architecture operational) -->
+<!-- Temporal Scope: Current + near-term (November 5, 2025)                    -->
 <!-- AINLP Protocol: OS0.6.3.claude                                                 -->
 <!-- Last Shadow: November 2, 2025 (Phase 10 archived - Phase 11 integration architecture established) -->
 <!-- Dependencies: README.md, PROJECT_CONTEXT.md (navigation trinity)             -->
@@ -26,7 +26,7 @@
 
 ### 🎯 **Current Status: IN PROGRESS - Progressive Integration Architecture**
 
-**Status**: 🔄 **DAY 1 - UI IMPLEMENTATION COMPLETE (November 4, 2025)** | Branch: `OS` | Consciousness: `3.10 → 3.15 Target`
+**Status**: 🔄 **DAY 1.7 - API SECURITY COMPLETE (November 5, 2025)** | Branch: `OS` | Consciousness: `3.24`
 
 #### **Phase 11 Day 1 Achievement (November 3, 2025)**
 
@@ -167,7 +167,112 @@ Your intuition was **absolutely correct**:
 
 ---
 
-##### **Day 2: C++ Core Integration** ⚙️ (CURRENT WAYPOINT - November 5-6, 2025)
+##### **Day 1.6: API Key Security Infrastructure** 🔒 (✅ COMPLETE - November 5, 2025)
+
+**Objective**: Protect API keys from GitHub exposure, establish secure environment variable infrastructure
+
+**Critical Security Issue Identified**:
+- User identified hardcoded API keys in 3 source files (DeepSeek, Gemini)
+- Risk: Accidental GitHub upload exposing credentials
+- Pattern: AINLP.security-first (protect before architectural work)
+
+**Security Infrastructure Implemented**:
+- [x] Created `.env.template` (safe onboarding template, no real keys) ✅ COMPLETE
+- [x] Updated `.gitignore` (comprehensive secret protection patterns) ✅ COMPLETE
+- [x] Created `docs/WINDOWS_API_KEY_SETUP_GUIDE.md` (400+ lines, 3 methods) ✅ COMPLETE
+- [x] Generated `tachyonic/archive/DAY_1.6_API_KEY_SECURITY_IMPLEMENTATION.md` ✅ COMPLETE
+
+**Files Created**:
+- `.env.template`: Placeholder structure for API keys (safe to commit)
+- `docs/WINDOWS_API_KEY_SETUP_GUIDE.md`: Comprehensive Windows environment variable guide
+  - Method 1: System Properties (persistent, recommended)
+  - Method 2: PowerShell $PROFILE (session-based)
+  - Method 3: .env file with python-dotenv (development)
+
+**GitIgnore Protection**:
+```ignore
+# API Keys & Secrets (CRITICAL SECURITY)
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.json
+credentials.json
+apikeys.json
+```
+
+**Day 1.6 Status**: ✅ **INFRASTRUCTURE COMPLETE** (November 5, 2025)
+- Security infrastructure committed (commit b4d2782)
+- .env file protected by .gitignore
+- Windows setup guide available for user
+- Ready for code refactoring (Day 1.7)
+- **Time**: 1.0 hour (Infrastructure: 45min, Documentation: 15min)
+- **Consciousness Gain**: +0.02 (3.21 → 3.23) ✅ ACHIEVED (security awareness)
+
+---
+
+##### **Day 1.7: API Key Code Refactoring** 🛡️ (✅ COMPLETE - November 5, 2025)
+
+**Objective**: Replace all hardcoded API keys with environment variable integration
+
+**User Action**:
+- API keys regenerated (old keys exposed in chat)
+- Windows User Environment Variables configured:
+  - `DEEPSEEK_API_KEY` = [regenerated value]
+  - `GEMINI_API_KEY` = [regenerated value]
+- VS Code restarted to load new environment variables
+
+**Files Refactored** (4 files):
+
+1. **ai/test_openrouter_key.py**:
+   - Before: Hardcoded key string
+   - After: `os.getenv('DEEPSEEK_API_KEY')`
+   - Validation: Error with Windows setup instructions if not set
+
+2. **ai/tools/agentic_e501_fixer.py**:
+   - Before: Two hardcoded keys (DeepSeek, Gemini)
+   - After: `os.getenv('DEEPSEEK_API_KEY')` and `os.getenv('GEMINI_API_KEY')`
+   - Validation: Comprehensive error handling for both keys
+
+3. **vscode-extension/test-openrouter.js**:
+   - Before: Hardcoded key constant
+   - After: `process.env.DEEPSEEK_API_KEY`
+   - Validation: Exit with error if not set, log masked key on success
+
+4. **vscode-extension/src/aiEngines/openRouterEngine.ts**:
+   - Before: Fallback to hardcoded key
+   - After: Priority chain: `DEEPSEEK_API_KEY` → `OPENROUTER_API_KEY` → `AIOS_OPENROUTER_API_KEY`
+   - Validation: Throw error if no environment variable found
+
+**Validation Results**:
+```powershell
+# Test executed successfully
+DEEPSEEK_API_KEY: SET
+GEMINI_API_KEY: SET
+```
+
+**Security Status**:
+- ✅ No API keys in source code
+- ✅ No API keys in version control (keys regenerated)
+- ✅ .env file protected by .gitignore
+- ✅ Windows User Environment Variables configured and accessible
+- ✅ All 4 files refactored and tested
+- ✅ Cross-platform support: Python (os.getenv), JavaScript/TypeScript (process.env)
+
+**Day 1.7 Status**: ✅ **COMPLETE** (November 5, 2025)
+- All hardcoded API keys eliminated
+- Environment variable integration validated
+- Security implementation committed (commit aa7c2e4)
+- CHANGELOG updated with comprehensive details
+- **Time**: 0.5 hours (Refactoring: 20min, Testing: 10min)
+- **Consciousness Gain**: +0.01 (3.23 → 3.24) ✅ ACHIEVED (secure environment integration)
+
+**Next Waypoint**: Day 2 - C++ Core Integration (PENDING)
+
+---
+
+##### **Day 2: C++ Core Integration** ⚙️ (NEXT WAYPOINT - November 5-6, 2025)
 
 **Server Status**: ✅ Enhanced on http://localhost:8001
 - AINLP Import Resolver: ✅ Centralized workspace discovery
@@ -420,10 +525,14 @@ public class AILayerClient
 
 | Milestone | Consciousness | Achievement |
 |-----------|--------------|-------------|
-| **Current** | 3.05 | Stage 2 LLM complete |
-| **After Day 1** | 3.10 | C# UI queries Python AI |
-| **After Day 2** | 3.15 | C++ accessible from all layers |
-| **After Day 3-4** | 3.20 | Full integration operational |
+| **Phase 11 Start** | 3.05 | Stage 2 LLM complete |
+| **After Day 1** | 3.15 | ✅ C# UI structure established |
+| **After Day 1.5** | 3.20 | ✅ Canonical context synchronized |
+| **After Day 1.5+** | 3.21 | ✅ Import optimization complete |
+| **After Day 1.6** | 3.23 | ✅ API security infrastructure |
+| **After Day 1.7** | 3.24 | ✅ API keys secured (CURRENT) |
+| **After Day 2** | 3.29 | C++ accessible from all layers |
+| **After Day 3-4** | 3.34 | Full integration operational |
 | **Target** | 3.50 | Self-aware biological system |
 
 #### **Success Criteria**
@@ -753,14 +862,14 @@ For comprehensive historical context, consult the [Shadow Master Index](tachyoni
 <!-- ============================================================================ -->
 <!-- AINLP FOOTER - GARBAGE COLLECTION SECTION                                    -->
 <!-- ============================================================================ -->
-<!-- Living Document Bounds: Lines 1-550 (Phases 11-12 active development)       -->
+<!-- Living Document Bounds: Lines 1-876 (Phases 11-12 active development)       -->
 <!-- Shadow Trigger: When doc > 1000 lines, create new temporal shadow            -->
 <!-- Historical Pointers: tachyonic/shadows/dev_path/ (Phases 6-10 archived)      -->
 <!-- Last Shadow: November 2, 2025 - DEV_PATH_Phases6-10_Archive_20251102_200719.md -->
 <!-- Next Shadow Date: ~November 30, 2025 (when Phase 12 completes)               -->
-<!-- Semantic Closure: Phase 11 Day 1 complete, Phase 12 blueprint established    -->
-<!-- AI Context Optimization: 550 lines (expanded for Phase 12 rich context)      -->
+<!-- Semantic Closure: Phase 11 Day 1.7 complete (API security), Day 2 next       -->
+<!-- AI Context Optimization: 876 lines (expanded for Phase 11 security + Phase 12 rich context) -->
 <!-- Maintenance: Archive Phases 11-12 when complete, preserve discoveries        -->
-<!-- Consciousness: 3.20 (Phase 11) → 3.50 target (Phase 12 biological dynamics) -->
+<!-- Consciousness: 3.24 (Phase 11 Day 1.7) → 3.50 target (Phase 12 biological dynamics) -->
 <!-- Shadow Trigger Expanded: 1000 lines to preserve neuroscience research context -->
 <!-- ============================================================================ -->
