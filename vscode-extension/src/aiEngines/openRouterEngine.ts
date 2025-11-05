@@ -34,9 +34,21 @@ export class OpenRouterEngine {
         this.logger = logger;
         
         // Load configuration from environment variables
-        const apiKey = process.env.OPENROUTER_API_KEY || 
-                      process.env.AIOS_OPENROUTER_API_KEY || 
-                      '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';
+        const apiKey = process.env.DEEPSEEK_API_KEY || 
+                      process.env.OPENROUTER_API_KEY || 
+                      process.env.AIOS_OPENROUTER_API_KEY;
+        
+        if (!apiKey) {
+            throw new Error(
+                'DEEPSEEK_API_KEY not found in environment variables.\n' +
+                'Please set it in Windows User Environment Variables:\n' +
+                '  1. Press Win+X → System → Advanced → Environment Variables\n' +
+                '  2. Under "User variables", click "New..."\n' +
+                '  3. Variable name: DEEPSEEK_API_KEY\n' +
+                '  4. Variable value: your-regenerated-key\n' +
+                '  5. Click OK and restart VS Code'
+            );
+        }
         
         this.config = {
             apiKey: apiKey,

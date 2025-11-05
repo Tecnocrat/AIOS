@@ -78,7 +78,12 @@ class AgenticE501Fixer:
 
     def _init_deepseek_agent(self) -> Dict[str, Any]:
         """Initialize DeepSeek cloud agent."""
-        api_key = "sk-or-v1-292ea9"  # Provided API key
+        api_key = os.getenv('DEEPSEEK_API_KEY')
+        if not api_key:
+            raise ValueError(
+                "DEEPSEEK_API_KEY not found in environment variables.\n"
+                "Please set it in Windows User Environment Variables"
+            )
         return {
             "url": "https://api.deepseek.com/v1/chat/completions",
             "api_key": api_key,
@@ -87,7 +92,18 @@ class AgenticE501Fixer:
 
     def _init_gemini_agent(self) -> Dict[str, Any]:
         """Initialize Gemini cloud agent."""
-        api_key = "AIzaSyCuj6S1PJcslZr29ez9Cd9oVNFDuzLH2OE"  # Provided API key
+        api_key = os.getenv('GEMINI_API_KEY')
+        if not api_key:
+            raise ValueError(
+                "GEMINI_API_KEY not found in environment variables.\n"
+                "Please set it in Windows User Environment Variables:\n"
+                "  1. Press Win+X → System → Advanced → Environment Variables\n"
+                "  2. Under 'User variables', click 'New...'\n"
+                "  3. Variable name: GEMINI_API_KEY\n"
+                "  4. Variable value: your-regenerated-key\n"
+                "  5. Click OK and restart terminal/VS Code\n"
+                "Get your key at: https://makersuite.google.com/app/apikey"
+            )
         return {
             "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
             "api_key": api_key,

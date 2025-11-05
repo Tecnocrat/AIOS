@@ -2,11 +2,23 @@
 import requests
 import os
 
-# Your current API key from .env
-api_key = "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"
+# Load API key from Windows User PATH environment variable
+api_key = os.getenv('DEEPSEEK_API_KEY')
+
+# Validation
+if not api_key:
+    raise ValueError(
+        "DEEPSEEK_API_KEY not found in environment variables.\n"
+        "Please set it in Windows User Environment Variables:\n"
+        "  1. Press Win+X → System → Advanced → Environment Variables\n"
+        "  2. Under 'User variables', click 'New...'\n"
+        "  3. Variable name: DEEPSEEK_API_KEY\n"
+        "  4. Variable value: your-regenerated-key\n"
+        "  5. Click OK and restart terminal/VS Code"
+    )
 
 print("Testing OpenRouter API key...")
-print(f"Key: {api_key[:15]}...{api_key[-10:]}")
+print(f"Key loaded from environment: {api_key[:15]}...{api_key[-10:]}")
 
 # Test with a simple request
 headers = {
