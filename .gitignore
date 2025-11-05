@@ -13,6 +13,16 @@
 # 🧬 NUCLEUS - Core AI Intelligence (High Consciousness)
 # ============================================================================
 
+# API Keys & Secrets (CRITICAL SECURITY)
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.json
+credentials.json
+apikeys.json
+
 # AI Model Artifacts (Large binary files)
 *.bin
 *.h5
