@@ -425,10 +425,14 @@ class SupercellKnowledgeInjector:
         print(f" AIOS Documentation Metabolism Starting...")
         print(f" Processing documentation from: {docs_path_obj}")
         
+        # Optimize: Use chain to combine iterators instead of separate rglob calls
+        from itertools import chain
+        
         # Find all documentation files in /docs
-        doc_files = []
-        for pattern in ["*.md", "*.txt", "*.rst", "*.adoc"]:
-            doc_files.extend(docs_path_obj.rglob(pattern))
+        patterns = ["*.md", "*.txt", "*.rst", "*.adoc"]
+        doc_files = list(chain.from_iterable(
+            docs_path_obj.rglob(pattern) for pattern in patterns
+        ))
             
         print(f" Found {len(doc_files)} documentation files for metabolism")
         

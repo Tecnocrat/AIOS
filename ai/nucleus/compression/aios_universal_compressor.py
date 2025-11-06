@@ -282,15 +282,15 @@ class AIOSUniversalCompressor:
                 "*backup*",
             ]
 
+            # Optimize: Use set for O(1) exclusion checks and avoid nested loops
+            exclude_set = set(exclude_patterns)
+            
             for pattern in patterns:
-                found_files = list(source_path.rglob(pattern))
-
-                # Filter out excluded patterns
-                for exclude_pattern in exclude_patterns:
-                    found_files = [
-                        f for f in found_files if not f.match(exclude_pattern)
-                    ]
-
+                # Use generator and filter in one pass instead of nested loops
+                found_files = [
+                    f for f in source_path.rglob(pattern)
+                    if not any(f.match(exc) for exc in exclude_set)
+                ]
                 files.extend(found_files)
 
         return list(set(files))  # Remove duplicates

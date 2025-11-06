@@ -172,18 +172,21 @@ class DendriticSuperclass:
                 )
                 
                 if marker_count > 0:  # Any dendritic potential
+                    # Optimize: Split content only once and reuse
+                    lines = content.split('\n')
+                    
                     # Extract logical signature from imports and classes
                     import_lines = [
-                        line for line in content.split('\n')
+                        line for line in lines
                         if line.strip().startswith('import') or
                         line.strip().startswith('from')
                     ]
                     class_lines = [
-                        line for line in content.split('\n')
+                        line for line in lines
                         if 'class ' in line
                     ]
                     function_lines = [
-                        line for line in content.split('\n')
+                        line for line in lines
                         if 'def ' in line
                     ]
                     

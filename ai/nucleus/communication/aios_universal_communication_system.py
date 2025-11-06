@@ -500,20 +500,28 @@ class UniversalCommunicationBus:
         """Background message processing loop"""
         logger.info(" Message processor started")
         
-        while self.is_running:
-            try:
-                if self.message_queue:
-                    # Process messages in priority order
-                    self.message_queue.sort(key=lambda m: m.priority.value)
+        # Create a new event loop for this thread
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
+        try:
+            while self.is_running:
+                try:
+                    if self.message_queue:
+                        # Process messages in priority order
+                        self.message_queue.sort(key=lambda m: m.priority.value)
+                        
+                        # Process one message per cycle
+                        message = self.message_queue.pop(0)
+                        # Optimize: Use existing event loop instead of creating new one each time
+                        loop.run_until_complete(self._process_message(message))
                     
-                    # Process one message per cycle
-                    message = self.message_queue.pop(0)
-                    asyncio.run(self._process_message(message))
-                
-                time.sleep(0.01)  # Small delay to prevent CPU overload
-                
-            except Exception as e:
-                logger.error(f" Error in message processor: {e}")
+                    time.sleep(0.01)  # Small delay to prevent CPU overload
+                    
+                except Exception as e:
+                    logger.error(f" Error in message processor: {e}")
+        finally:
+            loop.close()
     
     async def _process_message(self, message: UniversalMessage):
         """Process individual message"""

@@ -202,14 +202,29 @@ class AIEngineHandoffGenerator:
     
     def _capture_workspace_state(self) -> Dict[str, Any]:
         """Capture current workspace state for context"""
-        return {
-            "total_files": len(list(self.workspace_root.glob("**/*.*"))),
-            "python_files": len(list(self.workspace_root.glob("**/*.py"))),
-            "csharp_files": len(list(self.workspace_root.glob("**/*.cs"))),
-            "cpp_files": len(list(self.workspace_root.glob("**/*.cpp"))),
-            "documentation_files": len(list(self.workspace_root.glob("**/*.md"))),
-            "timestamp": datetime.datetime.now().isoformat()
+        # Optimize: Single directory traversal instead of 5 separate glob operations
+        file_counts = {
+            "total_files": 0,
+            "python_files": 0,
+            "csharp_files": 0,
+            "cpp_files": 0,
+            "documentation_files": 0,
         }
+        
+        for file_path in self.workspace_root.glob("**/*.*"):
+            file_counts["total_files"] += 1
+            suffix = file_path.suffix.lower()
+            if suffix == ".py":
+                file_counts["python_files"] += 1
+            elif suffix == ".cs":
+                file_counts["csharp_files"] += 1
+            elif suffix == ".cpp":
+                file_counts["cpp_files"] += 1
+            elif suffix == ".md":
+                file_counts["documentation_files"] += 1
+        
+        file_counts["timestamp"] = datetime.datetime.now().isoformat()
+        return file_counts
     
     def _count_modified_files(self, commits: List[Dict]) -> int:
         """Count total files modified across commits"""
