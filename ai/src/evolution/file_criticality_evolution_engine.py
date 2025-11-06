@@ -191,11 +191,11 @@ class FileCriticalityEvolutionEngine:
             # Optimize: Read entire file at once instead of line-by-line
             with open(self.canonical_index, 'r', encoding='utf-8') as f:
                 content = f.read()
-                # Parse all non-empty lines in one batch
+                # Parse all non-empty lines in one batch (avoid redundant strip calls)
                 records = [
-                    json.loads(line.strip())
+                    json.loads(stripped_line)
                     for line in content.splitlines()
-                    if line.strip()
+                    if (stripped_line := line.strip())  # Walrus operator to avoid double strip
                 ]
         except Exception as e:
             print(f"[ERROR] Failed to load canonical index: {e}")

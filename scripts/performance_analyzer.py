@@ -142,8 +142,11 @@ class PerformanceAnalyzer(ast.NodeVisitor):
     def visit_BinOp(self, node: ast.BinOp) -> None:
         """Detect string concatenation in loops"""
         if self.in_loop and isinstance(node.op, ast.Add):
-            # Check if it's string concatenation
-            if isinstance(node.left, ast.Str) or isinstance(node.right, ast.Str):
+            # Check if it's string concatenation (use ast.Constant for Python 3.8+)
+            left_is_str = (isinstance(node.left, ast.Constant) and isinstance(node.left.value, str))
+            right_is_str = (isinstance(node.right, ast.Constant) and isinstance(node.right.value, str))
+            
+            if left_is_str or right_is_str:
                 self.issues.append(PerformanceIssue(
                     file_path=self.file_path,
                     line_number=node.lineno,
@@ -271,18 +274,40 @@ def generate_report(results: Dict[str, List[PerformanceIssue]]) -> str:
 
 def main():
     """Main entry point"""
-    if len(sys.argv) < 2:
-        print("Usage: python performance_analyzer.py [path|--all|--report]")
-        sys.exit(1)
+    import argparse
     
-    arg = sys.argv[1]
+    parser = argparse.ArgumentParser(
+        description="AIOS Performance Analyzer - Detect performance anti-patterns in Python code",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  %(prog)s path/to/file.py              Analyze a single file
+  %(prog)s path/to/directory            Analyze all Python files in directory
+  %(prog)s --all                        Analyze entire AIOS codebase
+  %(prog)s --report                     Generate comprehensive report
+        """
+    )
     
-    if arg == "--all":
-        # Analyze entire AIOS directory
-        repo_root = Path(__file__).parent.parent
-        print(f"Analyzing all Python files in {repo_root}...")
-        results = analyze_directory(repo_root / "ai", recursive=True)
-    elif arg == "--report":
+    parser.add_argument(
+        'path',
+        nargs='?',
+        help="Path to Python file or directory to analyze"
+    )
+    parser.add_argument(
+        '--all',
+        action='store_true',
+        help="Analyze all Python files in AIOS repository"
+    )
+    parser.add_argument(
+        '--report',
+        action='store_true',
+        help="Generate comprehensive report and save to file"
+    )
+    
+    args = parser.parse_args()
+    
+    # Determine what to analyze
+    if args.report:
         # Generate comprehensive report
         repo_root = Path(__file__).parent.parent
         print(f"Generating comprehensive report for {repo_root}...")
@@ -296,9 +321,14 @@ def main():
         print(f"\n✅ Report saved to: {report_path}")
         print(report)
         return
-    else:
+    elif args.all:
+        # Analyze entire AIOS directory
+        repo_root = Path(__file__).parent.parent
+        print(f"Analyzing all Python files in {repo_root}...")
+        results = analyze_directory(repo_root / "ai", recursive=True)
+    elif args.path:
         # Analyze specific path
-        path = Path(arg)
+        path = Path(args.path)
         if not path.exists():
             print(f"Error: Path does not exist: {path}")
             sys.exit(1)
@@ -310,6 +340,9 @@ def main():
         else:
             print(f"Analyzing directory {path}...")
             results = analyze_directory(path, recursive=True)
+    else:
+        parser.print_help()
+        sys.exit(1)
     
     # Display results
     report = generate_report(results)

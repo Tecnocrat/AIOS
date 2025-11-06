@@ -1,0 +1,2038 @@
+================================================================================
+AIOS PERFORMANCE ANALYSIS REPORT
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Files analyzed: 84
+Total issues: 183
+  High severity: 139
+  Medium severity: 44
+  Low severity: 0
+
+ISSUE BREAKDOWN
+--------------------------------------------------------------------------------
+  file_system_in_loop: 87
+  file_io_in_loop: 48
+  nested_loops: 17
+  json_in_loop: 14
+  string_concat_in_loop: 13
+  asyncio_run_in_loop: 4
+
+DETAILED ISSUES
+--------------------------------------------------------------------------------
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/infrastructure/scripts/integrate_maintenance.py
+Line: 56
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  55:     for pattern in temp_patterns:
+  56:         files = list(workspace_root.glob(pattern))
+  57:         for file_path in files:
+  58:             try:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/infrastructure/tools/comprehensive_linter.py
+Line: 128
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 127:             # Collect imports
+ 128:             for node in ast.walk(tree):
+ 129:                 if isinstance(node, ast.Import):
+ 130:                     for alias in node.names:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/infrastructure/tools/cross_pollination_automator.py
+Line: 299
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 298:         try:
+ 299:             for chat_file in chat_path.glob("*.md"):
+ 300:                 if ai_engine.lower() in chat_file.name.lower():
+ 301:                     content = chat_file.read_text(encoding='utf-8')
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ai_cells/ai_engine_handoff.py
+Line: 125
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 124:         # Analyze Python files for patterns
+ 125:         for py_file in self.workspace_root.glob("**/*.py"):
+ 126:             if py_file.is_file() and not str(py_file).startswith('.'):
+ 127:                 try:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ai_cells/ai_engine_handoff.py
+Line: 159
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 158:             # Look for recent chat files related to this AI engine
+ 159:             for chat_file in chat_path.glob(f"*{ai_engine}*.md"):
+ 160:                 if chat_file.is_file():
+ 161:                     content = chat_file.read_text(encoding='utf-8')
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ai_cells/ai_engine_handoff.py
+Line: 214
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 213:         
+ 214:         for file_path in self.workspace_root.glob("**/*.*"):
+ 215:             file_counts["total_files"] += 1
+ 216:             suffix = file_path.suffix.lower()
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/compression/aios_universal_compressor.py
+Line: 291
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 290:                 found_files = [
+ 291:                     f for f in source_path.rglob(pattern)
+ 292:                     if not any(f.match(exc) for exc in exclude_set)
+ 293:                 ]
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/consciousness/analyzer.py
+Line: 64
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+  63:                 if path.exists() and system_name != 'analysis_history':
+  64:                     with open(path, 'r') as f:
+  65:                         data = json.load(f)
+  66:                         consciousness_data['subsystems'][system_name] = data
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ingestion/documentation_ingestion_system.py
+Line: 183
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 182:         for pattern in doc_patterns:
+ 183:             files = list(self.docs_root.rglob(pattern))
+ 184:             documentation_files.extend(files)
+ 185:             
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ingestion/documentation_ingestion_system.py
+Line: 302
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 301:                 crystal_file = self.metabolized_patterns_path / f"{crystal['crystal_id']}.json"
+ 302:                 with open(crystal_file, 'w') as f:
+ 303:                     json.dump(crystal, f, indent=2)
+ 304:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ingestion/documentation_ingestion_system.py
+Line: 386
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 385:                         try:
+ 386:                             with open(embedding_file, 'w') as f:
+ 387:                                 f.write(embedding_content)
+ 388:                             propagation_log[crystal['crystal_id']].append(str(embedding_file))
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ingestion/revolutionary_archive_ingestion.py
+Line: 219
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 218:                 # Get all files in folder
+ 219:                 files = list(folder_path.rglob('*')) if folder_path.is_dir() else [folder_path]
+ 220:                 files = [f for f in files if f.is_file()]
+ 221:                 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ingestion/revolutionary_archive_ingestion.py
+Line: 413
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 412:                 
+ 413:                 for file_path in self.runtime_path.rglob('*'):
+ 414:                     if file_path.is_file() and file_path.stat().st_mtime > cutoff_time:
+ 415:                         recent_files.append(file_path)
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/ingestion/supercell_knowledge_injector.py
+Line: 327
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 326:             crystal_file = self.knowledge_crystals_path / f"{crystal.supercell_id}_knowledge_crystal.json"
+ 327:             with open(crystal_file, 'w', encoding='utf-8') as f:
+ 328:                 json.dump(asdict(crystal), f, indent=2)
+ 329:             crystals_saved += 1
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/interface_bridge_generation_api.py
+Line: 113
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 112:         libraries = []
+ 113:         for json_file in lib_path.glob("*.json"):
+ 114:             # Extract library name from filename (e.g., "aios_core.json" -> "aios_core")
+ 115:             library_name = json_file.stem
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/interface_bridge_generation_api.py
+Line: 453
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 452:                 try:
+ 453:                     with open(metadata_file, 'r') as f:
+ 454:                         metadata = json.load(f)
+ 455:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/interface_bridge_generation_api.py
+Line: 460
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 459:                     if paradigms_file.exists():
+ 460:                         with open(paradigms_file, 'r') as f:
+ 461:                             paradigm_data = json.load(f)
+ 462:                             top_paradigms = paradigm_data.get("paradigms", [])[:5]
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/interface_bridge_generation_api.py
+Line: 466
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 465:                     consciousness_scores = []
+ 466:                     for analysis_file in gen_dir.glob("*_analysis.json"):
+ 467:                         with open(analysis_file, 'r') as f:
+ 468:                             analysis = json.load(f)
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/interface_bridge_generation_api.py
+Line: 467
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 466:                     for analysis_file in gen_dir.glob("*_analysis.json"):
+ 467:                         with open(analysis_file, 'r') as f:
+ 468:                             analysis = json.load(f)
+ 469:                             consciousness_scores.append(analysis.get("consciousness_score", 0))
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/orchestrators/aios_cellular_reorganization_implementation.py
+Line: 139
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 138:                 if not self.dry_run:
+ 139:                     with open(readme_path, 'w') as f:
+ 140:                         f.write(readme_content)
+ 141:     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 152
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 151:         if ai_cells_dir.exists():
+ 152:             for py_file in ai_cells_dir.glob("*.py"):
+ 153:                 if py_file.name != "__init__.py":
+ 154:                     component = await self._analyze_python_component(
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 187
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 186:             if category_dir.exists() and category_dir.is_dir():
+ 187:                 for py_file in category_dir.glob("*.py"):
+ 188:                     if py_file.name != "__init__.py":
+ 189:                         component = await self._analyze_python_component(
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 208
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 207:         if tools_dir.exists():
+ 208:             for tool_file in tools_dir.glob("*.py"):
+ 209:                 if tool_file.name != "__init__.py":
+ 210:                     component = await self._analyze_python_component(
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 217
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 216:         # Core tools
+ 217:         for py_file in self.ai_root.glob("**/*tool*.py"):
+ 218:             if not any(part.startswith('.') for part in py_file.parts):
+ 219:                 component = await self._analyze_python_component(
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 232
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 231:         # Look for server files
+ 232:         for server_file in self.ai_root.glob("**/start_*.py"):
+ 233:             component = await self._analyze_python_component(
+ 234:                 server_file, "service"
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 239
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 238:         
+ 239:         for server_file in self.ai_root.glob("**/*_server.py"):
+ 240:             component = await self._analyze_python_component(
+ 241:                 server_file, "service"
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 254
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 253:         if interfaces_dir.exists():
+ 254:             for py_file in interfaces_dir.glob("*.py"):
+ 255:                 if py_file.name != "__init__.py":
+ 256:                     component = await self._analyze_python_component(
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 275
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 274:             if tools_dir.exists():
+ 275:                 for py_file in tools_dir.glob("*.py"):
+ 276:                     if py_file.name != "__init__.py":
+ 277:                         component = await self._analyze_python_component(
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/sequencer.py
+Line: 284
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 283:             # Discover other runtime intelligence components
+ 284:             for py_file in runtime_dir.glob("*.py"):
+ 285:                 if py_file.name != "__init__.py":
+ 286:                     component = await self._analyze_python_component(
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/ainlp_migration/ainlp_agent.py
+Line: 72
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  71:             if path.exists():
+  72:                 tools = [f.name for f in path.glob("*.py") if f.is_file()]
+  73:                 discovered_tools[location_name] = tools
+  74:                 print(f"   📁 {location_name}: {len(tools)} tools")
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/integration/archive/aios_context_harmonizer.py
+Line: 167
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 166:         # Scan all files
+ 167:         for file_path in self.root_path.rglob("*"):
+ 168:             if file_path.is_file() and not self._should_ignore(file_path):
+ 169:                 self._analyze_file(file_path)
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/maintenance/backup_consolidator.py
+Line: 84
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  83:         for pattern in patterns:
+  84:             folders = list(self.workspace_root.glob(f"**/{pattern}"))
+  85:             backup_folders.extend([f for f in folders if f.is_dir()])
+  86: 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/maintenance/backup_consolidator.py
+Line: 100
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  99: 
+ 100:         for file_path in folder_path.rglob("*"):
+ 101:             if file_path.is_file():
+ 102:                 try:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/maintenance/documentation_optimizer.py
+Line: 59
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+  58:             try:
+  59:                 with open(file_path, 'r', encoding='utf-8') as f:
+  60:                     content = f.read()
+  61: 
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/maintenance/documentation_optimizer.py
+Line: 209
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 208:                 try:
+ 209:                     with open(file_path, 'r', encoding='utf-8') as f:
+ 210:                         content = f.read()
+ 211: 
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/maintenance/documentation_optimizer.py
+Line: 221
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 220:                     if content != original_content:
+ 221:                         with open(file_path, 'w', encoding='utf-8') as f:
+ 222:                             f.write(content)
+ 223: 
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/maintenance/garbage_collector.py
+Line: 110
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 109:             try:
+ 110:                 with open(file_path, 'r', encoding='utf-8') as f:
+ 111:                     content = f.read()
+ 112:                 category = self.optimizer._categorize_content(content)
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/maintenance/garbage_collector.py
+Line: 169
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 168:         for pattern in temp_patterns:
+ 169:             temp_files = list(self.workspace_root.glob(pattern))
+ 170:             for temp_file in temp_files:
+ 171:                 try:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/research/demos/emotikiller/python_emotikiller.py
+Line: 250
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 249:             target_files = []
+ 250:             for file_path in directory_path.rglob('*'):
+ 251:                 if (file_path.is_file() and 
+ 252:                     not self.should_skip_path(file_path) and 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/research/scripts/emoji_detector.py
+Line: 113
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 112:         for ext in extensions:
+ 113:             for file_path in directory.rglob(f"*{ext}"):
+ 114:                 if file_path.is_file():
+ 115:                     matches = self.scan_file(file_path)
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/research/scripts/enhanced_quality_integration.py
+Line: 119
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 118:         
+ 119:         for file_path in githooks_path.rglob('*'):
+ 120:             if file_path.is_file():
+ 121:                 ext = file_path.suffix.lower()
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/research/tests/test_chatgpt_integration_path.py
+Line: 54
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  53:     if cgi.exists():
+  54:         for _, _, files in os.walk(cgi):
+  55:             total_files += len(files)
+  56:     print(f" Total files in chatgpt_integration: {total_files}")
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/consciousness_evolution_engine.py
+Line: 103
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 102:             try:
+ 103:                 with open(pop_file, 'r') as f:
+ 104:                     population_data = json.load(f)
+ 105: 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/core/universal_agentic_logger.py
+Line: 468
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 467:             
+ 468:             for conv_file in sorted(date_dir.glob("*.json"), reverse=True):
+ 469:                 try:
+ 470:                     with open(conv_file, 'r', encoding='utf-8') as f:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/core/universal_agentic_logger.py
+Line: 470
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 469:                 try:
+ 470:                     with open(conv_file, 'r', encoding='utf-8') as f:
+ 471:                         conv_data = json.load(f)
+ 472:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 232
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 231:         try:
+ 232:             for root, dirs, files in os.walk(component_path):
+ 233:                 # Skip cache and build directories
+ 234:                 dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['bin', 'obj', '__pycache__']]
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 242
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 241:                         try:
+ 242:                             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 243:                                 content = f.read().lower()
+ 244:                                 for indicator in ainlp_indicators:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 275
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 274:             
+ 275:             for root, dirs, files in os.walk(core_path):
+ 276:                 for file in files:
+ 277:                     file_lower = file.lower()
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 346
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 345:         try:
+ 346:             for root, dirs, files in os.walk(component_path):
+ 347:                 file_names.extend(files)
+ 348:         except Exception:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 494
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 493:             
+ 494:             for root, dirs, files in os.walk(core_path):
+ 495:                 for file in files:
+ 496:                     if 'ainlpcompiler' in file.lower():
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 513
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 512:             
+ 513:             for root, dirs, files in os.walk(ai_path):
+ 514:                 for file in files:
+ 515:                     if 'ainlp' in file.lower() or 'natural_language' in file.lower():
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 538
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 537:             
+ 538:             for root, dirs, files in os.walk(core_path):
+ 539:                 for file in files:
+ 540:                     if 'consciousness' in file.lower():
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 643
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 642:                 try:
+ 643:                     files = list(comp_path.rglob('*.py')) + list(comp_path.rglob('*.cs'))
+ 644:                     if files:
+ 645:                         # Simplified naming style detection
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 643
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 642:                 try:
+ 643:                     files = list(comp_path.rglob('*.py')) + list(comp_path.rglob('*.cs'))
+ 644:                     if files:
+ 645:                         # Simplified naming style detection
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 672
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 671:                 # Count files and directories
+ 672:                 file_count = len(list(comp_path.rglob('*.*')))
+ 673:                 dir_count = len(list(comp_path.rglob('*/')))
+ 674:                 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 673
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 672:                 file_count = len(list(comp_path.rglob('*.*')))
+ 673:                 dir_count = len(list(comp_path.rglob('*/')))
+ 674:                 
+ 675:                 insights.append(f"{component}: {file_count} files, {dir_count} directories")
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 235
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 234:         try:
+ 235:             for root, dirs, files in os.walk(component_path):
+ 236:                 # Skip cache and build directories
+ 237:                 dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['bin', 'obj', 'node_modules', '__pycache__']]
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 263
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 262:             
+ 263:             for root, dirs, files in os.walk(component_path):
+ 264:                 for file in files:
+ 265:                     if file in dependency_files or file.endswith('.csproj'):
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 329
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 328:         try:
+ 329:             for root, dirs, files in os.walk(component_path):
+ 330:                 for file in files:
+ 331:                     if file.endswith(('.py', '.cs', '.cpp', '.ts', '.js')):
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 334
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 333:                         try:
+ 334:                             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 335:                                 content = f.read().lower()
+ 336:                                 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 353
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 352:         try:
+ 353:             for root, dirs, files in os.walk(component_path):
+ 354:                 # Skip cache and build directories
+ 355:                 dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['bin', 'obj', 'node_modules', '__pycache__']]
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 361
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 360:                         try:
+ 361:                             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 362:                                 lines = len(f.readlines())
+ 363:                                 total_lines += lines
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 384
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 383:             
+ 384:             for root, dirs, files in os.walk(component_path):
+ 385:                 # Skip cache directories
+ 386:                 dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['bin', 'obj', 'node_modules', '__pycache__']]
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 438
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 437:             file_names = []
+ 438:             for root, dirs, files in os.walk(component_path):
+ 439:                 file_names.extend(files)
+ 440:             
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 488
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 487:             
+ 488:             for root, dirs, files in os.walk(component_path):
+ 489:                 for file in files:
+ 490:                     if file.endswith(('.py', '.cs', '.cpp', '.ts', '.md')):
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 493
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 492:                         try:
+ 493:                             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 494:                                 content = f.read().lower()
+ 495:                                 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 545
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 544:             
+ 545:             for root, dirs, files in os.walk(component_path):
+ 546:                 for file in files:
+ 547:                     file_names.append(file.lower())
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_githooks_optimizer.py
+Line: 215
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 214:                 try:
+ 215:                     with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 216:                         content = f.read().lower()
+ 217:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_githooks_optimizer.py
+Line: 252
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 251:                 try:
+ 252:                     with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 253:                         content = f.read()
+ 254:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_githooks_optimizer.py
+Line: 444
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 443:                 try:
+ 444:                     with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 445:                         content = f.read().lower()
+ 446:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_githooks_optimizer.py
+Line: 487
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 486:                 try:
+ 487:                     with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+ 488:                         content = f.read()
+ 489:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/cellular_ecosystem/ainlp_cellular_integrator.py
+Line: 475
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 474: 
+ 475:             with open(readme_path, 'w') as f:
+ 476:                 f.write(readme_content)
+ 477: 
+
+[HIGH] asyncio_run_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/gemini_bridge/agentic_behavior_enhancement.py
+Line: 450
+Description: asyncio.run() called repeatedly in loop
+Suggestion: Create event loop once and use run_until_complete()
+Code:
+ 449:                 try:
+ 450:                     asyncio.run(self._autonomous_monitoring_cycle())
+ 451:                 except Exception as e:
+ 452:                     print(f"Autonomous monitoring error: {e}")
+
+[HIGH] asyncio_run_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/gemini_bridge/meta_cognitive_loop.py
+Line: 379
+Description: asyncio.run() called repeatedly in loop
+Suggestion: Create event loop once and use run_until_complete()
+Code:
+ 378:                 # Process feedback every 30 seconds
+ 379:                 asyncio.run(self.process_meta_cognitive_feedback())
+ 380:                 time.sleep(30)
+ 381:             except Exception as e:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/lightweight_ai_coordinator.py
+Line: 86
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+  85:                 try:
+  86:                     with open(crystal_path, 'r', encoding='utf-8') as f:
+  87:                         crystal_data = json.load(f)
+  88:                     crystal_id = crystal_data.get('supercell_id', 
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/ollama_bridge.py
+Line: 324
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 323:             }
+ 324:             with open(meta_file, 'w') as f:
+ 325:                 json.dump(meta, f, indent=2)
+ 326:         
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/vscode_realtime_error_intelligence.py
+Line: 469
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 468:             try:
+ 469:                 with open(file_path, 'r', encoding='utf-8') as f:
+ 470:                     lines = f.readlines()
+ 471:                 
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/vscode_realtime_error_intelligence.py
+Line: 486
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 485:                 if modified:
+ 486:                     with open(file_path, 'w', encoding='utf-8') as f:
+ 487:                         f.writelines(lines)
+ 488:                     results["files_modified"].add(file_path)
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/intelligence/ainlp_agentic_orchestrator.py
+Line: 255
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 254:             if supercell_path.exists():
+ 255:                 file_count = len(list(supercell_path.rglob("*.py")))
+ 256:                 self.supercell_status[supercell_type.value].file_count = file_count
+ 257:                 self.supercell_status[supercell_type.value].is_active = file_count > 0
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/intelligence/ainlp_agentic_orchestrator.py
+Line: 497
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 496:                 
+ 497:                 with open(module_path, 'w', encoding='utf-8') as f:
+ 498:                     f.write(module)
+ 499:                 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/intelligence/library_ingestion_protocol.py
+Line: 327
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 326:         else:
+ 327:             for root, dirs, files in os.walk(library_path):
+ 328:                 # Skip common non-source directories
+ 329:                 dirs[:] = [d for d in dirs if d not in {'.git', '__pycache__', 'node_modules', 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/intelligence/library_ingestion_protocol.py
+Line: 388
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 387:             
+ 388:             for node in ast.walk(tree):
+ 389:                 # Parse functions
+ 390:                 if isinstance(node, ast.FunctionDef):
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/intelligence/library_ingestion_protocol.py
+Line: 864
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 863:             
+ 864:             for knowledge_file in lang_dir.glob("*.json"):
+ 865:                 try:
+ 866:                     with open(knowledge_file, 'r', encoding='utf-8') as f:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/intelligence/library_ingestion_protocol.py
+Line: 866
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 865:                 try:
+ 866:                     with open(knowledge_file, 'r', encoding='utf-8') as f:
+ 867:                         data = json.load(f)
+ 868:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/repository_ingestion_engine.py
+Line: 181
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 180:         # Walk through repository
+ 181:         for root, dirs, files in os.walk(repo_path):
+ 182:             # Skip .git directory
+ 183:             if '.git' in dirs:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/runtime/intelligence_dashboard.py
+Line: 167
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 166:         
+ 167:         for python_file in directory.rglob("*.py"):
+ 168:             # Skip __init__.py and private files
+ 169:             if python_file.name.startswith("_"):
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/runtime/population_viewer.py
+Line: 129
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 128:             try:
+ 129:                 with open(pop_file, 'r', encoding='utf-8') as f:
+ 130:                     data = json.load(f)
+ 131:                 
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/tools/semantic_validator.py
+Line: 219
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 218: 
+ 219:         for file_path in self.runtime_path.rglob("*.py"):
+ 220:             try:
+ 221:                 content = file_path.read_text(encoding='utf-8')
+
+[HIGH] asyncio_run_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/startup.py
+Line: 174
+Description: asyncio.run() called repeatedly in loop
+Suggestion: Create event loop once and use run_until_complete()
+Code:
+ 173:                 while True:
+ 174:                     asyncio.run(asyncio.sleep(30))  # Check every 30 seconds
+ 175:                     health = asyncio.run(sequencer.health_check_all())
+ 176:                     failed = [name for name, status in health.items() 
+
+[HIGH] asyncio_run_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/startup.py
+Line: 175
+Description: asyncio.run() called repeatedly in loop
+Suggestion: Create event loop once and use run_until_complete()
+Code:
+ 174:                     asyncio.run(asyncio.sleep(30))  # Check every 30 seconds
+ 175:                     health = asyncio.run(sequencer.health_check_all())
+ 176:                     failed = [name for name, status in health.items() 
+ 177:                              if "failed" in status or "error" in status]
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tests/integration/integration_test_orchestrator.py
+Line: 43
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  42:         # Pattern: test_*.py files in integration directory
+  43:         for test_file in self.test_dir.glob("test_*.py"):
+  44:             if test_file.name == "test_orchestrator.py":
+  45:                 continue  # Skip self
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/ainlp_documentation_governance.py
+Line: 121
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 120:         # Search for markdown files in docs directory
+ 121:         for md_file in self.docs_root.rglob("*.md"):
+ 122:             try:
+ 123:                 with open(md_file, 'r', encoding='utf-8') as f:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/ainlp_documentation_governance.py
+Line: 123
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 122:             try:
+ 123:                 with open(md_file, 'r', encoding='utf-8') as f:
+ 124:                     content = f.read()
+ 125:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/aios_holographic_metadata_system.py
+Line: 299
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 298:         if folder_path.exists():
+ 299:             for file_path in folder_path.rglob('*'):
+ 300:                 if file_path.is_file():
+ 301:                     file_name_lower = file_path.name.lower()
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/aios_holographic_metadata_system.py
+Line: 410
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 409:             related_pattern = part.lower()
+ 410:             for folder in self.workspace_root.rglob('*'):
+ 411:                 if folder.is_dir() and related_pattern in folder.name.lower() and folder != folder_path:
+ 412:                     try:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/aios_holographic_metadata_system.py
+Line: 439
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 438:         
+ 439:         for file_path in self.workspace_root.rglob('*'):
+ 440:             if not file_path.is_file():
+ 441:                 continue
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/aios_holographic_metadata_system.py
+Line: 733
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 732:         # Scan and create metadata for relevant folders
+ 733:         for folder in self.workspace_root.rglob('*'):
+ 734:             if not folder.is_dir():
+ 735:                 continue
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/ainlp_integration_optimizer.py
+Line: 162
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 161:                     if parent_dir.exists():
+ 162:                         files_found.extend(parent_dir.glob(pattern_path.name))
+ 163:                 else:
+ 164:                     file_path = self.workspace_root / pattern
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/aios_core_engine_root_analyzer_iter2.py
+Line: 180
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 179:                     try:
+ 180:                         with open(item, 'r', encoding='utf-8') as f:
+ 181:                             content = f.read()
+ 182:                             file_info["lines"] = len(content.split('\n'))
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/architectural_compliance_validator.py
+Line: 175
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 174:                 "exists": exists,
+ 175:                 "tool_count": len(list(full_path.glob("*.py"))) if exists else 0
+ 176:             }
+ 177:             if exists:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/architectural_compliance_validator.py
+Line: 331
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 330:             if tools_dir.exists():
+ 331:                 for tool_file in tools_dir.glob("*.py"):
+ 332:                     tool_terms = set(tool_file.stem.lower().split('_'))
+ 333:                     overlap = target_terms.intersection(tool_terms)
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/supercell_architecture_analyzer.py
+Line: 330
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 329:             # Analyze Python files for imports and references
+ 330:             for py_file in cell_entity.path.rglob("*.py"):
+ 331:                 try:
+ 332:                     content = py_file.read_text(encoding='utf-8', errors='ignore')
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/supercell_architecture_analyzer.py
+Line: 378
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 377:             # Check for configuration sharing
+ 378:             if any("config" in f.name.lower() for f in cell_entity.path.rglob("*.json")):
+ 379:                 interaction_patterns.append("configuration_coordination")
+ 380:             
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/aios_cellular_intelligence_enhancement_engine.py
+Line: 798
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 797: '''
+ 798:                         with open(placeholder_file, 'w', encoding='utf-8') as f:
+ 799:                             f.write(placeholder_content)
+ 800:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/aios_cellular_intelligence_enhancement_engine.py
+Line: 820
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 819: '''
+ 820:                         with open(coherent_file, 'w', encoding='utf-8') as f:
+ 821:                             f.write(coherent_content)
+ 822:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_ai_cellular_bridge.py
+Line: 134
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 133:         # First pass: identify all folders and their levels
+ 134:         for root, dirs, files in os.walk(self.ai_root_path):
+ 135:             root_path = Path(root)
+ 136:             relative_path = root_path.relative_to(self.ai_root_path)
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_explorer_3d.py
+Line: 86
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+  85:                 if consciousness_file.exists():
+  86:                     with open(consciousness_file, 'r') as f:
+  87:                         consciousness_data = json.load(f)
+  88:                     gen_data.update(consciousness_data)
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_explorer_3d.py
+Line: 93
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+  92:                 if tachyonic_file.exists():
+  93:                     with open(tachyonic_file, 'r') as f:
+  94:                         tachyonic_data = json.load(f)
+  95:                     gen_data.update(tachyonic_data)
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_layer/aios_consciousness_integration_engine.py
+Line: 622
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 621:                 # Read current content
+ 622:                 with open(component_file, 'r', encoding='utf-8') as f:
+ 623:                     current_content = f.read()
+ 624:                 
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_layer/aios_consciousness_integration_engine.py
+Line: 629
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 628:                 # Write enhanced content
+ 629:                 with open(component_file, 'w', encoding='utf-8') as f:
+ 630:                     f.write(enhanced_content)
+ 631:                 
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_layer/aios_consciousness_integration_engine.py
+Line: 709
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 708:                 try:
+ 709:                     with open(component_file, 'r', encoding='utf-8') as f:
+ 710:                         enhanced_content = f.read()
+ 711:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/dendritic_code_optimizer.py
+Line: 142
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 141:         # Walk the AST to find all used names
+ 142:         for node in ast.walk(tree):
+ 143:             if isinstance(node, ast.Name):
+ 144:                 used_names.add(node.id)
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/dendritic_consolidation_engine.py
+Line: 72
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  71:         for pattern in dendritic_patterns:
+  72:             for file_path in self.core_path.glob(pattern):
+  73:                 if file_path.is_file():
+  74:                     version_info = self._analyze_version(file_path)
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/dendritic_consolidation_engine.py
+Line: 275
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 274:                     
+ 275:                     with open(storage_path, 'w', encoding='utf-8') as f:
+ 276:                         json.dump(storage_data, f, indent=2, default=str)
+ 277:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/simple_consciousness_ai_bridge.py
+Line: 53
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  52:         
+  53:         for root, dirs, files in os.walk(self.ai_root_path):
+  54:             # Skip cache directories
+  55:             if '__pycache__' in root or '.pytest_cache' in root:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/security_compliance_validator.py
+Line: 44
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+  43:                 try:
+  44:                     with open(spatial_file, 'r') as f:
+  45:                         metadata = json.load(f)
+  46:                         if "integration_boundaries" in metadata and "prohibited_operations" in metadata:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/security_compliance_validator.py
+Line: 158
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 157:             try:
+ 158:                 with open(spatial_file, 'r') as f:
+ 159:                     metadata = json.load(f)
+ 160:                     if "emergency_isolation" in metadata or "rollback_procedures" in metadata:
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/security_compliance_validator.py
+Line: 215
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 214:                 try:
+ 215:                     with open(supervisor_file, 'r') as f:
+ 216:                         content = f.read()
+ 217:                         if "coherence" in content.lower() and "monitor" in content.lower():
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_admin.py
+Line: 65
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  64:     folder_structure: Dict[str, Dict[str, List[str]]] = {}
+  65:     for dirpath, dirnames, filenames in os.walk(root_dir):
+  66:         if exclude_git and ".git" in dirpath:
+  67:             continue
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_ai_engine_ingestion_tester.py
+Line: 429
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 428:         main_files = []
+ 429:         for root, dirs, files in os.walk(assembler_path):
+ 430:             for file in files:
+ 431:                 if file.startswith('aios_evolutionary_assembler') and file.endswith('.py'):
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_core_engine_cellular_cleanup_tool.py
+Line: 319
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 318:                 try:
+ 319:                     with open(index_file, 'w', encoding='utf-8') as f:
+ 320:                         json.dump(index_data, f, indent=2, default=str)
+ 321:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_core_engine_cellular_cleanup_tool.py
+Line: 360
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 359:         remaining_files = []
+ 360:         for py_file in self.core_engine_path.glob("aios_*.py"):
+ 361:             remaining_files.append(py_file.name)
+ 362:         
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_file_tracking_system.py
+Line: 136
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 135:             
+ 136:             for node in ast.walk(tree):
+ 137:                 # Extract imports
+ 138:                 if isinstance(node, ast.Import):
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_file_tracking_system.py
+Line: 258
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 257:         for pattern in file_patterns:
+ 258:             all_files.extend(self.workspace_root.rglob(pattern))
+ 259:         
+ 260:         # Filter out unwanted directories
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_folder_comparison_verifier.py
+Line: 374
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 373:         
+ 374:         for item in root_folder.rglob('*'):
+ 375:             if item.is_dir():
+ 376:                 relative_path = str(item.relative_to(root_folder))
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_folder_comparison_verifier.py
+Line: 457
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 456:         # Get relative paths of all files
+ 457:         for file_path in self.backup_folder.rglob('*'):
+ 458:             if file_path.is_file():
+ 459:                 relative_path = str(file_path.relative_to(self.backup_folder))
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/aios_folder_comparison_verifier.py
+Line: 462
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 461:         
+ 462:         for file_path in self.archive_folder.rglob('*'):
+ 463:             if file_path.is_file():
+ 464:                 relative_path = str(file_path.relative_to(self.archive_folder))
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/demo_enhanced_commit_hook.py
+Line: 62
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+  61:         test_file = f"test_commit_{i}.txt"
+  62:         with open(test_file, 'w') as f:
+  63:             f.write(test['message'])
+  64:         
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/generate_file_scores.py
+Line: 69
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  68:             continue
+  69:         for path in base.rglob('*'):
+  70:             if not path.is_file():
+  71:                 continue
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/index_tools.py
+Line: 35
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+  34:         files = []
+  35:         for p in sorted(folder.rglob("*")):
+  36:             if p.is_file():
+  37:                 rel = p.relative_to(ROOT)
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/runtime_intelligence_comprehensive_test.py
+Line: 244
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 243:         
+ 244:         for root, dirs, files in os.walk(runtime_dir):
+ 245:             print(f"Walking: {root} - {len(files)} files")
+ 246:             for file in files:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/system_health_check.py
+Line: 405
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 404:                     continue
+ 405:                 for dirpath, _dirnames, filenames in os.walk(root):
+ 406:                     for fname in filenames:
+ 407:                         if not fname.endswith(".py"):
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/system_health_check.py
+Line: 411
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 410:                         try:
+ 411:                             with open(
+ 412:                                 fpath,
+ 413:                                 "r",
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/tachyonic/aios_tachyonic_archive_cleanup.py
+Line: 325
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 324:                 try:
+ 325:                     with open(metadata_path, 'r') as f:
+ 326:                         metadata = json.load(f)
+ 327:                     
+
+[HIGH] file_io_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/tachyonic/aios_tachyonic_archive_cleanup.py
+Line: 381
+Description: File I/O operation inside loop
+Suggestion: Read all files first or use batch processing
+Code:
+ 380:                 try:
+ 381:                     with open(metadata_path, 'r') as f:
+ 382:                         metadata = json.load(f)
+ 383:                     
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/tachyonic/aios_tachyonic_archive_cleanup.py
+Line: 408
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 407:         try:
+ 408:             for file_path in directory.rglob('*'):
+ 409:                 if file_path.is_file():
+ 410:                     total_size += file_path.stat().st_size
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/tachyonic/enhanced_tachyonic_preservation.py
+Line: 223
+Description: File system operation (walk) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 222:         
+ 223:         for node in ast.walk(tree):
+ 224:             if isinstance(node, ast.Import):
+ 225:                 for alias in node.names:
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/tachyonic/enhanced_tachyonic_preservation.py
+Line: 381
+Description: File system operation (glob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 380:         # Process existing .py files in code_preservation
+ 381:         for py_file in code_preservation_path.glob("*.py"):
+ 382:             logger.info(f"[ENHANCED] Processing {py_file.name}...")
+ 383:             
+
+[HIGH] file_system_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/update_import_paths.py
+Line: 175
+Description: File system operation (rglob) inside loop
+Suggestion: Move file system operations outside the loop and cache results
+Code:
+ 174:         
+ 175:         for path in ROOT.rglob("*.py"):
+ 176:             # Skip excluded directories
+ 177:             if any(excluded in path.parts for excluded in EXCLUDE_PATHS):
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/demos/universal_agentic_logger_demo.py
+Line: 247
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 246:                 "improvement": improvement,
+ 247:                 "approach": conv["messages"][0]["content"][:100] + "..."
+ 248:             })
+ 249:     
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/infrastructure/interfaces/aios_cross_dialogue_intelligence.py
+Line: 248
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 247:                     if prompt:
+ 248:                         print("\n" + "="*80)
+ 249:                         print("🧠 NEW AIOS INTELLIGENCE AVAILABLE")
+ 250:                         print("="*80)
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/infrastructure/tools/comprehensive_linter.py
+Line: 110
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 109:                     continue
+ 110:                 return (line[:indent + op_pos] + '\\\n' +
+ 111:                        ' ' * (indent + 4) + content[op_pos:].lstrip())
+ 112: 
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/consciousness/dendritic_conclave_system.py
+Line: 363
+Description: JSON operation (json.dumps) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 362:         for proposal in proposals:
+ 363:             key = json.dumps(proposal, sort_keys=True)
+ 364:             if key not in proposal_groups:
+ 365:                 proposal_groups[key] = []
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/interface_bridge_generation_api.py
+Line: 466
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 465:                     consciousness_scores = []
+ 466:                     for analysis_file in gen_dir.glob("*_analysis.json"):
+ 467:                         with open(analysis_file, 'r') as f:
+ 468:                             analysis = json.load(f)
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/ainlp/ainlp_tachyonic_ingestor.py
+Line: 484
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 483:             # Section header
+ 484:             header = "#" * section.level + " " + section.title
+ 485:             lines.append(header)
+ 486: 
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/integration/archive/debug_integration_system.py
+Line: 621
+Description: JSON operation (json.dumps) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 620:             result = await debug_system.process_debug_command(command)
+ 621:             print(f"Result: {json.dumps(result, indent=2)}")
+ 622: 
+ 623:         # Demo 4: Complete session
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/tools/ui_proto/compiler.py
+Line: 81
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+  80:                 )
+  81:                 for opt in c.get("options", []):
+  82:                     parts.append(
+  83:                         f"    <option value=\"{opt.get('value', '')}\">"
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/nucleus/src/tools/ui_proto/compiler.py
+Line: 97
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+  96:                 )
+  97:                 for item in c.get("items", []):
+  98:                     parts.append(f"    <li>{item}</li>")
+  99:                 parts.append("  </ul>")
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/engines/paradigm_extraction_engine.py
+Line: 335
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 334:             if len(example) > 100:
+ 335:                 example = example[:100] + "..."
+ 336:             print(f"   Example: {example}")
+ 337:     
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/evolution/file_criticality_evolution_engine.py
+Line: 396
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 395:                 for record in current_records:
+ 396:                     f.write(json.dumps(record, ensure_ascii=False) + '\n')
+ 397: 
+ 398:             # Update latest pointer
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/evolution/file_criticality_evolution_engine.py
+Line: 396
+Description: JSON operation (json.dumps) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 395:                 for record in current_records:
+ 396:                     f.write(json.dumps(record, ensure_ascii=False) + '\n')
+ 397: 
+ 398:             # Update latest pointer
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/evolution/file_criticality_evolution_engine.py
+Line: 402
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 401:                 for record in current_records:
+ 402:                     f.write(json.dumps(record, ensure_ascii=False) + '\n')
+ 403: 
+ 404:             print(f"[TACHYONIC SHADOW] Archived previous state: {shadow_path}")
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/evolution/file_criticality_evolution_engine.py
+Line: 402
+Description: JSON operation (json.dumps) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 401:                 for record in current_records:
+ 402:                     f.write(json.dumps(record, ensure_ascii=False) + '\n')
+ 403: 
+ 404:             print(f"[TACHYONIC SHADOW] Archived previous state: {shadow_path}")
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/evolution/file_criticality_evolution_engine.py
+Line: 418
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 417:                 for record in enhanced_records:
+ 418:                     f.write(json.dumps(record, ensure_ascii=False) + '\n')
+ 419:                     changes += 1
+ 420: 
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/evolution/file_criticality_evolution_engine.py
+Line: 418
+Description: JSON operation (json.dumps) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 417:                 for record in enhanced_records:
+ 418:                     f.write(json.dumps(record, ensure_ascii=False) + '\n')
+ 419:                     changes += 1
+ 420: 
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_agentic_optimizer.py
+Line: 244
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 243:                                 content = f.read().lower()
+ 244:                                 for indicator in ainlp_indicators:
+ 245:                                     if indicator in content:
+ 246:                                         found_indicators += 1
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 337
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 336:                                 
+ 337:                                 for integration_type, keywords in integration_patterns.items():
+ 338:                                     if any(keyword in content for keyword in keywords):
+ 339:                                         integration_points.add(integration_type)
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/aios_architectural_analysis.py
+Line: 496
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 495:                                 
+ 496:                                 for indicator, weight in ainlp_indicators.items():
+ 497:                                     if indicator.replace('_', '') in content.replace('_', '').replace('-', ''):
+ 498:                                         total_score += weight
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/demo_vscode_error_intelligence.py
+Line: 64
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+  63:                 # Truncate long insights for display
+  64:                 display_insight = insight[:80] + "..." if len(insight) > 80 else insight
+  65:                 print(f"  • {display_insight}")
+  66:             print()
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/ollama_bridge.py
+Line: 235
+Description: JSON operation (json.loads) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 234:                 if line:
+ 235:                     data = json.loads(line)
+ 236:                     status = data.get("status", "")
+ 237:                     if status:
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/integrations/vscode_realtime_error_intelligence.py
+Line: 477
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 476:                         original_line = lines[line_num - 1]
+ 477:                         fixed_line = original_line.rstrip() + '\n'
+ 478:                         if original_line != fixed_line:
+ 479:                             lines[line_num - 1] = fixed_line
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/src/parsers/cpp_documentation_parser.py
+Line: 379
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 378:                 matches = re.finditer(pattern, code)
+ 379:                 for match in matches:
+ 380:                     return_type = match.group(1)
+ 381:                     method_name = match.group(2)
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/protocols/agent_communication/transport.py
+Line: 222
+Description: JSON operation (json.loads) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 221:                         if line.strip():
+ 222:                             data = json.loads(line)
+ 223:                             
+ 224:                             if data.get('type') == 'message':
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/runtime/intelligence_dashboard.py
+Line: 828
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 827:         while True:
+ 828:             print("\n" + "=" * 60)
+ 829:             print("🎛️  DASHBOARD MENU")
+ 830:             print("=" * 60)
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/src/runtime/intelligence_dashboard.py
+Line: 849
+Description: JSON operation (json.dumps) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 848:                     results = await self.executor.run_population_to_consensus_workflow()
+ 849:                     print(f"\n✅ Workflow complete: {json.dumps(results, indent=2)}")
+ 850:                 elif choice == "5":
+ 851:                     await self.export_tool_catalogue()
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tests/integration/test_paradigm_extraction.py
+Line: 49
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+  48:             if p.examples:
+  49:                 example = p.examples[0][:60] + "..." if len(p.examples[0]) > 60 else p.examples[0]
+  50:                 print(f"   Example: {example}")
+  51:         
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/ainlp_integration_optimizer.py
+Line: 254
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 253:                 # Compare files pairwise for similarity
+ 254:                 for i, file_a in enumerate(files):
+ 255:                     for file_b in files[i+1:]:
+ 256:                         similarity_score = self._calculate_file_similarity(
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/ainlp_integration_optimizer.py
+Line: 255
+Description: Nested loop depth: 4
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 254:                 for i, file_a in enumerate(files):
+ 255:                     for file_b in files[i+1:]:
+ 256:                         similarity_score = self._calculate_file_similarity(
+ 257:                             self.workspace_root / file_a,
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/ainlp_integration_optimizer.py
+Line: 638
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 637: """
+ 638:                 for file in subcat_data.get("files", []):
+ 639:                     content += f"{file}\n"
+ 640:                 content += "```\n\n"
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/architecture/supercell_architecture_analyzer.py
+Line: 335
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 334:                     # Look for references to other cells
+ 335:                     for other_cell in self.cellular_entities.keys():
+ 336:                         if other_cell != cell_name and other_cell.lower() in content.lower():
+ 337:                             connections.add(other_cell)
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/code_archival_system.py
+Line: 423
+Description: JSON operation (json.loads) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 422:                     consciousness_level=row[8],
+ 423:                     ainlp_patterns=json.loads(row[9]) if row[9] else [],
+ 424:                     project_phase=row[10],
+ 425:                     related_files=json.loads(row[11]) if row[11] else None,
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/code_archival_system.py
+Line: 425
+Description: JSON operation (json.loads) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 424:                     project_phase=row[10],
+ 425:                     related_files=json.loads(row[11]) if row[11] else None,
+ 426:                     replacement_path=row[12],
+ 427:                     notes=row[13]
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/aios_dendritic_network_intelligence_enhancer.py
+Line: 710
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 709:                     
+ 710:                     for protocol in common_protocols:
+ 711:                         # Calculate connection strength based on intelligence compatibility
+ 712:                         strength = self._calculate_connection_strength(source_obj, target_obj, protocol)
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_ai_cellular_bridge.py
+Line: 223
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 222:                     
+ 223:                     for child_cell in child_cells:
+ 224:                         child_path = Path(self.cells[child_cell].folder_path)
+ 225:                         
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/consciousness_layer/aios_consciousness_integration_engine.py
+Line: 715
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 714:                     for pattern in plan.consciousness_patterns:
+ 715:                         for indicator in pattern.consciousness_indicators:
+ 716:                             if indicator in enhanced_content:
+ 717:                                 indicators_found.append(indicator)
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/enhanced_consciousness.py
+Line: 188
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 187:                     for i, stream_a in enumerate(active_streams):
+ 188:                         for stream_b in active_streams[i+1:]:
+ 189:                             correlation = self.consciousness_metrics.calculate_stream_correlation(
+ 190:                                 stream_a, stream_b
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/consciousness/parallel_consciousness_orchestrator.py
+Line: 263
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 262:                     for i, stream_a in enumerate(active_streams):
+ 263:                         for stream_b in active_streams[i+1:]:
+ 264:                             correlation = self.consciousness_metrics.calculate_stream_correlation(
+ 265:                                 stream_a, stream_b
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/generate_file_scores.py
+Line: 210
+Description: JSON operation (json.loads) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 209:             try:
+ 210:                 obj = json.loads(line)
+ 211:             except Exception:
+ 212:                 continue
+
+[MEDIUM] string_concat_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/generate_file_scores.py
+Line: 337
+Description: String concatenation inside loop
+Suggestion: Use list.append() and ''.join() instead
+Code:
+ 336:         for fm in sorted(metrics.values(), key=lambda x: -x.criticality_score):
+ 337:             handle.write(json.dumps(asdict(fm), ensure_ascii=False) + '\n')
+ 338:     TELEMETRY_OUT.parent.mkdir(parents=True, exist_ok=True)
+ 339:     snapshot = {
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/generate_file_scores.py
+Line: 337
+Description: JSON operation (json.dumps) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 336:         for fm in sorted(metrics.values(), key=lambda x: -x.criticality_score):
+ 337:             handle.write(json.dumps(asdict(fm), ensure_ascii=False) + '\n')
+ 338:     TELEMETRY_OUT.parent.mkdir(parents=True, exist_ok=True)
+ 339:     snapshot = {
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/safety_rollback.py
+Line: 121
+Description: JSON operation (json.loads) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 120:             try:
+ 121:                 obj = json.loads(line)
+ 122:             except json.JSONDecodeError:
+ 123:                 continue
+
+[MEDIUM] json_in_loop
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/safety_rollback.py
+Line: 161
+Description: JSON operation (json.loads) inside loop
+Suggestion: Consider batching JSON operations or using faster libraries like orjson
+Code:
+ 160:                 try:
+ 161:                     obj = json.loads(line)
+ 162:                 except json.JSONDecodeError:
+ 163:                     continue
+
+[MEDIUM] nested_loops
+File: /home/runner/work/AIOS/AIOS/ai/tools/system/system_health_check.py
+Line: 406
+Description: Nested loop depth: 3
+Suggestion: Consider using list comprehensions, itertools, or vectorized operations
+Code:
+ 405:                 for dirpath, _dirnames, filenames in os.walk(root):
+ 406:                     for fname in filenames:
+ 407:                         if not fname.endswith(".py"):
+ 408:                             continue
+
+================================================================================
