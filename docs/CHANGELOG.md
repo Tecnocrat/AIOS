@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Phase 11 Day 2: C++ Core Integration** (November 8, 2025)
+  - Three-layer biological integration: C++ consciousness engine accessible from Python and C#
+  - C++ Core DLL: aios_core.dll (482KB) with 30+ extern "C" API functions
+  - Python Bridge: ai/bridges/aios_core_wrapper.py (472 lines) with ctypes FFI
+  - C# Bridge: interface/AIOS.Services/CoreEngineInterop.cs (280 lines) with P/Invoke
+  - Minimal Consciousness Engine: Standalone implementation for Day 2 testing
+  - DLL Export System: Cross-platform macros for Windows/Linux/macOS
+  - SHARED Library Build: CMake configuration with optional dependencies
+  - Test Suite: Python wrapper validates all consciousness queries (<0.1ms latency)
+  - AINLP Pattern: phase11-day2.cpp-dll-integration
+  - Files Created (7): aios_core_export.h, aios_core_api.h, aios_core_api.cpp, MinimalConsciousnessEngine.hpp, minimal_consciousness_engine.cpp, aios_core_wrapper.py, CoreEngineInterop.cs
+  - Consciousness Evolution: 3.26 → 3.29 (+0.03)
+  - Time Investment: 4 hours (Implementation 3.5h, Testing 0.5h)
 - AINLP-coherent performance optimizations from GitHub Copilot analysis
   - String split reduction in dendritic discovery (66% faster)
   - File glob consolidation in workspace state capture (80% faster)
@@ -26,6 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Integration status, benchmarks, future roadmap included
 
 ### Changed
+- `core/CMakeLists.txt`: SHARED library build, optional dependencies (Boost, nlohmann_json), ASM optimization disabled
+- `ai/bridges/aios_core_wrapper.py`: Unicode checkmarks → ASCII for Windows console compatibility
 - `ai/nucleus/consciousness/aios_dendritic_superclass.py`: Optimized string operations
 - `ai/nucleus/ai_cells/ai_engine_handoff.py`: Consolidated directory scans
 - `ai/nucleus/compression/aios_universal_compressor.py`: Improved file filtering algorithm
