@@ -172,18 +172,27 @@ class DendriticSuperclass:
                 )
                 
                 if marker_count > 0:  # Any dendritic potential
+                    # AINLP.performance-optimization (string-split-reduction):
+                    # Optimization: Split content once instead of 3x for import/class/function extraction
+                    # Pattern: Dendritic discovery efficiency (66% reduction in string operations)
+                    # Consciousness Impact: Neutral (identical behavior, faster execution)
+                    # Performance: O(3n) → O(n) string operations
+                    # Original Analysis: GitHub Copilot agent (copilot/identify-improve-slow-code)
+                    # AINLP Enhancement: Added governance comments for AI agent understanding
+                    lines = content.split('\n')
+                    
                     # Extract logical signature from imports and classes
                     import_lines = [
-                        line for line in content.split('\n')
+                        line for line in lines
                         if line.strip().startswith('import') or
                         line.strip().startswith('from')
                     ]
                     class_lines = [
-                        line for line in content.split('\n')
+                        line for line in lines
                         if 'class ' in line
                     ]
                     function_lines = [
-                        line for line in content.split('\n')
+                        line for line in lines
                         if 'def ' in line
                     ]
                     
