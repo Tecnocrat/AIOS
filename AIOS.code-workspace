@@ -267,11 +267,20 @@
 		"github.copilot.chat.welcomeMessage": "disabled",
 		"github.copilot.enable": {
 			"*": true,
-			"yaml": true,
 			"plaintext": true,
 			"markdown": true,
+			"scminput": false,
+			"javascript": true,
+			"yaml": true,
 			"json": true,
-			"jsonc": true
+			"jsonc": true,
+			"cpp": true,
+			"c": true,
+			"python": true,
+			"csharp": true,
+			"powershell": true,
+			"cmake": true,
+			"sql": false
 		},
 		"dotnet.completion.showCompletionItemsFromUnimportedNamespaces": false,
 		"dotnet.formatting.organizeImportsOnFormat": false,
