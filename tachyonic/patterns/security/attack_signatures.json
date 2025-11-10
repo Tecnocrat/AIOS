@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "created": "2025-11-08T23:19:45.034333",
+    "version": "1.0",
+    "description": "AIOS Security Supercell Antibody Database"
+  },
+  "signatures": {
+    "shell_injection_1": {
+      "pattern": "$(whoami)",
+      "signature_type": "fuzzy",
+      "first_seen": "2025-11-08T23:26:28.759109",
+      "last_seen": "2025-11-08T23:26:28.759119",
+      "occurrence_count": 1,
+      "severity": "high",
+      "description": "Command substitution attack"
+    },
+    "shell_injection_2": {
+      "pattern": "; rm -rf /",
+      "signature_type": "fuzzy",
+      "first_seen": "2025-11-08T23:26:28.780202",
+      "last_seen": "2025-11-08T23:26:28.780212",
+      "occurrence_count": 1,
+      "severity": "critical",
+      "description": "Destructive command chaining"
+    },
+    "shell_injection_3": {
+      "pattern": "`cat /etc/passwd`",
+      "signature_type": "fuzzy",
+      "first_seen": "2025-11-08T23:26:28.785017",
+      "last_seen": "2025-11-08T23:26:28.785033",
+      "occurrence_count": 1,
+      "severity": "high",
+      "description": "Backtick command execution"
+    },
+    "path_traversal_4": {
+      "pattern": "../../../etc/passwd",
+      "signature_type": "fuzzy",
+      "first_seen": "2025-11-08T23:26:28.804644",
+      "last_seen": "2025-11-08T23:26:28.804653",
+      "occurrence_count": 1,
+      "severity": "medium",
+      "description": "Directory traversal attack"
+    },
+    "shell_injection_5": {
+      "pattern": "$(evil)",
+      "signature_type": "fuzzy",
+      "first_seen": "2025-11-08T23:26:28.916830",
+      "last_seen": "2025-11-08T23:26:28.916836",
+      "occurrence_count": 1,
+      "severity": "high",
+      "description": "Learned shell_injection pattern"
+    }
+  }
+}

