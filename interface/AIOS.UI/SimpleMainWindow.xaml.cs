@@ -16,10 +16,14 @@ namespace AIOS.UI
         private readonly AIOS.Services.AIServiceManager? _aiService;
         private readonly AIOS.Services.MaintenanceService? _maintenanceService;
         private readonly ILogger<SimpleMainWindow> _logger;
+        private readonly AILayerClient _aiLayerClient; // Phase 11 Day 1
 
         public SimpleMainWindow()
         {
             InitializeComponent();
+
+            // Phase 11 Day 1: Initialize AI Layer Client (port 8000 - server_manager default)
+            _aiLayerClient = new AILayerClient("http://localhost:8000");
 
             // Initialize services with error handling
             try
@@ -501,6 +505,156 @@ namespace AIOS.UI
             {
                 _logger.LogError(ex, "Error loading variant code");
                 CodePreview.Text = $"Error loading code: {ex.Message}";
+            }
+        }
+
+        // Phase 11 Day 1: AI Search functionality
+        private async void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string query = SearchQueryInput.Text?.Trim() ?? "";
+
+            // Validation
+            if (string.IsNullOrEmpty(query) || query == "Search for functionality (e.g., 'tool for health monitoring')")
+            {
+                StatusText.Text = "Please enter a search query";
+                return;
+            }
+
+            // Clear previous results and show loading
+            SearchResults.Children.Clear();
+            SearchResults.Children.Add(new TextBlock
+            {
+                Text = "🔍 Searching...",
+                FontSize = 14,
+                Foreground = System.Windows.Media.Brushes.Cyan,
+                Margin = new Thickness(0, 10, 0, 10)
+            });
+
+            StatusText.Text = "Querying AI Layer...";
+
+            try
+            {
+                // Call Python AI Layer via HTTP
+                var response = await _aiLayerClient.SimilaritySearchAsync(query, maxResults: 5);
+
+                // Clear loading message
+                SearchResults.Children.Clear();
+
+                if (response.Results == null || response.Results.Count == 0)
+                {
+                    SearchResults.Children.Add(new TextBlock
+                    {
+                        Text = "No results found. Try a different query.",
+                        FontSize = 12,
+                        Foreground = System.Windows.Media.Brushes.Gray,
+                        Margin = new Thickness(0, 10, 0, 10)
+                    });
+                    StatusText.Text = "No results";
+                    return;
+                }
+
+                // Render results
+                int rank = 1;
+                foreach (var result in response.Results)
+                {
+                    // Container border for each result
+                    var resultBorder = new Border
+                    {
+                        Background = new System.Windows.Media.SolidColorBrush(
+                            System.Windows.Media.Color.FromRgb(0x2d, 0x2d, 0x2d)),
+                        CornerRadius = new CornerRadius(5),
+                        Padding = new Thickness(10),
+                        Margin = new Thickness(0, 5, 0, 10)
+                    };
+
+                    var resultPanel = new StackPanel();
+
+                    // Title: #{rank}. {neuron name}
+                    resultPanel.Children.Add(new TextBlock
+                    {
+                        Text = $"#{rank}. {result.Neuron}",
+                        FontSize = 14,
+                        FontWeight = FontWeights.Bold,
+                        Foreground = System.Windows.Media.Brushes.White,
+                        Margin = new Thickness(0, 0, 0, 5)
+                    });
+
+                    // Scores: embedding, LLM, final
+                    var scoresPanel = new WrapPanel { Margin = new Thickness(0, 0, 0, 5) };
+                    scoresPanel.Children.Add(new TextBlock
+                    {
+                        Text = $"📊 Embedding: {result.EmbeddingScore:P1}  ",
+                        FontSize = 11,
+                        Foreground = System.Windows.Media.Brushes.LightGreen
+                    });
+                    scoresPanel.Children.Add(new TextBlock
+                    {
+                        Text = $"🧠 LLM: {result.LlmScore:P1}  ",
+                        FontSize = 11,
+                        Foreground = System.Windows.Media.Brushes.LightBlue
+                    });
+                    scoresPanel.Children.Add(new TextBlock
+                    {
+                        Text = $"⭐ Final: {result.Similarity:P1}",
+                        FontSize = 11,
+                        Foreground = System.Windows.Media.Brushes.Yellow
+                    });
+                    resultPanel.Children.Add(scoresPanel);
+
+                    // Reasoning (if available)
+                    if (!string.IsNullOrEmpty(result.Reasoning))
+                    {
+                        resultPanel.Children.Add(new TextBlock
+                        {
+                            Text = $"💭 {result.Reasoning}",
+                            FontSize = 11,
+                            Foreground = System.Windows.Media.Brushes.LightGray,
+                            TextWrapping = TextWrapping.Wrap,
+                            Margin = new Thickness(0, 3, 0, 3)
+                        });
+                    }
+
+                    // File path
+                    resultPanel.Children.Add(new TextBlock
+                    {
+                        Text = $"📁 {result.Path}",
+                        FontSize = 10,
+                        Foreground = System.Windows.Media.Brushes.Gray,
+                        Margin = new Thickness(0, 3, 0, 0)
+                    });
+
+                    resultBorder.Child = resultPanel;
+                    SearchResults.Children.Add(resultBorder);
+                    rank++;
+                }
+
+                StatusText.Text = $"Found {response.Results.Count} results";
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                SearchResults.Children.Clear();
+                SearchResults.Children.Add(new TextBlock
+                {
+                    Text = $"❌ Connection Error\n\n{ex.Message}\n\nIs the Interface Bridge server running?\nStart with: python ai/server_manager.py start",
+                    FontSize = 12,
+                    Foreground = System.Windows.Media.Brushes.Red,
+                    TextWrapping = TextWrapping.Wrap,
+                    Margin = new Thickness(0, 10, 0, 10)
+                });
+                StatusText.Text = "Connection error";
+            }
+            catch (Exception ex)
+            {
+                SearchResults.Children.Clear();
+                SearchResults.Children.Add(new TextBlock
+                {
+                    Text = $"❌ Unexpected Error\n\n{ex.Message}\n\n{ex.StackTrace}",
+                    FontSize = 11,
+                    Foreground = System.Windows.Media.Brushes.Orange,
+                    TextWrapping = TextWrapping.Wrap,
+                    Margin = new Thickness(0, 10, 0, 10)
+                });
+                StatusText.Text = "Error occurred";
             }
         }
     }
