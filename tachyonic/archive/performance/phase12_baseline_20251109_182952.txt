@@ -1,0 +1,38 @@
+================================================================================
+AIOS Phase 12 Task A: Performance Baseline Report
+================================================================================
+
+Timestamp: 2025-11-09 18:29:52
+Duration: 58.27s
+
+Total Tools: 181
+Successful: 105
+Failed: 76
+Avg Import Time: 287.22ms
+Target (50% reduction): 143.61ms
+
+Top 10 Slowest Imports:
+--------------------------------------------------------------------------------
+1. ai\tools\architecture\ainlp_holographic_documentation_system.py: 2097.63ms
+2. ai\tools\consciousness\aios_core_ai_dendritic_connectivity_enhancer.py: 1031.92ms
+3. ai\tools\consciousness\parallel_consciousness_orchestrator.py: 984.22ms
+4. ai\tools\consciousness\enhanced_consciousness.py: 629.02ms
+5. ai\tools\consciousness\enhanced_consciousness.py: 581.61ms
+6. ai\tools\consciousness\aios_core_ai_dendritic_connectivity_enhancer.py: 543.65ms
+7. ai\tools\consciousness\ainlp_assessment.py: 471.28ms
+8. ai\tools\tachyonic\aios_tachyonic_archive_cleanup.py: 454.25ms
+9. ai\tools\consciousness\dendritic_consolidation_engine.py: 407.73ms
+10. ai\tools\consciousness\dendritic_supervisor.py: 405.86ms
+
+I/O Heavy Tools (Caching Candidates):
+--------------------------------------------------------------------------------
+1. ai\tools\consciousness\dendritic_consolidation_engine.py: 20 file ops, 0 subprocess
+2. ai\tools\consciousness\dendritic_consolidation_engine.py: 20 file ops, 0 subprocess
+3. runtime_intelligence\tools\phase12_performance_profiler.py: 7 file ops, 6 subprocess
+4. ai\tools\architecture\aios_cellular_intelligence_diagnostic_system.py: 9 file ops, 3 subprocess
+5. ai\tools\architecture\genetic_fusion_tool.py: 12 file ops, 0 subprocess
+6. ai\tools\upstream_tracking_system.py: 7 file ops, 5 subprocess
+7. ai\tools\consciousness\aios_cellular_intelligence_enhancement_engine.py: 9 file ops, 1 subprocess
+8. ai\tools\consciousness\aios_cellular_intelligence_enhancement_engine.py: 9 file ops, 1 subprocess
+9. ai\tools\security_compliance_validator.py: 10 file ops, 0 subprocess
+10. runtime_intelligence\tools\phase12_simple_profiler.py: 6 file ops, 3 subprocess
