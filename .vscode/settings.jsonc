@@ -243,10 +243,38 @@
     // AI Context Auto-Loading for GitHub Copilot
     "github.copilot.advanced": {
         "contextualFilterEnable": true,
-        "contextualFilterThreshold": 0.5
+        "contextualFilterThreshold": 0.5,
+        "debug.overrideEngine": "claude-sonnet-4.5",
+        "agentDefinitions": [
+            {
+                "id": "aios",
+                "name": "AIOS Principal Software Architect",
+                "path": "${workspaceFolder}/.github/agents/aios.agent.md"
+            }
+        ]
     },
     "github.copilot.chat.localeOverride": "en-US",
     "github.copilot.chat.welcomeMessage": "never",
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "github.copilot.chat.context.files": [
+        "DEV_PATH.md",
+        "PROJECT_CONTEXT.md",
+        "README.md",
+        ".vscode/.ai_session_context.json",
+        ".vscode/.ai_session_context.md",
+        "docs/ainlp_specification_v2.0.md"
+    ],
+
+    // MCP (Model Context Protocol) Server Integration
+    "mcpServers.enable": true,
+    "mcpServers.aios-context.autoStart": true,
+    "mcpServers.aios-context.restartOnConfigChange": true,
+
+    // Enhanced Diagnostics Collection
+    "problems.decorations.enabled": true,
+    "problems.showCurrentInStatus": true,
+    "problems.maxNumberOfProblems": 10000,
+    "problems.sortOrder": "severity",
 
     // AINLP Paradigm Enhancement
     "workbench.colorCustomizations": {
