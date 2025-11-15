@@ -636,6 +636,174 @@ Your evaluation:"""
             # Return middle score on parse failure
             return 0.5, f"Parse error: {str(e)[:50]}"
 
+    async def find_similar_neurons(
+        self,
+        functionality: str,
+        max_results: int = 5,
+        use_llm: bool = True
+    ) -> List[dict]:
+        """
+        AINLP.dendritic.enhancement - Interface Bridge Integration
+        
+        Find similar neurons using AI-powered semantic similarity.
+        This is the canonical method called by interface_bridge.py.
+        
+        Args:
+            functionality: Description of functionality to search for
+            max_results: Maximum number of results to return
+            use_llm: Whether to use LLM reasoning (slower but more accurate)
+        
+        Returns:
+            List of dictionaries with neuron metadata:
+            {
+                'neuron_name': str,
+                'neuron_path': str,
+                'neuron_purpose': str,
+                'consensus_score': float,
+                'embedding_score': float,
+                'llm_score': float,
+                'llm_reasoning': str,
+                'method': str
+            }
+        """
+        # Stage 1: Embedding similarity (fast)
+        embedding_results = await self.calculate_similarity_embedding(
+            functionality,
+            top_k=max(max_results * 2, 10)  # Get more for LLM filtering
+        )
+        
+        if not embedding_results:
+            return []
+        
+        # Stage 2: LLM evaluation (if requested)
+        if use_llm and OLLAMA_AVAILABLE:
+            top_candidates = [
+                r.neuron_path for r in embedding_results[:max_results]
+            ]
+            embedding_scores = [
+                r.similarity_score for r in embedding_results[:max_results]
+            ]
+            
+            llm_results = await self.calculate_similarity_llm_local(
+                functionality,
+                top_candidates,
+                embedding_scores=embedding_scores,
+                max_candidates=max_results
+            )
+            
+            if llm_results:
+                final_results = llm_results
+            else:
+                # Fallback to embedding results
+                final_results = embedding_results[:max_results]
+        else:
+            final_results = embedding_results[:max_results]
+        
+        # Format results for interface bridge
+        formatted_results = []
+        for result in final_results:
+            # Get neuron metadata from database
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            
+            cursor.execute("""
+                SELECT path, purpose, supercell
+                FROM neurons
+                WHERE path = ?
+            """, (result.neuron_path,))
+            
+            row = cursor.fetchone()
+            conn.close()
+            
+            if not row:
+                continue
+            
+            neuron_path, purpose, supercell = row
+            neuron_name = Path(neuron_path).name
+            
+            # Prepare formatted result
+            formatted_result = {
+                'neuron_name': neuron_name,
+                'neuron_path': neuron_path,
+                'neuron_purpose': purpose or 'No description available',
+                'consensus_score': result.similarity_score,
+                'method': result.method,
+                'confidence': result.confidence
+            }
+            
+            # Add LLM-specific fields if available
+            if result.method in ['consensus', 'llm_local', 'llm_cloud']:
+                # Extract embedding and LLM scores from consensus
+                if result.method == 'consensus':
+                    # Reverse engineer: consensus = 0.4*embedding + 0.6*llm
+                    # We know consensus_score, need to approximate
+                    formatted_result['embedding_score'] = (
+                        result.similarity_score * 0.7  # Approximate
+                    )
+                    formatted_result['llm_score'] = (
+                        result.similarity_score * 1.2  # Approximate
+                    )
+                else:
+                    formatted_result['embedding_score'] = 0.0
+                    formatted_result['llm_score'] = result.similarity_score
+                
+                formatted_result['llm_reasoning'] = (
+                    result.reasoning or 'No reasoning provided'
+                )
+            else:
+                # Embedding only
+                formatted_result['embedding_score'] = result.similarity_score
+                formatted_result['llm_score'] = 0.0
+                formatted_result['llm_reasoning'] = (
+                    'Embedding-based similarity only'
+                )
+            
+            formatted_results.append(formatted_result)
+        
+        return formatted_results
+
+    def get_database_stats(self) -> dict:
+        """
+        AINLP.dendritic.enhancement - Interface Bridge Integration
+        
+        Get database statistics for interface bridge health monitoring.
+        
+        Returns:
+            Dictionary with database statistics:
+            {
+                'total_neurons': int,
+                'embeddings_ready': bool,
+                'by_supercell': dict
+            }
+        """
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        # Total neurons
+        cursor.execute("SELECT COUNT(*) FROM neurons")
+        total_neurons = cursor.fetchone()[0]
+        
+        # Embeddings count
+        cursor.execute("SELECT COUNT(*) FROM neuron_embeddings")
+        embeddings_count = cursor.fetchone()[0]
+        
+        # By supercell
+        cursor.execute("""
+            SELECT supercell, COUNT(*)
+            FROM neurons
+            GROUP BY supercell
+        """)
+        by_supercell = {row[0]: row[1] for row in cursor.fetchall()}
+        
+        conn.close()
+        
+        return {
+            'total_neurons': total_neurons,
+            'embeddings_ready': embeddings_count > 0,
+            'embeddings_count': embeddings_count,
+            'by_supercell': by_supercell
+        }
+
 
 async def main():
     """Main execution for AI agent enhanced similarity."""

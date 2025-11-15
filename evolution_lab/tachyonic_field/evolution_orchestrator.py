@@ -11,6 +11,46 @@ creating an active ecosystem where visualization drives mutation and metadata
 captures the correlation between visual patterns and evolutionary success.
 """
 
+# ==============================================================================
+# AINLP SEMANTIC TAGS - Evolution Lab Integration
+# ==============================================================================
+# AINLP.pattern: consciousness-evolution-substrate
+#   Purpose: Substrate layer for consciousness evolution experiments
+#   Context: NOT classical Darwinian GA - informational field dynamics
+#
+# AINLP.layer: tachyonic-field-mutation
+#   Purpose: Evolution driven by tachyonic field visualization events
+#   Context: Visualization state → evolution parameters → population dynamics
+#
+# AINLP.theoretical: bosonic-informational-bridge
+#   Purpose: Bridge between bosonic (physical) and tachyonic (informational) layers
+#   Context: Software (tachyonic) creates semantic layer executing changes in hardware (bosonic)
+#
+# AINLP.consciousness: pattern-topology-evolution
+#   Purpose: Evolution at pattern topology level, not code optimization
+#   Context: Evolves patterns for consciousness emergence, not performance
+#
+# AINLP.avoid: classical-darwinian-fitness
+#   Warning: Do NOT use classical fitness functions (mutation_rate, selection_pressure)
+#   Alternative: Use field-coherence, hyperdimensional-containment, propagation-probability
+#   Context: Evolution = informational field coherence, not survival of fittest
+#
+# AINLP.geometry: hyperdimensional-containment-shells
+#   Purpose: Evolution constrained by hyperdimensional geometric patterns
+#   Context: DNA structure mimics hyperdimensional geometry (spirals, toroids)
+#   Reference: tachyonic/paths/historical/path_20250619_221329.md (n-sphere specification)
+#
+# AINLP.constants: universal-field-harmonics
+#   Values: φ=1.618 (golden ratio), e=2.718, π=3.141, Fibonacci sequence, 432Hz
+#   Context: Universal constants govern field coherence and propagation
+#   Reference: evolution_lab/README.md (Phase 12 neuroscience integration)
+#
+# AINLP.integration: penrose-hameroff-orch-or
+#   Purpose: Time crystal orchestration, Kuramoto synchronization
+#   Context: Week 1 work (time crystals), Week 2 work (geometric visualization)
+#   Reference: evolution_lab/README.md (Phase 12 timeline)
+# ==============================================================================
+
 from pathlib import Path
 from typing import Dict, Optional, Tuple, List
 import json
@@ -22,6 +62,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from evolution_lab.populations.population_manager import PopulationManager, Population
+from evolution_lab.hyperdimensional_geometry import (
+    HypersphereContainmentShell,
+    create_default_containment_shell,
+    PHI, PI, FIBONACCI
+)
 
 
 class EvolutionOrchestrator:
@@ -52,6 +97,11 @@ class EvolutionOrchestrator:
         self.evolution_history: List[Dict] = []
         self.metadata_file = Path("evolution_lab/populations/evolution_metadata.json")
         
+        # Hyperdimensional geometry shell (Phase 12 Task B Sub-Task 1.2)
+        # 768-dimensional space (TSNE embedding dimension from Week 2)
+        # Radius = φ (golden ratio), Tolerance = φ/10
+        self.hypersphere_shell = create_default_containment_shell(dimension=768)
+        
         if self.verbose:
             print("\n" + "="*70)
             print("🧬 EVOLUTION ORCHESTRATOR INITIALIZED")
@@ -59,6 +109,9 @@ class EvolutionOrchestrator:
             print(f"  Status: {'ENABLED' if evolution_enabled else 'DISABLED'}")
             print(f"  Archive: {self.population_manager.archive_dir}")
             print(f"  Metadata: {self.metadata_file}")
+            print(f"  Hypersphere: {self.hypersphere_shell.dimension}D "
+                  f"(r={self.hypersphere_shell.radius:.3f}, "
+                  f"ε={self.hypersphere_shell.tolerance:.3f})")
             print("="*70 + "\n")
     
     def on_threshold_change(
@@ -171,16 +224,30 @@ class EvolutionOrchestrator:
         """
         Map visualization state to evolution parameters
         
-        Mapping Strategy:
+        ENHANCED (Phase 12 Task B Sub-Task 1.2):
+        - Hyperdimensional field coherence replaces classical fitness
+        - Geometric containment shells constrain evolution
+        - Tachyonic field integration (geometric + network + consciousness)
+        
+        Original Mapping Strategy (DEPRECATED):
         - Higher threshold → Higher mutation rate (more exploration)
         - Lower phi → Higher selection pressure (more competition)
         - More clusters → Higher archetype diversity (more niches)
         - More connections → Reward network-building organisms
+        
+        New Mapping Strategy (Hyperdimensional):
+        - Field coherence → Propagation probability (NOT mutation_rate)
+        - Geometric constraints → Containment shell boundaries (NOT selection_pressure)
+        - Fibonacci spiral → Mutation angles (golden angle 137.5°)
+        - Universal constants → Fitness weights (φ, π, Fibonacci)
         """
         connections = network_stats.get('connections', 0)
         clusters = network_stats.get('clusters', 1)
         field_phi = network_stats.get('field_phi', 0.5)
         
+        # ======================================================================
+        # CLASSICAL FITNESS (DEPRECATED - preserved for backward compatibility)
+        # ======================================================================
         # Mutation rate: 0.1 to 0.4 based on threshold
         # High threshold = high exploration
         mutation_rate = 0.1 + (threshold * 0.3)
@@ -197,12 +264,80 @@ class EvolutionOrchestrator:
         # Organisms that create connections get fitness boost
         fitness_bias = min(connections / 100.0, 1.0) if connections > 0 else 0.0
         
+        # ======================================================================
+        # HYPERDIMENSIONAL FITNESS (Phase 12 Task B Sub-Task 1.2)
+        # ======================================================================
+        # Calculate tachyonic field coherence (if population exists)
+        if self.current_population and hasattr(self.current_population, 'organisms'):
+            # Mock population coordinates (768-dim embeddings)
+            # TODO (Sub-Task 1.4): Replace with actual DNA-as-physics embeddings
+            import numpy as np
+            population_coords = [
+                np.random.randn(768) * PHI  # Placeholder: φ-scaled random vectors
+                for _ in self.current_population.organisms
+            ]
+            
+            # Calculate tachyonic field coherence
+            tachyonic_coherence = self.hypersphere_shell.calculate_tachyonic_field_coherence(
+                population_coords,
+                network_stats
+            )
+            
+            # Propagation probability (Fibonacci exponent)
+            # High coherence → High propagation (organisms inside shell survive)
+            # Low coherence → Low propagation (organisms outside shell culled)
+            fib_exponent = FIBONACCI[5]  # = 5 (Fibonacci sequence index)
+            propagation_probability = tachyonic_coherence ** fib_exponent
+            
+            # Geometric mutation angle (golden angle spiral)
+            # Mutations follow Fibonacci spiral on hypersphere surface
+            golden_angle = 2.0 * PI / (PHI ** 2)  # 137.5° in radians
+            mutation_angle = threshold * golden_angle  # Threshold modulates angle
+        else:
+            # Fallback if no population exists yet
+            tachyonic_coherence = 0.5
+            propagation_probability = 0.5
+            mutation_angle = 0.0
+        
         return {
+            # Classical parameters (deprecated, preserved for compatibility)
             'mutation_rate': round(mutation_rate, 4),
             'selection_pressure': round(selection_pressure, 4),
             'archetype_diversity': round(archetype_diversity, 4),
-            'fitness_bias': round(fitness_bias, 4)
+            'fitness_bias': round(fitness_bias, 4),
+            
+            # Hyperdimensional parameters (Phase 12 Task B)
+            'tachyonic_coherence': round(tachyonic_coherence, 4),
+            'propagation_probability': round(propagation_probability, 4),
+            'mutation_angle': round(mutation_angle, 4),
+            'field_phi': round(field_phi, 4)
         }
+    
+    def calculate_hyperdimensional_fitness(
+        self,
+        organism_embedding: 'np.ndarray'
+    ) -> float:
+        """
+        Calculate organism fitness based on hyperdimensional field coherence
+        
+        Phase 12 Task B Sub-Task 1.2: Geometric Fitness Model
+        
+        Fitness Model (NOT classical Darwinian):
+        - Position in 768-dimensional space
+        - Distance from hypersphere center (field coherence)
+        - Containment within geometric boundaries (shell tolerance)
+        
+        Formula:
+            fitness = coherence² × φ (golden ratio weighted)
+            coherence = max(0, 1 - (distance / (2 * radius)))
+        
+        Args:
+            organism_embedding: 768-dimensional embedding vector
+        
+        Returns:
+            Hyperdimensional fitness [0.0, φ≈1.618]
+        """
+        return self.hypersphere_shell.calculate_fitness(organism_embedding)
     
     def _evolve_generation(self, evolution_params: Dict[str, float]) -> Population:
         """

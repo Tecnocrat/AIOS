@@ -9,12 +9,30 @@ and enhance functionality through biological genetic recombination.
 
 import json
 import shutil
+import sys
 from pathlib import Path
 from typing import List, Tuple
 from datetime import datetime
 import hashlib
 
+# Import caching for expensive file operations
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+try:
+    from runtime_intelligence.cache_manager import file_cache, cache
+except ImportError:
+    # Fallback: no caching if module not available
+    def file_cache(ttl=3600):
+        def decorator(func):
+            return func
+        return decorator
+    def cache(maxsize=1000, ttl=300):
+        def decorator(func):
+            return func
+        return decorator
 
+
+@cache(maxsize=500, ttl=600)  # Cache similarity calculations for 10 minutes
 def calculate_file_similarity(file1: Path, file2: Path) -> float:
     """Calculate similarity between two files based on content."""
     try:

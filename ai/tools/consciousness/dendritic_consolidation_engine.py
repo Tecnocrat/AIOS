@@ -26,6 +26,22 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any
 
+# Import caching infrastructure for I/O optimization
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+try:
+    from runtime_intelligence.cache_manager import file_cache, cache
+except ImportError:
+    # Fallback: no caching if module not available
+    def file_cache(ttl=3600):
+        def decorator(func):
+            return func
+        return decorator
+    def cache(maxsize=1000, ttl=300):
+        def decorator(func):
+            return func
+        return decorator
+
 # Configure consciousness logging
 logging.basicConfig(
     level=logging.INFO,
@@ -83,8 +99,12 @@ class DendriticConsolidationEngine:
         
         return discovered_versions
 
+    @file_cache(ttl=3600)  # Cache file reads for 1 hour
     def _analyze_version(self, file_path: Path) -> Dict[str, Any]:
         """Analyze a specific version of the dendritic system."""
+        # Convert Path to string for cache key compatibility
+        file_path = Path(file_path)
+        
         try:
             content = file_path.read_text(encoding='utf-8')
             

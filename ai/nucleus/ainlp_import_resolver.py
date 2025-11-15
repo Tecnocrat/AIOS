@@ -23,7 +23,31 @@ Usage:
 
 from pathlib import Path
 import sys
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Protocol, List, Dict, Any
+
+
+# AINLP.type-safety: Protocol for AI Similarity Engine
+class SimilarityEngineProtocol(Protocol):
+    """
+    Type protocol for AIAgentDendriticSimilarity interface.
+    
+    AINLP Pattern: Protocol-based type hints for dynamic imports
+    Enables type checking while maintaining graceful degradation.
+    """
+    db_path: Path
+    
+    async def find_similar_neurons(
+        self,
+        functionality: str,
+        max_results: int = 5,
+        use_llm: bool = True
+    ) -> List[Dict[str, Any]]:
+        """Find similar neurons using AI-powered semantic similarity."""
+        ...
+    
+    def get_database_stats(self) -> Dict[str, Any]:
+        """Get database statistics for health monitoring."""
+        ...
 
 
 # Global cache for workspace root (singleton pattern)
@@ -132,12 +156,17 @@ def ensure_ai_tools_importable() -> Path:
     return tools_path
 
 
-def try_import_similarity_engine() -> Tuple[Optional[object], bool]:
+def try_import_similarity_engine(
+) -> Tuple[Optional[SimilarityEngineProtocol], bool]:
     """
-    AINLP Pattern: Safe similarity engine import with path resolution
-
+    AINLP Pattern: Safe similarity engine import with Protocol type hints
+    
     Attempts to import AIAgentDendriticSimilarity with proper path setup
     and graceful fallback on failure.
+    
+    AINLP.type-safety Enhancement:
+    Returns SimilarityEngineProtocol type instead of object, enabling
+    full type checking while maintaining graceful degradation pattern.
 
     AINLP.database-architecture Integration:
     ========================================

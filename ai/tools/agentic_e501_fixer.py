@@ -14,12 +14,25 @@ from pathlib import Path
 from enum import Enum
 from dataclasses import dataclass
 import logging
-import re
-import requests
 import sys
 import os
 import json
 from datetime import datetime
+
+# Import caching for expensive operations
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+try:
+    from runtime_intelligence.cache_manager import cache
+except ImportError:
+    # Fallback: no caching if module not available
+    def cache(maxsize=1000, ttl=300):
+        def decorator(func):
+            return func
+        return decorator
+
+# Lazy imports for heavy dependencies (AST, requests)
+# These will be imported inside functions when needed
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -112,8 +125,12 @@ class AgenticE501Fixer:
 
     def _check_ollama_available(self) -> bool:
         """Check if OLLAMA is running locally."""
+        # Lazy import requests only when checking API availability
+        import requests
+        
         try:
-            response = requests.get("http://localhost:11434/api/tags", timeout=5)
+            response = requests.get("http://localhost:11434/api/tags", 
+                                    timeout=5)
             return response.status_code == 200
         except:
             return False
@@ -256,6 +273,9 @@ Return only the fixed line(s), one per line. If multiple lines are needed, use p
 
     def _call_ollama(self, prompt: str) -> str:
         """Call OLLAMA local API."""
+        # Lazy import requests only when making API calls
+        import requests
+        
         data = {
             "model": self.agents[AIAgent.OLLAMA]["model"],
             "prompt": prompt,
@@ -271,7 +291,12 @@ Return only the fixed line(s), one per line. If multiple lines are needed, use p
 
     def _call_gemini(self, prompt: str) -> str:
         """Call Gemini API."""
-        headers = {"Authorization": f"Bearer {self.agents[AIAgent.GEMINI]['api_key']}"}
+        # Lazy import requests only when making API calls
+        import requests
+        
+        headers = {
+            "Authorization": f"Bearer {self.agents[AIAgent.GEMINI]['api_key']}"
+        }
         data = {
             "contents": [{"parts": [{"text": prompt}]}]
         }
@@ -286,8 +311,12 @@ Return only the fixed line(s), one per line. If multiple lines are needed, use p
 
     def _call_deepseek(self, prompt: str) -> str:
         """Call DeepSeek API."""
+        # Lazy import requests only when making API calls
+        import requests
+        
+        api_key = self.agents[AIAgent.DEEPSEEK]['api_key']
         headers = {
-            "Authorization": f"Bearer {self.agents[AIAgent.DEEPSEEK]['api_key']}",
+            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
         }
         data = {
@@ -417,6 +446,9 @@ Return only the fixed line(s), one per line. If multiple lines are needed, use p
         Find the best break point in a line segment.
         Prioritizes: comma, space, operator, then forces at 79.
         """
+        # Lazy import re only when pattern matching is needed
+        import re
+        
         # Look for comma followed by space
         comma_match = re.search(r',(?=\s)', text)
         if comma_match:
