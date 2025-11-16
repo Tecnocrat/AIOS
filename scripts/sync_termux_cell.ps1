@@ -77,18 +77,9 @@ Write-Host ""
 # Step 3: Check Termux AIOS status
 Write-Host "🔍 Checking Termux AIOS status..." -ForegroundColor Yellow
 
-$termuxStatus = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" @"
-cd ~/AIOS 2>/dev/null || { echo 'ERROR:NO_AIOS'; exit 1; }
-git status --porcelain
-echo '---'
-git log --oneline -1
-echo '---'
-git rev-parse HEAD
-echo '---'
-tmux ls 2>/dev/null || echo 'NO_TMUX'
-"@
-
-if ($LASTEXITCODE -ne 0) {
+# Check if AIOS exists
+$aiosExists = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "test -d ~/AIOS && echo 'YES' || echo 'NO'"
+if ($aiosExists -ne "YES") {
     Write-Host "❌ ERROR: AIOS directory not found on Termux" -ForegroundColor Red
     Write-Host ""
     Write-Host "Please clone AIOS repository on Termux first:" -ForegroundColor Yellow
@@ -96,18 +87,18 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# Parse status
-$statusLines = $termuxStatus -split "`n"
-$termuxChanges = $statusLines[0..($statusLines.IndexOf('---') - 1)] | Where-Object { $_ -ne "" }
-$termuxLastCommit = $statusLines[($statusLines.IndexOf('---') + 1)]
-$termuxCommitHash = $statusLines[($statusLines.IndexOf('---', $statusLines.IndexOf('---') + 1) + 1)]
-$termuxTmux = $statusLines[($statusLines.IndexOf('---', $statusLines.IndexOf('---', $statusLines.IndexOf('---') + 1) + 1) + 1)..$statusLines.Length] -join "`n"
+# Get Git status
+$termuxChanges = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "cd ~/AIOS && git status --porcelain"
+$termuxLastCommit = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "cd ~/AIOS && git log --oneline -1"
+$termuxCommitHash = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "cd ~/AIOS && git rev-parse HEAD"
+$termuxTmux = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "tmux ls 2>/dev/null || echo 'NO_TMUX'"
 
 Write-Host "Current Termux commit: $termuxLastCommit" -ForegroundColor Gray
 
-if ($termuxChanges.Count -gt 0) {
+$termuxChangesLines = $termuxChanges -split "`n" | Where-Object { $_ -ne "" }
+if ($termuxChangesLines.Count -gt 0) {
     Write-Host "⚠️ WARNING: Termux has uncommitted changes:" -ForegroundColor Yellow
-    $termuxChanges | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
+    $termuxChangesLines | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
     
     if (-not $Force) {
         Write-Host ""
