@@ -183,7 +183,12 @@ if ($RestartServices) {
 }
 
 # Execute sync
-$syncOutput = Invoke-Expression "$sshCmd `"${TermuxUser}@${TermuxHost}`" '$syncCommands'" 2>&1
+$syncTarget = "${TermuxUser}@${TermuxHost}"
+if ($SSHOptions) {
+    $syncOutput = & ssh -i "$SSHKeyPath" -p $TermuxPort "$syncTarget" "$syncCommands" 2>&1
+} else {
+    $syncOutput = & ssh -p $TermuxPort "$syncTarget" "$syncCommands" 2>&1
+}
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✅ Sync completed successfully!" -ForegroundColor Green
