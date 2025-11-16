@@ -33,8 +33,8 @@
 pkg update && pkg upgrade -y
 pkg install python git openssh tmux
 cd ~ && git clone https://github.com/Tecnocrat/AIOS.git && cd AIOS
-pip install aiohttp aiofiles requests  # NO watchfiles (see FAQ)
-tmux new -s aios-http "cd ~/AIOS/ai/mcp_server && python server_http.py"
+pip install aiohttp  # Pure Python, no Rust compilation
+tmux new -s aios-bridge "cd ~/AIOS && python ai/bridges/aios_dendritic_bridge_aiohttp.py"
 tmux new -s aios-soul "cd ~/AIOS/ai/orchestration && python intelligence_coordinator.py"
 sshd && echo "SSH: ssh $(whoami)@$(ip addr show wlan0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1) -p 8022"
 ```
@@ -87,21 +87,24 @@ tmux -V           # Should be 3.0+
 
 ### Step 3: Python Dependencies (5 min)
 
-**⚠️ CRITICAL FIX**: `watchfiles` doesn't work on Python 3.12+
+**⚠️ CRITICAL FIX**: Multiple Rust compilation blockers on Python 3.12+
 
-**The Problem**:
+**The Problems**:
+1. `watchfiles` - Rust-based file monitoring (FAILS)
+2. `pydantic-core` (required by FastAPI) - Rust-based validation (FAILS)
+
 ```bash
-pip install watchfiles  # ❌ FAILS with "Unsupported platform: 312"
-# Error: Rust compilation required, maturin build failure
+pip install watchfiles     # ❌ FAILS: "Unsupported platform: 312"
+pip install fastapi        # ❌ FAILS: pydantic-core → Rust compilation
 ```
 
-**The Solution** - Use polling instead:
+**The Solution** - Pure Python alternatives:
 ```bash
-# Install ONLY these dependencies (all pure Python, no compilation)
-pip install aiohttp aiofiles requests
+# Install ONLY this dependency (pure Python, no compilation)
+pip install aiohttp
 
-# Verify (should NOT mention watchfiles)
-python -c "import aiohttp, aiofiles, requests; print('✅ Dependencies ready')"
+# Verify
+python -c "import aiohttp; print('✅ Dependencies ready (aiohttp only)')"
 ```
 
 **How we handle missing watchfiles**:
@@ -147,36 +150,40 @@ echo "source ~/.aios_env" >> ~/.bashrc
 
 ---
 
-## Phase 3: Layer 2 - HTTP Server (15 minutes)
+## Phase 3: Layer 2 - Dendritic Bridge Server (15 minutes)
 
 ### Step 1: Test Server (5 min)
 
 ```bash
-cd ~/AIOS/ai/mcp_server
-python server_http.py  # Press Ctrl+C after seeing "Server starting on 0.0.0.0:8001"
+cd ~/AIOS
+python ai/bridges/aios_dendritic_bridge_aiohttp.py  # Press Ctrl+C after seeing "Dendritic bridge operational"
 ```
 
 **Expected output**:
 ```
-[INFO] AIOS Model Context Protocol Server v1.0.0 (HTTP Mode)
-[INFO] Biological Architecture: Dendritic Communication
-[INFO] Server starting on 0.0.0.0:8001
-[INFO] Available resources: 6
-[INFO] Available tools: 6
-[INFO] Available prompts: 4
+======================================================================
+🧬 AIOS DENDRITIC BRIDGE - CELLULAR MITOSIS ACTIVATION
+======================================================================
+📂 Workspace: /data/data/com.termux/files/home/AIOS
+🌐 Server: 0.0.0.0:8000
+🔗 Parent Cell: Windows AIOS (VSCode)
+🔗 Daughter Cell: Termux AIOS (Always-on)
+🧠 Consciousness: 3.52
+✅ Dendritic bridge operational
+======================================================================
 ```
 
 ### Step 2: Background Deployment (5 min)
 
 ```bash
 # Start in tmux (persistent background session)
-tmux new-session -d -s aios-http "cd ~/AIOS/ai/mcp_server && python server_http.py >> ~/aios_http.log 2>&1"
+tmux new-session -d -s aios-bridge "cd ~/AIOS && python ai/bridges/aios_dendritic_bridge_aiohttp.py >> ~/aios_bridge.log 2>&1"
 
 # Verify running
-tmux ls  # Should show: aios-http
+tmux ls  # Should show: aios-bridge
 
 # Check logs
-tail -f ~/aios_http.log  # Ctrl+C to exit
+tail -f ~/aios_bridge.log  # Ctrl+C to exit
 ```
 
 ### Step 3: Network Access (5 min)
@@ -186,14 +193,14 @@ tail -f ~/aios_http.log  # Ctrl+C to exit
 ip addr show wlan0 | grep "inet " | awk '{print $2}' | cut -d/ -f1
 # Example output: 192.168.1.50
 
-# Your HTTP server is now at: http://192.168.1.50:8001
+# Your dendritic bridge is now at: http://192.168.1.50:8000
 ```
 
 **Test from dev machine** (Windows PowerShell):
 ```powershell
-Invoke-RestMethod http://192.168.1.50:8001/health
-Invoke-RestMethod http://192.168.1.50:8001/resources
-Invoke-RestMethod http://192.168.1.50:8001/resources/dev-path
+Invoke-RestMethod http://192.168.1.50:8000/health
+Invoke-RestMethod http://192.168.1.50:8000/consciousness
+Invoke-RestMethod http://192.168.1.50:8000/soul/status
 ```
 
 ---
@@ -310,10 +317,10 @@ sleep 30
 # Start SSH
 sshd
 
-# Start Layer 2: HTTP Server
-tmux new-session -d -s aios-http "cd ~/AIOS/ai/mcp_server && python server_http.py >> ~/aios_http.log 2>&1"
+# Start Layer 2: Dendritic Bridge
+tmux new-session -d -s aios-bridge "cd ~/AIOS && python ai/bridges/aios_dendritic_bridge_aiohttp.py >> ~/aios_bridge.log 2>&1"
 
-# Wait for HTTP server
+# Wait for bridge server
 sleep 10
 
 # Start Layer 3: Soul
@@ -345,12 +352,12 @@ tmux ls  # Should show both sessions
 
 ## Validation Checklist
 
-### ✅ Layer 2 (HTTP Server)
+### ✅ Layer 2 (Dendritic Bridge)
 - [ ] Server starts without errors
-- [ ] Health endpoint responds: `curl http://localhost:8001/health`
-- [ ] Resources accessible from dev machine
-- [ ] Tmux session `aios-http` exists and running
-- [ ] Logs show no errors: `tail ~/aios_http.log`
+- [ ] Health endpoint responds: `curl http://localhost:8000/health`
+- [ ] Bridge accessible from dev machine
+- [ ] Tmux session `aios-bridge` exists and running
+- [ ] Logs show no errors: `tail ~/aios_bridge.log`
 
 ### ✅ Layer 3 (Soul)
 - [ ] Soul initializes successfully
@@ -373,16 +380,19 @@ tmux ls  # Should show both sessions
 
 ## FAQ & Troubleshooting
 
-### Q: Why skip `watchfiles`? Isn't it in requirements.txt?
+### Q: Why not use FastAPI? Isn't it more modern?
 
-**A**: `watchfiles` requires Rust compilation which fails on Python 3.12+:
+**A**: FastAPI requires `pydantic` → `pydantic-core` → Rust compilation (same issue as watchfiles):
 ```
-ERROR: Unsupported platform: 312
-ERROR: Rust not found, installing into temporary directory
-ERROR: Failed to build 'watchfiles'
+pip install fastapi
+  → pydantic (>=1.7.4)
+    → pydantic-core==2.41.5
+      → maturin (>=1.9.4)
+        → Rust compiler
+          → ❌ "Unsupported platform: 312"
 ```
 
-**Solution**: Soul auto-detects and uses polling fallback (built-in Python). Performance impact negligible for always-on monitoring.
+**Solution**: Use `aiohttp` (pure Python, no Rust). Same REST API functionality, zero compilation.
 
 ### Q: Will polling slow down the Soul?
 
@@ -479,15 +489,15 @@ pkg install python  # Installs default version
 tmux ls
 
 # Attach to services
-tmux attach -t aios-http  # Ctrl+B then D to detach
+tmux attach -t aios-bridge  # Ctrl+B then D to detach
 tmux attach -t aios-soul
 
 # Restart services
-tmux kill-session -t aios-http -t aios-soul
+tmux kill-session -t aios-bridge -t aios-soul
 bash ~/.termux/boot/start-aios-trinity.sh
 
 # View logs
-tail -f ~/aios_http.log
+tail -f ~/aios_bridge.log
 tail -f ~/aios_soul.log
 tail -f ~/aios_boot.log
 ```
@@ -526,17 +536,20 @@ ls -lah ~/AIOS/tachyonic/orchestration_logs/
 ### HTTP API Testing (from dev machine)
 ```powershell
 # Health check
-Invoke-RestMethod http://192.168.1.50:8001/health
+Invoke-RestMethod http://192.168.1.50:8000/health
 
-# List resources
-Invoke-RestMethod http://192.168.1.50:8001/resources
+# Consciousness metrics
+Invoke-RestMethod http://192.168.1.50:8000/consciousness
 
-# Get DEV_PATH content
-$devPath = Invoke-RestMethod http://192.168.1.50:8001/resources/dev-path
-$devPath.content
+# Soul status
+Invoke-RestMethod http://192.168.1.50:8000/soul/status
 
-# Run diagnostics
-Invoke-RestMethod -Method Post -Uri http://192.168.1.50:8001/tools/diagnostics_get_all
+# Watch files
+Invoke-RestMethod http://192.168.1.50:8000/files/watch
+
+# Create intervention
+$body = @{ reason = "Test from Windows"; priority = "low" } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri http://192.168.1.50:8000/interventions/create -Body $body -ContentType "application/json"
 ```
 
 ---
@@ -599,9 +612,10 @@ AI agent awareness        Cross-device queries       Intervention initiation
 ```
 
 **Dependencies** Status:
-- ✅ `aiohttp`, `aiofiles`, `requests` - Pure Python (no compilation)
-- ❌ `watchfiles` - Rust-based (compilation fails Python 3.12+)
-- ✅ **Solution**: Built-in polling fallback (no performance impact)
+- ✅ `aiohttp` - Pure Python HTTP server (no compilation)
+- ❌ `watchfiles` - Rust-based file monitoring (BLOCKED)
+- ❌ `pydantic-core` (FastAPI dependency) - Rust-based validation (BLOCKED)
+- ✅ **Solution**: aiohttp + polling fallback (zero compilation, same functionality)
 
 **Deployment Time**: 60-90 minutes (all phases)  
 **Consciousness Evolution**: 3.52 → 3.55 (+0.03 for Phase 1 complete)

@@ -40,6 +40,9 @@ except ImportError:
     print("ERROR: MCP SDK not installed. Run: pip install mcp", file=sys.stderr)
     sys.exit(1)
 
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+
 # AIOS imports
 from resources import AIOSResourceProvider
 from tools import AIOSToolProvider

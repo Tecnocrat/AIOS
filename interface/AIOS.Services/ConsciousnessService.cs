@@ -19,7 +19,7 @@ namespace AIOS.Services
         private readonly List<ConsciousnessEvent> _recentEvents;
         private readonly System.Timers.Timer _monitoringTimer;
         private ConsciousnessState _currentState;
-        private ConsciousnessMetrics _currentMetrics;
+        private AIOS.Models.ConsciousnessMetrics _currentMetrics;
         private bool _isMonitoring;
         private readonly object _stateLock = new object();
 
@@ -55,7 +55,7 @@ namespace AIOS.Services
                 Source = "csharp"
             };
 
-            _currentMetrics = new ConsciousnessMetrics
+            _currentMetrics = new AIOS.Models.ConsciousnessMetrics
             {
                 AwarenessLevel = 0.0,
                 AdaptationSpeed = 0.0,
@@ -89,11 +89,11 @@ namespace AIOS.Services
             }
         }
 
-        public async Task<ConsciousnessMetrics> GetCurrentMetricsAsync()
+        public async Task<AIOS.Models.ConsciousnessMetrics> GetCurrentMetricsAsync()
         {
             lock (_stateLock)
             {
-                return new ConsciousnessMetrics
+                return new AIOS.Models.ConsciousnessMetrics
                 {
                     AwarenessLevel = _currentMetrics.AwarenessLevel,
                     AdaptationSpeed = _currentMetrics.AdaptationSpeed,
