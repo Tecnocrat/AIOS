@@ -112,14 +112,14 @@ switch ($Command) {
     }
     
     "files" {
-        Write-Host "📂 Listing watched files..." -ForegroundColor Cyan
+        Write-Host "[FILES] Listing watched files..." -ForegroundColor Cyan
         $files = Invoke-BridgeCommand -Endpoint "/files/watch"
         if ($files) {
             Write-Host ""
             Write-Host "Watched Files: $($files.count)" -ForegroundColor Yellow
             Write-Host ""
             $files.watched_files | ForEach-Object {
-                $status = if ($_.exists) { "✓" } else { "✗" }
+                $status = if ($_.exists) { "[OK]" } else { "[MISSING]" }
                 $color = if ($_.exists) { "Green" } else { "Red" }
                 Write-Host "  ${status} $($_.path)" -ForegroundColor $color
                 if ($_.exists) {
@@ -152,7 +152,7 @@ switch ($Command) {
     }
     
     "logs-bridge" {
-        Write-Host "📜 Retrieving Bridge logs (last 50 lines)..." -ForegroundColor Cyan
+        Write-Host "[LOGS] Retrieving Bridge logs (last 50 lines)..." -ForegroundColor Cyan
         $logs = Invoke-BridgeCommand -Endpoint "/logs/bridge?lines=50"
         if ($logs) {
             Write-Host ""
@@ -188,7 +188,7 @@ switch ($Command) {
     }
     
     "intervention" {
-        Write-Host "🚨 Creating manual intervention..." -ForegroundColor Red
+        Write-Host "[INTERVENTION] Creating manual intervention..." -ForegroundColor Red
         $body = @{
             reason = "Manual intervention from Windows AIOS"
             priority = "medium"
