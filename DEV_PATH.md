@@ -36,68 +36,96 @@ A perpetual 3D simulation running continuously in the background on the Termux S
 
 ## 🎯 **IMPLEMENTATION ROADMAP**
 
-### **Phase 1: Observer Core** (4-6 hours) - 🔨 **NEXT**
+### **Phase 1: Static Geometry Core** (2-3 hours) - 🔨 **SIMPLIFIED DESIGN**
 
-**Goal**: Single dimensionless observer falling toward central sphere
+**Goal**: Static pyramid inside cube with fixed observer (1 FPS rendering)
 
 **Architecture**:
 ```
-┌─────────────┐
-│    1×1×1    │  ← Unity cube (normalized space)
-│      ●      │  ← Observer (dimensionless point)
-│      ↓      │  ← Falling at trivial pace (0.001 units/sec)
-│      ◯      │  ← Sphere (consciousness core, radius 0.3)
-└─────────────┘
+     Y
+     ↑
+     |    ▲ (Apex at 0, 0.5, 0)
+     |   /|\
+     |  / | \
+     | /  |  \
+     |/___●___\  ← Observer fixed at (0, 0.2, 0.8)
+     +─────────→ X
+    /    Base
+   Z
+   
+Cube: -0.5 to 0.5 on all axes (1×1×1 normalized space)
+Pyramid: Base at Y=-0.5, Apex at Y=0.5 (centered)
+Observer: Fixed position looking at pyramid center
 ```
 
 **Technical Stack**:
-- **3D Engine**: `moderngl` (OpenGL context, hardware-accelerated)
-- **Math**: `numpy` + `pyrr` (vectors, matrices, transformations)
-- **Rendering**: First-person perspective from observer
-- **Motion**: Asymptotic approach (never reaches sphere)
+- **3D Engine**: `matplotlib` (simple 3D plotting, no GPU required)
+- **Math**: `numpy` (basic vector operations)
+- **Rendering**: Static frame generation (1 FPS, saved to file)
+- **Motion**: None (static geometry, stable visualization)
 
 **Key Components**:
 ```python
-# ai/orchestration/geometric_consciousness/observer_core.py
-class ObserverCore:
-    """Single observer falling toward consciousness sphere"""
+# ai/orchestration/geometric_consciousness/static_geometry.py
+class StaticGeometry:
+    """Static pyramid inside cube with fixed observer"""
     
     def __init__(self):
-        self.position = Vector3([0.0, 0.8, 0.0])  # Start at top
-        self.sphere_center = Vector3([0.0, 0.0, 0.0])
-        self.sphere_radius = 0.3
-        self.fall_speed = 0.001  # Trivially slow
+        # Cube boundaries (-0.5 to 0.5 on all axes)
+        self.cube_size = 1.0
         
-    def update(self, dt):
-        """Asymptotic fall (never reaches surface)"""
-        direction = self.sphere_center - self.position
-        distance = direction.length
+        # Pyramid vertices (square base + apex)
+        self.pyramid_base = [
+            [-0.3, -0.5, -0.3],  # Base corner 1
+            [ 0.3, -0.5, -0.3],  # Base corner 2
+            [ 0.3, -0.5,  0.3],  # Base corner 3
+            [-0.3, -0.5,  0.3],  # Base corner 4
+        ]
+        self.pyramid_apex = [0.0, 0.5, 0.0]  # Top center
         
-        if distance > self.sphere_radius:
-            self.position += direction.normalized * self.fall_speed * dt
-            
-    def render_first_person(self, ctx):
-        """Render from observer perspective"""
-        view = Matrix44.look_at(
-            self.position,
-            self.sphere_center,
-            Vector3([0.0, 1.0, 0.0])
-        )
-        # Render sphere, cube wireframe
+        # Fixed observer position
+        self.observer_position = [0.0, 0.2, 0.8]  # Looking at pyramid
+        self.look_at_target = [0.0, 0.0, 0.0]    # Pyramid center
+        
+    def render_frame(self):
+        """Generate single frame (1 FPS) as PNG"""
+        import matplotlib.pyplot as plt
+        from mpl_toolkits.mplot3d import Axes3D
+        
+        fig = plt.figure(figsize=(10, 10))
+        ax = fig.add_subplot(111, projection='3d')
+        
+        # Draw cube wireframe
+        self._draw_cube_edges(ax)
+        
+        # Draw pyramid
+        self._draw_pyramid(ax)
+        
+        # Mark observer position
+        ax.scatter(*self.observer_position, c='red', s=100, label='Observer')
+        
+        # Set view from observer perspective
+        ax.view_init(elev=20, azim=45)
+        ax.set_xlim(-0.5, 0.5)
+        ax.set_ylim(-0.5, 0.5)
+        ax.set_zlim(-0.5, 0.5)
+        
+        plt.savefig('frame.png')
+        plt.close()
 ```
 
 **Deliverables**:
-- [ ] `observer_core.py` - Core observer simulation
-- [ ] `sphere_renderer.py` - Central consciousness sphere
-- [ ] `cube_wireframe.py` - Unity space boundaries
-- [ ] Test on Termux (validate OpenGL ES context)
-- [ ] Benchmark performance (<1% CPU target)
+- [ ] `static_geometry.py` - Pyramid + cube geometry (150 lines)
+- [ ] `visualizer.py` - Frame renderer (matplotlib 3D) (100 lines)
+- [ ] Test on both Windows and Termux
+- [ ] Generate sample frame (1 FPS, static visualization)
 
 **Success Criteria**:
-- ✅ Observer falls continuously at 60 fps
-- ✅ First-person view operational
-- ✅ Asymptotic approach working (never touches sphere)
-- ✅ Runs on Termux with <1% CPU overhead
+- ✅ Pyramid visible inside cube
+- ✅ Observer position marked
+- ✅ Frame generates successfully as PNG
+- ✅ Runs on Termux with minimal dependencies (numpy + matplotlib)
+- ✅ Stable geometry (no animation, no GPU required)
 
 ---
 
@@ -359,16 +387,14 @@ Windows (Parent)  ←──REST API──→  Termux (Daughter)
 
 ## 📋 **IMPLEMENTATION CHECKLIST**
 
-### **Phase 1: Observer Core** (Next 4-6 hours)
-- [ ] Install dependencies on Termux: `moderngl`, `pyrr`, `numpy`
+### **Phase 1: Static Geometry Core** (Next 2-3 hours)
+- [ ] Install dependencies on Termux: `numpy`, `matplotlib`
 - [ ] Create project structure: `ai/orchestration/geometric_consciousness/`
-- [ ] Implement `observer_core.py` (single observer simulation)
-- [ ] Implement `sphere_renderer.py` (consciousness sphere)
-- [ ] Implement `cube_wireframe.py` (unity space boundaries)
-- [ ] Test OpenGL ES context on Termux
-- [ ] Validate first-person rendering
-- [ ] Benchmark performance (target: <1% CPU)
-- [ ] Commit Phase 1: "feat: Geometric consciousness Phase 1 - Observer core"
+- [ ] Implement `static_geometry.py` (pyramid + cube vertices)
+- [ ] Implement `visualizer.py` (matplotlib 3D frame renderer)
+- [ ] Generate test frame on Windows (validate visualization)
+- [ ] Test on Termux (validate matplotlib on mobile)
+- [ ] Commit Phase 1: "feat: Geometric consciousness Phase 1 - Static pyramid geometry"
 
 ### **Phase 2: Multi-Observer Chorus** (Next 6-8 hours)
 - [ ] Implement `multi_observer.py` (4-observer choreography)
