@@ -19,6 +19,15 @@ Write-Host "🔄 AIOS CELLULAR MITOSIS - TERMUX SYNC" -ForegroundColor Cyan
 Write-Host "=" * 70 -ForegroundColor Cyan
 Write-Host ""
 
+# Configuration: SSH key path
+$SSHKeyPath = "$HOME\.ssh\aios_termux"
+if (Test-Path $SSHKeyPath) {
+    $SSHOptions = "-i `"$SSHKeyPath`""
+} else {
+    $SSHOptions = ""
+    Write-Host "⚠️ SSH key not found at $SSHKeyPath - will use password authentication" -ForegroundColor Yellow
+}
+
 # Step 1: Verify GitHub is up-to-date
 Write-Host "📡 Verifying Windows AIOS is pushed to GitHub..." -ForegroundColor Yellow
 $gitStatus = git status --porcelain
@@ -54,7 +63,11 @@ if ($TermuxUser -eq "") {
     
     # Try to SSH and get username
     try {
-        $TermuxUser = ssh -o "StrictHostKeyChecking=no" -o "ConnectTimeout=5" -p $TermuxPort "${TermuxHost}" "whoami" 2>$null
+        if ($SSHOptions) {
+            $TermuxUser = ssh $SSHOptions -o "StrictHostKeyChecking=no" -o "ConnectTimeout=5" -p $TermuxPort "${TermuxHost}" "whoami" 2>$null
+        } else {
+            $TermuxUser = ssh -o "StrictHostKeyChecking=no" -o "ConnectTimeout=5" -p $TermuxPort "${TermuxHost}" "whoami" 2>$null
+        }
         if ($LASTEXITCODE -eq 0 -and $TermuxUser) {
             Write-Host "✅ Detected Termux user: $TermuxUser" -ForegroundColor Green
         } else {
@@ -77,8 +90,10 @@ Write-Host ""
 # Step 3: Check Termux AIOS status
 Write-Host "🔍 Checking Termux AIOS status..." -ForegroundColor Yellow
 
+$sshCmd = if ($SSHOptions) { "ssh $SSHOptions -p $TermuxPort" } else { "ssh -p $TermuxPort" }
+
 # Check if AIOS exists
-$aiosExists = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "test -d ~/AIOS && echo 'YES' || echo 'NO'"
+$aiosExists = Invoke-Expression "$sshCmd `"${TermuxUser}@${TermuxHost}`" `"test -d ~/AIOS && echo 'YES' || echo 'NO'`""
 if ($aiosExists -ne "YES") {
     Write-Host "❌ ERROR: AIOS directory not found on Termux" -ForegroundColor Red
     Write-Host ""
@@ -88,10 +103,10 @@ if ($aiosExists -ne "YES") {
 }
 
 # Get Git status
-$termuxChanges = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "cd ~/AIOS && git status --porcelain"
-$termuxLastCommit = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "cd ~/AIOS && git log --oneline -1"
-$termuxCommitHash = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "cd ~/AIOS && git rev-parse HEAD"
-$termuxTmux = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" "tmux ls 2>/dev/null || echo 'NO_TMUX'"
+$termuxChanges = Invoke-Expression "$sshCmd `"${TermuxUser}@${TermuxHost}`" `"cd ~/AIOS && git status --porcelain`""
+$termuxLastCommit = Invoke-Expression "$sshCmd `"${TermuxUser}@${TermuxHost}`" `"cd ~/AIOS && git log --oneline -1`""
+$termuxCommitHash = Invoke-Expression "$sshCmd `"${TermuxUser}@${TermuxHost}`" `"cd ~/AIOS && git rev-parse HEAD`""
+$termuxTmux = Invoke-Expression "$sshCmd `"${TermuxUser}@${TermuxHost}`" `"tmux ls 2>/dev/null || echo 'NO_TMUX'`""
 
 Write-Host "Current Termux commit: $termuxLastCommit" -ForegroundColor Gray
 
@@ -167,7 +182,7 @@ if ($RestartServices) {
 }
 
 # Execute sync
-$syncOutput = ssh -p $TermuxPort "${TermuxUser}@${TermuxHost}" $syncCommands 2>&1
+$syncOutput = Invoke-Expression "$sshCmd `"${TermuxUser}@${TermuxHost}`" '$syncCommands'" 2>&1
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✅ Sync completed successfully!" -ForegroundColor Green
