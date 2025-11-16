@@ -64,7 +64,8 @@ if ($TermuxUser -eq "") {
     # Try to SSH and get username
     try {
         if ($SSHOptions) {
-            $TermuxUser = ssh $SSHOptions -o "StrictHostKeyChecking=no" -o "ConnectTimeout=5" -p $TermuxPort "${TermuxHost}" "whoami" 2>$null
+            $sshTestCmd = "ssh -i `"$SSHKeyPath`" -o `"StrictHostKeyChecking=no`" -o `"ConnectTimeout=5`" -p $TermuxPort `"${TermuxHost}`" `"whoami`""
+            $TermuxUser = Invoke-Expression $sshTestCmd 2>$null
         } else {
             $TermuxUser = ssh -o "StrictHostKeyChecking=no" -o "ConnectTimeout=5" -p $TermuxPort "${TermuxHost}" "whoami" 2>$null
         }
