@@ -1,0 +1,156 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:10.274423",
+  "folder_info": {
+    "name": "asm",
+    "absolute_path": "C:\\dev\\AIOS\\core\\src\\asm",
+    "relative_path": "core\\src\\asm",
+    "parent_path": "core\\src",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "src",
+      "asm"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "assembly"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 47920,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "consciousness_integration_state.json",
+          "size": 250,
+          "modified": "2025-09-15T22:30:05.452281",
+          "category": "documentation"
+        }
+      ],
+      ".asm": [
+        {
+          "name": "consciousness_simd_processor.asm",
+          "size": 14051,
+          "modified": "2025-09-13T23:41:15.076335",
+          "category": "other"
+        },
+        {
+          "name": "kernel_ops.asm",
+          "size": 29181,
+          "modified": "2025-09-03T21:49:12.159398",
+          "category": "other"
+        },
+        {
+          "name": "tachyonic_surface.asm",
+          "size": 4438,
+          "modified": "2025-09-03T01:28:01.131445",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "consciousness_integration_state.json",
+        "size": 250,
+        "modified": "2025-09-15T22:30:05.452281",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_simd_processor.asm",
+        "size": 14051,
+        "modified": "2025-09-13T23:41:15.076335",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "consciousness_integration_state.json",
+        "size": 250,
+        "modified": "2025-09-15T22:30:05.452281",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_simd_processor.asm",
+        "size": 14051,
+        "modified": "2025-09-13T23:41:15.076335",
+        "category": "other"
+      },
+      {
+        "name": "kernel_ops.asm",
+        "size": 29181,
+        "modified": "2025-09-03T21:49:12.159398",
+        "category": "other"
+      },
+      {
+        "name": "tachyonic_surface.asm",
+        "size": 4438,
+        "modified": "2025-09-03T01:28:01.131445",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".json",
+        ".asm"
+      ],
+      "dominant_type": ".asm"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > src > asm",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src\\asm' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src\\asm' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src\\asm' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "ai\\src",
+      "ai\\cytoplasm"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

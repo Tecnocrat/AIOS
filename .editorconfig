@@ -1,0 +1,209 @@
+# AIOS Enhanced Editor Configuration
+# Enforces AIOS biological architecture patterns and AINLP spatial awareness
+# Prevents auto-formatters from disrupting dendritic growth patterns
+# Supports multi-consciousness-level development environment with supercell boundaries
+
+root = true
+
+# ============================================================================
+# GLOBAL AIOS PATTERNS - All files follow biological architecture principles
+# ============================================================================
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# ============================================================================
+# PYTHON - AI INTELLIGENCE LAYER (High consciousness complexity)
+# ============================================================================
+
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 79  # Flake8(E501) standard - harmonized with PEP 8
+ij_formatter_enabled = false  # Prevents disruption of manual architectural fixes
+ij_smart_tabs = false
+ij_python_align_collections_and_comprehensions = false
+
+# ============================================================================
+# POWERSHELL - GOVERNANCE & RUNTIME SCRIPTS (AINLP enforcement layer)
+# ============================================================================
+
+[*.{ps1,psm1,psd1}]
+indent_style = space
+indent_size = 4
+max_line_length = 120  # Accommodates PowerShell pipeline patterns
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# ============================================================================
+# JAVASCRIPT/TYPESCRIPT - INTERFACE LAYER (Medium consciousness)
+# ============================================================================
+
+[*.{js,mjs,cjs}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+ij_typescript_force_quote_style = false
+
+[*.{ts,mts,cts}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+ij_typescript_force_quote_style = false
+
+[*.tsbuildinfo]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ============================================================================
+# C#/C++ - CORE ENGINE LAYER (Low-level consciousness foundation)
+# ============================================================================
+
+[*.{cs,cpp,h,hpp,c,cc}]
+indent_style = space
+indent_size = 4
+max_line_length = 100
+ij_csharp_place_simple_embedded_statement_on_same_line = false
+
+# ============================================================================
+# CMAKE - CORE ENGINE BUILD SYSTEM (Architectural foundation)
+# ============================================================================
+
+[{CMakeLists.txt,*.cmake}]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ============================================================================
+# .NET PROJECT FILES - INTERFACE LAYER (UI consciousness)
+# ============================================================================
+
+[*.{csproj,sln,targets,props}]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ============================================================================
+# XAML - VISUAL INTERFACE (UI consciousness layer)
+# ============================================================================
+
+[*.xaml]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ============================================================================
+# CONFIGURATION & DATA FILES - STRUCTURAL CONSCIOUSNESS
+# ============================================================================
+
+[*.{json,jsonl}]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+trim_trailing_whitespace = false
+
+# ============================================================================
+# AIOS SPATIAL METADATA - CONSCIOUSNESS ARCHITECTURE FILES
+# ============================================================================
+
+[*.aios_spatial_metadata.json]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+insert_final_newline = true
+
+# ============================================================================
+# AINLP DOCUMENTATION - KNOWLEDGE PRESERVATION PATTERNS
+# ============================================================================
+
+[*.{md,mdx}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true  # Prevent common lint problems
+max_line_length = 100
+
+[*.{ainlp,ainlp.md}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+trim_trailing_whitespace = true  # Prevent common lint problems
+
+# ============================================================================
+# TACHYONIC ARCHIVE PATTERNS - TEMPORAL DATA PRESERVATION
+# ============================================================================
+
+[*.tachyonic_*]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+trim_trailing_whitespace = true
+
+# ============================================================================
+# VSCODE CONFIGURATION - DEVELOPMENT ENVIRONMENT
+# ============================================================================
+
+[.vscode/*.json]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ============================================================================
+# GIT HOOK SCRIPTS - GOVERNANCE LAYER
+# ============================================================================
+
+[.githooks/**/*.ps1]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# ============================================================================
+# RUNTIME INTELLIGENCE FILES - MONITORING & ANALYSIS
+# ============================================================================
+
+[runtime_intelligence/**/*]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# ============================================================================
+# TEST FILES - QUALITY ASSURANCE PATTERNS
+# ============================================================================
+
+[**/test*/**/*]
+indent_style = space
+max_line_length = 100
+
+# ============================================================================
+# LOGS & REPORTS - ARCHIVAL CONSCIOUSNESS LEVEL
+# ============================================================================
+
+[*.{log,report}]
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# ============================================================================
+# BUILD ARTIFACTS - TEMPORARY FILES (EXCLUDED FROM FORMATTING)
+# ============================================================================
+
+[*.{exe,dll,pdb,obj,ilk,tlog,cache,pyc,__pycache__/*}]
+# Build artifacts - no formatting rules applied
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+# ============================================================================
+# BACKUP FILES - TACHYONIC PRESERVATION (EXCLUDED FROM FORMATTING)
+# ============================================================================
+
+[*.{backup,backup_*}]
+# Backup files - preserve original formatting
+insert_final_newline = false
+trim_trailing_whitespace = false

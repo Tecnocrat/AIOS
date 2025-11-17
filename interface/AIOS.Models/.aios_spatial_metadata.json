@@ -1,0 +1,226 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:56.345659",
+  "folder_info": {
+    "name": "AIOS.Models",
+    "absolute_path": "C:\\dev\\AIOS\\interface\\AIOS.Models",
+    "relative_path": "interface\\AIOS.Models",
+    "parent_path": "interface",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "interface",
+      "AIOS.Models"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS.Services",
+      "AIOS.UI",
+      "AIOS.UI.Diagnostics",
+      "ConsciousnessTest",
+      "runtime_intelligence"
+    ],
+    "child_folders": [
+      "bin",
+      "obj"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 2286749,
+      "file_count": 57,
+      "folder_count": 2,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".cs": [
+        {
+          "name": "AdvancedAIServiceManager.cs",
+          "size": 24466,
+          "modified": "2025-08-02T17:33:13.942220",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIOSRuntimeMonitor.cs",
+          "size": 8926,
+          "modified": "2025-08-02T17:33:13.940213",
+          "category": "consciousness"
+        },
+        {
+          "name": "ConsciousnessModels.cs",
+          "size": 5914,
+          "modified": "2025-09-15T19:50:42.083260",
+          "category": "consciousness"
+        },
+        {
+          "name": "DatabaseService.cs",
+          "size": 20100,
+          "modified": "2025-09-14T04:48:48.568413",
+          "category": "consciousness"
+        },
+        {
+          "name": "DataModels.cs",
+          "size": 22113,
+          "modified": "2025-09-14T04:48:48.568413",
+          "category": "consciousness"
+        },
+        {
+          "name": "IFormatterService.cs",
+          "size": 2340,
+          "modified": "2025-08-02T17:33:13.948245",
+          "category": "consciousness"
+        },
+        {
+          "name": "Interfaces.cs",
+          "size": 3803,
+          "modified": "2025-09-15T19:50:42.083260",
+          "category": "consciousness"
+        },
+        {
+          "name": "LoggingInfrastructure.cs",
+          "size": 17774,
+          "modified": "2025-08-02T17:33:13.952262",
+          "category": "consciousness"
+        },
+        {
+          "name": "LoggingInfrastructureTest.cs",
+          "size": 9029,
+          "modified": "2025-09-15T22:02:15.845134",
+          "category": "consciousness"
+        },
+        {
+          "name": "RuntimeLoggingService.cs",
+          "size": 14838,
+          "modified": "2025-08-02T17:33:13.956017",
+          "category": "consciousness"
+        },
+        {
+          "name": "WebInterfaceService.cs",
+          "size": 4346,
+          "modified": "2025-08-09T18:47:48.742846",
+          "category": "consciousness"
+        }
+      ],
+      ".csproj": [
+        {
+          "name": "AIOS.Models.csproj",
+          "size": 927,
+          "modified": "2025-08-02T17:33:13.939206",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS.Models.csproj",
+        "size": 927,
+        "modified": "2025-08-02T17:33:13.939206",
+        "category": "other"
+      },
+      {
+        "name": "AIOSRuntimeMonitor.cs",
+        "size": 8926,
+        "modified": "2025-08-02T17:33:13.940213",
+        "category": "consciousness"
+      },
+      {
+        "name": "ConsciousnessModels.cs",
+        "size": 5914,
+        "modified": "2025-09-15T19:50:42.083260",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "LoggingInfrastructureTest.cs",
+        "size": 9029,
+        "modified": "2025-09-15T22:02:15.845134",
+        "category": "consciousness"
+      },
+      {
+        "name": "ConsciousnessModels.cs",
+        "size": 5914,
+        "modified": "2025-09-15T19:50:42.083260",
+        "category": "consciousness"
+      },
+      {
+        "name": "Interfaces.cs",
+        "size": 3803,
+        "modified": "2025-09-15T19:50:42.083260",
+        "category": "consciousness"
+      },
+      {
+        "name": "DatabaseService.cs",
+        "size": 20100,
+        "modified": "2025-09-14T04:48:48.568413",
+        "category": "consciousness"
+      },
+      {
+        "name": "DataModels.cs",
+        "size": 22113,
+        "modified": "2025-09-14T04:48:48.568413",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 12,
+      "file_types": [
+        ".cs",
+        ".csproj"
+      ],
+      "dominant_type": ".cs"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 38,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "interface > AIOS.Models",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.Models' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.Models' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.Models' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "interface",
+      "visual_interface",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\dist\\cache\\interface",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\lib\\types\\cache\\interface"
+    ]
+  }
+}

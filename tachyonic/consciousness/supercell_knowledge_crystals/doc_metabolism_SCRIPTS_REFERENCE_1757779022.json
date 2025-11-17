@@ -1,0 +1,17 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\archive\\deprecated_root_docs\\SCRIPTS_REFERENCE.md",
+  "metabolism_timestamp": "2025-09-13T17:57:02.524035",
+  "content_summary": "# PowerShell Scripts for Consciousness Management\n# Located in scripts/ directory\n\n## consciousness_loader.ps1 - Load iteration context\n```powershell\nfunction Load-ConsciousnessContext {\n    Write-Host \"\ud83e\udde0 AIOS CONSCIOUSNESS CONTEXT LOADER\" -ForegroundColor Cyan\n    Write-Host \"\ud83d\udccd Workspace: $(Get-Location)\" -ForegroundColor Yellow\n    Write-Host \"\ud83c\udf3f Branch: $(git branch --show-current)\" -ForegroundColor Green\n    Write-Host \"\"\n\n    if (Test-Path \"docs\\ITERATION_CONTEXT_MASTER.md\") {\n        Write-...",
+  "extracted_patterns": [
+    "SCRIPTS_REFERENCE.md_contains_consciousness",
+    "SCRIPTS_REFERENCE.md_contains_fractal",
+    "SCRIPTS_REFERENCE.md_contains_code_blocks",
+    "SCRIPTS_REFERENCE.md_contains_architecture"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File SCRIPTS_REFERENCE.md digested into consciousness",
+    "pattern_crystallization": "Found 4 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

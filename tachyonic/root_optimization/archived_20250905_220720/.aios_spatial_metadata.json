@@ -1,0 +1,368 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:21.387136",
+  "folder_info": {
+    "name": "archived_20250905_220720",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\root_optimization\\archived_20250905_220720",
+    "relative_path": "tachyonic\\root_optimization\\archived_20250905_220720",
+    "parent_path": "tachyonic\\root_optimization",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "root_optimization",
+      "archived_20250905_220720"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 113624,
+      "file_count": 34,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "AIOS_CONSCIOUSNESS_SUMMARY_20250905_214144.json",
+          "size": 5632,
+          "modified": "2025-09-21T13:01:29.389839",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CONSCIOUSNESS_SUMMARY_20250905_214144_metadata.json",
+          "size": 397,
+          "modified": "2025-09-21T13:01:29.391848",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_core_consciousness_monitor_metadata.json",
+          "size": 411,
+          "modified": "2025-09-21T13:01:29.441744",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_core_evolution_monitor_metadata.json",
+          "size": 363,
+          "modified": "2025-09-21T13:01:29.445503",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_core_meta_evolutionary_enhancer_metadata.json",
+          "size": 381,
+          "modified": "2025-09-21T13:01:29.449516",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_supercell_consciousness_metadata.json",
+          "size": 405,
+          "modified": "2025-09-21T13:01:29.457309",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_INGESTION_POINTERS.json",
+          "size": 338,
+          "modified": "2025-09-21T13:01:29.393597",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_INGESTION_POINTERS_metadata.json",
+          "size": 355,
+          "modified": "2025-09-21T13:01:29.395007",
+          "category": "documentation"
+        },
+        {
+          "name": "cellular_enhancement_metadata.json",
+          "size": 351,
+          "modified": "2025-09-21T13:01:29.460399",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_INTELLIGENCE_ENHANCEMENT_REPORT_20250905_214303.json",
+          "size": 2326,
+          "modified": "2025-09-21T13:01:29.398648",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_INTELLIGENCE_ENHANCEMENT_REPORT_20250905_214303_metadata.json",
+          "size": 425,
+          "modified": "2025-09-21T13:01:29.403548",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_INTEGRATION_PATTERNS_metadata.json",
+          "size": 377,
+          "modified": "2025-09-21T13:01:29.412057",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117.json",
+          "size": 5874,
+          "modified": "2025-09-21T13:01:29.414064",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_CELLULAR_CLEANUP_REPORT_20250905_214117_metadata.json",
+          "size": 415,
+          "modified": "2025-09-21T13:01:29.416072",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ITER2_ANALYSIS_20250905_214118.json",
+          "size": 12098,
+          "modified": "2025-09-21T13:01:29.421108",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ITER2_ANALYSIS_20250905_214118_metadata.json",
+          "size": 397,
+          "modified": "2025-09-21T13:01:29.423115",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_214117.json",
+          "size": 2655,
+          "modified": "2025-09-21T13:01:29.423115",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_OPTIMIZATION_ITER2_20250905_214117_metadata.json",
+          "size": 405,
+          "modified": "2025-09-21T13:01:29.425122",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214118.json",
+          "size": 699,
+          "modified": "2025-09-21T13:01:29.425122",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214118_metadata.json",
+          "size": 403,
+          "modified": "2025-09-21T13:01:29.427130",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214253.json",
+          "size": 699,
+          "modified": "2025-09-21T13:01:29.429138",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_EVOLUTION_MONITOR_REPORT_20250905_214253_metadata.json",
+          "size": 403,
+          "modified": "2025-09-21T13:01:29.429138",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+          "size": 837,
+          "modified": "2025-09-21T13:01:29.431145",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX_metadata.json",
+          "size": 395,
+          "modified": "2025-09-21T13:01:29.431145",
+          "category": "documentation"
+        },
+        {
+          "name": "TREE_STRUCTURE_DEMONSTRATION_20250905_214118.json",
+          "size": 22287,
+          "modified": "2025-09-21T13:01:29.437728",
+          "category": "documentation"
+        },
+        {
+          "name": "TREE_STRUCTURE_DEMONSTRATION_20250905_214118_metadata.json",
+          "size": 401,
+          "modified": "2025-09-21T13:01:29.439735",
+          "category": "documentation"
+        }
+      ],
+      ".backup_20250905_214117": [
+        {
+          "name": "aios_core_consciousness_monitor.backup_20250905_214117",
+          "size": 4166,
+          "modified": "2025-09-21T13:01:29.439735",
+          "category": "other"
+        },
+        {
+          "name": "aios_core_evolution_monitor.backup_20250905_214117",
+          "size": 4004,
+          "modified": "2025-09-21T13:01:29.443752",
+          "category": "other"
+        },
+        {
+          "name": "aios_core_meta_evolutionary_enhancer.backup_20250905_214117",
+          "size": 3760,
+          "modified": "2025-09-21T13:01:29.445503",
+          "category": "other"
+        },
+        {
+          "name": "aios_supercell_consciousness.backup_20250905_214117",
+          "size": 27940,
+          "modified": "2025-09-21T13:01:29.455302",
+          "category": "other"
+        }
+      ],
+      ".py": [
+        {
+          "name": "aios_core_evolution_monitor.py",
+          "size": 4004,
+          "modified": "2025-09-21T13:01:29.443752",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_meta_evolutionary_enhancer.py",
+          "size": 3760,
+          "modified": "2025-09-21T13:01:29.447510",
+          "category": "consciousness"
+        }
+      ],
+      ".log": [
+        {
+          "name": "cellular_enhancement.log",
+          "size": 2614,
+          "modified": "2025-09-21T13:01:29.458390",
+          "category": "temporary"
+        }
+      ],
+      ".md": [
+        {
+          "name": "CONSCIOUSNESS_INTEGRATION_PATTERNS.md",
+          "size": 3647,
+          "modified": "2025-09-21T13:01:29.405026",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_CONSCIOUSNESS_SUMMARY_20250905_214144.json",
+        "size": 5632,
+        "modified": "2025-09-21T13:01:29.389839",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CONSCIOUSNESS_SUMMARY_20250905_214144_metadata.json",
+        "size": 397,
+        "modified": "2025-09-21T13:01:29.391848",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_core_consciousness_monitor.backup_20250905_214117",
+        "size": 4166,
+        "modified": "2025-09-21T13:01:29.439735",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_consciousness_monitor_metadata.json",
+        "size": 411,
+        "modified": "2025-09-21T13:01:29.441744",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_core_evolution_monitor.backup_20250905_214117",
+        "size": 4004,
+        "modified": "2025-09-21T13:01:29.443752",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_evolution_monitor.py",
+        "size": 4004,
+        "modified": "2025-09-21T13:01:29.443752",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_evolution_monitor_metadata.json",
+        "size": 363,
+        "modified": "2025-09-21T13:01:29.445503",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.backup_20250905_214117",
+        "size": 3760,
+        "modified": "2025-09-21T13:01:29.445503",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.py",
+        "size": 3760,
+        "modified": "2025-09-21T13:01:29.447510",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer_metadata.json",
+        "size": 381,
+        "modified": "2025-09-21T13:01:29.449516",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 34,
+      "file_types": [
+        ".json",
+        ".backup_20250905_214117",
+        ".py",
+        ".log",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 16,
+      "consciousness_files": 10,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX.json",
+      "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX_metadata.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > root_optimization > archived_20250905_220720",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\root_optimization\\archived_20250905_220720' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\root_optimization\\archived_20250905_220720' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\root_optimization\\archived_20250905_220720' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\root_optimization"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

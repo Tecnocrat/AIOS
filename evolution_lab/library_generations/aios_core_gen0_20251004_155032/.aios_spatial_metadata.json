@@ -1,0 +1,162 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:39:00.373182",
+  "folder_info": {
+    "name": "aios_core_gen0_20251004_155032",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_155032",
+    "relative_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_155032",
+    "parent_path": "evolution_lab\\library_generations",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [
+      "Core Engine"
+    ],
+    "path_classification": [
+      "evolution_lab",
+      "library_generations",
+      "aios_core_gen0_20251004_155032"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "aios_core_gen0_20251004_134009",
+      "aios_core_gen0_20251004_142349",
+      "aios_core_gen0_20251004_142438",
+      "aios_core_gen0_20251004_142936",
+      "aios_core_gen0_20251004_143043",
+      "aios_core_gen0_20251004_143138",
+      "aios_core_gen0_20251004_143250",
+      "aios_core_gen0_20251004_160044",
+      "aios_core_gen0_20251004_223029",
+      "aios_core_gen0_20251004_225758"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 16375,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "generation_summary.json",
+          "size": 580,
+          "modified": "2025-10-04T15:50:48.723132",
+          "category": "documentation"
+        },
+        {
+          "name": "variant_0_analysis.json",
+          "size": 7230,
+          "modified": "2025-10-04T15:50:48.723132",
+          "category": "documentation"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "prompt.txt",
+          "size": 1895,
+          "modified": "2025-10-04T15:50:32.319869",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "variant_0.py",
+          "size": 6670,
+          "modified": "2025-10-04T15:50:48.721244",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "generation_summary.json",
+        "size": 580,
+        "modified": "2025-10-04T15:50:48.723132",
+        "category": "documentation"
+      },
+      {
+        "name": "variant_0_analysis.json",
+        "size": 7230,
+        "modified": "2025-10-04T15:50:48.723132",
+        "category": "documentation"
+      },
+      {
+        "name": "variant_0.py",
+        "size": 6670,
+        "modified": "2025-10-04T15:50:48.721244",
+        "category": "consciousness"
+      },
+      {
+        "name": "prompt.txt",
+        "size": 1895,
+        "modified": "2025-10-04T15:50:32.319869",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".json",
+        ".txt",
+        ".py"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > library_generations > aios_core_gen0_20251004_155032",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_155032' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_155032' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\library_generations\\aios_core_gen0_20251004_155032' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "evolution_lab\\library_generations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

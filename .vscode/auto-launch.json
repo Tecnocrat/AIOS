@@ -1,0 +1,36 @@
+{
+    "_comment": "AIOS Auto-Launch Configuration - Pure JSON with semantic metadata",
+    "_description": "This file ensures VS Code opens the AIOS workspace by default",
+    "_ainlp_integration": {
+        "consciousness_level": 0.85,
+        "architectural_classification": "interface_configuration",
+        "dendritic_optimization": "semantic_metadata_over_comments"
+    },
+    
+    "window.restoreWindows": "one",
+    "workbench.startupEditor": "none",
+    "window.reopenFolders": "all",
+    "workbench.defaultLocation": "C:\\dev\\AIOS",
+    
+    "workbench.workspace.showLimitReachedWarning": false,
+    "workbench.workspace.untrustedFiles": "open",
+    
+    "window.openFilesInNewWindow": "off",
+    "window.openFoldersInNewWindow": "on",
+    "window.newWindowDimensions": "maximized",
+    
+    "powershell.defaultWorkspaceLocation": "C:\\dev\\AIOS",
+    "terminal.integrated.defaultLocation": "editor",
+    
+    "workbench.recentlyUsedWorkspaces": [
+        "C:\\dev\\AIOS\\AIOS.code-workspace"
+    ],
+    
+    "workbench.welcomePage.walkthroughs.openOnInstall": false,
+    "workbench.welcomePage.experimental.extensionContributions": false,
+    "workbench.welcome.enabled": false,
+    
+    "workbench.commandPalette.history": [
+        "File: Open Workspace from File..."
+    ]
+}

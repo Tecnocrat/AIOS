@@ -1,0 +1,232 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:41:51.966248",
+  "folder_info": {
+    "name": "cellular_reports",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\cellular_reports",
+    "relative_path": "tachyonic\\archive\\cellular_reports",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "cellular_reports"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis_reports",
+      "backups",
+      "bosonic_substrate",
+      "cleanup_reports",
+      "code_preservation",
+      "configurations",
+      "consciousness",
+      "consciousness_evolution",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "discovery_indexes",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "evolutionary_snapshots",
+      "fractal_abstracts",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "quantum",
+      "root_optimization",
+      "root_optimization_analysis",
+      "structure_analysis",
+      "subcellular_archives",
+      "synth_dna_replicators",
+      "temporal",
+      "temporal_snapshots",
+      "version_analysis"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 1325266,
+      "file_count": 9,
+      "folder_count": 0,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_015932_20250905_152459.json",
+          "size": 81127,
+          "modified": "2025-09-05T15:24:59.154072",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_212412_RELOCATED_20250905_212624.json",
+          "size": 89593,
+          "modified": "2025-09-05T21:24:12.105631",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_212815.json",
+          "size": 89608,
+          "modified": "2025-09-05T21:28:15.018396",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_214119.json",
+          "size": 89608,
+          "modified": "2025-09-05T21:41:19.401161",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_INTELLIGENCE_ENHANCEMENT_REPORT_20250905_084426_20250905_152459.json",
+          "size": 35342,
+          "modified": "2025-09-05T15:24:59.198785",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_STRUCTURE_SCAN_20250905_152410.json",
+          "size": 309312,
+          "modified": "2025-09-05T15:24:10.534916",
+          "category": "documentation"
+        },
+        {
+          "name": "CELLULAR_STRUCTURE_SCAN_20250905_154002.json",
+          "size": 311285,
+          "modified": "2025-09-05T15:40:02.520100",
+          "category": "documentation"
+        },
+        {
+          "name": "current_state.json",
+          "size": 311285,
+          "modified": "2025-09-05T15:40:02.520100",
+          "category": "documentation"
+        },
+        {
+          "name": "ULTIMATE_CELLULAR_STRUCTURE_SCAN.json",
+          "size": 8106,
+          "modified": "2025-09-05T21:24:01.091800",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_214119.json",
+        "size": 89608,
+        "modified": "2025-09-05T21:41:19.401161",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_212815.json",
+        "size": 89608,
+        "modified": "2025-09-05T21:28:15.018396",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_212412_RELOCATED_20250905_212624.json",
+        "size": 89593,
+        "modified": "2025-09-05T21:24:12.105631",
+        "category": "documentation"
+      },
+      {
+        "name": "ULTIMATE_CELLULAR_STRUCTURE_SCAN.json",
+        "size": 8106,
+        "modified": "2025-09-05T21:24:01.091800",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_STRUCTURE_SCAN_20250905_154002.json",
+        "size": 311285,
+        "modified": "2025-09-05T15:40:02.520100",
+        "category": "documentation"
+      },
+      {
+        "name": "current_state.json",
+        "size": 311285,
+        "modified": "2025-09-05T15:40:02.520100",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_INTELLIGENCE_ENHANCEMENT_REPORT_20250905_084426_20250905_152459.json",
+        "size": 35342,
+        "modified": "2025-09-05T15:24:59.198785",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_INTELLIGENCE_DIAGNOSTIC_REPORT_20250905_015932_20250905_152459.json",
+        "size": 81127,
+        "modified": "2025-09-05T15:24:59.154072",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_STRUCTURE_SCAN_20250905_152410.json",
+        "size": 309312,
+        "modified": "2025-09-05T15:24:10.534916",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 9,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 5,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 5
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > cellular_reports",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\cellular_reports' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\cellular_reports' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\cellular_reports' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

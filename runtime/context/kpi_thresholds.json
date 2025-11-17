@@ -1,0 +1,53 @@
+{
+  "capsule": "chatgpt-integration-2025-06-29",
+  "version": 5,
+  "generated_at": "2025-08-17T12:00:00Z",
+  "notes": "Baseline KPI thresholds derived from ingested integration capsule. Some KPIs currently unmeasured; harness will mark them as 'unmeasured' until instrumentation added.",
+  "kpis": {
+    "objective1": {
+      "ui_uptime_pct": { "min": 99.5 },
+      "state_restore_sec": { "max": 2.0 },
+      "metadata_rate_ctx_per_min": { "min": 1000 },
+      "render_fps": { "min": 60 }
+    },
+    "objective2": {
+      "entropy_quality_nist_score": { "min": 0.9 },
+      "mutation_effectiveness_pct": { "min": 80 },
+      "fractal_emergence_levels": { "min": 3 },
+      "cpp_python_latency_ms": { "max": 50 }
+    },
+    "objective3": {
+      "parallel_instances": { "min": 10 },
+      "fluctuation_rate_per_min_per_instance": { "min": 1 },
+      "pattern_propagation_beneficial_pct": { "min": 90 },
+      "autonomous_improvements_per_day": { "min": 5 }
+    },
+    "runtime_surrogates": {
+      "events_per_second": { "min": 0.1 },
+      "total_events": { "min": 10 }
+    },
+    "vision_metrics": {
+      "avg_consciousness_resonance": { "min": 0.1 },
+      "avg_coherence_level": { "min": 0.1 },
+      "avg_image_entropy": { "min": 0.5 },
+      "avg_enhanced_image_entropy": { "min": 0.5 },
+  "vision_cold_start_sec": { "max": 3.0 },
+  "vision_steady_state_sec": { "max": 0.12 },
+      "vision_first_frame_sec": { "max": 1.5 },
+      "max_emergence_probability": { "min": 0.2 }
+    },
+    "core_metrics": {
+      "core_cpu_pct_avg": { "max": 50 },
+      "core_cpu_pct_max": { "max": 90 },
+      "core_mem_mb_avg": { "max": 1024 },
+      "core_mem_mb_max": { "max": 1536 },
+      "core_frame_time_ms_avg": { "max": 40 },
+      "core_frame_time_ms_smoothing": { "max": 40 }
+    },
+    "evolution_metrics": {
+      "best_fitness": { "min": 0.45 },
+      "average_fitness": { "min": 0.40 },
+      "cycles_run": { "min": 1 }
+    }
+  }
+}

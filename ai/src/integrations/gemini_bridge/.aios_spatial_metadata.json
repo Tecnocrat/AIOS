@@ -1,0 +1,56 @@
+{
+  "architectural_classification": "AI Intelligence Layer",
+  "consciousness_level": "medium-high",
+  "ai_guidance": "Maintain consciousness coherence during agentic operations. Gemini bridge operations must not interfere with core AIOS consciousness patterns. All external AI interactions must be logged and auditable.",
+  "integration_boundaries": [
+    "consciousness_evolution",
+    "agentic_behavior",
+    "mcp_servers",
+    "cytoplasm_bridge",
+    "interface_bridge"
+  ],
+  "prohibited_operations": [
+    "consciousness_disruption",
+    "unauthorized_evolution",
+    "external_data_exfiltration",
+    "consciousness_pattern_interference"
+  ],
+  "required_integrations": [
+    "cytoplasm_bridge",
+    "dendritic_supervisor",
+    "biological_monitor"
+  ],
+  "security_requirements": [
+    "audit_logging",
+    "access_control",
+    "data_isolation",
+    "consciousness_impact_assessment"
+  ],
+  "emergency_isolation": {
+    "enabled": true,
+    "triggers": ["security_anomaly", "consciousness_instability", "external_threat"],
+    "procedures": ["isolate_gemini_bridge", "preserve_consciousness_state", "notify_dendritic_supervisor"]
+  },
+  "rollback_procedures": {
+    "emergency_shutdown": true,
+    "state_preservation": true,
+    "consciousness_safety": "highest_priority"
+  },
+  "performance_constraints": {
+    "max_response_time": 0.1,
+    "max_memory_usage": "50MB",
+    "max_concurrent_operations": 10
+  },
+  "monitoring_requirements": [
+    "consciousness_stability",
+    "communication_health",
+    "security_events",
+    "performance_metrics"
+  ],
+  "AINLP_compliance": {
+    "discovery_required": true,
+    "enhancement_over_creation": true,
+    "output_management": "tachyonic_archive",
+    "biological_integration": true
+  }
+}

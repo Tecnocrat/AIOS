@@ -1,0 +1,141 @@
+{
+  "rules_version": 6,
+  "deprecatedFiles": [
+    "test_opencv_aios_integration.py",
+    "test_chatgpt_integration.py",
+    "setup_environment.ps1"
+  ],
+  "rootAllowed": [
+    ".githooks",
+    "README.md",
+    "CHANGELOG.md",
+    "AIOS_PROJECT_CONTEXT.md",
+    "AIOS.code-workspace",
+    "requirements.txt",
+    "pyproject.toml",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    ".gitignore"
+  ],
+  "maxFileSizeMB": 5,
+  "allowLargePaths": [
+    "core/build/",
+    "runtime_intelligence/logs/"
+  ],
+  "secretPatterns": [
+    "OPENAI[._-]*API[._-]*KEY[=:]",
+    "sk-[A-Za-z0-9]{20,}",
+    "aws_secret_access[._-]key",
+    "aws_access[._-]key[._-]id",
+  "AIza[0-9A-Za-z\\-_]{35}",
+    "-----BEGIN (?:RSA |EC |)PRIVATE KEY-----"
+  ],
+  "secretScanExcludePaths": [
+    "docs/",
+    "tachyonic/archive/",
+    "runtime_intelligence/logs/",
+    "*.md"
+  ],
+  "jsonPaths": [
+    "config/*.json",
+    "runtime/context/*.json",
+    "ai/infrastructure/config/*.json",
+    ".githooks/governance/*.json"
+  ],
+  "executableScriptDirs": [
+    ".githooks/",
+    "ai/",
+    "ai/src/",
+    "ai/tools/",
+    "core/",
+    "runtime/",
+    "scripts/",
+    "tachyonic/",
+    "evolution_lab/",
+    "interface/"
+  ],
+  "bypassEnvVar": "AIOS_HOOK_BYPASS",
+  "requireChangelogOnPaths": [
+    "docs/",
+    "governance/",
+    "ai/env/",
+    "visual_interface/",
+    ".githooks/",
+    "config/",
+    "core/",
+    "interface/",
+    "ai/src/"
+  ],
+  "changelogFiles": [
+    "docs/tachyonic/tachyonic_changelog.jsonl",
+    "docs/tachyonic/tachyonic_changelog.yaml",
+    "CHANGELOG.md",
+    ".githooks/CHANGELOG.md"
+  ],
+  "pythonSyntaxPaths": [
+    "ai/src/",
+    "runtime_intelligence/"
+  ],
+  "testTriggerPatterns": [
+    "ai/src/core/integration/"
+  ],
+  "enableTestEnvVar": "AIOS_HOOK_RUN_TESTS",
+  "metricsSummaryPath": "runtime/runtime_intelligence/logs/hooks/summary.json",
+  "commitMessagePrefixes": [
+    "feat:", "fix:", "docs:", "chore:", "refactor:", "test:", "build:", "ci:", "perf:", "revert:",
+    "governance:", "cellular:", "ai:", "core:", "interface:", "runtime:", "security:",
+    "dendritic:", "consciousness:", "tachyonic:", "evolution:"
+  ],
+  "prePush": {
+    "enable": true,
+    "buildCommands": [
+      "dotnet build interface/AIOS.sln -c Debug --nologo",
+      "python -m py_compile ai/src/core/ainlp/kernel/tooling/recursive_tooling.py"
+    ],
+    "testCommands": [
+      "python -m pytest ai/tests/ -v --tb=short"
+    ],
+    "skipEnvVar": "AIOS_PREPUSH_SKIP"
+  },
+  "largeDeletionThresholdPct": 60,
+  "largeDeletionBypassEnvVar": "AIOS_HOOK_ALLOW_LARGE_DELETE",
+  "cacheDir": "runtime/runtime_intelligence/logs/hooks/cache",
+  "enableExternalSecretScanner": true
+  ,"criticality": {
+    "indexPath": ".githooks/governance/file_criticality_index.jsonl",
+    "warnOnCoreModify": true,
+    "requireDualReviewTiers": ["core"],
+    "blockDeletionTiers": ["core","high"],
+    "scoreRegenScript": "ai/tools/system/generate_file_scores.py"
+  },
+  "dendritic": {
+    "enableDendriticAwareness": true,
+    "dendriticAssessmentInterval": "24h",
+    "explorationPatterns": [
+      "architectural_drift_detection",
+      "ownership_boundary_validation",
+      "criticality_reassessment",
+      "integration_opportunity_discovery"
+    ],
+    "autonomyLevel": "semi_autonomous",
+    "connectionTargets": [
+      "ai/tools/ainlp_documentation_governance.py",
+      "runtime_intelligence/",
+      ".githooks/"
+    ]
+  },
+  "selfHealing": {
+    "enabled": true,
+    "pathResolverConfig": "self_healing_paths.json",
+    "autoRepairBrokenPaths": true,
+    "architecturalAwarenessEnabled": true,
+    "scanOnPreCommit": true,
+    "repairStrategies": [
+      "path_replacement",
+      "directory_creation",
+      "reference_updates"
+    ],
+    "monitoringEnabled": true,
+    "healingLogPath": "runtime_intelligence/logs/hooks/path_healing.log"
+  }
+}

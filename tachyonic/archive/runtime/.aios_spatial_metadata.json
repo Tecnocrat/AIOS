@@ -1,0 +1,345 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-25T15:03:49.866207",
+  "folder_info": {
+    "name": "runtime_intelligence",
+    "absolute_path": "C:\\dev\\AIOS\\runtime_intelligence",
+    "relative_path": "runtime_intelligence",
+    "parent_path": ".",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "Runtime Intelligence",
+    "secondary_areas": [],
+    "path_classification": [
+      "runtime_intelligence"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "computational_layer",
+      "config",
+      "core",
+      "docs",
+      "evolution_lab",
+      "interface",
+      "runtime",
+      "scripts",
+      "tachyonic",
+      "tachyonic_archive",
+      "venv",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "logs"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 3641197,
+      "file_count": 31,
+      "folder_count": 2,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": ".aios_spatial_metadata.json",
+          "size": 10927,
+          "modified": "2025-10-25T13:48:27.610076",
+          "category": "documentation"
+        },
+        {
+          "name": "ANALYSIS_CYTOPLASM_BRIDGE_REPORT_20250905_234048.json",
+          "size": 1340,
+          "modified": "2025-10-25T09:25:49.533631",
+          "category": "documentation"
+        },
+        {
+          "name": "ANALYSIS_CYTOPLASM_BRIDGE_REPORT_20250905_234114.json",
+          "size": 1341,
+          "modified": "2025-10-25T09:25:49.560632",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_BRIDGE_DEMO_REPORT_20250905_233412.json",
+          "size": 2824,
+          "modified": "2025-10-25T09:25:49.562630",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_AI_CONNECTIVITY_ANALYSIS_20250905_232628.json",
+          "size": 8884,
+          "modified": "2025-10-25T09:25:49.564628",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_AI_CONNECTIVITY_BLUEPRINT_20250905_232628.json",
+          "size": 5704,
+          "modified": "2025-10-25T09:25:49.566628",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.json",
+          "size": 5298,
+          "modified": "2025-10-25T09:25:49.568628",
+          "category": "documentation"
+        },
+        {
+          "name": "ENHANCED_CONNECTIVITY_SYSTEM_REPORT_20250905_234222.json",
+          "size": 3473,
+          "modified": "2025-10-25T09:25:49.570627",
+          "category": "documentation"
+        },
+        {
+          "name": "file_tracking_database.json",
+          "size": 627708,
+          "modified": "2025-10-25T09:25:49.634164",
+          "category": "documentation"
+        },
+        {
+          "name": "ORGANISM_STATE_SUPERCELL_20250905_230516_20250905_230547.json",
+          "size": 1389,
+          "modified": "2025-10-25T09:25:49.572628",
+          "category": "documentation"
+        },
+        {
+          "name": "SUPERCELL_TRANSPORT_BRIDGE_REPORT_20250905_233824.json",
+          "size": 1247,
+          "modified": "2025-10-25T09:25:49.577628",
+          "category": "documentation"
+        },
+        {
+          "name": "TACHYONIC_STORAGE_BRIDGE_REPORT_20250905_233631.json",
+          "size": 1019,
+          "modified": "2025-10-25T09:25:49.585627",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "aios_core_evolution_monitor.py",
+          "size": 26373,
+          "modified": "2025-10-25T09:25:49.586628",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_meta_evolutionary_enhancer.py",
+          "size": 3286,
+          "modified": "2025-10-25T09:25:49.588627",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 2747,
+          "modified": "2025-10-25T09:25:47.285246",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "dependency_report_20250906_002230.md",
+          "size": 0,
+          "modified": "2025-10-25T09:25:49.591636",
+          "category": "documentation"
+        },
+        {
+          "name": "dependency_report_20250906_004842.md",
+          "size": 0,
+          "modified": "2025-10-25T09:25:49.592627",
+          "category": "documentation"
+        },
+        {
+          "name": "dependency_report_20250906_005959.md",
+          "size": 3661,
+          "modified": "2025-10-25T09:25:49.594629",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 419,
+          "modified": "2025-10-25T09:25:49.575630",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 10927,
+        "modified": "2025-10-25T13:48:27.610076",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_core_evolution_monitor.py",
+        "size": 26373,
+        "modified": "2025-10-25T09:25:49.586628",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.py",
+        "size": 3286,
+        "modified": "2025-10-25T09:25:49.588627",
+        "category": "consciousness"
+      },
+      {
+        "name": "CONSCIOUSNESS_BRIDGE_DEMO_REPORT_20250905_233412.json",
+        "size": 2824,
+        "modified": "2025-10-25T09:25:49.562630",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_AI_CONNECTIVITY_ANALYSIS_20250905_232628.json",
+        "size": 8884,
+        "modified": "2025-10-25T09:25:49.564628",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_AI_CONNECTIVITY_BLUEPRINT_20250905_232628.json",
+        "size": 5704,
+        "modified": "2025-10-25T09:25:49.566628",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.json",
+        "size": 5298,
+        "modified": "2025-10-25T09:25:49.568628",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 419,
+        "modified": "2025-10-25T09:25:49.575630",
+        "category": "documentation"
+      },
+      {
+        "name": "__init__.py",
+        "size": 2747,
+        "modified": "2025-10-25T09:25:47.285246",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 10927,
+        "modified": "2025-10-25T13:48:27.610076",
+        "category": "documentation"
+      },
+      {
+        "name": "file_tracking_database.json",
+        "size": 627708,
+        "modified": "2025-10-25T09:25:49.634164",
+        "category": "documentation"
+      },
+      {
+        "name": "dependency_report_20250906_005959.md",
+        "size": 3661,
+        "modified": "2025-10-25T09:25:49.594629",
+        "category": "documentation"
+      },
+      {
+        "name": "dependency_report_20250906_004842.md",
+        "size": 0,
+        "modified": "2025-10-25T09:25:49.592627",
+        "category": "documentation"
+      },
+      {
+        "name": "dependency_report_20250906_002230.md",
+        "size": 0,
+        "modified": "2025-10-25T09:25:49.591636",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.py",
+        "size": 3286,
+        "modified": "2025-10-25T09:25:49.588627",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_evolution_monitor.py",
+        "size": 26373,
+        "modified": "2025-10-25T09:25:49.586628",
+        "category": "consciousness"
+      },
+      {
+        "name": "TACHYONIC_STORAGE_BRIDGE_REPORT_20250905_233631.json",
+        "size": 1019,
+        "modified": "2025-10-25T09:25:49.585627",
+        "category": "documentation"
+      },
+      {
+        "name": "SUPERCELL_TRANSPORT_BRIDGE_REPORT_20250905_233824.json",
+        "size": 1247,
+        "modified": "2025-10-25T09:25:49.577628",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 419,
+        "modified": "2025-10-25T09:25:49.575630",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 19,
+      "file_types": [
+        ".json",
+        ".py",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 7,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 80,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "runtime_intelligence",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs\\runtime_intelligence",
+      "tachyonic\\coordinator_backup_20250917_204932\\core\\runtime_intelligence",
+      "tachyonic\\coordinator_backup_20250917_204932\\interface\\runtime_intelligence",
+      "tachyonic\\coordinator_backup_20250917_204932\\interface\\AIOS.UI\\runtime_intelligence",
+      "tachyonic\\coordinator_backup_20250917_204932\\interface\\AIOS.UI\\bin\\Release\\net9.0-windows\\runtime_intelligence"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": true
+  }
+}

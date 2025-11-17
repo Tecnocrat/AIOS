@@ -1,0 +1,353 @@
+{
+  "timestamp": "2025-10-05T10:56:08.324381",
+  "workspace": "C:\\dev\\AIOS",
+  "summary": {
+    "total_json_files": 1202,
+    "total_jsonc_files": 3,
+    "violations": 44,
+    "valid_files": 1158,
+    "violation_rate": "3.7%",
+    "ainlp_compliant": 1
+  },
+  "violations": [
+    {
+      "path": "vscode-extension\\tsconfig.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 0.9169921875
+    },
+    {
+      "path": "ai\\infrastructure\\runtime\\logs\\githooks\\latest_orchestration.json",
+      "error": "Invalid JSON: Invalid \\escape: line 1 column 87 (char 86)",
+      "size_kb": 0.3037109375
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\runtime_intelligence\\logs\\quantum_dendritic_field_state_1759152567.json",
+      "error": "Invalid JSON: Expecting value: line 5456 column 19 (char 128918)",
+      "size_kb": 131.2236328125
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\runtime_intelligence\\logs\\quantum_dendritic_field_state_1759152601.json",
+      "error": "Invalid JSON: Expecting value: line 5456 column 19 (char 128897)",
+      "size_kb": 131.203125
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\runtime_intelligence\\logs\\quantum_dendritic_field_state_1759152669.json",
+      "error": "Invalid JSON: Expecting value: line 5456 column 19 (char 128870)",
+      "size_kb": 131.1767578125
+    },
+    {
+      "path": "core\\runtime_intelligence\\logs\\core\\core_metrics.json",
+      "error": "Invalid JSON: Extra data: line 2 column 1 (char 42)",
+      "size_kb": 0.2080078125
+    },
+    {
+      "path": "docs\\archive\\deprecated_root_docs\\compression\\ultimate_compression_report_20250710_224457.json",
+      "error": "Invalid JSON: Expecting value: line 40 column 9 (char 1157)",
+      "size_kb": 1.16796875
+    },
+    {
+      "path": "runtime_intelligence\\logs\\core\\core_metrics.json",
+      "error": "Invalid JSON: Extra data: line 2 column 1 (char 67)",
+      "size_kb": 0.197265625
+    },
+    {
+      "path": "runtime_intelligence\\logs\\general\\logs\\.aios_spatial_metadata.json",
+      "error": "Invalid JSON: Expecting ':' delimiter: line 1 column 129 (char 128)",
+      "size_kb": 1.310546875
+    },
+    {
+      "path": "runtime_intelligence\\logs\\general\\logs\\aios_intelligence_execution_completion_report_1757784862.json",
+      "error": "Invalid JSON: Extra data: line 1 column 583 (char 582)",
+      "size_kb": 1.94921875
+    },
+    {
+      "path": "runtime_intelligence\\logs\\general\\logs\\aios_intelligence_execution_report_intelligence_execution_1757784727.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 50 (char 49)",
+      "size_kb": 4.462890625
+    },
+    {
+      "path": "runtime_intelligence\\logs\\general\\logs\\tachyonic_evolution_summary_tachyonic_demo_1757783310.json",
+      "error": "Invalid JSON: Expecting ':' delimiter: line 1 column 78 (char 77)",
+      "size_kb": 2.390625
+    },
+    {
+      "path": "runtime_intelligence\\logs\\general\\logs\\three_supercell_coordination_completion_report_1757785580.json",
+      "error": "Invalid JSON: Expecting ':' delimiter: line 1 column 23 (char 22)",
+      "size_kb": 3.5361328125
+    },
+    {
+      "path": "runtime_intelligence\\logs\\general\\logs\\three_supercell_interface_optimization_three_supercell_opt_1757785345.json",
+      "error": "Invalid JSON: Expecting ':' delimiter: line 1 column 214 (char 213)",
+      "size_kb": 6.58203125
+    },
+    {
+      "path": "runtime_intelligence\\logs\\vision_demo\\repro\\opencv_demo_summary.json",
+      "error": "Invalid JSON: Expecting value: line 13 column 25 (char 456)",
+      "size_kb": 0.45703125
+    },
+    {
+      "path": "runtime_intelligence\\runtime\\runtime\\logs\\.aios_spatial_metadata.json",
+      "error": "Invalid JSON: Extra data: line 1 column 1849 (char 1848)",
+      "size_kb": 2.3232421875
+    },
+    {
+      "path": "runtime_intelligence\\runtime\\runtime\\logs\\debug_metadata_20250804.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 295 (char 294)",
+      "size_kb": 4.328125
+    },
+    {
+      "path": "runtime_intelligence\\runtime\\runtime\\logs\\cache\\1f3d8592fe8840b0.json",
+      "error": "Invalid JSON: Extra data: line 1 column 196 (char 195)",
+      "size_kb": 0.263671875
+    },
+    {
+      "path": "runtime_intelligence\\runtime\\runtime\\logs\\cache\\fractal_metadata.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 114 (char 113)",
+      "size_kb": 0.39453125
+    },
+    {
+      "path": "runtime_intelligence\\test_results\\test_results\\.aios_spatial_metadata.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 40 (char 39)",
+      "size_kb": 1.546875
+    },
+    {
+      "path": "runtime_intelligence\\test_results\\test_results\\enhanced_visual_intelligence_20250913_033632.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 258 (char 257)",
+      "size_kb": 3.22265625
+    },
+    {
+      "path": "runtime_intelligence\\test_results\\test_results\\integrated_visual_intelligence_20250913_032047.json",
+      "error": "Invalid JSON: Expecting ':' delimiter: line 1 column 147 (char 146)",
+      "size_kb": 2.2724609375
+    },
+    {
+      "path": "runtime_intelligence\\test_results\\test_results\\code_ingestion\\.aios_spatial_metadata.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 90 (char 89)",
+      "size_kb": 0.818359375
+    },
+    {
+      "path": "runtime_intelligence\\test_results\\test_results\\consciousness_analysis\\.aios_spatial_metadata.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 107 (char 106)",
+      "size_kb": 1.0283203125
+    },
+    {
+      "path": "tachyonic\\tachyonic_archive\\session_d9c4d37405e4.json",
+      "error": "Invalid JSON: Expecting value: line 10 column 7 (char 218)",
+      "size_kb": 0.2216796875
+    },
+    {
+      "path": "tachyonic\\archive\\discovery_indexes\\UPDATED_GLOBAL_INDEX_20250905_152134.json",
+      "error": "Invalid JSON: Expecting value: line 7 column 32 (char 240)",
+      "size_kb": 0.240234375
+    },
+    {
+      "path": "tachyonic\\archive\\discovery_indexes\\UPDATED_GLOBAL_INDEX_20250905_152311.json",
+      "error": "Invalid JSON: Expecting value: line 7 column 32 (char 240)",
+      "size_kb": 0.240234375
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\metabolized_patterns\\docs_metabolized_architectural_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 11020.7412109375
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\metabolized_patterns\\docs_metabolized_behavioral_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 10679.3828125
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\metabolized_patterns\\docs_metabolized_consciousness_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 1985.1484375
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\metabolized_patterns\\docs_metabolized_integration_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 5991.4287109375
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\supercell_knowledge_crystals\\docs_metabolized_architectural_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 11021.0048828125
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\supercell_knowledge_crystals\\docs_metabolized_behavioral_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 10679.6435546875
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\supercell_knowledge_crystals\\docs_metabolized_consciousness_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 1985.412109375
+    },
+    {
+      "path": "tachyonic\\archive\\consciousness\\supercell_knowledge_crystals\\docs_metabolized_integration_20250913_165332.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 5991.6904296875
+    },
+    {
+      "path": "tachyonic\\archive\\conversation_data\\archive\\json\\vscopilot_20250629_211934.json",
+      "comment_lines": 0,
+      "line_numbers": [],
+      "size_kb": 280.69921875
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai\\cytoplasm\\runtime\\logs\\debug_metadata_20250827.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 169 (char 168)",
+      "size_kb": 1.2041015625
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai\\cytoplasm\\runtime\\logs\\debug_metadata_20250828.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 169 (char 168)",
+      "size_kb": 5.6162109375
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai\\cytoplasm\\runtime\\logs\\cache\\f98c54bfba542fa1.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 225 (char 224)",
+      "size_kb": 0.34765625
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai\\cytoplasm\\runtime\\logs\\cache\\fractal_metadata.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 112 (char 111)",
+      "size_kb": 0.421875
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai\\cytoplasm\\runtime\\logs\\githooks\\latest_orchestration.json",
+      "error": "Invalid JSON: Invalid \\escape: line 1 column 87 (char 86)",
+      "size_kb": 0.3037109375
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai\\membrane\\aios_vscode_integration\\runtime\\logs\\debug_metadata_20250827.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 169 (char 168)",
+      "size_kb": 0.248046875
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\ai\\membrane\\aios_vscode_integration\\runtime\\logs\\debug_metadata_20250828.json",
+      "error": "Invalid JSON: Expecting ',' delimiter: line 1 column 169 (char 168)",
+      "size_kb": 1.998046875
+    },
+    {
+      "path": "tachyonic\\archive\\coordinator_backup_20250917_204932\\core\\runtime_intelligence\\logs\\core\\core_metrics.json",
+      "error": "Invalid JSON: Extra data: line 2 column 1 (char 42)",
+      "size_kb": 0.2080078125
+    }
+  ],
+  "valid_files": [
+    {
+      "path": ".aios_context.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 9.1640625
+    },
+    {
+      "path": ".aios_spatial_metadata.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 2.4052734375
+    },
+    {
+      "path": "paradigms_extracted_test.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 52.51171875
+    },
+    {
+      "path": ".githooks\\.aios_spatial_metadata.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 1.8046875
+    },
+    {
+      "path": ".githooks\\ai_visual_requirement.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 0.4580078125
+    },
+    {
+      "path": ".githooks\\config.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 0.6279296875
+    },
+    {
+      "path": ".github\\.aios_spatial_metadata.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 3.91015625
+    },
+    {
+      "path": ".pytest_cache\\.aios_spatial_metadata.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 3.3271484375
+    },
+    {
+      "path": ".vscode\\.aios_spatial_metadata.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 5.8310546875
+    },
+    {
+      "path": ".vscode\\ai_refactoring_settings.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 0.3671875
+    },
+    {
+      "path": ".vscode\\auto-launch.json",
+      "has_ainlp_metadata": true,
+      "size_kb": 1.29296875
+    },
+    {
+      "path": ".vscode\\launch.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 4.3017578125
+    },
+    {
+      "path": ".vscode\\mcp.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 0.03515625
+    },
+    {
+      "path": ".vscode\\tasks.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 15.8056640625
+    },
+    {
+      "path": "ai\\.aios_spatial_metadata.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 10.9228515625
+    },
+    {
+      "path": "config\\system.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 1.400390625
+    },
+    {
+      "path": "core\\.aios_spatial_metadata.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 10.2607421875
+    },
+    {
+      "path": "core\\AINLP_DIRECTIVE_COMPLIANCE_REPORT_20250923_002409.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 3.0703125
+    },
+    {
+      "path": "core\\aios_core_runtime_analysis.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 17.3212890625
+    },
+    {
+      "path": "core\\aios_file_creation_log.json",
+      "has_ainlp_metadata": false,
+      "size_kb": 0.173828125
+    }
+  ],
+  "recommendations": [
+    "\ud83d\udd27 Fix 44 JSON files with comments:",
+    "   1. VS Code configs \u2192 Rename .json to .jsonc",
+    "   2. Data files \u2192 Convert comments to semantic metadata",
+    "\n\ud83d\udccb Add AINLP metadata to 1157 valid JSON files",
+    "   Use: runtime_intelligence/tools/ainlp_json_metadata.py"
+  ]
+}

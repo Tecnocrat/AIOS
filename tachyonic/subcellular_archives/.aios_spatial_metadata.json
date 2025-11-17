@@ -1,0 +1,120 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:42.314069",
+  "folder_info": {
+    "name": "subcellular_archives",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\subcellular_archives",
+    "relative_path": "tachyonic\\archive\\subcellular_archives",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "subcellular_archives"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis_reports",
+      "backups",
+      "bosonic_substrate",
+      "cellular_reports",
+      "cleanup_reports",
+      "code_preservation",
+      "configurations",
+      "consciousness",
+      "consciousness_evolution",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "discovery_indexes",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "evolutionary_snapshots",
+      "fractal_abstracts",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "quantum",
+      "root_optimization",
+      "root_optimization_analysis",
+      "structure_analysis",
+      "synth_dna_replicators",
+      "temporal",
+      "temporal_snapshots",
+      "version_analysis"
+    ],
+    "child_folders": [
+      "analysis_tools"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 225786,
+      "file_count": 14,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 11,
+      "consciousness_files": 11,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > subcellular_archives",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\subcellular_archives' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\subcellular_archives' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\subcellular_archives' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

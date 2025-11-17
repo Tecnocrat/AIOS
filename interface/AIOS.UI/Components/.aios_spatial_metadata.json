@@ -1,0 +1,121 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:37:10.127607",
+  "folder_info": {
+    "name": "Components",
+    "absolute_path": "C:\\dev\\AIOS\\interface\\AIOS.UI\\Components",
+    "relative_path": "interface\\AIOS.UI\\Components",
+    "parent_path": "interface\\AIOS.UI",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "interface",
+      "AIOS.UI",
+      "Components"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "Controls",
+      "Infrastructure",
+      "bin",
+      "generated",
+      "obj",
+      "runtime_intelligence",
+      "web",
+      "wwwroot"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 23643,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".razor": [
+        {
+          "name": "LibraryGenerationDashboard.razor",
+          "size": 23643,
+          "modified": "2025-10-04T13:29:56.450352",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "LibraryGenerationDashboard.razor",
+        "size": 23643,
+        "modified": "2025-10-04T13:29:56.450352",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".razor"
+      ],
+      "dominant_type": ".razor"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "interface > AIOS.UI > Components",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI\\Components' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI\\Components' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\interface\\AIOS.UI\\Components' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "interface",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces",
+      "vscode-extension\\node_modules\\mocha\\lib\\interfaces",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\src\\cache\\interface",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\lib\\types\\cache\\interface",
+      "interface\\AIOS.UI",
+      "venv\\Lib\\site-packages\\networkx\\algorithms\\components"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

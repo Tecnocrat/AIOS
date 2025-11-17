@@ -1,0 +1,157 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:28:52.677329",
+  "folder_info": {
+    "name": "governance",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\governance",
+    "relative_path": "docs\\governance",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "GitHook Architecture"
+    ],
+    "path_classification": [
+      "docs",
+      "governance"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "Architect",
+      "architecture",
+      "archival",
+      "archive",
+      "build",
+      "changelogs",
+      "completion",
+      "consciousness",
+      "development",
+      "evolution_lab",
+      "guides",
+      "integration",
+      "intelligence",
+      "languages",
+      "libraries",
+      "refactoring",
+      "reference",
+      "reports",
+      "runtime",
+      "runtime_intelligence",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "theoretical",
+      "ui",
+      "vscopilot chat"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 302555,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".jsonl": [
+        {
+          "name": "file_criticality_index.jsonl",
+          "size": 301003,
+          "modified": "2025-10-02T23:07:49.474367",
+          "category": "other"
+        }
+      ],
+      ".md": [
+        {
+          "name": "RELOCATION_MARKER.md",
+          "size": 1552,
+          "modified": "2025-10-04T23:42:26.481569",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "file_criticality_index.jsonl",
+        "size": 301003,
+        "modified": "2025-10-02T23:07:49.474367",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "RELOCATION_MARKER.md",
+        "size": 1552,
+        "modified": "2025-10-04T23:42:26.481569",
+        "category": "documentation"
+      },
+      {
+        "name": "file_criticality_index.jsonl",
+        "size": 301003,
+        "modified": "2025-10-02T23:07:49.474367",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".jsonl",
+        ".md"
+      ],
+      "dominant_type": ".jsonl"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "file_criticality_index.jsonl"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "docs > governance",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\governance' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\governance' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\governance' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      ".githooks\\governance"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

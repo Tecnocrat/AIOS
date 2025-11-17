@@ -1,0 +1,119 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:39.388537",
+  "folder_info": {
+    "name": "audits",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\metadata\\audits",
+    "relative_path": "tachyonic\\metadata\\audits",
+    "parent_path": "tachyonic\\metadata",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "metadata",
+      "audits"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "harmonization",
+      "integrations",
+      "sessions",
+      "supercell",
+      "vscode"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 27997,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "json_audit_20251005_105019.json",
+          "size": 14232,
+          "modified": "2025-10-05T10:50:19.199191",
+          "category": "documentation"
+        },
+        {
+          "name": "json_audit_20251005_105608.json",
+          "size": 13765,
+          "modified": "2025-10-05T10:56:08.336387",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "json_audit_20251005_105608.json",
+        "size": 13765,
+        "modified": "2025-10-05T10:56:08.336387",
+        "category": "documentation"
+      },
+      {
+        "name": "json_audit_20251005_105019.json",
+        "size": 14232,
+        "modified": "2025-10-05T10:50:19.199191",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > metadata > audits",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\audits' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\audits' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\metadata\\audits' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\conversation_metadata"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

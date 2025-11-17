@@ -1,0 +1,92 @@
+{
+  "cleanup_timestamp": "2025-09-05T21:28:13.472902",
+  "analysis_results": {
+    "files_to_move": [
+      {
+        "file": "aios_dendritic.py",
+        "current_path": "C:\\dev\\AIOS\\core\\aios_dendritic.py",
+        "destination_subfolder": "evolutionary_assembler_iter2/meta_evolution",
+        "reason": "Dendritic network functionality belongs in evolutionary_assembler_iter2/meta_evolution"
+      }
+    ],
+    "files_to_keep_in_root": [],
+    "subfolder_destinations": {
+      "aios_dendritic.py": "evolutionary_assembler_iter2/meta_evolution"
+    },
+    "cleanup_recommendations": [
+      "Move functional logic files to appropriate subfolders",
+      "Create index/linking files in root for moved functionality",
+      "Update AI ingestion navigation system",
+      "Maintain clean separation between coordination and implementation"
+    ]
+  },
+  "move_operations": {
+    "moves_attempted": 1,
+    "moves_successful": 1,
+    "moves_failed": [],
+    "moved_files": [
+      {
+        "file": "aios_dendritic.py",
+        "from": "C:\\dev\\AIOS\\core",
+        "to": "C:\\dev\\AIOS\\core\\evolutionary_assembler_iter2\\meta_evolution",
+        "reason": "Dendritic network functionality belongs in evolutionary_assembler_iter2/meta_evolution"
+      }
+    ],
+    "backup_created": [
+      "C:\\dev\\AIOS\\core\\aios_dendritic.backup_20250905_212813"
+    ]
+  },
+  "index_creation": {
+    "indexes_created": [
+      "C:\\dev\\AIOS\\core\\RELOCATED_DENDRITIC_NETWORK_INDEX.json"
+    ],
+    "navigation_files": [],
+    "ai_ingestion_pointers": {
+      "cellular_intelligence_tools": "analysis_tools/aios_cellular_*.py",
+      "consciousness_integration": "evolutionary_assembler_iter2/consciousness_layer/aios_consciousness_*.py",
+      "dendritic_network": "evolutionary_assembler_iter2/meta_evolution/aios_dendritic_*.py",
+      "core_monitoring": "runtime_intelligence/aios_*_monitor*.py"
+    }
+  },
+  "cleanup_verification": {
+    "root_files_remaining": [],
+    "proper_organization_verified": true,
+    "navigation_system_functional": false,
+    "ai_ingestion_ready": false,
+    "verification_issues": [
+      "Navigation system missing from root",
+      "AI ingestion index missing"
+    ]
+  },
+  "cleanup_summary": {
+    "cleanup_status": "completed",
+    "organizational_transformation": {
+      "files_moved": 1,
+      "files_failed": 0,
+      "backups_created": 1,
+      "organization_improved": true
+    },
+    "file_relocation_results": {
+      "cellular_intelligence": "Moved to analysis_tools/",
+      "consciousness_integration": "Moved to evolutionary_assembler_iter2/consciousness_layer/",
+      "dendritic_network": "Moved to evolutionary_assembler_iter2/meta_evolution/",
+      "core_monitoring": "Moved to runtime_intelligence/"
+    },
+    "navigation_system_status": {
+      "navigator_in_root": false,
+      "ai_ingestion_index_ready": false,
+      "proper_organization": true
+    },
+    "ai_ingestion_readiness": {
+      "navigation_pointers_created": true,
+      "component_indexes_available": true,
+      "clean_root_directory": true
+    },
+    "next_steps": [
+      "Use navigator.get_component() to access subfolder functionality",
+      "Reference AI_INGESTION_POINTERS.json for component locations",
+      "Maintain clean separation between root (navigation) and subfolders (implementation)",
+      "Continue using organized subfolder structure for new functionality"
+    ]
+  }
+}

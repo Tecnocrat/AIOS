@@ -1,0 +1,245 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:52.109411",
+  "folder_info": {
+    "name": "checkpoints",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\checkpoints",
+    "relative_path": "tachyonic\\tachyonic_development_archive\\checkpoints",
+    "parent_path": "tachyonic\\tachyonic_development_archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Tachyonic Archive"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "tachyonic_development_archive",
+      "checkpoints"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "context_maps",
+      "development_logs"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 16387,
+      "file_count": 15,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "checkpoint_20250906_154520.json",
+          "size": 742,
+          "modified": "2025-09-06T15:45:20.612412",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_163704.json",
+          "size": 786,
+          "modified": "2025-09-06T16:37:04.666140",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_163917.json",
+          "size": 722,
+          "modified": "2025-09-06T16:39:17.954390",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_164301.json",
+          "size": 923,
+          "modified": "2025-09-06T16:43:01.393711",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_164844.json",
+          "size": 1020,
+          "modified": "2025-09-06T16:48:44.060445",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_175536.json",
+          "size": 742,
+          "modified": "2025-09-06T17:55:36.451124",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_180132.json",
+          "size": 714,
+          "modified": "2025-09-06T18:01:32.098839",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_183454.json",
+          "size": 714,
+          "modified": "2025-09-06T18:34:54.895531",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_192015.json",
+          "size": 714,
+          "modified": "2025-09-06T19:20:15.980396",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_192154.json",
+          "size": 617,
+          "modified": "2025-09-06T19:21:54.966102",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_193346.json",
+          "size": 849,
+          "modified": "2025-09-06T19:33:46.662294",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_194206.json",
+          "size": 802,
+          "modified": "2025-09-06T19:42:06.084383",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_194213.json",
+          "size": 617,
+          "modified": "2025-09-06T19:42:13.041659",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_195000_enhanced.json",
+          "size": 2902,
+          "modified": "2025-09-06T23:25:52.179934",
+          "category": "documentation"
+        },
+        {
+          "name": "checkpoint_20250906_200500_unified_complete.json",
+          "size": 3523,
+          "modified": "2025-09-06T23:36:03.229823",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "checkpoint_20250906_200500_unified_complete.json",
+        "size": 3523,
+        "modified": "2025-09-06T23:36:03.229823",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_195000_enhanced.json",
+        "size": 2902,
+        "modified": "2025-09-06T23:25:52.179934",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_194213.json",
+        "size": 617,
+        "modified": "2025-09-06T19:42:13.041659",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_194206.json",
+        "size": 802,
+        "modified": "2025-09-06T19:42:06.084383",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_193346.json",
+        "size": 849,
+        "modified": "2025-09-06T19:33:46.662294",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_192154.json",
+        "size": 617,
+        "modified": "2025-09-06T19:21:54.966102",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_192015.json",
+        "size": 714,
+        "modified": "2025-09-06T19:20:15.980396",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_183454.json",
+        "size": 714,
+        "modified": "2025-09-06T18:34:54.895531",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_180132.json",
+        "size": 714,
+        "modified": "2025-09-06T18:01:32.098839",
+        "category": "documentation"
+      },
+      {
+        "name": "checkpoint_20250906_175536.json",
+        "size": 742,
+        "modified": "2025-09-06T17:55:36.451124",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 15,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tachyonic_development_archive > checkpoints",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\checkpoints' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\checkpoints' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\checkpoints' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "tachyonic\\tachyonic_development_archive",
+      "tachyonic\\tachyonic_development_archive\\context_maps\\unified_checkpoints"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

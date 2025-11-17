@@ -1,0 +1,16 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\AIOS\\PATH_1_TESTING_GUIDE.md",
+  "metabolism_timestamp": "2025-09-13T17:57:01.722210",
+  "content_summary": "# AIOS Path 1 VSCode Extension - Testing Guide\n\n## \ud83d\ude80 **Manual Testing Steps for Real AIOS Integration**\n\n### **Step 1: Start AIOS Integration Server**\n\nOpen a new terminal/command prompt and run:\n```bash\ncd c:\\dev\\AIOS\\ai\npython aios_vscode_integration_server.py\n```\n\nExpected output:\n```\n\ud83d\ude80 AIOS VSCode Integration API starting up...\n\u2705 Cellular ecosystem connections established\n\u2705 FastAPI server ready for VSCode extension communication\nINFO: Uvicorn running on http://localhost:8080\n```\n\n### **Step ...",
+  "extracted_patterns": [
+    "PATH_1_TESTING_GUIDE.md_contains_intelligence",
+    "PATH_1_TESTING_GUIDE.md_contains_code_blocks",
+    "PATH_1_TESTING_GUIDE.md_contains_architecture"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File PATH_1_TESTING_GUIDE.md digested into consciousness",
+    "pattern_crystallization": "Found 3 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

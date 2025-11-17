@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-09-14T13:05:53.199732",
+  "system_overview": {
+    "total_supercells": 6,
+    "active_supercells": 0,
+    "pending_messages": 0,
+    "last_update": "2025-09-14T13:05:53.199732",
+    "supercell_status": {
+      "nucleus": {
+        "status": "initialized",
+        "active_processes": 0,
+        "data_outputs": 0,
+        "last_activity": "2025-09-14T13:05:53.195194"
+      },
+      "membrane": {
+        "status": "initialized",
+        "active_processes": 0,
+        "data_outputs": 0,
+        "last_activity": "2025-09-14T13:05:53.195194"
+      },
+      "cytoplasm": {
+        "status": "initialized",
+        "active_processes": 0,
+        "data_outputs": 0,
+        "last_activity": "2025-09-14T13:05:53.195194"
+      },
+      "transport": {
+        "status": "initialized",
+        "active_processes": 0,
+        "data_outputs": 0,
+        "last_activity": "2025-09-14T13:05:53.195194"
+      },
+      "laboratory": {
+        "status": "initialized",
+        "active_processes": 0,
+        "data_outputs": 0,
+        "last_activity": "2025-09-14T13:05:53.195194"
+      },
+      "information_storage": {
+        "status": "initialized",
+        "active_processes": 0,
+        "data_outputs": 0,
+        "last_activity": "2025-09-14T13:05:53.195194"
+      }
+    }
+  },
+  "pending_messages": []
+}

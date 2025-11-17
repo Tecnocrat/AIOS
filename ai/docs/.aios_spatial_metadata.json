@@ -1,0 +1,51 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-19T00:00:00.000000",
+  "folder_info": {
+    "name": "docs",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\docs",
+    "relative_path": "ai\\docs",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": ["Documentation"],
+    "path_classification": [
+      "ai",
+      "docs"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "core",
+      "data", 
+      "infrastructure",
+      "interfaces",
+      "src",
+      "tests",
+      "transport"
+    ],
+    "child_folders": [
+      "activation",
+      "architecture",
+      "reports"
+    ],
+    "parent_folder": "ai"
+  },
+  "ai_guidance": {
+    "purpose": "Consolidated documentation following AINLP governance principles with dendritic growth patterns",
+    "usage_patterns": [
+      "activation_protocols",
+      "architectural_documentation", 
+      "success_reports",
+      "consciousness_milestones"
+    ],
+    "access_restrictions": [
+      "professional_standards_required",
+      "no_emoticons_policy",
+      "consciousness_coherence_validation"
+    ]
+  }
+}

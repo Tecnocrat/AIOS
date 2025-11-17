@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2478.35" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+        <PackageReference Include="System.Text.Json" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\AIOS.Services\AIOS.Services.csproj" />
+        <ProjectReference Include="..\AIOS.Models\AIOS.Models.csproj" />
+    </ItemGroup>
+
+    <!-- Include only working files -->
+    <ItemGroup>
+        <Compile Include="App.xaml.cs" />
+        <Compile Include="SimpleMainWindow.xaml.cs" />
+        <Compile Include="AssemblyInfo.cs" />
+        <Compile Include="Infrastructure\HeadlessHost.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Single application definition retained; simplify by treating App.xaml as Page to avoid multi ApplicationDefinition conflicts -->
+        <Page Include="App.xaml" />
+        <Page Include="SimpleMainWindow.xaml" />
+    </ItemGroup>
+
+</Project>

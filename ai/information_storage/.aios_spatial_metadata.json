@@ -1,0 +1,203 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:25.397160",
+  "folder_info": {
+    "name": "information_storage",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\information_storage",
+    "relative_path": "ai\\information_storage",
+    "parent_path": "ai",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "information_storage"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".pytest_cache",
+      "__pycache__",
+      "cytoplasm",
+      "laboratory",
+      "membrane",
+      "nucleus",
+      "src",
+      "tests",
+      "tools",
+      "transport"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "docs"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 31721,
+      "file_count": 8,
+      "folder_count": 2,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "CONSOLIDATION_PLAN.md",
+          "size": 18399,
+          "modified": "2025-09-15T22:05:40.205312",
+          "category": "documentation"
+        },
+        {
+          "name": "DEPENDENCY_ANALYSIS.md",
+          "size": 1608,
+          "modified": "2025-09-15T22:05:40.653664",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 708,
+          "modified": "2025-09-15T22:05:42.230912",
+          "category": "documentation"
+        },
+        {
+          "name": "README_MAIN.md",
+          "size": 337,
+          "modified": "2025-09-15T22:05:42.343899",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "information_storage_intelligence.py",
+          "size": 7083,
+          "modified": "2025-09-15T22:05:41.887805",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 235,
+          "modified": "2025-09-15T22:05:42.366896",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 708,
+        "modified": "2025-09-15T22:05:42.230912",
+        "category": "documentation"
+      },
+      {
+        "name": "README_MAIN.md",
+        "size": 337,
+        "modified": "2025-09-15T22:05:42.343899",
+        "category": "documentation"
+      },
+      {
+        "name": "__init__.py",
+        "size": 235,
+        "modified": "2025-09-15T22:05:42.366896",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 235,
+        "modified": "2025-09-15T22:05:42.366896",
+        "category": "consciousness"
+      },
+      {
+        "name": "README_MAIN.md",
+        "size": 337,
+        "modified": "2025-09-15T22:05:42.343899",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 708,
+        "modified": "2025-09-15T22:05:42.230912",
+        "category": "documentation"
+      },
+      {
+        "name": "information_storage_intelligence.py",
+        "size": 7083,
+        "modified": "2025-09-15T22:05:41.887805",
+        "category": "consciousness"
+      },
+      {
+        "name": "DEPENDENCY_ANALYSIS.md",
+        "size": 1608,
+        "modified": "2025-09-15T22:05:40.653664",
+        "category": "documentation"
+      },
+      {
+        "name": "CONSOLIDATION_PLAN.md",
+        "size": 18399,
+        "modified": "2025-09-15T22:05:40.205312",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 6,
+      "file_types": [
+        ".md",
+        ".py"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 3,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "README_MAIN.md",
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > information_storage",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\information_storage' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\information_storage' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\information_storage' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      ".githooks\\modules\\information_storage"
+    ]
+  }
+}

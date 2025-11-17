@@ -1,0 +1,165 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:25.251712",
+  "folder_info": {
+    "name": "hydrolang",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\AINLP\\hydrolang",
+    "relative_path": "docs\\AINLP\\hydrolang",
+    "parent_path": "docs\\AINLP",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "AI Intelligence Layer"
+    ],
+    "path_classification": [
+      "docs",
+      "AINLP",
+      "hydrolang"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "compliance",
+      "core",
+      "distillation",
+      "evolution",
+      "frameworks",
+      "integration",
+      "meta",
+      "principles"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 130913,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "HYDROLANG_IMPLEMENTATION_SPEC_v0.3.0.md",
+          "size": 37001,
+          "modified": "2025-10-15T08:30:31.317368",
+          "category": "documentation"
+        },
+        {
+          "name": "HYDROLANG_INDEX.md",
+          "size": 12591,
+          "modified": "2025-10-15T00:02:32.777317",
+          "category": "documentation"
+        },
+        {
+          "name": "HYDROLANG_LINGUISTIC_DEOBFUSCATION_v0.2.0.md",
+          "size": 46849,
+          "modified": "2025-10-14T23:53:53.312171",
+          "category": "documentation"
+        },
+        {
+          "name": "HYDROLANG_META_AI_LANGUAGE_v0.1.0.md",
+          "size": 34472,
+          "modified": "2025-10-14T23:38:38.747459",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "HYDROLANG_INDEX.md",
+        "size": 12591,
+        "modified": "2025-10-15T00:02:32.777317",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "HYDROLANG_IMPLEMENTATION_SPEC_v0.3.0.md",
+        "size": 37001,
+        "modified": "2025-10-15T08:30:31.317368",
+        "category": "documentation"
+      },
+      {
+        "name": "HYDROLANG_INDEX.md",
+        "size": 12591,
+        "modified": "2025-10-15T00:02:32.777317",
+        "category": "documentation"
+      },
+      {
+        "name": "HYDROLANG_LINGUISTIC_DEOBFUSCATION_v0.2.0.md",
+        "size": 46849,
+        "modified": "2025-10-14T23:53:53.312171",
+        "category": "documentation"
+      },
+      {
+        "name": "HYDROLANG_META_AI_LANGUAGE_v0.1.0.md",
+        "size": 34472,
+        "modified": "2025-10-14T23:38:38.747459",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "HYDROLANG_INDEX.md"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "docs > AINLP > hydrolang",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AINLP\\hydrolang' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AINLP\\hydrolang' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\AINLP\\hydrolang' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\AINLP"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

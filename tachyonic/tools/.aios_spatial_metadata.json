@@ -1,0 +1,169 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:33:47.368023",
+  "folder_info": {
+    "name": "tools",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tools",
+    "relative_path": "tachyonic\\tools",
+    "parent_path": "tachyonic",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "tools"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS_root_cells",
+      "__pycache__",
+      "agentic_conversations",
+      "ai_engine_handoffs",
+      "ai_engine_knowledge",
+      "ainlp",
+      "analysis_reports",
+      "architecture",
+      "archive",
+      "backups",
+      "boot_reports",
+      "bosonic_substrate",
+      "cellular_reports",
+      "changelog",
+      "cleanup_reports",
+      "code_preservation",
+      "consciousness",
+      "conversation_data",
+      "conversation_metadata",
+      "conversations",
+      "coordinator_backup_20250917_204932",
+      "cpp_stl_knowledge",
+      "database",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "design_mockups",
+      "development_fixes",
+      "development_history",
+      "development_success",
+      "discovery_indexes",
+      "docs_archive",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_chains",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "experiment_metadata",
+      "extracted_paradigms",
+      "genetics",
+      "hydro_files",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "integration_optimization",
+      "integration_validation",
+      "intelligence_reports",
+      "knowledge_crystals",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "orchestration",
+      "paths",
+      "quality_reports",
+      "quantum",
+      "reports",
+      "repository_ingestions",
+      "revolutionary_sessions",
+      "rollback_snapshots",
+      "root_optimization",
+      "root_optimization_analysis",
+      "runtime_intelligence",
+      "self_improvement_cycles",
+      "self_improvement_reports",
+      "sessions",
+      "setup_guides",
+      "shadows",
+      "snapshots",
+      "structure_analysis",
+      "subcellular_archives",
+      "supercells",
+      "tachyonic",
+      "tachyonic_archive",
+      "tachyonic_development_archive",
+      "temporal",
+      "test_results",
+      "version_analysis",
+      "workflows"
+    ],
+    "child_folders": [
+      "demos",
+      "documentation",
+      "ingestors",
+      "interfaces",
+      "orchestrators",
+      "utilities"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 525805,
+      "file_count": 28,
+      "folder_count": 6,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 10,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tools",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "ai\\tools"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

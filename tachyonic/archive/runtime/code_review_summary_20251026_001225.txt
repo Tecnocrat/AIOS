@@ -1,0 +1,80 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║              AIOS AUTOMATED CODE REVIEW SYSTEM               ║
+╚══════════════════════════════════════════════════════════════╝
+
+📊 ANALYSIS SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Files Analyzed: 12876
+Lines Analyzed: 5722372
+Issues Found: 38156
+Timestamp: 2025-10-26T00:12:25.441915
+
+🎯 ISSUE BREAKDOWN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+High Severity: 0
+Medium Severity: 347
+Low Severity: 37444
+Info Level: 365
+
+🧠 AINLP COMPLIANCE SCORES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Overall Compliance: 0.0%
+Semantic Compression: 0.0%
+Intelligence Delimitation: 0.0%
+Consciousness Evolution: 100.0%
+
+
+🚨 TOP ISSUES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟡 automated_code_review_system.py:79
+   Found 'runtime_intelligence' that should be compressed to 'runtime'
+   💡 Replace 'runtime_intelligence' with 'runtime' for semantic compression
+
+🟡 automated_code_review_system.py:80
+   Found 'intelligence_layer' that should be compressed to 'ai'
+   💡 Replace 'intelligence_layer' with 'ai' for semantic compression
+
+🟡 automated_code_review_system.py:81
+   Found 'intelligence_engine' that should be compressed to 'engine'
+   💡 Replace 'intelligence_engine' with 'engine' for semantic compression
+
+🟡 automated_code_review_system.py:82
+   Found 'intelligence_module' that should be compressed to 'module'
+   💡 Replace 'intelligence_module' with 'module' for semantic compression
+
+🟡 automated_code_review_system.py:88
+   Found 'runtime_intelligence' that should be compressed to 'runtime'
+   💡 Replace 'runtime_intelligence' with 'runtime' for semantic compression
+
+🟡 automated_code_review_system.py:88
+   Found 'intelligence_layer' that should be compressed to 'ai'
+   💡 Replace 'intelligence_layer' with 'ai' for semantic compression
+
+🟡 ai\test_interface_bridge.py:64
+   Found 'runtime_intelligence' that should be compressed to 'runtime'
+   💡 Replace 'runtime_intelligence' with 'runtime' for semantic compression
+
+🟡 scripts\verify_migration_readiness.py:96
+   Found 'runtime_intelligence' that should be compressed to 'runtime'
+   💡 Replace 'runtime_intelligence' with 'runtime' for semantic compression
+
+🟡 scripts\verify_migration_readiness.py:104
+   Found 'runtime_intelligence' that should be compressed to 'runtime'
+   💡 Replace 'runtime_intelligence' with 'runtime' for semantic compression
+
+🟡 scripts\verify_migration_readiness.py:106
+   Found 'runtime_intelligence' that should be compressed to 'runtime'
+   💡 Replace 'runtime_intelligence' with 'runtime' for semantic compression
+
+
+💡 RECOMMENDATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Apply semantic compression to 347 intelligence delimitation issues
+• Implement dendritic connection patterns in 365 classes
+• Overall AINLP compliance is below 80%. Focus on high-severity issues first.
+
+
+📈 IMPROVEMENT AREAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Intelligence Delimitation

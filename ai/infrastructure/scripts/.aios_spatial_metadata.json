@@ -1,0 +1,224 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:17.576362",
+  "folder_info": {
+    "name": "scripts",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\cytoplasm\\scripts",
+    "relative_path": "ai\\cytoplasm\\scripts",
+    "parent_path": "ai\\cytoplasm",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "cytoplasm",
+      "scripts"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "config",
+      "deps",
+      "env",
+      "runtime",
+      "tools"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 74725,
+      "file_count": 9,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "agentic_auto_controller.py",
+          "size": 15171,
+          "modified": "2025-09-15T22:05:32.062696",
+          "category": "consciousness"
+        },
+        {
+          "name": "githook_orchestrator.py",
+          "size": 16776,
+          "modified": "2025-09-15T22:05:34.069439",
+          "category": "consciousness"
+        },
+        {
+          "name": "integrate_maintenance.py",
+          "size": 4796,
+          "modified": "2025-09-15T22:05:34.582152",
+          "category": "consciousness"
+        },
+        {
+          "name": "maintenance_cli.py",
+          "size": 9699,
+          "modified": "2025-09-15T22:05:35.614876",
+          "category": "consciousness"
+        },
+        {
+          "name": "maintenance_service_bridge.py",
+          "size": 4218,
+          "modified": "2025-09-15T22:05:35.958879",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 43,
+          "modified": "2025-09-15T22:05:35.999003",
+          "category": "consciousness"
+        }
+      ],
+      ".ps1": [
+        {
+          "name": "githook_orchestrator.ps1",
+          "size": 8022,
+          "modified": "2025-09-15T22:05:32.846333",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "integrate_maintenance.py",
+        "size": 4796,
+        "modified": "2025-09-15T22:05:34.582152",
+        "category": "consciousness"
+      },
+      {
+        "name": "maintenance_cli.py",
+        "size": 9699,
+        "modified": "2025-09-15T22:05:35.614876",
+        "category": "consciousness"
+      },
+      {
+        "name": "maintenance_service_bridge.py",
+        "size": 4218,
+        "modified": "2025-09-15T22:05:35.958879",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 43,
+        "modified": "2025-09-15T22:05:35.999003",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 43,
+        "modified": "2025-09-15T22:05:35.999003",
+        "category": "consciousness"
+      },
+      {
+        "name": "maintenance_service_bridge.py",
+        "size": 4218,
+        "modified": "2025-09-15T22:05:35.958879",
+        "category": "consciousness"
+      },
+      {
+        "name": "maintenance_cli.py",
+        "size": 9699,
+        "modified": "2025-09-15T22:05:35.614876",
+        "category": "consciousness"
+      },
+      {
+        "name": "integrate_maintenance.py",
+        "size": 4796,
+        "modified": "2025-09-15T22:05:34.582152",
+        "category": "consciousness"
+      },
+      {
+        "name": "githook_orchestrator.py",
+        "size": 16776,
+        "modified": "2025-09-15T22:05:34.069439",
+        "category": "consciousness"
+      },
+      {
+        "name": "githook_orchestrator.ps1",
+        "size": 8022,
+        "modified": "2025-09-15T22:05:32.846333",
+        "category": "consciousness"
+      },
+      {
+        "name": "agentic_auto_controller.py",
+        "size": 15171,
+        "modified": "2025-09-15T22:05:32.062696",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".py",
+        ".ps1"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 3,
+      "consciousness_files": 0,
+      "agentic_files": 2,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 50,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "integrate_maintenance.py",
+      "maintenance_cli.py",
+      "maintenance_service_bridge.py",
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > cytoplasm > scripts",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm\\scripts' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm\\scripts' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\cytoplasm\\scripts' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "ai\\cytoplasm",
+      "scripts"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

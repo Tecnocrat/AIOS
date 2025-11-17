@@ -1,0 +1,28 @@
+{
+  "cellular_integration_reports": [
+    {
+      "filename": "ainlp_cellular_integration_20250928_001451.json",
+      "timestamp": "2025-09-28T00:14:51.437544",
+      "cells_integrated": 0,
+      "biological_coherence": 0.39999999999999997
+    },
+    {
+      "filename": "ainlp_cellular_integration_20250928_003144.json",
+      "timestamp": "2025-09-28T00:31:44.833184",
+      "cells_integrated": 3,
+      "biological_coherence": 0.39999999999999997
+    },
+    {
+      "filename": "ainlp_cellular_integration_20250928_003151.json",
+      "timestamp": "2025-09-28T00:31:51.131394",
+      "cells_integrated": 3,
+      "biological_coherence": 0.39999999999999997
+    },
+    {
+      "filename": "ainlp_cellular_integration_20250928_003318.json",
+      "timestamp": "2025-09-28T00:33:18.405223",
+      "cells_integrated": 3,
+      "biological_coherence": 0.39999999999999997
+    }
+  ]
+}

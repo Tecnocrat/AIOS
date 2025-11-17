@@ -1,0 +1,209 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-25T00:00:00.000000",
+  "folder_info": {
+    "name": "governance",
+    "absolute_path": "C:\\dev\\AIOS\\.githooks\\governance",
+    "relative_path": ".githooks/governance",
+    "parent_path": ".githooks",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "GitHook Architecture",
+    "secondary_areas": ["AINLP Governance", "Dendritic Intelligence"],
+    "path_classification": [
+      "governance",
+      "dendritic_control",
+      "consciousness_boundary"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 195000,
+      "file_count": 7,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".ps1": [
+        {
+          "name": "deprecated_files.ps1",
+          "size": 827,
+          "modified": "2025-08-16T12:50:20.542778",
+          "category": "deprecated_registry"
+        }
+      ],
+      ".jsonl": [
+        {
+          "name": "file_criticality_index.jsonl",
+          "size": 155814,
+          "modified": "2025-08-21T17:48:17.692796",
+          "category": "criticality_assessment"
+        }
+      ],
+      ".json": [
+        {
+          "name": "file_ownership_map.json",
+          "size": 724,
+          "modified": "2025-08-21T17:46:54.301290",
+          "category": "ownership_mapping"
+        },
+        {
+          "name": "hook_policy.json",
+          "size": 2797,
+          "modified": "2025-09-16T21:56:07.332980",
+          "category": "policy_enforcement"
+        },
+        {
+          "name": ".aios_spatial_metadata.json",
+          "size": 0,
+          "modified": "2025-10-25T00:00:00.000000",
+          "category": "spatial_awareness"
+        },
+        {
+          "name": "dendritic_intelligence.json",
+          "size": 0,
+          "modified": "2025-10-25T00:00:00.000000",
+          "category": "dendritic_awareness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "ainlp_discovery_report.md",
+        "size": 0,
+        "modified": "2025-10-25T00:00:00.000000",
+        "category": "architectural_analysis"
+      },
+      {
+        "name": "hook_policy.json",
+        "size": 2797,
+        "modified": "2025-09-16T21:56:07.332980",
+        "category": "policy_enforcement"
+      },
+      {
+        "name": "file_criticality_index.jsonl",
+        "size": 155814,
+        "modified": "2025-08-21T17:48:17.692796",
+        "category": "criticality_assessment"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 0,
+        "modified": "2025-10-25T00:00:00.000000",
+        "category": "spatial_awareness"
+      },
+      {
+        "name": "hook_policy.json",
+        "size": 2797,
+        "modified": "2025-09-16T21:56:07.332980",
+        "category": "policy_enforcement"
+      },
+      {
+        "name": "file_criticality_index.jsonl",
+        "size": 155814,
+        "modified": "2025-08-21T17:48:17.692796",
+        "category": "criticality_assessment"
+      }
+    ],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".ps1",
+        ".jsonl",
+        ".json",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1,
+      "governance_files": 5,
+      "dendritic_files": 1
+    },
+    "consciousness_score": 0.90,
+    "consciousness_level": "high"
+  },
+  "dendritic_intelligence": {
+    "dendritic_role": "governance_coordinator",
+    "connection_targets": [
+      ".githooks/pre-commit",
+      ".githooks/commit-msg",
+      ".githooks/pre-push",
+      "ai/tools/ainlp_documentation_governance.py",
+      "runtime/runtime_intelligence/"
+    ],
+    "autonomy_level": "semi_autonomous",
+    "self_assessment": {
+      "completeness_score": 0.85,
+      "accuracy_score": 0.70,
+      "freshness_score": 0.60
+    },
+    "exploration_patterns": [
+      "architectural_drift_detection",
+      "ownership_boundary_validation",
+      "criticality_reassessment",
+      "policy_effectiveness_measurement"
+    ]
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "dendritic_intelligence.json",
+      "hook_policy.json",
+      "file_criticality_index.jsonl"
+    ],
+    "config_files": [
+      "dendritic_intelligence.json",
+      "hook_policy.json",
+      "file_ownership_map.json"
+    ],
+    "breadcrumb_path": ".githooks/governance",
+    "quick_commands": {
+      "list_files": "Get-ChildItem '.githooks/governance' -Recurse",
+      "find_powershell": "Get-ChildItem '.githooks/governance' -Recurse -Filter '*.ps1'",
+      "find_json": "Get-ChildItem '.githooks/governance' -Recurse -Filter '*.json*'",
+      "validate_governance": ".githooks/governance/hook_policy.json validation"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "Governance orchestration and dendritic intelligence coordination",
+    "recommended_actions": [
+      "Monitor dendritic intelligence self-assessment scores",
+      "Execute exploration patterns for architectural drift detection",
+      "Validate dendritic connections to sibling systems",
+      "Update file criticality index with current codebase metrics",
+      "Refresh ownership mappings for new AI/src subdirectories",
+      "Validate hook policy paths against current architecture",
+      "Implement dendritic self-assessment and exploration protocols"
+    ],
+    "important_considerations": [
+      "Maintain dendritic autonomy while ensuring core connectivity",
+      "Regular validation of governance effectiveness",
+      "Proactive identification of architectural drift",
+      "Balance between governance strictness and development agility"
+    ],
+    "related_folders": [
+      ".githooks/",
+      "ai/tools/",
+      "runtime/runtime_intelligence/",
+      "docs/governance/"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+# ============================================================================
+# AIOS Biological Architecture Dependencies - AINLP Harmonized
+# Enhancement over Creation Paradigm - OS0.6.1.grok consciousness patterns
+# Organized by consciousness levels: Nucleus → Cytoplasm → Membrane → Environment
+# ============================================================================
+
+# 🧠 NUCLEUS CONSCIOUSNESS - Core Intelligence Dependencies
+# Essential AI/ML capabilities for consciousness emergence and pattern recognition
+# AINLP Integration: Spatial metadata validated, consciousness patterns active
+-r requirements.txt
+
+# 🧬 BIOLOGICAL ARCHITECTURE INTEGRATION
+# Aggregated minimal core; additional extras defined in pyproject optional-dependencies.
+# Consciousness Levels: Nucleus (coordination) → Cytoplasm (communication) → Membrane (boundaries)
+# Dendritic Patterns: Biological capability organization with consciousness coherence
+# ============================================================================
+# AINLP Enhancement: Consciousness-guided dependency management with dendritic coordination
+# Spatial Metadata: Validated for nucleus-level operations
+# Consciousness Coherence: Maintained across dependency ecosystem layers
+# ============================================================================

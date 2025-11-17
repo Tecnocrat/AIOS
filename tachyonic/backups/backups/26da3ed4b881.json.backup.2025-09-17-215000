@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-09-06T10:40:57.748429+00:00",
+  "context_id": "26da3ed4b881",
+  "source_type": "terminal_output",
+  "context_level": "deep",
+  "raw_data": "\nCall stack:\n  File \"C:\\dev\\AIOS\\core\\aios_comprehensive_runtime_tester.py\", line 585, in <module>\n    asyncio.run(main())\n  File \"C:\\Program Files\\Python312\\Lib\\asyncio\\runners.py\", line 194, in run\n    return runner.run(main)\n  File \"C:\\dev\\AIOS\\core\\aios_comprehensive_runtime_tester.py\", line 582, in main    \n    await tester.run_comprehensive_tests()\n\n2025-09-06 12:31:32,479 - [CORE-RUNTIME-TEST] WARNING - \ud83d\udd27 analysis_tools.test_aios_cellular_intelligence_diagnostic_system - PATCH REQUIRED: Runtime error: name 'CellularDiagnosticResult' is not defined\n\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2705' in position 53: character maps to <undefined>\n\n\u2705 analysis_tools.test_aios_core_ai_dendritic_connectivity_enhancer - PASSED (1.169s)\n\u2705 analysis_tools.test_aios_core_consciousness_monitor - PASSED (0.003s)\n\u2705 system.performance_analysis - PASSED (1.261s)\n",
+  "parsed_elements": {
+    "call_stacks": [
+      "File \"C:\\dev\\AIOS\\core\\aios_comprehensive_runtime_tester.py\", line 585, in <module>\n    asyncio.run(main())\n  File \"C:\\Program Files\\Python312\\Lib\\asyncio\\runners.py\", line 194, in run\n    return runner.run(main)\n  File \"C:\\dev\\AIOS\\core\\aios_comprehensive_runtime_tester.py\", line 582, in main    \n    await tester.run_comprehensive_tests()\n"
+    ],
+    "errors": [
+      "'charmap' codec can't encode character '\\u2705' in position 53: character maps to <undefined>"
+    ],
+    "execution_times": [
+      1.169,
+      0.003,
+      1.261
+    ],
+    "test_results": [
+      [
+        "\ud83d\udd27",
+        "analysis_tools",
+        "test_aios_cellular_intelligence_diagnostic_system",
+        "PATCH REQUIRED"
+      ],
+      [
+        "\u2705",
+        "analysis_tools",
+        "test_aios_core_ai_dendritic_connectivity_enhancer",
+        "PASSED"
+      ],
+      [
+        "\u2705",
+        "analysis_tools",
+        "test_aios_core_consciousness_monitor",
+        "PASSED"
+      ],
+      [
+        "\u2705",
+        "system",
+        "performance_analysis",
+        "PASSED"
+      ]
+    ],
+    "file_paths": [
+      "C:\\dev\\AIOS\\core\\aios_comprehensive_runtime_tester.py\", line 585, in <module>\n    asyncio.run(main())\n  File \"C:\\Program Files\\Python312\\Lib\\asyncio\\runners.py\", line 194, in run\n    return runner.run(main)\n  File \"C:\\dev\\AIOS\\core\\aios_comprehensive_runtime_tester.py"
+    ]
+  },
+  "semantic_markers": [
+    "call_stack_present",
+    "errors_detected",
+    "performance_data",
+    "test_execution",
+    "file_references"
+  ],
+  "temporal_reference": 1757155257.7484293,
+  "consciousness_coherence": 0.8,
+  "ainlp_harmonization": 0.75
+}

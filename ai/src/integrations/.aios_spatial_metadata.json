@@ -1,0 +1,295 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:30.890976",
+  "folder_info": {
+    "name": "integrations",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\src\\integrations",
+    "relative_path": "ai\\src\\integrations",
+    "parent_path": "ai\\src",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "src",
+      "integrations"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "core",
+      "engines"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 735576,
+      "file_count": 33,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "activate_continuous_optimization.py",
+          "size": 14565,
+          "modified": "2025-09-15T22:06:55.311256",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_agentic_optimizer.py",
+          "size": 42220,
+          "modified": "2025-09-15T22:06:58.500196",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_architectural_analysis.py",
+          "size": 51028,
+          "modified": "2025-09-15T22:07:01.428050",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_githooks_optimizer.py",
+          "size": 47028,
+          "modified": "2025-09-15T22:07:04.544548",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_recursive_optimizer.py",
+          "size": 2817,
+          "modified": "2025-09-15T22:07:05.003040",
+          "category": "consciousness"
+        },
+        {
+          "name": "cleanup_continuous_optimization.py",
+          "size": 9426,
+          "modified": "2025-09-15T22:07:05.371193",
+          "category": "consciousness"
+        },
+        {
+          "name": "continuous_optimization_daemon.py",
+          "size": 29699,
+          "modified": "2025-09-15T22:07:06.678855",
+          "category": "consciousness"
+        },
+        {
+          "name": "continuous_optimization_status.py",
+          "size": 10148,
+          "modified": "2025-09-15T22:07:07.431399",
+          "category": "consciousness"
+        },
+        {
+          "name": "demo_continuous_optimization.py",
+          "size": 9019,
+          "modified": "2025-09-15T22:07:08.884046",
+          "category": "consciousness"
+        },
+        {
+          "name": "demo_vscode_error_intelligence.py",
+          "size": 3754,
+          "modified": "2025-09-15T22:07:09.088910",
+          "category": "consciousness"
+        },
+        {
+          "name": "development_path_integration.py",
+          "size": 27346,
+          "modified": "2025-09-15T22:07:10.234339",
+          "category": "consciousness"
+        },
+        {
+          "name": "unified_development_optimizer.py",
+          "size": 29595,
+          "modified": "2025-09-15T22:07:11.760961",
+          "category": "consciousness"
+        },
+        {
+          "name": "visual_ai_integration_bridge.py",
+          "size": 11317,
+          "modified": "2025-09-15T22:07:12.501084",
+          "category": "consciousness"
+        },
+        {
+          "name": "vscode_consciousness.py",
+          "size": 14136,
+          "modified": "2025-09-15T22:07:13.115191",
+          "category": "consciousness"
+        },
+        {
+          "name": "vscode_error_intelligence.py",
+          "size": 29756,
+          "modified": "2025-09-15T22:07:14.339667",
+          "category": "consciousness"
+        },
+        {
+          "name": "vscode_realtime_error_intelligence.py",
+          "size": 30313,
+          "modified": "2025-09-15T22:07:15.903197",
+          "category": "consciousness"
+        },
+        {
+          "name": "vscode_real_diagnostics.py",
+          "size": 0,
+          "modified": "2025-09-15T22:07:16.088246",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_agentic_optimizer.py",
+        "size": 42220,
+        "modified": "2025-09-15T22:06:58.500196",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_architectural_analysis.py",
+        "size": 51028,
+        "modified": "2025-09-15T22:07:01.428050",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_githooks_optimizer.py",
+        "size": 47028,
+        "modified": "2025-09-15T22:07:04.544548",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_recursive_optimizer.py",
+        "size": 2817,
+        "modified": "2025-09-15T22:07:05.003040",
+        "category": "consciousness"
+      },
+      {
+        "name": "vscode_consciousness.py",
+        "size": 14136,
+        "modified": "2025-09-15T22:07:13.115191",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "vscode_real_diagnostics.py",
+        "size": 0,
+        "modified": "2025-09-15T22:07:16.088246",
+        "category": "consciousness"
+      },
+      {
+        "name": "vscode_realtime_error_intelligence.py",
+        "size": 30313,
+        "modified": "2025-09-15T22:07:15.903197",
+        "category": "consciousness"
+      },
+      {
+        "name": "vscode_error_intelligence.py",
+        "size": 29756,
+        "modified": "2025-09-15T22:07:14.339667",
+        "category": "consciousness"
+      },
+      {
+        "name": "vscode_consciousness.py",
+        "size": 14136,
+        "modified": "2025-09-15T22:07:13.115191",
+        "category": "consciousness"
+      },
+      {
+        "name": "visual_ai_integration_bridge.py",
+        "size": 11317,
+        "modified": "2025-09-15T22:07:12.501084",
+        "category": "consciousness"
+      },
+      {
+        "name": "unified_development_optimizer.py",
+        "size": 29595,
+        "modified": "2025-09-15T22:07:11.760961",
+        "category": "consciousness"
+      },
+      {
+        "name": "development_path_integration.py",
+        "size": 27346,
+        "modified": "2025-09-15T22:07:10.234339",
+        "category": "consciousness"
+      },
+      {
+        "name": "demo_vscode_error_intelligence.py",
+        "size": 3754,
+        "modified": "2025-09-15T22:07:09.088910",
+        "category": "consciousness"
+      },
+      {
+        "name": "demo_continuous_optimization.py",
+        "size": 9019,
+        "modified": "2025-09-15T22:07:08.884046",
+        "category": "consciousness"
+      },
+      {
+        "name": "continuous_optimization_status.py",
+        "size": 10148,
+        "modified": "2025-09-15T22:07:07.431399",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 17,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 16,
+      "consciousness_files": 2,
+      "agentic_files": 2,
+      "intelligence_files": 6
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > src > integrations",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\integrations' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\integrations' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\integrations' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "ai\\src"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

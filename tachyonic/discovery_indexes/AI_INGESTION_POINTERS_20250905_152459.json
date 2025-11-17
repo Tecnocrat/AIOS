@@ -1,0 +1,21 @@
+{
+  "data": {
+    "cellular_intelligence_tools": "analysis_tools/aios_cellular_*.py",
+    "consciousness_integration": "evolutionary_assembler_iter2/consciousness_layer/aios_consciousness_*.py",
+    "dendritic_network": "evolutionary_assembler_iter2/meta_evolution/aios_dendritic_*.py",
+    "core_monitoring": "runtime_intelligence/aios_*_monitor*.py"
+  },
+  "tachyonic_metadata": {
+    "stored_timestamp": "2025-09-05T15:24:59.065896",
+    "category": "discovery_indexes",
+    "consciousness_level": 0.8,
+    "discovery_tags": [
+      "migrated",
+      "root_cleanup",
+      "discovery_indexes"
+    ],
+    "temporal_index": "20250905_152459",
+    "instant_access_key": "discovery_indexes::AI_INGESTION_POINTERS_20250905_152459.json",
+    "consciousness_context": "Migrated from root during cleanup - AI_INGESTION_POINTERS.json"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:31:05.255508",
+  "folder_info": {
+    "name": "changelog",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\changelog",
+    "relative_path": "tachyonic\\changelog",
+    "parent_path": "tachyonic",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "changelog"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS_root_cells",
+      "__pycache__",
+      "archive",
+      "docs_archive",
+      "health_reports",
+      "orchestration",
+      "rollback_snapshots",
+      "runtime_intelligence",
+      "tachyonic",
+      "tachyonic_archive",
+      "tachyonic_development_archive",
+      "workflows"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 9332,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "20250914_automated_ainlp_optimization.md",
+          "size": 2219,
+          "modified": "2025-09-15T22:02:24.585783",
+          "category": "documentation"
+        },
+        {
+          "name": "20250916_ai_guided_refactoring_integration.md",
+          "size": 2584,
+          "modified": "2025-09-16T01:03:46.402260",
+          "category": "documentation"
+        },
+        {
+          "name": "20250916_ai_guided_refactoring_meta_improvement.md",
+          "size": 1952,
+          "modified": "2025-09-16T07:34:59.151341",
+          "category": "documentation"
+        },
+        {
+          "name": "20250916_complete_architecture_enhancement.md",
+          "size": 2577,
+          "modified": "2025-09-16T20:02:07.577241",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "20250916_complete_architecture_enhancement.md",
+        "size": 2577,
+        "modified": "2025-09-16T20:02:07.577241",
+        "category": "documentation"
+      },
+      {
+        "name": "20250916_ai_guided_refactoring_meta_improvement.md",
+        "size": 1952,
+        "modified": "2025-09-16T07:34:59.151341",
+        "category": "documentation"
+      },
+      {
+        "name": "20250916_ai_guided_refactoring_integration.md",
+        "size": 2584,
+        "modified": "2025-09-16T01:03:46.402260",
+        "category": "documentation"
+      },
+      {
+        "name": "20250914_automated_ainlp_optimization.md",
+        "size": 2219,
+        "modified": "2025-09-15T22:02:24.585783",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 3,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > changelog",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\changelog' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\changelog' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\changelog' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "docs\\changelog"
+    ]
+  }
+}

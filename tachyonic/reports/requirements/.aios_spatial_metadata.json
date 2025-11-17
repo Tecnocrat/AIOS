@@ -1,0 +1,133 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:14.227791",
+  "folder_info": {
+    "name": "requirements",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\reports\\requirements",
+    "relative_path": "tachyonic\\reports\\requirements",
+    "parent_path": "tachyonic\\reports",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "reports",
+      "requirements"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "archives",
+      "communication",
+      "completions",
+      "documentation",
+      "handoffs",
+      "health",
+      "misc",
+      "optimization",
+      "sessions",
+      "validation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 4861,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "REQUIREMENTS_COMPLIANCE_REPORT_20250121_154700.md",
+          "size": 2931,
+          "modified": "2025-09-21T15:44:31.169054",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "requirements_in_harmonization_20250922_235611.json",
+          "size": 965,
+          "modified": "2025-09-22T23:56:11.119899",
+          "category": "documentation"
+        },
+        {
+          "name": "requirements_in_harmonization_latest.json",
+          "size": 965,
+          "modified": "2025-09-22T23:56:11.120898",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "requirements_in_harmonization_latest.json",
+        "size": 965,
+        "modified": "2025-09-22T23:56:11.120898",
+        "category": "documentation"
+      },
+      {
+        "name": "requirements_in_harmonization_20250922_235611.json",
+        "size": 965,
+        "modified": "2025-09-22T23:56:11.119899",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".md",
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > reports > requirements",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\requirements' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\requirements' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\requirements' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\reports"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

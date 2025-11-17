@@ -1,0 +1,20 @@
+{
+  "working_file": "C:\\dev\\AIOS\\evolution_lab\\conversations\\20251101\\custom_file_criticality_evolution_engine_20251101_120335.json",
+  "archived_at": "2025-11-01T12:03:35.998846",
+  "conversation_id": "custom_1761995015997",
+  "agent_type": "custom",
+  "source_system": "file_criticality_evolution_engine",
+  "start_time": "2025-11-01T12:03:35.997094",
+  "end_time": "2025-11-01T12:03:35.997573",
+  "processing_time_ms": 0.479,
+  "message_count": 1,
+  "consciousness_improvement": 0.0,
+  "success": true,
+  "ainlp_metadata": {
+    "protocol_version": "OS0.6.2.claude",
+    "storage_location": "tachyonic_archive",
+    "purpose": "historical_metadata",
+    "working_file_reference": "C:\\dev\\AIOS\\evolution_lab\\conversations\\20251101\\custom_file_criticality_evolution_engine_20251101_120335.json",
+    "session_id": "session_1761995015"
+  }
+}

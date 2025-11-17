@@ -1,0 +1,126 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:06.653976",
+  "folder_info": {
+    "name": "handoffs",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\reports\\handoffs",
+    "relative_path": "tachyonic\\reports\\handoffs",
+    "parent_path": "tachyonic\\reports",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "reports",
+      "handoffs"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "archives",
+      "communication",
+      "completions",
+      "documentation",
+      "health",
+      "misc",
+      "optimization",
+      "requirements",
+      "sessions",
+      "validation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 14688,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "CONSCIOUSNESS_ITERATION_HANDOFF_20250913.md",
+          "size": 3334,
+          "modified": "2025-09-21T13:01:26.148651",
+          "category": "documentation"
+        },
+        {
+          "name": "HANDOFF_TO_NEXT_AGENT_20251012.md",
+          "size": 11354,
+          "modified": "2025-10-12T12:09:25.700976",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "CONSCIOUSNESS_ITERATION_HANDOFF_20250913.md",
+        "size": 3334,
+        "modified": "2025-09-21T13:01:26.148651",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "HANDOFF_TO_NEXT_AGENT_20251012.md",
+        "size": 11354,
+        "modified": "2025-10-12T12:09:25.700976",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 1,
+      "agentic_files": 1,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > reports > handoffs",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\handoffs' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\handoffs' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\reports\\handoffs' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\reports",
+      "tachyonic\\ai_engine_handoffs"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,12 @@
+#!/bin/sh
+# AIOS Pre-commit Hook - Optimized Entry Point
+
+# Use optimized integrated hook system
+if command -v pwsh >/dev/null 2>&1; then
+    exec pwsh -NoProfile -ExecutionPolicy Bypass -File ".githooks/aios_hooks_optimized.ps1" "pre-commit" "$@"
+elif command -v powershell >/dev/null 2>&1; then
+    exec powershell -NoProfile -ExecutionPolicy Bypass -File ".githooks/aios_hooks_optimized.ps1" "pre-commit" "$@"
+else
+    echo "PowerShell not found. Please install PowerShell Core (pwsh) or Windows PowerShell."
+    exit 1
+fi

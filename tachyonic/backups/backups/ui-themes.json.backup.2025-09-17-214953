@@ -1,0 +1,160 @@
+{
+  "themes": {
+    "cellular_dark": {
+      "name": "AIOS Cellular Dark",
+      "description": "Revolutionary cellular ecosystem theme for AIOS TensorFlow integration",
+      "cellularBranding": {
+        "architecture": "tensorflow_cellular_ecosystem",
+        "emphasis": "performance_breakthrough"
+      },
+      "colors": {
+        "primary": "#1A1A2E",
+        "secondary": "#16213E",
+        "accent": "#E94560",
+        "cellularGlow": "#00F5FF",
+        "background": "#0F0F23",
+        "surface": "#1A1A2E",
+        "text": "#EEEEFF",
+        "textSecondary": "#B8B8D1",
+        "border": "#3A3A5E",
+        "success": "#00E676",
+        "warning": "#FFB74D",
+        "error": "#E94560",
+        "info": "#29B6F6",
+        "cellularAccent": "#FF6B35",
+        "performanceGreen": "#4CAF50",
+        "inferenceBlue": "#2196F3"
+      },
+      "fonts": {
+        "primary": "Cascadia Code",
+        "mono": "JetBrains Mono",
+        "sizes": {
+          "small": 12,
+          "medium": 14,
+          "large": 16,
+          "xlarge": 20
+        }
+      },
+      "spacing": {
+        "xs": 4,
+        "sm": 8,
+        "md": 16,
+        "lg": 24,
+        "xl": 32
+      },
+      "borderRadius": {
+        "small": 6,
+        "medium": 10,
+        "large": 14
+      }
+    },
+    "cellular_light": {
+      "name": "AIOS Cellular Light",
+      "description": "Clean cellular ecosystem theme for AIOS TensorFlow integration",
+      "cellularBranding": {
+        "architecture": "tensorflow_cellular_ecosystem",
+        "emphasis": "clarity_and_performance"
+      },
+      "colors": {
+        "primary": "#FAFAFA",
+        "secondary": "#F0F4F8",
+        "accent": "#E94560",
+        "cellularGlow": "#00B8D4",
+        "background": "#FFFFFF",
+        "surface": "#FAFAFA",
+        "text": "#1A1A2E",
+        "textSecondary": "#4A5568",
+        "border": "#E2E8F0",
+        "success": "#4CAF50",
+        "warning": "#FF9800",
+        "error": "#E94560",
+        "info": "#2196F3",
+        "cellularAccent": "#FF6B35",
+        "performanceGreen": "#8BC34A",
+        "inferenceBlue": "#03DAC6"
+      },
+      "fonts": {
+        "primary": "Cascadia Code",
+        "mono": "JetBrains Mono",
+        "sizes": {
+          "small": 12,
+          "medium": 14,
+          "large": 16,
+          "xlarge": 20
+        }
+      },
+      "spacing": {
+        "xs": 4,
+        "sm": 8,
+        "md": 16,
+        "lg": 24,
+        "xl": 32
+      },
+      "borderRadius": {
+        "small": 6,
+        "medium": 10,
+        "large": 14
+      }
+    }
+  },
+  "layout": {
+    "default": {
+      "headerHeight": 60,
+      "sidebarWidth": 280,
+      "footerHeight": 40,
+      "contentPadding": 24
+    },
+    "compact": {
+      "headerHeight": 48,
+      "sidebarWidth": 220,
+      "footerHeight": 32,
+      "contentPadding": 16
+    }
+  },
+  "animations": {
+    "enabled": true,
+    "duration": {
+      "fast": 150,
+      "medium": 300,
+      "slow": 500
+    },
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  "components": {
+    "button": {
+      "defaultVariant": "primary",
+      "variants": {
+        "primary": {
+          "background": "accent",
+          "text": "white",
+          "border": "accent"
+        },
+        "secondary": {
+          "background": "transparent",
+          "text": "accent",
+          "border": "accent"
+        },
+        "ghost": {
+          "background": "transparent",
+          "text": "text",
+          "border": "transparent"
+        }
+      }
+    },
+    "input": {
+      "defaultVariant": "outlined",
+      "variants": {
+        "outlined": {
+          "background": "surface",
+          "border": "border",
+          "focusBorder": "accent"
+        },
+        "filled": {
+          "background": "secondary",
+          "border": "transparent",
+          "focusBorder": "accent"
+        }
+      }
+    }
+  }
+}

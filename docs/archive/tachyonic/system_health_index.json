@@ -1,0 +1,79 @@
+[
+  {
+    "filename": "system_health_report_20250907_152742.json",
+    "timestamp": 1757258862.3832483,
+    "health_status": "FAIR",
+    "passed_checks": 4,
+    "total_checks": 6
+  },
+  {
+    "filename": "system_health_report_20250913_112132.json",
+    "timestamp": 1757762492.443727,
+    "health_status": "FAIR",
+    "passed_checks": 4,
+    "total_checks": 6
+  },
+  {
+    "filename": "system_health_report_20250913_133652.json",
+    "timestamp": 1757770612.2034447,
+    "health_status": "FAIR",
+    "passed_checks": 4,
+    "total_checks": 6
+  },
+  {
+    "filename": "system_health_report_20250913_134153.json",
+    "timestamp": 1757770913.8382354,
+    "health_status": "FAIR",
+    "passed_checks": 4,
+    "total_checks": 6
+  },
+  {
+    "filename": "system_health_report_20250918_214758.json",
+    "timestamp": 1758232078.4323347,
+    "health_status": "POOR",
+    "passed_checks": 3,
+    "total_checks": 6
+  },
+  {
+    "filename": "system_health_report_20250920_121114.json",
+    "timestamp": 1758370274.6697385,
+    "health_status": "POOR",
+    "passed_checks": 3,
+    "total_checks": 6
+  },
+  {
+    "filename": "system_health_report_20250920_162802.json",
+    "timestamp": 1758385682.01866,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250920_214506.json",
+    "timestamp": 1758404706.7182815,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250920_230830.json",
+    "timestamp": 1758409710.5650442,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250920_232228.json",
+    "timestamp": 1758410548.6313314,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250920_232245.json",
+    "timestamp": 1758410565.2693765,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference",
+    "title": "C++ Standard Library reference (STL)",
+    "page_type": "overview",
+    "crawled_at": "2025-10-04T23:58:00.160438",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\cpp-standard-library-reference.html_808d8129c642846548f52075c9710d4d.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-overview": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-overview",
+    "title": "C++ Standard Library (STL) overview",
+    "page_type": "overview",
+    "crawled_at": "2025-10-04T23:58:00.560058",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\cpp-standard-library-overview.html_5c9d86cdcd8de0eb70e4d20e62939456.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/iostream-programming": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/iostream-programming",
+    "title": "iostreamProgramming",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:01.258367",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\iostream-programming.html_e3ccf0544a1d62462297db6b6f0293a6.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-header-files": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-header-files",
+    "title": "C++ standard library header files",
+    "page_type": "header",
+    "crawled_at": "2025-10-04T23:58:01.928413",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\cpp-standard-library-header-files.html_94f326bba0a5ceb99333fa9a930c22de.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/atomic": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/atomic",
+    "title": "<atomic>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:02.625690",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\atomic.html_faced2c534b10656351abdc313f696f0.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/cstdint": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cstdint",
+    "title": "<cstdint>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:03.093717",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\cstdint.html_ce755ec3bbbfde27b9de7d841eeac0a2.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/ranges": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/ranges",
+    "title": "<ranges>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:03.733626",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\ranges.html_0bc1980719a391b29dfb799cf99add14.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/bit": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/bit",
+    "title": "<bit>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:04.280264",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\bit.html_1bb362afacc16c4211553ec6ec26964f.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/cstdlib": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cstdlib",
+    "title": "<cstdlib>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:04.856616",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\cstdlib.html_a718ae40b457fb57ecb3673e8d748b2b.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/ratio": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/ratio",
+    "title": "<ratio>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:05.391536",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\ratio.html_789e3bf53a7e20f6d6f03782c06b6114.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/cfloat": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cfloat",
+    "title": "<cfloat>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:05.751386",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\cfloat.html_65a4e0c5e4054f83d98c53267c3172cc.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/exception": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/exception",
+    "title": "<exception>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:06.785600",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\exception.html_a5ae6304f05b2c6fe08194f2761b6418.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/tuple": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/tuple",
+    "title": "<tuple>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:07.497478",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\tuple.html_fe4106d27cc6f9360c24a103b5d7b7c2.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/climits": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/climits",
+    "title": "<climits>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:08.036522",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\climits.html_b1d632d33d5cfb735b0b56a3f8082487.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/functional": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/functional",
+    "title": "<functional>",
+    "page_type": "function",
+    "crawled_at": "2025-10-04T23:58:08.744621",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\functional.html_e3ead41cb2d26717fd871cbd0063e41e.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/typeinfo": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/typeinfo",
+    "title": "<typeinfo>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:09.281182",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\typeinfo.html_bc504fda233a0f1eb068b50a29294f45.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/initializer-list": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/initializer-list",
+    "title": "<initializer_list>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:09.852304",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\initializer-list.html_ee04ab777e4c06e1fecaa52f5dcaa96d.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/iterator": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/iterator",
+    "title": "<iterator>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:10.420265",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\iterator.html_1e65e7bd30adb5dd988a4ca0684c1ea1.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/type-traits": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/type-traits",
+    "title": "<type_traits>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:11.304558",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\type-traits.html_ffd04b855b0391600bd4273b95a34834.html"
+  },
+  "https://learn.microsoft.com/en-us/cpp/standard-library/limits": {
+    "url": "https://learn.microsoft.com/en-us/cpp/standard-library/limits",
+    "title": "<limits>",
+    "page_type": "other",
+    "crawled_at": "2025-10-04T23:58:12.002491",
+    "cache_path": "docs\\libraries\\cpp_stl\\raw_documentation\\limits.html_a8ab3f7203540ff44de5b2801b4af1fe.html"
+  }
+}

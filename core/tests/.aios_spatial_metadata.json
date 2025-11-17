@@ -1,0 +1,203 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:02.599538",
+  "folder_info": {
+    "name": "tests",
+    "absolute_path": "C:\\dev\\AIOS\\core\\tests",
+    "relative_path": "core\\tests",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "tests"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "__pycache__",
+      "analysis_tools",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "configuration",
+      "core_systems",
+      "documentation",
+      "engines",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "runtime_intelligence",
+      "src",
+      "tachyonic_archive"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 8873,
+      "file_count": 7,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".txt": [
+        {
+          "name": "CMakeLists.txt",
+          "size": 294,
+          "modified": "2025-09-15T22:30:05.473501",
+          "category": "documentation"
+        }
+      ],
+      ".cpp": [
+        {
+          "name": "test_bmssp.cpp",
+          "size": 1405,
+          "modified": "2025-09-15T22:30:05.561379",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_core.cpp",
+          "size": 1578,
+          "modified": "2025-09-15T22:30:05.655196",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_kernel_ops.cpp",
+          "size": 797,
+          "modified": "2025-09-15T22:30:05.695358",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_lattice_bmssp.cpp",
+          "size": 1368,
+          "modified": "2025-09-15T22:30:05.750705",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_tensorflow_cell.cpp",
+          "size": 3243,
+          "modified": "2025-09-15T22:30:05.885633",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_universal_quantum_holographic.cpp",
+          "size": 188,
+          "modified": "2025-09-15T22:30:05.914546",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "CMakeLists.txt",
+        "size": 294,
+        "modified": "2025-09-15T22:30:05.473501",
+        "category": "documentation"
+      },
+      {
+        "name": "test_core.cpp",
+        "size": 1578,
+        "modified": "2025-09-15T22:30:05.655196",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "test_universal_quantum_holographic.cpp",
+        "size": 188,
+        "modified": "2025-09-15T22:30:05.914546",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_tensorflow_cell.cpp",
+        "size": 3243,
+        "modified": "2025-09-15T22:30:05.885633",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_lattice_bmssp.cpp",
+        "size": 1368,
+        "modified": "2025-09-15T22:30:05.750705",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_kernel_ops.cpp",
+        "size": 797,
+        "modified": "2025-09-15T22:30:05.695358",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_core.cpp",
+        "size": 1578,
+        "modified": "2025-09-15T22:30:05.655196",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_bmssp.cpp",
+        "size": 1405,
+        "modified": "2025-09-15T22:30:05.561379",
+        "category": "consciousness"
+      },
+      {
+        "name": "CMakeLists.txt",
+        "size": 294,
+        "modified": "2025-09-15T22:30:05.473501",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 7,
+      "file_types": [
+        ".txt",
+        ".cpp"
+      ],
+      "dominant_type": ".cpp"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > tests",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\tests' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\tests' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\tests' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "ai\\tests"
+    ]
+  }
+}

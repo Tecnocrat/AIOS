@@ -1,0 +1,12 @@
+{
+  "original_location": "evolution_lab\\conversations\\conversation_ollama_20251008_145524.json",
+  "experiment_output": "evolution_lab\\experiments\\experiment_ollama_20251008_145524.txt",
+  "archived_at": "2025-10-08T14:55:55.580243",
+  "conversation_id": "ollama_1759928124146",
+  "agent_type": "ollama",
+  "task": "Design a C++ class for a simple calculator with basic operations",
+  "timestamp": "20251008_145524",
+  "prompt": "Task: Design a C++ class for a simple calculator with basic operations\n\nGenerate output following these guidelines:\n- Be clear and concise\n- Show your reasoning\n- Provide concrete examples if applicable\n\nOutput:",
+  "response": "cpp\n#include <iostream>\n#include <string>\n\nclass Calculator {\nprivate:\n  double result;\n\npublic:\n  Calculator() : result(0.0) {} // Default constructor\n\n  // Addition\n  void add(double num) {\n    result += num;\n  }\n\n  // Subtraction\n  void subtract(double num) {\n    result -= num;\n  }\n\n  // Multiplication\n  void multiply(double num) {\n    result *= num;\n  }\n\n  // Division\n  void divide(double num) {\n    if (num == 0) {\n      std::cout << \"Error: Division by zero!\" << std::endl;\n      return;\n    }\n    result /= num;\n  }\n\n  // Get current result\n  double getResult() const {\n    return result;\n  }\n};\n\nint main() {\n  Calculator calc;\n  calc.add(10);\n  calc.subtract(5);\n  calc.multiply(2);\n  calc.divide(2);\n  calc.result = calc.getResult();\n  std::cout << \"Result: \" << calc.getResult() << std::endl;\n\n  return 0;\n}",
+  "output_file": "evolution_lab\\experiments\\experiment_ollama_20251008_145524.txt"
+}

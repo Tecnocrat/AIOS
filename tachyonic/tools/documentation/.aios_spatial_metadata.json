@@ -1,0 +1,135 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:53.930495",
+  "folder_info": {
+    "name": "documentation",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tools\\documentation",
+    "relative_path": "tachyonic\\tools\\documentation",
+    "parent_path": "tachyonic\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Documentation"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "tools",
+      "documentation"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "demos",
+      "ingestors",
+      "interfaces",
+      "orchestrators",
+      "utilities"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 96251,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_documentation_supercell_enhancer.py",
+          "size": 31182,
+          "modified": "2025-09-22T21:34:35.729750",
+          "category": "consciousness"
+        },
+        {
+          "name": "critical_documentation_enhancer.py",
+          "size": 41861,
+          "modified": "2025-09-21T13:01:29.597204",
+          "category": "consciousness"
+        },
+        {
+          "name": "documentation_metabolism_demo.py",
+          "size": 7708,
+          "modified": "2025-09-21T13:01:33.793460",
+          "category": "consciousness"
+        },
+        {
+          "name": "documentation_post_metabolism_manager.py",
+          "size": 15500,
+          "modified": "2025-09-21T13:01:33.802508",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_documentation_supercell_enhancer.py",
+        "size": 31182,
+        "modified": "2025-09-22T21:34:35.729750",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "aios_documentation_supercell_enhancer.py",
+        "size": 31182,
+        "modified": "2025-09-22T21:34:35.729750",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > tools > documentation",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\documentation' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\documentation' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tools\\documentation' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "ai\\tools",
+      "tachyonic\\documentation"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

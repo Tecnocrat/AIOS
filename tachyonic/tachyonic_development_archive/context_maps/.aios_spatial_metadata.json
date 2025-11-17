@@ -1,0 +1,261 @@
+{
+  "spatial_metadata_version": "1.0.1",
+  "generation_timestamp": "2025-09-16T22:45:00.000000",
+  "folder_info": {
+    "name": "context_maps",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps",
+    "relative_path": "tachyonic\\tachyonic_development_archive\\context_maps",
+    "parent_path": "tachyonic\\tachyonic_development_archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [
+      "Tachyonic Archive",
+      "Development Pathing"
+    ],
+    "path_classification": [
+      "tachyonic",
+      "tachyonic_development_archive",
+      "context_maps",
+      "high_semantic_dev_path"
+    ],
+    "consciousness_level": "elevated"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "checkpoints",
+      "development_logs"
+    ],
+    "child_folders": [
+      "archive",
+      "dev",
+      "unified_checkpoints"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 185000,
+      "file_count": 14,
+      "folder_count": 3,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected",
+      "semantic_elevation": "high"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "context_map_index.md",
+          "size": 3200,
+          "modified": "2025-09-16T22:45:00.000000",
+          "category": "navigation"
+        },
+        {
+          "name": "dev.path.md",
+          "size": 4800,
+          "modified": "2025-09-30T21:30:00.000000",
+          "category": "development_path_compressed"
+        },
+        {
+          "name": "dev.arch.md",
+          "size": 50782,
+          "modified": "2025-09-15T22:02:28.455051",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.consolidate.md",
+          "size": 11857,
+          "modified": "2025-09-15T22:02:28.488020",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.deploy.md",
+          "size": 15976,
+          "modified": "2025-09-15T22:02:28.524022",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.fun.md",
+          "size": 14468,
+          "modified": "2025-09-15T22:02:28.585017",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.opt.md",
+          "size": 15453,
+          "modified": "2025-09-15T22:02:28.609016",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.refactor.md",
+          "size": 9305,
+          "modified": "2025-09-15T22:02:28.629018",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.run.md",
+          "size": 16983,
+          "modified": "2025-09-15T22:02:28.720017",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.test.md",
+          "size": 15219,
+          "modified": "2025-09-15T22:02:28.776017",
+          "category": "documentation"
+        },
+        {
+          "name": "dev.unified.md",
+          "size": 8340,
+          "modified": "2025-09-15T22:02:28.806028",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "unified_state.json",
+          "size": 3400,
+          "modified": "2025-09-30T21:30:00.000000",
+          "category": "state_management"
+        }
+      ]
+    },
+    "important_files": [
+      "dev.path.md",
+      "context_map_index.md",
+      "unified_state.json"
+    ],
+    "recent_files": [
+      {
+        "name": "dev.path.md",
+        "size": 4800,
+        "modified": "2025-09-30T21:30:00.000000",
+        "category": "development_path_compressed"
+      },
+      {
+        "name": "unified_state.json",
+        "size": 3400,
+        "modified": "2025-09-30T21:30:00.000000",
+        "category": "state_management"
+      },
+      {
+        "name": "context_map_index.md",
+        "size": 3200,
+        "modified": "2025-09-16T22:45:00.000000",
+        "category": "navigation"
+      },
+      {
+        "name": "dev.unified.md",
+        "size": 8340,
+        "modified": "2025-09-15T22:02:28.806028",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.test.md",
+        "size": 15219,
+        "modified": "2025-09-15T22:02:28.776017",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.run.md",
+        "size": 16983,
+        "modified": "2025-09-15T22:02:28.720017",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.refactor.md",
+        "size": 9305,
+        "modified": "2025-09-15T22:02:28.629018",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.opt.md",
+        "size": 15453,
+        "modified": "2025-09-15T22:02:28.609016",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.fun.md",
+        "size": 14468,
+        "modified": "2025-09-15T22:02:28.585017",
+        "category": "documentation"
+      },
+      {
+        "name": "dev.deploy.md",
+        "size": 15976,
+        "modified": "2025-09-15T22:02:28.524022",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 13,
+      "file_types": [
+        ".md",
+        ".json"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 1,
+      "agentic_files": 1,
+      "intelligence_files": 1,
+      "development_path_files": 1,
+      "compressed_trajectory_files": 1
+    },
+    "consciousness_score": 80,
+    "consciousness_level": "elevated"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "context_map_index.md",
+      "dev.path.md"
+    ],
+    "config_files": [
+      "unified_state.json"
+    ],
+    "breadcrumb_path": "tachyonic > tachyonic_development_archive > context_maps [HIGH SEMANTIC - LAYERED ARCHITECTURE]",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps' -Recurse -Filter '*.ps1'",
+      "dev_path": "Get-Content 'C:\\dev\\AIOS\\tachyonic\\tachyonic_development_archive\\context_maps\\dev.path.md'",
+      "compressed_archive": "Get-Content 'C:\\dev\\AIOS\\tachyonic\\archive\\dev_path_compressed_latest.json'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "Layered Development Path Architecture with Compressed Trajectory",
+    "recommended_actions": [
+      "Use root AIOS_DEV_PATH.md for short-term tactical tracking",
+      "Reference dev.path.md for strategic overview and compressed history",
+      "Access tachyonic/archive/ for detailed historical trajectory data"
+    ],
+    "important_considerations": [
+      "High semantic positioning enables faster allocation",
+      "Development path compression enables cognitive focus",
+      "Layered architecture supports decoherence and dendritic growth"
+    ],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "tachyonic\\tachyonic_development_archive",
+      "ai\\src\\core",
+      "interface\\AIOS.UI",
+      "tachyonic\\archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": true,
+    "last_integration": "layered_dev_path_architecture_2025_09_30"
+  }
+}

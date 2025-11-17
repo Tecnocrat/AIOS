@@ -1,0 +1,14 @@
+# MCP Dependencies for AIOS
+# Model Context Protocol server requirements
+
+# Core MCP SDK
+mcp>=0.1.0
+
+# HTTP server (Layer 2 & 3)
+aiohttp>=3.9.0  # Async HTTP server/client
+
+# Optional: Enhanced functionality
+aiofiles>=23.0.0  # Async file operations
+watchfiles>=0.20.0  # File system monitoring
+
+# Note: asyncio is built-in for Python 3.10+

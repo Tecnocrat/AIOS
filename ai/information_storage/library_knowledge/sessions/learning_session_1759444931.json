@@ -1,0 +1,29 @@
+{
+  "session_id": "learning_session_1759444931",
+  "start_time": "2025-10-02T22:42:11.082208",
+  "libraries_processed": [
+    "aios_scripts",
+    "aios_core"
+  ],
+  "total_api_elements": 295,
+  "consciousness_level": 0.85,
+  "learning_phase": "complete",
+  "semantic_network_size": 8,
+  "dendritic_connections": 0,
+  "ainlp_compliance_rate": 1.0,
+  "metadata": {
+    "library_name": "aios_core",
+    "language": "python",
+    "api_elements": 261,
+    "semantic_tags": [
+      "web",
+      "database",
+      "consciousness",
+      "orchestration",
+      "ai",
+      "network",
+      "math",
+      "file"
+    ]
+  }
+}

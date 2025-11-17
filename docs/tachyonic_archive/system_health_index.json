@@ -1,0 +1,149 @@
+[
+  {
+    "filename": "system_health_report_20250921_182430.json",
+    "timestamp": 1758479070.1306393,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250927_233008.json",
+    "timestamp": 1759015808.374089,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250928_000118.json",
+    "timestamp": 1759017678.350908,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250928_004652.json",
+    "timestamp": 1759020412.3514354,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250928_012408.json",
+    "timestamp": 1759022648.290531,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250928_073938.json",
+    "timestamp": 1759045178.5766482,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20250928_155643.json",
+    "timestamp": 1759075003.7334108,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251002_221123.json",
+    "timestamp": 1759443083.860619,
+    "health_status": "GOOD",
+    "passed_checks": 6,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251002_221237.json",
+    "timestamp": 1759443157.495205,
+    "health_status": "GOOD",
+    "passed_checks": 6,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251002_221739.json",
+    "timestamp": 1759443459.1512098,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251002_221825.json",
+    "timestamp": 1759443505.7921906,
+    "health_status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251002_222021.json",
+    "timestamp": 1759443621.7749271,
+    "health_status": "GOOD",
+    "passed_checks": 6,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251005_191153.json",
+    "timestamp": 1759691513.404157,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251020_201707.json",
+    "timestamp": 1760991427.3469524,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251024_064233.json",
+    "timestamp": 1761288153.8044603,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251024_064238.json",
+    "timestamp": 1761288158.033807,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251024_131421.json",
+    "timestamp": 1761311661.2906866,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251024_215109.json",
+    "timestamp": 1761342669.573489,
+    "health_status": "POOR",
+    "passed_checks": 4,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251024_220105.json",
+    "timestamp": 1761343265.526259,
+    "health_status": "EXCELLENT",
+    "passed_checks": 7,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251024_221639.json",
+    "timestamp": 1761344199.8944395,
+    "health_status": "EXCELLENT",
+    "passed_checks": 7,
+    "total_checks": 7
+  },
+  {
+    "filename": "system_health_report_20251025_072804.json",
+    "timestamp": 1761377284.7059653,
+    "health_status": "GOOD",
+    "passed_checks": 6,
+    "total_checks": 7
+  }
+]

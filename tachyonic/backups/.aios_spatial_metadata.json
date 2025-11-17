@@ -1,0 +1,270 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:41:48.345778",
+  "folder_info": {
+    "name": "backups",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\backups",
+    "relative_path": "tachyonic\\archive\\backups",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "backups"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis_reports",
+      "bosonic_substrate",
+      "cellular_reports",
+      "cleanup_reports",
+      "code_preservation",
+      "configurations",
+      "consciousness",
+      "consciousness_evolution",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "discovery_indexes",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "evolutionary_snapshots",
+      "fractal_abstracts",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "quantum",
+      "root_optimization",
+      "root_optimization_analysis",
+      "structure_analysis",
+      "subcellular_archives",
+      "synth_dna_replicators",
+      "temporal",
+      "temporal_snapshots",
+      "version_analysis"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 236194,
+      "file_count": 8,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".backup_20250905_150357": [
+        {
+          "name": "aios_cellular_intelligence_diagnostic_system.backup_20250905_150357",
+          "size": 44484,
+          "modified": "2025-09-05T01:59:26.557891",
+          "category": "other"
+        },
+        {
+          "name": "aios_cellular_intelligence_enhancement_engine.backup_20250905_150357",
+          "size": 48276,
+          "modified": "2025-09-05T08:44:12.300533",
+          "category": "other"
+        },
+        {
+          "name": "aios_consciousness_integration_engine.backup_20250905_150357",
+          "size": 43499,
+          "modified": "2025-09-05T14:49:46.314024",
+          "category": "other"
+        },
+        {
+          "name": "aios_core_consciousness_monitor.backup_20250905_150357",
+          "size": 4166,
+          "modified": "2025-09-05T08:44:20.300988",
+          "category": "other"
+        },
+        {
+          "name": "aios_core_engine_cellular_cleanup_tool.backup_20250905_150357",
+          "size": 24332,
+          "modified": "2025-09-05T15:03:51.635435",
+          "category": "other"
+        },
+        {
+          "name": "aios_core_evolution_monitor.backup_20250905_150357",
+          "size": 4004,
+          "modified": "2025-09-05T08:44:20.293781",
+          "category": "other"
+        },
+        {
+          "name": "aios_core_meta_evolutionary_enhancer.backup_20250905_150357",
+          "size": 3760,
+          "modified": "2025-09-05T08:44:20.293781",
+          "category": "other"
+        },
+        {
+          "name": "aios_dendritic_network_intelligence_enhancer.backup_20250905_150357",
+          "size": 63673,
+          "modified": "2025-09-05T14:46:00.899968",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_cellular_intelligence_diagnostic_system.backup_20250905_150357",
+        "size": 44484,
+        "modified": "2025-09-05T01:59:26.557891",
+        "category": "other"
+      },
+      {
+        "name": "aios_cellular_intelligence_enhancement_engine.backup_20250905_150357",
+        "size": 48276,
+        "modified": "2025-09-05T08:44:12.300533",
+        "category": "other"
+      },
+      {
+        "name": "aios_consciousness_integration_engine.backup_20250905_150357",
+        "size": 43499,
+        "modified": "2025-09-05T14:49:46.314024",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_consciousness_monitor.backup_20250905_150357",
+        "size": 4166,
+        "modified": "2025-09-05T08:44:20.300988",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_engine_cellular_cleanup_tool.backup_20250905_150357",
+        "size": 24332,
+        "modified": "2025-09-05T15:03:51.635435",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_evolution_monitor.backup_20250905_150357",
+        "size": 4004,
+        "modified": "2025-09-05T08:44:20.293781",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.backup_20250905_150357",
+        "size": 3760,
+        "modified": "2025-09-05T08:44:20.293781",
+        "category": "other"
+      },
+      {
+        "name": "aios_dendritic_network_intelligence_enhancer.backup_20250905_150357",
+        "size": 63673,
+        "modified": "2025-09-05T14:46:00.899968",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "aios_core_engine_cellular_cleanup_tool.backup_20250905_150357",
+        "size": 24332,
+        "modified": "2025-09-05T15:03:51.635435",
+        "category": "other"
+      },
+      {
+        "name": "aios_consciousness_integration_engine.backup_20250905_150357",
+        "size": 43499,
+        "modified": "2025-09-05T14:49:46.314024",
+        "category": "other"
+      },
+      {
+        "name": "aios_dendritic_network_intelligence_enhancer.backup_20250905_150357",
+        "size": 63673,
+        "modified": "2025-09-05T14:46:00.899968",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_consciousness_monitor.backup_20250905_150357",
+        "size": 4166,
+        "modified": "2025-09-05T08:44:20.300988",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_evolution_monitor.backup_20250905_150357",
+        "size": 4004,
+        "modified": "2025-09-05T08:44:20.293781",
+        "category": "other"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.backup_20250905_150357",
+        "size": 3760,
+        "modified": "2025-09-05T08:44:20.293781",
+        "category": "other"
+      },
+      {
+        "name": "aios_cellular_intelligence_enhancement_engine.backup_20250905_150357",
+        "size": 48276,
+        "modified": "2025-09-05T08:44:12.300533",
+        "category": "other"
+      },
+      {
+        "name": "aios_cellular_intelligence_diagnostic_system.backup_20250905_150357",
+        "size": 44484,
+        "modified": "2025-09-05T01:59:26.557891",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".backup_20250905_150357"
+      ],
+      "dominant_type": ".backup_20250905_150357"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 8,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 3
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > backups",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\backups' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\backups' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\backups' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\unified_backups"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

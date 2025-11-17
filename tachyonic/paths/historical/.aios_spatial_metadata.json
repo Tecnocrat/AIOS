@@ -1,0 +1,118 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:35:52.186401",
+  "folder_info": {
+    "name": "historical",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\paths\\historical",
+    "relative_path": "tachyonic\\paths\\historical",
+    "parent_path": "tachyonic\\paths",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "paths",
+      "historical"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 44671,
+      "file_count": 5,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "path_20250619_221329.md",
+          "size": 7449,
+          "modified": "2025-09-21T13:01:33.855183",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250619_235019.md",
+          "size": 8840,
+          "modified": "2025-09-21T13:01:33.871785",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250619_235144.md",
+          "size": 8840,
+          "modified": "2025-09-21T13:01:33.875785",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250627_232702.md",
+          "size": 7928,
+          "modified": "2025-09-21T13:01:33.895351",
+          "category": "documentation"
+        },
+        {
+          "name": "path_20250629_200739.md",
+          "size": 11614,
+          "modified": "2025-09-21T13:01:33.904365",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > paths > historical",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\paths\\historical' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\paths\\historical' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\paths\\historical' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\paths"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

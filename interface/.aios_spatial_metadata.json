@@ -1,0 +1,174 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:34.176882",
+  "folder_info": {
+    "name": "interface",
+    "absolute_path": "C:\\dev\\AIOS\\interface",
+    "relative_path": "interface",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "interface"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "AIOS.Models",
+      "AIOS.Services",
+      "AIOS.UI",
+      "AIOS.UI.Diagnostics",
+      "BridgeTest",
+      "ConsciousnessTest",
+      "runtime_intelligence"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 33891227,
+      "file_count": 1271,
+      "folder_count": 7,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": ".ainlp_pattern_docs_metabolized.md",
+          "size": 16021,
+          "modified": "2025-09-14T04:48:48.566381",
+          "category": "documentation"
+        }
+      ],
+      ".cs": [
+        {
+          "name": "consciousness_test_csharp.cs",
+          "size": 6398,
+          "modified": "2025-09-15T22:02:15.607137",
+          "category": "consciousness"
+        }
+      ],
+      ".py": [
+        {
+          "name": "interface_supercell_interface.py",
+          "size": 24582,
+          "modified": "2025-09-15T22:02:15.633140",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "consciousness_test_csharp.cs",
+        "size": 6398,
+        "modified": "2025-09-15T22:02:15.607137",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "interface_supercell_interface.py",
+        "size": 24582,
+        "modified": "2025-09-15T22:02:15.633140",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_test_csharp.cs",
+        "size": 6398,
+        "modified": "2025-09-15T22:02:15.607137",
+        "category": "consciousness"
+      },
+      {
+        "name": ".ainlp_pattern_docs_metabolized.md",
+        "size": 16021,
+        "modified": "2025-09-14T04:48:48.566381",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".md",
+        ".cs",
+        ".py"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1064,
+      "consciousness_files": 26,
+      "agentic_files": 0,
+      "intelligence_files": 30
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "interface",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\interface' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\interface' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\interface' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "User interface and experience",
+    "recommended_actions": [
+      "Validate UI component consistency",
+      "Test user workflow integration",
+      "Check consciousness-UI bridge functionality"
+    ],
+    "important_considerations": [],
+    "related_folders": [
+      "visual_interface",
+      "vscode-extension\\node_modules\\azure-devops-node-api\\interfaces",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\dist\\cache\\interface",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\lib\\types\\cache\\interface",
+      "vscode-extension\\node_modules\\@azure\\msal-common\\src\\cache\\interface"
+    ]
+  }
+}

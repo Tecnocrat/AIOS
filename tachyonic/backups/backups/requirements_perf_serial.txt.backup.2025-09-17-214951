@@ -1,0 +1,6 @@
+# Performance & Advanced Serialization Stack (Optional)
+orjson>=3.9.0,<4.0
+msgspec>=0.18.0,<0.20
+cloudpickle>=2.2.0,<3.0
+dill>=0.3.0,<0.4
+multiprocessing-logging>=0.3.0,<1.0

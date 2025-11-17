@@ -1,0 +1,237 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:57.572200",
+  "folder_info": {
+    "name": "vscode-extension",
+    "absolute_path": "C:\\dev\\AIOS\\vscode-extension",
+    "relative_path": "vscode-extension",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "vscode-extension"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface"
+    ],
+    "child_folders": [
+      "dist",
+      "docs",
+      "node_modules",
+      "src"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 134145194,
+      "file_count": 18968,
+      "folder_count": 4,
+      "size_category": "massive"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      "": [
+        {
+          "name": ".editorconfig",
+          "size": 255,
+          "modified": "2025-08-02T17:33:14.039217",
+          "category": "other"
+        },
+        {
+          "name": ".gitignore",
+          "size": 98,
+          "modified": "2025-08-02T17:33:14.040217",
+          "category": "other"
+        }
+      ],
+      ".vsix": [
+        {
+          "name": "aios-vscode-0.4.0.vsix",
+          "size": 1783434,
+          "modified": "2025-07-08T00:29:19.356755",
+          "category": "other"
+        }
+      ],
+      ".json": [
+        {
+          "name": "package-lock.json",
+          "size": 287047,
+          "modified": "2025-08-02T17:33:14.069542",
+          "category": "documentation"
+        },
+        {
+          "name": "package.json",
+          "size": 10420,
+          "modified": "2025-08-02T17:33:14.071541",
+          "category": "documentation"
+        },
+        {
+          "name": "private-config.json",
+          "size": 1166,
+          "modified": "2025-08-02T17:33:14.072541",
+          "category": "documentation"
+        },
+        {
+          "name": "tsconfig.json",
+          "size": 637,
+          "modified": "2025-08-02T17:33:14.085254",
+          "category": "documentation"
+        }
+      ],
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 9294,
+          "modified": "2025-09-15T22:02:30.926723",
+          "category": "documentation"
+        }
+      ],
+      ".ps1": [
+        {
+          "name": "setup-private.ps1",
+          "size": 7323,
+          "modified": "2025-09-15T22:02:31.004865",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": ".editorconfig",
+        "size": 255,
+        "modified": "2025-08-02T17:33:14.039217",
+        "category": "other"
+      },
+      {
+        "name": "aios-vscode-0.4.0.vsix",
+        "size": 1783434,
+        "modified": "2025-07-08T00:29:19.356755",
+        "category": "other"
+      },
+      {
+        "name": "package.json",
+        "size": 10420,
+        "modified": "2025-08-02T17:33:14.071541",
+        "category": "documentation"
+      },
+      {
+        "name": "private-config.json",
+        "size": 1166,
+        "modified": "2025-08-02T17:33:14.072541",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 9294,
+        "modified": "2025-09-15T22:02:30.926723",
+        "category": "documentation"
+      },
+      {
+        "name": "setup-private.ps1",
+        "size": 7323,
+        "modified": "2025-09-15T22:02:31.004865",
+        "category": "consciousness"
+      },
+      {
+        "name": "tsconfig.json",
+        "size": 637,
+        "modified": "2025-08-02T17:33:14.085254",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "setup-private.ps1",
+        "size": 7323,
+        "modified": "2025-09-15T22:02:31.004865",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 9294,
+        "modified": "2025-09-15T22:02:30.926723",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 9,
+      "file_types": [
+        "",
+        ".vsix",
+        ".json",
+        ".md",
+        ".ps1"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 204,
+      "consciousness_files": 0,
+      "agentic_files": 122,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [
+      ".editorconfig",
+      "private-config.json",
+      "setup-private.ps1",
+      "tsconfig.json"
+    ],
+    "breadcrumb_path": "vscode-extension",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\vscode-extension' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\vscode-extension' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\vscode-extension' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": []
+  }
+}

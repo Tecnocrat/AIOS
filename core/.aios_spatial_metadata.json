@@ -1,0 +1,387 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:23.078898",
+  "folder_info": {
+    "name": "core",
+    "absolute_path": "C:\\dev\\AIOS\\core",
+    "relative_path": "core",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      ".vscode",
+      "__pycache__",
+      "analysis_tools",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "configuration",
+      "core_systems",
+      "documentation",
+      "engines",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "runtime_intelligence",
+      "src",
+      "tachyonic_archive",
+      "tests"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 202003102,
+      "file_count": 887,
+      "folder_count": 19,
+      "size_category": "massive"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AINLP_DIRECTIVE_COMPLIANCE.md",
+          "size": 2360,
+          "modified": "2025-09-15T22:24:37.634223",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+          "size": 3482,
+          "modified": "2025-09-15T22:24:37.795239",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_CORE_ENGINE_ARCHITECTURE.md",
+          "size": 13795,
+          "modified": "2025-09-15T22:24:38.429999",
+          "category": "documentation"
+        },
+        {
+          "name": "AIOS_SUPERCELL_ARCHITECTURE.md",
+          "size": 9351,
+          "modified": "2025-09-15T22:24:39.808620",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_HARMONIZATION_PLAN.md",
+          "size": 6761,
+          "modified": "2025-09-15T22:24:42.382694",
+          "category": "documentation"
+        },
+        {
+          "name": "HARMONIZATION_STATUS_REPORT.md",
+          "size": 10059,
+          "modified": "2025-09-15T22:24:43.214955",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": "aios_core_runtime_analysis.json",
+          "size": 17737,
+          "modified": "2025-09-15T22:24:39.158678",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_file_creation_log.json",
+          "size": 178,
+          "modified": "2025-09-15T22:24:39.406009",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_state_bridge.json",
+          "size": 250,
+          "modified": "2025-09-15T22:24:41.802098",
+          "category": "documentation"
+        },
+        {
+          "name": "HARMONIZATION_EXECUTION_METADATA.json",
+          "size": 5557,
+          "modified": "2025-09-15T22:24:42.721518",
+          "category": "documentation"
+        }
+      ],
+      ".log": [
+        {
+          "name": "aios_core_runtime_test.log",
+          "size": 425,
+          "modified": "2025-09-06T12:31:33.965513",
+          "category": "temporary"
+        },
+        {
+          "name": "cellular_enhancement.log",
+          "size": 0,
+          "modified": "2025-09-06T12:31:32.511492",
+          "category": "temporary"
+        },
+        {
+          "name": "consciousness_core_engine.log",
+          "size": 240,
+          "modified": "2025-09-15T19:50:44.731003",
+          "category": "temporary"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "CMakeLists.txt",
+          "size": 1338,
+          "modified": "2025-09-15T22:24:41.078233",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "common_patterns.py",
+          "size": 13178,
+          "modified": "2025-09-15T22:24:41.606497",
+          "category": "consciousness"
+        },
+        {
+          "name": "shared_imports.py",
+          "size": 7857,
+          "modified": "2025-09-15T22:24:43.587816",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 1272,
+          "modified": "2025-09-15T22:24:43.687564",
+          "category": "consciousness"
+        }
+      ],
+      ".cmake": [
+        {
+          "name": "consciousness.cmake",
+          "size": 1666,
+          "modified": "2025-09-15T22:24:41.778777",
+          "category": "other"
+        }
+      ],
+      ".cpp": [
+        {
+          "name": "consciousness_test.cpp",
+          "size": 1336,
+          "modified": "2025-09-15T22:24:41.867435",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md",
+        "size": 3482,
+        "modified": "2025-09-15T22:24:37.795239",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_CORE_ENGINE_ARCHITECTURE.md",
+        "size": 13795,
+        "modified": "2025-09-15T22:24:38.429999",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_core_runtime_analysis.json",
+        "size": 17737,
+        "modified": "2025-09-15T22:24:39.158678",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_core_runtime_test.log",
+        "size": 425,
+        "modified": "2025-09-06T12:31:33.965513",
+        "category": "temporary"
+      },
+      {
+        "name": "aios_file_creation_log.json",
+        "size": 178,
+        "modified": "2025-09-15T22:24:39.406009",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_SUPERCELL_ARCHITECTURE.md",
+        "size": 9351,
+        "modified": "2025-09-15T22:24:39.808620",
+        "category": "documentation"
+      },
+      {
+        "name": "CMakeLists.txt",
+        "size": 1338,
+        "modified": "2025-09-15T22:24:41.078233",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness.cmake",
+        "size": 1666,
+        "modified": "2025-09-15T22:24:41.778777",
+        "category": "other"
+      },
+      {
+        "name": "consciousness_core_engine.log",
+        "size": 240,
+        "modified": "2025-09-15T19:50:44.731003",
+        "category": "temporary"
+      },
+      {
+        "name": "consciousness_state_bridge.json",
+        "size": 250,
+        "modified": "2025-09-15T22:24:41.802098",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 1272,
+        "modified": "2025-09-15T22:24:43.687564",
+        "category": "consciousness"
+      },
+      {
+        "name": "shared_imports.py",
+        "size": 7857,
+        "modified": "2025-09-15T22:24:43.587816",
+        "category": "consciousness"
+      },
+      {
+        "name": "HARMONIZATION_STATUS_REPORT.md",
+        "size": 10059,
+        "modified": "2025-09-15T22:24:43.214955",
+        "category": "documentation"
+      },
+      {
+        "name": "HARMONIZATION_EXECUTION_METADATA.json",
+        "size": 5557,
+        "modified": "2025-09-15T22:24:42.721518",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_HARMONIZATION_PLAN.md",
+        "size": 6761,
+        "modified": "2025-09-15T22:24:42.382694",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_test.cpp",
+        "size": 1336,
+        "modified": "2025-09-15T22:24:41.867435",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_state_bridge.json",
+        "size": 250,
+        "modified": "2025-09-15T22:24:41.802098",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness.cmake",
+        "size": 1666,
+        "modified": "2025-09-15T22:24:41.778777",
+        "category": "other"
+      },
+      {
+        "name": "common_patterns.py",
+        "size": 13178,
+        "modified": "2025-09-15T22:24:41.606497",
+        "category": "consciousness"
+      },
+      {
+        "name": "CMakeLists.txt",
+        "size": 1338,
+        "modified": "2025-09-15T22:24:41.078233",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 19,
+      "file_types": [
+        ".md",
+        ".json",
+        ".log",
+        ".txt",
+        ".py",
+        ".cmake",
+        ".cpp"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 277,
+      "consciousness_files": 71,
+      "agentic_files": 3,
+      "intelligence_files": 9
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "core",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "core\\build\\src\\aios_core_lib.dir"
+    ]
+  }
+}

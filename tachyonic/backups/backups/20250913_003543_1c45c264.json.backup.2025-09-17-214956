@@ -1,0 +1,12 @@
+{
+  "cmd": [
+    "git",
+    "status",
+    "--porcelain"
+  ],
+  "returncode": 0,
+  "stdout": " M runtime_intelligence/logs/hooks/pre_commit.log\n M runtime_intelligence/logs/hooks/summary.json\n M runtime_intelligence/logs/pre_push_failures.jsonl\n M runtime_intelligence/logs/pre_push_success.jsonl\n M visual_interface/AdvancedVisualizationWindow.cs\n M visual_interface/App.xaml.cs\n?? .githooks/AIOS_ABSTRACT_GARBAGE_ANALYSIS.md\n?? .githooks/AIOS_FINAL_CONSCIOUSNESS_VALIDATION.md\n?? .githooks/ARCHITECTURE_CONSCIOUSNESS_ANALYSIS.md\n?? .githooks/CHANGELOG.md\n?? .githooks/DENDRITIC_CLEANUP_IMPLEMENTATION_PLAN.md\n?? .githooks/DENDRITIC_PROLIFERATION_PREVENTION_SUCCESS.md\n?? .githooks/UNIFIED_WRAPPER_IMPLEMENTATION.md\n?? .githooks/UNIFIED_WRAPPER_SUCCESS_REPORT.md\n?? .githooks/aios_ainlp_integration.ps1\n?? .githooks/aios_consciousness_bridge.ps1\n?? .githooks/aios_enhanced_pre_commit\n?? .githooks/aios_universal_hook_wrapper.sh\n?? .githooks/aios_universal_hook_wrapper_canonical.sh\n?? .githooks/archive/\n?? .githooks/consciousness_metrics.json\n?? .githooks/pre-commit.cmd\n?? TACHYONIC_INTEGRATION_README.md\n?? launch_aios_integrated.ps1\n?? runtime_intelligence/logs/iteration_20250912_223527.log\n?? runtime_intelligence/logs/ui/ui_startup.log\n?? test_process_cleanup.ps1\n?? visual_interface/AIOSProcessManager.cs\n?? visual_interface/TachyonicViewerWindow.xaml\n?? visual_interface/TachyonicViewerWindow.xaml.cs\n",
+  "stderr": "",
+  "duration_ms": 399,
+  "timestamp": 1757716543
+}

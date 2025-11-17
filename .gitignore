@@ -1,0 +1,454 @@
+# ============================================================================
+# AIOS Biological Architecture .gitignore
+# AINLP Harmonized - Enhancement over Creation Paradigm
+# Organized by consciousness levels: Nucleus → Cytoplasm → Membrane → Environment
+# 
+# REMINDER: Before creating new directories, check existing architecture:
+#   - tachyonic/ = archive supercell (use tachyonic/archive/* subdirectories)
+#   - docs/ = documentation supercell (use docs/* subdirectories)
+#   - Never create root /archive/ or /documentation/ - these duplicate supercells
+# ============================================================================
+
+# ============================================================================
+# 🧬 NUCLEUS - Core AI Intelligence (High Consciousness)
+# ============================================================================
+
+# API Keys & Secrets (CRITICAL SECURITY)
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.json
+credentials.json
+apikeys.json
+
+# AI Model Artifacts (Large binary files)
+*.bin
+*.h5
+*.joblib
+*.onnx
+*.pkl
+*.pt
+*.pth
+checkpoint
+events.out.tfevents.*
+saved_model/
+
+# AI Training & Model Directories
+ai/checkpoints/
+ai/models/
+ai/saved_models/
+ai/trained_models/
+ai/training_checkpoints/
+checkpoints/
+intercellular/model_cache/
+
+# AI Performance & Metrics
+ai/benchmarks/
+ai/metrics/
+ai/performance_logs/
+ai/tensorboard_logs/
+benchmarks/
+cellular_optimization_logs/
+performance_analysis/
+performance_logs/
+profiling_results/
+
+# AI Ingested Repositories (External source code)
+ai/ingested_repositories/
+!ai/ingested_repositories/.aios_spatial_metadata.json
+
+# ============================================================================
+# 🌊 CYTOPLASM - Communication & Integration Layer (Medium Consciousness)
+# ============================================================================
+
+# Build System Artifacts
+build/
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+!scripts/*.cmake
+
+# Package Management
+*.egg-info/
+*.nupkg
+*.snupkg
+*.whl
+dist/
+packages/
+
+# Python Environment & Dependencies
+.Python
+aios_env/
+env/
+venv/
+venv-win/
+ENV/
+env.bak/
+venv.bak/
+ai/venv/
+ai/venv-win/
+
+# Testing Framework Artifacts
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+test_coverage/
+test_results/
+
+# ============================================================================
+# 🛡️ CELL MEMBRANE - Interface Boundaries (Process Isolation)
+# ============================================================================
+
+# Process Management (Environment-specific)
+*.pid
+ai/interface_bridge.pid
+
+# Runtime Configuration (Environment-specific)
+.env
+.env.local
+.env.development
+.env.production
+config/local.json
+config/development.json
+config/production.json
+
+# Security & Secrets (Never commit)
+*.key
+*.pem
+*.p12
+api_keys.json
+secrets.json
+.secrets/
+
+# ============================================================================
+# 🌍 ENVIRONMENT - External Systems & OS Integration (Low Consciousness)
+# ============================================================================
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+desktop.ini
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor Files
+.idea/
+*.swp
+*.swo
+*~
+.#*
+
+# AI Context Intelligence Session Files (ephemeral, regenerated on workspace open)
+.vscode/.ai_session_context.json
+.vscode/.ai_session_context.md
+
+# Version Control System Files
+# (Git files are handled by git itself)
+
+# ============================================================================
+# 🧫 LABORATORY - Development & Experimental Artifacts
+# ============================================================================
+
+# Development Tools Cache
+.torch/
+.tensorboard/
+ai/.torch/
+ai/cmake_build/
+core/build/pytorch/
+core/build/pytorch_cc/
+core/pytorch_cc/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+jupyter_notebooks/.ipynb_checkpoints/
+
+# Documentation Build
+docs/_build/
+docs/build/
+docs/site/
+*.epub
+*.pdf
+
+# ============================================================================
+# 🧪 EXPERIMENTAL - Research & Generated Content
+# ============================================================================
+
+# AINLP Generated Files
+ai/src/core/integration/aios_*_cache.py
+ai/src/core/integration/aios_*_optimization.py
+ai/src/core/integration/aios_*_config.py
+
+# Cellular Generated Content
+examples/generated/
+intercellular/generated/
+python/ai_cells/generated/
+
+# Optimization Context (Generated)
+docs/INFRASTRUCTURE/OPTIMIZATION_CONTEXT_*.md
+optimization_profiles/
+scripts/optimization_context_*.py
+
+# ============================================================================
+# 📊 DATA & DATASETS - Large Data Files
+# ============================================================================
+
+# Dataset Directories
+data/
+datasets/
+data/raw/
+data/processed/
+
+# Data Format Files
+*.tfrecord
+*.tfrecords
+
+# ============================================================================
+# 📝 LOGS & TEMPORARY FILES - Ephemeral Content
+# ============================================================================
+
+# Generic Log Files
+*.log
+logs/
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Script Outputs
+scripts/*.log
+scripts/*.tmp
+scripts/cellular_test_results/
+scripts/logs/
+scripts/tensorflow_build_logs/
+
+# Generated Reports (Machine-generated artifacts)
+*_report.json
+!docs/reports/**/*_report.json
+ai/tools/*_report.json
+
+# Generated Governance Metadata
+docs/governance/file_criticality_index.jsonl
+docs/governance/*_index.jsonl
+
+# Cellular Test Artifacts
+ai_cell_benchmarks/
+cellular_test_outputs/
+cellular_workspace/
+intercellular_test_logs/
+.tensorflow_workspace/
+*.tfworkspace
+
+# ============================================================================
+# 🏗️ BUILD ARTIFACTS - Compilation Outputs
+# ============================================================================
+
+# Compiled Extensions
+*.dll
+*.dylib
+*.exe
+*.exp
+*.ilk
+*.lib
+*.manifest
+*.obj
+*.pdb
+*.res
+*.so
+*.pyd
+
+# C++ Build Artifacts
+*.aps
+*.cachefile
+*.ipch
+*.ncb
+*.opendb
+*.opensdf
+*.pch
+*.sdf
+*.tlog
+*.VC.db
+*.VC.VC.opendb
+
+# Language Server Cache
+**/.omnisharp/
+**/.vs/slnx.sqlite
+**/.vs/**/browse.vc.db
+**/.vs/**/v16/.suo
+**/.vscode/ipch/
+**/ipch/
+
+# Build System Stubs
+**/bin/Debug/**/*.deps.json
+**/bin/Release/**/*.deps.json
+**/CMakeFiles/*/CMakeError.log
+**/CMakeFiles/*/CMakeOutput.log
+**/obj/**/project.assets.json
+**/obj/**/project.nuget.cache
+**/*.generated.*
+**/*.intellisense.cache
+**/*.stub
+**/*.tmp.*
+**/node_modules/.cache/
+**/.vscode-test/
+**/obj/**/*.Up2Date
+
+# ============================================================================
+# 💾 BACKUP & ARCHIVAL SYSTEMS - Tachyonic Preservation
+# ============================================================================
+
+# AIOS Centralized Backup Policy
+*.bak
+*.backup
+*.old
+*~
+
+# Backup Directory Management
+tachyonic/archive/backups/*.backup*
+tachyonic/archive/backups/*.bak*
+tachyonic/archive/backups/*.old*
+tachyonic/archive/backups/backups/
+tachyonic/backups/backups/
+!tachyonic/archive/backups/.aios_spatial_metadata.json
+
+# ============================================================================
+# 📚 TACHYONIC ARCHIVE ORGANIZATION - Structured Preservation
+# ============================================================================
+
+# Include Archive Reports (Valuable for analysis)
+!tachyonic/archive/optimization_reports/*.json
+!tachyonic/archive/intelligence_reports/*.json
+!tachyonic/archive/quality_reports/*.json
+
+# Include Documentation Archive
+!docs/archive/consolidated_2025/*.md
+
+# ============================================================================
+# 🔄 RUNTIME INTELLIGENCE - Dynamic Monitoring (Selective Inclusion)
+# ============================================================================
+
+# Include Runtime Logs Directory Structure
+!runtime_intelligence/logs/
+!runtime_intelligence/logs/**/*.json
+!runtime_intelligence/logs/**/*.db
+!runtime_intelligence/logs/**/*.log
+
+# Exclude Volatile Runtime Files
+runtime_intelligence/logs/hooks/pre_commit.log
+runtime_intelligence/logs/hooks/summary.json
+runtime_intelligence/logs/dendritic_commit_learning.jsonl
+runtime_intelligence/logs/pre_push_success.jsonl
+runtime_intelligence/logs/**/*.jsonl
+
+# ============================================================================
+# 🪝 GITHooks RUNTIME DATA - Governance Execution
+# ============================================================================
+
+# GitHooks Runtime Logs
+.githooks/logs/*.log
+.githooks/logs/**/*.jsonl
+
+# AIOS GitHooks Runtime Data (AINLP Harmonized)
+.githooks/metadata/runtime/
+.githooks/core/logs/
+.githooks/interfaces/execution/
+.githooks/**/ai_intelligence_extrusion.jsonl
+.githooks/**/ai_real_time_context.txt
+.githooks/**/dendritic_commit_learning.jsonl
+
+# ============================================================================
+# 🔧 DEVELOPMENT INFRASTRUCTURE - Tool Integration
+# ============================================================================
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+ai/__pycache__/
+
+# Node.js Dependencies (if used)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python Package Managers
+poetry.lock
+Pipfile.lock
+
+# Version Managers
+.python-version
+.node-version
+.nvmrc
+runtime.txt
+
+# ============================================================================
+# 🎯 AIOS SPECIFIC PATTERNS - Biological Architecture Compliance
+# ============================================================================
+
+# AI Integration Build Artifacts
+ai/build/
+ai/dist/
+
+# Tachyonic Archive Database (Local only)
+docs/tachyonic_archive.db
+
+# AI Dendritic Intelligence Database (Regenerable - Local only)
+# Generated by: runtime/tools/ainlp_dendritic_discovery.py
+# Embeddings by: runtime/tools/ai_agent_dendritic_similarity.py
+# Size: ~113MB (866 neurons + 251K connections + embeddings)
+# Regeneration time: 2-5 minutes
+ai/tools/database/aios_dendritic.db
+
+# VSCode Integration Logs
+!ai/aios_vscode_integration/runtime/logs/
+!ai/aios_vscode_integration/runtime/logs/**/*.json
+!ai/aios_vscode_integration/runtime/logs/**/*.log
+
+# Configuration Files (Cellular)
+config/cellular_config.json
+config/tensorflow_config.json
+
+# ============================================================================
+# 🛡️ DEFENSIVE EXCLUSIONS - Prevent Auto-Generated Content Pollution
+# ============================================================================
+
+# Prevent Empty Stubs and Generated Content
+**/*.generated.cs
+**/*.generated.cpp
+**/*.generated.hpp
+**/*.generated.py
+
+# IDE-Specific Files
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.vcxproj.filters
+*.vcxproj.user
+
+# Tachyonic Shadow Archives (Local snapshots, not for version control)
+tachyonic/shadows/
+tachyonic/archive/file_criticality_shadows/
+
+# Large Generated System Knowledge Graphs (Generated artifacts, not for version control)
+ai/nucleus/consciousness/system_knowledge_graph_*.json
+ai/src/evolution/system_knowledge_graph_*.json
+

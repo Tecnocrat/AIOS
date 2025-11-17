@@ -1,0 +1,190 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-25T15:03:32.997194",
+  "folder_info": {
+    "name": "computational_layer",
+    "absolute_path": "C:\\dev\\AIOS\\computational_layer",
+    "relative_path": "computational_layer",
+    "parent_path": ".",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "computational_layer"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "config",
+      "core",
+      "docs",
+      "evolution_lab",
+      "interface",
+      "runtime",
+      "runtime_intelligence",
+      "scripts",
+      "tachyonic",
+      "tachyonic_archive",
+      "venv",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "assemblers",
+      "bridges",
+      "core_systems",
+      "engines",
+      "modules"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 23889559,
+      "file_count": 305,
+      "folder_count": 6,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": ".aios_spatial_metadata.json",
+          "size": 4258,
+          "modified": "2025-10-25T09:25:48.753319",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "common_patterns.py",
+          "size": 13178,
+          "modified": "2025-10-25T09:25:49.327546",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_emergence_analyzer.py",
+          "size": 28638,
+          "modified": "2025-10-25T09:25:49.329547",
+          "category": "consciousness"
+        },
+        {
+          "name": "shared_imports.py",
+          "size": 7857,
+          "modified": "2025-10-25T09:25:49.637164",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 1941,
+          "modified": "2025-10-25T09:25:48.759320",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 4258,
+        "modified": "2025-10-25T09:25:48.753319",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_emergence_analyzer.py",
+        "size": 28638,
+        "modified": "2025-10-25T09:25:49.329547",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 1941,
+        "modified": "2025-10-25T09:25:48.759320",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "shared_imports.py",
+        "size": 7857,
+        "modified": "2025-10-25T09:25:49.637164",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_emergence_analyzer.py",
+        "size": 28638,
+        "modified": "2025-10-25T09:25:49.329547",
+        "category": "consciousness"
+      },
+      {
+        "name": "common_patterns.py",
+        "size": 13178,
+        "modified": "2025-10-25T09:25:49.327546",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 1941,
+        "modified": "2025-10-25T09:25:48.759320",
+        "category": "consciousness"
+      },
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 4258,
+        "modified": "2025-10-25T09:25:48.753319",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".json",
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 127,
+      "consciousness_files": 37,
+      "agentic_files": 3,
+      "intelligence_files": 3
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "computational_layer",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\computational_layer' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\computational_layer' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\computational_layer' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": []
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": true
+  }
+}

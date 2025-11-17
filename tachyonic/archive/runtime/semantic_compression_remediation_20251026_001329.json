@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-10-26T00:13:29.559146",
+  "remediator_version": "1.0.0",
+  "stats": {
+    "files_processed": 110,
+    "issues_fixed": 121,
+    "files_modified": 110
+  },
+  "compression_rules_applied": {
+    "runtime_intelligence": "runtime",
+    "intelligence_layer": "ai",
+    "intelligence_engine": "engine",
+    "intelligence_module": "module",
+    "intelligence_core": "core",
+    "intelligence_system": "system",
+    "intelligence_tools": "tools",
+    "intelligence_analysis": "analysis",
+    "intelligence_monitor": "monitor",
+    "intelligence_bridge": "bridge",
+    "intelligence_validator": "validator",
+    "intelligence_dashboard": "dashboard",
+    "intelligence_archive": "archive",
+    "intelligence_report": "report",
+    "intelligence_state": "state",
+    "intelligence_config": "config",
+    "intelligence_data": "data",
+    "intelligence_metrics": "metrics",
+    "intelligence_health": "health",
+    "intelligence_status": "status"
+  },
+  "report_path": "tachyonic\\archive\\runtime\\code_review_report_20251026_001225.json"
+}

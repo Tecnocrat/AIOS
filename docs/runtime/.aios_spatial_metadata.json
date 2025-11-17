@@ -1,0 +1,162 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:29:06.566250",
+  "folder_info": {
+    "name": "runtime",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\runtime",
+    "relative_path": "docs\\runtime",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "runtime"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "Architect",
+      "architecture",
+      "archival",
+      "archive",
+      "build",
+      "changelogs",
+      "completion",
+      "consciousness",
+      "development",
+      "evolution_lab",
+      "governance",
+      "guides",
+      "integration",
+      "intelligence",
+      "languages",
+      "libraries",
+      "refactoring",
+      "reference",
+      "reports",
+      "runtime_intelligence",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "theoretical",
+      "ui",
+      "vscopilot chat"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 55376,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AIOS_RUNTIME_INTELLIGENCE_SHOWCASE.md",
+          "size": 16913,
+          "modified": "2025-10-10T21:39:21.882678",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_EXECUTION_BRIDGE_DESIGN.md",
+          "size": 30930,
+          "modified": "2025-10-11T00:18:35.433712",
+          "category": "documentation"
+        },
+        {
+          "name": "UNIFIED_DASHBOARD_QUICK_START.md",
+          "size": 7533,
+          "modified": "2025-10-10T22:00:21.450548",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS_RUNTIME_INTELLIGENCE_SHOWCASE.md",
+        "size": 16913,
+        "modified": "2025-10-10T21:39:21.882678",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "AI_EXECUTION_BRIDGE_DESIGN.md",
+        "size": 30930,
+        "modified": "2025-10-11T00:18:35.433712",
+        "category": "documentation"
+      },
+      {
+        "name": "UNIFIED_DASHBOARD_QUICK_START.md",
+        "size": 7533,
+        "modified": "2025-10-10T22:00:21.450548",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS_RUNTIME_INTELLIGENCE_SHOWCASE.md",
+        "size": 16913,
+        "modified": "2025-10-10T21:39:21.882678",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > runtime",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\runtime' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\runtime' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\runtime' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "runtime"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

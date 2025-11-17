@@ -1,0 +1,118 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:34:22.084259",
+  "folder_info": {
+    "name": "plans",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\architecture\\plans",
+    "relative_path": "tachyonic\\architecture\\plans",
+    "parent_path": "tachyonic\\architecture",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "architecture",
+      "plans"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis",
+      "bridge",
+      "consciousness",
+      "implementation"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 26707,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "ARCHITECTURAL_REFACTORIZATION_PLAN_20251012.md",
+          "size": 14307,
+          "modified": "2025-10-12T05:09:17.211192",
+          "category": "documentation"
+        },
+        {
+          "name": "DEV_PATH_REFACTORIZATION_COMPLETE_20251012.md",
+          "size": 12400,
+          "modified": "2025-10-12T00:58:59.829792",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "ARCHITECTURAL_REFACTORIZATION_PLAN_20251012.md",
+        "size": 14307,
+        "modified": "2025-10-12T05:09:17.211192",
+        "category": "documentation"
+      },
+      {
+        "name": "DEV_PATH_REFACTORIZATION_COMPLETE_20251012.md",
+        "size": 12400,
+        "modified": "2025-10-12T00:58:59.829792",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > architecture > plans",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\plans' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\plans' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\architecture\\plans' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "docs\\architecture"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

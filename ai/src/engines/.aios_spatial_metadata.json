@@ -1,0 +1,170 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:30.866246",
+  "folder_info": {
+    "name": "engines",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\src\\engines",
+    "relative_path": "ai\\src\\engines",
+    "parent_path": "ai\\src",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "src",
+      "engines"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "core",
+      "integrations"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 215429,
+      "file_count": 8,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_ai_integration_bridge.py",
+          "size": 16186,
+          "modified": "2025-09-15T22:06:50.130121",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_custom_ai_engine.py",
+          "size": 25344,
+          "modified": "2025-09-15T22:06:51.283597",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_performance_optimizer.py",
+          "size": 17804,
+          "modified": "2025-09-15T22:06:52.334548",
+          "category": "consciousness"
+        },
+        {
+          "name": "enhanced_visual_intelligence_engine.py",
+          "size": 45616,
+          "modified": "2025-09-15T22:06:54.294324",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_ai_integration_bridge.py",
+        "size": 16186,
+        "modified": "2025-09-15T22:06:50.130121",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_custom_ai_engine.py",
+        "size": 25344,
+        "modified": "2025-09-15T22:06:51.283597",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_performance_optimizer.py",
+        "size": 17804,
+        "modified": "2025-09-15T22:06:52.334548",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "enhanced_visual_intelligence_engine.py",
+        "size": 45616,
+        "modified": "2025-09-15T22:06:54.294324",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_performance_optimizer.py",
+        "size": 17804,
+        "modified": "2025-09-15T22:06:52.334548",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_custom_ai_engine.py",
+        "size": 25344,
+        "modified": "2025-09-15T22:06:51.283597",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_ai_integration_bridge.py",
+        "size": 16186,
+        "modified": "2025-09-15T22:06:50.130121",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 8,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > src > engines",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\engines' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\engines' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\src\\engines' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "aios_env",
+      "docs\\ai-context",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "ai\\src",
+      "core\\engines"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:47.115471",
+  "folder_info": {
+    "name": "readme_history",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\snapshots\\readme_history",
+    "relative_path": "tachyonic\\snapshots\\readme_history",
+    "parent_path": "tachyonic\\snapshots",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "snapshots",
+      "readme_history"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "health_checks",
+      "holographic_indices"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 76054,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "README_ORIGINAL_20251008.md",
+          "size": 38027,
+          "modified": "2025-10-08T15:08:46.979158",
+          "category": "documentation"
+        },
+        {
+          "name": "README_ORIGINAL_20251008_FINAL.md",
+          "size": 38027,
+          "modified": "2025-10-08T15:08:46.979158",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README_ORIGINAL_20251008.md",
+        "size": 38027,
+        "modified": "2025-10-08T15:08:46.979158",
+        "category": "documentation"
+      },
+      {
+        "name": "README_ORIGINAL_20251008_FINAL.md",
+        "size": 38027,
+        "modified": "2025-10-08T15:08:46.979158",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "README_ORIGINAL_20251008.md",
+        "size": 38027,
+        "modified": "2025-10-08T15:08:46.979158",
+        "category": "documentation"
+      },
+      {
+        "name": "README_ORIGINAL_20251008_FINAL.md",
+        "size": 38027,
+        "modified": "2025-10-08T15:08:46.979158",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > snapshots > readme_history",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\snapshots\\readme_history' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\snapshots\\readme_history' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\snapshots\\readme_history' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\rollback_snapshots"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

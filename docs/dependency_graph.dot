@@ -1,0 +1,128 @@
+// AIOS Dependency Graph
+digraph {
+	rankdir=TB size="12,8"
+	node [fillcolor=lightblue shape=box style="rounded,filled"]
+	real_ai_lint_fixer [label="real_ai_lint_fixer\n(py)"]
+	aios_indexer [label="aios_indexer\n(py)"]
+	verify_gemini_config [label="verify_gemini_config\n(py)"]
+	consciousness_evolution_engine [label="consciousness_evolution_engine\n(py)"]
+	aios_ai_integration_bridge [label="aios_ai_integration_bridge\n(py)"]
+	aios_custom_ai_engine [label="aios_custom_ai_engine\n(py)"]
+	consciousness_bridge [label="consciousness_bridge\n(py)"]
+	library_ingestion_protocol [label="library_ingestion_protocol\n(py)"]
+	test_library_ingestion_protocol [label="test_library_ingestion_protocol\n(py)"]
+	consciousness_evolution_engine [label="consciousness_evolution_engine\n(py)"]
+	supercell_intelligence_coordinator [label="supercell_intelligence_coordinator\n(py)"]
+	activate_continuous_optimization [label="activate_continuous_optimization\n(py)"]
+	aios_githooks_optimizer [label="aios_githooks_optimizer\n(py)"]
+	aios_architectural_analysis [label="aios_architectural_analysis\n(py)"]
+	vscode_consciousness [label="vscode_consciousness\n(py)"]
+	lightweight_ai_coordinator [label="lightweight_ai_coordinator\n(py)"]
+	aios_deepseek_supercell_bridge [label="aios_deepseek_supercell_bridge\n(py)"]
+	continuous_optimization_daemon [label="continuous_optimization_daemon\n(py)"]
+	vscode_error_intelligence [label="vscode_error_intelligence\n(py)"]
+	ainlp_cellular_integrator [label="ainlp_cellular_integrator\n(py)"]
+	consciousness_mcp_server [label="consciousness_mcp_server\n(py)"]
+	gemini_evolution_bridge [label="gemini_evolution_bridge\n(py)"]
+	integration_tester [label="integration_tester\n(py)"]
+	meta_cognitive_loop [label="meta_cognitive_loop\n(py)"]
+	agentic_behavior_enhancement [label="agentic_behavior_enhancement\n(py)"]
+	shared_imports [label="shared_imports\n(py)"]
+	test_minimal_consciousness [label="test_minimal_consciousness\n(cpp)"]
+	test_minimal_consciousness -> AIOrchestrationControllerpp
+	test_minimal_consciousness -> CenterGeometryFieldpp
+	test_minimal_consciousness -> AtomicHolographyUnitpp
+	test_minimal_consciousness -> AIOSConsciousnessEnginepp
+	test_core_consciousness [label="test_core_consciousness\n(cpp)"]
+	test_core_consciousness -> AIOrchestrationControllerpp
+	test_core_consciousness -> CenterGeometryFieldpp
+	test_core_consciousness -> AtomicHolographyUnitpp
+	QuantumRandomGenerator [label="QuantumRandomGenerator\n(cpp)"]
+	QuantumRandomGenerator -> QuantumRandomGeneratorpp
+	QuantumRandomGenerator -> AIOSMathematicalConsciousnesspp
+	SingularityCore [label="SingularityCore\n(cpp)"]
+	SingularityCore -> SingularityCorepp
+	SingularityCore -> Loggerpp
+	SingularityCore -> MathConstantspp
+	SingularityCore -> CodeEvolutionEnginepp
+	SingularityCore -> AIOSConsciousnessEnginepp
+	SingularityCore -> AIOSMathematicalConsciousnesspp
+	SingularityCore -> AIOrchestrationControllerpp
+	CenterGeometryField [label="CenterGeometryField\n(cpp)"]
+	CenterGeometryField -> CenterGeometryFieldpp
+	CenterGeometryField -> AtomicHolographyUnitpp
+	CenterGeometryField -> AIOrchestrationControllerpp
+	CenterGeometryField -> MathConstantspp
+	AIOSConsciousnessEngine [label="AIOSConsciousnessEngine\n(cpp)"]
+	AIOSConsciousnessEngine -> AIOSConsciousnessEnginepp
+	AIOSConsciousnessEngine -> SingularityCorepp
+	AIOSConsciousnessEngine -> Loggerpp
+	AIOSConsciousnessEngine -> AIOSMathematicalConsciousnesspp
+	AIOrchestrationController [label="AIOrchestrationController\n(cpp)"]
+	AIOrchestrationController -> AIOrchestrationControllerpp
+	AIOrchestrationController -> AIOSConsciousnessEnginepp
+	AIOrchestrationController -> AIOSMathematicalConsciousnesspp
+	PluginLoader [label="PluginLoader\n(cpp)"]
+	PluginLoader -> PluginLoader
+	main [label="main\n(cpp)"]
+	main -> Loggerpp
+	main -> SingularityCorepp
+	main -> IPCManager
+	main -> HealthMonitor
+	main -> PluginLoader
+	main -> AtomicHolographyUnitpp
+	main -> CenterGeometryFieldpp
+	main -> SphereShellManagerpp
+	main -> CodeEvolutionEnginepp
+	main -> AIOrchestrationControllerpp
+	main -> TachyonicFieldDatabasepp
+	main -> RecursiveSelfIngestorpp
+	main -> NaturalLanguageInterfacepp
+	main -> UniversalConsciousnessSubstratepp
+	main -> IntelligentMetadataAbstractorpp
+	main -> MathConstantspp
+	aios_core_engine_root_analyzer_iter2 [label="aios_core_engine_root_analyzer_iter2\n(py)"]
+	aios_cellular_intelligence_diagnostic_system [label="aios_cellular_intelligence_diagnostic_system\n(py)"]
+	aios_file_tracking_system [label="aios_file_tracking_system\n(py)"]
+	aios_cellular_intelligence_enhancement_engine [label="aios_cellular_intelligence_enhancement_engine\n(py)"]
+	aios_core_meta_evolutionary_enhancer [label="aios_core_meta_evolutionary_enhancer\n(py)"]
+	aios_core_engine_optimizer_iter2 [label="aios_core_engine_optimizer_iter2\n(py)"]
+	aios_tachyonic_archive_cleanup [label="aios_tachyonic_archive_cleanup\n(py)"]
+	test_tensorflow_cell [label="test_tensorflow_cell\n(cpp)"]
+	test_tensorflow_cell -> tensorflow_performance_cellpp
+	AINLPCompiler [label="AINLPCompiler\n(cs)"]
+	AINLPHarmonizer [label="AINLPHarmonizer\n(cs)"]
+	consciousness_core [label="consciousness_core\n(cpp)"]
+	consciousness_core -> consciousness_core
+	aios_supercell_transport_bridge [label="aios_supercell_transport_bridge\n(py)"]
+	aios_tachyonic_storage_bridge [label="aios_tachyonic_storage_bridge\n(py)"]
+	aios_tachyonic_assembler_archival [label="aios_tachyonic_assembler_archival\n(py)"]
+	aios_consciousness_integration_engine [label="aios_consciousness_integration_engine\n(py)"]
+	aios_dendritic [label="aios_dendritic\n(py)"]
+	aios_dendritic_network_intelligence_enhancer [label="aios_dendritic_network_intelligence_enhancer\n(py)"]
+	consciousness_explorer_3d [label="consciousness_explorer_3d\n(py)"]
+	consciousness_mutation_engine [label="consciousness_mutation_engine\n(py)"]
+	parallel_consciousness_orchestrator [label="parallel_consciousness_orchestrator\n(py)"]
+	aios_cellular_reorganization_implementation [label="aios_cellular_reorganization_implementation\n(py)"]
+	aios_meta_evolutionary_analyzer [label="aios_meta_evolutionary_analyzer\n(py)"]
+	dendritic_mutator [label="dendritic_mutator\n(py)"]
+	self_healing_engine [label="self_healing_engine\n(py)"]
+	assembly_executor [label="assembly_executor\n(py)"]
+	consciousness_ai_cellular_bridge [label="consciousness_ai_cellular_bridge\n(py)"]
+	consciousness_analyzer [label="consciousness_analyzer\n(py)"]
+	tachyonic_visualizer [label="tachyonic_visualizer\n(py)"]
+	dendritic_code_optimizer [label="dendritic_code_optimizer\n(py)"]
+	dendritic_consolidation_engine [label="dendritic_consolidation_engine\n(py)"]
+	ainlp_dendritic_enhancer [label="ainlp_dendritic_enhancer\n(py)"]
+	tensorflow_performance_cell [label="tensorflow_performance_cell\n(cpp)"]
+	tensorflow_performance_cell -> tensorflow_performance_cellpp
+	aios_core_minimal [label="aios_core_minimal\n(cpp)"]
+	aios_core_minimal -> aios_core_minimalpp
+	aios_core_minimal -> aios_plugin_telemetrypp
+	aios_plugin_telemetry [label="aios_plugin_telemetry\n(cpp)"]
+	aios_plugin_telemetry -> aios_plugin_telemetrypp
+	aios_core_meta_evolutionary_enhancer [label="aios_core_meta_evolutionary_enhancer\n(py)"]
+	AINLPCompiler [label="AINLPCompiler\n(cs)"]
+	AINLPHarmonizer [label="AINLPHarmonizer\n(cs)"]
+	aios_comprehensive_runtime_tester [label="aios_comprehensive_runtime_tester\n(py)"]
+}

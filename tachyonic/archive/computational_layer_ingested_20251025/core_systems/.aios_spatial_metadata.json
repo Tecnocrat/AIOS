@@ -1,0 +1,342 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:50.381270",
+  "folder_info": {
+    "name": "core_systems",
+    "absolute_path": "C:\\dev\\AIOS\\core\\core_systems",
+    "relative_path": "core\\core_systems",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [
+      "Core Engine"
+    ],
+    "path_classification": [
+      "core",
+      "core_systems"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "__pycache__",
+      "analysis_tools",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "configuration",
+      "documentation",
+      "engines",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "runtime_intelligence",
+      "src",
+      "tachyonic_archive",
+      "tests"
+    ],
+    "child_folders": [
+      "__pycache__",
+      "bin",
+      "build",
+      "include",
+      "obj",
+      "src"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 20652009,
+      "file_count": 185,
+      "folder_count": 6,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".cs": [
+        {
+          "name": "AINLPCompiler.cs",
+          "size": 57245,
+          "modified": "2025-09-15T22:26:47.107709",
+          "category": "consciousness"
+        },
+        {
+          "name": "AINLPHarmonizer.cs",
+          "size": 64459,
+          "modified": "2025-09-15T22:26:56.261900",
+          "category": "consciousness"
+        },
+        {
+          "name": "ConsciousnessSIMDProcessor.cs",
+          "size": 14733,
+          "modified": "2025-09-15T22:27:16.520173",
+          "category": "consciousness"
+        },
+        {
+          "name": "EnhancedAINLPCompiler.cs",
+          "size": 19792,
+          "modified": "2025-09-15T22:27:17.476984",
+          "category": "consciousness"
+        }
+      ],
+      ".csproj": [
+        {
+          "name": "AIOS.Core.csproj",
+          "size": 693,
+          "modified": "2025-09-03T01:09:55.312277",
+          "category": "other"
+        }
+      ],
+      ".py": [
+        {
+          "name": "aios_autonomous_supercell_organism.py",
+          "size": 33365,
+          "modified": "2025-09-15T22:26:58.124549",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_consciousness_monitor.py",
+          "size": 3997,
+          "modified": "2025-09-15T22:26:58.485141",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_enhancement_patch_reporter.py",
+          "size": 15927,
+          "modified": "2025-09-15T22:26:59.160446",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_root_neuronal_optimizer.py",
+          "size": 33899,
+          "modified": "2025-09-15T22:27:00.863461",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_neuronal_dendritic_intelligence.py",
+          "size": 43527,
+          "modified": "2025-09-15T22:27:02.810229",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_subcellular_neuronal_organizer.py",
+          "size": 37217,
+          "modified": "2025-09-15T22:27:14.825812",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 234,
+          "modified": "2025-09-15T22:27:17.668904",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "CELLULAR_METADATA.md",
+          "size": 910,
+          "modified": "2025-09-15T22:27:15.323909",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 593,
+          "modified": "2025-09-15T22:27:17.658061",
+          "category": "documentation"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "CMakeLists.txt",
+          "size": 6322,
+          "modified": "2025-09-15T22:27:15.558197",
+          "category": "documentation"
+        },
+        {
+          "name": "CMakeLists_ITER2.txt",
+          "size": 6722,
+          "modified": "2025-09-15T22:27:15.834407",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS.Core.csproj",
+        "size": 693,
+        "modified": "2025-09-03T01:09:55.312277",
+        "category": "other"
+      },
+      {
+        "name": "aios_autonomous_supercell_organism.py",
+        "size": 33365,
+        "modified": "2025-09-15T22:26:58.124549",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_consciousness_monitor.py",
+        "size": 3997,
+        "modified": "2025-09-15T22:26:58.485141",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_enhancement_patch_reporter.py",
+        "size": 15927,
+        "modified": "2025-09-15T22:26:59.160446",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_root_neuronal_optimizer.py",
+        "size": 33899,
+        "modified": "2025-09-15T22:27:00.863461",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_neuronal_dendritic_intelligence.py",
+        "size": 43527,
+        "modified": "2025-09-15T22:27:02.810229",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_subcellular_neuronal_organizer.py",
+        "size": 37217,
+        "modified": "2025-09-15T22:27:14.825812",
+        "category": "consciousness"
+      },
+      {
+        "name": "CMakeLists.txt",
+        "size": 6322,
+        "modified": "2025-09-15T22:27:15.558197",
+        "category": "documentation"
+      },
+      {
+        "name": "ConsciousnessSIMDProcessor.cs",
+        "size": 14733,
+        "modified": "2025-09-15T22:27:16.520173",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 593,
+        "modified": "2025-09-15T22:27:17.658061",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "__init__.py",
+        "size": 234,
+        "modified": "2025-09-15T22:27:17.668904",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 593,
+        "modified": "2025-09-15T22:27:17.658061",
+        "category": "documentation"
+      },
+      {
+        "name": "EnhancedAINLPCompiler.cs",
+        "size": 19792,
+        "modified": "2025-09-15T22:27:17.476984",
+        "category": "consciousness"
+      },
+      {
+        "name": "ConsciousnessSIMDProcessor.cs",
+        "size": 14733,
+        "modified": "2025-09-15T22:27:16.520173",
+        "category": "consciousness"
+      },
+      {
+        "name": "CMakeLists_ITER2.txt",
+        "size": 6722,
+        "modified": "2025-09-15T22:27:15.834407",
+        "category": "documentation"
+      },
+      {
+        "name": "CMakeLists.txt",
+        "size": 6322,
+        "modified": "2025-09-15T22:27:15.558197",
+        "category": "documentation"
+      },
+      {
+        "name": "CELLULAR_METADATA.md",
+        "size": 910,
+        "modified": "2025-09-15T22:27:15.323909",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_subcellular_neuronal_organizer.py",
+        "size": 37217,
+        "modified": "2025-09-15T22:27:14.825812",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_neuronal_dendritic_intelligence.py",
+        "size": 43527,
+        "modified": "2025-09-15T22:27:02.810229",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_root_neuronal_optimizer.py",
+        "size": 33899,
+        "modified": "2025-09-15T22:27:00.863461",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 16,
+      "file_types": [
+        ".cs",
+        ".csproj",
+        ".py",
+        ".md",
+        ".txt"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 76,
+      "consciousness_files": 6,
+      "agentic_files": 1,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "core > core_systems",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "core\\build\\src\\aios_core_lib.dir"
+    ]
+  }
+}

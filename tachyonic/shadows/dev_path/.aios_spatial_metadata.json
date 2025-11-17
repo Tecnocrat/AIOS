@@ -1,0 +1,116 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:36:28.358471",
+  "folder_info": {
+    "name": "dev_path",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\shadows\\dev_path",
+    "relative_path": "tachyonic\\shadows\\dev_path",
+    "parent_path": "tachyonic\\shadows",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "shadows",
+      "dev_path"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "project_context"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 39341,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "DEV_PATH_EXAMPLE.md",
+          "size": 6589,
+          "modified": "2025-10-20T21:01:38.813581",
+          "category": "documentation"
+        },
+        {
+          "name": "DEV_PATH_shadow_2025-08-01_to_2025-10-17.md",
+          "size": 32752,
+          "modified": "2025-10-20T21:11:48.825151",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "DEV_PATH_shadow_2025-08-01_to_2025-10-17.md",
+        "size": 32752,
+        "modified": "2025-10-20T21:11:48.825151",
+        "category": "documentation"
+      },
+      {
+        "name": "DEV_PATH_EXAMPLE.md",
+        "size": 6589,
+        "modified": "2025-10-20T21:01:38.813581",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > shadows > dev_path",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\shadows\\dev_path' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\shadows\\dev_path' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\shadows\\dev_path' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "ai\\tachyonic",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "evolution_lab\\tachyonic_field",
+      "tachyonic\\shadows",
+      "tachyonic\\reports\\health\\dev_path"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

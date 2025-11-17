@@ -1,0 +1,163 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:21.888054",
+  "folder_info": {
+    "name": "workbench",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\tests\\workbench",
+    "relative_path": "ai\\tests\\workbench",
+    "parent_path": "ai\\tests",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "tests",
+      "workbench"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "consciousness",
+      "data",
+      "integration"
+    ],
+    "child_folders": [
+      "results",
+      "sample_libraries"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 39084,
+      "file_count": 6,
+      "folder_count": 2,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "library_ingestion_workbench.py",
+          "size": 18604,
+          "modified": "2025-10-03T21:52:01.150481",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "QUICK_START.md",
+          "size": 2764,
+          "modified": "2025-10-03T21:52:01.325440",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 9565,
+          "modified": "2025-10-03T21:52:01.325440",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATION_MARKER.md",
+          "size": 2644,
+          "modified": "2025-10-04T23:42:26.487207",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 9565,
+        "modified": "2025-10-03T21:52:01.325440",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "RELOCATION_MARKER.md",
+        "size": 2644,
+        "modified": "2025-10-04T23:42:26.487207",
+        "category": "documentation"
+      },
+      {
+        "name": "QUICK_START.md",
+        "size": 2764,
+        "modified": "2025-10-03T21:52:01.325440",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 9565,
+        "modified": "2025-10-03T21:52:01.325440",
+        "category": "documentation"
+      },
+      {
+        "name": "library_ingestion_workbench.py",
+        "size": 18604,
+        "modified": "2025-10-03T21:52:01.150481",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".py",
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "ai > tests > workbench",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tests\\workbench' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tests\\workbench' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tests\\workbench' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\tests"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

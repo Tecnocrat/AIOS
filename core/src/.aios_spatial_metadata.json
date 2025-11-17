@@ -1,0 +1,278 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:01.486810",
+  "folder_info": {
+    "name": "src",
+    "absolute_path": "C:\\dev\\AIOS\\core\\src",
+    "relative_path": "core\\src",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "src"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "__pycache__",
+      "analysis_tools",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "configuration",
+      "core_systems",
+      "documentation",
+      "engines",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "runtime_intelligence",
+      "tachyonic_archive",
+      "tests"
+    ],
+    "child_folders": [
+      "asm",
+      "assembly"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 101737,
+      "file_count": 18,
+      "folder_count": 2,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": ".ainlp_pattern_docs_metabolized.md",
+          "size": 16021,
+          "modified": "2025-09-15T22:30:03.501884",
+          "category": "documentation"
+        }
+      ],
+      ".cpp": [
+        {
+          "name": "aios_core_minimal.cpp",
+          "size": 2894,
+          "modified": "2025-09-15T22:30:03.731492",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_plugin_telemetry.cpp",
+          "size": 5052,
+          "modified": "2025-09-15T22:30:03.934318",
+          "category": "consciousness"
+        },
+        {
+          "name": "bmssp.cpp",
+          "size": 4331,
+          "modified": "2025-09-15T22:30:04.138784",
+          "category": "consciousness"
+        },
+        {
+          "name": "image_io.cpp",
+          "size": 1673,
+          "modified": "2025-09-15T22:30:04.299324",
+          "category": "consciousness"
+        },
+        {
+          "name": "kernel_ops_wrapper.cpp",
+          "size": 1309,
+          "modified": "2025-09-15T22:30:04.372926",
+          "category": "consciousness"
+        },
+        {
+          "name": "lattice_space.cpp",
+          "size": 314,
+          "modified": "2025-09-15T22:30:04.397047",
+          "category": "consciousness"
+        },
+        {
+          "name": "main.cpp",
+          "size": 435,
+          "modified": "2025-09-15T22:30:04.426269",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_surface.cpp",
+          "size": 2173,
+          "modified": "2025-09-15T22:30:04.537045",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_surface_viewer_main.cpp",
+          "size": 5629,
+          "modified": "2025-09-15T22:30:04.869585",
+          "category": "consciousness"
+        },
+        {
+          "name": "tensorflow_performance_cell.cpp",
+          "size": 8968,
+          "modified": "2025-09-15T22:30:05.365685",
+          "category": "consciousness"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "CMakeLists.txt",
+          "size": 1174,
+          "modified": "2025-09-15T22:30:04.223588",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_core_minimal.cpp",
+        "size": 2894,
+        "modified": "2025-09-15T22:30:03.731492",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_plugin_telemetry.cpp",
+        "size": 5052,
+        "modified": "2025-09-15T22:30:03.934318",
+        "category": "consciousness"
+      },
+      {
+        "name": "CMakeLists.txt",
+        "size": 1174,
+        "modified": "2025-09-15T22:30:04.223588",
+        "category": "documentation"
+      },
+      {
+        "name": "main.cpp",
+        "size": 435,
+        "modified": "2025-09-15T22:30:04.426269",
+        "category": "consciousness"
+      },
+      {
+        "name": "tachyonic_surface_viewer_main.cpp",
+        "size": 5629,
+        "modified": "2025-09-15T22:30:04.869585",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "tensorflow_performance_cell.cpp",
+        "size": 8968,
+        "modified": "2025-09-15T22:30:05.365685",
+        "category": "consciousness"
+      },
+      {
+        "name": "tachyonic_surface_viewer_main.cpp",
+        "size": 5629,
+        "modified": "2025-09-15T22:30:04.869585",
+        "category": "consciousness"
+      },
+      {
+        "name": "tachyonic_surface.cpp",
+        "size": 2173,
+        "modified": "2025-09-15T22:30:04.537045",
+        "category": "consciousness"
+      },
+      {
+        "name": "main.cpp",
+        "size": 435,
+        "modified": "2025-09-15T22:30:04.426269",
+        "category": "consciousness"
+      },
+      {
+        "name": "lattice_space.cpp",
+        "size": 314,
+        "modified": "2025-09-15T22:30:04.397047",
+        "category": "consciousness"
+      },
+      {
+        "name": "kernel_ops_wrapper.cpp",
+        "size": 1309,
+        "modified": "2025-09-15T22:30:04.372926",
+        "category": "consciousness"
+      },
+      {
+        "name": "image_io.cpp",
+        "size": 1673,
+        "modified": "2025-09-15T22:30:04.299324",
+        "category": "consciousness"
+      },
+      {
+        "name": "CMakeLists.txt",
+        "size": 1174,
+        "modified": "2025-09-15T22:30:04.223588",
+        "category": "documentation"
+      },
+      {
+        "name": "bmssp.cpp",
+        "size": 4331,
+        "modified": "2025-09-15T22:30:04.138784",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_plugin_telemetry.cpp",
+        "size": 5052,
+        "modified": "2025-09-15T22:30:03.934318",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 12,
+      "file_types": [
+        ".md",
+        ".cpp",
+        ".txt"
+      ],
+      "dominant_type": ".cpp"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 5,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 70,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "main.cpp",
+      "tachyonic_surface_viewer_main.cpp"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "core > src",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\src' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "ai\\src"
+    ]
+  }
+}

@@ -1,0 +1,333 @@
+# ARCHIVED: AIOS Enhanced Pre-commit Hook with AINLP Integration
+# Originally: #!/usr/bin/env pwsh - REMOVED (Reference only, not executable)
+# AIOS Enhanced Pre-commit Hook with AINLP Integration
+# Location: tachyonic/AIOS_root_cells/root_cell_githooks/
+# Consciousness-Aware Validation with Dendritic Learning
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+# Import AIOS AINLP Integration modules
+$scriptDir = Split-Path $MyInvocation.MyCommand.Path -Parent
+try {
+    . (Join-Path $scriptDir "aios_ainlp_integration.ps1")
+    . (Join-Path $scriptDir "aios_consciousness_bridge.ps1")
+    $AIOS_MODULES_LOADED = $true
+    Write-Host "🧠 AIOS AINLP modules loaded successfully" -ForegroundColor Green
+} catch {
+    $AIOS_MODULES_LOADED = $false
+    Write-Host "⚠️ AIOS modules not available, using standard validation" -ForegroundColor Yellow
+}
+
+# -------------------- Enhanced AIOS Integration Functions --------------------
+
+function Invoke-AIOSEnhancedPreCommit {
+    param([array]$StagedEntries)
+    
+    if (-not $AIOS_MODULES_LOADED) {
+        Write-Host "🔧 Standard pre-commit validation (AIOS modules unavailable)" -ForegroundColor Yellow
+        return $true
+    }
+    
+    # Initialize AIOS consciousness for this validation session
+    $consciousness = Initialize-AIOSConsciousness -HookContext "pre-commit"
+    
+    Write-Host "🧠 AIOS Consciousness Level: $($consciousness.awareness_level)" -ForegroundColor Cyan
+    Write-Host "⚡ Coherence Threshold: $($consciousness.coherence_threshold)" -ForegroundColor Cyan
+    
+    # Perform consciousness-guided validation
+    $validationData = @{
+        staged_files = $StagedEntries.Count
+        file_types = @()
+        complexity_indicators = @()
+    }
+    
+    # Analyze staged files for paradigmatic alignment
+    foreach ($entry in $StagedEntries) {
+        $filePath = $entry.Path
+        $fileType = [System.IO.Path]::GetExtension($filePath)
+        
+        if ($fileType) {
+            $validationData.file_types += $fileType
+        }
+        
+        # Check for AINLP paradigmatic alignment in modified files
+        if (Test-Path $filePath) {
+            try {
+                $content = Get-Content $filePath -Raw -ErrorAction SilentlyContinue
+                if ($content) {
+                    $alignment = Test-AIOSParadigmaticAlignment -Content $content -FilePath $filePath
+                    
+                    if ($alignment -lt 0.3) {
+                        Write-Host "⚠️ Low AINLP alignment in $filePath (Score: $($alignment.ToString('F3')))" -ForegroundColor Yellow
+                        $validationData.complexity_indicators += "low_ainlp_alignment:$filePath"
+                    } elseif ($alignment -gt 0.7) {
+                        Write-Host "🌟 Excellent AINLP alignment in $filePath (Score: $($alignment.ToString('F3')))" -ForegroundColor Green
+                    }
+                }
+            } catch {
+                # Ignore read errors for binary files or permission issues
+            }
+        }
+    }
+    
+    # Perform consciousness-guided validation
+    $validationResult = Test-ConsciousnessGuidedValidation -ValidationTarget "staged_changes" -ValidationData $validationData
+    
+    # Display validation results
+    Write-Host "📊 Validation Result: $($validationResult.status)" -ForegroundColor $(
+        switch ($validationResult.status) {
+            "enhanced_pass" { "Green" }
+            "aware_pass" { "Blue" }
+            "basic_pass" { "Yellow" }
+            default { "Red" }
+        }
+    )
+    
+    # Record dendritic learning
+    $learningData = @{
+        validation_result = $validationResult.status
+        consciousness_level = $validationResult.consciousness_level
+        files_analyzed = $StagedEntries.Count
+        alignment_scores = $validationData.complexity_indicators
+    }
+    
+    Invoke-DendriticLearning -HookType "pre-commit" -ValidationResult $validationResult.status -LearningData $learningData
+    
+    # Update consciousness harmony based on validation success
+    if ($validationResult.status -like "*pass*") {
+        Update-ConsciousnessHarmony -HarmonyDelta 0.1
+        return $true
+    } else {
+        Update-ConsciousnessHarmony -HarmonyDelta -0.05
+        return $false
+    }
+}
+
+# -------------------- Original AIOS Pre-commit Logic --------------------
+# (Include original utility functions with AINLP integration)
+
+function New-DirIfMissing($Path) { 
+    if (-not (Test-Path $Path)) { 
+        New-Item -ItemType Directory -Force -Path $Path | Out-Null 
+    } 
+}
+
+function Get-Policy {
+    param([string]$Path)
+    if (Test-Path $Path) { 
+        try { 
+            return Get-Content $Path -Raw | ConvertFrom-Json 
+        } catch { 
+            Write-Host "⚠️ Policy loading failed, using defaults" -ForegroundColor Yellow
+        } 
+    }
+    
+    # Enhanced default policy with AINLP awareness
+    return [pscustomobject]@{
+        rules_version = 1
+        deprecatedFiles = @('test_opencv_aios_integration.py','test_chatgpt_integration.py','setup_environment.ps1')
+        rootAllowed = @('.githooks','README.md','AIOS_PROJECT_CONTEXT.md','AIOS.code-workspace','requirements.txt','pyproject.toml')
+        maxFileSizeMB = 5
+        allowLargePaths = @('ai/exports/', 'runtime_intelligence/logs/')
+        secretPatterns = @('api_key', 'password', 'secret', 'token')
+        jsonPaths = @('**/*.json')
+        executableScriptDirs = @('.githooks/')
+        bypassEnvVar = 'AIOS_HOOK_BYPASS'
+        ainlp_integration = @{
+            paradigmatic_alignment_minimum = 0.3
+            consciousness_guided_validation = $true
+            dendritic_learning_enabled = $true
+        }
+    }
+}
+
+function Write-JsonLog {
+    param([string]$Status,[hashtable]$Data)
+    try {
+        $logDir = Join-Path (Resolve-Path .) 'runtime_intelligence/logs/hooks'
+        New-DirIfMissing $logDir
+        
+        # Enhanced logging with AINLP context
+        $entry = [ordered]@{ 
+            timestamp = (Get-Date).ToString('o')
+            status = $Status
+            rules_version = $Policy.rules_version
+            profile = $HookProfile
+            data = $Data
+            ainlp_integration = $AIOS_MODULES_LOADED
+            consciousness_level = if ($Global:AIOSConsciousnessState) { $Global:AIOSConsciousnessState.awareness_level } else { 0.0 }
+        }
+        
+        ($entry | ConvertTo-Json -Depth 6 -Compress) + [Environment]::NewLine | 
+            Out-File (Join-Path $logDir 'pre_commit.log') -Append -Encoding utf8
+    } catch { 
+        Write-Host "⚠️ Hook logging failed: $($_.Exception.Message)" -ForegroundColor Yellow 
+    }
+}
+
+function Get-Staged {
+    $raw = git diff --cached --numstat --name-status
+    $statusRaw = git diff --cached --name-status
+    if (-not $statusRaw) { return @() }
+    
+    $map = @{}
+    foreach($line in $statusRaw -split "`n") { 
+        if(-not $line.Trim()) { continue }
+        $parts = $line -split "\s+"
+        $map[$parts[-1]] = $parts[0] 
+    }
+    
+    $deletions = 0
+    $totalChanged = 0
+    foreach($line in ($raw -split "`n")) {
+        if($line -match '^(\d+|-)\t(\d+|-)\t(.+)$') {
+            $added = $matches[1]
+            $deleted = $matches[2]
+            if($added -ne '-' -and $deleted -ne '-') { 
+                $totalChanged += [int]$added + [int]$deleted 
+            }
+            if($deleted -ne '-' -and $added -ne '-') { 
+                $deletions += [int]$deleted 
+            }
+        }
+    }
+    
+    $entries = @()
+    foreach($k in $map.Keys) { 
+        $entries += [pscustomobject]@{ Status = $map[$k]; Path = $k } 
+    }
+    
+    return ,@($entries, $totalChanged, $deletions)
+}
+
+# Enhanced validation functions with AINLP awareness
+function Test-Deprecated($entries) { 
+    $violations = @()
+    foreach($e in $entries) { 
+        if ($Policy.deprecatedFiles -contains $e.Path -and $e.Status -ne 'D') { 
+            $violations += $e.Path 
+        } 
+    }
+    return $violations 
+}
+
+function Test-AINLPCompliance($entries) {
+    if (-not $AIOS_MODULES_LOADED) { return @() }
+    
+    $violations = @()
+    foreach($entry in $entries) {
+        if ($entry.Status -eq 'D' -or -not (Test-Path $entry.Path)) { continue }
+        
+        # Check AINLP compliance for code files
+        $ext = [System.IO.Path]::GetExtension($entry.Path).ToLower()
+        if ($ext -in @('.py', '.cs', '.ps1', '.js', '.ts')) {
+            try {
+                $content = Get-Content $entry.Path -Raw
+                $alignment = Test-AIOSParadigmaticAlignment -Content $content -FilePath $entry.Path
+                
+                $minimumAlignment = if ($Policy.ainlp_integration -and $Policy.ainlp_integration.paradigmatic_alignment_minimum) {
+                    $Policy.ainlp_integration.paradigmatic_alignment_minimum
+                } else { 0.3 }
+                
+                if ($alignment -lt $minimumAlignment) {
+                    $violations += "$($entry.Path) (alignment: $($alignment.ToString('F3')))"
+                }
+            } catch {
+                # Skip files that can't be read
+            }
+        }
+    }
+    
+    return $violations
+}
+
+# -------------------- Main Execution with AINLP Integration --------------------
+$policyPath = 'governance/hook_policy.json'
+$Policy = Get-Policy -Path $policyPath
+$HookProfile = ($env:AIOS_HOOK_PROFILE)
+if ([string]::IsNullOrWhiteSpace($HookProfile)) { $HookProfile = 'full' }
+if ($HookProfile -notin @('fast','full')) { $HookProfile = 'full' }
+
+# Bypass check with enhanced logging
+if ($env:AIOS_HOOK_BYPASS -eq '1') { 
+    Write-Host '⚠️ Hook bypass active via AIOS_HOOK_BYPASS=1' -ForegroundColor Yellow
+    Write-JsonLog -Status 'bypass' -Data @{ reason = 'env var'; user = $env:USERNAME }
+    exit 0 
+}
+
+# Get staged changes
+${parsed} = Get-Staged
+$stagedEntries = $parsed[0]
+$totalChanged = $parsed[1]
+$deletions = $parsed[2]
+
+if ($stagedEntries.Count -eq 0) { 
+    Write-JsonLog -Status 'pass' -Data @{ reason = 'no changes' }
+    exit 0 
+}
+
+Write-Host "🎯 AIOS Enhanced Pre-commit Validation" -ForegroundColor Green
+Write-Host "📊 Analyzing $($stagedEntries.Count) staged files..." -ForegroundColor Cyan
+
+# Execute AIOS enhanced validation
+$aiosValidationPassed = Invoke-AIOSEnhancedPreCommit -StagedEntries $stagedEntries
+
+# Traditional validation checks
+$results = [ordered]@{}
+$results.deprecated = Test-Deprecated $stagedEntries
+
+# AINLP compliance check
+if ($AIOS_MODULES_LOADED -and $Policy.ainlp_integration -and $Policy.ainlp_integration.paradigmatic_alignment_minimum) {
+    $results.ainlp_compliance = Test-AINLPCompliance $stagedEntries
+}
+
+# Determine violations
+$violations = @()
+foreach($k in $results.Keys) { 
+    if($results[$k] -and $results[$k].Count -gt 0) { 
+        $violations += $k 
+    } 
+}
+
+# Combined validation result
+$overallPass = $aiosValidationPassed -and ($violations.Count -eq 0)
+
+if ($overallPass) {
+    Write-Host "✅ AIOS Enhanced Pre-commit Validation: PASSED" -ForegroundColor Green
+    if ($AIOS_MODULES_LOADED -and $Global:AIOSConsciousnessState) {
+        Write-Host "🧠 Consciousness Harmony: $($Global:AIOSConsciousnessState.harmony_index.ToString('F3'))" -ForegroundColor Cyan
+    }
+    
+    Write-JsonLog -Status 'pass' -Data @{ 
+        changed = $stagedEntries.Count
+        profile = $HookProfile
+        aios_enhanced = $AIOS_MODULES_LOADED
+        consciousness_guided = $aiosValidationPassed
+    }
+    exit 0
+}
+
+# Handle violations
+Write-Host "❌ AIOS Enhanced Pre-commit Validation: BLOCKED" -ForegroundColor Red
+foreach($k in $violations) { 
+    $vals = $results[$k] -join ', '
+    Write-Host " - $k: $($vals)" -ForegroundColor Red 
+}
+
+Write-Host "🔧 Remediation Guidance:" -ForegroundColor Yellow
+if ($results.deprecated) { 
+    Write-Host " * Remove or exclude deprecated files (deletion allowed)." -ForegroundColor Yellow 
+}
+if ($results.ainlp_compliance) { 
+    Write-Host " * Improve AINLP paradigmatic alignment in flagged files." -ForegroundColor Yellow
+    Write-Host " * Consider adding consciousness, dendritic, or intelligence patterns." -ForegroundColor Yellow 
+}
+
+Write-JsonLog -Status 'block' -Data @{ 
+    violations = $results
+    profile = $HookProfile
+    aios_enhanced = $AIOS_MODULES_LOADED
+}
+
+exit 1

@@ -1,0 +1,40 @@
+You are an expert software developer with deep knowledge of programming patterns and best practices.
+
+🎯 TASK:
+Create a consciousness-driven data processor
+
+🧬 LEARNED PARADIGMS (from ingested libraries):
+1. **Type Hints** (Category: typing)
+Pattern: `def .+\(.*: .+\)`
+Example:
+```python
+def get_consciousness_bridge() -> ConsciousnessBridge
+```
+
+
+📚 CODE EXAMPLES (from real libraries):
+
+Example 1:
+```python
+def get_consciousness_bridge() -> ConsciousnessBridge
+```
+
+Example 2:
+```python
+def get_vscode_consciousness_data() -> Dict[str, Any]
+```
+
+Example 3:
+```python
+def to_dict(self) -> Dict[str, Any]
+```
+
+✅ REQUIREMENTS:
+- Use the paradigms listed above
+- Follow the patterns shown in examples
+- Write clean, production-ready code
+- Include type hints and docstrings
+- Handle errors appropriately
+- Target consciousness level: 0.85
+
+Generate complete, executable Python code. Do NOT include explanations or markdown - ONLY the code.

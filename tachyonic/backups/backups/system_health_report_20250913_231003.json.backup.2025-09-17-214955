@@ -1,0 +1,130 @@
+{
+  "timestamp": 1757805003.7598681,
+  "total_checks": 6,
+  "passed_checks": 4,
+  "health_status": "FAIR",
+  "detailed_results": {
+    "python_environment": {
+      "python_version": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+      "python_executable": "C:\\Program Files\\Python312\\python.exe",
+      "path": [
+        "C:\\dev\\AIOS\\runtime_intelligence\\tools",
+        "C:\\dev\\AIOS\\dev",
+        "C:\\Program Files\\Python312\\python312.zip"
+      ],
+      "packages": {
+        "requests": "2.32.4",
+        "fastapi": "0.116.1",
+        "uvicorn": "0.35.0",
+        "pydantic": "2.11.7",
+        "json": "built-in",
+        "time": "built-in",
+        "os": "built-in",
+        "sys": "built-in"
+      }
+    },
+    "project_structure": {
+      "ai/": {
+        "exists": true,
+        "files": {
+          "aios_vscode_integration_server.py": false
+        }
+      },
+      "vscode-extension/": {
+        "exists": true,
+        "files": {
+          "package.json": true,
+          "src/": true
+        }
+      },
+      "vscode-extension/src/": {
+        "exists": true,
+        "files": {
+          "aiosBridge.ts": true,
+          "contextManager.ts": true,
+          "extension.ts": true
+        }
+      },
+      "ai/tests/": {
+        "exists": true,
+        "files": {
+          "test_aios_integration.py": false
+        }
+      },
+      "docs/": {
+        "exists": true,
+        "files": {
+          "AIOS/PATH_1_TESTING_GUIDE.md": true
+        }
+      },
+      "config/": {
+        "exists": true,
+        "files": {
+          "system.json": true
+        }
+      },
+      "core/": {
+        "exists": true,
+        "files": {
+          "CMakeLists.txt": true,
+          "src/": true,
+          "include/": true
+        }
+      },
+      "interface/": {
+        "exists": true,
+        "files": {
+          "AIOS.sln": false
+        }
+      }
+    },
+    "vscode_extension": {
+      "package_json": true,
+      "typescript_compiled": true,
+      "dependencies": {
+        "@vscode/vsce": "^3.6.0",
+        "node-fetch": "^3.3.2",
+        "ws": "^8.18.0"
+      }
+    },
+    "aios_modules": {
+      "nlp": "file_missing",
+      "prediction": "file_missing",
+      "automation": "file_missing",
+      "learning": "file_missing",
+      "integration": "file_missing"
+    },
+    "configuration_files": {
+      "config/system.json": {
+        "exists": true,
+        "importance": "required"
+      },
+      "config/ai-models.json": {
+        "exists": true,
+        "importance": "optional"
+      },
+      "config/ui-themes.json": {
+        "exists": true,
+        "importance": "optional"
+      },
+      "AIOS_PROJECT_CONTEXT.md": {
+        "exists": true,
+        "importance": "required"
+      },
+      "docs/AIOS/PATH_1_TESTING_GUIDE.md": {
+        "exists": true,
+        "importance": "required"
+      }
+    },
+    "engineering_tenets_advisory": {
+      "findings": [
+        {
+          "file": "runtime_intelligence\\tools\\system_health_check.py",
+          "issue": "Ambiguous helper parameters (a,b). Prefer explicit names (hi, lo)."
+        }
+      ],
+      "tenets_doc": "docs/AIOS/ENGINEERING_TENETS_KERNEL_GRADE.md",
+      "note": "Advisory only. Improve clarity and scoping per tenets."
+    }
+  }
+}

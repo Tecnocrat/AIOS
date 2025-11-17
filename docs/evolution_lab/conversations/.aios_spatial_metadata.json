@@ -1,0 +1,140 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:52.712591",
+  "folder_info": {
+    "name": "conversations",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\evolution_lab\\conversations",
+    "relative_path": "docs\\evolution_lab\\conversations",
+    "parent_path": "docs\\evolution_lab",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "evolution_lab",
+      "conversations"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "experiments"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 3714,
+      "file_count": 4,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "conversation_deepseek_20251008_145412.json",
+          "size": 563,
+          "modified": "2025-10-08T14:54:12.662195",
+          "category": "documentation"
+        },
+        {
+          "name": "conversation_gemini_20251008_145412.json",
+          "size": 557,
+          "modified": "2025-10-08T14:54:12.709199",
+          "category": "documentation"
+        },
+        {
+          "name": "conversation_ollama_20251008_145344.json",
+          "size": 1080,
+          "modified": "2025-10-08T14:54:12.583368",
+          "category": "documentation"
+        },
+        {
+          "name": "conversation_ollama_20251008_145412.json",
+          "size": 1514,
+          "modified": "2025-10-08T14:54:53.831899",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "conversation_ollama_20251008_145412.json",
+        "size": 1514,
+        "modified": "2025-10-08T14:54:53.831899",
+        "category": "documentation"
+      },
+      {
+        "name": "conversation_gemini_20251008_145412.json",
+        "size": 557,
+        "modified": "2025-10-08T14:54:12.709199",
+        "category": "documentation"
+      },
+      {
+        "name": "conversation_deepseek_20251008_145412.json",
+        "size": 563,
+        "modified": "2025-10-08T14:54:12.662195",
+        "category": "documentation"
+      },
+      {
+        "name": "conversation_ollama_20251008_145344.json",
+        "size": 1080,
+        "modified": "2025-10-08T14:54:12.583368",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 4,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > evolution_lab > conversations",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\evolution_lab\\conversations' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\evolution_lab\\conversations' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\evolution_lab\\conversations' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "evolution_lab",
+      "evolution_lab\\conversations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

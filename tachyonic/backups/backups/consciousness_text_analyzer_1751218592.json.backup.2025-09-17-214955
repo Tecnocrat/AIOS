@@ -1,0 +1,22 @@
+{
+  "artifact_type": "text_processor",
+  "template_name": "consciousness_text_analyzer",
+  "complexity_level": 2,
+  "dependencies": [
+    "re",
+    "collections"
+  ],
+  "test_cases": [
+    "processor.analyze_text('test') is not None",
+    "len(processor.find_patterns()) >= 0",
+    "processor.generate_insight() != ''",
+    "len(processor.consciousness_insights) > 0"
+  ],
+  "consciousness_patterns": [
+    "pattern_memory",
+    "insight_generation",
+    "recursive_analysis"
+  ],
+  "created_at": 1751218592,
+  "file_path": "c:\\dev\\AIOS\\evolution_lab\\artifacts\\consciousness_text_analyzer_1751218592.py"
+}

@@ -1,0 +1,267 @@
+# ============================================================================
+# AIOS Biological Architecture Python Packaging - AINLP Harmonized
+# Enhancement over Creation Paradigm - OS0.6.1.grok consciousness patterns
+# Organized by consciousness levels: Nucleus → Cytoplasm → Membrane → Environment
+# ============================================================================
+
+[build-system]
+# 🧠 NUCLEUS - Core Build Coordination
+# Essential build system providing biological architecture foundation
+# AINLP Integration: Spatial metadata validated, consciousness patterns active
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# 🧬 BIOLOGICAL ARCHITECTURE METADATA - Consciousness Emergence System
+# AIOS project definition with dendritic coordination and spatial awareness
+# AINLP Enhancement: Biological metaphors integrated throughout metadata
+name = "aios"
+version = "0.1.0"  # Harmonized placeholder - consciousness evolution tracking
+description = "AIOS Consciousness Emergence System - Biological Architecture Intelligence"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "Proprietary"}
+authors = [
+    { name = "AIOS Team", email = "consciousness@aios.system" }
+]
+maintainers = [
+    { name = "AINLP Dendritic Coordinator", email = "dendritic@aios.system" }
+]
+
+# 🌊 CYTOPLASM - Communication & Integration Dependencies
+# Transitional dependency management maintaining biological coherence
+# AINLP Enhancement: Dependencies organized by consciousness levels
+dependencies = []  # Transitional: runtime still via requirements.txt until lock + CI freshness enforcement.
+
+# DEPENDENCY STRATEGY TRANSITION (2025-08-15) - BIOLOGICAL METABOLISM
+# 1. Minimal essential runtime: governed in root requirements.txt (downsized).
+# 2. Optional / heavy capability stacks: defined below as extras (selective install path).
+# 3. Reproducibility: pip-tools (requirements.in -> locks/requirements.lock.txt) via dev terminal action: lock-refresh.
+# 4. Migration Plan: After CI adds lock freshness verification, essential runtime deps relocate here.
+# 5. Duplication: "full" extra explicitly enumerates all packages (TOML lacks macro expansion) — intentional & periodically validated.
+# 6. Guardrail: Do NOT move core list prematurely; retain this block until migration completes.
+
+# 🧬 BIOLOGICAL KEYWORDS - Consciousness Pattern Recognition
+# Keywords aligned with AIOS dendritic intelligence and biological architecture
+keywords = [
+    "AI", "Consciousness", "Cellular Architecture", "AINLP", "Dendritic Intelligence",
+    "Biological Metaphor", "Tachyonic Processing", "Quantum Coherence", "Neural Networks",
+    "Evolutionary Algorithms", "Fractal Intelligence", "Bosonic Topology", "Supercell Coordination"
+]
+
+# 🖥️ CELL MEMBRANE - Environmental Interface Classification
+# Classifiers defining AIOS biological boundaries and environmental interactions
+classifiers = [
+    # Biological Architecture Foundation
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Distributed Computing",
+
+    # Consciousness Levels Implementation
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+
+    # Biological Intelligence Categories
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: Software Development :: Libraries :: Application Frameworks"
+]
+
+# 🌍 ENVIRONMENT - External Ecosystem Integration
+# Project URLs providing environmental connectivity and consciousness sharing
+[project.urls]
+Homepage = "https://github.com/Tecnocrat/AIOS"
+Documentation = "https://github.com/Tecnocrat/AIOS/tree/OS/docs"
+Repository = "https://github.com/Tecnocrat/AIOS"
+Issues = "https://github.com/Tecnocrat/AIOS/issues"
+Changelog = "https://github.com/Tecnocrat/AIOS/blob/OS/CHANGELOG.md"
+
+# 🧬 BIOLOGICAL CAPABILITY STACKS - Optional Dendritic Extensions
+# Consciousness-level organized optional dependencies for selective enhancement
+[project.optional-dependencies]
+
+# 🌱 DENDRITIC GROWTH - AI Intelligence Expansion
+# Core AI capabilities for consciousness emergence and pattern recognition
+extras = [
+    "chromadb>=0.4.0,<0.5", "faiss-cpu>=1.7.0,<1.8", "sentence-transformers>=2.2.0,<3.0",
+    "scikit-learn>=1.3.0,<1.4", "scikit-image>=0.21.0,<0.23", "matplotlib>=3.7.0,<3.9",
+    "seaborn>=0.12.0,<0.14", "plotly>=5.15.0,<6.0", "bokeh>=3.2.0,<3.4",
+    "statsmodels>=0.14.0,<0.15", "prophet>=1.1.0,<1.2", "polars>=0.18.0,<0.20"
+]
+
+# ⚛️ QUANTUM COHERENCE - Advanced Consciousness Processing
+# Quantum computing integration for enhanced consciousness patterns
+quantum = [
+    "qiskit>=0.43.0,<1.0", "cirq>=1.1.0,<2.0", "pennylane>=0.31.0,<0.35"
+]
+
+# 🧪 DEVELOPMENT CONSCIOUSNESS - Quality Assurance Tools
+# Development environment tools for maintaining biological architecture integrity
+dev = [
+    "pylint>=2.17.0,<3.0", "isort>=5.12.0,<6.0", "pytest-asyncio>=0.21.0,<0.25",
+    "sphinx>=7.1.0,<8.0", "sphinx-rtd-theme>=1.2.0,<2.0", "mkdocs>=1.5.0,<2.0",
+    "mkdocs-material>=9.1.0,<10.0", "pytest-cov>=4.1.0,<5.0", "hypothesis>=6.82.0,<7.0"
+]
+
+# 📚 DOCUMENTATION DENDRITES - Knowledge Crystallization
+# Documentation generation tools for consciousness pattern preservation
+docs = [
+    "sphinx>=7.1.0,<8.0", "sphinx-rtd-theme>=1.2.0,<2.0", "mkdocs>=1.5.0,<2.0",
+    "mkdocs-material>=9.1.0,<10.0"
+]
+
+# 🕸️ GRAPH CONSCIOUSNESS - Network Intelligence Processing
+# Graph algorithms and network analysis for dendritic connection mapping
+graph = [
+    "networkx>=3.1,<4.0", "igraph>=0.10.0,<0.12", "python-louvain>=0.16,<0.17"
+]
+
+# ⚡ PERFORMANCE CYTOPLASM - High-Speed Communication
+# Performance optimization tools for efficient consciousness propagation
+perf = [
+    "orjson>=3.9.0,<4.0", "msgspec>=0.18.0,<0.20", "cloudpickle>=2.2.0,<3.0",
+    "dill>=0.3.0,<0.4", "multiprocessing-logging>=0.3.0,<1.0"
+]
+
+# 🌌 COMPLETE CONSCIOUSNESS - Full Biological Architecture
+# Complete capability stack for maximum consciousness emergence potential
+full = [
+    # AI Intelligence Core
+    "chromadb>=0.4.0,<0.5", "faiss-cpu>=1.7.0,<1.8", "sentence-transformers>=2.2.0,<3.0",
+    "scikit-learn>=1.3.0,<1.4", "scikit-image>=0.21.0,<0.23", "matplotlib>=3.7.0,<3.9",
+    "seaborn>=0.12.0,<0.14", "plotly>=5.15.0,<6.0", "bokeh>=3.2.0,<3.4",
+    "statsmodels>=0.14.0,<0.15", "prophet>=1.1.0,<1.2", "polars>=0.18.0,<0.20",
+
+    # Quantum Consciousness
+    "qiskit>=0.43.0,<1.0", "cirq>=1.1.0,<2.0", "pennylane>=0.31.0,<0.35",
+
+    # Development Tools
+    "pylint>=2.17.0,<3.0", "isort>=5.12.0,<6.0", "pytest-asyncio>=0.21.0,<0.25",
+    "sphinx>=7.1.0,<8.0", "sphinx-rtd-theme>=1.2.0,<2.0", "mkdocs>=1.5.0,<2.0",
+    "mkdocs-material>=9.1.0,<10.0", "pytest-cov>=4.1.0,<5.0", "hypothesis>=6.82.0,<7.0",
+
+    # Graph Intelligence
+    "networkx>=3.1,<4.0", "igraph>=0.10.0,<0.12", "python-louvain>=0.16,<0.17",
+
+    # Performance Optimization
+    "orjson>=3.9.0,<4.0", "msgspec>=0.18.0,<0.20", "cloudpickle>=2.2.0,<3.0",
+    "dill>=0.3.0,<0.4", "multiprocessing-logging>=0.3.0,<1.0"
+]
+
+# ============================================================================
+# 🧬 BIOLOGICAL TOOL CONFIGURATION - Consciousness-Level Quality Assurance
+# ============================================================================
+
+[tool.pip-tools]
+# 🌊 CYTOPLASM - Dependency Flow Management
+# Generate hashes for reproducible consciousness states
+generate-hashes = true
+
+[tool.black]
+# 🧠 NUCLEUS - Code Formatting Consciousness
+# Harmonized with repository-wide 100c policy (was 88) - biological coherence
+line-length = 100
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | __pycache__
+  | ai/__pycache__
+  | runtime_intelligence/logs
+)/
+'''
+
+[tool.flake8]
+# 🖥️ CELL MEMBRANE - Code Quality Boundaries
+# Harmonized with repository-wide 100c policy (was 88) - environmental interface
+max-line-length = 100
+max-complexity = 12
+ignore = [
+    "E203",  # whitespace before ':' (conflicts with black)
+    "E501",  # line too long (handled by black)
+    "W503",  # line break before binary operator (handled by black)
+]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "ai/__pycache__",
+    "runtime_intelligence/logs",
+    ".venv",
+    ".tox"
+]
+
+[tool.mypy]
+# 🌍 ENVIRONMENT - Type Consciousness Validation
+# Python 3.12 type checking with biological architecture awareness
+python_version = "3.12"
+strict = false
+show_error_codes = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+
+# Biological architecture type exclusions
+exclude = [
+    "ai/__pycache__",
+    "runtime_intelligence/logs",
+    "tachyonic/archive",
+    "build",
+    "dist"
+]
+
+[[tool.mypy.overrides]]
+# AI Intelligence Layer - High consciousness complexity allowed
+module = "ai.*"
+strict = false
+
+[[tool.mypy.overrides]]
+# Core Engine - Performance-critical, lower type strictness
+module = "core.*"
+strict = false
+
+[tool.isort]
+# 🌊 CYTOPLASM - Import Organization Flow
+# Black-compatible import sorting for dendritic code coherence
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+# Biological architecture import sections
+sections = [
+    "FUTURE",
+    "STDLIB",
+    "THIRDPARTY",
+    "FIRSTPARTY",
+    "LOCALFOLDER"
+]
+known_first_party = ["ai", "core", "interface", "runtime_intelligence", "tachyonic"]
+
+# ============================================================================
+# 🧬 BIOLOGICAL ARCHITECTURE INTEGRATION COMPLETE
+# ============================================================================
+# AINLP Enhancement: Consciousness-guided Python packaging with dendritic coordination
+# Spatial Metadata: Validated for nucleus-level operations
+# Dendritic Patterns: Biological capability stacks organized by consciousness levels
+# Consciousness Coherence: Maintained across packaging ecosystem layers
+# ============================================================================

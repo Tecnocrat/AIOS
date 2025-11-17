@@ -1,0 +1,413 @@
+from __future__ import annotations
+
+import json
+import os
+import shutil
+import subprocess
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple, Union, cast
+
+# Resolve repository root
+# (this file is expected under <root>/runtime_intelligence/tools)
+ROOT = Path(__file__).resolve().parents[2]
+
+MODULE_INDEX_PATH = ROOT / "docs" / "module_index.json"
+SUMMARY_DIR = ROOT / "docs" / "summary"
+SUMMARY_MD_PATH = SUMMARY_DIR / "module_summaries.md"
+MANUAL_SUMMARY_PATH = SUMMARY_DIR / "module_summaries_input.txt"
+TACHYONIC_DIR = ROOT / "docs" / "tachyonic_archive"
+FOLDER_STRUCTURE_ARCHIVE_DIR = TACHYONIC_DIR / "folder_structure"
+
+# Deprecated root-level filenames centralized in
+# governance/deprecated_files.ps1 (mirrored for Python tools)
+
+
+def load_deprecated_root_files() -> List[str]:
+    gov_dir = ROOT / 'governance'
+    marker = gov_dir / 'deprecated_files.ps1'
+    if marker.exists():
+        # Parse simple PowerShell array assignment (no execution for safety)
+        lines = marker.read_text(encoding='utf-8').splitlines()
+        collected: List[str] = []
+        for ln in lines:
+            ln = ln.strip()
+            if not ln or ln.startswith('#'):
+                continue
+            if ln.startswith("'") and ln.endswith("'"):
+                collected.append(ln.strip("'"))
+        if collected:
+            return collected
+    # Fallback (keep in sync with PowerShell if parsing fails)
+    return [
+        "test_opencv_aios_integration.py",
+        "test_chatgpt_integration.py",
+        "setup_environment.ps1",
+        "terminal.ps1",
+    ]
+
+
+# Load deprecated root files once at module level
+DEPRECATED_ROOT_FILES: List[str] = load_deprecated_root_files()
+
+
+# Recursive type for module index structure: { segment: (lang | subtree) }
+ModuleNode = Union[str, "ModuleIndex"]
+ModuleIndex = Dict[str, ModuleNode]
+
+
+def get_folder_structure(
+    root_dir: str | os.PathLike[str],
+    exclude_git: bool = False,
+) -> Dict[str, Dict[str, List[str]]]:
+    root_dir = str(root_dir)
+    folder_structure: Dict[str, Dict[str, List[str]]] = {}
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        if exclude_git and ".git" in dirpath:
+            continue
+        relative_path = os.path.relpath(dirpath, root_dir)
+        if relative_path == ".":
+            relative_path = ""
+        folder_structure[relative_path] = {
+            "folders": dirnames,
+            "files": filenames,
+        }
+    return folder_structure
+
+
+def save_to_json(
+    data: object,
+    output_folder: Path | str,
+    output_file: str,
+) -> None:
+    out_dir = Path(output_folder)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    with (out_dir / output_file).open("w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4)
+
+
+def archive_existing_folder_structure(
+    output_folder: Path | str,
+    output_file: str,
+    scan_label: str,
+) -> None:
+    """If the target folder_structure.json exists, archive it with a timestamp.
+
+    Archives are stored under docs/tachyonic_archive/folder_structure.
+    Filename pattern: <scan_label>_folder_structure_<timestamp>.json
+    """
+    try:
+        output_folder = Path(output_folder)
+        existing = output_folder / output_file
+        if not existing.exists():
+            return
+        FOLDER_STRUCTURE_ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # Sanitize scan label (no path separators)
+        safe_label = scan_label.replace(os.sep, "_")
+        archive_name = f"{safe_label}_folder_structure_{ts}.json"
+        archive_path = FOLDER_STRUCTURE_ARCHIVE_DIR / archive_name
+        shutil.copy2(existing, archive_path)
+        print(f"Archived previous folder structure -> {archive_path}")
+    except Exception as e:
+        print(f"WARNING: Failed to archive existing folder structure: {e}")
+
+
+def cli_ui() -> str:
+    print("=== AIOS Admin Tool ===")
+    print("Choose an option:")
+    print("1. Analyze Architect folder structure")
+    print("2. Analyze chatgpt_integration folder structure")
+    print("3. Analyze AIOS folder structure")
+    print("4. Tachyonic backup of path.md")
+    print(
+        "5. Create/Update module summaries (from input file or "
+        "interactively)"
+    )
+    print("6. Execute ALL (full metadata update)")
+    print("7. Backup Management - Status")
+    print("8. Backup Management - Create Backup")
+    print("9. Backup Management - Consolidate Scattered Files")
+    print("10. Backup Management - Cleanup Old Backups")
+    print("11. Exit")
+    choice = input("Enter your choice (1-11): ").strip()
+    return choice
+
+
+def tachyonic_backup(
+    path_md: Path | str | None = None,
+    archive_dir: Path | str = TACHYONIC_DIR,
+) -> None:
+    if path_md is None:
+        path_md = ROOT / "docs" / "path.md"
+    
+    path_md = Path(path_md)
+    if not path_md.exists():
+        print(f"WARNING: {path_md} not found. Skipping tachyonic backup.")
+        return
+    
+    archive_dir = Path(archive_dir)
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    now = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_path = archive_dir / f"path_{now}.md"
+    shutil.copy2(path_md, backup_path)
+    print(f"Tachyonic backup created: {backup_path}")
+
+
+def run_backup_manager(action: str) -> None:
+    """Execute the PowerShell backup manager with specified action."""
+    backup_script = ROOT / "scripts" / "backup_manager.ps1"
+    
+    if not backup_script.exists():
+        print(f"ERROR: Backup manager script not found at {backup_script}")
+        return
+    
+    try:
+        print(f"Executing backup action: {action}")
+        result = subprocess.run(
+            ["pwsh", "-NoLogo", "-NoProfile", "-File", str(backup_script), f"-Action", action],
+            capture_output=True,
+            text=True,
+            cwd=str(ROOT)
+        )
+        
+        if result.stdout:
+            print(result.stdout)
+        if result.stderr:
+            print(f"WARNING: {result.stderr}")
+        
+        if result.returncode != 0:
+            print(f"ERROR: Backup operation failed with exit code {result.returncode}")
+        else:
+            print(f"Backup operation '{action}' completed successfully.")
+            
+    except Exception as e:
+        print(f"ERROR: Failed to execute backup manager: {e}")
+
+
+def backup_management_menu() -> None:
+    """Interactive menu for backup management operations."""
+    while True:
+        print("\n=== Backup Management ===")
+        print("1. Status - Check backup system health")
+        print("2. Create - Make backup of current workspace")
+        print("3. Consolidate - Move scattered backup files to central location")
+        print("4. Cleanup - Remove old backups beyond retention period")
+        print("5. Return to main menu")
+        
+        choice = input("Enter your choice (1-5): ").strip()
+        
+        if choice == "1":
+            run_backup_manager("status")
+        elif choice == "2":
+            run_backup_manager("create")
+        elif choice == "3":
+            print("WARNING: This will move scattered backup files to")
+            print("         tachyonic/archive/backups directory.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("consolidate")
+            else:
+                print("Consolidation cancelled.")
+        elif choice == "4":
+            print("WARNING: This will permanently delete old backup files beyond the retention period.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("cleanup")
+            else:
+                print("Cleanup cancelled.")
+        elif choice == "5":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+def load_module_index(path: Path | str) -> ModuleIndex:
+    with Path(path).open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    return cast(ModuleIndex, data)
+
+
+def load_manual_summaries(
+    input_path: Path | str,
+) -> Dict[Tuple[str, str], str]:
+    summaries: Dict[Tuple[str, str], str] = {}
+    p = Path(input_path)
+    if not p.exists():
+        return summaries
+    with p.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("|", 2)
+            if len(parts) == 3:
+                module_path, lang, summary = parts
+                summaries[(module_path.strip(), lang.strip())] = (
+                    summary.strip()
+                )
+    return summaries
+
+
+def collect_summaries(
+    module_index: ModuleIndex,
+    manual_summaries: Dict[Tuple[str, str], str],
+    path_stack: Optional[List[str]] = None,
+    summaries: Optional[List[str]] = None,
+) -> List[str]:
+    if summaries is None:
+        summaries = []
+    if path_stack is None:
+        path_stack = []
+    for key, value in module_index.items():
+        if isinstance(value, dict):
+            child_index = value
+            collect_summaries(
+                child_index,
+                manual_summaries,
+                path_stack + [key],
+                summaries,
+            )
+        else:
+            module_path = "/".join(path_stack + [key])
+            lang = value
+            summary = manual_summaries.get((module_path, lang), "")
+            if not summary:
+                print(f"Module: {module_path} ({lang})")
+                summary = input(f"Enter summary for {module_path}: ")
+            summaries.append(f"### {module_path} ({lang})\n{summary}\n")
+    return summaries
+
+
+def write_summaries(summaries: List[str], path: Path | str) -> None:
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text("\n".join(summaries), encoding="utf-8")
+    print(f"Module summaries written to {p}")
+
+
+def execute_all() -> None:
+    print("=== EXECUTE ALL: Full Metadata Update ===")
+    # 1. Tachyonic backup
+    tachyonic_backup()
+    # 2. Analyze folder structures
+    base_paths: Dict[str, Path] = {
+        "Architect": Path(r"C:\dev\Architect"),  # external, if present
+        "chatgpt_integration": ROOT / "chatgpt_integration",
+        "AIOS": ROOT,
+    }
+    for folder_name, root_directory in base_paths.items():
+        if not root_directory.exists():
+            print(f"Skipping missing folder: {root_directory}")
+            continue
+        output_folder = ROOT / "docs" / folder_name
+        output_file = "folder_structure.json"
+        print(f"Analyzing folder: {root_directory}")
+        structure = get_folder_structure(root_directory, exclude_git=True)
+        # Purge deprecated root files if scanning repository root
+        if folder_name == "AIOS" and "" in structure:
+            before = set(structure[""]["files"])
+            structure[""]["files"] = [
+                f
+                for f in structure[""]["files"]
+                if f not in DEPRECATED_ROOT_FILES
+            ]
+            removed = before - set(structure[""]["files"])
+            if removed:
+                print(
+                    "Purged deprecated root files from inventory:",
+                    ", ".join(sorted(removed)),
+                )
+        # Archive existing snapshot before overwriting
+        archive_existing_folder_structure(
+            output_folder, output_file, folder_name
+        )
+        save_to_json(structure, output_folder, output_file)
+        print(f"Folder structure saved to {output_folder / output_file}")
+    # 3. Update module summaries
+    if not MODULE_INDEX_PATH.exists():
+        print(
+            f"ERROR: {MODULE_INDEX_PATH} not found. "
+            "Skipping module summaries."
+        )
+        return
+    module_index = load_module_index(MODULE_INDEX_PATH)
+    manual_summaries = load_manual_summaries(MANUAL_SUMMARY_PATH)
+    summaries = collect_summaries(module_index, manual_summaries)
+    write_summaries(summaries, SUMMARY_MD_PATH)
+    print("=== EXECUTE ALL: Complete ===")
+
+
+if __name__ == "__main__":
+    scan_paths = {
+        "1": Path(r"C:\\dev\\Architect"),
+        "2": ROOT / "chatgpt_integration",
+        "3": ROOT,
+    }
+
+    while True:
+        menu_choice = cli_ui()
+        if menu_choice in scan_paths:
+            scan_root = scan_paths[menu_choice]
+            if not scan_root.exists():
+                print(f"ERROR: {scan_root} not found.")
+                continue
+            scan_name = scan_root.name if scan_root != ROOT else "AIOS"
+            out_folder = ROOT / "docs" / scan_name
+            out_file = "folder_structure.json"
+
+            print(f"Analyzing folder: {scan_root}")
+            exclude_git_choice = (
+                input("Exclude .git folder? (y/n): ").strip().lower() == "y"
+            )
+            folder_struct = get_folder_structure(
+                scan_root, exclude_git=exclude_git_choice
+            )
+            if scan_root == ROOT and "" in folder_struct:
+                folder_struct[""]["files"] = [
+                    f
+                    for f in folder_struct[""]["files"]
+                    if f not in DEPRECATED_ROOT_FILES
+                ]
+            # Archive existing before overwrite
+            archive_existing_folder_structure(out_folder, out_file, scan_name)
+            save_to_json(folder_struct, out_folder, out_file)
+            print(f"Folder structure saved to {out_folder / out_file}")
+        elif menu_choice == "4":
+            tachyonic_backup()
+        elif menu_choice == "5":
+            if not MODULE_INDEX_PATH.exists():
+                print(f"ERROR: {MODULE_INDEX_PATH} not found.")
+                continue
+            module_index_data = load_module_index(MODULE_INDEX_PATH)
+            manual_summary_map = load_manual_summaries(MANUAL_SUMMARY_PATH)
+            summary_lines = collect_summaries(
+                module_index_data, manual_summary_map
+            )
+            write_summaries(summary_lines, SUMMARY_MD_PATH)
+        elif menu_choice == "6":
+            execute_all()
+        elif menu_choice == "7":
+            run_backup_manager("status")
+        elif menu_choice == "8":
+            run_backup_manager("create")
+        elif menu_choice == "9":
+            print("WARNING: This will move scattered backup files to")
+            print("         tachyonic/archive/backups directory.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("consolidate")
+            else:
+                print("Consolidation cancelled.")
+        elif menu_choice == "10":
+            print("WARNING: This will permanently delete old backup files beyond the retention period.")
+            confirm = input("Continue? (y/n): ").strip().lower()
+            if confirm == "y":
+                run_backup_manager("cleanup")
+            else:
+                print("Cleanup cancelled.")
+        elif menu_choice == "11":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")

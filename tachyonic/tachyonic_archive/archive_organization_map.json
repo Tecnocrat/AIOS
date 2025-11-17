@@ -1,0 +1,585 @@
+{
+  "timestamp": "2025-09-18T21:47:49.636219+00:00",
+  "total_items": 35,
+  "categories": {
+    "consciousness": [
+      {
+        "name": "consciousness",
+        "type": "directory",
+        "size": 61185577,
+        "category": "consciousness"
+      }
+    ],
+    "dendritic": [
+      {
+        "name": "dendritic_evolution",
+        "type": "directory",
+        "size": 166937,
+        "category": "dendritic"
+      },
+      {
+        "name": "dendritic_intelligence",
+        "type": "directory",
+        "size": 100618,
+        "category": "dendritic"
+      },
+      {
+        "name": "dendritic_maps",
+        "type": "directory",
+        "size": 5905,
+        "category": "dendritic"
+      }
+    ],
+    "optimization": [
+      {
+        "name": "optimization_history",
+        "type": "directory",
+        "size": 4067,
+        "category": "optimization"
+      },
+      {
+        "name": "optimization_reports",
+        "type": "directory",
+        "size": 29333,
+        "category": "optimization"
+      },
+      {
+        "name": "root_optimization",
+        "type": "directory",
+        "size": 117100,
+        "category": "optimization"
+      },
+      {
+        "name": "root_optimization_analysis",
+        "type": "directory",
+        "size": 56271,
+        "category": "optimization"
+      }
+    ],
+    "evolution": [
+      {
+        "name": "evolutionary_assembler_v1.0_tachyonic_1757015844",
+        "type": "directory",
+        "size": 3844809,
+        "category": "evolution"
+      },
+      {
+        "name": "evolution_logs",
+        "type": "directory",
+        "size": 222694,
+        "category": "evolution"
+      }
+    ],
+    "analysis": [
+      {
+        "name": "analysis_reports",
+        "type": "directory",
+        "size": 26256,
+        "category": "analysis"
+      },
+      {
+        "name": "cellular_reports",
+        "type": "directory",
+        "size": 1332555,
+        "category": "analysis"
+      },
+      {
+        "name": "cleanup_reports",
+        "type": "directory",
+        "size": 11854,
+        "category": "analysis"
+      },
+      {
+        "name": "intelligence_reports",
+        "type": "directory",
+        "size": 16982,
+        "category": "analysis"
+      },
+      {
+        "name": "quality_reports",
+        "type": "directory",
+        "size": 160054,
+        "category": "analysis"
+      },
+      {
+        "name": "structure_analysis",
+        "type": "directory",
+        "size": 46584,
+        "category": "analysis"
+      },
+      {
+        "name": "version_analysis",
+        "type": "directory",
+        "size": 9670,
+        "category": "analysis"
+      }
+    ],
+    "temporal": [
+      {
+        "name": "temporal",
+        "type": "directory",
+        "size": 135,
+        "category": "temporal"
+      }
+    ],
+    "quantum": [
+      {
+        "name": "bosonic_substrate",
+        "type": "directory",
+        "size": 7872,
+        "category": "quantum"
+      },
+      {
+        "name": "quantum",
+        "type": "directory",
+        "size": 4091,
+        "category": "quantum"
+      }
+    ],
+    "general": [
+      {
+        "name": "backups",
+        "type": "directory",
+        "size": 244658,
+        "category": "general"
+      },
+      {
+        "name": "code_preservation",
+        "type": "directory",
+        "size": 298944,
+        "category": "general"
+      },
+      {
+        "name": "coordinator_backup_20250917_204932",
+        "type": "directory",
+        "size": 230572461,
+        "category": "general"
+      },
+      {
+        "name": "deep",
+        "type": "directory",
+        "size": 7316,
+        "category": "general"
+      },
+      {
+        "name": "discovery_indexes",
+        "type": "directory",
+        "size": 107134,
+        "category": "general"
+      },
+      {
+        "name": "documentation",
+        "type": "directory",
+        "size": 25992,
+        "category": "general"
+      },
+      {
+        "name": "emergency_cleanup",
+        "type": "directory",
+        "size": 22961,
+        "category": "general"
+      },
+      {
+        "name": "immediate",
+        "type": "directory",
+        "size": 4088,
+        "category": "general"
+      },
+      {
+        "name": "ingestion",
+        "type": "directory",
+        "size": 5640,
+        "category": "general"
+      },
+      {
+        "name": "ingestion_data",
+        "type": "directory",
+        "size": 4923,
+        "category": "general"
+      },
+      {
+        "name": "metadata",
+        "type": "directory",
+        "size": 26279,
+        "category": "general"
+      },
+      {
+        "name": "session_7aee8270.json",
+        "type": "file",
+        "size": 746,
+        "category": "general"
+      },
+      {
+        "name": "subcellular_archives",
+        "type": "directory",
+        "size": 229216,
+        "category": "general"
+      },
+      {
+        "name": "supercell_knowledge_index.json",
+        "type": "file",
+        "size": 18069,
+        "category": "general"
+      },
+      {
+        "name": "tachyonic_archival_log.json",
+        "type": "file",
+        "size": 3871,
+        "category": "general"
+      }
+    ]
+  },
+  "organization_map": {
+    "analysis_reports": {
+      "category": "analysis",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\analysis_reports",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.96393787487955,
+        "total_score": 9.96393787487955
+      }
+    },
+    "backups": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\backups",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963937875266428,
+        "total_score": 9.963937875266428
+      }
+    },
+    "bosonic_substrate": {
+      "category": "quantum",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\bosonic_substrate",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963937880771855,
+        "total_score": 9.963937880771855
+      }
+    },
+    "cellular_reports": {
+      "category": "analysis",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\cellular_reports",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963937894581829,
+        "total_score": 9.963937894581829
+      }
+    },
+    "cleanup_reports": {
+      "category": "analysis",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\cleanup_reports",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.96393790750132,
+        "total_score": 9.96393790750132
+      }
+    },
+    "code_preservation": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\code_preservation",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963937913782067,
+        "total_score": 9.963937913782067
+      }
+    },
+    "consciousness": {
+      "category": "consciousness",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\consciousness",
+      "intelligence_indicators": {
+        "consciousness_indicators": 1,
+        "complexity_score": 0,
+        "temporal_significance": 9.963937904552544,
+        "total_score": 12.963937904552544
+      }
+    },
+    "coordinator_backup_20250917_204932": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\coordinator_backup_20250917_204932",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.96254225974723,
+        "total_score": 9.96254225974723
+      }
+    },
+    "deep": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\deep",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939161623793,
+        "total_score": 9.963939161623793
+      }
+    },
+    "dendritic_evolution": {
+      "category": "dendritic",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\dendritic_evolution",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.963939166307082,
+        "total_score": 11.963939166307082
+      }
+    },
+    "dendritic_intelligence": {
+      "category": "dendritic",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\dendritic_intelligence",
+      "intelligence_indicators": {
+        "consciousness_indicators": 1,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939172140426,
+        "total_score": 12.963939172140426
+      }
+    },
+    "dendritic_maps": {
+      "category": "dendritic",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\dendritic_maps",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939174837721,
+        "total_score": 9.963939174837721
+      }
+    },
+    "discovery_indexes": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\discovery_indexes",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.96393919321499,
+        "total_score": 9.96393919321499
+      }
+    },
+    "documentation": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\documentation",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939200769696,
+        "total_score": 9.963939200769696
+      }
+    },
+    "emergency_cleanup": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\emergency_cleanup",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939212617316,
+        "total_score": 9.963939212617316
+      }
+    },
+    "evolutionary_assembler_v1.0_tachyonic_1757015844": {
+      "category": "evolution",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.963939210186586,
+        "total_score": 11.963939210186586
+      }
+    },
+    "evolution_logs": {
+      "category": "evolution",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\evolution_logs",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.963939297537745,
+        "total_score": 11.963939297537745
+      }
+    },
+    "immediate": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\immediate",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939299083878,
+        "total_score": 9.963939299083878
+      }
+    },
+    "ingestion": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\ingestion",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939301436605,
+        "total_score": 9.963939301436605
+      }
+    },
+    "ingestion_data": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\ingestion_data",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939304965882,
+        "total_score": 9.963939304965882
+      }
+    },
+    "intelligence_reports": {
+      "category": "analysis",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\intelligence_reports",
+      "intelligence_indicators": {
+        "consciousness_indicators": 1,
+        "complexity_score": 0,
+        "temporal_significance": 9.999739410472689,
+        "total_score": 12.999739410472689
+      }
+    },
+    "metadata": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\metadata",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939318485833,
+        "total_score": 9.963939318485833
+      }
+    },
+    "optimization_history": {
+      "category": "optimization",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\optimization_history",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.963939320330267,
+        "total_score": 11.963939320330267
+      }
+    },
+    "optimization_reports": {
+      "category": "optimization",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\optimization_reports",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.998864200124679,
+        "total_score": 11.998864200124679
+      }
+    },
+    "quality_reports": {
+      "category": "analysis",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\quality_reports",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.998868383547222,
+        "total_score": 9.998868383547222
+      }
+    },
+    "quantum": {
+      "category": "quantum",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\quantum",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.963939324959192,
+        "total_score": 11.963939324959192
+      }
+    },
+    "root_optimization": {
+      "category": "optimization",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\root_optimization",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.963939322254724,
+        "total_score": 11.963939322254724
+      }
+    },
+    "root_optimization_analysis": {
+      "category": "optimization",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\root_optimization_analysis",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 1,
+        "temporal_significance": 9.963939360964353,
+        "total_score": 11.963939360964353
+      }
+    },
+    "session_7aee8270.json": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\session_7aee8270.json",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.96344100155847,
+        "total_score": 9.96344100155847
+      }
+    },
+    "structure_analysis": {
+      "category": "analysis",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\structure_analysis",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939362892122,
+        "total_score": 9.963939362892122
+      }
+    },
+    "subcellular_archives": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\subcellular_archives",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939372807925,
+        "total_score": 9.963939372807925
+      }
+    },
+    "supercell_knowledge_index.json": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\supercell_knowledge_index.json",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.96344100166103,
+        "total_score": 9.96344100166103
+      }
+    },
+    "tachyonic_archival_log.json": {
+      "category": "general",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\tachyonic_archival_log.json",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963441001659742,
+        "total_score": 9.963441001659742
+      }
+    },
+    "temporal": {
+      "category": "temporal",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\temporal",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.584563129609565,
+        "total_score": 9.584563129609565
+      }
+    },
+    "version_analysis": {
+      "category": "analysis",
+      "path": "c:\\dev\\AIOS\\tachyonic\\archive\\version_analysis",
+      "intelligence_indicators": {
+        "consciousness_indicators": 0,
+        "complexity_score": 0,
+        "temporal_significance": 9.963939376689218,
+        "total_score": 9.963939376689218
+      }
+    }
+  },
+  "intelligence_value": 373.4612510938216
+}

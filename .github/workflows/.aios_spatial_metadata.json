@@ -1,0 +1,153 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:28:19.964794",
+  "folder_info": {
+    "name": "workflows",
+    "absolute_path": "C:\\dev\\AIOS\\.github\\workflows",
+    "relative_path": ".github\\workflows",
+    "parent_path": ".github",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      ".github",
+      "workflows"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 21873,
+      "file_count": 5,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".yml": [
+        {
+          "name": "coherence-smoke.yml",
+          "size": 2591,
+          "modified": "2025-09-15T22:04:34.750910",
+          "category": "documentation"
+        },
+        {
+          "name": "context-index-freshness.yml",
+          "size": 2196,
+          "modified": "2025-09-15T22:04:35.174131",
+          "category": "documentation"
+        },
+        {
+          "name": "file-criticality.yml",
+          "size": 6528,
+          "modified": "2025-09-15T22:04:36.205600",
+          "category": "documentation"
+        },
+        {
+          "name": "governance-telemetry.yml",
+          "size": 10151,
+          "modified": "2025-09-15T22:04:36.947911",
+          "category": "documentation"
+        },
+        {
+          "name": "root-clutter-guard.yml",
+          "size": 407,
+          "modified": "2025-09-15T22:04:37.078909",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "context-index-freshness.yml",
+        "size": 2196,
+        "modified": "2025-09-15T22:04:35.174131",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "root-clutter-guard.yml",
+        "size": 407,
+        "modified": "2025-09-15T22:04:37.078909",
+        "category": "documentation"
+      },
+      {
+        "name": "governance-telemetry.yml",
+        "size": 10151,
+        "modified": "2025-09-15T22:04:36.947911",
+        "category": "documentation"
+      },
+      {
+        "name": "file-criticality.yml",
+        "size": 6528,
+        "modified": "2025-09-15T22:04:36.205600",
+        "category": "documentation"
+      },
+      {
+        "name": "context-index-freshness.yml",
+        "size": 2196,
+        "modified": "2025-09-15T22:04:35.174131",
+        "category": "documentation"
+      },
+      {
+        "name": "coherence-smoke.yml",
+        "size": 2591,
+        "modified": "2025-09-15T22:04:34.750910",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".yml"
+      ],
+      "dominant_type": ".yml"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "context-index-freshness.yml"
+    ],
+    "config_files": [],
+    "breadcrumb_path": ".github > workflows",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\.github\\workflows' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\.github\\workflows' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\.github\\workflows' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      ".github",
+      "vscode-extension\\node_modules\\balanced-match\\.github",
+      "vscode-extension\\node_modules\\brace-expansion\\.github",
+      "vscode-extension\\node_modules\\call-bind-apply-helpers\\.github",
+      "vscode-extension\\node_modules\\call-bound\\.github",
+      "tachyonic\\workflows"
+    ]
+  }
+}

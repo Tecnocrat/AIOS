@@ -1,0 +1,371 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:13.009704",
+  "folder_info": {
+    "name": "discovery_indexes",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\discovery_indexes",
+    "relative_path": "tachyonic\\archive\\discovery_indexes",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "discovery_indexes"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis_reports",
+      "backups",
+      "bosonic_substrate",
+      "cellular_reports",
+      "cleanup_reports",
+      "code_preservation",
+      "configurations",
+      "consciousness",
+      "consciousness_evolution",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "evolutionary_snapshots",
+      "fractal_abstracts",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "quantum",
+      "root_optimization",
+      "root_optimization_analysis",
+      "structure_analysis",
+      "subcellular_archives",
+      "synth_dna_replicators",
+      "temporal",
+      "temporal_snapshots",
+      "version_analysis"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 95144,
+      "file_count": 18,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "AI_INGESTION_POINTERS_20250905_152459.json",
+          "size": 854,
+          "modified": "2025-09-05T15:24:59.069944",
+          "category": "documentation"
+        },
+        {
+          "name": "GLOBAL_TACHYONIC_INDEX_20250905_152132.json",
+          "size": 1866,
+          "modified": "2025-09-05T15:21:32.906375",
+          "category": "documentation"
+        },
+        {
+          "name": "GLOBAL_TACHYONIC_INDEX_20250905_152309.json",
+          "size": 1866,
+          "modified": "2025-09-05T15:23:09.851476",
+          "category": "documentation"
+        },
+        {
+          "name": "GLOBAL_TACHYONIC_INDEX_20250905_152405.json",
+          "size": 1866,
+          "modified": "2025-09-05T15:24:05.612287",
+          "category": "documentation"
+        },
+        {
+          "name": "GLOBAL_TACHYONIC_INDEX_20250905_152459.json",
+          "size": 1866,
+          "modified": "2025-09-05T15:24:59.057747",
+          "category": "documentation"
+        },
+        {
+          "name": "GLOBAL_TACHYONIC_INDEX_20250905_153930.json",
+          "size": 1866,
+          "modified": "2025-09-05T15:39:30.906092",
+          "category": "documentation"
+        },
+        {
+          "name": "GLOBAL_TACHYONIC_INDEX_20250905_153958.json",
+          "size": 1866,
+          "modified": "2025-09-05T15:39:58.282887",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATED_CELLULAR_INTELLIGENCE_INDEX_20250905_152459.json",
+          "size": 1312,
+          "modified": "2025-09-05T15:24:59.322852",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX_20250905_152459.json",
+          "size": 1428,
+          "modified": "2025-09-05T15:24:59.330575",
+          "category": "documentation"
+        },
+        {
+          "name": "RELOCATED_DENDRITIC_NETWORK_INDEX_20250905_152459.json",
+          "size": 1095,
+          "modified": "2025-09-05T15:24:59.337419",
+          "category": "documentation"
+        },
+        {
+          "name": "ULTIMATE_GLOBAL_INDEX.json",
+          "size": 1714,
+          "modified": "2025-09-05T21:24:01.486541",
+          "category": "documentation"
+        },
+        {
+          "name": "UPDATED_GLOBAL_INDEX.json",
+          "size": 1966,
+          "modified": "2025-09-05T15:40:02.794097",
+          "category": "documentation"
+        },
+        {
+          "name": "UPDATED_GLOBAL_INDEX_20250905_152132.json",
+          "size": 4835,
+          "modified": "2025-09-05T15:21:32.998502",
+          "category": "documentation"
+        },
+        {
+          "name": "UPDATED_GLOBAL_INDEX_20250905_152133.json",
+          "size": 37709,
+          "modified": "2025-09-05T15:21:34.001377",
+          "category": "documentation"
+        },
+        {
+          "name": "UPDATED_GLOBAL_INDEX_20250905_152134.json",
+          "size": 246,
+          "modified": "2025-09-05T15:21:34.010331",
+          "category": "documentation"
+        },
+        {
+          "name": "UPDATED_GLOBAL_INDEX_20250905_152309.json",
+          "size": 4908,
+          "modified": "2025-09-05T15:23:10.002656",
+          "category": "documentation"
+        },
+        {
+          "name": "UPDATED_GLOBAL_INDEX_20250905_152310.json",
+          "size": 27635,
+          "modified": "2025-09-05T15:23:11.000443",
+          "category": "documentation"
+        },
+        {
+          "name": "UPDATED_GLOBAL_INDEX_20250905_152311.json",
+          "size": 246,
+          "modified": "2025-09-05T15:23:11.265065",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_152132.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:21:32.906375",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_152309.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:23:09.851476",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_152405.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:24:05.612287",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_152459.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:24:59.057747",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_153930.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:39:30.906092",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_153958.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:39:58.282887",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_CELLULAR_INTELLIGENCE_INDEX_20250905_152459.json",
+        "size": 1312,
+        "modified": "2025-09-05T15:24:59.322852",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX_20250905_152459.json",
+        "size": 1428,
+        "modified": "2025-09-05T15:24:59.330575",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_DENDRITIC_NETWORK_INDEX_20250905_152459.json",
+        "size": 1095,
+        "modified": "2025-09-05T15:24:59.337419",
+        "category": "documentation"
+      },
+      {
+        "name": "ULTIMATE_GLOBAL_INDEX.json",
+        "size": 1714,
+        "modified": "2025-09-05T21:24:01.486541",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "ULTIMATE_GLOBAL_INDEX.json",
+        "size": 1714,
+        "modified": "2025-09-05T21:24:01.486541",
+        "category": "documentation"
+      },
+      {
+        "name": "UPDATED_GLOBAL_INDEX.json",
+        "size": 1966,
+        "modified": "2025-09-05T15:40:02.794097",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_153958.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:39:58.282887",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_153930.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:39:30.906092",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_DENDRITIC_NETWORK_INDEX_20250905_152459.json",
+        "size": 1095,
+        "modified": "2025-09-05T15:24:59.337419",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX_20250905_152459.json",
+        "size": 1428,
+        "modified": "2025-09-05T15:24:59.330575",
+        "category": "documentation"
+      },
+      {
+        "name": "RELOCATED_CELLULAR_INTELLIGENCE_INDEX_20250905_152459.json",
+        "size": 1312,
+        "modified": "2025-09-05T15:24:59.322852",
+        "category": "documentation"
+      },
+      {
+        "name": "AI_INGESTION_POINTERS_20250905_152459.json",
+        "size": 854,
+        "modified": "2025-09-05T15:24:59.069944",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_152459.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:24:59.057747",
+        "category": "documentation"
+      },
+      {
+        "name": "GLOBAL_TACHYONIC_INDEX_20250905_152405.json",
+        "size": 1866,
+        "modified": "2025-09-05T15:24:05.612287",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 18,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "GLOBAL_TACHYONIC_INDEX_20250905_152132.json",
+      "GLOBAL_TACHYONIC_INDEX_20250905_152309.json",
+      "GLOBAL_TACHYONIC_INDEX_20250905_152405.json",
+      "GLOBAL_TACHYONIC_INDEX_20250905_152459.json",
+      "GLOBAL_TACHYONIC_INDEX_20250905_153930.json",
+      "GLOBAL_TACHYONIC_INDEX_20250905_153958.json",
+      "RELOCATED_CELLULAR_INTELLIGENCE_INDEX_20250905_152459.json",
+      "RELOCATED_CONSCIOUSNESS_INTEGRATION_INDEX_20250905_152459.json",
+      "RELOCATED_DENDRITIC_NETWORK_INDEX_20250905_152459.json",
+      "ULTIMATE_GLOBAL_INDEX.json",
+      "UPDATED_GLOBAL_INDEX.json",
+      "UPDATED_GLOBAL_INDEX_20250905_152132.json",
+      "UPDATED_GLOBAL_INDEX_20250905_152133.json",
+      "UPDATED_GLOBAL_INDEX_20250905_152134.json",
+      "UPDATED_GLOBAL_INDEX_20250905_152309.json",
+      "UPDATED_GLOBAL_INDEX_20250905_152310.json",
+      "UPDATED_GLOBAL_INDEX_20250905_152311.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > discovery_indexes",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\discovery_indexes' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\discovery_indexes' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\discovery_indexes' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:54.048907",
+  "folder_info": {
+    "name": "visual_interface",
+    "absolute_path": "C:\\dev\\AIOS\\visual_interface",
+    "relative_path": "visual_interface",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "Interface Layer",
+    "secondary_areas": [
+      "Visual Interface"
+    ],
+    "path_classification": [
+      "visual_interface"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "consciousness_integration",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "vscode-extension"
+    ],
+    "child_folders": [
+      "bin",
+      "obj",
+      "runtime_intelligence"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 44099728,
+      "file_count": 1155,
+      "folder_count": 3,
+      "size_category": "large"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".cs": [
+        {
+          "name": "AdvancedVisualizationWindow.cs",
+          "size": 46202,
+          "modified": "2025-09-15T22:02:29.331851",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIHarmonizationEngine.cs",
+          "size": 45972,
+          "modified": "2025-09-15T22:02:29.393849",
+          "category": "consciousness"
+        },
+        {
+          "name": "AINLP.cs",
+          "size": 60938,
+          "modified": "2025-08-30T12:11:42.284147",
+          "category": "consciousness"
+        },
+        {
+          "name": "AINLPHarmonizerService.cs",
+          "size": 4686,
+          "modified": "2025-09-15T22:02:29.479851",
+          "category": "consciousness"
+        },
+        {
+          "name": "AINLPIntegration.cs",
+          "size": 9980,
+          "modified": "2025-09-15T22:02:29.519859",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIOSProcessManager.cs",
+          "size": 14001,
+          "modified": "2025-09-15T22:02:29.579866",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIStateDescriptionService.cs",
+          "size": 13714,
+          "modified": "2025-09-13T01:48:12.338830",
+          "category": "consciousness"
+        },
+        {
+          "name": "AIVisualFeedbackService.cs",
+          "size": 9908,
+          "modified": "2025-09-15T22:02:29.706870",
+          "category": "consciousness"
+        },
+        {
+          "name": "App.xaml.cs",
+          "size": 11185,
+          "modified": "2025-09-15T22:02:29.769865",
+          "category": "consciousness"
+        },
+        {
+          "name": "BosonicLayer3DWindow.cs",
+          "size": 26570,
+          "modified": "2025-09-15T22:02:29.869867",
+          "category": "consciousness"
+        },
+        {
+          "name": "CellularRuntimeBridge.cs",
+          "size": 8151,
+          "modified": "2025-08-29T12:02:43.134250",
+          "category": "consciousness"
+        },
+        {
+          "name": "ConsciousnessDataManager.cs",
+          "size": 63862,
+          "modified": "2025-09-15T22:02:30.071855",
+          "category": "consciousness"
+        },
+        {
+          "name": "ConsciousnessGeometryEngine.cs",
+          "size": 52358,
+          "modified": "2025-08-30T14:22:11.878576",
+          "category": "consciousness"
+        },
+        {
+          "name": "ConsoleLogger.cs",
+          "size": 7376,
+          "modified": "2025-08-30T14:26:12.187958",
+          "category": "consciousness"
+        },
+        {
+          "name": "MainVisualizationWindow.xaml.cs",
+          "size": 27781,
+          "modified": "2025-09-15T22:02:30.282393",
+          "category": "consciousness"
+        },
+        {
+          "name": "Program.cs",
+          "size": 2582,
+          "modified": "2025-09-15T22:02:30.325344",
+          "category": "consciousness"
+        },
+        {
+          "name": "RuntimeAnalytics.cs",
+          "size": 39996,
+          "modified": "2025-09-15T22:02:30.419352",
+          "category": "consciousness"
+        },
+        {
+          "name": "SimpleVisualizationWindow.cs",
+          "size": 42114,
+          "modified": "2025-09-15T22:02:30.518338",
+          "category": "consciousness"
+        },
+        {
+          "name": "StateManager.cs",
+          "size": 19231,
+          "modified": "2025-08-30T14:31:34.328597",
+          "category": "consciousness"
+        },
+        {
+          "name": "TachyonicViewerWindow.xaml.cs",
+          "size": 13081,
+          "modified": "2025-09-15T22:02:30.663043",
+          "category": "consciousness"
+        },
+        {
+          "name": "UIMetricsEmitter.cs",
+          "size": 14056,
+          "modified": "2025-08-30T15:41:25.076426",
+          "category": "consciousness"
+        }
+      ],
+      ".csproj": [
+        {
+          "name": "AIOS.VisualInterface.csproj",
+          "size": 1554,
+          "modified": "2025-09-13T22:17:08.101137",
+          "category": "other"
+        }
+      ],
+      ".xaml": [
+        {
+          "name": "App.xaml",
+          "size": 3657,
+          "modified": "2025-08-02T17:32:45.588768",
+          "category": "other"
+        },
+        {
+          "name": "MainVisualizationWindow.xaml",
+          "size": 9280,
+          "modified": "2025-08-02T17:32:45.598989",
+          "category": "other"
+        },
+        {
+          "name": "TachyonicViewerWindow.xaml",
+          "size": 8955,
+          "modified": "2025-09-07T21:15:51.046434",
+          "category": "other"
+        }
+      ],
+      ".sln": [
+        {
+          "name": "visual_interface.sln",
+          "size": 1134,
+          "modified": "2025-08-02T17:32:45.603504",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "AIOS.VisualInterface.csproj",
+        "size": 1554,
+        "modified": "2025-09-13T22:17:08.101137",
+        "category": "other"
+      },
+      {
+        "name": "AIOSProcessManager.cs",
+        "size": 14001,
+        "modified": "2025-09-15T22:02:29.579866",
+        "category": "consciousness"
+      },
+      {
+        "name": "ConsciousnessDataManager.cs",
+        "size": 63862,
+        "modified": "2025-09-15T22:02:30.071855",
+        "category": "consciousness"
+      },
+      {
+        "name": "ConsciousnessGeometryEngine.cs",
+        "size": 52358,
+        "modified": "2025-08-30T14:22:11.878576",
+        "category": "consciousness"
+      },
+      {
+        "name": "MainVisualizationWindow.xaml",
+        "size": 9280,
+        "modified": "2025-08-02T17:32:45.598989",
+        "category": "other"
+      },
+      {
+        "name": "MainVisualizationWindow.xaml.cs",
+        "size": 27781,
+        "modified": "2025-09-15T22:02:30.282393",
+        "category": "consciousness"
+      },
+      {
+        "name": "visual_interface.sln",
+        "size": 1134,
+        "modified": "2025-08-02T17:32:45.603504",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "TachyonicViewerWindow.xaml.cs",
+        "size": 13081,
+        "modified": "2025-09-15T22:02:30.663043",
+        "category": "consciousness"
+      },
+      {
+        "name": "SimpleVisualizationWindow.cs",
+        "size": 42114,
+        "modified": "2025-09-15T22:02:30.518338",
+        "category": "consciousness"
+      },
+      {
+        "name": "RuntimeAnalytics.cs",
+        "size": 39996,
+        "modified": "2025-09-15T22:02:30.419352",
+        "category": "consciousness"
+      },
+      {
+        "name": "Program.cs",
+        "size": 2582,
+        "modified": "2025-09-15T22:02:30.325344",
+        "category": "consciousness"
+      },
+      {
+        "name": "MainVisualizationWindow.xaml.cs",
+        "size": 27781,
+        "modified": "2025-09-15T22:02:30.282393",
+        "category": "consciousness"
+      },
+      {
+        "name": "ConsciousnessDataManager.cs",
+        "size": 63862,
+        "modified": "2025-09-15T22:02:30.071855",
+        "category": "consciousness"
+      },
+      {
+        "name": "BosonicLayer3DWindow.cs",
+        "size": 26570,
+        "modified": "2025-09-15T22:02:29.869867",
+        "category": "consciousness"
+      },
+      {
+        "name": "App.xaml.cs",
+        "size": 11185,
+        "modified": "2025-09-15T22:02:29.769865",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIVisualFeedbackService.cs",
+        "size": 9908,
+        "modified": "2025-09-15T22:02:29.706870",
+        "category": "consciousness"
+      },
+      {
+        "name": "AIOSProcessManager.cs",
+        "size": 14001,
+        "modified": "2025-09-15T22:02:29.579866",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 26,
+      "file_types": [
+        ".cs",
+        ".csproj",
+        ".xaml",
+        ".sln"
+      ],
+      "dominant_type": ".cs"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 708,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "MainVisualizationWindow.xaml",
+      "MainVisualizationWindow.xaml.cs"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "visual_interface",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\visual_interface' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\visual_interface' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\visual_interface' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "User interface and experience",
+    "recommended_actions": [
+      "Validate UI component consistency",
+      "Test user workflow integration",
+      "Check consciousness-UI bridge functionality"
+    ],
+    "important_considerations": [],
+    "related_folders": []
+  }
+}

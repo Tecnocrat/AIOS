@@ -1,0 +1,105 @@
+{
+  "rules_version": 6,
+  "deprecatedFiles": [
+    "test_opencv_aios_integration.py",
+    "test_chatgpt_integration.py",
+    "setup_environment.ps1"
+  ],
+  "rootAllowed": [
+    ".githooks",
+    "README.md",
+    "AIOS_PROJECT_CONTEXT.md",
+    "AIOS.code-workspace",
+    "requirements.txt",
+    "pyproject.toml",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    ".gitignore"
+  ],
+  "maxFileSizeMB": 5,
+  "allowLargePaths": [
+    "core/build/",
+    "runtime_intelligence/logs/"
+  ],
+  "secretPatterns": [
+    "OPENAI[._-]*API[._-]*KEY[=:]",
+    "sk-[A-Za-z0-9]{20,}",
+    "aws_secret_access[._-]key",
+    "aws_access[._-]key[._-]id",
+  "AIza[0-9A-Za-z\\-_]{35}",
+    "-----BEGIN (?:RSA |EC |)PRIVATE KEY-----"
+  ],
+  "secretScanExcludePaths": [
+    "docs/",
+    "tachyonic/archive/",
+    "runtime_intelligence/logs/",
+    "*.md"
+  ],
+  "jsonPaths": [
+    "config/*.json",
+    "runtime_intelligence/context/*.json"
+  ],
+  "executableScriptDirs": [
+    ".githooks/",
+    "ai/",
+    "core/", 
+    "tachyonic/",
+    "runtime_intelligence/",
+    "scripts/",
+    "orchestrator/",
+    "tools/"
+  ],
+  "bypassEnvVar": "AIOS_HOOK_BYPASS",
+  "requireChangelogOnPaths": [
+    "docs/",
+    "governance/",
+    "ai/env/",
+    "visual_interface/",
+    ".githooks/",
+    "config/",
+    "core/",
+    "interface/",
+    "ai/src/"
+  ],
+  "changelogFiles": [
+    "docs/tachyonic/tachyonic_changelog.jsonl",
+    "docs/tachyonic/tachyonic_changelog.yaml",
+    "CHANGELOG.md",
+    ".githooks/CHANGELOG.md"
+  ],
+  "pythonSyntaxPaths": [
+    "ai/src/",
+    "runtime_intelligence/"
+  ],
+  "testTriggerPatterns": [
+    "ai/src/core/integration/"
+  ],
+  "enableTestEnvVar": "AIOS_HOOK_RUN_TESTS",
+  "metricsSummaryPath": "runtime_intelligence/logs/hooks/summary.json",
+  "commitMessagePrefixes": [
+    "feat:", "fix:", "docs:", "chore:", "refactor:", "test:", "build:", "ci:", "perf:", "revert:",
+    "governance:", "cellular:", "ai:", "core:", "interface:", "runtime:", "security:"
+  ],
+  "prePush": {
+    "enable": true,
+    "buildCommands": [
+      "dotnet build AIOS.sln -c Debug --nologo",
+      "cmake --build core\\core_systems\\build --config Debug"
+    ],
+    "testCommands": [
+      "pytest -q ai/tests"
+    ],
+    "skipEnvVar": "AIOS_PREPUSH_SKIP"
+  },
+  "largeDeletionThresholdPct": 60,
+  "largeDeletionBypassEnvVar": "AIOS_HOOK_ALLOW_LARGE_DELETE",
+  "cacheDir": "runtime_intelligence/logs/hooks/cache",
+  "enableExternalSecretScanner": true
+  ,"criticality": {
+    "indexPath": "governance/file_criticality_index.jsonl",
+    "warnOnCoreModify": true,
+    "requireDualReviewTiers": ["core"],
+    "blockDeletionTiers": ["core","high"],
+    "scoreRegenScript": "runtime_intelligence/tools/generate_file_scores.py"
+  }
+}

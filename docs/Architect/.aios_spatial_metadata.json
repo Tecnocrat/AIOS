@@ -1,0 +1,136 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-23T08:12:22.800551",
+  "folder_info": {
+    "name": "Architect",
+    "absolute_path": "c:\\dev\\AIOS\\docs\\Architect",
+    "relative_path": "docs\\Architect",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "Architect"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "archive",
+      "build",
+      "changelog",
+      "development",
+      "runtime_intelligence",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "vscopilot chat"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 4074,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": ".aios_spatial_metadata.json",
+          "size": 2883,
+          "modified": "2025-09-21T13:01:23.062649",
+          "category": "documentation"
+        }
+      ],
+      ".md": [
+        {
+          "name": "ARCHITECTURAL_IMPROVEMENT_LOG.md",
+          "size": 1191,
+          "modified": "2025-09-23T07:56:45.948312",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 2883,
+        "modified": "2025-09-21T13:01:23.062649",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "ARCHITECTURAL_IMPROVEMENT_LOG.md",
+        "size": 1191,
+        "modified": "2025-09-23T07:56:45.948312",
+        "category": "documentation"
+      },
+      {
+        "name": ".aios_spatial_metadata.json",
+        "size": 2883,
+        "modified": "2025-09-21T13:01:23.062649",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".json",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 10,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > Architect",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\Architect' -Recurse",
+      "find_python": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\Architect' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'c:\\dev\\AIOS\\docs\\Architect' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      "ai\\core\\docs",
+      "ai\\docs\\architecture"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": true
+  }
+}

@@ -1,0 +1,18 @@
+def calculate_average(numbers):
+    """Calculate average of numbers"""
+    return sum(numbers) / len(numbers)
+
+# Mutation: json
+{
+    "suggestions": [
+        "Suggestion 1: Add a docstring explaining the function's purpose, parameters, and return value. This enhances documentation and makes the code more understandable."
+# Mutation: json
+{
+  "suggestions": [
+    "Suggestion 1: Add a docstring explaining the function's purpose, parameters, and return value. This enhances documentation and makes the code more understandable.",
+    
+# Mutation: json
+{
+  "suggestions": [
+    "suggestion 1: Add a docstring explaining the function's purpose, parameters, and return value. This enhances documentation and makes the code more understandable.",
+    

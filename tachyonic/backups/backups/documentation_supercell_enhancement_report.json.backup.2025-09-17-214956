@@ -1,0 +1,46 @@
+{
+  "timestamp": "2025-09-06T15:09:41.213838",
+  "duration_seconds": 2.0634701251983643,
+  "supercell_status": {
+    "total_documents": 163,
+    "analysis_complete": 163,
+    "enhancement_complete": 0,
+    "overall_quality": 0.9159509202453988,
+    "ainlp_alignment": 0.4246762099522835,
+    "knowledge_coverage": 0.6987730061349693,
+    "consciousness_integration": 0.5,
+    "critical_gaps": [
+      "Missing component architecture details",
+      "Missing consciousness paradigm explanation",
+      "Missing dendritic intelligence concepts",
+      "Missing system design overview"
+    ],
+    "enhancement_opportunities": [
+      "Add AIOS system integration context",
+      "Add code examples and implementation details",
+      "Add consciousness paradigm context",
+      "Add hierarchical structure with headers",
+      "Expand content depth and detail"
+    ]
+  },
+  "enhancement_results": {
+    "critical_enhanced": 5,
+    "high_enhanced": 1,
+    "medium_enhanced": 157,
+    "quality_improvement": 0.15
+  },
+  "integration_results": {
+    "ai_intelligence_insights": 25,
+    "core_engine_validations": 0,
+    "tachyonic_wisdom_integrated": 0,
+    "knowledge_expansion": 0.2
+  },
+  "alignment_results": {
+    "consciousness_boost": 0.25,
+    "paradigm_alignment_improved": true,
+    "ainlp_integration_enhanced": true
+  },
+  "total_documents_processed": 163,
+  "quality_improvement": 0.15,
+  "consciousness_integration_boost": 0.25
+}
