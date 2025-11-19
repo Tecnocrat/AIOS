@@ -1,0 +1,5 @@
+{
+    // Disable CMake Tools for Documentation layer
+    "cmake.configureOnOpen": false,
+    "cmake.sourceDirectory": ""
+}
