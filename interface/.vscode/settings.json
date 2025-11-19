@@ -1,0 +1,5 @@
+{
+    // Disable CMake Tools for C# Interface layer
+    "cmake.configureOnOpen": false,
+    "cmake.sourceDirectory": ""
+}

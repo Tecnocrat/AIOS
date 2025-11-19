@@ -1,0 +1,5 @@
+{
+    // Disable CMake Tools for Python AI layer
+    "cmake.configureOnOpen": false,
+    "cmake.sourceDirectory": ""
+}
