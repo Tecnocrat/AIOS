@@ -222,12 +222,15 @@
 		"cmake.preferredGenerators": [
 			"Visual Studio 17 2022"
 		],
-		"cmake.configureOnOpen": true,
+		"cmake.configureOnOpen": false,
 		// Route CMake Tools to the Core cytoplasm folder explicitly in multi-root
 		"cmake.sourceDirectory": "${workspaceFolder:⚡ Core}",
 		"cmake.buildDirectory": "${workspaceFolder:⚡ Core}/build",
 		// Avoid noise in non-CMake consciousness layers
 		"cmake.ignoreCMakeListsMissing": true,
+		"cmake.configureSettings": {
+			"CMAKE_BUILD_TYPE": "Debug"
+		},
 
 		// ==========================================================================
 		// 🔧 .NET DENDRITIC COORDINATION
