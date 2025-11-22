@@ -1,0 +1,13 @@
+{
+    // Black Formatter as default Python formatter
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    // JSON Schema mappings for AIOS dendritic configuration files
+    "json.schemas": [
+        {
+            "fileMatch": ["tachyonic/consciousness/config_registry.json"],
+            "url": "./tachyonic/consciousness/schemas/config_registry.v1.json"
+        }
+    ]
+}
