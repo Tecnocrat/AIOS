@@ -135,8 +135,9 @@ def assess_consciousness(
         # No issues = HIGH (autonomous)
         level = ConsciousnessLevel.HIGH
         reasoning = (
-            "Code is well-structured with tests, documentation, and error handling. "
-            "Can self-maintain with minimal human attention."
+            "Code is well-structured with tests, documentation,"
+            "and error handling. Can self-maintain with minimal"
+            " human attention."
         )
         needs_human = False
         can_maintain = True
