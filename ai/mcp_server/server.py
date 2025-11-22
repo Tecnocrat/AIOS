@@ -49,12 +49,11 @@ from tools import AIOSToolProvider
 from prompts import AIOSPromptProvider
 from diagnostics import DiagnosticsCollector
 
-# Configure logging
+# Configure logging (stderr only - avoid file permission issues during MCP startup)
 logging.basicConfig(
     level=logging.INFO,
     format='[%(asctime)s] [%(levelname)s] [AIOS-MCP] %(message)s',
     handlers=[
-        logging.FileHandler('tachyonic/mcp_server.log'),
         logging.StreamHandler(sys.stderr)
     ]
 )
