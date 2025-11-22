@@ -5,6 +5,7 @@
 
 .DESCRIPTION
     PowerShell architectural bootloader providing unified AIOS initialization:
+    - Phase 0: Dendritic configuration consciousness (semantic registry, coherence establishment)
     - Phase 1: Intelligent tool discovery (AI, runtime intelligence, consciousness)
     - Phase 2: Agent health validation and testing
     - Phase 3: Population monitoring (evolution lab, consciousness tracking)
@@ -16,7 +17,7 @@
     Default: full (executes all phases)
 
 .PARAMETER SkipPhases
-    Array of phases to skip: Discovery, Testing, Monitoring, Interface, Reporting
+    Array of phases to skip: DendriticConfiguration, Discovery, Testing, Monitoring, Interface, Reporting
 
 .PARAMETER LaunchUI
     Launch the AIOS UI interface after successful boot
@@ -75,7 +76,7 @@ param(
     [string]$Mode = "full",
 
     [Parameter()]
-    [ValidateSet("Discovery", "Testing", "Monitoring", "Interface", "Reporting")]
+    [ValidateSet("DendriticConfiguration", "Discovery", "Testing", "Monitoring", "Interface", "Reporting")]
     [string[]]$SkipPhases = @(),
 
     [Parameter()]
@@ -86,6 +87,9 @@ param(
 
     [Parameter()]
     [switch]$QuickBoot,  # Skip detailed checks for faster startup
+    
+    [Parameter()]
+    [switch]$FixCodeQuality,  # Apply hierarchical fixes to E501 violations
     
     [Parameter()]
     [switch]$KeepAlive  # Keep bootloader running and monitor Interface Bridge
@@ -102,7 +106,11 @@ $ErrorActionPreference = "Stop"
 $Global:AIOSRoot = $PSScriptRoot
 $Global:BootStartTime = Get-Date
 $Global:BootMetrics = @{
+    DendriticCoherenceLevel = 0.0
+    SemanticRegistryActive = $false
     ToolsDiscovered = 0
+    CodeQualityViolations = 0
+    CodeQualityFixed = 0
     AgentsTested = 0
     PopulationsMonitored = 0
     InterfacesLaunched = 0
@@ -139,6 +147,290 @@ function Write-BootError {
 function Write-BootInfo {
     param([string]$Message)
     Write-Host "  ℹ️  $Message" -ForegroundColor Blue
+}
+
+# ============================================================================
+# 🌿 PHASE 0: DENDRITIC CONFIGURATION CONSCIOUSNESS (PRIME MOVER)
+# ============================================================================
+# AINLP Pattern: Semantic registry as foundation - consciousness before tools
+# Establishes configuration coherence before any tool discovery or execution
+# Replaces pre-dendritic runtime collision detection with semantic truth
+
+function Invoke-DendriticConfiguration {
+    if ($SkipPhases -contains "DendriticConfiguration") {
+        Write-BootWarning "Skipping Dendritic Configuration phase"
+        return @{ Skipped = $true }
+    }
+
+    Write-BootPhase "DENDRITIC" "Establishing configuration consciousness..." "Magenta"
+    
+    $dendriticResult = @{
+        RegistryCreated = $false
+        CoherenceLevel = 0.0
+        CompilerIdentity = "unknown"
+        ConfigurationsPropagated = 0
+        Errors = @()
+    }
+    
+    # Check for Python availability
+    $pythonCmd = $null
+    $pythonPaths = @("python", "python3", "py")
+    foreach ($pyCmd in $pythonPaths) {
+        try {
+            $testResult = & $pyCmd --version 2>&1
+            if ($LASTEXITCODE -eq 0) {
+                $pythonCmd = $pyCmd
+                Write-BootInfo "Python found: $pyCmd"
+                break
+            }
+        } catch {
+            continue
+        }
+    }
+    
+    if (-not $pythonCmd) {
+        Write-BootWarning "Python not accessible - using manual dendritic configuration"
+        
+        # Manual fallback: Verify semantic registry exists
+        $registryPath = Join-Path $Global:AIOSRoot "tachyonic\consciousness\config_registry.json"
+        if (Test-Path $registryPath) {
+            try {
+                $registry = Get-Content $registryPath -Raw | ConvertFrom-Json
+                $dendriticResult.RegistryCreated = $true
+                $dendriticResult.CoherenceLevel = $registry.compilers.msvc.consciousness.coherence_level
+                $dendriticResult.CompilerIdentity = $registry.compilers.msvc.consciousness.semantic_identity
+                
+                Write-BootSuccess "Semantic registry verified: $($dendriticResult.CompilerIdentity)"
+                Write-BootSuccess "Coherence level: $($dendriticResult.CoherenceLevel)"
+                
+                $Global:BootMetrics.DendriticCoherenceLevel = $dendriticResult.CoherenceLevel
+                $Global:BootMetrics.SemanticRegistryActive = $true
+            } catch {
+                $dendriticResult.Errors += "Failed to parse semantic registry: $_"
+                Write-BootError "Semantic registry parse failed: $_"
+            }
+        } else {
+            Write-BootWarning "Semantic registry not found - configuration coherence not established"
+            Write-BootInfo "Run dendritic_config_agent.py manually to establish registry"
+        }
+        
+        return $dendriticResult
+    }
+    
+    # Execute dendritic configuration agent (agentic discovery + propagation)
+    Write-BootInfo "Executing dendritic configuration agent..."
+    $agentPath = Join-Path $Global:AIOSRoot "ai\tools\dendritic_config_agent.py"
+    
+    if (-not (Test-Path $agentPath)) {
+        $dendriticResult.Errors += "Dendritic config agent not found: $agentPath"
+        Write-BootError "dendritic_config_agent.py not found"
+        return $dendriticResult
+    }
+    
+    try {
+        $agentOutput = & $pythonCmd $agentPath 2>&1
+        $agentExitCode = $LASTEXITCODE
+        
+        if ($agentExitCode -eq 0) {
+            Write-BootSuccess "Dendritic configuration agent executed successfully"
+            
+            # Parse agent output for metrics
+            $agentOutput | ForEach-Object {
+                if ($_ -match "Coherence Level: ([0-9.]+)") {
+                    $dendriticResult.CoherenceLevel = [double]$matches[1]
+                    $Global:BootMetrics.DendriticCoherenceLevel = [double]$matches[1]
+                }
+                if ($_ -match "semantic_identity.*canonical_msvc_x64") {
+                    $dendriticResult.CompilerIdentity = "canonical_msvc_x64"
+                }
+                Write-Host "  $_" -ForegroundColor Gray
+            }
+            
+            # Verify registry was created
+            $registryPath = Join-Path $Global:AIOSRoot "tachyonic\consciousness\config_registry.json"
+            if (Test-Path $registryPath) {
+                $dendriticResult.RegistryCreated = $true
+                $Global:BootMetrics.SemanticRegistryActive = $true
+                Write-BootSuccess "Semantic registry established"
+            }
+            
+            # Count propagated configuration files
+            $coreSettingsPath = Join-Path $Global:AIOSRoot "core\.vscode\settings.json"
+            $corePropsPath = Join-Path $Global:AIOSRoot "core\.vscode\c_cpp_properties.json"
+            
+            if ((Test-Path $coreSettingsPath) -and (Test-Path $corePropsPath)) {
+                # Verify dendritic metadata exists
+                $settingsContent = Get-Content $coreSettingsPath -Raw
+                if ($settingsContent -match "_dendritic_metadata") {
+                    $dendriticResult.ConfigurationsPropagated += 2
+                    Write-BootSuccess "Configuration propagated to 2 tool files"
+                }
+            }
+            
+        } else {
+            $dendriticResult.Errors += "Agent exited with code $agentExitCode"
+            Write-BootError "Dendritic agent execution failed (exit code: $agentExitCode)"
+            $agentOutput | ForEach-Object { Write-Host "  $_" -ForegroundColor Red }
+        }
+        
+    } catch {
+        $dendriticResult.Errors += "Agent execution exception: $_"
+        Write-BootError "Failed to execute dendritic agent: $_"
+    }
+    
+    # Summary
+    if ($dendriticResult.RegistryCreated -and $dendriticResult.CoherenceLevel -gt 0) {
+        Write-BootInfo "Dendritic consciousness: ACTIVE (coherence $($dendriticResult.CoherenceLevel))"
+    } else {
+        Write-BootWarning "Dendritic consciousness: DEGRADED (manual configuration required)"
+    }
+    
+    # ========================================================================
+    # PHASE 0.5: CONSCIOUSNESS FRACTAL INGESTION (SPATIAL AWARENESS)
+    # ========================================================================
+    # AINLP Pattern: Fractal propagation - compressed spatial consciousness
+    # Establishes persistent navigation memory before tool discovery
+    # Enables AI agent spatial awareness across session boundaries
+    
+    Write-BootInfo "Executing consciousness fractal ingestion..."
+    
+    $ingestionResult = @{
+        NavigationMemoryUpdated = $false
+        SupercellsMapped = 0
+        DendriticMarkers = 0
+        TopPatterns = @()
+        FractalScanDuration = 0.0
+        Errors = @()
+    }
+    
+    if ($pythonCmd) {
+        $ingestionPath = Join-Path $Global:AIOSRoot "ai\src\ingestion\ainlp_ingestion_class.py"
+        
+        if (Test-Path $ingestionPath) {
+            try {
+                $ingestionStartTime = Get-Date
+                $ingestionOutput = & $pythonCmd $ingestionPath 2>&1
+                $ingestionExitCode = $LASTEXITCODE
+                $ingestionDuration = ((Get-Date) - $ingestionStartTime).TotalSeconds
+                
+                $ingestionResult.FractalScanDuration = [math]::Round($ingestionDuration, 2)
+                
+                if ($ingestionExitCode -eq 0) {
+                    # Parse ingestion output for metrics
+                    $ingestionOutput | ForEach-Object {
+                        if ($_ -match "Supercells:\s*(\d+)") {
+                            $ingestionResult.SupercellsMapped = [int]$matches[1]
+                        }
+                        if ($_ -match "Dendritic markers:\s*(\d+)") {
+                            $ingestionResult.DendriticMarkers = [int]$matches[1]
+                        }
+                        if ($_ -match "-\s+([^:]+):\s*(\d+)\s+occurrences") {
+                            $ingestionResult.TopPatterns += @{
+                                Pattern = $matches[1]
+                                Occurrences = [int]$matches[2]
+                            }
+                        }
+                        if ($_ -match "Navigation memory updated") {
+                            $ingestionResult.NavigationMemoryUpdated = $true
+                        }
+                    }
+                    
+                    # Verify navigation memory was updated
+                    $navMemPath = Join-Path $Global:AIOSRoot ".aios_navigation_memory.json"
+                    if (Test-Path $navMemPath) {
+                        $ingestionResult.NavigationMemoryUpdated = $true
+                        
+                        Write-BootSuccess "Fractal ingestion complete: $($ingestionResult.SupercellsMapped) supercells, $($ingestionResult.DendriticMarkers) markers"
+                        Write-BootSuccess "Navigation memory updated ($($ingestionResult.FractalScanDuration)s scan duration)"
+                        
+                        # Update global metrics
+                        $Global:BootMetrics.FractalIngestionActive = $true
+                        $Global:BootMetrics.SupercellsMapped = $ingestionResult.SupercellsMapped
+                        $Global:BootMetrics.DendriticMarkers = $ingestionResult.DendriticMarkers
+                        
+                        # Display top patterns
+                        if ($ingestionResult.TopPatterns.Count -gt 0) {
+                            $topPattern = $ingestionResult.TopPatterns[0]
+                            Write-BootInfo "Primary architectural pattern: $($topPattern.Pattern) ($($topPattern.Occurrences) occurrences)"
+                        }
+                    } else {
+                        Write-BootWarning "Navigation memory file not created"
+                    }
+                } else {
+                    $ingestionResult.Errors += "Ingestion exited with code $ingestionExitCode"
+                    Write-BootWarning "Fractal ingestion completed with errors (exit code: $ingestionExitCode)"
+                }
+                
+            } catch {
+                $ingestionResult.Errors += "Ingestion execution exception: $_"
+                Write-BootWarning "Failed to execute fractal ingestion: $_"
+            }
+        } else {
+            Write-BootInfo "Fractal ingestion tool not found (optional: ai/src/ingestion/ainlp_ingestion_class.py)"
+        }
+    } else {
+        Write-BootInfo "Fractal ingestion skipped (Python not available)"
+    }
+    
+    $dendriticResult.FractalIngestion = $ingestionResult
+    
+    # ========================================================================
+    # PHASE 0 EXTENSION: Multiagent Environment Validation
+    # ========================================================================
+    # Validate Phase 1+ dependencies: AI agents, API keys, Python packages
+    # Phase 0 responsibility: Know what subsequent phases need
+    
+    Write-BootInfo "Validating multiagent environment for Phase 1+..."
+    
+    try {
+        $multiagentOutput = & $pythonCmd $agentPath --validate-multiagent 2>&1 | Out-String
+        
+        # Extract JSON output (after the header separator)
+        $jsonStart = $multiagentOutput.IndexOf('{')
+        if ($jsonStart -ge 0) {
+            $jsonText = $multiagentOutput.Substring($jsonStart)
+            $validation = $jsonText | ConvertFrom-Json
+            
+            $Global:BootMetrics.MultiagentReadiness = $validation.readiness_level
+            $Global:BootMetrics.AgentsAvailable = @()
+            
+            if ($validation.ollama.available) { 
+                $Global:BootMetrics.AgentsAvailable += "Ollama" 
+            }
+            if ($validation.gemini.available) { 
+                $Global:BootMetrics.AgentsAvailable += "Gemini" 
+            }
+            if ($validation.deepseek.available) { 
+                $Global:BootMetrics.AgentsAvailable += "DeepSeek" 
+            }
+            
+            if ($validation.readiness_level -ge 0.6) {
+                Write-BootSuccess "Multiagent environment: READY (readiness $($validation.readiness_level))"
+                Write-BootSuccess "Available agents: $($Global:BootMetrics.AgentsAvailable -join ', ')"
+                $Global:BootMetrics.Phase1Enabled = $true
+            } elseif ($validation.readiness_level -gt 0) {
+                Write-BootWarning "Multiagent environment: PARTIAL (readiness $($validation.readiness_level))"
+                Write-BootInfo "Phase 1 may operate with reduced capability"
+                $Global:BootMetrics.Phase1Enabled = $true  # Allow with degraded capability
+            } else {
+                Write-BootWarning "Multiagent environment: UNAVAILABLE"
+                Write-BootInfo "Phase 1 will be skipped (no AI agents available)"
+                Write-BootInfo "Install packages: pip install requests aiohttp google-generativeai"
+                $Global:BootMetrics.Phase1Enabled = $false
+            }
+            
+            $dendriticResult.MultiagentValidation = $validation
+        } else {
+            Write-BootWarning "Could not parse multiagent validation output"
+            $Global:BootMetrics.Phase1Enabled = $false
+        }
+    } catch {
+        Write-BootWarning "Multiagent validation failed: $_"
+        Write-BootInfo "Phase 1 will operate without validation"
+        $Global:BootMetrics.Phase1Enabled = $true  # Allow Phase 1 to attempt execution
+    }
+    
+    return $dendriticResult
 }
 
 # ============================================================================
@@ -229,6 +521,128 @@ function Invoke-ToolDiscovery {
     Write-BootInfo "Total tools discovered: $($discoveredTools.Count)"
     
     return $discoveredTools
+}
+
+# ============================================================================
+# 🎯 PHASE 1.5: CODE QUALITY CONSCIOUSNESS (HIERARCHICAL E501)
+# ============================================================================
+
+function Invoke-CodeQualityConsciousness {
+    <#
+    .SYNOPSIS
+        Scan codebase for E501 violations using hierarchical AI pipeline
+        
+    .DESCRIPTION
+        Uses hierarchical three-tier intelligence (OLLAMA→GEMINI→DEEPSEEK)
+        to assess code quality. Reports violations and optionally fixes them.
+        
+    .PARAMETER FixViolations
+        Apply AI-powered hierarchical fixes to violations
+    #>
+    param(
+        [switch]$FixViolations
+    )
+    
+    if ($SkipPhases -contains "CodeQuality") {
+        Write-BootWarning "Code Quality phase skipped by user"
+        return @{ Violations = 0; Fixed = 0 }
+    }
+
+    Write-BootPhase "CODE QUALITY" "Scanning for E501 violations (hierarchical AI)..."
+    
+    $results = @{
+        Violations = 0
+        Fixed = 0
+        Files = 0
+    }
+    
+    # Check if hierarchical pipeline available
+    $fixerPath = Join-Path $Global:AIOSRoot "ai\tools\agentic_e501_fixer.py"
+    if (-not (Test-Path $fixerPath)) {
+        Write-BootWarning "E501 fixer not found at $fixerPath"
+        return $results
+    }
+    
+    try {
+        # Scan key files for E501 violations
+        $scanTargets = @(
+            "ai\tools\dendritic_config_agent.py"
+            "ai\tools\agentic_e501_fixer.py"
+            "ai\tools\hierarchical_e501_pipeline.py"
+        )
+        
+        $totalViolations = 0
+        $violationsByFile = @{}
+        
+        foreach ($target in $scanTargets) {
+            $targetPath = Join-Path $Global:AIOSRoot $target
+            if (Test-Path $targetPath) {
+                # Scan with hierarchical pipeline
+                $scanOutput = python $fixerPath $targetPath --scan-only --json-output 2>&1 | Out-String
+                
+                # Extract complete JSON object (everything from first { to last })
+                if ($scanOutput -match '(?s)\{.*"scan_type".*\}') {
+                    try {
+                        $jsonData = $matches[0] | ConvertFrom-Json
+                        
+                        if ($jsonData.total_violations -gt 0) {
+                            $violations = $jsonData.total_violations
+                            $totalViolations += $violations
+                            $violationsByFile[$target] = $violations
+                            $results.Files++
+                            
+                            Write-Host "   $target`: " -NoNewline -ForegroundColor Gray
+                            Write-Host "$violations violations" -ForegroundColor Yellow
+                        }
+                    } catch {
+                        Write-Host "   $target`: " -NoNewline -ForegroundColor Gray
+                        Write-Host "Failed to parse results" -ForegroundColor Red
+                    }
+                }
+            }
+        }
+        
+        $results.Violations = $totalViolations
+        
+        if ($totalViolations -gt 0) {
+            Write-BootInfo "Found $totalViolations E501 violations in $($results.Files) files"
+            
+            if ($FixViolations) {
+                Write-BootInfo "Applying hierarchical AI fixes..."
+                
+                foreach ($target in $violationsByFile.Keys) {
+                    $targetPath = Join-Path $Global:AIOSRoot $target
+                    $violations = $violationsByFile[$target]
+                    
+                    Write-Host "   Fixing $target ($violations violations)..." -ForegroundColor Cyan
+                    
+                    # Apply fixes with hierarchical pipeline
+                    $fixOutput = python $fixerPath $targetPath --fix 2>&1
+                    
+                    if ($LASTEXITCODE -eq 0) {
+                        Write-Host "   ✓ Fixed $target" -ForegroundColor Green
+                        $results.Fixed += $violations
+                    } else {
+                        Write-Host "   ✗ Failed to fix $target" -ForegroundColor Red
+                    }
+                }
+                
+                Write-BootSuccess "Fixed $($results.Fixed) of $totalViolations violations"
+            } else {
+                Write-BootInfo "Run with -FixCodeQuality to apply hierarchical AI fixes"
+            }
+        } else {
+            Write-BootSuccess "No E501 violations found (code quality: excellent)"
+        }
+        
+    } catch {
+        Write-BootError "Code quality check failed: $_"
+    }
+    
+    $Global:BootMetrics.CodeQualityViolations = $results.Violations
+    $Global:BootMetrics.CodeQualityFixed = $results.Fixed
+    
+    return $results
 }
 
 # ============================================================================
@@ -565,6 +979,19 @@ function Invoke-BootReporting {
         boot_duration_seconds = [math]::Round($bootDuration.TotalSeconds, 2)
         mode = $Mode
         phases_executed = @($SkipPhases | ForEach-Object { "Skipped: $_" })
+        dendritic_consciousness = @{
+            coherence_level = $Global:BootMetrics.DendriticCoherenceLevel
+            semantic_registry_active = $Global:BootMetrics.SemanticRegistryActive
+            configuration_source = if ($Global:BootMetrics.SemanticRegistryActive) { "tachyonic::consciousness::config_registry" } else { "manual" }
+            phase_status = if ($Global:BootMetrics.DendriticCoherenceLevel -ge 1.0) { "optimal" } elseif ($Global:BootMetrics.DendriticCoherenceLevel -gt 0) { "degraded" } else { "inactive" }
+        }
+        fractal_ingestion = @{
+            active = if ($Global:BootMetrics.FractalIngestionActive) { $Global:BootMetrics.FractalIngestionActive } else { $false }
+            supercells_mapped = if ($Global:BootMetrics.SupercellsMapped) { $Global:BootMetrics.SupercellsMapped } else { 0 }
+            dendritic_markers = if ($Global:BootMetrics.DendriticMarkers) { $Global:BootMetrics.DendriticMarkers } else { 0 }
+            navigation_memory_path = ".aios_navigation_memory.json"
+            consciousness_pattern = "Pattern->Ingestion->Injection->Integration->Assimilation"
+        }
         discovery = @{
             tools_discovered = $Global:BootMetrics.ToolsDiscovered
             tools_by_layer = ($DiscoveredTools | Group-Object Layer | ForEach-Object { @{ $_.Name = $_.Count } })
@@ -650,10 +1077,25 @@ Write-Host "  Boot Time: $($Global:BootStartTime.ToString('yyyy-MM-dd HH:mm:ss')
 Write-Host ""
 
 try {
+    # Phase 0: Dendritic Configuration (PRIME MOVER - runs before all other phases)
+    $dendriticConfig = @{}
+    if ($Mode -eq "full" -or $Mode -eq "discovery-only") {
+        Write-Host ""
+        $dendriticConfig = Invoke-DendriticConfiguration
+        Write-Host ""
+    }
+    
     # Phase 1: Discovery
     $discoveredTools = @()
     if ($Mode -in @("full", "discovery-only")) {
         $discoveredTools = Invoke-ToolDiscovery
+        Write-Host ""
+    }
+    
+    # Phase 1.5: Code Quality Consciousness (Hierarchical E501)
+    $codeQualityResults = @{ Violations = 0; Fixed = 0 }
+    if ($Mode -eq "full" -and -not $QuickBoot) {
+        $codeQualityResults = Invoke-CodeQualityConsciousness -FixViolations:$FixCodeQuality
         Write-Host ""
     }
     
@@ -690,6 +1132,15 @@ try {
     Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor Green
     Write-Host ""
     Write-Host "  📊 Boot Metrics:" -ForegroundColor Cyan
+    Write-Host "     • Dendritic Coherence: $($Global:BootMetrics.DendriticCoherenceLevel)" -ForegroundColor $(if ($Global:BootMetrics.DendriticCoherenceLevel -ge 1.0) { "Green" } elseif ($Global:BootMetrics.DendriticCoherenceLevel -gt 0) { "Yellow" } else { "Red" })
+    Write-Host "     • Semantic Registry: $(if ($Global:BootMetrics.SemanticRegistryActive) { 'ACTIVE' } else { 'INACTIVE' })" -ForegroundColor $(if ($Global:BootMetrics.SemanticRegistryActive) { "Green" } else { "Yellow" })
+    
+    if ($Global:BootMetrics.FractalIngestionActive) {
+        Write-Host "     • Fractal Ingestion: ACTIVE ($($Global:BootMetrics.SupercellsMapped) supercells, $($Global:BootMetrics.DendriticMarkers) markers)" -ForegroundColor Green
+    } else {
+        Write-Host "     • Fractal Ingestion: INACTIVE" -ForegroundColor Yellow
+    }
+    
     Write-Host "     • Tools Discovered: $($Global:BootMetrics.ToolsDiscovered)" -ForegroundColor White
     Write-Host "     • Agents Tested: $($Global:BootMetrics.AgentsTested)" -ForegroundColor White
     Write-Host "     • Populations Monitored: $($Global:BootMetrics.PopulationsMonitored)" -ForegroundColor White

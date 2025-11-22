@@ -1,0 +1,159 @@
+{
+  "scan_type": "e501_violations",
+  "total_files": 1,
+  "total_violations": 29,
+  "files_with_violations": 1,
+  "results": [
+    {
+      "file": "ai\\tools\\dendritic_config_agent.py",
+      "violation_count": 29,
+      "violations": [
+        {
+          "line_number": 7,
+          "length": 91,
+          "line": "and propagates configuration to tool-specific files (c_cpp_properties.json, sett..."
+        },
+        {
+          "line_number": 21,
+          "length": 86,
+          "line": "from datetime import datetime, UTC  # UTC for timezone-aware timestamps (Python ..."
+        },
+        {
+          "line_number": 30,
+          "length": 82,
+          "line": "    Replaces runtime collision detection with semantic discovery and registratio..."
+        },
+        {
+          "line_number": 71,
+          "length": 81,
+          "line": "                cl_candidate = version_dir / \"bin\" / \"Hostx64\" / \"x64\" / \"cl.exe..."
+        },
+        {
+          "line_number": 88,
+          "length": 92,
+          "line": "            version_line = [line for line in result.stderr.split('\\n') if 'Versi..."
+        },
+        {
+          "line_number": 116,
+          "length": 84,
+          "line": "        print(\"\ud83d\udcdd [DENDRITIC] Registering compiler identity in semantic registry...."
+        },
+        {
+          "line_number": 118,
+          "length": 82,
+          "line": "        # Load existing registry or create new (use json5 for JSONC compatibilit..."
+        },
+        {
+          "line_number": 127,
+          "length": 97,
+          "line": "            \"method\": \"agentic_discovery\" if compiler_meta[\"detected\"] else \"can..."
+        },
+        {
+          "line_number": 134,
+          "length": 94,
+          "line": "        registry[\"compilers\"][\"msvc\"][\"configuration\"][\"compilerPath\"] = compile..."
+        },
+        {
+          "line_number": 135,
+          "length": 99,
+          "line": "        registry[\"metadata\"][\"last_updated\"] = datetime.now(UTC).isoformat().rep..."
+        },
+        {
+          "line_number": 149,
+          "length": 81,
+          "line": "        This replaces manual editing with agentic generation from semantic truth..."
+        },
+        {
+          "line_number": 160,
+          "length": 91,
+          "line": "        cpp_props_path = self.workspace_root / \"core\" / \".vscode\" / \"c_cpp_prope..."
+        },
+        {
+          "line_number": 179,
+          "length": 82,
+          "line": "        # Update settings.json with registry reference (use json5 to handle JSON..."
+        },
+        {
+          "line_number": 180,
+          "length": 82,
+          "line": "        settings_path = self.workspace_root / \"core\" / \".vscode\" / \"settings.jso..."
+        },
+        {
+          "line_number": 187,
+          "length": 84,
+          "line": "        settings[\"C_Cpp.default.intelliSenseMode\"] = msvc_config[\"intelliSenseMo..."
+        },
+        {
+          "line_number": 195,
+          "length": 84,
+          "line": "            \"last_propagated\": datetime.now(UTC).isoformat().replace('+00:00', '..."
+        },
+        {
+          "line_number": 219,
+          "length": 81,
+          "line": "            \"runtime_collisions\": 0,  # Expectation: zero after dendritic patter..."
+        },
+        {
+          "line_number": 230,
+          "length": 81,
+          "line": "        print(f\"  Runtime Collisions: {coherence_metrics['runtime_collisions']}\"..."
+        },
+        {
+          "line_number": 239,
+          "length": 80,
+          "line": "                \"created\": datetime.now(UTC).isoformat().replace('+00:00', 'Z'),"
+        },
+        {
+          "line_number": 242,
+          "length": 122,
+          "line": "                \"description\": \"Canonical compiler identity registry - single so..."
+        },
+        {
+          "line_number": 283,
+          "length": 80,
+          "line": "        archive_path = self.dendritic_path / f\"config_decision_{timestamp}.json\""
+        },
+        {
+          "line_number": 299,
+          "length": 82,
+          "line": "    # ==========================================================================..."
+        },
+        {
+          "line_number": 301,
+          "length": 82,
+          "line": "    # ==========================================================================..."
+        },
+        {
+          "line_number": 351,
+          "length": 81,
+          "line": "            response = requests.get(\"http://localhost:11434/api/tags\", timeout=5..."
+        },
+        {
+          "line_number": 409,
+          "length": 84,
+          "line": "                __import__(package.replace(\".\", \"_\") if \".\" in package else pack..."
+        },
+        {
+          "line_number": 410,
+          "length": 84,
+          "line": "                installed[package] = {\"available\": True, \"description\": descript..."
+        },
+        {
+          "line_number": 412,
+          "length": 85,
+          "line": "                installed[package] = {\"available\": False, \"description\": descrip..."
+        },
+        {
+          "line_number": 494,
+          "length": 89,
+          "line": "            \"validation_timestamp\": datetime.now(UTC).isoformat().replace('+00:0..."
+        },
+        {
+          "line_number": 506,
+          "length": 99,
+          "line": "        registry[\"metadata\"][\"last_updated\"] = datetime.now(UTC).isoformat().rep..."
+        }
+      ]
+    }
+  ]
+}
