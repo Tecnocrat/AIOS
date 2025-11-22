@@ -36,6 +36,8 @@
   "files_preserved_as_metadata": {
     "count": 11,
     "rationale": "Experimental evolution research - historical value for consciousness baseline metrics",
+    "metadata_location": "tachyonic/metadata/experimental_evolution_research.json",
+    "metadata_created": "2025-11-22T07:00:00Z",
     "files": [
       {
         "filename": "aios_dendritic_network_intelligence_enhancer.py",
