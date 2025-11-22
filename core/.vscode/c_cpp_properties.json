@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${vcToolsInstallDir}include/*",
+                "${vcToolsInstallDir}atlmfc/include/*",
+                "${windowsSdkDir}Include/${windowsSdkVersion}/*"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "_WIN32",
+                "_WIN64"
+            ]
+        }
+    ],
+    "version": 4
+}

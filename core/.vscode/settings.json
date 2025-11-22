@@ -1,3 +1,16 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+    "C_Cpp.default.compilerPath": "cl.exe",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.loggingLevel": "Warning",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "_dendritic_metadata": {
+        "source": "tachyonic::consciousness::config_registry",
+        "last_propagated": "2025-11-20T23:22:15.835064Z",
+        "agent": "dendritic_config_agent.py"
+    }
 }

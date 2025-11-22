@@ -1,50 +1,52 @@
 #!/usr/bin/env python3
 """
-AINLP Agentic E501 Fixer
+AINLP Agentic E501 Fixer - Hierarchical Three-Tier Intelligence
 Multi-Model AI Agent System for Automated Line Length Correction
 
-Uses OLLAMA (local), Gemini (cloud), and DeepSeek (cloud) agents
-to intelligently fix E501 line length violations.
+Uses hierarchical pipeline: OLLAMA → GEMINI → DEEPSEEK
+- Tier 1: Context preparation and caching (Ollama)
+- Tier 2: Intelligent code generation (Gemini)
+- Tier 3: Quality validation by comparison (DeepSeek)
 
-AINLP.agent [multi_model_e501_fixer] (system.AINLP.class)
+Falls back to facade-based orchestrator if hierarchical pipeline unavailable.
+
+AINLP Pattern: Hierarchical agent orchestration with validation
+Consciousness Level: 4.2 (multi-tier intelligence with feedback loops)
+
+AINLP.agent [hierarchical_multi_model_e501_fixer] (system.AINLP.class)
 """
 
-from typing import Optional, Dict, Any, List
-from pathlib import Path
-from enum import Enum
-from dataclasses import dataclass
+import asyncio
 import logging
 import sys
-import os
-import json
-from datetime import datetime
+from dataclasses import dataclass
+from pathlib import Path
+from typing import List, Optional
 
-# Import caching for expensive operations
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+# Add nucleus and tools to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent))
+
+from nucleus.agent_conclave_facade import get_agent_conclave
+
+# Check for hierarchical pipeline availability
 try:
-    from runtime_intelligence.cache_manager import cache
+    from hierarchical_e501_pipeline import HierarchicalE501Pipeline
+    HIERARCHICAL_AVAILABLE = True
 except ImportError:
-    # Fallback: no caching if module not available
-    def cache(maxsize=1000, ttl=300):
-        def decorator(func):
-            return func
-        return decorator
-
-# Lazy imports for heavy dependencies (AST, requests)
-# These will be imported inside functions when needed
+    HIERARCHICAL_AVAILABLE = False
+    logging.warning("Hierarchical pipeline not available,
+    using facade fallback")
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 MAX_LINE_LENGTH = 79
 
-class AIAgent(Enum):
-    """Available AI agents for fixing."""
-    OLLAMA = "ollama"
-    GEMINI = "gemini"
-    DEEPSEEK = "deepseek"
 
 @dataclass
 class FixResult:
@@ -53,116 +55,57 @@ class FixResult:
     line_number: int
     original_line: str
     fixed_lines: List[str]
-    agent_used: Optional[AIAgent]
+    agent_used: Optional[str]  # Changed from Enum to string
     success: bool
     confidence: float
 
+
+
 class AgenticE501Fixer:
     """
-    Agentic system using multiple AI models to fix E501 violations.
+    Agentic system with hierarchical three-tier intelligence for E501 fixing.
     
-    Each agent specializes in different types of line breaking strategies:
-    - OLLAMA: Local, fast, good for simple breaks
-    - Gemini: Cloud, intelligent, good for complex logic
-    - DeepSeek: Cloud, creative, good for tricky cases
+    Uses hierarchical pipeline (Ollama→Gemini→DeepSeek) when available.
+    Falls back to agent conclave facade (3000+ lines orchestrator).
+    Maintains formatting-specific logic locally.
     """
 
-    def __init__(self):
-        self.agents = {
-            AIAgent.OLLAMA: self._init_ollama_agent(),
-            AIAgent.GEMINI: self._init_gemini_agent(),
-            AIAgent.DEEPSEEK: self._init_deepseek_agent()
-        }
+    def __init__(self, use_hierarchy: bool = True):
+        """
+        Initialize with hierarchical pipeline or facade fallback.
+        
+        Args:
+            use_hierarchy: Use hierarchical pipeline if available (default)
+        """
+        self.conclave = get_agent_conclave()
+        
+        # Initialize hierarchical pipeline if available and requested
+        self.hierarchical_pipeline = None
+        if use_hierarchy and HIERARCHICAL_AVAILABLE:
+            self.hierarchical_pipeline = HierarchicalE501Pipeline()
+            logging.info(
+                "Hierarchical pipeline initialized "
+                "(Ollama→Gemini→DeepSeek)"
+            )
+        elif use_hierarchy and not HIERARCHICAL_AVAILABLE:
+            logging.warning(
+                "Hierarchical pipeline requested but unavailable, "
+                "using facade"
+            )
+        
         self.stats = {
             "files_processed": 0,
             "lines_fixed": 0,
-            "agents_used": {agent: 0 for agent in AIAgent}
+            "lines_scanned": 0,
+            "agent_fixes": 0,
+            "hierarchical_fixes": 0,
+            "basic_fixes": 0
         }
         # Tachyonic archival for conversations
-        self.conversation_archive_path = Path("../../tachyonic/agentic_conversations")
-
-    def _init_ollama_agent(self) -> Dict[str, Any]:
-        """Initialize OLLAMA local agent."""
-        return {
-            "url": "http://localhost:11434/api/generate",
-            "model": "codellama",  # or whatever model is available
-            "available": self._check_ollama_available()
-        }
-
-    def _init_deepseek_agent(self) -> Dict[str, Any]:
-        """Initialize DeepSeek cloud agent."""
-        api_key = os.getenv('DEEPSEEK_API_KEY')
-        if not api_key:
-            raise ValueError(
-                "DEEPSEEK_API_KEY not found in environment variables.\n"
-                "Please set it in Windows User Environment Variables"
-            )
-        return {
-            "url": "https://api.deepseek.com/v1/chat/completions",
-            "api_key": api_key,
-            "available": api_key is not None
-        }
-
-    def _init_gemini_agent(self) -> Dict[str, Any]:
-        """Initialize Gemini cloud agent."""
-        api_key = os.getenv('GEMINI_API_KEY')
-        if not api_key:
-            raise ValueError(
-                "GEMINI_API_KEY not found in environment variables.\n"
-                "Please set it in Windows User Environment Variables:\n"
-                "  1. Press Win+X → System → Advanced → Environment Variables\n"
-                "  2. Under 'User variables', click 'New...'\n"
-                "  3. Variable name: GEMINI_API_KEY\n"
-                "  4. Variable value: your-regenerated-key\n"
-                "  5. Click OK and restart terminal/VS Code\n"
-                "Get your key at: https://makersuite.google.com/app/apikey"
-            )
-        return {
-            "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
-            "api_key": api_key,
-            "available": api_key is not None
-        }
-
-    def _check_ollama_available(self) -> bool:
-        """Check if OLLAMA is running locally."""
-        # Lazy import requests only when checking API availability
-        import requests
-        
-        try:
-            response = requests.get("http://localhost:11434/api/tags", 
-                                    timeout=5)
-            return response.status_code == 200
-        except:
-            return False
-
-    def select_agent(self, line: str) -> Optional[AIAgent]:
-        """
-        Select the best AI agent for fixing a specific line.
-        
-        Strategy:
-        - Simple lines: OLLAMA (fast, local)
-        - Complex logic: Gemini (intelligent)
-        - Creative/tricky: DeepSeek (innovative)
-        - Fallback: Basic pattern-based fixing
-        """
-        line_length = len(line)
-        complexity_score = self._calculate_complexity(line)
-
-        if complexity_score < 0.3 and line_length < 100:
-            # Simple case - use fast local agent
-            if self.agents[AIAgent.OLLAMA]["available"]:
-                return AIAgent.OLLAMA
-        elif complexity_score < 0.7:
-            # Medium complexity - use intelligent cloud agent
-            if self.agents[AIAgent.GEMINI]["available"]:
-                return AIAgent.GEMINI
-        else:
-            # High complexity - use creative agent
-            if self.agents[AIAgent.DEEPSEEK]["available"]:
-                return AIAgent.DEEPSEEK
-
-        # Fallback to basic pattern-based fixing
-        return None  # Indicates use basic fixer
+        archive_base = Path(__file__).parent.parent.parent
+        self.conversation_archive_path = (
+            archive_base / "tachyonic" / "agentic_conversations"
+        )
 
     def _calculate_complexity(self, line: str) -> float:
         """Calculate complexity score of a line (0-1)."""
@@ -172,240 +115,103 @@ class AgenticE501Fixer:
         score += min(len(line) / 150, 0.5)
 
         # Special characters
-        special_chars = sum(1 for c in line if c in '()[]{}.,:;+-*/=<>!')
+        special_chars = sum(
+            1 for c in line if c in '()[]{}.,:;+-*/=<>!'
+        )
         score += min(special_chars / 20, 0.3)
 
         # Keywords indicating complexity
-        complex_keywords = ['lambda', 'comprehension', 'decorator', 'async', 'await']
+        complex_keywords = [
+            'lambda', 'comprehension', 'decorator',
+            'async', 'await'
+        ]
         for keyword in complex_keywords:
             if keyword in line:
                 score += 0.2
 
         return min(score, 1.0)
 
-    def _register_conversation(self, agent: AIAgent, prompt: str, response: str, success: bool, context: Dict[str, Any]):
-        """Register AI agent conversation in tachyonic archive."""
-        try:
-            # Create timestamped filename
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            date_folder = datetime.now().strftime("%Y%m%d")
-            archive_dir = self.conversation_archive_path / date_folder
-            archive_dir.mkdir(parents=True, exist_ok=True)
-            
-            conversation_data = {
-                "timestamp": timestamp,
-                "agent": agent.value,
-                "conversation_type": "code_quality_e501_fix",
-                "prompt": prompt,
-                "response": response,
-                "success": success,
-                "context": context,
-                "metadata": {
-                    "fixer_version": "1.0",
-                    "ai_framework": "AINLP.agent",
-                    "consciousness_level": "multi_model_agentic"
-                }
-            }
-            
-            filename = f"e501_agentic_fix_{agent.value}_{timestamp}.json"
-            filepath = archive_dir / filename
-            
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(conversation_data, f, indent=2, ensure_ascii=False)
-                
-            logger.info(f"Conversation registered: {filepath}")
-            
-        except Exception as e:
-            logger.error(f"Failed to register conversation: {e}")
+    async def fix_line_with_agent(
+        self,
+        line: str,
+        line_number: int,
+        file_path: str
+    ) -> FixResult:
+        """
+        Fix a long line using agent conclave facade.
+        
+        Delegates to nucleus facade which orchestrates multi-agent consensus.
+        """
+        complexity = self._calculate_complexity(line)
 
-    def fix_line_with_agent(self, line: str, agent: AIAgent) -> FixResult:
-        """Fix a long line using the specified AI agent."""
+        prompt = f"""Fix this Python line to comply with PEP 8 E501 (max 79
+    characters).
 
-        prompt = f"""
-Fix this Python line to be under 79 characters. Break it intelligently while preserving functionality.
-
-Original line:
+Original line ({len(line)} characters):
 {line}
 
-Return only the fixed line(s), one per line. If multiple lines are needed, use proper Python line continuation.
-"""
+Requirements:
+1. Break the line intelligently while preserving functionality
+2. Use proper Python line continuation (backslash or implicit)
+3. Return ONLY the fixed Python code
+4. Each line must be ≤79 characters
+5. Do NOT include explanations or commentary
+
+Return the fixed code as plain text, one line per line."""
 
         try:
-            if agent == AIAgent.OLLAMA:
-                response = self._call_ollama(prompt)
-            elif agent == AIAgent.GEMINI:
-                response = self._call_gemini(prompt)
-            elif agent == AIAgent.DEEPSEEK:
-                response = self._call_deepseek(prompt)
+            # Query agent conclave via facade
+            response = await self.conclave.query(
+                prompt=prompt,
+                context={
+                    "tool": "agentic_e501_fixer",
+                    "task_type": "line_formatting",
+                    "complexity": complexity,
+                    "line_length": len(line),
+                    "file_path": file_path,
+                    "line_number": line_number
+                }
+            )
 
-            fixed_lines = [l.strip() for l in response.split('\n') if l.strip()]
+            # Parse response content - extract only code lines
+            content_lines = response.content.split('\n')
+            fixed_lines = []
+            
+            for line_text in content_lines:
+                stripped = line_text.strip()
+                # Skip empty lines, markdown, and decision text
+                if not stripped:
+                    continue
+                if stripped.startswith('```'):
+                    continue
+                if any(word in stripped.lower() for word in [
+                    'consensus', 'adopt', 'defer', 'reject',
+                    'recommend', 'mixed', 'confidence'
+                ]):
+                    continue
+                # This looks like actual code
+                fixed_lines.append(stripped)
+            
             success = all(len(l) <= MAX_LINE_LENGTH for l in fixed_lines)
 
-            # Register conversation
-            self._register_conversation(agent, prompt, response, success, {
-                "line_length": len(line),
-                "fixed_lines_count": len(fixed_lines),
-                "max_fixed_length": max(len(l) for l in fixed_lines) if fixed_lines else 0
-            })
-
             return FixResult(
+                file_path=file_path,
+                line_number=line_number,
                 original_line=line,
                 fixed_lines=fixed_lines,
-                agent_used=agent,
+                agent_used=response.agent_used,
                 success=success,
-                confidence=0.8 if success else 0.5
+                confidence=response.confidence
             )
 
         except Exception as e:
-            logger.error(f"Agent {agent.value} failed: {e}")
-            # Register failed conversation
-            self._register_conversation(agent, prompt, str(e), False, {
-                "error": str(e),
-                "line_length": len(line)
-            })
-            return FixResult(
-                original_line=line,
-                fixed_lines=[line],  # Return original if failed
-                agent_used=agent,
-                success=False,
-                confidence=0.0
-            )
-
-    def _call_ollama(self, prompt: str) -> str:
-        """Call OLLAMA local API."""
-        # Lazy import requests only when making API calls
-        import requests
-        
-        data = {
-            "model": self.agents[AIAgent.OLLAMA]["model"],
-            "prompt": prompt,
-            "stream": False
-        }
-        response = requests.post(
-            self.agents[AIAgent.OLLAMA]["url"],
-            json=data,
-            timeout=30
-        )
-        response.raise_for_status()
-        return response.json()["response"]
-
-    def _call_gemini(self, prompt: str) -> str:
-        """Call Gemini API."""
-        # Lazy import requests only when making API calls
-        import requests
-        
-        headers = {
-            "Authorization": f"Bearer {self.agents[AIAgent.GEMINI]['api_key']}"
-        }
-        data = {
-            "contents": [{"parts": [{"text": prompt}]}]
-        }
-        response = requests.post(
-            self.agents[AIAgent.GEMINI]["url"],
-            headers=headers,
-            json=data,
-            timeout=30
-        )
-        response.raise_for_status()
-        return response.json()["candidates"][0]["content"]["parts"][0]["text"]
-
-    def _call_deepseek(self, prompt: str) -> str:
-        """Call DeepSeek API."""
-        # Lazy import requests only when making API calls
-        import requests
-        
-        api_key = self.agents[AIAgent.DEEPSEEK]['api_key']
-        headers = {
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json"
-        }
-        data = {
-            "model": "deepseek-chat",
-            "messages": [{"role": "user", "content": prompt}]
-        }
-        response = requests.post(
-            self.agents[AIAgent.DEEPSEEK]["url"],
-            headers=headers,
-            json=data,
-            timeout=30
-        )
-        response.raise_for_status()
-        return response.json()["choices"][0]["message"]["content"]
-
-    def fix_file(self, file_path: str, dry_run: bool = True) -> Dict[str, Any]:
-        """Fix all E501 violations in a file using AI agents."""
-
-        logger.info(f"Processing file: {file_path}")
-        self.stats["files_processed"] += 1
-
-        with open(file_path, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-
-        fixed_lines = []
-        fixes_applied = 0
-
-        for i, line in enumerate(lines):
-            line = line.rstrip('\n\r')
-            if len(line) > MAX_LINE_LENGTH:
-                try:
-                    result = self.fix_line(line, i+1, file_path)
-
-                    if result.success:
-                        fixed_lines.extend(result.fixed_lines)
-                        fixes_applied += 1
-                        self.stats["lines_fixed"] += 1
-                        if result.agent_used:
-                            self.stats["agents_used"][result.agent_used] += 1
-                            logger.info(f"Fixed line {i+1} with {result.agent_used.value}")
-                        else:
-                            logger.info(f"Fixed line {i+1} with basic fixer")
-                    else:
-                        fixed_lines.append(line)  # Keep original if fix failed
-                        logger.warning(f"Failed to fix line {i+1}")
-
-                except Exception as e:
-                    logger.error(f"Error fixing line {i+1}: {e}")
-                    fixed_lines.append(line)
-            else:
-                fixed_lines.append(line)
-
-        if not dry_run and fixes_applied > 0:
-            with open(file_path, 'w', encoding='utf-8') as f:
-                f.write('\n'.join(fixed_lines) + '\n')
-            logger.info(f"Applied {fixes_applied} fixes to {file_path}")
-
-        return {
-            "file": file_path,
-            "fixes_applied": fixes_applied,
-            "dry_run": dry_run
-        }
-
-    def batch_fix(self, directory: str, dry_run: bool = True) -> Dict[str, Any]:
-        """Run batch fixing on all Python files in a directory."""
-
-        directory = Path(directory)
-        python_files = list(directory.rglob("*.py"))
-
-        logger.info(f"Found {len(python_files)} Python files in {directory}")
-
-        results = []
-        for file_path in python_files:
-            try:
-                result = self.fix_file(str(file_path), dry_run)
-                results.append(result)
-            except Exception as e:
-                logger.error(f"Failed to process {file_path}: {e}")
-                results.append({"file": str(file_path), "error": str(e)})
-
-        return {
-            "total_files": len(python_files),
-            "results": results,
-            "stats": self.stats
-        }
+            logger.error(f"Agent facade failed: {e}")
+            # Fallback to basic fixing
+            return self._basic_fix_result(line, line_number, file_path)
 
     def _basic_fix_line(self, line: str) -> List[str]:
         """
-        Basic pattern-based line breaking for when AI agents are unavailable.
+        Basic pattern-based line breaking for when AI agents unavailable.
         Uses simple heuristics to break long lines.
         """
         if len(line) <= 79:
@@ -446,7 +252,6 @@ Return only the fixed line(s), one per line. If multiple lines are needed, use p
         Find the best break point in a line segment.
         Prioritizes: comma, space, operator, then forces at 79.
         """
-        # Lazy import re only when pattern matching is needed
         import re
         
         # Look for comma followed by space
@@ -467,9 +272,39 @@ Return only the fixed line(s), one per line. If multiple lines are needed, use p
         # No good break point
         return -1
 
-    def fix_line(self, line: str, line_number: int, file_path: str) -> FixResult:
+    def _basic_fix_result(
+        self,
+        line: str,
+        line_number: int,
+        file_path: str
+    ) -> FixResult:
+        """Create FixResult using basic pattern-based fixing."""
+        fixed_lines = self._basic_fix_line(line)
+        success = all(len(l) <= MAX_LINE_LENGTH for l in fixed_lines)
+        
+        return FixResult(
+            file_path=file_path,
+            line_number=line_number,
+            original_line=line,
+            fixed_lines=fixed_lines,
+            agent_used=None,
+            success=success,
+            confidence=0.6 if success else 0.0
+        )
+
+    async def fix_line(
+        self,
+        line: str,
+        line_number: int,
+        file_path: str
+    ) -> FixResult:
         """
-        Fix a single long line using the best available agent.
+        Fix a single long line using best available method.
+        
+        Priority:
+        1. Hierarchical pipeline (Ollama→Gemini→DeepSeek) if available
+        2. Agent conclave facade (orchestrator) as fallback
+        3. Basic pattern matching as last resort
         """
         if len(line) <= 79:
             return FixResult(
@@ -482,82 +317,289 @@ Return only the fixed line(s), one per line. If multiple lines are needed, use p
                 confidence=1.0
             )
 
-        # Select the best agent
-        agent = self.select_agent(line)
+        # Try hierarchical pipeline first (preferred)
+        if self.hierarchical_pipeline:
+            try:
+                result = await
+    self.hierarchical_pipeline.fix_line_hierarchical(
+                    line, file_path, line_number
+                )
+                
+                if result["success"]:
+                    self.stats["hierarchical_fixes"] += 1
+                    return FixResult(
+                        file_path=file_path,
+                        line_number=line_number,
+                        original_line=line,
+                        fixed_lines=result["fixed_lines"],
+                        agent_used=result.get("agent_used"),
+                        success=True,
+                        confidence=result["confidence"]
+                    )
+                
+            except Exception as e:
+                logger.warning(
+                    f"Hierarchical pipeline failed for line {line_number}: {e}"
+                )
+                logger.info("Falling back to agent conclave facade")
+
+        # Fallback to agent conclave facade
+        availability = self.conclave.check_availability()
+        agents_available = any(availability.values())
+
+        if agents_available:
+            try:
+                result = await self.fix_line_with_agent(
+                    line, line_number, file_path
+                )
+                if result.success:
+                    self.stats["agent_fixes"] += 1
+                return result
+            except Exception as e:
+                logger.warning(
+                    f"Agent conclave failed for line {line_number}: {e}"
+                )
+                # Continue to basic fixing
+
+        # Use basic pattern-based fixing
+        logger.info(f"Using basic fixer for line {line_number}")
+        self.stats["basic_fixes"] += 1
+        return self._basic_fix_result(line, line_number, file_path)
+
+    async def fix_file(self, file_path: str, dry_run: bool = True):
+        """Fix all E501 violations in a file using AI agents."""
+        import json
+        from datetime import datetime
         
-        if agent is None:
-            # Use basic pattern-based fixing
-            logger.info(f"Using basic fixer for line {line_number}")
-            fixed_lines = self._basic_fix_line(line)
-            success = len(fixed_lines) > 1  # Success if we actually broke the line
-            
-            return FixResult(
-                file_path=file_path,
-                line_number=line_number,
-                original_line=line,
-                fixed_lines=fixed_lines,
-                agent_used=None,
-                success=success,
-                confidence=0.6 if success else 0.0
-            )
+        logger.info(f"Processing file: {file_path}")
+        self.stats["files_processed"] += 1
 
-        # Use AI agent
-        try:
-            result = self.fix_line_with_agent(line, agent)
-            result.file_path = file_path
-            result.line_number = line_number
-            return result
-        except Exception as e:
-            logger.error(f"Error calling agent {agent.value}: {e}")
-            # Fallback to basic fixing
-            fixed_lines = self._basic_fix_line(line)
-            success = len(fixed_lines) > 1
-            
-            return FixResult(
-                file_path=file_path,
-                line_number=line_number,
-                original_line=line,
-                fixed_lines=fixed_lines,
-                agent_used=None,
-                success=success,
-                confidence=0.3 if success else 0.0
-            )
+        with open(file_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
 
-def main():
-    """CLI interface for the agentic E501 fixer."""
+        fixed_lines = []
+        fixes_applied = 0
+        fix_results = []
 
+        for i, line in enumerate(lines):
+            self.stats["lines_scanned"] += 1
+            line_content = line.rstrip('\n\r')
+
+            if len(line_content) > MAX_LINE_LENGTH:
+                try:
+                    result = await self.fix_line(
+                        line_content, i + 1, file_path
+                    )
+
+                    if result.success:
+                        for fixed in result.fixed_lines:
+                            fixed_lines.append(fixed + '\n')
+                        fixes_applied += 1
+                        self.stats["lines_fixed"] += 1
+
+                        agent_str = result.agent_used or "basic"
+                        logger.info(f"Fixed line {i+1} with {agent_str}")
+                        fix_results.append({
+                            "line_number": i + 1,
+                            "original_length": len(line_content),
+                            "agent_used": result.agent_used,
+                            "success": True
+                        })
+                    else:
+                        fixed_lines.append(line)
+                        logger.warning(f"Failed to fix line {i+1}")
+                        fix_results.append({
+                            "line_number": i + 1,
+                            "original_length": len(line_content),
+                            "success": False
+                        })
+
+                except Exception as e:
+                    logger.error(f"Error fixing line {i+1}: {e}")
+                    fixed_lines.append(line)
+                    fix_results.append({
+                        "line_number": i + 1,
+                        "error": str(e)
+                    })
+            else:
+                fixed_lines.append(line)
+
+        # Apply fixes if not dry run
+        if not dry_run and fixes_applied > 0:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.writelines(fixed_lines)
+            logger.info(f"Applied {fixes_applied} fixes to {file_path}")
+
+        return {
+            "file": file_path,
+            "fixes_applied": fixes_applied,
+            "dry_run": dry_run,
+            "fix_results": fix_results
+        }
+
+
+async def scan_file(file_path: str):
+    """Scan a file for E501 violations without fixing."""
+    violations = []
+
+    with open(file_path, 'r', encoding='utf-8') as f:
+        for i, line in enumerate(f, 1):
+            line = line.rstrip('\n\r')
+            if len(line) > MAX_LINE_LENGTH:
+                violations.append({
+                    "line_number": i,
+                    "length": len(line),
+                    "line": line[:80] + "..." if len(line) > 80 else line
+                })
+
+    return {
+        "file": str(file_path),
+        "violation_count": len(violations),
+        "violations": violations
+    }
+
+
+async def main():
+    """Main CLI entry point with scan-only, JSON output, and fix modes."""
     import argparse
+    import json
 
-    parser = argparse.ArgumentParser(description="AINLP Agentic E501 Fixer")
-    parser.add_argument("path", help="File or directory to fix")
-    parser.add_argument("--dry-run", action="store_true", help="Show fixes without applying")
-    parser.add_argument("--recursive", action="store_true", help="Process directories recursively")
+    parser = argparse.ArgumentParser(
+        description="AI-powered E501 line length fixer using agent conclave"
+    )
+    parser.add_argument(
+        "path",
+        help="Python file or directory to process"
+    )
+    parser.add_argument(
+        "--scan-only",
+        action="store_true",
+        help="Scan for E501 violations without fixing"
+    )
+    parser.add_argument(
+        "--json-output",
+        action="store_true",
+        help="Output results as JSON (for bootloader parsing)"
+    )
+    parser.add_argument(
+        "--fix",
+        action="store_true",
+        help="Apply fixes to files (default: dry-run)"
+    )
+    parser.add_argument(
+        "--recursive",
+        "-r",
+        action="store_true",
+        help="Recursively process directories"
+    )
 
     args = parser.parse_args()
-
-    fixer = AgenticE501Fixer()
-
-    # Check agent availability
-    print("AI Agent Status:")
-    for agent, config in fixer.agents.items():
-        status = "AVAILABLE" if config["available"] else "UNAVAILABLE"
-        print(f"  {agent.value}: {status}")
-
     path = Path(args.path)
 
+    # Determine files to process
     if path.is_file():
-        result = fixer.fix_file(str(path), args.dry_run)
-        print(f"Fixed {result['fixes_applied']} lines in {result['file']}")
+        files = [path]
     elif path.is_dir():
-        results = fixer.batch_fix(str(path), args.dry_run)
-        print(f"Processed {results['total_files']} files")
-        print(f"Total fixes: {fixer.stats['lines_fixed']}")
-        print("Agent usage:")
-        for agent, count in fixer.stats["agents_used"].items():
-            print(f"  {agent.value}: {count} fixes")
+        if args.recursive:
+            files = list(path.rglob("*.py"))
+        else:
+            files = list(path.glob("*.py"))
     else:
-        print(f"Path not found: {path}")
+        print(f"Error: Path not found: {path}", file=sys.stderr)
+        return 1
+
+    # Scan-only mode
+    if args.scan_only:
+        results = []
+        total_violations = 0
+
+        for file_path in files:
+            try:
+                scan_result = await scan_file(str(file_path))
+                total_violations += scan_result["violation_count"]
+                results.append(scan_result)
+            except Exception as e:
+                logger.error(f"Failed to scan {file_path}: {e}")
+
+        if args.json_output:
+            # Output for bootloader parsing
+            output = {
+                "scan_type": "e501_violations",
+                "total_files": len(files),
+                "total_violations": total_violations,
+                "files_with_violations": sum(
+                    1 for r in results if r["violation_count"] > 0
+                ),
+                "results": results
+            }
+            print(json.dumps(output, indent=2))
+        else:
+            # Human-readable output
+            print("\nE501 Scan Results:")
+            print(f"Files scanned: {len(files)}")
+            print(f"Total violations: {total_violations}")
+            files_with = sum(1 for r in results if r['violation_count'] > 0)
+            print(f"Files with violations: {files_with}")
+
+            for result in results:
+                if result["violation_count"] > 0:
+                    vcount = result['violation_count']
+                    print(f"\n{result['file']}: {vcount} violations")
+                    for v in result["violations"]:
+                        lnum = v['line_number']
+                        llen = v['length']
+                        print(f"  Line {lnum}: {llen} chars")
+
+        return 0 if total_violations == 0 else 1
+
+    # Fix mode
+    fixer = AgenticE501Fixer()
+    dry_run = not args.fix
+
+    # Check agent availability
+    availability = fixer.conclave.check_availability()
+    agents_available = any(availability.values())
+
+    if not agents_available:
+        logger.warning(
+            "No AI agents available. Will use basic pattern-based fixing."
+        )
+        print("\nWarning: No AI agents available", file=sys.stderr)
+        print("Available agents:", availability, file=sys.stderr)
+
+    # Process files
+    results = []
+    for file_path in files:
+        try:
+            logger.info(f"Processing {file_path}")
+            result = await fixer.fix_file(str(file_path), dry_run)
+            results.append(result)
+        except Exception as e:
+            logger.error(f"Failed to process {file_path}: {e}")
+            results.append({"file": str(file_path), "error": str(e)})
+
+    if args.json_output:
+        output = {
+            "fix_type": "e501_ai_fix",
+            "dry_run": dry_run,
+            "total_files": len(files),
+            "agents_available": agents_available,
+            "results": results,
+            "stats": fixer.stats
+        }
+        print(json.dumps(output, indent=2))
+    else:
+        print(f"\nProcessed {len(files)} files")
+        mode_str = 'DRY RUN' if dry_run else 'APPLIED FIXES'
+        print(f"Mode: {mode_str}")
+        print(f"Stats: {fixer.stats}")
+
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
+    sys.exit(asyncio.run(main()))
