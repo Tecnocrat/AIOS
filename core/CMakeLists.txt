@@ -183,26 +183,40 @@ endif()
 add_executable(aios_main src/main.cpp)
 target_link_libraries(aios_main aios_core)
 
-# Tachyonic surface viewer (experimental)
-add_executable(aios_tachyonic_viewer src/tachyonic_surface_viewer_main.cpp)
-target_link_libraries(aios_tachyonic_viewer aios_core nlohmann_json::nlohmann_json)
-if(MSVC AND AIOS_TACHYONIC_ASM)
-    target_compile_definitions(aios_tachyonic_viewer PRIVATE AIOS_TACHYONIC_ASM)
+# Tachyonic surface viewer (experimental) - only if JSON available
+if(AIOS_HAS_JSON)
+    add_executable(aios_tachyonic_viewer src/tachyonic_surface_viewer_main.cpp)
+    target_link_libraries(aios_tachyonic_viewer aios_core nlohmann_json::nlohmann_json)
+    if(MSVC AND AIOS_TACHYONIC_ASM)
+        target_compile_definitions(aios_tachyonic_viewer PRIVATE AIOS_TACHYONIC_ASM)
+    endif()
+    set(ADDITIONAL_TARGETS aios_tachyonic_viewer)
+else()
+    set(ADDITIONAL_TARGETS "")
+    message(STATUS "aios_tachyonic_viewer skipped (requires nlohmann_json)")
 endif()
 
 # Set output directories
-set_target_properties(aios_core aios_main aios_tachyonic_viewer PROPERTIES
+set_target_properties(aios_core aios_main ${ADDITIONAL_TARGETS} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
     LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
     ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 )
 
-# Install targets
-install(TARGETS aios_core aios_main aios_tachyonic_viewer
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-)
+# Install targets (conditionally based on what was built)
+if(AIOS_HAS_JSON)
+    install(TARGETS aios_core aios_main aios_tachyonic_viewer
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+    )
+else()
+    install(TARGETS aios_core aios_main
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+    )
+endif()
 
 # Install headers
 install(DIRECTORY include/ DESTINATION include)

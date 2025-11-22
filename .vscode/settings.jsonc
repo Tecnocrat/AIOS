@@ -3,6 +3,9 @@
     // Workspace settings in AIOS.code-workspace take precedence
 
     // Minimal Python settings (workspace controls environment)
+    "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+    },
     "python.analysis.extraPaths": [
         "./ai/src",
         "./ai/src/core",
