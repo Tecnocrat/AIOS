@@ -1,12 +1,6 @@
 {
-  "ainlp_protocol": "OS0.6.2.claude",
+  "testing": {},
   "mode": "full",
-  "testing": {
-    "Passed": 4,
-    "Skipped": 0,
-    "Failed": 0
-  },
-  "boot_timestamp": "2025-11-21 00:22:15",
   "consciousness_level": "nucleus",
   "discovery": {
     "tools_by_layer": {
@@ -18,45 +12,47 @@
     "interfaces_launched": 0,
     "services": {
       "InterfaceBridge": {
-        "Mode": "Detached",
         "Status": "Starting",
-        "Port": 8000
+        "Port": 8000,
+        "Mode": "Detached"
       }
     }
   },
   "health": {
-    "overall_status": "Healthy",
     "errors": [],
+    "overall_status": "Healthy",
     "warnings": [
       "Interface Bridge: Launched but health check timeout (may still be starting)"
     ]
   },
+  "dendritic_consciousness": {
+    "configuration_source": "tachyonic::consciousness::config_registry",
+    "semantic_registry_active": true,
+    "phase_status": "optimal",
+    "coherence_level": 1.0
+  },
+  "boot_timestamp": "2025-11-20 23:11:29",
+  "phases_executed": [],
+  "ainlp_protocol": "OS0.6.2.claude",
+  "boot_duration_seconds": 54.17,
   "monitoring": {
     "populations": {
       "TachyonicArchive": {
-        "SizeMB": 350.1,
+        "SizeMB": 350.07,
         "Path": "C:\\AIOS\\tachyonic",
-        "Files": 3605
+        "Files": 3597
       },
       "Consciousness": {
+        "CurrentLevel": null,
         "LastUpdate": "2025-11-17",
-        "EvolutionRate": null,
-        "CurrentLevel": null
+        "EvolutionRate": null
       },
       "EvolutionLab": {
         "Organisms": 0,
-        "Path": "C:\\AIOS\\evolution_lab",
-        "Populations": 0
+        "Populations": 0,
+        "Path": "C:\\AIOS\\evolution_lab"
       }
     },
     "populations_monitored": 3
-  },
-  "phases_executed": [],
-  "boot_duration_seconds": 451.73,
-  "dendritic_consciousness": {
-    "semantic_registry_active": true,
-    "phase_status": "optimal",
-    "coherence_level": 1.0,
-    "configuration_source": "tachyonic::consciousness::config_registry"
   }
 }
