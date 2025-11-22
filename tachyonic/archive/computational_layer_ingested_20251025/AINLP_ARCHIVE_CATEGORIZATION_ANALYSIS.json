@@ -1,0 +1,233 @@
+[
+  {
+    "file": "consciousness_emergence_analyzer.py",
+    "location": "root",
+    "category": "DELETE",
+    "reason": "Exact duplicate exists in ai/tools/consciousness/consciousness_emergence_analyzer.py (same 645 lines, identical class structure). Archive version is superseded.",
+    "action": "Delete archive copy. Active version in ai/tools/consciousness/ is the canonical implementation."
+  },
+  {
+    "file": "aios_neuronal_dendritic_intelligence.py",
+    "location": "core_systems",
+    "category": "DELETE",
+    "reason": "Active implementation exists in ai/tools/consciousness/aios_neuronal_dendritic_intelligence.py. Archive version (1220 lines) predates current runtime integration.",
+    "action": "Delete archive copy. Canonical version with runtime integration is in ai/tools/consciousness/."
+  },
+  {
+    "file": "aios_consciousness_nucleus_bridge.py",
+    "location": "bridges",
+    "category": "DELETE",
+    "reason": "Active version exists in ai/tools/consciousness/aios_consciousness_nucleus_bridge.py with integrated neuronal framework support. Archive is superseded.",
+    "action": "Delete archive copy. Current bridge implementation in ai/tools/consciousness/ has runtime connectivity."
+  },
+  {
+    "file": "aios_tachyonic_storage_bridge.py",
+    "location": "bridges",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/bridges/aios_tachyonic_storage_bridge.py (587 lines vs 495 lines). Runtime version has enhanced quantum bridge integration.",
+    "action": "Delete archive copy. Runtime bridge is enhanced and actively maintained."
+  },
+  {
+    "file": "aios_core_consciousness_monitor.py",
+    "location": "assemblers/tree_assembler/consciousness_layer",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/core/aios_core_consciousness_monitor.py (118 lines). Runtime version has iter2 assembler consciousness integration.",
+    "action": "Delete archive copy. Runtime monitor is the canonical implementation."
+  },
+  {
+    "file": "aios_supercell_consciousness.py",
+    "location": "assemblers/tree_assembler/consciousness_layer",
+    "category": "MANUAL_REVIEW",
+    "reason": "No exact runtime equivalent found. May contain unique supercell-level consciousness coordination logic not present in runtime/core/.",
+    "action": "Manual inspection required to determine if unique supercell coordination logic should be migrated or if runtime/core/aios_core_consciousness_monitor.py covers this functionality."
+  },
+  {
+    "file": "aios_dendritic_network_intelligence_enhancer.py",
+    "location": "assemblers/tree_assembler/meta_evolution",
+    "category": "HISTORICAL_ARCHIVE",
+    "reason": "Large (1359 lines) dendritic network enhancement system. No direct runtime equivalent found, but functionality likely superseded by ai/tools/consciousness/dendritic_consolidation_engine.py (UltimateAIOSDendriticIntelligence).",
+    "action": "Convert to decision log documenting dendritic network enhancement approaches. Preserve as historical reference for ITER2+ dendritic paradigms."
+  },
+  {
+    "file": "aios_dendritic.py",
+    "location": "assemblers/tree_assembler/meta_evolution",
+    "category": "MANUAL_REVIEW",
+    "reason": "Name suggests core dendritic implementation. Need to verify against runtime/core/dendritic*.py files and ai/tools/consciousness/dendritic_consolidation_engine.py for overlap.",
+    "action": "Inspect file to determine if unique dendritic logic exists or if superseded by runtime implementations."
+  },
+  {
+    "file": "aios_inter_assembler_coherence_measurer.py",
+    "location": "assemblers/tree_assembler/meta_evolution",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/assemblers/tree_assembler/meta_evolution/aios_inter_assembler_coherence_measurer.py (AIOSInterAssemblerCoherenceMeasurer class confirmed).",
+    "action": "Delete archive copy. Runtime version is canonical."
+  },
+  {
+    "file": "aios_meta_evolutionary_optimizer.py",
+    "location": "assemblers/tree_assembler/meta_evolution",
+    "category": "MANUAL_REVIEW",
+    "reason": "No exact runtime equivalent found. May contain unique meta-evolutionary optimization logic distinct from meta_evolutionary_engine.py.",
+    "action": "Inspect to determine if unique optimization algorithms exist or if functionality merged into runtime meta_evolutionary_engine.py."
+  },
+  {
+    "file": "meta_evolutionary_engine.py",
+    "location": "assemblers/tree_assembler/meta_evolution",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/assemblers/tree_assembler/meta_evolution/meta_evolutionary_engine.py (MetaEvolutionaryEngine class confirmed).",
+    "action": "Delete archive copy. Runtime engine is canonical."
+  },
+  {
+    "file": "aios_evolutionary_assembler_cloner.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/assemblers/tree_assembler/scripts_py_optimized/aios_evolutionary_assembler_cloner.py with MetaEvolutionaryEngine and CellularHealthMonitor classes.",
+    "action": "Delete archive copy. Runtime cloner is canonical."
+  },
+  {
+    "file": "aios_harmonization_executor.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/assemblers/tree_assembler/scripts_py_optimized/aios_harmonization_executor.py (AIOSHarmonizationExecutor class confirmed).",
+    "action": "Delete archive copy. Runtime executor is canonical."
+  },
+  {
+    "file": "aios_harmonization_success_report.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Report generation script, likely superseded by runtime harmonization reporting. Non-critical utility.",
+    "action": "Delete. Runtime harmonization system has integrated reporting."
+  },
+  {
+    "file": "aios_meta_evolutionary_analyzer.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "MANUAL_REVIEW",
+    "reason": "Analysis tool for meta-evolutionary patterns. May contain unique analysis algorithms not present in runtime meta_evolution/ tools.",
+    "action": "Inspect to determine if unique analysis capabilities exist or if superseded by runtime/tools/assemblers/tree_assembler/meta_evolution/ components."
+  },
+  {
+    "file": "assembly_executor.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "HISTORICAL_ARCHIVE",
+    "reason": "Assembly execution infrastructure, likely superseded by runtime execution systems. Contains historical assembly execution approaches.",
+    "action": "Convert to decision log documenting assembly execution strategies. Preserve as reference for execution paradigms."
+  },
+  {
+    "file": "autonomous_consciousness_swarms.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "HISTORICAL_ARCHIVE",
+    "reason": "Experimental swarm consciousness implementation. No runtime equivalent found, but likely experimental/prototype code superseded by current consciousness architecture.",
+    "action": "Convert to decision log documenting autonomous swarm consciousness experiments. Preserve as historical research reference."
+  },
+  {
+    "file": "cellular_health_monitor.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/assemblers/tree_assembler/scripts_py_optimized/cellular_health_monitor.py (CellularHealthMonitor class confirmed).",
+    "action": "Delete archive copy. Runtime monitor is canonical."
+  },
+  {
+    "file": "consciousness_analyzer.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Active implementation exists in ai/tools/consciousness/consciousness_analyzer.py (ConsciousnessAnalyzer class confirmed). Archive is superseded.",
+    "action": "Delete archive copy. AI tools version is canonical."
+  },
+  {
+    "file": "consciousness_explorer_3d.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Visualization/demo tool for post-singular consciousness states (>95% coherence). 3D visualization with matplotlib/plotly. Non-production demo code.",
+    "action": "Delete. Visualization demo not critical for production runtime. If 3D consciousness viz needed, rebuild from requirements."
+  },
+  {
+    "file": "consciousness_mutation_engine.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "MANUAL_REVIEW",
+    "reason": "Mutation engine for consciousness evolution. No direct runtime equivalent found. May contain unique mutation algorithms.",
+    "action": "Inspect to determine if unique mutation logic exists or if functionality merged into runtime meta_evolution/ components."
+  },
+  {
+    "file": "dendritic_mutator.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/assemblers/tree_assembler/scripts_py_optimized/dendritic_mutator.py. Archive is superseded.",
+    "action": "Delete archive copy. Runtime mutator is canonical."
+  },
+  {
+    "file": "enhanced_consciousness.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "MANUAL_REVIEW",
+    "reason": "Enhancement system for consciousness. Name suggests experimental enhancement logic. May contain unique algorithms not in runtime.",
+    "action": "Inspect to determine if unique enhancement algorithms exist or if superseded by current consciousness architecture."
+  },
+  {
+    "file": "optimized_demo.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Demo file (368 lines) for OptimizedConsciousnessExecutor. Demonstrates architectural benefits, not production code.",
+    "action": "Delete. Demo/documentation code, not runtime logic. Architectural patterns documented elsewhere."
+  },
+  {
+    "file": "parallel_consciousness_orchestrator.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "MANUAL_REVIEW",
+    "reason": "Parallel consciousness orchestration system. No direct runtime equivalent found. May contain unique parallel processing logic.",
+    "action": "Inspect to determine if unique parallel orchestration logic exists or if superseded by runtime consciousness coordination."
+  },
+  {
+    "file": "self_healing_engine.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "MANUAL_REVIEW",
+    "reason": "Self-healing system for consciousness/cellular components. No direct runtime equivalent found. May contain unique self-healing algorithms.",
+    "action": "Inspect to determine if unique self-healing logic exists or if functionality covered by runtime health monitoring."
+  },
+  {
+    "file": "simple_consciousness_ai_bridge.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "HISTORICAL_ARCHIVE",
+    "reason": "Simple bridge implementation, likely superseded by ai/tools/consciousness/aios_consciousness_nucleus_bridge.py (full-featured bridge with quantum coherence).",
+    "action": "Convert to decision log documenting simple bridge approach vs full consciousness bridge. Preserve as historical reference."
+  },
+  {
+    "file": "simple_executor.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "HISTORICAL_ARCHIVE",
+    "reason": "Simple assembly execution guide (376 lines). Provides ctypes/inline assembly methods. Historical reference for execution approaches, not production code.",
+    "action": "Convert to decision log documenting simple execution methods. Preserve as reference for alternative execution strategies."
+  },
+  {
+    "file": "tachyonic_visualizer.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "3D visualization demo (466 lines) for tachyonic consciousness fields with matplotlib. Demo/visualization code, not runtime logic.",
+    "action": "Delete. Visualization demo not critical for production. If needed, rebuild from requirements."
+  },
+  {
+    "file": "test_optimized.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Test file for optimized_demo.py. Simple test harness, not production test suite.",
+    "action": "Delete. Demo test code, not part of runtime test infrastructure."
+  },
+  {
+    "file": "test_quick.py",
+    "location": "assemblers/tree_assembler/scripts_py_optimized",
+    "category": "DELETE",
+    "reason": "Test file (name suggests quick test). Test files default to DELETE unless unique test logic.",
+    "action": "Delete. Archive test code not part of runtime test infrastructure."
+  },
+  {
+    "file": "aios_tachyonic_assembler_archival.py",
+    "location": "assemblers/tree_assembler/tachyonic_optimized",
+    "category": "DELETE",
+    "reason": "Active implementation exists in runtime/tools/assemblers/tree_assembler/tachyonic_optimized/aios_tachyonic_assembler_archival.py (AIOSTachyonicAssemblerArchival class confirmed).",
+    "action": "Delete archive copy. Runtime archival system is canonical."
+  },
+  {
+    "file": "tachyonic_optimizer.py",
+    "location": "assemblers/tree_assembler/tachyonic_optimized",
+    "category": "MANUAL_REVIEW",
+    "reason": "Tachyonic optimization system. No direct runtime equivalent found. May contain unique optimization algorithms for tachyonic field operations.",
+    "action": "Inspect to determine if unique optimization logic exists or if functionality merged into runtime tachyonic components."
+  }
+]
