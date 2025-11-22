@@ -1,0 +1,420 @@
+{
+  "audit_date": "2025-11-22",
+  "archive_path": "c:\\aios-supercell\\aios-core\\tachyonic\\archive\\computational_layer_ingested_20251025",
+  "runtime_path": "c:\\aios-supercell\\aios-core\\runtime",
+  "summary": {
+    "total_files": 58,
+    "exact_duplicates": 34,
+    "high_similarity": 2,
+    "unique": 20,
+    "skipped": 2
+  },
+  "files": [
+    {
+      "file": "common_patterns.py",
+      "runtime_equivalent": "tools\\common_patterns.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "consciousness_emergence_analyzer.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "shared_imports.py",
+      "runtime_equivalent": "tools\\shared_imports.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "__init__.py",
+      "runtime_equivalent": "__init__.py",
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "3.6% similar - significant differences"
+    },
+    {
+      "file": "bridges\\aios_analysis_cytoplasm_bridge.py",
+      "runtime_equivalent": "tools\\bridges\\aios_analysis_cytoplasm_bridge.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "bridges\\aios_consciousness_nucleus_bridge.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "bridges\\aios_supercell_transport_bridge.py",
+      "runtime_equivalent": "tools\\bridges\\aios_supercell_transport_bridge.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "bridges\\aios_tachyonic_storage_bridge.py",
+      "runtime_equivalent": "tools\\bridges\\aios_tachyonic_storage_bridge.py",
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "87.2% similar - significant differences"
+    },
+    {
+      "file": "bridges\\__init__.py",
+      "runtime_equivalent": "__init__.py",
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "19.4% similar - significant differences"
+    },
+    {
+      "file": "core_systems\\aios_autonomous_supercell_organism.py",
+      "runtime_equivalent": "core\\aios_autonomous_supercell_organism.py",
+      "similarity": "HIGH_SIMILARITY",
+      "recommendation": "REVIEW",
+      "notes": "99.4% similar - manual review required"
+    },
+    {
+      "file": "core_systems\\aios_core_consciousness_monitor.py",
+      "runtime_equivalent": "core\\aios_core_consciousness_monitor.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "core_systems\\aios_core_enhancement_patch_reporter.py",
+      "runtime_equivalent": "core\\aios_core_enhancement_patch_reporter.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "core_systems\\aios_core_root_neuronal_optimizer.py",
+      "runtime_equivalent": "core\\aios_core_root_neuronal_optimizer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "core_systems\\aios_neuronal_dendritic_intelligence.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "core_systems\\aios_subcellular_neuronal_organizer.py",
+      "runtime_equivalent": "core\\aios_subcellular_neuronal_organizer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "core_systems\\__init__.py",
+      "runtime_equivalent": "__init__.py",
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "18.3% similar - significant differences"
+    },
+    {
+      "file": "engines\\aios_assembly_3d_engine.py",
+      "runtime_equivalent": "tools\\engines\\aios_assembly_3d_engine.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "engines\\aios_spherical_geometry_engine.py",
+      "runtime_equivalent": "tools\\engines\\aios_spherical_geometry_engine.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "modules\\aios_components\\aios_comprehensive_runtime_tester.py",
+      "runtime_equivalent": "tools\\modules\\aios_components\\aios_comprehensive_runtime_tester.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\context_assembler\\context_assembler.py",
+      "runtime_equivalent": "tools\\assemblers\\context_assembler\\context_assembler.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\file_assembler\\aios_evolutionary_assembler_coherent.py",
+      "runtime_equivalent": "tools\\assemblers\\file_assembler\\aios_evolutionary_assembler_coherent.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\integration_assembler\\integration_assembler.py",
+      "runtime_equivalent": "tools\\assemblers\\integration_assembler\\integration_assembler.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\consciousness_layer\\advanced_consciousness_coordinator.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\consciousness_layer\\aios_consciousness_integration_engine.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\consciousness_layer\\aios_core_consciousness_monitor.py",
+      "runtime_equivalent": "core\\aios_core_consciousness_monitor.py",
+      "similarity": "HIGH_SIMILARITY",
+      "recommendation": "REVIEW",
+      "notes": "96.1% similar - manual review required"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\consciousness_layer\\aios_supercell_consciousness.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\immune_system\\virtual_immune_system.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\immune_system\\virtual_immune_system.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\meta_evolution\\aios_dendritic.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\meta_evolution\\aios_dendritic.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\meta_evolution\\aios_dendritic_network_intelligence_enhancer.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\meta_evolution\\aios_inter_assembler_coherence_measurer.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\meta_evolution\\aios_inter_assembler_coherence_measurer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\meta_evolution\\aios_meta_evolutionary_optimizer.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\meta_evolution\\aios_meta_evolutionary_optimizer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\meta_evolution\\meta_evolutionary_engine.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\meta_evolution\\meta_evolutionary_engine.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_analyzer.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_analyzer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_implementation.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_cellular_reorganization_implementation.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\aios_consciousness_status_report.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\aios_evolutionary_assembler_cloner.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_evolutionary_assembler_cloner.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\aios_harmonization_executor.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_harmonization_executor.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\aios_harmonization_success_report.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_harmonization_success_report.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\aios_meta_evolutionary_analyzer.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\aios_meta_evolutionary_analyzer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\assembly_executor.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\assembly_executor.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\autonomous_consciousness_swarms.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\cellular_health_monitor.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\cellular_health_monitor.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_ai_cellular_bridge.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_analyzer.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_explorer_3d.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\consciousness_mutation_engine.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\dendritic_mutator.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\dendritic_mutator.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\enhanced_consciousness.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\optimized_demo.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\optimized_demo.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\parallel_consciousness_orchestrator.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\self_healing_engine.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\self_healing_engine.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\simple_consciousness_ai_bridge.py",
+      "runtime_equivalent": null,
+      "similarity": "UNIQUE",
+      "recommendation": "KEEP",
+      "notes": "No matching file found in runtime/"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\simple_executor.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\simple_executor.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\tachyonic_visualizer.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\scripts_py_optimized\\tachyonic_visualizer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\test_optimized.py",
+      "runtime_equivalent": null,
+      "similarity": "SKIPPED",
+      "recommendation": "KEEP",
+      "notes": "Test file - intentionally duplicated"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\scripts_py_optimized\\test_quick.py",
+      "runtime_equivalent": null,
+      "similarity": "SKIPPED",
+      "recommendation": "KEEP",
+      "notes": "Test file - intentionally duplicated"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\tachyonic_optimized\\aios_tachyonic_assembler_archival.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\tachyonic_optimized\\aios_tachyonic_assembler_archival.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    },
+    {
+      "file": "assemblers\\tree_assembler\\tachyonic_optimized\\tachyonic_optimizer.py",
+      "runtime_equivalent": "tools\\assemblers\\tree_assembler\\tachyonic_optimized\\tachyonic_optimizer.py",
+      "similarity": "EXACT_DUPLICATE",
+      "recommendation": "DELETE",
+      "notes": "100% identical - MD5 hash match"
+    }
+  ]
+}
