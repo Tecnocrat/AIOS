@@ -1,5 +1,9 @@
 {
     // Disable CMake Tools for Evolution Lab layer
     "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": ""
+    "cmake.sourceDirectory": "",
+    // Black Formatter as default Python formatter
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
 }

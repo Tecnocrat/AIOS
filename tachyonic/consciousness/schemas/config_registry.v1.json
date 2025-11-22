@@ -1,0 +1,180 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aios.tachyonic/schemas/config_registry.v1.json",
+  "title": "AIOS Dendritic Configuration Registry",
+  "description": "Semantic registry schema for compiler identity and configuration management",
+  "type": "object",
+  "required": ["metadata", "compilers", "dendritic_metadata"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Registry metadata and consciousness tracking",
+      "required": ["created", "consciousness_level", "dendritic_pattern"],
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Registry creation timestamp (ISO 8601)"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp (ISO 8601)"
+        },
+        "consciousness_level": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 10.0,
+          "description": "AINLP consciousness evolution level"
+        },
+        "dendritic_pattern": {
+          "type": "string",
+          "enum": ["semantic_configuration_registry"],
+          "description": "Dendritic architectural pattern identifier"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable registry purpose"
+        }
+      }
+    },
+    "compilers": {
+      "type": "object",
+      "description": "Compiler identity and configuration entries",
+      "patternProperties": {
+        "^[a-z][a-z0-9_]*$": {
+          "type": "object",
+          "required": ["identity", "detection", "configuration", "consciousness"],
+          "properties": {
+            "identity": {
+              "type": "object",
+              "required": ["name", "vendor", "family", "architecture"],
+              "properties": {
+                "name": {"type": "string"},
+                "vendor": {"type": "string"},
+                "family": {"type": "string", "enum": ["msvc", "gcc", "clang", "intel"]},
+                "architecture": {"type": "string", "enum": ["x86", "x64", "arm", "arm64"]}
+              }
+            },
+            "detection": {
+              "type": "object",
+              "required": ["method", "timestamp", "compiler_path"],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "enum": ["agentic_discovery", "canonical_fallback", "manual_override"]
+                },
+                "timestamp": {"type": "string", "format": "date-time"},
+                "compiler_path": {"type": "string"},
+                "compiler_version": {"type": "string"},
+                "architecture": {"type": "string"}
+              }
+            },
+            "configuration": {
+              "type": "object",
+              "required": ["intelliSenseMode", "compilerPath"],
+              "properties": {
+                "intelliSenseMode": {
+                  "type": "string",
+                  "pattern": "^(windows|linux|macos)-(msvc|gcc|clang)-(x86|x64|arm|arm64)$"
+                },
+                "compilerPath": {"type": "string"},
+                "cStandard": {"type": "string", "pattern": "^c(89|99|11|17|23)$"},
+                "cppStandard": {"type": "string", "pattern": "^c\\+\\+(98|03|11|14|17|20|23)$"},
+                "includePath": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "defines": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                }
+              }
+            },
+            "consciousness": {
+              "type": "object",
+              "required": ["semantic_identity", "configuration_source", "runtime_collisions", "coherence_level"],
+              "properties": {
+                "semantic_identity": {
+                  "type": "string",
+                  "description": "Unique semantic identifier for this compiler configuration"
+                },
+                "configuration_source": {
+                  "type": "string",
+                  "enum": ["semantic_registry", "manual_override", "cmake_toolchain"]
+                },
+                "runtime_collisions": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "Count of IntelliSense mode collision warnings"
+                },
+                "coherence_level": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "Configuration coherence (0.0 = chaos, 1.0 = perfect alignment)"
+                },
+                "timestamp": {"type": "string", "format": "date-time"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "workspace_bindings": {
+      "type": "object",
+      "description": "Workspace-specific compiler bindings",
+      "patternProperties": {
+        "^[A-Za-z0-9_/\\-]+$": {
+          "type": "object",
+          "properties": {
+            "compiler": {"type": "string"},
+            "build_system": {"type": "string", "enum": ["cmake", "msbuild", "make", "ninja"]},
+            "configuration_files": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "propagation_status": {
+              "type": "string",
+              "enum": ["manual", "automatic", "synchronized"]
+            },
+            "last_sync": {"type": "string", "format": "date-time"}
+          }
+        }
+      }
+    },
+    "dendritic_metadata": {
+      "type": "object",
+      "required": ["namespace", "cell_type", "supercell", "fractal_level"],
+      "properties": {
+        "namespace": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*(::([a-z][a-z0-9_]*))*$",
+          "description": "Fractal namespace hierarchy (e.g., tachyonic::consciousness::config_registry)"
+        },
+        "cell_type": {
+          "type": "string",
+          "enum": ["semantic_registry", "configuration_cache", "decision_archive"]
+        },
+        "supercell": {
+          "type": "string",
+          "description": "Parent supercell identifier"
+        },
+        "fractal_level": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Depth in fractal hierarchy (0=root, 1=supercell, 2=cell, 3=subcell)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Cell purpose and evolution potential"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
