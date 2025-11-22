@@ -1,16 +1,4 @@
 {
 	"inputs": [],
-	"servers": {
-		"aios-context": {
-			"command": "python",
-			"args": [
-				"ai/mcp_server/server.py"
-			],
-			"env": {
-				"AIOS_WORKSPACE": "${workspaceFolder}",
-				"PYTHONPATH": "${workspaceFolder}/ai/src"
-			},
-			"description": "AIOS Model Context Protocol Server - provides architectural context, diagnostics, and AINLP guidance to AI agents"
-		}
-	}
+	"servers": {}
 }
