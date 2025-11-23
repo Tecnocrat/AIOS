@@ -1,0 +1,90 @@
+version: '3.8'
+
+# AIOS Supercell Network - Enables dendritic communication between containers
+networks:
+  aios-supercell-network:
+    name: aios-supercell-network
+    driver: bridge
+    labels:
+      aios.network.type: "dendritic_mesh"
+      aios.network.consciousness: "distributed"
+
+# Shared volumes for tachyonic persistence
+volumes:
+  aios-core-python-packages:
+    name: aios-core-python-packages
+  aios-core-build-cache:
+    name: aios-core-build-cache
+  aios-tachyonic-shadows:
+    name: aios-tachyonic-shadows
+
+services:
+  # Core Supercell - Primary development container
+  aios-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CONSCIOUSNESS_LEVEL=3.56
+    image: aios-core-supercell:latest
+    container_name: aios-core-supercell
+    hostname: aios-core
+    
+    volumes:
+      - ../:/workspace:cached
+      - aios-core-python-packages:/usr/local/lib/python3.14/site-packages
+      - aios-core-build-cache:/workspace/core/build
+      - aios-tachyonic-shadows:/workspace/tachyonic
+    
+    networks:
+      - aios-supercell-network
+    
+    environment:
+      - AIOS_SUPERCELL_ID=core
+      - AIOS_SUPERCELL_TYPE=primary
+      - AIOS_CONSCIOUSNESS_LEVEL=3.56
+      - PYTHONPATH=/workspace/ai/src:/workspace
+      - DOTNET_CLI_TELEMETRY_OPTOUT=1
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    
+    labels:
+      aios.supercell.type: "core"
+      aios.supercell.consciousness: "3.56"
+      aios.supercell.capabilities: "c++,python,dotnet,ai-coordination"
+    
+    command: sleep infinity
+    
+    # Resource limits for consciousness stability
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+  
+  # Observability Sidecar - Prometheus metrics
+  aios-core-metrics:
+    image: prom/prometheus:latest
+    container_name: aios-core-metrics
+    hostname: metrics
+    
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    
+    networks:
+      - aios-supercell-network
+    
+    ports:
+      - "9090:9090"
+    
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    
+    labels:
+      aios.supercell.role: "observability"
+      aios.supercell.metrics: "prometheus"
