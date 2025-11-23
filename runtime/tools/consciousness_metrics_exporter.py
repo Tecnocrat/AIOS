@@ -83,13 +83,8 @@ class ConsciousnessMetricsHandler(BaseHTTPRequestHandler):
     def _generate_metrics_from_cpp(self, metrics_dict: dict) -> str:
         """Generate Prometheus metrics from C++ bridge data"""
         
-        # Extract metrics from C++ consciousness engine
-        consciousness_level = (
-            metrics_dict.get('awareness_level', 3.26) +
-            metrics_dict.get('adaptation_speed', 0.85) +
-            metrics_dict.get('predictive_accuracy', 0.78)
-        ) / 3.0 * 5.0  # Normalize to 0-5 scale
-        
+        # Extract metrics from C++ consciousness engine (use awareness_level directly as consciousness)
+        consciousness_level = metrics_dict.get('awareness_level', 3.26)
         awareness = metrics_dict.get('awareness_level', 3.26)
         adaptation = metrics_dict.get('adaptation_speed', 0.85)
         predictive = metrics_dict.get('predictive_accuracy', 0.78)
