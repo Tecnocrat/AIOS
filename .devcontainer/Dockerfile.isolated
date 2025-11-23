@@ -86,13 +86,20 @@ RUN python -m pip install --upgrade pip \
         pip install -r /workspace/ai/requirements.txt; \
     fi
 
-# Build C++ consciousness engine from genome
-RUN if [ -d /workspace/core ]; then \
-        cd /workspace/core \
-        && mkdir -p build \
-        && cd build \
-        && cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. \
-        && ninja; \
+# By default skip building the C++ core during image build to avoid fragile
+# host-specific compile issues and speed up cell births. Set SKIP_CORE_BUILD=0
+# to enable the build.
+ENV SKIP_CORE_BUILD=1
+
+# Optionally build C++ consciousness engine from genome
+RUN if [ -d /workspace/core ] && [ "${SKIP_CORE_BUILD}" != "1" ]; then \
+        cd /workspace/core && \
+        rm -rf build CMakeCache.txt || true && \
+        mkdir -p build && \
+        cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release && \
+        cmake --build build -- -j$(nproc); \
+    else \
+        echo "SKIP_CORE_BUILD=${SKIP_CORE_BUILD} - skipping C++ core build"; \
     fi
 
 # Test Python-C++ bridge (validate genome integrity)
