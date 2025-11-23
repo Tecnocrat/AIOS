@@ -36,7 +36,7 @@ torchvision>=0.15.0
 transformers>=4.30.0
 tokenizers>=0.13.0
 openai>=0.27.0,<1.0
-openrouter>=0.3.0  # Type-safe SDK for 300+ AI models (hierarchical pipeline Tier 3)
+openrouter==0.0.19  # pinned: latest available on PyPI (previous >=0.3.0 had no matching release)
 
 # Data / Scientific (mathematical consciousness substrates)
 numpy>=1.24.0
