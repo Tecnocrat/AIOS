@@ -128,6 +128,7 @@ class AutonomousQualityMonitor:
         # Statistics tracking
         self.stats = {
             "scans": 0,
+            "api_errors": [],  # Track API failures for debugging
             "issues_detected": 0,
             "auto_fixed": 0,
             "escalated": 0,
@@ -140,9 +141,11 @@ class AutonomousQualityMonitor:
             "tokens_used": {"input": 0, "output": 0}
         }
         
-        # Create escalation directory
+        # Create escalation and backup directories
         self.escalation_dir = self.workspace_root / "tachyonic" / "escalations"
         self.escalation_dir.mkdir(parents=True, exist_ok=True)
+        self.backup_dir = self.workspace_root / "tachyonic" / "backups" / "autonomous_monitor"
+        self.backup_dir.mkdir(parents=True, exist_ok=True)
     
     async def monitor_workspace(self, interval_seconds: int = 300):
         """
@@ -196,19 +199,19 @@ class AutonomousQualityMonitor:
                 return_exceptions=True
             )
             
-            # Tier 1: Ollama local (FREE, fast) - Rate limited to 5 concurrent
-            # Process in batches to avoid overwhelming API
+            # Tier 1: Ollama local (FREE, fast)
+            # Rate limited to GitHub Models: 15 requests per 60 seconds
+            # Process sequentially with 4-second delay (stay under 15/minute)
             ollama_results = []
-            batch_size = 5  # GitHub Models limit: 5 requests/sec
-            for i in range(0, len(simple), batch_size):
-                batch = simple[i:i + batch_size]
-                batch_results = await asyncio.gather(
-                    *[self._fix_with_ollama(issue) for issue in batch],
-                    return_exceptions=True
-                )
-                ollama_results.extend(batch_results)
-                if i + batch_size < len(simple):
-                    await asyncio.sleep(1.0)  # Wait 1s between batches
+            for issue in simple:
+                result = await self._fix_with_ollama(issue)
+                if isinstance(result, Exception):
+                    ollama_results.append(result)
+                else:
+                    ollama_results.append(result)
+                # Wait 4s between requests (15 per 60s = 4s/request)
+                if len(ollama_results) < len(simple):
+                    await asyncio.sleep(4.0)
             
             # Tier 2: GPT-4o-mini ($ cheap, creative)
             gpt4o_mini_results = await asyncio.gather(
@@ -496,27 +499,63 @@ class AutonomousQualityMonitor:
             elif issue.issue_type == "imports":
                 prompt = self._build_imports_prompt(issue, file_content)
             else:
-                return FixResult(success=False, issue=issue, error="Unknown issue type")
+                return FixResult(
+                    success=False,
+                    issue=issue,
+                    error="Unknown issue type"
+                )
             
-            # Call GitHub Models GPT-4o-mini
-            response = await self.http_client.post(
-                self.github_api_base,
-                json={
-                    "model": self.github_models["tier2_generation"],
-                    "messages": [
-                        {"role": "system", "content": "You are a Python code fixing assistant. Output only the fixed code, no explanations."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.3,
-                    "max_tokens": 1000
-                }
-            )
+            # Call GitHub Models GPT-4o-mini with timeout
+            try:
+                response = await self.http_client.post(
+                    self.github_api_base,
+                    json={
+                        "model": self.github_models["tier2_generation"],
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "You are a Python code fixing assistant. Output only the fixed code, no explanations."
+                            },
+                            {"role": "user", "content": prompt}
+                        ],
+                        "temperature": 0.3,
+                        "max_tokens": 1000
+                    },
+                    timeout=15.0  # Reduced from 30s to 15s
+                )
+            except Exception as e:
+                error_msg = f"API call failed: {type(e).__name__}: {str(e)}"
+                self.stats["api_errors"].append({
+                    "file": issue.file_path,
+                    "error": error_msg,
+                    "timestamp": datetime.now().isoformat()
+                })
+                return FixResult(success=False, issue=issue, error=error_msg)
             
             if response.status_code != 200:
-                return FixResult(success=False, issue=issue, error=f"API error: {response.status_code}")
+                error_msg = f"API {response.status_code}: {response.text[:200]}"
+                self.stats["api_errors"].append({
+                    "file": issue.file_path,
+                    "status": response.status_code,
+                    "error": error_msg,
+                    "timestamp": datetime.now().isoformat()
+                })
+                return FixResult(
+                    success=False,
+                    issue=issue,
+                    error=error_msg
+                )
             
             data = response.json()
             fixed_content = data["choices"][0]["message"]["content"].strip()
+            
+            # Validate: remove markdown code blocks if present
+            if fixed_content.startswith("```python"):
+                lines = fixed_content.split("\n")
+                fixed_content = "\n".join(lines[1:-1]).strip()
+            elif fixed_content.startswith("```"):
+                lines = fixed_content.split("\n")
+                fixed_content = "\n".join(lines[1:-1]).strip()
             
             # Track usage
             usage = data.get("usage", {})
@@ -625,11 +664,13 @@ class AutonomousQualityMonitor:
 **Output**: Fixed file content only, no explanations."""
     
     async def _apply_fix(self, file_path: str, fixed_content: str):
-        """Apply fix to file with backup"""
+        """Apply fix to file with backup in tachyonic directory"""
         import shutil
         
-        # Backup original
-        backup_path = f"{file_path}.backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        # Create backup in centralized directory
+        file_name = Path(file_path).name
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        backup_path = self.backup_dir / f"{file_name}.backup_{timestamp}"
         shutil.copy2(file_path, backup_path)
         
         # Write fix
@@ -678,6 +719,8 @@ class AutonomousQualityMonitor:
             "issues_detected": self.stats["issues_detected"],
             "auto_fixed": self.stats["auto_fixed"],
             "escalated": self.stats["escalated"],
+            "api_errors_count": len(self.stats["api_errors"]),
+            "api_errors_sample": self.stats["api_errors"][:5],  # First 5 errors
             "fixes_by_tier": {
                 "pattern": self.stats["pattern_fixes"],
                 "ollama": self.stats["ollama_fixes"],
