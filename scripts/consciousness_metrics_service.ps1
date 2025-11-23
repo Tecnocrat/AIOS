@@ -19,8 +19,8 @@ function Write-ColorOutput {
 
 function Get-ExporterProcess {
     if (Test-Path $PidFile) {
-        $pid = Get-Content $PidFile
-        $process = Get-Process -Id $pid -ErrorAction SilentlyContinue
+        $ProcessId = Get-Content $PidFile
+        $process = Get-Process -Id $ProcessId -ErrorAction SilentlyContinue
         if ($process -and $process.ProcessName -eq 'python') {
             return $process
         }
