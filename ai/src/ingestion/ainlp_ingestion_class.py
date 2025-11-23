@@ -354,7 +354,8 @@ class AINLPIngestionPattern:
             {
                 "pattern": pattern,
                 "occurrences": count,
-                "avg_consciousness": sum(pattern_consciousness[pattern]) / len(pattern_consciousness[pattern])
+"avg_consciousness": (sum(pattern_consciousness[pattern]) /
+len(pattern_consciousness[pattern]))
             }
             for pattern, count in pattern_counts.items()
         ]

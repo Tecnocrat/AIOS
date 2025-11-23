@@ -35,8 +35,9 @@ try:
     HIERARCHICAL_AVAILABLE = True
 except ImportError:
     HIERARCHICAL_AVAILABLE = False
-    logging.warning("Hierarchical pipeline not available,
-    using facade fallback")
+    logging.warning(
+        "Hierarchical pipeline not available, using facade fallback"
+    )
 
 # Configure logging
 logging.basicConfig(
@@ -320,10 +321,10 @@ Return the fixed code as plain text, one line per line."""
         # Try hierarchical pipeline first (preferred)
         if self.hierarchical_pipeline:
             try:
-                result = await
-    self.hierarchical_pipeline.fix_line_hierarchical(
-                    line, file_path, line_number
-                )
+                result = await self.hierarchical_pipeline \
+                    .fix_line_hierarchical(
+                        line, file_path, line_number
+                    )
                 
                 if result["success"]:
                     self.stats["hierarchical_fixes"] += 1
