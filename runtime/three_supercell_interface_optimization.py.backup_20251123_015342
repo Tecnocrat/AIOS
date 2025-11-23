@@ -1,0 +1,4 @@
+```python
+ 725 |             target_operation = list(interface_targets.keys())[runtime_patterns.index(
+ 726 |                 pattern) % len(interface_targets)]
+```

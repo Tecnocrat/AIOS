@@ -1,0 +1,6 @@
+```python
+ 291 |         print((
+ 292 |             f"   • {len(analysis['low_value_files'])} files with "
+ 293 |             "minimal crystallization"
+ 294 |         ))
+```

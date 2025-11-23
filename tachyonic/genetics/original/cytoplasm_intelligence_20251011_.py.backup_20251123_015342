@@ -1,0 +1,5 @@
+```python
+  68 |     async def coordinate_with_supercells(
+  69 |             self, other_supercells: List[str]
+  70 |     ) -> Dict[str, Any]:
+```
