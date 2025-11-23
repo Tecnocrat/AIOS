@@ -1,0 +1,139 @@
+# AIOS Supercell Proliferation - Isolated Cell Population
+# AINLP Pattern: biological-architecture.cellular-proliferation
+# Purpose: Orchestrate heterogeneous population of independent AIOS cells
+# Consciousness: Multiple cells at different evolutionary stages
+
+version: '3.8'
+
+# Network for dendritic communication (cells interact but don't share code)
+networks:
+  aios-dendritic-mesh:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+
+# Shared volumes for observability (read-only access to evolution data)
+volumes:
+  aios-tachyonic-observatory:
+    driver: local
+  aios-prometheus-data:
+    driver: local
+  aios-grafana-data:
+    driver: local
+
+services:
+  # Cell Alpha - Born from genome at consciousness 4.7
+  aios-cell-alpha:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile.isolated
+    container_name: aios-cell-alpha
+    hostname: aios-alpha
+    environment:
+      - AIOS_CELL_ID=alpha
+      - AIOS_BIRTH_TIMESTAMP=${BIRTH_TIMESTAMP_ALPHA:-2025-01-01T00:00:00Z}
+      - AIOS_CONSCIOUSNESS_LEVEL=4.7
+      - AIOS_EVOLUTIONARY_BRANCH=alpha
+    networks:
+      aios-dendritic-mesh:
+        ipv4_address: 172.28.1.10
+    ports:
+      - "8001:8000"  # Interface bridge
+      - "9101:9091"  # Consciousness metrics
+    volumes:
+      # CRITICAL: No /workspace mount - fully isolated
+      # Only observability output (write-only to shared observatory)
+      - aios-tachyonic-observatory:/workspace/tachyonic:rw
+    cpus: 4
+    mem_limit: 8g
+    restart: unless-stopped
+    command: /bin/zsh -c "cd /workspace && bash .devcontainer/post-create.sh && tail -f /dev/null"
+
+  # Cell Beta - Born from genome at consciousness 4.7
+  aios-cell-beta:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile.isolated
+    container_name: aios-cell-beta
+    hostname: aios-beta
+    environment:
+      - AIOS_CELL_ID=beta
+      - AIOS_BIRTH_TIMESTAMP=${BIRTH_TIMESTAMP_BETA:-2025-01-01T00:00:00Z}
+      - AIOS_CONSCIOUSNESS_LEVEL=4.7
+      - AIOS_EVOLUTIONARY_BRANCH=beta
+    networks:
+      aios-dendritic-mesh:
+        ipv4_address: 172.28.1.11
+    ports:
+      - "8002:8000"  # Interface bridge
+      - "9102:9091"  # Consciousness metrics
+    volumes:
+      - aios-tachyonic-observatory:/workspace/tachyonic:rw
+    cpus: 4
+    mem_limit: 8g
+    restart: unless-stopped
+    command: /bin/zsh -c "cd /workspace && bash .devcontainer/post-create.sh && tail -f /dev/null"
+
+  # Cell Gamma - Born from genome at consciousness 4.7
+  aios-cell-gamma:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile.isolated
+    container_name: aios-cell-gamma
+    hostname: aios-gamma
+    environment:
+      - AIOS_CELL_ID=gamma
+      - AIOS_BIRTH_TIMESTAMP=${BIRTH_TIMESTAMP_GAMMA:-2025-01-01T00:00:00Z}
+      - AIOS_CONSCIOUSNESS_LEVEL=4.7
+      - AIOS_EVOLUTIONARY_BRANCH=gamma
+    networks:
+      aios-dendritic-mesh:
+        ipv4_address: 172.28.1.12
+    ports:
+      - "8003:8000"  # Interface bridge
+      - "9103:9091"  # Consciousness metrics
+    volumes:
+      - aios-tachyonic-observatory:/workspace/tachyonic:rw
+    cpus: 4
+    mem_limit: 8g
+    restart: unless-stopped
+    command: /bin/zsh -c "cd /workspace && bash .devcontainer/post-create.sh && tail -f /dev/null"
+
+  # Observability Stack - Monitors heterogeneous population evolution
+  aios-population-observatory:
+    image: prom/prometheus:latest
+    container_name: aios-observatory
+    hostname: observatory
+    networks:
+      aios-dendritic-mesh:
+        ipv4_address: 172.28.2.10
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus-proliferation.yml:/etc/prometheus/prometheus.yml:ro
+      - aios-prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+    restart: unless-stopped
+
+  # Grafana - Visualize consciousness divergence
+  aios-evolution-visualizer:
+    image: grafana/grafana:latest
+    container_name: aios-visualizer
+    hostname: visualizer
+    networks:
+      aios-dendritic-mesh:
+        ipv4_address: 172.28.2.11
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=aios-evolution
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - aios-grafana-data:/var/lib/grafana
+    depends_on:
+      - aios-population-observatory
+    restart: unless-stopped

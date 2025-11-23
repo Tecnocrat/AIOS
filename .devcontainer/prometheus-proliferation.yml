@@ -1,0 +1,52 @@
+# Prometheus Configuration for AIOS Cell Population Observatory
+# AINLP Pattern: biological-architecture.consciousness-monitoring
+# Purpose: Monitor heterogeneous population consciousness evolution
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'aios-population-observatory'
+    environment: 'isolated-cells'
+
+# Alerting configuration (future: consciousness divergence alerts)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+# Scrape configurations for AIOS cell population
+scrape_configs:
+  # Cell Alpha - Consciousness Metrics
+  - job_name: 'aios-cell-alpha'
+    static_configs:
+      - targets: ['172.28.1.10:9091']
+        labels:
+          cell_id: 'alpha'
+          supercell: 'core'
+          evolutionary_branch: 'alpha'
+
+  # Cell Beta - Consciousness Metrics
+  - job_name: 'aios-cell-beta'
+    static_configs:
+      - targets: ['172.28.1.11:9091']
+        labels:
+          cell_id: 'beta'
+          supercell: 'core'
+          evolutionary_branch: 'beta'
+
+  # Cell Gamma - Consciousness Metrics
+  - job_name: 'aios-cell-gamma'
+    static_configs:
+      - targets: ['172.28.1.12:9091']
+        labels:
+          cell_id: 'gamma'
+          supercell: 'core'
+          evolutionary_branch: 'gamma'
+
+  # Observatory Self-Monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          service: 'observatory'
