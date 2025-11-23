@@ -1,0 +1,6 @@
+```python
+  93 |     root_files = [
+  94 |         f for f in root_files 
+  95 |         if not str(f).startswith(str(metabolized_archive))
+  96 |     ]
+```

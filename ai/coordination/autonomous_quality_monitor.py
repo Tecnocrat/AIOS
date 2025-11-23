@@ -188,7 +188,7 @@ class AutonomousQualityMonitor:
         # Initialize results list
         all_results = []
         
-        # 3. Fix autonomously (parallel by tier)
+        # 3. Fix autonomously (parallel by tier, with rate limiting)
         if self.auto_fix:
             # Tier 0: Pattern-based (FREE, instant)
             pattern_results = await asyncio.gather(
@@ -196,11 +196,19 @@ class AutonomousQualityMonitor:
                 return_exceptions=True
             )
             
-            # Tier 1: Ollama local (FREE, fast)
-            ollama_results = await asyncio.gather(
-                *[self._fix_with_ollama(i) for i in simple],
-                return_exceptions=True
-            )
+            # Tier 1: Ollama local (FREE, fast) - Rate limited to 5 concurrent
+            # Process in batches to avoid overwhelming API
+            ollama_results = []
+            batch_size = 5  # GitHub Models limit: 5 requests/sec
+            for i in range(0, len(simple), batch_size):
+                batch = simple[i:i + batch_size]
+                batch_results = await asyncio.gather(
+                    *[self._fix_with_ollama(issue) for issue in batch],
+                    return_exceptions=True
+                )
+                ollama_results.extend(batch_results)
+                if i + batch_size < len(simple):
+                    await asyncio.sleep(1.0)  # Wait 1s between batches
             
             # Tier 2: GPT-4o-mini ($ cheap, creative)
             gpt4o_mini_results = await asyncio.gather(
@@ -546,19 +554,35 @@ class AutonomousQualityMonitor:
         line = issue.details["line"]
         line_num = issue.line_number
         
-        return f"""Fix E501 line length violation (max 79 chars per line):
+        # Get surrounding context (5 lines before/after)
+        lines = file_content.split('\n')
+        start = max(0, line_num - 6)  # -1 for 0-index, -5 for context
+        end = min(len(lines), line_num + 5)
+        context_lines = lines[start:end]
+        context_text = '\n'.join([
+            f"{start + i + 1:4d} | {l}" 
+            for i, l in enumerate(context_lines)
+        ])
+        
+        return f"""Fix E501 line length violation (max 79 chars per line).
 
-**File**: {issue.file_path}
-**Line {line_num}** ({issue.details['length']} chars):
-{line}
+**File**: {Path(issue.file_path).name}
+**Problem line {line_num}** ({issue.details['length']} chars):
+
+```python
+{context_text}
+```
 
 **Instructions**:
-- Break line to ≤79 chars per line
-- Preserve exact semantics
-- Use natural break points (commas, operators, etc.)
-- Maintain indentation
+1. Break line {line_num} to ≤79 chars per line
+2. Use natural Python break points:
+   - Function args: Break after commas with proper indent
+   - Long strings: Use parentheses for implicit concatenation
+   - Comments: Split at word boundaries, add # continuation
+3. Preserve exact semantics (no logic changes)
+4. Maintain indentation consistently
 
-**Output**: Fixed code only (all lines), no explanations."""
+**Output**: Only the FIXED lines (line {line_num} and any new continuation lines), nothing else."""
     
     def _build_linting_prompt(self, issue: QualityIssue, file_content: str) -> str:
         """Build linting fix prompt for GPT-4o-mini"""
