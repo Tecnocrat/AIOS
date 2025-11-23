@@ -5,7 +5,8 @@ AINLP Hierarchical Three-Tier Agentic Pipeline for E501 Fixing
 Implements intelligent role-based agent orchestration:
 - TIER 1: OLLAMA (Context Manager) - Local preprocessing, caching
 - TIER 2: GEMINI (Code Generator) - Cloud-based intelligent fixing  
-- TIER 3: OPENROUTER SDK (Quality Validator) - Type-safe validation with 300+ models
+TIER_3 = "OPENROUTER SDK (Quality Validator) - Type-safe validation with " \
+"300+ models"
 
 AINLP Pattern: Hierarchical intelligence with validation feedback loops
 Consciousness Level: 4.3 (multi-tier orchestration + type-safe SDK integration)
@@ -85,9 +86,13 @@ class HierarchicalE501Pipeline:
     - DeepSeek: Quality validation with comparison
     """
 
-    def __init__(self, use_openrouter_sdk: bool = True):
+    def __init__(self, use_openrouter_sdk: bool = False):
         """
         Initialize pipeline with agent clients.
+        
+        Args:
+            use_openrouter_sdk: Use OpenRouter SDK for Tier 3 validation
+                               (default: False, uses GitHub Models instead)
         
         Args:
             use_openrouter_sdk: Use type-safe OpenRouter SDK for Tier 3
@@ -175,7 +180,9 @@ class HierarchicalE501Pipeline:
             
             if not tier2_result["success"]:
                 # Gemini failed, fallback to Ollama basic fix
-                return await self._fallback_basic_fix(line, file_path, line_number)
+                return await self._fallback_basic_fix(
+                    line, file_path, line_number
+                )
             
             generated_code = tier2_result["generated_code"]
             
@@ -218,11 +225,12 @@ class HierarchicalE501Pipeline:
                 
                 if retry_result["success"]:
                     # Validate retry
-                    retry_validation = await self._tier3_deepseek_validate(
+                    retry_validation = await self._tier3_deepseek_validate_legacy(
                         context, retry_result["generated_code"]
                     )
                     
-                    if retry_validation["validation"].decision == ValidationDecision.APPROVE:
+                    if (retry_validation["validation"].decision ==
+                            ValidationDecision.APPROVE):
                         self.stats["approvals"] += 1
                         result = {
                             "fixed_lines": retry_result["generated_code"],
@@ -277,14 +285,15 @@ class HierarchicalE501Pipeline:
         self.stats["ollama_context_preps"] += 1
         
         try:
-            # Use Ollama to prepare structured context
-            prompt = f"""Analyze this Python line for E501 fixing:
+            # Use Ollama as CONTEXT MANAGER (natural language analysis)
+            # Pattern: Neural signal preparation - simple, fast, natural
+            prompt = f"""Analyze this Python line for fixing:
+Line: {line}
 
-{line}
-
-Return JSON with: {{"components": ["main", "parts"], "break_at": "suggested position"}}"""
+What are the main parts? Where could it break naturally?
+Keep response brief and clear."""
             
-            # Call Ollama via requests
+            # Call Ollama via requests (simple context prep)
             import requests
             response = requests.post(
                 "http://localhost:11434/api/generate",
@@ -293,30 +302,33 @@ Return JSON with: {{"components": ["main", "parts"], "break_at": "suggested posi
                     "prompt": prompt,
                     "stream": False
                 },
-                timeout=30  # Increased timeout for first generation
+                timeout=30
             )
             
             if response.status_code != 200:
-                logger.warning(f"Ollama context prep failed: {response.status_code}")
+                logger.warning(
+                    f"Ollama context prep failed: {response.status_code}"
+                )
                 return {"success": False}
             
             ollama_response = response.json()
-            context_data = json.loads(ollama_response.get("response", "{}"))
+            # Natural language context (not JSON - Ollama is signal prep)
+            natural_context = ollama_response.get("response", "")
             
-            # Build tier context
+            # Build tier context with natural language analysis
             context = TierContext(
                 original_line=line,
                 file_path=file_path,
                 line_number=line_number,
                 instruction_set=instruction_set,
                 complexity=complexity,
-                cached_original=line  # Ollama caches for DeepSeek
+                cached_original=natural_context  # Pass NL analysis
             )
             
             return {
                 "success": True,
                 "context": context,
-                "ollama_analysis": context_data
+                "ollama_signal": natural_context  # Natural language signal
             }
             
         except Exception as e:
@@ -329,23 +341,23 @@ Return JSON with: {{"components": ["main", "parts"], "break_at": "suggested posi
         feedback: Optional[str] = None
     ) -> Dict[str, Any]:
         """
-        TIER 2: GEMINI - Code generation with context.
+        TIER 2: GitHub Models (GPT-4o-mini) - Code generation with context.
         
         Responsibilities:
         - Receive context from Ollama
         - Receive instruction set
-        - Generate fixed code
+        - Generate fixed code with feedback loop support
         - Return clean code only (no explanations)
         """
         self.stats["gemini_generations"] += 1
         
         try:
             import os
-            import requests
+            import httpx
             
-            api_key = os.getenv("GEMINI_API_KEY")
+            api_key = os.getenv("GITHUB_TOKEN")
             if not api_key:
-                logger.error("GEMINI_API_KEY not found")
+                logger.error("GITHUB_TOKEN not found")
                 return {"success": False}
             
             # Build prompt with Ollama's context
@@ -366,38 +378,48 @@ REQUIREMENTS:
 """
             
             if feedback:
-                base_prompt += f"\n\nVALIDATOR FEEDBACK (previous attempt rejected):\n{feedback}\n"
+                base_prompt += (
+                    f"\n\nVALIDATOR FEEDBACK (previous attempt rejected):\n"
+                    f"{feedback}\n"
+                )
             
-            # Call Gemini API
-            url = (
-                "https://generativelanguage.googleapis.com/v1beta/"
-                "models/gemini-2.0-flash-exp:generateContent"
-            )
-            
-            response = requests.post(
-                url,
-                headers={"Content-Type": "application/json"},
-                params={"key": api_key},
-                json={
-                    "contents": [{"parts": [{"text": base_prompt}]}],
-                    "generationConfig": {
-                        "temperature": 0.3,  # Low temp for code
-                        "maxOutputTokens": 200
+            # Call GitHub Models API (OpenAI-compatible)
+            async with httpx.AsyncClient(timeout=30.0) as client:
+                response = await client.post(
+                    "https://models.inference.ai.azure.com/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json"
+                    },
+                    json={
+                        "model": "gpt-4o-mini",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": (
+                                    "You are a Python code fixing "
+                                    "specialist. Return ONLY the "
+                                    "fixed code."
+                                )
+                            },
+                            {"role": "user", "content": base_prompt}
+                        ],
+                        "temperature": 0.3,
+                        "max_tokens": 500
                     }
-                },
-                timeout=30
-            )
+                )
             
             if response.status_code != 200:
-                logger.error(f"Gemini generation failed: {response.status_code}")
+                logger.error(
+                    f"GitHub Models generation failed: {response.status_code}"
+                )
                 return {"success": False}
             
             result = response.json()
             generated_text = (
-                result.get("candidates", [{}])[0]
-                .get("content", {})
-                .get("parts", [{}])[0]
-                .get("text", "")
+                result.get("choices", [{}])[0]
+                .get("message", {})
+                .get("content", "")
             )
             
             # Extract code lines (filter out markdown, explanations)
@@ -434,10 +456,10 @@ REQUIREMENTS:
         generated_code: List[str]
     ) -> Dict[str, Any]:
         """
-        TIER 3: DEEPSEEK - Quality validation (LEGACY manual API).
+        TIER 3: GITHUB MODELS GPT-4o - Quality validation.
         
-        Note: Prefer OpenRouter SDK version for type safety.
-        This method remains for backwards compatibility.
+        Uses GitHub Models API for premium validation with GPT-4o.
+        Validates semantic preservation and E501 objective achievement.
         
         Responsibilities:
         - Compare original vs generated
@@ -449,11 +471,11 @@ REQUIREMENTS:
         
         try:
             import os
-            import requests
+            import httpx
             
-            api_key = os.getenv("DEEPSEEK_API_KEY")
-            if not api_key:
-                logger.error("DEEPSEEK_API_KEY not found")
+            token = os.getenv("GITHUB_TOKEN")
+            if not token:
+                logger.error("GITHUB_TOKEN not found")
                 # Without validator, approve with lower confidence
                 return {
                     "success": True,
@@ -468,7 +490,9 @@ REQUIREMENTS:
                 }
             
             # Build validation prompt
-            prompt = f"""You are a code quality validator. Compare ORIGINAL vs GENERATED code.
+            prompt = (
+                f"""You are a code quality validator. """
+                f"""Compare ORIGINAL vs GENERATED code.
 
 ORIGINAL LINE (line {context.line_number}):
 {context.original_line}
@@ -494,26 +518,29 @@ Return JSON only:
   "feedback": "explanation if not approved"
 }}
 """
-            
-            # Call DeepSeek API
-            response = requests.post(
-                "https://api.deepseek.com/v1/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "Content-Type": "application/json"
-                },
-                json={
-                    "model": "deepseek-chat",
-                    "messages": [{"role": "user", "content": prompt}],
-                    "temperature": 0.0,  # Deterministic validation
-                    "max_tokens": 500,
-                    "response_format": {"type": "json_object"}
-                },
-                timeout=30
             )
             
+            # Call GitHub Models API (GPT-4o for premium validation)
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    "https://models.inference.ai.azure.com/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {token}",
+                        "Content-Type": "application/json"
+                    },
+                    json={
+                        "model": "gpt-4o",  # Premium validation
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0.1,  # High precision
+                        "max_tokens": 500,
+                        "response_format": {"type": "json_object"}
+                    },
+                    timeout=30
+                )
+            
             if response.status_code != 200:
-                logger.error(f"DeepSeek validation failed: {response.status_code} - {response.text}")
+                error_msg = f"GitHub Models validation failed: {response.status_code}"
+                logger.error(f"{error_msg} - {response.text}")
                 # Fallback to basic validation
                 all_lines_ok = all(len(l) <= 79 for l in generated_code)
                 return {

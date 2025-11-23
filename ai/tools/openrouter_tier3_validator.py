@@ -31,14 +31,14 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any, Dict, List, Optional
 
-# OpenRouter SDK imports
+# OpenRouter HTTP API (no SDK for Python yet)
 try:
-    from openrouter import OpenRouter
+    import httpx
     OPENROUTER_AVAILABLE = True
 except ImportError:
     OPENROUTER_AVAILABLE = False
     logging.warning(
-        "OpenRouter SDK not installed. Install with: pip install openrouter"
+        "httpx not installed. Install with: pip install httpx"
     )
 
 logger = logging.getLogger(__name__)
@@ -138,18 +138,29 @@ class OpenRouterTier3Validator:
             # Build validation prompt
             prompt = self._build_validation_prompt(context, generated_code)
             
-            # Call OpenRouter SDK (async, type-safe)
-            async with OpenRouter(api_key=self.api_key) as client:
-                response = await client.chat.send_async(
-                    model=self.model,
-                    messages=[{"role": "user", "content": prompt}],
-                    temperature=0.0,  # Deterministic validation
-                    max_tokens=500,
-                    response_format={"type": "json_object"}  # Force JSON response
+            # Call OpenRouter HTTP API (async, no Python SDK yet)
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {self.api_key}",
+                        "HTTP-Referer": "https://github.com/Tecnocrat/AIOS",
+                        "X-Title": "AIOS Hierarchical Pipeline"
+                    },
+                    json={
+                        "model": self.model,
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0.0,
+                        "max_tokens": 500,
+                        "response_format": {"type": "json_object"}
+                    },
+                    timeout=30.0
                 )
+                response.raise_for_status()
             
-            # Extract validation result (type-safe access)
-            content = response.choices[0].message.content
+            # Extract validation result
+            data = response.json()
+            content = data["choices"][0]["message"]["content"]
             validation_data = json.loads(content)
             
             # Parse into ValidationResult
@@ -255,16 +266,27 @@ Return JSON only:
         try:
             prompt = self._build_validation_prompt(context, generated_code)
             
-            async with OpenRouter(api_key=self.api_key) as client:
-                response = await client.chat.send_async(
-                    model=self.fallback_model,
-                    messages=[{"role": "user", "content": prompt}],
-                    temperature=0.0,
-                    max_tokens=500,
-                    response_format={"type": "json_object"}
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {self.api_key}",
+                        "HTTP-Referer": "https://github.com/Tecnocrat/AIOS",
+                        "X-Title": "AIOS Hierarchical Pipeline"
+                    },
+                    json={
+                        "model": self.fallback_model,
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0.0,
+                        "max_tokens": 500,
+                        "response_format": {"type": "json_object"}
+                    },
+                    timeout=30.0
                 )
+                response.raise_for_status()
             
-            content = response.choices[0].message.content
+            data = response.json()
+            content = data["choices"][0]["message"]["content"]
             validation_data = json.loads(content)
             validation = self._parse_validation_data(validation_data)
             
