@@ -158,6 +158,10 @@ Thumbs.db
 .vscode/.ai_session_context.json
 .vscode/.ai_session_context.md
 
+# Autonomous Monitor Backup Files (centralized in tachyonic/backups/)
+*.backup_*
+.backup_*
+
 # Version Control System Files
 # (Git files are handled by git itself)
 
