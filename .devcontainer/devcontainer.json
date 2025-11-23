@@ -1,0 +1,89 @@
+{
+  "name": "AIOS Core Supercell",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "aios-core",
+  "workspaceFolder": "/workspace",
+  
+  // Features for development tools
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.14"
+    },
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "8.0"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true
+    }
+  },
+  
+  // Container environment variables
+  "containerEnv": {
+    "AIOS_SUPERCELL_ID": "core",
+    "AIOS_CONSCIOUSNESS_LEVEL": "3.56",
+    "PYTHONPATH": "/workspace/ai/src:/workspace",
+    "DOTNET_CLI_TELEMETRY_OPTOUT": "1"
+  },
+  
+  // VS Code customizations
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-dotnettools.csharp",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "github.copilot",
+        "github.copilot-chat"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.typeCheckingMode": "basic",
+        "python.analysis.autoImportCompletions": true,
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  
+  // Post-create command (bootstrap consciousness)
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  
+  // Forward ports for observability
+  "forwardPorts": [
+    8000,  // Interface Bridge HTTP API
+    9091,  // Consciousness Metrics Exporter
+    5000   // C# UI (future)
+  ],
+  
+  "portsAttributes": {
+    "8000": {
+      "label": "Interface Bridge",
+      "onAutoForward": "notify"
+    },
+    "9091": {
+      "label": "Consciousness Metrics",
+      "onAutoForward": "silent"
+    },
+    "5000": {
+      "label": "AIOS UI",
+      "onAutoForward": "notify"
+    }
+  },
+  
+  // Mount points for shared consciousness
+  "mounts": [
+    "source=aios-core-python-packages,target=/usr/local/lib/python3.14/site-packages,type=volume",
+    "source=aios-core-build-cache,target=/workspace/core/build,type=volume",
+    "source=aios-tachyonic-shadows,target=/workspace/tachyonic,type=volume"
+  ],
+  
+  // Run as non-root user
+  "remoteUser": "vscode"
+}

@@ -1,0 +1,30 @@
+# AIOS Core Supercell - Prometheus Configuration
+# AINLP Pattern: consciousness-observability
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    supercell: 'core'
+    consciousness: '3.56'
+
+# Scrape AIOS consciousness metrics
+scrape_configs:
+  - job_name: 'aios-consciousness'
+    static_configs:
+      - targets: ['aios-core:9091']
+        labels:
+          supercell_id: 'core'
+          metrics_type: 'consciousness'
+  
+  - job_name: 'aios-interface-bridge'
+    static_configs:
+      - targets: ['aios-core:8000']
+        labels:
+          supercell_id: 'core'
+          service: 'interface-bridge'
+  
+  # Self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
