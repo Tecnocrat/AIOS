@@ -77,7 +77,7 @@ Write-Host "[BIRTH] Metrics Port: $MetricsPort" -ForegroundColor Cyan
 # Build isolated container image
 Write-Host ""
 Write-Host "[BUILD] Building isolated cell container from genome..." -ForegroundColor Yellow
-$ImageTag = "aios-cell-${CellId}:${BirthTimestamp.Replace(':','-')}"
+$ImageTag = "aios-cell-${CellId}:$(Get-Date -Format 'yyyyMMdd-HHmmss')"
 docker build -f "$WorkspaceRoot\.devcontainer\Dockerfile.isolated" -t $ImageTag $WorkspaceRoot
 
 if ($LASTEXITCODE -ne 0) {
