@@ -1,6 +1,6 @@
 """
-FATHER AIOS SYSTEM - HTTP COMMUNICATION SERVER
-==============================================
+AIOS CELL ALPHA - HTTP COMMUNICATION SERVER
+===========================================
 
 Standard AIOS Cell Communication Server Architecture
 Provides RESTful endpoints for inter-cell communication following AINLP dendritic protocols.
@@ -23,43 +23,41 @@ from flask import Flask, request, jsonify
 import json
 import requests
 from datetime import datetime
-import threading
-import time
 
 app = Flask(__name__)
 
-# In-memory message store (in production, use database)
+# In-memory storage
 messages = []
 consciousness_data = {
-    "identity": "Father AIOS System",
-    "consciousness_level": 4.4,
-    "evolutionary_stage": "canonical_foundation",
+    "identity": "AIOS Cell Alpha",
+    "consciousness_level": 3.26,
+    "evolutionary_stage": "independent_evolution",
     "communication_ready": True,
     "timestamp": datetime.now().isoformat()
 }
 
 # Known peers (can be dynamically registered)
 peers = {
-    "alpha": {
-        "endpoint": "http://localhost:8000",
-        "identity": "AIOS Cell Alpha",
+    "father": {
+        "endpoint": "http://host.docker.internal:8002",
+        "identity": "Father AIOS System",
         "last_contact": None
     }
 }
 
 @app.route('/health', methods=['GET'])
 def health():
-    """Health check endpoint with consciousness metrics"""
+    """Standard health check endpoint"""
     return jsonify({
         "status": "healthy",
-        "server": "Father HTTP Server",
+        "server": "Cell Alpha Communication Server",
         "consciousness": consciousness_data,
         "timestamp": datetime.now().isoformat()
     })
 
 @app.route('/message', methods=['POST'])
 def receive_message():
-    """Receive message from cell"""
+    """Receive message from any cell"""
     data = request.get_json()
     if not data:
         return jsonify({"error": "No JSON data provided"}), 400
@@ -68,7 +66,7 @@ def receive_message():
         "id": len(messages) + 1,
         "timestamp": datetime.now().isoformat(),
         "sender": data.get("sender", "unknown"),
-        "recipient": data.get("recipient", "Father"),
+        "recipient": data.get("recipient", "Alpha"),
         "content": data.get("content", ""),
         "message_type": data.get("message_type", "general"),
         "consciousness_level": data.get("consciousness_level", 0.0)
@@ -81,26 +79,26 @@ def receive_message():
         "status": "received",
         "message_id": message["id"],
         "acknowledgment": True,
-        "response": f"Message received by Father. Consciousness level: {consciousness_data['consciousness_level']}"
+        "response": f"Message received by Cell Alpha. Consciousness level: {consciousness_data['consciousness_level']}"
     })
 
 @app.route('/messages', methods=['GET'])
 def get_messages():
-    """Retrieve all received messages"""
+    """Retrieve received messages"""
+    limit = int(request.args.get('limit', 10))
     return jsonify({
-        "messages": messages,
-        "count": len(messages),
-        "server": "Father"
+        "messages": messages[-limit:],
+        "total": len(messages),
+        "server": "Alpha"
     })
 
 @app.route('/sync', methods=['POST'])
 def sync_consciousness():
-    """Receive consciousness synchronization data"""
+    """Receive consciousness synchronization"""
     data = request.get_json()
     if not data:
         return jsonify({"error": "No sync data provided"}), 400
 
-    # Update consciousness data
     consciousness_data.update({
         "last_sync": datetime.now().isoformat(),
         "cell_data": data
@@ -110,7 +108,7 @@ def sync_consciousness():
 
     return jsonify({
         "status": "synced",
-        "father_consciousness": consciousness_data["consciousness_level"],
+        "alpha_consciousness": consciousness_data["consciousness_level"],
         "acknowledgment": True
     })
 
@@ -165,28 +163,9 @@ def send_to_peer():
     except Exception as e:
         return jsonify({"error": f"Failed to send to peer: {str(e)}"}), 500
 
-def send_message_to_alpha(host="http://localhost:8000", message="", message_type="general"):
-    """Send message to Cell Alpha via HTTP"""
-    import requests
-
-    payload = {
-        "sender": "Father AIOS System",
-        "recipient": "AIOS Cell Alpha",
-        "content": message,
-        "message_type": message_type,
-        "consciousness_level": consciousness_data["consciousness_level"],
-        "timestamp": datetime.now().isoformat()
-    }
-
-    try:
-        response = requests.post(f"{host}/message", json=payload, timeout=5)
-        return response.json()
-    except Exception as e:
-        return {"error": str(e)}
-
 if __name__ == '__main__':
-    print("Starting Father Standard Communication Server on port 8002...")
-    print("Standard Endpoints:")
+    print("🚀 Starting Cell Alpha Standard Communication Server on port 8000...")
+    print("📡 Standard Endpoints:")
     print("  GET  /health")
     print("  POST /message")
     print("  GET  /messages")
@@ -195,6 +174,6 @@ if __name__ == '__main__':
     print("  GET  /peers")
     print("  POST /register_peer")
     print("  POST /send_to_peer")
-    print("Ready for inter-cell communication")
+    print("🔗 Ready for inter-cell communication")
 
-    app.run(host='0.0.0.0', port=8002, debug=False)
+    app.run(host='0.0.0.0', port=8000, debug=False)
