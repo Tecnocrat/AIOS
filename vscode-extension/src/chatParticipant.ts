@@ -3,18 +3,21 @@ import { AIOSBridge } from './aiosBridge';
 import { AIOSContextManager } from './contextManager';
 import { AIOSLogger } from './logger';
 import { AIOSMCPClient } from './mcpClient';
+import { AIOSSecurityModule } from './securityModule';
 
 export class AIOSChatParticipant {
     private contextManager: AIOSContextManager;
     private aiosBridge: AIOSBridge;
     private logger: AIOSLogger;
     private mcpClient: AIOSMCPClient;
+    private securityModule: AIOSSecurityModule;
 
     constructor(contextManager: AIOSContextManager, aiosBridge: AIOSBridge, logger: AIOSLogger, mcpClient: AIOSMCPClient) {
         this.contextManager = contextManager;
         this.aiosBridge = aiosBridge;
         this.logger = logger;
         this.mcpClient = mcpClient;
+        this.securityModule = new AIOSSecurityModule(logger);
     }
 
     public async handleRequest(
@@ -47,6 +50,16 @@ export class AIOSChatParticipant {
                 return mcpCommands;
             }
 
+            // 🔒 SECURITY FIRST: Check for secret operations and handle securely
+            const secureResponse = await this.securityModule.processSecureMessage(request.prompt);
+            if (secureResponse) {
+                stream.markdown(secureResponse);
+                this.logger.info('Secure operation handled via terminal', {
+                    prompt: request.prompt.substring(0, 50) + '...'
+                });
+                return { metadata: { secureOperation: true } };
+            }
+
             // Process through AIOS Bridge
             const aiosResponse = await this.aiosBridge.processMessage(
                 request.prompt,
@@ -56,6 +69,16 @@ export class AIOSChatParticipant {
                     workspaceContext: this.contextManager.getConversationState()?.workspaceContext
                 }
             );
+
+            // 🔒 SECURITY: Validate and sanitize AIOS response before display
+            const validation = this.securityModule.validateResponse(aiosResponse.text);
+            if (!validation.isValid) {
+                this.logger.warn('AIOS response contained potential secrets, sanitizing', {
+                    violations: validation.violations.length
+                });
+                aiosResponse.text = validation.sanitizedResponse;
+                stream.markdown('⚠️ **Response Sanitized**: Potential sensitive content was detected and removed.\n\n');
+            }
 
             // Handle cancellation after processing
             if (token.isCancellationRequested) {
@@ -183,6 +206,8 @@ export class AIOSChatParticipant {
                 return `**AIOS Commands**
 - \`@aios /reset\` - Reset conversation context
 - \`@aios /status\` - Show system status
+- \`@aios /security\` - Show security status and operations
+- \`@aios /security-test\` - Test security sanitization
 - \`@aios /help\` - Show this help message
 - \`@aios /save\` - Save current context
 - \`@aios /load\` - Load saved context
@@ -191,7 +216,8 @@ export class AIOSChatParticipant {
 - Persistent context across VSCode restarts
 - Multi-language AI coordination (C++, Python, C#)
 - Intelligent workspace analysis
-- Context-aware code generation`;
+- Context-aware code generation
+- 🔒 **Mandatory Security**: Secrets never shown in chat`;
 
             case 'save':
                 try {
@@ -200,6 +226,40 @@ export class AIOSChatParticipant {
                 } catch (error) {
                     return `Failed to save context: ${error}`;
                 }
+
+            case 'security':
+                return `**🔒 AIOS Security Status**
+- Security Module: Active
+- Secret Detection: Enabled
+- Terminal Operations: Ephemeral CLI
+- Response Sanitization: Automatic
+- Audit Logging: Enabled
+
+**Security Operations Available:**
+• \`vault init\` - Initialize HashiCorp Vault securely
+• \`vault unseal\` - Unseal vault with stored keys
+• \`vault status\` - Check vault health
+• \`set [service] key\` - Configure API keys (OpenAI, Anthropic, etc.)
+• \`validate [service] key\` - Check key configuration
+
+*All operations use secure terminal CLI. Secrets are never displayed in chat.*`;
+
+            case 'security-test':
+                // Test security patterns
+                const testResponse = `Test response with potential secrets:
+- API Key: sk-test12345678901234567890123456789012
+- Vault Token: hvs.CAES1234567890abcdef
+- Password: mySecretPass123
+
+This should be automatically sanitized.`;
+                const sanitized = this.securityModule.sanitizeResponse(testResponse);
+                return `**Security Test Results:**
+Original length: ${testResponse.length}
+Sanitized length: ${sanitized.length}
+Sanitization applied: ${testResponse !== sanitized}
+
+Sanitized output:
+${sanitized}`;
 
             case 'load':
                 try {
