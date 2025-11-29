@@ -26,6 +26,7 @@ import sys
 # Add AIOS paths
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+
 class SupercellType(Enum):
     """AINLP Supercell types for biological architecture"""
     CYTOPLASM = "cytoplasm"
