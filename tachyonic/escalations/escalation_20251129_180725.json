@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-11-29T18:07:25.625120",
+  "issues": [
+    {
+      "file_path": "test_e501_fix.py",
+      "issue_type": "e501",
+      "severity": "low",
+      "complexity": "simple",
+      "details": {
+        "line": "very_long_variable_name_that_exceeds_the_standard_line_length_limit_and_should_be_detected_by_the_quality_monitor = 'This is a very long string that definitely exceeds the 79 character line length limit that Python style guide recommends for readability and consistency across different editors and terminals.'",
+        "length": 310
+      },
+      "auto_fixable": true,
+      "line_number": 2,
+      "error_code": "E501"
+    }
+  ],
+  "recommendation": "Requires premium agent (GPT-4o/Claude) or human review",
+  "stats": {
+    "scans": 0,
+    "issues_detected": 0,
+    "auto_fixed": 0,
+    "escalated": 1,
+    "api_errors_count": 1,
+    "api_errors_sample": [
+      {
+        "file": "test_e501_fix.py",
+        "status": 429,
+        "error": "API 429: {\"error\":{\"code\":\"RateLimitReached\",\"message\":\"Rate limit of 150 per 86400s exceeded for UserByModelByDay. Please wait 83006 seconds before retrying.\",\"details\":\"Rate limit of 150 per 86400s exceeded ",
+        "timestamp": "2025-11-29T18:07:25.624895"
+      }
+    ],
+    "fixes_by_tier": {
+      "pattern": 0,
+      "ollama": 0,
+      "gpt4o_mini": 0,
+      "gpt4o": 0
+    },
+    "cost": {
+      "total": 0.0,
+      "this_hour": 0.0,
+      "budget_remaining": 0.5
+    },
+    "tokens_used": {
+      "input": 0,
+      "output": 0
+    },
+    "auto_fix_rate": 0.0
+  }
+}
