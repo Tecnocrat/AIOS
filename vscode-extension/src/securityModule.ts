@@ -26,7 +26,7 @@ export interface SecretOperation {
 
 export class AIOSSecurityModule {
     private logger: AIOSLogger;
-    private terminal?: vscode.Terminal;
+    private terminal: vscode.Terminal | undefined;
 
     constructor(logger: AIOSLogger) {
         this.logger = logger;
@@ -63,7 +63,7 @@ export class AIOSSecurityModule {
 
         let sanitized = text;
         secretPatterns.forEach(pattern => {
-            sanitized = sanitized.replace(pattern, (match, ...groups) => {
+            sanitized = sanitized.replace(pattern, (match, ..._groups) => {
                 // Log the detection without exposing the secret
                 this.logger.warn('Potential secret detected and redacted in response', {
                     pattern: pattern.source,
@@ -121,7 +121,7 @@ export class AIOSSecurityModule {
     /**
      * Generates secure operation for common secret tasks
      */
-    public generateVaultOperation(operation: string, context?: any): SecretOperation | null {
+    public generateVaultOperation(operation: string, _context?: any): SecretOperation | null {
         const lowerOp = operation.toLowerCase();
 
         if (lowerOp.includes('init') || lowerOp.includes('initialize')) {

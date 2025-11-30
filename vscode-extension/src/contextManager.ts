@@ -34,6 +34,8 @@ export interface AIOSResponse {
         contextProvided?: boolean;
         autoInjected?: boolean;
         engineTargets?: string[];
+        securitySanitized?: boolean;
+        violationsDetected?: number;
     };
 }
 
