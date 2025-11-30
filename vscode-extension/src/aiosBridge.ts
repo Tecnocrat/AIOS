@@ -1,6 +1,7 @@
 import { AIOSResponse } from './contextManager';
 import { AIOSLogger } from './logger';
 import { OpenRouterEngine, AIEngineResponse } from './aiEngines/openRouterEngine';
+import { AIOSSecurityModule } from './securityModule';
 
 export interface CellularEcosystemStatus {
     status: 'active' | 'inactive' | 'error';
@@ -23,10 +24,12 @@ export class AIOSBridge {
     private cellularEcosystemStatus: CellularEcosystemStatus;
     private openRouterEngine: OpenRouterEngine;
     private useRealAI: boolean = false;
+    private securityModule: AIOSSecurityModule;
 
     constructor(logger: AIOSLogger) {
         this.logger = logger;
         this.openRouterEngine = new OpenRouterEngine(logger);
+        this.securityModule = new AIOSSecurityModule(logger);
         this.cellularEcosystemStatus = {
             status: 'inactive',
             cellularIntegrationActive: false,
@@ -242,10 +245,25 @@ export class AIOSBridge {
             // Real AIOS communication implementation
             const response = await this.processMessageThroughAIOS(message, context);
 
+            // 🔒 SECURITY: Validate response before returning
+            const validation = this.securityModule.validateResponse(response.text);
+            if (!validation.isValid) {
+                this.logger.warn('AIOS response contained potential secrets, sanitizing', {
+                    violations: validation.violations.length
+                });
+                response.text = validation.sanitizedResponse;
+                response.metadata = {
+                    ...response.metadata,
+                    securitySanitized: true,
+                    violationsDetected: validation.violations.length
+                };
+            }
+
             this.cellularEcosystemStatus.lastResponse = Date.now();
             this.logger.debug('Message processed successfully', {
                 responseLength: response.text.length,
-                confidence: response.confidence
+                confidence: response.confidence,
+                securityValidated: true
             });
 
             return response;
@@ -267,7 +285,14 @@ export class AIOSBridge {
             
             // Step 2: Generate intelligent response based on AIOS capabilities
             const response = await this.generateIntelligentResponse(message, analysis, context);
-            
+
+            // 🔒 SECURITY: Validate simulated response
+            const validation = this.securityModule.validateResponse(response.text);
+            if (!validation.isValid) {
+                this.logger.warn('Simulated AIOS response contained potential secrets, sanitizing');
+                response.text = validation.sanitizedResponse;
+            }
+
             return response;
             
         } catch (error) {
