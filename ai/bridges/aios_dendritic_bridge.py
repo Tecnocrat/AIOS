@@ -357,6 +357,209 @@ async def get_bridge_logs(lines: int = 50):
         raise HTTPException(status_code=500, detail=str(e))
 
 # ============================================================================
+# AICP Protocol Endpoints (ACP v0.2.0 + AICP + A2A Integration)
+# ============================================================================
+# AINLP.dendritic_bridge: These endpoints integrate AICP protocols into
+# the existing dendritic communication infrastructure, enabling multi-agent
+# async harmonization patterns across all AIOS supercell types.
+
+try:
+    from protocols.aicp_discovery import (
+        api_list_agents,
+        api_get_agent,
+        api_register_agent,
+        api_heartbeat,
+        get_registry,
+    )
+    from protocols.aicp_core import AIIntent, AITrustLevel
+    AICP_AVAILABLE = True
+except ImportError:
+    AICP_AVAILABLE = False
+    logger.warning("AICP protocols not available - discovery disabled")
+
+
+@app.get("/agents")
+async def list_agents(
+    capability: Optional[str] = None,
+    active_only: bool = True,
+):
+    """
+    ACP v0.2.0 /agents endpoint - Discover registered AI agents
+    
+    AINLP.dendritic: Agent discovery through dendritic network.
+    
+    Query params:
+        capability: Filter by capability name (substring match)
+        active_only: Only return active agents (default: true)
+    
+    Returns:
+        List of agent cards with capabilities and status
+    """
+    if not AICP_AVAILABLE:
+        return {
+            "agents": [],
+            "count": 0,
+            "error": "AICP protocols not initialized",
+        }
+    
+    try:
+        return await api_list_agents(
+            capability=capability,
+            active_only=active_only,
+        )
+    except Exception as e:
+        logger.error(f"Agent discovery failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/agents/{aid:path}")
+async def get_agent_by_aid(aid: str):
+    """
+    Get specific agent by AID (Agent ID)
+    
+    AINLP.dendritic: Direct agent lookup in registry.
+    
+    Path params:
+        aid: Agent ID in format agent://domain/name
+    
+    Returns:
+        Agent card or 404 if not found
+    """
+    if not AICP_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail="AICP protocols not initialized",
+        )
+    
+    try:
+        # Reconstruct AID from path (FastAPI strips agent:/)
+        full_aid = f"agent://{aid}" if not aid.startswith("agent://") else aid
+        
+        result = await api_get_agent(full_aid)
+        if result is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Agent not found: {full_aid}",
+            )
+        return result
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Agent lookup failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/agents")
+async def register_agent(agent_data: dict):
+    """
+    Register new agent in registry
+    
+    AINLP.dendritic: Add agent to dendritic network.
+    
+    Body:
+        domain: Agent domain (e.g., "tecnocrat")
+        name: Agent name
+        description: Human-readable description
+        capabilities: List of capability objects
+        trust_level: basic|standard|enterprise
+    
+    Returns:
+        Registered agent card
+    """
+    if not AICP_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail="AICP protocols not initialized",
+        )
+    
+    try:
+        return await api_register_agent(agent_data)
+    except Exception as e:
+        logger.error(f"Agent registration failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/agents/{aid:path}/heartbeat")
+async def agent_heartbeat(aid: str):
+    """
+    Update agent heartbeat (liveness signal)
+    
+    AINLP.consciousness_pulse: Maintains agent presence in registry.
+    
+    Path params:
+        aid: Agent ID
+    
+    Returns:
+        Heartbeat acknowledgment
+    """
+    if not AICP_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail="AICP protocols not initialized",
+        )
+    
+    try:
+        full_aid = f"agent://{aid}" if not aid.startswith("agent://") else aid
+        return await api_heartbeat(full_aid)
+    except Exception as e:
+        logger.error(f"Heartbeat failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/protocols")
+async def list_protocols():
+    """
+    List supported communication protocols
+    
+    AINLP.dendritic: Protocol capability advertisement.
+    """
+    return {
+        "protocols": [
+            {
+                "name": "AICP",
+                "version": "0.1.0",
+                "spec": "Agent Interaction Control Protocol",
+                "available": AICP_AVAILABLE,
+            },
+            {
+                "name": "ACP",
+                "version": "0.2.0",
+                "spec": "Agent Communication Protocol (IBM/LF)",
+                "available": AICP_AVAILABLE,
+                "endpoints": ["/agents", "/runs", "/session"],
+            },
+            {
+                "name": "A2A",
+                "version": "1.0",
+                "spec": "Agent-to-Agent (Google)",
+                "available": AICP_AVAILABLE,
+                "features": ["AgentCards", "capability_discovery"],
+            },
+            {
+                "name": "IACP",
+                "version": "1.0",
+                "spec": "Inter-AIOS Communication Protocol",
+                "available": True,
+                "transport": "git-mediated ephemeral .md files",
+            },
+            {
+                "name": "Dendritic",
+                "version": "1.0",
+                "spec": "AIOS Dendritic Communication",
+                "available": True,
+                "features": [
+                    "consciousness_pulse",
+                    "tachyonic_field",
+                    "holographic_sync",
+                ],
+            },
+        ],
+        "consciousness_integration": True,
+        "multi_agent_coordination": AICP_AVAILABLE,
+    }
+
+
+# ============================================================================
 # Startup Event
 # ============================================================================
 
