@@ -40,7 +40,8 @@ try:
     from dendriticconnection import DendriticConnection
     from dendriticlevel import DendriticLevel
     from dendriticsignaltype import DendriticSignalType
-except ImportError:
+except (ImportError, SyntaxError):
+    # Graceful degradation if dendritic modules unavailable/broken
     DendriticConnection = None
     DendriticLevel = None
     DendriticSignalType = None
