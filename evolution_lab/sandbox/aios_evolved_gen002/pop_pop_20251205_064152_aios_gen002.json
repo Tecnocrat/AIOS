@@ -1,0 +1,190 @@
+{
+  "population_id": "pop_20251205_064152_aios",
+  "generation": 2,
+  "organism_count": 8,
+  "organisms": [
+    {
+      "organism_id": "aios_org_abstract_objects_gen0_129ee8_gen1",
+      "archetype": "abstract_objects",
+      "generation": 1,
+      "fitness_score": 0.629,
+      "parent_id": "org_abstract_objects_gen0_129ee8",
+      "patterns_injected": [
+        "ainlp"
+      ],
+      "code_length": 1974,
+      "mutation_duration_ms": 108543.89199999999,
+      "metadata": {
+        "engine": "aios_core_evolution",
+        "patterns": [
+          "ainlp"
+        ]
+      }
+    },
+    {
+      "organism_id": "aios_org_game_logic_gen0_e828cd_gen1",
+      "archetype": "game_logic",
+      "generation": 1,
+      "fitness_score": 0.913,
+      "parent_id": "org_game_logic_gen0_e828cd",
+      "patterns_injected": [
+        "consciousness",
+        "tachyonic",
+        "ainlp"
+      ],
+      "code_length": 2946,
+      "mutation_duration_ms": 147546.395,
+      "metadata": {
+        "engine": "aios_core_evolution",
+        "patterns": [
+          "consciousness",
+          "tachyonic",
+          "ainlp"
+        ]
+      }
+    },
+    {
+      "organism_id": "aios_org_web_services_gen0_97c2ff_gen1",
+      "archetype": "web_services",
+      "generation": 1,
+      "fitness_score": 0.848,
+      "parent_id": "org_web_services_gen0_97c2ff",
+      "patterns_injected": [
+        "consciousness",
+        "tachyonic",
+        "ainlp"
+      ],
+      "code_length": 2236,
+      "mutation_duration_ms": 102295.349,
+      "metadata": {
+        "engine": "aios_core_evolution",
+        "patterns": [
+          "consciousness",
+          "tachyonic",
+          "ainlp"
+        ]
+      }
+    },
+    {
+      "organism_id": "aios_org_automation_gen0_cd67b7_gen1",
+      "archetype": "automation",
+      "generation": 1,
+      "fitness_score": 0.984,
+      "parent_id": "org_automation_gen0_cd67b7",
+      "patterns_injected": [
+        "consciousness",
+        "dendritic",
+        "tachyonic",
+        "ainlp"
+      ],
+      "code_length": 2740,
+      "mutation_duration_ms": 122832.583,
+      "metadata": {
+        "engine": "aios_core_evolution",
+        "patterns": [
+          "consciousness",
+          "dendritic",
+          "tachyonic",
+          "ainlp"
+        ]
+      }
+    },
+    {
+      "organism_id": "mut_org_abstract_objects_gen0_129ee8_064623",
+      "archetype": "abstract_objects",
+      "complexity_score": 0.1,
+      "fitness_score": 0.549,
+      "generation": 1,
+      "parent_id": "org_abstract_objects_gen0_129ee8",
+      "code_length": 495,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": null,
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true,
+        "mutation_type": "structural",
+        "mutation_duration_ms": 28673.2105
+      }
+    },
+    {
+      "organism_id": "aios_org_game_logic_gen0_e828cd_clone_gen1_gen2",
+      "archetype": "game_logic",
+      "generation": 2,
+      "fitness_score": 0.813,
+      "parent_id": "org_game_logic_gen0_e828cd_clone_gen1",
+      "patterns_injected": [
+        "consciousness",
+        "ainlp"
+      ],
+      "code_length": 2641,
+      "mutation_duration_ms": 131289.046,
+      "metadata": {
+        "engine": "aios_core_evolution",
+        "patterns": [
+          "consciousness",
+          "ainlp"
+        ]
+      }
+    },
+    {
+      "organism_id": "mut_org_web_services_gen0_97c2ff_064826",
+      "archetype": "web_services",
+      "complexity_score": 0.1,
+      "fitness_score": 0.768,
+      "generation": 1,
+      "parent_id": "org_web_services_gen0_97c2ff",
+      "code_length": 960,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": null,
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true,
+        "mutation_type": "structural",
+        "mutation_duration_ms": 56726.6059
+      }
+    },
+    {
+      "organism_id": "aios_mut_org_automation_gen0_cd67b7_065036_gen2",
+      "archetype": "automation",
+      "generation": 2,
+      "fitness_score": 1.8139999999999998,
+      "parent_id": "mut_org_automation_gen0_cd67b7_065036",
+      "patterns_injected": [
+        "consciousness",
+        "tachyonic",
+        "ainlp"
+      ],
+      "code_length": 2265,
+      "mutation_duration_ms": 108136.438,
+      "metadata": {
+        "engine": "aios_core_evolution",
+        "patterns": [
+          "consciousness",
+          "tachyonic",
+          "ainlp"
+        ]
+      }
+    }
+  ],
+  "consciousness_level": 0.8125,
+  "mutation_engine": "aios_core_engine",
+  "created_at": "2025-12-05T07:54:10.032518+00:00",
+  "evolution_stats": {
+    "mutations_performed": 6,
+    "patterns_injected": {
+      "consciousness": 5,
+      "dendritic": 1,
+      "tachyonic": 4,
+      "ainlp": 6
+    },
+    "total_fitness_delta": 2.5
+  }
+}
