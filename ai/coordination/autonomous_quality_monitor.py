@@ -479,10 +479,82 @@ class AutonomousQualityMonitor:
             return FixResult(success=False, issue=issue, error=str(e))
     
     async def _fix_with_ollama(self, issue: QualityIssue) -> FixResult:
-        """Tier 1: Ollama local (FREE, fast) - Currently skipped, delegate to GPT-4o-mini"""
-        # For now, delegate simple tasks directly to GPT-4o-mini (more reliable)
-        # Ollama integration can be added later for offline mode
-        return await self._fix_with_gpt4o_mini(issue)
+        """Tier 1: Ollama local aios-mistral (FREE, ~5s per fix)"""
+        try:
+            # Import bridge (lazy load to avoid startup delay)
+            from ai.tools.aios_mistral_bridge import AIOSMistralBridge
+            
+            async with AIOSMistralBridge() as bridge:
+                # Check if server is running
+                if not await bridge.check_health():
+                    # Fallback to GPT-4o-mini if Ollama unavailable
+                    return await self._fix_with_gpt4o_mini(issue)
+                
+                # Handle E501 (line too long)
+                if issue.issue_type == "e501":
+                    with open(issue.file_path, 'r', encoding='utf-8') as f:
+                        lines = f.readlines()
+                    
+                    if issue.line_number and 0 < issue.line_number <= len(lines):
+                        line = lines[issue.line_number - 1]
+                        response = await bridge.fix_e501(line, issue.line_number)
+                        
+                        if response.success and response.content.strip():
+                            # Apply fix
+                            fixed_line = response.content.strip()
+                            if not fixed_line.endswith('\n'):
+                                fixed_line += '\n'
+                            lines[issue.line_number - 1] = fixed_line
+                            
+                            with open(issue.file_path, 'w', encoding='utf-8') as f:
+                                f.writelines(lines)
+                            
+                            self.stats["ollama_fixes"] += 1
+                            return FixResult(
+                                success=True,
+                                issue=issue,
+                                fix_applied=f"Line {issue.line_number} shortened",
+                                tier_used="ollama"
+                            )
+                
+                # Handle other linting issues
+                else:
+                    with open(issue.file_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                    
+                    response = await bridge.fix_linting_issue(content, issue.message)
+                    
+                    if response.success and response.content.strip():
+                        # Extract code from response (may have markdown fences)
+                        fixed = response.content.strip()
+                        if fixed.startswith("```"):
+                            lines = fixed.split('\n')
+                            fixed = '\n'.join(lines[1:-1] if lines[-1] == '```' else lines[1:])
+                        
+                        with open(issue.file_path, 'w', encoding='utf-8') as f:
+                            f.write(fixed)
+                        
+                        self.stats["ollama_fixes"] += 1
+                        return FixResult(
+                            success=True,
+                            issue=issue,
+                            fix_applied=f"Fixed: {issue.message[:50]}",
+                            tier_used="ollama"
+                        )
+            
+            # If we get here, fix failed - escalate to GPT-4o-mini
+            return await self._fix_with_gpt4o_mini(issue)
+            
+        except ImportError:
+            # Bridge not available, fallback
+            return await self._fix_with_gpt4o_mini(issue)
+        except Exception as e:
+            return FixResult(
+                success=False,
+                issue=issue,
+                error=f"Ollama error: {str(e)}",
+                tier_used="ollama"
+            )
     
     async def _fix_with_gpt4o_mini(self, issue: QualityIssue) -> FixResult:
         """Tier 2: GitHub Models GPT-4o-mini (cheap, creative)"""
