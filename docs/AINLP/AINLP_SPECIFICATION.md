@@ -1,9 +1,17 @@
 # AINLP Language Specification
 ## Artificial Intelligence Natural Language Programming
 
-**Version:** 2.0
-**Date:** November 14, 2025
-**Status:** Active Development
+**Version:** 2.0  
+**Date:** November 14, 2025  
+**Status:** Active Development  
+**Protocol:** OS0.6.4.claude
+
+---
+
+## Quick Reference
+
+For semantic trigger patterns (`AINLP.class[ACTION]` syntax), see:
+- **[AINLP_PATTERNS.md](AINLP_PATTERNS.md)** - Pattern catalog and usage guide
 
 ---
 

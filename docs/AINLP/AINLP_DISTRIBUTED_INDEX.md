@@ -25,7 +25,7 @@
 |------|----------|-------|--------|---------|
 | AINLP_SPECIFICATION.md | docs/AINLP/ | 959 | ACTIVE | Core language specification v2.0 (November 14, 2025) |
 | AINLP_HUMAN.md | docs/AINLP/ | - | ACTIVE | Human-readable AINLP guide |
-| AINLP_PATTERNS.md | docs/AINLP/ | - | NEW | Quick reference pattern catalog (to be created) |
+| AINLP_PATTERNS.md | docs/AINLP/ | 180 | ACTIVE | Quick reference pattern catalog (AINLP.class[ACTION] syntax) |
 | AINLP_DISTRIBUTED_INDEX.md | docs/AINLP/ | - | ACTIVE | This file - master documentation index |
 
 ### Evolution & Optimization
