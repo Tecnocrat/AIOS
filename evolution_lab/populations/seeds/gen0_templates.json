@@ -1,0 +1,78 @@
+{
+  "extracted_from": "pop_20251205_064038_gen000_20251205_064038.json",
+  "extraction_date": "2025-12-05T06:58:05.471708Z",
+  "archetypes": {
+    "os_tools": {
+      "organism_id": "org_os_tools_gen0_35f6ad",
+      "archetype": "os_tools",
+      "code_length": 163,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    },
+    "cli_applications": {
+      "organism_id": "org_cli_applications_gen0_d8a2d6",
+      "archetype": "cli_applications",
+      "code_length": 116,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    },
+    "web_services": {
+      "organism_id": "org_web_services_gen0_0ad675",
+      "archetype": "web_services",
+      "code_length": 341,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    },
+    "abstract_objects": {
+      "organism_id": "org_abstract_objects_gen0_242550",
+      "archetype": "abstract_objects",
+      "code_length": 210,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    },
+    "network_tools": {
+      "organism_id": "org_network_tools_gen0_0cb51a",
+      "archetype": "network_tools",
+      "code_length": 279,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    },
+    "data_science": {
+      "organism_id": "org_data_science_gen0_18d640",
+      "archetype": "data_science",
+      "code_length": 140,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    },
+    "automation": {
+      "organism_id": "org_automation_gen0_32ffaf",
+      "archetype": "automation",
+      "code_length": 146,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    },
+    "game_logic": {
+      "organism_id": "org_game_logic_gen0_5bf6f8",
+      "archetype": "game_logic",
+      "code_length": 234,
+      "complexity_score": 0.1,
+      "metadata": {
+        "seed_source": "pop_20251205_064038_gen000_20251205_064038.json"
+      }
+    }
+  }
+}

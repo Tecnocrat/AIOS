@@ -1,0 +1,35 @@
+{
+  "population_id": "pop_20251205_064152",
+  "created": "2025-12-05T06:41:52.665798Z",
+  "generations": [
+    {
+      "generation": 0,
+      "file": "pop_20251205_064152_gen000_20251205_064152.json",
+      "organism_count": 8,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.0,
+      "timestamp": "2025-12-05T06:41:52.674734Z"
+    },
+    {
+      "generation": 0,
+      "file": "pop_20251205_064152_gen000_20251205_064152.json",
+      "organism_count": 8,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.0,
+      "timestamp": "2025-12-05T06:41:52.719866Z"
+    },
+    {
+      "generation": 1,
+      "file": "pop_20251205_064152_gen001_20251205_065036.json",
+      "organism_count": 8,
+      "average_complexity": 0.1,
+      "average_fitness": 0.6022,
+      "consciousness": 0.991,
+      "timestamp": "2025-12-05T06:50:36.232917Z"
+    }
+  ],
+  "latest_generation": 1,
+  "latest_file": "pop_20251205_064152_gen001_20251205_065036.json"
+}

@@ -1,0 +1,26 @@
+{
+  "population_id": "pop_20251205_064038",
+  "created": "2025-12-05T06:40:38.614720Z",
+  "generations": [
+    {
+      "generation": 0,
+      "file": "pop_20251205_064038_gen000_20251205_064038.json",
+      "organism_count": 8,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.0,
+      "timestamp": "2025-12-05T06:40:38.617426Z"
+    },
+    {
+      "generation": 0,
+      "file": "pop_20251205_064038_gen000_20251205_064038.json",
+      "organism_count": 8,
+      "average_complexity": 0.1,
+      "average_fitness": 0.5,
+      "consciousness": 0.0,
+      "timestamp": "2025-12-05T06:40:38.652237Z"
+    }
+  ],
+  "latest_generation": 0,
+  "latest_file": "pop_20251205_064038_gen000_20251205_064038.json"
+}
