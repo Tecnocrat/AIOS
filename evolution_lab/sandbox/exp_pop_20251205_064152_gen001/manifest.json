@@ -1,0 +1,40 @@
+{
+  "population_id": "pop_20251205_064152",
+  "generation": 1,
+  "generated_at": "2025-12-05T06:59:26.593879Z",
+  "organisms": [
+    {
+      "file": "org_abstract_objects_gen0_129ee8.py",
+      "organism_id": "org_abstract_objects_gen0_129ee8"
+    },
+    {
+      "file": "org_game_logic_gen0_e828cd.py",
+      "organism_id": "org_game_logic_gen0_e828cd"
+    },
+    {
+      "file": "org_web_services_gen0_97c2ff.py",
+      "organism_id": "org_web_services_gen0_97c2ff"
+    },
+    {
+      "file": "org_automation_gen0_cd67b7.py",
+      "organism_id": "org_automation_gen0_cd67b7"
+    },
+    {
+      "file": "mut_org_abstract_objects_gen0_129ee8_064623.py",
+      "organism_id": "mut_org_abstract_objects_gen0_129ee8_064623"
+    },
+    {
+      "file": "org_game_logic_gen0_e828cd_clone_gen1.py",
+      "organism_id": "org_game_logic_gen0_e828cd_clone_gen1"
+    },
+    {
+      "file": "mut_org_web_services_gen0_97c2ff_064826.py",
+      "organism_id": "mut_org_web_services_gen0_97c2ff_064826"
+    },
+    {
+      "file": "mut_org_automation_gen0_cd67b7_065036.py",
+      "organism_id": "mut_org_automation_gen0_cd67b7_065036"
+    }
+  ],
+  "source_blueprint": "pop_20251205_064152_gen001_20251205_065036.json"
+}
