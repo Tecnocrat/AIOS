@@ -1,6 +1,72 @@
 {
-  "reorganization_date": "2025-12-05T06:56:47.506176Z",
-  "archived_populations": [],
+  "reorganization_date": "2025-12-05T06:58:05.400538Z",
+  "archived_populations": [
+    {
+      "folder": "pop_20251011_181057",
+      "destination": "archive/legacy_clones/pop_20251011_181057",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181333",
+      "destination": "archive/legacy_clones/pop_20251011_181333",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181334",
+      "destination": "archive/legacy_clones/pop_20251011_181334",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181338",
+      "destination": "archive/legacy_clones/pop_20251011_181338",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181610",
+      "destination": "archive/legacy_clones/pop_20251011_181610",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181611",
+      "destination": "archive/legacy_clones/pop_20251011_181611",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181612",
+      "destination": "archive/legacy_clones/pop_20251011_181612",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181718",
+      "destination": "archive/legacy_clones/pop_20251011_181718",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181719",
+      "destination": "archive/legacy_clones/pop_20251011_181719",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_181720",
+      "destination": "archive/legacy_clones/pop_20251011_181720",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_185346",
+      "destination": "archive/legacy_clones/pop_20251011_185346",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "pop_20251011_185347",
+      "destination": "archive/legacy_clones/pop_20251011_185347",
+      "reason": "legacy_clone_no_mutation"
+    },
+    {
+      "folder": "backup_20251018_124347",
+      "destination": "archive/legacy_clones/backup_20251018_124347",
+      "reason": "legacy_clone_no_mutation"
+    }
+  ],
   "active_populations": [
     {
       "file": "pop_20251205_064038_gen000_20251205_064038.json",
@@ -55,7 +121,7 @@
     }
   ],
   "summary": {
-    "total_archived": 0,
+    "total_archived": 13,
     "total_active": 6,
     "total_seeds": 1,
     "archive_structure": {

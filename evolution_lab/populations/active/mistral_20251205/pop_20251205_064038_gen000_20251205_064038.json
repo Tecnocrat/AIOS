@@ -1,0 +1,196 @@
+{
+  "population_id": "pop_20251205_064038",
+  "generation": 0,
+  "organism_count": 8,
+  "organisms": [
+    {
+      "organism_id": "org_os_tools_gen0_35f6ad",
+      "archetype": "os_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 163,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_os_tools_gen0_35f6ad",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_cli_applications_gen0_d8a2d6",
+      "archetype": "cli_applications",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 116,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_cli_applications_gen0_d8a2d6",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_web_services_gen0_0ad675",
+      "archetype": "web_services",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 341,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_web_services_gen0_0ad675",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_abstract_objects_gen0_242550",
+      "archetype": "abstract_objects",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 210,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_abstract_objects_gen0_242550",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_network_tools_gen0_0cb51a",
+      "archetype": "network_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 279,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_network_tools_gen0_0cb51a",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_data_science_gen0_18d640",
+      "archetype": "data_science",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 140,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_data_science_gen0_18d640",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_automation_gen0_32ffaf",
+      "archetype": "automation",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 146,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_automation_gen0_32ffaf",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_game_logic_gen0_5bf6f8",
+      "archetype": "game_logic",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 234,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_game_logic_gen0_5bf6f8",
+      "archetype_traits": {},
+      "fitness_breakdown": {},
+      "metadata": {
+        "seed": true
+      }
+    }
+  ],
+  "archetype_distribution": {
+    "os_tools": 1,
+    "cli_applications": 1,
+    "web_services": 1,
+    "abstract_objects": 1,
+    "network_tools": 1,
+    "data_science": 1,
+    "automation": 1,
+    "game_logic": 1
+  },
+  "knowledge_context": {
+    "python_index_path": "ai\\data\\knowledge\\python_314_index.json",
+    "pattern_library_size": 0,
+    "conversation_count": 0,
+    "complexity_trend": []
+  },
+  "consciousness_trajectory": [
+    0.3
+  ],
+  "selection_strategy": "fitness_elitism",
+  "average_complexity": 0.1,
+  "average_fitness": 0.5,
+  "metadata": {
+    "created": "2025-12-05T06:40:38.614720Z",
+    "size": 8,
+    "archetypes": [
+      "os_tools",
+      "cli_applications",
+      "web_services",
+      "abstract_objects",
+      "network_tools",
+      "data_science",
+      "automation",
+      "game_logic"
+    ]
+  },
+  "timestamp": "2025-12-05T06:40:38.618593Z"
+}

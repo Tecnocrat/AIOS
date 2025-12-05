@@ -1,0 +1,74 @@
+{
+  "population_id": "pop_mistral_20251205_001",
+  "generation": 0,
+  "mutation_engine": "aios-mistral",
+  "model": "mistral:7b-instruct",
+  "host": "HP_LAB",
+  "created": "2025-12-05T07:00:00Z",
+  "organisms": [
+    {
+      "organism_id": "org_utility_gen0_original",
+      "archetype": "utility_functions",
+      "generation": 0,
+      "parent_id": null,
+      "fitness_score": 0.5,
+      "complexity_score": 0.2,
+      "readability_score": 0.9,
+      "correctness_score": 1.0,
+      "evolution_potential": 0.5,
+      "code": "def calculate_sum(numbers):\n    total = 0\n    for n in numbers:\n        total = total + n\n    return total",
+      "code_length": 99,
+      "metadata": {
+        "seed": true,
+        "source": "mutation_test.py"
+      }
+    },
+    {
+      "organism_id": "org_utility_gen1_mistral_001",
+      "archetype": "utility_functions",
+      "generation": 1,
+      "parent_id": "org_utility_gen0_original",
+      "fitness_score": 0.725,
+      "complexity_score": 0.4,
+      "readability_score": 0.7,
+      "correctness_score": 1.0,
+      "evolution_potential": 0.8,
+      "code": "from typing import List\n\ndef calculate_sum(numbers: List) -> int:\n    try:\n        total = 0\n        for n in numbers:\n            total = total + n\n        return total\n    except TypeError as e:\n        raise ValueError(f\"Invalid input. Ensure the provided list contains only numeric values.\") from e",
+      "code_length": 293,
+      "mutation_info": {
+        "engine": "aios-mistral",
+        "archetype_prompt": "utility_functions",
+        "mutation_strength": 0.3,
+        "duration_ms": 22482,
+        "temperature": 0.62
+      },
+      "improvements": [
+        "Added type hints (List -> int)",
+        "Added error handling (try/except)",
+        "Added exception chaining (from e)",
+        "Improved documentation via types"
+      ],
+      "issues": [
+        "import exceptions is unused/incorrect",
+        "List should be List[int] or List[float]"
+      ],
+      "metadata": {
+        "seed": false,
+        "source": "aios-mistral mutation",
+        "first_successful_mutation": true
+      }
+    }
+  ],
+  "evolution_summary": {
+    "mutations_attempted": 1,
+    "mutations_successful": 1,
+    "fitness_delta": 0.225,
+    "complexity_delta": 0.2,
+    "evolution_potential_delta": 0.3
+  },
+  "session_info": {
+    "trace_file": "tachyonic/traces/2025-12-05_aios-mistral-integration.md",
+    "bridge_file": "ai/tools/aios_mistral_bridge.py",
+    "test_file": "ai/tools/mutation_test.py"
+  }
+}

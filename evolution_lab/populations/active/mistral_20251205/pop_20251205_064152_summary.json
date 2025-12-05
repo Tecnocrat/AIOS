@@ -1,0 +1,36 @@
+{
+  "population_id": "pop_20251205_064152",
+  "generations_evolved": 1,
+  "final_generation": 1,
+  "final_organism_count": 8,
+  "final_avg_fitness": 0.4285,
+  "final_avg_complexity": 0.1,
+  "final_consciousness": 0.977,
+  "consciousness_trajectory": [
+    0.3,
+    0.991,
+    0.991,
+    0.977
+  ],
+  "duration_seconds": 523.6,
+  "mutation_stats": {
+    "total_attempts": 4,
+    "successful": 3,
+    "failed": 1,
+    "success_rate": 75.0,
+    "avg_duration_ms": 50403.0
+  },
+  "evolution_history": [
+    {
+      "generation": 1,
+      "timestamp": "2025-12-05T06:50:36.133901Z",
+      "organism_count": 8,
+      "survivors": 4,
+      "mutations": 4,
+      "avg_fitness": 0.6022,
+      "avg_complexity": 0.1,
+      "consciousness": 0.991
+    }
+  ],
+  "timestamp": "2025-12-05T06:50:36.262633Z"
+}

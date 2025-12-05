@@ -1,0 +1,136 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:44:19.316743",
+  "folder_info": {
+    "name": "pop_20251011_181718",
+    "absolute_path": "C:\\dev\\AIOS\\evolution_lab\\populations\\pop_20251011_181718",
+    "relative_path": "evolution_lab\\populations\\pop_20251011_181718",
+    "parent_path": "evolution_lab\\populations",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "evolution_lab",
+      "populations",
+      "pop_20251011_181718"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "backup_20251018_124347",
+      "organisms",
+      "pop_20251011_181057",
+      "pop_20251011_181333",
+      "pop_20251011_181334",
+      "pop_20251011_181338",
+      "pop_20251011_181610",
+      "pop_20251011_181611",
+      "pop_20251011_181612",
+      "pop_20251011_181719",
+      "pop_20251011_181720",
+      "pop_20251011_185346",
+      "pop_20251011_185347"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 9449,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "pop_20251011_181718_gen000_20251011_181718.json",
+          "size": 8958,
+          "modified": "2025-10-11T20:17:18.569044",
+          "category": "documentation"
+        },
+        {
+          "name": "pop_20251011_181718_index.json",
+          "size": 491,
+          "modified": "2025-10-11T20:17:18.572050",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "pop_20251011_181718_index.json",
+        "size": 491,
+        "modified": "2025-10-11T20:17:18.572050",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "pop_20251011_181718_index.json",
+        "size": 491,
+        "modified": "2025-10-11T20:17:18.572050",
+        "category": "documentation"
+      },
+      {
+        "name": "pop_20251011_181718_gen000_20251011_181718.json",
+        "size": 8958,
+        "modified": "2025-10-11T20:17:18.569044",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "pop_20251011_181718_index.json"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "evolution_lab > populations > pop_20251011_181718",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations\\pop_20251011_181718' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations\\pop_20251011_181718' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\evolution_lab\\populations\\pop_20251011_181718' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "evolution_lab",
+      "docs\\evolution_lab",
+      "evolution_lab\\tachyonic_field\\evolution_lab",
+      "evolution_lab\\populations",
+      "evolution_lab\\tachyonic_field\\evolution_lab\\populations"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

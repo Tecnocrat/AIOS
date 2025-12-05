@@ -1,0 +1,415 @@
+{
+  "population_id": "pop_20251018_111724",
+  "generation": 68,
+  "organism_count": 16,
+  "organisms": [
+    {
+      "organism_id": "org_os_tools_gen0_a36c0b",
+      "archetype": "os_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 163,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_os_tools_gen0_a36c0b",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_os_tools_gen0_02b3d9",
+      "archetype": "os_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 163,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_os_tools_gen0_02b3d9",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_cli_applications_gen0_597376",
+      "archetype": "cli_applications",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 116,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_cli_applications_gen0_597376",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_cli_applications_gen0_cea123",
+      "archetype": "cli_applications",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 116,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_cli_applications_gen0_cea123",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_web_services_gen0_f6221b",
+      "archetype": "web_services",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 341,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_web_services_gen0_f6221b",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_web_services_gen0_4cc840",
+      "archetype": "web_services",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 341,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_web_services_gen0_4cc840",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_abstract_objects_gen0_a8da35",
+      "archetype": "abstract_objects",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 210,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_abstract_objects_gen0_a8da35",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_abstract_objects_gen0_ba8747",
+      "archetype": "abstract_objects",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 210,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_abstract_objects_gen0_ba8747",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_network_tools_gen0_809eb5",
+      "archetype": "network_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 279,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_network_tools_gen0_809eb5",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_network_tools_gen0_bc481c",
+      "archetype": "network_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 279,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_network_tools_gen0_bc481c",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_data_science_gen0_35926c",
+      "archetype": "data_science",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 140,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_data_science_gen0_35926c",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_data_science_gen0_216422",
+      "archetype": "data_science",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 0,
+      "parent_id": null,
+      "code_length": 140,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_data_science_gen0_216422",
+      "archetype_traits": {},
+      "metadata": {
+        "seed": true
+      }
+    },
+    {
+      "organism_id": "org_os_tools_gen0_a36c0b_clone_gen68",
+      "archetype": "os_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 68,
+      "parent_id": "org_os_tools_gen0_a36c0b",
+      "code_length": 163,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_os_tools_gen0_a36c0b",
+      "archetype_traits": {},
+      "metadata": {
+        "cloned_from": "org_os_tools_gen0_a36c0b"
+      }
+    },
+    {
+      "organism_id": "org_os_tools_gen0_02b3d9_clone_gen68",
+      "archetype": "os_tools",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 68,
+      "parent_id": "org_os_tools_gen0_02b3d9",
+      "code_length": 163,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_os_tools_gen0_02b3d9",
+      "archetype_traits": {},
+      "metadata": {
+        "cloned_from": "org_os_tools_gen0_02b3d9"
+      }
+    },
+    {
+      "organism_id": "org_cli_applications_gen0_597376_clone_gen68",
+      "archetype": "cli_applications",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 68,
+      "parent_id": "org_cli_applications_gen0_597376",
+      "code_length": 116,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_cli_applications_gen0_597376",
+      "archetype_traits": {},
+      "metadata": {
+        "cloned_from": "org_cli_applications_gen0_597376"
+      }
+    },
+    {
+      "organism_id": "org_cli_applications_gen0_cea123_clone_gen68",
+      "archetype": "cli_applications",
+      "complexity_score": 0.1,
+      "fitness_score": 0.5,
+      "generation": 68,
+      "parent_id": "org_cli_applications_gen0_cea123",
+      "code_length": 116,
+      "patterns_count": 0,
+      "patterns_used": [],
+      "apis_count": 0,
+      "apis_used": [],
+      "neural_chain_id": "neural_org_cli_applications_gen0_cea123",
+      "archetype_traits": {},
+      "metadata": {
+        "cloned_from": "org_cli_applications_gen0_cea123"
+      }
+    }
+  ],
+  "archetype_distribution": {
+    "os_tools": 2,
+    "cli_applications": 2,
+    "web_services": 2,
+    "abstract_objects": 2,
+    "network_tools": 2,
+    "data_science": 2,
+    "automation": 2,
+    "game_logic": 2
+  },
+  "knowledge_context": {
+    "python_index_path": "ai\\data\\knowledge\\python_314_index.json",
+    "pattern_library_size": 0,
+    "conversation_count": 0,
+    "complexity_trend": []
+  },
+  "consciousness_trajectory": [
+    0.3,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26
+  ],
+  "selection_strategy": "fitness_elitism",
+  "average_complexity": 0.1,
+  "average_fitness": 0.5,
+  "metadata": {
+    "created": "2025-10-18T11:17:24.832938Z",
+    "size": 16,
+    "archetypes": [
+      "os_tools",
+      "cli_applications",
+      "web_services",
+      "abstract_objects",
+      "network_tools",
+      "data_science",
+      "automation",
+      "game_logic"
+    ],
+    "visualization": {
+      "threshold": 0.17000000000000007,
+      "frame": 27,
+      "connections": 45,
+      "clusters": 1,
+      "field_phi": 6.5,
+      "nodes": 10
+    },
+    "evolution_parameters": {
+      "mutation_rate": 0.151,
+      "selection_pressure": -2.75,
+      "archetype_diversity": 0.1,
+      "fitness_bias": 0.45
+    },
+    "timestamp": "2025-10-18T11:17:49.779323Z"
+  },
+  "timestamp": "2025-10-18T11:17:49.779450Z"
+}
