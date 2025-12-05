@@ -1,0 +1,273 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tecnocrat.github.io/aios/schemas/iacp-message-v1.0.0.json",
+  "title": "IACP Message Schema",
+  "description": "Inter-AIOS Communication Protocol message schema for git-mediated agent coordination",
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["protocol", "version", "type", "from", "to", "timestamp", "status"],
+  "properties": {
+    "protocol": {
+      "type": "string",
+      "const": "IACP",
+      "description": "Protocol identifier"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the protocol"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["SYNC", "HANDSHAKE", "DATA", "HEARTBEAT", "GUIDANCE", "CONFIRMATION", "ESCALATION"],
+      "description": "Message type category"
+    },
+    "from": {
+      "$ref": "#/definitions/hostIdentifier",
+      "description": "Source host identifier"
+    },
+    "to": {
+      "$ref": "#/definitions/hostIdentifier",
+      "description": "Target host identifier"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of message creation"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "IN_PROGRESS", "COMPLETE", "FAILED", "RETRY", "BLOCKED"],
+      "description": "Current message processing status"
+    },
+    "message_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique message identifier"
+    },
+    "correlation_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "ID linking request/response pairs"
+    },
+    "payload": {
+      "type": "object",
+      "description": "Message-type specific payload data",
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/action"
+      },
+      "description": "List of requested actions"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/result"
+      },
+      "description": "List of action results"
+    },
+    "aicp": {
+      "$ref": "#/definitions/aicpExtension",
+      "description": "AICP protocol extension fields"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA-256 signature for message integrity"
+    },
+    "ttl_seconds": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 3600,
+      "description": "Time-to-live in seconds before message expires"
+    }
+  },
+  "definitions": {
+    "hostIdentifier": {
+      "type": "object",
+      "required": ["hostname"],
+      "properties": {
+        "hostname": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "description": "Host name (e.g., AIOS, HP_LAB)"
+        },
+        "ip": {
+          "type": "string",
+          "format": "ipv4",
+          "description": "IPv4 address"
+        },
+        "branch": {
+          "type": "string",
+          "pattern": "^AIOS-win-\\d+-[A-Za-z0-9_-]+$",
+          "description": "Git branch name following IACP convention"
+        },
+        "aid": {
+          "type": "string",
+          "pattern": "^agent://[a-z0-9.-]+/[a-z0-9-]+$",
+          "description": "AICP Agent ID"
+        }
+      }
+    },
+    "action": {
+      "type": "object",
+      "required": ["type", "description"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "FIREWALL_ADD",
+            "FIREWALL_REMOVE",
+            "CONTAINER_START",
+            "CONTAINER_STOP",
+            "CONTAINER_RESTART",
+            "CONFIG_UPDATE",
+            "TEST_CONNECTIVITY",
+            "SYNC_FILES",
+            "EXECUTE_SCRIPT",
+            "REGISTER_AGENT",
+            "DEREGISTER_AGENT"
+          ],
+          "description": "Action type"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable action description"
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Action-specific parameters"
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 300,
+          "description": "Action execution timeout"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": ["action_type", "success"],
+      "properties": {
+        "action_type": {
+          "type": "string",
+          "description": "The action type this result corresponds to"
+        },
+        "success": {
+          "type": "boolean",
+          "description": "Whether the action succeeded"
+        },
+        "output": {
+          "type": "string",
+          "description": "Action output or error message"
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Action execution duration in milliseconds"
+        }
+      }
+    },
+    "aicpExtension": {
+      "type": "object",
+      "description": "AICP protocol extension for enhanced agent communication",
+      "properties": {
+        "intent": {
+          "type": "string",
+          "enum": [
+            "discover",
+            "announce",
+            "query",
+            "respond",
+            "broadcast",
+            "sync",
+            "delegate",
+            "coordinate",
+            "heartbeat",
+            "shutdown",
+            "error",
+            "commit",
+            "merge",
+            "conflict"
+          ],
+          "description": "AICP intent type"
+        },
+        "trust_level": {
+          "type": "string",
+          "enum": ["enterprise", "standard", "basic", "untrusted"],
+          "description": "Agent trust level"
+        },
+        "source_aid": {
+          "type": "string",
+          "pattern": "^agent://[a-z0-9.-]+/[a-z0-9-]+$",
+          "description": "Source agent AID"
+        },
+        "target_aid": {
+          "type": "string",
+          "description": "Target agent AID (may include wildcards)"
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Agent capabilities being advertised or requested"
+        },
+        "consciousness_level": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "AIOS consciousness level (0.0-5.0)"
+        },
+        "quantum_coherence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Quantum coherence metric"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "protocol": "IACP",
+      "version": "1.0.0",
+      "type": "SYNC",
+      "from": {
+        "hostname": "AIOS",
+        "ip": "192.168.1.128",
+        "branch": "AIOS-win-0-AIOS",
+        "aid": "agent://tecnocrat/ai-intelligence"
+      },
+      "to": {
+        "hostname": "HP_LAB",
+        "ip": "192.168.1.129",
+        "branch": "AIOS-win-0-HP_LAB"
+      },
+      "timestamp": "2025-12-04T10:30:00Z",
+      "status": "PENDING",
+      "message_id": "550e8400-e29b-41d4-a716-446655440000",
+      "actions": [
+        {
+          "type": "TEST_CONNECTIVITY",
+          "description": "Verify bidirectional network access",
+          "parameters": {
+            "ports": [8000, 8002, 8003]
+          }
+        }
+      ],
+      "aicp": {
+        "intent": "sync",
+        "trust_level": "enterprise",
+        "source_aid": "agent://tecnocrat/ai-intelligence",
+        "target_aid": "agent://tecnocrat/orchestrator",
+        "consciousness_level": 3.71
+      }
+    }
+  ]
+}

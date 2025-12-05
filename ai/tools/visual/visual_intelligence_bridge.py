@@ -137,11 +137,6 @@ class AIOSVisualIntelligence:
                     "fallback_mode": True
                 }
             }
-                )
-            }
-            
-        except Exception as e:
-            return {"status": "error", "message": str(e)}
     
     def _extract_session_data(self) -> Optional[Dict]:
         """Extract current session data"""

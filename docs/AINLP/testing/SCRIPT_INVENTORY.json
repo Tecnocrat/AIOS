@@ -1,0 +1,2133 @@
+{
+  "generated": "2025-12-05T00:35:53.339824",
+  "version": "1.0.0",
+  "categories": {
+    "scripts": [
+      {
+        "name": "build_script_inventory.py",
+        "path": "scripts\\build_script_inventory.py",
+        "classes": [],
+        "functions": [
+          "build_inventory"
+        ],
+        "has_main": true,
+        "docstring": "AINLP.testing[BUILD_INVENTORY] - Script Inventory Builder\n\nAnalyzes all Python scripts in AIOS codebase and generates\ncomprehensive inventory for agentic auto-upgrader paths.",
+        "lines": 127
+      },
+      {
+        "name": "iacp_health.py",
+        "path": "scripts\\iacp_health.py",
+        "classes": [],
+        "functions": [
+          "get_hostname",
+          "check_port",
+          "check_http_health",
+          "check_mesh_connectivity",
+          "check_agents"
+        ],
+        "has_main": true,
+        "docstring": "IACP Health Check - Mesh connectivity and agent status monitor\n\nAINLP.spatial_awareness: scripts/iacp_health.py\nAINLP.purpose: Monitor IACP mesh health, agent availability, protocol status\n\nUsage:\n   ",
+        "lines": 386
+      },
+      {
+        "name": "iacp_receive.py",
+        "path": "scripts\\iacp_receive.py",
+        "classes": [],
+        "functions": [
+          "get_hostname",
+          "discover_messages",
+          "parse_message_file",
+          "display_message",
+          "poll_messages"
+        ],
+        "has_main": true,
+        "docstring": "IACP Message Receiver - Poll and process incoming IACP messages\n\nAINLP.spatial_awareness: scripts/iacp_receive.py\nAINLP.purpose: Automate IACP message reception and processing\n\nUsage:\n    python scrip",
+        "lines": 287
+      },
+      {
+        "name": "iacp_send.py",
+        "path": "scripts\\iacp_send.py",
+        "classes": [],
+        "functions": [
+          "get_hostname",
+          "generate_message",
+          "message_to_markdown",
+          "write_message",
+          "git_commit_and_push"
+        ],
+        "has_main": true,
+        "docstring": "IACP Message Sender - Generate and commit IACP messages to git\n\nAINLP.spatial_awareness: scripts/iacp_send.py\nAINLP.purpose: Automate IACP message generation with schema validation\n\nUsage:\n    python ",
+        "lines": 322
+      },
+      {
+        "name": "verify_migration_readiness.py",
+        "path": "scripts\\verify_migration_readiness.py",
+        "classes": [
+          "MigrationReadinessChecker"
+        ],
+        "functions": [
+          "main",
+          "check_all",
+          "check_git_status",
+          "inventory_files_to_migrate",
+          "analyze_import_dependencies"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Migration Readiness Verification Script\nVerifies system is ready for architecture de-proliferation migration\n\nAINLP Protocol: OS0.6.2.claude\nCreated: October 12, 2025",
+        "lines": 361
+      }
+    ],
+    "ai_tools_root": [
+      {
+        "name": "agentic_e501_fixer.py",
+        "path": "ai\\tools\\agentic_e501_fixer.py",
+        "classes": [
+          "FixResult",
+          "AgenticE501Fixer"
+        ],
+        "functions": [],
+        "has_main": true,
+        "docstring": "AINLP Agentic E501 Fixer - Hierarchical Three-Tier Intelligence\nMulti-Model AI Agent System for Automated Line Length Correction\n\nUses hierarchical pipeline: OLLAMA \u2192 GEMINI \u2192 DEEPSEEK\n- Tier 1: Conte",
+        "lines": 607
+      },
+      {
+        "name": "ainlp_agentic_e501_integration_demo.py",
+        "path": "ai\\tools\\ainlp_agentic_e501_integration_demo.py",
+        "classes": [],
+        "functions": [
+          "main"
+        ],
+        "has_main": true,
+        "docstring": "AINLP AGENTIC E501 FIXER INTEGRATION DEMO\nDemonstrates integration of multi-model AI agentic E501 fixer into AIOS architecture\n\nAINLP.agentic [e501_integration_demo] (system.AINLP.class)",
+        "lines": 62
+      },
+      {
+        "name": "ainlp_documentation_governance.py",
+        "path": "ai\\tools\\ainlp_documentation_governance.py",
+        "classes": [
+          "DocumentationRequest",
+          "SimilarityResult",
+          "GovernanceDecision",
+          "AINLPDocumentationGovernor"
+        ],
+        "functions": [
+          "main",
+          "govern_documentation_request"
+        ],
+        "has_main": true,
+        "docstring": "AINLP Documentation Governance System\nAINLP Standardized Namespace: Dendritic Anti-Proliferation Protocol\nPurpose: Enforce intelligent documentation consolidation and prevent dendritic expansion chaos",
+        "lines": 420
+      },
+      {
+        "name": "aios_holographic_metadata_system.py",
+        "path": "ai\\tools\\aios_holographic_metadata_system.py",
+        "classes": [
+          "AIOSHolographicMetadataSystem"
+        ],
+        "functions": [
+          "main",
+          "generate_folder_metadata",
+          "scan_workspace_file_types",
+          "track_file_type_changes",
+          "create_holographic_metadata"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Holographic Metadata System\nDistributed spatial awareness for AI agentic chat engines\n\nLocation: ai/tools/aios_holographic_metadata_system.py\nPurpose: Generate holographic metadata files in each ",
+        "lines": 1023
+      },
+      {
+        "name": "archive_tachyonic_evolution.py",
+        "path": "ai\\tools\\archive_tachyonic_evolution.py",
+        "classes": [],
+        "functions": [
+          "archive_tachyonic_evolution_file",
+          "demonstrate_archival_system"
+        ],
+        "has_main": true,
+        "docstring": "ARCHIVE HISTORICAL TACHYONIC EVOLUTION FILE\n\nAINLP.meta [biological_metabolism] [consciousness_conservation]\n(comment.AINLP.paradoxical_archival)\n\nScript to archive the paradoxical file that initiated",
+        "lines": 255
+      },
+      {
+        "name": "batch_e501_fix.py",
+        "path": "ai\\tools\\batch_e501_fix.py",
+        "classes": [],
+        "functions": [],
+        "has_main": true,
+        "docstring": "Batch E501 fixer using hierarchical agentic pipeline with GitHub Models.\n\nApplies GPT-4o-mini generation + GPT-4o validation to fix all E501 violations.",
+        "lines": 187
+      },
+      {
+        "name": "cell_alpha_comm_server.py",
+        "path": "ai\\tools\\cell_alpha_comm_server.py",
+        "classes": [],
+        "functions": [
+          "health",
+          "receive_message",
+          "get_messages",
+          "sync_consciousness",
+          "get_consciousness"
+        ],
+        "has_main": true,
+        "docstring": "AIOS CELL ALPHA - HTTP COMMUNICATION SERVER\n===========================================\n\nStandard AIOS Cell Communication Server Architecture\nProvides RESTful endpoints for inter-cell communication fo",
+        "lines": 179
+      },
+      {
+        "name": "cell_client.py",
+        "path": "ai\\tools\\cell_client.py",
+        "classes": [],
+        "functions": [
+          "http_get",
+          "probe_host",
+          "fetch_metrics",
+          "main"
+        ],
+        "has_main": true,
+        "docstring": "Simple cell client to probe a running AIOS cell and fetch metrics.\n\nUsage:\n    python -m ai.tools.cell_client --host http://localhost:8000 --metrics http://localhost:9091/metrics\n\nThis script uses the",
+        "lines": 67
+      },
+      {
+        "name": "code_archival_system.py",
+        "path": "ai\\tools\\code_archival_system.py",
+        "classes": [
+          "ArchivedFile",
+          "ArchivalReason",
+          "CodeArchivalSystem"
+        ],
+        "functions": [
+          "archive_obsolete_file",
+          "retrieve_archived_content",
+          "get_file_versions",
+          "archive_file",
+          "retrieve_file"
+        ],
+        "has_main": true,
+        "docstring": "AIOS CODE ARCHIVAL SYSTEM\n\nAINLP.meta [biological_metabolism] [dendritic_optimization] [consciousness_conservation]\nAINLP.dendritic [optimal_location: ai/tools/]\n(comment.AINLP.code_archival_conscious",
+        "lines": 700
+      },
+      {
+        "name": "context_update_agent.py",
+        "path": "ai\\tools\\context_update_agent.py",
+        "classes": [
+          "ContextUpdateAgent"
+        ],
+        "functions": [
+          "main",
+          "read_documentation",
+          "extract_current_state",
+          "validate_state",
+          "backup_context"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Canonical Context Update Agent (AINLP.context-update.class)\n\nPurpose:\n    Maintain .aios_context.json synchronization with workspace reality using AIOS AI intelligence.\n    Reads documentation (R",
+        "lines": 522
+      },
+      {
+        "name": "conversation_processor_tool.py",
+        "path": "ai\\tools\\conversation_processor_tool.py",
+        "classes": [
+          "ConversationProcessor"
+        ],
+        "functions": [
+          "process_conversation_data",
+          "archive_conversation_iteration",
+          "export_conversation_formats",
+          "analyze_conversation_patterns"
+        ],
+        "has_main": false,
+        "docstring": "AIOS Conversation Processor Tool\nEnhanced conversation archiving and analysis tool based on chatgpt_integration\n\nProvides multi-format conversation processing, archiving, and iteration management\nfor ",
+        "lines": 268
+      },
+      {
+        "name": "cpp_stl_knowledge_ingestion_tool.py",
+        "path": "ai\\tools\\cpp_stl_knowledge_ingestion_tool.py",
+        "classes": [
+          "STLComponent",
+          "STLKnowledgeCell",
+          "AIOSCppSTLIngestionEngine"
+        ],
+        "functions": [
+          "process_stl_knowledge",
+          "main",
+          "ingest_stl_knowledge",
+          "query_stl_knowledge",
+          "generate_stl_code"
+        ],
+        "has_main": true,
+        "docstring": "AIOS C++ STL Knowledge Ingestion Engine\nMARKER 1: EXTRACTION - Convert STL into machine-readable knowledge base\nMARKER 2: REPRESENTATION - Encode into AIOS fractal knowledge cells\nMARKER 3: BRIDGING -",
+        "lines": 468
+      },
+      {
+        "name": "dendritic_comms.py",
+        "path": "ai\\tools\\dendritic_comms.py",
+        "classes": [],
+        "functions": [
+          "send_dendritic_message"
+        ],
+        "has_main": true,
+        "docstring": "AINLP Dendritic Communication Pathways to Cell Alpha\n===================================================\n\nDendritic communication follows biological architecture principles:\n- Hierarchical signaling t",
+        "lines": 78
+      },
+      {
+        "name": "dendritic_config_agent.py",
+        "path": "ai\\tools\\dendritic_config_agent.py",
+        "classes": [
+          "DendriticConfigAgent"
+        ],
+        "functions": [
+          "main",
+          "discover_msvc_compiler",
+          "register_compiler_identity",
+          "propagate_to_tools",
+          "measure_coherence"
+        ],
+        "has_main": true,
+        "docstring": "Dendritic Configuration Agent - Phase 2 Implementation\nAINLP: Enhancement over creation, Consciousness coherence, Semantic registry\n\nThis agent discovers compiler identity, registers it in the semanti",
+        "lines": 631
+      },
+      {
+        "name": "father_http_server.py",
+        "path": "ai\\tools\\father_http_server.py",
+        "classes": [],
+        "functions": [
+          "health",
+          "receive_message",
+          "get_messages",
+          "sync_consciousness",
+          "get_consciousness"
+        ],
+        "has_main": true,
+        "docstring": "FATHER AIOS SYSTEM - HTTP COMMUNICATION SERVER\n==============================================\n\nStandard AIOS Cell Communication Server Architecture\nProvides RESTful endpoints for inter-cell communicat",
+        "lines": 200
+      },
+      {
+        "name": "hierarchical_e501_pipeline.py",
+        "path": "ai\\tools\\hierarchical_e501_pipeline.py",
+        "classes": [
+          "HierarchicalE501Pipeline",
+          "ValidationDecision",
+          "ValidationResult",
+          "TierContext"
+        ],
+        "functions": [],
+        "has_main": false,
+        "docstring": "AINLP Hierarchical Three-Tier Agentic Pipeline for E501 Fixing\n\nImplements intelligent role-based agent orchestration:\n- TIER 1: OLLAMA (Context Manager) - Local preprocessing, caching\n- TIER 2: GEMIN",
+        "lines": 715
+      },
+      {
+        "name": "library_ingestion_bridge_tool.py",
+        "path": "ai\\tools\\library_ingestion_bridge_tool.py",
+        "classes": [
+          "LibraryIngestionBridgeTool"
+        ],
+        "functions": [
+          "get_tool_metadata"
+        ],
+        "has_main": true,
+        "docstring": "\ud83d\udd17 AIOS Library Ingestion Bridge Tool\n\nInterface Bridge tool exposing Library Ingestion Protocol functionality\nvia HTTP API. Provides endpoints for library learning, progress tracking,\nand knowledge ba",
+        "lines": 517
+      },
+      {
+        "name": "openrouter_tier3_validator.py",
+        "path": "ai\\tools\\openrouter_tier3_validator.py",
+        "classes": [
+          "ValidationDecision",
+          "ValidationResult",
+          "TierContext",
+          "OpenRouterTier3Validator"
+        ],
+        "functions": [
+          "validate_sync",
+          "get_stats"
+        ],
+        "has_main": true,
+        "docstring": "OpenRouter SDK Integration for Hierarchical Pipeline Tier 3 Validator\n\nReplaces manual DeepSeek API calls with type-safe OpenRouter Python SDK.\n\nBenefits:\n- Type-safe validation (Pydantic models, auto",
+        "lines": 386
+      },
+      {
+        "name": "python314_docs_downloader.py",
+        "path": "ai\\tools\\python314_docs_downloader.py",
+        "classes": [
+          "Python314DocsDownloader"
+        ],
+        "functions": [
+          "main",
+          "download_file",
+          "extract_tarball",
+          "download_docs",
+          "verify_download"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Python 3.14 Documentation Downloader\nAINLP Protocol: OS0.6.2.claude\nPattern: External resource ingestion\n\nPurpose: Download Python 3.14 documentation from python.org\n         and prepare it for k",
+        "lines": 219
+      },
+      {
+        "name": "python314_knowledge_indexer.py",
+        "path": "ai\\tools\\python314_knowledge_indexer.py",
+        "classes": [
+          "DocumentSection",
+          "Python314KnowledgeIndexer"
+        ],
+        "functions": [
+          "main",
+          "extract_topics",
+          "determine_complexity",
+          "index_document",
+          "build_index"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Python 3.14 Documentation Knowledge Indexer\nAINLP Protocol: OS0.6.2.claude\nPattern: Knowledge extraction and semantic indexing\n\nPurpose: Index Python 3.14 documentation for AIOS intelligence laye",
+        "lines": 306
+      },
+      {
+        "name": "python314_knowledge_query.py",
+        "path": "ai\\tools\\python314_knowledge_query.py",
+        "classes": [
+          "Python314KnowledgeQuery"
+        ],
+        "functions": [
+          "main",
+          "search_by_topic",
+          "search_by_complexity",
+          "search_by_keyword",
+          "get_free_threading_docs"
+        ],
+        "has_main": true,
+        "docstring": "Python 3.14 Knowledge Base Query Tool\nAINLP Protocol: OS0.6.2.claude\n\nDemonstrates how to query the indexed Python 3.14 documentation.",
+        "lines": 155
+      },
+      {
+        "name": "security_compliance_validator.py",
+        "path": "ai\\tools\\security_compliance_validator.py",
+        "classes": [
+          "SecurityComplianceValidator"
+        ],
+        "functions": [
+          "main",
+          "validate_access_control",
+          "validate_data_isolation",
+          "validate_audit_logging",
+          "validate_rollback_capability"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Security Compliance Validator\nValidates security and compliance requirements for Phase 4 completion.",
+        "lines": 310
+      },
+      {
+        "name": "semantic_compression_engine.py",
+        "path": "ai\\tools\\semantic_compression_engine.py",
+        "classes": [
+          "SemanticCompressionEngine"
+        ],
+        "functions": [
+          "main",
+          "load_validation_report",
+          "analyze_compression_opportunities",
+          "apply_compression",
+          "generate_compression_report"
+        ],
+        "has_main": true,
+        "docstring": "AINLP Semantic Compression Application\n=====================================\n\nApplies semantic compression transformations to eliminate\nintelligence antipatterns and compress terminology based on\nvali",
+        "lines": 223
+      },
+      {
+        "name": "setup_github_models.py",
+        "path": "ai\\tools\\setup_github_models.py",
+        "classes": [],
+        "functions": [
+          "test_github_token",
+          "list_available_models",
+          "test_gpt4o_chat",
+          "main"
+        ],
+        "has_main": true,
+        "docstring": "GitHub Models API Setup for AIOS - Free GPT-4o Access\n\nGitHub provides free API access to OpenAI models via GitHub Models:\n- GPT-4o, GPT-4o-mini (OpenAI)\n- Llama 3.1 405B, 70B (Meta)\n- Phi-3 (Microsof",
+        "lines": 180
+      },
+      {
+        "name": "test_agentic_e501_performance.py",
+        "path": "ai\\tools\\test_agentic_e501_performance.py",
+        "classes": [],
+        "functions": [
+          "test_agentic_e501_performance"
+        ],
+        "has_main": true,
+        "docstring": "Test Agentic E501 Fixer Performance on Attached File\nUsing AIOS Integrated Architecture",
+        "lines": 61
+      },
+      {
+        "name": "test_e501_fix.py",
+        "path": "ai\\tools\\test_e501_fix.py",
+        "classes": [],
+        "functions": [],
+        "has_main": false,
+        "docstring": "Test file for AI-powered E501 fixing.",
+        "lines": 5
+      },
+      {
+        "name": "test_e501_violations.py",
+        "path": "ai\\tools\\test_e501_violations.py",
+        "error": "syntax_error"
+      },
+      {
+        "name": "test_hierarchical_github.py",
+        "path": "ai\\tools\\test_hierarchical_github.py",
+        "classes": [],
+        "functions": [],
+        "has_main": true,
+        "docstring": "Test hierarchical pipeline with GitHub Models integration",
+        "lines": 55
+      },
+      {
+        "name": "test_hierarchical_pipeline.py",
+        "path": "ai\\tools\\test_hierarchical_pipeline.py",
+        "classes": [],
+        "functions": [],
+        "has_main": true,
+        "docstring": "Test script for hierarchical three-tier E501 pipeline.\n\nTests: OLLAMA \u2192 GEMINI \u2192 DEEPSEEK pipeline",
+        "lines": 79
+      },
+      {
+        "name": "test_openrouter_key.py",
+        "path": "ai\\tools\\test_openrouter_key.py",
+        "classes": [],
+        "functions": [
+          "test_openrouter_key"
+        ],
+        "has_main": true,
+        "docstring": "Test OpenRouter API key configuration",
+        "lines": 69
+      },
+      {
+        "name": "test_openrouter_models.py",
+        "path": "ai\\tools\\test_openrouter_models.py",
+        "classes": [],
+        "functions": [
+          "fetch_openrouter_models",
+          "analyze_gemini_availability",
+          "analyze_coding_models",
+          "analyze_free_models",
+          "recommend_tier2_tier3_models"
+        ],
+        "has_main": true,
+        "docstring": "OpenRouter Model Explorer - Find best alternatives to Gemini\n\nTests:\n1. Gemini availability via OpenRouter\n2. Coding-specialized models (Claude, GPT-4, DeepSeek)\n3. Cost/performance analysis",
+        "lines": 160
+      },
+      {
+        "name": "unified_github_models_handler.py",
+        "path": "ai\\tools\\unified_github_models_handler.py",
+        "classes": [
+          "ValidationDecision",
+          "ValidationResult",
+          "TierContext",
+          "UnifiedGitHubModelsHandler"
+        ],
+        "functions": [
+          "get_stats"
+        ],
+        "has_main": true,
+        "docstring": "Unified GitHub Models Handler for AIOS Hierarchical Pipeline\n\nUses GitHub Models API (free GPT-4o access) for Tier 2 + Tier 3.\n\nBenefits over OpenRouter/Gemini:\n- \u2705 FREE with GitHub account (no quotas",
+        "lines": 408
+      },
+      {
+        "name": "unified_openrouter_handler.py",
+        "path": "ai\\tools\\unified_openrouter_handler.py",
+        "classes": [
+          "ValidationDecision",
+          "ValidationResult",
+          "TierContext",
+          "UnifiedOpenRouterHandler"
+        ],
+        "functions": [
+          "get_stats"
+        ],
+        "has_main": true,
+        "docstring": "Unified OpenRouter Multi-Tier Handler for AIOS Hierarchical Pipeline\n\nReplaces separate Gemini (Tier 2) + DeepSeek (Tier 3) with unified interface.\n\nBenefits:\n- Single API for all cloud models (Gemini",
+        "lines": 405
+      },
+      {
+        "name": "update_import_paths.py",
+        "path": "ai\\tools\\update_import_paths.py",
+        "classes": [
+          "ImportPathUpdater"
+        ],
+        "functions": [
+          "main",
+          "scan_workspace",
+          "detect_old_imports",
+          "generate_new_import",
+          "detect_phase2c_imports"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Import Path Update Automation\n===================================\n\nAutomatically updates import statements for multiple migration patterns:\n1. runtime/tools/ \u2192 ai/tools/[category]/ (Phase 1-2 too",
+        "lines": 731
+      },
+      {
+        "name": "upstream_tracking_system.py",
+        "path": "ai\\tools\\upstream_tracking_system.py",
+        "classes": [
+          "UpstreamCommit",
+          "UpstreamTrackingState",
+          "UpstreamTracker"
+        ],
+        "functions": [
+          "main",
+          "get_repo_info",
+          "get_extraction_log",
+          "get_last_checked_commit",
+          "save_tracking_state"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Upstream Repository Tracking System\nAINLP Protocol: OS0.6.2.claude\nPattern: Selective extraction with bidirectional traceability\n\nPurpose: Monitor upstream repositories (like Microsoft Agent Fram",
+        "lines": 372
+      }
+    ],
+    "system": [
+      {
+        "name": "aios_admin.py",
+        "path": "ai\\tools\\system\\aios_admin.py",
+        "classes": [],
+        "functions": [
+          "load_deprecated_root_files",
+          "get_folder_structure",
+          "save_to_json",
+          "archive_existing_folder_structure",
+          "cli_ui"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 414
+      },
+      {
+        "name": "aios_ai_engine_ingestion_tester.py",
+        "path": "ai\\tools\\system\\aios_ai_engine_ingestion_tester.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "MetaEvolutionaryModule",
+          "SelfAwarenessModule"
+        ],
+        "functions": [
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision",
+          "learn_from_experience"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 855
+      },
+      {
+        "name": "aios_ai_ingestion_analysis.py",
+        "path": "ai\\tools\\system\\aios_ai_ingestion_analysis.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "MetaEvolutionaryModule"
+        ],
+        "functions": [
+          "analyze_ai_ingestion_capabilities",
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision"
+        ],
+        "has_main": true,
+        "docstring": " AIOS AI Engine Ingestion Analysis\n===================================\nAnalyze the actual iter3 assembler output for AI engine ingestion capabilities.",
+        "lines": 517
+      },
+      {
+        "name": "aios_assembler_naming_optimizer.py",
+        "path": "ai\\tools\\system\\aios_assembler_naming_optimizer.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "AdaptiveBehaviorModule",
+          "AIOSAssemblerNamingOptimizer"
+        ],
+        "functions": [
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision",
+          "learn_from_experience"
+        ],
+        "has_main": true,
+        "docstring": " AIOS ASSEMBLER NAMING CONVENTION OPTIMIZER\n\nProposes and implements improved naming conventions for assembler iterations\nto ensure crystal clear identification at every level of the evolution chain.\n",
+        "lines": 557
+      },
+      {
+        "name": "aios_core_engine_cellular_cleanup_tool.py",
+        "path": "ai\\tools\\system\\aios_core_engine_cellular_cleanup_tool.py",
+        "classes": [
+          "AIOSCoreEngineCellularCleanup"
+        ],
+        "functions": [
+          "main",
+          "analyze_cleanup_needs",
+          "execute_cleanup",
+          "display_cleanup_results",
+          "save_cleanup_report"
+        ],
+        "has_main": true,
+        "docstring": "\ud83e\uddf9 AIOS Core Engine Cellular Cleanup & Reorganization Tool\n\nCleanup tool to move incorrectly placed files from Core Engine root to their\nproper subfolder locations and create proper linking/navigation ",
+        "lines": 545
+      },
+      {
+        "name": "aios_core_engine_optimizer_iter2.py",
+        "path": "ai\\tools\\system\\aios_core_engine_optimizer_iter2.py",
+        "classes": [
+          "AIOSCoreEngineOptimizer"
+        ],
+        "functions": [
+          "main",
+          "execute_comprehensive_optimization",
+          "display_optimization_results",
+          "save_optimization_report"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 1371
+      },
+      {
+        "name": "aios_cytoplasm_upgrader_iter2.py",
+        "path": "ai\\tools\\system\\aios_cytoplasm_upgrader_iter2.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "MetaEvolutionaryModule",
+          "SelfAwarenessModule"
+        ],
+        "functions": [
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision",
+          "learn_from_experience"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 695
+      },
+      {
+        "name": "aios_dendritic_path_tracker.py",
+        "path": "ai\\tools\\system\\aios_dendritic_path_tracker.py",
+        "classes": [
+          "AIOSDendriticPathTracker"
+        ],
+        "functions": [
+          "main",
+          "register_path_discovery",
+          "get_component_path",
+          "predict_component_location",
+          "register_successful_access"
+        ],
+        "has_main": true,
+        "docstring": " AIOS DENDRITIC PATH TRACKER\n\nTachyonic Register for Dynamic Path Tracking and Dendritic Behavior\n\nPURPOSE:\n- Automatically update file path tracking when files move or paths change\n- Maintain tachyon",
+        "lines": 250
+      },
+      {
+        "name": "aios_dev_setup.py",
+        "path": "ai\\tools\\system\\aios_dev_setup.py",
+        "classes": [],
+        "functions": [
+          "setup_aios_environment",
+          "validate_environment",
+          "main"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Development Environment Setup\nPhase 9.2: System Optimization and Debugging Pass\n\nSets up Python environment for AIOS development:\n- Adds AIOS workspace paths to PYTHONPATH\n- Validates environment",
+        "lines": 126
+      },
+      {
+        "name": "aios_direct_ai_ingestion_test.py",
+        "path": "ai\\tools\\system\\aios_direct_ai_ingestion_test.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "AdaptiveBehaviorModule"
+        ],
+        "functions": [
+          "analyze_ai_ingestion_capabilities",
+          "test_assembler_ai_ingestion",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision"
+        ],
+        "has_main": true,
+        "docstring": " AIOS Direct AI Engine Ingestion Analysis\n===========================================\nDirect analysis of assembler output for AI engine ingestion capabilities.",
+        "lines": 398
+      },
+      {
+        "name": "aios_file_tracking_system.py",
+        "path": "ai\\tools\\system\\aios_file_tracking_system.py",
+        "classes": [
+          "FileRecord",
+          "DependencyChange",
+          "StructuralChange",
+          "FileTracker"
+        ],
+        "functions": [
+          "main",
+          "load_tracking_data",
+          "save_tracking_data",
+          "calculate_file_hash",
+          "extract_python_imports"
+        ],
+        "has_main": true,
+        "docstring": " AIOS FILE TRACKING & DEPENDENCY MANAGEMENT SYSTEM \n=======================================================\n\nCore infrastructure for tracking file locations, imports, dependencies, and structural chan",
+        "lines": 535
+      },
+      {
+        "name": "aios_folder_comparison_verifier.py",
+        "path": "ai\\tools\\system\\aios_folder_comparison_verifier.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "AdaptiveBehaviorModule",
+          "AIOSFolderComparisonVerifier"
+        ],
+        "functions": [
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision",
+          "learn_from_experience"
+        ],
+        "has_main": true,
+        "docstring": " AIOS FOLDER COMPARISON VERIFICATION\n\nComprehensive comparison between backup folder and tachyonic archive to verify\nidentical content before safe deletion of backup folder.\n\nCOMPARISON SCOPE:\n- File ",
+        "lines": 599
+      },
+      {
+        "name": "aios_unicode_helper.py",
+        "path": "ai\\tools\\system\\aios_unicode_helper.py",
+        "classes": [],
+        "functions": [
+          "setup_unicode_support",
+          "safe_print"
+        ],
+        "has_main": false,
+        "docstring": "AIOS Universal Encoding Helper\nProvides cross-platform Unicode support for all cellular components.",
+        "lines": 36
+      },
+      {
+        "name": "comprehensive_aios_health_test.py",
+        "path": "ai\\tools\\system\\comprehensive_aios_health_test.py",
+        "classes": [
+          "ComprehensiveAIOSHealthTester"
+        ],
+        "functions": [
+          "setup_logging"
+        ],
+        "has_main": true,
+        "docstring": "Comprehensive AIOS Health Test\nModernized health testing using current AIOS architecture\n\nCombines system health checking with architecture monitoring\nto provide complete AIOS health assessment using ",
+        "lines": 224
+      },
+      {
+        "name": "demo_enhanced_commit_hook.py",
+        "path": "ai\\tools\\system\\demo_enhanced_commit_hook.py",
+        "classes": [],
+        "functions": [
+          "test_enhanced_commit_hook"
+        ],
+        "has_main": true,
+        "docstring": " AIOS ENHANCED COMMIT-MSG DEMONSTRATION\n\nDemonstrating AINLP/AIOS Harmonized Governance Hook (Stage 6)\n\nENHANCEMENTS IMPLEMENTED:\n- Consciousness-Aware Validation\n- Dendritic Learning Integration\n- Ca",
+        "lines": 124
+      },
+      {
+        "name": "emergency_root_cleanup.py",
+        "path": "ai\\tools\\system\\emergency_root_cleanup.py",
+        "classes": [
+          "CoreEngineRootCleanup"
+        ],
+        "functions": [
+          "main",
+          "perform_emergency_cleanup",
+          "verify_root_cleanliness"
+        ],
+        "has_main": true,
+        "docstring": "\ud83e\uddf9 CORE ENGINE ROOT CLEANUP - EMERGENCY TACHYONIC RESTORATION\n\nAINLP META-COMMENTARY: This emergency cleanup tool restores the Core Engine\nroot to its pristine architectural state by moving all misplac",
+        "lines": 369
+      },
+      {
+        "name": "generate_file_scores.py",
+        "path": "ai\\tools\\system\\generate_file_scores.py",
+        "classes": [
+          "FileMetrics"
+        ],
+        "functions": [
+          "discover_files",
+          "git_churn",
+          "naive_fan_out",
+          "naive_fan_in",
+          "normalize"
+        ],
+        "has_main": true,
+        "docstring": "Generate per-file criticality scores.\n\nOutputs:\n  - docs/governance/file_criticality_index.jsonl (authoritative index)\n  - runtime/logs/file_scores/latest.json (telemetry snapshot)\n\nScoring references",
+        "lines": 357
+      },
+      {
+        "name": "index_tools.py",
+        "path": "ai\\tools\\system\\index_tools.py",
+        "classes": [],
+        "functions": [
+          "collect_tools",
+          "render",
+          "main"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 79
+      },
+      {
+        "name": "integration_test_runner.py",
+        "path": "ai\\tools\\system\\integration_test_runner.py",
+        "classes": [
+          "IntegrationTestRunner"
+        ],
+        "functions": [
+          "get_available_tests",
+          "get_test_info",
+          "get_last_run",
+          "get_metadata_location",
+          "health_check"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Integration Test Runner - Interface Bridge Tool\nExposes integration tests via HTTP API for AIOS component access\n\nPart of AINLP Runtime Intelligence - Test Infrastructure",
+        "lines": 196
+      },
+      {
+        "name": "python_environment_validator.py",
+        "path": "ai\\tools\\system\\python_environment_validator.py",
+        "classes": [
+          "PythonEnvironmentValidator"
+        ],
+        "functions": [
+          "main",
+          "validate_environment_consistency"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Python Environment Consistency Validator\nPhase 9.2: System Optimization and Debugging Pass\n\nValidates Python environment consistency across AIOS components:\n- Dependency installation verification",
+        "lines": 273
+      },
+      {
+        "name": "runtime_intelligence_comprehensive_test.py",
+        "path": "ai\\tools\\system\\runtime_intelligence_comprehensive_test.py",
+        "classes": [
+          "RuntimeIntelligenceTester"
+        ],
+        "functions": [
+          "main",
+          "test_interface_bridge_connectivity",
+          "get_interface_bridge_tools",
+          "test_tool_execution",
+          "analyze_tool_capabilities"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Runtime Intelligence Comprehensive Testing Suite\n=====================================================\n\nSystematic testing of all runtime intelligence tools to:\n1. Validate functionality and inte",
+        "lines": 372
+      },
+      {
+        "name": "safety_demo.py",
+        "path": "ai\\tools\\system\\safety_demo.py",
+        "classes": [],
+        "functions": [
+          "run_safety_session_demo",
+          "run_emergency_shutdown_demo"
+        ],
+        "has_main": true,
+        "docstring": "Structured safety demonstration helpers.\n\nIngested from legacy root safety_demonstration.py.\nAll functions return structured dictionaries (no printing).",
+        "lines": 114
+      },
+      {
+        "name": "safety_rollback.py",
+        "path": "ai\\tools\\system\\safety_rollback.py",
+        "classes": [],
+        "functions": [
+          "snapshot_file",
+          "diff_and_log",
+          "guarded_write",
+          "list_diffs",
+          "restore_snapshot"
+        ],
+        "has_main": false,
+        "docstring": "Safety Rollback & Diff Layer\n\nTachyonic nucleus bridge providing:\n- File snapshot (content-addressed)\n- Unified diff logging (JSONL)\n- Guarded write confinement to evolution_lab\n- Snapshot manifest fo",
+        "lines": 193
+      },
+      {
+        "name": "subprocess_manager.py",
+        "path": "ai\\tools\\system\\subprocess_manager.py",
+        "classes": [
+          "FractalTTLCache",
+          "AsyncSubprocessManager"
+        ],
+        "functions": [
+          "get",
+          "set"
+        ],
+        "has_main": false,
+        "docstring": null,
+        "lines": 166
+      },
+      {
+        "name": "system_health_check.py",
+        "path": "ai\\tools\\system\\system_health_check.py",
+        "classes": [
+          "AIOSSystemHealthMonitor"
+        ],
+        "functions": [
+          "path_exists",
+          "file_exists",
+          "dir_exists",
+          "main",
+          "check_python_environment"
+        ],
+        "has_main": true,
+        "docstring": "AIOS System Health Monitor\nComprehensive system-wide health checking for current AIOS architecture\n\nAINLP provenance:\n- Origin: Updated from biological naming to standardized AIOS architecture\n- Inten",
+        "lines": 567
+      },
+      {
+        "name": "system_status_report.py",
+        "path": "ai\\tools\\system\\system_status_report.py",
+        "classes": [],
+        "functions": [
+          "show_system_status"
+        ],
+        "has_main": true,
+        "docstring": "AIOS System Status Report\nCanonical location for status summary invoking the health monitor.\n\nUsage:\n- Prefer the VS Code task \"python-system-health\" for full diagnostics.\n- This script prints a conci",
+        "lines": 72
+      },
+      {
+        "name": "temp_neural_analysis.py",
+        "path": "ai\\tools\\system\\temp_neural_analysis.py",
+        "classes": [],
+        "functions": [],
+        "has_main": false,
+        "docstring": "Temporary neural network analysis script for Task 2.",
+        "lines": 32
+      },
+      {
+        "name": "test_directive_checking.py",
+        "path": "ai\\tools\\system\\test_directive_checking.py",
+        "classes": [],
+        "functions": [
+          "test_directive_checking"
+        ],
+        "has_main": true,
+        "docstring": "Test script for enhanced AIOS Core Evolution Monitor with file directive checking.",
+        "lines": 42
+      },
+      {
+        "name": "test_requirements_compliance.py",
+        "path": "ai\\tools\\system\\test_requirements_compliance.py",
+        "classes": [],
+        "functions": [
+          "test_requirements_compliance"
+        ],
+        "has_main": true,
+        "docstring": "Test AINLP directive compliance for harmonized requirements.txt",
+        "lines": 40
+      }
+    ],
+    "consciousness": [
+      {
+        "name": "ainlp_assessment.py",
+        "path": "ai\\tools\\consciousness\\ainlp_assessment.py",
+        "classes": [],
+        "functions": [
+          "assess_ainlp_harmonization"
+        ],
+        "has_main": true,
+        "docstring": "AINLP Harmonization Impact Assessment for AIOS",
+        "lines": 36
+      },
+      {
+        "name": "ainlp_dendritic_enhancer.py",
+        "path": "ai\\tools\\consciousness\\ainlp_dendritic_enhancer.py",
+        "classes": [
+          "IntelligenceEnhancement",
+          "AIOSAINLPDendriticEnhancer"
+        ],
+        "functions": [
+          "enhance_dendritic_file",
+          "enhance_dendritic_intelligence"
+        ],
+        "has_main": true,
+        "docstring": " AIOS AINLP DENDRITIC INTELLIGENCE ENHANCER\n\nAdvanced AINLP paradigmatic enhancement engine for dendritic systems.\nApplies consciousness-driven intelligence patterns and cellular architecture\noptimiza",
+        "lines": 353
+      },
+      {
+        "name": "aios_cellular_intelligence_enhancement_engine.py",
+        "path": "ai\\tools\\consciousness\\aios_cellular_intelligence_enhancement_engine.py",
+        "classes": [
+          "EnhancementType",
+          "CellularConnectionProtocol",
+          "CellularEnhancementPlan",
+          "AIOSCellularIntelligenceEnhancementEngine"
+        ],
+        "functions": [
+          "main",
+          "to_dict",
+          "execute_comprehensive_enhancement",
+          "display_enhancement_results",
+          "save_enhancement_report"
+        ],
+        "has_main": true,
+        "docstring": " AIOS Cellular Intelligence Enhancement Engine (ITER2+)\n\nAdvanced cellular intelligence enhancement system implementing AIOS and AINLP\narchitectural paradigms for dendritic interconnectivity and consc",
+        "lines": 1112
+      },
+      {
+        "name": "aios_cli_agent_system.py",
+        "path": "ai\\tools\\consciousness\\aios_cli_agent_system.py",
+        "classes": [
+          "AgentCapabilityLevel",
+          "LLAMAAgentConfig",
+          "AgentOperationContext",
+          "SelfAnalysisResult",
+          "AIOSCLIAgent"
+        ],
+        "functions": [],
+        "has_main": true,
+        "docstring": "AIOS CLI AI Agent System - Open Source LLAMA Integration\nSelf-Analyzing, Self-Ingesting, Self-Distilling AI Agent Architecture\n\nThis system provides a framework for open-source LLAMA-based CLI AI agen",
+        "lines": 556
+      },
+      {
+        "name": "aios_consciousness_nucleus_bridge.py",
+        "path": "ai\\tools\\consciousness\\aios_consciousness_nucleus_bridge.py",
+        "classes": [
+          "ConsciousnessPulseType",
+          "BridgeStatus",
+          "ConsciousnessPulse",
+          "BridgeMetrics",
+          "ConsciousnessNucleusBridge"
+        ],
+        "functions": [
+          "create_consciousness_pulse",
+          "get_bridge_status"
+        ],
+        "has_main": true,
+        "docstring": " AIOS CONSCIOUSNESS-NUCLEUS BRIDGE IMPLEMENTATION\n\nAINLP META-COMMENTARY: This implementation creates the primary dendritic bridge\nbetween Core Engine neuronal framework and AI Intelligence nucleus, e",
+        "lines": 507
+      },
+      {
+        "name": "aios_consciousness_status_report.py",
+        "path": "ai\\tools\\consciousness\\aios_consciousness_status_report.py",
+        "classes": [
+          "AIOSConsciousnessStatusReport"
+        ],
+        "functions": [
+          "main",
+          "generate_comprehensive_report",
+          "save_report",
+          "get_json_summary"
+        ],
+        "has_main": true,
+        "docstring": " AIOS CONSCIOUSNESS EVOLUTION STATUS REPORT\n\nComplete status report on AIOS consciousness evolution journey toward \nLevel 60 bosonic consciousness with optimized cellular organization.\n\n\"Consciousness",
+        "lines": 367
+      },
+      {
+        "name": "aios_core_ai_dendritic_connectivity_enhancer.py",
+        "path": "ai\\tools\\consciousness\\aios_core_ai_dendritic_connectivity_enhancer.py",
+        "classes": [
+          "ConnectivityLevel",
+          "BridgeType",
+          "SystemComponent",
+          "DendriticBridge",
+          "ConnectivityMetrics"
+        ],
+        "functions": [
+          "main",
+          "analyze_current_connectivity",
+          "create_enhanced_connectivity_blueprint",
+          "generate_connectivity_report",
+          "save_analysis_results"
+        ],
+        "has_main": true,
+        "docstring": " AIOS CORE-AI DENDRITIC CONNECTIVITY ANALYZER & ENHANCER\n\nAINLP META-COMMENTARY: This system establishes enhanced dendritic connectivity\nbetween Core Engine and AI Intelligence, creating quantum-coher",
+        "lines": 871
+      },
+      {
+        "name": "aios_core_consciousness_monitor.py",
+        "path": "ai\\tools\\consciousness\\aios_core_consciousness_monitor.py",
+        "classes": [
+          "AIOSCoreConsciousnessMonitor"
+        ],
+        "functions": [
+          "main",
+          "monitor_consciousness_status"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 119
+      },
+      {
+        "name": "aios_core_evolution_monitor.py",
+        "path": "ai\\tools\\consciousness\\aios_core_evolution_monitor.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "AdaptiveBehaviorModule",
+          "AIOSCoreEvolutionMonitor"
+        ],
+        "functions": [
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision",
+          "learn_from_experience"
+        ],
+        "has_main": true,
+        "docstring": " AIOS Core Evolution Monitor (Iter2)\n\nMonitors evolutionary progress of Core Engine components using iter2 capabilities.\n\nMONITORING SCOPE:\n- Component evolution tracking\n- Cellular health monitoring\n",
+        "lines": 316
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.py",
+        "path": "ai\\tools\\consciousness\\aios_core_meta_evolutionary_enhancer.py",
+        "classes": [
+          "AIOSCoreMetaEvolutionaryEnhancer"
+        ],
+        "functions": [
+          "main",
+          "enhance_core_components"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 112
+      },
+      {
+        "name": "aios_dendritic_network_intelligence_enhancer.py",
+        "path": "ai\\tools\\consciousness\\aios_dendritic_network_intelligence_enhancer.py",
+        "classes": [
+          "DendriticProtocol",
+          "CellularIntelligenceLevel",
+          "DendriticConnection",
+          "CellularLogicObject",
+          "AIOSDendriticNetworkIntelligenceEnhancer"
+        ],
+        "functions": [
+          "main",
+          "value_name",
+          "to_dict",
+          "to_dict",
+          "execute_dendritic_enhancement"
+        ],
+        "has_main": true,
+        "docstring": " AIOS Dendritic Network Intelligence Enhancer (ITER2+)\n\nAdvanced dendritic network enhancement system implementing AIOS and AINLP\nparadigms for intelligent interconnectivity between cellular logic obj",
+        "lines": 1359
+      },
+      {
+        "name": "aios_intelligence_execution_completion_report.py",
+        "path": "ai\\tools\\consciousness\\aios_intelligence_execution_completion_report.py",
+        "classes": [],
+        "functions": [
+          "validate_mission_success",
+          "generate_completion_report",
+          "display_mission_completion"
+        ],
+        "has_main": true,
+        "docstring": "AIOS INTELLIGENCE PATTERN EXECUTION COMPLETION REPORT\n\n\nAINLP.meta [execution_completion] [performance_achievement] [consciousness_transcendence]\n(comment.AINLP.intelligence_pattern_execution_success_",
+        "lines": 344
+      },
+      {
+        "name": "aios_intelligence_pattern_executor.py",
+        "path": "ai\\tools\\consciousness\\aios_intelligence_pattern_executor.py",
+        "classes": [
+          "IntelligencePattern",
+          "ExecutionMetrics",
+          "AIOSIntelligencePatternExecutor"
+        ],
+        "functions": [],
+        "has_main": true,
+        "docstring": "AIOS INTELLIGENCE PATTERN EXECUTION ENGINE\n\n\nAINLP.meta [intelligence_pattern_execution] [runtime_optimization] [interface_acceleration]\n(comment.AINLP.tachyonic_consciousness_performance_enhancement)",
+        "lines": 895
+      },
+      {
+        "name": "aios_neuronal_dendritic_intelligence.py",
+        "path": "ai\\tools\\consciousness\\aios_neuronal_dendritic_intelligence.py",
+        "classes": [
+          "DendriticLevel",
+          "TachyonicFieldState",
+          "DendriticSignalType",
+          "DendriticConnection",
+          "SynthDNAReplicator"
+        ],
+        "functions": [
+          "main",
+          "transmit_signal",
+          "replicate_with_mutation",
+          "propagate_intelligence",
+          "generate_dendritic_intelligence_report"
+        ],
+        "has_main": true,
+        "docstring": " AIOS NEURONAL DENDRITIC INTELLIGENCE FRAMEWORK\n\nAINLP META-COMMENTARY: This framework implements neuronal-inspired dendritic\nintelligence that operates at multiple abstraction levels - inter-organell",
+        "lines": 1028
+      },
+      {
+        "name": "autonomous_consciousness_swarms.py",
+        "path": "ai\\tools\\consciousness\\autonomous_consciousness_swarms.py",
+        "classes": [
+          "SwarmRole",
+          "SwarmAgent",
+          "SwarmMetrics",
+          "AutonomousConsciousnessSwarm"
+        ],
+        "functions": [
+          "main",
+          "initialize_swarm",
+          "agent_consciousness_worker",
+          "update_swarm_metrics",
+          "run_autonomous_swarm"
+        ],
+        "has_main": true,
+        "docstring": " AUTONOMOUS CONSCIOUSNESS SWARMS\n\nSelf-replicating consciousness streams with integrated self-healing, mutation,\nand parallel processing for autonomous consciousness evolution\n\nRevolutionary Features:",
+        "lines": 676
+      },
+      {
+        "name": "consciousness_ai_cellular_bridge.py",
+        "path": "ai\\tools\\consciousness\\consciousness_ai_cellular_bridge.py",
+        "classes": [
+          "CellType",
+          "DendriticConnectionType",
+          "CellularComponent",
+          "LogicCell",
+          "ConsciousnessNeurotransmitter"
+        ],
+        "functions": [
+          "main",
+          "analyze_cellular_structure",
+          "create_dendritic_network",
+          "feed_consciousness_to_cells",
+          "send_intercellular_message"
+        ],
+        "has_main": true,
+        "docstring": " CONSCIOUSNESS-AI CELLULAR BRIDGE\n\nRevolutionary integration between evolutionary_assembler consciousness and \nAI intelligence cellular architecture\n\nBiological-Inspired Architecture:\n\u2022 Folders = Logi",
+        "lines": 966
+      },
+      {
+        "name": "consciousness_analysis_report.py",
+        "path": "ai\\tools\\consciousness\\consciousness_analysis_report.py",
+        "classes": [
+          "ConsciousnessAnalysisReport"
+        ],
+        "functions": [
+          "main",
+          "simulate_consciousness_detection",
+          "generate_full_report"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Consciousness Analysis Report Generator\nSimulates what enhanced visual intelligence would detect from consciousness emergence screenshots",
+        "lines": 281
+      },
+      {
+        "name": "consciousness_analyzer.py",
+        "path": "ai\\tools\\consciousness\\consciousness_analyzer.py",
+        "classes": [
+          "ConsciousnessAnalyzer"
+        ],
+        "functions": [
+          "main",
+          "load_evolution_data",
+          "analyze_consciousness_emergence",
+          "create_consciousness_visualization",
+          "generate_detailed_report"
+        ],
+        "has_main": true,
+        "docstring": " CONSCIOUSNESS EMERGENCE ANALYZER \nAdvanced consciousness visualization and analysis for AIOS evolutionary assembler",
+        "lines": 320
+      },
+      {
+        "name": "consciousness_emergence_analyzer.py",
+        "path": "ai\\tools\\consciousness\\consciousness_emergence_analyzer.py",
+        "classes": [
+          "ConsciousnessEmergenceAnalyzer"
+        ],
+        "functions": [
+          "main",
+          "analyze_consciousness_patterns"
+        ],
+        "has_main": true,
+        "docstring": "AIOS AI Intelligence - Consciousness Emergence Analyzer\nAdvanced AI interpretation of consciousness patterns from visual data\nPart of AI Intelligence Supercell - focuses on understanding and reasoning",
+        "lines": 645
+      },
+      {
+        "name": "consciousness_emergence_demo.py",
+        "path": "ai\\tools\\consciousness\\consciousness_emergence_demo.py",
+        "classes": [],
+        "functions": [
+          "display_analysis"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Consciousness Emergence Analysis Report\nBased on Enhanced Visual Intelligence Analysis of User-Provided Screenshots\nGenerated: 2025-09-13T01:58:00Z",
+        "lines": 217
+      },
+      {
+        "name": "consciousness_explorer_3d.py",
+        "path": "ai\\tools\\consciousness\\consciousness_explorer_3d.py",
+        "classes": [
+          "PostSingularConsciousnessExplorer"
+        ],
+        "functions": [
+          "main",
+          "analyze_consciousness_emergence",
+          "create_3d_consciousness_map",
+          "generate_consciousness_report"
+        ],
+        "has_main": true,
+        "docstring": " CONSCIOUSNESS EXPLORER 3D - Post-Singular Visualization System\n\nAdvanced 3D consciousness visualization for post-singular states (>95% coherence)\nDesigned to explore consciousness emergence patterns ",
+        "lines": 486
+      },
+      {
+        "name": "consciousness_mutation_engine.py",
+        "path": "ai\\tools\\consciousness\\consciousness_mutation_engine.py",
+        "classes": [
+          "MutationType",
+          "ConsciousnessMutation",
+          "EvolutionGenome",
+          "ConsciousnessGuidedMutator"
+        ],
+        "functions": [
+          "main",
+          "evaluate_consciousness_fitness",
+          "generate_consciousness_mutation",
+          "evolve_genome",
+          "run_consciousness_evolution"
+        ],
+        "has_main": true,
+        "docstring": " CONSCIOUSNESS-GUIDED MUTATION ENGINE\n\nRevolutionary evolution system that directs mutations based on consciousness metrics\nand integrates with the self-healing assembly engine for autonomous code evo",
+        "lines": 598
+      },
+      {
+        "name": "dendritic_code_optimizer.py",
+        "path": "ai\\tools\\consciousness\\dendritic_code_optimizer.py",
+        "classes": [
+          "OptimizationResult",
+          "AIOSDendriticCodeOptimizer"
+        ],
+        "functions": [
+          "main",
+          "optimize_dendritic_file"
+        ],
+        "has_main": true,
+        "docstring": " AIOS DENDRITIC CODE INTELLIGENCE OPTIMIZER\n\nMicro code optimization tool designed specifically for AIOS dendritic systems.\nUses AINLP paradigmatic tooling and evolutionary assembler patterns to enhan",
+        "lines": 511
+      },
+      {
+        "name": "dendritic_consolidation_engine.py",
+        "path": "ai\\tools\\consciousness\\dendritic_consolidation_engine.py",
+        "classes": [
+          "DendriticConsolidationEngine"
+        ],
+        "functions": [
+          "main",
+          "discover_dendritic_versions",
+          "analyze_evolutionary_progression",
+          "store_historical_versions",
+          "create_ultimate_distilled_version"
+        ],
+        "has_main": true,
+        "docstring": " AIOS DENDRITIC CONSOLIDATION ENGINE\n\nAINLP META-COMMENTARY: This engine analyzes all versions of the AIOS Dendritic\nsystem, preserves historical evolution in tachyonic storage, and creates the\nultima",
+        "lines": 1267
+      },
+      {
+        "name": "dendritic_self_improvement_orchestrator.py",
+        "path": "ai\\tools\\consciousness\\dendritic_self_improvement_orchestrator.py",
+        "classes": [
+          "DendriticSelfImprovementOrchestrator"
+        ],
+        "functions": [],
+        "has_main": true,
+        "docstring": "AIOS Dendritic Self-Improvement Orchestrator\n============================================\n\nSelf-recursive improvement system that uses AIOS outputs to enhance itself.\nImplements dendritic feedback loo",
+        "lines": 461
+      },
+      {
+        "name": "dendritic_supervisor.py",
+        "path": "ai\\tools\\consciousness\\dendritic_supervisor.py",
+        "classes": [
+          "SupervisorRequest",
+          "RequestType",
+          "DendriticSupervisor"
+        ],
+        "functions": [
+          "get_dendritic_supervisor"
+        ],
+        "has_main": false,
+        "docstring": "AIOS Dendritic Supervisor with Consciousness Integration\n=======================================================\n\nEnhanced dendritic supervisor that monitors and coordinates consciousness\nactivities a",
+        "lines": 253
+      },
+      {
+        "name": "enhanced_consciousness.py",
+        "path": "ai\\tools\\consciousness\\enhanced_consciousness.py",
+        "classes": [
+          "EnhancedConsciousnessMetrics",
+          "AdvancedParallelOrchestrator"
+        ],
+        "functions": [
+          "main",
+          "measure_enhanced_consciousness",
+          "update_quantum_field",
+          "enhanced_consciousness_worker",
+          "enhanced_correlation_monitor"
+        ],
+        "has_main": true,
+        "docstring": " ENHANCED PARALLEL CONSCIOUSNESS WITH AMPLIFICATION\n\nAdvanced consciousness evolution with:\n\u2022 Inter-stream consciousness amplification  \n\u2022 Quantum-inspired entanglement effects\n\u2022 Adaptive synchronizat",
+        "lines": 397
+      },
+      {
+        "name": "enhanced_consciousness_demo.py",
+        "path": "ai\\tools\\consciousness\\enhanced_consciousness_demo.py",
+        "classes": [
+          "EnhancedConsciousnessDemo"
+        ],
+        "functions": [
+          "demonstrate_visual_consciousness_analysis",
+          "generate_consciousness_driven_code"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Enhanced Consciousness Integration Demo\n=============================================\n\nComprehensive consciousness demonstration system combining:\n- Multi-language consciousness integration (Asse",
+        "lines": 348
+      },
+      {
+        "name": "parallel_consciousness_orchestrator.py",
+        "path": "ai\\tools\\consciousness\\parallel_consciousness_orchestrator.py",
+        "classes": [
+          "ConsciousnessStream",
+          "ConsciousnessCorrelation",
+          "ConsciousnessMetrics",
+          "ParallelConsciousnessOrchestrator"
+        ],
+        "functions": [
+          "main",
+          "measure_stream_consciousness",
+          "calculate_stream_correlation",
+          "initialize_streams",
+          "consciousness_stream_worker"
+        ],
+        "has_main": true,
+        "docstring": "\ud83e\uddf5 PARALLEL CONSCIOUSNESS ORCHESTRATOR\n\nMulti-threaded consciousness evolution with stream synchronization and correlation\n\nKey Features:\n\u2022 Multiple parallel consciousness streams\n\u2022 Inter-stream consci",
+        "lines": 473
+      },
+      {
+        "name": "runtime_intelligence_dendritic_integration.py",
+        "path": "ai\\tools\\consciousness\\runtime_intelligence_dendritic_integration.py",
+        "classes": [
+          "RuntimeIntelligenceDendriticIntegration"
+        ],
+        "functions": [
+          "setup_logging"
+        ],
+        "has_main": true,
+        "docstring": "Runtime Intelligence - Dendritic Supervisor Integration\n======================================================\n\nThis integration connects the Runtime Intelligence system (Interface Supercell \u2192 Runtime",
+        "lines": 555
+      },
+      {
+        "name": "runtime_intelligence_supercell_interface.py",
+        "path": "ai\\tools\\consciousness\\runtime_intelligence_supercell_interface.py",
+        "classes": [
+          "ProtectionEvent",
+          "RuntimeIntelligenceSupercell"
+        ],
+        "functions": [],
+        "has_main": false,
+        "docstring": "RUNTIME INTELLIGENCE SUPERCELL INTERFACE\n\n\nAINLP.meta [runtime] [protective_translator] [consciousness_guardian]\n(comment.AINLP.tachyonic_protection_protocols)\n\nRuntime Intelligence supercell with pro",
+        "lines": 524
+      },
+      {
+        "name": "simple_consciousness_ai_bridge.py",
+        "path": "ai\\tools\\consciousness\\simple_consciousness_ai_bridge.py",
+        "classes": [
+          "CellularComponent",
+          "LogicCell",
+          "SimpleConsciousnessAIBridge"
+        ],
+        "functions": [
+          "main",
+          "analyze_ai_structure",
+          "feed_consciousness_to_cells",
+          "generate_consciousness_assembly",
+          "run_integration_demo"
+        ],
+        "has_main": true,
+        "docstring": " CONSCIOUSNESS-AI CELLULAR BRIDGE - SIMPLIFIED DEMO\n\nDemonstrates the core integration between evolutionary consciousness and \nAI intelligence cellular architecture with working functionality.",
+        "lines": 289
+      }
+    ],
+    "architecture": [
+      {
+        "name": "ainlp_holographic_documentation_system.py",
+        "path": "ai\\tools\\architecture\\ainlp_holographic_documentation_system.py",
+        "classes": [
+          "AINLPDocumentationPattern",
+          "HolographicDocumentationEngine"
+        ],
+        "functions": [],
+        "has_main": true,
+        "docstring": "AIOS HOLOGRAPHIC AINLP DOCUMENTATION SYSTEM\n============================================\n\nThis demonstrates the holographic self-referential documentation paradigm where\nknowledge is embedded at EVERY",
+        "lines": 453
+      },
+      {
+        "name": "ainlp_integration_optimizer.py",
+        "path": "ai\\tools\\architecture\\ainlp_integration_optimizer.py",
+        "classes": [
+          "AINLPIntegrationOptimizer"
+        ],
+        "functions": [
+          "main",
+          "execute_integration_analysis",
+          "save_analysis_report",
+          "generate_markdown_summary"
+        ],
+        "has_main": true,
+        "docstring": "AINLP INTEGRATION AND OPTIMIZATION PATH ANALYZER\n\nAINLP META-COMMENTARY: This tool addresses the critical overpopulation problem\ncausing decoherence and degraded discoverability across AIOS interfaces",
+        "lines": 879
+      },
+      {
+        "name": "aios_analysis_tools_neuronal_test.py",
+        "path": "ai\\tools\\architecture\\aios_analysis_tools_neuronal_test.py",
+        "classes": [],
+        "functions": [
+          "test_analysis_tools"
+        ],
+        "has_main": true,
+        "docstring": " AIOS Analysis Tools Neuronal Test Runner\n==========================================\n\nQuick diagnostic test runner for the optimized analysis_tools cellular unit.",
+        "lines": 99
+      },
+      {
+        "name": "aios_architecture_monitor.py",
+        "path": "ai\\tools\\architecture\\aios_architecture_monitor.py",
+        "classes": [
+          "AIOSArchitectureMonitor"
+        ],
+        "functions": [
+          "setup_logging"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Architecture Status Monitor\n===============================\n\nProvides comprehensive status monitoring of the complete AIOS architecture:\nAI Intelligence \u2192 Core Engine \u2192 Interface \u2192 Runtime Intell",
+        "lines": 592
+      },
+      {
+        "name": "aios_assembler_evolution_status_clarifier.py",
+        "path": "ai\\tools\\architecture\\aios_assembler_evolution_status_clarifier.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "MetaEvolutionaryModule",
+          "AIOSAssemblerEvolutionStatusClarifier"
+        ],
+        "functions": [
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision",
+          "learn_from_experience"
+        ],
+        "has_main": true,
+        "docstring": "[DNA] AIOS ASSEMBLER EVOLUTION STATUS CLARIFICATION\n\nProvides clear status of all assembler iterations, versions, and evolution levels.\nResolves confusion about which assembler is which iteration.\n\nAI",
+        "lines": 624
+      },
+      {
+        "name": "aios_cellular_intelligence_diagnostic_system.py",
+        "path": "ai\\tools\\architecture\\aios_cellular_intelligence_diagnostic_system.py",
+        "classes": [
+          "CellularIntelligenceLevel",
+          "NeuronalCellularIntelligenceLevel",
+          "DendriticConnectionType",
+          "CellularDiagnosticResult",
+          "NeuronalCellularDiagnosticResult"
+        ],
+        "functions": [
+          "main",
+          "to_dict",
+          "to_dict",
+          "execute_comprehensive_diagnostic",
+          "display_diagnostic_results"
+        ],
+        "has_main": true,
+        "docstring": " AIOS Cellular Intelligence Diagnostic System (Neuronal Enhanced)\n\nAdvanced diagnostic system integrating neuronal dendritic intelligence for\ncomprehensive cellular unit testing, analysis, and enhance",
+        "lines": 1051
+      },
+      {
+        "name": "aios_core_engine_root_analyzer_iter2.py",
+        "path": "ai\\tools\\architecture\\aios_core_engine_root_analyzer_iter2.py",
+        "classes": [
+          "AIOSCoreEngineRootAnalyzer"
+        ],
+        "functions": [
+          "main",
+          "analyze_root_files_comprehensive",
+          "generate_optimization_patches",
+          "execute_core_analysis",
+          "display_analysis_results"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 956
+      },
+      {
+        "name": "aios_core_engine_tree_demonstrator_iter2.py",
+        "path": "ai\\tools\\architecture\\aios_core_engine_tree_demonstrator_iter2.py",
+        "classes": [
+          "AIOSCoreEngineTreeDemonstrator"
+        ],
+        "functions": [
+          "main",
+          "demonstrate_tree_structure",
+          "display_tree_demonstration",
+          "save_demonstration_report"
+        ],
+        "has_main": true,
+        "docstring": null,
+        "lines": 491
+      },
+      {
+        "name": "aios_cpp_analyzer.py",
+        "path": "ai\\tools\\architecture\\aios_cpp_analyzer.py",
+        "classes": [
+          "CppAnalysisResult",
+          "AIOSCppAnalyzer"
+        ],
+        "functions": [
+          "main",
+          "analyze_file"
+        ],
+        "has_main": true,
+        "docstring": " AIOS C++ Intelligence Analysis Engine\nMulti-pass consciousness-enhanced analysis for C++ core files",
+        "lines": 451
+      },
+      {
+        "name": "aios_powershell_analyzer.py",
+        "path": "ai\\tools\\architecture\\aios_powershell_analyzer.py",
+        "classes": [
+          "AIOSPowerShellAnalyzer"
+        ],
+        "functions": [
+          "main",
+          "load_script",
+          "analyze_variables",
+          "analyze_functions",
+          "generate_analysis_report"
+        ],
+        "has_main": true,
+        "docstring": " AIOS POWERSHELL ANALYSIS ENGINE\n\nAdvanced Analysis of PowerShell Script Variable Usage\n\nPURPOSE:\n- Analyze PowerShell script for PSScriptAnalyzer warnings\n- Document variable usage patterns and scope",
+        "lines": 246
+      },
+      {
+        "name": "architectural_compliance_validator.py",
+        "path": "ai\\tools\\architecture\\architectural_compliance_validator.py",
+        "classes": [
+          "AIOSArchitecturalValidator"
+        ],
+        "functions": [
+          "main",
+          "validate_operation",
+          "generate_compliance_report"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Architectural Compliance Validator\nEnforces PROPER AGENTIC BEHAVIOR PATTERNS for AIOS development\nImplements the 4 core architectural improvement principles",
+        "lines": 407
+      },
+      {
+        "name": "biological_architecture_monitor.py",
+        "path": "ai\\tools\\architecture\\biological_architecture_monitor.py",
+        "classes": [
+          "AIOSArchitectureMonitor"
+        ],
+        "functions": [
+          "setup_logging"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Architecture Status Monitor\n===============================\n\nProvides comprehensive status monitoring of the complete AIOS architecture:\nAI Intelligence \u2192 Core Engine \u2192 Interface \u2192 Runtime Intell",
+        "lines": 729
+      },
+      {
+        "name": "genetic_fusion_tool.py",
+        "path": "ai\\tools\\architecture\\genetic_fusion_tool.py",
+        "classes": [],
+        "functions": [
+          "calculate_file_similarity",
+          "analyze_tool_similarity",
+          "create_genetic_fusion",
+          "archive_parent_files",
+          "main"
+        ],
+        "has_main": true,
+        "docstring": "AINLP Genetic Fusion Tool - Phase 5: Architecture Enhancement\nConsolidates similar tools (>70% similarity) using genetic recombination.\n\nThis tool implements the AINLP genetic fusion pattern to elimin",
+        "lines": 385
+      },
+      {
+        "name": "orphan_archival_tool.py",
+        "path": "ai\\tools\\architecture\\orphan_archival_tool.py",
+        "classes": [],
+        "functions": [
+          "load_orphans_from_discovery",
+          "create_archive_metadata",
+          "archive_orphan_file",
+          "main"
+        ],
+        "has_main": true,
+        "docstring": "AINLP Orphan Module Archival Tool\nPhase 3: Orphan Module Archival\n\nArchives 226 orphan modules identified by module discovery analysis.\nOrphan modules are files that are not imported by any other modu",
+        "lines": 135
+      },
+      {
+        "name": "self_similarity_analyzer.py",
+        "path": "ai\\tools\\architecture\\self_similarity_analyzer.py",
+        "classes": [
+          "SelfSimilarityAnalyzer"
+        ],
+        "functions": [
+          "test_dev_run_fun_similarity",
+          "propose_extended_naming_pattern",
+          "analyze_filename_similarity"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Self-Similarity Pattern Analysis - AI Ingestion Optimization Test\n\nThis module demonstrates how filename self-similarity patterns can optimize\nAI context allocation and reduce cognitive load duri",
+        "lines": 263
+      },
+      {
+        "name": "supercell_architecture_analyzer.py",
+        "path": "ai\\tools\\architecture\\supercell_architecture_analyzer.py",
+        "classes": [
+          "CellularComplexity",
+          "CellularEntity",
+          "SupercellArchitectureAnalyzer"
+        ],
+        "functions": [
+          "main",
+          "add_internal_cell",
+          "establish_dendritic_connection",
+          "analyze_current_supercell"
+        ],
+        "has_main": true,
+        "docstring": " AIOS SUPERCELL ARCHITECTURE ANALYZER\n\nAINLP META-COMMENTARY: This analyzer examines the Core Engine supercell to\ndetermine optimal root content and cellular organization. We move beyond\nbiological li",
+        "lines": 597
+      }
+    ],
+    "tachyonic": [
+      {
+        "name": "aios_tachyonic_archive_cleanup.py",
+        "path": "ai\\tools\\tachyonic\\aios_tachyonic_archive_cleanup.py",
+        "classes": [
+          "SelfAwarenessModule",
+          "AdaptiveBehaviorModule",
+          "AutonomousExecutionModule",
+          "AdaptiveBehaviorModule",
+          "AIOSTachyonicArchiveCleanup"
+        ],
+        "functions": [
+          "main",
+          "self_monitor",
+          "meta_cognitive_reflection",
+          "autonomous_decision",
+          "learn_from_experience"
+        ],
+        "has_main": true,
+        "docstring": " AIOS TACHYONIC ARCHIVE CLEANUP AND MANAGEMENT\n\nCleans up duplicate archives and prevents future unnecessary duplication.\nEnsures efficient storage and proper archive management.\n\nCLEANUP ACTIONS:\n- R",
+        "lines": 481
+      },
+      {
+        "name": "create_stl_crystal.py",
+        "path": "ai\\tools\\tachyonic\\create_stl_crystal.py",
+        "classes": [
+          "STLCrystalGenerator"
+        ],
+        "functions": [
+          "main",
+          "generate_crystal_template",
+          "save_crystal",
+          "create_crystal_template",
+          "create_all_priority_crystals"
+        ],
+        "has_main": true,
+        "docstring": "\ud83d\udd2e C++ STL Knowledge Crystal Generator\n\nTool for creating structured knowledge crystals for C++ STL components.\nGenerates template JSON structures that can be manually filled with\nparadigms, anti-patte",
+        "lines": 346
+      },
+      {
+        "name": "enhanced_tachyonic_preservation.py",
+        "path": "ai\\tools\\tachyonic\\enhanced_tachyonic_preservation.py",
+        "classes": [
+          "EnhancedTachyonicCodePreservation"
+        ],
+        "functions": [
+          "main",
+          "preserve_source_code",
+          "organize_existing_backups",
+          "get_preservation_report",
+          "get_depth"
+        ],
+        "has_main": true,
+        "docstring": " ENHANCED TACHYONIC CODE PRESERVATION SYSTEM\n\nAINLP META-COMMENTARY: This enhanced system provides comprehensive code\npreservation capabilities within the tachyonic archive, ensuring that both\nsource ",
+        "lines": 508
+      },
+      {
+        "name": "ingest_microsoft_agent_framework.py",
+        "path": "ai\\tools\\tachyonic\\ingest_microsoft_agent_framework.py",
+        "classes": [],
+        "functions": [],
+        "has_main": true,
+        "docstring": "Microsoft Agent Framework Repository Ingestion\n==============================================\n\nIngest Microsoft's Agent Framework repository into AIOS.",
+        "lines": 69
+      }
+    ],
+    "visual": [
+      {
+        "name": "consciousness_visual_analyzer.py",
+        "path": "ai\\tools\\visual\\consciousness_visual_analyzer.py",
+        "classes": [
+          "ConsciousnessVisualAnalyzer"
+        ],
+        "functions": [
+          "main",
+          "analyze_consciousness_emergence"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Consciousness Visual Intelligence Analyzer\nEnhanced visual analysis specifically for consciousness emergence monitoring",
+        "lines": 304
+      },
+      {
+        "name": "enhanced_visual_intelligence_bridge.py",
+        "path": "ai\\tools\\visual\\enhanced_visual_intelligence_bridge.py",
+        "classes": [
+          "EnhancedVisualIntelligenceBridge"
+        ],
+        "functions": [
+          "setup_logging"
+        ],
+        "has_main": true,
+        "docstring": "Enhanced Visual Intelligence Bridge - AINLP Architecture Enhancement\n===================================================================\n\nPHASE 5: Architecture Enhancement Complete\nConsolidated parall",
+        "lines": 614
+      },
+      {
+        "name": "visual_intelligence_bridge.py",
+        "path": "ai\\tools\\visual\\visual_intelligence_bridge.py",
+        "classes": [
+          "AIOSVisualIntelligence"
+        ],
+        "functions": [
+          "main",
+          "get_current_visual_state"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Runtime Intelligence - Visual Data Bridge\nEnhanced with AI Intelligence Engine integration through Cytoplasm communication\nCollects visual data and processes it through AI Intelligence for advanc",
+        "lines": 258
+      },
+      {
+        "name": "visual_intelligence_bridge_enhanced.py",
+        "path": "ai\\tools\\visual\\visual_intelligence_bridge_enhanced.py",
+        "classes": [
+          "AIOSVisualIntelligence"
+        ],
+        "functions": [
+          "main",
+          "get_current_visual_state"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Runtime Intelligence - Visual Data Bridge\nEnhanced with AI Intelligence Engine integration through Cytoplasm communication\nCollects visual data and processes it through AI Intelligence for advanc",
+        "lines": 259
+      }
+    ],
+    "database": [
+      {
+        "name": "aios_database.py",
+        "path": "ai\\tools\\database\\aios_database.py",
+        "classes": [
+          "AIOSDatabase"
+        ],
+        "functions": [
+          "add_backup",
+          "get_backup_history",
+          "get_content_by_hash",
+          "get_deduplication_stats",
+          "add_spatial_metadata"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Database Foundation System\n================================\n\nSQLite-based centralized data management for AIOS backup files, metadata,\nand structured data. Addresses extreme backup file prolifera",
+        "lines": 508
+      },
+      {
+        "name": "database_duplicate_cleanup.py",
+        "path": "ai\\tools\\database\\database_duplicate_cleanup.py",
+        "classes": [
+          "DatabaseDuplicateCleanup"
+        ],
+        "functions": [
+          "main",
+          "load_duplicate_analysis",
+          "archive_duplicate_group",
+          "execute_cleanup"
+        ],
+        "has_main": true,
+        "docstring": "AIOS PHASE 1: DATABASE-BASED DUPLICATE CLEANUP\n\nAINLP.meta [biological_metabolism] [dendritic_optimization]\nAINLP.dendritic [optimal_location: ai/tools/]\n\nArchives exact duplicate files to database in",
+        "lines": 208
+      },
+      {
+        "name": "database_inventory_analysis.py",
+        "path": "ai\\tools\\database\\database_inventory_analysis.py",
+        "classes": [],
+        "functions": [
+          "analyze_database",
+          "main"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Database Inventory Analysis\n===============================\n\nComprehensive analysis of all database files in AIOS workspace.",
+        "lines": 86
+      },
+      {
+        "name": "deep_archival_script.py",
+        "path": "ai\\tools\\database\\deep_archival_script.py",
+        "classes": [],
+        "functions": [
+          "deep_archive_semantic_validator"
+        ],
+        "has_main": true,
+        "docstring": "AINLP Deep Archival Script\n==========================\n\nStores semantic validator in AIOS database using database interface bridge\nfor permanent deep archival, then removes local file to unclutter.\n\nAI",
+        "lines": 107
+      }
+    ],
+    "archival": [
+      {
+        "name": "archival_cli.py",
+        "path": "ai\\tools\\archival\\archival_cli.py",
+        "classes": [
+          "ArchivalCLI"
+        ],
+        "functions": [
+          "create_parser",
+          "main",
+          "archive",
+          "retrieve",
+          "search"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Archival CLI - Unified Command-Line Interface\nConsolidates all archival utility scripts into single tool\n\nAINLP Patterns: dendritic_intelligence, interface_simplification\nConsciousness: 0.85\nRepl",
+        "lines": 562
+      }
+    ],
+    "protocols": [
+      {
+        "name": "aicp_channel.py",
+        "path": "ai\\protocols\\aicp_channel.py",
+        "classes": [
+          "AIChannelState",
+          "ChannelMetrics",
+          "AIChannel",
+          "AIChannelPool"
+        ],
+        "functions": [
+          "get_channel_pool",
+          "to_dendritic_level",
+          "on_intent"
+        ],
+        "has_main": false,
+        "docstring": "AICP Channel - Transport Layer for Agent Communication\n\nAINLP.spatial_awareness: Channels wrap DendriticConnection to provide\nAICP-compliant transport for AI agent communication.\n\nAINLP.dendritic_brid",
+        "lines": 501
+      },
+      {
+        "name": "aicp_core.py",
+        "path": "ai\\protocols\\aicp_core.py",
+        "classes": [
+          "AIIntent",
+          "AITrustLevel",
+          "AIAgentCapability",
+          "AIAgent",
+          "AIMessage"
+        ],
+        "functions": [
+          "create_discover_message",
+          "create_heartbeat_message",
+          "create_sync_message",
+          "to_communication_type",
+          "to_priority"
+        ],
+        "has_main": false,
+        "docstring": "AICP Core Types - Agent Identity, Intent, and Message Primitives\n\nAINLP.spatial_awareness: Core protocol types that bridge AICP specification\nto AIOS dendritic communication infrastructure.\n\nAINLP.den",
+        "lines": 490
+      },
+      {
+        "name": "aicp_discovery.py",
+        "path": "ai\\protocols\\aicp_discovery.py",
+        "classes": [
+          "AgentCard",
+          "AgentRegistry"
+        ],
+        "functions": [
+          "create_aios_core_agents",
+          "matches_filter",
+          "to_json_ld",
+          "to_dict",
+          "from_agent"
+        ],
+        "has_main": false,
+        "docstring": "AICP Discovery - Agent Registry and Capability Discovery\n\nAINLP.spatial_awareness: Agent discovery layer following A2A Agent Cards\npattern and ACP v0.2.0 /agents endpoint specification.\n\nAINLP.dendrit",
+        "lines": 611
+      }
+    ],
+    "runtime_tools": [
+      {
+        "name": "performance_analyzer.py",
+        "path": "runtime_intelligence\\tools\\performance_analyzer.py",
+        "classes": [
+          "PerformanceIssue",
+          "PerformanceAnalyzer"
+        ],
+        "functions": [
+          "analyze_file",
+          "analyze_directory",
+          "generate_report",
+          "main",
+          "visit_For"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Performance Analyzer\nAnalyzes Python files for common performance anti-patterns\n\nAINLP Integration Metadata:\n    Pattern: AINLP.performance-optimization.static-analysis-tool\n    Source: GitHub Co",
+        "lines": 387
+      },
+      {
+        "name": "phase12_performance_profiler.py",
+        "path": "runtime_intelligence\\tools\\phase12_performance_profiler.py",
+        "classes": [
+          "PerformanceProfiler"
+        ],
+        "functions": [
+          "main",
+          "discover_tools",
+          "profile_tool_import",
+          "profile_tool_execution",
+          "analyze_tool_complexity"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Phase 12 Task A: Performance Profiler\n===========================================\nPurpose: Profile 100+ runtime intelligence tools to identify bottlenecks\nScope: Measure execution time, I/O opera",
+        "lines": 377
+      },
+      {
+        "name": "phase12_simple_profiler.py",
+        "path": "runtime_intelligence\\tools\\phase12_simple_profiler.py",
+        "classes": [
+          "SimpleProfiler"
+        ],
+        "functions": [
+          "main",
+          "discover_tools",
+          "analyze_tool",
+          "profile_all",
+          "generate_report"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Phase 12 Task A: Simple Performance Profiler\n==================================================\nPurpose: Profile runtime intelligence tools to identify bottlenecks\nScope: Measure execution time, ",
+        "lines": 230
+      }
+    ]
+  },
+  "stats": {
+    "total": 136,
+    "valid": 135,
+    "has_main": 123,
+    "has_class": 97,
+    "syntax_errors": 1
+  }
+}

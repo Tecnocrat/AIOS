@@ -195,42 +195,62 @@ server/stacks/cells/ARCHITECTURE.md
 server/stacks/cells/README.md
 ```
 
-### Phase 5: Schema & Validation ⏳
+### Phase 5: Schema & Validation ✅
 
-**Status**: Planned  
+**Status**: Complete (2025-12-04)  
 **Deliverables**:
-- [ ] Message schema JSON definition
-- [ ] Host verification signatures
-- [ ] Message integrity checksums
-- [ ] Protocol version negotiation
+- [x] Message schema JSON definition (`ai/protocols/schemas/iacp-message-v1.0.0.json`)
+- [x] AICP extension fields in schema
+- [x] Action types enumeration
+- [x] Host identifier validation patterns
+- [ ] Message integrity checksums (planned for v1.1)
+- [ ] Protocol version negotiation (planned for v1.1)
 
-**Proposed Schema**:
+**Schema Location**: `ai/protocols/schemas/iacp-message-v1.0.0.json`
+
+**Key Schema Features**:
 ```json
 {
-  "$schema": "iacp-message-v1.0.0",
-  "type": "SYNC|HANDSHAKE|DATA|HEARTBEAT",
-  "source_host": "AIOS",
-  "target_host": "HP_LAB", 
-  "timestamp": "ISO8601",
-  "payload": {},
-  "signature": "sha256:..."
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "required": ["protocol", "version", "type", "from", "to", "timestamp", "status"],
+  "definitions": {
+    "hostIdentifier": { "hostname", "ip", "branch", "aid" },
+    "action": { "type", "description", "parameters", "timeout_seconds" },
+    "aicpExtension": { "intent", "trust_level", "source_aid", "target_aid" }
+  }
 }
 ```
 
-### Phase 6: Automation ⏳
+### Phase 6: Automation ✅
 
-**Status**: Planned  
+**Status**: Complete (2025-12-04)  
 **Deliverables**:
-- [ ] GitHub Actions workflow for auto-merge
-- [ ] Helper scripts for message generation
-- [ ] Health monitoring scripts
-- [ ] Stale message cleanup cron
+- [x] `scripts/iacp_send.py` - Generate and commit IACP messages
+- [x] `scripts/iacp_receive.py` - Poll and process incoming messages
+- [x] `scripts/iacp_health.py` - Mesh connectivity and agent health monitor
+- [ ] GitHub Actions workflow for auto-merge (planned)
+- [ ] Stale message cleanup cron (planned)
 
-**Proposed Scripts**:
+**Script Usage**:
+```bash
+# Send a sync message
+python scripts/iacp_send.py --type SYNC --to HP_LAB --action TEST_CONNECTIVITY
+
+# Poll for incoming messages
+python scripts/iacp_receive.py --watch --interval 30
+
+# Health check
+python scripts/iacp_health.py
+python scripts/iacp_health.py --agents --json
 ```
-scripts/iacp_send.py       # Generate and commit message
-scripts/iacp_receive.py    # Poll and process incoming
-scripts/iacp_health.py     # Mesh connectivity check
+
+**Health Check Output**:
+```
+🏥 IACP MESH HEALTH REPORT
+📡 MESH CONNECTIVITY: AIOS ✅, HP_LAB ✅
+🤖 AICP AGENTS: 6 registered
+📬 IACP MESSAGE CHANNEL: 0 pending
+📂 GIT STATUS: main branch, synced
 ```
 
 ### Phase 7: Security Hardening ⏳
@@ -248,11 +268,64 @@ scripts/iacp_health.py     # Mesh connectivity check
 
 | Version | Feature |
 |---------|---------|
-| v1.1 | Structured JSON payloads |
-| v1.2 | Heartbeat messages |
+| v1.1 | Structured JSON payloads + checksums |
+| v1.2 | Heartbeat messages + auto-cleanup |
 | v2.0 | Bidirectional data sync |
 | v2.1 | Multi-repo mesh |
 | v3.0 | Real-time WebSocket bridge |
+
+### Phase 9: AINLP.testing[TEST:ALL] ✅
+
+**Status**: Complete (2025-12-05)  
+**Deliverables**:
+- [x] Full syntax validation (140/141 scripts pass - 1 intentional test file)
+- [x] Fixed `ai/tools/dendritic_config_agent.py` - Multiple broken line continuations
+- [x] Fixed `ai/tools/visual/visual_intelligence_bridge.py` - Duplicate exception block
+- [x] AICP protocol validation (all classes instantiate correctly)
+- [x] Script inventory built (136 scripts catalogued)
+- [x] Agentic distillation documentation created
+
+**Testing Artifacts**:
+```
+docs/AINLP/testing/SCRIPT_INVENTORY.json     # 136 scripts metadata
+docs/AINLP/testing/AUTO_UPGRADER_PATHS.md    # Upgrade recommendations
+scripts/build_script_inventory.py            # Inventory builder tool
+```
+
+**Inventory Statistics**:
+| Metric | Count |
+|--------|-------|
+| Total Scripts | 136 |
+| Valid Syntax | 135 |
+| Executable (has main) | 123 |
+| Has Class Definitions | 97 |
+| Syntax Errors | 1 (intentional) |
+
+**Script Categories**:
+| Category | Count |
+|----------|-------|
+| consciousness | 32 |
+| ai_tools_root | 35 |
+| system | 29 |
+| architecture | 16 |
+| scripts | 5 |
+| tachyonic | 4 |
+| visual | 4 |
+| database | 4 |
+| protocols | 3 |
+| runtime_tools | 3 |
+| archival | 1 |
+
+**AICP Classes Validated**:
+- `AIAgent(domain, name, trust_level, capabilities)` ✅
+- `AIMessage(source_aid, target_aid, intent, payload)` ✅
+- `AIIntent` (14 intent types) ✅
+- `AITrustLevel` (ENTERPRISE, STANDARD, BASIC) ✅
+- `AIAgentCapability(name, version, description)` ✅
+- `AIChannel` (async bidirectional) ✅
+- `AIChannelPool` (connection management) ✅
+- `AgentRegistry` (central discovery) ✅
+- `AgentCard` (A2A capability declaration) ✅
 
 ---
 
