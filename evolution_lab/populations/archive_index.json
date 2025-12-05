@@ -1,0 +1,68 @@
+{
+  "reorganization_date": "2025-12-05T06:56:47.506176Z",
+  "archived_populations": [],
+  "active_populations": [
+    {
+      "file": "pop_20251205_064038_gen000_20251205_064038.json",
+      "source": "tachyonic\\pop_20251205_064038_gen000_20251205_064038.json",
+      "destination": "active\\mistral_20251205\\pop_20251205_064038_gen000_20251205_064038.json",
+      "mutation_engine": "mistral_7b_local"
+    },
+    {
+      "file": "pop_20251205_064038_index.json",
+      "source": "tachyonic\\pop_20251205_064038_index.json",
+      "destination": "active\\mistral_20251205\\pop_20251205_064038_index.json",
+      "mutation_engine": "mistral_7b_local"
+    },
+    {
+      "file": "pop_20251205_064152_gen000_20251205_064152.json",
+      "source": "tachyonic\\pop_20251205_064152_gen000_20251205_064152.json",
+      "destination": "active\\mistral_20251205\\pop_20251205_064152_gen000_20251205_064152.json",
+      "mutation_engine": "mistral_7b_local"
+    },
+    {
+      "file": "pop_20251205_064152_gen001_20251205_065036.json",
+      "source": "tachyonic\\pop_20251205_064152_gen001_20251205_065036.json",
+      "destination": "active\\mistral_20251205\\pop_20251205_064152_gen001_20251205_065036.json",
+      "mutation_engine": "mistral_7b_local"
+    },
+    {
+      "file": "pop_20251205_064152_index.json",
+      "source": "tachyonic\\pop_20251205_064152_index.json",
+      "destination": "active\\mistral_20251205\\pop_20251205_064152_index.json",
+      "mutation_engine": "mistral_7b_local"
+    },
+    {
+      "file": "pop_20251205_064152_summary.json",
+      "source": "tachyonic\\pop_20251205_064152_summary.json",
+      "destination": "active\\mistral_20251205\\pop_20251205_064152_summary.json",
+      "mutation_engine": "mistral_7b_local"
+    }
+  ],
+  "seed_populations": [
+    {
+      "file": "gen0_templates.json",
+      "archetypes": [
+        "os_tools",
+        "cli_applications",
+        "web_services",
+        "abstract_objects",
+        "network_tools",
+        "data_science",
+        "automation",
+        "game_logic"
+      ]
+    }
+  ],
+  "summary": {
+    "total_archived": 0,
+    "total_active": 6,
+    "total_seeds": 1,
+    "archive_structure": {
+      "active/": "Current working populations with real mutations",
+      "archive/": "Historical populations (clones, deprecated)",
+      "seeds/": "Original organism templates by archetype",
+      "tachyonic/": "Raw evolution outputs (preserved)"
+    }
+  }
+}
