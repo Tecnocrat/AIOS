@@ -312,8 +312,66 @@ Based on ingested knowledge, IACP v1.1+ should consider:
 
 ---
 
+## 🔄 Branch Synchronization Architecture (NEW)
+
+> **Added**: 2025-12-06
+> **Problem**: AIOS-win-0-AIOS and AIOS-win-0-HP_LAB branches decohere over time
+
+### Tachyonic Git Flow
+
+```
+                    ┌─────────────────────────────────────┐
+                    │             main                     │
+                    │    (Canonical Source of Truth)       │
+                    └─────────────┬───────────────────────┘
+                                  │
+              ┌───────────────────┴───────────────────┐
+              │                                       │
+              ▼                                       ▼
+    ┌─────────────────────┐             ┌─────────────────────┐
+    │  AIOS-win-0-AIOS    │             │  AIOS-win-0-HP_LAB  │
+    │  (Protocol Dev)     │◄───IACP────►│  (Evolution Lab)    │
+    └─────────────────────┘             └─────────────────────┘
+```
+
+### New IACP Message Types (v1.1)
+
+| Type | Purpose |
+|------|---------|
+| `SYNC_PULSE` | Daily heartbeat with branch status |
+| `KNOWLEDGE_SYNC` | Announce significant changes |
+| `MERGE_REQUEST` | Request staging integration |
+| `CONFLICT_ALERT` | Warn of detected conflicts |
+
+### Conflict Resolution Priority
+
+| Domain | Winner |
+|--------|--------|
+| `ai/protocols/*` | AIOS branch |
+| `evolution_lab/*` | HP_LAB branch |
+| `scripts/*`, `docs/*` | Manual merge |
+
+### Automation Scripts
+
+```bash
+# Daily sync (run on both hosts)
+pwsh scripts/daily_branch_sync.ps1 -SendIACP
+
+# Pre-merge conflict detection
+python scripts/pre_merge_check.py AIOS-win-0-AIOS AIOS-win-0-HP_LAB
+```
+
+### Reference Documents
+
+- **[BRANCH_SYNC_BLUEPRINT.md](./BRANCH_SYNC_BLUEPRINT.md)** - Full sync architecture
+- **[scripts/daily_branch_sync.ps1](../../../scripts/daily_branch_sync.ps1)** - Automation
+- **[scripts/pre_merge_check.py](../../../scripts/pre_merge_check.py)** - Conflict detection
+
+---
+
 ## Related Documents
 
 - [dev_path_evolution.md](./dev_path_evolution.md) - Integration task tracker
 - [IACP-PROTOCOL.md](./IACP-PROTOCOL.md) - Current protocol spec
 - [GIT-AGENT-COORDINATION.md](./GIT-AGENT-COORDINATION.md) - Pattern documentation
+- [BRANCH_SYNC_BLUEPRINT.md](./BRANCH_SYNC_BLUEPRINT.md) - Branch synchronization
