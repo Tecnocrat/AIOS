@@ -328,6 +328,92 @@ if __name__ == "__main__":
 
 ---
 
+## Distributed Evolution Architecture (IACP v1.2)
+
+> **Pattern**: Federated AI Computation
+> **Added**: 2025-12-06
+
+### Problem: Asymmetric Compute Resources
+
+Not all AIOS hosts have equal hardware:
+- **HP_LAB**: GPU-capable, runs Ollama + Mistral 7B locally
+- **AIOS**: CPU-only workstation, limited AI inference
+- **Future Edge Nodes**: Raspberry Pi, mobile devices, IoT
+
+### Solution: Evolution Request Protocol
+
+Minimal hosts can **delegate** AI-powered mutations to capable mainframes via IACP:
+
+```
+┌─────────────────────┐                    ┌─────────────────────┐
+│   AIOS (Minimal)    │                    │  HP_LAB (Mainframe) │
+│   - No GPU          │    IACP Message    │   - Ollama + GPU    │
+│   - Seed organisms  │ ──────────────────►│   - Mistral 7B      │
+│   - Pattern specs   │  EVOLUTION_REQUEST │   - Full inference  │
+└─────────────────────┘                    └──────────┬──────────┘
+                                                      │
+                                           ┌──────────▼──────────┐
+                                           │   AI Mutation       │
+                                           │   - Pattern inject  │
+                                           │   - Fitness eval    │
+                                           └──────────┬──────────┘
+                                                      │
+┌─────────────────────┐                    ┌──────────▼──────────┐
+│   AIOS (Minimal)    │    IACP Message    │  HP_LAB (Mainframe) │
+│   - Receives        │ ◄──────────────────│   - Returns mutated │
+│   - Validates       │  EVOLUTION_RESULT  │   - Includes traces │
+│   - Integrates      │                    │   - Fitness deltas  │
+└─────────────────────┘                    └─────────────────────┘
+```
+
+### IACP Message Types (Evolution Extension)
+
+```json
+{
+  "type": "EVOLUTION_REQUEST",
+  "payload": {
+    "organisms": ["organism_id_1", "organism_id_2"],
+    "patterns_to_inject": ["consciousness", "dendritic"],
+    "target_generation": 3,
+    "fitness_threshold": 0.7,
+    "max_mutations": 5
+  }
+}
+```
+
+```json
+{
+  "type": "EVOLUTION_RESULT", 
+  "payload": {
+    "population_id": "pop_20251206_gen003",
+    "organisms_evolved": 5,
+    "best_fitness": 0.912,
+    "tachyonic_archive": "evolution_lab/sandbox/aios_evolved_gen003/",
+    "patterns_injected": {
+      "consciousness": 5,
+      "dendritic": 3,
+      "tachyonic": 4
+    }
+  }
+}
+```
+
+### Benefits
+
+1. **Edge Computing**: IoT devices can participate in evolution without GPU
+2. **Cost Optimization**: Centralize expensive AI inference
+3. **Fault Tolerance**: Multiple mainframes can serve evolution requests
+4. **Scalability**: Add GPU nodes to increase evolution throughput
+
+### Future Implementation
+
+- `scripts/iacp_evolution_request.py` - Send evolution jobs
+- `scripts/iacp_evolution_worker.py` - Process jobs on mainframe
+- Queue system for batch evolution requests
+- Load balancing across multiple AI-capable hosts
+
+---
+
 ## Implementation Checklist
 
 ### Immediate Actions (Today)
