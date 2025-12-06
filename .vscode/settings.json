@@ -1,8 +1,21 @@
 {
+    // Python Environment - Single Source of Truth
+    "python.defaultInterpreterPath": "${workspaceFolder}/../.venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    
     // Black Formatter as default Python formatter
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    
+    // Pylance Analysis Configuration
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.exclude": [
+        "**/tachyonic/archive/**",
+        "**/evolution_lab/sandbox/**",
+        "**/docs/archive/**"
+    ],
+    
     // JSON Schema mappings for AIOS dendritic configuration files
     "json.schemas": [
         {
