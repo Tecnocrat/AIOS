@@ -1,0 +1,30 @@
+{
+  "protocol": "IACP",
+  "version": "1.0.0",
+  "type": "SYNC",
+  "from": {
+    "hostname": "AIOS",
+    "ip": "192.168.1.128",
+    "branch": "AIOS-win-0-AIOS"
+  },
+  "to": {
+    "hostname": "MESH",
+    "ip": "unknown",
+    "branch": "AIOS-win-0-MESH"
+  },
+  "timestamp": "2025-12-06T16:03:54.958585Z",
+  "status": "PENDING",
+  "message_id": "db1319ff-d269-479e-8c20-95989fb99911",
+  "actions": [
+    {
+      "type": "EXECUTE_SCRIPT",
+      "description": "SYNC_PULSE: HP_LAB branch=main ahead=0 behind=0 action=up-to-date"
+    }
+  ],
+  "aicp": {
+    "intent": "sync",
+    "trust_level": "enterprise",
+    "source_aid": "agent://tecnocrat/aios",
+    "target_aid": "agent://tecnocrat/mesh"
+  }
+}
