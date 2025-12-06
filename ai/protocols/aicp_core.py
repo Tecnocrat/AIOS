@@ -21,7 +21,7 @@ Protocol Spec References:
 
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
-from enum import Enum, auto
+from enum import Enum
 from typing import Any, Dict, List, Optional, Set
 from uuid import uuid4
 import json
