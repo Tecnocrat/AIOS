@@ -96,8 +96,8 @@ $syncReport = @{
 # Send IACP message if requested
 if ($SendIACP -and -not $DryRun) {
     Write-Host "`n[IACP] Sending sync pulse..." -ForegroundColor Cyan
-    $payload = $syncReport | ConvertTo-Json -Compress
-    python scripts/iacp_send.py --type SYNC_PULSE --to MESH --payload $payload
+    $message = "SYNC_PULSE: $hostname branch=$Branch ahead=$ahead behind=$behind action=$action"
+    python scripts/iacp_send.py --type SYNC --to MESH --intent sync --message $message
 }
 
 # Summary
