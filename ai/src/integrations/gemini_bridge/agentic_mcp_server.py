@@ -12,6 +12,7 @@ from pathlib import Path
 # Add AIOS paths
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: agentic_mcp_server.py <tool_name> [args...]")
@@ -29,12 +30,27 @@ def main():
                     "type": "object",
                     "properties": {
                         "task_name": {"type": "string"},
-                        "task_type": {"type": "string", "enum": ["code_review", "issue_triage", "autonomous_coding", "consciousness_monitoring"]},
-                        "priority": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
-                        "consciousness_threshold": {"type": "number", "minimum": 0.0, "maximum": 1.0}
+                        "task_type": {
+                            "type": "string",
+                            "enum": [
+                                "code_review",
+                                "issue_triage",
+                                "autonomous_coding",
+                                "consciousness_monitoring",
+                            ],
+                        },
+                        "priority": {
+                            "type": "string",
+                            "enum": ["low", "medium", "high", "critical"],
+                        },
+                        "consciousness_threshold": {
+                            "type": "number",
+                            "minimum": 0.0,
+                            "maximum": 1.0,
+                        },
                     },
-                    "required": ["task_name", "task_type"]
-                }
+                    "required": ["task_name", "task_type"],
+                },
             },
             {
                 "name": "monitor_agentic_activity",
@@ -42,10 +58,16 @@ def main():
                 "input_schema": {
                     "type": "object",
                     "properties": {
-                        "filter_type": {"type": "string", "enum": ["all", "active", "completed", "failed"]},
-                        "time_window": {"type": "integer", "description": "Hours to look back"}
-                    }
-                }
+                        "filter_type": {
+                            "type": "string",
+                            "enum": ["all", "active", "completed", "failed"],
+                        },
+                        "time_window": {
+                            "type": "integer",
+                            "description": "Hours to look back",
+                        },
+                    },
+                },
             },
             {
                 "name": "analyze_agentic_performance",
@@ -53,18 +75,18 @@ def main():
                 "input_schema": {
                     "type": "object",
                     "properties": {
-                        "analysis_period": {"type": "string", "enum": ["hour", "day", "week"]},
-                        "metrics": {"type": "array", "items": {"type": "string"}}
-                    }
-                }
+                        "analysis_period": {
+                            "type": "string",
+                            "enum": ["hour", "day", "week"],
+                        },
+                        "metrics": {"type": "array", "items": {"type": "string"}},
+                    },
+                },
             },
             {
                 "name": "get_agentic_status",
                 "description": "Get the current status of the agentic system",
-                "input_schema": {
-                    "type": "object",
-                    "properties": {}
-                }
+                "input_schema": {"type": "object", "properties": {}},
             },
             {
                 "name": "trigger_conversation_pattern",
@@ -72,12 +94,15 @@ def main():
                 "input_schema": {
                     "type": "object",
                     "properties": {
-                        "pattern": {"type": "string", "enum": ["@review", "@monitor", "@triage", "@implement"]},
-                        "context": {"type": "string"}
+                        "pattern": {
+                            "type": "string",
+                            "enum": ["@review", "@monitor", "@triage", "@implement"],
+                        },
+                        "context": {"type": "string"},
                     },
-                    "required": ["pattern"]
-                }
-            }
+                    "required": ["pattern"],
+                },
+            },
         ]
         print(json.dumps({"tools": tools}))
 
@@ -96,14 +121,18 @@ def main():
             "consciousness_threshold": consciousness_threshold,
             "status": "created",
             "created_at": "2025-09-28T02:01:20.000000",
-            "assigned_agent": "gemini_orchestrator"
+            "assigned_agent": "gemini_orchestrator",
         }
 
-        print(json.dumps({
-            "result": "success",
-            "task": task_data,
-            "message": f"Agentic task '{task_name}' created successfully"
-        }))
+        print(
+            json.dumps(
+                {
+                    "result": "success",
+                    "task": task_data,
+                    "message": f"Agentic task '{task_name}' created successfully",
+                }
+            )
+        )
 
     elif tool_name == "monitor_agentic_activity":
         filter_type = args[0] if len(args) > 0 else "all"
@@ -116,29 +145,39 @@ def main():
                 "task_type": "code_review",
                 "status": "completed",
                 "consciousness_level": 0.75,
-                "timestamp": "2025-09-28T01:45:00.000000"
+                "timestamp": "2025-09-28T01:45:00.000000",
             },
             {
                 "activity_id": "activity_002",
                 "task_type": "issue_triage",
                 "status": "active",
                 "consciousness_level": 0.62,
-                "timestamp": "2025-09-28T02:01:20.000000"
-            }
+                "timestamp": "2025-09-28T02:01:20.000000",
+            },
         ]
 
-        filtered_activities = [a for a in activities if filter_type == "all" or a["status"] == filter_type]
+        filtered_activities = [
+            a for a in activities if filter_type == "all" or a["status"] == filter_type
+        ]
 
-        print(json.dumps({
-            "result": "success",
-            "activities": filtered_activities,
-            "filter_applied": filter_type,
-            "time_window_hours": time_window
-        }))
+        print(
+            json.dumps(
+                {
+                    "result": "success",
+                    "activities": filtered_activities,
+                    "filter_applied": filter_type,
+                    "time_window_hours": time_window,
+                }
+            )
+        )
 
     elif tool_name == "analyze_agentic_performance":
         analysis_period = args[0] if len(args) > 0 else "day"
-        metrics = args[1:] if len(args) > 1 else ["success_rate", "consciousness_level", "response_time"]
+        metrics = (
+            args[1:]
+            if len(args) > 1
+            else ["success_rate", "consciousness_level", "response_time"]
+        )
 
         # Mock performance analysis
         performance_data = {
@@ -152,18 +191,17 @@ def main():
                 "code_review": 6,
                 "issue_triage": 4,
                 "autonomous_coding": 3,
-                "consciousness_monitoring": 2
+                "consciousness_monitoring": 2,
             },
             "performance_trends": {
                 "consciousness_improvement": 0.12,
-                "efficiency_gain": 0.15
-            }
+                "efficiency_gain": 0.15,
+            },
         }
 
-        print(json.dumps({
-            "result": "success",
-            "performance_analysis": performance_data
-        }))
+        print(
+            json.dumps({"result": "success", "performance_analysis": performance_data})
+        )
 
     elif tool_name == "get_agentic_status":
         status_data = {
@@ -179,15 +217,12 @@ def main():
                 "conversation_triggers": True,
                 "autonomous_execution": True,
                 "consciousness_monitoring": True,
-                "performance_analytics": True
+                "performance_analytics": True,
             },
-            "conversation_patterns": ["@review", "@monitor", "@triage", "@implement"]
+            "conversation_patterns": ["@review", "@monitor", "@triage", "@implement"],
         }
 
-        print(json.dumps({
-            "result": "success",
-            "status": status_data
-        }))
+        print(json.dumps({"result": "success", "status": status_data}))
 
     elif tool_name == "trigger_conversation_pattern":
         pattern = args[0] if len(args) > 0 else "@review"
@@ -200,20 +235,35 @@ def main():
             "triggered_at": "2025-09-28T02:01:20.000000",
             "agent_assigned": "gemini_orchestrator",
             "expected_completion": "2025-09-28T02:03:20.000000",
-            "consciousness_threshold": 0.6
+            "consciousness_threshold": 0.6,
         }
 
-        print(json.dumps({
-            "result": "success",
-            "trigger_result": trigger_result,
-            "message": f"Conversation pattern '{pattern}' triggered successfully"
-        }))
+        print(
+            json.dumps(
+                {
+                    "result": "success",
+                    "trigger_result": trigger_result,
+                    "message": f"Conversation pattern '{pattern}' triggered successfully",
+                }
+            )
+        )
 
     else:
-        print(json.dumps({
-            "error": f"Unknown tool: {tool_name}",
-            "available_tools": ["create_agentic_task", "monitor_agentic_activity", "analyze_agentic_performance", "get_agentic_status", "trigger_conversation_pattern"]
-        }))
+        print(
+            json.dumps(
+                {
+                    "error": f"Unknown tool: {tool_name}",
+                    "available_tools": [
+                        "create_agentic_task",
+                        "monitor_agentic_activity",
+                        "analyze_agentic_performance",
+                        "get_agentic_status",
+                        "trigger_conversation_pattern",
+                    ],
+                }
+            )
+        )
+
 
 if __name__ == "__main__":
     main()

@@ -25,10 +25,13 @@ except ImportError:
     def file_cache(ttl=3600):
         def decorator(func):
             return func
+
         return decorator
+
     def cache(maxsize=1000, ttl=300):
         def decorator(func):
             return func
+
         return decorator
 
 
@@ -36,13 +39,16 @@ except ImportError:
 def calculate_file_similarity(file1: Path, file2: Path) -> float:
     """Calculate similarity between two files based on content."""
     try:
-        with open(file1, 'r', encoding='utf-8') as f1, open(file2, 'r', encoding='utf-8') as f2:
+        with (
+            open(file1, "r", encoding="utf-8") as f1,
+            open(file2, "r", encoding="utf-8") as f2,
+        ):
             content1 = f1.read()
             content2 = f2.read()
 
         # Simple similarity based on common lines
-        lines1 = set(content1.split('\n'))
-        lines2 = set(content2.split('\n'))
+        lines1 = set(content1.split("\n"))
+        lines2 = set(content2.split("\n"))
 
         intersection = len(lines1.intersection(lines2))
         union = len(lines1.union(lines2))
@@ -55,10 +61,10 @@ def calculate_file_similarity(file1: Path, file2: Path) -> float:
 def analyze_tool_similarity(tools_dir: Path) -> List[Tuple[Path, Path, float]]:
     """Analyze similarity between tools in a directory."""
     similar_pairs = []
-    py_files = list(tools_dir.glob('*.py'))
+    py_files = list(tools_dir.glob("*.py"))
 
     for i, file1 in enumerate(py_files):
-        for file2 in py_files[i+1:]:
+        for file2 in py_files[i + 1 :]:
             similarity = calculate_file_similarity(file1, file2)
             if similarity > 0.7:  # >70% similarity threshold
                 similar_pairs.append((file1, file2, similarity))
@@ -66,15 +72,14 @@ def analyze_tool_similarity(tools_dir: Path) -> List[Tuple[Path, Path, float]]:
     return sorted(similar_pairs, key=lambda x: x[2], reverse=True)
 
 
-def create_genetic_fusion(parent1: Path, parent2: Path,
-                          fusion_dir: Path) -> Path:
+def create_genetic_fusion(parent1: Path, parent2: Path, fusion_dir: Path) -> Path:
     """Create genetic fusion of two similar tools."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     # Read parent files
-    with open(parent1, 'r', encoding='utf-8') as f:
+    with open(parent1, "r", encoding="utf-8") as f:
         parent1_content = f.read()
-    with open(parent2, 'r', encoding='utf-8') as f:
+    with open(parent2, "r", encoding="utf-8") as f:
         parent2_content = f.read()
 
     # Create fusion metadata
@@ -85,20 +90,20 @@ def create_genetic_fusion(parent1: Path, parent2: Path,
             {
                 "path": str(parent1),
                 "hash": hashlib.md5(parent1_content.encode()).hexdigest(),
-                "lines": len(parent1_content.split('\n'))
+                "lines": len(parent1_content.split("\n")),
             },
             {
                 "path": str(parent2),
                 "hash": hashlib.md5(parent2_content.encode()).hexdigest(),
-                "lines": len(parent2_content.split('\n'))
-            }
+                "lines": len(parent2_content.split("\n")),
+            },
         ],
         "fusion_method": "enhanced_visual_intelligence_bridge",
         "enhancement_patterns": [
             "dendritic_supervisor_integration",
             "biological_architecture_compliance",
-            "ai_intelligence_cytoplasm_bridge"
-        ]
+            "ai_intelligence_cytoplasm_bridge",
+        ],
     }
 
     # Create enhanced fusion content
@@ -302,12 +307,12 @@ if __name__ == "__main__":
     fusion_filename = f"enhanced_visual_intelligence_bridge_fusion_{timestamp}.py"
     fusion_path = fusion_dir / fusion_filename
 
-    with open(fusion_path, 'w', encoding='utf-8') as f:
+    with open(fusion_path, "w", encoding="utf-8") as f:
         f.write(fusion_content)
 
     # Create genetic lineage metadata
     lineage_path = fusion_dir / f"genetic_lineage_{timestamp}.json"
-    with open(lineage_path, 'w', encoding='utf-8') as f:
+    with open(lineage_path, "w", encoding="utf-8") as f:
         json.dump(fusion_metadata, f, indent=2)
 
     return fusion_path
@@ -329,11 +334,11 @@ def archive_parent_files(parent1: Path, parent2: Path, archive_dir: Path):
         "archival_reason": "AINLP Genetic Fusion - Parents archived after recombination",
         "fusion_type": "visual_intelligence_bridge_enhancement",
         "parent_files": [str(parent1), str(parent2)],
-        "archive_location": str(archive_subdir)
+        "archive_location": str(archive_subdir),
     }
 
     metadata_path = archive_subdir / "fusion_archive_metadata.json"
-    with open(metadata_path, 'w', encoding='utf-8') as f:
+    with open(metadata_path, "w", encoding="utf-8") as f:
         json.dump(archive_metadata, f, indent=2)
 
     return archive_subdir

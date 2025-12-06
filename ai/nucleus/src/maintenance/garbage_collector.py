@@ -45,7 +45,7 @@ class GarbageCollector:
             "DEVELOPMENT.md",
             "user-guide.md",
             "PROJECT_ROADMAP_2025_2026.md",
-            "COMPLETE_INTEGRATION_GUIDE.md"
+            "COMPLETE_INTEGRATION_GUIDE.md",
         }
 
     def run_full_optimization(self) -> Dict:
@@ -59,7 +59,7 @@ class GarbageCollector:
             "timestamp": datetime.now().isoformat(),
             "phases": {},
             "final_state": {},
-            "errors": []
+            "errors": [],
         }
 
         try:
@@ -67,10 +67,14 @@ class GarbageCollector:
             optimization_result["phases"]["analysis"] = self._run_analysis_phase()
 
             # Phase 2: Backup Consolidation
-            optimization_result["phases"]["backup_consolidation"] = self._run_backup_phase()
+            optimization_result["phases"][
+                "backup_consolidation"
+            ] = self._run_backup_phase()
 
             # Phase 3: Tachyonic Archival
-            optimization_result["phases"]["tachyonic_archival"] = self._run_archival_phase()
+            optimization_result["phases"][
+                "tachyonic_archival"
+            ] = self._run_archival_phase()
 
             # Phase 4: Cleanup and Optimization
             optimization_result["phases"]["cleanup"] = self._run_cleanup_phase()
@@ -98,16 +102,13 @@ class GarbageCollector:
 
         # Find files to archive (everything except core documents)
         all_files = list(self.docs_path.glob("*.md"))
-        files_to_archive = [
-            f for f in all_files
-            if f.name not in self.core_documents
-        ]
+        files_to_archive = [f for f in all_files if f.name not in self.core_documents]
 
         # Create category mapping
         category_map = {}
         for file_path in files_to_archive:
             try:
-                with open(file_path, 'r', encoding='utf-8') as f:
+                with open(file_path, "r", encoding="utf-8") as f:
                     content = f.read()
                 category = self.optimizer._categorize_content(content)
                 category_map[file_path.name] = category
@@ -116,8 +117,7 @@ class GarbageCollector:
 
         # Archive files
         archive_result = self.archiver.archive_multiple_files(
-            files_to_archive,
-            category_map
+            files_to_archive, category_map
         )
 
         # Remove archived files
@@ -140,15 +140,12 @@ class GarbageCollector:
             "timestamp": datetime.now().isoformat(),
             "backup_folders_removed": [],
             "temp_files_removed": [],
-            "errors": []
+            "errors": [],
         }
 
         # Find and remove old backup folders
         backup_folders = self.consolidator._find_backup_folders()
-        old_folders = [
-            f for f in backup_folders
-            if f.name != "unified_backups"
-        ]
+        old_folders = [f for f in backup_folders if f.name != "unified_backups"]
 
         folder_cleanup = self.consolidator.cleanup_old_folders(old_folders)
         cleanup_result["backup_folders_removed"] = folder_cleanup["folders_removed"]
@@ -162,7 +159,7 @@ class GarbageCollector:
             "*_verification_*.py",
             "cleanup_*.py",
             "final_*.py",
-            "check_*.py"
+            "check_*.py",
         ]
 
         for pattern in temp_patterns:
@@ -183,18 +180,21 @@ class GarbageCollector:
             "documentation_structure": {},
             "archive_statistics": {},
             "fragmentation_score": 0.0,
-            "optimization_complete": False
+            "optimization_complete": False,
         }
 
         # Analyze final documentation structure
         analysis = self.optimizer.analyze_documentation_structure()
         final_state["documentation_structure"] = {
             "total_files": analysis.get("total_files", 0),
-            "core_documents_present": len([
-                f for f in self.docs_path.glob("*.md")
-                if f.name in self.core_documents
-            ]),
-            "fragmentation_score": analysis.get("fragmentation_score", 1.0)
+            "core_documents_present": len(
+                [
+                    f
+                    for f in self.docs_path.glob("*.md")
+                    if f.name in self.core_documents
+                ]
+            ),
+            "fragmentation_score": analysis.get("fragmentation_score", 1.0),
         }
 
         # Get archive statistics
@@ -205,9 +205,9 @@ class GarbageCollector:
         core_count = final_state["documentation_structure"]["core_documents_present"]
 
         final_state["optimization_complete"] = (
-            files_count <= 8 and
-            core_count >= 6 and
-            analysis.get("fragmentation_score", 1.0) < 0.1
+            files_count <= 8
+            and core_count >= 6
+            and analysis.get("fragmentation_score", 1.0) < 0.1
         )
 
         return final_state
@@ -219,7 +219,7 @@ class GarbageCollector:
             "core_documents_check": {},
             "archive_integrity": {},
             "backup_consolidation": {},
-            "overall_status": "unknown"
+            "overall_status": "unknown",
         }
 
         # Check core documents
@@ -236,7 +236,7 @@ class GarbageCollector:
         integrity_result["core_documents_check"] = {
             "present": present_core,
             "missing": missing_core,
-            "coverage_percentage": len(present_core) / len(self.core_documents) * 100
+            "coverage_percentage": len(present_core) / len(self.core_documents) * 100,
         }
 
         # Check archive integrity
@@ -246,13 +246,19 @@ class GarbageCollector:
         unified_backup_path = self.workspace_root / "docs" / "unified_backups"
         integrity_result["backup_consolidation"] = {
             "unified_backups_exists": unified_backup_path.exists(),
-            "backup_file_count": len(list(unified_backup_path.glob("*"))) if unified_backup_path.exists() else 0
+            "backup_file_count": (
+                len(list(unified_backup_path.glob("*")))
+                if unified_backup_path.exists()
+                else 0
+            ),
         }
 
         # Overall status
-        if (len(missing_core) == 0 and
-            integrity_result["archive_integrity"]["total_documents"] > 0 and
-            integrity_result["backup_consolidation"]["unified_backups_exists"]):
+        if (
+            len(missing_core) == 0
+            and integrity_result["archive_integrity"]["total_documents"] > 0
+            and integrity_result["backup_consolidation"]["unified_backups_exists"]
+        ):
             integrity_result["overall_status"] = "optimal"
         elif len(missing_core) <= 2:
             integrity_result["overall_status"] = "acceptable"

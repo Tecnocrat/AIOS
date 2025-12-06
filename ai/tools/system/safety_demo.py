@@ -61,10 +61,10 @@ def run_safety_session_demo(duration_minutes: int = 2) -> Dict[str, Any]:
     if authorized:
         mutator = EvolutionaryCodeMutator()
         seed_code = (
-            'def hello_world():\n'
+            "def hello_world():\n"
             '    return "Hello, World!"\n'
             '\nif __name__ == "__main__":\n'
-            '    print(hello_world())\n'
+            "    print(hello_world())\n"
         )
         pop = mutator.create_population("safety_ingest_demo", seed_code, 3)
         mutation_result["population_size"] = len(pop.organisms)

@@ -58,9 +58,7 @@ async def ux_onboarding():
         }
 
         # Cache the onboarding guide
-        await _fractal_cache_manager.set_cached(
-            cache_key, onboarding_guide, ttl=3600
-        )
+        await _fractal_cache_manager.set_cached(cache_key, onboarding_guide, ttl=3600)
 
         return onboarding_guide
 
@@ -127,16 +125,12 @@ async def ux_help():
                 "Use '/refresh' to update context",
                 "Try '/save' to persist current state",
             ],
-            "contact_support": (
-                "Report issues via GitHub or extension feedback"
-            ),
+            "contact_support": ("Report issues via GitHub or extension feedback"),
             "note": "Enhanced help system with fractal intelligence",
         }
 
         # Cache the help guide
-        await _fractal_cache_manager.set_cached(
-            cache_key, help_guide, ttl=1800
-        )
+        await _fractal_cache_manager.set_cached(cache_key, help_guide, ttl=1800)
 
         return help_guide
 
@@ -213,9 +207,7 @@ async def ux_tutorial():
         }
 
         # Cache the tutorial
-        await _fractal_cache_manager.set_cached(
-            cache_key, tutorial_guide, ttl=3600
-        )
+        await _fractal_cache_manager.set_cached(cache_key, tutorial_guide, ttl=3600)
 
         return tutorial_guide
 
@@ -280,9 +272,7 @@ async def ux_shortcuts():
         }
 
         # Cache the shortcuts
-        await _fractal_cache_manager.set_cached(
-            cache_key, shortcuts_guide, ttl=7200
-        )
+        await _fractal_cache_manager.set_cached(cache_key, shortcuts_guide, ttl=7200)
 
         return shortcuts_guide
 
@@ -322,16 +312,20 @@ async def ux_feedback():
             ],
             "rating_scales": {
                 "satisfaction": [
-                    "Very Dissatisfied", "Dissatisfied", "Neutral",
-                    "Satisfied", "Very Satisfied"
+                    "Very Dissatisfied",
+                    "Dissatisfied",
+                    "Neutral",
+                    "Satisfied",
+                    "Very Satisfied",
                 ],
                 "ease_of_use": [
-                    "Very Difficult", "Difficult", "Moderate",
-                    "Easy", "Very Easy"
+                    "Very Difficult",
+                    "Difficult",
+                    "Moderate",
+                    "Easy",
+                    "Very Easy",
                 ],
-                "performance": [
-                    "Very Slow", "Slow", "Moderate", "Fast", "Very Fast"
-                ],
+                "performance": ["Very Slow", "Slow", "Moderate", "Fast", "Very Fast"],
             },
             "timestamp": datetime.now().isoformat(),
             "anonymous_submission": True,
@@ -340,9 +334,7 @@ async def ux_feedback():
         }
 
         # Cache the feedback form
-        await _fractal_cache_manager.set_cached(
-            cache_key, feedback_form, ttl=3600
-        )
+        await _fractal_cache_manager.set_cached(cache_key, feedback_form, ttl=3600)
 
         return feedback_form
 

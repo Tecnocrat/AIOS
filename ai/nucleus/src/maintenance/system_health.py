@@ -19,9 +19,7 @@ from typing import Optional
 
 def _health_tool_path() -> str:
     root = Path(__file__).resolve().parents[3]  # .../AIOS/ai/src/maintenance
-    return str(
-        root / "runtime" / "tools" / "system_health_check.py"
-    )
+    return str(root / "runtime" / "tools" / "system_health_check.py")
 
 
 def run_system_health_check(timeout: Optional[int] = 180) -> int:

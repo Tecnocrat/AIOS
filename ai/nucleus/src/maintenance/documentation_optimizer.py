@@ -50,22 +50,22 @@ class DocumentationOptimizer:
             "files": [],
             "content_categories": {},
             "fragmentation_score": 0.0,
-            "recommendations": []
+            "recommendations": [],
         }
 
         # Analyze each file
         for file_path in files:
             try:
-                with open(file_path, 'r', encoding='utf-8') as f:
+                with open(file_path, "r", encoding="utf-8") as f:
                     content = f.read()
 
                 file_info = {
                     "name": file_path.name,
                     "size": len(content),
-                    "lines": len(content.split('\n')),
+                    "lines": len(content.split("\n")),
                     "category": self._categorize_content(content),
                     "keywords": self._extract_keywords(content),
-                    "hash": hashlib.md5(content.encode()).hexdigest()
+                    "hash": hashlib.md5(content.encode()).hexdigest(),
                 }
 
                 analysis["files"].append(file_info)
@@ -80,9 +80,7 @@ class DocumentationOptimizer:
                 print(f"Error analyzing {file_path}: {e}")
 
         # Calculate fragmentation score
-        analysis["fragmentation_score"] = self._calculate_fragmentation(
-            analysis
-        )
+        analysis["fragmentation_score"] = self._calculate_fragmentation(analysis)
 
         # Generate recommendations
         analysis["recommendations"] = self._generate_recommendations(analysis)
@@ -104,7 +102,7 @@ class DocumentationOptimizer:
             "changelog": ["changelog", "changes", "version", "release"],
             "roadmap": ["roadmap", "plan", "future", "milestone"],
             "integration": ["integration", "hybrid", "interface"],
-            "status": ["status", "progress", "summary", "report"]
+            "status": ["status", "progress", "summary", "report"],
         }
 
         # Count keyword matches
@@ -125,6 +123,7 @@ class DocumentationOptimizer:
         meaningful_words = [w for w in words if len(w) > 4 and w.isalpha()]
         # Return most frequent unique words (simple approach)
         from collections import Counter
+
         return [word for word, count in Counter(meaningful_words).most_common(10)]
 
     def _calculate_fragmentation(self, analysis: Dict) -> float:
@@ -148,18 +147,26 @@ class DocumentationOptimizer:
         total_files = analysis["total_files"]
 
         if fragmentation > 0.5:
-            recommendations.append(f"High fragmentation detected ({total_files} files). Consider consolidation.")
+            recommendations.append(
+                f"High fragmentation detected ({total_files} files). Consider consolidation."
+            )
 
         if fragmentation > 0.8:
-            recommendations.append("Implement tachyonic archival for redundant documentation.")
+            recommendations.append(
+                "Implement tachyonic archival for redundant documentation."
+            )
 
         # Category-specific recommendations
         categories = analysis["content_categories"]
         if categories.get("status", 0) > 3:
-            recommendations.append("Multiple status files detected. Consolidate into single status report.")
+            recommendations.append(
+                "Multiple status files detected. Consolidate into single status report."
+            )
 
         if categories.get("integration", 0) > 2:
-            recommendations.append("Multiple integration guides found. Merge into unified guide.")
+            recommendations.append(
+                "Multiple integration guides found. Merge into unified guide."
+            )
 
         return recommendations
 
@@ -172,7 +179,7 @@ class DocumentationOptimizer:
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(output_path, 'w', encoding='utf-8') as f:
+        with open(output_path, "w", encoding="utf-8") as f:
             json.dump(analysis, f, indent=2, ensure_ascii=False)
 
         return str(output_path)
@@ -197,7 +204,7 @@ class DocumentationOptimizer:
             "start_time": start_time.isoformat(),
             "files_processed": 0,
             "changes_made": [],
-            "status": "in_progress"
+            "status": "in_progress",
         }
 
         try:
@@ -206,7 +213,7 @@ class DocumentationOptimizer:
 
             for file_path in docs_files:
                 try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
+                    with open(file_path, "r", encoding="utf-8") as f:
                         content = f.read()
 
                     original_content = content
@@ -218,13 +225,15 @@ class DocumentationOptimizer:
 
                     # Only write if content changed
                     if content != original_content:
-                        with open(file_path, 'w', encoding='utf-8') as f:
+                        with open(file_path, "w", encoding="utf-8") as f:
                             f.write(content)
 
-                        results["changes_made"].append({
-                            "file": file_path.name,
-                            "changes": ["formatting", "whitespace", "headers"]
-                        })
+                        results["changes_made"].append(
+                            {
+                                "file": file_path.name,
+                                "changes": ["formatting", "whitespace", "headers"],
+                            }
+                        )
 
                     processed_count += 1
 
@@ -236,13 +245,15 @@ class DocumentationOptimizer:
             end_time = datetime.now()
             duration = (end_time - start_time).total_seconds()
 
-            results.update({
-                "files_processed": processed_count,
-                "status": "completed",
-                "end_time": end_time.isoformat(),
-                "duration_seconds": duration,
-                "message": f"Processed {processed_count} files with {len(results['changes_made'])} optimizations"
-            })
+            results.update(
+                {
+                    "files_processed": processed_count,
+                    "status": "completed",
+                    "end_time": end_time.isoformat(),
+                    "duration_seconds": duration,
+                    "message": f"Processed {processed_count} files with {len(results['changes_made'])} optimizations",
+                }
+            )
 
             print(f" Minimal optimization completed: {processed_count} files processed")
             return results
@@ -251,13 +262,15 @@ class DocumentationOptimizer:
             end_time = datetime.now()
             duration = (end_time - start_time).total_seconds()
 
-            results.update({
-                "status": "error",
-                "end_time": end_time.isoformat(),
-                "duration_seconds": duration,
-                "error": str(e),
-                "message": f"Optimization failed: {str(e)}"
-            })
+            results.update(
+                {
+                    "status": "error",
+                    "end_time": end_time.isoformat(),
+                    "duration_seconds": duration,
+                    "error": str(e),
+                    "message": f"Optimization failed: {str(e)}",
+                }
+            )
 
             print(f" Minimal optimization failed: {e}")
             return results
@@ -267,13 +280,13 @@ class DocumentationOptimizer:
         import re
 
         # Remove trailing whitespace
-        content = re.sub(r' +$', '', content, flags=re.MULTILINE)
+        content = re.sub(r" +$", "", content, flags=re.MULTILINE)
 
         # Normalize line breaks (max 2 consecutive)
-        content = re.sub(r'\n{3,}', '\n\n', content)
+        content = re.sub(r"\n{3,}", "\n\n", content)
 
         # Ensure file ends with single newline
-        content = content.rstrip() + '\n'
+        content = content.rstrip() + "\n"
 
         return content
 
@@ -282,13 +295,13 @@ class DocumentationOptimizer:
         import re
 
         # Fix header spacing (ensure space after #)
-        content = re.sub(r'^(#{1,6})([^ #])', r'\1 \2', content, flags=re.MULTILINE)
+        content = re.sub(r"^(#{1,6})([^ #])", r"\1 \2", content, flags=re.MULTILINE)
 
         # Fix list spacing
-        content = re.sub(r'^(\s*)[-*+]([^ ])', r'\1- \2', content, flags=re.MULTILINE)
+        content = re.sub(r"^(\s*)[-*+]([^ ])", r"\1- \2", content, flags=re.MULTILINE)
 
         # Fix code block formatting
-        content = re.sub(r'^```([^\n])', r'```\n\1', content, flags=re.MULTILINE)
+        content = re.sub(r"^```([^\n])", r"```\n\1", content, flags=re.MULTILINE)
 
         return content
 
@@ -296,12 +309,12 @@ class DocumentationOptimizer:
         """Remove duplicate consecutive headers."""
         import re
 
-        lines = content.split('\n')
+        lines = content.split("\n")
         cleaned_lines = []
         last_header = None
 
         for line in lines:
-            header_match = re.match(r'^(#{1,6})\s+(.+)$', line.strip())
+            header_match = re.match(r"^(#{1,6})\s+(.+)$", line.strip())
 
             if header_match:
                 current_header = (header_match.group(1), header_match.group(2).strip())
@@ -314,4 +327,4 @@ class DocumentationOptimizer:
                 cleaned_lines.append(line)
                 last_header = None
 
-        return '\n'.join(cleaned_lines)
+        return "\n".join(cleaned_lines)

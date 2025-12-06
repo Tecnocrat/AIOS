@@ -6,6 +6,7 @@ Test AINLP directive compliance for harmonized requirements.txt
 from pathlib import Path
 from aios_core_evolution_monitor import AIOSFileDirectiveChecker
 
+
 def test_requirements_compliance():
     """Test the harmonized requirements.txt against AINLP directives."""
     # Initialize checker with root AIOS path since requirements.txt is at root level
@@ -21,20 +22,21 @@ def test_requirements_compliance():
     print(".2f")
     print()
     print("Directive Analysis:")
-    for directive in result['directives_checked']:
+    for directive in result["directives_checked"]:
         print(".2f")
     print()
     print(f"Violations Found: {len(result['violations'])}")
-    if result['violations']:
-        for violation in result['violations']:
+    if result["violations"]:
+        for violation in result["violations"]:
             print(f"  - {violation}")
     print()
     print(f"Recommendations: {len(result['recommendations'])}")
-    if result['recommendations']:
-        for rec in result['recommendations']:
+    if result["recommendations"]:
+        for rec in result["recommendations"]:
             print(f"  - {rec}")
 
     return result
+
 
 if __name__ == "__main__":
     test_requirements_compliance()

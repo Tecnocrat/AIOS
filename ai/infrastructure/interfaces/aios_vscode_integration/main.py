@@ -93,6 +93,7 @@ def recognize_intent(request: dict):
     response = generate_aios_response(message, context)
     return {"response": response}
 
+
 # Enable CORS for VSCode extension
 
 
@@ -108,20 +109,14 @@ app.add_middleware(
 app.middleware("http")(log_requests)
 
 # Include routers from consolidated endpoint modules
-app.include_router(endpoints.system_endpoints.router, prefix="/system",
-                   tags=["system"])
-app.include_router(endpoints.development_endpoints.router, prefix="/dev",
-                   tags=["development"])
+app.include_router(endpoints.system_endpoints.router, prefix="/system", tags=["system"])
+app.include_router(
+    endpoints.development_endpoints.router, prefix="/dev", tags=["development"]
+)
 app.include_router(endpoints.ai_endpoints.router, prefix="/ai", tags=["ai"])
 app.include_router(endpoints.ux_endpoints.router, prefix="/ux", tags=["ux"])
 
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(
-        app,
-        host="localhost",
-        port=8080,
-        log_level="info",
-        reload=False
-    )
+    uvicorn.run(app, host="localhost", port=8080, log_level="info", reload=False)

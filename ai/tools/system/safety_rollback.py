@@ -9,6 +9,7 @@ Tachyonic nucleus bridge providing:
 This module now embeds original path & timestamp metadata into a snapshot
 manifest (JSONL) enabling deterministic restoration by hash (or prefix).
 """
+
 from __future__ import annotations
 import hashlib
 import json
@@ -50,7 +51,7 @@ def snapshot_file(path: Path) -> Dict[str, Any]:
         "hash": h,
         "size": len(data),
         "timestamp": time.time(),
-        "created": created
+        "created": created,
     }
     # Append manifest record (multiple paths may share identical hash)
     with SNAP_MANIFEST.open("a", encoding="utf-8") as mf:
@@ -62,20 +63,14 @@ def diff_and_log(before: Path, after: Path) -> Dict[str, Any]:
     a = before.read_text().splitlines()
     b = after.read_text().splitlines()
     diff_lines = list(
-        difflib.unified_diff(
-            a,
-            b,
-            fromfile=str(before),
-            tofile=str(after),
-            lineterm=""
-        )
+        difflib.unified_diff(a, b, fromfile=str(before), tofile=str(after), lineterm="")
     )
     rec = {
         "timestamp": time.time(),
         "before": str(before),
         "after": str(after),
         "diff_hash": _hash("\n".join(diff_lines).encode()),
-        "lines": diff_lines
+        "lines": diff_lines,
     }
     DIFF_LOG.parent.mkdir(parents=True, exist_ok=True)
     with DIFF_LOG.open("a", encoding="utf-8") as f:
@@ -83,13 +78,12 @@ def diff_and_log(before: Path, after: Path) -> Dict[str, Any]:
     return rec
 
 
-def guarded_write(target: Path, new_text: str,
-                  allow_outside: bool = False) -> Dict[str, Any]:
+def guarded_write(
+    target: Path, new_text: str, allow_outside: bool = False
+) -> Dict[str, Any]:
     lab_prefix = str((BASE / "evolution_lab").resolve())
     if not allow_outside and not str(target.resolve()).startswith(lab_prefix):
-        raise PermissionError(
-            f"Denied write outside evolution_lab: {target}"
-        )
+        raise PermissionError(f"Denied write outside evolution_lab: {target}")
     before_meta = snapshot_file(target) if target.exists() else None
     tmp = target.with_suffix(target.suffix + ".__tmpwrite")
     tmp.write_text(new_text, encoding="utf-8")
@@ -133,9 +127,9 @@ def _find_snapshot_hash(hash_prefix: str) -> Optional[str]:
     return next(iter(matches))
 
 
-def restore_snapshot(hash_prefix: str,
-                     dest_path: Optional[Path] = None,
-                     overwrite: bool = False) -> Path:
+def restore_snapshot(
+    hash_prefix: str, dest_path: Optional[Path] = None, overwrite: bool = False
+) -> Path:
     """Restore a snapshot identified by full/partial hash.
 
     If dest_path is None, original path from latest manifest record is used.
@@ -143,15 +137,11 @@ def restore_snapshot(hash_prefix: str,
     """
     resolved_hash = _find_snapshot_hash(hash_prefix)
     if not resolved_hash:
-        raise FileNotFoundError(
-            f"No snapshot hash matches prefix: {hash_prefix}"
-        )
+        raise FileNotFoundError(f"No snapshot hash matches prefix: {hash_prefix}")
     shard = SNAP_ROOT / resolved_hash[:2]
     snap_file = shard / f"{resolved_hash}.snap"
     if not snap_file.exists():
-        raise FileNotFoundError(
-            f"Snapshot bytes missing for hash {resolved_hash}"
-        )
+        raise FileNotFoundError(f"Snapshot bytes missing for hash {resolved_hash}")
     original_path: Optional[Path] = None
     if SNAP_MANIFEST.exists():
         # find latest manifest entry for this hash (last occurrence)
@@ -162,14 +152,10 @@ def restore_snapshot(hash_prefix: str,
                 except json.JSONDecodeError:
                     continue
                 if obj.get("hash") == resolved_hash:
-                    original_path = (
-                        Path(obj.get("path")) if obj.get("path") else None
-                    )
+                    original_path = Path(obj.get("path")) if obj.get("path") else None
     target = Path(dest_path) if dest_path else original_path
     if not target:
-        raise ValueError(
-            "Destination path not provided and original path unknown."
-        )
+        raise ValueError("Destination path not provided and original path unknown.")
     if target.exists() and not overwrite:
         raise FileExistsError(
             f"Target exists: {target}; use overwrite=True to replace."
@@ -188,5 +174,5 @@ __all__ = [
     "restore_snapshot",
     "SNAP_ROOT",
     "DIFF_LOG",
-    "SNAP_MANIFEST"
+    "SNAP_MANIFEST",
 ]

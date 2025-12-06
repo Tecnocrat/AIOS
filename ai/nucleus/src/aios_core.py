@@ -45,21 +45,15 @@ class AICore:
         self.config = self._load_config()
         self.is_initialized = False
         self.is_running = False
-        self.nlp_manager = NLPManager(
-            self.config.get("models", {}).get("nlp", {})
-        )
+        self.nlp_manager = NLPManager(self.config.get("models", {}).get("nlp", {}))
         self.prediction_manager = PredictionManager(
             self.config.get("models", {}).get("prediction", {})
         )
         self.automation_manager = AutomationManager(
             self.config.get("models", {}).get("automation", {})
         )
-        self.learning_manager = LearningManager(
-            self.config.get("training", {})
-        )
-        self.integration_bridge = IntegrationBridge(
-            self.config.get("integration", {})
-        )
+        self.learning_manager = LearningManager(self.config.get("training", {}))
+        self.integration_bridge = IntegrationBridge(self.config.get("integration", {}))
         logger.info("AI Core initialized with config: %s", config_path)
 
     def _load_config(self) -> Dict[str, Any]:
@@ -159,9 +153,7 @@ class AICore:
                     "automation_result": automation_result,
                 }
             if intent == "prediction":
-                prediction_result = await self.prediction_manager.predict(
-                    nlp_result
-                )
+                prediction_result = await self.prediction_manager.predict(nlp_result)
                 return {
                     "status": "success",
                     "intent": intent,
@@ -221,26 +213,15 @@ class AICore:
         health_results = {}
         try:
             health_results["nlp"] = await self.nlp_manager.health_check()
-            health_results["prediction"] = (
-                await self.prediction_manager.health_check()
-            )
-            health_results["automation"] = (
-                await self.automation_manager.health_check()
-            )
-            health_results["learning"] = (
-                await self.learning_manager.health_check()
-            )
-            health_results["integration"] = (
-                await self.integration_bridge.health_check()
-            )
+            health_results["prediction"] = await self.prediction_manager.health_check()
+            health_results["automation"] = await self.automation_manager.health_check()
+            health_results["learning"] = await self.learning_manager.health_check()
+            health_results["integration"] = await self.integration_bridge.health_check()
             all_healthy = all(
-                result.get("healthy", False)
-                for result in health_results.values()
+                result.get("healthy", False) for result in health_results.values()
             )
             return {
-                "overall_health": (
-                    "healthy" if all_healthy else "unhealthy"
-                ),
+                "overall_health": ("healthy" if all_healthy else "unhealthy"),
                 "subsystems": health_results,
                 "timestamp": asyncio.get_event_loop().time(),
             }

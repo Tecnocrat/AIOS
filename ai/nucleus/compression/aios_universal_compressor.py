@@ -275,9 +275,7 @@ class AIOSUniversalCompressor:
             files.append(source_path)
         else:
             # Default patterns if none specified
-            patterns = request.file_patterns or [
-                "*.py", "*.cs", "*.cpp", "*.hpp"
-            ]
+            patterns = request.file_patterns or ["*.py", "*.cs", "*.cpp", "*.hpp"]
             exclude_patterns = request.exclude_patterns or [
                 "*test*",
                 "*temp*",
@@ -301,7 +299,8 @@ class AIOSUniversalCompressor:
                 # Use generator and filter in one pass instead of
                 # nested loops
                 found_files = [
-                    f for f in source_path.rglob(pattern)
+                    f
+                    for f in source_path.rglob(pattern)
                     if not any(f.match(exc) for exc in exclude_set)
                 ]
                 files.extend(found_files)

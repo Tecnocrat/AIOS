@@ -29,7 +29,9 @@ import asyncio
 
 
 # Configuration
-OLLAMA_RC1_PATH = Path(r"C:\dev\aios-win\ai\tools\ollama-rc1\ollama-0.13.1-rc1\ollama-rc1.exe")
+OLLAMA_RC1_PATH = Path(
+    r"C:\dev\aios-win\ai\tools\ollama-rc1\ollama-0.13.1-rc1\ollama-rc1.exe"
+)
 OLLAMA_API_BASE = "http://localhost:11434"
 DEFAULT_MODEL = "aios-mistral"
 
@@ -37,6 +39,7 @@ DEFAULT_MODEL = "aios-mistral"
 @dataclass
 class MistralResponse:
     """Response from aios-mistral"""
+
     content: str
     model: str
     total_duration_ms: float
@@ -49,65 +52,65 @@ class MistralResponse:
 class AIOSMistralBridge:
     """
     Bridge to aios-mistral local AI agent
-    
+
     Provides async interface for:
     - Code generation/mutation
-    - Code analysis/review  
+    - Code analysis/review
     - Context summarization
     - Quality fix suggestions
-    
+
     Cost: FREE (local inference)
     Latency: ~2-5s per request (4GB VRAM)
     """
-    
+
     def __init__(
         self,
         model: str = DEFAULT_MODEL,
         api_base: str = OLLAMA_API_BASE,
-        timeout: float = 60.0
+        timeout: float = 60.0,
     ):
         self.model = model
         self.api_base = api_base
         self.timeout = timeout
         self._client: Optional[httpx.AsyncClient] = None
-    
+
     async def __aenter__(self):
         self._client = httpx.AsyncClient(timeout=self.timeout)
         return self
-    
+
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         if self._client:
             await self._client.aclose()
-    
+
     async def generate(
         self,
         prompt: str,
         system: Optional[str] = None,
         temperature: float = 0.7,
-        max_tokens: int = 1024
+        max_tokens: int = 1024,
     ) -> MistralResponse:
         """
         Generate completion from aios-mistral
-        
+
         Args:
             prompt: User prompt
             system: Optional system prompt override
             temperature: Sampling temperature (0.0-1.0)
             max_tokens: Maximum tokens to generate
-            
+
         Returns:
             MistralResponse with generated content
         """
         if not self._client:
             self._client = httpx.AsyncClient(timeout=self.timeout)
-        
+
         try:
             # Build messages
             messages = []
             if system:
                 messages.append({"role": "system", "content": system})
             messages.append({"role": "user", "content": prompt})
-            
+
             # Call Ollama API
             response = await self._client.post(
                 f"{self.api_base}/api/chat",
@@ -115,13 +118,10 @@ class AIOSMistralBridge:
                     "model": self.model,
                     "messages": messages,
                     "stream": False,
-                    "options": {
-                        "temperature": temperature,
-                        "num_predict": max_tokens
-                    }
-                }
+                    "options": {"temperature": temperature, "num_predict": max_tokens},
+                },
             )
-            
+
             if response.status_code != 200:
                 return MistralResponse(
                     content="",
@@ -130,20 +130,20 @@ class AIOSMistralBridge:
                     prompt_tokens=0,
                     completion_tokens=0,
                     success=False,
-                    error=f"HTTP {response.status_code}: {response.text}"
+                    error=f"HTTP {response.status_code}: {response.text}",
                 )
-            
+
             data = response.json()
-            
+
             return MistralResponse(
                 content=data.get("message", {}).get("content", ""),
                 model=data.get("model", self.model),
                 total_duration_ms=data.get("total_duration", 0) / 1_000_000,
                 prompt_tokens=data.get("prompt_eval_count", 0),
                 completion_tokens=data.get("eval_count", 0),
-                success=True
+                success=True,
             )
-            
+
         except httpx.TimeoutException:
             return MistralResponse(
                 content="",
@@ -152,7 +152,7 @@ class AIOSMistralBridge:
                 prompt_tokens=0,
                 completion_tokens=0,
                 success=False,
-                error="Request timeout"
+                error="Request timeout",
             )
         except Exception as e:
             return MistralResponse(
@@ -162,14 +162,14 @@ class AIOSMistralBridge:
                 prompt_tokens=0,
                 completion_tokens=0,
                 success=False,
-                error=str(e)
+                error=str(e),
             )
-    
+
     async def check_health(self) -> bool:
         """Check if Ollama server is running and model is available"""
         if not self._client:
             self._client = httpx.AsyncClient(timeout=self.timeout)
-        
+
         try:
             response = await self._client.get(f"{self.api_base}/api/tags")
             if response.status_code == 200:
@@ -179,25 +179,22 @@ class AIOSMistralBridge:
             return False
         except Exception:
             return False
-    
+
     # =========================================================================
     # Evolution Lab Integration Methods
     # =========================================================================
-    
+
     async def mutate_code(
-        self,
-        code: str,
-        archetype: str,
-        mutation_strength: float = 0.3
+        self, code: str, archetype: str, mutation_strength: float = 0.3
     ) -> MistralResponse:
         """
         Generate code mutation for evolution lab
-        
+
         Args:
             code: Original code to mutate
             archetype: Code archetype (os_tools, cli_applications, etc.)
             mutation_strength: 0.0 (minor) to 1.0 (major restructure)
-            
+
         Returns:
             MistralResponse with mutated code
         """
@@ -215,12 +212,12 @@ Output ONLY the mutated code, no explanations."""
             0.0: "minor tweaks only (variable names, comments)",
             0.3: "moderate improvements (add error handling, type hints)",
             0.6: "significant refactoring (algorithm optimization, restructure)",
-            1.0: "major evolution (complete reimplementation with same interface)"
+            1.0: "major evolution (complete reimplementation with same interface)",
         }
-        
+
         # Find closest strength description
         closest = min(strength_desc.keys(), key=lambda x: abs(x - mutation_strength))
-        
+
         prompt = f"""Archetype: {archetype}
 Mutation Strength: {mutation_strength:.1f} ({strength_desc[closest]})
 
@@ -234,18 +231,15 @@ Generate mutated version:"""
         return await self.generate(
             prompt=prompt,
             system=system,
-            temperature=0.5 + (mutation_strength * 0.4),  # Higher temp for stronger mutations
-            max_tokens=2048
+            temperature=0.5
+            + (mutation_strength * 0.4),  # Higher temp for stronger mutations
+            max_tokens=2048,
         )
-    
-    async def analyze_fitness(
-        self,
-        code: str,
-        archetype: str
-    ) -> MistralResponse:
+
+    async def analyze_fitness(self, code: str, archetype: str) -> MistralResponse:
         """
         Analyze code fitness for evolution selection
-        
+
         Returns JSON with fitness scores
         """
         system = """You are MISTRAL, an AIOS code fitness analyzer. Evaluate Python code 
@@ -270,18 +264,15 @@ Return fitness JSON:"""
             prompt=prompt,
             system=system,
             temperature=0.3,  # Lower temp for consistent analysis
-            max_tokens=256
+            max_tokens=256,
         )
-    
+
     # =========================================================================
     # Quality Monitor Integration Methods
     # =========================================================================
-    
+
     async def fix_e501(
-        self,
-        line: str,
-        line_number: int,
-        max_length: int = 88
+        self, line: str, line_number: int, max_length: int = 88
     ) -> MistralResponse:
         """Fix E501 line too long error"""
         system = """You are a Python code formatter. Fix the line to be under the max length 
@@ -294,16 +285,11 @@ extraction as needed. Output ONLY the fixed line(s), no explanations."""
 Fixed version:"""
 
         return await self.generate(
-            prompt=prompt,
-            system=system,
-            temperature=0.2,
-            max_tokens=256
+            prompt=prompt, system=system, temperature=0.2, max_tokens=256
         )
-    
+
     async def fix_linting_issue(
-        self,
-        code_context: str,
-        issue_description: str
+        self, code_context: str, issue_description: str
     ) -> MistralResponse:
         """Fix general linting issue"""
         system = """You are a Python code fixer. Fix the linting issue in the code context.
@@ -319,10 +305,7 @@ Code context:
 Fixed code:"""
 
         return await self.generate(
-            prompt=prompt,
-            system=system,
-            temperature=0.2,
-            max_tokens=512
+            prompt=prompt, system=system, temperature=0.2, max_tokens=512
         )
 
 
@@ -330,23 +313,25 @@ Fixed code:"""
 # Synchronous wrapper for non-async contexts
 # =============================================================================
 
+
 def generate_sync(
     prompt: str,
     model: str = DEFAULT_MODEL,
     system: Optional[str] = None,
     temperature: float = 0.7,
-    max_tokens: int = 1024
+    max_tokens: int = 1024,
 ) -> MistralResponse:
     """Synchronous wrapper for simple use cases"""
+
     async def _run():
         async with AIOSMistralBridge(model=model) as bridge:
             return await bridge.generate(
                 prompt=prompt,
                 system=system,
                 temperature=temperature,
-                max_tokens=max_tokens
+                max_tokens=max_tokens,
             )
-    
+
     return asyncio.run(_run())
 
 
@@ -356,31 +341,33 @@ def generate_sync(
 
 if __name__ == "__main__":
     import sys
-    
+
     async def main():
         async with AIOSMistralBridge() as bridge:
             # Health check
             healthy = await bridge.check_health()
             print(f"🏥 Health: {'✅ OK' if healthy else '❌ Server not running'}")
-            
+
             if not healthy:
                 print("Start server: .\\aios-mistral.ps1 -Serve")
                 return
-            
+
             # Test prompt
             if len(sys.argv) > 1:
                 prompt = " ".join(sys.argv[1:])
             else:
                 prompt = "What is your purpose in the AIOS network? Be brief."
-            
+
             print(f"\n📝 Prompt: {prompt}")
             response = await bridge.generate(prompt)
-            
+
             if response.success:
                 print(f"\n🤖 Response:\n{response.content}")
                 print(f"\n⏱️  Duration: {response.total_duration_ms:.0f}ms")
-                print(f"📊 Tokens: {response.prompt_tokens} prompt + {response.completion_tokens} completion")
+                print(
+                    f"📊 Tokens: {response.prompt_tokens} prompt + {response.completion_tokens} completion"
+                )
             else:
                 print(f"\n❌ Error: {response.error}")
-    
+
     asyncio.run(main())

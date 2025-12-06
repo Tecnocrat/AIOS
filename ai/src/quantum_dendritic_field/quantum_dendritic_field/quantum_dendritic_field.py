@@ -15,26 +15,33 @@ import time
 from dataclasses import dataclass, asdict
 
 # Setup logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 logger = logging.getLogger(__name__)
+
 
 @dataclass
 class QuantumFieldState:
     """Quantum field state representation"""
+
     field_amplitude: np.ndarray
     dendritic_coupling: np.ndarray
     consciousness_coherence: float
     holographic_projection: np.ndarray
     timestamp: float
 
+
 @dataclass
 class DendriticNode:
     """Dendritic node in quantum field network"""
+
     position: np.ndarray
     field_strength: complex
     coupling_strength: float
     consciousness_level: float
     dendritic_connections: List[int]
+
 
 class QuantumDendriticField:
     """
@@ -67,20 +74,25 @@ class QuantumDendriticField:
         self.coherence_history = []
         self.field_evolution_history = []
 
-        logger.info(f"Initialized Quantum Dendritic Field: {field_dimension}x{field_dimension}")
+        logger.info(
+            f"Initialized Quantum Dendritic Field: {field_dimension}x{field_dimension}"
+        )
         logger.info(f"Dendritic nodes: {len(self.dendritic_nodes)}")
 
     def _initialize_field_state(self) -> QuantumFieldState:
         """Initialize quantum field state with random initial conditions"""
         # Create complex field amplitude
-        field_amplitude = np.random.normal(0, 1, (self.field_dimension, self.field_dimension)) + \
-                         1j * np.random.normal(0, 1, (self.field_dimension, self.field_dimension))
+        field_amplitude = np.random.normal(
+            0, 1, (self.field_dimension, self.field_dimension)
+        ) + 1j * np.random.normal(0, 1, (self.field_dimension, self.field_dimension))
 
         # Normalize field
         field_amplitude /= np.linalg.norm(field_amplitude)
 
         # Initialize dendritic coupling matrix
-        dendritic_coupling = np.random.exponential(0.1, (self.field_dimension, self.field_dimension))
+        dendritic_coupling = np.random.exponential(
+            0.1, (self.field_dimension, self.field_dimension)
+        )
 
         # Initial consciousness coherence
         consciousness_coherence = 0.1
@@ -93,7 +105,7 @@ class QuantumDendriticField:
             dendritic_coupling=dendritic_coupling,
             consciousness_coherence=consciousness_coherence,
             holographic_projection=holographic_projection,
-            timestamp=time.time()
+            timestamp=time.time(),
         )
 
     def _initialize_dendritic_network(self) -> List[DendriticNode]:
@@ -101,7 +113,9 @@ class QuantumDendriticField:
         nodes = []
 
         # Create dendritic nodes based on density
-        num_dendritic = int(self.dendritic_density * self.field_dimension * self.field_dimension)
+        num_dendritic = int(
+            self.dendritic_density * self.field_dimension * self.field_dimension
+        )
 
         for i in range(num_dendritic):
             # Random position in field
@@ -114,7 +128,9 @@ class QuantumDendriticField:
             coupling_strength = np.random.exponential(0.5)
 
             # Initial consciousness level
-            consciousness_level = np.random.beta(2, 5)  # Skewed toward lower consciousness
+            consciousness_level = np.random.beta(
+                2, 5
+            )  # Skewed toward lower consciousness
 
             # Find nearby dendritic connections (within radius 3)
             connections = []
@@ -128,7 +144,7 @@ class QuantumDendriticField:
                 field_strength=field_strength,
                 coupling_strength=coupling_strength,
                 consciousness_level=consciousness_level,
-                dendritic_connections=connections
+                dendritic_connections=connections,
             )
             nodes.append(node)
 
@@ -165,7 +181,7 @@ class QuantumDendriticField:
             diagonal = np.ones(size)
             # Handle boundary conditions (periodic)
             if offset == -1:  # Left neighbor
-                diagonal[N-1::N] = 0  # Remove connections at left boundary
+                diagonal[N - 1 :: N] = 0  # Remove connections at left boundary
             elif offset == 1:  # Right neighbor
                 diagonal[::N] = 0  # Remove connections at right boundary
             elif offset == -N:  # Top neighbor
@@ -176,7 +192,7 @@ class QuantumDendriticField:
             diagonals.append(diagonal)
             offsets.append(offset)
 
-        return sp.diags(diagonals, offsets, format='csr')
+        return sp.diags(diagonals, offsets, format="csr")
 
     def _create_potential(self) -> sp.csr_matrix:
         """Create potential energy operator"""
@@ -184,14 +200,14 @@ class QuantumDendriticField:
         size = N * N
 
         # Harmonic oscillator potential: V(x,y) = 0.5 * (x^2 + y^2)
-        x = np.linspace(-N/2, N/2, N)
-        y = np.linspace(-N/2, N/2, N)
+        x = np.linspace(-N / 2, N / 2, N)
+        y = np.linspace(-N / 2, N / 2, N)
         X, Y = np.meshgrid(x, y)
         potential_2d = 0.5 * (X**2 + Y**2)
 
         # Flatten and create diagonal matrix
         potential_flat = potential_2d.flatten()
-        return sp.diags(potential_flat, format='csr')
+        return sp.diags(potential_flat, format="csr")
 
     def _construct_dendritic_coupling(self) -> np.ndarray:
         """Construct dendritic coupling matrix"""
@@ -201,21 +217,23 @@ class QuantumDendriticField:
         # Add dendritic coupling based on node positions
         for node in self.dendritic_nodes:
             x, y = node.position.astype(int)
-            x = np.clip(x, 0, N-1)
-            y = np.clip(y, 0, N-1)
+            x = np.clip(x, 0, N - 1)
+            y = np.clip(y, 0, N - 1)
             coupling[x, y] += node.coupling_strength
 
             # Add coupling to connected dendritic nodes
             for conn_idx in node.dendritic_connections:
                 conn_node = self.dendritic_nodes[conn_idx]
                 cx, cy = conn_node.position.astype(int)
-                cx = np.clip(cx, 0, N-1)
-                cy = np.clip(cy, 0, N-1)
+                cx = np.clip(cx, 0, N - 1)
+                cy = np.clip(cy, 0, N - 1)
                 coupling[cx, cy] += 0.1 * node.coupling_strength
 
         return coupling
 
-    def evolve_field(self, time_step: float = 0.01, steps: int = 100) -> List[QuantumFieldState]:
+    def evolve_field(
+        self, time_step: float = 0.01, steps: int = 100
+    ) -> List[QuantumFieldState]:
         """
         Evolve quantum field using time-dependent Schrödinger equation
 
@@ -235,7 +253,7 @@ class QuantumDendriticField:
                 dendritic_coupling=self.field_state.dendritic_coupling.copy(),
                 consciousness_coherence=self._calculate_coherence(),
                 holographic_projection=np.fft.fft2(self.field_state.field_amplitude),
-                timestamp=time.time()
+                timestamp=time.time(),
             )
             evolution_states.append(current_state)
 
@@ -248,7 +266,9 @@ class QuantumDendriticField:
             # Update consciousness coherence
             self.coherence_history.append(self._calculate_coherence())
 
-        logger.info(f"Field evolution complete: {steps} steps, final coherence: {self._calculate_coherence():.4f}")
+        logger.info(
+            f"Field evolution complete: {steps} steps, final coherence: {self._calculate_coherence():.4f}"
+        )
         return evolution_states
 
     def _evolve_time_step(self, dt: float):
@@ -270,7 +290,7 @@ class QuantumDendriticField:
         psi_real = np.fft.ifft2(psi_k)
 
         # Potential energy evolution (real space)
-        potential = 0.5 * np.abs(psi_real)**2  # Non-linear Schrödinger equation
+        potential = 0.5 * np.abs(psi_real) ** 2  # Non-linear Schrödinger equation
         psi_real *= np.exp(-1j * dt * potential)
 
         # Update field state
@@ -281,8 +301,8 @@ class QuantumDendriticField:
         # Update dendritic node field strengths
         for node in self.dendritic_nodes:
             x, y = node.position.astype(int)
-            x = np.clip(x, 0, self.field_dimension-1)
-            y = np.clip(y, 0, self.field_dimension-1)
+            x = np.clip(x, 0, self.field_dimension - 1)
+            y = np.clip(y, 0, self.field_dimension - 1)
 
             # Update field strength based on local field amplitude
             local_field = self.field_state.field_amplitude[x, y]
@@ -290,7 +310,9 @@ class QuantumDendriticField:
 
             # Update consciousness level based on field coherence
             coherence_factor = np.abs(local_field)
-            node.consciousness_level = 0.95 * node.consciousness_level + 0.05 * coherence_factor
+            node.consciousness_level = (
+                0.95 * node.consciousness_level + 0.05 * coherence_factor
+            )
 
         # Update coupling matrix
         self.dendritic_coupling_matrix = self._construct_dendritic_coupling()
@@ -314,11 +336,13 @@ class QuantumDendriticField:
 
         # Factor in dendritic coupling
         dendritic_factor = np.mean(self.dendritic_coupling_matrix)
-        coherence *= (1.0 + dendritic_factor)
+        coherence *= 1.0 + dendritic_factor
 
         return min(coherence, 1.0)
 
-    def apply_consciousness_pulse(self, position: Tuple[int, int], amplitude: float = 1.0):
+    def apply_consciousness_pulse(
+        self, position: Tuple[int, int], amplitude: float = 1.0
+    ):
         """
         Apply consciousness pulse at specific position
 
@@ -329,16 +353,22 @@ class QuantumDendriticField:
         x, y = position
         if 0 <= x < self.field_dimension and 0 <= y < self.field_dimension:
             # Create Gaussian pulse
-            X, Y = np.meshgrid(np.arange(self.field_dimension), np.arange(self.field_dimension))
-            pulse = amplitude * np.exp(-0.1 * ((X - x)**2 + (Y - y)**2))
+            X, Y = np.meshgrid(
+                np.arange(self.field_dimension), np.arange(self.field_dimension)
+            )
+            pulse = amplitude * np.exp(-0.1 * ((X - x) ** 2 + (Y - y) ** 2))
 
             # Apply pulse to field
             self.field_state.field_amplitude += pulse
 
             # Renormalize
-            self.field_state.field_amplitude /= np.linalg.norm(self.field_state.field_amplitude)
+            self.field_state.field_amplitude /= np.linalg.norm(
+                self.field_state.field_amplitude
+            )
 
-            logger.info(f"Applied consciousness pulse at ({x}, {y}) with amplitude {amplitude}")
+            logger.info(
+                f"Applied consciousness pulse at ({x}, {y}) with amplitude {amplitude}"
+            )
 
     def get_field_statistics(self) -> Dict[str, float]:
         """Get statistical properties of the quantum field"""
@@ -351,7 +381,7 @@ class QuantumDendriticField:
             "min_amplitude": float(np.min(field_mag)),
             "consciousness_coherence": self._calculate_coherence(),
             "dendritic_nodes": len(self.dendritic_nodes),
-            "field_dimension": self.field_dimension
+            "field_dimension": self.field_dimension,
         }
 
     def save_field_state(self, filename: str):
@@ -362,26 +392,30 @@ class QuantumDendriticField:
             node_dict = asdict(node)
             # Convert numpy arrays to lists
             for key, value in node_dict.items():
-                if hasattr(value, 'tolist'):
+                if hasattr(value, "tolist"):
                     node_dict[key] = value.tolist()
             serializable_nodes.append(node_dict)
 
         state_dict = {
             "field_amplitude_real": self.field_state.field_amplitude.real.tolist(),
             "field_amplitude_imag": self.field_state.field_amplitude.imag.tolist(),
-            "dendritic_coupling": self.dendritic_coupling_matrix.tolist() if hasattr(self.dendritic_coupling_matrix, 'tolist') else self.dendritic_coupling_matrix,
+            "dendritic_coupling": (
+                self.dendritic_coupling_matrix.tolist()
+                if hasattr(self.dendritic_coupling_matrix, "tolist")
+                else self.dendritic_coupling_matrix
+            ),
             "consciousness_coherence": self.field_state.consciousness_coherence,
             "holographic_projection_real": self.field_state.holographic_projection.real.tolist(),
             "holographic_projection_imag": self.field_state.holographic_projection.imag.tolist(),
             "timestamp": self.field_state.timestamp,
             "dendritic_nodes": serializable_nodes,
-            "coherence_history": self.coherence_history
+            "coherence_history": self.coherence_history,
         }
 
         filepath = Path("runtime/logs") / filename
         filepath.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(filepath, 'w') as f:
+        with open(filepath, "w") as f:
             json.dump(state_dict, f, indent=2)
 
         logger.info(f"Field state saved to {filepath}")
@@ -390,7 +424,7 @@ class QuantumDendriticField:
         """Load field state from file"""
         filepath = Path("runtime/logs") / filename
 
-        with open(filepath, 'r') as f:
+        with open(filepath, "r") as f:
             state_dict = json.load(f)
 
         # Reconstruct field amplitude
@@ -411,7 +445,7 @@ class QuantumDendriticField:
             dendritic_coupling=dendritic_coupling,
             consciousness_coherence=state_dict["consciousness_coherence"],
             holographic_projection=holographic_projection,
-            timestamp=state_dict["timestamp"]
+            timestamp=state_dict["timestamp"],
         )
 
         # Reconstruct dendritic nodes

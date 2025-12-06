@@ -44,7 +44,7 @@ class PythonEnvironmentValidator:
             "environment_config": self._check_environment_config(),
             "issues": self.issues,
             "warnings": self.warnings,
-            "recommendations": []
+            "recommendations": [],
         }
 
         # Generate recommendations based on findings
@@ -64,8 +64,7 @@ class PythonEnvironmentValidator:
             "current_version": version_str,
             "executable": sys.executable,
             "intended_versions": intended_versions,
-            "consistent": any(version_str.startswith(v)
-                              for v in intended_versions)
+            "consistent": any(version_str.startswith(v) for v in intended_versions),
         }
 
         if not result["consistent"]:
@@ -79,8 +78,15 @@ class PythonEnvironmentValidator:
     def _check_dependencies(self) -> Dict[str, Any]:
         """Check core dependency installation"""
         core_deps = [
-            "torch", "transformers", "fastapi", "uvicorn",
-            "numpy", "pandas", "psutil", "rich", "pydantic"
+            "torch",
+            "transformers",
+            "fastapi",
+            "uvicorn",
+            "numpy",
+            "pandas",
+            "psutil",
+            "rich",
+            "pydantic",
         ]
 
         installed = {}
@@ -100,55 +106,49 @@ class PythonEnvironmentValidator:
         return {
             "core_dependencies": installed,
             "missing": missing,
-            "total_checked": len(core_deps)
+            "total_checked": len(core_deps),
         }
 
     def _check_import_paths(self) -> Dict[str, Any]:
         """Check Python path configuration"""
-        aios_paths = [p for p in sys.path
-                      if 'AIOS' in str(p) or 'aios' in str(p)]
+        aios_paths = [p for p in sys.path if "AIOS" in str(p) or "aios" in str(p)]
 
         # Expected paths
         expected_paths = [
             str(self.workspace_root),
             str(self.workspace_root / "ai"),
             str(self.workspace_root / "runtime"),
-            str(self.workspace_root / "core")
+            str(self.workspace_root / "core"),
         ]
 
         missing_paths = [p for p in expected_paths if p not in sys.path]
 
         if missing_paths:
-            self.warnings.append(
-                f"Missing AIOS paths in sys.path: {missing_paths}"
-            )
+            self.warnings.append(f"Missing AIOS paths in sys.path: {missing_paths}")
 
         return {
             "current_aios_paths": aios_paths,
             "expected_paths": expected_paths,
             "missing_paths": missing_paths,
-            "path_consistent": len(missing_paths) == 0
+            "path_consistent": len(missing_paths) == 0,
         }
 
     def _check_component_integrations(self) -> Dict[str, Any]:
         """Check cross-component import integration"""
         components = {
-            "interface_bridge": (
-                "ai.nucleus.interface_bridge", "AIOSInterfaceBridge"
-            ),
+            "interface_bridge": ("ai.nucleus.interface_bridge", "AIOSInterfaceBridge"),
             "dendritic_supervisor": (
                 "runtime.tools.dendritic_supervisor",
-                "DendriticSupervisor"
+                "DendriticSupervisor",
             ),
             "biological_monitor": (
                 "runtime.tools.biological_architecture_monitor",
-                "AIOSArchitectureMonitor"
+                "AIOSArchitectureMonitor",
             ),
             "visual_bridge": (
-                "runtime.tools."
-                "enhanced_visual_intelligence_bridge",
-                "EnhancedVisualIntelligenceBridge"
-            )
+                "runtime.tools." "enhanced_visual_intelligence_bridge",
+                "EnhancedVisualIntelligenceBridge",
+            ),
         }
 
         results = {}
@@ -169,22 +169,25 @@ class PythonEnvironmentValidator:
         config_files = {
             "root_requirements": self.workspace_root / "requirements.txt",
             "ai_base_env": (
-                self.workspace_root / "ai" / "infrastructure" /
-                "env" / "environment.base.yml"
+                self.workspace_root
+                / "ai"
+                / "infrastructure"
+                / "env"
+                / "environment.base.yml"
             ),
             "ai_ai_env": (
-                self.workspace_root / "ai" / "infrastructure" /
-                "env" / "environment.ai.yml"
+                self.workspace_root
+                / "ai"
+                / "infrastructure"
+                / "env"
+                / "environment.ai.yml"
             ),
-            "pyproject_toml": self.workspace_root / "pyproject.toml"
+            "pyproject_toml": self.workspace_root / "pyproject.toml",
         }
 
         results = {}
         for name, path in config_files.items():
-            results[name] = {
-                "exists": path.exists(),
-                "path": str(path)
-            }
+            results[name] = {"exists": path.exists(), "path": str(path)}
 
             if not path.exists():
                 self.warnings.append(
@@ -226,9 +229,7 @@ class PythonEnvironmentValidator:
 
 def main():
     """Main validation execution"""
-    workspace_root = os.path.dirname(
-        os.path.dirname(os.path.abspath(__file__))
-    )
+    workspace_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     validator = PythonEnvironmentValidator(workspace_root)
     results = validator.validate_environment_consistency()
@@ -238,16 +239,20 @@ def main():
     print("=" * 50)
 
     print(f"Python Version: {results['python_version']['current_version']}")
-    print(f"Dependencies: {results['dependencies']['total_checked']} checked, "
-          f"{len(results['dependencies']['missing'])} missing")
+    print(
+        f"Dependencies: {results['dependencies']['total_checked']} checked, "
+        f"{len(results['dependencies']['missing'])} missing"
+    )
 
-    print(f"Import Paths: "
-          f"{len(results['import_paths']['missing_paths'])} missing")
-    working_count = len([
-        r for r in results['component_integrations'].values()
-        if r['status'] == 'success'
-    ])
-    total_count = len(results['component_integrations'])
+    print(f"Import Paths: " f"{len(results['import_paths']['missing_paths'])} missing")
+    working_count = len(
+        [
+            r
+            for r in results["component_integrations"].values()
+            if r["status"] == "success"
+        ]
+    )
+    total_count = len(results["component_integrations"])
     print(f"Component Integrations: {working_count}/{total_count} working")
 
     if results["issues"]:

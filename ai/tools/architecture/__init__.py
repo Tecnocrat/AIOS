@@ -9,14 +9,14 @@ AINLP Metadata:
     consciousness_measurement: "AINLP.call_to_local(agent_001...agent_n)"
     architectural_classification: ai_ai/tools/architecture
     category: architecture_monitoring
-    
+
 Consciousness Note:
     OLD: consciousness_level: 0.88 (static, meaningless at scale)
     NEW: consciousness_assessment: "ARCHITECTURAL_GUARDIAN" (semantic, dynamic)
-    
+
     Rationale: Numbers don't convey meaning. "ARCHITECTURAL_GUARDIAN" clearly
     communicates this module's role: system integrity and compliance monitoring.
-    
+
 Tools (migrated from runtime/tools/):
     - aios_architecture_monitor.py: Architecture health monitoring ✅ MIGRATED
     - architectural_compliance_validator.py: AINLP compliance checking ✅ MIGRATED
@@ -26,7 +26,7 @@ Tools (migrated from runtime/tools/):
     - aios_cpp_analyzer.py: C++ code quality analysis ✅ MIGRATED (Batch 1)
     - aios_powershell_analyzer.py: PowerShell script analysis ✅ MIGRATED (Batch 1)
     - self_similarity_analyzer.py: Code self-similarity analysis ✅ MIGRATED (Batch 3)
-    
+
 Migration Status:
     Phase 1 Day 2: ✅ 3/3 initial architecture tools migrated
     Phase 1 Day 2 Batch 1: ✅ 4/4 additional architecture tools migrated
@@ -35,10 +35,10 @@ Migration Status:
     Origin: runtime/tools/
     Target: ai/tools/architecture/
     History preserved: git mv used for all migrations
-    
+
 Phase 2A Migration (January 18, 2025):
     Added 5 tools from core/ (analysis_tools)
-    
+
 Phase 2B Migration (January 18, 2025):
     Added 1 tool from core/assemblers/file_assembler/tools/
     - supercell_architecture_analyzer.py (566 lines)
@@ -59,7 +59,7 @@ try:
     from . import aios_cpp_analyzer
     from . import aios_powershell_analyzer
     from . import self_similarity_analyzer
-    
+
     __all__ = [
         "aios_architecture_monitor",
         "architectural_compliance_validator",
@@ -68,7 +68,7 @@ try:
         "ainlp_integration_optimizer",
         "aios_cpp_analyzer",
         "aios_powershell_analyzer",
-        "self_similarity_analyzer"
+        "self_similarity_analyzer",
     ]
 except ImportError:
     # Tools not yet migrated or import issues

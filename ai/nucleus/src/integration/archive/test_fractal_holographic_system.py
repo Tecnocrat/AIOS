@@ -17,12 +17,17 @@ import pytest
 # Add the source directory to the path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from integration.context_recovery_system import (ContextHealth,
-                                                 ContextRecoverySystem,
-                                                 process_context_loss_query)
+from integration.context_recovery_system import (
+    ContextHealth,
+    ContextRecoverySystem,
+    process_context_loss_query,
+)
 from integration.holographic_synchronization import (
-    ComponentState, ComponentType, ContextAwareHolographicSync,
-    HolographicMessage)
+    ComponentState,
+    ComponentType,
+    ContextAwareHolographicSync,
+    HolographicMessage,
+)
 
 
 class TestContextRecoverySystem:
@@ -37,13 +42,15 @@ class TestContextRecoverySystem:
     def teardown_method(self):
         """Clean up test environment"""
         import shutil
+
         if self.temp_workspace.exists():
             shutil.rmtree(self.temp_workspace)
 
     def test_context_health_calculation_healthy(self):
         """Test context health calculation for healthy state"""
         health = self.recovery_system.calculate_context_health(
-        "Everything is working fine")
+            "Everything is working fine"
+        )
 
         assert health.is_healthy()
         assert health.score >= 0.7
@@ -52,28 +59,25 @@ class TestContextRecoverySystem:
     def test_context_health_calculation_context_loss(self):
         """Test context health calculation when context loss is detected"""
         health = self.recovery_system.calculate_context_health(
-        "I think we're losing context")
+            "I think we're losing context"
+        )
 
         assert not health.is_healthy()
         assert health.needs_immediate_recovery()
         assert health.score < 0.4
-        assert any(
-        "losing context" in indicator for indicator in health.indicators)
+        assert any("losing context" in indicator for indicator in health.indicators)
 
     def test_context_health_calculation_build_failure(self):
         """Test context health calculation for build failures"""
-        health = self.recovery_system.calculate_context_health(
-        "The build failed")
+        health = self.recovery_system.calculate_context_health("The build failed")
 
         assert not health.is_healthy()
         assert health.score < 0.7
-        assert any(
-        "build" in indicator.lower() for indicator in health.indicators)
+        assert any("build" in indicator.lower() for indicator in health.indicators)
 
     def test_context_health_calculation_file_not_found(self):
         """Test context health calculation for file system issues"""
-        health = self.recovery_system.calculate_context_health(
-        "File not found error")
+        health = self.recovery_system.calculate_context_health("File not found error")
 
         assert not health.is_healthy()
         assert health.needs_immediate_recovery()
@@ -82,8 +86,7 @@ class TestContextRecoverySystem:
     def test_context_health_calculation_time_based(self):
         """Test context health calculation based on time since last recovery"""
         # Set last recovery to 50 hours ago
-        self.recovery_system.last_recovery = datetime.now(
-        ) - timedelta(hours=50)
+        self.recovery_system.last_recovery = datetime.now() - timedelta(hours=50)
 
         health = self.recovery_system.calculate_context_health("")
 
@@ -93,7 +96,8 @@ class TestContextRecoverySystem:
     def test_should_trigger_recovery_immediate(self):
         """Test immediate recovery trigger"""
         should_trigger = self.recovery_system.should_trigger_recovery(
-        "We're losing context")
+            "We're losing context"
+        )
         assert should_trigger
 
     def test_should_trigger_recovery_iteration_based(self):
@@ -105,14 +109,16 @@ class TestContextRecoverySystem:
     def test_should_trigger_recovery_health_based(self):
         """Test health-based recovery trigger"""
         should_trigger = self.recovery_system.should_trigger_recovery(
-        "Build is failing")
+            "Build is failing"
+        )
         assert should_trigger
 
     def test_should_not_trigger_recovery_healthy(self):
         """Test that recovery is not triggered when healthy"""
         self.recovery_system.iteration_count = 3  # Below threshold
         should_trigger = self.recovery_system.should_trigger_recovery(
-        "Everything is good")
+            "Everything is good"
+        )
         assert not should_trigger
 
     def test_execute_context_recovery(self):
@@ -141,7 +147,7 @@ class TestContextRecoverySystem:
             score=0.2,
             indicators=["Critical issues"],
             last_check=datetime.now(),
-            recovery_actions=[]
+            recovery_actions=[],
         )
 
         actions = self.recovery_system.get_recovery_actions(health)
@@ -153,7 +159,8 @@ class TestContextRecoverySystem:
     def test_process_context_loss_query_with_recovery(self):
         """Test context loss query processing with recovery"""
         result = process_context_loss_query(
-        "I'm losing context", str(self.temp_workspace))
+            "I'm losing context", str(self.temp_workspace)
+        )
 
         assert result["context_loss_detected"]
         assert result["recovery_executed"]
@@ -162,8 +169,7 @@ class TestContextRecoverySystem:
 
     def test_process_context_loss_query_no_recovery(self):
         """Test context loss query processing without recovery"""
-        result = process_context_loss_query(
-        "Status update", str(self.temp_workspace))
+        result = process_context_loss_query("Status update", str(self.temp_workspace))
 
         assert not result["context_loss_detected"]
         assert not result["recovery_executed"]
@@ -178,12 +184,12 @@ class TestHolographicSynchronization:
         """Setup test environment"""
         self.temp_workspace = Path("test_workspace")
         self.temp_workspace.mkdir(exist_ok=True)
-        self.sync_system = ContextAwareHolographicSync(
-        str(self.temp_workspace))
+        self.sync_system = ContextAwareHolographicSync(str(self.temp_workspace))
 
     def teardown_method(self):
         """Clean up test environment"""
         import shutil
+
         if self.temp_workspace.exists():
             shutil.rmtree(self.temp_workspace)
 
@@ -192,8 +198,7 @@ class TestHolographicSynchronization:
         components = [ComponentType.CPP_CORE, ComponentType.PYTHON_AI]
 
         sync_result = self.sync_system.sync_with_context_preservation(
-            components,
-            "Normal operation"
+            components, "Normal operation"
         )
 
         assert "timestamp" in sync_result
@@ -209,7 +214,7 @@ class TestHolographicSynchronization:
             score=0.3,
             indicators=["Context loss detected"],
             last_check=datetime.now(),
-            recovery_actions=["Execute recovery"]
+            recovery_actions=["Execute recovery"],
         )
         mock_recovery.should_trigger_recovery.return_value = True
         mock_recovery.execute_context_recovery.return_value = {
@@ -220,8 +225,7 @@ class TestHolographicSynchronization:
 
         components = [ComponentType.CPP_CORE]
         sync_result = self.sync_system.sync_with_context_preservation(
-            components,
-            "We're losing context"
+            components, "We're losing context"
         )
 
         assert sync_result["status"] == "context_recovery_triggered"
@@ -265,10 +269,9 @@ class TestHolographicSynchronization:
             score=0.8,
             indicators=[],
             last_check=datetime.now(),
-            recovery_actions=["Continue normal operation"]
+            recovery_actions=["Continue normal operation"],
         )
-        mock_recovery.get_recovery_actions.return_value = [
-        "Continue normal operation"]
+        mock_recovery.get_recovery_actions.return_value = ["Continue normal operation"]
 
         self.sync_system.context_recovery = mock_recovery
 
@@ -296,7 +299,7 @@ class TestFractalHolographicIntegration:
             "name": "AIOS",
             "version": "0.4",
             "fractal_enabled": True,
-            "holographic_sync": True
+            "holographic_sync": True,
         }
 
         with open(config_dir / "system.json", "w") as f:
@@ -305,6 +308,7 @@ class TestFractalHolographicIntegration:
     def teardown_method(self):
         """Clean up integration test environment"""
         import shutil
+
         if self.temp_workspace.exists():
             shutil.rmtree(self.temp_workspace)
 
@@ -318,18 +322,14 @@ class TestFractalHolographicIntegration:
         user_input = "I'm losing context and the build is failing"
 
         # Process context loss query
-        result = process_context_loss_query(
-        user_input, str(self.temp_workspace))
+        result = process_context_loss_query(user_input, str(self.temp_workspace))
 
         assert result["context_loss_detected"]
         assert result["recovery_executed"]
 
         # Verify sync system can handle the recovered context
         components = [ComponentType.CPP_CORE, ComponentType.PYTHON_AI]
-        sync_result = sync_system.sync_with_context_preservation(
-            components,
-            user_input
-        )
+        sync_result = sync_system.sync_with_context_preservation(components, user_input)
 
         # Should trigger recovery again due to user input
         assert sync_result["status"] == "context_recovery_triggered"
@@ -340,12 +340,14 @@ class TestFractalHolographicIntegration:
 
         # Multiple synchronization operations
         components = [
-        ComponentType.CPP_CORE, ComponentType.PYTHON_AI, ComponentType.CSHARP_UI]
+            ComponentType.CPP_CORE,
+            ComponentType.PYTHON_AI,
+            ComponentType.CSHARP_UI,
+        ]
 
         for i in range(5):
             sync_result = sync_system.sync_with_context_preservation(
-                components,
-                f"Operation {i}"
+                components, f"Operation {i}"
             )
 
             assert "holographic_coherence" in sync_result
@@ -361,12 +363,11 @@ class TestFractalHolographicIntegration:
             ComponentType.PYTHON_AI,
             ComponentType.CSHARP_UI,
             ComponentType.VSCODE_EXTENSION,
-            ComponentType.AINLP_COMPILER
+            ComponentType.AINLP_COMPILER,
         ]
 
         sync_result = sync_system.sync_with_context_preservation(
-            all_components,
-            "Full system sync"
+            all_components, "Full system sync"
         )
 
         assert len(sync_result["components_synced"]) == 5
@@ -374,7 +375,8 @@ class TestFractalHolographicIntegration:
 
         # Verify each component was synchronized
         component_names = [
-        comp["component"] for comp in sync_result["components_synced"]]
+            comp["component"] for comp in sync_result["components_synced"]
+        ]
         expected_names = [comp.value for comp in all_components]
 
         for expected_name in expected_names:
@@ -405,8 +407,7 @@ def test_performance_benchmarks():
 
         start_time = time.time()
         for i in range(10):
-            health = recovery_system.calculate_context_health(
-            f"Test input {i}")
+            health = recovery_system.calculate_context_health(f"Test input {i}")
             assert health.score >= 0.0
         end_time = time.time()
 
@@ -418,17 +419,16 @@ def test_performance_benchmarks():
         start_time = time.time()
         for i in range(5):
             sync_result = sync_system.sync_with_context_preservation(
-                [ComponentType.CPP_CORE],
-                f"Benchmark test {i}"
+                [ComponentType.CPP_CORE], f"Benchmark test {i}"
             )
             assert "holographic_coherence" in sync_result
         end_time = time.time()
 
-        assert (
-        end_time - start_time) < 2.0  # Should complete within 2 seconds
+        assert (end_time - start_time) < 2.0  # Should complete within 2 seconds
 
     finally:
         import shutil
+
         if workspace.exists():
             shutil.rmtree(workspace)
 

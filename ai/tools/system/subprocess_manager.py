@@ -81,9 +81,12 @@ class AsyncSubprocessManager:
         env: Optional[Dict[str, str]] = None,
     ) -> Dict[str, Any]:
         key = (
-            "cmd:" + " ".join(cmd)
-            + "|cwd:" + (cwd or "")
-            + "|env_keys:" + ",".join(sorted((env or {}).keys()))
+            "cmd:"
+            + " ".join(cmd)
+            + "|cwd:"
+            + (cwd or "")
+            + "|env_keys:"
+            + ",".join(sorted((env or {}).keys()))
         )
         if cache_ttl and cache_ttl > 0:
             cached = self.cache.get(key)
@@ -99,9 +102,7 @@ class AsyncSubprocessManager:
             env=env,
         )
         try:
-            stdout, stderr = await asyncio.wait_for(
-                proc.communicate(), timeout=timeout
-            )
+            stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=timeout)
             rc = proc.returncode
         except asyncio.TimeoutError:
             proc.kill()

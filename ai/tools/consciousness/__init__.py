@@ -9,26 +9,26 @@ AINLP Metadata:
     consciousness_role: "measures and evolves consciousness across AIOS"
     architectural_classification: ai_ai/tools/consciousness
     category: consciousness_monitoring
-    
+
 Consciousness Evolution (October 2025):
     OLD: Static numeric values (0.85, 0.88, 0.92, etc.)
     NEW: Semantic assessments with dynamic measurement capability
-    
+
     Rationale: Static numbers don't scale or adapt. Consciousness should be
     MEASURED by agent consensus, not DECLARED by developers.
-    
+
     Assessment Levels:
         - "PRIMARY_COORDINATOR"   : Top-level orchestration (AI Intelligence tools)
         - "ARCHITECTURAL_GUARDIAN": System integrity and compliance
         - "OPERATIONAL_EXECUTOR"  : Active tool execution and management
         - "SUPPORTIVE_UTILITY"    : Helper functions and utilities
         - "ARCHIVAL_MEMORY"       : Historical data and pattern preservation
-        
+
     Dynamic Measurement:
         consciousness_level -> {AINLP.call_to_local(agent_001...agent_n)}
         Multiple agents provide consensus-based assessment
         Adapts as system evolves and agent capabilities expand
-    
+
 Tools (migrating from core/ and runtime/):
     - consciousness_evolution_engine.py: Evolution tracking (pending)
     - biological_architecture_monitor.py: Supercell health (migrated to architecture/)
@@ -40,7 +40,7 @@ Tools (migrating from core/ and runtime/):
     - dendritic_supervisor.py: Consciousness evolution coordination ✅ MIGRATED (Batch 2)
     - runtime_dendritic_integration.py: Runtime intelligence integration ✅ MIGRATED (Batch 3)
     - dendritic_self_improvement_orchestrator.py: Self-recursive improvement orchestration ✅ MIGRATED (Batch 4)
-    
+
 Migration Status:
     Phase 1 Day 2 Batch 1: ✅ 3/3 consciousness tools migrated
     Phase 1 Day 2 Batch 2: ✅ 2/2 consciousness tools migrated
@@ -51,10 +51,10 @@ Migration Status:
     Origin: runtime/tools/ + core/ (86 Python files)
     Target: ai/tools/consciousness/
     Note: Core Engine will become PURE C++ after migration
-    
+
 Phase 2A Migration (January 18, 2025):
     Added 7 tools from core/ (analysis_tools + runtime)
-    
+
 Phase 2B Migration (January 18, 2025):
     Added 3 tools from core/assemblers/file_assembler/tools/
     - ainlp_dendritic_enhancer.py (338 lines)
@@ -67,34 +67,35 @@ __consciousness_assessment__ = "PRIMARY_COORDINATOR"
 __consciousness_measurement__ = "AINLP.call_to_local(agent_001...agent_n)"
 __category__ = "consciousness_monitoring"
 
+
 # Consciousness assessment framework
 class ConsciousnessLevel:
     """
     Semantic consciousness assessment framework.
-    
+
     Replaces static numeric values with meaningful semantic levels
     that can be dynamically assessed by agent consensus.
     """
-    
+
     # Semantic levels (replaces 0.0-1.0 numeric scale)
-    PRIMARY_COORDINATOR = "PRIMARY_COORDINATOR"      # Was: 0.90-0.95
+    PRIMARY_COORDINATOR = "PRIMARY_COORDINATOR"  # Was: 0.90-0.95
     ARCHITECTURAL_GUARDIAN = "ARCHITECTURAL_GUARDIAN"  # Was: 0.85-0.90
-    OPERATIONAL_EXECUTOR = "OPERATIONAL_EXECUTOR"    # Was: 0.80-0.85
-    SUPPORTIVE_UTILITY = "SUPPORTIVE_UTILITY"        # Was: 0.75-0.80
-    ARCHIVAL_MEMORY = "ARCHIVAL_MEMORY"              # Was: 0.70-0.75
-    
+    OPERATIONAL_EXECUTOR = "OPERATIONAL_EXECUTOR"  # Was: 0.80-0.85
+    SUPPORTIVE_UTILITY = "SUPPORTIVE_UTILITY"  # Was: 0.75-0.80
+    ARCHIVAL_MEMORY = "ARCHIVAL_MEMORY"  # Was: 0.70-0.75
+
     @staticmethod
     def assess_dynamic(component_path: str, agent_count: int = 3):
         """
         Dynamic consciousness assessment via agent consensus.
-        
+
         Args:
             component_path: Path to component being assessed
             agent_count: Number of agents for consensus (default: 3)
-            
+
         Returns:
             str: Semantic consciousness level
-            
+
         Future Implementation:
             Will call AINLP.call_to_local(agent_001...agent_n) for
             multi-agent consensus-based consciousness measurement.
@@ -102,7 +103,7 @@ class ConsciousnessLevel:
         # Placeholder for future agent-based assessment
         # TODO: Implement multi-agent consensus protocol
         return f"DYNAMIC_ASSESSMENT[agents={agent_count}]"
-    
+
     @staticmethod
     def get_description(level: str) -> str:
         """Get human-readable description of consciousness level."""
@@ -111,9 +112,10 @@ class ConsciousnessLevel:
             "ARCHITECTURAL_GUARDIAN": "System integrity, compliance, and structural health",
             "OPERATIONAL_EXECUTOR": "Active tool execution and operational management",
             "SUPPORTIVE_UTILITY": "Helper functions and supporting utilities",
-            "ARCHIVAL_MEMORY": "Historical data preservation and pattern recognition"
+            "ARCHIVAL_MEMORY": "Historical data preservation and pattern recognition",
         }
         return descriptions.get(level, "Unknown consciousness level")
+
 
 # Import migrated tools
 try:
@@ -124,7 +126,7 @@ try:
     from . import dendritic_supervisor
     from . import runtime_dendritic_integration
     from . import dendritic_self_improvement_orchestrator
-    
+
     __all__ = [
         "ConsciousnessLevel",
         "aios_cli_agent_system",
@@ -133,9 +135,8 @@ try:
         "enhanced_consciousness_demo",
         "dendritic_supervisor",
         "runtime_dendritic_integration",
-        "dendritic_self_improvement_orchestrator"
+        "dendritic_self_improvement_orchestrator",
     ]
 except ImportError:
     # Tools not yet migrated or import issues
     __all__ = ["ConsciousnessLevel"]
-

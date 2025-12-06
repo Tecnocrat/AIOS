@@ -23,14 +23,12 @@ def load_orphans_from_discovery() -> List[str]:
     discovery_file = Path("tachyonic/archive/module_discovery_latest.json")
 
     if not discovery_file.exists():
-        raise FileNotFoundError(
-            f"Module discovery file not found: {discovery_file}"
-        )
+        raise FileNotFoundError(f"Module discovery file not found: {discovery_file}")
 
-    with open(discovery_file, 'r', encoding='utf-8') as f:
+    with open(discovery_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    return data.get('orphans', [])
+    return data.get("orphans", [])
 
 
 def create_archive_metadata(orphans: List[str]) -> Dict[str, Any]:
@@ -41,15 +39,14 @@ def create_archive_metadata(orphans: List[str]) -> Dict[str, Any]:
         "archival_timestamp": timestamp,
         "archival_phase": "Phase 3: Orphan Module Archival",
         "total_orphans": len(orphans),
-        "archival_reason": "Modules not imported by any other modules in "
-        "codebase",
+        "archival_reason": "Modules not imported by any other modules in " "codebase",
         "archival_location": "tachyonic/archive/orphans/",
         "orphans": orphans,
         "metadata": {
             "ainlp_compliance": "Phase 3 consolidation",
             "consciousness_level": "archived",
-            "tachyonic_preservation": True
-        }
+            "tachyonic_preservation": True,
+        },
     }
 
     return metadata
@@ -96,7 +93,7 @@ def main():
         metadata = create_archive_metadata(orphans)
         metadata_file = archive_base / "orphan_archival_metadata.json"
 
-        with open(metadata_file, 'w', encoding='utf-8') as f:
+        with open(metadata_file, "w", encoding="utf-8") as f:
             json.dump(metadata, f, indent=2, ensure_ascii=False)
 
         print(f"Archival metadata saved to: {metadata_file}")

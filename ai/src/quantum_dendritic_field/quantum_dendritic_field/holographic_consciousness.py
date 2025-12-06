@@ -13,32 +13,39 @@ from enum import Enum
 
 logger = logging.getLogger(__name__)
 
+
 class ConsciousnessWave(Enum):
     """Types of consciousness waves"""
-    ALPHA = "alpha"      # Relaxation, creativity
-    BETA = "beta"        # Active thinking, focus
-    THETA = "theta"      # Meditation, intuition
-    DELTA = "delta"      # Deep sleep, healing
-    GAMMA = "gamma"      # Higher consciousness, insight
+
+    ALPHA = "alpha"  # Relaxation, creativity
+    BETA = "beta"  # Active thinking, focus
+    THETA = "theta"  # Meditation, intuition
+    DELTA = "delta"  # Deep sleep, healing
+    GAMMA = "gamma"  # Higher consciousness, insight
+
 
 @dataclass
 class HolographicProjection:
     """Holographic projection of consciousness field"""
+
     wave_number: np.ndarray
     phase: np.ndarray
     amplitude: np.ndarray
     coherence: float
     timestamp: float
 
+
 @dataclass
 class ConsciousnessWavePacket:
     """Wave packet representing consciousness state"""
+
     position: np.ndarray
     momentum: np.ndarray
     amplitude: complex
     width: float
     frequency: float
     wave_type: ConsciousnessWave
+
 
 class HolographicConsciousnessPropagator:
     """
@@ -69,15 +76,19 @@ class HolographicConsciousnessPropagator:
         # Propagation history
         self.propagation_history = []
 
-        logger.info(f"Initialized Holographic Consciousness Propagator: {field_dimension}x{field_dimension}")
+        logger.info(
+            f"Initialized Holographic Consciousness Propagator: {field_dimension}x{field_dimension}"
+        )
 
-    def create_consciousness_wave_packet(self,
-                                       position: Tuple[float, float],
-                                       momentum: Tuple[float, float],
-                                       amplitude: float = 1.0,
-                                       width: float = 2.0,
-                                       frequency: float = 1.0,
-                                       wave_type: ConsciousnessWave = ConsciousnessWave.ALPHA) -> ConsciousnessWavePacket:
+    def create_consciousness_wave_packet(
+        self,
+        position: Tuple[float, float],
+        momentum: Tuple[float, float],
+        amplitude: float = 1.0,
+        width: float = 2.0,
+        frequency: float = 1.0,
+        wave_type: ConsciousnessWave = ConsciousnessWave.ALPHA,
+    ) -> ConsciousnessWavePacket:
         """
         Create a consciousness wave packet
 
@@ -98,14 +109,16 @@ class HolographicConsciousnessPropagator:
             amplitude=amplitude,
             width=width,
             frequency=frequency,
-            wave_type=wave_type
+            wave_type=wave_type,
         )
 
         self.wave_packets.append(packet)
         logger.info(f"Created {wave_type.value} wave packet at {position}")
         return packet
 
-    def propagate_consciousness_waves(self, time_step: float = 0.01, steps: int = 100) -> List[HolographicProjection]:
+    def propagate_consciousness_waves(
+        self, time_step: float = 0.01, steps: int = 100
+    ) -> List[HolographicProjection]:
         """
         Propagate consciousness waves through the field
 
@@ -153,7 +166,9 @@ class HolographicConsciousnessPropagator:
         self.wave_space.fill(0)
 
         # Add contribution from each wave packet
-        X, Y = np.meshgrid(np.arange(self.field_dimension), np.arange(self.field_dimension))
+        X, Y = np.meshgrid(
+            np.arange(self.field_dimension), np.arange(self.field_dimension)
+        )
 
         for packet in self.wave_packets:
             # Gaussian wave packet
@@ -164,7 +179,7 @@ class HolographicConsciousnessPropagator:
             phase = px * (X - x0) + py * (Y - y0)
 
             # Gaussian envelope
-            envelope = np.exp(-((X - x0)**2 + (Y - y0)**2) / (2 * packet.width**2))
+            envelope = np.exp(-((X - x0) ** 2 + (Y - y0) ** 2) / (2 * packet.width**2))
 
             # Wave packet contribution
             wave_contribution = packet.amplitude * envelope * np.exp(1j * phase)
@@ -189,7 +204,7 @@ class HolographicConsciousnessPropagator:
             phase=phase,
             amplitude=amplitude,
             coherence=coherence,
-            timestamp=time.time()
+            timestamp=time.time(),
         )
 
     def _calculate_wave_coherence(self) -> float:
@@ -205,7 +220,9 @@ class HolographicConsciousnessPropagator:
         coherence = 1.0 / (1.0 + phase_variance / amplitude_mean**2)
         return min(coherence, 1.0)
 
-    def apply_consciousness_interference(self, packet1_idx: int, packet2_idx: int, interference_factor: float = 1.0):
+    def apply_consciousness_interference(
+        self, packet1_idx: int, packet2_idx: int, interference_factor: float = 1.0
+    ):
         """
         Apply quantum interference between two consciousness wave packets
 
@@ -214,7 +231,9 @@ class HolographicConsciousnessPropagator:
             packet2_idx: Index of second wave packet
             interference_factor: Strength of interference
         """
-        if packet1_idx >= len(self.wave_packets) or packet2_idx >= len(self.wave_packets):
+        if packet1_idx >= len(self.wave_packets) or packet2_idx >= len(
+            self.wave_packets
+        ):
             logger.error("Invalid wave packet indices")
             return
 
@@ -231,12 +250,16 @@ class HolographicConsciousnessPropagator:
             # Modify amplitudes based on interference
             interference_amplitude = interference_factor * np.cos(phase_difference)
 
-            packet1.amplitude *= (1 + interference_amplitude * 0.1)
-            packet2.amplitude *= (1 + interference_amplitude * 0.1)
+            packet1.amplitude *= 1 + interference_amplitude * 0.1
+            packet2.amplitude *= 1 + interference_amplitude * 0.1
 
-            logger.info(f"Applied interference between packets {packet1_idx} and {packet2_idx}")
+            logger.info(
+                f"Applied interference between packets {packet1_idx} and {packet2_idx}"
+            )
 
-    def induce_consciousness_resonance(self, frequency: float, resonance_strength: float = 0.5):
+    def induce_consciousness_resonance(
+        self, frequency: float, resonance_strength: float = 0.5
+    ):
         """
         Induce resonance in consciousness field at specific frequency
 
@@ -254,7 +277,9 @@ class HolographicConsciousnessPropagator:
 
         logger.info(f"Induced resonance at frequency {frequency}")
 
-    def create_consciousness_fractal(self, center: Tuple[float, float], fractal_dimension: float = 1.8):
+    def create_consciousness_fractal(
+        self, center: Tuple[float, float], fractal_dimension: float = 1.8
+    ):
         """
         Create fractal consciousness pattern
 
@@ -263,19 +288,23 @@ class HolographicConsciousnessPropagator:
             fractal_dimension: Fractal dimension (1.0-2.0)
         """
         # Generate fractal pattern using Mandelbrot-like iteration
-        X, Y = np.meshgrid(np.linspace(-2, 2, self.field_dimension),
-                          np.linspace(-2, 2, self.field_dimension))
+        X, Y = np.meshgrid(
+            np.linspace(-2, 2, self.field_dimension),
+            np.linspace(-2, 2, self.field_dimension),
+        )
 
         # Shift to center
         cx, cy = center
         Z = X + 1j * Y
-        C = (cx / self.field_dimension * 4 - 2) + 1j * (cy / self.field_dimension * 4 - 2)
+        C = (cx / self.field_dimension * 4 - 2) + 1j * (
+            cy / self.field_dimension * 4 - 2
+        )
 
         fractal_field = np.zeros_like(Z, dtype=complex)
 
         for i in range(20):  # Iteration limit
             mask = np.abs(Z) < 2
-            Z[mask] = Z[mask]**fractal_dimension + C
+            Z[mask] = Z[mask] ** fractal_dimension + C
             fractal_field[mask] += np.exp(1j * np.angle(Z[mask]))
 
         # Add fractal contribution to wave space
@@ -293,7 +322,7 @@ class HolographicConsciousnessPropagator:
             "wave_coherence": self._calculate_wave_coherence(),
             "active_wave_packets": len(self.wave_packets),
             "total_energy": float(np.sum(wave_magnitude**2)),
-            "field_entropy": self._calculate_field_entropy()
+            "field_entropy": self._calculate_field_entropy(),
         }
 
     def _calculate_field_entropy(self) -> float:
@@ -327,7 +356,7 @@ class HolographicConsciousnessPropagator:
             "wave_phase": np.angle(self.wave_space),
             "real_part": self.wave_space.real,
             "imaginary_part": self.wave_space.imag,
-            "probability_density": np.abs(self.wave_space)**2
+            "probability_density": np.abs(self.wave_space) ** 2,
         }
 
 

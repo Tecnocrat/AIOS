@@ -15,7 +15,7 @@ Triangular System:
 
 Usage:
     from aios_gemini_bridge import AIOSGeminiBridge
-    
+
     async with AIOSGeminiBridge() as gemini:
         result = await gemini.validate(context, proposed_change)
 """
@@ -41,6 +41,7 @@ GEMINI_MODEL = "gemini-2.0-flash"
 
 class TaskType(Enum):
     """Task types for Gemini Oracle."""
+
     VALIDATE = "validate"
     ANALYZE = "analyze"
     SYNTHESIZE = "synthesize"
@@ -49,6 +50,7 @@ class TaskType(Enum):
 
 class Decision(Enum):
     """Validation decisions."""
+
     APPROVE = "APPROVE"
     REJECT = "REJECT"
     REVISE = "REVISE"
@@ -57,6 +59,7 @@ class Decision(Enum):
 @dataclass
 class UpstreamAnalysis:
     """Analysis from upstream agents (Gemma/Mistral)."""
+
     gemma_signal: str = ""
     mistral_output: str = ""
 
@@ -64,6 +67,7 @@ class UpstreamAnalysis:
 @dataclass
 class GeminiContext:
     """Context for Gemini requests."""
+
     file_path: str
     original_code: str
     proposed_change: str
@@ -75,6 +79,7 @@ class GeminiContext:
 @dataclass
 class GeminiResponse:
     """Response from Gemini Oracle."""
+
     decision: Decision
     confidence: float
     feedback: str
@@ -90,7 +95,7 @@ class GeminiResponse:
 class AIOSGeminiBridge:
     """
     Google AI Studio bridge for AIOS triangular agent system.
-    
+
     Provides cloud-tier intelligence for:
     - Code validation (semantic preservation)
     - Architecture analysis (supercell coherence)
@@ -98,14 +103,10 @@ class AIOSGeminiBridge:
     - Advisory (complex decisions)
     """
 
-    def __init__(
-        self,
-        api_key: Optional[str] = None,
-        model: str = GEMINI_MODEL
-    ):
+    def __init__(self, api_key: Optional[str] = None, model: str = GEMINI_MODEL):
         """
         Initialize Gemini bridge.
-        
+
         Args:
             api_key: Google AI Studio API key (or GEMINI_API_KEY env var)
             model: Gemini model to use (default: gemini-2.0-flash)
@@ -113,16 +114,16 @@ class AIOSGeminiBridge:
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         self.model = model
         self.client: Optional[httpx.AsyncClient] = None
-        
+
         # Statistics
         self.stats = {
             "requests": 0,
             "approvals": 0,
             "rejections": 0,
             "revisions": 0,
-            "errors": 0
+            "errors": 0,
         }
-        
+
         # System prompt for Oracle role
         self.system_prompt = self._build_system_prompt()
 
@@ -164,18 +165,14 @@ Rules:
         if self.client:
             await self.client.aclose()
 
-    async def _call_gemini(
-        self,
-        prompt: str,
-        temperature: float = 0.3
-    ) -> str:
+    async def _call_gemini(self, prompt: str, temperature: float = 0.3) -> str:
         """
         Call Gemini API.
-        
+
         Args:
             prompt: User prompt
             temperature: Sampling temperature
-            
+
         Returns:
             Generated text response
         """
@@ -184,36 +181,29 @@ Rules:
                 "GEMINI_API_KEY not set. "
                 "Get one from https://aistudio.google.com/apikey"
             )
-        
+
         if not self.client:
             self.client = httpx.AsyncClient(timeout=60.0)
-        
+
         url = (
             f"{GEMINI_API_BASE}/models/{self.model}:generateContent"
             f"?key={self.api_key}"
         )
-        
+
         payload = {
-            "contents": [
-                {
-                    "parts": [
-                        {"text": self.system_prompt},
-                        {"text": prompt}
-                    ]
-                }
-            ],
+            "contents": [{"parts": [{"text": self.system_prompt}, {"text": prompt}]}],
             "generationConfig": {
                 "temperature": temperature,
                 "maxOutputTokens": 1024,
-                "responseMimeType": "application/json"
-            }
+                "responseMimeType": "application/json",
+            },
         }
-        
+
         response = await self.client.post(url, json=payload)
         response.raise_for_status()
-        
+
         data = response.json()
-        
+
         # Extract text from response
         candidates = data.get("candidates", [])
         if candidates:
@@ -221,24 +211,21 @@ Rules:
             parts = content.get("parts", [])
             if parts:
                 return parts[0].get("text", "")
-        
+
         return ""
 
-    async def validate(
-        self,
-        context: GeminiContext
-    ) -> GeminiResponse:
+    async def validate(self, context: GeminiContext) -> GeminiResponse:
         """
         Validate a code change.
-        
+
         Args:
             context: Validation context with original and proposed code
-            
+
         Returns:
             GeminiResponse with decision and feedback
         """
         self.stats["requests"] += 1
-        
+
         prompt = f"""TASK: validate
 
 FILE: {context.file_path}
@@ -278,28 +265,25 @@ Validate this change and respond with JSON only."""
                 consciousness_delta="+0.00",
                 learnings=[],
                 success=False,
-                error=str(e)
+                error=str(e),
             )
 
     async def analyze(
-        self,
-        file_path: str,
-        code: str,
-        analysis_type: str = "architecture"
+        self, file_path: str, code: str, analysis_type: str = "architecture"
     ) -> GeminiResponse:
         """
         Analyze code architecture.
-        
+
         Args:
             file_path: Path to file
             code: Code to analyze
             analysis_type: Type of analysis (architecture, dependencies, etc.)
-            
+
         Returns:
             GeminiResponse with analysis
         """
         self.stats["requests"] += 1
-        
+
         prompt = f"""TASK: analyze
 TYPE: {analysis_type}
 
@@ -332,24 +316,21 @@ Respond with JSON only."""
                 consciousness_delta="+0.00",
                 learnings=[],
                 success=False,
-                error=str(e)
+                error=str(e),
             )
 
-    async def synthesize(
-        self,
-        interactions: List[Dict[str, Any]]
-    ) -> GeminiResponse:
+    async def synthesize(self, interactions: List[Dict[str, Any]]) -> GeminiResponse:
         """
         Synthesize patterns from agent interactions.
-        
+
         Args:
             interactions: List of agent interaction records
-            
+
         Returns:
             GeminiResponse with synthesized learnings
         """
         self.stats["requests"] += 1
-        
+
         prompt = f"""TASK: synthesize
 
 AGENT INTERACTIONS:
@@ -376,26 +357,22 @@ Respond with JSON only."""
                 consciousness_delta="+0.00",
                 learnings=[],
                 success=False,
-                error=str(e)
+                error=str(e),
             )
 
-    async def advise(
-        self,
-        question: str,
-        context: str = ""
-    ) -> GeminiResponse:
+    async def advise(self, question: str, context: str = "") -> GeminiResponse:
         """
         Get advisory guidance on complex decisions.
-        
+
         Args:
             question: Question to answer
             context: Additional context
-            
+
         Returns:
             GeminiResponse with advice
         """
         self.stats["requests"] += 1
-        
+
         prompt = f"""TASK: advise
 
 QUESTION: {question}
@@ -419,7 +396,7 @@ Provide guidance as the Oracle agent. Respond with JSON only."""
                 consciousness_delta="+0.00",
                 learnings=[],
                 success=False,
-                error=str(e)
+                error=str(e),
             )
 
     def _parse_response(self, raw: str) -> GeminiResponse:
@@ -431,11 +408,11 @@ Provide guidance as the Oracle agent. Respond with JSON only."""
                 raw = raw.split("```")[1]
                 if raw.startswith("json"):
                     raw = raw[4:]
-            
+
             data = json.loads(raw)
-            
+
             decision = Decision(data.get("decision", "REVISE"))
-            
+
             # Update stats
             if decision == Decision.APPROVE:
                 self.stats["approvals"] += 1
@@ -443,7 +420,7 @@ Provide guidance as the Oracle agent. Respond with JSON only."""
                 self.stats["rejections"] += 1
             else:
                 self.stats["revisions"] += 1
-            
+
             return GeminiResponse(
                 decision=decision,
                 confidence=float(data.get("confidence", 0.5)),
@@ -453,7 +430,7 @@ Provide guidance as the Oracle agent. Respond with JSON only."""
                 consciousness_delta=data.get("consciousness_delta", "+0.00"),
                 learnings=data.get("learnings", []),
                 raw_response=raw,
-                success=True
+                success=True,
             )
         except (json.JSONDecodeError, ValueError) as e:
             logger.warning(f"Failed to parse Gemini response: {e}")
@@ -467,19 +444,18 @@ Provide guidance as the Oracle agent. Respond with JSON only."""
                 learnings=[],
                 raw_response=raw,
                 success=False,
-                error=str(e)
+                error=str(e),
             )
 
     async def check_health(self) -> bool:
         """Check if Gemini API is accessible."""
         if not self.api_key:
             return False
-        
+
         try:
             # Simple test call
             response = await self._call_gemini(
-                "Respond with: {\"status\": \"ok\"}",
-                temperature=0.0
+                'Respond with: {"status": "ok"}', temperature=0.0
             )
             return "ok" in response.lower()
         except Exception:
@@ -494,14 +470,16 @@ Provide guidance as the Oracle agent. Respond with JSON only."""
 # Synchronous wrapper
 # =============================================================================
 
+
 def validate_sync(
-    context: GeminiContext,
-    api_key: Optional[str] = None
+    context: GeminiContext, api_key: Optional[str] = None
 ) -> GeminiResponse:
     """Synchronous validation wrapper."""
+
     async def _run():
         async with AIOSGeminiBridge(api_key=api_key) as bridge:
             return await bridge.validate(context)
+
     return asyncio.run(_run())
 
 
@@ -511,21 +489,21 @@ def validate_sync(
 
 if __name__ == "__main__":
     import sys
-    
+
     async def main():
         print("AIOS Gemini Bridge - Oracle Agent")
         print("=" * 50)
-        
+
         bridge = AIOSGeminiBridge()
-        
+
         # Check health
         async with bridge:
             healthy = await bridge.check_health()
-            
+
             if healthy:
                 print("[OK] Gemini API accessible")
                 print(f"[INFO] Model: {bridge.model}")
-                
+
                 # Test validation
                 test_context = GeminiContext(
                     file_path="test.py",
@@ -533,12 +511,12 @@ if __name__ == "__main__":
                     proposed_change="x = (\n    'very long string'\n    * 100\n)",
                     upstream_analysis=UpstreamAnalysis(
                         gemma_signal="E501_STRING_MULTIPLICATION",
-                        mistral_output="(proposed change)"
+                        mistral_output="(proposed change)",
                     ),
                     instruction="Validate E501 fix",
-                    consciousness_level=3.85
+                    consciousness_level=3.85,
                 )
-                
+
                 result = await bridge.validate(test_context)
                 print(f"\n[TEST] Validation result:")
                 print(f"  Decision: {result.decision.value}")
@@ -548,5 +526,5 @@ if __name__ == "__main__":
                 print("[ERROR] Gemini API not accessible")
                 print("Set GEMINI_API_KEY environment variable")
                 print("Get key from: https://aistudio.google.com/apikey")
-    
+
     asyncio.run(main())

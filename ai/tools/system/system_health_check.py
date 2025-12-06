@@ -57,8 +57,7 @@ class AIOSSystemHealthMonitor:
             ("VSCode Extension", self.check_vscode_extension),
             ("AIOS AI Modules", self.check_aios_modules),
             ("Configuration Files", self.check_configuration_files),
-            ("Configuration Harmonization",
-             self.check_configuration_harmonization),
+            ("Configuration Harmonization", self.check_configuration_harmonization),
             (
                 "Engineering Tenets Advisory",
                 self.check_engineering_tenets_advisory,
@@ -92,21 +91,18 @@ class AIOSSystemHealthMonitor:
                     module = importlib.import_module(package)
                     version = getattr(module, "__version__", "unknown")
                     results["packages"][package] = version
-                logger.info("%s: %s", package, results['packages'][package])
+                logger.info("%s: %s", package, results["packages"][package])
             except ImportError as e:
                 results["packages"][package] = f"MISSING: {e}"
                 logger.warning("%s: MISSING", package)
         self.health_results["python_environment"] = results
-        return all(
-            "MISSING" not in str(v)
-            for v in results["packages"].values()
-        )
+        return all("MISSING" not in str(v) for v in results["packages"].values())
 
     def check_aios_structure(self) -> bool:
         """Check current AIOS architecture structure."""
         logger.info("Checking AIOS Architecture Structure...")
         cwd = os.getcwd()
-        
+
         # Determine working directory context
         if (
             os.path.basename(cwd) == "tests"
@@ -120,32 +116,26 @@ class AIOSSystemHealthMonitor:
         else:
             root_prefix = ""
             tests_prefix = "ai/tests/"
-            
+
         # Current AIOS architecture structure
         expected_structure = {
             f"{root_prefix}ai/": [
-                "__init__.py", "core/", "src/", "tools/", "transport/"
+                "__init__.py",
+                "core/",
+                "src/",
+                "tools/",
+                "transport/",
             ],
-            f"{root_prefix}core/": [
-                "CMakeLists.txt", "src/", "include/", "tests/"
-            ],
-            f"{root_prefix}interface/": [
-                "AIOS.Models/", "AIOS.Services/", "AIOS.UI/"
-            ],
-            f"{root_prefix}runtime/": [
-                "tools/", "logs/", "analysis/"
-            ],
-            f"{root_prefix}docs/": [
-                "AIOS/", "ai-context/", "tachyonic_archive/"
-            ],
-            f"{root_prefix}tachyonic/": [
-                "archive/"
-            ],
-            f"{root_prefix}vscode-extension/": [
-                "package.json", "src/"
-            ],
+            f"{root_prefix}core/": ["CMakeLists.txt", "src/", "include/", "tests/"],
+            f"{root_prefix}interface/": ["AIOS.Models/", "AIOS.Services/", "AIOS.UI/"],
+            f"{root_prefix}runtime/": ["tools/", "logs/", "analysis/"],
+            f"{root_prefix}docs/": ["AIOS/", "ai-context/", "tachyonic_archive/"],
+            f"{root_prefix}tachyonic/": ["archive/"],
+            f"{root_prefix}vscode-extension/": ["package.json", "src/"],
             f"{root_prefix}vscode-extension/src/": [
-                "aiosBridge.ts", "contextManager.ts", "extension.ts"
+                "aiosBridge.ts",
+                "contextManager.ts",
+                "extension.ts",
             ],
             f"{root_prefix}config/": ["system.json"],
             f"{tests_prefix}": ["test_aios_integration.py"],
@@ -187,9 +177,7 @@ class AIOSSystemHealthMonitor:
             try:
                 with open(package_json_path, "r", encoding="utf-8") as f:
                     package_data = json.load(f)
-                    results["dependencies"] = package_data.get(
-                        "dependencies", {}
-                    )
+                    results["dependencies"] = package_data.get("dependencies", {})
                     dep_count = len(results["dependencies"])
                     logger.info("Dependencies: %d packages", dep_count)
             except (OSError, json.JSONDecodeError) as e:
@@ -220,7 +208,7 @@ class AIOSSystemHealthMonitor:
             ai_dir = os.path.join(".", "ai")
         if ai_dir not in sys.path:
             sys.path.insert(0, ai_dir)
-            
+
         # Current AIOS AI Intelligence architecture components
         ai_components = {
             "tools": os.path.join(ai_dir, "tools"),
@@ -229,9 +217,9 @@ class AIOSSystemHealthMonitor:
             "src": os.path.join(ai_dir, "src"),
             "__init__.py": os.path.join(ai_dir, "__init__.py"),
         }
-        
+
         results = {}
-        
+
         # Check for directory/file existence
         for component_name, component_path in ai_components.items():
             if component_name.endswith(".py"):
@@ -248,7 +236,7 @@ class AIOSSystemHealthMonitor:
                 else:
                     results[component_name] = "missing"
                     logger.warning("%s: MISSING", component_name)
-                    
+
         self.health_results["aios_modules"] = results
         return all("exists" in str(v) for v in results.values())
 
@@ -280,22 +268,22 @@ class AIOSSystemHealthMonitor:
     def check_configuration_harmonization(self) -> bool:
         """Check configuration harmonization across AIOS files"""
         logger.info("Checking Configuration Harmonization...")
-        
+
         harmonization_results = {
             "python_versions": {"consistent": True, "details": {}},
             "ai_frameworks": {"aligned": True, "details": {}},
             "timestamps": {"current": True, "details": {}},
-            "config_sync": {"synchronized": True, "details": {}}
+            "config_sync": {"synchronized": True, "details": {}},
         }
-        
+
         # Check Python version consistency
         config_files = {
             ".aios_context.json": self._check_aios_context_python_version,
             "ai/pyproject.toml": self._check_pyproject_python_version,
             ".pylintrc": self._check_pylintrc_python_version,
-            "README.md": self._check_readme_python_version
+            "README.md": self._check_readme_python_version,
         }
-        
+
         python_versions = {}
         for file_path, check_func in config_files.items():
             if file_exists(file_path):
@@ -305,81 +293,83 @@ class AIOSSystemHealthMonitor:
                     logger.info("   %s: Python %s", file_path, version)
                 except Exception as e:
                     python_versions[file_path] = f"ERROR: {e}"
-                    logger.warning("   %s: ERROR reading Python version", 
-                                  file_path)
+                    logger.warning("   %s: ERROR reading Python version", file_path)
             else:
                 python_versions[file_path] = "FILE_NOT_FOUND"
                 logger.warning("   %s: NOT FOUND", file_path)
-        
+
         # Check if all Python versions are consistent
-        valid_versions = [v for v in python_versions.values() 
-                         if not v.startswith("ERROR") and v != "FILE_NOT_FOUND"]
+        valid_versions = [
+            v
+            for v in python_versions.values()
+            if not v.startswith("ERROR") and v != "FILE_NOT_FOUND"
+        ]
         harmonization_results["python_versions"]["details"] = python_versions
         harmonization_results["python_versions"]["consistent"] = (
             len(set(valid_versions)) <= 1 if valid_versions else False
         )
-        
+
         # Calculate harmonization score
         score_components = [
             harmonization_results["python_versions"]["consistent"],
             harmonization_results["ai_frameworks"]["aligned"],
             harmonization_results["timestamps"]["current"],
-            harmonization_results["config_sync"]["synchronized"]
+            harmonization_results["config_sync"]["synchronized"],
         ]
         harmonization_score = sum(score_components) / len(score_components) * 100
-        
+
         harmonization_results["harmonization_score"] = harmonization_score
         harmonization_results["status"] = (
-            "HARMONIZED" if harmonization_score >= 90 else
-            "PARTIAL_DRIFT" if harmonization_score >= 70 else
-            "CRITICAL_DRIFT"
+            "HARMONIZED"
+            if harmonization_score >= 90
+            else "PARTIAL_DRIFT" if harmonization_score >= 70 else "CRITICAL_DRIFT"
         )
-        
+
         self.health_results["configuration_harmonization"] = harmonization_results
-        
+
         logger.info("Configuration Harmonization Score: %.1f%%", harmonization_score)
         return harmonization_score >= 70  # Allow partial drift as passing
-    
+
     def _check_aios_context_python_version(self, file_path: str) -> str:
         """Extract Python version from .aios_context.json"""
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
             return data.get("technology_stack", {}).get("python", "unknown")
-    
+
     def _check_pyproject_python_version(self, file_path: str) -> str:
         """Extract Python version from pyproject.toml"""
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
             # Simple regex-like extraction for requires-python
-            for line in content.split('\n'):
-                if 'requires-python' in line and '>=' in line:
+            for line in content.split("\n"):
+                if "requires-python" in line and ">=" in line:
                     # Extract version like ">=3.12"
-                    version = line.split('>=')[1].strip().strip('"\'')
+                    version = line.split(">=")[1].strip().strip("\"'")
                     return f">={version}"
             return "unknown"
-    
+
     def _check_pylintrc_python_version(self, file_path: str) -> str:
         """Extract Python version from .pylintrc"""
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
-            for line in content.split('\n'):
-                if line.startswith('py-version'):
-                    version = line.split('=')[1].strip()
+            for line in content.split("\n"):
+                if line.startswith("py-version"):
+                    version = line.split("=")[1].strip()
                     return version
             return "unknown"
-    
+
     def _check_readme_python_version(self, file_path: str) -> str:
         """Extract Python version from README.md"""
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
             # Look for Python version requirements
-            for line in content.split('\n'):
-                if 'Python' in line and ('3.1' in line or '3.0' in line):
-                    if '3.12' in line:
+            for line in content.split("\n"):
+                if "Python" in line and ("3.1" in line or "3.0" in line):
+                    if "3.12" in line:
                         return "3.12+"
-                    elif '3.11' in line:
+                    elif "3.11" in line:
                         return "3.11+"
-                    elif '3.10' in line:
+                    elif "3.10" in line:
                         return "3.10+"
             return "unknown"
 
@@ -417,13 +407,15 @@ class AIOSSystemHealthMonitor:
                                 text = fh.read()
                             # Heuristic 1: helpers with two unnamed params
                             if "def make_" in text and "(a, b)" in text:
-                                findings.append({
-                                    "file": fpath,
-                                    "issue": (
-                                        "Ambiguous helper parameters (a,b). "
-                                        "Prefer explicit names (hi, lo)."
-                                    ),
-                                })
+                                findings.append(
+                                    {
+                                        "file": fpath,
+                                        "issue": (
+                                            "Ambiguous helper parameters (a,b). "
+                                            "Prefer explicit names (hi, lo)."
+                                        ),
+                                    }
+                                )
                             # Heuristic 2: bit reassembly without role names
                             if (
                                 "<< 16" in text
@@ -431,23 +423,29 @@ class AIOSSystemHealthMonitor:
                                 and "hi" not in text
                                 and "lo" not in text
                             ):
-                                findings.append({
-                                    "file": fpath,
-                                    "issue": (
-                                        "Bit reassembly without role naming. "
-                                        "Encode roles and endianness."
-                                    ),
-                                })
+                                findings.append(
+                                    {
+                                        "file": fpath,
+                                        "issue": (
+                                            "Bit reassembly without role naming. "
+                                            "Encode roles and endianness."
+                                        ),
+                                    }
+                                )
                         except (OSError, UnicodeError) as e:
-                            findings.append({
-                                "file": fpath,
-                                "issue": f"scan_error: {str(e)[:60]}",
-                            })
+                            findings.append(
+                                {
+                                    "file": fpath,
+                                    "issue": f"scan_error: {str(e)[:60]}",
+                                }
+                            )
         except OSError as e:
-            findings.append({
-                "file": "<scan>",
-                "issue": f"walk_error: {str(e)[:60]}",
-            })
+            findings.append(
+                {
+                    "file": "<scan>",
+                    "issue": f"walk_error: {str(e)[:60]}",
+                }
+            )
 
         self.health_results["engineering_tenets_advisory"] = {
             "findings": findings,
@@ -516,9 +514,7 @@ class AIOSSystemHealthMonitor:
             json.dump(health_report, f, indent=2)
 
         # 2) Update the moving pointer to the latest snapshot
-        latest_file = os.path.join(
-            tachyonic_dir, "system_health_report.latest.json"
-        )
+        latest_file = os.path.join(tachyonic_dir, "system_health_report.latest.json")
         try:
             with open(latest_file, "w", encoding="utf-8") as f:
                 json.dump(health_report, f, indent=2)
@@ -534,13 +530,15 @@ class AIOSSystemHealthMonitor:
                     index = json.load(f) or []
         except (OSError, json.JSONDecodeError):
             index = []
-        index.append({
-            "filename": report_name,
-            "timestamp": health_report["timestamp"],
-            "health_status": health_status,
-            "passed_checks": passed_checks,
-            "total_checks": total_checks,
-        })
+        index.append(
+            {
+                "filename": report_name,
+                "timestamp": health_report["timestamp"],
+                "health_status": health_status,
+                "passed_checks": passed_checks,
+                "total_checks": total_checks,
+            }
+        )
         try:
             with open(index_file, "w", encoding="utf-8") as f:
                 json.dump(index, f, indent=2)

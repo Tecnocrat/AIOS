@@ -16,7 +16,10 @@ sys.path.insert(0, current_dir)
 
 try:
     from robust_python_environment_manager_clean import (
-        RobustPythonEnvironmentManager, get_environment_manager)
+        RobustPythonEnvironmentManager,
+        get_environment_manager,
+    )
+
     print(" Successfully imported environment manager")
 except ImportError as e:
     print(f" Import error: {e}")
@@ -25,9 +28,9 @@ except ImportError as e:
 
 def test_basic_functionality():
     """Test basic environment management functionality."""
-    print("\n" + "="*50)
+    print("\n" + "=" * 50)
     print("Testing Basic Environment Management")
-    print("="*50)
+    print("=" * 50)
 
     # Get manager instance
     manager = get_environment_manager()
@@ -62,14 +65,14 @@ def test_basic_functionality():
     else:
         print("   No active environment set")
 
-    return health['healthy_environments'] > 0
+    return health["healthy_environments"] > 0
 
 
 def test_backup_and_recovery():
     """Test backup and recovery functionality."""
-    print("\n" + "="*50)
+    print("\n" + "=" * 50)
     print("Testing Backup and Recovery")
-    print("="*50)
+    print("=" * 50)
 
     with tempfile.TemporaryDirectory() as temp_dir:
         print(f"Using temporary directory: {temp_dir}")
@@ -100,9 +103,9 @@ def test_backup_and_recovery():
 
 def test_environment_verification():
     """Test environment verification and health monitoring."""
-    print("\n" + "="*50)
+    print("\n" + "=" * 50)
     print("Testing Environment Verification")
-    print("="*50)
+    print("=" * 50)
 
     manager = get_environment_manager()
 
@@ -117,19 +120,19 @@ def test_environment_verification():
         if is_working:
             verified_count += 1
 
-    print(
-    f"\n   {verified_count}/{len(environments)} environments verified as working")
+    print(f"\n   {verified_count}/{len(environments)} environments verified as working")
 
     return verified_count > 0
 
 
 def demonstrate_memory_allocation():
     """Demonstrate memory allocation concepts."""
-    print("\n" + "="*50)
+    print("\n" + "=" * 50)
     print("Memory Allocation Demonstration")
-    print("="*50)
+    print("=" * 50)
 
-    print("""
+    print(
+        """
 Memory allocation in AIOS Python Environment Management:
 
 1. Configuration Storage:
@@ -151,7 +154,8 @@ Memory allocation in AIOS Python Environment Management:
    - Environment snapshots: JSON serialization (~100KB-1MB)
    - Context preservation: Fractal/holographic data structures
    - Recovery data: Compressed state storage
-    """)
+    """
+    )
 
 
 def run_simple_test_suite():
@@ -187,9 +191,9 @@ def run_simple_test_suite():
     demonstrate_memory_allocation()
 
     # Summary
-    print("\n" + "="*65)
+    print("\n" + "=" * 65)
     print("TEST SUMMARY")
-    print("="*65)
+    print("=" * 65)
 
     passed = 0
     total = len(test_results)
@@ -206,7 +210,8 @@ def run_simple_test_suite():
 
     if passed == total:
         print(
-        "\n All tests passed! Environment management system is working correctly.")
+            "\n All tests passed! Environment management system is working correctly."
+        )
         print("\n System Status:")
         print("   Python environment discovery working")
         print("   Environment health monitoring active")
@@ -218,8 +223,7 @@ def run_simple_test_suite():
         print("  1. The system will automatically handle PATH changes")
         print("  2. Environment snapshots are preserved in AIOS context")
         print("  3. Recovery strategies will fix common issues automatically")
-        print(
-        "  4. Use prepare_for_os_reinstall() before major system changes")
+        print("  4. Use prepare_for_os_reinstall() before major system changes")
 
     else:
         print(f"\n  {total - passed} test(s) failed. Check issues above.")
@@ -230,13 +234,12 @@ def run_simple_test_suite():
 if __name__ == "__main__":
     success = run_simple_test_suite()
 
-    print("\n" + "="*65)
+    print("\n" + "=" * 65)
     print("AIOS PYTHON ENVIRONMENT MANAGEMENT READY")
-    print("="*65)
+    print("=" * 65)
 
     if success:
-        print(
-        "The robust Python environment management system is now active and")
+        print("The robust Python environment management system is now active and")
         print("integrated with AIOS. It will automatically handle:")
         print("")
         print(" Environment discovery and health monitoring")
@@ -246,7 +249,6 @@ if __name__ == "__main__":
         print(" Integration with AIOS fractal/holographic context")
         print("")
         print("The system is ready to help AIOS self-diagnose and fix coding")
-        print(
-        "problems, limitations, and bugs through robust environment handling.")
+        print("problems, limitations, and bugs through robust environment handling.")
 
     sys.exit(0 if success else 1)

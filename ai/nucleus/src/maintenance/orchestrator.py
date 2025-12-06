@@ -54,7 +54,7 @@ class MaintenanceOrchestrator:
             "operation": "full_system_optimization",
             "phases": {},
             "summary": {},
-            "recommendations": []
+            "recommendations": [],
         }
 
         try:
@@ -70,14 +70,12 @@ class MaintenanceOrchestrator:
 
             # Generate summary
             optimization_result["summary"] = self._generate_summary(
-                gc_result,
-                integrity_result
+                gc_result, integrity_result
             )
 
             # Generate recommendations
             optimization_result["recommendations"] = self._generate_recommendations(
-                gc_result,
-                integrity_result
+                gc_result, integrity_result
             )
 
             print(" Optimization complete!")
@@ -109,55 +107,65 @@ class MaintenanceOrchestrator:
         results = {
             "operation": "quick_optimization",
             "start_time": start_time.isoformat(),
-            "steps": []
+            "steps": [],
         }
 
         try:
             # Step 1: Quick documentation analysis
             print(" Analyzing documentation structure...")
             analysis = self.optimizer.analyze_documentation_structure()
-            results["steps"].append({
-                "step": "analysis",
-                "status": "completed",
-                "details": f"Found {analysis.get('total_files', 0)} files, {analysis.get('fragmentation_score', 0):.1f} fragmentation score"
-            })
+            results["steps"].append(
+                {
+                    "step": "analysis",
+                    "status": "completed",
+                    "details": f"Found {analysis.get('total_files', 0)} files, {analysis.get('fragmentation_score', 0):.1f} fragmentation score",
+                }
+            )
 
             # Step 2: Light optimization (only if needed)
-            if analysis.get('fragmentation_score', 0) > 0.3:
+            if analysis.get("fragmentation_score", 0) > 0.3:
                 print(" Running lightweight optimization...")
                 opt_result = self.optimizer.optimize_with_minimal_changes()
-                results["steps"].append({
-                    "step": "optimization",
-                    "status": "completed",
-                    "details": f"Optimized {opt_result.get('files_processed', 0)} files"
-                })
+                results["steps"].append(
+                    {
+                        "step": "optimization",
+                        "status": "completed",
+                        "details": f"Optimized {opt_result.get('files_processed', 0)} files",
+                    }
+                )
             else:
                 print(" Documentation already optimized")
-                results["steps"].append({
-                    "step": "optimization",
-                    "status": "skipped",
-                    "details": "No optimization needed"
-                })
+                results["steps"].append(
+                    {
+                        "step": "optimization",
+                        "status": "skipped",
+                        "details": "No optimization needed",
+                    }
+                )
 
             # Step 3: Update metadata
             print(" Updating system metadata...")
             metadata = self._update_maintenance_metadata("quick_optimization")
-            results["steps"].append({
-                "step": "metadata_update",
-                "status": "completed",
-                "details": "Metadata updated"
-            })
+            results["steps"].append(
+                {
+                    "step": "metadata_update",
+                    "status": "completed",
+                    "details": "Metadata updated",
+                }
+            )
 
             # Final status
             end_time = datetime.now()
             duration = (end_time - start_time).total_seconds()
 
-            results.update({
-                "status": "success",
-                "end_time": end_time.isoformat(),
-                "duration_seconds": duration,
-                "message": f"Quick optimization completed in {duration:.1f} seconds"
-            })
+            results.update(
+                {
+                    "status": "success",
+                    "end_time": end_time.isoformat(),
+                    "duration_seconds": duration,
+                    "message": f"Quick optimization completed in {duration:.1f} seconds",
+                }
+            )
 
             print(f" Quick optimization completed in {duration:.1f} seconds")
             return results
@@ -166,13 +174,15 @@ class MaintenanceOrchestrator:
             end_time = datetime.now()
             duration = (end_time - start_time).total_seconds()
 
-            results.update({
-                "status": "error",
-                "end_time": end_time.isoformat(),
-                "duration_seconds": duration,
-                "error": str(e),
-                "message": f"Quick optimization failed: {str(e)}"
-            })
+            results.update(
+                {
+                    "status": "error",
+                    "end_time": end_time.isoformat(),
+                    "duration_seconds": duration,
+                    "error": str(e),
+                    "message": f"Quick optimization failed: {str(e)}",
+                }
+            )
 
             print(f" Quick optimization failed: {e}")
             return results
@@ -191,7 +201,7 @@ class MaintenanceOrchestrator:
             "operation": "quick_analysis",
             "documentation_analysis": {},
             "archive_status": {},
-            "recommendations": []
+            "recommendations": [],
         }
 
         # Documentation analysis
@@ -200,9 +210,7 @@ class MaintenanceOrchestrator:
         )
 
         # Archive status
-        analysis_result["archive_status"] = (
-            self.archiver.get_archive_statistics()
-        )
+        analysis_result["archive_status"] = self.archiver.get_archive_statistics()
 
         # Quick recommendations
         doc_analysis = analysis_result["documentation_analysis"]
@@ -241,14 +249,13 @@ class MaintenanceOrchestrator:
             "query": query,
             "category_filter": category,
             "results_count": len(search_results),
-            "results": search_results
+            "results": search_results,
         }
 
         print(f" Found {len(search_results)} matching documents")
         return result
 
-    def restore_from_archive(self, content_hash: str,
-                           target_filename: str) -> Dict:
+    def restore_from_archive(self, content_hash: str, target_filename: str) -> Dict:
         """
         Restore content from tachyonic archive.
 
@@ -267,14 +274,14 @@ class MaintenanceOrchestrator:
             return {
                 "success": False,
                 "error": "Content not found in archive",
-                "content_hash": content_hash
+                "content_hash": content_hash,
             }
 
         # Restore to docs directory
         restore_path = self.workspace_root / "docs" / target_filename
 
         try:
-            with open(restore_path, 'w', encoding='utf-8') as f:
+            with open(restore_path, "w", encoding="utf-8") as f:
                 f.write(content)
 
             print(f" Content restored to: {restore_path}")
@@ -283,15 +290,11 @@ class MaintenanceOrchestrator:
                 "success": True,
                 "restore_path": str(restore_path),
                 "content_hash": content_hash,
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
             }
 
         except Exception as e:
-            return {
-                "success": False,
-                "error": str(e),
-                "content_hash": content_hash
-            }
+            return {"success": False, "error": str(e), "content_hash": content_hash}
 
     def get_archive_info(self) -> Dict:
         """
@@ -306,11 +309,13 @@ class MaintenanceOrchestrator:
 
             info = {
                 "total_files": archive_stats.get("total_entries", 0),
-                "total_size": self._format_file_size(archive_stats.get("total_size", 0)),
+                "total_size": self._format_file_size(
+                    archive_stats.get("total_size", 0)
+                ),
                 "last_archive": archive_stats.get("last_archive_time", "Never"),
                 "archive_path": str(archive_path),
                 "database_exists": archive_path.exists(),
-                "categories": archive_stats.get("categories", {})
+                "categories": archive_stats.get("categories", {}),
             }
 
             return info
@@ -322,7 +327,7 @@ class MaintenanceOrchestrator:
                 "last_archive": "Error",
                 "archive_path": f"Error: {str(e)}",
                 "database_exists": False,
-                "categories": {}
+                "categories": {},
             }
 
     def _generate_summary(self, gc_result: Dict, integrity_result: Dict) -> Dict:
@@ -334,13 +339,18 @@ class MaintenanceOrchestrator:
             "optimization_successful": final_state.get("optimization_complete", False),
             "final_file_count": doc_structure.get("total_files", 0),
             "fragmentation_score": doc_structure.get("fragmentation_score", 1.0),
-            "archive_documents": final_state.get("archive_statistics", {}).get("total_documents", 0),
+            "archive_documents": final_state.get("archive_statistics", {}).get(
+                "total_documents", 0
+            ),
             "integrity_status": integrity_result.get("overall_status", "unknown"),
-            "core_document_coverage": integrity_result.get("core_documents_check", {}).get("coverage_percentage", 0)
+            "core_document_coverage": integrity_result.get(
+                "core_documents_check", {}
+            ).get("coverage_percentage", 0),
         }
 
-    def _generate_recommendations(self, gc_result: Dict,
-                                integrity_result: Dict) -> list:
+    def _generate_recommendations(
+        self, gc_result: Dict, integrity_result: Dict
+    ) -> list:
         """Generate recommendations based on results."""
         recommendations = []
 
@@ -356,22 +366,18 @@ class MaintenanceOrchestrator:
                 " System is acceptable but could be improved. Monitor closely."
             )
         else:
-            recommendations.append(
-                " System needs attention. Consider manual review."
-            )
+            recommendations.append(" System needs attention. Consider manual review.")
 
         # Check fragmentation
         final_state = gc_result.get("final_state", {})
-        fragmentation = final_state.get("documentation_structure", {}).get("fragmentation_score", 1.0)
+        fragmentation = final_state.get("documentation_structure", {}).get(
+            "fragmentation_score", 1.0
+        )
 
         if fragmentation < 0.1:
-            recommendations.append(
-                " Documentation structure is perfectly optimized."
-            )
+            recommendations.append(" Documentation structure is perfectly optimized.")
         elif fragmentation > 0.5:
-            recommendations.append(
-                " Consider running additional optimization cycles."
-            )
+            recommendations.append(" Consider running additional optimization cycles.")
 
         return recommendations
 
@@ -381,7 +387,7 @@ class MaintenanceOrchestrator:
         report_filename = f"optimization_report_{session_id}.json"
         report_path = self.reports_path / report_filename
 
-        with open(report_path, 'w', encoding='utf-8') as f:
+        with open(report_path, "w", encoding="utf-8") as f:
             json.dump(result, f, indent=2, ensure_ascii=False)
 
         return report_path
@@ -403,24 +409,26 @@ class MaintenanceOrchestrator:
 
         try:
             if metadata_file.exists():
-                with open(metadata_file, 'r', encoding='utf-8') as f:
+                with open(metadata_file, "r", encoding="utf-8") as f:
                     metadata = json.load(f)
             else:
                 metadata = {"operations": [], "last_update": None}
 
             # Add new operation
-            metadata["operations"].append({
-                "type": operation_type,
-                "timestamp": datetime.now().isoformat(),
-                "version": "1.0.0"
-            })
+            metadata["operations"].append(
+                {
+                    "type": operation_type,
+                    "timestamp": datetime.now().isoformat(),
+                    "version": "1.0.0",
+                }
+            )
 
             # Keep only last 50 operations
             metadata["operations"] = metadata["operations"][-50:]
             metadata["last_update"] = datetime.now().isoformat()
 
             # Save metadata
-            with open(metadata_file, 'w', encoding='utf-8') as f:
+            with open(metadata_file, "w", encoding="utf-8") as f:
                 json.dump(metadata, f, indent=2, ensure_ascii=False)
 
             return metadata
@@ -447,7 +455,7 @@ class MaintenanceOrchestrator:
             metadata_file = self.workspace_root / "ai" / "maintenance_metadata.json"
             metadata = {}
             if metadata_file.exists():
-                with open(metadata_file, 'r', encoding='utf-8') as f:
+                with open(metadata_file, "r", encoding="utf-8") as f:
                     metadata = json.load(f)
 
             # Compile status
@@ -457,20 +465,26 @@ class MaintenanceOrchestrator:
                 "documentation_status": {
                     "total_files": doc_analysis.get("total_files", 0),
                     "fragmentation_score": doc_analysis.get("fragmentation_score", 0),
-                    "categories": doc_analysis.get("categories", {})
+                    "categories": doc_analysis.get("categories", {}),
                 },
                 "archive_status": {
                     "total_archived": archive_info.get("total_files", 0),
                     "archive_size": archive_info.get("total_size", "0 B"),
-                    "last_archive": archive_info.get("last_archive", "Never")
+                    "last_archive": archive_info.get("last_archive", "Never"),
                 },
                 "maintenance_history": {
-                    "last_operation": metadata.get("operations", [])[-1] if metadata.get("operations") else None,
+                    "last_operation": (
+                        metadata.get("operations", [])[-1]
+                        if metadata.get("operations")
+                        else None
+                    ),
                     "operation_count": len(metadata.get("operations", [])),
-                    "last_update": metadata.get("last_update", "Never")
+                    "last_update": metadata.get("last_update", "Never"),
                 },
                 "optimization_enabled": True,
-                "current_fragmentation": round(doc_analysis.get("fragmentation_score", 0) * 100, 1)
+                "current_fragmentation": round(
+                    doc_analysis.get("fragmentation_score", 0) * 100, 1
+                ),
             }
 
             # Determine overall health
@@ -489,5 +503,5 @@ class MaintenanceOrchestrator:
                 "timestamp": datetime.now().isoformat(),
                 "system_health": "error",
                 "error": str(e),
-                "message": f"Status check failed: {str(e)}"
+                "message": f"Status check failed: {str(e)}",
             }

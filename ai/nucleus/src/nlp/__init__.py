@@ -7,6 +7,7 @@ Baselayer integration: AINLP logical hooks for extensibility.
 """
 
 from .nlp_core import NLPManager
+
 __all__ = ["NLPManager"]
 
 # AINLP.loader [latent:confidence_score] (auto.AINLP.class)

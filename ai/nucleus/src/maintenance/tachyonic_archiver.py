@@ -33,7 +33,8 @@ class TachyonicArchiver:
     def _initialize_database(self):
         """Initialize the tachyonic database schema."""
         with sqlite3.connect(self.db_path) as conn:
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE TABLE IF NOT EXISTS archived_documents (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     filename TEXT NOT NULL,
@@ -46,20 +47,29 @@ class TachyonicArchiver:
                     keywords TEXT,
                     metadata TEXT
                 )
-            """)
+            """
+            )
 
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE INDEX IF NOT EXISTS idx_content_hash
                 ON archived_documents(content_hash)
-            """)
+            """
+            )
 
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE INDEX IF NOT EXISTS idx_category
                 ON archived_documents(category)
-            """)
+            """
+            )
 
-    def archive_file(self, file_path: Path, category: str = "general",
-                    metadata: Optional[Dict] = None) -> bool:
+    def archive_file(
+        self,
+        file_path: Path,
+        category: str = "general",
+        metadata: Optional[Dict] = None,
+    ) -> bool:
         """
         Archive a single file into the tachyonic database.
 
@@ -72,30 +82,33 @@ class TachyonicArchiver:
             bool: True if successfully archived, False otherwise
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 content = f.read()
 
             content_hash = hashlib.sha256(content.encode()).hexdigest()
             keywords = self._extract_keywords(content)
 
             with sqlite3.connect(self.db_path) as conn:
-                conn.execute("""
+                conn.execute(
+                    """
                     INSERT OR REPLACE INTO archived_documents
                     (filename, content_hash, content, file_size,
                      archive_timestamp, original_path, category,
                      keywords, metadata)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """, (
-                    file_path.name,
-                    content_hash,
-                    content,
-                    len(content),
-                    datetime.now().isoformat(),
-                    str(file_path),
-                    category,
-                    json.dumps(keywords),
-                    json.dumps(metadata) if metadata else "{}"
-                ))
+                """,
+                    (
+                        file_path.name,
+                        content_hash,
+                        content,
+                        len(content),
+                        datetime.now().isoformat(),
+                        str(file_path),
+                        category,
+                        json.dumps(keywords),
+                        json.dumps(metadata) if metadata else "{}",
+                    ),
+                )
 
             return True
 
@@ -103,8 +116,9 @@ class TachyonicArchiver:
             print(f"Error archiving {file_path}: {e}")
             return False
 
-    def archive_multiple_files(self, file_paths: List[Path],
-                              category_map: Optional[Dict[str, str]] = None) -> Dict:
+    def archive_multiple_files(
+        self, file_paths: List[Path], category_map: Optional[Dict[str, str]] = None
+    ) -> Dict:
         """
         Archive multiple files with batch processing.
 
@@ -120,7 +134,7 @@ class TachyonicArchiver:
             "total_files": len(file_paths),
             "archived_successfully": 0,
             "errors": [],
-            "duplicates_skipped": 0
+            "duplicates_skipped": 0,
         }
 
         for file_path in file_paths:
@@ -151,22 +165,28 @@ class TachyonicArchiver:
         """
         with sqlite3.connect(self.db_path) as conn:
             if category:
-                cursor = conn.execute("""
+                cursor = conn.execute(
+                    """
                     SELECT filename, content_hash, archive_timestamp,
                            original_path, category, keywords
                     FROM archived_documents
                     WHERE (content LIKE ? OR keywords LIKE ?)
                     AND category = ?
                     ORDER BY archive_timestamp DESC
-                """, (f"%{query}%", f"%{query}%", category))
+                """,
+                    (f"%{query}%", f"%{query}%", category),
+                )
             else:
-                cursor = conn.execute("""
+                cursor = conn.execute(
+                    """
                     SELECT filename, content_hash, archive_timestamp,
                            original_path, category, keywords
                     FROM archived_documents
                     WHERE content LIKE ? OR keywords LIKE ?
                     ORDER BY archive_timestamp DESC
-                """, (f"%{query}%", f"%{query}%"))
+                """,
+                    (f"%{query}%", f"%{query}%"),
+                )
 
             return [
                 {
@@ -175,7 +195,7 @@ class TachyonicArchiver:
                     "archive_timestamp": row[2],
                     "original_path": row[3],
                     "category": row[4],
-                    "keywords": json.loads(row[5])
+                    "keywords": json.loads(row[5]),
                 }
                 for row in cursor.fetchall()
             ]
@@ -193,7 +213,7 @@ class TachyonicArchiver:
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.execute(
                 "SELECT content FROM archived_documents WHERE content_hash = ?",
-                (content_hash,)
+                (content_hash,),
             )
             row = cursor.fetchone()
             return row[0] if row else None
@@ -201,7 +221,8 @@ class TachyonicArchiver:
     def get_archive_statistics(self) -> Dict:
         """Get comprehensive archive statistics."""
         with sqlite3.connect(self.db_path) as conn:
-            cursor = conn.execute("""
+            cursor = conn.execute(
+                """
                 SELECT
                     COUNT(*) as total_documents,
                     SUM(file_size) as total_size,
@@ -209,16 +230,19 @@ class TachyonicArchiver:
                     MIN(archive_timestamp) as earliest_archive,
                     MAX(archive_timestamp) as latest_archive
                 FROM archived_documents
-            """)
+            """
+            )
 
             row = cursor.fetchone()
 
             # Get category breakdown
-            category_cursor = conn.execute("""
+            category_cursor = conn.execute(
+                """
                 SELECT category, COUNT(*)
                 FROM archived_documents
                 GROUP BY category
-            """)
+            """
+            )
 
             categories = dict(category_cursor.fetchall())
 
@@ -228,7 +252,7 @@ class TachyonicArchiver:
                 "unique_categories": row[2],
                 "earliest_archive": row[3],
                 "latest_archive": row[4],
-                "category_breakdown": categories
+                "category_breakdown": categories,
             }
 
     def _extract_keywords(self, content: str) -> List[str]:
@@ -239,4 +263,5 @@ class TachyonicArchiver:
 
         # Return top 10 most frequent words
         from collections import Counter
+
         return [word for word, count in Counter(meaningful_words).most_common(10)]

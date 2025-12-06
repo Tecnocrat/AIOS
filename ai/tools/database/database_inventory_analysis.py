@@ -35,7 +35,7 @@ def analyze_database(db_path, name):
         print(f"Tables: {[t[0] for t in tables]}")
 
         # Analyze each table
-        for table_name, in tables:
+        for (table_name,) in tables:
             cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
             count = cursor.fetchone()[0]
             print(f"  {table_name}: {count:,} records")
@@ -64,12 +64,30 @@ def main():
     databases = [
         ("ai/tools/database/tachyonic/aios_data.db", "Main AIOS Database"),
         ("docs/archive/tachyonic/tachyonic_archive.db", "Tachyonic Archive DB"),
-        ("runtime/logs/sessions/session_AIOS_20250811_220407_3e2543c7.db", "Session DB 1"),
-        ("runtime/logs/sessions/session_AIOS_20250811_220422_48da9d15.db", "Session DB 2"),
-        ("runtime/logs/sessions/session_AIOS_20250813_235739_d04bb138.db", "Session DB 3"),
-        ("runtime/logs/sessions/session_AIOS_20250816_172409_0485427a.db", "Session DB 4"),
-        ("runtime/logs/sessions/session_AIOS_20250816_174844_47b01432.db", "Session DB 5"),
-        ("runtime/logs/sessions/session_AIOS_20250829_114350_09456140.db", "Session DB 6"),
+        (
+            "runtime/logs/sessions/session_AIOS_20250811_220407_3e2543c7.db",
+            "Session DB 1",
+        ),
+        (
+            "runtime/logs/sessions/session_AIOS_20250811_220422_48da9d15.db",
+            "Session DB 2",
+        ),
+        (
+            "runtime/logs/sessions/session_AIOS_20250813_235739_d04bb138.db",
+            "Session DB 3",
+        ),
+        (
+            "runtime/logs/sessions/session_AIOS_20250816_172409_0485427a.db",
+            "Session DB 4",
+        ),
+        (
+            "runtime/logs/sessions/session_AIOS_20250816_174844_47b01432.db",
+            "Session DB 5",
+        ),
+        (
+            "runtime/logs/sessions/session_AIOS_20250829_114350_09456140.db",
+            "Session DB 6",
+        ),
     ]
 
     base_path = Path("../../..")  # From ai/tools/database to AIOS root

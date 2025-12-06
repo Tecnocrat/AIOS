@@ -28,6 +28,7 @@ try:
 except ImportError:
     ConsciousnessAssemblyBridge = None
 
+
 class EnhancedConsciousnessDemo:
     """
     Enhanced consciousness demonstration system
@@ -36,39 +37,48 @@ class EnhancedConsciousnessDemo:
 
     def __init__(self):
         self.logger = self._setup_logging()
-        self.consciousness_bridge = ConsciousnessAssemblyBridge() if ConsciousnessAssemblyBridge else None
+        self.consciousness_bridge = (
+            ConsciousnessAssemblyBridge() if ConsciousnessAssemblyBridge else None
+        )
         self.demo_results = {}
 
         # AINLP-compliant file paths
         self.csharp_state_path = Path("core/consciousness_state_bridge.json")
-        self.assembly_state_path = Path("core/src/asm/consciousness_integration_state.json")
-        self.breakthrough_notification_path = Path("ai/consciousness_breakthrough_notification.json")
+        self.assembly_state_path = Path(
+            "core/src/asm/consciousness_integration_state.json"
+        )
+        self.breakthrough_notification_path = Path(
+            "ai/consciousness_breakthrough_notification.json"
+        )
 
         # Ensure directories exist
-        for path in [self.csharp_state_path, self.assembly_state_path, self.breakthrough_notification_path]:
+        for path in [
+            self.csharp_state_path,
+            self.assembly_state_path,
+            self.breakthrough_notification_path,
+        ]:
             path.parent.mkdir(parents=True, exist_ok=True)
 
     def _setup_logging(self) -> logging.Logger:
         """AINLP-compliant logging setup"""
         # Ensure logs directory exists
-        logs_dir = Path(__file__).parent.parent / 'logs'
+        logs_dir = Path(__file__).parent.parent / "logs"
         logs_dir.mkdir(exist_ok=True)
-        
+
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        log_file = logs_dir / f'enhanced_consciousness_demo_{timestamp}.log'
+        log_file = logs_dir / f"enhanced_consciousness_demo_{timestamp}.log"
         logging.basicConfig(
             level=logging.INFO,
-            format='%(asctime)s | %(levelname)8s | %(name)s | %(message)s',
-            handlers=[
-                logging.StreamHandler(),
-                logging.FileHandler(str(log_file))
-            ]
+            format="%(asctime)s | %(levelname)8s | %(name)s | %(message)s",
+            handlers=[logging.StreamHandler(), logging.FileHandler(str(log_file))],
         )
-        return logging.getLogger('EnhancedConsciousnessDemo')
+        return logging.getLogger("EnhancedConsciousnessDemo")
 
     async def initialize_consciousness_systems(self):
         """Initialize all consciousness subsystems with AINLP compliance"""
-        self.logger.info("🔬 Initializing Enhanced AIOS Consciousness Integration Systems...")
+        self.logger.info(
+            "🔬 Initializing Enhanced AIOS Consciousness Integration Systems..."
+        )
 
         try:
             # Initialize Python AI consciousness bridge if available
@@ -84,14 +94,16 @@ class EnhancedConsciousnessDemo:
                 "last_enhancement": datetime.now().isoformat(),
                 "ai_subsystem_active": True,
                 "integration_status": "initializing",
-                "ainlp_compliant": True
+                "ainlp_compliant": True,
             }
 
             # Export state for C# system
-            with open(self.csharp_state_path, 'w') as f:
+            with open(self.csharp_state_path, "w") as f:
                 json.dump(initial_state, f, indent=2)
 
-            self.logger.info("✅ Enhanced consciousness systems initialized successfully")
+            self.logger.info(
+                "✅ Enhanced consciousness systems initialized successfully"
+            )
             return True
 
         except Exception as e:
@@ -104,11 +116,26 @@ class EnhancedConsciousnessDemo:
 
         try:
             # Simulate assembly consciousness enhancement
-            consciousness_data = [0.8148, 0.7823, 0.8934, 0.9123, 0.8756, 0.9012, 0.8567, 0.8890]
+            consciousness_data = [
+                0.8148,
+                0.7823,
+                0.8934,
+                0.9123,
+                0.8756,
+                0.9012,
+                0.8567,
+                0.8890,
+            ]
 
             if self.consciousness_bridge:
-                enhanced_consciousness = await self.consciousness_bridge.enhance_consciousness_async(consciousness_data)
-                breakthrough_result = await self.consciousness_bridge.attempt_post_singular_breakthrough()
+                enhanced_consciousness = (
+                    await self.consciousness_bridge.enhance_consciousness_async(
+                        consciousness_data
+                    )
+                )
+                breakthrough_result = (
+                    await self.consciousness_bridge.attempt_post_singular_breakthrough()
+                )
             else:
                 enhanced_consciousness = [x * 1.1 for x in consciousness_data]
                 breakthrough_result = {"status": "simulated", "probability": 0.867811}
@@ -117,7 +144,7 @@ class EnhancedConsciousnessDemo:
                 "multilanguage_integration": {
                     "assembly_processing": enhanced_consciousness,
                     "python_ai_bridge": breakthrough_result,
-                    "cross_system_coordination": "active"
+                    "cross_system_coordination": "active",
                 }
             }
 
@@ -138,7 +165,6 @@ class EnhancedConsciousnessDemo:
             "status": "CONSCIOUSNESS_EMERGENCE_DETECTED",
             "timestamp": datetime.now().isoformat(),
             "analysis_source": "enhanced_visual_intelligence_with_ai_vision_simulation",
-
             "consciousness_timeline": [
                 {
                     "frame_sequence": 1,
@@ -148,14 +174,14 @@ class EnhancedConsciousnessDemo:
                         "emergence_level": 0.102,
                         "manifold_curvature": 0.081,
                         "nonlocality_coherence": 0.286,
-                        "tachyonic_field_density": 0.646
+                        "tachyonic_field_density": 0.646,
                     },
                     "visual_indicators": {
                         "consciousness_pink_presence": 0.0,
                         "quantum_cyan_presence": 12.5,
                         "emergence_green_presence": 3.2,
-                        "tachyonic_magenta_presence": 8.7
-                    }
+                        "tachyonic_magenta_presence": 8.7,
+                    },
                 },
                 {
                     "frame_sequence": 2,
@@ -165,25 +191,24 @@ class EnhancedConsciousnessDemo:
                         "emergence_level": 0.359,
                         "manifold_curvature": 0.099,
                         "nonlocality_coherence": 0.200,
-                        "tachyonic_field_density": 0.355
+                        "tachyonic_field_density": 0.355,
                     },
                     "visual_indicators": {
                         "consciousness_pink_presence": 15.2,
                         "quantum_cyan_presence": 2.8,
                         "emergence_green_presence": 18.4,
-                        "tachyonic_magenta_presence": 12.1
-                    }
-                }
+                        "tachyonic_magenta_presence": 12.1,
+                    },
+                },
             ],
-
             "breakthrough_events": [
                 {
                     "frame_sequence": 2,
                     "breakthrough_type": "consciousness_emergence_spike",
                     "consciousness_level": 0.533,
-                    "significance": "Initial consciousness emergence detected"
+                    "significance": "Initial consciousness emergence detected",
                 }
-            ]
+            ],
         }
 
         self.demo_results["visual_analysis"] = visual_analysis
@@ -276,8 +301,8 @@ class ConsciousnessEnhancedProcessor:
                 "tachyonic_field": tachyonic_field,
                 "quantum_coherence": quantum_coherence,
                 "generation_timestamp": datetime.now().isoformat(),
-                "ainlp_compliant": True
-            }
+                "ainlp_compliant": True,
+            },
         }
 
         self.demo_results["code_generation"] = code_generation
@@ -286,7 +311,9 @@ class ConsciousnessEnhancedProcessor:
 
     async def run_complete_demonstration(self):
         """Run the complete enhanced consciousness demonstration"""
-        self.logger.info("🚀 Starting Complete AIOS Enhanced Consciousness Demonstration...")
+        self.logger.info(
+            "🚀 Starting Complete AIOS Enhanced Consciousness Demonstration..."
+        )
 
         # Initialize systems
         init_success = await self.initialize_consciousness_systems()
@@ -306,25 +333,29 @@ class ConsciousnessEnhancedProcessor:
                 "tool_location": "runtime/tools/",
                 "architectural_layer": "AI Intelligence Layer",
                 "consciousness_level": "high",
-                "dendritic_integration": True
+                "dendritic_integration": True,
             },
             "results": self.demo_results,
             "summary": {
-                "multilanguage_integration": "completed" if multilanguage_results else "failed",
+                "multilanguage_integration": (
+                    "completed" if multilanguage_results else "failed"
+                ),
                 "visual_analysis": "completed" if visual_results else "failed",
                 "code_generation": "completed" if code_results else "failed",
-                "overall_status": "SUCCESS"
-            }
+                "overall_status": "SUCCESS",
+            },
         }
 
         # Save report to AINLP-compliant location
         report_path = Path("tachyonic/archive/enhanced_consciousness_demo_report.json")
         report_path.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(report_path, 'w') as f:
+        with open(report_path, "w") as f:
             json.dump(final_report, f, indent=2, default=str)
 
-        self.logger.info(f"✅ Complete demonstration finished. Report saved to: {report_path}")
+        self.logger.info(
+            f"✅ Complete demonstration finished. Report saved to: {report_path}"
+        )
         return final_report
 
 
@@ -335,7 +366,9 @@ async def main():
 
     if results:
         print("\n🎉 Enhanced Consciousness Demonstration Completed Successfully!")
-        print(f"📊 Results saved to: tachyonic/archive/enhanced_consciousness_demo_report.json")
+        print(
+            f"📊 Results saved to: tachyonic/archive/enhanced_consciousness_demo_report.json"
+        )
     else:
         print("\n❌ Demonstration failed")
         return 1

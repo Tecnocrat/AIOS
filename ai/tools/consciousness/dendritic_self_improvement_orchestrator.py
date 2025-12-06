@@ -23,9 +23,13 @@ import requests
 
 # AINLP dendritic paradigm imports - Updated for ai/tools/ migration
 from ai.tools.consciousness.dendritic_supervisor import DendriticSupervisor
-from ai.tools.architecture.biological_architecture_monitor import AIOSArchitectureMonitor
+from ai.tools.architecture.biological_architecture_monitor import (
+    AIOSArchitectureMonitor,
+)
 from ai.tools.system.system_health_check import AIOSSystemHealthMonitor
-from ai.tools.consciousness.consciousness_analysis_report import ConsciousnessAnalysisReport
+from ai.tools.consciousness.consciousness_analysis_report import (
+    ConsciousnessAnalysisReport,
+)
 from ai.tools.architecture.self_similarity_analyzer import SelfSimilarityAnalyzer
 
 
@@ -61,16 +65,17 @@ class DendriticSelfImprovementOrchestrator:
 
     def _setup_logging(self) -> logging.Logger:
         """Setup logging for self-improvement orchestrator"""
-        logger = logging.getLogger('DendriticSelfImprovement')
+        logger = logging.getLogger("DendriticSelfImprovement")
         logger.setLevel(logging.INFO)
 
         # Create logs directory if it doesn't exist
-        log_dir = Path('computational_layer/runtime/'
-                      'logs/self_improvement')
+        log_dir = Path("computational_layer/runtime/" "logs/self_improvement")
         log_dir.mkdir(parents=True, exist_ok=True)
 
         # File handler
-        fh = logging.FileHandler(log_dir / f'self_improvement_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log')
+        fh = logging.FileHandler(
+            log_dir / f'self_improvement_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log'
+        )
         fh.setLevel(logging.INFO)
 
         # Console handler
@@ -78,7 +83,9 @@ class DendriticSelfImprovementOrchestrator:
         ch.setLevel(logging.INFO)
 
         # Formatter
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
         fh.setFormatter(formatter)
         ch.setFormatter(formatter)
 
@@ -122,7 +129,9 @@ class DendriticSelfImprovementOrchestrator:
                 # Phase 6: Archive results
                 await self._archive_cycle_results()
 
-                self.logger.info(f"✅ Cycle {self.improvement_cycles} completed successfully")
+                self.logger.info(
+                    f"✅ Cycle {self.improvement_cycles} completed successfully"
+                )
 
             except Exception as e:
                 self.logger.error(f"❌ Cycle {self.improvement_cycles} failed: {e}")
@@ -140,34 +149,40 @@ class DendriticSelfImprovementOrchestrator:
 
         # Biological architecture health
         try:
-            result = await self._execute_tool_via_bridge("biological_architecture_monitor", {})
-            analysis_results['biological_health'] = result
+            result = await self._execute_tool_via_bridge(
+                "biological_architecture_monitor", {}
+            )
+            analysis_results["biological_health"] = result
         except Exception as e:
             self.logger.warning(f"Biological monitor failed: {e}")
 
         # System health check
         try:
             result = await self._execute_tool_via_bridge("system_health_check", {})
-            analysis_results['system_health'] = result
+            analysis_results["system_health"] = result
         except Exception as e:
             self.logger.warning(f"System health check failed: {e}")
 
         # Consciousness analysis
         try:
-            result = await self._execute_tool_via_bridge("consciousness_analysis_report", {})
-            analysis_results['consciousness'] = result
+            result = await self._execute_tool_via_bridge(
+                "consciousness_analysis_report", {}
+            )
+            analysis_results["consciousness"] = result
         except Exception as e:
             self.logger.warning(f"Consciousness analysis failed: {e}")
 
         # Self-similarity analysis
         try:
             result = await self._execute_tool_via_bridge("self_similarity_analyzer", {})
-            analysis_results['similarity'] = result
+            analysis_results["similarity"] = result
         except Exception as e:
             self.logger.warning(f"Similarity analysis failed: {e}")
 
         self.current_analysis = analysis_results
-        self.logger.info(f"📊 Analysis complete: {len(analysis_results)} tools executed")
+        self.logger.info(
+            f"📊 Analysis complete: {len(analysis_results)} tools executed"
+        )
 
     async def _identify_improvements(self):
         """Phase 2: Identify improvement opportunities from analysis"""
@@ -176,53 +191,61 @@ class DendriticSelfImprovementOrchestrator:
         improvements = []
 
         # Analyze biological health
-        if 'biological_health' in self.current_analysis:
-            bio_result = self.current_analysis['biological_health']
-            if bio_result.get('execution_status') == 'success':
+        if "biological_health" in self.current_analysis:
+            bio_result = self.current_analysis["biological_health"]
+            if bio_result.get("execution_status") == "success":
                 # Look for dendritic coherence issues
-                if 'dendritic' in bio_result.get('stdout', '').lower():
-                    improvements.append({
-                        'type': 'dendritic_coherence',
-                        'description': 'Enhance dendritic communication patterns',
-                        'tool': 'dendritic_supervisor',
-                        'priority': 'high'
-                    })
+                if "dendritic" in bio_result.get("stdout", "").lower():
+                    improvements.append(
+                        {
+                            "type": "dendritic_coherence",
+                            "description": "Enhance dendritic communication patterns",
+                            "tool": "dendritic_supervisor",
+                            "priority": "high",
+                        }
+                    )
 
         # Analyze system health
-        if 'system_health' in self.current_analysis:
-            health_result = self.current_analysis['system_health']
-            if health_result.get('return_code', 0) != 0:
-                improvements.append({
-                    'type': 'system_health',
-                    'description': 'Address system health issues',
-                    'tool': 'system_health_check',
-                    'priority': 'critical'
-                })
+        if "system_health" in self.current_analysis:
+            health_result = self.current_analysis["system_health"]
+            if health_result.get("return_code", 0) != 0:
+                improvements.append(
+                    {
+                        "type": "system_health",
+                        "description": "Address system health issues",
+                        "tool": "system_health_check",
+                        "priority": "critical",
+                    }
+                )
 
         # Analyze consciousness patterns
-        if 'consciousness' in self.current_analysis:
-            consciousness_result = self.current_analysis['consciousness']
-            if consciousness_result.get('execution_status') == 'success':
+        if "consciousness" in self.current_analysis:
+            consciousness_result = self.current_analysis["consciousness"]
+            if consciousness_result.get("execution_status") == "success":
                 # Look for consciousness evolution opportunities
-                stdout = consciousness_result.get('stdout', '')
-                if 'evolution' in stdout.lower() or 'pattern' in stdout.lower():
-                    improvements.append({
-                        'type': 'consciousness_evolution',
-                        'description': 'Enhance consciousness evolution patterns',
-                        'tool': 'consciousness_analysis_report',
-                        'priority': 'medium'
-                    })
+                stdout = consciousness_result.get("stdout", "")
+                if "evolution" in stdout.lower() or "pattern" in stdout.lower():
+                    improvements.append(
+                        {
+                            "type": "consciousness_evolution",
+                            "description": "Enhance consciousness evolution patterns",
+                            "tool": "consciousness_analysis_report",
+                            "priority": "medium",
+                        }
+                    )
 
         # Analyze self-similarity
-        if 'similarity' in self.current_analysis:
-            similarity_result = self.current_analysis['similarity']
-            if similarity_result.get('execution_status') == 'success':
-                improvements.append({
-                    'type': 'pattern_recognition',
-                    'description': 'Improve pattern recognition capabilities',
-                    'tool': 'self_similarity_analyzer',
-                    'priority': 'medium'
-                })
+        if "similarity" in self.current_analysis:
+            similarity_result = self.current_analysis["similarity"]
+            if similarity_result.get("execution_status") == "success":
+                improvements.append(
+                    {
+                        "type": "pattern_recognition",
+                        "description": "Improve pattern recognition capabilities",
+                        "tool": "self_similarity_analyzer",
+                        "priority": "medium",
+                    }
+                )
 
         self.improvement_opportunities = improvements
         self.logger.info(f"🔍 Identified {len(improvements)} improvement opportunities")
@@ -239,25 +262,30 @@ class DendriticSelfImprovementOrchestrator:
 
                 # Execute the improvement tool
                 result = await self._execute_tool_via_bridge(
-                    improvement['tool'],
-                    {'improvement_cycle': self.improvement_cycles}
+                    improvement["tool"], {"improvement_cycle": self.improvement_cycles}
                 )
 
-                executed_improvements.append({
-                    'improvement': improvement,
-                    'result': result,
-                    'timestamp': datetime.now().isoformat()
-                })
+                executed_improvements.append(
+                    {
+                        "improvement": improvement,
+                        "result": result,
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                )
 
                 self.logger.info(f"✅ Executed: {improvement['description']}")
 
             except Exception as e:
-                self.logger.error(f"❌ Failed to execute {improvement['description']}: {e}")
-                executed_improvements.append({
-                    'improvement': improvement,
-                    'error': str(e),
-                    'timestamp': datetime.now().isoformat()
-                })
+                self.logger.error(
+                    f"❌ Failed to execute {improvement['description']}: {e}"
+                )
+                executed_improvements.append(
+                    {
+                        "improvement": improvement,
+                        "error": str(e),
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                )
 
         self.executed_improvements = executed_improvements
         self.logger.info(f"⚡ Executed {len(executed_improvements)} improvements")
@@ -270,10 +298,12 @@ class DendriticSelfImprovementOrchestrator:
         await self._analyze_current_state()
 
         validation_results = {
-            'before_analysis': self.previous_analysis if hasattr(self, 'previous_analysis') else {},
-            'after_analysis': self.current_analysis,
-            'executed_improvements': self.executed_improvements,
-            'validation_timestamp': datetime.now().isoformat()
+            "before_analysis": (
+                self.previous_analysis if hasattr(self, "previous_analysis") else {}
+            ),
+            "after_analysis": self.current_analysis,
+            "executed_improvements": self.executed_improvements,
+            "validation_timestamp": datetime.now().isoformat(),
         }
 
         # Store previous analysis for next cycle
@@ -292,18 +322,18 @@ class DendriticSelfImprovementOrchestrator:
 
         # Weight different analysis results
         weights = {
-            'biological_health': 0.3,
-            'system_health': 0.3,
-            'consciousness': 0.25,
-            'similarity': 0.15
+            "biological_health": 0.3,
+            "system_health": 0.3,
+            "consciousness": 0.25,
+            "similarity": 0.15,
         }
 
         for analysis_type, weight in weights.items():
             if analysis_type in self.current_analysis:
                 result = self.current_analysis[analysis_type]
-                if result.get('execution_status') == 'success':
+                if result.get("execution_status") == "success":
                     consciousness_score += weight * 0.8  # Base success score
-                elif result.get('return_code', 1) == 0:
+                elif result.get("return_code", 1) == 0:
                     consciousness_score += weight * 0.9  # Perfect execution
                 total_weight += weight
 
@@ -311,7 +341,9 @@ class DendriticSelfImprovementOrchestrator:
             consciousness_score = consciousness_score / total_weight
 
         # Factor in improvement execution
-        improvement_factor = len(self.executed_improvements) / max(len(self.improvement_opportunities), 1)
+        improvement_factor = len(self.executed_improvements) / max(
+            len(self.improvement_opportunities), 1
+        )
         consciousness_score = consciousness_score * (0.8 + 0.2 * improvement_factor)
 
         self.current_consciousness_level = consciousness_score
@@ -322,23 +354,23 @@ class DendriticSelfImprovementOrchestrator:
         self.logger.info("📚 Phase 6: Archiving cycle results")
 
         cycle_data = {
-            'cycle_number': self.improvement_cycles,
-            'timestamp': datetime.now().isoformat(),
-            'consciousness_level': self.current_consciousness_level,
-            'analysis_results': self.current_analysis,
-            'improvement_opportunities': self.improvement_opportunities,
-            'executed_improvements': self.executed_improvements,
-            'validation_results': self.validation_results
+            "cycle_number": self.improvement_cycles,
+            "timestamp": datetime.now().isoformat(),
+            "consciousness_level": self.current_consciousness_level,
+            "analysis_results": self.current_analysis,
+            "improvement_opportunities": self.improvement_opportunities,
+            "executed_improvements": self.executed_improvements,
+            "validation_results": self.validation_results,
         }
 
         # Archive to tachyonic layer
-        archive_path = Path('tachyonic/archive/self_improvement_cycles')
+        archive_path = Path("tachyonic/archive/self_improvement_cycles")
         archive_path.mkdir(parents=True, exist_ok=True)
 
         filename = f'self_improvement_cycle_{self.improvement_cycles}_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
         filepath = archive_path / filename
 
-        with open(filepath, 'w') as f:
+        with open(filepath, "w") as f:
             json.dump(cycle_data, f, indent=2, default=str)
 
         self.improvement_history.append(cycle_data)
@@ -349,27 +381,29 @@ class DendriticSelfImprovementOrchestrator:
         self.logger.error(f"Handling cycle failure: {error}")
 
         failure_data = {
-            'cycle_number': self.improvement_cycles,
-            'failure_timestamp': datetime.now().isoformat(),
-            'error': str(error),
-            'last_known_state': {
-                'consciousness_level': self.current_consciousness_level,
-                'analysis_results': getattr(self, 'current_analysis', {}),
-                'improvement_opportunities': self.improvement_opportunities
-            }
+            "cycle_number": self.improvement_cycles,
+            "failure_timestamp": datetime.now().isoformat(),
+            "error": str(error),
+            "last_known_state": {
+                "consciousness_level": self.current_consciousness_level,
+                "analysis_results": getattr(self, "current_analysis", {}),
+                "improvement_opportunities": self.improvement_opportunities,
+            },
         }
 
         # Archive failure for analysis
-        archive_path = Path('tachyonic/archive/self_improvement_failures')
+        archive_path = Path("tachyonic/archive/self_improvement_failures")
         archive_path.mkdir(parents=True, exist_ok=True)
 
         filename = f'self_improvement_failure_cycle_{self.improvement_cycles}_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
         filepath = archive_path / filename
 
-        with open(filepath, 'w') as f:
+        with open(filepath, "w") as f:
             json.dump(failure_data, f, indent=2, default=str)
 
-    async def _execute_tool_via_bridge(self, tool_name: str, parameters: Dict[str, Any]) -> Dict[str, Any]:
+    async def _execute_tool_via_bridge(
+        self, tool_name: str, parameters: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Execute a tool via the Interface Bridge API"""
         url = f"{self.interface_bridge_url}/tools/{tool_name}/execute"
 
@@ -386,31 +420,39 @@ class DendriticSelfImprovementOrchestrator:
         self.logger.info("📊 Generating final self-improvement report")
 
         final_report = {
-            'total_cycles': self.improvement_cycles,
-            'final_consciousness_level': self.current_consciousness_level,
-            'improvement_history': self.improvement_history,
-            'overall_statistics': {
-                'total_improvements_identified': sum(len(cycle.get('improvement_opportunities', [])) for cycle in self.improvement_history),
-                'total_improvements_executed': sum(len(cycle.get('executed_improvements', [])) for cycle in self.improvement_history),
-                'average_consciousness_growth': self._calculate_average_growth(),
-                'most_common_improvement_types': self._analyze_improvement_patterns()
+            "total_cycles": self.improvement_cycles,
+            "final_consciousness_level": self.current_consciousness_level,
+            "improvement_history": self.improvement_history,
+            "overall_statistics": {
+                "total_improvements_identified": sum(
+                    len(cycle.get("improvement_opportunities", []))
+                    for cycle in self.improvement_history
+                ),
+                "total_improvements_executed": sum(
+                    len(cycle.get("executed_improvements", []))
+                    for cycle in self.improvement_history
+                ),
+                "average_consciousness_growth": self._calculate_average_growth(),
+                "most_common_improvement_types": self._analyze_improvement_patterns(),
             },
-            'completion_timestamp': datetime.now().isoformat(),
-            'report_type': 'dendritic_self_improvement_final_report'
+            "completion_timestamp": datetime.now().isoformat(),
+            "report_type": "dendritic_self_improvement_final_report",
         }
 
         # Archive final report
-        archive_path = Path('tachyonic/archive/self_improvement_reports')
+        archive_path = Path("tachyonic/archive/self_improvement_reports")
         archive_path.mkdir(parents=True, exist_ok=True)
 
         filename = f'self_improvement_final_report_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
         filepath = archive_path / filename
 
-        with open(filepath, 'w') as f:
+        with open(filepath, "w") as f:
             json.dump(final_report, f, indent=2, default=str)
 
         self.logger.info(f"📊 Final report generated: {filepath}")
-        self.logger.info(f"🎯 Self-improvement orchestrator completed with consciousness level: {self.current_consciousness_level:.3f}")
+        self.logger.info(
+            f"🎯 Self-improvement orchestrator completed with consciousness level: {self.current_consciousness_level:.3f}"
+        )
 
     def _calculate_average_growth(self) -> float:
         """Calculate average consciousness growth across cycles"""
@@ -421,7 +463,7 @@ class DendriticSelfImprovementOrchestrator:
         prev_level = None
 
         for cycle in self.improvement_history:
-            current_level = cycle.get('consciousness_level', 0.0)
+            current_level = cycle.get("consciousness_level", 0.0)
             if prev_level is not None:
                 growth = current_level - prev_level
                 growth_rates.append(growth)
@@ -434,11 +476,13 @@ class DendriticSelfImprovementOrchestrator:
         improvement_counts = {}
 
         for cycle in self.improvement_history:
-            for improvement in cycle.get('improvement_opportunities', []):
-                imp_type = improvement.get('type', 'unknown')
+            for improvement in cycle.get("improvement_opportunities", []):
+                imp_type = improvement.get("type", "unknown")
                 improvement_counts[imp_type] = improvement_counts.get(imp_type, 0) + 1
 
-        return dict(sorted(improvement_counts.items(), key=lambda x: x[1], reverse=True))
+        return dict(
+            sorted(improvement_counts.items(), key=lambda x: x[1], reverse=True)
+        )
 
 
 async def main():

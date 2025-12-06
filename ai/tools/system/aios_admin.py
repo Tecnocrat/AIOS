@@ -24,15 +24,15 @@ FOLDER_STRUCTURE_ARCHIVE_DIR = TACHYONIC_DIR / "folder_structure"
 
 
 def load_deprecated_root_files() -> List[str]:
-    gov_dir = ROOT / 'governance'
-    marker = gov_dir / 'deprecated_files.ps1'
+    gov_dir = ROOT / "governance"
+    marker = gov_dir / "deprecated_files.ps1"
     if marker.exists():
         # Parse simple PowerShell array assignment (no execution for safety)
-        lines = marker.read_text(encoding='utf-8').splitlines()
+        lines = marker.read_text(encoding="utf-8").splitlines()
         collected: List[str] = []
         for ln in lines:
             ln = ln.strip()
-            if not ln or ln.startswith('#'):
+            if not ln or ln.startswith("#"):
                 continue
             if ln.startswith("'") and ln.endswith("'"):
                 collected.append(ln.strip("'"))
@@ -120,10 +120,7 @@ def cli_ui() -> str:
     print("2. Analyze chatgpt_integration folder structure")
     print("3. Analyze AIOS folder structure")
     print("4. Tachyonic backup of path.md")
-    print(
-        "5. Create/Update module summaries (from input file or "
-        "interactively)"
-    )
+    print("5. Create/Update module summaries (from input file or " "interactively)")
     print("6. Execute ALL (full metadata update)")
     print("7. Backup Management - Status")
     print("8. Backup Management - Create Backup")
@@ -140,12 +137,12 @@ def tachyonic_backup(
 ) -> None:
     if path_md is None:
         path_md = ROOT / "docs" / "path.md"
-    
+
     path_md = Path(path_md)
     if not path_md.exists():
         print(f"WARNING: {path_md} not found. Skipping tachyonic backup.")
         return
-    
+
     archive_dir = Path(archive_dir)
     archive_dir.mkdir(parents=True, exist_ok=True)
     now = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -157,30 +154,38 @@ def tachyonic_backup(
 def run_backup_manager(action: str) -> None:
     """Execute the PowerShell backup manager with specified action."""
     backup_script = ROOT / "scripts" / "backup_manager.ps1"
-    
+
     if not backup_script.exists():
         print(f"ERROR: Backup manager script not found at {backup_script}")
         return
-    
+
     try:
         print(f"Executing backup action: {action}")
         result = subprocess.run(
-            ["pwsh", "-NoLogo", "-NoProfile", "-File", str(backup_script), f"-Action", action],
+            [
+                "pwsh",
+                "-NoLogo",
+                "-NoProfile",
+                "-File",
+                str(backup_script),
+                f"-Action",
+                action,
+            ],
             capture_output=True,
             text=True,
-            cwd=str(ROOT)
+            cwd=str(ROOT),
         )
-        
+
         if result.stdout:
             print(result.stdout)
         if result.stderr:
             print(f"WARNING: {result.stderr}")
-        
+
         if result.returncode != 0:
             print(f"ERROR: Backup operation failed with exit code {result.returncode}")
         else:
             print(f"Backup operation '{action}' completed successfully.")
-            
+
     except Exception as e:
         print(f"ERROR: Failed to execute backup manager: {e}")
 
@@ -194,9 +199,9 @@ def backup_management_menu() -> None:
         print("3. Consolidate - Move scattered backup files to central location")
         print("4. Cleanup - Remove old backups beyond retention period")
         print("5. Return to main menu")
-        
+
         choice = input("Enter your choice (1-5): ").strip()
-        
+
         if choice == "1":
             run_backup_manager("status")
         elif choice == "2":
@@ -210,7 +215,9 @@ def backup_management_menu() -> None:
             else:
                 print("Consolidation cancelled.")
         elif choice == "4":
-            print("WARNING: This will permanently delete old backup files beyond the retention period.")
+            print(
+                "WARNING: This will permanently delete old backup files beyond the retention period."
+            )
             confirm = input("Continue? (y/n): ").strip().lower()
             if confirm == "y":
                 run_backup_manager("cleanup")
@@ -243,9 +250,7 @@ def load_manual_summaries(
             parts = line.split("|", 2)
             if len(parts) == 3:
                 module_path, lang, summary = parts
-                summaries[(module_path.strip(), lang.strip())] = (
-                    summary.strip()
-                )
+                summaries[(module_path.strip(), lang.strip())] = summary.strip()
     return summaries
 
 
@@ -308,9 +313,7 @@ def execute_all() -> None:
         if folder_name == "AIOS" and "" in structure:
             before = set(structure[""]["files"])
             structure[""]["files"] = [
-                f
-                for f in structure[""]["files"]
-                if f not in DEPRECATED_ROOT_FILES
+                f for f in structure[""]["files"] if f not in DEPRECATED_ROOT_FILES
             ]
             removed = before - set(structure[""]["files"])
             if removed:
@@ -319,17 +322,12 @@ def execute_all() -> None:
                     ", ".join(sorted(removed)),
                 )
         # Archive existing snapshot before overwriting
-        archive_existing_folder_structure(
-            output_folder, output_file, folder_name
-        )
+        archive_existing_folder_structure(output_folder, output_file, folder_name)
         save_to_json(structure, output_folder, output_file)
         print(f"Folder structure saved to {output_folder / output_file}")
     # 3. Update module summaries
     if not MODULE_INDEX_PATH.exists():
-        print(
-            f"ERROR: {MODULE_INDEX_PATH} not found. "
-            "Skipping module summaries."
-        )
+        print(f"ERROR: {MODULE_INDEX_PATH} not found. " "Skipping module summaries.")
         return
     module_index = load_module_index(MODULE_INDEX_PATH)
     manual_summaries = load_manual_summaries(MANUAL_SUMMARY_PATH)
@@ -381,9 +379,7 @@ if __name__ == "__main__":
                 continue
             module_index_data = load_module_index(MODULE_INDEX_PATH)
             manual_summary_map = load_manual_summaries(MANUAL_SUMMARY_PATH)
-            summary_lines = collect_summaries(
-                module_index_data, manual_summary_map
-            )
+            summary_lines = collect_summaries(module_index_data, manual_summary_map)
             write_summaries(summary_lines, SUMMARY_MD_PATH)
         elif menu_choice == "6":
             execute_all()
@@ -400,7 +396,9 @@ if __name__ == "__main__":
             else:
                 print("Consolidation cancelled.")
         elif menu_choice == "10":
-            print("WARNING: This will permanently delete old backup files beyond the retention period.")
+            print(
+                "WARNING: This will permanently delete old backup files beyond the retention period."
+            )
             confirm = input("Continue? (y/n): ").strip().lower()
             if confirm == "y":
                 run_backup_manager("cleanup")

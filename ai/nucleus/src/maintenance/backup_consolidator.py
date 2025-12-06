@@ -43,7 +43,7 @@ class BackupConsolidator:
             "files_consolidated": 0,
             "duplicates_removed": 0,
             "total_size_saved": 0,
-            "errors": []
+            "errors": [],
         }
 
         # Ensure unified backups directory exists
@@ -55,11 +55,13 @@ class BackupConsolidator:
         for folder_path in backup_folders:
             try:
                 folder_result = self._consolidate_folder(folder_path)
-                result["folders_processed"].append({
-                    "path": str(folder_path),
-                    "files": folder_result["files_processed"],
-                    "duplicates": folder_result["duplicates_found"]
-                })
+                result["folders_processed"].append(
+                    {
+                        "path": str(folder_path),
+                        "files": folder_result["files_processed"],
+                        "duplicates": folder_result["duplicates_found"],
+                    }
+                )
                 result["files_consolidated"] += folder_result["files_processed"]
                 result["duplicates_removed"] += folder_result["duplicates_found"]
 
@@ -73,29 +75,20 @@ class BackupConsolidator:
         backup_folders = []
 
         # Common backup folder patterns
-        patterns = [
-            "*backup*",
-            "*_backups",
-            "tachyonic_*",
-            "mega_consolidation_*"
-        ]
+        patterns = ["*backup*", "*_backups", "tachyonic_*", "mega_consolidation_*"]
 
         for pattern in patterns:
             folders = list(self.workspace_root.glob(f"**/{pattern}"))
             backup_folders.extend([f for f in folders if f.is_dir()])
 
         # Remove the unified backups folder itself
-        backup_folders = [f for f in backup_folders
-                         if f != self.unified_backups_path]
+        backup_folders = [f for f in backup_folders if f != self.unified_backups_path]
 
         return backup_folders
 
     def _consolidate_folder(self, folder_path: Path) -> Dict:
         """Consolidate a single backup folder."""
-        result = {
-            "files_processed": 0,
-            "duplicates_found": 0
-        }
+        result = {"files_processed": 0, "duplicates_found": 0}
 
         for file_path in folder_path.rglob("*"):
             if file_path.is_file():
@@ -113,7 +106,7 @@ class BackupConsolidator:
     def _process_backup_file(self, file_path: Path) -> tuple:
         """Process a single backup file with deduplication."""
         try:
-            with open(file_path, 'rb') as f:
+            with open(file_path, "rb") as f:
                 content = f.read()
 
             # Calculate content hash
@@ -163,7 +156,7 @@ class BackupConsolidator:
         result = {
             "timestamp": datetime.now().isoformat(),
             "folders_removed": [],
-            "errors": []
+            "errors": [],
         }
 
         for folder_path in folders_to_remove:

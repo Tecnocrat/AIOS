@@ -12,9 +12,11 @@ import os
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from robust_python_environment_manager import (PythonEnvironment,
-                                               RobustPythonEnvironmentManager,
-                                               get_environment_manager)
+from robust_python_environment_manager import (
+    PythonEnvironment,
+    RobustPythonEnvironmentManager,
+    get_environment_manager,
+)
 
 
 class AIOSPythonEnvironmentIntegration:
@@ -57,29 +59,30 @@ class AIOSPythonEnvironmentIntegration:
                 "name": "path_recovery",
                 "description": "Recover from PATH issues by rediscovering environments",  # noqa
                 "condition": lambda health: health["healthy_environments"] == 0,  # noqa
-                "action": self._recover_from_path_issues
+                "action": self._recover_from_path_issues,
             },
             {
                 "name": "missing_active_environment",
                 "description": "Set active environment when none is active",
-                "condition": lambda health: health["active_environment"] is None,  # noqa
-                "action": self._recover_missing_active_environment
+                "condition": lambda health: health["active_environment"]
+                is None,  # noqa
+                "action": self._recover_missing_active_environment,
             },
             {
                 "name": "broken_environment_cleanup",
                 "description": "Clean up broken/missing environments",
                 "condition": lambda health: health["missing_environments"] > 0,  # noqa
-                "action": self._cleanup_broken_environments
-            }
+                "action": self._cleanup_broken_environments,
+            },
         ]
 
     def _register_with_context_manager(self):
         """Register Python environment state with AIOS context manager."""
-        if hasattr(self.context_manager, 'register_subsystem'):
+        if hasattr(self.context_manager, "register_subsystem"):
             self.context_manager.register_subsystem(
-                'python_environment',
+                "python_environment",
                 self.get_environment_snapshot,
-                self.restore_environment_snapshot
+                self.restore_environment_snapshot,
             )
 
     def perform_health_check(self) -> Dict[str, Any]:
@@ -95,7 +98,7 @@ class AIOSPythonEnvironmentIntegration:
             "context_manager_available": self.context_manager is not None,
             "recovery_strategies_available": len(self.recovery_strategies),
             "last_health_check": self.last_health_check,
-            "environment_snapshots_count": len(self.environment_snapshots)
+            "environment_snapshots_count": len(self.environment_snapshots),
         }
 
         # Check for issues and apply recovery strategies
@@ -105,24 +108,34 @@ class AIOSPythonEnvironmentIntegration:
         self.last_health_check = datetime.now().isoformat()
         return health_report
 
-    def _apply_recovery_strategies(self, health_report: Dict[str, Any]) -> List[str]:  # noqa
+    def _apply_recovery_strategies(
+        self, health_report: Dict[str, Any]
+    ) -> List[str]:  # noqa
         """Apply recovery strategies based on health report."""
         applied_strategies = []
 
         for strategy in self.recovery_strategies:
             try:
                 if strategy["condition"](health_report):
-                    self.logger.info(f"Applying recovery strategy: {strategy['name']}")  # noqa
+                    self.logger.info(
+                        f"Applying recovery strategy: {strategy['name']}"
+                    )  # noqa
                     success = strategy["action"](health_report)
 
                     if success:
                         applied_strategies.append(strategy["name"])
-                        self.logger.info(f"Recovery strategy '{strategy['name']}' applied successfully")  # noqa
+                        self.logger.info(
+                            f"Recovery strategy '{strategy['name']}' applied successfully"
+                        )  # noqa
                     else:
-                        self.logger.warning(f"Recovery strategy '{strategy['name']}' failed")  # noqa
+                        self.logger.warning(
+                            f"Recovery strategy '{strategy['name']}' failed"
+                        )  # noqa
 
             except Exception as e:
-                self.logger.error(f"Error applying recovery strategy '{strategy['name']}': {e}")  # noqa
+                self.logger.error(
+                    f"Error applying recovery strategy '{strategy['name']}': {e}"
+                )  # noqa
 
         return applied_strategies
 
@@ -135,17 +148,23 @@ class AIOSPythonEnvironmentIntegration:
             healthy_count = self.env_manager.refresh_environments()
 
             if healthy_count > 0:
-                self.logger.info(f"Recovered {healthy_count} healthy environments")  # noqa
+                self.logger.info(
+                    f"Recovered {healthy_count} healthy environments"
+                )  # noqa
                 return True
             else:
-                self.logger.warning("No healthy environments found after PATH recovery")  # noqa
+                self.logger.warning(
+                    "No healthy environments found after PATH recovery"
+                )  # noqa
                 return False
 
         except Exception as e:
             self.logger.error(f"PATH recovery failed: {e}")
             return False
 
-    def _recover_missing_active_environment(self, health_report: Dict[str, Any]) -> bool:  # noqa
+    def _recover_missing_active_environment(
+        self, health_report: Dict[str, Any]
+    ) -> bool:  # noqa
         """Recover when no active environment is set."""
         try:
             environments = self.env_manager.list_environments()
@@ -164,9 +183,13 @@ class AIOSPythonEnvironmentIntegration:
                 if not preferred_env:
                     preferred_env = healthy_envs[0]
 
-                success = self.env_manager.set_active_environment(preferred_env.id)  # noqa
+                success = self.env_manager.set_active_environment(
+                    preferred_env.id
+                )  # noqa
                 if success:
-                    self.logger.info(f"Set active environment: {preferred_env.name}")  # noqa
+                    self.logger.info(
+                        f"Set active environment: {preferred_env.name}"
+                    )  # noqa
                     return True
 
             return False
@@ -175,7 +198,9 @@ class AIOSPythonEnvironmentIntegration:
             self.logger.error(f"Active environment recovery failed: {e}")
             return False
 
-    def _cleanup_broken_environments(self, health_report: Dict[str, Any]) -> bool:  # noqa
+    def _cleanup_broken_environments(
+        self, health_report: Dict[str, Any]
+    ) -> bool:  # noqa
         """Clean up broken/missing environments."""
         try:
             environments = self.env_manager.list_environments()
@@ -184,7 +209,9 @@ class AIOSPythonEnvironmentIntegration:
             for env in environments:
                 if env.health_status in ["missing", "broken"]:
                     # Create snapshot before removal
-                    self.create_environment_snapshot(env.id, f"cleanup_{env.id}")  # noqa
+                    self.create_environment_snapshot(
+                        env.id, f"cleanup_{env.id}"
+                    )  # noqa
 
                     # Remove from active environments
                     if env.id in self.env_manager.environments:
@@ -193,7 +220,9 @@ class AIOSPythonEnvironmentIntegration:
 
             if cleaned_count > 0:
                 self.env_manager._save_environments()
-                self.logger.info(f"Cleaned up {cleaned_count} broken environments")  # noqa
+                self.logger.info(
+                    f"Cleaned up {cleaned_count} broken environments"
+                )  # noqa
                 return True
 
             return False
@@ -208,7 +237,7 @@ class AIOSPythonEnvironmentIntegration:
             "timestamp": datetime.now().isoformat(),
             "active_environment": None,
             "environments": [],
-            "health_status": None
+            "health_status": None,
         }
 
         try:
@@ -219,20 +248,22 @@ class AIOSPythonEnvironmentIntegration:
                     "id": active_env.id,
                     "name": active_env.name,
                     "python_path": active_env.python_path,
-                    "version": active_env.version
+                    "version": active_env.version,
                 }
 
             # Get all environments
             for env in self.env_manager.list_environments():
-                snapshot["environments"].append({
-                    "id": env.id,
-                    "name": env.name,
-                    "python_path": env.python_path,
-                    "version": env.version,
-                    "is_virtual": env.is_virtual,
-                    "health_status": env.health_status,
-                    "is_active": env.is_active
-                })
+                snapshot["environments"].append(
+                    {
+                        "id": env.id,
+                        "name": env.name,
+                        "python_path": env.python_path,
+                        "version": env.version,
+                        "is_virtual": env.is_virtual,
+                        "health_status": env.health_status,
+                        "is_active": env.is_active,
+                    }
+                )
 
             # Get health status
             snapshot["health_status"] = self.env_manager.health_check()
@@ -256,11 +287,17 @@ class AIOSPythonEnvironmentIntegration:
 
                 # Find matching environment by path
                 for env in self.env_manager.list_environments():
-                    if (os.path.normpath(env.python_path).lower() ==
-                            os.path.normpath(active_env_info["python_path"]).lower()):  # noqa
-                        success = self.env_manager.set_active_environment(env.id)  # noqa
+                    if (
+                        os.path.normpath(env.python_path).lower()
+                        == os.path.normpath(active_env_info["python_path"]).lower()
+                    ):  # noqa
+                        success = self.env_manager.set_active_environment(
+                            env.id
+                        )  # noqa
                         if success:
-                            self.logger.info(f"Restored active environment: {env.name}")  # noqa
+                            self.logger.info(
+                                f"Restored active environment: {env.name}"
+                            )  # noqa
                             return True
 
             # If specific environment not found, try recovery
@@ -271,10 +308,14 @@ class AIOSPythonEnvironmentIntegration:
             self.logger.error(f"Environment snapshot restoration failed: {e}")
             return False
 
-    def create_environment_snapshot(self, env_id: str, snapshot_name: str = None) -> str:  # noqa
+    def create_environment_snapshot(
+        self, env_id: str, snapshot_name: str = None
+    ) -> str:  # noqa
         """Create a named snapshot of a specific environment."""
         if snapshot_name is None:
-            snapshot_name = f"snapshot_{datetime.now().strftime('%Y%m%d_%H%M%S')}"  # noqa
+            snapshot_name = (
+                f"snapshot_{datetime.now().strftime('%Y%m%d_%H%M%S')}"  # noqa
+            )
 
         try:
             if env_id in self.env_manager.environments:
@@ -289,8 +330,8 @@ class AIOSPythonEnvironmentIntegration:
                         "is_virtual": env.is_virtual,
                         "virtual_env_path": env.virtual_env_path,
                         "packages": env.packages,
-                        "health_status": env.health_status
-                    }
+                        "health_status": env.health_status,
+                    },
                 }
 
                 self.environment_snapshots[snapshot_name] = snapshot
@@ -313,16 +354,20 @@ class AIOSPythonEnvironmentIntegration:
             "health_check": self.perform_health_check(),
             "environment_manager_state": {
                 "config_dir": self.env_manager.config_dir,
-                "environments_file_exists": os.path.exists(self.env_manager.environments_file),  # noqa
-                "backup_file_exists": os.path.exists(self.env_manager.backup_file),  # noqa
-                "total_environments": len(self.env_manager.environments)
+                "environments_file_exists": os.path.exists(
+                    self.env_manager.environments_file
+                ),  # noqa
+                "backup_file_exists": os.path.exists(
+                    self.env_manager.backup_file
+                ),  # noqa
+                "total_environments": len(self.env_manager.environments),
             },
             "integration_state": {
                 "context_manager_available": self.context_manager is not None,
                 "recovery_strategies_count": len(self.recovery_strategies),
                 "snapshots_count": len(self.environment_snapshots),
-                "last_health_check": self.last_health_check
-            }
+                "last_health_check": self.last_health_check,
+            },
         }
 
         return report
@@ -339,14 +384,16 @@ class AIOSPythonEnvironmentIntegration:
                 "aios_version": "1.0.0",
                 "environment_snapshot": self.get_environment_snapshot(),
                 "diagnostic_report": self.get_diagnostic_report(),
-                "recovery_instructions": self._generate_recovery_instructions()
+                "recovery_instructions": self._generate_recovery_instructions(),
             }
 
             # Save to backup file
             backup_filename = f"aios_python_env_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"  # noqa
-            backup_path = os.path.join(self.env_manager.config_dir, backup_filename)  # noqa
+            backup_path = os.path.join(
+                self.env_manager.config_dir, backup_filename
+            )  # noqa
 
-            with open(backup_path, 'w') as f:
+            with open(backup_path, "w") as f:
                 json.dump(backup_data, f, indent=2)
 
             self.logger.info(f"Environment backup created: {backup_path}")
@@ -366,13 +413,15 @@ class AIOSPythonEnvironmentIntegration:
             "5. Run AIOS Python environment initialization",
             "6. Import environment configuration backup",
             "7. Verify environment health",
-            "8. Test AIOS integration"
+            "8. Test AIOS integration",
         ]
 
         # Add specific package requirements if available
         active_env = self.env_manager.get_active_environment()
         if active_env and active_env.packages:
-            instructions.append(f"Packages to install: {', '.join(active_env.packages[:10])}")  # noqa
+            instructions.append(
+                f"Packages to install: {', '.join(active_env.packages[:10])}"
+            )  # noqa
 
         return instructions
 
@@ -382,7 +431,7 @@ class AIOSPythonEnvironmentIntegration:
             self.logger.info(f"Recovering from backup: {backup_file}")
 
             # Load backup data
-            with open(backup_file, 'r') as f:
+            with open(backup_file, "r") as f:
                 backup_data = json.load(f)
 
             # Refresh current environments
@@ -427,7 +476,9 @@ def initialize_aios_python_environment(context_manager=None):
 
     print("AIOS Python Environment Integration Initialized")
     print(f"Healthy environments: {health_report['healthy_environments']}")
-    print(f"Recovery strategies applied: {health_report['aios_integration']['recovery_applied']}")  # noqa
+    print(
+        f"Recovery strategies applied: {health_report['aios_integration']['recovery_applied']}"
+    )  # noqa
 
     return integration
 
@@ -442,11 +493,17 @@ if __name__ == "__main__":
     # Show diagnostic report
     diagnostic = integration.get_diagnostic_report()
     print("\nDiagnostic Report:")
-    print(f"Total environments: {diagnostic['health_check']['total_environments']}")  # noqa
-    print(f"Healthy environments: {diagnostic['health_check']['healthy_environments']}")  # noqa
+    print(
+        f"Total environments: {diagnostic['health_check']['total_environments']}"
+    )  # noqa
+    print(
+        f"Healthy environments: {diagnostic['health_check']['healthy_environments']}"
+    )  # noqa
 
-    if diagnostic['health_check']['active_environment']:
-        print(f"Active environment: {diagnostic['health_check']['active_environment']['name']}")  # noqa
+    if diagnostic["health_check"]["active_environment"]:
+        print(
+            f"Active environment: {diagnostic['health_check']['active_environment']['name']}"
+        )  # noqa
 
     # Create backup for OS reinstall preparation
     backup_file = integration.prepare_for_os_reinstall()

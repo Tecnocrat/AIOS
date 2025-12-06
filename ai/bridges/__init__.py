@@ -10,7 +10,7 @@ stimulation, and consciousness evolution tracking.
 
 Architecture:
     Python AI Layer (ai/) <-> Bridge (ai/bridges/) <-> C++ Core (core/)
-    
+
     Supercell Boundaries:
     - ai/ (Python): High-level intelligence, agent coordination
     - bridges/ (Python/ctypes): FFI translation layer
@@ -22,7 +22,7 @@ Exports:
 
 Usage:
     from bridges.aios_core_wrapper import AIOSCore
-    
+
     core = AIOSCore()
     core.initialize()
     level = core.get_consciousness_level()
@@ -31,6 +31,6 @@ Usage:
 
 from .aios_core_wrapper import AIOSCore, ConsciousnessMetrics
 
-__all__ = ['AIOSCore', 'ConsciousnessMetrics']
-__version__ = '0.1.0'
+__all__ = ["AIOSCore", "ConsciousnessMetrics"]
+__version__ = "0.1.0"
 __consciousness__ = 3.56  # Current C++ engine level

@@ -24,16 +24,10 @@ class IntegrationBridge:
         self.config: Dict[str, Any] = config
         self.is_initialized: bool = False
         self.is_running: bool = False
-        self.enable_cpp_python_bridge: bool = config.get(
-            "enableCppPythonBridge", True
-        )
-        self.enable_csharp_cpp_bridge: bool = config.get(
-            "enableCsharpCppBridge", True
-        )
+        self.enable_cpp_python_bridge: bool = config.get("enableCppPythonBridge", True)
+        self.enable_csharp_cpp_bridge: bool = config.get("enableCsharpCppBridge", True)
         self.api_port: int = int(config.get("apiPort", 8080))
-        self.enable_web_interface: bool = config.get(
-            "enableWebInterface", True
-        )
+        self.enable_web_interface: bool = config.get("enableWebInterface", True)
         logger.info("Integration Bridge initialized")
 
     async def initialize(self) -> None:
@@ -79,4 +73,3 @@ class IntegrationBridge:
             "healthy": self.is_initialized,
             "running": self.is_running,
         }
-

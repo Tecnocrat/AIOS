@@ -20,8 +20,10 @@ import random
 import math
 
 from dendritic_conclave_system import (
-    DendriticConclaveSystem, ConclaveType, ConsensusLevel,
-    BosonicInformationField
+    DendriticConclaveSystem,
+    ConclaveType,
+    ConsensusLevel,
+    BosonicInformationField,
 )
 
 logger = logging.getLogger(__name__)
@@ -30,6 +32,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class FundamentalExpression:
     """A fundamental expression of bosonic information in 3D space"""
+
     expression_id: str
     bosonic_source: str
     geometric_vibration: List[float]
@@ -63,29 +66,39 @@ class FundamentalUnificationConclave:
             expression_id="proton_geometric_vibration",
             bosonic_source="elemental_particles",
             geometric_vibration=[1.618, 2.718, 3.141, 4.669],  # Golden ratio, e, π, φ
-            hyperdimensional_pattern=[2.236, 2.502, 2.718, 3.141],  # √5, Feigenbaum, e, π
+            hyperdimensional_pattern=[
+                2.236,
+                2.502,
+                2.718,
+                3.141,
+            ],  # √5, Feigenbaum, e, π
             perceived_as="particle",
             self_reference_loops=3,
             information_scaffolding={
                 "quark_structure": "self-referential geometric vibrations",
                 "charge_emergence": "hyperdimensional rotation pattern",
-                "mass_emergence": "information density accumulation"
-            }
+                "mass_emergence": "information density accumulation",
+            },
         )
 
         # Energy wave as the same fundamental pattern
         energy_wave_expression = FundamentalExpression(
             expression_id="energy_wave_propagation",
             bosonic_source="quantum_fields",
-            geometric_vibration=[2.236, 2.502, 2.718, 3.141],  # Same pattern, different phase
+            geometric_vibration=[
+                2.236,
+                2.502,
+                2.718,
+                3.141,
+            ],  # Same pattern, different phase
             hyperdimensional_pattern=[1.618, 2.236, 2.718, 3.628],  # Different harmonic
             perceived_as="wave",
             self_reference_loops=5,
             information_scaffolding={
                 "wave_propagation": "geometric extrusion through space-time fabric",
                 "frequency_emergence": "vibrational harmonic resonance",
-                "amplitude_emergence": "information potential gradient"
-            }
+                "amplitude_emergence": "information potential gradient",
+            },
         )
 
         # Space as information scaffolding
@@ -99,8 +112,8 @@ class FundamentalUnificationConclave:
             information_scaffolding={
                 "spatial_geometry": "self-creating information lattice",
                 "dimensional_emergence": "hyperdimensional folding patterns",
-                "causality_scaffolding": "information flow constraints"
-            }
+                "causality_scaffolding": "information flow constraints",
+            },
         )
 
         # Time as geometric changes
@@ -114,24 +127,24 @@ class FundamentalUnificationConclave:
             information_scaffolding={
                 "temporal_flow": "iterative geometric transformations",
                 "causality_emergence": "information sequence ordering",
-                "change_perception": "geometric vibration differentials"
-            }
+                "change_perception": "geometric vibration differentials",
+            },
         )
 
         self.fundamental_expressions = {
             "proton": proton_expression,
             "energy_wave": energy_wave_expression,
             "space": space_expression,
-            "time": time_expression
+            "time": time_expression,
         }
 
     async def demonstrate_fundamental_unification(self):
         """Demonstrate the unification of particle/wave/space/time"""
 
-        print("\n" + "="*80)
+        print("\n" + "=" * 80)
         print("AINLP FUNDAMENTAL UNIFICATION CONCLAVE")
         print("Exploring the Unified Particle-Wave-Space-Time System")
-        print("="*80)
+        print("=" * 80)
 
         # Initiate the fundamental unification conclave
         initiating_agent = list(self.conclave_system.dendritic_agents.keys())[0]
@@ -139,7 +152,7 @@ class FundamentalUnificationConclave:
         conclave_id = await self.conclave_system.initiate_conclave(
             ConclaveType.BOSONIC_PATTERN_SYNTHESIS,
             "Unify particle, wave, space, and time as expressions of the same bosonic information",
-            initiating_agent
+            initiating_agent,
         )
 
         print(f"\n🔬 Fundamental Unification Conclave Initiated: {conclave_id}")
@@ -157,7 +170,9 @@ class FundamentalUnificationConclave:
         await self._demonstrate_time_emergence(conclave_id)
 
         # Manifest the complete unified expression
-        final_manifestation = await self.conclave_system.manifest_hyperdimensional_expression(conclave_id)
+        final_manifestation = (
+            await self.conclave_system.manifest_hyperdimensional_expression(conclave_id)
+        )
 
         print(f"\n🌌 Final Unified Manifestation:")
         print(json.dumps(final_manifestation, indent=2))
@@ -187,8 +202,8 @@ class FundamentalUnificationConclave:
                     {
                         "expression_analysis": name,
                         "bosonic_pattern": expression.bosonic_source,
-                        "unification_insight": f"{name} emerges from same fundamental information as all others"
-                    }
+                        "unification_insight": f"{name} emerges from same fundamental information as all others",
+                    },
                 )
 
     async def _demonstrate_energy_emission_illusion(self, conclave_id: str):
@@ -202,10 +217,14 @@ class FundamentalUnificationConclave:
 
         print(f"Proton vibration pattern: {proton.geometric_vibration}")
         print(f"Energy wave pattern: {energy_wave.geometric_vibration}")
-        print(f"Pattern similarity: {self._calculate_pattern_similarity(proton.geometric_vibration, energy_wave.geometric_vibration):.3f}")
+        print(
+            f"Pattern similarity: {self._calculate_pattern_similarity(proton.geometric_vibration, energy_wave.geometric_vibration):.3f}"
+        )
 
         print("\n💡 INSIGHT: Energy isn't 'emitted' from particles.")
-        print("   It's the same geometric vibration expressing differently in 3D space.")
+        print(
+            "   It's the same geometric vibration expressing differently in 3D space."
+        )
         print("   The 'proton' and 'energy wave' are the same bosonic information")
         print("   manifesting as different hyperdimensional expressions.")
 
@@ -219,8 +238,8 @@ class FundamentalUnificationConclave:
                 {
                     "unification_principle": "particle_wave_unity",
                     "illusion_dissolved": "energy_emission_myth",
-                    "reality_revealed": "unified_geometric_vibration"
-                }
+                    "reality_revealed": "unified_geometric_vibration",
+                },
             )
 
     async def _demonstrate_self_creation(self, conclave_id: str):
@@ -229,7 +248,9 @@ class FundamentalUnificationConclave:
         print("\n🔄 SELF-CREATING SYSTEM:")
         print("-" * 25)
 
-        total_loops = sum(expr.self_reference_loops for expr in self.fundamental_expressions.values())
+        total_loops = sum(
+            expr.self_reference_loops for expr in self.fundamental_expressions.values()
+        )
         print(f"Total self-reference loops across all expressions: {total_loops}")
 
         print("\n🌌 SELF-CREATION INSIGHT:")
@@ -255,8 +276,8 @@ class FundamentalUnificationConclave:
                 {
                     "self_creation_loops": total_loops,
                     "unified_system": "particle_wave_space_time_unity",
-                    "emergence_mechanism": "bosonic_information_self_reference"
-                }
+                    "emergence_mechanism": "bosonic_information_self_reference",
+                },
             )
 
     async def _demonstrate_time_emergence(self, conclave_id: str):
@@ -282,7 +303,9 @@ class FundamentalUnificationConclave:
         for iteration in range(5):
             # Apply geometric transformation (simplified)
             transformed = [x * (1 + iteration * 0.1) for x in base_geometry]
-            print(f"   Iteration {iteration}: {transformed} → Perceived as 'moment {iteration}'")
+            print(
+                f"   Iteration {iteration}: {transformed} → Perceived as 'moment {iteration}'"
+            )
 
         # Agent consensus on time emergence
         agents = list(self.conclave_system.dendritic_agents.keys())[6:8]
@@ -294,11 +317,13 @@ class FundamentalUnificationConclave:
                 {
                     "time_nature": "geometric_iteration",
                     "change_mechanism": "information_transformation",
-                    "perception_illusion": "spatial_geometry_differentials"
-                }
+                    "perception_illusion": "spatial_geometry_differentials",
+                },
             )
 
-    def _calculate_pattern_similarity(self, pattern1: List[float], pattern2: List[float]) -> float:
+    def _calculate_pattern_similarity(
+        self, pattern1: List[float], pattern2: List[float]
+    ) -> float:
         """Calculate similarity between two geometric patterns"""
         if len(pattern1) != len(pattern2):
             return 0.0

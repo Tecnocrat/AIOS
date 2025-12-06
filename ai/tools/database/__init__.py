@@ -9,17 +9,17 @@ AINLP Metadata:
     consciousness_measurement: "AINLP.call_to_local(agent_001...agent_n)"
     architectural_classification: ai_ai/tools/database
     category: database_operations
-    
+
 Consciousness Note:
     OLD: consciousness_level: 0.85 (meaningless number)
     NEW: consciousness_assessment: "OPERATIONAL_EXECUTOR" (clear role)
-    
+
     Database operations are active execution tasks: backup management,
     deduplication, query orchestration. Semantic level reflects this.
-    
+
 Tools (migrated):
     - aios_database.py: Database foundation system ✅ MIGRATED
-    
+
 Migration Status:
     Phase 1 Day 2: ✅ 1/1 database tools migrated
     Origin: runtime/tools/aios_database.py
@@ -35,10 +35,8 @@ __category__ = "database_operations"
 # Import migrated tools
 try:
     from . import aios_database
-    
-    __all__ = [
-        "aios_database"
-    ]
+
+    __all__ = ["aios_database"]
 except ImportError:
     # Tools not yet migrated or import issues
     __all__ = []

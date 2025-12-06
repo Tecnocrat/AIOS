@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional
 @dataclass
 class ContextHealth:
     """Context health indicators as defined in bootstrap protocol"""
+
     score: float  # 0.0 to 1.0
     indicators: List[str]
     last_check: datetime
@@ -39,8 +40,9 @@ class ContextRecoverySystem:
         self.last_recovery = datetime.now()
         self.recovery_triggers = []
 
-    def calculate_context_health(self, user_input: str = "",
-                               system_errors: List[str] = None) -> ContextHealth:
+    def calculate_context_health(
+        self, user_input: str = "", system_errors: List[str] = None
+    ) -> ContextHealth:
         """Calculate context health using bootstrap protocol indicators"""
         if system_errors is None:
             system_errors = []
@@ -51,8 +53,13 @@ class ContextRecoverySystem:
 
         # Check for context loss indicators from bootstrap protocol
         context_loss_keywords = [
-            "forgetting", "losing context", "what were we doing",
-            "context loss", "forgot", "lost track", "starting over"
+            "forgetting",
+            "losing context",
+            "what were we doing",
+            "context loss",
+            "forgot",
+            "lost track",
+            "starting over",
         ]
 
         user_lower = user_input.lower()
@@ -81,21 +88,26 @@ class ContextRecoverySystem:
             recovery_actions.append("Verify file system state")
 
         # Check time since last recovery (48 hours as per protocol)
-        hours_since_recovery = (datetime.now() - self.last_recovery).total_seconds() / 3600
+        hours_since_recovery = (
+            datetime.now() - self.last_recovery
+        ).total_seconds() / 3600
         if hours_since_recovery > 48:
             health_score = min(health_score, 0.6)
-            indicators.append(f"Time since last recovery: {hours_since_recovery:.1f} hours")
+            indicators.append(
+                f"Time since last recovery: {hours_since_recovery:.1f} hours"
+            )
             recovery_actions.append("Execute scheduled context refresh")
 
         return ContextHealth(
             score=health_score,
             indicators=indicators,
             last_check=datetime.now(),
-            recovery_actions=recovery_actions
+            recovery_actions=recovery_actions,
         )
 
-    def should_trigger_recovery(self, user_input: str = "",
-                               system_errors: List[str] = None) -> bool:
+    def should_trigger_recovery(
+        self, user_input: str = "", system_errors: List[str] = None
+    ) -> bool:
         """Determine if context recovery should be triggered"""
         health = self.calculate_context_health(user_input, system_errors)
 
@@ -122,7 +134,7 @@ class ContextRecoverySystem:
             "steps_executed": [],
             "files_read": [],
             "health_before": None,
-            "health_after": None
+            "health_after": None,
         }
 
         # Step 1: Full Codebase Reconnaissance
@@ -134,7 +146,7 @@ class ContextRecoverySystem:
             "docs/DEVELOPMENT.md",
             "docs/API_REFERENCE.md",
             "docs/INSTALLATION.md",
-            "docs/CHANGELOG.md"
+            "docs/CHANGELOG.md",
         ]
 
         for file_path in mandatory_files:
@@ -161,7 +173,7 @@ class ContextRecoverySystem:
     def save_recovery_log(self, log: Dict[str, Any]):
         """Save recovery log to context file"""
         try:
-            with open(self.context_file, 'w') as f:
+            with open(self.context_file, "w") as f:
                 json.dump(log, f, indent=2)
         except Exception as e:
             print(f"Failed to save recovery log: {e}")
@@ -170,7 +182,7 @@ class ContextRecoverySystem:
         """Load previous context state if available"""
         try:
             if self.context_file.exists():
-                with open(self.context_file, 'r') as f:
+                with open(self.context_file, "r") as f:
                     return json.load(f)
         except Exception as e:
             print(f"Failed to load context state: {e}")
@@ -185,25 +197,31 @@ class ContextRecoverySystem:
         actions = []
 
         if health.score < 0.4:
-            actions.extend([
-                "Execute immediate context recovery",
-                "Read all mandatory documentation files",
-                "Verify system health and build state",
-                "Update context tracking"
-            ])
+            actions.extend(
+                [
+                    "Execute immediate context recovery",
+                    "Read all mandatory documentation files",
+                    "Verify system health and build state",
+                    "Update context tracking",
+                ]
+            )
         elif health.score < 0.7:
-            actions.extend([
-                "Review recent changes and context",
-                "Check system status",
-                "Verify file system state"
-            ])
+            actions.extend(
+                [
+                    "Review recent changes and context",
+                    "Check system status",
+                    "Verify file system state",
+                ]
+            )
         else:
             actions.append("Continue normal operation")
 
         return actions
 
 
-def process_context_loss_query(user_input: str, workspace_path: str = "c:\\dev\\AIOS") -> Dict[str, Any]:
+def process_context_loss_query(
+    user_input: str, workspace_path: str = "c:\\dev\\AIOS"
+) -> Dict[str, Any]:
     """Process user query for context loss and trigger recovery if needed"""
     recovery_system = ContextRecoverySystem(workspace_path)
 
@@ -214,7 +232,7 @@ def process_context_loss_query(user_input: str, workspace_path: str = "c:\\dev\\
             "context_loss_detected": True,
             "recovery_executed": True,
             "recovery_log": recovery_log,
-            "message": "Context recovery completed. System state refreshed."
+            "message": "Context recovery completed. System state refreshed.",
         }
     else:
         health = recovery_system.calculate_context_health(user_input)
@@ -223,7 +241,7 @@ def process_context_loss_query(user_input: str, workspace_path: str = "c:\\dev\\
             "recovery_executed": False,
             "context_health": health.score,
             "recommendations": recovery_system.get_recovery_actions(health),
-            "message": f"Context health: {health.score:.2f} - System operational"
+            "message": f"Context health: {health.score:.2f} - System operational",
         }
 
 
@@ -236,7 +254,7 @@ if __name__ == "__main__":
         "I think we're losing context here",
         "What were we doing before?",
         "The build is failing",
-        "Everything seems to be working fine"
+        "Everything seems to be working fine",
     ]
 
     for scenario in test_scenarios:

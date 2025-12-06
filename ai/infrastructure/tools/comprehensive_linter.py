@@ -15,6 +15,7 @@ from typing import List, Dict, Any, Optional
 
 MAX_LINE_LENGTH = 79
 
+
 class ComprehensiveLinter:
     """Enhanced linting tool for AIOS codebase"""
 
@@ -23,17 +24,12 @@ class ComprehensiveLinter:
 
     def setup_logging(self):
         """Setup comprehensive logging"""
-        log_path = os.path.join(
-            os.path.dirname(__file__),
-            "comprehensive_linter.log"
-        )
+        log_path = os.path.join(os.path.dirname(__file__), "comprehensive_linter.log")
         logger = logging.getLogger("comprehensive_linter")
         logger.setLevel(logging.INFO)
 
         handler = logging.FileHandler(log_path, mode="a", encoding="utf-8")
-        formatter = logging.Formatter(
-            "%(asctime)s | %(levelname)s | %(message)s"
-        )
+        formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
         handler.setFormatter(formatter)
         logger.addHandler(handler)
 
@@ -42,21 +38,21 @@ class ComprehensiveLinter:
     def fix_file(self, file_path: str) -> bool:
         """Fix linting issues in a file"""
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 content = f.read()
 
-            original_lines = content.split('\n')
+            original_lines = content.split("\n")
             fixed_lines = []
 
             for line in original_lines:
                 fixed_line = self.fix_line(line)
                 fixed_lines.append(fixed_line)
 
-            fixed_content = '\n'.join(fixed_lines)
+            fixed_content = "\n".join(fixed_lines)
 
             # Write back if changes were made
             if fixed_content != content:
-                with open(file_path, 'w', encoding='utf-8') as f:
+                with open(file_path, "w", encoding="utf-8") as f:
                     f.write(fixed_content)
                 self.logger.info(f"Fixed linting issues in {file_path}")
                 return True
@@ -85,39 +81,53 @@ class ComprehensiveLinter:
             return line
 
         # Don't break comments, docstrings, or URLs
-        if (line.strip().startswith('#') or
-            'http' in line or
-            line.strip().startswith('"""') or
-            line.strip().startswith("'''")):
+        if (
+            line.strip().startswith("#")
+            or "http" in line
+            or line.strip().startswith('"""')
+            or line.strip().startswith("'''")
+        ):
             return line
 
         # Try to break at comma
         indent = len(line) - len(line.lstrip())
         content = line[indent:]
 
-        comma_pos = content.rfind(',', 0, MAX_LINE_LENGTH - indent)
+        comma_pos = content.rfind(",", 0, MAX_LINE_LENGTH - indent)
         if comma_pos > 0:
-            return (line[:indent + comma_pos + 1] + '\\\n' +
-                   ' ' * (indent + 4) + content[comma_pos + 1:].lstrip())
+            return (
+                line[: indent + comma_pos + 1]
+                + "\\\n"
+                + " " * (indent + 4)
+                + content[comma_pos + 1 :].lstrip()
+            )
 
         # Break at operator
-        operators = [' and ', ' or ', ' + ', ' - ', ' * ', ' / ']
+        operators = [" and ", " or ", " + ", " - ", " * ", " / "]
         for op in operators:
             if op in content:
                 op_pos = content.find(op)
                 if indent + op_pos < MAX_LINE_LENGTH:
                     continue
-                return (line[:indent + op_pos] + '\\\n' +
-                       ' ' * (indent + 4) + content[op_pos:].lstrip())
+                return (
+                    line[: indent + op_pos]
+                    + "\\\n"
+                    + " " * (indent + 4)
+                    + content[op_pos:].lstrip()
+                )
 
         # Force break at max length
-        return (line[:MAX_LINE_LENGTH] + '\\\n' +
-               ' ' * (indent + 4) + line[MAX_LINE_LENGTH:].lstrip())
+        return (
+            line[:MAX_LINE_LENGTH]
+            + "\\\n"
+            + " " * (indent + 4)
+            + line[MAX_LINE_LENGTH:].lstrip()
+        )
 
     def analyze_imports(self, file_path: str) -> Dict[str, Any]:
         """Analyze import usage in file"""
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 content = f.read()
 
             tree = ast.parse(content)
@@ -128,10 +138,10 @@ class ComprehensiveLinter:
             for node in ast.walk(tree):
                 if isinstance(node, ast.Import):
                     for alias in node.names:
-                        imports.append(alias.name.split('.')[0])
+                        imports.append(alias.name.split(".")[0])
                 elif isinstance(node, ast.ImportFrom):
                     if node.module:
-                        imports.append(node.module.split('.')[0])
+                        imports.append(node.module.split(".")[0])
 
                 # Collect used names
                 if isinstance(node, ast.Name):
@@ -139,18 +149,19 @@ class ComprehensiveLinter:
 
             unused_imports = []
             for imp in imports:
-                if imp not in used_names and imp not in ['os', 'sys', 'logging']:
+                if imp not in used_names and imp not in ["os", "sys", "logging"]:
                     unused_imports.append(imp)
 
             return {
-                'total_imports': len(imports),
-                'unused_imports': unused_imports,
-                'used_names': len(used_names)
+                "total_imports": len(imports),
+                "unused_imports": unused_imports,
+                "used_names": len(used_names),
             }
 
         except Exception as e:
             self.logger.error(f"Error analyzing imports in {file_path}: {e}")
             return {}
+
 
 def main():
     """Main entry point"""
@@ -165,7 +176,7 @@ def main():
 
     # Analyze imports
     import_analysis = linter.analyze_imports(file_path)
-    if import_analysis.get('unused_imports'):
+    if import_analysis.get("unused_imports"):
         print(f"⚠️  Unused imports: {import_analysis['unused_imports']}")
 
     # Fix the file
@@ -173,6 +184,7 @@ def main():
         print(f"✅ Fixed linting issues in {file_path}")
     else:
         print(f"ℹ️  No changes needed in {file_path}")
+
 
 if __name__ == "__main__":
     main()

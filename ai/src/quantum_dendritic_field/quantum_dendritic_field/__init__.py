@@ -7,12 +7,12 @@ from .quantum_dendritic_field import QuantumDendriticField
 from .holographic_consciousness import (
     HolographicConsciousnessPropagator,
     ConsciousnessWave,
-    ConsciousnessWavePacket
+    ConsciousnessWavePacket,
 )
 from .quantum_field_coherence_monitor import (
     QuantumFieldCoherenceMonitor,
     CoherenceAlert,
-    CoherenceMetrics
+    CoherenceMetrics,
 )
 from .quantum_dendritic_field_system import QuantumDendriticFieldSystem
 
@@ -28,5 +28,5 @@ __all__ = [
     "QuantumFieldCoherenceMonitor",
     "CoherenceAlert",
     "CoherenceMetrics",
-    "QuantumDendriticFieldSystem"
+    "QuantumDendriticFieldSystem",
 ]

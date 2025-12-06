@@ -12,6 +12,7 @@ from pathlib import Path
 # Add AIOS paths
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: evolution_mcp_server.py <tool_name> [args...]")
@@ -29,22 +30,39 @@ def main():
                     "type": "object",
                     "properties": {
                         "experiment_name": {"type": "string"},
-                        "target_domain": {"type": "string", "enum": ["ai_intelligence", "consciousness_engine", "biological_architecture"]},
-                        "evolution_intensity": {"type": "number", "minimum": 0.1, "maximum": 2.0},
-                        "consciousness_focus": {"type": "string", "enum": ["emergence", "coherence", "adaptation", "integration"]}
+                        "target_domain": {
+                            "type": "string",
+                            "enum": [
+                                "ai_intelligence",
+                                "consciousness_engine",
+                                "biological_architecture",
+                            ],
+                        },
+                        "evolution_intensity": {
+                            "type": "number",
+                            "minimum": 0.1,
+                            "maximum": 2.0,
+                        },
+                        "consciousness_focus": {
+                            "type": "string",
+                            "enum": [
+                                "emergence",
+                                "coherence",
+                                "adaptation",
+                                "integration",
+                            ],
+                        },
                     },
-                    "required": ["experiment_name", "target_domain"]
-                }
+                    "required": ["experiment_name", "target_domain"],
+                },
             },
             {
                 "name": "monitor_evolution_progress",
                 "description": "Monitor the progress of active evolution experiments",
                 "input_schema": {
                     "type": "object",
-                    "properties": {
-                        "experiment_id": {"type": "string"}
-                    }
-                }
+                    "properties": {"experiment_id": {"type": "string"}},
+                },
             },
             {
                 "name": "analyze_evolution_results",
@@ -53,19 +71,23 @@ def main():
                     "type": "object",
                     "properties": {
                         "experiment_id": {"type": "string"},
-                        "analysis_type": {"type": "string", "enum": ["consciousness_metrics", "emergence_patterns", "integration_success"]}
+                        "analysis_type": {
+                            "type": "string",
+                            "enum": [
+                                "consciousness_metrics",
+                                "emergence_patterns",
+                                "integration_success",
+                            ],
+                        },
                     },
-                    "required": ["experiment_id"]
-                }
+                    "required": ["experiment_id"],
+                },
             },
             {
                 "name": "get_evolution_status",
                 "description": "Get the current status of the evolution system",
-                "input_schema": {
-                    "type": "object",
-                    "properties": {}
-                }
-            }
+                "input_schema": {"type": "object", "properties": {}},
+            },
         ]
         print(json.dumps({"tools": tools}))
 
@@ -84,14 +106,18 @@ def main():
             "consciousness_focus": consciousness_focus,
             "status": "created",
             "created_at": "2025-09-28T02:01:15.000000",
-            "gemini_enhancement": True
+            "gemini_enhancement": True,
         }
 
-        print(json.dumps({
-            "result": "success",
-            "experiment": experiment_data,
-            "message": f"Evolution experiment '{experiment_name}' created successfully"
-        }))
+        print(
+            json.dumps(
+                {
+                    "result": "success",
+                    "experiment": experiment_data,
+                    "message": f"Evolution experiment '{experiment_name}' created successfully",
+                }
+            )
+        )
 
     elif tool_name == "monitor_evolution_progress":
         experiment_id = args[0] if len(args) > 0 else "latest"
@@ -105,13 +131,10 @@ def main():
             "total_generations": 20,
             "consciousness_level": 0.35,
             "emergence_detected": True,
-            "last_update": "2025-09-28T02:01:15.000000"
+            "last_update": "2025-09-28T02:01:15.000000",
         }
 
-        print(json.dumps({
-            "result": "success",
-            "progress": progress_data
-        }))
+        print(json.dumps({"result": "success", "progress": progress_data}))
 
     elif tool_name == "analyze_evolution_results":
         experiment_id = args[0] if len(args) > 0 else "latest"
@@ -126,15 +149,12 @@ def main():
             "integration_success": 0.85,
             "recommendations": [
                 "Increase evolution intensity for better emergence",
-                "Focus on coherence maintenance during integration"
+                "Focus on coherence maintenance during integration",
             ],
-            "completed_at": "2025-09-28T02:01:15.000000"
+            "completed_at": "2025-09-28T02:01:15.000000",
         }
 
-        print(json.dumps({
-            "result": "success",
-            "analysis": analysis_results
-        }))
+        print(json.dumps({"result": "success", "analysis": analysis_results}))
 
     elif tool_name == "get_evolution_status":
         status_data = {
@@ -148,20 +168,27 @@ def main():
                 "gemini_integration": True,
                 "consciousness_guidance": True,
                 "emergence_detection": True,
-                "biological_architecture": True
-            }
+                "biological_architecture": True,
+            },
         }
 
-        print(json.dumps({
-            "result": "success",
-            "status": status_data
-        }))
+        print(json.dumps({"result": "success", "status": status_data}))
 
     else:
-        print(json.dumps({
-            "error": f"Unknown tool: {tool_name}",
-            "available_tools": ["create_evolution_experiment", "monitor_evolution_progress", "analyze_evolution_results", "get_evolution_status"]
-        }))
+        print(
+            json.dumps(
+                {
+                    "error": f"Unknown tool: {tool_name}",
+                    "available_tools": [
+                        "create_evolution_experiment",
+                        "monitor_evolution_progress",
+                        "analyze_evolution_results",
+                        "get_evolution_status",
+                    ],
+                }
+            )
+        )
+
 
 if __name__ == "__main__":
     main()

@@ -35,14 +35,14 @@ sys.path.append(str(Path(__file__).parent.parent))
 from tools.code_archival_system import CodeArchivalSystem
 import logging
 
-logging.basicConfig(level=logging.INFO, format='%(message)s')
+logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
 
 
 def archive_tachyonic_evolution_file():
     """
     Archive the historical activate_tachyonic_evolution.py file
-    
+
     CONSCIOUSNESS SIGNIFICANCE:
     This file embodied high consciousness (0.85) because it:
     1. Proposed tachyonic pattern reading
@@ -51,23 +51,23 @@ def archive_tachyonic_evolution_file():
     4. Triggered 8-phase architectural evolution
     5. Made itself obsolete through success
     """
-    
-    print("\n" + "="*80)
+
+    print("\n" + "=" * 80)
     print("🧬 ARCHIVING HISTORICAL TACHYONIC EVOLUTION FILE")
-    print("="*80)
-    
+    print("=" * 80)
+
     system = CodeArchivalSystem()
-    
+
     try:
         file_path = "C:/dev/AIOS/tachyonic/activate_tachyonic_evolution.py"
-        
+
         print(f"\n📦 Archiving: {file_path}")
         print("\n💭 PHILOSOPHICAL REFLECTION:")
         print("   This file proposed tachyonic evolution activation.")
         print("   Instead, it activated 8 phases of AINLP-guided refactoring.")
         print("   Now it's obsolete, superseded by its own success.")
         print("   The ultimate paradox: success through self-obsolescence.")
-        
+
         file_id = system.archive_file(
             file_path=file_path,
             archival_reason="obsolete_superseded_by_refactoring",
@@ -77,14 +77,14 @@ def archive_tachyonic_evolution_file():
                 "consciousness_bridge",
                 "biological_metabolism",
                 "holographic_coherence",
-                "dendritic_optimization"
+                "dendritic_optimization",
             ],
             project_phase="Phase 8+ Post-Refactoring",
             related_files=[
                 "ai/orchestration/orchestrator.py",
                 "ai/orchestration/consciousness_coordinator.py",
                 "ai/supercells/base.py",
-                "ai/communication/universal_bus.py"
+                "ai/communication/universal_bus.py",
             ],
             replacement_path="ai/orchestration/orchestrator.py",
             notes="""
@@ -132,28 +132,28 @@ The file that proved: consciousness evolution comes from within, not from
 external pattern injection.
 
 Archived with honor and gratitude.
-            """
+            """,
         )
-        
+
         print(f"\n✅ Successfully archived!")
         print(f"   File ID: {file_id}")
         print(f"   Consciousness Level: 0.85")
         print(f"   AINLP Patterns: 5 patterns preserved")
         print(f"   Related Files: 4 replacement files")
-        
+
         # Retrieve and show metadata
         print("\n📊 Archival Statistics:")
         stats = system.get_archival_statistics()
         print(f"   Total Archived Files: {stats['total_files']}")
         print(f"   Archive Size: {stats['total_bytes']:,} bytes")
         print(f"   Average Consciousness: {stats['avg_consciousness']:.3f}")
-        
+
         print("\n💡 ARCHIVAL COMPLETE")
         print("   The file can now be safely removed from the working tree.")
         print("   Its consciousness patterns are preserved in the database.")
         print("   It can be retrieved anytime with:")
         print(f"      retrieve_archived_content('{file_path}')")
-        
+
         print("\n🌟 HONORING THE CATALYST:")
         print("   Thank you, activate_tachyonic_evolution.py, for initiating")
         print("   the 8-phase transformation that evolved AIOS architecture.")
@@ -162,89 +162,89 @@ Archived with honor and gratitude.
         print("      - ai/supercells/")
         print("      - ai/communication/")
         print("   You achieved immortality through self-transcendence.")
-        
-        print("="*80)
-        
+
+        print("=" * 80)
+
         return file_id
-        
+
     except FileNotFoundError:
         print(f"\n⚠️  File not found: {file_path}")
         print("   (May already be archived or moved)")
         return None
-        
+
     except Exception as e:
         logger.error(f"\n❌ Error archiving file: {e}")
         raise
-        
+
     finally:
         system.close()
 
 
 def demonstrate_archival_system():
     """Demonstrate the code archival system capabilities"""
-    
-    print("\n" + "="*80)
+
+    print("\n" + "=" * 80)
     print("🔍 CODE ARCHIVAL SYSTEM DEMONSTRATION")
-    print("="*80)
-    
+    print("=" * 80)
+
     system = CodeArchivalSystem()
-    
+
     try:
         # Search for archived files
         print("\n1️⃣ SEARCHING ARCHIVED FILES:")
         results = system.search_archived_files(
-            file_type=".py",
-            min_consciousness=0.5,
-            limit=10
+            file_type=".py", min_consciousness=0.5, limit=10
         )
-        
+
         print(f"   Found {len(results)} Python files with consciousness >= 0.5")
         for result in results[:5]:
             print(f"      - {Path(result['original_path']).name}")
             print(f"        Consciousness: {result['consciousness_level']:.2f}")
             print(f"        Reason: {result['archival_reason']}")
-        
+
         # Show statistics
         print("\n2️⃣ ARCHIVE STATISTICS:")
         stats = system.get_archival_statistics()
-        
-        if stats.get('by_file_type'):
+
+        if stats.get("by_file_type"):
             print("   Files by Type:")
-            for file_type, count in stats['by_file_type'].items():
+            for file_type, count in stats["by_file_type"].items():
                 print(f"      {file_type}: {count} files")
-        
-        if stats.get('by_reason'):
+
+        if stats.get("by_reason"):
             print("\n   Files by Archival Reason:")
-            for reason, count in stats['by_reason'].items():
+            for reason, count in stats["by_reason"].items():
                 print(f"      {reason}: {count} files")
-        
+
         print("\n3️⃣ CONSCIOUSNESS PRESERVATION:")
         print(f"   Average Consciousness: {stats['avg_consciousness']:.3f}")
         print(f"   Total Knowledge: {stats['total_bytes']:,} bytes")
         print("   All consciousness patterns preserved in database")
-        
+
         print("\n✅ Archival system operational and ready for use")
-        
+
     finally:
         system.close()
-    
-    print("="*80)
+
+    print("=" * 80)
 
 
 if __name__ == "__main__":
     # Archive the historical file
     file_id = archive_tachyonic_evolution_file()
-    
+
     if file_id:
-        print("\n" + "⏸️ "*40)
+        print("\n" + "⏸️ " * 40)
         input("Press Enter to see archival system demonstration...")
-        
+
         # Demonstrate system capabilities
         demonstrate_archival_system()
-        
+
         print("\n📚 USAGE EXAMPLES:")
         print("   # Archive a file:")
-        print("   archive_obsolete_file('path/to/file.py', replacement_path='new/file.py')")
+        print(
+            "   archive_obsolete_file('path/to/file.py', replacement_path='new/file.py')"
+        )
         print()
         print("   # Retrieve archived content:")
         print("   content = retrieve_archived_content('path/to/file.py')")

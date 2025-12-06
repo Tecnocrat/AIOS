@@ -26,29 +26,27 @@ AI_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(AI_ROOT))
 
 from src.evolution.file_criticality_evolution_engine import (
-    FileCriticalityEvolutionEngine
+    FileCriticalityEvolutionEngine,
 )
 
 
 async def main():
-    parser = argparse.ArgumentParser(
-        description='File Criticality Evolution Runner'
+    parser = argparse.ArgumentParser(description="File Criticality Evolution Runner")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Analyze without updating canonical index",
     )
     parser.add_argument(
-        '--dry-run', action='store_true',
-        help='Analyze without updating canonical index'
+        "--ollama-only", action="store_true", help="Use only Ollama agent"
     )
     parser.add_argument(
-        '--ollama-only', action='store_true',
-        help='Use only Ollama agent'
+        "--gemini-only", action="store_true", help="Use only Gemini agent"
     )
     parser.add_argument(
-        '--gemini-only', action='store_true',
-        help='Use only Gemini agent'
-    )
-    parser.add_argument(
-        '--no-vscode', action='store_true',
-        help='Disable VSCode Chat strategic oversight'
+        "--no-vscode",
+        action="store_true",
+        help="Disable VSCode Chat strategic oversight",
     )
 
     args = parser.parse_args()
@@ -67,9 +65,7 @@ async def main():
 
     # Initialize engine
     engine = FileCriticalityEvolutionEngine(
-        use_ollama=use_ollama,
-        use_gemini=use_gemini,
-        use_vscode_chat=use_vscode
+        use_ollama=use_ollama, use_gemini=use_gemini, use_vscode_chat=use_vscode
     )
 
     try:
@@ -79,33 +75,31 @@ async def main():
             print(f"[DRY RUN] Loaded {len(current_index)} records")
 
             # Multi-agent analysis (but don't update)
-            enhanced_scores = await engine._multi_agent_analysis(
-                current_index
+            enhanced_scores = await engine._multi_agent_analysis(current_index)
+            print(
+                f"[DRY RUN] Analysis complete - "
+                f"{len(enhanced_scores)} records processed"
             )
-            print(f"[DRY RUN] Analysis complete - "
-                  f"{len(enhanced_scores)} records processed")
 
             # Show sample changes
             changes = 0
-            for orig, enhanced in zip(current_index[:5],
-                                      enhanced_scores[:5]):
-                orig_score = orig.get('criticality_score', 0)
-                new_score = enhanced.get('criticality_score', 0)
+            for orig, enhanced in zip(current_index[:5], enhanced_scores[:5]):
+                orig_score = orig.get("criticality_score", 0)
+                new_score = enhanced.get("criticality_score", 0)
                 if abs(new_score - orig_score) > 1:
                     changes += 1
-                    path = orig.get('path', '')
+                    path = orig.get("path", "")
                     print(f"  {path}: {orig_score} → {new_score}")
 
-            print(f"[DRY RUN] Sample changes: "
-                  f"{changes}/5 records would be updated")
+            print(f"[DRY RUN] Sample changes: " f"{changes}/5 records would be updated")
 
         else:
             # Full evolution
             evolution_report = await engine.evolve_criticality_index()
             print("[SUCCESS] Evolution complete!")
-            records = evolution_report['enhanced_records']
-            changes = evolution_report['changes_made']
-            shadow = evolution_report['tachyonic_shadow']
+            records = evolution_report["enhanced_records"]
+            changes = evolution_report["changes_made"]
+            shadow = evolution_report["tachyonic_shadow"]
             print(f"  Records processed: {records}")
             print(f"  Changes made: {changes}")
             print(f"  Tachyonic shadow: {shadow}")
@@ -115,5 +109,5 @@ async def main():
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     asyncio.run(main())

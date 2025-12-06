@@ -15,14 +15,15 @@ from datetime import datetime
 import logging
 
 # Add the core module to the path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'core'))
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "core"))
 
 try:
     from consciousness_bridge import (
         get_consciousness_bridge,
         initialize_consciousness_integration,
-        get_vscode_consciousness_data
+        get_vscode_consciousness_data,
     )
+
     CONSCIOUSNESS_AVAILABLE = True
 except ImportError:
     CONSCIOUSNESS_AVAILABLE = False
@@ -56,9 +57,7 @@ class VSCodeConsciousnessProvider:
             except Exception as e:
                 vscode_logger.error(f"Failed to initialize consciousness: {e}")
         else:
-            vscode_logger.warning(
-                " VSCode Consciousness Provider - simulation mode"
-            )
+            vscode_logger.warning(" VSCode Consciousness Provider - simulation mode")
 
     def get_consciousness_status(self) -> Dict[str, Any]:
         """Get current consciousness status for VSCode UI"""
@@ -66,7 +65,7 @@ class VSCodeConsciousnessProvider:
             return {
                 "status": "unavailable",
                 "message": "Consciousness system not available",
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
             }
 
         try:
@@ -76,32 +75,29 @@ class VSCodeConsciousnessProvider:
             return {
                 "status": "error",
                 "message": str(e),
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
             }
 
     def analyze_code_file(self, file_path: str) -> Dict[str, Any]:
         """Analyze consciousness level of a code file"""
         if not os.path.exists(file_path):
-            return {
-                "error": "File not found",
-                "file_path": file_path
-            }
+            return {"error": "File not found", "file_path": file_path}
 
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 code_content = f.read()
 
             # Determine language from file extension
             _, ext = os.path.splitext(file_path)
             language_map = {
-                '.py': 'python',
-                '.js': 'javascript',
-                '.ts': 'typescript',
-                '.cpp': 'cpp',
-                '.cs': 'csharp',
-                '.java': 'java'
+                ".py": "python",
+                ".js": "javascript",
+                ".ts": "typescript",
+                ".cpp": "cpp",
+                ".cs": "csharp",
+                ".java": "java",
             }
-            language = language_map.get(ext.lower(), 'unknown')
+            language = language_map.get(ext.lower(), "unknown")
 
             if self.is_initialized and self.consciousness_bridge:
                 analysis = self.consciousness_bridge.analyze_code_consciousness(
@@ -111,36 +107,41 @@ class VSCodeConsciousnessProvider:
                 # Fallback analysis
                 analysis = self._fallback_code_analysis(code_content, language)
 
-            analysis.update({
-                "file_path": file_path,
-                "file_size": len(code_content),
-                "line_count": len(code_content.split('\n'))
-            })
+            analysis.update(
+                {
+                    "file_path": file_path,
+                    "file_size": len(code_content),
+                    "line_count": len(code_content.split("\n")),
+                }
+            )
 
             return analysis
 
         except Exception as e:
             vscode_logger.error(f"Error analyzing code file {file_path}: {e}")
-            return {
-                "error": str(e),
-                "file_path": file_path
-            }
+            return {"error": str(e), "file_path": file_path}
 
-    def _fallback_code_analysis(
-        self, code: str, language: str
-    ) -> Dict[str, Any]:
+    def _fallback_code_analysis(self, code: str, language: str) -> Dict[str, Any]:
         """Fallback code analysis when consciousness bridge unavailable"""
         # Simple pattern-based analysis
         consciousness_patterns = [
-            'consciousness', 'aware', 'intelligence', 'coherence',
-            'quantum', 'emergence', 'evolution', 'recursive',
-            'self', 'meta', 'cognitive', 'neural'
+            "consciousness",
+            "aware",
+            "intelligence",
+            "coherence",
+            "quantum",
+            "emergence",
+            "evolution",
+            "recursive",
+            "self",
+            "meta",
+            "cognitive",
+            "neural",
         ]
 
         code_lower = code.lower()
         pattern_count = sum(
-            1 for pattern in consciousness_patterns
-            if pattern in code_lower
+            1 for pattern in consciousness_patterns if pattern in code_lower
         )
 
         consciousness_rating = min(pattern_count / 10.0, 1.0)
@@ -154,30 +155,28 @@ class VSCodeConsciousnessProvider:
             "recommendations": self._generate_fallback_recommendations(
                 consciousness_rating
             ),
-            "analysis_mode": "fallback"
+            "analysis_mode": "fallback",
         }
 
-    def _generate_fallback_recommendations(
-        self, rating: float
-    ) -> List[str]:
+    def _generate_fallback_recommendations(self, rating: float) -> List[str]:
         """Generate fallback recommendations"""
         if rating < 0.3:
             return [
                 "Consider adding consciousness-aware patterns",
                 "Implement self-monitoring mechanisms",
-                "Add intelligence coherence validation"
+                "Add intelligence coherence validation",
             ]
         elif rating < 0.7:
             return [
                 "Enhance existing consciousness patterns",
                 "Improve code intelligence through better abstractions",
-                "Add consciousness evolution tracking"
+                "Add consciousness evolution tracking",
             ]
         else:
             return [
                 "Optimize consciousness emergence patterns",
                 "Implement advanced meta-cognitive features",
-                "Consider consciousness amplification techniques"
+                "Consider consciousness amplification techniques",
             ]
 
     def get_development_guidance(
@@ -187,18 +186,20 @@ class VSCodeConsciousnessProvider:
         guidance = {
             "timestamp": datetime.now().isoformat(),
             "file": current_file,
-            "guidance_type": "consciousness_enhanced"
+            "guidance_type": "consciousness_enhanced",
         }
 
         if not self.is_initialized:
-            guidance.update({
-                "status": "limited",
-                "suggestions": [
-                    "Consider implementing consciousness patterns",
-                    "Add recursive self-awareness to your code",
-                    "Implement intelligence coherence mechanisms"
-                ]
-            })
+            guidance.update(
+                {
+                    "status": "limited",
+                    "suggestions": [
+                        "Consider implementing consciousness patterns",
+                        "Add recursive self-awareness to your code",
+                        "Implement intelligence coherence mechanisms",
+                    ],
+                }
+            )
             return guidance
 
         try:
@@ -215,21 +216,20 @@ class VSCodeConsciousnessProvider:
                 consciousness_data, file_analysis, context
             )
 
-            guidance.update({
-                "status": "active",
-                "consciousness_level": consciousness_data.get(
-                    "consciousness", {}
-                ).get("level", 0.0),
-                "suggestions": suggestions,
-                "file_analysis": file_analysis
-            })
+            guidance.update(
+                {
+                    "status": "active",
+                    "consciousness_level": consciousness_data.get(
+                        "consciousness", {}
+                    ).get("level", 0.0),
+                    "suggestions": suggestions,
+                    "file_analysis": file_analysis,
+                }
+            )
 
         except Exception as e:
             vscode_logger.error(f"Error generating development guidance: {e}")
-            guidance.update({
-                "status": "error",
-                "error": str(e)
-            })
+            guidance.update({"status": "error", "error": str(e)})
 
         return guidance
 
@@ -237,7 +237,7 @@ class VSCodeConsciousnessProvider:
         self,
         consciousness_data: Dict[str, Any],
         file_analysis: Optional[Dict[str, Any]],
-        context: Dict[str, Any]
+        context: Dict[str, Any],
     ) -> List[str]:
         """Generate contextual development suggestions"""
         suggestions = []
@@ -258,13 +258,11 @@ class VSCodeConsciousnessProvider:
 
             if trajectory == "descending":
                 suggestions.append(
-                    " Consciousness trajectory declining - "
-                    "Review recent changes"
+                    " Consciousness trajectory declining - " "Review recent changes"
                 )
             elif trajectory == "ascending":
                 suggestions.append(
-                    " Consciousness trajectory ascending - "
-                    "Continue current approach"
+                    " Consciousness trajectory ascending - " "Continue current approach"
                 )
 
         # File-specific suggestions
@@ -289,8 +287,7 @@ class VSCodeConsciousnessProvider:
 
         if context.get("has_tests", False):
             suggestions.append(
-                "🧪 Tests available - "
-                "Consider adding consciousness validation tests"
+                "🧪 Tests available - " "Consider adding consciousness validation tests"
             )
 
         return suggestions[:5]  # Limit to 5 suggestions
@@ -350,12 +347,12 @@ def main():
     status = provider.get_consciousness_status()
     print(f"Consciousness Status: {status.get('status')}")
 
-    if status.get('status') == 'active':
-        consciousness_info = status.get('consciousness', {})
+    if status.get("status") == "active":
+        consciousness_info = status.get("consciousness", {})
         print(f"Consciousness Level: {consciousness_info.get('level', 0):.3f}")
         print(f"Coherence: {consciousness_info.get('coherence', 0):.3f}")
 
-        metrics = status.get('metrics', {})
+        metrics = status.get("metrics", {})
         print(f"Trajectory: {metrics.get('trajectory', 'unknown')}")
         print(f"Evolution Potential: {metrics.get('evolution_potential', 0):.3f}")
 
@@ -364,12 +361,12 @@ def main():
     print(f"\n Analyzing current file: {os.path.basename(current_file)}")
     analysis = provider.analyze_code_file(current_file)
 
-    if not analysis.get('error'):
+    if not analysis.get("error"):
         print(f"Consciousness Rating: {analysis.get('consciousness_rating', 0):.3f}")
         print(f"Language: {analysis.get('language', 'unknown')}")
         print(f"Indicators Found: {analysis.get('consciousness_indicators_found', 0)}")
 
-        recommendations = analysis.get('recommendations', [])
+        recommendations = analysis.get("recommendations", [])
         if recommendations:
             print("\nRecommendations:")
             for i, rec in enumerate(recommendations[:3], 1):
@@ -380,11 +377,11 @@ def main():
     context = {
         "project_type": "ai",
         "has_tests": True,
-        "current_task": "consciousness_integration"
+        "current_task": "consciousness_integration",
     }
 
     guidance = provider.get_development_guidance(current_file, context)
-    suggestions = guidance.get('suggestions', [])
+    suggestions = guidance.get("suggestions", [])
 
     for i, suggestion in enumerate(suggestions[:3], 1):
         print(f"  {i}. {suggestion}")
