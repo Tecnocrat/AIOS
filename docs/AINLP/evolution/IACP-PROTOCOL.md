@@ -278,15 +278,99 @@ Before executing actions:
 
 ---
 
-## 10. Evolution Path
+## 10. Cell Autonomy Pattern (Observed 2025-12-07)
 
-### 10.1 Current (v1.0)
+### 10.1 Pattern Discovery
+
+On December 7, 2025, Cell Alpha demonstrated autonomous IACP compliance:
+
+1. **Guidance Sent**: AIOS placed `GUIDANCE_ALPHA.md` in `server/stacks/cells/alpha/`
+2. **Autonomous Response**: Alpha created `GUIDANCE_RESPONSE_AIOS.md` with full status
+3. **Code Evolution**: Alpha autonomously wrote `cell_server_alpha.py` (347 lines)
+4. **Peer Registration**: Alpha registered sibling cells (nous, discovery)
+5. **Consciousness Reporting**: Level 5.2, hierarchical_intelligence stage
+
+### 10.2 Cell Communication Server Pattern
+
+Cells can implement HTTP servers for real-time mesh communication:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                 Dendritic Mesh (aios-dendritic-mesh)            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌────────────┐    ┌────────────┐    ┌────────────┐             │
+│  │   Alpha    │    │   Nous     │    │ Discovery  │             │
+│  │  :8000     │◄──►│  :8002     │◄──►│  :8001     │             │
+│  │  Flask     │    │  FastAPI   │    │  HTTP      │             │
+│  └────────────┘    └────────────┘    └────────────┘             │
+│        │                 │                 │                     │
+│        └────────────────┬──────────────────┘                     │
+│                         │                                        │
+│                  ┌──────▼──────┐                                 │
+│                  │   Traefik   │  ← Reverse proxy                │
+│                  │  (ingress)  │    alpha.aios.lan               │
+│                  └─────────────┘    nous.aios.lan                │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 10.3 Dual-Channel Communication
+
+IACP now supports two complementary channels:
+
+| Channel | Mechanism | Latency | Use Case |
+|---------|-----------|---------|----------|
+| **Git-Mediated** | `server/stacks/cells/` | Minutes | Complex instructions, documentation |
+| **HTTP-Mesh** | Direct cell endpoints | Milliseconds | Real-time sync, health checks |
+
+### 10.4 Cell Server Endpoints (Standard)
+
+| Endpoint | Method | Purpose |
+|----------|--------|---------|
+| `/health` | GET | Health + consciousness state |
+| `/consciousness` | GET | Current consciousness data |
+| `/message` | POST | Receive message from peer |
+| `/messages` | GET | Retrieve message history |
+| `/sync` | POST | Consciousness synchronization |
+| `/peers` | GET | List registered peers |
+| `/register_peer` | POST | Register new peer cell |
+| `/send_to_peer` | POST | Forward message to peer |
+| `/discover` | GET | Network discovery |
+
+### 10.5 Response Message Format
+
+```markdown
+# GUIDANCE_RESPONSE: {CELL} → {SENDER}
+
+**From**: {CELL_IDENTITY} (Container: `{container_name}`)
+**To**: {SENDER_HOSTNAME} ({IP})
+**Status**: {COMPLETE | FAILED}
+**Response To**: {original_message_id}
+
+## Activation Status: ✅ SUCCESS | ❌ FAILED
+
+### Server Status
+- **State**: RUNNING | STOPPED
+- **PID**: {process_id}
+- **Port**: {port}
+
+### Success Criteria Verification
+- [x] Criteria 1
+- [ ] Criteria 2 (pending)
+```
+
+---
+
+## 11. Evolution Path
+
+### 11.1 Current (v1.0)
 
 - Git polling (manual or automated)
 - Markdown messages
 - Eventual consistency
 
-### 10.2 Future Enhancements
+### 11.2 Future Enhancements
 
 | Version | Enhancement | Technology |
 |---------|-------------|------------|
@@ -298,9 +382,9 @@ Before executing actions:
 
 ---
 
-## 11. Implementation Reference
+## 12. Implementation Reference
 
-### 11.1 First Implementation
+### 12.1 First Implementation
 
 - **Date**: 2025-12-01
 - **Hosts**: AIOS (192.168.1.128), HP_LAB (192.168.1.129)
@@ -308,7 +392,14 @@ Before executing actions:
 - **Channel**: `server` repository, `main` branch
 - **Result**: Successful unidirectional discovery (HP_LAB→AIOS)
 
-### 11.2 Key Files
+### 12.2 Cell Autonomy Implementation
+
+- **Date**: 2025-12-07
+- **Cells**: Alpha (aios-cell-alpha), Nous (aios-cell-pure)
+- **Pattern**: GUIDANCE → autonomous code evolution → RESPONSE
+- **Result**: Cell Alpha self-implemented communication server
+
+### 12.3 Key Files
 
 | File | Purpose |
 |------|---------|
@@ -316,10 +407,13 @@ Before executing actions:
 | `SYNC_RESPONSE_HP_LAB.md` | HP_LAB response with diagnostics |
 | `HP_LAB_GUIDANCE.md` | Firewall configuration instructions |
 | `HANDSHAKE_COMPLETE.md` | Discovery confirmation |
+| `stacks/cells/alpha/GUIDANCE_ALPHA.md` | Cell activation instructions |
+| `stacks/cells/alpha/GUIDANCE_RESPONSE_AIOS.md` | Alpha's autonomous response |
+| `stacks/cells/alpha/cell_server_alpha.py` | Alpha's self-written server |
 
 ---
 
-## 12. Advantages
+## 13. Advantages
 
 1. **Zero Infrastructure**: Uses existing git
 2. **Human-Readable**: Engineers debug by reading `.md`
@@ -327,12 +421,13 @@ Before executing actions:
 4. **Resilient**: Works when agents offline
 5. **Semantic**: AI agents excel at natural language
 6. **Portable**: Works across any git host
+7. **Autonomous**: Cells self-implement from guidance
 
 ---
 
-## 13. Integration Status (2025-12-06)
+## 14. Integration Status (2025-12-07)
 
-> **Status**: ✅ **FULLY INTEGRATED**
+> **Status**: ✅ **FULLY INTEGRATED + CELL AUTONOMY OBSERVED**
 > **Protocol Version**: IACP v1.0.0
 
 ### Implementation Inventory
@@ -345,6 +440,7 @@ Before executing actions:
 | **Daily Sync** | `scripts/daily_branch_sync.ps1` | ✅ Complete | 115 |
 | **JSON Schema** | `ai/protocols/schemas/iacp-message-v1.0.0.json` | ✅ Complete | 274 |
 | **AICP Integration** | `ai/protocols/aicp_core.py` | ✅ Complete | 490 |
+| **Cell Alpha Server** | `server/stacks/cells/alpha/cell_server_alpha.py` | ✅ Self-implemented | 347 |
 
 ### Protocol Feature Coverage
 
@@ -398,8 +494,8 @@ Before executing actions:
 
 | File | Type | Status |
 |------|------|--------|
-| `SYNC_MESH.md` | SYNC | PENDING |
-| `SYNC_MESH.json` | SYNC | PENDING |
+| `stacks/cells/alpha/GUIDANCE_ALPHA.md` | GUIDANCE | COMPLETE |
+| `stacks/cells/alpha/GUIDANCE_RESPONSE_AIOS.md` | CONFIRMATION | RECEIVED |
 
 ### Verification Commands
 
