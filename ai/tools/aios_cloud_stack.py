@@ -211,10 +211,7 @@ class AIOSCloudStack:
 
             # Test connection
             test_ref = db.collection("_health_check").document("test")
-            test_ref.set({
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "status": "ok"
-            })
+            test_ref.set({"timestamp": datetime.now(timezone.utc).isoformat(), "status": "ok"})
 
             return ServiceHealth(
                 name="Firebase",
