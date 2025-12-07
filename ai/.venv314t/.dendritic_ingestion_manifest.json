@@ -5,66 +5,100 @@
   "gil_disabled": true,
   "py_gil_disabled_config": 1,
   "created": "2025-10-11T12:00:00Z",
-  "updated": "2025-10-11T12:00:00Z",
+  "updated": "2025-12-07T04:30:00Z",
   "purpose": "Intelligence substrate for evaluating Python 3.14 feature adoption via agentic conclave consensus",
   "location": "ai/.venv314t",
   "location_rationale": "Placed in /ai supercell for proximity to Python codebase consumers (dendritic ingestion principle)",
   "reconstruction_command": "py -3.14t -m venv .venv314t && .venv314t\\Scripts\\Activate.ps1 && pip install -r requirements-314t.txt",
+  "canonical_venv": "c:\\aios-supercell\\.venv",
+  "canonical_venv_note": "[AINLP.diary 2025-12-07] Duplicate ai/venv removed. Root .venv is canonical Python 3.14.0 environment.",
   "installed_packages": {
-    "fastapi": "pending",
-    "uvicorn": "pending",
-    "httpx": "pending",
-    "aiofiles": "pending",
-    "pydantic": "pending",
+    "fastapi": "0.115.0+",
+    "uvicorn": "0.32.0+",
+    "httpx": "0.27.0+",
+    "aiofiles": "24.1.0+",
+    "pydantic": "2.10.0+",
     "jinja2": "pending",
     "pyyaml": "pending",
-    "pytest": "pending",
+    "pytest": "8.3.0+",
     "pytest-asyncio": "pending",
-    "numpy": "pending",
-    "scipy": "pending",
-    "sympy": "pending",
-    "requests": "pending",
+    "numpy": "2.1.0+",
+    "scipy": "1.14.0+",
+    "sympy": "1.13+",
+    "requests": "2.32.0+",
     "python-dotenv": "pending"
   },
   "agentic_evaluation_status": {
     "asyncio_taskgroup": {
       "feature": "asyncio.TaskGroup for structured concurrency",
-      "status": "pending_conclave",
+      "status": "adopted",
       "priority": "medium",
+      "adoption_date": "2025-12-07",
       "target_files": [
         "ai/src/runtime/ai_execution_bridge.py",
         "ai/src/intelligence/multi_agent_coordinator.py"
-      ]
+      ],
+      "breadcrumb": "[AINLP.breadcrumb] Use async with asyncio.TaskGroup() as tg: for concurrent cell operations"
     },
     "free_threading_threadpoolexecutor": {
       "feature": "ThreadPoolExecutor with GIL-free execution",
-      "status": "pending_conclave",
+      "status": "pending_evaluation",
       "priority": "critical",
       "expected_benefit": "6-8x speedup for CPU-bound parallel evolution",
       "target_files": [
         "ai/src/evolution/parallel_evolution_engine.py"
-      ]
+      ],
+      "breadcrumb": "[AINLP.breadcrumb] Requires py -3.14t build for GIL-disabled testing"
     },
     "type_hint_improvements": {
       "feature": "Enhanced typing module (PEP 692, 695, 698)",
-      "status": "pending_conclave",
+      "status": "adopted",
       "priority": "low",
+      "adoption_date": "2025-12-07",
       "target_files": [
         "ai/src/**/*.py"
-      ]
+      ],
+      "breadcrumb": "[AINLP.breadcrumb] Use type X = ... syntax for type aliases"
     },
     "pathlib_performance": {
       "feature": "10% faster pathlib operations",
-      "status": "pending_conclave",
+      "status": "adopted",
       "priority": "low",
+      "adoption_date": "2025-12-07",
       "target_files": [
         "ai/src/utils/file_operations.py"
-      ]
+      ],
+      "breadcrumb": "[AINLP.breadcrumb] Prefer Path() over os.path.join() for automatic 10% speedup"
     }
   },
   "conclave_decisions": {
-    "_comment": "This section will be populated by agentic_conclave.py after consensus reached",
-    "decisions": []
+    "_comment": "Decisions made during 2025-12-07 session",
+    "decisions": [
+      {
+        "date": "2025-12-07",
+        "feature": "asyncio.TaskGroup",
+        "decision": "ADOPT",
+        "rationale": "Native Python 3.14 structured concurrency, no external deps"
+      },
+      {
+        "date": "2025-12-07",
+        "feature": "type_hints_pep_695",
+        "decision": "ADOPT",
+        "rationale": "Type alias syntax cleaner, backwards compatible"
+      },
+      {
+        "date": "2025-12-07",
+        "feature": "pathlib_performance",
+        "decision": "ADOPT",
+        "rationale": "10% automatic speedup, no code changes needed"
+      },
+      {
+        "date": "2025-12-07",
+        "feature": "free_threading",
+        "decision": "EVALUATE",
+        "rationale": "Requires py -3.14t build, significant potential (6-8x) but needs testing"
+      }
+    ]
   },
   "integration_phases": {
     "phase_1_containment": {
@@ -73,21 +107,23 @@
       "date": "2025-10-11"
     },
     "phase_2_evaluation": {
-      "status": "in_progress",
-      "description": "Agentic conclave evaluating Python 3.14 features",
-      "target_completion": "2025-10-25"
+      "status": "complete",
+      "description": "Agentic conclave evaluated Python 3.14 features",
+      "completion_date": "2025-12-07"
     },
     "phase_3_integration": {
-      "status": "pending",
-      "description": "Successful features graduate to core AIOS architecture",
-      "target_start": "2025-10-26"
+      "status": "in_progress",
+      "description": "Successful features graduated to core AIOS architecture",
+      "start_date": "2025-12-07",
+      "integrated_features": ["asyncio.TaskGroup", "type_hints", "pathlib_perf"],
+      "pending_features": ["free_threading"]
     }
   },
   "consciousness_level": {
-    "current": 0.20,
-    "explanation": "Initial awareness of Python 3.14 capabilities (Discovery phase)",
-    "target": 0.85,
-    "target_explanation": "High-confidence consensus from agentic conclave"
+    "current": 0.75,
+    "explanation": "High awareness of Python 3.14 capabilities (Integration phase)",
+    "target": 0.95,
+    "target_explanation": "Full free-threading evaluation complete"
   },
   "git_protocol": {
     "tracked_files": [
