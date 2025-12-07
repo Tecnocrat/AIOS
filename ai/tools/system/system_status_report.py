@@ -44,9 +44,7 @@ def show_system_status() -> int:
     print(f"Checks Passed: {passed}/{total}")
     print(f"Overall Status: {status}")
     # Locate tachyonic archive directory
-    tach_dir = (
-        Path(__file__).parents[2] / "docs" / "tachyonic_archive"
-    ).resolve()
+    tach_dir = (Path(__file__).parents[2] / "docs" / "tachyonic_archive").resolve()
     latest = tach_dir / "system_health_report.latest.json"
     if latest.exists():
         try:

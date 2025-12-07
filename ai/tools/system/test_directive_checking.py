@@ -5,6 +5,7 @@ Test script for enhanced AIOS Core Evolution Monitor with file directive checkin
 
 from aios_core_evolution_monitor import AIOSCoreEvolutionMonitor
 
+
 def test_directive_checking():
     """Test the enhanced directive checking capabilities."""
     print("[TEST] Initializing AIOS Core Evolution Monitor...")
@@ -15,7 +16,9 @@ def test_directive_checking():
     result = monitor.monitor_evolution_status()
 
     print("Evolution monitoring completed successfully!")
-    print(f"Files analyzed: {result['file_directive_analysis']['total_files_analyzed']}")
+    print(
+        f"Files analyzed: {result['file_directive_analysis']['total_files_analyzed']}"
+    )
     print(".2f")
     print(f"Top violations: {result['file_directive_analysis']['top_violations'][:3]}")
 
@@ -37,6 +40,7 @@ def test_directive_checking():
     print(f"Report generated: {report_path}")
 
     return result
+
 
 if __name__ == "__main__":
     test_directive_checking()

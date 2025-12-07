@@ -13,9 +13,8 @@ import asyncio
 import logging
 import sys
 import os
-from typing import Dict, List, Any
+from typing import Dict, Any
 from datetime import datetime
-import json
 
 # Add paths for integration
 current_dir = os.path.dirname(__file__)

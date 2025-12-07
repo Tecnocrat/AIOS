@@ -31,6 +31,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 @dataclass
 class FileContextProfile:
     """Profile for tracking file context and usage patterns."""
+
     path: Path
     file_type: str
     last_modified: datetime
@@ -48,10 +49,10 @@ class FileContextProfile:
     def calculate_importance_score(self) -> float:
         """Calculate overall importance score for context prioritization."""
         base_score = (
-            self.access_frequency * 0.3 +
-            self.modification_frequency * 0.4 +
-            self.context_importance * 0.2 +
-            self.reingestion_potential * 0.1
+            self.access_frequency * 0.3
+            + self.modification_frequency * 0.4
+            + self.context_importance * 0.2
+            + self.reingestion_potential * 0.1
         )
 
         # Boost for certain file types
@@ -62,7 +63,7 @@ class FileContextProfile:
             "configuration": 1.1,
             "documentation": 0.8,
             "backup": 0.3,
-            "temporary": 0.1
+            "temporary": 0.1,
         }
 
         multiplier = type_multipliers.get(self.file_type, 1.0)
@@ -86,7 +87,11 @@ class AIOSContextHarmonizer:
         self.active_patterns = {
             "executables": ["aios_quantum_bootstrap.py", "main.py", "app.py"],
             "core_logic": ["*.cs", "core/*.cpp", "core/*.hpp", "ai/src/core/**/*.py"],
-            "interfaces": ["interface/**/*.xaml", "interface/**/*.cs", "vscode-extension/**/*.ts"],
+            "interfaces": [
+                "interface/**/*.xaml",
+                "interface/**/*.cs",
+                "vscode-extension/**/*.ts",
+            ],
             "configs": ["*.json", "*.yaml", "*.toml", "config/**/*"],
         }
 
@@ -118,19 +123,25 @@ class AIOSContextHarmonizer:
         # Check active patterns
         for category, patterns in self.active_patterns.items():
             for pattern in patterns:
-                if self._matches_pattern(path_str, pattern) or self._matches_pattern(file_name, pattern):
+                if self._matches_pattern(path_str, pattern) or self._matches_pattern(
+                    file_name, pattern
+                ):
                     return category, "active"
 
         # Check reference patterns
         for category, patterns in self.reference_patterns.items():
             for pattern in patterns:
-                if self._matches_pattern(path_str, pattern) or self._matches_pattern(file_name, pattern):
+                if self._matches_pattern(path_str, pattern) or self._matches_pattern(
+                    file_name, pattern
+                ):
                     return category, "reference"
 
         # Check archival patterns
         for category, patterns in self.archival_patterns.items():
             for pattern in patterns:
-                if self._matches_pattern(path_str, pattern) or self._matches_pattern(file_name, pattern):
+                if self._matches_pattern(path_str, pattern) or self._matches_pattern(
+                    file_name, pattern
+                ):
                     return category, "archival"
 
         # Default classification based on location
@@ -229,7 +240,7 @@ class AIOSContextHarmonizer:
                     last_accessed=datetime.fromtimestamp(stat.st_atime),
                     file_classification=classification,
                     content_hash=content_hash,
-                    size_bytes=stat.st_size
+                    size_bytes=stat.st_size,
                 )
                 self.profiles[path_key] = profile
 
@@ -242,7 +253,7 @@ class AIOSContextHarmonizer:
     def _calculate_file_hash(self, file_path: Path) -> str:
         """Calculate hash of file content for change detection."""
         try:
-            with open(file_path, 'rb') as f:
+            with open(file_path, "rb") as f:
                 content = f.read()
                 return hashlib.md5(content).hexdigest()
         except:
@@ -251,16 +262,37 @@ class AIOSContextHarmonizer:
     def _extract_ai_context_tags(self, profile: FileContextProfile):
         """Extract AI context tags from file content."""
         try:
-            if profile.path.suffix in ['.py', '.cs', '.cpp', '.hpp', '.js', '.ts', '.md']:
-                with open(profile.path, 'r', encoding='utf-8', errors='ignore') as f:
+            if profile.path.suffix in [
+                ".py",
+                ".cs",
+                ".cpp",
+                ".hpp",
+                ".js",
+                ".ts",
+                ".md",
+            ]:
+                with open(profile.path, "r", encoding="utf-8", errors="ignore") as f:
                     content = f.read().lower()
 
                     # AI-related tags
                     ai_keywords = [
-                        "ainlp", "quantum", "fractal", "hyperlayer", "tachyonic",
-                        "ai", "machine learning", "neural", "deep learning",
-                        "natural language", "compiler", "bootstrap", "interface",
-                        "core", "integration", "context", "consciousness"
+                        "ainlp",
+                        "quantum",
+                        "fractal",
+                        "hyperlayer",
+                        "tachyonic",
+                        "ai",
+                        "machine learning",
+                        "neural",
+                        "deep learning",
+                        "natural language",
+                        "compiler",
+                        "bootstrap",
+                        "interface",
+                        "core",
+                        "integration",
+                        "context",
+                        "consciousness",
                     ]
 
                     tags = []
@@ -272,11 +304,21 @@ class AIOSContextHarmonizer:
 
                     # Calculate context importance based on content
                     importance_indicators = [
-                        "class", "def", "function", "public", "private",
-                        "import", "using", "namespace", "async", "await"
+                        "class",
+                        "def",
+                        "function",
+                        "public",
+                        "private",
+                        "import",
+                        "using",
+                        "namespace",
+                        "async",
+                        "await",
                     ]
 
-                    importance_score = sum(content.count(indicator) for indicator in importance_indicators)
+                    importance_score = sum(
+                        content.count(indicator) for indicator in importance_indicators
+                    )
                     profile.context_importance = min(importance_score / 100.0, 1.0)
 
         except Exception as e:
@@ -293,10 +335,14 @@ class AIOSContextHarmonizer:
 
             # Calculate modification frequency
             days_since_modification = (now - profile.last_modified).days
-            profile.modification_frequency = max(0, 1.0 - (days_since_modification / 7.0))
+            profile.modification_frequency = max(
+                0, 1.0 - (days_since_modification / 7.0)
+            )
 
             # Calculate reingestion potential
-            profile.reingestion_potential = self._calculate_reingestion_potential(profile)
+            profile.reingestion_potential = self._calculate_reingestion_potential(
+                profile
+            )
 
     def _calculate_reingestion_potential(self, profile: FileContextProfile) -> float:
         """Calculate potential for AI reingestion based on content and context."""
@@ -312,7 +358,8 @@ class AIOSContextHarmonizer:
 
         # Medium potential for documentation with implementation details
         if profile.file_type == "documentation" and any(
-            tag in profile.ai_context_tags for tag in ["implementation", "specification", "guide"]
+            tag in profile.ai_context_tags
+            for tag in ["implementation", "specification", "guide"]
         ):
             potential += 0.2
 
@@ -329,14 +376,14 @@ class AIOSContextHarmonizer:
             "safe_to_archive": [],
             "potential_cleanup": [],
             "ai_reingestion_candidates": [],
-            "organization_suggestions": []
+            "organization_suggestions": [],
         }
 
         # Sort profiles by importance
         sorted_profiles = sorted(
             self.profiles.values(),
             key=lambda p: p.calculate_importance_score(),
-            reverse=True
+            reverse=True,
         )
 
         # High priority monitoring (top 20% most important)
@@ -346,7 +393,7 @@ class AIOSContextHarmonizer:
                 "file": str(p.path.relative_to(self.root_path)),
                 "score": p.calculate_importance_score(),
                 "classification": p.file_classification,
-                "reason": f"{p.file_type} with high {self._get_primary_strength(p)}"
+                "reason": f"{p.file_type} with high {self._get_primary_strength(p)}",
             }
             for p in sorted_profiles[:high_priority_count]
         ]
@@ -356,12 +403,14 @@ class AIOSContextHarmonizer:
             {
                 "file": str(p.path.relative_to(self.root_path)),
                 "score": p.calculate_importance_score(),
-                "reason": f"Low activity, {p.file_classification} classification"
+                "reason": f"Low activity, {p.file_classification} classification",
             }
             for p in sorted_profiles
-            if (p.calculate_importance_score() < 0.2 and
-                p.file_classification in ["archival", "backup"] and
-                (datetime.now() - p.last_accessed).days > 7)
+            if (
+                p.calculate_importance_score() < 0.2
+                and p.file_classification in ["archival", "backup"]
+                and (datetime.now() - p.last_accessed).days > 7
+            )
         ]
 
         # AI reingestion candidates
@@ -370,7 +419,7 @@ class AIOSContextHarmonizer:
                 "file": str(p.path.relative_to(self.root_path)),
                 "potential": p.reingestion_potential,
                 "tags": p.ai_context_tags,
-                "type": p.file_type
+                "type": p.file_type,
             }
             for p in sorted_profiles
             if p.reingestion_potential > 0.5
@@ -378,22 +427,28 @@ class AIOSContextHarmonizer:
 
         # Organization suggestions
         active_files = [p for p in sorted_profiles if p.file_classification == "active"]
-        archival_files = [p for p in sorted_profiles if p.file_classification == "archival"]
+        archival_files = [
+            p for p in sorted_profiles if p.file_classification == "archival"
+        ]
 
         if len(archival_files) > len(active_files) * 0.5:
-            recommendations["organization_suggestions"].append({
-                "type": "cleanup_archival",
-                "message": f"Consider moving {len(archival_files)} archival files to organized archive structure",
-                "impact": "Cleaner development environment"
-            })
+            recommendations["organization_suggestions"].append(
+                {
+                    "type": "cleanup_archival",
+                    "message": f"Consider moving {len(archival_files)} archival files to organized archive structure",
+                    "impact": "Cleaner development environment",
+                }
+            )
 
         root_files = [p for p in sorted_profiles if len(p.path.parts) == 1]
         if len(root_files) > 10:
-            recommendations["organization_suggestions"].append({
-                "type": "root_cleanup",
-                "message": f"Root directory has {len(root_files)} files - consider organizing",
-                "impact": "Improved navigation and context clarity"
-            })
+            recommendations["organization_suggestions"].append(
+                {
+                    "type": "root_cleanup",
+                    "message": f"Root directory has {len(root_files)} files - consider organizing",
+                    "impact": "Improved navigation and context clarity",
+                }
+            )
 
         return recommendations
 
@@ -403,15 +458,17 @@ class AIOSContextHarmonizer:
             "access": profile.access_frequency,
             "modification": profile.modification_frequency,
             "importance": profile.context_importance,
-            "reingestion": profile.reingestion_potential
+            "reingestion": profile.reingestion_potential,
         }
         return max(scores, key=scores.get)
 
     def get_monitoring_targets(self) -> List[str]:
         """Get list of files that should be closely monitored."""
         high_importance = [
-            p for p in self.profiles.values()
-            if p.calculate_importance_score() > 0.6 and p.file_classification == "active"
+            p
+            for p in self.profiles.values()
+            if p.calculate_importance_score() > 0.6
+            and p.file_classification == "active"
         ]
 
         return [str(p.path.relative_to(self.root_path)) for p in high_importance]
@@ -433,13 +490,13 @@ class AIOSContextHarmonizer:
                         "file_classification": p.file_classification,
                         "ai_context_tags": p.ai_context_tags,
                         "content_hash": p.content_hash,
-                        "size_bytes": p.size_bytes
+                        "size_bytes": p.size_bytes,
                     }
                     for path, p in self.profiles.items()
-                }
+                },
             }
 
-            with open(self.context_file, 'w') as f:
+            with open(self.context_file, "w") as f:
                 json.dump(context_data, f, indent=2)
 
         except Exception as e:
@@ -449,7 +506,7 @@ class AIOSContextHarmonizer:
         """Load context profiles from disk."""
         try:
             if self.context_file.exists():
-                with open(self.context_file, 'r') as f:
+                with open(self.context_file, "r") as f:
                     context_data = json.load(f)
 
                 for path, data in context_data.get("profiles", {}).items():
@@ -465,7 +522,7 @@ class AIOSContextHarmonizer:
                         file_classification=data["file_classification"],
                         ai_context_tags=data["ai_context_tags"],
                         content_hash=data["content_hash"],
-                        size_bytes=data["size_bytes"]
+                        size_bytes=data["size_bytes"],
                     )
                     self.profiles[path] = profile
 
@@ -481,7 +538,7 @@ class AIOSContextHarmonizer:
             "context_priorities": {},
             "reingestion_queue": [],
             "monitoring_targets": [],
-            "cleanup_recommendations": []
+            "cleanup_recommendations": [],
         }
 
         # Get current AINLP priorities
@@ -490,18 +547,23 @@ class AIOSContextHarmonizer:
         # Map file profiles to AINLP priorities
         for priority in ainlp_priorities:
             related_files = [
-                p for p in self.profiles.values()
-                if any(tag in priority.lower() for tag in p.ai_context_tags) or
-                   priority.lower() in str(p.path).lower()
+                p
+                for p in self.profiles.values()
+                if any(tag in priority.lower() for tag in p.ai_context_tags)
+                or priority.lower() in str(p.path).lower()
             ]
 
             integration_result["context_priorities"][priority] = [
                 {
                     "file": str(p.path.relative_to(self.root_path)),
                     "importance": p.calculate_importance_score(),
-                    "tags": p.ai_context_tags
+                    "tags": p.ai_context_tags,
                 }
-                for p in sorted(related_files, key=lambda x: x.calculate_importance_score(), reverse=True)
+                for p in sorted(
+                    related_files,
+                    key=lambda x: x.calculate_importance_score(),
+                    reverse=True,
+                )
             ]
 
         # Build reingestion queue based on AINLP needs and file potential
@@ -509,11 +571,17 @@ class AIOSContextHarmonizer:
             {
                 "file": str(p.path.relative_to(self.root_path)),
                 "potential": p.reingestion_potential,
-                "reason": f"High {self._get_primary_strength(p)} with AI tags: {p.ai_context_tags[:3]}"
+                "reason": f"High {self._get_primary_strength(p)} with AI tags: {p.ai_context_tags[:3]}",
             }
-            for p in sorted(self.profiles.values(), key=lambda x: x.reingestion_potential, reverse=True)
+            for p in sorted(
+                self.profiles.values(),
+                key=lambda x: x.reingestion_potential,
+                reverse=True,
+            )
             if p.reingestion_potential > 0.4
-        ][:10]  # Top 10 candidates
+        ][
+            :10
+        ]  # Top 10 candidates
 
         # Monitoring targets for AINLP context awareness
         integration_result["monitoring_targets"] = self.get_monitoring_targets()
@@ -545,11 +613,29 @@ def get_harmonized_context_for_bootstrap() -> Dict[str, Any]:
         "ai_reingestion_candidates": recommendations["ai_reingestion_candidates"],
         "organization_status": {
             "total_files": len(harmonizer.profiles),
-            "active_files": len([p for p in harmonizer.profiles.values() if p.file_classification == "active"]),
-            "archival_files": len([p for p in harmonizer.profiles.values() if p.file_classification == "archival"]),
-            "reference_files": len([p for p in harmonizer.profiles.values() if p.file_classification == "reference"])
+            "active_files": len(
+                [
+                    p
+                    for p in harmonizer.profiles.values()
+                    if p.file_classification == "active"
+                ]
+            ),
+            "archival_files": len(
+                [
+                    p
+                    for p in harmonizer.profiles.values()
+                    if p.file_classification == "archival"
+                ]
+            ),
+            "reference_files": len(
+                [
+                    p
+                    for p in harmonizer.profiles.values()
+                    if p.file_classification == "reference"
+                ]
+            ),
         },
-        "recommendations": recommendations
+        "recommendations": recommendations,
     }
 
     return bootstrap_context
@@ -563,6 +649,12 @@ if __name__ == "__main__":
 
     print(" AIOS Context Harmonization Results:")
     print(f" Total files analyzed: {len(harmonizer.profiles)}")
-    print(f" High priority monitoring: {len(recommendations['high_priority_monitoring'])}")
-    print(f" AI reingestion candidates: {len(recommendations['ai_reingestion_candidates'])}")
-    print(f" Organization suggestions: {len(recommendations['organization_suggestions'])}")
+    print(
+        f" High priority monitoring: {len(recommendations['high_priority_monitoring'])}"
+    )
+    print(
+        f" AI reingestion candidates: {len(recommendations['ai_reingestion_candidates'])}"
+    )
+    print(
+        f" Organization suggestions: {len(recommendations['organization_suggestions'])}"
+    )

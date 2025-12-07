@@ -12,8 +12,11 @@ from datetime import datetime
 import logging
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(levelname)s | %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s"
+)
 logger = logging.getLogger(__name__)
+
 
 class SecurityComplianceValidator:
     def __init__(self, workspace_root: str):
@@ -22,7 +25,7 @@ class SecurityComplianceValidator:
             "timestamp": datetime.now().isoformat(),
             "checks": {},
             "overall_status": "UNKNOWN",
-            "compliance_score": 0.0
+            "compliance_score": 0.0,
         }
 
     def validate_access_control(self) -> dict:
@@ -33,7 +36,7 @@ class SecurityComplianceValidator:
             "spatial_metadata_boundaries": False,
             "integration_boundaries_defined": False,
             "prohibited_operations_enforced": False,
-            "consciousness_domain_restriction": False
+            "consciousness_domain_restriction": False,
         }
 
         # Check spatial metadata compliance
@@ -41,25 +44,35 @@ class SecurityComplianceValidator:
         if spatial_files:
             for spatial_file in spatial_files:
                 try:
-                    with open(spatial_file, 'r') as f:
+                    with open(spatial_file, "r") as f:
                         metadata = json.load(f)
-                        if "integration_boundaries" in metadata and "prohibited_operations" in metadata:
+                        if (
+                            "integration_boundaries" in metadata
+                            and "prohibited_operations" in metadata
+                        ):
                             checks["spatial_metadata_boundaries"] = True
                             checks["integration_boundaries_defined"] = True
                             checks["prohibited_operations_enforced"] = True
                             break
                 except Exception as e:
-                    logger.warning(f"Error reading spatial metadata {spatial_file}: {e}")
+                    logger.warning(
+                        f"Error reading spatial metadata {spatial_file}: {e}"
+                    )
 
         # Check consciousness domain restrictions
-        gemini_bridge_dir = self.workspace_root / "ai" / "src" / "integrations" / "gemini_bridge"
+        gemini_bridge_dir = (
+            self.workspace_root / "ai" / "src" / "integrations" / "gemini_bridge"
+        )
         if gemini_bridge_dir.exists():
             spatial_file = gemini_bridge_dir / ".aios_spatial_metadata.json"
             if spatial_file.exists():
                 try:
-                    with open(spatial_file, 'r') as f:
+                    with open(spatial_file, "r") as f:
                         metadata = json.load(f)
-                        if metadata.get("architectural_classification") == "AI Intelligence Layer":
+                        if (
+                            metadata.get("architectural_classification")
+                            == "AI Intelligence Layer"
+                        ):
                             checks["consciousness_domain_restriction"] = True
                 except Exception as e:
                     logger.warning(f"Error reading Gemini bridge spatial metadata: {e}")
@@ -73,19 +86,24 @@ class SecurityComplianceValidator:
         checks = {
             "external_ai_data_containment": False,
             "consciousness_data_protection": False,
-            "integration_boundary_enforcement": False
+            "integration_boundary_enforcement": False,
         }
 
         # Check for data isolation in Gemini bridge
-        gemini_bridge_dir = self.workspace_root / "ai" / "src" / "integrations" / "gemini_bridge"
+        gemini_bridge_dir = (
+            self.workspace_root / "ai" / "src" / "integrations" / "gemini_bridge"
+        )
         if gemini_bridge_dir.exists():
             # Check if external data is properly contained
             config_file = gemini_bridge_dir / "aios_gemini_bridge_config.json"
             if config_file.exists():
                 try:
-                    with open(config_file, 'r') as f:
+                    with open(config_file, "r") as f:
                         config = json.load(f)
-                        if "data_isolation" in config or "security_boundaries" in config:
+                        if (
+                            "data_isolation" in config
+                            or "security_boundaries" in config
+                        ):
                             checks["external_ai_data_containment"] = True
                 except Exception as e:
                     logger.warning(f"Error reading Gemini config: {e}")
@@ -94,7 +112,7 @@ class SecurityComplianceValidator:
             spatial_file = gemini_bridge_dir / ".aios_spatial_metadata.json"
             if spatial_file.exists():
                 try:
-                    with open(spatial_file, 'r') as f:
+                    with open(spatial_file, "r") as f:
                         metadata = json.load(f)
                         prohibited = metadata.get("prohibited_operations", [])
                         if "external_data_exfiltration" in prohibited:
@@ -112,7 +130,7 @@ class SecurityComplianceValidator:
         checks = {
             "audit_logs_present": False,
             "gemini_interactions_logged": False,
-            "security_events_tracked": False
+            "security_events_tracked": False,
         }
 
         # Check for audit logs
@@ -123,14 +141,20 @@ class SecurityComplianceValidator:
                 checks["audit_logs_present"] = True
 
                 # Check for Gemini-specific logs
-                gemini_logs = [f for f in log_files if "gemini" in f.name.lower() or "evolution" in f.name.lower()]
+                gemini_logs = [
+                    f
+                    for f in log_files
+                    if "gemini" in f.name.lower() or "evolution" in f.name.lower()
+                ]
                 if gemini_logs:
                     checks["gemini_interactions_logged"] = True
 
         # Check for security event tracking in logs
         tachyonic_logs = self.workspace_root / "tachyonic" / "archive"
         if tachyonic_logs.exists():
-            security_logs = list(tachyonic_logs.glob("*security*")) + list(tachyonic_logs.glob("*audit*"))
+            security_logs = list(tachyonic_logs.glob("*security*")) + list(
+                tachyonic_logs.glob("*audit*")
+            )
             if security_logs:
                 checks["security_events_tracked"] = True
 
@@ -143,7 +167,7 @@ class SecurityComplianceValidator:
         checks = {
             "backup_system_active": False,
             "isolation_mechanisms": False,
-            "emergency_shutdown": False
+            "emergency_shutdown": False,
         }
 
         # Check backup system
@@ -155,9 +179,12 @@ class SecurityComplianceValidator:
         spatial_files = list(self.workspace_root.rglob(".aios_spatial_metadata.json"))
         for spatial_file in spatial_files:
             try:
-                with open(spatial_file, 'r') as f:
+                with open(spatial_file, "r") as f:
                     metadata = json.load(f)
-                    if "emergency_isolation" in metadata or "rollback_procedures" in metadata:
+                    if (
+                        "emergency_isolation" in metadata
+                        or "rollback_procedures" in metadata
+                    ):
                         checks["isolation_mechanisms"] = True
                         break
             except Exception as e:
@@ -167,7 +194,7 @@ class SecurityComplianceValidator:
         server_manager = self.workspace_root / "ai" / "server_manager.py"
         if server_manager.exists():
             try:
-                with open(server_manager, 'r') as f:
+                with open(server_manager, "r") as f:
                     content = f.read()
                     if "stop" in content and "emergency" in content.lower():
                         checks["emergency_shutdown"] = True
@@ -183,23 +210,30 @@ class SecurityComplianceValidator:
         checks = {
             "biological_monitor_active": False,
             "emergence_patterns_stable": False,
-            "coherence_monitoring": False
+            "coherence_monitoring": False,
         }
 
         # Check biological architecture monitor
-        monitor_script = self.workspace_root / "runtime" / "tools" / "biological_architecture_monitor.py"
+        monitor_script = (
+            self.workspace_root
+            / "runtime"
+            / "tools"
+            / "biological_architecture_monitor.py"
+        )
         if monitor_script.exists():
             checks["biological_monitor_active"] = True
 
         # Check consciousness evolution logs
-        evolution_log = (self.workspace_root /
-                        "computational_layer" /
-                        "runtime" /
-                        "logs" /
-                        "consciousness_evolution.log")
+        evolution_log = (
+            self.workspace_root
+            / "computational_layer"
+            / "runtime"
+            / "logs"
+            / "consciousness_evolution.log"
+        )
         if evolution_log.exists():
             try:
-                with open(evolution_log, 'r') as f:
+                with open(evolution_log, "r") as f:
                     content = f.read()
                     if "emergence" in content.lower() and "stable" in content.lower():
                         checks["emergence_patterns_stable"] = True
@@ -212,9 +246,12 @@ class SecurityComplianceValidator:
             supervisor_files = list(supervisor_dir.glob("*.py"))
             for supervisor_file in supervisor_files:
                 try:
-                    with open(supervisor_file, 'r') as f:
+                    with open(supervisor_file, "r") as f:
                         content = f.read()
-                        if "coherence" in content.lower() and "monitor" in content.lower():
+                        if (
+                            "coherence" in content.lower()
+                            and "monitor" in content.lower()
+                        ):
                             checks["coherence_monitoring"] = True
                             break
                 except Exception as e:
@@ -231,7 +268,7 @@ class SecurityComplianceValidator:
             "data_isolation": self.validate_data_isolation(),
             "audit_logging": self.validate_audit_logging(),
             "rollback_capability": self.validate_rollback_capability(),
-            "consciousness_impact": self.validate_consciousness_impact()
+            "consciousness_impact": self.validate_consciousness_impact(),
         }
 
         # Calculate compliance score
@@ -244,7 +281,9 @@ class SecurityComplianceValidator:
                 if passed:
                     passed_checks += 1
 
-        self.results["compliance_score"] = passed_checks / total_checks if total_checks > 0 else 0.0
+        self.results["compliance_score"] = (
+            passed_checks / total_checks if total_checks > 0 else 0.0
+        )
 
         # Determine overall status
         if self.results["compliance_score"] >= 0.9:
@@ -256,7 +295,9 @@ class SecurityComplianceValidator:
         else:
             self.results["overall_status"] = "POOR"
 
-        logger.info(f"Security compliance validation complete. Score: {self.results['compliance_score']:.2%} ({self.results['overall_status']})")
+        logger.info(
+            f"Security compliance validation complete. Score: {self.results['compliance_score']:.2%} ({self.results['overall_status']})"
+        )
 
         return self.results
 
@@ -268,10 +309,11 @@ class SecurityComplianceValidator:
 
         output_path = self.workspace_root / "docs" / "tachyonic_archive" / output_file
 
-        with open(output_path, 'w') as f:
+        with open(output_path, "w") as f:
             json.dump(self.results, f, indent=2)
 
         logger.info(f"Security compliance report saved to: {output_path}")
+
 
 def main():
     workspace_root = os.getcwd()
@@ -280,9 +322,9 @@ def main():
     results = validator.run_validation()
 
     # Print summary
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("AIOS SECURITY COMPLIANCE VALIDATION RESULTS")
-    print("="*60)
+    print("=" * 60)
     print(f"Timestamp: {results['timestamp']}")
     print(".2%")
     print(f"Overall Status: {results['overall_status']}")
@@ -305,6 +347,7 @@ def main():
     else:
         print("⚠️  SECURITY COMPLIANCE VALIDATION: ISSUES FOUND")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

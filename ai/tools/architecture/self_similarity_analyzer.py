@@ -45,9 +45,7 @@ class SelfSimilarityAnalyzer:
             "similarity_score": similarity_score,
             "shared_base": shared_base,
             "differentiation_points": differentiation,
-            "context_coherence": self._calculate_context_coherence(
-                file1, file2
-            ),
+            "context_coherence": self._calculate_context_coherence(file1, file2),
             "ai_ingestion_optimization": self._estimate_ingestion_benefit(
                 similarity_score
             ),
@@ -78,8 +76,7 @@ class SelfSimilarityAnalyzer:
             return base1
         return ""
 
-    def _find_differentiation_points(
-            self, file1: str, file2: str) -> List[str]:
+    def _find_differentiation_points(self, file1: str, file2: str) -> List[str]:
         """Identify unique parts that differentiate the files"""
         parts1 = file1.split(".")
         parts2 = file2.split(".")
@@ -142,9 +139,7 @@ class SelfSimilarityAnalyzer:
                 "parse_time_optimization": "25-35%",
                 "memory_efficiency_gain": "30-40%",
                 "pattern_recognition_speedup": "2-3x",
-                "recommendation": (
-                    "Excellent similarity - optimal for AI ingestion"
-                ),
+                "recommendation": ("Excellent similarity - optimal for AI ingestion"),
             }
         if similarity_score >= 0.6:
             return {
@@ -161,9 +156,7 @@ class SelfSimilarityAnalyzer:
             "parse_time_optimization": "5-10%",
             "memory_efficiency_gain": "5-10%",
             "pattern_recognition_speedup": "1.1-1.3x",
-            "recommendation": (
-                "Low similarity - consider pattern improvement"
-            ),
+            "recommendation": ("Low similarity - consider pattern improvement"),
         }
 
 
@@ -175,9 +168,7 @@ def test_dev_run_fun_similarity():
     analyzer = SelfSimilarityAnalyzer()
 
     # Test the actual files we're discussing
-    analysis_result = analyzer.analyze_filename_similarity(
-        "dev.run.md", "dev.fun.md"
-    )
+    analysis_result = analyzer.analyze_filename_similarity("dev.run.md", "dev.fun.md")
 
     print(" AIOS Self-Similarity Pattern Analysis")
     print("=" * 50)
@@ -206,18 +197,12 @@ def propose_extended_naming_pattern():
     print("=" * 50)
 
     patterns = [
-        ("dev.run.md", "Linear execution waypoints",
-         "Sequential development tracking"),
-        ("dev.fun.md", "Fractal experimental sandbox",
-         "Pattern discovery workspace"),
-        ("dev.opt.md", "Optimization analysis",
-         "Performance pattern analysis"),
-        ("dev.arc.md", "Architecture evolution",
-         "Structural pattern tracking"),
-        ("dev.mem.md", "Memory pattern discovery",
-         "Resource optimization workspace"),
-        ("dev.net.md", "Network intelligence",
-         "Communication pattern analysis"),
+        ("dev.run.md", "Linear execution waypoints", "Sequential development tracking"),
+        ("dev.fun.md", "Fractal experimental sandbox", "Pattern discovery workspace"),
+        ("dev.opt.md", "Optimization analysis", "Performance pattern analysis"),
+        ("dev.arc.md", "Architecture evolution", "Structural pattern tracking"),
+        ("dev.mem.md", "Memory pattern discovery", "Resource optimization workspace"),
+        ("dev.net.md", "Network intelligence", "Communication pattern analysis"),
     ]
 
     analyzer = SelfSimilarityAnalyzer()
@@ -229,17 +214,12 @@ def propose_extended_naming_pattern():
 
         if i > 0:  # Compare with previous pattern
             prev_filename = patterns[i - 1][0]
-            similarity = analyzer.analyze_filename_similarity(
-                prev_filename, filename
-            )
+            similarity = analyzer.analyze_filename_similarity(prev_filename, filename)
             print(
                 f"   Similarity to {prev_filename}: "
                 f"{similarity['similarity_score']:.2f}"
             )
-            print(
-                f"   Context Coherence: "
-                f"{similarity['context_coherence']:.2f}"
-            )
+            print(f"   Context Coherence: " f"{similarity['context_coherence']:.2f}")
 
     print("\n Pattern Benefits:")
     print("   - Consistent 3-character semantic differentiation")

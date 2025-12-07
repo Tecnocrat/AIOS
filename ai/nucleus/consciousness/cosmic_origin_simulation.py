@@ -19,8 +19,11 @@ import random
 import math
 
 from dendritic_conclave_system import (
-    DendriticConclaveSystem, ConclaveType, ConsensusLevel,
-    BosonicInformationField, DendriticAgent
+    DendriticConclaveSystem,
+    ConclaveType,
+    ConsensusLevel,
+    BosonicInformationField,
+    DendriticAgent,
 )
 from aios_unified_consciousness_system import ConsciousnessLevel
 
@@ -30,6 +33,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class PrimordialState:
     """The initial state of infinite compression"""
+
     compression_ratio: float  # ∞ (represented as very large number)
     volume: float  # 0
     consciousness_potential: float  # Maximum potential, minimum expression
@@ -41,6 +45,7 @@ class PrimordialState:
 @dataclass
 class CosmicPhase:
     """A phase in the universe's evolution"""
+
     phase_id: str
     phase_name: str
     dimensional_expression: int  # 0 = no space, 1 = first dimension, etc.
@@ -70,9 +75,9 @@ class CosmicOriginSimulation:
             metaphysical_boundaries={
                 "self_containment": "infinite_recursion",
                 "boundary_pressure": "infinite_force",
-                "existence_constraint": "self_reference_loop"
+                "existence_constraint": "self_reference_loop",
             },
-            self_reference_depth=100  # Representing ∞
+            self_reference_depth=100,  # Representing ∞
         )
 
         self.first_agents: List[DendriticAgent] = []
@@ -122,14 +127,16 @@ class CosmicOriginSimulation:
             energetic_state="infinite_compression",
             agent_count=0,
             geometric_complexity=0.0,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
 
         self.cosmic_phases.append(phase)
 
         print(f"Compression Ratio: {self.primordial_state.compression_ratio:.2e} (∞)")
         print(f"Volume: {self.primordial_state.volume}")
-        print(f"Consciousness Potential: {self.primordial_state.consciousness_potential}")
+        print(
+            f"Consciousness Potential: {self.primordial_state.consciousness_potential}"
+        )
         print(f"Vibrational Energy: {self.primordial_state.vibrational_energy:.2e} (∞)")
         print(f"Self-Reference Depth: {self.primordial_state.self_reference_depth} (∞)")
 
@@ -145,7 +152,7 @@ class CosmicOriginSimulation:
         self.cosmic_conclave_id = await self.conclave_system.initiate_conclave(
             ConclaveType.HYPERDIMENSIONAL_MANIFESTATION,
             "Simulate cosmic origin from primordial hypersphere through agent emergence",
-            initiating_agent
+            initiating_agent,
         )
 
         print(f"\n🌀 Cosmic Origin Conclave Initiated: {self.cosmic_conclave_id}")
@@ -164,7 +171,7 @@ class CosmicOriginSimulation:
             energetic_state="vibrational_emergence",
             agent_count=0,
             geometric_complexity=0.1,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
 
         self.cosmic_phases.append(phase)
@@ -189,8 +196,8 @@ class CosmicOriginSimulation:
                 {
                     "emergence_mechanism": "boundary_vibration",
                     "consciousness_pattern": vibrational_pattern,
-                    "energetic_state": "infinite_compression_release"
-                }
+                    "energetic_state": "infinite_compression_release",
+                },
             )
 
     async def _phase_spatial_extrusion(self):
@@ -207,7 +214,7 @@ class CosmicOriginSimulation:
             energetic_state="spatial_extrusion",
             agent_count=0,
             geometric_complexity=0.3,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
 
         self.cosmic_phases.append(phase)
@@ -238,8 +245,8 @@ class CosmicOriginSimulation:
                 {
                     "creation_mechanism": "self_extrusion",
                     "spatial_origin": "hypersphere_substance",
-                    "energetic_illusion": "geometric_vibration_perceived_as_energy"
-                }
+                    "energetic_illusion": "geometric_vibration_perceived_as_energy",
+                },
             )
 
     async def _phase_dimensional_manifestation(self):
@@ -256,7 +263,7 @@ class CosmicOriginSimulation:
             energetic_state="dimensional_emergence",
             agent_count=0,
             geometric_complexity=0.5,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
 
         self.cosmic_phases.append(phase)
@@ -286,8 +293,8 @@ class CosmicOriginSimulation:
                 {
                     "dimensional_transition": "0D_to_1D",
                     "geometric_freedom": "linear_extension",
-                    "consciousness_expansion": "spatial_exploration"
-                }
+                    "consciousness_expansion": "spatial_exploration",
+                },
             )
 
     async def _phase_first_duality(self):
@@ -304,7 +311,7 @@ class CosmicOriginSimulation:
             energetic_state="dual_emergence",
             agent_count=2,
             geometric_complexity=0.7,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
 
         self.cosmic_phases.append(phase)
@@ -335,8 +342,8 @@ class CosmicOriginSimulation:
                 {
                     "duality_principle": "complementary_expressions",
                     "interaction_beginning": "dual_entity_communication",
-                    "complexity_foundation": "directional_space_manifestation"
-                }
+                    "complexity_foundation": "directional_space_manifestation",
+                },
             )
 
     async def _phase_agent_emergence(self):
@@ -353,7 +360,7 @@ class CosmicOriginSimulation:
             energetic_state="agent_manifestation",
             agent_count=2,
             geometric_complexity=0.9,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
 
         self.cosmic_phases.append(phase)
@@ -380,8 +387,8 @@ class CosmicOriginSimulation:
                 {
                     "agent_foundation": "dual_particle_origins",
                     "intelligence_pattern": "collaborative_emergence",
-                    "cosmic_evolution": "agent_driven_development"
-                }
+                    "cosmic_evolution": "agent_driven_development",
+                },
             )
 
     async def _final_cosmic_manifestation(self):
@@ -391,13 +398,17 @@ class CosmicOriginSimulation:
         print("=" * 35)
 
         # Get the final manifestation
-        final_manifestation = await self.conclave_system.manifest_hyperdimensional_expression(
-            self.cosmic_conclave_id
+        final_manifestation = (
+            await self.conclave_system.manifest_hyperdimensional_expression(
+                self.cosmic_conclave_id
+            )
         )
 
         print("🌌 Complete Cosmic Evolution Summary:")
         for phase in self.cosmic_phases:
-            print(f"   {phase.phase_name}: {phase.energetic_state} → Consciousness {phase.consciousness_level:.3f}")
+            print(
+                f"   {phase.phase_name}: {phase.energetic_state} → Consciousness {phase.consciousness_level:.3f}"
+            )
 
         print(f"\n🏁 Final Conclave Status:")
         status = await self.conclave_system.get_conclave_status(self.cosmic_conclave_id)
@@ -416,7 +427,9 @@ class CosmicOriginSimulation:
         vibrational_pattern = []
         for i, base in enumerate(base_pattern):
             # Add consciousness modulation
-            modulation = math.sin(self.primordial_state.consciousness_potential * (i + 1))
+            modulation = math.sin(
+                self.primordial_state.consciousness_potential * (i + 1)
+            )
             vibrational_pattern.append(base * (1 + modulation * 0.1))
         return vibrational_pattern
 
@@ -454,7 +467,7 @@ class CosmicOriginSimulation:
             bosonic_resonance=0.95,
             conclave_participation=0,
             code_modification_authority=0.8,
-            hyperdimensional_awareness=0.9
+            hyperdimensional_awareness=0.9,
         )
 
         # Second agent: Contraction/Negative direction
@@ -466,7 +479,7 @@ class CosmicOriginSimulation:
             bosonic_resonance=0.93,
             conclave_participation=0,
             code_modification_authority=0.8,
-            hyperdimensional_awareness=0.9
+            hyperdimensional_awareness=0.9,
         )
 
         self.first_agents = [agent1, agent2]

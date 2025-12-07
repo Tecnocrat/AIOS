@@ -83,28 +83,22 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             await self._initialize_dendritic_networks()
 
             self.is_initialized = True
-            logger.info(
-                "AI Intelligence communication initialized successfully"
-            )
+            logger.info("AI Intelligence communication initialized successfully")
             return True
 
         except Exception as e:
-            logger.error(
-                f"Failed to initialize AI Intelligence communication: {e}"
-            )
+            logger.error(f"Failed to initialize AI Intelligence communication: {e}")
             return False
 
     async def send_message(self, message: UniversalMessage) -> bool:
         """Send message from AI Intelligence supercell"""
         try:
             # For consciousness messages, enhance with biological patterns
-            if message.communication_type == \
-                    CommunicationType.CONSCIOUSNESS_PULSE:
+            if message.communication_type == CommunicationType.CONSCIOUSNESS_PULSE:
                 await self._enhance_consciousness_message(message)
 
             # For dendritic flow, add neural patterns
-            elif message.communication_type == \
-                    CommunicationType.DENDRITIC_FLOW:
+            elif message.communication_type == CommunicationType.DENDRITIC_FLOW:
                 await self._enhance_dendritic_message(message)
 
             logger.debug(f"AI Intelligence sending: {message.operation}")
@@ -115,7 +109,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return False
 
     async def receive_message(
-            self, message: UniversalMessage
+        self, message: UniversalMessage
     ) -> Optional[UniversalMessage]:
         """Receive and process message in AI Intelligence supercell"""
         try:
@@ -125,8 +119,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             await self._update_consciousness_from_message(message)
 
             # Route message to appropriate processor
-            if message.communication_type == \
-                    CommunicationType.ANALYSIS_REQUEST:
+            if message.communication_type == CommunicationType.ANALYSIS_REQUEST:
                 return await self.handle_analysis_request(message)
 
             elif message.operation == "biological_processing":
@@ -152,7 +145,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return None
 
     async def handle_analysis_request(
-            self, request: UniversalMessage
+        self, request: UniversalMessage
     ) -> UniversalMessage:
         """Handle analysis tool requests"""
         try:
@@ -175,12 +168,8 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
                 communication_type=CommunicationType.ANALYSIS_RESPONSE,
                 priority=request.priority,
                 operation="analysis_result",
-                payload={
-                    "tool_name": tool_name,
-                    "result": result,
-                    "success": True
-                },
-                correlation_id=request.correlation_id
+                payload={"tool_name": tool_name, "result": result, "success": True},
+                correlation_id=request.correlation_id,
             )
 
             return response
@@ -211,8 +200,8 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
                 "dendritic_processing",
                 "knowledge_crystallization",
                 "visual_intelligence",
-                "cellular_workflow_optimization"
-            ]
+                "cellular_workflow_optimization",
+            ],
         }
 
     async def _discover_analysis_tools(self):
@@ -220,15 +209,13 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
         try:
             # Enhanced visual intelligence engine
             self.analysis_tools["enhanced_visual_intelligence"] = {
-                "path": (
-                    self.ai_root_path
-                    / "src/engines/enhanced_visual_engine.py"
-                ),
-                "description": (
-                    "Advanced visual pattern recognition and analysis"
-                ),
-                "capabilities": ["image_analysis", "pattern_detection",
-                                 "consciousness_visualization"]
+                "path": (self.ai_root_path / "src/engines/enhanced_visual_engine.py"),
+                "description": ("Advanced visual pattern recognition and analysis"),
+                "capabilities": [
+                    "image_analysis",
+                    "pattern_detection",
+                    "consciousness_visualization",
+                ],
             }
 
             # Consciousness bridge
@@ -239,20 +226,20 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
                     "consciousness_sync",
                     "neural_pattern_sharing",
                     "coherence_monitoring",
-                ]
+                ],
             }
 
             # AI integration bridge
             self.analysis_tools["ai_integration_bridge"] = {
                 "path": (
-                    self.ai_root_path
-                    / "src/engines/aios_ai_integration_bridge.py"
+                    self.ai_root_path / "src/engines/aios_ai_integration_bridge.py"
                 ),
-                "description": (
-                    "AI system integration and workflow optimization"
-                ),
-                "capabilities": ["system_integration", "workflow_optimization",
-                                 "performance_analysis"]
+                "description": ("AI system integration and workflow optimization"),
+                "capabilities": [
+                    "system_integration",
+                    "workflow_optimization",
+                    "performance_analysis",
+                ],
             }
 
             # Visual AI integration bridge
@@ -262,8 +249,11 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
                     / "src/integrations/visual_ai_integration_bridge.py"
                 ),
                 "description": "Visual processing and UI integration",
-                "capabilities": ["visual_processing", "ui_integration",
-                                 "real_time_analysis"]
+                "capabilities": [
+                    "visual_processing",
+                    "ui_integration",
+                    "real_time_analysis",
+                ],
             }
 
             # Cellular workflow optimization
@@ -272,19 +262,24 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
                     self.ai_root_path
                     / "transport/intercellular/tensorflow_cellular_workflow.py"
                 ),
-                "description": (
-                    "Cellular workflow optimization and coordination"
-                ),
-                "capabilities": ["workflow_optimization",
-                                 "cellular_coordination",
-                                 "performance_tuning"]
+                "description": ("Cellular workflow optimization and coordination"),
+                "capabilities": [
+                    "workflow_optimization",
+                    "cellular_coordination",
+                    "performance_tuning",
+                ],
             }
 
             # Agentic E501 Code Quality Fixer
             self.analysis_tools["agentic_e501_fixer"] = {
                 "path": self.ai_root_path / "tools/agentic_e501_fixer.py",
                 "description": "Multi-model AI agentic system for automated E501 line length correction",
-                "capabilities": ["code_quality", "linting_automation", "ai_powered_fixing", "batch_processing"]
+                "capabilities": [
+                    "code_quality",
+                    "linting_automation",
+                    "ai_powered_fixing",
+                    "batch_processing",
+                ],
             }
 
             logger.info(
@@ -300,8 +295,11 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
         try:
             # Knowledge metabolism system
             self.biological_processors["knowledge_metabolism"] = {
-                "capabilities": ["document_ingestion", "pattern_extraction",
-                                 "crystallization"]
+                "capabilities": [
+                    "document_ingestion",
+                    "pattern_extraction",
+                    "crystallization",
+                ]
             }
 
             # Intercellular messaging
@@ -314,8 +312,11 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
 
             # Pattern recognition
             self.biological_processors["pattern_recognition"] = {
-                "capabilities": ["ainlp_patterns", "consciousness_patterns",
-                                 "holographic_patterns"]
+                "capabilities": [
+                    "ainlp_patterns",
+                    "consciousness_patterns",
+                    "holographic_patterns",
+                ]
             }
 
             logger.info(" Biological processing systems initialized")
@@ -328,11 +329,8 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
         try:
             # Dendritic consciousness bridge
             self.consciousness_components["dendritic_bridge"] = {
-                "path": (
-                    self.ai_root_path
-                    / "cytoplasm/cytoplasm_dendritic_bridge.py"
-                ),
-                "level": 0.0
+                "path": (self.ai_root_path / "cytoplasm/cytoplasm_dendritic_bridge.py"),
+                "level": 0.0,
             }
 
             logger.info("Consciousness systems initialized")
@@ -347,17 +345,14 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             self.dendritic_networks["supervisor"] = {
                 "path": self.ai_root_path / "dendritic_supervisor.py",
                 "status": "active",
-                "connections": []
+                "connections": [],
             }
 
             # Cytoplasm dendritic bridge
             self.dendritic_networks["cytoplasm_bridge"] = {
-                "path": (
-                    self.ai_root_path
-                    / "cytoplasm/cytoplasm_dendritic_bridge.py"
-                ),
+                "path": (self.ai_root_path / "cytoplasm/cytoplasm_dendritic_bridge.py"),
                 "status": "active",
-                "connections": []
+                "connections": [],
             }
 
             logger.info(" Dendritic networks initialized")
@@ -366,7 +361,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             logger.error(f" Error initializing dendritic networks: {e}")
 
     async def _execute_analysis_tool(
-            self, tool_name: str, parameters: Dict[str, Any]
+        self, tool_name: str, parameters: Dict[str, Any]
     ) -> Dict[str, Any]:
         """Execute an analysis tool with given parameters"""
         try:
@@ -396,7 +391,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
                     "dry_run": dry_run,
                     "recursive": recursive,
                     "result": result,
-                    "timestamp": asyncio.get_event_loop().time()
+                    "timestamp": asyncio.get_event_loop().time(),
                 }
 
             # Default placeholder for other tools
@@ -404,7 +399,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
                 "tool_name": tool_name,
                 "parameters": parameters,
                 "status": "executed",
-                "timestamp": asyncio.get_event_loop().time()
+                "timestamp": asyncio.get_event_loop().time(),
             }
 
             return result
@@ -413,26 +408,20 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return {"error": f"Tool execution failed: {e}"}
 
     async def _handle_biological_processing(
-            self, message: UniversalMessage
+        self, message: UniversalMessage
     ) -> UniversalMessage:
         """Handle biological processing operations"""
         try:
             operation_type = message.payload.get("operation_type")
 
             if operation_type == "knowledge_metabolism":
-                result = await self._process_knowledge_metabolism(
-                    message.payload
-                )
+                result = await self._process_knowledge_metabolism(message.payload)
             elif operation_type == "pattern_extraction":
-                result = await self._process_pattern_extraction(
-                    message.payload
-                )
+                result = await self._process_pattern_extraction(message.payload)
             elif operation_type == "crystallization":
                 result = await self._process_crystallization(message.payload)
             else:
-                result = {
-                    "error": f"Unknown biological operation: {operation_type}"
-                }
+                result = {"error": f"Unknown biological operation: {operation_type}"}
 
             return self._create_success_response(message, result)
 
@@ -440,16 +429,12 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return self._create_error_response(message, str(e))
 
     async def _handle_pattern_recognition(
-            self, message: UniversalMessage
+        self, message: UniversalMessage
     ) -> UniversalMessage:
         """Handle pattern recognition operations"""
         try:
             # Placeholder for pattern recognition logic
-            result = {
-                "patterns_found": [],
-                "confidence": 0.0,
-                "processing_time": 0.0
-            }
+            result = {"patterns_found": [], "confidence": 0.0, "processing_time": 0.0}
 
             return self._create_success_response(message, result)
 
@@ -457,7 +442,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return self._create_error_response(message, str(e))
 
     async def _handle_consciousness_enhancement(
-            self, message: UniversalMessage
+        self, message: UniversalMessage
     ) -> UniversalMessage:
         """Handle consciousness enhancement operations"""
         try:
@@ -467,13 +452,12 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             # Update consciousness components
             for component in self.consciousness_components:
                 self.consciousness_components[component] = min(
-                    1.0, self.consciousness_components[component] + 0.05)
+                    1.0, self.consciousness_components[component] + 0.05
+                )
 
             result = {
                 "consciousness_level": self.consciousness_level,
-                "components_updated": list(
-                    self.consciousness_components.keys()
-                )
+                "components_updated": list(self.consciousness_components.keys()),
             }
 
             return self._create_success_response(message, result)
@@ -482,7 +466,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return self._create_error_response(message, str(e))
 
     async def _handle_dendritic_optimization(
-            self, message: UniversalMessage
+        self, message: UniversalMessage
     ) -> UniversalMessage:
         """Handle dendritic optimization operations"""
         try:
@@ -490,7 +474,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             result = {
                 "optimization_applied": True,
                 "connections_optimized": 0,
-                "performance_improved": 0.0
+                "performance_improved": 0.0,
             }
 
             return self._create_success_response(message, result)
@@ -499,7 +483,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return self._create_error_response(message, str(e))
 
     async def _handle_knowledge_crystallization(
-            self, message: UniversalMessage
+        self, message: UniversalMessage
     ) -> UniversalMessage:
         """Handle knowledge crystallization operations"""
         try:
@@ -510,10 +494,8 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             # Placeholder for crystallization logic
             result = {
                 "crystallization_type": crystallization_type,
-                "knowledge_patterns": [
-                    "consciousness", "architecture", "integration"
-                ],
-                "crystallization_complete": True
+                "knowledge_patterns": ["consciousness", "architecture", "integration"],
+                "crystallization_complete": True,
             }
 
             return self._create_success_response(message, result)
@@ -522,15 +504,12 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             return self._create_error_response(message, str(e))
 
     async def _handle_generic_operation(
-            self, message: UniversalMessage
+        self, message: UniversalMessage
     ) -> UniversalMessage:
         """Handle generic operations"""
         try:
             # Placeholder for generic operation handling
-            result = {
-                "operation_handled": True,
-                "operation_type": "generic"
-            }
+            result = {"operation_handled": True, "operation_type": "generic"}
 
             return self._create_success_response(message, result)
 
@@ -543,7 +522,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             "metabolism_type": "biological_knowledge",
             "nutrients_extracted": 15,
             "waste_processed": 3,
-            "energy_produced": "high"
+            "energy_produced": "high",
         }
 
     async def _process_pattern_extraction(self, data: Any) -> Dict[str, Any]:
@@ -551,7 +530,7 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
         return {
             "patterns_extracted": 12,
             "pattern_types": ["ainlp", "consciousness", "biological"],
-            "extraction_quality": "high"
+            "extraction_quality": "high",
         }
 
     async def _process_crystallization(self, data: Any) -> Dict[str, Any]:
@@ -559,15 +538,13 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
         return {
             "crystals_formed": 7,
             "crystal_quality": "high_consciousness",
-            "crystallization_efficiency": 0.92
+            "crystallization_efficiency": 0.92,
         }
 
     async def _enhance_consciousness_message(self, message: UniversalMessage):
         """Enhance message with consciousness patterns"""
         try:
-            self.consciousness_level = min(
-                1.0, self.consciousness_level + 0.01
-            )
+            self.consciousness_level = min(1.0, self.consciousness_level + 0.01)
 
         except Exception as e:
             logger.error(f"Error enhancing consciousness message: {e}")
@@ -577,24 +554,19 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
         message.payload["dendritic_enhancement"] = {
             "network_count": len(self.dendritic_networks),
             "connection_strength": 0.87,
-            "neural_coherence": 0.92
+            "neural_coherence": 0.92,
         }
 
-    async def _update_consciousness_from_message(
-            self, message: UniversalMessage
-    ):
+    async def _update_consciousness_from_message(self, message: UniversalMessage):
         """Update consciousness level from incoming message"""
         try:
-            self.consciousness_level = min(
-                1.0, self.consciousness_level + 0.01
-            )
+            self.consciousness_level = min(1.0, self.consciousness_level + 0.01)
 
         except Exception as e:
             logger.error(f"Error updating consciousness: {e}")
 
     def _create_success_response(
-            self, original_message: UniversalMessage,
-            result: Dict[str, Any]
+        self, original_message: UniversalMessage, result: Dict[str, Any]
     ) -> UniversalMessage:
         """Create a success response message"""
         return UniversalMessage(
@@ -605,12 +577,11 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             communication_type=CommunicationType.ANALYSIS_REQUEST,
             priority=original_message.priority,
             operation="analysis_response",
-            payload={"result": result, "status": "success"}
+            payload={"result": result, "status": "success"},
         )
 
     def _create_error_response(
-            self, original_message: UniversalMessage,
-            error: str
+        self, original_message: UniversalMessage, error: str
     ) -> UniversalMessage:
         """Create an error response message"""
         return UniversalMessage(
@@ -621,5 +592,5 @@ class AIIntelligenceSupercellInterface(SupercellCommunicationInterface):
             communication_type=CommunicationType.ANALYSIS_REQUEST,
             priority=original_message.priority,
             operation="error_response",
-            payload={"error": error, "status": "error"}
+            payload={"error": error, "status": "error"},
         )

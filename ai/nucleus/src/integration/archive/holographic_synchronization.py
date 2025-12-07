@@ -22,6 +22,7 @@ class ComponentType(Enum):
     VSCODE_EXTENSION = "vscode_extension"
     AINLP_COMPILER = "ainlp_compiler"
 
+
 @dataclass
 class ComponentState:
     component_type: ComponentType
@@ -33,9 +34,10 @@ class ComponentState:
 
     def to_dict(self) -> Dict[str, Any]:
         result = asdict(self)
-        result['component_type'] = self.component_type.value
-        result['last_heartbeat'] = self.last_heartbeat.isoformat()
+        result["component_type"] = self.component_type.value
+        result["last_heartbeat"] = self.last_heartbeat.isoformat()
         return result
+
 
 @dataclass
 class HolographicMessage:
@@ -50,10 +52,13 @@ class HolographicMessage:
 
     def to_dict(self) -> Dict[str, Any]:
         result = asdict(self)
-        result['source_component'] = self.source_component.value
-        result['target_component'] = self.target_component.value if self.target_component else None
-        result['timestamp'] = self.timestamp.isoformat()
+        result["source_component"] = self.source_component.value
+        result["target_component"] = (
+            self.target_component.value if self.target_component else None
+        )
+        result["timestamp"] = self.timestamp.isoformat()
         return result
+
 
 class HolographicStateSynchronizer:
     """Manages holographic state synchronization across all components"""
@@ -90,19 +95,19 @@ class HolographicStateSynchronizer:
             async for message in websocket:
                 data = json.loads(message)
 
-                if data.get('type') == 'register':
-                    component_id = data.get('component_id')
-                    component_type = ComponentType(data.get('component_type'))
+                if data.get("type") == "register":
+                    component_id = data.get("component_id")
+                    component_type = ComponentType(data.get("component_type"))
                     await self.register_component(component_type, websocket)
                     print(f" Registered component: {component_type.value}")
 
-                elif data.get('type') == 'holographic_sync':
+                elif data.get("type") == "holographic_sync":
                     await self.process_holographic_sync(data, websocket)
 
-                elif data.get('type') == 'state_update':
+                elif data.get("type") == "state_update":
                     await self.process_state_update(data)
 
-                elif data.get('type') == 'fractal_message':
+                elif data.get("type") == "fractal_message":
                     await self.process_fractal_message(data)
 
         except websockets.exceptions.ConnectionClosed:
@@ -119,25 +124,33 @@ class HolographicStateSynchronizer:
             last_heartbeat=datetime.now(),
             fractal_coherence=1.0,
             holographic_data={},
-            performance_metrics={}
+            performance_metrics={},
         )
 
         # Send current global state to new component
         global_state = await self.get_global_holographic_state()
-        await websocket.send(json.dumps({
-            'type': 'global_state_sync',
-            'global_state': global_state,
-            'component_states': {k.value: v.to_dict() for k, v in self.component_states.items()}
-        }))
+        await websocket.send(
+            json.dumps(
+                {
+                    "type": "global_state_sync",
+                    "global_state": global_state,
+                    "component_states": {
+                        k.value: v.to_dict() for k, v in self.component_states.items()
+                    },
+                }
+            )
+        )
 
     async def process_holographic_sync(self, data: Dict[str, Any], websocket):
         """Process holographic synchronization message"""
-        component_type = ComponentType(data.get('source_component'))
-        holographic_data = data.get('holographic_data', {})
+        component_type = ComponentType(data.get("source_component"))
+        holographic_data = data.get("holographic_data", {})
 
         # Update component's holographic data
         if component_type in self.component_states:
-            self.component_states[component_type].holographic_data.update(holographic_data)
+            self.component_states[component_type].holographic_data.update(
+                holographic_data
+            )
             self.component_states[component_type].last_heartbeat = datetime.now()
 
         # Propagate to other components
@@ -147,20 +160,26 @@ class HolographicStateSynchronizer:
         coherence = await self.calculate_global_fractal_coherence()
 
         # Send acknowledgment
-        await websocket.send(json.dumps({
-            'type': 'sync_ack',
-            'global_fractal_coherence': coherence,
-            'propagated_to': len(self.component_states) - 1
-        }))
+        await websocket.send(
+            json.dumps(
+                {
+                    "type": "sync_ack",
+                    "global_fractal_coherence": coherence,
+                    "propagated_to": len(self.component_states) - 1,
+                }
+            )
+        )
 
-    async def propagate_holographic_update(self, source: ComponentType, data: Dict[str, Any]):
+    async def propagate_holographic_update(
+        self, source: ComponentType, data: Dict[str, Any]
+    ):
         """Propagate holographic updates to all other components"""
         propagation_message = {
-            'type': 'holographic_propagation',
-            'source_component': source.value,
-            'holographic_data': data,
-            'timestamp': datetime.now().isoformat(),
-            'global_coherence': await self.calculate_global_fractal_coherence()
+            "type": "holographic_propagation",
+            "source_component": source.value,
+            "holographic_data": data,
+            "timestamp": datetime.now().isoformat(),
+            "global_coherence": await self.calculate_global_fractal_coherence(),
         }
 
         # Add to global holographic state
@@ -170,14 +189,18 @@ class HolographicStateSynchronizer:
         for component_type, state in self.component_states.items():
             if component_type != source:
                 # In a real implementation, we'd send to actual websocket connections
-                print(f" Propagating holographic update from {source.value} to {component_type.value}")
+                print(
+                    f" Propagating holographic update from {source.value} to {component_type.value}"
+                )
 
     async def calculate_global_fractal_coherence(self) -> float:
         """Calculate global fractal coherence across all components"""
         if not self.component_states:
             return 0.0
 
-        total_coherence = sum(state.fractal_coherence for state in self.component_states.values())
+        total_coherence = sum(
+            state.fractal_coherence for state in self.component_states.values()
+        )
         base_coherence = total_coherence / len(self.component_states)
 
         # Factor in synchronization health
@@ -192,12 +215,14 @@ class HolographicStateSynchronizer:
     async def get_global_holographic_state(self) -> Dict[str, Any]:
         """Get the current global holographic state"""
         return {
-            'global_fractal_coherence': await self.calculate_global_fractal_coherence(),
-            'active_components': len(self.component_states),
-            'component_states': {k.value: v.to_dict() for k, v in self.component_states.items()},
-            'holographic_data': self.global_holographic_state,
-            'last_global_sync': datetime.now().isoformat(),
-            'system_health': await self.assess_system_health()
+            "global_fractal_coherence": await self.calculate_global_fractal_coherence(),
+            "active_components": len(self.component_states),
+            "component_states": {
+                k.value: v.to_dict() for k, v in self.component_states.items()
+            },
+            "holographic_data": self.global_holographic_state,
+            "last_global_sync": datetime.now().isoformat(),
+            "system_health": await self.assess_system_health(),
         }
 
     async def assess_system_health(self) -> str:
@@ -223,10 +248,14 @@ class HolographicStateSynchronizer:
                 if (now - state.last_heartbeat).seconds > 60:  # 1 minute timeout
                     stale_components.append(component_type)
                     state.status = "stale"
-                    state.fractal_coherence *= 0.5  # Reduce coherence for stale components
+                    state.fractal_coherence *= (
+                        0.5  # Reduce coherence for stale components
+                    )
 
             if stale_components:
-                print(f" Stale components detected: {[c.value for c in stale_components]}")
+                print(
+                    f" Stale components detected: {[c.value for c in stale_components]}"
+                )
 
             await asyncio.sleep(30)  # Check every 30 seconds
 
@@ -236,7 +265,9 @@ class HolographicStateSynchronizer:
             coherence = await self.calculate_global_fractal_coherence()
 
             if coherence < self.fractal_coherence_threshold:
-                print(f" Low fractal coherence detected: {coherence:.2f}, triggering rebalancing")
+                print(
+                    f" Low fractal coherence detected: {coherence:.2f}, triggering rebalancing"
+                )
                 await self.trigger_coherence_rebalancing()
 
             await asyncio.sleep(10)  # Check every 10 seconds
@@ -244,10 +275,10 @@ class HolographicStateSynchronizer:
     async def trigger_coherence_rebalancing(self):
         """Trigger fractal coherence rebalancing across components"""
         rebalancing_message = {
-            'type': 'coherence_rebalancing',
-            'current_coherence': await self.calculate_global_fractal_coherence(),
-            'action_required': 'optimize_fractal_patterns',
-            'timestamp': datetime.now().isoformat()
+            "type": "coherence_rebalancing",
+            "current_coherence": await self.calculate_global_fractal_coherence(),
+            "action_required": "optimize_fractal_patterns",
+            "timestamp": datetime.now().isoformat(),
         }
 
         # Broadcast rebalancing directive to all components
@@ -286,20 +317,20 @@ class HolographicStateSynchronizer:
         for component_type, state in self.component_states.items():
             aggregated_data[component_type.value] = state.holographic_data
 
-        self.global_holographic_state['aggregated_component_data'] = aggregated_data
-        self.global_holographic_state['last_global_update'] = datetime.now().isoformat()
+        self.global_holographic_state["aggregated_component_data"] = aggregated_data
+        self.global_holographic_state["last_global_update"] = datetime.now().isoformat()
 
     async def analyze_fractal_patterns(self):
         """Analyze fractal patterns across the system"""
         # Simplified fractal pattern analysis
         pattern_analysis = {
-            'detected_patterns': len(self.global_holographic_state),
-            'pattern_coherence': await self.calculate_global_fractal_coherence(),
-            'emerging_patterns': self.detect_emerging_patterns(),
-            'analysis_timestamp': datetime.now().isoformat()
+            "detected_patterns": len(self.global_holographic_state),
+            "pattern_coherence": await self.calculate_global_fractal_coherence(),
+            "emerging_patterns": self.detect_emerging_patterns(),
+            "analysis_timestamp": datetime.now().isoformat(),
         }
 
-        self.global_holographic_state['fractal_pattern_analysis'] = pattern_analysis
+        self.global_holographic_state["fractal_pattern_analysis"] = pattern_analysis
 
     def detect_emerging_patterns(self) -> List[str]:
         """Detect emerging fractal patterns"""
@@ -309,10 +340,13 @@ class HolographicStateSynchronizer:
         if len(self.component_states) >= 3:
             patterns.append("multi_component_synchronization")
 
-        if any(state.fractal_coherence > 0.8 for state in self.component_states.values()):
+        if any(
+            state.fractal_coherence > 0.8 for state in self.component_states.values()
+        ):
             patterns.append("high_coherence_cluster")
 
         return patterns
+
 
 class CrossComponentMessenger:
     """Handles cross-component messaging with fractal awareness"""
@@ -326,7 +360,7 @@ class CrossComponentMessenger:
         source: ComponentType,
         target: Optional[ComponentType],
         message_type: str,
-        payload: Dict[str, Any]
+        payload: Dict[str, Any],
     ) -> HolographicMessage:
         """Send a fractal message between components"""
 
@@ -337,7 +371,7 @@ class CrossComponentMessenger:
             message_type=message_type,
             payload=payload,
             fractal_signature=self.generate_fractal_signature(payload),
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
 
         # Process message through holographic synchronizer
@@ -361,15 +395,18 @@ class CrossComponentMessenger:
         else:
             print(f" No handler for message type: {message.message_type}")
 
+
 # Global synchronizer instance
 holographic_synchronizer = HolographicStateSynchronizer()
 cross_component_messenger = CrossComponentMessenger(holographic_synchronizer)
+
 
 async def start_holographic_synchronization_system():
     """Start the complete holographic synchronization system"""
     print(" Starting AIOS Holographic Synchronization System...")
     await holographic_synchronizer.start_synchronization_server()
     print(" Holographic Synchronization System active")
+
 
 # Example usage and testing
 async def test_cross_component_communication():
@@ -381,19 +418,21 @@ async def test_cross_component_communication():
         source=ComponentType.PYTHON_AI,
         target=ComponentType.CPP_CORE,
         message_type="fractal_analysis_request",
-        payload={"analysis_type": "memory_optimization", "priority": "high"}
+        payload={"analysis_type": "memory_optimization", "priority": "high"},
     )
 
     await cross_component_messenger.send_fractal_message(
         source=ComponentType.CSHARP_UI,
         target=None,  # Broadcast
         message_type="ui_state_update",
-        payload={"user_action": "analyze_code", "context": "development_session"}
+        payload={"user_action": "analyze_code", "context": "development_session"},
     )
+
 
 if __name__ == "__main__":
     # Run the holographic synchronization system
     asyncio.run(test_cross_component_communication())
+
 
 class ContextAwareHolographicSync:
     """Enhanced holographic sync with context recovery integration"""
@@ -410,6 +449,7 @@ class ContextAwareHolographicSync:
         """Initialize context recovery system"""
         try:
             from .context_recovery_system import ContextRecoverySystem
+
             self.context_recovery = ContextRecoverySystem(self.workspace_path)
         except ImportError:
             print("Warning: Context recovery system not available")
@@ -434,8 +474,9 @@ class ContextAwareHolographicSync:
 
         return True
 
-    def sync_with_context_preservation(self, components: List[ComponentType],
-                                     user_context: str = "") -> Dict[str, Any]:
+    def sync_with_context_preservation(
+        self, components: List[ComponentType], user_context: str = ""
+    ) -> Dict[str, Any]:
         """Synchronize components while preserving context"""
         with self._sync_lock:
             # Check context health first
@@ -443,7 +484,7 @@ class ContextAwareHolographicSync:
                 return {
                     "status": "context_recovery_triggered",
                     "message": "Context recovery executed, sync will restart",
-                    "timestamp": datetime.now().isoformat()
+                    "timestamp": datetime.now().isoformat(),
                 }
 
             # Proceed with normal synchronization
@@ -452,13 +493,15 @@ class ContextAwareHolographicSync:
                 "components_synced": [],
                 "holographic_coherence": 0.0,
                 "fractal_dimensions": {},
-                "context_health": "good" if self.context_recovery else "unknown"
+                "context_health": "good" if self.context_recovery else "unknown",
             }
 
             total_coherence = 0.0
 
             for component in components:
-                component_sync = self._sync_component_with_context(component, user_context)
+                component_sync = self._sync_component_with_context(
+                    component, user_context
+                )
                 sync_result["components_synced"].append(component_sync)
                 total_coherence += component_sync.get("coherence", 0.0)
 
@@ -475,15 +518,16 @@ class ContextAwareHolographicSync:
 
             return sync_result
 
-    def _sync_component_with_context(self, component: ComponentType,
-                                   user_context: str) -> Dict[str, Any]:
+    def _sync_component_with_context(
+        self, component: ComponentType, user_context: str
+    ) -> Dict[str, Any]:
         """Synchronize individual component with context awareness"""
         component_result = {
             "component": component.value,
             "status": "synchronized",
             "coherence": 0.0,
             "fractal_signature": "",
-            "context_preserved": True
+            "context_preserved": True,
         }
 
         # Component-specific synchronization logic
@@ -506,7 +550,7 @@ class ContextAwareHolographicSync:
             "fractal_memory_coherence": 0.85,
             "holographic_state_sync": True,
             "context_manager_status": "operational",
-            "nlp_processor_status": "ready"
+            "nlp_processor_status": "ready",
         }
 
     def _sync_python_ai(self, user_context: str) -> Dict[str, Any]:
@@ -515,7 +559,7 @@ class ContextAwareHolographicSync:
             "neural_network_coherence": 0.78,
             "fractal_learning_active": True,
             "context_preservation_status": "active",
-            "holographic_memory_sync": True
+            "holographic_memory_sync": True,
         }
 
     def _sync_csharp_ui(self, user_context: str) -> Dict[str, Any]:
@@ -524,7 +568,7 @@ class ContextAwareHolographicSync:
             "fractal_context_manager": "operational",
             "vscode_bridge_status": "connected",
             "holographic_display_sync": True,
-            "user_context_preserved": True
+            "user_context_preserved": True,
         }
 
     def _sync_vscode_extension(self, user_context: str) -> Dict[str, Any]:
@@ -533,7 +577,7 @@ class ContextAwareHolographicSync:
             "extension_context_bridge": "active",
             "fractal_sync_status": "operational",
             "holographic_integration": True,
-            "context_tracking": "enabled"
+            "context_tracking": "enabled",
         }
 
     def _sync_ainlp_compiler(self, user_context: str) -> Dict[str, Any]:
@@ -542,7 +586,7 @@ class ContextAwareHolographicSync:
             "holographic_compilation": "ready",
             "fractal_code_generation": True,
             "context_aware_parsing": "operational",
-            "system_integration": "synchronized"
+            "system_integration": "synchronized",
         }
 
     def get_system_context_status(self) -> Dict[str, Any]:
@@ -556,7 +600,9 @@ class ContextAwareHolographicSync:
             "context_health_score": health.score,
             "context_status": "healthy" if health.is_healthy() else "degraded",
             "last_sync_count": len(self.sync_history),
-            "last_sync_time": self.sync_history[-1]["timestamp"] if self.sync_history else None,
+            "last_sync_time": (
+                self.sync_history[-1]["timestamp"] if self.sync_history else None
+            ),
             "recovery_needed": health.needs_immediate_recovery(),
-            "recommendations": self.context_recovery.get_recovery_actions(health)
+            "recommendations": self.context_recovery.get_recovery_actions(health),
         }

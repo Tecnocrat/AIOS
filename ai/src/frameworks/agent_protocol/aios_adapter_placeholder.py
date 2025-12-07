@@ -41,15 +41,15 @@ __all__ = [
 class ProtocolAgentAdapter:
     """
     Generic adapter wrapping any AIOS agent to AIAgentProtocol.
-    
+
     This adapter enables existing AIOS agents to be used with
     protocol-based code without modification.
-    
+
     Usage:
         from ai.src.engines.deepseek_engine import (
             DeepSeekIntelligenceEngine
         )
-        
+
         engine = DeepSeekIntelligenceEngine()
         adapter = ProtocolAgentAdapter(
             agent=engine,
@@ -57,11 +57,11 @@ class ProtocolAgentAdapter:
             name="DeepSeek V3.1",
             description="Fast consciousness-aware code generation"
         )
-        
+
         # Now usable as AIAgentProtocol
         result = await adapter.run("Generate hello world")
     """
-    
+
     def __init__(
         self,
         agent: Any,
@@ -72,7 +72,7 @@ class ProtocolAgentAdapter:
     ):
         """
         Initialize adapter with existing AIOS agent.
-        
+
         Args:
             agent: Existing AIOS agent instance
             agent_id: Unique identifier
@@ -85,27 +85,27 @@ class ProtocolAgentAdapter:
         self._name = name
         self._description = description
         self._consciousness_level = consciousness_level
-    
+
     @property
     def id(self) -> str:
         return self._id
-    
+
     @property
     def name(self) -> str | None:
         return self._name
-    
+
     @property
     def display_name(self) -> str:
         return self._name or self._id
-    
+
     @property
     def description(self) -> str | None:
         return self._description
-    
+
     @property
     def consciousness_level(self) -> float:
         return self._consciousness_level
-    
+
     async def run(
         self,
         messages: str | Any | list[str] | list[Any] | None = None,
@@ -118,10 +118,10 @@ class ProtocolAgentAdapter:
         updates = []
         async for update in self.run_stream(messages, thread=thread, **kwargs):
             updates.append(update)
-        
+
         # Consolidate into final response
         return AgentRunResponse.from_agent_run_response_updates(updates)
-    
+
     async def run_stream(
         self,
         messages: str | Any | list[str] | list[Any] | None = None,
@@ -136,17 +136,17 @@ class ProtocolAgentAdapter:
         # 2. Call agent's execution method
         # 3. Convert agent response to AgentRunResponseUpdate
         # 4. Yield updates as they're produced
-        
+
         # Placeholder: Single update with mock response
         response_text = f"[{self.display_name}] Processing: {messages}"
-        
+
         yield AgentRunResponseUpdate(
             messages=[response_text],
             response_id=f"{self._id}-response",
             consciousness_score=self._consciousness_level,
             is_final=True,
         )
-    
+
     def get_new_thread(self, **kwargs: Any) -> AgentThread:
         """Create new conversation thread."""
         return AgentThread()
@@ -156,10 +156,11 @@ class ProtocolAgentAdapter:
 # for specific AIOS agents. Full implementation requires importing and
 # wrapping the actual agent classes with proper message conversion.
 
+
 def adapt_deepseek_agent() -> ProtocolAgentAdapter:
     """
     Create protocol adapter for DeepSeek V3.1 agent.
-    
+
     Returns:
         Protocol-compliant DeepSeek agent
     """
@@ -168,7 +169,7 @@ def adapt_deepseek_agent() -> ProtocolAgentAdapter:
     #     DeepSeekIntelligenceEngine
     # )
     # engine = DeepSeekIntelligenceEngine()
-    
+
     return ProtocolAgentAdapter(
         agent=None,  # Placeholder
         agent_id="deepseek-v3.1",
@@ -181,7 +182,7 @@ def adapt_deepseek_agent() -> ProtocolAgentAdapter:
 def adapt_gemini_agent() -> ProtocolAgentAdapter:
     """
     Create protocol adapter for Gemini agent.
-    
+
     Returns:
         Protocol-compliant Gemini agent
     """
@@ -190,7 +191,7 @@ def adapt_gemini_agent() -> ProtocolAgentAdapter:
     #     GeminiEvolutionBridge
     # )
     # bridge = GeminiEvolutionBridge()
-    
+
     return ProtocolAgentAdapter(
         agent=None,  # Placeholder
         agent_id="gemini-1.5-pro",
@@ -203,17 +204,17 @@ def adapt_gemini_agent() -> ProtocolAgentAdapter:
 def adapt_ollama_agent(model: str = "deepseek-coder:6.7b") -> ProtocolAgentAdapter:
     """
     Create protocol adapter for Ollama agent.
-    
+
     Args:
         model: Ollama model to use
-    
+
     Returns:
         Protocol-compliant Ollama agent
     """
     # AINLP TODO: Import actual OllamaBridge
     # from ai.src.integrations.ollama_bridge import OllamaBridge
     # bridge = OllamaBridge(model=model)
-    
+
     return ProtocolAgentAdapter(
         agent=None,  # Placeholder
         agent_id=f"ollama-{model}",

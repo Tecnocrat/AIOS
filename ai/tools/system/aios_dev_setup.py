@@ -25,11 +25,11 @@ def setup_aios_environment():
 
     # AIOS paths to add to Python path
     aios_paths = [
-        str(workspace_root),                    # Main workspace
-        str(workspace_root / "ai"),            # AI Intelligence Layer
+        str(workspace_root),  # Main workspace
+        str(workspace_root / "ai"),  # AI Intelligence Layer
         str(workspace_root / "runtime"),  # Runtime Intelligence
-        str(workspace_root / "core"),          # Core Engine
-        str(workspace_root / "interface"),     # Interface Layer
+        str(workspace_root / "core"),  # Core Engine
+        str(workspace_root / "interface"),  # Interface Layer
     ]
 
     # Add paths to sys.path if not already present
@@ -38,20 +38,20 @@ def setup_aios_environment():
             sys.path.insert(0, path)
 
     # Set environment variables for development
-    existing_pythonpath = os.environ.get('PYTHONPATH', '')
+    existing_pythonpath = os.environ.get("PYTHONPATH", "")
     if existing_pythonpath:
         all_paths = aios_paths + existing_pythonpath.split(os.pathsep)
     else:
         all_paths = aios_paths
 
-    os.environ['PYTHONPATH'] = os.pathsep.join(all_paths)
-    os.environ.setdefault('AIOS_WORKSPACE_ROOT', str(workspace_root))
+    os.environ["PYTHONPATH"] = os.pathsep.join(all_paths)
+    os.environ.setdefault("AIOS_WORKSPACE_ROOT", str(workspace_root))
 
     return {
-        'workspace_root': str(workspace_root),
-        'paths_added': aios_paths,
-        'pythonpath_set': os.environ.get('PYTHONPATH', ''),
-        'success': True
+        "workspace_root": str(workspace_root),
+        "paths_added": aios_paths,
+        "pythonpath_set": os.environ.get("PYTHONPATH", ""),
+        "success": True,
     }
 
 
@@ -75,9 +75,8 @@ def validate_environment():
 
     # Check if key modules can be imported
     test_imports = [
-        ('ai.nucleus.interface_bridge', 'AIOSInterfaceBridge'),
-        ('runtime.tools.biological_architecture_monitor',
-         'AIOSArchitectureMonitor'),
+        ("ai.nucleus.interface_bridge", "AIOSInterfaceBridge"),
+        ("runtime.tools.biological_architecture_monitor", "AIOSArchitectureMonitor"),
     ]
 
     for module_name, class_name in test_imports:
@@ -87,10 +86,7 @@ def validate_environment():
         except (ImportError, AttributeError) as e:
             issues.append(f"Import failed: {module_name}.{class_name} - {e}")
 
-    return {
-        'issues': issues,
-        'valid': len(issues) == 0
-    }
+    return {"issues": issues, "valid": len(issues) == 0}
 
 
 def main():
@@ -106,17 +102,16 @@ def main():
     # Validate environment
     validation = validate_environment()
 
-    if validation['valid']:
+    if validation["valid"]:
         print("✅ Environment validation: PASSED")
         print("\n🎉 AIOS development environment is ready!")
     else:
         print("❌ Environment validation: FAILED")
         print("\nIssues found:")
-        for issue in validation['issues']:
+        for issue in validation["issues"]:
             print(f"  • {issue}")
 
-        print("\n💡 Try running this script again or check your "
-              "Python environment.")
+        print("\n💡 Try running this script again or check your " "Python environment.")
         return 1
 
     return 0

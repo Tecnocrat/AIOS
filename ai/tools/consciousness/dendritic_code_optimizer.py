@@ -24,15 +24,12 @@ code optimization, following the dendritic → neuron evolutionary paradigm.
 """
 
 import ast
-import os
-import re
 import json
 import logging
 from pathlib import Path
-from typing import Dict, List, Set, Any, Optional, Tuple
+from typing import Dict, List, Set, Any
 from dataclasses import dataclass, field
 from datetime import datetime
-import importlib.util
 
 logger = logging.getLogger(__name__)
 

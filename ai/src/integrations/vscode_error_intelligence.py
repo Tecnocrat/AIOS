@@ -10,8 +10,7 @@ and support dendritic growth through error pattern learning.
 import os
 import re
 import json
-import subprocess
-from typing import Dict, Any, List, Optional, Tuple
+from typing import Dict, Any, List, Tuple
 from dataclasses import dataclass, asdict
 from datetime import datetime
 import logging

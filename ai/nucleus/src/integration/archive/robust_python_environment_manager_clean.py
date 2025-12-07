@@ -29,6 +29,7 @@ from typing import Any, Dict, List, Optional
 @dataclass
 class PythonEnvironment:
     """Represents a Python environment configuration."""
+
     id: str
     name: str
     python_path: str
@@ -61,9 +62,7 @@ class RobustPythonEnvironmentManager:
         os.makedirs(self.config_dir, exist_ok=True)
 
         # Load existing environments
-        self.environments: Dict[str, PythonEnvironment] = (
-            self._load_environments()
-        )
+        self.environments: Dict[str, PythonEnvironment] = self._load_environments()
 
         # Current active environment
         self.active_environment: Optional[PythonEnvironment] = None
@@ -76,7 +75,7 @@ class RobustPythonEnvironmentManager:
         if not logger.handlers:
             handler = logging.StreamHandler()
             formatter = logging.Formatter(
-                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+                "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
             )
             handler.setFormatter(formatter)
             logger.addHandler(handler)
@@ -90,26 +89,22 @@ class RobustPythonEnvironmentManager:
         # Try to load from main file
         if os.path.exists(self.environments_file):
             try:
-                with open(self.environments_file, 'r') as f:
+                with open(self.environments_file, "r") as f:
                     data = json.load(f)
                     for env_id, env_data in data.items():
                         environments[env_id] = PythonEnvironment(**env_data)
-                self.logger.info(
-                    f"Loaded {len(environments)} environments from config"
-                )
+                self.logger.info(f"Loaded {len(environments)} environments from config")
             except Exception as e:
                 self.logger.error(f"Error loading environments: {e}")
 
         # Try backup if main file failed
         if not environments and os.path.exists(self.backup_file):
             try:
-                with open(self.backup_file, 'r') as f:
+                with open(self.backup_file, "r") as f:
                     data = json.load(f)
                     for env_id, env_data in data.items():
                         environments[env_id] = PythonEnvironment(**env_data)
-                self.logger.info(
-                    f"Loaded {len(environments)} environments from backup"
-                )
+                self.logger.info(f"Loaded {len(environments)} environments from backup")
             except Exception as e:
                 self.logger.error(f"Error loading backup environments: {e}")
 
@@ -121,19 +116,15 @@ class RobustPythonEnvironmentManager:
             # Create backup first
             if os.path.exists(self.environments_file):
                 import shutil
+
                 shutil.copy2(self.environments_file, self.backup_file)
 
             # Save current state
-            data = {
-                env_id: asdict(
-                env) for env_id, env in self.environments.items()
-            }
-            with open(self.environments_file, 'w') as f:
+            data = {env_id: asdict(env) for env_id, env in self.environments.items()}
+            with open(self.environments_file, "w") as f:
                 json.dump(data, f, indent=2)
 
-            self.logger.info(
-                f"Saved {len(self.environments)} environments to config"
-            )
+            self.logger.info(f"Saved {len(self.environments)} environments to config")
 
         except Exception as e:
             self.logger.error(f"Error saving environments: {e}")
@@ -162,8 +153,7 @@ class RobustPythonEnvironmentManager:
                 verified_installations.append(env)
 
         self.logger.info(
-            f"Discovered {len(verified_installations)} valid Python "
-            f"installations"
+            f"Discovered {len(verified_installations)} valid Python " f"installations"
         )
         return verified_installations
 
@@ -176,7 +166,8 @@ class RobustPythonEnvironmentManager:
             for hive in [winreg.HKEY_LOCAL_MACHINE, winreg.HKEY_CURRENT_USER]:
                 try:
                     with winreg.OpenKey(
-                    hive, r"SOFTWARE\Python\PythonCore") as key:  # noqa
+                        hive, r"SOFTWARE\Python\PythonCore"
+                    ) as key:  # noqa
                         i = 0
                         while True:
                             try:
@@ -184,9 +175,7 @@ class RobustPythonEnvironmentManager:
                                 with winreg.OpenKey(
                                     key, f"{version}\\InstallPath"
                                 ) as install_key:
-                                    install_path = winreg.QueryValue(
-                                        install_key, ""
-                                    )
+                                    install_path = winreg.QueryValue(install_key, "")
                                     python_exe = os.path.join(
                                         install_path, "python.exe"
                                     )
@@ -202,7 +191,7 @@ class RobustPythonEnvironmentManager:
                                             packages=[],
                                             is_active=False,
                                             last_verified="",
-                                            health_status="unknown"
+                                            health_status="unknown",
                                         )
                                         installations.append(env)
 
@@ -214,9 +203,7 @@ class RobustPythonEnvironmentManager:
                     continue
 
         except Exception as e:
-            self.logger.error(
-                f"Error discovering Windows Python installations: {e}"
-            )
+            self.logger.error(f"Error discovering Windows Python installations: {e}")
 
         return installations
 
@@ -226,35 +213,40 @@ class RobustPythonEnvironmentManager:
 
         # Common Python executable names
         python_names = [
-            "python", "python3", "python3.8", "python3.9",
-            "python3.10", "python3.11", "python3.12"
+            "python",
+            "python3",
+            "python3.8",
+            "python3.9",
+            "python3.10",
+            "python3.11",
+            "python3.12",
         ]
 
         for python_name in python_names:
             try:
                 result = subprocess.run(
-                    ["where" if platform.system() == "Windows" else "which",
-                     python_name],
+                    [
+                        "where" if platform.system() == "Windows" else "which",
+                        python_name,
+                    ],
                     capture_output=True,
                     text=True,
-                    timeout=10
+                    timeout=10,
                 )
 
                 if result.returncode == 0:
-                    python_path = result.stdout.strip().split('\n')[0]
+                    python_path = result.stdout.strip().split("\n")[0]
 
                     # Get version
                     version_result = subprocess.run(
                         [python_path, "--version"],
                         capture_output=True,
                         text=True,
-                        timeout=10
+                        timeout=10,
                     )
 
                     if version_result.returncode == 0:
-                        version = version_result.stdout.strip().replace(
-                            "Python ", ""
-                        )
+                        version = version_result.stdout.strip().replace("Python ", "")
 
                         env = PythonEnvironment(
                             id=str(uuid.uuid4()),
@@ -266,7 +258,7 @@ class RobustPythonEnvironmentManager:
                             packages=[],
                             is_active=False,
                             last_verified="",
-                            health_status="unknown"
+                            health_status="unknown",
                         )
                         installations.append(env)
 
@@ -288,7 +280,7 @@ class RobustPythonEnvironmentManager:
                     os.path.expanduser("~/anaconda3/Scripts/conda.exe"),
                     os.path.expanduser("~/miniconda3/Scripts/conda.exe"),
                     "C:\\ProgramData\\Anaconda3\\Scripts\\conda.exe",
-                    "C:\\ProgramData\\Miniconda3\\Scripts\\conda.exe"
+                    "C:\\ProgramData\\Miniconda3\\Scripts\\conda.exe",
                 ]
 
                 for path in conda_paths:
@@ -301,20 +293,18 @@ class RobustPythonEnvironmentManager:
                 [conda_cmd, "env", "list", "--json"],
                 capture_output=True,
                 text=True,
-                timeout=30
+                timeout=30,
             )
 
             if result.returncode == 0:
                 env_data = json.loads(result.stdout)
 
                 for env_path in env_data.get("envs", []):
-                    python_exe = ("python.exe" if platform.system() ==
-                                  "Windows" else "python")
-                    scripts_dir = ("Scripts" if platform.system() ==
-                                   "Windows" else "bin")
-                    python_path = os.path.join(
-                        env_path, scripts_dir, python_exe
+                    python_exe = (
+                        "python.exe" if platform.system() == "Windows" else "python"
                     )
+                    scripts_dir = "Scripts" if platform.system() == "Windows" else "bin"
+                    python_path = os.path.join(env_path, scripts_dir, python_exe)
 
                     if os.path.exists(python_path):
                         env_name = os.path.basename(env_path)
@@ -325,12 +315,13 @@ class RobustPythonEnvironmentManager:
                                 [python_path, "--version"],
                                 capture_output=True,
                                 text=True,
-                                timeout=10
+                                timeout=10,
                             )
-                            version = (version_result.stdout.strip().replace(
-                                "Python ",
-                                 "") if version_result.returncode == 0
-                                else "unknown")
+                            version = (
+                                version_result.stdout.strip().replace("Python ", "")
+                                if version_result.returncode == 0
+                                else "unknown"
+                            )
                         except Exception:
                             version = "unknown"
 
@@ -344,7 +335,7 @@ class RobustPythonEnvironmentManager:
                             packages=[],
                             is_active=False,
                             last_verified="",
-                            health_status="unknown"
+                            health_status="unknown",
                         )
                         installations.append(env)
 
@@ -363,7 +354,7 @@ class RobustPythonEnvironmentManager:
             os.path.expanduser("~/venv"),
             os.path.expanduser("~/virtualenvs"),
             os.path.join(os.getcwd(), "venv"),
-            os.path.join(os.getcwd(), ".venv")
+            os.path.join(os.getcwd(), ".venv"),
         ]
 
         for search_path in search_paths:
@@ -372,10 +363,14 @@ class RobustPythonEnvironmentManager:
                     for item in os.listdir(search_path):
                         item_path = os.path.join(search_path, item)
                         if os.path.isdir(item_path):
-                            python_exe = ("python.exe" if platform.system() ==
-                                          "Windows" else "python")
-                            scripts_dir = ("Scripts" if platform.system() ==
-                                           "Windows" else "bin")
+                            python_exe = (
+                                "python.exe"
+                                if platform.system() == "Windows"
+                                else "python"
+                            )
+                            scripts_dir = (
+                                "Scripts" if platform.system() == "Windows" else "bin"
+                            )
                             python_path = os.path.join(
                                 item_path, scripts_dir, python_exe
                             )
@@ -387,13 +382,15 @@ class RobustPythonEnvironmentManager:
                                         [python_path, "--version"],
                                         capture_output=True,
                                         text=True,
-                                        timeout=10
+                                        timeout=10,
                                     )
-                                    version = (version_result.stdout.strip()
-                                               .replace("Python ", "")
-                                               if version_result.returncode ==
-                                                0
-                                               else "unknown")
+                                    version = (
+                                        version_result.stdout.strip().replace(
+                                            "Python ", ""
+                                        )
+                                        if version_result.returncode == 0
+                                        else "unknown"
+                                    )
                                 except Exception:
                                     version = "unknown"
 
@@ -407,7 +404,7 @@ class RobustPythonEnvironmentManager:
                                     packages=[],
                                     is_active=False,
                                     last_verified="",
-                                    health_status="unknown"
+                                    health_status="unknown",
                                 )
                                 installations.append(env)
 
@@ -425,9 +422,7 @@ class RobustPythonEnvironmentManager:
 
         for env in installations:
             # Normalize path for comparison
-            normalized_path = os.path.normpath(
-                os.path.abspath(env.python_path)
-            ).lower()
+            normalized_path = os.path.normpath(os.path.abspath(env.python_path)).lower()
 
             if normalized_path not in seen_paths:
                 seen_paths.add(normalized_path)
@@ -442,7 +437,7 @@ class RobustPythonEnvironmentManager:
                 [python_path, "-c", "import sys; print('OK')"],
                 capture_output=True,
                 text=True,
-                timeout=10
+                timeout=10,
             )
             return result.returncode == 0 and "OK" in result.stdout
 
@@ -462,8 +457,10 @@ class RobustPythonEnvironmentManager:
             # Check if we already know about this environment
             existing_env = None
             for env_id, env in self.environments.items():
-                if (os.path.normpath(env.python_path).lower() ==
-                        os.path.normpath(new_env.python_path).lower()):
+                if (
+                    os.path.normpath(env.python_path).lower()
+                    == os.path.normpath(new_env.python_path).lower()
+                ):
                     existing_env = env
                     break
 
@@ -485,8 +482,7 @@ class RobustPythonEnvironmentManager:
         self._save_environments()
 
         healthy_count = sum(
-            1 for env in self.environments.values()
-            if env.health_status == "healthy"
+            1 for env in self.environments.values() if env.health_status == "healthy"
         )
         self.logger.info(
             f"Refresh complete: {healthy_count}/{len(self.environments)} "
@@ -538,7 +534,7 @@ class RobustPythonEnvironmentManager:
             "missing_environments": 0,
             "broken_environments": 0,
             "active_environment": None,
-            "recommendations": []
+            "recommendations": [],
         }
 
         for env in self.environments.values():
@@ -559,7 +555,7 @@ class RobustPythonEnvironmentManager:
             health_report["active_environment"] = {
                 "name": self.active_environment.name,
                 "path": self.active_environment.python_path,
-                "health": self.active_environment.health_status
+                "health": self.active_environment.health_status,
             }
 
         # Recommendations
@@ -606,9 +602,7 @@ def initialize_python_environment_for_aios():
     # Set active environment if none set
     if not manager.get_active_environment():
         environments = manager.list_environments()
-        healthy_envs = [
-            env for env in environments if env.health_status == "healthy"
-        ]
+        healthy_envs = [env for env in environments if env.health_status == "healthy"]
 
         if healthy_envs:
             # Prefer the first virtual environment, or the first available
@@ -644,7 +638,7 @@ if __name__ == "__main__":
     print(f"Missing: {health['missing_environments']}")
     print(f"Broken: {health['broken_environments']}")
 
-    if health['active_environment']:
+    if health["active_environment"]:
         print(f"Active: {health['active_environment']['name']}")
 
     # List environments

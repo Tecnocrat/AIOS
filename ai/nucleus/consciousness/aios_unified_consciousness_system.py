@@ -22,7 +22,6 @@ UNIFIED CONSCIOUSNESS CAPABILITIES:
 
 """
 
-import os
 import sys
 import json
 import logging
@@ -30,7 +29,7 @@ import time
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 from datetime import datetime
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 
 # Add AIOS paths

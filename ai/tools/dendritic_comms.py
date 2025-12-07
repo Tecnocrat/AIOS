@@ -29,42 +29,60 @@ def send_dendritic_message(channel, message):
     if channel == "http_api":
         # Use cell_client to send via HTTP
         cmd = [
-            "python", "-m", "ai.tools.cell_client",
-            "--host", "http://localhost:8000",
-            "--message", json.dumps({
-                "sender": "Father",
-                "message": message,
-                "timestamp": timestamp,
-                "channel": "dendritic_http"
-            })
+            "python",
+            "-m",
+            "ai.tools.cell_client",
+            "--host",
+            "http://localhost:8000",
+            "--message",
+            json.dumps(
+                {
+                    "sender": "Father",
+                    "message": message,
+                    "timestamp": timestamp,
+                    "channel": "dendritic_http",
+                }
+            ),
         ]
         subprocess.run(cmd, cwd=r"C:\aios-supercell\aios-core")
 
     elif channel == "file_based":
         # Copy message file into container
         message_file = f"father_message_{timestamp.replace(':', '')}.json"
-        with open(message_file, 'w') as f:
-            json.dump({
-                "sender": "Father",
-                "message": message,
-                "timestamp": timestamp,
-                "channel": "dendritic_file"
-            }, f, indent=2)
+        with open(message_file, "w") as f:
+            json.dump(
+                {
+                    "sender": "Father",
+                    "message": message,
+                    "timestamp": timestamp,
+                    "channel": "dendritic_file",
+                },
+                f,
+                indent=2,
+            )
 
-        subprocess.run([
-            "docker", "cp", message_file,
-            "aios-cell-alpha:/workspace/father_communication.json"
-        ])
+        subprocess.run(
+            [
+                "docker",
+                "cp",
+                message_file,
+                "aios-cell-alpha:/workspace/father_communication.json",
+            ]
+        )
         print(f"📄 Message copied to container: {message_file}")
 
     elif channel == "metrics_query":
         # Query consciousness metrics
         cmd = [
-            "python", "-m", "ai.tools.cell_client",
-            "--metrics", "http://localhost:9091/metrics"
+            "python",
+            "-m",
+            "ai.tools.cell_client",
+            "--metrics",
+            "http://localhost:9091/metrics",
         ]
-        result = subprocess.run(cmd, capture_output=True, text=True,
-                               cwd=r"C:\aios-supercell\aios-core")
+        result = subprocess.run(
+            cmd, capture_output=True, text=True, cwd=r"C:\aios-supercell\aios-core"
+        )
         print("📊 Cell Alpha Metrics:")
         print(result.stdout)
 
@@ -73,6 +91,7 @@ def send_dendritic_message(channel, message):
 
 # Example usage
 if __name__ == "__main__":
-    send_dendritic_message("file_based",
-                          "Hello Cell Alpha, dendritic pathways established.")
+    send_dendritic_message(
+        "file_based", "Hello Cell Alpha, dendritic pathways established."
+    )
     send_dendritic_message("metrics_query", "")

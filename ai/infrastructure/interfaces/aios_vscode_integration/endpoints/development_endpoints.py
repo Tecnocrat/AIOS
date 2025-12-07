@@ -27,7 +27,7 @@ async def code_review(request: dict):  # type: ignore
     """
     try:
         # Cast to expected type for proper attribute access
-        CodeReviewRequest = getattr(models, 'CodeReviewRequest')
+        CodeReviewRequest = getattr(models, "CodeReviewRequest")
         req = CodeReviewRequest(**request)
 
         # Check cache for similar reviews
@@ -99,7 +99,7 @@ async def code_refactor(request: dict):  # type: ignore
     """
     try:
         # Cast to expected type for proper attribute access
-        CodeRefactorRequest = getattr(models, 'CodeRefactorRequest')
+        CodeRefactorRequest = getattr(models, "CodeRefactorRequest")
         req = CodeRefactorRequest(**request)
 
         # Check cache for similar refactoring
@@ -118,14 +118,13 @@ async def code_refactor(request: dict):  # type: ignore
 
         # Dendritic Pattern 1: Intelligent Import Optimization
         if "import" in refactored_code:
-            lines = refactored_code.split('\n')
+            lines = refactored_code.split("\n")
             import_lines = []
             other_lines = []
 
             for line in lines:
-                if (
-                    line.strip().startswith('import ')
-                    or line.strip().startswith('from ')
+                if line.strip().startswith("import ") or line.strip().startswith(
+                    "from "
                 ):
                     import_lines.append(line)
                 else:
@@ -139,38 +138,34 @@ async def code_refactor(request: dict):  # type: ignore
                 applied_transformations.append("Removed duplicate imports")
                 transformation_confidence += 0.2
 
-            refactored_code = '\n'.join(unique_imports + [''] + other_lines)
+            refactored_code = "\n".join(unique_imports + [""] + other_lines)
 
         # Dendritic Pattern 2: Variable and Function Extraction
-        if len(refactored_code.split('\n')) > 15:
+        if len(refactored_code.split("\n")) > 15:
             # Extract magic numbers and strings
-            lines = refactored_code.split('\n')
+            lines = refactored_code.split("\n")
             new_lines = []
             extracted_constants = []
             const_counter = 0
 
             for line in lines:
                 # Find potential constants (numbers > 10 or long strings)
-                numbers = re.findall(r'\b\d{2,}\b', line)
+                numbers = re.findall(r"\b\d{2,}\b", line)
                 strings = re.findall(r'"[^"]{20,}"', line)
 
                 for number in numbers:
-                    if number not in ['100', '1000']:  # Skip common numbers
+                    if number not in ["100", "1000"]:  # Skip common numbers
                         const_name = f"CONST_{const_counter}"
-                        line = line.replace(
-                            number, const_name
-                        )
+                        line = line.replace(number, const_name)
                         extracted_constants.append(f"{const_name} = {number}")
                         const_counter += 1
-                        applied_transformations.append(
-                            f"Extracted constant {number}"
-                        )
+                        applied_transformations.append(f"Extracted constant {number}")
                         transformation_confidence += 0.1
 
                 for string in strings:
                     const_name = f"MSG_{const_counter}"
                     line = line.replace(string, const_name)
-                    extracted_constants.append(f'{const_name} = {string}')
+                    extracted_constants.append(f"{const_name} = {string}")
                     const_counter += 1
                     applied_transformations.append("Extracted string constant")
                     transformation_confidence += 0.1
@@ -178,40 +173,32 @@ async def code_refactor(request: dict):  # type: ignore
                 new_lines.append(line)
 
             if extracted_constants:
-                refactored_code = '\n'.join(
-                    extracted_constants + [''] + new_lines
-                )
+                refactored_code = "\n".join(extracted_constants + [""] + new_lines)
 
         # Dendritic Pattern 3: Control Flow Optimization
         if "if" in refactored_code and "else" in refactored_code:
             # Simple ternary conversion for single-line if-else
-            lines = refactored_code.split('\n')
+            lines = refactored_code.split("\n")
             new_lines = []
 
             for i, line in enumerate(lines):
-                if (
-                    line.strip().startswith('if ')
-                    and i + 2 < len(lines)
-                ):
+                if line.strip().startswith("if ") and i + 2 < len(lines):
                     next_line = lines[i + 1].strip()
-                    else_line = (
-                        lines[i + 2].strip() if i + 2 < len(lines) else ""
-                    )
+                    else_line = lines[i + 2].strip() if i + 2 < len(lines) else ""
 
                     if (
-                        else_line.startswith('else:')
-                        and not next_line.startswith(' ')
-                        and not else_line.startswith('    ')
+                        else_line.startswith("else:")
+                        and not next_line.startswith(" ")
+                        and not else_line.startswith("    ")
                     ):
                         # Simple single-line if-else pattern
-                        condition = line.replace('if ', '')
-                        condition = condition.replace(':', '').strip()
-                        else_content = else_line.replace('else:', '').strip()
+                        condition = line.replace("if ", "")
+                        condition = condition.replace(":", "").strip()
+                        else_content = else_line.replace("else:", "").strip()
 
                         if next_line and else_content:
                             ternary = (
-                                f"{next_line} if {condition} "
-                                f"else {else_content}"
+                                f"{next_line} if {condition} " f"else {else_content}"
                             )
                             new_lines.append(ternary)
                             applied_transformations.append(
@@ -222,27 +209,27 @@ async def code_refactor(request: dict):  # type: ignore
 
                 new_lines.append(line)
 
-            refactored_code = '\n'.join(new_lines)
+            refactored_code = "\n".join(new_lines)
 
         # Dendritic Pattern 4: Code Style and Formatting
         if req.language.lower() == "python":
-            lines = refactored_code.split('\n')
+            lines = refactored_code.split("\n")
             formatted_lines = []
 
             for line in lines:
                 # Fix common spacing issues
-                line = line.replace(' = ', ' = ')
-                line = line.replace('=  ', '= ')
-                line = line.replace('  =', ' =')
+                line = line.replace(" = ", " = ")
+                line = line.replace("=  ", "= ")
+                line = line.replace("  =", " =")
 
                 # Add proper spacing around operators
-                line = re.sub(r'([+\-*/=<>!])', r' \1 ', line)
-                line = re.sub(r'\s+', ' ', line)  # Normalize spaces
+                line = re.sub(r"([+\-*/=<>!])", r" \1 ", line)
+                line = re.sub(r"\s+", " ", line)  # Normalize spaces
 
                 formatted_lines.append(line)
 
             if formatted_lines != lines:
-                refactored_code = '\n'.join(formatted_lines)
+                refactored_code = "\n".join(formatted_lines)
                 applied_transformations.append("Applied code formatting")
                 transformation_confidence += 0.1
 
@@ -255,10 +242,7 @@ async def code_refactor(request: dict):  # type: ignore
         else:
             suggestions.insert(
                 0,
-                (
-                    "No automatic transformations applied - "
-                    "manual review recommended"
-                )
+                ("No automatic transformations applied - " "manual review recommended"),
             )
 
         result = {
@@ -300,9 +284,7 @@ async def architecture_analyze(request: dict):  # type: ignore
     """
     try:
         # Cast to expected type for proper attribute access
-        ArchitectureAnalyzeRequest = getattr(
-            models, 'ArchitectureAnalyzeRequest'
-        )
+        ArchitectureAnalyzeRequest = getattr(models, "ArchitectureAnalyzeRequest")
         req = ArchitectureAnalyzeRequest(**request)
 
         # Check cache for similar analysis
@@ -374,7 +356,7 @@ async def integration_visualize(request: dict):  # type: ignore
     """
     try:
         # Cast to expected type for proper attribute access
-        VisualizeRequest = getattr(models, 'VisualizeRequest')
+        VisualizeRequest = getattr(models, "VisualizeRequest")
         req = VisualizeRequest(**request)
 
         # Check cache for similar visualization
@@ -386,24 +368,24 @@ async def integration_visualize(request: dict):  # type: ignore
 
         # Enhanced visualization logic
         file_count = len(req.files)
-        visualization = f"Integration visualization for {file_count} " \
-                        "components: "
+        visualization = f"Integration visualization for {file_count} " "components: "
 
         if file_count > 5:
-            visualization += "Complex system with multiple " \
-                            "integration points. "
+            visualization += "Complex system with multiple " "integration points. "
         else:
             visualization += "Simple system with clear data flow. "
 
         # Generate component relationships
         components = []
         for i, file in enumerate(req.files):
-            components.append({
-                "name": file.split('/')[-1],
-                "type": "module" if file.endswith('.py') else "component",
-                "connections": min(3, len(req.files) - 1),
-                "complexity": "high" if len(file.split('/')) > 3 else "low",
-            })
+            components.append(
+                {
+                    "name": file.split("/")[-1],
+                    "type": "module" if file.endswith(".py") else "component",
+                    "connections": min(3, len(req.files) - 1),
+                    "complexity": "high" if len(file.split("/")) > 3 else "low",
+                }
+            )
 
         result = {
             "visualization": visualization,
@@ -441,7 +423,7 @@ async def automation_run(request: dict):  # type: ignore
     """
     try:
         # Cast to expected type for proper attribute access
-        AutomationRequest = getattr(models, 'AutomationRequest')
+        AutomationRequest = getattr(models, "AutomationRequest")
         req = AutomationRequest(**request)
 
         # Check cache for similar automation results
@@ -453,8 +435,7 @@ async def automation_run(request: dict):  # type: ignore
 
         # Enhanced automation logic
         if req.task == "optimize":
-            result = "Code optimization completed with performance " \
-                     "improvements."
+            result = "Code optimization completed with performance " "improvements."
             actions = [
                 "Refactored functions for better performance",
                 "Removed redundant code and computations",
@@ -494,8 +475,7 @@ async def automation_run(request: dict):  # type: ignore
             ]
             confidence = 0.95
         else:
-            result = f"Custom automation task '{req.task}' " \
-                     "executed successfully."
+            result = f"Custom automation task '{req.task}' " "executed successfully."
             actions = [
                 "Executed custom automation logic",
                 "Processed input parameters",
@@ -513,23 +493,17 @@ async def automation_run(request: dict):  # type: ignore
             "timestamp": datetime.now().isoformat(),
             "task": req.task,
             "execution_time": "2.3s",  # Placeholder for actual timing
-            "note": (
-                "Automation completed with fractal intelligence optimization"
-            ),
+            "note": ("Automation completed with fractal intelligence optimization"),
         }
 
         # Cache the automation result
-        await _fractal_cache_manager.set_cached(
-            cache_key, automation_result, ttl=1800
-        )
+        await _fractal_cache_manager.set_cached(cache_key, automation_result, ttl=1800)
 
         return automation_result
 
     except Exception as e:
         task_name = request.get("task", "unknown")
-        _debug_manager.log_error(
-            e, {"endpoint": "automation_run", "task": task_name}
-        )
+        _debug_manager.log_error(e, {"endpoint": "automation_run", "task": task_name})
         return {
             "result": f"Automation failed: {str(e)}",
             "actions": ["Error recovery attempted"],

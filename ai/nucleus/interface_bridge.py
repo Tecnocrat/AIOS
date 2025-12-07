@@ -37,13 +37,13 @@ from typing import Dict, List, Any, Optional
 sys.path.append(str(Path(__file__).parent))
 from ainlp_import_resolver import (  # noqa: E402
     try_import_similarity_engine,
-    WORKSPACE_ROOT
+    WORKSPACE_ROOT,
 )
+
 try:
     from sequencer import AIOSSequencer
 except ImportError:
-    print("❌ Could not import AIOSSequencer - "
-          "ensure sequencer.py is available")
+    print("❌ Could not import AIOSSequencer - " "ensure sequencer.py is available")
     sys.exit(1)
 
 # AI Similarity Engine import (Phase 11 integration)
@@ -59,12 +59,12 @@ try:
         CoherenceEnforcer,
         NetworkValidator,
         SecuritySupercellConsciousness,
-        initialize_security_consciousness
+        initialize_security_consciousness,
     )
+
     SECURITY_AVAILABLE = True
 except ImportError:
-    print("⚠️  Security Supercell not available - "
-          "security validation disabled")
+    print("⚠️  Security Supercell not available - " "security validation disabled")
     SECURITY_AVAILABLE = False
 
 if SIMILARITY_AVAILABLE:
@@ -79,13 +79,14 @@ try:
     from fastapi.middleware.cors import CORSMiddleware
     from fastapi.responses import JSONResponse
     import uvicorn
+
     FASTAPI_AVAILABLE = True
 except ImportError:
     print("⚠️  FastAPI not available - HTTP API will be disabled")
     FASTAPI_AVAILABLE = False
 
 # Setup logging
-logger = logging.getLogger('AIOS.InterfaceBridge')
+logger = logging.getLogger("AIOS.InterfaceBridge")
 
 
 class ToolMetadata:
@@ -94,10 +95,10 @@ class ToolMetadata:
     def __init__(self, component_name: str, component_data: Dict[str, Any]):
         self.name = component_name
         self.display_name = self._generate_display_name(component_name)
-        self.description = component_data.get('description', 'AI Tool')
-        self.category = component_data.get('category', 'general')
+        self.description = component_data.get("description", "AI Tool")
+        self.category = component_data.get("category", "general")
         self.version = "1.0.0"  # Could be extracted from code
-        self.status = component_data.get('status', 'unknown')
+        self.status = component_data.get("status", "unknown")
         self.capabilities = self._analyze_capabilities(component_data)
         self.parameters = self._extract_parameters(component_data)
         self.output_formats = self._determine_output_formats(component_data)
@@ -107,70 +108,69 @@ class ToolMetadata:
 
     def _generate_display_name(self, name: str) -> str:
         """Generate user-friendly display name"""
-        return name.replace('_', ' ').title()
+        return name.replace("_", " ").title()
 
-    def _analyze_capabilities(self,
-                              component_data: Dict[str, Any]) -> List[str]:
+    def _analyze_capabilities(self, component_data: Dict[str, Any]) -> List[str]:
         """Analyze component capabilities from code and metadata"""
         capabilities = []
 
         # Standard capabilities based on category
-        category = component_data.get('category', '')
-        if category == 'ai_cell':
-            capabilities.extend(['knowledge_processing', 'session_management'])
-        elif category == 'tool':
-            capabilities.extend(['automation', 'analysis'])
-        elif category == 'service':
-            capabilities.extend(['background_processing', 'api_endpoints'])
-        elif category == 'integration':
-            capabilities.extend(['external_communication', 'data_exchange'])
+        category = component_data.get("category", "")
+        if category == "ai_cell":
+            capabilities.extend(["knowledge_processing", "session_management"])
+        elif category == "tool":
+            capabilities.extend(["automation", "analysis"])
+        elif category == "service":
+            capabilities.extend(["background_processing", "api_endpoints"])
+        elif category == "integration":
+            capabilities.extend(["external_communication", "data_exchange"])
 
         # Analyze from description and code patterns
-        description = component_data.get('description', '').lower()
-        if 'handoff' in description:
-            capabilities.append('knowledge_transfer')
-        if 'analysis' in description:
-            capabilities.append('data_analysis')
-        if 'automation' in description:
-            capabilities.append('process_automation')
-        if 'cross-pollination' in description:
-            capabilities.append('ai_collaboration')
+        description = component_data.get("description", "").lower()
+        if "handoff" in description:
+            capabilities.append("knowledge_transfer")
+        if "analysis" in description:
+            capabilities.append("data_analysis")
+        if "automation" in description:
+            capabilities.append("process_automation")
+        if "cross-pollination" in description:
+            capabilities.append("ai_collaboration")
 
         return list(set(capabilities))
 
-    def _extract_parameters(self,
-                            component_data: Dict[str, Any]
-                            ) -> List[Dict[str, Any]]:
+    def _extract_parameters(
+        self, component_data: Dict[str, Any]
+    ) -> List[Dict[str, Any]]:
         """Extract parameter information for the tool"""
         # This would be enhanced to parse actual function signatures
         # For now, provide common parameter patterns
 
-        category = component_data.get('category', '')
-        if category == 'ai_cell':
+        category = component_data.get("category", "")
+        if category == "ai_cell":
             return [
                 {
                     "name": "ai_engine",
                     "type": "string",
                     "required": True,
                     "description": "AI engine identifier",
-                    "example": "claude-sonnet-3.5"
+                    "example": "claude-sonnet-3.5",
                 },
                 {
                     "name": "branch",
                     "type": "string",
                     "required": True,
                     "description": "Git branch identifier",
-                    "example": "OS"
-                }
+                    "example": "OS",
+                },
             ]
-        elif category == 'tool':
+        elif category == "tool":
             return [
                 {
                     "name": "operation",
                     "type": "string",
                     "required": True,
                     "description": "Operation to perform",
-                    "example": "extract_knowledge"
+                    "example": "extract_knowledge",
                 }
             ]
         else:
@@ -180,22 +180,21 @@ class ToolMetadata:
                     "type": "object",
                     "required": False,
                     "description": "Configuration parameters",
-                    "example": {}
+                    "example": {},
                 }
             ]
 
-    def _determine_output_formats(self,
-                                  component_data: Dict[str, Any]) -> List[str]:
+    def _determine_output_formats(self, component_data: Dict[str, Any]) -> List[str]:
         """Determine output formats the tool can produce"""
-        formats = ['json']  # Default
+        formats = ["json"]  # Default
 
-        description = component_data.get('description', '').lower()
-        if 'report' in description:
-            formats.extend(['json', 'markdown', 'html'])
-        if 'analysis' in description:
-            formats.extend(['json', 'csv'])
-        if 'documentation' in description:
-            formats.extend(['markdown', 'html'])
+        description = component_data.get("description", "").lower()
+        if "report" in description:
+            formats.extend(["json", "markdown", "html"])
+        if "analysis" in description:
+            formats.extend(["json", "csv"])
+        if "documentation" in description:
+            formats.extend(["markdown", "html"])
 
         return list(set(formats))
 
@@ -205,12 +204,7 @@ class ToolMetadata:
 
     def _analyze_resource_requirements(self) -> Dict[str, str]:
         """Analyze resource requirements"""
-        return {
-            "memory": "low",
-            "cpu": "medium",
-            "disk": "low",
-            "network": "none"
-        }
+        return {"memory": "low", "cpu": "medium", "disk": "low", "network": "none"}
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization"""
@@ -226,7 +220,7 @@ class ToolMetadata:
             "output_formats": self.output_formats,
             "execution_time_estimate": self.execution_time_estimate,
             "resource_requirements": self.resource_requirements,
-            "metadata_generated": self.metadata_generated
+            "metadata_generated": self.metadata_generated,
         }
 
 
@@ -248,33 +242,28 @@ class AIOSInterfaceBridge:
         # Initialize Security Supercell (Phase 11 Day 2.9)
         if SECURITY_AVAILABLE:
             self.logger.info("🛡️  Initializing Security Supercell validators")
-            
+
             # Initialize security consciousness
-            self.security_consciousness = (
-                initialize_security_consciousness(workspace_root)
+            self.security_consciousness = initialize_security_consciousness(
+                workspace_root
             )
-            
+
             # Initialize validators
             self.membrane_validator = MembraneValidator(
-                workspace_path=workspace_root,
-                consciousness=self.security_consciousness
+                workspace_path=workspace_root, consciousness=self.security_consciousness
             )
             self.immune_memory = ImmuneMemory(
-                workspace_path=workspace_root,
-                consciousness=self.security_consciousness
+                workspace_path=workspace_root, consciousness=self.security_consciousness
             )
             self.coherence_enforcer = CoherenceEnforcer(
-                workspace_path=workspace_root,
-                consciousness=self.security_consciousness
+                workspace_path=workspace_root, consciousness=self.security_consciousness
             )
             self.network_validator = NetworkValidator(
-                workspace_path=workspace_root,
-                consciousness=self.security_consciousness
+                workspace_path=workspace_root, consciousness=self.security_consciousness
             )
-            
+
             self.logger.info(
-                "✅ Security Supercell active - "
-                "All validators operational"
+                "✅ Security Supercell active - " "All validators operational"
             )
         else:
             self.security_consciousness = None
@@ -283,8 +272,7 @@ class AIOSInterfaceBridge:
             self.coherence_enforcer = None
             self.network_validator = None
             self.logger.warning(
-                "⚠️  Security Supercell disabled - "
-                "Running without protection"
+                "⚠️  Security Supercell disabled - " "Running without protection"
             )
 
         # Initialize FastAPI if available
@@ -295,14 +283,14 @@ class AIOSInterfaceBridge:
 
     def _setup_logging(self) -> logging.Logger:
         """Setup logging for interface bridge"""
-        logger = logging.getLogger('AIOS.InterfaceBridge')
+        logger = logging.getLogger("AIOS.InterfaceBridge")
         logger.setLevel(logging.INFO)
 
         # Console handler
         if not logger.handlers:
             console_handler = logging.StreamHandler()
             formatter = logging.Formatter(
-                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+                "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
             )
             console_handler.setFormatter(formatter)
             logger.addHandler(console_handler)
@@ -314,8 +302,8 @@ class AIOSInterfaceBridge:
         app = FastAPI(  # type: ignore[possibly-unbound-variable]
             title="AIOS Interface Bridge API",
             description="Bridge API for C#/.NET to discover and "
-                        "interact with Python AI tools",
-            version="1.0.0"
+            "interact with Python AI tools",
+            version="1.0.0",
         )
 
         # Add CORS middleware for cross-origin requests
@@ -337,9 +325,7 @@ class AIOSInterfaceBridge:
 
         return app
 
-    def _register_api_endpoints(
-        self, app: "FastAPI"  # type: ignore[name-defined]
-    ):
+    def _register_api_endpoints(self, app: "FastAPI"):  # type: ignore[name-defined]
         """Register all API endpoints"""
 
         @app.get("/")
@@ -360,12 +346,10 @@ class AIOSInterfaceBridge:
                     "/categories": "List tool categories",
                     "/health": "Health check",
                     "/discovery/refresh": "Refresh tool discovery",
-                    "/ai/similarity": (
-                        "AI similarity search with LLM reasoning"
-                    ),
-                    "/ai/neurons": "Neuron database statistics"
+                    "/ai/similarity": ("AI similarity search with LLM reasoning"),
+                    "/ai/neurons": "Neuron database statistics",
                 },
-                "consciousness": 3.05
+                "consciousness": 3.05,
             }
 
         @app.get("/health")
@@ -380,7 +364,7 @@ class AIOSInterfaceBridge:
                     "llm_reasoning": SIMILARITY_AVAILABLE,
                     "embedding_search": SIMILARITY_AVAILABLE,
                     "tool_discovery": True,
-                    "tool_execution": True
+                    "tool_execution": True,
                 }
 
                 # AINLP.architectural-pattern (graceful-degradation):
@@ -403,17 +387,14 @@ class AIOSInterfaceBridge:
             try:
                 await self.refresh_discovery()
 
-                tools_list = [
-                    tool.to_dict() for tool in self.discovered_tools.values()
-                ]
+                tools_list = [tool.to_dict() for tool in self.discovered_tools.values()]
 
                 return {
                     "tools": tools_list,
                     "total_count": len(self.discovered_tools),
                     "last_discovery": (
-                        self.last_discovery.isoformat()
-                        if self.last_discovery else None
-                    )
+                        self.last_discovery.isoformat() if self.last_discovery else None
+                    ),
                 }
             except Exception as e:
                 # AINLP.architectural-pattern (graceful-degradation):
@@ -459,14 +440,14 @@ class AIOSInterfaceBridge:
                 if category not in categories:
                     categories[category] = {
                         "name": category,
-                        "display_name": category.replace('_', ' ').title(),
-                        "tools": []
+                        "display_name": category.replace("_", " ").title(),
+                        "tools": [],
                     }
                 categories[category]["tools"].append(tool.name)
 
             return {
                 "categories": list(categories.values()),
-                "total_categories": len(categories)
+                "total_categories": len(categories),
             }
 
         @app.post("/discovery/refresh")
@@ -478,9 +459,8 @@ class AIOSInterfaceBridge:
                     "message": "Discovery refreshed successfully",
                     "tools_discovered": len(self.discovered_tools),
                     "discovery_time": (
-                        self.last_discovery.isoformat()
-                        if self.last_discovery else None
-                    )
+                        self.last_discovery.isoformat() if self.last_discovery else None
+                    ),
                 }
             except Exception as e:
                 # AINLP.architectural-pattern (graceful-degradation):
@@ -492,9 +472,7 @@ class AIOSInterfaceBridge:
         # Phase 11 AI Similarity Endpoints
 
         @app.post("/ai/similarity")
-        async def ai_similarity_search(
-            query: str, max_results: int = 5
-        ):
+        async def ai_similarity_search(query: str, max_results: int = 5):
             """
             AI Similarity Search with LLM Reasoning
 
@@ -528,14 +506,12 @@ class AIOSInterfaceBridge:
                 # AINLP.architectural-pattern (graceful-degradation):
                 # HTTPException from conditional FastAPI import
                 raise HTTPException(  # type: ignore[possibly-unbound]
-                    status_code=503,
-                    detail="AI Similarity Engine not available"
+                    status_code=503, detail="AI Similarity Engine not available"
                 )
 
             try:
                 self.logger.info(
-                    f"🔍 AI Similarity Query: '{query}' "
-                    f"(max_results={max_results})"
+                    f"🔍 AI Similarity Query: '{query}' " f"(max_results={max_results})"
                 )
 
                 # Execute similarity search
@@ -543,40 +519,36 @@ class AIOSInterfaceBridge:
                 # similarity_engine type is object for graceful degradation
                 # Runtime: SIMILARITY_AVAILABLE guard ensures proper type
                 # Pylance warning accepted - no type stubs for dynamic import
-                results = (
-                    similarity_engine.find_similar_neurons(
-                        functionality=query, max_results=max_results
-                    )
+                results = similarity_engine.find_similar_neurons(
+                    functionality=query, max_results=max_results
                 )
 
                 # Format response
                 formatted_results = []
                 for result in results:
-                    purpose = result['neuron_purpose']
+                    purpose = result["neuron_purpose"]
                     if len(purpose) > 200:
                         purpose = purpose[:200] + "..."
 
-                    formatted_results.append({
-                        "neuron": result['neuron_name'],
-                        "similarity": round(result['consensus_score'], 1),
-                        "embedding_score": round(
-                            result['embedding_score'], 1
-                        ),
-                        "llm_score": round(result['llm_score'], 1),
-                        "reasoning": result.get('llm_reasoning', 'N/A'),
-                        "path": result['neuron_path'],
-                        "purpose": purpose
-                    })
+                    formatted_results.append(
+                        {
+                            "neuron": result["neuron_name"],
+                            "similarity": round(result["consensus_score"], 1),
+                            "embedding_score": round(result["embedding_score"], 1),
+                            "llm_score": round(result["llm_score"], 1),
+                            "reasoning": result.get("llm_reasoning", "N/A"),
+                            "path": result["neuron_path"],
+                            "purpose": purpose,
+                        }
+                    )
 
-                self.logger.info(
-                    f"✅ Found {len(formatted_results)} results"
-                )
+                self.logger.info(f"✅ Found {len(formatted_results)} results")
 
                 return {
                     "results": formatted_results,
                     "query": query,
                     "method": "embedding + llm consensus (gemma3:1b)",
-                    "total_results": len(formatted_results)
+                    "total_results": len(formatted_results),
                 }
 
             except Exception as e:
@@ -584,8 +556,7 @@ class AIOSInterfaceBridge:
                 # AINLP.architectural-pattern (graceful-degradation):
                 # HTTPException from conditional FastAPI import
                 raise HTTPException(  # type: ignore[possibly-unbound]
-                    status_code=500,
-                    detail=f"Similarity search failed: {e}"
+                    status_code=500, detail=f"Similarity search failed: {e}"
                 )
 
         @app.get("/ai/neurons")
@@ -611,8 +582,7 @@ class AIOSInterfaceBridge:
                 # AINLP.architectural-pattern (graceful-degradation):
                 # HTTPException from conditional FastAPI import
                 raise HTTPException(  # type: ignore[possibly-unbound]
-                    status_code=503,
-                    detail="AI Similarity Engine not available"
+                    status_code=503, detail="AI Similarity Engine not available"
                 )
 
             try:
@@ -623,12 +593,10 @@ class AIOSInterfaceBridge:
                 stats = similarity_engine.get_database_stats()
 
                 return {
-                    "total_neurons": stats.get('total_neurons', 0),
-                    "embeddings_generated": stats.get(
-                        'embeddings_ready', False
-                    ),
-                    "supercells": stats.get('by_supercell', {}),
-                    "database_path": str(similarity_engine.db_path)
+                    "total_neurons": stats.get("total_neurons", 0),
+                    "embeddings_generated": stats.get("embeddings_ready", False),
+                    "supercells": stats.get("by_supercell", {}),
+                    "database_path": str(similarity_engine.db_path),
                 }
 
             except Exception as e:
@@ -636,8 +604,7 @@ class AIOSInterfaceBridge:
                 # AINLP.architectural-pattern (graceful-degradation):
                 # HTTPException from conditional FastAPI import
                 raise HTTPException(  # type: ignore[possibly-unbound]
-                    status_code=500,
-                    detail=f"Failed to retrieve neuron statistics: {e}"
+                    status_code=500, detail=f"Failed to retrieve neuron statistics: {e}"
                 )
 
     async def refresh_discovery(self, force: bool = False):
@@ -657,12 +624,12 @@ class AIOSInterfaceBridge:
         self.discovered_tools = {}
         for name, component in components.items():
             component_data = {
-                'description': component.description,
-                'category': component.category,
-                'status': 'available',
-                'path': str(component.path),
-                'type': component.type,
-                'dependencies': component.dependencies
+                "description": component.description,
+                "category": component.category,
+                "status": "available",
+                "path": str(component.path),
+                "type": component.type,
+                "dependencies": component.dependencies,
             }
 
             tool_metadata = ToolMetadata(name, component_data)
@@ -676,7 +643,7 @@ class AIOSInterfaceBridge:
     ) -> Dict[str, Any]:
         """
         Execute a specific tool with parameters.
-        
+
         Phase 11 Day 2.9: Security Supercell Integration
         - MembraneValidator: Parameter safety validation
         - CoherenceEnforcer: Resource limit enforcement
@@ -689,9 +656,7 @@ class AIOSInterfaceBridge:
         # Get the original component from sequencer
         components = await self.sequencer.discover_components()
         if tool_name not in components:
-            raise ValueError(
-                f"Component '{tool_name}' not available in sequencer"
-            )
+            raise ValueError(f"Component '{tool_name}' not available in sequencer")
 
         component = components[tool_name]
 
@@ -705,41 +670,32 @@ class AIOSInterfaceBridge:
             # Validate parameter safety before execution
             if SECURITY_AVAILABLE and self.membrane_validator:
                 self.logger.debug("🛡️  Applying membrane validation...")
-                
+
                 # Validate parameter keys (allowlist)
                 if parameters:
-                    self.membrane_validator.validate_parameter_keys(
+                    self.membrane_validator.validate_parameter_keys(parameters)
+
+                    # Sanitize parameter values
+                    parameters = self.membrane_validator.sanitize_parameter_values(
                         parameters
                     )
-                    
-                    # Sanitize parameter values
-                    parameters = (
-                        self.membrane_validator.sanitize_parameter_values(
-                            parameters
-                        )
-                    )
-                    
+
                     # Validate paths if present
                     for key, value in parameters.items():
-                        if isinstance(value, str) and (
-                            '/' in value or '\\' in value
-                        ):
-                            self.membrane_validator.validate_path_safety(
-                                value
-                            )
-            
+                        if isinstance(value, str) and ("/" in value or "\\" in value):
+                            self.membrane_validator.validate_path_safety(value)
+
             # SECURITY LAYER 2: Coherence Enforcer
             # Enforce resource limits before execution
             if SECURITY_AVAILABLE and self.coherence_enforcer:
                 self.logger.debug("🛡️  Enforcing resource limits...")
                 self.coherence_enforcer.enforce_resource_limits(
-                    operation="tool_execution",
-                    file_path=str(component.path)
+                    operation="tool_execution", file_path=str(component.path)
                 )
-            
+
             # Prepare execution environment
             # Build command with parameters
-            if component.type == 'python':
+            if component.type == "python":
                 # For Python components, try to execute with parameters
                 cmd_parts = ["python", str(component.path)]
 
@@ -756,12 +712,10 @@ class AIOSInterfaceBridge:
                     capture_output=True,
                     text=True,
                     timeout=300,  # 5 minute timeout
-                    shell=False  # SECURITY: Disable shell execution
+                    shell=False,  # SECURITY: Disable shell execution
                 )
 
-                execution_time = (
-                    datetime.now() - execution_start
-                ).total_seconds()
+                execution_time = (datetime.now() - execution_start).total_seconds()
 
                 return {
                     "tool_name": tool_name,
@@ -774,12 +728,10 @@ class AIOSInterfaceBridge:
                     "execution_time_seconds": execution_time,
                     "parameters_used": parameters,
                     "timestamp": execution_start.isoformat(),
-                    "security_validated": SECURITY_AVAILABLE
+                    "security_validated": SECURITY_AVAILABLE,
                 }
             else:
-                raise ValueError(
-                    f"Unsupported component type: {component.type}"
-                )
+                raise ValueError(f"Unsupported component type: {component.type}")
 
         except subprocess.TimeoutExpired:
             return {
@@ -787,32 +739,38 @@ class AIOSInterfaceBridge:
                 "execution_status": "timeout",
                 "error": "Tool execution timed out after 5 minutes",
                 "parameters_used": parameters,
-                "timestamp": execution_start.isoformat()
+                "timestamp": execution_start.isoformat(),
             }
         except Exception as e:
             # SECURITY LAYER 4: Immune Memory
             # Record blocked attacks for adaptive immunity
             if SECURITY_AVAILABLE and self.immune_memory:
                 # Determine if this is a security exception
-                if any(keyword in str(e).lower() for keyword in [
-                    'injection', 'traversal', 'boundary', 'resource',
-                    'exhaustion', 'ssrf', 'rebinding'
-                ]):
-                    self.logger.warning(
-                        f"🛡️  Security attack blocked: {str(e)}"
-                    )
+                if any(
+                    keyword in str(e).lower()
+                    for keyword in [
+                        "injection",
+                        "traversal",
+                        "boundary",
+                        "resource",
+                        "exhaustion",
+                        "ssrf",
+                        "rebinding",
+                    ]
+                ):
+                    self.logger.warning(f"🛡️  Security attack blocked: {str(e)}")
                     self.immune_memory.record_attack(
                         attack_type=type(e).__name__,
                         attack_pattern=str(e),
-                        parameters=parameters or {}
+                        parameters=parameters or {},
                     )
-            
+
             return {
                 "tool_name": tool_name,
                 "execution_status": "error",
                 "error": str(e),
                 "parameters_used": parameters,
-                "timestamp": execution_start.isoformat()
+                "timestamp": execution_start.isoformat(),
             }
 
     async def health_check(self) -> Dict[str, Any]:
@@ -824,28 +782,17 @@ class AIOSInterfaceBridge:
             # Check tool discovery freshness
             discovery_age = None
             if self.last_discovery:
-                discovery_age = (
-                    datetime.now() - self.last_discovery
-                ).total_seconds()
+                discovery_age = (datetime.now() - self.last_discovery).total_seconds()
 
             # Security Supercell health status
-            security_status = {
-                "available": SECURITY_AVAILABLE,
-                "validators": {}
-            }
-            
+            security_status = {"available": SECURITY_AVAILABLE, "validators": {}}
+
             if SECURITY_AVAILABLE and self.security_consciousness:
                 security_status["validators"] = {
-                    "membrane_validator": (
-                        self.membrane_validator is not None
-                    ),
+                    "membrane_validator": (self.membrane_validator is not None),
                     "immune_memory": self.immune_memory is not None,
-                    "coherence_enforcer": (
-                        self.coherence_enforcer is not None
-                    ),
-                    "network_validator": (
-                        self.network_validator is not None
-                    )
+                    "coherence_enforcer": (self.coherence_enforcer is not None),
+                    "network_validator": (self.network_validator is not None),
                 }
                 security_status["consciousness_level"] = (
                     self.security_consciousness.consciousness_level
@@ -858,22 +805,20 @@ class AIOSInterfaceBridge:
                 "discovery_age_seconds": discovery_age,
                 "sequencer_status": "connected",
                 "sequencer_components": len(sequencer_health),
-                "api_server_status": (
-                    "running" if FASTAPI_AVAILABLE else "disabled"
-                ),
+                "api_server_status": ("running" if FASTAPI_AVAILABLE else "disabled"),
                 "security_supercell": security_status,
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
             }
         except Exception as e:
             return {
                 "status": "unhealthy",
                 "error": str(e),
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
             }
 
     def generate_csharp_interface_code(self) -> str:
         """Generate C# interface code for .NET integration"""
-        interface_code = '''
+        interface_code = """
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -1006,7 +951,7 @@ namespace AIOS.Models
         public int TotalCategories { get; set; }
     }
 }
-'''
+"""
         return interface_code
 
     def save_csharp_interface(self) -> Path:
@@ -1016,20 +961,16 @@ namespace AIOS.Models
 
         interface_code = self.generate_csharp_interface_code()
 
-        with open(interface_file, 'w', encoding='utf-8') as f:
+        with open(interface_file, "w", encoding="utf-8") as f:
             f.write(interface_code)
 
         self.logger.info(f"✅ Generated C# interface: {interface_file}")
         return interface_file
 
-    async def start_api_server(
-        self, host: str = "localhost", port: int = 8001
-    ):
+    async def start_api_server(self, host: str = "localhost", port: int = 8001):
         """Start the HTTP API server with proper lifecycle management"""
         if not FASTAPI_AVAILABLE:
-            self.logger.error(
-                "❌ FastAPI not available - cannot start API server"
-            )
+            self.logger.error("❌ FastAPI not available - cannot start API server")
             return
 
         # Initial discovery
@@ -1038,17 +979,11 @@ namespace AIOS.Models
         # Generate C# interface
         self.save_csharp_interface()
 
-        self.logger.info(
-            f"🚀 Starting AIOS Interface Bridge API on {host}:{port}"
-        )
+        self.logger.info(f"🚀 Starting AIOS Interface Bridge API on {host}:{port}")
         self.logger.info(f"   📖 Documentation: http://{host}:{port}/docs")
         self.logger.info(f"   🔧 Health Check: http://{host}:{port}/health")
-        self.logger.info(
-            f"   🧠 AI Similarity: http://{host}:{port}/ai/similarity"
-        )
-        self.logger.info(
-            f"   📊 Neuron Stats: http://{host}:{port}/ai/neurons"
-        )
+        self.logger.info(f"   🧠 AI Similarity: http://{host}:{port}/ai/similarity")
+        self.logger.info(f"   📊 Neuron Stats: http://{host}:{port}/ai/neurons")
 
         # Export initial discovery for C# integration
         await self._export_discovery_metadata()
@@ -1059,12 +994,10 @@ namespace AIOS.Models
             host=host,
             port=port,
             log_level="info",
-            access_log=True
+            access_log=True,
         )
 
-        server = uvicorn.Server(  # type: ignore[possibly-unbound-variable]
-            config
-        )
+        server = uvicorn.Server(config)  # type: ignore[possibly-unbound-variable]
 
         # Add graceful shutdown handler
         import signal as signal_module
@@ -1087,20 +1020,16 @@ namespace AIOS.Models
         """Export discovery metadata for C# integration logging"""
         workspace_root = Path(self.workspace_root)
         export_file = (
-            workspace_root / "runtime" / "logs" /
-            "interface_bridge_discovery.json"
+            workspace_root / "runtime" / "logs" / "interface_bridge_discovery.json"
         )
 
         # Ensure directory exists
         export_file.parent.mkdir(parents=True, exist_ok=True)
 
         discovery_timestamp = (
-            self.last_discovery.isoformat()
-            if self.last_discovery else None
+            self.last_discovery.isoformat() if self.last_discovery else None
         )
-        tools_list = [
-            tool.to_dict() for tool in self.discovered_tools.values()
-        ]
+        tools_list = [tool.to_dict() for tool in self.discovered_tools.values()]
 
         metadata = {
             "discovery_timestamp": discovery_timestamp,
@@ -1113,11 +1042,11 @@ namespace AIOS.Models
                 "discovery": "/tools/{tool_name}",
                 "execute": "/tools/{tool_name}/execute",
                 "categories": "/categories",
-                "refresh": "/discovery/refresh"
-            }
+                "refresh": "/discovery/refresh",
+            },
         }
 
-        with open(export_file, 'w', encoding='utf-8') as f:
+        with open(export_file, "w", encoding="utf-8") as f:
             json.dump(metadata, f, indent=2, ensure_ascii=False)
 
         self.logger.info(f"💾 Exported discovery metadata: {export_file}")
@@ -1127,10 +1056,12 @@ async def main():
     """Main entry point for interface bridge"""
     # Ensure UTF-8 encoding for console output
     import sys
-    if sys.platform.startswith('win'):
+
+    if sys.platform.startswith("win"):
         import codecs
-        sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer)
-        sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer)
+
+        sys.stdout = codecs.getwriter("utf-8")(sys.stdout.buffer)
+        sys.stderr = codecs.getwriter("utf-8")(sys.stderr.buffer)
 
     # AINLP Pattern: Use centralized workspace discovery
     workspace_root = str(WORKSPACE_ROOT)
@@ -1174,7 +1105,7 @@ def health_check() -> Dict[str, Any]:
     return {
         "status": "available",
         "service": "interface_bridge",
-        "api_available": FASTAPI_AVAILABLE
+        "api_available": FASTAPI_AVAILABLE,
     }
 
 

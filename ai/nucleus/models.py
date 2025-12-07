@@ -1,6 +1,7 @@
 """
 Basic models for AIOS bridge endpoints and AINLP scaffolding
 """
+
 from typing import Any, Dict, List, Optional
 from pydantic import BaseModel
 
@@ -18,6 +19,7 @@ class BridgeStatusRequest(BaseModel):
 
 
 # Future AINLP scaffolding
+
 
 class AINLPCell(BaseModel):
     cell_id: str

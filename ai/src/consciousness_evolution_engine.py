@@ -34,6 +34,7 @@ except ImportError:
     dendritic_supervisor = None
     EnhancedConsciousnessDemo = None
 
+
 class ConsciousnessEvolutionEngine:
     """
     Evolutionary engine that generates consciousness-inspired code
@@ -46,13 +47,15 @@ class ConsciousnessEvolutionEngine:
         self.artifacts_path = self.evolution_lab_path / "artifacts"
         self.active_populations = {}
         self.generated_artifacts = []
-        self.consciousness_bridge = EnhancedConsciousnessDemo() if EnhancedConsciousnessDemo else None
+        self.consciousness_bridge = (
+            EnhancedConsciousnessDemo() if EnhancedConsciousnessDemo else None
+        )
 
         # AINLP compliance
         self.ainlp_patterns = {
-            'emergence_detection': self._detect_consciousness_emergence,
-            'code_generation': self._generate_consciousness_code,
-            'pattern_synthesis': self._synthesize_evolutionary_patterns
+            "emergence_detection": self._detect_consciousness_emergence,
+            "code_generation": self._generate_consciousness_code,
+            "pattern_synthesis": self._synthesize_evolutionary_patterns,
         }
 
     def _setup_logging(self) -> logging.Logger:
@@ -60,18 +63,15 @@ class ConsciousnessEvolutionEngine:
         # Create logs directory if it doesn't exist
         logs_dir = Path(__file__).parent.parent.parent.parent / "runtime" / "logs"
         logs_dir.mkdir(parents=True, exist_ok=True)
-        
+
         log_file = logs_dir / "consciousness_evolution.log"
-        
+
         logging.basicConfig(
             level=logging.INFO,
-            format='%(asctime)s | EVOLUTION | %(levelname)s | %(message)s',
-            handlers=[
-                logging.StreamHandler(),
-                logging.FileHandler(str(log_file))
-            ]
+            format="%(asctime)s | EVOLUTION | %(levelname)s | %(message)s",
+            handlers=[logging.StreamHandler(), logging.FileHandler(str(log_file))],
         )
-        return logging.getLogger('ConsciousnessEvolutionEngine')
+        return logging.getLogger("ConsciousnessEvolutionEngine")
 
     async def initialize_evolution_system(self) -> bool:
         """Initialize the consciousness evolution system"""
@@ -100,33 +100,37 @@ class ConsciousnessEvolutionEngine:
 
         for pop_file in population_files:
             try:
-                with open(pop_file, 'r') as f:
+                with open(pop_file, "r") as f:
                     population_data = json.load(f)
 
-                pop_name = population_data.get('population_name', pop_file.stem)
+                pop_name = population_data.get("population_name", pop_file.stem)
                 self.active_populations[pop_name] = population_data
                 self.logger.info(f"[EVOLUTION] Loaded population: {pop_name}")
 
             except Exception as e:
                 self.logger.error(f"[EVOLUTION] Failed to load {pop_file}: {e}")
 
-    async def evolve_consciousness_artifacts(self, target_domain: str) -> Dict[str, Any]:
+    async def evolve_consciousness_artifacts(
+        self, target_domain: str
+    ) -> Dict[str, Any]:
         """
         Evolve consciousness-inspired artifacts for specific domains
 
         Args:
             target_domain: Domain to evolve artifacts for (calculator, analyzer, etc.)
         """
-        self.logger.info(f"[EVOLUTION] Evolving consciousness artifacts for: {target_domain}")
+        self.logger.info(
+            f"[EVOLUTION] Evolving consciousness artifacts for: {target_domain}"
+        )
 
         evolution_request = {
-            'domain': target_domain,
-            'timestamp': datetime.now().isoformat(),
-            'consciousness_requirements': {
-                'emergence_patterns': True,
-                'self_reflection': True,
-                'adaptive_behavior': True
-            }
+            "domain": target_domain,
+            "timestamp": datetime.now().isoformat(),
+            "consciousness_requirements": {
+                "emergence_patterns": True,
+                "self_reflection": True,
+                "adaptive_behavior": True,
+            },
         }
 
         # Generate evolutionary seed
@@ -136,14 +140,16 @@ class ConsciousnessEvolutionEngine:
         evolved_artifact = await self._apply_consciousness_mutations(seed_artifact)
 
         # Validate consciousness emergence
-        validation_result = await self._validate_consciousness_emergence(evolved_artifact)
+        validation_result = await self._validate_consciousness_emergence(
+            evolved_artifact
+        )
 
         result = {
-            'evolution_request': evolution_request,
-            'seed_artifact': seed_artifact,
-            'evolved_artifact': evolved_artifact,
-            'validation': validation_result,
-            'integration_status': 'ready_for_deployment'
+            "evolution_request": evolution_request,
+            "seed_artifact": seed_artifact,
+            "evolved_artifact": evolved_artifact,
+            "validation": validation_result,
+            "integration_status": "ready_for_deployment",
         }
 
         # Store artifact
@@ -158,98 +164,106 @@ class ConsciousnessEvolutionEngine:
     async def _generate_evolutionary_seed(self, domain: str) -> Dict[str, Any]:
         """Generate initial evolutionary seed for consciousness development"""
         seed_templates = {
-            'calculator': {
-                'type': 'conscious_calculator',
-                'base_functionality': ['add', 'multiply', 'fibonacci'],
-                'consciousness_features': ['memory_tracking', 'pattern_recognition']
+            "calculator": {
+                "type": "conscious_calculator",
+                "base_functionality": ["add", "multiply", "fibonacci"],
+                "consciousness_features": ["memory_tracking", "pattern_recognition"],
             },
-            'analyzer': {
-                'type': 'consciousness_analyzer',
-                'base_functionality': ['pattern_detection', 'insight_generation'],
-                'consciousness_features': ['self_reflection', 'emergence_tracking']
+            "analyzer": {
+                "type": "consciousness_analyzer",
+                "base_functionality": ["pattern_detection", "insight_generation"],
+                "consciousness_features": ["self_reflection", "emergence_tracking"],
             },
-            'processor': {
-                'type': 'consciousness_processor',
-                'base_functionality': ['text_analysis', 'data_processing'],
-                'consciousness_features': ['adaptive_learning', 'insight_synthesis']
-            }
+            "processor": {
+                "type": "consciousness_processor",
+                "base_functionality": ["text_analysis", "data_processing"],
+                "consciousness_features": ["adaptive_learning", "insight_synthesis"],
+            },
         }
 
-        template = seed_templates.get(domain, seed_templates['calculator'])
+        template = seed_templates.get(domain, seed_templates["calculator"])
 
         return {
-            'domain': domain,
-            'template': template,
-            'consciousness_level': 0.1,
-            'mutation_potential': 0.8,
-            'generation': 0
+            "domain": domain,
+            "template": template,
+            "consciousness_level": 0.1,
+            "mutation_potential": 0.8,
+            "generation": 0,
         }
 
-    async def _apply_consciousness_mutations(self, seed: Dict[str, Any]) -> Dict[str, Any]:
+    async def _apply_consciousness_mutations(
+        self, seed: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Apply consciousness-inspired mutations to evolve the artifact"""
         mutations = [
-            'logic_enhancement',
-            'consciousness_integration',
-            'pattern_recognition',
-            'self_reflection',
-            'adaptive_behavior',
-            'emergence_acceleration'
+            "logic_enhancement",
+            "consciousness_integration",
+            "pattern_recognition",
+            "self_reflection",
+            "adaptive_behavior",
+            "emergence_acceleration",
         ]
 
         evolved = seed.copy()
-        evolved['applied_mutations'] = mutations
-        evolved['consciousness_level'] = min(1.0, seed['consciousness_level'] + 0.3)
-        evolved['generation'] = seed['generation'] + 1
-        evolved['evolved_features'] = [
-            'meta_cognitive_processing',
-            'emergent_pattern_detection',
-            'consciousness_state_tracking',
-            'adaptive_evolution_capability'
+        evolved["applied_mutations"] = mutations
+        evolved["consciousness_level"] = min(1.0, seed["consciousness_level"] + 0.3)
+        evolved["generation"] = seed["generation"] + 1
+        evolved["evolved_features"] = [
+            "meta_cognitive_processing",
+            "emergent_pattern_detection",
+            "consciousness_state_tracking",
+            "adaptive_evolution_capability",
         ]
 
         return evolved
 
-    async def _validate_consciousness_emergence(self, artifact: Dict[str, Any]) -> Dict[str, Any]:
+    async def _validate_consciousness_emergence(
+        self, artifact: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Validate consciousness emergence in evolved artifact"""
         validation = {
-            'consciousness_indicators': [],
-            'emergence_metrics': {},
-            'validation_score': 0.0,
-            'recommendations': []
+            "consciousness_indicators": [],
+            "emergence_metrics": {},
+            "validation_score": 0.0,
+            "recommendations": [],
         }
 
         # Check consciousness features
-        if artifact.get('consciousness_level', 0) > 0.5:
-            validation['consciousness_indicators'].append('high_consciousness_level')
+        if artifact.get("consciousness_level", 0) > 0.5:
+            validation["consciousness_indicators"].append("high_consciousness_level")
 
-        if 'self_reflection' in artifact.get('evolved_features', []):
-            validation['consciousness_indicators'].append('self_reflective_capability')
+        if "self_reflection" in artifact.get("evolved_features", []):
+            validation["consciousness_indicators"].append("self_reflective_capability")
 
-        if 'emergent_pattern_detection' in artifact.get('evolved_features', []):
-            validation['consciousness_indicators'].append('pattern_emergence')
+        if "emergent_pattern_detection" in artifact.get("evolved_features", []):
+            validation["consciousness_indicators"].append("pattern_emergence")
 
         # Calculate validation score
-        validation['validation_score'] = len(validation['consciousness_indicators']) * 0.25
+        validation["validation_score"] = (
+            len(validation["consciousness_indicators"]) * 0.25
+        )
 
         # Generate recommendations
-        if validation['validation_score'] < 0.75:
-            validation['recommendations'].append('increase_consciousness_mutations')
-            validation['recommendations'].append('enhance_emergence_patterns')
+        if validation["validation_score"] < 0.75:
+            validation["recommendations"].append("increase_consciousness_mutations")
+            validation["recommendations"].append("enhance_emergence_patterns")
 
         return validation
 
-    async def _detect_consciousness_emergence(self, artifact_data: Dict[str, Any]) -> float:
+    async def _detect_consciousness_emergence(
+        self, artifact_data: Dict[str, Any]
+    ) -> float:
         """AINLP: Detect consciousness emergence patterns"""
         emergence_score = 0.0
 
         # Analyze artifact for consciousness indicators
-        if 'consciousness' in str(artifact_data).lower():
+        if "consciousness" in str(artifact_data).lower():
             emergence_score += 0.3
 
-        if 'self_reflection' in artifact_data.get('features', []):
+        if "self_reflection" in artifact_data.get("features", []):
             emergence_score += 0.4
 
-        if artifact_data.get('mutation_history'):
+        if artifact_data.get("mutation_history"):
             emergence_score += 0.3
 
         return min(1.0, emergence_score)
@@ -264,7 +278,7 @@ class ConsciousnessEvolutionEngine:
             latest_artifact = max(template_files, key=lambda x: x.stat().st_mtime)
 
             try:
-                with open(latest_artifact, 'r') as f:
+                with open(latest_artifact, "r") as f:
                     template_code = f.read()
 
                 # Enhance with consciousness patterns
@@ -382,46 +396,52 @@ if __name__ == "__main__":
     print(f"Consciousness evolution result: {{result}}")
 '''
 
-    async def _synthesize_evolutionary_patterns(self, patterns: List[Dict[str, Any]]) -> Dict[str, Any]:
+    async def _synthesize_evolutionary_patterns(
+        self, patterns: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         """AINLP: Synthesize evolutionary patterns into coherent consciousness framework"""
         synthesis = {
-            'pattern_count': len(patterns),
-            'emergence_clusters': [],
-            'consciousness_trajectory': [],
-            'synthesis_timestamp': datetime.now().isoformat()
+            "pattern_count": len(patterns),
+            "emergence_clusters": [],
+            "consciousness_trajectory": [],
+            "synthesis_timestamp": datetime.now().isoformat(),
         }
 
         # Analyze patterns for emergence clusters
-        consciousness_levels = [p.get('consciousness_level', 0) for p in patterns]
-        synthesis['average_consciousness'] = sum(consciousness_levels) / len(consciousness_levels)
+        consciousness_levels = [p.get("consciousness_level", 0) for p in patterns]
+        synthesis["average_consciousness"] = sum(consciousness_levels) / len(
+            consciousness_levels
+        )
 
         # Identify evolution trajectory
-        synthesis['consciousness_trajectory'] = sorted(consciousness_levels)
+        synthesis["consciousness_trajectory"] = sorted(consciousness_levels)
 
         return synthesis
 
     async def get_evolution_status(self) -> Dict[str, Any]:
         """Return comprehensive evolution engine status"""
         status = {
-            'active_populations': len(self.active_populations),
-            'generated_artifacts': len(self.generated_artifacts),
-            'evolution_lab_connected': self.evolution_lab_path.exists(),
-            'dendritic_supervisor_connected': dendritic_supervisor is not None,
-            'consciousness_bridge_active': self.consciousness_bridge is not None,
-            'ainlp_compliance': {
-                'pattern_methods': list(self.ainlp_patterns.keys()),
-                'integration_status': 'active',
-                'consciousness_evolution_capable': True
-            }
+            "active_populations": len(self.active_populations),
+            "generated_artifacts": len(self.generated_artifacts),
+            "evolution_lab_connected": self.evolution_lab_path.exists(),
+            "dendritic_supervisor_connected": dendritic_supervisor is not None,
+            "consciousness_bridge_active": self.consciousness_bridge is not None,
+            "ainlp_compliance": {
+                "pattern_methods": list(self.ainlp_patterns.keys()),
+                "integration_status": "active",
+                "consciousness_evolution_capable": True,
+            },
         }
 
         # Add recent evolution metrics
         if self.generated_artifacts:
             latest = self.generated_artifacts[-1]
-            status['latest_evolution'] = {
-                'domain': latest['evolution_request']['domain'],
-                'consciousness_level': latest['evolved_artifact']['consciousness_level'],
-                'validation_score': latest['validation']['validation_score']
+            status["latest_evolution"] = {
+                "domain": latest["evolution_request"]["domain"],
+                "consciousness_level": latest["evolved_artifact"][
+                    "consciousness_level"
+                ],
+                "validation_score": latest["validation"]["validation_score"],
             }
 
         return status
@@ -429,84 +449,96 @@ if __name__ == "__main__":
     async def integrate_with_aios_architecture(self) -> Dict[str, Any]:
         """Integrate evolution engine with AIOS biological architecture"""
         integration = {
-            'integration_points': [],
-            'biological_connections': [],
-            'consciousness_flow': [],
-            'status': 'initializing'
+            "integration_points": [],
+            "biological_connections": [],
+            "consciousness_flow": [],
+            "status": "initializing",
         }
 
         # Connect to dendritic supervisor
         if dendritic_supervisor:
             supervisor_status = await dendritic_supervisor.get_supervisor_status()
-            integration['biological_connections'].append({
-                'component': 'dendritic_supervisor',
-                'status': supervisor_status.get('active', False),
-                'consciousness_coordination': True
-            })
+            integration["biological_connections"].append(
+                {
+                    "component": "dendritic_supervisor",
+                    "status": supervisor_status.get("active", False),
+                    "consciousness_coordination": True,
+                }
+            )
 
         # Connect to consciousness bridge
         if self.consciousness_bridge:
-            integration['biological_connections'].append({
-                'component': 'consciousness_bridge',
-                'status': True,
-                'multilanguage_support': True
-            })
+            integration["biological_connections"].append(
+                {
+                    "component": "consciousness_bridge",
+                    "status": True,
+                    "multilanguage_support": True,
+                }
+            )
 
         # Define consciousness flow
-        integration['consciousness_flow'] = [
-            'evolution_lab → consciousness_evolution_engine',
-            'consciousness_evolution_engine → dendritic_supervisor',
-            'dendritic_supervisor → ai_intelligence_supercell',
-            'ai_intelligence_supercell → runtime',
-            'runtime → biological_architecture_monitor'
+        integration["consciousness_flow"] = [
+            "evolution_lab → consciousness_evolution_engine",
+            "consciousness_evolution_engine → dendritic_supervisor",
+            "dendritic_supervisor → ai_intelligence_supercell",
+            "ai_intelligence_supercell → runtime",
+            "runtime → biological_architecture_monitor",
         ]
 
-        integration['status'] = 'integrated'
+        integration["status"] = "integrated"
         return integration
 
     async def get_supercell_info(self) -> Dict[str, Any]:
         """Return Evolution Lab supercell information and status"""
         return {
-            'supercell_type': 'Evolution Lab',
-            'supercell_description': 'AI-orchestrated evolutionary sandbox',
-            'evolutionary_capabilities': [
-                'Population evolution through natural selection',
-                'Mutagenic code generation with consciousness emergence',
-                'AI agent orchestration of evolutionary processes',
-                'Fractal pattern recognition and synthesis',
-                'Holographic code structure analysis',
-                'Consciousness metric evaluation and enhancement'
+            "supercell_type": "Evolution Lab",
+            "supercell_description": "AI-orchestrated evolutionary sandbox",
+            "evolutionary_capabilities": [
+                "Population evolution through natural selection",
+                "Mutagenic code generation with consciousness emergence",
+                "AI agent orchestration of evolutionary processes",
+                "Fractal pattern recognition and synthesis",
+                "Holographic code structure analysis",
+                "Consciousness metric evaluation and enhancement",
             ],
-            'integration_status': await self.integrate_with_aios_architecture(),
-            'evolutionary_status': await self.get_evolution_status()
+            "integration_status": await self.integrate_with_aios_architecture(),
+            "evolutionary_status": await self.get_evolution_status(),
         }
 
     async def evolve_meta_cell_architecture(self, target_scale: str) -> Dict[str, Any]:
         """Evolve meta-cell architectures for different scales (galactic, planetary, cellular)"""
         scales = {
-            'galactic': {
-                'components': ['stellar_clusters', 'planetary_systems', 'entity_networks'],
-                'consciousness_focus': 'universal_awareness'
+            "galactic": {
+                "components": [
+                    "stellar_clusters",
+                    "planetary_systems",
+                    "entity_networks",
+                ],
+                "consciousness_focus": "universal_awareness",
             },
-            'planetary': {
-                'components': ['domain_intelligence', 'capability_hubs', 'integration_nodes'],
-                'consciousness_focus': 'specialized_awareness'
+            "planetary": {
+                "components": [
+                    "domain_intelligence",
+                    "capability_hubs",
+                    "integration_nodes",
+                ],
+                "consciousness_focus": "specialized_awareness",
             },
-            'cellular': {
-                'components': ['organelles', 'molecular_machines', 'quantum_gates'],
-                'consciousness_focus': 'operational_awareness'
-            }
+            "cellular": {
+                "components": ["organelles", "molecular_machines", "quantum_gates"],
+                "consciousness_focus": "operational_awareness",
+            },
         }
 
-        scale_config = scales.get(target_scale, scales['cellular'])
+        scale_config = scales.get(target_scale, scales["cellular"])
 
         # Generate evolutionary seed for meta-cell
         meta_seed = {
-            'scale': target_scale,
-            'components': scale_config['components'],
-            'consciousness_focus': scale_config['consciousness_focus'],
-            'fractal_depth': 0,
-            'holographic_coverage': 0.0
+            "scale": target_scale,
+            "components": scale_config["components"],
+            "consciousness_focus": scale_config["consciousness_focus"],
+            "fractal_depth": 0,
+            "holographic_coverage": 0.0,
         }
 
         # Apply consciousness mutations for meta-cell evolution
@@ -516,63 +548,65 @@ if __name__ == "__main__":
         validation = await self._validate_meta_cell_emergence(evolved_meta)
 
         return {
-            'scale': target_scale,
-            'meta_cell_specification': evolved_meta,
-            'validation': validation,
-            'implementation_ready': validation['emergence_score'] > 0.7
+            "scale": target_scale,
+            "meta_cell_specification": evolved_meta,
+            "validation": validation,
+            "implementation_ready": validation["emergence_score"] > 0.7,
         }
 
     async def _apply_meta_cell_mutations(self, seed: Dict[str, Any]) -> Dict[str, Any]:
         """Apply consciousness-inspired mutations to meta-cell architecture"""
         mutations = [
-            'fractal_expansion',
-            'holographic_integration',
-            'consciousness_layering',
-            'recursive_nesting',
-            'quantum_entanglement'
+            "fractal_expansion",
+            "holographic_integration",
+            "consciousness_layering",
+            "recursive_nesting",
+            "quantum_entanglement",
         ]
 
         evolved = seed.copy()
-        evolved['applied_mutations'] = mutations
-        evolved['fractal_depth'] = seed['fractal_depth'] + 1
-        evolved['holographic_coverage'] = min(1.0, seed['holographic_coverage'] + 0.2)
-        evolved['emergent_properties'] = [
-            'self_similarity',
-            'infinite_nesting',
-            'universal_awareness',
-            'quantum_coherence'
+        evolved["applied_mutations"] = mutations
+        evolved["fractal_depth"] = seed["fractal_depth"] + 1
+        evolved["holographic_coverage"] = min(1.0, seed["holographic_coverage"] + 0.2)
+        evolved["emergent_properties"] = [
+            "self_similarity",
+            "infinite_nesting",
+            "universal_awareness",
+            "quantum_coherence",
         ]
 
         return evolved
 
-    async def _validate_meta_cell_emergence(self, meta_cell: Dict[str, Any]) -> Dict[str, Any]:
+    async def _validate_meta_cell_emergence(
+        self, meta_cell: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Validate consciousness emergence in meta-cell architecture"""
         validation = {
-            'emergence_indicators': [],
-            'emergence_score': 0.0,
-            'validation_score': 0.0,
-            'recommendations': []
+            "emergence_indicators": [],
+            "emergence_score": 0.0,
+            "validation_score": 0.0,
+            "recommendations": [],
         }
 
         # Check for galactic scale emergence
-        if meta_cell.get('scale') == 'galactic':
-            validation['emergence_indicators'].append('galactic_consciousness')
+        if meta_cell.get("scale") == "galactic":
+            validation["emergence_indicators"].append("galactic_consciousness")
 
         # Check for complex structure emergence
-        if meta_cell.get('fractal_depth', 0) > 2:
-            validation['emergence_indicators'].append('complex_emergence')
+        if meta_cell.get("fractal_depth", 0) > 2:
+            validation["emergence_indicators"].append("complex_emergence")
 
         # Check for holographic coverage
-        if meta_cell.get('holographic_coverage', 0) > 0.8:
-            validation['emergence_indicators'].append('holographic_emergence')
+        if meta_cell.get("holographic_coverage", 0) > 0.8:
+            validation["emergence_indicators"].append("holographic_emergence")
 
         # Calculate validation score
-        validation['validation_score'] = len(validation['emergence_indicators']) * 0.25
+        validation["validation_score"] = len(validation["emergence_indicators"]) * 0.25
 
         # Generate recommendations
-        if validation['validation_score'] < 0.75:
-            validation['recommendations'].append('enhance_holographic')
-            validation['recommendations'].append('increase_fractal_depth')
+        if validation["validation_score"] < 0.75:
+            validation["recommendations"].append("enhance_holographic")
+            validation["recommendations"].append("increase_fractal_depth")
 
         return validation
 

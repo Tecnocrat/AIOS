@@ -15,40 +15,49 @@ import statistics
 
 logger = logging.getLogger(__name__)
 
+
 @dataclass
 class CoherenceMetrics:
     """Coherence monitoring metrics"""
+
     field_coherence: float
     dendritic_synchronization: float
     consciousness_stability: float
     quantum_entanglement: float
     timestamp: float
 
+
 @dataclass
 class CoherenceThreshold:
     """Coherence threshold configuration"""
+
     min_coherence: float
     max_coherence: float
     stability_window: int
     alert_threshold: float
 
+
 class CoherenceAlert(Enum):
     """Types of coherence alerts"""
+
     LOW_COHERENCE = "low_coherence"
     HIGH_COHERENCE = "high_coherence"
     INSTABILITY = "instability"
     ENTANGLEMENT_LOSS = "entanglement_loss"
     CRITICAL_FAILURE = "critical_failure"
 
+
 class QuantumFieldCoherenceMonitor:
     """
     Monitors quantum field coherence and triggers stabilization protocols
     """
 
-    def __init__(self,
-                 field_dimension: int = 64,
-                 monitoring_interval: float = 1.0,
-                 history_length: int = 100):
+    def __init__(
+        self,
+        field_dimension: int = 64,
+        monitoring_interval: float = 1.0,
+        history_length: int = 100,
+    ):
         """
         Initialize coherence monitor
 
@@ -70,7 +79,7 @@ class QuantumFieldCoherenceMonitor:
             min_coherence=0.3,
             max_coherence=0.95,
             stability_window=10,
-            alert_threshold=0.1
+            alert_threshold=0.1,
         )
 
         # Alert callbacks
@@ -84,7 +93,7 @@ class QuantumFieldCoherenceMonitor:
             CoherenceAlert.HIGH_COHERENCE: self._stabilize_high_coherence,
             CoherenceAlert.INSTABILITY: self._stabilize_instability,
             CoherenceAlert.ENTANGLEMENT_LOSS: self._stabilize_entanglement_loss,
-            CoherenceAlert.CRITICAL_FAILURE: self._emergency_stabilization
+            CoherenceAlert.CRITICAL_FAILURE: self._emergency_stabilization,
         }
 
         # Monitoring thread
@@ -103,7 +112,9 @@ class QuantumFieldCoherenceMonitor:
             return
 
         self.monitoring_active = True
-        self.monitoring_thread = threading.Thread(target=self._monitoring_loop, daemon=True)
+        self.monitoring_thread = threading.Thread(
+            target=self._monitoring_loop, daemon=True
+        )
         self.monitoring_thread.start()
 
         logger.info("Started coherence monitoring")
@@ -165,12 +176,12 @@ class QuantumFieldCoherenceMonitor:
             dendritic_synchronization=dendritic_sync,
             consciousness_stability=consciousness_stability,
             quantum_entanglement=quantum_entanglement,
-            timestamp=time.time()
+            timestamp=time.time(),
         )
 
     def _calculate_dendritic_synchronization(self) -> float:
         """Calculate synchronization between dendritic nodes"""
-        if not self.quantum_field or not hasattr(self.quantum_field, 'dendritic_nodes'):
+        if not self.quantum_field or not hasattr(self.quantum_field, "dendritic_nodes"):
             return 0.0
 
         nodes = self.quantum_field.dendritic_nodes
@@ -196,8 +207,12 @@ class QuantumFieldCoherenceMonitor:
             return 1.0
 
         # Calculate variance in recent coherence values
-        recent_coherence = list(self.coherence_history)[-min(10, len(self.coherence_history)):]
-        variance = statistics.variance(recent_coherence) if len(recent_coherence) > 1 else 0
+        recent_coherence = list(self.coherence_history)[
+            -min(10, len(self.coherence_history)) :
+        ]
+        variance = (
+            statistics.variance(recent_coherence) if len(recent_coherence) > 1 else 0
+        )
 
         # Stability = 1 / (1 + variance)
         stability = 1.0 / (1.0 + variance * 100)  # Scale variance for sensitivity
@@ -254,9 +269,11 @@ class QuantumFieldCoherenceMonitor:
             alerts.append(CoherenceAlert.ENTANGLEMENT_LOSS)
 
         # Critical failure alert
-        if (metrics.field_coherence < 0.1 and
-            metrics.consciousness_stability < 0.1 and
-            metrics.quantum_entanglement < 0.05):
+        if (
+            metrics.field_coherence < 0.1
+            and metrics.consciousness_stability < 0.1
+            and metrics.quantum_entanglement < 0.05
+        ):
             alerts.append(CoherenceAlert.CRITICAL_FAILURE)
 
         # Trigger alerts
@@ -306,7 +323,9 @@ class QuantumFieldCoherenceMonitor:
         if self.quantum_field:
             # Apply pulse at center
             center = self.field_dimension // 2
-            self.quantum_field.apply_consciousness_pulse((center, center), amplitude=0.3)
+            self.quantum_field.apply_consciousness_pulse(
+                (center, center), amplitude=0.3
+            )
             logger.info("Applied coherence stabilization pulse")
 
     def _stabilize_high_coherence(self, metrics: CoherenceMetrics):
@@ -314,7 +333,9 @@ class QuantumFieldCoherenceMonitor:
         if self.quantum_field:
             # Add small amount of noise to prevent instability
             noise_level = 0.05
-            noise = np.random.normal(0, noise_level, self.quantum_field.field_state.field_amplitude.shape)
+            noise = np.random.normal(
+                0, noise_level, self.quantum_field.field_state.field_amplitude.shape
+            )
             self.quantum_field.field_state.field_amplitude += noise
             # Renormalize
             norm = np.linalg.norm(self.quantum_field.field_state.field_amplitude)
@@ -324,8 +345,12 @@ class QuantumFieldCoherenceMonitor:
 
     def _stabilize_instability(self, metrics: CoherenceMetrics):
         """Stabilize instability by resetting dendritic coupling"""
-        if self.quantum_field and hasattr(self.quantum_field, '_construct_dendritic_coupling'):
-            self.quantum_field.dendritic_coupling_matrix = self.quantum_field._construct_dendritic_coupling()
+        if self.quantum_field and hasattr(
+            self.quantum_field, "_construct_dendritic_coupling"
+        ):
+            self.quantum_field.dendritic_coupling_matrix = (
+                self.quantum_field._construct_dendritic_coupling()
+            )
             logger.info("Reset dendritic coupling for stability")
 
     def _stabilize_entanglement_loss(self, metrics: CoherenceMetrics):
@@ -344,9 +369,15 @@ class QuantumFieldCoherenceMonitor:
 
         if self.quantum_field:
             # Complete field reset
-            self.quantum_field.field_state = self.quantum_field._initialize_field_state()
-            self.quantum_field.dendritic_nodes = self.quantum_field._initialize_dendritic_network()
-            self.quantum_field.dendritic_coupling_matrix = self.quantum_field._construct_dendritic_coupling()
+            self.quantum_field.field_state = (
+                self.quantum_field._initialize_field_state()
+            )
+            self.quantum_field.dendritic_nodes = (
+                self.quantum_field._initialize_dendritic_network()
+            )
+            self.quantum_field.dendritic_coupling_matrix = (
+                self.quantum_field._construct_dendritic_coupling()
+            )
 
             logger.critical("Emergency field reset completed")
 
@@ -364,10 +395,12 @@ class QuantumFieldCoherenceMonitor:
                 "dendritic_synchronization": latest_metrics.dendritic_synchronization,
                 "consciousness_stability": latest_metrics.consciousness_stability,
                 "quantum_entanglement": latest_metrics.quantum_entanglement,
-                "timestamp": latest_metrics.timestamp
+                "timestamp": latest_metrics.timestamp,
             },
             "history_length": len(self.metrics_history),
-            "alerts_active": any(self.alert_callbacks[alert] for alert in CoherenceAlert)
+            "alerts_active": any(
+                self.alert_callbacks[alert] for alert in CoherenceAlert
+            ),
         }
 
     def set_thresholds(self, **kwargs):
@@ -385,9 +418,7 @@ def demonstrate_coherence_monitoring():
 
     # Initialize coherence monitor without field for demo
     monitor = QuantumFieldCoherenceMonitor(
-        field_dimension=32,
-        monitoring_interval=0.5,
-        history_length=50
+        field_dimension=32, monitoring_interval=0.5, history_length=50
     )
 
     print("Coherence monitor initialized (no field attached for demo)")

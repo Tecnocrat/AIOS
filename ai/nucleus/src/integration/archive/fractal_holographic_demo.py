@@ -37,7 +37,7 @@ def demonstrate_fractal_holographic_system():
         ("Minor issues", "Having some small problems"),
         ("Context loss", "I think we're losing context"),
         ("Build failure", "The build failed with errors"),
-        ("System recovery", "System recovered successfully")
+        ("System recovery", "System recovered successfully"),
     ]
 
     for scenario_name, user_input in test_scenarios:
@@ -66,7 +66,7 @@ def demonstrate_fractal_holographic_system():
         "Python AI",
         "C# UI",
         "VSCode Extension",
-        "AINLP Compiler"
+        "AINLP Compiler",
     ]
 
     print("Components being synchronized:")
@@ -79,8 +79,9 @@ def demonstrate_fractal_holographic_system():
         print(f"      → Fractal Coherence: {coherence:.3f}")
 
     # Calculate overall system coherence
-    overall_coherence = sum(
-    simulate_component_sync(comp) for comp in components) / len(components)
+    overall_coherence = sum(simulate_component_sync(comp) for comp in components) / len(
+        components
+    )
     print(f"\n Overall System Coherence: {overall_coherence:.3f}")
 
     # Phase 4: Demonstrate Context Recovery
@@ -100,7 +101,7 @@ def demonstrate_fractal_holographic_system():
         "Scanning Python AI modules",
         "Scanning C# interface",
         "Validating system health",
-        "Updating context tracking"
+        "Updating context tracking",
     ]
 
     for step in bootstrap_steps:
@@ -121,18 +122,20 @@ def demonstrate_fractal_holographic_system():
             "timestamp": datetime.now().isoformat(),
             "coherence": overall_coherence,
             "components_active": len(components),
-            "context_health": "good"
+            "context_health": "good",
         },
         "learning_data": {
             "fractal_patterns": ["pattern_1", "pattern_2", "pattern_3"],
             "neural_connections": 1024,
-            "holographic_resonance": 0.876
+            "holographic_resonance": 0.876,
         },
         "component_states": {
             component: {
-            "status": "operational", "coherence": simulate_component_sync(component)}
+                "status": "operational",
+                "coherence": simulate_component_sync(component),
+            }
             for component in components
-        }
+        },
     }
 
     print("  Holographic Memory State:")
@@ -147,7 +150,7 @@ def demonstrate_fractal_holographic_system():
         ("Python AI", "C# UI", "Neural network states"),
         ("C# UI", "VSCode Extension", "Context bridge"),
         ("VSCode Extension", "AINLP Compiler", "Code analysis"),
-        ("AINLP Compiler", "C++ Core", "Compiled patterns")
+        ("AINLP Compiler", "C++ Core", "Compiled patterns"),
     ]
 
     print("Communication Flow:")
@@ -163,7 +166,8 @@ def demonstrate_fractal_holographic_system():
     print(f"   • System Coherence: {overall_coherence:.3f}")
     print(f"   • Components Active: {len(components)}")
     print(
-    f"   • Context Health: {'Good' if overall_coherence > 0.7 else 'Needs Attention'}")
+        f"   • Context Health: {'Good' if overall_coherence > 0.7 else 'Needs Attention'}"
+    )
     print(f"   • Recovery System: Active")
     print(f"   • Holographic Memory: Operational")
     print(f"   • Cross-Component Sync: Enabled")
@@ -176,22 +180,30 @@ def demonstrate_fractal_holographic_system():
         "status": "demonstration_complete",
         "system_coherence": overall_coherence,
         "components_active": len(components),
-        "context_health": "good" if overall_coherence >
-         0.7 else "needs_attention",
-        "timestamp": datetime.now().isoformat()
+        "context_health": "good" if overall_coherence > 0.7 else "needs_attention",
+        "timestamp": datetime.now().isoformat(),
     }
 
 
 def calculate_demo_health_score(user_input: str) -> float:
     """Calculate demo health score based on user input"""
     context_loss_keywords = [
-        "losing context", "forgot", "what were we doing",
-        "context loss", "lost track", "starting over"
+        "losing context",
+        "forgot",
+        "what were we doing",
+        "context loss",
+        "lost track",
+        "starting over",
     ]
 
     error_keywords = [
-        "build failed", "error", "failing", "broken",
-        "not working", "problem", "issue"
+        "build failed",
+        "error",
+        "failing",
+        "broken",
+        "not working",
+        "problem",
+        "issue",
     ]
 
     user_lower = user_input.lower()
@@ -220,7 +232,7 @@ def simulate_component_sync(component: str) -> float:
         "Python AI": 0.823,
         "C# UI": 0.756,
         "VSCode Extension": 0.691,
-        "AINLP Compiler": 0.934
+        "AINLP Compiler": 0.934,
     }
 
     return coherence_map.get(component, 0.750)

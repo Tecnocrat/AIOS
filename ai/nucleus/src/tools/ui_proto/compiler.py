@@ -13,9 +13,7 @@ def load_spec(path: Path) -> Dict[str, Any]:
     text = path.read_text(encoding="utf-8")
     if path.suffix.lower() in {".yaml", ".yml"}:
         if yaml is None:
-            raise RuntimeError(
-                "pyyaml is required to load YAML specs. Install pyyaml."
-            )
+            raise RuntimeError("pyyaml is required to load YAML specs. Install pyyaml.")
         return yaml.safe_load(text)  # type: ignore[no-any-return]
     return json.loads(text)
 
@@ -27,11 +25,8 @@ def gen_web(spec: Dict[str, Any]) -> str:
         "<!doctype html>",
         '<html lang="en">',
         "<head>",
-        f"  <meta charset=\"utf-8\"><title>{title}</title>",
-        (
-            "  <meta name=\"viewport\" content=\"width=device-width, "
-            "initial-scale=1\">"
-        ),
+        f'  <meta charset="utf-8"><title>{title}</title>',
+        ('  <meta name="viewport" content="width=device-width, ' 'initial-scale=1">'),
         (
             "  <style>body{font-family:system-ui,Segoe UI,Arial,Helvetica,"
             "sans-serif;padding:16px}section{margin:12px 0}label{display:"
@@ -44,10 +39,8 @@ def gen_web(spec: Dict[str, Any]) -> str:
     ]
 
     for s in sections:
-        label_txt = s.get('title', 'Section')
-        parts.append(
-            f"<section role=\"region\" aria-label=\"{label_txt}\">"
-        )
+        label_txt = s.get("title", "Section")
+        parts.append(f'<section role="region" aria-label="{label_txt}">')
         if s.get("title"):
             parts.append(f"  <h2>{s['title']}</h2>")
         for c in s.get("components", []):
@@ -58,26 +51,20 @@ def gen_web(spec: Dict[str, Any]) -> str:
             intent = c.get("intent", "")
             role = a11y.get("role")
             aria = " ".join(
-                f'{k.replace("_", "-")}="{v}"' for k, v in a11y.items()
-                if k != "role"
+                f'{k.replace("_", "-")}="{v}"' for k, v in a11y.items() if k != "role"
             )
             data_intent = f' data-intent="{intent}"' if intent else ""
             role_attr = f' role="{role}"' if role else ""
             if t == "text":
                 parts.append(
-                    f"  <p id=\"{cid}\"{role_attr} {aria}>"
-                    f"{c.get('value', '')}</p>"
+                    f'  <p id="{cid}"{role_attr} {aria}>' f"{c.get('value', '')}</p>"
                 )
             elif t == "input":
-                parts.append(f"  <label for=\"{cid}\">{label}</label>")
-                parts.append(
-                    f"  <input id=\"{cid}\" aria-label=\"{label}\" {aria} />"
-                )
+                parts.append(f'  <label for="{cid}">{label}</label>')
+                parts.append(f'  <input id="{cid}" aria-label="{label}" {aria} />')
             elif t == "select":
-                parts.append(f"  <label for=\"{cid}\">{label}</label>")
-                parts.append(
-                    f"  <select id=\"{cid}\" aria-label=\"{label}\" {aria}>"
-                )
+                parts.append(f'  <label for="{cid}">{label}</label>')
+                parts.append(f'  <select id="{cid}" aria-label="{label}" {aria}>')
                 for opt in c.get("options", []):
                     parts.append(
                         f"    <option value=\"{opt.get('value', '')}\">"
@@ -86,14 +73,12 @@ def gen_web(spec: Dict[str, Any]) -> str:
                 parts.append("  </select>")
             elif t == "button":
                 parts.append(
-                    f"  <button id=\"{cid}\"{role_attr}{data_intent} "
-                    f"aria-label=\"{label}\" {aria}>"
+                    f'  <button id="{cid}"{role_attr}{data_intent} '
+                    f'aria-label="{label}" {aria}>'
                     f"{label or 'Button'}</button>"
                 )
             elif t == "list":
-                parts.append(
-                    f"  <ul id=\"{cid}\" aria-label=\"{label}\" {aria}>"
-                )
+                parts.append(f'  <ul id="{cid}" aria-label="{label}" {aria}>')
                 for item in c.get("items", []):
                     parts.append(f"    <li>{item}</li>")
                 parts.append("  </ul>")
@@ -114,22 +99,13 @@ def gen_wpf(spec: Dict[str, Any]) -> str:
     title = spec.get("title", spec.get("id", "AIOS UI"))
     parts = [
         (
-            "<UserControl xmlns=\"http://schemas.microsoft.com/winfx/2006/"
-            "xaml/presentation\""
+            '<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/'
+            'xaml/presentation"'
         ),
-        (
-            "             xmlns:x=\"http://schemas.microsoft.com/winfx/2006/"
-            "xaml\""
-        ),
-        (
-            f"             x:Class=\"AIOS.UI.Generated."
-            f"{spec.get('id', 'View')}\">"
-        ),
-        "  <StackPanel Margin=\"16\">",
-        (
-            f"    <TextBlock Text=\"{title}\" FontSize=\"20\" "
-            "Margin=\"0,0,0,12\" />"
-        ),
+        ('             xmlns:x="http://schemas.microsoft.com/winfx/2006/' 'xaml"'),
+        (f'             x:Class="AIOS.UI.Generated.' f"{spec.get('id', 'View')}\">"),
+        '  <StackPanel Margin="16">',
+        (f'    <TextBlock Text="{title}" FontSize="20" ' 'Margin="0,0,0,12" />'),
         "  </StackPanel>",
         "</UserControl>",
     ]
@@ -151,12 +127,8 @@ def main(argv: list[str]) -> int:
     import argparse
 
     p = argparse.ArgumentParser(description="AINLP UI Protocol compiler")
-    p.add_argument(
-        "--in", dest="in_path", required=True, help="Spec file (yaml/json)"
-    )
-    p.add_argument(
-        "--out", dest="out_dir", required=True, help="Output directory root"
-    )
+    p.add_argument("--in", dest="in_path", required=True, help="Spec file (yaml/json)")
+    p.add_argument("--out", dest="out_dir", required=True, help="Output directory root")
     args = p.parse_args(argv)
 
     in_path = Path(args.in_path)

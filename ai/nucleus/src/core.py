@@ -100,14 +100,14 @@ async def diagnostics():
                 "Integration diagnostics script not found at %s",
                 integration_path,
             )
-            _debug_manager.log_error(
-                f"Diagnostics script missing: {integration_path}"
-            )
+            _debug_manager.log_error(f"Diagnostics script missing: {integration_path}")
             return {"error": "Integration diagnostics script not found."}
         proc = await asyncio.create_subprocess_exec(
-            sys.executable, integration_path, "--preflight",
+            sys.executable,
+            integration_path,
+            "--preflight",
             stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE
+            stderr=asyncio.subprocess.PIPE,
         )
         stdout, stderr = await proc.communicate()
         return {

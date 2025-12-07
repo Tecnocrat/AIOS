@@ -14,9 +14,9 @@ from typing import Any, Dict, List, Optional
 
 
 class DebugSessionType(Enum):
-    QUICK = "quick"          # < 30 minutes
-    STANDARD = "standard"    # 30 minutes - 2 hours
-    EXTENDED = "extended"    # > 2 hours
+    QUICK = "quick"  # < 30 minutes
+    STANDARD = "standard"  # 30 minutes - 2 hours
+    EXTENDED = "extended"  # > 2 hours
     EMERGENCY = "emergency"  # Critical issues
 
 
@@ -31,6 +31,7 @@ class DebugSessionStatus(Enum):
 @dataclass
 class DebugContextSnapshot:
     """Snapshot of system context before debugging"""
+
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     timestamp: datetime = field(default_factory=datetime.now)
     debug_target: str = ""
@@ -47,6 +48,7 @@ class DebugContextSnapshot:
 @dataclass
 class DebugSession:
     """Active debug session tracking"""
+
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     target: str = ""
     description: str = ""
@@ -64,6 +66,7 @@ class DebugSession:
 @dataclass
 class DebugRecoveryResult:
     """Result of context recovery from debug session"""
+
     snapshot_id: str = ""
     start_time: datetime = field(default_factory=datetime.now)
     end_time: Optional[datetime] = None
@@ -95,10 +98,12 @@ class DebugIntegrationSystem:
         self._monitoring_active = True
         asyncio.create_task(self._monitor_debug_sessions())
 
-    async def start_debug_session(self, debug_target: str,
-                                  description: Optional[str] = None,
-                                  session_type: Optional[DebugSessionType] = None
-                                  ) -> DebugSession:
+    async def start_debug_session(
+        self,
+        debug_target: str,
+        description: Optional[str] = None,
+        session_type: Optional[DebugSessionType] = None,
+    ) -> DebugSession:
         """Start a new debug session with context preservation"""
         if session_type is None:
             session_type = DebugSessionType.STANDARD
@@ -107,8 +112,7 @@ class DebugIntegrationSystem:
             print(f"\n Starting Debug Session: {debug_target}")
 
             # Create debug context snapshot
-            snapshot = await self._create_debug_snapshot(debug_target,
-                                                         description)
+            snapshot = await self._create_debug_snapshot(debug_target, description)
             print(f" Debug snapshot created: {snapshot.id}")
 
             # Initialize debug session
@@ -116,7 +120,7 @@ class DebugIntegrationSystem:
                 target=debug_target,
                 description=description or f"Debug session for {debug_target}",
                 session_type=session_type,
-                snapshot_id=snapshot.id
+                snapshot_id=snapshot.id,
             )
 
             self.active_sessions[session.id] = session
@@ -134,10 +138,12 @@ class DebugIntegrationSystem:
             self.logger.error(f"Failed to start debug session: {e}")
             raise DebugSessionError(f"Failed to start debug session: {e}")
 
-    async def complete_debug_session(self, session_id: str,
-                                     debug_findings: Optional[List[str]] = None,
-                                     restore_context: bool = True
-                                     ) -> DebugRecoveryResult:
+    async def complete_debug_session(
+        self,
+        session_id: str,
+        debug_findings: Optional[List[str]] = None,
+        restore_context: bool = True,
+    ) -> DebugRecoveryResult:
         """Complete debug session and restore context"""
         if session_id not in self.active_sessions:
             raise ValueError(f"Debug session not found: {session_id}")
@@ -166,8 +172,7 @@ class DebugIntegrationSystem:
                 if recovery_result.success:
                     print(" Context restored successfully")
                 else:
-                    print(f" Context restoration failed: "
-                          f"{recovery_result.error}")
+                    print(f" Context restoration failed: " f"{recovery_result.error}")
 
             # Complete session
             session.status = DebugSessionStatus.COMPLETED
@@ -182,7 +187,7 @@ class DebugIntegrationSystem:
             return recovery_result or DebugRecoveryResult(
                 snapshot_id=session.snapshot_id,
                 success=True,
-                steps_executed=["Debug session completed without restoration"]
+                steps_executed=["Debug session completed without restoration"],
             )
 
         except Exception as e:
@@ -190,23 +195,22 @@ class DebugIntegrationSystem:
             self.logger.error(f"Failed to complete debug session: {e}")
             raise DebugSessionError(f"Failed to complete debug session: {e}")
 
-    async def create_debug_snapshot(self, debug_target: str,
-                                    description: str = None
-                                    ) -> DebugContextSnapshot:
+    async def create_debug_snapshot(
+        self, debug_target: str, description: str = None
+    ) -> DebugContextSnapshot:
         """Create a debug context snapshot manually"""
         return await self._create_debug_snapshot(debug_target, description)
 
-    async def restore_from_snapshot(self, snapshot_id: str,
-                                    debug_insights: List[str] = None
-                                    ) -> DebugRecoveryResult:
+    async def restore_from_snapshot(
+        self, snapshot_id: str, debug_insights: List[str] = None
+    ) -> DebugRecoveryResult:
         """Restore context from a specific debug snapshot"""
         if snapshot_id not in self.debug_snapshots:
             raise ValueError(f"Debug snapshot not found: {snapshot_id}")
 
         return await self._restore_debug_context(snapshot_id, debug_insights)
 
-    async def get_debug_session_status(self, session_id: str = None
-                                       ) -> Dict[str, Any]:
+    async def get_debug_session_status(self, session_id: str = None) -> Dict[str, Any]:
         """Get status of debug sessions"""
         if session_id:
             if session_id not in self.active_sessions:
@@ -220,7 +224,7 @@ class DebugIntegrationSystem:
                 "duration": str(datetime.now() - session.start_time),
                 "context_health": session.context_health,
                 "warnings": session.warnings,
-                "findings_count": len(session.findings)
+                "findings_count": len(session.findings),
             }
         else:
             return {
@@ -232,10 +236,10 @@ class DebugIntegrationSystem:
                         "id": s.id,
                         "target": s.target,
                         "status": s.status.value,
-                        "duration": str(datetime.now() - s.start_time)
+                        "duration": str(datetime.now() - s.start_time),
                     }
                     for s in self.active_sessions.values()
-                ]
+                ],
             }
 
     async def process_debug_command(self, command: str) -> Dict[str, Any]:
@@ -244,85 +248,86 @@ class DebugIntegrationSystem:
 
         try:
             # Save debug context commands
-            if any(phrase in command_lower for phrase in [
-                "save debug context", "create debug snapshot",
-                "preserve current state"
-            ]):
+            if any(
+                phrase in command_lower
+                for phrase in [
+                    "save debug context",
+                    "create debug snapshot",
+                    "preserve current state",
+                ]
+            ):
                 target = self._extract_debug_target(command)
                 snapshot = await self.create_debug_snapshot(target, command)
                 return {
                     "success": True,
                     "action": "debug_snapshot_created",
                     "snapshot_id": snapshot.id,
-                    "message": f"Debug snapshot created for: {target}"
+                    "message": f"Debug snapshot created for: {target}",
                 }
 
             # Start debugging commands
-            elif any(phrase in command_lower for phrase in [
-                "start debugging", "debug with context", "begin debug session"
-            ]):
+            elif any(
+                phrase in command_lower
+                for phrase in [
+                    "start debugging",
+                    "debug with context",
+                    "begin debug session",
+                ]
+            ):
                 target = self._extract_debug_target(command)
                 session_type = self._extract_session_type(command)
-                session = await self.start_debug_session(target, command,
-                                                         session_type)
+                session = await self.start_debug_session(target, command, session_type)
                 return {
                     "success": True,
                     "action": "debug_session_started",
                     "session_id": session.id,
-                    "message": f"Debug session started for: {target}"
+                    "message": f"Debug session started for: {target}",
                 }
 
             # Restore context commands
-            elif any(phrase in command_lower for phrase in [
-                "restore context", "return to development",
-                "complete debug session"
-            ]):
+            elif any(
+                phrase in command_lower
+                for phrase in [
+                    "restore context",
+                    "return to development",
+                    "complete debug session",
+                ]
+            ):
                 if self.active_sessions:
                     # Get first active session
                     session_id = list(self.active_sessions.keys())[0]
                     findings = self._extract_debug_findings(command)
-                    result = await self.complete_debug_session(session_id,
-                                                               findings)
+                    result = await self.complete_debug_session(session_id, findings)
                     return {
                         "success": True,
                         "action": "context_restored",
                         "session_id": session_id,
-                        "message": "Debug session completed and restored"
+                        "message": "Debug session completed and restored",
                     }
                 else:
                     return {
                         "success": False,
-                        "error": "No active debug session to complete"
+                        "error": "No active debug session to complete",
                     }
 
             # Status commands
-            elif any(phrase in command_lower for phrase in [
-                "debug status", "session status", "debug info"
-            ]):
+            elif any(
+                phrase in command_lower
+                for phrase in ["debug status", "session status", "debug info"]
+            ):
                 status = await self.get_debug_session_status()
-                return {
-                    "success": True,
-                    "action": "debug_status",
-                    "status": status
-                }
+                return {"success": True, "action": "debug_status", "status": status}
 
             else:
-                return {
-                    "success": False,
-                    "error": f"Unknown debug command: {command}"
-                }
+                return {"success": False, "error": f"Unknown debug command: {command}"}
 
         except Exception as e:
-            return {
-                "success": False,
-                "error": str(e),
-                "action": "debug_command_failed"
-            }
+            return {"success": False, "error": str(e), "action": "debug_command_failed"}
 
     # Private methods
-    async def _create_debug_snapshot(self, debug_target: str,
-                                     description: str = None
-                                     ) -> DebugContextSnapshot:
+    async def _create_debug_snapshot(
+        self, debug_target: str, description: str = None
+    ) -> DebugContextSnapshot:
         """Create a comprehensive debug context snapshot"""
 
         # Get current system state
@@ -339,7 +344,7 @@ class DebugIntegrationSystem:
             component_states=await self._get_all_component_states(),
             active_tasks=self._get_active_tasks(),
             holographic_context=holographic_context,
-            ai_learning_state=fractal_state.get("learning_state", {})
+            ai_learning_state=fractal_state.get("learning_state", {}),
         )
 
         self.debug_snapshots[snapshot.id] = snapshot
@@ -347,9 +352,9 @@ class DebugIntegrationSystem:
         self.logger.info(f"Debug snapshot created: {snapshot.id}")
         return snapshot
 
-    async def _restore_debug_context(self, snapshot_id: str,
-                                     debug_insights: List[str] = None
-                                     ) -> DebugRecoveryResult:
+    async def _restore_debug_context(
+        self, snapshot_id: str, debug_insights: List[str] = None
+    ) -> DebugRecoveryResult:
         """Restore context from debug snapshot"""
 
         snapshot = self.debug_snapshots[snapshot_id]
@@ -361,8 +366,7 @@ class DebugIntegrationSystem:
             result.steps_executed.append("Fractal AI state restored")
 
             # Step 2: Restore holographic synchronization
-            await self.holographic_sync.restore_sync_state(
-                snapshot.holographic_context)
+            await self.holographic_sync.restore_sync_state(snapshot.holographic_context)
             result.steps_executed.append("Holographic synchronization restored")
 
             # Step 3: Restore component states
@@ -373,7 +377,8 @@ class DebugIntegrationSystem:
             if debug_insights:
                 await self._integrate_debug_insights(debug_insights, snapshot)
                 result.steps_executed.append(
-                    f"Integrated {len(debug_insights)} debug insights")
+                    f"Integrated {len(debug_insights)} debug insights"
+                )
                 result.debug_insights_integrated = True
 
             # Step 5: Restore development phase
@@ -383,7 +388,8 @@ class DebugIntegrationSystem:
             # Step 6: Verify context integrity
             integrity_check = await self._verify_context_integrity(snapshot)
             result.steps_executed.append(
-                f"Context integrity: {'Valid' if integrity_check else 'Compromised'}")
+                f"Context integrity: {'Valid' if integrity_check else 'Compromised'}"
+            )
 
             # Step 7: Calculate restored coherence
             current_state = await self.fractal_ai.get_current_state()
@@ -412,10 +418,14 @@ class DebugIntegrationSystem:
                     duration = datetime.now() - session.start_time
 
                     # Warn about long sessions
-                    if (duration > timedelta(hours=2) and
-                            session.session_type != DebugSessionType.EXTENDED):
-                        warning = (f"Session duration {duration.total_seconds()/3600:.1f} "
-                                   f"hours - consider upgrading to Extended")
+                    if (
+                        duration > timedelta(hours=2)
+                        and session.session_type != DebugSessionType.EXTENDED
+                    ):
+                        warning = (
+                            f"Session duration {duration.total_seconds()/3600:.1f} "
+                            f"hours - consider upgrading to Extended"
+                        )
                         if warning not in session.warnings:
                             session.warnings.append(warning)
 
@@ -425,8 +435,10 @@ class DebugIntegrationSystem:
                     session.last_health_check = datetime.now()
 
                     if session.context_health < 0.7:
-                        warning = (f"Context health degraded during debugging: "
-                                   f"{session.context_health:.2f}")
+                        warning = (
+                            f"Context health degraded during debugging: "
+                            f"{session.context_health:.2f}"
+                        )
                         if warning not in session.warnings:
                             session.warnings.append(warning)
 
@@ -480,7 +492,7 @@ class DebugIntegrationSystem:
             "fractal_ai": await self.fractal_ai.get_current_state(),
             "holographic_sync": await self.holographic_sync.get_sync_state(),
             "context_recovery": await self.context_recovery.get_recovery_state(),
-            "timestamp": datetime.now().isoformat()
+            "timestamp": datetime.now().isoformat(),
         }
 
     def _get_active_tasks(self) -> List[str]:
@@ -492,8 +504,9 @@ class DebugIntegrationSystem:
         """Update system debug mode"""
         await self.holographic_sync.update_context("debug_mode", debug_mode)
         if session_id:
-            await self.holographic_sync.update_context("active_debug_session",
-                                                        session_id)
+            await self.holographic_sync.update_context(
+                "active_debug_session", session_id
+            )
 
     async def _restore_component_states(self, component_states: Dict[str, Any]):
         """Restore states of all components"""
@@ -504,30 +517,36 @@ class DebugIntegrationSystem:
                 await self.holographic_sync.restore_sync_state(state)
             # Add other components as needed
 
-    async def _integrate_debug_insights(self, insights: List[str],
-                                        snapshot: DebugContextSnapshot):
+    async def _integrate_debug_insights(
+        self, insights: List[str], snapshot: DebugContextSnapshot
+    ):
         """Integrate debug insights into system knowledge"""
         # Add insights to AI learning
-        await self.fractal_ai.integrate_learning({
-            "debug_insights": insights,
-            "debug_target": snapshot.debug_target,
-            "integration_timestamp": datetime.now().isoformat()
-        })
+        await self.fractal_ai.integrate_learning(
+            {
+                "debug_insights": insights,
+                "debug_target": snapshot.debug_target,
+                "integration_timestamp": datetime.now().isoformat(),
+            }
+        )
 
         # Update holographic context
-        await self.holographic_sync.update_context("debug_learnings", {
-            "insights": insights,
-            "enhanced_by_debug": True,
-            "debug_session_id": snapshot.id
-        })
+        await self.holographic_sync.update_context(
+            "debug_learnings",
+            {
+                "insights": insights,
+                "enhanced_by_debug": True,
+                "debug_session_id": snapshot.id,
+            },
+        )
 
     async def _restore_development_phase(self, development_phase: str):
         """Restore development phase"""
-        await self.holographic_sync.update_context("development_phase",
-                                                    development_phase)
+        await self.holographic_sync.update_context(
+            "development_phase", development_phase
+        )
 
-    async def _verify_context_integrity(self,
-                                        snapshot: DebugContextSnapshot) -> bool:
+    async def _verify_context_integrity(self, snapshot: DebugContextSnapshot) -> bool:
         """Verify context integrity after restoration"""
         try:
             current_state = await self.fractal_ai.get_current_state()
@@ -548,6 +567,7 @@ class DebugIntegrationSystem:
 
 class DebugSessionError(Exception):
     """Exception raised during debug session operations"""
+
     pass
 
 
@@ -587,9 +607,7 @@ async def demo_debug_integration():
 
     # Initialize debug integration
     debug_system = DebugIntegrationSystem(
-        MockFractalAI(),
-        MockHolographicSync(),
-        MockContextRecovery()
+        MockFractalAI(), MockHolographicSync(), MockContextRecovery()
     )
 
     try:
@@ -598,7 +616,7 @@ async def demo_debug_integration():
         session = await debug_system.start_debug_session(
             "context_persistence_ui",
             "Investigating context loss in UI component",
-            DebugSessionType.STANDARD
+            DebugSessionType.STANDARD,
         )
 
         # Demo 2: Check status
@@ -612,7 +630,7 @@ async def demo_debug_integration():
             "Save debug context for memory leak investigation",
             "Start debugging the fractal synchronization module",
             "Debug status",
-            "Complete debug session with findings: memory optimization needed"
+            "Complete debug session with findings: memory optimization needed",
         ]
 
         for command in commands:
@@ -625,7 +643,7 @@ async def demo_debug_integration():
         findings = [
             "Context loss occurs during UI refresh",
             "Memory leak in holographic display component",
-            "Fractal coherence drops during high-frequency updates"
+            "Fractal coherence drops during high-frequency updates",
         ]
 
         recovery = await debug_system.complete_debug_session(

@@ -11,9 +11,9 @@ import asyncio
 import json
 import logging
 import numpy as np
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Any, Tuple, Optional
+from typing import Dict, List, Any
 
 class ConsciousnessAnalyzer:
     """Comprehensive consciousness analysis and pattern detection system"""

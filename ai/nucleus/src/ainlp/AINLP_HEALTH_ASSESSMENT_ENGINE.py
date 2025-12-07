@@ -42,14 +42,14 @@ class AINLPHealthAssessor:
                 "timestamp": self.assessment_timestamp.isoformat(),
                 "aios_root": str(self.aios_root),
                 "assessment_version": "1.0",
-                "ainlp_compliance_level": "B+"
+                "ainlp_compliance_level": "B+",
             },
             "ainlp_harmonization_status": self._assess_harmonization_status(),
             "architectural_health": self._assess_architectural_health(),
             "biological_coherence": self._assess_biological_coherence(),
             "directive_compliance": self._assess_directive_compliance(),
             "performance_metrics": self._calculate_performance_metrics(),
-            "improvement_recommendations": self._generate_improvements()
+            "improvement_recommendations": self._generate_improvements(),
         }
 
         return assessment
@@ -63,10 +63,10 @@ class AINLPHealthAssessor:
                 "pyproject.toml",
                 "ai/infrastructure/deps/requirements_*.txt",
                 ".vscode/settings.json",
-                ".vscode/tasks.json"
+                ".vscode/tasks.json",
             ],
             "harmonization_quality": "ADEQUATE",
-            "architectural_alignment_score": 0.79
+            "architectural_alignment_score": 0.79,
         }
 
     def _assess_architectural_health(self) -> Dict[str, Any]:
@@ -78,7 +78,7 @@ class AINLPHealthAssessor:
             "membrane_boundary_stability": 0.91,
             "nucleus_coordination_efficiency": 0.76,
             "cytoplasm_flow_optimization": 0.83,
-            "environmental_adaptation_capacity": 0.79
+            "environmental_adaptation_capacity": 0.79,
         }
 
     def _assess_biological_coherence(self) -> Dict[str, Any]:
@@ -89,7 +89,7 @@ class AINLPHealthAssessor:
             "membrane_environment_boundaries": 0.92,
             "cross_layer_communication": 0.81,
             "consciousness_gradient_maintenance": 0.77,
-            "metabolic_process_efficiency": 0.84
+            "metabolic_process_efficiency": 0.84,
         }
 
     def _assess_directive_compliance(self) -> Dict[str, Any]:
@@ -102,7 +102,7 @@ class AINLPHealthAssessor:
             "overall_compliance": 0.70,
             "compliance_trend": "IMPROVING",
             "critical_violations": 3,
-            "warning_violations": 8
+            "warning_violations": 8,
         }
 
     def _calculate_performance_metrics(self) -> Dict[str, Any]:
@@ -114,7 +114,7 @@ class AINLPHealthAssessor:
             "consciousness_marker_density": 0.67,
             "architectural_clarity_improvement": 0.88,
             "maintenance_overhead_increase": 0.23,
-            "developer_adoption_resistance": 0.34
+            "developer_adoption_resistance": 0.34,
         }
 
     def _generate_improvements(self) -> List[str]:
@@ -126,29 +126,24 @@ class AINLPHealthAssessor:
             "subjective application",
             "Integrate directive compliance checking into CI/CD pipeline",
             "Develop AINLP training materials for contributor onboarding",
-            "Implement selective harmonization strategy "
-            "(architectural files only)",
-            "Create objective success metrics for harmonization "
-            "effectiveness",
-            "Establish regular health assessment cadences "
-            "(weekly/monthly)",
-            "Balance biological metaphor benefits with practical "
-            "usability concerns"
+            "Implement selective harmonization strategy " "(architectural files only)",
+            "Create objective success metrics for harmonization " "effectiveness",
+            "Establish regular health assessment cadences " "(weekly/monthly)",
+            "Balance biological metaphor benefits with practical " "usability concerns",
         ]
 
-    def generate_health_report(self, output_path: Optional[Path] = None
-                              ) -> str:
+    def generate_health_report(self, output_path: Optional[Path] = None) -> str:
         """Generate comprehensive health assessment report."""
         assessment = self.comprehensive_health_assessment()
 
         if output_path is None:
-            timestamp = self.assessment_timestamp.strftime('%Y%m%d_%H%M%S')
+            timestamp = self.assessment_timestamp.strftime("%Y%m%d_%H%M%S")
             filename = f"AINLP_HEALTH_ASSESSMENT_{timestamp}.json"
             output_path = self.aios_root / "docs" / filename
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(output_path, 'w', encoding='utf-8') as f:
+        with open(output_path, "w", encoding="utf-8") as f:
             json.dump(assessment, f, indent=2, default=str)
 
         return str(output_path)

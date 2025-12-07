@@ -23,6 +23,7 @@ from typing import Dict, List, Any, Optional
 import requests
 import importlib.util
 
+
 class RuntimeIntelligenceTester:
     """Comprehensive tester for AIOS runtime intelligence ecosystem"""
 
@@ -36,7 +37,7 @@ class RuntimeIntelligenceTester:
             "redundancy_analysis": {},
             "optimization_opportunities": [],
             "interface_bridge_coverage": {},
-            "execution_summary": {}
+            "execution_summary": {},
         }
         self.interface_bridge_url = "http://localhost:8000"
 
@@ -49,19 +50,19 @@ class RuntimeIntelligenceTester:
                 self.results["interface_bridge_status"] = {
                     "connected": True,
                     "health": health_data,
-                    "tools_discovered": health_data.get("tools_discovered", 0)
+                    "tools_discovered": health_data.get("tools_discovered", 0),
                 }
                 return True
             else:
                 self.results["interface_bridge_status"] = {
                     "connected": False,
-                    "error": f"HTTP {response.status_code}"
+                    "error": f"HTTP {response.status_code}",
                 }
                 return False
         except Exception as e:
             self.results["interface_bridge_status"] = {
                 "connected": False,
-                "error": str(e)
+                "error": str(e),
             }
             return False
 
@@ -88,37 +89,45 @@ class RuntimeIntelligenceTester:
             "error": None,
             "capabilities_detected": [],
             "integration_points": [],
-            "dependencies": []
+            "dependencies": [],
         }
 
         start_time = time.time()
 
         try:
             # Test basic import first
-            if tool_name.endswith('.py'):
+            if tool_name.endswith(".py"):
                 module_name = tool_name[:-3]  # Remove .py extension
                 try:
                     # Try to import the module
-                    spec = importlib.util.spec_from_file_location(module_name, tool_path)
+                    spec = importlib.util.spec_from_file_location(
+                        module_name, tool_path
+                    )
                     if spec and spec.loader:
                         module = importlib.util.module_from_spec(spec)
                         spec.loader.exec_module(module)
                         result["import_success"] = True
 
                         # Analyze module for capabilities
-                        if hasattr(module, '__doc__') and module.__doc__:
+                        if hasattr(module, "__doc__") and module.__doc__:
                             result["documentation"] = module.__doc__.strip()
 
                         # Check for main functions/classes
-                        if hasattr(module, 'main'):
+                        if hasattr(module, "main"):
                             result["capabilities_detected"].append("has_main_function")
-                        if hasattr(module, 'run'):
+                        if hasattr(module, "run"):
                             result["capabilities_detected"].append("has_run_function")
 
                         # Check for classes
-                        classes = [name for name in dir(module) if isinstance(getattr(module, name), type)]
+                        classes = [
+                            name
+                            for name in dir(module)
+                            if isinstance(getattr(module, name), type)
+                        ]
                         if classes:
-                            result["capabilities_detected"].append(f"classes: {classes}")
+                            result["capabilities_detected"].append(
+                                f"classes: {classes}"
+                            )
 
                     else:
                         result["import_success"] = False
@@ -136,12 +145,14 @@ class RuntimeIntelligenceTester:
                     capture_output=True,
                     text=True,
                     timeout=30,
-                    cwd=self.workspace_root
+                    cwd=self.workspace_root,
                 )
 
                 if process.returncode == 0:
                     result["cli_success"] = True
-                    result["cli_help_output"] = process.stdout[:1000]  # Truncate long output
+                    result["cli_help_output"] = process.stdout[
+                        :1000
+                    ]  # Truncate long output
                 else:
                     result["cli_success"] = False
                     result["cli_error"] = process.stderr[:500]
@@ -153,7 +164,9 @@ class RuntimeIntelligenceTester:
                 result["cli_success"] = False
                 result["cli_error"] = str(e)
 
-            result["execution_success"] = result.get("import_success", False) or result.get("cli_success", False)
+            result["execution_success"] = result.get(
+                "import_success", False
+            ) or result.get("cli_success", False)
 
         except Exception as e:
             result["error"] = str(e)
@@ -161,14 +174,16 @@ class RuntimeIntelligenceTester:
         result["execution_time"] = time.time() - start_time
         return result
 
-    def analyze_tool_capabilities(self, tool_results: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def analyze_tool_capabilities(
+        self, tool_results: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         """Analyze tool capabilities and identify patterns/redundancies"""
         analysis = {
             "capability_clusters": {},
             "redundant_functionality": [],
             "unique_capabilities": [],
             "integration_opportunities": [],
-            "optimization_candidates": []
+            "optimization_candidates": [],
         }
 
         # Group tools by capabilities
@@ -182,22 +197,26 @@ class RuntimeIntelligenceTester:
         # Identify redundant functionality
         for cap, tools in analysis["capability_clusters"].items():
             if len(tools) > 1:
-                analysis["redundant_functionality"].append({
-                    "capability": cap,
-                    "tools": tools,
-                    "recommendation": f"Consider consolidating {cap} functionality"
-                })
+                analysis["redundant_functionality"].append(
+                    {
+                        "capability": cap,
+                        "tools": tools,
+                        "recommendation": f"Consider consolidating {cap} functionality",
+                    }
+                )
 
         return analysis
 
-    def check_interface_bridge_coverage(self, tool_results: List[Dict[str, Any]], bridge_tools: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def check_interface_bridge_coverage(
+        self, tool_results: List[Dict[str, Any]], bridge_tools: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         """Check which tools are accessible through Interface Bridge"""
         coverage = {
             "bridge_tools": [t["name"] for t in bridge_tools],
             "local_tools": [t["tool_name"] for t in tool_results],
             "covered_tools": [],
             "uncovered_tools": [],
-            "coverage_percentage": 0.0
+            "coverage_percentage": 0.0,
         }
 
         bridge_tool_names = set(coverage["bridge_tools"])
@@ -207,7 +226,9 @@ class RuntimeIntelligenceTester:
         coverage["uncovered_tools"] = list(local_tool_names - bridge_tool_names)
 
         if local_tool_names:
-            coverage["coverage_percentage"] = (len(coverage["covered_tools"]) / len(local_tool_names)) * 100
+            coverage["coverage_percentage"] = (
+                len(coverage["covered_tools"]) / len(local_tool_names)
+            ) * 100
 
         return coverage
 
@@ -230,21 +251,21 @@ class RuntimeIntelligenceTester:
 
         # Find all Python files in runtime
         runtime_dir = self.workspace_root / "runtime"
-        
+
         print(f"Searching in directory: {runtime_dir}")
         print(f"Directory exists: {runtime_dir.exists()}")
-        
+
         # Check if we're in the right place
         if not runtime_dir.exists():
             print(f"Directory not found, trying parent: {self.workspace_root}")
             runtime_dir = self.workspace_root
-        
+
         python_files = []
-        
+
         for root, dirs, files in os.walk(runtime_dir):
             print(f"Walking: {root} - {len(files)} files")
             for file in files:
-                if file.endswith('.py'):
+                if file.endswith(".py"):
                     full_path = Path(root) / file
                     python_files.append(full_path)
                     print(f"Found Python file: {full_path}")
@@ -271,61 +292,82 @@ class RuntimeIntelligenceTester:
         self.results["capability_analysis"] = capability_analysis
 
         # Interface Bridge coverage
-        coverage_analysis = self.check_interface_bridge_coverage(tool_results, bridge_tools)
+        coverage_analysis = self.check_interface_bridge_coverage(
+            tool_results, bridge_tools
+        )
         self.results["interface_bridge_coverage"] = coverage_analysis
 
         # Generate optimization recommendations
-        self.generate_optimization_recommendations(tool_results, capability_analysis, coverage_analysis)
+        self.generate_optimization_recommendations(
+            tool_results, capability_analysis, coverage_analysis
+        )
 
         self.results["tools_tested"] = tool_results
         self.results["execution_summary"] = {
             "total_tools": len(tool_results),
-            "successful_tools": len([t for t in tool_results if t["execution_success"]]),
-            "failed_tools": len([t for t in tool_results if not t["execution_success"]]),
+            "successful_tools": len(
+                [t for t in tool_results if t["execution_success"]]
+            ),
+            "failed_tools": len(
+                [t for t in tool_results if not t["execution_success"]]
+            ),
             "bridge_coverage": coverage_analysis["coverage_percentage"],
-            "redundancy_opportunities": len(capability_analysis["redundant_functionality"])
+            "redundancy_opportunities": len(
+                capability_analysis["redundant_functionality"]
+            ),
         }
 
         return self.results
 
-    def generate_optimization_recommendations(self, tool_results: List[Dict[str, Any]],
-                                            capability_analysis: Dict[str, Any],
-                                            coverage_analysis: Dict[str, Any]):
+    def generate_optimization_recommendations(
+        self,
+        tool_results: List[Dict[str, Any]],
+        capability_analysis: Dict[str, Any],
+        coverage_analysis: Dict[str, Any],
+    ):
         """Generate optimization recommendations based on analysis"""
 
         recommendations = []
 
         # Bridge coverage recommendations
         if coverage_analysis["coverage_percentage"] < 80:
-            recommendations.append({
-                "type": "interface_bridge_coverage",
-                "priority": "high",
-                "description": f"Only {coverage_analysis['coverage_percentage']:.1f}% of tools are accessible via Interface Bridge",
-                "action": "Add missing tools to Interface Bridge discovery",
-                "affected_tools": coverage_analysis["uncovered_tools"]
-            })
+            recommendations.append(
+                {
+                    "type": "interface_bridge_coverage",
+                    "priority": "high",
+                    "description": f"Only {coverage_analysis['coverage_percentage']:.1f}% of tools are accessible via Interface Bridge",
+                    "action": "Add missing tools to Interface Bridge discovery",
+                    "affected_tools": coverage_analysis["uncovered_tools"],
+                }
+            )
 
         # Redundancy recommendations
         for redundant in capability_analysis["redundant_functionality"]:
             if len(redundant["tools"]) > 2:  # Only flag significant redundancy
-                recommendations.append({
-                    "type": "redundancy_consolidation",
-                    "priority": "medium",
-                    "description": f"Multiple tools provide {redundant['capability']}",
-                    "action": "Consider consolidating functionality",
-                    "affected_tools": redundant["tools"]
-                })
+                recommendations.append(
+                    {
+                        "type": "redundancy_consolidation",
+                        "priority": "medium",
+                        "description": f"Multiple tools provide {redundant['capability']}",
+                        "action": "Consider consolidating functionality",
+                        "affected_tools": redundant["tools"],
+                    }
+                )
 
         # Failed tool recommendations
-        failed_tools = [t["tool_name"] for t in tool_results if not t["execution_success"]]
+        failed_tools = [
+            t["tool_name"] for t in tool_results if not t["execution_success"]
+        ]
         if failed_tools:
-            recommendations.append({
-                "type": "tool_failure_resolution",
-                "priority": "high",
-                "description": f"{len(failed_tools)} tools failed to execute",
-                "action": "Fix import/execution issues",
-                "affected_tools": failed_tools
-            })
+            recommendations.append(
+                {
+                    "type": "tool_failure_resolution",
+                    "priority": "high",
+                    "description": f"{len(failed_tools)} tools failed to execute",
+                    "action": "Fix import/execution issues",
+                    "affected_tools": failed_tools,
+                }
+            )
 
         self.results["optimization_opportunities"] = recommendations
 
@@ -333,14 +375,20 @@ class RuntimeIntelligenceTester:
         """Save comprehensive test results"""
         if output_path is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = self.workspace_root / "tachyonic" / "archive" / f"runtime_test_{timestamp}.json"
+            output_path = (
+                self.workspace_root
+                / "tachyonic"
+                / "archive"
+                / f"runtime_test_{timestamp}.json"
+            )
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(output_path, 'w') as f:
+        with open(output_path, "w") as f:
             json.dump(self.results, f, indent=2, default=str)
 
         return output_path
+
 
 def main():
     """Main execution function"""
@@ -367,6 +415,7 @@ def main():
         for i, opp in enumerate(results["optimization_opportunities"], 1):
             print(f"{i}. [{opp['priority'].upper()}] {opp['description']}")
             print(f"   Action: {opp['action']}")
+
 
 if __name__ == "__main__":
     main()

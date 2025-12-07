@@ -19,33 +19,35 @@ __author__ = "AIOS Development Team"
 try:
     import sys
     import os
-    
+
     # Component 1: Population Manager (from evolution_lab supercell)
     # Note: Population Manager lives in evolution_lab workspace for population evolution experiments
-    evolution_lab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'evolution_lab'))
+    evolution_lab_path = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..", "..", "..", "evolution_lab")
+    )
     if evolution_lab_path not in sys.path:
         sys.path.insert(0, evolution_lab_path)
-    
+
     from populations.population_manager import PopulationManager, Population, Organism
-    
+
     # Component 2: Agent Conversations (MultiAgentDebate is the main class)
     from .agent_conversations import (
         MultiAgentDebate,
         ConsensusResult,
         AgentPosition,
         ConversationTopic,
-        DebateRound
+        DebateRound,
     )
-    
+
     # Component 3: Knowledge Integration
     from .knowledge_integration import (
         KnowledgeOracle,
         DocumentationReference,
         DesignPattern,
         ComplexityLevel,
-        KnowledgeTopicEnum
+        KnowledgeTopicEnum,
     )
-    
+
     PHASE_10_4_AVAILABLE = True
 except ImportError as e:
     PHASE_10_4_AVAILABLE = False
@@ -64,21 +66,23 @@ __all__ = [
 
 # Add Phase 10.4 components if available
 if PHASE_10_4_AVAILABLE:
-    __all__.extend([
-        # Component 1: Population Manager
-        "PopulationManager",
-        "Population",
-        "Organism",
-        # Component 2: Agent Conversations (Multi-Agent Debate)
-        "MultiAgentDebate",
-        "ConsensusResult",
-        "AgentPosition",
-        "ConversationTopic",
-        "DebateRound",
-        # Component 3: Knowledge Integration
-        "KnowledgeOracle",
-        "DocumentationReference",
-        "DesignPattern",
-        "ComplexityLevel",
-        "KnowledgeTopicEnum",
-    ])
+    __all__.extend(
+        [
+            # Component 1: Population Manager
+            "PopulationManager",
+            "Population",
+            "Organism",
+            # Component 2: Agent Conversations (Multi-Agent Debate)
+            "MultiAgentDebate",
+            "ConsensusResult",
+            "AgentPosition",
+            "ConversationTopic",
+            "DebateRound",
+            # Component 3: Knowledge Integration
+            "KnowledgeOracle",
+            "DocumentationReference",
+            "DesignPattern",
+            "ComplexityLevel",
+            "KnowledgeTopicEnum",
+        ]
+    )

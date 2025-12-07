@@ -18,16 +18,16 @@ from .intelligence_dashboard import (
     IntelligenceShowcase,
     ToolInfo,
     ToolStatus,
-    ComponentLayer
+    ComponentLayer,
 )
 
 __all__ = [
-    'UnifiedDashboard',
-    'ToolDiscovery',
-    'WorkflowExecutor',
-    'ArchitectureHealthMonitor',
-    'IntelligenceShowcase',
-    'ToolInfo',
-    'ToolStatus',
-    'ComponentLayer'
+    "UnifiedDashboard",
+    "ToolDiscovery",
+    "WorkflowExecutor",
+    "ArchitectureHealthMonitor",
+    "IntelligenceShowcase",
+    "ToolInfo",
+    "ToolStatus",
+    "ComponentLayer",
 ]

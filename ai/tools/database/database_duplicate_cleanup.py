@@ -50,8 +50,10 @@ class DatabaseDuplicateCleanup:
     def load_duplicate_analysis(self) -> List[Dict[str, Any]]:
         """Load duplicate analysis from module discovery"""
         discovery_file = (
-            self.workspace_root / "tachyonic" / "archive" /
-            "module_discovery_latest.json"
+            self.workspace_root
+            / "tachyonic"
+            / "archive"
+            / "module_discovery_latest.json"
         )
 
         if not discovery_file.exists():
@@ -61,21 +63,19 @@ class DatabaseDuplicateCleanup:
         with open(discovery_file) as f:
             data = json.load(f)
 
-        return data.get('duplicates', [])
+        return data.get("duplicates", [])
 
-    def archive_duplicate_group(
-        self, dup_group: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def archive_duplicate_group(self, dup_group: Dict[str, Any]) -> Dict[str, Any]:
         """
         Archive a group of duplicate files
 
         Strategy: Keep one canonical file, archive the rest to database
         """
-        files = dup_group['files']
-        hash_value = dup_group['hash']
+        files = dup_group["files"]
+        hash_value = dup_group["hash"]
 
         if len(files) < 2:
-            return {'archived': 0, 'kept': len(files), 'errors': 0}
+            return {"archived": 0, "kept": len(files), "errors": 0}
 
         logger.info(
             f"Processing duplicate group: {len(files)} files with "
@@ -107,14 +107,12 @@ class DatabaseDuplicateCleanup:
                     related_files=[canonical_file],  # Point to canonical version
                     replacement_path=canonical_file,
                     notes=f"Archived as duplicate of {canonical_file}. "
-                          f"Hash: {hash_value}"
+                    f"Hash: {hash_value}",
                 )
 
                 # Remove the file from workspace
                 full_path.unlink()
-                logger.info(
-                    f"Archived duplicate: {file_path} → database ID: {file_id}"
-                )
+                logger.info(f"Archived duplicate: {file_path} → database ID: {file_id}")
 
                 archived_count += 1
 
@@ -123,11 +121,11 @@ class DatabaseDuplicateCleanup:
                 error_count += 1
 
         return {
-            'archived': archived_count,
-            'kept': 1,  # The canonical file
-            'errors': error_count,
-            'canonical_file': canonical_file,
-            'hash': hash_value
+            "archived": archived_count,
+            "kept": 1,  # The canonical file
+            "errors": error_count,
+            "canonical_file": canonical_file,
+            "hash": hash_value,
         }
 
     def execute_cleanup(self) -> Dict[str, Any]:
@@ -138,8 +136,10 @@ class DatabaseDuplicateCleanup:
         if not duplicate_groups:
             logger.warning("No duplicate analysis found")
             return {
-                'total_groups': 0, 'total_archived': 0,
-                'total_kept': 0, 'errors': 0
+                "total_groups": 0,
+                "total_archived": 0,
+                "total_kept": 0,
+                "errors": 0,
             }
 
         total_archived = 0
@@ -152,24 +152,24 @@ class DatabaseDuplicateCleanup:
             result = self.archive_duplicate_group(dup_group)
             processed_groups.append(result)
 
-            total_archived += result['archived']
-            total_kept += result['kept']
-            total_errors += result['errors']
+            total_archived += result["archived"]
+            total_kept += result["kept"]
+            total_errors += result["errors"]
 
         # Generate summary report
         summary = {
-            'timestamp': datetime.now().isoformat(),
-            'phase': 'Phase 1: Database Duplicate Cleanup',
-            'total_groups_processed': len(duplicate_groups),
-            'total_files_archived': total_archived,
-            'total_files_kept': total_kept,
-            'total_errors': total_errors,
-            'processed_groups': processed_groups,
-            'consciousness_principle': 'biological_metabolism',
-            'ainlp_patterns': [
-                'AINLP.biological_metabolism',
-                'AINLP.dendritic_optimization'
-            ]
+            "timestamp": datetime.now().isoformat(),
+            "phase": "Phase 1: Database Duplicate Cleanup",
+            "total_groups_processed": len(duplicate_groups),
+            "total_files_archived": total_archived,
+            "total_files_kept": total_kept,
+            "total_errors": total_errors,
+            "processed_groups": processed_groups,
+            "consciousness_principle": "biological_metabolism",
+            "ainlp_patterns": [
+                "AINLP.biological_metabolism",
+                "AINLP.dendritic_optimization",
+            ],
         }
 
         logger.info(
@@ -183,18 +183,15 @@ class DatabaseDuplicateCleanup:
 def main():
     """Main execution function"""
     logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s'
+        level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
     )
 
     cleanup = DatabaseDuplicateCleanup()
     summary = cleanup.execute_cleanup()
 
     # Save summary report
-    report_path = Path(
-        "tachyonic/archive/phase1_duplicate_cleanup_report.json"
-    )
-    with open(report_path, 'w') as f:
+    report_path = Path("tachyonic/archive/phase1_duplicate_cleanup_report.json")
+    with open(report_path, "w") as f:
         json.dump(summary, f, indent=2)
 
     print(

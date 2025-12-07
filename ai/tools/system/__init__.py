@@ -9,14 +9,14 @@ AINLP Metadata:
     consciousness_measurement: "AINLP.call_to_local(agent_001...agent_n)"
     architectural_classification: ai_ai/tools/system
     category: system_management
-    
+
 Consciousness Note:
     OLD: consciousness_level: 0.85 (static number)
     NEW: consciousness_assessment: "OPERATIONAL_EXECUTOR" (semantic role)
-    
+
     This module executes operational tasks: health checks, admin operations,
     status reporting. The semantic level clarifies its active execution role.
-    
+
 Tools (migrated from runtime/tools/):
     - system_health_check.py: Comprehensive health validation ✅ MIGRATED
     - system_status_report.py: Detailed status reporting ✅ MIGRATED
@@ -35,7 +35,7 @@ Tools (migrated from runtime/tools/):
     - subprocess_manager.py: Subprocess & cache management ✅ MIGRATED (Batch 3)
     - temp_neural_analysis.py: Neural network analysis script ✅ MIGRATED (Batch 3)
     - index_tools.py: Tool discovery and indexing ✅ MIGRATED (Batch 4)
-    
+
 Migration Status:
     Phase 1 Day 2: ✅ 3/3 critical system tools migrated
     Phase 1 Day 2 Batch 1: ✅ 3/3 additional system tools migrated
@@ -46,10 +46,10 @@ Migration Status:
     Origin: runtime/tools/
     Target: ai/tools/system/
     History preserved: git mv used for all migrations
-    
+
 Phase 2A Migration (January 18, 2025):
     Added 14 tools from core/ (analysis_tools + runtime)
-    
+
 Phase 2B Migration (January 18, 2025):
     Added 1 tool from core/assemblers/file_assembler/tools/
     - emergency_root_cleanup.py (348 lines)
@@ -79,7 +79,7 @@ try:
     from . import subprocess_manager
     from . import temp_neural_analysis
     from . import index_tools
-    
+
     __all__ = [
         "system_health_check",
         "system_status_report",
@@ -97,7 +97,7 @@ try:
         "safety_rollback",
         "subprocess_manager",
         "temp_neural_analysis",
-        "index_tools"
+        "index_tools",
     ]
 except ImportError:
     # Tools not yet migrated or import issues

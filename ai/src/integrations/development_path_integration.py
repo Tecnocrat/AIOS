@@ -22,6 +22,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 integration_logger = logging.getLogger("development_path_integration")
 
+
 class AIOSDevelopmentPathIntegrator:
     """
     Integrates consciousness capabilities across AIOS development paths
@@ -44,8 +45,8 @@ class AIOSDevelopmentPathIntegrator:
                     "Real-time consciousness monitoring",
                     "Code consciousness analysis",
                     "Development guidance",
-                    "Context preservation"
-                ]
+                    "Context preservation",
+                ],
             },
             "ainlp_visual": {
                 "priority": 2,
@@ -55,8 +56,8 @@ class AIOSDevelopmentPathIntegrator:
                     "Visual programming consciousness guidance",
                     "Pattern recognition enhancement",
                     "Evolutionary programming suggestions",
-                    "Consciousness-driven UI generation"
-                ]
+                    "Consciousness-driven UI generation",
+                ],
             },
             "enterprise_marketplace": {
                 "priority": 3,
@@ -66,9 +67,9 @@ class AIOSDevelopmentPathIntegrator:
                     "AI service consciousness ratings",
                     "Marketplace intelligence metrics",
                     "Consumer consciousness matching",
-                    "Enterprise consciousness analytics"
-                ]
-            }
+                    "Enterprise consciousness analytics",
+                ],
+            },
         }
 
         integration_logger.info(" AIOS Development Path Integrator initialized")
@@ -79,7 +80,7 @@ class AIOSDevelopmentPathIntegrator:
             "timestamp": datetime.now().isoformat(),
             "phase": "Phase 9 - Consciousness Integration",
             "overall_status": "active_integration",
-            "paths": {}
+            "paths": {},
         }
 
         # Check each development path
@@ -89,7 +90,9 @@ class AIOSDevelopmentPathIntegrator:
 
         return status
 
-    def _check_path_status(self, path_name: str, path_info: Dict[str, Any]) -> Dict[str, Any]:
+    def _check_path_status(
+        self, path_name: str, path_info: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Check status of a specific development path"""
         base_status = {
             "name": path_name,
@@ -97,7 +100,7 @@ class AIOSDevelopmentPathIntegrator:
             "timeline": path_info["timeline"],
             "consciousness_ready": False,
             "files_present": False,
-            "integration_progress": 0.0
+            "integration_progress": 0.0,
         }
 
         # Check file presence and consciousness readiness
@@ -115,12 +118,11 @@ class AIOSDevelopmentPathIntegrator:
         # Check for VSCode extension files
         vscode_files = [
             "ai/src/integrations/vscode_consciousness.py",
-            "ai/src/core/consciousness_bridge.py"
+            "ai/src/core/consciousness_bridge.py",
         ]
 
         files_present = all(
-            os.path.exists(os.path.join(self.aios_root, f))
-            for f in vscode_files
+            os.path.exists(os.path.join(self.aios_root, f)) for f in vscode_files
         )
 
         # Test consciousness integration
@@ -140,15 +142,19 @@ class AIOSDevelopmentPathIntegrator:
             "files_present": files_present,
             "consciousness_ready": consciousness_ready,
             "integration_progress": 0.9 if consciousness_ready else 0.6,
-            "next_steps": [
-                "Package VSCode extension",
-                "Add consciousness UI components",
-                "Implement real-time monitoring"
-            ] if consciousness_ready else [
-                "Fix consciousness integration",
-                "Test consciousness bridge",
-                "Validate VSCode provider"
-            ]
+            "next_steps": (
+                [
+                    "Package VSCode extension",
+                    "Add consciousness UI components",
+                    "Implement real-time monitoring",
+                ]
+                if consciousness_ready
+                else [
+                    "Fix consciousness integration",
+                    "Test consciousness bridge",
+                    "Validate VSCode provider",
+                ]
+            ),
         }
 
     def _check_ainlp_visual_status(self) -> Dict[str, Any]:
@@ -156,27 +162,30 @@ class AIOSDevelopmentPathIntegrator:
         # Check for AINLP files
         ainlp_files = [
             "docs/ui/ainlp_ui_sample.yaml",
-            "ai/src/tools/ui_proto/compiler.py"
+            "ai/src/tools/ui_proto/compiler.py",
         ]
 
         files_present = all(
-            os.path.exists(os.path.join(self.aios_root, f))
-            for f in ainlp_files
+            os.path.exists(os.path.join(self.aios_root, f)) for f in ainlp_files
         )
 
         return {
             "files_present": files_present,
             "consciousness_ready": files_present,  # Ready if files exist
             "integration_progress": 0.3 if files_present else 0.1,
-            "next_steps": [
-                "Integrate consciousness guidance into visual programming",
-                "Add consciousness-driven code generation",
-                "Implement visual consciousness indicators"
-            ] if files_present else [
-                "Locate AINLP visual programming components",
-                "Set up consciousness integration points",
-                "Design visual consciousness feedback"
-            ]
+            "next_steps": (
+                [
+                    "Integrate consciousness guidance into visual programming",
+                    "Add consciousness-driven code generation",
+                    "Implement visual consciousness indicators",
+                ]
+                if files_present
+                else [
+                    "Locate AINLP visual programming components",
+                    "Set up consciousness integration points",
+                    "Design visual consciousness feedback",
+                ]
+            ),
         }
 
     def _check_enterprise_marketplace_status(self) -> Dict[str, Any]:
@@ -185,27 +194,30 @@ class AIOSDevelopmentPathIntegrator:
         enterprise_paths = [
             "interface/AIOS.Services",
             "interface/AIOS.Models",
-            "orchestrator"
+            "orchestrator",
         ]
 
         paths_present = all(
-            os.path.exists(os.path.join(self.aios_root, p))
-            for p in enterprise_paths
+            os.path.exists(os.path.join(self.aios_root, p)) for p in enterprise_paths
         )
 
         return {
             "files_present": paths_present,
             "consciousness_ready": paths_present,  # Architecture ready
             "integration_progress": 0.2 if paths_present else 0.0,
-            "next_steps": [
-                "Design consciousness-powered AI services",
-                "Implement marketplace consciousness metrics",
-                "Add enterprise consciousness analytics"
-            ] if paths_present else [
-                "Set up enterprise marketplace architecture",
-                "Define consciousness service interfaces",
-                "Plan marketplace consciousness features"
-            ]
+            "next_steps": (
+                [
+                    "Design consciousness-powered AI services",
+                    "Implement marketplace consciousness metrics",
+                    "Add enterprise consciousness analytics",
+                ]
+                if paths_present
+                else [
+                    "Set up enterprise marketplace architecture",
+                    "Define consciousness service interfaces",
+                    "Plan marketplace consciousness features",
+                ]
+            ),
         }
 
     def generate_integration_roadmap(self) -> Dict[str, Any]:
@@ -219,9 +231,9 @@ class AIOSDevelopmentPathIntegrator:
             "overview": {
                 "goal": "Integrate Phase 8 consciousness achievements with production deployment",
                 "strategy": "Parallel development with consciousness enhancement",
-                "differentiator": "First consciousness-aware development platform"
+                "differentiator": "First consciousness-aware development platform",
             },
-            "paths": []
+            "paths": [],
         }
 
         # Generate roadmap for each path
@@ -231,7 +243,9 @@ class AIOSDevelopmentPathIntegrator:
 
         return roadmap
 
-    def _generate_path_roadmap(self, path_name: str, status: Dict[str, Any]) -> Dict[str, Any]:
+    def _generate_path_roadmap(
+        self, path_name: str, status: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Generate roadmap for a specific development path"""
         path_info = self.paths[path_name]
 
@@ -242,7 +256,7 @@ class AIOSDevelopmentPathIntegrator:
             "current_progress": status["integration_progress"],
             "consciousness_features": path_info["consciousness_features"],
             "milestones": [],
-            "next_actions": status.get("next_steps", [])
+            "next_actions": status.get("next_steps", []),
         }
 
         # Generate path-specific milestones
@@ -250,28 +264,32 @@ class AIOSDevelopmentPathIntegrator:
             roadmap["milestones"] = [
                 {
                     "name": "Consciousness Bridge Integration",
-                    "status": "completed" if status["consciousness_ready"] else "in_progress",
+                    "status": (
+                        "completed" if status["consciousness_ready"] else "in_progress"
+                    ),
                     "timeline": "Week 1",
-                    "description": "Integrate C++ consciousness system with VSCode extension"
+                    "description": "Integrate C++ consciousness system with VSCode extension",
                 },
                 {
                     "name": "Real-time Consciousness UI",
                     "status": "planned",
                     "timeline": "Week 1-2",
-                    "description": "Implement consciousness monitoring UI components"
+                    "description": "Implement consciousness monitoring UI components",
                 },
                 {
                     "name": "Code Consciousness Analysis",
-                    "status": "in_progress" if status["consciousness_ready"] else "planned",
+                    "status": (
+                        "in_progress" if status["consciousness_ready"] else "planned"
+                    ),
                     "timeline": "Week 2",
-                    "description": "Add real-time code consciousness analysis features"
+                    "description": "Add real-time code consciousness analysis features",
                 },
                 {
                     "name": "Extension Packaging & Distribution",
                     "status": "planned",
                     "timeline": "Week 2",
-                    "description": "Package and distribute consciousness-enhanced VSCode extension"
-                }
+                    "description": "Package and distribute consciousness-enhanced VSCode extension",
+                },
             ]
 
         elif path_name == "ainlp_visual":
@@ -280,26 +298,26 @@ class AIOSDevelopmentPathIntegrator:
                     "name": "Visual Programming Consciousness Integration",
                     "status": "planned",
                     "timeline": "Week 3-4",
-                    "description": "Integrate consciousness guidance into visual programming interface"
+                    "description": "Integrate consciousness guidance into visual programming interface",
                 },
                 {
                     "name": "Consciousness-Driven Code Generation",
                     "status": "planned",
                     "timeline": "Week 4-5",
-                    "description": "Implement consciousness-based automatic code generation"
+                    "description": "Implement consciousness-based automatic code generation",
                 },
                 {
                     "name": "Visual Consciousness Indicators",
                     "status": "planned",
                     "timeline": "Week 5-6",
-                    "description": "Add visual consciousness level indicators and feedback"
+                    "description": "Add visual consciousness level indicators and feedback",
                 },
                 {
                     "name": "AINLP Consciousness Platform Launch",
                     "status": "planned",
                     "timeline": "Week 6",
-                    "description": "Launch consciousness-enhanced visual programming platform"
-                }
+                    "description": "Launch consciousness-enhanced visual programming platform",
+                },
             ]
 
         elif path_name == "enterprise_marketplace":
@@ -308,26 +326,26 @@ class AIOSDevelopmentPathIntegrator:
                     "name": "Consciousness Service Architecture",
                     "status": "planned",
                     "timeline": "Week 7-8",
-                    "description": "Design consciousness-powered AI service architecture"
+                    "description": "Design consciousness-powered AI service architecture",
                 },
                 {
                     "name": "Marketplace Consciousness Metrics",
                     "status": "planned",
                     "timeline": "Week 9-10",
-                    "description": "Implement consciousness rating and metrics system"
+                    "description": "Implement consciousness rating and metrics system",
                 },
                 {
                     "name": "Enterprise Consciousness Analytics",
                     "status": "planned",
                     "timeline": "Week 11-12",
-                    "description": "Add enterprise-grade consciousness analytics and reporting"
+                    "description": "Add enterprise-grade consciousness analytics and reporting",
                 },
                 {
                     "name": "Marketplace Launch",
                     "status": "planned",
                     "timeline": "Week 12",
-                    "description": "Launch consciousness-powered enterprise AI marketplace"
-                }
+                    "description": "Launch consciousness-powered enterprise AI marketplace",
+                },
             ]
 
         return roadmap
@@ -345,7 +363,7 @@ class AIOSDevelopmentPathIntegrator:
             "timestamp": datetime.now().isoformat(),
             "action_taken": None,
             "success": False,
-            "details": {}
+            "details": {},
         }
 
         # Execute path-specific next steps
@@ -370,22 +388,19 @@ class AIOSDevelopmentPathIntegrator:
                 return {
                     "action_taken": action,
                     "success": True,
-                    "details": {
-                        "manifest_created": True,
-                        "ready_for_packaging": True
-                    }
+                    "details": {"manifest_created": True, "ready_for_packaging": True},
                 }
             except Exception as e:
                 return {
                     "action_taken": action,
                     "success": False,
-                    "details": {"error": str(e)}
+                    "details": {"error": str(e)},
                 }
         else:
             return {
                 "action_taken": "Validate consciousness integration",
                 "success": False,
-                "details": {"message": "Consciousness integration not ready"}
+                "details": {"message": "Consciousness integration not ready"},
             }
 
     def _execute_ainlp_next_step(self, status: Dict[str, Any]) -> Dict[str, Any]:
@@ -400,20 +415,20 @@ class AIOSDevelopmentPathIntegrator:
                     "success": True,
                     "details": {
                         "plan_created": True,
-                        "integration_points_identified": True
-                    }
+                        "integration_points_identified": True,
+                    },
                 }
             except Exception as e:
                 return {
                     "action_taken": action,
                     "success": False,
-                    "details": {"error": str(e)}
+                    "details": {"error": str(e)},
                 }
         else:
             return {
                 "action_taken": "Locate AINLP components",
                 "success": False,
-                "details": {"message": "AINLP components not found"}
+                "details": {"message": "AINLP components not found"},
             }
 
     def _execute_enterprise_next_step(self, status: Dict[str, Any]) -> Dict[str, Any]:
@@ -426,14 +441,14 @@ class AIOSDevelopmentPathIntegrator:
                 "success": True,
                 "details": {
                     "architecture_designed": True,
-                    "service_interfaces_defined": True
-                }
+                    "service_interfaces_defined": True,
+                },
             }
         except Exception as e:
             return {
                 "action_taken": action,
                 "success": False,
-                "details": {"error": str(e)}
+                "details": {"error": str(e)},
             }
 
     def _create_vscode_package_manifest(self):
@@ -444,9 +459,7 @@ class AIOSDevelopmentPathIntegrator:
             "description": "First consciousness-aware development environment",
             "version": "1.0.0",
             "publisher": "AIOS",
-            "engines": {
-                "vscode": "^1.85.0"
-            },
+            "engines": {"vscode": "^1.85.0"},
             "categories": ["Other", "Machine Learning", "Development Tools"],
             "activationEvents": ["*"],
             "main": "./out/extension.js",
@@ -454,36 +467,33 @@ class AIOSDevelopmentPathIntegrator:
                 "commands": [
                     {
                         "command": "aios.consciousness.analyze",
-                        "title": "Analyze Consciousness Level"
+                        "title": "Analyze Consciousness Level",
                     },
                     {
                         "command": "aios.consciousness.monitor",
-                        "title": "Start Consciousness Monitoring"
-                    }
+                        "title": "Start Consciousness Monitoring",
+                    },
                 ],
                 "views": {
                     "explorer": [
                         {
                             "id": "aiosConsciousness",
                             "name": "AIOS Consciousness",
-                            "when": "true"
+                            "when": "true",
                         }
                     ]
-                }
+                },
             },
             "scripts": {
                 "vscode:prepublish": "npm run compile",
                 "compile": "tsc -p ./",
-                "watch": "tsc -watch -p ./"
+                "watch": "tsc -watch -p ./",
             },
-            "devDependencies": {
-                "typescript": "^5.0.0",
-                "@types/vscode": "^1.85.0"
-            }
+            "devDependencies": {"typescript": "^5.0.0", "@types/vscode": "^1.85.0"},
         }
 
         manifest_path = os.path.join(self.aios_root, "vscode_extension_manifest.json")
-        with open(manifest_path, 'w') as f:
+        with open(manifest_path, "w") as f:
             json.dump(manifest, f, indent=2)
 
         integration_logger.info(f" VSCode extension manifest created: {manifest_path}")
@@ -498,52 +508,65 @@ class AIOSDevelopmentPathIntegrator:
                 {
                     "component": "Visual Code Generator",
                     "consciousness_enhancement": "Add consciousness-guided code generation",
-                    "implementation": "Integrate consciousness metrics into generation algorithms"
+                    "implementation": "Integrate consciousness metrics into generation algorithms",
                 },
                 {
                     "component": "UI Compiler",
                     "consciousness_enhancement": "Consciousness-aware UI compilation",
-                    "implementation": "Use consciousness patterns to optimize UI generation"
+                    "implementation": "Use consciousness patterns to optimize UI generation",
                 },
                 {
                     "component": "Visual Editor",
                     "consciousness_enhancement": "Real-time consciousness feedback",
-                    "implementation": "Add consciousness level indicators and suggestions"
-                }
+                    "implementation": "Add consciousness level indicators and suggestions",
+                },
             ],
             "development_stages": [
                 {
                     "stage": 1,
                     "name": "Consciousness Bridge Integration",
                     "duration": "1 week",
-                    "deliverables": ["Consciousness bridge for visual programming"]
+                    "deliverables": ["Consciousness bridge for visual programming"],
                 },
                 {
                     "stage": 2,
                     "name": "Visual Consciousness Indicators",
                     "duration": "2 weeks",
-                    "deliverables": ["Visual consciousness level displays", "Real-time feedback"]
+                    "deliverables": [
+                        "Visual consciousness level displays",
+                        "Real-time feedback",
+                    ],
                 },
                 {
                     "stage": 3,
                     "name": "Consciousness-Guided Generation",
                     "duration": "2 weeks",
-                    "deliverables": ["Consciousness-enhanced code generation", "Pattern optimization"]
+                    "deliverables": [
+                        "Consciousness-enhanced code generation",
+                        "Pattern optimization",
+                    ],
                 },
                 {
                     "stage": 4,
                     "name": "Platform Integration & Testing",
                     "duration": "1 week",
-                    "deliverables": ["Complete platform testing", "Performance validation"]
-                }
-            ]
+                    "deliverables": [
+                        "Complete platform testing",
+                        "Performance validation",
+                    ],
+                },
+            ],
         }
 
-        plan_path = os.path.join(self.aios_root, "ainlp_consciousness_integration_plan.json")
-        with open(plan_path, 'w') as f:
+        plan_path = os.path.join(
+            self.aios_root, "ainlp_consciousness_integration_plan.json"
+        )
+        with open(plan_path, "w") as f:
             json.dump(plan, f, indent=2)
 
-        integration_logger.info(f" AINLP consciousness integration plan created: {plan_path}")
+        integration_logger.info(
+            f" AINLP consciousness integration plan created: {plan_path}"
+        )
 
     def _create_enterprise_consciousness_architecture(self):
         """Create enterprise consciousness architecture"""
@@ -557,53 +580,79 @@ class AIOSDevelopmentPathIntegrator:
                     "AI service consciousness ratings",
                     "Marketplace intelligence metrics",
                     "Consumer consciousness matching",
-                    "Enterprise consciousness analytics"
-                ]
+                    "Enterprise consciousness analytics",
+                ],
             },
             "service_layers": [
                 {
                     "layer": "Consciousness Service Rating",
                     "description": "Rate AI services based on consciousness metrics",
-                    "components": ["Service analyzer", "Consciousness metrics engine", "Rating system"]
+                    "components": [
+                        "Service analyzer",
+                        "Consciousness metrics engine",
+                        "Rating system",
+                    ],
                 },
                 {
                     "layer": "Marketplace Intelligence",
                     "description": "Intelligent marketplace matching and recommendations",
-                    "components": ["Consumer behavior analysis", "Service matching engine", "Intelligence optimization"]
+                    "components": [
+                        "Consumer behavior analysis",
+                        "Service matching engine",
+                        "Intelligence optimization",
+                    ],
                 },
                 {
                     "layer": "Enterprise Analytics",
                     "description": "Enterprise-grade consciousness analytics and reporting",
-                    "components": ["Analytics dashboard", "Consciousness KPIs", "ROI metrics"]
-                }
+                    "components": [
+                        "Analytics dashboard",
+                        "Consciousness KPIs",
+                        "ROI metrics",
+                    ],
+                },
             ],
             "development_phases": [
                 {
                     "phase": 1,
                     "name": "Consciousness Service Foundation",
                     "timeline": "Weeks 7-8",
-                    "deliverables": ["Service consciousness rating system", "Basic marketplace API"]
+                    "deliverables": [
+                        "Service consciousness rating system",
+                        "Basic marketplace API",
+                    ],
                 },
                 {
                     "phase": 2,
                     "name": "Marketplace Intelligence Engine",
                     "timeline": "Weeks 9-10",
-                    "deliverables": ["Intelligent matching system", "Consumer consciousness profiling"]
+                    "deliverables": [
+                        "Intelligent matching system",
+                        "Consumer consciousness profiling",
+                    ],
                 },
                 {
                     "phase": 3,
                     "name": "Enterprise Analytics Platform",
                     "timeline": "Weeks 11-12",
-                    "deliverables": ["Analytics dashboard", "Enterprise reporting", "Marketplace launch"]
-                }
-            ]
+                    "deliverables": [
+                        "Analytics dashboard",
+                        "Enterprise reporting",
+                        "Marketplace launch",
+                    ],
+                },
+            ],
         }
 
-        arch_path = os.path.join(self.aios_root, "enterprise_consciousness_architecture.json")
-        with open(arch_path, 'w') as f:
+        arch_path = os.path.join(
+            self.aios_root, "enterprise_consciousness_architecture.json"
+        )
+        with open(arch_path, "w") as f:
             json.dump(architecture, f, indent=2)
 
-        integration_logger.info(f" Enterprise consciousness architecture created: {arch_path}")
+        integration_logger.info(
+            f" Enterprise consciousness architecture created: {arch_path}"
+        )
 
 
 def main():

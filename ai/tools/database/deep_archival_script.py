@@ -33,10 +33,12 @@ def deep_archive_semantic_validator():
     db = AIOSDatabase("tachyonic/aios_data.db")
 
     # File paths
-    source_file = Path("../../../tachyonic/database/"
-                      "semantic_validator_20251025_210000.py")
-    cleanup_record = Path("../../../tachyonic/database/"
-                          "cleanup_semantic_validator_20251025_210000.json")
+    source_file = Path(
+        "../../../tachyonic/database/" "semantic_validator_20251025_210000.py"
+    )
+    cleanup_record = Path(
+        "../../../tachyonic/database/" "cleanup_semantic_validator_20251025_210000.json"
+    )
 
     if not source_file.exists():
         print(f"❌ Source file not found: {source_file}")
@@ -62,20 +64,19 @@ def deep_archive_semantic_validator():
         content=content,
         backup_timestamp=archival_timestamp,
         file_type="python",
-        backup_type="deep_archival_validation_tools"
+        backup_type="deep_archival_validation_tools",
     )
 
     # Store cleanup metadata as separate backup
     if cleanup_metadata:
-        cleanup_content = json.dumps(cleanup_metadata,
-                                     indent=2).encode('utf-8')
+        cleanup_content = json.dumps(cleanup_metadata, indent=2).encode("utf-8")
         cleanup_id, cleanup_hash, cleanup_duplicate = db.add_backup(
             filename="cleanup_semantic_validator_20251025_210000.json",
             file_path=str(cleanup_record),
             content=cleanup_content,
             backup_timestamp=archival_timestamp,
             file_type="json",
-            backup_type="deep_archival_metadata"
+            backup_type="deep_archival_metadata",
         )
 
     # Get deduplication stats
@@ -85,8 +86,10 @@ def deep_archive_semantic_validator():
     print(f"   📊 Backup ID: {backup_id}")
     print(f"   🔐 Content Hash: {content_hash[:16]}...")
     print(f"   🔄 Duplicate: {is_duplicate}")
-    print(f"   💾 Database Stats: {stats['total_backups']} backups, "
-          f"{stats['space_saved_percent']}% space saved")
+    print(
+        f"   💾 Database Stats: {stats['total_backups']} backups, "
+        f"{stats['space_saved_percent']}% space saved"
+    )
 
     # Remove local files to unclutter
     print("🧹 Removing local files...")
@@ -96,8 +99,10 @@ def deep_archive_semantic_validator():
 
     print("✨ Deep archival complete - workspace uncluttered!")
     print("   📁 Files permanently stored in: tachyonic/aios_data.db")
-    print("   🔍 Query with: SELECT * FROM backups WHERE filename "
-          "LIKE 'semantic_validator%'")
+    print(
+        "   🔍 Query with: SELECT * FROM backups WHERE filename "
+        "LIKE 'semantic_validator%'"
+    )
 
     return True
 

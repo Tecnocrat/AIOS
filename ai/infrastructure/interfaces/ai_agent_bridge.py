@@ -124,9 +124,7 @@ class AIAgentBridge:
             else:
                 result = {"success": False, "error": "Unsupported agent type"}
 
-            session["status"] = (
-                "completed" if result.get("success") else "failed"
-            )
+            session["status"] = "completed" if result.get("success") else "failed"
             session["result"] = result
             session["completed_at"] = datetime.now().isoformat()
 
@@ -242,9 +240,7 @@ Architecture: 6-Supercell biological computing model
                 "error": f"GitHub Copilot execution failed: {str(e)}",
             }
 
-    def _execute_local_llm_request(
-        self, session: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def _execute_local_llm_request(self, session: Dict[str, Any]) -> Dict[str, Any]:
         """Execute request using local LLM agent"""
 
         # Placeholder for local LLM integration
@@ -317,11 +313,7 @@ Architecture: 6-Supercell biological computing model
 
     def get_session_history(self, limit: int = 10) -> List[Dict[str, Any]]:
         """Get recent session history"""
-        return (
-            self.session_history[-limit:]
-            if limit > 0
-            else self.session_history
-        )
+        return self.session_history[-limit:] if limit > 0 else self.session_history
 
 
 def main():
@@ -369,9 +361,7 @@ def main():
 
     if result["success"]:
         print("Enhanced Prompt Ready for Submission")
-        print(
-            "Use the enhanced_prompt from the result to trigger autonomous execution"
-        )
+        print("Use the enhanced_prompt from the result to trigger autonomous execution")
 
 
 if __name__ == "__main__":

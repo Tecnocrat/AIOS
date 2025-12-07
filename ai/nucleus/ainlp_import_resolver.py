@@ -30,21 +30,19 @@ from typing import Optional, Tuple, Protocol, List, Dict, Any
 class SimilarityEngineProtocol(Protocol):
     """
     Type protocol for AIAgentDendriticSimilarity interface.
-    
+
     AINLP Pattern: Protocol-based type hints for dynamic imports
     Enables type checking while maintaining graceful degradation.
     """
+
     db_path: Path
-    
+
     async def find_similar_neurons(
-        self,
-        functionality: str,
-        max_results: int = 5,
-        use_llm: bool = True
+        self, functionality: str, max_results: int = 5, use_llm: bool = True
     ) -> List[Dict[str, Any]]:
         """Find similar neurons using AI-powered semantic similarity."""
         ...
-    
+
     def get_database_stats(self) -> Dict[str, Any]:
         """Get database statistics for health monitoring."""
         ...
@@ -156,14 +154,13 @@ def ensure_ai_tools_importable() -> Path:
     return tools_path
 
 
-def try_import_similarity_engine(
-) -> Tuple[Optional[SimilarityEngineProtocol], bool]:
+def try_import_similarity_engine() -> Tuple[Optional[SimilarityEngineProtocol], bool]:
     """
     AINLP Pattern: Safe similarity engine import with Protocol type hints
-    
+
     Attempts to import AIAgentDendriticSimilarity with proper path setup
     and graceful fallback on failure.
-    
+
     AINLP.type-safety Enhancement:
     Returns SimilarityEngineProtocol type instead of object, enabling
     full type checking while maintaining graceful degradation pattern.
@@ -232,8 +229,9 @@ def try_import_similarity_engine(
         # workspace-aware abstractions that bridge multiple supercells
         # (ai/ + runtime/ + database/).
         from ai_agent_dendritic_similarity import (  # type: ignore
-            AIAgentDendriticSimilarity
+            AIAgentDendriticSimilarity,
         )
+
         engine = AIAgentDendriticSimilarity()
         return engine, True
     except ImportError:
@@ -302,8 +300,8 @@ def get_workspace_info() -> dict:
         "tachyonic_archive_exists": TACHYONIC_ARCHIVE.exists(),
         "in_sys_path": {
             "runtime_tools": str(RUNTIME_TOOLS) in sys.path,
-            "ai_tools": str(AI_TOOLS) in sys.path
-        }
+            "ai_tools": str(AI_TOOLS) in sys.path,
+        },
     }
 
 
@@ -323,7 +321,7 @@ if __name__ == "__main__":
 
     print(f"\n🔧 Runtime Tools: {info['runtime_tools']}")
     print(f"   Exists: {'✓' if info['runtime_tools_exists'] else '✗'}")
-    in_path = info['in_sys_path']['runtime_tools']
+    in_path = info["in_sys_path"]["runtime_tools"]
     print(f"   In sys.path: {'✓' if in_path else '✗'}")
 
     print(f"\n🤖 AI Tools: {info['ai_tools']}")

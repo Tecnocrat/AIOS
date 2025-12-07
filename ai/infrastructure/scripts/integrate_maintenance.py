@@ -47,7 +47,7 @@ def cleanup_temp_scripts(workspace_root: Path):
         "ainlp_phase2_consolidator.py",
         "context_harmonization_demo.py",
         "aios_quantum_bootstrap.py",
-        "MISSION_COMPLETE_*.md"
+        "MISSION_COMPLETE_*.md",
     ]
 
     removed_files = []
@@ -80,7 +80,7 @@ def verify_maintenance_module(workspace_root: Path):
         "backup_consolidator.py",
         "tachyonic_archiver.py",
         "garbage_collector.py",
-        "orchestrator.py"
+        "orchestrator.py",
     ]
 
     missing_files = []
@@ -114,6 +114,7 @@ def test_maintenance_system(workspace_root: Path):
     try:
         # Try to import the maintenance system
         import sys
+
         sys.path.insert(0, str(workspace_root / "ai" / "src"))
 
         from maintenance.orchestrator import MaintenanceOrchestrator
@@ -130,7 +131,9 @@ def test_maintenance_system(workspace_root: Path):
             # Print quick stats
             doc_analysis = result["documentation_analysis"]
             print(f"   Documentation files: {doc_analysis.get('total_files', 0)}")
-            print(f"   Fragmentation: {doc_analysis.get('fragmentation_score', 1.0):.3f}")
+            print(
+                f"   Fragmentation: {doc_analysis.get('fragmentation_score', 1.0):.3f}"
+            )
 
             archive_stats = result["archive_status"]
             print(f"   Archived documents: {archive_stats.get('total_documents', 0)}")

@@ -27,7 +27,7 @@ from .message_types import (
     MessagePart,
     MessageRole,
     TaskState,
-    TERMINAL_TASK_STATES
+    TERMINAL_TASK_STATES,
 )
 
 from .transport import (
@@ -35,37 +35,32 @@ from .transport import (
     HTTPTransport,
     LocalTransport,
     TransportConfig,
-    TransportFactory
+    TransportFactory,
 )
 
-from .adapter import (
-    AIOSMessageAdapter,
-    ConversationConverter
-)
+from .adapter import AIOSMessageAdapter, ConversationConverter
 
 __all__ = [
     # Message types
-    'AgentMessage',
-    'AgentTask',
-    'AgentCommunicationContext',
-    'MessagePart',
-    'MessageRole',
-    'ContentType',
-    'TaskState',
-    'TERMINAL_TASK_STATES',
-    
+    "AgentMessage",
+    "AgentTask",
+    "AgentCommunicationContext",
+    "MessagePart",
+    "MessageRole",
+    "ContentType",
+    "TaskState",
+    "TERMINAL_TASK_STATES",
     # Transport
-    'AgentTransport',
-    'LocalTransport',
-    'HTTPTransport',
-    'TransportConfig',
-    'TransportFactory',
-    
+    "AgentTransport",
+    "LocalTransport",
+    "HTTPTransport",
+    "TransportConfig",
+    "TransportFactory",
     # Adapters
-    'AIOSMessageAdapter',
-    'ConversationConverter',
+    "AIOSMessageAdapter",
+    "ConversationConverter",
 ]
 
-__version__ = '1.0.0'
-__extraction_id__ = 'EXT-002'
-__source__ = 'microsoft_agent_framework'
+__version__ = "1.0.0"
+__extraction_id__ = "EXT-002"
+__source__ = "microsoft_agent_framework"

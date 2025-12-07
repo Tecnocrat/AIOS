@@ -17,7 +17,7 @@ from typing import Dict, List, Any
 import logging
 
 # Setup logging for sequencer integration
-logger = logging.getLogger('AIOS.CrossPollination')
+logger = logging.getLogger("AIOS.CrossPollination")
 
 
 class CrossPollinationAutomator:
@@ -25,103 +25,116 @@ class CrossPollinationAutomator:
         self.workspace_root = Path(workspace_root)
         self.tachyonic_path = self.workspace_root / "tachyonic"
         self.ai_knowledge_path = self.tachyonic_path / "ai_engine_knowledge"
-        
-    def create_new_ai_branch(self, from_ai: str, to_ai: str, 
-                           version: str) -> str:
+
+    def create_new_ai_branch(self, from_ai: str, to_ai: str, version: str) -> str:
         """Create new AI engine branch with knowledge transfer"""
-        
+
         # Generate branch name
         new_branch = f"OS{version}.{to_ai}"
-        
+
         print(f"Creating new AI engine branch: {new_branch}")
-        
+
         # Create branch from current main
         try:
             subprocess.run(
-                ["git", "checkout", "main"], 
-                cwd=self.workspace_root, check=True
+                ["git", "checkout", "main"], cwd=self.workspace_root, check=True
             )
             subprocess.run(
-                ["git", "checkout", "-b", new_branch], 
-                cwd=self.workspace_root, check=True
+                ["git", "checkout", "-b", new_branch],
+                cwd=self.workspace_root,
+                check=True,
             )
         except subprocess.CalledProcessError as e:
             print(f"Error creating branch: {e}")
             return ""
-        
+
         # Load previous AI knowledge
         previous_knowledge = self._load_ai_knowledge(from_ai)
-        
+
         # Create knowledge transfer commit
-        self._create_knowledge_transfer_commit(
-            from_ai, to_ai, previous_knowledge
-        )
-        
+        self._create_knowledge_transfer_commit(from_ai, to_ai, previous_knowledge)
+
         # Generate AI onboarding documentation
         self._generate_ai_onboarding_doc(from_ai, to_ai, previous_knowledge)
-        
+
         print(f"Successfully created {new_branch} with knowledge transfer")
         return new_branch
-    
+
     def _load_ai_knowledge(self, ai_engine: str) -> Dict[str, Any]:
         """Load accumulated knowledge for an AI engine"""
-        knowledge_file = (self.ai_knowledge_path / ai_engine / 
-                         "accumulated_knowledge.json")
-        
+        knowledge_file = (
+            self.ai_knowledge_path / ai_engine / "accumulated_knowledge.json"
+        )
+
         if knowledge_file.exists():
             try:
-                with open(knowledge_file, 'r', encoding='utf-8') as f:
+                with open(knowledge_file, "r", encoding="utf-8") as f:
                     return json.load(f)
             except Exception as e:
                 print(f"Could not load knowledge for {ai_engine}: {e}")
-        
+
         return {"patterns": [], "optimizations": [], "lessons": []}
-    
-    def _create_knowledge_transfer_commit(self, from_ai: str, to_ai: str, 
-                                        knowledge: Dict[str, Any]):
+
+    def _create_knowledge_transfer_commit(
+        self, from_ai: str, to_ai: str, knowledge: Dict[str, Any]
+    ):
         """Create initial commit with knowledge transfer artifacts"""
-        
+
         # Create knowledge transfer file
-        transfer_file = (self.workspace_root / "docs" / "ai_transfers" / 
-                        f"{from_ai}_to_{to_ai}_transfer.md")
-        transfer_file.parent.mkdir(parents=True, exist_ok=True)
-        
-        transfer_content = self._generate_transfer_content(
-            from_ai, to_ai, knowledge
+        transfer_file = (
+            self.workspace_root
+            / "docs"
+            / "ai_transfers"
+            / f"{from_ai}_to_{to_ai}_transfer.md"
         )
-        
-        with open(transfer_file, 'w', encoding='utf-8') as f:
+        transfer_file.parent.mkdir(parents=True, exist_ok=True)
+
+        transfer_content = self._generate_transfer_content(from_ai, to_ai, knowledge)
+
+        with open(transfer_file, "w", encoding="utf-8") as f:
             f.write(transfer_content)
-        
+
         # Create AI engine context file
-        context_file = (self.workspace_root / "docs" / "ai_context" / 
-                       f"{to_ai}_development_context.md")
+        context_file = (
+            self.workspace_root
+            / "docs"
+            / "ai_context"
+            / f"{to_ai}_development_context.md"
+        )
         context_file.parent.mkdir(parents=True, exist_ok=True)
-        
+
         context_content = self._generate_context_content(to_ai, knowledge)
-        
-        with open(context_file, 'w', encoding='utf-8') as f:
+
+        with open(context_file, "w", encoding="utf-8") as f:
             f.write(context_content)
-        
+
         # Commit knowledge transfer
         try:
             subprocess.run(
                 ["git", "add", str(transfer_file), str(context_file)],
-                cwd=self.workspace_root, check=True
+                cwd=self.workspace_root,
+                check=True,
             )
-            subprocess.run([
-                "git", "commit", "-m", 
-                f"AI Engine Transfer: {from_ai} → {to_ai} knowledge handoff"
-            ], cwd=self.workspace_root, check=True)
+            subprocess.run(
+                [
+                    "git",
+                    "commit",
+                    "-m",
+                    f"AI Engine Transfer: {from_ai} → {to_ai} knowledge handoff",
+                ],
+                cwd=self.workspace_root,
+                check=True,
+            )
         except subprocess.CalledProcessError as e:
             print(f"Error committing knowledge transfer: {e}")
-    
-    def _generate_transfer_content(self, from_ai: str, to_ai: str, 
-                                 knowledge: Dict[str, Any]) -> str:
+
+    def _generate_transfer_content(
+        self, from_ai: str, to_ai: str, knowledge: Dict[str, Any]
+    ) -> str:
         """Generate knowledge transfer content"""
-        
+
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
+
         content = f"""# AI Engine Knowledge Transfer
 ## {from_ai} → {to_ai}
 **Transfer Date**: {timestamp}
@@ -130,24 +143,24 @@ class CrossPollinationAutomator:
 
 ### Successful Patterns
 """
-        
+
         for pattern in knowledge.get("patterns", []):
             content += f"- {pattern}\n"
-        
+
         content += """
 ### Optimization Strategies
 """
-        
+
         for optimization in knowledge.get("optimizations", []):
             content += f"- {optimization}\n"
-        
+
         content += """
 ### Lessons Learned
 """
-        
+
         for lesson in knowledge.get("lessons", []):
             content += f"- {lesson}\n"
-        
+
         content += f"""
 ## 🚀 Recommended Continuation Strategy
 
@@ -181,15 +194,16 @@ class CrossPollinationAutomator:
 - Contribute unique insights to the knowledge base
 - Prepare comprehensive handoff for next AI iteration
 """
-        
+
         return content
-    
-    def _generate_context_content(self, ai_engine: str, 
-                                knowledge: Dict[str, Any]) -> str:
+
+    def _generate_context_content(
+        self, ai_engine: str, knowledge: Dict[str, Any]
+    ) -> str:
         """Generate AI development context"""
-        
+
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
+
         return f"""# {ai_engine} Development Context
 **Created**: {timestamp}
 
@@ -228,15 +242,20 @@ This is part of AIOS's meta-learning architecture where each AI engine:
 - Prepares the foundation for future AI engines
 - Participates in compound intelligence evolution
 """
-    
-    def _generate_ai_onboarding_doc(self, from_ai: str, to_ai: str, 
-                                  knowledge: Dict[str, Any]):
+
+    def _generate_ai_onboarding_doc(
+        self, from_ai: str, to_ai: str, knowledge: Dict[str, Any]
+    ):
         """Generate comprehensive onboarding documentation"""
-        
-        onboarding_file = (self.workspace_root / "docs" / "ai_onboarding" / 
-                          f"{to_ai}_onboarding_guide.md")
+
+        onboarding_file = (
+            self.workspace_root
+            / "docs"
+            / "ai_onboarding"
+            / f"{to_ai}_onboarding_guide.md"
+        )
         onboarding_file.parent.mkdir(parents=True, exist_ok=True)
-        
+
         content = f"""# {to_ai} Onboarding Guide
 ## Welcome to AIOS Development!
 
@@ -278,76 +297,76 @@ You're part of a meta-learning system where each AI contributes to compound inte
 
 **Remember**: You're not just developing software, you're participating in the evolution of AI-driven development methodology!
 """
-        
-        with open(onboarding_file, 'w', encoding='utf-8') as f:
+
+        with open(onboarding_file, "w", encoding="utf-8") as f:
             f.write(content)
-        
+
         print(f"Generated onboarding guide: {onboarding_file}")
-    
+
     def extract_chat_insights(self, ai_engine: str) -> Dict[str, List[str]]:
         """Extract insights from VSCode chat documentation"""
-        
+
         chat_path = self.workspace_root / "docs" / "vscopilot chat"
         insights = {
             "problem_solving_patterns": [],
             "optimization_techniques": [],
             "architectural_decisions": [],
-            "user_interaction_patterns": []
+            "user_interaction_patterns": [],
         }
-        
+
         try:
             for chat_file in chat_path.glob("*.md"):
                 if ai_engine.lower() in chat_file.name.lower():
-                    content = chat_file.read_text(encoding='utf-8')
-                    
+                    content = chat_file.read_text(encoding="utf-8")
+
                     # Extract patterns (simplified analysis)
                     if "optimization" in content.lower():
                         insights["optimization_techniques"].append(
                             f"Optimization insight from {chat_file.name}"
                         )
-                    
+
                     if "architecture" in content.lower():
                         insights["architectural_decisions"].append(
                             f"Architecture insight from {chat_file.name}"
                         )
-                    
+
                     if "problem" in content.lower() and "solution" in content.lower():
                         insights["problem_solving_patterns"].append(
                             f"Problem-solving pattern from {chat_file.name}"
                         )
-        
+
         except Exception as e:
             print(f"Could not extract chat insights: {e}")
-        
+
         return insights
-    
+
     def save_ai_knowledge(self, ai_engine: str, session_data: Dict[str, Any]):
         """Save AI engine knowledge to tachyonic archive"""
-        
+
         ai_dir = self.ai_knowledge_path / ai_engine
         ai_dir.mkdir(parents=True, exist_ok=True)
-        
+
         # Load existing knowledge
         knowledge_file = ai_dir / "accumulated_knowledge.json"
         if knowledge_file.exists():
-            with open(knowledge_file, 'r', encoding='utf-8') as f:
+            with open(knowledge_file, "r", encoding="utf-8") as f:
                 knowledge = json.load(f)
         else:
             knowledge = {"patterns": [], "optimizations": [], "lessons": []}
-        
+
         # Merge new session data
         knowledge["patterns"].extend(session_data.get("patterns", []))
         knowledge["optimizations"].extend(session_data.get("optimizations", []))
         knowledge["lessons"].extend(session_data.get("lessons", []))
-        
+
         # Add timestamp
         knowledge["last_updated"] = datetime.datetime.now().isoformat()
         knowledge["total_sessions"] = knowledge.get("total_sessions", 0) + 1
-        
+
         # Save updated knowledge
-        with open(knowledge_file, 'w', encoding='utf-8') as f:
+        with open(knowledge_file, "w", encoding="utf-8") as f:
             json.dump(knowledge, f, indent=2, ensure_ascii=False)
-        
+
         print(f"Updated knowledge base for {ai_engine}")
 
     def status(self) -> Dict[str, Any]:
@@ -355,27 +374,34 @@ You're part of a meta-learning system where each AI contributes to compound inte
         try:
             # Check if workspace exists
             workspace_exists = self.workspace_root.exists()
-            
+
             # Check if tachyonic directory exists
             tachyonic_exists = self.tachyonic_path.exists()
-            
+
             # Check git availability
             git_available = False
             try:
-                subprocess.run(["git", "--version"], 
-                              capture_output=True, check=True)
+                subprocess.run(["git", "--version"], capture_output=True, check=True)
                 git_available = True
             except (subprocess.CalledProcessError, FileNotFoundError):
                 pass
-            
+
             # Check AI knowledge directory
             ai_knowledge_exists = self.ai_knowledge_path.exists()
-            
-            status = "healthy" if all([
-                workspace_exists, tachyonic_exists, 
-                git_available, ai_knowledge_exists
-            ]) else "degraded"
-            
+
+            status = (
+                "healthy"
+                if all(
+                    [
+                        workspace_exists,
+                        tachyonic_exists,
+                        git_available,
+                        ai_knowledge_exists,
+                    ]
+                )
+                else "degraded"
+            )
+
             return {
                 "status": status,
                 "workspace_exists": workspace_exists,
@@ -383,42 +409,49 @@ You're part of a meta-learning system where each AI contributes to compound inte
                 "git_available": git_available,
                 "ai_knowledge_exists": ai_knowledge_exists,
                 "component_type": "tool",
-                "auto_start": False
+                "auto_start": False,
             }
         except Exception as e:
             return {
                 "status": "error",
                 "error": str(e),
                 "component_type": "tool",
-                "auto_start": False
+                "auto_start": False,
             }
+
 
 def run():
     """Sequencer-compatible run method"""
     logger.info("Cross-Pollination Automator is ready for manual execution")
-    logger.info("Use: python cross_pollination_automator.py <command> <from_ai> <to_ai>")
+    logger.info(
+        "Use: python cross_pollination_automator.py <command> <from_ai> <to_ai>"
+    )
 
 
 def main():
     """Cross-pollination automation main function"""
     import sys
-    
+
     if len(sys.argv) < 4:
-        print("Usage: python cross_pollination_automator.py <command> <from_ai> <to_ai> [version]")
+        print(
+            "Usage: python cross_pollination_automator.py <command> <from_ai> <to_ai> [version]"
+        )
         print("Commands:")
         print("  create_branch - Create new AI engine branch with knowledge transfer")
         print("  extract_knowledge - Extract knowledge from AI engine session")
-        print("Example: python cross_pollination_automator.py create_branch claude grok 0.6.2")
+        print(
+            "Example: python cross_pollination_automator.py create_branch claude grok 0.6.2"
+        )
         sys.exit(1)
-    
+
     command = sys.argv[1]
     from_ai = sys.argv[2]
     to_ai = sys.argv[3]
     version = sys.argv[4] if len(sys.argv) > 4 else "0.6.2"
-    
+
     workspace_root = r"C:\dev\AIOS"
     automator = CrossPollinationAutomator(workspace_root)
-    
+
     if command == "create_branch":
         print(f"Creating new AI branch: {from_ai} → {to_ai} (v{version})")
         new_branch = automator.create_new_ai_branch(from_ai, to_ai, version)
@@ -426,13 +459,13 @@ def main():
             print(f"Success! New branch '{new_branch}' ready for {to_ai} development")
         else:
             print("Failed to create new branch")
-    
+
     elif command == "extract_knowledge":
         print(f"Extracting knowledge from {from_ai} session...")
         insights = automator.extract_chat_insights(from_ai)
         automator.save_ai_knowledge(from_ai, insights)
         print("Knowledge extraction complete")
-    
+
     else:
         print(f"Unknown command: {command}")
 

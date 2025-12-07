@@ -1,11 +1,11 @@
-
 # Fix Windows console encoding issues
 try:
     import sys
-    if hasattr(sys.stdout, 'reconfigure'):
-        sys.stdout.reconfigure(encoding='utf-8')
-    if hasattr(sys.stderr, 'reconfigure'):
-        sys.stderr.reconfigure(encoding='utf-8')
+
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8")
 except Exception:
     pass
 
@@ -45,25 +45,32 @@ from typing import Dict, List, Any, Optional
 from datetime import datetime
 
 # Add iter2 assembler capabilities
-sys.path.insert(0, r'C:\dev\AIOS\core\evolutionary_assembler_iter2\scripts_py_optimized')
+sys.path.insert(
+    0, r"C:\dev\AIOS\core\evolutionary_assembler_iter2\scripts_py_optimized"
+)
 
 try:
     from cellular_health_monitor import CellularHealthMonitor
     from aios_harmonization_executor import AIOSHarmonizationExecutor
+
     ITER2_AVAILABLE = True
 except ImportError:
     ITER2_AVAILABLE = False
-    print("[WARNING] Iter2 assembler components not available, using fallback optimization")
+    print(
+        "[WARNING] Iter2 assembler components not available, using fallback optimization"
+    )
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 logger = logging.getLogger(__name__)
 
 
 class AIOSCoreEngineOptimizer:
     """
     [WRENCH] AIOS Core Engine Root Files Optimizer
-    
+
     Applies iter2 assembler capabilities to optimize Core Engine:
     • Implements cellular organization structure
     • Applies AIOS naming conventions
@@ -72,26 +79,32 @@ class AIOSCoreEngineOptimizer:
     • Uses meta-evolutionary optimization
     • Implements consciousness layer patterns
     """
-    
+
     def __init__(self, core_path: str = None, analysis_file: str = None):
         """Initialize the Core Engine optimizer."""
         self.core_path = Path(core_path or r"C:\dev\AIOS\core")
         self.optimization_timestamp = datetime.now()
-        
+
         # Load analysis results
         if analysis_file:
             self.analysis_results = self._load_analysis_results(analysis_file)
         else:
             # Find latest analysis file
-            analysis_files = list(self.core_path.glob("CORE_ENGINE_ITER2_ANALYSIS_*.json"))
+            analysis_files = list(
+                self.core_path.glob("CORE_ENGINE_ITER2_ANALYSIS_*.json")
+            )
             if analysis_files:
                 latest_analysis = max(analysis_files, key=lambda x: x.stat().st_mtime)
-                self.analysis_results = self._load_analysis_results(str(latest_analysis))
+                self.analysis_results = self._load_analysis_results(
+                    str(latest_analysis)
+                )
                 logger.info(f"[CHART] Loaded analysis: {latest_analysis.name}")
             else:
-                logger.error("[X] No analysis results found - please run analyzer first")
+                logger.error(
+                    "[X] No analysis results found - please run analyzer first"
+                )
                 self.analysis_results = {}
-        
+
         # Initialize iter2 components
         if ITER2_AVAILABLE:
             self.health_monitor = CellularHealthMonitor()
@@ -103,180 +116,206 @@ class AIOSCoreEngineOptimizer:
         else:
             self.health_monitor = None
             self.harmonizer = None
-        
+
         # Optimization configuration
         self.optimization_config = {
             "cellular_structure": {
                 "core_systems": {
                     "pattern": ["compiler", "harmonizer", "cmake", "csproj"],
-                    "description": "Core AIOS system files"
+                    "description": "Core AIOS system files",
                 },
                 "analysis_tools": {
                     "pattern": ["analysis", "optimizer", "tester", "verifier"],
-                    "description": "Analysis and optimization tools"
+                    "description": "Analysis and optimization tools",
                 },
                 "configuration": {
                     "pattern": ["project", "json", "config"],
-                    "description": "Configuration and project files"
+                    "description": "Configuration and project files",
                 },
                 "documentation": {
                     "pattern": ["md", "report", "summary"],
-                    "description": "Documentation and reports"
-                }
+                    "description": "Documentation and reports",
+                },
             },
             "naming_optimization": {
                 "python_prefix": "aios_",
                 "max_words": 6,
                 "preferred_separators": ["_"],
-                "semantic_keywords": ["core", "engine", "analysis", "optimizer"]
+                "semantic_keywords": ["core", "engine", "analysis", "optimizer"],
             },
             "architecture_enhancement": {
                 "max_file_lines": 1500,
                 "min_documentation": 0.20,
-                "required_sections": ["description", "scope", "capabilities", "iter2_enhancement"]
-            }
+                "required_sections": [
+                    "description",
+                    "scope",
+                    "capabilities",
+                    "iter2_enhancement",
+                ],
+            },
         }
-        
+
         logger.info(f"[WRENCH] AIOS Core Engine Optimizer initialized")
         logger.info(f"   Core path: {self.core_path}")
-        logger.info(f"   Iter2 capabilities: {'[CHECK] Available' if ITER2_AVAILABLE else '[X] Fallback mode'}")
-    
+        logger.info(
+            f"   Iter2 capabilities: {'[CHECK] Available' if ITER2_AVAILABLE else '[X] Fallback mode'}"
+        )
+
     def _load_analysis_results(self, analysis_file: str) -> Dict[str, Any]:
         """Load analysis results from JSON file."""
         try:
-            with open(analysis_file, 'r', encoding='utf-8') as f:
+            with open(analysis_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         except Exception as e:
             logger.error(f"Failed to load analysis results: {e}")
             return {}
-    
+
     def execute_comprehensive_optimization(self) -> Dict[str, Any]:
         """Execute comprehensive optimization based on iter2 analysis."""
-        
+
         logger.info("[WRENCH] EXECUTING COMPREHENSIVE CORE ENGINE OPTIMIZATION")
-        
+
         optimization_results = {
             "optimization_timestamp": self.optimization_timestamp.isoformat(),
             "core_path": str(self.core_path),
             "iter2_enhanced": ITER2_AVAILABLE,
-            "optimizations_applied": []
+            "optimizations_applied": [],
         }
-        
+
         # Step 1: Implement cellular organization
         cellular_result = self._implement_cellular_organization()
         optimization_results["optimizations_applied"].append(cellular_result)
-        
+
         # Step 2: Apply naming convention optimization
         naming_result = self._optimize_naming_conventions()
         optimization_results["optimizations_applied"].append(naming_result)
-        
+
         # Step 3: Enhance architecture compliance
         architecture_result = self._enhance_architecture_compliance()
         optimization_results["optimizations_applied"].append(architecture_result)
-        
+
         # Step 4: Integrate AINLP directives
         ainlp_result = self._integrate_ainlp_directives()
         optimization_results["optimizations_applied"].append(ainlp_result)
-        
+
         # Step 5: Apply meta-evolutionary enhancements
         if ITER2_AVAILABLE:
             meta_evo_result = self._apply_meta_evolutionary_enhancements()
             optimization_results["optimizations_applied"].append(meta_evo_result)
-        
+
         # Step 6: Implement consciousness layer patterns
         consciousness_result = self._implement_consciousness_patterns()
         optimization_results["optimizations_applied"].append(consciousness_result)
-        
+
         # Calculate overall optimization success
-        successful_optimizations = sum(1 for opt in optimization_results["optimizations_applied"] 
-                                     if opt.get("success", False))
+        successful_optimizations = sum(
+            1
+            for opt in optimization_results["optimizations_applied"]
+            if opt.get("success", False)
+        )
         total_optimizations = len(optimization_results["optimizations_applied"])
-        
-        optimization_results["optimization_success_rate"] = successful_optimizations / total_optimizations if total_optimizations > 0 else 0.0
+
+        optimization_results["optimization_success_rate"] = (
+            successful_optimizations / total_optimizations
+            if total_optimizations > 0
+            else 0.0
+        )
         optimization_results["summary"] = {
             "total_optimizations": total_optimizations,
             "successful_optimizations": successful_optimizations,
             "success_rate": optimization_results["optimization_success_rate"],
-            "status": "excellent" if optimization_results["optimization_success_rate"] > 0.9 else
-                     "good" if optimization_results["optimization_success_rate"] > 0.7 else
-                     "needs_improvement"
+            "status": (
+                "excellent"
+                if optimization_results["optimization_success_rate"] > 0.9
+                else (
+                    "good"
+                    if optimization_results["optimization_success_rate"] > 0.7
+                    else "needs_improvement"
+                )
+            ),
         }
-        
+
         return optimization_results
-    
+
     def _implement_cellular_organization(self) -> Dict[str, Any]:
         """Implement cellular organization structure."""
-        
+
         logger.info("[DNA] IMPLEMENTING CELLULAR ORGANIZATION STRUCTURE")
-        
+
         result = {
             "optimization": "cellular_organization",
             "description": "Organize root files into cellular units",
             "success": False,
-            "details": {}
+            "details": {},
         }
-        
+
         try:
             # Create cellular directories
             cellular_dirs = {}
-            for cell_name, config in self.optimization_config["cellular_structure"].items():
+            for cell_name, config in self.optimization_config[
+                "cellular_structure"
+            ].items():
                 cell_dir = self.core_path / cell_name
                 if not cell_dir.exists():
                     cell_dir.mkdir(exist_ok=True)
                     logger.info(f"[FOLDER] Created cellular directory: {cell_name}")
                 cellular_dirs[cell_name] = cell_dir
-            
+
             # Categorize and move files
             files_moved = 0
             files_categorized = {}
-            
+
             for item in self.core_path.iterdir():
                 if item.is_file():
                     target_cell = self._categorize_file_for_cellular_organization(item)
                     if target_cell and target_cell in cellular_dirs:
                         target_path = cellular_dirs[target_cell] / item.name
-                        
+
                         # Move file (create copy first for safety)
                         if not target_path.exists():
                             shutil.copy2(item, target_path)
                             files_moved += 1
-                            
+
                             if target_cell not in files_categorized:
                                 files_categorized[target_cell] = []
                             files_categorized[target_cell].append(item.name)
-                            
+
                             logger.info(f" Moved {item.name} to {target_cell}/")
-            
+
             # Create cellular metadata
             for cell_name, cell_dir in cellular_dirs.items():
                 metadata_file = cell_dir / "CELLULAR_METADATA.md"
                 if not metadata_file.exists():
-                    self._create_cellular_metadata(cell_name, cell_dir, files_categorized.get(cell_name, []))
-            
+                    self._create_cellular_metadata(
+                        cell_name, cell_dir, files_categorized.get(cell_name, [])
+                    )
+
             result["success"] = True
             result["details"] = {
                 "cellular_directories_created": len(cellular_dirs),
                 "files_moved": files_moved,
-                "categorization": files_categorized
+                "categorization": files_categorized,
             }
-            
+
         except Exception as e:
             logger.error(f"Cellular organization failed: {e}")
             result["details"]["error"] = str(e)
-        
+
         return result
-    
-    def _categorize_file_for_cellular_organization(self, file_path: Path) -> Optional[str]:
+
+    def _categorize_file_for_cellular_organization(
+        self, file_path: Path
+    ) -> Optional[str]:
         """Categorize file for cellular organization."""
-        
+
         filename = file_path.name.lower()
-        
+
         # Check each cellular category
         for cell_name, config in self.optimization_config["cellular_structure"].items():
             patterns = config["pattern"]
             if any(pattern in filename for pattern in patterns):
                 return cell_name
-        
+
         # Special cases
         if filename.endswith(".py") and filename.startswith("aios_"):
             return "analysis_tools"
@@ -284,14 +323,16 @@ class AIOSCoreEngineOptimizer:
             return "documentation"
         elif filename.endswith((".json", ".csproj")):
             return "configuration"
-        
+
         return None
-    
-    def _create_cellular_metadata(self, cell_name: str, cell_dir: Path, files: List[str]):
+
+    def _create_cellular_metadata(
+        self, cell_name: str, cell_dir: Path, files: List[str]
+    ):
         """Create cellular metadata file."""
-        
+
         config = self.optimization_config["cellular_structure"].get(cell_name, {})
-        
+
         metadata_content = f"""# [DNA] {cell_name.upper().replace('_', ' ')} CELLULAR UNIT
 
 ## Purpose
@@ -322,67 +363,71 @@ This cellular unit was organized using evolutionary_assembler_iter2 capabilities
 **Optimizer**: aios_core_engine_optimizer_iter2.py  
 **Enhancement**: Evolutionary Assembler Iter2  
 """
-        
+
         metadata_file = cell_dir / "CELLULAR_METADATA.md"
         try:
-            with open(metadata_file, 'w', encoding='utf-8') as f:
+            with open(metadata_file, "w", encoding="utf-8") as f:
                 f.write(metadata_content)
             logger.info(f" Created cellular metadata: {cell_name}")
         except Exception as e:
             logger.error(f"Failed to create metadata for {cell_name}: {e}")
-    
+
     def _optimize_naming_conventions(self) -> Dict[str, Any]:
         """Optimize naming conventions according to AIOS guidelines."""
-        
+
         logger.info(" OPTIMIZING NAMING CONVENTIONS")
-        
+
         result = {
             "optimization": "naming_conventions",
             "description": "Apply AIOS naming convention standards",
             "success": False,
-            "details": {}
+            "details": {},
         }
-        
+
         try:
-            naming_issues = self.analysis_results.get("naming_analysis", {}).get("compliance_issues", [])
+            naming_issues = self.analysis_results.get("naming_analysis", {}).get(
+                "compliance_issues", []
+            )
             files_renamed = 0
             rename_log = []
-            
+
             for issue in naming_issues:
                 file_name = issue.get("file", "")
                 issues_list = issue.get("issues", [])
-                
-                if "Missing 'aios_' prefix" in str(issues_list) and file_name.endswith(".py"):
+
+                if "Missing 'aios_' prefix" in str(issues_list) and file_name.endswith(
+                    ".py"
+                ):
                     old_path = self.core_path / file_name
                     new_name = f"aios_{file_name}"
                     new_path = self.core_path / new_name
-                    
+
                     if old_path.exists() and not new_path.exists():
                         # Create optimized version instead of rename (for safety)
                         self._create_optimized_file_version(old_path, new_path)
                         files_renamed += 1
                         rename_log.append({"old": file_name, "new": new_name})
                         logger.info(f" Optimized naming: {file_name} → {new_name}")
-            
+
             result["success"] = True
             result["details"] = {
                 "files_renamed": files_renamed,
-                "rename_log": rename_log
+                "rename_log": rename_log,
             }
-            
+
         except Exception as e:
             logger.error(f"Naming optimization failed: {e}")
             result["details"]["error"] = str(e)
-        
+
         return result
-    
+
     def _create_optimized_file_version(self, old_path: Path, new_path: Path):
         """Create optimized version of file with enhanced headers."""
-        
+
         try:
-            with open(old_path, 'r', encoding='utf-8') as f:
+            with open(old_path, "r", encoding="utf-8") as f:
                 original_content = f.read()
-            
+
             # Add iter2 optimization header
             optimization_header = f'''#!/usr/bin/env python3
 """
@@ -404,15 +449,15 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
 
 """
 '''
-            
+
             # Extract original content without header if present
-            lines = original_content.split('\n')
+            lines = original_content.split("\n")
             content_start = 0
-            
+
             # Skip shebang and existing docstring
-            if lines and lines[0].startswith('#!'):
+            if lines and lines[0].startswith("#!"):
                 content_start = 1
-            
+
             # Skip docstring
             in_docstring = False
             for i, line in enumerate(lines[content_start:], content_start):
@@ -422,81 +467,87 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
                     else:
                         content_start = i + 1
                         break
-            
+
             # Combine optimized header with original logic
-            optimized_content = optimization_header + '\n' + '\n'.join(lines[content_start:])
-            
-            with open(new_path, 'w', encoding='utf-8') as f:
+            optimized_content = (
+                optimization_header + "\n" + "\n".join(lines[content_start:])
+            )
+
+            with open(new_path, "w", encoding="utf-8") as f:
                 f.write(optimized_content)
-                
+
         except Exception as e:
             logger.error(f"Failed to create optimized version of {old_path.name}: {e}")
             # Fallback: simple copy
             shutil.copy2(old_path, new_path)
-    
+
     def _enhance_architecture_compliance(self) -> Dict[str, Any]:
         """Enhance architecture compliance for C# and core files."""
-        
+
         logger.info(" ENHANCING ARCHITECTURE COMPLIANCE")
-        
+
         result = {
             "optimization": "architecture_compliance",
             "description": "Enhance C# files with iter2 architecture patterns",
             "success": False,
-            "details": {}
+            "details": {},
         }
-        
+
         try:
             enhanced_files = []
-            
+
             # Enhance C# files
-            csharp_files = ["AINLPCompiler.cs", "EnhancedAINLPCompiler.cs", "AINLPHarmonizer.cs"]
-            
+            csharp_files = [
+                "AINLPCompiler.cs",
+                "EnhancedAINLPCompiler.cs",
+                "AINLPHarmonizer.cs",
+            ]
+
             for cs_file in csharp_files:
                 cs_path = self.core_path / cs_file
                 if cs_path.exists():
                     self._enhance_csharp_file(cs_path)
                     enhanced_files.append(cs_file)
-            
+
             # Enhance CMakeLists.txt
             cmake_path = self.core_path / "CMakeLists.txt"
             if cmake_path.exists():
                 self._enhance_cmake_file(cmake_path)
                 enhanced_files.append("CMakeLists.txt")
-            
+
             result["success"] = True
             result["details"] = {
                 "files_enhanced": len(enhanced_files),
-                "enhanced_files": enhanced_files
+                "enhanced_files": enhanced_files,
             }
-            
+
         except Exception as e:
             logger.error(f"Architecture enhancement failed: {e}")
             result["details"]["error"] = str(e)
-        
+
         return result
-    
+
     def _enhance_csharp_file(self, cs_path: Path):
         """Enhance C# file with iter2 patterns."""
-        
+
         try:
-            with open(cs_path, 'r', encoding='utf-8') as f:
+            with open(cs_path, "r", encoding="utf-8") as f:
                 content = f.read()
-            
+
             # Add iter2 enhancement comments
             enhancement_marker = "// ITER2 EVOLUTIONARY ASSEMBLER ENHANCEMENT"
-            
+
             if enhancement_marker not in content:
                 # Add enhancement header
-                lines = content.split('\n')
-                
+                lines = content.split("\n")
+
                 # Find namespace or class declaration
                 insert_line = 0
                 for i, line in enumerate(lines):
-                    if 'namespace' in line or 'public class' in line:
+                    if "namespace" in line or "public class" in line:
                         insert_line = i
                         break
-                
+
                 enhancement_comment = f"""
     /// <summary>
     /// ITER2 EVOLUTIONARY ASSEMBLER ENHANCEMENT
@@ -511,31 +562,31 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
     /// Optimizer: aios_core_engine_optimizer_iter2.py
     /// </summary>
     {enhancement_marker}"""
-                
+
                 lines.insert(insert_line, enhancement_comment)
-                
-                enhanced_content = '\n'.join(lines)
-                
+
+                enhanced_content = "\n".join(lines)
+
                 # Create optimized version
                 optimized_path = cs_path.parent / f"ITER2_{cs_path.name}"
-                with open(optimized_path, 'w', encoding='utf-8') as f:
+                with open(optimized_path, "w", encoding="utf-8") as f:
                     f.write(enhanced_content)
-                
+
                 logger.info(f" Enhanced C# file: {cs_path.name}")
-                
+
         except Exception as e:
             logger.error(f"Failed to enhance {cs_path.name}: {e}")
-    
+
     def _enhance_cmake_file(self, cmake_path: Path):
         """Enhance CMakeLists.txt with iter2 patterns."""
-        
+
         try:
-            with open(cmake_path, 'r', encoding='utf-8') as f:
+            with open(cmake_path, "r", encoding="utf-8") as f:
                 content = f.read()
-            
+
             # Add iter2 enhancement
             enhancement_marker = "# ITER2 EVOLUTIONARY ASSEMBLER ENHANCEMENT"
-            
+
             if enhancement_marker not in content:
                 enhancement_header = f"""
 # ITER2 EVOLUTIONARY ASSEMBLER ENHANCEMENT
@@ -550,56 +601,56 @@ AIOS - {new_path.stem.replace('_', ' ').title()}
 # - AIOS paradigmatic architecture compliance
 
 """
-                
+
                 enhanced_content = enhancement_header + content
-                
+
                 # Create optimized version
                 optimized_path = cmake_path.parent / "CMakeLists_ITER2.txt"
-                with open(optimized_path, 'w', encoding='utf-8') as f:
+                with open(optimized_path, "w", encoding="utf-8") as f:
                     f.write(enhanced_content)
-                
+
                 logger.info(f" Enhanced CMake file: {cmake_path.name}")
-                
+
         except Exception as e:
             logger.error(f"Failed to enhance {cmake_path.name}: {e}")
-    
+
     def _integrate_ainlp_directives(self) -> Dict[str, Any]:
         """Integrate AINLP directives into file structure."""
-        
+
         logger.info("[BRAIN] INTEGRATING AINLP DIRECTIVES")
-        
+
         result = {
             "optimization": "ainlp_directives",
             "description": "Integrate AINLP coherent development patterns",
             "success": False,
-            "details": {}
+            "details": {},
         }
-        
+
         try:
             # Create AINLP compliance documentation
             ainlp_doc_path = self.core_path / "AINLP_DIRECTIVE_COMPLIANCE.md"
             self._create_ainlp_compliance_doc(ainlp_doc_path)
-            
+
             # Create coherent development guidelines
             coherence_path = self.core_path / "AIOS_COHERENT_DEVELOPMENT_GUIDELINES.md"
             self._create_coherent_development_guidelines(coherence_path)
-            
+
             result["success"] = True
             result["details"] = {
                 "documents_created": 2,
                 "ainlp_compliance_doc": str(ainlp_doc_path),
-                "coherence_guidelines": str(coherence_path)
+                "coherence_guidelines": str(coherence_path),
             }
-            
+
         except Exception as e:
             logger.error(f"AINLP integration failed: {e}")
             result["details"]["error"] = str(e)
-        
+
         return result
-    
+
     def _create_ainlp_compliance_doc(self, doc_path: Path):
         """Create AINLP directive compliance documentation."""
-        
+
         content = f"""# [BRAIN] AINLP DIRECTIVE COMPLIANCE REPORT
 
 ## Executive Summary
@@ -670,13 +721,13 @@ AIOS Core Engine compliance with Autonomous Intelligence Natural Language Progra
 **Enhancement**: Evolutionary Assembler Iter2  
 **Status**: Active AINLP Integration  
 """
-        
-        with open(doc_path, 'w', encoding='utf-8') as f:
+
+        with open(doc_path, "w", encoding="utf-8") as f:
             f.write(content)
-    
+
     def _create_coherent_development_guidelines(self, guidelines_path: Path):
         """Create coherent development guidelines."""
-        
+
         content = f"""# [BRAIN] AIOS COHERENT DEVELOPMENT GUIDELINES (ITER2)
 
 ## Purpose
@@ -775,47 +826,47 @@ Guidelines for maintaining coherent development practices using evolutionary_ass
 **Enhancement**: Evolutionary Assembler Iter2  
 **Status**: Active Development Guidelines  
 """
-        
-        with open(guidelines_path, 'w', encoding='utf-8') as f:
+
+        with open(guidelines_path, "w", encoding="utf-8") as f:
             f.write(content)
-    
+
     def _apply_meta_evolutionary_enhancements(self) -> Dict[str, Any]:
         """Apply meta-evolutionary enhancements using iter2 capabilities."""
-        
+
         logger.info("[DNA] APPLYING META-EVOLUTIONARY ENHANCEMENTS")
-        
+
         result = {
             "optimization": "meta_evolutionary_enhancement",
             "description": "Apply iter2 meta-evolutionary optimization patterns",
             "success": False,
-            "details": {}
+            "details": {},
         }
-        
+
         try:
             # Create meta-evolutionary enhancement tool
             meta_evo_tool = self.core_path / "aios_core_meta_evolutionary_enhancer.py"
             self._create_meta_evolutionary_enhancer(meta_evo_tool)
-            
+
             # Create evolutionary monitoring system
             evo_monitor = self.core_path / "aios_core_evolution_monitor.py"
             self._create_evolution_monitor(evo_monitor)
-            
+
             result["success"] = True
             result["details"] = {
                 "tools_created": 2,
                 "meta_evolutionary_enhancer": str(meta_evo_tool),
-                "evolution_monitor": str(evo_monitor)
+                "evolution_monitor": str(evo_monitor),
             }
-            
+
         except Exception as e:
             logger.error(f"Meta-evolutionary enhancement failed: {e}")
             result["details"]["error"] = str(e)
-        
+
         return result
-    
+
     def _create_meta_evolutionary_enhancer(self, tool_path: Path):
         """Create meta-evolutionary enhancement tool."""
-        
+
         content = '''#!/usr/bin/env python3
 """
 [DNA] AIOS Core Meta-Evolutionary Enhancer (Iter2)
@@ -915,13 +966,13 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     main()
 '''
-        
-        with open(tool_path, 'w', encoding='utf-8') as f:
+
+        with open(tool_path, "w", encoding="utf-8") as f:
             f.write(content)
-    
+
     def _create_evolution_monitor(self, monitor_path: Path):
         """Create evolution monitoring system."""
-        
+
         content = '''#!/usr/bin/env python3
 """
 [CHART] AIOS Core Evolution Monitor (Iter2)
@@ -1033,48 +1084,48 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     main()
 '''
-        
-        with open(monitor_path, 'w', encoding='utf-8') as f:
+
+        with open(monitor_path, "w", encoding="utf-8") as f:
             f.write(content)
-    
+
     def _implement_consciousness_patterns(self) -> Dict[str, Any]:
         """Implement consciousness layer patterns."""
-        
+
         logger.info("[BRAIN] IMPLEMENTING CONSCIOUSNESS LAYER PATTERNS")
-        
+
         result = {
             "optimization": "consciousness_integration",
             "description": "Integrate consciousness-driven development patterns",
             "success": False,
-            "details": {}
+            "details": {},
         }
-        
+
         try:
             # Create consciousness integration documentation
             consciousness_doc = self.core_path / "CONSCIOUSNESS_INTEGRATION_PATTERNS.md"
             self._create_consciousness_documentation(consciousness_doc)
-            
+
             # Create consciousness monitoring tool
             consciousness_tool = self.core_path / "aios_core_consciousness_monitor.py"
             self._create_consciousness_monitor(consciousness_tool)
-            
+
             result["success"] = True
             result["details"] = {
                 "documents_created": 1,
                 "tools_created": 1,
                 "consciousness_documentation": str(consciousness_doc),
-                "consciousness_monitor": str(consciousness_tool)
+                "consciousness_monitor": str(consciousness_tool),
             }
-            
+
         except Exception as e:
             logger.error(f"Consciousness pattern implementation failed: {e}")
             result["details"]["error"] = str(e)
-        
+
         return result
-    
+
     def _create_consciousness_documentation(self, doc_path: Path):
         """Create consciousness integration patterns documentation."""
-        
+
         content = f"""# [BRAIN] CONSCIOUSNESS INTEGRATION PATTERNS (ITER2)
 
 ## Overview
@@ -1175,13 +1226,13 @@ class ConsciousComponent:
 **Enhancement**: Evolutionary Assembler Iter2  
 **Consciousness Level**: Enhanced with Iter2 Capabilities  
 """
-        
-        with open(doc_path, 'w', encoding='utf-8') as f:
+
+        with open(doc_path, "w", encoding="utf-8") as f:
             f.write(content)
-    
+
     def _create_consciousness_monitor(self, tool_path: Path):
         """Create consciousness monitoring tool."""
-        
+
         content = '''#!/usr/bin/env python3
 """
 [BRAIN] AIOS Core Consciousness Monitor (Iter2)
@@ -1288,17 +1339,17 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     main()
 '''
-        
-        with open(tool_path, 'w', encoding='utf-8') as f:
+
+        with open(tool_path, "w", encoding="utf-8") as f:
             f.write(content)
-    
+
     def display_optimization_results(self, results: Dict[str, Any]):
         """Display comprehensive optimization results."""
-        
+
         print("[WRENCH] AIOS CORE ENGINE OPTIMIZATION RESULTS (ITER2)")
         print("" * 70)
         print()
-        
+
         # Summary
         summary = results.get("summary", {})
         print(f"[CHART] OPTIMIZATION SUMMARY:")
@@ -1307,7 +1358,7 @@ if __name__ == "__main__":
         print(f"   Success rate: {summary.get('success_rate', 0.0):.1%}")
         print(f"   Status: {summary.get('status', 'unknown').upper()}")
         print()
-        
+
         # Individual optimizations
         optimizations = results.get("optimizations_applied", [])
         print(f"[TARGET] OPTIMIZATION DETAILS:")
@@ -1320,18 +1371,21 @@ if __name__ == "__main__":
                     if key != "error":
                         print(f"     • {key}: {value}")
         print()
-        
+
         print("[CHECK] Core Engine optimization complete with iter2 enhancement!")
-    
+
     def save_optimization_report(self, results: Dict[str, Any]) -> str:
         """Save optimization results report."""
-        
-        report_file = self.core_path / f"CORE_ENGINE_OPTIMIZATION_ITER2_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        
+
+        report_file = (
+            self.core_path
+            / f"CORE_ENGINE_OPTIMIZATION_ITER2_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        )
+
         try:
-            with open(report_file, 'w', encoding='utf-8') as f:
+            with open(report_file, "w", encoding="utf-8") as f:
                 json.dump(results, f, indent=2, default=str)
-            
+
             logger.info(f" Optimization report saved: {report_file}")
             return str(report_file)
         except Exception as e:
@@ -1341,28 +1395,28 @@ if __name__ == "__main__":
 
 def main():
     """Execute Core Engine optimization with iter2 assembler."""
-    
+
     print("[WRENCH] AIOS CORE ENGINE ROOT FILES OPTIMIZER (ITER2)")
     print("" * 70)
     print("[TARGET] Applying iter2 assembler optimizations to Core Engine")
     print(" Using AIOS paradigmatic architectural guidelines")
     print("[BRAIN] Implementing AINLP directives and consciousness patterns")
     print()
-    
+
     # Initialize optimizer
     optimizer = AIOSCoreEngineOptimizer()
-    
+
     # Execute comprehensive optimization
     results = optimizer.execute_comprehensive_optimization()
-    
+
     # Display results
     optimizer.display_optimization_results(results)
-    
+
     # Save detailed report
     report_file = optimizer.save_optimization_report(results)
     if report_file:
         print(f" Detailed report saved: {report_file}")
-    
+
     return results
 
 

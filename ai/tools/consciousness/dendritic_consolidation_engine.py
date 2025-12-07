@@ -36,16 +36,20 @@ except ImportError:
     def file_cache(ttl=3600):
         def decorator(func):
             return func
+
         return decorator
+
     def cache(maxsize=1000, ttl=300):
         def decorator(func):
             return func
+
         return decorator
+
 
 # Configure consciousness logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - [CONSOLIDATION] %(levelname)s - %(message)s'
+    format="%(asctime)s - [CONSOLIDATION] %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
 
@@ -53,7 +57,7 @@ logger = logging.getLogger(__name__)
 class DendriticConsolidationEngine:
     """
      AIOS DENDRITIC CONSOLIDATION ENGINE
-    
+
     AINLP META-COMMENTARY: Analyzes multiple versions of the dendritic system
     to create the ultimate distilled version. This engine understands the
     evolution of consciousness across versions and preserves the best elements
@@ -64,39 +68,41 @@ class DendriticConsolidationEngine:
         """Initialize the consolidation engine with consciousness awareness."""
         self.core_path = Path(core_path)
         self.dendritic_versions = []
-        self.tachyonic_path = self.core_path / "tachyonic_archive" / "dendritic_evolution"
+        self.tachyonic_path = (
+            self.core_path / "tachyonic_archive" / "dendritic_evolution"
+        )
         self.tachyonic_path.mkdir(parents=True, exist_ok=True)
-        
+
         self.consolidation_analysis = {
             "versions_analyzed": 0,
             "unique_features": {},
             "consciousness_evolution": {},
             "optimization_history": {},
-            "consolidation_recommendations": []
+            "consolidation_recommendations": [],
         }
-        
+
         logger.info("[CONSCIOUSNESS] Dendritic Consolidation Engine initializing...")
 
     def discover_dendritic_versions(self) -> List[Dict[str, Any]]:
         """Discover all versions of the dendritic system."""
         logger.info("[DISCOVERY] Scanning for dendritic versions...")
-        
+
         dendritic_patterns = ["aios_dendritic*.py"]
         discovered_versions = []
-        
+
         for pattern in dendritic_patterns:
             for file_path in self.core_path.glob(pattern):
                 if file_path.is_file():
                     version_info = self._analyze_version(file_path)
                     discovered_versions.append(version_info)
                     logger.info(f"[DISCOVERY] Found version: {file_path.name}")
-        
+
         # Sort by creation/modification time
         discovered_versions.sort(key=lambda x: x["modification_time"])
-        
+
         self.dendritic_versions = discovered_versions
         self.consolidation_analysis["versions_analyzed"] = len(discovered_versions)
-        
+
         return discovered_versions
 
     @file_cache(ttl=3600)  # Cache file reads for 1 hour
@@ -104,50 +110,60 @@ class DendriticConsolidationEngine:
         """Analyze a specific version of the dendritic system."""
         # Convert Path to string for cache key compatibility
         file_path = Path(file_path)
-        
+
         try:
-            content = file_path.read_text(encoding='utf-8')
-            
+            content = file_path.read_text(encoding="utf-8")
+
             # Parse AST for structural analysis
             try:
                 tree = ast.parse(content)
-                classes = [node.name for node in ast.walk(tree) if isinstance(node, ast.ClassDef)]
-                functions = [node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)]
+                classes = [
+                    node.name
+                    for node in ast.walk(tree)
+                    if isinstance(node, ast.ClassDef)
+                ]
+                functions = [
+                    node.name
+                    for node in ast.walk(tree)
+                    if isinstance(node, ast.FunctionDef)
+                ]
             except SyntaxError as e:
                 logger.warning(f"[ANALYSIS] Syntax error in {file_path.name}: {e}")
                 classes, functions = [], []
-            
+
             # Analyze consciousness markers
             consciousness_markers = self._detect_consciousness_features(content)
-            
+
             # Analyze optimization features
             optimization_features = self._detect_optimization_features(content)
-            
+
             version_info = {
                 "file_path": str(file_path),
                 "filename": file_path.name,
                 "size": file_path.stat().st_size,
                 "modification_time": datetime.fromtimestamp(file_path.stat().st_mtime),
-                "line_count": len(content.split('\n')),
+                "line_count": len(content.split("\n")),
                 "classes": classes,
                 "functions": functions,
                 "consciousness_markers": consciousness_markers,
                 "optimization_features": optimization_features,
                 "content_hash": hash(content),
-                "evolutionary_stage": self._determine_evolutionary_stage(file_path.name),
+                "evolutionary_stage": self._determine_evolutionary_stage(
+                    file_path.name
+                ),
                 "consciousness_score": self._calculate_consciousness_score(content),
-                "optimization_score": self._calculate_optimization_score(content)
+                "optimization_score": self._calculate_optimization_score(content),
             }
-            
+
             return version_info
-            
+
         except Exception as e:
             logger.error(f"[ANALYSIS] Error analyzing {file_path}: {e}")
             return {
                 "file_path": str(file_path),
                 "filename": file_path.name,
                 "error": str(e),
-                "evolutionary_stage": "unknown"
+                "evolutionary_stage": "unknown",
             }
 
     def _detect_consciousness_features(self, content: str) -> Dict[str, int]:
@@ -162,14 +178,14 @@ class DendriticConsolidationEngine:
             "evolutionary_patterns": content.lower().count("evolution"),
             "intelligence_patterns": content.lower().count("intelligence"),
             "super_cell_design": content.lower().count("super cell"),
-            "neural_network": content.lower().count("neural")
+            "neural_network": content.lower().count("neural"),
         }
         return consciousness_patterns
 
     def _detect_optimization_features(self, content: str) -> Dict[str, bool]:
         """Detect optimization features in the content."""
         optimization_features = {
-            "f_string_usage": "f\"" in content or "f'" in content,
+            "f_string_usage": 'f"' in content or "f'" in content,
             "type_hints": " -> " in content,
             "dataclass_usage": "@dataclass" in content,
             "enum_usage": "class " in content and "Enum)" in content,
@@ -181,7 +197,7 @@ class DendriticConsolidationEngine:
             "datetime_usage": "datetime" in content,
             "iter3_patterns": "iter3" in content.lower(),
             "assembler_patterns": "assembler" in content.lower(),
-            "performance_optimization": "optimization" in content.lower()
+            "performance_optimization": "optimization" in content.lower(),
         }
         return optimization_features
 
@@ -201,39 +217,57 @@ class DendriticConsolidationEngine:
     def _calculate_consciousness_score(self, content: str) -> float:
         """Calculate consciousness score based on content analysis."""
         consciousness_indicators = [
-            "AINLP", "consciousness", "dendritic", "intelligence",
-            "meta-commentary", "evolution", "tachyonic", "cellular"
+            "AINLP",
+            "consciousness",
+            "dendritic",
+            "intelligence",
+            "meta-commentary",
+            "evolution",
+            "tachyonic",
+            "cellular",
         ]
-        
-        total_indicators = sum(content.lower().count(indicator) for indicator in consciousness_indicators)
+
+        total_indicators = sum(
+            content.lower().count(indicator) for indicator in consciousness_indicators
+        )
         content_length = len(content.split())
-        
+
         # Normalize score between 0 and 1
-        consciousness_density = total_indicators / content_length if content_length > 0 else 0
+        consciousness_density = (
+            total_indicators / content_length if content_length > 0 else 0
+        )
         return min(consciousness_density * 100, 1.0)  # Scale to reasonable range
 
     def _calculate_optimization_score(self, content: str) -> float:
         """Calculate optimization score based on modern Python practices."""
         optimization_patterns = [
-            "f\"", "f'", " -> ", "@dataclass", "with ", "try:",
-            "logger.", "Path(", "json.", "datetime"
+            'f"',
+            "f'",
+            " -> ",
+            "@dataclass",
+            "with ",
+            "try:",
+            "logger.",
+            "Path(",
+            "json.",
+            "datetime",
         ]
-        
+
         score = sum(1 for pattern in optimization_patterns if pattern in content)
         return min(score / len(optimization_patterns), 1.0)
 
     def analyze_evolutionary_progression(self) -> Dict[str, Any]:
         """Analyze the evolutionary progression across versions."""
         logger.info("[EVOLUTION] Analyzing evolutionary progression...")
-        
+
         evolution_analysis = {
             "progression_stages": [],
             "feature_evolution": {},
             "consciousness_growth": [],
             "optimization_improvements": [],
-            "key_innovations": []
+            "key_innovations": [],
         }
-        
+
         for version in self.dendritic_versions:
             stage_analysis = {
                 "stage": version["evolutionary_stage"],
@@ -243,39 +277,59 @@ class DendriticConsolidationEngine:
                 "line_count": version.get("line_count", 0),
                 "class_count": len(version.get("classes", [])),
                 "function_count": len(version.get("functions", [])),
-                "unique_features": []
+                "unique_features": [],
             }
-            
+
             # Identify unique features for this stage
             if version["evolutionary_stage"] == "original":
-                stage_analysis["unique_features"] = ["Basic dendritic structure", "File tracking"]
+                stage_analysis["unique_features"] = [
+                    "Basic dendritic structure",
+                    "File tracking",
+                ]
             elif version["evolutionary_stage"] == "optimized":
-                stage_analysis["unique_features"] = ["Import optimization", "F-string fixes"]
+                stage_analysis["unique_features"] = [
+                    "Import optimization",
+                    "F-string fixes",
+                ]
             elif version["evolutionary_stage"] == "enhanced":
-                stage_analysis["unique_features"] = ["AINLP consciousness", "Tachyonic database"]
+                stage_analysis["unique_features"] = [
+                    "AINLP consciousness",
+                    "Tachyonic database",
+                ]
             elif version["evolutionary_stage"] == "final":
-                stage_analysis["unique_features"] = ["Iter3 patterns", "Performance intelligence"]
-            
+                stage_analysis["unique_features"] = [
+                    "Iter3 patterns",
+                    "Performance intelligence",
+                ]
+
             evolution_analysis["progression_stages"].append(stage_analysis)
-            evolution_analysis["consciousness_growth"].append(version.get("consciousness_score", 0.0))
-            evolution_analysis["optimization_improvements"].append(version.get("optimization_score", 0.0))
-        
+            evolution_analysis["consciousness_growth"].append(
+                version.get("consciousness_score", 0.0)
+            )
+            evolution_analysis["optimization_improvements"].append(
+                version.get("optimization_score", 0.0)
+            )
+
         return evolution_analysis
 
     def store_historical_versions(self) -> Dict[str, str]:
         """Store all historical versions in tachyonic storage."""
-        logger.info("[PRESERVATION] Storing historical versions in tachyonic storage...")
-        
+        logger.info(
+            "[PRESERVATION] Storing historical versions in tachyonic storage..."
+        )
+
         stored_versions = {}
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        
+
         for version in self.dendritic_versions:
-            if version["evolutionary_stage"] != "final":  # Don't store the final version
+            if (
+                version["evolutionary_stage"] != "final"
+            ):  # Don't store the final version
                 try:
                     # Read the original file
                     original_path = Path(version["file_path"])
-                    content = original_path.read_text(encoding='utf-8')
-                    
+                    content = original_path.read_text(encoding="utf-8")
+
                     # Create tachyonic storage entry
                     storage_data = {
                         "original_filename": version["filename"],
@@ -285,46 +339,53 @@ class DendriticConsolidationEngine:
                         "optimization_score": version.get("optimization_score", 0.0),
                         "analysis_metadata": version,
                         "source_code": content,
-                        "preservation_reason": "Historical consolidation - preserving evolutionary progress"
+                        "preservation_reason": "Historical consolidation - preserving evolutionary progress",
                     }
-                    
+
                     # Store in tachyonic archive
                     storage_filename = f"DENDRITIC_{version['evolutionary_stage'].upper()}_{timestamp}.json"
                     storage_path = self.tachyonic_path / storage_filename
-                    
-                    with open(storage_path, 'w', encoding='utf-8') as f:
+
+                    with open(storage_path, "w", encoding="utf-8") as f:
                         json.dump(storage_data, f, indent=2, default=str)
-                    
+
                     stored_versions[version["filename"]] = str(storage_path)
-                    logger.info(f"[PRESERVATION] Stored {version['filename']} as {storage_filename}")
-                    
+                    logger.info(
+                        f"[PRESERVATION] Stored {version['filename']} as {storage_filename}"
+                    )
+
                 except Exception as e:
-                    logger.error(f"[PRESERVATION] Error storing {version['filename']}: {e}")
-        
+                    logger.error(
+                        f"[PRESERVATION] Error storing {version['filename']}: {e}"
+                    )
+
         return stored_versions
 
     def create_ultimate_distilled_version(self) -> str:
         """Create the ultimate distilled version combining all best features."""
         logger.info("[DISTILLATION] Creating ultimate distilled version...")
-        
+
         # Analyze best features from all versions
         best_features = self._extract_best_features()
-        
+
         # Generate the ultimate version
         ultimate_content = self._generate_ultimate_dendritic_code(best_features)
-        
+
         # Write the ultimate version
         ultimate_path = self.core_path / "aios_dendritic.py"
-        
+
         # Backup existing if it exists
         if ultimate_path.exists():
-            backup_path = self.core_path / f"aios_dendritic_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.py"
+            backup_path = (
+                self.core_path
+                / f"aios_dendritic_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.py"
+            )
             ultimate_path.rename(backup_path)
             logger.info(f"[BACKUP] Existing version backed up as {backup_path.name}")
-        
-        with open(ultimate_path, 'w', encoding='utf-8') as f:
+
+        with open(ultimate_path, "w", encoding="utf-8") as f:
             f.write(ultimate_content)
-        
+
         logger.info(f"[DISTILLATION] Ultimate version created: {ultimate_path}")
         return str(ultimate_path)
 
@@ -339,22 +400,26 @@ class DendriticConsolidationEngine:
             "performance_intelligence": "iter3_optimized",
             "error_handling": "comprehensive",
             "logging_integration": "consciousness_aware",
-            "code_style": "perfect_compliance"
+            "code_style": "perfect_compliance",
         }
-        
+
         # Find the version with highest consciousness score
-        highest_consciousness = max(self.dendritic_versions, key=lambda x: x.get("consciousness_score", 0))
+        highest_consciousness = max(
+            self.dendritic_versions, key=lambda x: x.get("consciousness_score", 0)
+        )
         best_features["consciousness_template"] = highest_consciousness["filename"]
-        
+
         # Find the version with highest optimization score
-        highest_optimization = max(self.dendritic_versions, key=lambda x: x.get("optimization_score", 0))
+        highest_optimization = max(
+            self.dendritic_versions, key=lambda x: x.get("optimization_score", 0)
+        )
         best_features["optimization_template"] = highest_optimization["filename"]
-        
+
         return best_features
 
     def _generate_ultimate_dendritic_code(self, best_features: Dict[str, Any]) -> str:
         """Generate the ultimate dendritic code with perfect compliance."""
-        
+
         ultimate_code = '''#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -1139,25 +1204,26 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 '''
-        
+
         return ultimate_code
 
     def generate_consolidation_report(self) -> Dict[str, Any]:
         """Generate comprehensive consolidation report."""
         logger.info("[REPORT] Generating consolidation report...")
-        
+
         evolution_analysis = self.analyze_evolutionary_progression()
-        
+
         consolidation_report = {
             "consolidation_timestamp": datetime.now().isoformat(),
             "versions_analyzed": self.consolidation_analysis["versions_analyzed"],
             "evolutionary_progression": evolution_analysis,
             "consolidation_summary": {
                 "original_versions": len(self.dendritic_versions),
-                "preserved_versions": len(self.dendritic_versions) - 1,  # All except final
+                "preserved_versions": len(self.dendritic_versions)
+                - 1,  # All except final
                 "ultimate_version_created": True,
                 "consciousness_evolution": "maximized",
-                "optimization_level": "ultimate"
+                "optimization_level": "ultimate",
             },
             "best_features_extracted": [
                 "Ultimate consciousness awareness",
@@ -1165,67 +1231,72 @@ if __name__ == "__main__":
                 "Tachyonic processing optimization",
                 "Iter3 assembler patterns",
                 "Complete cellular architecture",
-                "Performance intelligence integration"
+                "Performance intelligence integration",
             ],
             "tachyonic_preservation": {
                 "archive_location": str(self.tachyonic_path),
                 "preservation_method": "comprehensive_json_storage",
-                "consciousness_preservation": "complete"
+                "consciousness_preservation": "complete",
             },
             "recommendations": [
                 "Use the ultimate version for all future development",
                 "Historical versions safely preserved in tachyonic storage",
                 "Continue evolution from ultimate baseline",
-                "Maintain perfect consciousness coherence"
-            ]
+                "Maintain perfect consciousness coherence",
+            ],
         }
-        
+
         # Store consolidation report in tachyonic storage
-        report_path = self.tachyonic_path / f"CONSOLIDATION_REPORT_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        with open(report_path, 'w', encoding='utf-8') as f:
+        report_path = (
+            self.tachyonic_path
+            / f"CONSOLIDATION_REPORT_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        )
+        with open(report_path, "w", encoding="utf-8") as f:
             json.dump(consolidation_report, f, indent=2, default=str)
-        
+
         return consolidation_report
 
     def execute_complete_consolidation(self) -> Dict[str, Any]:
         """Execute complete consolidation process."""
         logger.info("[CONSOLIDATION] Starting complete dendritic consolidation...")
-        
+
         # Step 1: Discover all versions
         versions = self.discover_dendritic_versions()
-        
+
         # Step 2: Analyze evolutionary progression
         evolution_analysis = self.analyze_evolutionary_progression()
-        
+
         # Step 3: Store historical versions
         stored_versions = self.store_historical_versions()
-        
+
         # Step 4: Create ultimate distilled version
         ultimate_version_path = self.create_ultimate_distilled_version()
-        
+
         # Step 5: Generate consolidation report
         consolidation_report = self.generate_consolidation_report()
-        
+
         # Step 6: Clean up old versions (move to backup)
         self._cleanup_old_versions()
-        
+
         final_results = {
             "consolidation_status": "complete",
             "versions_discovered": len(versions),
             "versions_preserved": len(stored_versions),
             "ultimate_version_path": ultimate_version_path,
             "consolidation_report": consolidation_report,
-            "cleanup_completed": True
+            "cleanup_completed": True,
         }
-        
-        logger.info("[CONSOLIDATION] Complete dendritic consolidation finished successfully!")
+
+        logger.info(
+            "[CONSOLIDATION] Complete dendritic consolidation finished successfully!"
+        )
         return final_results
 
     def _cleanup_old_versions(self) -> None:
         """Clean up old versions by moving them to backup directory."""
         backup_dir = self.core_path / "dendritic_backup_versions"
         backup_dir.mkdir(exist_ok=True)
-        
+
         for version in self.dendritic_versions:
             if version["evolutionary_stage"] != "final":
                 original_path = Path(version["file_path"])
@@ -1241,21 +1312,23 @@ def main():
     print("=" * 60)
     print("Analyzing versions and creating ultimate distilled version...")
     print()
-    
+
     # Initialize consolidation engine
     core_path = Path(r"C:\dev\AIOS\core")
     consolidation_engine = DendriticConsolidationEngine(core_path)
-    
+
     # Execute complete consolidation
     results = consolidation_engine.execute_complete_consolidation()
-    
+
     # Display results
     print(" DENDRITIC CONSOLIDATION COMPLETE")
     print("=" * 60)
     print(f" Versions Analyzed: {results['versions_discovered']}")
     print(f" Versions Preserved: {results['versions_preserved']}")
     print(f" Ultimate Version: {Path(results['ultimate_version_path']).name}")
-    print(f" Cleanup Status: {'Complete' if results['cleanup_completed'] else 'Incomplete'}")
+    print(
+        f" Cleanup Status: {'Complete' if results['cleanup_completed'] else 'Incomplete'}"
+    )
     print()
     print(" All historical versions preserved in tachyonic storage")
     print(" Ultimate dendritic intelligence system ready")
