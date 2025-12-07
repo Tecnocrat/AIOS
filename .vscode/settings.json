@@ -3,10 +3,16 @@
     "python.defaultInterpreterPath": "${workspaceFolder}/../.venv/Scripts/python.exe",
     "python.terminal.activateEnvironment": true,
     
-    // Black Formatter as default Python formatter
+    // Black Formatter as default Python formatter with auto-save
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
     },
+    
+    // Auto-save configuration for seamless formatting
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
     
     // Pylance Analysis Configuration
     "python.analysis.typeCheckingMode": "basic",
@@ -22,5 +28,10 @@
             "fileMatch": ["tachyonic/consciousness/config_registry.json"],
             "url": "./tachyonic/consciousness/schemas/config_registry.v1.json"
         }
-    ]
+    ],
+    
+    // AIOS Format State Messenger integration
+    "files.watcherExclude": {
+        "**/tachyonic/format_*.json": true
+    }
 }

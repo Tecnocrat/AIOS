@@ -669,6 +669,52 @@
 				"clear": false
 			},
 			"problemMatcher": []
+		},
+		{
+			"label": "format-messenger-status",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"ai/tools/aios_format_state_messenger.py",
+				"--status"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "test",
+			"detail": "Check AIOS Format State Messenger connection and queue status",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "format-messenger-test-fallback",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"ai/tools/aios_format_state_messenger.py",
+				"--test-fallback"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "test",
+			"detail": "Test AIOS Format State Messenger fallback mechanism",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
 		}
 	]
 }
