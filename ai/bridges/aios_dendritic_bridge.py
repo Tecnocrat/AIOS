@@ -22,9 +22,8 @@ Dendritic Communication Protocol:
 """
 
 from fastapi import FastAPI, HTTPException, BackgroundTasks
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any
 import asyncio
 import json
 from pathlib import Path
@@ -52,10 +51,7 @@ soul_task = None
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] [%(levelname)s] [BRIDGE] %(message)s",
-    handlers=[
-        logging.FileHandler(Path.home() / "aios_bridge.log"),
-        logging.StreamHandler(),
-    ],
+    handlers=[logging.FileHandler(Path.home() / "aios_bridge.log"), logging.StreamHandler()],
 )
 logger = logging.getLogger(__name__)
 
@@ -221,16 +217,11 @@ async def trigger_file_change(event: FileChangeEvent):
         interventions_dir.mkdir(parents=True, exist_ok=True)
 
         event_log = (
-            interventions_dir
-            / f"file_change_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            interventions_dir / f"file_change_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         )
         event_log.write_text(event.json())
 
-        return {
-            "status": "acknowledged",
-            "event": event.dict(),
-            "logged_to": str(event_log),
-        }
+        return {"status": "acknowledged", "event": event.dict(), "logged_to": str(event_log)}
     except Exception as e:
         logger.error(f"File trigger failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -323,14 +314,11 @@ async def create_intervention(request: InterventionRequest):
         }
 
         intervention_file = (
-            interventions_dir
-            / f"intervention_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            interventions_dir / f"intervention_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         )
         intervention_file.write_text(json.dumps(intervention, indent=2))
 
-        logger.info(
-            f"Intervention created: {request.reason} (priority: {request.priority})"
-        )
+        logger.info(f"Intervention created: {request.reason} (priority: {request.priority})")
 
         return {
             "status": "created",

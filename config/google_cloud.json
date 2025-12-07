@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$comment": "AIOS Google Cloud Configuration - Single Source of Truth",
+    
+    "firebase": {
+        "project_id": "gen-lang-client-0072186287",
+        "database_id": "aios-db",
+        "console_url": "https://console.firebase.google.com/project/gen-lang-client-0072186287",
+        "region": "us-central1",
+        "services": {
+            "firestore": true,
+            "auth": false,
+            "storage": false,
+            "functions": false
+        },
+        "note": "Firestore database 'aios-db' active in test mode"
+    },
+    
+    "ai_studio": {
+        "api_key_env": "GEMINI_API_KEY",
+        "model": "gemini-2.0-flash",
+        "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+        "note": "Free tier - uses API key authentication, NOT gcloud project"
+    },
+    
+    "vertex_ai": {
+        "enabled": false,
+        "project_id": null,
+        "region": "us-central1",
+        "model": "gemini-1.5-flash",
+        "note": "Enterprise tier - requires separate billing setup"
+    },
+    
+    "gcloud": {
+        "default_project": "gen-lang-client-0072186287",
+        "auth_method": "application-default",
+        "note": "Use 'gcloud config set project gen-lang-client-0072186287'"
+    },
+    
+    "integration_status": {
+        "ai_studio": "primary",
+        "firebase": "pending_setup",
+        "vertex_ai": "disabled",
+        "last_updated": "2025-12-07"
+    }
+}

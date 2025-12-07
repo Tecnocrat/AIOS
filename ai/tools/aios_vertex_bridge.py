@@ -35,7 +35,8 @@ logger = logging.getLogger(__name__)
 # Configuration from your Google Cloud project
 VERTEX_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT", "gen-lang-client-0072186287")
 VERTEX_REGION = os.getenv("GOOGLE_CLOUD_REGION", "us-central1")
-VERTEX_MODEL = "gemini-1.5-flash-002"  # Vertex AI model name
+# Vertex AI uses base model names without version suffix
+VERTEX_MODEL = "gemini-1.5-flash"
 
 
 class Decision(Enum):
@@ -97,8 +98,7 @@ class AIOSVertexBridge:
             return True
         except ImportError:
             logger.warning(
-                "google-cloud-aiplatform not installed. "
-                "Run: pip install google-cloud-aiplatform"
+                "google-cloud-aiplatform not installed. " "Run: pip install google-cloud-aiplatform"
             )
             return False
 
@@ -136,9 +136,7 @@ Always respond with valid JSON only."""
         from vertexai.generative_models import GenerativeModel
 
         vertexai.init(project=self.project, location=self.region)
-        self._model_client = GenerativeModel(
-            self.model, system_instruction=self.system_prompt
-        )
+        self._model_client = GenerativeModel(self.model, system_instruction=self.system_prompt)
         logger.info(f"Vertex AI initialized: {self.project}/{self.region}")
 
     def validate(

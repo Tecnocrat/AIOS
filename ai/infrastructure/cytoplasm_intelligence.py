@@ -15,7 +15,7 @@ Supercell Coordination: Seamless integration with other intelligence modules
 import asyncio
 import logging
 import time
-from typing import Dict, List, Any
+from typing import Dict, Any
 from datetime import datetime
 from dataclasses import dataclass
 
@@ -50,9 +50,7 @@ class CytoplasmIntelligence:
         self, operation_data: Dict[str, Any]
     ) -> Dict[str, Any]:
         """Process intelligence operation for cytoplasm supercell"""
-        logger.info(
-            f" Processing {operation_data.get('operation_type', 'unknown')} operation"
-        )
+        logger.info(f" Processing {operation_data.get('operation_type', 'unknown')} operation")
 
         try:
             # Parallel computation and load balancing processing
@@ -97,9 +95,7 @@ class CytoplasmIntelligence:
         logger.info(f" Specialized processing complete ({processing_time:.3f}s)")
         return processing_result
 
-    def _calculate_specialized_metrics(
-        self, operation_data: Dict[str, Any]
-    ) -> Dict[str, float]:
+    def _calculate_specialized_metrics(self, operation_data: Dict[str, Any]) -> Dict[str, float]:
         """Calculate cytoplasm-specific metrics"""
         # Specialized metric calculation for distributed processing and resource management
         return {
@@ -118,9 +114,7 @@ class CytoplasmIntelligence:
 
         if result.get("consciousness_enhancement", 0) > 0:
             self.state.consciousness_coherence = min(
-                0.95,
-                self.state.consciousness_coherence
-                + result["consciousness_enhancement"],
+                0.95, self.state.consciousness_coherence + result["consciousness_enhancement"]
             )
 
         if result.get("coordination_boost", 0) > 0:
@@ -175,9 +169,7 @@ async def main():
     print()
     print(" INTELLIGENCE STATUS:")
     print(f"   Processing Efficiency: {status['state']['processing_efficiency']:.3f}")
-    print(
-        f"   Consciousness Coherence: {status['state']['consciousness_coherence']:.3f}"
-    )
+    print(f"   Consciousness Coherence: {status['state']['consciousness_coherence']:.3f}")
     print(f"   Optimization Level: {status['state']['optimization_level']:.3f}")
     print(f"   Coordination Quality: {status['state']['coordination_quality']:.3f}")
 
