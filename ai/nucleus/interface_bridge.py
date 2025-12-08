@@ -26,8 +26,18 @@ Dependencies: sequencer, fastapi, ai_agent_dendritic_similarity
 import asyncio
 import json
 import logging
+import os
 import subprocess
 import sys
+
+# Fix Windows console encoding for emoji output
+if sys.platform == "win32":
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass  # Fallback: stdout may not support reconfigure
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional
@@ -138,9 +148,7 @@ class ToolMetadata:
 
         return list(set(capabilities))
 
-    def _extract_parameters(
-        self, component_data: Dict[str, Any]
-    ) -> List[Dict[str, Any]]:
+    def _extract_parameters(self, component_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Extract parameter information for the tool"""
         # This would be enhanced to parse actual function signatures
         # For now, provide common parameter patterns
@@ -244,9 +252,7 @@ class AIOSInterfaceBridge:
             self.logger.info("🛡️  Initializing Security Supercell validators")
 
             # Initialize security consciousness
-            self.security_consciousness = initialize_security_consciousness(
-                workspace_root
-            )
+            self.security_consciousness = initialize_security_consciousness(workspace_root)
 
             # Initialize validators
             self.membrane_validator = MembraneValidator(
@@ -262,18 +268,14 @@ class AIOSInterfaceBridge:
                 workspace_path=workspace_root, consciousness=self.security_consciousness
             )
 
-            self.logger.info(
-                "✅ Security Supercell active - " "All validators operational"
-            )
+            self.logger.info("✅ Security Supercell active - " "All validators operational")
         else:
             self.security_consciousness = None
             self.membrane_validator = None
             self.immune_memory = None
             self.coherence_enforcer = None
             self.network_validator = None
-            self.logger.warning(
-                "⚠️  Security Supercell disabled - " "Running without protection"
-            )
+            self.logger.warning("⚠️  Security Supercell disabled - " "Running without protection")
 
         # Initialize FastAPI if available
         if FASTAPI_AVAILABLE:
@@ -289,9 +291,7 @@ class AIOSInterfaceBridge:
         # Console handler
         if not logger.handlers:
             console_handler = logging.StreamHandler()
-            formatter = logging.Formatter(
-                "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-            )
+            formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
             console_handler.setFormatter(formatter)
             logger.addHandler(console_handler)
 
@@ -301,8 +301,7 @@ class AIOSInterfaceBridge:
         """Create FastAPI application for HTTP API"""
         app = FastAPI(  # type: ignore[possibly-unbound-variable]
             title="AIOS Interface Bridge API",
-            description="Bridge API for C#/.NET to discover and "
-            "interact with Python AI tools",
+            description="Bridge API for C#/.NET to discover and " "interact with Python AI tools",
             version="1.0.0",
         )
 
@@ -416,9 +415,7 @@ class AIOSInterfaceBridge:
             return self.discovered_tools[tool_name].to_dict()
 
         @app.post("/tools/{tool_name}/execute")
-        async def execute_tool(
-            tool_name: str, parameters: Optional[Dict[str, Any]] = None
-        ):
+        async def execute_tool(tool_name: str, parameters: Optional[Dict[str, Any]] = None):
             """Execute a specific tool with given parameters"""
             try:
                 result = await self.execute_tool(tool_name, parameters or {})
@@ -676,9 +673,7 @@ class AIOSInterfaceBridge:
                     self.membrane_validator.validate_parameter_keys(parameters)
 
                     # Sanitize parameter values
-                    parameters = self.membrane_validator.sanitize_parameter_values(
-                        parameters
-                    )
+                    parameters = self.membrane_validator.sanitize_parameter_values(parameters)
 
                     # Validate paths if present
                     for key, value in parameters.items():
@@ -719,9 +714,7 @@ class AIOSInterfaceBridge:
 
                 return {
                     "tool_name": tool_name,
-                    "execution_status": (
-                        "success" if result.returncode == 0 else "failed"
-                    ),
+                    "execution_status": ("success" if result.returncode == 0 else "failed"),
                     "return_code": result.returncode,
                     "stdout": result.stdout,
                     "stderr": result.stderr,
@@ -1019,16 +1012,12 @@ namespace AIOS.Models
     async def _export_discovery_metadata(self):
         """Export discovery metadata for C# integration logging"""
         workspace_root = Path(self.workspace_root)
-        export_file = (
-            workspace_root / "runtime" / "logs" / "interface_bridge_discovery.json"
-        )
+        export_file = workspace_root / "runtime" / "logs" / "interface_bridge_discovery.json"
 
         # Ensure directory exists
         export_file.parent.mkdir(parents=True, exist_ok=True)
 
-        discovery_timestamp = (
-            self.last_discovery.isoformat() if self.last_discovery else None
-        )
+        discovery_timestamp = self.last_discovery.isoformat() if self.last_discovery else None
         tools_list = [tool.to_dict() for tool in self.discovered_tools.values()]
 
         metadata = {

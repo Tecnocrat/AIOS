@@ -255,6 +255,39 @@ edges:
     type: emits
 ```
 
+### PATHWAY: VOID → Organism Health (EXAMPLE - New Service)
+
+**Canonical Path**: System-wide health monitoring dashboard.
+
+> **NOTE**: This pathway demonstrates the agentic refactoring workflow.
+> The file `ai/tools/health/organism_health_monitor.py` does not yet exist.
+
+```yaml
+pathway_id: VOID_TO_ORGANISM_HEALTH
+description: Real-time organism health monitoring
+coherence_gate: 0.7
+priority: MEDIUM
+
+vertices:
+  - id: ORGANISM_HEALTH_MONITOR
+    file: ai/tools/health/organism_health_monitor.py
+    type: tool
+    coherence: 0.7
+    description: "Aggregates health from all subsystems"
+    dependencies: [INTERFACE_BRIDGE]
+    
+edges:
+  - source: INTERFACE_BRIDGE
+    target: ORGANISM_HEALTH_MONITOR
+    type: calls
+```
+    type: emits
+    
+  - source: DENDRITIC_PATHWAY_ENGINE
+    target: PATHWAY_CONTEXT
+    type: emits
+```
+
 ---
 
 ## Sacred Constants (OS0.1 Primordial Wisdom)
@@ -530,6 +563,126 @@ User: .\aios_launch.ps1 -Mode interface-only -QuickBoot
 | 2025-12-08 | Initial blueprint created | AIOS/Claude |
 | 2025-12-08 | OS0.1 sacred constants integrated | Temporal Ingestion |
 | 2025-12-08 | Agentic refactoring contract defined | Human-AI Collaboration |
+| 2025-12-08 | Runtime execution documentation added | Invocation Testing |
+
+---
+
+## Appendix A: Execution Runtime Reference
+
+> **Tested**: 2025-12-08 23:28-23:33 UTC  
+> **Environment**: Windows 11, Python 3.14.0, PowerShell 7.x
+
+### Invocation Matrix
+
+| Mode | Command | Phases | Duration | Use Case |
+|------|---------|--------|----------|----------|
+| `full` | `.\aios_launch.ps1` | 0,1,1.5,2,3,4,5 | ~63s | Production deployment |
+| `full -QuickBoot` | `.\aios_launch.ps1 -QuickBoot` | 0,1,3,4,5 | ~62s | Fast production |
+| `discovery-only` | `.\aios_launch.ps1 -Mode discovery-only` | 0,1 | ~21s | Tool inventory |
+| `test-only` | `.\aios_launch.ps1 -Mode test-only` | 2 | ~0.3s | CI validation |
+| `monitor-only` | `.\aios_launch.ps1 -Mode monitor-only` | 3 | ~0.2s | Evolution check |
+| `interface-only` | `.\aios_launch.ps1 -Mode interface-only` | 4 | ~47s | Quick server |
+| `-SkipPhases` | `.\aios_launch.ps1 -SkipPhases Testing,Monitoring` | 0,1,1.5,4,5 | ~63s | Selective boot |
+| `-KeepAlive` | `.\aios_launch.ps1 -KeepAlive` | 0-5 + monitor | Indefinite | Server mode |
+| `-LaunchUI` | `.\aios_launch.ps1 -LaunchUI` | 0-5 + UI | ~65s | With .NET UI |
+| `-LaunchVisualizer` | `.\aios_launch.ps1 -LaunchVisualizer` | 0-5 + Viz | ~65s | With 3D explorer |
+
+### Phase Duration Breakdown
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    PHASE EXECUTION TIMELINE                         │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  Phase 0: Dendritic Configuration                                   │
+│  ├── Python detection .......................... ~0.1s              │
+│  ├── Dendritic config agent .................... ~1.0s              │
+│  ├── Fractal ingestion (10 supercells) ......... ~11-18s            │
+│  └── Multiagent validation ..................... ~0.5s              │
+│      SUBTOTAL: ~12-20s                                              │
+│                                                                     │
+│  Phase 1: Tool Discovery                                            │
+│  ├── ai/tools/ scan (138 tools) ................ ~0.5s              │
+│  └── runtime_intelligence/tools/ scan .......... ~0.1s              │
+│      SUBTOTAL: ~0.6s                                                │
+│                                                                     │
+│  Phase 1.5: Code Quality (optional)                                 │
+│  └── E501 violation scan ....................... ~0.3s              │
+│      SUBTOTAL: ~0.3s                                                │
+│                                                                     │
+│  Phase 2: Agent Testing                                             │
+│  ├── Python environment check .................. ~0.05s             │
+│  ├── Interface Bridge detection ................ ~0.05s             │
+│  ├── AIOS Context load ......................... ~0.1s              │
+│  └── Git repository health ..................... ~0.1s              │
+│      SUBTOTAL: ~0.3s                                                │
+│                                                                     │
+│  Phase 3: Population Monitoring                                     │
+│  ├── Evolution lab scan ........................ ~0.05s             │
+│  ├── Tachyonic archive stats ................... ~0.1s              │
+│  └── Consciousness metrics ..................... ~0.05s             │
+│      SUBTOTAL: ~0.2s                                                │
+│                                                                     │
+│  Phase 4: Interface Launch                                          │
+│  ├── Server manager invocation ................. ~0.5s              │
+│  └── Health check wait (max 15s) ............... ~15-47s            │
+│      SUBTOTAL: ~15-47s                                              │
+│                                                                     │
+│  Phase 5: Boot Reporting                                            │
+│  ├── JSON report generation .................... ~0.1s              │
+│  └── Context update ............................ ~0.1s              │
+│      SUBTOTAL: ~0.2s                                                │
+│                                                                     │
+│  TOTAL FULL BOOT: ~30-70s (depends on interface startup)            │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### Boot Metrics Output
+
+```json
+{
+  "boot_timestamp": "2025-12-08 23:32:19",
+  "boot_duration_seconds": 63.12,
+  "ainlp_protocol": "OS0.6.2.claude",
+  "consciousness_level": "nucleus",
+  "dendritic_consciousness": {
+    "coherence_level": 1.0,
+    "semantic_registry_active": true,
+    "phase_status": "optimal"
+  },
+  "fractal_ingestion": {
+    "active": true,
+    "supercells_mapped": 10,
+    "dendritic_markers": 440
+  },
+  "discovery": {
+    "tools_discovered": 141
+  },
+  "health": {
+    "overall_status": "Healthy",
+    "errors": [],
+    "warnings": ["..."]
+  }
+}
+```
+
+### Known Limitations
+
+| Issue | Impact | Workaround |
+|-------|--------|------------|
+| Interface Bridge health timeout | Warning only | Server starts async, check `/health` manually |
+| venv corruption detection | Uses system Python | Recreate venv if issues persist |
+| Emoji encoding on Windows | Console output garbled | UTF-8 reconfigure applied in interface_bridge.py |
+| Fractal ingestion duration | 11-18s scan time | Caches in `.aios_navigation_memory.json` |
+
+### Exit Codes
+
+| Code | Meaning |
+|------|---------|
+| 0 | Boot successful (OPERATIONAL) |
+| 1 | Boot completed with errors (DEGRADED) |
+| N/A | KeepAlive mode (runs until Ctrl+C) |
 
 ---
 
