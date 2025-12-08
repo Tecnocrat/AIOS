@@ -266,6 +266,64 @@ class SourceLibrary:
 
         self.register(
             SourcePattern(
+                pattern_id="mslearn",
+                name="Microsoft Learn",
+                category=SourceCategory.DOCUMENTATION,
+                url_patterns=[
+                    r"learn\.microsoft\.com/en-us/training/paths/",
+                    r"learn\.microsoft\.com/en-us/training/modules/",
+                ],
+                domain_patterns=["learn.microsoft.com"],
+                search_url_template="https://learn.microsoft.com/en-us/search/?terms={query}&category=Learn",
+                adapter_class="MSLearnAdapter",
+                supports_multi_agent=True,
+                recommended_workers=3,
+                max_depth=3,  # Path → Module → Unit
+                aios_relevant_keywords=[
+                    "azure",
+                    "cloud",
+                    "architecture",
+                    "devops",
+                    "ai",
+                    "machine learning",
+                    "container",
+                    "kubernetes",
+                    "serverless",
+                ],
+                default_relevance=0.8,
+                description="Microsoft Learn training paths and modules",
+                examples=[
+                    "https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/",
+                    "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/",
+                ],
+            )
+        )
+
+        self.register(
+            SourcePattern(
+                pattern_id="azure-docs",
+                name="Azure Documentation",
+                category=SourceCategory.DOCUMENTATION,
+                url_patterns=[r"learn\.microsoft\.com/en-us/azure/"],
+                domain_patterns=[],
+                search_url_template="https://learn.microsoft.com/en-us/search/?terms={query}&scope=Azure",
+                adapter_class="MSLearnAdapter",
+                supports_multi_agent=True,
+                max_depth=2,
+                aios_relevant_keywords=[
+                    "azure",
+                    "cloud",
+                    "service",
+                    "deployment",
+                    "resource",
+                ],
+                default_relevance=0.75,
+                description="Azure technical documentation",
+            )
+        )
+
+        self.register(
+            SourcePattern(
                 pattern_id="python-docs",
                 name="Python Documentation",
                 category=SourceCategory.DOCUMENTATION,

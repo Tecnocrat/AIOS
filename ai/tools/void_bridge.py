@@ -122,9 +122,12 @@ class VOIDBridge:
         self.vertices: list[VOIDVertex] = []
         self.output_dir = self.workspace / "docs" / "distilled"
 
-        # AI integration for crystallization
-        self._gemini = None
-        self._ollama_available = False
+        # AI integration for crystallization (lazy initialization)
+        self._gemini_model = None
+        self._gemini_api_key = os.getenv("GEMINI_API_KEY")
+        self._ollama_available = self._check_ollama()
+        self._ollama_model = os.getenv("OLLAMA_MODEL", "aios-mistral:latest")
+        self._ai_provider = None  # Track which provider is active
 
         # Category mappings for AIOS architecture
         self.aios_categories = {
@@ -158,6 +161,58 @@ class VOIDBridge:
                 return candidate
         return Path.cwd()
 
+    def _check_ollama(self) -> bool:
+        """Check if Ollama is available locally."""
+        try:
+            import subprocess
+
+            result = subprocess.run(
+                ["ollama", "list"],
+                capture_output=True,
+                timeout=5,
+            )
+            return result.returncode == 0
+        except Exception:
+            return False
+
+    def _get_gemini_model(self):
+        """Lazy initialization of Gemini model (cached)."""
+        if self._gemini_model is None and self._gemini_api_key:
+            try:
+                import google.generativeai as genai
+
+                genai.configure(api_key=self._gemini_api_key)
+                self._gemini_model = genai.GenerativeModel("gemini-2.0-flash")
+                logger.info("🔮 Gemini 2.0 Flash initialized")
+            except Exception as e:
+                logger.warning(f"Gemini initialization failed: {e}")
+        return self._gemini_model
+
+    def _ollama_generate(self, prompt: str) -> Optional[str]:
+        """Generate response using local Ollama."""
+        if not self._ollama_available:
+            return None
+        try:
+            import subprocess
+
+            # Use ollama API via subprocess
+            result = subprocess.run(
+                [
+                    "ollama",
+                    "run",
+                    self._ollama_model,
+                    prompt[:4000],  # Limit prompt size for local models
+                ],
+                capture_output=True,
+                text=True,
+                timeout=120,
+            )
+            if result.returncode == 0:
+                return result.stdout.strip()
+        except Exception as e:
+            logger.warning(f"Ollama generation failed: {e}")
+        return None
+
     # =========================================================================
     # VOID-Pull: Extract from External Sources
     # =========================================================================
@@ -185,9 +240,8 @@ class VOIDBridge:
                 vertex.state = VOIDState.FLUCTUATION
 
                 # Extract title
-                title_match = re.search(
-                    r"<title[^>]*>([^<]+)</title>", vertex.content, re.IGNORECASE
-                )
+                title_pattern = r"<title[^>]*>([^<]+)</title>"
+                title_match = re.search(title_pattern, vertex.content, re.IGNORECASE)
                 if title_match:
                     vertex.title = title_match.group(1).strip()
 
@@ -351,17 +405,42 @@ class VOIDBridge:
         return vertex
 
     def _ai_crystallize(self, vertex: VOIDVertex) -> str:
-        """Use AI to extract and structure knowledge."""
-        # Try Gemini first
-        api_key = os.getenv("GEMINI_API_KEY")
-        if api_key:
+        """Use AI to extract and structure knowledge.
+
+        Provider cascade:
+        1. Gemini 2.0 Flash (cloud, high quality)
+        2. Ollama local (aios-mistral, offline capable)
+        3. Basic extraction (no AI fallback)
+        """
+        prompt = self._build_crystallize_prompt(vertex)
+
+        # Try Gemini first (cached model)
+        gemini = self._get_gemini_model()
+        if gemini:
             try:
-                import google.generativeai as genai
+                response = gemini.generate_content(prompt)
+                self._ai_provider = "gemini"
+                logger.debug("Crystallized via Gemini 2.0 Flash")
+                return response.text
+            except Exception as e:
+                logger.warning(f"Gemini crystallization failed: {e}")
 
-                genai.configure(api_key=api_key)
-                model = genai.GenerativeModel("gemini-2.0-flash")
+        # Fallback to Ollama local
+        if self._ollama_available:
+            result = self._ollama_generate(prompt)
+            if result:
+                self._ai_provider = "ollama"
+                logger.debug(f"Crystallized via Ollama ({self._ollama_model})")
+                return result
 
-                prompt = f"""AINLP.dendritic[VOID] Knowledge Crystallization
+        # Final fallback to basic extraction
+        self._ai_provider = "basic"
+        logger.debug("Crystallized via basic extraction (no AI)")
+        return self._basic_crystallize(vertex)
+
+    def _build_crystallize_prompt(self, vertex: VOIDVertex) -> str:
+        """Build the crystallization prompt for AI models."""
+        return f"""AINLP.dendritic[VOID] Knowledge Crystallization
 
 SOURCE: {vertex.source}
 TITLE: {vertex.title}
@@ -392,15 +471,6 @@ Output format:
 ## Tags
 [Suggested categorization tags]
 """
-
-                response = model.generate_content(prompt)
-                return response.text
-
-            except Exception as e:
-                logger.warning(f"Gemini crystallization failed: {e}")
-
-        # Fallback to basic
-        return self._basic_crystallize(vertex)
 
     def _basic_crystallize(self, vertex: VOIDVertex) -> str:
         """Basic extraction without AI."""

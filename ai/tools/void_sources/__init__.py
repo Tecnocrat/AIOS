@@ -8,6 +8,7 @@ AINLP.dendritic[VOID->source{type}]
 
 Each adapter handles domain-specific extraction patterns:
 - arxiv: Scientific papers (physics, CS, math, biology)
+- mslearn: Microsoft Learn courses (deep crawling)
 - github: Code repositories and documentation
 - docs: Technical documentation sites
 - blog: Technical blog posts
@@ -16,6 +17,7 @@ Each adapter handles domain-specific extraction patterns:
 
 Source Library Pattern:
     AINLP.dendritic[void->arxiv{"Search for AIOS related papers"}]
+    AINLP.dendritic[void->mslearn{"azure fundamentals"}]
     → Multi-agent ingestion pipeline
     → Dendritic vertex discovery at focused location
 
@@ -29,11 +31,11 @@ Usage:
     library = SourceLibrary()
     source = library.detect("https://arxiv.org/abs/2303.08774")
 
-    # Multi-agent ingestion
-    from void_sources.multi_agent_pipeline import void_multi_agent_ingest
-    result = void_multi_agent_ingest(
-        "https://arxiv.org/abs/2303.08774",
-        topic="GPT-4 architecture"
+    # Deep crawl Microsoft Learn
+    from void_sources.mslearn_adapter import MSLearnAdapter
+    adapter = MSLearnAdapter()
+    path = adapter.crawl_learning_path(
+        "https://learn.microsoft.com/en-us/training/paths/..."
     )
 """
 
@@ -44,6 +46,7 @@ from .base import (
     SourceType,
 )
 from .arxiv_adapter import ArxivAdapter, process_arxiv_url
+from .mslearn_adapter import MSLearnAdapter, MSLearnPath, MSLearnModule, MSLearnUnit
 from .source_library import (
     SourceCategory,
     SourceLibrary,
@@ -62,6 +65,11 @@ __all__ = [
     # ArXiv adapter
     "ArxivAdapter",
     "process_arxiv_url",
+    # Microsoft Learn adapter
+    "MSLearnAdapter",
+    "MSLearnPath",
+    "MSLearnModule",
+    "MSLearnUnit",
     # Source library
     "SourceCategory",
     "SourceLibrary",
