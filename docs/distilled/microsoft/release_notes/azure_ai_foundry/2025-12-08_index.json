@@ -3,6 +3,56 @@
     "source": "Azure AI Blog",
     "category": "azure_ai_foundry",
     "priority": "high",
+    "title": "Microsoft Foundry: Scale innovation on a modular, interoperable, and secure agent stack",
+    "url": "https://azure.microsoft.com/en-us/blog/microsoft-foundry-scale-innovation-on-a-modular-interoperable-and-secure-agent-stack/",
+    "published": "Tue, 18 Nov 2025 16:00:00 +0000",
+    "summary": "Agents are reshaping software. No longer mere assistants, they are becoming dynamic collaborators layered within our everyday tools. The post Microsoft Foundry: Scale innovation on a modular, interoperable, and secure agent stack appeared first on Microsoft Azure Blog.",
+    "hash": "4fbd701d988f"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Azure at Microsoft Ignite 2025: All the intelligent cloud news explained",
+    "url": "https://azure.microsoft.com/en-us/blog/azure-at-microsoft-ignite-2025-all-the-intelligent-cloud-news-explained/",
+    "published": "Tue, 18 Nov 2025 16:00:00 +0000",
+    "summary": "This week at Microsoft Ignite 2025, Azure introduces solutions that address your technology strategy questions with innovations designed for this very inflection point. The post Azure at Microsoft Ignite 2025: All the intelligent cloud news explained appeared first on Microsoft Azure Blog.",
+    "hash": "6ece77721b0a"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Microsoft Databases and Microsoft Fabric: Your unified and AI-powered data estate",
+    "url": "https://azure.microsoft.com/en-us/blog/microsoft-databases-and-microsoft-fabric-your-unified-and-ai-powered-data-estate/",
+    "published": "Tue, 18 Nov 2025 16:00:00 +0000",
+    "summary": "Today, I\u2019m thrilled to announce the next generation of Microsoft\u2019s databases: SQL Server 2025, Azure Document DB, Azure Horizon DB, and Fabric Databases, each redesigned to meet the demands of AI. The post Microsoft Databases and Microsoft Fabric: Your unified and AI-powered data estate appeared first on Microsoft Azure Blog.",
+    "hash": "96a166c189c5"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Announcing Azure Copilot agents and AI infrastructure innovations",
+    "url": "https://azure.microsoft.com/en-us/blog/announcing-azure-copilot-agents-and-ai-infrastructure-innovations/",
+    "published": "Tue, 18 Nov 2025 16:00:00 +0000",
+    "summary": "Learn about the new AI features and products In Azure announced at Microsoft Ignite 2025 to help modernize your cloud infrastructure. The post Announcing Azure Copilot agents and AI infrastructure innovations appeared first on Microsoft Azure Blog.",
+    "hash": "c34e5ebcec30"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Introducing Anthropic\u2019s Claude models in Microsoft Foundry: Bringing Frontier intelligence to Azure",
+    "url": "https://azure.microsoft.com/en-us/blog/introducing-anthropics-claude-models-in-microsoft-foundry-bringing-frontier-intelligence-to-azure/",
+    "published": "Tue, 18 Nov 2025 15:00:28 +0000",
+    "summary": "Microsoft Foundry already offers the widest selection of models of any cloud and with today\u2019s partnership announcement with Anthropic, we\u2019re proud that Azure is now the only cloud providing access to both Claude and GPT frontier models to customers on one platform. The post Introducing Anthropic&#8217;s Claude models in Microsoft Foundry: Bringing Frontier intelligence to Azure appeared first on Microsoft Azure Blog.",
+    "hash": "f4ef34b4b745"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
     "title": "Infinite scale: The architecture behind the Azure AI superfactory",
     "url": "https://aka.ms/AAyjgcy",
     "published": "Wed, 12 Nov 2025 17:33:00 +0000",
@@ -28,45 +78,5 @@
     "published": "Wed, 05 Nov 2025 07:00:00 +0000",
     "summary": "We continue to adapt our sovereignty approach\u2014innovating to meet customer needs and regulatory requirements within our Sovereign Public Cloud and Sovereign Private Cloud. We are announcing a new wave of capabilities, building upon our digital sovereignty controls, to deliver advanced AI and scale, strengthened by our ecosystem of specialized in-country partner experts. The post Microsoft strengthens sovereign cloud capabilities with new services appeared first on Microsoft Azure Blog.",
     "hash": "9bb3f1d8e0b3"
-  },
-  {
-    "source": "Azure AI Blog",
-    "category": "azure_ai_foundry",
-    "priority": "high",
-    "title": "Powering Distributed AI/ML at Scale with Azure and Anyscale",
-    "url": "https://devblogs.microsoft.com/all-things-azure/powering-distributed-aiml-at-scale-with-azure-and-anyscale/",
-    "published": "Tue, 04 Nov 2025 20:58:41 +0000",
-    "summary": "The path from prototype to production for AI/ML workloads is rarely straightforward. As data pipelines expand and model complexity grows, teams can find themselves spending more time orchestrating distributed compute than building the intelligence that powers their products. Scaling from a laptop experiment to a production-grade workload still feels like reinventing the wheel. What if scaling AI workloads felt as natural as writing in Python itself? That\u2019s the idea behind Ray, the open-source di",
-    "hash": "e2da81f08405"
-  },
-  {
-    "source": "Azure AI Blog",
-    "category": "azure_ai_foundry",
-    "priority": "high",
-    "title": "Enhancing\u00a0software\u00a0supply chain security with Microsoft\u2019s Signing Transparency",
-    "url": "https://azure.microsoft.com/en-us/blog/enhancing-software-supply-chain-security-with-microsofts-signing-transparency/",
-    "published": "Mon, 03 Nov 2025 17:00:00 +0000",
-    "summary": "Microsoft is announcing the preview of Signing Transparency to address software supply chain threats that traditional code signing alone cannot fully prevent, building on the Zero Trust principle of \u201cnever trust, always verify.\u201d Signing Transparency uses an append-only log to verifiably record each signature, with keys protected in a secure confidential computing enclave. The post Enhancing software supply chain security with Microsoft&#8217;s Signing Transparency appeared first on Microsoft Azu",
-    "hash": "cf0ec24e54c3"
-  },
-  {
-    "source": "Azure AI Blog",
-    "category": "azure_ai_foundry",
-    "priority": "high",
-    "title": "GitHub Universe 2025: Where developer innovation took center stage",
-    "url": "https://azure.microsoft.com/en-us/blog/github-universe-2025-where-developer-innovation-took-center-stage/",
-    "published": "Thu, 30 Oct 2025 15:00:00 +0000",
-    "summary": "At GitHub Universe 2025, the theme was clear: the ability to see, steer, and build across agents will bring the greatest impact. The post GitHub Universe 2025: Where developer innovation took center stage appeared first on Microsoft Azure Blog.",
-    "hash": "cc3aec324b17"
-  },
-  {
-    "source": "Azure AI Blog",
-    "category": "azure_ai_foundry",
-    "priority": "high",
-    "title": "Building the future together: Microsoft and NVIDIA announce AI advancements at GTC DC",
-    "url": "https://azure.microsoft.com/en-us/blog/building-the-future-together-microsoft-and-nvidia-announce-ai-advancements-at-gtc-dc/",
-    "published": "Tue, 28 Oct 2025 18:30:00 +0000",
-    "summary": "New offerings in Azure AI Foundry give businesses an enterprise-grade platform to build, deploy, and scale AI applications and agents. The post Building the future together: Microsoft and NVIDIA announce AI advancements at GTC DC appeared first on Microsoft Azure Blog.",
-    "hash": "194af1fa307c"
   }
 ]

@@ -1,7 +1,7 @@
 # Microsoft Frontier Updates - 2025-12-08
 
-> **Generated**: 2025-12-08T10:17:16.803204+00:00
-> **Total Items**: 45
+> **Generated**: 2025-12-08T10:32:40.368070+00:00
+> **Total Items**: 46
 > **AINLP.dendritic**: MSFT ingestion automated
 
 ---
@@ -15,12 +15,12 @@
 - [What is Windows ML](https://learn.microsoft.com/en-us/windows/ai/new-windows-ml/overview)
 - *...and 7 more in agentic_windows/2025-12-08_updates.md*
 
-### Azure Ai Foundry (7 items)
+### Azure Ai Foundry (8 items)
 
-- [Infinite scale: The architecture behind the Azure AI superfa...](https://aka.ms/AAyjgcy)
-- [Driving ROI with Azure AI Foundry and UiPath: Intelligent ag...](https://azure.microsoft.com/en-us/blog/driving-roi-with-azure-ai-foundry-and-uipath-intelligent-agents-in-real-world-healthcare-workflows/)
-- [Microsoft strengthens sovereign cloud capabilities with new ...](https://azure.microsoft.com/en-us/blog/microsoft-strengthens-sovereign-cloud-capabilities-with-new-services/)
-- *...and 4 more in azure_ai_foundry/2025-12-08_updates.md*
+- [Microsoft Foundry: Scale innovation on a modular, interopera...](https://azure.microsoft.com/en-us/blog/microsoft-foundry-scale-innovation-on-a-modular-interoperable-and-secure-agent-stack/)
+- [Azure at Microsoft Ignite 2025: All the intelligent cloud ne...](https://azure.microsoft.com/en-us/blog/azure-at-microsoft-ignite-2025-all-the-intelligent-cloud-news-explained/)
+- [Microsoft Databases and Microsoft Fabric: Your unified and A...](https://azure.microsoft.com/en-us/blog/microsoft-databases-and-microsoft-fabric-your-unified-and-ai-powered-data-estate/)
+- *...and 5 more in azure_ai_foundry/2025-12-08_updates.md*
 
 ### Developer Tools (18 items)
 
