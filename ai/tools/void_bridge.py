@@ -150,21 +150,25 @@ class VOIDBridge:
         # AI integration for crystallization (lazy initialization)
         self._gemini_model = None
         self._gemini_api_key = os.getenv("GEMINI_API_KEY")
-        self._ollama_available = self._check_ollama()
-        self._ollama_model = os.getenv("OLLAMA_MODEL", "aios-mistral:latest")
         self._ai_provider = None  # Track which provider is active
+
+        # Ollama local (ARCHIVED - hardware limitations)
+        # Kept for future use when better hardware available
+        self._ollama_available = False  # Disabled - timeout issues
+        self._ollama_model = os.getenv("OLLAMA_MODEL", "aios-mistral:latest")
 
         # GitHub Models API (Microsoft Cloud AI - uses existing subscription)
         self._github_token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
         self._github_models_url = "https://models.github.ai/inference/chat/completions"
         self._github_model = os.getenv("GITHUB_MODEL", "openai/gpt-4o")
 
-        # Tri-agent cascade configuration
+        # DUAL-AGENT cascade configuration (Cloud-only, fast)
+        # OLLAMA archived - local hardware insufficient for timely responses
         self.tri_agent_enabled = True
         self.agent_cascade = {
-            AgentRole.HARMONIZER: "ollama",  # Local Mistral
-            AgentRole.CREATOR: "gemini",  # Cloud reasoning
-            AgentRole.VERIFIER: "github",  # Microsoft Cloud verification
+            AgentRole.HARMONIZER: "github",   # GitHub GPT-4o-mini (fast)
+            AgentRole.CREATOR: "gemini",       # Gemini 2.0 Flash (reasoning)
+            AgentRole.VERIFIER: "github",      # GitHub GPT-4o (verification)
         }
 
         # Default crystallization patterns (canonical extraction templates)
@@ -666,22 +670,22 @@ class VOIDBridge:
             - Gap identification
             - Exit point validation
         """
-        logger.info("🔷 TRI-AGENT: Starting cascade crystallization...")
+        logger.info("🔷 DUAL-AGENT: Starting cloud cascade...")
 
-        # Stage 1: HARMONIZER (Ollama - fast local preprocessing)
+        # Stage 1: HARMONIZER (GitHub GPT-4o-mini - fast cloud preprocessing)
         harmonized_content = vertex.content
-        if self._ollama_available:
-            logger.info("   🔷 Stage 1: HARMONIZER (Ollama)")
+        if self._github_token:
+            logger.info("   🔵 Stage 1: HARMONIZER (GitHub GPT-4o-mini)")
             harmonize_prompt = f"""Preprocess this content for knowledge extraction.
 Remove noise, identify structure, extract key sections.
-Keep technical details intact.
+Keep technical details intact. Be concise.
 
 CONTENT:
-{vertex.content[:4000]}
+{vertex.content[:6000]}
 
 OUTPUT: Clean, structured content ready for deep analysis."""
 
-            result = self._ollama_generate(harmonize_prompt)
+            result = self._github_generate(harmonize_prompt, "openai/gpt-4o-mini")
             if result:
                 harmonized_content = result
                 logger.info("      ✓ Content harmonized")
@@ -751,7 +755,7 @@ Provide brief verification notes (keep the crystal, add verification footer):
                 vertex.state = VOIDState.VERIFIED
                 logger.info("      ✓ Crystal verified")
 
-        logger.info("🔷 TRI-AGENT: Cascade complete")
+        logger.info("🔷 DUAL-AGENT: Cascade complete")
         return crystal
 
     def crystallize_multi_version(self, vertex: VOIDVertex, num_versions: int = 3) -> list[str]:
