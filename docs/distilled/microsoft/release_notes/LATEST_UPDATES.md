@@ -1,7 +1,7 @@
 # Microsoft Frontier Updates - 2025-12-08
 
-> **Generated**: 2025-12-08T10:32:40.368070+00:00
-> **Total Items**: 46
+> **Generated**: 2025-12-08T12:07:49.793103+00:00
+> **Total Items**: 18
 > **AINLP.dendritic**: MSFT ingestion automated
 
 ---
@@ -21,20 +21,6 @@
 - [Azure at Microsoft Ignite 2025: All the intelligent cloud ne...](https://azure.microsoft.com/en-us/blog/azure-at-microsoft-ignite-2025-all-the-intelligent-cloud-news-explained/)
 - [Microsoft Databases and Microsoft Fabric: Your unified and A...](https://azure.microsoft.com/en-us/blog/microsoft-databases-and-microsoft-fabric-your-unified-and-ai-powered-data-estate/)
 - *...and 5 more in azure_ai_foundry/2025-12-08_updates.md*
-
-### Developer Tools (18 items)
-
-- [November 2025 Insiders (version 1.107)](https://code.visualstudio.com/updates/v1_107)
-- [Introducing the VS Code Insiders Podcast](https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast)
-- [Introducing the Visual Studio Code Private Marketplace: Your...](https://code.visualstudio.com/blogs/2025/11/18/PrivateMarketplace)
-- *...and 15 more in developer_tools/2025-12-08_updates.md*
-
-### Dotnet Evolution (10 items)
-
-- [.NET Conf 2025 Recap – Celebrating .NET 10, Visual Studio 20...](https://devblogs.microsoft.com/dotnet/dotnet-conf-2025-recap/)
-- [Introducing Data Ingestion Building Blocks (Preview)](https://devblogs.microsoft.com/dotnet/introducing-data-ingestion-building-blocks-preview/)
-- [Cross-Platform Age Verification in .NET MAUI Applications](https://devblogs.microsoft.com/dotnet/cross-platform-age-verification-dotnet-maui/)
-- *...and 7 more in dotnet_evolution/2025-12-08_updates.md*
 
 ---
 
