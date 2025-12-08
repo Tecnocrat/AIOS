@@ -201,6 +201,56 @@ structured.save_to("docs/AINLP/knowledge/")
 
 ---
 
+## Operational Implementation (2025-12-08)
+
+### Current Components
+
+| Component | Path | Purpose |
+|-----------|------|---------|
+| `void_bridge.py` | `ai/tools/` | Core ingestion engine with Gemini/Ollama AI |
+| `void_compressor.py` | `ai/tools/` | Knowledge graph builder |
+| `mslearn_adapter.py` | `ai/tools/void_sources/` | Microsoft Learn deep crawler |
+| `source_library.py` | `ai/tools/void_sources/` | URL pattern registry |
+
+### Knowledge Graph Statistics
+
+| Metric | Value |
+|--------|-------|
+| Documents | 21 |
+| Concepts | 174 |
+| Edges | 5,183 |
+| Words | 44,510 |
+| Top Concept | IaaS (141 occurrences) |
+
+### Invocation Patterns
+
+```bash
+# Pattern 1: Single URL
+python ai/tools/void_bridge.py ingest "https://..." --crystallize
+
+# Pattern 2: Learning path deep crawl
+python ai/tools/void_sources/mslearn_adapter.py "https://learn.microsoft.com/..." \
+  --output docs/distilled/cloud/course.md
+
+# Pattern 3: Knowledge graph build
+python ai/tools/void_compressor.py docs/distilled/ \
+  --output docs/distilled/knowledge_graph.json
+
+# Pattern 4: Semantic query
+python ai/tools/void_compressor.py docs/distilled/ --query "concept"
+```
+
+### Output Structure
+
+```
+docs/distilled/
+├── cloud/                   # Azure Fundamentals (3 parts, 92 units)
+├── ai/                      # ArXiv papers (5 crystallized)
+└── knowledge_graph.json     # 174 concepts, 5183 edges
+```
+
+---
+
 ## Related Patterns
 
 | Pattern | Relationship to VOID |
