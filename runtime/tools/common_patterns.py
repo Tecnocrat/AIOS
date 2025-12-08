@@ -331,6 +331,64 @@ def create_standard_demo(component_class: type, component_name: str) -> Callable
     return demo_function
 
 
+# =============================================================================
+# SECRET SANITIZATION PATTERNS
+# =============================================================================
+# AINLP.dendritic[VOID→sanitization{secrets,canonical_pointers}]
+#
+# Use these patterns when exporting chat logs or documentation that may
+# contain secrets. Secrets are replaced with pointers to canonical locations.
+# =============================================================================
+
+SECRET_SANITIZATION_PATTERNS = {
+    # Vault tokens (HashiCorp)
+    r'hvs\.[A-Za-z0-9_-]{20,}': '[REDACTED:VAULT_TOKEN→config/secrets/vault.env]',
+    
+    # GitHub tokens
+    r'ghp_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_PAT→config/secrets/github.env]',
+    r'gho_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_OAUTH→config/secrets/github.env]',
+    r'ghu_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_USER→config/secrets/github.env]',
+    r'ghs_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_SERVER→config/secrets/github.env]',
+    
+    # OpenAI/API keys
+    r'sk-[A-Za-z0-9]{32,}': '[REDACTED:OPENAI_KEY→config/secrets/api.env]',
+    
+    # Google/Gemini API keys
+    r'AIza[A-Za-z0-9_-]{35}': '[REDACTED:GOOGLE_API→config/secrets/google.env]',
+    
+    # Azure keys
+    r'[A-Za-z0-9]{32}==': '[REDACTED:AZURE_KEY→config/secrets/azure.env]',
+    
+    # Generic secrets
+    r'Root Token: [A-Za-z0-9.=_-]{20,}': 'Root Token: [REDACTED→config/secrets/vault.env]',
+}
+
+
+def sanitize_secrets(content: str) -> tuple[str, int]:
+    """
+    Sanitize secrets from content using canonical pointer patterns.
+    
+    AINLP.dendritic[VOID→sanitization]
+    
+    Args:
+        content: Text that may contain secrets
+        
+    Returns:
+        Tuple of (sanitized_content, count_of_secrets_replaced)
+    """
+    import re
+    sanitized = content
+    total_count = 0
+    
+    for pattern, replacement in SECRET_SANITIZATION_PATTERNS.items():
+        matches = len(re.findall(pattern, sanitized))
+        if matches:
+            total_count += matches
+            sanitized = re.sub(pattern, replacement, sanitized)
+    
+    return sanitized, total_count
+
+
 def main():
     """Demonstration of common patterns module."""
     print(" CORE ENGINE COMMON PATTERNS")

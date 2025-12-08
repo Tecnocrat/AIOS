@@ -251,6 +251,40 @@ docs/distilled/
 
 ---
 
+## Secret Sanitization Pattern
+
+**AINLP.dendritic[VOID→sanitization{secrets,canonical_pointers}]**
+
+When exporting chat logs or documentation containing secrets, use canonical pointer replacement:
+
+```python
+# Pattern: secret_pattern → [REDACTED:{TYPE}→{CANONICAL_PATH}]
+
+SECRET_SANITIZATION_PATTERNS = {
+    r'hvs\.[A-Za-z0-9_-]{20,}': '[REDACTED:VAULT_TOKEN→config/secrets/vault.env]',
+    r'ghp_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_PAT→config/secrets/github.env]',
+    r'gho_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_OAUTH→config/secrets/github.env]',
+    r'sk-[A-Za-z0-9]{32,}': '[REDACTED:OPENAI_KEY→config/secrets/api.env]',
+    r'AIza[A-Za-z0-9_-]{35}': '[REDACTED:GOOGLE_API→config/secrets/google.env]',
+}
+
+# Usage:
+from runtime.tools.common_patterns import sanitize_secrets
+sanitized, count = sanitize_secrets(raw_content)
+```
+
+### Canonical Secret Locations
+
+| Secret Type | Canonical Path |
+|-------------|----------------|
+| Vault tokens | `config/secrets/vault.env` |
+| GitHub PAT | `config/secrets/github.env` |
+| OpenAI keys | `config/secrets/api.env` |
+| Google/Gemini | `config/secrets/google.env` |
+| Azure keys | `config/secrets/azure.env` |
+
+---
+
 ## Related Patterns
 
 | Pattern | Relationship to VOID |
