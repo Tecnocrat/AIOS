@@ -1,0 +1,102 @@
+[
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": ".NET Conf 2025 Recap \u2013 Celebrating .NET 10, Visual Studio 2026, AI, Community, & More",
+    "url": "https://devblogs.microsoft.com/dotnet/dotnet-conf-2025-recap/",
+    "published": "Thu, 04 Dec 2025 18:05:00 +0000",
+    "summary": ".NET Conf 2025 is over, but you can catch up with all the announcements and fun with video recordings, slides, demos, and more. The post .NET Conf 2025 Recap &#8211; Celebrating .NET 10, Visual Studio 2026, AI, Community, &amp; More appeared first on .NET Blog.",
+    "hash": "17d5a395ad5d"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "Introducing Data Ingestion Building Blocks (Preview)",
+    "url": "https://devblogs.microsoft.com/dotnet/introducing-data-ingestion-building-blocks-preview/",
+    "published": "Wed, 03 Dec 2025 18:05:00 +0000",
+    "summary": "Announcing the preview of open, modular data ingestion building blocks in .NET, empowering developers to build scalable AI pipelines with seamless integration, extensibility, and easy getting started experiences across the .NET ecosystem. The post Introducing Data Ingestion Building Blocks (Preview) appeared first on .NET Blog.",
+    "hash": "32c5119a3ddd"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "Cross-Platform Age Verification in .NET MAUI Applications",
+    "url": "https://devblogs.microsoft.com/dotnet/cross-platform-age-verification-dotnet-maui/",
+    "published": "Mon, 01 Dec 2025 18:05:00 +0000",
+    "summary": "Learn how to implement age verification in your .NET MAUI apps with our new cross-platform sample supporting Google Play Age Signals, Apple Declared Age Range, and Windows Age Consent APIs. The post Cross-Platform Age Verification in .NET MAUI Applications appeared first on .NET Blog.",
+    "hash": "5b15b4452de1"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": ".NET Day on Agentic Modernization Coming Soon",
+    "url": "https://devblogs.microsoft.com/dotnet/dotnet-day-on-agentic-modernization-coming-soon/",
+    "published": "Wed, 26 Nov 2025 21:00:00 +0000",
+    "summary": "Join us live on December 9 to explore the newest, most practical ways to modernize your .NET apps with Azure, AI, and powerful agentic tooling. The post .NET Day on Agentic Modernization Coming Soon appeared first on .NET Blog.",
+    "hash": "dd6ce3b86db0"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "Reinventing how .NET Builds and Ships (Again)",
+    "url": "https://devblogs.microsoft.com/dotnet/reinventing-how-dotnet-builds-and-ships-again/",
+    "published": "Thu, 20 Nov 2025 18:05:00 +0000",
+    "summary": "An exploration of how .NET evolved from a distributed build system to Unified Build, dramatically reducing complexity and build times while improving flexibility and predictability for shipping .NET releases. The post Reinventing how .NET Builds and Ships (Again) appeared first on .NET Blog.",
+    "hash": "3e5e69efd86e"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "Supercharge Your Test Coverage with GitHub Copilot Testing for .NET",
+    "url": "https://devblogs.microsoft.com/dotnet/github-copilot-testing-for-dotnet/",
+    "published": "Wed, 19 Nov 2025 18:05:00 +0000",
+    "summary": "Boost your testing workflow with GitHub Copilot testing for .NET, available now in Visual Studio. Automatically generate, build, and run high-quality unit tests for files, projects, or entire solutions. The post Supercharge Your Test Coverage with GitHub Copilot Testing for .NET appeared first on .NET Blog.",
+    "hash": "11a02ffe49c3"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "A step-by-step guide to modernizing .NET applications with GitHub Copilot agent mode",
+    "url": "https://devblogs.microsoft.com/dotnet/modernizing-dotnet-with-github-copilot-agent-mode/",
+    "published": "Tue, 18 Nov 2025 18:05:00 +0000",
+    "summary": "Learn how Visual Studio 2026 and GitHub Copilot app modernization upgrade .NET versions and frameworks, fix build issues, and migrate apps to Azure with less manual effort The post A step-by-step guide to modernizing .NET applications with GitHub Copilot agent mode appeared first on .NET Blog.",
+    "hash": "e7c22b9feff0"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "Post-Quantum Cryptography in .NET",
+    "url": "https://devblogs.microsoft.com/dotnet/post-quantum-cryptography-in-dotnet/",
+    "published": "Tue, 18 Nov 2025 16:00:00 +0000",
+    "summary": "What we've added for PQC, and how we got there. The post Post-Quantum Cryptography in .NET appeared first on .NET Blog.",
+    "hash": "7e28f3836dff"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "Introducing F# 10",
+    "url": "https://devblogs.microsoft.com/dotnet/introducing-fsharp-10/",
+    "published": "Mon, 17 Nov 2025 18:05:00 +0000",
+    "summary": "Learn about new F# 10 language features, performance upgrades, and tooling improvements shipping with .NET 10. The post Introducing F# 10 appeared first on .NET Blog.",
+    "hash": "a1f66ac53fbd"
+  },
+  {
+    "source": ".NET Blog",
+    "category": "dotnet_evolution",
+    "priority": "medium",
+    "title": "Introducing C# 14",
+    "url": "https://devblogs.microsoft.com/dotnet/introducing-csharp-14/",
+    "published": "Mon, 17 Nov 2025 18:05:00 +0000",
+    "summary": "Learn what features are in C# 14, which ships as part of .NET 10. The post Introducing C# 14 appeared first on .NET Blog.",
+    "hash": "d7b73034c816"
+  }
+]

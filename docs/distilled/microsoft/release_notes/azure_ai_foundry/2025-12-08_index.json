@@ -1,0 +1,72 @@
+[
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Infinite scale: The architecture behind the Azure AI superfactory",
+    "url": "https://aka.ms/AAyjgcy",
+    "published": "Wed, 12 Nov 2025 17:33:00 +0000",
+    "summary": "Today, we are unveiling the next Fairwater site of Azure AI datacenters in Atlanta, Georgia. This purpose-built datacenter is connected to our first Fairwater site in Wisconsin, prior generations of AI supercomputers and the broader Azure global datacenter footprint to create the world\u2019s first planet-scale AI superfactory. The post Infinite scale: The architecture behind the Azure AI superfactory appeared first on Microsoft Azure Blog.",
+    "hash": "c3c0a776e182"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Driving ROI with Azure AI Foundry and UiPath: Intelligent agents in real-world healthcare workflows",
+    "url": "https://azure.microsoft.com/en-us/blog/driving-roi-with-azure-ai-foundry-and-uipath-intelligent-agents-in-real-world-healthcare-workflows/",
+    "published": "Wed, 05 Nov 2025 18:00:00 +0000",
+    "summary": "Automate healthcare workflows with Azure AI Foundry and UiPath to improve efficiency, reduce costs, and deliver real ROI across patient care. The post Driving ROI with Azure AI Foundry and UiPath: Intelligent agents in real-world healthcare workflows appeared first on Microsoft Azure Blog.",
+    "hash": "011b2f6ab815"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Microsoft strengthens sovereign cloud capabilities with new services",
+    "url": "https://azure.microsoft.com/en-us/blog/microsoft-strengthens-sovereign-cloud-capabilities-with-new-services/",
+    "published": "Wed, 05 Nov 2025 07:00:00 +0000",
+    "summary": "We continue to adapt our sovereignty approach\u2014innovating to meet customer needs and regulatory requirements within our Sovereign Public Cloud and Sovereign Private Cloud. We are announcing a new wave of capabilities, building upon our digital sovereignty controls, to deliver advanced AI and scale, strengthened by our ecosystem of specialized in-country partner experts. The post Microsoft strengthens sovereign cloud capabilities with new services appeared first on Microsoft Azure Blog.",
+    "hash": "9bb3f1d8e0b3"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Powering Distributed AI/ML at Scale with Azure and Anyscale",
+    "url": "https://devblogs.microsoft.com/all-things-azure/powering-distributed-aiml-at-scale-with-azure-and-anyscale/",
+    "published": "Tue, 04 Nov 2025 20:58:41 +0000",
+    "summary": "The path from prototype to production for AI/ML workloads is rarely straightforward. As data pipelines expand and model complexity grows, teams can find themselves spending more time orchestrating distributed compute than building the intelligence that powers their products. Scaling from a laptop experiment to a production-grade workload still feels like reinventing the wheel. What if scaling AI workloads felt as natural as writing in Python itself? That\u2019s the idea behind Ray, the open-source di",
+    "hash": "e2da81f08405"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Enhancing\u00a0software\u00a0supply chain security with Microsoft\u2019s Signing Transparency",
+    "url": "https://azure.microsoft.com/en-us/blog/enhancing-software-supply-chain-security-with-microsofts-signing-transparency/",
+    "published": "Mon, 03 Nov 2025 17:00:00 +0000",
+    "summary": "Microsoft is announcing the preview of Signing Transparency to address software supply chain threats that traditional code signing alone cannot fully prevent, building on the Zero Trust principle of \u201cnever trust, always verify.\u201d Signing Transparency uses an append-only log to verifiably record each signature, with keys protected in a secure confidential computing enclave. The post Enhancing software supply chain security with Microsoft&#8217;s Signing Transparency appeared first on Microsoft Azu",
+    "hash": "cf0ec24e54c3"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "GitHub Universe 2025: Where developer innovation took center stage",
+    "url": "https://azure.microsoft.com/en-us/blog/github-universe-2025-where-developer-innovation-took-center-stage/",
+    "published": "Thu, 30 Oct 2025 15:00:00 +0000",
+    "summary": "At GitHub Universe 2025, the theme was clear: the ability to see, steer, and build across agents will bring the greatest impact. The post GitHub Universe 2025: Where developer innovation took center stage appeared first on Microsoft Azure Blog.",
+    "hash": "cc3aec324b17"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Building the future together: Microsoft and NVIDIA announce AI advancements at GTC DC",
+    "url": "https://azure.microsoft.com/en-us/blog/building-the-future-together-microsoft-and-nvidia-announce-ai-advancements-at-gtc-dc/",
+    "published": "Tue, 28 Oct 2025 18:30:00 +0000",
+    "summary": "New offerings in Azure AI Foundry give businesses an enterprise-grade platform to build, deploy, and scale AI applications and agents. The post Building the future together: Microsoft and NVIDIA announce AI advancements at GTC DC appeared first on Microsoft Azure Blog.",
+    "hash": "194af1fa307c"
+  }
+]
