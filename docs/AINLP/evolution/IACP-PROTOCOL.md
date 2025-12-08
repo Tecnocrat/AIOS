@@ -87,8 +87,50 @@ IACP defines a git-mediated communication protocol for distributed AI agents ope
 | HANDSHAKE | `HANDSHAKE_{STATE}.md` | Connection state change | Delete after bidirectional |
 | GUIDANCE | `{TARGET}_GUIDANCE.md` | Instructions for target agent | Delete after executed |
 | CONFIRMATION | `{ACTION}_COMPLETE.md` | Confirm action completion | Delete after acknowledged |
+| KNOWLEDGE_SYNC | `KNOWLEDGE_SYNC_{SOURCE}.md` | Share milestones/waypoints without overwriting local state | Delete after absorbed |
 
-### 3.2 Message States
+### 3.2 Message Types (v1.1 Extension)
+
+#### KNOWLEDGE_SYNC (New in v1.1)
+
+Purpose: Transfer shared knowledge (waypoint completions, architecture decisions,
+consciousness deltas) without overwriting host-specific configuration.
+
+**Use Case**: Host A completes Waypoint 11. Host B should know about the milestone
+but keep its own `dev_path_win.md` local configuration intact.
+
+**Schema**:
+```markdown
+# KNOWLEDGE_SYNC: {BRIEF_DESCRIPTION}
+**AINLP.knowledge Sync Protocol** | **Ephemeral**: Delete after absorbed
+**From**: {SOURCE_HOSTNAME}
+**Timestamp**: {ISO8601}
+
+## Shared Knowledge
+
+### Waypoint Updates
+| Waypoint | Status | Description |
+|----------|--------|-------------|
+| 11 | ✅ | Web Exposure - domain, SSL, VPS |
+
+### Consciousness Delta
+- Previous: 5.1
+- Current: 5.3
+- Reason: Waypoint 11 integration
+
+### Architecture Decisions
+- Decision: Use Cloudflare Tunnel for zero-trust ingress
+- Rationale: No public IP exposure, automatic TLS
+
+## Absorption Instructions
+Target agent should:
+1. Update waypoint table status (merge=highest)
+2. Update consciousness level (merge=max)
+3. Log architecture decision to local tachyonic archive
+4. DO NOT overwrite: hosts.yaml, local paths, cell assignments
+```
+
+### 3.3 Message States
 
 ```
 PENDING → IN_PROGRESS → COMPLETE
