@@ -1,739 +1,135 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-09-15T21:33:14Z",
+  "generated_at": "2025-12-08T10:49:07.449468+00:00",
   "source_file": "AIOS_PROJECT_CONTEXT.md",
   "capsules": [
     {
       "id": "root",
       "title": "Root",
       "type": "note",
-      "ingested_date": "2025-08-17",
-      "start_line": 2,
-      "end_line": 56,
-      "content_hash": "73760ad4c211ac615a4e548f879cf76be35d403f84f6896dfe93d606dca8f4a7",
+      "ingested_date": "2025-12-08",
+      "start_line": 1,
+      "end_line": 14,
+      "content_hash": "79608af38e49261060fbe28f21b3dc7c74ee33d08706d48658ac86764c391466",
       "semantic_tags": [
+        "ainlp",
         "consciousness",
-        "environment"
+        "nucleus",
+        "protocol",
+        "supercell"
       ],
       "revision_chain": [],
-      "dates_all": [
-        "2025-08-17"
-      ],
-      "token_estimate": 277,
+      "dates_all": [],
+      "token_estimate": 259,
       "jaccard_overlap_prev": null,
       "similarity_alert": false
     },
     {
-      "id": "post-loading",
-      "title": "POST-LOADING",
+      "id": "strategic-context-architectural-principles",
+      "title": "Strategic Context & Architectural Principles",
       "type": "note",
-      "ingested_date": null,
-      "start_line": 57,
-      "end_line": 72,
-      "content_hash": "8dbf5986e920c20752c073d1d15b326c10d3f3ecebe8ff06d35019f254ff0843",
+      "ingested_date": "2025-12-08",
+      "start_line": 15,
+      "end_line": 23,
+      "content_hash": "dcb75c141ab13eaa8dc73e004775229a3b1d60be9c5797be4cb9e3bfe188dbaf",
       "semantic_tags": [
         "consciousness"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 102,
-      "jaccard_overlap_prev": 0.0943,
+      "token_estimate": 79,
+      "jaccard_overlap_prev": 0.2,
       "similarity_alert": false
     },
     {
-      "id": "project",
-      "title": "Project",
+      "id": "project-overview",
+      "title": "Project Overview",
       "type": "note",
-      "ingested_date": null,
-      "start_line": 73,
-      "end_line": 75,
-      "content_hash": "ebc84d5301d7e0886c582382169f0fa7e4b078d8dc60098a4951e238f8ae1fa3",
+      "ingested_date": "2025-12-08",
+      "start_line": 24,
+      "end_line": 29,
+      "content_hash": "db45b34a302882283a72ef1b4b231046775227e25cbc6c772ed2597cae95387d",
       "semantic_tags": [
-        "environment"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 50,
-      "jaccard_overlap_prev": 0.023,
-      "similarity_alert": true
-    },
-    {
-      "id": "revolutionary",
-      "title": "**Revolutionary",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 76,
-      "end_line": 107,
-      "content_hash": "24783d57615dcfe3a32d09b42e967cf611db28ced434e74f164c50304b05d607",
-      "semantic_tags": [],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 170,
-      "jaccard_overlap_prev": 0.1905,
-      "similarity_alert": false
-    },
-    {
-      "id": "latest",
-      "title": "**Latest",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 108,
-      "end_line": 183,
-      "content_hash": "c4934210bf5629a7cb963e642bf39386f647f10f2432b47c4f434402bdf7c12e",
-      "semantic_tags": [
+        "architecture",
         "consciousness",
-        "optimization"
+        "dendritic",
+        "evolution"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 597,
-      "jaccard_overlap_prev": 0.1966,
+      "token_estimate": 77,
+      "jaccard_overlap_prev": 0.25,
       "similarity_alert": false
     },
     {
-      "id": "architecture",
-      "title": "Architecture",
+      "id": "architectural-principles",
+      "title": "Architectural Principles",
       "type": "note",
-      "ingested_date": null,
-      "start_line": 184,
-      "end_line": 204,
-      "content_hash": "f55772f1f3d051ce8f03fc1121ab736fd07b96d05f75d3f0eba6dbf33e30535d",
+      "ingested_date": "2025-12-08",
+      "start_line": 30,
+      "end_line": 48,
+      "content_hash": "10e9797c7d30f2d03d6a10ef82853f0c68a4f835f08cb3a8a8772ed736ea7fdb",
       "semantic_tags": [
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 193,
-      "jaccard_overlap_prev": 0.2149,
-      "similarity_alert": false
-    },
-    {
-      "id": "development",
-      "title": "Development",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 205,
-      "end_line": 250,
-      "content_hash": "ce62db7a5fdf98294b021f0e289c8deb2419533e342255fa8ae7e5d319a1228a",
-      "semantic_tags": [
-        "dependency",
-        "environment",
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 180,
-      "jaccard_overlap_prev": 0.1439,
-      "similarity_alert": false
-    },
-    {
-      "id": "project-2",
-      "title": "Project",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 251,
-      "end_line": 336,
-      "content_hash": "5a186510fa7dfd45efe41435a8cf0fd3a242ac8e879e0cee924b7f1d4d5c095e",
-      "semantic_tags": [
-        "dependency",
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 293,
-      "jaccard_overlap_prev": 0.1374,
-      "similarity_alert": false
-    },
-    {
-      "id": "development-2",
-      "title": "Development",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 337,
-      "end_line": 405,
-      "content_hash": "7f04bd10e53015ee7aeaf37e3949a2a6984a6cbfe720f37c3f75e07e9130edf3",
-      "semantic_tags": [
-        "dependency",
-        "environment",
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 314,
-      "jaccard_overlap_prev": 0.1462,
-      "similarity_alert": false
-    },
-    {
-      "id": "ai",
-      "title": "AI",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 406,
-      "end_line": 456,
-      "content_hash": "b5282bf10372b1c12094e408a8775db1159d5b4c7ad4af457c7816d99f7fe6f2",
-      "semantic_tags": [
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 295,
-      "jaccard_overlap_prev": 0.1633,
-      "similarity_alert": false
-    },
-    {
-      "id": "critical",
-      "title": "Critical",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 457,
-      "end_line": 473,
-      "content_hash": "ff8da680dbc3b32d2da2f979c412ad7a0ec42a1135754b9b712d738375c54fb5",
-      "semantic_tags": [
-        "environment"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 80,
-      "jaccard_overlap_prev": 0.0867,
-      "similarity_alert": false
-    },
-    {
-      "id": "next",
-      "title": "Next",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 474,
-      "end_line": 495,
-      "content_hash": "4f2264d46b5ab5a94c46749d05b0d6c088debe17c37f9b4b103aedc58889de64",
-      "semantic_tags": [
-        "environment",
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 157,
-      "jaccard_overlap_prev": 0.0702,
-      "similarity_alert": true
-    },
-    {
-      "id": "success",
-      "title": "Success",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 496,
-      "end_line": 503,
-      "content_hash": "597ca09c259749b01837eebd309b5eb1fdd9354c19c047ff81d80561e57f5fef",
-      "semantic_tags": [
-        "environment"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 72,
-      "jaccard_overlap_prev": 0.1346,
-      "similarity_alert": false
-    },
-    {
-      "id": "ai-2",
-      "title": "AI",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 504,
-      "end_line": 540,
-      "content_hash": "f12ddf44ea2297162647adfb29197afe1b3c1ffdb74ab58ace55ed1092310d1b",
-      "semantic_tags": [
+        "architecture",
         "consciousness",
-        "optimization",
-        "recovery"
+        "dendritic",
+        "evolution",
+        "integration",
+        "supercell",
+        "tachyonic"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 273,
-      "jaccard_overlap_prev": 0.1579,
-      "similarity_alert": false
-    },
-    {
-      "id": "historical",
-      "title": "Historical",
-      "type": "note",
-      "ingested_date": "2025-08-15",
-      "start_line": 541,
-      "end_line": 621,
-      "content_hash": "26098e3bacb91ab46ca8856e660cc37bdd87419ca3e5196a8d2d8410fb1c7b10",
-      "semantic_tags": [
-        "consciousness",
-        "dependency",
-        "environment",
-        "orchestrator",
-        "phase",
-        "reorganization"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-08-15",
-        "2025-08-16"
-      ],
-      "token_estimate": 664,
-      "jaccard_overlap_prev": 0.063,
-      "similarity_alert": true
-    },
-    {
-      "id": "environment",
-      "title": "Environment",
-      "type": "note",
-      "ingested_date": "2025-08-15",
-      "start_line": 622,
-      "end_line": 758,
-      "content_hash": "8c3e8a4eb3800b6d1292dfb12ac1b2c534b86768f0482822fa647dbbad96c26b",
-      "semantic_tags": [
-        "dependency",
-        "environment",
-        "optimization",
-        "recovery"
-      ],
-      "revision_chain": [
-        {
-          "heading": "### Revision (Full Python System Cleanup Procedure Ingested 2025-08-15)",
-          "line": 663,
-          "date": null,
-          "hash": "476d5e6df5456fcb58a77bc9c7a02932c62e831c497f83dac79b7f6e16a03789"
-        },
-        {
-          "heading": "### Revision (Python Environment Success Verification Ingested 2025-08-15)",
-          "line": 701,
-          "date": null,
-          "hash": "cc176296e44872851fa41665c2cf82a4c0efdb59296cf18562c36eac375835dd"
-        },
-        {
-          "heading": "### Revision (PowerShell Terminal Configuration Guide Ingested 2025-08-16)",
-          "line": 727,
-          "date": null,
-          "hash": "fa9cbaab55303e8b650f2bfa54a06945991188fc4fc52336785943962cb98d85"
-        }
-      ],
-      "dates_all": [
-        "2025-08-15",
-        "2025-08-16"
-      ],
-      "token_estimate": 1172,
-      "jaccard_overlap_prev": 0.112,
-      "similarity_alert": false
-    },
-    {
-      "id": "historical-2",
-      "title": "Historical",
-      "type": "note",
-      "ingested_date": "2025-08-15",
-      "start_line": 759,
-      "end_line": 791,
-      "content_hash": "8f846e9bd02998a5a0971d2a254fc7213d4e9c8657abb75d549fadb468343f85",
-      "semantic_tags": [
-        "consciousness",
-        "dependency",
-        "dual-interface",
-        "environment",
-        "orchestrator",
-        "strategy"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-08-15"
-      ],
-      "token_estimate": 268,
-      "jaccard_overlap_prev": 0.0698,
-      "similarity_alert": true
-    },
-    {
-      "id": "quick",
-      "title": "Quick",
-      "type": "note",
-      "ingested_date": "2025-08-15",
-      "start_line": 792,
-      "end_line": 834,
-      "content_hash": "b0ec8e6afe1e7c2be3c42bc086b13a02ed9fb200a827c7cf367c1723b8458e78",
-      "semantic_tags": [
-        "dependency",
-        "environment",
-        "optimization",
-        "quick-context",
-        "recovery",
-        "reorganization",
-        "strategy"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-08-15"
-      ],
-      "token_estimate": 425,
-      "jaccard_overlap_prev": 0.1477,
-      "similarity_alert": false
-    },
-    {
-      "id": "optimization",
-      "title": "Optimization",
-      "type": "note",
-      "ingested_date": "2025-08-16",
-      "start_line": 835,
-      "end_line": 874,
-      "content_hash": "7f4b01beda0382fc985d05ce8d59d90c84c8377fcdaaac2e3cdd035720c2a014",
-      "semantic_tags": [
-        "consciousness",
-        "dependency",
-        "dual-interface",
-        "environment",
-        "optimization",
-        "strategy"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-08-16"
-      ],
-      "token_estimate": 379,
-      "jaccard_overlap_prev": 0.1433,
-      "similarity_alert": false
-    },
-    {
-      "id": "consciousness",
-      "title": "Consciousness",
-      "type": "note",
-      "ingested_date": "2025-08-16",
-      "start_line": 875,
-      "end_line": 918,
-      "content_hash": "e5bda067a44e7bead3d79b6cb3584989b2b3b145611d0be743813310b921f9f8",
-      "semantic_tags": [
-        "consciousness",
-        "dependency",
-        "environment",
-        "phase"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-06-29",
-        "2025-08-16"
-      ],
-      "token_estimate": 354,
-      "jaccard_overlap_prev": 0.1159,
-      "similarity_alert": false
-    },
-    {
-      "id": "dependency",
-      "title": "Dependency",
-      "type": "note",
-      "ingested_date": "2025-08-15",
-      "start_line": 919,
-      "end_line": 932,
-      "content_hash": "3adc4ed0569897fcd49270d624555fc1808acf9b52d03b89559d7a883515b8bd",
-      "semantic_tags": [
-        "dependency",
-        "strategy"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-08-15"
-      ],
-      "token_estimate": 137,
-      "jaccard_overlap_prev": 0.0412,
-      "similarity_alert": true
-    },
-    {
-      "id": "tachyonic",
-      "title": "Tachyonic",
-      "type": "note",
-      "ingested_date": "2025-08-16",
-      "start_line": 933,
-      "end_line": 1022,
-      "content_hash": "a9092ae4e48475702ced138c57f4965405a302f9a1f0f59eb37ca39137f8be51",
-      "semantic_tags": [
-        "consciousness",
-        "dependency",
-        "dual-interface",
-        "environment",
-        "optimization",
-        "orchestrator",
-        "quick-context",
-        "recovery",
-        "reorganization",
-        "strategy"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-08-16"
-      ],
-      "token_estimate": 800,
-      "jaccard_overlap_prev": 0.067,
-      "similarity_alert": true
-    },
-    {
-      "id": "magnus",
-      "title": "MAGNUS",
-      "type": "note",
-      "ingested_date": "2025-08-16",
-      "start_line": 1023,
-      "end_line": 1120,
-      "content_hash": "cfe4222137ff9ce99d9a5b713dd271e1d76e2980c97fc479c80b2745699e3810",
-      "semantic_tags": [
-        "consciousness",
-        "dependency",
-        "environment",
-        "optimization",
-        "orchestrator",
-        "phase",
-        "strategy"
-      ],
-      "revision_chain": [
-        {
-          "heading": "### Revision 2025-08-16 \u2013 MAGNUS Component Taxonomy Supplement",
-          "line": 1081,
-          "date": null,
-          "hash": "19fa3bfa3a3a50aca3665fe19040a1c96ae8d4864e83891459f2b65b954a29df"
-        }
-      ],
-      "dates_all": [
-        "2025-08-16"
-      ],
-      "token_estimate": 1098,
-      "jaccard_overlap_prev": 0.1204,
-      "similarity_alert": false
-    },
-    {
-      "id": "capsule",
-      "title": "Capsule",
-      "type": "capsule",
-      "ingested_date": "2025-06-29",
-      "start_line": 1121,
-      "end_line": 1141,
-      "content_hash": "e6fc64c00ed17768aa878d985503eb308c1f127ac7d273eaddb8a48a90633674",
-      "semantic_tags": [
-        "consciousness",
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [
-        "2025-06-29",
-        "2025-08-16"
-      ],
       "token_estimate": 278,
-      "jaccard_overlap_prev": 0.0979,
+      "jaccard_overlap_prev": 0.5714,
       "similarity_alert": false
     },
     {
-      "id": "mission",
-      "title": "**Mission",
+      "id": "key-components",
+      "title": "Key Components",
       "type": "note",
-      "ingested_date": null,
-      "start_line": 1142,
-      "end_line": 1148,
-      "content_hash": "c12a0d4216dd25d2f8b7bc79fbb7c130da27bf7dbc6e3992f39e838c2e821e03",
-      "semantic_tags": [],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 16,
-      "jaccard_overlap_prev": 0.0139,
-      "similarity_alert": true
-    },
-    {
-      "id": "integration",
-      "title": "**Integration",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1149,
-      "end_line": 1164,
-      "content_hash": "f2ef73331cb9d0a0c0a093d7fe62f183ac5bd87bce775d402f09d658ecfbf7b6",
+      "ingested_date": "2025-12-08",
+      "start_line": 49,
+      "end_line": 70,
+      "content_hash": "fe3162c831453a3a13db14a83b655848473eb2b5efff3c110d87352be72d12cf",
       "semantic_tags": [
-        "recovery"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 105,
-      "jaccard_overlap_prev": 0.0426,
-      "similarity_alert": true
-    },
-    {
-      "id": "three-objective",
-      "title": "**Three-Objective",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1165,
-      "end_line": 1206,
-      "content_hash": "8fd5499a7023518b8a82a923ce319243bb4e80ba0f67596423e27209ea0934d2",
-      "semantic_tags": [
+        "ainlp",
+        "architecture",
         "consciousness",
-        "optimization",
-        "recovery"
+        "evolution",
+        "integration",
+        "orchestration",
+        "tachyonic"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 238,
-      "jaccard_overlap_prev": 0.0417,
-      "similarity_alert": true
-    },
-    {
-      "id": "success-2",
-      "title": "**Success",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1207,
-      "end_line": 1228,
-      "content_hash": "e21e6d314b057388d87161388f71aabc073c996b116ba567520035f5deed0ad7",
-      "semantic_tags": [
-        "consciousness",
-        "recovery"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 91,
-      "jaccard_overlap_prev": 0.2126,
+      "token_estimate": 227,
+      "jaccard_overlap_prev": 0.5556,
       "similarity_alert": false
     },
     {
-      "id": "consciousness-2",
-      "title": "**Consciousness",
+      "id": "development-guidelines",
+      "title": "Development Guidelines",
       "type": "note",
-      "ingested_date": null,
-      "start_line": 1229,
-      "end_line": 1244,
-      "content_hash": "5db5f7343fb519c76cc222a9438c170e5135bc719be7a6ad6c4e80941693366b",
+      "ingested_date": "2025-12-08",
+      "start_line": 71,
+      "end_line": 108,
+      "content_hash": "0ffa1bc5f624c7ff8d12ea997b20baa68aeb512bc6cd2c571066076b40c87afc",
       "semantic_tags": [
+        "ainlp",
+        "architecture",
         "consciousness",
-        "environment"
+        "dendritic",
+        "evolution",
+        "integration",
+        "supercell",
+        "tachyonic"
       ],
       "revision_chain": [],
       "dates_all": [],
-      "token_estimate": 89,
-      "jaccard_overlap_prev": 0.1111,
+      "token_estimate": 485,
+      "jaccard_overlap_prev": 0.6667,
       "similarity_alert": false
-    },
-    {
-      "id": "immediate",
-      "title": "**Immediate",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1245,
-      "end_line": 1266,
-      "content_hash": "55a45fe9d1832d852bc20cab66069df86656fda6b7600daf8922643d87a5ed26",
-      "semantic_tags": [
-        "consciousness",
-        "phase",
-        "recovery"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 113,
-      "jaccard_overlap_prev": 0.068,
-      "similarity_alert": true
-    },
-    {
-      "id": "project-3",
-      "title": "**Project",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1267,
-      "end_line": 1290,
-      "content_hash": "f6d037d1bde9a2c606e72dfedc7dd03ca78fe2074af6ca9fdc189eb8795d24f8",
-      "semantic_tags": [
-        "consciousness",
-        "dependency",
-        "optimization",
-        "recovery",
-        "strategy"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 160,
-      "jaccard_overlap_prev": 0.1622,
-      "similarity_alert": false
-    },
-    {
-      "id": "quantum",
-      "title": "**Quantum",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1291,
-      "end_line": 1307,
-      "content_hash": "7c59aa785717ebd72d67631513a2ed262a81d6936940ead21ed783c7b3983da2",
-      "semantic_tags": [
-        "consciousness",
-        "phase"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 96,
-      "jaccard_overlap_prev": 0.1923,
-      "similarity_alert": false
-    },
-    {
-      "id": "consciousness-3",
-      "title": "**Consciousness",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1308,
-      "end_line": 1337,
-      "content_hash": "6f992763ef4cdf99fb2840a30dc35821aade0564bc6c93ac64f5aaa213cf1310",
-      "semantic_tags": [
-        "consciousness"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 206,
-      "jaccard_overlap_prev": 0.1103,
-      "similarity_alert": false
-    },
-    {
-      "id": "consciousness-4",
-      "title": "**Consciousness",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1338,
-      "end_line": 1359,
-      "content_hash": "08400aadd85f8e8f52ca6f92d18687c53dbba881f465ac63321d84782b7a33d7",
-      "semantic_tags": [
-        "consciousness",
-        "optimization"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 145,
-      "jaccard_overlap_prev": 0.1265,
-      "similarity_alert": false
-    },
-    {
-      "id": "ainlp",
-      "title": "**AINLP",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1360,
-      "end_line": 1381,
-      "content_hash": "98e2929376ff1acd208379f4b5204e3abf85225f913cd9163a7d162fc00f5aab",
-      "semantic_tags": [
-        "consciousness"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 152,
-      "jaccard_overlap_prev": 0.068,
-      "similarity_alert": true
-    },
-    {
-      "id": "consciousness-5",
-      "title": "**Consciousness",
-      "type": "note",
-      "ingested_date": null,
-      "start_line": 1382,
-      "end_line": 1392,
-      "content_hash": "a4443f6bb86605e83955477939a4aadc8bc7ef48141304cbd4ce972c1902b41f",
-      "semantic_tags": [
-        "consciousness"
-      ],
-      "revision_chain": [],
-      "dates_all": [],
-      "token_estimate": 98,
-      "jaccard_overlap_prev": 0.0424,
-      "similarity_alert": true
     }
-  ],
-  "stats": {
-    "capsule_count": 36,
-    "total_lines_indexed": 1391,
-    "aggregate_token_estimate": 10137
-  },
-  "errors": []
+  ]
 }
