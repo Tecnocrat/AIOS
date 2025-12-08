@@ -1,23 +1,28 @@
 # AIOS Microsoft Frontier Ingestion Workflow
 # AINLP.dendritic[MSFT,AIOS]{automation,ingestion,scheduled}
-# Schedule: Daily at 06:00 UTC
+# Schedule: Every 6 hours for resilience testing (will reduce after validation)
 
 name: msft-frontier-ingestion
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    # Every 6 hours for testing resilience
+    - cron: '0 */6 * * *'
   
   workflow_dispatch:
     inputs:
       priority_filter:
         description: 'Priority filter (high, medium, low, all)'
         required: false
-        default: 'high'
+        default: 'all'
       max_items:
         description: 'Maximum items per feed'
         required: false
         default: '10'
+      backfill_mode:
+        description: 'Enable historical backfill'
+        required: false
+        default: 'false'
 
 env:
   PYTHON_VERSION: '3.11'

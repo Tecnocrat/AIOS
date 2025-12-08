@@ -155,9 +155,7 @@ def parse_feed(content: str, config: dict, max_items: int) -> list[dict]:
 
 
 # User-Agent to avoid 403 errors on some feeds
-HEADERS = {
-    "User-Agent": "AIOS-Feed-Fetcher/1.0 (https://github.com/Tecnocrat/aios-win)"
-}
+HEADERS = {"User-Agent": "AIOS-Feed-Fetcher/1.0 (https://github.com/Tecnocrat/aios-win)"}
 
 
 async def fetch_feed_async(session, config: dict, max_items: int) -> list[dict]:
