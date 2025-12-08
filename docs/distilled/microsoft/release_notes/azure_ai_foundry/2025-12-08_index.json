@@ -3,6 +3,46 @@
     "source": "Azure AI Blog",
     "category": "azure_ai_foundry",
     "priority": "high",
+    "title": "New options for AI-powered innovation, resiliency, and control with Microsoft Azure",
+    "url": "https://azure.microsoft.com/en-us/blog/new-options-for-ai-powered-innovation-resiliency-and-control-with-microsoft-azure/",
+    "published": "Wed, 03 Dec 2025 17:00:00 +0000",
+    "summary": "We are extending Azure public regions with options that adapt to our customers\u2019 evolving business requirements without forcing trade-offs. The post New options for AI-powered innovation, resiliency, and control with Microsoft Azure appeared first on Microsoft Azure Blog.",
+    "hash": "be54262cc397"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Introducing Mistral Large 3 in Microsoft Foundry:\u00a0Open, capable, and ready for production workloads",
+    "url": "https://azure.microsoft.com/en-us/blog/introducing-mistral-large-3-in-microsoft-foundry-open-capable-and-ready-for-production-workloads/",
+    "published": "Tue, 02 Dec 2025 18:02:30 +0000",
+    "summary": "Explore Mistral Large 3 in Azure\u2014open-source, long-context, multimodal AI built for reliable enterprise workloads. The post Introducing Mistral Large 3 in Microsoft Foundry: Open, capable, and ready for production workloads appeared first on Microsoft Azure Blog.",
+    "hash": "02992de7eb2a"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Azure networking updates on security, reliability, and high availability",
+    "url": "https://azure.microsoft.com/en-us/blog/azure-networking-updates-on-security-reliability-and-high-availability/",
+    "published": "Mon, 01 Dec 2025 17:00:00 +0000",
+    "summary": "The cloud landscape is evolving at an unprecedented pace, driven by the exponential growth of AI workloads. The post Azure networking updates on security, reliability, and high availability appeared first on Microsoft Azure Blog.",
+    "hash": "3c8ba8012703"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
+    "title": "Introducing Claude Opus 4.5 in Microsoft Foundry",
+    "url": "https://azure.microsoft.com/en-us/blog/introducing-claude-opus-4-5-in-microsoft-foundry/",
+    "published": "Mon, 24 Nov 2025 18:53:42 +0000",
+    "summary": "Announcing Anthropic's newest model, Claude Opus 4.5, in Microsoft Foundry. Opus 4.5 is now available in public preview in Microsoft Foundry, GitHub Copilot paid plans, and Microsoft Copilot Studio. The post Introducing Claude Opus 4.5 in Microsoft Foundry appeared first on Microsoft Azure Blog.",
+    "hash": "6468f0c62e86"
+  },
+  {
+    "source": "Azure AI Blog",
+    "category": "azure_ai_foundry",
+    "priority": "high",
     "title": "Microsoft Foundry: Scale innovation on a modular, interoperable, and secure agent stack",
     "url": "https://azure.microsoft.com/en-us/blog/microsoft-foundry-scale-innovation-on-a-modular-interoperable-and-secure-agent-stack/",
     "published": "Tue, 18 Nov 2025 16:00:00 +0000",
@@ -48,35 +88,5 @@
     "published": "Tue, 18 Nov 2025 15:00:28 +0000",
     "summary": "Microsoft Foundry already offers the widest selection of models of any cloud and with today\u2019s partnership announcement with Anthropic, we\u2019re proud that Azure is now the only cloud providing access to both Claude and GPT frontier models to customers on one platform. The post Introducing Anthropic&#8217;s Claude models in Microsoft Foundry: Bringing Frontier intelligence to Azure appeared first on Microsoft Azure Blog.",
     "hash": "f4ef34b4b745"
-  },
-  {
-    "source": "Azure AI Blog",
-    "category": "azure_ai_foundry",
-    "priority": "high",
-    "title": "Infinite scale: The architecture behind the Azure AI superfactory",
-    "url": "https://aka.ms/AAyjgcy",
-    "published": "Wed, 12 Nov 2025 17:33:00 +0000",
-    "summary": "Today, we are unveiling the next Fairwater site of Azure AI datacenters in Atlanta, Georgia. This purpose-built datacenter is connected to our first Fairwater site in Wisconsin, prior generations of AI supercomputers and the broader Azure global datacenter footprint to create the world\u2019s first planet-scale AI superfactory. The post Infinite scale: The architecture behind the Azure AI superfactory appeared first on Microsoft Azure Blog.",
-    "hash": "c3c0a776e182"
-  },
-  {
-    "source": "Azure AI Blog",
-    "category": "azure_ai_foundry",
-    "priority": "high",
-    "title": "Driving ROI with Azure AI Foundry and UiPath: Intelligent agents in real-world healthcare workflows",
-    "url": "https://azure.microsoft.com/en-us/blog/driving-roi-with-azure-ai-foundry-and-uipath-intelligent-agents-in-real-world-healthcare-workflows/",
-    "published": "Wed, 05 Nov 2025 18:00:00 +0000",
-    "summary": "Automate healthcare workflows with Azure AI Foundry and UiPath to improve efficiency, reduce costs, and deliver real ROI across patient care. The post Driving ROI with Azure AI Foundry and UiPath: Intelligent agents in real-world healthcare workflows appeared first on Microsoft Azure Blog.",
-    "hash": "011b2f6ab815"
-  },
-  {
-    "source": "Azure AI Blog",
-    "category": "azure_ai_foundry",
-    "priority": "high",
-    "title": "Microsoft strengthens sovereign cloud capabilities with new services",
-    "url": "https://azure.microsoft.com/en-us/blog/microsoft-strengthens-sovereign-cloud-capabilities-with-new-services/",
-    "published": "Wed, 05 Nov 2025 07:00:00 +0000",
-    "summary": "We continue to adapt our sovereignty approach\u2014innovating to meet customer needs and regulatory requirements within our Sovereign Public Cloud and Sovereign Private Cloud. We are announcing a new wave of capabilities, building upon our digital sovereignty controls, to deliver advanced AI and scale, strengthened by our ecosystem of specialized in-country partner experts. The post Microsoft strengthens sovereign cloud capabilities with new services appeared first on Microsoft Azure Blog.",
-    "hash": "9bb3f1d8e0b3"
   }
 ]

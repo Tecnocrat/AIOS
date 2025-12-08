@@ -1,7 +1,7 @@
 # Microsoft Frontier Updates - 2025-12-08
 
-> **Generated**: 2025-12-08T12:07:49.793103+00:00
-> **Total Items**: 18
+> **Generated**: 2025-12-08T18:06:40.251294+00:00
+> **Total Items**: 19
 > **AINLP.dendritic**: MSFT ingestion automated
 
 ---
@@ -15,12 +15,12 @@
 - [What is Windows ML](https://learn.microsoft.com/en-us/windows/ai/new-windows-ml/overview)
 - *...and 7 more in agentic_windows/2025-12-08_updates.md*
 
-### Azure Ai Foundry (8 items)
+### Azure Ai Foundry (9 items)
 
-- [Microsoft Foundry: Scale innovation on a modular, interopera...](https://azure.microsoft.com/en-us/blog/microsoft-foundry-scale-innovation-on-a-modular-interoperable-and-secure-agent-stack/)
-- [Azure at Microsoft Ignite 2025: All the intelligent cloud ne...](https://azure.microsoft.com/en-us/blog/azure-at-microsoft-ignite-2025-all-the-intelligent-cloud-news-explained/)
-- [Microsoft Databases and Microsoft Fabric: Your unified and A...](https://azure.microsoft.com/en-us/blog/microsoft-databases-and-microsoft-fabric-your-unified-and-ai-powered-data-estate/)
-- *...and 5 more in azure_ai_foundry/2025-12-08_updates.md*
+- [New options for AI-powered innovation, resiliency, and contr...](https://azure.microsoft.com/en-us/blog/new-options-for-ai-powered-innovation-resiliency-and-control-with-microsoft-azure/)
+- [Introducing Mistral Large 3 in Microsoft Foundry: Open, capa...](https://azure.microsoft.com/en-us/blog/introducing-mistral-large-3-in-microsoft-foundry-open-capable-and-ready-for-production-workloads/)
+- [Azure networking updates on security, reliability, and high ...](https://azure.microsoft.com/en-us/blog/azure-networking-updates-on-security-reliability-and-high-availability/)
+- *...and 6 more in azure_ai_foundry/2025-12-08_updates.md*
 
 ---
 
