@@ -22,7 +22,7 @@
     "populations_monitored": 0
   },
   "consciousness_level": "nucleus",
-  "boot_duration_seconds": 63.12,
+  "boot_duration_seconds": 62.5,
   "phases_executed": [
     "Skipped: Testing",
     "Skipped: Monitoring"
@@ -40,7 +40,7 @@
     "semantic_registry_active": true,
     "configuration_source": "tachyonic::consciousness::config_registry"
   },
-  "boot_timestamp": "2025-12-08 23:32:19",
+  "boot_timestamp": "2025-12-08 23:31:17",
   "health": {
     "errors": [],
     "overall_status": "Healthy",
