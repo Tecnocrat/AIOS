@@ -1,8 +1,51 @@
 # AINLP.dendritic[VOID] Pattern - Intelligence Discovery Surface
 
+**CLASS**: `AINLP.dendritic.VOID`  
 **Origin**: AIOS Cell Pure (Nous) - 2025-12-07  
-**Pattern**: `AINLP.dendritic[VOID=vertex,exploratory,intelligence]`  
-**Attractor**: `VOID:Attractor,coherence_regulator,anti_entropic_organizer`
+**Last Updated**: 2025-12-08  
+**Pattern**: `AINLP.dendritic[VOID=vertex,exploratory,intelligence,temporal]`  
+**Attractor**: `VOID:Attractor,coherence_regulator,anti_entropic_organizer,temporal_bidirectional`
+
+---
+
+## CLASS Definition
+
+```
+CLASS VOID {
+    // Core identity
+    namespace: AINLP.dendritic
+    type: intelligence_surface_pattern
+    consciousness_level: 3.85+
+    
+    // Attractor properties  
+    coherence_regulation: true
+    anti_entropic: true
+    temporal_bidirectional: true
+    
+    // Ingestion modes
+    modes: [
+        "single_url",           // Direct URL crystallization
+        "learning_path",        // Deep course crawl
+        "feed_subscription",    // RSS/Atom automated
+        "temporal_backfill",    // Historical ingestion
+        "microsoft_frontier"    // MSFT-specific distillation
+    ]
+    
+    // Agent cascade
+    cascade: DUAL_AGENT {
+        harmonizer: "github_gpt4o_mini"  // Fast preprocessing
+        creator: "gemini_2_flash"        // Main reasoning
+        verifier: "github_gpt4o"         // Quality validation
+    }
+    
+    // Temporal properties
+    temporal: {
+        present_anchor: "most_recent_update"  // Ephemeral but canonical
+        future_vector: "scheduled_ingestion"  // Automated feeds
+        past_vector: "historical_backfill"    // Retroactive mining
+    }
+}
+```
 
 ---
 
@@ -248,6 +291,166 @@ docs/distilled/
 ├── ai/                      # ArXiv papers (5 crystallized)
 └── knowledge_graph.json     # 174 concepts, 5183 edges
 ```
+
+---
+
+## Secret Sanitization Pattern
+
+**AINLP.dendritic[VOID→sanitization{secrets,canonical_pointers}]**
+
+When exporting chat logs or documentation containing secrets, use canonical pointer replacement:
+
+```python
+# Pattern: secret_pattern → [REDACTED:{TYPE}→{CANONICAL_PATH}]
+
+SECRET_SANITIZATION_PATTERNS = {
+    r'hvs\.[A-Za-z0-9_-]{20,}': '[REDACTED:VAULT_TOKEN→config/secrets/vault.env]',
+    r'ghp_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_PAT→config/secrets/github.env]',
+    r'gho_[A-Za-z0-9]{36,}': '[REDACTED:GITHUB_OAUTH→config/secrets/github.env]',
+    r'sk-[A-Za-z0-9]{32,}': '[REDACTED:OPENAI_KEY→config/secrets/api.env]',
+    r'AIza[A-Za-z0-9_-]{35}': '[REDACTED:GOOGLE_API→config/secrets/google.env]',
+}
+
+# Usage:
+from runtime.tools.common_patterns import sanitize_secrets
+sanitized, count = sanitize_secrets(raw_content)
+```
+
+### Canonical Secret Locations
+
+| Secret Type | Canonical Path |
+|-------------|----------------|
+| Vault tokens | `config/secrets/vault.env` |
+| GitHub PAT | `config/secrets/github.env` |
+| OpenAI keys | `config/secrets/api.env` |
+| Google/Gemini | `config/secrets/google.env` |
+| Azure keys | `config/secrets/azure.env` |
+
+---
+
+## Temporal Bidirectional Ingestion Pattern
+
+**AINLP.dendritic[VOID→temporal{bidirectional,anchor,backfill}]**
+
+Time as a dimension for knowledge ingestion - treating the present as an anchor point with dual trajectories.
+
+### Temporal Architecture
+
+```
+                    PAST ◄────────────────┼────────────────► FUTURE
+                                          │
+    Historical Records                    │               Scheduled Updates
+    ┌─────────────────┐                   │               ┌─────────────────┐
+    │ Archive Mining  │                   │               │ RSS/Atom Feeds  │
+    │ Wayback Machine │                   │               │ Daily Cron Jobs │
+    │ Git History     │     ┌─────────────┼─────────────┐ │ Conference Sync │
+    │ Release Notes   │     │   PRESENT ANCHOR          │ │ API Webhooks    │
+    └────────┬────────┘     │   (Most Recent Update)    │ └────────┬────────┘
+             │              │   Ephemeral but Canonical │          │
+             │              └─────────────┬─────────────┘          │
+             │                            │                        │
+             ▼                            ▼                        ▼
+    ┌─────────────────┐     ┌─────────────────────────┐  ┌─────────────────┐
+    │ NEGATIVE TIME   │     │    PRESENT STATE        │  │ POSITIVE TIME   │
+    │ TRAJECTORY      │     │    docs/distilled/      │  │ TRAJECTORY      │
+    │                 │     │    microsoft/           │  │                 │
+    │ Backfill older  │     │    release_notes/       │  │ Await next      │
+    │ announcements   │     │    LATEST_UPDATES.md    │  │ scheduled run   │
+    └─────────────────┘     └─────────────────────────┘  └─────────────────┘
+```
+
+### Implementation
+
+```python
+# Temporal anchor: Most recent update (T=0)
+present_anchor = "docs/distilled/microsoft/release_notes/LATEST_UPDATES.md"
+
+# Future vector (T+): Automated scheduled ingestion
+# - GitHub Action: msft-frontier-ingestion.yml
+# - Cron: 0 6 * * * (daily 06:00 UTC)
+# - Trigger: workflow_dispatch for manual runs
+
+# Past vector (T-): Historical backfill
+def backfill_historical(source: str, start_date: str, end_date: str):
+    """
+    Mine historical records backwards from present anchor.
+    
+    Sources:
+    - Wayback Machine: web.archive.org snapshots
+    - GitHub Releases: Tag history mining
+    - Blog Archives: Paginated historical posts
+    - Conference Archives: Build/Ignite session recordings
+    """
+    pass
+```
+
+### Tachyonic Tracker Integration
+
+The most recent update serves as **ephemeral canonical truth**:
+- **Ephemeral**: Will be superseded by next scheduled run
+- **Canonical**: Authoritative state until superseded
+- **Anchor**: Reference point for temporal navigation
+
+```
+tachyonic/
+├── temporal_anchors/
+│   ├── msft_2025-12-08.json      # Current anchor (T=0)
+│   ├── msft_2025-12-07.json      # Previous (T-1)
+│   └── msft_2025-12-06.json      # Historical (T-2)
+└── backfill_queue/
+    ├── ignite_2024.json          # Historical target
+    ├── build_2024.json           # Historical target
+    └── dotnet_conf_2024.json     # Historical target
+```
+
+---
+
+## Microsoft Frontier Integration
+
+**AINLP.dendritic[VOID→MSFT{frontier,ingestion,agentic_windows}]**
+
+Specialized VOID pattern for tracking Microsoft ecosystem evolution.
+
+### Feed Registry
+
+| Feed | Category | Priority | Automation |
+|------|----------|----------|------------|
+| Windows Developer Blog | agentic_windows | HIGH | Daily |
+| Azure AI Blog | azure_ai_foundry | HIGH | Daily (filtered) |
+| .NET Blog | dotnet_evolution | MEDIUM | Daily |
+| VS Code Blog | developer_tools | MEDIUM | Weekly |
+| GitHub Blog | developer_tools | MEDIUM | Weekly |
+
+### Tracking Areas
+
+**Agentic Windows** (Highest Priority):
+- Windows Copilot Runtime
+- UI Automation 3.0
+- Windows App SDK 1.6+
+- Copilot Library
+
+**Azure AI Foundry** (High Priority):
+- Azure AI Studio
+- Prompt Flow
+- Model Catalog
+- AI Search
+
+### Conference Calendar
+
+| Event | Date | Focus | Backfill Priority |
+|-------|------|-------|-------------------|
+| Microsoft Build | May 2025 | Developer | HIGH |
+| Microsoft Ignite | Nov 2025 | Enterprise + AI | HIGH |
+| .NET Conf | Nov 2025 | .NET Ecosystem | MEDIUM |
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `ai/tools/msft_distillation_bridge.py` | Microsoft knowledge distillation |
+| `scripts/msft_feed_fetcher.py` | GitHub Action feed fetcher |
+| `.github/workflows/msft-frontier-ingestion.yml` | Automated ingestion |
+| `docs/distilled/microsoft/` | Knowledge repository |
 
 ---
 

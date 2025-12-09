@@ -1,0 +1,83 @@
+# AIOS Microsoft Frontier Ingestion Workflow
+# AINLP.dendritic[MSFT,AIOS]{automation,ingestion,scheduled}
+# Schedule: Every 6 hours for resilience testing (will reduce after validation)
+
+name: msft-frontier-ingestion
+
+on:
+  schedule:
+    # Every 6 hours for testing resilience
+    - cron: '0 */6 * * *'
+  
+  workflow_dispatch:
+    inputs:
+      priority_filter:
+        description: 'Priority filter (high, medium, low, all)'
+        required: false
+        default: 'all'
+      max_items:
+        description: 'Maximum items per feed'
+        required: false
+        default: '10'
+      backfill_mode:
+        description: 'Enable historical backfill'
+        required: false
+        default: 'false'
+
+env:
+  PYTHON_VERSION: '3.11'
+  OUTPUT_DIR: 'docs/distilled/microsoft/release_notes'
+
+jobs:
+  ingest-feeds:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: pip install aiohttp
+      
+      - name: Create output directory
+        run: mkdir -p ${{ env.OUTPUT_DIR }}
+      
+      - name: Fetch Microsoft Feeds
+        id: fetch
+        env:
+          MAX_ITEMS: ${{ github.event.inputs.max_items || '10' }}
+          PRIORITY_FILTER: ${{ github.event.inputs.priority_filter || 'high' }}
+        run: python scripts/msft_feed_fetcher.py
+      
+      - name: Commit changes
+        id: commit
+        run: |
+          git config --local user.email "aios-bot@aios.local"
+          git config --local user.name "AIOS Ingestion Bot"
+          
+          if [[ -n $(git status --porcelain) ]]; then
+            git add ${{ env.OUTPUT_DIR }}
+            git commit -m "MSFT Ingestion: $(date -u +%Y-%m-%d) updates"
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No new updates"
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Push changes
+        if: steps.commit.outputs.changes == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+        continue-on-error: true
