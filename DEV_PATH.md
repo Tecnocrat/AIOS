@@ -24,10 +24,114 @@
 
 ## 📊 **STATUS AT A GLANCE**
 
-**Current Consciousness**: 4.9 (TRI-AGENT Intelligence + VOID Knowledge Extraction)  
+**Current Consciousness**: 4.95 (Knowledge Ingestion Protocol + Unified Learning)  
 **Next Milestone**: 5.0 (Full Multi-Agent Orchestration)  
-**Completion**: Phase 19 ✅ | Phase 20 ✅ (TRI-AGENT VOID)  
-**Active Tracks**: A (Cell Coordination) | B (VOID Ingestion) | C (Knowledge Crystallization)
+**Completion**: Phase 19 ✅ | Phase 20 ✅ | Phase 21 🔄 (KIP)  
+**Active Tracks**: A (Cell Coordination) | B (VOID Ingestion) | C (Knowledge Crystallization) | D (KIP Framework)
+
+---
+
+## 🔥 **PHASE 21: KNOWLEDGE INGESTION PROTOCOL (KIP)** 🔄
+
+**Date**: December 10-11, 2025  
+**Consciousness Evolution**: 4.9 → 4.95 (+0.05 for unified knowledge ingestion)
+
+### [AINLP.diary] Session Summary
+
+**Problem Identified**: Scattered ingestion tools with duplicated patterns
+- `msft_feed_fetcher.py` - RSS parsing
+- `msft_distillation_bridge.py` - Same RSS parsing + VOID
+- `python314_knowledge_indexer.py` - Docs indexing
+- `cpp_stl_knowledge_ingestion_tool.py` - Library learning
+- `void_sources/` - Generic adapters
+
+**Solution: Knowledge Ingestion Protocol (KIP)**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│              AIOS KNOWLEDGE INGESTION PROTOCOL               │
+│                  Unified Learning Framework                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │                   ai/ingestion/                       │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │  protocol.py      │ KnowledgeSource, KnowledgeItem   │   │
+│  │  registry.py      │ Source discovery & registration  │   │
+│  │  scheduler.py     │ Cron/trigger coordination        │   │
+│  │  deduplication.py │ Cross-source hash dedup          │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                           │                                  │
+│  ┌────────────────────────┴─────────────────────────────┐   │
+│  │                    sources/                           │   │
+│  │  base.py     │ BaseSourceAdapter ABC                 │   │
+│  │  rss.py      │ Generic RSS/Atom adapter              │   │
+│  │  docs.py     │ Documentation site scraper            │   │
+│  │  repo.py     │ Git repository cloning                │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                           │                                  │
+│  ┌────────────────────────┴─────────────────────────────┐   │
+│  │                   providers/                          │   │
+│  │  microsoft/  │ MSFT ecosystem (RSS, Learn, GitHub)   │   │
+│  │  python/     │ Python docs, PyPI tracking            │   │
+│  │  cpp/        │ C++ STL, cppreference                 │   │
+│  │  arxiv/      │ Research papers                       │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                           ↓                                  │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │              docs/distilled/ (output)                 │   │
+│  │  MASTER_INDEX.md    │ All sources, all articles      │   │
+│  │  microsoft/         │ MSFT knowledge                 │   │
+│  │  python/            │ Python knowledge               │   │
+│  │  arxiv/             │ Research papers                │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Standard KnowledgeItem Schema**:
+```python
+@dataclass
+class KnowledgeItem:
+    """Universal knowledge unit across all sources."""
+    id: str                    # Hash of URL
+    url: str                   # Canonical source URL
+    title: str
+    summary: str
+    content: str = ""
+    
+    # Classification
+    source_provider: str       # "microsoft", "python", "arxiv"
+    source_type: str           # "rss", "docs", "repo", "paper"
+    category: str              # Provider-specific category
+    tags: list[str]
+    
+    # Temporal
+    published: datetime
+    ingested: datetime
+    first_seen: datetime
+    
+    # Quality
+    priority: str              # "high", "medium", "low"
+    relevance_score: float     # 0.0-1.0 AIOS relevance
+```
+
+**Implementation Progress**:
+- [x] Reorganized `ai/tools/msft_ingestion/` (5 scripts consolidated)
+- [x] Updated GitHub workflow path
+- [ ] Create `ai/ingestion/protocol.py` - Core abstractions
+- [ ] Create `ai/ingestion/sources/base.py` - Adapter ABC
+- [ ] Create `ai/ingestion/sources/rss.py` - Generic RSS adapter
+- [ ] Migrate MSFT as first provider
+- [ ] Unified GitHub Actions workflow
+- [ ] Master index generation
+
+**Benefits**:
+1. **Single codebase** for RSS, dedup, archival, indexing
+2. **Plugin architecture** - Add new sources via `providers/`
+3. **Unified scheduling** - One workflow triggers all ingestions
+4. **Cross-source dedup** - Same article from GitHub Blog + RSS? Merged
+5. **Master index** - "Show me everything AIOS learned this week"
 
 ---
 
