@@ -1,13 +1,13 @@
 # AIOS Microsoft Frontier Ingestion Workflow
 # AINLP.dendritic[MSFT,AIOS]{automation,ingestion,scheduled}
-# Schedule: Every 6 hours for resilience testing (will reduce after validation)
+# Schedule: Daily at 06:00 UTC (optimized after validation period)
 
 name: msft-frontier-ingestion
 
 on:
   schedule:
-    # Every 6 hours for testing resilience
-    - cron: '0 */6 * * *'
+    # Daily at 06:00 UTC - Microsoft typically publishes during US business hours
+    - cron: '0 6 * * *'
   
   workflow_dispatch:
     inputs:
