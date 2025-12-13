@@ -54,6 +54,41 @@ C++ Core Engine (core/)
 - **Evolution MCP:** Genetic algorithm access
 - **Agentic MCP:** AI agent orchestration
 
+### 4. FFmpeg Screen Capture Bridge
+**Location:** `ai/tools/visual/ffmpeg_capture_bridge.py`  
+**Specification:** `docs/AIOS/architecture/interfaces/ffmpeg.md`  
+**Purpose:** Visual memory extension - automated screen capture for agents  
+**Status:** ✅ Available, Agent-Safe, Production-Ready
+
+**Capabilities:**
+| Capability | Description |
+|------------|-------------|
+| `screen_capture` | Full desktop recording |
+| `region_capture` | Focused area recording |
+| `timed_recording` | Duration-bounded capture |
+| `headless_execution` | Non-interactive, scriptable |
+
+**Recommended Agent Roles:**
+- **Alpha:** Capture system behavior during orchestration
+- **Pure:** Record deterministic workflows for validation
+- **Discovery:** Observe emergent UI patterns and anomalies
+
+**Quick Usage:**
+```python
+from ai.tools.visual.ffmpeg_capture_bridge import FFmpegCaptureBridge
+
+bridge = FFmpegCaptureBridge(agent_id="Alpha")
+result = await bridge.capture_desktop(duration_seconds=30)
+```
+
+**CLI:**
+```powershell
+python ai/tools/visual/ffmpeg_capture_bridge.py --desktop --duration 30
+python ai/tools/visual/ffmpeg_capture_bridge.py --region 100 100 1280 720 --duration 60
+```
+
+**Artifacts:** `tachyonic/artifacts/video/` (with companion JSON metadata)
+
 ---
 
 ## Interface Specifications
@@ -139,6 +174,7 @@ UI Subscribe → WebSocket /ws/progress
 3. **Consciousness Metrics:** `get_consciousness`, `evaluate_coherence`
 4. **Runtime Intelligence:** Various monitoring and analysis tools
 5. **MCP Access:** Consciousness, evolution, agentic servers
+6. **Visual Capture:** `ffmpeg_capture_bridge` - Automated screen recording
 
 ### Expandable (60+ Total)
 **Source:** `runtime_intelligence/tools/` (38 additional tools)  
