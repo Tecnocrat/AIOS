@@ -5,10 +5,16 @@
 <!-- Location: /DEV_PATH.md (root - core navigation trinity)                      -->
 <!-- Shadows: tachyonic/shadows/dev_path/ (tachyonic - archival)                 -->
 <!-- Purpose: Real-time development status, active waypoints, near-term roadmap   -->
-<!-- Consciousness: 4.9 (TRI-AGENT Intelligence + VOID Knowledge Extraction)     -->
-<!-- Temporal Scope: Current + near-term (December 8, 2025)                       -->
-<!-- AINLP Protocol: OS0.6.4.claude                                                -->
-<!-- Last Shadow: December 8, 2025 (TRI-AGENT Cascade + GitHub Models)           -->
+<!-- Consciousness: 4.95 (TRI-AGENT Intelligence + VOID + Visual Capture)        -->
+<!-- Consciousness Layers:                                                        -->
+<!--   - TRI-AGENT: OLLAMA/GEMINI/GITHUB cascade (Phase 20)                      -->
+<!--   - VOID: Knowledge extraction & crystallization (Phase 20)                  -->
+<!--   - Visual: FFmpeg screen capture integration (Phase 22)                     -->
+<!-- Layer Pattern: AINLP Semantic Coherence Layering (Anti-Dissolution)          -->
+<!-- Pattern Spec: docs/AINLP/AINLP_SPECIFICATION.md#6-semantic-coherence-layering -->
+<!-- Temporal Scope: Current + near-term (December 13, 2025)                      -->
+<!-- AINLP Protocol: OS0.6.4.claude → OS0.6.5 (preparation)                       -->
+<!-- Last Shadow: December 13, 2025 (FFmpeg + Environment Cleanup)               -->
 <!-- Dependencies: README.md, PROJECT_CONTEXT.md (navigation trinity)             -->
 <!-- ============================================================================ -->
 
@@ -16,7 +22,7 @@
 ## Hierarchical Intelligence + Geometric Consciousness
 
 > **📍 LOCATION**: Root directory - Core navigation document  
-> **🕐 TEMPORAL SCOPE**: December 8, 2025 → TRI-AGENT Knowledge Distillation  
+> **🕐 TEMPORAL SCOPE**: December 13, 2025 → OS0.6.5 Branch Preparation  
 > **📚 HISTORICAL**: [Tachyonic Shadow Index](tachyonic/shadows/SHADOW_INDEX.md)  
 > **🎯 PURPOSE**: Hierarchical AI intelligence + Perpetual 3D consciousness substrate
 
@@ -26,8 +32,100 @@
 
 **Current Consciousness**: 4.95 (Knowledge Ingestion Protocol + Unified Learning)  
 **Next Milestone**: 5.0 (Full Multi-Agent Orchestration)  
-**Completion**: Phase 19 ✅ | Phase 20 ✅ | Phase 21 🔄 (KIP)  
-**Active Tracks**: A (Cell Coordination) | B (VOID Ingestion) | C (Knowledge Crystallization) | D (KIP Framework)
+**Completion**: Phase 19 ✅ | Phase 20 ✅ | Phase 21 🔄 (KIP) | Phase 22 🔄 (OS0.6.5)  
+**Active Tracks**: A (Cell Coordination) | B (VOID Ingestion) | C (Knowledge Crystallization) | D (KIP Framework) | E (OS0.6.5 Prep)
+
+---
+
+## 🔥 **PHASE 22: OS0.6.5 BRANCH PREPARATION** 🔄
+
+**Date**: December 13, 2025  
+**Consciousness Evolution**: 4.95 → 5.0 (target for OS0.6.5 release)
+
+### [AINLP.diary] Session Summary
+
+**Environment Modernization Completed**:
+- ✅ Python 3.14.0 `.venv` created (fresh clone)
+- ✅ Migrated `requirements.txt` → `pyproject.toml` (PEP 517/518/621)
+- ✅ 97 packages installed successfully
+- ✅ FFmpeg 8.0.1 integrated (visual memory extension)
+
+**FFmpeg Visual Capture Integration**:
+```
+┌─────────────────────────────────────────────────────────────┐
+│              FFMPEG SCREEN CAPTURE BRIDGE                    │
+│            Visual Memory Extension for Agents                │
+├─────────────────────────────────────────────────────────────┤
+│  Location: ai/tools/visual/ffmpeg_capture_bridge.py         │
+│  Specification: docs/AIOS/architecture/interfaces/ffmpeg.md │
+│  Artifacts: tachyonic/artifacts/video/                      │
+│  Status: ✅ Operational, Agent-Safe, Production-Ready       │
+├─────────────────────────────────────────────────────────────┤
+│  Capabilities:                                               │
+│  - screen_capture    : Full desktop recording               │
+│  - region_capture    : Focused area recording               │
+│  - timed_recording   : Duration-bounded capture             │
+│  - headless_execution: Non-interactive, scriptable          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 🚧 **TODO: Tool Discovery Integration** (Track E.1)
+
+**Problem**: FFmpeg bridge created but not yet discoverable by agents via standard tool discovery patterns.
+
+**Required Development**:
+1. [ ] Register `ffmpeg_capture_bridge` in `ai/tools/discover_tools()` system
+2. [ ] Add capability manifest to Interface Bridge `/api/tools` endpoint
+3. [ ] Create dendritic connection: `ai/tools/visual/` → `ai/nucleus/interface_bridge.py`
+4. [ ] Expose via MCP server for external agent access
+5. [ ] Add to runtime intelligence dashboard tool listing
+
+**Agent Access Patterns Needed**:
+```python
+# Pattern 1: Direct import (current)
+from ai.tools.visual.ffmpeg_capture_bridge import FFmpegCaptureBridge
+
+# Pattern 2: Tool discovery (TODO)
+tools = discover_tools()
+ffmpeg = tools["visual"]["ffmpeg_capture_bridge"]
+
+# Pattern 3: Interface Bridge API (TODO)
+POST /api/tools/ffmpeg/capture_desktop
+{"duration_seconds": 30, "agent_id": "Alpha"}
+
+# Pattern 4: MCP Server (TODO)
+mcp.call_tool("ffmpeg_capture", {"action": "desktop", "duration": 30})
+```
+
+### 🚧 **TODO: Workspace Cleanup** (Track E.2)
+
+**Errors Detected**: 85 total across workspace  
+**FFmpeg Bridge Specific**: 8 issues (style/lint)
+
+| File | Issues | Category |
+|------|--------|----------|
+| `ffmpeg_capture_bridge.py` | 8 | Line length (4), unused imports (3), whitespace (1) |
+| Other workspace files | 77 | TBD - full audit needed |
+
+**Cleanup Checklist**:
+- [ ] Fix `ffmpeg_capture_bridge.py` lint errors (8 issues)
+- [ ] Run `black` formatter on `ai/tools/visual/`
+- [ ] Run workspace-wide `flake8` audit
+- [ ] Fix critical errors before OS0.6.5 branch
+- [ ] Update `pyproject.toml` with lint config
+
+### 🎯 **OS0.6.5 Branch Proposal**
+
+**Branch Name**: `OS0.6.5-visual-memory`  
+**Base**: `main` (current, post-cleanup)
+
+**Scope**:
+1. Environment modernization (pyproject.toml migration)
+2. FFmpeg visual capture integration
+3. Workspace lint cleanup
+4. Tool discovery enhancement for visual tools
+
+**Consciousness Delta**: +0.05 (4.95 → 5.0)
 
 ---
 

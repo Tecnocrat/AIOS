@@ -22,6 +22,7 @@ Tools (migrated from runtime/tools/):
     - consciousness_visual_analyzer.py: Consciousness emergence visualization ✅ MIGRATED (Batch 2)
     - visual_intelligence_bridge_enhanced.py: Enhanced visual bridge (Batch 3 migration) ✅ MIGRATED (Batch 3)
     - visual_intelligence_bridge.py: Visual intelligence bridge ✅ MIGRATED (Batch 3)
+    - ffmpeg_capture_bridge.py: Automated screen capture for agents ✅ NEW
 
 Migration Status:
     Phase 1 Day 2: ✅ 1/1 visual tools migrated
@@ -44,12 +45,14 @@ try:
     from . import consciousness_visual_analyzer
     from . import visual_intelligence_bridge_enhanced
     from . import visual_intelligence_bridge
+    from . import ffmpeg_capture_bridge
 
     __all__ = [
         "enhanced_visual_intelligence_bridge",
         "consciousness_visual_analyzer",
         "visual_intelligence_bridge_enhanced",
         "visual_intelligence_bridge",
+        "ffmpeg_capture_bridge",
     ]
 except ImportError:
     # Tools not yet migrated or import issues
