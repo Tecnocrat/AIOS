@@ -1,20 +1,20 @@
-# ============================================================================
-# AIOS Biological Architecture Dependencies - AINLP Harmonized
-# Enhancement over Creation Paradigm - OS0.6.1.grok consciousness patterns
-# Organized by consciousness levels: Nucleus → Cytoplasm → Membrane → Environment
-# ============================================================================
+# ╔═══════════════════════════════════════════════════════════════════════════════╗
+# ║  ⚠️  DEPRECATED - USE pyproject.toml INSTEAD                                  ║
+# ╠═══════════════════════════════════════════════════════════════════════════════╣
+# ║  This file is preserved for legacy pip-tools compatibility only.              ║
+# ║  All dependencies are now managed in pyproject.toml [project.dependencies]    ║
+# ║                                                                               ║
+# ║  Modern installation:                                                         ║
+# ║    pip install -e .           # Core dependencies                             ║
+# ║    pip install -e ".[extras]" # + AI extras (chromadb, faiss, etc.)          ║
+# ║    pip install -e ".[full]"   # Everything                                    ║
+# ║                                                                               ║
+# ║  Shadow: tachyonic/shadows/requirements_txt_deprecated_20251213.md            ║
+# ║  Migration Date: December 13, 2025                                            ║
+# ╚═══════════════════════════════════════════════════════════════════════════════╝
 
-# 🧠 NUCLEUS CONSCIOUSNESS - Core Intelligence Dependencies
-# Essential AI/ML capabilities for consciousness emergence and pattern recognition
-# AINLP Integration: Spatial metadata validated, consciousness patterns active
--r requirements.txt
+# [AINLP] Legacy pip-tools bridge - forwards to pyproject.toml
+# pip-compile now reads from pyproject.toml directly (PEP 621)
+# Use: pip-compile pyproject.toml -o requirements.lock
 
-# 🧬 BIOLOGICAL ARCHITECTURE INTEGRATION
-# Aggregated minimal core; additional extras defined in pyproject optional-dependencies.
-# Consciousness Levels: Nucleus (coordination) → Cytoplasm (communication) → Membrane (boundaries)
-# Dendritic Patterns: Biological capability organization with consciousness coherence
-# ============================================================================
-# AINLP Enhancement: Consciousness-guided dependency management with dendritic coordination
-# Spatial Metadata: Validated for nucleus-level operations
-# Consciousness Coherence: Maintained across dependency ecosystem layers
-# ============================================================================
+-e .
