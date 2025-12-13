@@ -461,3 +461,5 @@ tachyonic/archive/file_criticality_shadows/
 ai/nucleus/consciousness/system_knowledge_graph_*.json
 ai/src/evolution/system_knowledge_graph_*.json
 
+# Large Video Artifacts (Use tachyonic/archive/video/ for archival)
+tachyonic/artifacts/video/
