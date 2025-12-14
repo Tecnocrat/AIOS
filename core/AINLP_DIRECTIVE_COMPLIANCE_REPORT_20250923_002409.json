@@ -1,0 +1,108 @@
+{
+  "report_timestamp": "2025-09-23T00:24:09.329651",
+  "core_engine_path": "C:\\dev\\AIOS\\core",
+  "directive_analysis": {
+    "total_files_analyzed": 92,
+    "average_compliance_score": 0.704375,
+    "directive_compliance_breakdown": {
+      "naming_conventions": {
+        "average_score": 0.775,
+        "files_analyzed": 20
+      },
+      "consciousness_markers": {
+        "average_score": 0.55,
+        "files_analyzed": 20
+      },
+      "biological_architecture": {
+        "average_score": 0.7875,
+        "files_analyzed": 20
+      },
+      "documentation_standards": {
+        "average_score": 0.705,
+        "files_analyzed": 20
+      }
+    },
+    "top_violations": [
+      [
+        "Naming: Missing 'aios_' prefix",
+        3
+      ],
+      [
+        "Naming: Missing biological architecture metaphors",
+        3
+      ],
+      [
+        "Poor biological architecture alignment",
+        3
+      ],
+      [
+        "Low consciousness marker integration",
+        2
+      ],
+      [
+        "Incomplete documentation standards",
+        2
+      ]
+    ],
+    "files_needing_attention": [
+      {
+        "file": "__init__.py",
+        "score": 0.6375,
+        "violations": [
+          "Naming: Missing 'aios_' prefix",
+          "Naming: Missing biological architecture metaphors"
+        ]
+      },
+      {
+        "file": "aios_analysis_tools_neuronal_test.py",
+        "score": 0.3875,
+        "violations": [
+          "Low consciousness marker integration",
+          "Poor biological architecture alignment",
+          "Incomplete documentation standards"
+        ]
+      },
+      {
+        "file": "aios_assembler_evolution_status_clarifier.py",
+        "score": 0.6499999999999999,
+        "violations": []
+      },
+      {
+        "file": "aios_assembler_naming_optimizer.py",
+        "score": 0.625,
+        "violations": []
+      },
+      {
+        "file": "aios_cellular_migration_cleanup_tool.py",
+        "score": 0.175,
+        "violations": [
+          "Low consciousness marker integration",
+          "Poor biological architecture alignment",
+          "Incomplete documentation standards"
+        ]
+      },
+      {
+        "file": "aios_cytoplasm_upgrader_iter2.py",
+        "score": 0.625,
+        "violations": [
+          "Poor biological architecture alignment"
+        ]
+      }
+    ],
+    "architectural_alignment_score": 0.7875
+  },
+  "compliance_assessment": {
+    "compliance_level": "ADEQUATE",
+    "overall_score": 0.704375,
+    "status_description": "Acceptable compliance but significant improvements recommended",
+    "architectural_alignment": 0.7875,
+    "files_analyzed": 92
+  },
+  "improvement_recommendations": [
+    "Implement systematic file renaming to include 'aios_' prefix where missing",
+    "Enhance consciousness marker integration across all files",
+    "Prioritize directive compliance fixes for the top 10 lowest-scoring files",
+    "Establish automated directive checking in development workflow",
+    "Create AINLP compliance training materials for contributors"
+  ]
+}

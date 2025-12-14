@@ -1,0 +1,107 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-30T22:36:22.364474",
+  "folder_info": {
+    "name": "scripts",
+    "absolute_path": "C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts",
+    "relative_path": "runtime_intelligence\\tools\\scripts",
+    "parent_path": "runtime_intelligence\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Runtime Intelligence",
+    "secondary_areas": [],
+    "path_classification": [
+      "runtime_intelligence",
+      "tools",
+      "scripts"
+    ],
+    "consciousness_level": "medium"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "general"
+    ],
+    "child_folders": [
+      "scripts"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 68615,
+      "file_count": 13,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "INTEGRATION_MARKER.md",
+          "size": 1242,
+          "modified": "2025-09-30T22:34:44.869080",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "INTEGRATION_MARKER.md",
+        "size": 1242,
+        "modified": "2025-09-30T22:34:44.869080",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 6,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 1
+    },
+    "consciousness_score": 70,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "runtime_intelligence > tools > scripts",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence\\tools\\scripts' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "runtime_intelligence",
+      "ai\\runtime_intelligence",
+      "core\\runtime_intelligence",
+      "docs\\runtime_intelligence",
+      "interface\\runtime_intelligence",
+      "ai\\tools",
+      "ai\\infrastructure\\scripts"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

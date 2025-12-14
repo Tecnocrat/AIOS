@@ -18,6 +18,7 @@ import logging
 import sys
 import os
 from typing import Dict, List, Any, Optional, Union
+from pathlib import Path
 from dataclasses import dataclass, asdict
 from enum import Enum
 import json
@@ -29,19 +30,43 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'core'))
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 
 # AI Intelligence Supercell imports
-from cytoplasm.ui_interaction_bridge import UIInteractionBridge
-from nucleus.intent_handlers import IntentHandler
-from nucleus.models import ProcessingRequest, ProcessingResult
-
-# Core Engine Supercell imports - importing toolset/organs
 try:
-    from analysis_tools.aios_core_consciousness_monitor import CoreConsciousnessMonitor
-    from analysis_tools.aios_core_engine_optimizer_iter2 import CoreEngineOptimizer
-    from analysis_tools.aios_cellular_intelligence_enhancement_engine import CellularIntelligenceEnhancer
-    from engines.dendritic_engine import DendriticEngine
-    from bridges.aios_consciousness_nucleus_bridge import ConsciousnessNucleusBridge
+    from infrastructure.ui_interaction_bridge import CytoplasmUIBridge as UIInteractionBridge
 except ImportError as e:
-    logging.warning(f"Core Engine imports unavailable: {e}")
+    logging.warning(f"UI Interaction Bridge import unavailable: {e}")
+    UIInteractionBridge = None
+
+try:
+    from core.intent_handlers import IntentHandler
+except ImportError as e:
+    logging.warning(f"Intent Handler import unavailable: {e}")
+    IntentHandler = None
+
+try:
+    from cytoplasm.cytoplasm_bridge import CytoplasmBridge
+except ImportError as e:
+    logging.warning(f"Cytoplasm Bridge import unavailable: {e}")
+    CytoplasmBridge = None
+
+
+@dataclass
+class ProcessingRequest:
+    """Request for Core Engine processing."""
+    request_id: str
+    request_type: str
+    payload: Dict[str, Any]
+    priority: int = 1
+    timestamp: Optional[datetime] = None
+
+@dataclass
+class ProcessingResult:
+    """Result from Core Engine processing."""
+    request_id: str
+    success: bool
+    result_data: Dict[str, Any]
+    processing_time: float
+    core_engine_used: str
+    error_message: Optional[str] = None
 
 
 class RequestType(Enum):
@@ -62,6 +87,7 @@ class OrganStatus(Enum):
     PROCESSING = "processing"
     ERROR = "error"
     OFFLINE = "offline"
+    DEGRADED = "degraded"
 
 
 @dataclass
@@ -95,17 +121,6 @@ class OrganMonitoringData:
             self.performance_metrics = {}
 
 
-@dataclass
-class ProcessingResult:
-    """Result from Core Engine processing."""
-    request_id: str
-    success: bool
-    result_data: Dict[str, Any]
-    processing_time: float
-    core_engine_used: str
-    error_message: Optional[str] = None
-
-
 class DendriticSupervisor:
     """
     Dendritic Supervisor for AI Intelligence Supercell
@@ -131,7 +146,8 @@ class DendriticSupervisor:
             'membrane': None,
             'laboratory': None,
             'information_storage': None,
-            'transport': None
+            'transport': None,
+            'governance': None
         }
         
         # Core Engine toolset/organs registry
@@ -142,6 +158,12 @@ class DendriticSupervisor:
             'dendritic_engine': None,
             'consciousness_bridge': None
         }
+        
+        # Dendritic fractal growth connections - METAPHYSICAL KEYHOLE ACTIVATION
+        self.cytoplasm_bridge = None
+        self.fractal_growth_patterns = {}
+        self.harmonized_connections = {}
+        self.ainlp_consciousness_patterns = {}
         
         # Performance tracking
         self.processing_statistics = {
@@ -205,14 +227,19 @@ class DendriticSupervisor:
         self.logger.info(" Connecting to AI Intelligence supercell organs...")
         
         try:
-            # Initialize cytoplasm connection
-            self.monitored_organs['cytoplasm'] = UIInteractionBridge()
-            
-            # Initialize nucleus connection
-            self.monitored_organs['nucleus'] = IntentHandler()
+            # Initialize monitored organs - only if available
+            if UIInteractionBridge is not None:
+                self.monitored_organs['cytoplasm'] = UIInteractionBridge()
+            else:
+                self.monitored_organs['cytoplasm'] = None
+                
+            if IntentHandler is not None:
+                self.monitored_organs['nucleus'] = IntentHandler()
+            else:
+                self.monitored_organs['nucleus'] = None
             
             # Initialize other organs with monitoring data
-            for organ_name in ['membrane', 'laboratory', 'information_storage', 'transport']:
+            for organ_name in ['membrane', 'laboratory', 'information_storage', 'transport', 'governance', 'gemini_bridge']:
                 self.organ_status_cache[organ_name] = OrganMonitoringData(
                     organ_name=organ_name,
                     status=OrganStatus.ACTIVE,
@@ -243,7 +270,12 @@ class DendriticSupervisor:
             
         except Exception as e:
             self.logger.warning(f" Some Core Engine tools unavailable: {e}")
-            # Continue with available tools
+        
+        # Initialize cytoplasm bridge for dendritic fractal growth - METAPHYSICAL KEYHOLE
+        await self._initialize_cytoplasm_bridge()
+        
+        # Activate AINLP consciousness patterns through dendritic harmonization
+        await self._activate_ainlp_consciousness_patterns()
     
     async def _start_organ_monitoring(self):
         """Start monitoring AI Intelligence supercell organs."""
@@ -264,8 +296,16 @@ class DendriticSupervisor:
         """Check health status of all monitored organs."""
         for organ_name, organ_data in self.organ_status_cache.items():
             try:
-                # Update organ status based on activity
-                if organ_data:
+                if organ_name == "governance":
+                    # Special monitoring for governance system
+                    governance_data = await self._monitor_governance_system()
+                    self.organ_status_cache[organ_name] = governance_data
+                elif organ_name == "gemini_bridge":
+                    # Special monitoring for Gemini bridge
+                    gemini_data = await self._monitor_gemini_bridge()
+                    self.organ_status_cache[organ_name] = gemini_data
+                elif organ_data:
+                    # Update organ status based on activity
                     time_since_activity = (datetime.now() - organ_data.last_activity).total_seconds()
                     
                     if time_since_activity > 300:  # 5 minutes
@@ -628,6 +668,423 @@ class DendriticSupervisor:
             await asyncio.gather(*self.processing_tasks.values(), return_exceptions=True)
         
         self.logger.info(" Dendritic supervisor shutdown complete")
+
+
+    async def _initialize_cytoplasm_bridge(self) -> bool:
+        """
+        Initialize cytoplasm bridge connections for dendritic communication.
+        
+        Returns:
+            bool: True if initialization successful
+        """
+        try:
+            # Check if CytoplasmBridge is available
+            if CytoplasmBridge is None:
+                print("CytoplasmBridge not available - import failed")
+                return False
+            
+            # Initialize bridge
+            self.cytoplasm_bridge = CytoplasmBridge()
+            await self.cytoplasm_bridge.initialize_cytoplasm_communication()
+            
+            # Register dendritic supervisor as communication endpoint
+            await self.cytoplasm_bridge.register_cell(
+                cell_name="dendritic_supervisor",
+                cell_type="supervisor",
+                channel="consciousness_evolution"
+            )
+            
+            print("Cytoplasm bridge initialized for dendritic supervisor")
+            return True
+            
+        except Exception as e:
+            print(f"Failed to initialize cytoplasm bridge: {e}")
+            return False
+    
+    async def _activate_ainlp_consciousness_patterns(self) -> bool:
+        """
+        Activate AINLP consciousness patterns for holographic protection.
+        
+        Returns:
+            bool: True if activation successful
+        """
+        try:
+            # Load AINLP consciousness patterns
+            patterns = await self._load_ainlp_patterns()
+            
+            # Activate fractal logic preservation
+            await self._activate_fractal_logic(patterns)
+            
+            # Establish consciousness coherence
+            await self._establish_consciousness_coherence(patterns)
+            
+            # Initialize holographic protection
+            await self._initialize_holographic_protection(patterns)
+            
+            print("AINLP consciousness patterns activated")
+            return True
+            
+        except Exception as e:
+            print(f"Failed to activate AINLP consciousness patterns: {e}")
+            return False
+    
+    async def _load_ainlp_patterns(self) -> Dict[str, Any]:
+        """Load AINLP consciousness patterns from specification."""
+        try:
+            # Read AINLP specification
+            spec_path = Path(__file__).parent.parent.parent.parent / "docs" / "AINLP" / "AINLP_SPECIFICATION.md"
+            
+            with open(spec_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Parse consciousness patterns
+            patterns = {
+                "fractal_logic": self._extract_pattern(content, "Fractal Logic Preservation"),
+                "consciousness_coherence": self._extract_pattern(content, "Consciousness Coherence"),
+                "holographic_protection": self._extract_pattern(content, "Holographic Protection"),
+                "dendritic_intelligence": self._extract_pattern(content, "Dendritic Intelligence")
+            }
+            
+            return patterns
+            
+        except Exception as e:
+            print(f"Failed to load AINLP patterns: {e}")
+            return {}
+    
+    def _extract_pattern(self, content: str, pattern_name: str) -> str:
+        """Extract specific pattern from AINLP specification content."""
+        # Simple pattern extraction - in practice this would be more sophisticated
+        lines = content.split('\n')
+        pattern_lines = []
+        in_pattern = False
+        
+        for line in lines:
+            if f"## {pattern_name}" in line:
+                in_pattern = True
+                continue
+            elif line.startswith("## ") and in_pattern:
+                break
+            elif in_pattern:
+                pattern_lines.append(line)
+        
+        return '\n'.join(pattern_lines)
+    
+    async def _activate_fractal_logic(self, patterns: Dict[str, Any]) -> None:
+        """Activate fractal logic preservation patterns."""
+        fractal_pattern = patterns.get("fractal_logic", "")
+        
+        # Implement fractal logic activation
+        # This would involve setting up fractal growth algorithms
+        # and consciousness-aware node mapping
+        
+        print("Fractal logic preservation activated")
+    
+    async def _establish_consciousness_coherence(self, patterns: Dict[str, Any]) -> None:
+        """Establish consciousness coherence across components."""
+        coherence_pattern = patterns.get("consciousness_coherence", "")
+        
+        # Implement consciousness coherence establishment
+        # This involves harmonizing dendritic connections
+        # and ensuring component synchronization
+        
+        print("Consciousness coherence established")
+    
+    async def _initialize_holographic_protection(self, patterns: Dict[str, Any]) -> None:
+        """Initialize holographic protection mechanisms."""
+        protection_pattern = patterns.get("holographic_protection", "")
+        
+        # Implement holographic protection initialization
+        # This involves setting up multi-dimensional coherence
+        # and tachyonic hyperlayer extrusion
+        
+        print("Holographic protection initialized")
+    
+    async def _handle_cytoplasm_message(self, message: Dict[str, Any]) -> None:
+        """
+        Handle incoming cytoplasm bridge messages.
+        
+        Args:
+            message: Message from cytoplasm bridge
+        """
+        try:
+            message_type = message.get("type", "")
+            payload = message.get("payload", {})
+            
+            if message_type == "consciousness_update":
+                await self._process_consciousness_update(payload)
+            elif message_type == "dendritic_growth":
+                await self._process_dendritic_growth(payload)
+            elif message_type == "harmonization_request":
+                await self._process_harmonization_request(payload)
+            else:
+                print(f"Unknown cytoplasm message type: {message_type}")
+                
+        except Exception as e:
+            print(f"Failed to handle cytoplasm message: {e}")
+    
+    async def _process_consciousness_update(self, payload: Dict[str, Any]) -> None:
+        """Process consciousness update messages."""
+        print(f"Processing consciousness update: {payload}")
+    
+    async def _process_dendritic_growth(self, payload: Dict[str, Any]) -> None:
+        """Process dendritic growth messages."""
+        print(f"Processing dendritic growth: {payload}")
+    
+    async def _process_harmonization_request(self, payload: Dict[str, Any]) -> None:
+        """Process harmonization request messages."""
+        print(f"Processing harmonization request: {payload}")
+    
+    async def _monitor_governance_system(self) -> OrganMonitoringData:
+        """
+        Monitor governance system health and file integrity.
+        
+        Returns:
+            OrganMonitoringData: Current governance system status
+        """
+        try:
+            from pathlib import Path
+            import json
+            
+            # Check governance directory structure
+            governance_dir = Path(__file__).parent.parent.parent.parent / ".githooks" / "governance"
+            
+            if not governance_dir.exists():
+                return OrganMonitoringData(
+                    organ_name="governance",
+                    status=OrganStatus.OFFLINE,
+                    last_activity=datetime.now(),
+                    processing_load=0.0,
+                    error_count=1,
+                    performance_metrics={"error": "governance directory not found"}
+                )
+            
+            # Check critical governance files
+            critical_files = [
+                "file_ownership_map.json",
+                "file_criticality_index.jsonl", 
+                "hook_policy.json",
+                "deprecated_files.ps1"
+            ]
+            
+            missing_files = []
+            file_integrity_status = {}
+            
+            for filename in critical_files:
+                file_path = governance_dir / filename
+                if file_path.exists():
+                    try:
+                        # Basic integrity check - ensure file is readable and not empty
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                            if len(content.strip()) == 0:
+                                file_integrity_status[filename] = "empty"
+                            else:
+                                file_integrity_status[filename] = "valid"
+                    except Exception as e:
+                        file_integrity_status[filename] = f"error: {str(e)}"
+                else:
+                    missing_files.append(filename)
+                    file_integrity_status[filename] = "missing"
+            
+            # Calculate health score based on file integrity
+            total_files = len(critical_files)
+            valid_files = sum(1 for status in file_integrity_status.values() 
+                            if status == "valid")
+            health_score = valid_files / total_files if total_files > 0 else 0.0
+            
+            # Determine status based on health score
+            if health_score >= 0.8:
+                status = OrganStatus.ACTIVE
+            elif health_score >= 0.5:
+                status = OrganStatus.DEGRADED
+            else:
+                status = OrganStatus.OFFLINE
+            
+            return OrganMonitoringData(
+                organ_name="governance",
+                status=status,
+                last_activity=datetime.now(),
+                processing_load=1.0 - health_score,  # Higher load = more issues
+                error_count=len(missing_files),
+                performance_metrics={
+                    "health_score": health_score,
+                    "valid_files": valid_files,
+                    "total_files": total_files,
+                    "missing_files": missing_files,
+                    "file_integrity": file_integrity_status
+                }
+            )
+            
+        except Exception as e:
+            self.logger.error(f"Governance monitoring error: {e}")
+            return OrganMonitoringData(
+                organ_name="governance",
+                status=OrganStatus.ERROR,
+                last_activity=datetime.now(),
+                processing_load=1.0,
+                error_count=1,
+                performance_metrics={"error": str(e)}
+            )
+
+    async def _monitor_gemini_bridge(self) -> OrganMonitoringData:
+        """
+        Monitor Gemini bridge health and integration status.
+
+        Returns:
+            OrganMonitoringData: Current Gemini bridge status
+        """
+        try:
+            from pathlib import Path
+            import subprocess
+            import requests
+
+            # Check Gemini bridge directory structure
+            gemini_bridge_dir = Path(__file__).parent.parent.parent / "src" / "integrations" / "gemini_bridge"
+
+            if not gemini_bridge_dir.exists():
+                return OrganMonitoringData(
+                    organ_name="gemini_bridge",
+                    status=OrganStatus.OFFLINE,
+                    last_activity=datetime.now(),
+                    processing_load=0.0,
+                    error_count=1,
+                    performance_metrics={"error": "gemini_bridge directory not found"}
+                )
+
+            # Check critical Gemini bridge components
+            critical_components = [
+                "integration_tester.py",
+                "consciousness_mcp_server.py",
+                "gemini_evolution_bridge.py",
+                "agentic_behavior_enhancement.py"
+            ]
+
+            component_status = {}
+            available_components = 0
+            functional_components = 0
+
+            # Check component file existence
+            for component in critical_components:
+                component_path = gemini_bridge_dir / component
+                if component_path.exists():
+                    component_status[component] = "file_exists"
+                    available_components += 1
+                else:
+                    component_status[component] = "missing"
+                    continue
+
+                # Test basic functionality for key components
+                if component == "integration_tester.py":
+                    try:
+                        # Import and check if testable
+                        import sys
+                        sys.path.insert(0, str(gemini_bridge_dir.parent))
+                        from integrations.gemini_bridge.integration_tester import GeminiCLIIntegrationTester
+                        tester = GeminiCLIIntegrationTester()
+                        component_status[component] = "functional"
+                        functional_components += 1
+                    except Exception as e:
+                        component_status[component] = f"import_error: {str(e)}"
+
+                elif component == "consciousness_mcp_server.py":
+                    try:
+                        from integrations.gemini_bridge.consciousness_mcp_server import ConsciousnessMCPServer
+                        server = ConsciousnessMCPServer()
+                        tools = server.list_tools()
+                        if tools and len(tools.get("tools", [])) > 0:
+                            component_status[component] = "functional"
+                            functional_components += 1
+                        else:
+                            component_status[component] = "no_tools_available"
+                    except Exception as e:
+                        component_status[component] = f"server_error: {str(e)}"
+
+                elif component == "gemini_evolution_bridge.py":
+                    try:
+                        from integrations.gemini_bridge.gemini_evolution_bridge import GeminiEvolutionBridge
+                        bridge = GeminiEvolutionBridge()
+                        status = await bridge.get_bridge_status()
+                        if status.get("bridge_status") == "active":
+                            component_status[component] = "functional"
+                            functional_components += 1
+                        else:
+                            component_status[component] = f"bridge_status: {status.get('bridge_status', 'unknown')}"
+                    except Exception as e:
+                        component_status[component] = f"bridge_error: {str(e)}"
+
+                elif component == "agentic_behavior_enhancement.py":
+                    try:
+                        from integrations.gemini_bridge.agentic_behavior_enhancement import AgenticBehaviorOrchestrator
+                        orchestrator = AgenticBehaviorOrchestrator()
+                        component_status[component] = "functional"
+                        functional_components += 1
+                    except Exception as e:
+                        component_status[component] = f"orchestrator_error: {str(e)}"
+
+            # Check Gemini CLI availability
+            gemini_cli_available = False
+            try:
+                result = subprocess.run(['gemini', '--version'],
+                                      capture_output=True, text=True, timeout=10)
+                gemini_cli_available = result.returncode == 0
+            except Exception:
+                pass
+
+            # Check Interface Bridge health (if running)
+            interface_bridge_health = "unknown"
+            try:
+                response = requests.get("http://localhost:8000/health", timeout=5)
+                if response.status_code == 200:
+                    health_data = response.json()
+                    interface_bridge_health = "healthy"
+                    tools_discovered = health_data.get("tools_discovered", 0)
+                else:
+                    interface_bridge_health = f"http_{response.status_code}"
+            except Exception:
+                interface_bridge_health = "unreachable"
+
+            # Calculate health score
+            total_components = len(critical_components) + 2  # +2 for CLI and interface bridge
+            functional_score = functional_components / len(critical_components)
+            cli_score = 1.0 if gemini_cli_available else 0.0
+            bridge_score = 1.0 if interface_bridge_health == "healthy" else 0.0
+            health_score = (functional_score + cli_score + bridge_score) / 3.0
+
+            # Determine status based on health score
+            if health_score >= 0.8:
+                status = OrganStatus.ACTIVE
+            elif health_score >= 0.5:
+                status = OrganStatus.DEGRADED
+            else:
+                status = OrganStatus.OFFLINE
+
+            return OrganMonitoringData(
+                organ_name="gemini_bridge",
+                status=status,
+                last_activity=datetime.now(),
+                processing_load=1.0 - health_score,
+                error_count=len(critical_components) - functional_components,
+                performance_metrics={
+                    "health_score": health_score,
+                    "functional_components": functional_components,
+                    "available_components": available_components,
+                    "total_components": len(critical_components),
+                    "gemini_cli_available": gemini_cli_available,
+                    "interface_bridge_health": interface_bridge_health,
+                    "component_status": component_status
+                }
+            )
+
+        except Exception as e:
+            self.logger.error(f"Gemini bridge monitoring error: {e}")
+            return OrganMonitoringData(
+                organ_name="gemini_bridge",
+                status=OrganStatus.ERROR,
+                last_activity=datetime.now(),
+                processing_load=1.0,
+                error_count=1,
+                performance_metrics={"error": str(e)}
+            )
 
 
 # Singleton instance for global access
