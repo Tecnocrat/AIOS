@@ -1,0 +1,191 @@
+﻿<Window x:Class="AIOS.UI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:AIOS.UI" mc:Ignorable="d" Title="AIOS - Artificial Intelligence Operating System" Height="700" Width="1200" MinHeight="500" MinWidth="800" WindowStartupLocation="CenterScreen" Background="#FF1E1E1E">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#FF2D2D30" Padding="20,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="AIOS" FontSize="24" FontWeight="Bold" Foreground="#FF00D4FF" Margin="0,0,10,0"/>
+                    <TextBlock Text="Artificial Intelligence Operating System" FontSize="16" Foreground="#FFCCCCCC" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Border Background="#FF007ACC" CornerRadius="12" Padding="8,4" Margin="5,0">
+                        <TextBlock Name="StatusIndicator" Text="HEALTHY" Foreground="White" FontWeight="Bold" FontSize="12"/>
+                    </Border>
+                    <Button Name="SettingsButton" Content="⚙" Background="Transparent" Foreground="#FFCCCCCC" BorderThickness="0" FontSize="18" Width="35" Height="35" Margin="10,0,0,0" Click="SettingsButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Panel - AI Modules -->
+            <Border Grid.Column="0" Background="#FF2D2D30" CornerRadius="8" Margin="0,0,10,0">
+                <StackPanel Margin="15">
+                    <TextBlock Text="AI Modules" FontSize="18" FontWeight="Bold" Foreground="#FF00D4FF" Margin="0,0,0,15"/>
+
+                    <Button Name="NLPButton" Content="💬 Natural Language" Style="{StaticResource ModuleButtonStyle}" Click="NLPButton_Click" Margin="0,0,0,10"/>
+
+                    <Button Name="PredictionButton" Content="🔮 Prediction Engine" Style="{StaticResource ModuleButtonStyle}" Click="PredictionButton_Click" Margin="0,0,0,10"/>
+
+                    <Button Name="AutomationButton" Content="🔧 Automation" Style="{StaticResource ModuleButtonStyle}" Click="AutomationButton_Click" Margin="0,0,0,10"/>
+
+                    <Button Name="LearningButton" Content="🧠 Learning System" Style="{StaticResource ModuleButtonStyle}" Click="LearningButton_Click" Margin="0,0,0,10"/>
+
+                    <Button Name="IntegrationButton" Content="🔗 Integration Hub" Style="{StaticResource ModuleButtonStyle}" Click="IntegrationButton_Click" Margin="0,0,0,10"/>
+
+                    <!-- AINLP Code Formatter -->
+                    <Button Name="FormatterButton" Content="📐 Code Formatter" Style="{StaticResource ModuleButtonStyle}" Click="FormatterButton_Click" Margin="0,0,0,10"/>
+
+                    <Separator Background="#FF404040" Margin="0,20"/>
+
+                    <Button Name="MaintenanceButton" Content="🔧 Maintenance Center" Style="{StaticResource ModuleButtonStyle}" Click="MaintenanceButton_Click" Margin="0,10,0,10"/>
+
+                    <Button Name="HealthCheckButton" Content="🏥 System Health" Style="{StaticResource ModuleButtonStyle}" Click="HealthCheckButton_Click" Margin="0,0,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Center Panel - Chat Interface -->
+            <Border Grid.Column="1" Background="#FF2D2D30" CornerRadius="8" Margin="5,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Chat Header -->
+                    <Border Grid.Row="0" Background="#FF3E3E42" Padding="15,10">
+                        <TextBlock Name="ChatHeader" Text="AI Assistant Ready" FontSize="16" FontWeight="Bold" Foreground="#FFCCCCCC"/>
+                    </Border>
+
+                    <!-- Chat Messages -->
+                    <ScrollViewer Grid.Row="1" Name="ChatScrollViewer" VerticalScrollBarVisibility="Auto" Padding="15">
+                        <StackPanel Name="ChatMessages" />
+                    </ScrollViewer>
+
+                    <!-- Input Area -->
+                    <Border Grid.Row="2" Background="#FF3E3E42" Padding="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Name="ChatInput" Background="#FF1E1E1E" Foreground="#FFCCCCCC" BorderBrush="#FF404040" BorderThickness="1" Padding="10" FontSize="14" KeyDown="ChatInput_KeyDown" Text="Type your message here..."/>
+
+                            <Button Name="SendButton" Grid.Column="1" Content="Send" Background="#FF007ACC" Foreground="White" BorderThickness="0" Padding="20,10" Margin="10,0,0,0" FontWeight="Bold" Click="SendButton_Click"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Right Panel - System Info -->
+            <Border Grid.Column="2" Background="#FF2D2D30" CornerRadius="8" Margin="10,0,0,0">
+                <StackPanel Margin="15">
+                    <TextBlock Text="System Status" FontSize="18" FontWeight="Bold" Foreground="#FF00D4FF" Margin="0,0,0,15"/>
+
+                    <Border Background="#FF3E3E42" CornerRadius="5" Padding="10" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Health Score" FontSize="12" Foreground="#FFAAAAAA" Margin="0,0,0,5"/>
+                            <ProgressBar Name="HealthProgressBar" Height="8" Background="#FF1E1E1E" Foreground="#FF00D4FF" Value="100" Margin="0,0,0,5"/>
+                            <TextBlock Name="HealthScoreText" Text="100%" FontSize="14" FontWeight="Bold" Foreground="#FFCCCCCC"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#FF3E3E42" CornerRadius="5" Padding="10" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Active Modules" FontSize="12" Foreground="#FFAAAAAA" Margin="0,0,0,5"/>
+                            <TextBlock Name="ActiveModulesText" Text="5 / 5" FontSize="14" FontWeight="Bold" Foreground="#FFCCCCCC"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#FF3E3E42" CornerRadius="5" Padding="10" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="System Load" FontSize="12" Foreground="#FFAAAAAA" Margin="0,0,0,5"/>
+                            <ProgressBar Name="LoadProgressBar" Height="8" Background="#FF1E1E1E" Foreground="#FFFF6B35" Value="45" Margin="0,0,0,5"/>
+                            <TextBlock Name="LoadText" Text="45%" FontSize="14" FontWeight="Bold" Foreground="#FFCCCCCC"/>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="Recent Activity" FontSize="14" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="0,20,0,10"/>
+
+                    <ScrollViewer Height="200" VerticalScrollBarVisibility="Auto">
+                        <StackPanel Name="ActivityLog">
+                            <TextBlock Text="System initialized successfully" FontSize="11" Foreground="#FFAAAAAA" Margin="0,2" TextWrapping="Wrap"/>
+                            <TextBlock Text="AI modules loaded" FontSize="11" Foreground="#FFAAAAAA" Margin="0,2" TextWrapping="Wrap"/>
+                            <TextBlock Text="Health check completed" FontSize="11" Foreground="#FFAAAAAA" Margin="0,2" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Background="#FF2D2D30" Padding="20,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Name="StatusText" Text="Ready - All systems operational" Foreground="#FFCCCCCC" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Column="1" Name="VersionText" Text="AIOS v0.4.0" Foreground="#FF888888" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+
+    <!-- Styles -->
+    <Window.Resources>
+        <Style x:Key="ModuleButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF3E3E42"/>
+            <Setter Property="Foreground" Value="#FFCCCCCC"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF007ACC"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF005A9B"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>
