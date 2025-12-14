@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.3 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.4 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.4: Bible Compliance Protocol (Appendix E) - Agent validation workflow   -->
 <!-- v1.3: Enforced Dendritic Density Pattern (Appendix D.3 UPGRADE)            -->
 <!-- v1.2: Cross-Repository Dendritic Connections (Appendix D)                  -->
 <!-- ============================================================================ -->
@@ -68,6 +69,7 @@ AINLP.class[ACTION](params)
 8. [APPENDIX B: Anti-Patterns](#appendix-b-anti-patterns)
 9. [APPENDIX C: Namespace Consolidation Reference](#appendix-c-namespace-consolidation-reference)
 10. [APPENDIX D: Cross-Repository Dendritic Connections](#appendix-d-cross-repository-dendritic-connections)
+11. [APPENDIX E: Bible Compliance Protocol](#appendix-e-bible-compliance-protocol)
 
 ---
 
@@ -1411,11 +1413,146 @@ When migrating from fallback to enforced density:
 
 ---
 
+# APPENDIX E: Bible Compliance Protocol
+
+## E.1 Purpose
+
+The AINLP Bible Corpus serves as the **canonical compliance standard** for all AIOS ecosystem code. Any file can be validated against the Bible to ensure pattern adherence and architectural consistency.
+
+## E.2 Compliance Check Workflow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    AINLP BIBLE CORPUS                           │
+│              (Canonical Patterns + Anti-Patterns)               │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+              ┌────────────────────────┐
+              │   COMPLIANCE CHECK     │
+              │  AINLP.bible[VALIDATE] │
+              └────────────────────────┘
+                           │
+           ┌───────────────┴───────────────┐
+           ▼                               ▼
+    ┌─────────────┐                 ┌─────────────┐
+    │ VIOLATIONS  │                 │  COMPLIANT  │
+    │  DETECTED   │                 │    ✅       │
+    └──────┬──────┘                 └─────────────┘
+           │
+           ▼
+    ┌─────────────┐
+    │  REFACTOR   │
+    │ TO BIBLE    │
+    └─────────────┘
+```
+
+## E.3 Compliance Dimensions
+
+When validating a file against the Bible, check these dimensions:
+
+| Dimension | Bible Section | Check |
+|-----------|---------------|-------|
+| **Import Patterns** | Appendix D.3 | Enforced density, no fallback |
+| **Error Handling** | HEAD Quick Lookup | Proper noqa/remediation |
+| **Comment Patterns** | Chapter 2 | Valid AINLP syntax |
+| **Anti-Patterns** | Appendix B | No deprecated patterns |
+| **IDE Config** | Appendix D.4 | pyrightconfig + .vscode present |
+| **Type Annotations** | Appendix D.3 | Clean type inference |
+
+## E.4 Agent Compliance Instructions
+
+When an agent receives a file for review/refactoring:
+
+### Step 1: Ingest Bible Context
+```
+# AINLP.bible[INGEST]
+# Load: AINLP_BIBLE_CORPUS.md (HEAD section minimum, full for deep compliance)
+```
+
+### Step 2: Scan for Violations
+```python
+# AINLP.bible[VALIDATE] target_file.py
+# Checklist:
+#   □ Import pattern (D.3): Enforced density or deprecated fallback?
+#   □ Error codes (HEAD): Any unhandled F401/E501/F811?
+#   □ Anti-patterns (Appendix B): Any AVOID markers present?
+#   □ Cross-repo (D.5): Dendritic connection if importing from sibling?
+```
+
+### Step 3: Report Findings
+```markdown
+## Bible Compliance Report: <filename>
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| Import Pattern | ✅/❌ | ... |
+| Error Handling | ✅/❌ | ... |
+| Anti-Patterns | ✅/❌ | ... |
+| IDE Config | ✅/❌ | ... |
+
+### Violations Found:
+1. Line XX: <description> → Bible ref: <section>
+
+### Recommended Refactoring:
+- <action item>
+```
+
+### Step 4: Refactor to Compliance
+Apply Bible-prescribed patterns to resolve violations.
+
+## E.5 AINLP Patterns for Compliance
+
+### AINLP.bible[INGEST]
+```python
+# AINLP.bible[INGEST]
+# Agent directive: Load AINLP_BIBLE_CORPUS.md into context
+# Minimum: HEAD section (lines 1-60) for quick reference
+# Full: Complete document for deep compliance checking
+```
+
+### AINLP.bible[VALIDATE]
+```python
+# AINLP.bible[VALIDATE] mesh.py
+# Triggers compliance check against Bible standards
+# Output: Compliance report with violations and recommendations
+```
+
+### AINLP.bible[REFACTOR]
+```python
+# AINLP.bible[REFACTOR] mesh.py
+# Apply Bible-prescribed patterns to achieve compliance
+# Requires: Prior VALIDATE to identify violations
+```
+
+## E.6 Compliance Levels
+
+| Level | Description | Requirements |
+|-------|-------------|--------------|
+| **L0: Non-Compliant** | Contains deprecated patterns | Refactoring required |
+| **L1: Basic** | No anti-patterns, valid syntax | Minimum acceptable |
+| **L2: Standard** | L1 + proper IDE config | Recommended for cells |
+| **L3: Full** | L2 + enforced density + assertions | Optimal dendritic integration |
+
+### Target Levels by Cell Type
+
+| Cell | Target Level | Notes |
+|------|--------------|-------|
+| aios-schema | L3 | Canonical source, must be pristine |
+| Nous | L3 | Knowledge cell, full integration |
+| aios-server | L2+ | Server can have conditional features |
+| aios-api | L2 | Boundary layer, external interfaces |
+| aios-quantum | L3 | Specialized, requires precision |
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.3 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
+<!-- Version: 1.4 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.4: Added Bible Compliance Protocol (Appendix E)                          -->
 <!-- v1.3: Upgraded to Enforced Dendritic Density Pattern (D.3)                  -->
 <!-- v1.2: Added Cross-Repository Dendritic Connections (Appendix D)             -->
 <!-- Includes: Full IDE integration stack (pyrightconfig + .vscode + .pylintrc)  -->
+<!-- ============================================================================ -->
