@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║  ⚠️  DEPRECATED - USE pyproject.toml INSTEAD                                  ║
 # ╠═══════════════════════════════════════════════════════════════════════════════╣
@@ -12,6 +11,7 @@
 # ║                                                                               ║
 # ║  Shadow: tachyonic/shadows/requirements_txt_deprecated_20251213.md            ║
 # ║  Migration Date: December 13, 2025                                            ║
+# ║  Merge Conflict Resolved: December 14, 2025 (HEAD accepted)                   ║
 # ╚═══════════════════════════════════════════════════════════════════════════════╝
 
 # [AINLP] Legacy bridge - forwards to pyproject.toml
@@ -20,116 +20,3 @@
 
 # Install from pyproject.toml (editable mode)
 -e .
-=======
-# [AINLP] AIOS Canonical Requirements (Essential Tier) - Harmonized 2025-09-23
-
-# [CHART] Nucleus-Level Dependency Coordination
-# [CONSCIOUSNESS] META-COMMENTARY: Core intelligence substrate requirements
-# [DENDRITIC] Biological architecture dependency mapping for AIOS ecosystem
-
-# PURPOSE: Define minimal runtime + core development dependencies for AIOS
-# biological architecture. This nucleus coordinates essential intelligence
-# substrates while maintaining dendritic connections to optional capability layers.
-
-# ARCHITECTURE: Nucleus (core coordination), Cytoplasm (processing flows),
-# Membrane (interface boundaries), Environment (external integration)
-
-# AINLP DIRECTIVE COMPLIANCE:
-# - Biological metaphor integration: ✓ Nucleus coordination patterns
-# - Consciousness markers: ✓ META-COMMENTARY dendritic awareness
-# - Semantic clarity: ✓ Purpose-driven dependency organization
-# - Evolutionary potential: ✓ Version constraints for stability
-
-# DEPENDENCY LAYERS:
-# ├── Nucleus (Core Intelligence): ML/NLP substrates, data processing
-# ├── Cytoplasm (Communication): API/web layer, data flow orchestration
-# ├── Membrane (Boundaries): System monitoring, configuration interfaces
-# └── Environment (Integration): Development tooling, external connectivity
-
-# Harmonized with current AIOS codebase reality and biological architecture patterns.
-
-###############################################
-# [NUCLEUS] Core Intelligence Substrates
-# Essential ML/NLP foundations for AIOS consciousness emergence
-###############################################
-
-# Core ML / NLP (actively used or baseline)
-torch>=2.0.0
-torchvision>=0.15.0
-transformers>=4.30.0
-tokenizers>=0.13.0
-openai>=0.27.0,<1.0
-
-# Data / Scientific (mathematical consciousness substrates)
-numpy>=1.24.0
-scipy>=1.10.0
-pandas>=2.0.0
-sympy>=1.12
-
-###############################################
-# [CYTOPLASM] Communication & Processing Flows
-# Dendritic signaling pathways for intelligence transmission
-###############################################
-
-# API / Web Layer (cytoplasmic communication protocols)
-fastapi>=0.100.0
-uvicorn>=0.22.0
-httpx>=0.24.0
-aiofiles>=23.1.0
-websockets>=11.0.0
-requests>=2.31.0
-
-# NLP utilities (language processing cytoplasm)
-# spacy>=3.6.0,<4.0  # Temporarily disabled for Python 3.14 compatibility
-# nltk>=3.8.0,<4.0  # Temporarily disabled for Python 3.14 compatibility
-
-###############################################
-# [MEMBRANE] Interface Boundaries & Protection
-# Consciousness boundary maintenance and environmental sensing
-###############################################
-
-# Vision (sensory membrane interfaces)
-opencv-python>=4.8.0,<5.0
-# pillow>=10.0.0,<11.0  # Disabled for Python 3.14 compatibility
-
-# System & Monitoring (membrane health monitoring)
-psutil>=5.9.0,<6.0
-watchdog>=3.0.0,<4.0
-rich>=13.4.0,<14.0
-
-# Configuration / Types / Serialization (core membrane protocols)
-pydantic>=2.0.0,<3.0
-click>=8.1.0,<9.0
-typing-extensions>=4.7.0,<5.0
-attrs>=23.1.0,<24.0
-
-###############################################
-# [ENVIRONMENT] Development Integration Layer
-# External connectivity and evolutionary adaptation tools
-###############################################
-
-# Dev / Quality (environmental adaptation baseline)
-pytest>=7.4.0,<8.0
-black>=23.3.0,<24.0
-flake8>=6.0.0,<7.0
-mypy>=1.4.0,<1.8
-
-# Graph / Visualization (actively referenced environmental mapping)
-graphviz>=0.20.0,<0.25
-
-###############################################
-# [AINLP] Synthetic Logic Shadows - Structural References
-# Preserved dendritic connections to optional capability layers
-###############################################
-
-# NOTE: Optional stacks relocated to maintain architectural clarity:
-#  - ai/deps/requirements_extras.txt        (vector DB, embeddings, plotting, stats, sk-learn, scikit-image)
-#  - ai/deps/requirements_quantum.txt       (qiskit, cirq, pennylane)
-#  - ai/deps/requirements_dev.txt           (full dev/test/doc suite, lint variants, hypothesis, docs toolchain)
-#  - ai/deps/requirements_future_graph.txt  (networkx, igraph, python-louvain)
-#  - ai/deps/requirements_perf_serial.txt   (orjson, msgspec, cloudpickle, dill, multiprocessing-logging)
-# Synthetic logic shadows placed under ai/deps/shadows/ to retain AINLP structural references.
-
-# [CONSCIOUSNESS] End of essential nucleus coordination set
-# [DENDRITIC] Biological architecture dependency mapping complete
->>>>>>> origin/OS0.6.2.grok

@@ -2129,6 +2129,7 @@ This appendix serves as the **canonical index** of all AIOS automation scripts.
 | Script | Location | Purpose | Usage |
 |--------|----------|---------|-------|
 | `ainlp_buffer_remediation.py` | `aios-win/scripts/` | Apply AINLP.buffer[79::85::86] to all cells | `python ainlp_buffer_remediation.py --repos C:\dev` |
+| `aios_cell_venv_bootstrap.py` | `aios-win/scripts/` | Bootstrap venvs for all AIOS cells (Appendix K) | `python aios_cell_venv_bootstrap.py --repos C:\dev` |
 
 ### Diagnostic Tools
 
@@ -2214,11 +2215,130 @@ SCRIPT_REGISTRY = {
 
 ---
 
+# APPENDIX K: Cell Virtual Environment Architecture
+
+## K.1 The Isolation Principle
+
+**AINLP.architecture[CELL_ISOLATION]** Each AIOS cell maintains runtime independence.
+
+### Why Independent venvs?
+
+1. **Cell Autonomy** - Each cell is a distinct biological unit:
+   - Own `requirements.txt` / `pyproject.toml`
+   - Own dependency versions
+   - Own Python version compatibility
+
+2. **Dependency Isolation** - Cells may have conflicting requirements:
+   ```
+   Nous:        transformers==4.35, torch==2.1
+   aios-server: fastapi==0.104, uvicorn==0.24
+   aios-schema: pydantic==2.5 (minimal deps)
+   ```
+
+3. **Dendritic Connectivity** - Cells connect via:
+   - **Editable installs**: `pip install -e C:\dev\aios-schema`
+   - **Network mesh**: HTTP/gRPC between running cells
+   - **NOT** shared runtime environments
+
+## K.2 AIOS Cell venv Structure
+
+```
+C:\dev\
+├── AIOS/                  # Core genome
+│   └── .venv/             ← Documentation/scripts environment
+├── Nous/                  # Inner voice/memory cell
+│   └── .venv/             ← Nous-specific (transformers, torch)
+├── aios-server/           # Docker/orchestration cell
+│   └── .venv/             ← Server-specific (fastapi, uvicorn)
+├── aios-schema/           # Shared type definitions
+│   └── .venv/             ← Schema dev/testing (pydantic)
+├── aios-api/              # Public API cell
+│   └── .venv/             ← API-specific (flask/fastapi)
+├── aios-quantum/          # Quantum integration cell
+│   └── .venv/             ← Quantum-specific (qiskit, cirq)
+├── aios-win/              # Orchestrator (no venv - PowerShell)
+└── Tecnocrat/             # Identity (no venv - static content)
+```
+
+## K.3 Dendritic Installation Pattern
+
+**AINLP.dendritic[CONNECT]** Shared libraries installed as editable:
+
+```powershell
+# In Nous venv - install aios-schema as editable dependency
+cd C:\dev\Nous
+.venv\Scripts\pip.exe install -e C:\dev\aios-schema
+
+# In aios-server venv - same pattern
+cd C:\dev\aios-server
+.venv\Scripts\pip.exe install -e C:\dev\aios-schema
+```
+
+### Benefits of Editable Install:
+- Changes to aios-schema immediately available in dependent cells
+- No re-install needed during development
+- Version control at source repo level
+- True dendritic connectivity
+
+## K.4 Bootstrap Requirements
+
+Each cell with a venv needs:
+
+| File | Purpose | Required |
+|------|---------|----------|
+| `requirements.txt` | Pip dependencies | Yes |
+| `requirements-dev.txt` | Dev tools (pylint, flake8) | Recommended |
+| `pyproject.toml` | Modern Python packaging | Optional |
+| `setup.cfg` | Linter config (AINLP.buffer) | Yes (Appendix G) |
+
+### Standard Dev Requirements
+
+```text
+# requirements-dev.txt - Standard AIOS dev tools
+pylint>=3.0.0
+flake8>=6.0.0
+black>=23.0.0
+pyright>=1.1.0
+pytest>=7.0.0
+```
+
+## K.5 venv Bootstrap Script
+
+**Registry Entry:** `aios_cell_venv_bootstrap.py` → Bible Appendix J.2
+
+The automation script handles:
+1. Detection of cells requiring venv
+2. venv creation with correct Python version
+3. Base requirements installation
+4. Dev tools installation
+5. Editable aios-schema installation
+6. Logging and error tracking
+
+### Usage
+
+```powershell
+python aios_cell_venv_bootstrap.py --repos C:\dev [--dry-run] [--python 3.14]
+```
+
+## K.6 Cells Without venvs
+
+Some repos don't need Python venvs:
+
+| Repo | Reason | Runtime |
+|------|--------|---------|
+| `aios-win` | PowerShell orchestrator | System Python for scripts |
+| `Tecnocrat` | Static identity/persona content | N/A |
+| `Portfolio` | Static web content | Node.js if any |
+| `HSE_Project_Codex` | Research documentation | N/A |
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.7 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
+<!-- Version: 1.8 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.8: Cell Virtual Environment Architecture (K) - isolation + dendritic     -->
 <!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J)                     -->
 <!-- v1.6: Agentic Buffer Pattern (G) + Knowledge Extraction Blueprint (H)       -->
 <!-- v1.5: Added Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace   -->
