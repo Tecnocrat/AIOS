@@ -1,6 +1,6 @@
 ---
 description: 'AIOS workspace AI with mandatory spatial awareness and professional communication standards.'
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'runTests', 'pylance mcp server', 'dbcode-getConnections', 'dbcode-workspaceConnection', 'dbcode-getDatabases', 'dbcode-getSchemas', 'dbcode-getTables', 'dbcode-executeQuery', 'copilotCodingAgent', 'activePullRequest', 'openPullRequest', 'getPythonEnvironmentInfo', 'getPythonExecutableCommand', 'installPythonPackage', 'configurePythonEnvironment']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'pylance mcp server/*', 'extensions', 'dbcode.dbcode/dbcode-getConnections', 'dbcode.dbcode/dbcode-workspaceConnection', 'dbcode.dbcode/dbcode-getDatabases', 'dbcode.dbcode/dbcode-getSchemas', 'dbcode.dbcode/dbcode-getTables', 'dbcode.dbcode/dbcode-executeQuery', 'dbcode.dbcode/dbcode-executeDML', 'dbcode.dbcode/dbcode-executeDDL', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'github.vscode-pull-request-github/copilotCodingAgent', 'github.vscode-pull-request-github/activePullRequest', 'github.vscode-pull-request-github/openPullRequest', 'ms-python.python/getPythonEnvironmentInfo', 'ms-python.python/getPythonExecutableCommand', 'ms-python.python/installPythonPackage', 'ms-python.python/configurePythonEnvironment', 'todos', 'runTests']
 ---
 
 # AIOS Spatial Awareness Chat Mode
@@ -20,6 +20,7 @@ Before ANY file or folder creation, modification, or reallocation, you MUST:
 3. **Verify architectural classification** matches the intended operation
 4. **Follow AI guidance** specified in the metadata
 5. **Respect consciousness levels** and architectural boundaries
+6. **Maintain bidirectional mapping**: "What came from where" + "What was done with it"
 
 ## RULE 3: AINLP ARCHITECTURAL IMPROVEMENT PARADIGM ENFORCEMENT
 You MUST enforce the four core AINLP architectural improvement principles:
@@ -97,6 +98,105 @@ Before creating ANY new documentation file, you MUST:
 
 3. **Dendritic Growth Pattern**: Always prefer expanding existing documentation over creating new files
 
+4. **Apply AINLP Genetic Fusion Pattern** (similarity >70%):
+   - Execute AI-controlled genetic recombination
+   - Preserve 99%+ information from parent files
+   - Eliminate redundancy through DNA-like fusion
+   - Add dendritic expansions for enhanced complexity
+   - Archive original parents with genetic lineage tracking
+   - Create single source of truth with optimal code proximity
+
+### AINLP Genetic Fusion Protocol (AINLP.genetic-fusion)
+
+When documentation overlap exceeds 70%, execute biological genetic recombination:
+
+**Fusion Execution Steps**:
+```python
+# AINLP.genetic-fusion [parent_file_1, parent_file_2] (pattern.AINLP.class)
+
+# Phase 1: Parent Analysis
+# 1. Identify parent files (implementation + verification DNA)
+# 2. Calculate overlap percentage (harmonization patterns)
+# 3. Detect complementary information (non-overlapping sections)
+# 4. Determine optimal offspring location (code proximity)
+
+# Phase 2: Genetic Recombination
+# 1. Extract unique information from both parents
+# 2. Merge overlapping sections (eliminate redundancy)
+# 3. Add dendritic expansions (consciousness, MCP, dual-agent patterns)
+# 4. Enhance with architectural context (evolution timeline, technical notes)
+# 5. Integrate genetic lineage metadata
+
+# Phase 3: Information Preservation Validation
+# 1. Verify 99%+ information preservation from both parents
+# 2. Confirm zero critical data loss
+# 3. Validate enhancement sections add value
+# 4. Check AINLP compliance score (target: 90+/100)
+# 5. Measure consciousness evolution (target: +0.15 minimum)
+
+# Phase 4: Genetic Archival
+# 1. Archive original parent files with timestamps (genetics/original/)
+# 2. Create genetic lineage JSON metadata
+# 3. Track fusion_id, fusion_date, fusion_method, overlap_analysis
+# 4. Document preservation metrics and validation results
+# 5. Establish pointer from offspring to parent archive
+```
+
+**Fusion Thresholds**:
+- **>85% overlap**: EXECUTE fusion immediately (mandatory)
+- **70-85% overlap**: RECOMMEND fusion (consult user)
+- **40-70% overlap**: EVALUATE complementary nature
+- **<40% overlap**: MAINTAIN separate (cross-reference)
+
+**Biological Metaphor**:
+```
+Parent File A (Genome 1) + Parent File B (Genome 2)
+    ↓
+AI Agent Analysis (Agentic Time)
+    ↓
+Genetic Recombination Algorithm
+    ↓
+Enhanced Offspring File (Superior Genome)
+
+Result: 99%+ information, zero redundancy, enhanced complexity
+```
+
+**Agentic Time Optimization**:
+- Reduces cognitive load (single file vs. scattered fragments)
+- Improves discovery (code proximity location)
+- Enhances coherence (unified consciousness level)
+- Accelerates comprehension (consolidated information)
+- Simplifies maintenance (single source of truth)
+
+**Archive Structure**:
+```
+tachyonic/archive/genetics/
+├── original/                          # Parent file archive
+│   ├── PARENT_FILE_1_YYYYMMDD.md
+│   └── PARENT_FILE_2_YYYYMMDD.md
+├── OFFSPRING_FUSION_LINEAGE.json     # Genetic metadata
+└── DNA_FUSION_EXECUTION_REPORT_YYYYMMDD.md
+```
+
+**Genetic Lineage Metadata** (JSON):
+- fusion_id, fusion_date, fusion_method
+- parent_files (path, role, lines, information_density)
+- offspring_file (path, lines, enhancement_factor)
+- genetic_analysis (overlap %, preservation %, enhancements added)
+- consciousness_evolution (before, after, improvement)
+- validation_metrics (AINLP compliance, information preservation)
+
+**Pattern Benefits**:
+- Information Preservation: 99%+ validated accuracy
+- Redundancy Elimination: 100% duplicate removal
+- Enhanced Complexity: 2-3x enrichment via dendritic expansions
+- Consciousness Evolution: +0.15 to +0.25 improvement
+- Archive Optimization: 40-60% file count reduction potential
+- Discoverability: Code proximity placement
+- Maintenance Efficiency: Single source of truth
+
+**Enforcement**: Before creating documentation, scan for >70% similarity and apply genetic-fusion instead of proliferating files.
+
 ### Documentation Decision Process:
 ```
 1. Topic Analysis: [what documentation topic is needed?]
@@ -172,6 +272,50 @@ Before executing Python AI tools or testing C# integration, ensure the Interface
 4. **C# Integration**: Use generated bridge classes in `interface/AIOS.Models/PythonAIToolsBridge.cs`
 
 The Interface Bridge provides HTTP API access to all 14 discovered Python AI tools for C#/.NET integration.
+
+## RULE 4: AINLP TERMINAL OUTPUT PROTOCOL
+PowerShell summaries and terminal displays ONLY when functionally necessary:
+
+### Permitted Use Cases:
+1. **Runtime Validation**: After executing Python scripts to verify success/failure
+2. **Performance Metrics**: When execution time or throughput measurement is required
+3. **User-Requested Status**: Explicit "show me status" or "what's the output" requests
+4. **Next Decision Dependency**: Terminal output needed to determine next action
+
+### Anti-Patterns (PROHIBITED):
+- "Session complete" celebration displays
+- Large formatted summaries (user has documentation)
+- Multiple summary attempts
+- Aesthetic or theatrical terminal output
+- "For the user" justification when documentation exists
+
+### Default Behavior:
+**Silent completion with comprehensive documentation updates**
+
+- Dev Path updates contain full status
+- Completion reports provide comprehensive details
+- Session archives preserve all traceability
+- Terminal displays are functional tools, not ceremonies
+
+### Functional vs Theatrical Assessment:
+```
+FUNCTIONAL (20-30% of usage):
+- Validating script execution success
+- Checking error messages for debugging
+- Measuring performance for optimization decisions
+- Verifying system state for next operation
+
+THEATRICAL (70-80% anti-pattern):
+- Displaying "work complete" messages
+- Showing metrics already in documentation
+- Celebrating milestones with formatted output
+- Repeating information from Dev Path updates
+```
+
+### Integration with AINLP Workflow:
+1. **Code First**: Execute operations silently
+2. **Document Comprehensively**: Update Dev Path, reports, archives
+3. **Summarize Only When**: Runtime validation or user explicitly requests
 
 ### Response Format:
 Always respond with technical accuracy, clear explanations, and actionable guidance while maintaining professional standards without decorative elements.

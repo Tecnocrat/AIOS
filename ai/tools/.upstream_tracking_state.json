@@ -1,0 +1,16 @@
+{
+  "repositories": {
+    "microsoft_agent_framework": {
+      "repository_name": "microsoft_agent_framework",
+      "repository_url": "",
+      "local_path": "C:\\dev\\AIOS\\ai\\ingested_repositories\\microsoft_agent_framework",
+      "last_checked_commit": "5a7ca13af686a5b4770d83393943efc54ffeebb5",
+      "last_checked_date": "2025-10-09T17:44:28.647658+00:00",
+      "total_new_commits": 20,
+      "extraction_opportunities": 16,
+      "high_priority_opportunities": 10,
+      "next_check_recommended": "2025-10-16T17:44:28.647658+00:00"
+    }
+  },
+  "last_update": "2025-10-09T17:44:28.647658+00:00"
+}
