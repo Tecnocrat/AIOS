@@ -5,11 +5,12 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.2 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.3 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
-<!-- NEW: Cross-Repository Dendritic Connections (Appendix D)                   -->
+<!-- v1.3: Enforced Dendritic Density Pattern (Appendix D.3 UPGRADE)            -->
+<!-- v1.2: Cross-Repository Dendritic Connections (Appendix D)                  -->
 <!-- ============================================================================ -->
 
 ## HEAD: Quick Reference (Lines 1-60)
@@ -1267,55 +1268,96 @@ pip install -e C:\dev\aios-schema
 | `pip install aios-schema` | Copies package (static) | Production deployment |
 | `pip install -e C:\dev\aios-schema` | Links to source (live) | **Development - changes sync** |
 
-## D.3 Graceful Fallback Pattern
+## D.3 Enforced Dendritic Density Pattern (v1.3 UPGRADE)
 
-Cells should work **standalone** (without dendrites) using try/except fallback:
+> **EVOLUTION**: Fallback patterns create type inference conflicts and reduce dendritic density.
+> The optimal pattern is **direct canonical import with enforced dependencies**.
 
+### ❌ DEPRECATED: Graceful Fallback Pattern
 ```python
-# ══════════════════════════════════════════════════════════════════════════════
-# SCHEMA INTEGRATION - Canonical types from aios-schema (with fallback)
-# ══════════════════════════════════════════════════════════════════════════════
-
+# OLD PATTERN - Creates Pylance type conflicts (reportAssignmentType errors)
 try:
     from aios_schema import MessageType, MeshMessage as SchemaMeshMessage
     _USING_AIOS_SCHEMA = True
-    MeshMessage = SchemaMeshMessage
+    MeshMessage = SchemaMeshMessage  # ❌ Type conflict!
 except ImportError:
     _USING_AIOS_SCHEMA = False
-    MeshMessage = None  # Will be defined below
+    MeshMessage = None  # ❌ None not assignable to type!
 
-# Local fallback definitions follow...
-if not _USING_AIOS_SCHEMA:
-    class MessageType(Enum):  # noqa: F811
-        """Types of mesh messages. [FALLBACK - prefer aios-schema]"""
-        HEARTBEAT_REQUEST = "heartbeat_request"
-        # ... etc
+# Problem: Pylance sees two different types assigned to same name
+# "Type 'aios_schema.MessageType' is not assignable to 'mesh.MessageType'"
 ```
 
-**Key Points**:
-- `# noqa: F811` silences redefinition warning (intentional conditional definition)
-- `_USING_AIOS_SCHEMA` flag enables runtime detection of connection status
-- Fallback definitions mirror canonical schema exactly
+### ✅ RECOMMENDED: Enforced Dendritic Density Pattern
+```python
+# ══════════════════════════════════════════════════════════════════════════════
+# SCHEMA INTEGRATION - Canonical types from aios-schema
+# AINLP.dendritic[CONNECT] aios-schema → Nous
+#   Installation: pip install -e C:\dev\aios-schema
+#   Pattern: Direct canonical import (no fallback - enforced dendritic density)
+#   Pylance config: pyrightconfig.json extraPaths
+#
+# DENDRITIC ARCHITECTURE PRINCIPLE:
+#   aios-schema is the single source of truth for mesh types.
+#   Nous MUST have aios-schema installed - no standalone mode.
+#   This enforces proper dendritic connectivity across cells.
+# ══════════════════════════════════════════════════════════════════════════════
 
-## D.4 Pylance/Pyright Error Resolution
+from aios_schema import MessageType, MeshMessage
 
-### Error: `Import "aios_schema" could not be resolved`
+# Schema verification (runtime assertion)
+assert hasattr(MessageType, 'HEARTBEAT_REQUEST'), \
+    "aios-schema MessageType missing expected members"
+assert hasattr(MeshMessage, 'to_json'), \
+    "aios-schema MeshMessage missing expected methods"
 
-**Cause**: Static analyzer doesn't know about editable install
+# Runtime confirmation of dendritic connection
+_SCHEMA_CONNECTION = {
+    "source": "aios-schema",
+    "types": ["MessageType", "MeshMessage"],
+    "verified": True
+}
+```
 
-**Solutions**:
+### Why Enforced Density is Superior
 
-| Solution | When to Use |
-|----------|-------------|
-| `pip install -e C:\dev\aios-schema` | **Recommended** - Creates real connection |
-| Add to `pyrightconfig.json` | IDE-only fix |
-| Ignore (fallback works) | Standalone deployment |
+| Aspect | Fallback Pattern | Enforced Density |
+|--------|------------------|------------------|
+| Type Safety | ❌ Pylance conflicts | ✅ Clean types |
+| Import Errors | Hidden (silent fallback) | Visible (fail-fast) |
+| Dendritic Strength | Weak (optional connection) | Strong (required) |
+| Code Complexity | Higher (duplicate defs) | Lower (single source) |
+| Runtime Verification | None | Assert statements |
 
-### pyrightconfig.json (Optional)
+## D.4 Full IDE Integration Stack
+
+For complete error-free development, configure THREE files:
+
+### 1. `pyrightconfig.json` (Pylance/Pyright)
 ```json
 {
-  "extraPaths": ["C:/dev/aios-schema/src"]
+  "extraPaths": ["C:/dev/aios-schema/src"],
+  "reportMissingImports": "warning"
 }
+```
+
+### 2. `.vscode/settings.json` (VS Code workspace)
+```json
+{
+    "python.analysis.extraPaths": ["C:/dev/aios-schema/src"],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.linting.pylintEnabled": false
+}
+```
+
+### 3. `.pylintrc` (if using Pylint)
+```ini
+[MASTER]
+# DENDRITIC PATH INJECTION
+init-hook='import sys; sys.path.insert(0, "C:/dev/aios-schema/src")'
+
+[IMPORTS]
+known-third-party=aios_schema
 ```
 
 ## D.5 Active Dendritic Connections Registry
@@ -1324,21 +1366,21 @@ Track which cells have established dendritic connections:
 
 | Cell (Consumer) | Axon (Provider) | Connection | Date | Status |
 |-----------------|-----------------|------------|------|--------|
-| **Nous** | aios-schema | `pip install -e` | 2025-12-14 | ✅ ACTIVE |
+| **Nous** | aios-schema | `pip install -e` + pyrightconfig + .vscode | 2025-12-14 | ✅ FULL |
 | aios-server | aios-schema | (pending) | — | ⏳ TODO |
 | aios-api | aios-schema | (pending) | — | ⏳ TODO |
 | AIOS | aios-schema | (pending) | — | ⏳ TODO |
 
-### Verification Command
+### Verification Commands
 ```powershell
-# Check if dendritic connection exists
+# Check pip dendritic connection
 pip show aios-schema
 
 # Expected output for editable install:
-# Name: aios-schema
-# Version: 0.1.0
-# Location: c:\dev\aios-schema\src
 # Editable project location: c:\dev\aios-schema
+
+# Test runtime import
+python -c "from aios_schema import MessageType; print('CONNECTED:', MessageType.HEARTBEAT_REQUEST)"
 ```
 
 ## D.6 AINLP Patterns for Cross-Repo Work
@@ -1346,25 +1388,34 @@ pip show aios-schema
 ### AINLP.dendritic[CONNECT]
 ```python
 # AINLP.dendritic[CONNECT] aios-schema → Nous
-# Installation: pip install -e C:\dev\aios-schema
-# Types imported: MessageType, MeshMessage, CellIdentity
-# Fallback: Local definitions in mesh.py lines 50-85
+#   Installation: pip install -e C:\dev\aios-schema
+#   Pattern: Direct canonical import (enforced density)
+#   Pylance config: pyrightconfig.json extraPaths
+#   VS Code config: .vscode/settings.json extraPaths
 ```
 
-### AINLP.bridge[VALIDATE]
+### AINLP.dendritic[VALIDATE]
 ```python
-# AINLP.bridge[VALIDATE] Verify aios-schema connection
-# Command: pip show aios-schema | Select-String "Editable"
-# Expected: "Editable project location: c:\dev\aios-schema"
+# AINLP.dendritic[VALIDATE] Verify aios-schema connection
+# Runtime: assert hasattr(MessageType, 'HEARTBEAT_REQUEST')
+# Terminal: pip show aios-schema | Select-String "Editable"
 ```
+
+### AINLP.dendritic[UPGRADE]
+When migrating from fallback to enforced density:
+1. Remove try/except import blocks
+2. Remove duplicate class definitions
+3. Add direct import statement
+4. Add runtime assertions
+5. Configure IDE stack (pyrightconfig.json, .vscode/settings.json)
 
 ---
 
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.2 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
+<!-- Version: 1.3 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
-<!-- NEW in v1.2: Cross-Repository Dendritic Connections (Appendix D)            -->
-<!-- Includes: aios-schema → Nous editable install pattern                       -->
-<!-- ============================================================================ -->
+<!-- v1.3: Upgraded to Enforced Dendritic Density Pattern (D.3)                  -->
+<!-- v1.2: Added Cross-Repository Dendritic Connections (Appendix D)             -->
+<!-- Includes: Full IDE integration stack (pyrightconfig + .vscode + .pylintrc)  -->
