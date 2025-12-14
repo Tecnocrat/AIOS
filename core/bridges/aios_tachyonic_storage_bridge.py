@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🌟 AIOS TACHYONIC-STORAGE BRIDGE 🗄️⚡
+ AIOS TACHYONIC-STORAGE BRIDGE 
 ====================================
 
 Enhanced dendritic bridge between Core Engine tachyonic archive and AI Intelligence storage systems.
@@ -316,42 +316,42 @@ class TachyonicStorageBridge:
             "average_latency_ns": 0.0
         }
         
-        logger.info(f"🗄️⚡ Tachyonic-Storage Bridge {self.bridge_id} initialized")
+        logger.info(f" Tachyonic-Storage Bridge {self.bridge_id} initialized")
     
     async def initialize_bridge(self):
         """Initialize the tachyonic-storage bridge"""
-        logger.info(f"🔧 Initializing tachyonic-storage bridge...")
+        logger.info(f" Initializing tachyonic-storage bridge...")
         
         # Test tachyonic field coherence
-        logger.info(f"🌌 Testing tachyonic field coherence...")
+        logger.info(f" Testing tachyonic field coherence...")
         await asyncio.sleep(0.5)  # Simulate field alignment
         
         self.metrics.quantum_coherence = random.uniform(0.88, 0.95)
         logger.info(f"   Tachyonic coherence: {self.metrics.quantum_coherence:.3f}")
         
         # Test storage interfaces
-        logger.info(f"🗄️ Testing storage interfaces...")
+        logger.info(f" Testing storage interfaces...")
         
         # Test archive read
         test_data = await self.tachyonic_archive.read_tachyonic_data("neural_patterns")
         if test_data:
-            logger.info(f"✅ Tachyonic archive interface operational")
+            logger.info(f" Tachyonic archive interface operational")
         
         # Test AI storage
         if test_data:
             await self.ai_storage.store_intelligence_data(test_data)
-            logger.info(f"✅ AI storage interface operational")
+            logger.info(f" AI storage interface operational")
         
         # Calculate bridge efficiency
         self.metrics.tachyonic_efficiency = random.uniform(0.85, 0.92)
         self.metrics.sync_status = "active"
         
-        logger.info(f"✅ Tachyonic-storage bridge initialized successfully")
+        logger.info(f" Tachyonic-storage bridge initialized successfully")
         logger.info(f"   Bridge efficiency: {self.metrics.tachyonic_efficiency:.3f}")
     
     async def sync_tachyonic_to_ai(self, data_keys: List[str]) -> Dict[str, bool]:
         """Synchronize data from tachyonic archive to AI storage"""
-        logger.info(f"🔄 Syncing {len(data_keys)} data packets from tachyonic archive to AI storage...")
+        logger.info(f" Syncing {len(data_keys)} data packets from tachyonic archive to AI storage...")
         
         sync_results = {}
         latencies = []
@@ -375,21 +375,21 @@ class TachyonicStorageBridge:
                     
                     if success:
                         self.sync_stats["successful_syncs"] += 1
-                        logger.info(f"✅ Synced '{data_key}' in {latency_ns:.2f}ns")
+                        logger.info(f" Synced '{data_key}' in {latency_ns:.2f}ns")
                     else:
                         self.sync_stats["failed_syncs"] += 1
-                        logger.warning(f"❌ Failed to sync '{data_key}'")
+                        logger.warning(f" Failed to sync '{data_key}'")
                 else:
                     sync_results[data_key] = False
                     self.sync_stats["failed_syncs"] += 1
-                    logger.warning(f"❌ Could not read '{data_key}' from tachyonic archive")
+                    logger.warning(f" Could not read '{data_key}' from tachyonic archive")
                 
                 self.sync_stats["total_syncs"] += 1
                 
             except Exception as e:
                 sync_results[data_key] = False
                 self.sync_stats["failed_syncs"] += 1
-                logger.error(f"❌ Sync error for '{data_key}': {e}")
+                logger.error(f" Sync error for '{data_key}': {e}")
         
         # Update metrics
         if latencies:
@@ -399,13 +399,13 @@ class TachyonicStorageBridge:
             self.sync_stats["data_transferred_packets"] += len([r for r in sync_results.values() if r])
         
         success_rate = (self.sync_stats["successful_syncs"] / max(1, self.sync_stats["total_syncs"])) * 100
-        logger.info(f"📊 Sync completed: {success_rate:.1f}% success rate")
+        logger.info(f" Sync completed: {success_rate:.1f}% success rate")
         
         return sync_results
     
     async def bidirectional_sync(self) -> Dict[str, Any]:
         """Perform bidirectional synchronization between systems"""
-        logger.info(f"🔄 Starting bidirectional tachyonic-AI sync...")
+        logger.info(f" Starting bidirectional tachyonic-AI sync...")
         
         # Data types to sync
         tachyonic_data_keys = ["neural_patterns", "consciousness_states", "tachyonic_signatures"]
@@ -417,7 +417,7 @@ class TachyonicStorageBridge:
         await asyncio.sleep(0.2)
         ai_to_tach_results = {key: True for key in ["ai_models", "intent_patterns", "intelligence_cache"]}
         
-        logger.info(f"✅ Bidirectional sync completed")
+        logger.info(f" Bidirectional sync completed")
         
         return {
             "tachyonic_to_ai": tach_to_ai_results,
@@ -452,13 +452,13 @@ class TachyonicStorageBridge:
         with open(report_path, 'w') as f:
             json.dump(report_data, f, indent=2)
         
-        logger.info(f"📊 Bridge report generated: {report_path}")
+        logger.info(f" Bridge report generated: {report_path}")
         return report_path
 
 
 async def run_tachyonic_storage_bridge_demo():
     """Run the tachyonic-storage bridge demonstration"""
-    print("\n🗄️⚡ AIOS TACHYONIC-STORAGE BRIDGE")
+    print("\n AIOS TACHYONIC-STORAGE BRIDGE")
     print("=" * 50)
     
     # Initialize paths
@@ -471,16 +471,16 @@ async def run_tachyonic_storage_bridge_demo():
     # Initialize bridge
     bridge = TachyonicStorageBridge(core_path, ai_path)
     
-    print("\n🔧 Initializing tachyonic-storage bridge...")
+    print("\n Initializing tachyonic-storage bridge...")
     await bridge.initialize_bridge()
     
-    print("\n🚀 Running bidirectional sync demonstration...")
+    print("\n Running bidirectional sync demonstration...")
     sync_results = await bridge.bidirectional_sync()
     
-    print("\n📊 Generating bridge performance report...")
+    print("\n Generating bridge performance report...")
     report_path = bridge.generate_bridge_report()
     
-    print("\n📈 Bridge Performance Summary:")
+    print("\n Bridge Performance Summary:")
     print(f"   Quantum Coherence: {bridge.metrics.quantum_coherence:.3f}")
     print(f"   Tachyonic Efficiency: {bridge.metrics.tachyonic_efficiency:.3f}")
     print(f"   Average Latency: {bridge.sync_stats['average_latency_ns']:.2f}ns")

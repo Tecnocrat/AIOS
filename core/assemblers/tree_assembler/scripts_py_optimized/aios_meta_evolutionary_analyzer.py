@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-🧬 AIOS META-EVOLUTIONARY SELF-ANALYSIS ENGINE
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS META-EVOLUTIONARY SELF-ANALYSIS ENGINE
+
 Advanced self-analysis system for the evolutionary assembler to analyze and 
 optimize itself. This creates a meta-evolutionary loop where the assembler
 evolves its own architecture and cellular organization.
 
 AIOS 0.6 - Multi-level cellular architecture with virtual immune system
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -58,7 +58,7 @@ class VirtualImmuneSystem:
 
 class AIOSMetaEvolutionaryAnalyzer:
     """
-    🔄 Meta-evolutionary analyzer for AIOS evolutionary assembler self-analysis
+     Meta-evolutionary analyzer for AIOS evolutionary assembler self-analysis
     
     Capabilities:
     • Self-analysis of evolutionary assembler architecture
@@ -89,7 +89,7 @@ class AIOSMetaEvolutionaryAnalyzer:
         self.ecosystem_analysis = {}
         self.meta_evolution_insights = {}
         
-        logger.info(f"🧬 AIOS Meta-Evolutionary Analyzer initialized")
+        logger.info(f" AIOS Meta-Evolutionary Analyzer initialized")
         logger.info(f"   Assembler path: {evolutionary_assembler_path}")
         logger.info(f"   Output ecosystem: {self.output_path}")
         logger.info(f"   Cellular population: {self.scripts_path}")
@@ -97,7 +97,7 @@ class AIOSMetaEvolutionaryAnalyzer:
     def analyze_ecosystem_level(self) -> Dict[str, Any]:
         """Analyze the ecosystem level (output/ folder structure)"""
         
-        logger.info("🌍 Analyzing ecosystem level (tachyonic layer)...")
+        logger.info(" Analyzing ecosystem level (tachyonic layer)...")
         
         ecosystem_data = {
             "generation_count": 0,
@@ -141,7 +141,7 @@ class AIOSMetaEvolutionaryAnalyzer:
         
         self.ecosystem_analysis = ecosystem_data
         
-        logger.info(f"🌍 Ecosystem analysis complete:")
+        logger.info(f" Ecosystem analysis complete:")
         logger.info(f"   Generations: {ecosystem_data['generation_count']}")
         logger.info(f"   Evolution depth: {ecosystem_data['evolution_depth']}")
         logger.info(f"   Tachyonic signatures: {len(ecosystem_data['tachyonic_signatures'])}")
@@ -151,7 +151,7 @@ class AIOSMetaEvolutionaryAnalyzer:
     def analyze_cellular_population(self) -> List[EvolutionaryCell]:
         """Analyze the cellular population (scripts_py/ folder)"""
         
-        logger.info("🧬 Analyzing cellular population...")
+        logger.info(" Analyzing cellular population...")
         
         discovered_cells = []
         
@@ -171,7 +171,7 @@ class AIOSMetaEvolutionaryAnalyzer:
         
         self.discovered_cells = discovered_cells
         
-        logger.info(f"🧬 Cellular population analysis complete:")
+        logger.info(f" Cellular population analysis complete:")
         logger.info(f"   Total cells: {len(discovered_cells)}")
         
         cell_types = defaultdict(int)
@@ -279,7 +279,7 @@ class AIOSMetaEvolutionaryAnalyzer:
     def _analyze_cellular_dependencies(self, cells: List[EvolutionaryCell]):
         """Analyze dependencies between cellular organisms"""
         
-        logger.info("🔗 Analyzing intercellular dependencies...")
+        logger.info(" Analyzing intercellular dependencies...")
         
         # Create dependency graph
         dependency_graph = defaultdict(set)
@@ -335,7 +335,7 @@ class AIOSMetaEvolutionaryAnalyzer:
     def initialize_virtual_immune_system(self):
         """Initialize the virtual immune system for cellular coherence"""
         
-        logger.info("🛡️ Initializing virtual immune system...")
+        logger.info(" Initializing virtual immune system...")
         
         # Register cellular abstraction levels
         for level_id, level in self.abstraction_levels.items():
@@ -376,7 +376,7 @@ class AIOSMetaEvolutionaryAnalyzer:
         
         self.immune_system.defense_protocols = defense_protocols
         
-        logger.info("🛡️ Virtual immune system initialized:")
+        logger.info(" Virtual immune system initialized:")
         logger.info(f"   Abstraction levels: {len(self.immune_system.registered_cell_types)}")
         logger.info(f"   Compatibility rules: {len(self.immune_system.compatibility_matrix)}")
         logger.info(f"   Threat signatures: {len(self.immune_system.threat_signatures)}")
@@ -448,8 +448,8 @@ class AIOSMetaEvolutionaryAnalyzer:
     def run_complete_meta_analysis(self) -> Dict[str, Any]:
         """Run complete meta-evolutionary analysis of the assembler"""
         
-        logger.info("🚀 STARTING AIOS META-EVOLUTIONARY SELF-ANALYSIS")
-        logger.info("═══════════════════════════════════════════════════")
+        logger.info(" STARTING AIOS META-EVOLUTIONARY SELF-ANALYSIS")
+        logger.info("")
         logger.info("Multi-level cellular architecture analysis...")
         logger.info("")
         
@@ -486,14 +486,14 @@ class AIOSMetaEvolutionaryAnalyzer:
         
         self.meta_evolution_insights = complete_analysis
         
-        logger.info("✅ META-EVOLUTIONARY SELF-ANALYSIS COMPLETE")
-        logger.info("═══════════════════════════════════════════")
-        logger.info(f"🌍 Ecosystem depth: {ecosystem_data['evolution_depth']} generations")
-        logger.info(f"🧬 Cellular population: {len(cellular_data)} cells")
-        logger.info(f"🩺 Average cellular health: {complete_analysis['cellular_health_average']:.3f}")
-        logger.info(f"🛡️ Virtual immune system: Active")
+        logger.info(" META-EVOLUTIONARY SELF-ANALYSIS COMPLETE")
         logger.info("")
-        logger.info("🔄 READY FOR META-EVOLUTIONARY OPTIMIZATION")
+        logger.info(f" Ecosystem depth: {ecosystem_data['evolution_depth']} generations")
+        logger.info(f" Cellular population: {len(cellular_data)} cells")
+        logger.info(f"🩺 Average cellular health: {complete_analysis['cellular_health_average']:.3f}")
+        logger.info(f" Virtual immune system: Active")
+        logger.info("")
+        logger.info(" READY FOR META-EVOLUTIONARY OPTIMIZATION")
         
         return complete_analysis
     
@@ -565,20 +565,20 @@ class AIOSMetaEvolutionaryAnalyzer:
 def main():
     """Run AIOS meta-evolutionary self-analysis"""
     
-    print("🧬 AIOS META-EVOLUTIONARY SELF-ANALYSIS ENGINE")
-    print("═══════════════════════════════════════════════════")
+    print(" AIOS META-EVOLUTIONARY SELF-ANALYSIS ENGINE")
+    print("")
     print("Advanced self-analysis for evolutionary assembler:")
-    print("  🔄 Meta-evolutionary loop creation")
-    print("  🌍 Multi-level ecosystem analysis")
-    print("  🧬 Cellular population assessment")
-    print("  🛡️ Virtual immune system initialization")
-    print("  🎯 Self-optimization planning")
+    print("   Meta-evolutionary loop creation")
+    print("   Multi-level ecosystem analysis")
+    print("   Cellular population assessment")
+    print("   Virtual immune system initialization")
+    print("   Self-optimization planning")
     print()
     
     # Configuration
     assembler_path = r"C:\dev\AIOS\core\evolutionary_assembler"
     
-    print(f"🔧 Meta-Analysis Configuration:")
+    print(f" Meta-Analysis Configuration:")
     print(f"   Evolutionary assembler: {assembler_path}")
     print()
     
@@ -588,7 +588,7 @@ def main():
     # Run complete meta-analysis
     analysis_results = meta_analyzer.run_complete_meta_analysis()
     
-    print("\n🧬 AIOS META-EVOLUTIONARY SELF-ANALYSIS COMPLETE!")
+    print("\n AIOS META-EVOLUTIONARY SELF-ANALYSIS COMPLETE!")
     print("Ready for self-optimization and meta-evolution!")
 
 

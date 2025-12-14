@@ -2710,11 +2710,11 @@ GitHub Copilot: This Flake8 F541 error means you have an f-string (a string pref
 
 In your file, the line is:
 ```python
-print(f"✓ Started workflow execution")
+print(f" Started workflow execution")
 ```
 There are no `{}` placeholders, so you should just use a regular string:
 ```python
-print("✓ Started workflow execution")
+print(" Started workflow execution")
 ```
 This will resolve the F541 error and is the correct, idiomatic usage. Would you like me to fix this now?
 

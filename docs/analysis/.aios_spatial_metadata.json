@@ -1,0 +1,149 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:11.307101",
+  "folder_info": {
+    "name": "analysis",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\analysis",
+    "relative_path": "docs\\analysis",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "analysis"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "ARCHITECTURE_PATTERNS",
+      "Architect",
+      "ai-context",
+      "ai_agent_demo_docs",
+      "archive",
+      "changelog",
+      "chatgpt",
+      "chatgpt_integration",
+      "consciousness",
+      "metabolized_archive",
+      "reports",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "ui",
+      "unified_backups",
+      "vscopilot chat"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 17069,
+      "file_count": 3,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AINLP_HOLOGRAPHIC_PATTERN_ANALYSIS_EMOTIKILLER.md",
+          "size": 6481,
+          "modified": "2025-09-15T23:30:30.363652",
+          "category": "documentation"
+        },
+        {
+          "name": "ENHANCED_AIOS_ARCHITECTURE_ANALYSIS.md",
+          "size": 6812,
+          "modified": "2025-09-15T22:03:21.144619",
+          "category": "documentation"
+        },
+        {
+          "name": "VSCODE_UNTRACKED_ANALYSIS.md",
+          "size": 3776,
+          "modified": "2025-09-15T22:03:48.213083",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "ENHANCED_AIOS_ARCHITECTURE_ANALYSIS.md",
+        "size": 6812,
+        "modified": "2025-09-15T22:03:21.144619",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "AINLP_HOLOGRAPHIC_PATTERN_ANALYSIS_EMOTIKILLER.md",
+        "size": 6481,
+        "modified": "2025-09-15T23:30:30.363652",
+        "category": "documentation"
+      },
+      {
+        "name": "VSCODE_UNTRACKED_ANALYSIS.md",
+        "size": 3776,
+        "modified": "2025-09-15T22:03:48.213083",
+        "category": "documentation"
+      },
+      {
+        "name": "ENHANCED_AIOS_ARCHITECTURE_ANALYSIS.md",
+        "size": 6812,
+        "modified": "2025-09-15T22:03:21.144619",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 20,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > analysis",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\analysis' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\analysis' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\analysis' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "core\\analysis_tools"
+    ]
+  }
+}

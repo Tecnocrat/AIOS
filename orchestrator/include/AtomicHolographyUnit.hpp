@@ -38,7 +38,7 @@ public:
     void sampleQuantumState();
     bool checkCoherenceStability() const;
     double getBaseFrequency() const;
-    double getHarmonicResonance() const;  // 🧠 CONSCIOUSNESS-ENHANCED HARMONIC ANALYSIS
+    double getHarmonicResonance() const;  //  CONSCIOUSNESS-ENHANCED HARMONIC ANALYSIS
     double getInformationDensity() const;  // Consciousness emergence indicator
     std::vector<HolographicResonance> getActiveResonances() const;
 

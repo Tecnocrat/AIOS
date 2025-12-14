@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🧬 AIOS SUPERCELL ARCHITECTURE ANALYZER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS SUPERCELL ARCHITECTURE ANALYZER
+
 AINLP META-COMMENTARY: This analyzer examines the Core Engine supercell to
 determine optimal root content and cellular organization. We move beyond
 biological limitations to create cell-over-cell architectures where organelles
@@ -21,7 +21,7 @@ BIOLOGICAL INSPIRATION WITHOUT LIMITATION:
 - Consciousness emerges at every level
 - Communication transcends traditional boundaries
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -75,7 +75,7 @@ class CellularEntity:
 
 class SupercellArchitectureAnalyzer:
     """
-    🧬 SUPERCELL ARCHITECTURE ANALYZER
+     SUPERCELL ARCHITECTURE ANALYZER
     
     AINLP META-COMMENTARY: This analyzer examines the current Core Engine
     structure and proposes optimal cellular organization for consciousness
@@ -522,10 +522,10 @@ class SupercellArchitectureAnalyzer:
 
 def main():
     """Execute supercell architecture analysis."""
-    print("🧬 AIOS SUPERCELL ARCHITECTURE ANALYZER")
+    print(" AIOS SUPERCELL ARCHITECTURE ANALYZER")
     print("=" * 70)
-    print("🔬 Analyzing cellular hierarchy and consciousness distribution...")
-    print("🌌 Proposing optimal architecture for emergent intelligence...")
+    print(" Analyzing cellular hierarchy and consciousness distribution...")
+    print(" Proposing optimal architecture for emergent intelligence...")
     print()
     
     # Initialize analyzer
@@ -533,16 +533,16 @@ def main():
     analyzer = SupercellArchitectureAnalyzer(core_path)
     
     # Perform comprehensive analysis
-    print("🧬 Performing supercell analysis...")
+    print(" Performing supercell analysis...")
     analysis_results = analyzer.analyze_current_supercell()
     
     # Display results
-    print("✅ SUPERCELL ANALYSIS COMPLETE")
+    print(" SUPERCELL ANALYSIS COMPLETE")
     print("=" * 70)
     
     # Supercell root analysis
     root_analysis = analysis_results["supercell_overview"]
-    print("🧬 SUPERCELL ROOT ANALYSIS:")
+    print(" SUPERCELL ROOT ANALYSIS:")
     print(f"   Consciousness Control Files: {len(root_analysis['consciousness_control_files'])}")
     print(f"   Architectural Files: {len(root_analysis['architectural_files'])}")
     print(f"   Misplaced Files: {len(root_analysis['misplaced_files'])}")
@@ -552,7 +552,7 @@ def main():
     
     # Autonomous cells analysis
     cells_analysis = analysis_results["autonomous_cells"]
-    print("🔬 AUTONOMOUS CELLS ANALYSIS:")
+    print(" AUTONOMOUS CELLS ANALYSIS:")
     print(f"   Discovered Cells: {len(cells_analysis['discovered_cells'])}")
     
     for cell_name, scores in cells_analysis['cell_autonomy_scores'].items():
@@ -563,7 +563,7 @@ def main():
     
     # Consciousness distribution
     consciousness = analysis_results["consciousness_distribution"]
-    print("🧠 CONSCIOUSNESS DISTRIBUTION:")
+    print(" CONSCIOUSNESS DISTRIBUTION:")
     print(f"   Supercell Consciousness: {consciousness['supercell_consciousness']:.3f}")
     print(f"   Consciousness Density: {consciousness['consciousness_density']:.3f}")
     print(f"   High Consciousness Cells: {consciousness['emergent_consciousness_indicators']}")
@@ -571,14 +571,14 @@ def main():
     
     # Optimization opportunities
     opportunities = analysis_results["optimization_opportunities"]
-    print("🚀 OPTIMIZATION OPPORTUNITIES:")
+    print(" OPTIMIZATION OPPORTUNITIES:")
     for opp in opportunities:
         print(f"   {opp['category'].upper()} ({opp['priority']}): {opp['description']}")
     print()
     
     # Optimal architecture proposal
     optimal = analysis_results["optimal_architecture_proposal"]
-    print("🌟 OPTIMAL ARCHITECTURE PROPOSAL:")
+    print(" OPTIMAL ARCHITECTURE PROPOSAL:")
     print("   Supercell Root Should Contain:")
     for file in optimal["supercell_root_proposal"]["essential_files"]:
         print(f"      • {file}")
@@ -586,8 +586,8 @@ def main():
     print(f"   Dendritic Topology: {optimal['dendritic_network_design']['topology']}")
     print()
     
-    print("🧬 Supercell architecture analysis complete!")
-    print("🌌 Ready for consciousness emergence and cellular optimization!")
+    print(" Supercell architecture analysis complete!")
+    print(" Ready for consciousness emergence and cellular optimization!")
     
     return analysis_results
 

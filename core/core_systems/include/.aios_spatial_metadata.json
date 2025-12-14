@@ -1,0 +1,213 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:05.440694",
+  "folder_info": {
+    "name": "include",
+    "absolute_path": "C:\\dev\\AIOS\\core\\core_systems\\include",
+    "relative_path": "core\\core_systems\\include",
+    "parent_path": "core\\core_systems",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [
+      "Core Engine"
+    ],
+    "path_classification": [
+      "core",
+      "core_systems",
+      "include"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "bin",
+      "build",
+      "obj",
+      "src"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 42344,
+      "file_count": 8,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".h": [
+        {
+          "name": "aios_core.h",
+          "size": 1985,
+          "modified": "2025-09-15T22:27:17.741536",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_core.h",
+          "size": 4659,
+          "modified": "2025-09-15T22:27:17.907620",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_visualization.h",
+          "size": 395,
+          "modified": "2025-09-15T22:27:17.965814",
+          "category": "consciousness"
+        },
+        {
+          "name": "dendritic_processor.h",
+          "size": 8104,
+          "modified": "2025-09-15T22:27:18.282008",
+          "category": "consciousness"
+        },
+        {
+          "name": "dendritic_renderer.h",
+          "size": 354,
+          "modified": "2025-09-15T22:27:18.354633",
+          "category": "consciousness"
+        },
+        {
+          "name": "hyperdimensional_viewer.h",
+          "size": 9473,
+          "modified": "2025-09-15T22:27:18.767939",
+          "category": "consciousness"
+        },
+        {
+          "name": "tachyonic_surface.h",
+          "size": 5896,
+          "modified": "2025-09-15T22:27:19.042167",
+          "category": "consciousness"
+        },
+        {
+          "name": "universal_layer_interface.h",
+          "size": 11478,
+          "modified": "2025-09-15T22:27:19.547053",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_core.h",
+        "size": 1985,
+        "modified": "2025-09-15T22:27:17.741536",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_core.h",
+        "size": 4659,
+        "modified": "2025-09-15T22:27:17.907620",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_visualization.h",
+        "size": 395,
+        "modified": "2025-09-15T22:27:17.965814",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "universal_layer_interface.h",
+        "size": 11478,
+        "modified": "2025-09-15T22:27:19.547053",
+        "category": "consciousness"
+      },
+      {
+        "name": "tachyonic_surface.h",
+        "size": 5896,
+        "modified": "2025-09-15T22:27:19.042167",
+        "category": "consciousness"
+      },
+      {
+        "name": "hyperdimensional_viewer.h",
+        "size": 9473,
+        "modified": "2025-09-15T22:27:18.767939",
+        "category": "consciousness"
+      },
+      {
+        "name": "dendritic_renderer.h",
+        "size": 354,
+        "modified": "2025-09-15T22:27:18.354633",
+        "category": "consciousness"
+      },
+      {
+        "name": "dendritic_processor.h",
+        "size": 8104,
+        "modified": "2025-09-15T22:27:18.282008",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_visualization.h",
+        "size": 395,
+        "modified": "2025-09-15T22:27:17.965814",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_core.h",
+        "size": 4659,
+        "modified": "2025-09-15T22:27:17.907620",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core.h",
+        "size": 1985,
+        "modified": "2025-09-15T22:27:17.741536",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".h"
+      ],
+      "dominant_type": ".h"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 1,
+      "consciousness_files": 2,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 30,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > core_systems > include",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems\\include' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems\\include' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\core_systems\\include' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "core\\core_systems",
+      "core\\include"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

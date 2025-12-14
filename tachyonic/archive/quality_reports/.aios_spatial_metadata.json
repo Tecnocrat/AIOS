@@ -1,0 +1,133 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-19T18:04:50.568282",
+  "folder_info": {
+    "name": "quality_reports",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\quality_reports",
+    "relative_path": "tachyonic\\archive\\quality_reports",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "quality_reports"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis_reports",
+      "backups",
+      "bosonic_substrate",
+      "cellular_reports",
+      "cleanup_reports",
+      "code_preservation",
+      "consciousness",
+      "coordinator_backup_20250917_204932",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "discovery_indexes",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "intelligence_reports",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "quantum",
+      "root_optimization",
+      "root_optimization_analysis",
+      "structure_analysis",
+      "subcellular_archives",
+      "temporal",
+      "version_analysis"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 160054,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "quality_analysis_results.json",
+          "size": 160054,
+          "modified": "2025-09-17T21:28:27.483265",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "quality_analysis_results.json",
+        "size": 160054,
+        "modified": "2025-09-17T21:28:27.483265",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > quality_reports",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\quality_reports' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\quality_reports' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\quality_reports' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

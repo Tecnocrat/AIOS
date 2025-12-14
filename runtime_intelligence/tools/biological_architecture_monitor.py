@@ -1,11 +1,12 @@
 """
-Biological Architecture Status Tool
-==================================
+AIOS Architecture Status Monitor
+===============================
 
-Provides comprehensive status monitoring of the complete AIOS biological architecture:
-Interface Supercell → Runtime Intelligence → AI Intelligence → Core Engine
+Provides comprehensive status monitoring of the complete AIOS architecture:
+AI Intelligence → Core Engine → Interface → Runtime Intelligence
 
-This tool monitors all supercell components and their dendritic connections.
+This tool monitors all AIOS components and their integration connections.
+Updated from biological naming to standardized AIOS architecture.
 """
 
 import asyncio
@@ -28,32 +29,32 @@ except ImportError as e:
     logging.warning(f"Some integrations not available: {e}")
 
 
-class BiologicalArchitectureMonitor:
+class AIOSArchitectureMonitor:
     """
-    Comprehensive monitor for the complete biological architecture.
+    Comprehensive monitor for the complete AIOS architecture.
     
     Monitors:
-    - Interface Supercell (C# WPF components)
-    - Runtime Intelligence (Python orchestration)
-    - AI Intelligence Supercell (organs: cytoplasm, nucleus, membrane, etc.)
-    - Core Engine Supercell (analysis tools, engines, assemblers)
-    - Dendritic Connections (supervisor bridges)
+    - AI Intelligence (Python AI processing and algorithms)
+    - Core Engine (C++ performance components and system foundation)
+    - Interface (C# UI and service architecture)
+    - Runtime Intelligence (System monitoring and optimization)
+    - Integration Connections (communication bridges)
     """
     
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.setup_logging()
         
-        self.dendritic_integration = None
+        self.integration_bridges = None
         self.visual_bridge = None
         
-        # Component status tracking
+        # Component status tracking - Updated to AIOS architecture
         self.component_statuses = {
-            'interface_supercell': 'unknown',
+            'ai_intelligence': 'unknown',
+            'core_engine': 'unknown',
+            'interface': 'unknown',
             'runtime_intelligence': 'unknown',
-            'ai_intelligence_supercell': 'unknown',
-            'core_engine_supercell': 'unknown',
-            'dendritic_supervisor': 'unknown'
+            'integration_bridges': 'unknown'
         }
     
     def setup_logging(self):
@@ -61,7 +62,7 @@ class BiologicalArchitectureMonitor:
         log_dir = os.path.join(current_dir, '..', 'logs')
         os.makedirs(log_dir, exist_ok=True)
         
-        log_file = os.path.join(log_dir, 'biological_architecture_monitor.log')
+        log_file = os.path.join(log_dir, 'aios_architecture_monitor.log')
         
         formatter = logging.Formatter(
             '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -76,68 +77,70 @@ class BiologicalArchitectureMonitor:
     async def initialize(self) -> bool:
         """Initialize the biological architecture monitor."""
         try:
-            self.logger.info("🔬 Initializing Biological Architecture Monitor...")
+            self.logger.info(" Initializing Biological Architecture Monitor...")
             
             # Initialize dendritic integration
             try:
                 self.dendritic_integration = await get_runtime_intelligence_dendritic_integration()
                 self.component_statuses['dendritic_supervisor'] = 'active'
-                self.logger.info("✅ Dendritic supervisor integration active")
+                self.logger.info(" Dendritic supervisor integration active")
             except Exception as e:
-                self.logger.warning(f"⚠️ Dendritic supervisor unavailable: {e}")
+                self.logger.warning(f" Dendritic supervisor unavailable: {e}")
                 self.component_statuses['dendritic_supervisor'] = 'unavailable'
             
             # Initialize visual bridge
             try:
                 self.visual_bridge = await get_enhanced_visual_intelligence_bridge()
                 self.component_statuses['runtime_intelligence'] = 'active'
-                self.logger.info("✅ Enhanced visual intelligence bridge active")
+                self.logger.info(" Enhanced visual intelligence bridge active")
             except Exception as e:
-                self.logger.warning(f"⚠️ Visual bridge unavailable: {e}")
+                self.logger.warning(f" Visual bridge unavailable: {e}")
                 self.component_statuses['runtime_intelligence'] = 'limited'
             
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to initialize monitor: {e}")
+            self.logger.error(f" Failed to initialize monitor: {e}")
             return False
     
     async def get_comprehensive_status(self) -> Dict[str, Any]:
-        """Get comprehensive status of the biological architecture."""
+        """Get comprehensive status of the AIOS architecture."""
         try:
-            self.logger.info("📊 Generating comprehensive biological architecture status...")
+            self.logger.info(" Generating comprehensive AIOS status...")
             
             status = {
                 'timestamp': datetime.now().isoformat(),
-                'biological_architecture': {
+                'aios_architecture': {
                     'status': 'analyzing',
                     'compliance': 'checking'
                 },
-                'supercells': {},
-                'dendritic_connections': {},
+                'components': {},
+                'integration_bridges': {},
                 'overall_health': 'analyzing'
             }
             
-            # Check Interface Supercell
-            status['supercells']['interface_supercell'] = await self._check_interface_supercell()
+            # Check Interface Components
+            status['components']['interface'] = await self._check_interface_supercell()
             
             # Check Runtime Intelligence
-            status['supercells']['runtime_intelligence'] = await self._check_runtime_intelligence()
+            status['components']['runtime_intelligence'] = await self._check_runtime_intelligence()
             
-            # Check AI Intelligence Supercell
-            status['supercells']['ai_intelligence_supercell'] = await self._check_ai_intelligence_supercell()
+            # Check AI Intelligence Component
+            status['components']['ai_intelligence'] = await self._check_ai_intelligence_supercell()
             
-            # Check Core Engine Supercell
-            status['supercells']['core_engine_supercell'] = await self._check_core_engine_supercell()
+            # Check Core Engine Component
+            status['components']['core_engine'] = await self._check_core_engine_supercell()
             
-            # Check Dendritic Connections
-            status['dendritic_connections'] = await self._check_dendritic_connections()
+            # Check Integration Bridges
+            status['integration_bridges'] = \
+                await self._check_dendritic_connections()
             
             # Calculate overall health
             status['overall_health'] = self._calculate_overall_health(status)
             
-            # Update biological architecture status
-            status['biological_architecture'] = self._assess_biological_compliance(status)
+            # Update AIOS architecture status
+            status['aios_architecture'] = \
+                self._assess_aios_compliance(status)
             
             return status
             
@@ -355,25 +358,25 @@ class BiologicalArchitectureMonitor:
             }
     
     def _calculate_overall_health(self, status: Dict[str, Any]) -> Dict[str, Any]:
-        """Calculate overall biological architecture health."""
+        """Calculate overall AIOS architecture health."""
         try:
-            supercell_scores = []
-            dendritic_score = 0.0
+            component_scores = []
+            integration_score = 0.0
             
-            # Collect supercell health scores
-            for supercell_name, supercell_data in status['supercells'].items():
-                if isinstance(supercell_data, dict) and 'health_score' in supercell_data:
-                    supercell_scores.append(supercell_data['health_score'])
+            # Collect component health scores
+            for component_name, component_data in status['components'].items():
+                if isinstance(component_data, dict) and 'health_score' in component_data:
+                    component_scores.append(component_data['health_score'])
             
-            # Get dendritic connection score
-            if 'dendritic_connections' in status and isinstance(status['dendritic_connections'], dict):
-                dendritic_score = status['dendritic_connections'].get('health_score', 0.0)
+            # Get integration bridge score
+            if 'integration_bridges' in status and isinstance(status['integration_bridges'], dict):
+                integration_score = status['integration_bridges'].get('health_score', 0.0)
             
             # Calculate weighted health score
-            if supercell_scores:
-                avg_supercell_health = sum(supercell_scores) / len(supercell_scores)
-                # Weight: 70% supercells, 30% dendritic connections
-                overall_score = (avg_supercell_health * 0.7) + (dendritic_score * 0.3)
+            if component_scores:
+                avg_component_health = sum(component_scores) / len(component_scores)
+                # Weight: 70% components, 30% integration bridges
+                overall_score = (avg_component_health * 0.7) + (integration_score * 0.3)
             else:
                 overall_score = 0.0
             
@@ -390,8 +393,8 @@ class BiologicalArchitectureMonitor:
             return {
                 'score': overall_score,
                 'status': health_status,
-                'supercell_count': len(supercell_scores),
-                'dendritic_integration': dendritic_score > 0.5
+                'component_count': len(component_scores),
+                'integration_active': integration_score > 0.5
             }
             
         except Exception as e:
@@ -401,36 +404,38 @@ class BiologicalArchitectureMonitor:
                 'error': str(e)
             }
     
-    def _assess_biological_compliance(self, status: Dict[str, Any]) -> Dict[str, Any]:
-        """Assess biological architecture compliance."""
+    def _assess_aios_compliance(self, status: Dict[str, Any]) -> Dict[str, Any]:
+        """Assess AIOS architecture compliance."""
         try:
             compliance_checks = {
-                'supercell_independence': True,
-                'dendritic_supervision': False,
+                'component_independence': True,
+                'integration_bridges': False,
                 'proper_communication_flow': False,
-                'organ_monitoring': False
+                'module_monitoring': False
             }
             
-            # Check supercell independence
-            supercells = status.get('supercells', {})
-            interface_active = supercells.get('interface_supercell', {}).get('status') == 'active'
-            ai_intelligence_active = supercells.get('ai_intelligence_supercell', {}).get('status') == 'active'
-            core_engine_active = supercells.get('core_engine_supercell', {}).get('status') == 'active'
+            # Check component independence
+            components = status.get('components', {})
+            interface_active = components.get('interface', {}).get('status') == 'active'
+            ai_intelligence_active = components.get('ai_intelligence', {}).get('status') == 'active'
+            core_engine_active = components.get('core_engine', {}).get('status') == 'active'
             
-            compliance_checks['supercell_independence'] = interface_active and ai_intelligence_active and core_engine_active
+            compliance_checks['component_independence'] = interface_active and ai_intelligence_active and core_engine_active
             
-            # Check dendritic supervision
-            dendritic_data = status.get('dendritic_connections', {})
-            compliance_checks['dendritic_supervision'] = dendritic_data.get('connections', {}).get('dendritic_supervisor', False)
+            # Check integration bridges
+            bridge_data = status.get('integration_bridges', {})
+            compliance_checks['integration_bridges'] = \
+                bridge_data.get('connections', {}).get('integration_bridge', False)
             
             # Check communication flow
             compliance_checks['proper_communication_flow'] = (
-                dendritic_data.get('connections', {}).get('cytoplasm_dendritic_bridge', False) and
-                dendritic_data.get('connections', {}).get('core_engine_integration', False)
+                bridge_data.get('connections', {}).get('ai_core_bridge', False) and
+                bridge_data.get('connections', {}).get('interface_integration', False)
             )
             
-            # Check organ monitoring
-            compliance_checks['organ_monitoring'] = dendritic_data.get('connections', {}).get('organ_monitoring', False)
+            # Check module monitoring
+            compliance_checks['module_monitoring'] = \
+                bridge_data.get('connections', {}).get('module_monitoring', False)
             
             # Calculate compliance score
             compliance_score = sum(1 for check in compliance_checks.values() if check) / len(compliance_checks)
@@ -494,29 +499,29 @@ AIOS Biological Architecture Status Report
 ==========================================
 Generated: {status['timestamp']}
 
-🧬 BIOLOGICAL ARCHITECTURE OVERVIEW
-Status: {status['biological_architecture']['status'].upper()}
-Compliance: {status['biological_architecture']['score']:.2f} ({status['biological_architecture']['status']})
+ AIOS ARCHITECTURE OVERVIEW
+Status: {status['aios_architecture']['status'].upper()}
+Compliance: {status['aios_architecture']['score']:.2f} ({status['aios_architecture']['status']})
 Overall Health: {status['overall_health']['score']:.2f} ({status['overall_health']['status'].upper()})
 
-🏗️ SUPERCELL STATUS
+ COMPONENT STATUS
 """
             
-            # Add supercell details
-            for supercell_name, supercell_data in status['supercells'].items():
-                if isinstance(supercell_data, dict):
+            # Add component details
+            for component_name, component_data in status['components'].items():
+                if isinstance(component_data, dict):
                     report += f"""
-{supercell_name.replace('_', ' ').title()}:
-  Status: {supercell_data.get('status', 'unknown').upper()}
-  Health: {supercell_data.get('health_score', 0.0):.2f}
-  Type: {supercell_data.get('biological_type', 'Unknown')}
-  Function: {supercell_data.get('primary_function', 'Unknown')}
+{component_name.replace('_', ' ').title()}:
+  Status: {component_data.get('status', 'unknown').upper()}
+  Health: {component_data.get('health_score', 0.0):.2f}
+  Type: {component_data.get('architecture_type', 'Unknown')}
+  Function: {component_data.get('primary_function', 'Unknown')}
 """
             
             # Add dendritic connections
             dendritic_data = status.get('dendritic_connections', {})
             report += f"""
-🌿 DENDRITIC CONNECTIONS
+ DENDRITIC CONNECTIONS
 Status: {dendritic_data.get('status', 'unknown').upper()}
 Health: {dendritic_data.get('health_score', 0.0):.2f}
 
@@ -525,25 +530,25 @@ Connection Details:
             
             connections = dendritic_data.get('connections', {})
             for conn_name, conn_status in connections.items():
-                status_icon = "✅" if conn_status else "❌"
+                status_icon = "" if conn_status else ""
                 report += f"  {status_icon} {conn_name.replace('_', ' ').title()}\n"
             
             report += f"""
-📊 ARCHITECTURE SUMMARY
-Supercells Active: {status['overall_health'].get('supercell_count', 0)}
-Dendritic Integration: {'✅' if status['overall_health'].get('dendritic_integration', False) else '❌'}
-Biological Compliance: {status['biological_architecture']['score']:.2f}
+ ARCHITECTURE SUMMARY
+Components Active: {status['overall_health'].get('component_count', 0)}
+Integration Active: {'' if status['overall_health'].get('integration_active', False) else ''}
+AIOS Compliance: {status['aios_architecture']['score']:.2f}
 
-🎯 RECOMMENDATIONS
+ RECOMMENDATIONS
 """
             
             # Add recommendations based on status
             if status['overall_health']['score'] < 0.6:
-                report += "- Critical: Improve supercell health scores\n"
-            if not status['overall_health'].get('dendritic_integration', False):
-                report += "- Important: Establish dendritic supervision\n"
-            if status['biological_architecture']['score'] < 0.75:
-                report += "- Recommended: Enhance biological architecture compliance\n"
+                report += "- Critical: Improve component health scores\n"
+            if not status['overall_health'].get('integration_active', False):
+                report += "- Important: Establish integration bridges\n"
+            if status['aios_architecture']['score'] < 0.75:
+                report += "- Recommended: Enhance AIOS architecture compliance\n"
             
             if status['overall_health']['score'] >= 0.8:
                 report += "- Excellent: Architecture is operating optimally\n"
@@ -555,29 +560,29 @@ Biological Compliance: {status['biological_architecture']['score']:.2f}
 
 
 # Global instance
-_biological_architecture_monitor = None
+_aios_architecture_monitor = None
 
-async def get_biological_architecture_monitor() -> BiologicalArchitectureMonitor:
-    """Get the singleton biological architecture monitor."""
-    global _biological_architecture_monitor
+async def get_aios_architecture_monitor() -> AIOSArchitectureMonitor:
+    """Get the singleton AIOS architecture monitor."""
+    global _aios_architecture_monitor
     
-    if _biological_architecture_monitor is None:
-        _biological_architecture_monitor = BiologicalArchitectureMonitor()
-        await _biological_architecture_monitor.initialize()
+    if _aios_architecture_monitor is None:
+        _aios_architecture_monitor = AIOSArchitectureMonitor()
+        await _aios_architecture_monitor.initialize()
     
-    return _biological_architecture_monitor
+    return _aios_architecture_monitor
 
 
 async def main():
-    """Test the biological architecture monitor."""
-    print("🔬 AIOS Biological Architecture Monitor")
+    """Test the AIOS architecture monitor."""
+    print(" AIOS Architecture Monitor")
     print("=" * 50)
     
     # Initialize monitor
-    monitor = await get_biological_architecture_monitor()
+    monitor = await get_aios_architecture_monitor()
     
     # Generate status report
-    print("📊 Generating comprehensive status report...\n")
+    print(" Generating comprehensive status report...\n")
     report = await monitor.generate_status_report()
     print(report)
 

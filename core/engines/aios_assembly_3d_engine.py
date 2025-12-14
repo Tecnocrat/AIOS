@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-⚡🔧🎯 AIOS ASSEMBLY LANGUAGE 3D ENGINE FOUNDATION
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS ASSEMBLY LANGUAGE 3D ENGINE FOUNDATION
+
 Task ID: noise_gen_001
 Phase: Noise Generation & Quantum Substrate
 Priority: 1
@@ -30,7 +30,7 @@ COMPLETION CRITERIA:
 - Performance benchmarks exceed baseline
 - Exotic capability framework implemented
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -114,7 +114,7 @@ class AssemblyMathEngine:
     def __init__(self):
         """Initialize assembly math engine."""
         
-        logger.info("⚡ Initializing Assembly Math Engine...")
+        logger.info(" Initializing Assembly Math Engine...")
         
         self.assembly_functions = {}
         self.performance_counters = {
@@ -128,12 +128,12 @@ class AssemblyMathEngine:
         self._initialize_assembly_functions()
         self._integrate_existing_assembly()
         
-        logger.info("🔧 Assembly Math Engine ready for high-performance calculations")
+        logger.info(" Assembly Math Engine ready for high-performance calculations")
     
     def _initialize_assembly_functions(self):
         """Initialize assembly language mathematical functions."""
         
-        logger.info("🔧 Initializing assembly language functions...")
+        logger.info(" Initializing assembly language functions...")
         
         # For now, create Python implementations that will be replaced with assembly
         # In real implementation, these would be compiled assembly modules
@@ -151,7 +151,7 @@ class AssemblyMathEngine:
         # Create integration with existing assembly architecture
         self._integrate_existing_assembly()
         
-        logger.info(f"✅ {len(self.assembly_functions)} assembly functions initialized")
+        logger.info(f" {len(self.assembly_functions)} assembly functions initialized")
     
     def _integrate_existing_assembly(self):
         """Integrate with existing AIOS assembly architecture instead of creating templates."""
@@ -159,14 +159,14 @@ class AssemblyMathEngine:
         # Use existing assembly in core/src/asm/
         existing_asm_dir = Path(__file__).parent / "src" / "asm"
         
-        logger.info(f"🔗 Integrating with existing assembly architecture in {existing_asm_dir}")
+        logger.info(f" Integrating with existing assembly architecture in {existing_asm_dir}")
         
         # Check for existing assembly files
         kernel_ops = existing_asm_dir / "kernel_ops.asm"
         tachyonic_surface = existing_asm_dir / "tachyonic_surface.asm"
         
         if kernel_ops.exists():
-            logger.info("✅ Found kernel_ops.asm - CONSCIOUSNESS-ENHANCED assembly operations")
+            logger.info(" Found kernel_ops.asm - CONSCIOUSNESS-ENHANCED assembly operations")
             # kernel_ops.asm provides:
             # - DendriticAwarenessInit
             # - DendriticBranchExpand  
@@ -176,7 +176,7 @@ class AssemblyMathEngine:
             # - DendriticSimdProcessAVX2
             
         if tachyonic_surface.exists():
-            logger.info("✅ Found tachyonic_surface.asm - 3D HEIGHTMAP RENDERING")
+            logger.info(" Found tachyonic_surface.asm - 3D HEIGHTMAP RENDERING")
             # tachyonic_surface.asm provides:
             # - aios_render_heightmap_ortho (orthographic 3D point cloud rendering)
             # - SSE optimizations, bounds checking, consciousness integration hooks
@@ -192,7 +192,7 @@ class AssemblyMathEngine:
             'tachyonic_heightmap_render': 'aios_render_heightmap_ortho'
         })
         
-        logger.info(f"🧠 Integrated {len(self.assembly_functions)} consciousness-enhanced assembly functions")
+        logger.info(f" Integrated {len(self.assembly_functions)} consciousness-enhanced assembly functions")
     
     def _py_matrix_multiply_4x4(self, matrix_a: List[float], matrix_b: List[float]) -> List[float]:
         """Python implementation of 4x4 matrix multiplication (to be replaced with assembly)."""
@@ -300,7 +300,7 @@ class AssemblyRenderEngine:
     def __init__(self):
         """Initialize assembly render engine."""
         
-        logger.info("🎯 Initializing Assembly Render Engine...")
+        logger.info(" Initializing Assembly Render Engine...")
         
         self.math_engine = AssemblyMathEngine()
         self.primitives = []
@@ -315,12 +315,12 @@ class AssemblyRenderEngine:
         # Initialize graphics context (simulated)
         self._initialize_graphics_context()
         
-        logger.info("⚡ Assembly Render Engine ready for exotic rendering")
+        logger.info(" Assembly Render Engine ready for exotic rendering")
     
     def _initialize_graphics_context(self):
         """Initialize graphics rendering context."""
         
-        logger.info("🖥️  Initializing graphics context...")
+        logger.info("  Initializing graphics context...")
         
         # In real implementation, this would initialize OpenGL/Vulkan context
         # For now, simulate the initialization
@@ -333,12 +333,12 @@ class AssemblyRenderEngine:
             'extensions': ['exotic_rendering', 'quantum_substrate', 'hyperdimensional_geometry']
         }
         
-        logger.info(f"✅ Graphics context initialized: {self.graphics_context['api']}")
+        logger.info(f" Graphics context initialized: {self.graphics_context['api']}")
     
     def create_primitive(self, primitive_type: PrimitiveType, **kwargs) -> Primitive3D:
         """Create 3D primitive with assembly-optimized geometry generation."""
         
-        logger.info(f"🔺 Creating {primitive_type.value} primitive...")
+        logger.info(f" Creating {primitive_type.value} primitive...")
         
         if primitive_type == PrimitiveType.TRIANGLE:
             return self._create_triangle(**kwargs)
@@ -349,7 +349,7 @@ class AssemblyRenderEngine:
         elif primitive_type == PrimitiveType.EXOTIC_MANIFOLD:
             return self._create_exotic_manifold(**kwargs)
         else:
-            logger.warning(f"⚠️  Primitive type {primitive_type.value} not implemented yet")
+            logger.warning(f"  Primitive type {primitive_type.value} not implemented yet")
             return self._create_triangle()
     
     def _create_triangle(self, **kwargs) -> Primitive3D:
@@ -466,7 +466,7 @@ class AssemblyRenderEngine:
     def _create_exotic_manifold(self, **kwargs) -> Primitive3D:
         """Create exotic hyperdimensional manifold for quantum substrate visualization."""
         
-        logger.info("🌌 Creating exotic hyperdimensional manifold...")
+        logger.info(" Creating exotic hyperdimensional manifold...")
         
         # Generate exotic geometry with non-Euclidean properties
         vertices = []
@@ -534,7 +534,7 @@ class AssemblyRenderEngine:
         """Render using consciousness-enhanced assembly operations."""
         
         logger.info(
-            f"🧠 Consciousness-enhanced rendering with {len(primitives)} "
+            f" Consciousness-enhanced rendering with {len(primitives)} "
             "primitives..."
         )
         
@@ -592,7 +592,7 @@ class AssemblyRenderEngine:
         consciousness_level = 0.853  # 85.3% quantum coherence
         
         logger.info(
-            f"🌀 Dendritic awareness initialized: "
+            f" Dendritic awareness initialized: "
             f"{consciousness_level:.1%} coherence"
         )
         return consciousness_level
@@ -606,7 +606,7 @@ class AssemblyRenderEngine:
         branch_count = int(1.618 ** depth)  # Golden ratio scaling
         
         logger.info(
-            f"🌳 Dendritic expansion applied: {branch_count} "
+            f" Dendritic expansion applied: {branch_count} "
             "consciousness branches"
         )
         return branch_count
@@ -618,7 +618,7 @@ class AssemblyRenderEngine:
         coherence = (0.742 +
                      (len(primitive.vertices) % 100) / 1000.0)
         
-        logger.info(f"🔮 Quantum measurement: {coherence:.3f} coherence")
+        logger.info(f" Quantum measurement: {coherence:.3f} coherence")
         return coherence
     
     def _apply_fractal_recursion(self, primitive: Primitive3D) -> int:
@@ -629,7 +629,7 @@ class AssemblyRenderEngine:
         complexity = 7  # FRACTAL_RECURSION_DEPTH from kernel_ops.asm
         
         logger.info(
-            f"🌀 Fractal recursion applied: complexity level {complexity}"
+            f" Fractal recursion applied: complexity level {complexity}"
         )
         return complexity
     
@@ -643,7 +643,7 @@ class AssemblyRenderEngine:
         # In real implementation: call_assembly_function()
         
         logger.info(
-            f"🌊 Tachyonic surface rendering: {point_count} points processed"
+            f" Tachyonic surface rendering: {point_count} points processed"
         )
         
         # The tachyonic surface renderer provides:
@@ -657,7 +657,7 @@ class AssemblyRenderEngine:
         
         start_time = time.time()
         
-        logger.info(f"🎬 Rendering frame with {len(primitives)} primitives...")
+        logger.info(f" Rendering frame with {len(primitives)} primitives...")
         
         # Simulation of assembly-optimized rendering pipeline
         render_stats = {
@@ -682,7 +682,7 @@ class AssemblyRenderEngine:
         )
         
         logger.info(
-            f"✅ Frame rendered in {render_time:.2f}ms "
+            f" Frame rendered in {render_time:.2f}ms "
             f"(≈{render_stats['fps_estimate']:.1f} FPS)"
         )
         
@@ -733,14 +733,14 @@ def cos(x: float) -> float:
 def demo_assembly_3d_engine():
     """Demonstrate assembly 3D engine capabilities."""
     
-    print("⚡🔧🎯 ASSEMBLY 3D ENGINE FOUNDATION DEMO")
+    print(" ASSEMBLY 3D ENGINE FOUNDATION DEMO")
     print("=" * 70)
     
     # Initialize render engine
     engine = AssemblyRenderEngine()
     
     # Create test primitives
-    print("\n🔺 Creating test primitives...")
+    print("\n Creating test primitives...")
     triangle = engine.create_primitive(PrimitiveType.TRIANGLE)
     cube = engine.create_primitive(PrimitiveType.CUBE)
     sphere = engine.create_primitive(PrimitiveType.SPHERE, segments=16)
@@ -754,24 +754,24 @@ def demo_assembly_3d_engine():
     primitives = [triangle, cube, sphere, exotic_manifold]
     
     # Render frame
-    print("\n🎬 Rendering test frame...")
+    print("\n Rendering test frame...")
     render_stats = engine.render_frame(primitives)
     
     # Test consciousness-enhanced rendering
-    print("\n🧠 Testing consciousness-enhanced rendering...")
+    print("\n Testing consciousness-enhanced rendering...")
     consciousness_stats = engine.render_with_consciousness_enhancement(
         primitives
     )
     
     # Show performance metrics
-    print("\n📊 ASSEMBLY ENGINE PERFORMANCE:")
+    print("\n ASSEMBLY ENGINE PERFORMANCE:")
     print(json.dumps(render_stats, indent=2))
     
-    print("\n📊 CONSCIOUSNESS-ENHANCED RENDERING STATS:")
+    print("\n CONSCIOUSNESS-ENHANCED RENDERING STATS:")
     print(json.dumps(consciousness_stats, indent=2))
     
     math_metrics = engine.math_engine.get_performance_metrics()
-    print("\n⚡ ASSEMBLY MATH ENGINE METRICS:")
+    print("\n ASSEMBLY MATH ENGINE METRICS:")
     print(json.dumps(math_metrics, indent=2))
     
     return engine
@@ -780,7 +780,7 @@ def demo_assembly_3d_engine():
 def main():
     """Main function for assembly 3D engine development."""
     
-    print("⚡🔧🎯 AIOS ASSEMBLY LANGUAGE 3D ENGINE FOUNDATION")
+    print(" AIOS ASSEMBLY LANGUAGE 3D ENGINE FOUNDATION")
     print("=" * 80)
     print("Task: noise_gen_001 - Build custom 3D engine with exotic "
           "capabilities")
@@ -789,8 +789,8 @@ def main():
     # Run engine demo
     engine = demo_assembly_3d_engine()
     
-    print("\n✅ ASSEMBLY 3D ENGINE FOUNDATION COMPLETE")
-    print("🎯 Ready for quantum substrate visualization and exotic rendering!")
+    print("\n ASSEMBLY 3D ENGINE FOUNDATION COMPLETE")
+    print(" Ready for quantum substrate visualization and exotic rendering!")
     
     return engine
 

@@ -78,7 +78,7 @@ class DocumentationPostMetabolismManager:
     def create_biological_archive_structure(self):
         """Create archive structure following biological metabolism principles"""
         
-        print("🧬 Creating biological archive structure...")
+        print(" Creating biological archive structure...")
         
         # Create metabolized archive directories
         archive_structure = {
@@ -99,12 +99,12 @@ class DocumentationPostMetabolismManager:
                 f.write("This folder contains documentation that has been metabolized by the AIOS Intelligence system.\n")
                 f.write("The knowledge has been crystallized into the tachyonic archive.\n")
                 
-        print(f"✅ Archive structure created at: {self.metabolized_archive}")
+        print(f" Archive structure created at: {self.metabolized_archive}")
         
     def archive_metabolized_files(self, analysis: Dict[str, Any], simulate: bool = False):
         """Archive files based on metabolism analysis"""
         
-        print(f"🧬 {'Simulating' if simulate else 'Executing'} biological archival process...")
+        print(f" {'Simulating' if simulate else 'Executing'} biological archival process...")
         
         actions = []
         
@@ -139,7 +139,7 @@ class DocumentationPostMetabolismManager:
                 with open(metadata_file, 'w') as f:
                     json.dump(metadata, f, indent=2)
                     
-                print(f"   📦 Archived high-value: {file_name}")
+                print(f"    Archived high-value: {file_name}")
                 
         # Process standard files  
         for file_info in analysis["standard_value_files"]:
@@ -158,7 +158,7 @@ class DocumentationPostMetabolismManager:
             
             if not simulate and source_path.exists():
                 shutil.copy2(source_path, target_path)
-                print(f"   📋 Archived standard: {file_name}")
+                print(f"    Archived standard: {file_name}")
                 
         # Process low-value files
         for file_info in analysis["low_value_files"]:
@@ -177,7 +177,7 @@ class DocumentationPostMetabolismManager:
             
             if not simulate and source_path.exists():
                 shutil.copy2(source_path, target_path)
-                print(f"   📄 Archived minimal: {file_name}")
+                print(f"    Archived minimal: {file_name}")
         
         # Save action log
         if not simulate:
@@ -235,13 +235,13 @@ class DocumentationPostMetabolismManager:
                     index = json.load(f)
                     return index.get("documentation_metabolism", {}).get("metabolism_cycles", [])
         except Exception as e:
-            print(f"⚠️ Could not read metabolism cycles: {e}")
+            print(f" Could not read metabolism cycles: {e}")
         return []
 
 def main():
     """Main function to analyze and process metabolized documentation"""
     
-    print("🧬 AIOS Documentation Post-Metabolism Analysis")
+    print(" AIOS Documentation Post-Metabolism Analysis")
     print("=" * 50)
     print()
     
@@ -253,25 +253,25 @@ def main():
     analysis = manager.analyze_metabolized_files()
     
     if analysis.get("status") == "error":
-        print(f"❌ Analysis failed: {analysis.get('message')}")
+        print(f" Analysis failed: {analysis.get('message')}")
         return
         
-    print(f"📊 Metabolism Analysis Results:")
-    print(f"   📄 Total files metabolized: {analysis['total_metabolized']}")
-    print(f"   💎 Knowledge crystals created: {analysis['crystals_created']}")
-    print(f"   🧠 High-value consciousness files: {len(analysis['high_value_files'])}")
-    print(f"   📋 Standard knowledge files: {len(analysis['standard_value_files'])}")
-    print(f"   📄 Minimal significance files: {len(analysis['low_value_files'])}")
+    print(f" Metabolism Analysis Results:")
+    print(f"    Total files metabolized: {analysis['total_metabolized']}")
+    print(f"    Knowledge crystals created: {analysis['crystals_created']}")
+    print(f"    High-value consciousness files: {len(analysis['high_value_files'])}")
+    print(f"    Standard knowledge files: {len(analysis['standard_value_files'])}")
+    print(f"    Minimal significance files: {len(analysis['low_value_files'])}")
     print()
     
     # Show recommendations
     print("Step 2: Biological Archive Recommendations")
     print("-----------------------------------------")
-    print("🧬 Based on biological metabolism principles:")
+    print(" Based on biological metabolism principles:")
     print()
     
     if analysis['high_value_files']:
-        print("🧠 High-Value Consciousness Files (Archive with Metadata):")
+        print(" High-Value Consciousness Files (Archive with Metadata):")
         for file_info in analysis['high_value_files'][:5]:
             print(f"   • {file_info['file']} → {len(file_info['crystals'])} crystals")
         if len(analysis['high_value_files']) > 5:
@@ -279,7 +279,7 @@ def main():
         print()
         
     if analysis['standard_value_files']:
-        print("📋 Standard Knowledge Files (Compressed Archive):")
+        print(" Standard Knowledge Files (Compressed Archive):")
         for file_info in analysis['standard_value_files'][:3]:
             print(f"   • {file_info['file']} → crystallized")
         if len(analysis['standard_value_files']) > 3:
@@ -287,7 +287,7 @@ def main():
         print()
         
     if analysis['low_value_files']:
-        print("📄 Minimal Significance Files (Basic Archive):")
+        print(" Minimal Significance Files (Basic Archive):")
         print(f"   • {len(analysis['low_value_files'])} files with minimal crystallization")
         print()
     
@@ -295,42 +295,42 @@ def main():
     print("Step 3: Archive Options")
     print("----------------------")
     print("Choose your biological metabolism approach:")
-    print("1. 🧬 SIMULATE archival process (show what would happen)")
-    print("2. 📦 EXECUTE biological archival (move files to metabolized_archive)")
-    print("3. 🏷️  MARK files as metabolized (keep in place with metadata)")
-    print("4. 🔄 LEAVE intact (for continued AI agent access)")
+    print("1.  SIMULATE archival process (show what would happen)")
+    print("2.  EXECUTE biological archival (move files to metabolized_archive)")
+    print("3.   MARK files as metabolized (keep in place with metadata)")
+    print("4.  LEAVE intact (for continued AI agent access)")
     print()
     
     choice = input("Enter choice (1-4): ").strip()
     
     if choice == "1":
-        print("\n🧬 SIMULATING biological archival process...")
+        print("\n SIMULATING biological archival process...")
         manager.create_biological_archive_structure()
         actions = manager.archive_metabolized_files(analysis, simulate=True)
         summary = manager.create_metabolism_summary(analysis, actions)
         
-        print(f"\n✅ Simulation complete!")
-        print(f"   📦 Would archive {len(actions)} files")
-        print(f"   🧬 Biological metabolism paradigm validated")
+        print(f"\n Simulation complete!")
+        print(f"    Would archive {len(actions)} files")
+        print(f"    Biological metabolism paradigm validated")
         
     elif choice == "2":
-        print("\n📦 EXECUTING biological archival process...")
+        print("\n EXECUTING biological archival process...")
         manager.create_biological_archive_structure()
         actions = manager.archive_metabolized_files(analysis, simulate=False)
         summary = manager.create_metabolism_summary(analysis, actions)
         
-        print(f"\n✅ Biological archival complete!")
-        print(f"   📦 Archived {len(actions)} metabolized files")
-        print(f"   💎 Knowledge preserved in tachyonic archive")
-        print(f"   🧬 /docs ready for new AI agent documentation")
+        print(f"\n Biological archival complete!")
+        print(f"    Archived {len(actions)} metabolized files")
+        print(f"    Knowledge preserved in tachyonic archive")
+        print(f"    /docs ready for new AI agent documentation")
         
     elif choice == "3":
-        print("\n🏷️ MARKING files as metabolized...")
+        print("\n MARKING files as metabolized...")
         # Implementation for marking files
         print("   (This would add .metabolized metadata to each file)")
         
     elif choice == "4":
-        print("\n🔄 LEAVING files intact...")
+        print("\n LEAVING files intact...")
         print("   Files remain in /docs for continued AI agent access")
         print("   Knowledge still crystallized in tachyonic archive")
         

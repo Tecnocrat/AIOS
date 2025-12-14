@@ -1,0 +1,258 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:27:19.865187",
+  "folder_info": {
+    "name": "consciousness_integration",
+    "absolute_path": "C:\\dev\\AIOS\\consciousness_integration",
+    "relative_path": "consciousness_integration",
+    "parent_path": "",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "consciousness_integration"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "BridgeTest",
+      "ai",
+      "aios_env",
+      "chatgpt_integration",
+      "config",
+      "core",
+      "docs",
+      "evolution_lab",
+      "gemini_cli_bridge",
+      "governance",
+      "interface",
+      "languages",
+      "locks",
+      "logs",
+      "orchestrator",
+      "runtime",
+      "runtime_intelligence",
+      "safety_logs",
+      "scripts",
+      "tachyonic",
+      "temp_empty",
+      "test_results",
+      "tools",
+      "visual_interface",
+      "vscode-extension"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 77387,
+      "file_count": 8,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_consciousness_integration_demo.py",
+          "size": 22796,
+          "modified": "2025-09-15T22:24:34.473659",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_consciousness_test.py",
+          "size": 11968,
+          "modified": "2025-09-15T22:24:35.224274",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_final_consciousness_summary.py",
+          "size": 7014,
+          "modified": "2025-09-15T22:24:35.658275",
+          "category": "consciousness"
+        },
+        {
+          "name": "consciousness_code_generation_demo.py",
+          "size": 28781,
+          "modified": "2025-09-15T22:24:37.080773",
+          "category": "consciousness"
+        }
+      ],
+      ".json": [
+        {
+          "name": "aios_consciousness_integration_final_summary_20250913_235928.json",
+          "size": 3280,
+          "modified": "2025-09-15T22:24:34.748188",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_consciousness_test_report_20250913_235527.json",
+          "size": 669,
+          "modified": "2025-09-15T22:24:35.315372",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_analysis_history.json",
+          "size": 2288,
+          "modified": "2025-09-15T22:24:35.789067",
+          "category": "documentation"
+        }
+      ],
+      ".cs": [
+        {
+          "name": "generated_consciousness_code_sample.cs",
+          "size": 591,
+          "modified": "2025-09-15T22:24:37.450157",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_consciousness_integration_demo.py",
+        "size": 22796,
+        "modified": "2025-09-15T22:24:34.473659",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_consciousness_integration_final_summary_20250913_235928.json",
+        "size": 3280,
+        "modified": "2025-09-15T22:24:34.748188",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_consciousness_test.py",
+        "size": 11968,
+        "modified": "2025-09-15T22:24:35.224274",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_consciousness_test_report_20250913_235527.json",
+        "size": 669,
+        "modified": "2025-09-15T22:24:35.315372",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_final_consciousness_summary.py",
+        "size": 7014,
+        "modified": "2025-09-15T22:24:35.658275",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_analysis_history.json",
+        "size": 2288,
+        "modified": "2025-09-15T22:24:35.789067",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_code_generation_demo.py",
+        "size": 28781,
+        "modified": "2025-09-15T22:24:37.080773",
+        "category": "consciousness"
+      },
+      {
+        "name": "generated_consciousness_code_sample.cs",
+        "size": 591,
+        "modified": "2025-09-15T22:24:37.450157",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "generated_consciousness_code_sample.cs",
+        "size": 591,
+        "modified": "2025-09-15T22:24:37.450157",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_code_generation_demo.py",
+        "size": 28781,
+        "modified": "2025-09-15T22:24:37.080773",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_analysis_history.json",
+        "size": 2288,
+        "modified": "2025-09-15T22:24:35.789067",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_final_consciousness_summary.py",
+        "size": 7014,
+        "modified": "2025-09-15T22:24:35.658275",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_consciousness_test_report_20250913_235527.json",
+        "size": 669,
+        "modified": "2025-09-15T22:24:35.315372",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_consciousness_test.py",
+        "size": 11968,
+        "modified": "2025-09-15T22:24:35.224274",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_consciousness_integration_final_summary_20250913_235928.json",
+        "size": 3280,
+        "modified": "2025-09-15T22:24:34.748188",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_consciousness_integration_demo.py",
+        "size": 22796,
+        "modified": "2025-09-15T22:24:34.473659",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".py",
+        ".json",
+        ".cs"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 5,
+      "consciousness_files": 8,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "consciousness_integration",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\consciousness_integration' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\consciousness_integration' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\consciousness_integration' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": []
+  }
+}

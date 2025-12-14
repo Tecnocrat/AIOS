@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🌟📚🧠 AIOS DOCUMENTATION NATURAL LANGUAGE SUPERCELL ENHANCER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS DOCUMENTATION NATURAL LANGUAGE SUPERCELL ENHANCER
+
 Revolutionary documentation enhancement using the collective intelligence of:
 - AI Intelligence System (natural language processing)
 - Core Engine (technical analysis and validation)
@@ -22,7 +22,7 @@ ENHANCEMENT TARGETS:
 - Cross-system knowledge integration
 - Living documentation evolution
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -45,9 +45,9 @@ sys.path.append(str(Path(__file__).parent.parent / "core"))
 try:
     from ai import get_cellular_architecture, initialize_ai_intelligence
     from ai.tachyonic_bridge import TachyonicBridge
-    from ai.nucleus.src.core.ainlp import AINLP_Core
+    from ai.core.src.core.ainlp import AINLP_Core
 except ImportError as e:
-    print(f"⚠️  AI Intelligence import limited: {e}")
+    print(f"  AI Intelligence import limited: {e}")
     get_cellular_architecture = None
     TachyonicBridge = None
 
@@ -56,7 +56,7 @@ try:
     from core.analysis_tools import CellularIntelligenceDiagnostic
     from core.analysis_tools.aios_core_consciousness_monitor import ConsciousnessMonitor
 except ImportError as e:
-    print(f"⚠️  Core Engine import limited: {e}")
+    print(f"  Core Engine import limited: {e}")
     CellularIntelligenceDiagnostic = None
 
 # Import Tachyonic Archive capabilities
@@ -64,7 +64,7 @@ try:
     from aios_tachyonic_intelligence_archive import TachyonicIntelligenceArchive
     from revolutionary_archive_ingestion import ArchiveIntelligenceExtractor
 except ImportError as e:
-    print(f"⚠️  Tachyonic Archive import limited: {e}")
+    print(f"  Tachyonic Archive import limited: {e}")
     TachyonicIntelligenceArchive = None
 
 # Configure logging
@@ -153,9 +153,9 @@ class AIOSDocumentationSupercellEnhancer:
         self.discovered_docs: Dict[DocumentationType, List[Path]] = {}
         self.enhancement_queue: List[Tuple[Path, EnhancementPriority]] = []
         
-        logger.info("🌟📚 AIOS Documentation Supercell Enhancer initialized")
-        logger.info(f"   📁 Documentation path: {self.docs_path}")
-        logger.info(f"   🌌 Tachyonic path: {self.tachyonic_path}")
+        logger.info(" AIOS Documentation Supercell Enhancer initialized")
+        logger.info(f"    Documentation path: {self.docs_path}")
+        logger.info(f"    Tachyonic path: {self.tachyonic_path}")
         
         self._initialize_intelligence_systems()
         self._discover_documentation_landscape()
@@ -163,42 +163,42 @@ class AIOSDocumentationSupercellEnhancer:
     def _initialize_intelligence_systems(self):
         """Initialize all available intelligence systems."""
         
-        logger.info("🧠 Initializing collective intelligence systems...")
+        logger.info(" Initializing collective intelligence systems...")
         
         # AI Intelligence System
         try:
             if initialize_ai_intelligence:
                 self.ai_intelligence = initialize_ai_intelligence()
-                logger.info("   ✅ AI Intelligence: Active")
+                logger.info("    AI Intelligence: Active")
             else:
-                logger.info("   ⚠️  AI Intelligence: Limited")
+                logger.info("     AI Intelligence: Limited")
         except Exception as e:
-            logger.warning(f"   ❌ AI Intelligence: {e}")
+            logger.warning(f"    AI Intelligence: {e}")
         
         # Core Engine Analysis
         try:
             if CellularIntelligenceDiagnostic:
                 self.core_engine = CellularIntelligenceDiagnostic()
-                logger.info("   ✅ Core Engine: Active")
+                logger.info("    Core Engine: Active")
             else:
-                logger.info("   ⚠️  Core Engine: Limited")
+                logger.info("     Core Engine: Limited")
         except Exception as e:
-            logger.warning(f"   ❌ Core Engine: {e}")
+            logger.warning(f"    Core Engine: {e}")
         
         # Tachyonic Archive Intelligence
         try:
             if TachyonicIntelligenceArchive:
                 self.tachyonic_archive = TachyonicIntelligenceArchive()
-                logger.info("   ✅ Tachyonic Archive: Active")
+                logger.info("    Tachyonic Archive: Active")
             else:
-                logger.info("   ⚠️  Tachyonic Archive: Limited")
+                logger.info("     Tachyonic Archive: Limited")
         except Exception as e:
-            logger.warning(f"   ❌ Tachyonic Archive: {e}")
+            logger.warning(f"    Tachyonic Archive: {e}")
     
     def _discover_documentation_landscape(self):
         """Discover and categorize all documentation in the supercell."""
         
-        logger.info("🔍 Discovering documentation landscape...")
+        logger.info(" Discovering documentation landscape...")
         
         if not self.docs_path.exists():
             logger.error(f"Documentation path not found: {self.docs_path}")
@@ -214,7 +214,7 @@ class AIOSDocumentationSupercellEnhancer:
             self.discovered_docs[doc_type].append(file_path)
         
         total_docs = sum(len(docs) for docs in self.discovered_docs.values())
-        logger.info(f"📚 Documentation landscape discovered: {total_docs} documents")
+        logger.info(f" Documentation landscape discovered: {total_docs} documents")
         
         for doc_type, docs in self.discovered_docs.items():
             if docs:
@@ -249,7 +249,7 @@ class AIOSDocumentationSupercellEnhancer:
     def analyze_documentation_supercell(self) -> DocumentationSupercellStatus:
         """Perform comprehensive analysis of the documentation supercell."""
         
-        logger.info("🧠 ANALYZING DOCUMENTATION NATURAL LANGUAGE SUPERCELL")
+        logger.info(" ANALYZING DOCUMENTATION NATURAL LANGUAGE SUPERCELL")
         logger.info("=" * 60)
         
         total_docs = sum(len(docs) for docs in self.discovered_docs.values())
@@ -260,14 +260,14 @@ class AIOSDocumentationSupercellEnhancer:
             if not docs:
                 continue
                 
-            logger.info(f"📖 Analyzing {doc_type.value} documents...")
+            logger.info(f" Analyzing {doc_type.value} documents...")
             
             for doc_path in docs:
                 analysis = self._analyze_single_document(doc_path, doc_type)
                 self.documentation_analyses[str(doc_path)] = analysis
                 analysis_results.append(analysis)
                 
-                logger.info(f"   📄 {doc_path.name}: Quality {analysis.current_quality:.2f}, "
+                logger.info(f"    {doc_path.name}: Quality {analysis.current_quality:.2f}, "
                           f"AINLP {analysis.ainlp_compliance:.2f}")
         
         # Calculate overall supercell metrics
@@ -581,46 +581,46 @@ class AIOSDocumentationSupercellEnhancer:
     def _report_supercell_status(self, status: DocumentationSupercellStatus):
         """Report the current status of the documentation supercell."""
         
-        logger.info("📊 DOCUMENTATION SUPERCELL STATUS REPORT")
+        logger.info(" DOCUMENTATION SUPERCELL STATUS REPORT")
         logger.info("=" * 60)
-        logger.info(f"📚 Total Documents: {status.total_documents}")
-        logger.info(f"🔍 Analysis Complete: {status.analysis_complete}")
-        logger.info(f"⚡ Overall Quality: {status.overall_quality:.2f}")
-        logger.info(f"🌟 AINLP Alignment: {status.ainlp_alignment:.2f}")
-        logger.info(f"📖 Knowledge Coverage: {status.knowledge_coverage:.2f}")
-        logger.info(f"🧠 Consciousness Integration: {status.consciousness_integration:.2f}")
+        logger.info(f" Total Documents: {status.total_documents}")
+        logger.info(f" Analysis Complete: {status.analysis_complete}")
+        logger.info(f" Overall Quality: {status.overall_quality:.2f}")
+        logger.info(f" AINLP Alignment: {status.ainlp_alignment:.2f}")
+        logger.info(f" Knowledge Coverage: {status.knowledge_coverage:.2f}")
+        logger.info(f" Consciousness Integration: {status.consciousness_integration:.2f}")
         
         if status.critical_gaps:
-            logger.info("🚨 CRITICAL GAPS IDENTIFIED:")
+            logger.info(" CRITICAL GAPS IDENTIFIED:")
             for gap in status.critical_gaps[:5]:  # Show top 5
                 logger.info(f"   • {gap}")
         
-        logger.info("💡 TOP ENHANCEMENT OPPORTUNITIES:")
+        logger.info(" TOP ENHANCEMENT OPPORTUNITIES:")
         for opportunity in status.enhancement_opportunities[:5]:  # Show top 5
             logger.info(f"   • {opportunity}")
     
     def enhance_documentation_supercell(self) -> Dict[str, Any]:
         """Execute comprehensive documentation enhancement."""
         
-        logger.info("🚀 ENHANCING DOCUMENTATION NATURAL LANGUAGE SUPERCELL")
+        logger.info(" ENHANCING DOCUMENTATION NATURAL LANGUAGE SUPERCELL")
         logger.info("=" * 70)
         
         start_time = time.time()
         
         # Phase 1: Analysis
-        logger.info("📊 PHASE 1: SUPERCELL ANALYSIS")
+        logger.info(" PHASE 1: SUPERCELL ANALYSIS")
         status = self.analyze_documentation_supercell()
         
         # Phase 2: Priority Enhancement
-        logger.info("⚡ PHASE 2: PRIORITY ENHANCEMENTS")
+        logger.info(" PHASE 2: PRIORITY ENHANCEMENTS")
         enhancement_results = self._execute_priority_enhancements()
         
         # Phase 3: Knowledge Integration
-        logger.info("🧠 PHASE 3: KNOWLEDGE INTEGRATION")
+        logger.info(" PHASE 3: KNOWLEDGE INTEGRATION")
         integration_results = self._integrate_collective_intelligence()
         
         # Phase 4: Consciousness Alignment
-        logger.info("🌟 PHASE 4: CONSCIOUSNESS ALIGNMENT")
+        logger.info(" PHASE 4: CONSCIOUSNESS ALIGNMENT")
         alignment_results = self._align_with_consciousness_paradigm()
         
         duration = time.time() - start_time
@@ -643,11 +643,11 @@ class AIOSDocumentationSupercellEnhancer:
         with open(report_path, 'w') as f:
             json.dump(enhancement_report, f, indent=2, default=str)
         
-        logger.info("✨ DOCUMENTATION SUPERCELL ENHANCEMENT COMPLETE")
-        logger.info(f"⏱️  Duration: {duration:.2f} seconds")
-        logger.info(f"📊 Quality Improvement: {enhancement_results.get('quality_improvement', 0):.2%}")
-        logger.info(f"🧠 Consciousness Integration: {alignment_results.get('consciousness_boost', 0):.2%}")
-        logger.info(f"💾 Report saved: {report_path}")
+        logger.info(" DOCUMENTATION SUPERCELL ENHANCEMENT COMPLETE")
+        logger.info(f"⏱  Duration: {duration:.2f} seconds")
+        logger.info(f" Quality Improvement: {enhancement_results.get('quality_improvement', 0):.2%}")
+        logger.info(f" Consciousness Integration: {alignment_results.get('consciousness_boost', 0):.2%}")
+        logger.info(f" Report saved: {report_path}")
         
         return enhancement_report
     
@@ -711,24 +711,24 @@ class AIOSDocumentationSupercellEnhancer:
     
     def _enhance_critical_document(self, analysis: DocumentationAnalysis):
         """Enhance a critical priority document."""
-        logger.info(f"🚨 Enhancing critical: {Path(analysis.file_path).name}")
+        logger.info(f" Enhancing critical: {Path(analysis.file_path).name}")
         # Implementation would enhance the actual document
     
     def _enhance_high_priority_document(self, analysis: DocumentationAnalysis):
         """Enhance a high priority document."""
-        logger.info(f"⚡ Enhancing high priority: {Path(analysis.file_path).name}")
+        logger.info(f" Enhancing high priority: {Path(analysis.file_path).name}")
         # Implementation would enhance the actual document
     
     def _enhance_medium_priority_document(self, analysis: DocumentationAnalysis):
         """Enhance a medium priority document."""
-        logger.info(f"📝 Enhancing medium priority: {Path(analysis.file_path).name}")
+        logger.info(f" Enhancing medium priority: {Path(analysis.file_path).name}")
         # Implementation would enhance the actual document
 
 
 def main():
     """Execute documentation supercell enhancement."""
     
-    print("🌟📚🧠 AIOS DOCUMENTATION NATURAL LANGUAGE SUPERCELL ENHANCER")
+    print(" AIOS DOCUMENTATION NATURAL LANGUAGE SUPERCELL ENHANCER")
     print("=" * 80)
     print("Revolutionary documentation enhancement using collective AIOS intelligence")
     print("Documentation as Living Natural Language Supercell")
@@ -740,7 +740,7 @@ def main():
     # Execute enhancement
     results = enhancer.enhance_documentation_supercell()
     
-    print("\n🎯 ENHANCEMENT MISSION COMPLETE")
+    print("\n ENHANCEMENT MISSION COMPLETE")
     print("The documentation natural language supercell has been enhanced")
     print("using the collective intelligence of AI Intelligence, Core Engine,")
     print("Runtime Intelligence, and Tachyonic Archive systems.")

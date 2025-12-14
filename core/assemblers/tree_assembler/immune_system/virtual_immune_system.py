@@ -1,5 +1,5 @@
 """
-🛡️ VIRTUAL IMMUNE SYSTEM
+ VIRTUAL IMMUNE SYSTEM
 Advanced cellular coherence protection and threat detection
 """
 
@@ -41,18 +41,18 @@ class VirtualImmuneSystem:
             "threat_level": "minimal"
         }
         
-        logger.info("🛡️ Cellular coherence monitoring active")
+        logger.info(" Cellular coherence monitoring active")
         
         return coherence_data
     
     def activate_defense_protocol(self, threat_type: str):
         """Activate appropriate defense protocol"""
-        logger.info(f"🛡️ Defense protocol activated: {threat_type}")
+        logger.info(f" Defense protocol activated: {threat_type}")
         self.active_defenses.append(threat_type)
     
     def maintain_abstraction_compatibility(self):
         """Maintain compatibility between abstraction levels"""
-        logger.info("🛡️ Maintaining abstraction level compatibility...")
+        logger.info(" Maintaining abstraction level compatibility...")
         return "compatibility_maintained"
 
 

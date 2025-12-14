@@ -1,5 +1,5 @@
 """
-🔄 META-EVOLUTIONARY ENGINE
+ META-EVOLUTIONARY ENGINE
 Self-improving evolutionary assembler with feedback loops
 """
 
@@ -42,13 +42,13 @@ class MetaEvolutionaryEngine:
             "self_improvement_ready": True
         }
         
-        logger.info("🔄 Self-analysis complete - improvement opportunities identified")
+        logger.info(" Self-analysis complete - improvement opportunities identified")
         
         return analysis_results
     
     def apply_self_optimization(self, optimization_type: str):
         """Apply self-optimization based on analysis"""
-        logger.info(f"🔄 Applying self-optimization: {optimization_type}")
+        logger.info(f" Applying self-optimization: {optimization_type}")
         self.optimization_cycles += 1
         self.performance_improvements[optimization_type] = "applied"
     
@@ -62,7 +62,7 @@ class MetaEvolutionaryEngine:
         }
         
         self.feedback_loops.append(feedback_loop)
-        logger.info("🔄 Meta-evolutionary feedback loop created")
+        logger.info(" Meta-evolutionary feedback loop created")
         
         return feedback_loop
 

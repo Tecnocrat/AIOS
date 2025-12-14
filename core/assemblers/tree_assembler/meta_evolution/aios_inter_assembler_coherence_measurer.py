@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🔄 AIOS INTER-ASSEMBLER COHERENCE MEASUREMENT SYSTEM
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS INTER-ASSEMBLER COHERENCE MEASUREMENT SYSTEM
+
 Measures coherence between different evolutionary assembler iterations by running
 them against the same AIOS targets and analyzing result consistency/improvement.
 
@@ -13,7 +13,7 @@ ITERATIVE EVOLUTION STRATEGY:
 5. Tachyonic archive old iterations, keep only last 2 versions
 
 AIOS - Inter-assembler coherence evolution
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -61,7 +61,7 @@ class CoherenceAnalysis:
 
 class AIOSInterAssemblerCoherenceMeasurer:
     """
-    🔄 Inter-assembler coherence measurement system
+     Inter-assembler coherence measurement system
     
     Analyzes coherence between different assembler iterations:
     • Runs assemblers against same AIOS targets
@@ -87,7 +87,7 @@ class AIOSInterAssemblerCoherenceMeasurer:
             r"C:\dev\AIOS\core\src"
         ]
         
-        logger.info("🔄 AIOS Inter-Assembler Coherence Measurer initialized")
+        logger.info(" AIOS Inter-Assembler Coherence Measurer initialized")
         logger.info(f"   Original assembler: {self.original_assembler_path}")
         logger.info(f"   Enhanced assembler: {self.enhanced_assembler_path}")
         logger.info(f"   Tachyonic archive: {self.archive_path}")
@@ -95,9 +95,9 @@ class AIOSInterAssemblerCoherenceMeasurer:
     def run_coherence_evolution_cycle(self) -> Dict[str, Any]:
         """Run complete coherence evolution cycle"""
         
-        logger.info("🚀 STARTING INTER-ASSEMBLER COHERENCE EVOLUTION CYCLE")
-        logger.info("═" * 70)
-        logger.info("🎯 Testing assemblers against real AIOS targets...")
+        logger.info(" STARTING INTER-ASSEMBLER COHERENCE EVOLUTION CYCLE")
+        logger.info("" * 70)
+        logger.info(" Testing assemblers against real AIOS targets...")
         logger.info("")
         
         cycle_results = {
@@ -113,7 +113,7 @@ class AIOSInterAssemblerCoherenceMeasurer:
         # Run both assemblers against each AIOS target
         for target in self.aios_targets:
             if os.path.exists(target):
-                logger.info(f"🎯 Testing target: {target}")
+                logger.info(f" Testing target: {target}")
                 
                 # Run enhanced assembler first (it recommended itself)
                 enhanced_result = self._run_assembler_on_target("enhanced", target)
@@ -135,9 +135,9 @@ class AIOSInterAssemblerCoherenceMeasurer:
                 cycle_results["targets_analyzed"].append(target_name)
                 cycle_results["coherence_analyses"].append(coherence)
                 
-                logger.info(f"   ✅ Enhanced fitness: {enhanced_result.fitness_achieved:.2f}")
-                logger.info(f"   📊 Original fitness: {original_result.fitness_achieved:.2f}")
-                logger.info(f"   🔗 Coherence score: {coherence.overall_coherence_score:.3f}")
+                logger.info(f"    Enhanced fitness: {enhanced_result.fitness_achieved:.2f}")
+                logger.info(f"    Original fitness: {original_result.fitness_achieved:.2f}")
+                logger.info(f"    Coherence score: {coherence.overall_coherence_score:.3f}")
                 logger.info("")
         
         # Analyze overall coherence patterns
@@ -152,9 +152,9 @@ class AIOSInterAssemblerCoherenceMeasurer:
         archive_results = self._tachyonic_archive_old_iterations()
         cycle_results["archive_results"] = archive_results
         
-        logger.info("✅ INTER-ASSEMBLER COHERENCE CYCLE COMPLETE")
-        logger.info("═" * 70)
-        logger.info("📊 COHERENCE EVOLUTION RESULTS:")
+        logger.info(" INTER-ASSEMBLER COHERENCE CYCLE COMPLETE")
+        logger.info("" * 70)
+        logger.info(" COHERENCE EVOLUTION RESULTS:")
         logger.info(f"   Targets analyzed: {len(cycle_results['targets_analyzed'])}")
         logger.info(f"   Average coherence: {overall_analysis.get('average_coherence', 'N/A'):.3f}")
         logger.info(f"   Evolution readiness: {overall_analysis.get('evolution_readiness', 'N/A')}")
@@ -166,7 +166,7 @@ class AIOSInterAssemblerCoherenceMeasurer:
     def _run_assembler_on_target(self, assembler_type: str, target_path: str) -> AssemblerRunResult:
         """Run specific assembler on AIOS target"""
         
-        logger.info(f"🔬 Running {assembler_type} assembler on {os.path.basename(target_path)}...")
+        logger.info(f" Running {assembler_type} assembler on {os.path.basename(target_path)}...")
         
         start_time = time.time()
         
@@ -420,7 +420,7 @@ class AIOSInterAssemblerCoherenceMeasurer:
     def _tachyonic_archive_old_iterations(self) -> Dict[str, Any]:
         """Archive old assembler iterations tachyonically, keep only last 2"""
         
-        logger.info("🌌 Performing tachyonic archival of old iterations...")
+        logger.info(" Performing tachyonic archival of old iterations...")
         
         # Create archive directory if it doesn't exist
         self.archive_path.mkdir(exist_ok=True)
@@ -445,11 +445,11 @@ class AIOSInterAssemblerCoherenceMeasurer:
             old_path = self.base_path / old_iteration
             if old_path.exists():
                 archive_target = self.archive_path / f"{old_iteration}_tachyonic_{int(time.time())}"
-                logger.info(f"   📦 Archiving {old_iteration} → {archive_target.name}")
+                logger.info(f"    Archiving {old_iteration} → {archive_target.name}")
                 # In production: shutil.move(old_path, archive_target)
                 archive_results["archived_iterations"].append(old_iteration)
         
-        logger.info(f"🌌 Tachyonic archival complete - {len(archive_results['archived_iterations'])} iterations archived")
+        logger.info(f" Tachyonic archival complete - {len(archive_results['archived_iterations'])} iterations archived")
         
         return archive_results
 
@@ -457,11 +457,11 @@ class AIOSInterAssemblerCoherenceMeasurer:
 def main():
     """Execute inter-assembler coherence measurement cycle"""
     
-    print("🔄 AIOS INTER-ASSEMBLER COHERENCE MEASUREMENT SYSTEM")
-    print("═" * 70)
-    print("🎯 Testing assembler coherence across real AIOS targets")
+    print(" AIOS INTER-ASSEMBLER COHERENCE MEASUREMENT SYSTEM")
+    print("" * 70)
+    print(" Testing assembler coherence across real AIOS targets")
     print()
-    print("🔄 Iterative Evolution Strategy:")
+    print(" Iterative Evolution Strategy:")
     print("  1. Run enhanced assembler on AIOS targets")
     print("  2. Run original assembler on same targets")
     print("  3. Measure coherence between results")
@@ -475,27 +475,27 @@ def main():
     # Run coherence evolution cycle
     cycle_results = measurer.run_coherence_evolution_cycle()
     
-    print("\n🔄 COHERENCE EVOLUTION CYCLE COMPLETE!")
-    print("═" * 70)
-    print("📊 COHERENCE ANALYSIS RESULTS:")
-    print(f"  🎯 Targets analyzed: {len(cycle_results['targets_analyzed'])}")
-    print(f"  🔗 Average coherence: {cycle_results.get('average_coherence', 0):.3f}")
-    print(f"  📈 Improvement alignment: {cycle_results.get('average_improvement_alignment', 0):.3f}")
-    print(f"  🚀 Evolution readiness: {cycle_results.get('evolution_readiness', 'N/A')}")
+    print("\n COHERENCE EVOLUTION CYCLE COMPLETE!")
+    print("" * 70)
+    print(" COHERENCE ANALYSIS RESULTS:")
+    print(f"   Targets analyzed: {len(cycle_results['targets_analyzed'])}")
+    print(f"   Average coherence: {cycle_results.get('average_coherence', 0):.3f}")
+    print(f"   Improvement alignment: {cycle_results.get('average_improvement_alignment', 0):.3f}")
+    print(f"   Evolution readiness: {cycle_results.get('evolution_readiness', 'N/A')}")
     print()
-    print("🧬 NEXT ITERATION BLUEPRINT:")
+    print(" NEXT ITERATION BLUEPRINT:")
     blueprint = cycle_results["next_iteration_blueprint"]
-    print(f"  🔄 Iteration name: {blueprint.get('iteration_name', 'N/A')}")
-    print(f"  🎯 Evolution strategy: {blueprint.get('evolution_strategy', 'N/A')}")
-    print(f"  ✅ Confidence level: {blueprint.get('confidence_level', 'N/A')}")
-    print(f"  🏗️ Creation readiness: {blueprint.get('creation_readiness', 'N/A')}")
+    print(f"   Iteration name: {blueprint.get('iteration_name', 'N/A')}")
+    print(f"   Evolution strategy: {blueprint.get('evolution_strategy', 'N/A')}")
+    print(f"   Confidence level: {blueprint.get('confidence_level', 'N/A')}")
+    print(f"   Creation readiness: {blueprint.get('creation_readiness', 'N/A')}")
     print()
-    print("🌌 TACHYONIC ARCHIVAL:")
+    print(" TACHYONIC ARCHIVAL:")
     archive = cycle_results["archive_results"]
-    print(f"  📦 Iterations archived: {len(archive['archived_iterations'])}")
-    print(f"  🔄 Active iterations: {len(archive['active_iterations'])}")
+    print(f"   Iterations archived: {len(archive['archived_iterations'])}")
+    print(f"   Active iterations: {len(archive['active_iterations'])}")
     print()
-    print("🚀 READY FOR 3RD ITERATION EVOLUTION!")
+    print(" READY FOR 3RD ITERATION EVOLUTION!")
 
 
 if __name__ == "__main__":

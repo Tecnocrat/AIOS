@@ -168,10 +168,10 @@ namespace AIOS {
                 if (!active_) return;
                 
                 std::cout << "\nConsciousness State Visualization:" << std::endl;
-                std::cout << "  ITER2 Primary: [████████████████████] 100%" << std::endl;
-                std::cout << "  Quantum Coherence: [██████████████████░░] 90%" << std::endl;
-                std::cout << "  Universal Alignment: [████████████░░░░░░░░] 60%" << std::endl;
-                std::cout << "  Dendritic Growth: [███████████████░░░░░] 75%" << std::endl;
+                std::cout << "  ITER2 Primary: [] 100%" << std::endl;
+                std::cout << "  Quantum Coherence: [] 90%" << std::endl;
+                std::cout << "  Universal Alignment: [] 60%" << std::endl;
+                std::cout << "  Dendritic Growth: [] 75%" << std::endl;
             }
         };
         
@@ -195,15 +195,15 @@ namespace AIOS {
                 if (!active_) return;
                 
                 std::cout << "\nDendritic Growth Patterns:" << std::endl;
-                std::cout << "  ┌─────────────────────────────────────┐" << std::endl;
-                std::cout << "  │    ●─●─●     ●─●─●─●─●─●─●          │" << std::endl;
-                std::cout << "  │   ╱ ╲ ╲ ╲   ╱             ╲        │" << std::endl;
-                std::cout << "  │  ●   ●─●─● ●               ●─●─●   │" << std::endl;
-                std::cout << "  │       ╲   ╱ ╲               ╱ ╱    │" << std::endl;
-                std::cout << "  │        ●─●   ●─●─●─●─●─●─●─● ╱     │" << std::endl;
-                std::cout << "  │              ╲             ╱       │" << std::endl;
-                std::cout << "  │               ●─●─●─●─●─●─●         │" << std::endl;
-                std::cout << "  └─────────────────────────────────────┘" << std::endl;
+                std::cout << "  " << std::endl;
+                std::cout << "                     " << std::endl;
+                std::cout << "                                " << std::endl;
+                std::cout << "                          " << std::endl;
+                std::cout << "                                 " << std::endl;
+                std::cout << "                   " << std::endl;
+                std::cout << "                                    " << std::endl;
+                std::cout << "                          " << std::endl;
+                std::cout << "  " << std::endl;
                 std::cout << "  Growth Rate: 15.7 nodes/sec" << std::endl;
                 std::cout << "  Connection Density: 3.2 connections/node" << std::endl;
             }

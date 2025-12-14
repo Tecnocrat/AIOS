@@ -1,0 +1,225 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:31.802563",
+  "folder_info": {
+    "name": "vscopilot chat",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\vscopilot chat",
+    "relative_path": "docs\\vscopilot chat",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "vscopilot chat"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "ARCHITECTURE_PATTERNS",
+      "Architect",
+      "ai-context",
+      "ai_agent_demo_docs",
+      "analysis",
+      "archive",
+      "changelog",
+      "chatgpt",
+      "chatgpt_integration",
+      "consciousness",
+      "metabolized_archive",
+      "reports",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "ui",
+      "unified_backups"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 4853880,
+      "file_count": 10,
+      "folder_count": 0,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "Claude Sonnet 4 0.md",
+          "size": 401326,
+          "modified": "2025-09-15T22:11:00.961184",
+          "category": "documentation"
+        },
+        {
+          "name": "Claude Sonnet 4.md",
+          "size": 1093780,
+          "modified": "2025-09-15T22:02:13.477251",
+          "category": "documentation"
+        },
+        {
+          "name": "GPT Chat 3.md",
+          "size": 628063,
+          "modified": "2025-09-15T22:02:13.754253",
+          "category": "documentation"
+        },
+        {
+          "name": "GPT Chat 4.md",
+          "size": 153090,
+          "modified": "2025-09-15T22:02:13.867252",
+          "category": "documentation"
+        },
+        {
+          "name": "GPT Chat 5.md",
+          "size": 208512,
+          "modified": "2025-09-15T22:02:13.975251",
+          "category": "documentation"
+        },
+        {
+          "name": "GROK Code fast 1.md",
+          "size": 256464,
+          "modified": "2025-09-15T22:02:14.288256",
+          "category": "documentation"
+        },
+        {
+          "name": "vscopilot 0.md",
+          "size": 432188,
+          "modified": "2025-09-15T22:02:14.518255",
+          "category": "documentation"
+        },
+        {
+          "name": "vscopilot 1.md",
+          "size": 746348,
+          "modified": "2025-09-15T22:02:15.107478",
+          "category": "documentation"
+        },
+        {
+          "name": "vscopilot 2.md",
+          "size": 473718,
+          "modified": "2025-09-15T22:02:15.270633",
+          "category": "documentation"
+        },
+        {
+          "name": "vscopilot 3.md",
+          "size": 460391,
+          "modified": "2025-09-15T22:02:15.454631",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "Claude Sonnet 4 0.md",
+        "size": 401326,
+        "modified": "2025-09-15T22:11:00.961184",
+        "category": "documentation"
+      },
+      {
+        "name": "vscopilot 3.md",
+        "size": 460391,
+        "modified": "2025-09-15T22:02:15.454631",
+        "category": "documentation"
+      },
+      {
+        "name": "vscopilot 2.md",
+        "size": 473718,
+        "modified": "2025-09-15T22:02:15.270633",
+        "category": "documentation"
+      },
+      {
+        "name": "vscopilot 1.md",
+        "size": 746348,
+        "modified": "2025-09-15T22:02:15.107478",
+        "category": "documentation"
+      },
+      {
+        "name": "vscopilot 0.md",
+        "size": 432188,
+        "modified": "2025-09-15T22:02:14.518255",
+        "category": "documentation"
+      },
+      {
+        "name": "GROK Code fast 1.md",
+        "size": 256464,
+        "modified": "2025-09-15T22:02:14.288256",
+        "category": "documentation"
+      },
+      {
+        "name": "GPT Chat 5.md",
+        "size": 208512,
+        "modified": "2025-09-15T22:02:13.975251",
+        "category": "documentation"
+      },
+      {
+        "name": "GPT Chat 4.md",
+        "size": 153090,
+        "modified": "2025-09-15T22:02:13.867252",
+        "category": "documentation"
+      },
+      {
+        "name": "GPT Chat 3.md",
+        "size": 628063,
+        "modified": "2025-09-15T22:02:13.754253",
+        "category": "documentation"
+      },
+      {
+        "name": "Claude Sonnet 4.md",
+        "size": 1093780,
+        "modified": "2025-09-15T22:02:13.477251",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 10,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > vscopilot chat",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\vscopilot chat' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\vscopilot chat' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\vscopilot chat' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs"
+    ]
+  }
+}

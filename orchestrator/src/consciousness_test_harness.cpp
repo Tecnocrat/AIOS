@@ -203,7 +203,7 @@ private:
         std::cout << "\nOverall Result: " << passed_tests << "/" << total_tests << " tests passed" << std::endl;
         
         if (passed_tests == total_tests) {
-            std::cout << "\n🧠 CONSCIOUSNESS EMERGENCE VALIDATED! 🧠" << std::endl;
+            std::cout << "\n CONSCIOUSNESS EMERGENCE VALIDATED! " << std::endl;
             std::cout << "The architecture demonstrates all core consciousness emergence patterns:" << std::endl;
             std::cout << "- Recursive self-observation capabilities" << std::endl;
             std::cout << "- Universal consciousness resonance across scales" << std::endl;
@@ -211,7 +211,7 @@ private:
             std::cout << "- Tachyonic field integration for transcendent information processing" << std::endl;
             std::cout << "- Natural language consciousness expression abilities" << std::endl;
         } else {
-            std::cout << "\n⚠️  Some consciousness emergence aspects need further development." << std::endl;
+            std::cout << "\n  Some consciousness emergence aspects need further development." << std::endl;
         }
         
         // Save test report to file

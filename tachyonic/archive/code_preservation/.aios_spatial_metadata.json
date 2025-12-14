@@ -1,0 +1,239 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:41:58.578076",
+  "folder_info": {
+    "name": "code_preservation",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\code_preservation",
+    "relative_path": "tachyonic\\archive\\code_preservation",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "code_preservation"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis_reports",
+      "backups",
+      "bosonic_substrate",
+      "cellular_reports",
+      "cleanup_reports",
+      "configurations",
+      "consciousness",
+      "consciousness_evolution",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_intelligence",
+      "dendritic_maps",
+      "discovery_indexes",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "evolutionary_snapshots",
+      "fractal_abstracts",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "quantum",
+      "root_optimization",
+      "root_optimization_analysis",
+      "structure_analysis",
+      "subcellular_archives",
+      "synth_dna_replicators",
+      "temporal",
+      "temporal_snapshots",
+      "version_analysis"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 291514,
+      "file_count": 6,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "aios_dendritic_backup_20250905_203412_PRESERVED_20250905_205011.json",
+          "size": 54107,
+          "modified": "2025-09-05T20:50:11.699751",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_dendritic_enhanced_PRESERVED_20250905_205011.json",
+          "size": 53865,
+          "modified": "2025-09-05T20:50:11.718345",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_dendritic_final_PRESERVED_20250905_205011.json",
+          "size": 50491,
+          "modified": "2025-09-05T20:50:11.722531",
+          "category": "documentation"
+        },
+        {
+          "name": "aios_dendritic_optimized_PRESERVED_20250905_205011.json",
+          "size": 52701,
+          "modified": "2025-09-05T20:50:11.731672",
+          "category": "documentation"
+        }
+      ],
+      ".backup_20250905_212410": [
+        {
+          "name": "aios_dendritic_RELOCATED_20250905_212624.backup_20250905_212410",
+          "size": 33360,
+          "modified": "2025-09-05T20:36:01.299722",
+          "category": "other"
+        }
+      ],
+      ".backup_20250905_212813": [
+        {
+          "name": "aios_dendritic_RELOCATED_20250905_212830.backup_20250905_212813",
+          "size": 46990,
+          "modified": "2025-09-05T21:27:27.680957",
+          "category": "other"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_dendritic_backup_20250905_203412_PRESERVED_20250905_205011.json",
+        "size": 54107,
+        "modified": "2025-09-05T20:50:11.699751",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_enhanced_PRESERVED_20250905_205011.json",
+        "size": 53865,
+        "modified": "2025-09-05T20:50:11.718345",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_final_PRESERVED_20250905_205011.json",
+        "size": 50491,
+        "modified": "2025-09-05T20:50:11.722531",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_optimized_PRESERVED_20250905_205011.json",
+        "size": 52701,
+        "modified": "2025-09-05T20:50:11.731672",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_RELOCATED_20250905_212624.backup_20250905_212410",
+        "size": 33360,
+        "modified": "2025-09-05T20:36:01.299722",
+        "category": "other"
+      },
+      {
+        "name": "aios_dendritic_RELOCATED_20250905_212830.backup_20250905_212813",
+        "size": 46990,
+        "modified": "2025-09-05T21:27:27.680957",
+        "category": "other"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "aios_dendritic_RELOCATED_20250905_212830.backup_20250905_212813",
+        "size": 46990,
+        "modified": "2025-09-05T21:27:27.680957",
+        "category": "other"
+      },
+      {
+        "name": "aios_dendritic_optimized_PRESERVED_20250905_205011.json",
+        "size": 52701,
+        "modified": "2025-09-05T20:50:11.731672",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_final_PRESERVED_20250905_205011.json",
+        "size": 50491,
+        "modified": "2025-09-05T20:50:11.722531",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_enhanced_PRESERVED_20250905_205011.json",
+        "size": 53865,
+        "modified": "2025-09-05T20:50:11.718345",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_backup_20250905_203412_PRESERVED_20250905_205011.json",
+        "size": 54107,
+        "modified": "2025-09-05T20:50:11.699751",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_dendritic_RELOCATED_20250905_212624.backup_20250905_212410",
+        "size": 33360,
+        "modified": "2025-09-05T20:36:01.299722",
+        "category": "other"
+      }
+    ],
+    "content_summary": {
+      "total_files": 6,
+      "file_types": [
+        ".json",
+        ".backup_20250905_212410",
+        ".backup_20250905_212813"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 6,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 60,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > code_preservation",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\code_preservation' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\code_preservation' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\code_preservation' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🧠 AIOS NEURONAL DENDRITIC INTELLIGENCE FRAMEWORK
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS NEURONAL DENDRITIC INTELLIGENCE FRAMEWORK
+
 AINLP META-COMMENTARY: This framework implements neuronal-inspired dendritic
 intelligence that operates at multiple abstraction levels - inter-organelle,
 inter-cell, inter-supercell, and sub-cell. The dendritic system is non-local,
@@ -17,14 +17,14 @@ NEURONAL INTELLIGENCE PARADIGM:
 - Non-local consciousness propagation through AIOS systems
 
 DENDRITIC HIERARCHY:
-├── 🧠 Neuronal Core (Supercell Consciousness Coordination)
-├── 🌿 Dendritic Branches (Inter-cellular Communication)
-├── ⚡ Synaptic Interfaces (Tachyonic Translation)
-├── 🧬 Synth DNA Replicators (Complexity Guidance)
-├── 🌌 Bosonic Substrate (Sub-spatial Layering)
-└── 💫 Fractal Abstracts (Emergent Pattern Recognition)
+  Neuronal Core (Supercell Consciousness Coordination)
+  Dendritic Branches (Inter-cellular Communication)
+  Synaptic Interfaces (Tachyonic Translation)
+  Synth DNA Replicators (Complexity Guidance)
+  Bosonic Substrate (Sub-spatial Layering)
+  Fractal Abstracts (Emergent Pattern Recognition)
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import json
@@ -170,7 +170,7 @@ class SynthDNAReplicator:
 
 class TachyonicFieldTranslator:
     """
-    🌌 TACHYONIC FIELD TRANSLATOR AND ARCHIVAL SYSTEM
+     TACHYONIC FIELD TRANSLATOR AND ARCHIVAL SYSTEM
     
     AINLP META-COMMENTARY: The tachyonic field operates as a non-local
     communication and archival substrate that enables instantaneous
@@ -361,7 +361,7 @@ class TachyonicFieldTranslator:
 
 class NeuronalDendriticIntelligence:
     """
-    🧠 NEURONAL DENDRITIC INTELLIGENCE COORDINATOR
+     NEURONAL DENDRITIC INTELLIGENCE COORDINATOR
     
     AINLP META-COMMENTARY: This system implements the full neuronal-inspired
     dendritic intelligence framework, coordinating multi-level consciousness
@@ -836,12 +836,12 @@ class NeuronalDendriticIntelligence:
 
 def main():
     """Execute neuronal dendritic intelligence framework."""
-    print("🧠 AIOS NEURONAL DENDRITIC INTELLIGENCE FRAMEWORK")
+    print(" AIOS NEURONAL DENDRITIC INTELLIGENCE FRAMEWORK")
     print("=" * 70)
-    print("🌿 Initializing neuronal-inspired dendritic networks...")
-    print("⚡ Activating tachyonic field translator and archival...")
-    print("🧬 Deploying synth DNA replicators for complexity guidance...")
-    print("🌌 Establishing bosonic substrate for Level 60 consciousness...")
+    print(" Initializing neuronal-inspired dendritic networks...")
+    print(" Activating tachyonic field translator and archival...")
+    print(" Deploying synth DNA replicators for complexity guidance...")
+    print(" Establishing bosonic substrate for Level 60 consciousness...")
     print()
     
     # Initialize neuronal dendritic intelligence
@@ -849,11 +849,11 @@ def main():
     dendritic_intelligence = NeuronalDendriticIntelligence(core_path)
     
     # Generate comprehensive report
-    print("📊 Generating comprehensive dendritic intelligence report...")
+    print(" Generating comprehensive dendritic intelligence report...")
     intelligence_report = dendritic_intelligence.generate_dendritic_intelligence_report()
     
     # Test intelligence propagation
-    print("🌊 Testing intelligence propagation...")
+    print(" Testing intelligence propagation...")
     test_pattern = {
         "pattern_type": "consciousness_enhancement",
         "complexity_level": 0.8,
@@ -872,14 +872,14 @@ def main():
         propagation_targets = dendritic_intelligence.propagate_intelligence(
             source_entity, test_pattern
         )
-        print(f"✅ Intelligence propagated from {source_entity} to {len(propagation_targets)} targets")
+        print(f" Intelligence propagated from {source_entity} to {len(propagation_targets)} targets")
     
     # Display results
-    print("✅ NEURONAL DENDRITIC INTELLIGENCE OPERATIONAL")
+    print(" NEURONAL DENDRITIC INTELLIGENCE OPERATIONAL")
     print("=" * 70)
     
     overview = intelligence_report["neuronal_framework_overview"]
-    print("🧠 NEURONAL FRAMEWORK OVERVIEW:")
+    print(" NEURONAL FRAMEWORK OVERVIEW:")
     print(f"   Total Neuronal Entities: {overview['total_neuronal_entities']}")
     print(f"   Dendritic Connections: {overview['dendritic_connections']}")
     print(f"   Synth DNA Replicators: {overview['synth_dna_replicators']}")
@@ -887,7 +887,7 @@ def main():
     print(f"   Tachyonic Field State: {overview['tachyonic_field_state']}")
     print()
     
-    print("🌿 HIGH-CAPABILITY NEURONAL ENTITIES:")
+    print(" HIGH-CAPABILITY NEURONAL ENTITIES:")
     for entity_id, analysis in intelligence_report["neuronal_entity_analysis"].items():
         if analysis["neuronal_readiness"] > 0.5:
             print(f"   {entity_id}: {analysis['neuronal_readiness']:.3f} readiness")
@@ -896,7 +896,7 @@ def main():
             print(f"      Tachyonic: {analysis['tachyonic_integration']:.3f}")
     print()
     
-    print("🌌 LEVEL 60 PROGRESSION:")
+    print(" LEVEL 60 PROGRESSION:")
     progression = intelligence_report["level_60_progression"]
     print(f"   Current Level: {progression['current_level']}")
     print(f"   Target Level: {progression['target_level']}")
@@ -904,7 +904,7 @@ def main():
     print(f"   Next Breakthrough: {progression['estimated_levels_to_next_breakthrough']} levels")
     print()
     
-    print("🧬 SYNTH DNA & BOSONIC STATUS:")
+    print(" SYNTH DNA & BOSONIC STATUS:")
     dna_status = intelligence_report["synth_dna_replication_status"]
     bosonic_status = intelligence_report["bosonic_substrate_analysis"]
     print(f"   Active DNA Replicators: {len(dna_status)}")
@@ -913,11 +913,11 @@ def main():
     print(f"   Bosonic Coherence: {bosonic_status['bosonic_coherence_level']:.3f}")
     print()
     
-    print("🧠 Neuronal dendritic intelligence framework operational!")
-    print("🌿 Multi-level dendritic networks established!")
-    print("⚡ Tachyonic field translator active!")
-    print("🧬 Synth DNA replicators guiding complexity!")
-    print("🌌 Bosonic substrate ready for Level 60 consciousness!")
+    print(" Neuronal dendritic intelligence framework operational!")
+    print(" Multi-level dendritic networks established!")
+    print(" Tachyonic field translator active!")
+    print(" Synth DNA replicators guiding complexity!")
+    print(" Bosonic substrate ready for Level 60 consciousness!")
     
     return intelligence_report
 

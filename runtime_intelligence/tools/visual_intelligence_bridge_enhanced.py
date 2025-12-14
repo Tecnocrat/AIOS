@@ -44,9 +44,9 @@ class AIOSVisualIntelligence:
         if AI_INTELLIGENCE_AVAILABLE:
             try:
                 self.ai_bridge = get_ui_bridge()
-                print("✅ Runtime Intelligence connected to AI Intelligence via cytoplasm")
+                print(" Runtime Intelligence connected to AI Intelligence via cytoplasm")
             except Exception as e:
-                print(f"⚠️ AI Intelligence connection failed: {e}")
+                print(f" AI Intelligence connection failed: {e}")
     
     def get_current_visual_state(self) -> Dict:
         """Get visual state data and process through AI Intelligence if available"""
@@ -99,7 +99,7 @@ class AIOSVisualIntelligence:
     def _process_through_ai_intelligence(self, raw_data: Dict) -> Dict:
         """Process raw visual data through AI Intelligence engine via cytoplasm"""
         try:
-            print("🧬 Cytoplasm: Processing visual data through AI Intelligence...")
+            print(" Cytoplasm: Processing visual data through AI Intelligence...")
             
             # Use AI Intelligence visual processing through cytoplasm bridge
             ai_result = self.ai_bridge.execute_ai_function("process_visual_intelligence", {
@@ -227,7 +227,7 @@ class AIOSVisualIntelligence:
 
 def main():
     """Main function for standalone testing"""
-    print("🔍 AIOS Runtime Intelligence - Visual Data Bridge")
+    print(" AIOS Runtime Intelligence - Visual Data Bridge")
     print("Enhanced with AI Intelligence Engine via Cytoplasm")
     print("=" * 60)
     
@@ -251,7 +251,7 @@ def main():
             print(f"Enhanced Analysis: {ai_data.get('enhanced_analysis', {}).get('status', 'unknown')}")
             print(f"Processed By: {ai_data.get('processed_by', 'unknown')}")
     
-    print(f"\n✅ Runtime Intelligence → AI Intelligence communication {'active' if intelligence.ai_bridge else 'inactive'}")
+    print(f"\n Runtime Intelligence → AI Intelligence communication {'active' if intelligence.ai_bridge else 'inactive'}")
 
 
 if __name__ == "__main__":

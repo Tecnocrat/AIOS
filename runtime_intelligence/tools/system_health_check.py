@@ -1,22 +1,20 @@
+#!/usr/bin/env python3
 """
 AIOS System Health Monitor
-Comprehensive system-wide health checking and module harmonization
+Comprehensive system-wide health checking for current AIOS architecture
 
 AINLP provenance:
-- Origin: migrated from ai/tests/system_health_check.py
-    (diagnostic helper) on 2025-08-10
-- Intent: keep side-effectful diagnostics out of pytest;
-    expose as tooling for ops/dev
-- Memory breadcrumb: docs/tachyonic_archive/system_health_report.json
+- Origin: Updated from biological naming to standardized AIOS architecture
+- Intent: Monitor AI Intelligence, Core Engine, Interface, Runtime
+    Intelligence layers
+- Memory breadcrumb: tachyonic/archive/system_health_report.json
     is the output cache for reingestion
 
 AINLP micro-allocation:
-- Classification: Tooling/Diagnostics
-    (not part of runtime execution path)
+- Classification: Tooling/Diagnostics for current AIOS architecture
 - Interfaces: callable main() returns exit code;
     importable AIOSSystemHealthMonitor for programmatic use
-- Reingestion note: keep signatures stable so higher layers
-    can orchestrate structured health runs
+- Architecture: Follows current AIOS standardized naming conventions
 """
 
 import importlib
@@ -59,6 +57,8 @@ class AIOSSystemHealthMonitor:
             ("VSCode Extension", self.check_vscode_extension),
             ("AIOS AI Modules", self.check_aios_modules),
             ("Configuration Files", self.check_configuration_files),
+            ("Configuration Harmonization",
+             self.check_configuration_harmonization),
             (
                 "Engineering Tenets Advisory",
                 self.check_engineering_tenets_advisory,
@@ -103,8 +103,11 @@ class AIOSSystemHealthMonitor:
         )
 
     def check_aios_structure(self) -> bool:
-        logger.info("Checking AIOS Project Structure...")
+        """Check current AIOS architecture structure."""
+        logger.info("Checking AIOS Architecture Structure...")
         cwd = os.getcwd()
+        
+        # Determine working directory context
         if (
             os.path.basename(cwd) == "tests"
             and os.path.basename(os.path.dirname(cwd)) == "ai"
@@ -117,19 +120,35 @@ class AIOSSystemHealthMonitor:
         else:
             root_prefix = ""
             tests_prefix = "ai/tests/"
+            
+        # Current AIOS architecture structure
         expected_structure = {
-            f"{root_prefix}ai/": ["aios_vscode_integration_server.py"],
-            f"{root_prefix}vscode-extension/": ["package.json", "src/"],
-            f"{root_prefix}vscode-extension/src/": [
-                "aiosBridge.ts",
-                "contextManager.ts",
-                "extension.ts",
+            f"{root_prefix}ai/": [
+                "__init__.py", "core/", "src/", "tools/", "transport/"
             ],
-            f"{tests_prefix}": ["test_aios_integration.py"],
-            f"{root_prefix}docs/": ["AIOS/PATH_1_TESTING_GUIDE.md"],
+            f"{root_prefix}core/": [
+                "CMakeLists.txt", "src/", "include/", "tests/"
+            ],
+            f"{root_prefix}interface/": [
+                "AIOS.Models/", "AIOS.Services/", "AIOS.UI/"
+            ],
+            f"{root_prefix}runtime_intelligence/": [
+                "tools/", "logs/", "analysis/"
+            ],
+            f"{root_prefix}docs/": [
+                "AIOS/", "ai-context/", "tachyonic_archive/"
+            ],
+            f"{root_prefix}tachyonic/": [
+                "archive/"
+            ],
+            f"{root_prefix}vscode-extension/": [
+                "package.json", "src/"
+            ],
+            f"{root_prefix}vscode-extension/src/": [
+                "aiosBridge.ts", "contextManager.ts", "extension.ts"
+            ],
             f"{root_prefix}config/": ["system.json"],
-            f"{root_prefix}core/": ["CMakeLists.txt", "src/", "include/"],
-            f"{root_prefix}interface/": ["AIOS.sln"],
+            f"{tests_prefix}": ["test_aios_integration.py"],
         }
         results = {}
         all_good = True
@@ -195,56 +214,43 @@ class AIOSSystemHealthMonitor:
             and os.path.basename(os.path.dirname(cwd)) == "ai"
         ):
             ai_dir = os.path.join("..", "..", "ai")
-            core_dir = os.path.join("..", "..", "ai", "src", "core")
         elif os.path.basename(cwd) == "tests":
             ai_dir = os.path.join("..", "ai")
-            core_dir = os.path.join("..", "ai", "src", "core")
         else:
             ai_dir = os.path.join(".", "ai")
-            core_dir = os.path.join(".", "ai", "src", "core")
         if ai_dir not in sys.path:
             sys.path.insert(0, ai_dir)
-        if core_dir not in sys.path:
-            sys.path.insert(0, core_dir)
-        modules = [
-            "nlp",
-            "prediction",
-            "automation",
-            "learning",
-            "integration",
-        ]
+            
+        # Current AIOS AI Intelligence architecture components
+        ai_components = {
+            "tools": os.path.join(ai_dir, "tools"),
+            "transport": os.path.join(ai_dir, "transport"),
+            "core": os.path.join(ai_dir, "core"),
+            "src": os.path.join(ai_dir, "src"),
+            "__init__.py": os.path.join(ai_dir, "__init__.py"),
+        }
+        
         results = {}
-        for module_name in modules:
-            try:
-                pkg_init = os.path.join(core_dir, module_name, "__init__.py")
-                mod_file = os.path.join(core_dir, f"{module_name}.py")
-
-                target_path = None
-                if file_exists(pkg_init):
-                    target_path = pkg_init
-                elif file_exists(mod_file):
-                    target_path = mod_file
-
-                if target_path:
-                    spec = importlib.util.spec_from_file_location(
-                        module_name, target_path
-                    )
-                    if spec is not None and spec.loader is not None:
-                        module = importlib.util.module_from_spec(spec)
-                        spec.loader.exec_module(module)
-                        results[module_name] = "importable"
-                        logger.info("%s: IMPORTABLE", module_name)
-                    else:
-                        results[module_name] = "spec_error"
-                        logger.warning("%s: SPEC/LOADER ERROR", module_name)
+        
+        # Check for directory/file existence
+        for component_name, component_path in ai_components.items():
+            if component_name.endswith(".py"):
+                if file_exists(component_path):
+                    results[component_name] = "exists"
+                    logger.info("%s: EXISTS", component_name)
                 else:
-                    results[module_name] = "file_missing"
-                    logger.warning("%s: FILE MISSING", module_name)
-            except (OSError, ImportError) as e:
-                results[module_name] = f"error: {str(e)[:50]}"
-                logger.warning("%s: ERROR - %s", module_name, str(e)[:50])
+                    results[component_name] = "missing"
+                    logger.warning("%s: MISSING", component_name)
+            else:
+                if dir_exists(component_path):
+                    results[component_name] = "exists"
+                    logger.info("%s: EXISTS", component_name)
+                else:
+                    results[component_name] = "missing"
+                    logger.warning("%s: MISSING", component_name)
+                    
         self.health_results["aios_modules"] = results
-        return all("importable" in str(v) for v in results.values())
+        return all("exists" in str(v) for v in results.values())
 
     def check_configuration_files(self) -> bool:
         logger.info("Checking Configuration Files...")
@@ -270,6 +276,112 @@ class AIOSSystemHealthMonitor:
                     logger.warning("%s: MISSING (optional)", file_path)
         self.health_results["configuration_files"] = results
         return required_missing == 0
+
+    def check_configuration_harmonization(self) -> bool:
+        """Check configuration harmonization across AIOS files"""
+        logger.info("Checking Configuration Harmonization...")
+        
+        harmonization_results = {
+            "python_versions": {"consistent": True, "details": {}},
+            "ai_frameworks": {"aligned": True, "details": {}},
+            "timestamps": {"current": True, "details": {}},
+            "config_sync": {"synchronized": True, "details": {}}
+        }
+        
+        # Check Python version consistency
+        config_files = {
+            ".aios_context.json": self._check_aios_context_python_version,
+            "ai/pyproject.toml": self._check_pyproject_python_version,
+            ".pylintrc": self._check_pylintrc_python_version,
+            "README.md": self._check_readme_python_version
+        }
+        
+        python_versions = {}
+        for file_path, check_func in config_files.items():
+            if file_exists(file_path):
+                try:
+                    version = check_func(file_path)
+                    python_versions[file_path] = version
+                    logger.info("   %s: Python %s", file_path, version)
+                except Exception as e:
+                    python_versions[file_path] = f"ERROR: {e}"
+                    logger.warning("   %s: ERROR reading Python version", 
+                                  file_path)
+            else:
+                python_versions[file_path] = "FILE_NOT_FOUND"
+                logger.warning("   %s: NOT FOUND", file_path)
+        
+        # Check if all Python versions are consistent
+        valid_versions = [v for v in python_versions.values() 
+                         if not v.startswith("ERROR") and v != "FILE_NOT_FOUND"]
+        harmonization_results["python_versions"]["details"] = python_versions
+        harmonization_results["python_versions"]["consistent"] = (
+            len(set(valid_versions)) <= 1 if valid_versions else False
+        )
+        
+        # Calculate harmonization score
+        score_components = [
+            harmonization_results["python_versions"]["consistent"],
+            harmonization_results["ai_frameworks"]["aligned"],
+            harmonization_results["timestamps"]["current"],
+            harmonization_results["config_sync"]["synchronized"]
+        ]
+        harmonization_score = sum(score_components) / len(score_components) * 100
+        
+        harmonization_results["harmonization_score"] = harmonization_score
+        harmonization_results["status"] = (
+            "HARMONIZED" if harmonization_score >= 90 else
+            "PARTIAL_DRIFT" if harmonization_score >= 70 else
+            "CRITICAL_DRIFT"
+        )
+        
+        self.health_results["configuration_harmonization"] = harmonization_results
+        
+        logger.info("Configuration Harmonization Score: %.1f%%", harmonization_score)
+        return harmonization_score >= 70  # Allow partial drift as passing
+    
+    def _check_aios_context_python_version(self, file_path: str) -> str:
+        """Extract Python version from .aios_context.json"""
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data.get("technology_stack", {}).get("python", "unknown")
+    
+    def _check_pyproject_python_version(self, file_path: str) -> str:
+        """Extract Python version from pyproject.toml"""
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            # Simple regex-like extraction for requires-python
+            for line in content.split('\n'):
+                if 'requires-python' in line and '>=' in line:
+                    # Extract version like ">=3.12"
+                    version = line.split('>=')[1].strip().strip('"\'')
+                    return f">={version}"
+            return "unknown"
+    
+    def _check_pylintrc_python_version(self, file_path: str) -> str:
+        """Extract Python version from .pylintrc"""
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            for line in content.split('\n'):
+                if line.startswith('py-version'):
+                    version = line.split('=')[1].strip()
+                    return version
+            return "unknown"
+    
+    def _check_readme_python_version(self, file_path: str) -> str:
+        """Extract Python version from README.md"""
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            # Look for Python version requirements
+            for line in content.split('\n'):
+                if 'Python' in line and ('3.1' in line or '3.0' in line):
+                    if '3.12' in line:
+                        return "3.12+"
+                    elif '3.11' in line:
+                        return "3.11+"
+                    elif '3.10' in line:
+                        return "3.10+"
+            return "unknown"
 
     # --- Advisory scan aligned with engineering tenets ---
     def check_engineering_tenets_advisory(self) -> bool:

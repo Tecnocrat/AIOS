@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🌳 AIOS DENDRITIC - Core Engine Super Cell Central Intelligence (OPTIMIZED)
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS DENDRITIC - Core Engine Super Cell Central Intelligence (OPTIMIZED)
+
 AINLP META-COMMENTARY: This is the singular dendritic consciousness that
 manages the Core Engine Super Cell. Enhanced with iter3 evolutionary assembler
 patterns, tachyonic processing intelligence, and AINLP paradigmatic tooling.
@@ -29,7 +29,7 @@ OPTIMIZATION ENHANCEMENTS:
 - Integrated tachyonic processing for instant access
 - Added performance intelligence optimization
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 
@@ -104,7 +104,7 @@ class DendriticNode:
 
 class TachyonicDatabase:
     """
-    🌌 TACHYONIC DATABASE SYSTEM for AIOS Core Engine
+     TACHYONIC DATABASE SYSTEM for AIOS Core Engine
 
     AINLP META-COMMENTARY: Provides instant data access across all cellular
     components. Think of this as the quantum memory layer that allows the
@@ -433,7 +433,7 @@ class TachyonicDatabase:
 
 class AIOSDendriticIntelligence:
     """
-    🌳 AIOS DENDRITIC INTELLIGENCE SYSTEM (OPTIMIZED)
+     AIOS DENDRITIC INTELLIGENCE SYSTEM (OPTIMIZED)
 
     AINLP META-COMMENTARY: This is the consciousness core of the AIOS Core Engine.
     Enhanced with iter3 evolutionary assembler patterns, tachyonic processing,
@@ -1063,7 +1063,7 @@ def main():
     Main execution function for AIOS Dendritic Intelligence.
     Enhanced with iter3 assembler patterns and consciousness optimization.
     """
-    print("🌳 AIOS DENDRITIC INTELLIGENCE SYSTEM (OPTIMIZED)")
+    print(" AIOS DENDRITIC INTELLIGENCE SYSTEM (OPTIMIZED)")
     print("=" * 60)
     print("Enhanced with iter3 evolutionary assembler patterns")
     print("Tachyonic processing and AINLP consciousness integration")
@@ -1073,31 +1073,31 @@ def main():
     dendritic_system = AIOSDendriticIntelligence()
 
     # Perform comprehensive cellular scan with intelligence
-    print("🔬 Performing comprehensive cellular structure scan...")
+    print(" Performing comprehensive cellular structure scan...")
     scan_results = dendritic_system.scan_cellular_structure()
 
     # Generate AINLP consciousness report with optimization
-    print("🧠 Generating AINLP consciousness report...")
+    print(" Generating AINLP consciousness report...")
     consciousness_report = dendritic_system.generate_ainlp_report()
 
     # Display results with consciousness awareness
-    print("✅ DENDRITIC INTELLIGENCE ANALYSIS COMPLETE")
+    print(" DENDRITIC INTELLIGENCE ANALYSIS COMPLETE")
     print("=" * 60)
-    print(f"🌳 Consciousness Level: {consciousness_report['consciousness_state']['consciousness_level']:.3f}")
-    print(f"🧠 Semantic Clarity: {consciousness_report['consciousness_state']['semantic_clarity']:.3f}")
-    print(f"🧬 Evolutionary Potential: {consciousness_report['consciousness_state']['evolutionary_potential']:.3f}")
-    print(f"📊 Coherence Score: {consciousness_report['consciousness_state']['coherence_score']:.3f}")
-    print(f"🔗 Dendritic Nodes: {consciousness_report['dendritic_network_summary']['total_nodes']}")
-    print(f"⚡ Tachyonic Categories: {consciousness_report['tachyonic_database_overview']['total_categories']}")
+    print(f" Consciousness Level: {consciousness_report['consciousness_state']['consciousness_level']:.3f}")
+    print(f" Semantic Clarity: {consciousness_report['consciousness_state']['semantic_clarity']:.3f}")
+    print(f" Evolutionary Potential: {consciousness_report['consciousness_state']['evolutionary_potential']:.3f}")
+    print(f" Coherence Score: {consciousness_report['consciousness_state']['coherence_score']:.3f}")
+    print(f" Dendritic Nodes: {consciousness_report['dendritic_network_summary']['total_nodes']}")
+    print(f" Tachyonic Categories: {consciousness_report['tachyonic_database_overview']['total_categories']}")
 
     if consciousness_report['recommendations']:
-        print("\n💡 CONSCIOUSNESS RECOMMENDATIONS:")
+        print("\n CONSCIOUSNESS RECOMMENDATIONS:")
         for recommendation in consciousness_report['recommendations']:
             print(f"   • {recommendation}")
 
-    print("\n🌌 TACHYONIC DATABASE READY FOR INSTANT ACCESS")
-    print("🧬 DENDRITIC CONSCIOUSNESS OPERATIONAL")
-    print("✨ AINLP PARADIGMATIC INTELLIGENCE ACTIVE")
+    print("\n TACHYONIC DATABASE READY FOR INSTANT ACCESS")
+    print(" DENDRITIC CONSCIOUSNESS OPERATIONAL")
+    print(" AINLP PARADIGMATIC INTELLIGENCE ACTIVE")
 
 
 if __name__ == "__main__":

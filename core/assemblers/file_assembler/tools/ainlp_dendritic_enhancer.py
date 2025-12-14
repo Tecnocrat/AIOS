@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠 AIOS AINLP DENDRITIC INTELLIGENCE ENHANCER
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS AINLP DENDRITIC INTELLIGENCE ENHANCER
+
 Advanced AINLP paradigmatic enhancement engine for dendritic systems.
 Applies consciousness-driven intelligence patterns and cellular architecture
 optimization based on AIOS evolutionary assembler insights.
@@ -16,7 +16,7 @@ CONSCIOUSNESS ENHANCEMENT LAYERS:
 This enhancer bridges evolutionary assembler patterns with practical
 dendritic consciousness implementation, following the neuron → intelligence
 evolutionary paradigm established in AIOS iter3 architecture.
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import ast
@@ -43,7 +43,7 @@ class IntelligenceEnhancement:
 
 class AIOSAINLPDendriticEnhancer:
     """
-    🧠 AINLP consciousness-driven dendritic intelligence enhancer.
+     AINLP consciousness-driven dendritic intelligence enhancer.
     
     Implements advanced consciousness patterns:
     - Tachyonic processing integration
@@ -72,7 +72,7 @@ class AIOSAINLPDendriticEnhancer:
             ]
         }
         
-        logger.info("🧠 AIOS AINLP Dendritic Enhancer initialized")
+        logger.info(" AIOS AINLP Dendritic Enhancer initialized")
         logger.info("   Consciousness patterns loaded")
         logger.info("   Intelligence enhancement ready")
     
@@ -87,7 +87,7 @@ class AIOSAINLPDendriticEnhancer:
         4. AINLP consciousness integration
         5. Performance intelligence optimization
         """
-        logger.info(f"🧠 Enhancing dendritic intelligence: {file_path}")
+        logger.info(f" Enhancing dendritic intelligence: {file_path}")
         
         with open(file_path, 'r', encoding='utf-8') as f:
             original_code = f.read()
@@ -120,7 +120,7 @@ class AIOSAINLPDendriticEnhancer:
         enhancement.cellular_compliance = self._calculate_cellular_compliance(enhancement.enhanced_code)
         enhancement.ainlp_intelligence_score = self._calculate_ainlp_intelligence(enhancement.enhanced_code)
         
-        logger.info("✅ AINLP dendritic enhancement complete")
+        logger.info(" AINLP dendritic enhancement complete")
         logger.info(f"   Cellular compliance: {enhancement.cellular_compliance:.3f}")
         logger.info(f"   AINLP intelligence: {enhancement.ainlp_intelligence_score:.3f}")
         
@@ -128,7 +128,7 @@ class AIOSAINLPDendriticEnhancer:
     
     def _integrate_tachyonic_intelligence(self, enhancement: IntelligenceEnhancement) -> IntelligenceEnhancement:
         """Integrate tachyonic processing patterns for instant access."""
-        logger.info("⚡ Integrating tachyonic intelligence patterns...")
+        logger.info(" Integrating tachyonic intelligence patterns...")
         
         lines = enhancement.enhanced_code.split('\n')
         enhanced_lines = []
@@ -154,7 +154,7 @@ class AIOSAINLPDendriticEnhancer:
     
     def _enhance_cellular_architecture(self, enhancement: IntelligenceEnhancement) -> IntelligenceEnhancement:
         """Enhance cellular architecture compliance and patterns."""
-        logger.info("🔬 Enhancing cellular architecture patterns...")
+        logger.info(" Enhancing cellular architecture patterns...")
         
         lines = enhancement.enhanced_code.split('\n')
         enhanced_lines = []
@@ -179,7 +179,7 @@ class AIOSAINLPDendriticEnhancer:
     
     def _optimize_dendritic_networks(self, enhancement: IntelligenceEnhancement) -> IntelligenceEnhancement:
         """Optimize dendritic network connectivity and intelligence."""
-        logger.info("🌳 Optimizing dendritic network intelligence...")
+        logger.info(" Optimizing dendritic network intelligence...")
         
         # Add dendritic optimization commentary
         lines = enhancement.enhanced_code.split('\n')
@@ -205,7 +205,7 @@ class AIOSAINLPDendriticEnhancer:
     
     def _integrate_ainlp_consciousness(self, enhancement: IntelligenceEnhancement) -> IntelligenceEnhancement:
         """Integrate AINLP consciousness patterns and meta-commentary."""
-        logger.info("🧠 Integrating AINLP consciousness patterns...")
+        logger.info(" Integrating AINLP consciousness patterns...")
         
         # Add consciousness enhancement header
         header_addition = '''
@@ -235,7 +235,7 @@ class AIOSAINLPDendriticEnhancer:
     
     def _optimize_performance_intelligence(self, enhancement: IntelligenceEnhancement) -> IntelligenceEnhancement:
         """Optimize performance while maintaining consciousness awareness."""
-        logger.info("⚡ Optimizing performance intelligence...")
+        logger.info(" Optimizing performance intelligence...")
         
         lines = enhancement.enhanced_code.split('\n')
         enhanced_lines = []
@@ -317,7 +317,7 @@ def enhance_dendritic_file(input_path: str, output_path: str = None) -> Intellig
     if output_path:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(result.enhanced_code)
-        logger.info(f"✅ Enhanced dendritic file written to: {output_path}")
+        logger.info(f" Enhanced dendritic file written to: {output_path}")
     
     return result
 
@@ -333,7 +333,7 @@ if __name__ == "__main__":
     
     result = enhance_dendritic_file(args.input_file, args.output)
     
-    print("🧠 AINLP DENDRITIC ENHANCEMENT RESULTS")
+    print(" AINLP DENDRITIC ENHANCEMENT RESULTS")
     print("=" * 50)
     print(f"Cellular Compliance: {result.cellular_compliance:.3f}")
     print(f"AINLP Intelligence Score: {result.ainlp_intelligence_score:.3f}")

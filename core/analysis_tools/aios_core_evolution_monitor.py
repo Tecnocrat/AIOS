@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-📊 AIOS Core Evolution Monitor (Iter2)
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS Core Evolution Monitor (Iter2)
+
 Monitors evolutionary progress of Core Engine components using iter2 capabilities.
 
 MONITORING SCOPE:
@@ -17,7 +17,7 @@ ITER2 CAPABILITIES:
 - Meta-evolutionary metrics
 
 AIOS - Evolution monitoring with iter2 assembler
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 import sys
 import json
@@ -244,7 +244,7 @@ class AIOSCoreEvolutionMonitor:
     def monitor_evolution_status(self) -> Dict[str, Any]:
         """Monitor current evolution status."""
         
-        logger.info("📊 MONITORING CORE ENGINE EVOLUTION STATUS")
+        logger.info(" MONITORING CORE ENGINE EVOLUTION STATUS")
         
         status = {
             "monitoring_timestamp": self.monitor_timestamp.isoformat(),

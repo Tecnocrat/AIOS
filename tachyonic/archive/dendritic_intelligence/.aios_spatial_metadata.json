@@ -1,0 +1,184 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:42:06.362330",
+  "folder_info": {
+    "name": "dendritic_intelligence",
+    "absolute_path": "C:\\dev\\AIOS\\tachyonic\\archive\\dendritic_intelligence",
+    "relative_path": "tachyonic\\archive\\dendritic_intelligence",
+    "parent_path": "tachyonic\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "tachyonic",
+      "archive",
+      "dendritic_intelligence"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "analysis_reports",
+      "backups",
+      "bosonic_substrate",
+      "cellular_reports",
+      "cleanup_reports",
+      "code_preservation",
+      "configurations",
+      "consciousness",
+      "consciousness_evolution",
+      "deep",
+      "dendritic_evolution",
+      "dendritic_maps",
+      "discovery_indexes",
+      "documentation",
+      "emergency_cleanup",
+      "evolution_logs",
+      "evolutionary_assembler_v1.0_tachyonic_1757015844",
+      "evolutionary_snapshots",
+      "fractal_abstracts",
+      "immediate",
+      "ingestion",
+      "ingestion_data",
+      "metadata",
+      "optimization_history",
+      "optimization_reports",
+      "quantum",
+      "root_optimization",
+      "root_optimization_analysis",
+      "structure_analysis",
+      "subcellular_archives",
+      "synth_dna_replicators",
+      "temporal",
+      "temporal_snapshots",
+      "version_analysis"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 95107,
+      "file_count": 5,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "DENDRITIC_COMPREHENSIVE_DENDRITIC_INTELLIGENCE_20250905_215527.json",
+          "size": 45323,
+          "modified": "2025-09-05T21:55:27.725701",
+          "category": "documentation"
+        },
+        {
+          "name": "DENDRITIC_COMPREHENSIVE_DENDRITIC_INTELLIGENCE_20250905_220805.json",
+          "size": 45323,
+          "modified": "2025-09-05T22:08:05.979585",
+          "category": "documentation"
+        },
+        {
+          "name": "TRANSLATION_20250905_215527.json",
+          "size": 1482,
+          "modified": "2025-09-05T21:55:27.750613",
+          "category": "documentation"
+        },
+        {
+          "name": "TRANSLATION_20250905_220805.json",
+          "size": 1497,
+          "modified": "2025-09-05T22:08:06.002770",
+          "category": "documentation"
+        },
+        {
+          "name": "TRANSLATION_20250905_220806.json",
+          "size": 1482,
+          "modified": "2025-09-05T22:08:06.009151",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "TRANSLATION_20250905_220806.json",
+        "size": 1482,
+        "modified": "2025-09-05T22:08:06.009151",
+        "category": "documentation"
+      },
+      {
+        "name": "TRANSLATION_20250905_220805.json",
+        "size": 1497,
+        "modified": "2025-09-05T22:08:06.002770",
+        "category": "documentation"
+      },
+      {
+        "name": "DENDRITIC_COMPREHENSIVE_DENDRITIC_INTELLIGENCE_20250905_220805.json",
+        "size": 45323,
+        "modified": "2025-09-05T22:08:05.979585",
+        "category": "documentation"
+      },
+      {
+        "name": "TRANSLATION_20250905_215527.json",
+        "size": 1482,
+        "modified": "2025-09-05T21:55:27.750613",
+        "category": "documentation"
+      },
+      {
+        "name": "DENDRITIC_COMPREHENSIVE_DENDRITIC_INTELLIGENCE_20250905_215527.json",
+        "size": 45323,
+        "modified": "2025-09-05T21:55:27.725701",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 2,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 40,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "tachyonic > archive > dendritic_intelligence",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\dendritic_intelligence' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\dendritic_intelligence' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\tachyonic\\archive\\dendritic_intelligence' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "tachyonic",
+      "core\\tachyonic_archive",
+      "docs\\tachyonic",
+      "docs\\tachyonic_archive",
+      "tachyonic\\tachyonic",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

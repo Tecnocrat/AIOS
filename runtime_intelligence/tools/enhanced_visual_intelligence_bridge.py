@@ -79,22 +79,22 @@ class EnhancedVisualIntelligenceBridge:
     async def initialize(self) -> bool:
         """Initialize the enhanced bridge."""
         try:
-            self.logger.info("🔗 Initializing Enhanced Visual Intelligence Bridge...")
+            self.logger.info(" Initializing Enhanced Visual Intelligence Bridge...")
             
             # Try to initialize dendritic integration
             try:
                 self.dendritic_integration = await get_runtime_intelligence_dendritic_integration()
                 self.enhanced_mode = True
-                self.logger.info("✅ Dendritic integration enabled - Full biological architecture active")
+                self.logger.info(" Dendritic integration enabled - Full biological architecture active")
             except Exception as e:
-                self.logger.warning(f"⚠️ Dendritic integration unavailable: {e}")
+                self.logger.warning(f" Dendritic integration unavailable: {e}")
                 self.enhanced_mode = False
-                self.logger.info("🔧 Running in basic mode")
+                self.logger.info(" Running in basic mode")
             
             return True
             
         except Exception as e:
-            self.logger.error(f"❌ Failed to initialize enhanced bridge: {e}")
+            self.logger.error(f" Failed to initialize enhanced bridge: {e}")
             return False
     
     async def process_visual_intelligence(self, request_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -105,7 +105,7 @@ class EnhancedVisualIntelligenceBridge:
         Otherwise, falls back to basic processing.
         """
         try:
-            self.logger.info(f"👁️ Processing visual intelligence (enhanced_mode: {self.enhanced_mode})")
+            self.logger.info(f" Processing visual intelligence (enhanced_mode: {self.enhanced_mode})")
             
             if self.enhanced_mode and self.dendritic_integration:
                 # Enhanced processing through biological architecture
@@ -156,7 +156,7 @@ class EnhancedVisualIntelligenceBridge:
     
     async def _process_basic_visual_intelligence(self, request_data: Dict[str, Any]) -> Dict[str, Any]:
         """Process with original basic capabilities."""
-        self.logger.info("🔧 Processing with basic visual intelligence")
+        self.logger.info(" Processing with basic visual intelligence")
         
         # Simulate basic screen analysis
         basic_data = {
@@ -295,7 +295,7 @@ class EnhancedVisualIntelligenceBridge:
                 return await self.dendritic_integration.process_continuous_monitoring_enhanced(monitoring_params)
             else:
                 # Basic monitoring
-                self.logger.info("🔄 Starting basic continuous monitoring")
+                self.logger.info(" Starting basic continuous monitoring")
                 return {
                     'success': True,
                     'monitoring_type': 'basic_visual_intelligence',
@@ -415,14 +415,14 @@ async def get_enhanced_visual_intelligence_bridge() -> EnhancedVisualIntelligenc
 
 async def main():
     """Test the enhanced visual intelligence bridge."""
-    print("👁️ Enhanced Visual Intelligence Bridge Test")
+    print(" Enhanced Visual Intelligence Bridge Test")
     print("=" * 50)
     
     # Initialize bridge
     bridge = await get_enhanced_visual_intelligence_bridge()
     
     # Test visual intelligence processing
-    print(f"\n🔍 Testing Visual Intelligence Processing...")
+    print(f"\n Testing Visual Intelligence Processing...")
     result = await bridge.process_visual_intelligence({
         'analysis_type': 'comprehensive',
         'parameters': {'detail_level': 'high'}
@@ -436,17 +436,17 @@ async def main():
         print(f"Enhancement Factor: {result.get('core_enhancement_factor', 'N/A')}")
     
     # Test system health
-    print(f"\n🏥 Testing Enhanced System Health...")
+    print(f"\n Testing Enhanced System Health...")
     health = await bridge.check_system_health_enhanced()
     print(f"Health Score: {health.get('overall_health_score', health.get('health_score', 'N/A'))}")
     
     # Test bridge status
-    print(f"\n📊 Bridge Status:")
+    print(f"\n Bridge Status:")
     status = await bridge.get_bridge_status()
     print(f"Enhanced Mode: {status.get('enhanced_mode')}")
     print(f"Biological Architecture Compliance: {status.get('biological_architecture_compliance')}")
     
-    print(f"\n✅ Enhanced Visual Intelligence Bridge test complete")
+    print(f"\n Enhanced Visual Intelligence Bridge test complete")
 
 
 if __name__ == "__main__":

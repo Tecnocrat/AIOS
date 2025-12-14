@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-09-21T01:22:27.281230",
+  "test_type": "comprehensive_aios_health",
+  "architecture": "standardized_aios",
+  "system_health": {
+    "status": "FAIR",
+    "passed_checks": 5,
+    "total_checks": 7,
+    "score": 71.42857142857143,
+    "python_environment": {
+      "status": "PASSED"
+    },
+    "project_structure": {
+      "status": "PASSED"
+    },
+    "vscode_extension": {
+      "status": "PASSED"
+    },
+    "aios_ai_modules": {
+      "status": "PASSED"
+    },
+    "configuration": {
+      "status": "ISSUES FOUND"
+    },
+    "overall_health": {
+      "status": "FAIR",
+      "score": 71.42857142857143
+    }
+  },
+  "architecture_status": {
+    "timestamp": "2025-09-21T01:22:28.655971",
+    "aios_architecture": {
+      "status": "non_compliant",
+      "score": 0.0,
+      "checks": {
+        "component_independence": false,
+        "integration_bridges": false,
+        "proper_communication_flow": false,
+        "module_monitoring": false
+      },
+      "description": "Biological architecture compliance assessment"
+    },
+    "components": {
+      "interface": {
+        "status": "active",
+        "components": {
+          "aios_ui": true,
+          "aios_services": true,
+          "aios_models": true,
+          "runtime_intelligence_service": true
+        },
+        "health_score": 1.0,
+        "description": "Interface Supercell - C# WPF components",
+        "primary_function": "User interface and system orchestration",
+        "biological_type": "Independent Supercell"
+      },
+      "runtime_intelligence": {
+        "status": "limited",
+        "components": {
+          "integration_bridges": false,
+          "visual_bridge": false,
+          "enhanced_mode": false
+        },
+        "health_score": 0.0,
+        "description": "Runtime Intelligence - Python orchestration layer",
+        "primary_function": "Bridge between Interface and AI Intelligence supercells",
+        "biological_type": "Communication Layer"
+      },
+      "ai_intelligence": {
+        "status": "developing",
+        "organs": {
+          "cytoplasm": false,
+          "nucleus": false,
+          "membrane": false,
+          "laboratory": false,
+          "information_storage": true,
+          "transport": true
+        },
+        "integration_supervision": false,
+        "health_score": 0.3333333333333333,
+        "description": "AI Intelligence Component - AI processing and algorithms",
+        "primary_function": "Advanced AI processing and consciousness simulation",
+        "architecture_type": "AI Processing Component"
+      },
+      "core_engine": {
+        "status": "developing",
+        "tools": {
+          "analysis_tools": false,
+          "assemblers": false,
+          "bridges": true,
+          "engines": false,
+          "cmake_build": true
+        },
+        "integration_connections": false,
+        "health_score": 0.4,
+        "description": "Core Engine Component - Low-level processing and optimization",
+        "primary_function": "High-performance computing and system optimization",
+        "architecture_type": "Processing Engine Component"
+      }
+    },
+    "integration_bridges": {
+      "status": "developing",
+      "connections": {
+        "ai_core_bridge": false,
+        "integration_supervisor": false,
+        "interface_integration": false,
+        "module_monitoring": false
+      },
+      "health_score": 0.0,
+      "description": "Integration bridges between components",
+      "primary_function": "Inter-component communication and supervision"
+    },
+    "overall_health": {
+      "score": 0.30333333333333334,
+      "status": "poor",
+      "component_count": 4,
+      "integration_active": false
+    }
+  },
+  "overall_assessment": {
+    "combined_score": 0.5499047619047619,
+    "status": "FAIR",
+    "system_score": 0.7142857142857143,
+    "architecture_score": 0.30333333333333334,
+    "critical_issues": 1,
+    "recommendations": [
+      "Improve architecture component health",
+      "Fix inactive components: runtime_intelligence"
+    ]
+  }
+}

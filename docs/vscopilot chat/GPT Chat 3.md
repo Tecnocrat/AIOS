@@ -19,7 +19,7 @@ Checklist:
 
 - Folder names/paths:
   - Report: chatgpt_integration/ with chatgpt.py, ingestion/, md/.
-  - Workspace: No chatgpt_integration/ shown. You have ai/ (“🤖 AI Intelligence”) with start_server.py etc. Also “core” (C++), “interface” (.NET), “docs” (Documentation).
+  - Workspace: No chatgpt_integration/ shown. You have ai/ (“ AI Intelligence”) with start_server.py etc. Also “core” (C++), “interface” (.NET), “docs” (Documentation).
   - Mismatch: The documented “ChatGPT Integration” path doesn’t exist in the listed structure.
 
 - Build steps:
@@ -37,34 +37,34 @@ Checklist:
   - Mismatch: Test names/locations differ; the available test task targets ai/test_ai_core.py.
 
 - Workspace configuration:
-  - Report includes a folders array with a “📊 ChatGPT Integration” pointing to ./chatgpt_integration.
+  - Report includes a folders array with a “ ChatGPT Integration” pointing to ./chatgpt_integration.
   - Repo already contains AIOS.code-workspace; no evidence of a chatgpt_integration folder. Better to reference existing top-level folders (ai, core, interface, docs, scripts, runtime_intelligence).
 
 - Metrics/claims:
-  - “All components building successfully” and 100% coverage claims aren’t verified here. The dashboard already marks “📊 ChatGPT Integration” tests as “🔄 Testing,” which is appropriately conservative; the global “Build Status: All components building successfully” is stronger than the task list supports without a run.
+  - “All components building successfully” and 100% coverage claims aren’t verified here. The dashboard already marks “ ChatGPT Integration” tests as “ Testing,” which is appropriately conservative; the global “Build Status: All components building successfully” is stronger than the task list supports without a run.
 
 ## Recommended edits
 
 - Paths and components
-  - Replace “📊 ChatGPT Integration (./chatgpt_integration)” with “🤖 AI Intelligence (./ai)”.
+  - Replace “ ChatGPT Integration (./chatgpt_integration)” with “ AI Intelligence (./ai)”.
   - Update the “After Unification” tree to reflect current folders:
-    - 🧠 AIOS Core (root)
-    - 🤖 AI Intelligence (./ai)
-    - ⚡ Core Engine (./core)
-    - 🖥️ Interface (./interface)
-    - 📚 Documentation (./docs)
-    - 🔧 Scripts & Tools (./scripts)
-    - 🧮 Runtime Intelligence (./runtime_intelligence)
+    -  AIOS Core (root)
+    -  AI Intelligence (./ai)
+    -  Core Engine (./core)
+    -  Interface (./interface)
+    -  Documentation (./docs)
+    -  Scripts & Tools (./scripts)
+    -  Runtime Intelligence (./runtime_intelligence)
 
 - Workspace folders JSON
   - Replace example with entries that exist:
-    - 🧠 AIOS Consciousness System: "."
-    - 🤖 AI Intelligence: "./ai"
-    - ⚡ Core Engine: "./core"
-    - 🖥️ Interface: "./interface"
-    - 📚 Documentation: "./docs"
-    - 🔧 Scripts & Tools: "./scripts"
-    - 🧮 Runtime Intelligence: "./runtime_intelligence"
+    -  AIOS Consciousness System: "."
+    -  AI Intelligence: "./ai"
+    -  Core Engine: "./core"
+    -  Interface: "./interface"
+    -  Documentation: "./docs"
+    -  Scripts & Tools: "./scripts"
+    -  Runtime Intelligence: "./runtime_intelligence"
 
 - Unified build process
   - Align to task names:
@@ -80,7 +80,7 @@ Checklist:
 
 - Cap claims or add verification notes
   - Where the report says “Build Status: All components building successfully” and “Test Coverage: 100%,” add “as of last validation on <date>/<commit>” or soften to “All available tasks build locally; coverage metrics pending CI run.”
-  - Keep “📊 ChatGPT Integration: Tests: 🔄 Testing” consistent with current state.
+  - Keep “ ChatGPT Integration: Tests:  Testing” consistent with current state.
 
 - Features section for ChatGPT Integration
   - Either:
@@ -2215,12 +2215,12 @@ I’m going to wire the “kernel-grade” principles from the email into AIOS d
 
 ## Results
 
-### Health check (EXCELLENT ✅)
+### Health check (EXCELLENT )
 - Total checks: 6; Passed: 6/6.
 - Advisory: 1 potential item flagged; non-fatal and informational.
 - Report: system_health_report.json
 
-### Python tests (PASS ✅)
+### Python tests (PASS )
 - 17 passed; warnings unchanged (pytest return-not-none and deprecations).
 
 ## How to use
@@ -2584,7 +2584,7 @@ I’ll unify the legacy status script with the canonical health checker, wire a 
 - settings.json — terminal tweaks:
   - enabled shell integration, disabled persistent sessions/bell, set skip list for a couple commands, ensured `PYTHONPATH` is set for tasks/terminal.
 
-## verification ✅
+## verification 
 
 - Health check: PASS (EXCELLENT)
   - Checks Passed: 5/5; report archived to system_health_report.json.
@@ -3184,8 +3184,8 @@ Got it—I'll make Tools visible alongside Scripts, relocate the canonical admin
 ## Changes made
 - Workspace folders
   - Updated AIOS.code-workspace to show:
-    - “🔧 Scripts” → scripts
-    - “🔧 Tools” → tools
+    - “ Scripts” → scripts
+    - “ Tools” → tools
 - Canonical admin tool location
   - Created canonical aios_admin.py (portable, typed, and lint-clean).
   - Converted aios_admin.py into a forwarder to the canonical script to avoid drift.
@@ -3267,8 +3267,8 @@ I’ll unify aios_admin.py so only one canonical file remains and make Tools cle
   - Note: File deletion via the editor API didn’t complete in this session; stubbing prevents any accidental use and can be safely committed. If you want me to physically remove them next, I can try again or provide a one-off PowerShell snippet.
 - Workspace clarity
   - Updated AIOS.code-workspace:
-    - “🔧 Scripts” → ./scripts
-    - “🔧 Tools” → ./runtime_intelligence/tools
+    - “ Scripts” → ./scripts
+    - “ Tools” → ./runtime_intelligence/tools
 - Task for convenience
   - Added VS Code task “python-admin-tool” that runs runtime_intelligence/tools/aios_admin.py.
 
@@ -3340,12 +3340,12 @@ Acknowledged. I’ll simplify the workspace so only the six core folders remain 
 
 ## actions taken
 - Updated AIOS.code-workspace to remove the extra Scripts/Tools entries. The folders list now contains exactly:
-  - 🧠 AIOS Core → .
-  - 🤖 AI Intelligence → ./ai
-  - ⚡ Core Engine → ./core
-  - 🖥️ Interface → ./interface
-  - 📚 Documentation → ./docs
-  - 🧮 Runtime Intelligence → ./runtime_intelligence
+  -  AIOS Core → .
+  -  AI Intelligence → ./ai
+  -  Core Engine → ./core
+  -  Interface → ./interface
+  -  Documentation → ./docs
+  -  Runtime Intelligence → ./runtime_intelligence
 - Confirmed deprecated files were removed:
   - Deleted: c:\dev\AIOS\aios_admin.py
   - Deleted: c:\dev\AIOS\tools\aios_admin.py
@@ -4502,8 +4502,8 @@ Plan:
 
 What I did
 - Updated AIOS.code-workspace settings:
-  - cmake.sourceDirectory = ${workspaceFolder:⚡ Core Engine}
-  - cmake.buildDirectory = ${workspaceFolder:⚡ Core Engine}/build
+  - cmake.sourceDirectory = ${workspaceFolder: Core Engine}
+  - cmake.buildDirectory = ${workspaceFolder: Core Engine}/build
   - cmake.ignoreCMakeListsMissing = true
   - Left generator/platform pinned: Visual Studio 17 2022, x64
 - Cleared stale cache and reconfigured core via terminal to fix a platform mismatch error from an earlier generator:
@@ -5096,7 +5096,7 @@ GitHub Copilot: I’ll run the test to check for import/runtime errors, then ana
 
 Proceeding to run the test and gather runtime diagnostics. The test ran and the runtime output shows:
 
-- ✅ Universal Logging and Runtime Intelligence were imported and initialized successfully.
+-  Universal Logging and Runtime Intelligence were imported and initialized successfully.
 - No import or runtime errors for the logging or runtime intelligence systems.
 - The test script is able to run and shut down cleanly, with context dumps and logs being generated.
 
@@ -7431,7 +7431,7 @@ Patches:
 ````markdown
 ```markdown
 # filepath: c:\dev\AIOS\docs\safety\SAFETY_PROTOCOL.md
-# 🛡️ AIOS Safety Protocol (Tachyonic Core Aligned)
+#  AIOS Safety Protocol (Tachyonic Core Aligned)
 # Core nucleus (bosonic/tachyonic) = immutable coherence lattice
 # Evolution surface = mutating hypersphere (requires rollback + periodic inward sync)
 # This relocated file supersedes root SAFETY_PROTOCOL.md (removed under hygiene policy)
@@ -7606,10 +7606,10 @@ def _check_rollback_layer(self):
 # filepath: c:\dev\AIOS\docs\AIOS\SAFETY_PROTOCOL_MAPPING.md
 # ...existing code...
 ## Δ Update (Rollback & Diff Layer Added)
-- Rollback Framework: ✅ (snapshot + diff capture primitives; restore placeholder ❌)
-- Diff Capture: ✅ (unified diff JSONL)
-- Core Path Guard: ⚠️ (write confined unless allow_outside=True; still needs deny list expansion)
-- Network Policy Layer: ❌ (stub pending)
+- Rollback Framework:  (snapshot + diff capture primitives; restore placeholder )
+- Diff Capture:  (unified diff JSONL)
+- Core Path Guard:  (write confined unless allow_outside=True; still needs deny list expansion)
+- Network Policy Layer:  (stub pending)
 # ...existing code...
 ```
 ````
@@ -8098,7 +8098,7 @@ Safety Controls Illustrated:
 - Logging emphasis (implied; actual logging occurs within imported safety modules).
 
 User Feedback Style:
-- Uses emoji/status markers (✅ / ❌) to clearly differentiate allowed vs blocked operations.
+- Uses emoji/status markers ( / ) to clearly differentiate allowed vs blocked operations.
 
 Not Implemented Here (delegated to imported modules):
 - Actual enforcement logic, resource limits, diff/snapshot features, hashing integrity.
@@ -11362,7 +11362,7 @@ Show-LauncherSummary -ResolvedMode $Mode -EnvType $Environment
 ```markdown
 // filepath: c:\dev\AIOS\README.md
 # ...existing code...
-## 🚀 Canonical Launch
+##  Canonical Launch
 
 The PowerShell script `launch_aios.ps1` is the unified, supported entry point for AIOS runtime initialization.
 

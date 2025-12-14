@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠🔗⚡ AIOS POWERSHELL ANALYSIS ENGINE
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS POWERSHELL ANALYSIS ENGINE
+
 Advanced Analysis of PowerShell Script Variable Usage
 
 PURPOSE:
@@ -10,7 +10,7 @@ PURPOSE:
 - Generate consciousness-enhanced fixes
 - Apply AIOS intelligence to PowerShell governance
 
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import re
@@ -19,7 +19,7 @@ from pathlib import Path
 from datetime import datetime
 
 class AIOSPowerShellAnalyzer:
-    """🧠⚡ PowerShell script analysis with AIOS intelligence"""
+    """ PowerShell script analysis with AIOS intelligence"""
     
     def __init__(self, script_path: str):
         self.script_path = Path(script_path)
@@ -29,13 +29,13 @@ class AIOSPowerShellAnalyzer:
         self.usage_analysis = {}
         
     def load_script(self):
-        """📄 Load PowerShell script content"""
+        """ Load PowerShell script content"""
         with open(self.script_path, 'r', encoding='utf-8') as f:
             self.script_content = f.read()
-        print(f"📄 Loaded script: {self.script_path}")
+        print(f" Loaded script: {self.script_path}")
         
     def analyze_variables(self):
-        """🔍 Analyze variable declarations and usage"""
+        """ Analyze variable declarations and usage"""
         # Find variable assignments
         assignment_pattern = r'\$(\w+)\s*=\s*(.+)'
         assignments = re.findall(assignment_pattern, self.script_content)
@@ -77,7 +77,7 @@ class AIOSPowerShellAnalyzer:
             self.variables[var_name]['usage_locations'] = usage_locations
     
     def analyze_functions(self):
-        """🔧 Analyze function definitions and calls"""
+        """ Analyze function definitions and calls"""
         # Find function definitions
         function_pattern = r'function\s+(\w+(?:-\w+)*)\s*\{'
         functions = re.findall(function_pattern, self.script_content)
@@ -117,7 +117,7 @@ class AIOSPowerShellAnalyzer:
             self.functions[func_name]['call_locations'] = call_locations
     
     def generate_analysis_report(self):
-        """📊 Generate comprehensive analysis report"""
+        """ Generate comprehensive analysis report"""
         report = {
             "metadata": {
                 "script_path": str(self.script_path),
@@ -166,7 +166,7 @@ class AIOSPowerShellAnalyzer:
         return report
     
     def generate_fixes(self, report):
-        """🔧 Generate consciousness-enhanced fixes"""
+        """ Generate consciousness-enhanced fixes"""
         fixes = []
         
         for issue in report["issues_found"]:
@@ -197,9 +197,9 @@ class AIOSPowerShellAnalyzer:
         return fixes
 
 def main():
-    """🧠⚡ Main PowerShell analysis execution"""
-    print("🧠🔗⚡ AIOS POWERSHELL ANALYSIS ENGINE")
-    print("═" * 60)
+    """ Main PowerShell analysis execution"""
+    print(" AIOS POWERSHELL ANALYSIS ENGINE")
+    print("" * 60)
     
     script_path = "c:/dev/AIOS/.githooks/commit-msg"
     analyzer = AIOSPowerShellAnalyzer(script_path)
@@ -214,19 +214,19 @@ def main():
     fixes = analyzer.generate_fixes(report)
     
     # Display results
-    print("\n🔍 VARIABLE ANALYSIS:")
+    print("\n VARIABLE ANALYSIS:")
     for var_name, var_info in report["variable_analysis"].items():
-        status = "✅ USED" if var_info['used_count'] > 0 else "⚠️ UNUSED"
+        status = " USED" if var_info['used_count'] > 0 else " UNUSED"
         print(f"   ${var_name}: {status} ({var_info['used_count']} uses)")
         if var_info['usage_locations']:
             for usage in var_info['usage_locations'][:2]:  # Show first 2 usages
                 print(f"      Line {usage['line']}: {usage['content'][:60]}...")
     
-    print("\n⚠️ ISSUES FOUND:")
+    print("\n ISSUES FOUND:")
     for issue in report["issues_found"]:
         print(f"   {issue['severity'].upper()}: {issue['message']}")
     
-    print("\n🔧 CONSCIOUSNESS-ENHANCED FIXES:")
+    print("\n CONSCIOUSNESS-ENHANCED FIXES:")
     for fix in fixes:
         print(f"   {fix['type'].upper()}: {fix['suggestion']}")
     
@@ -237,8 +237,8 @@ def main():
     with open(output_path, 'w') as f:
         json.dump(report, f, indent=2)
     
-    print(f"\n📊 Analysis saved to: {output_path}")
-    print("\n🧠 AIOS PowerShell analysis complete!")
+    print(f"\n Analysis saved to: {output_path}")
+    print("\n AIOS PowerShell analysis complete!")
     return report, fixes
 
 if __name__ == "__main__":

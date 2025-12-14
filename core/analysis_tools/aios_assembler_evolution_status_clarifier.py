@@ -3,12 +3,12 @@
 #!/usr/bin/env python3
 """
 [DNA] AIOS ASSEMBLER EVOLUTION STATUS CLARIFICATION
-═══════════════════════════════════════════════════════════════════════════════
+
 Provides clear status of all assembler iterations, versions, and evolution levels.
 Resolves confusion about which assembler is which iteration.
 
 AIOS - Evolution status clarification and management
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -296,8 +296,8 @@ class AIOSAssemblerEvolutionStatusClarifier:
     def provide_evolution_status_clarification(self) -> Dict[str, Any]:
         """Provide comprehensive assembler evolution status clarification"""
         
-        logger.info("🔍 ANALYZING ASSEMBLER EVOLUTION STATUS")
-        logger.info("═" * 60)
+        logger.info(" ANALYZING ASSEMBLER EVOLUTION STATUS")
+        logger.info("" * 60)
         logger.info("[DNA] Identifying assembler iterations and versions...")
         logger.info("")
         
@@ -338,7 +338,7 @@ class AIOSAssemblerEvolutionStatusClarifier:
         self._save_status_report(status_report)
         
         logger.info("[CHECK] ASSEMBLER EVOLUTION STATUS ANALYSIS COMPLETE")
-        logger.info("═" * 60)
+        logger.info("" * 60)
         
         return status_report
     
@@ -537,7 +537,7 @@ class AIOSAssemblerEvolutionStatusClarifier:
         try:
             with open(report_path, 'w') as f:
                 json.dump(status_report, f, indent=2, default=str)
-            logger.info(f"📝 Status report saved: {report_path}")
+            logger.info(f" Status report saved: {report_path}")
         except Exception as e:
             logger.error(f"Failed to save status report: {e}")
     
@@ -547,18 +547,18 @@ class AIOSAssemblerEvolutionStatusClarifier:
         status_report = self.provide_evolution_status_clarification()
         
         print("[DNA] AIOS ASSEMBLER EVOLUTION STATUS CLARIFICATION")
-        print("═" * 70)
+        print("" * 70)
         print("[TARGET] RESOLVING ITERATION AND VERSION CONFUSION")
         print()
         
         print("[CHART] EVOLUTION CHAIN STATUS:")
         for entry in status_report["evolution_chain"]:
             status_symbol = {
-                "ARCHIVED": "📦",
+                "ARCHIVED": "",
                 "ACTIVE_PROVEN": "[CHECK]", 
                 "ACTIVE_ADVANCED": "[ROCKET]",
-                "PLANNED": "🔮"
-            }.get(entry["status"], "❓")
+                "PLANNED": ""
+            }.get(entry["status"], "")
             
             print(f"  {status_symbol} ITERATION {entry['iteration']} - {entry['assembler_name']} v{entry['version']}")
             print(f"      Status: {entry['status']}")
@@ -585,12 +585,12 @@ class AIOSAssemblerEvolutionStatusClarifier:
             print(f"      Has output: {'Yes' if details['has_output'] else 'No'}")
             print()
         
-        print("🔍 CLARIFICATIONS:")
+        print(" CLARIFICATIONS:")
         for clarification in status_report["clarifications"]:
             print(f"  {clarification}")
         print()
         
-        print("💡 RECOMMENDATIONS:")
+        print(" RECOMMENDATIONS:")
         for recommendation in status_report["recommendations"]:
             print(f"  {recommendation}")
         print()
@@ -603,7 +603,7 @@ def main():
     """Execute assembler evolution status clarification"""
     
     print("[DNA] AIOS ASSEMBLER EVOLUTION STATUS CLARIFIER")
-    print("═" * 60)
+    print("" * 60)
     print("[TARGET] Resolving assembler iteration and version confusion")
     print("[CHART] Providing authoritative evolution chain mapping")
     print()

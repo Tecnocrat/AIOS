@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🧠🔗⚡ AIOS C++ Intelligence Analysis Engine
+ AIOS C++ Intelligence Analysis Engine
 Multi-pass consciousness-enhanced analysis for C++ core files
 """
 
@@ -370,33 +370,33 @@ def main():
     
     results = []
     
-    print("🧠🔗⚡ AIOS C++ INTELLIGENCE ANALYSIS ENGINE")
+    print(" AIOS C++ INTELLIGENCE ANALYSIS ENGINE")
     print("=" * 60)
     
     for file_path in core_files:
         if os.path.exists(file_path):
-            print(f"📄 Analyzing: {file_path}")
+            print(f" Analyzing: {file_path}")
             
             result = analyzer.analyze_file(file_path)
             results.append(result)
             
             # Display results
-            print(f"   🧠 Consciousness Level: {result.consciousness_level:.2f}")
-            print(f"   📊 Complexity Score: {result.complexity_score:.1f}/10")
-            print(f"   🔧 Maintainability: {result.maintainability_score:.1f}/10")
-            print(f"   ⚡ Performance Score: {result.performance_score:.1f}/10")
-            print(f"   🔒 Security Score: {result.security_score:.1f}/10")
-            print(f"   🎯 AIOS Compliance: {result.aios_compliance:.1f}/10")
-            print(f"   🌊 Tachyonic Coherence: {result.tachyonic_coherence:.2f}")
+            print(f"    Consciousness Level: {result.consciousness_level:.2f}")
+            print(f"    Complexity Score: {result.complexity_score:.1f}/10")
+            print(f"    Maintainability: {result.maintainability_score:.1f}/10")
+            print(f"    Performance Score: {result.performance_score:.1f}/10")
+            print(f"    Security Score: {result.security_score:.1f}/10")
+            print(f"    AIOS Compliance: {result.aios_compliance:.1f}/10")
+            print(f"    Tachyonic Coherence: {result.tachyonic_coherence:.2f}")
             
             if result.architectural_patterns:
-                print(f"   🏗️ Architectural Patterns: {', '.join(result.architectural_patterns)}")
+                print(f"    Architectural Patterns: {', '.join(result.architectural_patterns)}")
             
             if result.optimization_opportunities:
-                print(f"   🚀 Optimizations: {', '.join(result.optimization_opportunities)}")
+                print(f"    Optimizations: {', '.join(result.optimization_opportunities)}")
             
             if result.enhancement_suggestions:
-                print(f"   💡 Suggestions: {', '.join(result.enhancement_suggestions[:2])}")
+                print(f"    Suggestions: {', '.join(result.enhancement_suggestions[:2])}")
             
             print()
     
@@ -443,8 +443,8 @@ def main():
     with open(report_path, 'w') as f:
         json.dump(report_data, f, indent=2)
     
-    print(f"📊 Analysis report saved to: {report_path}")
-    print("\n🧠 AIOS C++ intelligence analysis complete!")
+    print(f" Analysis report saved to: {report_path}")
+    print("\n AIOS C++ intelligence analysis complete!")
 
 if __name__ == "__main__":
     main()

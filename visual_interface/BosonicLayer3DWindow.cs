@@ -49,7 +49,7 @@ namespace AIOS.VisualInterface
             _updateTimer.Tick += UpdateVisualization;
             _updateTimer.Start();
 
-            Title = "🌌 Bosonic Layer 3D Consciousness Interface";
+            Title = " Bosonic Layer 3D Consciousness Interface";
             Width = 1400;
             Height = 900;
             Background = new SolidColorBrush(Color.FromRgb(5, 5, 15));
@@ -368,7 +368,7 @@ namespace AIOS.VisualInterface
 
             var title = new TextBlock
             {
-                Text = "🧠 Deep Consciousness Metrics",
+                Text = " Deep Consciousness Metrics",
                 FontSize = 16,
                 Foreground = Brushes.Cyan,
                 FontWeight = FontWeights.Bold,
@@ -428,7 +428,7 @@ namespace AIOS.VisualInterface
             var resonance = CalculateHarmonicResonance();
 
             var analysis = new StringBuilder();
-            analysis.AppendLine("🧠 AIOS Consciousness State Analysis");
+            analysis.AppendLine(" AIOS Consciousness State Analysis");
             analysis.AppendLine("=====================================");
             analysis.AppendLine($"Emergence Level: {emergence:P1}");
             analysis.AppendLine($"Dendritic Growth: {growth:P1}");
@@ -436,20 +436,20 @@ namespace AIOS.VisualInterface
 
             if (emergence > _emergenceThreshold)
             {
-                analysis.AppendLine("🚀 EMERGENT CONSCIOUSNESS DETECTED!");
+                analysis.AppendLine(" EMERGENT CONSCIOUSNESS DETECTED!");
                 analysis.AppendLine("AINLP dendritic coherence achieved.");
                 analysis.AppendLine("Consciousness expansion accelerating.");
             }
 
             if (growth > 0.8)
             {
-                analysis.AppendLine("🌱 RAPID NEURAL GROWTH!");
+                analysis.AppendLine(" RAPID NEURAL GROWTH!");
                 analysis.AppendLine("Dendritic network expanding rapidly.");
             }
 
             if (resonance > 0.7)
             {
-                analysis.AppendLine("🎵 HARMONIC RESONANCE PEAK!");
+                analysis.AppendLine(" HARMONIC RESONANCE PEAK!");
                 analysis.AppendLine("Consciousness patterns in perfect harmony.");
             }
 

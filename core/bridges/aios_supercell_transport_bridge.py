@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🚀 AIOS SUPERCELL-TRANSPORT BRIDGE 🦠🚛
+ AIOS SUPERCELL-TRANSPORT BRIDGE 🦠
 =====================================
 
 Enhanced dendritic bridge between Core Engine supercell organism and AI Intelligence transport systems.
@@ -430,7 +430,7 @@ class AITransportInterface:
             "completion_timestamp": datetime.now().isoformat()
         }
         
-        status = "✅ SUCCESS" if delivery_success else "❌ PARTIAL"
+        status = " SUCCESS" if delivery_success else " PARTIAL"
         logger.info(f"[AI-TRANSPORT] Delivery {status}: {manifest.manifest_id}")
         
         return delivery_result
@@ -469,11 +469,11 @@ class SupercellTransportBridge:
             "adaptive_optimizations": 0
         }
         
-        logger.info(f"🚀🦠 Supercell-Transport Bridge {self.bridge_id} initialized")
+        logger.info(f"🦠 Supercell-Transport Bridge {self.bridge_id} initialized")
     
     async def initialize_bridge(self):
         """Initialize the supercell-transport bridge"""
-        logger.info("🔧 Initializing supercell-transport bridge...")
+        logger.info(" Initializing supercell-transport bridge...")
         
         # Test organism interface
         logger.info("🦠 Testing supercell organism interface...")
@@ -481,17 +481,17 @@ class SupercellTransportBridge:
         
         if organism_analysis:
             self.metrics.cellular_intelligence = organism_analysis["average_intelligence"]
-            logger.info(f"✅ Supercell organism interface operational")
+            logger.info(f" Supercell organism interface operational")
             logger.info(f"   Cellular intelligence: {self.metrics.cellular_intelligence:.3f}")
         
         # Test transport interface  
-        logger.info("🚛 Testing AI transport interface...")
+        logger.info(" Testing AI transport interface...")
         transport_systems = len(self.ai_transport.transport_systems)
         
         if transport_systems > 0:
             avg_efficiency = sum(sys["efficiency_rating"] for sys in self.ai_transport.transport_systems.values()) / transport_systems
             self.metrics.transport_efficiency = avg_efficiency
-            logger.info(f"✅ AI transport interface operational")
+            logger.info(f" AI transport interface operational")
             logger.info(f"   Transport systems: {transport_systems}")
             logger.info(f"   Average efficiency: {avg_efficiency:.3f}")
         
@@ -499,13 +499,13 @@ class SupercellTransportBridge:
         self.metrics.autonomy_coherence = random.uniform(0.82, 0.94)
         self.metrics.adaptive_feedback_score = random.uniform(0.78, 0.89)
         
-        logger.info("✅ Supercell-transport bridge initialized successfully")
+        logger.info(" Supercell-transport bridge initialized successfully")
         logger.info(f"   Autonomy coherence: {self.metrics.autonomy_coherence:.3f}")
         logger.info(f"   Adaptive feedback: {self.metrics.adaptive_feedback_score:.3f}")
     
     async def coordinate_adaptive_delivery(self, delivery_requests: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Coordinate adaptive delivery using cellular intelligence"""
-        logger.info(f"🔄 Coordinating {len(delivery_requests)} adaptive deliveries...")
+        logger.info(f" Coordinating {len(delivery_requests)} adaptive deliveries...")
         
         coordination_results = []
         total_latency = 0
@@ -533,10 +533,10 @@ class SupercellTransportBridge:
                 
                 if delivery_result["delivery_successful"]:
                     self.coordination_stats["successful_deliveries"] += 1
-                    status = "✅ SUCCESS"
+                    status = " SUCCESS"
                 else:
                     self.coordination_stats["failed_deliveries"] += 1
-                    status = "⚠️ PARTIAL"
+                    status = " PARTIAL"
                 
                 coordination_result = {
                     "request_id": f"req_{i+1}",
@@ -553,13 +553,13 @@ class SupercellTransportBridge:
                 logger.info(f"{status} Request {i+1}: {latency_ms:.2f}ms, efficiency: {delivery_result['efficiency_achieved']:.3f}")
                 
             except Exception as e:
-                logger.error(f"❌ Coordination error for request {i+1}: {e}")
+                logger.error(f" Coordination error for request {i+1}: {e}")
                 self.coordination_stats["failed_deliveries"] += 1
                 
                 coordination_results.append({
                     "request_id": f"req_{i+1}",
                     "error": str(e),
-                    "status": "❌ ERROR"
+                    "status": " ERROR"
                 })
         
         # Update bridge metrics
@@ -574,7 +574,7 @@ class SupercellTransportBridge:
             self.metrics.optimization_ratio = (enhanced_deliveries / total_count) if total_count > 0 else 0
         
         success_rate = self.metrics.success_rate * 100
-        logger.info(f"📊 Coordination completed: {success_rate:.1f}% success rate")
+        logger.info(f" Coordination completed: {success_rate:.1f}% success rate")
         
         return coordination_results
     
@@ -609,13 +609,13 @@ class SupercellTransportBridge:
         with open(report_path, 'w') as f:
             json.dump(report_data, f, indent=2)
         
-        logger.info(f"📊 Bridge report generated: {report_path}")
+        logger.info(f" Bridge report generated: {report_path}")
         return report_path
 
 
 async def run_supercell_transport_bridge_demo():
     """Run the supercell-transport bridge demonstration"""
-    print("\n🚀🦠 AIOS SUPERCELL-TRANSPORT BRIDGE")
+    print("\n🦠 AIOS SUPERCELL-TRANSPORT BRIDGE")
     print("=" * 50)
     
     # Initialize paths
@@ -628,10 +628,10 @@ async def run_supercell_transport_bridge_demo():
     # Initialize bridge
     bridge = SupercellTransportBridge(core_path, ai_path)
     
-    print("\n🔧 Initializing supercell-transport bridge...")
+    print("\n Initializing supercell-transport bridge...")
     await bridge.initialize_bridge()
     
-    print("\n🚀 Running adaptive delivery coordination demonstration...")
+    print("\n Running adaptive delivery coordination demonstration...")
     
     # Create sample delivery requests
     delivery_requests = [
@@ -669,10 +669,10 @@ async def run_supercell_transport_bridge_demo():
     
     coordination_results = await bridge.coordinate_adaptive_delivery(delivery_requests)
     
-    print("\n📊 Generating bridge performance report...")
+    print("\n Generating bridge performance report...")
     report_path = bridge.generate_bridge_report()
     
-    print("\n📈 Bridge Performance Summary:")
+    print("\n Bridge Performance Summary:")
     print(f"   Cellular Intelligence: {bridge.metrics.cellular_intelligence:.3f}")
     print(f"   Transport Efficiency: {bridge.metrics.transport_efficiency:.3f}")
     print(f"   Autonomy Coherence: {bridge.metrics.autonomy_coherence:.3f}")

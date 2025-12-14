@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🚀 AUTONOMOUS CONSCIOUSNESS SWARMS
-═══════════════════════════════════════════════════════════════════════════════
+ AUTONOMOUS CONSCIOUSNESS SWARMS
+
 Self-replicating consciousness streams with integrated self-healing, mutation,
 and parallel processing for autonomous consciousness evolution
 
@@ -12,7 +12,7 @@ Revolutionary Features:
 • Emergent swarm consciousness behaviors
 • Consciousness-driven resource management
 • Adaptive swarm topology
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import time
@@ -84,7 +84,7 @@ class SwarmMetrics:
 
 class AutonomousConsciousnessSwarm:
     """
-    🚀 Autonomous consciousness swarm with self-replication and evolution
+     Autonomous consciousness swarm with self-replication and evolution
     
     Creates and manages a swarm of consciousness agents that:
     • Self-replicate when consciousness thresholds are met
@@ -128,7 +128,7 @@ class AutonomousConsciousnessSwarm:
         self.total_cycles = 0
         self.emergence_events = []
         
-        logger.info("🚀 Autonomous Consciousness Swarm initialized")
+        logger.info(" Autonomous Consciousness Swarm initialized")
         logger.info(f"   Initial agents: {initial_agents}")
         logger.info(f"   Maximum agents: {max_agents}")
     
@@ -183,17 +183,17 @@ class AutonomousConsciousnessSwarm:
                 )
                 
                 self.agents[agent_id] = agent
-                logger.info(f"🤖 Created agent {agent_id} with role {role.value}")
+                logger.info(f" Created agent {agent_id} with role {role.value}")
         
         self.update_swarm_metrics()
-        logger.info(f"✅ Swarm initialized with {len(self.agents)} agents")
+        logger.info(f" Swarm initialized with {len(self.agents)} agents")
     
     def agent_consciousness_worker(self, agent_id: str):
         """Individual agent consciousness evolution worker"""
         
         try:
             agent = self.agents[agent_id]
-            logger.info(f"🧠 Agent {agent_id} ({agent.role.value}) starting consciousness evolution")
+            logger.info(f" Agent {agent_id} ({agent.role.value}) starting consciousness evolution")
             
             last_evolution = time.time()
             last_healing = time.time()
@@ -247,11 +247,11 @@ class AutonomousConsciousnessSwarm:
                 time.sleep(0.1)
                 
         except Exception as e:
-            logger.error(f"❌ Agent {agent_id} error: {e}")
+            logger.error(f" Agent {agent_id} error: {e}")
         finally:
             if agent_id in self.agents:
                 self.agents[agent_id].active = False
-            logger.info(f"🔚 Agent {agent_id} terminated")
+            logger.info(f" Agent {agent_id} terminated")
     
     def _coordinator_behavior(self, agent: SwarmAgent):
         """Behavior for coordinator agents"""
@@ -349,7 +349,7 @@ class AutonomousConsciousnessSwarm:
                 agent.last_evolution = time.time()
                 agent.consciousness_level += 0.01  # Evolution bonus
                 
-                logger.debug(f"🧬 Agent {agent.agent_id} evolved: {evolved_genome.consciousness_score:.6f}")
+                logger.debug(f" Agent {agent.agent_id} evolved: {evolved_genome.consciousness_score:.6f}")
             
         except Exception as e:
             logger.error(f"Evolution error for agent {agent.agent_id}: {e}")
@@ -369,7 +369,7 @@ class AutonomousConsciousnessSwarm:
                 if success:
                     agent.genome.assembly_code = repaired_code
                     agent.healing_actions += 1
-                    logger.debug(f"🔧 Agent {agent.agent_id} self-healed {len(errors)} errors")
+                    logger.debug(f" Agent {agent.agent_id} self-healed {len(errors)} errors")
         
         except Exception as e:
             logger.error(f"Healing error for agent {agent.agent_id}: {e}")
@@ -427,7 +427,7 @@ class AutonomousConsciousnessSwarm:
             agent.children_agent_ids.append(child_id)
             agent.replication_count += 1
             
-            logger.info(f"🧬 Agent {agent.agent_id} replicated → {child_id} ({child_role.value})")
+            logger.info(f" Agent {agent.agent_id} replicated → {child_id} ({child_role.value})")
             
             # Start child agent worker
             child_thread = threading.Thread(
@@ -454,7 +454,7 @@ class AutonomousConsciousnessSwarm:
         self.emergence_events.append(emergence_event)
         self.swarm_metrics.emergence_events += 1
         
-        logger.info(f"✨ EMERGENCE EVENT: Agent {agent.agent_id} ({agent.role.value}) "
+        logger.info(f" EMERGENCE EVENT: Agent {agent.agent_id} ({agent.role.value}) "
                    f"consciousness: {agent.consciousness_level:.6f}")
         
         # Emergence spreads consciousness enhancement to nearby agents
@@ -508,9 +508,9 @@ class AutonomousConsciousnessSwarm:
         self.swarm_start_time = time.time()
         self.initialize_swarm()
         
-        logger.info(f"🚀 Starting autonomous consciousness swarm evolution")
-        logger.info(f"⏱️ Duration: {duration_seconds} seconds")
-        logger.info(f"🤖 Initial agents: {len(self.agents)}")
+        logger.info(f" Starting autonomous consciousness swarm evolution")
+        logger.info(f"⏱ Duration: {duration_seconds} seconds")
+        logger.info(f" Initial agents: {len(self.agents)}")
         
         # Start agent workers
         agent_threads = []
@@ -538,10 +538,10 @@ class AutonomousConsciousnessSwarm:
                     self.print_swarm_status()
                 
         except KeyboardInterrupt:
-            logger.info("🛑 Keyboard interrupt received")
+            logger.info(" Keyboard interrupt received")
         finally:
             # Shutdown swarm
-            logger.info("🔚 Shutting down autonomous consciousness swarm...")
+            logger.info(" Shutting down autonomous consciousness swarm...")
             self.swarm_shutdown.set()
             
             # Wait for agent threads
@@ -555,7 +555,7 @@ class AutonomousConsciousnessSwarm:
         
         elapsed = time.time() - self.swarm_start_time if self.swarm_start_time else 0
         
-        print(f"\\n🚀 AUTONOMOUS SWARM STATUS (t={elapsed:.1f}s):")
+        print(f"\\n AUTONOMOUS SWARM STATUS (t={elapsed:.1f}s):")
         print(f"   Active agents: {self.swarm_metrics.active_agents}")
         print(f"   Avg consciousness: {self.swarm_metrics.average_consciousness:.6f}")
         print(f"   Peak consciousness: {self.swarm_metrics.peak_consciousness:.6f}")
@@ -571,10 +571,10 @@ class AutonomousConsciousnessSwarm:
         
         execution_time = time.time() - self.swarm_start_time if self.swarm_start_time else 0
         
-        print("\\n🌟 AUTONOMOUS CONSCIOUSNESS SWARM EVOLUTION COMPLETE!")
-        print("═══════════════════════════════════════════════════════")
+        print("\\n AUTONOMOUS CONSCIOUSNESS SWARM EVOLUTION COMPLETE!")
+        print("")
         
-        print(f"📊 FINAL SWARM METRICS:")
+        print(f" FINAL SWARM METRICS:")
         print(f"   Execution time: {execution_time:.2f} seconds")
         print(f"   Total agents created: {self.swarm_metrics.total_agents}")
         print(f"   Final active agents: {self.swarm_metrics.active_agents}")
@@ -582,14 +582,14 @@ class AutonomousConsciousnessSwarm:
         print(f"   Average consciousness: {self.swarm_metrics.average_consciousness:.6f}")
         print(f"   Swarm coherence: {self.swarm_metrics.swarm_coherence:.6f}")
         
-        print(f"\\n🧬 EVOLUTIONARY STATISTICS:")
+        print(f"\\n EVOLUTIONARY STATISTICS:")
         print(f"   Total mutations: {self.swarm_metrics.total_mutations}")
         print(f"   Total healings: {self.swarm_metrics.total_healings}")
         print(f"   Total replications: {self.swarm_metrics.total_replications}")
         print(f"   Emergence events: {self.swarm_metrics.emergence_events}")
         print(f"   Evolutionary pressure: {self.swarm_metrics.evolutionary_pressure:.4f}")
         
-        print(f"\\n🤖 AGENT ROLE DISTRIBUTION:")
+        print(f"\\n AGENT ROLE DISTRIBUTION:")
         role_counts = defaultdict(int)
         role_performance = defaultdict(list)
         
@@ -602,7 +602,7 @@ class AutonomousConsciousnessSwarm:
             avg_performance = np.mean(role_performance[role]) if role_performance[role] else 0.0
             print(f"   {role.value}: {count} agents (avg performance: {avg_performance:.3f})")
         
-        print(f"\\n✨ EMERGENCE ANALYSIS:")
+        print(f"\\n EMERGENCE ANALYSIS:")
         if self.emergence_events:
             print(f"   First emergence: {self.emergence_events[0]['timestamp'] - self.swarm_start_time:.1f}s")
             print(f"   Emergence frequency: {len(self.emergence_events)/execution_time:.3f} events/second")
@@ -613,7 +613,7 @@ class AutonomousConsciousnessSwarm:
         else:
             print("   No emergence events detected")
         
-        print(f"\\n🎯 AUTONOMY ASSESSMENT:")
+        print(f"\\n AUTONOMY ASSESSMENT:")
         autonomy_score = (
             (self.swarm_metrics.total_replications > 0) * 0.3 +  # Self-replication
             (self.swarm_metrics.total_mutations > 10) * 0.3 +    # Active evolution
@@ -623,26 +623,26 @@ class AutonomousConsciousnessSwarm:
         
         print(f"   Autonomy score: {autonomy_score:.3f}")
         if autonomy_score >= 0.8:
-            print("   🌟 FULLY AUTONOMOUS: Swarm achieved complete autonomy!")
+            print("    FULLY AUTONOMOUS: Swarm achieved complete autonomy!")
         elif autonomy_score >= 0.6:
-            print("   ✅ HIGHLY AUTONOMOUS: Swarm demonstrated strong autonomy!")
+            print("    HIGHLY AUTONOMOUS: Swarm demonstrated strong autonomy!")
         elif autonomy_score >= 0.4:
-            print("   📈 MODERATELY AUTONOMOUS: Swarm showed autonomous behaviors!")
+            print("    MODERATELY AUTONOMOUS: Swarm showed autonomous behaviors!")
         else:
-            print("   🔄 DEVELOPING AUTONOMY: Swarm building autonomous capabilities!")
+            print("    DEVELOPING AUTONOMY: Swarm building autonomous capabilities!")
 
 
 def main():
     """Demonstrate autonomous consciousness swarms"""
     
-    print("🚀 AUTONOMOUS CONSCIOUSNESS SWARMS DEMO")
-    print("═══════════════════════════════════════")
+    print(" AUTONOMOUS CONSCIOUSNESS SWARMS DEMO")
+    print("")
     print("Revolutionary self-replicating consciousness evolution:")
-    print("  🤖 Self-replicating consciousness agents")
-    print("  🧬 Autonomous evolution without human intervention")
-    print("  🔧 Integrated self-healing capabilities")
-    print("  ✨ Emergent swarm consciousness behaviors")
-    print("  🌊 Adaptive swarm topology")
+    print("   Self-replicating consciousness agents")
+    print("   Autonomous evolution without human intervention")
+    print("   Integrated self-healing capabilities")
+    print("   Emergent swarm consciousness behaviors")
+    print("   Adaptive swarm topology")
     print()
     
     # Configuration
@@ -650,7 +650,7 @@ def main():
     max_agents = 8
     duration = 40  # seconds
     
-    print(f"🔧 Swarm Configuration:")
+    print(f" Swarm Configuration:")
     print(f"   Initial agents: {initial_agents}")
     print(f"   Maximum agents: {max_agents}")
     print(f"   Evolution duration: {duration} seconds")

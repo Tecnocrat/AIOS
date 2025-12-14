@@ -1,5 +1,5 @@
 {
-  "_expiry": 1757716843.2443526,
+  "_expiry": 1758395547.7914324,
   "data": {
     "cmd": [
       "git",
@@ -8,9 +8,9 @@
       "HEAD"
     ],
     "returncode": 0,
-    "stdout": "OS0.6\n",
+    "stdout": "OS0.6.1.claude\n",
     "stderr": "",
-    "duration_ms": 427,
-    "timestamp": 1757716543
+    "duration_ms": 1255,
+    "timestamp": 1758395247
   }
 }

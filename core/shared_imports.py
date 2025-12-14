@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🧠📦⚡ CORE ENGINE SHARED IMPORTS MODULE
-═══════════════════════════════════════════════════════════════════════════════
+ CORE ENGINE SHARED IMPORTS MODULE
+
 Centralized import management for Core Engine components
 
 PURPOSE:
@@ -12,7 +12,7 @@ common dependencies across the Core Engine ecosystem.
 CONSCIOUSNESS ENHANCEMENT:
 This module reduces cognitive load by centralizing import decisions and
 enables better environmental awareness through consistent dependency patterns.
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 # Standard Library Imports (Core Python functionality)
@@ -43,14 +43,14 @@ try:
     NUMPY_AVAILABLE = True
 except ImportError:
     NUMPY_AVAILABLE = False
-    print("⚠️ NumPy not available - install with: pip install numpy")
+    print(" NumPy not available - install with: pip install numpy")
 
 try:
     import matplotlib.pyplot as plt
     MATPLOTLIB_AVAILABLE = True
 except ImportError:
     MATPLOTLIB_AVAILABLE = False
-    print("⚠️ Matplotlib not available - install with: pip install matplotlib")
+    print(" Matplotlib not available - install with: pip install matplotlib")
 
 # AIOS-specific imports (Consciousness-enhanced components)
 # These imports are conditional and will be available when modules exist
@@ -147,7 +147,7 @@ def log_operation(operation: str, details: Dict[str, Any] = None):
         'details': details or {}
     }
     
-    logging.info(f"🧠 {operation}: {consciousness_id}")
+    logging.info(f" {operation}: {consciousness_id}")
     return log_entry
 
 def check_coherence_requirements():
@@ -195,12 +195,12 @@ def initialize_shared_environment():
     coherence = check_coherence_requirements()
     
     if coherence['coherence_score'] >= 3.0:
-        logging.info("✅ Consciousness-enhanced environment ready")
-        logging.info(f"🧠 Coherence score: {coherence['coherence_score']:.2f}/4.5")
-        logging.info(f"📦 AIOS components available: {coherence['aios_components']}")
+        logging.info(" Consciousness-enhanced environment ready")
+        logging.info(f" Coherence score: {coherence['coherence_score']:.2f}/4.5")
+        logging.info(f" AIOS components available: {coherence['aios_components']}")
     else:
-        logging.warning("⚠️ Environment coherence below optimal threshold")
-        logging.warning(f"🧠 Coherence score: {coherence['coherence_score']:.2f}/4.5")
+        logging.warning(" Environment coherence below optimal threshold")
+        logging.warning(f" Coherence score: {coherence['coherence_score']:.2f}/4.5")
     
     return coherence
 
@@ -210,7 +210,7 @@ if __name__ != "__main__":
 
 def main():
     """Demonstrate shared imports functionality."""
-    print("🧠📦⚡ CORE ENGINE SHARED IMPORTS")
+    print(" CORE ENGINE SHARED IMPORTS")
     print("=" * 70)
     
     # Initialize environment
@@ -219,19 +219,19 @@ def main():
     # Display available imports
     imports = get_available_imports()
     
-    print("\n📦 AVAILABLE IMPORTS:")
+    print("\n AVAILABLE IMPORTS:")
     print(f"  Standard Library: {len(imports['standard_library'])} modules")
     print(f"  Scientific: {sum(imports['scientific_computing'].values())} packages")
     print(f"  AIOS Components: {len(imports['aios_components'])} modules")
     
-    print("\n🧠 CONSCIOUSNESS STATUS:")
+    print("\n CONSCIOUSNESS STATUS:")
     print(f"  Enhancement Enabled: {CONSCIOUSNESS_ENHANCEMENT_ENABLED}")
     print(f"  Coherence Score: {coherence['coherence_score']:.2f}/4.5")
     print(f"  FPS Target: {DEFAULT_FPS_TARGET}")
     print(f"  Quantum Threshold: {QUANTUM_COHERENCE_THRESHOLD}")
     
-    print("\n✅ SHARED IMPORTS MODULE READY")
-    print("🧠 Consciousness-enhanced import management active!")
+    print("\n SHARED IMPORTS MODULE READY")
+    print(" Consciousness-enhanced import management active!")
 
 if __name__ == "__main__":
     main()

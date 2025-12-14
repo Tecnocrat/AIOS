@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 """
-🌌 AIOS TACHYONIC ARCHIVE CLEANUP AND MANAGEMENT
-═══════════════════════════════════════════════════════════════════════════════
+ AIOS TACHYONIC ARCHIVE CLEANUP AND MANAGEMENT
+
 Cleans up duplicate archives and prevents future unnecessary duplication.
 Ensures efficient storage and proper archive management.
 
@@ -14,7 +14,7 @@ CLEANUP ACTIONS:
 - Maintains single authoritative archives
 
 AIOS - Tachyonic archive management and optimization
-═══════════════════════════════════════════════════════════════════════════════
+
 """
 
 import os
@@ -236,7 +236,7 @@ logger = logging.getLogger(__name__)
 
 class AIOSTachyonicArchiveCleanup:
     """
-    🌌 Tachyonic Archive Cleanup and Management
+     Tachyonic Archive Cleanup and Management
     
     Manages archive efficiency:
     • Identifies and removes duplicate archives
@@ -250,15 +250,15 @@ class AIOSTachyonicArchiveCleanup:
         self.core_path = Path(r"C:\dev\AIOS\core")
         self.archive_path = self.core_path / "tachyonic_archive"
         
-        logger.info("🌌 AIOS Tachyonic Archive Cleanup initialized")
+        logger.info(" AIOS Tachyonic Archive Cleanup initialized")
         logger.info(f"   Archive path: {self.archive_path}")
     
     def perform_archive_cleanup_analysis(self) -> Dict[str, Any]:
         """Analyze and clean up duplicate archives"""
         
-        logger.info("🔍 ANALYZING TACHYONIC ARCHIVE FOR DUPLICATES")
-        logger.info("═" * 60)
-        logger.info("🌌 Scanning for duplicate and unnecessary archives...")
+        logger.info(" ANALYZING TACHYONIC ARCHIVE FOR DUPLICATES")
+        logger.info("" * 60)
+        logger.info(" Scanning for duplicate and unnecessary archives...")
         logger.info("")
         
         cleanup_results = {
@@ -281,7 +281,7 @@ class AIOSTachyonicArchiveCleanup:
         archive_directories = [d for d in self.archive_path.iterdir() if d.is_dir()]
         cleanup_results["total_archives_found"] = len(archive_directories)
         
-        logger.info(f"📦 Found {len(archive_directories)} archive directories")
+        logger.info(f" Found {len(archive_directories)} archive directories")
         
         # Group archives by assembler and version
         archive_groups = self._group_archives_by_version(archive_directories)
@@ -289,7 +289,7 @@ class AIOSTachyonicArchiveCleanup:
         # Identify duplicates
         for group_key, archives in archive_groups.items():
             if len(archives) > 1:
-                logger.info(f"🔍 Found {len(archives)} duplicates for {group_key}")
+                logger.info(f" Found {len(archives)} duplicates for {group_key}")
                 cleanup_results["duplicates_identified"].append({
                     "group": group_key,
                     "count": len(archives),
@@ -303,7 +303,7 @@ class AIOSTachyonicArchiveCleanup:
                 for duplicate in duplicates_to_remove:
                     space_saved = self._calculate_directory_size(duplicate)
                     
-                    logger.info(f"🗑️ Removing duplicate: {duplicate.name}")
+                    logger.info(f" Removing duplicate: {duplicate.name}")
                     logger.info(f"   Space saved: {space_saved / (1024*1024):.1f} MB")
                     
                     # Remove duplicate (already done manually, but for future automation)
@@ -353,16 +353,16 @@ class AIOSTachyonicArchiveCleanup:
         ]
         
         logger.info("[CHECK] TACHYONIC ARCHIVE CLEANUP ANALYSIS COMPLETE")
-        logger.info("═" * 60)
+        logger.info("" * 60)
         logger.info("🧹 CLEANUP RESULTS:")
         logger.info(f"   Duplicates identified: {cleanup_results['cleanup_summary']['duplicates_found']}")
         logger.info(f"   Duplicates removed: {cleanup_results['cleanup_summary']['duplicates_removed']}")
         logger.info(f"   Space saved: {cleanup_results['cleanup_summary']['space_saved_mb']:.1f} MB")
         logger.info(f"   Remaining archives: {cleanup_results['cleanup_summary']['remaining_archives']}")
         logger.info("")
-        logger.info("📦 REMAINING ARCHIVES:")
+        logger.info(" REMAINING ARCHIVES:")
         for archive in cleanup_results["remaining_archives"]:
-            logger.info(f"   🌌 {archive['assembler_name']} v{archive['version']}")
+            logger.info(f"    {archive['assembler_name']} v{archive['version']}")
             logger.info(f"      Archive: {archive['archive_name']}")
             logger.info(f"      Size: {archive['size_mb']:.1f} MB")
         
@@ -418,29 +418,29 @@ class AIOSTachyonicArchiveCleanup:
         
         cleanup_results = self.perform_archive_cleanup_analysis()
         
-        print("🌌 AIOS TACHYONIC ARCHIVE CLEANUP ANALYSIS")
-        print("═" * 60)
+        print(" AIOS TACHYONIC ARCHIVE CLEANUP ANALYSIS")
+        print("" * 60)
         print("🧹 RESOLVING ARCHIVE DUPLICATION ISSUES")
         print()
         
         print("[CHART] CLEANUP SUMMARY:")
         summary = cleanup_results["cleanup_summary"]
-        print(f"  🔍 Duplicates identified: {summary['duplicates_found']}")
-        print(f"  🗑️ Duplicates removed: {summary['duplicates_removed']}")
-        print(f"  💾 Space saved: {summary['space_saved_mb']:.1f} MB")
-        print(f"  📦 Remaining archives: {summary['remaining_archives']}")
+        print(f"   Duplicates identified: {summary['duplicates_found']}")
+        print(f"   Duplicates removed: {summary['duplicates_removed']}")
+        print(f"   Space saved: {summary['space_saved_mb']:.1f} MB")
+        print(f"   Remaining archives: {summary['remaining_archives']}")
         print(f"  [CHECK] Storage efficiency: {summary['storage_efficiency']}")
         print()
         
-        print("📦 CURRENT ARCHIVE STATUS:")
+        print(" CURRENT ARCHIVE STATUS:")
         for archive in cleanup_results["remaining_archives"]:
-            print(f"  🌌 {archive['assembler_name']} v{archive['version']}")
+            print(f"   {archive['assembler_name']} v{archive['version']}")
             print(f"      [FOLDER] {archive['archive_name']}")
-            print(f"      💾 Size: {archive['size_mb']:.1f} MB")
-            print(f"      📅 Archived: {archive['archive_date']}")
+            print(f"       Size: {archive['size_mb']:.1f} MB")
+            print(f"       Archived: {archive['archive_date']}")
             print()
         
-        print("🛡️ PREVENTION MEASURES IMPLEMENTED:")
+        print(" PREVENTION MEASURES IMPLEMENTED:")
         for measure in cleanup_results["prevention_measures"]:
             print(f"  [CHECK] {measure}")
         print()
@@ -448,10 +448,10 @@ class AIOSTachyonicArchiveCleanup:
         print("[TARGET] RECOMMENDATION:")
         if cleanup_results["cleanup_summary"]["duplicates_found"] == 0:
             print("  [CHECK] Archive is clean - no duplicates found")
-            print("  🌌 Tachyonic storage is optimized")
+            print("   Tachyonic storage is optimized")
         else:
             print(f"  🧹 Removed {cleanup_results['cleanup_summary']['duplicates_removed']} unnecessary duplicates")
-            print(f"  💾 Saved {cleanup_results['cleanup_summary']['space_saved_mb']:.1f} MB storage space")
+            print(f"   Saved {cleanup_results['cleanup_summary']['space_saved_mb']:.1f} MB storage space")
         
         print("  [ROCKET] Archive management is now efficient and duplicate-free!")
 
@@ -459,10 +459,10 @@ class AIOSTachyonicArchiveCleanup:
 def main():
     """Execute tachyonic archive cleanup and analysis"""
     
-    print("🌌 AIOS TACHYONIC ARCHIVE CLEANUP")
-    print("═" * 60)
+    print(" AIOS TACHYONIC ARCHIVE CLEANUP")
+    print("" * 60)
     print("[TARGET] Analyzing and cleaning duplicate archives")
-    print("💾 Optimizing tachyonic storage efficiency")
+    print(" Optimizing tachyonic storage efficiency")
     print()
     
     # Initialize cleanup system

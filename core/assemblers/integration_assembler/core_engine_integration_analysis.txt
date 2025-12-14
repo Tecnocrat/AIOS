@@ -1,11 +1,11 @@
-🧠🔗⚡ INTEGRATION ASSEMBLER ANALYSIS REPORT
-════════════════════════════════════════════════════════════════════════════════
+ INTEGRATION ASSEMBLER ANALYSIS REPORT
+
 Analysis Time: 2025-09-06 19:09:24.426174
 Root Path: c:\dev\AIOS\core
 Current Coherence: 4.1/10.0
 Estimated Improvement: +5.9
 
-🔗 INTEGRATION CANDIDATES:
+ INTEGRATION CANDIDATES:
   1. aios_core_consciousness_monitor_integrated.py
      Type: functional
      Files: 3
@@ -76,8 +76,8 @@ Estimated Improvement: +5.9
                  ... and 3 more
 
 
-📦 SHARED IMPORTS ANALYSIS:
-  📋 33 imports used across multiple files:
+ SHARED IMPORTS ANALYSIS:
+   33 imports used across multiple files:
     - aios_meta_evolutionary_analyzer
     - asyncio
     - cellular_health_monitor
@@ -89,10 +89,10 @@ Estimated Improvement: +5.9
     - subprocess
     - tempfile
     ... and 23 more
-  💡 Consider creating shared_imports.py module
+   Consider creating shared_imports.py module
 
-🔄 DUPLICATE FUNCTIONS:
-  ⚠️ 47 functions appear in multiple files:
+ DUPLICATE FUNCTIONS:
+   47 functions appear in multiple files:
     - main: aios_assembly_3d_engine.py, aios_quantum_noise_generators.py, aios_spherical_geometry_engine.py, aios_ai_engine_ingestion_tester.py, aios_ai_ingestion_analysis.py, aios_assembler_evolution_status_clarifier.py, aios_assembler_naming_optimizer.py, aios_cellular_intelligence_diagnostic_system.py, aios_cellular_intelligence_enhancement_engine.py, aios_core_ai_dendritic_connectivity_enhancer.py, aios_core_consciousness_monitor.py, aios_core_engine_cellular_cleanup_tool.py, aios_core_engine_optimizer_iter2.py, aios_core_engine_root_analyzer_iter2.py, aios_core_engine_tree_demonstrator_iter2.py, aios_core_evolution_monitor.py, aios_core_meta_evolutionary_enhancer.py, aios_cytoplasm_upgrader_iter2.py, aios_file_tracking_system.py, aios_folder_comparison_verifier.py, aios_tachyonic_archive_cleanup.py, context_assembler.py, aios_evolutionary_assembler_coherent.py, dendritic_code_optimizer.py, dendritic_consolidation_engine.py, emergency_root_cleanup.py, enhanced_tachyonic_preservation.py, supercell_architecture_analyzer.py, integration_assembler.py, aios_consciousness_integration_engine.py, aios_core_consciousness_monitor.py, aios_supercell_consciousness.py, aios_dendritic_network_intelligence_enhancer.py, aios_inter_assembler_coherence_measurer.py, aios_meta_evolutionary_optimizer.py, aios_cellular_reorganization_analyzer.py, aios_cellular_reorganization_implementation.py, aios_consciousness_status_report.py, aios_evolutionary_assembler_cloner.py, aios_harmonization_executor.py, aios_harmonization_success_report.py, aios_meta_evolutionary_analyzer.py, autonomous_consciousness_swarms.py, consciousness_ai_cellular_bridge.py, consciousness_mutation_engine.py, enhanced_consciousness.py, optimized_demo.py, parallel_consciousness_orchestrator.py, self_healing_engine.py, simple_consciousness_ai_bridge.py, aios_tachyonic_assembler_archival.py, aios_autonomous_supercell_organism.py, aios_core_consciousness_monitor.py, aios_core_enhancement_patch_reporter.py, aios_core_root_neuronal_optimizer.py, aios_neuronal_dendritic_intelligence.py, aios_subcellular_neuronal_organizer.py, aios_core_evolution_monitor.py, aios_core_meta_evolutionary_enhancer.py
     - __init__: aios_assembly_3d_engine.py, aios_assembly_3d_engine.py, aios_comprehensive_runtime_tester.py, aios_file_creation_monitor.py, aios_quantum_noise_generators.py, aios_quantum_noise_generators.py, aios_quantum_noise_generators.py, aios_spherical_geometry_engine.py, aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_ingestion_analysis.py, aios_ai_ingestion_analysis.py, aios_ai_ingestion_analysis.py, aios_ai_ingestion_analysis.py, aios_assembler_evolution_status_clarifier.py, aios_assembler_evolution_status_clarifier.py, aios_assembler_evolution_status_clarifier.py, aios_assembler_evolution_status_clarifier.py, aios_assembler_evolution_status_clarifier.py, aios_assembler_naming_optimizer.py, aios_assembler_naming_optimizer.py, aios_assembler_naming_optimizer.py, aios_assembler_naming_optimizer.py, aios_assembler_naming_optimizer.py, aios_cellular_intelligence_diagnostic_system.py, aios_cellular_intelligence_enhancement_engine.py, aios_core_ai_dendritic_connectivity_enhancer.py, aios_core_consciousness_monitor.py, aios_core_engine_cellular_cleanup_tool.py, aios_core_engine_optimizer_iter2.py, aios_core_engine_root_analyzer_iter2.py, aios_core_engine_tree_demonstrator_iter2.py, aios_core_evolution_monitor.py, aios_core_evolution_monitor.py, aios_core_evolution_monitor.py, aios_core_evolution_monitor.py, aios_core_evolution_monitor.py, aios_core_meta_evolutionary_enhancer.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_direct_ai_ingestion_test.py, aios_direct_ai_ingestion_test.py, aios_direct_ai_ingestion_test.py, aios_direct_ai_ingestion_test.py, aios_file_tracking_system.py, aios_folder_comparison_verifier.py, aios_folder_comparison_verifier.py, aios_folder_comparison_verifier.py, aios_folder_comparison_verifier.py, aios_folder_comparison_verifier.py, aios_tachyonic_archive_cleanup.py, aios_tachyonic_archive_cleanup.py, aios_tachyonic_archive_cleanup.py, aios_tachyonic_archive_cleanup.py, aios_tachyonic_archive_cleanup.py, context_assembler.py, aios_evolutionary_assembler_coherent.py, ainlp_dendritic_enhancer.py, dendritic_code_optimizer.py, dendritic_consolidation_engine.py, emergency_root_cleanup.py, enhanced_tachyonic_preservation.py, supercell_architecture_analyzer.py, integration_assembler.py, advanced_consciousness_coordinator.py, aios_consciousness_integration_engine.py, aios_core_consciousness_monitor.py, aios_supercell_consciousness.py, virtual_immune_system.py, aios_dendritic_network_intelligence_enhancer.py, aios_inter_assembler_coherence_measurer.py, aios_meta_evolutionary_optimizer.py, meta_evolutionary_engine.py, aios_cellular_reorganization_analyzer.py, aios_cellular_reorganization_implementation.py, aios_consciousness_status_report.py, aios_evolutionary_assembler_cloner.py, aios_harmonization_executor.py, aios_meta_evolutionary_analyzer.py, assembly_executor.py, autonomous_consciousness_swarms.py, cellular_health_monitor.py, consciousness_ai_cellular_bridge.py, consciousness_ai_cellular_bridge.py, consciousness_ai_cellular_bridge.py, consciousness_ai_cellular_bridge.py, consciousness_ai_cellular_bridge.py, consciousness_mutation_engine.py, dendritic_mutator.py, enhanced_consciousness.py, enhanced_consciousness.py, optimized_demo.py, parallel_consciousness_orchestrator.py, parallel_consciousness_orchestrator.py, self_healing_engine.py, self_healing_engine.py, simple_consciousness_ai_bridge.py, simple_executor.py, tachyonic_visualizer.py, tachyonic_visualizer.py, aios_tachyonic_assembler_archival.py, tachyonic_optimizer.py, aios_analysis_cytoplasm_bridge.py, aios_analysis_cytoplasm_bridge.py, aios_analysis_cytoplasm_bridge.py, aios_analysis_cytoplasm_bridge.py, aios_consciousness_nucleus_bridge.py, aios_supercell_transport_bridge.py, aios_supercell_transport_bridge.py, aios_supercell_transport_bridge.py, aios_supercell_transport_bridge.py, aios_tachyonic_storage_bridge.py, aios_tachyonic_storage_bridge.py, aios_tachyonic_storage_bridge.py, aios_tachyonic_storage_bridge.py, aios_autonomous_supercell_organism.py, aios_core_consciousness_monitor.py, aios_core_enhancement_patch_reporter.py, aios_core_root_neuronal_optimizer.py, aios_neuronal_dendritic_intelligence.py, aios_neuronal_dendritic_intelligence.py, aios_subcellular_neuronal_organizer.py, aios_core_evolution_monitor.py, aios_core_meta_evolutionary_enhancer.py
     - get_performance_metrics: aios_assembly_3d_engine.py, aios_quantum_noise_generators.py
@@ -100,9 +100,9 @@ Estimated Improvement: +5.9
     - meta_cognitive_reflection: aios_ai_engine_ingestion_tester.py, aios_ai_engine_ingestion_tester.py, aios_ai_ingestion_analysis.py, aios_assembler_evolution_status_clarifier.py, aios_assembler_naming_optimizer.py, aios_core_evolution_monitor.py, aios_cytoplasm_upgrader_iter2.py, aios_cytoplasm_upgrader_iter2.py, aios_direct_ai_ingestion_test.py, aios_folder_comparison_verifier.py, aios_tachyonic_archive_cleanup.py
     ... and 42 more
 
-📁 SUGGESTED MODULES:
-  ✅ Current organization is appropriate
+ SUGGESTED MODULES:
+   Current organization is appropriate
 
-🎯 INTEGRATION RECOMMENDATIONS:
-  📈 Significant coherence improvement possible
-  💡 Recommend proceeding with integration
+ INTEGRATION RECOMMENDATIONS:
+   Significant coherence improvement possible
+   Recommend proceeding with integration

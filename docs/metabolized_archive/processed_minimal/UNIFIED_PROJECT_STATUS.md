@@ -1,4 +1,4 @@
-# 🎯 AIOS Unified Project Status & Development Path (Consolidated)
+#  AIOS Unified Project Status & Development Path (Consolidated)
 
 Date: Aug 10, 2025
 
@@ -6,7 +6,7 @@ This single source of truth replaces prior status/optimization docs. It aligns t
 
 ---
 
-## ✅ What’s new in this consolidation
+##  What’s new in this consolidation
 
 - One document combining prior “Unified Project Status” and “Unified Development Optimization”.
 - Grounded to the actual workspace layout and VS Code tasks.
@@ -17,16 +17,16 @@ This single source of truth replaces prior status/optimization docs. It aligns t
 
 ---
 
-## 📁 Current architecture (as in this workspace)
+##  Current architecture (as in this workspace)
 
 ```
 c:\dev\AIOS/
-├── ai/                     # Python intelligence, servers, tests
-├── core/                   # C++ engine (CMake)
-├── interface/              # .NET solution (AIOS.sln; Models/Services/UI)
-├── docs/                   # Documentation
-├── scripts/                # Automation and utilities
-└── runtime_intelligence/   # Logs, analysis, tools
+ ai/                     # Python intelligence, servers, tests
+ core/                   # C++ engine (CMake)
+ interface/              # .NET solution (AIOS.sln; Models/Services/UI)
+ docs/                   # Documentation
+ scripts/                # Automation and utilities
+ runtime_intelligence/   # Logs, analysis, tools
 ```
 
 Build/test tasks available (VS Code):
@@ -38,7 +38,7 @@ Note: Agent operating rules are defined in .github/instructions/ask-mode.instruc
 
 ---
 
-## 🔎 Gaps blocking productization
+##  Gaps blocking productization
 
 1) Human UI not yet a “product surface”
 - WPF app builds but needs: persistent state, a clear launcher surface, log viewer, health status, and minimal actions to explore functionality.
@@ -77,7 +77,7 @@ Follow these steps in order. They use existing tasks and minimally invasive addi
 
 ---
 
-## 🏗️ Minimal technical contracts
+##  Minimal technical contracts
 
 Logging DB (EF Core + SQLite)
 - Tables:
@@ -101,7 +101,7 @@ Edge cases
 
 ---
 
-## 🚦 Unified build & test flow (tasks-first)
+##  Unified build & test flow (tasks-first)
 
 Order of operations (recommended):
 1) .NET: build (solution) → optional: build-ui/build-services/build-models
@@ -115,7 +115,7 @@ Notes
 
 ---
 
-## 🎯 Short, focused roadmap (merged and updated)
+##  Short, focused roadmap (merged and updated)
 
 Phase 1 — Make it usable (1–3 days)
 - Implement EF Core + SQLite DB (v1 schema) and wire into `AIOS.Services`.
@@ -134,7 +134,7 @@ Phase 3 — Advanced experimentation (optional)
 
 ---
 
-## ✅ Immediate action items (next 48h)
+##  Immediate action items (next 48h)
 
 1) Logging DB bootstrap (EF Core + SQLite)
 - Add `LoggingContext` with v1 schema in `AIOS.Models`.
@@ -165,7 +165,7 @@ Phase 3 — Advanced experimentation (optional)
 
 ---
 
-## 📈 Success metrics (v1)
+##  Success metrics (v1)
 
 - UI availability > 99.5% during local sessions.
 - State restore < 2 seconds after restart.
@@ -174,7 +174,7 @@ Phase 3 — Advanced experimentation (optional)
 
 ---
 
-## 🛡️ Safety & governance
+##  Safety & governance
 
 - Same safety governor applies across layers.
 - DB is a local artifact; no secrets stored; PII stripped from logs.
@@ -182,7 +182,7 @@ Phase 3 — Advanced experimentation (optional)
 
 ---
 
-## 🔍 Verification snapshot (current session)
+##  Verification snapshot (current session)
 
 What’s been validated recently via tasks:
 - .NET UI build: PASS (task “build-ui”).
@@ -242,7 +242,7 @@ If coherence remains degraded: consult CONTEXT_REHARMONIZATION_GUIDE.md for the 
 
 ---
 
-## Consolidated advanced objectives (from Optimization doc) 🎯
+## Consolidated advanced objectives (from Optimization doc) 
 
 These remain valid exploratory threads. They’re parked behind the UI+DB MVP and can be scheduled once v1 is usable.
 

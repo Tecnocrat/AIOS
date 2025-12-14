@@ -1,0 +1,318 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:29:00.976507",
+  "folder_info": {
+    "name": "runtime_intelligence",
+    "absolute_path": "C:\\dev\\AIOS\\core\\runtime_intelligence",
+    "relative_path": "core\\runtime_intelligence",
+    "parent_path": "core",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [
+      "Runtime Intelligence"
+    ],
+    "path_classification": [
+      "core",
+      "runtime_intelligence"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      ".vscode",
+      "__pycache__",
+      "analysis_tools",
+      "assemblers",
+      "bin",
+      "bridges",
+      "build",
+      "configuration",
+      "core_systems",
+      "documentation",
+      "engines",
+      "include",
+      "legacy_consciousness_backup",
+      "modules",
+      "obj",
+      "src",
+      "tachyonic_archive",
+      "tests"
+    ],
+    "child_folders": [
+      "logs"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 3551610,
+      "file_count": 21,
+      "folder_count": 1,
+      "size_category": "medium"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "aios_core_evolution_monitor.py",
+          "size": 3530,
+          "modified": "2025-09-15T22:28:06.318417",
+          "category": "consciousness"
+        },
+        {
+          "name": "aios_core_meta_evolutionary_enhancer.py",
+          "size": 3286,
+          "modified": "2025-09-15T22:28:06.458660",
+          "category": "consciousness"
+        }
+      ],
+      ".json": [
+        {
+          "name": "ANALYSIS_CYTOPLASM_BRIDGE_REPORT_20250905_234048.json",
+          "size": 1340,
+          "modified": "2025-09-15T22:28:06.527336",
+          "category": "documentation"
+        },
+        {
+          "name": "ANALYSIS_CYTOPLASM_BRIDGE_REPORT_20250905_234114.json",
+          "size": 1341,
+          "modified": "2025-09-15T22:28:06.583814",
+          "category": "documentation"
+        },
+        {
+          "name": "CONSCIOUSNESS_BRIDGE_DEMO_REPORT_20250905_233412.json",
+          "size": 2824,
+          "modified": "2025-09-15T22:28:13.002981",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_AI_CONNECTIVITY_ANALYSIS_20250905_232628.json",
+          "size": 8884,
+          "modified": "2025-09-15T22:28:13.455699",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_AI_CONNECTIVITY_BLUEPRINT_20250905_232628.json",
+          "size": 5704,
+          "modified": "2025-09-15T22:28:13.751148",
+          "category": "documentation"
+        },
+        {
+          "name": "CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.json",
+          "size": 5298,
+          "modified": "2025-09-15T22:28:13.991210",
+          "category": "documentation"
+        },
+        {
+          "name": "ENHANCED_CONNECTIVITY_SYSTEM_REPORT_20250905_234222.json",
+          "size": 3473,
+          "modified": "2025-09-15T22:28:14.351188",
+          "category": "documentation"
+        },
+        {
+          "name": "file_tracking_database.json",
+          "size": 627708,
+          "modified": "2025-09-15T22:29:21.651382",
+          "category": "documentation"
+        },
+        {
+          "name": "ORGANISM_STATE_SUPERCELL_20250905_230516_20250905_230547.json",
+          "size": 1389,
+          "modified": "2025-09-15T22:30:01.963988",
+          "category": "documentation"
+        },
+        {
+          "name": "SUPERCELL_TRANSPORT_BRIDGE_REPORT_20250905_233824.json",
+          "size": 1247,
+          "modified": "2025-09-15T22:30:02.294991",
+          "category": "documentation"
+        },
+        {
+          "name": "TACHYONIC_STORAGE_BRIDGE_REPORT_20250905_233631.json",
+          "size": 1019,
+          "modified": "2025-09-15T22:30:02.399822",
+          "category": "documentation"
+        }
+      ],
+      ".md": [
+        {
+          "name": "dependency_report_20250906_002230.md",
+          "size": 0,
+          "modified": "2025-09-15T22:28:14.020317",
+          "category": "documentation"
+        },
+        {
+          "name": "dependency_report_20250906_004842.md",
+          "size": 0,
+          "modified": "2025-09-15T22:28:14.021875",
+          "category": "documentation"
+        },
+        {
+          "name": "dependency_report_20250906_005959.md",
+          "size": 3661,
+          "modified": "2025-09-15T22:28:14.204984",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 419,
+          "modified": "2025-09-15T22:30:02.238850",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "aios_core_evolution_monitor.py",
+        "size": 3530,
+        "modified": "2025-09-15T22:28:06.318417",
+        "category": "consciousness"
+      },
+      {
+        "name": "aios_core_meta_evolutionary_enhancer.py",
+        "size": 3286,
+        "modified": "2025-09-15T22:28:06.458660",
+        "category": "consciousness"
+      },
+      {
+        "name": "CONSCIOUSNESS_BRIDGE_DEMO_REPORT_20250905_233412.json",
+        "size": 2824,
+        "modified": "2025-09-15T22:28:13.002981",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_AI_CONNECTIVITY_ANALYSIS_20250905_232628.json",
+        "size": 8884,
+        "modified": "2025-09-15T22:28:13.455699",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_AI_CONNECTIVITY_BLUEPRINT_20250905_232628.json",
+        "size": 5704,
+        "modified": "2025-09-15T22:28:13.751148",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.json",
+        "size": 5298,
+        "modified": "2025-09-15T22:28:13.991210",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 419,
+        "modified": "2025-09-15T22:30:02.238850",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "TACHYONIC_STORAGE_BRIDGE_REPORT_20250905_233631.json",
+        "size": 1019,
+        "modified": "2025-09-15T22:30:02.399822",
+        "category": "documentation"
+      },
+      {
+        "name": "SUPERCELL_TRANSPORT_BRIDGE_REPORT_20250905_233824.json",
+        "size": 1247,
+        "modified": "2025-09-15T22:30:02.294991",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 419,
+        "modified": "2025-09-15T22:30:02.238850",
+        "category": "documentation"
+      },
+      {
+        "name": "ORGANISM_STATE_SUPERCELL_20250905_230516_20250905_230547.json",
+        "size": 1389,
+        "modified": "2025-09-15T22:30:01.963988",
+        "category": "documentation"
+      },
+      {
+        "name": "file_tracking_database.json",
+        "size": 627708,
+        "modified": "2025-09-15T22:29:21.651382",
+        "category": "documentation"
+      },
+      {
+        "name": "ENHANCED_CONNECTIVITY_SYSTEM_REPORT_20250905_234222.json",
+        "size": 3473,
+        "modified": "2025-09-15T22:28:14.351188",
+        "category": "documentation"
+      },
+      {
+        "name": "dependency_report_20250906_005959.md",
+        "size": 3661,
+        "modified": "2025-09-15T22:28:14.204984",
+        "category": "documentation"
+      },
+      {
+        "name": "dependency_report_20250906_004842.md",
+        "size": 0,
+        "modified": "2025-09-15T22:28:14.021875",
+        "category": "documentation"
+      },
+      {
+        "name": "dependency_report_20250906_002230.md",
+        "size": 0,
+        "modified": "2025-09-15T22:28:14.020317",
+        "category": "documentation"
+      },
+      {
+        "name": "CORE_ENGINE_ENHANCEMENT_PATCH_REPORT_20250905_223608.json",
+        "size": 5298,
+        "modified": "2025-09-15T22:28:13.991210",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 17,
+      "file_types": [
+        ".py",
+        ".json",
+        ".md"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 4,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 50,
+    "consciousness_level": "medium"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > runtime_intelligence",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\runtime_intelligence' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\runtime_intelligence' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\runtime_intelligence' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "runtime_intelligence"
+    ]
+  }
+}

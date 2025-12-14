@@ -1,0 +1,100 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:40:26.856034",
+  "folder_info": {
+    "name": "documentation_snapshots",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\archive\\documentation_snapshots",
+    "relative_path": "docs\\archive\\documentation_snapshots",
+    "parent_path": "docs\\archive",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [
+      "Documentation"
+    ],
+    "path_classification": [
+      "docs",
+      "archive",
+      "documentation_snapshots"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "INFRASTRUCTURE",
+      "ainlp_paradigms",
+      "compression",
+      "compression_reports",
+      "deprecated_root_docs",
+      "iteration-logs",
+      "legacy_scripts",
+      "private_implementation",
+      "quantum_bootstrap",
+      "tachyonic_archive",
+      "unified_backups",
+      "vscode_integration"
+    ],
+    "child_folders": [
+      "july_2025"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 0,
+      "file_count": 0,
+      "folder_count": 1,
+      "size_category": "tiny"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {},
+    "important_files": [],
+    "recent_files": [],
+    "content_summary": {
+      "total_files": 0,
+      "file_types": [],
+      "dominant_type": null
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > archive > documentation_snapshots",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\documentation_snapshots' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\documentation_snapshots' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\archive\\documentation_snapshots' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "docs\\ai_agent_demo_docs",
+      "tachyonic\\docs_archive",
+      "vscode-extension\\docs",
+      ".githooks\\modules\\information_storage\\docs",
+      "core\\tachyonic_archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}
