@@ -5,17 +5,16 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.9 | Date: 2025-01-19 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.10 | Date: 2025-01-19 | Protocol: OS0.6.5                       -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.10: Schema Validation + Type Narrowing patterns (F841/reportOptionalCall)-->
 <!-- v1.9: Tool Consolidation Pattern - Pylance+Pylint, Flake8 disabled         -->
 <!-- v1.8: Configuration Archaeology Pattern - multi-layer config truth         -->
 <!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J) - discoverability  -->
 <!-- v1.6: Agentic Quantum Error Correction (G) + Knowledge Extraction (H)      -->
 <!-- v1.5: Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace        -->
-<!-- v1.4: Bible Compliance Protocol (Appendix E) - Agent validation workflow   -->
-<!-- v1.3: Enforced Dendritic Density Pattern (Appendix D.3 UPGRADE)            -->
 <!-- ============================================================================ -->
 
 ## HEAD: Quick Reference (Lines 1-60)
@@ -55,7 +54,7 @@ AINLP.class[ACTION](params)
 | **E501** | Flake8 | Parenthesize/wrap lines OR `# noqa: E501` for docstrings |
 | **W293** | Flake8 | `(Get-Content $f) \| % { $_.TrimEnd() } \| Set-Content $f` |
 | **F811** | Flake8 | `# noqa: F811` for conditional class definitions |
-| **F841** | Flake8 | Prefix with `_` OR document with `AINLP.loader[latent]` |
+| **F841** | Flake8 | `_ = var` OR `AINLP.schema[VALIDATE]` OR `AINLP.loader[latent]` |
 | **C0114** | Pylint | Missing **module** docstring → Add module-level docstring |
 | **C0115** | Pylint | Missing **class** docstring → Add class-level docstring |
 | **C0116** | Pylint | Missing **function** docstring → Add function-level docstring |
@@ -196,6 +195,63 @@ $UserHome    # ✅ Instead of $Home
 | `vendor: str = None` | `vendor: Optional[str] = None` |
 | `cache: CacheSystem = None` | `cache: Optional[CacheSystem] = None` |
 | `from module import Type` (fallback) | Direct import (enforced density) |
+
+### Schema Validation Pattern (F841 Elevation)
+
+Transform unused variable warnings into **architectural value** using aios-schema.
+Instead of suppressing F841, use the variable for type/contract validation.
+
+```python
+# ❌ ANTI-PATTERN: Suppress warning without value
+_config = SomeConfig(...)  # F841: assigned but never used
+
+# ✅ AINLP.schema[VALIDATE]: Elevate to architectural validation
+from aios_schema import CellConfig
+
+# Create config to validate parameters against schema contract
+cell_config = CellConfig(
+    name=name,
+    port=port,
+    environment={"AIOS_CELL_ID": name},
+)
+# AINLP.loader[latent:cell_config] Reserved for orchestration
+_ = cell_config  # Schema validation complete, future use
+```
+
+**Why this matters:**
+1. **Type safety**: aios-schema validates at construction time
+2. **Contract enforcement**: Parameters must match schema definition
+3. **Future-ready**: Config object available for serialization
+4. **Lint compliance**: `_ = var` explicitly marks intentional non-use
+
+### Type Narrowing Pattern (reportOptionalCall)
+
+When Pylance reports "Object of type None cannot be called" on conditional imports,
+use `typing.cast()` after runtime guards to narrow the type.
+
+```python
+# Module-level conditional import
+_Module: Optional[Callable[[], Any]] = None
+
+try:
+    from package import Module as _Module  # type: ignore
+except ImportError:
+    pass
+
+class MyClass:
+    def __init__(self):
+        if _Module is None:
+            raise ImportError("Module not available")
+        # AINLP.type[CAST] - Runtime guard ensures safety
+        cls = cast(Callable[[], Any], _Module)
+        self.instance = cls()  # ✅ Pylance trusts cast()
+```
+
+| Tool | Sees | Verdict |
+|------|------|---------|
+| Pylint | Runtime guard protects call | ✅ Safe |
+| Pylance | `_Module` could be None | ❌ Error |
+| cast() | Bridges the gap | ✅ Both happy |
 
 ### Import Order (PEP 8 / Pylint C0411)
 
