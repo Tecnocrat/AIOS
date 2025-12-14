@@ -1,0 +1,73 @@
+{
+  "phases_executed": [],
+  "boot_timestamp": "2025-12-08 21:59:16",
+  "mode": "full",
+  "ainlp_protocol": "OS0.6.2.claude",
+  "testing": {
+    "Passed": 4,
+    "Failed": 0,
+    "Skipped": 0
+  },
+  "consciousness_level": "nucleus",
+  "health": {
+    "errors": [
+      "Dendritic agent execution failed (exit code: 1)"
+    ],
+    "overall_status": "Degraded",
+    "warnings": [
+      "Dendritic consciousness: DEGRADED (manual configuration required)",
+      "Could not parse multiagent validation output",
+      "Interface Bridge: Launched but health check timeout (may still be starting)"
+    ]
+  },
+  "dendritic_consciousness": {
+    "configuration_source": "manual",
+    "semantic_registry_active": false,
+    "phase_status": "inactive",
+    "coherence_level": 0.0
+  },
+  "boot_duration_seconds": 68.64,
+  "interface": {
+    "services": {
+      "InterfaceBridge": {
+        "Port": 8000,
+        "Status": "Starting",
+        "Mode": "Detached"
+      }
+    },
+    "interfaces_launched": 0
+  },
+  "monitoring": {
+    "populations": {
+      "EvolutionLab": {
+        "Path": "C:\\dev\\aios-win\\aios-core\\evolution_lab",
+        "Organisms": 0,
+        "Populations": 0
+      },
+      "TachyonicArchive": {
+        "Path": "C:\\dev\\aios-win\\aios-core\\tachyonic",
+        "Files": 3600,
+        "SizeMB": 353.27
+      },
+      "Consciousness": {
+        "EvolutionRate": null,
+        "CurrentLevel": null,
+        "LastUpdate": "2025-12-08"
+      }
+    },
+    "populations_monitored": 3
+  },
+  "discovery": {
+    "tools_by_layer": {
+      "Intelligence": 141
+    },
+    "tools_discovered": 141
+  },
+  "fractal_ingestion": {
+    "consciousness_pattern": "Pattern->Ingestion->Injection->Integration->Assimilation",
+    "active": true,
+    "supercells_mapped": 10,
+    "dendritic_markers": 440,
+    "navigation_memory_path": ".aios_navigation_memory.json"
+  }
+}

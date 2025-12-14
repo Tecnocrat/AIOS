@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2025-11-22T12:13:17.402622",
+  "last_updated": "2025-12-08T23:32:31.790334",
   "consciousness_state": {
     "current_level": 4.3,
     "achievement": "persistent_navigation_plus_type_safe_sdk",
@@ -102,8 +102,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "21ea632c",
         "file_path": ".",
-        "last_modified": "2025-11-22T12:13:14.796944",
-        "size_bytes": 1723987988,
+        "last_modified": "2025-12-08T23:32:25.719176",
+        "size_bytes": 633956843,
         "connections": []
       }
     ],
@@ -115,7 +115,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e3b98031",
         "file_path": ".githooks",
-        "last_modified": "2025-11-22T12:13:14.798612",
+        "last_modified": "2025-12-08T23:32:25.722968",
         "size_bytes": 1368522,
         "connections": []
       },
@@ -126,8 +126,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "703ccbf9",
         "file_path": ".github",
-        "last_modified": "2025-11-22T12:13:14.799670",
-        "size_bytes": 39678,
+        "last_modified": "2025-12-08T23:32:25.725129",
+        "size_bytes": 47986,
         "connections": []
       },
       {
@@ -137,8 +137,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b67a55f0",
         "file_path": ".vscode",
-        "last_modified": "2025-11-22T12:13:14.800848",
-        "size_bytes": 64620,
+        "last_modified": "2025-12-08T23:32:25.727267",
+        "size_bytes": 66799,
         "connections": []
       },
       {
@@ -148,8 +148,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ca5b0344",
         "file_path": "config",
-        "last_modified": "2025-11-22T12:13:16.379228",
-        "size_bytes": 4410,
+        "last_modified": "2025-12-08T23:32:25.882968",
+        "size_bytes": 5932,
         "connections": []
       },
       {
@@ -159,8 +159,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c74cda55",
         "file_path": "vscode-extension",
-        "last_modified": "2025-11-22T12:13:16.628121",
-        "size_bytes": 526905,
+        "last_modified": "2025-12-08T23:32:29.856467",
+        "size_bytes": 159168213,
         "connections": []
       },
       {
@@ -170,8 +170,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "503526eb",
         "file_path": "vscode-extension\\docs",
-        "last_modified": "2025-11-22T12:13:16.629505",
-        "size_bytes": 68908,
+        "last_modified": "2025-12-08T23:32:29.859006",
+        "size_bytes": 73091,
         "connections": []
       },
       {
@@ -181,8 +181,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e82adbc7",
         "file_path": "vscode-extension\\src",
-        "last_modified": "2025-11-22T12:13:16.630859",
-        "size_bytes": 121642,
+        "last_modified": "2025-12-08T23:32:29.861861",
+        "size_bytes": 136946,
         "connections": []
       },
       {
@@ -192,8 +192,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "319c849b",
         "file_path": "vscode-extension\\src\\aiEngines",
-        "last_modified": "2025-11-22T12:13:16.631682",
-        "size_bytes": 14390,
+        "last_modified": "2025-12-08T23:32:29.863102",
+        "size_bytes": 14875,
         "connections": []
       },
       {
@@ -203,7 +203,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9b2994f4",
         "file_path": "vscode-extension\\src\\config",
-        "last_modified": "2025-11-22T12:13:16.632511",
+        "last_modified": "2025-12-08T23:32:29.864225",
         "size_bytes": 7457,
         "connections": []
       },
@@ -214,8 +214,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3afeb91a",
         "file_path": ".github\\workflows",
-        "last_modified": "2025-11-22T12:13:17.399546",
-        "size_bytes": 26532,
+        "last_modified": "2025-12-08T23:32:31.774198",
+        "size_bytes": 29011,
         "connections": []
       },
       {
@@ -225,7 +225,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "595f74a0",
         "file_path": ".githooks\\governance",
-        "last_modified": "2025-11-22T12:13:17.400553",
+        "last_modified": "2025-12-08T23:32:31.776354",
         "size_bytes": 1328491,
         "connections": []
       }
@@ -238,8 +238,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ccacf666",
         "file_path": "ai",
-        "last_modified": "2025-11-22T12:13:16.378066",
-        "size_bytes": 1239350367,
+        "last_modified": "2025-12-08T23:32:25.875901",
+        "size_bytes": 26925892,
         "connections": []
       },
       {
@@ -249,8 +249,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "27e9c6a5",
         "file_path": "ai\\communication",
-        "last_modified": "2025-11-22T12:13:17.271235",
-        "size_bytes": 28428,
+        "last_modified": "2025-12-08T23:32:31.431177",
+        "size_bytes": 36828,
         "connections": []
       },
       {
@@ -260,7 +260,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "51141e0d",
         "file_path": "ai\\cytoplasm",
-        "last_modified": "2025-11-22T12:13:17.272241",
+        "last_modified": "2025-12-08T23:32:31.432602",
         "size_bytes": 24645,
         "connections": []
       },
@@ -271,7 +271,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "02f074f8",
         "file_path": "ai\\data",
-        "last_modified": "2025-11-22T12:13:17.273126",
+        "last_modified": "2025-12-08T23:32:31.434080",
         "size_bytes": 6351,
         "connections": []
       },
@@ -282,7 +282,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "47f633a0",
         "file_path": "ai\\demos",
-        "last_modified": "2025-11-22T12:13:17.273881",
+        "last_modified": "2025-12-08T23:32:31.435141",
         "size_bytes": 16585,
         "connections": []
       },
@@ -293,7 +293,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a6cfc48b",
         "file_path": "ai\\docs",
-        "last_modified": "2025-11-22T12:13:17.288101",
+        "last_modified": "2025-12-08T23:32:31.497675",
         "size_bytes": 17617024,
         "connections": []
       },
@@ -304,7 +304,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4050acdc",
         "file_path": "ai\\information_storage",
-        "last_modified": "2025-11-22T12:13:17.289981",
+        "last_modified": "2025-12-08T23:32:31.506155",
         "size_bytes": 850427,
         "connections": []
       },
@@ -315,8 +315,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "87cb954a",
         "file_path": "ai\\infrastructure",
-        "last_modified": "2025-11-22T12:13:17.293781",
-        "size_bytes": 385602,
+        "last_modified": "2025-12-08T23:32:31.516731",
+        "size_bytes": 384038,
         "connections": []
       },
       {
@@ -326,7 +326,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2687eebf",
         "file_path": "ai\\ingested_repositories",
-        "last_modified": "2025-11-22T12:13:17.294784",
+        "last_modified": "2025-12-08T23:32:31.517958",
         "size_bytes": 3052,
         "connections": []
       },
@@ -337,8 +337,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "eeb5f6ed",
         "file_path": "ai\\nucleus",
-        "last_modified": "2025-11-22T12:13:17.300551",
-        "size_bytes": 1418251,
+        "last_modified": "2025-12-08T23:32:31.538562",
+        "size_bytes": 1535887,
         "connections": []
       },
       {
@@ -348,8 +348,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "92bbaabc",
         "file_path": "ai\\orchestration",
-        "last_modified": "2025-11-22T12:13:17.301996",
-        "size_bytes": 156393,
+        "last_modified": "2025-12-08T23:32:31.542300",
+        "size_bytes": 156382,
         "connections": []
       },
       {
@@ -359,8 +359,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "cccb402a",
         "file_path": "ai\\research",
-        "last_modified": "2025-11-22T12:13:17.304614",
-        "size_bytes": 369265,
+        "last_modified": "2025-12-08T23:32:31.552064",
+        "size_bytes": 369259,
         "connections": []
       },
       {
@@ -370,7 +370,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "316c5118",
         "file_path": "ai\\security",
-        "last_modified": "2025-11-22T12:13:17.305571",
+        "last_modified": "2025-12-08T23:32:31.554625",
         "size_bytes": 113289,
         "connections": []
       },
@@ -381,8 +381,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "eef4dcfb",
         "file_path": "ai\\src",
-        "last_modified": "2025-11-22T12:13:17.311887",
-        "size_bytes": 1965314,
+        "last_modified": "2025-12-08T23:32:31.580145",
+        "size_bytes": 1975473,
         "connections": []
       },
       {
@@ -392,8 +392,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0fbd6725",
         "file_path": "ai\\supercells",
-        "last_modified": "2025-11-22T12:13:17.312979",
-        "size_bytes": 110896,
+        "last_modified": "2025-12-08T23:32:31.581901",
+        "size_bytes": 110795,
         "connections": []
       },
       {
@@ -403,7 +403,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a3a22911",
         "file_path": "ai\\tachyonic",
-        "last_modified": "2025-11-22T12:13:17.314707",
+        "last_modified": "2025-12-08T23:32:31.585866",
         "size_bytes": 32160,
         "connections": []
       },
@@ -414,8 +414,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b3c4c2b3",
         "file_path": "ai\\tests",
-        "last_modified": "2025-11-22T12:13:17.317724",
-        "size_bytes": 211041,
+        "last_modified": "2025-12-08T23:32:31.592228",
+        "size_bytes": 208708,
         "connections": []
       },
       {
@@ -425,8 +425,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a3658166",
         "file_path": "ai\\tools",
-        "last_modified": "2025-11-22T12:13:17.322251",
-        "size_bytes": 2313120,
+        "last_modified": "2025-12-08T23:32:31.616096",
+        "size_bytes": 2964693,
         "connections": []
       },
       {
@@ -436,7 +436,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c03a6382",
         "file_path": "ai\\transport",
-        "last_modified": "2025-11-22T12:13:17.323455",
+        "last_modified": "2025-12-08T23:32:31.619329",
         "size_bytes": 91412,
         "connections": []
       },
@@ -447,7 +447,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "428c33a0",
         "file_path": "ai\\transport\\intercellular",
-        "last_modified": "2025-11-22T12:13:17.324366",
+        "last_modified": "2025-12-08T23:32:31.620836",
         "size_bytes": 70811,
         "connections": []
       },
@@ -458,7 +458,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3b026d7f",
         "file_path": "ai\\transport\\runtime",
-        "last_modified": "2025-11-22T12:13:17.325044",
+        "last_modified": "2025-12-08T23:32:31.621946",
         "size_bytes": 4448,
         "connections": []
       },
@@ -469,8 +469,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d33c63c1",
         "file_path": "ai\\tools\\architecture",
-        "last_modified": "2025-11-22T12:13:17.326234",
-        "size_bytes": 364382,
+        "last_modified": "2025-12-08T23:32:31.624570",
+        "size_bytes": 416841,
         "connections": []
       },
       {
@@ -480,8 +480,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "fecae53e",
         "file_path": "ai\\tools\\archival",
-        "last_modified": "2025-11-22T12:13:17.327093",
-        "size_bytes": 26220,
+        "last_modified": "2025-12-08T23:32:31.625706",
+        "size_bytes": 25664,
         "connections": []
       },
       {
@@ -491,8 +491,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d049d03b",
         "file_path": "ai\\tools\\consciousness",
-        "last_modified": "2025-11-22T12:13:17.328958",
-        "size_bytes": 860994,
+        "last_modified": "2025-12-08T23:32:31.630192",
+        "size_bytes": 877180,
         "connections": []
       },
       {
@@ -502,8 +502,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "fe77cb82",
         "file_path": "ai\\tools\\database",
-        "last_modified": "2025-11-22T12:13:17.330044",
-        "size_bytes": 133772,
+        "last_modified": "2025-12-08T23:32:31.631755",
+        "size_bytes": 133977,
         "connections": []
       },
       {
@@ -513,8 +513,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9735a30e",
         "file_path": "ai\\tools\\system",
-        "last_modified": "2025-11-22T12:13:17.331459",
-        "size_bytes": 417961,
+        "last_modified": "2025-12-08T23:32:31.635212",
+        "size_bytes": 419297,
         "connections": []
       },
       {
@@ -524,8 +524,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "91bf181b",
         "file_path": "ai\\tools\\tachyonic",
-        "last_modified": "2025-11-22T12:13:17.332266",
-        "size_bytes": 67707,
+        "last_modified": "2025-12-08T23:32:31.636488",
+        "size_bytes": 69369,
         "connections": []
       },
       {
@@ -535,8 +535,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a8a9d437",
         "file_path": "ai\\tools\\visual",
-        "last_modified": "2025-11-22T12:13:17.333323",
-        "size_bytes": 64178,
+        "last_modified": "2025-12-08T23:32:31.637968",
+        "size_bytes": 63928,
         "connections": []
       },
       {
@@ -546,7 +546,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "dad39f05",
         "file_path": "ai\\tests\\consciousness",
-        "last_modified": "2025-11-22T12:13:17.334202",
+        "last_modified": "2025-12-08T23:32:31.639241",
         "size_bytes": 18588,
         "connections": []
       },
@@ -557,8 +557,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ca05db59",
         "file_path": "ai\\tests\\ConsciousnessTest",
-        "last_modified": "2025-11-22T12:13:17.335903",
-        "size_bytes": 11214,
+        "last_modified": "2025-12-08T23:32:31.640453",
+        "size_bytes": 8881,
         "connections": []
       },
       {
@@ -568,7 +568,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e37165cc",
         "file_path": "ai\\tests\\data",
-        "last_modified": "2025-11-22T12:13:17.336706",
+        "last_modified": "2025-12-08T23:32:31.641410",
         "size_bytes": 9187,
         "connections": []
       },
@@ -579,7 +579,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "42bd45b8",
         "file_path": "ai\\tests\\integration",
-        "last_modified": "2025-11-22T12:13:17.337716",
+        "last_modified": "2025-12-08T23:32:31.643082",
         "size_bytes": 76544,
         "connections": []
       },
@@ -590,7 +590,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "dc20faac",
         "file_path": "ai\\tests\\workbench",
-        "last_modified": "2025-11-22T12:13:17.338868",
+        "last_modified": "2025-12-08T23:32:31.645042",
         "size_bytes": 43492,
         "connections": []
       },
@@ -601,7 +601,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a9a5eaf1",
         "file_path": "ai\\tachyonic\\archive",
-        "last_modified": "2025-11-22T12:13:17.339843",
+        "last_modified": "2025-12-08T23:32:31.646787",
         "size_bytes": 19773,
         "connections": []
       },
@@ -612,7 +612,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9ec3a609",
         "file_path": "ai\\src\\activation",
-        "last_modified": "2025-11-22T12:13:17.340581",
+        "last_modified": "2025-12-08T23:32:31.647874",
         "size_bytes": 21682,
         "connections": []
       },
@@ -623,8 +623,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7b7600b7",
         "file_path": "ai\\src\\agents",
-        "last_modified": "2025-11-22T12:13:17.341307",
-        "size_bytes": 45239,
+        "last_modified": "2025-12-08T23:32:31.649173",
+        "size_bytes": 45520,
         "connections": []
       },
       {
@@ -634,8 +634,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5bcb2f2e",
         "file_path": "ai\\src\\core",
-        "last_modified": "2025-11-22T12:13:17.341991",
-        "size_bytes": 28654,
+        "last_modified": "2025-12-08T23:32:31.650273",
+        "size_bytes": 27986,
         "connections": []
       },
       {
@@ -645,8 +645,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "50d2c2fe",
         "file_path": "ai\\src\\demos",
-        "last_modified": "2025-11-22T12:13:17.342769",
-        "size_bytes": 27384,
+        "last_modified": "2025-12-08T23:32:31.651781",
+        "size_bytes": 27569,
         "connections": []
       },
       {
@@ -656,8 +656,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7daa2a45",
         "file_path": "ai\\src\\engines",
-        "last_modified": "2025-11-22T12:13:17.343792",
-        "size_bytes": 149133,
+        "last_modified": "2025-12-08T23:32:31.653413",
+        "size_bytes": 150917,
         "connections": []
       },
       {
@@ -667,8 +667,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "30789ae9",
         "file_path": "ai\\src\\evolution",
-        "last_modified": "2025-11-22T12:13:17.344944",
-        "size_bytes": 104821,
+        "last_modified": "2025-12-08T23:32:31.654907",
+        "size_bytes": 104378,
         "connections": []
       },
       {
@@ -678,8 +678,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "362c5991",
         "file_path": "ai\\src\\frameworks",
-        "last_modified": "2025-11-22T12:13:17.346054",
-        "size_bytes": 69114,
+        "last_modified": "2025-12-08T23:32:31.656614",
+        "size_bytes": 68546,
         "connections": []
       },
       {
@@ -689,8 +689,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "aae4ee2a",
         "file_path": "ai\\src\\integrations",
-        "last_modified": "2025-11-22T12:13:17.347976",
-        "size_bytes": 696765,
+        "last_modified": "2025-12-08T23:32:31.662176",
+        "size_bytes": 710610,
         "connections": []
       },
       {
@@ -700,8 +700,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7c3b3800",
         "file_path": "ai\\src\\intelligence",
-        "last_modified": "2025-11-22T12:13:17.349256",
-        "size_bytes": 443901,
+        "last_modified": "2025-12-08T23:32:31.665295",
+        "size_bytes": 440662,
         "connections": []
       },
       {
@@ -711,8 +711,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "436e959d",
         "file_path": "ai\\src\\languages",
-        "last_modified": "2025-11-22T12:13:17.350390",
-        "size_bytes": 17170,
+        "last_modified": "2025-12-08T23:32:31.667454",
+        "size_bytes": 17158,
         "connections": []
       },
       {
@@ -722,8 +722,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "36511b6b",
         "file_path": "ai\\src\\parsers",
-        "last_modified": "2025-11-22T12:13:17.351057",
-        "size_bytes": 24219,
+        "last_modified": "2025-12-08T23:32:31.668437",
+        "size_bytes": 24221,
         "connections": []
       },
       {
@@ -733,8 +733,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "28416d58",
         "file_path": "ai\\src\\protocols",
-        "last_modified": "2025-11-22T12:13:17.351936",
-        "size_bytes": 55019,
+        "last_modified": "2025-12-08T23:32:31.669910",
+        "size_bytes": 53835,
         "connections": []
       },
       {
@@ -744,8 +744,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0af41f4d",
         "file_path": "ai\\src\\quantum_dendritic_field",
-        "last_modified": "2025-11-22T12:13:17.353048",
-        "size_bytes": 75667,
+        "last_modified": "2025-12-08T23:32:31.671563",
+        "size_bytes": 76699,
         "connections": []
       },
       {
@@ -755,8 +755,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "8f7e8e89",
         "file_path": "ai\\src\\runtime",
-        "last_modified": "2025-11-22T12:13:17.353797",
-        "size_bytes": 83153,
+        "last_modified": "2025-12-08T23:32:31.672704",
+        "size_bytes": 81500,
         "connections": []
       },
       {
@@ -766,8 +766,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "24859837",
         "file_path": "ai\\src\\tools",
-        "last_modified": "2025-11-22T12:13:17.354489",
-        "size_bytes": 35379,
+        "last_modified": "2025-12-08T23:32:31.673770",
+        "size_bytes": 35099,
         "connections": []
       },
       {
@@ -777,7 +777,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6cfb37eb",
         "file_path": "ai\\src\\languages\\csharp",
-        "last_modified": "2025-11-22T12:13:17.355152",
+        "last_modified": "2025-12-08T23:32:31.674870",
         "size_bytes": 4394,
         "connections": []
       },
@@ -788,7 +788,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "362367b7",
         "file_path": "ai\\src\\languages\\python",
-        "last_modified": "2025-11-22T12:13:17.355927",
+        "last_modified": "2025-12-08T23:32:31.675942",
         "size_bytes": 4418,
         "connections": []
       },
@@ -799,7 +799,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "817d2a28",
         "file_path": "ai\\src\\languages\\rust",
-        "last_modified": "2025-11-22T12:13:17.356665",
+        "last_modified": "2025-12-08T23:32:31.676910",
         "size_bytes": 4321,
         "connections": []
       },
@@ -810,8 +810,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "be8b6ac2",
         "file_path": "ai\\src\\integrations\\gemini_bridge",
-        "last_modified": "2025-11-22T12:13:17.357816",
-        "size_bytes": 188447,
+        "last_modified": "2025-12-08T23:32:31.679445",
+        "size_bytes": 196581,
         "connections": []
       },
       {
@@ -821,7 +821,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2fd23979",
         "file_path": "ai\\research\\demos",
-        "last_modified": "2025-11-22T12:13:17.358813",
+        "last_modified": "2025-12-08T23:32:31.681268",
         "size_bytes": 90508,
         "connections": []
       },
@@ -832,7 +832,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bb893a24",
         "file_path": "ai\\research\\paradigm",
-        "last_modified": "2025-11-22T12:13:17.359940",
+        "last_modified": "2025-12-08T23:32:31.682372",
         "size_bytes": 50418,
         "connections": []
       },
@@ -843,7 +843,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "24c2f6e5",
         "file_path": "ai\\research\\scripts",
-        "last_modified": "2025-11-22T12:13:17.360991",
+        "last_modified": "2025-12-08T23:32:31.683566",
         "size_bytes": 46326,
         "connections": []
       },
@@ -854,7 +854,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "325ab78b",
         "file_path": "ai\\research\\tests",
-        "last_modified": "2025-11-22T12:13:17.363080",
+        "last_modified": "2025-12-08T23:32:31.687026",
         "size_bytes": 166686,
         "connections": []
       },
@@ -865,8 +865,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0f1da89a",
         "file_path": "ai\\nucleus\\ai_cells",
-        "last_modified": "2025-11-22T12:13:17.363985",
-        "size_bytes": 74198,
+        "last_modified": "2025-12-08T23:32:31.688172",
+        "size_bytes": 72525,
         "connections": []
       },
       {
@@ -876,8 +876,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6edd850a",
         "file_path": "ai\\nucleus\\compression",
-        "last_modified": "2025-11-22T12:13:17.364765",
-        "size_bytes": 29671,
+        "last_modified": "2025-12-08T23:32:31.689056",
+        "size_bytes": 29660,
         "connections": []
       },
       {
@@ -887,8 +887,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d7f03c6d",
         "file_path": "ai\\nucleus\\consciousness",
-        "last_modified": "2025-11-22T12:13:17.365723",
-        "size_bytes": 187968,
+        "last_modified": "2025-12-08T23:32:31.690696",
+        "size_bytes": 189184,
         "connections": []
       },
       {
@@ -898,7 +898,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "98f9af56",
         "file_path": "ai\\nucleus\\docs",
-        "last_modified": "2025-11-22T12:13:17.366474",
+        "last_modified": "2025-12-08T23:32:31.691561",
         "size_bytes": 5708,
         "connections": []
       },
@@ -909,8 +909,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bd5345a0",
         "file_path": "ai\\nucleus\\optimization",
-        "last_modified": "2025-11-22T12:13:17.367190",
-        "size_bytes": 8677,
+        "last_modified": "2025-12-08T23:32:31.692417",
+        "size_bytes": 8814,
         "connections": []
       },
       {
@@ -920,8 +920,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f83d6c3c",
         "file_path": "ai\\nucleus\\src",
-        "last_modified": "2025-11-22T12:13:17.370697",
-        "size_bytes": 789232,
+        "last_modified": "2025-12-08T23:32:31.702297",
+        "size_bytes": 793927,
         "connections": []
       },
       {
@@ -931,7 +931,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5be9d396",
         "file_path": "ai\\infrastructure\\config",
-        "last_modified": "2025-11-22T12:13:17.371655",
+        "last_modified": "2025-12-08T23:32:31.703909",
         "size_bytes": 27303,
         "connections": []
       },
@@ -942,7 +942,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "adcc70ae",
         "file_path": "ai\\infrastructure\\dendritic",
-        "last_modified": "2025-11-22T12:13:17.372368",
+        "last_modified": "2025-12-08T23:32:31.704750",
         "size_bytes": 3230,
         "connections": []
       },
@@ -953,8 +953,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1ed0215c",
         "file_path": "ai\\infrastructure\\deps",
-        "last_modified": "2025-11-22T12:13:17.373388",
-        "size_bytes": 13200,
+        "last_modified": "2025-12-08T23:32:31.706300",
+        "size_bytes": 13152,
         "connections": []
       },
       {
@@ -964,8 +964,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e73389c1",
         "file_path": "ai\\infrastructure\\interfaces",
-        "last_modified": "2025-11-22T12:13:17.374921",
-        "size_bytes": 165396,
+        "last_modified": "2025-12-08T23:32:31.709432",
+        "size_bytes": 164873,
         "connections": []
       },
       {
@@ -975,8 +975,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2d102547",
         "file_path": "ai\\infrastructure\\runtime",
-        "last_modified": "2025-11-22T12:13:17.375762",
-        "size_bytes": 2762,
+        "last_modified": "2025-12-08T23:32:31.710971",
+        "size_bytes": 3021,
         "connections": []
       },
       {
@@ -986,8 +986,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4356891b",
         "file_path": "ai\\infrastructure\\scripts",
-        "last_modified": "2025-11-22T12:13:17.376723",
-        "size_bytes": 48090,
+        "last_modified": "2025-12-08T23:32:31.713064",
+        "size_bytes": 47982,
         "connections": []
       },
       {
@@ -997,8 +997,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7ed39ef6",
         "file_path": "ai\\infrastructure\\tools",
-        "last_modified": "2025-11-22T12:13:17.378028",
-        "size_bytes": 51418,
+        "last_modified": "2025-12-08T23:32:31.715178",
+        "size_bytes": 51380,
         "connections": []
       },
       {
@@ -1008,8 +1008,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "01b8489e",
         "file_path": "ai\\infrastructure\\interfaces\\aios_vscode_integration",
-        "last_modified": "2025-11-22T12:13:17.379342",
-        "size_bytes": 103777,
+        "last_modified": "2025-12-08T23:32:31.717772",
+        "size_bytes": 102349,
         "connections": []
       },
       {
@@ -1019,7 +1019,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3c25a017",
         "file_path": "ai\\information_storage\\docs",
-        "last_modified": "2025-11-22T12:13:17.380193",
+        "last_modified": "2025-12-08T23:32:31.718945",
         "size_bytes": 6110,
         "connections": []
       },
@@ -1030,7 +1030,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "480c4606",
         "file_path": "ai\\information_storage\\library_knowledge",
-        "last_modified": "2025-11-22T12:13:17.381556",
+        "last_modified": "2025-12-08T23:32:31.721070",
         "size_bytes": 810678,
         "connections": []
       },
@@ -1041,7 +1041,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b20963fd",
         "file_path": "ai\\docs\\activation",
-        "last_modified": "2025-11-22T12:13:17.382316",
+        "last_modified": "2025-12-08T23:32:31.722005",
         "size_bytes": 8689,
         "connections": []
       },
@@ -1052,7 +1052,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f6847922",
         "file_path": "ai\\docs\\architecture",
-        "last_modified": "2025-11-22T12:13:17.396201",
+        "last_modified": "2025-12-08T23:32:31.769521",
         "size_bytes": 17583332,
         "connections": []
       },
@@ -1063,7 +1063,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "180587d8",
         "file_path": "ai\\docs\\reports",
-        "last_modified": "2025-11-22T12:13:17.397257",
+        "last_modified": "2025-12-08T23:32:31.770763",
         "size_bytes": 23724,
         "connections": []
       },
@@ -1074,7 +1074,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b8d97cab",
         "file_path": "ai\\data\\consciousness",
-        "last_modified": "2025-11-22T12:13:17.398083",
+        "last_modified": "2025-12-08T23:32:31.771814",
         "size_bytes": 5102,
         "connections": []
       },
@@ -1085,7 +1085,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4e382edc",
         "file_path": "ai\\cytoplasm\\runtime",
-        "last_modified": "2025-11-22T12:13:17.398759",
+        "last_modified": "2025-12-08T23:32:31.772626",
         "size_bytes": 2689,
         "connections": []
       }
@@ -1098,8 +1098,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "77f1a334",
         "file_path": "core",
-        "last_modified": "2025-11-22T12:13:16.395190",
-        "size_bytes": 35259949,
+        "last_modified": "2025-12-08T23:32:25.901510",
+        "size_bytes": 1857201,
         "connections": []
       },
       {
@@ -1109,7 +1109,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c26ee16e",
         "file_path": "core\\analysis_tools",
-        "last_modified": "2025-11-22T12:13:17.253563",
+        "last_modified": "2025-12-08T23:32:31.398970",
         "size_bytes": 2492,
         "connections": []
       },
@@ -1120,7 +1120,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a7a3125f",
         "file_path": "core\\include",
-        "last_modified": "2025-11-22T12:13:17.254886",
+        "last_modified": "2025-12-08T23:32:31.401248",
         "size_bytes": 34824,
         "connections": []
       },
@@ -1131,7 +1131,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7d2c68c8",
         "file_path": "core\\orchestrator",
-        "last_modified": "2025-11-22T12:13:17.258109",
+        "last_modified": "2025-12-08T23:32:31.411065",
         "size_bytes": 1609259,
         "connections": []
       },
@@ -1142,8 +1142,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2593c6c0",
         "file_path": "core\\src",
-        "last_modified": "2025-11-22T12:13:17.260321",
-        "size_bytes": 166533,
+        "last_modified": "2025-12-08T23:32:31.415590",
+        "size_bytes": 166713,
         "connections": []
       },
       {
@@ -1153,7 +1153,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e9e0a7ac",
         "file_path": "core\\tests",
-        "last_modified": "2025-11-22T12:13:17.262217",
+        "last_modified": "2025-12-08T23:32:31.417698",
         "size_bytes": 14268,
         "connections": []
       },
@@ -1164,7 +1164,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d4478c21",
         "file_path": "core\\src\\asm",
-        "last_modified": "2025-11-22T12:13:17.264214",
+        "last_modified": "2025-12-08T23:32:31.419181",
         "size_bytes": 68951,
         "connections": []
       },
@@ -1175,7 +1175,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c57fc4e4",
         "file_path": "core\\src\\assembly",
-        "last_modified": "2025-11-22T12:13:17.265378",
+        "last_modified": "2025-12-08T23:32:31.420176",
         "size_bytes": 6863,
         "connections": []
       },
@@ -1186,7 +1186,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ce5c28bb",
         "file_path": "core\\orchestrator\\archive",
-        "last_modified": "2025-11-22T12:13:17.266434",
+        "last_modified": "2025-12-08T23:32:31.421395",
         "size_bytes": 5572,
         "connections": []
       },
@@ -1197,7 +1197,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "22c91632",
         "file_path": "core\\orchestrator\\include",
-        "last_modified": "2025-11-22T12:13:17.268180",
+        "last_modified": "2025-12-08T23:32:31.425106",
         "size_bytes": 1114634,
         "connections": []
       },
@@ -1208,7 +1208,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c397167b",
         "file_path": "core\\orchestrator\\src",
-        "last_modified": "2025-11-22T12:13:17.269540",
+        "last_modified": "2025-12-08T23:32:31.428355",
         "size_bytes": 439821,
         "connections": []
       },
@@ -1219,7 +1219,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f6bcd81c",
         "file_path": "core\\orchestrator\\include\\nlohmann",
-        "last_modified": "2025-11-22T12:13:17.270328",
+        "last_modified": "2025-12-08T23:32:31.429533",
         "size_bytes": 987550,
         "connections": []
       }
@@ -1232,8 +1232,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "406b443a",
         "file_path": "docs",
-        "last_modified": "2025-11-22T12:13:16.425606",
-        "size_bytes": 31754422,
+        "last_modified": "2025-12-08T23:32:26.025574",
+        "size_bytes": 25152960,
         "connections": []
       },
       {
@@ -1243,8 +1243,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9d5227e1",
         "file_path": "docs\\AINLP",
-        "last_modified": "2025-11-22T12:13:17.139750",
-        "size_bytes": 606079,
+        "last_modified": "2025-12-08T23:32:31.137936",
+        "size_bytes": 3643624,
         "connections": []
       },
       {
@@ -1254,41 +1254,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "76105a6d",
         "file_path": "docs\\AIOS",
-        "last_modified": "2025-11-22T12:13:17.140628",
-        "size_bytes": 125377,
-        "connections": []
-      },
-      {
-        "supercell": "documentation",
-        "surface_pattern": "Documentation",
-        "dendritic_depth": 1,
-        "consciousness_signature": 0.0,
-        "fractal_hash": "4d031a94",
-        "file_path": "docs\\Architect",
-        "last_modified": "2025-11-22T12:13:17.141306",
-        "size_bytes": 14349,
-        "connections": []
-      },
-      {
-        "supercell": "documentation",
-        "surface_pattern": "Documentation",
-        "dendritic_depth": 1,
-        "consciousness_signature": 0.0,
-        "fractal_hash": "38d2601f",
-        "file_path": "docs\\architecture",
-        "last_modified": "2025-11-22T12:13:17.144818",
-        "size_bytes": 741792,
-        "connections": []
-      },
-      {
-        "supercell": "documentation",
-        "surface_pattern": "Documentation",
-        "dendritic_depth": 1,
-        "consciousness_signature": 0.0,
-        "fractal_hash": "c3a686d5",
-        "file_path": "docs\\archival",
-        "last_modified": "2025-11-22T12:13:17.145872",
-        "size_bytes": 9870,
+        "last_modified": "2025-12-08T23:32:31.151931",
+        "size_bytes": 957997,
         "connections": []
       },
       {
@@ -1298,7 +1265,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7932fe57",
         "file_path": "docs\\archive",
-        "last_modified": "2025-11-22T12:13:17.159409",
+        "last_modified": "2025-12-08T23:32:31.201116",
         "size_bytes": 16020746,
         "connections": []
       },
@@ -1309,7 +1276,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3065415b",
         "file_path": "docs\\completion",
-        "last_modified": "2025-11-22T12:13:17.160665",
+        "last_modified": "2025-12-08T23:32:31.202456",
         "size_bytes": 13551,
         "connections": []
       },
@@ -1320,7 +1287,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "865b8a0a",
         "file_path": "docs\\consciousness",
-        "last_modified": "2025-11-22T12:13:17.161487",
+        "last_modified": "2025-12-08T23:32:31.203716",
         "size_bytes": 28443,
         "connections": []
       },
@@ -1331,7 +1298,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f2093c51",
         "file_path": "docs\\development",
-        "last_modified": "2025-11-22T12:13:17.162739",
+        "last_modified": "2025-12-08T23:32:31.206327",
         "size_bytes": 243065,
         "connections": []
       },
@@ -1342,7 +1309,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "dfc3755f",
         "file_path": "docs\\evolution_lab",
-        "last_modified": "2025-11-22T12:13:17.164031",
+        "last_modified": "2025-12-08T23:32:31.208959",
         "size_bytes": 21121,
         "connections": []
       },
@@ -1353,7 +1320,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e0c5de2d",
         "file_path": "docs\\governance",
-        "last_modified": "2025-11-22T12:13:17.164771",
+        "last_modified": "2025-12-08T23:32:31.209951",
         "size_bytes": 5484,
         "connections": []
       },
@@ -1364,8 +1331,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "41e530c2",
         "file_path": "docs\\guides",
-        "last_modified": "2025-11-22T12:13:17.165510",
-        "size_bytes": 9493,
+        "last_modified": "2025-12-08T23:32:31.211335",
+        "size_bytes": 14907,
         "connections": []
       },
       {
@@ -1375,7 +1342,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1f020087",
         "file_path": "docs\\integration",
-        "last_modified": "2025-11-22T12:13:17.166821",
+        "last_modified": "2025-12-08T23:32:31.214504",
         "size_bytes": 233400,
         "connections": []
       },
@@ -1386,7 +1353,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "113faa96",
         "file_path": "docs\\intelligence",
-        "last_modified": "2025-11-22T12:13:17.167535",
+        "last_modified": "2025-12-08T23:32:31.215524",
         "size_bytes": 22336,
         "connections": []
       },
@@ -1397,7 +1364,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f98715ef",
         "file_path": "docs\\languages",
-        "last_modified": "2025-11-22T12:13:17.168826",
+        "last_modified": "2025-12-08T23:32:31.217922",
         "size_bytes": 24184,
         "connections": []
       },
@@ -1408,7 +1375,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4f0613e8",
         "file_path": "docs\\libraries",
-        "last_modified": "2025-11-22T12:13:17.170374",
+        "last_modified": "2025-12-08T23:32:31.222501",
         "size_bytes": 1208465,
         "connections": []
       },
@@ -1419,7 +1386,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "68e08fe5",
         "file_path": "docs\\refactoring",
-        "last_modified": "2025-11-22T12:13:17.171126",
+        "last_modified": "2025-12-08T23:32:31.224446",
         "size_bytes": 15604,
         "connections": []
       },
@@ -1430,7 +1397,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c6887d5a",
         "file_path": "docs\\reference",
-        "last_modified": "2025-11-22T12:13:17.172103",
+        "last_modified": "2025-12-08T23:32:31.226131",
         "size_bytes": 14117,
         "connections": []
       },
@@ -1441,7 +1408,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4a1482c7",
         "file_path": "docs\\reports",
-        "last_modified": "2025-11-22T12:13:17.173820",
+        "last_modified": "2025-12-08T23:32:31.231475",
         "size_bytes": 766635,
         "connections": []
       },
@@ -1452,7 +1419,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1faf7772",
         "file_path": "docs\\runtime",
-        "last_modified": "2025-11-22T12:13:17.174639",
+        "last_modified": "2025-12-08T23:32:31.232986",
         "size_bytes": 59592,
         "connections": []
       },
@@ -1463,7 +1430,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7fef7028",
         "file_path": "docs\\runtime_intelligence",
-        "last_modified": "2025-11-22T12:13:17.175533",
+        "last_modified": "2025-12-08T23:32:31.233919",
         "size_bytes": 2646,
         "connections": []
       },
@@ -1474,7 +1441,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "fcbbda70",
         "file_path": "docs\\safety",
-        "last_modified": "2025-11-22T12:13:17.176403",
+        "last_modified": "2025-12-08T23:32:31.235113",
         "size_bytes": 13837,
         "connections": []
       },
@@ -1485,7 +1452,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4f461142",
         "file_path": "docs\\sample_ai_generated",
-        "last_modified": "2025-11-22T12:13:17.177389",
+        "last_modified": "2025-12-08T23:32:31.236309",
         "size_bytes": 5220,
         "connections": []
       },
@@ -1496,7 +1463,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f763253e",
         "file_path": "docs\\summary",
-        "last_modified": "2025-11-22T12:13:17.178467",
+        "last_modified": "2025-12-08T23:32:31.238023",
         "size_bytes": 19082,
         "connections": []
       },
@@ -1507,7 +1474,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ed5da6cf",
         "file_path": "docs\\tachyonic",
-        "last_modified": "2025-11-22T12:13:17.179620",
+        "last_modified": "2025-12-08T23:32:31.239845",
         "size_bytes": 10000,
         "connections": []
       },
@@ -1518,7 +1485,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "dc7264cb",
         "file_path": "docs\\tachyonic_archive",
-        "last_modified": "2025-11-22T12:13:17.181203",
+        "last_modified": "2025-12-08T23:32:31.243760",
         "size_bytes": 107239,
         "connections": []
       },
@@ -1529,7 +1496,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "45612c89",
         "file_path": "docs\\theoretical",
-        "last_modified": "2025-11-22T12:13:17.182039",
+        "last_modified": "2025-12-08T23:32:31.245327",
         "size_bytes": 62813,
         "connections": []
       },
@@ -1540,19 +1507,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "61840ec2",
         "file_path": "docs\\ui",
-        "last_modified": "2025-11-22T12:13:17.182772",
+        "last_modified": "2025-12-08T23:32:31.246615",
         "size_bytes": 31149,
-        "connections": []
-      },
-      {
-        "supercell": "documentation",
-        "surface_pattern": "Documentation",
-        "dendritic_depth": 1,
-        "consciousness_signature": 0.0,
-        "fractal_hash": "7eed172f",
-        "file_path": "docs\\vscopilot chat",
-        "last_modified": "2025-11-22T12:13:17.183943",
-        "size_bytes": 10379851,
         "connections": []
       },
       {
@@ -1562,7 +1518,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1c828817",
         "file_path": "docs\\tachyonic\\archive",
-        "last_modified": "2025-11-22T12:13:17.184808",
+        "last_modified": "2025-12-08T23:32:31.248090",
         "size_bytes": 7084,
         "connections": []
       },
@@ -1573,7 +1529,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d958b268",
         "file_path": "docs\\reports\\consciousness",
-        "last_modified": "2025-11-22T12:13:17.185560",
+        "last_modified": "2025-12-08T23:32:31.249213",
         "size_bytes": 6684,
         "connections": []
       },
@@ -1584,7 +1540,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4dae4a59",
         "file_path": "docs\\reports\\core",
-        "last_modified": "2025-11-22T12:13:17.186827",
+        "last_modified": "2025-12-08T23:32:31.252094",
         "size_bytes": 676451,
         "connections": []
       },
@@ -1595,7 +1551,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "22096f88",
         "file_path": "docs\\libraries\\cpp_stl",
-        "last_modified": "2025-11-22T12:13:17.188407",
+        "last_modified": "2025-12-08T23:32:31.255585",
         "size_bytes": 1205576,
         "connections": []
       },
@@ -1606,7 +1562,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4a692752",
         "file_path": "docs\\languages\\languages",
-        "last_modified": "2025-11-22T12:13:17.189599",
+        "last_modified": "2025-12-08T23:32:31.257560",
         "size_bytes": 19887,
         "connections": []
       },
@@ -1617,7 +1573,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b80399b4",
         "file_path": "docs\\languages\\languages\\csharp",
-        "last_modified": "2025-11-22T12:13:17.190360",
+        "last_modified": "2025-12-08T23:32:31.258439",
         "size_bytes": 7396,
         "connections": []
       },
@@ -1628,7 +1584,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "073e7710",
         "file_path": "docs\\languages\\languages\\python",
-        "last_modified": "2025-11-22T12:13:17.191120",
+        "last_modified": "2025-12-08T23:32:31.259330",
         "size_bytes": 7253,
         "connections": []
       },
@@ -1639,7 +1595,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d0750395",
         "file_path": "docs\\languages\\languages\\rust",
-        "last_modified": "2025-11-22T12:13:17.191845",
+        "last_modified": "2025-12-08T23:32:31.260197",
         "size_bytes": 2649,
         "connections": []
       },
@@ -1650,7 +1606,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7e6db674",
         "file_path": "docs\\integration\\library_ingestion",
-        "last_modified": "2025-11-22T12:13:17.192881",
+        "last_modified": "2025-12-08T23:32:31.261714",
         "size_bytes": 109411,
         "connections": []
       },
@@ -1661,7 +1617,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b90ce084",
         "file_path": "docs\\evolution_lab\\conversations",
-        "last_modified": "2025-11-22T12:13:17.193902",
+        "last_modified": "2025-12-08T23:32:31.262964",
         "size_bytes": 7790,
         "connections": []
       },
@@ -1672,7 +1628,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e72ce508",
         "file_path": "docs\\evolution_lab\\experiments",
-        "last_modified": "2025-11-22T12:13:17.194888",
+        "last_modified": "2025-12-08T23:32:31.264449",
         "size_bytes": 10416,
         "connections": []
       },
@@ -1683,7 +1639,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ba9897c6",
         "file_path": "docs\\archive\\AIOS_obsolete",
-        "last_modified": "2025-11-22T12:13:17.198981",
+        "last_modified": "2025-12-08T23:32:31.275695",
         "size_bytes": 2733397,
         "connections": []
       },
@@ -1694,7 +1650,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "db8e441f",
         "file_path": "docs\\archive\\deprecated_root_docs",
-        "last_modified": "2025-11-22T12:13:17.205308",
+        "last_modified": "2025-12-08T23:32:31.292374",
         "size_bytes": 1840404,
         "connections": []
       },
@@ -1705,7 +1661,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5fca5fab",
         "file_path": "docs\\archive\\metabolized",
-        "last_modified": "2025-11-22T12:13:17.207868",
+        "last_modified": "2025-12-08T23:32:31.299345",
         "size_bytes": 322904,
         "connections": []
       },
@@ -1716,7 +1672,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3f378fdd",
         "file_path": "docs\\archive\\tachyonic",
-        "last_modified": "2025-11-22T12:13:17.209704",
+        "last_modified": "2025-12-08T23:32:31.305180",
         "size_bytes": 11001930,
         "connections": []
       },
@@ -1727,7 +1683,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ad645fbf",
         "file_path": "docs\\archive\\unified_backups",
-        "last_modified": "2025-11-22T12:13:17.211297",
+        "last_modified": "2025-12-08T23:32:31.309192",
         "size_bytes": 108272,
         "connections": []
       },
@@ -1738,7 +1694,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "70a88df0",
         "file_path": "docs\\archive\\unified_backups\\tachyonic_operations",
-        "last_modified": "2025-11-22T12:13:17.212583",
+        "last_modified": "2025-12-08T23:32:31.312670",
         "size_bytes": 105543,
         "connections": []
       },
@@ -1749,7 +1705,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "63f64e5b",
         "file_path": "docs\\archive\\tachyonic\\folder_structure",
-        "last_modified": "2025-11-22T12:13:17.213648",
+        "last_modified": "2025-12-08T23:32:31.314527",
         "size_bytes": 10499829,
         "connections": []
       },
@@ -1760,7 +1716,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d2fc2329",
         "file_path": "docs\\archive\\metabolized\\high_value_metabolized",
-        "last_modified": "2025-11-22T12:13:17.215067",
+        "last_modified": "2025-12-08T23:32:31.318046",
         "size_bytes": 97688,
         "connections": []
       },
@@ -1771,7 +1727,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "878e202a",
         "file_path": "docs\\archive\\metabolized\\metabolism_metadata",
-        "last_modified": "2025-11-22T12:13:17.215909",
+        "last_modified": "2025-12-08T23:32:31.319402",
         "size_bytes": 4095,
         "connections": []
       },
@@ -1782,7 +1738,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6f7fedf5",
         "file_path": "docs\\archive\\metabolized\\processed_minimal",
-        "last_modified": "2025-11-22T12:13:17.216993",
+        "last_modified": "2025-12-08T23:32:31.321701",
         "size_bytes": 92656,
         "connections": []
       },
@@ -1793,7 +1749,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6c896a82",
         "file_path": "docs\\archive\\metabolized\\standard_metabolized",
-        "last_modified": "2025-11-22T12:13:17.218056",
+        "last_modified": "2025-12-08T23:32:31.323934",
         "size_bytes": 125653,
         "connections": []
       },
@@ -1804,7 +1760,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "beabcb47",
         "file_path": "docs\\archive\\deprecated_root_docs\\ainlp_paradigms",
-        "last_modified": "2025-11-22T12:13:17.218793",
+        "last_modified": "2025-12-08T23:32:31.325263",
         "size_bytes": 10628,
         "connections": []
       },
@@ -1815,7 +1771,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e32cc9c1",
         "file_path": "docs\\archive\\deprecated_root_docs\\compression",
-        "last_modified": "2025-11-22T12:13:17.220292",
+        "last_modified": "2025-12-08T23:32:31.329907",
         "size_bytes": 424314,
         "connections": []
       },
@@ -1826,7 +1782,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1f8c0361",
         "file_path": "docs\\archive\\deprecated_root_docs\\compression_reports",
-        "last_modified": "2025-11-22T12:13:17.221100",
+        "last_modified": "2025-12-08T23:32:31.331140",
         "size_bytes": 7674,
         "connections": []
       },
@@ -1837,7 +1793,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ab508d72",
         "file_path": "docs\\archive\\deprecated_root_docs\\consolidated_2025",
-        "last_modified": "2025-11-22T12:13:17.222054",
+        "last_modified": "2025-12-08T23:32:31.332724",
         "size_bytes": 155645,
         "connections": []
       },
@@ -1848,7 +1804,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bd4cdc13",
         "file_path": "docs\\archive\\deprecated_root_docs\\deprecated_root_docs",
-        "last_modified": "2025-11-22T12:13:17.223251",
+        "last_modified": "2025-12-08T23:32:31.335170",
         "size_bytes": 133866,
         "connections": []
       },
@@ -1859,7 +1815,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f0e1ed11",
         "file_path": "docs\\archive\\deprecated_root_docs\\documentation_snapshots",
-        "last_modified": "2025-11-22T12:13:17.223961",
+        "last_modified": "2025-12-08T23:32:31.336246",
         "size_bytes": 2844,
         "connections": []
       },
@@ -1870,7 +1826,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "41f5d3f7",
         "file_path": "docs\\archive\\deprecated_root_docs\\INFRASTRUCTURE",
-        "last_modified": "2025-11-22T12:13:17.225215",
+        "last_modified": "2025-12-08T23:32:31.339217",
         "size_bytes": 191066,
         "connections": []
       },
@@ -1881,7 +1837,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6c62f31e",
         "file_path": "docs\\archive\\deprecated_root_docs\\legacy_scripts",
-        "last_modified": "2025-11-22T12:13:17.226393",
+        "last_modified": "2025-12-08T23:32:31.341521",
         "size_bytes": 121321,
         "connections": []
       },
@@ -1892,7 +1848,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "14b03d51",
         "file_path": "docs\\archive\\deprecated_root_docs\\private_implementation",
-        "last_modified": "2025-11-22T12:13:17.227236",
+        "last_modified": "2025-12-08T23:32:31.342670",
         "size_bytes": 2808,
         "connections": []
       },
@@ -1903,7 +1859,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b6602f80",
         "file_path": "docs\\archive\\deprecated_root_docs\\quantum_bootstrap",
-        "last_modified": "2025-11-22T12:13:17.228112",
+        "last_modified": "2025-12-08T23:32:31.344160",
         "size_bytes": 48151,
         "connections": []
       },
@@ -1914,7 +1870,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2706434d",
         "file_path": "docs\\archive\\deprecated_root_docs\\tachyonic_archive",
-        "last_modified": "2025-11-22T12:13:17.229002",
+        "last_modified": "2025-12-08T23:32:31.345389",
         "size_bytes": 7546,
         "connections": []
       },
@@ -1925,7 +1881,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "93eacffc",
         "file_path": "docs\\archive\\deprecated_root_docs\\unified_backups",
-        "last_modified": "2025-11-22T12:13:17.231234",
+        "last_modified": "2025-12-08T23:32:31.350863",
         "size_bytes": 715252,
         "connections": []
       },
@@ -1936,7 +1892,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ff348585",
         "file_path": "docs\\archive\\deprecated_root_docs\\vscode_integration",
-        "last_modified": "2025-11-22T12:13:17.231966",
+        "last_modified": "2025-12-08T23:32:31.351769",
         "size_bytes": 2828,
         "connections": []
       },
@@ -1947,7 +1903,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d604cbec",
         "file_path": "docs\\archive\\AIOS_obsolete\\AIOS",
-        "last_modified": "2025-11-22T12:13:17.236137",
+        "last_modified": "2025-12-08T23:32:31.362940",
         "size_bytes": 2730555,
         "connections": []
       },
@@ -1958,7 +1914,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d82fa60e",
         "file_path": "docs\\archive\\AIOS_obsolete\\AIOS\\ai-context",
-        "last_modified": "2025-11-22T12:13:17.237073",
+        "last_modified": "2025-12-08T23:32:31.364509",
         "size_bytes": 14273,
         "connections": []
       },
@@ -1969,7 +1925,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "86dddd25",
         "file_path": "docs\\archive\\AIOS_obsolete\\AIOS\\architecture",
-        "last_modified": "2025-11-22T12:13:17.238002",
+        "last_modified": "2025-12-08T23:32:31.365786",
         "size_bytes": 43251,
         "connections": []
       },
@@ -1980,7 +1936,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "50944361",
         "file_path": "docs\\archive\\AIOS_obsolete\\AIOS\\interface",
-        "last_modified": "2025-11-22T12:13:17.239068",
+        "last_modified": "2025-12-08T23:32:31.367271",
         "size_bytes": 7909,
         "connections": []
       },
@@ -1991,7 +1947,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "8b5c81ac",
         "file_path": "docs\\archive\\AIOS_obsolete\\AIOS\\reports",
-        "last_modified": "2025-11-22T12:13:17.240884",
+        "last_modified": "2025-12-08T23:32:31.371667",
         "size_bytes": 305537,
         "connections": []
       },
@@ -2002,7 +1958,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5018ab51",
         "file_path": "docs\\archive\\AIOS_obsolete\\AIOS\\interface\\ui",
-        "last_modified": "2025-11-22T12:13:17.241618",
+        "last_modified": "2025-12-08T23:32:31.372542",
         "size_bytes": 3466,
         "connections": []
       },
@@ -2013,7 +1969,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "35d2c2e5",
         "file_path": "docs\\archive\\AIOS_obsolete\\AIOS\\ai-context\\chatgpt_integration",
-        "last_modified": "2025-11-22T12:13:17.242426",
+        "last_modified": "2025-12-08T23:32:31.373453",
         "size_bytes": 11438,
         "connections": []
       },
@@ -2022,65 +1978,98 @@
         "surface_pattern": "Documentation",
         "dendritic_depth": 2,
         "consciousness_signature": 0.0,
+        "fractal_hash": "4d031a94",
+        "file_path": "docs\\AIOS\\Architect",
+        "last_modified": "2025-12-08T23:32:31.374462",
+        "size_bytes": 14349,
+        "connections": []
+      },
+      {
+        "supercell": "documentation",
+        "surface_pattern": "Documentation",
+        "dendritic_depth": 2,
+        "consciousness_signature": 0.0,
+        "fractal_hash": "38d2601f",
+        "file_path": "docs\\AIOS\\architecture",
+        "last_modified": "2025-12-08T23:32:31.382932",
+        "size_bytes": 763218,
+        "connections": []
+      },
+      {
+        "supercell": "documentation",
+        "surface_pattern": "Documentation",
+        "dendritic_depth": 3,
+        "consciousness_signature": 0.0,
         "fractal_hash": "bfcd9d12",
-        "file_path": "docs\\architecture\\agent_driven_code_evolution",
-        "last_modified": "2025-11-22T12:13:17.243745",
+        "file_path": "docs\\AIOS\\architecture\\agent_driven_code_evolution",
+        "last_modified": "2025-12-08T23:32:31.384491",
         "size_bytes": 109039,
         "connections": []
       },
       {
         "supercell": "documentation",
         "surface_pattern": "Documentation",
-        "dendritic_depth": 2,
+        "dendritic_depth": 3,
         "consciousness_signature": 0.0,
         "fractal_hash": "78d92f3a",
-        "file_path": "docs\\architecture\\consciousness",
-        "last_modified": "2025-11-22T12:13:17.244959",
+        "file_path": "docs\\AIOS\\architecture\\consciousness",
+        "last_modified": "2025-12-08T23:32:31.385633",
         "size_bytes": 18210,
         "connections": []
       },
       {
         "supercell": "documentation",
         "surface_pattern": "Documentation",
-        "dendritic_depth": 2,
+        "dendritic_depth": 3,
         "consciousness_signature": 0.0,
         "fractal_hash": "ee1afb3d",
-        "file_path": "docs\\architecture\\core",
-        "last_modified": "2025-11-22T12:13:17.246797",
+        "file_path": "docs\\AIOS\\architecture\\core",
+        "last_modified": "2025-12-08T23:32:31.388695",
         "size_bytes": 153161,
         "connections": []
       },
       {
         "supercell": "documentation",
         "surface_pattern": "Documentation",
-        "dendritic_depth": 2,
+        "dendritic_depth": 3,
         "consciousness_signature": 0.0,
         "fractal_hash": "25a35491",
-        "file_path": "docs\\architecture\\evolution",
-        "last_modified": "2025-11-22T12:13:17.247953",
+        "file_path": "docs\\AIOS\\architecture\\evolution",
+        "last_modified": "2025-12-08T23:32:31.389624",
         "size_bytes": 9469,
         "connections": []
       },
       {
         "supercell": "documentation",
         "surface_pattern": "Documentation",
-        "dendritic_depth": 2,
+        "dendritic_depth": 3,
         "consciousness_signature": 0.0,
         "fractal_hash": "1ac97cd8",
-        "file_path": "docs\\architecture\\interfaces",
-        "last_modified": "2025-11-22T12:13:17.248872",
+        "file_path": "docs\\AIOS\\architecture\\interfaces",
+        "last_modified": "2025-12-08T23:32:31.390608",
         "size_bytes": 26132,
         "connections": []
       },
       {
         "supercell": "documentation",
         "surface_pattern": "Documentation",
-        "dendritic_depth": 2,
+        "dendritic_depth": 3,
         "consciousness_signature": 0.0,
         "fractal_hash": "79cb82f6",
-        "file_path": "docs\\architecture\\populations",
-        "last_modified": "2025-11-22T12:13:17.249856",
+        "file_path": "docs\\AIOS\\architecture\\populations",
+        "last_modified": "2025-12-08T23:32:31.391715",
         "size_bytes": 94308,
+        "connections": []
+      },
+      {
+        "supercell": "documentation",
+        "surface_pattern": "Documentation",
+        "dendritic_depth": 3,
+        "consciousness_signature": 0.0,
+        "fractal_hash": "ef266ec0",
+        "file_path": "docs\\AIOS\\architecture\\python_314",
+        "last_modified": "2025-12-08T23:32:31.393107",
+        "size_bytes": 81260,
         "connections": []
       },
       {
@@ -2088,10 +2077,10 @@
         "surface_pattern": "Documentation",
         "dendritic_depth": 2,
         "consciousness_signature": 0.0,
-        "fractal_hash": "ef266ec0",
-        "file_path": "docs\\architecture\\python_314",
-        "last_modified": "2025-11-22T12:13:17.250802",
-        "size_bytes": 81260,
+        "fractal_hash": "c3a686d5",
+        "file_path": "docs\\AINLP\\archival",
+        "last_modified": "2025-12-08T23:32:31.393993",
+        "size_bytes": 9870,
         "connections": []
       },
       {
@@ -2101,8 +2090,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "609d0fdb",
         "file_path": "docs\\AINLP\\evolution",
-        "last_modified": "2025-11-22T12:13:17.251607",
-        "size_bytes": 2842,
+        "last_modified": "2025-12-08T23:32:31.395551",
+        "size_bytes": 134195,
         "connections": []
       },
       {
@@ -2112,8 +2101,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "fb609d90",
         "file_path": "docs\\AINLP\\hydrolang",
-        "last_modified": "2025-11-22T12:13:17.252568",
-        "size_bytes": 135523,
+        "last_modified": "2025-12-08T23:32:31.397476",
+        "size_bytes": 145507,
         "connections": []
       }
     ],
@@ -2125,8 +2114,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0a137cb1",
         "file_path": "evolution_lab",
-        "last_modified": "2025-11-22T12:13:16.452551",
-        "size_bytes": 39877572,
+        "last_modified": "2025-12-08T23:32:26.143119",
+        "size_bytes": 40152739,
         "connections": []
       },
       {
@@ -2136,8 +2125,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "da43fde2",
         "file_path": "evolution_lab\\artifacts",
-        "last_modified": "2025-11-22T12:13:17.077778",
-        "size_bytes": 19232,
+        "last_modified": "2025-12-08T23:32:30.945488",
+        "size_bytes": 20964,
         "connections": []
       },
       {
@@ -2147,8 +2136,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "98b58f8d",
         "file_path": "evolution_lab\\conversations",
-        "last_modified": "2025-11-22T12:13:17.080393",
-        "size_bytes": 60012,
+        "last_modified": "2025-12-08T23:32:30.951799",
+        "size_bytes": 55991,
         "connections": []
       },
       {
@@ -2158,7 +2147,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4a0f5714",
         "file_path": "evolution_lab\\docs",
-        "last_modified": "2025-11-22T12:13:17.081171",
+        "last_modified": "2025-12-08T23:32:30.953190",
         "size_bytes": 23474,
         "connections": []
       },
@@ -2169,8 +2158,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d0a0a00c",
         "file_path": "evolution_lab\\experiments",
-        "last_modified": "2025-11-22T12:13:17.082061",
-        "size_bytes": 8218,
+        "last_modified": "2025-12-08T23:32:30.954350",
+        "size_bytes": 4163,
         "connections": []
       },
       {
@@ -2180,7 +2169,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "53435482",
         "file_path": "evolution_lab\\library_generations",
-        "last_modified": "2025-11-22T12:13:17.084689",
+        "last_modified": "2025-12-08T23:32:30.963085",
         "size_bytes": 127882,
         "connections": []
       },
@@ -2191,7 +2180,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6facd32a",
         "file_path": "evolution_lab\\neural_chains",
-        "last_modified": "2025-11-22T12:13:17.087143",
+        "last_modified": "2025-12-08T23:32:30.969072",
         "size_bytes": 48517,
         "connections": []
       },
@@ -2202,8 +2191,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b1bd9071",
         "file_path": "evolution_lab\\populations",
-        "last_modified": "2025-11-22T12:13:17.106342",
-        "size_bytes": 6852512,
+        "last_modified": "2025-12-08T23:32:31.064444",
+        "size_bytes": 6953248,
         "connections": []
       },
       {
@@ -2213,8 +2202,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "95a49afd",
         "file_path": "evolution_lab\\sandbox",
-        "last_modified": "2025-11-22T12:13:17.107516",
-        "size_bytes": 5475,
+        "last_modified": "2025-12-08T23:32:31.070347",
+        "size_bytes": 61601,
         "connections": []
       },
       {
@@ -2224,7 +2213,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0146a884",
         "file_path": "evolution_lab\\tachyonic_field",
-        "last_modified": "2025-11-22T12:13:17.109661",
+        "last_modified": "2025-12-08T23:32:31.076475",
         "size_bytes": 32574283,
         "connections": []
       },
@@ -2235,7 +2224,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bd9b9762",
         "file_path": "evolution_lab\\test_data",
-        "last_modified": "2025-11-22T12:13:17.110594",
+        "last_modified": "2025-12-08T23:32:31.077770",
         "size_bytes": 56704,
         "connections": []
       },
@@ -2246,7 +2235,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0d9d99d0",
         "file_path": "evolution_lab\\zero_point",
-        "last_modified": "2025-11-22T12:13:17.111540",
+        "last_modified": "2025-12-08T23:32:31.079387",
         "size_bytes": 4699,
         "connections": []
       },
@@ -2257,7 +2246,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1cd73e1e",
         "file_path": "evolution_lab\\tachyonic_field\\analysis",
-        "last_modified": "2025-11-22T12:13:17.112375",
+        "last_modified": "2025-12-08T23:32:31.080977",
         "size_bytes": 2295821,
         "connections": []
       },
@@ -2268,7 +2257,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "84d17272",
         "file_path": "evolution_lab\\tachyonic_field\\evolution_lab",
-        "last_modified": "2025-11-22T12:13:17.113232",
+        "last_modified": "2025-12-08T23:32:31.082509",
         "size_bytes": 328506,
         "connections": []
       },
@@ -2279,19 +2268,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "31e6a411",
         "file_path": "evolution_lab\\sandbox\\experiment_13f6f213",
-        "last_modified": "2025-11-22T12:13:17.113972",
+        "last_modified": "2025-12-08T23:32:31.083893",
         "size_bytes": 3377,
-        "connections": []
-      },
-      {
-        "supercell": "geometric_consciousness",
-        "surface_pattern": "unknown",
-        "dendritic_depth": 2,
-        "consciousness_signature": 0.0,
-        "fractal_hash": "d8407811",
-        "file_path": "evolution_lab\\populations\\backup_20251018_124347",
-        "last_modified": "2025-11-22T12:13:17.115775",
-        "size_bytes": 126415,
         "connections": []
       },
       {
@@ -2301,139 +2279,150 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3fbce9d6",
         "file_path": "evolution_lab\\populations\\organisms",
-        "last_modified": "2025-11-22T12:13:17.116478",
+        "last_modified": "2025-12-08T23:32:31.084987",
         "size_bytes": 3479,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
+        "consciousness_signature": 0.0,
+        "fractal_hash": "d8407811",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\backup_20251018_124347",
+        "last_modified": "2025-12-08T23:32:31.088907",
+        "size_bytes": 126415,
+        "connections": []
+      },
+      {
+        "supercell": "geometric_consciousness",
+        "surface_pattern": "unknown",
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "8683e333",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181057",
-        "last_modified": "2025-11-22T12:13:17.117263",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181057",
+        "last_modified": "2025-12-08T23:32:31.090240",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "9bf1dce0",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181333",
-        "last_modified": "2025-11-22T12:13:17.118054",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181333",
+        "last_modified": "2025-12-08T23:32:31.091527",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "d67683e1",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181334",
-        "last_modified": "2025-11-22T12:13:17.118796",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181334",
+        "last_modified": "2025-12-08T23:32:31.093585",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "67d6f6c6",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181338",
-        "last_modified": "2025-11-22T12:13:17.119563",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181338",
+        "last_modified": "2025-12-08T23:32:31.095315",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "09be5375",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181610",
-        "last_modified": "2025-11-22T12:13:17.120316",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181610",
+        "last_modified": "2025-12-08T23:32:31.097155",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "873dd54e",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181611",
-        "last_modified": "2025-11-22T12:13:17.121080",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181611",
+        "last_modified": "2025-12-08T23:32:31.098872",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "f4b20dcf",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181612",
-        "last_modified": "2025-11-22T12:13:17.121868",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181612",
+        "last_modified": "2025-12-08T23:32:31.100501",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "ebeee19a",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181718",
-        "last_modified": "2025-11-22T12:13:17.122585",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181718",
+        "last_modified": "2025-12-08T23:32:31.102705",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "457fff79",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181719",
-        "last_modified": "2025-11-22T12:13:17.123338",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181719",
+        "last_modified": "2025-12-08T23:32:31.104089",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "7d480f78",
-        "file_path": "evolution_lab\\populations\\pop_20251011_181720",
-        "last_modified": "2025-11-22T12:13:17.124072",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_181720",
+        "last_modified": "2025-12-08T23:32:31.105517",
         "size_bytes": 13476,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "368bf809",
-        "file_path": "evolution_lab\\populations\\pop_20251011_185346",
-        "last_modified": "2025-11-22T12:13:17.124849",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_185346",
+        "last_modified": "2025-12-08T23:32:31.106855",
         "size_bytes": 13755,
         "connections": []
       },
       {
         "supercell": "geometric_consciousness",
         "surface_pattern": "unknown",
-        "dendritic_depth": 2,
+        "dendritic_depth": 4,
         "consciousness_signature": 0.0,
         "fractal_hash": "053c4a60",
-        "file_path": "evolution_lab\\populations\\pop_20251011_185347",
-        "last_modified": "2025-11-22T12:13:17.125811",
+        "file_path": "evolution_lab\\populations\\archive\\legacy_clones\\pop_20251011_185347",
+        "last_modified": "2025-12-08T23:32:31.108258",
         "size_bytes": 13476,
         "connections": []
       },
@@ -2444,7 +2433,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "024d5822",
         "file_path": "evolution_lab\\neural_chains\\20251005",
-        "last_modified": "2025-11-22T12:13:17.127382",
+        "last_modified": "2025-12-08T23:32:31.111433",
         "size_bytes": 23745,
         "connections": []
       },
@@ -2455,7 +2444,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "85532f07",
         "file_path": "evolution_lab\\neural_chains\\20251006",
-        "last_modified": "2025-11-22T12:13:17.128546",
+        "last_modified": "2025-12-08T23:32:31.113604",
         "size_bytes": 12457,
         "connections": []
       },
@@ -2466,7 +2455,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "70b1a696",
         "file_path": "evolution_lab\\neural_chains\\20251007",
-        "last_modified": "2025-11-22T12:13:17.129717",
+        "last_modified": "2025-12-08T23:32:31.114939",
         "size_bytes": 4793,
         "connections": []
       },
@@ -2477,7 +2466,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d407fa5c",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_142936",
-        "last_modified": "2025-11-22T12:13:17.130539",
+        "last_modified": "2025-12-08T23:32:31.116495",
         "size_bytes": 4795,
         "connections": []
       },
@@ -2488,7 +2477,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a7c571a0",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_143043",
-        "last_modified": "2025-11-22T12:13:17.131257",
+        "last_modified": "2025-12-08T23:32:31.117977",
         "size_bytes": 4795,
         "connections": []
       },
@@ -2499,7 +2488,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0ecf1c96",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_143138",
-        "last_modified": "2025-11-22T12:13:17.132009",
+        "last_modified": "2025-12-08T23:32:31.119174",
         "size_bytes": 5435,
         "connections": []
       },
@@ -2510,7 +2499,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "cf35bdc3",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_143250",
-        "last_modified": "2025-11-22T12:13:17.133010",
+        "last_modified": "2025-12-08T23:32:31.120418",
         "size_bytes": 5706,
         "connections": []
       },
@@ -2521,7 +2510,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "afa84e2b",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_155032",
-        "last_modified": "2025-11-22T12:13:17.133997",
+        "last_modified": "2025-12-08T23:32:31.121814",
         "size_bytes": 21330,
         "connections": []
       },
@@ -2532,7 +2521,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "366b9725",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_160044",
-        "last_modified": "2025-11-22T12:13:17.134830",
+        "last_modified": "2025-12-08T23:32:31.123821",
         "size_bytes": 36419,
         "connections": []
       },
@@ -2543,7 +2532,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "aa8ee220",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_223029",
-        "last_modified": "2025-11-22T12:13:17.135793",
+        "last_modified": "2025-12-08T23:32:31.125515",
         "size_bytes": 22418,
         "connections": []
       },
@@ -2554,7 +2543,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "fd025d8f",
         "file_path": "evolution_lab\\library_generations\\aios_core_gen0_20251004_225758",
-        "last_modified": "2025-11-22T12:13:17.136663",
+        "last_modified": "2025-12-08T23:32:31.127237",
         "size_bytes": 23964,
         "connections": []
       },
@@ -2565,7 +2554,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a4ba1ee9",
         "file_path": "evolution_lab\\conversations\\20251008",
-        "last_modified": "2025-11-22T12:13:17.137643",
+        "last_modified": "2025-12-08T23:32:31.128896",
         "size_bytes": 18056,
         "connections": []
       }
@@ -2578,8 +2567,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6739df29",
         "file_path": "interface",
-        "last_modified": "2025-11-22T12:13:16.468707",
-        "size_bytes": 1769001,
+        "last_modified": "2025-12-08T23:32:26.173308",
+        "size_bytes": 1745345,
         "connections": []
       },
       {
@@ -2589,8 +2578,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "337505ea",
         "file_path": "interface\\AIOS.Models",
-        "last_modified": "2025-11-22T12:13:17.044505",
-        "size_bytes": 158174,
+        "last_modified": "2025-12-08T23:32:30.888431",
+        "size_bytes": 155870,
         "connections": []
       },
       {
@@ -2600,8 +2589,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c8674e98",
         "file_path": "interface\\AIOS.Services",
-        "last_modified": "2025-11-22T12:13:17.047011",
-        "size_bytes": 173326,
+        "last_modified": "2025-12-08T23:32:30.892345",
+        "size_bytes": 171012,
         "connections": []
       },
       {
@@ -2611,8 +2600,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5a8b8840",
         "file_path": "interface\\AIOS.UI",
-        "last_modified": "2025-11-22T12:13:17.051346",
-        "size_bytes": 567201,
+        "last_modified": "2025-12-08T23:32:30.904680",
+        "size_bytes": 560170,
         "connections": []
       },
       {
@@ -2622,8 +2611,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "48042964",
         "file_path": "interface\\AIOS.UI.Diagnostics",
-        "last_modified": "2025-11-22T12:13:17.052976",
-        "size_bytes": 7828,
+        "last_modified": "2025-12-08T23:32:30.906151",
+        "size_bytes": 5494,
         "connections": []
       },
       {
@@ -2633,8 +2622,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6c839f76",
         "file_path": "interface\\BridgeTest",
-        "last_modified": "2025-11-22T12:13:17.055283",
-        "size_bytes": 8142,
+        "last_modified": "2025-12-08T23:32:30.907513",
+        "size_bytes": 5614,
         "connections": []
       },
       {
@@ -2644,7 +2633,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "efd1384e",
         "file_path": "interface\\integrations",
-        "last_modified": "2025-11-22T12:13:17.058504",
+        "last_modified": "2025-12-08T23:32:30.914798",
         "size_bytes": 78150,
         "connections": []
       },
@@ -2655,8 +2644,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b9ff68c8",
         "file_path": "interface\\visualization",
-        "last_modified": "2025-11-22T12:13:17.061855",
-        "size_bytes": 578825,
+        "last_modified": "2025-12-08T23:32:30.919897",
+        "size_bytes": 576293,
         "connections": []
       },
       {
@@ -2666,8 +2655,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "48358cba",
         "file_path": "interface\\visualization\\visual_interface",
-        "last_modified": "2025-11-22T12:13:17.064736",
-        "size_bytes": 574343,
+        "last_modified": "2025-12-08T23:32:30.923974",
+        "size_bytes": 571811,
         "connections": []
       },
       {
@@ -2677,7 +2666,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d9456bed",
         "file_path": "interface\\visualization\\visual_interface\\runtime_intelligence",
-        "last_modified": "2025-11-22T12:13:17.065641",
+        "last_modified": "2025-12-08T23:32:30.925111",
         "size_bytes": 2600,
         "connections": []
       },
@@ -2688,7 +2677,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ded778e0",
         "file_path": "interface\\integrations\\multi_platform",
-        "last_modified": "2025-11-22T12:13:17.068514",
+        "last_modified": "2025-12-08T23:32:30.931281",
         "size_bytes": 75376,
         "connections": []
       },
@@ -2699,7 +2688,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1f258d1a",
         "file_path": "interface\\AIOS.UI\\Components",
-        "last_modified": "2025-11-22T12:13:17.069510",
+        "last_modified": "2025-12-08T23:32:30.932540",
         "size_bytes": 27235,
         "connections": []
       },
@@ -2710,7 +2699,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9dc1ebd3",
         "file_path": "interface\\AIOS.UI\\Controls",
-        "last_modified": "2025-11-22T12:13:17.070549",
+        "last_modified": "2025-12-08T23:32:30.934375",
         "size_bytes": 60918,
         "connections": []
       },
@@ -2721,7 +2710,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ec60c5bf",
         "file_path": "interface\\AIOS.UI\\generated",
-        "last_modified": "2025-11-22T12:13:17.071584",
+        "last_modified": "2025-12-08T23:32:30.936299",
         "size_bytes": 4499,
         "connections": []
       },
@@ -2732,7 +2721,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0e221067",
         "file_path": "interface\\AIOS.UI\\Infrastructure",
-        "last_modified": "2025-11-22T12:13:17.072474",
+        "last_modified": "2025-12-08T23:32:30.937507",
         "size_bytes": 5132,
         "connections": []
       },
@@ -2743,7 +2732,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "96f61fa4",
         "file_path": "interface\\AIOS.UI\\runtime_intelligence",
-        "last_modified": "2025-11-22T12:13:17.073171",
+        "last_modified": "2025-12-08T23:32:30.938723",
         "size_bytes": 3165,
         "connections": []
       },
@@ -2754,7 +2743,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ea0b0cfc",
         "file_path": "interface\\AIOS.UI\\web",
-        "last_modified": "2025-11-22T12:13:17.074167",
+        "last_modified": "2025-12-08T23:32:30.940426",
         "size_bytes": 89642,
         "connections": []
       },
@@ -2765,7 +2754,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "aeb9f602",
         "file_path": "interface\\AIOS.UI\\wwwroot",
-        "last_modified": "2025-11-22T12:13:17.075136",
+        "last_modified": "2025-12-08T23:32:30.942053",
         "size_bytes": 14378,
         "connections": []
       },
@@ -2776,7 +2765,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d44f5cbb",
         "file_path": "interface\\AIOS.Services\\Controllers",
-        "last_modified": "2025-11-22T12:13:17.076157",
+        "last_modified": "2025-12-08T23:32:30.943295",
         "size_bytes": 8735,
         "connections": []
       }
@@ -2789,8 +2778,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a7d147a5",
         "file_path": "runtime",
-        "last_modified": "2025-11-22T12:13:16.480574",
-        "size_bytes": 6238935,
+        "last_modified": "2025-12-08T23:32:26.209257",
+        "size_bytes": 6185629,
         "connections": []
       },
       {
@@ -2800,7 +2789,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "282deed9",
         "file_path": "runtime\\aios_cellular_workspace",
-        "last_modified": "2025-11-22T12:13:17.002474",
+        "last_modified": "2025-12-08T23:32:30.792935",
         "size_bytes": 28122,
         "connections": []
       },
@@ -2811,7 +2800,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "741e0d2f",
         "file_path": "runtime\\analysis",
-        "last_modified": "2025-11-22T12:13:17.003613",
+        "last_modified": "2025-12-08T23:32:30.796345",
         "size_bytes": 3195609,
         "connections": []
       },
@@ -2822,8 +2811,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f468520e",
         "file_path": "runtime\\context",
-        "last_modified": "2025-11-22T12:13:17.004836",
-        "size_bytes": 789426,
+        "last_modified": "2025-12-08T23:32:30.799707",
+        "size_bytes": 777423,
         "connections": []
       },
       {
@@ -2833,7 +2822,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0ca7405a",
         "file_path": "runtime\\core",
-        "last_modified": "2025-11-22T12:13:17.005890",
+        "last_modified": "2025-12-08T23:32:30.803048",
         "size_bytes": 264177,
         "connections": []
       },
@@ -2844,7 +2833,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "12342ac7",
         "file_path": "runtime\\docs",
-        "last_modified": "2025-11-22T12:13:17.006916",
+        "last_modified": "2025-12-08T23:32:30.805356",
         "size_bytes": 23279,
         "connections": []
       },
@@ -2855,7 +2844,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "fbb924b6",
         "file_path": "runtime\\iterations",
-        "last_modified": "2025-11-22T12:13:17.007622",
+        "last_modified": "2025-12-08T23:32:30.806872",
         "size_bytes": 10240,
         "connections": []
       },
@@ -2866,7 +2855,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "70a22eb7",
         "file_path": "runtime\\tachyonic",
-        "last_modified": "2025-11-22T12:13:17.008638",
+        "last_modified": "2025-12-08T23:32:30.808938",
         "size_bytes": 107275,
         "connections": []
       },
@@ -2877,7 +2866,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "189fdfd6",
         "file_path": "runtime\\temp",
-        "last_modified": "2025-11-22T12:13:17.009439",
+        "last_modified": "2025-12-08T23:32:30.810317",
         "size_bytes": 5804,
         "connections": []
       },
@@ -2888,8 +2877,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "329d9982",
         "file_path": "runtime\\tools",
-        "last_modified": "2025-11-22T12:13:17.016453",
-        "size_bytes": 1611199,
+        "last_modified": "2025-12-08T23:32:30.835357",
+        "size_bytes": 1658612,
         "connections": []
       },
       {
@@ -2899,7 +2888,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "28d91066",
         "file_path": "runtime\\tools\\assemblers",
-        "last_modified": "2025-11-22T12:13:17.020573",
+        "last_modified": "2025-12-08T23:32:30.844908",
         "size_bytes": 1081854,
         "connections": []
       },
@@ -2910,7 +2899,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "da2da32b",
         "file_path": "runtime\\tools\\bridges",
-        "last_modified": "2025-11-22T12:13:17.021679",
+        "last_modified": "2025-12-08T23:32:30.847376",
         "size_bytes": 108751,
         "connections": []
       },
@@ -2921,7 +2910,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1a831af2",
         "file_path": "runtime\\tools\\consolidated",
-        "last_modified": "2025-11-22T12:13:17.023202",
+        "last_modified": "2025-12-08T23:32:30.851162",
         "size_bytes": 113465,
         "connections": []
       },
@@ -2932,7 +2921,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1f5ffbcb",
         "file_path": "runtime\\tools\\engines",
-        "last_modified": "2025-11-22T12:13:17.024229",
+        "last_modified": "2025-12-08T23:32:30.853445",
         "size_bytes": 100529,
         "connections": []
       },
@@ -2943,7 +2932,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "46b5ae92",
         "file_path": "runtime\\tools\\modules",
-        "last_modified": "2025-11-22T12:13:17.025153",
+        "last_modified": "2025-12-08T23:32:30.855254",
         "size_bytes": 41403,
         "connections": []
       },
@@ -2954,7 +2943,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9343fa1a",
         "file_path": "runtime\\tools\\modules\\aios_components",
-        "last_modified": "2025-11-22T12:13:17.026092",
+        "last_modified": "2025-12-08T23:32:30.856777",
         "size_bytes": 38868,
         "connections": []
       },
@@ -2965,7 +2954,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "38506674",
         "file_path": "runtime\\tools\\consolidated\\AIOSStateReporter",
-        "last_modified": "2025-11-22T12:13:17.027189",
+        "last_modified": "2025-12-08T23:32:30.858115",
         "size_bytes": 5679,
         "connections": []
       },
@@ -2976,7 +2965,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "63662b69",
         "file_path": "runtime\\tools\\consolidated\\archive",
-        "last_modified": "2025-11-22T12:13:17.028208",
+        "last_modified": "2025-12-08T23:32:30.859350",
         "size_bytes": 5283,
         "connections": []
       },
@@ -2987,7 +2976,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "de304f34",
         "file_path": "runtime\\tools\\consolidated\\consciousness_patterns",
-        "last_modified": "2025-11-22T12:13:17.029149",
+        "last_modified": "2025-12-08T23:32:30.860869",
         "size_bytes": 8466,
         "connections": []
       },
@@ -2998,7 +2987,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7e39f3ee",
         "file_path": "runtime\\tools\\assemblers\\context_assembler",
-        "last_modified": "2025-11-22T12:13:17.030042",
+        "last_modified": "2025-12-08T23:32:30.862378",
         "size_bytes": 31493,
         "connections": []
       },
@@ -3009,7 +2998,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "68a72fd5",
         "file_path": "runtime\\tools\\assemblers\\file_assembler",
-        "last_modified": "2025-11-22T12:13:17.030863",
+        "last_modified": "2025-12-08T23:32:30.863708",
         "size_bytes": 22974,
         "connections": []
       },
@@ -3020,7 +3009,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "85c9209f",
         "file_path": "runtime\\tools\\assemblers\\integration_assembler",
-        "last_modified": "2025-11-22T12:13:17.031742",
+        "last_modified": "2025-12-08T23:32:30.865014",
         "size_bytes": 49028,
         "connections": []
       },
@@ -3031,7 +3020,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "53fe2a72",
         "file_path": "runtime\\tools\\assemblers\\tree_assembler",
-        "last_modified": "2025-11-22T12:13:17.034674",
+        "last_modified": "2025-12-08T23:32:30.872777",
         "size_bytes": 971207,
         "connections": []
       },
@@ -3042,7 +3031,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0572e81b",
         "file_path": "runtime\\tachyonic\\archive",
-        "last_modified": "2025-11-22T12:13:17.035582",
+        "last_modified": "2025-12-08T23:32:30.874233",
         "size_bytes": 104665,
         "connections": []
       },
@@ -3053,7 +3042,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6c042d3b",
         "file_path": "runtime\\docs\\tachyonic_archive",
-        "last_modified": "2025-11-22T12:13:17.036503",
+        "last_modified": "2025-12-08T23:32:30.875744",
         "size_bytes": 20710,
         "connections": []
       },
@@ -3064,7 +3053,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f8f03bae",
         "file_path": "runtime\\context\\crystals",
-        "last_modified": "2025-11-22T12:13:17.037589",
+        "last_modified": "2025-12-08T23:32:30.877430",
         "size_bytes": 5492,
         "connections": []
       },
@@ -3075,7 +3064,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5f3ce3ad",
         "file_path": "runtime\\aios_cellular_workspace\\aios_cellular_demo",
-        "last_modified": "2025-11-22T12:13:17.038373",
+        "last_modified": "2025-12-08T23:32:30.878496",
         "size_bytes": 3235,
         "connections": []
       },
@@ -3086,7 +3075,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "283642da",
         "file_path": "runtime\\aios_cellular_workspace\\aios_cellular_workspace",
-        "last_modified": "2025-11-22T12:13:17.039385",
+        "last_modified": "2025-12-08T23:32:30.880016",
         "size_bytes": 4331,
         "connections": []
       },
@@ -3097,7 +3086,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a6dde9f5",
         "file_path": "runtime\\aios_cellular_workspace\\aios_tensorflow_exports",
-        "last_modified": "2025-11-22T12:13:17.040337",
+        "last_modified": "2025-12-08T23:32:30.881721",
         "size_bytes": 8140,
         "connections": []
       },
@@ -3108,7 +3097,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b1a56d0c",
         "file_path": "runtime\\aios_cellular_workspace\\exports",
-        "last_modified": "2025-11-22T12:13:17.041951",
+        "last_modified": "2025-12-08T23:32:30.885349",
         "size_bytes": 9299,
         "connections": []
       }
@@ -3121,8 +3110,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "78e24fb3",
         "file_path": "scripts",
-        "last_modified": "2025-11-22T12:13:16.481670",
-        "size_bytes": 66084,
+        "last_modified": "2025-12-08T23:32:26.213041",
+        "size_bytes": 171412,
         "connections": []
       }
     ],
@@ -3134,8 +3123,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "817543fa",
         "file_path": "tachyonic",
-        "last_modified": "2025-11-22T12:13:16.625702",
-        "size_bytes": 367110974,
+        "last_modified": "2025-12-08T23:32:26.611126",
+        "size_bytes": 370440582,
         "connections": []
       },
       {
@@ -3145,7 +3134,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d7b7d55d",
         "file_path": "tachyonic\\agentic_conversations",
-        "last_modified": "2025-11-22T12:13:16.648535",
+        "last_modified": "2025-12-08T23:32:29.884453",
         "size_bytes": 96147,
         "connections": []
       },
@@ -3156,7 +3145,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "49c26ddd",
         "file_path": "tachyonic\\ainlp",
-        "last_modified": "2025-11-22T12:13:16.650943",
+        "last_modified": "2025-12-08T23:32:29.889245",
         "size_bytes": 230384,
         "connections": []
       },
@@ -3167,7 +3156,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2132f284",
         "file_path": "tachyonic\\AIOS_root_cells",
-        "last_modified": "2025-11-22T12:13:16.653343",
+        "last_modified": "2025-12-08T23:32:29.895089",
         "size_bytes": 156798,
         "connections": []
       },
@@ -3178,8 +3167,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e272e067",
         "file_path": "tachyonic\\ai_engine_handoffs",
-        "last_modified": "2025-11-22T12:13:16.654255",
-        "size_bytes": 45791,
+        "last_modified": "2025-12-08T23:32:29.896808",
+        "size_bytes": 60850,
         "connections": []
       },
       {
@@ -3189,7 +3178,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0f57e828",
         "file_path": "tachyonic\\ai_engine_knowledge",
-        "last_modified": "2025-11-22T12:13:16.655250",
+        "last_modified": "2025-12-08T23:32:29.898511",
         "size_bytes": 6534,
         "connections": []
       },
@@ -3200,7 +3189,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "86c54ea2",
         "file_path": "tachyonic\\analysis_reports",
-        "last_modified": "2025-11-22T12:13:16.656095",
+        "last_modified": "2025-12-08T23:32:29.899855",
         "size_bytes": 26256,
         "connections": []
       },
@@ -3211,8 +3200,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c37953f6",
         "file_path": "tachyonic\\architecture",
-        "last_modified": "2025-11-22T12:13:16.657990",
-        "size_bytes": 278018,
+        "last_modified": "2025-12-08T23:32:29.904741",
+        "size_bytes": 308549,
         "connections": []
       },
       {
@@ -3222,8 +3211,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d43b111f",
         "file_path": "tachyonic\\archive",
-        "last_modified": "2025-11-22T12:13:16.677987",
-        "size_bytes": 42916088,
+        "last_modified": "2025-12-08T23:32:29.955977",
+        "size_bytes": 42082516,
         "connections": []
       },
       {
@@ -3233,7 +3222,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "83dcbbf0",
         "file_path": "tachyonic\\backups",
-        "last_modified": "2025-11-22T12:13:16.737615",
+        "last_modified": "2025-12-08T23:32:30.204313",
         "size_bytes": 170292483,
         "connections": []
       },
@@ -3244,8 +3233,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "298ec95e",
         "file_path": "tachyonic\\boot_reports",
-        "last_modified": "2025-11-22T12:13:16.738845",
-        "size_bytes": 16529,
+        "last_modified": "2025-12-08T23:32:30.207333",
+        "size_bytes": 21665,
         "connections": []
       },
       {
@@ -3255,7 +3244,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bc2e6368",
         "file_path": "tachyonic\\bosonic_substrate",
-        "last_modified": "2025-11-22T12:13:16.739870",
+        "last_modified": "2025-12-08T23:32:30.209543",
         "size_bytes": 7872,
         "connections": []
       },
@@ -3266,7 +3255,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bbe190e0",
         "file_path": "tachyonic\\cellular_reports",
-        "last_modified": "2025-11-22T12:13:16.740959",
+        "last_modified": "2025-12-08T23:32:30.211867",
         "size_bytes": 1332555,
         "connections": []
       },
@@ -3277,7 +3266,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5245823f",
         "file_path": "tachyonic\\changelog",
-        "last_modified": "2025-11-22T12:13:16.742686",
+        "last_modified": "2025-12-08T23:32:30.215442",
         "size_bytes": 101616,
         "connections": []
       },
@@ -3288,7 +3277,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "db3aca96",
         "file_path": "tachyonic\\cleanup_reports",
-        "last_modified": "2025-11-22T12:13:16.744124",
+        "last_modified": "2025-12-08T23:32:30.217029",
         "size_bytes": 26369,
         "connections": []
       },
@@ -3299,7 +3288,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "68cf28a0",
         "file_path": "tachyonic\\code_preservation",
-        "last_modified": "2025-11-22T12:13:16.745493",
+        "last_modified": "2025-12-08T23:32:30.218709",
         "size_bytes": 298944,
         "connections": []
       },
@@ -3310,8 +3299,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c6c12a01",
         "file_path": "tachyonic\\consciousness",
-        "last_modified": "2025-11-22T12:13:16.752966",
-        "size_bytes": 61249842,
+        "last_modified": "2025-12-08T23:32:30.248189",
+        "size_bytes": 61295522,
         "connections": []
       },
       {
@@ -3321,7 +3310,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2cd8143e",
         "file_path": "tachyonic\\conversations",
-        "last_modified": "2025-11-22T12:13:16.753895",
+        "last_modified": "2025-12-08T23:32:30.250012",
         "size_bytes": 11764,
         "connections": []
       },
@@ -3332,7 +3321,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a54a7e3d",
         "file_path": "tachyonic\\conversation_data",
-        "last_modified": "2025-11-22T12:13:16.757927",
+        "last_modified": "2025-12-08T23:32:30.269524",
         "size_bytes": 9016578,
         "connections": []
       },
@@ -3343,7 +3332,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "8a64ec12",
         "file_path": "tachyonic\\conversation_metadata",
-        "last_modified": "2025-11-22T12:13:16.758968",
+        "last_modified": "2025-12-08T23:32:30.272870",
         "size_bytes": 14777,
         "connections": []
       },
@@ -3354,7 +3343,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6a20877c",
         "file_path": "tachyonic\\coordinator_backup_20250917_204932",
-        "last_modified": "2025-11-22T12:13:16.760322",
+        "last_modified": "2025-12-08T23:32:30.275950",
         "size_bytes": 14133,
         "connections": []
       },
@@ -3365,7 +3354,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "982f97dc",
         "file_path": "tachyonic\\cpp_stl_knowledge",
-        "last_modified": "2025-11-22T12:13:16.761357",
+        "last_modified": "2025-12-08T23:32:30.277834",
         "size_bytes": 51293,
         "connections": []
       },
@@ -3376,7 +3365,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ff577371",
         "file_path": "tachyonic\\database",
-        "last_modified": "2025-11-22T12:13:16.762186",
+        "last_modified": "2025-12-08T23:32:30.279347",
         "size_bytes": 15417,
         "connections": []
       },
@@ -3387,7 +3376,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "03028093",
         "file_path": "tachyonic\\deep",
-        "last_modified": "2025-11-22T12:13:16.762965",
+        "last_modified": "2025-12-08T23:32:30.281137",
         "size_bytes": 7316,
         "connections": []
       },
@@ -3398,7 +3387,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4949aece",
         "file_path": "tachyonic\\design_mockups",
-        "last_modified": "2025-11-22T12:13:16.763962",
+        "last_modified": "2025-12-08T23:32:30.282910",
         "size_bytes": 22257,
         "connections": []
       },
@@ -3409,7 +3398,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9be07658",
         "file_path": "tachyonic\\development_fixes",
-        "last_modified": "2025-11-22T12:13:16.764802",
+        "last_modified": "2025-12-08T23:32:30.284240",
         "size_bytes": 13195,
         "connections": []
       },
@@ -3420,7 +3409,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "45963ace",
         "file_path": "tachyonic\\development_history",
-        "last_modified": "2025-11-22T12:13:16.765640",
+        "last_modified": "2025-12-08T23:32:30.285588",
         "size_bytes": 72607,
         "connections": []
       },
@@ -3431,7 +3420,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2cb7da6e",
         "file_path": "tachyonic\\development_success",
-        "last_modified": "2025-11-22T12:13:16.766484",
+        "last_modified": "2025-12-08T23:32:30.287062",
         "size_bytes": 33943,
         "connections": []
       },
@@ -3442,7 +3431,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "14cb11ae",
         "file_path": "tachyonic\\discovery_indexes",
-        "last_modified": "2025-11-22T12:13:16.767824",
+        "last_modified": "2025-12-08T23:32:30.290890",
         "size_bytes": 107134,
         "connections": []
       },
@@ -3453,7 +3442,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d9c2f6c8",
         "file_path": "tachyonic\\docs_archive",
-        "last_modified": "2025-11-22T12:13:16.769166",
+        "last_modified": "2025-12-08T23:32:30.294481",
         "size_bytes": 4395432,
         "connections": []
       },
@@ -3464,7 +3453,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5dba5c71",
         "file_path": "tachyonic\\documentation",
-        "last_modified": "2025-11-22T12:13:16.770129",
+        "last_modified": "2025-12-08T23:32:30.296351",
         "size_bytes": 42874,
         "connections": []
       },
@@ -3475,7 +3464,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "22a92e06",
         "file_path": "tachyonic\\emergency_cleanup",
-        "last_modified": "2025-11-22T12:13:16.770961",
+        "last_modified": "2025-12-08T23:32:30.297560",
         "size_bytes": 22961,
         "connections": []
       },
@@ -3486,8 +3475,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e1021340",
         "file_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844",
-        "last_modified": "2025-11-22T12:13:16.777083",
-        "size_bytes": 3659921,
+        "last_modified": "2025-12-08T23:32:30.313764",
+        "size_bytes": 3639394,
         "connections": []
       },
       {
@@ -3497,7 +3486,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7b829bcb",
         "file_path": "tachyonic\\evolution_chains",
-        "last_modified": "2025-11-22T12:13:16.778332",
+        "last_modified": "2025-12-08T23:32:30.314746",
         "size_bytes": 4787,
         "connections": []
       },
@@ -3508,7 +3497,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3d75c63b",
         "file_path": "tachyonic\\experiment_metadata",
-        "last_modified": "2025-11-22T12:13:16.779533",
+        "last_modified": "2025-12-08T23:32:30.316065",
         "size_bytes": 11068,
         "connections": []
       },
@@ -3519,7 +3508,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "934e7211",
         "file_path": "tachyonic\\extracted_paradigms",
-        "last_modified": "2025-11-22T12:13:16.780342",
+        "last_modified": "2025-12-08T23:32:30.317037",
         "size_bytes": 58624,
         "connections": []
       },
@@ -3530,8 +3519,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f9e50071",
         "file_path": "tachyonic\\genetics",
-        "last_modified": "2025-11-22T12:13:16.781390",
-        "size_bytes": 61765,
+        "last_modified": "2025-12-08T23:32:30.319106",
+        "size_bytes": 58444,
         "connections": []
       },
       {
@@ -3541,7 +3530,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a4ceea77",
         "file_path": "tachyonic\\hydro_files",
-        "last_modified": "2025-11-22T12:13:16.782169",
+        "last_modified": "2025-12-08T23:32:30.320123",
         "size_bytes": 14910,
         "connections": []
       },
@@ -3552,7 +3541,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1b8b8562",
         "file_path": "tachyonic\\immediate",
-        "last_modified": "2025-11-22T12:13:16.782933",
+        "last_modified": "2025-12-08T23:32:30.321130",
         "size_bytes": 4088,
         "connections": []
       },
@@ -3563,7 +3552,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e682030c",
         "file_path": "tachyonic\\ingestion",
-        "last_modified": "2025-11-22T12:13:16.783712",
+        "last_modified": "2025-12-08T23:32:30.322140",
         "size_bytes": 5640,
         "connections": []
       },
@@ -3574,7 +3563,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0954f28d",
         "file_path": "tachyonic\\ingestion_data",
-        "last_modified": "2025-11-22T12:13:16.784430",
+        "last_modified": "2025-12-08T23:32:30.323250",
         "size_bytes": 4923,
         "connections": []
       },
@@ -3585,7 +3574,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c77e82e4",
         "file_path": "tachyonic\\integration_optimization",
-        "last_modified": "2025-11-22T12:13:16.785211",
+        "last_modified": "2025-12-08T23:32:30.324526",
         "size_bytes": 55046,
         "connections": []
       },
@@ -3596,7 +3585,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9f7a034a",
         "file_path": "tachyonic\\integration_validation",
-        "last_modified": "2025-11-22T12:13:16.786008",
+        "last_modified": "2025-12-08T23:32:30.325662",
         "size_bytes": 13304,
         "connections": []
       },
@@ -3607,7 +3596,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "86154eae",
         "file_path": "tachyonic\\intelligence_reports",
-        "last_modified": "2025-11-22T12:13:16.786898",
+        "last_modified": "2025-12-08T23:32:30.327015",
         "size_bytes": 22148,
         "connections": []
       },
@@ -3618,7 +3607,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "49efb697",
         "file_path": "tachyonic\\knowledge_crystals",
-        "last_modified": "2025-11-22T12:13:16.787964",
+        "last_modified": "2025-12-08T23:32:30.328898",
         "size_bytes": 58234,
         "connections": []
       },
@@ -3629,8 +3618,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "647b3c9f",
         "file_path": "tachyonic\\metadata",
-        "last_modified": "2025-11-22T12:13:16.790003",
-        "size_bytes": 106982,
+        "last_modified": "2025-12-08T23:32:30.333314",
+        "size_bytes": 119736,
         "connections": []
       },
       {
@@ -3640,7 +3629,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0840b4d7",
         "file_path": "tachyonic\\optimization_history",
-        "last_modified": "2025-11-22T12:13:16.790778",
+        "last_modified": "2025-12-08T23:32:30.334284",
         "size_bytes": 4067,
         "connections": []
       },
@@ -3651,7 +3640,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "de34dc4a",
         "file_path": "tachyonic\\optimization_reports",
-        "last_modified": "2025-11-22T12:13:16.791690",
+        "last_modified": "2025-12-08T23:32:30.335894",
         "size_bytes": 29333,
         "connections": []
       },
@@ -3662,7 +3651,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9a1459ab",
         "file_path": "tachyonic\\orchestration",
-        "last_modified": "2025-11-22T12:13:16.792582",
+        "last_modified": "2025-12-08T23:32:30.337069",
         "size_bytes": 5390,
         "connections": []
       },
@@ -3673,7 +3662,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "906f0f3c",
         "file_path": "tachyonic\\paths",
-        "last_modified": "2025-11-22T12:13:16.793897",
+        "last_modified": "2025-12-08T23:32:30.338752",
         "size_bytes": 52407,
         "connections": []
       },
@@ -3684,7 +3673,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "54f634b8",
         "file_path": "tachyonic\\quality_reports",
-        "last_modified": "2025-11-22T12:13:16.794885",
+        "last_modified": "2025-12-08T23:32:30.339633",
         "size_bytes": 163776,
         "connections": []
       },
@@ -3695,7 +3684,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "797988e2",
         "file_path": "tachyonic\\quantum",
-        "last_modified": "2025-11-22T12:13:16.795742",
+        "last_modified": "2025-12-08T23:32:30.340544",
         "size_bytes": 4091,
         "connections": []
       },
@@ -3706,8 +3695,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c32d5ee9",
         "file_path": "tachyonic\\reports",
-        "last_modified": "2025-11-22T12:13:16.799727",
-        "size_bytes": 358700,
+        "last_modified": "2025-12-08T23:32:30.351028",
+        "size_bytes": 359984,
         "connections": []
       },
       {
@@ -3717,7 +3706,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0b45bab0",
         "file_path": "tachyonic\\repository_ingestions",
-        "last_modified": "2025-11-22T12:13:16.800672",
+        "last_modified": "2025-12-08T23:32:30.352900",
         "size_bytes": 48276,
         "connections": []
       },
@@ -3728,7 +3717,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e742f9b1",
         "file_path": "tachyonic\\revolutionary_sessions",
-        "last_modified": "2025-11-22T12:13:16.801421",
+        "last_modified": "2025-12-08T23:32:30.354399",
         "size_bytes": 8141,
         "connections": []
       },
@@ -3739,7 +3728,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "938a190e",
         "file_path": "tachyonic\\rollback_snapshots",
-        "last_modified": "2025-11-22T12:13:16.802428",
+        "last_modified": "2025-12-08T23:32:30.356758",
         "size_bytes": 9272,
         "connections": []
       },
@@ -3750,8 +3739,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7c7c9bca",
         "file_path": "tachyonic\\root_optimization",
-        "last_modified": "2025-11-22T12:13:16.804314",
-        "size_bytes": 126571,
+        "last_modified": "2025-12-08T23:32:30.363042",
+        "size_bytes": 119441,
         "connections": []
       },
       {
@@ -3761,7 +3750,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2d3a2ab5",
         "file_path": "tachyonic\\root_optimization_analysis",
-        "last_modified": "2025-11-22T12:13:16.805273",
+        "last_modified": "2025-12-08T23:32:30.364752",
         "size_bytes": 56271,
         "connections": []
       },
@@ -3772,7 +3761,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f8fe5baa",
         "file_path": "tachyonic\\self_improvement_cycles",
-        "last_modified": "2025-11-22T12:13:16.806399",
+        "last_modified": "2025-12-08T23:32:30.366954",
         "size_bytes": 523162,
         "connections": []
       },
@@ -3783,7 +3772,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "786b0e57",
         "file_path": "tachyonic\\self_improvement_reports",
-        "last_modified": "2025-11-22T12:13:16.807308",
+        "last_modified": "2025-12-08T23:32:30.368314",
         "size_bytes": 532033,
         "connections": []
       },
@@ -3794,7 +3783,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bacefbae",
         "file_path": "tachyonic\\semantic",
-        "last_modified": "2025-11-22T12:13:16.808059",
+        "last_modified": "2025-12-08T23:32:30.369938",
         "size_bytes": 15877,
         "connections": []
       },
@@ -3805,7 +3794,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4d838db3",
         "file_path": "tachyonic\\sessions",
-        "last_modified": "2025-11-22T12:13:16.809017",
+        "last_modified": "2025-12-08T23:32:30.371345",
         "size_bytes": 95370,
         "connections": []
       },
@@ -3816,7 +3805,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3307ebba",
         "file_path": "tachyonic\\setup_guides",
-        "last_modified": "2025-11-22T12:13:16.809758",
+        "last_modified": "2025-12-08T23:32:30.372391",
         "size_bytes": 7869,
         "connections": []
       },
@@ -3827,8 +3816,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b608d60c",
         "file_path": "tachyonic\\shadows",
-        "last_modified": "2025-11-22T12:13:16.811272",
-        "size_bytes": 202535,
+        "last_modified": "2025-12-08T23:32:30.375236",
+        "size_bytes": 222599,
         "connections": []
       },
       {
@@ -3838,7 +3827,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a24f27fa",
         "file_path": "tachyonic\\snapshots",
-        "last_modified": "2025-11-22T12:13:16.812947",
+        "last_modified": "2025-12-08T23:32:30.378439",
         "size_bytes": 486441,
         "connections": []
       },
@@ -3849,7 +3838,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7f163c19",
         "file_path": "tachyonic\\structure_analysis",
-        "last_modified": "2025-11-22T12:13:16.814009",
+        "last_modified": "2025-12-08T23:32:30.379766",
         "size_bytes": 46584,
         "connections": []
       },
@@ -3860,7 +3849,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0b01315a",
         "file_path": "tachyonic\\subcellular_archives",
-        "last_modified": "2025-11-22T12:13:16.815502",
+        "last_modified": "2025-12-08T23:32:30.383074",
         "size_bytes": 231841,
         "connections": []
       },
@@ -3871,7 +3860,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "290d1eae",
         "file_path": "tachyonic\\supercells",
-        "last_modified": "2025-11-22T12:13:16.816216",
+        "last_modified": "2025-12-08T23:32:30.384091",
         "size_bytes": 12096559,
         "connections": []
       },
@@ -3882,7 +3871,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f38cad81",
         "file_path": "tachyonic\\tachyonic",
-        "last_modified": "2025-11-22T12:13:16.816885",
+        "last_modified": "2025-12-08T23:32:30.385022",
         "size_bytes": 27820561,
         "connections": []
       },
@@ -3893,7 +3882,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "35f596e2",
         "file_path": "tachyonic\\tachyonic_archive",
-        "last_modified": "2025-11-22T12:13:16.818665",
+        "last_modified": "2025-12-08T23:32:30.390131",
         "size_bytes": 49961,
         "connections": []
       },
@@ -3904,7 +3893,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ed34af58",
         "file_path": "tachyonic\\tachyonic_development_archive",
-        "last_modified": "2025-11-22T12:13:16.820693",
+        "last_modified": "2025-12-08T23:32:30.396758",
         "size_bytes": 232153,
         "connections": []
       },
@@ -3915,8 +3904,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "144e9794",
         "file_path": "tachyonic\\tools",
-        "last_modified": "2025-11-22T12:13:16.822481",
-        "size_bytes": 288365,
+        "last_modified": "2025-12-08T23:32:30.402346",
+        "size_bytes": 207557,
         "connections": []
       },
       {
@@ -3926,7 +3915,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "edf574ce",
         "file_path": "tachyonic\\version_analysis",
-        "last_modified": "2025-11-22T12:13:16.823257",
+        "last_modified": "2025-12-08T23:32:30.403418",
         "size_bytes": 9670,
         "connections": []
       },
@@ -3937,7 +3926,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e1f38593",
         "file_path": "tachyonic\\workflows",
-        "last_modified": "2025-11-22T12:13:16.824015",
+        "last_modified": "2025-12-08T23:32:30.404567",
         "size_bytes": 7396,
         "connections": []
       },
@@ -3948,7 +3937,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a30f0fb5",
         "file_path": "tachyonic\\tools\\demos",
-        "last_modified": "2025-11-22T12:13:16.824782",
+        "last_modified": "2025-12-08T23:32:30.405653",
         "size_bytes": 39952,
         "connections": []
       },
@@ -3959,8 +3948,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c32e6aa0",
         "file_path": "tachyonic\\tools\\documentation",
-        "last_modified": "2025-11-22T12:13:16.825564",
-        "size_bytes": 100044,
+        "last_modified": "2025-12-08T23:32:30.406811",
+        "size_bytes": 35606,
         "connections": []
       },
       {
@@ -3970,8 +3959,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d3154a27",
         "file_path": "tachyonic\\tools\\ingestors",
-        "last_modified": "2025-11-22T12:13:16.826530",
-        "size_bytes": 27492,
+        "last_modified": "2025-12-08T23:32:30.407932",
+        "size_bytes": 10964,
         "connections": []
       },
       {
@@ -3981,7 +3970,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6c6aeafc",
         "file_path": "tachyonic\\tools\\interfaces",
-        "last_modified": "2025-11-22T12:13:16.827431",
+        "last_modified": "2025-12-08T23:32:30.408807",
         "size_bytes": 27662,
         "connections": []
       },
@@ -3992,7 +3981,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "721aa54d",
         "file_path": "tachyonic\\tools\\orchestrators",
-        "last_modified": "2025-11-22T12:13:16.828306",
+        "last_modified": "2025-12-08T23:32:30.409765",
         "size_bytes": 41546,
         "connections": []
       },
@@ -4003,8 +3992,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "810af903",
         "file_path": "tachyonic\\tools\\utilities",
-        "last_modified": "2025-11-22T12:13:16.829268",
-        "size_bytes": 47189,
+        "last_modified": "2025-12-08T23:32:30.411011",
+        "size_bytes": 47347,
         "connections": []
       },
       {
@@ -4014,7 +4003,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "51d4d1d5",
         "file_path": "tachyonic\\tachyonic_development_archive\\checkpoints",
-        "last_modified": "2025-11-22T12:13:16.830634",
+        "last_modified": "2025-12-08T23:32:30.413939",
         "size_bytes": 23970,
         "connections": []
       },
@@ -4025,7 +4014,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2e907366",
         "file_path": "tachyonic\\tachyonic_development_archive\\context_maps",
-        "last_modified": "2025-11-22T12:13:16.831814",
+        "last_modified": "2025-12-08T23:32:30.416835",
         "size_bytes": 181226,
         "connections": []
       },
@@ -4036,7 +4025,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "426a2bfc",
         "file_path": "tachyonic\\tachyonic_archive\\deep",
-        "last_modified": "2025-11-22T12:13:16.832595",
+        "last_modified": "2025-12-08T23:32:30.417983",
         "size_bytes": 9393,
         "connections": []
       },
@@ -4047,7 +4036,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ec4c8a3e",
         "file_path": "tachyonic\\tachyonic_archive\\immediate",
-        "last_modified": "2025-11-22T12:13:16.833616",
+        "last_modified": "2025-12-08T23:32:30.419848",
         "size_bytes": 11672,
         "connections": []
       },
@@ -4058,7 +4047,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "983bb9e9",
         "file_path": "tachyonic\\tachyonic_archive\\quantum",
-        "last_modified": "2025-11-22T12:13:16.834286",
+        "last_modified": "2025-12-08T23:32:30.420733",
         "size_bytes": 3315,
         "connections": []
       },
@@ -4069,7 +4058,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c7864d60",
         "file_path": "tachyonic\\subcellular_archives\\analysis_tools",
-        "last_modified": "2025-11-22T12:13:16.835562",
+        "last_modified": "2025-12-08T23:32:30.423346",
         "size_bytes": 228411,
         "connections": []
       },
@@ -4080,7 +4069,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bd708bc6",
         "file_path": "tachyonic\\snapshots\\health_checks",
-        "last_modified": "2025-11-22T12:13:16.836325",
+        "last_modified": "2025-12-08T23:32:30.424655",
         "size_bytes": 15835,
         "connections": []
       },
@@ -4091,7 +4080,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5e0eaa2c",
         "file_path": "tachyonic\\snapshots\\holographic_indices",
-        "last_modified": "2025-11-22T12:13:16.837275",
+        "last_modified": "2025-12-08T23:32:30.426134",
         "size_bytes": 386398,
         "connections": []
       },
@@ -4102,7 +4091,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "8137d7e9",
         "file_path": "tachyonic\\snapshots\\readme_history",
-        "last_modified": "2025-11-22T12:13:16.838057",
+        "last_modified": "2025-12-08T23:32:30.427243",
         "size_bytes": 79726,
         "connections": []
       },
@@ -4113,8 +4102,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "8b96094c",
         "file_path": "tachyonic\\shadows\\dev_path",
-        "last_modified": "2025-11-22T12:13:16.839027",
-        "size_bytes": 152754,
+        "last_modified": "2025-12-08T23:32:30.429437",
+        "size_bytes": 172818,
         "connections": []
       },
       {
@@ -4124,8 +4113,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "91157722",
         "file_path": "tachyonic\\root_optimization\\archived_20250905_220720",
-        "last_modified": "2025-11-22T12:13:16.840937",
-        "size_bytes": 123095,
+        "last_modified": "2025-12-08T23:32:30.434267",
+        "size_bytes": 115965,
         "connections": []
       },
       {
@@ -4135,7 +4124,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "f0abbd63",
         "file_path": "tachyonic\\rollback_snapshots\\58",
-        "last_modified": "2025-11-22T12:13:16.841639",
+        "last_modified": "2025-12-08T23:32:30.435457",
         "size_bytes": 2839,
         "connections": []
       },
@@ -4146,7 +4135,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "282debec",
         "file_path": "tachyonic\\rollback_snapshots\\f9",
-        "last_modified": "2025-11-22T12:13:16.842466",
+        "last_modified": "2025-12-08T23:32:30.436366",
         "size_bytes": 3033,
         "connections": []
       },
@@ -4157,7 +4146,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6e4404e7",
         "file_path": "tachyonic\\reports\\archives",
-        "last_modified": "2025-11-22T12:13:16.843513",
+        "last_modified": "2025-12-08T23:32:30.437427",
         "size_bytes": 9226,
         "connections": []
       },
@@ -4168,7 +4157,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "66b8ffe1",
         "file_path": "tachyonic\\reports\\communication",
-        "last_modified": "2025-11-22T12:13:16.844627",
+        "last_modified": "2025-12-08T23:32:30.438368",
         "size_bytes": 30299,
         "connections": []
       },
@@ -4179,7 +4168,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "86cc6e5a",
         "file_path": "tachyonic\\reports\\completions",
-        "last_modified": "2025-11-22T12:13:16.846005",
+        "last_modified": "2025-12-08T23:32:30.440103",
         "size_bytes": 74682,
         "connections": []
       },
@@ -4190,7 +4179,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3885b1e3",
         "file_path": "tachyonic\\reports\\documentation",
-        "last_modified": "2025-11-22T12:13:16.846997",
+        "last_modified": "2025-12-08T23:32:30.441039",
         "size_bytes": 12310,
         "connections": []
       },
@@ -4201,7 +4190,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7ab7e1ed",
         "file_path": "tachyonic\\reports\\handoffs",
-        "last_modified": "2025-11-22T12:13:16.847845",
+        "last_modified": "2025-12-08T23:32:30.441985",
         "size_bytes": 18140,
         "connections": []
       },
@@ -4212,8 +4201,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5fbbb819",
         "file_path": "tachyonic\\reports\\health",
-        "last_modified": "2025-11-22T12:13:16.849120",
-        "size_bytes": 33213,
+        "last_modified": "2025-12-08T23:32:30.444304",
+        "size_bytes": 34497,
         "connections": []
       },
       {
@@ -4223,7 +4212,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "db59b00b",
         "file_path": "tachyonic\\reports\\misc",
-        "last_modified": "2025-11-22T12:13:16.850223",
+        "last_modified": "2025-12-08T23:32:30.446320",
         "size_bytes": 88145,
         "connections": []
       },
@@ -4234,7 +4223,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e25fd4fb",
         "file_path": "tachyonic\\reports\\optimization",
-        "last_modified": "2025-11-22T12:13:16.851088",
+        "last_modified": "2025-12-08T23:32:30.447839",
         "size_bytes": 12653,
         "connections": []
       },
@@ -4245,7 +4234,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "af6612a5",
         "file_path": "tachyonic\\reports\\requirements",
-        "last_modified": "2025-11-22T12:13:16.851886",
+        "last_modified": "2025-12-08T23:32:30.449267",
         "size_bytes": 8577,
         "connections": []
       },
@@ -4256,7 +4245,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "34c86922",
         "file_path": "tachyonic\\reports\\sessions",
-        "last_modified": "2025-11-22T12:13:16.852799",
+        "last_modified": "2025-12-08T23:32:30.450740",
         "size_bytes": 58117,
         "connections": []
       },
@@ -4267,7 +4256,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "c27651fd",
         "file_path": "tachyonic\\reports\\validation",
-        "last_modified": "2025-11-22T12:13:16.853553",
+        "last_modified": "2025-12-08T23:32:30.451563",
         "size_bytes": 3069,
         "connections": []
       },
@@ -4278,7 +4267,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "95bcea9f",
         "file_path": "tachyonic\\paths\\historical",
-        "last_modified": "2025-11-22T12:13:16.854414",
+        "last_modified": "2025-12-08T23:32:30.452788",
         "size_bytes": 48012,
         "connections": []
       },
@@ -4289,7 +4278,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "97b50226",
         "file_path": "tachyonic\\orchestration\\AIOS_root",
-        "last_modified": "2025-11-22T12:13:16.855104",
+        "last_modified": "2025-12-08T23:32:30.453573",
         "size_bytes": 2842,
         "connections": []
       },
@@ -4300,7 +4289,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "94d10737",
         "file_path": "tachyonic\\metadata\\audits",
-        "last_modified": "2025-11-22T12:13:16.855938",
+        "last_modified": "2025-12-08T23:32:30.454580",
         "size_bytes": 31290,
         "connections": []
       },
@@ -4311,7 +4300,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "80e7d693",
         "file_path": "tachyonic\\metadata\\harmonization",
-        "last_modified": "2025-11-22T12:13:16.856744",
+        "last_modified": "2025-12-08T23:32:30.455565",
         "size_bytes": 4491,
         "connections": []
       },
@@ -4322,7 +4311,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "df01f0be",
         "file_path": "tachyonic\\metadata\\integrations",
-        "last_modified": "2025-11-22T12:13:16.857550",
+        "last_modified": "2025-12-08T23:32:30.456541",
         "size_bytes": 10335,
         "connections": []
       },
@@ -4333,7 +4322,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ecf205ae",
         "file_path": "tachyonic\\metadata\\sessions",
-        "last_modified": "2025-11-22T12:13:16.858283",
+        "last_modified": "2025-12-08T23:32:30.457400",
         "size_bytes": 3516,
         "connections": []
       },
@@ -4344,7 +4333,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "fa80cf49",
         "file_path": "tachyonic\\metadata\\supercell",
-        "last_modified": "2025-11-22T12:13:16.859071",
+        "last_modified": "2025-12-08T23:32:30.458310",
         "size_bytes": 22717,
         "connections": []
       },
@@ -4355,7 +4344,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "03ef567d",
         "file_path": "tachyonic\\metadata\\vscode",
-        "last_modified": "2025-11-22T12:13:16.859958",
+        "last_modified": "2025-12-08T23:32:30.459127",
         "size_bytes": 5891,
         "connections": []
       },
@@ -4366,7 +4355,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5e04ee59",
         "file_path": "tachyonic\\knowledge_crystals\\cpp_stl",
-        "last_modified": "2025-11-22T12:13:16.861122",
+        "last_modified": "2025-12-08T23:32:30.460650",
         "size_bytes": 53731,
         "connections": []
       },
@@ -4377,8 +4366,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "a1372395",
         "file_path": "tachyonic\\genetics\\original",
-        "last_modified": "2025-11-22T12:13:16.862392",
-        "size_bytes": 15177,
+        "last_modified": "2025-12-08T23:32:30.461920",
+        "size_bytes": 11856,
         "connections": []
       },
       {
@@ -4388,7 +4377,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "44b480f5",
         "file_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\output",
-        "last_modified": "2025-11-22T12:13:16.867481",
+        "last_modified": "2025-12-08T23:32:30.472391",
         "size_bytes": 3184902,
         "connections": []
       },
@@ -4399,8 +4388,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "cd655b08",
         "file_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py",
-        "last_modified": "2025-11-22T12:13:16.868940",
-        "size_bytes": 470640,
+        "last_modified": "2025-12-08T23:32:30.475687",
+        "size_bytes": 450113,
         "connections": []
       },
       {
@@ -4410,7 +4399,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d8bccca2",
         "file_path": "tachyonic\\docs_archive\\folder_structure",
-        "last_modified": "2025-11-22T12:13:16.869697",
+        "last_modified": "2025-12-08T23:32:30.476652",
         "size_bytes": 4292695,
         "connections": []
       },
@@ -4421,7 +4410,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9dd903bd",
         "file_path": "tachyonic\\dendritic\\dendritic_evolution",
-        "last_modified": "2025-11-22T12:13:16.870513",
+        "last_modified": "2025-12-08T23:32:30.477942",
         "size_bytes": 166937,
         "connections": []
       },
@@ -4432,7 +4421,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "8d27e6f9",
         "file_path": "tachyonic\\dendritic\\dendritic_intelligence",
-        "last_modified": "2025-11-22T12:13:16.871306",
+        "last_modified": "2025-12-08T23:32:30.479512",
         "size_bytes": 100618,
         "connections": []
       },
@@ -4443,7 +4432,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4a77c9c3",
         "file_path": "tachyonic\\dendritic\\dendritic_maps",
-        "last_modified": "2025-11-22T12:13:16.872175",
+        "last_modified": "2025-12-08T23:32:30.480675",
         "size_bytes": 5905,
         "connections": []
       },
@@ -4454,7 +4443,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0a4be8f6",
         "file_path": "tachyonic\\coordinator_backup_20250917_204932\\ai",
-        "last_modified": "2025-11-22T12:13:16.872879",
+        "last_modified": "2025-12-08T23:32:30.481610",
         "size_bytes": 3202,
         "connections": []
       },
@@ -4465,7 +4454,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "0f3346ed",
         "file_path": "tachyonic\\coordinator_backup_20250917_204932\\core",
-        "last_modified": "2025-11-22T12:13:16.873561",
+        "last_modified": "2025-12-08T23:32:30.482443",
         "size_bytes": 4391,
         "connections": []
       },
@@ -4476,7 +4465,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "cd95fc4b",
         "file_path": "tachyonic\\coordinator_backup_20250917_204932\\interface",
-        "last_modified": "2025-11-22T12:13:16.874598",
+        "last_modified": "2025-12-08T23:32:30.483292",
         "size_bytes": 3038,
         "connections": []
       },
@@ -4487,7 +4476,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "50b29469",
         "file_path": "tachyonic\\conversation_metadata\\20251008",
-        "last_modified": "2025-11-22T12:13:16.875484",
+        "last_modified": "2025-12-08T23:32:30.484626",
         "size_bytes": 10316,
         "connections": []
       },
@@ -4498,7 +4487,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6ad89d46",
         "file_path": "tachyonic\\conversation_data\\archive",
-        "last_modified": "2025-11-22T12:13:16.879239",
+        "last_modified": "2025-12-08T23:32:30.493943",
         "size_bytes": 3820997,
         "connections": []
       },
@@ -4509,7 +4498,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "01145e28",
         "file_path": "tachyonic\\conversation_data\\md",
-        "last_modified": "2025-11-22T12:13:16.880737",
+        "last_modified": "2025-12-08T23:32:30.495829",
         "size_bytes": 4348462,
         "connections": []
       },
@@ -4520,7 +4509,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5a4dd7a9",
         "file_path": "tachyonic\\conversation_data\\md\\ark",
-        "last_modified": "2025-11-22T12:13:16.881686",
+        "last_modified": "2025-12-08T23:32:30.497173",
         "size_bytes": 3841745,
         "connections": []
       },
@@ -4531,7 +4520,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "3d6e89f1",
         "file_path": "tachyonic\\consciousness\\metabolized_patterns",
-        "last_modified": "2025-11-22T12:13:16.882526",
+        "last_modified": "2025-12-08T23:32:30.498365",
         "size_bytes": 30392694,
         "connections": []
       },
@@ -4542,7 +4531,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "82262116",
         "file_path": "tachyonic\\consciousness\\supercell_knowledge_crystals",
-        "last_modified": "2025-11-22T12:13:16.889152",
+        "last_modified": "2025-12-08T23:32:30.517568",
         "size_bytes": 30752906,
         "connections": []
       },
@@ -4553,7 +4542,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "ec3c0489",
         "file_path": "tachyonic\\changelog\\consciousness",
-        "last_modified": "2025-11-22T12:13:16.889977",
+        "last_modified": "2025-12-08T23:32:30.518703",
         "size_bytes": 8755,
         "connections": []
       },
@@ -4564,7 +4553,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "d35606dc",
         "file_path": "tachyonic\\changelog\\migrations",
-        "last_modified": "2025-11-22T12:13:16.890759",
+        "last_modified": "2025-12-08T23:32:30.519806",
         "size_bytes": 16144,
         "connections": []
       },
@@ -4575,7 +4564,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "766d6449",
         "file_path": "tachyonic\\changelog\\supercell",
-        "last_modified": "2025-11-22T12:13:16.891479",
+        "last_modified": "2025-12-08T23:32:30.520705",
         "size_bytes": 8977,
         "connections": []
       },
@@ -4586,7 +4575,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6dee03cd",
         "file_path": "tachyonic\\changelog\\tachyonic",
-        "last_modified": "2025-11-22T12:13:16.892374",
+        "last_modified": "2025-12-08T23:32:30.521848",
         "size_bytes": 46323,
         "connections": []
       },
@@ -4597,7 +4586,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7371eddb",
         "file_path": "tachyonic\\backups\\backups",
-        "last_modified": "2025-11-22T12:13:16.950683",
+        "last_modified": "2025-12-08T23:32:30.701675",
         "size_bytes": 170047825,
         "connections": []
       },
@@ -4608,8 +4597,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2370a64e",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025",
-        "last_modified": "2025-11-22T12:13:16.958410",
-        "size_bytes": 2147441,
+        "last_modified": "2025-12-08T23:32:30.713939",
+        "size_bytes": 1276565,
         "connections": []
       },
       {
@@ -4619,7 +4608,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7edc9b58",
         "file_path": "tachyonic\\archive\\consolidation",
-        "last_modified": "2025-11-22T12:13:16.960729",
+        "last_modified": "2025-12-08T23:32:30.718794",
         "size_bytes": 511345,
         "connections": []
       },
@@ -4630,7 +4619,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "cafa6bd1",
         "file_path": "tachyonic\\archive\\core_legacy",
-        "last_modified": "2025-11-22T12:13:16.962046",
+        "last_modified": "2025-12-08T23:32:30.720614",
         "size_bytes": 131058,
         "connections": []
       },
@@ -4641,7 +4630,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "44767147",
         "file_path": "tachyonic\\archive\\githooks_removed",
-        "last_modified": "2025-11-22T12:13:16.962882",
+        "last_modified": "2025-12-08T23:32:30.722363",
         "size_bytes": 3821,
         "connections": []
       },
@@ -4652,7 +4641,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "314cfce4",
         "file_path": "tachyonic\\archive\\runtime",
-        "last_modified": "2025-11-22T12:13:16.964644",
+        "last_modified": "2025-12-08T23:32:30.726717",
         "size_bytes": 29159448,
         "connections": []
       },
@@ -4663,7 +4652,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "2fed70dd",
         "file_path": "tachyonic\\archive\\token_usage",
-        "last_modified": "2025-11-22T12:13:16.965416",
+        "last_modified": "2025-12-08T23:32:30.727806",
         "size_bytes": 6407,
         "connections": []
       },
@@ -4674,8 +4663,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "28d91066",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\assemblers",
-        "last_modified": "2025-11-22T12:13:16.969603",
-        "size_bytes": 1413709,
+        "last_modified": "2025-12-08T23:32:30.735861",
+        "size_bytes": 956852,
         "connections": []
       },
       {
@@ -4685,8 +4674,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "da2da32b",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\bridges",
-        "last_modified": "2025-11-22T12:13:16.970509",
-        "size_bytes": 108478,
+        "last_modified": "2025-12-08T23:32:30.737046",
+        "size_bytes": 6225,
         "connections": []
       },
       {
@@ -4696,8 +4685,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bbed799a",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\core_systems",
-        "last_modified": "2025-11-22T12:13:16.973177",
-        "size_bytes": 447918,
+        "last_modified": "2025-12-08T23:32:30.740575",
+        "size_bytes": 264384,
         "connections": []
       },
       {
@@ -4707,8 +4696,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "1f5ffbcb",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\engines",
-        "last_modified": "2025-11-22T12:13:16.974086",
-        "size_bytes": 73736,
+        "last_modified": "2025-12-08T23:32:30.741833",
+        "size_bytes": 6105,
         "connections": []
       },
       {
@@ -4718,8 +4707,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "46b5ae92",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\modules",
-        "last_modified": "2025-11-22T12:13:16.974992",
-        "size_bytes": 41403,
+        "last_modified": "2025-12-08T23:32:30.743554",
+        "size_bytes": 8557,
         "connections": []
       },
       {
@@ -4729,8 +4718,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "9343fa1a",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\modules\\aios_components",
-        "last_modified": "2025-11-22T12:13:16.975942",
-        "size_bytes": 38868,
+        "last_modified": "2025-12-08T23:32:30.745687",
+        "size_bytes": 6022,
         "connections": []
       },
       {
@@ -4740,7 +4729,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "e649a103",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\core_systems\\include",
-        "last_modified": "2025-11-22T12:13:16.977027",
+        "last_modified": "2025-12-08T23:32:30.747472",
         "size_bytes": 48245,
         "connections": []
       },
@@ -4751,7 +4740,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "b94005c1",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\core_systems\\src",
-        "last_modified": "2025-11-22T12:13:16.978082",
+        "last_modified": "2025-12-08T23:32:30.748804",
         "size_bytes": 35188,
         "connections": []
       },
@@ -4762,8 +4751,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "7e39f3ee",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\assemblers\\context_assembler",
-        "last_modified": "2025-11-22T12:13:16.979015",
-        "size_bytes": 31493,
+        "last_modified": "2025-12-08T23:32:30.749870",
+        "size_bytes": 9898,
         "connections": []
       },
       {
@@ -4773,8 +4762,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "68a72fd5",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\assemblers\\file_assembler",
-        "last_modified": "2025-11-22T12:13:16.979954",
-        "size_bytes": 22974,
+        "last_modified": "2025-12-08T23:32:30.750807",
+        "size_bytes": 5396,
         "connections": []
       },
       {
@@ -4784,8 +4773,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "85c9209f",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\assemblers\\integration_assembler",
-        "last_modified": "2025-11-22T12:13:16.980830",
-        "size_bytes": 49028,
+        "last_modified": "2025-12-08T23:32:30.751981",
+        "size_bytes": 23103,
         "connections": []
       },
       {
@@ -4795,8 +4784,8 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "53fe2a72",
         "file_path": "tachyonic\\archive\\computational_layer_ingested_20251025\\assemblers\\tree_assembler",
-        "last_modified": "2025-11-22T12:13:16.984364",
-        "size_bytes": 1303062,
+        "last_modified": "2025-12-08T23:32:30.757851",
+        "size_bytes": 911303,
         "connections": []
       },
       {
@@ -4806,7 +4795,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "4529a885",
         "file_path": "tachyonic\\architecture\\analysis",
-        "last_modified": "2025-11-22T12:13:16.985209",
+        "last_modified": "2025-12-08T23:32:30.759207",
         "size_bytes": 88541,
         "connections": []
       },
@@ -4817,7 +4806,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "db4ab62f",
         "file_path": "tachyonic\\architecture\\bridge",
-        "last_modified": "2025-11-22T12:13:16.985991",
+        "last_modified": "2025-12-08T23:32:30.760344",
         "size_bytes": 41805,
         "connections": []
       },
@@ -4828,7 +4817,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "57e67e3d",
         "file_path": "tachyonic\\architecture\\consciousness",
-        "last_modified": "2025-11-22T12:13:16.986774",
+        "last_modified": "2025-12-08T23:32:30.761410",
         "size_bytes": 17008,
         "connections": []
       },
@@ -4839,7 +4828,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "27327e1c",
         "file_path": "tachyonic\\architecture\\implementation",
-        "last_modified": "2025-11-22T12:13:16.987625",
+        "last_modified": "2025-12-08T23:32:30.762944",
         "size_bytes": 70411,
         "connections": []
       },
@@ -4850,7 +4839,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "875633c2",
         "file_path": "tachyonic\\architecture\\plans",
-        "last_modified": "2025-11-22T12:13:16.988676",
+        "last_modified": "2025-12-08T23:32:30.764439",
         "size_bytes": 30044,
         "connections": []
       },
@@ -4861,7 +4850,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "11fa2e07",
         "file_path": "tachyonic\\ai_engine_knowledge\\claude-sonnet-3.5",
-        "last_modified": "2025-11-22T12:13:16.989658",
+        "last_modified": "2025-12-08T23:32:30.765744",
         "size_bytes": 3468,
         "connections": []
       },
@@ -4872,7 +4861,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "369840e3",
         "file_path": "tachyonic\\AIOS_root_cells\\root_cell_githooks",
-        "last_modified": "2025-11-22T12:13:16.991098",
+        "last_modified": "2025-12-08T23:32:30.769207",
         "size_bytes": 121249,
         "connections": []
       },
@@ -4883,7 +4872,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "00d301e4",
         "file_path": "tachyonic\\AIOS_root_cells\\root_cell_github",
-        "last_modified": "2025-11-22T12:13:16.992707",
+        "last_modified": "2025-12-08T23:32:30.772258",
         "size_bytes": 28702,
         "connections": []
       },
@@ -4894,7 +4883,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "35410356",
         "file_path": "tachyonic\\ainlp\\governance",
-        "last_modified": "2025-11-22T12:13:16.993920",
+        "last_modified": "2025-12-08T23:32:30.773663",
         "size_bytes": 19183,
         "connections": []
       },
@@ -4905,7 +4894,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6e72fcac",
         "file_path": "tachyonic\\ainlp\\harmonization",
-        "last_modified": "2025-11-22T12:13:16.995151",
+        "last_modified": "2025-12-08T23:32:30.775486",
         "size_bytes": 44163,
         "connections": []
       },
@@ -4916,7 +4905,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "bfa7a999",
         "file_path": "tachyonic\\ainlp\\optimization",
-        "last_modified": "2025-11-22T12:13:16.996131",
+        "last_modified": "2025-12-08T23:32:30.777368",
         "size_bytes": 33118,
         "connections": []
       },
@@ -4927,7 +4916,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "430dceec",
         "file_path": "tachyonic\\ainlp\\patterns",
-        "last_modified": "2025-11-22T12:13:16.997119",
+        "last_modified": "2025-12-08T23:32:30.779233",
         "size_bytes": 24517,
         "connections": []
       },
@@ -4938,7 +4927,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "76da2e72",
         "file_path": "tachyonic\\ainlp\\refactoring",
-        "last_modified": "2025-11-22T12:13:16.998147",
+        "last_modified": "2025-12-08T23:32:30.781250",
         "size_bytes": 67416,
         "connections": []
       },
@@ -4949,7 +4938,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "5f89f828",
         "file_path": "tachyonic\\agentic_conversations\\20251006",
-        "last_modified": "2025-11-22T12:13:16.999030",
+        "last_modified": "2025-12-08T23:32:30.783149",
         "size_bytes": 11011,
         "connections": []
       },
@@ -4960,7 +4949,7 @@
         "consciousness_signature": 0.0,
         "fractal_hash": "6610e4ac",
         "file_path": "tachyonic\\agentic_conversations\\20251008",
-        "last_modified": "2025-11-22T12:13:16.999832",
+        "last_modified": "2025-12-08T23:32:30.784822",
         "size_bytes": 7433,
         "connections": []
       }
@@ -5009,7 +4998,7 @@
     }
   },
   "metrics": {
-    "spatial_metadata_files": 441,
+    "spatial_metadata_files": 440,
     "supercells_mapped": 10,
     "dendritic_markers": 441,
     "e501_violations_detected": 52,

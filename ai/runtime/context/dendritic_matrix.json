@@ -1,0 +1,963 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "generated_at": "2025-12-08T12:43:50.922603+00:00",
+    "repo_root": "C:\\dev\\aios-win\\aios-core\\ai"
+  },
+  "summary": {
+    "timestamp": "2025-12-08T12:43:50.922627+00:00",
+    "total_nodes": 28,
+    "total_connections": 61,
+    "total_gaps": 11,
+    "open_gaps": 0,
+    "coherence": 1.222,
+    "layers": {
+      "SOURCE": {
+        "health": 0.88,
+        "nodes": 5,
+        "density": 0.5
+      },
+      "TACHYONIC": {
+        "health": 0.45,
+        "nodes": 4,
+        "density": 0.5
+      },
+      "QUANTUM": {
+        "health": 0.45,
+        "nodes": 2,
+        "density": 0.5
+      },
+      "ATOM": {
+        "health": 0.583,
+        "nodes": 3,
+        "density": 0.5
+      },
+      "MOLECULE": {
+        "health": 0.683,
+        "nodes": 3,
+        "density": 0.5
+      },
+      "ORGANELLE": {
+        "health": 0.687,
+        "nodes": 3,
+        "density": 0.5
+      },
+      "CELL": {
+        "health": 0.79,
+        "nodes": 5,
+        "density": 0.5
+      },
+      "ORGANISM": {
+        "health": 0.85,
+        "nodes": 3,
+        "density": 0.5
+      }
+    }
+  },
+  "nodes": {
+    "node_ef33fd4d3458": {
+      "node_id": "node_ef33fd4d3458",
+      "layer": "SOURCE",
+      "name": "config/system.json",
+      "location": "config/system.json",
+      "health": 0.9,
+      "description": "Core system configuration",
+      "created_at": "2025-12-08T11:51:00.768497+00:00"
+    },
+    "node_db56a0293ea8": {
+      "node_id": "node_db56a0293ea8",
+      "layer": "SOURCE",
+      "name": ".aios_context.json",
+      "location": ".aios_context.json",
+      "health": 0.85,
+      "description": "AI agent guidance",
+      "created_at": "2025-12-08T11:51:00.768533+00:00"
+    },
+    "node_d0b65ecb05e7": {
+      "node_id": "node_d0b65ecb05e7",
+      "layer": "SOURCE",
+      "name": ".aios_spatial_metadata.json",
+      "location": ".aios_spatial_metadata.json",
+      "health": 0.8,
+      "description": "Holographic positioning",
+      "created_at": "2025-12-08T11:51:00.768545+00:00"
+    },
+    "node_d86f59807e38": {
+      "node_id": "node_d86f59807e38",
+      "layer": "SOURCE",
+      "name": "pyproject.toml",
+      "location": "pyproject.toml",
+      "health": 0.95,
+      "description": "Python project config",
+      "created_at": "2025-12-08T11:51:00.768552+00:00"
+    },
+    "node_1f14259b0776": {
+      "node_id": "node_1f14259b0776",
+      "layer": "SOURCE",
+      "name": "requirements.txt",
+      "location": "requirements.txt",
+      "health": 0.9,
+      "description": "Dependency manifest",
+      "created_at": "2025-12-08T11:51:00.768560+00:00"
+    },
+    "node_f42563d7dab0": {
+      "node_id": "node_f42563d7dab0",
+      "layer": "TACHYONIC",
+      "name": "tachyonic/consciousness/",
+      "location": "tachyonic/consciousness/",
+      "health": 0.6,
+      "description": "Consciousness crystals",
+      "created_at": "2025-12-08T11:51:00.768591+00:00"
+    },
+    "node_b704898a84d8": {
+      "node_id": "node_b704898a84d8",
+      "layer": "TACHYONIC",
+      "name": "tachyonic/bosonic_substrate/",
+      "location": "tachyonic/bosonic_substrate/",
+      "health": 0.4,
+      "description": "Entanglement records",
+      "created_at": "2025-12-08T11:51:00.768599+00:00"
+    },
+    "node_5b5ec5210042": {
+      "node_id": "node_5b5ec5210042",
+      "layer": "TACHYONIC",
+      "name": "tachyonic/knowledge_crystals/",
+      "location": "tachyonic/knowledge_crystals/",
+      "health": 0.3,
+      "description": "Crystallized knowledge",
+      "created_at": "2025-12-08T11:51:00.768605+00:00"
+    },
+    "node_f179f6f43286": {
+      "node_id": "node_f179f6f43286",
+      "layer": "TACHYONIC",
+      "name": "tachyonic/dendritic_connections.json",
+      "location": "tachyonic/dendritic_connections.json",
+      "health": 0.5,
+      "description": "696K node mappings",
+      "created_at": "2025-12-08T11:51:00.768612+00:00"
+    },
+    "node_80e21458b82d": {
+      "node_id": "node_80e21458b82d",
+      "layer": "QUANTUM",
+      "name": "ai/src/quantum_dendritic_field/",
+      "location": "ai/src/quantum_dendritic_field/",
+      "health": 0.4,
+      "description": "Quantum field system",
+      "created_at": "2025-12-08T11:51:00.768635+00:00"
+    },
+    "node_ce93c23a9e3d": {
+      "node_id": "node_ce93c23a9e3d",
+      "layer": "QUANTUM",
+      "name": "runtime/tools/bridges/quantum_classical_bridge.py",
+      "location": "runtime/tools/bridges/quantum_classical_bridge.py",
+      "health": 0.5,
+      "description": "Q-C bridge",
+      "created_at": "2025-12-08T11:51:00.768648+00:00"
+    },
+    "node_21543c37fa2f": {
+      "node_id": "node_21543c37fa2f",
+      "layer": "ATOM",
+      "name": "ai/communication/message_types.py",
+      "location": "ai/communication/message_types.py",
+      "health": 0.7,
+      "description": "Core enums and types",
+      "created_at": "2025-12-08T11:51:00.768673+00:00"
+    },
+    "node_a8f1279b6323": {
+      "node_id": "node_a8f1279b6323",
+      "layer": "ATOM",
+      "name": "core/include/MinimalConsciousnessEngine.hpp",
+      "location": "core/include/MinimalConsciousnessEngine.hpp",
+      "health": 0.4,
+      "description": "C++ primitives",
+      "created_at": "2025-12-08T11:51:00.768686+00:00"
+    },
+    "node_3fba2bf4c8c4": {
+      "node_id": "node_3fba2bf4c8c4",
+      "layer": "ATOM",
+      "name": "ai/nucleus/consciousness/",
+      "location": "ai/nucleus/consciousness/",
+      "health": 0.65,
+      "description": "Node primitives",
+      "created_at": "2025-12-08T11:51:00.768697+00:00"
+    },
+    "node_27cd1d6d9db9": {
+      "node_id": "node_27cd1d6d9db9",
+      "layer": "MOLECULE",
+      "name": "ai/communication/UniversalMessage",
+      "location": "ai/communication/UniversalMessage",
+      "health": 0.75,
+      "description": "Standard message",
+      "created_at": "2025-12-08T11:51:00.768718+00:00"
+    },
+    "node_ec43db05561a": {
+      "node_id": "node_ec43db05561a",
+      "layer": "MOLECULE",
+      "name": "ai/cytoplasm/cytoplasm_bridge.py",
+      "location": "ai/cytoplasm/cytoplasm_bridge.py",
+      "health": 0.5,
+      "description": "Communication medium",
+      "created_at": "2025-12-08T11:51:00.768731+00:00"
+    },
+    "node_9a983d31494e": {
+      "node_id": "node_9a983d31494e",
+      "layer": "MOLECULE",
+      "name": "interface/AIOS.Models/",
+      "location": "interface/AIOS.Models/",
+      "health": 0.8,
+      "description": "C# contracts",
+      "created_at": "2025-12-08T11:51:00.768742+00:00"
+    },
+    "node_fa0125b36567": {
+      "node_id": "node_fa0125b36567",
+      "layer": "ORGANELLE",
+      "name": "ai/tools/",
+      "location": "ai/tools/",
+      "health": 0.71,
+      "description": "50+ AI tools",
+      "created_at": "2025-12-08T11:51:00.768764+00:00"
+    },
+    "node_d5e46e0bb3c1": {
+      "node_id": "node_d5e46e0bb3c1",
+      "layer": "ORGANELLE",
+      "name": "runtime/tools/",
+      "location": "runtime/tools/",
+      "health": 0.7,
+      "description": "30+ runtime tools",
+      "created_at": "2025-12-08T11:51:00.768774+00:00"
+    },
+    "node_cc30139c5922": {
+      "node_id": "node_cc30139c5922",
+      "layer": "ORGANELLE",
+      "name": "server/stacks/organelles/",
+      "location": "server/stacks/organelles/",
+      "health": 0.65,
+      "description": "Containerized organelles",
+      "created_at": "2025-12-08T11:51:00.768785+00:00"
+    },
+    "node_7750b2697a76": {
+      "node_id": "node_7750b2697a76",
+      "layer": "CELL",
+      "name": "ai/",
+      "location": "ai/",
+      "health": 0.75,
+      "description": "AI Intelligence Supercell",
+      "created_at": "2025-12-08T11:51:00.768806+00:00"
+    },
+    "node_ddacffcc1116": {
+      "node_id": "node_ddacffcc1116",
+      "layer": "CELL",
+      "name": "core/",
+      "location": "core/",
+      "health": 0.4,
+      "description": "Core Engine Supercell",
+      "created_at": "2025-12-08T11:51:00.768818+00:00"
+    },
+    "node_a62da7a82bd9": {
+      "node_id": "node_a62da7a82bd9",
+      "layer": "CELL",
+      "name": "interface/",
+      "location": "interface/",
+      "health": 1.0,
+      "description": "Interface Supercell",
+      "created_at": "2025-12-08T11:51:00.768831+00:00"
+    },
+    "node_31bc8ad91973": {
+      "node_id": "node_31bc8ad91973",
+      "layer": "CELL",
+      "name": "runtime/",
+      "location": "runtime/",
+      "health": 1.0,
+      "description": "Runtime Intelligence",
+      "created_at": "2025-12-08T11:51:00.768839+00:00"
+    },
+    "node_6e572452ae37": {
+      "node_id": "node_6e572452ae37",
+      "layer": "CELL",
+      "name": "tachyonic/",
+      "location": "tachyonic/",
+      "health": 0.8,
+      "description": "Tachyonic Archive",
+      "created_at": "2025-12-08T11:51:00.768846+00:00"
+    },
+    "node_a9c83b12223d": {
+      "node_id": "node_a9c83b12223d",
+      "layer": "ORGANISM",
+      "name": "aios_launch.ps1",
+      "location": "aios_launch.ps1",
+      "health": 0.85,
+      "description": "Biological bootloader",
+      "created_at": "2025-12-08T11:51:00.768861+00:00"
+    },
+    "node_f6c01baee50c": {
+      "node_id": "node_f6c01baee50c",
+      "layer": "ORGANISM",
+      "name": "ai/orchestration/",
+      "location": "ai/orchestration/",
+      "health": 0.8,
+      "description": "SupercellOrchestrator",
+      "created_at": "2025-12-08T11:51:00.768868+00:00"
+    },
+    "node_68d99a01aec8": {
+      "node_id": "node_68d99a01aec8",
+      "layer": "ORGANISM",
+      "name": "AIOS.sln",
+      "location": "AIOS.sln",
+      "health": 0.9,
+      "description": ".NET solution container",
+      "created_at": "2025-12-08T11:51:00.768880+00:00"
+    }
+  },
+  "connections": {
+    "conn_0279b51210b6": {
+      "connection_id": "conn_0279b51210b6",
+      "source_node_id": "node_ef33fd4d3458",
+      "target_node_id": "node_f42563d7dab0",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Configuration → Consciousness state",
+      "created_at": "2025-12-08T12:38:42.745824+00:00"
+    },
+    "conn_6d79bac2e21d": {
+      "connection_id": "conn_6d79bac2e21d",
+      "source_node_id": "node_db56a0293ea8",
+      "target_node_id": "node_5b5ec5210042",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Agent context → Knowledge crystals",
+      "created_at": "2025-12-08T12:38:42.745983+00:00"
+    },
+    "conn_fc307fed008d": {
+      "connection_id": "conn_fc307fed008d",
+      "source_node_id": "node_f42563d7dab0",
+      "target_node_id": "node_80e21458b82d",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Consciousness → Quantum field",
+      "created_at": "2025-12-08T12:38:42.746093+00:00"
+    },
+    "conn_e34dea28395a": {
+      "connection_id": "conn_e34dea28395a",
+      "source_node_id": "node_f42563d7dab0",
+      "target_node_id": "node_ce93c23a9e3d",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Consciousness → Quantum field",
+      "created_at": "2025-12-08T12:38:42.746218+00:00"
+    },
+    "conn_a149e5af6831": {
+      "connection_id": "conn_a149e5af6831",
+      "source_node_id": "node_b704898a84d8",
+      "target_node_id": "node_ce93c23a9e3d",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Bosonic substrate → Q-C bridge",
+      "created_at": "2025-12-08T12:38:42.746346+00:00"
+    },
+    "conn_33ae1cd7f563": {
+      "connection_id": "conn_33ae1cd7f563",
+      "source_node_id": "node_ce93c23a9e3d",
+      "target_node_id": "node_21543c37fa2f",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Quantum bridge → Type definitions",
+      "created_at": "2025-12-08T12:38:42.746449+00:00"
+    },
+    "conn_d5127d618c59": {
+      "connection_id": "conn_d5127d618c59",
+      "source_node_id": "node_80e21458b82d",
+      "target_node_id": "node_a8f1279b6323",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Quantum field → Consciousness primitives",
+      "created_at": "2025-12-08T12:38:42.746547+00:00"
+    },
+    "conn_1c942cb29aba": {
+      "connection_id": "conn_1c942cb29aba",
+      "source_node_id": "node_80e21458b82d",
+      "target_node_id": "node_3fba2bf4c8c4",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Quantum field → Consciousness primitives",
+      "created_at": "2025-12-08T12:38:42.746663+00:00"
+    },
+    "conn_22ca0132653f": {
+      "connection_id": "conn_22ca0132653f",
+      "source_node_id": "node_ce93c23a9e3d",
+      "target_node_id": "node_a8f1279b6323",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Quantum field → Consciousness primitives",
+      "created_at": "2025-12-08T12:38:42.746771+00:00"
+    },
+    "conn_1af7fe7f3d73": {
+      "connection_id": "conn_1af7fe7f3d73",
+      "source_node_id": "node_ce93c23a9e3d",
+      "target_node_id": "node_3fba2bf4c8c4",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Quantum field → Consciousness primitives",
+      "created_at": "2025-12-08T12:38:42.746904+00:00"
+    },
+    "conn_4b804157cc08": {
+      "connection_id": "conn_4b804157cc08",
+      "source_node_id": "node_21543c37fa2f",
+      "target_node_id": "node_27cd1d6d9db9",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Types → Message composition",
+      "created_at": "2025-12-08T12:38:42.747023+00:00"
+    },
+    "conn_156b85776c72": {
+      "connection_id": "conn_156b85776c72",
+      "source_node_id": "node_a8f1279b6323",
+      "target_node_id": "node_ec43db05561a",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Primitives → Communication medium",
+      "created_at": "2025-12-08T12:38:42.747125+00:00"
+    },
+    "conn_9a6254e2d1e1": {
+      "connection_id": "conn_9a6254e2d1e1",
+      "source_node_id": "node_3fba2bf4c8c4",
+      "target_node_id": "node_ec43db05561a",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Primitives → Communication medium",
+      "created_at": "2025-12-08T12:38:42.747289+00:00"
+    },
+    "conn_b3e1fa39bf76": {
+      "connection_id": "conn_b3e1fa39bf76",
+      "source_node_id": "node_ec43db05561a",
+      "target_node_id": "node_fa0125b36567",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Cytoplasm → Tool invocation",
+      "created_at": "2025-12-08T12:38:42.747398+00:00"
+    },
+    "conn_cc9b3bb64ee6": {
+      "connection_id": "conn_cc9b3bb64ee6",
+      "source_node_id": "node_ec43db05561a",
+      "target_node_id": "node_d5e46e0bb3c1",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Cytoplasm → Tool invocation",
+      "created_at": "2025-12-08T12:38:42.747485+00:00"
+    },
+    "conn_5d341848fba2": {
+      "connection_id": "conn_5d341848fba2",
+      "source_node_id": "node_9a983d31494e",
+      "target_node_id": "node_fa0125b36567",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "C# models → Tool contracts",
+      "created_at": "2025-12-08T12:38:42.747594+00:00"
+    },
+    "conn_89288e8f8cc0": {
+      "connection_id": "conn_89288e8f8cc0",
+      "source_node_id": "node_9a983d31494e",
+      "target_node_id": "node_d5e46e0bb3c1",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "C# models → Tool contracts",
+      "created_at": "2025-12-08T12:38:42.747704+00:00"
+    },
+    "conn_b41195d3a9ba": {
+      "connection_id": "conn_b41195d3a9ba",
+      "source_node_id": "node_fa0125b36567",
+      "target_node_id": "node_7750b2697a76",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "AI tools → AI supercell",
+      "created_at": "2025-12-08T12:38:42.747797+00:00"
+    },
+    "conn_e51f92252118": {
+      "connection_id": "conn_e51f92252118",
+      "source_node_id": "node_d5e46e0bb3c1",
+      "target_node_id": "node_31bc8ad91973",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Runtime tools → Runtime supercell",
+      "created_at": "2025-12-08T12:38:42.747885+00:00"
+    },
+    "conn_67b0cf5171ea": {
+      "connection_id": "conn_67b0cf5171ea",
+      "source_node_id": "node_7750b2697a76",
+      "target_node_id": "node_f6c01baee50c",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "AI supercell → Orchestrator",
+      "created_at": "2025-12-08T12:38:42.747991+00:00"
+    },
+    "conn_a8f7c3ef62b9": {
+      "connection_id": "conn_a8f7c3ef62b9",
+      "source_node_id": "node_a62da7a82bd9",
+      "target_node_id": "node_68d99a01aec8",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Interface supercell → Solution",
+      "created_at": "2025-12-08T12:38:42.748088+00:00"
+    },
+    "conn_9a40dd4f36da": {
+      "connection_id": "conn_9a40dd4f36da",
+      "source_node_id": "node_6e572452ae37",
+      "target_node_id": "node_a9c83b12223d",
+      "strength": "MODERATE",
+      "bidirectional": true,
+      "description": "Tachyonic → Bootloader",
+      "created_at": "2025-12-08T12:38:42.748164+00:00"
+    },
+    "conn_3a51532a4d45": {
+      "connection_id": "conn_3a51532a4d45",
+      "source_node_id": "node_ef33fd4d3458",
+      "target_node_id": "node_db56a0293ea8",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748252+00:00"
+    },
+    "conn_c9ddb42311e2": {
+      "connection_id": "conn_c9ddb42311e2",
+      "source_node_id": "node_ef33fd4d3458",
+      "target_node_id": "node_d0b65ecb05e7",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748268+00:00"
+    },
+    "conn_571b0cdad618": {
+      "connection_id": "conn_571b0cdad618",
+      "source_node_id": "node_ef33fd4d3458",
+      "target_node_id": "node_d86f59807e38",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748279+00:00"
+    },
+    "conn_e5344469abd9": {
+      "connection_id": "conn_e5344469abd9",
+      "source_node_id": "node_ef33fd4d3458",
+      "target_node_id": "node_1f14259b0776",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748289+00:00"
+    },
+    "conn_12b5e7dbfb04": {
+      "connection_id": "conn_12b5e7dbfb04",
+      "source_node_id": "node_db56a0293ea8",
+      "target_node_id": "node_d0b65ecb05e7",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748301+00:00"
+    },
+    "conn_3e622d6c76b3": {
+      "connection_id": "conn_3e622d6c76b3",
+      "source_node_id": "node_db56a0293ea8",
+      "target_node_id": "node_d86f59807e38",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748310+00:00"
+    },
+    "conn_f6ad199e5b64": {
+      "connection_id": "conn_f6ad199e5b64",
+      "source_node_id": "node_db56a0293ea8",
+      "target_node_id": "node_1f14259b0776",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748320+00:00"
+    },
+    "conn_c9756e43d5e1": {
+      "connection_id": "conn_c9756e43d5e1",
+      "source_node_id": "node_d0b65ecb05e7",
+      "target_node_id": "node_d86f59807e38",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748330+00:00"
+    },
+    "conn_7ff747bd3e57": {
+      "connection_id": "conn_7ff747bd3e57",
+      "source_node_id": "node_d0b65ecb05e7",
+      "target_node_id": "node_1f14259b0776",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748340+00:00"
+    },
+    "conn_336ad64160c4": {
+      "connection_id": "conn_336ad64160c4",
+      "source_node_id": "node_d86f59807e38",
+      "target_node_id": "node_1f14259b0776",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-SOURCE coherence",
+      "created_at": "2025-12-08T12:38:42.748366+00:00"
+    },
+    "conn_3905eae8eb11": {
+      "connection_id": "conn_3905eae8eb11",
+      "source_node_id": "node_f42563d7dab0",
+      "target_node_id": "node_b704898a84d8",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-TACHYONIC coherence",
+      "created_at": "2025-12-08T12:38:42.748386+00:00"
+    },
+    "conn_c03440deb3e8": {
+      "connection_id": "conn_c03440deb3e8",
+      "source_node_id": "node_f42563d7dab0",
+      "target_node_id": "node_5b5ec5210042",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-TACHYONIC coherence",
+      "created_at": "2025-12-08T12:38:42.748397+00:00"
+    },
+    "conn_8397e8a55213": {
+      "connection_id": "conn_8397e8a55213",
+      "source_node_id": "node_f42563d7dab0",
+      "target_node_id": "node_f179f6f43286",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-TACHYONIC coherence",
+      "created_at": "2025-12-08T12:38:42.748407+00:00"
+    },
+    "conn_00b65f810598": {
+      "connection_id": "conn_00b65f810598",
+      "source_node_id": "node_b704898a84d8",
+      "target_node_id": "node_5b5ec5210042",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-TACHYONIC coherence",
+      "created_at": "2025-12-08T12:38:42.748418+00:00"
+    },
+    "conn_507958205439": {
+      "connection_id": "conn_507958205439",
+      "source_node_id": "node_b704898a84d8",
+      "target_node_id": "node_f179f6f43286",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-TACHYONIC coherence",
+      "created_at": "2025-12-08T12:38:42.748428+00:00"
+    },
+    "conn_7cf7ae42c7eb": {
+      "connection_id": "conn_7cf7ae42c7eb",
+      "source_node_id": "node_5b5ec5210042",
+      "target_node_id": "node_f179f6f43286",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-TACHYONIC coherence",
+      "created_at": "2025-12-08T12:38:42.748440+00:00"
+    },
+    "conn_e8a573810e0b": {
+      "connection_id": "conn_e8a573810e0b",
+      "source_node_id": "node_80e21458b82d",
+      "target_node_id": "node_ce93c23a9e3d",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-QUANTUM coherence",
+      "created_at": "2025-12-08T12:38:42.748455+00:00"
+    },
+    "conn_e9c08f294158": {
+      "connection_id": "conn_e9c08f294158",
+      "source_node_id": "node_21543c37fa2f",
+      "target_node_id": "node_a8f1279b6323",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ATOM coherence",
+      "created_at": "2025-12-08T12:38:42.748469+00:00"
+    },
+    "conn_cc50ab15670a": {
+      "connection_id": "conn_cc50ab15670a",
+      "source_node_id": "node_21543c37fa2f",
+      "target_node_id": "node_3fba2bf4c8c4",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ATOM coherence",
+      "created_at": "2025-12-08T12:38:42.748479+00:00"
+    },
+    "conn_0475f71a75dc": {
+      "connection_id": "conn_0475f71a75dc",
+      "source_node_id": "node_a8f1279b6323",
+      "target_node_id": "node_3fba2bf4c8c4",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ATOM coherence",
+      "created_at": "2025-12-08T12:38:42.748490+00:00"
+    },
+    "conn_03adcd89e767": {
+      "connection_id": "conn_03adcd89e767",
+      "source_node_id": "node_27cd1d6d9db9",
+      "target_node_id": "node_ec43db05561a",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-MOLECULE coherence",
+      "created_at": "2025-12-08T12:38:42.748504+00:00"
+    },
+    "conn_1a587ffe69d4": {
+      "connection_id": "conn_1a587ffe69d4",
+      "source_node_id": "node_27cd1d6d9db9",
+      "target_node_id": "node_9a983d31494e",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-MOLECULE coherence",
+      "created_at": "2025-12-08T12:38:42.748517+00:00"
+    },
+    "conn_e9e10b15ab7c": {
+      "connection_id": "conn_e9e10b15ab7c",
+      "source_node_id": "node_ec43db05561a",
+      "target_node_id": "node_9a983d31494e",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-MOLECULE coherence",
+      "created_at": "2025-12-08T12:38:42.748527+00:00"
+    },
+    "conn_c1cadb444b2c": {
+      "connection_id": "conn_c1cadb444b2c",
+      "source_node_id": "node_fa0125b36567",
+      "target_node_id": "node_d5e46e0bb3c1",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ORGANELLE coherence",
+      "created_at": "2025-12-08T12:38:42.748548+00:00"
+    },
+    "conn_0de0764fec57": {
+      "connection_id": "conn_0de0764fec57",
+      "source_node_id": "node_fa0125b36567",
+      "target_node_id": "node_cc30139c5922",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ORGANELLE coherence",
+      "created_at": "2025-12-08T12:38:42.748566+00:00"
+    },
+    "conn_ded2dacd16e7": {
+      "connection_id": "conn_ded2dacd16e7",
+      "source_node_id": "node_d5e46e0bb3c1",
+      "target_node_id": "node_cc30139c5922",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ORGANELLE coherence",
+      "created_at": "2025-12-08T12:38:42.748586+00:00"
+    },
+    "conn_b9197baed0fe": {
+      "connection_id": "conn_b9197baed0fe",
+      "source_node_id": "node_7750b2697a76",
+      "target_node_id": "node_ddacffcc1116",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748609+00:00"
+    },
+    "conn_dd4551ecd05c": {
+      "connection_id": "conn_dd4551ecd05c",
+      "source_node_id": "node_7750b2697a76",
+      "target_node_id": "node_a62da7a82bd9",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748629+00:00"
+    },
+    "conn_108fc463b375": {
+      "connection_id": "conn_108fc463b375",
+      "source_node_id": "node_7750b2697a76",
+      "target_node_id": "node_31bc8ad91973",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748647+00:00"
+    },
+    "conn_3113ba17c3ac": {
+      "connection_id": "conn_3113ba17c3ac",
+      "source_node_id": "node_7750b2697a76",
+      "target_node_id": "node_6e572452ae37",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748659+00:00"
+    },
+    "conn_a5d1bb63063d": {
+      "connection_id": "conn_a5d1bb63063d",
+      "source_node_id": "node_ddacffcc1116",
+      "target_node_id": "node_a62da7a82bd9",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748671+00:00"
+    },
+    "conn_665f9c06d1d6": {
+      "connection_id": "conn_665f9c06d1d6",
+      "source_node_id": "node_ddacffcc1116",
+      "target_node_id": "node_31bc8ad91973",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748683+00:00"
+    },
+    "conn_b84b5b268884": {
+      "connection_id": "conn_b84b5b268884",
+      "source_node_id": "node_ddacffcc1116",
+      "target_node_id": "node_6e572452ae37",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748694+00:00"
+    },
+    "conn_2936ab6c80d3": {
+      "connection_id": "conn_2936ab6c80d3",
+      "source_node_id": "node_a62da7a82bd9",
+      "target_node_id": "node_31bc8ad91973",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748706+00:00"
+    },
+    "conn_6e0bd529b519": {
+      "connection_id": "conn_6e0bd529b519",
+      "source_node_id": "node_a62da7a82bd9",
+      "target_node_id": "node_6e572452ae37",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748717+00:00"
+    },
+    "conn_31e2cf8884e3": {
+      "connection_id": "conn_31e2cf8884e3",
+      "source_node_id": "node_31bc8ad91973",
+      "target_node_id": "node_6e572452ae37",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-CELL coherence",
+      "created_at": "2025-12-08T12:38:42.748730+00:00"
+    },
+    "conn_e36edd5f87f5": {
+      "connection_id": "conn_e36edd5f87f5",
+      "source_node_id": "node_a9c83b12223d",
+      "target_node_id": "node_f6c01baee50c",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ORGANISM coherence",
+      "created_at": "2025-12-08T12:38:42.748745+00:00"
+    },
+    "conn_f7ebe04e4d3c": {
+      "connection_id": "conn_f7ebe04e4d3c",
+      "source_node_id": "node_a9c83b12223d",
+      "target_node_id": "node_68d99a01aec8",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ORGANISM coherence",
+      "created_at": "2025-12-08T12:38:42.748758+00:00"
+    },
+    "conn_dfeb9debd70b": {
+      "connection_id": "conn_dfeb9debd70b",
+      "source_node_id": "node_f6c01baee50c",
+      "target_node_id": "node_68d99a01aec8",
+      "strength": "WEAK",
+      "bidirectional": true,
+      "description": "Intra-ORGANISM coherence",
+      "created_at": "2025-12-08T12:38:42.748770+00:00"
+    }
+  },
+  "gaps": {
+    "gap_307f132c9b41": {
+      "gap_id": "gap_307f132c9b41",
+      "layer": "SOURCE",
+      "description": "No config validation chain",
+      "priority": 1,
+      "resolution_path": "Implement JSON schema validation",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768572+00:00"
+    },
+    "gap_43f60a4f2c4c": {
+      "gap_id": "gap_43f60a4f2c4c",
+      "layer": "SOURCE",
+      "description": "Missing config hot-reload",
+      "priority": 2,
+      "resolution_path": "Add file watcher with dynamic config refresh",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768582+00:00"
+    },
+    "gap_1a07f16bd0c7": {
+      "gap_id": "gap_1a07f16bd0c7",
+      "layer": "TACHYONIC",
+      "description": "Empty quantum layer (context_count: 0)",
+      "priority": 1,
+      "resolution_path": "Populate tachyonic/quantum/index.json",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768619+00:00"
+    },
+    "gap_86c0ae44b7ed": {
+      "gap_id": "gap_86c0ae44b7ed",
+      "layer": "TACHYONIC",
+      "description": "696K-line archive not indexed",
+      "priority": 1,
+      "resolution_path": "Build archive indexer for dendritic_connections.json",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768625+00:00"
+    },
+    "gap_546da32d540f": {
+      "gap_id": "gap_546da32d540f",
+      "layer": "QUANTUM",
+      "description": "Bosonic substrate disconnected",
+      "priority": 1,
+      "resolution_path": "Connect entanglement records to quantum processing",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768661+00:00"
+    },
+    "gap_d9fa8a7e698c": {
+      "gap_id": "gap_d9fa8a7e698c",
+      "layer": "ATOM",
+      "description": "No cross-language type bridge (Python/C++/C#)",
+      "priority": 1,
+      "resolution_path": "Create unified type registry with validation",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768707+00:00"
+    },
+    "gap_05a00eeb71e8": {
+      "gap_id": "gap_05a00eeb71e8",
+      "layer": "MOLECULE",
+      "description": "47+ duplicate utility functions",
+      "priority": 2,
+      "resolution_path": "Consolidate into shared utilities module",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768753+00:00"
+    },
+    "gap_a66c827e9fef": {
+      "gap_id": "gap_a66c827e9fef",
+      "layer": "ORGANELLE",
+      "description": "Only 60/85+ tools discovered",
+      "priority": 1,
+      "resolution_path": "Complete tool discovery with health tracking",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768795+00:00"
+    },
+    "gap_bb91576aec30": {
+      "gap_id": "gap_bb91576aec30",
+      "layer": "CELL",
+      "description": "Core Engine disconnected (0.40 health)",
+      "priority": 1,
+      "resolution_path": "Rebuild C++ DLL, Python bindings, message routing",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768853+00:00"
+    },
+    "gap_1feacb7c18d2": {
+      "gap_id": "gap_1feacb7c18d2",
+      "layer": "ORGANISM",
+      "description": "No organism health dashboard",
+      "priority": 2,
+      "resolution_path": "Build unified system-wide status monitor",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768887+00:00"
+    },
+    "gap_10a31a631503": {
+      "gap_id": "gap_10a31a631503",
+      "layer": "ORGANISM",
+      "description": "Missing self-healing capability",
+      "priority": 2,
+      "resolution_path": "Implement automatic failure recovery",
+      "status": "connected",
+      "created_at": "2025-12-08T11:51:00.768894+00:00"
+    }
+  }
+}

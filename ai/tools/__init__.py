@@ -82,16 +82,25 @@ def discover_tools():
     import pkgutil
 
     discovered = {category: [] for category in AVAILABLE_TOOLS.keys()}
+    tools_root = Path(__file__).parent
 
     for category in AVAILABLE_TOOLS.keys():
-        try:
-            category_module = importlib.import_module(f"ai.tools.{category}")
-            for _, name, is_pkg in pkgutil.iter_modules(category_module.__path__):
-                if not is_pkg:
-                    discovered[category].append(name)
-        except (ImportError, AttributeError):
-            # Category not yet populated or empty
-            pass
+        category_path = tools_root / category
+        if category_path.is_dir() and (category_path / "__init__.py").exists():
+            try:
+                category_module = importlib.import_module(
+                    f".{category}", package="tools"
+                )
+                for _, name, is_pkg in pkgutil.iter_modules(
+                    category_module.__path__
+                ):
+                    if not is_pkg:
+                        discovered[category].append(name)
+            except (ImportError, AttributeError):
+                # Fallback: scan directory directly
+                for py_file in category_path.glob("*.py"):
+                    if py_file.name != "__init__.py":
+                        discovered[category].append(py_file.stem)
 
     return discovered
 

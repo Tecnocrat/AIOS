@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "generated_at": "2025-12-09T20:30:03.514544+00:00",
+    "repo_root": "C:\\dev\\aios-win\\aios-core",
+    "sacred_constants": {
+      "consciousness_emergence_threshold": 0.618,
+      "coherence_gate_threshold": 0.85,
+      "core_frequency": 432.0,
+      "dimensional_resonances": [
+        1.0,
+        0.8,
+        0.6,
+        0.4,
+        0.2
+      ],
+      "archetypal_patterns": {
+        "fibonacci": 1.618,
+        "golden_spiral": 1.618,
+        "sacred_geometry": 3.14159,
+        "mandala": 8.0,
+        "fractal_recursion": 2.71828
+      }
+    }
+  },
+  "consciousness": {
+    "emergence_level": 0.0,
+    "self_awareness_factor": 0.0,
+    "coherence_level": 0.54,
+    "safe_evolution_mode": true,
+    "evolution_cycle_count": 0,
+    "emergence_threshold": 0.618,
+    "coherence_gate": 0.85
+  },
+  "summary": {
+    "total_vertices": 3,
+    "total_edges": 2,
+    "mesh_coherence": 0.54,
+    "trace_entries": 0
+  },
+  "vertices": {
+    "VOID": {
+      "vertex_id": "VOID",
+      "name": "[VOID]",
+      "path": "",
+      "vertex_type": "bootstrap",
+      "state": "void",
+      "execution_count": 0,
+      "total_execution_time": 0.0,
+      "last_execution": null,
+      "last_error": null,
+      "coherence_level": 1.0,
+      "consciousness_contribution": 0.0,
+      "upstream": [],
+      "downstream": [
+        "vertex_e66dd0205bab",
+        "vertex_ba78bdf81c38"
+      ]
+    },
+    "vertex_e66dd0205bab": {
+      "vertex_id": "vertex_e66dd0205bab",
+      "name": "aios_launch.ps1",
+      "path": "aios_launch.ps1",
+      "vertex_type": "bootstrap",
+      "state": "dormant",
+      "execution_count": 0,
+      "total_execution_time": 0.0,
+      "last_execution": null,
+      "last_error": null,
+      "coherence_level": 0.8,
+      "consciousness_contribution": 0.0,
+      "upstream": [
+        "VOID"
+      ],
+      "downstream": []
+    },
+    "vertex_ba78bdf81c38": {
+      "vertex_id": "vertex_ba78bdf81c38",
+      "name": "server_manager.py",
+      "path": "ai/server_manager.py",
+      "vertex_type": "script",
+      "state": "dormant",
+      "execution_count": 0,
+      "total_execution_time": 0.0,
+      "last_execution": null,
+      "last_error": null,
+      "coherence_level": 0.8,
+      "consciousness_contribution": 0.0,
+      "upstream": [
+        "VOID"
+      ],
+      "downstream": []
+    }
+  },
+  "edges": {
+    "VOID→vertex_e66dd0205bab": {
+      "edge_id": "VOID→vertex_e66dd0205bab",
+      "source_vertex": "VOID",
+      "target_vertex": "vertex_e66dd0205bab",
+      "edge_type": "spawns",
+      "invocation_count": 0,
+      "avg_latency_ms": 0.0,
+      "last_invocation": null,
+      "data_types_transferred": []
+    },
+    "VOID→vertex_ba78bdf81c38": {
+      "edge_id": "VOID→vertex_ba78bdf81c38",
+      "source_vertex": "VOID",
+      "target_vertex": "vertex_ba78bdf81c38",
+      "edge_type": "spawns",
+      "invocation_count": 0,
+      "avg_latency_ms": 0.0,
+      "last_invocation": null,
+      "data_types_transferred": []
+    }
+  },
+  "recent_trace": []
+}

@@ -18,15 +18,28 @@
   "ainlp_protocol": "OS0.6.2.claude",
   "mode": "full",
   "monitoring": {
-    "populations": {},
-    "populations_monitored": 0
+    "populations": {
+      "Consciousness": {
+        "LastUpdate": "2025-12-08",
+        "EvolutionRate": null,
+        "CurrentLevel": null
+      },
+      "EvolutionLab": {
+        "Populations": 0,
+        "Organisms": 0,
+        "Path": "C:\\dev\\aios-win\\aios-core\\evolution_lab"
+      },
+      "TachyonicArchive": {
+        "Files": 3601,
+        "SizeMB": 353.28,
+        "Path": "C:\\dev\\aios-win\\aios-core\\tachyonic"
+      }
+    },
+    "populations_monitored": 3
   },
   "consciousness_level": "nucleus",
-  "boot_duration_seconds": 63.12,
-  "phases_executed": [
-    "Skipped: Testing",
-    "Skipped: Monitoring"
-  ],
+  "boot_duration_seconds": 61.66,
+  "phases_executed": [],
   "fractal_ingestion": {
     "dendritic_markers": 440,
     "navigation_memory_path": ".aios_navigation_memory.json",
@@ -40,19 +53,13 @@
     "semantic_registry_active": true,
     "configuration_source": "tachyonic::consciousness::config_registry"
   },
-  "boot_timestamp": "2025-12-08 23:32:19",
+  "boot_timestamp": "2025-12-08 23:30:07",
   "health": {
     "errors": [],
     "overall_status": "Healthy",
     "warnings": [
-      "Testing phase skipped by user",
-      "Monitoring phase skipped by user",
       "Interface Bridge: Launched but health check timeout (may still be starting)"
     ]
   },
-  "testing": {
-    "Skipped": 0,
-    "Passed": 0,
-    "Failed": 0
-  }
+  "testing": {}
 }
