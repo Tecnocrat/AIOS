@@ -13,9 +13,10 @@ AINLP Comment Class Integration:
 """
 
 import logging
-
 from pathlib import Path
 from typing import Any, Dict, Optional
+
+from ai.src.core.ainlp.utils import get_logger
 
 # Fix import path for tooling module
 from .tooling.recursive_tooling import get_kernel_processor
@@ -53,10 +54,7 @@ class AINLPKernel:
     """
 
     def __init__(self, logger: Optional[logging.Logger] = None):
-        # AINLP.fractal [initialization_pattern] (comment.AINLP.class)
-        # Pattern: Logger → Processor → State → Initialize
-        # Micro-fractal: Each component maintains initialization context
-        self.logger = logger or logging.getLogger(__name__)
+        self.logger = logger or get_logger(__name__)
         self.processor = get_kernel_processor()
 
         # AINLP.state [kernel_state] (comment.AINLP.class)
@@ -118,6 +116,7 @@ class AINLPKernel:
         # AINLP.lazy_import [json_activation] (comment.AINLP.class)
         if self._json_module is None:
             import json
+
             self._json_module = json
             self.logger.debug("JSON module loaded dynamically")
         return self._json_module
@@ -136,85 +135,87 @@ class AINLPKernel:
         # Pattern: Request → Route → Process → Respond
         # Micro-fractal: Each request type maintains processing context
         try:
-            request_type = request.get('type', 'unknown')
+            request_type = request.get("type", "unknown")
 
             # AINLP.routing [request_dispatch] (comment.AINLP.class)
             # Route requests while preserving context chain
-            if request_type == 'compile':
+            if request_type == "compile":
                 return self._process_compile_request(request)
-            elif request_type == 'context_analysis':
+            elif request_type == "context_analysis":
                 return self._process_context_analysis_request(request)
-            elif request_type == 'background_task':
+            elif request_type == "background_task":
                 return self._process_background_task_request(request)
             else:
-                return {'error': f'Unknown request type: {request_type}'}
+                return {"error": f"Unknown request type: {request_type}"}
 
         except Exception as e:
             # AINLP.error_handling [request_failure] (comment.AINLP.class)
             # Preserve error context for debugging
             self.logger.error("Error processing AINLP request: %s", e)
-            return {'error': str(e)}
+            return {"error": str(e)}
 
     def _process_compile_request(self, request: Dict[str, Any]) -> Dict[str, Any]:
         """Process a compile request with context preservation."""
         # AINLP.fractal [compile_processing] (comment.AINLP.class)
         # Pattern: Extract → Process → Submit → Respond
         # Micro-fractal: Compilation context preserved through task chain
-        specification = request.get('specification', '')
-        context = request.get('context', {})
+        specification = request.get("specification", "")
+        context = request.get("context", {})
 
         # AINLP.task_submission [compilation_task] (comment.AINLP.class)
         # Submit recursive task for compilation with full context
         task_id = self.processor.submit_recursive_task(
-            task_type='context_analysis',
+            task_type="context_analysis",
             parameters={
-                'specification': specification,
-                'context_data': context,
-                'compile_request': True
+                "specification": specification,
+                "context_data": context,
+                "compile_request": True,
             },
-            priority=1
+            priority=1,
         )
 
         return {
-            'task_id': task_id,
-            'status': 'submitted',
-            'message': 'Compile request submitted for background processing'
+            "task_id": task_id,
+            "status": "submitted",
+            "message": "Compile request submitted for background processing",
         }
 
-    def _process_context_analysis_request(self, request: Dict[str, Any]) -> Dict[str, Any]:
+    def _process_context_analysis_request(
+        self, request: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Process a context analysis request."""
-        context_data = request.get('context_data', {})
+        context_data = request.get("context_data", {})
 
         # Submit recursive task for context analysis
         task_id = self.processor.submit_recursive_task(
-            task_type='context_analysis',
-            parameters={'context_data': context_data},
-            priority=2
+            task_type="context_analysis",
+            parameters={"context_data": context_data},
+            priority=2,
         )
 
         return {
-            'task_id': task_id,
-            'status': 'submitted',
-            'message': 'Context analysis request submitted'
+            "task_id": task_id,
+            "status": "submitted",
+            "message": "Context analysis request submitted",
         }
 
-    def _process_background_task_request(self, request: Dict[str, Any]) -> Dict[str, Any]:
+    def _process_background_task_request(
+        self, request: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """Process a background task request."""
-        task_type = request.get('task_type', 'generic')
-        parameters = request.get('parameters', {})
-        priority = request.get('priority', 5)
+        task_type = request.get("task_type", "generic")
+        parameters = request.get("parameters", {})
+        priority = request.get("priority", 5)
 
         # Submit recursive task
         task_id = self.processor.submit_recursive_task(
-            task_type=task_type,
-            parameters=parameters,
-            priority=priority
+            task_type=task_type, parameters=parameters, priority=priority
         )
 
         return {
-            'task_id': task_id,
-            'status': 'submitted',
-            'message': f'Background task {task_type} submitted'
+            "task_id": task_id,
+            "status": "submitted",
+            "message": f"Background task {task_type} submitted",
         }
 
     def get_task_result(self, task_id: str) -> Optional[Dict[str, Any]]:
@@ -226,9 +227,9 @@ class AINLPKernel:
         processor_stats = self.processor.get_system_statistics()
 
         return {
-            'kernel_initialized': self.is_initialized,
-            'csharp_bridge_active': self.csharp_bridge_active,
-            'processor_stats': processor_stats
+            "kernel_initialized": self.is_initialized,
+            "csharp_bridge_active": self.csharp_bridge_active,
+            "processor_stats": processor_stats,
         }
 
     def shutdown(self):
@@ -245,6 +246,7 @@ class AINLPKernel:
 # Global kernel instance
 _global_kernel = None
 
+
 def get_ainlp_kernel() -> AINLPKernel:
     """Get the global AINLP kernel instance."""
     global _global_kernel
@@ -253,9 +255,7 @@ def get_ainlp_kernel() -> AINLPKernel:
     return _global_kernel
 
 
-def initialize_ainlp_kernel(
-    logger: Optional[logging.Logger] = None
-) -> AINLPKernel:
+def initialize_ainlp_kernel(logger: Optional[logging.Logger] = None) -> AINLPKernel:
     """Initialize the AINLP kernel."""
     global _global_kernel
     _global_kernel = AINLPKernel(logger)
