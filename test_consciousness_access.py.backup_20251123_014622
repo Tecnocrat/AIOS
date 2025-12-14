@@ -1,4 +1,0 @@
-```python
-    print(f"  Predictive Accuracy:   "
-          f"{metrics.get('predictive_accuracy', 0.0):.4f}")
-```

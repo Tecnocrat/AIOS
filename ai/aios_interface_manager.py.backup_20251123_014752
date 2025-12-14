@@ -1,5 +1,0 @@
-```python
-                    status["tool_discovery"]["total_tools"] = (
-                        health_data.get("tools_discovered", 0)
-                    )
-```

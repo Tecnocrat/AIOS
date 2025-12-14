@@ -1,6 +1,0 @@
-C:\dev\AIOS\runtime_intelligence\tools\__init__.py
-  Total lines: 15
-  Logic lines: [8]
-
-
-Total __init__.py files with substantial logic: 1
