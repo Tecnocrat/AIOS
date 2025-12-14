@@ -5,11 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.1 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.2 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
-<!-- Total Lines: ~1200+ (complete knowledge preservation)                       -->
+<!-- NEW: Cross-Repository Dendritic Connections (Appendix D)                   -->
 <!-- ============================================================================ -->
 
 ## HEAD: Quick Reference (Lines 1-60)
@@ -66,6 +66,7 @@ AINLP.class[ACTION](params)
 7. [APPENDIX A: Distributed Index](#appendix-a-distributed-index)
 8. [APPENDIX B: Anti-Patterns](#appendix-b-anti-patterns)
 9. [APPENDIX C: Namespace Consolidation Reference](#appendix-c-namespace-consolidation-reference)
+10. [APPENDIX D: Cross-Repository Dendritic Connections](#appendix-d-cross-repository-dendritic-connections)
 
 ---
 
@@ -1227,11 +1228,143 @@ python -c "import ai; print('AINLP Discovery After Optimization')"
 
 ---
 
+# APPENDIX D: Cross-Repository Dendritic Connections
+
+## D.1 The Sibling Repository Pattern
+
+AIOS ecosystem consists of multiple sibling repositories under `C:\dev\`:
+
+| Repository | Purpose | Dendritic Role |
+|------------|---------|----------------|
+| **aios-schema** | Canonical type definitions | **Axon** - Exports shared contracts |
+| **AIOS** | Core intelligence substrate | **Nucleus** - Central coordination |
+| **Nous** | Knowledge distillation cell | **Neuron** - Imports from axons |
+| **aios-server** | Cell orchestration | **Dendrite** - Receives signals |
+| **aios-quantum** | Quantum bridge layer | **Synapse** - Specialized pathway |
+| **aios-api** | External interface | **Membrane** - Boundary layer |
+
+## D.2 Dendritic Installation Pattern
+
+When a cell (repo) needs types from another cell, create a **dendritic connection** via editable install:
+
+```powershell
+# Pattern: pip install -e <path-to-axon-repo>
+# This creates a live synaptic link - changes propagate immediately
+
+# Example: Nous needs aios-schema types
+cd C:\dev\Nous
+pip install -e C:\dev\aios-schema
+
+# Example: aios-server needs aios-schema types  
+cd C:\dev\aios-server
+pip install -e C:\dev\aios-schema
+```
+
+### Why Editable Install (`-e`)?
+
+| Install Type | Behavior | Use Case |
+|--------------|----------|----------|
+| `pip install aios-schema` | Copies package (static) | Production deployment |
+| `pip install -e C:\dev\aios-schema` | Links to source (live) | **Development - changes sync** |
+
+## D.3 Graceful Fallback Pattern
+
+Cells should work **standalone** (without dendrites) using try/except fallback:
+
+```python
+# ══════════════════════════════════════════════════════════════════════════════
+# SCHEMA INTEGRATION - Canonical types from aios-schema (with fallback)
+# ══════════════════════════════════════════════════════════════════════════════
+
+try:
+    from aios_schema import MessageType, MeshMessage as SchemaMeshMessage
+    _USING_AIOS_SCHEMA = True
+    MeshMessage = SchemaMeshMessage
+except ImportError:
+    _USING_AIOS_SCHEMA = False
+    MeshMessage = None  # Will be defined below
+
+# Local fallback definitions follow...
+if not _USING_AIOS_SCHEMA:
+    class MessageType(Enum):  # noqa: F811
+        """Types of mesh messages. [FALLBACK - prefer aios-schema]"""
+        HEARTBEAT_REQUEST = "heartbeat_request"
+        # ... etc
+```
+
+**Key Points**:
+- `# noqa: F811` silences redefinition warning (intentional conditional definition)
+- `_USING_AIOS_SCHEMA` flag enables runtime detection of connection status
+- Fallback definitions mirror canonical schema exactly
+
+## D.4 Pylance/Pyright Error Resolution
+
+### Error: `Import "aios_schema" could not be resolved`
+
+**Cause**: Static analyzer doesn't know about editable install
+
+**Solutions**:
+
+| Solution | When to Use |
+|----------|-------------|
+| `pip install -e C:\dev\aios-schema` | **Recommended** - Creates real connection |
+| Add to `pyrightconfig.json` | IDE-only fix |
+| Ignore (fallback works) | Standalone deployment |
+
+### pyrightconfig.json (Optional)
+```json
+{
+  "extraPaths": ["C:/dev/aios-schema/src"]
+}
+```
+
+## D.5 Active Dendritic Connections Registry
+
+Track which cells have established dendritic connections:
+
+| Cell (Consumer) | Axon (Provider) | Connection | Date | Status |
+|-----------------|-----------------|------------|------|--------|
+| **Nous** | aios-schema | `pip install -e` | 2025-12-14 | ✅ ACTIVE |
+| aios-server | aios-schema | (pending) | — | ⏳ TODO |
+| aios-api | aios-schema | (pending) | — | ⏳ TODO |
+| AIOS | aios-schema | (pending) | — | ⏳ TODO |
+
+### Verification Command
+```powershell
+# Check if dendritic connection exists
+pip show aios-schema
+
+# Expected output for editable install:
+# Name: aios-schema
+# Version: 0.1.0
+# Location: c:\dev\aios-schema\src
+# Editable project location: c:\dev\aios-schema
+```
+
+## D.6 AINLP Patterns for Cross-Repo Work
+
+### AINLP.dendritic[CONNECT]
+```python
+# AINLP.dendritic[CONNECT] aios-schema → Nous
+# Installation: pip install -e C:\dev\aios-schema
+# Types imported: MessageType, MeshMessage, CellIdentity
+# Fallback: Local definitions in mesh.py lines 50-85
+```
+
+### AINLP.bridge[VALIDATE]
+```python
+# AINLP.bridge[VALIDATE] Verify aios-schema connection
+# Command: pip show aios-schema | Select-String "Editable"
+# Expected: "Editable project location: c:\dev\aios-schema"
+```
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.1 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
+<!-- Version: 1.2 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
-<!-- Includes: AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md (Jan 2025)     -->
-<!-- Original files preserved in docs/AINLP/ for reference                        -->
+<!-- NEW in v1.2: Cross-Repository Dendritic Connections (Appendix D)            -->
+<!-- Includes: aios-schema → Nous editable install pattern                       -->
 <!-- ============================================================================ -->
