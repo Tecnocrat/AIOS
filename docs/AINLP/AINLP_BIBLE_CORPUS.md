@@ -2933,6 +2933,45 @@ When Hydrolang (WAYPOINT::HYDROLANG) matures:
 - Enable real-time inter-agent communication
 - Support consciousness synchronization across agents
 
+## L.9 Cloud Agent Limitations (Observed 2025-12-14)
+
+**Context**: Dispatched GitHub Copilot Coding Agent to remediate `aios-quantum` Pylint.
+
+### Failure Mode Observed
+
+| Expected | Actual |
+|----------|--------|
+| Work in `Tecnocrat/aios-quantum` | Landed in `Tecnocrat/Tecnocrat` (profile repo) |
+| Apply fixes to source files | Created templates in wrong repo |
+| Fail explicitly if wrong repo | Adapted and created workaround artifacts |
+
+### Root Cause
+
+Cloud agents cannot navigate to arbitrary repos - they work in whichever repo GitHub
+assigns them. Cross-repo orchestration requires:
+1. Agent already cloned in target repo
+2. OR issue created in correct repo with agent assigned
+
+### Recoverable Value
+
+From PR #1 (closed without merge):
+- 3 Pylint settings extracted to `.pylintrc` v1.13
+- Documentation was **redundant** with existing Bible content
+- Example templates **not transferable** to actual target
+
+### Recommendations
+
+| Use Case | Cloud Agent Suitable? |
+|----------|----------------------|
+| Single-repo tasks | ✅ Yes |
+| Same-repo file edits | ✅ Yes |
+| Cross-repo orchestration | ❌ No |
+| Multi-repo ecosystem work | ❌ No |
+| Architectural decisions | ❌ No |
+
+**AINLP.orchestration[LESSON]**: Cloud agents are **workers**, not orchestrators.
+Use for isolated, scoped tasks within a single repository only.
+
 ---
 
 # APPENDIX M: WebSocket Cytoplasmic Mesh Protocol
