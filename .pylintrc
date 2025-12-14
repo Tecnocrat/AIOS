@@ -18,7 +18,10 @@ load-plugins=pylint.extensions.docparams,pylint.extensions.mccabe,pylint.extensi
 # 🌊 CYTOPLASM - Communication & Integration Controls
 # Medium consciousness - Balance between strictness and development workflow
 # NOTE: C0114,C0115,C0116 (docstrings) MUST remain enabled - AINLP.comment critical!
+# NOTE: C0301 DISABLED - Line length is obsolete (AINLP.buffer[120])
 disable=
+    # Line length - obsolete constraint from 1970s terminals
+    C0301,
     # Unused imports/variables (too restrictive for AI development)
     W0611,W0612,W0613,
     # Design complexity (adjusted for AIOS patterns)
@@ -36,9 +39,10 @@ evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / stateme
 
 [FORMAT]
 # 🧫 LABORATORY - Code Structure Standards
-# Development environment - Harmonized with .editorconfig and PEP 8
-# AINLP.buffer[79::85::86]: Agent targets 79, tolerance 85, fail 86+
-max-line-length=85
+# AINLP.buffer[120] - Modern standard, no formatter conflicts
+# Rationale: Line length is irrelevant to AI agents (tokens) and humans (Alt+Z)
+# The 79-char PEP 8 rule is from 1970s terminal constraints - obsolete
+max-line-length=120
 indent-string='    '
 good-names=i,j,k,ex,Run,_,pk,id,ai,ios,cell,core,engine,model,config,logger,handler,bridge,supercell,consciousness,dendritic,tachyonic,ainlp
 bad-names=foo,bar,baz,toto,tutu,tata

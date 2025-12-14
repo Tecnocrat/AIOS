@@ -5,16 +5,15 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.10 | Date: 2025-01-19 | Protocol: OS0.6.5                       -->
+<!-- Version: 1.11 | Date: 2025-01-19 | Protocol: OS0.6.5                       -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.11: Line Length Liberation - AINLP.buffer[120], C0301 disabled          -->
 <!-- v1.10: Schema Validation + Type Narrowing patterns (F841/reportOptionalCall)-->
 <!-- v1.9: Tool Consolidation Pattern - Pylance+Pylint, Flake8 disabled         -->
 <!-- v1.8: Configuration Archaeology Pattern - multi-layer config truth         -->
 <!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J) - discoverability  -->
-<!-- v1.6: Agentic Quantum Error Correction (G) + Knowledge Extraction (H)      -->
-<!-- v1.5: Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace        -->
 <!-- ============================================================================ -->
 
 ## HEAD: Quick Reference (Lines 1-60)
@@ -38,7 +37,7 @@ AINLP.class[ACTION](params)
 | `AINLP.loader[latent:X]` | Preserve unused import with documented intent | F401 remediation |
 | `AINLP.context[HARDENING]` | End-of-session consolidation | Before commits |
 | `AINLP.context[TRACE]` | Leave breadcrumbs during work | Complex operations |
-| `AINLP.buffer[T::TOL::TRIG]` | Error-corrected config for agents | Linter tolerance |
+| `AINLP.buffer[120]` | Line length liberation (C0301 disabled) | Modern standard |
 | `AINLP.discovery[LEVEL]` | Document findings through pipeline | Knowledge capture |
 | `AINLP.mind` | Document reasoning/future intent | Latent code |
 | `AINLP.evolution[MUTATE]` | Trigger code mutation | Evolution lab |
@@ -58,7 +57,7 @@ AINLP.class[ACTION](params)
 | **C0114** | Pylint | Missing **module** docstring → Add module-level docstring |
 | **C0115** | Pylint | Missing **class** docstring → Add class-level docstring |
 | **C0116** | Pylint | Missing **function** docstring → Add function-level docstring |
-| **C0301** | Pylint | `AINLP.buffer[79::85::86]` - max-line-length=85 in `.pylintrc` |
+| **C0301** | Pylint | **DISABLED** - Line length irrelevant (Alt+Z, AI tokens) |
 | **C0411** | Pylint | Import order: stdlib → third-party → first-party (PEP 8) |
 | **W1514** | Pylint | Add `encoding='utf-8'` to `open()` calls |
 | **E722** | Flake8 | Replace bare `except:` with specific exceptions |
@@ -338,7 +337,7 @@ Multiple tools analyzing the same concerns create noise and performance overhead
 
 | Check | Flake8 | Pylint | Notes |
 |-------|--------|--------|-------|
-| Line length | E501 | C0301 | Pylint + AINLP.buffer |
+| Line length | E501 | C0301 | **DISABLED** - see Line Length Liberation |
 | Unused imports | F401 | W0611 | Both detect |
 | Undefined names | F821 | E0602 | Pylint more context-aware |
 | Syntax errors | E999 | E0001 | Both detect |
@@ -363,6 +362,61 @@ Document tool consolidation decisions:
 # AINLP.tool[CONSOLIDATE:pylint>flake8] Pylint provides superset coverage
 # AINLP.tool[KEEP:pylance+pylint] Complementary: types vs style/complexity
 ```
+
+### Line Length Liberation (AINLP.buffer[120])
+
+**C0301/E501 are DISABLED across all AIOS cells.**
+
+#### Why Line Length Rules Are Obsolete
+
+| Consumer | Cares About Line Length? | Reality |
+|----------|-------------------------|---------|
+| **Human in VS Code** | ❌ NO | Alt+Z word wrap handles it |
+| **AI Agent** | ❌ NO | Processes tokens, not visual lines |
+| **Git diffs** | ⚠️ Slightly | Semantic diffs exist now |
+| **Linters** | ✅ YES | But enforcing 1970s terminal constraints |
+
+The 79-character limit comes from **punch card era** physical terminals.
+Modern monitors are 4K. VS Code has word wrap. AI agents see tokens.
+
+#### The Formatter War (Historical)
+
+```
+Black (88 chars) ←→ Pylint (85 chars) ←→ Manual edits
+           ↓                ↓                    ↓
+    Fights with →    Fights with →    Creates busywork
+```
+
+This conflict caused **automatic reverts** of manual line-wrapping work.
+Solution: **Stop policing line length entirely.**
+
+#### Current Configuration
+
+```json
+// All AIOS cells
+{
+    "python.linting.pylintArgs": ["--max-line-length=120", "--disable=C0301"],
+    "black-formatter.args": ["--line-length=120"],
+    "[python]": {
+        "editor.formatOnSave": false,  // CRITICAL: prevents auto-revert
+        "editor.rulers": [120]
+    }
+}
+```
+
+```ini
+# .pylintrc
+max-line-length=120
+```
+
+#### What Still Matters
+
+| Rule | Status | Why |
+|------|--------|-----|
+| **C0114-C0116** (docstrings) | ✅ ENABLED | AI comprehension, AINLP.comment |
+| **C0411** (import order) | ✅ ENABLED | Code organization |
+| **Type checking** | ✅ ENABLED | Pylance catches real bugs |
+| **C0301** (line length) | ❌ DISABLED | Obsolete constraint |
 
 ---
 

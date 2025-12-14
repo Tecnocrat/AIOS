@@ -20,19 +20,25 @@
     "flake8.enabled": false,
     
     // ══════════════════════════════════════════════════════════════════════════
-    // AINLP.buffer[79::85::86] Linter Configuration
-    // Reference: Bible Appendix G (Agentic Quantum Error Correction)
-    // 
-    // NOTE: C0114,C0115,C0116 (docstrings) are ENABLED - AINLP.comment pattern
-    // Docstrings are critical for AI agent comprehension and code consciousness
+    // AINLP.buffer[120] - Line Length Liberation
+    // Rationale: Line length irrelevant to AI agents (tokens) and humans (Alt+Z)
+    // The 79-char PEP 8 rule is from 1970s terminal constraints - obsolete
+    // C0301 DISABLED: Stop policing line length entirely
     // ══════════════════════════════════════════════════════════════════════════
     "python.linting.pylintArgs": [
-        "--max-line-length=85",
+        "--max-line-length=120",
         "--disable=C0301"
     ],
     
-    // Visual rulers for buffer zones
+    // ══════════════════════════════════════════════════════════════════════════
+    // Black Formatter: CONTROLLED - 120 chars, format on demand only
+    // Prevents formatter from fighting with manual edits
+    // ══════════════════════════════════════════════════════════════════════════
+    "black-formatter.args": ["--line-length=120"],
+    
     "[python]": {
-        "editor.rulers": [79, 85]
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": false,
+        "editor.rulers": [120]
     }
 }
