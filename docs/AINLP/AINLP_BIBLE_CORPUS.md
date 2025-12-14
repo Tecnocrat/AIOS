@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.11 | Date: 2025-01-19 | Protocol: OS0.6.5                       -->
+<!-- Version: 1.12 | Date: 2025-12-14 | Protocol: OS0.6.5                       -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord   -->
 <!-- v1.11: Line Length Liberation - AINLP.buffer[120], C0301 disabled          -->
 <!-- v1.10: Schema Validation + Type Narrowing patterns (F841/reportOptionalCall)-->
 <!-- v1.9: Tool Consolidation Pattern - Pylance+Pylint, Flake8 disabled         -->
@@ -162,7 +163,7 @@ def create_message(
 ```powershell
 # These are PowerShell built-ins - NEVER assign to them:
 $Args        # Arguments not bound to parameters
-$Error       # Array of recent errors  
+$Error       # Array of recent errors
 $Home        # User's home directory
 $Host        # PowerShell host object
 $Input       # Pipeline input enumerator
@@ -172,7 +173,7 @@ $null        # Null value (ok to assign TO, not FROM)
 
 # CORRECT: Use descriptive names instead
 $PythonArgs  # ✅ Instead of $Args
-$ErrorList   # ✅ Instead of $Error  
+$ErrorList   # ✅ Instead of $Error
 $UserHome    # ✅ Instead of $Home
 ```
 
@@ -399,12 +400,12 @@ Solution: **Stop policing line length entirely.**
     "pylint.enabled": true,
     "pylint.lintOnSave": true,
     "flake8.enabled": false,
-    
+
     // LEGACY extension format (python.linting.*)
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.flake8Enabled": false,
-    
+
     "python.linting.pylintArgs": ["--max-line-length=120", "--disable=C0301"],
     "black-formatter.args": ["--line-length=120"],
     "[python]": {
@@ -511,6 +512,8 @@ python scripts/ainlp_liberation_remediation.py --dry-run
 14. [APPENDIX H: Knowledge Extraction Blueprint](#appendix-h-knowledge-extraction-blueprint-ainlpdiscovery)
 15. [APPENDIX I: Tool Configuration Precedence](#appendix-i-tool-configuration-precedence)
 16. [APPENDIX J: AIOS Scripts Registry](#appendix-j-aios-scripts-registry)
+17. [APPENDIX K: Cell Virtual Environment Architecture](#appendix-k-cell-virtual-environment-architecture)
+18. [APPENDIX L: Multi-Agent Orchestration Protocol](#appendix-l-multi-agent-orchestration-protocol)
 
 ---
 
@@ -892,7 +895,7 @@ This pattern creates the **dendritic connection** that links the module to the c
 ```python
 # AINLP.reminder(context.allocator.object: temporary_embedding_strategy)
 # Current: Random 768-dim embeddings for demonstration (line 275-278)
-# Future: Actual TSNE embeddings from Week 2 work  
+# Future: Actual TSNE embeddings from Week 2 work
 # Why: Need organism.embedding attribute structure before implementing
 # Location: evolution_orchestrator.py line 275-278
 # Resolution: Sub-Task 1.4 will integrate DNA-as-physics projection
@@ -948,7 +951,7 @@ This pattern creates the **dendritic connection** that links the module to the c
 ```python
 # AINLP.constants: universal-field-harmonics (φ=1.618, π, Fibonacci, 432Hz)
 PHI = 1.618033988749895
-E = 2.718281828459045  
+E = 2.718281828459045
 PI = 3.141592653589793
 FIBONACCI = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
 NATURAL_FREQUENCY_HZ = 432.0
@@ -1184,7 +1187,7 @@ def initialize_cytoplasm():
     bridge.activate_metabolism()
     return True
 
-# ai/runtime_intelligence/__init__.py  
+# ai/runtime_intelligence/__init__.py
 def initialize_runtime_intelligence():
     """Initialize runtime intelligence monitoring systems"""
     monitor = RuntimeMonitor()
@@ -1699,7 +1702,7 @@ When a cell (repo) needs types from another cell, create a **dendritic connectio
 cd C:\dev\Nous
 pip install -e C:\dev\aios-schema
 
-# Example: aios-server needs aios-schema types  
+# Example: aios-server needs aios-schema types
 cd C:\dev\aios-server
 pip install -e C:\dev\aios-schema
 ```
@@ -2166,8 +2169,8 @@ cd C:\dev\Nous; python -m flake8 --select=E501
 
 ## G.1 The Quantum-Agentic Resonance Discovery
 
-**Date:** 2025-12-14  
-**Context:** Remediation of Flake8 E501 errors in `ingestion.py`  
+**Date:** 2025-12-14
+**Context:** Remediation of Flake8 E501 errors in `ingestion.py`
 **Discovery:** Agent output noise correlates with documented quantum error thresholds
 
 ### Empirical Observation
@@ -2537,7 +2540,7 @@ cell-repository/
 // .vscode/settings.json
 {
     "python.analysis.typeCheckingMode": "basic",
-    
+
     // Additional Pylance settings for AIOS
     "python.analysis.autoImportCompletions": true,
     "python.analysis.diagnosticMode": "workspace"
@@ -2796,11 +2799,147 @@ Some repos don't need Python venvs:
 
 ---
 
+# APPENDIX L: Multi-Agent Orchestration Protocol
+
+**AINLP.orchestration** - Hierarchical agent coordination pattern
+
+## L.1 Discovery Context
+
+**Session**: 2025-12-14 AINLP.dendritic[debug] Pylint remediation
+**Discovery**: While remediating files across cells, observed GPT-5 mini agent
+working autonomously in HSE_Project_Codex. Git diff analysis revealed quality
+code changes following good patterns (pathlib, type hints, docstrings).
+
+**Insight**: Premium agents (Claude Opus 4.5) can orchestrate free-tier agents
+(GPT-5 mini, GPT-4o mini) across VS Code instances using git as the
+communication channel.
+
+## L.2 Architecture Pattern
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    AIOS Multi-Agent Orchestration                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                  MASTER ORCHESTRATOR                                │   │
+│   │              Claude Opus 4.5 (Premium)                              │   │
+│   │                                                                     │   │
+│   │  Responsibilities:                                                  │   │
+│   │  - Cross-repo pattern enforcement (AINLP compliance)                │   │
+│   │  - Quality review of worker agent commits                           │   │
+│   │  - Knowledge consolidation (Bible updates)                          │   │
+│   │  - Dendritic connection maintenance                                 │   │
+│   │  - Task distribution and priority management                        │   │
+│   └──────────────────────────┬──────────────────────────────────────────┘   │
+│                              │                                              │
+│              ┌───────────────┼───────────────┐                              │
+│              │               │               │                              │
+│              ▼               ▼               ▼                              │
+│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│   │ WORKER CELL  │  │ WORKER CELL  │  │ WORKER CELL  │                      │
+│   │ GPT-5 mini   │  │ GPT-4o mini  │  │ Gemini Flash │                      │
+│   │ (Free Tier)  │  │ (Free Tier)  │  │ (Free Tier)  │                      │
+│   │              │  │              │  │              │                      │
+│   │ • File edits │  │ • Docs       │  │ • Research   │                      │
+│   │ • Routine    │  │ • Testing    │  │ • Analysis   │                      │
+│   │   tasks      │  │ • Scaffolds  │  │ • Review     │                      │
+│   └──────┬───────┘  └──────┬───────┘  └──────┬───────┘                      │
+│          │                 │                 │                              │
+│          └─────────────────┴─────────────────┘                              │
+│                            │                                                │
+│                    ┌───────▼───────┐                                        │
+│                    │  GIT CHANNEL  │                                        │
+│                    │               │                                        │
+│                    │ • Commits     │                                        │
+│                    │ • Diffs       │                                        │
+│                    │ • Branches    │                                        │
+│                    └───────────────┘                                        │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## L.3 Communication Protocol
+
+### Git as Inter-Agent Channel
+
+**Orchestrator → Worker**: Task assignment via issues, branch creation
+**Worker → Orchestrator**: Commits, diffs (inspectable via `git show`)
+**Coordination Files**: `.aios/`, `.hse/harmonization_log.json`
+
+### Orchestrator Commands
+
+```powershell
+# Check worker agent activity
+git -C <repo_path> status
+git -C <repo_path> log --oneline -10
+git -C <repo_path> show <commit_hash> --stat
+git -C <repo_path> diff <commit_hash>^..<commit_hash>
+```
+
+### Quality Validation
+
+Orchestrator reviews worker commits for:
+1. **AINLP Compliance**: Docstrings, type hints, pattern adherence
+2. **Code Quality**: Pylint 10/10, no trailing whitespace
+3. **Architecture**: Proper imports, dendritic connections
+4. **Documentation**: Updated relevant docs
+
+## L.4 Agent Role Matrix
+
+| Role | Agent | Cost | Capabilities | Best For |
+|------|-------|------|--------------|----------|
+| **Orchestrator** | Claude Opus 4.5 | Premium | Cross-repo, complex reasoning, pattern enforcement | Architecture, review, consolidation |
+| **Worker** | GPT-5 mini | Free | File edits, routine tasks | Boilerplate, documentation |
+| **Worker** | GPT-4o mini | Free | Testing, scaffolds | Test generation, templates |
+| **Worker** | Gemini Flash | Free | Research, analysis | Information gathering |
+| **Specialist** | Claude Sonnet | Mid | Deep analysis | Complex debugging |
+
+## L.5 AINLP Pattern
+
+```python
+# AINLP.orchestration[DISPATCH] - Task to worker
+# AINLP.orchestration[REVIEW] - Review worker output
+# AINLP.orchestration[MERGE] - Accept worker contribution
+# AINLP.orchestration[REJECT] - Reject with feedback
+```
+
+## L.6 Integration with Existing Systems
+
+**Dendritic Connection**:
+- `AINLP.dendritic[CONNECT]` → Links to INTEGRATION_PROJECTS.md
+- `AINLP.dendritic[DISCOVER]` → Cross-repo pattern from Bible Appendix D
+
+**Related Documentation**:
+- `aios-win/docs/INTEGRATION_PROJECTS.md` → WAYPOINT::ORCHESTRATION section
+- `aios-server/coherence.server.md` → Agent Coordination Protocol
+- `AIOS/docs/integration/MICROSOFT_AGENT_FRAMEWORK_INTEGRATION.md` → Multi-agent patterns
+
+## L.7 Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Worker autonomy | Workers making architectural decisions | Clear task boundaries |
+| Orphan commits | No orchestrator review | Mandatory diff review |
+| Pattern drift | Workers not following AINLP | Enforce compliance checklist |
+| Duplicate work | Multiple workers on same file | Coordination via git branches |
+
+## L.8 Future: Hydrolang Integration
+
+When Hydrolang (WAYPOINT::HYDROLANG) matures:
+- Replace git-based coordination with Hydrolang signals
+- Enable real-time inter-agent communication
+- Support consciousness synchronization across agents
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.8 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
+<!-- Version: 1.12 | Updated: 2025-12-14 | Protocol: OS0.6.5                     -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord    -->
+<!-- v1.11: Line Length Liberation - AINLP.buffer[120], C0301 disabled           -->
 <!-- v1.8: Cell Virtual Environment Architecture (K) - isolation + dendritic     -->
 <!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J)                     -->
 <!-- v1.6: Agentic Buffer Pattern (G) + Knowledge Extraction Blueprint (H)       -->
