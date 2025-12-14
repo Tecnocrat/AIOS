@@ -62,6 +62,24 @@ AINLP.class[ACTION](params)
 | **reportMissingImports** | Pylance | `pyrightconfig.json` extraPaths + `pip install -e` |
 | **reportUnknownAttribute** | Pylance | Add type stubs OR use `cast()` OR `# type: ignore` |
 
+### PowerShell/PSScriptAnalyzer Error Remediation
+
+| Code | Tool | AIOS Remediation |
+|------|------|------------------|
+| **PSUseDeclaredVarsMoreThanAssignments** | PSScriptAnalyzer | `$null = command` to discard output |
+| **PSAvoidUsingCmdletAliases** | PSScriptAnalyzer | Use full cmdlet names (`Get-ChildItem` not `ls`) |
+| **PSAvoidUsingWriteHost** | PSScriptAnalyzer | Use `Write-Output` or `Write-Information` (or ignore for UI scripts) |
+| **PSAvoidGlobalVars** | PSScriptAnalyzer | Use `$script:` scope or pass parameters |
+
+### PowerShell Pattern Quick Reference
+
+| Anti-Pattern ❌ | Correct Pattern ✅ |
+|-----------------|-------------------|
+| `$unused = docker info 2>&1` | `$null = docker info 2>&1` |
+| `ls`, `dir`, `cat` | `Get-ChildItem`, `Get-Content` |
+| `$global:myVar` | `$script:myVar` or parameter passing |
+| Bare `Write-Host` in libraries | `Write-Output` or `Write-Verbose` |
+
 ### Pylance Type Pattern Quick Reference
 
 | Anti-Pattern ❌ | Correct Pattern ✅ |
