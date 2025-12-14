@@ -1369,7 +1369,7 @@ Track which cells have established dendritic connections:
 | Cell (Consumer) | Axon (Provider) | Connection | Date | Status |
 |-----------------|-----------------|------------|------|--------|
 | **Nous** | aios-schema | `pip install -e` + pyrightconfig + .vscode | 2025-12-14 | ✅ FULL |
-| aios-server | aios-schema | (pending) | — | ⏳ TODO |
+| **aios-server** | aios-schema | `pip install -e` + pyrightconfig + .vscode | 2025-12-14 | ✅ FULL |
 | aios-api | aios-schema | (pending) | — | ⏳ TODO |
 | AIOS | aios-schema | (pending) | — | ⏳ TODO |
 
