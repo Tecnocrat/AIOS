@@ -20,6 +20,7 @@ import json
 # Add paths for integration
 current_dir = os.path.dirname(__file__)
 ai_path = os.path.join(current_dir, '..', '..', 'ai')
+<<<<<<< HEAD
 ri_path = os.path.join(current_dir, '..', '..', 'runtime_intelligence')
 sys.path.append(ai_path)
 sys.path.append(ri_path)
@@ -27,13 +28,26 @@ sys.path.append(ri_path)
 try:
     from dendritic_supervisor import (
         get_runtime_intelligence_dendritic_integration,
+=======
+ri_path = os.path.join(current_dir, '..', '..', 'runtime')
+ai_root = os.path.dirname(current_dir)  # ai
+sys.path.insert(0, ai_root)
+
+try:
+    from tools.consciousness.dendritic_supervisor import (
+        get_runtime_dendritic_integration,
+>>>>>>> origin/OS0.6.2.grok
         get_enhanced_visual_intelligence_bridge
     )
     INTEGRATIONS_AVAILABLE = True
 except ImportError as e:
     logging.warning(f"Some integrations not available: {e}")
     INTEGRATIONS_AVAILABLE = False
+<<<<<<< HEAD
     get_runtime_intelligence_dendritic_integration = None
+=======
+    get_runtime_dendritic_integration = None
+>>>>>>> origin/OS0.6.2.grok
     get_enhanced_visual_intelligence_bridge = None
 
 
@@ -61,7 +75,11 @@ class AIOSArchitectureMonitor:
             'ai_intelligence': 'unknown',
             'core_engine': 'unknown',
             'interface': 'unknown',
+<<<<<<< HEAD
             'runtime_intelligence': 'unknown',
+=======
+            'runtime': 'unknown',
+>>>>>>> origin/OS0.6.2.grok
             'integration_bridges': 'unknown'
         }
     
@@ -92,9 +110,15 @@ class AIOSArchitectureMonitor:
             # Initialize dendritic integration
             try:
                 if (INTEGRATIONS_AVAILABLE and
+<<<<<<< HEAD
                         get_runtime_intelligence_dendritic_integration):
                     self.dendritic_integration = await (
                         get_runtime_intelligence_dendritic_integration()
+=======
+                        get_runtime_dendritic_integration):
+                    self.dendritic_integration = await (
+                        get_runtime_dendritic_integration()
+>>>>>>> origin/OS0.6.2.grok
                     )
                     self.component_statuses['dendritic_supervisor'] = 'active'
                     self.logger.info(
@@ -113,7 +137,11 @@ class AIOSArchitectureMonitor:
                     self.visual_bridge = await (
                         get_enhanced_visual_intelligence_bridge()
                     )
+<<<<<<< HEAD
                     self.component_statuses['runtime_intelligence'] = 'active'
+=======
+                    self.component_statuses['runtime'] = 'active'
+>>>>>>> origin/OS0.6.2.grok
                     self.logger.info(
                         " Enhanced visual intelligence bridge active"
                     )
@@ -121,7 +149,11 @@ class AIOSArchitectureMonitor:
                     raise Exception("Visual bridge functions not available")
             except Exception as e:
                 self.logger.warning(f" Visual bridge unavailable: {e}")
+<<<<<<< HEAD
                 self.component_statuses['runtime_intelligence'] = 'limited'
+=======
+                self.component_statuses['runtime'] = 'limited'
+>>>>>>> origin/OS0.6.2.grok
             
             return True
             
@@ -151,8 +183,13 @@ class AIOSArchitectureMonitor:
             )
             
             # Check Runtime Intelligence
+<<<<<<< HEAD
             status['components']['runtime_intelligence'] = (
                 await self._check_runtime_intelligence()
+=======
+            status['components']['runtime'] = (
+                await self._check_runtime()
+>>>>>>> origin/OS0.6.2.grok
             )
             
             # Check AI Intelligence Component
@@ -207,7 +244,11 @@ class AIOSArchitectureMonitor:
                 'aios_models': os.path.exists(
                     os.path.join(interface_path, 'AIOS.Models')
                 ),
+<<<<<<< HEAD
                 'runtime_intelligence_service': os.path.exists(
+=======
+                'runtime_service': os.path.exists(
+>>>>>>> origin/OS0.6.2.grok
                     os.path.join(
                         interface_path, 'AIOS.Services',
                         'RuntimeIntelligenceService.cs'
@@ -236,7 +277,11 @@ class AIOSArchitectureMonitor:
                 'health_score': 0.0
             }
     
+<<<<<<< HEAD
     async def _check_runtime_intelligence(self) -> Dict[str, Any]:
+=======
+    async def _check_runtime(self) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Check Runtime Intelligence status."""
         try:
             status = {
@@ -601,8 +646,13 @@ class AIOSArchitectureMonitor:
         try:
             if supercell_name == 'interface_supercell':
                 return await self._check_interface_supercell()
+<<<<<<< HEAD
             elif supercell_name == 'runtime_intelligence':
                 return await self._check_runtime_intelligence()
+=======
+            elif supercell_name == 'runtime':
+                return await self._check_runtime()
+>>>>>>> origin/OS0.6.2.grok
             elif supercell_name == 'ai_intelligence_supercell':
                 return await self._check_ai_intelligence_supercell()
             elif supercell_name == 'core_engine_supercell':
@@ -614,7 +664,11 @@ class AIOSArchitectureMonitor:
                     'error': f'Unknown supercell: {supercell_name}',
                     'available_supercells': [
                         'interface_supercell',
+<<<<<<< HEAD
                         'runtime_intelligence',
+=======
+                        'runtime',
+>>>>>>> origin/OS0.6.2.grok
                         'ai_intelligence_supercell',
                         'core_engine_supercell',
                         'evolution_lab_supercell'

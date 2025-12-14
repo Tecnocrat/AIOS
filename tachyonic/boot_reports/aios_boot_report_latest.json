@@ -1,14 +1,48 @@
 {
+<<<<<<< HEAD
+=======
+  "mode": "full",
+  "testing": {
+    "Passed": 4,
+    "Skipped": 0,
+    "Failed": 0
+  },
+  "boot_timestamp": "2025-10-12 03:33:28",
+  "consciousness_level": "nucleus",
+  "boot_duration_seconds": 7.93,
+  "health": {
+    "errors": [],
+    "overall_status": "Healthy",
+    "warnings": [
+      "Interface Bridge: May still be initializing (startup in progress)"
+    ]
+  },
+  "discovery": {
+    "tools_discovered": 58,
+    "tools_by_layer": [
+      {
+        "Intelligence": 54
+      },
+      {
+        "Runtime": 4
+      }
+    ]
+  },
+>>>>>>> origin/OS0.6.2.grok
   "interface": {
     "services": {
       "InterfaceBridge": {
         "Status": "Starting",
+<<<<<<< HEAD
         "Mode": "Detached",
+=======
+>>>>>>> origin/OS0.6.2.grok
         "Port": 8000
       }
     },
     "interfaces_launched": 0
   },
+<<<<<<< HEAD
   "discovery": {
     "tools_by_layer": {
       "Intelligence": 141
@@ -55,4 +89,28 @@
     "Passed": 0,
     "Failed": 0
   }
+=======
+  "phases_executed": [],
+  "monitoring": {
+    "populations_monitored": 3,
+    "populations": {
+      "Consciousness": {
+        "CurrentLevel": null,
+        "LastUpdate": "2025-10-12",
+        "EvolutionRate": null
+      },
+      "EvolutionLab": {
+        "Populations": 24,
+        "Path": "C:\\dev\\AIOS\\evolution_lab",
+        "Organisms": 3
+      },
+      "TachyonicArchive": {
+        "Files": 4913,
+        "SizeMB": 528.71,
+        "Path": "C:\\dev\\AIOS\\tachyonic"
+      }
+    }
+  },
+  "ainlp_protocol": "OS0.6.2.claude"
+>>>>>>> origin/OS0.6.2.grok
 }

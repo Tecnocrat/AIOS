@@ -6,7 +6,10 @@ Analyzes text with emergent pattern recognition
 
 import re
 import string
+<<<<<<< HEAD
 import sys
+=======
+>>>>>>> origin/OS0.6.2.grok
 from collections import Counter
 from typing import Dict, List, Any
 

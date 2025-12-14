@@ -54,7 +54,11 @@ class CoreEngineRootCleanup:
         self.essential_root_dirs = {
             "analysis_tools", "bin", "bridges", "build", "configuration",
             "core_systems", "documentation", "evolutionary_assembler_iter2",
+<<<<<<< HEAD
             "evolutionary_assembler_iter3", "include", "obj", "runtime_intelligence",
+=======
+            "evolutionary_assembler_iter3", "include", "obj", "runtime",
+>>>>>>> origin/OS0.6.2.grok
             "src", "tachyonic_archive", "tests", "__pycache__"
         }
         

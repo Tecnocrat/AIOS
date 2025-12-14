@@ -28,11 +28,16 @@ Examples:
   python maintenance_cli.py analyze               # Quick analysis
   python maintenance_cli.py search "api"          # Search archives
   python maintenance_cli.py restore HASH file.md  # Restore from archive
+<<<<<<< HEAD
         """,
+=======
+        """
+>>>>>>> origin/OS0.6.2.grok
     )
 
     parser.add_argument(
         "command",
+<<<<<<< HEAD
         choices=[
             "optimize",
             "analyze",
@@ -51,20 +56,50 @@ Examples:
 
     parser.add_argument(
         "filename", nargs="?", help="Target filename for restore operation"
+=======
+        choices=["optimize", "analyze", "search", "restore", "quick_optimize", "get_archive_info", "status"],
+        help="Maintenance operation to perform"
+    )
+
+    parser.add_argument(
+        "query",
+        nargs="?",
+        help="Search query or content hash for restore"
+    )
+
+    parser.add_argument(
+        "filename",
+        nargs="?",
+        help="Target filename for restore operation"
+>>>>>>> origin/OS0.6.2.grok
     )
 
     parser.add_argument(
         "--workspace",
         default="../../..",
+<<<<<<< HEAD
         help="Path to AIOS workspace root (default: ../../..)",
     )
 
     parser.add_argument("--category", help="Category filter for search operations")
+=======
+        help="Path to AIOS workspace root (default: ../../..)"
+    )
+
+    parser.add_argument(
+        "--category",
+        help="Category filter for search operations"
+    )
+>>>>>>> origin/OS0.6.2.grok
 
     parser.add_argument(
         "--no-report",
         action="store_true",
+<<<<<<< HEAD
         help="Skip saving detailed report for optimize command",
+=======
+        help="Skip saving detailed report for optimize command"
+>>>>>>> origin/OS0.6.2.grok
     )
 
     args = parser.parse_args()
@@ -132,9 +167,15 @@ Examples:
 
 def print_optimization_result(result: dict):
     """Print optimization results in a user-friendly format."""
+<<<<<<< HEAD
     print("\n" + "=" * 60)
     print(" AIOS TACHYONIC OPTIMIZATION RESULTS")
     print("=" * 60)
+=======
+    print("\n" + "="*60)
+    print(" AIOS TACHYONIC OPTIMIZATION RESULTS")
+    print("="*60)
+>>>>>>> origin/OS0.6.2.grok
 
     summary = result.get("summary", {})
 
@@ -157,9 +198,15 @@ def print_optimization_result(result: dict):
 
 def print_analysis_result(result: dict):
     """Print analysis results in a user-friendly format."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print(" AIOS SYSTEM ANALYSIS")
     print("=" * 50)
+=======
+    print("\n" + "="*50)
+    print(" AIOS SYSTEM ANALYSIS")
+    print("="*50)
+>>>>>>> origin/OS0.6.2.grok
 
     doc_analysis = result.get("documentation_analysis", {})
     archive_status = result.get("archive_status", {})
@@ -178,6 +225,7 @@ def print_analysis_result(result: dict):
 
 def print_search_result(result: dict):
     """Print search results in a user-friendly format."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print(" ARCHIVE SEARCH RESULTS")
     print("=" * 50)
@@ -190,23 +238,49 @@ def print_search_result(result: dict):
     if result["results_count"] > 0:
         print("\n Matching Documents:")
         for i, doc in enumerate(result["results"][:10], 1):  # Show first 10
+=======
+    print("\n" + "="*50)
+    print(" ARCHIVE SEARCH RESULTS")
+    print("="*50)
+
+    print(f" Query: {result['query']}")
+    if result.get('category_filter'):
+        print(f" Category: {result['category_filter']}")
+    print(f" Results: {result['results_count']} documents found")
+
+    if result['results_count'] > 0:
+        print("\n Matching Documents:")
+        for i, doc in enumerate(result['results'][:10], 1):  # Show first 10
+>>>>>>> origin/OS0.6.2.grok
             print(f"  {i}. {doc['filename']}")
             print(f"     Hash: {doc['content_hash'][:16]}...")
             print(f"     Category: {doc['category']}")
             print(f"     Archived: {doc['archive_timestamp']}")
             print()
 
+<<<<<<< HEAD
         if result["results_count"] > 10:
+=======
+        if result['results_count'] > 10:
+>>>>>>> origin/OS0.6.2.grok
             print(f"  ... and {result['results_count'] - 10} more documents")
 
 
 def print_restore_result(result: dict):
     """Print restore results in a user-friendly format."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print(" CONTENT RESTORATION")
     print("=" * 50)
 
     if result["success"]:
+=======
+    print("\n" + "="*50)
+    print(" CONTENT RESTORATION")
+    print("="*50)
+
+    if result['success']:
+>>>>>>> origin/OS0.6.2.grok
         print(f" Content successfully restored")
         print(f" File: {result['restore_path']}")
         print(f" Hash: {result['content_hash']}")
@@ -218,6 +292,7 @@ def print_restore_result(result: dict):
 
 def print_quick_optimization_result(result: dict):
     """Print quick optimization results in a user-friendly format."""
+<<<<<<< HEAD
     print("\n" + "=" * 60)
     print(" AIOS QUICK OPTIMIZATION RESULTS")
     print("=" * 60)
@@ -227,6 +302,15 @@ def print_quick_optimization_result(result: dict):
     print(
         f" Quick Optimization Complete: {summary.get('optimization_successful', False)}"
     )
+=======
+    print("\n" + "="*60)
+    print(" AIOS QUICK OPTIMIZATION RESULTS")
+    print("="*60)
+
+    summary = result.get("summary", {})
+
+    print(f" Quick Optimization Complete: {summary.get('optimization_successful', False)}")
+>>>>>>> origin/OS0.6.2.grok
     print(f" Optimized File Count: {summary.get('optimized_file_count', 0)}")
     print(f" Fragmentation Score: {summary.get('fragmentation_score', 1.0):.3f}")
 
@@ -239,9 +323,15 @@ def print_quick_optimization_result(result: dict):
 
 def print_archive_info(result: dict):
     """Print archive information in a user-friendly format."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print(" ARCHIVE INFORMATION")
     print("=" * 50)
+=======
+    print("\n" + "="*50)
+    print(" ARCHIVE INFORMATION")
+    print("="*50)
+>>>>>>> origin/OS0.6.2.grok
 
     archive_info = result.get("archive_info", {})
 
@@ -249,20 +339,35 @@ def print_archive_info(result: dict):
     print(f" Total Size: {archive_info.get('total_size_bytes', 0)} bytes")
     print(f" Last Updated: {archive_info.get('last_updated', 'N/A')}")
 
+<<<<<<< HEAD
     if archive_info.get("documents"):
         print("\n Documents:")
         for doc in archive_info["documents"][:10]:  # Show first 10 documents
             print(f"  - {doc['filename']} (Hash: {doc['content_hash'][:16]}...)")
 
         if len(archive_info["documents"]) > 10:
+=======
+    if archive_info.get('documents'):
+        print("\n Documents:")
+        for doc in archive_info['documents'][:10]:  # Show first 10 documents
+            print(f"  - {doc['filename']} (Hash: {doc['content_hash'][:16]}...)")
+
+        if len(archive_info['documents']) > 10:
+>>>>>>> origin/OS0.6.2.grok
             print(f"  ... and {len(archive_info['documents']) - 10} more documents")
 
 
 def print_system_status(result: dict):
     """Print system status in a user-friendly format."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print(" SYSTEM STATUS")
     print("=" * 50)
+=======
+    print("\n" + "="*50)
+    print(" SYSTEM STATUS")
+    print("="*50)
+>>>>>>> origin/OS0.6.2.grok
 
     status = result.get("status", {})
 

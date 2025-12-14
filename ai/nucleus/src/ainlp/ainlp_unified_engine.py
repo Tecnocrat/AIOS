@@ -12,10 +12,19 @@ This module consolidates all AINLP functionality including:
 
 Merged from files: ['ainlp_compressor_engine.py', 'ainlp_enhanced_compressor.py', 'ainlp_paradigm_engine.py', 'ainlp_paradigm_executable_20250710_223651.py', 'ainlp_simple_compressor.py', 'ainlp_test_command_field.py', 'ainlp_ultimate_compressor.py', 'test_ainlp_refresh_context.py']
 """
+<<<<<<< HEAD
 import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict
+=======
+import ast
+import json
+import sys
+from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Set
+>>>>>>> origin/OS0.6.2.grok
 
 from .utils import get_logger
 

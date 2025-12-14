@@ -18,6 +18,7 @@ from .intelligence_dashboard import (
     IntelligenceShowcase,
     ToolInfo,
     ToolStatus,
+<<<<<<< HEAD
     ComponentLayer,
 )
 
@@ -30,4 +31,18 @@ __all__ = [
     "ToolInfo",
     "ToolStatus",
     "ComponentLayer",
+=======
+    ComponentLayer
+)
+
+__all__ = [
+    'UnifiedDashboard',
+    'ToolDiscovery',
+    'WorkflowExecutor',
+    'ArchitectureHealthMonitor',
+    'IntelligenceShowcase',
+    'ToolInfo',
+    'ToolStatus',
+    'ComponentLayer'
+>>>>>>> origin/OS0.6.2.grok
 ]

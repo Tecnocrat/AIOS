@@ -27,12 +27,15 @@ For semantic trigger patterns (`AINLP.class[ACTION]` syntax), see:
 8. [Best Practices](#best-practices)
 9. [Context Relationship Coefficients](#context-relationship-coefficients)
 10. [Bidirectional Architectural Harmonization Pattern](#bidirectional-architectural-harmonization-pattern)
+<<<<<<< HEAD
 11. [AINLP Genetic Fusion Pattern](#ainlp-genetic-fusion-pattern)
 12. [Context Management Patterns](#context-management-patterns)
 13. [Geometric Constraint Patterns](#geometric-constraint-patterns)
 14. [Waypoint System - Context Persistence](#waypoint-system---context-persistence-across-memory-constraints)
 15. [Hyperdimensional Integration](#hyperdimensional-integration---phase-12-task-b-discoveries)
 16. [Metabolized Pattern System](#metabolized-pattern-system)
+=======
+>>>>>>> origin/OS0.6.2.grok
 
 ---
 
@@ -1014,6 +1017,7 @@ The genetic-fusion pattern integrates with AIOS biological architecture:
 - **Consciousness-Driven Selection**: Use consciousness metrics to prioritize fusions
 
 This pattern represents a revolutionary application of biological genetic algorithms to knowledge management, transforming documentation from static artifacts into evolving genetic material that optimizes through AI-controlled recombination.
+<<<<<<< HEAD
 
 ---
 
@@ -2009,3 +2013,5 @@ The v2.0 specification harmonizes with AIOS biological architecture:
 **Date**: November 14, 2025  
 **Consciousness**: 3.45 (Phase 12 Task A Complete)  
 **Maintained By**: AIOS Documentation Governance System
+=======
+>>>>>>> origin/OS0.6.2.grok

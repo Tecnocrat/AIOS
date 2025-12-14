@@ -3,9 +3,12 @@
     // Workspace settings in AIOS.code-workspace take precedence
 
     // Minimal Python settings (workspace controls environment)
+<<<<<<< HEAD
     "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
     },
+=======
+>>>>>>> origin/OS0.6.2.grok
     "python.analysis.extraPaths": [
         "./ai/src",
         "./ai/src/core",
@@ -246,6 +249,7 @@
     // AI Context Auto-Loading for GitHub Copilot
     "github.copilot.advanced": {
         "contextualFilterEnable": true,
+<<<<<<< HEAD
         "contextualFilterThreshold": 0.5,
         "debug.overrideEngine": "claude-sonnet-4.5",
         "agentDefinitions": [
@@ -278,6 +282,12 @@
     "problems.showCurrentInStatus": true,
     "problems.maxNumberOfProblems": 10000,
     "problems.sortOrder": "severity",
+=======
+        "contextualFilterThreshold": 0.5
+    },
+    "github.copilot.chat.localeOverride": "en-US",
+    "github.copilot.chat.welcomeMessage": "never",
+>>>>>>> origin/OS0.6.2.grok
 
     // AINLP Paradigm Enhancement
     "workbench.colorCustomizations": {

@@ -62,6 +62,7 @@ class AINLPIntegrationOptimizer:
             },
             "tools": {
                 "monitoring": [
+<<<<<<< HEAD
                     "runtime_intelligence/tools/aios_architecture_monitor.py",
                     "runtime_intelligence/tools/biological_architecture_monitor.py",
                     "runtime_intelligence/tools/system_health_check.py",
@@ -71,6 +72,17 @@ class AINLPIntegrationOptimizer:
                     "runtime_intelligence/tools/self_similarity_analyzer.py",
                     "runtime_intelligence/tools/consciousness_analysis_report.py",
                     "runtime_intelligence/tools/architectural_compliance_validator.py"
+=======
+                    "runtime/tools/aios_architecture_monitor.py",
+                    "runtime/tools/biological_architecture_monitor.py",
+                    "runtime/tools/system_health_check.py",
+                    "runtime/tools/system_status_report.py"
+                ],
+                "analysis": [
+                    "runtime/tools/self_similarity_analyzer.py",
+                    "runtime/tools/consciousness_analysis_report.py",
+                    "runtime/tools/architectural_compliance_validator.py"
+>>>>>>> origin/OS0.6.2.grok
                 ],
                 "optimization": [
                     "ai/src/integrations/aios_agentic_optimizer.py",
@@ -825,7 +837,11 @@ This analysis implements patterns from:
 - `docs/archive/.../ainlp_ultimate_compressor.py` - Aggressive merging patterns
 - `ai/tools/ainlp_documentation_governance.py` - Similarity thresholds (70%/40%)
 - `tachyonic/.../dev.arch.md` - Core Consolidation (Option A)
+<<<<<<< HEAD
 - `runtime_intelligence/tools/architectural_compliance_validator.py` - 4 core principles
+=======
+- `runtime/tools/architectural_compliance_validator.py` - 4 core principles
+>>>>>>> origin/OS0.6.2.grok
 
 ---
 

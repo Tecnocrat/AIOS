@@ -16,15 +16,21 @@ namespace AIOS.UI
         private readonly AIOS.Services.AIServiceManager? _aiService;
         private readonly AIOS.Services.MaintenanceService? _maintenanceService;
         private readonly ILogger<SimpleMainWindow> _logger;
+<<<<<<< HEAD
         private readonly AILayerClient _aiLayerClient; // Phase 11 Day 1
+=======
+>>>>>>> origin/OS0.6.2.grok
 
         public SimpleMainWindow()
         {
             InitializeComponent();
 
+<<<<<<< HEAD
             // Phase 11 Day 1: Initialize AI Layer Client (port 8000 - server_manager default)
             _aiLayerClient = new AILayerClient("http://localhost:8000");
 
+=======
+>>>>>>> origin/OS0.6.2.grok
             // Initialize services with error handling
             try
             {
@@ -507,6 +513,7 @@ namespace AIOS.UI
                 CodePreview.Text = $"Error loading code: {ex.Message}";
             }
         }
+<<<<<<< HEAD
 
         // Phase 11 Day 1: AI Search functionality
         private async void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -657,5 +664,7 @@ namespace AIOS.UI
                 StatusText.Text = "Error occurred";
             }
         }
+=======
+>>>>>>> origin/OS0.6.2.grok
     }
 }

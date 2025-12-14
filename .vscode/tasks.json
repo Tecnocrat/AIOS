@@ -669,6 +669,7 @@
 				"clear": false
 			},
 			"problemMatcher": []
+<<<<<<< HEAD
 		},
 		{
 			"label": "format-messenger-status",
@@ -715,6 +716,8 @@
 				"clear": false
 			},
 			"problemMatcher": []
+=======
+>>>>>>> origin/OS0.6.2.grok
 		}
 	]
 }

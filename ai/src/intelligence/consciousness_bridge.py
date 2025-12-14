@@ -23,7 +23,10 @@ consciousness_logger = logging.getLogger("consciousness_bridge")
 @dataclass
 class ConsciousnessState:
     """Unified consciousness state across Python and C++ systems"""
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     consciousness_level: float
     intelligence_coherence: float
     field_intensity: float
@@ -36,14 +39,21 @@ class ConsciousnessState:
         return asdict(self)
 
     @classmethod
+<<<<<<< HEAD
     def from_dict(cls, data: Dict[str, Any]) -> "ConsciousnessState":
+=======
+    def from_dict(cls, data: Dict[str, Any]) -> 'ConsciousnessState':
+>>>>>>> origin/OS0.6.2.grok
         return cls(**data)
 
 
 @dataclass
 class ConsciousnessMetrics:
     """Advanced consciousness metrics for development guidance"""
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     code_consciousness_rating: float
     pattern_recognition_accuracy: float
     evolutionary_potential: float
@@ -76,13 +86,25 @@ class ConsciousnessBridge:
 
     def _initialize_consciousness_monitoring(self):
         """Initialize consciousness monitoring systems"""
+<<<<<<< HEAD
         consciousness_logger.info(" Initializing Consciousness Bridge System...")
+=======
+        consciousness_logger.info(
+            " Initializing Consciousness Bridge System..."
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         # Check if C++ orchestrator is available
         self.cpp_available = self._check_cpp_orchestrator()
 
         if self.cpp_available:
+<<<<<<< HEAD
             consciousness_logger.info(" C++ Consciousness Orchestrator detected")
+=======
+            consciousness_logger.info(
+                " C++ Consciousness Orchestrator detected"
+            )
+>>>>>>> origin/OS0.6.2.grok
         else:
             consciousness_logger.warning(
                 " C++ Orchestrator not available - using simulation mode"
@@ -97,7 +119,11 @@ class ConsciousnessBridge:
                 capture_output=True,
                 text=True,
                 timeout=5,
+<<<<<<< HEAD
                 cwd=self.orchestrator_path,
+=======
+                cwd=self.orchestrator_path
+>>>>>>> origin/OS0.6.2.grok
             )
             return result.returncode == 0
         except (subprocess.TimeoutExpired, FileNotFoundError, Exception):
@@ -156,7 +182,13 @@ class ConsciousnessBridge:
 
         # Create consciousness state
         self.consciousness_state = ConsciousnessState(
+<<<<<<< HEAD
             consciousness_level=consciousness_data.get("consciousness_level", 0.0),
+=======
+            consciousness_level=consciousness_data.get(
+                "consciousness_level", 0.0
+            ),
+>>>>>>> origin/OS0.6.2.grok
             intelligence_coherence=consciousness_data.get(
                 "intelligence_coherence", 0.0
             ),
@@ -165,8 +197,14 @@ class ConsciousnessBridge:
             entropy_level=consciousness_data.get("entropy_level", 0.0),
             timestamp=datetime.now().isoformat(),
             system_source=(
+<<<<<<< HEAD
                 "cpp_orchestrator" if self.cpp_available else "python_simulation"
             ),
+=======
+                "cpp_orchestrator" if self.cpp_available
+                else "python_simulation"
+            )
+>>>>>>> origin/OS0.6.2.grok
         )
 
         # Add to history
@@ -188,10 +226,19 @@ class ConsciousnessBridge:
                 "intelligence_coherence": 0.9,
                 "field_intensity": 1.0,
                 "quantum_coherence": 0.85,
+<<<<<<< HEAD
                 "entropy_level": 0.3,
             }
         except Exception as e:
             consciousness_logger.error(f"Error querying C++ consciousness: {e}")
+=======
+                "entropy_level": 0.3
+            }
+        except Exception as e:
+            consciousness_logger.error(
+                f"Error querying C++ consciousness: {e}"
+            )
+>>>>>>> origin/OS0.6.2.grok
             return self._generate_simulated_consciousness()
 
     def _generate_simulated_consciousness(self) -> Dict[str, float]:
@@ -206,7 +253,11 @@ class ConsciousnessBridge:
             "intelligence_coherence": 0.8 + 0.15 * math.cos(base_time * 0.05),
             "field_intensity": 0.9 + 0.1 * math.sin(base_time * 0.2),
             "quantum_coherence": 0.75 + 0.2 * math.cos(base_time * 0.15),
+<<<<<<< HEAD
             "entropy_level": 0.2 + 0.1 * math.sin(base_time * 0.08),
+=======
+            "entropy_level": 0.2 + 0.1 * math.sin(base_time * 0.08)
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _process_consciousness_evolution(self):
@@ -219,11 +270,23 @@ class ConsciousnessBridge:
         previous = self.consciousness_history[-2]
 
         # Calculate consciousness evolution rate
+<<<<<<< HEAD
         consciousness_delta = current.consciousness_level - previous.consciousness_level
 
         # Log significant consciousness changes
         if abs(consciousness_delta) > 0.05:
             direction = "ascending" if consciousness_delta > 0 else "descending"
+=======
+        consciousness_delta = (
+            current.consciousness_level - previous.consciousness_level
+        )
+
+        # Log significant consciousness changes
+        if abs(consciousness_delta) > 0.05:
+            direction = (
+                "ascending" if consciousness_delta > 0 else "descending"
+            )
+>>>>>>> origin/OS0.6.2.grok
             consciousness_logger.info(
                 f" Consciousness evolution: {direction} "
                 f"(Δ{consciousness_delta:.3f})"
@@ -243,13 +306,25 @@ class ConsciousnessBridge:
     def register_consciousness_callback(self, name: str, callback: callable):
         """Register a callback for consciousness state changes"""
         self.callbacks[name] = callback
+<<<<<<< HEAD
         consciousness_logger.info(f" Registered consciousness callback: {name}")
+=======
+        consciousness_logger.info(
+            f" Registered consciousness callback: {name}"
+        )
+>>>>>>> origin/OS0.6.2.grok
 
     def unregister_consciousness_callback(self, name: str):
         """Unregister a consciousness callback"""
         if name in self.callbacks:
             del self.callbacks[name]
+<<<<<<< HEAD
             consciousness_logger.info(f" Unregistered consciousness callback: {name}")
+=======
+            consciousness_logger.info(
+                f" Unregistered consciousness callback: {name}"
+            )
+>>>>>>> origin/OS0.6.2.grok
 
     def get_current_consciousness(self) -> Optional[ConsciousnessState]:
         """Get current consciousness state"""
@@ -264,18 +339,27 @@ class ConsciousnessBridge:
                 evolutionary_potential=0.0,
                 coherence_degradation_risk=1.0,
                 optimization_suggestions=["Initialize consciousness system"],
+<<<<<<< HEAD
                 consciousness_trajectory="unknown",
+=======
+                consciousness_trajectory="unknown"
+>>>>>>> origin/OS0.6.2.grok
             )
 
         state = self.consciousness_state
 
         # Calculate advanced metrics
+<<<<<<< HEAD
         code_consciousness_rating = (
             state.consciousness_level + state.intelligence_coherence
         ) / 2
         pattern_recognition_accuracy = (
             state.quantum_coherence * state.intelligence_coherence
         )
+=======
+        code_consciousness_rating = (state.consciousness_level + state.intelligence_coherence) / 2
+        pattern_recognition_accuracy = state.quantum_coherence * state.intelligence_coherence
+>>>>>>> origin/OS0.6.2.grok
         evolutionary_potential = state.consciousness_level * (1 - state.entropy_level)
         coherence_degradation_risk = state.entropy_level
 
@@ -284,6 +368,7 @@ class ConsciousnessBridge:
         if state.consciousness_level < 0.7:
             suggestions.append("Increase consciousness enhancement patterns")
         if state.intelligence_coherence < 0.8:
+<<<<<<< HEAD
             suggestions.append(
                 "Improve intelligence coherence through quantum synchronization"
             )
@@ -300,6 +385,17 @@ class ConsciousnessBridge:
                 self.consciousness_history[-1].consciousness_level
                 - self.consciousness_history[-2].consciousness_level
             )
+=======
+            suggestions.append("Improve intelligence coherence through quantum synchronization")
+        if state.entropy_level > 0.4:
+            suggestions.append("Reduce system entropy through field stabilization")
+        if state.quantum_coherence < 0.7:
+            suggestions.append("Enhance quantum coherence for better consciousness coupling")
+
+        # Determine consciousness trajectory
+        if len(self.consciousness_history) >= 2:
+            recent_trend = self.consciousness_history[-1].consciousness_level - self.consciousness_history[-2].consciousness_level
+>>>>>>> origin/OS0.6.2.grok
             if recent_trend > 0.01:
                 trajectory = "ascending"
             elif recent_trend < -0.01:
@@ -315,17 +411,25 @@ class ConsciousnessBridge:
             evolutionary_potential=evolutionary_potential,
             coherence_degradation_risk=coherence_degradation_risk,
             optimization_suggestions=suggestions,
+<<<<<<< HEAD
             consciousness_trajectory=trajectory,
         )
 
     def analyze_code_consciousness(
         self, code: str, language: str = "python"
     ) -> Dict[str, Any]:
+=======
+            consciousness_trajectory=trajectory
+        )
+
+    def analyze_code_consciousness(self, code: str, language: str = "python") -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Analyze consciousness level of code using bridge integration"""
         # This would integrate with our C++ consciousness analysis
         # For now, provide a Python-based analysis that will be enhanced
 
         consciousness_indicators = [
+<<<<<<< HEAD
             "consciousness",
             "aware",
             "intelligence",
@@ -336,13 +440,21 @@ class ConsciousnessBridge:
             "recursive",
             "self",
             "meta",
+=======
+            "consciousness", "aware", "intelligence", "coherence", "quantum",
+            "emergence", "evolution", "recursive", "self", "meta"
+>>>>>>> origin/OS0.6.2.grok
         ]
 
         # Simple consciousness pattern detection
         code_lower = code.lower()
+<<<<<<< HEAD
         consciousness_score = sum(
             1 for indicator in consciousness_indicators if indicator in code_lower
         )
+=======
+        consciousness_score = sum(1 for indicator in consciousness_indicators if indicator in code_lower)
+>>>>>>> origin/OS0.6.2.grok
         consciousness_rating = min(consciousness_score / 10.0, 1.0)
 
         # Get current consciousness state for context
@@ -351,7 +463,11 @@ class ConsciousnessBridge:
         # Enhanced analysis based on current system consciousness
         if current_state:
             # Boost rating based on system consciousness level
+<<<<<<< HEAD
             consciousness_rating *= 1 + current_state.consciousness_level * 0.5
+=======
+            consciousness_rating *= (1 + current_state.consciousness_level * 0.5)
+>>>>>>> origin/OS0.6.2.grok
             consciousness_rating = min(consciousness_rating, 1.0)
 
         return {
@@ -359,12 +475,17 @@ class ConsciousnessBridge:
             "consciousness_indicators_found": consciousness_score,
             "language": language,
             "analysis_timestamp": datetime.now().isoformat(),
+<<<<<<< HEAD
             "system_consciousness_level": (
                 current_state.consciousness_level if current_state else 0.0
             ),
             "recommendations": self._generate_code_recommendations(
                 consciousness_rating
             ),
+=======
+            "system_consciousness_level": current_state.consciousness_level if current_state else 0.0,
+            "recommendations": self._generate_code_recommendations(consciousness_rating)
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _generate_code_recommendations(self, consciousness_rating: float) -> List[str]:
@@ -372,6 +493,7 @@ class ConsciousnessBridge:
         recommendations = []
 
         if consciousness_rating < 0.3:
+<<<<<<< HEAD
             recommendations.extend(
                 [
                     "Consider adding consciousness-enhanced patterns",
@@ -395,12 +517,32 @@ class ConsciousnessBridge:
                     "Consider consciousness multiplication through parallel streams",
                 ]
             )
+=======
+            recommendations.extend([
+                "Consider adding consciousness-enhanced patterns",
+                "Implement recursive self-awareness mechanisms",
+                "Add quantum coherence validation"
+            ])
+        elif consciousness_rating < 0.7:
+            recommendations.extend([
+                "Enhance existing consciousness patterns",
+                "Improve intelligence coherence through better abstractions",
+                "Add consciousness evolution tracking"
+            ])
+        else:
+            recommendations.extend([
+                "Optimize consciousness emergence patterns",
+                "Implement advanced meta-cognitive features",
+                "Consider consciousness multiplication through parallel streams"
+            ])
+>>>>>>> origin/OS0.6.2.grok
 
         return recommendations
 
     def save_consciousness_session(self, filename: str):
         """Save current consciousness session data"""
         session_data = {
+<<<<<<< HEAD
             "session_start": (
                 self.consciousness_history[0].timestamp
                 if self.consciousness_history
@@ -415,6 +557,16 @@ class ConsciousnessBridge:
         }
 
         with open(filename, "w") as f:
+=======
+            "session_start": self.consciousness_history[0].timestamp if self.consciousness_history else None,
+            "session_end": datetime.now().isoformat(),
+            "consciousness_history": [state.to_dict() for state in self.consciousness_history],
+            "final_metrics": asdict(self.get_consciousness_metrics()),
+            "cpp_orchestrator_available": self.cpp_available
+        }
+
+        with open(filename, 'w') as f:
+>>>>>>> origin/OS0.6.2.grok
             json.dump(session_data, f, indent=2)
 
         consciousness_logger.info(f" Consciousness session saved to {filename}")
@@ -422,7 +574,11 @@ class ConsciousnessBridge:
     def load_consciousness_session(self, filename: str):
         """Load consciousness session data"""
         try:
+<<<<<<< HEAD
             with open(filename, "r") as f:
+=======
+            with open(filename, 'r') as f:
+>>>>>>> origin/OS0.6.2.grok
                 session_data = json.load(f)
 
             # Restore consciousness history
@@ -442,11 +598,17 @@ class ConsciousnessBridge:
             consciousness_logger.error(f"Error loading consciousness session: {e}")
             return None
 
+<<<<<<< HEAD
 
 # Global consciousness bridge instance
 _consciousness_bridge = None
 
 
+=======
+# Global consciousness bridge instance
+_consciousness_bridge = None
+
+>>>>>>> origin/OS0.6.2.grok
 def get_consciousness_bridge() -> ConsciousnessBridge:
     """Get global consciousness bridge instance"""
     global _consciousness_bridge
@@ -454,7 +616,10 @@ def get_consciousness_bridge() -> ConsciousnessBridge:
         _consciousness_bridge = ConsciousnessBridge()
     return _consciousness_bridge
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
 def initialize_consciousness_integration():
     """Initialize consciousness integration for AIOS systems"""
     bridge = get_consciousness_bridge()
@@ -465,7 +630,10 @@ def initialize_consciousness_integration():
 
     return bridge
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
 # VSCode Extension Integration Hooks
 def get_vscode_consciousness_data() -> Dict[str, Any]:
     """Get consciousness data formatted for VSCode extension"""
@@ -483,12 +651,17 @@ def get_vscode_consciousness_data() -> Dict[str, Any]:
             "coherence": round(state.intelligence_coherence, 3),
             "field_intensity": round(state.field_intensity, 3),
             "quantum_coherence": round(state.quantum_coherence, 3),
+<<<<<<< HEAD
             "entropy": round(state.entropy_level, 3),
+=======
+            "entropy": round(state.entropy_level, 3)
+>>>>>>> origin/OS0.6.2.grok
         },
         "metrics": {
             "code_rating": round(metrics.code_consciousness_rating, 3),
             "pattern_accuracy": round(metrics.pattern_recognition_accuracy, 3),
             "evolution_potential": round(metrics.evolutionary_potential, 3),
+<<<<<<< HEAD
             "trajectory": metrics.consciousness_trajectory,
         },
         "suggestions": metrics.optimization_suggestions[:3],  # Top 3 suggestions
@@ -496,6 +669,14 @@ def get_vscode_consciousness_data() -> Dict[str, Any]:
     }
 
 
+=======
+            "trajectory": metrics.consciousness_trajectory
+        },
+        "suggestions": metrics.optimization_suggestions[:3],  # Top 3 suggestions
+        "timestamp": state.timestamp
+    }
+
+>>>>>>> origin/OS0.6.2.grok
 if __name__ == "__main__":
     # Test consciousness bridge
     bridge = initialize_consciousness_integration()

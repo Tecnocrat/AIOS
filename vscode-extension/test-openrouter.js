@@ -5,6 +5,7 @@
 
 const https = require('https');
 
+<<<<<<< HEAD
 // Load API key from Windows User PATH environment variable
 const API_KEY = process.env.DEEPSEEK_API_KEY;
 
@@ -20,11 +21,17 @@ if (!API_KEY) {
     process.exit(1);
 }
 
+=======
+const API_KEY = "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";
+>>>>>>> origin/OS0.6.2.grok
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 async function testOpenRouterConnection() {
     console.log('🧪 Testing AIOS OpenRouter DeepSeek Integration...');
+<<<<<<< HEAD
     console.log('Key loaded from environment: ' + API_KEY.substring(0, 15) + '...' + API_KEY.substring(API_KEY.length - 10));
+=======
+>>>>>>> origin/OS0.6.2.grok
     
     const testPayload = {
         model: "deepseek/deepseek-chat",

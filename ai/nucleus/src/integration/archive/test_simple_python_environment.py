@@ -16,10 +16,14 @@ sys.path.insert(0, current_dir)
 
 try:
     from robust_python_environment_manager_clean import (
+<<<<<<< HEAD
         RobustPythonEnvironmentManager,
         get_environment_manager,
     )
 
+=======
+        RobustPythonEnvironmentManager, get_environment_manager)
+>>>>>>> origin/OS0.6.2.grok
     print(" Successfully imported environment manager")
 except ImportError as e:
     print(f" Import error: {e}")
@@ -28,9 +32,15 @@ except ImportError as e:
 
 def test_basic_functionality():
     """Test basic environment management functionality."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print("Testing Basic Environment Management")
     print("=" * 50)
+=======
+    print("\n" + "="*50)
+    print("Testing Basic Environment Management")
+    print("="*50)
+>>>>>>> origin/OS0.6.2.grok
 
     # Get manager instance
     manager = get_environment_manager()
@@ -65,14 +75,24 @@ def test_basic_functionality():
     else:
         print("   No active environment set")
 
+<<<<<<< HEAD
     return health["healthy_environments"] > 0
+=======
+    return health['healthy_environments'] > 0
+>>>>>>> origin/OS0.6.2.grok
 
 
 def test_backup_and_recovery():
     """Test backup and recovery functionality."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print("Testing Backup and Recovery")
     print("=" * 50)
+=======
+    print("\n" + "="*50)
+    print("Testing Backup and Recovery")
+    print("="*50)
+>>>>>>> origin/OS0.6.2.grok
 
     with tempfile.TemporaryDirectory() as temp_dir:
         print(f"Using temporary directory: {temp_dir}")
@@ -103,9 +123,15 @@ def test_backup_and_recovery():
 
 def test_environment_verification():
     """Test environment verification and health monitoring."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print("Testing Environment Verification")
     print("=" * 50)
+=======
+    print("\n" + "="*50)
+    print("Testing Environment Verification")
+    print("="*50)
+>>>>>>> origin/OS0.6.2.grok
 
     manager = get_environment_manager()
 
@@ -120,19 +146,32 @@ def test_environment_verification():
         if is_working:
             verified_count += 1
 
+<<<<<<< HEAD
     print(f"\n   {verified_count}/{len(environments)} environments verified as working")
+=======
+    print(
+    f"\n   {verified_count}/{len(environments)} environments verified as working")
+>>>>>>> origin/OS0.6.2.grok
 
     return verified_count > 0
 
 
 def demonstrate_memory_allocation():
     """Demonstrate memory allocation concepts."""
+<<<<<<< HEAD
     print("\n" + "=" * 50)
     print("Memory Allocation Demonstration")
     print("=" * 50)
 
     print(
         """
+=======
+    print("\n" + "="*50)
+    print("Memory Allocation Demonstration")
+    print("="*50)
+
+    print("""
+>>>>>>> origin/OS0.6.2.grok
 Memory allocation in AIOS Python Environment Management:
 
 1. Configuration Storage:
@@ -154,8 +193,12 @@ Memory allocation in AIOS Python Environment Management:
    - Environment snapshots: JSON serialization (~100KB-1MB)
    - Context preservation: Fractal/holographic data structures
    - Recovery data: Compressed state storage
+<<<<<<< HEAD
     """
     )
+=======
+    """)
+>>>>>>> origin/OS0.6.2.grok
 
 
 def run_simple_test_suite():
@@ -191,9 +234,15 @@ def run_simple_test_suite():
     demonstrate_memory_allocation()
 
     # Summary
+<<<<<<< HEAD
     print("\n" + "=" * 65)
     print("TEST SUMMARY")
     print("=" * 65)
+=======
+    print("\n" + "="*65)
+    print("TEST SUMMARY")
+    print("="*65)
+>>>>>>> origin/OS0.6.2.grok
 
     passed = 0
     total = len(test_results)
@@ -210,8 +259,12 @@ def run_simple_test_suite():
 
     if passed == total:
         print(
+<<<<<<< HEAD
             "\n All tests passed! Environment management system is working correctly."
         )
+=======
+        "\n All tests passed! Environment management system is working correctly.")
+>>>>>>> origin/OS0.6.2.grok
         print("\n System Status:")
         print("   Python environment discovery working")
         print("   Environment health monitoring active")
@@ -223,7 +276,12 @@ def run_simple_test_suite():
         print("  1. The system will automatically handle PATH changes")
         print("  2. Environment snapshots are preserved in AIOS context")
         print("  3. Recovery strategies will fix common issues automatically")
+<<<<<<< HEAD
         print("  4. Use prepare_for_os_reinstall() before major system changes")
+=======
+        print(
+        "  4. Use prepare_for_os_reinstall() before major system changes")
+>>>>>>> origin/OS0.6.2.grok
 
     else:
         print(f"\n  {total - passed} test(s) failed. Check issues above.")
@@ -234,12 +292,22 @@ def run_simple_test_suite():
 if __name__ == "__main__":
     success = run_simple_test_suite()
 
+<<<<<<< HEAD
     print("\n" + "=" * 65)
     print("AIOS PYTHON ENVIRONMENT MANAGEMENT READY")
     print("=" * 65)
 
     if success:
         print("The robust Python environment management system is now active and")
+=======
+    print("\n" + "="*65)
+    print("AIOS PYTHON ENVIRONMENT MANAGEMENT READY")
+    print("="*65)
+
+    if success:
+        print(
+        "The robust Python environment management system is now active and")
+>>>>>>> origin/OS0.6.2.grok
         print("integrated with AIOS. It will automatically handle:")
         print("")
         print(" Environment discovery and health monitoring")
@@ -249,6 +317,11 @@ if __name__ == "__main__":
         print(" Integration with AIOS fractal/holographic context")
         print("")
         print("The system is ready to help AIOS self-diagnose and fix coding")
+<<<<<<< HEAD
         print("problems, limitations, and bugs through robust environment handling.")
+=======
+        print(
+        "problems, limitations, and bugs through robust environment handling.")
+>>>>>>> origin/OS0.6.2.grok
 
     sys.exit(0 if success else 1)

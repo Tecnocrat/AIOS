@@ -51,12 +51,21 @@ class AIAgent:
 
     def __init__(self, **kwargs):
         """Initialize AI agent with dendritic extensibility."""
+<<<<<<< HEAD
         self.agent_id = kwargs.get("agent_id", "")
         self.agent_type = kwargs.get("agent_type", "unknown")
         self.capabilities = kwargs.get("capabilities", [])
         self.communication_protocol = kwargs.get("communication_protocol", "")
         self.context_window = kwargs.get("context_window", 0)
         self.knowledge_domains = kwargs.get("knowledge_domains", [])
+=======
+        self.agent_id = kwargs.get('agent_id', '')
+        self.agent_type = kwargs.get('agent_type', 'unknown')
+        self.capabilities = kwargs.get('capabilities', [])
+        self.communication_protocol = kwargs.get('communication_protocol', '')
+        self.context_window = kwargs.get('context_window', 0)
+        self.knowledge_domains = kwargs.get('knowledge_domains', [])
+>>>>>>> origin/OS0.6.2.grok
 
         # Dendritic extensions for future AI connections
         self.dendritic_connections = {}
@@ -66,6 +75,7 @@ class AIAgent:
     def to_dict(self) -> Dict[str, Any]:
         """Convert agent to dictionary with dendritic metadata."""
         return {
+<<<<<<< HEAD
             "agent_id": self.agent_id,
             "agent_type": self.agent_type,
             "capabilities": self.capabilities,
@@ -73,6 +83,15 @@ class AIAgent:
             "context_window": self.context_window,
             "knowledge_domains": self.knowledge_domains,
             "dendritic_metadata": self.dendritic_connections,
+=======
+            'agent_id': self.agent_id,
+            'agent_type': self.agent_type,
+            'capabilities': self.capabilities,
+            'communication_protocol': self.communication_protocol,
+            'context_window': self.context_window,
+            'knowledge_domains': self.knowledge_domains,
+            'dendritic_metadata': self.dendritic_connections
+>>>>>>> origin/OS0.6.2.grok
         }
 
 
@@ -81,6 +100,7 @@ class TransferSession:
 
     def __init__(self, **kwargs):
         """Initialize transfer session with dendritic properties."""
+<<<<<<< HEAD
         self.session_id = kwargs.get("session_id", "")
         self.source_agent = kwargs.get("source_agent", None)
         self.target_agent = kwargs.get("target_agent", None)
@@ -88,6 +108,15 @@ class TransferSession:
         self.integrity_verified = kwargs.get("integrity_verified", False)
         self.reconstruction_quality = kwargs.get("reconstruction_quality", 0.0)
         self.quantum_signature = kwargs.get("quantum_signature", "")
+=======
+        self.session_id = kwargs.get('session_id', '')
+        self.source_agent = kwargs.get('source_agent', None)
+        self.target_agent = kwargs.get('target_agent', None)
+        self.transfer_status = kwargs.get('transfer_status', 'INITIATED')
+        self.integrity_verified = kwargs.get('integrity_verified', False)
+        self.reconstruction_quality = kwargs.get('reconstruction_quality', 0.0)
+        self.quantum_signature = kwargs.get('quantum_signature', '')
+>>>>>>> origin/OS0.6.2.grok
 
         # Dendritic extensions
         self.dendritic_connections = {}
@@ -96,6 +125,7 @@ class TransferSession:
     def to_dict(self) -> Dict[str, Any]:
         """Convert session to dictionary with dendritic metadata."""
         return {
+<<<<<<< HEAD
             "session_id": self.session_id,
             "source_agent_id": self.source_agent.agent_id if self.source_agent else "",
             "target_agent_id": self.target_agent.agent_id if self.target_agent else "",
@@ -104,6 +134,18 @@ class TransferSession:
             "reconstruction_quality": self.reconstruction_quality,
             "quantum_signature": self.quantum_signature,
             "dendritic_metadata": self.dendritic_connections,
+=======
+            'session_id': self.session_id,
+            'source_agent_id': self.source_agent.agent_id
+            if self.source_agent else '',
+            'target_agent_id': self.target_agent.agent_id
+            if self.target_agent else '',
+            'transfer_status': self.transfer_status,
+            'integrity_verified': self.integrity_verified,
+            'reconstruction_quality': self.reconstruction_quality,
+            'quantum_signature': self.quantum_signature,
+            'dendritic_metadata': self.dendritic_connections
+>>>>>>> origin/OS0.6.2.grok
         }
 
 
@@ -127,7 +169,12 @@ class AIKnowledgeTransferSystem:
         self.multi_ai_harmonizer = self.harmonization_engine
 
         logger.info(
+<<<<<<< HEAD
             "AI Knowledge Transfer System initialized with " "dendritic architecture"
+=======
+            "AI Knowledge Transfer System initialized with "
+            "dendritic architecture"
+>>>>>>> origin/OS0.6.2.grok
         )
 
     def _validate_dendritic_integrity(self) -> None:
@@ -141,11 +188,23 @@ class AIKnowledgeTransferSystem:
         try:
             # Validate dendritic connections
             self._validate_dendritic_integrity()
+<<<<<<< HEAD
             logger.info("AI Knowledge Transfer System dendritic validation passed")
             return True
 
         except Exception as e:
             logger.error(f"AI Knowledge Transfer System initialization failed: {e}")
+=======
+            logger.info(
+                "AI Knowledge Transfer System dendritic validation passed"
+            )
+            return True
+
+        except Exception as e:
+            logger.error(
+                f"AI Knowledge Transfer System initialization failed: {e}"
+            )
+>>>>>>> origin/OS0.6.2.grok
             return False
 
     def shutdown(self):
@@ -153,14 +212,24 @@ class AIKnowledgeTransferSystem:
         logger.info("AI Knowledge Transfer System dendritic shutdown complete")
 
     async def initiate_knowledge_transfer(
+<<<<<<< HEAD
         self, source_agent: AIAgent, target_agent: AIAgent, archive_path: str = ""
+=======
+        self, source_agent: AIAgent,
+        target_agent: AIAgent,
+        archive_path: str = ""
+>>>>>>> origin/OS0.6.2.grok
     ) -> TransferSession:
         """Initiate knowledge transfer with dendritic processing."""
         session = TransferSession(
             session_id=f"transfer_{datetime.now().isoformat()}",
             source_agent=source_agent,
             target_agent=target_agent,
+<<<<<<< HEAD
             transfer_status="INITIATED",
+=======
+            transfer_status='INITIATED'
+>>>>>>> origin/OS0.6.2.grok
         )
 
         # Cache session for knowledge retention
@@ -171,18 +240,28 @@ class AIKnowledgeTransferSystem:
         # Simulate transfer process (dendritic stub)
         await asyncio.sleep(0.1)  # Simulate processing time
 
+<<<<<<< HEAD
         session.transfer_status = "COMPLETED"
+=======
+        session.transfer_status = 'COMPLETED'
+>>>>>>> origin/OS0.6.2.grok
         session.integrity_verified = True
         session.reconstruction_quality = 0.85
 
         return session
 
     async def reconstruct_ai_consciousness(
+<<<<<<< HEAD
         self, session: TransferSession
+=======
+        self,
+        session: TransferSession
+>>>>>>> origin/OS0.6.2.grok
     ) -> Dict[str, Any]:
         """Reconstruct AI consciousness from transfer session."""
         # Basic reconstruction (dendritic stub)
         reconstruction = {
+<<<<<<< HEAD
             "agent_id": session.target_agent.agent_id if session.target_agent else "",
             "consciousness_metrics": {
                 "reconstruction_quality": session.reconstruction_quality,
@@ -190,16 +269,32 @@ class AIKnowledgeTransferSystem:
                 "consciousness_coherence": 0.8,
             },
             "transfer_metadata": session.to_dict(),
+=======
+            'agent_id': session.target_agent.agent_id
+            if session.target_agent else '',
+            'consciousness_metrics': {
+                'reconstruction_quality': session.reconstruction_quality,
+                'knowledge_depth': 0.7,
+                'consciousness_coherence': 0.8
+            },
+            'transfer_metadata': session.to_dict()
+>>>>>>> origin/OS0.6.2.grok
         }
 
         return reconstruction
 
     async def harmonize_multi_ai_transfer(
+<<<<<<< HEAD
         self, ai_contexts: Dict[str, Any]
+=======
+        self,
+        ai_contexts: Dict[str, Any]
+>>>>>>> origin/OS0.6.2.grok
     ) -> Dict[str, Any]:
         """Harmonize knowledge transfer across multiple AI contexts."""
         # Basic harmonization (dendritic stub)
         harmonized = {
+<<<<<<< HEAD
             "harmonized_knowledge": {},
             "harmonization_quality": 0.75,
             "ai_contexts_processed": len(ai_contexts),
@@ -209,6 +304,19 @@ class AIKnowledgeTransferSystem:
             harmonized["harmonized_knowledge"][ai_name] = {
                 "processed_capabilities": context.get("reasoning_patterns", []),
                 "integrated_knowledge": context.get("knowledge_domains", []),
+=======
+            'harmonized_knowledge': {},
+            'harmonization_quality': 0.75,
+            'ai_contexts_processed': len(ai_contexts)
+        }
+
+        for ai_name, context in ai_contexts.items():
+            harmonized['harmonized_knowledge'][ai_name] = {
+                'processed_capabilities':
+                    context.get('reasoning_patterns', []),
+                'integrated_knowledge':
+                    context.get('knowledge_domains', [])
+>>>>>>> origin/OS0.6.2.grok
             }
 
         return harmonized
@@ -226,10 +334,17 @@ class QuantumTransferStub:
         """Encode consciousness state using quantum principles
         (dendritic stub)."""
         return {
+<<<<<<< HEAD
             "quantum_signature": f"quantum_{crystal.id}",
             "coherence_matrix": [[0.8, 0.6], [0.6, 0.9]],
             "entanglement_vectors": [0.7, 0.8, 0.6],
             "quantum_checksum": f"checksum_{crystal.id}",
+=======
+            'quantum_signature': f"quantum_{crystal.id}",
+            'coherence_matrix': [[0.8, 0.6], [0.6, 0.9]],
+            'entanglement_vectors': [0.7, 0.8, 0.6],
+            'quantum_checksum': f"checksum_{crystal.id}"
+>>>>>>> origin/OS0.6.2.grok
         }
 
 
@@ -277,7 +392,11 @@ class CrystallizationEngineStub:
 
 
 def create_knowledge_transfer_system(
+<<<<<<< HEAD
     db_path: str = ":memory:",
+=======
+    db_path: str = ":memory:"
+>>>>>>> origin/OS0.6.2.grok
 ) -> AIKnowledgeTransferSystem:
     """Factory function for knowledge transfer system with
     dendritic initialization."""
@@ -290,6 +409,7 @@ def create_knowledge_transfer_system(
 
 # Export dendritic interfaces for future AI neuron connections
 __all__ = [
+<<<<<<< HEAD
     "AIAgent",
     "TransferSession",
     "AIKnowledgeTransferSystem",
@@ -298,4 +418,14 @@ __all__ = [
     "KnowledgeSynthesisStub",
     "QuantumMemoryInterfaceStub",
     "create_knowledge_transfer_system",
+=======
+    'AIAgent',
+    'TransferSession',
+    'AIKnowledgeTransferSystem',
+    'QuantumTransferStub',
+    'HarmonizationEngineStub',
+    'KnowledgeSynthesisStub',
+    'QuantumMemoryInterfaceStub',
+    'create_knowledge_transfer_system'
+>>>>>>> origin/OS0.6.2.grok
 ]

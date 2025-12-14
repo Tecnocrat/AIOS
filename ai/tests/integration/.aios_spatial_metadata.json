@@ -1,0 +1,210 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:21.849968",
+  "folder_info": {
+    "name": "integration",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\tests\\integration",
+    "relative_path": "ai\\tests\\integration",
+    "parent_path": "ai\\tests",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "tests",
+      "integration"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "consciousness",
+      "data",
+      "workbench"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 271341,
+      "file_count": 18,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "integration_test_orchestrator.py",
+          "size": 9867,
+          "modified": "2025-10-04T23:02:51.627379",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_gemini_bridge.py",
+          "size": 2469,
+          "modified": "2025-10-04T14:06:47.083306",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_library_generation.py",
+          "size": 2511,
+          "modified": "2025-10-04T15:48:30.422021",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_ollama_bridge.py",
+          "size": 1721,
+          "modified": "2025-10-04T23:02:51.680502",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_orchestration.py",
+          "size": 18568,
+          "modified": "2025-10-18T23:46:23.787791",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_paradigm_extraction.py",
+          "size": 3112,
+          "modified": "2025-10-04T13:51:03.553223",
+          "category": "consciousness"
+        },
+        {
+          "name": "test_phase_10_4_integration.py",
+          "size": 31862,
+          "modified": "2025-10-11T20:14:22.161266",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 556,
+          "modified": "2025-10-04T22:55:49.893749",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "__init__.py",
+        "size": 556,
+        "modified": "2025-10-04T22:55:49.893749",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "test_orchestration.py",
+        "size": 18568,
+        "modified": "2025-10-18T23:46:23.787791",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_phase_10_4_integration.py",
+        "size": 31862,
+        "modified": "2025-10-11T20:14:22.161266",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_ollama_bridge.py",
+        "size": 1721,
+        "modified": "2025-10-04T23:02:51.680502",
+        "category": "consciousness"
+      },
+      {
+        "name": "integration_test_orchestrator.py",
+        "size": 9867,
+        "modified": "2025-10-04T23:02:51.627379",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 556,
+        "modified": "2025-10-04T22:55:49.893749",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_library_generation.py",
+        "size": 2511,
+        "modified": "2025-10-04T15:48:30.422021",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_gemini_bridge.py",
+        "size": 2469,
+        "modified": "2025-10-04T14:06:47.083306",
+        "category": "consciousness"
+      },
+      {
+        "name": "test_paradigm_extraction.py",
+        "size": 3112,
+        "modified": "2025-10-04T13:51:03.553223",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 8,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > tests > integration",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tests\\integration' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tests\\integration' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tests\\integration' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\tests",
+      "docs\\integration"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

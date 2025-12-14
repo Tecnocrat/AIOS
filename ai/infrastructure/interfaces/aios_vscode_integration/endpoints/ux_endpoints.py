@@ -58,7 +58,13 @@ async def ux_onboarding():
         }
 
         # Cache the onboarding guide
+<<<<<<< HEAD
         await _fractal_cache_manager.set_cached(cache_key, onboarding_guide, ttl=3600)
+=======
+        await _fractal_cache_manager.set_cached(
+            cache_key, onboarding_guide, ttl=3600
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return onboarding_guide
 
@@ -125,12 +131,24 @@ async def ux_help():
                 "Use '/refresh' to update context",
                 "Try '/save' to persist current state",
             ],
+<<<<<<< HEAD
             "contact_support": ("Report issues via GitHub or extension feedback"),
+=======
+            "contact_support": (
+                "Report issues via GitHub or extension feedback"
+            ),
+>>>>>>> origin/OS0.6.2.grok
             "note": "Enhanced help system with fractal intelligence",
         }
 
         # Cache the help guide
+<<<<<<< HEAD
         await _fractal_cache_manager.set_cached(cache_key, help_guide, ttl=1800)
+=======
+        await _fractal_cache_manager.set_cached(
+            cache_key, help_guide, ttl=1800
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return help_guide
 
@@ -207,7 +225,13 @@ async def ux_tutorial():
         }
 
         # Cache the tutorial
+<<<<<<< HEAD
         await _fractal_cache_manager.set_cached(cache_key, tutorial_guide, ttl=3600)
+=======
+        await _fractal_cache_manager.set_cached(
+            cache_key, tutorial_guide, ttl=3600
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return tutorial_guide
 
@@ -272,7 +296,13 @@ async def ux_shortcuts():
         }
 
         # Cache the shortcuts
+<<<<<<< HEAD
         await _fractal_cache_manager.set_cached(cache_key, shortcuts_guide, ttl=7200)
+=======
+        await _fractal_cache_manager.set_cached(
+            cache_key, shortcuts_guide, ttl=7200
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return shortcuts_guide
 
@@ -312,6 +342,7 @@ async def ux_feedback():
             ],
             "rating_scales": {
                 "satisfaction": [
+<<<<<<< HEAD
                     "Very Dissatisfied",
                     "Dissatisfied",
                     "Neutral",
@@ -326,6 +357,18 @@ async def ux_feedback():
                     "Very Easy",
                 ],
                 "performance": ["Very Slow", "Slow", "Moderate", "Fast", "Very Fast"],
+=======
+                    "Very Dissatisfied", "Dissatisfied", "Neutral",
+                    "Satisfied", "Very Satisfied"
+                ],
+                "ease_of_use": [
+                    "Very Difficult", "Difficult", "Moderate",
+                    "Easy", "Very Easy"
+                ],
+                "performance": [
+                    "Very Slow", "Slow", "Moderate", "Fast", "Very Fast"
+                ],
+>>>>>>> origin/OS0.6.2.grok
             },
             "timestamp": datetime.now().isoformat(),
             "anonymous_submission": True,
@@ -334,7 +377,13 @@ async def ux_feedback():
         }
 
         # Cache the feedback form
+<<<<<<< HEAD
         await _fractal_cache_manager.set_cached(cache_key, feedback_form, ttl=3600)
+=======
+        await _fractal_cache_manager.set_cached(
+            cache_key, feedback_form, ttl=3600
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return feedback_form
 

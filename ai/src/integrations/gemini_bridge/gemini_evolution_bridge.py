@@ -15,7 +15,11 @@ import json
 import asyncio
 import logging
 from pathlib import Path
+<<<<<<< HEAD
 from typing import Dict, Any
+=======
+from typing import Dict, Any, List, Optional
+>>>>>>> origin/OS0.6.2.grok
 from datetime import datetime
 
 # Try to import Google Generative AI

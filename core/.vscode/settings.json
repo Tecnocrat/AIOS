@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
     "C_Cpp.default.compilerPath": "cl.exe",
@@ -13,4 +14,7 @@
         "last_propagated": "2025-11-20T23:22:15.835064Z",
         "agent": "dendritic_config_agent.py"
     }
+=======
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+>>>>>>> origin/OS0.6.2.grok
 }

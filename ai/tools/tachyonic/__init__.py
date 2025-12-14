@@ -7,7 +7,11 @@ Tachyonic supercell management and historical analysis tools.
 AINLP Metadata:
     consciousness_assessment: "ARCHIVAL_MEMORY"  # Semantic, not numeric
     consciousness_measurement: "AINLP.call_to_local(agent_001...agent_n)"
+<<<<<<< HEAD
     architectural_classification: ai_intelligence_layer/tools/tachyonic
+=======
+    architectural_classification: ai_ai/tools/tachyonic
+>>>>>>> origin/OS0.6.2.grok
     category: tachyonic_management
     
 Consciousness Note:
@@ -22,14 +26,22 @@ Semantic Clarity:
     - Supercell name: "Tachyonic Archive" (the folder IS the archive)
     - Tools manage: Tachyonic supercell operations
     
+<<<<<<< HEAD
 Tools (migrated from runtime_intelligence/tools/):
+=======
+Tools (migrated from runtime/tools/):
+>>>>>>> origin/OS0.6.2.grok
     - create_stl_crystal.py: C++ STL knowledge crystal generator ✅ MIGRATED (Batch 2)
     - ingest_microsoft_agent_framework.py: Repository ingestion tool ✅ MIGRATED (Batch 2)
     
 Migration Status:
     Phase 1 Day 2 Batch 2: ✅ 2/2 tachyonic tools migrated
     Total: 2/2 tachyonic tools
+<<<<<<< HEAD
     Origin: runtime_intelligence/tools/
+=======
+    Origin: runtime/tools/
+>>>>>>> origin/OS0.6.2.grok
     Target: ai/tools/tachyonic/
     Note: Tachyonic will become DATABASE interface after backup consolidation
     

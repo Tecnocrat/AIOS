@@ -11,6 +11,7 @@ creating an active ecosystem where visualization drives mutation and metadata
 captures the correlation between visual patterns and evolutionary success.
 """
 
+<<<<<<< HEAD
 # ==============================================================================
 # AINLP SEMANTIC TAGS - Evolution Lab Integration
 # ==============================================================================
@@ -51,6 +52,8 @@ captures the correlation between visual patterns and evolutionary success.
 #   Reference: evolution_lab/README.md (Phase 12 timeline)
 # ==============================================================================
 
+=======
+>>>>>>> origin/OS0.6.2.grok
 from pathlib import Path
 from typing import Dict, Optional, Tuple, List
 import json
@@ -62,11 +65,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from evolution_lab.populations.population_manager import PopulationManager, Population
+<<<<<<< HEAD
 from evolution_lab.hyperdimensional_geometry import (
     HypersphereContainmentShell,
     create_default_containment_shell,
     PHI, PI, FIBONACCI
 )
+=======
+>>>>>>> origin/OS0.6.2.grok
 
 
 class EvolutionOrchestrator:
@@ -97,11 +103,14 @@ class EvolutionOrchestrator:
         self.evolution_history: List[Dict] = []
         self.metadata_file = Path("evolution_lab/populations/evolution_metadata.json")
         
+<<<<<<< HEAD
         # Hyperdimensional geometry shell (Phase 12 Task B Sub-Task 1.2)
         # 768-dimensional space (TSNE embedding dimension from Week 2)
         # Radius = φ (golden ratio), Tolerance = φ/10
         self.hypersphere_shell = create_default_containment_shell(dimension=768)
         
+=======
+>>>>>>> origin/OS0.6.2.grok
         if self.verbose:
             print("\n" + "="*70)
             print("🧬 EVOLUTION ORCHESTRATOR INITIALIZED")
@@ -109,9 +118,12 @@ class EvolutionOrchestrator:
             print(f"  Status: {'ENABLED' if evolution_enabled else 'DISABLED'}")
             print(f"  Archive: {self.population_manager.archive_dir}")
             print(f"  Metadata: {self.metadata_file}")
+<<<<<<< HEAD
             print(f"  Hypersphere: {self.hypersphere_shell.dimension}D "
                   f"(r={self.hypersphere_shell.radius:.3f}, "
                   f"ε={self.hypersphere_shell.tolerance:.3f})")
+=======
+>>>>>>> origin/OS0.6.2.grok
             print("="*70 + "\n")
     
     def on_threshold_change(
@@ -224,30 +236,40 @@ class EvolutionOrchestrator:
         """
         Map visualization state to evolution parameters
         
+<<<<<<< HEAD
         ENHANCED (Phase 12 Task B Sub-Task 1.2):
         - Hyperdimensional field coherence replaces classical fitness
         - Geometric containment shells constrain evolution
         - Tachyonic field integration (geometric + network + consciousness)
         
         Original Mapping Strategy (DEPRECATED):
+=======
+        Mapping Strategy:
+>>>>>>> origin/OS0.6.2.grok
         - Higher threshold → Higher mutation rate (more exploration)
         - Lower phi → Higher selection pressure (more competition)
         - More clusters → Higher archetype diversity (more niches)
         - More connections → Reward network-building organisms
+<<<<<<< HEAD
         
         New Mapping Strategy (Hyperdimensional):
         - Field coherence → Propagation probability (NOT mutation_rate)
         - Geometric constraints → Containment shell boundaries (NOT selection_pressure)
         - Fibonacci spiral → Mutation angles (golden angle 137.5°)
         - Universal constants → Fitness weights (φ, π, Fibonacci)
+=======
+>>>>>>> origin/OS0.6.2.grok
         """
         connections = network_stats.get('connections', 0)
         clusters = network_stats.get('clusters', 1)
         field_phi = network_stats.get('field_phi', 0.5)
         
+<<<<<<< HEAD
         # ======================================================================
         # CLASSICAL FITNESS (DEPRECATED - preserved for backward compatibility)
         # ======================================================================
+=======
+>>>>>>> origin/OS0.6.2.grok
         # Mutation rate: 0.1 to 0.4 based on threshold
         # High threshold = high exploration
         mutation_rate = 0.1 + (threshold * 0.3)
@@ -264,6 +286,7 @@ class EvolutionOrchestrator:
         # Organisms that create connections get fitness boost
         fitness_bias = min(connections / 100.0, 1.0) if connections > 0 else 0.0
         
+<<<<<<< HEAD
         # ======================================================================
         # HYPERDIMENSIONAL FITNESS (Phase 12 Task B Sub-Task 1.2)
         # ======================================================================
@@ -339,6 +362,15 @@ class EvolutionOrchestrator:
         """
         return self.hypersphere_shell.calculate_fitness(organism_embedding)
     
+=======
+        return {
+            'mutation_rate': round(mutation_rate, 4),
+            'selection_pressure': round(selection_pressure, 4),
+            'archetype_diversity': round(archetype_diversity, 4),
+            'fitness_bias': round(fitness_bias, 4)
+        }
+    
+>>>>>>> origin/OS0.6.2.grok
     def _evolve_generation(self, evolution_params: Dict[str, float]) -> Population:
         """
         Evolve current population using parameters

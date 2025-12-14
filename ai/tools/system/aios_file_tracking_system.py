@@ -72,7 +72,11 @@ class FileTracker:
         }
         
         # Initialize tracking database
+<<<<<<< HEAD
         self.tracking_file = self.workspace_root / "runtime_intelligence" / "file_tracking_database.json"
+=======
+        self.tracking_file = self.workspace_root / "runtime" / "file_tracking_database.json"
+>>>>>>> origin/OS0.6.2.grok
         self.load_tracking_data()
     
     def load_tracking_data(self):
@@ -406,7 +410,11 @@ class FileTracker:
     
     def generate_dependency_report(self) -> str:
         """Generate comprehensive dependency and structure report"""
+<<<<<<< HEAD
         report_path = self.workspace_root / "runtime_intelligence" / f"dependency_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+=======
+        report_path = self.workspace_root / "runtime" / f"dependency_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+>>>>>>> origin/OS0.6.2.grok
         
         # Analyze subcells
         subcell_stats = {}

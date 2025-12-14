@@ -1,0 +1,150 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-09-16T22:39:57.880800",
+  "folder_info": {
+    "name": "integration_assembler",
+    "absolute_path": "C:\\dev\\AIOS\\core\\assemblers\\integration_assembler",
+    "relative_path": "core\\assemblers\\integration_assembler",
+    "parent_path": "core\\assemblers",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Core Engine",
+    "secondary_areas": [],
+    "path_classification": [
+      "core",
+      "assemblers",
+      "integration_assembler"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "context_assembler",
+      "file_assembler",
+      "tree_assembler"
+    ],
+    "child_folders": [
+      "__pycache__"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 74795,
+      "file_count": 4,
+      "folder_count": 1,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".txt": [
+        {
+          "name": "core_engine_integration_analysis.txt",
+          "size": 10980,
+          "modified": "2025-09-15T22:25:27.888284",
+          "category": "documentation"
+        }
+      ],
+      ".py": [
+        {
+          "name": "integration_assembler.py",
+          "size": 25925,
+          "modified": "2025-09-15T22:25:28.958920",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 8005,
+          "modified": "2025-09-15T22:25:29.569061",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "core_engine_integration_analysis.txt",
+        "size": 10980,
+        "modified": "2025-09-15T22:25:27.888284",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 8005,
+        "modified": "2025-09-15T22:25:29.569061",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "README.md",
+        "size": 8005,
+        "modified": "2025-09-15T22:25:29.569061",
+        "category": "documentation"
+      },
+      {
+        "name": "integration_assembler.py",
+        "size": 25925,
+        "modified": "2025-09-15T22:25:28.958920",
+        "category": "consciousness"
+      },
+      {
+        "name": "core_engine_integration_analysis.txt",
+        "size": 10980,
+        "modified": "2025-09-15T22:25:27.888284",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 3,
+      "file_types": [
+        ".txt",
+        ".py",
+        ".md"
+      ],
+      "dominant_type": ".txt"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "core > assemblers > integration_assembler",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\core\\assemblers\\integration_assembler' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\core\\assemblers\\integration_assembler' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\core\\assemblers\\integration_assembler' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "core",
+      "core\\core_systems",
+      "ai\\src\\core",
+      "ai\\nucleus\\src\\core",
+      "core\\build\\aios_core.dir",
+      "core\\assemblers"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

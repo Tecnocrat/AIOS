@@ -10,7 +10,12 @@ and support dendritic growth through error pattern learning.
 import os
 import re
 import json
+<<<<<<< HEAD
 from typing import Dict, Any, List, Tuple
+=======
+import subprocess
+from typing import Dict, Any, List, Optional, Tuple
+>>>>>>> origin/OS0.6.2.grok
 from dataclasses import dataclass, asdict
 from datetime import datetime
 import logging

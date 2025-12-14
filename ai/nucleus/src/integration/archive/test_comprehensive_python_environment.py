@@ -17,6 +17,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__)))
 
 try:
     from aios_python_environment_integration import (
+<<<<<<< HEAD
         AIOSPythonEnvironmentIntegration,
         get_aios_python_integration,
         initialize_aios_python_environment,
@@ -26,6 +27,13 @@ try:
         get_environment_manager,
         initialize_python_environment_for_aios,
     )
+=======
+        AIOSPythonEnvironmentIntegration, get_aios_python_integration,
+        initialize_aios_python_environment)
+    from robust_python_environment_manager import (
+        RobustPythonEnvironmentManager, get_environment_manager,
+        initialize_python_environment_for_aios)
+>>>>>>> origin/OS0.6.2.grok
 except ImportError as e:
     print(f"Import error: {e}")
     print("Make sure you're running this from the correct directory")
@@ -38,19 +46,33 @@ class MockContextManager:
     def __init__(self):
         self.registered_subsystems = {}
 
+<<<<<<< HEAD
     def register_subsystem(self, name, get_snapshot_func, restore_snapshot_func):
         self.registered_subsystems[name] = {
             "get_snapshot": get_snapshot_func,
             "restore_snapshot": restore_snapshot_func,
+=======
+    def register_subsystem(
+    self, name, get_snapshot_func, restore_snapshot_func):
+        self.registered_subsystems[name] = {
+            'get_snapshot': get_snapshot_func,
+            'restore_snapshot': restore_snapshot_func
+>>>>>>> origin/OS0.6.2.grok
         }
         print(f"Registered subsystem: {name}")
 
 
 def test_environment_discovery():
     """Test Python environment discovery."""
+<<<<<<< HEAD
     print("\n" + "=" * 60)
     print("TEST: Python Environment Discovery")
     print("=" * 60)
+=======
+    print("\n" + "="*60)
+    print("TEST: Python Environment Discovery")
+    print("="*60)
+>>>>>>> origin/OS0.6.2.grok
 
     # Create temporary config directory for testing
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -73,9 +95,15 @@ def test_environment_discovery():
 
 def test_environment_manager():
     """Test environment manager functionality."""
+<<<<<<< HEAD
     print("\n" + "=" * 60)
     print("TEST: Environment Manager Functionality")
     print("=" * 60)
+=======
+    print("\n" + "="*60)
+    print("TEST: Environment Manager Functionality")
+    print("="*60)
+>>>>>>> origin/OS0.6.2.grok
 
     with tempfile.TemporaryDirectory() as temp_dir:
         manager = RobustPythonEnvironmentManager(config_dir=temp_dir)
@@ -96,7 +124,12 @@ def test_environment_manager():
 
         # Test setting active environment
         environments = manager.list_environments()
+<<<<<<< HEAD
         healthy_envs = [env for env in environments if env.health_status == "healthy"]
+=======
+        healthy_envs = [
+        env for env in environments if env.health_status == "healthy"]
+>>>>>>> origin/OS0.6.2.grok
 
         if healthy_envs:
             print(f"\nSetting active environment: {healthy_envs[0].name}")
@@ -112,9 +145,15 @@ def test_environment_manager():
 
 def test_aios_integration():
     """Test AIOS integration functionality."""
+<<<<<<< HEAD
     print("\n" + "=" * 60)
     print("TEST: AIOS Integration")
     print("=" * 60)
+=======
+    print("\n" + "="*60)
+    print("TEST: AIOS Integration")
+    print("="*60)
+>>>>>>> origin/OS0.6.2.grok
 
     # Create mock context manager
     context_manager = MockContextManager()
@@ -129,32 +168,58 @@ def test_aios_integration():
     print(f"  Total environments: {health_report['total_environments']}")
     print(f"  Healthy environments: {health_report['healthy_environments']}")
     print(
+<<<<<<< HEAD
         f"  Recovery applied: {health_report['aios_integration']['recovery_applied']}"
     )
+=======
+    f"  Recovery applied: {health_report['aios_integration']['recovery_applied']}")
+>>>>>>> origin/OS0.6.2.grok
 
     # Test environment snapshot
     print("\nTesting environment snapshot...")
     snapshot = integration.get_environment_snapshot()
+<<<<<<< HEAD
     print(f"Snapshot created with {len(snapshot['environments'])} environments")
 
     if snapshot["active_environment"]:
         print(
             f"Active environment in snapshot: {snapshot['active_environment']['name']}"
         )
+=======
+    print(
+    f"Snapshot created with {len(snapshot['environments'])} environments")
+
+    if snapshot['active_environment']:
+        print(
+        f"Active environment in snapshot: {snapshot['active_environment']['name']}")
+>>>>>>> origin/OS0.6.2.grok
 
     # Test diagnostic report
     print("\nGenerating diagnostic report...")
     diagnostic = integration.get_diagnostic_report()
+<<<<<<< HEAD
     print(f"Diagnostic report generated for platform: {diagnostic['platform']}")
 
     return health_report["healthy_environments"] > 0
+=======
+    print(
+    f"Diagnostic report generated for platform: {diagnostic['platform']}")
+
+    return health_report['healthy_environments'] > 0
+>>>>>>> origin/OS0.6.2.grok
 
 
 def test_os_reinstall_preparation():
     """Test OS reinstall preparation and recovery."""
+<<<<<<< HEAD
     print("\n" + "=" * 60)
     print("TEST: OS Reinstall Preparation and Recovery")
     print("=" * 60)
+=======
+    print("\n" + "="*60)
+    print("TEST: OS Reinstall Preparation and Recovery")
+    print("="*60)
+>>>>>>> origin/OS0.6.2.grok
 
     with tempfile.TemporaryDirectory() as temp_dir:
         # Initialize integration with temporary directory
@@ -170,19 +235,29 @@ def test_os_reinstall_preparation():
 
             # Load and examine backup
             import json
+<<<<<<< HEAD
 
             with open(backup_file, "r") as f:
+=======
+            with open(backup_file, 'r') as f:
+>>>>>>> origin/OS0.6.2.grok
                 backup_data = json.load(f)
 
             print(f"Backup contains:")
             print(f"  - Export timestamp: {backup_data['export_timestamp']}")
             print(f"  - Platform: {backup_data['platform']}")
             print(
+<<<<<<< HEAD
                 f"  - Environment snapshot: {len(backup_data['environment_snapshot']['environments'])} environments"
             )
             print(
                 f"  - Recovery instructions: {len(backup_data['recovery_instructions'])} steps"
             )
+=======
+            f"  - Environment snapshot: {len(backup_data['environment_snapshot']['environments'])} environments")
+            print(
+            f"  - Recovery instructions: {len(backup_data['recovery_instructions'])} steps")
+>>>>>>> origin/OS0.6.2.grok
 
             # Test recovery
             print("\nTesting post-reinstall recovery...")
@@ -197,12 +272,20 @@ def test_os_reinstall_preparation():
 
 def test_memory_allocation_explanation():
     """Explain memory allocation for VSCode and AIOS."""
+<<<<<<< HEAD
     print("\n" + "=" * 60)
     print("MEMORY ALLOCATION EXPLANATION")
     print("=" * 60)
 
     print(
         """
+=======
+    print("\n" + "="*60)
+    print("MEMORY ALLOCATION EXPLANATION")
+    print("="*60)
+
+    print("""
+>>>>>>> origin/OS0.6.2.grok
 MEMORY ALLOCATION IN AIOS AND VSCODE INTEGRATION:
 
 1. VSCode Extension Memory:
@@ -245,8 +328,12 @@ MEMORY ALLOCATION IN AIOS AND VSCODE INTEGRATION:
    - Backup rotation: Keep last 10 snapshots with size limits
    - Memory pressure handling: Automatic cleanup of old snapshots
    - OS reinstall recovery: Full state export/import capability
+<<<<<<< HEAD
     """
     )
+=======
+    """)
+>>>>>>> origin/OS0.6.2.grok
 
 
 def run_comprehensive_test():
@@ -281,9 +368,15 @@ def run_comprehensive_test():
     test_memory_allocation_explanation()
 
     # Summary
+<<<<<<< HEAD
     print("\n" + "=" * 70)
     print("TEST SUMMARY")
     print("=" * 70)
+=======
+    print("\n" + "="*70)
+    print("TEST SUMMARY")
+    print("="*70)
+>>>>>>> origin/OS0.6.2.grok
 
     passed = 0
     total = len(test_results)
@@ -299,14 +392,27 @@ def run_comprehensive_test():
     print(f"\nResults: {passed}/{total} tests passed")
 
     if passed == total:
+<<<<<<< HEAD
         print("\n All tests passed! AIOS Python environment management is ready.")
         print("\nNext steps:")
         print("1. The system is now resilient to OS reinstalls and PATH issues")
+=======
+        print(
+        "\n All tests passed! AIOS Python environment management is ready.")
+        print("\nNext steps:")
+        print(
+        "1. The system is now resilient to OS reinstalls and PATH issues")
+>>>>>>> origin/OS0.6.2.grok
         print("2. Environment snapshots are automatically created and managed")
         print("3. Recovery strategies will automatically fix common issues")
         print("4. Integration with AIOS fractal/holographic context is active")
     else:
+<<<<<<< HEAD
         print(f"\n {total - passed} tests failed. Please check the issues above.")
+=======
+        print(
+        f"\n {total - passed} tests failed. Please check the issues above.")
+>>>>>>> origin/OS0.6.2.grok
 
     return passed == total
 

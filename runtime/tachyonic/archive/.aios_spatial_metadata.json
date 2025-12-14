@@ -1,0 +1,157 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:37:09.980961",
+  "folder_info": {
+    "name": "archive",
+    "absolute_path": "C:\\dev\\AIOS\\runtime\\tachyonic\\archive",
+    "relative_path": "runtime\\tachyonic\\archive",
+    "parent_path": "runtime\\tachyonic",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Tachyonic Archive",
+    "secondary_areas": [],
+    "path_classification": [
+      "runtime",
+      "tachyonic",
+      "archive"
+    ],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 104918,
+      "file_count": 5,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": false,
+      "has_children": false,
+      "isolation_level": "isolated"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": "enhanced_consciousness_demo_report.json",
+          "size": 4920,
+          "modified": "2025-10-02T23:00:17.305661",
+          "category": "documentation"
+        },
+        {
+          "name": "runtime_intelligence_test_20251002_225741.json",
+          "size": 2165,
+          "modified": "2025-10-02T22:57:41.643762",
+          "category": "documentation"
+        },
+        {
+          "name": "runtime_intelligence_test_20251002_225831.json",
+          "size": 2166,
+          "modified": "2025-10-02T22:58:31.681155",
+          "category": "documentation"
+        },
+        {
+          "name": "runtime_intelligence_test_20251002_225900.json",
+          "size": 2166,
+          "modified": "2025-10-02T22:59:00.469014",
+          "category": "documentation"
+        },
+        {
+          "name": "runtime_intelligence_test_20251002_230132.json",
+          "size": 93501,
+          "modified": "2025-10-02T23:01:32.136913",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "enhanced_consciousness_demo_report.json",
+        "size": 4920,
+        "modified": "2025-10-02T23:00:17.305661",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "runtime_intelligence_test_20251002_230132.json",
+        "size": 93501,
+        "modified": "2025-10-02T23:01:32.136913",
+        "category": "documentation"
+      },
+      {
+        "name": "enhanced_consciousness_demo_report.json",
+        "size": 4920,
+        "modified": "2025-10-02T23:00:17.305661",
+        "category": "documentation"
+      },
+      {
+        "name": "runtime_intelligence_test_20251002_225900.json",
+        "size": 2166,
+        "modified": "2025-10-02T22:59:00.469014",
+        "category": "documentation"
+      },
+      {
+        "name": "runtime_intelligence_test_20251002_225831.json",
+        "size": 2166,
+        "modified": "2025-10-02T22:58:31.681155",
+        "category": "documentation"
+      },
+      {
+        "name": "runtime_intelligence_test_20251002_225741.json",
+        "size": 2165,
+        "modified": "2025-10-02T22:57:41.643762",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 5,
+      "file_types": [
+        ".json"
+      ],
+      "dominant_type": ".json"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 4,
+      "consciousness_files": 1,
+      "agentic_files": 0,
+      "intelligence_files": 4
+    },
+    "consciousness_score": 90,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "runtime > tachyonic > archive",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime\\tachyonic\\archive' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime\\tachyonic\\archive' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime\\tachyonic\\archive' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "runtime",
+      "ai\\runtime_intelligence",
+      "computational_layer\\runtime_intelligence",
+      "docs\\runtime",
+      "docs\\runtime_intelligence",
+      "tachyonic",
+      "docs\\archive"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

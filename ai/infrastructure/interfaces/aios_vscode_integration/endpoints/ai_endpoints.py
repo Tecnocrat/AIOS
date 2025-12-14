@@ -302,7 +302,12 @@ async def nlu_intent(request: dict):  # type: ignore
         elif "review" in message or "review" in intent_result.lower():
             intent = "code-review-request"
             confidence = 0.92
+<<<<<<< HEAD
         elif "architecture" in message or "architecture" in intent_result.lower():
+=======
+        elif "architecture" in message or \
+                "architecture" in intent_result.lower():
+>>>>>>> origin/OS0.6.2.grok
             intent = "architecture-analysis-request"
             confidence = 0.88
         elif "optimize" in message or "optimize" in intent_result.lower():
@@ -430,13 +435,25 @@ async def context_health():
             "last_backup": datetime.now().isoformat(),
             "self_healing": "enabled",
             "auto_restart": "enabled",
+<<<<<<< HEAD
             "cache_performance": await _fractal_cache_manager.get_performance_report(),
+=======
+            "cache_performance": await (
+                _fractal_cache_manager.get_performance_report()
+            ),
+>>>>>>> origin/OS0.6.2.grok
             "debug_metrics": _debug_manager.get_debug_info(),
             "timestamp": datetime.now().isoformat(),
         }
 
         # Cache the health status
+<<<<<<< HEAD
         await _fractal_cache_manager.set_cached(cache_key, health_status, ttl=60)
+=======
+        await _fractal_cache_manager.set_cached(
+            cache_key, health_status, ttl=60
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return health_status
 
@@ -467,7 +484,13 @@ async def context_logs():
 
         # Enhanced logging with performance metrics
         debug_info = _debug_manager.get_debug_info()
+<<<<<<< HEAD
         performance_report = await _fractal_cache_manager.get_performance_report()
+=======
+        performance_report = await (
+            _fractal_cache_manager.get_performance_report()
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         logs_result = {
             "logs": debug_info,
@@ -478,7 +501,13 @@ async def context_logs():
         }
 
         # Cache the logs for short term
+<<<<<<< HEAD
         await _fractal_cache_manager.set_cached(cache_key, logs_result, ttl=30)
+=======
+        await _fractal_cache_manager.set_cached(
+            cache_key, logs_result, ttl=30
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return logs_result
 
@@ -503,7 +532,12 @@ async def context_analyze(request: dict):
         analysis_type = request.get("type", "general")
 
         # Check cache for similar analysis
+<<<<<<< HEAD
         cache_key = f"context_analyze_{analysis_type}_" f"{hash(str(context_data))}"
+=======
+        cache_key = f"context_analyze_{analysis_type}_" \
+            f"{hash(str(context_data))}"
+>>>>>>> origin/OS0.6.2.grok
         cached_analysis = await _fractal_cache_manager.get_cached(cache_key)
 
         if cached_analysis:
@@ -513,9 +547,14 @@ async def context_analyze(request: dict):
         analysis = {
             "analysis_type": analysis_type,
             "context_size": len(str(context_data)),
+<<<<<<< HEAD
             "context_keys": (
                 list(context_data.keys()) if isinstance(context_data, dict) else []
             ),
+=======
+            "context_keys": list(context_data.keys())
+            if isinstance(context_data, dict) else [],
+>>>>>>> origin/OS0.6.2.grok
             "timestamp": datetime.now().isoformat(),
             "patterns": [],  # Placeholder for pattern detection
             "insights": [],  # Placeholder for intelligent insights
@@ -525,7 +564,13 @@ async def context_analyze(request: dict):
         # Basic pattern detection
         if "workspace" in context_data:
             analysis["patterns"].append("workspace_context")
+<<<<<<< HEAD
             analysis["insights"].append("User is working in a development environment")
+=======
+            analysis["insights"].append(
+                "User is working in a development environment"
+            )
+>>>>>>> origin/OS0.6.2.grok
             analysis["recommendations"].append(
                 "Consider workspace-specific optimizations"
             )
@@ -541,7 +586,13 @@ async def context_analyze(request: dict):
 
         if len(str(context_data)) > 1000:
             analysis["patterns"].append("rich_context")
+<<<<<<< HEAD
             analysis["insights"].append("User has provided detailed context")
+=======
+            analysis["insights"].append(
+                "User has provided detailed context"
+            )
+>>>>>>> origin/OS0.6.2.grok
             analysis["recommendations"].append(
                 "Leverage rich context for more accurate responses"
             )
@@ -571,7 +622,10 @@ async def intent_dispatch(message: str, context: str = "{}"):
         # Parse context if it's a string
         if isinstance(context, str):
             import json
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
             context_dict = json.loads(context)
         else:
             context_dict = {}
@@ -580,6 +634,7 @@ async def intent_dispatch(message: str, context: str = "{}"):
         response = generate_aios_response(message, context_dict)
 
         # Log the dispatch
+<<<<<<< HEAD
         _debug_manager.log_request(
             "intent_dispatch",
             {
@@ -588,6 +643,13 @@ async def intent_dispatch(message: str, context: str = "{}"):
                 "response": response,
             },
         )
+=======
+        _debug_manager.log_request("intent_dispatch", {
+            "message": message,
+            "context": context_dict,
+            "response": response,
+        })
+>>>>>>> origin/OS0.6.2.grok
 
         return {
             "message": message,

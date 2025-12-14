@@ -33,8 +33,13 @@ class AIOSArchitecturalValidator:
                     "study_interface_patterns"
                 ],
                 "discovery_locations": {
+<<<<<<< HEAD
                     "runtime_intelligence_tools":
                         "runtime_intelligence/tools/",
+=======
+                    "runtime_tools":
+                        "runtime/tools/",
+>>>>>>> origin/OS0.6.2.grok
                     "ai_tools": "ai/tools/",
                     "tachyonic_archive": "tachyonic/archive/",
                     "interface_services": "interface/"
@@ -43,10 +48,17 @@ class AIOSArchitecturalValidator:
             "enhancement_over_creation": {
                 "similarity_threshold": 0.7,
                 "enhancement_targets": [
+<<<<<<< HEAD
                     "runtime_intelligence/tools/system_health_check.py",
                     ("runtime_intelligence/tools/"
                      "biological_architecture_monitor.py"),
                     ("runtime_intelligence/tools/"
+=======
+                    "runtime/tools/system_health_check.py",
+                    ("runtime/tools/"
+                     "biological_architecture_monitor.py"),
+                    ("runtime/tools/"
+>>>>>>> origin/OS0.6.2.grok
                      "self_similarity_analyzer.py")
                 ],
                 "prohibited_duplicates": [
@@ -57,7 +69,11 @@ class AIOSArchitecturalValidator:
                 "approved_locations": {
                     "json_reports": "tachyonic/archive/",
                     "documentation": "docs/",
+<<<<<<< HEAD
                     "logs": "runtime_intelligence/logs/",
+=======
+                    "logs": "computational_layer/runtime/logs/",
+>>>>>>> origin/OS0.6.2.grok
                     "temporary": "temp/"
                 },
                 "tachyonic_pattern": {
@@ -73,8 +89,13 @@ class AIOSArchitecturalValidator:
                     "supercell_boundaries"
                 ],
                 "required_integrations": [
+<<<<<<< HEAD
                     ("runtime_intelligence/tools/"
                      "runtime_intelligence_dendritic_integration.py"),
+=======
+                    ("runtime/tools/"
+                     "runtime_dendritic_integration.py"),
+>>>>>>> origin/OS0.6.2.grok
                     "ai/infrastructure/dendritic/supervisor.py"
                 ]
             }
@@ -322,7 +343,11 @@ class AIOSArchitecturalValidator:
         
         similar_tools = []
         tools_dirs = [
+<<<<<<< HEAD
             self.workspace_root / "runtime_intelligence" / "tools",
+=======
+            self.workspace_root / "runtime" / "tools",
+>>>>>>> origin/OS0.6.2.grok
             self.workspace_root / "ai" / "tools"
         ]
         

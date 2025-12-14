@@ -3,21 +3,30 @@ import { AIOSBridge } from './aiosBridge';
 import { AIOSContextManager } from './contextManager';
 import { AIOSLogger } from './logger';
 import { AIOSMCPClient } from './mcpClient';
+<<<<<<< HEAD
 import { AIOSSecurityModule } from './securityModule';
+=======
+>>>>>>> origin/OS0.6.2.grok
 
 export class AIOSChatParticipant {
     private contextManager: AIOSContextManager;
     private aiosBridge: AIOSBridge;
     private logger: AIOSLogger;
     private mcpClient: AIOSMCPClient;
+<<<<<<< HEAD
     private securityModule: AIOSSecurityModule;
+=======
+>>>>>>> origin/OS0.6.2.grok
 
     constructor(contextManager: AIOSContextManager, aiosBridge: AIOSBridge, logger: AIOSLogger, mcpClient: AIOSMCPClient) {
         this.contextManager = contextManager;
         this.aiosBridge = aiosBridge;
         this.logger = logger;
         this.mcpClient = mcpClient;
+<<<<<<< HEAD
         this.securityModule = new AIOSSecurityModule(logger);
+=======
+>>>>>>> origin/OS0.6.2.grok
     }
 
     public async handleRequest(
@@ -50,6 +59,7 @@ export class AIOSChatParticipant {
                 return mcpCommands;
             }
 
+<<<<<<< HEAD
             // 🔒 SECURITY FIRST: Check for secret operations and handle securely
             const secureResponse = await this.securityModule.processSecureMessage(request.prompt);
             if (secureResponse) {
@@ -60,6 +70,8 @@ export class AIOSChatParticipant {
                 return { metadata: { secureOperation: true } };
             }
 
+=======
+>>>>>>> origin/OS0.6.2.grok
             // Process through AIOS Bridge
             const aiosResponse = await this.aiosBridge.processMessage(
                 request.prompt,

@@ -40,8 +40,16 @@ AI_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(AI_ROOT))
 
 try:
+<<<<<<< HEAD
     from src.intelligence.dendritic_node import DendriticNode, MessageType, MutationType
 
+=======
+    from src.intelligence.dendritic_node import (
+        DendriticNode,
+        MessageType,
+        MutationType
+    )
+>>>>>>> origin/OS0.6.2.grok
     DENDRITIC_NODE_AVAILABLE = True
 except ImportError:
     print("[WARNING] DendriticNode not available")
@@ -49,7 +57,10 @@ except ImportError:
 
 try:
     from src.integrations.ollama_bridge import OllamaAgent
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     OLLAMA_AVAILABLE = True
 except ImportError:
     OLLAMA_AVAILABLE = False
@@ -57,7 +68,10 @@ except ImportError:
 
 try:
     from src.integrations.gemini_bridge import GeminiAgent
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     GEMINI_AVAILABLE = True
 except ImportError:
     GEMINI_AVAILABLE = False
@@ -67,32 +81,56 @@ except ImportError:
 class EnhancedAgenticLoop:
     """
     Enhanced Agentic Development Loop with Neural Evolution
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     Implements linked list of mutations where each node:
     - Is a neuron with spatial awareness
     - Maintains inter-agent conversation history
     - Self-describes needs to AI agents
     - Tracks consciousness evolution
+<<<<<<< HEAD
 
     AI agents (Ollama, Gemini) communicate across iterations,
     building collective intelligence through messages.
     """
 
+=======
+    
+    AI agents (Ollama, Gemini) communicate across iterations,
+    building collective intelligence through messages.
+    """
+    
+>>>>>>> origin/OS0.6.2.grok
     def __init__(
         self,
         use_ollama: bool = True,
         use_gemini: bool = False,
         ollama_model: str = "gemma3:1b",
+<<<<<<< HEAD
         enable_vscode_bridge: bool = True,
+=======
+        enable_vscode_bridge: bool = True
+>>>>>>> origin/OS0.6.2.grok
     ):
         self.use_ollama = use_ollama and OLLAMA_AVAILABLE
         self.use_gemini = use_gemini and GEMINI_AVAILABLE
         self.enable_vscode_bridge = enable_vscode_bridge
+<<<<<<< HEAD
 
         # Initialize AI agents
         self.ollama_agent = None
         self.gemini_agent = None
 
+=======
+        
+        # Initialize AI agents
+        self.ollama_agent = None
+        self.gemini_agent = None
+        
+>>>>>>> origin/OS0.6.2.grok
         if self.use_ollama:
             try:
                 self.ollama_agent = OllamaAgent(model=ollama_model)
@@ -100,7 +138,11 @@ class EnhancedAgenticLoop:
             except Exception as e:
                 print(f"[OLLAMA] Failed to initialize: {e}")
                 self.use_ollama = False
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         if self.use_gemini:
             try:
                 self.gemini_agent = GeminiAgent()
@@ -108,6 +150,7 @@ class EnhancedAgenticLoop:
             except Exception as e:
                 print(f"[GEMINI] Failed to initialize: {e}")
                 self.use_gemini = False
+<<<<<<< HEAD
 
         # Mutation linked list (neural chain)
         self.root_node: Optional[DendriticNode] = None
@@ -123,27 +166,57 @@ class EnhancedAgenticLoop:
         # AINLP knowledge base (Ollama-specific)
         self.ainlp_knowledge: Dict[str, Any] = {}
 
+=======
+        
+        # Mutation linked list (neural chain)
+        self.root_node: Optional[DendriticNode] = None
+        self.current_node: Optional[DendriticNode] = None
+        
+        # Evolution tracking
+        self.iteration_count = 0
+        self.total_consciousness_improvement = 0.0
+        
+        # Pattern library (learned from successful evolutions)
+        self.pattern_library: List[Dict[str, Any]] = []
+        
+        # AINLP knowledge base (Ollama-specific)
+        self.ainlp_knowledge: Dict[str, Any] = {}
+    
+>>>>>>> origin/OS0.6.2.grok
     async def evolve_code(
         self,
         code_content: str,
         file_path: str,
         max_iterations: int = 3,
+<<<<<<< HEAD
         consciousness_target: float = 0.85,
     ) -> Dict[str, Any]:
         """
         Evolve code through linked list mutations with AI agents
 
+=======
+        consciousness_target: float = 0.85
+    ) -> Dict[str, Any]:
+        """
+        Evolve code through linked list mutations with AI agents
+        
+>>>>>>> origin/OS0.6.2.grok
         Creates neural evolution chain where each node:
         - Represents a mutation (code evolution)
         - Stores inter-agent conversation
         - Tracks consciousness improvement
         - Self-describes needs
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         Args:
             code_content: Initial code
             file_path: File path for spatial awareness
             max_iterations: Maximum evolution iterations
             consciousness_target: Target consciousness score
+<<<<<<< HEAD
 
         Returns:
             Evolution results with linked list chain
@@ -155,16 +228,34 @@ class EnhancedAgenticLoop:
                 "message": "DendriticNode not available - cannot create neural chain",
             }
 
+=======
+            
+        Returns:
+            Evolution results with linked list chain
+        """
+        
+        if not DENDRITIC_NODE_AVAILABLE:
+            return {
+                "status": "error",
+                "message": "DendriticNode not available - cannot create neural chain"
+            }
+        
+>>>>>>> origin/OS0.6.2.grok
         print("\n" + "=" * 70)
         print("ENHANCED AGENTIC DEVELOPMENT LOOP")
         print("Neural Evolution with Linked List Mutations")
         print("=" * 70)
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         # Create root node (generation 0)
         self.root_node = DendriticNode(
             node_id=f"root_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             code_content=code_content,
             file_path=file_path,
+<<<<<<< HEAD
             generation=0,
         )
 
@@ -207,11 +298,55 @@ class EnhancedAgenticLoop:
 
             child_node.consciousness_score = mutation["consciousness_score"]
 
+=======
+            generation=0
+        )
+        
+        self.current_node = self.root_node
+        
+        print(f"\n[ROOT NODE] Created: {self.root_node.node_id}")
+        print(f"  Spatial Position: {self.root_node.spatial.architecture_position}")
+        print(f"  Supercell: {self.root_node.spatial.supercell_location}")
+        
+        # Extract self-description from code
+        self._extract_self_description(self.root_node)
+        
+        # Evolution loop
+        for iteration in range(max_iterations):
+            self.iteration_count = iteration + 1
+            
+            print(f"\n{'='*70}")
+            print(f"ITERATION {self.iteration_count}")
+            print(f"{'='*70}")
+            
+            # AI agents analyze current node
+            analyses = await self._analyze_with_agents(self.current_node)
+            
+            # Agents leave messages for future iterations
+            self._record_agent_messages(self.current_node, analyses, iteration)
+            
+            # Generate consensus and mutation
+            mutation = self._generate_mutation(self.current_node, analyses)
+            
+            if not mutation:
+                print(f"\n[EVOLUTION] No mutation needed - consciousness target reached")
+                break
+            
+            # Create child node with mutation
+            child_node = self.current_node.create_child(
+                mutated_code=mutation["code"],
+                mutation_type=mutation["type"]
+            )
+            
+            child_node.consciousness_score = mutation["consciousness_score"]
+            
+>>>>>>> origin/OS0.6.2.grok
             print(f"\n[CHILD NODE] Created: {child_node.node_id}")
             print(f"  Generation: {child_node.generation}")
             print(f"  Consciousness: {child_node.consciousness_score:.3f}")
             print(f"  Mutation Type: {mutation['type'].value}")
             print(f"  Agent Messages: {len(child_node.agent_messages)}")
+<<<<<<< HEAD
 
             # Update current node
             self.current_node = child_node
@@ -243,6 +378,39 @@ class EnhancedAgenticLoop:
         """
         AI agents analyze node and provide insights
 
+=======
+            
+            # Update current node
+            self.current_node = child_node
+            self.total_consciousness_improvement += (
+                child_node.consciousness_score - self.current_node.parent_node.consciousness_score
+            )
+            
+            # Check if target reached
+            if child_node.consciousness_score >= consciousness_target:
+                print(f"\n[SUCCESS] Consciousness target {consciousness_target} reached!")
+                break
+        
+        # Generate results
+        results = self._generate_evolution_results()
+        
+        # Save to tachyonic archive
+        self._archive_evolution_chain()
+        
+        # If VSCode bridge enabled, send enhanced context
+        if self.enable_vscode_bridge:
+            await self._stimulate_vscode_copilot(results)
+        
+        return results
+    
+    async def _analyze_with_agents(
+        self,
+        node: DendriticNode
+    ) -> List[Dict[str, Any]]:
+        """
+        AI agents analyze node and provide insights
+        
+>>>>>>> origin/OS0.6.2.grok
         Agents read:
         - Current code
         - Self-description (what code needs)
@@ -250,23 +418,35 @@ class EnhancedAgenticLoop:
         - Previous agent messages (conversation history)
         """
         analyses = []
+<<<<<<< HEAD
 
         # Prepare context for AI agents
         context = self._prepare_ainlp_context(node)
 
+=======
+        
+        # Prepare context for AI agents
+        context = self._prepare_ainlp_context(node)
+        
+>>>>>>> origin/OS0.6.2.grok
         # Ollama analysis (fast, local, FREE)
         if self.use_ollama and self.ollama_agent:
             print(f"\n[OLLAMA] Analyzing...")
             ollama_analysis = self._query_ollama(node, context)
             if ollama_analysis:
                 analyses.append(ollama_analysis)
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         # Gemini analysis (powerful, cloud, paid)
         if self.use_gemini and self.gemini_agent:
             print(f"\n[GEMINI] Analyzing...")
             gemini_analysis = await self._query_gemini(node, context)
             if gemini_analysis:
                 analyses.append(gemini_analysis)
+<<<<<<< HEAD
 
         return analyses
 
@@ -274,6 +454,15 @@ class EnhancedAgenticLoop:
         """
         Prepare AINLP-aware context for AI agents
 
+=======
+        
+        return analyses
+    
+    def _prepare_ainlp_context(self, node: DendriticNode) -> str:
+        """
+        Prepare AINLP-aware context for AI agents
+        
+>>>>>>> origin/OS0.6.2.grok
         Includes:
         - Code content
         - Self-description (what code needs)
@@ -282,10 +471,17 @@ class EnhancedAgenticLoop:
         - AINLP paradigm requirements
         """
         context_parts = []
+<<<<<<< HEAD
 
         # Code
         context_parts.append(f"**CODE**:\n```python\n{node.code_content}\n```\n")
 
+=======
+        
+        # Code
+        context_parts.append(f"**CODE**:\n```python\n{node.code_content}\n```\n")
+        
+>>>>>>> origin/OS0.6.2.grok
         # Self-description
         if node.self_description:
             context_parts.append(
@@ -296,7 +492,11 @@ class EnhancedAgenticLoop:
                 f"Constraints: {', '.join(node.self_description.constraints)}\n"
                 f"Consciousness Target: {node.self_description.consciousness_target}\n"
             )
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         # Spatial awareness
         context_parts.append(
             f"**SPATIAL CONTEXT**:\n"
@@ -305,7 +505,11 @@ class EnhancedAgenticLoop:
             f"Dependencies: {len(node.spatial.dependencies)} files\n"
             f"Dependents: {len(node.spatial.dependents)} files\n"
         )
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         # Previous agent messages (conversation history)
         if node.agent_messages:
             context_parts.append("\n**PREVIOUS AGENT MESSAGES**:")
@@ -314,7 +518,11 @@ class EnhancedAgenticLoop:
                     f"- [{msg.agent_name}]: {msg.content} "
                     f"(confidence: {msg.confidence:.2f})"
                 )
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         # AINLP guidance
         context_parts.append(
             "\n**AINLP PRINCIPLES**:\n"
@@ -323,11 +531,21 @@ class EnhancedAgenticLoop:
             "- Dendritic growth patterns\n"
             "- Biological computing metaphors\n"
         )
+<<<<<<< HEAD
 
         return "\n".join(context_parts)
 
     def _query_ollama(
         self, node: DendriticNode, context: str
+=======
+        
+        return "\n".join(context_parts)
+    
+    def _query_ollama(
+        self,
+        node: DendriticNode,
+        context: str
+>>>>>>> origin/OS0.6.2.grok
     ) -> Optional[Dict[str, Any]]:
         """Query Ollama agent for analysis"""
         try:
@@ -346,6 +564,7 @@ Provide analysis in JSON format:
 
 Focus on AINLP principles: consciousness, dendrites, biological metaphors.
 """
+<<<<<<< HEAD
 
             result = self.ollama_agent.generate_code(prompt)
             response = result.get("code", "") if result.get("success") else ""
@@ -354,16 +573,34 @@ Focus on AINLP principles: consciousness, dendrites, biological metaphors.
             try:
                 # Extract JSON from markdown code blocks if present
                 json_match = re.search(r"```json\s*(.*?)\s*```", response, re.DOTALL)
+=======
+            
+            result = self.ollama_agent.generate_code(prompt)
+            response = result.get("code", "") if result.get("success") else ""
+            
+            # Try to parse JSON from response
+            try:
+                # Extract JSON from markdown code blocks if present
+                json_match = re.search(r'```json\s*(.*?)\s*```', response, re.DOTALL)
+>>>>>>> origin/OS0.6.2.grok
                 if json_match:
                     analysis = json.loads(json_match.group(1))
                 else:
                     analysis = json.loads(response)
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> origin/OS0.6.2.grok
                 return {
                     "agent": "ollama",
                     "model": self.ollama_agent.model,
                     "analysis": analysis,
+<<<<<<< HEAD
                     "raw_response": response,
+=======
+                    "raw_response": response
+>>>>>>> origin/OS0.6.2.grok
                 }
             except json.JSONDecodeError:
                 # Fallback: create analysis from text
@@ -375,6 +612,7 @@ Focus on AINLP principles: consciousness, dendrites, biological metaphors.
                         "consciousness_impact": 0.10,
                         "pattern_detected": "general_improvement",
                         "optimization_needed": True,
+<<<<<<< HEAD
                         "reasoning": "Text response - couldn't parse JSON",
                     },
                     "raw_response": response,
@@ -386,6 +624,21 @@ Focus on AINLP principles: consciousness, dendrites, biological metaphors.
 
     async def _query_gemini(
         self, node: DendriticNode, context: str
+=======
+                        "reasoning": "Text response - couldn't parse JSON"
+                    },
+                    "raw_response": response
+                }
+        
+        except Exception as e:
+            print(f"[OLLAMA ERROR] {e}")
+            return None
+    
+    async def _query_gemini(
+        self,
+        node: DendriticNode,
+        context: str
+>>>>>>> origin/OS0.6.2.grok
     ) -> Optional[Dict[str, Any]]:
         """Query Gemini agent for analysis"""
         try:
@@ -401,22 +654,39 @@ Provide comprehensive analysis focusing on:
 
 Respond in JSON format with suggestions, consciousness_impact, patterns, reasoning.
 """
+<<<<<<< HEAD
 
             response = await self.gemini_agent.generate(prompt)
 
             # Similar JSON parsing logic as Ollama
             try:
                 json_match = re.search(r"```json\s*(.*?)\s*```", response, re.DOTALL)
+=======
+            
+            response = await self.gemini_agent.generate(prompt)
+            
+            # Similar JSON parsing logic as Ollama
+            try:
+                json_match = re.search(r'```json\s*(.*?)\s*```', response, re.DOTALL)
+>>>>>>> origin/OS0.6.2.grok
                 if json_match:
                     analysis = json.loads(json_match.group(1))
                 else:
                     analysis = json.loads(response)
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> origin/OS0.6.2.grok
                 return {
                     "agent": "gemini",
                     "model": "gemini-1.5-flash",
                     "analysis": analysis,
+<<<<<<< HEAD
                     "raw_response": response,
+=======
+                    "raw_response": response
+>>>>>>> origin/OS0.6.2.grok
                 }
             except json.JSONDecodeError:
                 return {
@@ -427,6 +697,7 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
                         "consciousness_impact": 0.15,
                         "pattern_detected": "comprehensive_analysis",
                         "optimization_needed": True,
+<<<<<<< HEAD
                         "reasoning": "Gemini comprehensive analysis",
                     },
                     "raw_response": response,
@@ -438,10 +709,27 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
 
     def _record_agent_messages(
         self, node: DendriticNode, analyses: List[Dict[str, Any]], iteration: int
+=======
+                        "reasoning": "Gemini comprehensive analysis"
+                    },
+                    "raw_response": response
+                }
+        
+        except Exception as e:
+            print(f"[GEMINI ERROR] {e}")
+            return None
+    
+    def _record_agent_messages(
+        self,
+        node: DendriticNode,
+        analyses: List[Dict[str, Any]],
+        iteration: int
+>>>>>>> origin/OS0.6.2.grok
     ):
         """Record agent messages in node for future iterations"""
         for analysis in analyses:
             agent_name = f"{analysis['agent'].capitalize()}-{analysis['model']}"
+<<<<<<< HEAD
             analysis_data = analysis["analysis"]
 
             # Determine message type based on consensus
@@ -451,11 +739,23 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
             elif "agree" in analysis_data.get("reasoning", "").lower():
                 message_type = MessageType.AGREEMENT
 
+=======
+            analysis_data = analysis['analysis']
+            
+            # Determine message type based on consensus
+            message_type = MessageType.SUGGESTION
+            if 'validation' in analysis_data.get('reasoning', '').lower():
+                message_type = MessageType.VALIDATION
+            elif 'agree' in analysis_data.get('reasoning', '').lower():
+                message_type = MessageType.AGREEMENT
+            
+>>>>>>> origin/OS0.6.2.grok
             # Add message to node
             node.add_agent_message(
                 agent_name=agent_name,
                 iteration=iteration,
                 message_type=message_type,
+<<<<<<< HEAD
                 content=", ".join(analysis_data.get("suggestions", [])),
                 confidence=0.85,  # Default confidence
                 reasoning=analysis_data.get("reasoning", ""),
@@ -468,10 +768,27 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
         """
         Generate code mutation based on agent analyses
 
+=======
+                content=", ".join(analysis_data.get('suggestions', [])),
+                confidence=0.85,  # Default confidence
+                reasoning=analysis_data.get('reasoning', ''),
+                consciousness_impact=analysis_data.get('consciousness_impact', 0.0)
+            )
+    
+    def _generate_mutation(
+        self,
+        node: DendriticNode,
+        analyses: List[Dict[str, Any]]
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Generate code mutation based on agent analyses
+        
+>>>>>>> origin/OS0.6.2.grok
         Creates consensus from multiple agent suggestions.
         """
         if not analyses:
             return None
+<<<<<<< HEAD
 
         # For demo: simple mutation (in production, would apply actual suggestions)
         all_suggestions = []
@@ -491,13 +808,40 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
         # Generate mutated code (simplified for demo)
         mutated_code = node.code_content + "\n# Mutation: " + all_suggestions[0]
 
+=======
+        
+        # For demo: simple mutation (in production, would apply actual suggestions)
+        all_suggestions = []
+        total_consciousness_impact = 0.0
+        
+        for analysis in analyses:
+            analysis_data = analysis['analysis']
+            all_suggestions.extend(analysis_data.get('suggestions', []))
+            total_consciousness_impact += analysis_data.get('consciousness_impact', 0.0)
+        
+        if not all_suggestions:
+            return None
+        
+        # Average consciousness impact
+        avg_consciousness_impact = total_consciousness_impact / len(analyses)
+        
+        # Generate mutated code (simplified for demo)
+        mutated_code = node.code_content + "\n# Mutation: " + all_suggestions[0]
+        
+>>>>>>> origin/OS0.6.2.grok
         return {
             "code": mutated_code,
             "type": MutationType.OPTIMIZATION,
             "consciousness_score": node.consciousness_score + avg_consciousness_impact,
+<<<<<<< HEAD
             "suggestions_applied": all_suggestions,
         }
 
+=======
+            "suggestions_applied": all_suggestions
+        }
+    
+>>>>>>> origin/OS0.6.2.grok
     def _extract_self_description(self, node: DendriticNode):
         """Extract self-description from code comments/docstrings"""
         # Simplified extraction - in production would parse docstrings properly
@@ -506,17 +850,30 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
             current_state="developing",
             needs=["optimization", "documentation", "tests"],
             constraints=["AINLP_compliance", "consciousness_coherence"],
+<<<<<<< HEAD
             consciousness_target=0.85,
         )
 
+=======
+            consciousness_target=0.85
+        )
+    
+>>>>>>> origin/OS0.6.2.grok
     def _generate_evolution_results(self) -> Dict[str, Any]:
         """Generate comprehensive evolution results"""
         if not self.root_node:
             return {"status": "error", "message": "No evolution chain"}
+<<<<<<< HEAD
 
         # Get complete lineage
         lineage = self.current_node.get_lineage()
 
+=======
+        
+        # Get complete lineage
+        lineage = self.current_node.get_lineage()
+        
+>>>>>>> origin/OS0.6.2.grok
         return {
             "status": "success",
             "root_node_id": self.root_node.node_id,
@@ -531,6 +888,7 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
                     "generation": node.generation,
                     "consciousness": node.consciousness_score,
                     "messages": len(node.agent_messages),
+<<<<<<< HEAD
                     "mutation_type": (
                         node.mutation_type.value if node.mutation_type else None
                     ),
@@ -540,10 +898,20 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
             "final_code": self.current_node.code_content,
         }
 
+=======
+                    "mutation_type": node.mutation_type.value if node.mutation_type else None
+                }
+                for node in lineage
+            ],
+            "final_code": self.current_node.code_content
+        }
+    
+>>>>>>> origin/OS0.6.2.grok
     def _archive_evolution_chain(self):
         """Save evolution chain to evolution_lab neural chains"""
         if not self.root_node:
             return
+<<<<<<< HEAD
 
         date_str = datetime.now().strftime("%Y%m%d")
         archive_dir = Path("evolution_lab/neural_chains") / date_str
@@ -561,6 +929,25 @@ Respond in JSON format with suggestions, consciousness_impact, patterns, reasoni
         """
         Send enhanced context to VSCode Copilot through AI Bridge
 
+=======
+        
+        date_str = datetime.now().strftime("%Y%m%d")
+        archive_dir = Path("evolution_lab/neural_chains") / date_str
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Save root and all descendants
+        all_nodes = [self.root_node] + self.root_node.get_all_descendants()
+        
+        for node in all_nodes:
+            node.save_to_archive(archive_dir)
+        
+        print(f"\n[ARCHIVE] Saved {len(all_nodes)} nodes to {archive_dir}")
+    
+    async def _stimulate_vscode_copilot(self, results: Dict[str, Any]):
+        """
+        Send enhanced context to VSCode Copilot through AI Bridge
+        
+>>>>>>> origin/OS0.6.2.grok
         VSCode Copilot receives:
         - Evolution history (linked list chain)
         - Inter-agent conversation
@@ -581,6 +968,7 @@ async def demonstrate_enhanced_loop():
     print("ENHANCED AGENTIC LOOP DEMONSTRATION")
     print("Neural Evolution with Linked List Mutations")
     print("=" * 70)
+<<<<<<< HEAD
 
     # Sample code to evolve
     initial_code = """def calculate(x, y):
@@ -592,14 +980,35 @@ async def demonstrate_enhanced_loop():
         use_ollama=True, use_gemini=False, enable_vscode_bridge=True
     )
 
+=======
+    
+    # Sample code to evolve
+    initial_code = '''def calculate(x, y):
+    return x + y
+'''
+    
+    # Create loop
+    loop = EnhancedAgenticLoop(
+        use_ollama=True,
+        use_gemini=False,
+        enable_vscode_bridge=True
+    )
+    
+>>>>>>> origin/OS0.6.2.grok
     # Evolve code
     results = await loop.evolve_code(
         code_content=initial_code,
         file_path="ai/src/test/calculator.py",
         max_iterations=3,
+<<<<<<< HEAD
         consciousness_target=0.85,
     )
 
+=======
+        consciousness_target=0.85
+    )
+    
+>>>>>>> origin/OS0.6.2.grok
     # Display results
     print("\n" + "=" * 70)
     print("EVOLUTION RESULTS")

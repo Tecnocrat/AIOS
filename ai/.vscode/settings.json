@@ -1,9 +1,0 @@
-{
-    // Disable CMake Tools for Python AI layer
-    "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": "",
-    // Black Formatter as default Python formatter
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    }
-}

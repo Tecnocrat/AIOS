@@ -222,15 +222,22 @@
 		"cmake.preferredGenerators": [
 			"Visual Studio 17 2022"
 		],
+<<<<<<< HEAD
 		"cmake.configureOnOpen": false,
+=======
+		"cmake.configureOnOpen": true,
+>>>>>>> origin/OS0.6.2.grok
 		// Route CMake Tools to the Core cytoplasm folder explicitly in multi-root
 		"cmake.sourceDirectory": "${workspaceFolder:⚡ Core}",
 		"cmake.buildDirectory": "${workspaceFolder:⚡ Core}/build",
 		// Avoid noise in non-CMake consciousness layers
 		"cmake.ignoreCMakeListsMissing": true,
+<<<<<<< HEAD
 		"cmake.configureSettings": {
 			"CMAKE_BUILD_TYPE": "Debug"
 		},
+=======
+>>>>>>> origin/OS0.6.2.grok
 
 		// ==========================================================================
 		// 🔧 .NET DENDRITIC COORDINATION
@@ -276,6 +283,7 @@
 			"javascript": true,
 			"yaml": true,
 			"json": true,
+<<<<<<< HEAD
 			"jsonc": true,
 			"cpp": true,
 			"c": true,
@@ -284,6 +292,9 @@
 			"powershell": true,
 			"cmake": true,
 			"sql": false
+=======
+			"jsonc": true
+>>>>>>> origin/OS0.6.2.grok
 		},
 		"dotnet.completion.showCompletionItemsFromUnimportedNamespaces": false,
 		"dotnet.formatting.organizeImportsOnFormat": false,

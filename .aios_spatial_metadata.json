@@ -1,0 +1,320 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T23:27:15.518970",
+  "folder_info": {
+    "name": "AIOS",
+    "absolute_path": "c:\\dev\\AIOS",
+    "relative_path": ".",
+    "parent_path": "",
+    "depth_level": 0
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [],
+    "consciousness_level": "minimal"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AIOS_support",
+      "learn",
+      "projects",
+      "vcpkg"
+    ],
+    "child_folders": [
+      ".git",
+      ".githooks",
+      ".github",
+      ".pytest_cache",
+      ".vscode",
+      "ai",
+      "computational_layer",
+      "config",
+      "core",
+      "docs",
+      "evolution_lab",
+      "interface",
+      "runtime",
+      "scripts",
+      "tachyonic",
+      "venv",
+      "vscode-extension"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 2242663498,
+      "file_count": 73181,
+      "folder_count": 17,
+      "size_category": "massive"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".json": [
+        {
+          "name": ".aios_context.json",
+          "size": 17321,
+          "modified": "2025-10-20T22:24:20.679372",
+          "category": "documentation"
+        }
+      ],
+      "": [
+        {
+          "name": ".editorconfig",
+          "size": 7252,
+          "modified": "2025-09-22T22:53:15.022166",
+          "category": "other"
+        },
+        {
+          "name": ".gitignore",
+          "size": 10619,
+          "modified": "2025-10-20T23:13:29.466904",
+          "category": "other"
+        },
+        {
+          "name": ".pylintrc",
+          "size": 7176,
+          "modified": "2025-09-22T23:17:02.281887",
+          "category": "other"
+        }
+      ],
+      ".code-workspace": [
+        {
+          "name": "AIOS.code-workspace",
+          "size": 28254,
+          "modified": "2025-10-20T23:28:07.120053",
+          "category": "other"
+        }
+      ],
+      ".sln": [
+        {
+          "name": "AIOS.sln",
+          "size": 11319,
+          "modified": "2025-10-17T00:54:45.014901",
+          "category": "other"
+        }
+      ],
+      ".ps1": [
+        {
+          "name": "aios_launch.ps1",
+          "size": 35681,
+          "modified": "2025-10-18T13:19:02.195629",
+          "category": "consciousness"
+        }
+      ],
+      ".md": [
+        {
+          "name": "DEV_PATH.md",
+          "size": 20776,
+          "modified": "2025-10-20T22:46:15.665429",
+          "category": "documentation"
+        },
+        {
+          "name": "HANDOVER_TO_GROK.md",
+          "size": 13110,
+          "modified": "2025-10-20T22:46:15.833750",
+          "category": "documentation"
+        },
+        {
+          "name": "HANDOVER_TO_GROK_20251021_CLAUDE_SESSION.md",
+          "size": 21340,
+          "modified": "2025-10-21T21:06:34.285160",
+          "category": "documentation"
+        },
+        {
+          "name": "PROJECT_CONTEXT.md",
+          "size": 5782,
+          "modified": "2025-10-20T21:16:03.875379",
+          "category": "documentation"
+        },
+        {
+          "name": "README.md",
+          "size": 20084,
+          "modified": "2025-10-20T20:20:23.408758",
+          "category": "documentation"
+        }
+      ],
+      ".toml": [
+        {
+          "name": "pyproject.toml",
+          "size": 10797,
+          "modified": "2025-09-22T23:32:20.246772",
+          "category": "configuration"
+        }
+      ],
+      ".in": [
+        {
+          "name": "requirements.in",
+          "size": 1353,
+          "modified": "2025-09-22T23:56:09.099562",
+          "category": "other"
+        }
+      ],
+      ".txt": [
+        {
+          "name": "requirements.txt",
+          "size": 4523,
+          "modified": "2025-10-21T22:23:02.556348",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": ".aios_context.json",
+        "size": 17321,
+        "modified": "2025-10-20T22:24:20.679372",
+        "category": "documentation"
+      },
+      {
+        "name": ".editorconfig",
+        "size": 7252,
+        "modified": "2025-09-22T22:53:15.022166",
+        "category": "other"
+      },
+      {
+        "name": "AIOS.code-workspace",
+        "size": 28254,
+        "modified": "2025-10-20T23:28:07.120053",
+        "category": "other"
+      },
+      {
+        "name": "AIOS.sln",
+        "size": 11319,
+        "modified": "2025-10-17T00:54:45.014901",
+        "category": "other"
+      },
+      {
+        "name": "aios_launch.ps1",
+        "size": 35681,
+        "modified": "2025-10-18T13:19:02.195629",
+        "category": "consciousness"
+      },
+      {
+        "name": "README.md",
+        "size": 20084,
+        "modified": "2025-10-20T20:20:23.408758",
+        "category": "documentation"
+      },
+      {
+        "name": "requirements.txt",
+        "size": 4523,
+        "modified": "2025-10-21T22:23:02.556348",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "requirements.txt",
+        "size": 4523,
+        "modified": "2025-10-21T22:23:02.556348",
+        "category": "documentation"
+      },
+      {
+        "name": "HANDOVER_TO_GROK_20251021_CLAUDE_SESSION.md",
+        "size": 21340,
+        "modified": "2025-10-21T21:06:34.285160",
+        "category": "documentation"
+      },
+      {
+        "name": "AIOS.code-workspace",
+        "size": 28254,
+        "modified": "2025-10-20T23:28:07.120053",
+        "category": "other"
+      },
+      {
+        "name": ".gitignore",
+        "size": 10619,
+        "modified": "2025-10-20T23:13:29.466904",
+        "category": "other"
+      },
+      {
+        "name": "HANDOVER_TO_GROK.md",
+        "size": 13110,
+        "modified": "2025-10-20T22:46:15.833750",
+        "category": "documentation"
+      },
+      {
+        "name": "DEV_PATH.md",
+        "size": 20776,
+        "modified": "2025-10-20T22:46:15.665429",
+        "category": "documentation"
+      },
+      {
+        "name": ".aios_context.json",
+        "size": 17321,
+        "modified": "2025-10-20T22:24:20.679372",
+        "category": "documentation"
+      },
+      {
+        "name": "PROJECT_CONTEXT.md",
+        "size": 5782,
+        "modified": "2025-10-20T21:16:03.875379",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 20084,
+        "modified": "2025-10-20T20:20:23.408758",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_launch.ps1",
+        "size": 35681,
+        "modified": "2025-10-18T13:19:02.195629",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 15,
+      "file_types": [
+        ".json",
+        "",
+        ".code-workspace",
+        ".sln",
+        ".ps1",
+        ".md",
+        ".toml",
+        ".in",
+        ".txt"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 5402,
+      "consciousness_files": 715,
+      "agentic_files": 505,
+      "intelligence_files": 251
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [
+      ".editorconfig"
+    ],
+    "breadcrumb_path": "",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'c:\\dev\\AIOS' -Recurse",
+      "find_python": "Get-ChildItem 'c:\\dev\\AIOS' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'c:\\dev\\AIOS' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": []
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -124,7 +124,13 @@ class AIAgentBridge:
             else:
                 result = {"success": False, "error": "Unsupported agent type"}
 
+<<<<<<< HEAD
             session["status"] = "completed" if result.get("success") else "failed"
+=======
+            session["status"] = (
+                "completed" if result.get("success") else "failed"
+            )
+>>>>>>> origin/OS0.6.2.grok
             session["result"] = result
             session["completed_at"] = datetime.now().isoformat()
 
@@ -240,7 +246,13 @@ Architecture: 6-Supercell biological computing model
                 "error": f"GitHub Copilot execution failed: {str(e)}",
             }
 
+<<<<<<< HEAD
     def _execute_local_llm_request(self, session: Dict[str, Any]) -> Dict[str, Any]:
+=======
+    def _execute_local_llm_request(
+        self, session: Dict[str, Any]
+    ) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Execute request using local LLM agent"""
 
         # Placeholder for local LLM integration
@@ -313,7 +325,15 @@ Architecture: 6-Supercell biological computing model
 
     def get_session_history(self, limit: int = 10) -> List[Dict[str, Any]]:
         """Get recent session history"""
+<<<<<<< HEAD
         return self.session_history[-limit:] if limit > 0 else self.session_history
+=======
+        return (
+            self.session_history[-limit:]
+            if limit > 0
+            else self.session_history
+        )
+>>>>>>> origin/OS0.6.2.grok
 
 
 def main():
@@ -361,7 +381,13 @@ def main():
 
     if result["success"]:
         print("Enhanced Prompt Ready for Submission")
+<<<<<<< HEAD
         print("Use the enhanced_prompt from the result to trigger autonomous execution")
+=======
+        print(
+            "Use the enhanced_prompt from the result to trigger autonomous execution"
+        )
+>>>>>>> origin/OS0.6.2.grok
 
 
 if __name__ == "__main__":

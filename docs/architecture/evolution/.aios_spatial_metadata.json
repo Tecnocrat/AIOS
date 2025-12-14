@@ -1,0 +1,116 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:46:38.919892",
+  "folder_info": {
+    "name": "evolution",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\architecture\\evolution",
+    "relative_path": "docs\\architecture\\evolution",
+    "parent_path": "docs\\architecture",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "architecture",
+      "evolution"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "agent_driven_code_evolution",
+      "consciousness",
+      "core",
+      "interfaces",
+      "populations",
+      "python_314"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 6409,
+      "file_count": 1,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "README.md",
+          "size": 6409,
+          "modified": "2025-10-04T00:12:49.409898",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "README.md",
+        "size": 6409,
+        "modified": "2025-10-04T00:12:49.409898",
+        "category": "documentation"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "README.md",
+        "size": 6409,
+        "modified": "2025-10-04T00:12:49.409898",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 1,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > architecture > evolution",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\evolution' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\evolution' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture\\evolution' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "docs\\architecture",
+      "evolution_lab"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

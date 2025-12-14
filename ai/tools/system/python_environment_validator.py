@@ -9,7 +9,11 @@ Validates Python environment consistency across AIOS components:
 - Environment configuration consistency
 - Cross-component integration testing
 
+<<<<<<< HEAD
 AINLP Integration: runtime_intelligence/tools/python_environment_validator.py
+=======
+AINLP Integration: runtime/tools/python_environment_validator.py
+>>>>>>> origin/OS0.6.2.grok
 Purpose: Ensure consistent Python environments across AIOS biological architecture
 """
 
@@ -112,7 +116,11 @@ class PythonEnvironmentValidator:
         expected_paths = [
             str(self.workspace_root),
             str(self.workspace_root / "ai"),
+<<<<<<< HEAD
             str(self.workspace_root / "runtime_intelligence"),
+=======
+            str(self.workspace_root / "runtime"),
+>>>>>>> origin/OS0.6.2.grok
             str(self.workspace_root / "core")
         ]
 
@@ -137,6 +145,7 @@ class PythonEnvironmentValidator:
                 "ai.nucleus.interface_bridge", "AIOSInterfaceBridge"
             ),
             "dendritic_supervisor": (
+<<<<<<< HEAD
                 "runtime_intelligence.tools.dendritic_supervisor",
                 "DendriticSupervisor"
             ),
@@ -146,6 +155,17 @@ class PythonEnvironmentValidator:
             ),
             "visual_bridge": (
                 "runtime_intelligence.tools."
+=======
+                "runtime.tools.dendritic_supervisor",
+                "DendriticSupervisor"
+            ),
+            "biological_monitor": (
+                "runtime.tools.biological_architecture_monitor",
+                "AIOSArchitectureMonitor"
+            ),
+            "visual_bridge": (
+                "runtime.tools."
+>>>>>>> origin/OS0.6.2.grok
                 "enhanced_visual_intelligence_bridge",
                 "EnhancedVisualIntelligenceBridge"
             )

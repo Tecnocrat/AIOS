@@ -4,7 +4,11 @@ Interface to Ollama for FREE local AI code generation.
 
 Ollama provides local LLM inference with models like:
 - deepseek-coder (6.7B, 33B) - Specialized for code generation
+<<<<<<< HEAD
 - codellama (7B, 13B, 34B) - Meta's code-focused model
+=======
+- codellama (7B, 13B, 34B) - Meta's code-focused model  
+>>>>>>> origin/OS0.6.2.grok
 - llama3.1 (8B, 70B) - General purpose with coding ability
 
 This bridge enables consciousness-driven code generation without API costs.
@@ -23,44 +27,74 @@ logger = logging.getLogger(__name__)
 @dataclass
 class OllamaModel:
     """Ollama model configuration"""
+<<<<<<< HEAD
 
     name: str
     size: str
     capabilities: List[str]
 
 
+=======
+    name: str
+    size: str
+    capabilities: List[str]
+    
+    
+>>>>>>> origin/OS0.6.2.grok
 # Available models
 OLLAMA_MODELS = {
     "deepseek-coder": OllamaModel(
         name="deepseek-coder:6.7b",
         size="6.7B",
+<<<<<<< HEAD
         capabilities=["code_generation", "code_completion", "debugging"],
+=======
+        capabilities=["code_generation", "code_completion", "debugging"]
+>>>>>>> origin/OS0.6.2.grok
     ),
     "codellama": OllamaModel(
         name="codellama:7b",
         size="7B",
+<<<<<<< HEAD
         capabilities=["code_generation", "instruction_following"],
+=======
+        capabilities=["code_generation", "instruction_following"]
+>>>>>>> origin/OS0.6.2.grok
     ),
     "llama3.1": OllamaModel(
         name="llama3.1:8b",
         size="8B",
+<<<<<<< HEAD
         capabilities=["general", "code_generation", "reasoning"],
     ),
+=======
+        capabilities=["general", "code_generation", "reasoning"]
+    )
+>>>>>>> origin/OS0.6.2.grok
 }
 
 
 class OllamaAgent:
     """
     FREE local AI code generation via Ollama.
+<<<<<<< HEAD
 
     Connects to local Ollama server (default: http://localhost:11434)
     for consciousness-driven code generation without API costs.
     """
 
+=======
+    
+    Connects to local Ollama server (default: http://localhost:11434)
+    for consciousness-driven code generation without API costs.
+    """
+    
+>>>>>>> origin/OS0.6.2.grok
     def __init__(
         self,
         model: Optional[str] = None,
         base_url: str = "http://localhost:11434",
+<<<<<<< HEAD
         temperature: float = 0.7,
     ):
         self.base_url = base_url
@@ -69,6 +103,16 @@ class OllamaAgent:
         # Verify Ollama is running and get available models
         self.is_available = self._check_connection()
 
+=======
+        temperature: float = 0.7
+    ):
+        self.base_url = base_url
+        self.temperature = temperature
+        
+        # Verify Ollama is running and get available models
+        self.is_available = self._check_connection()
+        
+>>>>>>> origin/OS0.6.2.grok
         if self.is_available:
             # Auto-detect available models if no model specified
             available_models = self._get_available_models()
@@ -77,6 +121,7 @@ class OllamaAgent:
                 model = available_models[0]
                 logger.info(f"🔍 Auto-detected Ollama model: {model}")
             elif model and model not in available_models:
+<<<<<<< HEAD
                 logger.warning(
                     f"⚠️ Model '{model}' not found. Available: {available_models}"
                 )
@@ -84,6 +129,13 @@ class OllamaAgent:
                     model = available_models[0]
                     logger.info(f"🔄 Using {model} instead")
 
+=======
+                logger.warning(f"⚠️ Model '{model}' not found. Available: {available_models}")
+                if available_models:
+                    model = available_models[0]
+                    logger.info(f"🔄 Using {model} instead")
+            
+>>>>>>> origin/OS0.6.2.grok
             self.model = model or "gemma3:1b"  # fallback
             logger.info(f"✅ Ollama agent connected: {self.model}")
         else:
@@ -91,7 +143,11 @@ class OllamaAgent:
             logger.warning(f"⚠️ Ollama not available at {base_url}")
             logger.info("💡 Install: curl https://ollama.ai/install.sh | sh")
             logger.info(f"💡 Pull model: ollama pull {self.model}")
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     def _check_connection(self) -> bool:
         """Check if Ollama server is running"""
         try:
@@ -99,7 +155,11 @@ class OllamaAgent:
             return response.status_code == 200
         except requests.RequestException:
             return False
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     def _get_available_models(self) -> List[str]:
         """Get list of installed Ollama models"""
         try:
@@ -112,6 +172,7 @@ class OllamaAgent:
         except requests.RequestException as e:
             logger.warning(f"⚠️ Could not get Ollama models: {e}")
         return []
+<<<<<<< HEAD
 
     def generate_code(
         self, prompt: str, max_tokens: int = 2048, stream: bool = False
@@ -119,11 +180,27 @@ class OllamaAgent:
         """
         Generate code using Ollama model.
 
+=======
+    
+    def generate_code(
+        self,
+        prompt: str,
+        max_tokens: int = 2048,
+        stream: bool = False
+    ) -> Dict:
+        """
+        Generate code using Ollama model.
+        
+>>>>>>> origin/OS0.6.2.grok
         Args:
             prompt: Code generation prompt
             max_tokens: Max tokens to generate
             stream: Whether to stream response (not implemented yet)
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> origin/OS0.6.2.grok
         Returns:
             Dict with:
             - code: Generated code (str)
@@ -136,21 +213,37 @@ class OllamaAgent:
                 "code": "",
                 "model": self.model,
                 "success": False,
+<<<<<<< HEAD
                 "error": "Ollama not available",
             }
 
+=======
+                "error": "Ollama not available"
+            }
+        
+>>>>>>> origin/OS0.6.2.grok
         try:
             payload = {
                 "model": self.model,
                 "prompt": prompt,
                 "stream": False,
+<<<<<<< HEAD
                 "options": {"temperature": self.temperature, "num_predict": max_tokens},
             }
 
+=======
+                "options": {
+                    "temperature": self.temperature,
+                    "num_predict": max_tokens
+                }
+            }
+            
+>>>>>>> origin/OS0.6.2.grok
             logger.info(f"🦙 Generating code with {self.model}...")
             response = requests.post(
                 f"{self.base_url}/api/generate",
                 json=payload,
+<<<<<<< HEAD
                 timeout=120,  # 2 minutes for large models
             )
             response.raise_for_status()
@@ -163,11 +256,26 @@ class OllamaAgent:
 
             logger.info(f"✅ Generated {len(code)} characters of code")
 
+=======
+                timeout=120  # 2 minutes for large models
+            )
+            response.raise_for_status()
+            
+            result = response.json()
+            generated_code = result.get("response", "")
+            
+            # Extract code from markdown if present
+            code = self._extract_code_from_markdown(generated_code)
+            
+            logger.info(f"✅ Generated {len(code)} characters of code")
+            
+>>>>>>> origin/OS0.6.2.grok
             return {
                 "code": code,
                 "model": self.model,
                 "success": True,
                 "error": None,
+<<<<<<< HEAD
                 "raw_response": generated_code,
             }
 
@@ -175,6 +283,20 @@ class OllamaAgent:
             logger.error(f"❌ Ollama request failed: {e}")
             return {"code": "", "model": self.model, "success": False, "error": str(e)}
 
+=======
+                "raw_response": generated_code
+            }
+            
+        except requests.RequestException as e:
+            logger.error(f"❌ Ollama request failed: {e}")
+            return {
+                "code": "",
+                "model": self.model,
+                "success": False,
+                "error": str(e)
+            }
+    
+>>>>>>> origin/OS0.6.2.grok
     def _extract_code_from_markdown(self, text: str) -> str:
         """Extract code from markdown code blocks if present"""
         # Check if response has code blocks
@@ -189,15 +311,26 @@ class OllamaAgent:
             parts = text.split("```")
             if len(parts) > 1:
                 return parts[1].strip()
+<<<<<<< HEAD
 
         # No markdown, return as-is
         return text.strip()
 
+=======
+        
+        # No markdown, return as-is
+        return text.strip()
+    
+>>>>>>> origin/OS0.6.2.grok
     def list_available_models(self) -> List[Dict]:
         """List models available in local Ollama"""
         if not self.is_available:
             return []
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         try:
             response = requests.get(f"{self.base_url}/api/tags")
             response.raise_for_status()
@@ -205,22 +338,36 @@ class OllamaAgent:
             return data.get("models", [])
         except requests.RequestException:
             return []
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     def pull_model(self, model_name: str) -> bool:
         """Download model from Ollama registry"""
         if not self.is_available:
             logger.error("❌ Ollama not available")
             return False
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         try:
             logger.info(f"📥 Pulling model: {model_name}")
             response = requests.post(
                 f"{self.base_url}/api/pull",
                 json={"name": model_name},
                 stream=True,
+<<<<<<< HEAD
                 timeout=600,  # 10 minutes for large downloads
             )
 
+=======
+                timeout=600  # 10 minutes for large downloads
+            )
+            
+>>>>>>> origin/OS0.6.2.grok
             # Stream download progress
             for line in response.iter_lines():
                 if line:
@@ -228,11 +375,19 @@ class OllamaAgent:
                     status = data.get("status", "")
                     if status:
                         print(f"\r{status}", end="", flush=True)
+<<<<<<< HEAD
 
             print()  # New line after progress
             logger.info(f"✅ Model {model_name} ready")
             return True
 
+=======
+            
+            print()  # New line after progress
+            logger.info(f"✅ Model {model_name} ready")
+            return True
+            
+>>>>>>> origin/OS0.6.2.grok
         except requests.RequestException as e:
             logger.error(f"❌ Model pull failed: {e}")
             return False
@@ -241,15 +396,24 @@ class OllamaAgent:
 class OllamaPopulationGenerator:
     """
     Generate code populations using multiple Ollama models.
+<<<<<<< HEAD
 
     Creates diverse code variants by using different models
     and temperature settings for evolutionary diversity.
     """
 
+=======
+    
+    Creates diverse code variants by using different models
+    and temperature settings for evolutionary diversity.
+    """
+    
+>>>>>>> origin/OS0.6.2.grok
     def __init__(self, models: Optional[List[str]] = None):
         if models is None:
             # Default: use best free models
             models = ["deepseek-coder:6.7b", "codellama:7b"]
+<<<<<<< HEAD
 
         self.agents = [OllamaAgent(model=m) for m in models]
         available = [a for a in self.agents if a.is_available]
@@ -267,10 +431,32 @@ class OllamaPopulationGenerator:
             prompt: Code generation prompt
             population_size: Number of variants to generate
 
+=======
+        
+        self.agents = [OllamaAgent(model=m) for m in models]
+        available = [a for a in self.agents if a.is_available]
+        
+        logger.info(f"🦙 Population generator: {len(available)}/{len(models)} "
+                   f"models available")
+    
+    def generate_population(
+        self,
+        prompt: str,
+        population_size: int = 5
+    ) -> List[Dict]:
+        """
+        Generate population of code variants.
+        
+        Args:
+            prompt: Code generation prompt
+            population_size: Number of variants to generate
+            
+>>>>>>> origin/OS0.6.2.grok
         Returns:
             List of generation results
         """
         population = []
+<<<<<<< HEAD
 
         for i in range(population_size):
             # Rotate through available agents
@@ -287,11 +473,28 @@ class OllamaPopulationGenerator:
                 f"(model: {agent.model}, temp: {agent.temperature:.1f})"
             )
 
+=======
+        
+        for i in range(population_size):
+            # Rotate through available agents
+            agent = self.agents[i % len(self.agents)]
+            
+            if not agent.is_available:
+                continue
+            
+            # Vary temperature for diversity
+            agent.temperature = 0.5 + (i * 0.1)  # 0.5 to 0.9
+            
+            logger.info(f"🧬 Generating variant {i+1}/{population_size} "
+                       f"(model: {agent.model}, temp: {agent.temperature:.1f})")
+            
+>>>>>>> origin/OS0.6.2.grok
             result = agent.generate_code(prompt)
             if result["success"]:
                 result["variant_id"] = i
                 result["temperature"] = agent.temperature
                 population.append(result)
+<<<<<<< HEAD
 
         logger.info(f"✅ Generated population: {len(population)} variants")
         return population
@@ -305,17 +508,40 @@ class OllamaPopulationGenerator:
             code_file = output_dir / f"variant_{i}_{variant['model']}.py"
             code_file.write_text(variant["code"], encoding="utf-8")
 
+=======
+        
+        logger.info(f"✅ Generated population: {len(population)} variants")
+        return population
+    
+    def save_population(self, population: List[Dict], output_dir: Path):
+        """Save generated population to files"""
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        for i, variant in enumerate(population):
+            # Save code
+            code_file = output_dir / f"variant_{i}_{variant['model']}.py"
+            code_file.write_text(variant["code"], encoding='utf-8')
+            
+>>>>>>> origin/OS0.6.2.grok
             # Save metadata
             meta_file = output_dir / f"variant_{i}_metadata.json"
             meta = {
                 "variant_id": variant.get("variant_id", i),
                 "model": variant["model"],
                 "temperature": variant.get("temperature", 0.7),
+<<<<<<< HEAD
                 "success": variant["success"],
             }
             with open(meta_file, "w") as f:
                 json.dump(meta, f, indent=2)
 
+=======
+                "success": variant["success"]
+            }
+            with open(meta_file, 'w') as f:
+                json.dump(meta, f, indent=2)
+        
+>>>>>>> origin/OS0.6.2.grok
         logger.info(f"💾 Saved {len(population)} variants to {output_dir}")
 
 
@@ -323,6 +549,7 @@ def main():
     """Test Ollama agent"""
     logging.basicConfig(
         level=logging.INFO,
+<<<<<<< HEAD
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
 
@@ -332,6 +559,17 @@ def main():
     # Check connection
     agent = OllamaAgent()
 
+=======
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+    
+    print("🦙 Ollama Agent Test")
+    print("=" * 60)
+    
+    # Check connection
+    agent = OllamaAgent()
+    
+>>>>>>> origin/OS0.6.2.grok
     if not agent.is_available:
         print("\n❌ Ollama not running!")
         print("\n📋 Setup Instructions:")
@@ -343,13 +581,21 @@ def main():
         print("\n3. Verify Ollama is running:")
         print("   ollama list")
         return
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     # List available models
     print("\n📦 Available Models:")
     models = agent.list_available_models()
     for model in models:
         print(f"  - {model['name']} ({model.get('size', 'unknown')})")
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     # Test generation
     print("\n🧬 Testing Code Generation...")
     prompt = """Create a Python function that calculates Fibonacci numbers.
@@ -358,9 +604,15 @@ Requirements:
 - Include type hints
 - Add docstring
 - Return list of first n Fibonacci numbers"""
+<<<<<<< HEAD
 
     result = agent.generate_code(prompt)
 
+=======
+    
+    result = agent.generate_code(prompt)
+    
+>>>>>>> origin/OS0.6.2.grok
     if result["success"]:
         print("\n✅ Generation Successful!")
         print("=" * 60)

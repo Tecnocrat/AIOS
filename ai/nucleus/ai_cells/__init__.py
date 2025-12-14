@@ -22,7 +22,10 @@ Notes:
     - Loader can be a class OR a zero-arg callable returning a class (lazy)
     - Deterministic model hash utility will land under CEL-HASH-02
 """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
 from __future__ import annotations
 
 from typing import Any, Callable, Dict, List, Type, Protocol, runtime_checkable
@@ -34,9 +37,17 @@ _ADAPTER_CACHE: Dict[str, Type[Any]] = {}
 @runtime_checkable
 class TrainingCellProtocol(Protocol):  # Minimal structural contract
     def create_model(self, *args, **kwargs) -> bool: ...  # noqa: D401,E701
+<<<<<<< HEAD
     def train(self, *args, **kwargs) -> bool: ...  # noqa: D401,E701
 
     def export_for_cpp_inference(self, export_path: str): ...  # noqa: D401,E701
+=======
+    def train(self, *args, **kwargs) -> bool: ...         # noqa: D401,E701
+
+    def export_for_cpp_inference(
+        self, export_path: str
+    ): ...  # noqa: D401,E701
+>>>>>>> origin/OS0.6.2.grok
 
 
 def register_training_adapter(
@@ -62,7 +73,13 @@ def _resolve(name: str) -> Type[Any]:
         return _ADAPTER_CACHE[key]
     if key not in _ADAPTER_LOADERS:
         available = list(_ADAPTER_LOADERS.keys())
+<<<<<<< HEAD
         raise KeyError(f"No training adapter for '{name}'. Available: {available}")
+=======
+        raise KeyError(
+            f"No training adapter for '{name}'. Available: {available}"
+        )
+>>>>>>> origin/OS0.6.2.grok
     loader = _ADAPTER_LOADERS[key]
     if callable(loader) and not isinstance(loader, type):  # lazy factory
         cls: Type[Any] = loader()
@@ -85,17 +102,28 @@ def create_training_cell(framework: str, config: Any) -> TrainingCellProtocol:
     inst = cls(config)  # type: ignore[call-arg]
     if not isinstance(inst, TrainingCellProtocol):  # structural check only
         import warnings
+<<<<<<< HEAD
 
         warnings.warn(f"Adapter '{framework}' does not conform to TrainingCellProtocol")
+=======
+        warnings.warn(
+            f"Adapter '{framework}' does not conform to TrainingCellProtocol"
+        )
+>>>>>>> origin/OS0.6.2.grok
     return inst  # type: ignore[return-value]
 
 
 # Built-in lazy registrations -------------------------------------------------
 
+<<<<<<< HEAD
 
 def _tf_loader() -> Type[Any]:  # lazy import
     from .tensorflow_training_cell import TensorFlowTrainingCell
 
+=======
+def _tf_loader() -> Type[Any]:  # lazy import
+    from .tensorflow_training_cell import TensorFlowTrainingCell
+>>>>>>> origin/OS0.6.2.grok
     return TensorFlowTrainingCell
 
 

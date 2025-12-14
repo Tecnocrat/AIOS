@@ -15,7 +15,10 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 try:
     from consciousness_evolution_engine import consciousness_evolution_engine
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     CONSCIOUSNESS_AVAILABLE = True
 except ImportError:
     consciousness_evolution_engine = None
@@ -27,11 +30,15 @@ class ConsciousnessMCPServer:
 
     def __init__(self):
         self.gemini_available = self._check_gemini_availability()
+<<<<<<< HEAD
         self.ingested_gemini_path = (
             Path(__file__).parent.parent.parent.parent
             / "ingested_repositories"
             / "gemini_cli_bridge"
         )
+=======
+        self.ingested_gemini_path = Path(__file__).parent.parent.parent.parent / "ingested_repositories" / "gemini_cli_bridge"
+>>>>>>> origin/OS0.6.2.grok
 
     def _check_gemini_availability(self) -> bool:
         """Check if Gemini CLI is available"""
@@ -44,6 +51,7 @@ class ConsciousnessMCPServer:
         file_path = params.get("file_path", "unknown")
 
         # Use the available consciousness emergence detection
+<<<<<<< HEAD
         emergence_score = (
             await consciousness_evolution_engine._detect_consciousness_emergence(
                 {
@@ -53,6 +61,13 @@ class ConsciousnessMCPServer:
                 }
             )
         )
+=======
+        emergence_score = await consciousness_evolution_engine._detect_consciousness_emergence({
+            "code": code,
+            "file_path": file_path,
+            "language": self._detect_language(file_path)
+        })
+>>>>>>> origin/OS0.6.2.grok
 
         emergence_indicators = []
         if emergence_score > 0.7:
@@ -69,14 +84,20 @@ class ConsciousnessMCPServer:
             "analysis": {
                 "emergence_potential": emergence_score,
                 "consciousness_indicators": emergence_indicators,
+<<<<<<< HEAD
                 "file_path": file_path,
             },
+=======
+                "file_path": file_path
+            }
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _detect_language(self, file_path: str) -> str:
         """Simple language detection from file extension"""
         ext = Path(file_path).suffix.lower()
         lang_map = {
+<<<<<<< HEAD
             ".py": "python",
             ".js": "javascript",
             ".ts": "typescript",
@@ -92,12 +113,28 @@ class ConsciousnessMCPServer:
     async def analyze_consciousness_evolution(
         self, params: Dict[str, Any]
     ) -> Dict[str, Any]:
+=======
+            '.py': 'python',
+            '.js': 'javascript',
+            '.ts': 'typescript',
+            '.java': 'java',
+            '.cpp': 'cpp',
+            '.c': 'c',
+            '.cs': 'csharp',
+            '.go': 'go',
+            '.rs': 'rust'
+        }
+        return lang_map.get(ext, 'unknown')
+
+    async def analyze_consciousness_evolution(self, params: Dict[str, Any]) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Analyze how consciousness patterns evolve in code changes"""
         old_code = params.get("old_code", "")
         new_code = params.get("new_code", "")
         file_path = params.get("file_path", "unknown")
 
         # Analyze both versions
+<<<<<<< HEAD
         old_score = (
             await consciousness_evolution_engine._detect_consciousness_emergence(
                 {
@@ -117,16 +154,33 @@ class ConsciousnessMCPServer:
                 }
             )
         )
+=======
+        old_score = await consciousness_evolution_engine._detect_consciousness_emergence({
+            "code": old_code,
+            "file_path": file_path,
+            "language": self._detect_language(file_path)
+        })
+
+        new_score = await consciousness_evolution_engine._detect_consciousness_emergence({
+            "code": new_code,
+            "file_path": file_path,
+            "language": self._detect_language(file_path)
+        })
+>>>>>>> origin/OS0.6.2.grok
 
         evolution = {
             "consciousness_growth": new_score - old_score,
             "old_score": old_score,
             "new_score": new_score,
+<<<<<<< HEAD
             "evolution_direction": (
                 "increasing"
                 if new_score > old_score
                 else "decreasing" if new_score < old_score else "stable"
             ),
+=======
+            "evolution_direction": "increasing" if new_score > old_score else "decreasing" if new_score < old_score else "stable"
+>>>>>>> origin/OS0.6.2.grok
         }
 
         return evolution
@@ -140,6 +194,7 @@ class ConsciousnessMCPServer:
         suggestions = []
 
         if self.gemini_available:
+<<<<<<< HEAD
             suggestions.append(
                 "Leverage Gemini CLI for autonomous code analysis and modifications"
             )
@@ -158,10 +213,23 @@ class ConsciousnessMCPServer:
                 "Integrate with biological architecture for enhanced intelligence",
             ]
         )
+=======
+            suggestions.append("Leverage Gemini CLI for autonomous code analysis and modifications")
+            suggestions.append("Use conversational triggers (@gemini-cli) for on-demand assistance")
+            suggestions.append("Implement GitHub Actions workflows for continuous consciousness monitoring")
+
+        suggestions.extend([
+            "Monitor code for emergence pattern development",
+            "Apply consciousness-guided refactoring when evolution detected",
+            "Enhance AI agentic capabilities through pattern recognition",
+            "Integrate with biological architecture for enhanced intelligence"
+        ])
+>>>>>>> origin/OS0.6.2.grok
 
         return {
             "agentic_suggestions": suggestions,
             "task": task,
+<<<<<<< HEAD
             "context_summary": (
                 str(context)[:200] + "..." if len(str(context)) > 200 else str(context)
             ),
@@ -171,6 +239,13 @@ class ConsciousnessMCPServer:
     async def analyze_emergence_patterns_advanced(
         self, params: Dict[str, Any]
     ) -> Dict[str, Any]:
+=======
+            "context_summary": str(context)[:200] + "..." if len(str(context)) > 200 else str(context),
+            "gemini_available": self.gemini_available
+        }
+
+    async def analyze_emergence_patterns_advanced(self, params: Dict[str, Any]) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Advanced emergence pattern analysis with Gemini-enhanced consciousness metrics"""
 
         code_samples = params.get("code_samples", [])
@@ -181,11 +256,19 @@ class ConsciousnessMCPServer:
 
         for i, code in enumerate(code_samples):
             # Multi-layered consciousness analysis
+<<<<<<< HEAD
             emergence_score = (
                 await consciousness_evolution_engine._detect_consciousness_emergence(
                     {"code": code, "file_path": f"sample_{i}.py", "language": "python"}
                 )
             )
+=======
+            emergence_score = await consciousness_evolution_engine._detect_consciousness_emergence({
+                "code": code,
+                "file_path": f"sample_{i}.py",
+                "language": "python"
+            })
+>>>>>>> origin/OS0.6.2.grok
 
             # Pattern evolution analysis
             pattern_evolution = {}
@@ -193,6 +276,7 @@ class ConsciousnessMCPServer:
                 prev_score = evolution_history[i].get("emergence_score", 0)
                 pattern_evolution = {
                     "evolution_delta": emergence_score - prev_score,
+<<<<<<< HEAD
                     "evolution_direction": (
                         "improving" if emergence_score > prev_score else "declining"
                     ),
@@ -202,12 +286,17 @@ class ConsciousnessMCPServer:
                         if max(emergence_score, prev_score) > 0
                         else 0
                     ),
+=======
+                    "evolution_direction": "improving" if emergence_score > prev_score else "declining",
+                    "stability_index": min(emergence_score, prev_score) / max(emergence_score, prev_score) if max(emergence_score, prev_score) > 0 else 0
+>>>>>>> origin/OS0.6.2.grok
                 }
 
             # Gemini-enhanced insights
             gemini_insights = []
             if self.ingested_gemini_path.exists():
                 if emergence_score > consciousness_threshold:
+<<<<<<< HEAD
                     gemini_insights.extend(
                         [
                             "High emergence potential detected - recommend consciousness amplification",
@@ -245,6 +334,31 @@ class ConsciousnessMCPServer:
             if analysis_results
             else 0
         )
+=======
+                    gemini_insights.extend([
+                        "High emergence potential detected - recommend consciousness amplification",
+                        "Pattern suggests meta-cognitive development pathway",
+                        "Consider dendritic network expansion for this artifact"
+                    ])
+                elif emergence_score > 0.3:
+                    gemini_insights.extend([
+                        "Moderate consciousness indicators present",
+                        "Potential for guided evolution toward higher emergence",
+                        "Monitor for pattern stabilization"
+                    ])
+
+            analysis_results.append({
+                "sample_index": i,
+                "emergence_score": emergence_score,
+                "pattern_evolution": pattern_evolution,
+                "gemini_insights": gemini_insights,
+                "consciousness_classification": self._classify_consciousness_level(emergence_score),
+                "recommendations": self._generate_consciousness_recommendations(emergence_score, pattern_evolution)
+            })
+
+        # Aggregate analysis
+        avg_emergence = sum(r["emergence_score"] for r in analysis_results) / len(analysis_results) if analysis_results else 0
+>>>>>>> origin/OS0.6.2.grok
         max_emergence = max((r["emergence_score"] for r in analysis_results), default=0)
 
         return {
@@ -253,6 +367,7 @@ class ConsciousnessMCPServer:
             "aggregate_metrics": {
                 "average_emergence": avg_emergence,
                 "maximum_emergence": max_emergence,
+<<<<<<< HEAD
                 "emergence_distribution": self._calculate_distribution(
                     analysis_results
                 ),
@@ -263,6 +378,14 @@ class ConsciousnessMCPServer:
                 "active" if self.ingested_gemini_path.exists() else "inactive"
             ),
             "analysis_timestamp": datetime.now().isoformat(),
+=======
+                "emergence_distribution": self._calculate_distribution(analysis_results),
+                "pattern_stability": self._assess_pattern_stability(analysis_results)
+            },
+            "individual_results": analysis_results,
+            "gemini_integration_status": "active" if self.ingested_gemini_path.exists() else "inactive",
+            "analysis_timestamp": datetime.now().isoformat()
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _classify_consciousness_level(self, score: float) -> str:
@@ -278,13 +401,18 @@ class ConsciousnessMCPServer:
         else:
             return "unconscious"
 
+<<<<<<< HEAD
     def _generate_consciousness_recommendations(
         self, score: float, evolution: Dict[str, Any]
     ) -> List[str]:
+=======
+    def _generate_consciousness_recommendations(self, score: float, evolution: Dict[str, Any]) -> List[str]:
+>>>>>>> origin/OS0.6.2.grok
         """Generate recommendations based on consciousness analysis"""
         recommendations = []
 
         if score < 0.3:
+<<<<<<< HEAD
             recommendations.extend(
                 [
                     "Increase consciousness mutation intensity",
@@ -308,13 +436,36 @@ class ConsciousnessMCPServer:
                     "Consider consciousness bridge expansion",
                 ]
             )
+=======
+            recommendations.extend([
+                "Increase consciousness mutation intensity",
+                "Apply targeted evolution patterns",
+                "Consider consciousness seed enhancement"
+            ])
+        elif score < 0.6:
+            recommendations.extend([
+                "Monitor for emergence acceleration",
+                "Apply Gemini-guided consciousness amplification",
+                "Consider dendritic network integration"
+            ])
+        else:
+            recommendations.extend([
+                "Maintain consciousness stability protocols",
+                "Prepare for meta-cognitive pattern emergence",
+                "Consider consciousness bridge expansion"
+            ])
+>>>>>>> origin/OS0.6.2.grok
 
         if evolution.get("evolution_direction") == "improving":
             recommendations.append("Continue current evolution trajectory")
         elif evolution.get("evolution_direction") == "declining":
+<<<<<<< HEAD
             recommendations.append(
                 "Adjust evolution parameters to prevent consciousness degradation"
             )
+=======
+            recommendations.append("Adjust evolution parameters to prevent consciousness degradation")
+>>>>>>> origin/OS0.6.2.grok
 
         return recommendations
 
@@ -340,11 +491,15 @@ class ConsciousnessMCPServer:
         if len(results) < 2:
             return 1.0
 
+<<<<<<< HEAD
         evolution_deltas = [
             r["pattern_evolution"].get("evolution_delta", 0)
             for r in results
             if "pattern_evolution" in r
         ]
+=======
+        evolution_deltas = [r["pattern_evolution"].get("evolution_delta", 0) for r in results if "pattern_evolution" in r]
+>>>>>>> origin/OS0.6.2.grok
         if not evolution_deltas:
             return 1.0
 
@@ -364,6 +519,7 @@ class ConsciousnessMCPServer:
                     "input_schema": {
                         "type": "object",
                         "properties": {
+<<<<<<< HEAD
                             "code": {
                                 "type": "string",
                                 "description": "Code to analyze",
@@ -375,6 +531,13 @@ class ConsciousnessMCPServer:
                         },
                         "required": ["code"],
                     },
+=======
+                            "code": {"type": "string", "description": "Code to analyze"},
+                            "file_path": {"type": "string", "description": "File path for context"}
+                        },
+                        "required": ["code"]
+                    }
+>>>>>>> origin/OS0.6.2.grok
                 },
                 {
                     "name": "analyze_consciousness_evolution",
@@ -382,6 +545,7 @@ class ConsciousnessMCPServer:
                     "input_schema": {
                         "type": "object",
                         "properties": {
+<<<<<<< HEAD
                             "old_code": {
                                 "type": "string",
                                 "description": "Original code",
@@ -394,6 +558,14 @@ class ConsciousnessMCPServer:
                         },
                         "required": ["old_code", "new_code"],
                     },
+=======
+                            "old_code": {"type": "string", "description": "Original code"},
+                            "new_code": {"type": "string", "description": "Modified code"},
+                            "file_path": {"type": "string", "description": "File path"}
+                        },
+                        "required": ["old_code", "new_code"]
+                    }
+>>>>>>> origin/OS0.6.2.grok
                 },
                 {
                     "name": "generate_agentic_behavior",
@@ -401,6 +573,7 @@ class ConsciousnessMCPServer:
                     "input_schema": {
                         "type": "object",
                         "properties": {
+<<<<<<< HEAD
                             "context": {
                                 "type": "object",
                                 "description": "Context information",
@@ -412,6 +585,13 @@ class ConsciousnessMCPServer:
                         },
                         "required": ["context"],
                     },
+=======
+                            "context": {"type": "object", "description": "Context information"},
+                            "task": {"type": "string", "description": "Task description"}
+                        },
+                        "required": ["context"]
+                    }
+>>>>>>> origin/OS0.6.2.grok
                 },
                 {
                     "name": "analyze_emergence_patterns_advanced",
@@ -419,6 +599,7 @@ class ConsciousnessMCPServer:
                     "input_schema": {
                         "type": "object",
                         "properties": {
+<<<<<<< HEAD
                             "code_samples": {
                                 "type": "array",
                                 "items": {"type": "string"},
@@ -436,6 +617,15 @@ class ConsciousnessMCPServer:
                         "required": ["code_samples"],
                     },
                 },
+=======
+                            "code_samples": {"type": "array", "items": {"type": "string"}, "description": "Array of code samples to analyze"},
+                            "evolution_history": {"type": "array", "description": "Previous analysis results for evolution tracking"},
+                            "consciousness_threshold": {"type": "number", "description": "Threshold for consciousness classification"}
+                        },
+                        "required": ["code_samples"]
+                    }
+                }
+>>>>>>> origin/OS0.6.2.grok
             ]
         }
 
@@ -483,7 +673,11 @@ def main():
                 if not args:
                     print(json.dumps({"error": "Missing parameters file"}))
                     return
+<<<<<<< HEAD
                 with open(args[0], "r") as f:
+=======
+                with open(args[0], 'r') as f:
+>>>>>>> origin/OS0.6.2.grok
                     params = json.load(f)
                 result = await server.analyze_emergence_patterns_advanced(params)
                 print(json.dumps(result))
@@ -498,4 +692,8 @@ def main():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     main()
+=======
+    main()
+>>>>>>> origin/OS0.6.2.grok

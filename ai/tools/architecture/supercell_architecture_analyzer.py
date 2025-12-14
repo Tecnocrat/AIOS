@@ -271,7 +271,11 @@ class SupercellArchitectureAnalyzer:
         elif "core" in cell_path.name.lower():
             cell_analysis["specialization"] = "core_functionality"
         elif "runtime" in cell_path.name.lower():
+<<<<<<< HEAD
             cell_analysis["specialization"] = "runtime_intelligence"
+=======
+            cell_analysis["specialization"] = "runtime"
+>>>>>>> origin/OS0.6.2.grok
         elif "tachyonic" in cell_path.name.lower():
             cell_analysis["specialization"] = "data_storage_access"
         else:

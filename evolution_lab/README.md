@@ -36,6 +36,7 @@ Evolution Lab is the mutation engine enabling this adaptation.
 
 ---
 
+<<<<<<< HEAD
 ---
 
 ## 🧠 Phase 12: Neuroscience-Inspired Biological Dynamics (November 2025)
@@ -168,6 +169,9 @@ evolution_lab/
 ---
 
 ## Current Contents (Pre-Phase 12)
+=======
+## Current Contents
+>>>>>>> origin/OS0.6.2.grok
 
 ### Populations (pop_*.json)
 Genetic algorithm population files tracking organism evolution across generations.

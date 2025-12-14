@@ -74,6 +74,7 @@
                 </StackPanel>
             </Border>
 
+<<<<<<< HEAD
             <!-- Center Panel - Chat Interface and AI Search -->
             <Border Grid.Column="1" Background="#FF2D2D30" CornerRadius="8" Margin="5,0">
                 <TabControl Name="MainTabControl" Background="Transparent" BorderThickness="0">
@@ -182,6 +183,41 @@
                         </Grid>
                     </TabItem>
                 </TabControl>
+=======
+            <!-- Center Panel - Chat Interface -->
+            <Border Grid.Column="1" Background="#FF2D2D30" CornerRadius="8" Margin="5,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Chat Header -->
+                    <Border Grid.Row="0" Background="#FF3E3E42" Padding="15,10">
+                        <TextBlock Name="ChatHeader" Text="AI Assistant Ready" FontSize="16" FontWeight="Bold" Foreground="#FFCCCCCC"/>
+                    </Border>
+
+                    <!-- Chat Messages -->
+                    <ScrollViewer Grid.Row="1" Name="ChatScrollViewer" VerticalScrollBarVisibility="Auto" Padding="15">
+                        <StackPanel Name="ChatMessages" />
+                    </ScrollViewer>
+
+                    <!-- Input Area -->
+                    <Border Grid.Row="2" Background="#FF3E3E42" Padding="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Name="ChatInput" Background="#FF1E1E1E" Foreground="#FFCCCCCC" BorderBrush="#FF404040" BorderThickness="1" Padding="10" FontSize="14" KeyDown="ChatInput_KeyDown" Text="Type your message here..."/>
+
+                            <Button Name="SendButton" Grid.Column="1" Content="Send" Background="#FF007ACC" Foreground="White" BorderThickness="0" Padding="20,10" Margin="10,0,0,0" FontWeight="Bold" Click="SendButton_Click"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+>>>>>>> origin/OS0.6.2.grok
             </Border>
 
             <!-- Right Panel - System Info -->

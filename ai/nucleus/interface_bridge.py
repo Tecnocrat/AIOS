@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+<<<<<<< HEAD
 AIOS Interface Bridge - Unified Canonical Version
 Provides standardized entry point for C++/C# interface layer to discover and
 interact with Python AI tools
@@ -21,11 +22,25 @@ Features:
 Auto-start: True (HTTP API server)
 Health-check: health_check
 Dependencies: sequencer, fastapi, ai_agent_dendritic_similarity
+=======
+AIOS Interface Bridge
+Provides standardized entry point for C++/C# interface layer to discover and
+interact with Python AI tools
+
+This component creates a bridge between the Python AI layer
+and the .NET interface, enabling rich metadata generation
+and dynamic tool discovery for the UI.
+
+Auto-start: True (HTTP API server)
+Health-check: health_check
+Dependencies: sequencer, fastapi
+>>>>>>> origin/OS0.6.2.grok
 """
 
 import asyncio
 import json
 import logging
+<<<<<<< HEAD
 import os
 import subprocess
 import sys
@@ -49,10 +64,21 @@ from ainlp_import_resolver import (  # noqa: E402
     try_import_similarity_engine,
     WORKSPACE_ROOT,
 )
+=======
+import sys
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import subprocess
+
+# Add core to path for sequencer import
+sys.path.append(str(Path(__file__).parent))
+>>>>>>> origin/OS0.6.2.grok
 
 try:
     from sequencer import AIOSSequencer
 except ImportError:
+<<<<<<< HEAD
     print("❌ Could not import AIOSSequencer - " "ensure sequencer.py is available")
     sys.exit(1)
 
@@ -83,24 +109,38 @@ else:
     print("[WARN] AI Similarity Engine not available")
     print("       Run: python runtime/tools/ai_agent_dendritic_similarity.py")
 
+=======
+    print("❌ Could not import AIOSSequencer - "
+          "ensure sequencer.py is available")
+    sys.exit(1)
+
+>>>>>>> origin/OS0.6.2.grok
 # FastAPI imports
 try:
     from fastapi import FastAPI, HTTPException
     from fastapi.middleware.cors import CORSMiddleware
     from fastapi.responses import JSONResponse
     import uvicorn
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     FASTAPI_AVAILABLE = True
 except ImportError:
     print("⚠️  FastAPI not available - HTTP API will be disabled")
     FASTAPI_AVAILABLE = False
 
 # Setup logging
+<<<<<<< HEAD
 logger = logging.getLogger("AIOS.InterfaceBridge")
+=======
+logger = logging.getLogger('AIOS.InterfaceBridge')
+>>>>>>> origin/OS0.6.2.grok
 
 
 class ToolMetadata:
     """Comprehensive metadata about an AI tool for interface consumption"""
+<<<<<<< HEAD
 
     def __init__(self, component_name: str, component_data: Dict[str, Any]):
         self.name = component_name
@@ -109,12 +149,23 @@ class ToolMetadata:
         self.category = component_data.get("category", "general")
         self.version = "1.0.0"  # Could be extracted from code
         self.status = component_data.get("status", "unknown")
+=======
+    
+    def __init__(self, component_name: str, component_data: Dict[str, Any]):
+        self.name = component_name
+        self.display_name = self._generate_display_name(component_name)
+        self.description = component_data.get('description', 'AI Tool')
+        self.category = component_data.get('category', 'general')
+        self.version = "1.0.0"  # Could be extracted from code
+        self.status = component_data.get('status', 'unknown')
+>>>>>>> origin/OS0.6.2.grok
         self.capabilities = self._analyze_capabilities(component_data)
         self.parameters = self._extract_parameters(component_data)
         self.output_formats = self._determine_output_formats(component_data)
         self.execution_time_estimate = self._estimate_execution_time()
         self.resource_requirements = self._analyze_resource_requirements()
         self.metadata_generated = datetime.now().isoformat()
+<<<<<<< HEAD
 
     def _generate_display_name(self, name: str) -> str:
         """Generate user-friendly display name"""
@@ -155,30 +206,90 @@ class ToolMetadata:
 
         category = component_data.get("category", "")
         if category == "ai_cell":
+=======
+    
+    def _generate_display_name(self, name: str) -> str:
+        """Generate user-friendly display name"""
+        return name.replace('_', ' ').title()
+    
+    def _analyze_capabilities(self,
+                              component_data: Dict[str, Any]) -> List[str]:
+        """Analyze component capabilities from code and metadata"""
+        capabilities = []
+        
+        # Standard capabilities based on category
+        category = component_data.get('category', '')
+        if category == 'ai_cell':
+            capabilities.extend(['knowledge_processing', 'session_management'])
+        elif category == 'tool':
+            capabilities.extend(['automation', 'analysis'])
+        elif category == 'service':
+            capabilities.extend(['background_processing', 'api_endpoints'])
+        elif category == 'integration':
+            capabilities.extend(['external_communication', 'data_exchange'])
+        
+        # Analyze from description and code patterns
+        description = component_data.get('description', '').lower()
+        if 'handoff' in description:
+            capabilities.append('knowledge_transfer')
+        if 'analysis' in description:
+            capabilities.append('data_analysis')
+        if 'automation' in description:
+            capabilities.append('process_automation')
+        if 'cross-pollination' in description:
+            capabilities.append('ai_collaboration')
+        
+        return list(set(capabilities))
+    
+    def _extract_parameters(self,
+                            component_data: Dict[str, Any]
+                            ) -> List[Dict[str, Any]]:
+        """Extract parameter information for the tool"""
+        # This would be enhanced to parse actual function signatures
+        # For now, provide common parameter patterns
+        
+        category = component_data.get('category', '')
+        if category == 'ai_cell':
+>>>>>>> origin/OS0.6.2.grok
             return [
                 {
                     "name": "ai_engine",
                     "type": "string",
                     "required": True,
                     "description": "AI engine identifier",
+<<<<<<< HEAD
                     "example": "claude-sonnet-3.5",
+=======
+                    "example": "claude-sonnet-3.5"
+>>>>>>> origin/OS0.6.2.grok
                 },
                 {
                     "name": "branch",
                     "type": "string",
                     "required": True,
                     "description": "Git branch identifier",
+<<<<<<< HEAD
                     "example": "OS",
                 },
             ]
         elif category == "tool":
+=======
+                    "example": "OS"
+                }
+            ]
+        elif category == 'tool':
+>>>>>>> origin/OS0.6.2.grok
             return [
                 {
                     "name": "operation",
                     "type": "string",
                     "required": True,
                     "description": "Operation to perform",
+<<<<<<< HEAD
                     "example": "extract_knowledge",
+=======
+                    "example": "extract_knowledge"
+>>>>>>> origin/OS0.6.2.grok
                 }
             ]
         else:
@@ -188,6 +299,7 @@ class ToolMetadata:
                     "type": "object",
                     "required": False,
                     "description": "Configuration parameters",
+<<<<<<< HEAD
                     "example": {},
                 }
             ]
@@ -214,6 +326,40 @@ class ToolMetadata:
         """Analyze resource requirements"""
         return {"memory": "low", "cpu": "medium", "disk": "low", "network": "none"}
 
+=======
+                    "example": {}
+                }
+            ]
+    
+    def _determine_output_formats(self,
+                                  component_data: Dict[str, Any]) -> List[str]:
+        """Determine output formats the tool can produce"""
+        formats = ['json']  # Default
+        
+        description = component_data.get('description', '').lower()
+        if 'report' in description:
+            formats.extend(['json', 'markdown', 'html'])
+        if 'analysis' in description:
+            formats.extend(['json', 'csv'])
+        if 'documentation' in description:
+            formats.extend(['markdown', 'html'])
+        
+        return list(set(formats))
+    
+    def _estimate_execution_time(self) -> str:
+        """Estimate execution time category"""
+        return "medium"  # Could be: instant, fast, medium, slow
+    
+    def _analyze_resource_requirements(self) -> Dict[str, str]:
+        """Analyze resource requirements"""
+        return {
+            "memory": "low",
+            "cpu": "medium",
+            "disk": "low",
+            "network": "none"
+        }
+    
+>>>>>>> origin/OS0.6.2.grok
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization"""
         return {
@@ -228,7 +374,11 @@ class ToolMetadata:
             "output_formats": self.output_formats,
             "execution_time_estimate": self.execution_time_estimate,
             "resource_requirements": self.resource_requirements,
+<<<<<<< HEAD
             "metadata_generated": self.metadata_generated,
+=======
+            "metadata_generated": self.metadata_generated
+>>>>>>> origin/OS0.6.2.grok
         }
 
 
@@ -236,13 +386,18 @@ class AIOSInterfaceBridge:
     """
     Main interface bridge between Python AI tools and C#/.NET interface
     """
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     def __init__(self, workspace_root: str):
         self.workspace_root = Path(workspace_root)
         self.sequencer = AIOSSequencer(workspace_root)
         self.discovered_tools: Dict[str, ToolMetadata] = {}
         self.last_discovery = None
         self.api_server = None
+<<<<<<< HEAD
 
         # Setup logging
         self.logger = self._setup_logging()
@@ -277,11 +432,18 @@ class AIOSInterfaceBridge:
             self.network_validator = None
             self.logger.warning("⚠️  Security Supercell disabled - " "Running without protection")
 
+=======
+        
+        # Setup logging
+        self.logger = self._setup_logging()
+        
+>>>>>>> origin/OS0.6.2.grok
         # Initialize FastAPI if available
         if FASTAPI_AVAILABLE:
             self.app = self._create_fastapi_app()
         else:
             self.app = None
+<<<<<<< HEAD
 
     def _setup_logging(self) -> logging.Logger:
         """Setup logging for interface bridge"""
@@ -297,14 +459,41 @@ class AIOSInterfaceBridge:
 
         return logger
 
+=======
+    
+    def _setup_logging(self) -> logging.Logger:
+        """Setup logging for interface bridge"""
+        logger = logging.getLogger('AIOS.InterfaceBridge')
+        logger.setLevel(logging.INFO)
+        
+        # Console handler
+        if not logger.handlers:
+            console_handler = logging.StreamHandler()
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            console_handler.setFormatter(formatter)
+            logger.addHandler(console_handler)
+        
+        return logger
+    
+>>>>>>> origin/OS0.6.2.grok
     def _create_fastapi_app(self) -> "FastAPI":  # type: ignore[name-defined]
         """Create FastAPI application for HTTP API"""
         app = FastAPI(  # type: ignore[possibly-unbound-variable]
             title="AIOS Interface Bridge API",
+<<<<<<< HEAD
             description="Bridge API for C#/.NET to discover and " "interact with Python AI tools",
             version="1.0.0",
         )
 
+=======
+            description="Bridge API for C#/.NET to discover and "
+                        "interact with Python AI tools",
+            version="1.0.0"
+        )
+        
+>>>>>>> origin/OS0.6.2.grok
         # Add CORS middleware for cross-origin requests
         app.add_middleware(
             CORSMiddleware,  # type: ignore[possibly-unbound-variable]
@@ -313,29 +502,52 @@ class AIOSInterfaceBridge:
             allow_methods=["*"],
             allow_headers=["*"],
         )
+<<<<<<< HEAD
 
         # Register endpoints
         self._register_api_endpoints(app)
 
+=======
+        
+        # Register endpoints
+        self._register_api_endpoints(app)
+        
+>>>>>>> origin/OS0.6.2.grok
         # Register startup event for initial discovery
         @app.on_event("startup")
         async def startup_event():
             await self.refresh_discovery()
+<<<<<<< HEAD
 
         return app
 
     def _register_api_endpoints(self, app: "FastAPI"):  # type: ignore[name-defined]
         """Register all API endpoints"""
 
+=======
+        
+        return app
+    
+    def _register_api_endpoints(
+        self, app: "FastAPI"  # type: ignore[name-defined]
+    ):
+        """Register all API endpoints"""
+        
+>>>>>>> origin/OS0.6.2.grok
         @app.get("/")
         async def root():
             """Root endpoint with API information"""
             return {
                 "service": "AIOS Interface Bridge",
                 "version": "1.0.0",
+<<<<<<< HEAD
                 "phase": "Phase 11.1 - Three-Layer Integration",
                 "description": (
                     "Unified canonical bridge for C#/.NET to discover and "
+=======
+                "description": (
+                    "Bridge API for C#/.NET to discover and "
+>>>>>>> origin/OS0.6.2.grok
                     "interact with Python AI tools"
                 ),
                 "endpoints": {
@@ -344,6 +556,7 @@ class AIOSInterfaceBridge:
                     "/tools/{tool_name}/execute": "Execute a specific tool",
                     "/categories": "List tool categories",
                     "/health": "Health check",
+<<<<<<< HEAD
                     "/discovery/refresh": "Refresh tool discovery",
                     "/ai/similarity": ("AI similarity search with LLM reasoning"),
                     "/ai/neurons": "Neuron database statistics",
@@ -380,18 +593,46 @@ class AIOSInterfaceBridge:
                     status_code=500, detail=str(e)
                 )
 
+=======
+                    "/discovery/refresh": "Refresh tool discovery"
+                }
+            }
+        
+        @app.get("/health")
+        async def health_check():
+            """Health check endpoint"""
+            try:
+                status = await self.health_check()
+                return JSONResponse(
+                    status
+                )  # type: ignore[possibly-unbound-variable]
+            except Exception as e:
+                raise HTTPException(
+                    status_code=500, detail=str(e)
+                )  # type: ignore[possibly-unbound-variable]
+        
+>>>>>>> origin/OS0.6.2.grok
         @app.get("/tools")
         async def list_tools():
             """List all discovered tools with metadata"""
             try:
                 await self.refresh_discovery()
+<<<<<<< HEAD
 
                 tools_list = [tool.to_dict() for tool in self.discovered_tools.values()]
 
+=======
+                
+                tools_list = [
+                    tool.to_dict() for tool in self.discovered_tools.values()
+                ]
+                
+>>>>>>> origin/OS0.6.2.grok
                 return {
                     "tools": tools_list,
                     "total_count": len(self.discovered_tools),
                     "last_discovery": (
+<<<<<<< HEAD
                         self.last_discovery.isoformat() if self.last_discovery else None
                     ),
                 }
@@ -402,10 +643,22 @@ class AIOSInterfaceBridge:
                     status_code=500, detail=f"Failed to list tools: {e}"
                 )
 
+=======
+                        self.last_discovery.isoformat()
+                        if self.last_discovery else None
+                    )
+                }
+            except Exception as e:
+                raise HTTPException(
+                    status_code=500, detail=f"Failed to list tools: {e}"
+                )  # type: ignore[possibly-unbound-variable]
+        
+>>>>>>> origin/OS0.6.2.grok
         @app.get("/tools/{tool_name}")
         async def get_tool_details(tool_name: str):
             """Get detailed information about a specific tool"""
             if tool_name not in self.discovered_tools:
+<<<<<<< HEAD
                 # AINLP.architectural-pattern (graceful-degradation):
                 # HTTPException from conditional FastAPI import
                 raise HTTPException(  # type: ignore[possibly-unbound]
@@ -416,17 +669,36 @@ class AIOSInterfaceBridge:
 
         @app.post("/tools/{tool_name}/execute")
         async def execute_tool(tool_name: str, parameters: Optional[Dict[str, Any]] = None):
+=======
+                raise HTTPException(
+                    status_code=404, detail=f"Tool '{tool_name}' not found"
+                )  # type: ignore[possibly-unbound-variable]
+            
+            return self.discovered_tools[tool_name].to_dict()
+        
+        @app.post("/tools/{tool_name}/execute")
+        async def execute_tool(
+            tool_name: str, parameters: Optional[Dict[str, Any]] = None
+        ):
+>>>>>>> origin/OS0.6.2.grok
             """Execute a specific tool with given parameters"""
             try:
                 result = await self.execute_tool(tool_name, parameters or {})
                 return result
             except Exception as e:
+<<<<<<< HEAD
                 # AINLP.architectural-pattern (graceful-degradation):
                 # HTTPException from conditional FastAPI import
                 raise HTTPException(  # type: ignore[possibly-unbound]
                     status_code=500, detail=f"Tool execution failed: {e}"
                 )
 
+=======
+                raise HTTPException(
+                    status_code=500, detail=f"Tool execution failed: {e}"
+                )  # type: ignore[possibly-unbound-variable]
+        
+>>>>>>> origin/OS0.6.2.grok
         @app.get("/categories")
         async def list_categories():
             """List all tool categories"""
@@ -437,6 +709,7 @@ class AIOSInterfaceBridge:
                 if category not in categories:
                     categories[category] = {
                         "name": category,
+<<<<<<< HEAD
                         "display_name": category.replace("_", " ").title(),
                         "tools": [],
                     }
@@ -447,6 +720,18 @@ class AIOSInterfaceBridge:
                 "total_categories": len(categories),
             }
 
+=======
+                        "display_name": category.replace('_', ' ').title(),
+                        "tools": []
+                    }
+                categories[category]["tools"].append(tool.name)
+            
+            return {
+                "categories": list(categories.values()),
+                "total_categories": len(categories)
+            }
+        
+>>>>>>> origin/OS0.6.2.grok
         @app.post("/discovery/refresh")
         async def refresh_discovery():
             """Force refresh of tool discovery"""
@@ -455,6 +740,7 @@ class AIOSInterfaceBridge:
                 return {
                     "message": "Discovery refreshed successfully",
                     "tools_discovered": len(self.discovered_tools),
+<<<<<<< HEAD
                     "discovery_time": (
                         self.last_discovery.isoformat() if self.last_discovery else None
                     ),
@@ -604,6 +890,15 @@ class AIOSInterfaceBridge:
                     status_code=500, detail=f"Failed to retrieve neuron statistics: {e}"
                 )
 
+=======
+                    "discovery_time": self.last_discovery.isoformat()
+                }
+            except Exception as e:
+                raise HTTPException(
+                    status_code=500, detail=f"Discovery refresh failed: {e}"
+                )  # type: ignore[possibly-unbound-variable]
+    
+>>>>>>> origin/OS0.6.2.grok
     async def refresh_discovery(self, force: bool = False):
         """Refresh tool discovery from sequencer"""
         # Only refresh if forced or if it's been more than 5 minutes
@@ -611,16 +906,26 @@ class AIOSInterfaceBridge:
             time_since_last = datetime.now() - self.last_discovery
             if time_since_last.total_seconds() < 300:  # 5 minutes
                 return
+<<<<<<< HEAD
 
         self.logger.info("🔍 Refreshing tool discovery...")
 
         # Discover components using sequencer
         components = await self.sequencer.discover_components()
 
+=======
+        
+        self.logger.info("🔍 Refreshing tool discovery...")
+        
+        # Discover components using sequencer
+        components = await self.sequencer.discover_components()
+        
+>>>>>>> origin/OS0.6.2.grok
         # Generate metadata for each component
         self.discovered_tools = {}
         for name, component in components.items():
             component_data = {
+<<<<<<< HEAD
                 "description": component.description,
                 "category": component.category,
                 "status": "available",
@@ -701,11 +1006,60 @@ class AIOSInterfaceBridge:
 
                 # SECURITY LAYER 3: Enforce shell=False
                 # Prevent shell injection attacks
+=======
+                'description': component.description,
+                'category': component.category,
+                'status': 'available',
+                'path': str(component.path),
+                'type': component.type,
+                'dependencies': component.dependencies
+            }
+            
+            tool_metadata = ToolMetadata(name, component_data)
+            self.discovered_tools[name] = tool_metadata
+        
+        self.last_discovery = datetime.now()
+        self.logger.info(f"✅ Discovered {len(self.discovered_tools)} tools")
+    
+    async def execute_tool(
+        self, tool_name: str, parameters: Optional[Dict[str, Any]]
+    ) -> Dict[str, Any]:
+        """Execute a specific tool with parameters"""
+        if tool_name not in self.discovered_tools:
+            raise ValueError(f"Tool '{tool_name}' not found")
+        
+        # Get the original component from sequencer
+        components = await self.sequencer.discover_components()
+        if tool_name not in components:
+            raise ValueError(
+                f"Component '{tool_name}' not available in sequencer"
+            )
+        
+        component = components[tool_name]
+        
+        self.logger.info(f"🚀 Executing tool: {tool_name}")
+        
+        try:
+            # Prepare execution environment
+            execution_start = datetime.now()
+            
+            # Build command with parameters
+            if component.type == 'python':
+                # For Python components, try to execute with parameters
+                cmd_parts = ["python", str(component.path)]
+                
+                # Add parameters as command line arguments
+                for key, value in parameters.items():
+                    cmd_parts.extend([f"--{key}", str(value)])
+                
+                # Execute the command
+>>>>>>> origin/OS0.6.2.grok
                 result = subprocess.run(
                     cmd_parts,
                     cwd=component.path.parent,
                     capture_output=True,
                     text=True,
+<<<<<<< HEAD
                     timeout=300,  # 5 minute timeout
                     shell=False,  # SECURITY: Disable shell execution
                 )
@@ -715,23 +1069,48 @@ class AIOSInterfaceBridge:
                 return {
                     "tool_name": tool_name,
                     "execution_status": ("success" if result.returncode == 0 else "failed"),
+=======
+                    timeout=300  # 5 minute timeout
+                )
+                
+                execution_time = (
+                    datetime.now() - execution_start
+                ).total_seconds()
+                
+                return {
+                    "tool_name": tool_name,
+                    "execution_status": (
+                        "success" if result.returncode == 0 else "failed"
+                    ),
+>>>>>>> origin/OS0.6.2.grok
                     "return_code": result.returncode,
                     "stdout": result.stdout,
                     "stderr": result.stderr,
                     "execution_time_seconds": execution_time,
                     "parameters_used": parameters,
+<<<<<<< HEAD
                     "timestamp": execution_start.isoformat(),
                     "security_validated": SECURITY_AVAILABLE,
                 }
             else:
                 raise ValueError(f"Unsupported component type: {component.type}")
 
+=======
+                    "timestamp": execution_start.isoformat()
+                }
+            else:
+                raise ValueError(
+                    f"Unsupported component type: {component.type}"
+                )
+                
+>>>>>>> origin/OS0.6.2.grok
         except subprocess.TimeoutExpired:
             return {
                 "tool_name": tool_name,
                 "execution_status": "timeout",
                 "error": "Tool execution timed out after 5 minutes",
                 "parameters_used": parameters,
+<<<<<<< HEAD
                 "timestamp": execution_start.isoformat(),
             }
         except Exception as e:
@@ -758,19 +1137,31 @@ class AIOSInterfaceBridge:
                         parameters=parameters or {},
                     )
 
+=======
+                "timestamp": execution_start.isoformat()
+            }
+        except Exception as e:
+>>>>>>> origin/OS0.6.2.grok
             return {
                 "tool_name": tool_name,
                 "execution_status": "error",
                 "error": str(e),
                 "parameters_used": parameters,
+<<<<<<< HEAD
                 "timestamp": execution_start.isoformat(),
             }
 
+=======
+                "timestamp": execution_start.isoformat()
+            }
+    
+>>>>>>> origin/OS0.6.2.grok
     async def health_check(self) -> Dict[str, Any]:
         """Perform health check of the interface bridge"""
         try:
             # Check sequencer health
             sequencer_health = await self.sequencer.health_check_all()
+<<<<<<< HEAD
 
             # Check tool discovery freshness
             discovery_age = None
@@ -791,6 +1182,16 @@ class AIOSInterfaceBridge:
                     self.security_consciousness.consciousness_level
                 )
 
+=======
+            
+            # Check tool discovery freshness
+            discovery_age = None
+            if self.last_discovery:
+                discovery_age = (
+                    datetime.now() - self.last_discovery
+                ).total_seconds()
+            
+>>>>>>> origin/OS0.6.2.grok
             return {
                 "status": "healthy",
                 "bridge_version": "1.0.0",
@@ -798,20 +1199,34 @@ class AIOSInterfaceBridge:
                 "discovery_age_seconds": discovery_age,
                 "sequencer_status": "connected",
                 "sequencer_components": len(sequencer_health),
+<<<<<<< HEAD
                 "api_server_status": ("running" if FASTAPI_AVAILABLE else "disabled"),
                 "security_supercell": security_status,
                 "timestamp": datetime.now().isoformat(),
+=======
+                "api_server_status": "running" if FASTAPI_AVAILABLE else "disabled",
+                "timestamp": datetime.now().isoformat()
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {
                 "status": "unhealthy",
                 "error": str(e),
+<<<<<<< HEAD
                 "timestamp": datetime.now().isoformat(),
             }
 
     def generate_csharp_interface_code(self) -> str:
         """Generate C# interface code for .NET integration"""
         interface_code = """
+=======
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    def generate_csharp_interface_code(self) -> str:
+        """Generate C# interface code for .NET integration"""
+        interface_code = '''
+>>>>>>> origin/OS0.6.2.grok
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -828,12 +1243,17 @@ namespace AIOS.Models
     {
         private readonly HttpClient _httpClient;
         private readonly string _bridgeUrl;
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/OS0.6.2.grok
         public PythonAIToolsBridge(string bridgeUrl = "http://localhost:8000")
         {
             _bridgeUrl = bridgeUrl;
             _httpClient = new HttpClient();
         }
+<<<<<<< HEAD
 
         public async Task<List<AIToolMetadata>> GetAvailableToolsAsync()
         {
@@ -879,6 +1299,41 @@ namespace AIOS.Models
         }
     }
 
+=======
+        
+        public async Task<List<AIToolMetadata>> GetAvailableToolsAsync()
+        {
+            var response = await _httpClient.GetStringAsync($"{_bridgeUrl}/tools");
+            var result = JsonSerializer.Deserialize<ToolsResponse>(response);
+            return result.Tools;
+        }
+        
+        public async Task<AIToolMetadata> GetToolDetailsAsync(string toolName)
+        {
+            var response = await _httpClient.GetStringAsync($"{_bridgeUrl}/tools/{toolName}");
+            return JsonSerializer.Deserialize<AIToolMetadata>(response);
+        }
+        
+        public async Task<ToolExecutionResult> ExecuteToolAsync(string toolName, Dictionary<string, object> parameters = null)
+        {
+            var json = JsonSerializer.Serialize(parameters ?? new Dictionary<string, object>());
+            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            
+            var response = await _httpClient.PostAsync($"{_bridgeUrl}/tools/{toolName}/execute", content);
+            var resultJson = await response.Content.ReadAsStringAsync();
+            
+            return JsonSerializer.Deserialize<ToolExecutionResult>(resultJson);
+        }
+        
+        public async Task<List<ToolCategory>> GetToolCategoriesAsync()
+        {
+            var response = await _httpClient.GetStringAsync($"{_bridgeUrl}/categories");
+            var result = JsonSerializer.Deserialize<CategoriesResponse>(response);
+            return result.Categories;
+        }
+    }
+    
+>>>>>>> origin/OS0.6.2.grok
     public class AIToolMetadata
     {
         public string Name { get; set; }
@@ -894,7 +1349,11 @@ namespace AIOS.Models
         public ResourceRequirements ResourceRequirements { get; set; }
         public DateTime MetadataGenerated { get; set; }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     public class ToolParameter
     {
         public string Name { get; set; }
@@ -903,7 +1362,11 @@ namespace AIOS.Models
         public string Description { get; set; }
         public object Example { get; set; }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     public class ResourceRequirements
     {
         public string Memory { get; set; }
@@ -911,7 +1374,11 @@ namespace AIOS.Models
         public string Disk { get; set; }
         public string Network { get; set; }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     public class ToolExecutionResult
     {
         public string ToolName { get; set; }
@@ -923,34 +1390,53 @@ namespace AIOS.Models
         public Dictionary<string, object> ParametersUsed { get; set; }
         public DateTime Timestamp { get; set; }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     public class ToolCategory
     {
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public List<string> Tools { get; set; }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     public class ToolsResponse
     {
         public List<AIToolMetadata> Tools { get; set; }
         public int TotalCount { get; set; }
         public DateTime? LastDiscovery { get; set; }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     public class CategoriesResponse
     {
         public List<ToolCategory> Categories { get; set; }
         public int TotalCategories { get; set; }
     }
 }
+<<<<<<< HEAD
 """
         return interface_code
 
+=======
+'''
+        return interface_code
+    
+>>>>>>> origin/OS0.6.2.grok
     def save_csharp_interface(self) -> Path:
         """Save generated C# interface to file"""
         interface_dir = self.workspace_root / "interface" / "AIOS.Models"
         interface_file = interface_dir / "PythonAIToolsBridge.cs"
+<<<<<<< HEAD
 
         interface_code = self.generate_csharp_interface_code()
 
@@ -961,10 +1447,23 @@ namespace AIOS.Models
         return interface_file
 
     async def start_api_server(self, host: str = "localhost", port: int = 8001):
+=======
+        
+        interface_code = self.generate_csharp_interface_code()
+        
+        with open(interface_file, 'w', encoding='utf-8') as f:
+            f.write(interface_code)
+        
+        self.logger.info(f"✅ Generated C# interface: {interface_file}")
+        return interface_file
+    
+    async def start_api_server(self, host: str = "localhost", port: int = 8000):
+>>>>>>> origin/OS0.6.2.grok
         """Start the HTTP API server with proper lifecycle management"""
         if not FASTAPI_AVAILABLE:
             self.logger.error("❌ FastAPI not available - cannot start API server")
             return
+<<<<<<< HEAD
 
         # Initial discovery
         await self.refresh_discovery()
@@ -981,12 +1480,29 @@ namespace AIOS.Models
         # Export initial discovery for C# integration
         await self._export_discovery_metadata()
 
+=======
+        
+        # Initial discovery
+        await self.refresh_discovery()
+        
+        # Generate C# interface
+        self.save_csharp_interface()
+        
+        self.logger.info(f"🚀 Starting AIOS Interface Bridge API on {host}:{port}")
+        self.logger.info(f"   📖 Documentation: http://{host}:{port}/docs")
+        self.logger.info(f"   🔧 Health Check: http://{host}:{port}/health")
+        
+        # Export initial discovery for C# integration
+        await self._export_discovery_metadata()
+        
+>>>>>>> origin/OS0.6.2.grok
         # Configure uvicorn with proper lifecycle
         config = uvicorn.Config(  # type: ignore[possibly-unbound-variable]
             app=self.app,  # type: ignore[arg-type]
             host=host,
             port=port,
             log_level="info",
+<<<<<<< HEAD
             access_log=True,
         )
 
@@ -1002,17 +1518,39 @@ namespace AIOS.Models
         signal_module.signal(signal_module.SIGINT, signal_handler)
         signal_module.signal(signal_module.SIGTERM, signal_handler)
 
+=======
+            access_log=True
+        )
+        
+        server = uvicorn.Server(config)  # type: ignore[possibly-unbound-variable]
+        
+        # Add graceful shutdown handler
+        import signal
+        
+        def signal_handler(signum, frame):
+            self.logger.info("🛑 Received shutdown signal")
+            server.should_exit = True
+        
+        signal.signal(signal.SIGINT, signal_handler)
+        signal.signal(signal.SIGTERM, signal_handler)
+        
+>>>>>>> origin/OS0.6.2.grok
         try:
             await server.serve()
         except Exception as e:
             self.logger.error(f"❌ Server error: {e}")
         finally:
             self.logger.info("✅ AIOS Interface Bridge stopped gracefully")
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     async def _export_discovery_metadata(self):
         """Export discovery metadata for C# integration logging"""
         workspace_root = Path(self.workspace_root)
         export_file = workspace_root / "runtime" / "logs" / "interface_bridge_discovery.json"
+<<<<<<< HEAD
 
         # Ensure directory exists
         export_file.parent.mkdir(parents=True, exist_ok=True)
@@ -1024,6 +1562,16 @@ namespace AIOS.Models
             "discovery_timestamp": discovery_timestamp,
             "total_tools": len(self.discovered_tools),
             "tools": tools_list,
+=======
+        
+        # Ensure directory exists
+        export_file.parent.mkdir(parents=True, exist_ok=True)
+        
+        metadata = {
+            "discovery_timestamp": self.last_discovery.isoformat() if self.last_discovery else None,
+            "total_tools": len(self.discovered_tools),
+            "tools": [tool.to_dict() for tool in self.discovered_tools.values()],
+>>>>>>> origin/OS0.6.2.grok
             "server_status": "running",
             "api_endpoints": {
                 "health": "/health",
@@ -1031,6 +1579,7 @@ namespace AIOS.Models
                 "discovery": "/tools/{tool_name}",
                 "execute": "/tools/{tool_name}/execute",
                 "categories": "/categories",
+<<<<<<< HEAD
                 "refresh": "/discovery/refresh",
             },
         }
@@ -1038,6 +1587,15 @@ namespace AIOS.Models
         with open(export_file, "w", encoding="utf-8") as f:
             json.dump(metadata, f, indent=2, ensure_ascii=False)
 
+=======
+                "refresh": "/discovery/refresh"
+            }
+        }
+        
+        with open(export_file, 'w', encoding='utf-8') as f:
+            json.dump(metadata, f, indent=2, ensure_ascii=False)
+        
+>>>>>>> origin/OS0.6.2.grok
         self.logger.info(f"💾 Exported discovery metadata: {export_file}")
 
 
@@ -1045,6 +1603,7 @@ async def main():
     """Main entry point for interface bridge"""
     # Ensure UTF-8 encoding for console output
     import sys
+<<<<<<< HEAD
 
     if sys.platform.startswith("win"):
         import codecs
@@ -1064,10 +1623,29 @@ async def main():
     await bridge.refresh_discovery()
     print(f"Discovered {len(bridge.discovered_tools)} AI tools")
 
+=======
+    if sys.platform.startswith('win'):
+        import codecs
+        sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer)
+        sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer)
+    
+    workspace_root = r"C:\dev\AIOS"
+    
+    bridge = AIOSInterfaceBridge(workspace_root)
+    
+    print("AIOS Interface Bridge Starting...")
+    print("=" * 50)
+    
+    # Initial discovery
+    await bridge.refresh_discovery()
+    print(f"Discovered {len(bridge.discovered_tools)} AI tools")
+    
+>>>>>>> origin/OS0.6.2.grok
     # Show discovered tools
     print("\nAvailable Tools:")
     for tool_name, tool_metadata in bridge.discovered_tools.items():
         print(f"   • {tool_metadata.display_name} ({tool_metadata.category})")
+<<<<<<< HEAD
 
     # Start API server if FastAPI is available
     if FASTAPI_AVAILABLE:
@@ -1075,6 +1653,15 @@ async def main():
         print("   API URL: http://localhost:8001")
         print("   Documentation: http://localhost:8001/docs")
 
+=======
+    
+    # Start API server if FastAPI is available
+    if FASTAPI_AVAILABLE:
+        print(f"\nStarting HTTP API server...")
+        print(f"   API URL: http://localhost:8000")
+        print(f"   Documentation: http://localhost:8000/docs")
+        
+>>>>>>> origin/OS0.6.2.grok
         try:
             await bridge.start_api_server()
         except KeyboardInterrupt:
@@ -1094,17 +1681,30 @@ def health_check() -> Dict[str, Any]:
     return {
         "status": "available",
         "service": "interface_bridge",
+<<<<<<< HEAD
         "api_available": FASTAPI_AVAILABLE,
+=======
+        "api_available": FASTAPI_AVAILABLE
+>>>>>>> origin/OS0.6.2.grok
     }
 
 
 # Global app instance for uvicorn
+<<<<<<< HEAD
 # AINLP Pattern: Use centralized workspace discovery
 if FASTAPI_AVAILABLE:
     bridge_instance = AIOSInterfaceBridge(str(WORKSPACE_ROOT))
+=======
+if FASTAPI_AVAILABLE:
+    bridge_instance = AIOSInterfaceBridge(r"C:\dev\AIOS")
+>>>>>>> origin/OS0.6.2.grok
     app = bridge_instance.app
 else:
     app = None
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/OS0.6.2.grok
 if __name__ == "__main__":
     asyncio.run(main())

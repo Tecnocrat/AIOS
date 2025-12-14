@@ -1,5 +1,6 @@
 {
   "spatial_metadata_version": "1.0.0",
+<<<<<<< HEAD
   "generation_timestamp": "2025-09-16T22:27:44.151327",
   "folder_info": {
     "name": "runtime_intelligence",
@@ -15,6 +16,23 @@
       "runtime_intelligence"
     ],
     "consciousness_level": "medium"
+=======
+  "generation_timestamp": "2025-10-25T18:46:22.790972",
+  "folder_info": {
+    "name": "runtime",
+    "absolute_path": "C:\\dev\\AIOS\\runtime",
+    "relative_path": "runtime",
+    "parent_path": ".",
+    "depth_level": 1
+  },
+  "architectural_classification": {
+    "primary_area": "unknown",
+    "secondary_areas": [],
+    "path_classification": [
+      "runtime"
+    ],
+    "consciousness_level": "minimal"
+>>>>>>> origin/OS0.6.2.grok
   },
   "spatial_context": {
     "sibling_folders": [
@@ -23,6 +41,7 @@
       ".github",
       ".pytest_cache",
       ".vscode",
+<<<<<<< HEAD
       "BridgeTest",
       "ai",
       "aios_env",
@@ -47,10 +66,23 @@
       "test_results",
       "tools",
       "visual_interface",
+=======
+      "ai",
+      "config",
+      "core",
+      "docs",
+      "evolution_lab",
+      "interface",
+      "scripts",
+      "tachyonic",
+      "tachyonic_archive",
+      "venv",
+>>>>>>> origin/OS0.6.2.grok
       "vscode-extension"
     ],
     "child_folders": [
       "__pycache__",
+<<<<<<< HEAD
       "aios_cellular_workspace",
       "analysis",
       "context",
@@ -63,6 +95,28 @@
       "file_count": 233,
       "folder_count": 7,
       "size_category": "medium"
+=======
+      "ai",
+      "aios_cellular_workspace",
+      "analysis",
+      "build",
+      "context",
+      "core",
+      "docs",
+      "iterations",
+      "logs",
+      "orchestration",
+      "tachyonic",
+      "temp",
+      "test_results",
+      "tools"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 20560463,
+      "file_count": 636,
+      "folder_count": 15,
+      "size_category": "large"
+>>>>>>> origin/OS0.6.2.grok
     },
     "spatial_relationships": {
       "has_siblings": true,
@@ -76,19 +130,45 @@
         {
           "name": ".ainlp_pattern_docs_metabolized.md",
           "size": 6916,
+<<<<<<< HEAD
           "modified": "2025-09-13T16:53:33.337735",
+=======
+          "modified": "2025-10-25T09:25:59.495600",
+>>>>>>> origin/OS0.6.2.grok
           "category": "documentation"
         },
         {
           "name": "dev_relocated.md",
           "size": 1366,
+<<<<<<< HEAD
           "modified": "2025-09-15T22:02:18.562725",
+=======
+          "modified": "2025-10-25T09:25:59.825251",
+>>>>>>> origin/OS0.6.2.grok
           "category": "documentation"
         },
         {
           "name": "README.md",
           "size": 9437,
+<<<<<<< HEAD
           "modified": "2025-09-15T22:02:18.568723",
+=======
+          "modified": "2025-10-25T09:25:59.501602",
+          "category": "documentation"
+        }
+      ],
+      ".json": [
+        {
+          "name": ".aios_spatial_metadata.json",
+          "size": 10192,
+          "modified": "2025-10-25T12:07:31.686311",
+          "category": "documentation"
+        },
+        {
+          "name": "tool_catalogue.json",
+          "size": 49715,
+          "modified": "2025-10-25T09:25:59.937325",
+>>>>>>> origin/OS0.6.2.grok
           "category": "documentation"
         }
       ],
@@ -96,77 +176,144 @@
         {
           "name": ".monitor_file_creation.txt",
           "size": 86,
+<<<<<<< HEAD
           "modified": "2025-08-05T20:21:24.528379",
+=======
+          "modified": "2025-10-25T09:25:59.500602",
+          "category": "documentation"
+        },
+        {
+          "name": "consciousness_analysis_20251002_230007.txt",
+          "size": 3617,
+          "modified": "2025-10-25T09:25:59.749245",
+          "category": "documentation"
+        },
+        {
+          "name": "init_audit_report.txt",
+          "size": 146,
+          "modified": "2025-10-25T09:25:59.853776",
+>>>>>>> origin/OS0.6.2.grok
           "category": "documentation"
         }
       ],
       ".py": [
         {
           "name": "aios_intelligence_execution_completion_report.py",
+<<<<<<< HEAD
           "size": 12885,
           "modified": "2025-09-15T22:02:18.485729",
+=======
+          "size": 12894,
+          "modified": "2025-10-25T09:25:59.593150",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         },
         {
           "name": "aios_intelligence_pattern_executor.py",
           "size": 44653,
+<<<<<<< HEAD
           "modified": "2025-09-15T22:02:18.528726",
+=======
+          "modified": "2025-10-25T09:25:59.597148",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         },
         {
           "name": "aios_interface_optimization_demo.py",
           "size": 12538,
+<<<<<<< HEAD
           "modified": "2025-09-15T22:02:18.556726",
+=======
+          "modified": "2025-10-25T09:25:59.600148",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         },
         {
           "name": "runtime_intelligence_supercell_interface.py",
           "size": 24060,
+<<<<<<< HEAD
           "modified": "2025-09-15T22:02:18.578723",
+=======
+          "modified": "2025-10-25T09:25:59.898781",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         },
         {
           "name": "three_supercell_coordination_completion_report.py",
+<<<<<<< HEAD
           "size": 19750,
           "modified": "2025-09-15T22:02:18.587723",
+=======
+          "size": 19759,
+          "modified": "2025-10-25T09:25:59.927789",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         },
         {
           "name": "three_supercell_interface_optimization.py",
           "size": 65293,
+<<<<<<< HEAD
           "modified": "2025-09-15T22:02:18.609725",
+=======
+          "modified": "2025-10-25T09:25:59.930789",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         },
         {
           "name": "three_supercell_synchronized_demo.py",
           "size": 24250,
+<<<<<<< HEAD
           "modified": "2025-09-15T22:02:18.620726",
+=======
+          "modified": "2025-10-25T09:25:59.933325",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         },
         {
           "name": "__init__.py",
           "size": 42,
+<<<<<<< HEAD
           "modified": "2025-08-10T23:45:20.307125",
+=======
+          "modified": "2025-10-25T09:25:59.507601",
+>>>>>>> origin/OS0.6.2.grok
           "category": "consciousness"
         }
       ]
     },
     "important_files": [
       {
+<<<<<<< HEAD
         "name": "aios_intelligence_execution_completion_report.py",
         "size": 12885,
         "modified": "2025-09-15T22:02:18.485729",
+=======
+        "name": ".aios_spatial_metadata.json",
+        "size": 10192,
+        "modified": "2025-10-25T12:07:31.686311",
+        "category": "documentation"
+      },
+      {
+        "name": "aios_intelligence_execution_completion_report.py",
+        "size": 12894,
+        "modified": "2025-10-25T09:25:59.593150",
+>>>>>>> origin/OS0.6.2.grok
         "category": "consciousness"
       },
       {
         "name": "aios_intelligence_pattern_executor.py",
         "size": 44653,
+<<<<<<< HEAD
         "modified": "2025-09-15T22:02:18.528726",
+=======
+        "modified": "2025-10-25T09:25:59.597148",
+>>>>>>> origin/OS0.6.2.grok
         "category": "consciousness"
       },
       {
         "name": "aios_interface_optimization_demo.py",
         "size": 12538,
+<<<<<<< HEAD
         "modified": "2025-09-15T22:02:18.556726",
         "category": "consciousness"
       },
@@ -174,37 +321,90 @@
         "name": "README.md",
         "size": 9437,
         "modified": "2025-09-15T22:02:18.568723",
+=======
+        "modified": "2025-10-25T09:25:59.600148",
+        "category": "consciousness"
+      },
+      {
+        "name": "consciousness_analysis_20251002_230007.txt",
+        "size": 3617,
+        "modified": "2025-10-25T09:25:59.749245",
+        "category": "documentation"
+      },
+      {
+        "name": "init_audit_report.txt",
+        "size": 146,
+        "modified": "2025-10-25T09:25:59.853776",
+        "category": "documentation"
+      },
+      {
+        "name": "README.md",
+        "size": 9437,
+        "modified": "2025-10-25T09:25:59.501602",
+>>>>>>> origin/OS0.6.2.grok
         "category": "documentation"
       },
       {
         "name": "__init__.py",
         "size": 42,
+<<<<<<< HEAD
         "modified": "2025-08-10T23:45:20.307125",
+=======
+        "modified": "2025-10-25T09:25:59.507601",
+>>>>>>> origin/OS0.6.2.grok
         "category": "consciousness"
       }
     ],
     "recent_files": [
       {
+<<<<<<< HEAD
         "name": "three_supercell_synchronized_demo.py",
         "size": 24250,
         "modified": "2025-09-15T22:02:18.620726",
+=======
+        "name": ".aios_spatial_metadata.json",
+        "size": 10192,
+        "modified": "2025-10-25T12:07:31.686311",
+        "category": "documentation"
+      },
+      {
+        "name": "tool_catalogue.json",
+        "size": 49715,
+        "modified": "2025-10-25T09:25:59.937325",
+        "category": "documentation"
+      },
+      {
+        "name": "three_supercell_synchronized_demo.py",
+        "size": 24250,
+        "modified": "2025-10-25T09:25:59.933325",
+>>>>>>> origin/OS0.6.2.grok
         "category": "consciousness"
       },
       {
         "name": "three_supercell_interface_optimization.py",
         "size": 65293,
+<<<<<<< HEAD
         "modified": "2025-09-15T22:02:18.609725",
+=======
+        "modified": "2025-10-25T09:25:59.930789",
+>>>>>>> origin/OS0.6.2.grok
         "category": "consciousness"
       },
       {
         "name": "three_supercell_coordination_completion_report.py",
+<<<<<<< HEAD
         "size": 19750,
         "modified": "2025-09-15T22:02:18.587723",
+=======
+        "size": 19759,
+        "modified": "2025-10-25T09:25:59.927789",
+>>>>>>> origin/OS0.6.2.grok
         "category": "consciousness"
       },
       {
         "name": "runtime_intelligence_supercell_interface.py",
         "size": 24060,
+<<<<<<< HEAD
         "modified": "2025-09-15T22:02:18.578723",
         "category": "consciousness"
       },
@@ -212,17 +412,37 @@
         "name": "README.md",
         "size": 9437,
         "modified": "2025-09-15T22:02:18.568723",
+=======
+        "modified": "2025-10-25T09:25:59.898781",
+        "category": "consciousness"
+      },
+      {
+        "name": "init_audit_report.txt",
+        "size": 146,
+        "modified": "2025-10-25T09:25:59.853776",
+>>>>>>> origin/OS0.6.2.grok
         "category": "documentation"
       },
       {
         "name": "dev_relocated.md",
         "size": 1366,
+<<<<<<< HEAD
         "modified": "2025-09-15T22:02:18.562725",
+=======
+        "modified": "2025-10-25T09:25:59.825251",
+        "category": "documentation"
+      },
+      {
+        "name": "consciousness_analysis_20251002_230007.txt",
+        "size": 3617,
+        "modified": "2025-10-25T09:25:59.749245",
+>>>>>>> origin/OS0.6.2.grok
         "category": "documentation"
       },
       {
         "name": "aios_interface_optimization_demo.py",
         "size": 12538,
+<<<<<<< HEAD
         "modified": "2025-09-15T22:02:18.556726",
         "category": "consciousness"
       },
@@ -249,6 +469,17 @@
       "total_files": 12,
       "file_types": [
         ".md",
+=======
+        "modified": "2025-10-25T09:25:59.600148",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 16,
+      "file_types": [
+        ".md",
+        ".json",
+>>>>>>> origin/OS0.6.2.grok
         ".txt",
         ".py"
       ],
@@ -257,10 +488,17 @@
   },
   "consciousness_metrics": {
     "consciousness_indicators": {
+<<<<<<< HEAD
       "ai_files": 78,
       "consciousness_files": 13,
       "agentic_files": 3,
       "intelligence_files": 14
+=======
+      "ai_files": 188,
+      "consciousness_files": 168,
+      "agentic_files": 5,
+      "intelligence_files": 24
+>>>>>>> origin/OS0.6.2.grok
     },
     "consciousness_score": 100,
     "consciousness_level": "high"
@@ -270,11 +508,19 @@
       "__init__.py"
     ],
     "config_files": [],
+<<<<<<< HEAD
     "breadcrumb_path": "runtime_intelligence",
     "quick_commands": {
       "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence' -Recurse",
       "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence' -Recurse -Filter '*.py'",
       "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime_intelligence' -Recurse -Filter '*.ps1'"
+=======
+    "breadcrumb_path": "runtime",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\runtime' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\runtime' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\runtime' -Recurse -Filter '*.ps1'"
+>>>>>>> origin/OS0.6.2.grok
     }
   },
   "ai_guidance": {
@@ -282,11 +528,24 @@
     "recommended_actions": [],
     "important_considerations": [],
     "related_folders": [
+<<<<<<< HEAD
       "core\\runtime_intelligence",
       "interface\\runtime_intelligence",
       "tachyonic\\runtime_intelligence",
       "visual_interface\\runtime_intelligence",
       "interface\\AIOS.UI\\runtime_intelligence"
     ]
+=======
+      "docs\\runtime",
+      "docs\\runtime_intelligence",
+      "vscode-extension\\node_modules\\@typespec\\ts-http-runtime",
+      "vscode-extension\\node_modules\\table\\node_modules\\ajv\\dist\\runtime",
+      "vscode-extension\\node_modules\\table\\node_modules\\ajv\\lib\\runtime"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": true,
+    "previous_metadata_existed": true
+>>>>>>> origin/OS0.6.2.grok
   }
 }

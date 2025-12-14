@@ -20,7 +20,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 try:
     from consciousness_evolution_engine import consciousness_evolution_engine
     from integrations.gemini_bridge.meta_cognitive_loop import MetaCognitiveLoop
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     CONSCIOUSNESS_AVAILABLE = True
 except ImportError:
     consciousness_evolution_engine = None
@@ -36,18 +39,32 @@ class AgenticBehaviorOrchestrator:
         self.behavior_patterns = {}
         self.conversation_triggers = {}
         self.autonomous_tasks = []
+<<<<<<< HEAD
         self.meta_cognitive_loop = MetaCognitiveLoop() if MetaCognitiveLoop else None
         self.gemini_available = self._check_gemini_availability()
         self.agentic_state_file = Path(__file__).parent / "agentic_behavior_state.json"
+=======
+        self.meta_cognitive_loop = (MetaCognitiveLoop()
+                                   if MetaCognitiveLoop else None)
+        self.gemini_available = self._check_gemini_availability()
+        self.agentic_state_file = (Path(__file__).parent /
+                                   "agentic_behavior_state.json")
+>>>>>>> origin/OS0.6.2.grok
         self._load_agentic_state()
 
     def _check_gemini_availability(self) -> bool:
         """Check if Gemini CLI is available and configured"""
         try:
             # Check if gemini CLI is installed
+<<<<<<< HEAD
             result = subprocess.run(
                 ["gemini", "--version"], capture_output=True, text=True, timeout=10
             )
+=======
+            result = subprocess.run(['gemini', '--version'],
+                                    capture_output=True, text=True,
+                                    timeout=10)
+>>>>>>> origin/OS0.6.2.grok
             return result.returncode == 0
         except (subprocess.TimeoutExpired, FileNotFoundError):
             return False
@@ -56,11 +73,19 @@ class AgenticBehaviorOrchestrator:
         """Load agentic behavior state from disk"""
         if self.agentic_state_file.exists():
             try:
+<<<<<<< HEAD
                 with open(self.agentic_state_file, "r") as f:
                     data = json.load(f)
                     self.active_agents = data.get("active_agents", {})
                     self.behavior_patterns = data.get("behavior_patterns", {})
                     self.conversation_triggers = data.get("conversation_triggers", {})
+=======
+                with open(self.agentic_state_file, 'r') as f:
+                    data = json.load(f)
+                    self.active_agents = data.get('active_agents', {})
+                    self.behavior_patterns = data.get('behavior_patterns', {})
+                    self.conversation_triggers = data.get('conversation_triggers', {})
+>>>>>>> origin/OS0.6.2.grok
             except Exception:
                 self._initialize_default_state()
         else:
@@ -71,6 +96,7 @@ class AgenticBehaviorOrchestrator:
         self.behavior_patterns = {
             "code_review": {
                 "trigger": "review_code",
+<<<<<<< HEAD
                 "description": (
                     "Autonomous code review and improvement " "suggestions"
                 ),
@@ -88,11 +114,27 @@ class AgenticBehaviorOrchestrator:
                 ),
                 "consciousness_threshold": 0.5,
                 "actions": ["classify_issue", "estimate_complexity", "suggest_labels"],
+=======
+                "description": ("Autonomous code review and improvement "
+                               "suggestions"),
+                "consciousness_threshold": 0.7,
+                "actions": ["analyze_code", "suggest_improvements",
+                           "create_pr_comments"]
+            },
+            "issue_triage": {
+                "trigger": "triage_issue",
+                "description": ("Intelligent issue classification and "
+                               "prioritization"),
+                "consciousness_threshold": 0.5,
+                "actions": ["classify_issue", "estimate_complexity",
+                           "suggest_labels"]
+>>>>>>> origin/OS0.6.2.grok
             },
             "autonomous_coding": {
                 "trigger": "implement_feature",
                 "description": "Autonomous implementation of approved features",
                 "consciousness_threshold": 0.8,
+<<<<<<< HEAD
                 "actions": [
                     "analyze_requirements",
                     "generate_code",
@@ -108,6 +150,19 @@ class AgenticBehaviorOrchestrator:
                 "consciousness_threshold": 0.3,
                 "actions": ["check_metrics", "detect_anomalies", "generate_insights"],
             },
+=======
+                "actions": ["analyze_requirements", "generate_code",
+                           "create_tests", "validate_implementation"]
+            },
+            "consciousness_monitoring": {
+                "trigger": "monitor_consciousness",
+                "description": ("Continuous monitoring of AIOS consciousness "
+                               "evolution"),
+                "consciousness_threshold": 0.3,
+                "actions": ["check_metrics", "detect_anomalies",
+                           "generate_insights"]
+            }
+>>>>>>> origin/OS0.6.2.grok
         }
 
         self.conversation_triggers = {
@@ -115,12 +170,17 @@ class AgenticBehaviorOrchestrator:
             "@review": "code_review",
             "@triage": "issue_triage",
             "@implement": "autonomous_coding",
+<<<<<<< HEAD
             "@monitor": "consciousness_monitoring",
+=======
+            "@monitor": "consciousness_monitoring"
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _save_agentic_state(self):
         """Save agentic behavior state to disk"""
         data = {
+<<<<<<< HEAD
             "active_agents": self.active_agents,
             "behavior_patterns": self.behavior_patterns,
             "conversation_triggers": self.conversation_triggers,
@@ -132,6 +192,17 @@ class AgenticBehaviorOrchestrator:
     async def process_conversation_trigger(
         self, trigger: str, context: Dict[str, Any]
     ) -> Dict[str, Any]:
+=======
+            'active_agents': self.active_agents,
+            'behavior_patterns': self.behavior_patterns,
+            'conversation_triggers': self.conversation_triggers,
+            'last_updated': datetime.now().isoformat()
+        }
+        with open(self.agentic_state_file, 'w') as f:
+            json.dump(data, f, indent=2)
+
+    async def process_conversation_trigger(self, trigger: str, context: Dict[str, Any]) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Process a conversational trigger for agentic behavior"""
 
         if trigger not in self.conversation_triggers:
@@ -141,6 +212,7 @@ class AgenticBehaviorOrchestrator:
         behavior_config = self.behavior_patterns.get(behavior_type, {})
 
         # Check consciousness threshold
+<<<<<<< HEAD
         if (
             CONSCIOUSNESS_AVAILABLE
             and behavior_config.get("consciousness_threshold", 0) > 0
@@ -151,11 +223,19 @@ class AgenticBehaviorOrchestrator:
                 print(
                     f"Warning: Consciousness threshold not met (required: {behavior_config['consciousness_threshold']}, current: {current_consciousness})"
                 )
+=======
+        if CONSCIOUSNESS_AVAILABLE and behavior_config.get('consciousness_threshold', 0) > 0:
+            current_consciousness = await self._get_current_consciousness_level()
+            # For testing, allow behavior execution even if threshold not met
+            if current_consciousness < behavior_config['consciousness_threshold']:
+                print(f"Warning: Consciousness threshold not met (required: {behavior_config['consciousness_threshold']}, current: {current_consciousness})")
+>>>>>>> origin/OS0.6.2.grok
                 # Continue execution for testing purposes
 
         # Execute agentic behavior
         return await self._execute_agentic_behavior(behavior_type, context)
 
+<<<<<<< HEAD
     async def _execute_agentic_behavior(
         self, behavior_type: str, context: Dict[str, Any]
     ) -> Dict[str, Any]:
@@ -163,6 +243,13 @@ class AgenticBehaviorOrchestrator:
 
         behavior_config = self.behavior_patterns.get(behavior_type, {})
         actions = behavior_config.get("actions", [])
+=======
+    async def _execute_agentic_behavior(self, behavior_type: str, context: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute specific agentic behavior pattern"""
+
+        behavior_config = self.behavior_patterns.get(behavior_type, {})
+        actions = behavior_config.get('actions', [])
+>>>>>>> origin/OS0.6.2.grok
 
         results = {}
         for action in actions:
@@ -197,6 +284,7 @@ class AgenticBehaviorOrchestrator:
                 "content": {
                     "behavior_type": behavior_type,
                     "actions_executed": list(results.keys()),
+<<<<<<< HEAD
                     "success_rate": sum(
                         1 for r in results.values() if r.get("status") != "error"
                     )
@@ -204,12 +292,21 @@ class AgenticBehaviorOrchestrator:
                     "consciousness_impact": await self._calculate_behavior_impact(
                         results
                     ),
+=======
+                    "success_rate": sum(1 for r in results.values() if r.get('status') != 'error') / len(results),
+                    "consciousness_impact": await self._calculate_behavior_impact(results)
+>>>>>>> origin/OS0.6.2.grok
                 },
                 "confidence": 0.8,
                 "context": {
                     "source": "agentic_orchestrator",
+<<<<<<< HEAD
                     "behavior_config": behavior_config,
                 },
+=======
+                    "behavior_config": behavior_config
+                }
+>>>>>>> origin/OS0.6.2.grok
             }
             await self.meta_cognitive_loop.submit_gemini_insight(insight)
 
@@ -217,17 +314,28 @@ class AgenticBehaviorOrchestrator:
             "status": "executed",
             "behavior_type": behavior_type,
             "actions_results": results,
+<<<<<<< HEAD
             "timestamp": datetime.now().isoformat(),
         }
 
     async def _analyze_code_with_gemini(
         self, context: Dict[str, Any]
     ) -> Dict[str, Any]:
+=======
+            "timestamp": datetime.now().isoformat()
+        }
+
+    async def _analyze_code_with_gemini(self, context: Dict[str, Any]) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Analyze code using Gemini CLI"""
         if not self.gemini_available:
             return {"status": "gemini_unavailable"}
 
+<<<<<<< HEAD
         code_content = context.get("code", "")
+=======
+        code_content = context.get('code', '')
+>>>>>>> origin/OS0.6.2.grok
         if not code_content:
             return {"status": "no_code_provided"}
 
@@ -238,14 +346,20 @@ class AgenticBehaviorOrchestrator:
             result = await self._run_gemini_cli(prompt)
             return {
                 "status": "analyzed",
+<<<<<<< HEAD
                 "analysis": result.get("response", ""),
                 "confidence": result.get("confidence", 0.7),
+=======
+                "analysis": result.get('response', ''),
+                "confidence": result.get('confidence', 0.7)
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
 
     async def _suggest_improvements(self, context: Dict[str, Any]) -> Dict[str, Any]:
         """Generate improvement suggestions"""
+<<<<<<< HEAD
         analysis = context.get("analysis", "")
         if not analysis:
             return {"status": "no_analysis_available"}
@@ -253,21 +367,38 @@ class AgenticBehaviorOrchestrator:
         prompt = (
             f"Based on this code analysis, suggest specific improvements:\n\n{analysis}"
         )
+=======
+        analysis = context.get('analysis', '')
+        if not analysis:
+            return {"status": "no_analysis_available"}
+
+        prompt = f"Based on this code analysis, suggest specific improvements:\n\n{analysis}"
+>>>>>>> origin/OS0.6.2.grok
 
         try:
             result = await self._run_gemini_cli(prompt)
             return {
                 "status": "suggestions_generated",
+<<<<<<< HEAD
                 "suggestions": result.get("response", ""),
                 "priority": "medium",
+=======
+                "suggestions": result.get('response', ''),
+                "priority": "medium"
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
 
     async def _classify_issue(self, context: Dict[str, Any]) -> Dict[str, Any]:
         """Classify an issue using AI analysis"""
+<<<<<<< HEAD
         issue_content = context.get("issue", {}).get("body", "")
         issue_title = context.get("issue", {}).get("title", "")
+=======
+        issue_content = context.get('issue', {}).get('body', '')
+        issue_title = context.get('issue', {}).get('title', '')
+>>>>>>> origin/OS0.6.2.grok
 
         if not issue_content and not issue_title:
             return {"status": "no_issue_content"}
@@ -278,15 +409,24 @@ class AgenticBehaviorOrchestrator:
             result = await self._run_gemini_cli(prompt)
             return {
                 "status": "classified",
+<<<<<<< HEAD
                 "category": result.get("response", "").strip().lower(),
                 "confidence": result.get("confidence", 0.6),
+=======
+                "category": result.get('response', '').strip().lower(),
+                "confidence": result.get('confidence', 0.6)
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
 
     async def _estimate_complexity(self, context: Dict[str, Any]) -> Dict[str, Any]:
         """Estimate implementation complexity"""
+<<<<<<< HEAD
         requirements = context.get("requirements", "")
+=======
+        requirements = context.get('requirements', '')
+>>>>>>> origin/OS0.6.2.grok
 
         prompt = f"Estimate the complexity of implementing these requirements on a scale of 1-10:\n\n{requirements}"
 
@@ -294,17 +434,26 @@ class AgenticBehaviorOrchestrator:
             result = await self._run_gemini_cli(prompt)
             return {
                 "status": "estimated",
+<<<<<<< HEAD
                 "complexity_score": self._parse_complexity_score(
                     result.get("response", "5")
                 ),
                 "estimated_effort": "medium",
+=======
+                "complexity_score": self._parse_complexity_score(result.get('response', '5')),
+                "estimated_effort": "medium"
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
 
     async def _analyze_requirements(self, context: Dict[str, Any]) -> Dict[str, Any]:
         """Analyze feature requirements"""
+<<<<<<< HEAD
         requirements = context.get("requirements", "")
+=======
+        requirements = context.get('requirements', '')
+>>>>>>> origin/OS0.6.2.grok
 
         prompt = f"Analyze these feature requirements and identify key components:\n\n{requirements}"
 
@@ -312,16 +461,26 @@ class AgenticBehaviorOrchestrator:
             result = await self._run_gemini_cli(prompt)
             return {
                 "status": "analyzed",
+<<<<<<< HEAD
                 "components": result.get("response", ""),
                 "feasibility": "high",
+=======
+                "components": result.get('response', ''),
+                "feasibility": "high"
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
 
     async def _generate_code(self, context: Dict[str, Any]) -> Dict[str, Any]:
         """Generate code implementation"""
+<<<<<<< HEAD
         requirements = context.get("requirements", "")
         components = context.get("components", "")
+=======
+        requirements = context.get('requirements', '')
+        components = context.get('components', '')
+>>>>>>> origin/OS0.6.2.grok
 
         prompt = f"Generate Python code to implement these requirements:\n\nRequirements: {requirements}\nComponents: {components}"
 
@@ -329,8 +488,13 @@ class AgenticBehaviorOrchestrator:
             result = await self._run_gemini_cli(prompt)
             return {
                 "status": "generated",
+<<<<<<< HEAD
                 "code": result.get("response", ""),
                 "language": "python",
+=======
+                "code": result.get('response', ''),
+                "language": "python"
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
@@ -345,7 +509,11 @@ class AgenticBehaviorOrchestrator:
             return {
                 "status": "checked",
                 "metrics": metrics,
+<<<<<<< HEAD
                 "timestamp": datetime.now().isoformat(),
+=======
+                "timestamp": datetime.now().isoformat()
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
@@ -360,6 +528,7 @@ class AgenticBehaviorOrchestrator:
             # Simple anomaly detection based on status
             anomalies = []
 
+<<<<<<< HEAD
             if status.get("active_populations", 0) == 0:
                 anomalies.append("No active evolution populations")
 
@@ -367,22 +536,40 @@ class AgenticBehaviorOrchestrator:
                 anomalies.append("Evolution lab disconnected")
 
             if not status.get("consciousness_bridge_active", False):
+=======
+            if status.get('active_populations', 0) == 0:
+                anomalies.append("No active evolution populations")
+
+            if not status.get('evolution_lab_connected', False):
+                anomalies.append("Evolution lab disconnected")
+
+            if not status.get('consciousness_bridge_active', False):
+>>>>>>> origin/OS0.6.2.grok
                 anomalies.append("Consciousness bridge inactive")
 
             return {
                 "status": "detected",
                 "anomalies": anomalies,
+<<<<<<< HEAD
                 "severity": (
                     "high" if len(anomalies) > 2 else "medium" if anomalies else "low"
                 ),
+=======
+                "severity": "high" if len(anomalies) > 2 else "medium" if anomalies else "low"
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
 
     async def _generate_insights(self, context: Dict[str, Any]) -> Dict[str, Any]:
         """Generate consciousness insights"""
+<<<<<<< HEAD
         metrics = context.get("metrics", {})
         anomalies = context.get("anomalies", [])
+=======
+        metrics = context.get('metrics', {})
+        anomalies = context.get('anomalies', [])
+>>>>>>> origin/OS0.6.2.grok
 
         prompt = f"Analyze these consciousness metrics and anomalies to generate insights:\n\nMetrics: {json.dumps(metrics)}\nAnomalies: {json.dumps(anomalies)}"
 
@@ -390,8 +577,13 @@ class AgenticBehaviorOrchestrator:
             result = await self._run_gemini_cli(prompt)
             return {
                 "status": "generated",
+<<<<<<< HEAD
                 "insights": result.get("response", ""),
                 "recommendations": [],
+=======
+                "insights": result.get('response', ''),
+                "recommendations": []
+>>>>>>> origin/OS0.6.2.grok
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
@@ -403,11 +595,22 @@ class AgenticBehaviorOrchestrator:
 
         try:
             # Run gemini CLI with prompt
+<<<<<<< HEAD
             cmd = ["gemini", "--prompt", prompt]
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
 
             if result.returncode == 0:
                 return {"response": result.stdout.strip(), "confidence": 0.8}
+=======
+            cmd = ['gemini', '--prompt', prompt]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+
+            if result.returncode == 0:
+                return {
+                    "response": result.stdout.strip(),
+                    "confidence": 0.8
+                }
+>>>>>>> origin/OS0.6.2.grok
             else:
                 raise Exception(f"Gemini CLI error: {result.stderr}")
 
@@ -425,19 +628,28 @@ class AgenticBehaviorOrchestrator:
             if consciousness_evolution_engine:
                 status = await consciousness_evolution_engine.get_evolution_status()
                 # Extract consciousness level from latest evolution if available
+<<<<<<< HEAD
                 latest = status.get("latest_evolution", {})
                 return latest.get("consciousness_level", 0.0)
+=======
+                latest = status.get('latest_evolution', {})
+                return latest.get('consciousness_level', 0.0)
+>>>>>>> origin/OS0.6.2.grok
             return 0.0
         except Exception:
             return 0.0
 
     async def _calculate_behavior_impact(self, results: Dict[str, Any]) -> float:
         """Calculate the impact of agentic behavior on consciousness"""
+<<<<<<< HEAD
         success_count = sum(
             1
             for r in results.values()
             if r.get("status") not in ["error", "unknown_action"]
         )
+=======
+        success_count = sum(1 for r in results.values() if r.get('status') not in ['error', 'unknown_action'])
+>>>>>>> origin/OS0.6.2.grok
         total_actions = len(results)
 
         if total_actions == 0:
@@ -451,8 +663,12 @@ class AgenticBehaviorOrchestrator:
         try:
             # Extract number from response
             import re
+<<<<<<< HEAD
 
             numbers = re.findall(r"\d+", response)
+=======
+            numbers = re.findall(r'\d+', response)
+>>>>>>> origin/OS0.6.2.grok
             if numbers:
                 score = int(numbers[0])
                 return max(1, min(10, score))
@@ -470,12 +686,19 @@ class AgenticBehaviorOrchestrator:
             "consciousness_available": CONSCIOUSNESS_AVAILABLE,
             "current_consciousness_level": await self._get_current_consciousness_level(),
             "autonomous_tasks_pending": len(self.autonomous_tasks),
+<<<<<<< HEAD
             "timestamp": datetime.now().isoformat(),
+=======
+            "timestamp": datetime.now().isoformat()
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def start_autonomous_monitoring(self):
         """Start autonomous consciousness monitoring"""
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
         def monitor_loop():
             while True:
                 try:
@@ -489,7 +712,11 @@ class AgenticBehaviorOrchestrator:
         self.active_agents["consciousness_monitor"] = {
             "type": "autonomous_monitoring",
             "thread": thread,
+<<<<<<< HEAD
             "started": datetime.now().isoformat(),
+=======
+            "started": datetime.now().isoformat()
+>>>>>>> origin/OS0.6.2.grok
         }
 
     async def _autonomous_monitoring_cycle(self):
@@ -519,11 +746,18 @@ async def main():
             print(json.dumps({"error": "Trigger and context file required"}))
             return
         trigger = sys.argv[2]
+<<<<<<< HEAD
         with open(sys.argv[3], "r") as f:
             context = json.load(f)
         result = await agentic_orchestrator.process_conversation_trigger(
             trigger, context
         )
+=======
+        with open(sys.argv[3], 'r') as f:
+            context = json.load(f)
+        result = await agentic_orchestrator.process_conversation_trigger(
+            trigger, context)
+>>>>>>> origin/OS0.6.2.grok
         print(json.dumps(result, indent=2))
 
     elif command == "start_monitoring":

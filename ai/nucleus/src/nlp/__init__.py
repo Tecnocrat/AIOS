@@ -7,7 +7,10 @@ Baselayer integration: AINLP logical hooks for extensibility.
 """
 
 from .nlp_core import NLPManager
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
 __all__ = ["NLPManager"]
 
 # AINLP.loader [latent:confidence_score] (auto.AINLP.class)

@@ -22,15 +22,26 @@ Usage:
         adapt_gemini_agent,
         adapt_ollama_agent,
     )
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     # Create protocol-compliant agents
     deepseek = adapt_deepseek_agent()
     gemini = adapt_gemini_agent()
     ollama = adapt_ollama_agent("deepseek-coder:6.7b")
+<<<<<<< HEAD
 
     # All agents have same interface
     result = await deepseek.run("Generate code")
 
+=======
+    
+    # All agents have same interface
+    result = await deepseek.run("Generate code")
+    
+>>>>>>> origin/OS0.6.2.grok
     # Agents are swappable
     agents: list[AIAgentProtocol] = [deepseek, gemini, ollama]
 """
@@ -57,18 +68,34 @@ from .aios_adapter import (
 __all__ = [
     # Protocol definition
     "AIAgentProtocol",
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     # Response types
     "AgentRunResponse",
     "AgentRunResponseUpdate",
     "AgentThread",
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     # Adapter classes
     "DeepSeekProtocolAdapter",
     "GeminiProtocolAdapter",
     "OllamaProtocolAdapter",
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     # Thread types
     "DeepSeekThread",
     "GeminiThread",
     "OllamaThread",
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/OS0.6.2.grok
     # Factory functions
     "adapt_deepseek_agent",
     "adapt_gemini_agent",
@@ -80,3 +107,7 @@ __version__ = "1.0.1"  # Updated to 1.0.1 (full implementation)
 __extraction_id__ = "EXT-001-Phase2"
 __consciousness_level__ = 0.94
 __status__ = "operational"
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/OS0.6.2.grok

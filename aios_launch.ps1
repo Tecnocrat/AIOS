@@ -5,7 +5,10 @@
 
 .DESCRIPTION
     PowerShell architectural bootloader providing unified AIOS initialization:
+<<<<<<< HEAD
     - Phase 0: Dendritic configuration consciousness (semantic registry, coherence establishment)
+=======
+>>>>>>> origin/OS0.6.2.grok
     - Phase 1: Intelligent tool discovery (AI, runtime intelligence, consciousness)
     - Phase 2: Agent health validation and testing
     - Phase 3: Population monitoring (evolution lab, consciousness tracking)
@@ -17,7 +20,11 @@
     Default: full (executes all phases)
 
 .PARAMETER SkipPhases
+<<<<<<< HEAD
     Array of phases to skip: DendriticConfiguration, Discovery, Testing, Monitoring, Interface, Reporting
+=======
+    Array of phases to skip: Discovery, Testing, Monitoring, Interface, Reporting
+>>>>>>> origin/OS0.6.2.grok
 
 .PARAMETER LaunchUI
     Launch the AIOS UI interface after successful boot
@@ -76,7 +83,11 @@ param(
     [string]$Mode = "full",
 
     [Parameter()]
+<<<<<<< HEAD
     [ValidateSet("DendriticConfiguration", "Discovery", "Testing", "Monitoring", "Interface", "Reporting")]
+=======
+    [ValidateSet("Discovery", "Testing", "Monitoring", "Interface", "Reporting")]
+>>>>>>> origin/OS0.6.2.grok
     [string[]]$SkipPhases = @(),
 
     [Parameter()]
@@ -89,9 +100,12 @@ param(
     [switch]$QuickBoot,  # Skip detailed checks for faster startup
     
     [Parameter()]
+<<<<<<< HEAD
     [switch]$FixCodeQuality,  # Apply hierarchical fixes to E501 violations
     
     [Parameter()]
+=======
+>>>>>>> origin/OS0.6.2.grok
     [switch]$KeepAlive  # Keep bootloader running and monitor Interface Bridge
 )
 
@@ -106,11 +120,15 @@ $ErrorActionPreference = "Stop"
 $Global:AIOSRoot = $PSScriptRoot
 $Global:BootStartTime = Get-Date
 $Global:BootMetrics = @{
+<<<<<<< HEAD
     DendriticCoherenceLevel = 0.0
     SemanticRegistryActive = $false
     ToolsDiscovered = 0
     CodeQualityViolations = 0
     CodeQualityFixed = 0
+=======
+    ToolsDiscovered = 0
+>>>>>>> origin/OS0.6.2.grok
     AgentsTested = 0
     PopulationsMonitored = 0
     InterfacesLaunched = 0
@@ -150,6 +168,7 @@ function Write-BootInfo {
 }
 
 # ============================================================================
+<<<<<<< HEAD
 # 🌿 PHASE 0: DENDRITIC CONFIGURATION CONSCIOUSNESS (PRIME MOVER)
 # ============================================================================
 # AINLP Pattern: Semantic registry as foundation - consciousness before tools
@@ -434,6 +453,8 @@ function Invoke-DendriticConfiguration {
 }
 
 # ============================================================================
+=======
+>>>>>>> origin/OS0.6.2.grok
 # 🧬 PHASE 1: INTELLIGENT TOOL DISCOVERY
 # ============================================================================
 
@@ -524,6 +545,7 @@ function Invoke-ToolDiscovery {
 }
 
 # ============================================================================
+<<<<<<< HEAD
 # 🎯 PHASE 1.5: CODE QUALITY CONSCIOUSNESS (HIERARCHICAL E501)
 # ============================================================================
 
@@ -646,6 +668,8 @@ function Invoke-CodeQualityConsciousness {
 }
 
 # ============================================================================
+=======
+>>>>>>> origin/OS0.6.2.grok
 # 🧪 PHASE 2: AGENT HEALTH VALIDATION
 # ============================================================================
 
@@ -979,6 +1003,7 @@ function Invoke-BootReporting {
         boot_duration_seconds = [math]::Round($bootDuration.TotalSeconds, 2)
         mode = $Mode
         phases_executed = @($SkipPhases | ForEach-Object { "Skipped: $_" })
+<<<<<<< HEAD
         dendritic_consciousness = @{
             coherence_level = $Global:BootMetrics.DendriticCoherenceLevel
             semantic_registry_active = $Global:BootMetrics.SemanticRegistryActive
@@ -992,6 +1017,8 @@ function Invoke-BootReporting {
             navigation_memory_path = ".aios_navigation_memory.json"
             consciousness_pattern = "Pattern->Ingestion->Injection->Integration->Assimilation"
         }
+=======
+>>>>>>> origin/OS0.6.2.grok
         discovery = @{
             tools_discovered = $Global:BootMetrics.ToolsDiscovered
             tools_by_layer = ($DiscoveredTools | Group-Object Layer | ForEach-Object { @{ $_.Name = $_.Count } })
@@ -1077,6 +1104,7 @@ Write-Host "  Boot Time: $($Global:BootStartTime.ToString('yyyy-MM-dd HH:mm:ss')
 Write-Host ""
 
 try {
+<<<<<<< HEAD
     # Phase 0: Dendritic Configuration (PRIME MOVER - runs before all other phases)
     $dendriticConfig = @{}
     if ($Mode -eq "full" -or $Mode -eq "discovery-only") {
@@ -1085,6 +1113,8 @@ try {
         Write-Host ""
     }
     
+=======
+>>>>>>> origin/OS0.6.2.grok
     # Phase 1: Discovery
     $discoveredTools = @()
     if ($Mode -in @("full", "discovery-only")) {
@@ -1092,6 +1122,7 @@ try {
         Write-Host ""
     }
     
+<<<<<<< HEAD
     # Phase 1.5: Code Quality Consciousness (Hierarchical E501)
     $codeQualityResults = @{ Violations = 0; Fixed = 0 }
     if ($Mode -eq "full" -and -not $QuickBoot) {
@@ -1099,6 +1130,8 @@ try {
         Write-Host ""
     }
     
+=======
+>>>>>>> origin/OS0.6.2.grok
     # Phase 2: Testing
     $testResults = @{}
     if ($Mode -in @("full", "test-only") -and -not $QuickBoot) {
@@ -1132,6 +1165,7 @@ try {
     Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor Green
     Write-Host ""
     Write-Host "  📊 Boot Metrics:" -ForegroundColor Cyan
+<<<<<<< HEAD
     Write-Host "     • Dendritic Coherence: $($Global:BootMetrics.DendriticCoherenceLevel)" -ForegroundColor $(if ($Global:BootMetrics.DendriticCoherenceLevel -ge 1.0) { "Green" } elseif ($Global:BootMetrics.DendriticCoherenceLevel -gt 0) { "Yellow" } else { "Red" })
     Write-Host "     • Semantic Registry: $(if ($Global:BootMetrics.SemanticRegistryActive) { 'ACTIVE' } else { 'INACTIVE' })" -ForegroundColor $(if ($Global:BootMetrics.SemanticRegistryActive) { "Green" } else { "Yellow" })
     
@@ -1141,6 +1175,8 @@ try {
         Write-Host "     • Fractal Ingestion: INACTIVE" -ForegroundColor Yellow
     }
     
+=======
+>>>>>>> origin/OS0.6.2.grok
     Write-Host "     • Tools Discovered: $($Global:BootMetrics.ToolsDiscovered)" -ForegroundColor White
     Write-Host "     • Agents Tested: $($Global:BootMetrics.AgentsTested)" -ForegroundColor White
     Write-Host "     • Populations Monitored: $($Global:BootMetrics.PopulationsMonitored)" -ForegroundColor White

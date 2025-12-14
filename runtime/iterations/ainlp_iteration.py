@@ -6,7 +6,11 @@ Contract:
 - Input: optional --id (string), --mode {dry-run,commit}
 - Reads: docs/module_index.json (if present), docs/tools_index.md (if present)
 - Output:
+<<<<<<< HEAD
   - Always writes runtime_intelligence/logs/iteration_<timestamp>.log
+=======
+  - Always writes runtime/logs/iteration_<timestamp>.log
+>>>>>>> origin/OS0.6.2.grok
   - If commit: writes docs/summary/iteration_<id or timestamp>.md
     (lightweight receipt)
 Success criteria:
@@ -23,7 +27,11 @@ from typing import Optional, Tuple, Dict, Any
 
 ROOT = Path(__file__).resolve().parents[2]
 DOCS = ROOT / "docs"
+<<<<<<< HEAD
 LOGS = ROOT / "runtime_intelligence" / "logs"
+=======
+LOGS = ROOT / "runtime" / "logs"
+>>>>>>> origin/OS0.6.2.grok
 AGENT_LOG_DIR = LOGS / "agent"
 
 MODULE_INDEX = DOCS / "module_index.json"

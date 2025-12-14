@@ -2,7 +2,11 @@
 
 Outputs:
   - docs/governance/file_criticality_index.jsonl (authoritative index)
+<<<<<<< HEAD
   - runtime_intelligence/logs/file_scores/latest.json (telemetry snapshot)
+=======
+  - runtime/logs/file_scores/latest.json (telemetry snapshot)
+>>>>>>> origin/OS0.6.2.grok
 
 Scoring references agent-mode instructions file_criticality.* keys.
 Initial scaffold: structure only; fan-in/out & coverage placeholders.
@@ -16,10 +20,18 @@ import subprocess
 from dataclasses import dataclass, asdict
 from typing import List, Dict, Optional
 
+<<<<<<< HEAD
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 INDEX_PATH = REPO_ROOT / 'docs' / 'governance' / 'file_criticality_index.jsonl'
 TELEMETRY_OUT = (
     REPO_ROOT / 'runtime_intelligence' / 'logs' / 'file_scores' / 'latest.json'
+=======
+REPO_ROOT = pathlib.Path(__file__).resolve().parents[3]
+INDEX_PATH = REPO_ROOT / 'docs' / 'governance' / 'file_criticality_index.jsonl'
+TELEMETRY_OUT = (
+    REPO_ROOT / 'computational_layer' / 'runtime' /
+    'logs' / 'file_scores' / 'latest.json'
+>>>>>>> origin/OS0.6.2.grok
 )
 OWNERSHIP_MAP_PATH = REPO_ROOT / 'governance' / 'file_ownership_map.json'
 
@@ -58,7 +70,11 @@ class FileMetrics:
 
 
 def discover_files() -> List[pathlib.Path]:
+<<<<<<< HEAD
     include_roots = ['ai', 'interface', 'core', 'runtime_intelligence']
+=======
+    include_roots = ['ai', 'interface', 'core', 'runtime']
+>>>>>>> origin/OS0.6.2.grok
     exts = {'.py', '.cs', '.cpp', '.h', '.hpp'}
     results: List[pathlib.Path] = []
     for root in include_roots:

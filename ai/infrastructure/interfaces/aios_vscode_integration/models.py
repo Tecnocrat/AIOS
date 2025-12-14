@@ -12,7 +12,10 @@ class AIOSRequest(BaseModel):
     Request model for general AIOS operations.
     Contains message, context, processing flags, and response format options.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     message: str
     context: Optional[Dict[str, Any]] = None
     processing: Optional[Dict[str, bool]] = None
@@ -25,7 +28,10 @@ class AIOSResponse(BaseModel):
     Includes response text, confidence, suggested actions, processing time,
     metrics, and metadata.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     response_text: str
     confidence: float
     suggested_actions: list = []
@@ -39,7 +45,10 @@ class BridgeTestRequest(BaseModel):
     Request model for bridge testing between modules.
     Specifies type, source, target, and data payload.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     type: str
     source: str
     target: str
@@ -51,7 +60,10 @@ class PerformanceTestRequest(BaseModel):
     Request model for performance testing.
     Includes test type, requested metrics, and sample data.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     test_type: str
     metrics_requested: list
     sample_data: str
@@ -62,7 +74,10 @@ class CodeReviewRequest(BaseModel):
     Request model for code review operations.
     Contains code, language, and optional context.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     code: str
     language: str
     context: Optional[Dict[str, Any]] = None
@@ -73,7 +88,10 @@ class CodeRefactorRequest(BaseModel):
     Request model for code refactoring operations.
     Contains code, language, and optional context.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     code: str
     language: str
     context: Optional[Dict[str, Any]] = None
@@ -84,7 +102,10 @@ class ArchitectureAnalyzeRequest(BaseModel):
     Request model for architecture analysis.
     Includes list of files and optional context.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     files: list
     context: Optional[Dict[str, Any]] = None
 
@@ -94,7 +115,10 @@ class NLUIntentRequest(BaseModel):
     Request model for natural language understanding (NLU) intent recognition.
     Contains message and optional context.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     message: str
     context: Optional[Dict[str, Any]] = None
 
@@ -104,7 +128,10 @@ class BridgeStatusRequest(BaseModel):
     Request model for querying bridge status.
     Includes modules and optional context.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     modules: list
     context: Optional[Dict[str, Any]] = None
 
@@ -114,7 +141,10 @@ class VisualizeRequest(BaseModel):
     Request model for visualization operations.
     Includes files and optional context.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     files: list
     context: Optional[Dict[str, Any]] = None
 
@@ -124,7 +154,10 @@ class AutomationRequest(BaseModel):
     Request model for intelligent automation tasks.
     Specifies task, optional code, and context.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     task: str
     code: Optional[str] = None
     context: Optional[Dict[str, Any]] = None
@@ -149,7 +182,13 @@ class BosonicTopology(BaseModel):
     resonance_strength: float = 0.0
 
     def encode_microarchitecture(
+<<<<<<< HEAD
         self, logic_pattern: Dict[str, Any], coordinates: str
+=======
+        self,
+        logic_pattern: Dict[str, Any],
+        coordinates: str
+>>>>>>> origin/OS0.6.2.grok
     ) -> Dict[str, Any]:
         """Encode logic pattern into surface topology."""
         # Generate 3D coordinates
@@ -161,7 +200,11 @@ class BosonicTopology(BaseModel):
             "coordinates_3d": coord_3d,
             "surface_topology": self._calc_surface_topo(logic_pattern),
             "encoded_at": self._get_timestamp(),
+<<<<<<< HEAD
             "resonance_freq": self._calc_resonance_freq(logic_pattern),
+=======
+            "resonance_freq": self._calc_resonance_freq(logic_pattern)
+>>>>>>> origin/OS0.6.2.grok
         }
 
         # Store in systems
@@ -173,7 +216,13 @@ class BosonicTopology(BaseModel):
 
         return encoded
 
+<<<<<<< HEAD
     def project_multidimensionality(self, surface_point: str) -> Dict[str, Any]:
+=======
+    def project_multidimensionality(
+        self, surface_point: str
+    ) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Project abstract dimensionality from 3D surface."""
         if surface_point not in self.microarchitectures:
             return {"error": "Surface point not found"}
@@ -184,35 +233,65 @@ class BosonicTopology(BaseModel):
             "surface_point": surface_point,
             "abstract_dims": self._calc_abstract_dims(microarch),
             "quantum_coherence": self._measure_quantum_coherence(microarch),
+<<<<<<< HEAD
             "consciousness_resonance": self._calc_consciousness_resonance(microarch),
             "fractal_patterns": self._extract_fractal_patterns(microarch),
             "projection_ts": self._get_timestamp(),
+=======
+            "consciousness_resonance":
+                self._calc_consciousness_resonance(microarch),
+            "fractal_patterns": self._extract_fractal_patterns(microarch),
+            "projection_ts": self._get_timestamp()
+>>>>>>> origin/OS0.6.2.grok
         }
 
         self._update_coherence_metrics(projections)
         return projections
 
+<<<<<<< HEAD
     def find_connection_path(self, start_point: str, end_point: str) -> Dict[str, Any]:
         """Find optimal connection path through topology."""
         if (
             start_point not in self.surface_coordinates
             or end_point not in self.surface_coordinates
         ):
+=======
+    def find_connection_path(
+        self, start_point: str, end_point: str
+    ) -> Dict[str, Any]:
+        """Find optimal connection path through topology."""
+        if start_point not in self.surface_coordinates or \
+           end_point not in self.surface_coordinates:
+>>>>>>> origin/OS0.6.2.grok
             return {"error": "Invalid surface points"}
 
         connection_path = {
             "start_point": start_point,
             "end_point": end_point,
             "geodesic_path": self._calc_geodesic_path(start_point, end_point),
+<<<<<<< HEAD
             "resonance_eff": self._calc_path_efficiency(start_point, end_point),
             "dimensional_stability": self._assess_dim_stability(start_point, end_point),
             "path_ts": self._get_timestamp(),
+=======
+            "resonance_eff": self._calc_path_efficiency(
+                start_point, end_point
+            ),
+            "dimensional_stability":
+                self._assess_dim_stability(start_point, end_point),
+            "path_ts": self._get_timestamp()
+>>>>>>> origin/OS0.6.2.grok
         }
 
         return connection_path
 
     def register_temporal_change(
+<<<<<<< HEAD
         self, change_data: Dict[str, Any], temporal_coords: str
+=======
+        self, change_data: Dict[str, Any],
+        temporal_coords: str
+>>>>>>> origin/OS0.6.2.grok
     ) -> Dict[str, Any]:
         """Register temporal changes for tachyonic integration."""
         temporal_entry = {
@@ -220,7 +299,11 @@ class BosonicTopology(BaseModel):
             "temporal_coords": temporal_coords,
             "registration_time": self._get_timestamp(),
             "temporal_stability": self._assess_temp_stability(change_data),
+<<<<<<< HEAD
             "subspatial_impact": self._calc_subspatial_impact(change_data),
+=======
+            "subspatial_impact": self._calc_subspatial_impact(change_data)
+>>>>>>> origin/OS0.6.2.grok
         }
 
         self.temporal_topography[temporal_coords] = temporal_entry
@@ -245,10 +328,19 @@ class BosonicTopology(BaseModel):
             "z": math.cos(phi),
             "radius": 1.0,
             "theta": theta,
+<<<<<<< HEAD
             "phi": phi,
         }
 
     def _calc_surface_topo(self, logic_pattern: Dict[str, Any]) -> Dict[str, Any]:
+=======
+            "phi": phi
+        }
+
+    def _calc_surface_topo(
+        self, logic_pattern: Dict[str, Any]
+    ) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Calculate surface topology characteristics."""
         pattern_complexity = len(str(logic_pattern))
         pattern_depth = self._calc_pattern_depth(logic_pattern)
@@ -257,7 +349,11 @@ class BosonicTopology(BaseModel):
             "complexity_score": pattern_complexity,
             "depth_score": pattern_depth,
             "surface_curvature": pattern_complexity / (pattern_depth + 1),
+<<<<<<< HEAD
             "topological_density": self._calc_topo_density(logic_pattern),
+=======
+            "topological_density": self._calc_topo_density(logic_pattern)
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _calc_resonance_freq(self, logic_pattern: Dict[str, Any]) -> float:
@@ -268,15 +364,25 @@ class BosonicTopology(BaseModel):
 
         return base_freq + complexity_factor + depth_factor
 
+<<<<<<< HEAD
     def _update_fractal_resonance(
         self, logic_pattern: Dict[str, Any], coordinates: str
     ):
+=======
+    def _update_fractal_resonance(self, logic_pattern: Dict[str, Any],
+                                  coordinates: str):
+>>>>>>> origin/OS0.6.2.grok
         """Update fractal resonance patterns."""
         resonance_key = f"resonance_{coordinates}"
         current_resonance = self.fractal_resonance.get(resonance_key, 0.0)
         new_resonance = self._calc_resonance_freq(logic_pattern)
 
+<<<<<<< HEAD
         self.fractal_resonance[resonance_key] = (current_resonance + new_resonance) / 2
+=======
+        self.fractal_resonance[resonance_key] = \
+            (current_resonance + new_resonance) / 2
+>>>>>>> origin/OS0.6.2.grok
 
     def _calc_abstract_dims(self, microarch: Dict[str, Any]) -> Dict[str, Any]:
         """Calculate abstract dimensional projections."""
@@ -286,7 +392,11 @@ class BosonicTopology(BaseModel):
             "primary_dim": surface_topo.get("complexity_score", 0) / 100,
             "secondary_dim": surface_topo.get("depth_score", 0) / 10,
             "tertiary_dim": surface_topo.get("surface_curvature", 0),
+<<<<<<< HEAD
             "dim_harmonics": self._calc_dim_harmonics(microarch),
+=======
+            "dim_harmonics": self._calc_dim_harmonics(microarch)
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _measure_quantum_coherence(self, microarch: Dict[str, Any]) -> float:
@@ -294,6 +404,7 @@ class BosonicTopology(BaseModel):
         resonance_freq = microarch.get("resonance_freq", 0.5)
         coord_3d = microarch.get("coordinates_3d", {})
 
+<<<<<<< HEAD
         coherence = (resonance_freq * 0.6) + (coord_3d.get("radius", 1.0) * 0.4)
         return min(coherence, 1.0)
 
@@ -302,6 +413,22 @@ class BosonicTopology(BaseModel):
         Calculate consciousness resonance level.
         """
         complexity = microarch.get("surface_topology", {}).get("complexity_score", 0)
+=======
+        coherence = (resonance_freq * 0.6) + \
+            (coord_3d.get("radius", 1.0) * 0.4)
+        return min(coherence, 1.0)
+
+    def _calc_consciousness_resonance(
+        self,
+        microarch: Dict[str, Any]
+    ) -> float:
+        """
+        Calculate consciousness resonance level.
+        """
+        complexity = microarch.get(
+            "surface_topology", {}
+        ).get("complexity_score", 0)
+>>>>>>> origin/OS0.6.2.grok
         coherence = self._measure_quantum_coherence(microarch)
 
         return (complexity / 1000) * coherence
@@ -312,9 +439,15 @@ class BosonicTopology(BaseModel):
         coord_3d = microarch.get("coordinates_3d", {})
 
         if coord_3d:
+<<<<<<< HEAD
             theta = coord_3d.get("theta", 0)
             patterns.append(f"spherical_harmonic_{theta:.2f}")
             freq = microarch.get("resonance_freq", 0.5)
+=======
+            theta = coord_3d.get('theta', 0)
+            patterns.append(f"spherical_harmonic_{theta:.2f}")
+            freq = microarch.get('resonance_freq', 0.5)
+>>>>>>> origin/OS0.6.2.grok
             patterns.append(f"resonance_pattern_{freq:.2f}")
 
         return patterns
@@ -325,9 +458,19 @@ class BosonicTopology(BaseModel):
         new_resonance = projections.get("consciousness_resonance", 0.0)
 
         self.coherence_level = (self.coherence_level + new_coherence) / 2
+<<<<<<< HEAD
         self.resonance_strength = (self.resonance_strength + new_resonance) / 2
 
     def _calc_pattern_depth(self, pattern: Dict[str, Any], depth: int = 0) -> int:
+=======
+        self.resonance_strength = (
+            self.resonance_strength + new_resonance
+        ) / 2
+
+    def _calc_pattern_depth(
+        self, pattern: Dict[str, Any], depth: int = 0
+    ) -> int:
+>>>>>>> origin/OS0.6.2.grok
         """Calculate nested pattern depth."""
         if not isinstance(pattern, dict) or depth > 10:
             return depth
@@ -335,7 +478,14 @@ class BosonicTopology(BaseModel):
         max_depth = depth
         for value in pattern.values():
             if isinstance(value, dict):
+<<<<<<< HEAD
                 max_depth = max(max_depth, self._calc_pattern_depth(value, depth + 1))
+=======
+                max_depth = max(
+                    max_depth,
+                    self._calc_pattern_depth(value, depth + 1)
+                )
+>>>>>>> origin/OS0.6.2.grok
 
         return max_depth
 
@@ -343,7 +493,12 @@ class BosonicTopology(BaseModel):
         """Calculate topological density of pattern."""
         total_elements = len(pattern)
         nested_elements = sum(
+<<<<<<< HEAD
             1 for v in pattern.values() if isinstance(v, (dict, list))
+=======
+            1 for v in pattern.values()
+            if isinstance(v, (dict, list))
+>>>>>>> origin/OS0.6.2.grok
         )
 
         return nested_elements / (total_elements + 1)
@@ -357,6 +512,7 @@ class BosonicTopology(BaseModel):
             theta = coord_3d.get("theta", 0)
             phi = coord_3d.get("phi", 0)
 
+<<<<<<< HEAD
             harmonics.extend(
                 [
                     f"harmonic_theta_{theta:.3f}",
@@ -364,6 +520,13 @@ class BosonicTopology(BaseModel):
                     f"harmonic_combined_{(theta + phi):.3f}",
                 ]
             )
+=======
+            harmonics.extend([
+                f"harmonic_theta_{theta:.3f}",
+                f"harmonic_phi_{phi:.3f}",
+                f"harmonic_combined_{(theta + phi):.3f}"
+            ])
+>>>>>>> origin/OS0.6.2.grok
 
         return harmonics
 
@@ -385,18 +548,36 @@ class BosonicTopology(BaseModel):
     def _assess_temp_stability(self, change_data: Dict[str, Any]) -> float:
         """Assess temporal stability of changes."""
         complexity = len(str(change_data))
+<<<<<<< HEAD
         return min(complexity / 1000, 1.0)
 
     def _calc_subspatial_impact(self, change_data: Dict[str, Any]) -> Dict[str, Any]:
+=======
+        return min(
+            complexity / 1000,
+            1.0
+        )
+
+    def _calc_subspatial_impact(
+        self, change_data: Dict[str, Any]
+    ) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Calculate subspatial impact of changes."""
         return {
             "impact_radius": len(str(change_data)) / 100,
             "temporal_reach": self._assess_temp_stability(change_data),
+<<<<<<< HEAD
             "dim_shift": len(change_data) / 10,
+=======
+            "dim_shift": len(change_data) / 10
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def _get_timestamp(self) -> str:
         """Get current timestamp in ISO format."""
         from datetime import datetime
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
         return datetime.now().isoformat()

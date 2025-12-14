@@ -23,6 +23,7 @@ if(MSVC)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 endif()
 
+<<<<<<< HEAD
 # ============================================================================
 # AINLP Pattern: phase11-day2.optional-dependencies
 # Make Boost optional for DLL-only builds (consciousness engine is self-contained)
@@ -46,6 +47,11 @@ else()
     message(WARNING "nlohmann_json not found - using fallback JSON handling")
     set(AIOS_HAS_JSON FALSE)
 endif()
+=======
+# Find required packages
+find_package(Boost REQUIRED COMPONENTS system filesystem thread)
+find_package(nlohmann_json REQUIRED)
+>>>>>>> origin/OS0.6.2.grok
 
 # Find Python for TensorFlow integration (optional for now)
 find_package(Python3 QUIET COMPONENTS Development NumPy)
@@ -63,15 +69,20 @@ set(JSON_FOUND TRUE)
 
 # Include directories
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+<<<<<<< HEAD
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/orchestrator/include)
 if(AIOS_HAS_BOOST)
     include_directories(${Boost_INCLUDE_DIRS})
 endif()
+=======
+include_directories(${Boost_INCLUDE_DIRS})
+>>>>>>> origin/OS0.6.2.grok
 
 # Source files
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.cxx")
 file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 
+<<<<<<< HEAD
 # For Day 2: Use minimal consciousness engine stub instead of full orchestrator
 # (Full orchestrator has C++20 concepts issues that need separate fixing)
 # Add orchestrator sources later when C++20 compiler fully configured
@@ -79,10 +90,14 @@ file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 # list(APPEND SOURCES ${ORCHESTRATOR_SOURCES})
 
 # Exclude test/main files
+=======
+# Exclude the original problematic core files for now, use minimal version
+>>>>>>> origin/OS0.6.2.grok
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/aios_core.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/universal_quantum_holographic.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/tachyonic_surface_viewer_main.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
+<<<<<<< HEAD
 # Exclude files with ASM dependencies (Day 2 minimal build)
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/aios_core_minimal.cpp")
 list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/test_consciousness_simd.cpp")
@@ -91,10 +106,15 @@ list(REMOVE_ITEM SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/orchestrator/src/main.cpp"
 
 option(AIOS_TACHYONIC_ASM "Enable MASM optimized tachyonic renderer" OFF)
 option(AIOS_KERNEL_ASM "Enable kernel_ops ASM optimizations" OFF)
+=======
+
+option(AIOS_TACHYONIC_ASM "Enable MASM optimized tachyonic renderer" OFF)
+>>>>>>> origin/OS0.6.2.grok
 
 # Optional assembly sources (Windows/MSVC only, opt-in)
 set(ASM_SOURCES)
 if(MSVC)
+<<<<<<< HEAD
     # Kernel ops assembly (opt-in due to build complexity)
     if(AIOS_KERNEL_ASM AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/asm/kernel_ops.asm")
         message(STATUS "Kernel ASM optimizations ENABLED")
@@ -104,6 +124,12 @@ if(MSVC)
         message(STATUS "Kernel ASM optimizations DISABLED (using C++ fallback)")
     endif()
     
+=======
+    # Always include stable kernel ops assembly
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/asm/kernel_ops.asm")
+        list(APPEND ASM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/kernel_ops.asm)
+    endif()
+>>>>>>> origin/OS0.6.2.grok
     if(AIOS_TACHYONIC_ASM AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/asm/tachyonic_surface.asm")
         message(STATUS "Tachyonic ASM renderer ENABLED")
         list(APPEND ASM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/tachyonic_surface.asm)
@@ -116,6 +142,7 @@ if(MSVC)
     endif()
 endif()
 
+<<<<<<< HEAD
 # ============================================================================
 # AINLP Pattern: phase11-day2.cpp-dll-integration
 # Create SHARED library for Python/C# interop (Day 2 - C++ Core Integration)
@@ -153,6 +180,21 @@ endif()
 if(MSVC)
     # /W4 for high warning level, but don't treat warnings as errors (/WX removed for Day 2 build)
     target_compile_options(aios_core PRIVATE $<$<COMPILE_LANGUAGE:CXX>:/W4>)
+=======
+# Create the main library
+add_library(aios_core ${SOURCES} ${HEADERS} ${ASM_SOURCES})
+target_include_directories(aios_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# Link libraries
+target_link_libraries(aios_core
+    ${Boost_LIBRARIES}
+    nlohmann_json::nlohmann_json
+)
+
+# Apply compile options only to C++ sources (avoid leaking to MASM)
+if(MSVC)
+    target_compile_options(aios_core PRIVATE $<$<COMPILE_LANGUAGE:CXX>:/W4 /WX>)
+>>>>>>> origin/OS0.6.2.grok
 else()
     target_compile_options(aios_core PRIVATE $<$<COMPILE_LANGUAGE:CXX>:-Wall -Wextra -Wpedantic -Werror>)
 endif()
@@ -183,6 +225,7 @@ endif()
 add_executable(aios_main src/main.cpp)
 target_link_libraries(aios_main aios_core)
 
+<<<<<<< HEAD
 # Tachyonic surface viewer (experimental) - only if JSON available
 if(AIOS_HAS_JSON)
     add_executable(aios_tachyonic_viewer src/tachyonic_surface_viewer_main.cpp)
@@ -198,11 +241,23 @@ endif()
 
 # Set output directories
 set_target_properties(aios_core aios_main ${ADDITIONAL_TARGETS} PROPERTIES
+=======
+# Tachyonic surface viewer (experimental)
+add_executable(aios_tachyonic_viewer src/tachyonic_surface_viewer_main.cpp)
+target_link_libraries(aios_tachyonic_viewer aios_core nlohmann_json::nlohmann_json)
+if(MSVC AND AIOS_TACHYONIC_ASM)
+    target_compile_definitions(aios_tachyonic_viewer PRIVATE AIOS_TACHYONIC_ASM)
+endif()
+
+# Set output directories
+set_target_properties(aios_core aios_main aios_tachyonic_viewer PROPERTIES
+>>>>>>> origin/OS0.6.2.grok
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
     LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
     ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 )
 
+<<<<<<< HEAD
 # Install targets (conditionally based on what was built)
 if(AIOS_HAS_JSON)
     install(TARGETS aios_core aios_main aios_tachyonic_viewer
@@ -217,6 +272,14 @@ else()
         ARCHIVE DESTINATION lib
     )
 endif()
+=======
+# Install targets
+install(TARGETS aios_core aios_main aios_tachyonic_viewer
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+)
+>>>>>>> origin/OS0.6.2.grok
 
 # Install headers
 install(DIRECTORY include/ DESTINATION include)

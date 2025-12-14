@@ -1,0 +1,142 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:47:28.691288",
+  "folder_info": {
+    "name": "archival",
+    "absolute_path": "C:\\dev\\AIOS\\ai\\tools\\archival",
+    "relative_path": "ai\\tools\\archival",
+    "parent_path": "ai\\tools",
+    "depth_level": 3
+  },
+  "architectural_classification": {
+    "primary_area": "AI Intelligence Layer",
+    "secondary_areas": [],
+    "path_classification": [
+      "ai",
+      "tools",
+      "archival"
+    ],
+    "consciousness_level": "high"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "__pycache__",
+      "analysis_results",
+      "architecture",
+      "consciousness",
+      "database",
+      "improvement_results",
+      "logs",
+      "system",
+      "tachyonic",
+      "visual"
+    ],
+    "child_folders": [],
+    "spatial_metrics": {
+      "total_size_bytes": 22450,
+      "file_count": 2,
+      "folder_count": 0,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": false,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".py": [
+        {
+          "name": "archival_cli.py",
+          "size": 22280,
+          "modified": "2025-10-19T01:52:38.782112",
+          "category": "consciousness"
+        },
+        {
+          "name": "__init__.py",
+          "size": 170,
+          "modified": "2025-10-19T01:52:38.717293",
+          "category": "consciousness"
+        }
+      ]
+    },
+    "important_files": [
+      {
+        "name": "__init__.py",
+        "size": 170,
+        "modified": "2025-10-19T01:52:38.717293",
+        "category": "consciousness"
+      }
+    ],
+    "recent_files": [
+      {
+        "name": "archival_cli.py",
+        "size": 22280,
+        "modified": "2025-10-19T01:52:38.782112",
+        "category": "consciousness"
+      },
+      {
+        "name": "__init__.py",
+        "size": 170,
+        "modified": "2025-10-19T01:52:38.717293",
+        "category": "consciousness"
+      }
+    ],
+    "content_summary": {
+      "total_files": 2,
+      "file_types": [
+        ".py"
+      ],
+      "dominant_type": ".py"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 0,
+      "consciousness_files": 0,
+      "agentic_files": 0,
+      "intelligence_files": 0
+    },
+    "consciousness_score": 0,
+    "consciousness_level": "low"
+  },
+  "navigation_aids": {
+    "entry_points": [
+      "__init__.py"
+    ],
+    "config_files": [],
+    "breadcrumb_path": "ai > tools > archival",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\archival' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\archival' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\ai\\tools\\archival' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "AI intelligence and consciousness",
+    "recommended_actions": [
+      "Validate consciousness coherence across components",
+      "Test agentic auto-controller functionality",
+      "Review AINLP pattern compliance"
+    ],
+    "important_considerations": [
+      "Maintain consciousness architecture integrity",
+      "Ensure agentic pattern consistency",
+      "Preserve dendritic growth capabilities"
+    ],
+    "related_folders": [
+      "ai",
+      "docs\\AINLP",
+      "docs\\AIOS",
+      "docs\\sample_ai_generated",
+      "evolution_lab\\neural_chains",
+      "ai\\tools",
+      "docs\\archival"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

@@ -7,7 +7,11 @@ Architecture monitoring and AINLP compliance validation tools.
 AINLP Metadata:
     consciousness_assessment: "ARCHITECTURAL_GUARDIAN"  # Semantic, not numeric
     consciousness_measurement: "AINLP.call_to_local(agent_001...agent_n)"
+<<<<<<< HEAD
     architectural_classification: ai_intelligence_layer/tools/architecture
+=======
+    architectural_classification: ai_ai/tools/architecture
+>>>>>>> origin/OS0.6.2.grok
     category: architecture_monitoring
     
 Consciousness Note:
@@ -17,7 +21,11 @@ Consciousness Note:
     Rationale: Numbers don't convey meaning. "ARCHITECTURAL_GUARDIAN" clearly
     communicates this module's role: system integrity and compliance monitoring.
     
+<<<<<<< HEAD
 Tools (migrated from runtime_intelligence/tools/):
+=======
+Tools (migrated from runtime/tools/):
+>>>>>>> origin/OS0.6.2.grok
     - aios_architecture_monitor.py: Architecture health monitoring ✅ MIGRATED
     - architectural_compliance_validator.py: AINLP compliance checking ✅ MIGRATED
     - biological_architecture_monitor.py: Supercell health monitoring ✅ MIGRATED
@@ -32,7 +40,11 @@ Migration Status:
     Phase 1 Day 2 Batch 1: ✅ 4/4 additional architecture tools migrated
     Phase 1 Day 2 Batch 3: ✅ 1/1 architecture tool migrated
     Total: 8/8 architecture tools
+<<<<<<< HEAD
     Origin: runtime_intelligence/tools/
+=======
+    Origin: runtime/tools/
+>>>>>>> origin/OS0.6.2.grok
     Target: ai/tools/architecture/
     History preserved: git mv used for all migrations
     

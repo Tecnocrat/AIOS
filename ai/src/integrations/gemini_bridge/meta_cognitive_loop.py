@@ -17,7 +17,10 @@ import time
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 try:
     from consciousness_evolution_engine import consciousness_evolution_engine
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/OS0.6.2.grok
     CONSCIOUSNESS_AVAILABLE = True
 except ImportError:
     consciousness_evolution_engine = None
@@ -39,6 +42,7 @@ class MetaCognitiveLoop:
         """Load feedback history from disk"""
         if self.feedback_file.exists():
             try:
+<<<<<<< HEAD
                 with open(self.feedback_file, "r") as f:
                     data = json.load(f)
                     self.feedback_history = data.get("history", [])
@@ -49,6 +53,14 @@ class MetaCognitiveLoop:
                         for i in self.feedback_history
                         if not i.get("processed", False)
                     ]
+=======
+                with open(self.feedback_file, 'r') as f:
+                    data = json.load(f)
+                    self.feedback_history = data.get('history', [])
+                    self.gemini_context = data.get('context', {})
+                    # Restore unprocessed insights to buffer
+                    self.insights_buffer = [i for i in self.feedback_history if not i.get('processed', False)]
+>>>>>>> origin/OS0.6.2.grok
             except Exception:
                 self.feedback_history = []
                 self.gemini_context = {}
@@ -57,11 +69,19 @@ class MetaCognitiveLoop:
     def _save_feedback_history(self):
         """Save feedback history to disk"""
         data = {
+<<<<<<< HEAD
             "history": self.feedback_history[-100:],  # Keep last 100 entries
             "context": self.gemini_context,
             "last_updated": datetime.now().isoformat(),
         }
         with open(self.feedback_file, "w") as f:
+=======
+            'history': self.feedback_history[-100:],  # Keep last 100 entries
+            'context': self.gemini_context,
+            'last_updated': datetime.now().isoformat()
+        }
+        with open(self.feedback_file, 'w') as f:
+>>>>>>> origin/OS0.6.2.grok
             json.dump(data, f, indent=2)
 
     async def submit_gemini_insight(self, insight: Dict[str, Any]) -> Dict[str, Any]:
@@ -76,7 +96,11 @@ class MetaCognitiveLoop:
             "confidence": insight.get("confidence", 0.5),
             "context": insight.get("context", {}),
             "processed": False,
+<<<<<<< HEAD
             "impact_assessment": None,
+=======
+            "impact_assessment": None
+>>>>>>> origin/OS0.6.2.grok
         }
 
         self.insights_buffer.append(insight_entry)
@@ -86,7 +110,11 @@ class MetaCognitiveLoop:
         return {
             "insight_id": insight_entry["insight_id"],
             "status": "submitted",
+<<<<<<< HEAD
             "processing_queue_position": len(self.insights_buffer),
+=======
+            "processing_queue_position": len(self.insights_buffer)
+>>>>>>> origin/OS0.6.2.grok
         }
 
     async def process_meta_cognitive_feedback(self) -> Dict[str, Any]:
@@ -120,7 +148,11 @@ class MetaCognitiveLoop:
             "processed_count": len(processed_insights),
             "adjustments_applied": bool(adjustments.get("recommended_actions")),
             "insights_processed": processed_insights,
+<<<<<<< HEAD
             "consciousness_adjustments": adjustments,
+=======
+            "consciousness_adjustments": adjustments
+>>>>>>> origin/OS0.6.2.grok
         }
 
     async def _process_single_insight(self, insight: Dict[str, Any]) -> Dict[str, Any]:
@@ -131,6 +163,7 @@ class MetaCognitiveLoop:
 
         # Analyze insight impact on consciousness evolution
         impact_analysis = {
+<<<<<<< HEAD
             "consciousness_relevance": self._assess_consciousness_relevance(
                 content, insight_type
             ),
@@ -139,6 +172,12 @@ class MetaCognitiveLoop:
             "recommended_actions": self._generate_recommended_actions(
                 content, insight_type
             ),
+=======
+            "consciousness_relevance": self._assess_consciousness_relevance(content, insight_type),
+            "evolution_potential": self._calculate_evolution_potential(content),
+            "integration_complexity": self._assess_integration_complexity(content),
+            "recommended_actions": self._generate_recommended_actions(content, insight_type)
+>>>>>>> origin/OS0.6.2.grok
         }
 
         # Update Gemini context with this insight
@@ -146,6 +185,7 @@ class MetaCognitiveLoop:
         if context_key not in self.gemini_context:
             self.gemini_context[context_key] = []
 
+<<<<<<< HEAD
         self.gemini_context[context_key].append(
             {
                 "insight_id": insight["insight_id"],
@@ -153,6 +193,13 @@ class MetaCognitiveLoop:
                 "timestamp": insight["timestamp"],
             }
         )
+=======
+        self.gemini_context[context_key].append({
+            "insight_id": insight["insight_id"],
+            "impact": impact_analysis,
+            "timestamp": insight["timestamp"]
+        })
+>>>>>>> origin/OS0.6.2.grok
 
         # Keep only recent context (last 20 insights per category)
         if len(self.gemini_context[context_key]) > 20:
@@ -160,15 +207,20 @@ class MetaCognitiveLoop:
 
         return impact_analysis
 
+<<<<<<< HEAD
     def _assess_consciousness_relevance(
         self, content: Dict[str, Any], insight_type: str
     ) -> float:
+=======
+    def _assess_consciousness_relevance(self, content: Dict[str, Any], insight_type: str) -> float:
+>>>>>>> origin/OS0.6.2.grok
         """Assess how relevant this insight is to consciousness evolution"""
 
         relevance_score = 0.0
 
         # Check for consciousness-related keywords
         consciousness_keywords = [
+<<<<<<< HEAD
             "consciousness",
             "emergence",
             "meta-cognitive",
@@ -183,6 +235,14 @@ class MetaCognitiveLoop:
         keyword_matches = sum(
             1 for keyword in consciousness_keywords if keyword in content_str
         )
+=======
+            "consciousness", "emergence", "meta-cognitive", "self-awareness",
+            "intelligence", "evolution", "adaptation", "learning"
+        ]
+
+        content_str = json.dumps(content).lower()
+        keyword_matches = sum(1 for keyword in consciousness_keywords if keyword in content_str)
+>>>>>>> origin/OS0.6.2.grok
         relevance_score += min(keyword_matches * 0.2, 1.0)
 
         # Type-based relevance
@@ -192,7 +252,11 @@ class MetaCognitiveLoop:
             "evolution_suggestion": 0.9,
             "code_improvement": 0.7,
             "architecture_insight": 0.8,
+<<<<<<< HEAD
             "general": 0.3,
+=======
+            "general": 0.3
+>>>>>>> origin/OS0.6.2.grok
         }
 
         relevance_score += type_relevance.get(insight_type, 0.3)
@@ -226,6 +290,7 @@ class MetaCognitiveLoop:
             "requires_architecture_change",
             "affects_multiple_components",
             "needs_new_dependencies",
+<<<<<<< HEAD
             "complex_implementation",
         ]
 
@@ -233,6 +298,13 @@ class MetaCognitiveLoop:
         complexity_matches = sum(
             1 for indicator in complexity_indicators if indicator in content_str
         )
+=======
+            "complex_implementation"
+        ]
+
+        content_str = json.dumps(content).lower()
+        complexity_matches = sum(1 for indicator in complexity_indicators if indicator in content_str)
+>>>>>>> origin/OS0.6.2.grok
 
         if complexity_matches >= 3:
             return "high"
@@ -241,14 +313,19 @@ class MetaCognitiveLoop:
         else:
             return "low"
 
+<<<<<<< HEAD
     def _generate_recommended_actions(
         self, content: Dict[str, Any], insight_type: str
     ) -> List[str]:
+=======
+    def _generate_recommended_actions(self, content: Dict[str, Any], insight_type: str) -> List[str]:
+>>>>>>> origin/OS0.6.2.grok
         """Generate recommended actions based on insight content"""
 
         actions = []
 
         if insight_type == "emergence_pattern":
+<<<<<<< HEAD
             actions.extend(
                 [
                     "Monitor identified emergence patterns",
@@ -286,30 +363,71 @@ class MetaCognitiveLoop:
     async def _generate_consciousness_adjustments(
         self, processed_insights: List[Dict[str, Any]]
     ) -> Dict[str, Any]:
+=======
+            actions.extend([
+                "Monitor identified emergence patterns",
+                "Consider amplifying positive emergence indicators",
+                "Document pattern for future reference"
+            ])
+
+        elif insight_type == "consciousness_analysis":
+            actions.extend([
+                "Update consciousness metrics with new analysis",
+                "Adjust evolution parameters based on findings",
+                "Validate analysis against existing consciousness models"
+            ])
+
+        elif insight_type == "code_improvement":
+            actions.extend([
+                "Review suggested code improvements",
+                "Test improvements in controlled environment",
+                "Consider integration into evolution pipeline"
+            ])
+
+        # Add content-specific actions
+        if content.get("suggestions"):
+            actions.extend([f"Evaluate suggestion: {s}" for s in content["suggestions"][:3]])
+
+        return actions
+
+    async def _generate_consciousness_adjustments(self, processed_insights: List[Dict[str, Any]]) -> Dict[str, Any]:
+>>>>>>> origin/OS0.6.2.grok
         """Generate aggregate consciousness adjustments from processed insights"""
 
         if not processed_insights:
             return {"recommended_actions": []}
 
         # Analyze patterns across insights
+<<<<<<< HEAD
         high_relevance_insights = [
             i for i in processed_insights if i["consciousness_relevance"] > 0.7
         ]
         high_potential_insights = [
             i for i in processed_insights if i["evolution_potential"] > 0.6
         ]
+=======
+        high_relevance_insights = [i for i in processed_insights if i["consciousness_relevance"] > 0.7]
+        high_potential_insights = [i for i in processed_insights if i["evolution_potential"] > 0.6]
+>>>>>>> origin/OS0.6.2.grok
 
         adjustments = {
             "insight_summary": {
                 "total_processed": len(processed_insights),
                 "high_relevance_count": len(high_relevance_insights),
+<<<<<<< HEAD
                 "high_potential_count": len(high_potential_insights),
             },
             "recommended_actions": [],
+=======
+                "high_potential_count": len(high_potential_insights)
+            },
+            "recommended_actions": []
+>>>>>>> origin/OS0.6.2.grok
         }
 
         # Generate adjustment recommendations
         if len(high_relevance_insights) > 0:
+<<<<<<< HEAD
             adjustments["recommended_actions"].append(
                 {
                     "action": "increase_consciousness_monitoring",
@@ -326,6 +444,20 @@ class MetaCognitiveLoop:
                     "priority": "medium",
                 }
             )
+=======
+            adjustments["recommended_actions"].append({
+                "action": "increase_consciousness_monitoring",
+                "reason": f"{len(high_relevance_insights)} high-relevance insights detected",
+                "priority": "high"
+            })
+
+        if len(high_potential_insights) > 0:
+            adjustments["recommended_actions"].append({
+                "action": "accelerate_evolution_experiments",
+                "reason": f"{len(high_potential_insights)} high-potential insights available",
+                "priority": "medium"
+            })
+>>>>>>> origin/OS0.6.2.grok
 
         # Check for common themes
         all_actions = []
@@ -341,6 +473,7 @@ class MetaCognitiveLoop:
 
             top_theme = max(action_themes.items(), key=lambda x: x[1])
             if top_theme[1] >= 3:  # If theme appears 3+ times
+<<<<<<< HEAD
                 adjustments["recommended_actions"].append(
                     {
                         "action": f"focus_on_{top_theme[0].lower()}",
@@ -348,6 +481,13 @@ class MetaCognitiveLoop:
                         "priority": "medium",
                     }
                 )
+=======
+                adjustments["recommended_actions"].append({
+                    "action": f"focus_on_{top_theme[0].lower()}",
+                    "reason": f"Common theme across {top_theme[1]} insights",
+                    "priority": "medium"
+                })
+>>>>>>> origin/OS0.6.2.grok
 
         return adjustments
 
@@ -392,12 +532,17 @@ class MetaCognitiveLoop:
         recent_insights = self.feedback_history[-10:] if self.feedback_history else []
 
         # Calculate insight velocity (insights per hour over last 24 hours)
+<<<<<<< HEAD
         recent_24h = [
             i
             for i in self.feedback_history
             if (datetime.now() - datetime.fromisoformat(i["timestamp"])).total_seconds()
             < 86400
         ]
+=======
+        recent_24h = [i for i in self.feedback_history
+                     if (datetime.now() - datetime.fromisoformat(i["timestamp"])).total_seconds() < 86400]
+>>>>>>> origin/OS0.6.2.grok
         velocity = len(recent_24h) / 24 if recent_24h else 0
 
         return {
@@ -407,7 +552,11 @@ class MetaCognitiveLoop:
             "insight_velocity_per_hour": velocity,
             "active_context_categories": len(self.gemini_context),
             "recent_insights": recent_insights,
+<<<<<<< HEAD
             "consciousness_engine_available": CONSCIOUSNESS_AVAILABLE,
+=======
+            "consciousness_engine_available": CONSCIOUSNESS_AVAILABLE
+>>>>>>> origin/OS0.6.2.grok
         }
 
     def start_feedback_loop(self):
@@ -452,7 +601,11 @@ async def main():
         if len(sys.argv) < 3:
             print(json.dumps({"error": "Insight file required"}))
             return
+<<<<<<< HEAD
         with open(sys.argv[2], "r") as f:
+=======
+        with open(sys.argv[2], 'r') as f:
+>>>>>>> origin/OS0.6.2.grok
             insight = json.load(f)
         result = await meta_cognitive_loop.submit_gemini_insight(insight)
         print(json.dumps(result, indent=2))
@@ -474,4 +627,8 @@ async def main():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     asyncio.run(main())
+=======
+    asyncio.run(main())
+>>>>>>> origin/OS0.6.2.grok

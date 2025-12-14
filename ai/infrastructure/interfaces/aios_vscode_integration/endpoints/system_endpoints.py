@@ -38,12 +38,22 @@ async def health_check():
     """
     try:
         # Get cached performance metrics
+<<<<<<< HEAD
         cache_metrics = await _fractal_cache_manager.get_cached("system_health")
+=======
+        cache_metrics = await _fractal_cache_manager.get_cached(
+            "system_health"
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         # System resource monitoring
         cpu_percent = psutil.cpu_percent(interval=1)
         memory = psutil.virtual_memory()
+<<<<<<< HEAD
         disk = psutil.disk_usage("/")
+=======
+        disk = psutil.disk_usage('/')
+>>>>>>> origin/OS0.6.2.grok
 
         health_status = {
             "status": "healthy" if cpu_percent < 80 else "degraded",
@@ -56,17 +66,36 @@ async def health_check():
             },
             "cellular_ecosystem": cellular_ecosystem_status,
             "cache_performance": cache_metrics or "metrics_not_cached",
+<<<<<<< HEAD
             "uptime": time.time(),  # Placeholder for actual uptime tracking
         }
 
         # Cache the health status for 30 seconds
         await _fractal_cache_manager.set_cached("system_health", health_status, ttl=30)
+=======
+            "uptime": time.time()  # Placeholder for actual uptime tracking
+        }
+
+        # Cache the health status for 30 seconds
+        await _fractal_cache_manager.set_cached(
+            "system_health",
+            health_status,
+            ttl=30
+        )
+>>>>>>> origin/OS0.6.2.grok
 
         return health_status
 
     except Exception as e:
         logger.error(f"Health check failed: {e}")
+<<<<<<< HEAD
         raise HTTPException(status_code=500, detail=f"Health check failed: {str(e)}")
+=======
+        raise HTTPException(
+            status_code=500,
+            detail=f"Health check failed: {str(e)}"
+        )
+>>>>>>> origin/OS0.6.2.grok
 
 
 @router.get("/diagnostics")
@@ -90,7 +119,13 @@ async def system_diagnostics():
                 "parent_pid": os.getppid(),
                 "command_line": sys.argv,
             },
+<<<<<<< HEAD
             "cache_diagnostics": await _fractal_cache_manager.get_performance_report(),
+=======
+            "cache_diagnostics": await (
+                _fractal_cache_manager.get_performance_report()
+            ),
+>>>>>>> origin/OS0.6.2.grok
             "debug_summary": _debug_manager.get_debug_info(),
         }
 
@@ -98,7 +133,14 @@ async def system_diagnostics():
 
     except Exception as e:
         logger.error(f"Diagnostics failed: {e}")
+<<<<<<< HEAD
         raise HTTPException(status_code=500, detail=f"Diagnostics failed: {str(e)}")
+=======
+        raise HTTPException(
+            status_code=500,
+            detail=f"Diagnostics failed: {str(e)}"
+        )
+>>>>>>> origin/OS0.6.2.grok
 
 
 @router.get("/status")
@@ -133,7 +175,12 @@ async def bridge_status():
     return {
         "bridge_status": bridge_health,
         "timestamp": datetime.now().isoformat(),
+<<<<<<< HEAD
         "note": "Intercellular bridge operational - ready for " "neuron expansion",
+=======
+        "note": "Intercellular bridge operational - ready for "
+                "neuron expansion",
+>>>>>>> origin/OS0.6.2.grok
     }
 
 
@@ -166,7 +213,14 @@ async def bridge_test(request: dict):
 
     except Exception as e:
         logger.error(f"Bridge test failed: {e}")
+<<<<<<< HEAD
         raise HTTPException(status_code=500, detail=f"Bridge test failed: {str(e)}")
+=======
+        raise HTTPException(
+            status_code=500,
+            detail=f"Bridge test failed: {str(e)}"
+        )
+>>>>>>> origin/OS0.6.2.grok
 
 
 @router.get("/bridge/connections")

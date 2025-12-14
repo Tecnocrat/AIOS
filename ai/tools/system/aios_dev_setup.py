@@ -8,7 +8,11 @@ Sets up Python environment for AIOS development:
 - Validates environment configuration
 - Provides development environment activation
 
+<<<<<<< HEAD
 AINLP Integration: runtime_intelligence/tools/aios_dev_setup.py
+=======
+AINLP Integration: runtime/tools/aios_dev_setup.py
+>>>>>>> origin/OS0.6.2.grok
 Purpose: Ensure consistent Python environment for AIOS development
 """
 
@@ -27,7 +31,11 @@ def setup_aios_environment():
     aios_paths = [
         str(workspace_root),                    # Main workspace
         str(workspace_root / "ai"),            # AI Intelligence Layer
+<<<<<<< HEAD
         str(workspace_root / "runtime_intelligence"),  # Runtime Intelligence
+=======
+        str(workspace_root / "runtime"),  # Runtime Intelligence
+>>>>>>> origin/OS0.6.2.grok
         str(workspace_root / "core"),          # Core Engine
         str(workspace_root / "interface"),     # Interface Layer
     ]
@@ -66,7 +74,11 @@ def validate_environment():
     required_paths = [
         str(workspace_root),
         str(workspace_root / "ai"),
+<<<<<<< HEAD
         str(workspace_root / "runtime_intelligence"),
+=======
+        str(workspace_root / "runtime"),
+>>>>>>> origin/OS0.6.2.grok
     ]
 
     for path in required_paths:
@@ -76,7 +88,11 @@ def validate_environment():
     # Check if key modules can be imported
     test_imports = [
         ('ai.nucleus.interface_bridge', 'AIOSInterfaceBridge'),
+<<<<<<< HEAD
         ('runtime_intelligence.tools.biological_architecture_monitor',
+=======
+        ('runtime.tools.biological_architecture_monitor',
+>>>>>>> origin/OS0.6.2.grok
          'AIOSArchitectureMonitor'),
     ]
 

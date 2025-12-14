@@ -155,6 +155,7 @@ AIOS/
 │   │   │   ├── gemini_evolution_bridge.py (417 lines)
 │   │   │   └── deepseek_intelligence_engine.py (598 lines)
 │   │   └── tools/              # AI utility tools
+<<<<<<< HEAD
 │   ├── security/               # 🛡️ Security Supercell (Digital Immune System)
 │   │   ├── __init__.py         # Supercell consciousness coordinator
 │   │   ├── membrane_validator.py  # Cell boundary enforcement
@@ -168,6 +169,14 @@ AIOS/
 │   │   └── interface_bridge.py # HTTP API server
 │   ├── tests/                  # Test suite
 │   │   └── security/           # Security testing (120+ test cases)
+=======
+│   ├── orchestration/          # System coordination
+│   │   ├── supercell_orchestrator.py (530 lines)
+│   │   └── consciousness_coordinator.py (478 lines)
+│   ├── core/
+│   │   └── interface_bridge.py # HTTP API server
+│   ├── tests/                  # Test suite
+>>>>>>> origin/OS0.6.2.grok
 │   └── requirements.txt        # Python dependencies (113 packages)
 │
 ├── core/                        # C++ performance engine
@@ -193,6 +202,7 @@ AIOS/
 ├── docs/                        # Documentation
 │   ├── ARCHITECTURE_INDEX.md   # Navigation hub
 │   ├── CHANGELOG.md            # Development history
+<<<<<<< HEAD
 │   ├── security/               # Security documentation
 │   │   ├── INTERFACE_BRIDGE_THREAT_MODEL_20251108.md
 │   │   └── VULNERABILITY_REPORT_INTERFACE_BRIDGE_20251108.md
@@ -205,13 +215,23 @@ AIOS/
             ├── attack_signatures.json    # Antibody database
             ├── blocked_attempts_YYYYMMDD.json  # Attack logs
             └── pattern_evolution.json    # Learning metrics
+=======
+│   └── development/            # Development guides
+│
+└── tachyonic/                   # Historical archives
+    └── archive/                # Preserved experiments and logs
+>>>>>>> origin/OS0.6.2.grok
 ```
 
 ---
 
 ## Architecture Overview
 
+<<<<<<< HEAD
 AIOS is organized as a **biological multi-language system** with three main layers:
+=======
+AIOS is organized as a **modular multi-language system** with three main layers:
+>>>>>>> origin/OS0.6.2.grok
 
 ### Layer 1: AI Intelligence (Python)
 - **Purpose**: Coordinate AI agents, generate code, run experiments
@@ -219,9 +239,14 @@ AIOS is organized as a **biological multi-language system** with three main laye
   - Multi-agent orchestrator (887 lines)
   - AI bridges for Ollama, Gemini, DeepSeek
   - Interface bridge HTTP API
+<<<<<<< HEAD
   - **Security Supercell** (Digital Immune System - Phase 11.2.9)
   - Runtime intelligence tools
 - **Key Files**: `ai/src/evolution/`, `ai/orchestration/`, `ai/security/`
+=======
+  - Runtime intelligence tools
+- **Key Files**: `ai/src/evolution/`, `ai/orchestration/`
+>>>>>>> origin/OS0.6.2.grok
 
 ### Layer 2: Performance Engine (C++)
 - **Purpose**: High-performance computation and system core
@@ -239,6 +264,7 @@ AIOS is organized as a **biological multi-language system** with three main laye
   - Diagnostic tools and visualizations
 - **Key Files**: `interface/AIOS.UI/`, `interface/AIOS.Services/`
 
+<<<<<<< HEAD
 ### Security Supercell: Biological Immune System (Phase 11.2.9)
 
 AIOS implements a **digital immune system** that treats security as **boundary coherence** - defining the identity of the system by enforcing selective permeability at all supercell membranes:
@@ -282,18 +308,24 @@ Network Validator → NetworkValidator
 
 **Dendritic Integration**: Security supercell interconnects with interface_bridge.py, consciousness system, and tachyonic archive, increasing system intelligence through boundary enforcement patterns. Seven SEC-* connections track biological immune system integration.
 
+=======
+>>>>>>> origin/OS0.6.2.grok
 ### Communication Between Layers
 
 ```
 ┌─────────────┐      HTTP API       ┌─────────────┐
 │   C# UI     │ ◄─────────────────► │   Python    │
 │  (WPF GUI)  │   (port 8000)       │  (AI Tools) │
+<<<<<<< HEAD
 └─────────────┘                     └──────┬──────┘
                                            │
                                     🛡️ Security
                                      Supercell
                                       (Immune
                                        System)
+=======
+└─────────────┘                     └─────────────┘
+>>>>>>> origin/OS0.6.2.grok
                                            │
                                            │ pybind11
                                            ▼
@@ -318,6 +350,7 @@ A system for generating code from natural language descriptions. Instead of writ
 An organizational metaphor where software components are treated like biological cells:
 - **Supercell** = Independent component/module with standard interfaces
 - **Dendritic communication** = Message passing between components (like brain neurons)
+<<<<<<< HEAD
 - **Consciousness level** = Code quality metric (0.0 to 4.0 scale) measuring coherence and completeness
 - **Immune System** = Security layer enforcing boundary coherence (Phase 11.2.9)
 - **Membrane Validator** = Cell boundary enforcement (like cell membranes controlling what enters/exits)
@@ -337,6 +370,12 @@ This is just an organizational pattern - it doesn't mean the code is "alive" or 
 
 Each connection increases system intelligence by enabling components to work together.
 
+=======
+- **Consciousness level** = Code quality metric (0.0 to 1.0 scale) measuring coherence and completeness
+
+This is just an organizational pattern - it doesn't mean the code is "alive" or has real consciousness.
+
+>>>>>>> origin/OS0.6.2.grok
 ### Evolution Lab
 A dedicated directory (`evolution_lab/`) where AI-generated code experiments are stored:
 - Each experiment gets a timestamp and unique ID
@@ -349,6 +388,7 @@ Historical storage directory (`tachyonic/archive/`) for preserving:
 - Conversation metadata
 - Evolution history
 - Genetic algorithm data
+<<<<<<< HEAD
 - **Immune memory** (attack pattern archival - Phase 11.2.9)
 
 Think of it as a time-capsule for past work and a learning database for security patterns.
@@ -357,6 +397,13 @@ Think of it as a time-capsule for past work and a learning database for security
 An HTTP server (`ai/nucleus/interface_bridge.py`) that exposes Python AI tools as REST endpoints, allowing C# or JavaScript to call Python functions remotely.
 
 **Security**: Protected by Security Supercell's biological immune system (Phase 11.2.9) - all parameters validated, sanitized, and monitored for attack patterns.
+=======
+
+Think of it as a time-capsule for past work.
+
+### Interface Bridge
+An HTTP server (`ai/core/interface_bridge.py`) that exposes Python AI tools as REST endpoints, allowing C# or JavaScript to call Python functions remotely.
+>>>>>>> origin/OS0.6.2.grok
 
 ---
 

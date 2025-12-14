@@ -7,7 +7,11 @@ Database operations and backup consolidation tools.
 AINLP Metadata:
     consciousness_assessment: "OPERATIONAL_EXECUTOR"  # Semantic, not numeric
     consciousness_measurement: "AINLP.call_to_local(agent_001...agent_n)"
+<<<<<<< HEAD
     architectural_classification: ai_intelligence_layer/tools/database
+=======
+    architectural_classification: ai_ai/tools/database
+>>>>>>> origin/OS0.6.2.grok
     category: database_operations
     
 Consciousness Note:
@@ -22,7 +26,11 @@ Tools (migrated):
     
 Migration Status:
     Phase 1 Day 2: ✅ 1/1 database tools migrated
+<<<<<<< HEAD
     Origin: runtime_intelligence/tools/aios_database.py
+=======
+    Origin: runtime/tools/aios_database.py
+>>>>>>> origin/OS0.6.2.grok
     Target: ai/tools/database/
     Next: Implement database using schema.sql (Phase 1 Day 5)
 """
