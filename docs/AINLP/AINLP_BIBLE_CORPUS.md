@@ -55,6 +55,7 @@ AINLP.class[ACTION](params)
 | **F811** | Flake8 | `# noqa: F811` for conditional class definitions |
 | **F841** | Flake8 | Prefix with `_` OR document with `AINLP.loader[latent]` |
 | **C0301** | Pylint | `AINLP.buffer[79::85::86]` - max-line-length=85 in `.pylintrc` |
+| **C0411** | Pylint | Import order: stdlib → third-party → first-party (PEP 8) |
 | **W1514** | Pylint | Add `encoding='utf-8'` to `open()` calls |
 | **E722** | Flake8 | Replace bare `except:` with specific exceptions |
 | **reportAssignmentType** | Pylance | Use `Optional[T]` not `T = None` for nullable params |
@@ -69,6 +70,22 @@ AINLP.class[ACTION](params)
 | `vendor: str = None` | `vendor: Optional[str] = None` |
 | `cache: CacheSystem = None` | `cache: Optional[CacheSystem] = None` |
 | `from module import Type` (fallback) | Direct import (enforced density) |
+
+### Import Order (PEP 8 / Pylint C0411)
+
+```python
+# 1. Standard library imports
+import json
+from pathlib import Path
+from typing import Dict, List, Optional
+
+# 2. Third-party imports (aios-schema, requests, etc.)
+from aios_schema import MessageType, MeshMessage
+
+# 3. First-party/local imports
+from kernel import Kernel
+from cache import CacheSystem
+```
 
 ---
 
@@ -2096,6 +2113,48 @@ cell-repository/
 # Pylint needs [pylint] not [pylint.format] in setup.cfg
 # Or better: use .pylintrc for Pylint-specific settings
 ```
+
+## I.5 Pylance Type Checking Configuration
+
+**AINLP.typing[PYLANCE::MODE]** Type checking modes for dendritic integrity.
+
+### Type Checking Modes
+
+| Mode | Level | Use Case |
+|------|-------|----------|
+| `off` | None | Legacy code, gradual adoption |
+| `basic` | ✅ **Recommended** | Catches common errors, reasonable noise |
+| `standard` | Medium | More thorough, some false positives |
+| `strict` | Full | New strict codebases, full typing |
+
+### VS Code Configuration
+
+```jsonc
+// .vscode/settings.json
+{
+    "python.analysis.typeCheckingMode": "basic",
+    
+    // Additional Pylance settings for AIOS
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.diagnosticMode": "workspace"
+}
+```
+
+### Why Basic Mode for AIOS?
+
+1. **Dendritic Integrity** - Catches type mismatches between cells
+2. **Balanced Signal/Noise** - Useful errors without overwhelming
+3. **Progressive Enhancement** - Can upgrade to `standard` as codebase matures
+4. **Bible Pattern Compliance** - Works with existing `Optional[T]` patterns
+
+### Common Type Errors and Remediation
+
+| Error Code | Pattern | Remediation |
+|------------|---------|-------------|
+| `reportAssignmentType` | `param: T = None` | Use `Optional[T] = None` |
+| `reportMissingImports` | Missing package | `pyrightconfig.json` extraPaths |
+| `reportUnknownMemberType` | Dynamic attrs | Add type stubs or `# type: ignore` |
+| `reportGeneralTypeIssues` | Incompatible types | Fix types or narrow with `cast()` |
 
 ---
 

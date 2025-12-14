@@ -1,3 +1,27 @@
 {
-    "cmake.sourceDirectory": "/home/user/AIOS/core"
+    "cmake.sourceDirectory": "/home/user/AIOS/core",
+    
+    // ══════════════════════════════════════════════════════════════════════════
+    // AINLP Type Checking Configuration
+    // Reference: Bible Appendix I (Tool Config Precedence)
+    // ══════════════════════════════════════════════════════════════════════════
+    "python.analysis.typeCheckingMode": "basic",
+    
+    // ══════════════════════════════════════════════════════════════════════════
+    // AINLP.buffer[79::85::86] Linter Configuration
+    // Reference: Bible Appendix G (Agentic Quantum Error Correction)
+    // ══════════════════════════════════════════════════════════════════════════
+    "python.linting.pylintArgs": [
+        "--max-line-length=85",
+        "--disable=C0301,C0114,C0115,C0116"
+    ],
+    "python.linting.flake8Args": [
+        "--max-line-length=85",
+        "--extend-ignore=E501"
+    ],
+    
+    // Visual rulers for buffer zones
+    "[python]": {
+        "editor.rulers": [79, 85]
+    }
 }
