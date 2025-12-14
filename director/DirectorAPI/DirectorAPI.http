@@ -1,6 +1,0 @@
-@DirectorAPI_HostAddress = http://localhost:5094
-
-GET {{DirectorAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

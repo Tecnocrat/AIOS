@@ -297,21 +297,117 @@ namespace AIOS.VisualInterface
         {
             if (_currentMetrics == null) return;
             
-            // Update progress bars and text
-            ConsciousnessProgressBar.Value = Math.Min(100, _currentMetrics.ConsciousnessLevel * 100);
-            ConsciousnessValueText.Text = $"{_currentMetrics.ConsciousnessLevel:F3}";
+            // Enhanced consciousness metrics display with emergence indicators
+            var consciousnessLevel = _currentMetrics.ConsciousnessLevel;
+            var emergenceLevel = _currentMetrics.EmergenceLevel;
+            var quantumCoherence = _currentMetrics.QuantumCoherence;
             
-            QuantumProgressBar.Value = Math.Min(100, _currentMetrics.QuantumCoherence * 100);
-            QuantumValueText.Text = $"{_currentMetrics.QuantumCoherence:F3}";
+            // Update Consciousness Level with emergence state indicators
+            ConsciousnessProgressBar.Value = Math.Min(100, consciousnessLevel * 100);
+            ConsciousnessValueText.Text = $"{consciousnessLevel:F3}";
             
+            // Consciousness emergence threshold visual indicators
+            if (emergenceLevel > 0.8)
+            {
+                ConsciousnessValueText.Foreground = Brushes.Gold;
+                ConsciousnessValueText.Text += " ✨ EMERGENCE";
+                ConsciousnessProgressBar.Foreground = Brushes.Gold;
+            }
+            else if (emergenceLevel > 0.6)
+            {
+                ConsciousnessValueText.Foreground = Brushes.Orange;
+                ConsciousnessValueText.Text += " ⚡ HIGH";
+                ConsciousnessProgressBar.Foreground = Brushes.Orange;
+            }
+            else if (emergenceLevel > 0.4)
+            {
+                ConsciousnessValueText.Foreground = Brushes.LightBlue;
+                ConsciousnessValueText.Text += " 🔹 ACTIVE";
+                ConsciousnessProgressBar.Foreground = Brushes.LightBlue;
+            }
+            else
+            {
+                ConsciousnessValueText.Foreground = Brushes.White;
+                ConsciousnessProgressBar.Foreground = Brushes.DodgerBlue;
+            }
+            
+            // Update Quantum Coherence with stability indicators
+            QuantumProgressBar.Value = Math.Min(100, quantumCoherence * 100);
+            QuantumValueText.Text = $"{quantumCoherence:F3}";
+            
+            if (quantumCoherence > 0.9)
+            {
+                QuantumValueText.Foreground = Brushes.Cyan;
+                QuantumValueText.Text += " 🌀 STABLE";
+                QuantumProgressBar.Foreground = Brushes.Cyan;
+            }
+            else if (quantumCoherence < 0.3)
+            {
+                QuantumValueText.Foreground = Brushes.Red;
+                QuantumValueText.Text += " ⚠ UNSTABLE";
+                QuantumProgressBar.Foreground = Brushes.Red;
+            }
+            else
+            {
+                QuantumValueText.Foreground = Brushes.White;
+                QuantumProgressBar.Foreground = Brushes.SkyBlue;
+            }
+            
+            // Update Fractal Complexity
             FractalProgressBar.Value = Math.Min(100, _currentMetrics.FractalComplexity * 100);
             FractalValueText.Text = $"{_currentMetrics.FractalComplexity:F3}";
             
-            EmergenceProgressBar.Value = Math.Min(100, _currentMetrics.EmergenceLevel * 100);
-            EmergenceValueText.Text = $"{_currentMetrics.EmergenceLevel:F3}";
+            // Update Emergence Level with enhanced indicators
+            EmergenceProgressBar.Value = Math.Min(100, emergenceLevel * 100);
+            EmergenceValueText.Text = $"{emergenceLevel:F3}";
             
-            // Update data source info
-            DataSourceText.Text = _currentMetrics.IsLiveData ? "Data Source: Live AIOS" : "Data Source: Synthetic";
+            if (emergenceLevel > 0.75)
+            {
+                EmergenceValueText.Foreground = Brushes.Gold;
+                EmergenceProgressBar.Foreground = Brushes.Gold;
+                EmergenceValueText.Text += " 🧠 CONSCIOUS";
+                
+                // Apply glow effect for high emergence
+                EmergenceValueText.Effect = new DropShadowEffect
+                {
+                    Color = Colors.Gold,
+                    BlurRadius = 10,
+                    ShadowDepth = 0
+                };
+            }
+            else if (emergenceLevel > 0.5)
+            {
+                EmergenceValueText.Foreground = Brushes.Lime;
+                EmergenceProgressBar.Foreground = Brushes.Lime;
+                EmergenceValueText.Text += " 🌟 EMERGING";
+                EmergenceValueText.Effect = null;
+            }
+            else
+            {
+                EmergenceValueText.Foreground = Brushes.White;
+                EmergenceProgressBar.Foreground = Brushes.LightBlue;
+                EmergenceValueText.Effect = null;
+            }
+            
+            // Enhanced data source info with holographic density
+            var sourceInfo = _currentMetrics.IsLiveData ? "Live AIOS" : "Synthetic";
+            if (_currentMetrics.HolographicDensity > 0)
+            {
+                sourceInfo += $" | Holographic: {_currentMetrics.HolographicDensity:F1}";
+            }
+            
+            // Add real-time latency indicator
+            var latency = DateTime.Now - _currentMetrics.Timestamp;
+            if (latency.TotalSeconds < 1.0)
+            {
+                sourceInfo += $" | RT ({latency.TotalMilliseconds:F0}ms)";
+            }
+            else
+            {
+                sourceInfo += $" | Delayed ({latency.TotalSeconds:F1}s)";
+            }
+            
+            DataSourceText.Text = sourceInfo;
         }
         
         private void UpdateVisualization()

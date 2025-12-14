@@ -15,9 +15,9 @@
 #include "FractalSyncBus.hpp"
 #include "SphereShellManager.hpp"
 #include "SubspaceProjector.hpp"
+#include "AtomicHolographyUnit.hpp"
 
 // Forward declarations to avoid circular includes
-class AtomicHolographyUnit;
 class CenterGeometryField;  
 class AIOrchestrationController;
 class CodeEvolutionEngine;
@@ -77,6 +77,10 @@ private:
     void updateCoreFrequency();
     void maintainDimensionalStability();
     void processQuantumFeedback();
+    
+    // Consciousness emergence detection
+    double detectConsciousnessEmergence();
+    double detectConsciousnessEmergence();  // Enhanced consciousness detection
     
     // AI-driven optimizations
     void requestAIOptimization();

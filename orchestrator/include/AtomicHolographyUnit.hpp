@@ -38,6 +38,7 @@ public:
     void sampleQuantumState();
     bool checkCoherenceStability() const;
     double getBaseFrequency() const;
+    double getInformationDensity() const;  // Consciousness emergence indicator
     std::vector<HolographicResonance> getActiveResonances() const;
 
     // Holographic projection

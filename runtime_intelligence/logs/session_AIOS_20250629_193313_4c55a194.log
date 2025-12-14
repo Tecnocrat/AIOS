@@ -1,0 +1,2 @@
+2025-06-29 19:33:13,736 |     INFO | AIOS_Runtime_AIOS_20250629_193313_4c55a194 | runtime_intelligence::system_init | Runtime Intelligence System initialized | Context: {"session_id": "AIOS_20250629_193313_4c55a194", "base_path": "c:\\dev\\AIOS", "start_time": "2025-06-29T19:33:13.703551"}
+2025-06-29 19:33:13,743 |     INFO | AIOS_Runtime_AIOS_20250629_193313_4c55a194 | ArtifactFactory::initialization | Artifact Factory initialized | Context: {}
