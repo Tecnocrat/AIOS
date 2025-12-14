@@ -393,8 +393,18 @@ Solution: **Stop policing line length entirely.**
 #### Current Configuration
 
 ```json
-// All AIOS cells
+// All AIOS cells - BOTH extension formats required
 {
+    // NEW extension format (ms-python.pylint, ms-python.flake8)
+    "pylint.enabled": true,
+    "pylint.lintOnSave": true,
+    "flake8.enabled": false,
+    
+    // LEGACY extension format (python.linting.*)
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    
     "python.linting.pylintArgs": ["--max-line-length=120", "--disable=C0301"],
     "black-formatter.args": ["--line-length=120"],
     "[python]": {
@@ -409,6 +419,68 @@ Solution: **Stop policing line length entirely.**
 max-line-length=120
 ```
 
+### Configuration Propagation Strategy
+
+#### Why Both Extension Formats?
+
+VS Code Python tooling has TWO generations of settings:
+
+| Format | Extension | Keys |
+|--------|-----------|------|
+| **NEW** | ms-python.pylint, ms-python.flake8 | `pylint.enabled`, `flake8.enabled` |
+| **LEGACY** | ms-python.python | `python.linting.pylintEnabled`, `python.linting.flake8Enabled` |
+
+**Both must be set** because:
+1. Different VS Code versions have different extensions active
+2. Workspace settings might be read by either
+3. Extension updates can change which format is respected
+
+#### Cell Configuration Hierarchy
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    VS Code Settings Cascade                      │
+├─────────────────────────────────────────────────────────────────┤
+│ 1. User Settings (global)     ~/.vscode/settings.json           │
+│    ↓ overridden by                                               │
+│ 2. Workspace Settings         {workspace}/.vscode/settings.json │
+│    ↓ overridden by                                               │
+│ 3. Folder Settings            {folder}/.vscode/settings.json    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+For AIOS multi-root workspace (aios-win.code-workspace):
+- Each cell has its **own** `.vscode/settings.json`
+- Each cell has its **own** `.pylintrc`
+- No global inheritance - explicit per-cell configuration
+
+#### Propagation Script
+
+Use `ainlp_liberation_remediation.py` to propagate config:
+
+```bash
+# Apply to all default cells
+python scripts/ainlp_liberation_remediation.py
+
+# Apply to specific cells
+python scripts/ainlp_liberation_remediation.py --cells AIOS Nous aios-server
+
+# Preview changes
+python scripts/ainlp_liberation_remediation.py --dry-run
+```
+
+#### Cell Configuration Status (v1.11)
+
+| Cell | .vscode/settings.json | .pylintrc | Status |
+|------|----------------------|-----------|--------|
+| AIOS | ✅ | ✅ | Liberated |
+| Nous | ✅ | ✅ | Liberated |
+| aios-server | ✅ | ✅ | Liberated |
+| aios-schema | ✅ | ✅ | Liberated |
+| aios-api | ✅ | ✅ | Liberated |
+| aios-quantum | ✅ | ✅ | Liberated |
+| aios-win | ✅ | ✅ | Liberated |
+
 #### What Still Matters
 
 | Rule | Status | Why |
@@ -417,6 +489,7 @@ max-line-length=120
 | **C0411** (import order) | ✅ ENABLED | Code organization |
 | **Type checking** | ✅ ENABLED | Pylance catches real bugs |
 | **C0301** (line length) | ❌ DISABLED | Obsolete constraint |
+
 
 ---
 
