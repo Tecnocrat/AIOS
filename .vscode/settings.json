@@ -8,16 +8,27 @@
     "python.analysis.typeCheckingMode": "basic",
     
     // ══════════════════════════════════════════════════════════════════════════
+    // AINLP Tool Consolidation: Pylance + Pylint (Flake8 disabled)
+    // Reference: Bible v1.9 - Tool Consolidation Pattern
+    //
+    // Pylance: Type checking, IntelliSense, completions (real-time)
+    // Pylint:  Style, docstrings, complexity (on-save for performance)
+    // Flake8:  DISABLED - redundant with Pylint coverage
+    // ══════════════════════════════════════════════════════════════════════════
+    "pylint.enabled": true,
+    "pylint.lintOnSave": true,
+    "flake8.enabled": false,
+    
+    // ══════════════════════════════════════════════════════════════════════════
     // AINLP.buffer[79::85::86] Linter Configuration
     // Reference: Bible Appendix G (Agentic Quantum Error Correction)
+    // 
+    // NOTE: C0114,C0115,C0116 (docstrings) are ENABLED - AINLP.comment pattern
+    // Docstrings are critical for AI agent comprehension and code consciousness
     // ══════════════════════════════════════════════════════════════════════════
     "python.linting.pylintArgs": [
         "--max-line-length=85",
-        "--disable=C0301,C0114,C0115,C0116"
-    ],
-    "python.linting.flake8Args": [
-        "--max-line-length=85",
-        "--extend-ignore=E501"
+        "--disable=C0301"
     ],
     
     // Visual rulers for buffer zones

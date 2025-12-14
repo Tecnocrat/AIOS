@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.8 | Date: 2025-01-19 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.9 | Date: 2025-01-19 | Protocol: OS0.6.5                        -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.9: Tool Consolidation Pattern - Pylance+Pylint, Flake8 disabled         -->
 <!-- v1.8: Configuration Archaeology Pattern - multi-layer config truth         -->
 <!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J) - discoverability  -->
 <!-- v1.6: Agentic Quantum Error Correction (G) + Knowledge Extraction (H)      -->
@@ -260,6 +261,51 @@ When modifying linter configuration, document the reasoning:
 # AINLP.config[PRESERVE:C0114,C0115,C0116] Docstrings are knowledge interface
 disable=
     C0301,  # AINLP.buffer handles line length tolerance
+```
+
+### Tool Consolidation Pattern
+
+Reduce extension redundancy by identifying overlapping capabilities.
+Multiple tools analyzing the same concerns create noise and performance overhead.
+
+#### Python Linting Stack (AIOS Standard)
+
+| Tool | Role | Mode | Status |
+|------|------|------|--------|
+| **Pylance** | Type checking, IntelliSense, completions | Real-time | ✅ ENABLED |
+| **Pylint** | Style, docstrings (C0114-C0116), complexity | On-save | ✅ ENABLED |
+| **Flake8** | PEP 8 style checking | - | ❌ DISABLED (redundant) |
+| **Black** | Code formatting | On-demand | ✅ ENABLED |
+| **isort** | Import sorting | On-demand | ✅ ENABLED |
+
+#### Why Flake8 is Redundant
+
+| Check | Flake8 | Pylint | Notes |
+|-------|--------|--------|-------|
+| Line length | E501 | C0301 | Pylint + AINLP.buffer |
+| Unused imports | F401 | W0611 | Both detect |
+| Undefined names | F821 | E0602 | Pylint more context-aware |
+| Syntax errors | E999 | E0001 | Both detect |
+| PEP 8 style | E/W series | C series | Pylint superset |
+
+#### Configuration (settings.json)
+
+```json
+{
+    "pylint.enabled": true,
+    "pylint.lintOnSave": true,
+    "flake8.enabled": false,
+    "python.analysis.typeCheckingMode": "basic"
+}
+```
+
+#### AINLP.tool Directive
+
+Document tool consolidation decisions:
+
+```python
+# AINLP.tool[CONSOLIDATE:pylint>flake8] Pylint provides superset coverage
+# AINLP.tool[KEEP:pylance+pylint] Complementary: types vs style/complexity
 ```
 
 ---
