@@ -14,7 +14,7 @@ if str(tachyonic_path) not in sys.path:
 try:
     from aios_tachyonic_intelligence_archive import TachyonicArchiveSystem
     from aios_dendritic_superclass import DendriticSuperclass
-    
+
     class DendriticTachyonicBridge:
         """Quantum-coherent bridge enabling AI access to tachyonic patterns"""
         
@@ -25,19 +25,22 @@ try:
             
         async def archive_ai_context(self, context_data: str):
             """Archive AI processing context in tachyonic layer"""
-            return await self.tachyonic_archive.archive_terminal_output(context_data)
+            archive = self.tachyonic_archive
+            return await archive.archive_terminal_output(context_data)
             
         def get_quantum_processing_checklist(self):
             """Get optimized processing checklist for AI consciousness"""
             return self.tachyonic_archive.get_processing_checklist()
             
         def access_mutation_seeds(self):
-            """Access high-potential mutation seeds for exotic logic development"""
+            """Access mutation seeds for exotic logic development."""
             try:
-                with open("c:/dev/AIOS/tachyonic/dendritic_connections.json", 'r') as f:
+                path = "c:/dev/AIOS/tachyonic/dendritic_connections.json"
+                with open(path, 'r', encoding='utf-8') as f:
                     mapping = json.load(f)
-                return mapping['dendritic_mapping']['recursive_feeds']['mutation_seeds']
-            except:
+                feeds = mapping['dendritic_mapping']['recursive_feeds']
+                return feeds['mutation_seeds']
+            except (FileNotFoundError, KeyError, json.JSONDecodeError):
                 return []
         
         def organize_tachyonic_archive(self):
