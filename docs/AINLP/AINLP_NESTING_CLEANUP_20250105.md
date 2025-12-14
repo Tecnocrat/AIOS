@@ -281,6 +281,11 @@ All other [ERR] references are expected:
 2. **Nested Self-Reference = Invalid**: Biological architecture doesn't support cells containing themselves
 3. **Discovery-Driven Cleanup**: Let discovery system guide architectural cleanup
 4. **Validation Essential**: Always re-test after structural changes
+5. **File-by-File Diff Required**: Always diff file-by-file before bulk deletion, even when structures appear to be duplicates
+
+> **2025-12-14 Addendum (Waypoint 27)**: During `runtime/runtime/runtime/` cleanup, bulk deletion 
+> based on file counts nearly lost unique content. 8 files had divergent content (up to 1359 lines diff).
+> Recovered to `tachyonic/recovered_nested_uniques/`. The lesson: structure duplication ≠ content duplication.
 
 ### Biological Architecture Rules
 
