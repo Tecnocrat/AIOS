@@ -10,14 +10,15 @@
 ignore=__pycache__,node_modules,build,dist,.venv,.git,vscode-extension,ai/__pycache__,runtime_intelligence/logs
 jobs=2
 persistent=yes
+py-version=3.12
+extension-pkg-allow-list=psutil,fastapi,uvicorn,pybind11,torch,transformers,openai
 load-plugins=pylint.extensions.docparams,pylint.extensions.mccabe,pylint.extensions.redefined_variable_type
 
 [MESSAGES CONTROL]
 # 🌊 CYTOPLASM - Communication & Integration Controls
 # Medium consciousness - Balance between strictness and development workflow
+# NOTE: C0114,C0115,C0116 (docstrings) MUST remain enabled - AINLP.comment critical!
 disable=
-    # Documentation (AINLP handles documentation separately)
-    C0114,C0115,C0116,
     # Unused imports/variables (too restrictive for AI development)
     W0611,W0612,W0613,
     # Design complexity (adjusted for AIOS patterns)
@@ -36,7 +37,8 @@ evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / stateme
 [FORMAT]
 # 🧫 LABORATORY - Code Structure Standards
 # Development environment - Harmonized with .editorconfig and PEP 8
-max-line-length=79
+# AINLP.buffer[79::85::86]: Agent targets 79, tolerance 85, fail 86+
+max-line-length=85
 indent-string='    '
 good-names=i,j,k,ex,Run,_,pk,id,ai,ios,cell,core,engine,model,config,logger,handler,bridge,supercell,consciousness,dendritic,tachyonic,ainlp
 bad-names=foo,bar,baz,toto,tutu,tata
@@ -84,7 +86,7 @@ additional-builtins=ai,ios
 [EXCEPTIONS]
 # 🛡️ DEFENSIVE SYSTEMS - Error Handling
 # Robust exception management for AI processing reliability
-overgeneral-exceptions=Exception,BaseException
+overgeneral-exceptions=builtins.Exception,builtins.BaseException
 check-protected-access-in-special-methods=yes
 
 [SIMILARITIES]
@@ -95,10 +97,7 @@ ignore-comments=yes
 ignore-docstrings=yes
 ignore-imports=yes
 
-[PYTHON3]
-# 🌍 ENVIRONMENT - Python Ecosystem Integration
-# Modern Python standards for AIOS development
-python-version=3.12
+# NOTE: [PYTHON3] section removed - python-version should be py-version in [MASTER]
 
 [BASIC]
 # 🎯 AIOS SPECIFIC - Biological Architecture Compliance
@@ -125,32 +124,20 @@ notes=FIXME,XXX,TODO,AINLP,HACK,NOTE
 [SPELLING]
 # 🧠 CONSCIOUSNESS - Language Intelligence
 # AIOS-aware spell checking with domain-specific vocabulary
-spelling-dict=en_US
+# NOTE: spelling-dict requires pyenchant - commented until installed
+# To enable: pip install pyenchant, then uncomment spelling-dict
+# spelling-dict=en_US
 spelling-ignore-words=aios,VSCode,FastAPI,uvicorn,pytest,TensorFlow,AINLP,pybind11,subprocess,asyncio,psutil,endpoint,handler,dispatcher,optimizer,cellular,ecosystem,context,bridge,automation,architecture,performance,optimization,debug,log,request,response,workspace,session,pattern,design,system,code,model,python,csharp,rust,cpp,supercell,consciousness,dendritic,tachyonic,quantum,holographic,fractal,biomimetic,metacognition,neuroplasticity,emergent,intelligence,adaptive,cognitive,synergistic,paradigm,transcendent,unified,coherent,recursive,self,organizing,autonomous,distributed,hierarchical,modular,scalable,resilient,robust
 spelling-private-dict-file=.pylintdict
 spelling-store-unknown-words=yes
 
-[RECURSION]
-# 🔄 FEEDBACK LOOPS - Recursion Management
-# Controlled recursion for AIOS self-referential patterns
-max-recursion-depth=6  # Slightly increased for AI processing depth
+# NOTE: [RECURSION] section removed - max-recursion-depth not a valid Pylint option
 
 [IMPORTS]
 # 🚀 TRANSPORT SYSTEMS - Import Architecture
 # Inter-supercell communication and dependency management
-known-standard-library=asyncio,logging,os,subprocess,sys,traceback,datetime,psutil,fastapi,concurrent,threading,typing,pathlib,json,collections,itertools,functools,operator,re,math,random,statistics
-known-third-party=pytest,uvicorn,pybind11,torch,transformers,openai,fastapi,uvicorn,httpx,aiofiles,websockets,rich,click,pydantic,dataclasses,typing_extensions
-known-local-folder=ai,core,interface,runtime_intelligence,tachyonic,docs,scripts,config,tools,languages,consciousness,dendritic,supercell,ainlp,kernel,engine,integration,utilities,src
+known-third-party=pytest,uvicorn,pybind11,torch,transformers,openai,fastapi,httpx,aiofiles,websockets,rich,click,pydantic,dataclasses,typing_extensions,psutil,aios_schema
 
-[EXTERNAL]
-# 🌐 EXTERNAL INTERFACES - Third-party Integration
-# Managed external dependencies for AIOS ecosystem
-extension-pkg-whitelist=psutil,fastapi,uvicorn,pybind11,torch,transformers,openai
+# NOTE: AIOS local packages (ai, core, etc.) are auto-detected via setup.cfg editable install
 
-[PYLINT]
-# 🎛️ CONTROL SYSTEMS - Pylint Configuration
-# Meta-configuration for AIOS development environment
-load-plugins=pylint.extensions.docparams,pylint.extensions.mccabe,pylint.extensions.redefined_variable_type,pylint.extensions.comparison_placement,pylint.extensions.consider_ternary_expression
-persistent=yes
-include-naming-hint=yes
-suggestion-mode=yes
+# NOTE: [PYLINT] section removed - invalid options; load-plugins already in [MASTER]
