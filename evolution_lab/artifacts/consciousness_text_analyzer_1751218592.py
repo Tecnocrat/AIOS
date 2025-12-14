@@ -6,6 +6,7 @@ Analyzes text with emergent pattern recognition
 
 import re
 import string
+import sys
 from collections import Counter
 from typing import Dict, List, Any
 

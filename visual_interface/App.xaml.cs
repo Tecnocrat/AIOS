@@ -33,8 +33,8 @@ namespace AIOS.VisualInterface
                 _logger = _host.Services.GetRequiredService<ILogger<App>>();
                 _logger.LogInformation("AIOS Advanced Consciousness Visualizer starting up");
 
-                // Create and show advanced visualization window with working UI
-                var mainWindow = new AdvancedVisualizationWindow();
+                // Create and show main visualization window with enhanced persistence
+                var mainWindow = _host.Services.GetRequiredService<MainVisualizationWindow>();
                 mainWindow.Show();
 
                 base.OnStartup(e);
@@ -55,6 +55,14 @@ namespace AIOS.VisualInterface
             services.AddSingleton<ConsciousnessGeometryEngine>();
             services.AddSingleton<ConsoleLogger>();
             services.AddSingleton<RuntimeAnalytics>();
+            
+            // Register persistence infrastructure (Phase 1A: UI Persistence Infrastructure)
+            services.AddSingleton<StateManager>();
+            services.AddSingleton<SessionContext>();
+            services.AddSingleton<PersistenceEngine>();
+            
+            // Register Tachyonic Intelligence Bridge for repository ingestion
+            services.AddSingleton<TachyonicIntelligenceBridge>();
             
             // Register both visualization windows
             services.AddTransient<SimpleVisualizationWindow>();
@@ -80,6 +88,20 @@ namespace AIOS.VisualInterface
             try
             {
                 _logger?.LogInformation("AIOS Consciousness Visualizer shutting down");
+                
+                // Ensure clean shutdown of persistence services
+                var sessionContext = _host?.Services.GetService<SessionContext>();
+                if (sessionContext != null)
+                {
+                    await sessionContext.MarkCleanShutdownAsync();
+                    sessionContext.Dispose();
+                }
+                
+                var persistenceEngine = _host?.Services.GetService<PersistenceEngine>();
+                persistenceEngine?.Dispose();
+                
+                var stateManager = _host?.Services.GetService<StateManager>();
+                stateManager?.Dispose();
                 
                 // Stop and dispose host
                 if (_host != null)

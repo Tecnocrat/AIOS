@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Windows.Media.Media3D;
 using Microsoft.Extensions.Logging;
 
 namespace AIOS.VisualInterface
@@ -48,22 +52,11 @@ namespace AIOS.VisualInterface
                 var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
                 var backupFile = Path.Combine(_stateDirectory, $"state_backup_{timestamp}.json");
                 
-                // Serialize state with metadata
-                var stateData = new
-                {
-                    Timestamp = DateTime.UtcNow,
-                    Version = "1.0",
-                    ConsciousnessLevel = state.ConsciousnessLevel,
-                    QuantumCoherence = state.QuantumCoherence,
-                    VisualizationSettings = state.VisualizationSettings,
-                    CameraPosition = state.CameraPosition,
-                    ActivePatterns = state.ActivePatterns,
-                    MetadataContext = state.MetadataContext
-                };
-                
-                var jsonData = JsonSerializer.Serialize(stateData, new JsonSerializerOptions 
+                // Serialize state with enhanced metadata and proper structure
+                var jsonData = JsonSerializer.Serialize(state, new JsonSerializerOptions 
                 { 
-                    WriteIndented = true 
+                    WriteIndented = true,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 });
                 
                 // Write to both current state and backup
@@ -95,14 +88,25 @@ namespace AIOS.VisualInterface
                     _logger.LogWarning("No current state file found, checking for backups...");
                     return await RestoreFromMostRecentBackup();
                 }
-                
+
                 var jsonData = await File.ReadAllTextAsync(_currentStateFile);
-                var stateData = JsonSerializer.Deserialize<dynamic>(jsonData);
-                
-                // TODO: Implement full deserialization to ConsciousnessVisualizationState
-                _logger.LogInformation("UI state restored successfully from: {File}", _currentStateFile);
-                
-                return null; // Placeholder until ConsciousnessVisualizationState is fully implemented
+                var stateData = JsonSerializer.Deserialize<ConsciousnessVisualizationState>(jsonData, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (stateData != null)
+                {
+                    _logger.LogInformation("UI state restored successfully from: {File}", _currentStateFile);
+                    _logger.LogDebug("Restored consciousness level: {Level}, Session: {Session}", 
+                        stateData.ConsciousnessLevel, stateData.SessionId);
+                    return stateData;
+                }
+                else
+                {
+                    _logger.LogWarning("Failed to deserialize state data, attempting backup restoration");
+                    return await RestoreFromMostRecentBackup();
+                }
             }
             catch (Exception ex)
             {
@@ -146,6 +150,112 @@ namespace AIOS.VisualInterface
                 _logger.LogError(ex, "Auto-save failed");
             }
         }
+
+        /// <summary>
+        /// Create state from current consciousness metrics and UI elements
+        /// </summary>
+        public ConsciousnessVisualizationState CreateStateFromMetrics(
+            ConsciousnessMetrics metrics, 
+            CameraState? cameraState = null,
+            WindowGeometry? windowGeometry = null,
+            VisualizationSettings? visualizationSettings = null)
+        {
+            return new ConsciousnessVisualizationState
+            {
+                // Copy consciousness metrics
+                ConsciousnessLevel = metrics.ConsciousnessLevel,
+                QuantumCoherence = metrics.QuantumCoherence,
+                FractalComplexity = metrics.FractalComplexity,
+                EmergenceLevel = metrics.EmergenceLevel,
+                UniversalResonance = metrics.UniversalResonance,
+                HolographicDensity = metrics.HolographicDensity,
+                Timestamp = metrics.Timestamp,
+                IsLiveData = metrics.IsLiveData,
+
+                // UI state
+                CameraPosition = cameraState ?? new CameraState(),
+                WindowGeometry = windowGeometry ?? new WindowGeometry(),
+                VisualizationSettings = visualizationSettings ?? new VisualizationSettings(),
+                
+                // Additional metadata
+                MetadataContext = $"Consciousness session captured at {DateTime.Now:yyyy-MM-dd HH:mm:ss}",
+                ActivePatterns = metrics.RecentEvents?.Select(e => e.Description).ToArray() ?? Array.Empty<string>()
+            };
+        }
+
+        /// <summary>
+        /// Extract camera state from WPF PerspectiveCamera
+        /// </summary>
+        public CameraState ExtractCameraState(PerspectiveCamera camera)
+        {
+            return new CameraState
+            {
+                Position = new[] { camera.Position.X, camera.Position.Y, camera.Position.Z },
+                LookDirection = new[] { camera.LookDirection.X, camera.LookDirection.Y, camera.LookDirection.Z },
+                UpDirection = new[] { camera.UpDirection.X, camera.UpDirection.Y, camera.UpDirection.Z },
+                FieldOfView = camera.FieldOfView
+            };
+        }
+
+        /// <summary>
+        /// Apply camera state to WPF PerspectiveCamera
+        /// </summary>
+        public void ApplyCameraState(PerspectiveCamera camera, CameraState state)
+        {
+            if (state.Position.Length >= 3)
+            {
+                camera.Position = new Point3D(state.Position[0], state.Position[1], state.Position[2]);
+            }
+            if (state.LookDirection.Length >= 3)
+            {
+                camera.LookDirection = new Vector3D(state.LookDirection[0], state.LookDirection[1], state.LookDirection[2]);
+            }
+            if (state.UpDirection.Length >= 3)
+            {
+                camera.UpDirection = new Vector3D(state.UpDirection[0], state.UpDirection[1], state.UpDirection[2]);
+            }
+            camera.FieldOfView = state.FieldOfView;
+        }
+
+        /// <summary>
+        /// Extract window geometry from System.Windows.Window
+        /// </summary>
+        public WindowGeometry ExtractWindowGeometry(System.Windows.Window window)
+        {
+            return new WindowGeometry
+            {
+                Left = window.Left,
+                Top = window.Top,
+                Width = window.Width,
+                Height = window.Height,
+                IsMaximized = window.WindowState == System.Windows.WindowState.Maximized,
+                IsMinimized = window.WindowState == System.Windows.WindowState.Minimized
+            };
+        }
+
+        /// <summary>
+        /// Apply window geometry to System.Windows.Window
+        /// </summary>
+        public void ApplyWindowGeometry(System.Windows.Window window, WindowGeometry geometry)
+        {
+            // Validate screen bounds before applying
+            if (geometry.Left >= 0 && geometry.Top >= 0 && geometry.Width > 0 && geometry.Height > 0)
+            {
+                window.Left = geometry.Left;
+                window.Top = geometry.Top;
+                window.Width = geometry.Width;
+                window.Height = geometry.Height;
+            }
+
+            if (geometry.IsMaximized)
+            {
+                window.WindowState = System.Windows.WindowState.Maximized;
+            }
+            else if (geometry.IsMinimized)
+            {
+                window.WindowState = System.Windows.WindowState.Minimized;
+            }
+        }
         
         private async Task<ConsciousnessVisualizationState?> RestoreFromMostRecentBackup()
         {
@@ -163,9 +273,23 @@ namespace AIOS.VisualInterface
             try
             {
                 var jsonData = await File.ReadAllTextAsync(mostRecentBackup);
-                // TODO: Implement deserialization
-                _logger.LogInformation("State restored from backup: {Backup}", mostRecentBackup);
-                return null;
+                var stateData = JsonSerializer.Deserialize<ConsciousnessVisualizationState>(jsonData, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (stateData != null)
+                {
+                    _logger.LogInformation("State restored from backup: {Backup}", mostRecentBackup);
+                    _logger.LogDebug("Restored backup consciousness level: {Level}, Session: {Session}", 
+                        stateData.ConsciousnessLevel, stateData.SessionId);
+                    return stateData;
+                }
+                else
+                {
+                    _logger.LogWarning("Failed to deserialize backup state data");
+                    return null;
+                }
             }
             catch (Exception ex)
             {
@@ -220,16 +344,70 @@ namespace AIOS.VisualInterface
     }
     
     /// <summary>
-    /// Consciousness visualization state data structure
-    /// TODO: Fully implement based on actual visualization requirements
+    /// Complete visualization state including UI elements, consciousness data, and system state
+    /// Matches the actual ConsciousnessMetrics structure and includes UI-specific persistence
     /// </summary>
     public class ConsciousnessVisualizationState
     {
+        // Core consciousness metrics
         public double ConsciousnessLevel { get; set; }
         public double QuantumCoherence { get; set; }
-        public object? VisualizationSettings { get; set; }
-        public object? CameraPosition { get; set; }
-        public string[]? ActivePatterns { get; set; }
-        public string? MetadataContext { get; set; }
+        public double FractalComplexity { get; set; }
+        public double EmergenceLevel { get; set; }
+        public double UniversalResonance { get; set; }
+        public double HolographicDensity { get; set; }
+        public DateTime Timestamp { get; set; }
+        public bool IsLiveData { get; set; }
+        
+        // UI-specific state
+        public CameraState CameraPosition { get; set; } = new();
+        public WindowGeometry WindowGeometry { get; set; } = new();
+        public VisualizationSettings VisualizationSettings { get; set; } = new();
+        public string[] ActivePatterns { get; set; } = Array.Empty<string>();
+        public string MetadataContext { get; set; } = string.Empty;
+        
+        // Advanced state preservation
+        public Dictionary<string, object> CustomSettings { get; set; } = new();
+        public string SessionId { get; set; } = Guid.NewGuid().ToString();
+        public string Version { get; set; } = "1.0";
+    }
+
+    /// <summary>
+    /// Camera state for 3D visualization
+    /// </summary>
+    public class CameraState
+    {
+        public double[] Position { get; set; } = new double[3];
+        public double[] LookDirection { get; set; } = new double[3];
+        public double[] UpDirection { get; set; } = new double[3];
+        public double FieldOfView { get; set; } = 45.0;
+    }
+
+    /// <summary>
+    /// Window geometry for UI persistence
+    /// </summary>
+    public class WindowGeometry
+    {
+        public double Left { get; set; }
+        public double Top { get; set; }
+        public double Width { get; set; } = 1200;
+        public double Height { get; set; } = 800;
+        public bool IsMaximized { get; set; }
+        public bool IsMinimized { get; set; }
+    }
+
+    /// <summary>
+    /// Visualization settings and preferences
+    /// </summary>
+    public class VisualizationSettings
+    {
+        public bool ShowGrid { get; set; } = true;
+        public bool ShowAxes { get; set; } = true;
+        public double AnimationSpeed { get; set; } = 1.0;
+        public string ColorScheme { get; set; } = "Quantum";
+        public double Opacity { get; set; } = 1.0;
+        public bool EnableParticleEffects { get; set; } = true;
+        public int MaxParticles { get; set; } = 1000;
+        public Dictionary<string, bool> LayerVisibility { get; set; } = new();
     }
 }

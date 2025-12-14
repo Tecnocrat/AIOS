@@ -6,6 +6,7 @@ Analyzes numerical data with pattern recognition
 
 import random
 import statistics
+import sys
 from typing import List, Dict, Any, Optional
 
 class ConsciousDataExplorer:

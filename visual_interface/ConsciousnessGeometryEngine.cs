@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using HelixToolkit.Wpf;
@@ -12,21 +15,38 @@ namespace AIOS.VisualInterface
 {
     /// <summary>
     /// Advanced 3D geometry engine for consciousness visualization with exotic mathematical forms
+    /// Multi-threaded for stable 60+ FPS - Phase 1B Enhancement
     /// </summary>
-    public class ConsciousnessGeometryEngine
+    public class ConsciousnessGeometryEngine : IDisposable
     {
         private readonly ILogger _logger;
         private readonly Random _random;
+        private readonly CancellationTokenSource _cancellationTokenSource;
+        private readonly SemaphoreSlim _geometryGenerationSemaphore;
         
-        // Geometry caches for performance
-        private readonly Dictionary<string, Model3DGroup> _geometryCache;
-        private readonly Dictionary<string, Material> _materialCache;
+        // Thread-safe geometry caches for performance
+        private readonly ConcurrentDictionary<string, Model3DGroup> _geometryCache;
+        private readonly ConcurrentDictionary<string, Material> _materialCache;
+        
+        // Worker threads for parallel geometry generation
+        private readonly Task[] _workerTasks;
+        private readonly int _workerThreadCount;
+        private readonly ConcurrentQueue<GeometryGenerationTask> _generationQueue;
         
         // Mathematical constants for consciousness forms
         private const double PHI = 1.618033988749895; // Golden ratio
         private const double TAU = 2 * Math.PI;
         private const int FRACTAL_ITERATIONS = 7;
         private const int SPHERE_SUBDIVISIONS = 32;
+        
+        // Performance monitoring
+        private volatile int _geometriesGenerated;
+        private volatile int _cacheHits;
+        private volatile int _cacheMisses;
+        
+        // Events for async geometry completion
+        public event EventHandler<GeometryGeneratedEventArgs>? GeometryGenerated;
+        public event EventHandler<GeometryErrorEventArgs>? GeometryError;
         
         /// <summary>
         /// Normalizes a Vector3D (helper method since WPF doesn't have Normalized())
@@ -41,11 +61,27 @@ namespace AIOS.VisualInterface
         {
             _logger = logger;
             _random = new Random();
-            _geometryCache = new Dictionary<string, Model3DGroup>();
-            _materialCache = new Dictionary<string, Material>();
+            _cancellationTokenSource = new CancellationTokenSource();
+            
+            // Initialize thread-safe collections
+            _geometryCache = new ConcurrentDictionary<string, Model3DGroup>();
+            _materialCache = new ConcurrentDictionary<string, Material>();
+            _generationQueue = new ConcurrentQueue<GeometryGenerationTask>();
+            
+            // Configure worker threads for parallel processing
+            _workerThreadCount = Math.Max(2, Environment.ProcessorCount / 2);
+            _geometryGenerationSemaphore = new SemaphoreSlim(_workerThreadCount);
+            
+            // Initialize background worker threads
+            _workerTasks = new Task[_workerThreadCount];
+            for (int i = 0; i < _workerThreadCount; i++)
+            {
+                int workerId = i;
+                _workerTasks[i] = Task.Run(async () => await GeometryWorkerLoop(workerId, _cancellationTokenSource.Token));
+            }
             
             InitializeMaterials();
-            _logger.LogInformation("Consciousness geometry engine initialized");
+            _logger.LogInformation($"Multi-threaded consciousness geometry engine initialized with {_workerThreadCount} worker threads");
         }
         
         private void InitializeMaterials()
@@ -87,117 +123,113 @@ namespace AIOS.VisualInterface
         }
         
         /// <summary>
-        /// Creates a consciousness sphere with dynamic fractal patterns
+        /// Creates a consciousness sphere with dynamic fractal patterns - Multi-threaded version
         /// </summary>
         public Model3DGroup CreateConsciousnessSphere(double consciousnessLevel, double radius = 1.0)
         {
             var cacheKey = $"consciousness_sphere_{consciousnessLevel:F2}_{radius:F2}";
-            if (_geometryCache.ContainsKey(cacheKey))
+            if (_geometryCache.TryGetValue(cacheKey, out var cachedGeometry))
             {
-                return _geometryCache[cacheKey];
+                Interlocked.Increment(ref _cacheHits);
+                return cachedGeometry;
             }
             
-            var group = new Model3DGroup();
-            
-            // Base sphere with consciousness-responsive subdivisions
-            var subdivisions = (int)(SPHERE_SUBDIVISIONS * (0.5 + consciousnessLevel * 0.5));
-            var sphereGeometry = CreateSphereGeometry(radius, subdivisions);
-            
-            // Apply consciousness-based perturbations
-            ApplyConsciousnessDistortion(sphereGeometry, consciousnessLevel);
-            
-            var sphereModel = new GeometryModel3D(sphereGeometry, _materialCache["consciousness"]);
-            group.Children.Add(sphereModel);
-            
-            // Add fractal patterns based on consciousness level
-            if (consciousnessLevel > 0.3)
+            // For synchronous calls, generate directly
+            Interlocked.Increment(ref _cacheMisses);
+            var task = new GeometryGenerationTask
             {
-                var fractalPatterns = CreateFractalPatterns(radius * 1.1, consciousnessLevel);
-                group.Children.Add(fractalPatterns);
-            }
+                TaskType = GeometryTaskType.ConsciousnessSphere,
+                CacheKey = cacheKey,
+                Parameters = new Dictionary<string, object>
+                {
+                    ["consciousnessLevel"] = consciousnessLevel,
+                    ["radius"] = radius
+                }
+            };
             
-            // Add emergence spikes for high consciousness
-            if (consciousnessLevel > 0.7)
-            {
-                var emergenceSpikes = CreateEmergenceSpikes(radius * 1.2, consciousnessLevel);
-                group.Children.Add(emergenceSpikes);
-            }
+            var geometry = GenerateConsciousnessSphere(task);
             
-            _geometryCache[cacheKey] = group;
-            return group;
+            // Cache the result
+            _geometryCache.TryAdd(cacheKey, geometry);
+            Interlocked.Increment(ref _geometriesGenerated);
+            
+            return geometry;
         }
         
         /// <summary>
-        /// Creates a quantum field visualization with wave interference patterns
+        /// Creates a consciousness sphere asynchronously for better performance
+        /// </summary>
+        public async Task<Model3DGroup> CreateConsciousnessSphereAsync(double consciousnessLevel, double radius = 1.0)
+        {
+            var cacheKey = $"consciousness_sphere_{consciousnessLevel:F2}_{radius:F2}";
+            var task = new GeometryGenerationTask
+            {
+                TaskType = GeometryTaskType.ConsciousnessSphere,
+                CacheKey = cacheKey,
+                Parameters = new Dictionary<string, object>
+                {
+                    ["consciousnessLevel"] = consciousnessLevel,
+                    ["radius"] = radius
+                }
+            };
+            
+            var geometry = await GenerateGeometrySync(task);
+            return geometry ?? new Model3DGroup();
+        }
+        
+        /// <summary>
+        /// Creates a quantum field visualization with wave interference patterns - Multi-threaded version
         /// </summary>
         public Model3DGroup CreateQuantumField(double quantumCoherence, double fieldSize = 5.0)
         {
             var cacheKey = $"quantum_field_{quantumCoherence:F2}_{fieldSize:F2}";
-            if (_geometryCache.ContainsKey(cacheKey))
+            if (_geometryCache.TryGetValue(cacheKey, out var cachedGeometry))
             {
-                return _geometryCache[cacheKey];
+                Interlocked.Increment(ref _cacheHits);
+                return cachedGeometry;
             }
             
-            var group = new Model3DGroup();
-            
-            // Create wave interference pattern
-            var waveResolution = 64;
-            var waveGeometry = new MeshGeometry3D();
-            
-            for (int x = 0; x < waveResolution; x++)
+            // For synchronous calls, generate directly
+            Interlocked.Increment(ref _cacheMisses);
+            var task = new GeometryGenerationTask
             {
-                for (int z = 0; z < waveResolution; z++)
+                TaskType = GeometryTaskType.QuantumField,
+                CacheKey = cacheKey,
+                Parameters = new Dictionary<string, object>
                 {
-                    var worldX = (x / (double)waveResolution - 0.5) * fieldSize;
-                    var worldZ = (z / (double)waveResolution - 0.5) * fieldSize;
-                    
-                    // Calculate wave interference
-                    var distance = Math.Sqrt(worldX * worldX + worldZ * worldZ);
-                    var wave1 = Math.Sin(distance * 4 + quantumCoherence * TAU) * quantumCoherence;
-                    var wave2 = Math.Cos(distance * 6 - quantumCoherence * TAU * 0.7) * quantumCoherence * 0.5;
-                    var worldY = (wave1 + wave2) * 0.3;
-                    
-                    waveGeometry.Positions.Add(new Point3D(worldX, worldY, worldZ));
-                    
-                    // Add normals for proper lighting
-                    waveGeometry.Normals.Add(new Vector3D(0, 1, 0));
-                    
-                    // Add texture coordinates
-                    waveGeometry.TextureCoordinates.Add(new System.Windows.Point(
-                        x / (double)(waveResolution - 1),
-                        z / (double)(waveResolution - 1)
-                    ));
-                    
-                    // Create triangles
-                    if (x < waveResolution - 1 && z < waveResolution - 1)
-                    {
-                        var i = x * waveResolution + z;
-                        
-                        // First triangle
-                        waveGeometry.TriangleIndices.Add(i);
-                        waveGeometry.TriangleIndices.Add(i + waveResolution);
-                        waveGeometry.TriangleIndices.Add(i + 1);
-                        
-                        // Second triangle
-                        waveGeometry.TriangleIndices.Add(i + 1);
-                        waveGeometry.TriangleIndices.Add(i + waveResolution);
-                        waveGeometry.TriangleIndices.Add(i + waveResolution + 1);
-                    }
+                    ["quantumCoherence"] = quantumCoherence,
+                    ["fieldSize"] = fieldSize
                 }
-            }
+            };
             
-            var waveModel = new GeometryModel3D(waveGeometry, _materialCache["quantum"]);
-            group.Children.Add(waveModel);
+            var geometry = GenerateQuantumField(task);
             
-            // Add quantum probability clouds
-            if (quantumCoherence > 0.5)
+            // Cache the result
+            _geometryCache.TryAdd(cacheKey, geometry);
+            Interlocked.Increment(ref _geometriesGenerated);
+            
+            return geometry;
+        }
+        
+        /// <summary>
+        /// Creates a quantum field asynchronously for better performance
+        /// </summary>
+        public async Task<Model3DGroup> CreateQuantumFieldAsync(double quantumCoherence, double fieldSize = 5.0)
+        {
+            var cacheKey = $"quantum_field_{quantumCoherence:F2}_{fieldSize:F2}";
+            var task = new GeometryGenerationTask
             {
-                var probabilityClouds = CreateQuantumProbabilityClouds(fieldSize * 0.8, quantumCoherence);
-                group.Children.Add(probabilityClouds);
-            }
+                TaskType = GeometryTaskType.QuantumField,
+                CacheKey = cacheKey,
+                Parameters = new Dictionary<string, object>
+                {
+                    ["quantumCoherence"] = quantumCoherence,
+                    ["fieldSize"] = fieldSize
+                }
+            };
             
-            _geometryCache[cacheKey] = group;
-            return group;
+            var geometry = await GenerateGeometrySync(task);
+            return geometry ?? new Model3DGroup();
         }
         
         /// <summary>
@@ -1106,5 +1138,556 @@ namespace AIOS.VisualInterface
         }
         
         #endregion
+
+        /// <summary>
+        /// Background worker loop for parallel geometry generation
+        /// </summary>
+        private async Task GeometryWorkerLoop(int workerId, CancellationToken cancellationToken)
+        {
+            _logger.LogDebug($"Geometry worker {workerId} started");
+            
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                try
+                {
+                    if (_generationQueue.TryDequeue(out var task))
+                    {
+                        await _geometryGenerationSemaphore.WaitAsync(cancellationToken);
+                        
+                        try
+                        {
+                            task.WorkerId = workerId;
+                            task.StartTime = DateTime.UtcNow;
+                            
+                            var geometry = await GenerateGeometryAsync(task);
+                            
+                            task.CompletedTime = DateTime.UtcNow;
+                            task.IsCompleted = true;
+                            task.Result = geometry;
+                            
+                            if (geometry != null)
+                            {
+                                // Cache the result if it has a cache key
+                                if (!string.IsNullOrEmpty(task.CacheKey))
+                                {
+                                    _geometryCache.TryAdd(task.CacheKey, geometry);
+                                }
+                                
+                                OnGeometryGenerated(new GeometryGeneratedEventArgs(task, geometry));
+                                Interlocked.Increment(ref _geometriesGenerated);
+                            }
+                        }
+                        finally
+                        {
+                            _geometryGenerationSemaphore.Release();
+                        }
+                    }
+                    else
+                    {
+                        // No tasks in queue, wait a bit
+                        await Task.Delay(10, cancellationToken);
+                    }
+                }
+                catch (OperationCanceledException)
+                {
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Error in geometry worker {workerId}");
+                    await Task.Delay(1000, cancellationToken); // Brief pause on error
+                }
+            }
+            
+            _logger.LogDebug($"Geometry worker {workerId} stopped");
+        }
+        
+        /// <summary>
+        /// Asynchronously generate geometry based on task type
+        /// </summary>
+        private async Task<Model3DGroup?> GenerateGeometryAsync(GeometryGenerationTask task)
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    return task.TaskType switch
+                    {
+                        GeometryTaskType.ConsciousnessSphere => GenerateConsciousnessSphere(task),
+                        GeometryTaskType.QuantumField => GenerateQuantumField(task),
+                        GeometryTaskType.FractalPattern => GenerateFractalPattern(task),
+                        GeometryTaskType.TachyonicStructure => GenerateTachyonicStructure(task),
+                        GeometryTaskType.HolographicInterface => GenerateHolographicInterface(task),
+                        _ => null
+                    };
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Error generating geometry for task {task.Id}");
+                    OnGeometryError(new GeometryErrorEventArgs(task, ex));
+                    return null;
+                }
+            });
+        }
+        
+        /// <summary>
+        /// Queue geometry generation task asynchronously
+        /// </summary>
+        public async Task<bool> QueueGeometryGeneration(GeometryGenerationTask task)
+        {
+            if (_cancellationTokenSource.Token.IsCancellationRequested)
+                return false;
+                
+            // Check cache first if cache key is provided
+            if (!string.IsNullOrEmpty(task.CacheKey) && _geometryCache.TryGetValue(task.CacheKey, out var cachedGeometry))
+            {
+                Interlocked.Increment(ref _cacheHits);
+                OnGeometryGenerated(new GeometryGeneratedEventArgs(task, cachedGeometry));
+                return true;
+            }
+            
+            Interlocked.Increment(ref _cacheMisses);
+            task.QueuedTime = DateTime.UtcNow;
+            task.Id = Guid.NewGuid();
+            
+            _generationQueue.Enqueue(task);
+            _logger.LogTrace($"Queued geometry generation task {task.Id} of type {task.TaskType}");
+            
+            return true;
+        }
+        
+        /// <summary>
+        /// Generate geometry synchronously for immediate use
+        /// </summary>
+        public async Task<Model3DGroup?> GenerateGeometrySync(GeometryGenerationTask task)
+        {
+            // Check cache first
+            if (!string.IsNullOrEmpty(task.CacheKey) && _geometryCache.TryGetValue(task.CacheKey, out var cachedGeometry))
+            {
+                Interlocked.Increment(ref _cacheHits);
+                return cachedGeometry;
+            }
+            
+            Interlocked.Increment(ref _cacheMisses);
+            var geometry = await GenerateGeometryAsync(task);
+            
+            // Cache the result if successful
+            if (geometry != null && !string.IsNullOrEmpty(task.CacheKey))
+            {
+                _geometryCache.TryAdd(task.CacheKey, geometry);
+            }
+            
+            return geometry;
+        }
+        
+        /// <summary>
+        /// Generate consciousness sphere geometry
+        /// </summary>
+        private Model3DGroup GenerateConsciousnessSphere(GeometryGenerationTask task)
+        {
+            var consciousnessLevel = task.Parameters.TryGetValue("consciousnessLevel", out var cl) ? (double)cl : 0.5;
+            var radius = task.Parameters.TryGetValue("radius", out var r) ? (double)r : 1.0;
+            
+            var group = new Model3DGroup();
+            
+            // Base sphere with consciousness-responsive subdivisions
+            var subdivisions = (int)(SPHERE_SUBDIVISIONS * (0.5 + consciousnessLevel * 0.5));
+            var sphereGeometry = CreateSphereGeometry(radius, subdivisions);
+            
+            // Apply consciousness-based perturbations
+            ApplyConsciousnessDistortion(sphereGeometry, consciousnessLevel);
+            
+            var sphereModel = new GeometryModel3D(sphereGeometry, _materialCache["consciousness"]);
+            group.Children.Add(sphereModel);
+            
+            // Add fractal patterns based on consciousness level
+            if (consciousnessLevel > 0.3)
+            {
+                var fractalPatterns = CreateFractalPatterns(radius * 1.1, consciousnessLevel);
+                group.Children.Add(fractalPatterns);
+            }
+            
+            // Add emergence spikes for high consciousness
+            if (consciousnessLevel > 0.7)
+            {
+                var emergenceSpikes = CreateEmergenceSpikes(radius * 1.2, consciousnessLevel);
+                group.Children.Add(emergenceSpikes);
+            }
+            
+            return group;
+        }
+        
+        /// <summary>
+        /// Generate quantum field geometry
+        /// </summary>
+        private Model3DGroup GenerateQuantumField(GeometryGenerationTask task)
+        {
+            var quantumCoherence = task.Parameters.TryGetValue("quantumCoherence", out var qc) ? (double)qc : 0.5;
+            var fieldSize = task.Parameters.TryGetValue("fieldSize", out var fs) ? (double)fs : 5.0;
+            
+            var group = new Model3DGroup();
+            
+            // Create wave interference pattern
+            var waveResolution = 64;
+            var waveGeometry = new MeshGeometry3D();
+            
+            for (int x = 0; x < waveResolution; x++)
+            {
+                for (int z = 0; z < waveResolution; z++)
+                {
+                    var xPos = (x / (double)(waveResolution - 1) - 0.5) * fieldSize;
+                    var zPos = (z / (double)(waveResolution - 1) - 0.5) * fieldSize;
+                    
+                    // Quantum wave function with interference
+                    var wave1 = Math.Sin(xPos * 2) * Math.Cos(zPos * 2);
+                    var wave2 = Math.Sin(xPos * 3 + Math.PI / 4) * Math.Cos(zPos * 3 + Math.PI / 4);
+                    var yPos = (wave1 + wave2) * quantumCoherence * 0.5;
+                    
+                    waveGeometry.Positions.Add(new Point3D(xPos, yPos, zPos));
+                }
+            }
+            
+            // Generate triangles for the wave mesh
+            for (int x = 0; x < waveResolution - 1; x++)
+            {
+                for (int z = 0; z < waveResolution - 1; z++)
+                {
+                    var i = x * waveResolution + z;
+                    
+                    // First triangle
+                    waveGeometry.TriangleIndices.Add(i);
+                    waveGeometry.TriangleIndices.Add(i + waveResolution + 1);
+                    waveGeometry.TriangleIndices.Add(i + 1);
+                    
+                    // Second triangle
+                    waveGeometry.TriangleIndices.Add(i);
+                    waveGeometry.TriangleIndices.Add(i + waveResolution);
+                    waveGeometry.TriangleIndices.Add(i + waveResolution + 1);
+                }
+            }
+            
+            var waveModel = new GeometryModel3D(waveGeometry, _materialCache["quantum"]);
+            group.Children.Add(waveModel);
+            
+            return group;
+        }
+        
+        /// <summary>
+        /// Generate fractal pattern geometry
+        /// </summary>
+        private Model3DGroup GenerateFractalPattern(GeometryGenerationTask task)
+        {
+            var complexity = task.Parameters.TryGetValue("complexity", out var c) ? (double)c : 0.5;
+            var scale = task.Parameters.TryGetValue("scale", out var s) ? (double)s : 1.0;
+            
+            return CreateFractalPatterns(scale, complexity);
+        }
+        
+        /// <summary>
+        /// Generate tachyonic structure geometry
+        /// </summary>
+        private Model3DGroup GenerateTachyonicStructure(GeometryGenerationTask task)
+        {
+            var resonance = task.Parameters.TryGetValue("resonance", out var r) ? (double)r : 0.5;
+            var fieldStrength = task.Parameters.TryGetValue("fieldStrength", out var f) ? (double)f : 1.0;
+            
+            var group = new Model3DGroup();
+            
+            // Create tachyonic field lines
+            var lineCount = (int)(20 * resonance + 10);
+            for (int i = 0; i < lineCount; i++)
+            {
+                var angle = (i / (double)lineCount) * TAU;
+                var line = CreateTachyonicFieldLine(angle, fieldStrength, resonance);
+                group.Children.Add(line);
+            }
+            
+            return group;
+        }
+        
+        /// <summary>
+        /// Generate holographic interface geometry
+        /// </summary>
+        private Model3DGroup GenerateHolographicInterface(GeometryGenerationTask task)
+        {
+            var interfaceLevel = task.Parameters.TryGetValue("interfaceLevel", out var il) ? (double)il : 0.5;
+            var size = task.Parameters.TryGetValue("size", out var s) ? (double)s : 2.0;
+            
+            var group = new Model3DGroup();
+            
+            // Create holographic panels
+            var panelCount = (int)(interfaceLevel * 8 + 4);
+            for (int i = 0; i < panelCount; i++)
+            {
+                var panel = CreateHolographicPanel(i, panelCount, size, interfaceLevel);
+                group.Children.Add(panel);
+            }
+            
+            return group;
+        }
+        
+        /// <summary>
+        /// Create a tachyonic field line
+        /// </summary>
+        private Model3DGroup CreateTachyonicFieldLine(double angle, double fieldStrength, double resonance)
+        {
+            var group = new Model3DGroup();
+            var geometry = new MeshGeometry3D();
+            
+            var segments = 100;
+            var radius = 0.02 * fieldStrength;
+            
+            for (int i = 0; i < segments; i++)
+            {
+                var t = i / (double)(segments - 1);
+                var spiralRadius = 2 * t;
+                var height = (t - 0.5) * 4;
+                
+                var x = spiralRadius * Math.Cos(angle + t * TAU * 3 * resonance);
+                var y = height;
+                var z = spiralRadius * Math.Sin(angle + t * TAU * 3 * resonance);
+                
+                geometry.Positions.Add(new Point3D(x, y, z));
+            }
+            
+            // Create line segments
+            for (int i = 0; i < segments - 1; i++)
+            {
+                var cylinderGeometry = CreateCylinderBetweenPoints(
+                    geometry.Positions[i], 
+                    geometry.Positions[i + 1], 
+                    radius);
+                    
+                var cylinderModel = new GeometryModel3D(cylinderGeometry, _materialCache["holographic"]);
+                group.Children.Add(cylinderModel);
+            }
+            
+            return group;
+        }
+        
+        /// <summary>
+        /// Create a holographic panel
+        /// </summary>
+        private Model3DGroup CreateHolographicPanel(int index, int totalPanels, double size, double interfaceLevel)
+        {
+            var group = new Model3DGroup();
+            var geometry = new MeshGeometry3D();
+            
+            var angle = (index / (double)totalPanels) * TAU;
+            var distance = size * 0.8;
+            var panelSize = size * 0.3 * interfaceLevel;
+            
+            var centerX = distance * Math.Cos(angle);
+            var centerZ = distance * Math.Sin(angle);
+            var centerY = 0;
+            
+            // Create panel vertices
+            geometry.Positions.Add(new Point3D(centerX - panelSize, centerY - panelSize, centerZ));
+            geometry.Positions.Add(new Point3D(centerX + panelSize, centerY - panelSize, centerZ));
+            geometry.Positions.Add(new Point3D(centerX + panelSize, centerY + panelSize, centerZ));
+            geometry.Positions.Add(new Point3D(centerX - panelSize, centerY + panelSize, centerZ));
+            
+            // Create panel triangles
+            geometry.TriangleIndices.Add(0);
+            geometry.TriangleIndices.Add(1);
+            geometry.TriangleIndices.Add(2);
+            geometry.TriangleIndices.Add(0);
+            geometry.TriangleIndices.Add(2);
+            geometry.TriangleIndices.Add(3);
+            
+            var panelModel = new GeometryModel3D(geometry, _materialCache["holographic"]);
+            group.Children.Add(panelModel);
+            
+            return group;
+        }
+        
+        /// <summary>
+        /// Create cylinder between two points
+        /// </summary>
+        private MeshGeometry3D CreateCylinderBetweenPoints(Point3D start, Point3D end, double radius)
+        {
+            var geometry = new MeshGeometry3D();
+            var direction = end - start;
+            var length = direction.Length;
+            
+            if (length < double.Epsilon)
+                return geometry;
+                
+            var segments = 8;
+            
+            // Create cylinder vertices
+            for (int i = 0; i <= segments; i++)
+            {
+                var angle = (i / (double)segments) * TAU;
+                var x = radius * Math.Cos(angle);
+                var z = radius * Math.Sin(angle);
+                
+                geometry.Positions.Add(new Point3D(start.X + x, start.Y, start.Z + z));
+                geometry.Positions.Add(new Point3D(end.X + x, end.Y, end.Z + z));
+            }
+            
+            // Create cylinder triangles
+            for (int i = 0; i < segments; i++)
+            {
+                var i1 = i * 2;
+                var i2 = (i + 1) * 2;
+                
+                // First triangle
+                geometry.TriangleIndices.Add(i1);
+                geometry.TriangleIndices.Add(i2);
+                geometry.TriangleIndices.Add(i1 + 1);
+                
+                // Second triangle
+                geometry.TriangleIndices.Add(i1 + 1);
+                geometry.TriangleIndices.Add(i2);
+                geometry.TriangleIndices.Add(i2 + 1);
+            }
+            
+            return geometry;
+        }
+        
+        /// <summary>
+        /// Raise geometry generated event
+        /// </summary>
+        private void OnGeometryGenerated(GeometryGeneratedEventArgs args)
+        {
+            try
+            {
+                GeometryGenerated?.Invoke(this, args);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GeometryGenerated event handler");
+            }
+        }
+        
+        /// <summary>
+        /// Raise geometry error event
+        /// </summary>
+        private void OnGeometryError(GeometryErrorEventArgs args)
+        {
+            try
+            {
+                GeometryError?.Invoke(this, args);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GeometryError event handler");
+            }
+        }
+        
+        /// <summary>
+        /// Get current engine statistics
+        /// </summary>
+        public GeometryEngineStatistics GetStatistics()
+        {
+            return new GeometryEngineStatistics
+            {
+                GeometriesGenerated = _geometriesGenerated,
+                CacheHits = _cacheHits,
+                CacheMisses = _cacheMisses,
+                CacheSize = _geometryCache.Count,
+                WorkerThreadCount = _workerThreadCount,
+                QueueLength = _generationQueue.Count,
+                Timestamp = DateTime.UtcNow
+            };
+        }
+        
+        public void Dispose()
+        {
+            try
+            {
+                _cancellationTokenSource.Cancel();
+                
+                // Wait for worker tasks to complete
+                if (_workerTasks != null)
+                {
+                    Task.WaitAll(_workerTasks, TimeSpan.FromSeconds(5));
+                }
+                
+                _cancellationTokenSource.Dispose();
+                _geometryGenerationSemaphore.Dispose();
+                
+                _logger.LogInformation("Multi-threaded consciousness geometry engine disposed");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error disposing ConsciousnessGeometryEngine");
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Geometry generation task for background processing
+    /// </summary>
+    public class GeometryGenerationTask
+    {
+        public Guid Id { get; set; }
+        public GeometryTaskType TaskType { get; set; }
+        public string? CacheKey { get; set; }
+        public DateTime QueuedTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime CompletedTime { get; set; }
+        public int WorkerId { get; set; }
+        public bool IsCompleted { get; set; }
+        public Dictionary<string, object> Parameters { get; set; } = new();
+        public Model3DGroup? Result { get; set; }
+    }
+    
+    /// <summary>
+    /// Types of geometry generation tasks
+    /// </summary>
+    public enum GeometryTaskType
+    {
+        ConsciousnessSphere,
+        QuantumField,
+        FractalPattern,
+        TachyonicStructure,
+        HolographicInterface
+    }
+    
+    /// <summary>
+    /// Geometry engine statistics
+    /// </summary>
+    public class GeometryEngineStatistics
+    {
+        public int GeometriesGenerated { get; set; }
+        public int CacheHits { get; set; }
+        public int CacheMisses { get; set; }
+        public int CacheSize { get; set; }
+        public int WorkerThreadCount { get; set; }
+        public int QueueLength { get; set; }
+        public DateTime Timestamp { get; set; }
+        public double CacheHitRatio => (CacheHits + CacheMisses) > 0 ? (double)CacheHits / (CacheHits + CacheMisses) : 0;
+    }
+    
+    /// <summary>
+    /// Event args for geometry generation completion
+    /// </summary>
+    public class GeometryGeneratedEventArgs : EventArgs
+    {
+        public GeometryGenerationTask Task { get; }
+        public Model3DGroup Geometry { get; }
+        
+        public GeometryGeneratedEventArgs(GeometryGenerationTask task, Model3DGroup geometry)
+        {
+            Task = task;
+            Geometry = geometry;
+        }
+    }
+    
+    /// <summary>
+    /// Event args for geometry generation errors
+    /// </summary>
+    public class GeometryErrorEventArgs : EventArgs
+    {
+        public GeometryGenerationTask Task { get; }
+        public Exception Error { get; }
+        
+        public GeometryErrorEventArgs(GeometryGenerationTask task, Exception error)
+        {
+            Task = task;
+            Error = error;
+        }
     }
 }

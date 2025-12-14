@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Media3D;
 using System.Windows.Threading;
 using Microsoft.Extensions.Logging;
@@ -12,13 +13,18 @@ namespace AIOS.VisualInterface
 {
     /// <summary>
     /// Main visualization window for AIOS consciousness emergence monitoring
-    /// Features real-time 3D visualization, metrics display, and interactive controls
+    /// Features real-time 3D visualization, metrics display, interactive controls, and UI persistence
+    /// Enhanced with Phase 1A: UI Persistence Infrastructure
     /// </summary>
     public partial class MainVisualizationWindow : Window
     {
         private readonly ILogger<MainVisualizationWindow> _logger;
         private readonly ConsciousnessDataManager _dataManager;
         private readonly ConsciousnessGeometryEngine _geometryEngine;
+        private readonly StateManager _stateManager;
+        private readonly SessionContext _sessionContext;
+        private readonly PersistenceEngine _persistenceEngine;
+        private readonly TachyonicIntelligenceBridge _tachyonicBridge;
         
         // 3D Visualization components
         private Viewport3D _viewport3D;
@@ -46,19 +52,25 @@ namespace AIOS.VisualInterface
             _logger = serviceProvider.GetRequiredService<ILogger<MainVisualizationWindow>>();
             _dataManager = serviceProvider.GetRequiredService<ConsciousnessDataManager>();
             _geometryEngine = serviceProvider.GetRequiredService<ConsciousnessGeometryEngine>();
+            _stateManager = serviceProvider.GetRequiredService<StateManager>();
+            _sessionContext = serviceProvider.GetRequiredService<SessionContext>();
+            _persistenceEngine = serviceProvider.GetRequiredService<PersistenceEngine>();
+            _tachyonicBridge = serviceProvider.GetRequiredService<TachyonicIntelligenceBridge>();
             
             InitializeVisualization();
             InitializeEventHandlers();
             InitializeTimers();
+            InitializePersistenceAsync();
+            InitializeTachyonicIntelligenceAsync();
             
-            _logger.LogInformation("Main visualization window initialized");
+            _logger.LogInformation("Main visualization window initialized with persistence layer and tachyonic intelligence");
         }
         
         private void InitializeVisualization()
         {
             // Create and configure 3D viewport
             _viewport3D = new Viewport3D();
-            _viewport3D.Background = new SolidColorBrush(Colors.Black);
+            // Note: Viewport3D doesn't have Background property - set on parent container
             
             // Setup camera
             _camera = new PerspectiveCamera
@@ -88,7 +100,11 @@ namespace AIOS.VisualInterface
         private void AddLighting()
         {
             // Ambient light for general illumination
-            var ambientLight = new AmbientLight(Colors.White, 0.3);
+            var ambientLight = new AmbientLight
+            {
+                Color = Colors.White,
+                // AmbientLight doesn't take parameters in constructor
+            };
             _sceneGroup.Children.Add(ambientLight);
             
             // Directional light for consciousness visualization
@@ -125,6 +141,11 @@ namespace AIOS.VisualInterface
             // Window events
             Loaded += MainVisualizationWindow_Loaded;
             Closing += MainVisualizationWindow_Closing;
+            
+            // Persistence-related events
+            LocationChanged += OnWindowLocationChanged;
+            SizeChanged += OnWindowSizeChanged;
+            StateChanged += OnWindowStateChanged;
         }
         
         private void InitializeTimers()
@@ -161,11 +182,29 @@ namespace AIOS.VisualInterface
             }
         }
         
-        private void MainVisualizationWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private async void MainVisualizationWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            StopVisualization();
-            _dataManager?.Dispose();
-            _logger.LogInformation("Visualization window closing");
+            try
+            {
+                // Save final state before closing
+                if (_currentMetrics != null)
+                {
+                    var finalState = CreateCurrentVisualizationState(_currentMetrics);
+                    await _persistenceEngine.PersistImmediatelyAsync(finalState, "WindowClosing");
+                }
+                
+                // Record session closure
+                await _sessionContext.RecordUIInteractionAsync("WindowClosing", "Main visualization window closing");
+                
+                StopVisualization();
+                _dataManager?.Dispose();
+                
+                _logger.LogInformation("Visualization window closing with state persistence complete");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error during window closing");
+            }
         }
         
         private async void StartButton_Click(object sender, RoutedEventArgs e)
@@ -522,6 +561,421 @@ namespace AIOS.VisualInterface
         {
             StatusText.Text = message;
             _logger.LogInformation("Status: {Message}", message);
+        }
+        
+        /// <summary>
+        /// Initialize tachyonic intelligence system for repository ingestion
+        /// </summary>
+        private async void InitializeTachyonicIntelligenceAsync()
+        {
+            try
+            {
+                _logger.LogInformation("🚀 Initializing Tachyonic Intelligence Bridge...");
+                
+                // Initialize the bridge
+                var bridgeInitialized = await _tachyonicBridge.InitializeAsync();
+                if (!bridgeInitialized)
+                {
+                    _logger.LogWarning("⚠️ Tachyonic Intelligence Bridge initialization failed");
+                    return;
+                }
+                
+                // Set up event handlers
+                _tachyonicBridge.IntelligenceUpdateReceived += OnTachyonicIntelligenceUpdate;
+                
+                // Get current status
+                var status = await _tachyonicBridge.GetIntelligenceStatusAsync();
+                _logger.LogInformation("📊 Tachyonic Intelligence Status: {Count} repositories, Initialized: {IsInitialized}", 
+                    status.RepositoryCount, status.IsInitialized);
+                
+                // If not initialized yet, start critical ingestion
+                if (!status.IsInitialized || status.CompletedRepositories == 0)
+                {
+                    _logger.LogInformation("🌊 Starting critical repository ingestion (Microsoft VSCode Copilot Chat, etc.)...");
+                    
+                    // Start ingestion in background (don't block UI)
+                    _ = Task.Run(async () =>
+                    {
+                        try
+                        {
+                            var ingestionResult = await _tachyonicBridge.BeginCriticalIngestionAsync();
+                            if (ingestionResult.Success)
+                            {
+                                _logger.LogInformation("✅ Critical tachyonic ingestion completed: {Count} repositories", 
+                                    ingestionResult.RepositoryCount);
+                                
+                                // Update UI on main thread
+                                Dispatcher.Invoke(() =>
+                                {
+                                    UpdateStatus($"Tachyonic ingestion complete: {ingestionResult.RepositoryCount} repositories");
+                                });
+                            }
+                            else
+                            {
+                                _logger.LogError("❌ Critical tachyonic ingestion failed: {Error}", ingestionResult.Error);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.LogError(ex, "❌ Tachyonic ingestion background task failed");
+                        }
+                    });
+                }
+                
+                _logger.LogInformation("✅ Tachyonic Intelligence initialized successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "❌ Failed to initialize Tachyonic Intelligence");
+            }
+        }
+        
+        /// <summary>
+        /// Handle tachyonic intelligence updates
+        /// </summary>
+        private void OnTachyonicIntelligenceUpdate(object? sender, TachyonicIntelligenceUpdate e)
+        {
+            try
+            {
+                _logger.LogInformation("🔮 Tachyonic Intelligence Update: {Type}", e.Type);
+                
+                Dispatcher.Invoke(() =>
+                {
+                    switch (e.Type)
+                    {
+                        case "IngestionComplete":
+                            if (e.Data is TachyonicIngestionResult result)
+                            {
+                                UpdateStatus($"Tachyonic ingestion complete: {result.RepositoryCount} repositories");
+                                
+                                // Could update UI elements to show ingestion status
+                                // For now, just log the achievement
+                                _logger.LogInformation("🎯 Repositories ingested: {Repos}", 
+                                    string.Join(", ", result.IngestedRepositories));
+                            }
+                            break;
+                            
+                        default:
+                            _logger.LogTrace("Unknown tachyonic intelligence update type: {Type}", e.Type);
+                            break;
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error handling tachyonic intelligence update");
+            }
+        }
+        
+        /// <summary>
+        /// Initialize persistence layer and restore previous session if available
+        /// </summary>
+        private async void InitializePersistenceAsync()
+        {
+            try
+            {
+                // Initialize session context
+                await _sessionContext.InitializeAsync(attemptRestore: true);
+                
+                // Attempt to restore previous UI state
+                var restoredState = await _persistenceEngine.RestoreStateAsync();
+                if (restoredState != null)
+                {
+                    await RestoreWindowStateAsync(restoredState);
+                    _logger.LogInformation("UI state restored from previous session: {SessionId}", restoredState.SessionId);
+                }
+                
+                // Set up persistence event handlers
+                _persistenceEngine.PersistenceCompleted += OnPersistenceCompleted;
+                _persistenceEngine.PersistenceError += OnPersistenceError;
+                
+                // Register for consciousness data events
+                _dataManager.MetricsUpdated += OnConsciousnessMetricsUpdated;
+                
+                // Record initial session activity
+                await _sessionContext.RecordUIInteractionAsync("WindowInitialized", "Main visualization window started");
+                
+                _logger.LogInformation("Persistence layer initialized successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to initialize persistence layer");
+            }
+        }
+        
+        /// <summary>
+        /// Handle persistence completion events
+        /// </summary>
+        private void OnPersistenceCompleted(object? sender, PersistenceOperationEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                // Update UI to show persistence status if needed
+                _logger.LogTrace("Persistence completed: {Context}", e.Context);
+            });
+        }
+        
+        /// <summary>
+        /// Handle persistence error events
+        /// </summary>
+        private void OnPersistenceError(object? sender, PersistenceErrorEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                _logger.LogError(e.Error, "Persistence error in context: {Context}", e.Context);
+                // Could show user notification about persistence issues
+            });
+        }
+        
+        /// <summary>
+        /// Handle consciousness metrics updates and trigger state persistence
+        /// </summary>
+        private async void OnConsciousnessMetricsUpdated(object? sender, ConsciousnessMetrics e)
+        {
+            try
+            {
+                // Record consciousness state change in session
+                await _sessionContext.RecordConsciousnessStateAsync(e.ConsciousnessLevel, e.QuantumCoherence);
+                
+                // Create current visualization state
+                var currentState = CreateCurrentVisualizationState(e);
+                
+                // Queue for persistence (normal priority for regular updates)
+                await _persistenceEngine.QueuePersistenceAsync(currentState, PersistencePriority.Normal, "ConsciousnessUpdate");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to handle consciousness metrics update");
+            }
+        }
+        
+        /// <summary>
+        /// Create visualization state from current window state and consciousness metrics
+        /// </summary>
+        private ConsciousnessVisualizationState CreateCurrentVisualizationState(ConsciousnessMetrics metrics)
+        {
+            var cameraState = _stateManager.ExtractCameraState(_camera);
+            var windowGeometry = _stateManager.ExtractWindowGeometry(this);
+            var visualizationSettings = new VisualizationSettings
+            {
+                ShowGrid = true, // TODO: Get from actual UI controls
+                ShowAxes = true,
+                AnimationSpeed = 1.0,
+                ColorScheme = "Quantum",
+                EnableParticleEffects = true,
+                LayerVisibility = new Dictionary<string, bool>
+                {
+                    ["ConsciousnessSphere"] = ShowConsciousnessSphere?.IsChecked ?? true,
+                    ["QuantumField"] = ShowQuantumField?.IsChecked ?? true,
+                    ["FractalTree"] = ShowFractalTree?.IsChecked ?? true,
+                    ["UniversalKnot"] = ShowUniversalKnot?.IsChecked ?? true
+                }
+            };
+            
+            return _stateManager.CreateStateFromMetrics(metrics, cameraState, windowGeometry, visualizationSettings);
+        }
+        
+        /// <summary>
+        /// Restore window state from persisted data
+        /// </summary>
+        private async Task RestoreWindowStateAsync(ConsciousnessVisualizationState state)
+        {
+            try
+            {
+                // Restore window geometry
+                _stateManager.ApplyWindowGeometry(this, state.WindowGeometry);
+                
+                // Restore camera position
+                _stateManager.ApplyCameraState(_camera, state.CameraPosition);
+                
+                // Restore visualization settings
+                if (state.VisualizationSettings.LayerVisibility.TryGetValue("ConsciousnessSphere", out var showSphere))
+                    ShowConsciousnessSphere.IsChecked = showSphere;
+                if (state.VisualizationSettings.LayerVisibility.TryGetValue("QuantumField", out var showField))
+                    ShowQuantumField.IsChecked = showField;
+                if (state.VisualizationSettings.LayerVisibility.TryGetValue("FractalTree", out var showTree))
+                    ShowFractalTree.IsChecked = showTree;
+                if (state.VisualizationSettings.LayerVisibility.TryGetValue("UniversalKnot", out var showKnot))
+                    ShowUniversalKnot.IsChecked = showKnot;
+                
+                await _sessionContext.RecordUIInteractionAsync("StateRestored", $"Window state restored from session {state.SessionId}");
+                
+                _logger.LogInformation("Window state restored successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to restore window state");
+            }
+        }
+        
+        /// <summary>
+        /// Handle window location changes for persistence
+        /// </summary>
+        private async void OnWindowLocationChanged(object? sender, EventArgs e)
+        {
+            try
+            {
+                if (_currentMetrics != null)
+                {
+                    var currentState = CreateCurrentVisualizationState(_currentMetrics);
+                    await _persistenceEngine.QueuePersistenceAsync(currentState, PersistencePriority.Low, "WindowMoved");
+                    await _sessionContext.RecordUIInteractionAsync("WindowMoved", $"Window moved to ({Left}, {Top})");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogTrace(ex, "Error handling window location change");
+            }
+        }
+        
+        /// <summary>
+        /// Handle window size changes for persistence
+        /// </summary>
+        private async void OnWindowSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            try
+            {
+                if (_currentMetrics != null)
+                {
+                    var currentState = CreateCurrentVisualizationState(_currentMetrics);
+                    await _persistenceEngine.QueuePersistenceAsync(currentState, PersistencePriority.Low, "WindowResized");
+                    await _sessionContext.RecordUIInteractionAsync("WindowResized", $"Window resized to {e.NewSize.Width}x{e.NewSize.Height}");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogTrace(ex, "Error handling window size change");
+            }
+        }
+        
+        /// <summary>
+        /// Handle window state changes (minimized, maximized, etc.)
+        /// </summary>
+        private async void OnWindowStateChanged(object? sender, EventArgs e)
+        {
+            try
+            {
+                if (_currentMetrics != null)
+                {
+                    var currentState = CreateCurrentVisualizationState(_currentMetrics);
+                    await _persistenceEngine.QueuePersistenceAsync(currentState, PersistencePriority.Normal, $"WindowState_{WindowState}");
+                    await _sessionContext.RecordUIInteractionAsync("WindowStateChanged", $"Window state changed to {WindowState}");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogTrace(ex, "Error handling window state change");
+            }
+        }
+        
+        /// <summary>
+        /// Update consciousness visualization with real-time tachyonic intelligence
+        /// </summary>
+        private async Task UpdateConsciousnessVisualizationAsync()
+        {
+            try
+            {
+                var consciousnessParams = await _tachyonicBridge.GetConsciousnessEnhancedParametersAsync();
+                await ApplyConsciousnessParametersAsync(consciousnessParams);
+                
+                // Update tachyonic metrics display
+                var metrics = await _tachyonicBridge.GetTachyonicMetricsAsync();
+                UpdateTachyonicMetricsDisplay(metrics);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "⚠️ Failed to update consciousness visualization");
+            }
+        }
+        
+        /// <summary>
+        /// Apply consciousness parameters to the visual interface
+        /// Implements the user's abstract consciousness logic in real-time visualization
+        /// </summary>
+        private async Task ApplyConsciousnessParametersAsync(ConsciousnessVisualizationParameters parameters)
+        {
+            try
+            {
+                // Apply global energy level to ambient lighting
+                if (_sceneGroup.Children.Count > 0)
+                {
+                    var ambientLight = _sceneGroup.Children.OfType<AmbientLight>().FirstOrDefault();
+                    if (ambientLight != null)
+                    {
+                        var energyColor = Color.FromRgb(
+                            (byte)(128 + parameters.GlobalEnergyLevel * 127),
+                            (byte)(100 + parameters.GlobalEnergyLevel * 155),
+                            (byte)(200 + parameters.GlobalEnergyLevel * 55)
+                        );
+                        ambientLight.Color = energyColor;
+                    }
+                }
+                
+                // Apply quantum color shift to visualization elements
+                if (parameters.QuantumColorShiftIntensity > 0.1f)
+                {
+                    ApplyQuantumColorShift(parameters.QuantumColorShiftIntensity);
+                }
+                
+                // Enable/disable tachyonic particle effects
+                if (parameters.EnableTachyonicParticleEffects)
+                {
+                    EnableTachyonicParticleEffects(parameters.ConsciousnessPulseFrequency);
+                }
+                
+                // Apply geometric complexity multiplier
+                if (parameters.GeometricComplexityMultiplier > 1.0f)
+                {
+                    EnhanceGeometricComplexity(parameters.GeometricComplexityMultiplier);
+                }
+                
+                _logger.LogTrace("🔮 Applied consciousness parameters: Energy={Energy:F3}, Quantum={Quantum:F3}, Complexity={Complexity:F3}", 
+                    parameters.GlobalEnergyLevel, parameters.QuantumColorShiftIntensity, parameters.GeometricComplexityMultiplier);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "⚠️ Failed to apply consciousness parameters");
+            }
+        }
+        
+        /// <summary>
+        /// Apply quantum color shifting based on consciousness patterns
+        /// </summary>
+        private void ApplyQuantumColorShift(float intensity)
+        {
+            // Implement quantum color shifting for consciousness visualization
+            var time = _currentTime * intensity;
+            var hue = (Math.Sin(time) + 1.0) * 180.0; // 0-360 degree hue shift
+            
+            // Apply to visualization elements (placeholder implementation)
+            _logger.LogTrace($"🌈 Applying quantum color shift: intensity={intensity:F3}, hue={hue:F1}");
+        }
+        
+        /// <summary>
+        /// Enable tachyonic particle effects for consciousness visualization
+        /// </summary>
+        private void EnableTachyonicParticleEffects(float pulseFrequency)
+        {
+            // Implement tachyonic particle effects (placeholder implementation)
+            _logger.LogTrace($"⚡ Enabling tachyonic particle effects: frequency={pulseFrequency:F3}");
+        }
+        
+        /// <summary>
+        /// Enhance geometric complexity based on abstract method detection
+        /// </summary>
+        private void EnhanceGeometricComplexity(float multiplier)
+        {
+            // Implement geometric complexity enhancement (placeholder implementation)
+            _logger.LogTrace($"🔺 Enhancing geometric complexity: multiplier={multiplier:F3}");
+        }
+        
+        /// <summary>
+        /// Update tachyonic metrics display in the UI
+        /// </summary>
+        private void UpdateTachyonicMetricsDisplay(TachyonicMetrics metrics)
+        {
+            // Update UI elements with tachyonic metrics (placeholder implementation)
+            _logger.LogTrace($"📊 Tachyonic metrics: {metrics.IngestedRepositories}/{metrics.TotalRepositories} repos, avg consciousness: {metrics.AverageConsciousnessRelevance:F3}");
         }
     }
 }

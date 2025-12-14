@@ -20,13 +20,7 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional, Callable
 from dataclasses import dataclass, asdict
 import time
-import u    print("\nTesting consciousness analysis...")
-    analysis = bridge.analyze_with_consciousness(test_code)
-    if "error" in analysis:
-        print(f"Analysis error: {analysis['error']}")
-    else:
-        print(f"Consciousness level: {analysis['consciousness_metrics']['overall']:.3f}")
-        print(f"Breakthrough: {analysis.get('breakthrough', 'None')}")
+import uuid
 import logging
 
 # Consciousness-aware imports

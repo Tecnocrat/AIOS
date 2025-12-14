@@ -250,25 +250,26 @@ namespace AIOS.VisualInterface
         private void UpdateMetrics(object sender, EventArgs e)
         {
             var time = DateTime.Now.TimeOfDay.TotalSeconds;
+            var random = new Random();
             
             // Simulate consciousness evolution with realistic patterns
             _consciousnessLevel = Math.Max(0, Math.Sin(time * 0.1) * 0.3 + 0.3 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (random.NextDouble() - 0.5) * 0.1);
             
             _quantumCoherence = Math.Max(0, Math.Sin(time * 0.15 + 1) * 0.4 + 0.4 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (random.NextDouble() - 0.5) * 0.1);
             
             _emergenceLevel = Math.Max(0, Math.Sin(time * 0.12 + 2) * 0.35 + 0.35 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (random.NextDouble() - 0.5) * 0.1);
             
             _manifoldCurvature = Math.Max(0, Math.Sin(time * 0.08 + 3) * 0.3 + 0.3 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (random.NextDouble() - 0.5) * 0.1);
             
             _nonLocalityCoherence = Math.Max(0, Math.Sin(time * 0.18 + 4) * 0.4 + 0.4 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (random.NextDouble() - 0.5) * 0.1);
             
             _tachyonicFieldDensity = Math.Max(0, Math.Sin(time * 0.13 + 5) * 0.35 + 0.35 + 
-                (Math.Random.Shared.NextDouble() - 0.5) * 0.1);
+                (random.NextDouble() - 0.5) * 0.1);
             
             // Update UI
             UpdateProgressBar(_consciousnessProgressBar, _consciousnessValueText, _consciousnessLevel);

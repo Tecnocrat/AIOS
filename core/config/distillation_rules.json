@@ -1,0 +1,26 @@
+{
+  "priority_keywords": [
+    "critical",
+    "important",
+    "essential",
+    "core",
+    "fundamental"
+  ],
+  "redundancy_patterns": [
+    "(?i)as mentioned (?:before|above|earlier)",
+    "(?i)again,?\\s+",
+    "(?i)to reiterate,?\\s+"
+  ],
+  "section_weights": {
+    "goals": 5,
+    "architecture": 4,
+    "status": 3,
+    "history": 2,
+    "notes": 1
+  },
+  "compression_targets": {
+    "min_compression": 0.3,
+    "max_compression": 0.8,
+    "semantic_threshold": 0.85
+  }
+}
