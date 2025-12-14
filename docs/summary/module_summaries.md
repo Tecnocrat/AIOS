@@ -79,6 +79,24 @@ Header for subspace projection module.
 ### AIOS/orchestrator/include/nlohmann/json.hpp (C++ (header-only library))
 Third-party JSON library for C++.
 
+### AIOS/director/DirectorAPI/Program.cs (C#)
+Entrypoint for the DirectorAPI .NET WebAPI orchestration layer.
+
+### AIOS/director/DirectorAPI/Startup.cs (C#)
+Configures services and middleware for the DirectorAPI.
+
+### AIOS/director/DirectorAPI/Controllers/ServicesController.cs (C#)
+REST API controller for managing services.
+
+### AIOS/director/DirectorAPI/DirectorAPI.csproj (C# Project)
+Project file for the DirectorAPI .NET solution.
+
+### AIOS/director/DirectorAPI/appsettings.json (JSON)
+Default configuration for the DirectorAPI.
+
+### AIOS/director/DirectorAPI/appsettings.Development.json (JSON)
+Development configuration for the DirectorAPI.
+
 ### AIOS/scripts/main.py (Python)
 Main Python glue logic for AI-driven orchestration and ingestion.
 

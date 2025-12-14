@@ -1,0 +1,7 @@
+2025-06-29 12:11:09,628 - QuantumCodeIngestor - INFO - Quantum Code Ingestor interface started
+2025-06-29 12:12:50,752 - QuantumCodeIngestor - INFO - Starting quantum code ingestion from: C:\Users\jesus\dev\codebot
+2025-06-29 12:18:39,218 - QuantumCodeIngestor - INFO - Starting quantum code ingestion from: C:\dev
+2025-06-29 12:24:35,292 - QuantumCodeIngestor - ERROR - Error analyzing C:\dev\.backup\ingestor\node_modules\bn.js: [Errno 13] Permission denied: 'C:\\dev\\.backup\\ingestor\\node_modules\\bn.js'
+2025-06-29 12:24:35,404 - QuantumCodeIngestor - ERROR - Error analyzing C:\dev\.backup\ingestor\node_modules\ipaddr.js: [Errno 13] Permission denied: 'C:\\dev\\.backup\\ingestor\\node_modules\\ipaddr.js'
+2025-06-29 12:24:35,669 - QuantumCodeIngestor - ERROR - Error analyzing C:\dev\.backup\ingestor\node_modules\@solana\web3.js: [Errno 13] Permission denied: 'C:\\dev\\.backup\\ingestor\\node_modules\\@solana\\web3.js'
+2025-06-29 12:33:04,329 - QuantumCodeIngestor - INFO - Starting quantum code ingestion from: C:\dev\chatgpt\ingestion

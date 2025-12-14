@@ -1,128 +1,267 @@
 // AIOS Dependency Graph
 digraph {
-	rankdir=TB size="12,8"
-	node [fillcolor=lightblue shape=box style="rounded,filled"]
-	real_ai_lint_fixer [label="real_ai_lint_fixer\n(py)"]
-	aios_indexer [label="aios_indexer\n(py)"]
-	verify_gemini_config [label="verify_gemini_config\n(py)"]
-	consciousness_evolution_engine [label="consciousness_evolution_engine\n(py)"]
-	aios_ai_integration_bridge [label="aios_ai_integration_bridge\n(py)"]
-	aios_custom_ai_engine [label="aios_custom_ai_engine\n(py)"]
-	consciousness_bridge [label="consciousness_bridge\n(py)"]
-	library_ingestion_protocol [label="library_ingestion_protocol\n(py)"]
-	test_library_ingestion_protocol [label="test_library_ingestion_protocol\n(py)"]
-	consciousness_evolution_engine [label="consciousness_evolution_engine\n(py)"]
-	supercell_intelligence_coordinator [label="supercell_intelligence_coordinator\n(py)"]
-	activate_continuous_optimization [label="activate_continuous_optimization\n(py)"]
-	aios_githooks_optimizer [label="aios_githooks_optimizer\n(py)"]
-	aios_architectural_analysis [label="aios_architectural_analysis\n(py)"]
-	vscode_consciousness [label="vscode_consciousness\n(py)"]
-	lightweight_ai_coordinator [label="lightweight_ai_coordinator\n(py)"]
-	aios_deepseek_supercell_bridge [label="aios_deepseek_supercell_bridge\n(py)"]
-	continuous_optimization_daemon [label="continuous_optimization_daemon\n(py)"]
-	vscode_error_intelligence [label="vscode_error_intelligence\n(py)"]
-	ainlp_cellular_integrator [label="ainlp_cellular_integrator\n(py)"]
-	consciousness_mcp_server [label="consciousness_mcp_server\n(py)"]
-	gemini_evolution_bridge [label="gemini_evolution_bridge\n(py)"]
-	integration_tester [label="integration_tester\n(py)"]
-	meta_cognitive_loop [label="meta_cognitive_loop\n(py)"]
-	agentic_behavior_enhancement [label="agentic_behavior_enhancement\n(py)"]
-	shared_imports [label="shared_imports\n(py)"]
-	test_minimal_consciousness [label="test_minimal_consciousness\n(cpp)"]
-	test_minimal_consciousness -> AIOrchestrationControllerpp
-	test_minimal_consciousness -> CenterGeometryFieldpp
-	test_minimal_consciousness -> AtomicHolographyUnitpp
-	test_minimal_consciousness -> AIOSConsciousnessEnginepp
-	test_core_consciousness [label="test_core_consciousness\n(cpp)"]
-	test_core_consciousness -> AIOrchestrationControllerpp
-	test_core_consciousness -> CenterGeometryFieldpp
-	test_core_consciousness -> AtomicHolographyUnitpp
-	QuantumRandomGenerator [label="QuantumRandomGenerator\n(cpp)"]
-	QuantumRandomGenerator -> QuantumRandomGeneratorpp
-	QuantumRandomGenerator -> AIOSMathematicalConsciousnesspp
-	SingularityCore [label="SingularityCore\n(cpp)"]
-	SingularityCore -> SingularityCorepp
-	SingularityCore -> Loggerpp
-	SingularityCore -> MathConstantspp
-	SingularityCore -> CodeEvolutionEnginepp
-	SingularityCore -> AIOSConsciousnessEnginepp
-	SingularityCore -> AIOSMathematicalConsciousnesspp
-	SingularityCore -> AIOrchestrationControllerpp
-	CenterGeometryField [label="CenterGeometryField\n(cpp)"]
-	CenterGeometryField -> CenterGeometryFieldpp
-	CenterGeometryField -> AtomicHolographyUnitpp
-	CenterGeometryField -> AIOrchestrationControllerpp
-	CenterGeometryField -> MathConstantspp
-	AIOSConsciousnessEngine [label="AIOSConsciousnessEngine\n(cpp)"]
-	AIOSConsciousnessEngine -> AIOSConsciousnessEnginepp
-	AIOSConsciousnessEngine -> SingularityCorepp
-	AIOSConsciousnessEngine -> Loggerpp
-	AIOSConsciousnessEngine -> AIOSMathematicalConsciousnesspp
-	AIOrchestrationController [label="AIOrchestrationController\n(cpp)"]
-	AIOrchestrationController -> AIOrchestrationControllerpp
-	AIOrchestrationController -> AIOSConsciousnessEnginepp
-	AIOrchestrationController -> AIOSMathematicalConsciousnesspp
-	PluginLoader [label="PluginLoader\n(cpp)"]
-	PluginLoader -> PluginLoader
-	main [label="main\n(cpp)"]
-	main -> Loggerpp
-	main -> SingularityCorepp
-	main -> IPCManager
-	main -> HealthMonitor
-	main -> PluginLoader
-	main -> AtomicHolographyUnitpp
-	main -> CenterGeometryFieldpp
-	main -> SphereShellManagerpp
-	main -> CodeEvolutionEnginepp
-	main -> AIOrchestrationControllerpp
-	main -> TachyonicFieldDatabasepp
-	main -> RecursiveSelfIngestorpp
-	main -> NaturalLanguageInterfacepp
-	main -> UniversalConsciousnessSubstratepp
-	main -> IntelligentMetadataAbstractorpp
-	main -> MathConstantspp
-	aios_core_engine_root_analyzer_iter2 [label="aios_core_engine_root_analyzer_iter2\n(py)"]
-	aios_cellular_intelligence_diagnostic_system [label="aios_cellular_intelligence_diagnostic_system\n(py)"]
-	aios_file_tracking_system [label="aios_file_tracking_system\n(py)"]
-	aios_cellular_intelligence_enhancement_engine [label="aios_cellular_intelligence_enhancement_engine\n(py)"]
-	aios_core_meta_evolutionary_enhancer [label="aios_core_meta_evolutionary_enhancer\n(py)"]
-	aios_core_engine_optimizer_iter2 [label="aios_core_engine_optimizer_iter2\n(py)"]
-	aios_tachyonic_archive_cleanup [label="aios_tachyonic_archive_cleanup\n(py)"]
-	test_tensorflow_cell [label="test_tensorflow_cell\n(cpp)"]
-	test_tensorflow_cell -> tensorflow_performance_cellpp
-	AINLPCompiler [label="AINLPCompiler\n(cs)"]
-	AINLPHarmonizer [label="AINLPHarmonizer\n(cs)"]
-	consciousness_core [label="consciousness_core\n(cpp)"]
-	consciousness_core -> consciousness_core
-	aios_supercell_transport_bridge [label="aios_supercell_transport_bridge\n(py)"]
-	aios_tachyonic_storage_bridge [label="aios_tachyonic_storage_bridge\n(py)"]
-	aios_tachyonic_assembler_archival [label="aios_tachyonic_assembler_archival\n(py)"]
-	aios_consciousness_integration_engine [label="aios_consciousness_integration_engine\n(py)"]
-	aios_dendritic [label="aios_dendritic\n(py)"]
-	aios_dendritic_network_intelligence_enhancer [label="aios_dendritic_network_intelligence_enhancer\n(py)"]
-	consciousness_explorer_3d [label="consciousness_explorer_3d\n(py)"]
-	consciousness_mutation_engine [label="consciousness_mutation_engine\n(py)"]
-	parallel_consciousness_orchestrator [label="parallel_consciousness_orchestrator\n(py)"]
-	aios_cellular_reorganization_implementation [label="aios_cellular_reorganization_implementation\n(py)"]
-	aios_meta_evolutionary_analyzer [label="aios_meta_evolutionary_analyzer\n(py)"]
-	dendritic_mutator [label="dendritic_mutator\n(py)"]
-	self_healing_engine [label="self_healing_engine\n(py)"]
-	assembly_executor [label="assembly_executor\n(py)"]
-	consciousness_ai_cellular_bridge [label="consciousness_ai_cellular_bridge\n(py)"]
-	consciousness_analyzer [label="consciousness_analyzer\n(py)"]
-	tachyonic_visualizer [label="tachyonic_visualizer\n(py)"]
-	dendritic_code_optimizer [label="dendritic_code_optimizer\n(py)"]
-	dendritic_consolidation_engine [label="dendritic_consolidation_engine\n(py)"]
-	ainlp_dendritic_enhancer [label="ainlp_dendritic_enhancer\n(py)"]
-	tensorflow_performance_cell [label="tensorflow_performance_cell\n(cpp)"]
-	tensorflow_performance_cell -> tensorflow_performance_cellpp
-	aios_core_minimal [label="aios_core_minimal\n(cpp)"]
-	aios_core_minimal -> aios_core_minimalpp
-	aios_core_minimal -> aios_plugin_telemetrypp
-	aios_plugin_telemetry [label="aios_plugin_telemetry\n(cpp)"]
-	aios_plugin_telemetry -> aios_plugin_telemetrypp
-	aios_core_meta_evolutionary_enhancer [label="aios_core_meta_evolutionary_enhancer\n(py)"]
-	AINLPCompiler [label="AINLPCompiler\n(cs)"]
-	AINLPHarmonizer [label="AINLPHarmonizer\n(cs)"]
-	aios_comprehensive_runtime_tester [label="aios_comprehensive_runtime_tester\n(py)"]
+	main
+	main -> "Logger.hpp"
+	main -> "SingularityCore.hpp"
+	main -> "IPCManager.h"
+	main -> "HealthMonitor.h"
+	main -> "PluginLoader.h"
+	PluginLoader
+	PluginLoader -> "PluginLoader.h"
+	Startup
+	aios_indexer
+	sem
+	cache
+	configuration
+	exceptions
+	pyproject
+	self_outdated_check
+	wheel_builder
+	cmdoptions
+	index_command
+	parser
+	progress_bars
+	req_command
+	completion
+	configuration
+	debug
+	download
+	inspect
+	install
+	lock
+	wheel
+	__init__
+	sdist
+	wheel
+	collector
+	base
+	pkg_resources
+	_json
+	_dists
+	direct_url
+	installation_report
+	link
+	pylock
+	selection_prefs
+	target_python
+	auth
+	cache
+	download
+	lazy_wheel
+	prepare
+	wheel
+	constructors
+	req_dependency_group
+	req_install
+	__init__
+	resolver
+	candidates
+	factory
+	found_candidates
+	resolver
+	unpacking
+	_jaraco_text
+	bazaar
+	git
+	mercurial
+	subversion
+	versioncontrol
+	__init__
+	typing_extensions
+	cache
+	controller
+	filewrapper
+	serialize
+	file_cache
+	core
+	_lint_dependency_groups
+	_pip_wrapper
+	__main__
+	database
+	index
+	locators
+	manifest
+	metadata
+	resources
+	scripts
+	util
+	wheel
+	distro
+	codec
+	ext
+	__init__
+	metadata
+	tags
+	utils
+	_musllinux
+	_tokenizer
+	_spdx
+	__init__
+	android
+	api
+	macos
+	unix
+	windows
+	__init__
+	__main__
+	plugin
+	__init__
+	__init__
+	python
+	_mapping
+	__init__
+	_impl
+	_in_process
+	adapters
+	api
+	auth
+	models
+	sessions
+	utils
+	__init__
+	console
+	containers
+	default_styles
+	json
+	progress
+	prompt
+	repr
+	style
+	_emoji_codes
+	_extension
+	_windows
+	__init__
+	_parser
+	__init__
+	_api
+	_macos
+	_openssl
+	_windows
+	connection
+	connectionpool
+	request
+	response
+	appengine
+	pyopenssl
+	securetransport
+	bindings
+	low_level
+	six
+	weakref_finalize
+	proxy
+	response
+	ssl_
+	timeout
+	wait
+	__init__
+	test_resources
+	depends
+	dist
+	extension
+	glob
+	logging
+	monkey
+	msvc
+	_core_metadata
+	_entry_points
+	_imp
+	_reqs
+	_scripts
+	_static
+	__init__
+	bdist_egg
+	bdist_wheel
+	build_ext
+	build_py
+	editable_wheel
+	egg_info
+	sdist
+	__init__
+	expand
+	pyprojecttoml
+	setupcfg
+	_apply_pyprojecttoml
+	fastjsonschema_validations
+	formats
+	test_bdist_wheel
+	test_build_ext
+	test_build_ext -> "Python.h"
+	test_core_metadata
+	test_distutils_adoption
+	test_editable_install
+	test_egg_info
+	test_extern
+	test_logging
+	test_sdist
+	test_virtualenv
+	test_apply_pyprojecttoml
+	test_setupcfg
+	preload
+	__init__
+	test_pip_install_sdist
+	archive_util
+	cmd
+	core
+	dir_util
+	dist
+	errors
+	extension
+	filelist
+	spawn
+	sysconfig
+	build_ext
+	install
+	install_data
+	base
+	msvc
+	test_base
+	test_bdist_rpm
+	test_dist
+	test_util
+	typing_extensions
+	__init__
+	_adapters
+	_meta
+	__init__
+	__init__
+	__init__
+	__init__
+	metadata
+	tags
+	utils
+	_musllinux
+	_tokenizer
+	_spdx
+	android
+	api
+	macos
+	unix
+	windows
+	__init__
+	__main__
+	_parser
+	__init__
+	_checkers
+	_decorators
+	_functions
+	_importhook
+	_pytest_plugin
+	_suppression
+	_transformer
+	__init__
+	macosx_libfile
+	metadata
+	_bdist_wheel
+	convert
+	tags
+	_musllinux
+	_tokenizer
+	macosx_libfile
+	metadata
+	_bdist_wheel
+	convert
+	tags
+	_musllinux
+	_tokenizer
+	__init__
 }

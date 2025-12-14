@@ -33,6 +33,16 @@
         "nlohmann/json.hpp": "C++ (header-only library)"
       }
     },
+    "director": {
+      "DirectorAPI": {
+        "Program.cs": "C#",
+        "Startup.cs": "C#",
+        "Controllers/ServicesController.cs": "C#",
+        "DirectorAPI.csproj": "C# Project",
+        "appsettings.json": "JSON",
+        "appsettings.Development.json": "JSON"
+      }
+    },
     "scripts": {
       "main.py": "Python",
       "test_env.py": "Python",

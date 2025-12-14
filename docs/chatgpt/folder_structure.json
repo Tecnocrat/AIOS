@@ -1,0 +1,148 @@
+{
+    "": {
+        "folders": [
+            ".git",
+            "docs",
+            "ingestion",
+            "md"
+        ],
+        "files": [
+            "chatgpt.py"
+        ]
+    },
+    "docs": {
+        "folders": [
+            "tachyonic"
+        ],
+        "files": []
+    },
+    "docs\\tachyonic": {
+        "folders": [],
+        "files": []
+    },
+    "ingestion": {
+        "folders": [
+            "archive"
+        ],
+        "files": [
+            "vscopilot.csv",
+            "vscopilot.json",
+            "vscopilot.txt",
+            "vscopilot.xml"
+        ]
+    },
+    "ingestion\\archive": {
+        "folders": [
+            "csv",
+            "json",
+            "txt",
+            "xml"
+        ],
+        "files": [
+            "chatgpt.csv",
+            "chatgpt.json",
+            "chatgpt.txt",
+            "chatgpt.xml",
+            "copilot.csv",
+            "copilot.json",
+            "copilot.txt",
+            "copilot.xml",
+            "gemini.csv",
+            "gemini.json",
+            "gemini.txt",
+            "gemini.xml",
+            "VSCopilot.csv",
+            "VSCopilot.json",
+            "VSCopilot.txt",
+            "VSCopilot.xml"
+        ]
+    },
+    "ingestion\\archive\\csv": {
+        "folders": [],
+        "files": [
+            "chatgpt.csv",
+            "chatgpt_20250615_180024.csv",
+            "chatgpt_20250615_215200.csv",
+            "chatgpt_20250619_142914.csv",
+            "copilot.csv",
+            "copilot_20250619_142914.csv",
+            "gemini.csv",
+            "gemini_20250615_215200.csv",
+            "gemini_20250619_142914.csv",
+            "VSCopilot.csv",
+            "vscopilot_20250615_215200.csv",
+            "vscopilot_20250619_142914.csv"
+        ]
+    },
+    "ingestion\\archive\\json": {
+        "folders": [],
+        "files": [
+            "chatgpt.json",
+            "chatgpt_20250615_180024.json",
+            "chatgpt_20250615_215200.json",
+            "chatgpt_20250619_142914.json",
+            "copilot.json",
+            "copilot_20250619_142914.json",
+            "gemini.json",
+            "gemini_20250615_215200.json",
+            "gemini_20250619_142914.json",
+            "VSCopilot.json",
+            "vscopilot_20250615_215200.json",
+            "vscopilot_20250619_142914.json"
+        ]
+    },
+    "ingestion\\archive\\txt": {
+        "folders": [],
+        "files": [
+            "chatgpt.txt",
+            "chatgpt_20250615_180024.txt",
+            "chatgpt_20250615_215200.txt",
+            "chatgpt_20250619_142914.txt",
+            "copilot.txt",
+            "copilot_20250619_142914.txt",
+            "gemini.txt",
+            "gemini_20250615_215200.txt",
+            "gemini_20250619_142914.txt",
+            "VSCopilot.txt",
+            "vscopilot_20250615_215200.txt",
+            "vscopilot_20250619_142914.txt"
+        ]
+    },
+    "ingestion\\archive\\xml": {
+        "folders": [],
+        "files": [
+            "chatgpt.xml",
+            "chatgpt_20250615_180024.xml",
+            "chatgpt_20250615_215200.xml",
+            "chatgpt_20250619_142914.xml",
+            "copilot.xml",
+            "copilot_20250619_142914.xml",
+            "gemini.xml",
+            "gemini_20250615_215200.xml",
+            "gemini_20250619_142914.xml",
+            "VSCopilot.xml",
+            "vscopilot_20250615_215200.xml",
+            "vscopilot_20250619_142914.xml"
+        ]
+    },
+    "md": {
+        "folders": [
+            "ark"
+        ],
+        "files": [
+            "chatgpt.md",
+            "copilot.md",
+            "gemini.md",
+            "vscopilot.md"
+        ]
+    },
+    "md\\ark": {
+        "folders": [],
+        "files": [
+            "chatgpt_ark.md",
+            "copilot_ark.md",
+            "gemini_ark.md",
+            "vscopilot_ark.md"
+        ]
+    }
+}
