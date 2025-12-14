@@ -26,7 +26,7 @@ Example:
 import sys
 import json
 from pathlib import Path
-from typing import TYPE_CHECKING, Optional, Any
+from typing import TYPE_CHECKING, Optional, Any, Callable, cast
 
 # Add tachyonic to path
 tachyonic_path = Path("c:/dev/AIOS/tachyonic")
@@ -34,14 +34,31 @@ if str(tachyonic_path) not in sys.path:
     sys.path.append(str(tachyonic_path))
 
 # Type stubs for IDE - actual import in try block
+# pylint: disable=too-few-public-methods,missing-function-docstring
 if TYPE_CHECKING:
-    TachyonicArchiveSystem: Any
-    DendriticSuperclass: Any
+    from typing import Protocol  # pylint: disable=ungrouped-imports
+
+    class TachyonicArchiveProtocol(Protocol):
+        """Protocol for TachyonicArchiveSystem type hints."""
+        def archive_terminal_output(self, content: str) -> Any: ...
+        def get_processing_checklist(self) -> list: ...
+        def organize_archive_folder(self) -> dict: ...
+        def get_archive_organization_summary(self) -> dict: ...
+
+    class DendriticProtocol(Protocol):
+        """Protocol for DendriticSuperclass type hints."""
+        def process(self) -> Any: ...
+# pylint: enable=too-few-public-methods,missing-function-docstring
+
+# Type aliases for conditional imports
+# AINLP.type[NARROWING] - Pylance needs explicit callable types
+TachyonicArchiveType = Optional[Callable[[], Any]]
+DendriticType = Optional[Callable[[], Any]]
 
 # Attempt to import tachyonic modules
 _TACHYONIC_AVAILABLE = False
-_TachyonicArchiveSystem = None
-_DendriticSuperclass = None
+_TachyonicArchiveSystem: TachyonicArchiveType = None
+_DendriticSuperclass: DendriticType = None
 
 try:
     # AINLP.future[IMPORT] - type: ignore for unpackaged tachyonic modules
@@ -73,8 +90,12 @@ class DendriticTachyonicBridge:
         """Initialize the dendritic-tachyonic bridge."""
         if not _TACHYONIC_AVAILABLE:
             raise ImportError("Tachyonic modules not available")
-        self.tachyonic_archive = _TachyonicArchiveSystem()
-        self.dendritic_engine = _DendriticSuperclass()
+        # AINLP.type[CAST] - Runtime guard ensures these are not None
+        # cast() tells Pylance: "trust me, the guard above makes this safe"
+        archive_cls = cast(Callable[[], Any], _TachyonicArchiveSystem)
+        dendritic_cls = cast(Callable[[], Any], _DendriticSuperclass)
+        self.tachyonic_archive = archive_cls()
+        self.dendritic_engine = dendritic_cls()
         self.active = True
 
     async def archive_ai_context(self, context_data: str) -> str:
