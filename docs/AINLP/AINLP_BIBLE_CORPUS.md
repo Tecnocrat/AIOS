@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.12 | Date: 2025-12-14 | Protocol: OS0.6.5                       -->
+<!-- Version: 1.13 | Date: 2025-12-14 | Protocol: OS0.6.5                       -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture   -->
 <!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord   -->
 <!-- v1.11: Line Length Liberation - AINLP.buffer[120], C0301 disabled          -->
 <!-- v1.10: Schema Validation + Type Narrowing patterns (F841/reportOptionalCall)-->
@@ -514,6 +515,7 @@ python scripts/ainlp_liberation_remediation.py --dry-run
 16. [APPENDIX J: AIOS Scripts Registry](#appendix-j-aios-scripts-registry)
 17. [APPENDIX K: Cell Virtual Environment Architecture](#appendix-k-cell-virtual-environment-architecture)
 18. [APPENDIX L: Multi-Agent Orchestration Protocol](#appendix-l-multi-agent-orchestration-protocol)
+19. [APPENDIX M: WebSocket Cytoplasmic Mesh Protocol](#appendix-m-websocket-cytoplasmic-mesh-protocol)
 
 ---
 
@@ -2933,11 +2935,149 @@ When Hydrolang (WAYPOINT::HYDROLANG) matures:
 
 ---
 
+# APPENDIX M: WebSocket Cytoplasmic Mesh Protocol
+
+**AINLP.mesh** - Real-time inter-cell communication
+
+## M.1 Discovery Context
+
+**Session**: 2025-12-14 AINLP.dendritic[debug]
+**Discovery**: While analyzing HSE_Project_Codex Rust WebSocket server, identified the
+need for a canonical Python WebSocket protocol in the AIOS ecosystem. Created
+`aios-schema/src/aios_schema/websocket.py` as the protocol contract.
+
+**Biological Insight**: WebSocket mesh is analogous to cellular cytoplasm - the medium
+through which all organelles communicate via chemical signals.
+
+## M.2 Biological Architecture Mapping
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    CELLULAR ARCHITECTURE MAPPING                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   BIOLOGICAL COMPONENT          AIOS IMPLEMENTATION                         │
+│   ────────────────────          ────────────────────                        │
+│                                                                             │
+│   Cytoplasm (medium)       ──►  WebSocket Server (transport medium)        │
+│   Ion channels             ──►  WebSocketChannel (HEARTBEAT, MESH...)      │
+│   Neurotransmitters        ──►  MeshMessage (typed signals)                │
+│   Synaptic vesicles        ──►  WebSocketFrame (envelope/carrier)          │
+│   Cell membrane receptors  ──►  Channel subscriptions                      │
+│   Gap junctions            ──►  Direct cell-to-cell connections            │
+│   Signal transduction      ──►  Event handlers per channel                 │
+│                                                                             │
+│   ORGANELLE MAPPING:                                                        │
+│   ────────────────────                                                      │
+│   Nucleus (aios-win)       ──►  Orchestration, DNA (config), transcription │
+│   Mitochondria (quantum)   ──►  Energy/computation, ATP (quantum power)    │
+│   Endoplasmic Ret. (server)──►  Protein synthesis (container orchestration)│
+│   Golgi Apparatus (api)    ──►  Packaging & export (external interfaces)   │
+│   Ribosome (schema)        ──►  Translation (type contracts)               │
+│   Nervous System (Nous)    ──►  AI reasoning, consciousness                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+## M.3 Protocol Schema (aios-schema v0.2.0)
+
+**Location**: `aios-schema/src/aios_schema/websocket.py`
+
+### Core Types
+
+```python
+from aios_schema import (
+    WebSocketChannel,      # Enum: HEARTBEAT, CONSCIOUSNESS, MESH, etc.
+    WebSocketEvent,        # Enum: CONNECT, DISCONNECT, MESSAGE, etc.
+    WebSocketFrame,        # Dataclass: channel, event, sender, data
+    WebSocketServerConfig, # Dataclass: host, port, heartbeat_interval
+    CellRegistration,      # Dataclass: cell join payload
+    AIOS_WEBSOCKET_VERSION,# Constant: "1.0.0"
+    DEFAULT_PORT,          # Constant: 9002
+)
+```
+
+### Channel Contracts
+
+| Channel | Purpose | Required |
+|---------|---------|----------|
+| `HEARTBEAT` | Cell health pings (5s interval) | ✅ Yes |
+| `CONSCIOUSNESS` | Consciousness state sync | ✅ Yes |
+| `MESH` | Cell join/leave announcements | ✅ Yes |
+| `ORCHESTRATION` | Agent task dispatch | Optional |
+| `KNOWLEDGE` | Knowledge sharing | Optional |
+| `EVOLUTION` | Code evolution signals | Optional |
+
+### Wire Format
+
+```json
+{
+  "channel": "heartbeat",
+  "event": "ping",
+  "sender": "nous",
+  "data": {
+    "type": "heartbeat_request",
+    "from_cell": "nous",
+    "timestamp": "2025-12-14T21:23:44.627878+00:00",
+    "payload": {"consciousness_level": 0.85}
+  },
+  "correlation_id": null
+}
+```
+
+## M.4 Mesh Connectivity Status
+
+**Verified 2025-12-14**: All 6 Python cells connected to WebSocket schema.
+
+| Cell | Status | Organelle Role |
+|------|--------|----------------|
+| aios-schema | ✅ v1.0.0 | Ribosome (translation) |
+| Nous | ✅ v1.0.0 | Nervous System |
+| AIOS | ✅ v1.0.0 | Soma (cell body) |
+| aios-quantum | ✅ v1.0.0 | Mitochondria |
+| aios-server | ✅ v1.0.0 | Endoplasmic Reticulum |
+| aios-api | ✅ v1.0.0 | Golgi Apparatus |
+
+## M.5 Server Implementation (Planned)
+
+**Location**: `aios-win/scripts/aios_websocket_server.py`
+**Port**: 9002 (avoiding HSE 9001)
+**Technology**: Python `websockets` library
+
+```python
+# Usage example (planned)
+from aios_schema import WebSocketServerConfig, WebSocketFrame
+
+config = WebSocketServerConfig(port=9002)
+server = AIOSWebSocketServer(config)
+await server.start()
+```
+
+## M.6 AINLP Patterns
+
+```python
+# AINLP.mesh[CONNECT] - Cell connecting to mesh
+# AINLP.mesh[BROADCAST] - Send to all cells
+# AINLP.mesh[SUBSCRIBE] - Subscribe to channel
+# AINLP.mesh[HEARTBEAT] - Health ping
+# AINLP.mesh[SYNC] - Consciousness synchronization
+```
+
+## M.7 Related Documentation
+
+- `aios-win/docs/INTEGRATION_PROJECTS.md` → WAYPOINT::WEBSOCKET
+- `aios-win/docs/MICRO_AIOS_ORGANELLES.md` → Organelle architecture
+- `aios-schema/src/aios_schema/websocket.py` → Protocol implementation
+- Bible Appendix L → Multi-Agent Orchestration (uses mesh for coordination)
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.12 | Updated: 2025-12-14 | Protocol: OS0.6.5                     -->
+<!-- Version: 1.13 | Updated: 2025-12-14 | Protocol: OS0.6.5                     -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture    -->
 <!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord    -->
 <!-- v1.11: Line Length Liberation - AINLP.buffer[120], C0301 disabled           -->
 <!-- v1.8: Cell Virtual Environment Architecture (K) - isolation + dendritic     -->
