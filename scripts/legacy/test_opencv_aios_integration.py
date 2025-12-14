@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+"""
+Deprecated standalone runner for OpenCV integration tests.
+
+Use the consolidated test suite under scripts/ with pytest.
+This file remains to preserve legacy docs commands.
+"""
+
+
+def main() -> int:
+    try:
+        import pytest  # type: ignore
+    except Exception as exc:  # pragma: no cover
+        print("pytest not available. Install dev requirements and retry.")
+        print(f"Details: {exc}")
+        return 2
+
+    # Run the scripts/ tests (unittest tests are compatible with pytest)
+    return pytest.main(["-q", "scripts"])  # type: ignore[attr-defined]
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

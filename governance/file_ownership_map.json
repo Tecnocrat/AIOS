@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "description": "File ownership prefix mapping. Longest prefix match (posix paths). Update via governance process.",
+    "strategy": "longest_prefix",
+    "last_updated": "2025-08-21"
+  },
+  "ai/ai_cells/": "team_ai_cells",
+  "ai/aios_vscode_integration/": "team_ai_vscode_integration",
+  "ai/src/core/": "team_ai_core",
+  "ai/src/": "team_ai_general",
+  "interface/AIOS.Models/": "team_interface_models",
+  "interface/AIOS.Services/": "team_interface_services",
+  "interface/AIOS.UI/": "team_interface_ui",
+  "core/src/": "team_core_engine",
+  "core/": "team_core_misc",
+  "runtime_intelligence/tools/": "team_runtime_tooling",
+  "runtime_intelligence/": "team_runtime_intel_fallback"
+}

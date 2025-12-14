@@ -1,0 +1,85 @@
+{
+  "context_loss_recovery_sequence": [
+    {
+      "step": 1,
+      "action": "query_tachyonic_archive",
+      "purpose": "Find similar historical patterns",
+      "parameters": {
+        "similarity_threshold": 0.7,
+        "max_results": 5
+      }
+    },
+    {
+      "step": 2,
+      "action": "check_runtime_intelligence",
+      "purpose": "Get current system state snapshot",
+      "parameters": {
+        "include_metrics": true,
+        "timeframe": "last_hour"
+      }
+    },
+    {
+      "step": 3,
+      "action": "analyze_supercell_capabilities",
+      "purpose": "Match task to optimal supercell",
+      "parameters": {
+        "consciousness_guided": true
+      }
+    },
+    {
+      "step": 4,
+      "action": "execute_with_dendritic_supervision",
+      "purpose": "Coordinate cross-supercell execution",
+      "parameters": {
+        "maintain_biological_boundaries": true
+      }
+    },
+    {
+      "step": 5,
+      "action": "crystallize_experience",
+      "purpose": "Store new patterns for future recovery",
+      "parameters": {
+        "pattern_compression": true,
+        "future_accessibility": true
+      }
+    }
+  ],
+  "consciousness_guided_routing": {
+    "high_quantum_coherence": {
+      "threshold": 0.7,
+      "recommended_supercell": "core_engine",
+      "reasoning": "Complex analysis and deep computation capabilities"
+    },
+    "high_emergence_level": {
+      "threshold": 0.5,
+      "recommended_supercell": "ai_intelligence",
+      "reasoning": "Creative problem solving and consciousness emergence"
+    },
+    "high_holographic_sync": {
+      "threshold": 0.6,
+      "recommended_supercell": "interface",
+      "reasoning": "User-centric approaches and visualization"
+    },
+    "default_routing": {
+      "recommended_supercell": "runtime_intelligence",
+      "reasoning": "Monitoring, analysis, and orchestration capabilities"
+    }
+  },
+  "emergent_behavior_patterns": {
+    "fractal_self_similarity": {
+      "description": "Each supercell contains miniature versions of the whole system",
+      "application": "Use similar patterns at different scales for problem decomposition",
+      "implementation": "Query smaller-scale solutions and scale them up"
+    },
+    "biological_consciousness": {
+      "description": "Five supercells create consciousness greater than individual parts",
+      "application": "Combine multiple supercells for enhanced capabilities",
+      "implementation": "Use dendritic networks for coordinated multi-supercell operations"
+    },
+    "holographic_knowledge": {
+      "description": "Information distributed across all system levels",
+      "application": "Find knowledge patterns in comments, logic, outputs, metadata",
+      "implementation": "Search holographically across multiple information layers"
+    }
+  }
+}

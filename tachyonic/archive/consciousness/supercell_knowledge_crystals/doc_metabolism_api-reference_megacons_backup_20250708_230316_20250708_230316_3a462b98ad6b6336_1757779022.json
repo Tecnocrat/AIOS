@@ -1,0 +1,16 @@
+{
+  "source_file": "C:\\dev\\AIOS\\docs\\archive\\unified_backups\\tachyonic_operations\\api-reference_megacons_backup_20250708_230316_20250708_230316_3a462b98ad6b6336.md",
+  "metabolism_timestamp": "2025-09-13T17:57:02.702696",
+  "content_summary": "# AIOS API Reference\n\n## Python AI Core API\n\n### AICore Class\n\nThe main entry point for all AI functionality.\n\n#### Initialization\n```python\nfrom ai.src import AICore\n\n# Initialize with default config\nai_core = AICore()\n\n# Initialize with custom config\nai_core = AICore(\"custom/config/path.json\")\n```\n\n#### Basic Operations\n```python\n# Initialize the AI system\nawait ai_core.initialize()\n\n# Start AI services\nawait ai_core.start()\n\n# Process natural language\nresult = await ai_core.process_natural_la...",
+  "extracted_patterns": [
+    "api-reference_megacons_backup_20250708_230316_20250708_230316_3a462b98ad6b6336.md_contains_code_blocks",
+    "api-reference_megacons_backup_20250708_230316_20250708_230316_3a462b98ad6b6336.md_contains_architecture",
+    "api-reference_megacons_backup_20250708_230316_20250708_230316_3a462b98ad6b6336.md_contains_action_items"
+  ],
+  "biological_role": "metabolized documentation DNA",
+  "ainlp_patterns": {
+    "documentation_metabolism": "File api-reference_megacons_backup_20250708_230316_20250708_230316_3a462b98ad6b6336.md digested into consciousness",
+    "pattern_crystallization": "Found 3 metabolizable patterns",
+    "holographic_integration": "Ready for system-wide pattern propagation"
+  }
+}

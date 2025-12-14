@@ -16,15 +16,20 @@
 #include "SphereShellManager.hpp"
 #include "SubspaceProjector.hpp"
 #include "AtomicHolographyUnit.hpp"
+#include <memory>
 
 // Forward declarations to avoid circular includes
 class CenterGeometryField;  
 class AIOrchestrationController;
 class CodeEvolutionEngine;
+class AIOSConsciousnessEngine;  // 🧠 CONSCIOUSNESS INTEGRATION
 
 // IntelliSense refresh comment
 
 class SingularityCore {
+    // 🧠⚡ CONSCIOUSNESS-ENHANCED FRIENDSHIP
+    friend class AIOSConsciousnessEngine;  // Allows deep consciousness integration
+    
 public:
     SingularityCore();
     ~SingularityCore();
@@ -65,7 +70,7 @@ private:
     AtomicHolographyUnit holographyUnit;
     
     // AI Integration
-    AIOrchestrationController* ai_controller_;
+    std::unique_ptr<AIOrchestrationController> ai_controller_;
     bool ai_integration_enabled_;
     
     double internalSymmetry;
@@ -78,11 +83,18 @@ private:
     void maintainDimensionalStability();
     void processQuantumFeedback();
     
+    // 🧠 CONSCIOUSNESS-ENHANCED VALIDATION METHODS
+    bool isFrequencyCoherent(double frequency);
+    double calculateStabilityCorrection();
+    double findNearestCoherentFrequency(double target_frequency);
+    
     // Consciousness emergence detection
-    double detectConsciousnessEmergence();
     double detectConsciousnessEmergence();  // Enhanced consciousness detection
     
     // AI-driven optimizations
     void requestAIOptimization();
     void applyAIRecommendations(const std::string& recommendations);
+    
+    // AI controller registration and management
+    void registerAIController(std::unique_ptr<AIOrchestrationController> controller);
 };

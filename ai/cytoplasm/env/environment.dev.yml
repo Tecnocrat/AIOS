@@ -1,0 +1,19 @@
+name: aios-dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - black>=23.3.0,<24.0
+  - mypy>=1.4.0,<1.8
+  - pylint>=2.17.0,<3.0
+  - rope>=1.8.0,<2.0
+  - jedi>=0.18.0,<0.20
+  - graphviz>=0.20.0,<0.25
+  - pip:
+    - autopep8>=2.0.0,<3.0
+    - isort>=5.12.0,<6.0
+    - flake8>=6.0.0,<7.0
+    - hypothesis>=6.82.0,<7.0
+    - pytest-cov>=4.1.0,<5.0

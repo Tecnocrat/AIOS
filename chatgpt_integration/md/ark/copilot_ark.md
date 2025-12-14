@@ -20254,7 +20254,8 @@ Obtain an API key from OpenAI.
 
 Store it securely in a .env file:
 
-OPENAI_API_KEY=your_api_key_here
+# .env file
+OPENAI_API_KEY=sk-your-secure-key-here
 Example Integration Code:
 
 python
@@ -20263,7 +20264,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")  # Loads from .env file securely
 
 def analyze_code_with_openai(code_snippet):
     openai.api_key = api_key
@@ -20410,7 +20411,8 @@ Create a file named .env in your project directory.
 
 Add the following line:
 
-OPENAI_API_KEY=your_api_key_here
+# .env file
+OPENAI_API_KEY=sk-your-secure-key-here
 Install the python-dotenv library to load the key securely:
 
 bash
@@ -20424,7 +20426,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")  # Loads from .env file securely
 
 openai.api_key = api_key
 response = openai.Completion.create(

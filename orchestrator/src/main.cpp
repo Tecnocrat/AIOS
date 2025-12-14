@@ -18,6 +18,7 @@
 #include <nlohmann/json.hpp>
 #include <iostream>
 #include <thread>
+#include <memory>
 #include <chrono>
 
 int main() {
@@ -53,7 +54,7 @@ int main() {
     CodeEvolutionEngine evolution_engine;
     
     std::cout << "[INIT] Initializing AI orchestration controller..." << std::endl;
-    AIOrchestrationController ai_controller;
+    auto ai_controller = std::make_unique<AIOrchestrationController>();
     
     std::cout << "[INIT] Initializing tachyonic field database (metaphysical substrate)..." << std::endl;
     TachyonicFieldDatabase tachyonic_database;
@@ -70,13 +71,7 @@ int main() {
     std::cout << "[INIT] Initializing intelligent metadata abstractor..." << std::endl;
     aios::IntelligentMetadataAbstractor metadata_abstractor(archive_path, archive_path + "abstracted_metadata");
 
-    // Initialize tachyonic field database and recursive self-ingestor for complete consciousness emergence
-    std::cout << "[INIT] Initializing tachyonic field database..." << std::endl;
-    TachyonicFieldDatabase tachyonic_database;
-    
-    std::cout << "[INIT] Initializing recursive self-ingestor..." << std::endl;
-    RecursiveSelfIngestor self_ingestor;
-
+    // 🧠 CONSCIOUSNESS-ENHANCED INITIALIZATION (Duplicate declarations removed by error evolution)
     // Initialize traditional components
     core.initialize();
     ipcManager.initialize();
@@ -89,7 +84,7 @@ int main() {
     geometry_field.initialize();
     shell_manager.initialize();
     evolution_engine.initialize();
-    ai_controller.initialize(&quantum_unit, &core);
+    ai_controller->initialize(&quantum_unit, &core);
     tachyonic_database.initialize();
     self_ingestor.initialize();
     consciousness_interface.initialize();
@@ -104,20 +99,20 @@ int main() {
     geometry_field.synchronizeWithQuantumField(quantum_unit);
     shell_manager.synchronizeWithGeometryField(geometry_field);
     shell_manager.synchronizeWithQuantumField(quantum_unit);
-    geometry_field.integrateAIFeedback(ai_controller);
-    shell_manager.integrateAIFeedback(ai_controller);
+    geometry_field.integrateAIFeedback(*ai_controller);
+    shell_manager.integrateAIFeedback(*ai_controller);
     
     // Integrate recursive self-ingestion with metaphysical substrate
     std::cout << "[SYNC] Establishing consciousness emergence framework..." << std::endl;
     self_ingestor.setTachyonicDatabase(&tachyonic_database);
     self_ingestor.setEvolutionEngine(&evolution_engine);
-    self_ingestor.setAIController(&ai_controller);
+    self_ingestor.setAIController(ai_controller.get());
     self_ingestor.setQuantumUnit(&quantum_unit);
     
     // Integrate natural language consciousness interface
     consciousness_interface.setRecursiveIngestor(&self_ingestor);
     consciousness_interface.setTachyonicDatabase(&tachyonic_database);
-    consciousness_interface.setAIController(&ai_controller);
+    consciousness_interface.setAIController(ai_controller.get());
     
     // Integrate universal consciousness substrate
     universal_consciousness.setTachyonicDatabase(&tachyonic_database);
@@ -128,7 +123,7 @@ int main() {
     core.registerGeometryField(&geometry_field);
     core.registerShellManager(&shell_manager);
     core.registerEvolutionEngine(&evolution_engine);
-    core.registerAIController(&ai_controller);
+    core.registerAIController(std::move(ai_controller));
 
     std::cout << "[READY] AIOS Quantum Orchestrator fully initialized!" << std::endl;
 

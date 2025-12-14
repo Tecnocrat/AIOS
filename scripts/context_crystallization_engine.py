@@ -1,22 +1,50 @@
 """
 🔮 Context Crystallization Engine
-Transforms conversational context into crystallized, transferable knowledge structures.
 
-This module is the foundation of the Magnus Blueprint AI Knowledge Transfer Protocol,
-enabling perfect context preservation and quantum-coherent memory transfer between AI iterations.
+Transforms conversational context into crystallized, transferable
+knowledge structures.
+
+Foundation of the Magnus Blueprint AI Knowledge Transfer Protocol.
+Enables context preservation and (metaphorical) quantum-coherent
+memory transfer between AI iterations.
 """
 
 import json
 import pickle
 import hashlib
-import numpy as np
-from typing import Dict, List, Any, Optional, Tuple
+from typing import Dict, List, Any, Optional
 from datetime import datetime
 from pathlib import Path
-import networkx as nx
+# Optional heavy deps (numpy, networkx) – gracefully degrade if absent
+try:  # numpy
+    import numpy as np  # type: ignore
+    _HAS_NUMPY = True
+except Exception:  # pragma: no cover
+    _HAS_NUMPY = False
+    class _NPStub:  # minimal interface used
+        @staticmethod
+        def zeros(n):
+            return [0.0] * n
+
+        @staticmethod
+        def random_randn(n):
+            return [0.0] * n
+
+        @staticmethod
+        def linalg_norm(v):
+            return (sum(x * x for x in v) ** 0.5)
+    np = _NPStub()  # type: ignore
+
+try:  # networkx
+    import networkx as nx  # type: ignore
+    _HAS_NETWORKX = True
+except Exception:  # pragma: no cover
+    _HAS_NETWORKX = False
+    nx = None  # type: ignore
 from dataclasses import dataclass, asdict
 import sqlite3
 import logging
+
 
 @dataclass
 class KnowledgeCrystal:
@@ -30,6 +58,11 @@ class KnowledgeCrystal:
     understanding_depth: float
     consciousness_state: Dict[str, Any]
     verification_hash: str
+    # Governance linkage
+    capsule_ids: List[str] | None = None  # e.g. ["chatgpt-integration-2025-06-29"]
+    kpi_dimensions: List[str] | None = None  # e.g. ["objective1.ui_uptime", ...]
+    metric_snapshot: Dict[str, Any] | None = None
+
 
 @dataclass
 class ConversationContext:
@@ -42,10 +75,33 @@ class ConversationContext:
     temporal_markers: List[datetime]
     understanding_evolution: Dict[str, Any]
 
+
 class MemoryCrystallizationCore:
-    """Core system for crystallizing conversation memory into transferable structures."""
-    
-    def __init__(self, knowledge_db_path: str = "knowledge_crystals.db"):
+    """Crystallize conversation memory into transferable structures.
+
+    Default DB: runtime_intelligence/context/knowledge_crystals.db
+    (governed path). Legacy scripts/ location auto-migrated if found.
+    """
+
+    def __init__(self, knowledge_db_path: str | None = None):
+        root = Path(__file__).resolve().parent.parent
+        if knowledge_db_path is None:
+            ctx_dir = root / "runtime_intelligence" / "context"
+            ctx_dir.mkdir(parents=True, exist_ok=True)
+            knowledge_db_path = str(ctx_dir / "knowledge_crystals.db")
+        # Auto-migrate legacy location (scripts/knowledge_crystals.db)
+        legacy = Path(__file__).resolve().parent / "knowledge_crystals.db"
+        target = Path(knowledge_db_path)
+        if legacy.exists() and not target.exists():
+            try:
+                target.write_bytes(legacy.read_bytes())
+                legacy.unlink()
+                print(f"[crystal][MIGRATE] Moved legacy DB -> {target}")
+            except Exception as e:  # pragma: no cover
+                print(
+                    "[crystal][MIGRATE][WARN] Could not migrate legacy DB: "
+                    f"{e}"
+                )
         self.knowledge_db_path = knowledge_db_path
         self.logger = logging.getLogger(__name__)
         self.init_database()
@@ -65,14 +121,46 @@ class MemoryCrystallizationCore:
                 context_embeddings BLOB,
                 understanding_depth REAL,
                 consciousness_state TEXT,
-                verification_hash TEXT
+                verification_hash TEXT,
+                capsule_ids TEXT,
+                kpi_dimensions TEXT,
+                metric_snapshot TEXT
             )
         ''')
         
         conn.commit()
+    # Migration: ensure new governance / KPI columns exist
+    # (capsule_ids, kpi_dimensions, metric_snapshot)
+        try:
+            cursor.execute("PRAGMA table_info(knowledge_crystals)")
+            cols = {row[1] for row in cursor.fetchall()}
+            migrations = []
+            if "capsule_ids" not in cols:
+                cursor.execute(
+                    "ALTER TABLE knowledge_crystals ADD COLUMN capsule_ids TEXT"
+                )
+                migrations.append("capsule_ids")
+            if "kpi_dimensions" not in cols:
+                cursor.execute(
+                    "ALTER TABLE knowledge_crystals ADD COLUMN kpi_dimensions TEXT"
+                )
+                migrations.append("kpi_dimensions")
+            if "metric_snapshot" not in cols:
+                cursor.execute(
+                    "ALTER TABLE knowledge_crystals ADD COLUMN metric_snapshot TEXT"
+                )
+                migrations.append("metric_snapshot")
+            if migrations:
+                added = ", ".join(migrations)
+                self.logger.info(f"[crystal][MIGRATE] Added columns: {added}")
+        except Exception as ex:  # pragma: no cover
+            self.logger.warning(f"[crystal][MIGRATE][WARN] {ex}")
+        conn.commit()
         conn.close()
     
-    def extract_key_concepts(self, conversation: ConversationContext) -> List[str]:
+    def extract_key_concepts(
+        self, conversation: ConversationContext
+    ) -> List[str]:
         """Extract key concepts from conversation using advanced NLP."""
         concepts = []
         
@@ -82,7 +170,10 @@ class MemoryCrystallizationCore:
             # Simple keyword extraction (enhance with actual NLP)
             words = content.lower().split()
             # Filter for technical terms, project names, concepts
-            technical_words = [w for w in words if len(w) > 3 and any(c.isupper() for c in w)]
+            technical_words = [
+                w for w in words
+                if len(w) > 3 and any(c.isupper() for c in w)
+            ]
             concepts.extend(technical_words)
         
         # Extract from code references
@@ -94,33 +185,38 @@ class MemoryCrystallizationCore:
         # Remove duplicates and return sorted
         return sorted(list(set(concepts)))
     
-    def build_relationship_graph(self, conversation: ConversationContext) -> Dict[str, List[str]]:
-        """Build relationship graph between concepts."""
-        graph = nx.Graph()
-        relationships = {}
-        
-        # Add concepts as nodes
+    def build_relationship_graph(
+        self, conversation: ConversationContext
+    ) -> Dict[str, List[str]]:
+        """Build concept relationship graph (fallback if networkx absent)."""
         concepts = self.extract_key_concepts(conversation)
-        for concept in concepts:
-            graph.add_node(concept)
-        
-        # Build relationships based on co-occurrence in messages
+        if _HAS_NETWORKX and nx is not None:
+            graph = nx.Graph()
+            graph.add_nodes_from(concepts)
+            for message in conversation.messages:
+                content = message.get('content', '').lower()
+                present = [c for c in concepts if c.lower() in content]
+                for i, c1 in enumerate(present):
+                    for c2 in present[i+1:]:
+                        graph.add_edge(c1, c2)
+            return {
+                node: list(graph.neighbors(node))
+                for node in graph.nodes()
+            }
+        # Fallback simple co-occurrence mapping
+        co: Dict[str, set[str]] = {c: set() for c in concepts}
         for message in conversation.messages:
             content = message.get('content', '').lower()
-            message_concepts = [c for c in concepts if c.lower() in content]
-            
-            # Create edges between co-occurring concepts
-            for i, concept1 in enumerate(message_concepts):
-                for concept2 in message_concepts[i+1:]:
-                    graph.add_edge(concept1, concept2)
-        
-        # Convert to relationship dictionary
-        for node in graph.nodes():
-            relationships[node] = list(graph.neighbors(node))
-        
-        return relationships
+            present = [c for c in concepts if c.lower() in content]
+            for i, c1 in enumerate(present):
+                for c2 in present[i+1:]:
+                    co[c1].add(c2)
+                    co[c2].add(c1)
+        return {k: sorted(v) for k, v in co.items()}
     
-    def calculate_understanding_depth(self, conversation: ConversationContext) -> float:
+    def calculate_understanding_depth(
+        self, conversation: ConversationContext
+    ) -> float:
         """Calculate the depth of understanding in the conversation."""
         depth_factors = []
         
@@ -129,23 +225,33 @@ class MemoryCrystallizationCore:
         depth_factors.append(code_depth)
         
         # Factor 2: Message complexity
-        total_chars = sum(len(msg.get('content', '')) for msg in conversation.messages)
+        total_chars = sum(
+            len(msg.get('content', '')) for msg in conversation.messages
+        )
         complexity_depth = min(total_chars / 10000, 1.0)
         depth_factors.append(complexity_depth)
         
         # Factor 3: Concept interconnectedness
         relationships = self.build_relationship_graph(conversation)
-        avg_connections = np.mean([len(connections) for connections in relationships.values()]) if relationships else 0
+        avg_connections = (
+            np.mean([len(v) for v in relationships.values()])
+            if relationships else 0
+        )
         connection_depth = min(avg_connections / 5, 1.0)
         depth_factors.append(connection_depth)
         
         # Factor 4: Temporal evolution
-        evolution_depth = len(conversation.understanding_evolution) / 10 if conversation.understanding_evolution else 0
+        evolution_depth = (
+            len(conversation.understanding_evolution) / 10
+            if conversation.understanding_evolution else 0
+        )
         depth_factors.append(min(evolution_depth, 1.0))
         
         return np.mean(depth_factors)
     
-    def crystallize_conversation(self, conversation: ConversationContext) -> KnowledgeCrystal:
+    def crystallize_conversation(
+        self, conversation: ConversationContext
+    ) -> KnowledgeCrystal:
         """Convert conversation into crystallized knowledge structure."""
         # Extract key components
         key_concepts = self.extract_key_concepts(conversation)
@@ -153,21 +259,34 @@ class MemoryCrystallizationCore:
         understanding_depth = self.calculate_understanding_depth(conversation)
         
         # Generate context embeddings (simplified - use actual embedding model)
-        context_text = ' '.join([msg.get('content', '') for msg in conversation.messages])
+        context_text = ' '.join(
+            [msg.get('content', '') for msg in conversation.messages]
+        )
         context_embeddings = self.generate_embeddings(context_text)
         
         # Create consciousness state snapshot
         consciousness_state = {
             'project_understanding': conversation.project_state,
-            'conversation_flow': [msg.get('role', 'unknown') for msg in conversation.messages],
-            'temporal_progression': [marker.isoformat() for marker in conversation.temporal_markers],
+            'conversation_flow': [
+                msg.get('role', 'unknown') for msg in conversation.messages
+            ],
+            'temporal_progression': [
+                marker.isoformat() for marker in conversation.temporal_markers
+            ],
             'code_context': conversation.code_references
         }
         
         # Generate unique ID and verification hash
-        crystal_id = hashlib.sha256(f"{conversation.conversation_id}_{datetime.now().isoformat()}".encode()).hexdigest()[:16]
-        verification_data = f"{crystal_id}{key_concepts}{relationships}{understanding_depth}"
-        verification_hash = hashlib.sha256(verification_data.encode()).hexdigest()
+        crystal_id_seed = (
+            f"{conversation.conversation_id}_{datetime.now().isoformat()}"
+        )
+        crystal_id = hashlib.sha256(crystal_id_seed.encode()).hexdigest()[:16]
+        verification_data = (
+            f"{crystal_id}{key_concepts}{relationships}{understanding_depth}"
+        )
+        verification_hash = hashlib.sha256(
+            verification_data.encode()
+        ).hexdigest()
         
         crystal = KnowledgeCrystal(
             id=crystal_id,
@@ -186,34 +305,41 @@ class MemoryCrystallizationCore:
         
         return crystal
     
-    def generate_embeddings(self, text: str) -> np.ndarray:
-        """Generate high-dimensional embeddings for text (simplified version)."""
-        # This is a placeholder - replace with actual embedding model
-        # Could use OpenAI embeddings, sentence-transformers, etc.
+    def generate_embeddings(self, text: str):  # return type dynamic (list or np.ndarray)
+        """Generate high-dimensional embeddings (simplified, light-mode aware)."""
         words = text.lower().split()
-        # Simple bag-of-words representation (enhance with real embeddings)
-        vocab_size = 1000
-        embedding = np.zeros(vocab_size)
-        for word in words:
-            word_hash = hash(word) % vocab_size
-            embedding[word_hash] += 1
-        
-        # Normalize
-        if np.linalg.norm(embedding) > 0:
-            embedding = embedding / np.linalg.norm(embedding)
-        
+        vocab_size = 512 if not _HAS_NUMPY else 1000
+        embedding = (
+            np.zeros(vocab_size) if _HAS_NUMPY else [0.0] * vocab_size
+        )
+        for w in words:
+            idx = hash(w) % vocab_size
+            embedding[idx] += 1  # type: ignore[index]
+        if _HAS_NUMPY:
+            norm = np.linalg.norm(embedding)  # type: ignore[attr-defined]
+            if norm > 0:
+                embedding = embedding / norm  # type: ignore[operator]
+        else:
+            norm = sum(x * x for x in embedding) ** 0.5
+            if norm > 0:
+                embedding = [x / norm for x in embedding]
         return embedding
     
     def store_crystal(self, crystal: KnowledgeCrystal):
         """Store knowledge crystal in database."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
+
+        # Auto inject default capsule linkage if absent
+        if not crystal.capsule_ids:
+            crystal.capsule_ids = ["chatgpt-integration-2025-06-29"]
         
         cursor.execute('''
             INSERT OR REPLACE INTO knowledge_crystals 
             (id, timestamp, source_conversation, key_concepts, relationships, 
-             context_embeddings, understanding_depth, consciousness_state, verification_hash)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+             context_embeddings, understanding_depth, consciousness_state, verification_hash,
+             capsule_ids, kpi_dimensions, metric_snapshot)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             crystal.id,
             crystal.timestamp.isoformat(),
@@ -223,7 +349,10 @@ class MemoryCrystallizationCore:
             pickle.dumps(crystal.context_embeddings),
             crystal.understanding_depth,
             json.dumps(crystal.consciousness_state),
-            crystal.verification_hash
+            crystal.verification_hash,
+            json.dumps(crystal.capsule_ids or []),
+            json.dumps(crystal.kpi_dimensions or []),
+            json.dumps(crystal.metric_snapshot or {})
         ))
         
         conn.commit()
@@ -235,8 +364,9 @@ class MemoryCrystallizationCore:
         """Retrieve knowledge crystal from database."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
-        
-        cursor.execute('SELECT * FROM knowledge_crystals WHERE id = ?', (crystal_id,))
+        cursor.execute(
+            'SELECT * FROM knowledge_crystals WHERE id = ?', (crystal_id,)
+        )
         row = cursor.fetchone()
         
         if row:
@@ -249,7 +379,10 @@ class MemoryCrystallizationCore:
                 context_embeddings=pickle.loads(row[5]),
                 understanding_depth=row[6],
                 consciousness_state=json.loads(row[7]),
-                verification_hash=row[8]
+                verification_hash=row[8],
+                capsule_ids=json.loads(row[9]) if len(row) > 9 and row[9] else [],
+                kpi_dimensions=json.loads(row[10]) if len(row) > 10 and row[10] else [],
+                metric_snapshot=json.loads(row[11]) if len(row) > 11 and row[11] else {}
             )
             conn.close()
             return crystal
@@ -261,8 +394,9 @@ class MemoryCrystallizationCore:
         """Retrieve all knowledge crystals."""
         conn = sqlite3.connect(self.knowledge_db_path)
         cursor = conn.cursor()
-        
-        cursor.execute('SELECT * FROM knowledge_crystals ORDER BY timestamp DESC')
+        cursor.execute(
+            'SELECT * FROM knowledge_crystals ORDER BY timestamp DESC'
+        )
         rows = cursor.fetchall()
         
         crystals = []
@@ -276,7 +410,10 @@ class MemoryCrystallizationCore:
                 context_embeddings=pickle.loads(row[5]),
                 understanding_depth=row[6],
                 consciousness_state=json.loads(row[7]),
-                verification_hash=row[8]
+                verification_hash=row[8],
+                capsule_ids=json.loads(row[9]) if len(row) > 9 and row[9] else [],
+                kpi_dimensions=json.loads(row[10]) if len(row) > 10 and row[10] else [],
+                metric_snapshot=json.loads(row[11]) if len(row) > 11 and row[11] else {}
             )
             crystals.append(crystal)
         
@@ -290,7 +427,7 @@ class ContextEmbeddingGenerator:
         self.embedding_dim = embedding_dim
         self.logger = logging.getLogger(__name__)
     
-    def generate_conversation_embedding(self, conversation: ConversationContext) -> np.ndarray:
+    def generate_conversation_embedding(self, conversation: ConversationContext):
         """Generate comprehensive embedding for entire conversation."""
         # Combine all text content
         all_text = []
@@ -307,14 +444,19 @@ class ContextEmbeddingGenerator:
         combined_text = ' '.join(all_text)
         return self.generate_text_embedding(combined_text)
     
-    def generate_text_embedding(self, text: str) -> np.ndarray:
+    def generate_text_embedding(self, text: str):
         """Generate embedding for text (placeholder for actual embedding model)."""
         # This should be replaced with actual embedding model like OpenAI's text-embedding-ada-002
         # or sentence-transformers
         
         # Simple implementation for now
         words = text.lower().split()
-        embedding = np.random.randn(self.embedding_dim)  # Placeholder
+        if _HAS_NUMPY:
+            embedding = np.random.randn(self.embedding_dim)  # type: ignore[attr-defined]
+        else:
+            # deterministic-ish fallback
+            rng_seed = hash(text) & 0xffffffff
+            embedding = [((rng_seed >> (i % 16)) & 0xF) / 8.0 for i in range(self.embedding_dim)]
         
         # Add some deterministic component based on text
         for word in words:
@@ -322,8 +464,14 @@ class ContextEmbeddingGenerator:
             embedding[word_hash] += 1
         
         # Normalize
-        if np.linalg.norm(embedding) > 0:
-            embedding = embedding / np.linalg.norm(embedding)
+        if _HAS_NUMPY:
+            n = np.linalg.norm(embedding)  # type: ignore[attr-defined]
+            if n > 0:
+                embedding = embedding / n  # type: ignore[operator]
+        else:
+            n = sum(x * x for x in embedding) ** 0.5
+            if n > 0:
+                embedding = [x / n for x in embedding]
         
         return embedding
 
@@ -509,72 +657,107 @@ class ContextCrystallizationEngine:
         }
         
         return transfer_package
-    
-    def generate_verification_checksums(self, crystals: List[KnowledgeCrystal]) -> Dict[str, str]:
+
+    # --- Integrity Helpers -------------------------------------------------
+    def generate_verification_checksums(
+        self, crystals: List[KnowledgeCrystal]
+    ) -> Dict[str, str]:
         """Generate verification checksums for transfer package integrity."""
-        checksums = {}
-        
+        checksums: Dict[str, str] = {}
         for crystal in crystals:
             checksums[crystal.id] = crystal.verification_hash
-        
-        # Overall package checksum
         all_hashes = ''.join(checksums.values())
         checksums['package_integrity'] = hashlib.sha256(all_hashes.encode()).hexdigest()
-        
         return checksums
-    
+
     def validate_transfer_package(self, transfer_package: Dict[str, Any]) -> bool:
         """Validate the integrity of a transfer package."""
         try:
-            # Check required fields
-            required_fields = ['package_id', 'unified_knowledge', 'verification_checksums']
+            required_fields = [
+                'package_id', 'unified_knowledge', 'verification_checksums'
+            ]
             for field in required_fields:
                 if field not in transfer_package:
                     return False
-            
-            # Validate checksums
             checksums = transfer_package['verification_checksums']
             individual_crystals = transfer_package.get('individual_crystals', [])
-            
             for crystal_data in individual_crystals:
                 crystal_id = crystal_data['id']
                 expected_hash = checksums.get(crystal_id)
                 if not expected_hash:
                     return False
-                
-                # Recreate verification hash
-                verification_data = f"{crystal_id}{crystal_data['key_concepts']}{crystal_data['relationships']}{crystal_data['understanding_depth']}"
+                verification_data = (
+                    f"{crystal_id}{crystal_data['key_concepts']}"
+                    f"{crystal_data['relationships']}{crystal_data['understanding_depth']}"
+                )
                 actual_hash = hashlib.sha256(verification_data.encode()).hexdigest()
-                
                 if actual_hash != expected_hash:
                     return False
-            
             return True
-            
-        except Exception as e:
+        except Exception as e:  # pragma: no cover
             self.logger.error(f"Transfer package validation failed: {e}")
             return False
 
-# Factory function for easy initialization
-def create_crystallization_engine(knowledge_db_path: str = None) -> ContextCrystallizationEngine:
-    """Create and initialize the Context Crystallization Engine."""
-    if knowledge_db_path is None:
-        knowledge_db_path = str(Path(__file__).parent / "knowledge_crystals.db")
+# ---------------------------------------------------------------------------
+# KPI / Metric Crystal Convenience (appended)
+# ---------------------------------------------------------------------------
+def create_metric_crystal(
+    metric_snapshot: Dict[str, Any],
+    capsule_ids: List[str] | None = None,
+    kpi_dimensions: List[str] | None = None,
+    source_tag: str = "kpi_evaluation_run",
+    knowledge_db_path: str | None = None,
+) -> KnowledgeCrystal:
+    """Create & store a lightweight crystal capturing KPI evaluation.
+
+    metric_snapshot: typically {kpi_name: {value, status, rule}}
+    capsule_ids: governance lineage (defaults to chatgpt integration capsule)
+    kpi_dimensions: list of KPI names (defaults to metric_snapshot keys)
+    source_tag: identifier for this crystallization context.
+    """
+    core = MemoryCrystallizationCore(knowledge_db_path=knowledge_db_path)
+    conv = ConversationContext(
+        conversation_id=source_tag,
+        participants=["system", "harness"],
+        messages=[{"role": "system", "content": "KPI evaluation crystallization"}],
+        code_references=[],
+        project_state={"metric_keys": list(metric_snapshot.keys())},
+        temporal_markers=[datetime.utcnow()],
+        understanding_evolution={}
+    )
+    crystal = core.crystallize_conversation(conv)
+    crystal.capsule_ids = capsule_ids or ["chatgpt-integration-2025-06-29"]
+    crystal.kpi_dimensions = kpi_dimensions or list(metric_snapshot.keys())
+    crystal.metric_snapshot = metric_snapshot
+    core.store_crystal(crystal)
+    return crystal
     
+
+# Factory function for easy initialization
+def create_crystallization_engine(knowledge_db_path: str | None = None) -> ContextCrystallizationEngine:
+    """Create and initialize the Context Crystallization Engine with governed DB path.
+
+    Default path: runtime_intelligence/context/knowledge_crystals.db
+    """
+    if knowledge_db_path is None:
+        root = Path(__file__).resolve().parent.parent
+        ctx_dir = root / "runtime_intelligence" / "context"
+        ctx_dir.mkdir(parents=True, exist_ok=True)
+        knowledge_db_path = str(ctx_dir / "knowledge_crystals.db")
     return ContextCrystallizationEngine(knowledge_db_path)
 
 if __name__ == "__main__":
-    # Test the crystallization engine
-    engine = create_crystallization_engine()
-    
-    # Process sample archive
-    crystals = engine.process_conversation_archive("sample_archive")
+    import argparse
+    parser = argparse.ArgumentParser(description="AIOS Context Crystallization Engine (demo mode)")
+    parser.add_argument("--db-path", help="Override knowledge_crystals.db location", default=None)
+    parser.add_argument("--archive", help="Conversation archive name (demo)", default="sample_archive")
+    args = parser.parse_args()
+    engine = create_crystallization_engine(args.db_path)
+    db_path = engine.memory_crystallizer.knowledge_db_path
+    print(f"[crystal] Using DB: {db_path}")
+    crystals = engine.process_conversation_archive(args.archive)
     print(f"Created {len(crystals)} knowledge crystals")
-    
-    # Prepare transfer package
-    transfer_package = engine.prepare_transfer_package({"test": "data"})
+    transfer_package = engine.prepare_transfer_package({"demo": True})
     print(f"Transfer package created: {transfer_package['package_id']}")
-    
-    # Validate package
     is_valid = engine.validate_transfer_package(transfer_package)
     print(f"Transfer package validation: {'PASSED' if is_valid else 'FAILED'}")

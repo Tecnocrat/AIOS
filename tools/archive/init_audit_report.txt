@@ -1,0 +1,60 @@
+CLEANUP CHECKLIST: __init__.py LOGIC REFACTOR (2025-07-17)
+
+# For each file below, move all core logic (class/function definitions, business logic) to a dedicated module (e.g., bridge.py, core.py, etc.).
+# Leave only minimal imports or package-level setup in __init__.py.
+# Mark each as [UNCOMPLETE] until refactor is done.
+
+[COMPLETE] C:\dev\AIOS\ai\src\__init__.py
+  Total lines: 340
+  Logic lines: [9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 25, 33, 54, 66, 91, 120, 137, 190, 206, 221, 236, 258, 296, 309, 324, 335]
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\ainlp\__init__.py
+  Total lines: 17
+  Logic lines: [9]
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\ainlp\kernel\__init__.py
+  Total lines: 25
+  Logic lines: [9, 11]
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\ainlp\kernel\tooling\__init__.py
+  Total lines: 19
+  Logic lines: [9]
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\ainlp\utils\__init__.py
+  Total lines: 15
+  Logic lines: [6, 7, 10]
+  Refactored: Logic moved to utils.py, __init__.py now only imports.
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\automation\__init__.py
+  Total lines: 329
+  Logic lines: [8, 9, 10, 15, 22, 42, 69, 90, 104, 145, 203, 228, 254, 259, 264, 269, 274, 279, 285, 300]
+  Refactored: Logic moved to automation_manager.py, __init__.py now only imports.
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\integration\__init__.py
+  Total lines: 359
+  Logic lines: [8, 9, 10, 11, 12, 13, 18, 25, 49, 90, 123, 141, 184, 217, 237, 264, 288, 299, 314, 330]
+  Refactored: Logic moved to integration_bridge.py, __init__.py now only imports.
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\learning\__init__.py
+  Total lines: 397
+  Logic lines: [8, 9, 10, 11, 16, 23, 46, 72, 98, 107, 136, 181, 217, 242, 264, 284, 309, 337, 353, 368]
+  Refactored: Logic moved to learning_core.py, __init__.py now only imports.
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\nlp\__init__.py
+  Total lines: 249
+  Logic lines: [8, 9, 10, 15, 23, 43, 75, 96, 105, 141, 165, 195, 213, 227]
+  Refactored: Logic moved to nlp_core.py, __init__.py now only imports.
+
+[COMPLETE] C:\dev\AIOS\ai\src\core\prediction\__init__.py
+  Total lines: 287
+  Logic lines: [8, 9, 10, 11, 12, 17, 25, 44, 71, 92, 101, 129, 173, 188, 209, 247, 261, 287]
+  Refactored: Logic moved to prediction_core.py, __init__.py now only imports.
+
+[COMPLETE] C:\dev\AIOS\ai\src\maintenance\__init__.py
+  Total lines: 29
+  Logic lines: [15, 16, 17, 18]
+  Refactored: Logic moved to maintenance_core.py, __init__.py now only imports.
+
+# (Third-party and build system files omitted from checklist)
+
+# Update this checklist as each file is refactored. When complete, change [UNCOMPLETE] to [COMPLETE] and note the new module location for the logic.
