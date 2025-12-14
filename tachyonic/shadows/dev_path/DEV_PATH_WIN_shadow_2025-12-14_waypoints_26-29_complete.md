@@ -454,13 +454,36 @@ SOURCE (0.88) ───── config/, .aios_context, pyproject.toml
 
 ---
 
+## 📜 Waypoint 30 Archive (Completed 2025-12-14)
+
+**Schema Integration (Nous)**
+- Added aios-schema import to `Nous/mesh.py` with graceful fallback
+- Created `Nous/requirements.txt` with installation notes
+- Pattern: `try: from aios_schema import... except ImportError: define locally`
+
+---
+
+## 📜 Pending Waypoints 23-25 (Moved to INTEGRATION_PROJECTS.md)
+
+**Archived**: 2025-12-14 (dev_path minimization)
+**New Location**: `docs/INTEGRATION_PROJECTS.md#-pending-waypoints`
+
+| Waypoint | Description | Status at Archive |
+|----------|-------------|-------------------|
+| 23 | Quantum-Tachyonic Bridge | 40% (docs exist, no cross-repo code) |
+| 24 | Core Engine Revival (C++ DLL) | 0% (deferred) |
+| 25 | Organism Health Dashboard | 0% (planning) |
+
+---
+
 <!-- ============================================================================ -->
 <!-- SHADOW FOOTER                                                              -->
 <!-- ============================================================================ -->
-<!-- Archive Complete: Waypoints 26-29 operational details preserved            -->
-<!-- Living Doc: dev_path_win.md now contains only active waypoints             -->
-<!-- Next Shadow: Will be created when new waypoints complete                   -->
-<!-- Immutable: DO NOT MODIFY this file after creation                          -->
+<!-- Archive Complete: Waypoints 26-30 + pending 23-25 status preserved         -->
+<!-- Living Doc: dev_path_win.md now minimal (~100 lines)                       -->
+<!-- Pending Waypoints: Moved to INTEGRATION_PROJECTS.md for roadmap tracking   -->
+<!-- Shadow Naming: Kept as 26-29 (primary content), merged additional context  -->
+<!-- Immutable: Further updates should append, not modify existing sections     -->
 <!-- ============================================================================ -->
 
-*AIOS Tachyonic Shadow — Waypoints 26-29 (2025-12-14)*
+*AIOS Tachyonic Shadow — Waypoints 26-30 + Pending Status (2025-12-14)*
