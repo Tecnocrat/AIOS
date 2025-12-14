@@ -67,15 +67,36 @@ AINLP.class[ACTION](params)
 | Code | Tool | AIOS Remediation |
 |------|------|------------------|
 | **PSUseDeclaredVarsMoreThanAssignments** | PSScriptAnalyzer | `$null = command` to discard output |
+| **PSAvoidAssignmentToAutomaticVariable** | PSScriptAnalyzer | Rename variable (don't shadow `$Args`, `$Error`, etc.) |
 | **PSAvoidUsingCmdletAliases** | PSScriptAnalyzer | Use full cmdlet names (`Get-ChildItem` not `ls`) |
 | **PSAvoidUsingWriteHost** | PSScriptAnalyzer | Use `Write-Output` or `Write-Information` (or ignore for UI scripts) |
 | **PSAvoidGlobalVars** | PSScriptAnalyzer | Use `$script:` scope or pass parameters |
+
+### PowerShell Automatic Variables (Never Shadow)
+
+```powershell
+# These are PowerShell built-ins - NEVER assign to them:
+$Args        # Arguments not bound to parameters
+$Error       # Array of recent errors  
+$Home        # User's home directory
+$Host        # PowerShell host object
+$Input       # Pipeline input enumerator
+$PSItem      # Current pipeline object ($_)
+$PWD         # Current working directory
+$null        # Null value (ok to assign TO, not FROM)
+
+# CORRECT: Use descriptive names instead
+$PythonArgs  # ✅ Instead of $Args
+$ErrorList   # ✅ Instead of $Error  
+$UserHome    # ✅ Instead of $Home
+```
 
 ### PowerShell Pattern Quick Reference
 
 | Anti-Pattern ❌ | Correct Pattern ✅ |
 |-----------------|-------------------|
 | `$unused = docker info 2>&1` | `$null = docker info 2>&1` |
+| `$Args = @(...)` | `$PythonArgs = @(...)` |
 | `ls`, `dir`, `cat` | `Get-ChildItem`, `Get-Content` |
 | `$global:myVar` | `$script:myVar` or parameter passing |
 | Bare `Write-Host` in libraries | `Write-Output` or `Write-Verbose` |
