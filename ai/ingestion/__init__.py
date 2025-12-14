@@ -58,10 +58,15 @@ __author__ = "AIOS"
 
 from .protocol import KnowledgeItem, KnowledgeSource, IngestionResult
 from .registry import SourceRegistry
+from .deduplication import DeduplicationEngine, get_dedup_engine
+from .output import OutputGenerator
 
 __all__ = [
     "KnowledgeItem",
-    "KnowledgeSource", 
+    "KnowledgeSource",
     "IngestionResult",
     "SourceRegistry",
+    "DeduplicationEngine",
+    "get_dedup_engine",
+    "OutputGenerator",
 ]

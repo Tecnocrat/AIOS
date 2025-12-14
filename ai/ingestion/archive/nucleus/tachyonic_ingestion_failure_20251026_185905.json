@@ -1,0 +1,75 @@
+{
+  "ingestion_timestamp": "2025-10-26T18:59:05.913698",
+  "total_files_processed": 11,
+  "successful_ingestions": 0,
+  "failed_ingestions": 11,
+  "database_stats": {
+    "total_backups": 0,
+    "unique_content": 0,
+    "duplicate_content": 0,
+    "total_size_bytes": 0,
+    "actual_size_bytes": 0,
+    "space_saved_bytes": 0,
+    "space_saved_percent": 0,
+    "deduplication_ratio": 0
+  },
+  "recovery_pattern": "AINLP.tachyonic{recovery}",
+  "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+  "ingestion_log": [
+    {
+      "file": "tachyonic\\tools\\orchestrators\\aios_dendritic_superclass.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\orchestrators\\aios_unified_consciousness_system.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\utilities\\aios_universal_communication_system.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\utilities\\tachyonic_layer_reader.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\interfaces\\ai_intelligence_supercell_interface.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\ingestors\\documentation_ingestion_system.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\ingestors\\revolutionary_archive_ingestion.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\ingestors\\supercell_knowledge_injector.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\demos\\demo_documentation_ingestion.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\tools\\demos\\tachyonic_evolution_demo.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    },
+    {
+      "file": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_implementation.py",
+      "status": "error",
+      "error": "Failed to store in database: AIOSDatabase.add_backup() got an unexpected keyword argument 'metadata'"
+    }
+  ]
+}

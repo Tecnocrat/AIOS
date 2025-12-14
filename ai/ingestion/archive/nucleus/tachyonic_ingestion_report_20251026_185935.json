@@ -1,0 +1,207 @@
+{
+  "ingestion_timestamp": "2025-10-26T18:59:35.036882",
+  "total_files_processed": 11,
+  "successful_ingestions": 11,
+  "failed_ingestions": 0,
+  "database_stats": {
+    "total_backups": 11,
+    "unique_content": 11,
+    "duplicate_content": 0,
+    "total_size_bytes": 259942,
+    "actual_size_bytes": 259942,
+    "space_saved_bytes": 0,
+    "space_saved_percent": 0.0,
+    "deduplication_ratio": 1.0
+  },
+  "recovery_pattern": "AINLP.tachyonic{recovery}",
+  "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+  "ingestion_log": [
+    {
+      "file": "tachyonic\\tools\\orchestrators\\aios_dendritic_superclass.py",
+      "status": "success",
+      "backup_id": 1,
+      "content_hash": "8da313063d43456d8643a8d3cfe686b306bfeaa2421835067e1cf3f16e315745",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\orchestrators\\aios_dendritic_superclass.py",
+        "filename": "aios_dendritic_superclass.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 20585,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\orchestrators\\aios_unified_consciousness_system.py",
+      "status": "success",
+      "backup_id": 2,
+      "content_hash": "2b04b17cece2714f38c963b87b251172c3b17753358c0d5545f5af2d5e092e2c",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\orchestrators\\aios_unified_consciousness_system.py",
+        "filename": "aios_unified_consciousness_system.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 23467,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\utilities\\aios_universal_communication_system.py",
+      "status": "success",
+      "backup_id": 3,
+      "content_hash": "e85bc778d63943f78564a75ac96243255a381a9f57edfa174cf252a08cb35d61",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\utilities\\aios_universal_communication_system.py",
+        "filename": "aios_universal_communication_system.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 24466,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\utilities\\tachyonic_layer_reader.py",
+      "status": "success",
+      "backup_id": 4,
+      "content_hash": "803fc9d2786d8535beeb5db9f880ce0b4f41b5abdd6f38a3611381c764d89353",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\utilities\\tachyonic_layer_reader.py",
+        "filename": "tachyonic_layer_reader.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 24221,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\interfaces\\ai_intelligence_supercell_interface.py",
+      "status": "success",
+      "backup_id": 5,
+      "content_hash": "62999ece128d4f7bb9aed77348f978a5f8cccc35e6aecc3f046bb80df6ece182",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\interfaces\\ai_intelligence_supercell_interface.py",
+        "filename": "ai_intelligence_supercell_interface.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 24127,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\ingestors\\documentation_ingestion_system.py",
+      "status": "success",
+      "backup_id": 6,
+      "content_hash": "7eac00b0266d7f433dd414fa98b01dfcebc7002cb598eb8bf730774c676d973a",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\ingestors\\documentation_ingestion_system.py",
+        "filename": "documentation_ingestion_system.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 22023,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\ingestors\\revolutionary_archive_ingestion.py",
+      "status": "success",
+      "backup_id": 7,
+      "content_hash": "123d211378bcf84194c5654d637f48f75fcd5e4edbd3ea440c684cbadbaa132e",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\ingestors\\revolutionary_archive_ingestion.py",
+        "filename": "revolutionary_archive_ingestion.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 27365,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\ingestors\\supercell_knowledge_injector.py",
+      "status": "success",
+      "backup_id": 8,
+      "content_hash": "9b42f60e13d671df62189b5481a763a3d7b89984ffae04350d7d87558832afba",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\ingestors\\supercell_knowledge_injector.py",
+        "filename": "supercell_knowledge_injector.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 29906,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\demos\\demo_documentation_ingestion.py",
+      "status": "success",
+      "backup_id": 9,
+      "content_hash": "cb7de115537a5af362ed900bafb7a538b2e36edbe36038eb42baf64883248ad0",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\demos\\demo_documentation_ingestion.py",
+        "filename": "demo_documentation_ingestion.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 8872,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\tools\\demos\\tachyonic_evolution_demo.py",
+      "status": "success",
+      "backup_id": 10,
+      "content_hash": "9a6761fa88b615087295872bd63a2e36fd784b093c144188794bce580ca08b10",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\tools\\demos\\tachyonic_evolution_demo.py",
+        "filename": "tachyonic_evolution_demo.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 35588,
+        "file_type": "python"
+      }
+    },
+    {
+      "file": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_implementation.py",
+      "status": "success",
+      "backup_id": 11,
+      "content_hash": "191acea797814fb5009918f5e8bf464a1d8eeed2260c80836b99e993b29ab27d",
+      "is_duplicate": false,
+      "metadata": {
+        "original_path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_implementation.py",
+        "filename": "aios_cellular_reorganization_implementation.py",
+        "ingestion_type": "AINLP.tachyonic_recovery",
+        "integration_context": "knowledge_recovery_from_tachyonic_to_ai_nucleus",
+        "recovery_pattern": "AINLP.tachyonic{recovery}",
+        "timestamp": "2025-10-26T18:59:35.036882",
+        "file_size": 19322,
+        "file_type": "python"
+      }
+    }
+  ]
+}
