@@ -5,15 +5,15 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.6 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.7 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J) - discoverability  -->
 <!-- v1.6: Agentic Quantum Error Correction (G) + Knowledge Extraction (H)      -->
 <!-- v1.5: Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace        -->
 <!-- v1.4: Bible Compliance Protocol (Appendix E) - Agent validation workflow   -->
 <!-- v1.3: Enforced Dendritic Density Pattern (Appendix D.3 UPGRADE)            -->
-<!-- v1.2: Cross-Repository Dendritic Connections (Appendix D)                  -->
 <!-- ============================================================================ -->
 
 ## HEAD: Quick Reference (Lines 1-60)
@@ -54,6 +54,7 @@ AINLP.class[ACTION](params)
 | **W293** | Flake8 | `(Get-Content $f) \| % { $_.TrimEnd() } \| Set-Content $f` |
 | **F811** | Flake8 | `# noqa: F811` for conditional class definitions |
 | **F841** | Flake8 | Prefix with `_` OR document with `AINLP.loader[latent]` |
+| **C0301** | Pylint | `AINLP.buffer[79::85::86]` - max-line-length=85 in `.pylintrc` |
 | **W1514** | Pylint | Add `encoding='utf-8'` to `open()` calls |
 | **E722** | Flake8 | Replace bare `except:` with specific exceptions |
 | **reportAssignmentType** | Pylance | Use `Optional[T]` not `T = None` for nullable params |
@@ -87,6 +88,8 @@ AINLP.class[ACTION](params)
 12. [APPENDIX F: Debug Pattern Dictionary](#appendix-f-debug-pattern-dictionary-ainlpdebug)
 13. [APPENDIX G: Agentic Quantum Error Correction](#appendix-g-agentic-quantum-error-correction-ainlpbuffer)
 14. [APPENDIX H: Knowledge Extraction Blueprint](#appendix-h-knowledge-extraction-blueprint-ainlpdiscovery)
+15. [APPENDIX I: Tool Configuration Precedence](#appendix-i-tool-configuration-precedence)
+16. [APPENDIX J: AIOS Scripts Registry](#appendix-j-aios-scripts-registry)
 
 ---
 
@@ -1970,10 +1973,252 @@ With Bible:
 
 ---
 
+# APPENDIX I: Tool Configuration Precedence
+
+## I.1 The Decoherence Problem
+
+**AINLP.discovery[KNOWLEDGE]** Tool-Config Decoherence
+**Date:** 2025-12-14
+**Context:** Pylint not reading `setup.cfg` configuration
+**Observer:** Agent during C0301 remediation
+
+### The Problem
+
+When applying `AINLP.buffer[79::85::86]`, Pylint ignored the `setup.cfg` configuration:
+
+```ini
+# setup.cfg - THIS WAS IGNORED
+[pylint.format]
+max-line-length = 85
+```
+
+**Root Cause:** Pylint has specific configuration file precedence that differs from other tools.
+
+### Knowledge Crystallization
+
+**PRINCIPLE:** Each linting tool has its own configuration file precedence hierarchy. Assuming universal `setup.cfg` support causes decoherence between intent and behavior.
+
+## I.2 Configuration File Precedence by Tool
+
+### Pylint Configuration Precedence
+
+```
+1. Command line arguments (highest priority)
+2. pylintrc in current directory
+3. .pylintrc in current directory
+4. pyproject.toml [tool.pylint] section
+5. setup.cfg [pylint] section (NOT [pylint.format]!)
+6. ~/.pylintrc
+7. /etc/pylintrc (lowest priority)
+```
+
+**CRITICAL:** In `setup.cfg`, use `[pylint]` NOT `[pylint.format]`
+
+```ini
+# WRONG ❌
+[pylint.format]
+max-line-length = 85
+
+# CORRECT ✅
+[pylint]
+max-line-length = 85
+```
+
+### Flake8 Configuration Precedence
+
+```
+1. Command line arguments
+2. .flake8 in project root
+3. setup.cfg [flake8] section
+4. tox.ini [flake8] section
+5. ~/.config/flake8
+```
+
+### Pyright/Pylance Configuration Precedence
+
+```
+1. pyrightconfig.json in project root (preferred)
+2. pyproject.toml [tool.pyright] section
+3. VS Code settings.json python.analysis.*
+```
+
+### Black Configuration Precedence
+
+```
+1. Command line arguments
+2. pyproject.toml [tool.black] section (ONLY supported location)
+```
+
+**NOTE:** Black ONLY reads from `pyproject.toml` - no setup.cfg support!
+
+### Ruff Configuration Precedence
+
+```
+1. Command line arguments
+2. pyproject.toml [tool.ruff] section
+3. ruff.toml in project root
+4. .ruff.toml in project root
+```
+
+## I.3 Unified AIOS Configuration Strategy
+
+For maximum compatibility across tools:
+
+| Tool | Primary Config | Fallback |
+|------|---------------|----------|
+| Pylint | `.pylintrc` | `setup.cfg [pylint]` |
+| Flake8 | `setup.cfg [flake8]` | `.flake8` |
+| Pyright | `pyrightconfig.json` | `pyproject.toml` |
+| Black | `pyproject.toml` | (none) |
+| Ruff | `pyproject.toml` | `ruff.toml` |
+| isort | `setup.cfg [isort]` | `pyproject.toml` |
+| mypy | `mypy.ini` | `setup.cfg [mypy]` |
+
+### Recommended AIOS Cell Configuration Files
+
+```
+cell-repository/
+├── .pylintrc              # Pylint (max-line-length=85)
+├── pyrightconfig.json     # Pylance/Pyright extraPaths
+├── setup.cfg              # Flake8, pycodestyle, isort
+└── pyproject.toml         # Black, Ruff, project metadata
+```
+
+## I.4 Anti-Pattern: Config Assumption
+
+**AINLP.avoid[CONFIG::ASSUMPTION]**
+
+```python
+# Anti-Pattern: Assuming all tools read setup.cfg the same way
+# Created setup.cfg with [pylint.format] - Pylint ignored it
+
+# Pattern: Verify tool-specific config format before applying
+# Pylint needs [pylint] not [pylint.format] in setup.cfg
+# Or better: use .pylintrc for Pylint-specific settings
+```
+
+---
+
+# APPENDIX J: AIOS Scripts Registry
+
+## J.1 The Discoverability Problem
+
+**AINLP.discovery[KNOWLEDGE]** Hidden Tool Syndrome
+**Date:** 2025-12-14
+**Context:** `ainlp_buffer_remediation.py` created in `aios-win/scripts`
+**Human Quote:** "If we don't know it's there, what's the use of so much logic?"
+
+### The Problem
+
+Scripts created during development sessions may be placed in:
+- `aios-win/scripts/` (generic location)
+- `AIOS/ai/tools/` (AI-specific tools)
+- Individual cell `scripts/` folders
+- Ad-hoc locations
+
+Without a registry, these tools become **dark knowledge** - existing but undiscoverable.
+
+### Solution: Centralized Scripts Registry
+
+This appendix serves as the **canonical index** of all AIOS automation scripts.
+
+## J.2 Scripts Registry
+
+### Buffer & Linter Tools
+
+| Script | Location | Purpose | Usage |
+|--------|----------|---------|-------|
+| `ainlp_buffer_remediation.py` | `aios-win/scripts/` | Apply AINLP.buffer[79::85::86] to all cells | `python ainlp_buffer_remediation.py --repos C:\dev` |
+
+### Diagnostic Tools
+
+| Script | Location | Purpose | Usage |
+|--------|----------|---------|-------|
+| `aios_peer_sync_diagnostic.py` | `aios-win/scripts/` | Diagnose mesh peer sync issues | `python aios_peer_sync_diagnostic.py` |
+| `aios_merge_harmonize.py` | `aios-win/scripts/` | Harmonize AINLP document merges | `python aios_merge_harmonize.py` |
+
+### Infrastructure Tools
+
+| Script | Location | Purpose | Usage |
+|--------|----------|---------|-------|
+| `configure-aios-network.ps1` | `aios-win/scripts/` | Configure AIOS Docker network | `.\configure-aios-network.ps1` |
+| `backup-vault-keys.ps1` | `aios-win/scripts/` | Backup vault encryption keys | `.\backup-vault-keys.ps1` |
+
+### AI Tools
+
+| Script | Location | Purpose | Usage |
+|--------|----------|---------|-------|
+| (See `AIOS/ai/tools/`) | `AIOS/ai/tools/` | AI-specific automation | Various |
+
+## J.3 Script Discoverability Protocol
+
+When creating a new script:
+
+1. **Assess Location**: Is `aios-win/scripts/` correct, or does it belong in a specific cell?
+2. **Update Registry**: Add entry to Bible Appendix J.2
+3. **Add AINLP Header**: Include purpose, usage, and Bible reference
+4. **Cross-Reference**: Link from related Bible sections
+
+### Script Header Template
+
+```python
+#!/usr/bin/env python3
+"""
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                         [SCRIPT NAME]                                     ║
+║                    [Brief Description]                                    ║
+║                                                                           ║
+║  AINLP Reference: Bible Appendix [X]                                      ║
+║  Registry: Bible Appendix J.2                                             ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+USAGE:
+    python script_name.py [args]
+
+DISCOVERY PATH:
+    Bible Appendix J → Registry → This script
+"""
+```
+
+## J.4 Dendritic Script Connections
+
+Scripts should declare their dendritic connections:
+
+```python
+# AINLP.dendritic[CONNECT] Dependencies
+#   - aios-schema: Type definitions
+#   - Nous: Cache integration
+#   - aios-win: Execution environment
+
+# AINLP.dendritic[DISCOVER] Registry
+#   - Bible Appendix J.2: Scripts Registry
+#   - Bible Appendix G: Buffer Pattern (if relevant)
+```
+
+## J.5 Future: Automated Discovery
+
+**AINLP.future[AUTOMATION]** Scripts should be auto-discoverable:
+
+```python
+# Proposed: scripts/__init__.py with registry
+SCRIPT_REGISTRY = {
+    "ainlp_buffer_remediation": {
+        "path": "ainlp_buffer_remediation.py",
+        "purpose": "Apply AINLP.buffer pattern to AIOS cells",
+        "bible_ref": "Appendix G, J.2",
+        "args": ["--repos", "--dry-run", "--cells"],
+    },
+    # ... auto-generated from script headers
+}
+```
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.6 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
+<!-- Version: 1.7 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J)                     -->
 <!-- v1.6: Agentic Buffer Pattern (G) + Knowledge Extraction Blueprint (H)       -->
 <!-- v1.5: Added Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace   -->
