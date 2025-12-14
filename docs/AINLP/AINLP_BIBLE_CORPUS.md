@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.7 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.8 | Date: 2025-01-19 | Protocol: OS0.6.5                        -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.8: Configuration Archaeology Pattern - multi-layer config truth         -->
 <!-- v1.7: Tool Config Precedence (I) + Scripts Registry (J) - discoverability  -->
 <!-- v1.6: Agentic Quantum Error Correction (G) + Knowledge Extraction (H)      -->
 <!-- v1.5: Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace        -->
@@ -54,6 +55,9 @@ AINLP.class[ACTION](params)
 | **W293** | Flake8 | `(Get-Content $f) \| % { $_.TrimEnd() } \| Set-Content $f` |
 | **F811** | Flake8 | `# noqa: F811` for conditional class definitions |
 | **F841** | Flake8 | Prefix with `_` OR document with `AINLP.loader[latent]` |
+| **C0114** | Pylint | Missing **module** docstring → Add module-level docstring |
+| **C0115** | Pylint | Missing **class** docstring → Add class-level docstring |
+| **C0116** | Pylint | Missing **function** docstring → Add function-level docstring |
 | **C0301** | Pylint | `AINLP.buffer[79::85::86]` - max-line-length=85 in `.pylintrc` |
 | **C0411** | Pylint | Import order: stdlib → third-party → first-party (PEP 8) |
 | **W1514** | Pylint | Add `encoding='utf-8'` to `open()` calls |
@@ -61,6 +65,88 @@ AINLP.class[ACTION](params)
 | **reportAssignmentType** | Pylance | Use `Optional[T]` not `T = None` for nullable params |
 | **reportMissingImports** | Pylance | `pyrightconfig.json` extraPaths + `pip install -e` |
 | **reportUnknownAttribute** | Pylance | Add type stubs OR use `cast()` OR `# type: ignore` |
+
+### Docstring Requirements (C0114, C0115, C0116) - AINLP.comment
+
+**CRITICAL**: Docstrings are the **primary interface** for AI agent comprehension.
+Never disable these - they are the AINLP.comment pattern foundation.
+
+#### C0114: Module Docstring Blueprint
+
+```python
+"""
+Module Name - Brief Description
+
+Extended description explaining the module's purpose,
+its role in the AIOS architecture, and key concepts.
+
+AINLP.dendritic[CONNECT] Related modules or cells
+AINLP.consciousness[LEVEL] Consciousness metric if applicable
+
+Example:
+    from module import MainClass
+    instance = MainClass()
+"""
+```
+
+#### C0115: Class Docstring Blueprint
+
+```python
+class MeshInterface:
+    """
+    Brief one-line description of the class.
+
+    Extended description of the class purpose, responsibilities,
+    and how it fits into the broader architecture.
+
+    Attributes:
+        attr1 (type): Description of attribute
+        attr2 (type): Description of attribute
+
+    Example:
+        >>> mesh = MeshInterface()
+        >>> mesh.send_message(msg)
+    """
+```
+
+#### C0116: Function/Method Docstring Blueprint
+
+```python
+def create_message(
+    msg_type: MessageType,
+    from_cell: str,
+    payload: Dict[str, Any] | None = None
+) -> MeshMessage:
+    """
+    Brief one-line description of function.
+
+    Extended description if needed, explaining the function's
+    purpose, algorithm, or important behaviors.
+
+    Args:
+        msg_type: The type of message to create
+        from_cell: Identifier of the sending cell
+        payload: Optional data payload for the message
+
+    Returns:
+        MeshMessage: A properly formatted mesh message
+
+    Raises:
+        ValueError: If msg_type is invalid
+
+    Example:
+        >>> msg = create_message(MessageType.HEARTBEAT, "nous")
+    """
+```
+
+#### Docstring Anti-Patterns
+
+| Anti-Pattern ❌ | Why Bad | Correct ✅ |
+|-----------------|---------|-----------|
+| No docstring | AI can't understand intent | Add docstring |
+| `"""TODO"""` | Placeholder provides no value | Write real description |
+| `"""Function."""` | Repeats function name | Describe behavior |
+| Outdated docstring | Misleads AI agents | Keep synchronized |
 
 ### PowerShell/PSScriptAnalyzer Error Remediation
 
@@ -124,6 +210,56 @@ from aios_schema import MessageType, MeshMessage
 # 3. First-party/local imports
 from kernel import Kernel
 from cache import CacheSystem
+```
+
+### Configuration Archaeology Pattern
+
+When files appear "clean" but issues persist, dig through configuration layers.
+Error visibility can be masked by multiple configuration sources working in concert.
+
+| Configuration Layer | File | Scope | Priority |
+|---------------------|------|-------|----------|
+| **VS Code Workspace** | `.vscode/settings.json` | Editor display | Highest |
+| **Tool RC File** | `.pylintrc`, `.flake8` | CLI/IDE linting | Medium |
+| **setup.cfg** | `[flake8]`, `[pylint]` | Package-level | Low |
+| **pyproject.toml** | `[tool.pylint]` | Modern standard | Low |
+
+#### Configuration Archaeology Workflow
+
+```
+1. File shows "no errors" in VS Code
+2. Run linter manually: `pylint --rcfile=.pylintrc file.py`
+3. Compare: If manual run shows errors VS Code doesn't → settings mismatch
+4. Check VS Code settings.json for `--disable=` flags
+5. Check .pylintrc for `disable=` section
+6. Cross-reference: Both may be hiding the same issues
+7. PRINCIPLE: Never disable without documenting WHY in the config
+```
+
+#### Configuration Truth Discovery
+
+```powershell
+# Check what VS Code is actually running:
+# Look in Output panel → Python Language Server
+
+# Compare manual vs IDE linting:
+pylint file.py --disable=all --enable=C0114,C0115,C0116
+
+# List all active disables in .pylintrc:
+grep -E "^disable" .pylintrc
+```
+
+#### AINLP.config Directive (NEW)
+
+When modifying linter configuration, document the reasoning:
+
+```ini
+# .pylintrc
+[MESSAGES CONTROL]
+# NOTE: C0114,C0115,C0116 MUST remain enabled - AINLP.comment critical!
+# AINLP.config[PRESERVE:C0114,C0115,C0116] Docstrings are knowledge interface
+disable=
+    C0301,  # AINLP.buffer handles line length tolerance
 ```
 
 ---
