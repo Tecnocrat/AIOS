@@ -1,19 +1,36 @@
 
 # AIOS Dendritic-Tachyonic Integration Layer
 # Auto-generated quantum-coherent integration
+#
+# AINLP.future[aios_tachyonic_intelligence_archive]
+# AINLP.future[aios_dendritic_superclass]
+# Status: DEFERRED - Tachyonic vault implementation in progress
+# These modules exist in c:/dev/AIOS/tachyonic but are not packaged
 
 import sys
 import json
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 # Add tachyonic to path
 tachyonic_path = Path("c:/dev/AIOS/tachyonic")
 if str(tachyonic_path) not in sys.path:
     sys.path.append(str(tachyonic_path))
 
+# Type stubs for IDE - actual import in try block
+if TYPE_CHECKING:
+    from typing import Any
+    TachyonicArchiveSystem: Any
+    DendriticSuperclass: Any
+
 try:
-    from aios_tachyonic_intelligence_archive import TachyonicArchiveSystem
-    from aios_dendritic_superclass import DendriticSuperclass
+    # AINLP.future[IMPORT] - type: ignore for unpackaged tachyonic modules
+    from aios_tachyonic_intelligence_archive import (  # type: ignore
+        TachyonicArchiveSystem
+    )
+    from aios_dendritic_superclass import (  # type: ignore
+        DendriticSuperclass
+    )
 
     class DendriticTachyonicBridge:
         """Quantum-coherent bridge enabling AI access to tachyonic patterns"""

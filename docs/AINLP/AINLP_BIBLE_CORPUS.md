@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.4 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
+<!-- Version: 1.5 | Date: 2025-12-14 | Protocol: OS0.6.5                        -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.5: Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace        -->
 <!-- v1.4: Bible Compliance Protocol (Appendix E) - Agent validation workflow   -->
 <!-- v1.3: Enforced Dendritic Density Pattern (Appendix D.3 UPGRADE)            -->
 <!-- v1.2: Cross-Repository Dendritic Connections (Appendix D)                  -->
@@ -48,12 +49,24 @@ AINLP.class[ACTION](params)
 | Code | Tool | AIOS Remediation |
 |------|------|------------------|
 | **F401** | Flake8 | `AINLP.loader[latent:module]` OR remove if no future intent |
-| **E501** | Flake8 | Parenthesize path constructions OR `# noqa: E501` |
+| **E501** | Flake8 | Parenthesize/wrap lines OR `# noqa: E501` for docstrings |
 | **W293** | Flake8 | `(Get-Content $f) \| % { $_.TrimEnd() } \| Set-Content $f` |
 | **F811** | Flake8 | `# noqa: F811` for conditional class definitions |
-| **F841** | Flake8 | Prefix with `_` OR document with `AINLP.reminder` |
+| **F841** | Flake8 | Prefix with `_` OR document with `AINLP.loader[latent]` |
 | **W1514** | Pylint | Add `encoding='utf-8'` to `open()` calls |
 | **E722** | Flake8 | Replace bare `except:` with specific exceptions |
+| **reportAssignmentType** | Pylance | Use `Optional[T]` not `T = None` for nullable params |
+| **reportMissingImports** | Pylance | `pyrightconfig.json` extraPaths + `pip install -e` |
+| **reportUnknownAttribute** | Pylance | Add type stubs OR use `cast()` OR `# type: ignore` |
+
+### Pylance Type Pattern Quick Reference
+
+| Anti-Pattern ❌ | Correct Pattern ✅ |
+|-----------------|-------------------|
+| `tags: List[str] = None` | `tags: Optional[List[str]] = None` |
+| `vendor: str = None` | `vendor: Optional[str] = None` |
+| `cache: CacheSystem = None` | `cache: Optional[CacheSystem] = None` |
+| `from module import Type` (fallback) | Direct import (enforced density) |
 
 ---
 
@@ -70,6 +83,7 @@ AINLP.class[ACTION](params)
 9. [APPENDIX C: Namespace Consolidation Reference](#appendix-c-namespace-consolidation-reference)
 10. [APPENDIX D: Cross-Repository Dendritic Connections](#appendix-d-cross-repository-dendritic-connections)
 11. [APPENDIX E: Bible Compliance Protocol](#appendix-e-bible-compliance-protocol)
+12. [APPENDIX F: Debug Pattern Dictionary](#appendix-f-debug-pattern-dictionary-ainlpdebug)
 
 ---
 
@@ -1546,13 +1560,184 @@ Apply Bible-prescribed patterns to resolve violations.
 
 ---
 
+# APPENDIX F: Debug Pattern Dictionary (AINLP.debug)
+
+## F.1 Purpose
+
+**AINLP.debug[PATTERN::DICTIONARY::NAMESPACES]** - A comprehensive registry of all diagnostic patterns, their root causes, and dendritic remediation strategies. This dictionary enables systematic error resolution across the AIOS ecosystem.
+
+## F.2 Pattern Namespace Hierarchy
+
+```
+AINLP.debug
+├── TYPE          # Type system errors (Pylance reportAssignmentType)
+├── IMPORT        # Import resolution (reportMissingImports)
+├── STYLE         # Line length, formatting (E501)
+├── UNUSED        # Unused imports/variables (F401, F841)
+├── ATTRIBUTE     # Unknown attributes (reportUnknownAttribute)
+├── ENCODING      # File encoding (W1514)
+├── SUBPROCESS    # Subprocess safety (check parameter)
+└── FUTURE        # Unresolved future modules
+```
+
+## F.3 Active Error Registry (2025-12-14)
+
+### F.3.1 TYPE Namespace Errors
+
+| File | Line | Error | Pattern | Remediation |
+|------|------|-------|---------|-------------|
+| cache.py | 246 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| cache.py | 247 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| cache.py | 322 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| distillery.py | 196 | `str = None` (×2) | TYPE::NULLABLE | `Optional[str] = None` |
+| ingestion.py | 111 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| ingestion.py | 238 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| ingestion.py | 290 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| ingestion.py | 397 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| ingestion.py | 474 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| ingestion.py | 475 | `List[str] = None` | TYPE::NULLABLE | `Optional[List[str]] = None` |
+| ingestion.py | 516 | `CacheSystem = None` | TYPE::NULLABLE | `Optional[CacheSystem] = None` |
+
+**Batch Remediation Pattern:**
+```python
+# BEFORE (Anti-Pattern)
+def method(self, tags: List[str] = None):
+
+# AFTER (Correct)
+def method(self, tags: Optional[List[str]] = None):
+```
+
+### F.3.2 ATTRIBUTE Namespace Errors
+
+| File | Line | Error | Pattern | Remediation |
+|------|------|-------|---------|-------------|
+| awakening.py | 134-135 | `detected_actions` unknown | ATTRIBUTE::DYNAMIC | Add to dataclass OR use `getattr()` |
+
+**Remediation:**
+```python
+# Option 1: Add to SandboxedThought dataclass
+@dataclass
+class SandboxedThought:
+    detected_actions: List[str] = field(default_factory=list)
+
+# Option 2: Use getattr for dynamic access
+if getattr(t, 'detected_actions', None):
+    msg += f"Actions: {', '.join(t.detected_actions)}\n"
+```
+
+### F.3.3 IMPORT Namespace Errors
+
+| File | Line | Error | Pattern | Remediation |
+|------|------|-------|---------|-------------|
+| tachyonic_bridge.py | 15 | `aios_tachyonic_intelligence_archive` | IMPORT::FUTURE | Mark as `# AINLP.future[module]` |
+| tachyonic_bridge.py | 16 | `aios_dendritic_superclass` | IMPORT::FUTURE | Mark as `# AINLP.future[module]` |
+
+**Future Module Pattern:**
+```python
+# AINLP.future[aios_tachyonic_intelligence_archive]
+# Status: Planned for Waypoint 35
+# Dependency: Requires tachyonic vault implementation
+try:
+    from aios_tachyonic_intelligence_archive import TachyonicArchiveSystem
+    _TACHYONIC_AVAILABLE = True
+except ImportError:
+    _TACHYONIC_AVAILABLE = False
+    TachyonicArchiveSystem = None  # type: ignore
+```
+
+### F.3.4 STYLE Namespace Errors
+
+| File | Lines | Error | Pattern | Remediation |
+|------|-------|-------|---------|-------------|
+| cell_birth.py | 33,175,184,207,211,271,292 | E501 line too long | STYLE::LINE_LENGTH | Wrap/parenthesize |
+| mesh.py | 79,86,294,305 | E501 line too long | STYLE::LINE_LENGTH | Wrap/parenthesize |
+| ingestion.py | 4-26 (docstring) | E501 line too long | STYLE::DOCSTRING | `# noqa: E501` OR shorten |
+| ingestion.py | 57,145 | E501 line too long | STYLE::LINE_LENGTH | Wrap/parenthesize |
+
+**Remediation Patterns:**
+```python
+# STYLE::LINE_LENGTH - Wrap function calls
+# BEFORE
+result = subprocess.run(cmd, capture_output=True, text=True, check=False)
+
+# AFTER
+result = subprocess.run(
+    cmd, capture_output=True, text=True, check=False
+)
+
+# STYLE::DOCSTRING - Accept in decorative headers
+"""
+╔══════════════════════════════════════════════════════════════╗  # noqa: E501
+║                         INGESTION                             ║  # noqa: E501
+╚══════════════════════════════════════════════════════════════╝  # noqa: E501
+"""
+```
+
+### F.3.5 UNUSED Namespace Errors
+
+| File | Line | Error | Pattern | Remediation |
+|------|------|-------|---------|-------------|
+| cell_birth.py | 124 | `_config` unused | UNUSED::LATENT | `AINLP.loader[latent:_config]` |
+| ingestion.py | 30 | `json` unused | UNUSED::IMPORT | Remove OR `AINLP.loader[latent:json]` |
+| ingestion.py | 33 | `hashlib` unused | UNUSED::IMPORT | Remove OR `AINLP.loader[latent:hashlib]` |
+| ingestion.py | 36 | `Dict,Any,Optional,Callable` unused | UNUSED::IMPORT | Clean up imports |
+| ingestion.py | 38 | `Enum` unused | UNUSED::IMPORT | Remove |
+| ingestion.py | 43 | `KnowledgeUnit,Namespace` unused | UNUSED::IMPORT | Remove OR document |
+
+## F.4 AINLP.debug Pattern Syntax
+
+### Declaration
+```python
+# AINLP.debug[NAMESPACE::PATTERN] description
+# Status: ACTIVE|RESOLVED|DEFERRED
+# Remediation: <action>
+```
+
+### Examples
+```python
+# AINLP.debug[TYPE::NULLABLE] Optional parameter without Optional wrapper
+# Status: ACTIVE
+# Remediation: Change `List[str] = None` → `Optional[List[str]] = None`
+
+# AINLP.debug[IMPORT::FUTURE] Module planned but not yet implemented
+# Status: DEFERRED to Waypoint 35
+# Remediation: Use try/except with availability flag
+
+# AINLP.debug[STYLE::DOCSTRING] Decorative ASCII art exceeds 79 chars
+# Status: ACCEPTED
+# Remediation: None (aesthetic choice) - add # noqa: E501
+```
+
+## F.5 Batch Remediation Commands
+
+### PowerShell: Fix Optional Parameters
+```powershell
+# Find all TYPE::NULLABLE patterns in Nous
+Get-ChildItem C:\dev\Nous\*.py | ForEach-Object {
+    Select-String -Path $_ -Pattern ': (List\[|Dict\[|str|int) = None'
+}
+```
+
+### Grep: Find all E501 violations
+```powershell
+# Via flake8
+cd C:\dev\Nous; python -m flake8 --select=E501
+```
+
+## F.6 Error Count Summary
+
+| Cell | TYPE | IMPORT | STYLE | UNUSED | ATTRIBUTE | Total |
+|------|------|--------|-------|--------|-----------|-------|
+| Nous | 11 | 0 | 4 | 6 | 2 | 23 |
+| aios-server | 0 | 0 | 8 | 1 | 0 | 9 |
+| AIOS | 0 | 2 | 0 | 0 | 0 | 2 |
+| **TOTAL** | **11** | **2** | **12** | **7** | **2** | **34** |
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.4 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
+<!-- Version: 1.5 | Updated: 2025-12-14 | Protocol: OS0.6.5                      -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
-<!-- v1.4: Added Bible Compliance Protocol (Appendix E)                          -->
-<!-- v1.3: Upgraded to Enforced Dendritic Density Pattern (D.3)                  -->
-<!-- v1.2: Added Cross-Repository Dendritic Connections (Appendix D)             -->
-<!-- Includes: Full IDE integration stack (pyrightconfig + .vscode + .pylintrc)  -->
-<!-- ============================================================================ -->
+<!-- v1.5: Added Debug Pattern Dictionary (Appendix F) - AINLP.debug namespace   -->
