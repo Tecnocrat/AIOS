@@ -340,13 +340,8 @@ class AIOSDatabase:
         total_backups = cursor.fetchone()['total']
         
         # Unique content
-<<<<<<< HEAD
         cursor.execute("SELECT COUNT(*) as unique FROM file_content")
         unique_content = cursor.fetchone()['unique']
-=======
-        cursor.execute("SELECT COUNT(*) as unique_count FROM file_content")
-        unique_content = cursor.fetchone()['unique_count']
->>>>>>> origin/OS0.6.2.grok
         
         # Total size (with duplicates)
         cursor.execute("SELECT SUM(file_size) as total_size FROM backups")

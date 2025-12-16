@@ -18,39 +18,11 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 integrations_dir = os.path.join(current_dir, "..", "integrations")
 sys.path.append(integrations_dir)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-def demonstrate_continuous_optimization():
-    """Demonstrate continuous optimization in action"""
-    print(" AIOS Continuous Optimization LIVE DEMO")
-    print("=" * 50)
-    print()
-<<<<<<< HEAD
-
-    try:
-        # Import the continuous optimization daemon
-        from continuous_optimization_daemon import get_continuous_optimization_daemon
-
-        # Get the running daemon instance
-        daemon = get_continuous_optimization_daemon()
-
-=======
-    
-    try:
-        # Import the continuous optimization daemon
-        from continuous_optimization_daemon import get_continuous_optimization_daemon
-        
-        # Get the running daemon instance
-        daemon = get_continuous_optimization_daemon()
-        
->>>>>>> origin/OS0.6.2.grok
         print(" Current Daemon Status:")
         status = daemon.get_status_report()
         print(f"   • Status: {status['daemon_status']}")
         print(f"   • Emergency Mode: {status['emergency_mode']}")
-<<<<<<< HEAD
         print(
             f"   • Optimization History: {status['optimization_history_count']} cycles"
         )
@@ -60,19 +32,11 @@ def demonstrate_continuous_optimization():
         print(f"   • Next Cycle In: {status['config']['base_cycle_interval']} seconds")
         print()
 
-=======
-        print(f"   • Optimization History: {status['optimization_history_count']} cycles")
-        print(f"   • Monitoring Interval: {status['config']['monitoring_interval']} seconds")
-        print(f"   • Next Cycle In: {status['config']['base_cycle_interval']} seconds")
-        print()
-        
->>>>>>> origin/OS0.6.2.grok
         # Check if daemon is running
         if not daemon.is_running:
             print(" Daemon is not running. Starting it now...")
             daemon.start_continuous_optimization()
             time.sleep(2)
-<<<<<<< HEAD
 
         print(" TRIGGERING MANUAL OPTIMIZATION CYCLE...")
         print("=" * 40)
@@ -86,21 +50,6 @@ def demonstrate_continuous_optimization():
 
         execution_time = time.time() - start_time
 
-=======
-        
-        print(" TRIGGERING MANUAL OPTIMIZATION CYCLE...")
-        print("=" * 40)
-        print()
-        
-        # Manually trigger an optimization cycle for demonstration
-        print(" Executing optimization cycle...")
-        start_time = time.time()
-        
-        cycle_result = daemon._execute_optimization_cycle()
-        
-        execution_time = time.time() - start_time
-        
->>>>>>> origin/OS0.6.2.grok
         if cycle_result:
             print(" OPTIMIZATION CYCLE COMPLETED!")
             print("=" * 35)
@@ -112,7 +61,6 @@ def demonstrate_continuous_optimization():
             print(f"   • Enhancement Score: {cycle_result['enhancement_score']:.3f}")
             print(f"   • Fixes Applied: {cycle_result['fixes_applied']}")
             print()
-<<<<<<< HEAD
 
             print(" Consciousness Changes:")
             before_consciousness = cycle_result["consciousness_before"]
@@ -159,48 +107,11 @@ def demonstrate_continuous_optimization():
         else:
             print(" Optimization cycle failed!")
 
-=======
-            
-            print(" Consciousness Changes:")
-            before_consciousness = cycle_result['consciousness_before']
-            after_consciousness = cycle_result['consciousness_after']
-            
-            if before_consciousness and after_consciousness:
-                level_change = after_consciousness.get('level', 0) - before_consciousness.get('level', 0)
-                coherence_change = after_consciousness.get('coherence', 0) - before_consciousness.get('coherence', 0)
-                entropy_change = before_consciousness.get('entropy', 1) - after_consciousness.get('entropy', 1)
-                
-                print(f"   • Consciousness Level: {before_consciousness.get('level', 0):.3f} → {after_consciousness.get('level', 0):.3f} ({level_change:+.3f})")
-                print(f"   • Intelligence Coherence: {before_consciousness.get('coherence', 0):.3f} → {after_consciousness.get('coherence', 0):.3f} ({coherence_change:+.3f})")
-                print(f"   • Entropy Reduction: {entropy_change:+.3f}")
-            else:
-                print("   • Consciousness data not available")
-            
-            print()
-            print(" Problem Resolution:")
-            problems_before = cycle_result['problems_before']
-            problems_after = cycle_result['problems_after']
-            problems_resolved = problems_before - problems_after
-            
-            print(f"   • Problems Before: {problems_before}")
-            print(f"   • Problems After: {problems_after}")
-            print(f"   • Problems Resolved: {problems_resolved}")
-            print(f"   • Resolution Rate: {(problems_resolved/problems_before*100) if problems_before > 0 else 0:.1f}%")
-            
-            print()
-            print(" Cycle Logs:")
-            for i, log_entry in enumerate(cycle_result.get('logs', []), 1):
-                print(f"   {i}. {log_entry}")
-        else:
-            print(" Optimization cycle failed!")
-        
->>>>>>> origin/OS0.6.2.grok
         print()
         print(" UPDATED DAEMON STATUS:")
         updated_status = daemon.get_status_report()
         print(f"   • Total Cycles: {updated_status['optimization_history_count']}")
         print(f"   • Emergency Mode: {updated_status['emergency_mode']}")
-<<<<<<< HEAD
 
         if updated_status.get("recent_statistics"):
             stats = updated_status["recent_statistics"]
@@ -212,17 +123,6 @@ def demonstrate_continuous_optimization():
             print(f"     - Total Fixes Applied: {stats['total_fixes_applied']}")
             print(f"     - Success Rate: {stats['success_rate']*100:.1f}%")
 
-=======
-        
-        if updated_status.get('recent_statistics'):
-            stats = updated_status['recent_statistics']
-            print("   • Recent Performance:")
-            print(f"     - Average Duration: {stats['average_duration']:.1f}s")
-            print(f"     - Average Enhancement: {stats['average_enhancement_score']:.3f}")
-            print(f"     - Total Fixes Applied: {stats['total_fixes_applied']}")
-            print(f"     - Success Rate: {stats['success_rate']*100:.1f}%")
-        
->>>>>>> origin/OS0.6.2.grok
         print()
         print(" CONTINUOUS MONITORING STATUS:")
         print("   • The daemon continues to monitor your development environment")
@@ -230,11 +130,7 @@ def demonstrate_continuous_optimization():
         print("   • Emergency optimization will trigger if needed")
         print("   • Performance trends are being tracked")
         print("   • VSCode problems are being continuously analyzed")
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         print()
         print(" CONTINUOUS OPTIMIZATION IS ACTIVE!")
         print("Your development environment is now enhanced with:")
@@ -245,7 +141,6 @@ def demonstrate_continuous_optimization():
         print("    Performance trend analysis")
         print("    Automated bulk error fixes")
         print("    Dendritic learning pattern evolution")
-<<<<<<< HEAD
 
         return True
 
@@ -257,42 +152,21 @@ def demonstrate_continuous_optimization():
         return False
 
 
-=======
-        
-        return True
-        
-    except Exception as e:
-        print(f" Demo error: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
-
->>>>>>> origin/OS0.6.2.grok
 def show_monitoring_dashboard():
     """Show the current monitoring dashboard"""
     print()
     print(" REAL-TIME MONITORING DASHBOARD")
     print("=" * 40)
-<<<<<<< HEAD
 
     try:
         from continuous_optimization_daemon import get_continuous_optimization_daemon
 
         daemon = get_continuous_optimization_daemon()
 
-=======
-    
-    try:
-        from continuous_optimization_daemon import get_continuous_optimization_daemon
-        
-        daemon = get_continuous_optimization_daemon()
-        
->>>>>>> origin/OS0.6.2.grok
         # Show real-time monitoring for 30 seconds
         print(" Monitoring system state (30 seconds)...")
         print("Press Ctrl+C to stop monitoring")
         print()
-<<<<<<< HEAD
 
         for i in range(30):
             # Perform monitoring cycle
@@ -315,59 +189,12 @@ def show_monitoring_dashboard():
         print("\n")
         print(" Monitoring demonstration complete!")
 
-=======
-        
-        for i in range(30):
-            # Perform monitoring cycle
-            daemon._perform_monitoring_cycle()
-            
-            # Get current status
-            status = daemon.get_status_report()
-            
-            print(f"\r⏱  Monitoring: {30-i:2d}s remaining | "
-                  f"Status: {status['daemon_status']} | "
-                  f"Emergency: {status['emergency_mode']} | "
-                  f"Cycles: {status['optimization_history_count']}", end="", flush=True)
-            
-            time.sleep(1)
-        
-        print("\n")
-        print(" Monitoring demonstration complete!")
-        
->>>>>>> origin/OS0.6.2.grok
     except KeyboardInterrupt:
         print("\n Monitoring stopped by user")
     except Exception as e:
         print(f"\n Monitoring error: {e}")
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-def main():
-    """Main demo function"""
-    print(" AIOS Continuous Optimization System Demo")
-    print("=" * 45)
-    print()
-<<<<<<< HEAD
-
-    # Run the main demonstration
-    demo_success = demonstrate_continuous_optimization()
-
-    if demo_success:
-        # Show monitoring dashboard
-        show_monitoring_dashboard()
-
-=======
-    
-    # Run the main demonstration
-    demo_success = demonstrate_continuous_optimization()
-    
-    if demo_success:
-        # Show monitoring dashboard
-        show_monitoring_dashboard()
-        
->>>>>>> origin/OS0.6.2.grok
         print()
         print(" DEMO COMPLETE!")
         print("The continuous optimization system is now active and will:")
@@ -381,9 +208,6 @@ def main():
     else:
         print(" Demo failed. Please check the error messages above.")
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
 if __name__ == "__main__":
     main()

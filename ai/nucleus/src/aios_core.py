@@ -45,30 +45,15 @@ class AICore:
         self.config = self._load_config()
         self.is_initialized = False
         self.is_running = False
-<<<<<<< HEAD
         self.nlp_manager = NLPManager(self.config.get("models", {}).get("nlp", {}))
-=======
-        self.nlp_manager = NLPManager(
-            self.config.get("models", {}).get("nlp", {})
-        )
->>>>>>> origin/OS0.6.2.grok
         self.prediction_manager = PredictionManager(
             self.config.get("models", {}).get("prediction", {})
         )
         self.automation_manager = AutomationManager(
             self.config.get("models", {}).get("automation", {})
         )
-<<<<<<< HEAD
         self.learning_manager = LearningManager(self.config.get("training", {}))
         self.integration_bridge = IntegrationBridge(self.config.get("integration", {}))
-=======
-        self.learning_manager = LearningManager(
-            self.config.get("training", {})
-        )
-        self.integration_bridge = IntegrationBridge(
-            self.config.get("integration", {})
-        )
->>>>>>> origin/OS0.6.2.grok
         logger.info("AI Core initialized with config: %s", config_path)
 
     def _load_config(self) -> Dict[str, Any]:
@@ -168,13 +153,7 @@ class AICore:
                     "automation_result": automation_result,
                 }
             if intent == "prediction":
-<<<<<<< HEAD
                 prediction_result = await self.prediction_manager.predict(nlp_result)
-=======
-                prediction_result = await self.prediction_manager.predict(
-                    nlp_result
-                )
->>>>>>> origin/OS0.6.2.grok
                 return {
                     "status": "success",
                     "intent": intent,
@@ -234,7 +213,6 @@ class AICore:
         health_results = {}
         try:
             health_results["nlp"] = await self.nlp_manager.health_check()
-<<<<<<< HEAD
             health_results["prediction"] = await self.prediction_manager.health_check()
             health_results["automation"] = await self.automation_manager.health_check()
             health_results["learning"] = await self.learning_manager.health_check()
@@ -244,28 +222,6 @@ class AICore:
             )
             return {
                 "overall_health": ("healthy" if all_healthy else "unhealthy"),
-=======
-            health_results["prediction"] = (
-                await self.prediction_manager.health_check()
-            )
-            health_results["automation"] = (
-                await self.automation_manager.health_check()
-            )
-            health_results["learning"] = (
-                await self.learning_manager.health_check()
-            )
-            health_results["integration"] = (
-                await self.integration_bridge.health_check()
-            )
-            all_healthy = all(
-                result.get("healthy", False)
-                for result in health_results.values()
-            )
-            return {
-                "overall_health": (
-                    "healthy" if all_healthy else "unhealthy"
-                ),
->>>>>>> origin/OS0.6.2.grok
                 "subsystems": health_results,
                 "timestamp": asyncio.get_event_loop().time(),
             }

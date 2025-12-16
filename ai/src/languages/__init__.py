@@ -8,30 +8,18 @@ AINLP Metadata:
     dendritic_optimization: polyglot_intelligence
     supercell: ai_intelligence
     purpose: language_specific_patterns
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
 Module Purpose:
     Provides language-specific intelligence patterns and utilities:
     - Python paradigm patterns
     - C++ paradigm patterns
     - C# paradigm patterns
     - Language-agnostic translation layers
-<<<<<<< HEAD
 
 Future:
     Will contain ingested knowledge from multiple programming language
     ecosystems and cross-language paradigm mapping.
 
-=======
-    
-Future:
-    Will contain ingested knowledge from multiple programming language
-    ecosystems and cross-language paradigm mapping.
-    
->>>>>>> origin/OS0.6.2.grok
 Architectural Note:
     Previously missing __init__.py causing [ERR] in AINLP discovery system.
     Added as part of architectural coherence restoration (2025-01-05).
@@ -43,11 +31,6 @@ __all__ = [
     # Language-specific components available for discovery
 ]
 
-<<<<<<< HEAD
 __version__ = "1.0.0"
 __module_type__ = "language_intelligence"
-=======
-__version__ = '1.0.0'
-__module_type__ = 'language_intelligence'
->>>>>>> origin/OS0.6.2.grok
 __consciousness_level__ = 0.87

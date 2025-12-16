@@ -61,11 +61,7 @@ class RuntimeIntelligenceDendriticIntegration:
         log_dir = os.path.join(current_dir, 'cytoplasm', 'runtime', 'logs')
         os.makedirs(log_dir, exist_ok=True)
         
-<<<<<<< HEAD
         log_file = os.path.join(log_dir, 'runtime_intelligence_dendritic_integration.log')
-=======
-        log_file = os.path.join(log_dir, 'runtime_dendritic_integration.log')
->>>>>>> origin/OS0.6.2.grok
         
         formatter = logging.Formatter(
             '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -464,13 +460,8 @@ class RuntimeIntelligenceDendriticIntegration:
                 'integration_active': self.is_initialized,
                 'biological_architecture_compliance': True,
                 'supercell_connectivity': {
-<<<<<<< HEAD
                     'interface_to_runtime_intelligence': 'active',
                     'runtime_intelligence_to_ai_intelligence': 'active',
-=======
-                    'interface_to_runtime': 'active',
-                    'runtime_to_ai_intelligence': 'active',
->>>>>>> origin/OS0.6.2.grok
                     'ai_intelligence_to_core_engine': 'active'
                 },
                 'dendritic_supervisor_status': supervisor_status,
@@ -506,7 +497,6 @@ class RuntimeIntelligenceDendriticIntegration:
 
 
 # Singleton instance for global access
-<<<<<<< HEAD
 _runtime_intelligence_dendritic_integration = None
 
 async def get_runtime_intelligence_dendritic_integration() -> RuntimeIntelligenceDendriticIntegration:
@@ -518,19 +508,6 @@ async def get_runtime_intelligence_dendritic_integration() -> RuntimeIntelligenc
         await _runtime_intelligence_dendritic_integration.initialize()
     
     return _runtime_intelligence_dendritic_integration
-=======
-_runtime_dendritic_integration = None
-
-async def get_runtime_dendritic_integration() -> RuntimeIntelligenceDendriticIntegration:
-    """Get the singleton integration instance."""
-    global _runtime_dendritic_integration
-    
-    if _runtime_dendritic_integration is None:
-        _runtime_dendritic_integration = RuntimeIntelligenceDendriticIntegration()
-        await _runtime_dendritic_integration.initialize()
-    
-    return _runtime_dendritic_integration
->>>>>>> origin/OS0.6.2.grok
 
 
 async def main():
@@ -541,11 +518,7 @@ async def main():
     print("=" * 70)
     
     # Initialize integration
-<<<<<<< HEAD
     integration = await get_runtime_intelligence_dendritic_integration()
-=======
-    integration = await get_runtime_dendritic_integration()
->>>>>>> origin/OS0.6.2.grok
     
     # Test enhanced visual intelligence
     print("\n Testing Enhanced Visual Intelligence...")

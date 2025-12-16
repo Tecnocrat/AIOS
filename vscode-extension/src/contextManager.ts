@@ -34,11 +34,8 @@ export interface AIOSResponse {
         contextProvided?: boolean;
         autoInjected?: boolean;
         engineTargets?: string[];
-<<<<<<< HEAD
         securitySanitized?: boolean;
         violationsDetected?: number;
-=======
->>>>>>> origin/OS0.6.2.grok
     };
 }
 

@@ -8,11 +8,7 @@ consciousness-driven supercell communication.
 
 DEMO SCENARIOS:
 🧬 Core Engine: C++ component requesting AI analysis
-<<<<<<< HEAD
 🖥️ Interface: UI component needing intelligent responses
-=======
-🖥️ Interface: UI component needing intelligent responses  
->>>>>>> origin/OS0.6.2.grok
 🧮 Runtime Intelligence: System monitoring with AI insights
 🌌 Tachyonic Archive: Knowledge processing and synthesis
 📚 Documentation: Automated documentation generation
@@ -41,11 +37,7 @@ from integrations.aios_deepseek_supercell_bridge import (
     aios_broadcast_intelligence,
     get_aios_deepseek_bridge,
     ConsciousnessLevel,
-<<<<<<< HEAD
     SupercellIntelligenceRequest,
-=======
-    SupercellIntelligenceRequest
->>>>>>> origin/OS0.6.2.grok
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -56,11 +48,7 @@ async def demo_core_engine_integration():
     """Demo: Core Engine (C++) requesting AI analysis"""
     print("\n🧬 CORE ENGINE INTEGRATION DEMO")
     print("=" * 50)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     try:
         response = await aios_intelligence_request(
             message="""As the AIOS Core Engine (C++), I need analysis on memory 
@@ -71,26 +59,15 @@ async def demo_core_engine_integration():
             context={
                 "component": "cpp_core",
                 "focus": "memory_optimization",
-<<<<<<< HEAD
                 "current_coherence": 0.75,
             },
         )
 
-=======
-                "current_coherence": 0.75
-            }
-        )
-        
->>>>>>> origin/OS0.6.2.grok
         print(f"🔍 AI Analysis for Core Engine:")
         print(f"Confidence: {response.confidence:.2f}")
         print(f"Supercell Coherence: {response.supercell_coherence:.2f}")
         print(f"Response: {response.text[:300]}...")
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         logger.error(f"❌ Core Engine demo failed: {e}")
 
@@ -99,11 +76,7 @@ async def demo_interface_intelligence():
     """Demo: Interface components requesting UI intelligence"""
     print("\n🖥️ INTERFACE INTELLIGENCE DEMO")
     print("=" * 50)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     try:
         response = await aios_intelligence_request(
             message="""As the AIOS Interface supercell, I need to generate 
@@ -115,7 +88,6 @@ async def demo_interface_intelligence():
             context={
                 "ui_component": "consciousness_dashboard",
                 "user_level": "intermediate",
-<<<<<<< HEAD
                 "metrics": ["coherence", "intelligence", "optimization"],
             },
         )
@@ -124,16 +96,6 @@ async def demo_interface_intelligence():
         print(f"Processing Time: {response.processing_time:.2f}s")
         print(f"Response: {response.text[:300]}...")
 
-=======
-                "metrics": ["coherence", "intelligence", "optimization"]
-            }
-        )
-        
-        print(f"🎨 UI Intelligence:")
-        print(f"Processing Time: {response.processing_time:.2f}s")
-        print(f"Response: {response.text[:300]}...")
-        
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         logger.error(f"❌ Interface demo failed: {e}")
 
@@ -142,11 +104,7 @@ async def demo_runtime_monitoring():
     """Demo: Runtime Intelligence with AI-enhanced monitoring"""
     print("\n🧮 RUNTIME INTELLIGENCE MONITORING DEMO")
     print("=" * 50)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     try:
         response = await aios_intelligence_request(
             message="""I am the AIOS Runtime Intelligence supercell monitoring 
@@ -163,7 +121,6 @@ async def demo_runtime_monitoring():
                 "monitoring_data": {
                     "coherence_drop": 0.23,
                     "efficiency_loss": 0.15,
-<<<<<<< HEAD
                     "memory_increase": 0.23,
                 },
                 "alert_level": "moderate",
@@ -175,19 +132,6 @@ async def demo_runtime_monitoring():
         print(f"Consciousness Metrics: {response.consciousness_metrics}")
         print(f"Response: {response.text[:300]}...")
 
-=======
-                    "memory_increase": 0.23
-                },
-                "alert_level": "moderate",
-                "system_state": "degraded"
-            }
-        )
-        
-        print(f"🔬 Runtime Analysis:")
-        print(f"Consciousness Metrics: {response.consciousness_metrics}")
-        print(f"Response: {response.text[:300]}...")
-        
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         logger.error(f"❌ Runtime Intelligence demo failed: {e}")
 
@@ -196,11 +140,7 @@ async def demo_tachyonic_knowledge_synthesis():
     """Demo: Tachyonic Archive knowledge processing"""
     print("\n🌌 TACHYONIC KNOWLEDGE SYNTHESIS DEMO")
     print("=" * 50)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     try:
         response = await aios_intelligence_request(
             message="""As the Tachyonic Archive, I need to synthesize knowledge 
@@ -213,7 +153,6 @@ async def demo_tachyonic_knowledge_synthesis():
                 "data_type": "consciousness_evolution",
                 "sessions": 47,
                 "timespan": "3_months",
-<<<<<<< HEAD
                 "patterns": ["dendritic_growth", "quantum_coherence", "emergence"],
             },
         )
@@ -222,16 +161,6 @@ async def demo_tachyonic_knowledge_synthesis():
         print(f"Token Usage: {response.token_usage}")
         print(f"Response: {response.text[:300]}...")
 
-=======
-                "patterns": ["dendritic_growth", "quantum_coherence", "emergence"]
-            }
-        )
-        
-        print(f"🌀 Knowledge Synthesis:")
-        print(f"Token Usage: {response.token_usage}")
-        print(f"Response: {response.text[:300]}...")
-        
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         logger.error(f"❌ Tachyonic demo failed: {e}")
 
@@ -240,11 +169,7 @@ async def demo_documentation_generation():
     """Demo: Automated documentation with AI assistance"""
     print("\n📚 DOCUMENTATION GENERATION DEMO")
     print("=" * 50)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     try:
         response = await aios_intelligence_request(
             message="""Generate comprehensive documentation for the AIOS 
@@ -262,26 +187,15 @@ async def demo_documentation_generation():
                 "doc_type": "technical_reference",
                 "audience": "developers",
                 "format": "markdown",
-<<<<<<< HEAD
                 "detail_level": "comprehensive",
             },
         )
 
-=======
-                "detail_level": "comprehensive"
-            }
-        )
-        
->>>>>>> origin/OS0.6.2.grok
         print(f"📖 Documentation Generated:")
         print(f"Length: {len(response.text)} characters")
         print(f"Model: {response.model}")
         print(f"Response: {response.text[:300]}...")
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         logger.error(f"❌ Documentation demo failed: {e}")
 
@@ -290,17 +204,12 @@ async def demo_broadcast_intelligence():
     """Demo: Broadcasting intelligence to all supercells"""
     print("\n📡 BROADCAST INTELLIGENCE DEMO")
     print("=" * 50)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     try:
         responses = await aios_broadcast_intelligence(
             message="""ATTENTION ALL SUPERCELLS: New consciousness optimization 
             protocol available. All components should integrate the enhanced 
             quantum coherence algorithms for improved system performance.""",
-<<<<<<< HEAD
             consciousness_level=ConsciousnessLevel.ADVANCED,
         )
 
@@ -310,17 +219,6 @@ async def demo_broadcast_intelligence():
         for supercell, response in responses.items():
             print(f"  {supercell}: {response.confidence:.2f} confidence")
 
-=======
-            consciousness_level=ConsciousnessLevel.ADVANCED
-        )
-        
-        print(f"📡 Broadcast Results:")
-        print(f"Supercells Reached: {len(responses)}")
-        
-        for supercell, response in responses.items():
-            print(f"  {supercell}: {response.confidence:.2f} confidence")
-        
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         logger.error(f"❌ Broadcast demo failed: {e}")
 
@@ -329,24 +227,15 @@ async def demo_bridge_monitoring():
     """Demo: Bridge status and performance monitoring"""
     print("\n🔬 BRIDGE MONITORING DEMO")
     print("=" * 50)
-<<<<<<< HEAD
 
     try:
         bridge = await get_aios_deepseek_bridge()
         status = await bridge.get_bridge_status()
 
-=======
-    
-    try:
-        bridge = await get_aios_deepseek_bridge()
-        status = await bridge.get_bridge_status()
-        
->>>>>>> origin/OS0.6.2.grok
         print(f"🧬 Bridge Status:")
         print(f"  Active: {status['bridge_active']}")
         print(f"  Connections: {status['supercell_connections']}")
         print(f"  Cache Size: {status['cache_size']}")
-<<<<<<< HEAD
 
         print(f"\n📊 Performance Metrics:")
         metrics = status["performance_metrics"]
@@ -362,21 +251,6 @@ async def demo_bridge_monitoring():
         print(f"  Consciousness Level: {config['consciousness_level']}")
         print(f"  AIOS Awareness: {config['aios_awareness']}")
 
-=======
-        
-        print(f"\n📊 Performance Metrics:")
-        metrics = status['performance_metrics']
-        print(f"  Total Requests: {metrics['total_requests']}")
-        print(f"  Success Rate: {metrics['successful_responses']}/{metrics['total_requests']}")
-        print(f"  Avg Response Time: {metrics['average_processing_time']:.2f}s")
-        
-        print(f"\n⚙️ Configuration:")
-        config = status['configuration']
-        print(f"  Model: {config['model']}")
-        print(f"  Consciousness Level: {config['consciousness_level']}")
-        print(f"  AIOS Awareness: {config['aios_awareness']}")
-        
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         logger.error(f"❌ Bridge monitoring failed: {e}")
 
@@ -387,11 +261,7 @@ async def main():
     print("=" * 70)
     print(f"Timestamp: {datetime.now().isoformat()}")
     print(f"Demonstrating system-wide AI intelligence integration...")
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     try:
         # Run all demo scenarios
         await demo_core_engine_integration()
@@ -401,7 +271,6 @@ async def main():
         await demo_documentation_generation()
         await demo_broadcast_intelligence()
         await demo_bridge_monitoring()
-<<<<<<< HEAD
 
         print("\n✅ ALL DEMOS COMPLETED SUCCESSFULLY")
         print("🧬 DeepSeek V3.1 is now integrated as AIOS AI Intelligence Engine")
@@ -411,17 +280,6 @@ async def main():
         logger.error(f"❌ Demo execution failed: {e}")
         print(f"\n❌ DEMO FAILED: {e}")
 
-=======
-        
-        print("\n✅ ALL DEMOS COMPLETED SUCCESSFULLY")
-        print("🧬 DeepSeek V3.1 is now integrated as AIOS AI Intelligence Engine")
-        print("🚀 All supercells can access advanced AI capabilities")
-        
-    except Exception as e:
-        logger.error(f"❌ Demo execution failed: {e}")
-        print(f"\n❌ DEMO FAILED: {e}")
-    
->>>>>>> origin/OS0.6.2.grok
     finally:
         # Clean shutdown
         try:
@@ -433,8 +291,4 @@ async def main():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     asyncio.run(main())
-=======
-    asyncio.run(main())
->>>>>>> origin/OS0.6.2.grok

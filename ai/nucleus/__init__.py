@@ -10,7 +10,6 @@ __version__ = "0.6.0"
 def initialize_nucleus():
     """Initialize nucleus cellular systems"""
     return True
-<<<<<<< HEAD
 
 
 # Agent Conclave Facade - Simplified AI agent orchestration
@@ -25,5 +24,3 @@ __all__ = [
     "AgentResponse",
     "get_agent_conclave",
 ]
-=======
->>>>>>> origin/OS0.6.2.grok

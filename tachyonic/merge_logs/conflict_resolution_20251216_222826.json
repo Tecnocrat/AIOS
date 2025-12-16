@@ -1,0 +1,2044 @@
+{
+  "timestamp": "2025-12-16T22:28:26.199843",
+  "stats": {
+    "total_files": 254,
+    "failed_files": 31,
+    "remaining_conflicts": 37,
+    "resolved_files": 223,
+    "resolved_conflicts": 3293
+  },
+  "results": [
+    {
+      "path": ".vscode\\ai-context-auto-loader.ps1",
+      "original_conflicts": 15,
+      "resolved_conflicts": 12,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": ".vscode\\tasks.json",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\aios_interface_manager.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\communication\\initialization.py",
+      "original_conflicts": 11,
+      "resolved_conflicts": 11,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\communication\\interfaces.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 9,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\communication\\message_types.py",
+      "original_conflicts": 14,
+      "resolved_conflicts": 12,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\cytoplasm\\cytoplasm_bridge.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\cytoplasm_dendritic_bridge.py",
+      "original_conflicts": 15,
+      "resolved_conflicts": 15,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\cytoplasm_intelligence.py",
+      "original_conflicts": 12,
+      "resolved_conflicts": 11,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\debug_manager.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\deps\\shadows\\optional_stacks_shadow.py",
+      "original_conflicts": 6,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\ai_agent_bridge.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\ai_engine_context_enforcer.py",
+      "original_conflicts": 17,
+      "resolved_conflicts": 17,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_cross_dialogue_intelligence.py",
+      "original_conflicts": 10,
+      "resolved_conflicts": 10,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\ai_endpoints.py",
+      "original_conflicts": 11,
+      "resolved_conflicts": 10,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\development_endpoints.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 22,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\system_endpoints.py",
+      "original_conflicts": 8,
+      "resolved_conflicts": 8,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\endpoints\\ux_endpoints.py",
+      "original_conflicts": 7,
+      "resolved_conflicts": 7,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\main.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\models.py",
+      "original_conflicts": 33,
+      "resolved_conflicts": 26,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\services\\debug_manager.py",
+      "original_conflicts": 18,
+      "resolved_conflicts": 18,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\aios_vscode_integration\\tests\\test_integration.py",
+      "original_conflicts": 13,
+      "resolved_conflicts": 13,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\interfaces\\membrane_intelligence.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\scripts\\agentic_auto_controller.py",
+      "original_conflicts": 12,
+      "resolved_conflicts": 12,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\scripts\\integrate_maintenance.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\scripts\\maintenance_cli.py",
+      "original_conflicts": 13,
+      "resolved_conflicts": 13,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\scripts\\maintenance_service_bridge.py",
+      "original_conflicts": 6,
+      "resolved_conflicts": 6,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\test_ui_integration.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 9,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\tools\\comprehensive_linter.py",
+      "original_conflicts": 14,
+      "resolved_conflicts": 12,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\tools\\cross_pollination_automator.py",
+      "original_conflicts": 21,
+      "resolved_conflicts": 21,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\infrastructure\\ui_interaction_bridge.py",
+      "original_conflicts": 53,
+      "resolved_conflicts": 52,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\__init__.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\ai_cells\\__init__.py",
+      "original_conflicts": 5,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\ai_cells\\ai_cell_manager.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\ai_cells\\ai_engine_handoff.py",
+      "original_conflicts": 35,
+      "resolved_conflicts": 35,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\communication\\ai_intelligence_supercell_interface.py",
+      "original_conflicts": 41,
+      "resolved_conflicts": 41,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\communication\\aios_universal_communication_system.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\ingestion\\documentation_ingestion_system.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\ingestion\\revolutionary_archive_ingestion.py",
+      "original_conflicts": 39,
+      "resolved_conflicts": 37,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\ingestion\\supercell_knowledge_injector.py",
+      "original_conflicts": 53,
+      "resolved_conflicts": 53,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\interface_bridge.py",
+      "original_conflicts": 55,
+      "resolved_conflicts": 53,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\interface_bridge_generation_api.py",
+      "original_conflicts": 32,
+      "resolved_conflicts": 30,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\interfaces\\tachyonic_layer_reader.py",
+      "original_conflicts": 30,
+      "resolved_conflicts": 28,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\orchestrators\\aios_cellular_reorganization_implementation.py",
+      "original_conflicts": 17,
+      "resolved_conflicts": 17,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\sequencer.py",
+      "original_conflicts": 41,
+      "resolved_conflicts": 41,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ai_knowledge_transfer\\__init__.py",
+      "original_conflicts": 16,
+      "resolved_conflicts": 16,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ainlp\\__init__.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ainlp\\AINLP_HEALTH_ASSESSMENT_ENGINE.py",
+      "original_conflicts": 11,
+      "resolved_conflicts": 11,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ainlp\\ainlp_unified_engine.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ainlp\\kernel\\__init__.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ainlp\\kernel\\tooling\\__init__.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ainlp\\kernel\\tooling\\recursive_tooling.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\ainlp_migration\\ainlp_agent.py",
+      "original_conflicts": 26,
+      "resolved_conflicts": 26,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\aios_core.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\context_crystallization_engine\\__init__.py",
+      "original_conflicts": 79,
+      "resolved_conflicts": 75,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\context_crystallization_engine\\core.py",
+      "original_conflicts": 77,
+      "resolved_conflicts": 73,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\integration\\archive\\robust_python_environment_manager_clean.py",
+      "original_conflicts": 32,
+      "resolved_conflicts": 31,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\integration\\archive\\test_comprehensive_python_environment.py",
+      "original_conflicts": 17,
+      "resolved_conflicts": 17,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\integration\\archive\\test_simple_python_environment.py",
+      "original_conflicts": 13,
+      "resolved_conflicts": 13,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\maintenance\\system_health.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\nucleus\\src\\nlp\\__init__.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\research\\laboratory_intelligence.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\agentic_emergence_engine.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 20,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\agents\\agent_implementations.py",
+      "original_conflicts": 53,
+      "resolved_conflicts": 52,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\agents\\prompt_generator.py",
+      "original_conflicts": 26,
+      "resolved_conflicts": 26,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\consciousness_evolution_engine.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 21,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\core\\universal_agentic_logger.py",
+      "original_conflicts": 56,
+      "resolved_conflicts": 53,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\demos\\aios_deepseek_integration_demo.py",
+      "original_conflicts": 21,
+      "resolved_conflicts": 21,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\demos\\deepseek_usage_examples.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 9,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\demos\\enhanced_ai_demo.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 7,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\engines\\aios_ai_integration_bridge.py",
+      "original_conflicts": 20,
+      "resolved_conflicts": 20,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\engines\\aios_custom_ai_engine.py",
+      "original_conflicts": 35,
+      "resolved_conflicts": 34,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\engines\\aios_performance_optimizer.py",
+      "original_conflicts": 26,
+      "resolved_conflicts": 25,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\engines\\deepseek_intelligence_engine.py",
+      "original_conflicts": 41,
+      "resolved_conflicts": 37,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\engines\\enhanced_visual_intelligence_engine.py",
+      "original_conflicts": 69,
+      "resolved_conflicts": 66,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\engines\\paradigm_extraction_engine.py",
+      "original_conflicts": 16,
+      "resolved_conflicts": 16,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\evolution\\code_analyzer.py",
+      "original_conflicts": 34,
+      "resolved_conflicts": 34,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\evolution\\code_diff_validator.py",
+      "original_conflicts": 19,
+      "resolved_conflicts": 19,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\evolution\\consciousness_metrics.py",
+      "original_conflicts": 16,
+      "resolved_conflicts": 16,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\evolution\\file_criticality_evolution_engine.py",
+      "original_conflicts": 33,
+      "resolved_conflicts": 31,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\evolution\\multi_agent_evolution_loop.py",
+      "original_conflicts": 58,
+      "resolved_conflicts": 56,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\evolution\\run_criticality_evolution.py",
+      "original_conflicts": 6,
+      "resolved_conflicts": 6,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\frameworks\\agent_protocol\\__init__.py",
+      "original_conflicts": 7,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 3,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\frameworks\\agent_protocol\\aios_adapter.py",
+      "original_conflicts": 46,
+      "resolved_conflicts": 45,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\frameworks\\agent_protocol\\aios_adapter_placeholder.py",
+      "original_conflicts": 14,
+      "resolved_conflicts": 14,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\frameworks\\agent_protocol\\base_protocol.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 22,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\frameworks\\agent_protocol\\test_integration.py",
+      "original_conflicts": 18,
+      "resolved_conflicts": 17,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\activate_continuous_optimization.py",
+      "original_conflicts": 7,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\aios_agentic_optimizer.py",
+      "original_conflicts": 38,
+      "resolved_conflicts": 37,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\aios_architectural_analysis.py",
+      "original_conflicts": 33,
+      "resolved_conflicts": 32,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\aios_deepseek_supercell_bridge.py",
+      "original_conflicts": 32,
+      "resolved_conflicts": 29,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\aios_githooks_optimizer.py",
+      "original_conflicts": 19,
+      "resolved_conflicts": 19,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\aios_recursive_optimizer.py",
+      "original_conflicts": 5,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\cellular_ecosystem\\ainlp_cellular_integrator.py",
+      "original_conflicts": 41,
+      "resolved_conflicts": 36,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\cleanup_continuous_optimization.py",
+      "original_conflicts": 15,
+      "resolved_conflicts": 15,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\continuous_optimization_daemon.py",
+      "original_conflicts": 28,
+      "resolved_conflicts": 27,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\continuous_optimization_status.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 8,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\demo_continuous_optimization.py",
+      "original_conflicts": 13,
+      "resolved_conflicts": 10,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\demo_vscode_error_intelligence.py",
+      "original_conflicts": 6,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\development_path_integration.py",
+      "original_conflicts": 54,
+      "resolved_conflicts": 53,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\agentic_behavior_enhancement.py",
+      "original_conflicts": 38,
+      "resolved_conflicts": 36,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\agentic_mcp_server.py",
+      "original_conflicts": 12,
+      "resolved_conflicts": 11,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\artifact_mcp_server.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 8,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\consciousness_mcp_server.py",
+      "original_conflicts": 23,
+      "resolved_conflicts": 22,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\evolution_mcp_server.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 8,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\gemini_evolution_bridge.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\ingestor_mcp_server.py",
+      "original_conflicts": 8,
+      "resolved_conflicts": 7,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\integration_tester.py",
+      "original_conflicts": 49,
+      "resolved_conflicts": 47,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\gemini_bridge\\meta_cognitive_loop.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 21,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\library_code_generation_loop.py",
+      "original_conflicts": 34,
+      "resolved_conflicts": 33,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\lightweight_ai_coordinator.py",
+      "original_conflicts": 12,
+      "resolved_conflicts": 12,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\ollama_bridge.py",
+      "original_conflicts": 31,
+      "resolved_conflicts": 31,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\test_vscode_consciousness_feed.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 21,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\unified_development_optimizer.py",
+      "original_conflicts": 49,
+      "resolved_conflicts": 47,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\visual_ai_integration_bridge.py",
+      "original_conflicts": 14,
+      "resolved_conflicts": 14,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\vscode_ai_bridge.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 20,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\vscode_ai_bridge_server.py",
+      "original_conflicts": 6,
+      "resolved_conflicts": 6,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\vscode_consciousness.py",
+      "original_conflicts": 23,
+      "resolved_conflicts": 23,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\vscode_error_intelligence.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\integrations\\vscode_realtime_error_intelligence.py",
+      "original_conflicts": 46,
+      "resolved_conflicts": 45,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\__init__.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\agent_conversations.py",
+      "original_conflicts": 65,
+      "resolved_conflicts": 62,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\agentic_development_loop.py",
+      "original_conflicts": 43,
+      "resolved_conflicts": 40,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\agentic_semantic_interpreter.py",
+      "original_conflicts": 20,
+      "resolved_conflicts": 19,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\ainlp\\__init__.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\ainlp\\exception_framework.py",
+      "original_conflicts": 26,
+      "resolved_conflicts": 24,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\ainlp\\json_audit.py",
+      "original_conflicts": 8,
+      "resolved_conflicts": 8,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\ainlp\\json_metadata.py",
+      "original_conflicts": 12,
+      "resolved_conflicts": 12,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\ainlp_agentic_orchestrator.py",
+      "original_conflicts": 73,
+      "resolved_conflicts": 70,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\ainlp_consciousness_integration_hub.py",
+      "original_conflicts": 53,
+      "resolved_conflicts": 51,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\consciousness_bridge.py",
+      "original_conflicts": 29,
+      "resolved_conflicts": 26,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\consciousness_evolution_engine.py",
+      "original_conflicts": 36,
+      "resolved_conflicts": 33,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\cpp_stl_ingestion_pipeline.py",
+      "original_conflicts": 32,
+      "resolved_conflicts": 32,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\dendritic_node.py",
+      "original_conflicts": 42,
+      "resolved_conflicts": 41,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\enhanced_agentic_loop.py",
+      "original_conflicts": 41,
+      "resolved_conflicts": 40,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\knowledge_integration.py",
+      "original_conflicts": 40,
+      "resolved_conflicts": 39,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\library_ingestion_protocol.py",
+      "original_conflicts": 52,
+      "resolved_conflicts": 49,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\library_learning_integration_hub.py",
+      "original_conflicts": 36,
+      "resolved_conflicts": 35,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\supercell_intelligence_coordinator.py",
+      "original_conflicts": 39,
+      "resolved_conflicts": 38,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\task3_evolution_lab_validation.py",
+      "original_conflicts": 13,
+      "resolved_conflicts": 13,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\intelligence\\test_library_ingestion_protocol.py",
+      "original_conflicts": 25,
+      "resolved_conflicts": 25,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\languages\\__init__.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\parsers\\cpp_documentation_parser.py",
+      "original_conflicts": 30,
+      "resolved_conflicts": 29,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\protocols\\agent_communication\\__init__.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\protocols\\agent_communication\\adapter.py",
+      "original_conflicts": 14,
+      "resolved_conflicts": 14,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\protocols\\agent_communication\\message_types.py",
+      "original_conflicts": 25,
+      "resolved_conflicts": 21,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\protocols\\agent_communication\\transport.py",
+      "original_conflicts": 22,
+      "resolved_conflicts": 22,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\__init__.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\holographic_consciousness.py",
+      "original_conflicts": 20,
+      "resolved_conflicts": 18,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\quantum_dendritic_field.py",
+      "original_conflicts": 33,
+      "resolved_conflicts": 32,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\quantum_dendritic_field_system.py",
+      "original_conflicts": 25,
+      "resolved_conflicts": 24,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\quantum_dendritic_field\\quantum_dendritic_field\\quantum_field_coherence_monitor.py",
+      "original_conflicts": 19,
+      "resolved_conflicts": 18,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\repository_ingestion_engine.py",
+      "original_conflicts": 27,
+      "resolved_conflicts": 25,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\runtime\\__init__.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\runtime\\ai_execution_bridge.py",
+      "original_conflicts": 68,
+      "resolved_conflicts": 56,
+      "remaining_conflicts": 5,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\runtime\\intelligence_dashboard.py",
+      "original_conflicts": 73,
+      "resolved_conflicts": 69,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\runtime\\population_viewer.py",
+      "original_conflicts": 24,
+      "resolved_conflicts": 24,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\tools\\cpp_stl_web_crawler.py",
+      "original_conflicts": 25,
+      "resolved_conflicts": 25,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\src\\tools\\semantic_validator.py",
+      "original_conflicts": 18,
+      "resolved_conflicts": 18,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\startup.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\supercells\\core_engine.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\test_changelog_requirement.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\test_interface_bridge.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tests\\integration\\test_orchestration.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\__init__.py",
+      "original_conflicts": 10,
+      "resolved_conflicts": 10,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\aios_holographic_metadata_system.py",
+      "original_conflicts": 5,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\architecture\\__init__.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\architecture\\ainlp_integration_optimizer.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\architecture\\aios_architecture_monitor.py",
+      "original_conflicts": 9,
+      "resolved_conflicts": 9,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\architecture\\aios_powershell_analyzer.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\architecture\\architectural_compliance_validator.py",
+      "original_conflicts": 5,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\architecture\\biological_architecture_monitor.py",
+      "original_conflicts": 11,
+      "resolved_conflicts": 11,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\architecture\\supercell_architecture_analyzer.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\consciousness\\__init__.py",
+      "original_conflicts": 7,
+      "resolved_conflicts": 7,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\consciousness\\aios_cli_agent_system.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\consciousness\\dendritic_consolidation_engine.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\consciousness\\dendritic_self_improvement_orchestrator.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\consciousness\\dendritic_supervisor.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\consciousness\\enhanced_consciousness_demo.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\consciousness\\runtime_intelligence_dendritic_integration.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\database\\__init__.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\database\\aios_database.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\security_compliance_validator.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\__init__.py",
+      "original_conflicts": 7,
+      "resolved_conflicts": 7,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\aios_core_engine_cellular_cleanup_tool.py",
+      "original_conflicts": 5,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\aios_dendritic_path_tracker.py",
+      "original_conflicts": 5,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\aios_dev_setup.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\aios_file_tracking_system.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\comprehensive_aios_health_test.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\demo_enhanced_commit_hook.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\emergency_root_cleanup.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\generate_file_scores.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\index_tools.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\python_environment_validator.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\runtime_intelligence_comprehensive_test.py",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\system_health_check.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\system\\test_directive_checking.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\tachyonic\\__init__.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\update_import_paths.py",
+      "original_conflicts": 15,
+      "resolved_conflicts": 15,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\visual\\__init__.py",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "ai\\tools\\visual\\enhanced_visual_intelligence_bridge.py",
+      "original_conflicts": 34,
+      "resolved_conflicts": 33,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "aios_launch.ps1",
+      "original_conflicts": 11,
+      "resolved_conflicts": 6,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "core\\.vscode\\settings.json",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "docs\\AINLP\\AINLP_SPECIFICATION.md",
+      "original_conflicts": 2,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "docs\\ARCHITECTURE_INDEX.md",
+      "original_conflicts": 9,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "docs\\CHANGELOG.md",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "docs\\vscopilot chat\\vscopilot 3.md",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "evolution_lab\\artifacts\\consciousness_data_explorer_1751218592.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "evolution_lab\\artifacts\\consciousness_text_analyzer_1751218592.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "evolution_lab\\README.md",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "evolution_lab\\tachyonic_field\\evolution_orchestrator.py",
+      "original_conflicts": 8,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.Services\\ConsciousnessService.cs",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.UI\\ChatInterfaceWindow.xaml",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.UI\\FileExplorerWindow.xaml",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.UI\\FileExplorerWindow.xaml.cs",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.UI\\MainWindow.xaml",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.UI\\MainWindow.xaml.cs",
+      "original_conflicts": 3,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.UI\\SimpleMainWindow.xaml",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "interface\\AIOS.UI\\SimpleMainWindow.xaml.cs",
+      "original_conflicts": 3,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "runtime\\.aios_spatial_metadata.json",
+      "original_conflicts": 28,
+      "resolved_conflicts": 28,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "runtime\\analysis\\aios_comprehensive_file_analysis_commit_msg.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "runtime\\analysis\\aios_deep_thought_commit_msg_analysis.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "runtime\\analysis\\aios_powershell_fixes_documentation.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "runtime\\iterations\\ainlp_iteration.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "runtime\\README.md",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "runtime\\three_supercell_coordination_completion_report.py",
+      "original_conflicts": 5,
+      "resolved_conflicts": 5,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "runtime\\three_supercell_interface_optimization.py",
+      "original_conflicts": 19,
+      "resolved_conflicts": 19,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "runtime\\three_supercell_synchronized_demo.py",
+      "original_conflicts": 2,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "scripts\\resolve_merge_conflicts.py",
+      "original_conflicts": 0,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\boot_reports\\aios_boot_report_latest.json",
+      "original_conflicts": 3,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\consciousness\\metabolized_patterns\\docs_metabolized_architectural_20250913_165332.json",
+      "original_conflicts": 0,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\consciousness\\metabolized_patterns\\docs_metabolized_behavioral_20250913_165332.json",
+      "original_conflicts": 0,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\consciousness\\metabolized_patterns\\docs_metabolized_integration_20250913_165332.json",
+      "original_conflicts": 0,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\consciousness\\supercell_knowledge_crystals\\docs_metabolized_architectural_20250913_165332.json",
+      "original_conflicts": 0,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\consciousness\\supercell_knowledge_crystals\\docs_metabolized_behavioral_20250913_165332.json",
+      "original_conflicts": 0,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\consciousness\\supercell_knowledge_crystals\\docs_metabolized_integration_20250913_165332.json",
+      "original_conflicts": 0,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\conversation_data\\md\\vscopilot.md",
+      "original_conflicts": 3,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_cellular_reorganization_analyzer.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py\\aios_comparative_testing_framework.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\genetics\\original\\cytoplasm_intelligence_20251011_.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\root_optimization\\archived_20250905_220720\\aios_core_evolution_monitor.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\root_optimization\\archived_20250905_220720\\aios_core_meta_evolutionary_enhancer.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\shadows\\dev_path\\SHADOW_INDEX.md",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\shadows\\SHADOW_INDEX.md",
+      "original_conflicts": 4,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\tools\\documentation\\critical_documentation_enhancer.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\tools\\documentation\\documentation_metabolism_demo.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\tools\\documentation\\documentation_post_metabolism_manager.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\tools\\ingestors\\execute_biological_digestion.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "tachyonic\\tools\\utilities\\post_metabolism_recommendations.py",
+      "original_conflicts": 1,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "vscode-extension\\src\\aiEngines\\openRouterEngine.ts",
+      "original_conflicts": 4,
+      "resolved_conflicts": 4,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "vscode-extension\\src\\aiosBridge.ts",
+      "original_conflicts": 5,
+      "resolved_conflicts": 3,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "vscode-extension\\src\\chatParticipant.ts",
+      "original_conflicts": 4,
+      "resolved_conflicts": 2,
+      "remaining_conflicts": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "path": "vscode-extension\\src\\contextManager.ts",
+      "original_conflicts": 1,
+      "resolved_conflicts": 0,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    },
+    {
+      "path": "vscode-extension\\test-openrouter.js",
+      "original_conflicts": 2,
+      "resolved_conflicts": 1,
+      "remaining_conflicts": 1,
+      "success": false,
+      "error": null
+    }
+  ]
+}

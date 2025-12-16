@@ -29,32 +29,9 @@ public partial class MainWindow : Window
     private string _currentModule = "nlp";
     private int _messageCount = 0;
 
-<<<<<<< HEAD
     // Phase 11 Day 1: AI Layer Client for Python AI integration
     private AILayerClient _aiLayerClient;
 
-=======
->>>>>>> origin/OS0.6.2.grok
-    // Fractal holographic components
-    private HolographicSystemState _systemState;
-    private Dictionary<string, ComponentReflection> _componentReflections;
-
-    public MainWindow()
-    {
-        InitializeComponent();
-    _aiService = new AIOS.Services.AIServiceManager();
-    _contextManager = new AIOS.Models.FractalContextManager();
-    _orchestrator = new AIOS.Models.HolographicUIOrchestrator(_contextManager);
-        _vscodeBridge = new VSCodeExtensionBridge();
-        _maintenanceService = new AIOS.Services.MaintenanceService();
-        _systemState = new HolographicSystemState();
-        _componentReflections = new Dictionary<string, ComponentReflection>();
-<<<<<<< HEAD
-        
-        // Phase 11 Day 1: Initialize AI Layer Client (port 8000 - server_manager default)
-        _aiLayerClient = new AILayerClient("http://localhost:8000");
-=======
->>>>>>> origin/OS0.6.2.grok
 
         InitializeUI();
         InitializeFractalComponents();
@@ -711,7 +688,6 @@ public partial class MainWindow : Window
             AddActivityLog($"Server restart error: {ex.Message}");
         }
     }
-<<<<<<< HEAD
 
     // ========================================================================
     // Phase 11 Day 1: AI Search Integration
@@ -938,6 +914,4 @@ public partial class MainWindow : Window
             AddActivityLog($"AI Search error: {ex.Message}");
         }
     }
-=======
->>>>>>> origin/OS0.6.2.grok
 }

@@ -200,11 +200,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-<<<<<<< HEAD
                     <TextBlock Grid.Row="0" Text="Context &amp; History" FontSize="16" FontWeight="Bold" Foreground="#FF00D4FF" Margin="15,15,15,10"/>
-=======
-                    <TextBlock Grid.Row="0" Text="Context & History" FontSize="16" FontWeight="Bold" Foreground="#FF00D4FF" Margin="15,15,15,10"/>
->>>>>>> origin/OS0.6.2.grok
 
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="15,0,15,15">
                         <StackPanel Name="ContextPanel">

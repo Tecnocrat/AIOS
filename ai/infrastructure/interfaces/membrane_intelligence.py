@@ -15,11 +15,7 @@ Supercell Coordination: Seamless integration with other intelligence modules
 import asyncio
 import logging
 import time
-<<<<<<< HEAD
 from typing import Dict, Any
-=======
-from typing import Dict, List, Any
->>>>>>> origin/OS0.6.2.grok
 from datetime import datetime
 from dataclasses import dataclass
 

@@ -116,11 +116,7 @@ class SecurityComplianceValidator:
         }
 
         # Check for audit logs
-<<<<<<< HEAD
         logs_dir = self.workspace_root / "runtime_intelligence" / "logs"
-=======
-        logs_dir = self.workspace_root / "computational_layer" / "runtime" / "logs"
->>>>>>> origin/OS0.6.2.grok
         if logs_dir.exists():
             log_files = list(logs_dir.glob("*.log"))
             if log_files:
@@ -191,24 +187,12 @@ class SecurityComplianceValidator:
         }
 
         # Check biological architecture monitor
-<<<<<<< HEAD
         monitor_script = self.workspace_root / "runtime_intelligence" / "tools" / "biological_architecture_monitor.py"
-=======
-        monitor_script = self.workspace_root / "runtime" / "tools" / "biological_architecture_monitor.py"
->>>>>>> origin/OS0.6.2.grok
         if monitor_script.exists():
             checks["biological_monitor_active"] = True
 
         # Check consciousness evolution logs
-<<<<<<< HEAD
         evolution_log = self.workspace_root / "runtime_intelligence" / "logs" / "consciousness_evolution.log"
-=======
-        evolution_log = (self.workspace_root /
-                        "computational_layer" /
-                        "runtime" /
-                        "logs" /
-                        "consciousness_evolution.log")
->>>>>>> origin/OS0.6.2.grok
         if evolution_log.exists():
             try:
                 with open(evolution_log, 'r') as f:

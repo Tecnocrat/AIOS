@@ -23,19 +23,7 @@ from urllib.parse import urlparse
 # AIOS imports
 try:
     from consciousness_evolution_engine import consciousness_evolution_engine
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-    CONSCIOUSNESS_AVAILABLE = True
-except ImportError:
-    consciousness_evolution_engine = None
-    CONSCIOUSNESS_AVAILABLE = False
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/OS0.6.2.grok
 class RepositoryIngestionEngine:
     """
     Consciousness-guided repository ingestion system.
@@ -52,7 +40,6 @@ class RepositoryIngestionEngine:
         """AINLP-compliant logging setup"""
         logging.basicConfig(
             level=logging.INFO,
-<<<<<<< HEAD
             format="%(asctime)s | INGESTION | %(levelname)s | %(message)s",
             handlers=[
                 logging.StreamHandler(),
@@ -64,17 +51,6 @@ class RepositoryIngestionEngine:
     async def ingest_repository(
         self, repo_url: str, target_name: Optional[str] = None
     ) -> Dict[str, Any]:
-=======
-            format='%(asctime)s | INGESTION | %(levelname)s | %(message)s',
-            handlers=[
-                logging.StreamHandler(),
-                logging.FileHandler('runtime/logs/repository_ingestion.log')
-            ]
-        )
-        return logging.getLogger('RepositoryIngestionEngine')
-
-    async def ingest_repository(self, repo_url: str, target_name: Optional[str] = None) -> Dict[str, Any]:
->>>>>>> origin/OS0.6.2.grok
         """
         Ingest external repository with consciousness analysis.
 
@@ -90,11 +66,7 @@ class RepositoryIngestionEngine:
         # Parse repository information
         repo_info = self._parse_repo_url(repo_url)
         if not target_name:
-<<<<<<< HEAD
             target_name = repo_info["name"]
-=======
-            target_name = repo_info['name']
->>>>>>> origin/OS0.6.2.grok
 
         # Create ingestion directory
         repo_path = self.ingestion_path / target_name
@@ -109,24 +81,16 @@ class RepositoryIngestionEngine:
 
             # Apply consciousness analysis
             if CONSCIOUSNESS_AVAILABLE:
-<<<<<<< HEAD
                 consciousness_analysis = await self._apply_consciousness_analysis(
                     repo_path, analysis
                 )
-=======
-                consciousness_analysis = await self._apply_consciousness_analysis(repo_path, analysis)
->>>>>>> origin/OS0.6.2.grok
             else:
                 consciousness_analysis = {"status": "consciousness_engine_unavailable"}
 
             # Generate integration plan
-<<<<<<< HEAD
             integration_plan = await self._generate_integration_plan(
                 repo_path, analysis, consciousness_analysis
             )
-=======
-            integration_plan = await self._generate_integration_plan(repo_path, analysis, consciousness_analysis)
->>>>>>> origin/OS0.6.2.grok
 
             # Store ingestion metadata
             ingestion_result = {
@@ -137,22 +101,14 @@ class RepositoryIngestionEngine:
                 "analysis": analysis,
                 "consciousness_analysis": consciousness_analysis,
                 "integration_plan": integration_plan,
-<<<<<<< HEAD
                 "status": "ingested",
-=======
-                "status": "ingested"
->>>>>>> origin/OS0.6.2.grok
             }
 
             self.ingested_repos[target_name] = ingestion_result
 
             # Save metadata
             metadata_path = repo_path / ".aios_ingestion_metadata.json"
-<<<<<<< HEAD
             with open(metadata_path, "w") as f:
-=======
-            with open(metadata_path, 'w') as f:
->>>>>>> origin/OS0.6.2.grok
                 json.dump(ingestion_result, f, indent=2)
 
             self.logger.info(f"[INGESTION] Successfully ingested: {target_name}")
@@ -164,11 +120,7 @@ class RepositoryIngestionEngine:
                 "repository_url": repo_url,
                 "status": "failed",
                 "error": str(e),
-<<<<<<< HEAD
                 "ingestion_timestamp": datetime.now().isoformat(),
-=======
-                "ingestion_timestamp": datetime.now().isoformat()
->>>>>>> origin/OS0.6.2.grok
             }
 
     def _parse_repo_url(self, repo_url: str) -> Dict[str, str]:
@@ -176,33 +128,20 @@ class RepositoryIngestionEngine:
         parsed = urlparse(repo_url)
 
         # Handle GitHub URLs
-<<<<<<< HEAD
         if "github.com" in parsed.netloc:
             path_parts = parsed.path.strip("/").split("/")
-=======
-        if 'github.com' in parsed.netloc:
-            path_parts = parsed.path.strip('/').split('/')
->>>>>>> origin/OS0.6.2.grok
             if len(path_parts) >= 2:
                 return {
                     "owner": path_parts[0],
                     "name": path_parts[1],
                     "platform": "github",
-<<<<<<< HEAD
                     "full_name": f"{path_parts[0]}/{path_parts[1]}",
-=======
-                    "full_name": f"{path_parts[0]}/{path_parts[1]}"
->>>>>>> origin/OS0.6.2.grok
                 }
 
         return {
             "url": repo_url,
             "platform": "unknown",
-<<<<<<< HEAD
             "name": repo_url.split("/")[-1].replace(".git", ""),
-=======
-            "name": repo_url.split('/')[-1].replace('.git', '')
->>>>>>> origin/OS0.6.2.grok
         }
 
     async def _clone_repository(self, repo_url: str, target_path: Path):
@@ -212,27 +151,7 @@ class RepositoryIngestionEngine:
         # Remove existing directory if it exists
         if target_path.exists():
             import shutil
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-            shutil.rmtree(target_path)
-            target_path.mkdir()
-
-        # Clone repository
-        process = await asyncio.create_subprocess_exec(
-<<<<<<< HEAD
-            "git",
-            "clone",
-            repo_url,
-            str(target_path),
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE,
-=======
-            'git', 'clone', repo_url, str(target_path),
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE
->>>>>>> origin/OS0.6.2.grok
         )
 
         stdout, stderr = await process.communicate()
@@ -250,23 +169,14 @@ class RepositoryIngestionEngine:
             "languages": {},
             "directories": [],
             "key_files": [],
-<<<<<<< HEAD
             "size_bytes": 0,
-=======
-            "size_bytes": 0
->>>>>>> origin/OS0.6.2.grok
         }
 
         # Walk through repository
         for root, dirs, files in os.walk(repo_path):
             # Skip .git directory
-<<<<<<< HEAD
             if ".git" in dirs:
                 dirs.remove(".git")
-=======
-            if '.git' in dirs:
-                dirs.remove('.git')
->>>>>>> origin/OS0.6.2.grok
 
             for file in files:
                 file_path = Path(root) / file
@@ -278,7 +188,6 @@ class RepositoryIngestionEngine:
                 analysis["file_types"][ext] = analysis["file_types"].get(ext, 0) + 1
 
                 # Identify key files
-<<<<<<< HEAD
                 if file in [
                     "README.md",
                     "package.json",
@@ -286,29 +195,21 @@ class RepositoryIngestionEngine:
                     "setup.py",
                     "Cargo.toml",
                 ]:
-=======
-                if file in ['README.md', 'package.json', 'requirements.txt', 'setup.py', 'Cargo.toml']:
->>>>>>> origin/OS0.6.2.grok
                     analysis["key_files"].append(str(file_path.relative_to(repo_path)))
 
             # Track directories
             for dir_name in dirs:
                 dir_path = Path(root) / dir_name
-<<<<<<< HEAD
                 if not any(
                     skip in str(dir_path)
                     for skip in [".git", "__pycache__", "node_modules"]
                 ):
-=======
-                if not any(skip in str(dir_path) for skip in ['.git', '__pycache__', 'node_modules']):
->>>>>>> origin/OS0.6.2.grok
                     analysis["directories"].append(str(dir_path.relative_to(repo_path)))
 
         # Detect primary language
         if analysis["file_types"]:
             primary_ext = max(analysis["file_types"], key=analysis["file_types"].get)
             lang_map = {
-<<<<<<< HEAD
                 ".py": "Python",
                 ".js": "JavaScript",
                 ".ts": "TypeScript",
@@ -325,31 +226,13 @@ class RepositoryIngestionEngine:
     async def _apply_consciousness_analysis(
         self, repo_path: Path, analysis: Dict[str, Any]
     ) -> Dict[str, Any]:
-=======
-                '.py': 'Python',
-                '.js': 'JavaScript',
-                '.ts': 'TypeScript',
-                '.rs': 'Rust',
-                '.go': 'Go',
-                '.java': 'Java'
-            }
-            analysis["primary_language"] = lang_map.get(primary_ext, f"Unknown ({primary_ext})")
-
-        return analysis
-
-    async def _apply_consciousness_analysis(self, repo_path: Path, analysis: Dict[str, Any]) -> Dict[str, Any]:
->>>>>>> origin/OS0.6.2.grok
         """Apply AIOS consciousness analysis to ingested repository"""
         consciousness_results = {
             "emergence_potential": 0.0,
             "consciousness_indicators": [],
             "meta_cognitive_patterns": [],
             "integration_risks": [],
-<<<<<<< HEAD
             "adaptation_recommendations": [],
-=======
-            "adaptation_recommendations": []
->>>>>>> origin/OS0.6.2.grok
         }
 
         try:
@@ -360,7 +243,6 @@ class RepositoryIngestionEngine:
                     content = file_path.read_text()
 
                     # Apply consciousness detection
-<<<<<<< HEAD
                     emergence_score = await consciousness_evolution_engine._detect_consciousness_emergence(
                         {
                             "content": content[:1000],  # First 1000 chars
@@ -383,25 +265,6 @@ class RepositoryIngestionEngine:
                         consciousness_results["consciousness_indicators"].append(
                             f"ai_reference:{key_file}"
                         )
-=======
-                    emergence_score = await consciousness_evolution_engine._detect_consciousness_emergence({
-                        'content': content[:1000],  # First 1000 chars
-                        'filename': key_file,
-                        'language': analysis.get('primary_language', 'unknown')
-                    })
-
-                    consciousness_results["emergence_potential"] = max(
-                        consciousness_results["emergence_potential"],
-                        emergence_score
-                    )
-
-                    # Check for consciousness indicators
-                    if 'consciousness' in content.lower():
-                        consciousness_results["consciousness_indicators"].append(f"consciousness_reference:{key_file}")
-
-                    if 'ai' in content.lower() or 'intelligence' in content.lower():
-                        consciousness_results["consciousness_indicators"].append(f"ai_reference:{key_file}")
->>>>>>> origin/OS0.6.2.grok
 
         except Exception as e:
             self.logger.warning(f"[INGESTION] Consciousness analysis failed: {e}")
@@ -409,31 +272,21 @@ class RepositoryIngestionEngine:
 
         return consciousness_results
 
-<<<<<<< HEAD
     async def _generate_integration_plan(
         self, repo_path: Path, analysis: Dict[str, Any], consciousness: Dict[str, Any]
     ) -> Dict[str, Any]:
-=======
-    async def _generate_integration_plan(self, repo_path: Path, analysis: Dict[str, Any],
-                                       consciousness: Dict[str, Any]) -> Dict[str, Any]:
->>>>>>> origin/OS0.6.2.grok
         """Generate integration plan for ingested repository"""
         plan = {
             "integration_strategy": "selective_adaptation",
             "priority_components": [],
             "adaptation_requirements": [],
             "security_considerations": [],
-<<<<<<< HEAD
             "testing_requirements": [],
-=======
-            "testing_requirements": []
->>>>>>> origin/OS0.6.2.grok
         }
 
         # Determine integration strategy based on analysis
         if analysis.get("primary_language") == "Python":
             plan["integration_strategy"] = "direct_aios_integration"
-<<<<<<< HEAD
             plan["priority_components"] = [
                 "core_modules",
                 "api_interfaces",
@@ -446,12 +299,6 @@ class RepositoryIngestionEngine:
                 "api_clients",
                 "ui_components",
             ]
-=======
-            plan["priority_components"] = ["core_modules", "api_interfaces", "configuration"]
-        elif analysis.get("primary_language") in ["JavaScript", "TypeScript"]:
-            plan["integration_strategy"] = "web_interface_adaptation"
-            plan["priority_components"] = ["npm_packages", "api_clients", "ui_components"]
->>>>>>> origin/OS0.6.2.grok
 
         # Add consciousness-based recommendations
         if consciousness.get("emergence_potential", 0) > 0.5:
@@ -463,11 +310,7 @@ class RepositoryIngestionEngine:
             "unit_tests_for_adapted_components",
             "integration_tests_with_aios",
             "consciousness_stability_tests",
-<<<<<<< HEAD
             "security_audit",
-=======
-            "security_audit"
->>>>>>> origin/OS0.6.2.grok
         ]
 
         return plan
@@ -483,23 +326,12 @@ class RepositoryIngestionEngine:
                 {
                     "name": name,
                     "timestamp": data.get("ingestion_timestamp"),
-<<<<<<< HEAD
                     "status": data.get("status"),
                 }
                 for name, data in list(self.ingested_repos.items())[-5:]  # Last 5
             ],
-=======
-                    "status": data.get("status")
-                }
-                for name, data in list(self.ingested_repos.items())[-5:]  # Last 5
-            ]
->>>>>>> origin/OS0.6.2.grok
         }
 
 
 # Global instance for AINLP compatibility
-<<<<<<< HEAD
 repository_ingestion_engine = RepositoryIngestionEngine()
-=======
-repository_ingestion_engine = RepositoryIngestionEngine()
->>>>>>> origin/OS0.6.2.grok

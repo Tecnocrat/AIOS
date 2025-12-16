@@ -39,13 +39,7 @@ class AgenticAutoController:
     def __init__(self, workspace_root: Path = None):
         self.workspace_root = workspace_root or Path.cwd()
         self.cellular_bridge = get_cellular_bridge()
-<<<<<<< HEAD
         self.instruction_generator = AgenticInstructionGenerator(workspace_root)
-=======
-        self.instruction_generator = AgenticInstructionGenerator(
-            workspace_root
-        )
->>>>>>> origin/OS0.6.2.grok
 
         # Configuration
         self.auto_trigger_thresholds = {
@@ -69,15 +63,8 @@ class AgenticAutoController:
         """Analyze results and determine if agentic auto mode should trigger"""
 
         # Generate agentic tasks from analysis
-<<<<<<< HEAD
         agentic_tasks = self.instruction_generator.generate_from_quality_analysis(
             quality_results
-=======
-        agentic_tasks = (
-            self.instruction_generator.generate_from_quality_analysis(
-                quality_results
-            )
->>>>>>> origin/OS0.6.2.grok
         )
 
         # Decision logic for auto-triggering
@@ -89,13 +76,7 @@ class AgenticAutoController:
         risk_assessment = self._assess_risk(quality_results, agentic_tasks)
 
         # Generate execution plan
-<<<<<<< HEAD
         execution_plan = self._create_execution_plan(agentic_tasks, risk_assessment)
-=======
-        execution_plan = self._create_execution_plan(
-            agentic_tasks, risk_assessment
-        )
->>>>>>> origin/OS0.6.2.grok
 
         result = {
             "should_trigger_agentic": should_trigger,
@@ -115,13 +96,7 @@ class AgenticAutoController:
 
         return result
 
-<<<<<<< HEAD
     def _should_trigger_auto_mode(self, quality_results: Dict[str, Any]) -> bool:
-=======
-    def _should_trigger_auto_mode(
-        self, quality_results: Dict[str, Any]
-    ) -> bool:
->>>>>>> origin/OS0.6.2.grok
         """Determine if automatic agentic mode should be triggered"""
 
         # Check overall quality score
@@ -132,13 +107,7 @@ class AgenticAutoController:
             return True
 
         # Check emoji count (primary trigger)
-<<<<<<< HEAD
         emoji_count = quality_results.get("emoji_analysis", {}).get("total_emojis", 0)
-=======
-        emoji_count = quality_results.get("emoji_analysis", {}).get(
-            "total_emojis", 0
-        )
->>>>>>> origin/OS0.6.2.grok
         if emoji_count > self.auto_trigger_thresholds["max_emoji_count"]:
             return True
 
@@ -147,15 +116,9 @@ class AgenticAutoController:
             return True
 
         # Check integration quality
-<<<<<<< HEAD
         integration_score = quality_results.get("integration_analysis", {}).get(
             "integration_score", 1.0
         )
-=======
-        integration_score = quality_results.get(
-            "integration_analysis", {}
-        ).get("integration_score", 1.0)
->>>>>>> origin/OS0.6.2.grok
         if integration_score < 0.5:
             return True
 
@@ -183,26 +146,11 @@ class AgenticAutoController:
 
         if total_changes > 1000:
             risk_score += 0.3
-<<<<<<< HEAD
             risk_factors.append(f"High change volume: {total_changes} modifications")
 
         if len(affected_files) > self.auto_trigger_thresholds["max_affected_files"]:
             risk_score += 0.2
             risk_factors.append(f"Many files affected: {len(affected_files)} files")
-=======
-            risk_factors.append(
-                f"High change volume: {total_changes} modifications"
-            )
-
-        if (
-            len(affected_files)
-            > self.auto_trigger_thresholds["max_affected_files"]
-        ):
-            risk_score += 0.2
-            risk_factors.append(
-                f"Many files affected: {len(affected_files)} files"
-            )
->>>>>>> origin/OS0.6.2.grok
 
         if len(high_priority_tasks) > 0:
             risk_score += 0.1
@@ -272,17 +220,8 @@ class AgenticAutoController:
                 {
                     "batch_id": i + 1,
                     "tasks": [task.task_id for task in batch],
-<<<<<<< HEAD
                     "estimated_changes": sum(task.estimated_changes for task in batch),
                     "files": list(set().union(*(task.target_files for task in batch))),
-=======
-                    "estimated_changes": sum(
-                        task.estimated_changes for task in batch
-                    ),
-                    "files": list(
-                        set().union(*(task.target_files for task in batch))
-                    ),
->>>>>>> origin/OS0.6.2.grok
                 }
                 for i, batch in enumerate(batches)
             ],
@@ -316,13 +255,7 @@ class AgenticAutoController:
             )
 
         if sum(task.estimated_changes for task in agentic_tasks) > 500:
-<<<<<<< HEAD
             warnings.append("Large number of changes - consider incremental execution")
-=======
-            warnings.append(
-                "Large number of changes - consider incremental execution"
-            )
->>>>>>> origin/OS0.6.2.grok
 
         return {
             "checks_passed": all(checks.values()),
@@ -333,13 +266,7 @@ class AgenticAutoController:
             ),
         }
 
-<<<<<<< HEAD
     def _generate_combined_ai_prompt(self, agentic_tasks: List[AgenticTask]) -> str:
-=======
-    def _generate_combined_ai_prompt(
-        self, agentic_tasks: List[AgenticTask]
-    ) -> str:
->>>>>>> origin/OS0.6.2.grok
         """Generate combined AI prompt for multiple tasks"""
 
         if len(agentic_tasks) == 1:
@@ -408,12 +335,7 @@ following the incremental approach and safety protocols outlined above.
             message_type="agentic_decision",
             data=decision_result,
             timestamp=datetime.now(),
-<<<<<<< HEAD
             correlation_id=(f"agentic_decision_" f"{int(datetime.now().timestamp())}"),
-=======
-            correlation_id=(f"agentic_decision_"
-                            f"{int(datetime.now().timestamp())}"),
->>>>>>> origin/OS0.6.2.grok
         )
         self.cellular_bridge.send_message(storage_message)
 
@@ -429,12 +351,7 @@ following the incremental approach and safety protocols outlined above.
                     "safety_checks": decision_result["safety_checks"],
                 },
                 timestamp=datetime.now(),
-<<<<<<< HEAD
                 correlation_id=(f"ai_agent_prep_" f"{int(datetime.now().timestamp())}"),
-=======
-                correlation_id=(f"ai_agent_prep_"
-                                f"{int(datetime.now().timestamp())}"),
->>>>>>> origin/OS0.6.2.grok
             )
             self.cellular_bridge.send_message(membrane_message)
 

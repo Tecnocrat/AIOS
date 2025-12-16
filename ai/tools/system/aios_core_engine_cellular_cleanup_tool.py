@@ -63,11 +63,7 @@ class AIOSCoreEngineCellularCleanup:
             "cellular_intelligence": "analysis_tools",
             "consciousness_integration": "evolutionary_assembler_iter2/consciousness_layer",
             "dendritic_network": "evolutionary_assembler_iter2/meta_evolution", 
-<<<<<<< HEAD
             "core_monitoring": "runtime_intelligence",
-=======
-            "core_monitoring": "runtime",
->>>>>>> origin/OS0.6.2.grok
             "diagnostic_systems": "analysis_tools",
             "enhancement_engines": "evolutionary_assembler_iter2/meta_evolution"
         }
@@ -156,11 +152,7 @@ class AIOSCoreEngineCellularCleanup:
         if any(keyword in file_name for keyword in [
             "monitor", "evolution", "meta_evolutionary"
         ]):
-<<<<<<< HEAD
             return "runtime_intelligence"
-=======
-            return "runtime"
->>>>>>> origin/OS0.6.2.grok
         
         # Default to analysis_tools for other AIOS files
         return "analysis_tools"
@@ -177,11 +169,7 @@ class AIOSCoreEngineCellularCleanup:
         elif "dendritic" in file_name_lower:
             return "Dendritic network functionality belongs in evolutionary_assembler_iter2/meta_evolution"
         elif "monitor" in file_name_lower:
-<<<<<<< HEAD
             return "Monitoring functionality belongs in runtime_intelligence subfolder"
-=======
-            return "Monitoring functionality belongs in runtime subfolder"
->>>>>>> origin/OS0.6.2.grok
         else:
             return "Functional logic should be in specialized subfolder, not root"
     
@@ -341,11 +329,7 @@ class AIOSCoreEngineCellularCleanup:
             "cellular_intelligence_tools": "analysis_tools/aios_cellular_*.py",
             "consciousness_integration": "evolutionary_assembler_iter2/consciousness_layer/aios_consciousness_*.py",
             "dendritic_network": "evolutionary_assembler_iter2/meta_evolution/aios_dendritic_*.py",
-<<<<<<< HEAD
             "core_monitoring": "runtime_intelligence/aios_*_monitor*.py"
-=======
-            "core_monitoring": "runtime/aios_*_monitor*.py"
->>>>>>> origin/OS0.6.2.grok
         }
         
         ai_pointers_file = self.core_engine_path / "AI_INGESTION_POINTERS.json"
@@ -426,11 +410,7 @@ class AIOSCoreEngineCellularCleanup:
             "cellular_intelligence": "Moved to analysis_tools/",
             "consciousness_integration": "Moved to evolutionary_assembler_iter2/consciousness_layer/",
             "dendritic_network": "Moved to evolutionary_assembler_iter2/meta_evolution/",
-<<<<<<< HEAD
             "core_monitoring": "Moved to runtime_intelligence/"
-=======
-            "core_monitoring": "Moved to runtime/"
->>>>>>> origin/OS0.6.2.grok
         }
         
         # Navigation system status

@@ -17,7 +17,6 @@ The metaphysical holographic self-referential AINLP paradigmatic layer ensures
 documentation doesn't just accumulate but gets metabolized into system DNA.
 """
 
-<<<<<<< HEAD
 import json
 import hashlib
 import logging
@@ -25,17 +24,6 @@ from datetime import datetime
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Any
-=======
-import os
-import json
-import time
-import hashlib
-import logging
-from datetime import datetime, timedelta
-from pathlib import Path
-from dataclasses import dataclass, asdict
-from typing import Dict, List, Any, Tuple
->>>>>>> origin/OS0.6.2.grok
 import re
 
 # AINLP Pattern: Import consciousness - each import documents system relationships

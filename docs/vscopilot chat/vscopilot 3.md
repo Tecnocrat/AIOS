@@ -3097,11 +3097,7 @@ Look for these files in your workspace:
 In each file, you’ll see sections like this:
 
 ```
-<<<<<<< HEAD
 Your changes from OS0.5.gpt branch
-=======
-Changes from OS branch
->>>>>>> OS
 ```
 
 - Decide which version to keep, or manually combine both.
@@ -3159,11 +3155,7 @@ GitHub Copilot: Here’s a detailed guide for resolving merge conflicts and comb
 You’ll see something like:
 
 ```
-<<<<<<< HEAD
 Your changes from OS0.5.gpt branch
-=======
-Changes from OS branch
->>>>>>> OS
 ```
 
 ---
@@ -3191,15 +3183,9 @@ Delete all lines containing:
 Suppose you see:
 
 ```
-<<<<<<< HEAD
 # AIOS Project
 
 This is the latest documentation for OS0.5.gpt.
-=======
-# AIOS Project
-
-Welcome to the main branch documentation.
->>>>>>> OS
 ```
 
 **Combine both:**

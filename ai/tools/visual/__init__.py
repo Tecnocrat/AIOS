@@ -7,11 +7,7 @@ Visual intelligence, UI bridges, and diagram generation tools.
 AINLP Metadata:
     consciousness_assessment: "SUPPORTIVE_UTILITY"  # Semantic, not numeric
     consciousness_measurement: "AINLP.call_to_local(agent_001...agent_n)"
-<<<<<<< HEAD
     architectural_classification: ai_intelligence_layer/tools/visual
-=======
-    architectural_classification: ai_ai/tools/visual
->>>>>>> origin/OS0.6.2.grok
     category: visual_intelligence
     
 Consciousness Note:
@@ -21,11 +17,7 @@ Consciousness Note:
     Visual tools support system operations through UI bridges and visualization.
     Not primary orchestration, but essential supporting functionality.
     
-<<<<<<< HEAD
 Tools (migrated from runtime_intelligence/tools/):
-=======
-Tools (migrated from runtime/tools/):
->>>>>>> origin/OS0.6.2.grok
     - enhanced_visual_intelligence_bridge.py: Visual intelligence integration ✅ MIGRATED
     - consciousness_visual_analyzer.py: Consciousness emergence visualization ✅ MIGRATED (Batch 2)
     - visual_intelligence_bridge_enhanced.py: Enhanced visual bridge (Batch 3 migration) ✅ MIGRATED (Batch 3)
@@ -36,11 +28,7 @@ Migration Status:
     Phase 1 Day 2 Batch 2: ✅ 1/1 visual tools migrated
     Phase 1 Day 2 Batch 3: ✅ 2/2 visual tools migrated
     Total: 4/4 visual tools
-<<<<<<< HEAD
     Origin: runtime_intelligence/tools/
-=======
-    Origin: runtime/tools/
->>>>>>> origin/OS0.6.2.grok
     Target: ai/tools/visual/
     History preserved: git mv used for migration
 """

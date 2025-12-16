@@ -18,18 +18,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 try:
     from maintenance.orchestrator import MaintenanceOrchestrator
 except ImportError as e:
-<<<<<<< HEAD
     print(
         json.dumps(
             {"error": f"Failed to import maintenance modules: {e}", "success": False}
         )
     )
-=======
-    print(json.dumps({
-        "error": f"Failed to import maintenance modules: {e}",
-        "success": False
-    }))
->>>>>>> origin/OS0.6.2.grok
     sys.exit(1)
 
 
@@ -85,7 +78,6 @@ def execute_maintenance_command(command: str, parameters: dict = None) -> dict:
                 "success": False,
                 "error": f"Unknown command: {command}",
                 "available_commands": [
-<<<<<<< HEAD
                     "get_status",
                     "quick_optimize",
                     "full_maintenance",
@@ -93,11 +85,6 @@ def execute_maintenance_command(command: str, parameters: dict = None) -> dict:
                     "analyze_documentation",
                     "search_archive",
                 ],
-=======
-                    "get_status", "quick_optimize", "full_maintenance",
-                    "get_archive_info", "analyze_documentation", "search_archive"
-                ]
->>>>>>> origin/OS0.6.2.grok
             }
 
     except Exception as e:
@@ -105,11 +92,7 @@ def execute_maintenance_command(command: str, parameters: dict = None) -> dict:
             "success": False,
             "error": str(e),
             "command": command,
-<<<<<<< HEAD
             "parameters": parameters,
-=======
-            "parameters": parameters
->>>>>>> origin/OS0.6.2.grok
         }
 
 
@@ -117,7 +100,6 @@ def main():
     """Main entry point for the service bridge."""
     try:
         if len(sys.argv) < 2:
-<<<<<<< HEAD
             print(
                 json.dumps(
                     {
@@ -127,13 +109,6 @@ def main():
                     }
                 )
             )
-=======
-            print(json.dumps({
-                "error": "Command required",
-                "usage": "python maintenance_service_bridge.py <command> [parameters_json]",
-                "success": False
-            }))
->>>>>>> origin/OS0.6.2.grok
             sys.exit(1)
 
         command = sys.argv[1]
@@ -144,18 +119,11 @@ def main():
             try:
                 parameters = json.loads(sys.argv[2])
             except json.JSONDecodeError as e:
-<<<<<<< HEAD
                 print(
                     json.dumps(
                         {"error": f"Invalid JSON parameters: {e}", "success": False}
                     )
                 )
-=======
-                print(json.dumps({
-                    "error": f"Invalid JSON parameters: {e}",
-                    "success": False
-                }))
->>>>>>> origin/OS0.6.2.grok
                 sys.exit(1)
 
         # Execute command
@@ -165,14 +133,7 @@ def main():
         print(json.dumps(result, default=str, ensure_ascii=False, indent=2))
 
     except Exception as e:
-<<<<<<< HEAD
         print(json.dumps({"error": f"Bridge execution failed: {e}", "success": False}))
-=======
-        print(json.dumps({
-            "error": f"Bridge execution failed: {e}",
-            "success": False
-        }))
->>>>>>> origin/OS0.6.2.grok
         sys.exit(1)
 
 

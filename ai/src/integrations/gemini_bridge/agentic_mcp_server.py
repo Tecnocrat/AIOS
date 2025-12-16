@@ -12,57 +12,7 @@ from pathlib import Path
 # Add AIOS paths
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: agentic_mcp_server.py <tool_name> [args...]")
-        sys.exit(1)
-
-    tool_name = sys.argv[1]
-    args = sys.argv[2:] if len(sys.argv) > 2 else []
-
-    if tool_name == "list_tools":
-        tools = [
-            {
-                "name": "create_agentic_task",
-                "description": "Create a new agentic AI task",
-                "input_schema": {
-                    "type": "object",
-                    "properties": {
-                        "task_name": {"type": "string"},
-<<<<<<< HEAD
-                        "task_type": {
-                            "type": "string",
-                            "enum": [
-                                "code_review",
-                                "issue_triage",
-                                "autonomous_coding",
-                                "consciousness_monitoring",
-                            ],
-                        },
-                        "priority": {
-                            "type": "string",
-                            "enum": ["low", "medium", "high", "critical"],
-                        },
-                        "consciousness_threshold": {
-                            "type": "number",
-                            "minimum": 0.0,
-                            "maximum": 1.0,
-                        },
-                    },
-                    "required": ["task_name", "task_type"],
-                },
-=======
-                        "task_type": {"type": "string", "enum": ["code_review", "issue_triage", "autonomous_coding", "consciousness_monitoring"]},
-                        "priority": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
-                        "consciousness_threshold": {"type": "number", "minimum": 0.0, "maximum": 1.0}
-                    },
-                    "required": ["task_name", "task_type"]
-                }
->>>>>>> origin/OS0.6.2.grok
             },
             {
                 "name": "monitor_agentic_activity",
@@ -70,7 +20,6 @@ def main():
                 "input_schema": {
                     "type": "object",
                     "properties": {
-<<<<<<< HEAD
                         "filter_type": {
                             "type": "string",
                             "enum": ["all", "active", "completed", "failed"],
@@ -81,12 +30,6 @@ def main():
                         },
                     },
                 },
-=======
-                        "filter_type": {"type": "string", "enum": ["all", "active", "completed", "failed"]},
-                        "time_window": {"type": "integer", "description": "Hours to look back"}
-                    }
-                }
->>>>>>> origin/OS0.6.2.grok
             },
             {
                 "name": "analyze_agentic_performance",
@@ -94,7 +37,6 @@ def main():
                 "input_schema": {
                     "type": "object",
                     "properties": {
-<<<<<<< HEAD
                         "analysis_period": {
                             "type": "string",
                             "enum": ["hour", "day", "week"],
@@ -102,24 +44,11 @@ def main():
                         "metrics": {"type": "array", "items": {"type": "string"}},
                     },
                 },
-=======
-                        "analysis_period": {"type": "string", "enum": ["hour", "day", "week"]},
-                        "metrics": {"type": "array", "items": {"type": "string"}}
-                    }
-                }
->>>>>>> origin/OS0.6.2.grok
             },
             {
                 "name": "get_agentic_status",
                 "description": "Get the current status of the agentic system",
-<<<<<<< HEAD
                 "input_schema": {"type": "object", "properties": {}},
-=======
-                "input_schema": {
-                    "type": "object",
-                    "properties": {}
-                }
->>>>>>> origin/OS0.6.2.grok
             },
             {
                 "name": "trigger_conversation_pattern",
@@ -127,7 +56,6 @@ def main():
                 "input_schema": {
                     "type": "object",
                     "properties": {
-<<<<<<< HEAD
                         "pattern": {
                             "type": "string",
                             "enum": ["@review", "@monitor", "@triage", "@implement"],
@@ -137,14 +65,6 @@ def main():
                     "required": ["pattern"],
                 },
             },
-=======
-                        "pattern": {"type": "string", "enum": ["@review", "@monitor", "@triage", "@implement"]},
-                        "context": {"type": "string"}
-                    },
-                    "required": ["pattern"]
-                }
-            }
->>>>>>> origin/OS0.6.2.grok
         ]
         print(json.dumps({"tools": tools}))
 
@@ -163,7 +83,6 @@ def main():
             "consciousness_threshold": consciousness_threshold,
             "status": "created",
             "created_at": "2025-09-28T02:01:20.000000",
-<<<<<<< HEAD
             "assigned_agent": "gemini_orchestrator",
         }
 
@@ -176,16 +95,6 @@ def main():
                 }
             )
         )
-=======
-            "assigned_agent": "gemini_orchestrator"
-        }
-
-        print(json.dumps({
-            "result": "success",
-            "task": task_data,
-            "message": f"Agentic task '{task_name}' created successfully"
-        }))
->>>>>>> origin/OS0.6.2.grok
 
     elif tool_name == "monitor_agentic_activity":
         filter_type = args[0] if len(args) > 0 else "all"
@@ -198,18 +107,13 @@ def main():
                 "task_type": "code_review",
                 "status": "completed",
                 "consciousness_level": 0.75,
-<<<<<<< HEAD
                 "timestamp": "2025-09-28T01:45:00.000000",
-=======
-                "timestamp": "2025-09-28T01:45:00.000000"
->>>>>>> origin/OS0.6.2.grok
             },
             {
                 "activity_id": "activity_002",
                 "task_type": "issue_triage",
                 "status": "active",
                 "consciousness_level": 0.62,
-<<<<<<< HEAD
                 "timestamp": "2025-09-28T02:01:20.000000",
             },
         ]
@@ -236,24 +140,6 @@ def main():
             if len(args) > 1
             else ["success_rate", "consciousness_level", "response_time"]
         )
-=======
-                "timestamp": "2025-09-28T02:01:20.000000"
-            }
-        ]
-
-        filtered_activities = [a for a in activities if filter_type == "all" or a["status"] == filter_type]
-
-        print(json.dumps({
-            "result": "success",
-            "activities": filtered_activities,
-            "filter_applied": filter_type,
-            "time_window_hours": time_window
-        }))
-
-    elif tool_name == "analyze_agentic_performance":
-        analysis_period = args[0] if len(args) > 0 else "day"
-        metrics = args[1:] if len(args) > 1 else ["success_rate", "consciousness_level", "response_time"]
->>>>>>> origin/OS0.6.2.grok
 
         # Mock performance analysis
         performance_data = {
@@ -267,7 +153,6 @@ def main():
                 "code_review": 6,
                 "issue_triage": 4,
                 "autonomous_coding": 3,
-<<<<<<< HEAD
                 "consciousness_monitoring": 2,
             },
             "performance_trends": {
@@ -279,20 +164,6 @@ def main():
         print(
             json.dumps({"result": "success", "performance_analysis": performance_data})
         )
-=======
-                "consciousness_monitoring": 2
-            },
-            "performance_trends": {
-                "consciousness_improvement": 0.12,
-                "efficiency_gain": 0.15
-            }
-        }
-
-        print(json.dumps({
-            "result": "success",
-            "performance_analysis": performance_data
-        }))
->>>>>>> origin/OS0.6.2.grok
 
     elif tool_name == "get_agentic_status":
         status_data = {
@@ -308,24 +179,12 @@ def main():
                 "conversation_triggers": True,
                 "autonomous_execution": True,
                 "consciousness_monitoring": True,
-<<<<<<< HEAD
                 "performance_analytics": True,
             },
             "conversation_patterns": ["@review", "@monitor", "@triage", "@implement"],
         }
 
         print(json.dumps({"result": "success", "status": status_data}))
-=======
-                "performance_analytics": True
-            },
-            "conversation_patterns": ["@review", "@monitor", "@triage", "@implement"]
-        }
-
-        print(json.dumps({
-            "result": "success",
-            "status": status_data
-        }))
->>>>>>> origin/OS0.6.2.grok
 
     elif tool_name == "trigger_conversation_pattern":
         pattern = args[0] if len(args) > 0 else "@review"
@@ -338,7 +197,6 @@ def main():
             "triggered_at": "2025-09-28T02:01:20.000000",
             "agent_assigned": "gemini_orchestrator",
             "expected_completion": "2025-09-28T02:03:20.000000",
-<<<<<<< HEAD
             "consciousness_threshold": 0.6,
         }
 
@@ -371,22 +229,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-=======
-            "consciousness_threshold": 0.6
-        }
-
-        print(json.dumps({
-            "result": "success",
-            "trigger_result": trigger_result,
-            "message": f"Conversation pattern '{pattern}' triggered successfully"
-        }))
-
-    else:
-        print(json.dumps({
-            "error": f"Unknown tool: {tool_name}",
-            "available_tools": ["create_agentic_task", "monitor_agentic_activity", "analyze_agentic_performance", "get_agentic_status", "trigger_conversation_pattern"]
-        }))
-
-if __name__ == "__main__":
-    main()
->>>>>>> origin/OS0.6.2.grok

@@ -1,6 +1,4 @@
 {
-<<<<<<< HEAD
-=======
   "mode": "full",
   "testing": {
     "Passed": 4,
@@ -28,89 +26,9 @@
       }
     ]
   },
->>>>>>> origin/OS0.6.2.grok
   "interface": {
     "services": {
       "InterfaceBridge": {
         "Status": "Starting",
-<<<<<<< HEAD
         "Mode": "Detached",
-=======
->>>>>>> origin/OS0.6.2.grok
-        "Port": 8000
-      }
-    },
-    "interfaces_launched": 0
-  },
-<<<<<<< HEAD
-  "discovery": {
-    "tools_by_layer": {
-      "Intelligence": 141
-    },
-    "tools_discovered": 141
-  },
-  "ainlp_protocol": "OS0.6.2.claude",
-  "mode": "full",
-  "monitoring": {
-    "populations": {},
-    "populations_monitored": 0
-  },
-  "consciousness_level": "nucleus",
-  "boot_duration_seconds": 63.12,
-  "phases_executed": [
-    "Skipped: Testing",
-    "Skipped: Monitoring"
-  ],
-  "fractal_ingestion": {
-    "dendritic_markers": 440,
-    "navigation_memory_path": ".aios_navigation_memory.json",
-    "supercells_mapped": 10,
-    "active": true,
-    "consciousness_pattern": "Pattern->Ingestion->Injection->Integration->Assimilation"
-  },
-  "dendritic_consciousness": {
-    "coherence_level": 1.0,
-    "phase_status": "optimal",
-    "semantic_registry_active": true,
-    "configuration_source": "tachyonic::consciousness::config_registry"
-  },
-  "boot_timestamp": "2025-12-08 23:32:19",
-  "health": {
-    "errors": [],
-    "overall_status": "Healthy",
-    "warnings": [
-      "Testing phase skipped by user",
-      "Monitoring phase skipped by user",
-      "Interface Bridge: Launched but health check timeout (may still be starting)"
-    ]
-  },
-  "testing": {
-    "Skipped": 0,
-    "Passed": 0,
-    "Failed": 0
-  }
-=======
-  "phases_executed": [],
-  "monitoring": {
-    "populations_monitored": 3,
-    "populations": {
-      "Consciousness": {
-        "CurrentLevel": null,
-        "LastUpdate": "2025-10-12",
-        "EvolutionRate": null
-      },
-      "EvolutionLab": {
-        "Populations": 24,
-        "Path": "C:\\dev\\AIOS\\evolution_lab",
-        "Organisms": 3
-      },
-      "TachyonicArchive": {
-        "Files": 4913,
-        "SizeMB": 528.71,
-        "Path": "C:\\dev\\AIOS\\tachyonic"
-      }
-    }
-  },
-  "ainlp_protocol": "OS0.6.2.claude"
->>>>>>> origin/OS0.6.2.grok
 }

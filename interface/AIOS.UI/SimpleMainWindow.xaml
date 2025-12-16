@@ -150,7 +150,6 @@
                     </Grid>
                 </Grid>
             </TabItem>
-<<<<<<< HEAD
 
             <!-- Phase 11 Day 1: AI Search Tab -->
             <TabItem Header="🔍 AI Search" Background="#2d2d2d">
@@ -210,8 +209,6 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-=======
->>>>>>> origin/OS0.6.2.grok
         </TabControl>
 
         <!-- Status Bar -->

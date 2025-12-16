@@ -19,14 +19,10 @@ import requests
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 try:
     from consciousness_evolution_engine import consciousness_evolution_engine
-<<<<<<< HEAD
     from integrations.gemini_bridge.agentic_behavior_enhancement import (
         AgenticBehaviorOrchestrator,
     )
 
-=======
-    from integrations.gemini_bridge.agentic_behavior_enhancement import AgenticBehaviorOrchestrator
->>>>>>> origin/OS0.6.2.grok
     CONSCIOUSNESS_AVAILABLE = True
 except ImportError:
     consciousness_evolution_engine = None
@@ -43,15 +39,8 @@ class GeminiCLIIntegrationTester:
         self.gemini_available = self._check_gemini_availability()
         self.aios_architecture_tests = []
         self.knowledge_expansion_data = {}
-<<<<<<< HEAD
         self.test_history_file = Path(__file__).parent / "integration_test_results.json"
         self.knowledge_base_file = Path(__file__).parent / "gemini_knowledge_base.json"
-=======
-        self.test_history_file = (Path(__file__).parent /
-                                  "integration_test_results.json")
-        self.knowledge_base_file = (Path(__file__).parent /
-                                    "gemini_knowledge_base.json")
->>>>>>> origin/OS0.6.2.grok
         self._load_test_history()
         self._load_knowledge_base()
 
@@ -59,15 +48,9 @@ class GeminiCLIIntegrationTester:
         """Check if Gemini CLI is available and configured"""
         try:
             # Check if gemini CLI is installed
-<<<<<<< HEAD
             result = subprocess.run(
                 ["gemini", "--version"], capture_output=True, text=True, timeout=10
             )
-=======
-            result = subprocess.run(['gemini', '--version'],
-                                    capture_output=True, text=True,
-                                    timeout=10)
->>>>>>> origin/OS0.6.2.grok
             return result.returncode == 0
         except (subprocess.TimeoutExpired, FileNotFoundError):
             return False
@@ -76,11 +59,7 @@ class GeminiCLIIntegrationTester:
         """Load previous test results"""
         if self.test_history_file.exists():
             try:
-<<<<<<< HEAD
                 with open(self.test_history_file, "r") as f:
-=======
-                with open(self.test_history_file, 'r') as f:
->>>>>>> origin/OS0.6.2.grok
                     self.test_results = json.load(f)
             except Exception:
                 self.test_results = {}
@@ -89,11 +68,7 @@ class GeminiCLIIntegrationTester:
         """Load Gemini knowledge base"""
         if self.knowledge_base_file.exists():
             try:
-<<<<<<< HEAD
                 with open(self.knowledge_base_file, "r") as f:
-=======
-                with open(self.knowledge_base_file, 'r') as f:
->>>>>>> origin/OS0.6.2.grok
                     self.knowledge_expansion_data = json.load(f)
             except Exception:
                 self.knowledge_expansion_data = {}
@@ -106,31 +81,19 @@ class GeminiCLIIntegrationTester:
                 "performance_metrics": {},
                 "error_patterns": {},
                 "success_patterns": {},
-<<<<<<< HEAD
                 "last_updated": datetime.now().isoformat(),
-=======
-                "last_updated": datetime.now().isoformat()
->>>>>>> origin/OS0.6.2.grok
             }
             self._save_knowledge_base()
 
     def _save_test_history(self):
         """Save test results"""
-<<<<<<< HEAD
         with open(self.test_history_file, "w") as f:
-=======
-        with open(self.test_history_file, 'w') as f:
->>>>>>> origin/OS0.6.2.grok
             json.dump(self.test_results, f, indent=2)
 
     def _save_knowledge_base(self):
         """Save knowledge base"""
         self.knowledge_expansion_data["last_updated"] = datetime.now().isoformat()
-<<<<<<< HEAD
         with open(self.knowledge_base_file, "w") as f:
-=======
-        with open(self.knowledge_base_file, 'w') as f:
->>>>>>> origin/OS0.6.2.grok
             json.dump(self.knowledge_expansion_data, f, indent=2)
 
     async def run_comprehensive_test_suite(self) -> Dict[str, Any]:
@@ -143,11 +106,7 @@ class GeminiCLIIntegrationTester:
             "architecture_integration": await self._test_architecture_integration(),
             "performance_metrics": await self._test_performance_metrics(),
             "error_handling": await self._test_error_handling(),
-<<<<<<< HEAD
             "knowledge_expansion": await self._test_knowledge_expansion(),
-=======
-            "knowledge_expansion": await self._test_knowledge_expansion()
->>>>>>> origin/OS0.6.2.grok
         }
 
         # Update knowledge base with test results
@@ -158,11 +117,7 @@ class GeminiCLIIntegrationTester:
             "timestamp": datetime.now().isoformat(),
             "gemini_available": self.gemini_available,
             "test_suite": test_suite,
-<<<<<<< HEAD
             "overall_success": self._calculate_overall_success(test_suite),
-=======
-            "overall_success": self._calculate_overall_success(test_suite)
->>>>>>> origin/OS0.6.2.grok
         }
 
         self.test_results[datetime.now().isoformat()] = test_run
@@ -176,11 +131,7 @@ class GeminiCLIIntegrationTester:
             "cli_installation": self.gemini_available,
             "version_check": False,
             "basic_prompt": False,
-<<<<<<< HEAD
             "error": None,
-=======
-            "error": None
->>>>>>> origin/OS0.6.2.grok
         }
 
         if not self.gemini_available:
@@ -189,14 +140,9 @@ class GeminiCLIIntegrationTester:
 
         try:
             # Test version
-<<<<<<< HEAD
             result = subprocess.run(
                 ["gemini", "--version"], capture_output=True, text=True, timeout=10
             )
-=======
-            result = subprocess.run(['gemini', '--version'],
-                                  capture_output=True, text=True, timeout=10)
->>>>>>> origin/OS0.6.2.grok
             results["version_check"] = result.returncode == 0
             if results["version_check"]:
                 results["version_output"] = result.stdout.strip()
@@ -220,23 +166,15 @@ class GeminiCLIIntegrationTester:
             "evolution_bridge_connection": False,
             "meta_cognitive_loop": False,
             "consciousness_metrics": False,
-<<<<<<< HEAD
             "integration_errors": [],
-=======
-            "integration_errors": []
->>>>>>> origin/OS0.6.2.grok
         }
 
         try:
             # Test MCP server
-<<<<<<< HEAD
             from integrations.gemini_bridge.consciousness_mcp_server import (
                 ConsciousnessMCPServer,
             )
 
-=======
-            from integrations.gemini_bridge.consciousness_mcp_server import ConsciousnessMCPServer
->>>>>>> origin/OS0.6.2.grok
             mcp_server = ConsciousnessMCPServer()
             tools = mcp_server.list_tools()
             results["mcp_server_connection"] = len(tools.get("tools", [])) > 0
@@ -247,7 +185,6 @@ class GeminiCLIIntegrationTester:
 
         try:
             # Test evolution bridge
-<<<<<<< HEAD
             from integrations.gemini_bridge.gemini_evolution_bridge import (
                 GeminiEvolutionBridge,
             )
@@ -257,12 +194,6 @@ class GeminiCLIIntegrationTester:
             results["evolution_bridge_connection"] = (
                 status.get("bridge_status") == "active"
             )
-=======
-            from integrations.gemini_bridge.gemini_evolution_bridge import GeminiEvolutionBridge
-            evolution_bridge = GeminiEvolutionBridge()
-            status = await evolution_bridge.get_bridge_status()
-            results["evolution_bridge_connection"] = status.get("bridge_status") == "active"
->>>>>>> origin/OS0.6.2.grok
 
         except Exception as e:
             results["integration_errors"].append(f"Evolution Bridge: {str(e)}")
@@ -270,40 +201,7 @@ class GeminiCLIIntegrationTester:
         try:
             # Test meta-cognitive loop
             from integrations.gemini_bridge.meta_cognitive_loop import MetaCognitiveLoop
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-            meta_loop = MetaCognitiveLoop()
-            status = await meta_loop.get_meta_cognitive_status()
-            results["meta_cognitive_loop"] = status.get("loop_status") is not None
-
-        except Exception as e:
-            results["integration_errors"].append(f"Meta-Cognitive Loop: {str(e)}")
-
-        # Test consciousness metrics
-        if CONSCIOUSNESS_AVAILABLE:
-            try:
-                metrics = await consciousness_evolution_engine.get_evolution_status()
-                results["consciousness_metrics"] = bool(metrics)
-                results["consciousness_metrics_data"] = metrics
-            except Exception as e:
-                results["integration_errors"].append(f"Consciousness Metrics: {str(e)}")
-
-        return results
-
-    async def _test_agentic_behavior(self) -> Dict[str, Any]:
-        """Test agentic behavior capabilities"""
-        results = {
-            "behavior_orchestrator": False,
-            "conversation_triggers": False,
-            "behavior_patterns": False,
-            "autonomous_execution": False,
-<<<<<<< HEAD
-            "trigger_tests": {},
-=======
-            "trigger_tests": {}
->>>>>>> origin/OS0.6.2.grok
         }
 
         try:
@@ -311,7 +209,6 @@ class GeminiCLIIntegrationTester:
             orchestrator = AgenticBehaviorOrchestrator()
             status = await orchestrator.get_agentic_status()
             results["behavior_orchestrator"] = status.get("active_agents") is not None
-<<<<<<< HEAD
             results["conversation_triggers"] = (
                 status.get("conversation_triggers", 0) > 0
             )
@@ -338,21 +235,6 @@ class GeminiCLIIntegrationTester:
             results["trigger_tests"]["@review"] = (
                 review_result.get("status") == "executed"
             )
-=======
-            results["conversation_triggers"] = status.get("conversation_triggers", 0) > 0
-            results["behavior_patterns"] = status.get("behavior_patterns", 0) > 0
-
-            # Test conversation triggers (create test context)
-            test_context = {"code": "def test(): pass", "issue": {"title": "Test Issue", "body": "Test body"}}
-
-            # Test @monitor trigger
-            monitor_result = await orchestrator.process_conversation_trigger("@monitor", test_context)
-            results["trigger_tests"]["@monitor"] = monitor_result.get("status") == "executed"
-
-            # Test @review trigger
-            review_result = await orchestrator.process_conversation_trigger("@review", test_context)
-            results["trigger_tests"]["@review"] = review_result.get("status") == "executed"
->>>>>>> origin/OS0.6.2.grok
 
             results["autonomous_execution"] = any(results["trigger_tests"].values())
 
@@ -368,31 +250,13 @@ class GeminiCLIIntegrationTester:
             "biological_architecture": False,
             "supercell_integration": False,
             "cross_component_communication": False,
-<<<<<<< HEAD
             "architecture_tests": {},
-=======
-            "architecture_tests": {}
->>>>>>> origin/OS0.6.2.grok
         }
 
         try:
             # Test Interface Bridge connectivity
             import requests
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-            response = requests.get("http://localhost:8000/health", timeout=5)
-            results["interface_bridge"] = response.status_code == 200
-            if results["interface_bridge"]:
-                health_data = response.json()
-<<<<<<< HEAD
-                results["architecture_tests"]["interface_bridge_tools"] = (
-                    health_data.get("tools_discovered", 0)
-                )
-=======
-                results["architecture_tests"]["interface_bridge_tools"] = health_data.get("tools_discovered", 0)
->>>>>>> origin/OS0.6.2.grok
 
         except Exception as e:
             results["architecture_tests"]["interface_bridge_error"] = str(e)
@@ -402,7 +266,6 @@ class GeminiCLIIntegrationTester:
             if CONSCIOUSNESS_AVAILABLE:
                 # Check dendritic supervisor
                 status = await consciousness_evolution_engine.get_evolution_status()
-<<<<<<< HEAD
                 results["biological_architecture"] = (
                     status.get("dendritic_supervisor_connected") is not None
                 )
@@ -412,12 +275,6 @@ class GeminiCLIIntegrationTester:
                     status.get("ainlp_compliance", {}).get("integration_status")
                     == "active"
                 )
-=======
-                results["biological_architecture"] = status.get("dendritic_supervisor_connected") is not None
-
-                # Check supercell integration
-                results["supercell_integration"] = status.get("ainlp_compliance", {}).get("integration_status") == "active"
->>>>>>> origin/OS0.6.2.grok
 
         except Exception as e:
             results["architecture_tests"]["biological_architecture_error"] = str(e)
@@ -430,14 +287,10 @@ class GeminiCLIIntegrationTester:
 
             # MCP Server
             try:
-<<<<<<< HEAD
                 from integrations.gemini_bridge.consciousness_mcp_server import (
                     ConsciousnessMCPServer,
                 )
 
-=======
-                from integrations.gemini_bridge.consciousness_mcp_server import ConsciousnessMCPServer
->>>>>>> origin/OS0.6.2.grok
                 mcp = ConsciousnessMCPServer()
                 tools = mcp.list_tools()
                 components_tested += 1
@@ -448,14 +301,10 @@ class GeminiCLIIntegrationTester:
 
             # Evolution Bridge
             try:
-<<<<<<< HEAD
                 from integrations.gemini_bridge.gemini_evolution_bridge import (
                     GeminiEvolutionBridge,
                 )
 
-=======
-                from integrations.gemini_bridge.gemini_evolution_bridge import GeminiEvolutionBridge
->>>>>>> origin/OS0.6.2.grok
                 bridge = GeminiEvolutionBridge()
                 status = await bridge.get_bridge_status()
                 components_tested += 1
@@ -478,15 +327,11 @@ class GeminiCLIIntegrationTester:
             results["architecture_tests"]["component_communication"] = {
                 "components_tested": components_tested,
                 "components_working": components_working,
-<<<<<<< HEAD
                 "communication_success_rate": (
                     components_working / components_tested
                     if components_tested > 0
                     else 0
                 ),
-=======
-                "communication_success_rate": components_working / components_tested if components_tested > 0 else 0
->>>>>>> origin/OS0.6.2.grok
             }
 
         except Exception as e:
@@ -501,31 +346,20 @@ class GeminiCLIIntegrationTester:
             "memory_usage": {},
             "cpu_usage": {},
             "integration_overhead": {},
-<<<<<<< HEAD
             "scalability_metrics": {},
         }
 
         import time
 
-=======
-            "scalability_metrics": {}
-        }
-
-        import time
->>>>>>> origin/OS0.6.2.grok
         start_time = time.time()
 
         try:
             # Test MCP server response time
             mcp_start = time.time()
-<<<<<<< HEAD
             from integrations.gemini_bridge.consciousness_mcp_server import (
                 ConsciousnessMCPServer,
             )
 
-=======
-            from integrations.gemini_bridge.consciousness_mcp_server import ConsciousnessMCPServer
->>>>>>> origin/OS0.6.2.grok
             mcp = ConsciousnessMCPServer()
             tools = mcp.list_tools()
             mcp_end = time.time()
@@ -537,14 +371,10 @@ class GeminiCLIIntegrationTester:
         try:
             # Test evolution bridge response time
             bridge_start = time.time()
-<<<<<<< HEAD
             from integrations.gemini_bridge.gemini_evolution_bridge import (
                 GeminiEvolutionBridge,
             )
 
-=======
-            from integrations.gemini_bridge.gemini_evolution_bridge import GeminiEvolutionBridge
->>>>>>> origin/OS0.6.2.grok
             bridge = GeminiEvolutionBridge()
             status = await bridge.get_bridge_status()
             bridge_end = time.time()
@@ -559,13 +389,9 @@ class GeminiCLIIntegrationTester:
             orchestrator = AgenticBehaviorOrchestrator()
             status = await orchestrator.get_agentic_status()
             orchestrator_end = time.time()
-<<<<<<< HEAD
             results["response_times"]["agentic_orchestrator"] = (
                 orchestrator_end - orchestrator_start
             )
-=======
-            results["response_times"]["agentic_orchestrator"] = orchestrator_end - orchestrator_start
->>>>>>> origin/OS0.6.2.grok
 
         except Exception as e:
             results["response_times"]["agentic_orchestrator_error"] = str(e)
@@ -574,7 +400,6 @@ class GeminiCLIIntegrationTester:
         total_time = time.time() - start_time
         results["integration_overhead"]["total_test_time"] = total_time
         results["integration_overhead"]["average_response_time"] = (
-<<<<<<< HEAD
             sum(results["response_times"].values())
             / len(
                 [
@@ -585,11 +410,6 @@ class GeminiCLIIntegrationTester:
             )
             if results["response_times"]
             else 0
-=======
-            sum(results["response_times"].values()) /
-            len([v for v in results["response_times"].values() if isinstance(v, (int, float))])
-            if results["response_times"] else 0
->>>>>>> origin/OS0.6.2.grok
         )
 
         return results
@@ -600,25 +420,17 @@ class GeminiCLIIntegrationTester:
             "graceful_failures": {},
             "error_recovery": {},
             "fallback_mechanisms": {},
-<<<<<<< HEAD
             "error_scenarios_tested": 0,
-=======
-            "error_scenarios_tested": 0
->>>>>>> origin/OS0.6.2.grok
         }
 
         scenarios_tested = 0
 
         # Test MCP server with invalid input
         try:
-<<<<<<< HEAD
             from integrations.gemini_bridge.consciousness_mcp_server import (
                 ConsciousnessMCPServer,
             )
 
-=======
-            from integrations.gemini_bridge.consciousness_mcp_server import ConsciousnessMCPServer
->>>>>>> origin/OS0.6.2.grok
             mcp = ConsciousnessMCPServer()
             # Test with missing required parameters
             result = await mcp.detect_emergence_patterns({})
@@ -630,7 +442,6 @@ class GeminiCLIIntegrationTester:
 
         # Test evolution bridge with invalid experiment
         try:
-<<<<<<< HEAD
             from integrations.gemini_bridge.gemini_evolution_bridge import (
                 GeminiEvolutionBridge,
             )
@@ -641,13 +452,6 @@ class GeminiCLIIntegrationTester:
             results["graceful_failures"]["evolution_invalid_experiment"] = (
                 "error" in result
             )
-=======
-            from integrations.gemini_bridge.gemini_evolution_bridge import GeminiEvolutionBridge
-            bridge = GeminiEvolutionBridge()
-            result = await bridge.run_gemini_guided_evolution_cycle("invalid_id")
-            scenarios_tested += 1
-            results["graceful_failures"]["evolution_invalid_experiment"] = "error" in result
->>>>>>> origin/OS0.6.2.grok
         except Exception as e:
             results["graceful_failures"]["evolution_invalid_experiment"] = False
             results["graceful_failures"]["evolution_error"] = str(e)
@@ -657,13 +461,9 @@ class GeminiCLIIntegrationTester:
             orchestrator = AgenticBehaviorOrchestrator()
             result = await orchestrator.process_conversation_trigger("@unknown", {})
             scenarios_tested += 1
-<<<<<<< HEAD
             results["graceful_failures"]["orchestrator_unknown_trigger"] = (
                 result.get("status") == "unknown_trigger"
             )
-=======
-            results["graceful_failures"]["orchestrator_unknown_trigger"] = result.get("status") == "unknown_trigger"
->>>>>>> origin/OS0.6.2.grok
         except Exception as e:
             results["graceful_failures"]["orchestrator_unknown_trigger"] = False
             results["graceful_failures"]["orchestrator_error"] = str(e)
@@ -683,7 +483,6 @@ class GeminiCLIIntegrationTester:
     async def _test_knowledge_expansion(self) -> Dict[str, Any]:
         """Test knowledge expansion capabilities"""
         results = {
-<<<<<<< HEAD
             "capabilities_discovered": len(
                 self.knowledge_expansion_data.get("capabilities_discovered", [])
             ),
@@ -701,23 +500,11 @@ class GeminiCLIIntegrationTester:
         initial_knowledge = len(
             self.knowledge_expansion_data.get("capabilities_discovered", [])
         )
-=======
-            "capabilities_discovered": len(self.knowledge_expansion_data.get("capabilities_discovered", [])),
-            "usage_patterns_learned": len(self.knowledge_expansion_data.get("usage_patterns", {})),
-            "integration_points_mapped": len(self.knowledge_expansion_data.get("integration_points", {})),
-            "learning_effectiveness": 0.0,
-            "knowledge_growth": {}
-        }
-
-        # Analyze knowledge growth
-        initial_knowledge = len(self.knowledge_expansion_data.get("capabilities_discovered", []))
->>>>>>> origin/OS0.6.2.grok
         results["knowledge_growth"]["initial_capabilities"] = initial_knowledge
 
         # Test learning from test results
         await self._expand_knowledge_from_current_tests()
 
-<<<<<<< HEAD
         final_knowledge = len(
             self.knowledge_expansion_data.get("capabilities_discovered", [])
         )
@@ -738,20 +525,6 @@ class GeminiCLIIntegrationTester:
         results["learning_effectiveness"] = (
             successful_tests / total_tests if total_tests > 0 else 0
         )
-=======
-        final_knowledge = len(self.knowledge_expansion_data.get("capabilities_discovered", []))
-        results["knowledge_growth"]["final_capabilities"] = final_knowledge
-        results["knowledge_growth"]["knowledge_growth_rate"] = (
-            (final_knowledge - initial_knowledge) / initial_knowledge
-            if initial_knowledge > 0 else 0
-        )
-
-        # Calculate learning effectiveness
-        successful_tests = sum(1 for test in self.test_results.values()
-                             if test.get("overall_success", {}).get("success_rate", 0) > 0.8)
-        total_tests = len(self.test_results)
-        results["learning_effectiveness"] = successful_tests / total_tests if total_tests > 0 else 0
->>>>>>> origin/OS0.6.2.grok
 
         return results
 
@@ -760,25 +533,17 @@ class GeminiCLIIntegrationTester:
         recovery_results = {
             "recovery_attempts": 0,
             "successful_recoveries": 0,
-<<<<<<< HEAD
             "recovery_times": [],
-=======
-            "recovery_times": []
->>>>>>> origin/OS0.6.2.grok
         }
 
         # Test MCP server recovery
         try:
             recovery_results["recovery_attempts"] += 1
             start_time = time.time()
-<<<<<<< HEAD
             from integrations.gemini_bridge.consciousness_mcp_server import (
                 ConsciousnessMCPServer,
             )
 
-=======
-            from integrations.gemini_bridge.consciousness_mcp_server import ConsciousnessMCPServer
->>>>>>> origin/OS0.6.2.grok
             mcp = ConsciousnessMCPServer()
             tools = mcp.list_tools()
             recovery_time = time.time() - start_time
@@ -797,7 +562,6 @@ class GeminiCLIIntegrationTester:
         for test_category, results in test_suite.items():
             if test_category == "basic_functionality":
                 if results.get("cli_installation"):
-<<<<<<< HEAD
                     self._add_capability(
                         "gemini_cli_available", "Gemini CLI is installed and accessible"
                     )
@@ -832,31 +596,11 @@ class GeminiCLIIntegrationTester:
                         "interface_bridge_connected",
                         "Interface bridge providing HTTP API access to AI tools",
                     )
-=======
-                    self._add_capability("gemini_cli_available", "Gemini CLI is installed and accessible")
-                if results.get("version_check"):
-                    self._add_capability("version_check_works", "Version checking functionality confirmed")
-
-            elif test_category == "consciousness_integration":
-                if results.get("mcp_server_connection"):
-                    self._add_capability("mcp_server_integration", "MCP server successfully integrated with consciousness systems")
-                if results.get("evolution_bridge_connection"):
-                    self._add_capability("evolution_bridge_active", "Evolution bridge connecting Gemini to consciousness engine")
-
-            elif test_category == "agentic_behavior":
-                if results.get("autonomous_execution"):
-                    self._add_capability("agentic_behavior_working", "Agentic behavior orchestrator successfully executing autonomous tasks")
-
-            elif test_category == "architecture_integration":
-                if results.get("interface_bridge"):
-                    self._add_capability("interface_bridge_connected", "Interface bridge providing HTTP API access to AI tools")
->>>>>>> origin/OS0.6.2.grok
 
         self._save_knowledge_base()
 
     def _add_capability(self, capability_id: str, description: str):
         """Add discovered capability to knowledge base"""
-<<<<<<< HEAD
         if (
             capability_id
             not in self.knowledge_expansion_data["capabilities_discovered"]
@@ -868,14 +612,6 @@ class GeminiCLIIntegrationTester:
                     "discovered_at": datetime.now().isoformat(),
                 }
             )
-=======
-        if capability_id not in self.knowledge_expansion_data["capabilities_discovered"]:
-            self.knowledge_expansion_data["capabilities_discovered"].append({
-                "id": capability_id,
-                "description": description,
-                "discovered_at": datetime.now().isoformat()
-            })
->>>>>>> origin/OS0.6.2.grok
 
     async def _expand_knowledge_from_current_tests(self):
         """Expand knowledge from current test execution"""
@@ -885,7 +621,6 @@ class GeminiCLIIntegrationTester:
             latest_test = max(self.test_results.values(), key=lambda x: x["timestamp"])
 
             # Learn from successful integrations
-<<<<<<< HEAD
             if (
                 latest_test.get("test_suite", {})
                 .get("architecture_integration", {})
@@ -905,17 +640,6 @@ class GeminiCLIIntegrationTester:
                 avg_response = performance.get("integration_overhead", {}).get(
                     "average_response_time", 0
                 )
-=======
-            if latest_test.get("test_suite", {}).get("architecture_integration", {}).get("interface_bridge"):
-                self._add_usage_pattern("interface_bridge_usage",
-                                      "Use HTTP API at localhost:8000 for tool access",
-                                      ["api_calls", "tool_discovery"])
-
-            # Learn from performance metrics
-            performance = latest_test.get("test_suite", {}).get("performance_metrics", {})
-            if performance.get("response_times"):
-                avg_response = performance.get("integration_overhead", {}).get("average_response_time", 0)
->>>>>>> origin/OS0.6.2.grok
                 if avg_response > 0:
                     self._add_performance_metric("average_response_time", avg_response)
 
@@ -924,22 +648,14 @@ class GeminiCLIIntegrationTester:
         self.knowledge_expansion_data["usage_patterns"][pattern_id] = {
             "description": description,
             "tags": tags,
-<<<<<<< HEAD
             "learned_at": datetime.now().isoformat(),
-=======
-            "learned_at": datetime.now().isoformat()
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _add_performance_metric(self, metric_name: str, value: float):
         """Add performance metric to knowledge base"""
         self.knowledge_expansion_data["performance_metrics"][metric_name] = {
             "value": value,
-<<<<<<< HEAD
             "measured_at": datetime.now().isoformat(),
-=======
-            "measured_at": datetime.now().isoformat()
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _calculate_overall_success(self, test_suite: Dict[str, Any]) -> Dict[str, Any]:
@@ -965,15 +681,11 @@ class GeminiCLIIntegrationTester:
             "total_tests": total_tests,
             "passed_tests": passed_tests,
             "success_rate": success_rate,
-<<<<<<< HEAD
             "overall_status": (
                 "success"
                 if success_rate >= 0.8
                 else "partial" if success_rate >= 0.5 else "failure"
             ),
-=======
-            "overall_status": "success" if success_rate >= 0.8 else "partial" if success_rate >= 0.5 else "failure"
->>>>>>> origin/OS0.6.2.grok
         }
 
     async def generate_usage_guide(self) -> str:
@@ -997,14 +709,10 @@ Location: ai/src/integrations/gemini_bridge/consciousness_mcp_server.py
 """
 
         try:
-<<<<<<< HEAD
             from integrations.gemini_bridge.consciousness_mcp_server import (
                 ConsciousnessMCPServer,
             )
 
-=======
-            from integrations.gemini_bridge.consciousness_mcp_server import ConsciousnessMCPServer
->>>>>>> origin/OS0.6.2.grok
             mcp = ConsciousnessMCPServer()
             tools = mcp.list_tools()
             for tool in tools.get("tools", []):
@@ -1194,7 +902,6 @@ cat gemini_knowledge_base.json
             "total_test_runs": len(self.test_results),
             "latest_test": latest_test,
             "knowledge_base_size": {
-<<<<<<< HEAD
                 "capabilities": len(
                     self.knowledge_expansion_data.get("capabilities_discovered", [])
                 ),
@@ -1207,14 +914,6 @@ cat gemini_knowledge_base.json
             },
             "test_coverage": self._analyze_test_coverage(),
             "timestamp": datetime.now().isoformat(),
-=======
-                "capabilities": len(self.knowledge_expansion_data.get("capabilities_discovered", [])),
-                "patterns": len(self.knowledge_expansion_data.get("usage_patterns", {})),
-                "metrics": len(self.knowledge_expansion_data.get("performance_metrics", {}))
-            },
-            "test_coverage": self._analyze_test_coverage(),
-            "timestamp": datetime.now().isoformat()
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _analyze_test_coverage(self) -> Dict[str, Any]:
@@ -1226,18 +925,13 @@ cat gemini_knowledge_base.json
             "architecture_integration": False,
             "performance_testing": False,
             "error_handling": False,
-<<<<<<< HEAD
             "knowledge_expansion": False,
-=======
-            "knowledge_expansion": False
->>>>>>> origin/OS0.6.2.grok
         }
 
         if self.test_results:
             latest = max(self.test_results.values(), key=lambda x: x["timestamp"])
             test_suite = latest.get("test_suite", {})
 
-<<<<<<< HEAD
             coverage["consciousness_integration"] = bool(
                 test_suite.get("consciousness_integration")
             )
@@ -1252,14 +946,6 @@ cat gemini_knowledge_base.json
             coverage["knowledge_expansion"] = bool(
                 test_suite.get("knowledge_expansion")
             )
-=======
-            coverage["consciousness_integration"] = bool(test_suite.get("consciousness_integration"))
-            coverage["agentic_behavior"] = bool(test_suite.get("agentic_behavior"))
-            coverage["architecture_integration"] = bool(test_suite.get("architecture_integration"))
-            coverage["performance_testing"] = bool(test_suite.get("performance_metrics"))
-            coverage["error_handling"] = bool(test_suite.get("error_handling"))
-            coverage["knowledge_expansion"] = bool(test_suite.get("knowledge_expansion"))
->>>>>>> origin/OS0.6.2.grok
 
         coverage["overall_coverage"] = sum(coverage.values()) / len(coverage)
         return coverage
@@ -1304,8 +990,4 @@ async def main():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     asyncio.run(main())
-=======
-    asyncio.run(main())
->>>>>>> origin/OS0.6.2.grok

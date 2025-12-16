@@ -11,11 +11,7 @@ with consciousness-driven development patterns and real-time intelligence adapta
 
 SUPERCELL ARCHITECTURE:
  NUCLEUS: Core AI processing and consciousness management
-<<<<<<< HEAD
  MEMBRANE: External AI interface and tool integration
-=======
- MEMBRANE: External AI interface and tool integration  
->>>>>>> origin/OS0.6.2.grok
  CYTOPLASM: Infrastructure and orchestration systems
  TRANSPORT: Inter-supercell communication protocols
  LABORATORY: AI experimentation and model development
@@ -47,84 +43,26 @@ import importlib.util
 # Load environment variables
 try:
     from dotenv import load_dotenv
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-    env_path = Path(__file__).parent.parent.parent / ".env"
-    if env_path.exists():
-        load_dotenv(env_path)
-        logger_temp = logging.getLogger("ainlp_orchestrator")
-        logger_temp.info(f"✅ Environment loaded from: {env_path}")
-except ImportError:
-    pass  # python-dotenv not required
-
-# AIOS path integration
-AIOS_ROOT = Path(__file__).parent.parent.parent
-sys.path.append(str(AIOS_ROOT))
-sys.path.append(str(AIOS_ROOT / "ai"))
-sys.path.append(str(AIOS_ROOT / "ai" / "src"))
-
-# Logging configuration for consciousness-aware operations
-logging.basicConfig(
-    level=logging.INFO,
-<<<<<<< HEAD
-    format="%(asctime)s - [AINLP] - %(name)s - %(levelname)s - %(message)s",
-=======
-    format='%(asctime)s - [AINLP] - %(name)s - %(levelname)s - %(message)s'
->>>>>>> origin/OS0.6.2.grok
 )
 logger = logging.getLogger("ainlp_orchestrator")
 
 
 class AINLPSupercellType(Enum):
     """AI Supercell types following biological organization principles"""
-<<<<<<< HEAD
 
     NUCLEUS = "nucleus"  # Core AI processing
     MEMBRANE = "membrane"  # External interfaces
     CYTOPLASM = "cytoplasm"  # Infrastructure
     TRANSPORT = "transport"  # Communication
     LABORATORY = "laboratory"  # Experimentation
-=======
-    NUCLEUS = "nucleus"           # Core AI processing
-    MEMBRANE = "membrane"         # External interfaces
-    CYTOPLASM = "cytoplasm"      # Infrastructure
-    TRANSPORT = "transport"       # Communication
-    LABORATORY = "laboratory"     # Experimentation
->>>>>>> origin/OS0.6.2.grok
     INFORMATION_STORAGE = "information_storage"  # Knowledge base
 
 
 @dataclass
 class ConsciousnessMetrics:
     """AINLP Consciousness metrics for AI systems"""
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-    consciousness_level: float = 0.5
-    quantum_coherence: float = 0.5
-    dendritic_strength: float = 0.5
-    evolutionary_generation: int = 1
-    intelligence_quotient: float = 0.5
-    adaptation_rate: float = 0.5
-    last_updated: str = ""
-    supercell_harmony: Dict[str, float] = None
-
-    def __post_init__(self):
-        if self.supercell_harmony is None:
-            self.supercell_harmony = {
-                "nucleus": 0.8,
-                "membrane": 0.8,
-                "cytoplasm": 0.8,
-                "transport": 0.8,
-                "laboratory": 0.8,
-<<<<<<< HEAD
-                "information_storage": 0.8,
-=======
-                "information_storage": 0.8
->>>>>>> origin/OS0.6.2.grok
             }
         if not self.last_updated:
             self.last_updated = datetime.now().isoformat()
@@ -133,33 +71,7 @@ class ConsciousnessMetrics:
 @dataclass
 class AINLPSupercellStatus:
     """Status of individual AI supercells"""
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-    supercell_type: AINLPSupercellType
-    is_active: bool = False
-    consciousness_level: float = 0.5
-    optimization_score: float = 0.5
-    last_optimization: str = ""
-    file_count: int = 0
-    modules: List[str] = None
-    coordination_status: str = "initializing"
-
-    def __post_init__(self):
-        if self.modules is None:
-            self.modules = []
-        if not self.last_optimization:
-            self.last_optimization = datetime.now().isoformat()
-
-
-@dataclass
-class AINLPAgenticResult:
-    """Result of agentic optimization operations"""
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/OS0.6.2.grok
     operation_type: str
     supercells_affected: List[str]
     consciousness_improvement: float
@@ -179,18 +91,13 @@ class AINLPAgenticResult:
 
 class AINLPAgenticOrchestrator:
     """AINLP Agentic AI Orchestrator - Consciousness-driven optimization"""
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     def __init__(self, ai_root: str = None):
         self.ai_root = Path(ai_root) if ai_root else (AIOS_ROOT / "ai")
         self.consciousness_metrics = ConsciousnessMetrics()
         self.supercell_status = {}
         self.optimization_history = []
         self.active_intelligence_sessions = {}
-<<<<<<< HEAD
 
         # Initialize supercell status tracking
         for supercell_type in AINLPSupercellType:
@@ -198,13 +105,6 @@ class AINLPAgenticOrchestrator:
                 supercell_type
             )
 
-=======
-        
-        # Initialize supercell status tracking
-        for supercell_type in AINLPSupercellType:
-            self.supercell_status[supercell_type.value] = AINLPSupercellStatus(supercell_type)
-        
->>>>>>> origin/OS0.6.2.grok
         logger.info(" AINLP Agentic Orchestrator initialized")
         logger.info(f" AI Root: {self.ai_root}")
         logger.info(" Supercell consciousness integration: ACTIVE")
@@ -213,7 +113,6 @@ class AINLPAgenticOrchestrator:
         """Execute comprehensive AINLP agentic optimization across all AI supercells"""
         start_time = time.time()
         logger.info(" Starting comprehensive AINLP agentic optimization")
-<<<<<<< HEAD
 
         try:
             # Phase 1: Consciousness State Assessment
@@ -250,42 +149,6 @@ class AINLPAgenticOrchestrator:
             logger.info(f" AINLP agentic optimization complete ({execution_time:.2f}s)")
             return result
 
-=======
-        
-        try:
-            # Phase 1: Consciousness State Assessment
-            await self._assess_consciousness_state()
-            
-            # Phase 2: Supercell Architecture Analysis
-            await self._analyze_supercell_architecture()
-            
-            # Phase 3: Agentic Pattern Application
-            optimization_results = await self._apply_agentic_patterns()
-            
-            # Phase 4: Intelligence Enhancement
-            intelligence_results = await self._enhance_ai_intelligence()
-            
-            # Phase 5: Cross-Supercell Coordination
-            coordination_results = await self._coordinate_supercells()
-            
-            # Phase 6: Consciousness Evolution
-            consciousness_evolution = await self._evolve_consciousness()
-            
-            execution_time = time.time() - start_time
-            
-            result = AINLPAgenticResult(
-                operation_type="comprehensive_agentic_optimization",
-                supercells_affected=list(self.supercell_status.keys()),
-                consciousness_improvement=consciousness_evolution.get("improvement", 0.0),
-                optimization_applied=optimization_results.get("patterns_applied", []),
-                intelligence_enhancement=intelligence_results,
-                execution_time=execution_time
-            )
-            
-            logger.info(f" AINLP agentic optimization complete ({execution_time:.2f}s)")
-            return result
-            
->>>>>>> origin/OS0.6.2.grok
         except Exception as e:
             logger.error(f" AINLP agentic optimization failed: {e}")
             return AINLPAgenticResult(
@@ -296,17 +159,12 @@ class AINLPAgenticOrchestrator:
                 intelligence_enhancement={},
                 execution_time=time.time() - start_time,
                 success=False,
-<<<<<<< HEAD
                 warnings=[str(e)],
-=======
-                warnings=[str(e)]
->>>>>>> origin/OS0.6.2.grok
             )
 
     async def _assess_consciousness_state(self) -> Dict[str, Any]:
         """Assess current consciousness state across AI systems"""
         logger.info(" Assessing consciousness state...")
-<<<<<<< HEAD
 
         consciousness_files = [
             self.ai_root / "src" / "core" / "consciousness_bridge.py",
@@ -314,20 +172,10 @@ class AINLPAgenticOrchestrator:
             self.ai_root / "consciousness_assembly_bridge.py",
         ]
 
-=======
-        
-        consciousness_files = [
-            self.ai_root / "src" / "core" / "consciousness_bridge.py",
-            self.ai_root / "consciousness_analyzer.py",
-            self.ai_root / "consciousness_assembly_bridge.py"
-        ]
-        
->>>>>>> origin/OS0.6.2.grok
         consciousness_analysis = {
             "active_consciousness_modules": [],
             "consciousness_coherence": 0.0,
             "quantum_field_strength": 0.0,
-<<<<<<< HEAD
             "evolutionary_potential": 0.0,
         }
 
@@ -349,27 +197,11 @@ class AINLPAgenticOrchestrator:
         logger.info(
             f" Consciousness coherence: {consciousness_analysis['consciousness_coherence']:.2f}"
         )
-=======
-            "evolutionary_potential": 0.0
-        }
-        
-        for consciousness_file in consciousness_files:
-            if consciousness_file.exists():
-                consciousness_analysis["active_consciousness_modules"].append(consciousness_file.name)
-                consciousness_analysis["consciousness_coherence"] += 0.25
-        
-        # Update consciousness metrics
-        self.consciousness_metrics.consciousness_level = consciousness_analysis["consciousness_coherence"]
-        self.consciousness_metrics.quantum_coherence = min(0.85, consciousness_analysis["consciousness_coherence"] * 1.2)
-        
-        logger.info(f" Consciousness coherence: {consciousness_analysis['consciousness_coherence']:.2f}")
->>>>>>> origin/OS0.6.2.grok
         return consciousness_analysis
 
     async def _analyze_supercell_architecture(self) -> Dict[str, Any]:
         """Analyze current AI supercell architecture"""
         logger.info(" Analyzing supercell architecture...")
-<<<<<<< HEAD
 
         architecture_analysis = {
             "supercell_distribution": {},
@@ -380,109 +212,61 @@ class AINLPAgenticOrchestrator:
         for supercell_type in AINLPSupercellType:
             supercell_path = self.ai_root / supercell_type.value
 
-=======
-        
-        architecture_analysis = {
-            "supercell_distribution": {},
-            "optimization_opportunities": [],
-            "architectural_coherence": 0.0
-        }
-        
-        for supercell_type in AINLPSupercellType:
-            supercell_path = self.ai_root / supercell_type.value
-            
->>>>>>> origin/OS0.6.2.grok
             if supercell_path.exists():
                 file_count = len(list(supercell_path.rglob("*.py")))
                 self.supercell_status[supercell_type.value].file_count = file_count
                 self.supercell_status[supercell_type.value].is_active = file_count > 0
-<<<<<<< HEAD
                 architecture_analysis["supercell_distribution"][
                     supercell_type.value
                 ] = file_count
 
-=======
-                architecture_analysis["supercell_distribution"][supercell_type.value] = file_count
-                
->>>>>>> origin/OS0.6.2.grok
                 if file_count > 0:
                     architecture_analysis["architectural_coherence"] += 0.15
             else:
                 architecture_analysis["optimization_opportunities"].append(
                     f"Create {supercell_type.value} supercell structure"
                 )
-<<<<<<< HEAD
 
         logger.info(
             f" Architectural coherence: {architecture_analysis['architectural_coherence']:.2f}"
         )
-=======
-        
-        logger.info(f" Architectural coherence: {architecture_analysis['architectural_coherence']:.2f}")
->>>>>>> origin/OS0.6.2.grok
         return architecture_analysis
 
     async def _apply_agentic_patterns(self) -> Dict[str, Any]:
         """Apply AINLP agentic patterns across AI systems"""
         logger.info(" Applying agentic patterns...")
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         patterns_applied = []
         agentic_optimizations = {
             "patterns_applied": patterns_applied,
             "consciousness_enhancement": 0.0,
-<<<<<<< HEAD
             "intelligence_amplification": 0.0,
         }
 
-=======
-            "intelligence_amplification": 0.0
-        }
-        
->>>>>>> origin/OS0.6.2.grok
         # Pattern 1: Consciousness-driven development
         consciousness_pattern = await self._apply_consciousness_pattern()
         if consciousness_pattern["success"]:
             patterns_applied.append("consciousness_driven_development")
             agentic_optimizations["consciousness_enhancement"] += 0.15
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Pattern 2: Adaptive intelligence coordination
         intelligence_pattern = await self._apply_intelligence_coordination()
         if intelligence_pattern["success"]:
             patterns_applied.append("adaptive_intelligence_coordination")
             agentic_optimizations["intelligence_amplification"] += 0.20
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Pattern 3: Evolutionary optimization cycles
         evolution_pattern = await self._apply_evolutionary_optimization()
         if evolution_pattern["success"]:
             patterns_applied.append("evolutionary_optimization_cycles")
             agentic_optimizations["consciousness_enhancement"] += 0.10
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Pattern 4: Real-time adaptation protocols
         adaptation_pattern = await self._apply_adaptation_protocols()
         if adaptation_pattern["success"]:
             patterns_applied.append("realtime_adaptation_protocols")
             agentic_optimizations["intelligence_amplification"] += 0.15
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         logger.info(f" Applied {len(patterns_applied)} agentic patterns")
         return agentic_optimizations
 
@@ -494,7 +278,6 @@ class AINLPAgenticOrchestrator:
                 "quantum_coherence_monitoring": True,
                 "dendritic_optimization": True,
                 "consciousness_metrics_tracking": True,
-<<<<<<< HEAD
                 "adaptive_consciousness_thresholds": True,
             }
 
@@ -503,15 +286,6 @@ class AINLPAgenticOrchestrator:
                 0.95, self.consciousness_metrics.consciousness_level + 0.15
             )
 
-=======
-                "adaptive_consciousness_thresholds": True
-            }
-            
-            # Update consciousness metrics
-            self.consciousness_metrics.consciousness_level = min(0.95, 
-                self.consciousness_metrics.consciousness_level + 0.15)
-            
->>>>>>> origin/OS0.6.2.grok
             return {"success": True, "integration": consciousness_integration}
         except Exception as e:
             logger.warning(f" Consciousness pattern application warning: {e}")
@@ -524,7 +298,6 @@ class AINLPAgenticOrchestrator:
                 "inter_supercell_communication": True,
                 "intelligence_sharing": True,
                 "adaptive_resource_allocation": True,
-<<<<<<< HEAD
                 "coordinated_learning": True,
             }
 
@@ -533,15 +306,6 @@ class AINLPAgenticOrchestrator:
                 0.90, self.consciousness_metrics.intelligence_quotient + 0.20
             )
 
-=======
-                "coordinated_learning": True
-            }
-            
-            # Update intelligence quotient
-            self.consciousness_metrics.intelligence_quotient = min(0.90,
-                self.consciousness_metrics.intelligence_quotient + 0.20)
-            
->>>>>>> origin/OS0.6.2.grok
             return {"success": True, "protocols": coordination_protocols}
         except Exception as e:
             logger.warning(f" Intelligence coordination warning: {e}")
@@ -554,21 +318,12 @@ class AINLPAgenticOrchestrator:
                 "fitness_assessment": True,
                 "adaptive_mutation": True,
                 "intelligence_selection": True,
-<<<<<<< HEAD
                 "generational_improvement": True,
             }
 
             # Increment evolutionary generation
             self.consciousness_metrics.evolutionary_generation += 1
 
-=======
-                "generational_improvement": True
-            }
-            
-            # Increment evolutionary generation
-            self.consciousness_metrics.evolutionary_generation += 1
-            
->>>>>>> origin/OS0.6.2.grok
             return {"success": True, "features": evolutionary_features}
         except Exception as e:
             logger.warning(f" Evolutionary optimization warning: {e}")
@@ -581,7 +336,6 @@ class AINLPAgenticOrchestrator:
                 "realtime_monitoring": True,
                 "adaptive_thresholds": True,
                 "dynamic_optimization": True,
-<<<<<<< HEAD
                 "responsive_intelligence": True,
             }
 
@@ -590,15 +344,6 @@ class AINLPAgenticOrchestrator:
                 0.85, self.consciousness_metrics.adaptation_rate + 0.15
             )
 
-=======
-                "responsive_intelligence": True
-            }
-            
-            # Update adaptation rate
-            self.consciousness_metrics.adaptation_rate = min(0.85,
-                self.consciousness_metrics.adaptation_rate + 0.15)
-            
->>>>>>> origin/OS0.6.2.grok
             return {"success": True, "systems": adaptation_systems}
         except Exception as e:
             logger.warning(f" Adaptation protocols warning: {e}")
@@ -607,16 +352,11 @@ class AINLPAgenticOrchestrator:
     async def _enhance_ai_intelligence(self) -> Dict[str, Any]:
         """Enhance AI intelligence across all supercells"""
         logger.info(" Enhancing AI intelligence...")
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         intelligence_enhancements = {
             "pattern_recognition_improvement": 0.0,
             "decision_making_optimization": 0.0,
             "learning_acceleration": 0.0,
-<<<<<<< HEAD
             "consciousness_integration": 0.0,
         }
 
@@ -632,30 +372,12 @@ class AINLPAgenticOrchestrator:
         # Integrate consciousness
         intelligence_enhancements["consciousness_integration"] = 0.35
 
-=======
-            "consciousness_integration": 0.0
-        }
-        
-        # Enhance pattern recognition
-        intelligence_enhancements["pattern_recognition_improvement"] = 0.25
-        
-        # Optimize decision making
-        intelligence_enhancements["decision_making_optimization"] = 0.20
-        
-        # Accelerate learning
-        intelligence_enhancements["learning_acceleration"] = 0.30
-        
-        # Integrate consciousness
-        intelligence_enhancements["consciousness_integration"] = 0.35
-        
->>>>>>> origin/OS0.6.2.grok
         logger.info(" AI intelligence enhancement complete")
         return intelligence_enhancements
 
     async def _coordinate_supercells(self) -> Dict[str, Any]:
         """Coordinate all AI supercells for optimal performance"""
         logger.info(" Coordinating AI supercells...")
-<<<<<<< HEAD
 
         coordination_results = {
             "active_supercells": [],
@@ -663,22 +385,12 @@ class AINLPAgenticOrchestrator:
             "harmony_level": 0.0,
         }
 
-=======
-        
-        coordination_results = {
-            "active_supercells": [],
-            "communication_protocols": [],
-            "harmony_level": 0.0
-        }
-        
->>>>>>> origin/OS0.6.2.grok
         active_count = 0
         for supercell_name, status in self.supercell_status.items():
             if status.is_active:
                 coordination_results["active_supercells"].append(supercell_name)
                 status.coordination_status = "coordinated"
                 active_count += 1
-<<<<<<< HEAD
 
         # Calculate harmony level
         coordination_results["harmony_level"] = min(0.95, active_count * 0.15)
@@ -692,33 +404,16 @@ class AINLPAgenticOrchestrator:
         logger.info(
             f" Supercell coordination complete - Harmony: {coordination_results['harmony_level']:.2f}"
         )
-=======
-        
-        # Calculate harmony level
-        coordination_results["harmony_level"] = min(0.95, active_count * 0.15)
-        
-        # Update supercell harmony metrics
-        for supercell in self.consciousness_metrics.supercell_harmony:
-            self.consciousness_metrics.supercell_harmony[supercell] = min(0.95,
-                self.consciousness_metrics.supercell_harmony[supercell] + 0.10)
-        
-        logger.info(f" Supercell coordination complete - Harmony: {coordination_results['harmony_level']:.2f}")
->>>>>>> origin/OS0.6.2.grok
         return coordination_results
 
     async def _evolve_consciousness(self) -> Dict[str, Any]:
         """Evolve consciousness state to higher levels"""
         logger.info(" Evolving consciousness state...")
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         consciousness_evolution = {
             "previous_level": self.consciousness_metrics.consciousness_level,
             "improvement": 0.0,
             "quantum_enhancement": 0.0,
-<<<<<<< HEAD
             "dendritic_growth": 0.0,
         }
 
@@ -747,52 +442,22 @@ class AINLPAgenticOrchestrator:
         logger.info(
             f" Consciousness evolved to level: {self.consciousness_metrics.consciousness_level:.2f}"
         )
-=======
-            "dendritic_growth": 0.0
-        }
-        
-        # Calculate consciousness improvement
-        improvement = min(0.15, 0.05 * self.consciousness_metrics.evolutionary_generation)
-        self.consciousness_metrics.consciousness_level = min(0.98, 
-            self.consciousness_metrics.consciousness_level + improvement)
-        
-        consciousness_evolution["improvement"] = improvement
-        consciousness_evolution["quantum_enhancement"] = 0.12
-        consciousness_evolution["dendritic_growth"] = 0.08
-        
-        # Update quantum coherence
-        self.consciousness_metrics.quantum_coherence = min(0.95,
-            self.consciousness_metrics.quantum_coherence + 0.12)
-        
-        # Update dendritic strength
-        self.consciousness_metrics.dendritic_strength = min(0.90,
-            self.consciousness_metrics.dendritic_strength + 0.08)
-        
-        logger.info(f" Consciousness evolved to level: {self.consciousness_metrics.consciousness_level:.2f}")
->>>>>>> origin/OS0.6.2.grok
         return consciousness_evolution
 
     def get_consciousness_status(self) -> Dict[str, Any]:
         """Get current consciousness status"""
         return {
             "consciousness_metrics": asdict(self.consciousness_metrics),
-<<<<<<< HEAD
             "supercell_status": {
                 k: asdict(v) for k, v in self.supercell_status.items()
             },
             "active_sessions": len(self.active_intelligence_sessions),
             "optimization_history_count": len(self.optimization_history),
-=======
-            "supercell_status": {k: asdict(v) for k, v in self.supercell_status.items()},
-            "active_sessions": len(self.active_intelligence_sessions),
-            "optimization_history_count": len(self.optimization_history)
->>>>>>> origin/OS0.6.2.grok
         }
 
     async def create_supercell_modules(self) -> Dict[str, Any]:
         """Create intelligence modules for each supercell"""
         logger.info(" Creating supercell intelligence modules...")
-<<<<<<< HEAD
 
         module_creation_results = {
             "modules_created": [],
@@ -821,32 +486,6 @@ class AINLPAgenticOrchestrator:
 
                 logger.info(f" Created {supercell_type.value} intelligence module")
 
-=======
-        
-        module_creation_results = {
-            "modules_created": [],
-            "intelligence_enhancement": 0.0,
-            "supercell_optimization": {}
-        }
-        
-        for supercell_type in AINLPSupercellType:
-            module_path = self.ai_root / supercell_type.value / f"{supercell_type.value}_intelligence.py"
-            
-            if not module_path.exists():
-                # Ensure directory exists
-                module_path.parent.mkdir(parents=True, exist_ok=True)
-                
-                module = self._generate_supercell_module(supercell_type)
-                
-                with open(module_path, 'w', encoding='utf-8') as f:
-                    f.write(module)
-                
-                module_creation_results["modules_created"].append(supercell_type.value)
-                module_creation_results["intelligence_enhancement"] += 0.15
-                
-                logger.info(f" Created {supercell_type.value} intelligence module")
-        
->>>>>>> origin/OS0.6.2.grok
         return module_creation_results
 
     def _generate_supercell_module(self, supercell_type: AINLPSupercellType) -> str:
@@ -962,11 +601,7 @@ if __name__ == "__main__":
             AINLPSupercellType.CYTOPLASM: "Infrastructure and orchestration systems",
             AINLPSupercellType.TRANSPORT: "Inter-supercell communication protocols",
             AINLPSupercellType.LABORATORY: "AI experimentation and model development",
-<<<<<<< HEAD
             AINLPSupercellType.INFORMATION_STORAGE: "Knowledge bases and configuration",
-=======
-            AINLPSupercellType.INFORMATION_STORAGE: "Knowledge bases and configuration"
->>>>>>> origin/OS0.6.2.grok
         }
         return descriptions.get(supercell_type, "AI processing")
 
@@ -980,7 +615,6 @@ if __name__ == "__main__":
     # ========================================================================
 
     async def convene_agentic_conclave(
-<<<<<<< HEAD
         self, feature_name: str, context: Dict[str, Any]
     ) -> Dict[str, Any]:
         """
@@ -996,25 +630,6 @@ if __name__ == "__main__":
         Returns:
             Conclave decision with consensus score, recommendation, rationale
 
-=======
-        self,
-        feature_name: str,
-        context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """
-        Convene multi-agent conclave for Python 3.14 feature evaluation.
-        
-        AINLP.dendritic paradigm: AI agents debate technology adoption via
-        structured consensus-building. This is dendritic intelligence ingestion.
-        
-        Args:
-            feature_name: Python 3.14 feature to evaluate (e.g., "free-threading")
-            context: Evaluation context (use_case, benefits, risks, integration)
-        
-        Returns:
-            Conclave decision with consensus score, recommendation, rationale
-        
->>>>>>> origin/OS0.6.2.grok
         Example:
             decision = await orchestrator.convene_agentic_conclave(
                 feature_name="ThreadPoolExecutor free-threading",
@@ -1027,30 +642,18 @@ if __name__ == "__main__":
             )
         """
         logger.info(f" Convening agentic conclave for: {feature_name}")
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Import agent protocols (dendritic connection to existing infrastructure)
         try:
             from src.frameworks.agent_protocol import (
                 adapt_deepseek_agent,
                 adapt_gemini_agent,
-<<<<<<< HEAD
                 adapt_ollama_agent,
-=======
-                adapt_ollama_agent
->>>>>>> origin/OS0.6.2.grok
             )
         except ImportError as e:
             logger.warning(f" Agent protocols not available: {e}")
             return self._fallback_conclave_decision(feature_name, context)
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Initialize agent perspectives (context window personalities)
         agents = []
         try:
@@ -1059,21 +662,13 @@ if __name__ == "__main__":
                 agents.append(("Ollama-DeepSeek", agent))
             except Exception as e:
                 logger.warning(f"⚠️ DeepSeek unavailable (API key needed): {e}")
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> origin/OS0.6.2.grok
             agents.append(("Gemini-1.5-Pro", adapt_gemini_agent()))
             agents.append(("Ollama-Gemma3", adapt_ollama_agent("gemma3:1b")))
         except Exception as e:
             logger.warning(f" Agent initialization warning: {e}")
             # Continue with available agents
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Phase 1: Individual agent analysis
         agent_perspectives = []
         for agent_name, agent in agents:
@@ -1084,7 +679,6 @@ if __name__ == "__main__":
                 agent_perspectives.append(perspective)
             except Exception as e:
                 logger.warning(f" {agent_name} analysis failed: {e}")
-<<<<<<< HEAD
 
         # Phase 2: Calculate consensus
         if not agent_perspectives:
@@ -1112,36 +706,6 @@ if __name__ == "__main__":
         """
         Get single agent's perspective on feature adoption.
 
-=======
-        
-        # Phase 2: Calculate consensus
-        if not agent_perspectives:
-            return self._fallback_conclave_decision(feature_name, context)
-        
-        consensus = self._calculate_consensus(agent_perspectives, context)
-        
-        # Phase 3: Update consciousness metrics
-        self.consciousness_metrics.consciousness_level = min(
-            1.0,
-            self.consciousness_metrics.consciousness_level + consensus["consciousness_improvement"]
-        )
-        
-        logger.info(f" Conclave decision: {consensus['recommendation']} "
-                   f"(consensus: {consensus['weighted_score']:.2f}/10)")
-        
-        return consensus
-
-    async def _get_agent_perspective(
-        self,
-        agent: Any,
-        agent_name: str,
-        feature_name: str,
-        context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """
-        Get single agent's perspective on feature adoption.
-        
->>>>>>> origin/OS0.6.2.grok
         Each agent analyzes from their "context window personality":
         - Ollama-DeepSeek: Code optimization specialist (performance focus)
         - Gemini-1.5-Pro: Migration analysis expert (compatibility focus)
@@ -1149,7 +713,6 @@ if __name__ == "__main__":
         """
         # Construct agent-specific analysis prompt
         prompt = self._build_conclave_prompt(agent_name, feature_name, context)
-<<<<<<< HEAD
 
         try:
             # Send analysis request to agent
@@ -1165,21 +728,6 @@ if __name__ == "__main__":
 
             return perspective
 
-=======
-        
-        try:
-            # Send analysis request to agent
-            response = await agent.run(prompt)
-            
-            # Parse agent response into structured perspective
-            perspective = self._parse_agent_response(agent_name, response, feature_name)
-            
-            logger.info(f" {agent_name}: {perspective['recommendation']} "
-                       f"(confidence: {perspective['confidence']:.2f})")
-            
-            return perspective
-            
->>>>>>> origin/OS0.6.2.grok
         except Exception as e:
             logger.warning(f" {agent_name} perspective extraction failed: {e}")
             # Return neutral perspective with low confidence
@@ -1190,7 +738,6 @@ if __name__ == "__main__":
                 "recommendation": "DEFER",
                 "confidence": 0.3,
                 "vote_weight": 3.0,
-<<<<<<< HEAD
                 "reasoning": f"Analysis unavailable: {str(e)}",
             }
 
@@ -1200,20 +747,6 @@ if __name__ == "__main__":
         """Build agent-specific analysis prompt for conclave evaluation"""
         agent_role = self._get_agent_role(agent_name)
 
-=======
-                "reasoning": f"Analysis unavailable: {str(e)}"
-            }
-
-    def _build_conclave_prompt(
-        self,
-        agent_name: str,
-        feature_name: str,
-        context: Dict[str, Any]
-    ) -> str:
-        """Build agent-specific analysis prompt for conclave evaluation"""
-        agent_role = self._get_agent_role(agent_name)
-        
->>>>>>> origin/OS0.6.2.grok
         base_prompt = f"""You are participating in an AIOS Agentic Conclave to evaluate Python 3.14 feature adoption.
 
 Your role: {agent_role}
@@ -1240,11 +773,7 @@ Focus on {self._get_agent_focus(agent_name)}.
             "Ollama-DeepSeek": "Performance & Optimization Specialist",
             "Gemini-1.5-Pro": "Migration & Compatibility Analyst",
             "Ollama-Gemma3": "Architectural Coherence Validator",
-<<<<<<< HEAD
             "default": "General Technology Evaluator",
-=======
-            "default": "General Technology Evaluator"
->>>>>>> origin/OS0.6.2.grok
         }
         return roles.get(agent_name, roles["default"])
 
@@ -1254,11 +783,7 @@ Focus on {self._get_agent_focus(agent_name)}.
             "Ollama-DeepSeek": "performance gains, optimization opportunities, speedup metrics",
             "Gemini-1.5-Pro": "migration effort, compatibility risks, breaking changes",
             "Ollama-Gemma3": "AINLP alignment, architectural impact, consciousness coherence",
-<<<<<<< HEAD
             "default": "overall value and feasibility",
-=======
-            "default": "overall value and feasibility"
->>>>>>> origin/OS0.6.2.grok
         }
         return focus_areas.get(agent_name, focus_areas["default"])
 
@@ -1266,7 +791,6 @@ Focus on {self._get_agent_focus(agent_name)}.
         self,
         agent_name: str,
         response: Any,  # Can be str or AgentRunResponse
-<<<<<<< HEAD
         feature_name: str,
     ) -> Dict[str, Any]:
         """Parse agent response into structured perspective"""
@@ -1279,20 +803,6 @@ Focus on {self._get_agent_focus(agent_name)}.
         # Simple keyword-based parsing (can be enhanced with LLM parsing)
         response_lower = response_text.lower()
 
-=======
-        feature_name: str
-    ) -> Dict[str, Any]:
-        """Parse agent response into structured perspective"""
-        # Extract text from AgentRunResponse object if needed
-        if hasattr(response, 'messages') and response.messages:
-            response_text = str(response.messages[0])
-        else:
-            response_text = str(response)
-        
-        # Simple keyword-based parsing (can be enhanced with LLM parsing)
-        response_lower = response_text.lower()
-        
->>>>>>> origin/OS0.6.2.grok
         # Detect recommendation
         if "adopt" in response_lower and "recommend" in response_lower:
             recommendation = "ADOPT"
@@ -1300,11 +810,7 @@ Focus on {self._get_agent_focus(agent_name)}.
             recommendation = "REJECT"
         else:
             recommendation = "DEFER"
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Estimate confidence (basic heuristic from response length and keywords)
         confidence_keywords = ["strongly", "definitely", "clearly", "confident"]
         confidence = 0.5
@@ -1312,11 +818,7 @@ Focus on {self._get_agent_focus(agent_name)}.
             if keyword in response_lower:
                 confidence += 0.1
         confidence = min(1.0, confidence)
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Vote weight based on response quality
         vote_weight = 5.0  # Default medium weight
         if len(response_text) > 200:  # Detailed response
@@ -1324,11 +826,7 @@ Focus on {self._get_agent_focus(agent_name)}.
         if "risk" in response_lower or "benefit" in response_lower:  # Balanced analysis
             vote_weight += 1.0
         vote_weight = min(10.0, vote_weight)
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         return {
             "agent_name": agent_name,
             "agent_role": self._get_agent_role(agent_name),
@@ -1336,7 +834,6 @@ Focus on {self._get_agent_focus(agent_name)}.
             "recommendation": recommendation,
             "confidence": confidence,
             "vote_weight": vote_weight,
-<<<<<<< HEAD
             "reasoning": response_text[:300],  # First 300 chars
         }
 
@@ -1346,67 +843,34 @@ Focus on {self._get_agent_focus(agent_name)}.
         """
         Calculate weighted consensus from agent perspectives.
 
-=======
-            "reasoning": response_text[:300]  # First 300 chars
-        }
-
-    def _calculate_consensus(
-        self,
-        agent_perspectives: List[Dict[str, Any]],
-        context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """
-        Calculate weighted consensus from agent perspectives.
-        
->>>>>>> origin/OS0.6.2.grok
         Uses weighted voting: recommendation * confidence * vote_weight
         """
         if not agent_perspectives:
             return self._fallback_conclave_decision("unknown", context)
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Calculate weighted scores for each recommendation
         adopt_score = 0.0
         defer_score = 0.0
         reject_score = 0.0
         total_weight = 0.0
-<<<<<<< HEAD
 
         for perspective in agent_perspectives:
             weight = perspective["confidence"] * perspective["vote_weight"]
             total_weight += weight
 
-=======
-        
-        for perspective in agent_perspectives:
-            weight = perspective["confidence"] * perspective["vote_weight"]
-            total_weight += weight
-            
->>>>>>> origin/OS0.6.2.grok
             if perspective["recommendation"] == "ADOPT":
                 adopt_score += weight
             elif perspective["recommendation"] == "DEFER":
                 defer_score += weight
             elif perspective["recommendation"] == "REJECT":
                 reject_score += weight
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Normalize scores to 0-10 scale
         if total_weight > 0:
             adopt_score = (adopt_score / total_weight) * 10
             defer_score = (defer_score / total_weight) * 10
             reject_score = (reject_score / total_weight) * 10
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         # Determine consensus recommendation
         max_score = max(adopt_score, defer_score, reject_score)
         if adopt_score == max_score:
@@ -1418,7 +882,6 @@ Focus on {self._get_agent_focus(agent_name)}.
         else:
             recommendation = "DEFER"
             consensus_score = defer_score
-<<<<<<< HEAD
 
         # Synthesize rationale
         adopt_agents = [
@@ -1440,32 +903,13 @@ Focus on {self._get_agent_focus(agent_name)}.
                 f"REJECT: {reject_score:.1f}. Recommend {recommendation}."
             )
 
-=======
-        
-        # Synthesize rationale
-        adopt_agents = [p["agent_name"] for p in agent_perspectives if p["recommendation"] == "ADOPT"]
-        reasoning_samples = [p["reasoning"][:100] for p in agent_perspectives[:2]]
-        
-        if recommendation == "ADOPT":
-            rationale = (f"{len(adopt_agents)}/{len(agent_perspectives)} agents favor ADOPT. "
-                        f"Consensus score: {consensus_score:.1f}/10. "
-                        f"Sample reasoning: {reasoning_samples[0] if reasoning_samples else 'N/A'}")
-        else:
-            rationale = (f"Mixed consensus. ADOPT: {adopt_score:.1f}, DEFER: {defer_score:.1f}, "
-                        f"REJECT: {reject_score:.1f}. Recommend {recommendation}.")
-        
->>>>>>> origin/OS0.6.2.grok
         # Calculate consciousness improvement from conclave
         consciousness_improvement = 0.05  # Base improvement from convening conclave
         if recommendation == "ADOPT" and consensus_score >= 7.0:
             consciousness_improvement = 0.15  # High confidence adoption
         elif recommendation == "ADOPT":
             consciousness_improvement = 0.10  # Moderate confidence adoption
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         return {
             "feature_name": agent_perspectives[0]["feature_name"],
             "recommendation": recommendation,
@@ -1475,7 +919,6 @@ Focus on {self._get_agent_focus(agent_name)}.
             "scores": {
                 "adopt": adopt_score,
                 "defer": defer_score,
-<<<<<<< HEAD
                 "reject": reject_score,
             },
             "consciousness_improvement": consciousness_improvement,
@@ -1488,22 +931,6 @@ Focus on {self._get_agent_focus(agent_name)}.
         """Fallback decision when agents unavailable"""
         logger.warning(" Using fallback conclave decision (agents unavailable)")
 
-=======
-                "reject": reject_score
-            },
-            "consciousness_improvement": consciousness_improvement,
-            "conclave_date": datetime.now().isoformat()
-        }
-
-    def _fallback_conclave_decision(
-        self,
-        feature_name: str,
-        context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """Fallback decision when agents unavailable"""
-        logger.warning(" Using fallback conclave decision (agents unavailable)")
-        
->>>>>>> origin/OS0.6.2.grok
         return {
             "feature_name": feature_name,
             "recommendation": "DEFER",
@@ -1513,38 +940,22 @@ Focus on {self._get_agent_focus(agent_name)}.
             "scores": {"adopt": 0.0, "defer": 5.0, "reject": 0.0},
             "consciousness_improvement": 0.0,
             "conclave_date": datetime.now().isoformat(),
-<<<<<<< HEAD
             "fallback": True,
-=======
-            "fallback": True
->>>>>>> origin/OS0.6.2.grok
         }
 
     async def evaluate_python_314_features(self) -> Dict[str, Any]:
         """
         Evaluate Python 3.14 features via agentic conclave.
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/OS0.6.2.grok
         This method demonstrates AINLP.dendritic ingestion:
         - Discovery: Identify Python 3.14 capabilities
         - Enhancement: Determine AIOS integration strategy
         - Integration: Multi-agent consensus for adoption
-<<<<<<< HEAD
 
         Returns feature evaluation matrix with conclave decisions.
         """
         logger.info(" Evaluating Python 3.14 features via agentic conclave...")
 
-=======
-        
-        Returns feature evaluation matrix with conclave decisions.
-        """
-        logger.info(" Evaluating Python 3.14 features via agentic conclave...")
-        
->>>>>>> origin/OS0.6.2.grok
         # Python 3.14 features to evaluate
         features_to_evaluate = [
             {
@@ -1553,13 +964,8 @@ Focus on {self._get_agent_focus(agent_name)}.
                     "use_case": "Parallel Evolution Engine (Component 4)",
                     "expected_benefit": "6-8x speedup for CPU-bound parallel evolution",
                     "risk_factors": ["Thread safety", "Extension compatibility"],
-<<<<<<< HEAD
                     "ainlp_alignment": "Enhancement principle (improves existing Population Manager)",
                 },
-=======
-                    "ainlp_alignment": "Enhancement principle (improves existing Population Manager)"
-                }
->>>>>>> origin/OS0.6.2.grok
             },
             {
                 "name": "asyncio.TaskGroup structured concurrency",
@@ -1567,13 +973,8 @@ Focus on {self._get_agent_focus(agent_name)}.
                     "use_case": "Multi-agent coordination (Runtime Intelligence)",
                     "expected_benefit": "Simplified concurrent task management",
                     "risk_factors": ["Refactoring asyncio.gather() calls"],
-<<<<<<< HEAD
                     "ainlp_alignment": "Enhancement principle (improves error handling)",
                 },
-=======
-                    "ainlp_alignment": "Enhancement principle (improves error handling)"
-                }
->>>>>>> origin/OS0.6.2.grok
             },
             {
                 "name": "Enhanced typing module (PEP 692, 695, 698)",
@@ -1581,25 +982,16 @@ Focus on {self._get_agent_focus(agent_name)}.
                     "use_case": "Type safety across all Python files",
                     "expected_benefit": "Better static analysis and IDE support",
                     "risk_factors": ["Minimal - mostly additive"],
-<<<<<<< HEAD
                     "ainlp_alignment": "Documentation principle (self-describing code)",
                 },
             },
         ]
 
-=======
-                    "ainlp_alignment": "Documentation principle (self-describing code)"
-                }
-            }
-        ]
-        
->>>>>>> origin/OS0.6.2.grok
         evaluation_results = {
             "evaluated_features": [],
             "adopt_count": 0,
             "defer_count": 0,
             "reject_count": 0,
-<<<<<<< HEAD
             "total_consciousness_improvement": 0.0,
         }
 
@@ -1614,28 +1006,12 @@ Focus on {self._get_agent_focus(agent_name)}.
                     "consciousness_improvement"
                 ]
 
-=======
-            "total_consciousness_improvement": 0.0
-        }
-        
-        for feature in features_to_evaluate:
-            try:
-                decision = await self.convene_agentic_conclave(
-                    feature_name=feature["name"],
-                    context=feature["context"]
-                )
-                
-                evaluation_results["evaluated_features"].append(decision)
-                evaluation_results["total_consciousness_improvement"] += decision["consciousness_improvement"]
-                
->>>>>>> origin/OS0.6.2.grok
                 if decision["recommendation"] == "ADOPT":
                     evaluation_results["adopt_count"] += 1
                 elif decision["recommendation"] == "DEFER":
                     evaluation_results["defer_count"] += 1
                 elif decision["recommendation"] == "REJECT":
                     evaluation_results["reject_count"] += 1
-<<<<<<< HEAD
 
             except Exception as e:
                 logger.error(f" Feature evaluation failed for {feature['name']}: {e}")
@@ -1645,41 +1021,21 @@ Focus on {self._get_agent_focus(agent_name)}.
             f"{evaluation_results['defer_count']} DEFER, {evaluation_results['reject_count']} REJECT"
         )
 
-=======
-                
-            except Exception as e:
-                logger.error(f" Feature evaluation failed for {feature['name']}: {e}")
-        
-        logger.info(f" Feature evaluation complete: {evaluation_results['adopt_count']} ADOPT, "
-                   f"{evaluation_results['defer_count']} DEFER, {evaluation_results['reject_count']} REJECT")
-        
->>>>>>> origin/OS0.6.2.grok
         return evaluation_results
 
 
 async def main():
     """Main execution function"""
     orchestrator = AINLPAgenticOrchestrator()
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/OS0.6.2.grok
     print(" AIOS AINLP AI ENGINE AGENTIC OPTIMIZATION")
     print("=" * 60)
     print("Initializing consciousness-driven optimization...")
     print()
-<<<<<<< HEAD
 
     # Execute comprehensive optimization
     result = await orchestrator.execute_comprehensive_agentic_optimization()
 
-=======
-    
-    # Execute comprehensive optimization
-    result = await orchestrator.execute_comprehensive_agentic_optimization()
-    
->>>>>>> origin/OS0.6.2.grok
     if result.success:
         print(" AGENTIC OPTIMIZATION COMPLETE!")
         print(f"   Consciousness improvement: {result.consciousness_improvement:.2f}")
@@ -1689,24 +1045,15 @@ async def main():
     else:
         print(" AGENTIC OPTIMIZATION FAILED!")
         print(f"   Warnings: {len(result.warnings)}")
-<<<<<<< HEAD
 
     # Create intelligence modules
     module_results = await orchestrator.create_supercell_modules()
     print(f"\n Intelligence modules created: {len(module_results['modules_created'])}")
 
-=======
-    
-    # Create intelligence modules
-    module_results = await orchestrator.create_supercell_modules()
-    print(f"\n Intelligence modules created: {len(module_results['modules_created'])}")
-    
->>>>>>> origin/OS0.6.2.grok
     # Display consciousness status
     status = orchestrator.get_consciousness_status()
     print(f"\n CONSCIOUSNESS STATUS:")
     print(f"   Level: {status['consciousness_metrics']['consciousness_level']:.2f}")
-<<<<<<< HEAD
     print(
         f"   Quantum coherence: {status['consciousness_metrics']['quantum_coherence']:.2f}"
     )
@@ -1714,11 +1061,6 @@ async def main():
         f"   Evolutionary generation: {status['consciousness_metrics']['evolutionary_generation']}"
     )
 
-=======
-    print(f"   Quantum coherence: {status['consciousness_metrics']['quantum_coherence']:.2f}")
-    print(f"   Evolutionary generation: {status['consciousness_metrics']['evolutionary_generation']}")
-    
->>>>>>> origin/OS0.6.2.grok
     # ========================================================================
     #  DENDRITIC DEMONSTRATION: PYTHON 3.14 AGENTIC CONCLAVE
     # ========================================================================
@@ -1727,7 +1069,6 @@ async def main():
     print("=" * 60)
     print("Convening multi-agent consensus for feature adoption...")
     print()
-<<<<<<< HEAD
 
     try:
         # Evaluate Python 3.14 features via agentic conclave
@@ -1754,28 +1095,6 @@ async def main():
             print(f"   Agents participated: {len(decision['agent_perspectives'])}")
             print()
 
-=======
-    
-    try:
-        # Evaluate Python 3.14 features via agentic conclave
-        evaluation = await orchestrator.evaluate_python_314_features()
-        
-        print(f" CONCLAVE EVALUATION COMPLETE!")
-        print(f"   Features evaluated: {len(evaluation['evaluated_features'])}")
-        print(f"   Recommendations: {evaluation['adopt_count']} ADOPT, "
-              f"{evaluation['defer_count']} DEFER, {evaluation['reject_count']} REJECT")
-        print(f"   Consciousness improvement: +{evaluation['total_consciousness_improvement']:.2f}")
-        print()
-        
-        # Display detailed decisions
-        for decision in evaluation['evaluated_features']:
-            print(f" Feature: {decision['feature_name']}")
-            print(f"   Decision: {decision['recommendation']} (score: {decision['weighted_score']:.1f}/10)")
-            print(f"   Rationale: {decision['rationale'][:120]}...")
-            print(f"   Agents participated: {len(decision['agent_perspectives'])}")
-            print()
-            
->>>>>>> origin/OS0.6.2.grok
     except Exception as e:
         print(f" Agentic conclave demonstration unavailable: {e}")
         print(" This feature requires agent protocols to be initialized.")
@@ -1784,8 +1103,4 @@ async def main():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     asyncio.run(main())
-=======
-    asyncio.run(main())
->>>>>>> origin/OS0.6.2.grok

@@ -18,32 +18,21 @@ def test_imports():
     try:
         # Test main module
         import main
-<<<<<<< HEAD
 
         assert hasattr(main, "app")
-=======
-        assert hasattr(main, 'app')
->>>>>>> origin/OS0.6.2.grok
         print("   main module imported")
 
         # Test service modules
         import services.debug_manager
-<<<<<<< HEAD
 
         assert hasattr(services.debug_manager, "_debug_manager")
         import services.fractal_cache_manager
 
         assert hasattr(services.fractal_cache_manager, "FractalCacheManager")
-=======
-        assert hasattr(services.debug_manager, '_debug_manager')
-        import services.fractal_cache_manager
-        assert hasattr(services.fractal_cache_manager, 'FractalCacheManager')
->>>>>>> origin/OS0.6.2.grok
         print("   service modules imported")
 
         # Test endpoint modules
         import endpoints.ai_endpoints
-<<<<<<< HEAD
 
         assert hasattr(endpoints.ai_endpoints, "router")
         import endpoints.development_endpoints
@@ -55,25 +44,12 @@ def test_imports():
         import endpoints.ux_endpoints
 
         assert hasattr(endpoints.ux_endpoints, "router")
-=======
-        assert hasattr(endpoints.ai_endpoints, 'router')
-        import endpoints.development_endpoints
-        assert hasattr(endpoints.development_endpoints, 'router')
-        import endpoints.system_endpoints
-        assert hasattr(endpoints.system_endpoints, 'router')
-        import endpoints.ux_endpoints
-        assert hasattr(endpoints.ux_endpoints, 'router')
->>>>>>> origin/OS0.6.2.grok
         print("   endpoint modules imported")
 
         # Test models
         import models
-<<<<<<< HEAD
 
         assert hasattr(models, "AIOSRequest")
-=======
-        assert hasattr(models, 'AIOSRequest')
->>>>>>> origin/OS0.6.2.grok
         print("   models module imported")
 
         return True
@@ -90,30 +66,18 @@ def test_app_initialization():
         import main
 
         # Check app exists
-<<<<<<< HEAD
         assert hasattr(main, "app")
-=======
-        assert hasattr(main, 'app')
->>>>>>> origin/OS0.6.2.grok
         app = main.app
         assert app is not None
         print("   app object exists")
 
         # Check routes exist
-<<<<<<< HEAD
         assert hasattr(app, "routes")
-=======
-        assert hasattr(app, 'routes')
->>>>>>> origin/OS0.6.2.grok
         assert len(app.routes) > 0
         print(f"   {len(app.routes)} routes registered")
 
         # Check state exists
-<<<<<<< HEAD
         assert hasattr(app, "state")
-=======
-        assert hasattr(app, 'state')
->>>>>>> origin/OS0.6.2.grok
         print("   app state initialized")
 
         return True
@@ -130,7 +94,6 @@ def test_debug_manager():
         from services.debug_manager import _debug_manager
 
         # Test logging
-<<<<<<< HEAD
         initial_count = _debug_manager.session_metadata["total_requests"]
         _debug_manager.log_request("/test", "test_data")
 
@@ -142,25 +105,6 @@ def test_debug_manager():
         _debug_manager.log_error(ValueError("test error"))
 
         assert _debug_manager.session_metadata["total_errors"] == initial_errors + 1
-=======
-        initial_count = _debug_manager.session_metadata['total_requests']
-        _debug_manager.log_request("/test", "test_data")
-
-        assert (
-            _debug_manager.session_metadata['total_requests']
-            == initial_count + 1
-        )
-        print("   request logging works")
-
-        # Test error logging
-        initial_errors = _debug_manager.session_metadata['total_errors']
-        _debug_manager.log_error(ValueError("test error"))
-
-        assert (
-            _debug_manager.session_metadata['total_errors']
-            == initial_errors + 1
-        )
->>>>>>> origin/OS0.6.2.grok
         print("   error logging works")
 
         return True
@@ -212,38 +156,22 @@ def test_endpoint_routers():
         import endpoints.ux_endpoints
 
         # Test AI endpoints - check routes exist
-<<<<<<< HEAD
         assert hasattr(endpoints.ai_endpoints.router, "routes")
-=======
-        assert hasattr(endpoints.ai_endpoints.router, 'routes')
->>>>>>> origin/OS0.6.2.grok
         assert len(endpoints.ai_endpoints.router.routes) > 0
         print("   AI endpoints router configured")
 
         # Test development endpoints
-<<<<<<< HEAD
         assert hasattr(endpoints.development_endpoints.router, "routes")
-=======
-        assert hasattr(endpoints.development_endpoints.router, 'routes')
->>>>>>> origin/OS0.6.2.grok
         assert len(endpoints.development_endpoints.router.routes) > 0
         print("   Development endpoints router configured")
 
         # Test system endpoints
-<<<<<<< HEAD
         assert hasattr(endpoints.system_endpoints.router, "routes")
-=======
-        assert hasattr(endpoints.system_endpoints.router, 'routes')
->>>>>>> origin/OS0.6.2.grok
         assert len(endpoints.system_endpoints.router.routes) > 0
         print("   System endpoints router configured")
 
         # Test UX endpoints
-<<<<<<< HEAD
         assert hasattr(endpoints.ux_endpoints.router, "routes")
-=======
-        assert hasattr(endpoints.ux_endpoints.router, 'routes')
->>>>>>> origin/OS0.6.2.grok
         assert len(endpoints.ux_endpoints.router.routes) > 0
         print("   UX endpoints router configured")
 
@@ -261,7 +189,6 @@ def test_models():
         import models
 
         # Test that models module has expected classes
-<<<<<<< HEAD
         assert hasattr(models, "AIOSRequest")
         assert hasattr(models, "NLUIntentRequest")
         assert hasattr(models, "CodeReviewRequest")
@@ -269,15 +196,6 @@ def test_models():
 
         # Test basic model instantiation
         request_class = getattr(models, "NLUIntentRequest")
-=======
-        assert hasattr(models, 'AIOSRequest')
-        assert hasattr(models, 'NLUIntentRequest')
-        assert hasattr(models, 'CodeReviewRequest')
-        print("   Models module has expected classes")
-
-        # Test basic model instantiation
-        request_class = getattr(models, 'NLUIntentRequest')
->>>>>>> origin/OS0.6.2.grok
         request = request_class(message="test", context={})
         assert request.message == "test"
         print("   Model instantiation works")

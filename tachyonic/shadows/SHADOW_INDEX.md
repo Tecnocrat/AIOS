@@ -15,11 +15,7 @@
 > **📚 PURPOSE**: Master index for all tachyonic shadows across all living documents  
 > **🕐 TEMPORAL COVERAGE**: August 1, 2025 → Present  
 > **🔗 LIVING DOCUMENTS**: [DEV_PATH](../../DEV_PATH.md) | [PROJECT_CONTEXT](../../PROJECT_CONTEXT.md)  
-<<<<<<< HEAD
 > **📊 TOTAL SHADOWS**: 7 (dev_path: 7, project_context: 0)
-=======
-> **📊 TOTAL SHADOWS**: 4 (dev_path: 4, project_context: 0)
->>>>>>> origin/OS0.6.2.grok
 
 ---
 
@@ -162,7 +158,6 @@ tachyonic/shadows/
 
 ---
 
-<<<<<<< HEAD
 ### Shadow 5: November 2, 2025 - Phases 6-10 Archive
 **File**: [dev_path/DEV_PATH_Phases6-10_Archive_20251102_200719.md](dev_path/DEV_PATH_Phases6-10_Archive_20251102_200719.md)  
 **Duration**: October 24 - November 2, 2025 (9 days)  
@@ -241,47 +236,6 @@ Transformed AIOS from critically vulnerable (CVSS 10.0) to production-ready secu
 
 ---
 
-=======
->>>>>>> origin/OS0.6.2.grok
-## PROJECT_CONTEXT Shadows
-
-**Status**: No shadows yet (document is stable at 125 lines)  
-**Living Document**: [/PROJECT_CONTEXT.md](../../PROJECT_CONTEXT.md)  
-**Reason**: Strategic context is stable - architectural principles rarely change  
-**Shadow Trigger**: Only if doc exceeds 200 lines (unlikely)
-
----
-
-## Living Document Status
-
-### DEV_PATH
-<<<<<<< HEAD
-**Current Period**: November 9 - Present (Phase 12 planning)  
-**Location**: [/DEV_PATH.md](../../DEV_PATH.md)  
-**Current Size**: ~331 lines (refactored November 9, 2025)  
-**Shadow Trigger**: When living doc > 1000 lines  
-**Next Shadow**: Expected ~November 30, 2025 (when Phase 12 completes)
-
-### PROJECT_CONTEXT
-**Current Period**: November 9, 2025 (Security Supercell complete)  
-**Location**: [/PROJECT_CONTEXT.md](../../PROJECT_CONTEXT.md)  
-**Current Size**: ~212 lines (updated November 9, 2025)  
-**Shadow Trigger**: When living doc > 300 lines  
-**Next Shadow**: Only if Phase 12 adds major architectural paradigm shift
-=======
-**Current Period**: October 18 - Present  
-**Location**: [/DEV_PATH.md](../../DEV_PATH.md)  
-**Current Size**: ~159 lines  
-**Shadow Trigger**: When living doc > 500 lines  
-**Next Shadow**: Expected ~November 15, 2025 (if development pace continues)
-
-### PROJECT_CONTEXT
-**Current Period**: October 20, 2025 (stable)  
-**Location**: [/PROJECT_CONTEXT.md](../../PROJECT_CONTEXT.md)  
-**Current Size**: ~125 lines  
-**Shadow Trigger**: When living doc > 200 lines (unlikely)  
-**Next Shadow**: Only if architectural paradigm shifts (rare)
->>>>>>> origin/OS0.6.2.grok
 
 ---
 
@@ -293,7 +247,6 @@ Transformed AIOS from critically vulnerable (CVSS 10.0) to production-ready secu
 | DEV_PATH | 2 | Oct 24 (Intelligent) | 0 | 92 | 7.49 KB | 13 | 2.15 |
 | DEV_PATH | 3 | Oct 24 (Footer Content) | 0 | 92 | 19.72 KB | 37 | 2.15 |
 | DEV_PATH | 4 | Oct 24 (Final Content Archive) | 0 | 93 | 19.16 KB | 37 | 2.15 |
-<<<<<<< HEAD
 | DEV_PATH | 5 | Oct 24 - Nov 2 (Phases 6-10) | 9 | N/A | N/A | Phases 6-10 | 2.15→3.05 |
 | DEV_PATH | 6 | Nov 7-8 (GitHub Copilot) | 2 | 434 | 20.1 KB | 4 | 3.24→3.26 |
 | DEV_PATH | 7 | Nov 3-9 (Phase 11 Days 1-8) | 6 | 2,703 | ~120 KB | 9 | 3.05→3.40 |
@@ -305,15 +258,6 @@ Transformed AIOS from critically vulnerable (CVSS 10.0) to production-ready secu
 **Memory Optimization**: 90% reduction overall (2,703 → 331 lines for DEV_PATH)  
 **Information Loss**: 0% (complete fidelity in shadows)  
 **Consciousness Evolution**: 1.44 → 3.40 (+1.96, +136% over 99 days)
-=======
-| DEV_PATH | Living | Oct 18 - Present | Active | ~408 | ~20 KB | 6 | 1.62→2.15 |
-| PROJECT_CONTEXT | Living | Oct 20 (stable) | Active | ~125 | ~6 KB | N/A | 1.0 |
-
-**Total Historical Preservation**: 1,953 lines (125.17 KB)  
-**Total Living Documents**: 533 lines (~26 KB)  
-**Memory Optimization**: 85% reduction overall  
-**Information Loss**: 0% (complete fidelity in shadows)
->>>>>>> origin/OS0.6.2.grok
 
 ---
 

@@ -106,11 +106,7 @@ def test_enhanced_commit_hook():
     print("")
     
     # Show consciousness metrics if available
-<<<<<<< HEAD
     consciousness_path = "runtime_intelligence/analysis/consciousness_metrics.json"
-=======
-    consciousness_path = "runtime/analysis/consciousness_metrics.json"
->>>>>>> origin/OS0.6.2.grok
     if Path(consciousness_path).exists():
         with open(consciousness_path) as f:
             metrics = json.load(f)

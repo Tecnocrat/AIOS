@@ -47,11 +47,7 @@ def cleanup_temp_scripts(workspace_root: Path):
         "ainlp_phase2_consolidator.py",
         "context_harmonization_demo.py",
         "aios_quantum_bootstrap.py",
-<<<<<<< HEAD
         "MISSION_COMPLETE_*.md",
-=======
-        "MISSION_COMPLETE_*.md"
->>>>>>> origin/OS0.6.2.grok
     ]
 
     removed_files = []
@@ -84,11 +80,7 @@ def verify_maintenance_module(workspace_root: Path):
         "backup_consolidator.py",
         "tachyonic_archiver.py",
         "garbage_collector.py",
-<<<<<<< HEAD
         "orchestrator.py",
-=======
-        "orchestrator.py"
->>>>>>> origin/OS0.6.2.grok
     ]
 
     missing_files = []
@@ -122,33 +114,7 @@ def test_maintenance_system(workspace_root: Path):
     try:
         # Try to import the maintenance system
         import sys
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/OS0.6.2.grok
-        sys.path.insert(0, str(workspace_root / "ai" / "src"))
-
-        from maintenance.orchestrator import MaintenanceOrchestrator
-
-        # Create orchestrator instance (should not fail)
-        orchestrator = MaintenanceOrchestrator(str(workspace_root))
-
-        # Run quick analysis (non-destructive test)
-        result = orchestrator.quick_analysis()
-
-        if "documentation_analysis" in result:
-            print(" Maintenance system is functional")
-
-            # Print quick stats
-            doc_analysis = result["documentation_analysis"]
-            print(f"   Documentation files: {doc_analysis.get('total_files', 0)}")
-<<<<<<< HEAD
-            print(
-                f"   Fragmentation: {doc_analysis.get('fragmentation_score', 1.0):.3f}"
-            )
-=======
-            print(f"   Fragmentation: {doc_analysis.get('fragmentation_score', 1.0):.3f}")
->>>>>>> origin/OS0.6.2.grok
 
             archive_stats = result["archive_status"]
             print(f"   Archived documents: {archive_stats.get('total_documents', 0)}")

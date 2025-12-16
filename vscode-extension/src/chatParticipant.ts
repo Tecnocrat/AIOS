@@ -3,75 +3,14 @@ import { AIOSBridge } from './aiosBridge';
 import { AIOSContextManager } from './contextManager';
 import { AIOSLogger } from './logger';
 import { AIOSMCPClient } from './mcpClient';
-<<<<<<< HEAD
 import { AIOSSecurityModule } from './securityModule';
-=======
->>>>>>> origin/OS0.6.2.grok
-
-export class AIOSChatParticipant {
-    private contextManager: AIOSContextManager;
-    private aiosBridge: AIOSBridge;
-    private logger: AIOSLogger;
-    private mcpClient: AIOSMCPClient;
-<<<<<<< HEAD
-    private securityModule: AIOSSecurityModule;
-=======
->>>>>>> origin/OS0.6.2.grok
 
     constructor(contextManager: AIOSContextManager, aiosBridge: AIOSBridge, logger: AIOSLogger, mcpClient: AIOSMCPClient) {
         this.contextManager = contextManager;
         this.aiosBridge = aiosBridge;
         this.logger = logger;
         this.mcpClient = mcpClient;
-<<<<<<< HEAD
         this.securityModule = new AIOSSecurityModule(logger);
-=======
->>>>>>> origin/OS0.6.2.grok
-    }
-
-    public async handleRequest(
-        request: vscode.ChatRequest,
-        context: vscode.ChatContext,
-        stream: vscode.ChatResponseStream,
-        token: vscode.CancellationToken
-    ): Promise<vscode.ChatResult> {
-
-        this.logger.info('Processing chat request', {
-            prompt: request.prompt.substring(0, 100) + (request.prompt.length > 100 ? '...' : ''),
-            command: request.command
-        });
-
-        try {
-            // Handle cancellation
-            if (token.isCancellationRequested) {
-                return { errorDetails: { message: 'Request was cancelled' } };
-            }
-
-            // Add user message to context
-            this.contextManager.addMessage('user', request.prompt);
-
-            // Show thinking indicator
-            stream.progress('AIOS is analyzing your request...');
-
-            // Check for MCP commands
-            const mcpCommands = await this.handleMCPCommands(request.prompt, stream);
-            if (mcpCommands) {
-                return mcpCommands;
-            }
-
-<<<<<<< HEAD
-            // 🔒 SECURITY FIRST: Check for secret operations and handle securely
-            const secureResponse = await this.securityModule.processSecureMessage(request.prompt);
-            if (secureResponse) {
-                stream.markdown(secureResponse);
-                this.logger.info('Secure operation handled via terminal', {
-                    prompt: request.prompt.substring(0, 50) + '...'
-                });
-                return { metadata: { secureOperation: true } };
-            }
-
-=======
->>>>>>> origin/OS0.6.2.grok
             // Process through AIOS Bridge
             const aiosResponse = await this.aiosBridge.processMessage(
                 request.prompt,

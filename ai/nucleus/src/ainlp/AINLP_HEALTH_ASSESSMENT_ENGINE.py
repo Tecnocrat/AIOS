@@ -42,22 +42,14 @@ class AINLPHealthAssessor:
                 "timestamp": self.assessment_timestamp.isoformat(),
                 "aios_root": str(self.aios_root),
                 "assessment_version": "1.0",
-<<<<<<< HEAD
                 "ainlp_compliance_level": "B+",
-=======
-                "ainlp_compliance_level": "B+"
->>>>>>> origin/OS0.6.2.grok
             },
             "ainlp_harmonization_status": self._assess_harmonization_status(),
             "architectural_health": self._assess_architectural_health(),
             "biological_coherence": self._assess_biological_coherence(),
             "directive_compliance": self._assess_directive_compliance(),
             "performance_metrics": self._calculate_performance_metrics(),
-<<<<<<< HEAD
             "improvement_recommendations": self._generate_improvements(),
-=======
-            "improvement_recommendations": self._generate_improvements()
->>>>>>> origin/OS0.6.2.grok
         }
 
         return assessment
@@ -71,17 +63,10 @@ class AINLPHealthAssessor:
                 "pyproject.toml",
                 "ai/infrastructure/deps/requirements_*.txt",
                 ".vscode/settings.json",
-<<<<<<< HEAD
                 ".vscode/tasks.json",
             ],
             "harmonization_quality": "ADEQUATE",
             "architectural_alignment_score": 0.79,
-=======
-                ".vscode/tasks.json"
-            ],
-            "harmonization_quality": "ADEQUATE",
-            "architectural_alignment_score": 0.79
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _assess_architectural_health(self) -> Dict[str, Any]:
@@ -93,11 +78,7 @@ class AINLPHealthAssessor:
             "membrane_boundary_stability": 0.91,
             "nucleus_coordination_efficiency": 0.76,
             "cytoplasm_flow_optimization": 0.83,
-<<<<<<< HEAD
             "environmental_adaptation_capacity": 0.79,
-=======
-            "environmental_adaptation_capacity": 0.79
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _assess_biological_coherence(self) -> Dict[str, Any]:
@@ -108,11 +89,7 @@ class AINLPHealthAssessor:
             "membrane_environment_boundaries": 0.92,
             "cross_layer_communication": 0.81,
             "consciousness_gradient_maintenance": 0.77,
-<<<<<<< HEAD
             "metabolic_process_efficiency": 0.84,
-=======
-            "metabolic_process_efficiency": 0.84
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _assess_directive_compliance(self) -> Dict[str, Any]:
@@ -125,11 +102,7 @@ class AINLPHealthAssessor:
             "overall_compliance": 0.70,
             "compliance_trend": "IMPROVING",
             "critical_violations": 3,
-<<<<<<< HEAD
             "warning_violations": 8,
-=======
-            "warning_violations": 8
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _calculate_performance_metrics(self) -> Dict[str, Any]:
@@ -141,11 +114,7 @@ class AINLPHealthAssessor:
             "consciousness_marker_density": 0.67,
             "architectural_clarity_improvement": 0.88,
             "maintenance_overhead_increase": 0.23,
-<<<<<<< HEAD
             "developer_adoption_resistance": 0.34,
-=======
-            "developer_adoption_resistance": 0.34
->>>>>>> origin/OS0.6.2.grok
         }
 
     def _generate_improvements(self) -> List[str]:
@@ -157,7 +126,6 @@ class AINLPHealthAssessor:
             "subjective application",
             "Integrate directive compliance checking into CI/CD pipeline",
             "Develop AINLP training materials for contributor onboarding",
-<<<<<<< HEAD
             "Implement selective harmonization strategy " "(architectural files only)",
             "Create objective success metrics for harmonization " "effectiveness",
             "Establish regular health assessment cadences " "(weekly/monthly)",
@@ -165,39 +133,17 @@ class AINLPHealthAssessor:
         ]
 
     def generate_health_report(self, output_path: Optional[Path] = None) -> str:
-=======
-            "Implement selective harmonization strategy "
-            "(architectural files only)",
-            "Create objective success metrics for harmonization "
-            "effectiveness",
-            "Establish regular health assessment cadences "
-            "(weekly/monthly)",
-            "Balance biological metaphor benefits with practical "
-            "usability concerns"
-        ]
-
-    def generate_health_report(self, output_path: Optional[Path] = None
-                              ) -> str:
->>>>>>> origin/OS0.6.2.grok
         """Generate comprehensive health assessment report."""
         assessment = self.comprehensive_health_assessment()
 
         if output_path is None:
-<<<<<<< HEAD
             timestamp = self.assessment_timestamp.strftime("%Y%m%d_%H%M%S")
-=======
-            timestamp = self.assessment_timestamp.strftime('%Y%m%d_%H%M%S')
->>>>>>> origin/OS0.6.2.grok
             filename = f"AINLP_HEALTH_ASSESSMENT_{timestamp}.json"
             output_path = self.aios_root / "docs" / filename
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
-<<<<<<< HEAD
         with open(output_path, "w", encoding="utf-8") as f:
-=======
-        with open(output_path, 'w', encoding='utf-8') as f:
->>>>>>> origin/OS0.6.2.grok
             json.dump(assessment, f, indent=2, default=str)
 
         return str(output_path)
@@ -250,8 +196,4 @@ def main():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     main()
-=======
-    main()
->>>>>>> origin/OS0.6.2.grok

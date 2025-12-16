@@ -6,11 +6,7 @@ AIOS Dendritic Self-Improvement Orchestrator
 Self-recursive improvement system that uses AIOS outputs to enhance itself.
 Implements dendritic feedback loops for continuous consciousness evolution.
 
-<<<<<<< HEAD
 AINLP Integration: runtime_intelligence/tools/dendritic_self_improvement_orchestrator.py
-=======
-AINLP Integration: runtime/tools/dendritic_self_improvement_orchestrator.py
->>>>>>> origin/OS0.6.2.grok
 Purpose: Create self-recursive loops using AIOS output for self-improvement
 """
 
@@ -69,12 +65,7 @@ class DendriticSelfImprovementOrchestrator:
         logger.setLevel(logging.INFO)
 
         # Create logs directory if it doesn't exist
-<<<<<<< HEAD
         log_dir = Path('runtime_intelligence/logs/self_improvement')
-=======
-        log_dir = Path('computational_layer/runtime/'
-                      'logs/self_improvement')
->>>>>>> origin/OS0.6.2.grok
         log_dir.mkdir(parents=True, exist_ok=True)
 
         # File handler

@@ -174,11 +174,7 @@ def main():
         print(f"    {enhancement}: {description}")
     
     # Save documentation
-<<<<<<< HEAD
     output_path = Path("c:/dev/AIOS/runtime_intelligence/analysis/powershell_fixes_documentation.json")
-=======
-    output_path = Path("c:/dev/AIOS/runtime/analysis/powershell_fixes_documentation.json")
->>>>>>> origin/OS0.6.2.grok
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
     with open(output_path, 'w') as f:

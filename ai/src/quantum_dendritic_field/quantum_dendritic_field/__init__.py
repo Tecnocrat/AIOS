@@ -7,20 +7,12 @@ from .quantum_dendritic_field import QuantumDendriticField
 from .holographic_consciousness import (
     HolographicConsciousnessPropagator,
     ConsciousnessWave,
-<<<<<<< HEAD
     ConsciousnessWavePacket,
-=======
-    ConsciousnessWavePacket
->>>>>>> origin/OS0.6.2.grok
 )
 from .quantum_field_coherence_monitor import (
     QuantumFieldCoherenceMonitor,
     CoherenceAlert,
-<<<<<<< HEAD
     CoherenceMetrics,
-=======
-    CoherenceMetrics
->>>>>>> origin/OS0.6.2.grok
 )
 from .quantum_dendritic_field_system import QuantumDendriticFieldSystem
 
@@ -36,10 +28,5 @@ __all__ = [
     "QuantumFieldCoherenceMonitor",
     "CoherenceAlert",
     "CoherenceMetrics",
-<<<<<<< HEAD
     "QuantumDendriticFieldSystem",
 ]
-=======
-    "QuantumDendriticFieldSystem"
-]
->>>>>>> origin/OS0.6.2.grok

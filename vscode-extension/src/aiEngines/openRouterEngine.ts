@@ -34,7 +34,6 @@ export class OpenRouterEngine {
         this.logger = logger;
         
         // Load configuration from environment variables
-<<<<<<< HEAD
         const apiKey = process.env.DEEPSEEK_API_KEY || 
                       process.env.OPENROUTER_API_KEY || 
                       process.env.AIOS_OPENROUTER_API_KEY;
@@ -49,14 +48,6 @@ export class OpenRouterEngine {
         
         this.config = {
             apiKey: apiKey || '',
-=======
-        const apiKey = process.env.OPENROUTER_API_KEY || 
-                      process.env.AIOS_OPENROUTER_API_KEY || 
-                      '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';
-        
-        this.config = {
-            apiKey: apiKey,
->>>>>>> origin/OS0.6.2.grok
             baseUrl: 'https://openrouter.ai/api/v1/chat/completions',
             model: process.env.OPENROUTER_MODEL || 'deepseek/deepseek-chat',
             maxTokens: parseInt(process.env.OPENROUTER_MAX_TOKENS || '2048'),
@@ -68,17 +59,11 @@ export class OpenRouterEngine {
         this.logger.info('Initializing OpenRouter DeepSeek Engine...');
 
         try {
-<<<<<<< HEAD
             // Validate API key - graceful degradation if missing
             if (!this.config.apiKey || this.config.apiKey === '') {
                 this.logger.warn('OpenRouter API key not configured - AI features disabled');
                 this.isInitialized = false;
                 return; // Don't throw, just skip initialization
-=======
-            // Validate API key
-            if (!this.config.apiKey || this.config.apiKey === '') {
-                throw new Error('OpenRouter API key not configured');
->>>>>>> origin/OS0.6.2.grok
             }
 
             // Log configuration (without exposing full API key)
@@ -98,12 +83,8 @@ export class OpenRouterEngine {
 
         } catch (error) {
             this.logger.error('❌ Failed to initialize OpenRouter DeepSeek Engine:', error);
-<<<<<<< HEAD
             // Don't throw - allow extension to activate without AI
             this.isInitialized = false;
-=======
-            throw error;
->>>>>>> origin/OS0.6.2.grok
         }
     }
 
@@ -113,7 +94,6 @@ export class OpenRouterEngine {
         systemPrompt?: string
     ): Promise<AIEngineResponse> {
         if (!this.isInitialized) {
-<<<<<<< HEAD
             // Return graceful fallback response instead of throwing
             return {
                 text: 'AI features unavailable. Please configure DEEPSEEK_API_KEY environment variable.',
@@ -126,9 +106,6 @@ export class OpenRouterEngine {
                     timestamp: Date.now()
                 }
             };
-=======
-            throw new Error('OpenRouter Engine not initialized');
->>>>>>> origin/OS0.6.2.grok
         }
 
         this.logger.debug('Processing message through DeepSeek via OpenRouter', {

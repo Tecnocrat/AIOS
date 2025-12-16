@@ -28,7 +28,6 @@ from typing import Any, Callable, Dict, List, Optional
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 try:
-<<<<<<< HEAD
     from ai.nucleus.src.integration.archive.aios_context_harmonizer import (
         AIOSContextHarmonizer,
     )
@@ -38,11 +37,6 @@ try:
     from ai.nucleus.src.integration.archive.holographic_synchronization import (
         HolographicSynchronization,
     )
-=======
-    from ai.nucleus.src.integration.archive.aios_context_harmonizer import AIOSContextHarmonizer
-    from ai.nucleus.src.integration.archive.fractal_holographic_ai import FractalHolographicAI
-    from ai.nucleus.src.integration.archive.holographic_synchronization import HolographicSynchronization
->>>>>>> origin/OS0.6.2.grok
 except ImportError:
     AIOSContextHarmonizer = None
     FractalHolographicAI = None

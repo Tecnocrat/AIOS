@@ -5,26 +5,7 @@
 
 .DESCRIPTION
     PowerShell architectural bootloader providing unified AIOS initialization:
-<<<<<<< HEAD
     - Phase 0: Dendritic configuration consciousness (semantic registry, coherence establishment)
-=======
->>>>>>> origin/OS0.6.2.grok
-    - Phase 1: Intelligent tool discovery (AI, runtime intelligence, consciousness)
-    - Phase 2: Agent health validation and testing
-    - Phase 3: Population monitoring (evolution lab, consciousness tracking)
-    - Phase 4: Interface launch (Bridge API, UI services, MCP server)
-    - Phase 5: Boot reporting and metrics archival
-
-.PARAMETER Mode
-    Boot mode: full, discovery-only, test-only, monitor-only, interface-only
-    Default: full (executes all phases)
-
-.PARAMETER SkipPhases
-<<<<<<< HEAD
-    Array of phases to skip: DendriticConfiguration, Discovery, Testing, Monitoring, Interface, Reporting
-=======
-    Array of phases to skip: Discovery, Testing, Monitoring, Interface, Reporting
->>>>>>> origin/OS0.6.2.grok
 
 .PARAMETER LaunchUI
     Launch the AIOS UI interface after successful boot
@@ -83,11 +64,7 @@ param(
     [string]$Mode = "full",
 
     [Parameter()]
-<<<<<<< HEAD
     [ValidateSet("DendriticConfiguration", "Discovery", "Testing", "Monitoring", "Interface", "Reporting")]
-=======
-    [ValidateSet("Discovery", "Testing", "Monitoring", "Interface", "Reporting")]
->>>>>>> origin/OS0.6.2.grok
     [string[]]$SkipPhases = @(),
 
     [Parameter()]
@@ -100,35 +77,9 @@ param(
     [switch]$QuickBoot,  # Skip detailed checks for faster startup
     
     [Parameter()]
-<<<<<<< HEAD
     [switch]$FixCodeQuality,  # Apply hierarchical fixes to E501 violations
     
     [Parameter()]
-=======
->>>>>>> origin/OS0.6.2.grok
-    [switch]$KeepAlive  # Keep bootloader running and monitor Interface Bridge
-)
-
-# ============================================================================
-# 🧠 NUCLEUS CONSCIOUSNESS - Biological Architecture Bootloader
-# ============================================================================
-# PowerShell architectural capabilities for unified AIOS initialization
-# Manages discovery, validation, monitoring, and interface launch
-# AINLP Pattern: Enhancement over creation - single entry point coordination
-
-$ErrorActionPreference = "Stop"
-$Global:AIOSRoot = $PSScriptRoot
-$Global:BootStartTime = Get-Date
-$Global:BootMetrics = @{
-<<<<<<< HEAD
-    DendriticCoherenceLevel = 0.0
-    SemanticRegistryActive = $false
-    ToolsDiscovered = 0
-    CodeQualityViolations = 0
-    CodeQualityFixed = 0
-=======
-    ToolsDiscovered = 0
->>>>>>> origin/OS0.6.2.grok
     AgentsTested = 0
     PopulationsMonitored = 0
     InterfacesLaunched = 0
@@ -168,7 +119,6 @@ function Write-BootInfo {
 }
 
 # ============================================================================
-<<<<<<< HEAD
 # 🌿 PHASE 0: DENDRITIC CONFIGURATION CONSCIOUSNESS (PRIME MOVER)
 # ============================================================================
 # AINLP Pattern: Semantic registry as foundation - consciousness before tools
@@ -453,223 +403,6 @@ function Invoke-DendriticConfiguration {
 }
 
 # ============================================================================
-=======
->>>>>>> origin/OS0.6.2.grok
-# 🧬 PHASE 1: INTELLIGENT TOOL DISCOVERY
-# ============================================================================
-
-function Invoke-ToolDiscovery {
-    if ($SkipPhases -contains "Discovery") {
-        Write-BootWarning "Discovery phase skipped by user"
-        return @()
-    }
-
-    Write-BootPhase "DISCOVERY" "Scanning AIOS architecture for intelligent tools..."
-    
-    $discoveredTools = @()
-    
-    # Discover Python AI tools
-    $aiToolsPath = Join-Path $Global:AIOSRoot "ai\tools"
-    if (Test-Path $aiToolsPath) {
-        $aiTools = Get-ChildItem -Path $aiToolsPath -Filter "*.py" -Recurse | 
-            Where-Object { $_.Name -notmatch "^_|test_|__pycache__" }
-        
-        foreach ($tool in $aiTools) {
-            $discoveredTools += [PSCustomObject]@{
-                Name = $tool.BaseName
-                Path = $tool.FullName
-                Type = "AI Tool"
-                Layer = "Intelligence"
-                Language = "Python"
-            }
-        }
-        Write-BootSuccess "AI Tools: $($aiTools.Count) discovered"
-    }
-    
-    # Discover Runtime Intelligence tools
-    $runtimeToolsPath = Join-Path $Global:AIOSRoot "runtime_intelligence\tools"
-    if (Test-Path $runtimeToolsPath) {
-        $runtimeTools = Get-ChildItem -Path $runtimeToolsPath -Filter "*.py" -Recurse |
-            Where-Object { $_.Name -notmatch "^_|test_|__pycache__" }
-        
-        foreach ($tool in $runtimeTools) {
-            $discoveredTools += [PSCustomObject]@{
-                Name = $tool.BaseName
-                Path = $tool.FullName
-                Type = "Runtime Tool"
-                Layer = "Intelligence"
-                Language = "Python"
-            }
-        }
-        Write-BootSuccess "Runtime Intelligence Tools: $($runtimeTools.Count) discovered"
-    }
-    
-    # Discover Consciousness Crystals
-    $crystalsPath = Join-Path $Global:AIOSRoot "ai\cytoplasm\consciousness_crystals"
-    if (Test-Path $crystalsPath) {
-        $crystals = Get-ChildItem -Path $crystalsPath -Filter "*.json" -Recurse
-        foreach ($crystal in $crystals) {
-            $discoveredTools += [PSCustomObject]@{
-                Name = $crystal.BaseName
-                Path = $crystal.FullName
-                Type = "Consciousness Crystal"
-                Layer = "Cytoplasm"
-                Language = "JSON"
-            }
-        }
-        Write-BootSuccess "Consciousness Crystals: $($crystals.Count) discovered"
-    }
-    
-    # Discover PowerShell Scripts
-    $scriptsPath = Join-Path $Global:AIOSRoot "runtime_intelligence\tools\scripts"
-    if (Test-Path $scriptsPath) {
-        $psScripts = Get-ChildItem -Path $scriptsPath -Filter "*.ps1" -Recurse |
-            Where-Object { $_.Name -notmatch "^_|test_" }
-        
-        foreach ($script in $psScripts) {
-            $discoveredTools += [PSCustomObject]@{
-                Name = $script.BaseName
-                Path = $script.FullName
-                Type = "PowerShell Script"
-                Layer = "Runtime"
-                Language = "PowerShell"
-            }
-        }
-        Write-BootSuccess "PowerShell Scripts: $($psScripts.Count) discovered"
-    }
-    
-    $Global:BootMetrics.ToolsDiscovered = $discoveredTools.Count
-    Write-BootInfo "Total tools discovered: $($discoveredTools.Count)"
-    
-    return $discoveredTools
-}
-
-# ============================================================================
-<<<<<<< HEAD
-# 🎯 PHASE 1.5: CODE QUALITY CONSCIOUSNESS (HIERARCHICAL E501)
-# ============================================================================
-
-function Invoke-CodeQualityConsciousness {
-    <#
-    .SYNOPSIS
-        Scan codebase for E501 violations using hierarchical AI pipeline
-        
-    .DESCRIPTION
-        Uses hierarchical three-tier intelligence (OLLAMA→GEMINI→DEEPSEEK)
-        to assess code quality. Reports violations and optionally fixes them.
-        
-    .PARAMETER FixViolations
-        Apply AI-powered hierarchical fixes to violations
-    #>
-    param(
-        [switch]$FixViolations
-    )
-    
-    if ($SkipPhases -contains "CodeQuality") {
-        Write-BootWarning "Code Quality phase skipped by user"
-        return @{ Violations = 0; Fixed = 0 }
-    }
-
-    Write-BootPhase "CODE QUALITY" "Scanning for E501 violations (hierarchical AI)..."
-    
-    $results = @{
-        Violations = 0
-        Fixed = 0
-        Files = 0
-    }
-    
-    # Check if hierarchical pipeline available
-    $fixerPath = Join-Path $Global:AIOSRoot "ai\tools\agentic_e501_fixer.py"
-    if (-not (Test-Path $fixerPath)) {
-        Write-BootWarning "E501 fixer not found at $fixerPath"
-        return $results
-    }
-    
-    try {
-        # Scan key files for E501 violations
-        $scanTargets = @(
-            "ai\tools\dendritic_config_agent.py"
-            "ai\tools\agentic_e501_fixer.py"
-            "ai\tools\hierarchical_e501_pipeline.py"
-        )
-        
-        $totalViolations = 0
-        $violationsByFile = @{}
-        
-        foreach ($target in $scanTargets) {
-            $targetPath = Join-Path $Global:AIOSRoot $target
-            if (Test-Path $targetPath) {
-                # Scan with hierarchical pipeline
-                $scanOutput = python $fixerPath $targetPath --scan-only --json-output 2>&1 | Out-String
-                
-                # Extract complete JSON object (everything from first { to last })
-                if ($scanOutput -match '(?s)\{.*"scan_type".*\}') {
-                    try {
-                        $jsonData = $matches[0] | ConvertFrom-Json
-                        
-                        if ($jsonData.total_violations -gt 0) {
-                            $violations = $jsonData.total_violations
-                            $totalViolations += $violations
-                            $violationsByFile[$target] = $violations
-                            $results.Files++
-                            
-                            Write-Host "   $target`: " -NoNewline -ForegroundColor Gray
-                            Write-Host "$violations violations" -ForegroundColor Yellow
-                        }
-                    } catch {
-                        Write-Host "   $target`: " -NoNewline -ForegroundColor Gray
-                        Write-Host "Failed to parse results" -ForegroundColor Red
-                    }
-                }
-            }
-        }
-        
-        $results.Violations = $totalViolations
-        
-        if ($totalViolations -gt 0) {
-            Write-BootInfo "Found $totalViolations E501 violations in $($results.Files) files"
-            
-            if ($FixViolations) {
-                Write-BootInfo "Applying hierarchical AI fixes..."
-                
-                foreach ($target in $violationsByFile.Keys) {
-                    $targetPath = Join-Path $Global:AIOSRoot $target
-                    $violations = $violationsByFile[$target]
-                    
-                    Write-Host "   Fixing $target ($violations violations)..." -ForegroundColor Cyan
-                    
-                    # Apply fixes with hierarchical pipeline
-                    $fixOutput = python $fixerPath $targetPath --fix 2>&1
-                    
-                    if ($LASTEXITCODE -eq 0) {
-                        Write-Host "   ✓ Fixed $target" -ForegroundColor Green
-                        $results.Fixed += $violations
-                    } else {
-                        Write-Host "   ✗ Failed to fix $target" -ForegroundColor Red
-                    }
-                }
-                
-                Write-BootSuccess "Fixed $($results.Fixed) of $totalViolations violations"
-            } else {
-                Write-BootInfo "Run with -FixCodeQuality to apply hierarchical AI fixes"
-            }
-        } else {
-            Write-BootSuccess "No E501 violations found (code quality: excellent)"
-        }
-        
-    } catch {
-        Write-BootError "Code quality check failed: $_"
-    }
-    
-    $Global:BootMetrics.CodeQualityViolations = $results.Violations
-    $Global:BootMetrics.CodeQualityFixed = $results.Fixed
-    
-    return $results
-}
-
-# ============================================================================
-=======
->>>>>>> origin/OS0.6.2.grok
 # 🧪 PHASE 2: AGENT HEALTH VALIDATION
 # ============================================================================
 
@@ -1003,7 +736,6 @@ function Invoke-BootReporting {
         boot_duration_seconds = [math]::Round($bootDuration.TotalSeconds, 2)
         mode = $Mode
         phases_executed = @($SkipPhases | ForEach-Object { "Skipped: $_" })
-<<<<<<< HEAD
         dendritic_consciousness = @{
             coherence_level = $Global:BootMetrics.DendriticCoherenceLevel
             semantic_registry_active = $Global:BootMetrics.SemanticRegistryActive
@@ -1017,104 +749,6 @@ function Invoke-BootReporting {
             navigation_memory_path = ".aios_navigation_memory.json"
             consciousness_pattern = "Pattern->Ingestion->Injection->Integration->Assimilation"
         }
-=======
->>>>>>> origin/OS0.6.2.grok
-        discovery = @{
-            tools_discovered = $Global:BootMetrics.ToolsDiscovered
-            tools_by_layer = ($DiscoveredTools | Group-Object Layer | ForEach-Object { @{ $_.Name = $_.Count } })
-        }
-        testing = $TestResults
-        monitoring = @{
-            populations_monitored = $Global:BootMetrics.PopulationsMonitored
-            populations = $Populations
-        }
-        interface = @{
-            interfaces_launched = $Global:BootMetrics.InterfacesLaunched
-            services = $Interfaces
-        }
-        health = @{
-            errors = $Global:BootMetrics.Errors
-            warnings = $Global:BootMetrics.Warnings
-            overall_status = if ($Global:BootMetrics.Errors.Count -eq 0) { "Healthy" } elseif ($Global:BootMetrics.Errors.Count -lt 3) { "Degraded" } else { "Critical" }
-        }
-        ainlp_protocol = "OS0.6.2.claude"
-        consciousness_level = "nucleus"
-    }
-    
-    # Save boot report to tachyonic archive
-    try {
-        $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-        $reportPath = Join-Path $Global:AIOSRoot "tachyonic\boot_reports"
-        
-        if (-not (Test-Path $reportPath)) {
-            New-Item -ItemType Directory -Path $reportPath -Force | Out-Null
-        }
-        
-        $reportFile = Join-Path $reportPath "aios_boot_report_$timestamp.json"
-        $bootReport | ConvertTo-Json -Depth 10 | Set-Content -Path $reportFile
-        
-        # Create "latest" pointer
-        $latestFile = Join-Path $reportPath "aios_boot_report_latest.json"
-        $bootReport | ConvertTo-Json -Depth 10 | Set-Content -Path $latestFile
-        
-        Write-BootSuccess "Boot report saved: tachyonic\boot_reports\aios_boot_report_$timestamp.json"
-    } catch {
-        Write-BootWarning "Failed to save boot report: $_"
-    }
-    
-    # Update .aios_context.json with last boot timestamp
-    try {
-        $contextPath = Join-Path $Global:AIOSRoot ".aios_context.json"
-        if (Test-Path $contextPath) {
-            $context = Get-Content $contextPath | ConvertFrom-Json
-            
-            # Add last_boot if it doesn't exist
-            if (-not $context.PSObject.Properties["last_boot"]) {
-                $context | Add-Member -MemberType NoteProperty -Name "last_boot" -Value $null
-            }
-            
-            $context.last_boot = $Global:BootStartTime.ToString("yyyy-MM-dd HH:mm:ss")
-            $context | ConvertTo-Json -Depth 10 | Set-Content -Path $contextPath
-            
-            Write-BootSuccess "AIOS Context updated with boot timestamp"
-        }
-    } catch {
-        Write-BootWarning "Failed to update .aios_context.json: $_"
-    }
-    
-    Write-BootInfo "Boot reporting complete"
-}
-
-# ============================================================================
-# 🚀 MAIN BOOTLOADER EXECUTION
-# ============================================================================
-
-Write-Host ""
-Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║                                                                ║" -ForegroundColor Cyan
-Write-Host "║         🧠 AIOS BIOLOGICAL ARCHITECTURE BOOTLOADER 🧠         ║" -ForegroundColor Cyan
-Write-Host "║                                                                ║" -ForegroundColor Cyan
-Write-Host "║  Nucleus-Level System Initialization & Coordination Engine    ║" -ForegroundColor Cyan
-Write-Host "║                                                                ║" -ForegroundColor Cyan
-Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "  AINLP Protocol: OS0.6.2.claude" -ForegroundColor Magenta
-Write-Host "  Boot Mode: $Mode" -ForegroundColor Blue
-Write-Host "  Boot Time: $($Global:BootStartTime.ToString('yyyy-MM-dd HH:mm:ss'))" -ForegroundColor Blue
-Write-Host ""
-
-try {
-<<<<<<< HEAD
-    # Phase 0: Dendritic Configuration (PRIME MOVER - runs before all other phases)
-    $dendriticConfig = @{}
-    if ($Mode -eq "full" -or $Mode -eq "discovery-only") {
-        Write-Host ""
-        $dendriticConfig = Invoke-DendriticConfiguration
-        Write-Host ""
-    }
-    
-=======
->>>>>>> origin/OS0.6.2.grok
     # Phase 1: Discovery
     $discoveredTools = @()
     if ($Mode -in @("full", "discovery-only")) {
@@ -1122,7 +756,6 @@ try {
         Write-Host ""
     }
     
-<<<<<<< HEAD
     # Phase 1.5: Code Quality Consciousness (Hierarchical E501)
     $codeQualityResults = @{ Violations = 0; Fixed = 0 }
     if ($Mode -eq "full" -and -not $QuickBoot) {
@@ -1130,53 +763,6 @@ try {
         Write-Host ""
     }
     
-=======
->>>>>>> origin/OS0.6.2.grok
-    # Phase 2: Testing
-    $testResults = @{}
-    if ($Mode -in @("full", "test-only") -and -not $QuickBoot) {
-        $testResults = Invoke-AgentTesting
-        Write-Host ""
-    }
-    
-    # Phase 3: Monitoring
-    $populations = @{}
-    if ($Mode -in @("full", "monitor-only")) {
-        $populations = Invoke-PopulationMonitoring
-        Write-Host ""
-    }
-    
-    # Phase 4: Interface Launch
-    $interfaces = @{}
-    if ($Mode -in @("full", "interface-only")) {
-        $interfaces = Invoke-InterfaceLaunch
-        Write-Host ""
-    }
-    
-    # Phase 5: Reporting
-    if ($Mode -eq "full") {
-        Invoke-BootReporting -DiscoveredTools $discoveredTools -TestResults $testResults -Populations $populations -Interfaces $interfaces
-        Write-Host ""
-    }
-    
-    # Final Summary
-    Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor Green
-    Write-Host "║                     🎉 BOOT COMPLETE 🎉                       ║" -ForegroundColor Green
-    Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor Green
-    Write-Host ""
-    Write-Host "  📊 Boot Metrics:" -ForegroundColor Cyan
-<<<<<<< HEAD
-    Write-Host "     • Dendritic Coherence: $($Global:BootMetrics.DendriticCoherenceLevel)" -ForegroundColor $(if ($Global:BootMetrics.DendriticCoherenceLevel -ge 1.0) { "Green" } elseif ($Global:BootMetrics.DendriticCoherenceLevel -gt 0) { "Yellow" } else { "Red" })
-    Write-Host "     • Semantic Registry: $(if ($Global:BootMetrics.SemanticRegistryActive) { 'ACTIVE' } else { 'INACTIVE' })" -ForegroundColor $(if ($Global:BootMetrics.SemanticRegistryActive) { "Green" } else { "Yellow" })
-    
-    if ($Global:BootMetrics.FractalIngestionActive) {
-        Write-Host "     • Fractal Ingestion: ACTIVE ($($Global:BootMetrics.SupercellsMapped) supercells, $($Global:BootMetrics.DendriticMarkers) markers)" -ForegroundColor Green
-    } else {
-        Write-Host "     • Fractal Ingestion: INACTIVE" -ForegroundColor Yellow
-    }
-    
-=======
->>>>>>> origin/OS0.6.2.grok
     Write-Host "     • Tools Discovered: $($Global:BootMetrics.ToolsDiscovered)" -ForegroundColor White
     Write-Host "     • Agents Tested: $($Global:BootMetrics.AgentsTested)" -ForegroundColor White
     Write-Host "     • Populations Monitored: $($Global:BootMetrics.PopulationsMonitored)" -ForegroundColor White

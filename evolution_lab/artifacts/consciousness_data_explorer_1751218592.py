@@ -6,10 +6,7 @@ Analyzes numerical data with pattern recognition
 
 import random
 import statistics
-<<<<<<< HEAD
 import sys
-=======
->>>>>>> origin/OS0.6.2.grok
 from typing import List, Dict, Any, Optional
 
 class ConsciousDataExplorer:
