@@ -6,6 +6,9 @@ src/**
 **/*.ts
 tsconfig.json
 
+# Deprecated modules
+dist/deprecated/**
+
 # Development dependencies
 node_modules/**
 

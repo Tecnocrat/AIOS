@@ -36,7 +36,8 @@
         "agentic"
     ],
     "activationEvents": [
-        "onStartupFinished"
+        "onStartupFinished",
+        "onChatParticipant:aios"
     ],
     "main": "./dist/extension.js",
     "contributes": {
