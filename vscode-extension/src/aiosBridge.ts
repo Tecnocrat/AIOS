@@ -836,6 +836,16 @@ export class AIOSBridge {
         this.cellularEcosystemStatus.contextSize = size;
     }
 
+    /**
+     * AINLP.upgrade[NEURAL_HUB]: Get Copilot engine status for diagnostics
+     */
+    public getCopilotStatus(): { available: boolean; model: string | null } {
+        return {
+            available: this.copilotEngine.isReady(),
+            model: this.copilotEngine.getModelInfo()?.name || null
+        };
+    }
+
     public getSystemStatus(): any {
         return {
             initialized: this.isInitialized,
@@ -846,6 +856,7 @@ export class AIOSBridge {
                 cppPerformanceCells: this.cellularEcosystemStatus.cppPerformanceCellsStatus === 'active',
                 intercellularBridges: this.cellularEcosystemStatus.intercellularBridgesStatus === 'active'
             },
+            copilotEngine: this.getCopilotStatus(),
             performanceMetrics: this.cellularEcosystemStatus.performanceMetrics || {
                 inferenceLatency: 1.0,
                 throughput: 500,

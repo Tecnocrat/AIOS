@@ -27,10 +27,11 @@ export class AIOSChatParticipant {
         token: vscode.CancellationToken
     ): Promise<vscode.ChatResult> {
 
-        this.logger.info('Processing chat request', {
-            prompt: request.prompt.substring(0, 100) + (request.prompt.length > 100 ? '...' : ''),
-            command: request.command
-        });
+        // AINLP.debug[NEURAL_HUB]: Immediate visibility for debugging
+        this.logger.info('════════════════════════════════════════════════════════');
+        this.logger.info('AIOS Neural Hub - Incoming Chat Request');
+        this.logger.info(`Prompt: ${request.prompt}`);
+        this.logger.info('════════════════════════════════════════════════════════');
 
         try {
             // Handle cancellation
@@ -38,11 +39,30 @@ export class AIOSChatParticipant {
                 return { errorDetails: { message: 'Request was cancelled' } };
             }
 
+            // AINLP.debug[NEURAL_HUB]: Quick test command for debugging
+            if (request.prompt.toLowerCase().includes('test connection') || 
+                request.prompt.toLowerCase() === 'ping') {
+                stream.markdown(`## 🧬 AIOS Neural Hub Active\n\n`);
+                stream.markdown(`**Status**: Connected via VSCode Extension v0.4.0\n\n`);
+                
+                // Check Copilot availability
+                const copilotStatus = this.aiosBridge.getCopilotStatus();
+                stream.markdown(`**Copilot Engine**: ${copilotStatus.available ? '✅ Ready' : '⚠️ Not Available'}\n\n`);
+                if (copilotStatus.model) {
+                    stream.markdown(`**Model**: ${copilotStatus.model}\n\n`);
+                }
+                
+                stream.markdown(`**Timestamp**: ${new Date().toISOString()}\n\n`);
+                stream.markdown(`---\n\n*Neural Hub operational. Type any message to interact with AIOS.*`);
+                
+                return { metadata: { testConnection: true } };
+            }
+
             // Add user message to context
             this.contextManager.addMessage('user', request.prompt);
 
             // Show thinking indicator
-            stream.progress('AIOS is analyzing your request...');
+            stream.progress('AIOS Neural Hub processing...');
 
             // Check for MCP commands
             const mcpCommands = await this.handleMCPCommands(request.prompt, stream);

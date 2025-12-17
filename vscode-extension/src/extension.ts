@@ -49,7 +49,12 @@ function validateCellularEcosystemSettings(logger: AIOSLogger): boolean {
 
 export function activate(context: vscode.ExtensionContext) {
     const logger = new AIOSLogger(context);
-    logger.info('AIOS TensorFlow Cellular Ecosystem Extension activating...');
+    
+    // AINLP.debug[ACTIVATION]: Show output channel immediately for debugging
+    logger.show();
+    logger.info('═══════════════════════════════════════════════════════════════');
+    logger.info('AIOS Neural Hub Extension v0.4.0 activating...');
+    logger.info('═══════════════════════════════════════════════════════════════');
 
     try {
         // Validate cellular ecosystem settings
