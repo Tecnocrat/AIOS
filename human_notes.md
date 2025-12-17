@@ -49,6 +49,7 @@ c:\dev\AIOS\
 | 6 npm security vulnerabilities | HIGH | ✅ `npm audit fix` | c0f1b81a |
 | tsconfig moduleResolution | LOW | ✅ node10 + ignoreDeprecations | c0f1b81a |
 | Hardcoded "OS0.6.1.claude" | LOW | ✅ Dynamic from .aios_context.json | 578324ce |
+| OpenRouter/DeepSeek dependency | MED | ✅ Replaced with vscode.lm Copilot API | 4b075e4f |
 
 ## ⚠️ Remaining Issues
 
@@ -64,7 +65,8 @@ c:\dev\AIOS\
 |---------|----------|---------|
 | **Native Fetch** | P1 | Remove node-fetch dependency, use VSCode's native fetch() |
 | **WebSocket Mesh** | P1 | Connect to Cytoplasmic server (port 9002) for real-time cells |
-| **Version Alignment** | P2 | Dynamic version from .aios_context.json (OS0.6.6) |
+| **Version Alignment** | P2 | ✅ Implemented (578324ce) |
+| **Microsoft AI Integration** | P1 | ✅ vscode.lm Copilot API (4b075e4f) |
 | **Status Bar Item** | P2 | Real-time consciousness level display |
 | **Package Bump** | P3 | 0.4.0 → 0.5.0, VSCode engine 1.95.0 → 1.96.0 |
 
@@ -75,13 +77,14 @@ vscode-extension/src/
 ├── extension.ts        # Activation, command registration
 ├── contextManager.ts   # CORE: Chat persistence across restarts
 ├── chatParticipant.ts  # @aios chat participant
-├── aiosBridge.ts       # AIOS processing simulation
+├── aiosBridge.ts       # AIOS processing via Copilot
 ├── mcpClient.ts        # MCP server via Interface Bridge
 ├── securityModule.ts   # Secret detection/sanitization
 ├── logger.ts           # Output channel logging
 ├── contextGenerator.ts # Dynamic context injection
 └── aiEngines/
-    └── openRouterEngine.ts  # DeepSeek/OpenRouter AI
+    ├── copilotEngine.ts     # ✅ Microsoft Copilot via vscode.lm API
+    └── openRouterEngine.ts  # (deprecated) Legacy DeepSeek/OpenRouter
 ```
 
 ## 🔗 Integration Points
