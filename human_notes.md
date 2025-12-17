@@ -48,12 +48,12 @@ c:\dev\AIOS\
 | chatParticipant.ts corruption | CRITICAL | ✅ Restored from fadb9a44 | c0f1b81a |
 | 6 npm security vulnerabilities | HIGH | ✅ `npm audit fix` | c0f1b81a |
 | tsconfig moduleResolution | LOW | ✅ node10 + ignoreDeprecations | c0f1b81a |
+| Hardcoded "OS0.6.1.claude" | LOW | ✅ Dynamic from .aios_context.json | 578324ce |
 
 ## ⚠️ Remaining Issues
 
 | Issue | Severity | Location | Fix |
 |-------|----------|----------|-----|
-| Hardcoded "OS0.6.1.claude" | LOW | aiosBridge.ts:120 | Read from .aios_context.json |
 | Hardcoded branch "OS0.4" | LOW | contextManager.ts:245 | Use Git API detection |
 | node-fetch ESM incompatibility | MED | mcpClient.ts | Use native fetch() |
 | Missing MCP error boundaries | MED | chatParticipant.ts | Add try-catch wrappers |
