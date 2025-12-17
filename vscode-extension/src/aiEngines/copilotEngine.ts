@@ -289,4 +289,122 @@ export class CopilotEngine {
             vendor: this.cachedModel.vendor
         };
     }
+
+    /**
+     * Get model capabilities for agentic behaviors
+     * AINLP.upgrade[AGENTIC]: Check if model supports tool calling
+     */
+    public async getCapabilities(): Promise<{
+        supportsToolCalling: boolean;
+        supportsStreaming: boolean;
+        maxInputTokens: number;
+    }> {
+        if (!this.cachedModel) {
+            return {
+                supportsToolCalling: false,
+                supportsStreaming: false,
+                maxInputTokens: 0
+            };
+        }
+
+        // VSCode LM API provides capabilities through the model object
+        return {
+            supportsToolCalling: true,  // Copilot models support tool calling
+            supportsStreaming: true,    // sendRequest returns async iterable
+            maxInputTokens: this.cachedModel.maxInputTokens || 128000
+        };
+    }
+
+    /**
+     * Check if extension has permission to use language models
+     * AINLP.upgrade[AGENTIC]: Pre-flight permission check
+     */
+    public checkPermission(context: vscode.ExtensionContext): boolean | undefined {
+        if (!this.cachedModel) {
+            return undefined;
+        }
+        return context.languageModelAccessInformation.canSendRequest(this.cachedModel);
+    }
+
+    /**
+     * Process message with tool definitions for agentic behavior
+     * AINLP.upgrade[AGENTIC]: Tool-augmented AI processing
+     */
+    public async processWithTools(
+        message: string,
+        tools: vscode.LanguageModelChatTool[],
+        _context?: any,
+        token?: vscode.CancellationToken
+    ): Promise<AIEngineResponse & { toolCalls?: any[] }> {
+        const startTime = Date.now();
+
+        if (!this.cachedModel) {
+            await this.initialize();
+        }
+
+        if (!this.cachedModel) {
+            return {
+                ...this.createFallbackResponse(message, startTime),
+                toolCalls: []
+            };
+        }
+
+        try {
+            const messages: vscode.LanguageModelChatMessage[] = [];
+            const systemPrompt = this.buildAIOSSystemPrompt();
+            messages.push(vscode.LanguageModelChatMessage.User(systemPrompt));
+            messages.push(vscode.LanguageModelChatMessage.User(message));
+
+            this.logger.info('Sending tool-augmented request to Copilot', {
+                messageCount: messages.length,
+                toolCount: tools.length,
+                model: this.cachedModel.name
+            });
+
+            const response = await this.cachedModel.sendRequest(
+                messages,
+                {
+                    justification: 'AIOS Extension agentic tool execution',
+                    tools: tools
+                },
+                token || new vscode.CancellationTokenSource().token
+            );
+
+            let responseText = '';
+            const toolCalls: any[] = [];
+
+            for await (const part of response.stream) {
+                if (part instanceof vscode.LanguageModelTextPart) {
+                    responseText += part.value;
+                } else if (part instanceof vscode.LanguageModelToolCallPart) {
+                    toolCalls.push({
+                        name: part.name,
+                        callId: part.callId,
+                        input: part.input
+                    });
+                    this.logger.info('Tool call received', { name: part.name, callId: part.callId });
+                }
+            }
+
+            return {
+                text: responseText,
+                confidence: 0.95,
+                model: this.cachedModel.name,
+                toolCalls: toolCalls,
+                metadata: {
+                    processingTime: Date.now() - startTime,
+                    engine: 'microsoft-copilot-agentic',
+                    realConnection: true,
+                    timestamp: Date.now()
+                }
+            };
+
+        } catch (error) {
+            this.logger.error('Agentic processing failed:', error);
+            return {
+                ...this.createFallbackResponse(message, startTime),
+                toolCalls: []
+            };
+        }
+    }
 }
