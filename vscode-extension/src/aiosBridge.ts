@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
 import { AIOSResponse } from './contextManager';
 import { AIOSLogger } from './logger';
-import { OpenRouterEngine, AIEngineResponse } from './aiEngines/openRouterEngine';
+// AINLP.upgrade[MICROSOFT_AI]: Replaced OpenRouterEngine with CopilotEngine
+import { CopilotEngine, AIEngineResponse } from './aiEngines/copilotEngine';
 import { AIOSSecurityModule } from './securityModule';
 
 // AINLP.upgrade[DYNAMIC_VERSION]: Context loaded from .aios_context.json
@@ -36,7 +37,8 @@ export class AIOSBridge {
     private logger: AIOSLogger;
     private isInitialized: boolean = false;
     private cellularEcosystemStatus: CellularEcosystemStatus;
-    private openRouterEngine: OpenRouterEngine;
+    // AINLP.upgrade[MICROSOFT_AI]: Replaced OpenRouter with Copilot engine
+    private copilotEngine: CopilotEngine;
     private useRealAI: boolean = false;
     private securityModule: AIOSSecurityModule;
     
@@ -47,7 +49,8 @@ export class AIOSBridge {
 
     constructor(logger: AIOSLogger) {
         this.logger = logger;
-        this.openRouterEngine = new OpenRouterEngine(logger);
+        // AINLP.upgrade[MICROSOFT_AI]: Use Copilot via vscode.lm API
+        this.copilotEngine = new CopilotEngine(logger);
         this.securityModule = new AIOSSecurityModule(logger);
         this.cellularEcosystemStatus = {
             status: 'inactive',
@@ -156,13 +159,19 @@ export class AIOSBridge {
     }
 
     private async initializeOpenRouterEngine(): Promise<void> {
-        this.logger.info('Initializing OpenRouter DeepSeek Engine...');
+        // AINLP.upgrade[MICROSOFT_AI]: Initialize Copilot Engine via vscode.lm API
+        this.logger.info('Initializing Microsoft Copilot Engine...');
         try {
-            await this.openRouterEngine.initialize();
-            this.useRealAI = true;
-            this.logger.info('✅ Real AI intelligence activated via OpenRouter DeepSeek');
+            await this.copilotEngine.initialize();
+            this.useRealAI = this.copilotEngine.isReady();
+            if (this.useRealAI) {
+                const modelInfo = this.copilotEngine.getModelInfo();
+                this.logger.info(`✅ Real AI intelligence activated via Microsoft Copilot (${modelInfo?.name || 'default'})`);
+            } else {
+                this.logger.warn('Copilot not available - ensure GitHub Copilot is installed and authenticated');
+            }
         } catch (error) {
-            this.logger.warn('OpenRouter DeepSeek not available, using enhanced simulation', error);
+            this.logger.warn('Copilot Engine not available, using enhanced simulation', error);
             this.useRealAI = false;
         }
     }
@@ -544,9 +553,9 @@ export class AIOSBridge {
 
     private async processMessageThroughAIOS(message: string, context?: any): Promise<AIOSResponse> {
         try {
-            // NEW: Use Real DeepSeek AI if available
-            if (this.useRealAI && this.openRouterEngine) {
-                this.logger.info('🧠 Processing through Real DeepSeek AI via OpenRouter');
+            // AINLP.upgrade[MICROSOFT_AI]: Use Copilot if available
+            if (this.useRealAI && this.copilotEngine.isReady()) {
+                this.logger.info('🧠 Processing through Microsoft Copilot AI');
                 return await this.processWithRealAI(message, context);
             }
 
@@ -660,8 +669,8 @@ export class AIOSBridge {
             // Build AIOS-specific context for the AI
             const aiosContext = this.buildAIOSContext(context);
             
-            // Process through DeepSeek with AIOS context
-            const aiResponse: AIEngineResponse = await this.openRouterEngine.processMessage(
+            // AINLP.upgrade[MICROSOFT_AI]: Process through Copilot with AIOS context
+            const aiResponse: AIEngineResponse = await this.copilotEngine.processMessage(
                 message,
                 aiosContext,
                 this.buildSystemPromptForContext(context)
@@ -678,23 +687,24 @@ export class AIOSBridge {
                 context: {
                     processedAt: Date.now(),
                     inputMessage: message,
-                    aiEngine: 'deepseek-v3.1',
-                    aiosVersion: '0.4.0-ai-enhanced'
+                    aiEngine: aiResponse.model || 'copilot',
+                    aiosVersion: '0.4.0-copilot'
                 },
                 metadata: {
                     processingTime: aiResponse.metadata.processingTime,
-                    aiosVersion: '0.4.0-ai-enhanced',
-                    realAiosConnection: true,
+                    aiosVersion: '0.4.0-copilot',
+                    realAiosConnection: aiResponse.metadata.realConnection,
                     contextProvided: !!context,
                     cellularMetrics: this.cellularEcosystemStatus.performanceMetrics
                 }
             };
 
-            this.logger.info('🧠 Real AI processing completed successfully', {
+            this.logger.info('🧠 Microsoft Copilot processing completed successfully', {
                 processingTime: aiResponse.metadata.processingTime,
                 responseLength: aiResponse.text.length,
                 confidence: aiResponse.confidence,
-                actionsExtracted: actions.length
+                actionsExtracted: actions.length,
+                model: aiResponse.model
             });
 
             return aiosResponse;
