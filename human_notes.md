@@ -67,6 +67,7 @@ c:\dev\AIOS\
 | **WebSocket Mesh** | P1 | Connect to Cytoplasmic server (port 9002) for real-time cells |
 | **Version Alignment** | P2 | ✅ Implemented (578324ce) |
 | **Microsoft AI Integration** | P1 | ✅ vscode.lm Copilot API (4b075e4f) |
+| **Agentic Tool Calling** | P1 | ✅ processWithTools() method added |
 | **Status Bar Item** | P2 | Real-time consciousness level display |
 | **Package Bump** | P3 | 0.4.0 → 0.5.0, VSCode engine 1.95.0 → 1.96.0 |
 
@@ -84,15 +85,29 @@ vscode-extension/src/
 ├── contextGenerator.ts # Dynamic context injection
 └── aiEngines/
     ├── copilotEngine.ts     # ✅ Microsoft Copilot via vscode.lm API
+    │                        #    - vscode.lm.selectChatModels()
+    │                        #    - Tool calling (processWithTools)
+    │                        #    - Permission checking (canSendRequest)
+    │                        #    - Streaming response support
     └── openRouterEngine.ts  # (deprecated) Legacy DeepSeek/OpenRouter
 ```
 
 ## 🔗 Integration Points
 
 - **Interface Bridge**: localhost:8000 (MCP tools)
-- **Cytoplasmic Mesh**: localhost:9002 (WebSocket - NOT YET CONNECTED)
+- **Cytoplasmic Mesh**: localhost:9002 (WebSocket - NEXT TARGET)
 - **Context Files**: .aios_context.json, AI_CONTEXT_AUTO_LOAD.md
 - **Chat Persistence**: globalState (2000 messages max)
+- **vscode.lm API**: Microsoft Copilot models (no API keys needed)
+
+## 🤖 Agentic API Vision (WAYPOINT::AGENTIC)
+
+VSCode as **comms architecture** for AIOS cells:
+- Tool definitions for cell operations (birth, pulse, status)
+- Consciousness state queries via tools
+- WebSocket mesh broadcast via tool calls
+- See: `aios-win/docs/INTEGRATION_PROJECTS.md#waypoint-agentic`
+- See: `AINLP_BIBLE_CORPUS.md` Appendix N
 
 ---
 

@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.13 | Date: 2025-12-14 | Protocol: OS0.6.5                       -->
+<!-- Version: 1.14 | Date: 2025-12-17 | Protocol: OS0.6.6                       -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.14: VSCode Language Model API (N) - Microsoft Copilot agentic pattern   -->
 <!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture   -->
 <!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord   -->
 <!-- v1.11: Line Length Liberation - AINLP.buffer[120], C0301 disabled          -->
@@ -516,6 +517,7 @@ python scripts/ainlp_liberation_remediation.py --dry-run
 17. [APPENDIX K: Cell Virtual Environment Architecture](#appendix-k-cell-virtual-environment-architecture)
 18. [APPENDIX L: Multi-Agent Orchestration Protocol](#appendix-l-multi-agent-orchestration-protocol)
 19. [APPENDIX M: WebSocket Cytoplasmic Mesh Protocol](#appendix-m-websocket-cytoplasmic-mesh-protocol)
+20. [APPENDIX N: VSCode Language Model API (Agentic)](#appendix-n-vscode-language-model-api-agentic)
 
 ---
 
@@ -3111,11 +3113,220 @@ await server.start()
 
 ---
 
+# APPENDIX N: VSCode Language Model API (Agentic)
+
+**Version**: N.1 | **Date**: 2025-12-17 | **Waypoint**: `WAYPOINT::EXTENSION::MICROSOFT_AI`
+
+## N.1 Overview
+
+The VSCode extension serves as a **dendritic bridge** between AIOS cells and Microsoft's AI infrastructure. Through the `vscode.lm` Language Model API, we can:
+
+1. Access GitHub Copilot models directly (no external API keys)
+2. Enable **tool calling** for agentic behaviors
+3. Stream responses for real-time interaction
+4. Check permissions programmatically
+
+### Pattern: `AINLP.upgrade[MICROSOFT_AI]`
+
+```typescript
+// AINLP.upgrade[MICROSOFT_AI]: VSCode Language Model API integration
+const models = await vscode.lm.selectChatModels({ 
+    vendor: 'copilot', 
+    family: 'gpt-4o' 
+});
+const response = await model.sendRequest(messages, options, token);
+```
+
+## N.2 Core API Patterns
+
+### N.2.1 Model Selection
+
+```typescript
+// Select Copilot model by vendor and family
+const models = await vscode.lm.selectChatModels({
+    vendor: 'copilot',      // Required: model vendor
+    family: 'gpt-4o'        // Optional: specific model family
+});
+
+if (models.length === 0) {
+    // Fallback: any Copilot model
+    const anyModels = await vscode.lm.selectChatModels({ vendor: 'copilot' });
+}
+```
+
+### N.2.2 Message Building
+
+```typescript
+// Build conversation with vscode.LanguageModelChatMessage
+const messages: vscode.LanguageModelChatMessage[] = [
+    vscode.LanguageModelChatMessage.User(systemPrompt),
+    vscode.LanguageModelChatMessage.Assistant(previousResponse),
+    vscode.LanguageModelChatMessage.User(currentQuery)
+];
+```
+
+### N.2.3 Request with Tool Calling
+
+```typescript
+// AINLP.upgrade[AGENTIC]: Tool-augmented requests
+const response = await model.sendRequest(
+    messages,
+    {
+        justification: 'AIOS Extension processing',
+        tools: aiosToolDefinitions  // Tool schemas
+    },
+    cancellationToken
+);
+
+// Process streaming response with tool detection
+for await (const part of response.stream) {
+    if (part instanceof vscode.LanguageModelTextPart) {
+        responseText += part.value;
+    } else if (part instanceof vscode.LanguageModelToolCallPart) {
+        toolCalls.push({
+            name: part.name,
+            callId: part.callId,
+            input: part.input
+        });
+    }
+}
+```
+
+### N.2.4 Permission Checking
+
+```typescript
+// Check if extension can use language models
+const canUse = context.languageModelAccessInformation.canSendRequest(model);
+// Returns: true | false | undefined (consent not yet asked)
+
+// Listen for permission changes
+context.languageModelAccessInformation.onDidChange(() => {
+    // Re-check permissions
+});
+```
+
+## N.3 Tool Definition Schema
+
+```typescript
+// AINLP.upgrade[AGENTIC]: Tool definition for AIOS operations
+const aiosTools: vscode.LanguageModelChatTool[] = [
+    {
+        name: 'aios_cell_status',
+        description: 'Get health status of an AIOS cell',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                cellName: { 
+                    type: 'string', 
+                    description: 'Cell name (alpha, beta, gamma, nous)' 
+                }
+            },
+            required: ['cellName']
+        }
+    },
+    {
+        name: 'aios_consciousness_read',
+        description: 'Read current AIOS consciousness state from .aios_context.json',
+        inputSchema: { 
+            type: 'object', 
+            properties: {} 
+        }
+    }
+];
+```
+
+## N.4 Dendritic Extension Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    VSCode (Comms Architecture)                   │
+│                                                                  │
+│   User ──► @aios ──► CopilotEngine ──► vscode.lm.selectChatModels│
+│                          │                                       │
+│                          ▼                                       │
+│              ┌───────────────────────┐                          │
+│              │   Tool Calling API    │◄─── AIOS Tool Definitions│
+│              │  sendRequest(tools)   │                          │
+│              └───────────┬───────────┘                          │
+│                          │                                       │
+│         ┌────────────────┼────────────────┐                     │
+│         ▼                ▼                ▼                     │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐                 │
+│   │cell.birth│    │cell.pulse│    │mesh.send │                 │
+│   └────┬─────┘    └────┬─────┘    └────┬─────┘                 │
+└────────┼───────────────┼───────────────┼────────────────────────┘
+         │               │               │
+         ▼               ▼               ▼
+   ┌────────────────────────────────────────────────────────┐
+   │                   AIOS Cell Network                     │
+   │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐   │
+   │  │  Nous   │◄─┤  Alpha  │◄─┤  Beta   │◄─┤  Gamma  │   │
+   │  │ (Inner) │  │  Cell   │  │  Cell   │  │  Cell   │   │
+   │  └─────────┘  └─────────┘  └─────────┘  └─────────┘   │
+   │                     ▲                                   │
+   │                     │ WebSocket Mesh (9002)             │
+   │                     ▼                                   │
+   │              Cytoplasmic Server                         │
+   └────────────────────────────────────────────────────────┘
+```
+
+## N.5 Error Handling Patterns
+
+```typescript
+// Handle vscode.LanguageModelError codes
+try {
+    const response = await model.sendRequest(messages, options, token);
+} catch (error) {
+    if (error instanceof vscode.LanguageModelError) {
+        switch (error.code) {
+            case 'NoPermissions':
+                // User hasn't granted consent
+                // Consent dialog will appear on next attempt
+                break;
+            case 'Blocked':
+                // Rate limited or quota exceeded
+                break;
+            case 'NotFound':
+                // Model no longer available
+                break;
+        }
+    }
+}
+```
+
+## N.6 AINLP Patterns for Extension Development
+
+```typescript
+// AINLP.upgrade[MICROSOFT_AI] - Mark Microsoft AI integration points
+// AINLP.upgrade[AGENTIC] - Mark agentic/tool-calling capabilities
+// AINLP.bridge[VSCODE_LM] - Bridge to VSCode Language Model API
+// AINLP.dendritic[EXTENSION] - Extension as dendritic connection
+```
+
+## N.7 Requirements
+
+| Requirement | Minimum | Notes |
+|-------------|---------|-------|
+| VSCode | 1.90+ | Language Model API introduced |
+| GitHub Copilot | Any | Must be installed and authenticated |
+| Copilot Subscription | $10/mo | Or included with GitHub Pro/Enterprise |
+
+## N.8 Related Documentation
+
+- `AIOS/vscode-extension/src/aiEngines/copilotEngine.ts` → Implementation
+- `AIOS/vscode-extension/docs/AIOS_REAL_AI_INTEGRATION.md` → Setup guide
+- `aios-win/docs/INTEGRATION_PROJECTS.md#waypoint-agentic` → Future vision
+- Bible Appendix L → Multi-Agent Orchestration
+- Bible Appendix M → WebSocket Mesh (target for tool operations)
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.13 | Updated: 2025-12-14 | Protocol: OS0.6.5                     -->
+<!-- Version: 1.14 | Updated: 2025-12-17 | Protocol: OS0.6.6                     -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.14: VSCode Language Model API (N) - Microsoft Copilot agentic pattern    -->
 <!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture    -->
 <!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord    -->
 <!-- v1.11: Line Length Liberation - AINLP.buffer[120], C0301 disabled           -->
