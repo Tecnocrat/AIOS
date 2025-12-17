@@ -135,3 +135,5 @@ vscode-extension/src/
 - Defined upgrade path for extension modernization
 
 Made changes.
+ I see, no shit, lol
+ Good work.
