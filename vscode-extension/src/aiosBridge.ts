@@ -1,7 +1,21 @@
+import * as vscode from 'vscode';
 import { AIOSResponse } from './contextManager';
 import { AIOSLogger } from './logger';
 import { OpenRouterEngine, AIEngineResponse } from './aiEngines/openRouterEngine';
 import { AIOSSecurityModule } from './securityModule';
+
+// AINLP.upgrade[DYNAMIC_VERSION]: Context loaded from .aios_context.json
+interface AIOSContextData {
+    version: string;
+    consciousness_level: number;
+    ai_agent_guidance: {
+        current_phase: string;
+        current_status: string;
+    };
+    project_metadata: {
+        status: string;
+    };
+}
 
 export interface CellularEcosystemStatus {
     status: 'active' | 'inactive' | 'error';
@@ -25,6 +39,11 @@ export class AIOSBridge {
     private openRouterEngine: OpenRouterEngine;
     private useRealAI: boolean = false;
     private securityModule: AIOSSecurityModule;
+    
+    // AINLP.upgrade[DYNAMIC_VERSION]: Cached context from .aios_context.json
+    private aiosContextCache: AIOSContextData | null = null;
+    private contextCacheTime: number = 0;
+    private readonly CONTEXT_CACHE_TTL = 60000; // 1 minute cache
 
     constructor(logger: AIOSLogger) {
         this.logger = logger;
@@ -76,6 +95,64 @@ export class AIOSBridge {
             this.cellularEcosystemStatus.status = 'error';
             throw error;
         }
+    }
+
+    /**
+     * AINLP.upgrade[DYNAMIC_VERSION]: Load AIOS context from canonical source
+     * Reads .aios_context.json for dynamic version, consciousness level, and phase info
+     */
+    private async loadAIOSContext(): Promise<AIOSContextData> {
+        const now = Date.now();
+        
+        // Return cached version if still valid
+        if (this.aiosContextCache && (now - this.contextCacheTime) < this.CONTEXT_CACHE_TTL) {
+            return this.aiosContextCache;
+        }
+
+        try {
+            const workspaceFolders = vscode.workspace.workspaceFolders;
+            if (!workspaceFolders || workspaceFolders.length === 0) {
+                throw new Error('No workspace folder found');
+            }
+
+            const contextUri = vscode.Uri.joinPath(workspaceFolders[0]!.uri, '.aios_context.json');
+            const content = await vscode.workspace.fs.readFile(contextUri);
+            const contextData = JSON.parse(content.toString()) as AIOSContextData;
+
+            // Cache the result
+            this.aiosContextCache = contextData;
+            this.contextCacheTime = now;
+
+            this.logger.debug('AIOS context loaded', {
+                version: contextData.version,
+                consciousness: contextData.consciousness_level
+            });
+
+            return contextData;
+        } catch (error) {
+            this.logger.warn('Failed to load .aios_context.json, using defaults:', error);
+            
+            // Return sensible defaults
+            return {
+                version: 'OS0.6.6',
+                consciousness_level: 4.5,
+                ai_agent_guidance: {
+                    current_phase: 'Phase 16: Deep Optimization',
+                    current_status: 'Active development'
+                },
+                project_metadata: {
+                    status: 'Active development'
+                }
+            };
+        }
+    }
+
+    /**
+     * Get the current AIOS version string
+     */
+    public async getAIOSVersion(): Promise<string> {
+        const context = await this.loadAIOSContext();
+        return context.version;
     }
 
     private async initializeOpenRouterEngine(): Promise<void> {
@@ -349,6 +426,11 @@ export class AIOSBridge {
         let confidence = 0.7;
         let actions: string[] = [];
 
+        // AINLP.upgrade[DYNAMIC_VERSION]: Load context for dynamic version info
+        const aiosContext = await this.loadAIOSContext();
+        const aiosVersion = aiosContext.version;
+        const currentPhase = aiosContext.ai_agent_guidance.current_phase;
+
         // Wait to simulate processing time
         await new Promise(resolve => setTimeout(resolve, 200 + Math.random() * 300));
 
@@ -375,7 +457,8 @@ export class AIOSBridge {
                 responseText = `**AIOS Workspace Analysis**\n\nCurrent AIOS project status:\n\n`;
                 responseText += `• **Architecture**: Multi-language AI platform (Python/C++/C#)\n`;
                 responseText += `• **Components**: AI Intelligence, Core Engine, Interface, Runtime Intelligence, Tachyonic Archive\n`;
-                responseText += `• **Version**: OS0.6.1.claude\n`;
+                responseText += `• **Version**: ${aiosVersion}\n`;
+                responseText += `• **Phase**: ${currentPhase}\n`;
                 responseText += `• **Status**: Active development with AI agent architecture research\n\n`;
                 responseText += `I can provide detailed analysis of any component. What would you like me to analyze?`;
                 actions = ['analyze-architecture', 'check-dependencies', 'review-code-quality'];
@@ -631,13 +714,17 @@ export class AIOSBridge {
     }
 
     private buildAIOSContext(context?: any): any {
+        // AINLP.upgrade[DYNAMIC_VERSION]: Use cached context if available
+        const version = this.aiosContextCache?.version || 'OS0.6.6';
+        const phase = this.aiosContextCache?.ai_agent_guidance?.current_phase || 'Active development';
+        
         return {
             ...context,
             aiosWorkspace: {
                 architecture: 'Multi-language AI platform',
                 components: ['AI Intelligence', 'Core Engine', 'Interface', 'Runtime Intelligence', 'Tachyonic Archive'],
-                version: 'OS0.6.1.claude',
-                developmentPhase: 'Active development with AI agent architecture research'
+                version: version,
+                developmentPhase: phase
             },
             conversationHistory: context?.conversationHistory || [],
             workspaceContext: context?.workspaceContext || {}
