@@ -5,12 +5,61 @@ import { AIOSLogger } from './logger';
 import { AIOSMCPClient } from './mcpClient';
 import { AIOSSecurityModule } from './securityModule';
 
+export class AIOSChatParticipant {
+    private contextManager: AIOSContextManager;
+    private aiosBridge: AIOSBridge;
+    private logger: AIOSLogger;
+    private mcpClient: AIOSMCPClient;
+    private securityModule: AIOSSecurityModule;
+
     constructor(contextManager: AIOSContextManager, aiosBridge: AIOSBridge, logger: AIOSLogger, mcpClient: AIOSMCPClient) {
         this.contextManager = contextManager;
         this.aiosBridge = aiosBridge;
         this.logger = logger;
         this.mcpClient = mcpClient;
         this.securityModule = new AIOSSecurityModule(logger);
+    }
+
+    public async handleRequest(
+        request: vscode.ChatRequest,
+        context: vscode.ChatContext,
+        stream: vscode.ChatResponseStream,
+        token: vscode.CancellationToken
+    ): Promise<vscode.ChatResult> {
+
+        this.logger.info('Processing chat request', {
+            prompt: request.prompt.substring(0, 100) + (request.prompt.length > 100 ? '...' : ''),
+            command: request.command
+        });
+
+        try {
+            // Handle cancellation
+            if (token.isCancellationRequested) {
+                return { errorDetails: { message: 'Request was cancelled' } };
+            }
+
+            // Add user message to context
+            this.contextManager.addMessage('user', request.prompt);
+
+            // Show thinking indicator
+            stream.progress('AIOS is analyzing your request...');
+
+            // Check for MCP commands
+            const mcpCommands = await this.handleMCPCommands(request.prompt, stream);
+            if (mcpCommands) {
+                return mcpCommands;
+            }
+
+            // 🔒 SECURITY FIRST: Check for secret operations and handle securely
+            const secureResponse = await this.securityModule.processSecureMessage(request.prompt);
+            if (secureResponse) {
+                stream.markdown(secureResponse);
+                this.logger.info('Secure operation handled via terminal', {
+                    prompt: request.prompt.substring(0, 50) + '...'
+                });
+                return { metadata: { secureOperation: true } };
+            }
+
             // Process through AIOS Bridge
             const aiosResponse = await this.aiosBridge.processMessage(
                 request.prompt,
