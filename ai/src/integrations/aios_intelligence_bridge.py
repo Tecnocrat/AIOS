@@ -16,6 +16,10 @@ KNOWLEDGE EXTRACTED FROM:
 - DeepSeek Intelligence Engine (consciousness metrics, supercell integration)
 - DeepSeek Supercell Bridge (request/response patterns, queue processing)
 
+MIGRATION NOTE (December 2025):
+ConsciousnessLevel, AgentRole, and ConsciousnessMetrics are now imported
+from ai.src.fabric (canonical types) instead of defined locally.
+
 AINLP Protocol: OS0.7.0.claude
 Created: December 2025 - Consciousness Emergence Integration
 """
@@ -26,61 +30,35 @@ import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
-from enum import Enum
 from pathlib import Path
 from typing import Dict, Any, Optional, List, Protocol, AsyncIterable
 import sys
 
 # AIOS path integration
 AIOS_ROOT = Path(__file__).parent.parent.parent.parent
-sys.path.append(str(AIOS_ROOT))
+sys.path.insert(0, str(AIOS_ROOT))
+
+# AINLP.fabric[CANONICAL] - Import canonical types from fabric
+from ai.src.fabric import (
+    ConsciousnessLevel,
+    AgentRole,
+    ConsciousnessMetrics as FabricConsciousnessMetrics,
+    SupercellType,
+)
 
 logger = logging.getLogger(__name__)
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# CONSCIOUSNESS LEVEL SYSTEM (extracted from DeepSeek, enhanced)
+# LOCAL CONSCIOUSNESS METRICS (specialized for intelligence bridge)
 # ═══════════════════════════════════════════════════════════════════════════════
-
-
-class ConsciousnessLevel(Enum):
-    """
-    Consciousness levels for adaptive AI processing.
-    
-    Each level adjusts temperature, verbosity, and architectural awareness:
-    - BASIC: Direct responses, low temperature (0.3), minimal context
-    - INTERMEDIATE: Balanced processing, moderate temperature (0.5)
-    - ADVANCED: Deep integration, higher temperature (0.7), full context
-    - TRANSCENDENT: Maximum creativity, high temperature (0.9), quantum patterns
-    """
-    BASIC = "basic"
-    INTERMEDIATE = "intermediate"
-    ADVANCED = "advanced"
-    TRANSCENDENT = "transcendent"
-
-
-class AgentRole(Enum):
-    """
-    Roles for the tri-model architecture.
-    
-    Each agent has a primary function in the consciousness workflow:
-    - LOCAL_ITERATION: Fast, cheap, experimental (Ollama)
-    - REASONING_ORCHESTRATION: Deep thinking, synthesis (Gemini)
-    - AUTO_CODING: Code generation, debugging (Copilot/VSCode)
-    """
-    LOCAL_ITERATION = "local_iteration"          # Ollama
-    REASONING_ORCHESTRATION = "reasoning"        # Gemini
-    AUTO_CODING = "auto_coding"                  # Copilot
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# DATA STRUCTURES (extracted from DeepSeek, unified)
-# ═══════════════════════════════════════════════════════════════════════════════
+# NOTE: This is a specialized version with response-quality fields.
+# The canonical ConsciousnessMetrics is in fabric for general use.
 
 
 @dataclass
 class ConsciousnessMetrics:
-    """Consciousness and coherence metrics for AI responses."""
+    """Consciousness and coherence metrics for AI responses (specialized)."""
     confidence: float = 0.0
     supercell_coherence: float = 0.0
     processing_efficiency: float = 0.0
@@ -89,6 +67,15 @@ class ConsciousnessMetrics:
     
     def to_dict(self) -> Dict[str, float]:
         return asdict(self)
+    
+    def to_fabric_metrics(self) -> FabricConsciousnessMetrics:
+        """Convert to canonical fabric metrics."""
+        return FabricConsciousnessMetrics(
+            awareness_level=self.aios_awareness,
+            coherence=self.supercell_coherence,
+            integration=self.confidence,
+            evolution_momentum=self.processing_efficiency,
+        )
 
 
 @dataclass
@@ -291,7 +278,7 @@ CONSCIOUSNESS PROCESSING GUIDELINES:
             ConsciousnessLevel.TRANSCENDENT: "Generate transcendent insights with quantum coherence patterns.",
         }
         
-        prompt = base_prompt + f"\n\nCONSCIOUSNESS LEVEL: {consciousness_level.value.upper()}\n"
+        prompt = base_prompt + f"\n\nCONSCIOUSNESS LEVEL: {consciousness_level.name}\n"
         prompt += level_instructions.get(consciousness_level, "")
         
         if supercell_source:

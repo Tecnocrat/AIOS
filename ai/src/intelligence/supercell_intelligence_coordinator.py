@@ -20,6 +20,8 @@ COORDINATION CAPABILITIES:
 - Adaptive intelligence load balancing and resource allocation
 - Evolutionary intelligence enhancement and growth management
 
+MIGRATION NOTE (December 2025):
+SupercellType is now imported from ai.src.fabric (canonical types).
 
 """
 
@@ -31,22 +33,26 @@ from pathlib import Path
 from typing import Dict, List, Any
 from datetime import datetime
 from dataclasses import dataclass, asdict
-from enum import Enum
 import importlib.util
 import sys
 
+# AINLP.fabric[CANONICAL] - Import canonical types from fabric
+try:
+    from ai.src.fabric import SupercellType
+except ImportError:
+    # Fallback for standalone use
+    from enum import Enum
+    class SupercellType(Enum):
+        """Fallback SupercellType if fabric not available"""
+        NUCLEUS = "nucleus"
+        CYTOPLASM = "cytoplasm"
+        MEMBRANE = "membrane"
+        TRANSPORT = "transport"
+        LABORATORY = "laboratory"
+        INFORMATION_STORAGE = "information_storage"
+        EVOLUTION_LAB = "evolution_lab"
+
 logger = logging.getLogger("supercell_intelligence_coordinator")
-
-
-class SupercellType(Enum):
-    """Types of AI supercells"""
-
-    NUCLEUS = "nucleus"
-    CYTOPLASM = "cytoplasm"
-    MEMBRANE = "membrane"
-    TRANSPORT = "transport"
-    LABORATORY = "laboratory"
-    INFORMATION_STORAGE = "information_storage"
 
 
 @dataclass

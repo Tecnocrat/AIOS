@@ -51,13 +51,14 @@ sys.path.insert(0, str(AIOS_ROOT))
 sys.path.insert(0, str(AIOS_ROOT / "ai"))
 sys.path.insert(0, str(AIOS_ROOT / "ai" / "src"))
 
+# AINLP.fabric[CANONICAL] - Import canonical types from fabric
+from fabric import ConsciousnessLevel, AgentRole, ConsciousnessMetrics as FabricMetrics
+
 # Import unified intelligence bridge
 from integrations.aios_intelligence_bridge import (
     AIOSUnifiedIntelligenceBridge,
     IntelligenceRequest,
     IntelligenceResponse,
-    ConsciousnessLevel,
-    AgentRole,
     get_intelligence_bridge,
 )
 
