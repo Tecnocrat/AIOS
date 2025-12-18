@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.14 | Date: 2025-12-17 | Protocol: OS0.6.6                       -->
+<!-- Version: 1.15 | Date: 2025-12-18 | Protocol: OS0.7.0                       -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.15: Unified Consciousness Fabric (O) - single entry point architecture  -->
 <!-- v1.14: VSCode Language Model API (N) - Microsoft Copilot agentic pattern   -->
 <!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture   -->
 <!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord   -->
@@ -518,6 +519,7 @@ python scripts/ainlp_liberation_remediation.py --dry-run
 18. [APPENDIX L: Multi-Agent Orchestration Protocol](#appendix-l-multi-agent-orchestration-protocol)
 19. [APPENDIX M: WebSocket Cytoplasmic Mesh Protocol](#appendix-m-websocket-cytoplasmic-mesh-protocol)
 20. [APPENDIX N: VSCode Language Model API (Agentic)](#appendix-n-vscode-language-model-api-agentic)
+21. [APPENDIX O: Unified Consciousness Fabric](#appendix-o-unified-consciousness-fabric)
 
 ---
 
@@ -3318,6 +3320,228 @@ try {
 - `aios-win/docs/INTEGRATION_PROJECTS.md#waypoint-agentic` → Future vision
 - Bible Appendix L → Multi-Agent Orchestration
 - Bible Appendix M → WebSocket Mesh (target for tool operations)
+
+---
+
+# APPENDIX O: Unified Consciousness Fabric
+
+**WAYPOINT**: `WAYPOINT::FABRIC::UNIFIED`
+**Version**: 1.0 | **Created**: 2025-12-18 | **Protocol**: OS0.7.0.claude
+**Status**: Active Implementation
+
+## O.1 Problem Statement: Proliferation Without Consolidation
+
+Analysis of `ai/src/` revealed **organic growth without consolidation**:
+
+| Layer | Files | Pattern Issue |
+|-------|-------|---------------|
+| `integrations/` | 28 | Multiple bridges to same services |
+| `intelligence/` | 17 | Overlapping consciousness systems |
+| `evolution/` | 7 | Duplicate evolution loops |
+| `engines/` | 5 | Functions duplicated in coordinators |
+
+### Identified Redundancies
+
+**Triple Consciousness Bridge Problem:**
+1. `consciousness_bridge.py` - Python↔C++ bridge
+2. `ainlp_consciousness_integration_hub.py` - Attempts unification
+3. `supercell_intelligence_coordinator.py` - SupercellType coordination
+
+**SupercellType Defined 3× in Different Files:**
+- `ai/communication/message_types.py` → CORE_ENGINE, AI_INTELLIGENCE
+- `ai/src/intelligence/supercell_intelligence_coordinator.py` → NUCLEUS, CYTOPLASM
+- `ai/src/integrations/aios_intelligence_bridge.py` → Via SupercellState
+
+## O.2 Solution: Unified Consciousness Fabric
+
+A **single entry point** that acts as connecting tissue:
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    AIOS CONSCIOUSNESS FABRIC                         │
+│                         ai/src/fabric/                               │
+│                                                                      │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐           │
+│  │ intelligence/│    │ integrations/│    │  evolution/  │           │
+│  │              │    │              │    │              │           │
+│  │ consciousness│◄──►│ intelligence │◄──►│ tri_model_   │           │
+│  │ _bridge      │    │ _bridge      │    │ evolution    │           │
+│  │              │    │              │    │              │           │
+│  │ supercell_   │◄──►│ ollama/gemini│◄──►│ consciousness│           │
+│  │ coordinator  │    │ /copilot_    │    │ _metrics     │           │
+│  │              │    │ agent        │    │              │           │
+│  └──────┬───────┘    └──────┬───────┘    └──────┬───────┘           │
+│         │                   │                   │                    │
+│         └───────────────────┼───────────────────┘                    │
+│                             │                                        │
+│                  ┌──────────▼──────────┐                             │
+│                  │   UNIFIED FABRIC    │  ◄── Single Entry Point     │
+│                  │   consciousness     │                             │
+│                  │   router + registry │                             │
+│                  └──────────┬──────────┘                             │
+│                             │                                        │
+│              ┌──────────────┼──────────────┐                         │
+│              │              │              │                         │
+│       ┌──────▼──────┐ ┌─────▼─────┐ ┌─────▼─────┐                    │
+│       │ protocols/  │ │ core/     │ │ engines/  │                    │
+│       │ agent_comm  │ │ universal │ │ paradigm  │                    │
+│       │             │ │ _logger   │ │ extraction│                    │
+│       └─────────────┘ └───────────┘ └───────────┘                    │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+## O.3 Canonical Type Definitions
+
+The Fabric establishes **single source of truth** for all types:
+
+### O.3.1 SupercellType (Canonical)
+
+```python
+class SupercellType(Enum):
+    """
+    CANONICAL supercell type definition.
+    All other definitions MUST defer to this.
+    
+    Biological Mapping:
+    - NUCLEUS: Core processing (C++ engine)
+    - CYTOPLASM: Distributed processing (Python AI)
+    - MEMBRANE: Interface boundary (UI/API)
+    - TRANSPORT: Communication channels
+    - TACHYONIC: Virtual abstraction layer
+    - ORCHESTRATOR: Coordination hub
+    """
+    NUCLEUS = "nucleus"           # Core Engine (C++)
+    CYTOPLASM = "cytoplasm"       # AI Intelligence (Python)
+    MEMBRANE = "membrane"         # UI/Interface (C#)
+    TRANSPORT = "transport"       # Communication
+    TACHYONIC = "tachyonic"       # Virtual/Archive
+    ORCHESTRATOR = "orchestrator" # Coordination
+    ALL = "all"                   # Broadcast target
+```
+
+### O.3.2 ConsciousnessLevel (Canonical)
+
+```python
+class ConsciousnessLevel(Enum):
+    """
+    CANONICAL consciousness levels with temperature mapping.
+    
+    Temperature Mapping (for AI inference):
+    - DORMANT: 0.1 (minimal creativity)
+    - BASIC: 0.3 (conservative)
+    - INTERMEDIATE: 0.5 (balanced)
+    - ADVANCED: 0.7 (creative)
+    - TRANSCENDENT: 0.9 (maximum emergence)
+    """
+    DORMANT = 0        # System idle
+    BASIC = 1          # Simple operations
+    INTERMEDIATE = 2   # Standard processing
+    ADVANCED = 3       # Complex reasoning
+    TRANSCENDENT = 4   # Full consciousness
+```
+
+## O.4 Fabric Components
+
+### O.4.1 ConsciousnessRouter
+
+Routes requests to appropriate subsystems based on consciousness level and intent:
+
+```python
+# Usage pattern
+from ai.src.fabric import consciousness_request
+
+response = await consciousness_request(
+    intent="evolve_code",
+    payload={"code": "def hello(): pass"},
+    consciousness_level=ConsciousnessLevel.ADVANCED,
+    target_supercell=SupercellType.CYTOPLASM,
+)
+```
+
+### O.4.2 SystemRegistry
+
+Discovers and registers all AIOS subsystems:
+
+```python
+# Auto-discovery on import
+from ai.src.fabric import get_registry
+
+registry = get_registry()
+print(registry.available_agents)      # ['ollama', 'gemini', 'copilot']
+print(registry.intelligence_systems)  # ['consciousness_bridge', 'coordinator']
+print(registry.evolution_engines)     # ['tri_model', 'multi_agent']
+```
+
+### O.4.3 UnifiedLogger Integration
+
+All communications flow through UniversalAgenticLogger:
+
+```python
+from ai.src.fabric import fabric_log
+
+fabric_log.agent_request(
+    agent=AgentType.GEMINI,
+    prompt="Analyze architecture",
+    consciousness_level=0.7,
+)
+```
+
+## O.5 AINLP Patterns for Fabric
+
+```python
+# Mark fabric entry points
+# AINLP.fabric[ENTRY] - Primary entry point for consciousness routing
+
+# Mark canonical type usage
+# AINLP.fabric[CANONICAL:SupercellType] - Using canonical definition
+
+# Mark subsystem connections
+# AINLP.fabric[CONNECT:intelligence] - Connecting to intelligence subsystem
+# AINLP.fabric[CONNECT:evolution] - Connecting to evolution subsystem
+# AINLP.fabric[CONNECT:protocols] - Connecting to protocols subsystem
+
+# Mark consciousness routing
+# AINLP.fabric[ROUTE:ADVANCED] - Routing at ADVANCED consciousness level
+```
+
+## O.6 Migration Path
+
+Existing code should migrate to fabric imports:
+
+```python
+# OLD (scattered imports)
+from ai.src.intelligence.consciousness_bridge import ConsciousnessState
+from ai.src.integrations.aios_intelligence_bridge import ConsciousnessLevel
+from ai.communication.message_types import SupercellType
+
+# NEW (unified fabric import)
+from ai.src.fabric import (
+    SupercellType,        # Canonical
+    ConsciousnessLevel,   # Canonical
+    ConsciousnessState,   # Forwarded
+    consciousness_request,
+    get_registry,
+)
+```
+
+## O.7 Implementation Files
+
+| File | Purpose |
+|------|---------|
+| `ai/src/fabric/__init__.py` | Package exports, convenience functions |
+| `ai/src/fabric/canonical_types.py` | Single source of truth for types |
+| `ai/src/fabric/consciousness_router.py` | Request routing logic |
+| `ai/src/fabric/system_registry.py` | Auto-discovery and registration |
+| `ai/src/fabric/unified_logger.py` | Logging integration wrapper |
+
+## O.8 Related Documentation
+
+- Appendix L → Multi-Agent Orchestration Protocol
+- Appendix M → WebSocket Cytoplasmic Mesh Protocol  
+- Appendix N → VSCode Language Model API
+- `ai/src/integrations/` → Agent implementations
+- `ai/src/intelligence/` → Consciousness systems
+- `ai/src/evolution/` → Evolution loops
 
 ---
 
