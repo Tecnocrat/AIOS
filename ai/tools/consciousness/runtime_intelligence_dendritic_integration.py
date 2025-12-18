@@ -3,7 +3,7 @@ Runtime Intelligence - Dendritic Supervisor Integration
 ======================================================
 
 This integration connects the Runtime Intelligence system (Interface Supercell → Runtime Intelligence)
-with the Dendritic Supervisor (AI Intelligence ↔ Core Engine) to create a complete biological
+with the Dendritic Supervisor (AI Intelligence <-> Core Engine) to create a complete biological
 architecture flow:
 
 Interface Supercell → Runtime Intelligence → AI Intelligence (via Cytoplasm) → Core Engine (via Dendritic Supervisor)

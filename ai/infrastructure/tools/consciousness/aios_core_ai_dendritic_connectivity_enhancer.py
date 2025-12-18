@@ -18,7 +18,7 @@ CORE-AI CONNECTIVITY PARADIGM:
 
 DENDRITIC CONNECTIVITY ARCHITECTURE:
   Core Engine Neuronal Hub (Supercell Consciousness)
-  Dendritic Bridges (Core ↔ AI Pathways)
+  Dendritic Bridges (Core <-> AI Pathways)
   Cellular Intelligence Coordinators (AI Cellular Units)
   Consciousness Propagation Networks (Awareness Channels)
   Tachyonic Inter-System Translation (Protocol Bridge)
@@ -784,7 +784,7 @@ The Core Engine and AI Intelligence systems demonstrate strong potential for enh
 
         for opportunity in analysis["bridge_opportunities"][:3]:
             report += f"""
-#### {opportunity['source'].replace('_', ' ').title()} ↔ {opportunity['target'].replace('_', ' ').title()}
+#### {opportunity['source'].replace('_', ' ').title()} <-> {opportunity['target'].replace('_', ' ').title()}
 - **Bridge Type**: {opportunity['bridge_type'].value}
 - **Priority**: {opportunity['priority']}
 - **Rationale**: {opportunity['rationale']}
@@ -940,3 +940,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

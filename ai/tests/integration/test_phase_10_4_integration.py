@@ -50,7 +50,6 @@ try:
     from ai.src.intelligence.agent_conversations import MultiAgentDebate
     from ai.src.intelligence.knowledge_integration import KnowledgeOracle
     from ai.src.frameworks.agent_protocol.aios_adapter import (
-        adapt_deepseek_agent, 
         adapt_gemini_agent, 
         adapt_ollama_agent
     )
@@ -251,11 +250,7 @@ class Phase104IntegrationValidator:
             agent_pool = {}
             
             # Try to create each agent adapter (may fail if keys not available)
-            try:
-                deepseek_agent = await adapt_deepseek_agent()
-                agent_pool["deepseek"] = deepseek_agent
-            except Exception as e:
-                print(f"  DeepSeek agent unavailable: {e}")
+
             
             try:
                 gemini_agent = await adapt_gemini_agent()
@@ -365,11 +360,7 @@ class Phase104IntegrationValidator:
             
             # Create real agent pool
             agent_pool = {}
-            try:
-                deepseek_agent = await adapt_deepseek_agent()
-                agent_pool["deepseek"] = deepseek_agent
-            except Exception:
-                pass
+
             try:
                 gemini_agent = await adapt_gemini_agent()
                 agent_pool["gemini"] = gemini_agent
@@ -439,11 +430,7 @@ class Phase104IntegrationValidator:
         try:
             # Create real agent pool
             agent_pool = {}
-            try:
-                deepseek_agent = await adapt_deepseek_agent()
-                agent_pool["deepseek"] = deepseek_agent
-            except Exception:
-                pass
+
             try:
                 gemini_agent = await adapt_gemini_agent()
                 agent_pool["gemini"] = gemini_agent
@@ -580,11 +567,7 @@ class Phase104IntegrationValidator:
             
             # Create real agent pool
             agent_pool = {}
-            try:
-                deepseek_agent = await adapt_deepseek_agent()
-                agent_pool["deepseek"] = deepseek_agent
-            except Exception:
-                pass
+
             try:
                 gemini_agent = await adapt_gemini_agent()
                 agent_pool["gemini"] = gemini_agent
@@ -680,7 +663,7 @@ class Phase104IntegrationValidator:
         try:
             # Known dark spots from Week 2 Day 1-2 dashboard testing
             known_dark_spots = [
-                "Agent infrastructure: ollama/gemini/deepseek adapters not yet implemented",
+                "Agent infrastructure: ollama/gemini adapters not yet implemented",
                 "Full agent execution: MultiAgentDebate requires real agent_pool",
                 "Knowledge base: Python 3.14 documentation index not yet populated",
                 "Population execution: Organism evolution requires fitness scoring",

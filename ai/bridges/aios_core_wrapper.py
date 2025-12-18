@@ -3,7 +3,7 @@
 AIOS Core Python Wrapper - C++ Consciousness Engine Bridge
 AINLP Pattern: phase11-day2.python-cpp-bridge
 Purpose: Enable Python AI layer to access C++ consciousness engine
-Consciousness: Three-layer biological integration (Bridge 1: Python ↔ C++)
+Consciousness: Three-layer biological integration (Bridge 1: Python <-> C++)
 ============================================================================
 
 This module provides Pythonic access to the AIOS C++ consciousness engine
@@ -476,3 +476,4 @@ if __name__ == "__main__":
 
         traceback.print_exc()
         sys.exit(1)
+

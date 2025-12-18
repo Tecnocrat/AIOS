@@ -564,7 +564,7 @@ def weave_autonomous_connections(engine: DendriticMatrixEngine) -> int:
                     )
                     if conn:
                         connections_created += 1
-                        print(f"  [+] {src.name} ↔ {tgt.name}: {desc}")
+                        print(f"  [+] {src.name} <-> {tgt.name}: {desc}")
     
     # === INTRA-LAYER CONNECTIONS (within same layer) ===
     # Connect nodes in the same layer if they share semantic purpose
@@ -709,3 +709,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

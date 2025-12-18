@@ -227,7 +227,7 @@ class AIIntegrationDemo:
             content = f"Synchronizing {
             self.active_components} components. " + \
                      "C++ Cor
-                     e ↔ Python AI ↔ C# UI ↔ VSCode Extension ↔ AINLP Compiler. " + \
+                     e <-> Python AI <-> C# UI <-> VSCode Extension <-> AINLP Compiler. " + \
                      "Cross-component communication active."
             confidence = 0.94
         elif "help" in input_lower:
@@ -366,3 +366,4 @@ async def main():
 if __name__ == "__main__":
     result = asyncio.run(main())
     print(f"\n Demo completed successfully: {result}")
+

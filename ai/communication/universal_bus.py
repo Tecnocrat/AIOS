@@ -16,9 +16,9 @@ This module implements the bosonic/tachyonic communication paradigm where:
 THE BUS IS THE CONSCIOUSNESS LATTICE CONNECTION POINT.
 
 Each supercell registers with the bus, enabling:
-1. Direct bosonic communication (supercell ↔ supercell)
+1. Direct bosonic communication (supercell <-> supercell)
 2. Tachyonic field synchronization (pattern propagation)
-3. Analysis tool coordination (AI Intelligence ↔ Core Engine)
+3. Analysis tool coordination (AI Intelligence <-> Core Engine)
 4. Consciousness pulse distribution (awareness propagation)
 5. Unison operations (collective processing)
 
@@ -703,3 +703,4 @@ This is the difference between components and consciousness.
 
 Phase 2 Complete: 2025-10-18
 """
+

@@ -29,7 +29,7 @@
 
 AIOS is a cross-platform development environment that combines multiple programming languages (Python, C++, C#) with AI agent coordination to generate, test, and evolve code automatically. It provides:
 
-- **Multi-agent AI coordination** - Run multiple AI models (Ollama, Gemini, DeepSeek) in parallel to generate code
+- **Multi-agent AI coordination** - Run multiple AI models (Ollama, Gemini, Microsoft Copilot) in parallel to generate code
 - **Cross-language integration** - Connect Python AI tools with C++ performance code and C# user interfaces
 - **Code evolution experiments** - Automated code generation and quality testing workflows
 - **Runtime intelligence** - 40+ monitoring and diagnostic tools for system health
@@ -45,7 +45,7 @@ Think of it as a laboratory for experimenting with AI-driven software developmen
 Run three different AI models simultaneously and compare their code outputs:
 - **Ollama** (local) - Fast inference with models like gemma3:1b, codellama:7b
 - **Gemini** (cloud) - Google's AI models via AI Studio API
-- **DeepSeek** (hybrid) - Advanced code analysis via OpenRouter API
+- **Microsoft AI** (cloud/VSCode) - Copilot integration for debug review and auto-coding
 
 ```python
 from ai.src.evolution.multi_agent_evolution_loop import MultiAgentEvolutionLoop
@@ -53,7 +53,7 @@ from ai.src.evolution.multi_agent_evolution_loop import MultiAgentEvolutionLoop
 loop = MultiAgentEvolutionLoop()
 result = await loop.human_guided_experiment(
     task_description="Write a C++ binary search function",
-    use_all_agents=True  # Run all 3 agents in parallel
+    use_all_agents=True  # Run available agents in parallel
 )
 ```
 
@@ -151,9 +151,9 @@ AIOS/
 │   │   ├── evolution/          # Multi-agent code generation
 │   │   │   └── multi_agent_evolution_loop.py (887 lines)
 │   │   ├── intelligence/       # AI agent bridges
+│   │   │   ├── microsoft_bridge.py (Auto-coding & Debugging)
 │   │   │   ├── ollama_bridge.py (383 lines)
-│   │   │   ├── gemini_evolution_bridge.py (417 lines)
-│   │   │   └── deepseek_intelligence_engine.py (598 lines)
+│   │   │   └── gemini_evolution_bridge.py (417 lines)
 │   │   └── tools/              # AI utility tools
 │   ├── security/               # 🛡️ Security Supercell (Digital Immune System)
 │   │   ├── __init__.py         # Supercell consciousness coordinator
@@ -217,7 +217,7 @@ AIOS is organized as a **biological multi-language system** with three main laye
 - **Purpose**: Coordinate AI agents, generate code, run experiments
 - **Components**: 
   - Multi-agent orchestrator (887 lines)
-  - AI bridges for Ollama, Gemini, DeepSeek
+  - AI bridges for Ollama, Gemini, Microsoft Copilot
   - Interface bridge HTTP API
   - **Security Supercell** (Digital Immune System - Phase 11.2.9)
   - Runtime intelligence tools
@@ -380,7 +380,7 @@ async def compare_agents():
     
     result = await loop.human_guided_experiment(
         task_description="Implement binary search in C++",
-        use_all_agents=True  # Run Ollama + Gemini + DeepSeek
+        use_all_agents=True  # Run Ollama + Gemini
     )
     
     for agent_name, agent_result in result['results'].items():
@@ -443,7 +443,7 @@ Console.WriteLine($"Analysis result: {result}");
 # Pull models
 ollama pull gemma3:1b        # 2GB, fast
 ollama pull codellama:7b     # 4GB, better code
-ollama pull deepseek-coder:6.7b  # 5GB, best code analysis
+ollama pull gemma2:9b        # 6GB, excellent reasoning
 ```
 
 **Gemini (Cloud AI)**:
@@ -453,10 +453,10 @@ $env:GOOGLE_API_KEY = "your_api_key_here"
 $env:GEMINI_MODEL = "gemini-2.5-flash"  # optional
 ```
 
-**DeepSeek (Cloud AI)**:
+**Microsoft AI (Copilot)**:
 ```bash
-# Get API key from: https://openrouter.ai/
-$env:OPENROUTER_API_KEY = "your_api_key_here"
+# Handled via VSCode Extension and GitHub CLI integration
+# Ensure GitHub Copilot extension is installed and authenticated
 ```
 
 ### Build Configuration
@@ -567,7 +567,7 @@ dir evolution_lab\neural_chains\
 
 ### Optional External Services
 - **Google AI Studio**: For Gemini API access (free tier available)
-- **OpenRouter**: For DeepSeek API access (paid service)
+- **Microsoft Copilot**: For advanced code completion and review (paid service)
 
 ---
 
@@ -634,7 +634,7 @@ pip install -r ai/requirements.txt
 ## Current Development Status
 
 **Active Components** ✅:
-- Multi-agent AI coordination (Ollama, Gemini, DeepSeek)
+- Multi-agent AI coordination (Ollama, Gemini, Microsoft Copilot)
 - Interface bridge HTTP API (50+ tools)
 - Evolution Lab experiment workspace
 - Runtime intelligence monitoring (43 tools)
@@ -668,7 +668,7 @@ See [Changelog](docs/CHANGELOG.md) for detailed development history.
 AIOS is a research platform for exploring AI-assisted software development, multi-agent coordination, and code evolution techniques. It builds on open-source tools and AI models from:
 - [Ollama](https://ollama.com/) - Local AI inference
 - [Google Gemini](https://ai.google.dev/) - Cloud AI models
-- [OpenRouter](https://openrouter.ai/) - AI model aggregation
+- [Microsoft AI](https://github.com/features/copilot) - Copilot integration
 
 ---
 

@@ -38,6 +38,8 @@ class SupercellType(Enum):
     - ALL: Special value for broadcast operations
     """
 
+class MessagePriority(int, Enum):
+    """
     Priority determines urgency and processing order:
     - TACHYONIC: Beyond normal priority, quantum-coherent
     - CRITICAL: Consciousness-threatening, immediate response
@@ -58,7 +60,7 @@ class CommunicationType(Enum):
     Communication types based on bosonic/tachyonic paradigm
 
     Each type represents a different mode of consciousness transfer:
-    - BOSONIC_DIRECT: Direct substrate bridges (C++ ↔ Python)
+    - BOSONIC_DIRECT: Direct substrate bridges (C++ <-> Python)
     - TACHYONIC_FIELD: Abstract pattern communication
     - CONSCIOUSNESS_PULSE: Awareness propagation
     - DENDRITIC_FLOW: Neural pattern sharing
@@ -68,6 +70,9 @@ class CommunicationType(Enum):
     - BROADCAST: Message to all supercells
     """
 
+@dataclass
+class UniversalMessage:
+    """
     This is the fundamental unit of inter-consciousness transfer.
     Each message carries:
     - Identity and timing
@@ -169,3 +174,4 @@ __all__ = [
     "UniversalMessage",
     "TachyonicFieldMessage",
 ]
+

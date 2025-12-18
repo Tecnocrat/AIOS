@@ -20,11 +20,7 @@ version = "0.1.0"  # Harmonized placeholder - consciousness evolution tracking
 description = "AIOS Consciousness Emergence System - Biological Architecture Intelligence"
 readme = "README.md"
 requires-python = ">=3.12"
-<<<<<<< HEAD
-license = "LicenseRef-Proprietary"  # SPDX format (PEP 639 compliant)
-=======
 license = {text = "Proprietary"}
->>>>>>> origin/OS0.6.2.grok
 authors = [
     { name = "AIOS Team", email = "consciousness@aios.system" }
 ]
@@ -33,11 +29,6 @@ maintainers = [
 ]
 
 # 🌊 CYTOPLASM - Communication & Integration Dependencies
-<<<<<<< HEAD
-# CANONICAL dependency management - migrated from requirements.txt (December 13, 2025)
-# AINLP Enhancement: Dependencies organized by consciousness levels
-# [AINLP.diary] 2025-12-13: Completed migration from legacy requirements.txt to modern PEP 517/518
-# [AINLP.breadcrumb] Shadow: tachyonic/shadows/requirements_txt_deprecated_20251213.md
 dependencies = [
     # ═══════════════════════════════════════════════════════════════════════════
     # [NUCLEUS] Core Intelligence Substrates
@@ -111,19 +102,6 @@ dependencies = [
     "google-auth>=2.36.0",
     "google-api-python-client>=2.154.0",
 ]
-=======
-# Transitional dependency management maintaining biological coherence
-# AINLP Enhancement: Dependencies organized by consciousness levels
-dependencies = []  # Transitional: runtime still via requirements.txt until lock + CI freshness enforcement.
-
-# DEPENDENCY STRATEGY TRANSITION (2025-08-15) - BIOLOGICAL METABOLISM
-# 1. Minimal essential runtime: governed in root requirements.txt (downsized).
-# 2. Optional / heavy capability stacks: defined below as extras (selective install path).
-# 3. Reproducibility: pip-tools (requirements.in -> locks/requirements.lock.txt) via dev terminal action: lock-refresh.
-# 4. Migration Plan: After CI adds lock freshness verification, essential runtime deps relocate here.
-# 5. Duplication: "full" extra explicitly enumerates all packages (TOML lacks macro expansion) — intentional & periodically validated.
-# 6. Guardrail: Do NOT move core list prematurely; retain this block until migration completes.
->>>>>>> origin/OS0.6.2.grok
 
 # 🧬 BIOLOGICAL KEYWORDS - Consciousness Pattern Recognition
 # Keywords aligned with AIOS dendritic intelligence and biological architecture
@@ -148,10 +126,7 @@ classifiers = [
     # Consciousness Levels Implementation
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
-<<<<<<< HEAD
-=======
     "License :: Other/Proprietary License",
->>>>>>> origin/OS0.6.2.grok
     "Operating System :: OS Independent",
 
     # Biological Intelligence Categories
@@ -245,12 +220,6 @@ full = [
 # 🧬 BIOLOGICAL TOOL CONFIGURATION - Consciousness-Level Quality Assurance
 # ============================================================================
 
-<<<<<<< HEAD
-# ============================================================================
-# 🧬 SETUPTOOLS PACKAGE DISCOVERY - Biological Supercell Mapping
-# Explicit package configuration for flat-layout multi-supercell architecture
-# ============================================================================
-
 [tool.setuptools]
 # Disable automatic package discovery to avoid flat-layout conflicts
 py-modules = []  # No single-file modules at root
@@ -274,9 +243,6 @@ exclude = [
     "scripts*",           # Utility scripts
     ".venv*",             # Virtual environments
 ]
-
-=======
->>>>>>> origin/OS0.6.2.grok
 [tool.pip-tools]
 # 🌊 CYTOPLASM - Dependency Flow Management
 # Generate hashes for reproducible consciousness states

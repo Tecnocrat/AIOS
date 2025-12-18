@@ -45,19 +45,7 @@ async def test_single_agent_experiments():
     print(f"  Conversation: {result1['conversation_path']}")
     print(f"  Archive: {result1['archive_path']}")
     
-    # Test 2: DeepSeek Coder (if available)
-    print("\n[TEST 2] DeepSeek Coder - Code analysis")
-    try:
-        result2 = await loop.human_guided_experiment(
-            task_description="Analyze this C++ code and suggest improvements: for(int i=0;i<10;i++) cout<<i;",
-            agent_type="deepseek"
-        )
-        print(f"✓ Test 2 complete")
-        print(f"  Output: {result2['output_path']}")
-        print(f"  Conversation: {result2['conversation_path']}")
-        print(f"  Archive: {result2['archive_path']}")
-    except Exception as e:
-        print(f"✗ Test 2 failed (DeepSeek may not be available): {e}")
+
     
     # Test 3: Gemini (if available)
     print("\n[TEST 3] Gemini - Algorithm design")

@@ -3,7 +3,7 @@
 AIOS Dendritic Bridge - Pure Python Implementation (aiohttp)
 AINLP.meta [dendritic_bridge_v2] [cellular_mitosis] [termux_compatible]
 
-Purpose: HTTP server for Windows AIOS ↔ Termux AIOS communication
+Purpose: HTTP server for Windows AIOS <-> Termux AIOS communication
 Dependencies: aiohttp ONLY (pure Python, no Rust compilation)
 Architecture: Cellular mitosis - two AIOS supercells communicating
 
@@ -506,3 +506,4 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     web.run_app(app, host="0.0.0.0", port=8000)
+

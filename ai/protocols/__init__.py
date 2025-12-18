@@ -8,10 +8,10 @@ AINLP.purpose: Provides coherence to AINLP.dendritic patterns, enabling
 multiple AI agentic behaviours with async harmonization patterns.
 
 AINLP.dendritic_bridge: Links AICP concepts to existing infrastructure:
-    - AIAgent ↔ SupercellType (agent identity)
-    - AIIntent ↔ CommunicationType (operation semantics)
-    - AIChannel ↔ DendriticConnection (transport layer)
-    - AIMessage ↔ UniversalMessage (payload envelope)
+    - AIAgent <-> SupercellType (agent identity)
+    - AIIntent <-> CommunicationType (operation semantics)
+    - AIChannel <-> DendriticConnection (transport layer)
+    - AIMessage <-> UniversalMessage (payload envelope)
 
 Protocol References:
     - AICP v0.1 Draft: https://github.com/pmoscode/agent-interaction-control-protocol
@@ -59,3 +59,4 @@ __all__ = [
 
 __version__ = '0.1.0'
 __protocol_spec__ = 'AICP+IACP v1.0'
+

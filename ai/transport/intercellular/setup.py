@@ -52,14 +52,14 @@ else:
 setup(
     name="tensorflow_cellular_bridge",
     version="0.4.0",
-    description="TensorFlow Cellular Bridge for AIOS - C++ ↔ Python intercellular communication",
+    description="TensorFlow Cellular Bridge for AIOS - C++ <-> Python intercellular communication",
     long_description="""
     The TensorFlow Cellular Bridge enables seamless communication between Python AI
     Training Cells and C++ TensorFlow Performance Cells in the AIOS cellular ecosystem.
     
     Features:
     - Sub-millisecond inference through C++ performance cells
-    - Efficient numpy ↔ C++ tensor data transfer
+    - Efficient numpy <-> C++ tensor data transfer
     - Performance monitoring and benchmarking
     - Memory-optimized intercellular communication
     - Production-ready model deployment pipeline

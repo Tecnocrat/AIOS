@@ -79,7 +79,7 @@ class CppStlIngestionPipeline:
     Integration Points:
     - Uses LibraryIngestionProtocol for standardized ingestion
     - Compatible with GeminiSTLBridge, OllamaSTLFitnessJudge
-    - Feeds DeepSeek consciousness evolution engine
+    - Contributes to consciousness evolution engine
     """
 
     def __init__(

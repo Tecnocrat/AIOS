@@ -708,7 +708,7 @@ def main():
     print(" AIOS QUANTUM INTEGRATION LAYER + AINLP PARADIGMS")
     print("=" * 70)
     print(" Universal Codebase Vision with Holographic Deep Context")
-    print(" Fractal Synchronization: Micro ↔ Super Architecture")
+    print(" Fractal Synchronization: Micro <-> Super Architecture")
     print(" Deep Harmonization Through Quantum Layer")
     print(" AINLP Paradigm Orchestration & Coordination Engines")
     print("=" * 70)
@@ -791,3 +791,4 @@ def test_legacy_compression_integration():
 if __name__ == "__main__":
     # AINLP.execute [main_entry] (comment.AINLP.class)
     main()
+

@@ -190,7 +190,7 @@ class MultiAgentDebate:
             archive_dir: Conversation archive directory
                 (default: tachyonic/archive/conversations/)
             agent_weights: Weights for consensus calculation
-                (default: ollama=0.30, gemini=0.40, deepseek=0.30)
+                (default: ollama=0.40, gemini=0.60)
         """
         self.agent_pool = agent_pool
 
@@ -202,7 +202,7 @@ class MultiAgentDebate:
 
         # Agent weights for consensus
         if agent_weights is None:
-            agent_weights = {"ollama": 0.30, "gemini": 0.40, "deepseek": 0.30}
+            agent_weights = {"ollama": 0.40, "gemini": 0.60}
         self.agent_weights = agent_weights
 
         # Round time limits (seconds)
@@ -743,7 +743,6 @@ async def example_basic_debate():
     agent_pool = {
         "ollama": "mock_ollama_adapter",
         "gemini": "mock_gemini_adapter",
-        "deepseek": "mock_deepseek_adapter",
     }
 
     # Initialize debate system

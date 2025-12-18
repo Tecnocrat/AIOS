@@ -24,7 +24,7 @@ from .ui_interaction_bridge import UIInteractionBridge
 
 class CytoplasmDendriticBridge:
     """
-    Bridge between cytoplasm and dendritic supervisor for AI Intelligence ↔ Core Engine communication.
+    Bridge between cytoplasm and dendritic supervisor for AI Intelligence <-> Core Engine communication.
 
     This bridge:
     1. Receives requests from cytoplasm/UI interactions
@@ -345,3 +345,4 @@ async def get_cytoplasm_dendritic_bridge() -> CytoplasmDendriticBridge:
         await _cytoplasm_dendritic_bridge_instance.initialize()
 
     return _cytoplasm_dendritic_bridge_instance
+

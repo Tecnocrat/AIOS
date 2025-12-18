@@ -1103,7 +1103,7 @@ async def get_dendritic_supervisor() -> DendriticSupervisor:
 
 async def main():
     """Main function for testing the dendritic supervisor."""
-    print(" AIOS Dendritic Supervisor - AI Intelligence ↔ Core Engine Bridge")
+    print(" AIOS Dendritic Supervisor - AI Intelligence <-> Core Engine Bridge")
     print("=" * 70)
     
     # Initialize supervisor

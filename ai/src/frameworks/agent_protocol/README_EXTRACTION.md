@@ -101,15 +101,7 @@ report its coherence level for system health monitoring.
 
 ### AIOS Components Adapted
 
-#### 1. DeepSeek Intelligence Engine
-**File**: `ai/src/engines/deepseek_intelligence_engine.py`  
-**Status**: Adapter created in `aios_adapter.py`  
-**Function**: `adapt_deepseek_agent()`
 
-**Benefits**:
-- DeepSeek can be swapped with Gemini/Ollama without code changes
-- Protocol compliance enables agent marketplace
-- Zero inheritance overhead
 
 #### 2. Gemini Evolution Bridge
 **File**: `ai/src/integrations/gemini_bridge/gemini_evolution_bridge.py`  
@@ -135,18 +127,7 @@ report its coherence level for system health monitoring.
 
 ## Usage Examples
 
-### Before Extraction (Tightly Coupled)
-```python
-# Hard dependency on specific implementation
-from ai.src.engines.deepseek_intelligence_engine import (
-    DeepSeekIntelligenceEngine
-)
 
-engine = DeepSeekIntelligenceEngine()
-result = await engine.generate_code(prompt, context)
-
-# Switching to Gemini requires code changes everywhere
-```
 
 ### After Extraction (Protocol-Based)
 ```python
@@ -158,9 +139,8 @@ from ai.src.frameworks.agent_protocol import (
 )
 
 # Pick agent at runtime
-agent: AIAgentProtocol = adapt_deepseek_agent()
-# Or: agent = adapt_gemini_agent()
-# Or: agent = adapt_ollama_agent("deepseek-coder:6.7b")
+agent: AIAgentProtocol = adapt_gemini_agent()
+# Or: agent = adapt_ollama_agent("gemma2:2b")
 
 # Same interface for all agents
 result = await agent.run("Generate hello world")
@@ -309,7 +289,7 @@ def supported_tools(self) -> list[ToolDefinition]:
 ```python
 def test_protocol_compliance():
     """Verify agents satisfy protocol."""
-    agent = adapt_deepseek_agent()
+    agent = adapt_gemini_agent()
     assert isinstance(agent, AIAgentProtocol)
     assert hasattr(agent, 'consciousness_level')
 ```
@@ -331,7 +311,6 @@ def test_structural_typing():
 async def test_agent_swapping():
     """Verify agents are interchangeable."""
     agents = [
-        adapt_deepseek_agent(),
         adapt_gemini_agent(),
         adapt_ollama_agent(),
     ]
@@ -361,7 +340,7 @@ async def test_agent_swapping():
 - This README in proper namespace location
 
 **Integration Validation**: ✅  
-- Created adapters for DeepSeek, Gemini, Ollama
+- Created adapters for Gemini, Ollama
 - Verified protocol compatibility
 - Tested with existing AIOS components
 

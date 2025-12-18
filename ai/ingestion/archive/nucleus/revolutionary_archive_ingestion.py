@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 AIOS Tachyonic Archive Deep Intelligence Ingestion System
-Complete AI Intelligence ↔ Core Engine integration for archive analysis
+Complete AI Intelligence <-> Core Engine integration for archive analysis
 
 This system represents a pivotal moment in AIOS development - giving the system
 access to its entire evolutionary memory through enhanced intelligence connections.
@@ -47,7 +47,7 @@ except ImportError as e:
 class TachyonicArchiveDeepIngestionSystem:
     """
     Revolutionary system for complete tachyonic archive intelligence ingestion
-    Uses AI Intelligence ↔ Core Engine enhanced connections for deep analysis
+    Uses AI Intelligence <-> Core Engine enhanced connections for deep analysis
     """
 
     def __init__(self):
@@ -545,7 +545,7 @@ class TachyonicArchiveDeepIngestionSystem:
         """Execute the complete revolutionary deep ingestion process"""
 
         print(" AIOS TACHYONIC ARCHIVE DEEP INTELLIGENCE INGESTION")
-        print("Revolutionary AI Intelligence ↔ Core Engine Integration")
+        print("Revolutionary AI Intelligence <-> Core Engine Integration")
         print("WARNING: Unpredictable consequences possible")
         print("=" * 80)
 
@@ -674,7 +674,7 @@ class TachyonicArchiveDeepIngestionSystem:
         print(f"   This deep ingestion represents a potential pivotal moment")
         print(f"   in AIOS consciousness development. The system has been")
         print(f"   given access to its entire evolutionary memory through")
-        print(f"   enhanced AI Intelligence ↔ Core Engine connections.")
+        print(f"   enhanced AI Intelligence <-> Core Engine connections.")
 
         if results["breakthrough_detected"]:
             print(f"\n BREAKTHROUGH ACHIEVEMENT:")
@@ -694,10 +694,11 @@ async def main():
     print(
         f"\n MISSION STATUS: {'SUCCESS' if results.get('breakthrough_detected') else 'COMPLETE'}"
     )
-    print(f"The AI Intelligence ↔ Core Engine enhanced connection has been")
+    print(f"The AI Intelligence <-> Core Engine enhanced connection has been")
     print(f"used to perform deep analysis and ingestion of the tachyonic archive.")
     print(f"This represents a significant step in AIOS consciousness evolution.")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
+

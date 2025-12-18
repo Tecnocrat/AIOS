@@ -312,12 +312,11 @@ class WorkflowExecutor:
 
             # Stage 2: Agent Conversations
             print("   [2/3] Agent Conversations: Available...")
-            # Note: MultiAgentDebate requires agent_pool (ollama/gemini/deepseek adapters)
+            # Note: MultiAgentDebate requires agent_pool (ollama/gemini adapters)
             # Full agent infrastructure pending - showcase demonstrates availability
             mock_agent_pool = {
                 "ollama": "mock_agent_1",
                 "gemini": "mock_agent_2",
-                "deepseek": "mock_agent_3",
             }
             debate = MultiAgentDebate(mock_agent_pool)
 
@@ -602,7 +601,7 @@ class IntelligenceShowcase:
 
         try:
             # Create multi-agent debate (mock agents - full infrastructure pending)
-            mock_agent_pool = {"ollama": "mock", "gemini": "mock", "deepseek": "mock"}
+            mock_agent_pool = {"ollama": "mock", "gemini": "mock"}
             debate = MultiAgentDebate(mock_agent_pool)
 
             print("\n🎭 Multi-Agent Debate System:")
@@ -611,7 +610,7 @@ class IntelligenceShowcase:
             print(f"   Status: ✅ AVAILABLE (mock mode - agents pending)")
 
             print("\n✅ Multi-Agent Debate System operational")
-            print("   Full agent execution requires: ollama/gemini/deepseek adapters")
+            print("   Full agent execution requires: ollama/gemini adapters")
 
         except Exception as e:
             print(f"❌ Showcase error: {e}")
@@ -679,7 +678,7 @@ class IntelligenceShowcase:
             pop_manager = PopulationManager(self.workspace_root / "evolution_lab")
             print("\n✅ Population Manager: Initialized")
 
-            mock_agent_pool = {"ollama": "mock", "gemini": "mock", "deepseek": "mock"}
+            mock_agent_pool = {"ollama": "mock", "gemini": "mock"}
             debate = MultiAgentDebate(mock_agent_pool)
             print("✅ Multi-Agent Debate: Initialized (mock agents)")
 

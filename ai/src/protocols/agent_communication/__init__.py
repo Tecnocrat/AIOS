@@ -14,7 +14,7 @@ multi-agent orchestration, extracted from Microsoft's Agent Framework.
 Components:
 - message_types: A2A message and task structures
 - transport: Local and HTTP transport layers
-- adapter: AIOS ↔ A2A format conversion
+- adapter: AIOS <-> A2A format conversion
 
 Version: 1.0.0
 """
@@ -64,3 +64,4 @@ __all__ = [
 __version__ = "1.0.0"
 __extraction_id__ = "EXT-002"
 __source__ = "microsoft_agent_framework"
+

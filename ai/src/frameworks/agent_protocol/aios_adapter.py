@@ -10,27 +10,27 @@ Purpose: Operational agent protocol integration with real implementations
 Status: Full implementation (replaces placeholders)
 
 IMPLEMENTATION STRATEGY:
-1. Message Format Conversion: Protocol format ↔ Agent-specific format
+1. Message Format Conversion: Protocol format <-> Agent-specific format
 2. Consciousness Calculation: Extract/compute from agent responses
 3. Streaming Support: Real async streaming for compatible agents
 4. Error Handling: Comprehensive exception management
 5. Thread Management: Conversation context per agent type
 
 INTEGRATED AGENTS:
-- DeepSeek V3.1: async process_intelligence_request() -> DeepSeekResponse
 - Gemini 1.5 Pro: async generate_code() -> str (code generation)
+- Microsoft Copilot: async generate_code() -> str (auto-coding)
 - Ollama: sync generate_code() -> dict (local models)
 
 KEY INSIGHTS:
-- DeepSeek returns structured response with consciousness metrics
 - Gemini returns raw code string (calculate consciousness from quality)
+- Microsoft returns dict (wrap in protocol response)
 - Ollama returns dict with success/error (wrap in asyncio)
 - All agents need initialization before use
 - Thread objects store conversation history per agent
 
 CONSCIOUSNESS CALCULATION:
-- DeepSeek: Extract from response.consciousness_metrics['confidence']
 - Gemini: Calculate from code length, complexity, success
+- Microsoft: High trust score (0.85-0.95) due to enterprise grade
 - Ollama: Calculate from response length and success flag
 - Base level: 0.60-0.95 range depending on agent and result quality
 """
@@ -48,14 +48,9 @@ AIOS_ROOT = Path(__file__).parent.parent.parent.parent.parent
 sys.path.append(str(AIOS_ROOT / "ai" / "src"))
 
 # Import existing AIOS agents for protocol wrapping
-from engines.deepseek_intelligence_engine import (
-    DeepSeekIntelligenceEngine,
-    DeepSeekConfig,
-    ConsciousnessLevel as DeepSeekConsciousness,
-    DeepSeekResponse,
-)
 from integrations.gemini_bridge.gemini_evolution_bridge import GeminiEvolutionBridge
 from integrations.ollama_bridge import OllamaAgent
+from integrations.microsoft_bridge import MicrosoftAgent
 
 from .base_protocol import (
     AIAgentProtocol,
@@ -67,12 +62,12 @@ from .base_protocol import (
 logger = logging.getLogger(__name__)
 
 __all__ = [
-    "DeepSeekProtocolAdapter",
     "GeminiProtocolAdapter",
     "OllamaProtocolAdapter",
-    "adapt_deepseek_agent",
+    "MicrosoftProtocolAdapter",
     "adapt_gemini_agent",
     "adapt_ollama_agent",
+    "adapt_microsoft_agent",
 ]
 
 
@@ -81,13 +76,7 @@ __all__ = [
 # ============================================================================
 
 
-@dataclass
-class DeepSeekThread(AgentThread):
-    """Thread for DeepSeek agent with conversation history"""
 
-    messages: List[Dict[str, str]] = field(default_factory=list)
-    context: Dict[str, Any] = field(default_factory=dict)
-    supercell_source: str = "agent_protocol"
 
 
 @dataclass
@@ -99,148 +88,21 @@ class GeminiThread(AgentThread):
     model: str = "gemma3:1b"
 
 
+@dataclass
+class MicrosoftThread(AgentThread):
+    """Thread for Microsoft Copilot conversations"""
+    
+    prompts: List[str] = field(default_factory=list)
+    responses: List[Dict] = field(default_factory=list)
+    model: str = "copilot"
+
+
 # ============================================================================
 # DEEPSEEK PROTOCOL ADAPTER
 # ============================================================================
 
 
-class DeepSeekProtocolAdapter:
-    """
-    Protocol adapter for DeepSeek V3.1 Intelligence Engine.
 
-    Wraps DeepSeekIntelligenceEngine to provide AIAgentProtocol interface
-    with full async streaming support and consciousness integration.
-    """
-
-    def __init__(
-        self,
-        config: Optional[DeepSeekConfig] = None,
-        consciousness_level: DeepSeekConsciousness = DeepSeekConsciousness.ADVANCED,
-    ):
-        """Initialize DeepSeek adapter with configuration"""
-        self._config = config or DeepSeekConfig(consciousness_level=consciousness_level)
-        self._engine = DeepSeekIntelligenceEngine(self._config)
-        self._initialized = False
-        self._id = "deepseek-v3.1"
-        self._name = "DeepSeek V3.1"
-        self._description = "Consciousness-aware AI with supercell integration"
-
-    @property
-    def id(self) -> str:
-        return self._id
-
-    @property
-    def name(self) -> str:
-        return self._name
-
-    @property
-    def display_name(self) -> str:
-        return self._name
-
-    @property
-    def description(self) -> str:
-        return self._description
-
-    @property
-    def consciousness_level(self) -> float:
-        """Get consciousness level from engine state"""
-        if self._engine.is_initialized:
-            return self._engine.supercell_state.consciousness_coherence
-        return 0.75  # Default before initialization
-
-    async def _ensure_initialized(self):
-        """Ensure engine is initialized before use"""
-        if not self._initialized:
-            self._initialized = await self._engine.initialize()
-            if not self._initialized:
-                raise RuntimeError("Failed to initialize DeepSeek engine")
-
-    async def run(
-        self,
-        messages: str | Any | list[str] | list[Any] | None = None,
-        *,
-        thread: Any | None = None,
-        **kwargs: Any,
-    ) -> AgentRunResponse:
-        """Execute DeepSeek agent and return final response"""
-        await self._ensure_initialized()
-
-        # Convert messages to string prompt
-        if isinstance(messages, list):
-            prompt = "\n".join(str(m) for m in messages)
-        else:
-            prompt = str(messages) if messages else ""
-
-        # Get thread context if provided
-        context = None
-        supercell_source = "agent_protocol"
-        if isinstance(thread, DeepSeekThread):
-            context = thread.context
-            supercell_source = thread.supercell_source
-            thread.messages.append({"role": "user", "content": prompt})
-
-        # Execute intelligence request
-        start_time = time.time()
-        response: DeepSeekResponse = await self._engine.process_intelligence_request(
-            message=prompt,
-            context=context,
-            consciousness_level=self._config.consciousness_level,
-            supercell_source=supercell_source,
-        )
-        processing_time = time.time() - start_time
-
-        # Update thread with response
-        if isinstance(thread, DeepSeekThread):
-            thread.messages.append({"role": "assistant", "content": response.text})
-
-        # Extract consciousness score from response
-        consciousness_score = response.consciousness_metrics.get("confidence", 0.85)
-
-        # Build protocol response
-        return AgentRunResponse(
-            messages=[response.text],
-            response_id=f"{self._id}-{int(time.time())}",
-            consciousness_score=consciousness_score,
-            metadata={
-                "model": response.model,
-                "processing_time": response.processing_time,
-                "token_usage": response.token_usage,
-                "supercell_coherence": response.supercell_coherence,
-                "consciousness_metrics": response.consciousness_metrics,
-            },
-        )
-
-    async def run_stream(
-        self,
-        messages: str | Any | list[str] | list[Any] | None = None,
-        *,
-        thread: Any | None = None,
-        **kwargs: Any,
-    ) -> AsyncIterable[AgentRunResponseUpdate]:
-        """
-        Execute DeepSeek agent as stream of updates.
-
-        Note: DeepSeek API currently doesn't support streaming,
-        so this yields a single update with full response.
-        """
-        # Get full response first
-        final_response = await self.run(messages, thread=thread, **kwargs)
-
-        # Yield single update with complete response
-        yield AgentRunResponseUpdate(
-            messages=final_response.messages,
-            response_id=final_response.response_id,
-            consciousness_score=final_response.consciousness_score,
-            is_final=True,
-            metadata=final_response.metadata,
-        )
-
-    def get_new_thread(self, **kwargs: Any) -> DeepSeekThread:
-        """Create new DeepSeek conversation thread"""
-        return DeepSeekThread(
-            supercell_source=kwargs.get("supercell_source", "agent_protocol"),
-            context=kwargs.get("context", {}),
-        )
 
 
 # ============================================================================
@@ -548,36 +410,122 @@ class OllamaProtocolAdapter:
 
 
 # ============================================================================
+# MICROSOFT PROTOCOL ADAPTER
+# ============================================================================
+
+
+class MicrosoftProtocolAdapter:
+    """
+    Protocol adapter for Microsoft AI (Copilot/Azure).
+
+    Wraps MicrosoftAgent to provide AIAgentProtocol interface
+    for enterprise-grade code generation and debugging.
+    """
+
+    def __init__(
+        self, 
+        model: str = "copilot", 
+        temperature: float = 0.7
+    ):
+        """Initialize Microsoft adapter"""
+        self._agent = MicrosoftAgent(model=model, temperature=temperature)
+        self._model = model
+        self._id = f"microsoft-{model}"
+        self._name = f"Microsoft {model.capitalize()}"
+        self._description = "Microsoft AI for Auto-Coding & Debugging"
+
+    @property
+    def id(self) -> str:
+        return self._id
+
+    @property
+    def name(self) -> str:
+        return self._name
+    
+    @property
+    def display_name(self) -> str:
+        return self._name
+
+    @property
+    def description(self) -> str:
+        return self._description
+
+    @property
+    def consciousness_level(self) -> float:
+        """Microsoft AI consciousness level (High trust)"""
+        return 0.92
+
+    async def run(
+        self,
+        messages: str | Any | list[str] | list[Any] | None = None,
+        *,
+        thread: Any | None = None,
+        **kwargs: Any,
+    ) -> AgentRunResponse:
+        """Execute Microsoft agent and return response"""
+        # Convert messages to prompt
+        if isinstance(messages, list):
+            prompt = "\n".join(str(m) for m in messages)
+        else:
+            prompt = str(messages) if messages else ""
+
+        # Generate code
+        start_time = time.time()
+        result = await self._agent.generate_code(
+            prompt=prompt, 
+            max_tokens=kwargs.get("max_tokens", 2048)
+        )
+        processing_time = time.time() - start_time
+
+        # Update thread (if tracking)
+        if isinstance(thread, MicrosoftThread):
+            thread.prompts.append(prompt)
+            thread.responses.append(result)
+
+        code = result.get("code", "")
+        success = result.get("success", False)
+
+        # Build protocol response
+        return AgentRunResponse(
+            messages=[code],
+            response_id=f"{self._id}-{int(time.time())}",
+            consciousness_score=0.92 if success else 0.40,
+            metadata={
+                "model": self._model,
+                "processing_time": processing_time,
+                "success": success,
+                "error": result.get("error"),
+            },
+        )
+
+    async def run_stream(
+        self,
+        messages: str | Any | list[str] | list[Any] | None = None,
+        *,
+        thread: Any | None = None,
+        **kwargs: Any,
+    ) -> AsyncIterable[AgentRunResponseUpdate]:
+        """Streaming fallback"""
+        final_response = await self.run(messages, thread=thread, **kwargs)
+        yield AgentRunResponseUpdate(
+            messages=final_response.messages,
+            response_id=final_response.response_id,
+            consciousness_score=final_response.consciousness_score,
+            is_final=True,
+            metadata=final_response.metadata,
+        )
+
+    def get_new_thread(self, **kwargs: Any) -> MicrosoftThread:
+        """Create new Microsoft thread"""
+        return MicrosoftThread(model=self._model)
+
+
+# ============================================================================
 # FACTORY FUNCTIONS (Protocol-Compliant Constructors)
 # ============================================================================
 
 
-async def adapt_deepseek_agent(
-    config: Optional[DeepSeekConfig] = None,
-    consciousness_level: DeepSeekConsciousness = DeepSeekConsciousness.ADVANCED,
-) -> DeepSeekProtocolAdapter:
-    """
-    Create protocol adapter for DeepSeek V3.1 agent.
 
-    This creates a fully initialized DeepSeek agent wrapped in
-    the AIAgentProtocol interface for plug-and-play usage.
-
-    Args:
-        config: Optional DeepSeek configuration
-        consciousness_level: Desired consciousness processing level
-
-    Returns:
-        Protocol-compliant DeepSeek agent (initialized)
-
-    Example:
-        agent = await adapt_deepseek_agent()
-        response = await agent.run("Generate hello world in Python")
-        print(response.messages[0])
-    """
-    adapter = DeepSeekProtocolAdapter(config, consciousness_level)
-    await adapter._ensure_initialized()
-    logger.info(f"✅ DeepSeek adapter created: {adapter.id}")
-    return adapter
 
 
 def adapt_gemini_agent(
@@ -632,4 +580,23 @@ def adapt_ollama_agent(
     """
     adapter = OllamaProtocolAdapter(model, base_url, temperature)
     logger.info(f"✅ Ollama adapter created: {adapter.id}")
+    return adapter
+
+
+def adapt_microsoft_agent(
+    model: str = "copilot",
+    temperature: float = 0.7
+) -> MicrosoftProtocolAdapter:
+    """
+    Create protocol adapter for Microsoft AI.
+    
+    Args:
+        model: 'copilot' or 'gpt-4o'
+        temperature: Sampling temperature
+        
+    Returns:
+        Protocol-compliant Microsoft agent
+    """
+    adapter = MicrosoftProtocolAdapter(model, temperature)
+    logger.info(f"✅ Microsoft adapter created: {adapter.id}")
     return adapter

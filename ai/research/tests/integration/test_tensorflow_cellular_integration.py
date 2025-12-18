@@ -1,7 +1,7 @@
 """
 Integration Test for TensorFlow Cellular Communication
 
-Tests the complete TensorFlow C++ ↔ Python cellular integration in the AIOS ecosystem.
+Tests the complete TensorFlow C++ <-> Python cellular integration in the AIOS ecosystem.
 """
 
 import os

@@ -1,5 +1,5 @@
 """
-AIOS ↔ A2A Message Format Adapter
+AIOS <-> A2A Message Format Adapter
 
 AINLP Extraction Metadata:
 - Extraction ID: EXT-002-A2A-Adapter

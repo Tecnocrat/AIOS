@@ -12,9 +12,9 @@ Implements your brilliant concept:
 6. VSCode Copilot stimulation through AINLP protocols
 
 Key Innovation:
-Mutation₀ ↔ Mutation₁ ↔ Mutation₂ ↔ ... ↔ Mutationₙ
-   ↓          ↓          ↓              ↓
- Node₀      Node₁      Node₂          Nodeₙ
+Mutation0 <-> Mutation1 <-> Mutation2 <-> ... <-> MutationN
+   v          v          v              v
+ Node0      Node1      Node2          NodeN
 (Neuron)   (Neuron)   (Neuron)      (Neuron)
 
 Each node:

@@ -7,7 +7,7 @@ Combines three AI agents (VSCode Chat, Ollama, Gemini) to evolve code from
 "Hello World" zero point using C++ STL knowledge foundation.
 
 Key Innovation:
-VSCode Chat (strategic) ↔ Ollama (iteration) ↔ Gemini (validation)
+VSCode Chat (strategic) <-> Ollama (iteration) <-> Gemini (validation)
          ↓                       ↓                      ↓
     Architectural           Fast Local            Cloud Validation
       Oversight            Evolution             Checkpoints
@@ -93,7 +93,8 @@ class MultiAgentEvolutionLoop:
 
         # Initialize agents
         if self.use_ollama:
-            self.ollama_agent = OllamaAgent(model="deepseek-coder:6.7b")
+            # Default to a standard model, user can configure
+            self.ollama_agent = OllamaAgent(model="gemma2:2b")
 
         if self.use_gemini:
             self.gemini_agent = GeminiAgent()
@@ -449,7 +450,7 @@ Return JSON with:
                 conversation_id,
                 ConversationRole.USER,
                 prompt,
-                metadata={"model": "deepseek-coder:6.7b", "purpose": "code_analysis"},
+                metadata={"model": "gemma2:2b", "purpose": "code_analysis"},
             )
 
         # Call Ollama (existing logic)
@@ -674,7 +675,8 @@ int main() {
 
         Flow:
         1. You (human) provide task description
-        2. AI agent(s) generate output (Ollama, Gemini, DeepSeek)
+        1. You (human) provide task description
+        2. AI agent(s) generate output (Ollama, Gemini)
         3. Output saved to evolution_lab/experiments/ (working files)
         4. Conversation saved to evolution_lab/conversations/ (working files)
         5. Metadata copied to tachyonic/archive/ (archival)
@@ -683,7 +685,7 @@ int main() {
 
         Args:
             task_description: What you want the agent to do
-            agent_type: "ollama", "gemini", or "deepseek"
+            agent_type: "ollama" or "gemini"
             use_all_agents: If True, run all available agents in parallel
 
         Returns:
@@ -725,7 +727,6 @@ Output:"""
                 agents_to_run.append("ollama")
             if self.use_gemini:
                 agents_to_run.append("gemini")
-            # DeepSeek runs through Ollama with different model
 
             # Run in parallel
             tasks = [run_agent(agent) for agent in agents_to_run]
@@ -787,17 +788,11 @@ Output:"""
             try:
                 # Gemini agent async call
                 response = await self.gemini_agent.generate_async(prompt)
+            try:
+                # Gemini agent async call
+                response = await self.gemini_agent.generate_async(prompt)
             except Exception as e:
                 response = f"[ERROR] Gemini generation failed: {e}"
-        elif agent_type == "deepseek" and self.use_ollama:
-            # DeepSeek runs through Ollama
-            loop = asyncio.get_event_loop()
-            # Temporarily switch model to DeepSeek
-            original_model = self.ollama_agent.model
-            self.ollama_agent.model = "deepseek-coder:6.7b"
-            result = await loop.run_in_executor(
-                None, self.ollama_agent.generate_code, prompt
-            )
             response = result.get("code", "[NO CODE RETURNED]")
             self.ollama_agent.model = original_model
         else:
@@ -912,3 +907,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+

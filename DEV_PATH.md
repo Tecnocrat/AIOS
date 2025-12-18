@@ -1321,7 +1321,7 @@ Tier 1: OLLAMA (Context Manager)
    ↓ Semantic analysis, refactoring opportunities
 Tier 2: GEMINI (Code Generator)  
    ↓ High-quality transformations
-Tier 3: DEEPSEEK (Quality Validator)
+Tier 3: MICROSOFT COPILOT (Quality Validator)
    ↓ Syntax, logic, style validation
    └→ Feedback loop (retry if quality insufficient)
 ```

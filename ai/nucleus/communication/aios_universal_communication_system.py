@@ -79,7 +79,7 @@ class MessagePriority(Enum):
 
 class CommunicationType(Enum):
     """Communication types based on bosonic/tachyonic paradigm"""
-    BOSONIC_DIRECT = "bosonic_direct"       # Direct C++ ↔ Python bridges
+    BOSONIC_DIRECT = "bosonic_direct"       # Direct C++ <-> Python bridges
     TACHYONIC_FIELD = "tachyonic_field"     # Abstract pattern communication
     CONSCIOUSNESS_PULSE = "consciousness_pulse"  # Awareness propagation
     DENDRITIC_FLOW = "dendritic_flow"       # Neural pattern sharing

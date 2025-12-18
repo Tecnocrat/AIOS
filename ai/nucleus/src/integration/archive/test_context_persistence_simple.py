@@ -354,10 +354,10 @@ def main():
 
         # Real-time synchronization
         print("\n Real-time Synchronization:")
-        print("   • C++ Core ↔ Python AI: Active")
-        print("   • Python AI ↔ C# UI: Synchronized")
-        print("   • C# UI ↔ VSCode Extension: Connected")
-        print("   • VSCode Extension ↔ AINLP: Operational")
+        print("   • C++ Core <-> Python AI: Active")
+        print("   • Python AI <-> C# UI: Synchronized")
+        print("   • C# UI <-> VSCode Extension: Connected")
+        print("   • VSCode Extension <-> AINLP: Operational")
         print("    Cross-component synchronization active")
 
         # Fractal holographic features
@@ -401,3 +401,4 @@ def main():
 if __name__ == "__main__":
     results = main()
     print(f"\n Final Results:\n{json.dumps(results, indent=2, default=str)}")
+

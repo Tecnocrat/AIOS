@@ -13,7 +13,7 @@ class SelfSimilarityAnalyzer:
     """
     Analyzes filename patterns for AI ingestion optimization.
 
-    The dev.run ↔ dev.fun pattern demonstrates how self-similarity
+    The dev.run <-> dev.fun pattern demonstrates how self-similarity
     can be used to create predictable context clusters.
     """
 
@@ -169,7 +169,7 @@ class SelfSimilarityAnalyzer:
 
 def test_dev_run_fun_similarity():
     """
-    Test the specific dev.run ↔ dev.fun pattern that sparked this analysis.
+    Test the specific dev.run <-> dev.fun pattern that sparked this analysis.
     """
 
     analyzer = SelfSimilarityAnalyzer()
@@ -181,7 +181,7 @@ def test_dev_run_fun_similarity():
 
     print(" AIOS Self-Similarity Pattern Analysis")
     print("=" * 50)
-    print("Files: dev.run.md ↔ dev.fun.md")
+    print("Files: dev.run.md <-> dev.fun.md")
     print(f"Similarity Score: {analysis_result['similarity_score']:.2f}")
     print(f"Shared Base: '{analysis_result['shared_base']}'")
     print(f"Differentiation: {analysis_result['differentiation_points']}")
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     print(" AIOS Self-Similarity Pattern Analysis")
     print("Testing filename similarity as AI ingestion optimization...")
 
-    # Test the current dev.run ↔ dev.fun pattern
+    # Test the current dev.run <-> dev.fun pattern
     similarity_result = test_dev_run_fun_similarity()
 
     # Propose extended patterns
@@ -260,3 +260,4 @@ if __name__ == "__main__":
 
     print("\n Analysis Complete - Self-similarity patterns show significant")
     print("   potential for AI ingestion optimization and context coherence!")
+

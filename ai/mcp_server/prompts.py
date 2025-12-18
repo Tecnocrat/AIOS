@@ -203,9 +203,9 @@ Check consciousness metrics reporting:
 
 ### 4. Integration Patterns
 Verify cross-language integration:
-- **C++ ↔ Python**: ctypes FFI with context managers?
-- **C++ ↔ C#**: P/Invoke with disposable wrappers?
-- **Python ↔ C#**: HTTP REST with graceful degradation?
+- **C++ <-> Python**: ctypes FFI with context managers?
+- **C++ <-> C#**: P/Invoke with disposable wrappers?
+- **Python <-> C#**: HTTP REST with graceful degradation?
 
 ### 5. Security Review
 Scan for vulnerabilities:
@@ -390,3 +390,4 @@ For automated scanning, use:
                 )
             ]
         )
+

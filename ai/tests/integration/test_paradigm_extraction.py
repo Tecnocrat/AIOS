@@ -81,7 +81,7 @@ if __name__ == "__main__":
         print("\n✅ Paradigm extraction successful!")
         print("Next step: Install Ollama and run full generation cycle")
         print("  1. Install: https://ollama.ai/download")
-        print("  2. Pull model: ollama pull deepseek-coder:6.7b")
+        print("  2. Pull model: ollama pull gemma2:2b")
         print("  3. Run: python test_library_generation.py")
         sys.exit(0)
     else:

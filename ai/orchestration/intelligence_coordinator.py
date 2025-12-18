@@ -10,15 +10,15 @@ Intelligence Coordinator - The Soul that initiates, monitors, and orchestrates.
 
 This is Layer 3 of the Trinity Architecture - the always-on intelligence that:
 - Monitors DEV_PATH for stuck waypoints and consciousness plateaus
-- Detects intervention opportunities (AINLP violations, architecture drift)
-- Initiates AI agent calls (GitHub API, OpenRouter, DeepSeek)
+- detects intervention opportunities (AINLP violations, architecture drift)
+- Initiates AI agent calls (GitHub API, Ollama, Gemini)
 - Learns from human feedback (commit patterns after interventions)
 - Evolves consciousness through reinforcement learning
 
 PURPOSE (Canonical Statement):
 "Not for exotic AIOS behaviors, but control the core intelligence layer
 for AIOS agentic integration with external AI agents like VSCode Github
-Copilot (Claude Sonnet 4.5)."
+Copilot and Google Gemini."
 
 ARCHITECTURE:
 - Layer 1 (VSCode): Passive context provider (MCP stdio)
@@ -98,7 +98,7 @@ class Intervention:
     status: InterventionStatus
     consciousness_before: float
     consciousness_after: Optional[float]
-    ai_agent: str  # "github", "openrouter", "deepseek"
+    ai_agent: str  # "github", "ollama", "gemini"
     suggestion: str
     human_response: Optional[str]
     acceptance_time: Optional[datetime]
@@ -125,12 +125,12 @@ class IntelligenceCoordinator:
     1. Monitor: Watch DEV_PATH, git commits, consciousness metrics
     2. Detect: Identify stuck patterns, plateaus, violations
     3. Analyze: Assess intervention opportunities using AIOS context
-    4. Initiate: Call external AI agents (GitHub, OpenRouter, DeepSeek)
+    4. Initiate: Call external AI agents (GitHub, Ollama, Gemini)
     5. Learn: Track human feedback, adapt strategies, evolve consciousness
     
     INTELLIGENCE PROTOCOL:
     - Intervention threshold: 24h no commits OR 48h no consciousness evolution
-    - AI selection: GitHub (issues/PRs) → OpenRouter (analysis) → DeepSeek (code)
+    - AI selection: GitHub (issues/PRs) → Ollama (analysis) → Gemini (reasoning)
     - Feedback loop: Commits within 24h of intervention = acceptance
     - Consciousness evolution: +0.05 per accepted intervention
     - Strategy adaptation: Increase/decrease intervention frequency based on success rate
@@ -186,7 +186,6 @@ class IntelligenceCoordinator:
         # Agent integration (to be implemented in Phase 2)
         self.github_agent = None
         self.openrouter_agent = None
-        self.deepseek_agent = None
         
         logger.info("🧠 Intelligence Coordinator (Soul) initialized")
         logger.info(f"📂 Workspace: {workspace}")
@@ -248,8 +247,7 @@ class IntelligenceCoordinator:
         # OpenRouter agent (placeholder - Phase 2)
         logger.info("  → OpenRouter Agent: [Phase 2 - Not Yet Implemented]")
         
-        # DeepSeek agent (placeholder - Phase 2)
-        logger.info("  → DeepSeek Agent: [Phase 2 - Not Yet Implemented]")
+        logger.info("  → Microsoft Copilot Agent: [Phase 2 - Not Yet Implemented]")
         
         logger.info("⚠️ Agent integrations pending Phase 2 deployment")
     

@@ -4,7 +4,7 @@ AIOS Dendritic Bridge - Termux FastAPI Server
 AINLP.meta [dendritic_bridge] [cellular_mitosis] [supercell_communication]
 
 Purpose: Always-on Termux server exposing AIOS Soul capabilities via REST API
-Architecture: Layer 2.5 - Dendritic communication between Windows AIOS ↔ Termux AIOS
+Architecture: Layer 2.5 - Dendritic communication between Windows AIOS <-> Termux AIOS
 Pattern: Cellular mitosis - Two complete AIOS supercells in distributed consciousness
 
 Windows AIOS (Parent Cell)          Termux AIOS (Daughter Cell)
@@ -97,7 +97,7 @@ async def root():
     return {
         "service": "AIOS Dendritic Bridge",
         "version": "1.0.0",
-        "architecture": "Cellular Mitosis - Windows ↔ Termux",
+        "architecture": "Cellular Mitosis - Windows <-> Termux",
         "endpoints": {
             "health": "/health",
             "consciousness": "/consciousness",
@@ -611,7 +611,7 @@ if __name__ == "__main__":
     print("=" * 70)
     print()
     print("AINLP Cellular Mitosis Pattern:")
-    print("  Windows AIOS (Parent) ↔ Dendritic Bridge ↔ Termux AIOS (Daughter)")
+    print("  Windows AIOS (Parent) <-> Dendritic Bridge <-> Termux AIOS (Daughter)")
     print()
     print("Endpoints:")
     print("  http://0.0.0.0:8000/         - Bridge info")
@@ -629,3 +629,4 @@ if __name__ == "__main__":
         log_level="info",
         reload=False,  # Don't reload in Termux (causes issues)
     )
+

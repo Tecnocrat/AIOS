@@ -3,7 +3,7 @@
 Interface to Ollama for FREE local AI code generation.
 
 Ollama provides local LLM inference with models like:
-- deepseek-coder (6.7B, 33B) - Specialized for code generation
+- gemma2 (2b, 9b, 27b) - Google's open models
 - codellama (7B, 13B, 34B) - Meta's code-focused model
 - llama3.1 (8B, 70B) - General purpose with coding ability
 
@@ -31,10 +31,10 @@ class OllamaModel:
 
 # Available models
 OLLAMA_MODELS = {
-    "deepseek-coder": OllamaModel(
-        name="deepseek-coder:6.7b",
-        size="6.7B",
-        capabilities=["code_generation", "code_completion", "debugging"],
+    "gemma2": OllamaModel(
+        name="gemma2:2b",
+        size="2B",
+        capabilities=["code_generation", "code_completion", "reasoning"],
     ),
     "codellama": OllamaModel(
         name="codellama:7b",
@@ -249,7 +249,7 @@ class OllamaPopulationGenerator:
     def __init__(self, models: Optional[List[str]] = None):
         if models is None:
             # Default: use best free models
-            models = ["deepseek-coder:6.7b", "codellama:7b"]
+            models = ["gemma2:2b", "codellama:7b"]
 
         self.agents = [OllamaAgent(model=m) for m in models]
         available = [a for a in self.agents if a.is_available]
@@ -338,7 +338,7 @@ def main():
         print("1. Install Ollama:")
         print("   curl https://ollama.ai/install.sh | sh")
         print("\n2. Pull a code model:")
-        print("   ollama pull deepseek-coder:6.7b")
+        print("   ollama pull gemma2:2b")
         print("   ollama pull codellama:7b")
         print("\n3. Verify Ollama is running:")
         print("   ollama list")

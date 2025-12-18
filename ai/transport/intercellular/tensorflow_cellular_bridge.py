@@ -1,7 +1,7 @@
 """
 TensorFlow Cellular Bridge - Python Interface
 
-High-level Python interface for the TensorFlow C++ ↔ Python cellular bridge
+High-level Python interface for the TensorFlow C++ <-> Python cellular bridge
 with performance monitoring and benchmarking utilities.
 """
 
@@ -38,7 +38,7 @@ if not BRIDGE_AVAILABLE:
 
 class TensorFlowCellularBridge:
     """
-    High-level Python interface for TensorFlow C++ ↔ Python cellular communication
+    High-level Python interface for TensorFlow C++ <-> Python cellular communication
 
     Provides seamless integration between Python AI Training Cells and
     C++ TensorFlow Performance Cells with performance monitoring.
