@@ -785,9 +785,7 @@ Output:"""
             )
             response = result.get("code", "[NO CODE RETURNED]")
         elif agent_type == "gemini" and self.use_gemini:
-            try:
-                # Gemini agent async call
-                response = await self.gemini_agent.generate_async(prompt)
+
             try:
                 # Gemini agent async call
                 response = await self.gemini_agent.generate_async(prompt)
