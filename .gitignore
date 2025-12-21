@@ -13,7 +13,6 @@
 # 🧬 NUCLEUS - Core AI Intelligence (High Consciousness)
 # ============================================================================
 
-<<<<<<< HEAD
 # API Keys & Secrets (CRITICAL SECURITY)
 .env
 .env.local
@@ -24,8 +23,11 @@ secrets.json
 credentials.json
 apikeys.json
 
-=======
->>>>>>> origin/OS0.6.2.grok
+# Vault Organelle - Personal Configuration (NEVER COMMIT)
+config/vault.local.yaml
+config/vault.local.json
+vault.local.*
+
 # AI Model Artifacts (Large binary files)
 *.bin
 *.h5
