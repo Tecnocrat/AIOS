@@ -3539,17 +3539,141 @@ from ai.src.fabric import (
 - Appendix L → Multi-Agent Orchestration Protocol
 - Appendix M → WebSocket Cytoplasmic Mesh Protocol  
 - Appendix N → VSCode Language Model API
+- Appendix P → Agentic Ephemeral Executor (below)
 - `ai/src/integrations/` → Agent implementations
 - `ai/src/intelligence/` → Consciousness systems
 - `ai/src/evolution/` → Evolution loops
 
 ---
 
+# Appendix P: Agentic Ephemeral Executor Pattern
+
+## P.1 Problem Statement
+
+AI agents using terminal commands face **escape character hell** when executing Python:
+
+```powershell
+# ❌ FAILS - Quote escaping nightmare
+python -c "print(\"Hello\")"
+python -c "data = {\"key\": \"value\"}"
+python -c "import os; print(f'{os.getcwd()}')"
+```
+
+PowerShell, CMD, and Bash all have different escape rules, causing constant failures.
+
+## P.2 Solution: Base64 Encoding Bridge
+
+The **Agentic Ephemeral Executor** pattern bypasses escaping entirely:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Agent writes multi-line Python code (no escaping)          │
+│                      ↓                                      │
+│  PowerShell encodes to Base64                               │
+│                      ↓                                      │
+│  agentic_exec.py decodes and executes                       │
+│                      ↓                                      │
+│  Clean output returned to agent                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## P.3 Implementation Files
+
+| File | Purpose |
+|------|---------|
+| `scripts/agentic_exec.py` | Python decoder/executor |
+| `scripts/aios_load_vault.ps1` | PowerShell helper function |
+
+## P.4 Usage Patterns
+
+### P.4.1 PowerShell (Recommended)
+
+```powershell
+# After sourcing vault loader, use Invoke-AgenticPython or alias 'aipy'
+. .\scripts\aios_load_vault.ps1
+
+# Simple usage
+Invoke-AgenticPython 'print("Hello World")'
+
+# Multi-line with here-string (no escaping needed!)
+Invoke-AgenticPython @'
+import os
+import json
+
+data = {"key": "value", "nested": {"a": 1}}
+print(json.dumps(data, indent=2))
+print(f"CWD: {os.getcwd()}")
+'@
+
+# Using alias
+aipy 'import sys; print(sys.version)'
+```
+
+### P.4.2 Direct Base64
+
+```powershell
+$code = 'print("Hello")'
+$b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($code))
+python scripts/agentic_exec.py $b64
+```
+
+### P.4.3 From File
+
+```powershell
+python scripts/agentic_exec.py --file path/to/script.py
+```
+
+### P.4.4 From Stdin
+
+```powershell
+echo 'print(1+1)' | python scripts/agentic_exec.py --stdin
+```
+
+## P.5 AINLP Patterns
+
+```python
+# Mark agentic execution points
+# AINLP.agentic[EXEC] - Code executed via ephemeral executor
+
+# Mark escape-sensitive code
+# AINLP.agentic[ESCAPE_SAFE] - Verified escape-free execution
+
+# Mark diagnostic scripts
+# AINLP.agentic[DIAG] - Diagnostic code for agent validation
+```
+
+## P.6 Benefits
+
+| Aspect | Before (python -c) | After (agentic_exec) |
+|--------|-------------------|---------------------|
+| **Quotes** | `\"` escaping required | Natural quotes |
+| **F-strings** | Often fails | Works perfectly |
+| **Multi-line** | Requires `;` chaining | Here-string blocks |
+| **JSON** | Escape nightmare | Native Python dicts |
+| **Debugging** | Hard to read | Clean code blocks |
+
+## P.7 Error Handling
+
+The executor captures both stdout and stderr:
+
+```
+[OUTPUT]
+Normal print output here
+
+[STDERR]
+Traceback or warnings here
+```
+
+Exit codes are preserved for shell integration.
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.14 | Updated: 2025-12-17 | Protocol: OS0.6.6                     -->
+<!-- Version: 1.15 | Updated: 2025-12-20 | Protocol: OS0.7.0                     -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.15: Agentic Ephemeral Executor (P) - escape-free Python for AI agents    -->
 <!-- v1.14: VSCode Language Model API (N) - Microsoft Copilot agentic pattern    -->
 <!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture    -->
 <!-- v1.12: Multi-Agent Orchestration Protocol (L) - hierarchical agent coord    -->
