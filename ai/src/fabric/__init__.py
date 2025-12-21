@@ -146,6 +146,28 @@ from .unified_logger import (
 )
 
 # =============================================================================
+# VAULT ORGANELLE (Personal Configuration)
+# =============================================================================
+
+from .vault_loader import (
+    get_vault,
+    get_path,
+    get_secret,
+    get_machine_info,
+    get_onedrive_path,
+)
+
+# =============================================================================
+# ENVIRONMENT HEALTH (Coherence Monitoring)
+# =============================================================================
+
+from .environment_health import (
+    check_environment_health,
+    ensure_coherence,
+    EnvironmentReport,
+)
+
+# =============================================================================
 # CONVENIENCE ALIASES
 # =============================================================================
 
@@ -260,4 +282,11 @@ __all__ = [
     "UnifiedFabricLogger",
     "get_fabric_logger",
     "fabric_log",
+    
+    # Vault Organelle
+    "get_vault",
+    "get_path",
+    "get_secret",
+    "get_machine_info",
+    "get_onedrive_path",
 ]

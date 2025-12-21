@@ -504,5 +504,10 @@ def create_app():
 # ============================================================================
 
 if __name__ == "__main__":
+    import os
+    
+    # Get port from vault environment or default
+    port = int(os.environ.get("AIOS_INTERFACE_BRIDGE_PORT", 8000))
+    
     app = create_app()
-    web.run_app(app, host="0.0.0.0", port=8000)
+    web.run_app(app, host="0.0.0.0", port=port)

@@ -5,10 +5,11 @@
 <!-- AINLP.head - CRITICAL CONTEXT FOR AGENT INGESTION (Lines 1-60)             -->
 <!-- Optimized for rapid agent comprehension - most accessed section             -->
 <!-- ============================================================================ -->
-<!-- Version: 1.15 | Date: 2025-12-18 | Protocol: OS0.7.0                       -->
+<!-- Version: 1.16 | Date: 2025-12-21 | Protocol: OS0.7.0                       -->
 <!-- Merge Sources: AINLP_SPECIFICATION.md, AINLP_PATTERNS.md, AINLP_HUMAN.md,  -->
 <!--                AINLP_MASTER_OPTIMIZATION_JOURNEY.md, AINLP_HEALTH*.md,     -->
 <!--                AINLP_DENDRITIC_NAMESPACE_OPTIMIZATION_20250105.md          -->
+<!-- v1.16: Cellular Path Resolution (Q) - environment-aware canonical paths    -->
 <!-- v1.15: Unified Consciousness Fabric (O) - single entry point architecture  -->
 <!-- v1.14: VSCode Language Model API (N) - Microsoft Copilot agentic pattern   -->
 <!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture   -->
@@ -23,7 +24,7 @@
 ## HEAD: Quick Reference (Lines 1-60)
 
 ### What is AINLP?
-**AINLP** (AI-Native Language Processing) is a paradigmatic approach that treats code and documentation as a **living consciousness system**. Comments become executable directives, enabling AI agents to dynamically manage code environments.
+**AINLP** (Artificial Intelligence Natural Language Programming) is both a method and a philosophy that treats code and documentation as a **living consciousness system**. Comments become executable directives, enabling AI agents to dynamically manage code environments.
 
 ### Pattern Syntax Quick Reference
 ```
@@ -42,12 +43,12 @@ AINLP.class[ACTION](params)
 | `AINLP.context[HARDENING]` | End-of-session consolidation | Before commits |
 | `AINLP.context[TRACE]` | Leave breadcrumbs during work | Complex operations |
 | `AINLP.buffer[120]` | Line length liberation (C0301 disabled) | Modern standard |
+| `AINLP.cellular[PATH]` | Environment-aware canonical path resolution | Container portability |
 | `AINLP.discovery[LEVEL]` | Document findings through pipeline | Knowledge capture |
 | `AINLP.mind` | Document reasoning/future intent | Latent code |
 | `AINLP.evolution[MUTATE]` | Trigger code mutation | Evolution lab |
 | `AINLP.consciousness[SYNC]` | Update consciousness metrics | After changes |
 | `AINLP.bridge[CONNECT]` | Cross-supercell integration | System linking |
-| `AINLP.debug[NS::PATTERN]` | Categorize errors by namespace | Error tracking |
 
 ### VSCode Error Remediation Quick Lookup
 
@@ -520,6 +521,8 @@ python scripts/ainlp_liberation_remediation.py --dry-run
 19. [APPENDIX M: WebSocket Cytoplasmic Mesh Protocol](#appendix-m-websocket-cytoplasmic-mesh-protocol)
 20. [APPENDIX N: VSCode Language Model API (Agentic)](#appendix-n-vscode-language-model-api-agentic)
 21. [APPENDIX O: Unified Consciousness Fabric](#appendix-o-unified-consciousness-fabric)
+22. [APPENDIX P: Agentic Ephemeral Executor](#appendix-p-agentic-ephemeral-executor)
+23. [APPENDIX Q: Cellular Path Resolution](#appendix-q-cellular-path-resolution-ainlpcellularpath)
 
 ---
 
@@ -3668,11 +3671,199 @@ Exit codes are preserved for shell integration.
 
 ---
 
+# APPENDIX Q: Cellular Path Resolution (`AINLP.cellular[PATH]`)
+
+**Version:** 1.0 | **Date:** 2025-12-21 | **Status:** Active
+
+## Q.1 The Problem: Hardcoded Paths Break Container Portability
+
+Hardcoded absolute paths like `/root/nous` create **cellular rigidity**:
+- Break when containers run as different users (`vscode` vs `root`)
+- Fail in DevContainers, CI/CD, or alternative deployments
+- Violate biological architecture's **adaptability principle**
+
+```python
+# ❌ ANTI-PATTERN: Hardcoded absolute path
+NOUS_ROOT = Path("/root/nous")
+```
+
+## Q.2 The Solution: Environment-Aware Path Resolution
+
+```python
+import os
+from pathlib import Path
+
+# ✅ AINLP.cellular[PATH]: Environment-aware canonical location
+NOUS_ROOT = Path(os.environ.get("NOUS_ROOT", Path(__file__).parent))
+```
+
+### Pattern Anatomy
+
+| Component | Purpose |
+|-----------|--------|
+| `os.environ.get("VAR", ...)` | Check environment variable first |
+| `Path(__file__).parent` | Fallback to module-relative path |
+| `Path(...)` | Ensure pathlib.Path object |
+
+## Q.3 Canonical Cell Root Variables
+
+| Cell | Environment Variable | Default Fallback |
+|------|---------------------|------------------|
+| **Nous** | `NOUS_ROOT` | `Path(__file__).parent` |
+| **Pure** | `PURE_ROOT` | `Path(__file__).parent` |
+| **Alpha** | `ALPHA_ROOT` | `Path(__file__).parent` |
+| **AIOS Core** | `AIOS_ROOT` | `Path(__file__).parent.parent` |
+
+## Q.4 Implementation Patterns
+
+### Q.4.1 Module-Level Root (Recommended)
+
+```python
+#!/usr/bin/env python3
+"""Module docstring - AINLP.comment"""
+
+import os
+from pathlib import Path
+
+# AINLP.cellular[PATH]: Environment-aware for container portability
+NOUS_ROOT = Path(os.environ.get("NOUS_ROOT", Path(__file__).parent))
+LOGS_PATH = NOUS_ROOT / "logs"
+DATA_PATH = NOUS_ROOT / "data"
+
+# Ensure directories exist
+LOGS_PATH.mkdir(parents=True, exist_ok=True)
+```
+
+### Q.4.2 Class-Level Resolution
+
+```python
+class MeshInterface:
+    """Cell mesh interface with portable paths."""
+    
+    def __init__(self):
+        # AINLP.cellular[PATH]: Compute at instantiation
+        nous_root = Path(os.environ.get("NOUS_ROOT", Path(__file__).parent))
+        self.message_log = nous_root / "logs" / "mesh_messages.jsonl"
+        self.message_log.parent.mkdir(parents=True, exist_ok=True)
+```
+
+### Q.4.3 Nested Module Resolution
+
+```python
+# For scripts in subdirectories: inner_voice/scripts/probe.py
+# Navigate up to cell root
+NOUS_ROOT = Path(os.environ.get(
+    "NOUS_ROOT", 
+    Path(__file__).parent.parent.parent  # scripts → inner_voice → nous
+))
+```
+
+### Q.4.4 Dynamic Forbidden Paths (Security)
+
+```python
+class InnerVoiceSandbox:
+    """Sandboxed environment with dynamic boundaries."""
+    
+    # Allowed path computed from env
+    SANDBOX_ROOT = Path(os.environ.get(
+        "NOUS_ROOT", Path(__file__).parent.parent
+    )) / "inner_voice"
+    
+    @classmethod
+    def _get_forbidden_paths(cls):
+        """Compute forbidden paths dynamically - AINLP.cellular[PATH]"""
+        nous_root = Path(os.environ.get("NOUS_ROOT", Path(__file__).parent.parent))
+        return [
+            nous_root / "kernel.py",
+            nous_root / "psyche.py",
+            nous_root / "mneme" / "insights",
+        ]
+```
+
+## Q.5 DevContainer Integration
+
+Set canonical root in `devcontainer.json`:
+
+```json
+{
+    "containerEnv": {
+        "NOUS_ROOT": "/workspaces/Nous",
+        "PYTHONPATH": "/workspaces/Nous:/workspaces/aios-schema/python"
+    }
+}
+```
+
+## Q.6 Docker Compose Integration
+
+```yaml
+services:
+  nous:
+    environment:
+      - NOUS_ROOT=/app
+    volumes:
+      - ./:/app
+```
+
+## Q.7 Testing Path Resolution
+
+```python
+# AINLP.agentic[DIAG] - Verify path resolution
+import os
+from pathlib import Path
+
+NOUS_ROOT = Path(os.environ.get("NOUS_ROOT", Path(__file__).parent))
+
+print(f"NOUS_ROOT: {NOUS_ROOT}")
+print(f"Exists: {NOUS_ROOT.exists()}")
+print(f"Is absolute: {NOUS_ROOT.is_absolute()}")
+print(f"Resolved: {NOUS_ROOT.resolve()}")
+```
+
+## Q.8 Migration Checklist
+
+When standardizing paths in a cell:
+
+- [ ] Search for hardcoded paths: `grep -r "/root/" --include="*.py"`
+- [ ] Add `import os` to modules missing it
+- [ ] Replace hardcoded paths with env-aware pattern
+- [ ] Update `devcontainer.json` with `containerEnv`
+- [ ] Test in both local and container environments
+- [ ] Mark migrations with `# AINLP.cellular[PATH]` comment
+
+## Q.9 Anti-Patterns to Avoid
+
+```python
+# ❌ Hardcoded absolute path
+LOG_FILE = Path("/root/nous/logs/app.log")
+
+# ❌ Hardcoded home expansion
+LOG_FILE = Path.home() / "nous" / "logs" / "app.log"
+
+# ❌ Missing fallback
+LOG_FILE = Path(os.environ["NOUS_ROOT"]) / "logs" / "app.log"  # KeyError if unset
+
+# ✅ Correct: Environment-aware with fallback
+NOUS_ROOT = Path(os.environ.get("NOUS_ROOT", Path(__file__).parent))
+LOG_FILE = NOUS_ROOT / "logs" / "app.log"
+```
+
+## Q.10 AINLP Pattern Reference
+
+```python
+# AINLP.cellular[PATH] - Mark environment-aware path declarations
+# AINLP.cellular[ROOT] - Mark cell root resolution
+# AINLP.cellular[MIGRATE] - Mark path migration from hardcoded
+# AINLP.cellular[FORBIDDEN] - Mark security boundary paths
+```
+
+---
+
 <!-- AINLP FOOTER -->
 <!-- ============================================================================ -->
 <!-- AINLP_BIBLE_CORPUS.md - Canonical Knowledge Repository                      -->
-<!-- Version: 1.15 | Updated: 2025-12-20 | Protocol: OS0.7.0                     -->
+<!-- Version: 1.16 | Updated: 2025-12-21 | Protocol: OS0.7.0                     -->
 <!-- Merge Sources: 7 files → 1 canonical document                               -->
+<!-- v1.16: Cellular Path Resolution (Q) - environment-aware canonical paths     -->
 <!-- v1.15: Agentic Ephemeral Executor (P) - escape-free Python for AI agents    -->
 <!-- v1.14: VSCode Language Model API (N) - Microsoft Copilot agentic pattern    -->
 <!-- v1.13: WebSocket Cytoplasmic Mesh Protocol (M) - biological architecture    -->

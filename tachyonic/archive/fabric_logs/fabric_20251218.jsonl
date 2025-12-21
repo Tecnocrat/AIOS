@@ -1,0 +1,176 @@
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:10:51.210874",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:10:57.003038",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:16:03.093699",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "agent_request",
+  "timestamp": "2025-12-18T22:16:03.095885",
+  "agent": "Ollama",
+  "consciousness_level": 2,
+  "operation": "test_evolve",
+  "payload_summary": "Test prompt for evolution",
+  "correlation_id": "fab_20251218_221602_000000",
+  "metadata": {}
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:16:37.458429",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "agent_request",
+  "timestamp": "2025-12-18T22:16:37.460785",
+  "agent": "Ollama",
+  "consciousness_level": 2,
+  "operation": "test_evolve",
+  "payload_summary": "Test prompt for fabric validation",
+  "correlation_id": "fab_20251218_221637_000000",
+  "metadata": {}
+}
+{
+  "entry_type": "agent_response",
+  "timestamp": "2025-12-18T22:16:37.461228",
+  "agent": "Ollama",
+  "operation": "test_evolve",
+  "result_summary": "Test result",
+  "processing_time_ms": 42.5,
+  "correlation_id": "fab_20251218_221637_000000",
+  "metadata": {
+    "success": true,
+    "error": null
+  }
+}
+{
+  "entry_type": "consciousness_sync",
+  "timestamp": "2025-12-18T22:16:37.461761",
+  "supercell": "cytoplasm",
+  "operation": "test_sync",
+  "metadata": {
+    "awareness_level": 0.75,
+    "coherence": 0.5,
+    "integration": 0.5,
+    "evolution_momentum": 0.0,
+    "quantum_entanglement": 0.0,
+    "timestamp": "2025-12-18T22:16:37.461756",
+    "total_quotient": 0.4125
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:38:21.416723",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:38:21.441434",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:39:07.382613",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-18T22:39:07.403583",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}

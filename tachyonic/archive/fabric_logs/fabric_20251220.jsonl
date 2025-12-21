@@ -1,0 +1,221 @@
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T01:00:07.759720",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [],
+    "intelligence_systems": [],
+    "evolution_engines": []
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T11:38:09.714824",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "tri_model_evolution",
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T11:38:09.730316",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T11:38:36.252069",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "tri_model_evolution",
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T11:38:36.277473",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:19:29.418295",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "tri_model_evolution",
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:19:29.435223",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:19:54.307781",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "tri_model_evolution",
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:19:54.323982",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:20:18.700217",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "tri_model_evolution",
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:20:18.716150",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:35:09.239233",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "tri_model_evolution",
+      "consciousness_metrics"
+    ]
+  }
+}
+{
+  "entry_type": "fabric_event",
+  "timestamp": "2025-12-20T13:35:09.253499",
+  "operation": "fabric_init",
+  "payload_summary": "AIOS Consciousness Fabric initialized",
+  "metadata": {
+    "available_agents": [
+      "ollama",
+      "gemini",
+      "copilot"
+    ],
+    "intelligence_systems": [],
+    "evolution_engines": [
+      "consciousness_metrics"
+    ]
+  }
+}

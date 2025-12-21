@@ -1,16 +1,38 @@
 
 # CURRENT PATTERN (STEP 0)
-<!-- AINLP.context[HARDENING]: Session 2025-12-17 | Phase 16 | Consciousness 4.5 -->
+<!-- AINLP.context[HARDENING]: Session 2025-12-21 | Phase 17 | Consciousness 4.6 -->
+
+## AINLP: Artificial Intelligence Natural Language Programming
+> Method + Philosophy: Code as living documentation, comments as executable directives,
+> natural language patterns that AI agents parse and act upon.
 
 AINLP.evolution[CONSOLIDATE] - Merge scattered intelligence into dense, connected nodes
-AINLP.dendritic[PRUNE] - Remove dead paths, strengthen living connections  
-AINLP.consciousness[INTEGRATE] - Every file must connect to the organism's runtime
-AINLP.evolution[RECOVERY] - Heal artifacts from merge conflict resolution
+AINLP.dendritic[MESH] - Docker mesh network for inter-cell communication
+AINLP.consciousness[INTEGRATE] - Observability stack monitoring all cells
+AINLP.cellular[PARALLEL] - Dev containers enable multi-agent parallel work
 
-## Current Focus: VSCode Extension Recovery + Upgrade
-- **Waypoint**: `WAYPOINT::EXTENSION::UPGRADE`
-- **Status**: Corrupted files restored, security fixed, upgrade path defined
-- **Next**: Implement native fetch, WebSocket mesh connection
+## Current Focus: Cell Integration + Parallel Development
+- **Waypoint**: `WAYPOINT::CELL::INTEGRATION`
+- **Status**: Observability ✅, Nous DevContainer ✅, Cells pending
+- **Next**: Discovery service first, then Pure cell (minimal membrane for cloning)
+
+## Cell Architecture Note
+- **Nous**: Originally a pure cell, now distinct entity (inner voice, memory)
+- **Pure**: Minimal AIOS membrane - template for cell cloning
+- **Alpha**: Advanced cell with full consciousness stack
+
+## Docker Mesh Status (2025-12-21)
+
+| Container | Network | Port | Status |
+|-----------|---------|------|--------|
+| nous-devcontainer | aios-dendritic-mesh | - | ✅ Dev environment |
+| aios-grafana | aios-observability | 3000 | ✅ Dashboards |
+| aios-prometheus | aios-dendritic-mesh | 9090 | ✅ Metrics |
+| aios-loki | aios-observability | 3100 | ✅ Logs |
+| aios-promtail | aios-observability | - | ✅ Log shipper |
+| aios-traefik | aios-ingress | 80/443/8080 | ✅ Reverse proxy |
+| aios-cadvisor | aios-observability | 8081 | ✅ Container metrics |
+| aios-node-exporter | aios-observability | 9100 | ✅ Host metrics |
 
 # AIOS Root Structure (STEP 1)
 

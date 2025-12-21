@@ -1,0 +1,67 @@
+# ============================================================================
+# AIOS VAULT ORGANELLE - Personal Configuration Template
+# ============================================================================
+# AINLP Pattern: biological-architecture.vault-organelle
+# Purpose: Store machine-specific paths and secrets outside version control
+# 
+# USAGE:
+#   1. Copy this file to vault.local.yaml (gitignored)
+#   2. Fill in your personal paths
+#   3. Run: aios_load_vault.ps1 OR source the env vars manually
+#
+# SECURITY:
+#   - vault.local.yaml is GITIGNORED - never committed
+#   - This template IS committed for documentation
+#   - Environment variables are injected at runtime
+# ============================================================================
+
+# =============================================================================
+# PERSONAL PATHS (Machine-Specific)
+# =============================================================================
+
+paths:
+  # OneDrive sync folder for cloud-backed AIOS data
+  onedrive_aios: "C:/Users/YOUR_USERNAME/OneDrive/AI/AIOS"
+  
+  # Local backup location (optional)
+  local_backup: "D:/Backups/AIOS"
+  
+  # External training data (optional)
+  training_data: "E:/AI/training_data"
+
+# =============================================================================
+# API KEYS (Secrets - NEVER COMMIT ACTUAL VALUES)
+# =============================================================================
+
+secrets:
+  # AI Provider Keys
+  gemini_api_key: "your-gemini-key-here"
+  openrouter_api_key: "your-openrouter-key-here"
+  deepseek_api_key: "your-deepseek-key-here"
+  
+  # Cloud Services
+  gcp_project_id: "your-gcp-project-id"
+  azure_subscription: "your-azure-subscription-id"
+
+# =============================================================================
+# ENVIRONMENT OVERRIDES
+# =============================================================================
+
+environment:
+  # Override default ports
+  cytoplasm_port: 9002
+  interface_bridge_port: 8000
+  
+  # Override default hosts
+  ollama_host: "http://localhost:11434"
+
+# =============================================================================
+# MACHINE IDENTITY
+# =============================================================================
+
+machine:
+  # Friendly name for this machine in logs
+  name: "windows-dev"
+  
+  # Role in AIOS mesh
+  role: "development"  # development | production | termux | server

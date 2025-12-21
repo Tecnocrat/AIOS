@@ -76,9 +76,10 @@ class OllamaIntelligenceAgent(IntelligenceAgent):
     - Async/sync operation modes
     - Population generation for evolution
     - Response caching
-    """
     
-    DEFAULT_BASE_URL = "http://localhost:11434"
+    Environment:
+    - AIOS_OLLAMA_HOST: Override default URL (from vault.local.yaml)
+    """
     
     # Model priorities for auto-selection
     MODEL_PRIORITY = [
@@ -89,21 +90,27 @@ class OllamaIntelligenceAgent(IntelligenceAgent):
         "deepseek-coder:6.7b",  # Code generation
     ]
     
+    @staticmethod
+    def _get_default_url() -> str:
+        """Get Ollama host from environment or vault."""
+        import os
+        return os.environ.get("AIOS_OLLAMA_HOST", "http://localhost:11434")
+    
     def __init__(
         self,
         model: Optional[str] = None,
-        base_url: str = DEFAULT_BASE_URL,
+        base_url: Optional[str] = None,
         default_temperature: float = 0.7,
     ):
         super().__init__(AgentRole.LOCAL_ITERATION)
         
-        self.base_url = base_url
+        self.base_url = base_url or self._get_default_url()
         self.default_temperature = default_temperature
         self._model = model
         self._available_models: List[str] = []
         self._session: Optional[aiohttp.ClientSession] = None
         
-        logger.info(f"🦙 Ollama agent created (target: {base_url})")
+        logger.info(f"🦙 Ollama agent created (target: {self.base_url})")
     
     @property
     def model_name(self) -> str:
@@ -441,7 +448,7 @@ class OllamaIntelligenceAgent(IntelligenceAgent):
 
 async def create_ollama_agent(
     model: Optional[str] = None,
-    base_url: str = OllamaIntelligenceAgent.DEFAULT_BASE_URL,
+    base_url: Optional[str] = None,
 ) -> OllamaIntelligenceAgent:
     """Create and initialize an Ollama agent."""
     agent = OllamaIntelligenceAgent(model=model, base_url=base_url)

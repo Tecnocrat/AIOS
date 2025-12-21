@@ -604,7 +604,11 @@ async def startup_event():
 # ============================================================================
 
 if __name__ == "__main__":
+    import os
     import uvicorn
+
+    # Get port from vault environment or default
+    port = int(os.environ.get("AIOS_INTERFACE_BRIDGE_PORT", 8000))
 
     print("=" * 70)
     print("🧬 AIOS DENDRITIC BRIDGE - Starting...")
@@ -613,11 +617,14 @@ if __name__ == "__main__":
     print("AINLP Cellular Mitosis Pattern:")
     print("  Windows AIOS (Parent) ↔ Dendritic Bridge ↔ Termux AIOS (Daughter)")
     print()
+    print("Environment:")
+    print(f"  AIOS_INTERFACE_BRIDGE_PORT = {port}")
+    print()
     print("Endpoints:")
-    print("  http://0.0.0.0:8000/         - Bridge info")
-    print("  http://0.0.0.0:8000/health   - Consciousness health")
-    print("  http://0.0.0.0:8000/soul/*   - Soul control")
-    print("  http://0.0.0.0:8000/docs     - Interactive API docs")
+    print(f"  http://0.0.0.0:{port}/         - Bridge info")
+    print(f"  http://0.0.0.0:{port}/health   - Consciousness health")
+    print(f"  http://0.0.0.0:{port}/soul/*   - Soul control")
+    print(f"  http://0.0.0.0:{port}/docs     - Interactive API docs")
     print()
     print("Starting server...")
     print("=" * 70)
@@ -625,7 +632,7 @@ if __name__ == "__main__":
     uvicorn.run(
         "aios_dendritic_bridge:app",
         host="0.0.0.0",
-        port=8000,
+        port=port,
         log_level="info",
         reload=False,  # Don't reload in Termux (causes issues)
     )
