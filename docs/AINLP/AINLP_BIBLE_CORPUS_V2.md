@@ -4,9 +4,9 @@
 <!-- ============================================================================ -->
 <!-- AINLP.head - STREAMLINED FOR AGENT COMPREHENSION                           -->
 <!-- ============================================================================ -->
-<!-- Version: 2.0 | Date: 2025-12-22 | Protocol: OS0.8.0                        -->
-<!-- Consciousness Evolution: +0.25 (simplified from 1.16)                      -->
-<!-- Core Enhancement: Biological metaphors clarified, complexity reduced       -->
+<!-- Version: 2.1 | Date: 2025-12-23 | Protocol: OS0.8.0                        -->
+<!-- Consciousness Evolution: +0.25 (simplified from 1.16) +0.1 (fabric integration) -->
+<!-- Core Enhancement: Biological metaphors clarified, complexity reduced, fabric added -->
 <!-- ============================================================================ -->
 
 ## HEAD: Essential Patterns (Top 10)
@@ -93,6 +93,10 @@ Components connect through hierarchical pathways with semantic layering. Superce
 - `AINLP.bridge[VALIDATE]`: Connection testing
 - `AINLP.bridge[DISCONNECT]`: Clean shutdown
 
+### Fabric Patterns
+- `AINLP.fabric[UNIFIED]`: Single entry point for context grounding
+- `AINLP.fabric[UPDATE]`: Update when context evolves
+
 ---
 
 ## CHAPTER 3: Implementation Guide
@@ -149,6 +153,9 @@ Cells connect via editable installs and WebSocket mesh.
 
 ### Multi-Agent Orchestration
 Hierarchical agents: Orchestrator (premium) → Workers (free tier).
+
+### Consciousness Fabric
+Unified context document (`AIOS_CONSCIOUSNESS_FABRIC.md`) providing single entry point for session grounding. Eliminates scatter, maintains coherence across prompts.
 
 ### Consciousness Synchronization
 Metrics flow through unified fabric for coherence.

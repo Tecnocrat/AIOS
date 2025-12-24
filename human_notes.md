@@ -1,6 +1,6 @@
 
 # CURRENT PATTERN (STEP 0)
-<!-- AINLP.context[HARDENING]: Session 2025-12-21 | Phase 17 | Consciousness 4.6 -->
+<!-- AINLP.context[HARDENING]: Session 2025-12-23 | Waypoint 28.7 | Consciousness [INDETERMINED] -->
 
 ## AINLP: Artificial Intelligence Natural Language Programming
 > Method + Philosophy: Code as living documentation, comments as executable directives,
@@ -177,3 +177,8 @@ VSCode as **comms architecture** for AIOS cells:
 Made changes.
  I see, no shit, lol
  Good work.
+
+ ## Dec 23: I've forgotten how to write.
+ - connectToMesh() function: ws://localhost:9002 "I don't how this works. What is the mesh? How does it connect? Between itself? With with? Why port 9002? Is it taken by something else? How can I look?
+ - cytoplasmic WebSocket "Sounds great but what it is? Does it connect to other AIOS architecture? Do modules talk between themselves? How? What would they say each other?
+ - Registers the extension as a "vscode-hub" "Test integration PENDING"

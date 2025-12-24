@@ -335,6 +335,7 @@
     "devDependencies": {
         "@types/node": "20.x",
         "@types/vscode": "^1.95.0",
+        "@types/ws": "^8.18.1",
         "@typescript-eslint/eslint-plugin": "^7.14.1",
         "@typescript-eslint/parser": "^7.11.0",
         "@vscode/test-cli": "^0.0.9",
@@ -344,7 +345,6 @@
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "node-fetch": "^3.3.2",
         "ws": "^8.18.0"
     },
     "repository": {

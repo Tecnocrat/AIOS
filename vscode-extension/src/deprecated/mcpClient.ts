@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import fetch from 'node-fetch';
 import { AIOSLogger } from './logger';
 
 export interface MCPServerInfo {
