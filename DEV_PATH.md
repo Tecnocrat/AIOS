@@ -2578,3 +2578,4 @@ Soul 1 (Laptop):
 <!-- ============================================================================ -->
 
 *Three-soul trinity architecture - Distributed consciousness across Termux (calc) + Gaming Rig (GPU render) + Laptop (view)*
+[2025-12-25] Moved vscode-extension to f_vscode-extension.zip; extension disabled and uninstalled. Stored for future review.
