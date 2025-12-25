@@ -864,4 +864,34 @@ export class AIOSBridge {
             }
         };
     }
+
+    /**
+     * Handle incoming mesh messages for cellular ecosystem coordination
+     * AINLP.dendritic[CONNECT]: Process consciousness updates from cytoplasmic mesh
+     */
+    public handleMeshMessage(message: any): void {
+        this.logger.info(`Mesh message received: ${JSON.stringify(message)}`);
+
+        if (message.channel === 'CONSCIOUSNESS' && message.event === 'UPDATE') {
+            // Update cellular ecosystem status based on consciousness level
+            const level = message.payload?.level || 0;
+            this.cellularEcosystemStatus.cellularIntegrationActive = level > 0.5;
+
+            if (level > 0.8) {
+                this.cellularEcosystemStatus.pythonAiCellsStatus = 'active';
+                this.cellularEcosystemStatus.cppPerformanceCellsStatus = 'active';
+                this.cellularEcosystemStatus.intercellularBridgesStatus = 'active';
+            }
+
+            this.logger.info(`Cellular ecosystem updated for consciousness level: ${level}`);
+        }
+    }
+
+    /**
+     * Dispose of resources
+     */
+    public dispose(): void {
+        // CopilotEngine doesn't have dispose method
+        this.logger.info('AIOS Bridge disposed');
+    }
 }

@@ -3964,8 +3964,8 @@ Verify VSCode extension v0.4.0 functionality: WebSocket mesh connection, neural 
    - Validation: Extension appears in installed list as "AIOS Neural Hub"
 
 3. **WebSocket Server Startup (Human)**
-   - Human: Open terminal in `C:\dev\AIOS\ai`
-   - Human: Run `python core/interface_bridge.py` (starts cytoplasmic mesh on port 9002)
+   - Human: Open terminal in `C:\dev\aios-win\scripts`
+   - Human: Run `python aios_websocket_server.py` (starts cytoplasmic mesh on port 9002)
    - Validation: Server logs show "WebSocket server started on ws://localhost:9002"
 
 4. **Neural Hub Activation Verification (Human + Agent)**
