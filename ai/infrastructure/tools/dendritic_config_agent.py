@@ -559,7 +559,12 @@ def main():
         if hasattr(sys.stderr, "reconfigure"):
             sys.stderr.reconfigure(encoding="utf-8")
 
-    workspace_root = Path(r"C:\AIOS")
+    # Determine workspace root dynamically: prefer AIOS_WORKSPACE env, else CWD
+    workspace_root = (
+        Path(os.environ.get("AIOS_WORKSPACE"))
+        if os.environ.get("AIOS_WORKSPACE")
+        else Path.cwd()
+    )
     agent = DendriticConfigAgent(workspace_root)
 
     # If --validate-multiagent flag, run validation and output JSON
