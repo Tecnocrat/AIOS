@@ -1,0 +1,57 @@
+name: Validate Config Registry
+
+on:
+  pull_request:
+    paths:
+      - 'tachyonic/consciousness/**'
+
+jobs:
+  validate:
+    name: Validate registry schema
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install validation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema json5
+
+      - name: Validate config_registry.json against schema
+        run: |
+          python - << 'PY'
+          import json, json5, sys, pathlib
+          from jsonschema import validate, ValidationError
+
+          repo_root = pathlib.Path('.')
+          registry_path = repo_root / 'tachyonic' / 'consciousness' / 'config_registry.json'
+          schema_path = repo_root / 'tachyonic' / 'consciousness' / 'schemas' / 'config_registry.v1.json'
+
+          try:
+              registry = json5.load(open(registry_path, 'r', encoding='utf-8'))
+          except Exception as e:
+              print('Failed to load registry:', e)
+              sys.exit(1)
+
+          try:
+              schema = json.load(open(schema_path, 'r', encoding='utf-8'))
+          except Exception as e:
+              print('Failed to load schema:', e)
+              sys.exit(1)
+
+          try:
+              validate(instance=registry, schema=schema)
+              print('✅ Registry schema validation: OK')
+          except ValidationError as e:
+              print('❌ Registry schema validation: FAILED')
+              print(e)
+              sys.exit(1)
+
+          PY
