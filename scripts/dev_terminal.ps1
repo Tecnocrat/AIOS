@@ -30,16 +30,16 @@ if (-not $target) {
     exit 1
 }
 
-# Forward parameters to the canonical script - use dot-sourcing or direct invocation
-# This ensures stdout flows through without corruption
+# Forward parameters to the canonical script using proper splatting
 try {
-    $argList = @()
-    $argList += '-Action'; $argList += $Action
-    if ($ReportCoherence) { $argList += '-ReportCoherence' }
-    if ($CoherenceFormat) { $argList += '-CoherenceFormat'; $argList += $CoherenceFormat }
-    if ($Quiet) { $argList += '-Quiet' }
+    $params = @{
+        Action = $Action
+        CoherenceFormat = $CoherenceFormat
+    }
+    if ($ReportCoherence) { $params['ReportCoherence'] = $true }
+    if ($Quiet) { $params['Quiet'] = $true }
 
-    & $target @argList
+    & $target @params
     exit $LASTEXITCODE
 } catch {
     [Console]::Error.WriteLine("Wrapper error: $_")

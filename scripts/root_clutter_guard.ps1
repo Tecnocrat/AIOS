@@ -28,7 +28,11 @@ if (-not $target) {
 }
 
 try {
-    & $target @RemainingArgs
+    if ($RemainingArgs -and $RemainingArgs.Count -gt 0) {
+        & $target @RemainingArgs
+    } else {
+        & $target
+    }
     exit $LASTEXITCODE
 } catch {
     [Console]::Error.WriteLine("Wrapper error: $_")
