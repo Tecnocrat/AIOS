@@ -715,6 +715,82 @@
 				"clear": false
 			},
 			"problemMatcher": []
+		},
+		{
+			"label": "agentic-ci-run",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"ai/tools/agentic_ci_consumer.py",
+				"--repo", "Tecnocrat/AIOS",
+				"--workspace", "${workspaceFolder}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "Run single iteration of Agentic CI self-improvement loop",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "agentic-ci-watch",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"ai/tools/agentic_ci_consumer.py",
+				"--repo", "Tecnocrat/AIOS",
+				"--workspace", "${workspaceFolder}",
+				"--watch",
+				"--poll-interval", "60"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "Watch mode: continuously poll for CI feedback and auto-improve",
+			"isBackground": true,
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "agentic-ci-dry-run",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"ai/tools/agentic_ci_consumer.py",
+				"--repo", "Tecnocrat/AIOS",
+				"--workspace", "${workspaceFolder}",
+				"--dry-run"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "test",
+			"detail": "Preview Agentic CI actions without executing them",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"problemMatcher": []
 		}
 	]
 }

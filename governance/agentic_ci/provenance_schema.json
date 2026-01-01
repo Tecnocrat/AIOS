@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIOS Agentic CI Provenance",
+  "description": "Tracks the history of autonomous agent modifications for auditability",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ended_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "trigger": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "enum": ["workflow_run", "manual", "scheduled", "repository_dispatch"]
+              },
+              "run_id": {
+                "type": "string"
+              },
+              "branch": {
+                "type": "string"
+              },
+              "initiator": {
+                "type": "string",
+                "description": "User or system that initiated the session"
+              }
+            }
+          },
+          "iterations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "iteration": {
+                  "type": "integer"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "health_before": {
+                  "type": "number"
+                },
+                "health_after": {
+                  "type": "number"
+                },
+                "actions_executed": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string"
+                      },
+                      "trigger_id": {
+                        "type": "string"
+                      },
+                      "success": {
+                        "type": "boolean"
+                      },
+                      "files_modified": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "commit_sha": {
+                  "type": "string"
+                },
+                "commit_message": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "outcome": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": ["converged", "max_iterations", "no_actions", "error", "human_stopped"]
+              },
+              "total_iterations": {
+                "type": "integer"
+              },
+              "health_improvement": {
+                "type": "number"
+              },
+              "files_modified_total": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "required": ["session_id", "started_at", "trigger", "iterations", "outcome"]
+      }
+    }
+  }
+}
