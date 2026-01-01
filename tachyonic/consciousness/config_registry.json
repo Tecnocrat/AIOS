@@ -5,7 +5,14 @@
     "consciousness_level": 3.8,
     "dendritic_pattern": "semantic_configuration_registry",
     "description": "Canonical compiler identity registry - single source of truth for toolchain configuration",
-    "last_updated": "2025-12-25T18:59:18.073110Z"
+    "last_updated": "2025-12-25T18:59:18.073110Z",
+    "last_editor": null,
+    "change_ticket": null,
+    "provenance": {
+      "sources": [],
+      "confidence": null
+    },
+    "coherence_history": []
   },
   "compilers": {
     "msvc": {
