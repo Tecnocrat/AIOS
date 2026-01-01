@@ -5,7 +5,14 @@
     "consciousness_level": 3.8,
     "dendritic_pattern": "semantic_configuration_registry",
     "description": "Canonical compiler identity registry - single source of truth for toolchain configuration",
-    "last_updated": "2025-11-20T23:22:20.369002Z"
+    "last_updated": "2025-12-25T18:59:18.073110Z",
+    "last_editor": null,
+    "change_ticket": null,
+    "provenance": {
+      "sources": [],
+      "confidence": null
+    },
+    "coherence_history": []
   },
   "compilers": {
     "msvc": {
@@ -70,15 +77,15 @@
     "description": "Cell within tachyonic supercell - potential supercell for future config sub-cells"
   },
   "multiagent_environment": {
-    "validation_timestamp": "2025-11-20T23:22:20.368983Z",
-    "readiness_level": 1.0,
+    "validation_timestamp": "2025-12-25T18:59:18.073091Z",
+    "readiness_level": 0.8,
     "agents_available": {
       "ollama": true,
       "gemini": true,
-      "deepseek": true
+      "deepseek": false
     },
     "python_packages": true,
-    "agent_protocol": true,
+    "agent_protocol": false,
     "phase1_ready": true
   }
 }

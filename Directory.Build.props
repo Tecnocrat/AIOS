@@ -1,0 +1,6 @@
+<Project>
+  <!-- Enable cross-platform restore of Windows-targeting projects -->
+  <PropertyGroup>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+</Project>

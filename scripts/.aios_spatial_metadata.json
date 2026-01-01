@@ -1,115 +1,413 @@
 {
-  "spatial_metadata_version": "1.0.0",
-  "generation_timestamp": "2025-10-21T22:28:16.999583",
-  "folder_info": {
-    "name": "scripts",
-    "absolute_path": "C:\\dev\\AIOS\\scripts",
-    "relative_path": "scripts",
-    "parent_path": "",
-    "depth_level": 1
-  },
-  "architectural_classification": {
-    "primary_area": "unknown",
-    "secondary_areas": [],
-    "path_classification": [
-      "scripts"
-    ],
-    "consciousness_level": "minimal"
-  },
+  "generation_timestamp": "2025-12-25T19:45:10.444247+00:00",
   "spatial_context": {
-    "sibling_folders": [
-      ".git",
-      ".githooks",
-      ".github",
-      ".pytest_cache",
-      ".vscode",
-      "ai",
-      "computational_layer",
-      "config",
-      "core",
-      "docs",
-      "evolution_lab",
-      "interface",
+    "child_folders": [
+      "src",
+      "tools",
+      "information_storage",
+      "transport",
+      "coordination",
+      "runtime_intelligence",
+      "mcp_server",
+      "ingested_repositories",
+      "orchestration",
+      "demos",
+      "supercells",
       "runtime",
+      "research",
+      "bridges",
+      "laboratory",
       "tachyonic",
-      "venv",
-      "vscode-extension"
-    ],
-    "child_folders": [],
-    "spatial_metrics": {
-      "total_size_bytes": 13350,
-      "file_count": 1,
-      "folder_count": 0,
-      "size_category": "small"
-    },
-    "spatial_relationships": {
-      "has_siblings": true,
-      "has_children": false,
-      "isolation_level": "connected"
-    }
-  },
-  "content_analysis": {
-    "files_by_type": {
-      ".py": [
-        {
-          "name": "verify_migration_readiness.py",
-          "size": 13350,
-          "modified": "2025-10-12T05:20:38.276042",
-          "category": "consciousness"
-        }
-      ]
-    },
-    "important_files": [],
-    "recent_files": [
-      {
-        "name": "verify_migration_readiness.py",
-        "size": 13350,
-        "modified": "2025-10-12T05:20:38.276042",
-        "category": "consciousness"
-      }
-    ],
-    "content_summary": {
-      "total_files": 1,
-      "file_types": [
-        ".py"
-      ],
-      "dominant_type": ".py"
-    }
-  },
-  "consciousness_metrics": {
-    "consciousness_indicators": {
-      "ai_files": 0,
-      "consciousness_files": 0,
-      "agentic_files": 0,
-      "intelligence_files": 0
-    },
-    "consciousness_score": 0,
-    "consciousness_level": "low"
-  },
-  "navigation_aids": {
-    "entry_points": [],
-    "config_files": [],
-    "breadcrumb_path": "scripts",
-    "quick_commands": {
-      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse",
-      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse -Filter '*.py'",
-      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\scripts' -Recurse -Filter '*.ps1'"
-    }
-  },
-  "ai_guidance": {
-    "primary_focus": "General development",
-    "recommended_actions": [],
-    "important_considerations": [],
-    "related_folders": [
-      "venv\\Scripts",
-      "vscode-extension\\node_modules\\ajv\\scripts",
-      "vscode-extension\\node_modules\\undici\\scripts",
-      "venv\\Lib\\site-packages\\pyflakes\\scripts",
-      "tachyonic\\evolutionary_assembler_v1.0_tachyonic_1757015844\\scripts_py"
+      "data",
+      "cytoplasm",
+      "tests",
+      "ingestion",
+      "core",
+      "nucleus",
+      "integrations",
+      "communication",
+      "docs",
+      "protocols",
+      "core~HEAD",
+      "interfaces",
+      "membrane",
+      "infrastructure",
+      "security",
+      "_decoherence_analysis",
+      "_spatial_metadata_summary"
     ]
   },
-  "creation_info": {
-    "overwrite_mode": false,
-    "previous_metadata_existed": false
+  "components": {
+    "src": {
+      "path": "C:\\dev\\AIOS\\ai\\src",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 4,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": true,
+      "coherence_status": "decoherent"
+    },
+    "tools": {
+      "path": "C:\\dev\\AIOS\\ai\\tools",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 18,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": true,
+      "coherence_status": "decoherent"
+    },
+    "information_storage": {
+      "path": "C:\\dev\\AIOS\\ai\\information_storage",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 2,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": true,
+      "coherence_status": "coherent"
+    },
+    "transport": {
+      "path": "C:\\dev\\AIOS\\ai\\transport",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 4,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": true,
+      "coherence_status": "coherent"
+    },
+    "coordination": {
+      "path": "C:\\dev\\AIOS\\ai\\coordination",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 1,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "runtime_intelligence": {
+      "path": "C:\\dev\\AIOS\\ai\\runtime_intelligence",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 1,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "mcp_server": {
+      "path": "C:\\dev\\AIOS\\ai\\mcp_server",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 7,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "ingested_repositories": {
+      "path": "C:\\dev\\AIOS\\ai\\ingested_repositories",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 0,
+      "has_files": false,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "orchestration": {
+      "path": "C:\\dev\\AIOS\\ai\\orchestration",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 5,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "demos": {
+      "path": "C:\\dev\\AIOS\\ai\\demos",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 1,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "supercells": {
+      "path": "C:\\dev\\AIOS\\ai\\supercells",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 6,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "runtime": {
+      "path": "C:\\dev\\AIOS\\ai\\runtime",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 0,
+      "has_files": false,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "research": {
+      "path": "C:\\dev\\AIOS\\ai\\research",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 2,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "coherent"
+    },
+    "bridges": {
+      "path": "C:\\dev\\AIOS\\ai\\bridges",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 5,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "laboratory": {
+      "path": "C:\\dev\\AIOS\\ai\\laboratory",
+      "exists": false,
+      "coherence_status": "missing_anti_pattern",
+      "dendritic_growth_opportunity": true
+    },
+    "tachyonic": {
+      "path": "C:\\dev\\AIOS\\ai\\tachyonic",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 1,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "data": {
+      "path": "C:\\dev\\AIOS\\ai\\data",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 0,
+      "has_files": false,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "cytoplasm": {
+      "path": "C:\\dev\\AIOS\\ai\\cytoplasm",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 2,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": true,
+      "coherence_status": "coherent"
+    },
+    "tests": {
+      "path": "C:\\dev\\AIOS\\ai\\tests",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 13,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": true,
+      "coherence_status": "decoherent"
+    },
+    "ingestion": {
+      "path": "C:\\dev\\AIOS\\ai\\ingestion",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 8,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "core": {
+      "path": "C:\\dev\\AIOS\\ai\\core",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 1,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "coherent"
+    },
+    "nucleus": {
+      "path": "C:\\dev\\AIOS\\ai\\nucleus",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 10,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": true,
+      "coherence_status": "coherent"
+    },
+    "integrations": {
+      "path": "C:\\dev\\AIOS\\ai\\integrations",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 1,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "communication": {
+      "path": "C:\\dev\\AIOS\\ai\\communication",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 5,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "docs": {
+      "path": "C:\\dev\\AIOS\\ai\\docs",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 0,
+      "has_files": false,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "protocols": {
+      "path": "C:\\dev\\AIOS\\ai\\protocols",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 4,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "core~HEAD": {
+      "path": "C:\\dev\\AIOS\\ai\\core~HEAD",
+      "has_init": false,
+      "is_module": false,
+      "file_count": 1,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "interfaces": {
+      "path": "C:\\dev\\AIOS\\ai\\interfaces",
+      "exists": false,
+      "coherence_status": "missing_anti_pattern",
+      "dendritic_growth_opportunity": true
+    },
+    "membrane": {
+      "path": "C:\\dev\\AIOS\\ai\\membrane",
+      "exists": false,
+      "coherence_status": "missing_anti_pattern",
+      "dendritic_growth_opportunity": true
+    },
+    "infrastructure": {
+      "path": "C:\\dev\\AIOS\\ai\\infrastructure",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 8,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "coherent"
+    },
+    "security": {
+      "path": "C:\\dev\\AIOS\\ai\\security",
+      "has_init": true,
+      "is_module": true,
+      "file_count": 10,
+      "has_files": true,
+      "exists": true,
+      "in_spatial_metadata": false,
+      "coherence_status": "decoherent"
+    },
+    "_decoherence_analysis": {
+      "coherent_components": [
+        "nucleus",
+        "information_storage",
+        "transport",
+        "research",
+        "infrastructure",
+        "cytoplasm",
+        "core"
+      ],
+      "missing_components": [
+        "interfaces",
+        "membrane",
+        "laboratory"
+      ],
+      "unexpected_components": [
+        "src",
+        "runtime_intelligence",
+        "coordination",
+        "mcp_server",
+        "ingested_repositories",
+        "orchestration",
+        "demos",
+        "supercells",
+        "runtime",
+        "bridges",
+        "tachyonic",
+        "data",
+        "tests",
+        "ingestion",
+        "integrations",
+        "communication",
+        "docs",
+        "protocols",
+        "core~HEAD",
+        "tools",
+        "security"
+      ],
+      "decoherence_level": 24,
+      "coherence_ratio": 0.7,
+      "is_coherent": false,
+      "anti_pattern_opportunities": [
+        "interfaces",
+        "membrane",
+        "laboratory",
+        "src",
+        "runtime_intelligence",
+        "coordination",
+        "mcp_server",
+        "ingested_repositories",
+        "orchestration",
+        "demos",
+        "supercells",
+        "runtime",
+        "bridges",
+        "tachyonic",
+        "data",
+        "tests",
+        "ingestion",
+        "integrations",
+        "communication",
+        "docs",
+        "protocols",
+        "core~HEAD",
+        "tools",
+        "security"
+      ]
+    },
+    "_spatial_metadata_summary": {
+      "total_metadata_children": 11,
+      "total_actual_folders": 28,
+      "architecture_alignment": 0.6363636363636364
+    }
   }
 }

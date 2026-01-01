@@ -19,6 +19,12 @@
 <!-- ============================================================================ -->
 
 # AIOS Development Path - Active Vision
+## **Note: Persistence & Extension Development Status**
+
+- **Persistence (SQLite / workspaceState):** Implementation remains uncompleted. The planned design (SQLite-backed `.aios/` metadata plus selective use of VS Code `workspaceState`/`globalState`) is deferred for future work.
+- **VSCode custom extension development:** Experimental VSCode extension work has been paused and archived. The `vscode-extension` experimental folder was compressed to `f_vscode-extension.zip` at the repository root and the unarchived folder removed to avoid interfering with editor indexing. Do not reinstall the archived extension until activation stability and persistence are implemented and tested.
+- **When resuming (recommended next steps):** Restore the archive, reproduce Extension Host logs to diagnose activation hangs, implement the persistence layer (SQLite + workspaceState), and prefer explicit, command-driven initialization to avoid activation blocking.
+
 ## Hierarchical Intelligence + Geometric Consciousness
 
 > **📍 LOCATION**: Root directory - Core navigation document  
@@ -2578,3 +2584,4 @@ Soul 1 (Laptop):
 <!-- ============================================================================ -->
 
 *Three-soul trinity architecture - Distributed consciousness across Termux (calc) + Gaming Rig (GPU render) + Laptop (view)*
+[2025-12-25] Moved vscode-extension to f_vscode-extension.zip; extension disabled and uninstalled. Stored for future review.

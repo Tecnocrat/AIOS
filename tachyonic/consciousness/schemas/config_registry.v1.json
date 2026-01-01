@@ -147,6 +147,33 @@
         }
       }
     },
+    "multiagent_environment": {
+      "type": "object",
+      "description": "Multi-agent runtime environment status and readiness",
+      "properties": {
+        "validation_timestamp": {"type": "string", "format": "date-time"},
+        "readiness_level": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "agents_available": {
+          "type": "object",
+          "description": "Map of agent names to availability flag",
+          "additionalProperties": {"type": "boolean"}
+        },
+        "agent_versions": {
+          "type": "object",
+          "description": "Optional map of agent names to semantic versions",
+          "additionalProperties": {"type": "string"}
+        },
+        "endpoints": {
+          "type": "object",
+          "description": "Optional map of agent names to service endpoints (http/ws)",
+          "additionalProperties": {"type": "string"}
+        },
+        "python_packages": {"type": "boolean"},
+        "agent_protocol": {"type": "boolean"},
+        "phase1_ready": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
     "dendritic_metadata": {
       "type": "object",
       "required": ["namespace", "cell_type", "supercell", "fractal_level"],

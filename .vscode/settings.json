@@ -19,5 +19,12 @@
         "editor.rulers": [
             120
         ]
+    },
+    "chat.mcp.serverSampling": {
+        "🧬 AIOS/.vscode/mcp.json: github": {
+            "allowedModels": [
+                "copilot/gpt-5-mini"
+            ]
+        }
     }
 }

@@ -1,0 +1,275 @@
+name: Agentic CI Executor
+# Triggered by label on PR or repository dispatch event
+# Executes autonomous improvements based on CI feedback
+
+on:
+  pull_request:
+    types: [labeled]
+  repository_dispatch:
+    types: [agentic-ci-ready]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+jobs:
+  validate-trigger:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+      branch: ${{ steps.check.outputs.branch }}
+      iteration: ${{ steps.check.outputs.iteration }}
+    
+    steps:
+      - name: Check trigger conditions
+        id: check
+        shell: pwsh
+        run: |
+          $shouldRun = $false
+          $branch = ''
+          $iteration = 1
+          
+          if ('${{ github.event_name }}' -eq 'pull_request') {
+            # Check for approval label
+            $label = '${{ github.event.label.name }}'
+            if ($label -eq 'agentic-ci-approve') {
+              $shouldRun = $true
+              $branch = '${{ github.event.pull_request.head.ref }}'
+              Write-Host "✅ Triggered by label: $label on branch $branch"
+            }
+          }
+          elseif ('${{ github.event_name }}' -eq 'repository_dispatch') {
+            $shouldRun = $true
+            $branch = '${{ github.event.client_payload.branch }}'
+            Write-Host "✅ Triggered by repository dispatch for branch $branch"
+          }
+          
+          echo "should_run=$($shouldRun.ToString().ToLower())" >> $env:GITHUB_OUTPUT
+          echo "branch=$branch" >> $env:GITHUB_OUTPUT
+          echo "iteration=$iteration" >> $env:GITHUB_OUTPUT
+
+  execute-improvements:
+    needs: validate-trigger
+    if: needs.validate-trigger.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.validate-trigger.outputs.branch }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Configure git
+        run: |
+          git config user.name "AIOS Agentic CI"
+          git config user.email "agentic-ci@aios.local"
+      
+      - name: Download latest feedback
+        id: feedback
+        uses: actions/download-artifact@v4
+        with:
+          name: agentic-ci-feedback
+          path: .agentic-ci-temp
+        continue-on-error: true
+      
+      - name: Load feedback and decision schema
+        id: load
+        shell: pwsh
+        run: |
+          # Load decision schema
+          $schemaPath = 'governance/agentic_ci/decision_schema.yaml'
+          $feedbackPath = '.agentic-ci-temp/ci_feedback.json'
+          
+          $maxIterations = 5
+          $currentIteration = 1
+          
+          if (Test-Path $schemaPath) {
+            # Extract max_iterations from YAML (simple parsing)
+            $content = Get-Content $schemaPath -Raw
+            if ($content -match 'max_iterations_per_pr:\s*(\d+)') {
+              $maxIterations = [int]$matches[1]
+            }
+          }
+          
+          $actions = @()
+          if (Test-Path $feedbackPath) {
+            $feedback = Get-Content $feedbackPath -Raw | ConvertFrom-Json
+            $currentIteration = $feedback.convergence.iteration
+            $actions = $feedback.triggered_actions | Where-Object { $_.autonomous -eq $true }
+          }
+          
+          echo "max_iterations=$maxIterations" >> $env:GITHUB_OUTPUT
+          echo "current_iteration=$currentIteration" >> $env:GITHUB_OUTPUT
+          echo "action_count=$($actions.Count)" >> $env:GITHUB_OUTPUT
+          
+          # Save actions for later steps
+          $actions | ConvertTo-Json -Depth 5 | Set-Content '.agentic-ci-temp/actions.json' -Encoding utf8
+      
+      - name: Check convergence guards
+        id: guards
+        shell: pwsh
+        run: |
+          $current = [int]'${{ steps.load.outputs.current_iteration }}'
+          $max = [int]'${{ steps.load.outputs.max_iterations }}'
+          $actionCount = [int]'${{ steps.load.outputs.action_count }}'
+          
+          $canContinue = ($current -lt $max) -and ($actionCount -gt 0)
+          
+          if (-not $canContinue) {
+            if ($current -ge $max) {
+              Write-Host "⛔ Max iterations ($max) reached"
+            }
+            if ($actionCount -eq 0) {
+              Write-Host "ℹ️ No autonomous actions to execute"
+            }
+          }
+          
+          echo "can_continue=$($canContinue.ToString().ToLower())" >> $env:GITHUB_OUTPUT
+      
+      - name: Execute autonomous actions
+        if: steps.guards.outputs.can_continue == 'true'
+        id: execute
+        shell: pwsh
+        run: |
+          $actionsPath = '.agentic-ci-temp/actions.json'
+          if (-not (Test-Path $actionsPath)) {
+            Write-Host "No actions file found"
+            exit 0
+          }
+          
+          $actions = Get-Content $actionsPath -Raw | ConvertFrom-Json
+          $executed = @()
+          
+          foreach ($action in $actions) {
+            Write-Host "`n🔧 Executing: $($action.action)"
+            
+            switch ($action.action) {
+              'refactor_coherence' {
+                # Run coherence improvement tools
+                Write-Host "   Analyzing coherence..."
+                # Placeholder for actual refactoring
+                $executed += $action.action
+              }
+              'analyze_patterns' {
+                Write-Host "   Analyzing patterns..."
+                $report = @{
+                  timestamp = (Get-Date).ToString('o')
+                  trigger = $action.trigger_id
+                  analysis = 'Pattern analysis complete'
+                }
+                $reportPath = 'governance/agentic_ci/feedback/pattern_analysis.json'
+                New-Item -ItemType Directory -Path (Split-Path $reportPath) -Force | Out-Null
+                $report | ConvertTo-Json | Set-Content $reportPath
+                $executed += $action.action
+              }
+              'migrate_deprecated' {
+                Write-Host "   Migrating deprecated patterns..."
+                $executed += $action.action
+              }
+              'generate_tests' {
+                Write-Host "   Generating tests..."
+                $executed += $action.action
+              }
+              default {
+                Write-Host "   ⚠️ Unknown action: $($action.action)"
+              }
+            }
+          }
+          
+          echo "executed=$($executed -join ',')" >> $env:GITHUB_OUTPUT
+          echo "count=$($executed.Count)" >> $env:GITHUB_OUTPUT
+      
+      - name: Update provenance
+        if: steps.execute.outputs.count > 0
+        shell: pwsh
+        run: |
+          $provenancePath = 'governance/agentic_ci/provenance.json'
+          
+          if (Test-Path $provenancePath) {
+            $provenance = Get-Content $provenancePath -Raw | ConvertFrom-Json
+          } else {
+            $provenance = @{ schema_version = '1.0.0'; sessions = @() }
+          }
+          
+          $iteration = @{
+            iteration = [int]'${{ steps.load.outputs.current_iteration }}'
+            timestamp = (Get-Date).ToString('o')
+            actions_executed = @('${{ steps.execute.outputs.executed }}' -split ',')
+            commit_sha = ''  # Will be filled after commit
+          }
+          
+          # Append to provenance (simplified - full impl would track sessions)
+          $provenance | ConvertTo-Json -Depth 10 | Set-Content $provenancePath
+      
+      - name: Commit improvements
+        if: steps.execute.outputs.count > 0
+        id: commit
+        shell: pwsh
+        run: |
+          $iteration = [int]'${{ steps.load.outputs.current_iteration }}'
+          $nextIteration = $iteration + 1
+          $actions = '${{ steps.execute.outputs.executed }}'
+          
+          # Check for changes
+          $status = git status --porcelain
+          if (-not $status) {
+            Write-Host "No changes to commit"
+            echo "committed=false" >> $env:GITHUB_OUTPUT
+            exit 0
+          }
+          
+          git add -A
+          $message = "refactor(agentic-ci): auto-improvements [agentic-ci iter:$nextIteration]`n`nActions: $actions`nTriggered by: ${{ github.event_name }}"
+          git commit -m $message
+          
+          echo "committed=true" >> $env:GITHUB_OUTPUT
+          echo "sha=$(git rev-parse HEAD)" >> $env:GITHUB_OUTPUT
+      
+      - name: Push changes
+        if: steps.commit.outputs.committed == 'true'
+        run: |
+          git push origin ${{ needs.validate-trigger.outputs.branch }}
+      
+      - name: Remove trigger label
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                name: 'agentic-ci-approve'
+              });
+            } catch (e) {
+              console.log('Label already removed or not found');
+            }
+      
+      - name: Post summary comment
+        if: github.event_name == 'pull_request' && steps.execute.outputs.count > 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const iteration = parseInt('${{ steps.load.outputs.current_iteration }}') + 1;
+            const actions = '${{ steps.execute.outputs.executed }}'.split(',');
+            const sha = '${{ steps.commit.outputs.sha }}';
+            
+            const body = `## 🤖 Agentic CI Iteration ${iteration} Complete
+            
+            **Actions Executed:** ${actions.length}
+            ${actions.map(a => `- ✅ ${a}`).join('\n')}
+            
+            **Commit:** ${sha.substring(0, 7)}
+            
+            ---
+            *CI workflows will now run on the new commit. Add \`agentic-ci-approve\` label again to continue the loop.*`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: body
+            });

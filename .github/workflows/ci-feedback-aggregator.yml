@@ -1,0 +1,312 @@
+name: CI Feedback Aggregator
+# Agentic CI Loop - Aggregates all workflow outputs into unified feedback artifact
+
+on:
+  workflow_run:
+    workflows:
+      - "Coherence Smoke"
+      - "governance-telemetry"
+      - "file-criticality"
+      - "Root Clutter Guard"
+    types:
+      - completed
+    branches:
+      - '**'
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: write
+
+jobs:
+  aggregate-feedback:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion != 'cancelled'
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      
+      - name: Download artifacts from triggering workflow
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ci-artifacts
+        continue-on-error: true
+      
+      - name: Load decision schema
+        id: schema
+        shell: pwsh
+        run: |
+          $schemaPath = 'governance/agentic_ci/decision_schema.yaml'
+          if (Test-Path $schemaPath) {
+            Write-Host "Decision schema found"
+            echo "schema_exists=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "::warning::Decision schema not found at $schemaPath"
+            echo "schema_exists=false" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Aggregate CI feedback
+        id: aggregate
+        shell: pwsh
+        run: |
+          $feedback = [ordered]@{
+            meta = [ordered]@{
+              run_id = "${{ github.event.workflow_run.id }}"
+              triggering_workflow = "${{ github.event.workflow_run.name }}"
+              conclusion = "${{ github.event.workflow_run.conclusion }}"
+              branch = "${{ github.event.workflow_run.head_branch }}"
+              commit_sha = "${{ github.event.workflow_run.head_sha }}"
+              timestamp = (Get-Date).ToString('o')
+              aggregator_version = "1.0.0"
+            }
+            workflow_results = [ordered]@{}
+            triggered_actions = @()
+            convergence = [ordered]@{
+              iteration = 1
+              max_iterations = 5
+              should_continue = $false
+            }
+          }
+          
+          # Check for iteration marker in commit message
+          $commitMsg = git log -1 --pretty=%B 2>$null
+          if ($commitMsg -match '\[agentic-ci iter:(\d+)\]') {
+            $feedback.convergence.iteration = [int]$matches[1] + 1
+          }
+          
+          # Collect available artifacts
+          $artifactDir = 'ci-artifacts'
+          $artifacts = @(
+            @{ name = 'coherence_metrics'; file = 'coherence_metrics.json' }
+            @{ name = 'governance_scan'; file = 'governance_scan.json' }
+            @{ name = 'governance_risks'; file = 'governance_risks.json' }
+            @{ name = 'protocol_validation'; file = 'protocol_validation.json' }
+            @{ name = 'file_criticality'; file = 'file_criticality_index.jsonl' }
+          )
+          
+          foreach ($art in $artifacts) {
+            $paths = Get-ChildItem -Path $artifactDir -Recurse -Filter $art.file -ErrorAction SilentlyContinue
+            if ($paths) {
+              try {
+                $content = Get-Content $paths[0].FullName -Raw
+                if ($art.file -match '\.jsonl$') {
+                  # Parse JSONL
+                  $lines = $content -split "`n" | Where-Object { $_.Trim() }
+                  $feedback.workflow_results[$art.name] = @($lines | ForEach-Object { $_ | ConvertFrom-Json })
+                } else {
+                  $feedback.workflow_results[$art.name] = $content | ConvertFrom-Json
+                }
+                Write-Host "Loaded: $($art.name)"
+              } catch {
+                Write-Host "::warning::Failed to parse $($art.file): $_"
+              }
+            }
+          }
+          
+          # Evaluate triggers from decision schema
+          $schemaPath = 'governance/agentic_ci/decision_schema.yaml'
+          if (Test-Path $schemaPath) {
+            # Simple YAML parsing for triggers (PowerShell-native)
+            $schemaContent = Get-Content $schemaPath -Raw
+            
+            # Check coherence triggers
+            $coherence = $feedback.workflow_results.coherence_metrics
+            if ($coherence) {
+              if ($coherence.LFC -and $coherence.LFC -lt 0.85) {
+                $feedback.triggered_actions += @{
+                  trigger_id = 'low_lfc'
+                  action = 'refactor_coherence'
+                  priority = 'high'
+                  autonomous = $true
+                  value = $coherence.LFC
+                }
+              }
+              if ($coherence.GPC -and $coherence.GPC -lt 0.75) {
+                $feedback.triggered_actions += @{
+                  trigger_id = 'low_gpc'
+                  action = 'analyze_patterns'
+                  priority = 'medium'
+                  autonomous = $true
+                  value = $coherence.GPC
+                }
+              }
+              if ($coherence.DeprecatedPresent -and $coherence.DeprecatedPresent.Count -gt 0) {
+                $feedback.triggered_actions += @{
+                  trigger_id = 'deprecated_files'
+                  action = 'migrate_deprecated'
+                  priority = 'high'
+                  autonomous = $true
+                  files = $coherence.DeprecatedPresent
+                }
+              }
+            }
+            
+            # Check governance triggers
+            $scan = $feedback.workflow_results.governance_scan
+            if ($scan) {
+              if ($scan.findings.secrets -and $scan.findings.secrets.Count -gt 0) {
+                $feedback.triggered_actions += @{
+                  trigger_id = 'secrets_detected'
+                  action = 'block_and_alert'
+                  priority = 'critical'
+                  autonomous = $false  # Never auto-fix secrets
+                  files = $scan.findings.secrets
+                }
+              }
+              if ($scan.findings.oversized -and $scan.findings.oversized.Count -gt 0) {
+                $feedback.triggered_actions += @{
+                  trigger_id = 'oversized_files'
+                  action = 'suggest_compression'
+                  priority = 'low'
+                  autonomous = $false
+                  files = $scan.findings.oversized
+                }
+              }
+            }
+            
+            # Check risk triggers
+            $risks = $feedback.workflow_results.governance_risks
+            if ($risks) {
+              if ($risks.needsRationale -and -not $risks.hasRationaleTag) {
+                $feedback.triggered_actions += @{
+                  trigger_id = 'large_deletion_untagged'
+                  action = 'request_rationale'
+                  priority = 'high'
+                  autonomous = $false
+                  deletion_pct = $risks.deletionPct
+                }
+              }
+            }
+          }
+          
+          # Calculate overall health score
+          $healthFactors = @()
+          if ($feedback.workflow_results.coherence_metrics) {
+            $cm = $feedback.workflow_results.coherence_metrics
+            if ($cm.LFC) { $healthFactors += $cm.LFC }
+            if ($cm.GPC) { $healthFactors += $cm.GPC }
+          }
+          if ($healthFactors.Count -gt 0) {
+            $feedback['overall_health'] = [math]::Round(($healthFactors | Measure-Object -Average).Average, 3)
+          } else {
+            $feedback['overall_health'] = $null
+          }
+          
+          # Determine if loop should continue
+          $autonomousActions = $feedback.triggered_actions | Where-Object { $_.autonomous -eq $true }
+          $feedback.convergence.should_continue = (
+            $autonomousActions.Count -gt 0 -and
+            $feedback.convergence.iteration -lt $feedback.convergence.max_iterations -and
+            "${{ github.event.workflow_run.conclusion }}" -ne 'failure'
+          )
+          
+          # Write aggregated feedback
+          $outputDir = 'governance/agentic_ci/feedback'
+          New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+          $outputPath = Join-Path $outputDir 'ci_feedback.json'
+          $feedback | ConvertTo-Json -Depth 10 | Set-Content $outputPath -Encoding utf8
+          
+          # Also write to GitHub step summary
+          $summary = @"
+          ## 🤖 Agentic CI Feedback
+          
+          | Metric | Value |
+          |--------|-------|
+          | Workflow | $($feedback.meta.triggering_workflow) |
+          | Conclusion | $($feedback.meta.conclusion) |
+          | Iteration | $($feedback.convergence.iteration) / $($feedback.convergence.max_iterations) |
+          | Overall Health | $($feedback.overall_health ?? 'N/A') |
+          | Triggered Actions | $($feedback.triggered_actions.Count) |
+          | Continue Loop | $($feedback.convergence.should_continue) |
+          
+          ### Triggered Actions
+          $(if ($feedback.triggered_actions.Count -eq 0) { '✅ No actions triggered' } else {
+            ($feedback.triggered_actions | ForEach-Object {
+              "- **$($_.trigger_id)**: $($_.action) (priority: $($_.priority), autonomous: $($_.autonomous))"
+            }) -join "`n"
+          })
+          "@
+          $summary | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+          
+          # Output for subsequent steps
+          echo "feedback_path=$outputPath" >> $env:GITHUB_OUTPUT
+          echo "should_continue=$($feedback.convergence.should_continue.ToString().ToLower())" >> $env:GITHUB_OUTPUT
+          echo "autonomous_count=$($autonomousActions.Count)" >> $env:GITHUB_OUTPUT
+      
+      - name: Upload aggregated feedback
+        uses: actions/upload-artifact@v4
+        with:
+          name: agentic-ci-feedback
+          path: governance/agentic_ci/feedback/ci_feedback.json
+          retention-days: 30
+      
+      - name: Dispatch agent event (if actions pending)
+        if: steps.aggregate.outputs.should_continue == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: agentic-ci-ready
+          client-payload: |
+            {
+              "run_id": "${{ github.event.workflow_run.id }}",
+              "branch": "${{ github.event.workflow_run.head_branch }}",
+              "commit_sha": "${{ github.event.workflow_run.head_sha }}",
+              "autonomous_actions": ${{ steps.aggregate.outputs.autonomous_count }},
+              "feedback_artifact": "agentic-ci-feedback"
+            }
+      
+      - name: Comment on PR (if applicable)
+        if: github.event.workflow_run.event == 'pull_request' && steps.aggregate.outputs.autonomous_count > 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const feedback = JSON.parse(fs.readFileSync('governance/agentic_ci/feedback/ci_feedback.json', 'utf8'));
+            
+            // Find associated PR
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${feedback.meta.branch}`,
+              state: 'open'
+            });
+            
+            if (prs.data.length === 0) return;
+            
+            const pr = prs.data[0];
+            const autonomousActions = feedback.triggered_actions.filter(a => a.autonomous);
+            const manualActions = feedback.triggered_actions.filter(a => !a.autonomous);
+            
+            let body = `## 🤖 Agentic CI Analysis (Iteration ${feedback.convergence.iteration})\n\n`;
+            body += `**Overall Health:** ${feedback.overall_health ?? 'N/A'}\n\n`;
+            
+            if (autonomousActions.length > 0) {
+              body += `### ✅ Autonomous Actions Available\n`;
+              body += `The following improvements can be applied automatically:\n\n`;
+              for (const action of autonomousActions) {
+                body += `- **${action.action}** (${action.priority} priority)\n`;
+              }
+              body += `\nTo trigger autonomous improvements, add the label \`agentic-ci-approve\` to this PR.\n\n`;
+            }
+            
+            if (manualActions.length > 0) {
+              body += `### ⚠️ Actions Requiring Review\n`;
+              for (const action of manualActions) {
+                body += `- **${action.action}**: ${action.trigger_id} (${action.priority} priority)\n`;
+              }
+            }
+            
+            if (feedback.convergence.should_continue) {
+              body += `\n---\n*Loop will continue: ${feedback.convergence.max_iterations - feedback.convergence.iteration} iterations remaining*`;
+            }
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: body
+            });

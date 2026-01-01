@@ -1,0 +1,247 @@
+{
+  "spatial_metadata_version": "1.0.0",
+  "generation_timestamp": "2025-10-21T22:28:40.071095",
+  "folder_info": {
+    "name": "architecture",
+    "absolute_path": "C:\\dev\\AIOS\\docs\\architecture",
+    "relative_path": "docs\\architecture",
+    "parent_path": "docs",
+    "depth_level": 2
+  },
+  "architectural_classification": {
+    "primary_area": "Documentation",
+    "secondary_areas": [],
+    "path_classification": [
+      "docs",
+      "architecture"
+    ],
+    "consciousness_level": "low"
+  },
+  "spatial_context": {
+    "sibling_folders": [
+      "AINLP",
+      "AIOS",
+      "Architect",
+      "archival",
+      "archive",
+      "build",
+      "changelogs",
+      "completion",
+      "consciousness",
+      "development",
+      "evolution_lab",
+      "governance",
+      "guides",
+      "integration",
+      "intelligence",
+      "languages",
+      "libraries",
+      "refactoring",
+      "reference",
+      "reports",
+      "runtime",
+      "runtime_intelligence",
+      "safety",
+      "sample_ai_generated",
+      "summary",
+      "tachyonic",
+      "tachyonic_archive",
+      "theoretical",
+      "ui",
+      "vscopilot chat"
+    ],
+    "child_folders": [
+      "agent_driven_code_evolution",
+      "consciousness",
+      "core",
+      "evolution",
+      "interfaces",
+      "populations",
+      "python_314"
+    ],
+    "spatial_metrics": {
+      "total_size_bytes": 663122,
+      "file_count": 54,
+      "folder_count": 7,
+      "size_category": "small"
+    },
+    "spatial_relationships": {
+      "has_siblings": true,
+      "has_children": true,
+      "isolation_level": "connected"
+    }
+  },
+  "content_analysis": {
+    "files_by_type": {
+      ".md": [
+        {
+          "name": "AINLP_EXCEPTION_FRAMEWORK.md",
+          "size": 10212,
+          "modified": "2025-10-05T11:08:13.890422",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_JSON_INTEGRATION_PARADIGM.md",
+          "size": 12220,
+          "modified": "2025-10-05T11:18:31.121204",
+          "category": "documentation"
+        },
+        {
+          "name": "AINLP_MAKER_PRINCIPLE.md",
+          "size": 43190,
+          "modified": "2025-10-14T23:04:38.133794",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_CONTEXT_INTELLIGENCE_REAL_ARCHITECTURE.md",
+          "size": 13887,
+          "modified": "2025-10-11T21:55:32.278152",
+          "category": "documentation"
+        },
+        {
+          "name": "AI_SESSION_CONTEXT_FILES_EXPECTED_OUTPUT.md",
+          "size": 9184,
+          "modified": "2025-10-11T22:06:37.784307",
+          "category": "documentation"
+        },
+        {
+          "name": "READY_FOR_EXECUTION.md",
+          "size": 10451,
+          "modified": "2025-10-18T08:47:22.792480",
+          "category": "documentation"
+        },
+        {
+          "name": "REVOLUTIONARY_LINKED_LIST_ARCHITECTURE.md",
+          "size": 18018,
+          "modified": "2025-10-05T22:43:36.844837",
+          "category": "documentation"
+        },
+        {
+          "name": "UNIVERSAL_AGENTIC_COMMUNICATION.md",
+          "size": 17032,
+          "modified": "2025-10-06T21:48:08.350276",
+          "category": "documentation"
+        },
+        {
+          "name": "VISUALIZER_EVOLUTION_INTEGRATION_DESIGN.md",
+          "size": 22820,
+          "modified": "2025-10-18T08:45:37.668681",
+          "category": "documentation"
+        },
+        {
+          "name": "WEEK_2_4_COMPONENTS_ARCHITECTURE.md",
+          "size": 46634,
+          "modified": "2025-10-11T12:03:52.500319",
+          "category": "documentation"
+        }
+      ]
+    },
+    "important_files": [],
+    "recent_files": [
+      {
+        "name": "READY_FOR_EXECUTION.md",
+        "size": 10451,
+        "modified": "2025-10-18T08:47:22.792480",
+        "category": "documentation"
+      },
+      {
+        "name": "VISUALIZER_EVOLUTION_INTEGRATION_DESIGN.md",
+        "size": 22820,
+        "modified": "2025-10-18T08:45:37.668681",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_MAKER_PRINCIPLE.md",
+        "size": 43190,
+        "modified": "2025-10-14T23:04:38.133794",
+        "category": "documentation"
+      },
+      {
+        "name": "AI_SESSION_CONTEXT_FILES_EXPECTED_OUTPUT.md",
+        "size": 9184,
+        "modified": "2025-10-11T22:06:37.784307",
+        "category": "documentation"
+      },
+      {
+        "name": "AI_CONTEXT_INTELLIGENCE_REAL_ARCHITECTURE.md",
+        "size": 13887,
+        "modified": "2025-10-11T21:55:32.278152",
+        "category": "documentation"
+      },
+      {
+        "name": "WEEK_2_4_COMPONENTS_ARCHITECTURE.md",
+        "size": 46634,
+        "modified": "2025-10-11T12:03:52.500319",
+        "category": "documentation"
+      },
+      {
+        "name": "UNIVERSAL_AGENTIC_COMMUNICATION.md",
+        "size": 17032,
+        "modified": "2025-10-06T21:48:08.350276",
+        "category": "documentation"
+      },
+      {
+        "name": "REVOLUTIONARY_LINKED_LIST_ARCHITECTURE.md",
+        "size": 18018,
+        "modified": "2025-10-05T22:43:36.844837",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_JSON_INTEGRATION_PARADIGM.md",
+        "size": 12220,
+        "modified": "2025-10-05T11:18:31.121204",
+        "category": "documentation"
+      },
+      {
+        "name": "AINLP_EXCEPTION_FRAMEWORK.md",
+        "size": 10212,
+        "modified": "2025-10-05T11:08:13.890422",
+        "category": "documentation"
+      }
+    ],
+    "content_summary": {
+      "total_files": 10,
+      "file_types": [
+        ".md"
+      ],
+      "dominant_type": ".md"
+    }
+  },
+  "consciousness_metrics": {
+    "consciousness_indicators": {
+      "ai_files": 16,
+      "consciousness_files": 2,
+      "agentic_files": 2,
+      "intelligence_files": 2
+    },
+    "consciousness_score": 100,
+    "consciousness_level": "high"
+  },
+  "navigation_aids": {
+    "entry_points": [],
+    "config_files": [],
+    "breadcrumb_path": "docs > architecture",
+    "quick_commands": {
+      "list_files": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture' -Recurse",
+      "find_python": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture' -Recurse -Filter '*.py'",
+      "find_scripts": "Get-ChildItem 'C:\\dev\\AIOS\\docs\\architecture' -Recurse -Filter '*.ps1'"
+    }
+  },
+  "ai_guidance": {
+    "primary_focus": "General development",
+    "recommended_actions": [],
+    "important_considerations": [],
+    "related_folders": [
+      "docs",
+      "ai\\docs",
+      "evolution_lab\\docs",
+      "runtime\\docs",
+      "tachyonic\\docs_archive",
+      "tachyonic\\architecture"
+    ]
+  },
+  "creation_info": {
+    "overwrite_mode": false,
+    "previous_metadata_existed": false
+  }
+}

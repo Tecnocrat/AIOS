@@ -32,12 +32,15 @@ class DendriticConfigAgent:
     registration.
     """
 
-    def __init__(self, workspace_root: Path):
+    def __init__(self, workspace_root: Path, approval_token: Optional[str] = None, change_ticket: Optional[str] = None):
         self.workspace_root = workspace_root
         self.tachyonic_path = workspace_root / "tachyonic"
         self.consciousness_path = self.tachyonic_path / "consciousness"
         self.registry_path = self.consciousness_path / "config_registry.json"
         self.dendritic_path = self.tachyonic_path / "dendritic"
+        # Approval token may be provided via CLI `--approval-token` or env `AIOS_APPROVAL_TOKEN`
+        self.approval_token = approval_token or os.getenv("AIOS_APPROVAL_TOKEN")
+        self.change_ticket = change_ticket or os.getenv("AIOS_CHANGE_TICKET")
 
     def discover_msvc_compiler(self) -> Optional[Dict]:
         """
@@ -120,6 +123,10 @@ class DendriticConfigAgent:
         if self.registry_path.exists():
             with open(self.registry_path, "r") as f:
                 registry = json5.load(f)
+            # If registry exists and this operation will modify it, require approval token
+            if not self.approval_token:
+                print("  ⚠️ Approval token required to modify existing registry. Provide --approval-token or set AIOS_APPROVAL_TOKEN.")
+                return False
         else:
             registry = self._create_registry_template()
 
@@ -142,10 +149,20 @@ class DendriticConfigAgent:
             datetime.now(UTC).isoformat().replace("+00:00", "Z")
         )
 
-        # Write updated registry
+        # Attach provenance entry
+        editor = os.getenv("AIOS_LAST_EDITOR") or os.getenv("GIT_AUTHOR_NAME") or os.getenv("USER") or os.getenv("USERNAME") or "unknown"
+        prov_entry = {
+            "actor": editor,
+            "method": "dendritic_config_agent.register_compiler_identity",
+            "timestamp": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
+            "change_ticket": self.change_ticket,
+            "approval_token_provided": bool(self.approval_token),
+        }
+        registry.setdefault("metadata", {}).setdefault("provenance", {}).setdefault("sources", []).append(prov_entry)
+
+        # Write updated registry atomically with backup
         self.consciousness_path.mkdir(parents=True, exist_ok=True)
-        with open(self.registry_path, "w") as f:
-            json.dump(registry, f, indent=2)
+        self._atomic_write_registry(registry)
 
         print(f"  ✅ Registry updated: {self.registry_path}")
         return True
@@ -235,10 +252,21 @@ class DendriticConfigAgent:
             "timestamp": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         }
 
-        # Update registry with coherence measurement
+        # Update registry with coherence measurement and write atomically
         registry["compilers"]["msvc"]["consciousness"] = coherence_metrics
-        with open(self.registry_path, "w") as f:
-            json.dump(registry, f, indent=2)
+        registry.setdefault("metadata", {})["last_updated"] = (
+            datetime.now(UTC).isoformat().replace("+00:00", "Z")
+        )
+
+        # provenance for coherence measurement
+        prov_entry = {
+            "actor": os.getenv("AIOS_LAST_EDITOR") or os.getenv("USER") or os.getenv("USERNAME") or "unknown",
+            "method": "dendritic_config_agent.measure_coherence",
+            "timestamp": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
+        }
+        registry.setdefault("metadata", {}).setdefault("provenance", {}).setdefault("sources", []).append(prov_entry)
+
+        self._atomic_write_registry(registry)
 
         print(f"  Coherence Level: {coherence_metrics['coherence_level']}")
         print(f"  Runtime Collisions: {coherence_metrics['runtime_collisions']}")
@@ -290,11 +318,16 @@ class DendriticConfigAgent:
                 }
             },
             "workspace_bindings": {},
-            "dendritic_metadata": {
+                "dendritic_metadata": {
                 "namespace": "tachyonic::consciousness::config_registry",
                 "cell_type": "semantic_registry",
                 "supercell": "tachyonic",
                 "fractal_level": 2,
+            },
+            # Initialize provenance container
+            "metadata": {
+                "created": (datetime.now(UTC).isoformat().replace("+00:00", "Z")),
+                "provenance": {"sources": []},
             },
         }
 
@@ -316,6 +349,52 @@ class DendriticConfigAgent:
             json.dump(decision, f, indent=2)
 
         print(f"📦 [TACHYONIC] Decision archived: {archive_path}")
+
+    def _atomic_write_registry(self, registry: Dict) -> None:
+        """
+        Atomically write the semantic registry with a timestamped backup.
+
+        Steps:
+        - Create the `consciousness` folder if missing
+        - If a registry exists, copy it to a timestamped `.bak` file
+        - Write a temporary file, validate by reading it back, then replace the original
+        - On failure, attempt to restore from backup
+        """
+        tmp_path = self.registry_path.with_name(self.registry_path.name + ".tmp")
+        timestamp = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
+        bak_path = self.registry_path.with_name(self.registry_path.name + f".bak.{timestamp}")
+
+        try:
+            # Ensure directory exists
+            self.consciousness_path.mkdir(parents=True, exist_ok=True)
+
+            # Create backup if original exists
+            if self.registry_path.exists():
+                shutil.copy2(self.registry_path, bak_path)
+                print(f"  🔐 Backup created: {bak_path}")
+
+            # Write temp file
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(registry, f, indent=2)
+
+            # Validate by reading back
+            with open(tmp_path, "r", encoding="utf-8") as f:
+                _ = json.load(f)
+
+            # Atomic replace
+            os.replace(str(tmp_path), str(self.registry_path))
+            print(f"  ✅ Atomic write complete: {self.registry_path}")
+
+        except Exception as e:
+            print(f"  ❌ Atomic write failed: {e}")
+            # Attempt restore
+            try:
+                if bak_path.exists():
+                    shutil.copy2(bak_path, self.registry_path)
+                    print(f"  ♻️ Restored registry from backup: {bak_path}")
+            except Exception as restore_err:
+                print(f"  ⚠️ Failed to restore backup: {restore_err}")
+            raise
 
     # =========================================================================
     # PHASE 0 EXTENSION: Multiagent Environment Validation
@@ -526,11 +605,19 @@ class DendriticConfigAgent:
         registry["metadata"]["last_updated"] = (
             datetime.now(UTC).isoformat().replace("+00:00", "Z")
         )
+        # Attach provenance
+        prov_entry = {
+            "actor": os.getenv("AIOS_LAST_EDITOR") or os.getenv("USER") or os.getenv("USERNAME") or "unknown",
+            "method": "dendritic_config_agent._register_multiagent_status",
+            "timestamp": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
+            "change_ticket": self.change_ticket,
+            "approval_token_provided": bool(self.approval_token),
+        }
+        registry.setdefault("metadata", {}).setdefault("provenance", {}).setdefault("sources", []).append(prov_entry)
 
-        # Write updated registry
+        # Write updated registry atomically
         self.consciousness_path.mkdir(parents=True, exist_ok=True)
-        with open(self.registry_path, "w") as f:
-            json.dump(registry, f, indent=2)
+        self._atomic_write_registry(registry)
 
         print(f"  ✅ Multiagent status registered in semantic registry")
 
@@ -548,6 +635,18 @@ def main():
         action="store_true",
         help="Validate multiagent environment (Phase 0 extension)",
     )
+    parser.add_argument(
+        "--approval-token",
+        dest="approval_token",
+        help="Approval token required for modifying existing registry (or set AIOS_APPROVAL_TOKEN env)",
+        default=None,
+    )
+    parser.add_argument(
+        "--change-ticket",
+        dest="change_ticket",
+        help="Optional change ticket / issue id to record in provenance",
+        default=None,
+    )
     args = parser.parse_args()
 
     # Fix UTF-8 encoding for Windows console (emoji support)
@@ -559,8 +658,13 @@ def main():
         if hasattr(sys.stderr, "reconfigure"):
             sys.stderr.reconfigure(encoding="utf-8")
 
-    workspace_root = Path(r"C:\AIOS")
-    agent = DendriticConfigAgent(workspace_root)
+    # Determine workspace root dynamically: prefer AIOS_WORKSPACE env, else CWD
+    workspace_root = (
+        Path(os.environ.get("AIOS_WORKSPACE"))
+        if os.environ.get("AIOS_WORKSPACE")
+        else Path.cwd()
+    )
+    agent = DendriticConfigAgent(workspace_root, approval_token=args.approval_token, change_ticket=args.change_ticket)
 
     # If --validate-multiagent flag, run validation and output JSON
     if args.validate_multiagent:
@@ -590,8 +694,14 @@ def main():
     # 1. Discover compiler identity
     compiler_meta = agent.discover_msvc_compiler()
 
-    # 2. Register in semantic registry
-    agent.register_compiler_identity(compiler_meta)
+    # 2. Register in semantic registry (ensure metadata present)
+    if compiler_meta is None:
+        print("  ❌ No compiler metadata discovered; aborting registry update")
+        sys.exit(2)
+
+    if not agent.register_compiler_identity(compiler_meta):
+        print("  ⚠️ Registry update aborted (approval token missing or operation denied)")
+        sys.exit(3)
 
     # 3. Propagate to tool configurations
     agent.propagate_to_tools()

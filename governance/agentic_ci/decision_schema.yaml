@@ -1,0 +1,288 @@
+# AIOS Agentic CI Decision Schema
+# Defines the contract between CI feedback and autonomous agent actions
+# Version: 1.0.0
+
+meta:
+  schema_version: "1.0.0"
+  created: "2026-01-01"
+  description: |
+    This schema defines what actions an AI agent can autonomously take
+    based on CI workflow outputs. It establishes safety boundaries and
+    convergence guards to prevent runaway automation.
+
+# ═══════════════════════════════════════════════════════════════════
+# CONVERGENCE GUARDS - Prevent infinite loops
+# ═══════════════════════════════════════════════════════════════════
+convergence:
+  max_iterations_per_pr: 5
+  max_iterations_per_day: 20
+  improvement_threshold_pct: 1.0  # Stop if improvement < 1%
+  cooldown_minutes: 10  # Wait between iterations
+  require_human_approval_after: 3  # Require approval after N auto-iterations
+  
+  # Commit message markers for tracking
+  markers:
+    agent_commit: "[agentic-ci]"
+    iteration_tag: "iter:"  # e.g., [agentic-ci iter:2]
+    final_iteration: "[agentic-ci-final]"
+
+# ═══════════════════════════════════════════════════════════════════
+# SAFETY BOUNDARIES - What agents CAN and CANNOT do
+# ═══════════════════════════════════════════════════════════════════
+safety:
+  # Actions that are SAFE for autonomous execution
+  autonomous_allowed:
+    - formatting_fixes
+    - import_optimization
+    - unused_code_removal
+    - docstring_additions
+    - type_hint_additions
+    - test_file_generation
+    - comment_cleanup
+    - whitespace_normalization
+    - dependency_version_patch  # Only patch versions (1.2.3 -> 1.2.4)
+    
+  # Actions that REQUIRE human approval
+  requires_approval:
+    - architecture_changes
+    - api_contract_changes
+    - security_related_changes
+    - dependency_major_updates
+    - file_deletions_bulk  # >5 files
+    - database_schema_changes
+    - configuration_changes
+    - secrets_or_credentials
+    
+  # Actions that are NEVER allowed autonomously
+  forbidden:
+    - credential_commits
+    - force_push
+    - branch_deletion
+    - release_creation
+    - production_deployment
+
+# ═══════════════════════════════════════════════════════════════════
+# TRIGGER CONDITIONS - Map CI outputs to agent actions
+# ═══════════════════════════════════════════════════════════════════
+triggers:
+  # Coherence metrics triggers
+  - id: low_lfc
+    source: coherence_metrics.json
+    condition:
+      field: LFC
+      operator: lt
+      threshold: 0.85
+    action: refactor_coherence
+    priority: high
+    description: "Language Feature Coherence below threshold"
+    
+  - id: low_gpc
+    source: coherence_metrics.json
+    condition:
+      field: GPC
+      operator: lt
+      threshold: 0.75
+    action: analyze_patterns
+    priority: medium
+    description: "Global Pattern Coherence needs attention"
+    
+  - id: deprecated_files
+    source: coherence_metrics.json
+    condition:
+      field: DeprecatedPresent
+      operator: not_empty
+    action: migrate_deprecated
+    priority: high
+    description: "Deprecated files detected"
+
+  # Governance scan triggers
+  - id: oversized_files
+    source: governance_scan.json
+    condition:
+      field: findings.oversized
+      operator: not_empty
+    action: suggest_compression
+    priority: low
+    autonomous: false  # Requires human decision
+    description: "Files exceed size threshold"
+    
+  - id: secrets_detected
+    source: governance_scan.json
+    condition:
+      field: findings.secrets
+      operator: not_empty
+    action: block_and_alert
+    priority: critical
+    autonomous: false  # NEVER auto-fix secrets
+    description: "Potential secrets in code"
+
+  # File criticality triggers
+  - id: high_criticality_untested
+    source: file_criticality_index.jsonl
+    condition:
+      field: score
+      operator: gt
+      threshold: 0.8
+      additional:
+        field: has_tests
+        operator: eq
+        value: false
+    action: generate_tests
+    priority: high
+    description: "Critical files without test coverage"
+
+  # Protocol validation triggers
+  - id: protocol_outdated
+    source: protocol_validation.json
+    condition:
+      field: protocol_version
+      operator: lt
+      threshold: 3
+    action: upgrade_protocol
+    priority: medium
+    description: "Agent protocol version outdated"
+
+  # Risk assessment triggers
+  - id: large_deletion_untagged
+    source: governance_risks.json
+    condition:
+      field: needsRationale
+      operator: eq
+      value: true
+      additional:
+        field: hasRationaleTag
+        operator: eq
+        value: false
+    action: request_rationale
+    priority: high
+    autonomous: false
+    description: "Large deletion without rationale"
+
+# ═══════════════════════════════════════════════════════════════════
+# ACTIONS - What the agent can do in response to triggers
+# ═══════════════════════════════════════════════════════════════════
+actions:
+  refactor_coherence:
+    description: "Improve code coherence through refactoring"
+    type: code_modification
+    autonomous: true
+    steps:
+      - analyze_coherence_gaps
+      - identify_refactoring_candidates
+      - apply_safe_refactorings
+      - verify_no_regression
+      
+  analyze_patterns:
+    description: "Analyze and document pattern inconsistencies"
+    type: analysis_only
+    autonomous: true
+    output: pattern_analysis_report.json
+    
+  migrate_deprecated:
+    description: "Migrate deprecated code patterns"
+    type: code_modification
+    autonomous: true
+    steps:
+      - identify_deprecated_usage
+      - find_modern_replacements
+      - apply_migrations
+      - update_imports
+      
+  suggest_compression:
+    description: "Suggest file compression or splitting"
+    type: suggestion_only
+    autonomous: true
+    output: compression_suggestions.json
+    
+  block_and_alert:
+    description: "Block merge and alert maintainers"
+    type: enforcement
+    autonomous: true
+    steps:
+      - add_pr_comment
+      - request_changes
+      - notify_security_team
+      
+  generate_tests:
+    description: "Generate test files for untested code"
+    type: code_generation
+    autonomous: true
+    steps:
+      - analyze_function_signatures
+      - generate_test_stubs
+      - add_basic_assertions
+      
+  upgrade_protocol:
+    description: "Upgrade agent protocol version"
+    type: code_modification
+    autonomous: false  # Protocol changes need review
+    steps:
+      - backup_current_protocol
+      - apply_protocol_upgrade
+      - validate_compatibility
+      
+  request_rationale:
+    description: "Request deletion rationale from author"
+    type: communication
+    autonomous: true
+    steps:
+      - add_pr_comment
+      - request_tag_addition
+
+# ═══════════════════════════════════════════════════════════════════
+# FEEDBACK ARTIFACT SCHEMA - Expected CI output format
+# ═══════════════════════════════════════════════════════════════════
+artifact_schema:
+  ci_feedback:
+    type: object
+    properties:
+      run_id:
+        type: string
+        description: "GitHub Actions run ID"
+      iteration:
+        type: integer
+        description: "Current iteration count"
+      timestamp:
+        type: string
+        format: iso8601
+      branch:
+        type: string
+      commit_sha:
+        type: string
+      workflow_results:
+        type: object
+        properties:
+          coherence_smoke:
+            type: object
+          governance_telemetry:
+            type: object
+          file_criticality:
+            type: object
+          root_clutter_guard:
+            type: object
+      triggered_actions:
+        type: array
+        items:
+          type: object
+          properties:
+            trigger_id:
+              type: string
+            action:
+              type: string
+            priority:
+              type: string
+            autonomous:
+              type: boolean
+      overall_health:
+        type: number
+        minimum: 0
+        maximum: 1
+      convergence_status:
+        type: object
+        properties:
+          iterations_remaining:
+            type: integer
+          improvement_trend:
+            type: number
+          should_continue:
+            type: boolean

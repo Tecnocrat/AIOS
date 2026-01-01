@@ -15,7 +15,8 @@ jobs:
           $path = '.github/instructions/agent-mode.instructions.md'
           if(-not (Test-Path $path)){ Write-Host '::warning ::Protocol file missing'; exit 0 }
           $content = Get-Content $path -Raw
-          $block = ($content -split "```" | Where-Object { $_ -match 'meta:' })
+          $backticks = [char]96 + [char]96 + [char]96
+          $block = ($content -split $backticks | Where-Object { $_ -match 'meta:' })
           if(-not $block){ Write-Host '::error ::Protocol block not found'; exit 1 }
           # Basic key presence checks (minimal schema)
           $required = 'meta:','policy.file_creation:','coherence.score:','ledger.ids:','ledger.rules:','invariants.default:'
@@ -26,7 +27,7 @@ jobs:
           $version = if($block -match 'version:\s*(\d+)'){ $matches[1] } else { 'unknown' }
           $out = [ordered]@{ protocol_version=$version; validated_at=(Get-Date).ToString('o'); missing=$missing }
           $out | ConvertTo-Json -Depth 4 | Set-Content protocol_validation.json -Encoding utf8
-          Write-Host "Protocol validation complete (version=$version)"
+          Write-Host ('Protocol validation complete (version=' + $version + ')')
       - name: Determine changed files
         id: diff
         shell: pwsh
