@@ -47,8 +47,27 @@ def main():
         except Exception:
             scores[str(f)] = 0.0
 
-    # Write output to stdout as JSON (workflow may capture it)
-    print(json.dumps({"scores": scores}, indent=2))
+    result = {"scores": scores}
+    result_json = json.dumps(result, indent=2)
+
+    # Write primary artifact: governance/file_criticality_index.jsonl
+    governance_dir = workspace / 'governance'
+    governance_dir.mkdir(parents=True, exist_ok=True)
+    jsonl_path = governance_dir / 'file_criticality_index.jsonl'
+    with open(jsonl_path, 'w', encoding='utf-8') as f:
+        # JSONL: one JSON object per line (we emit one consolidated record)
+        for path, score in scores.items():
+            f.write(json.dumps({"file": path, "score": score}) + '\n')
+
+    # Write secondary artifact: runtime_intelligence/logs/file_scores/latest.json
+    scores_dir = workspace / 'runtime_intelligence' / 'logs' / 'file_scores'
+    scores_dir.mkdir(parents=True, exist_ok=True)
+    latest_path = scores_dir / 'latest.json'
+    with open(latest_path, 'w', encoding='utf-8') as f:
+        f.write(result_json)
+
+    # Also write output to stdout for workflow capture
+    print(result_json)
 
 
 if __name__ == '__main__':
