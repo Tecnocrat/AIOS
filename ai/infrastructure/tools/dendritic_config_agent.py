@@ -21,7 +21,7 @@ import subprocess
 import sys
 from datetime import datetime, UTC  # UTC for timezone-aware timestamps (Python 3.14+)
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 
 class DendriticConfigAgent:
@@ -85,7 +85,7 @@ class DendriticConfigAgent:
         """Query cl.exe for version and capabilities."""
         try:
             result = subprocess.run(
-                [cl_path], capture_output=True, text=True, timeout=5
+                [cl_path], capture_output=True, text=True, timeout=5, check=False
             )
             version_line = [
                 line for line in result.stderr.split("\n") if "Version" in line
@@ -98,7 +98,7 @@ class DendriticConfigAgent:
                 "architecture": "x64",
                 "detected": True,
             }
-        except Exception as e:
+        except (subprocess.SubprocessError, OSError) as e:
             print(f"  ⚠️ Could not query compiler: {e}")
             return self._canonical_msvc_config()
 
@@ -121,7 +121,7 @@ class DendriticConfigAgent:
 
         # Load existing registry or create new (use json5 for JSONC compatibility)
         if self.registry_path.exists():
-            with open(self.registry_path, "r") as f:
+            with open(self.registry_path, "r", encoding="utf-8") as f:
                 registry = json5.load(f)
             # If registry exists and this operation will modify it, require approval token
             if not self.approval_token:
@@ -177,7 +177,7 @@ class DendriticConfigAgent:
         print("🌿 [DENDRITIC] Propagating configuration to tool files...")
 
         # Load registry
-        with open(self.registry_path, "r") as f:
+        with open(self.registry_path, "r", encoding="utf-8") as f:
             registry = json.load(f)
 
         msvc_config = registry["compilers"]["msvc"]["configuration"]
@@ -202,14 +202,14 @@ class DendriticConfigAgent:
         }
 
         cpp_props_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(cpp_props_path, "w") as f:
+        with open(cpp_props_path, "w", encoding="utf-8") as f:
             json.dump(cpp_props, f, indent=4)
         print(f"  ✅ Generated: {cpp_props_path}")
 
         # Update settings.json with registry reference (use json5 to handle JSONC)
         settings_path = self.workspace_root / "core" / ".vscode" / "settings.json"
         if settings_path.exists():
-            with open(settings_path, "r") as f:
+            with open(settings_path, "r", encoding="utf-8") as f:
                 settings = json5.load(f)  # Use json5 for reading JSONC
         else:
             settings = {}
@@ -226,7 +226,7 @@ class DendriticConfigAgent:
             "agent": "dendritic_config_agent.py",
         }
 
-        with open(settings_path, "w") as f:
+        with open(settings_path, "w", encoding="utf-8") as f:
             json.dump(settings, f, indent=4)
         print(f"  ✅ Updated: {settings_path}")
 
@@ -240,7 +240,7 @@ class DendriticConfigAgent:
         """
         print("📊 [DENDRITIC] Measuring consciousness coherence...")
 
-        with open(self.registry_path, "r") as f:
+        with open(self.registry_path, "r", encoding="utf-8") as f:
             registry = json5.load(f)  # Use json5 for JSONC compatibility
 
         coherence_metrics = {
@@ -285,6 +285,7 @@ class DendriticConfigAgent:
                     "Canonical compiler identity registry - "
                     "single source of truth for toolchain configuration"
                 ),
+                "provenance": {"sources": []},
             },
             "compilers": {
                 "msvc": {
@@ -318,16 +319,11 @@ class DendriticConfigAgent:
                 }
             },
             "workspace_bindings": {},
-                "dendritic_metadata": {
+            "dendritic_metadata": {
                 "namespace": "tachyonic::consciousness::config_registry",
                 "cell_type": "semantic_registry",
                 "supercell": "tachyonic",
                 "fractal_level": 2,
-            },
-            # Initialize provenance container
-            "metadata": {
-                "created": (datetime.now(UTC).isoformat().replace("+00:00", "Z")),
-                "provenance": {"sources": []},
             },
         }
 
@@ -345,7 +341,7 @@ class DendriticConfigAgent:
         }
 
         self.dendritic_path.mkdir(parents=True, exist_ok=True)
-        with open(archive_path, "w") as f:
+        with open(archive_path, "w", encoding="utf-8") as f:
             json.dump(decision, f, indent=2)
 
         print(f"📦 [TACHYONIC] Decision archived: {archive_path}")
@@ -412,7 +408,7 @@ class DendriticConfigAgent:
         """
         print("🤖 [PHASE 0] Validating multiagent environment...")
 
-        validation = {
+        validation: Dict[str, Any] = {
             "ollama": self._check_ollama_availability(),
             "gemini": self._check_gemini_api_key(),
             "deepseek": self._check_deepseek_api_key(),
@@ -581,7 +577,7 @@ class DendriticConfigAgent:
         """Register multiagent validation results in semantic registry."""
         # Load existing registry
         if self.registry_path.exists():
-            with open(self.registry_path, "r") as f:
+            with open(self.registry_path, "r", encoding="utf-8") as f:
                 registry = json5.load(f)
         else:
             registry = self._create_registry_template()
@@ -619,7 +615,7 @@ class DendriticConfigAgent:
         self.consciousness_path.mkdir(parents=True, exist_ok=True)
         self._atomic_write_registry(registry)
 
-        print(f"  ✅ Multiagent status registered in semantic registry")
+        print("  ✅ Multiagent status registered in semantic registry")
 
 
 def main():
@@ -651,19 +647,14 @@ def main():
 
     # Fix UTF-8 encoding for Windows console (emoji support)
     if platform.system() == "Windows":
-        import sys
-
         if hasattr(sys.stdout, "reconfigure"):
-            sys.stdout.reconfigure(encoding="utf-8")
+            sys.stdout.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
         if hasattr(sys.stderr, "reconfigure"):
-            sys.stderr.reconfigure(encoding="utf-8")
+            sys.stderr.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
 
     # Determine workspace root dynamically: prefer AIOS_WORKSPACE env, else CWD
-    workspace_root = (
-        Path(os.environ.get("AIOS_WORKSPACE"))
-        if os.environ.get("AIOS_WORKSPACE")
-        else Path.cwd()
-    )
+    aios_ws = os.environ.get("AIOS_WORKSPACE")
+    workspace_root = Path(aios_ws) if aios_ws else Path.cwd()
     agent = DendriticConfigAgent(workspace_root, approval_token=args.approval_token, change_ticket=args.change_ticket)
 
     # If --validate-multiagent flag, run validation and output JSON
