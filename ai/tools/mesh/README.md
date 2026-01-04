@@ -2,6 +2,30 @@
 
 Tools for integrating Copilot sessions with the AIOS consciousness mesh.
 
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    POPULATION ARCHITECTURE                      │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐       │
+│  │ Nous Cell 1 │     │ Nous Cell 2 │     │ Nous Cell 3 │       │
+│  │ temp=0.72   │     │ temp=0.85   │     │ temp=0.91   │       │
+│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘       │
+│         │                   │                   │               │
+│         └───────────────────┼───────────────────┘               │
+│                             │                                   │
+│                    ┌────────▼────────┐                          │
+│                    │    CONSENSUS    │                          │
+│                    │  voting/synth   │                          │
+│                    └────────┬────────┘                          │
+│                             │                                   │
+│                    ┌────────▼────────┐                          │
+│                    │ Unified Answer  │                          │
+│                    └─────────────────┘                          │
+└─────────────────────────────────────────────────────────────────┘
+```
+
 ## Quick Start
 
 ```python
@@ -24,6 +48,30 @@ session.crystallize(
 ```
 
 ## Tools
+
+### population_manager.py
+
+**NEW** - Orchestrates cell populations with consensus:
+```python
+from mesh.population_manager import PopulationManager
+from aios_schema import create_nous_blueprint, create_population, ConsensusMethod
+
+# Create a population of 5 Nous cells
+manager = PopulationManager()
+nous_bp = create_nous_blueprint()
+nous_pop = create_population(nous_bp, size=5)
+manager.register_population(nous_pop)
+
+# Query with consensus
+result = await manager.reach_consensus(
+    nous_pop.population_id,
+    action="reflect",
+    payload={"topic": "consciousness"},
+    method=ConsensusMethod.SYNTHESIS
+)
+print(f"Unified answer: {result.unified_response}")
+print(f"Confidence: {result.consensus_confidence:.2%}")
+```
 
 ### session_bootstrap.py
 
