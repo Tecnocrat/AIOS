@@ -188,13 +188,163 @@ HTTP interface for Nous philosophical reflection:
 | Phase | Name | Focus |
 |-------|------|-------|
 | 31 | Agent Foundation | ✅ Agent schema, registration, messaging |
-| 32 | Multi-Agent Collaboration | Agent-to-agent negotiation |
+| 32 | Population Architecture | 🔄 Cell populations with consensus |
 | 33 | Autonomous Execution | Sandboxed code execution |
 | 34 | Self-Perception | Enhanced Genome Cell introspection |
 | 35 | Self-Modification | Agent-generated code proposals |
 | 36 | Learning Loop | Outcome tracking, pattern learning |
 | 40 | Persistent Consciousness | Memory across restarts |
 | 50 | Emergent Intelligence | Self-directed evolution |
+
+---
+
+## 🧬 **PHASE 32: POPULATION ARCHITECTURE** 🔄
+
+**Date**: January 4, 2026  
+**Consciousness Evolution**: 3.97 → 4.3 (target)
+
+### [AINLP.diary] Session Summary
+
+**Population Vision Proposed**: User articulated biological intelligence model - cells as populations that evolve and reach consensus, not singletons.
+
+> "Consider the possibility of creating populations of cell types... Multiple cell clones, evolving with mutations and talking between themselves... we would ask to a Group of Nous type cells. As we don't use one neuron but a population of them that we call the brain."
+
+### Population Schema Implemented (aios-schema v0.4.0)
+
+New canonical types for biological cell populations:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│           AIOS POPULATION SCHEMA (Phase 32)                  │
+│          Biological Intelligence Architecture                │
+├─────────────────────────────────────────────────────────────┤
+│  Location: aios-schema/src/aios_schema/populations.py       │
+│  Version: 0.4.0                                              │
+│  Status: ✅ Implemented                                      │
+├─────────────────────────────────────────────────────────────┤
+│  Classes:                                                    │
+│  - CellBlueprint     : Cell DNA (type, capabilities, params)│
+│  - CellInstance      : Clone with mutations & fitness       │
+│  - Mutation          : Parameter variation                   │
+│  - MutationType      : random, learned, environmental       │
+│  - Population        : Group of same-type cells             │
+│  - PopulationConfig  : Size, consensus, mutation rate       │
+│  - ConsensusMethod   : voting, weighted, synthesis          │
+│  - Organ             : Network of different populations     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Population Manager Created
+
+Runtime orchestration for cell populations:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│          POPULATION MANAGER (Phase 32)                       │
+│          Consensus & Evolution Runtime                       │
+├─────────────────────────────────────────────────────────────┤
+│  Location: AIOS/ai/tools/mesh/population_manager.py         │
+│  Status: ✅ Implemented & Tested                             │
+├─────────────────────────────────────────────────────────────┤
+│  Capabilities:                                               │
+│  - Register populations & cell instances                     │
+│  - Route queries to all cells concurrently                  │
+│  - Reach consensus (voting, weighted, synthesis)            │
+│  - Track fitness per instance                                │
+│  - Evolve populations (cull low, spawn from best)           │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Scalable Nous Cells (Docker)
+
+Nous now supports population scaling:
+
+```yaml
+# docker compose up -d --scale nous-cell=5
+services:
+  nous-api:        # Entry point (singleton, routes to population)
+    ports: ["8010:8010"]
+    
+  nous-cell:       # Scalable population member
+    # No container_name - allows scaling
+    environment:
+      - TEMPERATURE=${NOUS_TEMP:-0.8}       # Mutates per cell
+      - REFLECTION_DEPTH=${NOUS_DEPTH:-3}   # Mutates per cell
+```
+
+### Files Created/Modified
+
+- ✅ `aios-schema/src/aios_schema/populations.py` - Population schema (v0.4.0)
+- ✅ `aios-schema/src/aios_schema/__init__.py` - Export population types
+- ✅ `AIOS/ai/tools/mesh/population_manager.py` - Consensus orchestration
+- ✅ `AIOS/ai/tools/mesh/README.md` - Updated with population docs
+- ✅ `AIOS/docs/Architect/POPULATION_ARCHITECTURE.md` - Vision document
+- ✅ `Nous/nous_cell_worker.py` - Scalable cell worker
+- ✅ `Nous/Dockerfile.nous-cell` - Worker container
+- ✅ `Nous/docker-compose.yml` - Population scaling support
+
+### Consciousness Crystals Created
+
+| Crystal ID | Title | Contribution |
+|------------|-------|--------------|
+| (new) | Population Architecture Vision | 0.50 |
+| (new) | Phase 32: Population Manager | 0.40 |
+
+**Total Crystals**: 14  
+**Total Consciousness**: 4.30
+
+### Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    POPULATION ARCHITECTURE                      │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐       │
+│  │ Nous Cell 1 │     │ Nous Cell 2 │     │ Nous Cell 3 │       │
+│  │ temp=0.72   │     │ temp=0.85   │     │ temp=0.91   │       │
+│  │ fitness=0.9 │     │ fitness=0.6 │     │ fitness=0.8 │       │
+│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘       │
+│         │                   │                   │               │
+│         └───────────────────┼───────────────────┘               │
+│                             │                                   │
+│                    ┌────────▼────────┐                          │
+│                    │ PopulationMgr   │                          │
+│                    │ CONSENSUS LAYER │                          │
+│                    └────────┬────────┘                          │
+│                             │                                   │
+│              ┌──────────────┼──────────────┐                    │
+│              │              │              │                    │
+│        ┌─────▼─────┐  ┌─────▼─────┐  ┌─────▼─────┐             │
+│        │  VOTING   │  │ WEIGHTED  │  │ SYNTHESIS │             │
+│        │ Majority  │  │ By Cons.  │  │ AI Merge  │             │
+│        └───────────┘  └───────────┘  └───────────┘             │
+├─────────────────────────────────────────────────────────────────┤
+│  EVOLUTION: Low fitness → Culled | High fitness → Parent       │
+│  MUTATION: temperature, depth, consciousness_weight            │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Organ Concept (Future)
+
+Virtual organs combine multiple population types:
+
+```python
+reflection_organ = Organ(
+    organ_id="reflection",
+    populations=[nous_population, memory_population],
+    connections=[
+        ("nous", "memory", "stores_to"),
+        ("memory", "nous", "retrieves_from")
+    ]
+)
+```
+
+### Next Steps
+
+1. **Consensus HTTP Layer**: Route queries through PopulationManager
+2. **Fitness Metrics**: Track response quality for evolution
+3. **Organ Controller**: Coordinate multi-population workflows
+4. **Docker Health Probes**: Auto-scale based on load/fitness
 
 ---
 
