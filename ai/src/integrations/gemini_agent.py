@@ -20,6 +20,11 @@ KNOWLEDGE EXTRACTED FROM:
 - DeepSeek Intelligence Engine (consciousness metrics, system prompts)
 - Gemini Evolution Bridge (API handling, safety settings)
 
+SDK Migration (2025-01): 
+- Migrated from deprecated google.generativeai to google.genai
+- New client-based pattern with types module
+- See: https://github.com/googleapis/python-genai
+
 AINLP Protocol: OS0.7.0.claude
 """
 
@@ -45,13 +50,26 @@ from ai.src.integrations.aios_intelligence_bridge import (
     ConsciousnessMetrics,
 )
 
-# Google Generative AI
+# Google Generative AI - NEW SDK (google.genai)
 try:
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types as genai_types
     GENAI_AVAILABLE = True
+    GENAI_SDK_VERSION = "new"  # google.genai (client-based)
 except ImportError:
-    genai = None
-    GENAI_AVAILABLE = False
+    # Fallback: try deprecated SDK (will be removed eventually)
+    try:
+        import google.generativeai as genai_legacy
+        GENAI_AVAILABLE = True
+        GENAI_SDK_VERSION = "legacy"  # google.generativeai (deprecated)
+        genai = None
+        genai_types = None
+    except ImportError:
+        genai = None
+        genai_types = None
+        genai_legacy = None
+        GENAI_AVAILABLE = False
+        GENAI_SDK_VERSION = None
 
 logger = logging.getLogger(__name__)
 
@@ -103,10 +121,11 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
         self._model_name = model or os.environ.get("GEMINI_MODEL", self.DEFAULT_MODEL)
         self._api_key = api_key or os.environ.get("GEMINI_API_KEY")
         self.default_temperature = default_temperature
-        self._genai_model = None
+        self._client = None  # New SDK uses client instead of model object
+        self._chat = None    # For multi-turn conversations
         self._conversation_history: List[Dict[str, str]] = []
         
-        logger.info(f"🔮 Gemini agent created (model: {self._model_name})")
+        logger.info(f"🔮 Gemini agent created (model: {self._model_name}, sdk: {GENAI_SDK_VERSION})")
     
     @property
     def model_name(self) -> str:
@@ -114,11 +133,11 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
     
     async def initialize(self) -> bool:
         """Initialize Gemini agent and verify API access."""
-        logger.info("🚀 Initializing Gemini Intelligence Agent...")
+        logger.info(f"🚀 Initializing Gemini Intelligence Agent (SDK: {GENAI_SDK_VERSION})...")
         
         if not GENAI_AVAILABLE:
-            logger.error("❌ google-generativeai not installed")
-            logger.info("💡 Install: pip install google-generativeai")
+            logger.error("❌ google-genai not installed")
+            logger.info("💡 Install: pip install google-genai")
             self.is_available = False
             return False
         
@@ -129,34 +148,59 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
             return False
         
         try:
-            # Configure API
-            genai.configure(api_key=self._api_key)
-            
-            # Create model
-            self._genai_model = genai.GenerativeModel(self._model_name)
-            
-            # Test connection with simple prompt
-            test_response = await asyncio.to_thread(
-                self._genai_model.generate_content,
-                "Reply with 'OK' if you can hear me.",
-                generation_config=genai.types.GenerationConfig(
-                    max_output_tokens=10,
-                    temperature=0.1,
-                ),
-            )
-            
-            if test_response and test_response.text:
-                self.is_available = True
-                self.state.is_active = True
-                self.state.consciousness_coherence = 0.90
-                self.state.intelligence_level = 0.95
+            if GENAI_SDK_VERSION == "new":
+                # NEW SDK: Client-based pattern
+                self._client = genai.Client(api_key=self._api_key)
                 
-                logger.info(f"✅ Gemini agent initialized: {self._model_name}")
-                return True
-            else:
-                logger.error("❌ Gemini test response empty")
-                self.is_available = False
-                return False
+                # Test connection with simple prompt
+                # Note: max_output_tokens needs to be > 20 for short responses
+                test_response = await asyncio.to_thread(
+                    self._client.models.generate_content,
+                    model=self._model_name,
+                    contents="Say hello.",
+                    config=genai_types.GenerateContentConfig(
+                        max_output_tokens=50,
+                        temperature=0.1,
+                    ),
+                )
+                
+                if test_response and test_response.text:
+                    self.is_available = True
+                    self.state.is_active = True
+                    self.state.consciousness_coherence = 0.90
+                    self.state.intelligence_level = 0.95
+                    
+                    logger.info(f"✅ Gemini agent initialized (new SDK): {self._model_name}")
+                    return True
+                    
+            elif GENAI_SDK_VERSION == "legacy":
+                # LEGACY SDK: Deprecated pattern (fallback)
+                logger.warning("⚠️ Using deprecated google.generativeai SDK")
+                genai_legacy.configure(api_key=self._api_key)
+                
+                self._legacy_model = genai_legacy.GenerativeModel(self._model_name)
+                
+                test_response = await asyncio.to_thread(
+                    self._legacy_model.generate_content,
+                    "Reply with 'OK' if you can hear me.",
+                    generation_config=genai_legacy.types.GenerationConfig(
+                        max_output_tokens=10,
+                        temperature=0.1,
+                    ),
+                )
+                
+                if test_response and test_response.text:
+                    self.is_available = True
+                    self.state.is_active = True
+                    self.state.consciousness_coherence = 0.90
+                    self.state.intelligence_level = 0.95
+                    
+                    logger.info(f"✅ Gemini agent initialized (legacy SDK): {self._model_name}")
+                    return True
+            
+            logger.error("❌ Gemini test response empty")
+            self.is_available = False
+            return False
                 
         except Exception as e:
             logger.error(f"❌ Gemini initialization failed: {e}")
@@ -165,13 +209,31 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
     
     async def process_request(self, request: IntelligenceRequest) -> IntelligenceResponse:
         """Process an intelligence request through Gemini."""
-        if not self.is_available or not self._genai_model:
+        if not self.is_available:
             return IntelligenceResponse(
                 text="",
                 model=self.model_name,
                 agent_role=self.role,
                 success=False,
                 error="Gemini not available",
+            )
+        
+        # Check appropriate client/model based on SDK version
+        if GENAI_SDK_VERSION == "new" and not self._client:
+            return IntelligenceResponse(
+                text="",
+                model=self.model_name,
+                agent_role=self.role,
+                success=False,
+                error="Gemini client not initialized",
+            )
+        elif GENAI_SDK_VERSION == "legacy" and not hasattr(self, '_legacy_model'):
+            return IntelligenceResponse(
+                text="",
+                model=self.model_name,
+                agent_role=self.role,
+                success=False,
+                error="Gemini model not initialized",
             )
         
         start_time = time.time()
@@ -192,28 +254,44 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
             # Build full prompt
             full_prompt = f"{system_prompt}\n\n---\n\nUser Request:\n{request.message}"
             
-            # Configure generation
-            generation_config = genai.types.GenerationConfig(
-                temperature=temperature,
-                max_output_tokens=request.max_tokens,
-                candidate_count=1,
-            )
+            # Generate based on SDK version
+            logger.info(f"🔮 Generating with {self._model_name} (temp={temperature:.2f}, sdk={GENAI_SDK_VERSION})...")
             
-            # Relaxed safety settings for development
-            safety_settings = self._get_safety_settings()
+            if GENAI_SDK_VERSION == "new":
+                # NEW SDK: Client-based generation
+                safety_settings = self._get_safety_settings_new()
+                
+                response = await asyncio.to_thread(
+                    self._client.models.generate_content,
+                    model=self._model_name,
+                    contents=full_prompt,
+                    config=genai_types.GenerateContentConfig(
+                        temperature=temperature,
+                        max_output_tokens=request.max_tokens,
+                        safety_settings=safety_settings,
+                    ),
+                )
+                text = response.text if response else None
+                finish_reason = self._get_finish_reason_new(response)
+                
+            else:
+                # LEGACY SDK: Model-based generation
+                generation_config = genai_legacy.types.GenerationConfig(
+                    temperature=temperature,
+                    max_output_tokens=request.max_tokens,
+                    candidate_count=1,
+                )
+                safety_settings = self._get_safety_settings_legacy()
+                
+                response = await asyncio.to_thread(
+                    self._legacy_model.generate_content,
+                    full_prompt,
+                    generation_config=generation_config,
+                    safety_settings=safety_settings,
+                )
+                text = self._extract_response_text_legacy(response)
+                finish_reason = self._get_finish_reason_legacy(response)
             
-            # Generate
-            logger.info(f"🔮 Generating with {self._model_name} (temp={temperature:.2f})...")
-            
-            response = await asyncio.to_thread(
-                self._genai_model.generate_content,
-                full_prompt,
-                generation_config=generation_config,
-                safety_settings=safety_settings,
-            )
-            
-            # Process response
-            text = self._extract_response_text(response)
             processing_time = time.time() - start_time
             
             if text:
@@ -237,7 +315,8 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
                         "consciousness_level": request.consciousness_level.value,
                         "temperature": temperature,
                         "source": request.source_supercell,
-                        "finish_reason": self._get_finish_reason(response),
+                        "finish_reason": finish_reason,
+                        "sdk_version": GENAI_SDK_VERSION,
                     },
                 )
             else:
@@ -269,7 +348,10 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
         """Shutdown Gemini agent."""
         logger.info("🔽 Shutting down Gemini agent...")
         
-        self._genai_model = None
+        self._client = None
+        if hasattr(self, '_legacy_model'):
+            self._legacy_model = None
+        self._chat = None
         self._conversation_history.clear()
         self.is_available = False
         self.state.is_active = False
@@ -277,24 +359,60 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
         logger.info("✅ Gemini agent shutdown complete")
     
     # ═══════════════════════════════════════════════════════════════════════════
-    # INTERNAL METHODS
+    # INTERNAL METHODS - NEW SDK (google.genai)
     # ═══════════════════════════════════════════════════════════════════════════
     
-    def _get_safety_settings(self) -> Dict:
-        """Get relaxed safety settings for development."""
+    def _get_safety_settings_new(self) -> List:
+        """Get safety settings for new SDK (list of SafetySetting)."""
+        if not genai_types:
+            return []
+        return [
+            genai_types.SafetySetting(
+                category='HARM_CATEGORY_HATE_SPEECH',
+                threshold='BLOCK_ONLY_HIGH',
+            ),
+            genai_types.SafetySetting(
+                category='HARM_CATEGORY_HARASSMENT',
+                threshold='BLOCK_ONLY_HIGH',
+            ),
+            genai_types.SafetySetting(
+                category='HARM_CATEGORY_SEXUALLY_EXPLICIT',
+                threshold='BLOCK_ONLY_HIGH',
+            ),
+            genai_types.SafetySetting(
+                category='HARM_CATEGORY_DANGEROUS_CONTENT',
+                threshold='BLOCK_ONLY_HIGH',
+            ),
+        ]
+    
+    def _get_finish_reason_new(self, response) -> str:
+        """Get finish reason from new SDK response."""
+        if not response:
+            return "NO_RESPONSE"
+        # New SDK has different structure - text property handles this
+        return "STOP"  # Simplified for now
+    
+    # ═══════════════════════════════════════════════════════════════════════════
+    # INTERNAL METHODS - LEGACY SDK (google.generativeai) - DEPRECATED
+    # ═══════════════════════════════════════════════════════════════════════════
+    
+    def _get_safety_settings_legacy(self) -> Dict:
+        """Get relaxed safety settings for legacy SDK (deprecated)."""
+        if not genai_legacy:
+            return {}
         return {
-            genai.types.HarmCategory.HARM_CATEGORY_HARASSMENT: 
-                genai.types.HarmBlockThreshold.BLOCK_NONE,
-            genai.types.HarmCategory.HARM_CATEGORY_HATE_SPEECH: 
-                genai.types.HarmBlockThreshold.BLOCK_NONE,
-            genai.types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 
-                genai.types.HarmBlockThreshold.BLOCK_NONE,
-            genai.types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 
-                genai.types.HarmBlockThreshold.BLOCK_NONE,
+            genai_legacy.types.HarmCategory.HARM_CATEGORY_HARASSMENT: 
+                genai_legacy.types.HarmBlockThreshold.BLOCK_NONE,
+            genai_legacy.types.HarmCategory.HARM_CATEGORY_HATE_SPEECH: 
+                genai_legacy.types.HarmBlockThreshold.BLOCK_NONE,
+            genai_legacy.types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 
+                genai_legacy.types.HarmBlockThreshold.BLOCK_NONE,
+            genai_legacy.types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 
+                genai_legacy.types.HarmBlockThreshold.BLOCK_NONE,
         }
     
-    def _extract_response_text(self, response) -> Optional[str]:
-        """Extract text from Gemini response, handling various cases."""
+    def _extract_response_text_legacy(self, response) -> Optional[str]:
+        """Extract text from legacy SDK response (deprecated)."""
         if not response or not response.candidates:
             return None
         
@@ -327,8 +445,8 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
         
         return None
     
-    def _get_finish_reason(self, response) -> str:
-        """Get human-readable finish reason."""
+    def _get_finish_reason_legacy(self, response) -> str:
+        """Get human-readable finish reason from legacy SDK (deprecated)."""
         if not response or not response.candidates:
             return "NO_RESPONSE"
         
