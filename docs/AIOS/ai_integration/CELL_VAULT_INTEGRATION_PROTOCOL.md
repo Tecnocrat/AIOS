@@ -1,6 +1,6 @@
 # AIOS Cell-Vault Integration Protocol
 
-**AINLP.cellular[VAULT_INTEGRATION] Phase 31.5.17 - Semantic Configuration Discovery**
+**AINLP.cellular[VAULT_INTEGRATION] Phase 31.5.17-21 - Semantic Configuration & Dendritic Mesh Discovery**
 
 > *"The only hardcoded path is the bootstrap token. Everything else emerges from Vault."*
 
@@ -16,6 +16,7 @@ This document defines how AIOS cellular units (SimplCells, Nous, etc.) discover 
 2. **Graceful Degradation** - Cells operate in ENV-fallback mode when Vault unavailable
 3. **Cell Identity** - Each cell has its own configuration namespace
 4. **Bootstrap Simplicity** - Single hardcoded path to Vault token enables everything else
+5. **Dendritic Discovery** - Mesh topology and organism registry via Vault (Phase 31.5.21)
 
 ---
 
@@ -31,26 +32,50 @@ This document defines how AIOS cellular units (SimplCells, Nous, etc.) discover 
 │   │  Alpha    │◄───────────────│  Token    │◄─────────────│Store │ │
 │   └──────────┘    Response      └──────────┘    Secrets    └──────┘ │
 │        │                             │                              │
-│        │ Fallback                    │                              │
-│        ▼                             │                              │
-│   ┌──────────┐                       │                              │
-│   │ ENV Vars │                       │ aios-secrets/                │
-│   │ (Dev)    │                       │ ├─ system/                   │
-│   └──────────┘                       │ │  ├─ paths                  │
-│                                      │ │  ├─ endpoints              │
-│                                      │ │  └─ vault                  │
-│                                      │ ├─ cells/                    │
+│        │ Fallback                    │ aios-secrets/                │
+│        ▼                             │ ├─ system/                   │
+│   ┌──────────┐                       │ │  ├─ paths                  │
+│   │ ENV Vars │                       │ │  ├─ endpoints              │
+│   │ (Dev)    │                       │ │  └─ vault                  │
+│   └──────────┘                       │ ├─ cells/                    │
 │                                      │ │  ├─ endpoints              │
 │                                      │ │  ├─ oracle                 │
-│                                      │ │  ├─ alpha/                 │
+│                                      │ │  ├─ simplcell-alpha/       │
 │                                      │ │  │  └─ genome              │
-│                                      │ │  └─ beta/                  │
+│                                      │ │  └─ simplcell-beta/        │
 │                                      │ │     └─ genome              │
+│                                      │ ├─ dendritic      ← NEW      │
+│                                      │ ├─ organisms/     ← NEW      │
+│                                      │ │  └─ ORGANISM-001           │
 │                                      │ └─ services/                 │
 │                                      │    ├─ grafana                │
 │                                      │    └─ prometheus             │
 │                                      │                              │
 └─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Current Vault Contents (January 8, 2026)
+
+```
+aios-secrets/
+├── system/
+│   ├─ endpoints      # ollama, nous, discovery, grafana, prometheus, simplcell_alpha/beta
+│   └─ paths          # workspace_root, config_dir, shared_cortex
+├── cells/
+│   ├─ endpoints      # peer_alpha, peer_beta, oracle, mesh_network
+│   ├─ oracle         # url, query_chance, model, role
+│   ├─ simplcell-alpha/
+│   │  └─ genome      # cell_id, temperature, model, organism_id, external_mode
+│   └─ simplcell-beta/
+│      └─ genome      # cell_id, temperature, model, organism_id, external_mode
+├── dendritic         # network, protocol, discovery_url, mesh_topology
+├── organisms/
+│   └─ ORGANISM-001   # cells, boundary_mode, consciousness_threshold
+├── grafana           # username, password
+├── prometheus        # config
+└── traefik           # credentials
 ```
 
 ---
