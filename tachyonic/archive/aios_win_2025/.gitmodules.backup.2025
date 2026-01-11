@@ -1,0 +1,25 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/Tecnocrat/server.git
+[submodule "aios-core"]
+	path = aios-core
+	url = https://github.com/Tecnocrat/AIOS.git
+
+[submodule "quantum"]
+	path = quantum
+	url = https://github.com/Tecnocrat/aios-quantum.git
+[submodule "codex"]
+	path = codex
+	url = https://github.com/Tecnocrat/HSE_Project_Codex.git
+[submodule "nous"]
+	path = nous
+	url = https://github.com/Tecnocrat/nous.git
+[submodule "identity"]
+	path = identity
+	url = https://github.com/Tecnocrat/Tecnocrat.git
+[submodule "portfolio"]
+	path = portfolio
+	url = https://github.com/Tecnocrat/Portfolio.git
+[submodule "api"]
+	path = api
+	url = https://github.com/Tecnocrat/aios-api.git
