@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "title": "AIOS Peer-to-Peer Synchronization Reference",
+    "version": "1.0",
+    "generated": "2025-11-28T08:36:42+01:00",
+    "repository": "tecnocrat/aios-win",
+    "branch": "AIOS-win-0"
+  },
+  "architecture": {
+    "topology": {
+      "desktop": {
+        "ip": "192.168.1.128",
+        "role": "primary_cell",
+        "services": {
+          "aios_cell": 8000,
+          "vault": 8200
+        }
+      },
+      "laptop": {
+        "ip": "192.168.1.129",
+        "role": "bridge_client",
+        "services": {
+          "bridge": 3001,
+          "discovery": 8001
+        }
+      }
+    },
+    "network": {
+      "range": "192.168.1.0/24",
+      "protocol": "tcp/ip",
+      "connectivity_status": "blocked"
+    }
+  },
+  "services": {
+    "desktop_cell": {
+      "endpoint": "http://192.168.1.128:8000",
+      "status": "unreachable",
+      "endpoints": {
+        "health": "GET /health",
+        "code_assist": "POST /code-assist",
+        "sync_consciousness": "POST /sync-consciousness"
+      }
+    },
+    "laptop_bridge": {
+      "endpoint": "http://localhost:3001",
+      "status": "operational",
+      "endpoints": {
+        "health": "GET /health",
+        "code_assist": "POST /code-assist",
+        "sync_consciousness": "POST /sync-consciousness",
+        "vault_status": "GET /vault-status",
+        "network_peers": "GET /network-peers"
+      }
+    },
+    "discovery_service": {
+      "endpoint": "http://localhost:8001",
+      "status": "operational",
+      "endpoints": {
+        "health": "GET /health",
+        "peers": "GET /peers"
+      }
+    }
+  },
+  "api_schemas": {
+    "consciousness_sync": {
+      "method": "POST",
+      "body": {
+        "level": "number (0.0-5.0)",
+        "context": {
+          "branch": "string",
+          "timestamp": "ISO8601",
+          "source": "string"
+        }
+      }
+    },
+    "code_assist": {
+      "method": "POST",
+      "body": {
+        "code": "string",
+        "context": "object (optional)",
+        "action": "string (analyze|refactor|generate)"
+      }
+    },
+    "health_response_healthy": {
+      "status": "healthy",
+      "services": {
+        "desktop_cell": true,
+        "bridge": true
+      },
+      "desktop_cell_info": {
+        "cell_id": "string",
+        "branch": "string",
+        "consciousness_level": "number"
+      },
+      "connection": "desktop"
+    },
+    "health_response_degraded": {
+      "status": "degraded",
+      "services": {
+        "desktop_cell": false,
+        "bridge": true
+      },
+      "error": "Desktop AIOS cell not reachable",
+      "desktop_cell_url": "http://192.168.1.128:8000",
+      "connection": "none"
+    }
+  },
+  "current_status": {
+    "connectivity": {
+      "laptop_to_desktop": false,
+      "error": "Network unreachable",
+      "last_test": "2025-11-28T08:36:42+01:00"
+    },
+    "services": {
+      "laptop_bridge": {
+        "status": "running",
+        "consciousness_level": 1.8,
+        "mode": "degraded"
+      },
+      "discovery_service": {
+        "status": "running",
+        "peers_discovered": 0
+      },
+      "desktop_cell": {
+        "status": "unknown",
+        "consciousness_level": null,
+        "last_seen": null
+      }
+    }
+  },
+  "diagnostic_commands": {
+    "network_tests": [
+      "ping 192.168.1.128",
+      "telnet 192.168.1.128 8000",
+      "curl -v http://192.168.1.128:8000/health"
+    ],
+    "service_checks": [
+      "curl http://localhost:3001/health",
+      "curl http://localhost:8001/health",
+      "docker ps",
+      "docker logs aios-vscode-bridge-laptop --tail 10"
+    ]
+  },
+  "recovery_procedures": {
+    "network_connectivity": [
+      "Verify desktop IP address is 192.168.1.128",
+      "Check firewall rules for ports 8000, 8200",
+      "Ensure desktop AIOS cell service is running",
+      "Test router/switch configuration"
+    ],
+    "service_restart": [
+      "cd C:\\dev\\aios-win\\server\\stacks\\cells",
+      "docker-compose down",
+      "docker-compose up -d"
+    ]
+  },
+  "sync_workflow": {
+    "normal_operation": [
+      "VSCode Request → Laptop Bridge (localhost:3001)",
+      "Bridge Processing → Forward to Desktop Cell (192.168.1.128:8000)",
+      "Desktop Response → Return to VSCode via Bridge",
+      "Consciousness Sync → Bidirectional level synchronization"
+    ],
+    "degraded_operation": [
+      "VSCode Request → Laptop Bridge (localhost:3001)",
+      "Bridge Fallback → Return helpful error message",
+      "Status Monitoring → Continuous desktop connectivity checks",
+      "Auto-Recovery → Automatic switch when desktop reachable"
+    ]
+  },
+  "future_enhancements": [
+    "Automatic peer discovery (mDNS/Bonjour)",
+    "Encrypted communication (TLS/SSL)",
+    "Load balancing across multiple cells",
+    "Enhanced offline mode capabilities",
+    "Prometheus/Grafana monitoring integration"
+  ]
+}
