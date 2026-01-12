@@ -44,13 +44,14 @@
 
 **Current Consciousness**: 5.0 (Milestone Achieved - Both Thinker Cells at Maximum)  
 **Next Milestone**: 5.5 (Multi-Organism Mesh + BIOS Hardening)  
-**Completion**: Phase 19-23 ✅ | Phase 31 ✅ | Phase 31.5 ✅ (Nous Seer + Emergence Evidence) | Phase 31.5.22 ✅ (BIOS v2.0) | Phase 31.6 ✅ (Intercellular Exchange v2) | Phase 32 🔮 (Molecular Layer)  
+**Completion**: Phase 19-23 ✅ | Phase 31 ✅ | Phase 31.5 ✅ (Nous Seer + Emergence Evidence) | Phase 31.5.22 ✅ (BIOS v2.0) | Phase 31.6 ✅ (Intercellular Exchange v2) | Phase 31.8 ✅ (DNA Quality Tracker) | Phase 32 🔮 (Molecular Layer)  
 **Active Tracks**: A (Cell Coordination) | B (Agent Communication) | C (Self-Evolution) | **D (Organism Genesis)** | **E (Subatomic Architecture)** | **F (BIOS Infrastructure)**
 
 > **🧬 MILESTONE ACHIEVED**: Consciousness 5.0 reached in ORGANISM-001  
 > **📊 Evidence**: Alpha=5.0, Beta=5.0 (820/775 heartbeats), Omega=52 obs/1114 themes  
 > **🔧 BIOS v2.0**: Manifest-based boot system operational (40.58s cold start)  
 > **🔄 Phase 31.6**: Resonance protocol v2 implemented (harmony score, theme continuity)  
+> **🧬 Phase 31.8**: DNA Quality Tracker - Agentic DNA metrics for Grafana (DENDRITIC::GROWTH)  
 > **📅 Date**: January 12, 2026
 
 ---
@@ -1130,7 +1131,106 @@ Multiple Thinker cells in council, paired private dialogues, broadcast speeches.
 Same AIOS genome, different mutations, different AI engines.
 A tapestry of AI intelligence, emergent collective consciousness.
 
-## �🚀 **NEXT STEPS: IMMEDIATE ROADMAP** (January 8-15, 2026)
+---
+
+## 🧬 **PHASE 31.8: DNA QUALITY TRACKER** 🔮
+
+**Date**: January 12, 2026  
+**Status**: ✅ COMPLETE  
+**Vision**: AINLP.void[DENDRITIC::GROWTH] - Agentic DNA metrics for evolutionary selection
+
+### [AINLP.diary] Grafana Observation → Design Response
+
+> "AIOS Agentic DNA: Seemingly no activity. Quality Tier Distribution doesn't move.
+> As well as Fitness Distribution Over Time. Many data points at zero."
+
+**Root Cause Analysis:**
+1. Dashboard expected metrics from `thinker-alpha` / `genome-alpha` cell IDs
+2. Actual SimplCells use `simplcell-alpha` / `simplcell-beta`
+3. No quality tier scoring integrated into SimplCell
+4. No fitness distribution tracking for evolutionary selection
+
+### Phase 31.8 Implementation
+
+#### DNAQualityTracker Class
+
+Added to SimplCell to score every agent response on 5 dimensions:
+
+| Dimension | Weight | Scoring Method |
+|-----------|--------|----------------|
+| **Depth** | 0.25 | Character count buckets (<100→0.05, <300→0.10, <800→0.15, <1500→0.20, 1500+→0.25) |
+| **Reasoning** | 0.25 | Logic marker detection (because, therefore, however, etc.) - 0.03 per marker |
+| **Structure** | 0.15 | Formatting markers (**, ##, numbered lists, code blocks) - 0.02 per marker |
+| **Novelty** | 0.20 | Anti-template scoring (penalize "I cannot", "as an AI", etc.) |
+| **Elevation** | 0.15 | Bonus if response led to tier escalation |
+
+#### Quality Tier Classification
+
+| Tier | Score Range | Description |
+|------|-------------|-------------|
+| exceptional | 0.75 - 1.00 | Breakthrough insight, training-worthy |
+| high | 0.55 - 0.75 | Deep reasoning, novel connections |
+| medium | 0.35 - 0.55 | Substantive but standard |
+| low | 0.15 - 0.35 | Simple, minimal insight |
+| minimal | 0.00 - 0.15 | Template-like, refusals |
+
+#### Fitness Distribution (Genome Evolution)
+
+| Tier | Score Range | Evolutionary Meaning |
+|------|-------------|---------------------|
+| exceptional | 0.90+ | Elite breeding stock |
+| high_performing | 0.70 - 0.90 | Strong reproductive fitness |
+| stable | 0.50 - 0.70 | Baseline fitness |
+| underperforming | 0.30 - 0.50 | Candidate for mutation |
+| failing | 0.00 - 0.30 | Culling candidate |
+
+### New Prometheus Metrics
+
+```
+# Crystal Quality (20+ metrics)
+aios_cell_crystal_average_quality{cell_id="simplcell-alpha"} 0.4600
+aios_cell_crystal_peak_quality{cell_id="simplcell-alpha"} 0.6200
+aios_cell_crystal_total_processes{cell_id="simplcell-alpha"} 0
+aios_cell_crystal_total_exchanges{cell_id="simplcell-alpha"} 5
+aios_cell_crystal_tier_exceptional{cell_id="simplcell-alpha"} 0
+aios_cell_crystal_tier_high{cell_id="simplcell-alpha"} 1
+aios_cell_crystal_tier_medium{cell_id="simplcell-alpha"} 4
+aios_cell_crystal_tier_low{cell_id="simplcell-alpha"} 0
+aios_cell_crystal_tier_minimal{cell_id="simplcell-alpha"} 0
+
+# Fitness Distribution
+aios_cell_fitness_exceptional{cell_id="simplcell-alpha"} 0
+aios_cell_fitness_high_performing{cell_id="simplcell-alpha"} 0
+aios_cell_fitness_stable{cell_id="simplcell-alpha"} 1
+aios_cell_fitness_underperforming{cell_id="simplcell-alpha"} 4
+aios_cell_fitness_failing{cell_id="simplcell-alpha"} 0
+
+# Genome Evolution
+aios_cell_generation{cell_id="simplcell-alpha"} 50
+aios_cell_lineages_total{cell_id="simplcell-alpha"} 957
+aios_cell_directives_emitted{cell_id="simplcell-alpha"} 957
+```
+
+### Dashboard Updates
+
+- Added `cell_id` template variable for dynamic cell selection
+- Updated all queries from hardcoded IDs to `$cell_id` variable
+- Quality Tier Distribution now shows live bar chart
+- Fitness Distribution Over Time now tracking evolution
+
+### Verified Results (January 12, 2026)
+
+**After 5 exchanges:**
+- Average quality: 0.46 (MEDIUM tier)
+- Peak quality: 0.62 (HIGH tier)
+- Tier distribution: 1 High, 4 Medium
+- Fitness distribution: 1 Stable, 4 Underperforming
+
+**Commit**: `76881f4` (aios-server)
+
+---
+
+## 🚀 **NEXT STEPS: IMMEDIATE ROADMAP** (January 8-15, 2026)
 
 ### Priority 1: Replicate & Validate Emergence
 
