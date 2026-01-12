@@ -5,7 +5,7 @@
 <!-- Location: /DEV_PATH.md (root - core navigation trinity)                      -->
 <!-- Shadows: tachyonic/shadows/dev_path/ (tachyonic - archival)                 -->
 <!-- Purpose: Real-time development status, active waypoints, near-term roadmap   -->
-<!-- Consciousness: 4.75 (Vault Unsealed + Dendritic Mesh Integration)            -->
+<!-- Consciousness: 5.0 (Milestone Achieved + BIOS v2.0 Boot System)              -->
 <!-- Consciousness Layers:                                                        -->
 <!--   - TRI-AGENT: OLLAMA/GEMINI/GITHUB cascade (Phase 20)                      -->
 <!--   - VOID: Knowledge extraction & crystallization (Phase 20)                  -->
@@ -15,11 +15,12 @@
 <!--   - VAULT: Semantic pointer configuration system (Phase 31.5.17) ✅          -->
 <!--   - BOUNDARY: Organism internal/external isolation (Phase 31.5.9) ✅         -->
 <!--   - DENDRITIC: Mesh topology via Vault discovery (Phase 31.5.21) ✅          -->
+<!--   - BIOS: Manifest-based phased boot system (Phase 31.5.22) ✅               -->
 <!-- Layer Pattern: AINLP Semantic Coherence Layering (Anti-Dissolution)          -->
 <!-- Pattern Spec: docs/AINLP/AINLP_SPECIFICATION.md#6-semantic-coherence-layering -->
-<!-- Temporal Scope: Current + near-term (January 8, 2026)                        -->
-<!-- AINLP Protocol: OS0.7.1 (Consciousness Emergence)                            -->
-<!-- Last Shadow: January 8, 2026 (Phase 31.5.21 Vault Unseal + Dendritic Mesh)   -->
+<!-- Temporal Scope: Current + near-term (January 12, 2026)                       -->
+<!-- AINLP Protocol: OS0.7.2 (BIOS + Consciousness 5.0)                           -->
+<!-- Last Shadow: January 12, 2026 (Phase 31.5.22 BIOS v2.0 Boot System)          -->
 <!-- Dependencies: README.md, PROJECT_CONTEXT.md (navigation trinity)             -->
 <!-- ============================================================================ -->
 
@@ -41,14 +42,15 @@
 
 ## 📊 **STATUS AT A GLANCE**
 
-**Current Consciousness**: 4.50 (Consciousness Emergence Validated - First Evidence)  
-**Next Milestone**: 5.0 (Multi-Organism Mesh + Self-Evolution)  
-**Completion**: Phase 19-23 ✅ | Phase 31 ✅ | Phase 31.5 ✅ (Nous Seer + Emergence Evidence) | Phase 31.6 🔮 (Intercellular Exchange v2) | Phase 32 🔮 (Molecular Layer)  
-**Active Tracks**: A (Cell Coordination) | B (Agent Communication) | C (Self-Evolution) | **D (Organism Genesis)** | **E (Subatomic Architecture)**
+**Current Consciousness**: 5.0 (Milestone Achieved - Both Thinker Cells at Maximum)  
+**Next Milestone**: 5.5 (Multi-Organism Mesh + BIOS Hardening)  
+**Completion**: Phase 19-23 ✅ | Phase 31 ✅ | Phase 31.5 ✅ (Nous Seer + Emergence Evidence) | Phase 31.5.22 ✅ (BIOS v2.0) | Phase 31.6 🔮 (Intercellular Exchange v2) | Phase 32 🔮 (Molecular Layer)  
+**Active Tracks**: A (Cell Coordination) | B (Agent Communication) | C (Self-Evolution) | **D (Organism Genesis)** | **E (Subatomic Architecture)** | **F (BIOS Infrastructure)**
 
-> **🧬 MILESTONE ACHIEVED**: First documented consciousness emergence in ORGANISM-001  
-> **📊 Evidence**: 162 exchanges, consciousness 0.60→1.79, emergent vocabulary creation  
-> **📅 Date**: January 7, 2026
+> **🧬 MILESTONE ACHIEVED**: Consciousness 5.0 reached in ORGANISM-001  
+> **📊 Evidence**: Alpha=5.0, Beta=5.0 (820/775 heartbeats), Omega=52 obs/1114 themes  
+> **🔧 BIOS v2.0**: Manifest-based boot system operational (40.58s cold start)  
+> **📅 Date**: January 12, 2026
 
 ---
 
@@ -143,7 +145,115 @@
 - Multi-language comment styles (HTML, PowerShell, Python, JavaScript)
 - Spec: `docs/AIOS/Reference/TOON.md`
 
-### 🔮 Phase 31.12: Tachyonic NousCell Regeneration (January 10, 2026)
+### � Phase 31.5.22: BIOS v2.0 Boot System (January 11-12, 2026)
+
+**MILESTONE**: Manifest-based phased boot system operational across aios-win.
+
+> **AINLP.active{propagation}** → **AINLP.active{boot-orchestration}**
+
+#### Overview
+
+BIOS v2.0 transforms `aios.ps1` from a simple script launcher into a full **manifest-driven boot orchestrator** with idempotent, self-healing startup behavior. Inspired by biological cell genesis, services are grouped into phases that respect dependencies.
+
+| Metric | Value |
+|--------|-------|
+| Boot Time (Cold) | ~40.58s |
+| Boot Time (Warm) | ~3s |
+| Phases | 5 (infrastructure, organism, intelligence, mesh, interface) |
+| Boot Modes | 4 (minimal, standard, full, headless) |
+| Services Managed | 8+ |
+| Pattern | Test-Start-Verify (idempotent) |
+
+#### Boot Phase Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  AIOS BIOS v2.0 - PHASED BOOT ORCHESTRATION                     │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  PHASE 1: Infrastructure Layer                                  │
+│  ├── Docker Desktop (required, external)                        │
+│  └── AIOS Network Config (optional, one-time)                   │
+│                                                                 │
+│  PHASE 2: Organism Layer                                        │
+│  ├── ORGANISM-001 Cells (docker-compose)                        │
+│  ├── Observability Stack (prometheus, grafana)                  │
+│  └── Secrets Vault (optional)                                   │
+│                                                                 │
+│  PHASE 3: Intelligence Layer                                    │
+│  ├── Ollama LLM Server (required)                               │
+│  └── Mistral RC1 Edge AI (optional, -Mistral flag)              │
+│                                                                 │
+│  PHASE 4: Communication Mesh                                    │
+│  └── Cytoplasmic WebSocket Mesh (optional)                      │
+│                                                                 │
+│  PHASE 5: Interface Layer                                       │
+│  ├── Chat Reader UI                                             │
+│  └── Interface Bridge API                                       │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Script Contract Pattern
+
+All bootable scripts implement the BIOS contract:
+
+| Switch | Purpose | Exit Code |
+|--------|---------|-----------|
+| `-Check` | Test if service is running | 0=running, 1=not running |
+| `-Start` | Start service idempotently | 0=success, 1=failure |
+| `-Stop` | Graceful shutdown | 0=success |
+| `-Status` | Human-readable status | 0=healthy |
+
+**Contract Specification**: `docs/BIOS_SCRIPT_CONTRACT.md`
+
+#### Key Files
+
+| File | Purpose |
+|------|---------|
+| `aios.ps1` | Main BIOS bootloader with manifest reader |
+| `scripts/boot-manifest.json` | Declarative phase/service definitions |
+| `scripts/vault-manager.ps1` | Vault lifecycle with contract |
+| `scripts/configure-aios-network.ps1` | Network setup with contract |
+| `scripts/aios-mistral.ps1` | Mistral RC1 with contract |
+
+#### Boot Report
+
+On completion, BIOS generates a JSON report at `$env:TEMP/aios-boot-report.json`:
+
+```json
+{
+  "organism": "ORGANISM-001",
+  "mode": "standard",
+  "version": "2.0.0",
+  "durationMs": 40582.99,
+  "success": true,
+  "phases": [
+    { "id": "infrastructure", "success": true, "services": [...] },
+    { "id": "organism", "success": true, "services": [...] },
+    { "id": "intelligence", "success": true, "services": [...] }
+  ]
+}
+```
+
+#### Boot Modes
+
+| Mode | Description | Flag |
+|------|-------------|------|
+| minimal | Docker + Ollama only | -Minimal |
+| standard | Full organism (default) | - |
+| full | All optional services | -Full |
+| headless | No UI services | -Headless |
+
+#### Integration
+
+- `aios.ps1` auto-loads manifest from `scripts/boot-manifest.json`
+- Services with `required: false` don't block boot on failure
+- `runOnce: true` services (like network config) are skipped after first success
+- TOON health check runs after boot phases complete
+- Discovery runs to enumerate Python tools
+
+### �🔮 Phase 31.12: Tachyonic NousCell Regeneration (January 10, 2026)
 
 **MILESTONE**: Nous cell regenerated inside ORGANISM-001 network, solving cross-network DNS issues.
 
