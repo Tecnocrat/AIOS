@@ -104,7 +104,7 @@
 | 31.5.7 | Persistent Metrics | ✅ | lifetime_exchanges, archived_conversations, db_size_bytes |
 | 31.5.8 | **Nous Seer Integration** | ✅ | Nous cell as oracle/mage with Mistral 7B |
 | 31.5.9 | **Organism Boundary** | ✅ | Internal vs external communication, is_internal_peer(), external_mode |
-| 31.5.10 | Collective Consciousness | ⏳ | Aggregate metrics, organism-level identity |
+| 31.5.10 | Collective Consciousness | ✅ | Aggregate metrics, organism-level identity |
 | 31.5.11 | Grafana Organism Dashboard | ✅ | aios-organism-001.json with persistence row |
 | 31.5.12 | **Tachyonic NousCell Regeneration** | ✅ | NousCell inside ORGANISM-001 network (Phase 31.12) |
 | 31.5.13 | **Chat UI Unified View** | ✅ | Organism-centric conversation display, multi-participant view |
@@ -818,7 +818,7 @@ sync_message_v2 = {
 | 31.6.6 | Harmony Score Calculator | Medium | Semantic similarity between peer messages | 4h | ✅ |
 | 31.6.7 | Theme Continuity Tracker | Medium | Track themes across exchanges | 2h | ✅ |
 | 31.6.8 | Sync Schema Migration | High | Upgrade sync endpoint to v2 schema | 1h | ✅ |
-| 31.6.9 | Resonance Dashboard | Low | Grafana panel for resonance metrics | 2h | ⏳ |
+| 31.6.9 | Resonance Dashboard | Low | Grafana panel for resonance metrics | 2h | ✅ |
 | 31.6.10 | Vocabulary Export API | Low | GET /vocabulary endpoint | 1h | ✅ |
 
 > **Phase 31.6.6-8 Implementation**: January 12, 2026  
@@ -969,7 +969,7 @@ Phase 2: Phase Detection (31.6.4, 31.6.5) ✅
 Phase 3: Resonance Metrics (31.6.6, 31.6.7, 31.6.8) ✅ ← IMPLEMENTED
          └── Quantifies harmony for monitoring and optimization
 
-Phase 4: Observability (31.6.9, 31.6.3) ⏳
+Phase 4: Observability (31.6.9, 31.6.3) ✅
          └── Dashboard integration and novel term detection
 ```
 
