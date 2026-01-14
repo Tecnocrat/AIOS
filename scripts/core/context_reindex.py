@@ -25,10 +25,11 @@ from pathlib import Path
 from typing import Optional
 
 # Resolve paths relative to script location
+# AINLP.cellular[PATH] - After 31.9.6 reorganization, scripts are in scripts/core/
 SCRIPT_DIR = Path(__file__).parent
-REPO_ROOT = SCRIPT_DIR.parent
+REPO_ROOT = SCRIPT_DIR.parent.parent  # scripts/core/ → scripts/ → AIOS/
 # Context source can be in root or docs/ - check both locations
-CONTEXT_SOURCE_ROOT = REPO_ROOT / "AIOS_PROJECT_CONTEXT.md"
+CONTEXT_SOURCE_ROOT = REPO_ROOT / "PROJECT_CONTEXT.md"
 CONTEXT_SOURCE_DOCS = REPO_ROOT / "docs" / "AIOS_PROJECT_CONTEXT.md"
 CONTEXT_SOURCE = CONTEXT_SOURCE_ROOT if CONTEXT_SOURCE_ROOT.exists() else CONTEXT_SOURCE_DOCS
 CONTEXT_INDEX_OUTPUT = REPO_ROOT / "runtime" / "context" / "context_index.json"

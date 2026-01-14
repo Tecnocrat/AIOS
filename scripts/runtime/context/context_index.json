@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-01-14T22:08:16.317263+00:00",
+  "source_file": "AIOS_PROJECT_CONTEXT.md",
+  "capsules": [
+    {
+      "id": "empty",
+      "title": "Empty Index",
+      "type": "note",
+      "ingested_date": "2026-01-14",
+      "start_line": 1,
+      "end_line": 1,
+      "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "semantic_tags": [],
+      "revision_chain": [],
+      "dates_all": [],
+      "token_estimate": 0,
+      "jaccard_overlap_prev": null,
+      "similarity_alert": false
+    }
+  ]
+}
