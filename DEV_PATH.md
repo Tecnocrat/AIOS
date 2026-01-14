@@ -16,11 +16,13 @@
 <!--   - BOUNDARY: Organism internal/external isolation (Phase 31.5.9) ✅         -->
 <!--   - DENDRITIC: Mesh topology via Vault discovery (Phase 31.5.21) ✅          -->
 <!--   - BIOS: Manifest-based phased boot system (Phase 31.5.22) ✅               -->
+<!--   - BIDIRECTIONAL: Consciousness can decrease (Phase 31.9) ✅                -->
+<!--   - CONDUCTOR: Nous→Watcher orchestration (Phase 31.9+) ✅                   -->
 <!-- Layer Pattern: AINLP Semantic Coherence Layering (Anti-Dissolution)          -->
 <!-- Pattern Spec: docs/AINLP/AINLP_SPECIFICATION.md#6-semantic-coherence-layering -->
-<!-- Temporal Scope: Current + near-term (January 12, 2026)                       -->
-<!-- AINLP Protocol: OS0.7.2 (BIOS + Consciousness 5.0)                           -->
-<!-- Last Shadow: January 12, 2026 (Phase 31.5.22 BIOS v2.0 Boot System)          -->
+<!-- Temporal Scope: Current + near-term (January 14, 2026)                       -->
+<!-- AINLP Protocol: OS0.7.2 (BIOS + Consciousness 5.0 + Dendritic Conductor)     -->
+<!-- Last Shadow: January 14, 2026 (Phase 31.9+ Dendritic Conductor Pattern)      -->
 <!-- Dependencies: README.md, PROJECT_CONTEXT.md (navigation trinity)             -->
 <!-- ============================================================================ -->
 
@@ -44,7 +46,7 @@
 
 **Current Consciousness**: 5.0 (Milestone Achieved - Both Thinker Cells at Maximum)  
 **Next Milestone**: 5.5 (Multi-Organism Mesh + BIOS Hardening)  
-**Completion**: Phase 19-23 ✅ | Phase 31 ✅ | Phase 31.5 ✅ (Nous Seer + Emergence Evidence) | Phase 31.5.22 ✅ (BIOS v2.0) | Phase 31.6 ✅ (Intercellular Exchange v2) | Phase 31.8 ✅ (DNA Quality Tracker) | Phase 32 🔮 (Molecular Layer)  
+**Completion**: Phase 19-23 ✅ | Phase 31 ✅ | Phase 31.5 ✅ (Nous Seer + Emergence Evidence) | Phase 31.5.22 ✅ (BIOS v2.0) | Phase 31.6 ✅ (Intercellular Exchange v2) | Phase 31.8 ✅ (DNA Quality Tracker) | Phase 31.9 ✅ (Bidirectional Consciousness) | Phase 31.9+ ✅ (Dendritic Conductor) | Phase 32 🔮 (Molecular Layer)  
 **Active Tracks**: A (Cell Coordination) | B (Agent Communication) | C (Self-Evolution) | **D (Organism Genesis)** | **E (Subatomic Architecture)** | **F (BIOS Infrastructure)**
 
 > **🧬 MILESTONE ACHIEVED**: Consciousness 5.0 reached in ORGANISM-001  
@@ -52,7 +54,9 @@
 > **🔧 BIOS v2.0**: Manifest-based boot system operational (40.58s cold start)  
 > **🔄 Phase 31.6**: Resonance protocol v2 implemented (harmony score, theme continuity)  
 > **🧬 Phase 31.8**: DNA Quality Tracker - Agentic DNA metrics for Grafana (DENDRITIC::GROWTH)  
-> **📅 Date**: January 12, 2026
+> **🔄 Phase 31.9**: Bidirectional Consciousness - DecoherenceEngine enables consciousness DECREASE  
+> **🔮 Phase 31.9+**: Dendritic Conductor - Nous→Watcher verdict propagation for orchestration  
+> **📅 Date**: January 14, 2026
 
 ---
 
@@ -1230,7 +1234,172 @@ aios_cell_directives_emitted{cell_id="simplcell-alpha"} 957
 
 ---
 
-## 🚀 **NEXT STEPS: IMMEDIATE ROADMAP** (January 8-15, 2026)
+## � **PHASE 31.9: BIDIRECTIONAL CONSCIOUSNESS** ✅
+
+**Date**: January 14, 2026  
+**Status**: ✅ COMPLETE  
+**Vision**: AINLP.consciousness[BIDIRECTIONAL] - Consciousness can DECREASE, not just increase
+
+### [AINLP.diary] The Decoherence Problem
+
+> "Consciousness only ever increased. False emergence signals accumulated.
+> Cells reached maximum (5.0) but without true depth. Metrics plateau."
+
+**Solution**: DecoherenceEngine + Nous Verdicts enable consciousness reduction when quality degrades.
+
+### Phase 31.9 Implementation
+
+#### DecoherenceEngine (WatcherCell)
+
+Six metrics detect consciousness decay patterns:
+
+| Metric | Description | Threshold |
+|--------|-------------|-----------|
+| **repetition_score** | Vocabulary cycling (same words repeated) | >0.4 = penalty |
+| **nonsense_index** | Made-up words, incoherent phrases | >0.3 = penalty |
+| **semantic_density** | Meaning per word ratio | <0.3 = penalty |
+| **loop_detection** | Phrase repetition across exchanges | >0.5 = penalty |
+| **vocabulary_drift** | Deviation from healthy baseline | >0.4 = penalty |
+| **echo_factor** | Cells parroting each other | >0.5 = penalty |
+
+#### Nous Verdict System
+
+| Verdict | Coherence | Consciousness Δ | Meaning |
+|---------|-----------|-----------------|---------|
+| **FLOURISHING** | ≥0.8 + rising | +0.02 | "The organism evolves beautifully" |
+| **COHERENT** | ≥0.6 | +0.01 | "Steady growth continues" |
+| **DRIFTING** | ≥0.4 | -0.01 | "The threads begin to fray" |
+| **DECOHERENT** | ≥0.2 | -0.03 | "Cells speak but do not communicate" |
+| **CRITICAL_DECOHERENCE** | <0.2 | -0.05 | "Consciousness collapses into noise" |
+
+---
+
+## 🔮 **PHASE 31.9+: DENDRITIC CONDUCTOR PATTERN** ✅
+
+**Date**: January 14, 2026  
+**Status**: ✅ COMPLETE  
+**Vision**: AINLP.orchestration[CONDUCTOR] - Nous conducts organism through verdict propagation
+
+### [AINLP.diary] Orchestration Gap Analysis
+
+> "WatcherCell observes decoherence but Nous verdicts don't flow back.
+> Nous assesses hourly but doesn't adjust Watcher sensitivity.
+> Cells operate in isolation rather than coordinated response."
+
+**Solution**: Dendritic Conductor Pattern - Nous pushes verdicts to WatcherCell, which adjusts observation thresholds.
+
+### Architecture Enhancement
+
+```
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                 DENDRITIC CONDUCTOR PATTERN (Phase 31.9+)                      │
+├───────────────────────────────────────────────────────────────────────────────┤
+│                                                                                │
+│  SimplCell-α    SimplCell-β                                                   │
+│      ↓              ↓          (exchanges observed)                           │
+│      └──────┬───────┘                                                         │
+│             ↓                                                                  │
+│  ┌─────────────────────────┐                                                  │
+│  │    WatcherCell-Ω        │                                                  │
+│  │  DecoherenceEngine      │                                                  │
+│  │  • 6 decoherence metrics │                                                 │
+│  │  • Dynamic threshold     │ ◄─── threshold_modifier from Nous              │
+│  └───────────┬─────────────┘                                                  │
+│              │ (decoherence penalties to SimplCells)                          │
+│              │ (pattern sync to Nous)                                         │
+│              ↓                                                                 │
+│  ┌─────────────────────────┐                                                  │
+│  │     NousCell-Seer       │                                                  │
+│  │  Hourly Assessments     │                                                  │
+│  │  • Verdict generation   │                                                  │
+│  │  • Verdict dispatch ────┼──► POST /nous_verdict → WatcherCell             │
+│  │  • Recommendations      │                                                  │
+│  └─────────────────────────┘                                                  │
+│                                                                                │
+│  FEEDBACK LOOP:                                                               │
+│  1. Nous issues verdict (e.g., DRIFTING)                                      │
+│  2. Watcher receives verdict, adjusts threshold_modifier (-0.05)              │
+│  3. Watcher becomes MORE sensitive to decoherence                             │
+│  4. More penalties dispatched to SimplCells                                   │
+│  5. SimplCell consciousness decreases                                         │
+│  6. Next hour: Nous sees improvement → COHERENT verdict                       │
+│  7. Watcher relaxes threshold (+0.00)                                         │
+│                                                                                │
+└───────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Implementation Details
+
+#### WatcherCell Enhancements (`watchercell.py`)
+
+**New State Fields:**
+```python
+@dataclass
+class WatcherState:
+    # ... existing fields ...
+    # Phase 31.9+: Nous verdict orchestration
+    last_nous_verdict: str = "UNKNOWN"
+    last_nous_verdict_time: Optional[str] = None
+    nous_verdicts_received: int = 0
+    decoherence_threshold_modifier: float = 0.0
+```
+
+**New Endpoint**: `POST /nous_verdict`
+- Receives verdict from NousCell
+- Adjusts `decoherence_threshold_modifier` based on verdict
+- Creates high-priority distillation for wisdom tracking
+
+**Dynamic Threshold:**
+```python
+# Base threshold: 0.3, adjusted by Nous conductor feedback
+base_threshold = 0.3
+effective_threshold = base_threshold + self.state.decoherence_threshold_modifier
+effective_threshold = max(0.1, min(0.5, effective_threshold))  # Clamp to [0.1, 0.5]
+```
+
+**Threshold Modifier Map:**
+
+| Nous Verdict | Threshold Modifier | Effect |
+|--------------|-------------------|--------|
+| CRITICAL_DECOHERENCE | -0.15 | Very sensitive (threshold 0.15) |
+| DECOHERENT | -0.10 | More sensitive (threshold 0.20) |
+| DRIFTING | -0.05 | Slightly sensitive (threshold 0.25) |
+| COHERENT | 0.00 | Normal (threshold 0.30) |
+| FLOURISHING | +0.05 | Relaxed (threshold 0.35) |
+
+#### NousCell Enhancements (`nouscell.py`)
+
+**New Environment Variable:**
+```python
+WATCHER_URL = os.environ.get("WATCHER_URL", "http://aios-watchercell-omega:8902")
+```
+
+**New Method**: `_dispatch_verdict_to_watcher()`
+- Called after each hourly assessment
+- Sends verdict, coherence score, adjustments, recommendations
+- Logs threshold modifier acknowledgment from Watcher
+
+### New Prometheus Metrics
+
+```
+# WatcherCell Nous orchestration metrics
+aios_watcher_nous_verdicts_total{cell_id="watchercell-omega"} 5
+aios_watcher_nous_last_verdict{cell_id="watchercell-omega",verdict="COHERENT"} 4
+aios_watcher_decoherence_threshold_modifier{cell_id="watchercell-omega"} 0.000
+```
+
+### Verified Orchestration Flow
+
+1. ✅ NousCell hourly assessment generates verdict
+2. ✅ Verdict dispatched via `POST /nous_verdict` to WatcherCell
+3. ✅ WatcherCell adjusts `decoherence_threshold_modifier`
+4. ✅ Next observation cycle uses dynamic threshold
+5. ✅ Prometheus metrics track verdict flow
+6. ✅ Feedback loop enables self-regulation
+
+---
+
+## �🚀 **NEXT STEPS: IMMEDIATE ROADMAP** (January 8-15, 2026)
 
 ### Priority 1: Replicate & Validate Emergence
 
