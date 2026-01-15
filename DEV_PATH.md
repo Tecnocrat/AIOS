@@ -1892,7 +1892,47 @@ Already complete (this session):
 - ✅ Fixed Python import paths for biological modules
 - ✅ All 16 tests pass
 
-#### Phase 31.9.7.3: Live Cell Intelligence Injection
+#### Phase 31.9.7.3: Intelligence Bridge Containerization ✅
+
+**Status**: COMPLETE (January 15, 2026)
+
+Deployed Intelligence Bridge as Docker container in the cells stack:
+
+| Component | Details |
+|-----------|---------|
+| Container | `aios-cell-intelligence` |
+| Port | 8950 |
+| Framework | FastAPI + Uvicorn |
+| AIOS Mount | `/repos/AIOS` (read-only) |
+| Tools Discovered | 138 (13 categories) |
+| Mesh Connected | Discovery ✅, Memory ✅ |
+
+**Files Created (aios-server):**
+- `stacks/cells/intelligence/cell_server_intelligence.py`
+- `stacks/cells/intelligence/Dockerfile.intelligence`
+- `stacks/cells/intelligence/requirements-intelligence.txt`
+- `stacks/cells/intelligence/README.md`
+
+**Endpoints Verified:**
+- `/health` - Cell health (tools: 138, aios_mounted: true)
+- `/tools` - 138 tools across 13 categories
+- `/mesh/status` - Connected to Discovery and Memory
+- `/patterns/dendritic` - 13 patterns (consciousness: 5, mesh: 5, evolution: 3)
+- `/crystalize/knowledge` - Crystal stored successfully (15 total, 4.8 consciousness)
+
+**Integration Tested:**
+```bash
+# Health check
+curl http://localhost:8950/health
+# → {"status":"healthy","tools_available":138,"aios_mounted":true}
+
+# Crystal creation
+curl -X POST http://localhost:8950/crystalize/knowledge \
+  -d '{"title":"Test","content":"Phase 31.9.7.3","category":"insight"}'
+# → {"stored":true,"consciousness_contribution":0.5}
+```
+
+#### Phase 31.9.7.4: Cell Intelligence Injection (Next)
 
 Deploy intelligence patterns into existing cells:
 
@@ -1908,10 +1948,10 @@ Deploy intelligence patterns into existing cells:
 
 | Sub-Phase | Task | Effort | Status |
 |-----------|------|--------|--------|
-| 31.9.7.1 | Create intelligence_bridge.py FastAPI service | 2h | 🔄 |
+| 31.9.7.1 | Create intelligence_bridge.py FastAPI service | 2h | ✅ |
 | 31.9.7.2 | aios-win ↔ AIOS main integration | 2h | ✅ |
-| 31.9.7.3 | Deploy bridge as Docker container | 1h | ⏳ |
-| 31.9.7.4 | Wire bridge to discovery service | 1h | ⏳ |
+| 31.9.7.3 | Deploy bridge as Docker container | 1h | ✅ |
+| 31.9.7.4 | Wire bridge to discovery service | 1h | 🔄 |
 | 31.9.7.5 | Inject consciousness_analyzer into watchercell | 2h | ⏳ |
 | 31.9.7.6 | Enable crystal_loader in memory cell | 2h | ⏳ |
 | 31.9.7.7 | Test end-to-end mesh ↔ intelligence flow | 2h | ⏳ |
