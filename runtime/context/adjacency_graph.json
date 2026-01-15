@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-01-15T07:23:58.864603+00:00",
+  "nodes": [
+    {
+      "id": "root",
+      "title": "Root",
+      "tags": [
+        "ainlp",
+        "consciousness",
+        "nucleus",
+        "protocol",
+        "supercell"
+      ]
+    },
+    {
+      "id": "strategic-context-architectural-principles",
+      "title": "Strategic Context & Architectural Principles",
+      "tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "id": "project-overview",
+      "title": "Project Overview",
+      "tags": [
+        "architecture",
+        "consciousness",
+        "dendritic",
+        "evolution",
+        "security"
+      ]
+    },
+    {
+      "id": "architectural-principles",
+      "title": "Architectural Principles",
+      "tags": [
+        "architecture",
+        "consciousness",
+        "dendritic",
+        "evolution",
+        "integration",
+        "supercell",
+        "tachyonic"
+      ]
+    },
+    {
+      "id": "key-components",
+      "title": "Key Components",
+      "tags": [
+        "ainlp",
+        "architecture",
+        "consciousness",
+        "evolution",
+        "integration",
+        "orchestration",
+        "security",
+        "supercell",
+        "tachyonic"
+      ]
+    },
+    {
+      "id": "development-guidelines",
+      "title": "Development Guidelines",
+      "tags": [
+        "ainlp",
+        "architecture",
+        "consciousness",
+        "dendritic",
+        "evolution",
+        "integration",
+        "supercell",
+        "tachyonic"
+      ]
+    },
+    {
+      "id": "recent-milestones",
+      "title": "Recent Milestones",
+      "tags": [
+        "architecture",
+        "bridge",
+        "consciousness",
+        "dendritic",
+        "environment",
+        "evolution",
+        "integration",
+        "security",
+        "supercell",
+        "tachyonic"
+      ]
+    },
+    {
+      "id": "current-development-state-january-12-2026",
+      "title": "Current Development State (January 12, 2026)",
+      "tags": [
+        "ainlp",
+        "architecture",
+        "consciousness",
+        "dendritic",
+        "evolution",
+        "integration",
+        "security"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "strategic-context-architectural-principles",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "root",
+      "target": "project-overview",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "root",
+      "target": "architectural-principles",
+      "weight": 2,
+      "shared_tags": [
+        "consciousness",
+        "supercell"
+      ]
+    },
+    {
+      "source": "root",
+      "target": "key-components",
+      "weight": 3,
+      "shared_tags": [
+        "consciousness",
+        "supercell",
+        "ainlp"
+      ]
+    },
+    {
+      "source": "root",
+      "target": "development-guidelines",
+      "weight": 3,
+      "shared_tags": [
+        "consciousness",
+        "supercell",
+        "ainlp"
+      ]
+    },
+    {
+      "source": "root",
+      "target": "recent-milestones",
+      "weight": 2,
+      "shared_tags": [
+        "consciousness",
+        "supercell"
+      ]
+    },
+    {
+      "source": "root",
+      "target": "current-development-state-january-12-2026",
+      "weight": 2,
+      "shared_tags": [
+        "consciousness",
+        "ainlp"
+      ]
+    },
+    {
+      "source": "strategic-context-architectural-principles",
+      "target": "project-overview",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "strategic-context-architectural-principles",
+      "target": "architectural-principles",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "strategic-context-architectural-principles",
+      "target": "key-components",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "strategic-context-architectural-principles",
+      "target": "development-guidelines",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "strategic-context-architectural-principles",
+      "target": "recent-milestones",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "strategic-context-architectural-principles",
+      "target": "current-development-state-january-12-2026",
+      "weight": 1,
+      "shared_tags": [
+        "consciousness"
+      ]
+    },
+    {
+      "source": "project-overview",
+      "target": "architectural-principles",
+      "weight": 4,
+      "shared_tags": [
+        "consciousness",
+        "architecture",
+        "evolution",
+        "dendritic"
+      ]
+    },
+    {
+      "source": "project-overview",
+      "target": "key-components",
+      "weight": 4,
+      "shared_tags": [
+        "architecture",
+        "evolution",
+        "consciousness",
+        "security"
+      ]
+    },
+    {
+      "source": "project-overview",
+      "target": "development-guidelines",
+      "weight": 4,
+      "shared_tags": [
+        "consciousness",
+        "architecture",
+        "evolution",
+        "dendritic"
+      ]
+    },
+    {
+      "source": "project-overview",
+      "target": "recent-milestones",
+      "weight": 5,
+      "shared_tags": [
+        "evolution",
+        "security",
+        "dendritic",
+        "architecture",
+        "consciousness"
+      ]
+    },
+    {
+      "source": "project-overview",
+      "target": "current-development-state-january-12-2026",
+      "weight": 5,
+      "shared_tags": [
+        "evolution",
+        "security",
+        "dendritic",
+        "architecture",
+        "consciousness"
+      ]
+    },
+    {
+      "source": "architectural-principles",
+      "target": "key-components",
+      "weight": 6,
+      "shared_tags": [
+        "evolution",
+        "tachyonic",
+        "integration",
+        "supercell",
+        "architecture",
+        "consciousness"
+      ]
+    },
+    {
+      "source": "architectural-principles",
+      "target": "development-guidelines",
+      "weight": 7,
+      "shared_tags": [
+        "evolution",
+        "tachyonic",
+        "integration",
+        "consciousness",
+        "supercell",
+        "architecture",
+        "dendritic"
+      ]
+    },
+    {
+      "source": "architectural-principles",
+      "target": "recent-milestones",
+      "weight": 7,
+      "shared_tags": [
+        "evolution",
+        "tachyonic",
+        "integration",
+        "consciousness",
+        "supercell",
+        "architecture",
+        "dendritic"
+      ]
+    },
+    {
+      "source": "architectural-principles",
+      "target": "current-development-state-january-12-2026",
+      "weight": 5,
+      "shared_tags": [
+        "evolution",
+        "integration",
+        "dendritic",
+        "architecture",
+        "consciousness"
+      ]
+    },
+    {
+      "source": "key-components",
+      "target": "development-guidelines",
+      "weight": 7,
+      "shared_tags": [
+        "evolution",
+        "tachyonic",
+        "integration",
+        "supercell",
+        "architecture",
+        "consciousness",
+        "ainlp"
+      ]
+    },
+    {
+      "source": "key-components",
+      "target": "recent-milestones",
+      "weight": 7,
+      "shared_tags": [
+        "evolution",
+        "tachyonic",
+        "security",
+        "integration",
+        "supercell",
+        "architecture",
+        "consciousness"
+      ]
+    },
+    {
+      "source": "key-components",
+      "target": "current-development-state-january-12-2026",
+      "weight": 6,
+      "shared_tags": [
+        "evolution",
+        "security",
+        "integration",
+        "architecture",
+        "consciousness",
+        "ainlp"
+      ]
+    },
+    {
+      "source": "development-guidelines",
+      "target": "recent-milestones",
+      "weight": 7,
+      "shared_tags": [
+        "evolution",
+        "tachyonic",
+        "integration",
+        "consciousness",
+        "supercell",
+        "architecture",
+        "dendritic"
+      ]
+    },
+    {
+      "source": "development-guidelines",
+      "target": "current-development-state-january-12-2026",
+      "weight": 6,
+      "shared_tags": [
+        "evolution",
+        "integration",
+        "dendritic",
+        "architecture",
+        "consciousness",
+        "ainlp"
+      ]
+    },
+    {
+      "source": "recent-milestones",
+      "target": "current-development-state-january-12-2026",
+      "weight": 6,
+      "shared_tags": [
+        "evolution",
+        "security",
+        "integration",
+        "consciousness",
+        "architecture",
+        "dendritic"
+      ]
+    }
+  ]
+}
