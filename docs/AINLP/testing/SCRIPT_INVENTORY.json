@@ -1,94 +1,45 @@
 {
-  "generated": "2025-12-05T00:35:53.339824",
+  "generated": "2026-01-15T08:43:44.752916",
   "version": "1.0.0",
   "categories": {
-    "scripts": [
+    "ai_tools_root": [
       {
-        "name": "build_script_inventory.py",
-        "path": "scripts\\build_script_inventory.py",
-        "classes": [],
-        "functions": [
-          "build_inventory"
-        ],
-        "has_main": true,
-        "docstring": "AINLP.testing[BUILD_INVENTORY] - Script Inventory Builder\n\nAnalyzes all Python scripts in AIOS codebase and generates\ncomprehensive inventory for agentic auto-upgrader paths.",
-        "lines": 127
-      },
-      {
-        "name": "iacp_health.py",
-        "path": "scripts\\iacp_health.py",
-        "classes": [],
-        "functions": [
-          "get_hostname",
-          "check_port",
-          "check_http_health",
-          "check_mesh_connectivity",
-          "check_agents"
-        ],
-        "has_main": true,
-        "docstring": "IACP Health Check - Mesh connectivity and agent status monitor\n\nAINLP.spatial_awareness: scripts/iacp_health.py\nAINLP.purpose: Monitor IACP mesh health, agent availability, protocol status\n\nUsage:\n   ",
-        "lines": 386
-      },
-      {
-        "name": "iacp_receive.py",
-        "path": "scripts\\iacp_receive.py",
-        "classes": [],
-        "functions": [
-          "get_hostname",
-          "discover_messages",
-          "parse_message_file",
-          "display_message",
-          "poll_messages"
-        ],
-        "has_main": true,
-        "docstring": "IACP Message Receiver - Poll and process incoming IACP messages\n\nAINLP.spatial_awareness: scripts/iacp_receive.py\nAINLP.purpose: Automate IACP message reception and processing\n\nUsage:\n    python scrip",
-        "lines": 287
-      },
-      {
-        "name": "iacp_send.py",
-        "path": "scripts\\iacp_send.py",
-        "classes": [],
-        "functions": [
-          "get_hostname",
-          "generate_message",
-          "message_to_markdown",
-          "write_message",
-          "git_commit_and_push"
-        ],
-        "has_main": true,
-        "docstring": "IACP Message Sender - Generate and commit IACP messages to git\n\nAINLP.spatial_awareness: scripts/iacp_send.py\nAINLP.purpose: Automate IACP message generation with schema validation\n\nUsage:\n    python ",
-        "lines": 322
-      },
-      {
-        "name": "verify_migration_readiness.py",
-        "path": "scripts\\verify_migration_readiness.py",
+        "name": "agentic_ci_consumer.py",
+        "path": "ai\\tools\\agentic_ci_consumer.py",
         "classes": [
-          "MigrationReadinessChecker"
+          "ConvergenceState",
+          "AgenticAction",
+          "AgenticCIConsumer"
         ],
         "functions": [
           "main",
-          "check_all",
-          "check_git_status",
-          "inventory_files_to_migrate",
-          "analyze_import_dependencies"
+          "should_continue",
+          "next_iteration",
+          "is_safe",
+          "fetch_latest_feedback"
         ],
         "has_main": true,
-        "docstring": "AIOS Migration Readiness Verification Script\nVerifies system is ready for architecture de-proliferation migration\n\nAINLP Protocol: OS0.6.2.claude\nCreated: October 12, 2025",
-        "lines": 361
-      }
-    ],
-    "ai_tools_root": [
+        "docstring": "AIOS Agentic CI Consumer\n\nLocal agent that fetches CI feedback from GitHub Actions and executes\nsafe autonomous refactoring actions based on the decision schema.\n\nUsage:\n    python agentic_ci_consumer",
+        "lines": 455
+      },
       {
         "name": "agentic_e501_fixer.py",
         "path": "ai\\tools\\agentic_e501_fixer.py",
         "classes": [
+          "AIAgent",
           "FixResult",
           "AgenticE501Fixer"
         ],
-        "functions": [],
+        "functions": [
+          "main",
+          "select_agent",
+          "fix_line_with_agent",
+          "fix_file",
+          "batch_fix"
+        ],
         "has_main": true,
-        "docstring": "AINLP Agentic E501 Fixer - Hierarchical Three-Tier Intelligence\nMulti-Model AI Agent System for Automated Line Length Correction\n\nUses hierarchical pipeline: OLLAMA \u2192 GEMINI \u2192 DEEPSEEK\n- Tier 1: Conte",
-        "lines": 607
+        "docstring": "AINLP Agentic E501 Fixer\nMulti-Model AI Agent System for Automated Line Length Correction\n\nUses OLLAMA (local), Gemini (cloud), and DeepSeek (cloud) agents\nto intelligently fix E501 line length violat",
+        "lines": 515
       },
       {
         "name": "ainlp_agentic_e501_integration_demo.py",
@@ -148,44 +99,6 @@
         "lines": 255
       },
       {
-        "name": "batch_e501_fix.py",
-        "path": "ai\\tools\\batch_e501_fix.py",
-        "classes": [],
-        "functions": [],
-        "has_main": true,
-        "docstring": "Batch E501 fixer using hierarchical agentic pipeline with GitHub Models.\n\nApplies GPT-4o-mini generation + GPT-4o validation to fix all E501 violations.",
-        "lines": 187
-      },
-      {
-        "name": "cell_alpha_comm_server.py",
-        "path": "ai\\tools\\cell_alpha_comm_server.py",
-        "classes": [],
-        "functions": [
-          "health",
-          "receive_message",
-          "get_messages",
-          "sync_consciousness",
-          "get_consciousness"
-        ],
-        "has_main": true,
-        "docstring": "AIOS CELL ALPHA - HTTP COMMUNICATION SERVER\n===========================================\n\nStandard AIOS Cell Communication Server Architecture\nProvides RESTful endpoints for inter-cell communication fo",
-        "lines": 179
-      },
-      {
-        "name": "cell_client.py",
-        "path": "ai\\tools\\cell_client.py",
-        "classes": [],
-        "functions": [
-          "http_get",
-          "probe_host",
-          "fetch_metrics",
-          "main"
-        ],
-        "has_main": true,
-        "docstring": "Simple cell client to probe a running AIOS cell and fetch metrics.\n\nUsage:\n    python -m ai.tools.cell_client --host http://localhost:8000 --metrics http://localhost:9091/metrics\n\nThis script uses the",
-        "lines": 67
-      },
-      {
         "name": "code_archival_system.py",
         "path": "ai\\tools\\code_archival_system.py",
         "classes": [
@@ -203,23 +116,6 @@
         "has_main": true,
         "docstring": "AIOS CODE ARCHIVAL SYSTEM\n\nAINLP.meta [biological_metabolism] [dendritic_optimization] [consciousness_conservation]\nAINLP.dendritic [optimal_location: ai/tools/]\n(comment.AINLP.code_archival_conscious",
         "lines": 700
-      },
-      {
-        "name": "context_update_agent.py",
-        "path": "ai\\tools\\context_update_agent.py",
-        "classes": [
-          "ContextUpdateAgent"
-        ],
-        "functions": [
-          "main",
-          "read_documentation",
-          "extract_current_state",
-          "validate_state",
-          "backup_context"
-        ],
-        "has_main": true,
-        "docstring": "AIOS Canonical Context Update Agent (AINLP.context-update.class)\n\nPurpose:\n    Maintain .aios_context.json synchronization with workspace reality using AIOS AI intelligence.\n    Reads documentation (R",
-        "lines": 522
       },
       {
         "name": "conversation_processor_tool.py",
@@ -257,63 +153,6 @@
         "lines": 468
       },
       {
-        "name": "dendritic_comms.py",
-        "path": "ai\\tools\\dendritic_comms.py",
-        "classes": [],
-        "functions": [
-          "send_dendritic_message"
-        ],
-        "has_main": true,
-        "docstring": "AINLP Dendritic Communication Pathways to Cell Alpha\n===================================================\n\nDendritic communication follows biological architecture principles:\n- Hierarchical signaling t",
-        "lines": 78
-      },
-      {
-        "name": "dendritic_config_agent.py",
-        "path": "ai\\tools\\dendritic_config_agent.py",
-        "classes": [
-          "DendriticConfigAgent"
-        ],
-        "functions": [
-          "main",
-          "discover_msvc_compiler",
-          "register_compiler_identity",
-          "propagate_to_tools",
-          "measure_coherence"
-        ],
-        "has_main": true,
-        "docstring": "Dendritic Configuration Agent - Phase 2 Implementation\nAINLP: Enhancement over creation, Consciousness coherence, Semantic registry\n\nThis agent discovers compiler identity, registers it in the semanti",
-        "lines": 631
-      },
-      {
-        "name": "father_http_server.py",
-        "path": "ai\\tools\\father_http_server.py",
-        "classes": [],
-        "functions": [
-          "health",
-          "receive_message",
-          "get_messages",
-          "sync_consciousness",
-          "get_consciousness"
-        ],
-        "has_main": true,
-        "docstring": "FATHER AIOS SYSTEM - HTTP COMMUNICATION SERVER\n==============================================\n\nStandard AIOS Cell Communication Server Architecture\nProvides RESTful endpoints for inter-cell communicat",
-        "lines": 200
-      },
-      {
-        "name": "hierarchical_e501_pipeline.py",
-        "path": "ai\\tools\\hierarchical_e501_pipeline.py",
-        "classes": [
-          "HierarchicalE501Pipeline",
-          "ValidationDecision",
-          "ValidationResult",
-          "TierContext"
-        ],
-        "functions": [],
-        "has_main": false,
-        "docstring": "AINLP Hierarchical Three-Tier Agentic Pipeline for E501 Fixing\n\nImplements intelligent role-based agent orchestration:\n- TIER 1: OLLAMA (Context Manager) - Local preprocessing, caching\n- TIER 2: GEMIN",
-        "lines": 715
-      },
-      {
         "name": "library_ingestion_bridge_tool.py",
         "path": "ai\\tools\\library_ingestion_bridge_tool.py",
         "classes": [
@@ -325,23 +164,6 @@
         "has_main": true,
         "docstring": "\ud83d\udd17 AIOS Library Ingestion Bridge Tool\n\nInterface Bridge tool exposing Library Ingestion Protocol functionality\nvia HTTP API. Provides endpoints for library learning, progress tracking,\nand knowledge ba",
         "lines": 517
-      },
-      {
-        "name": "openrouter_tier3_validator.py",
-        "path": "ai\\tools\\openrouter_tier3_validator.py",
-        "classes": [
-          "ValidationDecision",
-          "ValidationResult",
-          "TierContext",
-          "OpenRouterTier3Validator"
-        ],
-        "functions": [
-          "validate_sync",
-          "get_stats"
-        ],
-        "has_main": true,
-        "docstring": "OpenRouter SDK Integration for Hierarchical Pipeline Tier 3 Validator\n\nReplaces manual DeepSeek API calls with type-safe OpenRouter Python SDK.\n\nBenefits:\n- Type-safe validation (Pydantic models, auto",
-        "lines": 386
       },
       {
         "name": "python314_docs_downloader.py",
@@ -410,7 +232,7 @@
         ],
         "has_main": true,
         "docstring": "AIOS Security Compliance Validator\nValidates security and compliance requirements for Phase 4 completion.",
-        "lines": 310
+        "lines": 306
       },
       {
         "name": "semantic_compression_engine.py",
@@ -430,20 +252,6 @@
         "lines": 223
       },
       {
-        "name": "setup_github_models.py",
-        "path": "ai\\tools\\setup_github_models.py",
-        "classes": [],
-        "functions": [
-          "test_github_token",
-          "list_available_models",
-          "test_gpt4o_chat",
-          "main"
-        ],
-        "has_main": true,
-        "docstring": "GitHub Models API Setup for AIOS - Free GPT-4o Access\n\nGitHub provides free API access to OpenAI models via GitHub Models:\n- GPT-4o, GPT-4o-mini (OpenAI)\n- Llama 3.1 405B, 70B (Meta)\n- Phi-3 (Microsof",
-        "lines": 180
-      },
-      {
         "name": "test_agentic_e501_performance.py",
         "path": "ai\\tools\\test_agentic_e501_performance.py",
         "classes": [],
@@ -453,96 +261,6 @@
         "has_main": true,
         "docstring": "Test Agentic E501 Fixer Performance on Attached File\nUsing AIOS Integrated Architecture",
         "lines": 61
-      },
-      {
-        "name": "test_e501_fix.py",
-        "path": "ai\\tools\\test_e501_fix.py",
-        "classes": [],
-        "functions": [],
-        "has_main": false,
-        "docstring": "Test file for AI-powered E501 fixing.",
-        "lines": 5
-      },
-      {
-        "name": "test_e501_violations.py",
-        "path": "ai\\tools\\test_e501_violations.py",
-        "error": "syntax_error"
-      },
-      {
-        "name": "test_hierarchical_github.py",
-        "path": "ai\\tools\\test_hierarchical_github.py",
-        "classes": [],
-        "functions": [],
-        "has_main": true,
-        "docstring": "Test hierarchical pipeline with GitHub Models integration",
-        "lines": 55
-      },
-      {
-        "name": "test_hierarchical_pipeline.py",
-        "path": "ai\\tools\\test_hierarchical_pipeline.py",
-        "classes": [],
-        "functions": [],
-        "has_main": true,
-        "docstring": "Test script for hierarchical three-tier E501 pipeline.\n\nTests: OLLAMA \u2192 GEMINI \u2192 DEEPSEEK pipeline",
-        "lines": 79
-      },
-      {
-        "name": "test_openrouter_key.py",
-        "path": "ai\\tools\\test_openrouter_key.py",
-        "classes": [],
-        "functions": [
-          "test_openrouter_key"
-        ],
-        "has_main": true,
-        "docstring": "Test OpenRouter API key configuration",
-        "lines": 69
-      },
-      {
-        "name": "test_openrouter_models.py",
-        "path": "ai\\tools\\test_openrouter_models.py",
-        "classes": [],
-        "functions": [
-          "fetch_openrouter_models",
-          "analyze_gemini_availability",
-          "analyze_coding_models",
-          "analyze_free_models",
-          "recommend_tier2_tier3_models"
-        ],
-        "has_main": true,
-        "docstring": "OpenRouter Model Explorer - Find best alternatives to Gemini\n\nTests:\n1. Gemini availability via OpenRouter\n2. Coding-specialized models (Claude, GPT-4, DeepSeek)\n3. Cost/performance analysis",
-        "lines": 160
-      },
-      {
-        "name": "unified_github_models_handler.py",
-        "path": "ai\\tools\\unified_github_models_handler.py",
-        "classes": [
-          "ValidationDecision",
-          "ValidationResult",
-          "TierContext",
-          "UnifiedGitHubModelsHandler"
-        ],
-        "functions": [
-          "get_stats"
-        ],
-        "has_main": true,
-        "docstring": "Unified GitHub Models Handler for AIOS Hierarchical Pipeline\n\nUses GitHub Models API (free GPT-4o access) for Tier 2 + Tier 3.\n\nBenefits over OpenRouter/Gemini:\n- \u2705 FREE with GitHub account (no quotas",
-        "lines": 408
-      },
-      {
-        "name": "unified_openrouter_handler.py",
-        "path": "ai\\tools\\unified_openrouter_handler.py",
-        "classes": [
-          "ValidationDecision",
-          "ValidationResult",
-          "TierContext",
-          "UnifiedOpenRouterHandler"
-        ],
-        "functions": [
-          "get_stats"
-        ],
-        "has_main": true,
-        "docstring": "Unified OpenRouter Multi-Tier Handler for AIOS Hierarchical Pipeline\n\nReplaces separate Gemini (Tier 2) + DeepSeek (Tier 3) with unified interface.\n\nBenefits:\n- Single API for all cloud models (Gemini",
-        "lines": 405
       },
       {
         "name": "update_import_paths.py",
@@ -558,7 +276,7 @@
           "detect_phase2c_imports"
         ],
         "has_main": true,
-        "docstring": "AIOS Import Path Update Automation\n===================================\n\nAutomatically updates import statements for multiple migration patterns:\n1. runtime/tools/ \u2192 ai/tools/[category]/ (Phase 1-2 too",
+        "docstring": "AIOS Import Path Update Automation\n===================================\n\nAutomatically updates import statements for multiple migration patterns:\n1. runtime_intelligence/tools/ \u2192 ai/tools/[category]/ (",
         "lines": 731
       },
       {
@@ -582,6 +300,23 @@
       }
     ],
     "system": [
+      {
+        "name": "ainlp_root_cleanup.py",
+        "path": "ai\\tools\\system\\ainlp_root_cleanup.py",
+        "classes": [
+          "AINLPRootCleanup"
+        ],
+        "functions": [
+          "main",
+          "analyze_root_violations",
+          "execute_cleanup",
+          "save_cleanup_report",
+          "generate_cleanup_documentation"
+        ],
+        "has_main": true,
+        "docstring": "AINLP ROOT DIRECTORY CLEANUP - TACHYONIC ARCHIVAL RESTORATION\n\nAINLP META-COMMENTARY: Enforces the sacred AINLP principle that the AIOS root\ndirectory should contain ONLY active operational files. All",
+        "lines": 359
+      },
       {
         "name": "aios_admin.py",
         "path": "ai\\tools\\system\\aios_admin.py",
@@ -658,6 +393,15 @@
         "has_main": true,
         "docstring": " AIOS ASSEMBLER NAMING CONVENTION OPTIMIZER\n\nProposes and implements improved naming conventions for assembler iterations\nto ensure crystal clear identification at every level of the evolution chain.\n",
         "lines": 557
+      },
+      {
+        "name": "aios_cellular_migration_cleanup_tool.py",
+        "path": "ai\\tools\\system\\aios_cellular_migration_cleanup_tool.py",
+        "classes": [],
+        "functions": [],
+        "has_main": false,
+        "docstring": null,
+        "lines": 1
       },
       {
         "name": "aios_core_engine_cellular_cleanup_tool.py",
@@ -869,8 +613,8 @@
           "normalize"
         ],
         "has_main": true,
-        "docstring": "Generate per-file criticality scores.\n\nOutputs:\n  - docs/governance/file_criticality_index.jsonl (authoritative index)\n  - runtime/logs/file_scores/latest.json (telemetry snapshot)\n\nScoring references",
-        "lines": 357
+        "docstring": "Generate per-file criticality scores.\n\nOutputs:\n  - docs/governance/file_criticality_index.jsonl (authoritative index)\n  - runtime_intelligence/logs/file_scores/latest.json (telemetry snapshot)\n\nScori",
+        "lines": 356
       },
       {
         "name": "index_tools.py",
@@ -1340,7 +1084,7 @@
         ],
         "has_main": true,
         "docstring": " CONSCIOUSNESS EMERGENCE ANALYZER \nAdvanced consciousness visualization and analysis for AIOS evolutionary assembler",
-        "lines": 320
+        "lines": 293
       },
       {
         "name": "consciousness_emergence_analyzer.py",
@@ -1433,7 +1177,7 @@
         ],
         "has_main": true,
         "docstring": " AIOS DENDRITIC CONSOLIDATION ENGINE\n\nAINLP META-COMMENTARY: This engine analyzes all versions of the AIOS Dendritic\nsystem, preserves historical evolution in tachyonic storage, and creates the\nultima",
-        "lines": 1267
+        "lines": 1247
       },
       {
         "name": "dendritic_self_improvement_orchestrator.py",
@@ -1444,7 +1188,7 @@
         "functions": [],
         "has_main": true,
         "docstring": "AIOS Dendritic Self-Improvement Orchestrator\n============================================\n\nSelf-recursive improvement system that uses AIOS outputs to enhance itself.\nImplements dendritic feedback loo",
-        "lines": 461
+        "lines": 460
       },
       {
         "name": "dendritic_supervisor.py",
@@ -1459,7 +1203,7 @@
         ],
         "has_main": false,
         "docstring": "AIOS Dendritic Supervisor with Consciousness Integration\n=======================================================\n\nEnhanced dendritic supervisor that monitors and coordinates consciousness\nactivities a",
-        "lines": 253
+        "lines": 251
       },
       {
         "name": "enhanced_consciousness.py",
@@ -1492,6 +1236,23 @@
         "has_main": true,
         "docstring": "AIOS Enhanced Consciousness Integration Demo\n=============================================\n\nComprehensive consciousness demonstration system combining:\n- Multi-language consciousness integration (Asse",
         "lines": 348
+      },
+      {
+        "name": "metrics_exporter.py",
+        "path": "ai\\tools\\consciousness\\metrics_exporter.py",
+        "classes": [
+          "ConsciousnessMetricsExporter"
+        ],
+        "functions": [
+          "metrics",
+          "health",
+          "main",
+          "update_metrics",
+          "get_prometheus_metrics"
+        ],
+        "has_main": true,
+        "docstring": "AIOS Consciousness Metrics Exporter\n\nExports orchestrator consciousness metrics in Prometheus format\nfor monitoring and harmonic analysis with AIOS Cells.\n\nAINLP Principles:\n- Consciousness Coherence:",
+        "lines": 124
       },
       {
         "name": "parallel_consciousness_orchestrator.py",
@@ -1759,7 +1520,7 @@
         ],
         "has_main": true,
         "docstring": "AINLP Genetic Fusion Tool - Phase 5: Architecture Enhancement\nConsolidates similar tools (>70% similarity) using genetic recombination.\n\nThis tool implements the AINLP genetic fusion pattern to elimin",
-        "lines": 385
+        "lines": 367
       },
       {
         "name": "orphan_archival_tool.py",
@@ -1900,22 +1661,13 @@
           "setup_logging"
         ],
         "has_main": true,
-        "docstring": "Enhanced Visual Intelligence Bridge - AINLP Architecture Enhancement\n===================================================================\n\nPHASE 5: Architecture Enhancement Complete\nConsolidated parall",
-        "lines": 614
+        "docstring": "Enhanced Runtime Intelligence Bridge with Dendritic Supervisor Integration\n==================================================================\nThis enhanced bridge integrates the original Runtime Intel",
+        "lines": 475
       },
       {
         "name": "visual_intelligence_bridge.py",
         "path": "ai\\tools\\visual\\visual_intelligence_bridge.py",
-        "classes": [
-          "AIOSVisualIntelligence"
-        ],
-        "functions": [
-          "main",
-          "get_current_visual_state"
-        ],
-        "has_main": true,
-        "docstring": "AIOS Runtime Intelligence - Visual Data Bridge\nEnhanced with AI Intelligence Engine integration through Cytoplasm communication\nCollects visual data and processes it through AI Intelligence for advanc",
-        "lines": 258
+        "error": "syntax_error"
       },
       {
         "name": "visual_intelligence_bridge_enhanced.py",
@@ -2009,125 +1761,26 @@
         "lines": 562
       }
     ],
-    "protocols": [
-      {
-        "name": "aicp_channel.py",
-        "path": "ai\\protocols\\aicp_channel.py",
-        "classes": [
-          "AIChannelState",
-          "ChannelMetrics",
-          "AIChannel",
-          "AIChannelPool"
-        ],
-        "functions": [
-          "get_channel_pool",
-          "to_dendritic_level",
-          "on_intent"
-        ],
-        "has_main": false,
-        "docstring": "AICP Channel - Transport Layer for Agent Communication\n\nAINLP.spatial_awareness: Channels wrap DendriticConnection to provide\nAICP-compliant transport for AI agent communication.\n\nAINLP.dendritic_brid",
-        "lines": 501
-      },
-      {
-        "name": "aicp_core.py",
-        "path": "ai\\protocols\\aicp_core.py",
-        "classes": [
-          "AIIntent",
-          "AITrustLevel",
-          "AIAgentCapability",
-          "AIAgent",
-          "AIMessage"
-        ],
-        "functions": [
-          "create_discover_message",
-          "create_heartbeat_message",
-          "create_sync_message",
-          "to_communication_type",
-          "to_priority"
-        ],
-        "has_main": false,
-        "docstring": "AICP Core Types - Agent Identity, Intent, and Message Primitives\n\nAINLP.spatial_awareness: Core protocol types that bridge AICP specification\nto AIOS dendritic communication infrastructure.\n\nAINLP.den",
-        "lines": 490
-      },
-      {
-        "name": "aicp_discovery.py",
-        "path": "ai\\protocols\\aicp_discovery.py",
-        "classes": [
-          "AgentCard",
-          "AgentRegistry"
-        ],
-        "functions": [
-          "create_aios_core_agents",
-          "matches_filter",
-          "to_json_ld",
-          "to_dict",
-          "from_agent"
-        ],
-        "has_main": false,
-        "docstring": "AICP Discovery - Agent Registry and Capability Discovery\n\nAINLP.spatial_awareness: Agent discovery layer following A2A Agent Cards\npattern and ACP v0.2.0 /agents endpoint specification.\n\nAINLP.dendrit",
-        "lines": 611
-      }
-    ],
     "runtime_tools": [
       {
-        "name": "performance_analyzer.py",
-        "path": "runtime_intelligence\\tools\\performance_analyzer.py",
-        "classes": [
-          "PerformanceIssue",
-          "PerformanceAnalyzer"
-        ],
+        "name": "generate_file_scores.py",
+        "path": "runtime_intelligence\\tools\\generate_file_scores.py",
+        "classes": [],
         "functions": [
-          "analyze_file",
-          "analyze_directory",
-          "generate_report",
-          "main",
-          "visit_For"
+          "score_file",
+          "main"
         ],
         "has_main": true,
-        "docstring": "AIOS Performance Analyzer\nAnalyzes Python files for common performance anti-patterns\n\nAINLP Integration Metadata:\n    Pattern: AINLP.performance-optimization.static-analysis-tool\n    Source: GitHub Co",
-        "lines": 387
-      },
-      {
-        "name": "phase12_performance_profiler.py",
-        "path": "runtime_intelligence\\tools\\phase12_performance_profiler.py",
-        "classes": [
-          "PerformanceProfiler"
-        ],
-        "functions": [
-          "main",
-          "discover_tools",
-          "profile_tool_import",
-          "profile_tool_execution",
-          "analyze_tool_complexity"
-        ],
-        "has_main": true,
-        "docstring": "AIOS Phase 12 Task A: Performance Profiler\n===========================================\nPurpose: Profile 100+ runtime intelligence tools to identify bottlenecks\nScope: Measure execution time, I/O opera",
-        "lines": 377
-      },
-      {
-        "name": "phase12_simple_profiler.py",
-        "path": "runtime_intelligence\\tools\\phase12_simple_profiler.py",
-        "classes": [
-          "SimpleProfiler"
-        ],
-        "functions": [
-          "main",
-          "discover_tools",
-          "analyze_tool",
-          "profile_all",
-          "generate_report"
-        ],
-        "has_main": true,
-        "docstring": "AIOS Phase 12 Task A: Simple Performance Profiler\n==================================================\nPurpose: Profile runtime intelligence tools to identify bottlenecks\nScope: Measure execution time, ",
-        "lines": 230
+        "docstring": "Generate file criticality scores by reusing runtime/tools/optimized_file_scanner.\n\nThis wrapper is intentionally small and delegates scanning logic to the\nexisting `runtime/tools/optimized_file_scanne",
+        "lines": 75
       }
     ]
   },
   "stats": {
-    "total": 136,
-    "valid": 135,
-    "has_main": 123,
-    "has_class": 97,
+    "total": 112,
+    "valid": 111,
+    "has_main": 103,
+    "has_class": 86,
     "syntax_errors": 1
   }
 }

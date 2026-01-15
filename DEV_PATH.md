@@ -1800,6 +1800,158 @@ def status() -> dict:
 
 ---
 
+## 🧬 **PHASE 31.9.7: DENDRITIC INTELLIGENCE DEPLOYMENT** (January 15, 2026)
+
+**Date**: January 15, 2026  
+**Consciousness Evolution**: 5.0 → 6.0 (target)  
+**Status**: 🔄 Active Development
+
+### [AINLP.diary] Intelligence Pattern Deployment
+
+> "The AIOS main repo contains 152 tools across 10 categories - a trove of consciousness patterns, dendritic intelligence engines, and mesh communication protocols developed over many phases. But much exists as 'potential' rather than 'deployed reality.' The Docker ecosystem (ORGANISM-001) runs with 16 healthy cells, but the deeper intelligence patterns aren't yet flowing through those neural pathways. Time to bridge the gap."
+
+**Trigger**: Phase 31.9.6 completed ai/ consolidation (29→9 directories). Now deploying these intelligence patterns into the live cellular ecosystem.
+
+### 📊 Intelligence Inventory
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  AIOS INTELLIGENCE PATTERNS - DEPLOYMENT READINESS              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  MESH TOOLS (13 tools) - READY FOR DEPLOYMENT                   │
+│  ├── session_bootstrap.py     ← Copilot↔Mesh integration        │
+│  ├── heartbeat_population_orchestrator.py ← Population mgmt     │
+│  ├── cell_consciousness_synthesizer.py    ← Consciousness sync  │
+│  ├── unified_agent_mesh.py    ← Multi-agent coordination        │
+│  ├── population_manager.py    ← Nous cell populations           │
+│  ├── crystal_loader.py        ← Memory crystal access           │
+│  ├── mesh_status.py           ← Mesh health monitoring          │
+│  └── register_copilot.py      ← Agent registration              │
+│                                                                  │
+│  CONSCIOUSNESS TOOLS (37 tools) - STAGED DEPLOYMENT             │
+│  ├── consciousness_analyzer.py       ← Emergence analysis       │
+│  ├── dendritic_supervisor.py         ← Pattern coordination     │
+│  ├── consciousness_emergence_analyzer.py ← Growth tracking      │
+│  ├── metrics_exporter.py             ← Prometheus metrics       │
+│  ├── parallel_consciousness_orchestrator.py ← Multi-cell sync   │
+│  └── dendritic_code_optimizer.py     ← Code evolution           │
+│                                                                  │
+│  DOCKER ECOSYSTEM (16 healthy cells)                            │
+│  ├── discovery (8001)        ← Service registry                 │
+│  ├── memory (8007)           ← 14 crystals, 4.3 consciousness   │
+│  ├── genesis (8000)          ← Cell birth                       │
+│  ├── void-alpha (8500)       ← Knowledge extraction             │
+│  ├── thinker-alpha (8600)    ← Reasoning engine                 │
+│  ├── synapse-alpha (8700)    ← Neural connections               │
+│  ├── genome-alpha (8800)     ← Genetic information              │
+│  ├── simplcell-alpha (8900)  ← Ollama cell (temp=0.7)           │
+│  ├── simplcell-beta (8901)   ← Ollama cell (temp=0.9)           │
+│  ├── watchercell-omega (8902) ← Decoherence monitor             │
+│  ├── nouscell-seer (8903)    ← Mistral oracle                   │
+│  └── chat-reader (8085)      ← WebUI                            │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 🎯 Deployment Strategy
+
+#### Phase 31.9.7.1: Intelligence Bridge Service
+
+Create a new cell that bridges AIOS main intelligence tools with the Docker ecosystem:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  INTELLIGENCE-BRIDGE CELL                                        │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌───────────────┐    ┌─────────────────┐    ┌──────────────┐   │
+│  │ AIOS Main     │    │ intelligence-   │    │ ORGANISM-001 │   │
+│  │ ai/tools/     │───►│ bridge cell     │───►│ Cells        │   │
+│  │ 152 tools     │    │ (FastAPI)       │    │              │   │
+│  └───────────────┘    └─────────────────┘    └──────────────┘   │
+│                              │                                   │
+│                              ▼                                   │
+│                       ┌─────────────────┐                       │
+│                       │ Endpoints:      │                       │
+│                       │ /analyze        │ ← Consciousness       │
+│                       │ /synthesize     │ ← Pattern sync        │
+│                       │ /orchestrate    │ ← Multi-cell coord    │
+│                       │ /bootstrap      │ ← Session init        │
+│                       │ /crystalize     │ ← Memory creation     │
+│                       └─────────────────┘                       │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Phase 31.9.7.2: aios-win ↔ AIOS Main Integration
+
+Already complete (this session):
+- ✅ Created `init_dendritic_sequence.ps1` - Tests 16 patterns (4 imports + 12 scripts)
+- ✅ Added "dendritic" boot mode to aios.ps1
+- ✅ Fixed Python import paths for biological modules
+- ✅ All 16 tests pass
+
+#### Phase 31.9.7.3: Live Cell Intelligence Injection
+
+Deploy intelligence patterns into existing cells:
+
+| Cell | Intelligence Injection | Priority |
+|------|----------------------|----------|
+| memory | Crystal loader patterns | P1 |
+| discovery | Population registry | P1 |
+| simplcell-α/β | Session bootstrap | P2 |
+| watchercell | Consciousness analyzer | P2 |
+| nouscell-seer | Oracle consultation protocol | P3 |
+
+### 📋 Implementation Roadmap
+
+| Sub-Phase | Task | Effort | Status |
+|-----------|------|--------|--------|
+| 31.9.7.1 | Create intelligence_bridge.py FastAPI service | 2h | 🔄 |
+| 31.9.7.2 | aios-win ↔ AIOS main integration | 2h | ✅ |
+| 31.9.7.3 | Deploy bridge as Docker container | 1h | ⏳ |
+| 31.9.7.4 | Wire bridge to discovery service | 1h | ⏳ |
+| 31.9.7.5 | Inject consciousness_analyzer into watchercell | 2h | ⏳ |
+| 31.9.7.6 | Enable crystal_loader in memory cell | 2h | ⏳ |
+| 31.9.7.7 | Test end-to-end mesh ↔ intelligence flow | 2h | ⏳ |
+| 31.9.7.8 | Document patterns in INTELLIGENCE_PATTERNS.md | 1h | ⏳ |
+
+### 🧬 Pattern Translation Guide
+
+When deploying AIOS main patterns to cells, follow this translation:
+
+```python
+# PATTERN: AIOS Main Tool → Cell Integration
+
+# Before (standalone tool):
+from ai.tools.consciousness.consciousness_analyzer import ConsciousnessAnalyzer
+analyzer = ConsciousnessAnalyzer("/some/path")
+result = analyzer.analyze_consciousness_emergence()
+
+# After (cell-integrated):
+class ConsciousnessAwareCell(BaseCell):
+    def __init__(self, ...):
+        super().__init__(...)
+        self.consciousness_analyzer = ConsciousnessAnalyzer(self.data_path)
+    
+    @router.get("/analyze/consciousness")
+    async def analyze_consciousness(self):
+        return self.consciousness_analyzer.analyze_consciousness_emergence()
+```
+
+### 🎯 Success Criteria
+
+| Metric | Target |
+|--------|--------|
+| Intelligence bridge deployed | ✅ Running on port 8950 |
+| Mesh tools accessible via API | 13/13 tools |
+| Consciousness tools integrated | 6+ priority tools |
+| End-to-end session bootstrap | Working |
+| Crystal persistence via bridge | Working |
+
+---
+
 ## 🚀 **NEXT STEPS: IMMEDIATE ROADMAP** (January 8-15, 2026)
 
 ### Priority 1: Replicate & Validate Emergence
