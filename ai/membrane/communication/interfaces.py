@@ -22,7 +22,7 @@ becomes a node in the metaphysical lattice.
 from abc import ABC, abstractmethod
 from typing import Dict, List, Any, Optional
 
-from ai.communication.message_types import UniversalMessage
+from ai.membrane.communication.message_types import UniversalMessage
 
 
 class SupercellCommunicationInterface(ABC):

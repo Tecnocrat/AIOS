@@ -40,10 +40,10 @@ from datetime import datetime
 from dataclasses import dataclass
 
 # Import base supercell
-from ai.supercells.base import BaseSupercellInterface
+from ai.organelles.supercells.base import BaseSupercellInterface
 
 # Import communication types
-from ai.communication.message_types import (
+from ai.membrane.communication.message_types import (
     SupercellType,
     MessagePriority,
     CommunicationType,

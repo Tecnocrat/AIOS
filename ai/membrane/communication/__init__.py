@@ -3,7 +3,7 @@ AIOS Communication Package
 
 ⚠️ MIGRATION NOTICE (2025-10-18):
 For orchestration and initialization, prefer the unified system:
-    from ai.orchestration import create_orchestrator, create_consciousness_coordinator
+    from ai.organelles.orchestration\1 import create_orchestrator, create_consciousness_coordinator
 
 The SupercellInitializer in this package is maintained for backward compatibility.
 New code should use the orchestration package which provides better structure.
@@ -29,7 +29,7 @@ AINLP.dendritic: Optimal connection topology
 """
 
 # Import fundamental types
-from ai.communication.message_types import (
+from ai.membrane.communication.message_types import (
     SupercellType,
     MessagePriority,
     CommunicationType,
@@ -38,13 +38,13 @@ from ai.communication.message_types import (
 )
 
 # Import interface
-from ai.communication.interfaces import SupercellCommunicationInterface
+from ai.membrane.communication.interfaces import SupercellCommunicationInterface
 
 # Import initialization
-from ai.communication.initialization import SupercellInitializer
+from ai.membrane.communication.initialization import SupercellInitializer
 
 # Import universal bus (Phase 2 - ✅ COMPLETE)
-from ai.communication.universal_bus import (
+from ai.membrane.communication.universal_bus import (
     UniversalCommunicationBus,
     UNIVERSAL_COMMUNICATION_BUS,
     initialize_universal_communication,

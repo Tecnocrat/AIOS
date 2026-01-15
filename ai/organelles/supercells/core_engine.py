@@ -34,10 +34,10 @@ import logging
 from typing import Dict, Any, Optional
 
 # Import base supercell
-from ai.supercells.base import BaseSupercellInterface
+from ai.organelles.supercells.base import BaseSupercellInterface
 
 # Import communication types
-from ai.communication.message_types import (
+from ai.membrane.communication.message_types import (
     SupercellType,
 
     CommunicationType,

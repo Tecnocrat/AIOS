@@ -4,7 +4,7 @@ AIOS Communication Initialization
 ⚠️ DEPRECATION NOTICE (2025-10-18):
 This module's SupercellInitializer class is deprecated in favor of the unified
 orchestration system. For new code, use:
-    from ai.orchestration import create_orchestrator
+    from ai.organelles.orchestration\1 import create_orchestrator
 
 The SupercellInitializer is maintained for backward compatibility but should
 be migrated to use the new SupercellOrchestrator which provides:
@@ -36,8 +36,8 @@ import asyncio
 import logging
 from typing import Dict, List, Optional, Tuple
 
-from ai.communication.message_types import SupercellType, UniversalMessage
-from ai.communication.interfaces import SupercellCommunicationInterface
+from ai.membrane.communication.message_types import SupercellType, UniversalMessage
+from ai.membrane.communication.interfaces import SupercellCommunicationInterface
 
 logger = logging.getLogger(__name__)
 

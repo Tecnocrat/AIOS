@@ -45,13 +45,13 @@ from pathlib import Path
 from datetime import datetime
 
 # Import communication foundation
-from ai.communication.message_types import (
+from ai.membrane.communication.message_types import (
     SupercellType,
     MessagePriority,
     CommunicationType,
     UniversalMessage
 )
-from ai.communication.interfaces import SupercellCommunicationInterface
+from ai.membrane.communication.interfaces import SupercellCommunicationInterface
 
 # Configure logging
 logger = logging.getLogger(__name__)

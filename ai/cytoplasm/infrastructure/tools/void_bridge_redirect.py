@@ -17,4 +17,4 @@ warnings.warn(
 )
 
 # Re-export everything from new location
-from ai.ingestion.crystallization.void_bridge import *
+from ai.research.ingestion.crystallization.void_bridge import *

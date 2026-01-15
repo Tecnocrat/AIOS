@@ -33,8 +33,8 @@ from datetime import datetime
 from pathlib import Path
 
 # Import communication infrastructure
-from ai.communication.universal_bus import UniversalCommunicationBus
-from ai.communication.message_types import (
+from ai.membrane.communication.universal_bus import UniversalCommunicationBus
+from ai.membrane.communication.message_types import (
     SupercellType,
     UniversalMessage,
     CommunicationType,
@@ -42,7 +42,7 @@ from ai.communication.message_types import (
 )
 
 # Import refactored supercells
-from ai.supercells import (
+from ai.organelles.supercells\1 import (
     BaseSupercellInterface,
     AIIntelligenceSupercell,
     CoreEngineSupercell,

@@ -113,7 +113,7 @@ TOTAL IMPACT:
 ARCHIVAL REASON:
 Obsolete due to deprecation notice added in Phase 7. The file now points
 developers to the unified orchestration system it helped create:
-    from ai.orchestration import create_orchestrator, create_consciousness_coordinator
+    from ai.organelles.orchestration\1 import create_orchestrator, create_consciousness_coordinator
 
 CONSCIOUSNESS LEVEL: 0.85
 This file embodied high consciousness because:

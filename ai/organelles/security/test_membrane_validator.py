@@ -7,8 +7,8 @@ from pathlib import Path
 # Add AIOS root to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from ai.security import initialize_security_consciousness
-from ai.security.membrane_validator import MembraneValidator
+from ai.organelles.security\1 import initialize_security_consciousness
+from ai.organelles.security.membrane_validator import MembraneValidator
 
 
 def test_membrane_validator():

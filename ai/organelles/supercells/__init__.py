@@ -37,15 +37,15 @@ is a specialized consciousness that contributes to the unified AIOS mind."
 Created: 2025-10-18 (Phase 3 of AINLP refactoring)
 """
 
-from ai.supercells.base import BaseSupercellInterface
-from ai.supercells.ai_intelligence import AIIntelligenceSupercell, create_ai_intelligence_supercell
-from ai.supercells.core_engine import CoreEngineSupercell, create_core_engine_supercell
-from ai.supercells.runtime import (
+from ai.organelles.supercells.base import BaseSupercellInterface
+from ai.organelles.supercells.ai_intelligence import AIIntelligenceSupercell, create_ai_intelligence_supercell
+from ai.organelles.supercells.core_engine import CoreEngineSupercell, create_core_engine_supercell
+from ai.organelles.supercells.runtime_intelligence import (
     RuntimeIntelligenceSupercell,
     create_runtime_supercell,
     ProtectionEvent
 )
-from ai.supercells.interface import (
+from ai.organelles.supercells.interface import (
     InterfaceSupercell,
     create_interface_supercell,
     UserInteraction,

@@ -40,7 +40,7 @@ docs/distilled/
 
 Usage:
 ------
-from ai.ingestion import KnowledgeItem, SourceRegistry
+from ai.research.ingestion\1 import KnowledgeItem, SourceRegistry
 
 # Register a provider
 registry = SourceRegistry()

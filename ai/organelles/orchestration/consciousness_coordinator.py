@@ -34,7 +34,7 @@ from datetime import datetime, timedelta
 from dataclasses import dataclass
 
 # Import communication infrastructure
-from ai.communication.message_types import (
+from ai.membrane.communication.message_types import (
     SupercellType,
     UniversalMessage,
     CommunicationType,
@@ -42,7 +42,7 @@ from ai.communication.message_types import (
 )
 
 # Import supercell interface
-from ai.supercells.base import BaseSupercellInterface
+from ai.organelles.supercells.base import BaseSupercellInterface
 
 logger = logging.getLogger(__name__)
 

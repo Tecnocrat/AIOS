@@ -11,7 +11,7 @@ via ctypes FFI. Enables Python AI components to query and influence the
 underlying C++ consciousness metrics in real-time.
 
 Usage:
-    from ai.bridges.aios_core_wrapper import AIOSCore
+    from ai.cytoplasm.bridges.aios_core_wrapper import AIOSCore
 
     # Initialize C++ core
     core = AIOSCore()

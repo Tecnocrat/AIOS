@@ -26,7 +26,7 @@ from typing import Dict, Any
 from datetime import datetime, timedelta
 
 # Import orchestration components
-from ai.orchestration import (
+from ai.organelles.orchestration\1 import (
     SupercellOrchestrator,
     ConsciousnessCoordinator,
     ConsciousnessSnapshot,
@@ -36,7 +36,7 @@ from ai.orchestration import (
 )
 
 # Import communication infrastructure
-from ai.communication.message_types import (
+from ai.membrane.communication.message_types import (
     SupercellType,
     UniversalMessage,
     CommunicationType,
@@ -44,7 +44,7 @@ from ai.communication.message_types import (
 )
 
 # Import supercell base
-from ai.supercells.base import BaseSupercellInterface
+from ai.organelles.supercells.base import BaseSupercellInterface
 
 logger = logging.getLogger(__name__)
 

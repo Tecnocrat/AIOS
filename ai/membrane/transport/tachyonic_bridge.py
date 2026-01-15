@@ -14,7 +14,7 @@ Note:
     This bridge gracefully degrades when tachyonic is unavailable.
 
 Example:
-    >>> from ai.transport.tachyonic_bridge import DENDRITIC_TACHYONIC_BRIDGE
+    >>> from ai.membrane.transport.tachyonic_bridge import DENDRITIC_TACHYONIC_BRIDGE
     >>> if DENDRITIC_TACHYONIC_BRIDGE:
     ...     seeds = DENDRITIC_TACHYONIC_BRIDGE.access_mutation_seeds()
 """

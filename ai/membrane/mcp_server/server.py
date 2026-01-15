@@ -42,11 +42,11 @@ except ImportError:
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
-# AIOS imports
-from resources import AIOSResourceProvider
-from tools import AIOSToolProvider
-from prompts import AIOSPromptProvider
-from diagnostics import DiagnosticsCollector
+# AIOS imports - use relative imports to avoid conflict with ai/tools/
+from .resources import AIOSResourceProvider
+from .tools import AIOSToolProvider
+from .prompts import AIOSPromptProvider
+from .diagnostics import DiagnosticsCollector
 
 # Configure logging (stderr only - avoid file permission issues during MCP startup)
 logging.basicConfig(

@@ -7,7 +7,7 @@ from pathlib import Path
 # Add AIOS root to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from ai.security import (
+from ai.organelles.security\1 import (
     initialize_security_consciousness,
     SecurityEventType,
     SecurityConsciousnessDelta

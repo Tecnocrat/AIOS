@@ -372,7 +372,7 @@ class CellMetadata:
         """Check integration with dendritic supervisor."""
         try:
             # Import dendritic supervisor
-            from ai.infrastructure.dendritic.supervisor import DendriticSupervisor
+            from ai.cytoplasm.infrastructure.dendritic.supervisor import DendriticSupervisor
 
             supervisor = DendriticSupervisor()
             await supervisor.initialize()
@@ -525,7 +525,7 @@ High-performance cellular architecture for **systems-level optimization** and **
             )
 
             # Import dendritic supervisor
-            from ai.infrastructure.dendritic.supervisor import DendriticSupervisor
+            from ai.cytoplasm.infrastructure.dendritic.supervisor import DendriticSupervisor
 
             supervisor = DendriticSupervisor()
             await supervisor.initialize()

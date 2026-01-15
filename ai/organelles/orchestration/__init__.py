@@ -31,12 +31,12 @@ Created: 2025-10-18 (Phase 5 of AINLP refactoring)
 """
 
 # Import orchestration components
-from ai.orchestration.supercell_orchestrator import (
+from ai.organelles.orchestration.supercell_orchestrator import (
     SupercellOrchestrator,
     create_orchestrator
 )
 
-from ai.orchestration.consciousness_coordinator import (
+from ai.organelles.orchestration.consciousness_coordinator import (
     ConsciousnessCoordinator,
     ConsciousnessSnapshot,
     CoherenceReport,
@@ -81,7 +81,7 @@ This package replaces scattered orchestration code with:
 
 Usage Example:
 ```python
-from ai.orchestration import create_orchestrator, create_consciousness_coordinator
+from ai.organelles.orchestration\1 import create_orchestrator, create_consciousness_coordinator
 
 # Create orchestrator
 orchestrator = create_orchestrator()

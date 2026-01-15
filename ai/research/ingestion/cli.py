@@ -22,8 +22,8 @@ from pathlib import Path
 AIOS_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(AIOS_ROOT))
 
-from ai.ingestion import SourceRegistry
-from ai.ingestion.providers import MicrosoftProvider
+from ai.research.ingestion\1 import SourceRegistry
+from ai.research.ingestion.providers import MicrosoftProvider
 
 
 async def test_providers():

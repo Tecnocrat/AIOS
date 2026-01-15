@@ -6,7 +6,7 @@ This client runs in the primary Python 3.14t venv and communicates
 with the Legacy SDK Bridge (Python 3.12) via HTTP.
 
 Usage:
-    from ai.integrations.legacy_sdk_client import LegacySDKClient
+    from ai.membrane.integrations.legacy_sdk_client import LegacySDKClient
 
     async with LegacySDKClient() as client:
         response = await client.gemini_generate("Hello, world!")

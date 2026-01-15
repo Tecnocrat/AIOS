@@ -72,7 +72,7 @@ MIGRATION:
     # OLD (scattered imports)
     from ai.src.intelligence.consciousness_bridge import ConsciousnessState
     from ai.src.integrations.aios_intelligence_bridge import ConsciousnessLevel
-    from ai.communication.message_types import SupercellType
+    from ai.membrane.communication.message_types import SupercellType
     
     # NEW (unified fabric import)
     from ai.src.fabric import (

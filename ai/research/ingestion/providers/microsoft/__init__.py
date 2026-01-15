@@ -12,11 +12,11 @@ Components:
 
 Usage:
     # For KIP-based provider:
-    from ai.ingestion.providers import MicrosoftProvider
+    from ai.research.ingestion.providers import MicrosoftProvider
 
     # For extended workflow tools:
-    from ai.ingestion.providers.microsoft import msft_feed_fetcher
-    from ai.ingestion.providers.microsoft import msft_distillation_bridge
+    from ai.research.ingestion.providers.microsoft import msft_feed_fetcher
+    from ai.research.ingestion.providers.microsoft import msft_distillation_bridge
 """
 
 # These are standalone scripts, not modules to import
