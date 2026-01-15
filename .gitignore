@@ -459,18 +459,9 @@ config/tensorflow_config.json
 *.vcxproj.filters
 *.vcxproj.user
 
-<<<<<<< HEAD
-# Tachyonic Shadow Archives - Selective Exposure Policy
-# shadows/dev_path/ = TRACKED (canonical development history for repo backup)
-# Other shadows = Local only (regenerable, large files)
-tachyonic/shadows/*
-!tachyonic/shadows/dev_path/
-!tachyonic/shadows/SHADOW_INDEX.md
-!tachyonic/shadows/SHADOW_PATTERN.md
-=======
-# Tachyonic Shadow Archives (Local snapshots, not for version control)
-tachyonic/shadows/
->>>>>>> origin/OS0.6.2.grok
+# Tachyonic Shadow Archives - TRACKED for knowledge backup
+# Critical archival knowledge must be version controlled
+# Only exclude large generated file shadows
 tachyonic/archive/file_criticality_shadows/
 
 # Large Generated System Knowledge Graphs (Generated artifacts, not for version control)
